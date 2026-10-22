@@ -89,6 +89,32 @@ test.describe('/earth', () => {
     await expect(page.getByTestId('layer-orbits')).toHaveCount(0);
   });
 
+  test('chips are grouped ON EARTH / IN SPACE; each header is a master switch', async ({
+    page,
+    isMobile,
+  }) => {
+    await page.goto('/earth');
+    await page.waitForLoadState('networkidle');
+    if (isMobile) await openDrawerTab(page, /layers/i);
+    const root = isMobile ? page.locator('.mdg-body') : page;
+    const ground = root.getByTestId('layer-group-earth');
+    const space = root.getByTestId('layer-orbiters');
+    await expect(ground).toBeVisible();
+    await expect(space).toBeVisible();
+    const pads = root.getByTestId('layer-launchpads');
+    await expect(pads).toHaveAttribute('aria-pressed', 'true');
+    await pads.click();
+    await expect(pads).toHaveAttribute('aria-pressed', 'false');
+    await pads.click();
+    await ground.click();
+    await expect(ground).toHaveAttribute('aria-pressed', 'false');
+    for (const id of ['layer-launchpads', 'layer-museums', 'layer-telescopes'])
+      await expect(root.getByTestId(id)).toBeDisabled();
+    await expect(root.getByTestId('layer-stations')).toBeEnabled();
+    await ground.click();
+    await expect(root.getByTestId('layer-museums')).toBeEnabled();
+  });
+
   test('chip toggle flips aria-pressed', async ({ page, isMobile }) => {
     await page.goto('/earth');
     // Wait for HUD hydration to flush before the click — on mobile-chromium

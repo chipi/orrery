@@ -494,6 +494,21 @@
   let observatoryPins: MuseumPin[] = [];
   let selectedObservatory = $state<Observatory | null>(null);
   let layerTelescopes = $state(true);
+  // /earth chip groups: ON EARTH is a master over launchpads, museums and
+  // ground telescopes (IN SPACE is the existing ORBITERS master).
+  let layerGround = $state(true);
+  let layerLaunchpads = $state(true);
+  const padsOn = $derived(layerSurface && layerGround && layerLaunchpads);
+  const museumsOn = $derived(layerGround && layerMuseums);
+  const telescopesOn = $derived(layerGround && layerTelescopes);
+  /** Close an open launchpad card when the pads are hidden. */
+  function dropHiddenPadSelection() {
+    if (padsOn || !selected) return;
+    if (sites.some((s) => s.id === selected?.id)) {
+      selected = null;
+      panelOpen = false;
+    }
+  }
 
   // ─── Object index (searchable orbit/land list) ───────────────────
   // `indexEarthObjects` is a reactive mirror of the non-reactive
@@ -3511,7 +3526,7 @@
       const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
       ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
       const targets: THREE.Object3D[] = [];
-      if (layerSurface) for (const mk of markers) targets.push(mk.group);
+      if (padsOn) for (const mk of markers) targets.push(mk.group);
       if (layerOrbiters) for (const om of orbitalMarkers) targets.push(om.dotGroup);
       const hits = ray.intersectObjects(targets, true);
       const hit = hits.find((h) => typeof h.object.userData.siteId === 'string');
@@ -3538,7 +3553,7 @@
 
     // PRD-027 — museum pins (gold), tagged userData.museumId.
     function pickMuseumAt(clientX: number, clientY: number): string | null {
-      if (!layerMuseums || museumPins.length === 0) return null;
+      if (!museumsOn || museumPins.length === 0) return null;
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
@@ -3552,7 +3567,7 @@
     }
 
     function pickObservatoryAt(clientX: number, clientY: number): string | null {
-      if (!layerTelescopes || observatoryPins.length === 0) return null;
+      if (!telescopesOn || observatoryPins.length === 0) return null;
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
@@ -4452,19 +4467,19 @@
         // immediately (cheap — small static arrays).
         const selMuseumId = selectedMuseum?.id ?? null;
         for (const p of museumPins) {
-          p.group.visible = layerMuseums;
+          p.group.visible = museumsOn;
           p.halo.visible = p.id === selMuseumId;
         }
         const selObsId = selectedObservatory?.id ?? null;
         for (const p of observatoryPins) {
-          p.group.visible = layerTelescopes;
+          p.group.visible = telescopesOn;
           p.halo.visible = p.id === selObsId;
         }
         const selId = selected?.id ?? null;
         for (const mk of markers) {
           // Nation filter (#363) — hide markers whose nation is toggled off.
           const nv = nationEnabled(nationBySiteId.get(mk.siteId));
-          mk.group.visible = layerSurface && nv;
+          mk.group.visible = padsOn && nv;
           if (mk.halo) {
             // Keep the selection halo visible at all tiers — previously
             // hidden at tier ≥ 2 to avoid competing with the surface
@@ -4776,7 +4791,7 @@
           // (those are physically inside the rectangle anyway).
           // Museum pin labels (PRD-027) follow the same zoom band fade.
           for (const p of [...museumPins, ...observatoryPins]) {
-            const layerOn = museumPins.includes(p) ? layerMuseums : layerTelescopes;
+            const layerOn = museumPins.includes(p) ? museumsOn : telescopesOn;
             p.labelGroup.visible = layerOn && labelFade >= 0.01;
             if (!p.labelGroup.visible) continue;
             p.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
@@ -4968,7 +4983,7 @@
           const lander3dFade = Math.max(0, 1 - regionalOpacity * 4);
           for (const h of lander3dFade < 0.999 ? hotspots : []) {
             if (h.tier1Group) {
-              h.tier1Group.visible = lander3dFade > 0.01;
+              h.tier1Group.visible = layerGround && layerLaunchpads && lander3dFade > 0.01;
               h.tier1Group.traverse((obj) => {
                 if (!(obj instanceof THREE.Mesh)) return;
                 const mat = obj.material as THREE.Material & { opacity: number };
@@ -4979,7 +4994,7 @@
               });
             }
             if (h.tier0Group) {
-              h.tier0Group.visible = lander3dFade > 0.01;
+              h.tier0Group.visible = layerGround && layerLaunchpads && lander3dFade > 0.01;
               h.tier0Group.traverse((obj) => {
                 if (!(obj instanceof THREE.Mesh)) return;
                 const mat = obj.material as THREE.Material & { opacity: number };
@@ -5669,6 +5684,18 @@
        ground-view skybox, and their stack visually buried the
        Exit-panorama floating button (image 21 feedback, 2026-06-03). -->
   {#snippet layerChips()}
+    <!-- /earth groups its chips under ON EARTH and IN SPACE; each header is
+         the master switch for its group (IN SPACE is the ORBITERS master,
+         keeping its testid). /moon and /mars keep the flat row. -->
+    {@const earthGroups = config.earthOrbitalLayers?.satellites != null}
+    {@const orbitersChip = {
+      testid: 'layer-orbiters',
+      label: earthGroups ? m.earth_layer_group_space() : m.ui_layer_orbiters(),
+      title: earthGroups ? m.earth_layer_group_space_tip() : m.moon_layer_tip_orbiters(),
+      active: () => layerOrbiters,
+      toggle: () => (layerOrbiters = !layerOrbiters),
+      header: earthGroups,
+    }}
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <LayerChipRow
         chips={[
@@ -5681,13 +5708,37 @@
             active: () => !surfaceOff,
             toggle: cycleSurfaceMode,
           },
-          {
-            testid: 'layer-orbiters',
-            label: m.ui_layer_orbiters(),
-            title: m.moon_layer_tip_orbiters(),
-            active: () => layerOrbiters,
-            toggle: () => (layerOrbiters = !layerOrbiters),
-          },
+          ...(earthGroups ? [] : [orbitersChip]),
+          ...(earthGroups
+            ? [
+                {
+                  testid: 'layer-group-earth',
+                  label: m.earth_layer_group_ground(),
+                  title: m.earth_layer_group_ground_tip(),
+                  active: () => layerGround,
+                  toggle: () => {
+                    layerGround = !layerGround;
+                    if (!layerGround) {
+                      selectedMuseum = null;
+                      selectedObservatory = null;
+                    }
+                    dropHiddenPadSelection();
+                  },
+                  header: true,
+                },
+                {
+                  testid: 'layer-launchpads',
+                  label: m.launchpad_layer_chip(),
+                  title: m.launchpad_layer_tip(),
+                  active: () => layerLaunchpads,
+                  toggle: () => {
+                    layerLaunchpads = !layerLaunchpads;
+                    dropHiddenPadSelection();
+                  },
+                  disabled: () => !layerGround,
+                },
+              ]
+            : []),
           {
             testid: 'layer-orbits',
             label: m.ui_layer_orbits(),
@@ -5711,6 +5762,7 @@
                     layerMuseums = !layerMuseums;
                     if (!layerMuseums) selectedMuseum = null;
                   },
+                  disabled: () => !layerGround,
                 },
               ]
             : []),
@@ -5727,6 +5779,7 @@
                     layerTelescopes = !layerTelescopes;
                     if (!layerTelescopes) selectedObservatory = null;
                   },
+                  disabled: () => !layerGround,
                 },
               ]
             : []),
@@ -5743,14 +5796,12 @@
                 },
               ]
             : []),
-          // Earth-only satellite-category chips (#290 Slice 6). Sub-
-          // gating on top of the master ORBITERS chip — visible only
-          // when earthOrbitalLayers.satellites is configured. Labels
-          // mirror EarthOrbitalScene's existing strings (STATIONS /
-          // OBSERVATORIES are intentional untranslated literals; the
-          // others use the shared ui_layer_* bundle).
+          // Earth-only satellite-category chips (#290 Slice 6), under the
+          // IN SPACE header (the ORBITERS master) — visible only when
+          // earthOrbitalLayers.satellites is configured.
           ...(config.earthOrbitalLayers?.satellites != null
             ? [
+                orbitersChip,
                 // The 5 Earth-only sub-chips are gated on the master
                 // ORBITERS toggle (per-frame visibility = layerOrbiters
                 // && catVisible). When the master is off, clicking a
@@ -5765,7 +5816,7 @@
                 // live again at whatever individual state they held.
                 {
                   testid: 'layer-stations',
-                  label: 'STATIONS',
+                  label: m.ui_layer_stations(),
                   title: m.earth_layer_tip_habitats(),
                   active: () => layerStations,
                   toggle: () => (layerStations = !layerStations),
@@ -5773,7 +5824,8 @@
                 },
                 {
                   testid: 'layer-observatories',
-                  label: 'OBSERVATORIES',
+                  // Space telescopes; the IN SPACE header says where they are.
+                  label: m.observatory_layer_chip(),
                   title: m.earth_layer_tip_telescopes(),
                   active: () => layerObservatories,
                   toggle: () => (layerObservatories = !layerObservatories),
@@ -7227,6 +7279,7 @@ sample      ${debugInfo.projectedPxSample}`}
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8.5px;
     letter-spacing: 1.5px;
+    text-transform: uppercase;
     text-align: center;
     border-radius: 999px;
     cursor: pointer;

@@ -184,6 +184,7 @@
     type MuseumPin,
   } from '$lib/surface-scene/museum-layer';
   import ObservatoryPanel from '$lib/surface-scene/ObservatoryPanel.svelte';
+  import { buildObservatoryModel } from '$lib/earth-place-models';
   import type { Observatory } from '$types/observatory';
   import MuseumPanel from '$lib/surface-scene/MuseumPanel.svelte';
   import type { Museum } from '$types/museum';
@@ -1527,6 +1528,8 @@
           const layer = buildPlacePins(list, planetMesh, planetRadius, {
             color: OBSERVATORY_PIN_COLOR,
             pickKey: 'observatoryId',
+            modelFor: (p) =>
+              buildObservatoryModel(p.id, (p as Observatory).kind, OBSERVATORY_PIN_COLOR),
           });
           observatoryPins = layer.pins;
           earthLayerHandles.push({

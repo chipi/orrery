@@ -965,22 +965,6 @@
       },
       "region_kind": "roi_quad"
     },
-    "gagarins-start": {
-      "hotspot_model": "launchpad-generic",
-      "hotspot_tier_max": 2,
-      "hotspot_tier2_source": "/images/hotspots/earth/gagarins-start/tier2-detail.jpg",
-      "hotspot_tier2_ground_m": 2560,
-      "hotspot_tier2_regional_source": "/images/hotspots/earth/gagarins-start/tier2-regional.jpg",
-      "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10,
-      "region_bounds": {
-        "lat_min": 45.9088,
-        "lat_max": 45.9318,
-        "lon_min": 63.32547,
-        "lon_max": 63.35853
-      },
-      "region_kind": "roi_quad"
-    },
     "plesetsk-41-1": {
       "hotspot_model": "launchpad-generic",
       "hotspot_tier_max": 2,

@@ -2,6 +2,7 @@
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount, untrack } from 'svelte';
+  import { canonicalId } from '$lib/data/retired-ids';
   import { page } from '$app/state';
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
@@ -296,7 +297,8 @@
     syncUrl();
   }
 
-  async function loadEntry(id: string) {
+  async function loadEntry(rawId: string) {
+    const id = canonicalId(rawId);
     if (panelLoadingId === id) return;
     panelLoadingId = id;
     const summary = entries.find((e) => e.id === id);
@@ -389,7 +391,7 @@
     untrack(() => {
       applyUrl(url);
       const id = url.searchParams.get('id');
-      if (id && id !== selectedEntry?.id) {
+      if (id && canonicalId(id) !== selectedEntry?.id) {
         void loadEntry(id);
       } else if (!id && panelOpen) {
         panelOpen = false;

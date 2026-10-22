@@ -67,7 +67,7 @@ export const launchARocket: Goal = {
       { labelKey: 'lab.conn.lar.cape', href: '/earth?site=lc-39a', agency: 'NASA' },
       {
         labelKey: 'lab.conn.lar.baikonur',
-        href: '/earth?site=gagarins-start',
+        href: '/earth?site=baikonur-1-5',
         agency: 'Roscosmos',
       },
       { labelKey: 'lab.conn.lar.wenchang', href: '/earth?site=wenchang-lc-101', agency: 'CNSA' },

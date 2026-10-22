@@ -63,7 +63,7 @@ The production app ships a set of user-facing routes (the core experience below;
 | --- | --- |
 | User-facing routes (top-level) | **27** |
 | Missions | **126** |
-| Fleet entries | **274** |
+| Fleet entries | **273** |
 | Science sections | **172** |
 | Programs | **42** |
 | Descent profiles | **76** |

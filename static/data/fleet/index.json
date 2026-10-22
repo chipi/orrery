@@ -1060,7 +1060,7 @@
     "name": "Kourou ELA-2",
     "category": "launch-site",
     "agency": "ESA",
-    "country": "France",
+    "country": "French Guiana",
     "era": "1981-2011",
     "epoch": "shuttle-and-mir",
     "status": "RETIRED",
@@ -2986,18 +2986,6 @@
     "status": "RETIRED",
     "first_flight": "1966-11-28",
     "tagline": "R-7-derived launcher for the first-generation Soyuz spacecraft — flew Soyuz 1 (1967) and Soyuz 11 (1971)"
-  },
-  {
-    "id": "gagarins-start",
-    "name": "Gagarin's Start (Baikonur Site 1)",
-    "category": "launch-site",
-    "agency": "Roscosmos",
-    "country": "Kazakhstan",
-    "era": "1957-1969",
-    "epoch": "space-race",
-    "status": "RETIRED",
-    "first_flight": "1957-05-15",
-    "tagline": "Baikonur Site 1 — Sputnik 1 (1957-10-04), Gagarin's Vostok 1 (1961-04-12), every crewed Soyuz through MS-22 (2022). Retired 2019"
   },
   {
     "id": "apollo-csm-block-i",

@@ -98,6 +98,7 @@
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
+  import { canonicalId } from '$lib/data/retired-ids';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import MediaPlayer from '$lib/components/MediaPlayer.svelte';
   import VideoThumb from '$lib/components/VideoThumb.svelte';
@@ -1251,7 +1252,8 @@
         // the camera (issue #227) — otherwise the halo opens but the
         // site itself can be on the far side, invisible until the
         // user manually drags.
-        const siteParam = page.url.searchParams.get('site');
+        const rawSite = page.url.searchParams.get('site');
+        const siteParam = rawSite ? canonicalId(rawSite) : null;
         const traverseStopParam = page.url.searchParams.get('traverse_stop');
         if (siteParam) {
           // A deep-link arrival should land on OVERVIEW and stay there —

@@ -38,7 +38,6 @@ const ALL_PAD_IDS = [
   'baikonur-1-5',
   'baikonur-31-6',
   'baikonur-200',
-  'gagarins-start',
   'plesetsk-41-1',
   'plesetsk-43',
   'kourou-ela-2',
@@ -70,6 +69,14 @@ test.describe('/earth tier ladder — panel wiring', () => {
     // Renders only when selected.hotspot_tier3_panorama survives the
     // adapter's sidecar spread merge — the earth-specific wiring.
     await expect(page.getByTestId('stand-at-site')).toBeVisible({ timeout: 5_000 });
+  });
+
+  test('a retired pad id (gagarins-start) opens the merged pad (baikonur-1-5)', async ({
+    page,
+  }) => {
+    await page.goto('/earth?site=gagarins-start');
+    await expect(page.getByRole('tab', { name: 'OVERVIEW' })).toBeVisible({ timeout: 20_000 });
+    await expect(page.getByRole('heading', { name: /Baikonur Site 1\/5/ })).toBeVisible();
   });
 
   test('tier-2-only pad has no Stand-at-site button (regression gate)', async ({ page }) => {

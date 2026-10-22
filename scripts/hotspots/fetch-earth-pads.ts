@@ -80,7 +80,6 @@ const PAD_STRATEGY: Record<string, DetailStrategy> = {
   'baikonur-1-5': 's2-fallback',
   'baikonur-200': 's2-fallback',
   'baikonur-31-6': 's2-fallback',
-  'gagarins-start': 's2-fallback',
   'plesetsk-41-1': 's2-fallback',
   'plesetsk-43': 's2-fallback',
   'jiuquan-slc-43': 's2-fallback',

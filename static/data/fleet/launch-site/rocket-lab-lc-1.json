@@ -1,0 +1,34 @@
+{
+  "id": "rocket-lab-lc-1",
+  "name": "Rocket Lab Launch Complex 1",
+  "category": "launch-site",
+  "agency": "Rocket Lab",
+  "country": "New Zealand",
+  "manufacturer": "Rocket Lab",
+  "first_flight": "2017-05-25",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "lat": -39.2615,
+  "lon": 177.8652,
+  "best_known_for": "First private orbital launch site: Rocket Lab's Electron from Mahia, New Zealand",
+  "credit": "Rocket Lab's own spaceport on the Mahia Peninsula, Hawke's Bay, with two pads, LC-1A and LC-1B. The complex opened on 26 September 2016; the first Electron attempt on 25 May 2017 (UTC) reached space but not orbit, and the first successful orbital launch followed on 21 January 2018. Facts from Wikipedia and the Rocket Lab Electron Payload User Guide; coordinates are LC-1A from Wikipedia, consistent with the guide's 39.262 S, 177.865 E.",
+  "links": [
+    {
+      "l": "Launch safety, Launch Complex 1 — Rocket Lab",
+      "u": "https://rocketlabcorp.com/launch/launch-safety/",
+      "t": "intro"
+    },
+    {
+      "l": "Rocket Lab Launch Complex 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Rocket_Lab_Launch_Complex_1",
+      "t": "core"
+    },
+    {
+      "l": "Electron Payload User Guide (Launch Complex 1 chapter) — Rocket Lab",
+      "u": "https://rocketlabcorp.com/assets/Rocket-Lab-Electron-Payload-User-Guide-8.0.pdf",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

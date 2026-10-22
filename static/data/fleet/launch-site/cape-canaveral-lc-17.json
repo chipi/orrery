@@ -1,0 +1,42 @@
+{
+  "id": "cape-canaveral-lc-17",
+  "name": "Cape Canaveral Launch Complex 17 (LC-17)",
+  "category": "launch-site",
+  "agency": "USAF / NASA",
+  "country": "USA",
+  "manufacturer": "USAF / NASA",
+  "first_flight": "1958-08-17",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "lat": 28.4467,
+  "lon": -80.5661,
+  "best_known_for": "Thor and Delta pad pair: Spirit, Opportunity, Pathfinder, MESSENGER, Dawn; demolished in 2018",
+  "credit": "Cape Canaveral Launch Complex 17 (later SLC-17) was a pair of pads, 17A and 17B, built in 1956 by the US Air Force for the Thor missile; NASA's Kennedy history page dates the first Thor launches to 25 January 1957 from 17B and 30 August 1957 from 17A. Its first orbital-class attempt was Pioneer 0, a Thor-Able lunar probe lost 73.6 seconds after liftoff from 17A on 17 August 1958. The Air Force handed Pad 17A to NASA in 1965 and took it back in 1988 for Delta II; Wikipedia counts 321 launches from the two pads, the last from 17B being GRAIL on 10 September 2011, and both towers were demolished on 12 July 2018. Sources: NASA KSC 'About Launch Complex 17' (archived), Wikipedia (SLC-17, Pioneer 0, mission articles), Spaceflight Now; coordinates from Wikipedia and Wikidata.",
+  "links": [
+    {
+      "l": "About Launch Complex 17 — NASA Kennedy Space Center (archived)",
+      "u": "https://web.archive.org/web/20090320131245/http://www.ksc.nasa.gov/elvnew/messenger/lc17.htm",
+      "t": "intro"
+    },
+    {
+      "l": "Cape Canaveral Space Launch Complex 17 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Launch_Complex_17",
+      "t": "core"
+    },
+    {
+      "l": "Launch Complex 17 demolition — Spaceflight Now",
+      "u": "https://spaceflightnow.com/2018/07/12/launch-complex-17-demolition/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "near-shoemaker",
+    "mars-pathfinder",
+    "spirit",
+    "opportunity",
+    "messenger",
+    "phoenix",
+    "dawn"
+  ]
+}

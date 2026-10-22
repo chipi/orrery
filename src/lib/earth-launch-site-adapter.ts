@@ -53,6 +53,15 @@ const AGENCY_MAP: Record<string, SurfaceAgency> = {
   // matters for the panel attribution badge.
   'USSF / SpaceX': 'SpaceX',
   USSF: 'NASA', // fallback if a pad entry uses bare USSF (no SpaceX op)
+  'Rocket Lab': 'Rocket Lab',
+  KARI: 'KARI',
+  NADA: 'NADA',
+  ISA: 'ISA',
+  IAF: 'IAF',
+  WRE: 'WRE',
+  CNES: 'CNES',
+  ASI: 'ASI',
+  AEB: 'AEB',
 };
 
 /**
@@ -68,6 +77,16 @@ function mapNation(country: string, year: number): SurfaceNation {
   if (country === 'India') return 'India';
   if (country === 'Japan') return 'Japan';
   if (country === 'French Guiana') return 'Europe';
+  // Pads abroad attribute to the nation that flew from them: France's
+  // Hammaguir range in Algeria, Italy's San Marco platform off Kenya.
+  if (country === 'Algeria' || country === 'Kenya') return 'Europe';
+  if (country === 'Israel') return 'Israel';
+  if (country === 'New Zealand') return 'New Zealand';
+  if (country === 'South Korea') return 'South Korea';
+  if (country === 'North Korea') return 'North Korea';
+  if (country === 'Iran') return 'Iran';
+  if (country === 'Australia') return 'Australia';
+  if (country === 'Brazil') return 'Brazil';
   // Russia / Kazakhstan / Soviet-era — split by year.
   if (country === 'Russia' || country === 'Kazakhstan') {
     return year < 1992 ? 'USSR' : 'Russia';

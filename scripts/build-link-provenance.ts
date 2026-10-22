@@ -520,6 +520,71 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
     match: /(^|\.)spaceflightnow\.com$/i,
     rule: { source_id: 'spaceflightnow', defaultKind: 'community', defaultLanguage: 'en' },
   },
+  // Launch-site sources (#617 follow-up: launch pads beyond the big programmes).
+  {
+    match: /(^|\.)spacenews\.com$/i,
+    rule: { source_id: 'spacenews', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)nasaspaceflight\.com$/i,
+    rule: { source_id: 'nasaspaceflight', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)spacepolicyonline\.com$/i,
+    rule: { source_id: 'spacepolicyonline', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)kari\.re\.kr$/i,
+    rule: { source_id: 'kari', defaultKind: 'agency-official', defaultLanguage: 'ko' },
+  },
+  {
+    match: /(^|\.)space\.gov\.il$/i,
+    rule: {
+      source_id: 'israel-space-agency',
+      defaultKind: 'agency-official',
+      defaultLanguage: 'en',
+    },
+  },
+  {
+    match: /(^|\.)asi\.it$/i,
+    rule: { source_id: 'asi', defaultKind: 'agency-official', defaultLanguage: 'it' },
+  },
+  {
+    match: /^(www\.)?gov\.br$/i,
+    rule: { source_id: 'aeb', defaultKind: 'agency-official', defaultLanguage: 'pt' },
+  },
+  {
+    match: /(^|\.)vostokdrom\.ru$/i,
+    rule: { source_id: 'roscosmos', defaultKind: 'agency-official', defaultLanguage: 'ru' },
+  },
+  {
+    match: /(^|\.)rocketlabcorp\.com$/i,
+    rule: { source_id: 'rocket-lab', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)ilslaunch\.com$/i,
+    rule: { source_id: 'ils', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)vaspace\.org$/i,
+    rule: { source_id: 'virginia-space', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /^beyondparallel\.csis\.org$/i,
+    rule: { source_id: 'csis', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)iiss\.org$/i,
+    rule: { source_id: 'iiss', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)globalsecurity\.org$/i,
+    rule: { source_id: 'globalsecurity', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)engineersaustralia\.org\.au$/i,
+    rule: { source_id: 'engineers-australia', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
   {
     match: /(^|\.)buran-energia\.com$/i,
     rule: { source_id: 'buran-energia', defaultKind: 'encyclopedic', defaultLanguage: 'en' },

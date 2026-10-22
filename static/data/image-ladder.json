@@ -13758,6 +13758,7 @@
   ],
   "/images/missions/vega-2/03": [
     320,
+    640,
     960
   ],
   "/images/fleet-galleries/aces/02": [
@@ -14852,6 +14853,7 @@
   ],
   "/images/missions/shenzhou-3/01": [
     320,
+    640,
     1280
   ],
   "/images/missions/shenzhou-3/02": [
@@ -15434,6 +15436,7 @@
   ],
   "/images/fleet-galleries/atlas-slv-3d/04": [
     320,
+    640,
     1280,
     1920
   ],
@@ -15464,6 +15467,7 @@
   ],
   "/images/fleet-galleries/beresheet/04": [
     320,
+    640,
     1280,
     1920
   ],
@@ -15807,5 +15811,326 @@
     1280,
     2048,
     3072
+  ],
+  "/images/fleet-galleries/alcantara/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/alcantara/02": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/alcantara/03": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/alcantara/04": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/baikonur-81/01": [
+    320,
+    640,
+    879,
+    1407,
+    2110
+  ],
+  "/images/fleet-galleries/baikonur-81/02": [
+    840,
+    1344,
+    2000
+  ],
+  "/images/fleet-galleries/baikonur-81/03": [
+    1280,
+    1920
+  ],
+  "/images/fleet-galleries/cape-canaveral-lc-17/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3008
+  ],
+  "/images/fleet-galleries/cape-canaveral-lc-17/02": [
+    1280,
+    2048,
+    3000
+  ],
+  "/images/fleet-galleries/cape-canaveral-lc-17/03": [
+    1280,
+    2048,
+    3000
+  ],
+  "/images/fleet-galleries/cape-canaveral-lc-17/04": [
+    1280,
+    2048,
+    2700
+  ],
+  "/images/fleet-galleries/cape-canaveral-lc-17/05": [
+    1280,
+    1812
+  ],
+  "/images/fleet-galleries/hammaguir/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/hammaguir/02": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-els/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-els/02": [
+    853,
+    1366,
+    2048
+  ],
+  "/images/fleet-galleries/kourou-els/03": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-els/04": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-els/05": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-zlv/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-zlv/02": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-zlv/03": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-zlv/04": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-zlv/05": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/naro-space-center/01": [
+    320,
+    640,
+    1280,
+    1544
+  ],
+  "/images/fleet-galleries/naro-space-center/02": [
+    1280,
+    1540
+  ],
+  "/images/fleet-galleries/naro-space-center/03": [
+    1280,
+    1322
+  ],
+  "/images/fleet-galleries/palmachim/01": [
+    320,
+    600
+  ],
+  "/images/fleet-galleries/rocket-lab-lc-1/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/rocket-lab-lc-1/02": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/rocket-lab-lc-1/03": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/rocket-lab-lc-1/04": [
+    1280,
+    2048,
+    2193
+  ],
+  "/images/fleet-galleries/rocket-lab-lc-1/05": [
+    1280,
+    1920
+  ],
+  "/images/fleet-galleries/san-marco/01": [
+    320,
+    640,
+    1280,
+    2048,
+    2370
+  ],
+  "/images/fleet-galleries/san-marco/02": [
+    968
+  ],
+  "/images/fleet-galleries/san-marco/03": [
+    854,
+    1366,
+    1564
+  ],
+  "/images/fleet-galleries/san-marco/04": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/san-marco/05": [
+    960,
+    1536,
+    2304
+  ],
+  "/images/fleet-galleries/semnan-imam-khomeini/01": [
+    320,
+    640,
+    800
+  ],
+  "/images/fleet-galleries/semnan-imam-khomeini/02": [
+    800
+  ],
+  "/images/fleet-galleries/semnan-imam-khomeini/03": [
+    800
+  ],
+  "/images/fleet-galleries/semnan-imam-khomeini/04": [
+    1050
+  ],
+  "/images/fleet-galleries/semnan-imam-khomeini/05": [
+    1200
+  ],
+  "/images/fleet-galleries/sohae/01": [
+    320,
+    640
+  ],
+  "/images/fleet-galleries/uchinoura/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/uchinoura/02": [
+    960,
+    1535,
+    1638
+  ],
+  "/images/fleet-galleries/uchinoura/03": [
+    700
+  ],
+  "/images/fleet-galleries/uchinoura/04": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/uchinoura/05": [
+    1280,
+    1684
+  ],
+  "/images/fleet-galleries/vostochny-1s/01": [
+    320,
+    640,
+    1280,
+    1880
+  ],
+  "/images/fleet-galleries/vostochny-1s/02": [
+    1280,
+    1880
+  ],
+  "/images/fleet-galleries/vostochny-1s/03": [
+    1280,
+    1563
+  ],
+  "/images/fleet-galleries/vostochny-1s/04": [
+    1280,
+    1880
+  ],
+  "/images/fleet-galleries/vostochny-1s/05": [
+    1280,
+    1880
+  ],
+  "/images/fleet-galleries/wallops-lc-0/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/wallops-lc-0/02": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/wallops-lc-0/03": [
+    1280,
+    2048,
+    2400
+  ],
+  "/images/fleet-galleries/wallops-lc-0/04": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/wallops-lc-0/05": [
+    1280,
+    2048,
+    2469
+  ],
+  "/images/fleet-galleries/wenchang-lc-201/01": [
+    320,
+    640,
+    1280,
+    2048,
+    2560
+  ],
+  "/images/fleet-galleries/wenchang-lc-201/02": [
+    1280,
+    2048,
+    2560
+  ],
+  "/images/fleet-galleries/wenchang-lc-201/03": [
+    1280,
+    1557
+  ],
+  "/images/fleet-galleries/wenchang-lc-201/04": [
+    1280,
+    2048,
+    2560
+  ],
+  "/images/fleet-galleries/woomera/01": [
+    320,
+    640,
+    960,
+    1536,
+    2304
   ]
 }

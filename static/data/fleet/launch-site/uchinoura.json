@@ -1,0 +1,36 @@
+{
+  "id": "uchinoura",
+  "name": "Uchinoura Space Center",
+  "category": "launch-site",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "JAXA / ISAS",
+  "first_flight": "1966-09-26",
+  "status": "ACTIVE",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "lat": 31.2523,
+  "lon": 131.0785,
+  "best_known_for": "Japan's first satellite Ohsumi (1970), the M-V rockets, Hayabusa and Epsilon",
+  "credit": "Launch site of Japan's scientific satellites, on the Pacific coast of Kagoshima Prefecture; it was the Kagoshima Space Center until JAXA formed in 2003. The first orbital attempt, a Lambda 4S on 26 September 1966, failed; Ohsumi reached orbit on 11 February 1970. Facts from Wikipedia (Uchinoura Space Center, Lambda, Ohsumi, M-V, Epsilon), the ISAS Ohsumi page and the JAXA site page; coordinates are the Lambda pad on Wikipedia.",
+  "links": [
+    {
+      "l": "Uchinoura Space Center — JAXA",
+      "u": "https://global.jaxa.jp/about/centers/usc/",
+      "t": "intro"
+    },
+    {
+      "l": "Uchinoura Space Center — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Uchinoura_Space_Center",
+      "t": "core"
+    },
+    {
+      "l": "OHSUMI — ISAS",
+      "u": "https://www.isas.jaxa.jp/en/missions/spacecraft/past/ohsumi.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "hayabusa1"
+  ]
+}

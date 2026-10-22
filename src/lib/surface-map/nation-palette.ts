@@ -20,6 +20,13 @@ export const NATION_COLORS: Record<string, string> = {
   Japan: '#003087',
   UAE: '#00732F',
   Israel: '#0038B8',
+  // /earth launch sites beyond the big programmes.
+  'New Zealand': '#00A6A6',
+  'South Korea': '#5B8DEF',
+  'North Korea': '#9B59B6',
+  Iran: '#6BBF59',
+  Australia: '#E0B400',
+  Brazil: '#C2185B',
 };
 
 /** Collapse USSR + Russia to a single legend key (the lineage reads
@@ -43,6 +50,16 @@ export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
 } {
   const nation = site.nation ?? '';
   const agency = site.agency ?? '';
+  // Agency-first for pads run by a national agency abroad or by a company.
+  if (agency === 'CNES') return { label: 'France · CNES', color: '#1d4ed8' };
+  if (agency === 'ASI') return { label: 'Italy · ASI', color: '#1d4ed8' };
+  if (agency === 'Rocket Lab') return { label: 'New Zealand · Rocket Lab', color: '#00A6A6' };
+  if (agency === 'KARI') return { label: 'South Korea · KARI', color: '#5B8DEF' };
+  if (agency === 'NADA') return { label: 'North Korea · NADA', color: '#9B59B6' };
+  if (agency === 'ISA') return { label: 'Iran · ISA', color: '#6BBF59' };
+  if (agency === 'IAF') return { label: 'Israel · IAF', color: '#1d4ed8' };
+  if (agency === 'WRE') return { label: 'Australia · WRE', color: '#E0B400' };
+  if (agency === 'AEB') return { label: 'Brazil · AEB', color: '#C2185B' };
   if (nation === 'USA' || agency === 'NASA') return { label: 'USA · NASA', color: '#3b82f6' };
   if (nation === 'USSR' || nation === 'Russia' || agency === 'ROSCOSMOS')
     return { label: 'USSR · Roscosmos', color: '#ef4444' };

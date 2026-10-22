@@ -24,9 +24,33 @@ export type SurfaceAgency =
   | 'SpaceIL'
   | 'ESA-UK'
   | 'SpaceX'
-  | 'Arianespace';
+  | 'Arianespace'
+  | 'Rocket Lab'
+  | 'KARI'
+  | 'NADA'
+  | 'ISA'
+  | 'IAF'
+  | 'WRE'
+  | 'CNES'
+  | 'ASI'
+  | 'AEB';
 export type SurfaceNation =
-  'USA' | 'USSR' | 'Russia' | 'China' | 'India' | 'Japan' | 'Europe' | 'UAE' | 'Israel' | 'UK';
+  | 'USA'
+  | 'USSR'
+  | 'Russia'
+  | 'China'
+  | 'India'
+  | 'Japan'
+  | 'Europe'
+  | 'UAE'
+  | 'Israel'
+  | 'UK'
+  | 'New Zealand'
+  | 'South Korea'
+  | 'North Korea'
+  | 'Iran'
+  | 'Australia'
+  | 'Brazil';
 export type SurfaceStatus = 'completed' | 'ongoing' | 'planned';
 export type SiteKind = 'surface' | 'orbiter';
 export type SiteStatus = 'FLOWN' | 'PLANNED' | 'ACTIVE' | 'ENDED' | 'CRASHED' | 'LOST';

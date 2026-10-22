@@ -1,0 +1,34 @@
+{
+  "id": "palmachim",
+  "name": "Palmachim Airbase",
+  "category": "launch-site",
+  "agency": "IAF",
+  "country": "Israel",
+  "manufacturer": "Israeli Air Force / Israel Aerospace Industries (Shavit)",
+  "first_flight": "1988-09-19",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "lat": 31.8844,
+  "lon": 34.6803,
+  "best_known_for": "Israel's launch site: Shavit rockets put Ofeq satellites in retrograde orbit since 1988",
+  "credit": "Israeli Air Force base on the Mediterranean coast south of Tel Aviv, used jointly by the IAF and the Israel Space Agency as Israel's spaceport. Ofeq-1 on a Shavit rocket, launched on 19 September 1988, made Israel the eighth country with its own orbital launch capability. Facts from Wikipedia (Palmachim Airbase, Shavit, Ofeq) and GlobalSecurity; coordinates are Wikipedia's airbase point, not the launch pad itself.",
+  "links": [
+    {
+      "l": "Israel Space Agency (Hebrew home page)",
+      "u": "https://www.space.gov.il/en",
+      "t": "intro"
+    },
+    {
+      "l": "Palmachim Airbase — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Palmachim_Airbase",
+      "t": "core"
+    },
+    {
+      "l": "Palmachim — GlobalSecurity.org",
+      "u": "https://www.globalsecurity.org/military/world/israel/palmachim.htm",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

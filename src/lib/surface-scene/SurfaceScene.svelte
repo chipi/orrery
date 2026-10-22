@@ -597,6 +597,7 @@
   // Kaguya crop in. Keep KAGUYA_DETAIL_MOON_SITES in sync with that script's
   // failover set. Drives the on-canvas "Detail view" credit honestly.
   const KAGUYA_DETAIL_MOON_SITES = new Set(['luna9']);
+  const GSI_DETAIL_EARTH_PADS = new Set(['tanegashima-yoshinobu', 'uchinoura']);
   /** Sphere's current km/px at the deepest-zoom HiRISE distance.
    *  Computed each animate frame and passed into SurfaceFlatPatch as
    *  the entry zoom so the photo content stays at the *same pixel
@@ -5248,10 +5249,13 @@
           // tie surfaced the wrong card text on the wrong patch
           // (image 21 feedback: card said "Viking 2 lander" while
           // the highlighted rectangle was Perseverance).
+          // A selected site wins even before its own promotion fade
+          // completes: otherwise, during the fly-in, a pad promoted on the
+          // way (Kourou ELA-2 on the way to Vandenberg) named the card.
           let bestH: { siteId: string } | null = null;
           if (selected) {
             const selectedH = hotspots.find((h) => h.siteId === selected!.id);
-            if (selectedH && selectedH.currentTier > 0) {
+            if (selectedH) {
               bestH = { siteId: selectedH.siteId };
             }
           }
@@ -5352,30 +5356,13 @@
                 // the patches actually come from MRO HiRISE / CTX. Dispatch
                 // by config.planet so each route reads honest credit.
                 if (config.planet === 'earth') {
-                  // Per-pad detail strategy (#546): IGN ortho for Kourou,
-                  // GSI seamlessphoto for Tanegashima, Sentinel-2 coarse
+                  // Per-pad detail strategy (#546, mirrors PAD_STRATEGY in
+                  // scripts/hotspots/fetch-earth-pads.ts): Sentinel-2 coarse
                   // fallback where ground_m says 2560 (no open sub-meter
-                  // source), USGS NAIP for the US pads (the 512 m rest).
-                  if (site.id.startsWith('kourou-')) {
-                    layers.push({
-                      layerLabel: 'Detail view',
-                      sourceTitle: 'IGN BD ORTHO aerial',
-                      sourceAuthor:
-                        'IGN (Institut national de l’information géographique et forestière)',
-                      resolutionText: '~0.5 m/px (512 m window)',
-                      sourceUrl: 'https://geoservices.ign.fr/bdortho',
-                      licenseShort: 'LO-2.0',
-                    });
-                  } else if (site.id.startsWith('tanegashima-')) {
-                    layers.push({
-                      layerLabel: 'Detail view',
-                      sourceTitle: 'GSI seamlessphoto aerial',
-                      sourceAuthor: 'Geospatial Information Authority of Japan',
-                      resolutionText: '~0.5 m/px (512 m window)',
-                      sourceUrl: 'https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto',
-                      licenseShort: 'GSI-JP',
-                    });
-                  } else if ((site.hotspot_tier2_ground_m ?? 512) >= 2560) {
+                  // source — Kourou, Vandenberg and the non-US pads), GSI
+                  // seamlessphoto for the Japanese pads, USGS NAIP for the
+                  // remaining US pads (the 512 m rest).
+                  if ((site.hotspot_tier2_ground_m ?? 512) >= 2560) {
                     layers.push({
                       layerLabel: 'Detail view',
                       sourceTitle: 'Copernicus Sentinel-2 L2A (coarse fallback)',
@@ -5383,6 +5370,15 @@
                       resolutionText: '~10 m/px (2.56 km window — no open sub-meter source)',
                       sourceUrl: 'https://dataspace.copernicus.eu/',
                       licenseShort: 'COPERNICUS-S2',
+                    });
+                  } else if (GSI_DETAIL_EARTH_PADS.has(site.id)) {
+                    layers.push({
+                      layerLabel: 'Detail view',
+                      sourceTitle: 'GSI seamlessphoto aerial',
+                      sourceAuthor: 'Geospatial Information Authority of Japan',
+                      resolutionText: '~0.5 m/px (512 m window)',
+                      sourceUrl: 'https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto',
+                      licenseShort: 'GSI-JP',
                     });
                   } else {
                     layers.push({

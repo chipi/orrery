@@ -1,0 +1,34 @@
+{
+  "id": "alcantara",
+  "name": "Alcântara Space Center",
+  "category": "launch-site",
+  "agency": "AEB",
+  "country": "Brazil",
+  "manufacturer": "Brazilian Air Force (DCTA / Alcântara Launch Center)",
+  "first_flight": "1997-11-02",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "lat": -2.3177,
+  "lon": -44.3678,
+  "best_known_for": "Brazil's equatorial launch centre: VLS-1 failures, the 2003 pad explosion, sounding rockets",
+  "credit": "Facts from the Wikipedia articles on the Alcântara Space Center and VLS-1, including its launch list. The centre is a launch facility of the Brazilian Space Agency (AEB) and is operated by the Brazilian Air Force; it was named Alcântara Launch Center until 2021. Coordinates are the VLS pad on English Wikipedia.",
+  "links": [
+    {
+      "l": "Programa de Desenvolvimento Integrado para o Centro Espacial de Alcântara — AEB",
+      "u": "https://www.gov.br/aeb/pt-br/programa-espacial-brasileiro/politica-organizacoes-programa-e-projetos/programa-de-desenvolvimento-integrado-para-o-centro-espacial-de-alcantara-2013-pdi-cea",
+      "t": "intro"
+    },
+    {
+      "l": "Alcântara Space Center — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Alc%C3%A2ntara_Space_Center",
+      "t": "core"
+    },
+    {
+      "l": "Alcantara — Encyclopedia Astronautica",
+      "u": "https://www.astronautix.com/a/alcantara.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

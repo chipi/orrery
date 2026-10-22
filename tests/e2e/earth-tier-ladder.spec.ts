@@ -4,7 +4,7 @@ import { clickViaEvaluate } from './_helpers/click-via-evaluate';
 /**
  * /earth launch-pad tier ladder e2e (#546 phases 1-3).
  *
- * The moon/mars Surface Hotspots ladder now covers all 26 launch pads
+ * The moon/mars Surface Hotspots ladder now covers all 42 launch pads
  * (Tier-2 detail + regional imagery) with Tier-3 ground panoramas on 6
  * pads. The renderer machinery is the same SurfaceScene path the
  * moon/mars specs exercise — this file covers what is earth-specific:
@@ -23,7 +23,7 @@ import { clickViaEvaluate } from './_helpers/click-via-evaluate';
  * fails the asset loop.
  */
 
-// All 26 pads carry Tier-2 detail + regional (#546 phases 1-2).
+// All 42 pads carry Tier-2 detail + regional (#546 phases 1-2).
 const ALL_PAD_IDS = [
   'lc-39a',
   'lc-39b',
@@ -50,6 +50,23 @@ const ALL_PAD_IDS = [
   'wenchang-lc-101',
   'xichang-lc-2',
   'xichang-lc-3',
+  'cape-canaveral-lc-17',
+  'wallops-lc-0',
+  'kourou-els',
+  'kourou-zlv',
+  'baikonur-81',
+  'vostochny-1s',
+  'wenchang-lc-201',
+  'uchinoura',
+  'naro-space-center',
+  'sohae',
+  'semnan-imam-khomeini',
+  'palmachim',
+  'rocket-lab-lc-1',
+  'woomera',
+  'hammaguir',
+  'san-marco',
+  'alcantara',
 ];
 
 // The 6 pads with an open-licensed ground photo (#546 phase 3).
@@ -130,7 +147,7 @@ test.describe('/earth tier ladder — panel wiring', () => {
 test.describe('/earth tier ladder — no hotspot imagery at rest', () => {
   test('landing on /earth requests zero /images/hotspots/ assets', async ({ page }) => {
     // AGENTS.md §"Performance — 3D scene discipline": tier textures are
-    // multi-MB and build only on LOD promotion. 26 enrolled pads eagerly
+    // multi-MB and build only on LOD promotion. 42 enrolled pads eagerly
     // fetching 52 tiles at mount would flood network + GPU; this pins
     // the contract (was only ever verified by hand before #546 shipped).
     const hotspotRequests: string[] = [];

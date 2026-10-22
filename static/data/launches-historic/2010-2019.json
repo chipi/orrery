@@ -71,7 +71,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2010-02-03-soyuz-u-pvb-progress-7k-tgm-no-404": {
       "id": "2010-02-03-soyuz-u-pvb-progress-7k-tgm-no-404",
@@ -235,7 +236,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2010-03-04-delta-4m-4-2-goes-p": {
       "id": "2010-03-04-delta-4m-4-2-goes-p",
@@ -913,7 +915,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "naro-space-center",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1348,7 +1350,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2010-09-04-chang-zheng-zhongxing-liu-a-weixing": {
       "id": "2010-09-04-chang-zheng-zhongxing-liu-a-weixing",
@@ -1740,7 +1743,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2010-10-19-soyuz-2-1a-globalstar-2-3": {
       "id": "2010-10-19-soyuz-2-1a-globalstar-2-3",
@@ -2165,7 +2169,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2010-12-08-falcon-9-dragon-c101": {
       "id": "2010-12-08-falcon-9-dragon-c101",
@@ -3212,7 +3217,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "semnan-imam-khomeini"
     },
     "2011-06-20-chang-zheng-zhongxing-shi-hao-weixin": {
       "id": "2011-06-20-chang-zheng-zhongxing-shi-hao-weixin",
@@ -3343,7 +3349,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2011-07-06-chang-zheng-shijian-shi-yihao-03-xin": {
       "id": "2011-07-06-chang-zheng-shijian-shi-yihao-03-xin",
@@ -3963,7 +3970,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "2011-09-18-chang-zheng-fenghuo-2": {
       "id": "2011-09-18-chang-zheng-fenghuo-2",
@@ -4028,7 +4036,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2011-09-21-ariane-5eca-ses-2": {
       "id": "2011-09-21-ariane-5eca-ses-2",
@@ -4419,7 +4428,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2011-10-28-delta-7920-10c-npoess-prep-project": {
       "id": "2011-10-28-delta-7920-10c-npoess-prep-project",
@@ -4548,7 +4558,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2011-11-08-zenit-2sb-pereletniy-modul-fg": {
       "id": "2011-11-08-zenit-2sb-pereletniy-modul-fg",
@@ -4875,7 +4886,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2011-12-12-h-iia-202-igs-radar-3": {
       "id": "2011-12-12-h-iia-202-igs-radar-3",
@@ -4940,7 +4952,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2011-12-19-chang-zheng-nigcomsat-1r": {
       "id": "2011-12-19-chang-zheng-nigcomsat-1r",
@@ -5268,7 +5281,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2012-02-14-proton-m-briz-m-ses-4": {
       "id": "2012-02-14-proton-m-briz-m-ses-4",
@@ -5465,7 +5479,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2012-03-31-chang-zheng-apstar7": {
       "id": "2012-03-31-chang-zheng-apstar7",
@@ -5552,7 +5567,7 @@
       "image_credit": "Details uncertain",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "sohae",
       "tier": "T1",
       "tier_reason": "first-flight-vehicle",
       "editorial_note": null,
@@ -5957,7 +5972,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2012-05-22-falcon-9-dragon-c102": {
       "id": "2012-05-22-falcon-9-dragon-c102",
@@ -6282,7 +6298,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2012-07-15-soyuz-fg-soyuz-11f732a47-no-706": {
       "id": "2012-07-15-soyuz-fg-soyuz-11f732a47-no-706",
@@ -6544,7 +6561,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2012-08-19-zenit-3sl-intelsat-is-21": {
       "id": "2012-08-19-zenit-3sl-intelsat-is-21",
@@ -6902,7 +6920,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2012-10-14-chang-zheng-shi-jian-liuhao-a-weixin": {
       "id": "2012-10-14-chang-zheng-shi-jian-liuhao-a-weixin",
@@ -6967,7 +6986,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2012-10-23-soyuz-fg-soyuz-11f732a47-no-707": {
       "id": "2012-10-23-soyuz-fg-soyuz-11f732a47-no-707",
@@ -7098,7 +7118,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2012-11-10-ariane-5eca-star-one-c3": {
       "id": "2012-11-10-ariane-5eca-star-one-c3",
@@ -7327,7 +7348,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2012-12-03-zenit-3sl-eutelsat-70b": {
       "id": "2012-12-03-zenit-3sl-eutelsat-70b",
@@ -7447,7 +7469,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "sohae",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -7644,7 +7666,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "naro-space-center",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -8114,7 +8136,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2013-04-24-soyuz-u-pvb-progress-7k-tgm-no-419": {
       "id": "2013-04-24-soyuz-u-pvb-progress-7k-tgm-no-419",
@@ -8277,7 +8300,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2013-05-14-proton-m-briz-m-eutelsat-3d": {
       "id": "2013-05-14-proton-m-briz-m-eutelsat-3d",
@@ -8604,7 +8628,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2013-06-27-strela-kondor-no-202": {
       "id": "2013-06-27-strela-kondor-no-202",
@@ -8733,7 +8758,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2013-07-15-chang-zheng-sj11-05": {
       "id": "2013-07-15-chang-zheng-sj11-05",
@@ -9154,7 +9180,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2013-09-11-rokot-gonets-m-no-14-16-17": {
       "id": "2013-09-11-rokot-gonets-m-no-14-16-17",
@@ -9219,7 +9246,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "2013-09-18-atlas-v-aehf-3": {
       "id": "2013-09-18-atlas-v-aehf-3",
@@ -9284,7 +9312,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2013-09-23-chang-zheng-san-ke-fengyun-san-hao": {
       "id": "2013-09-23-chang-zheng-san-ke-fengyun-san-hao",
@@ -9644,7 +9673,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2013-11-18-atlas-v-maven": {
       "id": "2013-11-18-atlas-v-maven",
@@ -9709,7 +9739,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2013-11-20-chang-zheng-yaogan-weixing-19": {
       "id": "2013-11-20-chang-zheng-yaogan-weixing-19",
@@ -10068,7 +10099,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2013-12-20-chang-zheng-tksat-1": {
       "id": "2013-12-20-chang-zheng-tksat-1",
@@ -10166,7 +10198,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2013-12-28-soyuz-2-1v-aist-1": {
       "id": "2013-12-28-soyuz-2-1v-aist-1",
@@ -10297,7 +10330,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2014-01-24-atlas-v-tdrs-l": {
       "id": "2014-01-24-atlas-v-tdrs-l",
@@ -10428,7 +10462,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2014-02-21-delta-4m-4-2-gps-svn-64": {
       "id": "2014-02-21-delta-4m-4-2-gps-svn-64",
@@ -10525,7 +10560,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2014-03-22-ariane-5eca-astra-5b-amazonas-4a": {
       "id": "2014-03-22-ariane-5eca-astra-5b-amazonas-4a",
@@ -10720,7 +10756,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2014-04-04-pslv-xl-irnss-1b": {
       "id": "2014-04-04-pslv-xl-irnss-1b",
@@ -10917,7 +10954,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2014-04-30-vega-kazeosat-1": {
       "id": "2014-04-30-vega-kazeosat-1",
@@ -10949,7 +10987,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2014-05-06-soyuz-2-1a-kobal-t-m-no-564": {
       "id": "2014-05-06-soyuz-2-1a-kobal-t-m-no-564",
@@ -11439,7 +11478,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2014-07-13-antares-120-cygnus-orb-2": {
       "id": "2014-07-13-antares-120-cygnus-orb-2",
@@ -11471,7 +11511,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2014-07-14-falcon-9-orbcomm-og2": {
       "id": "2014-07-14-falcon-9-orbcomm-og2",
@@ -11830,7 +11871,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2014-09-04-chang-zheng-cx-1-04-lq": {
       "id": "2014-09-04-chang-zheng-cx-1-04-lq",
@@ -12092,7 +12134,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2014-09-28-chang-zheng-sj-11-07": {
       "id": "2014-09-28-chang-zheng-sj-11-07",
@@ -12288,7 +12331,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2014-10-23-chang-zheng-ce5-t1": {
       "id": "2014-10-23-chang-zheng-ce5-t1",
@@ -12385,7 +12429,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2014-10-29-soyuz-2-1a-progress-7k-tgm-no-424": {
       "id": "2014-10-29-soyuz-2-1a-progress-7k-tgm-no-424",
@@ -12906,7 +12951,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2014-12-18-soyuz-st-b-o3b-sv9-sv10-sv11-sv12": {
       "id": "2014-12-18-soyuz-st-b-o3b-sv9-sv10-sv11-sv12",
@@ -12938,7 +12984,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2014-12-19-strela-kondor-e-no-2": {
       "id": "2014-12-19-strela-kondor-e-no-2",
@@ -13364,7 +13411,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "semnan-imam-khomeini"
     },
     "2015-02-11-vega-ixv": {
       "id": "2015-02-11-vega-ixv",
@@ -13396,7 +13444,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2015-02-11-falcon-9-dscovr": {
       "id": "2015-02-11-falcon-9-dscovr",
@@ -13756,7 +13805,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2015-03-28-pslv-xl-irnss-1d": {
       "id": "2015-03-28-pslv-xl-irnss-1d",
@@ -14151,7 +14201,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2015-06-23-soyuz-2-1b-persona-no-3": {
       "id": "2015-06-23-soyuz-2-1b-persona-no-3",
@@ -14742,7 +14793,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2015-09-12-chang-zheng-tjs-1": {
       "id": "2015-09-12-chang-zheng-tjs-1",
@@ -14839,7 +14891,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2015-09-19-chang-zheng-unknown-mission": {
       "id": "2015-09-19-chang-zheng-unknown-mission",
@@ -15591,7 +15644,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2015-12-05-soyuz-2-1v-kanopus-st-kyua-1": {
       "id": "2015-12-05-soyuz-2-1v-kanopus-st-kyua-1",
@@ -15754,7 +15808,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2015-12-15-soyuz-fg-soyuz-11f732a47-no-719": {
       "id": "2015-12-15-soyuz-fg-soyuz-11f732a47-no-719",
@@ -15884,7 +15939,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2015-12-21-soyuz-2-1a-progress-7k-tgm-no-431": {
       "id": "2015-12-21-soyuz-2-1a-progress-7k-tgm-no-431",
@@ -16302,7 +16358,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "sohae",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -16838,7 +16894,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2016-04-28-soyuz-2-1a-lomonosov-aist-2d": {
       "id": "2016-04-28-soyuz-2-1a-lomonosov-aist-2d",
@@ -16860,7 +16917,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "vostochny-1s",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -17001,7 +17058,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2016-05-27-falcon-9-thaicom-8": {
       "id": "2016-05-27-falcon-9-thaicom-8",
@@ -17165,7 +17223,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2016-06-11-delta-4h-orion-9": {
       "id": "2016-06-11-delta-4h-orion-9",
@@ -17394,7 +17453,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wenchang-lc-201"
     },
     "2016-06-29-chang-zheng-sj-16-02": {
       "id": "2016-06-29-chang-zheng-sj-16-02",
@@ -17918,7 +17978,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "palmachim"
     },
     "2016-09-15-chang-zheng-tiangong-2": {
       "id": "2016-09-15-chang-zheng-tiangong-2",
@@ -17982,7 +18043,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2016-09-26-pslv-pslv-rideshare-08": {
       "id": "2016-09-26-pslv-pslv-rideshare-08",
@@ -18112,7 +18174,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2016-10-19-soyuz-fg-soyuz-11f732a48-no-732": {
       "id": "2016-10-19-soyuz-fg-soyuz-11f732a48-no-732",
@@ -18504,7 +18567,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2016-12-07-pslv-xl-resourcesat-2a": {
       "id": "2016-12-07-pslv-xl-resourcesat-2a",
@@ -18731,7 +18795,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "2016-12-21-chang-zheng-tansat": {
       "id": "2016-12-21-chang-zheng-tansat",
@@ -18959,7 +19024,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "2017-01-21-atlas-v-sbirs-geo-3": {
       "id": "2017-01-21-atlas-v-sbirs-geo-3",
@@ -19057,7 +19123,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2017-02-14-ariane-5eca-skybrasil-1-telkom-3s": {
       "id": "2017-02-14-ariane-5eca-skybrasil-1-telkom-3s",
@@ -19285,7 +19352,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2017-03-16-falcon-9-echostar-23": {
       "id": "2017-03-16-falcon-9-echostar-23",
@@ -19550,7 +19618,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wenchang-lc-201"
     },
     "2017-05-01-falcon-9-nrol-76": {
       "id": "2017-05-01-falcon-9-nrol-76",
@@ -19714,7 +19783,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2017-05-25-electron-unknown-mission": {
       "id": "2017-05-25-electron-unknown-mission",
@@ -19746,7 +19816,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2017-05-25-soyuz-2-1b-eks-no-2l": {
       "id": "2017-05-25-soyuz-2-1b-eks-no-2l",
@@ -19943,7 +20014,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2017-06-14-soyuz-2-1a-progress-7k-tgm-no-436": {
       "id": "2017-06-14-soyuz-2-1a-progress-7k-tgm-no-436",
@@ -20370,7 +20442,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2017-08-14-falcon-9-dragon-c113": {
       "id": "2017-08-14-falcon-9-dragon-c113",
@@ -20435,7 +20508,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2017-08-18-atlas-v-tdrs-m": {
       "id": "2017-08-18-atlas-v-tdrs-m",
@@ -21222,7 +21296,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2017-11-12-antares-230-cygnus-oa-8": {
       "id": "2017-11-12-antares-230-cygnus-oa-8",
@@ -21254,7 +21329,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2017-11-14-chang-zheng-fengyun-3-04": {
       "id": "2017-11-14-chang-zheng-fengyun-3-04",
@@ -21406,7 +21482,7 @@
       "image_credit": "Software error, aimed down",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "vostochny-1s",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -22005,7 +22081,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "2018-01-19-chang-zheng-jilin-1-shipin-07-08": {
       "id": "2018-01-19-chang-zheng-jilin-1-shipin-07-08",
@@ -22102,7 +22179,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2018-01-25-chang-zheng-yg-30-04": {
       "id": "2018-01-25-chang-zheng-yg-30-04",
@@ -22223,7 +22301,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "vostochny-1s",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -22298,7 +22376,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "2018-02-06-falcon-heavy-tesla-roadster": {
       "id": "2018-02-06-falcon-heavy-tesla-roadster",
@@ -22561,7 +22640,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2018-03-17-chang-zheng-lkw-4": {
       "id": "2018-03-17-chang-zheng-lkw-4",
@@ -22987,7 +23067,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2018-04-18-falcon-9-tess": {
       "id": "2018-04-18-falcon-9-tess",
@@ -23281,7 +23362,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2018-05-22-falcon-9-iridium-6-grace-fo": {
       "id": "2018-05-22-falcon-9-iridium-6-grace-fo",
@@ -23937,7 +24019,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2018-08-24-chang-zheng-beidou-3": {
       "id": "2018-08-24-chang-zheng-beidou-3",
@@ -24689,7 +24772,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2018-11-11-electron-electron-03-rideshare": {
       "id": "2018-11-11-electron-electron-03-rideshare",
@@ -24721,7 +24805,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2018-11-14-gslv-gsat-29": {
       "id": "2018-11-14-gslv-gsat-29",
@@ -24855,7 +24940,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2018-11-18-chang-zheng-beidou-3": {
       "id": "2018-11-18-chang-zheng-beidou-3",
@@ -24952,7 +25038,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2018-11-29-pslv-pslv-rideshare-13": {
       "id": "2018-11-29-pslv-pslv-rideshare-13",
@@ -25247,7 +25334,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2018-12-19-gslv-gsat-7a": {
       "id": "2018-12-19-gslv-gsat-7a",
@@ -25312,7 +25400,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2018-12-21-proton-m-briz-m-blagovest-13l": {
       "id": "2018-12-21-proton-m-briz-m-blagovest-13l",
@@ -25344,7 +25433,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2018-12-21-chang-zheng-hongyun-gjyw": {
       "id": "2018-12-21-chang-zheng-hongyun-gjyw",
@@ -25464,7 +25554,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "vostochny-1s",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -25605,7 +25695,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "semnan-imam-khomeini"
     },
     "2019-01-18-epsilon-unknown-mission": {
       "id": "2019-01-18-epsilon-unknown-mission",
@@ -25637,7 +25728,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "2019-01-19-delta-4h-improved-crystal": {
       "id": "2019-01-19-delta-4h-improved-crystal",
@@ -25766,7 +25858,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "semnan-imam-khomeini"
     },
     "2019-02-05-ariane-5eca-sgs-1-gsat-31": {
       "id": "2019-02-05-ariane-5eca-sgs-1-gsat-31",
@@ -25897,7 +25990,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2019-03-02-falcon-9-dragon-c204": {
       "id": "2019-03-02-falcon-9-dragon-c204",
@@ -26063,7 +26157,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2019-03-27-os-m1-unknown-mission": {
       "id": "2019-03-27-os-m1-unknown-mission",
@@ -26127,7 +26222,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2019-03-31-chang-zheng-tianlian-2": {
       "id": "2019-03-31-chang-zheng-tianlian-2",
@@ -26258,7 +26354,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2019-04-11-falcon-heavy-arabsat-6a": {
       "id": "2019-04-11-falcon-heavy-arabsat-6a",
@@ -26326,7 +26423,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2019-04-20-chang-zheng-beidou-3-i1q": {
       "id": "2019-04-20-chang-zheng-beidou-3-i1q",
@@ -26457,7 +26555,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2019-05-17-chang-zheng-beidou-2-g8": {
       "id": "2019-05-17-chang-zheng-beidou-2-g8",
@@ -26851,7 +26950,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2019-07-05-soyuz-2-1b-soyuz-rideshare-8": {
       "id": "2019-07-05-soyuz-2-1b-soyuz-rideshare-8",
@@ -26873,7 +26973,7 @@
       "image_credit": "-",
       "orrery_launcher_ref": "soyuz-2",
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "vostochny-1s",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -26949,7 +27049,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2019-07-13-proton-m-dm-3-spektr-rg": {
       "id": "2019-07-13-proton-m-dm-3-spektr-rg",
@@ -26981,7 +27082,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2019-07-20-soyuz-fg-soyuz-11f732a48-no-746": {
       "id": "2019-07-20-soyuz-fg-soyuz-11f732a48-no-746",
@@ -27243,7 +27345,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2019-08-06-ariane-5eca-edrs-c-is-39": {
       "id": "2019-08-06-ariane-5eca-edrs-c-is-39",
@@ -27439,7 +27542,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2019-08-22-soyuz-2-1a-soyuz-11f732a48-no-743": {
       "id": "2019-08-22-soyuz-2-1a-soyuz-11f732a48-no-743",
@@ -27536,7 +27640,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "semnan-imam-khomeini"
     },
     "2019-08-30-rokot-musson-2-no-13": {
       "id": "2019-08-30-rokot-musson-2-no-13",
@@ -27960,7 +28065,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2019-10-17-chang-zheng-tjs-4": {
       "id": "2019-10-17-chang-zheng-tjs-4",
@@ -28028,7 +28134,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2019-11-03-chang-zheng-gaofen-7": {
       "id": "2019-11-03-chang-zheng-gaofen-7",
@@ -28453,7 +28560,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2019-12-06-soyuz-2-1a-progress-7k-tgm-no-443": {
       "id": "2019-12-06-soyuz-2-1a-progress-7k-tgm-no-443",
@@ -28714,7 +28822,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2019-12-20-chang-zheng-cbers-4a": {
       "id": "2019-12-20-chang-zheng-cbers-4a",
@@ -28815,7 +28924,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "2019-12-26-rokot-gonets-m-no-24-25-26": {
       "id": "2019-12-26-rokot-gonets-m-no-24-25-26",

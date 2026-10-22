@@ -254,7 +254,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "wenchang-lc-201"
     },
     "2026-07-30-falcon-9-nrol-95": {
       "id": "2026-07-30-falcon-9-nrol-95",
@@ -336,7 +337,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-07-31-electron-strix-launch-11": {
       "id": "2026-07-31-electron-strix-launch-11",
@@ -376,7 +378,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-07-31-electron-the-grain-goddess-provides-iqps-launch-7": {
       "id": "2026-07-31-electron-the-grain-goddess-provides-iqps-launch-7",
@@ -416,7 +419,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-07-31-mir-demo-flight": {
       "id": "2026-07-31-mir-demo-flight",
@@ -663,7 +667,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "wenchang-lc-201"
     },
     "2026-08-17-long-march-12-unknown-payload": {
       "id": "2026-08-17-long-march-12-unknown-payload",
@@ -745,7 +750,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "wenchang-lc-101"
     },
     "2026-08-27-ariane-62-mtg-i2": {
       "id": "2026-08-27-ariane-62-mtg-i2",
@@ -1079,7 +1085,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2026-09-30-falcon-9-crew-13": {
       "id": "2026-09-30-falcon-9-crew-13",
@@ -1195,7 +1202,7 @@
       "webcast_live": false,
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "naro-space-center",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -1788,7 +1795,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-10-31-falcon-9-transporter-18-dedicated-sso-rideshare": {
       "id": "2026-10-31-falcon-9-transporter-18-dedicated-sso-rideshare",
@@ -1999,7 +2007,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "alcantara"
     },
     "2026-11-30-firefly-alpha-block-2-connectedcosmos-launch-2": {
       "id": "2026-11-30-firefly-alpha-block-2-connectedcosmos-launch-2",
@@ -2080,7 +2089,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-falcon-9-blue-ghost-lunar-lander-mission-2": {
       "id": "2026-12-31-falcon-9-blue-ghost-lunar-lander-mission-2",
@@ -2327,7 +2337,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-falcon-9-chorus": {
       "id": "2026-12-31-falcon-9-chorus",
@@ -3027,7 +3038,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2026-12-31-electron-blacksky-gen-3-5": {
       "id": "2026-12-31-electron-blacksky-gen-3-5",
@@ -3067,7 +3079,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-electron-blacksky-gen-3-6": {
       "id": "2026-12-31-electron-blacksky-gen-3-6",
@@ -3107,7 +3120,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-electron-blacksky-gen-3-7": {
       "id": "2026-12-31-electron-blacksky-gen-3-7",
@@ -3147,7 +3161,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-electron-blacksky-gen-3-8": {
       "id": "2026-12-31-electron-blacksky-gen-3-8",
@@ -3187,7 +3202,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-electron-blacksky-gen-3-9": {
       "id": "2026-12-31-electron-blacksky-gen-3-9",
@@ -3227,7 +3243,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-electron-iqps-launch-10": {
       "id": "2026-12-31-electron-iqps-launch-10",
@@ -3267,7 +3284,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-electron-iqps-launch-11": {
       "id": "2026-12-31-electron-iqps-launch-11",
@@ -3307,7 +3325,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-electron-iqps-launch-8": {
       "id": "2026-12-31-electron-iqps-launch-8",
@@ -3347,7 +3366,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-electron-iqps-launch-9": {
       "id": "2026-12-31-electron-iqps-launch-9",
@@ -3387,7 +3407,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2026-12-31-epsilon-s-jv-lotusat-1": {
       "id": "2026-12-31-epsilon-s-jv-lotusat-1",
@@ -3427,7 +3448,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "2026-12-31-falcon-9-cygnus-crs-2-ng-22": {
       "id": "2026-12-31-falcon-9-cygnus-crs-2-ng-22",
@@ -4945,7 +4967,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2026-12-31-electron-haste-leidos-4": {
       "id": "2026-12-31-electron-haste-leidos-4",
@@ -4981,7 +5004,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2026-12-31-electron-haste-leidos-5": {
       "id": "2026-12-31-electron-haste-leidos-5",
@@ -5017,7 +5041,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2026-12-31-hyperbola-3-demo-flight": {
       "id": "2026-12-31-hyperbola-3-demo-flight",
@@ -5865,7 +5890,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2026-12-31-vega-c-iride-2": {
       "id": "2026-12-31-vega-c-iride-2",
@@ -5906,7 +5932,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2026-12-31-vulcan-nrol-100": {
       "id": "2026-12-31-vulcan-nrol-100",
@@ -7239,7 +7266,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2027-03-31-eris-1-flight-two": {
       "id": "2027-03-31-eris-1-flight-two",
@@ -7525,7 +7553,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2027-06-30-electron-polsir-2": {
       "id": "2027-06-30-electron-polsir-2",
@@ -7565,7 +7594,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2027-06-30-falcon-9-kompsat-7a": {
       "id": "2027-06-30-falcon-9-kompsat-7a",
@@ -7684,7 +7714,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2027-06-30-falcon-9-sda-tranche-2-tracking-layer-c": {
       "id": "2027-06-30-falcon-9-sda-tranche-2-tracking-layer-c",
@@ -7888,7 +7919,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2027-06-30-vulcan-ussf-95": {
       "id": "2027-06-30-vulcan-ussf-95",
@@ -7971,7 +8003,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2027-06-30-minotaur-iv-ews-od-1": {
       "id": "2027-06-30-minotaur-iv-ews-od-1",
@@ -8137,7 +8170,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2027-06-30-falcon-9-ussf-149": {
       "id": "2027-06-30-falcon-9-ussf-149",
@@ -8633,7 +8667,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2027-12-31-falcon-9-jpss-4-joint-polar-satellite-system-spacecraft-no-4": {
       "id": "2027-12-31-falcon-9-jpss-4-joint-polar-satellite-system-spacecraft-no-4",
@@ -8840,7 +8875,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2027-12-31-ariane-6-nexus-1": {
       "id": "2027-12-31-ariane-6-nexus-1",
@@ -9293,7 +9329,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2027-12-31-electron-strix-launch-15": {
       "id": "2027-12-31-electron-strix-launch-15",
@@ -9333,7 +9370,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2027-12-31-electron-strix-launch-16": {
       "id": "2027-12-31-electron-strix-launch-16",
@@ -9373,7 +9411,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2027-12-31-electron-strix-launch-17": {
       "id": "2027-12-31-electron-strix-launch-17",
@@ -9413,7 +9452,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2027-12-31-falcon-9-6x-astranis-microgeo": {
       "id": "2027-12-31-falcon-9-6x-astranis-microgeo",
@@ -10028,7 +10068,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "wallops-lc-0"
     },
     "2027-12-31-long-march-10-demo-flight": {
       "id": "2027-12-31-long-march-10-demo-flight",
@@ -10110,7 +10151,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "wenchang-lc-101"
     },
     "2027-12-31-lvm-3-gslv-mk-iii-chandrayaan-4-first-launch": {
       "id": "2027-12-31-lvm-3-gslv-mk-iii-chandrayaan-4-first-launch",
@@ -10233,7 +10275,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-els"
     },
     "2027-12-31-miura-5-2-x-trit": {
       "id": "2027-12-31-miura-5-2-x-trit",
@@ -10342,7 +10385,7 @@
       "webcast_live": false,
       "orrery_launcher_ref": null,
       "orrery_mission_ref": null,
-      "orrery_launch_site_ref": null,
+      "orrery_launch_site_ref": "naro-space-center",
       "tier": "T3",
       "tier_reason": "standard",
       "editorial_note": null,
@@ -10476,7 +10519,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "vostochny-1s"
     },
     "2027-12-31-spaceshiptwo-purdue-1": {
       "id": "2027-12-31-spaceshiptwo-purdue-1",
@@ -10598,7 +10642,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2027-12-31-vega-c-formosat-8c": {
       "id": "2027-12-31-vega-c-formosat-8c",
@@ -10639,7 +10684,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2027-12-31-vega-c-forum": {
       "id": "2027-12-31-vega-c-forum",
@@ -10680,7 +10726,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2027-12-31-vega-e-maiden-flight": {
       "id": "2027-12-31-vega-e-maiden-flight",
@@ -10885,7 +10932,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2028-03-31-h3-mbr-explorer": {
       "id": "2028-03-31-h3-mbr-explorer",
@@ -10968,7 +11016,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2028-04-20-h3-24-destiny-ramses": {
       "id": "2028-04-20-h3-24-destiny-ramses",
@@ -11341,7 +11390,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "2028-12-31-vega-c-sentinel-3d": {
       "id": "2028-12-31-vega-c-sentinel-3d",
@@ -11382,7 +11432,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2028-12-31-falcon-9-al-yah-5": {
       "id": "2028-12-31-falcon-9-al-yah-5",
@@ -11587,7 +11638,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2028-12-31-electron-iqps-launch-13": {
       "id": "2028-12-31-electron-iqps-launch-13",
@@ -11627,7 +11679,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2028-12-31-electron-iqps-launch-14": {
       "id": "2028-12-31-electron-iqps-launch-14",
@@ -11667,7 +11720,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2028-12-31-falcon-9-echostar-26": {
       "id": "2028-12-31-falcon-9-echostar-26",
@@ -11833,7 +11887,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "vostochny-1s"
     },
     "2028-12-31-spectrum-aos-demo-precursor": {
       "id": "2028-12-31-spectrum-aos-demo-precursor",
@@ -12078,7 +12133,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2028-12-31-vega-c-space-rider": {
       "id": "2028-12-31-vega-c-space-rider",
@@ -12119,7 +12175,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2028-12-31-vega-c-formosat-8d": {
       "id": "2028-12-31-vega-c-formosat-8d",
@@ -12160,7 +12217,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2028-12-31-vega-c-formosat-9a": {
       "id": "2028-12-31-vega-c-formosat-9a",
@@ -12201,7 +12259,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2028-12-31-vulcan-gps-iiif-sv01": {
       "id": "2028-12-31-vulcan-gps-iiif-sv01",
@@ -12532,7 +12591,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "wenchang-lc-101"
     },
     "2029-12-31-starship-starlab": {
       "id": "2029-12-31-starship-starlab",
@@ -12615,7 +12675,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2029-12-31-vega-c-harmony": {
       "id": "2029-12-31-vega-c-harmony",
@@ -12656,7 +12717,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2029-12-31-vega-c-sbg-tir": {
       "id": "2029-12-31-vega-c-sbg-tir",
@@ -12697,7 +12759,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2029-12-31-vulcan-vc2s-gps-iiif-sv04-ussf-88": {
       "id": "2029-12-31-vulcan-vc2s-gps-iiif-sv04-ussf-88",
@@ -12947,7 +13010,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-northstar-3": {
       "id": "2029-12-31-electron-northstar-3",
@@ -12987,7 +13051,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-strix-launch-18": {
       "id": "2029-12-31-electron-strix-launch-18",
@@ -13027,7 +13092,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-strix-launch-19": {
       "id": "2029-12-31-electron-strix-launch-19",
@@ -13067,7 +13133,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-strix-launch-20": {
       "id": "2029-12-31-electron-strix-launch-20",
@@ -13107,7 +13174,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-strix-launch-21": {
       "id": "2029-12-31-electron-strix-launch-21",
@@ -13147,7 +13215,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-strix-launch-22": {
       "id": "2029-12-31-electron-strix-launch-22",
@@ -13187,7 +13256,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-strix-launch-23": {
       "id": "2029-12-31-electron-strix-launch-23",
@@ -13227,7 +13297,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-strix-launch-24": {
       "id": "2029-12-31-electron-strix-launch-24",
@@ -13267,7 +13338,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-strix-launch-25": {
       "id": "2029-12-31-electron-strix-launch-25",
@@ -13307,7 +13379,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-strix-launch-26": {
       "id": "2029-12-31-electron-strix-launch-26",
@@ -13347,7 +13420,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-electron-strix-launch-27": {
       "id": "2029-12-31-electron-strix-launch-27",
@@ -13387,7 +13461,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "rocket-lab-lc-1"
     },
     "2029-12-31-falcon-9-amazon-leo-lf-04": {
       "id": "2029-12-31-falcon-9-amazon-leo-lf-04",
@@ -14207,7 +14282,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2030-12-31-vega-c-truths": {
       "id": "2030-12-31-vega-c-truths",
@@ -14248,7 +14324,8 @@
           "role": "fallback-primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:50.963Z"
+      "fetched_at": "2026-07-22T18:40:50.963Z",
+      "orrery_launch_site_ref": "kourou-zlv"
     },
     "2031-03-31-falcon-9-crew-14": {
       "id": "2031-03-31-falcon-9-crew-14",

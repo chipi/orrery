@@ -1,0 +1,34 @@
+{
+  "id": "wenchang-lc-201",
+  "name": "Wenchang LC-201",
+  "category": "launch-site",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CASC",
+  "first_flight": "2016-06-25",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "lat": 19.6184,
+  "lon": 110.9557,
+  "best_known_for": "Long March 7 pad on Hainan: all ten Tianzhou cargo ships to Tiangong, plus Long March 8 flights",
+  "credit": "Launch Complex 201 is the second of three pads at the Wenchang Space Launch Site on Hainan, built for the Long March 7 and also used by the Long March 7A and Long March 8. The first launch from the site, and from this pad, was the Long March 7 maiden flight on 25 June 2016 (12:00 UTC) with the Yuanzheng-1A upper stage. All ten Tianzhou cargo ships to the Tiangong station launched from LC-201, from Tianzhou 1 on 20 April 2017 to Tianzhou 10 on 11 May 2026. Sources: Wikipedia (Wenchang Space Launch Site, Long March 7, Tianzhou), Astronautix, SpacePolicyOnline; coordinates from Wikipedia.",
+  "links": [
+    {
+      "l": "China's new Wenchang space launch site ready for action — SpacePolicyOnline",
+      "u": "https://spacepolicyonline.com/news/chinas-new-wenchang-space-launch-site-ready-for-action/",
+      "t": "intro"
+    },
+    {
+      "l": "Wenchang Space Launch Site — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Wenchang_Space_Launch_Site",
+      "t": "core"
+    },
+    {
+      "l": "Wenchang LC201 — Astronautix",
+      "u": "https://astronautix.com/w/wenchanglc201.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

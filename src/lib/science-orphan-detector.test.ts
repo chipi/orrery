@@ -42,6 +42,9 @@ const SRC_ROOT = 'src';
 // the canonical inline `[text](/science/…)` links; the base records carry
 // read_next/href fields. Both are scanned for inbound science references.
 const ESSAY_DIRS = ['i18n-src/en-US/essays', 'static/data/essays'];
+// Observatory cards on /earth (PRD-028) render each `science` path in
+// static/data/observatories.json as a real link to the article.
+const DATA_LINK_FILES = ['static/data/observatories.json'];
 
 interface AllowlistEntry {
   id: string;
@@ -262,6 +265,14 @@ function gatherInboundRefs(): Set<string> {
       let m: RegExpExecArray | null;
       while ((m = pathRe.exec(text)) !== null) refs.add(`${m[1]}/${m[2]}`);
     }
+  }
+  // Pattern E — data files whose science paths render as real links.
+  for (const file of DATA_LINK_FILES) {
+    if (!existsSync(file)) continue;
+    const text = readFileSync(file, 'utf8');
+    const pathRe = /\/science\/([a-z][a-z0-9-]*)\/([a-z][a-z0-9-]*)/g;
+    let m: RegExpExecArray | null;
+    while ((m = pathRe.exec(text)) !== null) refs.add(`${m[1]}/${m[2]}`);
   }
   return refs;
 }

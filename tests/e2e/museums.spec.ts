@@ -47,3 +47,36 @@ test.describe('museums', () => {
     await expect(page.getByTestId('layer-museums').first()).toBeAttached({ timeout: 15_000 });
   });
 });
+
+/**
+ * Observatories on Earth (PRD-028): the card on /earth, the "Where this is
+ * done" block on science articles, and the link between them.
+ */
+test.describe('observatories', () => {
+  test('?observatory= opens the card with highlights and science links', async ({ page }) => {
+    await page.goto('/earth?observatory=vla');
+    const panel = page.getByTestId('observatory-panel');
+    await expect(panel).toBeVisible({ timeout: 20_000 });
+    await expect(panel).toHaveAttribute('data-observatory-id', 'vla');
+    expect(await panel.getByTestId('observatory-article').count()).toBeGreaterThanOrEqual(1);
+    await expect(panel.getByTestId('observatory-website')).toHaveAttribute('target', '_blank');
+  });
+
+  test('an article lists its observatories and links to their cards', async ({ page }) => {
+    await page.goto('/science/exoplanets/detecting-extraterrestrial-life');
+    const block = page.getByTestId('observatories-for-article');
+    await expect(block).toBeVisible({ timeout: 15_000 });
+    expect(await block.getByTestId('observatory-row').count()).toBeGreaterThanOrEqual(3);
+    await block
+      .locator('[data-observatory-id="big-ear"]')
+      .getByTestId('observatory-on-map')
+      .click();
+    await expect(page).toHaveURL(/\/earth\?observatory=big-ear/);
+    await expect(page.getByTestId('observatory-panel')).toBeVisible({ timeout: 20_000 });
+  });
+
+  test('/earth has a TELESCOPES layer chip', async ({ page }) => {
+    await page.goto('/earth');
+    await expect(page.getByTestId('layer-telescopes').first()).toBeAttached({ timeout: 15_000 });
+  });
+});

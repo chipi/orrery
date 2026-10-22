@@ -16,6 +16,10 @@ const NAME_PROBLEM = /^names (translated|changed) or missing/;
 // Reviewed exceptions, "<file>:<field>": the name there is not the vehicle/mission.
 const ALLOW = new Set([
   'messages:plan_destination_psyche', // the asteroid 16 Psyche (a body: native form), not the mission
+  // observatory names are facilities (native form per locale, PRD-028); the dish size in
+  // the name reads as a designation to the checker but is a descriptor
+  'observatories/effelsberg.json:name',
+  'observatories/nobeyama.json:name',
 ]);
 
 const walk = (d) =>

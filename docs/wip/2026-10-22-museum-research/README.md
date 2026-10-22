@@ -70,3 +70,18 @@ fetch), 2 `opens 2026-11-13`.
   gives only ~90 objects, many "located" on the Moon or Mars; useful for a few leads only.
 - Agents mis-state their own counts; check every output file with a script before trusting
   a report.
+
+## Observatories (PRD-028), 2026-10-22
+
+Same method, same session. `observatories/` holds the brief, the science-article list the
+agents chose links from, and the three agent outputs (`out_radio_seti.json`,
+`out_arrays_dsn.json`, `out_optical.json`). They were merged into
+`static/data/observatories.json` + `i18n-src/en-US/observatories/` with hand corrections
+(Arecibo's firsts, Paranal's first direct image = 2M1207b in 2004, La Silla's Proxima b,
+Haute-Provence 1995, links to the new `detecting-extraterrestrial-life` article; the Rubin "survey began
+July 2026" claim removed as unconfirmed). 34 observatories, 15 countries.
+
+Not verified from here: the official sites of SALT and ESO (no response / 503 at the time),
+Arecibo's naic.edu (expired TLS certificate; kept as the official site), and the LMT's own
+site (TLS failure; the operator INAOE's site is linked instead). Translation brief:
+`briefs/TRANSLATE3.md`; checker: `tools/check-obs.mjs`.

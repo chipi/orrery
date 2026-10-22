@@ -27,6 +27,7 @@ export * from './data/provenance';
 export * from './data/universe';
 export * from './data/galleries';
 export * from './data/museums';
+export * from './data/observatories';
 
 /** Reset every data cache (test isolation) — the fetch/i18n keystone + the
  *  provenance module's own manifest caches. */

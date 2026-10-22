@@ -54,6 +54,13 @@
       cover: '/images/recommendations/films/contact.webp',
     },
     {
+      title: 'The Dish',
+      creator: 'Rob Sitch',
+      year: 2000,
+      blurb:
+        'The lightly fictionalised true story of the Parkes radio telescope in rural Australia relaying most of the Apollo 11 moonwalk television to the world. Quiet, funny and affectionate about the people who keep a big dish pointed at the sky.',
+    },
+    {
       title: 'Interstellar',
       creator: 'Christopher Nolan',
       year: 2014,

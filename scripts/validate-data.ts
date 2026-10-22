@@ -216,6 +216,8 @@ const validateDataSources = ajv.compile(dataSourcesSchema);
 const validateCultureDoors = ajv.compile(loadSchema('culture-door.schema.json'));
 const validateMuseums = ajv.compile(loadSchema('museum.schema.json'));
 const validateMuseumOverlay = ajv.compile(loadSchema('museum-overlay.schema.json'));
+const validateObservatories = ajv.compile(loadSchema('observatory.schema.json'));
+const validateObservatoryOverlay = ajv.compile(loadSchema('observatory-overlay.schema.json'));
 const validateDeepSkyObjects = ajv.compile(loadSchema('deep-sky-object.schema.json'));
 const validateMilkyWay = ajv.compile(loadSchema('milky-way.schema.json'));
 const validateBlackHoles = ajv.compile(loadSchema('black-hole.schema.json'));
@@ -468,6 +470,7 @@ validateFile(join(DATA_ROOT, 'sun.json'), validateSun);
 validateFile(join(DATA_ROOT, 'iss-modules.json'), validateIssModules);
 validateFile(join(DATA_ROOT, 'culture-doors.json'), validateCultureDoors);
 validateFile(join(DATA_ROOT, 'museums.json'), validateMuseums);
+validateFile(join(DATA_ROOT, 'observatories.json'), validateObservatories);
 validateFile(join(DATA_ROOT, 'universe', 'deep-sky-objects.json'), validateDeepSkyObjects);
 // /explore v2 Slice 4 — every deep-sky photoKey must resolve to a real curated
 // gallery entry (the sky↔gallery join is load-bearing for the immersion panel).
@@ -1006,6 +1009,57 @@ for (const err of siteDrift) {
   }
 }
 
+// PRD-028 — observatories. Every science link resolves to an article, ids
+// are unique, and every locale that has an overlay for an observatory has
+// as many highlights as en-US and a film line exactly when the base lists
+// films (en-US must exist for every observatory).
+{
+  const obsPath = join(DATA_ROOT, 'observatories.json');
+  if (existsSync(obsPath)) {
+    const list = readJson(obsPath) as Array<{ id: string; science: string[]; films?: string[] }>;
+    const problems: string[] = [];
+    const seen = new Set<string>();
+    const enHighlights = new Map<string, number>();
+    for (const o of list) {
+      if (seen.has(o.id)) problems.push(`duplicate observatory id '${o.id}'`);
+      seen.add(o.id);
+      for (const p of o.science) {
+        if (!existsSync(join(DATA_ROOT, `${p.slice(1)}.json`)))
+          problems.push(`${o.id}: science link '${p}' is not an article`);
+      }
+      const en = join(I18N_SRC, 'en-US', 'observatories', `${o.id}.json`);
+      if (!existsSync(en)) {
+        problems.push(
+          `${o.id}: missing en-US overlay at i18n-src/en-US/observatories/${o.id}.json`,
+        );
+        continue;
+      }
+      enHighlights.set(o.id, ((readJson(en) as { highlights?: string[] }).highlights ?? []).length);
+      for (const locale of readdirSync(I18N_SRC)) {
+        const ov = join(I18N_SRC, locale, 'observatories', `${o.id}.json`);
+        if (!existsSync(ov)) continue;
+        const t = readJson(ov) as { highlights?: string[]; film?: string };
+        if ((t.highlights ?? []).length !== enHighlights.get(o.id))
+          problems.push(
+            `${locale}/observatories/${o.id}.json: ${(t.highlights ?? []).length} highlights, en-US has ${enHighlights.get(o.id)}`,
+          );
+        const wantsFilm = (o.films ?? []).length > 0;
+        if (wantsFilm !== Boolean(t.film))
+          problems.push(
+            `${locale}/observatories/${o.id}.json: film line ${wantsFilm ? 'missing' : 'present but the base lists no film'}`,
+          );
+      }
+    }
+    if (problems.length > 0) {
+      failed += problems.length;
+      console.error('\n  ✗ observatories.json (PRD-028)');
+      for (const p of problems) console.error(`      ${p}`);
+    } else {
+      passed++;
+    }
+  }
+}
+
 // 3. Locale overlays
 const i18nDir = I18N_SRC;
 if (existsSync(i18nDir)) {
@@ -1027,6 +1081,10 @@ if (existsSync(i18nDir)) {
     // Museum overlays (PRD-027)
     for (const file of listJson(join(i18nDir, locale, 'museums'))) {
       validateFile(file, validateMuseumOverlay);
+    }
+    // Observatory overlays (PRD-028)
+    for (const file of listJson(join(i18nDir, locale, 'observatories'))) {
+      validateFile(file, validateObservatoryOverlay);
     }
     // Moon-site + Mars-site overlays — both bodies share the surface-site overlay schema.
     for (const file of listJson(join(i18nDir, locale, 'moon-sites'))) {

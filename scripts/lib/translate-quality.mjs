@@ -264,6 +264,7 @@ export function gazetteer() {
     // glossary ("Kennedy Space Center Visitor Complex" → 肯尼迪航天中心游客中心), not the
     // vehicle origin rule
     'museums',
+    'observatories',
     'hotspot-metadata',
     // tour titles ("Cassini Saturn-system tour"), not names; the craft names come from
     // fleet/ and missions/

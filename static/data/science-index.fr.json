@@ -43,6 +43,13 @@
   },
   {
     "tab": "exoplanets",
+    "section": "detecting-extraterrestrial-life",
+    "title": "Comment détecterions-nous une vie extraterrestre ?",
+    "intro": "La vie ailleurs pourrait se trahir de deux façons : par la chimie d’un monde vivant, ou par la technologie d’une civilisation. On écoute cette seconde piste depuis 1960.",
+    "haystack": "comment détecterions-nous une vie extraterrestre ? la vie ailleurs pourrait se trahir de deux façons : par la chimie d’un monde vivant, ou par la technologie d’une civilisation. on écoute cette seconde piste depuis 1960. l’idée que l’on pourrait écouter est née d’un article de 1959 dans nature, signé giuseppe cocconi et philip morrison. ils proposaient de se régler sur 1 420 mégahertz, la fréquence radio à laquelle l’hydrogène, l’élément le plus courant de l’univers, émet naturellement, car tout radioastronome, où qu’il soit, la connaîtrait. en 1960, frank drake l’a tenté : le projet ozma a pointé une parabole de 26 mètres, à green bank, en virginie-occidentale, vers deux étoiles proches de type solaire, tau ceti et epsilon eridani. how would we detect extraterrestrial life?"
+  },
+  {
+    "tab": "exoplanets",
     "section": "direct-imaging",
     "title": "Imagerie directe",
     "intro": "Masquez l'éclat écrasant de l'étoile et, pour quelques planètes chanceuses, vous pouvez photographier le faible point lumineux à côté d'elle.",

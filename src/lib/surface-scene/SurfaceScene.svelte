@@ -177,7 +177,14 @@
   import { loadImageVisionManifest, getImageEntry, hotspotTileTexture } from '$lib/image-vision';
   import { streamedUrl } from '$lib/asset-url';
   import { buildLabel } from '$lib/three-label';
-  import { buildMuseumPins, type MuseumPin } from '$lib/surface-scene/museum-layer';
+  import {
+    buildMuseumPins,
+    buildPlacePins,
+    OBSERVATORY_PIN_COLOR,
+    type MuseumPin,
+  } from '$lib/surface-scene/museum-layer';
+  import ObservatoryPanel from '$lib/surface-scene/ObservatoryPanel.svelte';
+  import type { Observatory } from '$types/observatory';
   import MuseumPanel from '$lib/surface-scene/MuseumPanel.svelte';
   import type { Museum } from '$types/museum';
   import type { SurfaceSite, Traverse } from '$types/surface-site';
@@ -259,6 +266,9 @@
      *  the globe gets museum pins, a MUSEUMS chip, the museum card and the
      *  ?museum=<id> deep link. /earth only. */
     loadMuseums?: (locale: string) => Promise<Museum[]>;
+    /** Observatories on Earth (PRD-028): pins, a TELESCOPES chip, the
+     *  observatory card and the ?observatory=<id> deep link. /earth only. */
+    loadObservatories?: (locale: string) => Promise<Observatory[]>;
   }
   let {
     config,
@@ -267,6 +277,7 @@
     loadGallery,
     loadTraverses,
     loadMuseums,
+    loadObservatories,
     initialView,
     onSatelliteSelect,
     onSiteSelect,
@@ -477,6 +488,11 @@
   let museumPins: MuseumPin[] = [];
   let selectedMuseum = $state<Museum | null>(null);
   let layerMuseums = $state(true);
+  // Observatories (PRD-028): a fourth selection kind, same pattern.
+  let observatoriesCache: Observatory[] = [];
+  let observatoryPins: MuseumPin[] = [];
+  let selectedObservatory = $state<Observatory | null>(null);
+  let layerTelescopes = $state(true);
 
   // ─── Object index (searchable orbit/land list) ───────────────────
   // `indexEarthObjects` is a reactive mirror of the non-reactive
@@ -1037,6 +1053,7 @@
         selectedSat = o;
         selected = null;
         selectedMuseum = null;
+        selectedObservatory = null;
         autoSpin = false;
         faceCameraAtObject?.(o);
         trackItemClick('marker', id, page.url.pathname);
@@ -1047,6 +1064,7 @@
       selected = s;
       selectedSat = null;
       selectedMuseum = null;
+      selectedObservatory = null;
       panelOpen = true;
       // #380 — leave route-view when switching sites; the new selection's
       // fly-in below takes over the camera.
@@ -1078,10 +1096,24 @@
     selectedMuseum = mu;
     selected = null;
     selectedSat = null;
+    selectedObservatory = null;
     panelOpen = false;
     autoSpin = false;
     trackItemClick('marker', `museum:${id}`, page.url.pathname);
     if (options.face) faceLatLonImpl?.(mu.lat, mu.lon, 40);
+  }
+  /** Open an observatory's card (PRD-028); `face` flies the camera to it. */
+  function selectObservatory(id: string, options: { face?: boolean } = {}) {
+    const o = observatoriesCache.find((x) => x.id === id);
+    if (!o) return;
+    selectedObservatory = o;
+    selectedMuseum = null;
+    selected = null;
+    selectedSat = null;
+    panelOpen = false;
+    autoSpin = false;
+    trackItemClick('marker', `observatory:${id}`, page.url.pathname);
+    if (options.face) faceLatLonImpl?.(o.lat, o.lon, 40);
   }
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
@@ -1096,6 +1128,7 @@
     if (panelOpen && selected) return { param: 'site' as const, id: selected.id };
     if (selectedSat) return { param: 'object' as const, id: selectedSat.id };
     if (selectedMuseum) return { param: 'museum' as const, id: selectedMuseum.id };
+    if (selectedObservatory) return { param: 'observatory' as const, id: selectedObservatory.id };
     return null;
   });
   let everOpenedSurfaceCard = false;
@@ -1107,10 +1140,12 @@
       const wantSite = card?.param === 'site' ? card.id : null;
       const wantObj = card?.param === 'object' ? card.id : null;
       const wantMuseum = card?.param === 'museum' ? card.id : null;
+      const wantObservatory = card?.param === 'observatory' ? card.id : null;
       const changed =
         (url.searchParams.get('site') ?? null) !== wantSite ||
         (url.searchParams.get('object') ?? null) !== wantObj ||
-        (url.searchParams.get('museum') ?? null) !== wantMuseum;
+        (url.searchParams.get('museum') ?? null) !== wantMuseum ||
+        (url.searchParams.get('observatory') ?? null) !== wantObservatory;
       if (changed && (card || everOpenedSurfaceCard)) {
         if (wantSite) url.searchParams.set('site', wantSite);
         else url.searchParams.delete('site');
@@ -1118,6 +1153,8 @@
         else url.searchParams.delete('object');
         if (wantMuseum) url.searchParams.set('museum', wantMuseum);
         else url.searchParams.delete('museum');
+        if (wantObservatory) url.searchParams.set('observatory', wantObservatory);
+        else url.searchParams.delete('observatory');
         replaceState(url, page.state);
       }
       if (everOpenedSurfaceCard) setCurrentCard(card ? url : null);
@@ -1480,6 +1517,30 @@
         })
         .catch(() => {
           // Museums are an extra layer; the globe works without them.
+        });
+    }
+    // PRD-028 — observatory pins; ?observatory=<id> opens that card.
+    if (loadObservatories) {
+      loadObservatories(localeFromPage(page))
+        .then((list) => {
+          observatoriesCache = list;
+          const layer = buildPlacePins(list, planetMesh, planetRadius, {
+            color: OBSERVATORY_PIN_COLOR,
+            pickKey: 'observatoryId',
+          });
+          observatoryPins = layer.pins;
+          earthLayerHandles.push({
+            dispose: () => {
+              layer.dispose();
+              observatoryPins = [];
+              observatoriesCache = [];
+            },
+          });
+          const obsParam = page.url.searchParams.get('observatory');
+          if (obsParam) selectObservatory(obsParam, { face: true });
+        })
+        .catch(() => {
+          // An extra layer; the globe works without it.
         });
     }
     if (config.earthOrbitalLayers) {
@@ -3487,6 +3548,20 @@
       return hit ? (hit.object.userData.museumId as string) : null;
     }
 
+    function pickObservatoryAt(clientX: number, clientY: number): string | null {
+      if (!layerTelescopes || observatoryPins.length === 0) return null;
+      const rect = el3d.getBoundingClientRect();
+      const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
+      const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
+      ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      const hits = ray.intersectObjects(
+        observatoryPins.map((p) => p.group),
+        true,
+      );
+      const hit = hits.find((h) => typeof h.object.userData.observatoryId === 'string');
+      return hit ? (hit.object.userData.observatoryId as string) : null;
+    }
+
     function tryPick3d(clientX: number, clientY: number) {
       // Panorama mode: raycast annotation sprites first (PRD-022 / ADR-074
       // Phase 2E). Hit → open annotation card; miss → fall through.
@@ -3513,10 +3588,17 @@
           selectedSat = o;
           selected = null;
           selectedMuseum = null;
+          selectedObservatory = null;
           // CORE-2 — clicking an orbital object zooms + centres it.
           faceCameraAtObject?.(o);
           return;
         }
+      }
+      const observatoryId = pickObservatoryAt(clientX, clientY);
+      if (observatoryId) {
+        cue('select');
+        selectObservatory(observatoryId, { face: true });
+        return;
       }
       const museumId = pickMuseumAt(clientX, clientY);
       if (museumId) {
@@ -4370,6 +4452,11 @@
           p.group.visible = layerMuseums;
           p.halo.visible = p.id === selMuseumId;
         }
+        const selObsId = selectedObservatory?.id ?? null;
+        for (const p of observatoryPins) {
+          p.group.visible = layerTelescopes;
+          p.halo.visible = p.id === selObsId;
+        }
         const selId = selected?.id ?? null;
         for (const mk of markers) {
           // Nation filter (#363) — hide markers whose nation is toggled off.
@@ -4646,6 +4733,7 @@
             if (h.tier1Group) h.tier1Group.scale.setScalar(zoomScale);
           }
           for (const p of museumPins) p.body.scale.setScalar(zoomScale);
+          for (const p of observatoryPins) p.body.scale.setScalar(zoomScale);
 
           // Site labels — shrink with zoomScale but floored at 0.65 so
           // they stay readable. Hide entirely when promoted to Tier 2+
@@ -4684,8 +4772,9 @@
           // selected"). Tier-2 hard hide still applies to every label
           // (those are physically inside the rectangle anyway).
           // Museum pin labels (PRD-027) follow the same zoom band fade.
-          for (const p of museumPins) {
-            p.labelGroup.visible = layerMuseums && labelFade >= 0.01;
+          for (const p of [...museumPins, ...observatoryPins]) {
+            const layerOn = museumPins.includes(p) ? layerMuseums : layerTelescopes;
+            p.labelGroup.visible = layerOn && labelFade >= 0.01;
             if (!p.labelGroup.visible) continue;
             p.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
             p.labelGroup.traverse((obj) => {
@@ -5618,6 +5707,22 @@
                   toggle: () => {
                     layerMuseums = !layerMuseums;
                     if (!layerMuseums) selectedMuseum = null;
+                  },
+                },
+              ]
+            : []),
+          // TELESCOPES (PRD-028) — observatories on the ground; the existing
+          // OBSERVATORIES chip is the space telescopes in orbit.
+          ...(loadObservatories != null
+            ? [
+                {
+                  testid: 'layer-telescopes',
+                  label: m.observatory_layer_chip(),
+                  title: m.observatory_layer_tip(),
+                  active: () => layerTelescopes,
+                  toggle: () => {
+                    layerTelescopes = !layerTelescopes;
+                    if (!layerTelescopes) selectedObservatory = null;
                   },
                 },
               ]
@@ -6646,6 +6751,13 @@ sample      ${debugInfo.projectedPxSample}`}
       missionIds={earthMissionIds}
       {regimes}
       {onRegimeOpen}
+    />
+  {/if}
+  {#if loadObservatories}
+    <ObservatoryPanel
+      observatory={selectedObservatory}
+      open={selectedObservatory != null}
+      onClose={() => (selectedObservatory = null)}
     />
   {/if}
   {#if loadMuseums}

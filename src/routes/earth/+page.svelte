@@ -29,7 +29,7 @@
   import { goto } from '$app/navigation';
   import { makeEarthLaunchSitesConfig } from './earth-launch-sites-config';
   import { getEarthLaunchSites, getEarthLaunchSiteGallery } from '$lib/earth-launch-site-adapter';
-  import { getOrbitRegimes, getMuseums } from '$lib/data';
+  import { getOrbitRegimes, getMuseums, getObservatories } from '$lib/data';
   import { getLocale } from '$lib/paraglide/runtime';
   import type { OrbitRegime } from '$types/orbit-regime';
   import { viewerLatLon } from '$lib/viewer-location';
@@ -178,6 +178,7 @@
   loadSites={getEarthLaunchSites}
   loadGallery={getEarthLaunchSiteGallery}
   loadMuseums={getMuseums}
+  loadObservatories={getObservatories}
   {initialView}
   onSatelliteSelect={(id) => (selectedSatId = id)}
   {regimes}

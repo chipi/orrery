@@ -37,49 +37,54 @@ function accentMat(color: string): THREE.MeshStandardMaterial {
     metalness: 0.4,
     roughness: 0.45,
     emissive: color,
-    emissiveIntensity: 0.25,
+    emissiveIntensity: 0.15,
   });
 }
 
-/** Museum: a classical hall (steps, a row of columns, entablature) under a
- *  gabled roof in the layer colour; from above, the view the globe mostly
- *  gives, it reads as a gold-roofed building. */
+/** Museum: a flown return capsule on a display plinth — what people go to
+ *  these museums to see. Scorched conical crew module with its dark heat
+ *  shield, two windows and a nose fitting, on a dark stand ringed in the
+ *  layer colour. */
 export function buildMuseumModel(color: string): THREE.Group {
   const g = new THREE.Group();
-  const steps = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.1, 0.8), stoneMat());
-  steps.position.y = 0.05;
-  g.add(steps);
-  const hall = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.55, 0.5), stoneMat());
-  hall.position.set(0, 0.38, -0.08);
-  g.add(hall);
-  for (const x of [-0.42, -0.21, 0, 0.21, 0.42]) {
-    const col = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.05, 0.55, 10), stoneMat());
-    col.position.set(x, 0.38, 0.24);
-    g.add(col);
-  }
-  const frieze = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.1, 0.72), stoneMat());
-  frieze.position.y = 0.7;
-  g.add(frieze);
-  const band = new THREE.Mesh(new THREE.BoxGeometry(1.12, 0.03, 0.74), accentMat(color));
-  band.position.y = 0.66;
-  g.add(band);
-  // Gabled roof: a low triangular prism, pediment at the façade.
-  const gable = new THREE.Shape();
-  gable.moveTo(-0.6, 0);
-  gable.lineTo(0.6, 0);
-  gable.lineTo(0, 0.32);
-  gable.closePath();
-  const pediment = new THREE.Mesh(
-    new THREE.ExtrudeGeometry(gable, { depth: 0.72, bevelEnabled: false }),
-    accentMat(color),
+  const plinth = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.46, 0.12, 24), darkMat());
+  plinth.position.y = 0.06;
+  g.add(plinth);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.44, 0.02, 8, 48), accentMat(color));
+  ring.rotation.x = Math.PI / 2;
+  ring.position.y = 0.12;
+  g.add(ring);
+  const shield = new THREE.Mesh(new THREE.CylinderGeometry(0.34, 0.31, 0.07, 32), darkMat());
+  shield.position.y = 0.155;
+  g.add(shield);
+  const hull = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.12, 0.34, 0.5, 32, 1, true),
+    new THREE.MeshStandardMaterial({
+      color: 0x9c7c58,
+      metalness: 0.35,
+      roughness: 0.75,
+      side: THREE.DoubleSide,
+    }),
   );
-  pediment.position.set(0, 0.75, -0.36);
-  g.add(pediment);
-  const door = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.3, 0.02), darkMat());
-  door.position.set(0, 0.25, 0.18);
-  g.add(door);
-  // About a launchpad's footprint, so a museum next to a pad (KSC) doesn't hide it.
-  g.scale.setScalar(0.6);
+  hull.position.y = 0.44;
+  g.add(hull);
+  const band = new THREE.Mesh(new THREE.TorusGeometry(0.315, 0.01, 6, 48), accentMat(color));
+  band.rotation.x = Math.PI / 2;
+  band.position.y = 0.22;
+  g.add(band);
+  for (const a of [-0.45, 0.45]) {
+    const win = new THREE.Mesh(new THREE.CircleGeometry(0.045, 16), darkMat());
+    const r = 0.235;
+    win.position.set(Math.sin(a) * r, 0.47, Math.cos(a) * r);
+    win.lookAt(new THREE.Vector3(Math.sin(a) * 2, 0.47 + 0.9, Math.cos(a) * 2));
+    g.add(win);
+  }
+  const top = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.02, 24), steelMat());
+  top.position.y = 0.7;
+  g.add(top);
+  const nose = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.07, 0.12, 16), steelMat());
+  nose.position.y = 0.77;
+  g.add(nose);
   return g;
 }
 

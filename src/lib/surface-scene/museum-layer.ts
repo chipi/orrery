@@ -14,6 +14,8 @@ import { buildMuseumModel } from '$lib/earth-place-models';
 
 export const MUSEUM_PIN_COLOR = '#ffc850';
 export const OBSERVATORY_PIN_COLOR = '#7fe0ff';
+/** Markers sit at the visual weight of the lander and launchpad markers. */
+const PLACE_MARKER_SCALE = 0.55;
 
 /** What a place layer needs from each item. */
 export interface PlacePinInput {
@@ -62,7 +64,7 @@ export function buildMuseumPins(
     color: MUSEUM_PIN_COLOR,
     pickKey: 'museumId',
     modelFor: () => buildMuseumModel(MUSEUM_PIN_COLOR),
-    faceTilt: 1.05,
+    faceTilt: 0.6,
   });
 }
 
@@ -86,6 +88,7 @@ export function buildPlacePins(
     const group = new THREE.Group();
     const body = new THREE.Group();
     const model = opts.modelFor(place);
+    model.scale.multiplyScalar(PLACE_MARKER_SCALE);
     if (opts.faceTilt) model.rotation.x = -opts.faceTilt;
     body.add(model);
     group.add(body);
@@ -107,7 +110,7 @@ export function buildPlacePins(
     group.add(label.group);
 
     const halo = new THREE.Mesh(
-      new THREE.RingGeometry(0.55, 0.7, 32),
+      new THREE.RingGeometry(0.3, 0.38, 32),
       new THREE.MeshBasicMaterial({
         color,
         side: THREE.DoubleSide,

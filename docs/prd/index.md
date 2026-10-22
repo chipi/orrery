@@ -29,7 +29,7 @@
 | PRD-024 | /science 'planets' tab — pair every PRD-023 lens annotation with a real article | Draft | curious learner, STEM student, space enthusiast, educator |
 | PRD-025 | Finalize the forward roadmap — comprehensive per-agency coverage through ~2035 (re-scoped 2026-07-11: everything, ~180+ entries; authored under PRD-029 programs) | Draft (prep for v0.8) | space enthusiast, educator/journalist, curious learner |
 | PRD-026 | Historical content completeness pass (v0.7) — Apollo + surface-page + agency-parity + i18n + fleet-galleries | Shipped (v0.7) | curious learner, space enthusiast, educator/journalist |
-| PRD-027 | Museums: where the real hardware is on display (museum entries, "See it in a museum" button, /earth layer, cards) | Draft (rewritten 2026-10-22, for sign-off) | curious learner, space enthusiast, educator/journalist |
+| PRD-027 | Museums: where the real hardware is on display (museum entries, "See it in a museum" button, /earth layer, cards) | Accepted 2026-10-22 | curious learner, space enthusiast, educator/journalist |
 | PRD-028 | Earth-based observatories — `ground-observatory` fleet category (radio telescopes + DSN) | Draft (prep for v0.8) | curious learner, STEM student, space enthusiast |
 | PRD-029 | Programs — a grouping layer for missions + fleet (`/programs`; retrofit historical + author forward under it; coverage-hole report) | Draft (prep for v0.8) | curious learner, STEM student, space enthusiast, educator/journalist |
 | PRD-030 | /explore v2 — The Known Universe (zoom out from the solar system to nearby stars, exoplanet systems, deep-sky, galaxies; closes into RFC-032 + UXS-014) | Draft (epic kickoff) | curious learner, STEM student, space enthusiast, educator/journalist |

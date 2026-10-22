@@ -36,6 +36,7 @@
  */
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
+import gdal from 'gdal-async';
 import { cropRemoteRasterToLatLon, CropError } from './gdal-crop.ts';
 import {
   buildGsiProvenanceEntry,
@@ -49,7 +50,8 @@ import {
  * Per-pad DETAIL strategy (#546 phase 2 — all 26 pads):
  *   naip        — USGS NAIP exportImage (~0.5 m/px, PD-USGov). US pads.
  *   ign-wms     — IGN Géoplateforme WMS BD ORTHO (Licence Ouverte, attribution).
- *                 Covers French Guiana → Kourou. Probed 2026-09-10, real imagery.
+ *                 Over Kourou it serves only 10–20 m imagery (re-probed 2026-10-22),
+ *                 so the Kourou pads use s2-fallback; kept for metropolitan France.
  *   gsi-tiles   — GSI Japan seamlessphoto XYZ tiles (GSI terms, attribution).
  *                 Covers Tanegashima. Probed 2026-09-10, real imagery.
  *   s2-fallback — no open sub-meter source (KZ / RU / CN / IN): a TIGHTER
@@ -69,13 +71,22 @@ const PAD_STRATEGY: Record<string, DetailStrategy> = {
   'lc-39b': 'naip',
   'lc-5': 'naip',
   'starbase-orbital-a': 'naip',
-  'vandenberg-slc-4e': 'naip',
-  // French Guiana — IGN open ortho
-  'kourou-ela-2': 'ign-wms',
-  'kourou-ela-3': 'ign-wms',
-  'kourou-ela-4': 'ign-wms',
+  'cape-canaveral-lc-17': 'naip',
+  'wallops-lc-0': 'naip',
+  // Vandenberg SFB — NAIP has no coverage there (identify returns NoData, a
+  // 512 m export is all black; probed 2026-10-23). Sentinel-2 fallback instead.
+  'vandenberg-slc-4e': 's2-fallback',
+  // French Guiana — IGN's WMS serves only 10–20 m imagery over Kourou (every
+  // ortho layer probed 2026-10-22, incl. BD ORTHO and the dated layers), so a
+  // 512 m IGN window was 10 m pixels upscaled. Sentinel-2 fallback instead.
+  'kourou-ela-2': 's2-fallback',
+  'kourou-ela-3': 's2-fallback',
+  'kourou-ela-4': 's2-fallback',
+  'kourou-els': 's2-fallback',
+  'kourou-zlv': 's2-fallback',
   // Japan — GSI seamlessphoto
   'tanegashima-yoshinobu': 'gsi-tiles',
+  uchinoura: 'gsi-tiles',
   // Kazakhstan / Russia / China / India — no open sub-meter source
   'baikonur-1-5': 's2-fallback',
   'baikonur-200': 's2-fallback',
@@ -88,6 +99,19 @@ const PAD_STRATEGY: Record<string, DetailStrategy> = {
   'xichang-lc-2': 's2-fallback',
   'xichang-lc-3': 's2-fallback',
   'sriharikota-slp': 's2-fallback',
+  'baikonur-81': 's2-fallback',
+  'vostochny-1s': 's2-fallback',
+  'wenchang-lc-201': 's2-fallback',
+  // Pads beyond the big programmes — Sentinel-2 only.
+  'rocket-lab-lc-1': 's2-fallback',
+  'naro-space-center': 's2-fallback',
+  sohae: 's2-fallback',
+  'semnan-imam-khomeini': 's2-fallback',
+  palmachim: 's2-fallback',
+  woomera: 's2-fallback',
+  hammaguir: 's2-fallback',
+  'san-marco': 's2-fallback',
+  alcantara: 's2-fallback',
 };
 const ALL_PAD_IDS = Object.keys(PAD_STRATEGY);
 
@@ -113,6 +137,10 @@ interface StacFeature {
   id: string;
   properties: { datetime: string; 'eo:cloud_cover'?: number };
   assets?: Record<string, { href?: string }>;
+  /** Set when the regional came from a same-day mosaic (pad near a tile
+   *  corner); the s2-fallback detail crops the same mosaic. */
+  mosaicPath?: string;
+  mosaicIds?: string[];
 }
 
 interface PadSite {
@@ -152,7 +180,7 @@ async function stacSearch(lat: number, lon: number): Promise<StacFeature[]> {
         bbox: [lon - d, lat - d, lon + d, lat + d],
         query: { 'eo:cloud_cover': { lt: maxCloud } },
         sortby: [{ field: 'properties.datetime', direction: 'desc' }],
-        limit: 8,
+        limit: 24,
       }),
     });
     if (!res.ok) throw new Error(`STAC search HTTP ${res.status}`);
@@ -160,6 +188,36 @@ async function stacSearch(lat: number, lon: number): Promise<StacFeature[]> {
     if (body.features?.length) return body.features;
   }
   return [];
+}
+
+/** A scene's footprint can cover the window while its data does not: the
+ *  swath edge leaves a black nodata wedge (Sohae, LC-39B), and a NAIP export
+ *  outside coverage comes back all black (Vandenberg). Refuse such a crop. */
+const MAX_NODATA_FRACTION = 0.01;
+async function nodataFraction(file: string): Promise<number> {
+  const sharp = (await import('sharp')).default;
+  const { data, info } = await sharp(file)
+    .resize(200, 200, { fit: 'fill' })
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  let black = 0;
+  for (let i = 0; i < data.length; i += info.channels) {
+    if (data[i] + data[i + 1] + data[i + 2] < 12) black++;
+  }
+  return black / (info.width * info.height);
+}
+async function assertCovered(file: string): Promise<void> {
+  const f = await nodataFraction(file);
+  if (f > MAX_NODATA_FRACTION) throw new Error(`NODATA ${(f * 100).toFixed(1)}%`);
+}
+async function coveredOrLog(file: string, label: string): Promise<boolean> {
+  try {
+    await assertCovered(file);
+    return true;
+  } catch (err) {
+    console.log(`  ✗ ${label}: ${(err as Error).message}`);
+    return false;
+  }
 }
 
 /** Returns the winning scene so the s2-fallback detail can reuse it. */
@@ -170,7 +228,7 @@ async function fetchRegional(site: PadSite): Promise<StacFeature | null> {
     console.log(`  ✗ ${site.id}: no low-cloud Sentinel-2 scene found`);
     return null;
   }
-  for (const f of feats.slice(0, 6)) {
+  for (const f of feats.slice(0, 16)) {
     const href = f.assets?.visual?.href;
     if (!href || !href.endsWith('.tif')) continue;
     try {
@@ -181,7 +239,9 @@ async function fetchRegional(site: PadSite): Promise<StacFeature | null> {
         outputPath,
         cropSize: REGIONAL_CROP_PX,
         jpegQuality: 88,
+        requireCentered: true,
       });
+      await assertCovered(outputPath);
       await upsertProvenanceEntries([
         buildSentinel2ProvenanceEntry({
           outputPath,
@@ -202,6 +262,61 @@ async function fetchRegional(site: PadSite): Promise<StacFeature | null> {
     } catch (err) {
       const tag = err instanceof CropError ? err.code : (err as Error).message;
       console.log(`    · ${f.id} → ${tag}, next candidate`);
+    }
+  }
+  // No single tile holds a centred window: the pad sits near a tile edge or
+  // corner (Baikonur, Wenchang). Mosaic the same-day tiles of one UTM zone —
+  // same CRS, so a VRT needs no reprojection — and crop that.
+  const groups = new Map<string, StacFeature[]>();
+  for (const f of feats) {
+    const zone = f.id.split('_')[1]?.slice(0, 2);
+    const key = `${f.properties.datetime.slice(0, 10)}-${zone}`;
+    groups.set(key, [...(groups.get(key) ?? []), f]);
+  }
+  for (const [key, group] of groups) {
+    const hrefs = group
+      .map((f) => f.assets?.visual?.href)
+      .filter((h): h is string => !!h && h.endsWith('.tif'));
+    if (hrefs.length < 2) continue;
+    const vrt = `/vsimem/${site.id}-${key}.vrt`;
+    try {
+      const ds = await gdal.buildVRTAsync(
+        vrt,
+        hrefs.map((h) => `/vsicurl/${h}`),
+        ['-srcnodata', '0', '-vrtnodata', '0'],
+      );
+      ds.close();
+      const result = await cropRemoteRasterToLatLon({
+        localRasterPath: vrt,
+        targetLat: site.lat,
+        targetLon: site.lon,
+        outputPath,
+        cropSize: REGIONAL_CROP_PX,
+        jpegQuality: 88,
+        requireCentered: true,
+      });
+      await assertCovered(outputPath);
+      const ids = group.map((f) => f.id);
+      const prov = buildSentinel2ProvenanceEntry({
+        outputPath,
+        sourceUrl: hrefs[0],
+        productId: ids.join(' + '),
+        siteId: site.id,
+        siteName: site.name,
+        centerLat: site.lat,
+        centerLon: site.lon,
+        cropSize: REGIONAL_CROP_PX,
+        sceneDate: group[0].properties.datetime,
+      });
+      prov.modifications.push(`mosaicked-${hrefs.length}-same-day-tiles`);
+      await upsertProvenanceEntries([prov]);
+      console.log(
+        `  ✓ ${site.id} regional: mosaic of ${ids.join(', ')} @ ${result.resolutionMPerPx.toFixed(1)} m/px → ${outputPath}`,
+      );
+      return { ...group[0], mosaicPath: vrt, mosaicIds: ids };
+    } catch (err) {
+      const tag = err instanceof CropError ? err.code : (err as Error).message;
+      console.log(`    · mosaic ${key} → ${tag}, next`);
     }
   }
   console.log(`  ✗ ${site.id}: every Sentinel-2 candidate failed`);
@@ -241,6 +356,7 @@ async function fetchDetailNaip(site: PadSite): Promise<boolean> {
   }
   if (!writeJpeg(outputPath, Buffer.from(await res.arrayBuffer()), `${site.id} detail`))
     return false;
+  if (!(await coveredOrLog(outputPath, `${site.id} detail (NAIP)`))) return false;
   await upsertProvenanceEntries([
     buildNaipProvenanceEntry({
       outputPath,
@@ -273,6 +389,7 @@ async function fetchDetailIgn(site: PadSite): Promise<boolean> {
   }
   if (!writeJpeg(outputPath, Buffer.from(await res.arrayBuffer()), `${site.id} detail`))
     return false;
+  if (!(await coveredOrLog(outputPath, `${site.id} detail (IGN)`))) return false;
   await upsertProvenanceEntries([
     buildIgnProvenanceEntry({
       outputPath,
@@ -346,6 +463,7 @@ async function fetchDetailGsi(site: PadSite): Promise<boolean> {
     );
   mkdirSync(path.dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, out);
+  if (!(await coveredOrLog(outputPath, `${site.id} detail (GSI)`))) return false;
   await upsertProvenanceEntries([
     buildGsiProvenanceEntry({
       outputPath,
@@ -376,16 +494,18 @@ async function fetchDetailS2Fallback(site: PadSite, scene: StacFeature): Promise
   try {
     const tmpPath = `${outputPath}.tmp.jpg`;
     await cropRemoteRasterToLatLon({
-      localRasterPath: `/vsicurl/${href}`,
+      localRasterPath: scene.mosaicPath ?? `/vsicurl/${href}`,
       targetLat: site.lat,
       targetLon: site.lon,
       outputPath: tmpPath,
       cropSize: S2_FALLBACK_WINDOW_M / 10, // 10 m/px source pixels
       jpegQuality: 92,
+      requireCentered: true,
     });
     const up = await sharp(tmpPath).resize(512, 512).jpeg({ quality: 88 }).toBuffer();
     writeFileSync(outputPath, up);
     (await import('node:fs')).unlinkSync(tmpPath);
+    await assertCovered(outputPath);
   } catch (err) {
     const tag = err instanceof CropError ? err.code : (err as Error).message;
     console.log(`  ✗ ${site.id} detail (s2-fallback): ${tag}`);
@@ -394,7 +514,7 @@ async function fetchDetailS2Fallback(site: PadSite, scene: StacFeature): Promise
   const prov = buildSentinel2ProvenanceEntry({
     outputPath,
     sourceUrl: href,
-    productId: scene.id,
+    productId: scene.mosaicIds?.join(' + ') ?? scene.id,
     siteId: site.id,
     siteName: site.name,
     centerLat: site.lat,

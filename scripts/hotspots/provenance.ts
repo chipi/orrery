@@ -515,7 +515,10 @@ export async function upsertProvenanceEntries(entries: ProvenanceEntry[]): Promi
       data.entries[entry.path] = entry;
     }
   }
-  await fs.writeFile(PROVENANCE_PATH, JSON.stringify(data, null, 2) + '\n', 'utf-8');
+  // Keep the file's own indent (the manifest is 1-space): a fixed 2 rewrote
+  // all ~86k lines on every hotspot fetch.
+  const indent = raw.match(/^\{\n( +)"/)?.[1].length ?? 1;
+  await fs.writeFile(PROVENANCE_PATH, JSON.stringify(data, null, indent) + '\n', 'utf-8');
 }
 
 /**

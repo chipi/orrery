@@ -17,12 +17,12 @@
  * Requires masters smudged: `git lfs pull -I 'masters/**'`. Idempotent — skips
  * a rung that already exists unless --force.
  *
- * `--only museums,observatories` builds just those top-level masters/ folders
+ * `--only museums,fleet-galleries/lc-39a` builds just those masters/ folders
  * and merges their entries into the existing manifest, so adding a few images
  * doesn't need the full walk (or every master smudged).
  */
 import { readdir, mkdir, writeFile, access } from 'node:fs/promises';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 
@@ -37,19 +37,23 @@ const EXCLUDE_TOP = new Set(['hotspots', 'posters']);
 const IS_THUMB = /\.(1x1|4x3|16x9)\./;
 const IS_IMG = /\.(jpe?g|png|webp)$/i;
 const FORCE = process.argv.includes('--force');
-// `--only museums,observatories`: build just these top-level folders and merge
-// their entries into the existing manifest (no full masters/ walk needed).
+// `--only museums,fleet-galleries/lc-39a`: build just these masters/ folders
+// (top-level or deeper) and merge their entries into the existing manifest
+// (no full masters/ walk needed).
 const onlyArg = process.argv.find((a, i) => process.argv[i - 1] === '--only');
-const ONLY = onlyArg ? new Set(onlyArg.split(',')) : null;
+const ONLY = onlyArg ? onlyArg.split(',').map((o) => o.replace(/\/+$/, '')) : null;
+const inOnly = (rel) => ONLY.some((o) => rel === o || rel.startsWith(o + '/'));
+const towardOnly = (rel) => ONLY.some((o) => o.startsWith(rel + '/'));
 
-async function* walk(dir, top = '') {
+async function* walk(dir, top = '', rel = '') {
   for (const e of await readdir(dir, { withFileTypes: true })) {
     const full = path.join(dir, e.name);
+    const r = rel ? `${rel}/${e.name}` : e.name;
     if (e.isDirectory()) {
       if (!top && EXCLUDE_TOP.has(e.name)) continue;
-      if (!top && ONLY && !ONLY.has(e.name)) continue;
-      yield* walk(full, top || e.name);
-    } else if (IS_IMG.test(e.name) && !IS_THUMB.test(e.name) && (top || !ONLY)) {
+      if (ONLY && !inOnly(r) && !towardOnly(r)) continue;
+      yield* walk(full, top || e.name, r);
+    } else if (IS_IMG.test(e.name) && !IS_THUMB.test(e.name) && (!ONLY || inOnly(r))) {
       yield full;
     }
   }
@@ -87,11 +91,10 @@ const MAX_TOP = RUNGS[RUNGS.length - 1]; // 3072 — never serve above the TV ru
 // Manifest: `/images/<stem>` → sorted list of actual rung WIDTHS (px). Files are
 // named by actual width, so the srcset descriptor is exact + never 404s.
 const manifest = ONLY ? JSON.parse(readFileSync(MANIFEST_PATH, 'utf8')) : {};
-if (ONLY) {
-  for (const k of Object.keys(manifest)) {
-    if (ONLY.has(k.split('/')[2])) delete manifest[k];
-  }
-}
+// --only keeps any extra rungs already on disk for an entry (add-card-rungs.mjs
+// adds 320/640 px card rungs after this script) and drops entries whose master
+// is gone.
+const seen = new Set();
 
 for await (const master of walk(MASTERS)) {
   const rel = path.relative(MASTERS, master); // e.g. missions/curiosity/01.jpg
@@ -128,9 +131,22 @@ for await (const master of walk(MASTERS)) {
     rungs += 1;
     bytes += data.length;
   }
-  manifest[`/images/${stem}`] = widths; // ascending; the last (largest) is NN.webp
+  const key = `/images/${stem}`;
+  seen.add(key);
+  const extra = ONLY
+    ? (manifest[key] ?? []).filter(
+        (w) =>
+          w < widths[widths.length - 1] &&
+          !widths.includes(w) &&
+          existsSync(path.join(SERVED, `${stem}-${w}.webp`)),
+      )
+    : [];
+  manifest[key] = [...widths, ...extra].sort((a, b) => a - b); // ascending; the last (largest) is NN.webp
 }
 
+if (ONLY)
+  for (const k of Object.keys(manifest))
+    if (inOnly(k.replace(/^\/images\//, '')) && !seen.has(k)) delete manifest[k];
 await writeFile(MANIFEST_PATH, JSON.stringify(manifest) + '\n');
 
 const mb = (b) => (b / 1024 / 1024).toFixed(1);

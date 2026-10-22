@@ -53,6 +53,11 @@ export interface CropInput {
    *  band 1 is the picture; reading all four renders as false colour.
    *  Omit for normal all-band crops. */
   bandIndex?: number;
+  /** Reject a window that had to be slid back inside the raster (target
+   *  near a tile edge), so the caller tries the next scene instead of
+   *  writing a crop that is not centred on the target. Earth pad tiers
+   *  set it; a slid crop put Wenchang's pads in a corner or off-crop. */
+  requireCentered?: boolean;
 }
 
 export interface CropResult {
@@ -75,7 +80,8 @@ export interface CropResult {
 export type CropErrorCode =
   | 'NO_DATA_AT_TARGET' // pre-crop pixel sample is mostly zero
   | 'CROP_MOSTLY_BLACK' // post-crop JPEG is mostly black
-  | 'DOWNLOAD_FAILED'; // fetch errored after all retries
+  | 'DOWNLOAD_FAILED' // fetch errored after all retries
+  | 'TARGET_NEAR_EDGE'; // window would not be centred on the target
 
 export class CropError extends Error {
   constructor(
@@ -185,6 +191,15 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
     const half = Math.floor(cropSize / 2);
     let left = Math.round(px - half);
     let top = Math.round(py - half);
+    if (
+      input.requireCentered &&
+      (left < 0 || top < 0 || left + cropSize > width || top + cropSize > height)
+    ) {
+      throw new CropError(
+        'TARGET_NEAR_EDGE',
+        `target pixel (${Math.round(px)}, ${Math.round(py)}) is within ${half} px of the raster edge`,
+      );
+    }
     left = Math.max(0, Math.min(width - cropSize, left));
     top = Math.max(0, Math.min(height - cropSize, top));
     const actualW = Math.min(cropSize, width - left);

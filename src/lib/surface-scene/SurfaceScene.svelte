@@ -829,6 +829,45 @@
     else root.style.removeProperty('--legend-top');
     return () => root.style.removeProperty('--legend-top');
   });
+  // The imagery card sits in the lower-left corner; the INDEX pull tab
+  // (left edge, centred) moves up while the card is there so the two never
+  // touch.
+  let sceneRoot = $state<HTMLDivElement | undefined>();
+  let indexHandleTop = $state<number | null>(null);
+  const tierLayerCount = $derived(tierContext?.layers.length ?? 0);
+  $effect(() => {
+    void tierCardShown;
+    void tierLayerCount;
+    void legendH;
+    const root = sceneRoot;
+    if (!root) return;
+    let raf = 0;
+    const check = () => {
+      const card = root.querySelector('.tier-context-card');
+      const handle = root.querySelector('.surface-index-handle');
+      if (!card || !handle) {
+        indexHandleTop = null;
+        return;
+      }
+      const cardTop = card.getBoundingClientRect().top;
+      const half = handle.getBoundingClientRect().height / 2;
+      const centre = Math.min(window.innerHeight / 2, cardTop - half - 12);
+      indexHandleTop = centre < window.innerHeight / 2 ? Math.round(centre) : null;
+    };
+    const schedule = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(check);
+    };
+    schedule();
+    const ro = new ResizeObserver(schedule);
+    ro.observe(root);
+    const card = root.querySelector('.tier-context-card');
+    if (card) ro.observe(card);
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+    };
+  });
   const tierCardShown = $derived(
     view === '3d' && !!tierContext && !panoramaActive && selected?.kind !== 'orbiter',
   );
@@ -5644,9 +5683,11 @@
 </script>
 
 <div
+  bind:this={sceneRoot}
   class="surface-scene"
   style:--body-tint={config.bodyTintCss}
   style:--mcd-bottom="calc(8px + env(safe-area-inset-bottom, 0px))"
+  style:--index-handle-top={indexHandleTop != null ? `${indexHandleTop}px` : undefined}
   style:--card-bottom={legendH ? `${48 + legendH + 8 + locateReservePx}px` : undefined}
 >
   <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
@@ -7039,7 +7080,7 @@ sample      ${debugInfo.projectedPxSample}`}
     left: 0;
     /* Vertically centred on the left edge — away from the top-left control
        chips, matching the /iss + /tiangong module handles (.handle-left). */
-    top: 50%;
+    top: var(--index-handle-top, 50%);
     z-index: 44;
     writing-mode: vertical-rl;
     transform: translateY(-50%) rotate(180deg);

@@ -33,7 +33,10 @@ const RUNGS = [1280, 2048, 3072];
 const QUALITY = 80;
 // hotspots = zoom-critical 3D tiers; posters = downloadable art (stay full-res
 // JPEG so the download is universally openable + print-quality).
-const EXCLUDE_TOP = new Set(['hotspots', 'posters']);
+// essays / lab / diagrams = the raw Higgsfield originals (2752 px PNG), kept as
+// the archive of record. Their served 1600 px sets come from the served base
+// (add-card-rungs.mjs --extend), so a full ladder run must not rebuild them here.
+const EXCLUDE_TOP = new Set(['hotspots', 'posters', 'essays', 'lab', 'diagrams']);
 const IS_THUMB = /\.(1x1|4x3|16x9)\./;
 const IS_IMG = /\.(jpe?g|png|webp)$/i;
 const FORCE = process.argv.includes('--force');

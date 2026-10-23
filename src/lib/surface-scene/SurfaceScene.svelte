@@ -868,8 +868,64 @@
       ro.disconnect();
     };
   });
-  const tierCardShown = $derived(
-    view === '3d' && !!tierContext && !panoramaActive && selected?.kind !== 'orbiter',
+  // The route's Orbit Ruler (bottom-left, behind everything) moves right of
+  // the layer chips — and of the locate button where they share rows — when
+  // the chip column reaches down into it (short windows, e.g. 1280x720 on
+  // /earth). Published on <html>: the ruler lives in the route, not here.
+  $effect(() => {
+    const root = sceneRoot;
+    if (!root) return;
+    const html = document.documentElement;
+    let raf = 0;
+    const visible = (el: Element | null) => {
+      const r = el?.getBoundingClientRect();
+      return r && r.width && r.height ? r : null;
+    };
+    const check = () => {
+      const ruler = [...document.querySelectorAll('.ruler')].map(visible).find(Boolean);
+      const chips = root.querySelector('.hud-controls');
+      if (!ruler || !chips || !visible(chips)) {
+        html.style.removeProperty('--ruler-left');
+        return;
+      }
+      let right = 0;
+      let bottom = 0;
+      for (const el of chips.querySelectorAll('*')) {
+        const r = visible(el);
+        if (!r) continue;
+        right = Math.max(right, r.right);
+        bottom = Math.max(bottom, r.bottom);
+      }
+      if (ruler.top >= bottom + 8) {
+        html.style.removeProperty('--ruler-left');
+        return;
+      }
+      const locate = visible(document.querySelector('.locate-me'));
+      if (locate && locate.top < ruler.bottom && locate.bottom > ruler.top) {
+        right = Math.max(right, locate.right);
+      }
+      html.style.setProperty('--ruler-left', `${Math.round(right + 12)}px`);
+    };
+    const schedule = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(check);
+    };
+    schedule();
+    const ro = new ResizeObserver(schedule);
+    ro.observe(root);
+    const mo = new MutationObserver(schedule);
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+      mo.disconnect();
+      html.style.removeProperty('--ruler-left');
+    };
+  });
+  // .by(): a closure, so TS sees `selected` as SurfaceSite | null, not the
+  // `null` it narrows the top-level initialiser to.
+  const tierCardShown = $derived.by(
+    () => view === '3d' && !!tierContext && !panoramaActive && selected?.kind !== 'orbiter',
   );
   // Mobile: true while any accordion tab is open — hides the altitude pill so
   // the open drawer has room (2026-07 user direction).
@@ -7459,6 +7515,14 @@ sample      ${debugInfo.projectedPxSample}`}
     /* Wrap at spaces, never clip a word (de ANSICHT ZURÜCKSETZEN). */
     .hud-controls :global(.toggle) {
       max-width: none;
+    }
+    /* 44 px is the touch-target size; with a mouse 34 px is plenty (WCAG
+       2.2 minimum is 24) and saves ~94 px of column on /earth, which
+       otherwise runs into the Orbit Ruler on 768 px-high windows. */
+    .hud-controls :global(.chip),
+    .ctrl-row.chips :global(.chip),
+    .hud-controls :global(.toggle) {
+      min-height: 34px;
     }
   }
 

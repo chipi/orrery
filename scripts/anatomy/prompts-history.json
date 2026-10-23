@@ -1716,17 +1716,6 @@
       "prompt": "Technical cutaway illustration of the SMART-1 lunar probe, watercolor and ink-wash on faint graph paper, exposed internal structure — small box bus, Hall-effect ion thruster, twin solar wings, miniature cameras, X-ray spectrometer. Handwritten engineering annotations, dimension lines, faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette, vintage scientific sketchbook / editorial infographic aesthetic. ESA markings."
     },
     "anatomy/sojourner": {
-      "generation_id": "9bd42dae-0a73-4ab7-935f-61f3fc117e73",
-      "created_utc": "2026-06-22T19:15:47.320Z",
-      "model": "nano_banana_2",
-      "aspect_ratio": "3:2",
-      "resolution": "1k",
-      "width": 1264,
-      "height": 848,
-      "input_images": [],
-      "prompt": "Technical cutaway illustration of ESA's Solar Orbiter spacecraft, watercolor and ink-wash on faint graph paper, exposed internal structure — a boxy bus tucked behind a black multi-layered heat shield facing the Sun, two solar panel wings angled away from the heat, instrument booms and apertures peeking through the shield. Handwritten engineering annotations, dimension lines, faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette with solar gold, vintage scientific sketchbook / editorial infographic aesthetic. ESA markings."
-    },
-    "anatomy/solar-orbiter": {
       "generation_id": "074e37cf-0a4e-457b-921c-e993d194d16e",
       "created_utc": "2026-06-22T18:06:15.930Z",
       "model": "nano_banana_2",
@@ -1735,7 +1724,20 @@
       "width": 1264,
       "height": 848,
       "input_images": [],
-      "prompt": "Technical cutaway illustration of the Mars Pathfinder Sojourner rover, watercolor and ink-wash on faint graph paper — small six-wheel rocker-bogie rover, flat solar panel on top, APXS spectrometer at the rear, warning whip antenna, sitting on the Martian surface. Handwritten engineering annotations, dimension lines with measurements (it is tiny, 65 cm long), faint physics equations in the margins, ink-splatter wash clouds, warm muted rusty-metallic palette, vintage scientific sketchbook / editorial infographic aesthetic. NASA JPL markings."
+      "prompt": "Technical cutaway illustration of the Mars Pathfinder Sojourner rover, watercolor and ink-wash on faint graph paper — small six-wheel rocker-bogie rover, flat solar panel on top, APXS spectrometer at the rear, warning whip antenna, sitting on the Martian surface. Handwritten engineering annotations, dimension lines with measurements (it is tiny, 65 cm long), faint physics equations in the margins, ink-splatter wash clouds, warm muted rusty-metallic palette, vintage scientific sketchbook / editorial infographic aesthetic. NASA JPL markings.",
+      "note": "Before 2026-10-23 the served sojourner/solar-orbiter cutaways were swapped (since the 4K re-master); fixed by swapping the files."
+    },
+    "anatomy/solar-orbiter": {
+      "generation_id": "9bd42dae-0a73-4ab7-935f-61f3fc117e73",
+      "created_utc": "2026-06-22T19:15:47.320Z",
+      "model": "nano_banana_2",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "width": 1264,
+      "height": 848,
+      "input_images": [],
+      "prompt": "Technical cutaway illustration of ESA's Solar Orbiter spacecraft, watercolor and ink-wash on faint graph paper, exposed internal structure — a boxy bus tucked behind a black multi-layered heat shield facing the Sun, two solar panel wings angled away from the heat, instrument booms and apertures peeking through the shield. Handwritten engineering annotations, dimension lines, faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette with solar gold, vintage scientific sketchbook / editorial infographic aesthetic. ESA markings.",
+      "note": "Before 2026-10-23 the served sojourner/solar-orbiter cutaways were swapped (since the 4K re-master); fixed by swapping the files."
     },
     "anatomy/soyuz": {
       "generation_id": "dfa5dadb-0780-45f2-aa9c-8311bd89121f",

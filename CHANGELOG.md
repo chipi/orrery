@@ -10,11 +10,78 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
-The 1.0 release. It adds the **Physics Lab** (`/lab`) — a notebook, canvas and
-ask box over one tested physics kernel, also exposed as an **MCP server** with
-OAuth sign-in — plus **collectible cards**, guided **entry and descent**
-flights, a rebuilt launches feed, and a stability, image-weight, security and
-accessibility pass for 1.0.
+## [0.9.1] — 2026-10-23
+
+The first release since 0.8.1 (0.9.0 was never tagged). It adds the **Physics
+Lab** (`/lab`) — a notebook, canvas and ask box over one tested physics kernel,
+also exposed as an **MCP server** with OAuth sign-in — plus **collectible
+cards**, guided **entry and descent** flights, a rebuilt launches feed,
+**museums and observatories** on `/earth`, **42 launch pads**, every page and
+image alt text **translated into 13 languages**, and a stability, image-weight,
+security and accessibility pass.
+
+### Museums and observatories on `/earth`
+
+- **Museums** where flown hardware is on display: pins on the globe, a museum
+  card with a hero photo of the place, and "You can see this in…" on the object
+  pages; test articles, flown parts and sister units are told apart (PRD-027,
+  #617).
+- **Observatories**: pins, a card per telescope, "Where this is done" on the
+  science pages and an article on detecting extraterrestrial life (PRD-028,
+  #320).
+- 3D markers in the launch-pad style: a flown capsule for museums, dishes and
+  domes for observatories, at lander weight.
+- Layer chips grouped **ON EARTH** (launch pads, museums, telescopes) and
+  **IN SPACE** (stations, telescopes, constellations, comsats), each group
+  header a master switch; launch pads get their own chip.
+
+### Earth launch pads
+
+- **17 new pads** — Cape Canaveral LC-17, Wallops LP-0, Kourou ELS and ZLV,
+  Baikonur 81, Vostochny 1S, Wenchang LC-201, Uchinoura, Naro, Sohae, Semnan,
+  Palmachim, Rocket Lab LC-1, Woomera, Hammaguir, San Marco and Alcântara — each
+  with text in 14 languages, a gallery, satellite tiles, a card and its launches.
+- **Launch attribution** — "Launches from here" credited other cosmodromes' pads
+  (566 Plesetsk launches sat on Baikonur's Gagarin's Start); a pad name now has
+  to match its location. Gagarin's Start merged into Baikonur 1/5, its old link
+  redirects; Plesetsk is the cosmodrome entry.
+- **Locations** — Baikonur 31/6 was 8 km off, Kourou ELA-4 off its pad, Woomera
+  ~1 km off (now Launch Area 5B, ±50 m); San Marco carries a 700 m uncertainty
+  because sources disagree which platform is which.
+- **Satellite tiles** — tiles are refused when the pad is off-centre or more than
+  1% is black. 13 tiles re-fetched centred (Wenchang LC-101's was open sea);
+  Vandenberg SLC-4E's close-up was all black (no NAIP coverage) and Kourou's
+  "0.5 m IGN" was 10 m imagery — both are now Sentinel-2 and credited as such.
+- **Pad panels** show year and position; the lander cells (landing, EVA,
+  samples, crew) are gone. Status badges are translated, and a retired pad
+  reads RETIRED.
+- With a site's details open, the scale bar, altitude, imagery card, locate
+  button and INDEX tab no longer cover the panel, the nation legend or each
+  other.
+
+### Translations
+
+- Every overlay, UI string, mission event and image alt text is translated into
+  all 13 locales (alt text was ~1,356 of 4,076); science search works in the
+  reader's language.
+- Names are written as each language writes them — a curated glossary of
+  people, bodies, places, facilities and agencies, origin-language names for
+  vehicles (Союз МС in Russian, 神舟 in Chinese), native star names — checked
+  by a name-drift gate.
+- Several review rounds, string by string, across essays, science, programs,
+  fleet and missions.
+
+### Content and images
+
+- Artemis: the 2026 architecture (III an Earth-orbit test, IV lands, V added)
+  with new galleries, in 14 languages.
+- Chandrayaan-3's invented TCMs replaced by ISRO's published manoeuvres;
+  mission events and flight timelines agree; `/fly` no longer invents Δv.
+- Images: 113 off-subject gallery images replaced, no gallery repeats a photo,
+  a near-duplicate gate that sees every master; credits fixed for ~900 images
+  (wrong file, placeholder or wrong licence); 1,400+ English alt texts rewritten
+  from the pictures.
+- China's crewed programme is CMSA, not CNSA.
 
 ### Physics Lab (`/lab`)
 
@@ -80,7 +147,7 @@ accessibility pass for 1.0.
   launch counts (#569). Two orphan curation ids pruned; the dead SpaceX source
   removed; NASA press-release dates claim day precision only, not a launch
   time (#603).
-- **Earth launch pads** — Tier-2 terrain for all 26 pads, with a disclosed
+- **Earth launch pads** — Tier-2 terrain for every pad, with a disclosed
   Sentinel-2 fallback where no open sub-metre source exists, and Tier-3 ground
   panoramas for six (#546).
 
@@ -98,7 +165,7 @@ accessibility pass for 1.0.
 - **Resilience and SEO** — i18n bundle retry, smaller precache, `hreflang`
   sitemap and a language-suggestion banner (#517–#519).
 
-### v1.0 readiness
+### Readiness pass
 
 - **Stability** — a throw inside `Sentry.init` no longer aborts client boot
   (#553); transient `/data/` fetch failures are retried and handled (#554); a
@@ -141,7 +208,7 @@ accessibility pass for 1.0.
   2026-04-30.
 - Workspace isolation for parallel checkouts, `npm run docker:e2e`,
   schedule-isolated e2e concurrency; mobile size budget 70 → 75 MB.
-- Version label 0.9.0-wip, TA.md v3.4, ADR index and RFC status cleanup, finished
+- Version 0.9.1, TA.md v3.4, ADR index and RFC status cleanup, finished
   working notes archived (#605); `/plan` porkchop spec re-enabled (#606).
 - Dependabot bumps: Playwright, Svelte, Prettier, Capacitor, Docker and GitHub
   Actions.

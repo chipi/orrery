@@ -7443,14 +7443,22 @@ sample      ${debugInfo.projectedPxSample}`}
     .hud-controls {
       display: flex;
       z-index: 35;
+      /* Clear of the INDEX pull tab (~28 px) on the left edge. */
+      left: 36px;
     }
     .ctrl-row.chips {
       flex-direction: column;
-      /* Explicit width keeps chips a consistent size that's NOT
-         inherited from the toggle row above. */
-      width: 140px;
+      /* Chips share one width that's NOT inherited from the toggle row
+         above: 140 px, or the longest label when a locale needs more
+         (de KOMMUNIKATIONSSATELLITEN). */
+      width: max-content;
+      min-width: 140px;
       max-width: none;
       align-items: stretch;
+    }
+    /* Wrap at spaces, never clip a word (de ANSICHT ZURÜCKSETZEN). */
+    .hud-controls :global(.toggle) {
+      max-width: none;
     }
   }
 

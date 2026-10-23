@@ -44,12 +44,15 @@ const DEVICES = {
 } as const;
 type Device = keyof typeof DEVICES;
 
-// MB after a full scroll. Measured 2026-10-16 on vite dev, then ~1.4x headroom.
+// MB after a full scroll. Re-measured 2026-10-23 on vite dev (after every ladder
+// entry got its 320 px rung), then ~1.15x headroom rounded up — kept tight on
+// purpose; never looser than the 2026-10-16 budgets. A body that can't be read
+// mid-scroll is not counted, so a measurement can only come out low, not high.
 const BUDGET_MB: Record<string, Record<Device, number>> = {
-  '/fleet': { phone: 20, tablet: 40, desktop: 8, tv: 20 },
-  '/missions': { phone: 19, tablet: 20, desktop: 5, tv: 10 },
-  '/credits': { phone: 45, tablet: 45, desktop: 45, tv: 45 },
-  '/colophon': { phone: 50, tablet: 50, desktop: 12, tv: 30 },
+  '/fleet': { phone: 17, tablet: 37, desktop: 6, tv: 17 },
+  '/missions': { phone: 16, tablet: 16, desktop: 4, tv: 8 },
+  '/credits': { phone: 43, tablet: 10, desktop: 43, tv: 43 },
+  '/colophon': { phone: 41, tablet: 36, desktop: 9, tv: 30 },
 };
 
 async function measure(browser: Browser, baseURL: string, route: string, device: Device) {

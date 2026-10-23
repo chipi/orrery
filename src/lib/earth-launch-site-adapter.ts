@@ -134,6 +134,7 @@ function adaptFleetToSurfaceSite(f: FleetEntry): SurfaceSite | null {
   return {
     id: f.id,
     kind: 'surface',
+    site_role: 'launch-pad',
     agency,
     nation,
     year,

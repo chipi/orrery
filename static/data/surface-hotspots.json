@@ -1371,12 +1371,12 @@
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/woomera/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 1000,
+      "location_uncertainty_m": 50,
       "region_bounds": {
-        "lat_min": -31.0415,
-        "lat_max": -31.0185,
-        "lon_min": 136.44658,
-        "lon_max": 136.47342
+        "lat_min": -30.9832,
+        "lat_max": -30.9603,
+        "lon_min": 136.46222,
+        "lon_max": 136.48904
       },
       "region_kind": "roi_quad"
     },
@@ -1403,7 +1403,7 @@
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/san-marco/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10,
+      "location_uncertainty_m": 700,
       "region_bounds": {
         "lat_min": -2.9498,
         "lat_max": -2.9268,

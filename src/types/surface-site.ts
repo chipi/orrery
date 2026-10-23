@@ -72,6 +72,9 @@ export type RegionKind = 'landing_ellipse' | 'traverse_bbox' | 'roi_quad' | 'ima
 export interface SurfaceSite {
   id: string;
   kind: SiteKind;
+  /** 'launch-pad' for /earth pads: they share kind 'surface' with landers,
+   *  but the lander panel cells (landing, EVA, samples, crew) don't apply. */
+  site_role?: 'launch-pad';
   agency: SurfaceAgency;
   nation: SurfaceNation;
   year: number;

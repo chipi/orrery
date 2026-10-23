@@ -6530,7 +6530,7 @@ sample      ${debugInfo.projectedPxSample}`}
         {#if selected.dispatch}
           <p class="site-dispatch">{selected.dispatch}</p>
         {/if}
-        <div class="grid">
+        <div class="grid" class:three={selected.site_role === 'launch-pad'}>
           <div class="cell">
             <div class="cell-label">{m.moon_panel_year()}</div>
             <div class="cell-value">{selected.year}</div>
@@ -6548,6 +6548,21 @@ sample      ${debugInfo.projectedPxSample}`}
             <div class="cell">
               <div class="cell-label">{m.moon_panel_status()}</div>
               <div class="cell-value short">{selected.status}</div>
+            </div>
+          {:else if selected.site_role === 'launch-pad'}
+            <!-- Launch pads: no landing, surface time, EVA, samples or crew
+                 to report — the lander cells read "—" / "0 kg" here. -->
+            <div class="cell">
+              <div class="cell-label">{m.moon_panel_lat()}</div>
+              <div class="cell-value">
+                {selected.lat != null ? m.moon_lat_deg({ value: selected.lat.toFixed(2) }) : '—'}
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-label">{m.moon_panel_lon()}</div>
+              <div class="cell-value">
+                {selected.lon != null ? m.moon_lon_deg({ value: selected.lon.toFixed(2) }) : '—'}
+              </div>
             </div>
           {:else}
             <div class="cell">
@@ -7580,6 +7595,9 @@ sample      ${debugInfo.projectedPxSample}`}
     grid-template-columns: 1fr 1fr;
     gap: 7px;
     margin-bottom: 14px;
+  }
+  .grid.three {
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .cell {
     background: rgba(255, 255, 255, 0.03);

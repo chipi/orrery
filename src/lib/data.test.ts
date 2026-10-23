@@ -951,6 +951,9 @@ describe('hotspot-metadata overlay (ADR-074 §i18n)', () => {
     expect(curiosity.panorama_metadata?.compass_zero_direction).toBe('Rover-Vorderseite');
     const pad = padsDe.find((s) => s.id === 'vandenberg-slc-4e')!;
     expect(pad.panorama_metadata?.caption).toMatch(/Luftaufnahme/);
+    // Every pad is marked so the panel drops the lander cells.
+    expect(padsDe.every((s) => s.site_role === 'launch-pad')).toBe(true);
+    expect(a11en.site_role).toBeUndefined();
   });
 });
 

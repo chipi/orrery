@@ -114,7 +114,7 @@ distant galaxy) rather than a single chapter's.
   hero is a *new* asset so it has no such constraint — render it freely.)
 - **LOCKED 2026-06-23:** `landing-hero-2` — flat overture (sun + tilted rings + cyan arc + faint
   galaxy), generated via the §7 locked-reference method. Vast right-side void for `h1` + lede.
-  Staged at `/tmp/sci-render/LOCKED/_science-landing-hero.png`. New asset → wire straight into
+  Original (raw Higgsfield PNG): `masters/science-covers-v2/_science-landing-hero.png`. New asset → wire straight into
   `src/routes/science/+page.svelte` `.hero` (no manifest conflict).
 
 ---
@@ -165,7 +165,8 @@ palette, bend it — but only for a reason this strong.
 - [ ] Reads as its subject (the diluted original's meaning, re-told celestially)
 
 **Locked set (6 diluted covers re-done, 2026-06-23):** history, mission-phases, propulsion,
-space-stations, observation, life-in-space. Staged as raster at `/tmp/sci-render/LOCKED/` pending
+space-stations, observation, life-in-space. Masters in `masters/science-covers-v2/` (raw Higgsfield PNG
+for observation, propulsion, space-stations; WebP for the other three) — staged at the time pending
 the format + wiring decision (§8).
 
 ---

@@ -52,7 +52,9 @@ const BUDGET_MB: Record<string, Record<Device, number>> = {
   '/fleet': { phone: 17, tablet: 37, desktop: 6, tv: 17 },
   '/missions': { phone: 16, tablet: 16, desktop: 4, tv: 8 },
   '/credits': { phone: 43, tablet: 43, desktop: 43, tv: 43 },
-  '/colophon': { phone: 41, tablet: 36, desktop: 9, tv: 30 },
+  // 62 more cutaways (45 anatomy + 17 exploded) on 2026-10-23: re-measured on the
+  // production build at 46.8 / 42.1 / 8.2 / 40.1 MB, oversize 0, same 1.15x rule.
+  '/colophon': { phone: 54, tablet: 49, desktop: 10, tv: 47 },
 };
 
 async function measure(browser: Browser, baseURL: string, route: string, device: Device) {

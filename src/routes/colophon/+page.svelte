@@ -25,6 +25,7 @@
   type Item = { title: string; what: string; where: string; route: string; thumb?: string };
   type Manifest = {
     anatomy_art: Diagram[];
+    exploded_art: Diagram[];
     diagrams_science: Diagram[];
     posters: Poster[];
     lab_illustrations: Diagram[];
@@ -116,6 +117,10 @@
           <span class="counts">· {data.anatomy_art.length}</span>
         </li>
         <li>
+          <a href="#sec-exploded">{m.colophon_section_exploded()}</a>
+          <span class="counts">· {data.exploded_art.length}</span>
+        </li>
+        <li>
           <a href="#sec-posters">{m.colophon_gallery_posters()}</a>
           <span class="counts">· {data.posters.length}</span>
         </li>
@@ -165,6 +170,32 @@
       </h2>
       <ul class="thumb-grid wide">
         {#each data.anatomy_art as d (d.file)}
+          <li class="thumb-card">
+            <button
+              type="button"
+              class="thumb-open"
+              onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: '/fleet' })}
+            >
+              <img
+                {...responsive(srcOf(d.file), IMAGE_SIZES.colophonWide)}
+                alt={d.title}
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <span class="thumb-title">{d.title}</span>
+          </li>
+        {/each}
+      </ul>
+    </section>
+
+    <!-- Launcher exploded cutaways: the stage-by-stage companions to the pencil sketches. -->
+    <section class="block" aria-labelledby="sec-exploded">
+      <h2 id="sec-exploded">
+        {m.colophon_section_exploded()}<span class="count">{data.exploded_art.length}</span>
+      </h2>
+      <ul class="thumb-grid wide">
+        {#each data.exploded_art as d (d.file)}
           <li class="thumb-card">
             <button
               type="button"

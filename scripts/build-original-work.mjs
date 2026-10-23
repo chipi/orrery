@@ -47,6 +47,15 @@ function humanize(slug) {
     .join(' ');
 }
 
+// A width-suffixed file (`{stem}-{w}.webp`) is a responsive rung of `{stem}` —
+// not an artwork of its own — when image-ladder.json lists width w for that stem
+// (add-card-rungs.mjs writes 320/640 card rungs next to diagrams and Lab art).
+const ladder = JSON.parse(readFileSync('static/data/image-ladder.json', 'utf8'));
+const isRung = (url) => {
+  const m = url.match(/^(.*)-(\d+)\.webp$/);
+  return !!m && (ladder[m[1]] ?? []).includes(Number(m[2]));
+};
+
 function scanDiagrams(dir, urlBase) {
   // Enumerate one entry per unique diagram, keyed by basename. A diagram may
   // ship as hand-authored .svg, as a WIRED-blend raster .webp (2026-07 redo),
@@ -55,7 +64,7 @@ function scanDiagrams(dir, urlBase) {
   const bases = new Set();
   for (const f of readdirSync(dir)) {
     if (f.endsWith('.svg')) bases.add(f.replace(/\.svg$/, ''));
-    else if (f.endsWith('.webp')) bases.add(f.replace(/\.webp$/, ''));
+    else if (f.endsWith('.webp') && !isRung(`${urlBase}/${f}`)) bases.add(f.replace(/\.webp$/, ''));
   }
   return [...bases].sort().map((slug) => {
     const cover = slug.startsWith('_cover-');
@@ -111,6 +120,17 @@ const anatomyArt = (() => {
     return [];
   }
 })();
+
+// Launcher exploded cutaways — the stage-by-stage watercolor companions to the
+// pencil sketches, under /images/anatomy-exploded/{id}.webp, ids from
+// src/lib/anatomy-exploded-ids.json (derived from masters/anatomy-exploded).
+const explodedArt = JSON.parse(readFileSync('src/lib/anatomy-exploded-ids.json', 'utf8'))
+  .filter((id) => existsSync(`static/images/anatomy-exploded/${id}.webp`))
+  .map((id) => ({
+    title: fleetNames[id] ?? humanize(id),
+    file: `/images/anatomy-exploded/${id}.webp`,
+    cover: false,
+  }));
 
 // Curated 3D-model catalogue. Every distinct hand-built mesh in the
 // project gets its own entry + thumbnail; the thumbnails are captured
@@ -415,7 +435,7 @@ const cruiseModels = [
   [
     'artemis3',
     'Orion (Artemis)',
-    'Orion crew capsule + European Service Module with four solar wings (Artemis III / IV).',
+    'Orion crew capsule + European Service Module with four solar wings (Artemis IV / V).',
   ],
   ['luna9', 'Luna 9 direct-ascent', 'Soviet direct bus with the spherical lander capsule on top.'],
   [
@@ -759,7 +779,7 @@ const posters = [
 const labIllustrations = (() => {
   try {
     return readdirSync('static/images/lab/goals')
-      .filter((f) => f.endsWith('.webp'))
+      .filter((f) => f.endsWith('.webp') && !isRung(`/images/lab/goals/${f}`))
       .sort()
       .map((f) => ({
         title: humanize(f.replace(/\.webp$/, '')),
@@ -774,6 +794,7 @@ const labIllustrations = (() => {
 const manifest = {
   generated_by: 'scripts/build-original-work.mjs',
   anatomy_art: anatomyArt,
+  exploded_art: explodedArt,
   lab_illustrations: labIllustrations,
   diagrams_science: science,
   posters,
@@ -784,6 +805,7 @@ const manifest = {
   writing,
   totals: {
     anatomy_art: anatomyArt.length,
+    exploded_art: explodedArt.length,
     lab_illustrations: labIllustrations.length,
     diagrams_science: science.length,
     posters: posters.length,

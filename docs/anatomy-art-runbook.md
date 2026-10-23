@@ -1,9 +1,9 @@
 # Spacecraft anatomy art — generation runbook (#367)
 
 How to generate the remaining spacecraft anatomy illustrations **in the same
-style** as the 72 already shipped, and wire them in end-to-end.
+style** as the shipped set, and wire them in end-to-end.
 
-The art is AI-generated (Higgsfield `nano_banana_pro`) editorial cutaways. The
+The art is AI-generated (Higgsfield `nano_banana_2`, "Nano Banana 2") editorial cutaways. The
 whole point of this doc is **style consistency** — a new batch must look like
 it came from the same hand as the existing set.
 
@@ -17,12 +17,22 @@ Batches look different when the recipe drifts. To prevent that:
    (`[CRAFT]`, `[KEY PARTS]`, `[AGENCY]`). Do **not** paraphrase the style
    clauses ("watercolor and ink-wash on faint graph paper …"). Those clauses
    ARE the style.
-2. **Never change the model.** Always `nano_banana_pro`.
+2. **Never change the model.** Always `nano_banana_2` — the model id every shipped
+   generation records in `scripts/anatomy/prompts-history.json`.
 3. **Never change aspect ratio per style:** watercolor = `3:2`, pencil = `2:3`.
 4. **Strongest guard — pass a reference image.** Hand the model one of the
    existing illustrations as a style reference (see §3). This locks the look
    far more tightly than text alone. Use a watercolor reference for watercolor
    craft, a pencil reference for launchers.
+   **A reference passes on content, not only style** (2026-10-23 batch): Giotto
+   on a Rosetta reference grew Rosetta's solar wings; Falcon Heavy on the Saturn V
+   cutaway drew an S-IC and a Lunar Module; Salyut 2 on Salyut 1 kept its docked
+   Soyuz. So pick a reference with the **same layout** (a sister craft where one
+   exists), and end the prompt with the matching clause from
+   `scripts/anatomy/build-batch-2026-10-23.mjs` — "sister craft: keep the layout,
+   change the details" or "different craft: take only the style, do not copy its
+   shape, parts, text or markings". Write negations in lower case ("no upper
+   stage"), never "NO …": capitals leak into the drawing as labels.
 5. **QC every batch against the existing set** — render a contact sheet
    (`build-anatomy-webp` already lists ids) and eyeball it next to a few of the
    shipped ones before committing. Regenerate any that drift.
@@ -71,7 +81,7 @@ engines, booms…). Accuracy matters — research the actual layout per craft.
 One call per craft (`mcp__claude_ai_Higgsfield__generate_image`):
 
 ```jsonc
-{ "model": "nano_banana_pro",
+{ "model": "nano_banana_2",
   "params": { "prompt": "<recipe>", "aspect_ratio": "3:2", "count": 1 } }
 ```
 
@@ -81,16 +91,20 @@ credits**.
 
 ### Reference-image anti-drift (recommended)
 
-To pin the style, attach an existing illustration as a reference:
+To pin the style, attach an existing illustration as a reference. A shipped
+generation's id works directly — no upload: `params.medias: [{ "value":
+"<generation_id>", "role": "image_references" }]`, with the id from
+`scripts/anatomy/prompts-history.json`. The pencil set uses one fixed style
+reference, media `1191305d-f91f-41fc-b5ac-8b1f1966a646`. Pick the reference by
+layout (golden rule 4), not just by style.
 
-1. `media_import_url` (or `media_upload`) one of the shipped images, e.g. the
-   raw URL of `static/images/anatomy/voyager-2` (a clean watercolor) — get back
-   a `media_id`.
-2. Pass it in `params.medias: [{ "value": "<media_id>", "role": "<style/ref
-   role from models_explore>" }]`. Check `models_explore` for the exact role
-   name nano_banana_pro expects for a style/reference image.
-
-Keep one watercolor ref + one pencil ref handy and reuse them across the batch.
+**Where the prompts live.** `scripts/anatomy/prompts-history.json` holds the
+exact prompt, model, aspect, resolution and reference of every shipped cutaway
+(recovered from the Higgsfield history, 2026-10-23).
+`scripts/anatomy/build-batch-2026-10-23.mjs` writes the prompts of the
+2026-10-23 batch to `scripts/anatomy/batch-2026-10-23.json`; copy it for the next
+batch. Never keep prompts only in `/tmp`: the 2026-06-22 prompts were kept in
+`/tmp/anatomy-prompts.mjs` and lost.
 
 ---
 
@@ -149,19 +163,19 @@ the responsive ladder (`static/images/anatomy/{id}.webp` + width rungs) via
 
 ---
 
-## 5. Remaining craft
+## 5. Coverage
 
-Style in (): P = pencil, W = watercolor. Marko's call was **notable first,
-obscure long-tail last**.
+Style in (): P = pencil, W = watercolor.
 
-**✅ The 72 notable craft are DONE** (generated 2026-06-22, all on disk +
-wired). The full notable set — 53 watercolor + 19 pencil launchers — shipped in
-one batch using the locked recipe; ids and prompts are preserved verbatim in
-`/tmp/anatomy-prompts.mjs` (regenerate any time with `node`). The `[tail]` craft
-below are all that's left, and were deliberately deferred as obscure.
+- **2026-06-22:** the 72 notable craft (53 watercolor + 19 pencil launchers).
+- **2026-08-02:** 8 pencil backfills, plus the 23 launcher exploded cutaways
+  (docs/guides/launcher-cutaway-style.md).
+- **2026-10-23:** the whole `[tail]` below — 4 pencil + 41 watercolor, and 17 more
+  exploded cutaways. Every fleet launcher, crewed and cargo craft, orbiter, lander,
+  rover, observatory and station now has a cutaway. All anatomy masters are 4K
+  upscales (the 9 earlier 2k ones were upscaled in the same pass).
 
-> Don't re-generate the 72 — `node scripts/build-anatomy-webp.mjs` + the
-> missing-check (§4) will show they're already present. Only the tail is open.
+The `[tail]` list, kept for the record (all done 2026-10-23):
 
 **`[tail]` launcher (P):** atlas-lv-3b, atlas-slv-3d, proton-k, r-7-vostok,
 soyuz-fg, soyuz-u, titan-ii-glv, vostok-k, voskhod-11a57

@@ -13,7 +13,7 @@ margin physics equations, vintage agency markings.
 
 ## 0. Golden rules (this is where drift dies)
 
-1. **Model:** always `nano_banana_pro`. **Aspect:** `3:2`. **Resolution:** `2k`.
+1. **Model:** always `nano_banana_2` (the id the shipped generations record). **Aspect:** `3:2`. **Resolution:** `2k`.
 2. **Always pass the per-launcher structural SVG sketch as the reference image**
    (`medias:[{value, role:"image"}]`). It carries the composition, the stage
    count, the exact engine counts, and the labels. Text alone will not hold them.
@@ -70,16 +70,20 @@ cutaway — not a flat vector chart, not photorealistic.
 
 ## 3. Pipeline
 
-1. `node scripts/essays/build-cutaway-sketches.mjs` — data-driven from
-   `src/lib/orbital/launcher-engines.ts` (stages, engine counts, arrangement,
-   boosters) + `engine-registry.ts` (propellants). Emits one structural SVG +
-   PNG per launcher to `docs/wip/essay-diagram-sources/launcher-cutaways/`.
+1. `npx tsx scripts/essays/build-cutaway-sketches.mjs [id …]` — data-driven from
+   `src/lib/physics/propulsion/launcher-engines.ts` (the /fly launchers) and
+   `scripts/anatomy/exploded-specs.mjs` (launchers outside /fly), plus
+   `engine-registry.ts` (propellants; a stage's `prop` overrides). Emits one
+   structural SVG + PNG per launcher to
+   `docs/wip/essay-diagram-sources/launcher-cutaways/`; it skips the `manual`
+   ones (§5).
 2. Upload each PNG (`media_upload` → PUT → `media_confirm`), generate with the
    template above (up to 8 concurrent, poll `job_status sync:true`), 2 credits
    each.
-3. Download raw PNG → `original-assets/launcher-cutaways/<id>.png` (committed
-   backup) → resize webp to `static/images/anatomy-exploded/<id>.webp`
-   (`sharp().resize(1600).webp({quality:86})`).
+3. Save the raw PNG, untouched, as the master `masters/anatomy-exploded/<id>.png`
+   (git-LFS), then `node scripts/build-anatomy-webp.mjs` (id list) and
+   `node scripts/vision/build-display-ladder.mjs --only anatomy-exploded` +
+   `node scripts/vision/add-card-rungs.mjs --all` (served sizes).
 4. Wire into the fleet DETAIL tab **alongside** the pencil anatomy (a second
    view, not a replacement). Generated art → no provenance row (Orrery-original).
 
@@ -88,8 +92,10 @@ cutaway — not a flat vector chart, not photorealistic.
 | Thing | Path |
 |---|---|
 | Structural sketches (input) | `docs/wip/essay-diagram-sources/launcher-cutaways/*.svg` |
-| Generated originals (backup) | `original-assets/launcher-cutaways/*.png` |
-| Served display images | `static/images/anatomy-exploded/*.webp` |
+| Masters (raw Higgsfield PNG, git-LFS) | `masters/anatomy-exploded/*.png` |
+| Served display images | `static/images/anatomy-exploded/*.webp` + width rungs |
+| Prompts of every shipped cutaway | `scripts/anatomy/prompts-history.json` |
+| Specs for launchers outside /fly | `scripts/anatomy/exploded-specs.mjs` |
 | Sketch generator | `scripts/essays/build-cutaway-sketches.mjs` |
 | Reference anchor | Saturn V v3 (`saturn-v-exploded`) — the north star |
 
@@ -113,5 +119,9 @@ for them would reintroduce the wrong geometry — edit the prose instead.
 | `atlas-lv-3b` | Bare capsule + escape tower, no fairing | Mercury capsule + escape tower, stage-and-a-half |
 | `mercury-redstone` | Bare capsule + escape tower, no fairing | Mercury capsule + escape tower, single stage |
 
-The corrected prose for each lives in the git history of this session; regenerate
-from that, not from a generator sketch.
+Their exact prompts are in `scripts/anatomy/prompts-history.json`. The 2026-10-23
+batch added 10 more manual ones (`manual` in `scripts/anatomy/exploded-specs.mjs`:
+Atlas SLV-3D, Energia, Falcon Heavy, N1, Proton-M, R-7, SLS, Soyuz-2/FG/U). For a
+manual one, pass the closest shipped exploded cutaway of the same family as the
+reference — not the Saturn V anchor, whose stages and Lunar Module end up in the
+drawing (seen on the Falcon Heavy pilot).

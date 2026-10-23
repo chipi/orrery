@@ -16,6 +16,7 @@ import path from 'node:path';
 import sharp from 'sharp';
 import { LAUNCHER_ENGINES } from '../../src/lib/physics/propulsion/launcher-engines.ts';
 import { ENGINE_REGISTRY } from '../../src/lib/physics/propulsion/engine-registry.ts';
+import { EXPLODED_SPECS } from '../anatomy/exploded-specs.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..', '..');
 const OUT = path.join(ROOT, 'docs', 'wip', 'essay-diagram-sources', 'launcher-cutaways');
@@ -180,7 +181,7 @@ function buildSketch(id, spec) {
   const col1 = [],
     col2 = [];
   core.forEach((s, i) => {
-    const t = tanks(propOf(s.engine), s.engine);
+    const t = tanks(s.prop ?? propOf(s.engine), s.engine);
     if (i === 0 || (nCore >= 3 && i === 1)) col1.push({ s, t });
     else col2.push({ s, t });
   });
@@ -233,7 +234,7 @@ function buildSketch(id, spec) {
   // one exploded booster (representative) if present
   if (boosters.length) {
     const b = boosters[0];
-    const bt = tanks(propOf(b.engine), b.engine);
+    const bt = tanks(b.prop ?? propOf(b.engine), b.engine);
     const h = 230,
       w = 60;
     exp += stage(CX2, y2, w, h, bt, 1, 14);
@@ -259,13 +260,20 @@ function buildSketch(id, spec) {
 </g></svg>`;
 }
 
+// Launchers outside /fly carry their specs in scripts/anatomy/exploded-specs.mjs;
+// the `manual` ones are generated from prose, never from this tandem-stack sketch.
+const SPECS = { ...LAUNCHER_ENGINES, ...EXPLODED_SPECS };
 const only = process.argv.slice(2);
-const ids = only.length ? only : Object.keys(LAUNCHER_ENGINES);
+const ids = only.length ? only : Object.keys(SPECS).filter((id) => !SPECS[id].manual);
 let n = 0;
 for (const id of ids) {
-  const spec = LAUNCHER_ENGINES[id];
+  const spec = SPECS[id];
   if (!spec) {
     console.warn('  ? unknown launcher', id);
+    continue;
+  }
+  if (spec.manual) {
+    console.warn('  ! manual exception, no sketch (launcher-cutaway-style.md §5):', id);
     continue;
   }
   const svg = buildSketch(id, spec);

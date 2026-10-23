@@ -36,7 +36,16 @@ const QUALITY = 80;
 // essays / lab / diagrams = the raw Higgsfield originals (2752 px PNG), kept as
 // the archive of record. Their served 1600 px sets come from the served base
 // (add-card-rungs.mjs --extend), so a full ladder run must not rebuild them here.
-const EXCLUDE_TOP = new Set(['hotspots', 'posters', 'essays', 'lab', 'diagrams']);
+// anatomy-originals = the raw Higgsfield generations behind masters/anatomy, whose
+// 4K upscales stay the source of the served anatomy ladder.
+const EXCLUDE_TOP = new Set([
+  'hotspots',
+  'posters',
+  'essays',
+  'lab',
+  'diagrams',
+  'anatomy-originals',
+]);
 const IS_THUMB = /\.(1x1|4x3|16x9)\./;
 const IS_IMG = /\.(jpe?g|png|webp)$/i;
 const FORCE = process.argv.includes('--force');

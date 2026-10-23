@@ -102,6 +102,10 @@ source of truth. **Save the highest-res render you have** (upscale to ~4K via
 Higgsfield `upscale_image` if the generator capped it) as the master:
 
 ```bash
+# 0. Keep the raw generation as downloaded (no re-encode) — the archive of record;
+#    build-display-ladder.mjs skips this folder:
+cp <download>.png masters/anatomy-originals/<id>.png
+
 # 1. Save the full-res render as the master (git-LFS tracked), named by id:
 #    (encode PNG → webp; keep it big — the ladder downscales from it)
 cwebp -q 90 <id>-4k.png -o masters/anatomy/<id>.webp   # or sharp/any encoder
@@ -186,6 +190,7 @@ instead), progress-7k-tg
 | Thing | Path |
 |---|---|
 | Full-res masters (git-LFS, 4K) | `masters/anatomy/*.webp` |
+| Raw Higgsfield generations (archive, not built) | `masters/anatomy-originals/{id}.png` (`.jpeg` where Higgsfield returned JPEG) |
 | Served responsive ladder | `static/images/anatomy/{id}.webp` + `{id}-<w>.webp` |
 | Ladder manifest | `static/data/image-ladder.json` |
 | Id manifest (auto-derived from masters) | `src/lib/anatomy-ids.json` |

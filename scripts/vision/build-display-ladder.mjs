@@ -38,6 +38,9 @@ const QUALITY = 80;
 // (add-card-rungs.mjs --extend), so a full ladder run must not rebuild them here.
 // anatomy-originals = the raw Higgsfield generations behind masters/anatomy, whose
 // 4K upscales stay the source of the served anatomy ladder.
+// originals = raw generations whose master was processed after the fact (the flat
+// science covers + landing heroes were black-point corrected to the page #04040c in
+// 4c96cccf27a); the processed WebP next to the served path stays the master.
 const EXCLUDE_TOP = new Set([
   'hotspots',
   'posters',
@@ -45,6 +48,7 @@ const EXCLUDE_TOP = new Set([
   'lab',
   'diagrams',
   'anatomy-originals',
+  'originals',
 ]);
 const IS_THUMB = /\.(1x1|4x3|16x9)\./;
 const IS_IMG = /\.(jpe?g|png|webp)$/i;

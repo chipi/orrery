@@ -114,7 +114,9 @@ distant galaxy) rather than a single chapter's.
   hero is a *new* asset so it has no such constraint — render it freely.)
 - **LOCKED 2026-06-23:** `landing-hero-2` — flat overture (sun + tilted rings + cyan arc + faint
   galaxy), generated via the §7 locked-reference method. Vast right-side void for `h1` + lede.
-  Original (raw Higgsfield PNG): `masters/science-covers-v2/_science-landing-hero.png`. New asset → wire straight into
+  Raw Higgsfield PNG: `masters/originals/science-covers-v2/_science-landing-hero.png`; the master
+  the site builds from is the black-point-corrected `masters/science-covers-v2/_science-landing-hero.webp`
+  (background matched to the page `#04040c`, 4c96cccf27a). New asset → wire straight into
   `src/routes/science/+page.svelte` `.hero` (no manifest conflict).
 
 ---
@@ -165,9 +167,11 @@ palette, bend it — but only for a reason this strong.
 - [ ] Reads as its subject (the diluted original's meaning, re-told celestially)
 
 **Locked set (6 diluted covers re-done, 2026-06-23):** history, mission-phases, propulsion,
-space-stations, observation, life-in-space. Masters in `masters/science-covers-v2/` (raw Higgsfield PNG
-for observation, propulsion, space-stations; WebP for the other three) — staged at the time pending
-the format + wiring decision (§8).
+space-stations, observation, life-in-space. Masters (black-point corrected to the page `#04040c`,
+4c96cccf27a) in `masters/science-covers-v2/*.webp`; the raw Higgsfield PNGs of all six in
+`masters/originals/science-covers-v2/`. A re-render must be black-point corrected the same way
+before it replaces a master — the raw PNG reads as a lighter box on the page. Staged at the time
+pending the format + wiring decision (§8).
 
 ---
 

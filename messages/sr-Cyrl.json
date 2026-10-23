@@ -3203,5 +3203,13 @@
   "galaxy_name_sextans_dwarf": "Патуљаста галаксија Секстант",
   "galaxy_name_ngc_6822": "Галаксија Barnard (NGC 6822)",
   "galaxy_name_ic_1613": "IC 1613",
-  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)",
+  "surface_status_active": "АКТИВНО",
+  "surface_status_in_orbit": "У ОРБИТИ",
+  "surface_status_crashed": "РАЗБИЈЕНО",
+  "surface_status_lost": "ИЗГУБЉЕНО",
+  "surface_status_planned": "ПЛАНИРАНО",
+  "surface_status_ended": "ЗАВРШЕНО",
+  "surface_status_flown": "ОДЛЕТЕЛО",
+  "surface_status_retired": "ВАН УПОТРЕБЕ"
 }

@@ -3203,5 +3203,13 @@
   "galaxy_name_sextans_dwarf": "Galaxia enana Sextans",
   "galaxy_name_ngc_6822": "Galaxia de Barnard (NGC 6822)",
   "galaxy_name_ic_1613": "IC 1613",
-  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)",
+  "surface_status_active": "ACTIVO",
+  "surface_status_in_orbit": "EN ÓRBITA",
+  "surface_status_crashed": "ESTRELLADO",
+  "surface_status_lost": "PERDIDO",
+  "surface_status_planned": "PLANIFICADO",
+  "surface_status_ended": "FINALIZADO",
+  "surface_status_flown": "REALIZADO",
+  "surface_status_retired": "DESACTIVADO"
 }

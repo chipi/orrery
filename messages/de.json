@@ -3203,5 +3203,13 @@
   "galaxy_name_sextans_dwarf": "Sextant-Zwerggalaxie",
   "galaxy_name_ngc_6822": "Barnard-Galaxie (NGC 6822)",
   "galaxy_name_ic_1613": "IC 1613",
-  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)",
+  "surface_status_active": "AKTIV",
+  "surface_status_in_orbit": "IM ORBIT",
+  "surface_status_crashed": "ABGESTÜRZT",
+  "surface_status_lost": "VERLOREN",
+  "surface_status_planned": "GEPLANT",
+  "surface_status_ended": "BEENDET",
+  "surface_status_flown": "GEFLOGEN",
+  "surface_status_retired": "STILLGELEGT"
 }

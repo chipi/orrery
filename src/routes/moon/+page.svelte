@@ -255,6 +255,7 @@
 <DebugPanelRegistrar label="MOON" />
 
 <SurfaceScene
+  locateReservePx={44}
   bind:this={surfaceScene}
   config={MOON_CONFIG}
   body="moon"
@@ -329,7 +330,8 @@
      the readout stacks above the button when a location has been resolved. */
   .locate-me {
     position: absolute;
-    bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+    /* On the nation legend's top edge when the scene publishes it. */
+    bottom: var(--legend-top, calc(60px + env(safe-area-inset-bottom, 0px)));
     left: 12px;
     z-index: 7;
     display: inline-flex;

@@ -3203,5 +3203,13 @@
   "galaxy_name_sextans_dwarf": "육분의자리 왜소은하",
   "galaxy_name_ngc_6822": "Barnard 은하 (NGC 6822)",
   "galaxy_name_ic_1613": "IC 1613",
-  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)",
+  "surface_status_active": "운용 중",
+  "surface_status_in_orbit": "궤도 위",
+  "surface_status_crashed": "추락",
+  "surface_status_lost": "유실",
+  "surface_status_planned": "계획됨",
+  "surface_status_ended": "종료",
+  "surface_status_flown": "비행 완료",
+  "surface_status_retired": "운용 종료"
 }

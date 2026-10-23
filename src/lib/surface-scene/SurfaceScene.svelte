@@ -271,6 +271,9 @@
     /** Observatories on Earth (PRD-028): pins, a TELESCOPES chip, the
      *  observatory card and the ?observatory=<id> deep link. /earth only. */
     loadObservatories?: (locale: string) => Promise<Observatory[]>;
+    /** Height the host route's bottom-left button ("Center on my location")
+     *  needs above the nation legend; the imagery card stacks above it. */
+    locateReservePx?: number;
   }
   let {
     config,
@@ -286,6 +289,7 @@
     regimes,
     onRegimeOpen,
     onOrbitsInViewChange,
+    locateReservePx = 0,
   }: Props = $props();
 
   // AR (#150): earth/moon/mars have tabletop AR scenes. `body` matches
@@ -814,6 +818,20 @@
    * composition (regional + detail) stacks both attribution rows.
    */
   let tierContext = $state<TierContext | null>(null);
+  // Nation legend height: the imagery card and the right-edge readouts stack
+  // above the strip (--legend-top) instead of overlapping its wrapped rows.
+  let legendH = $state(0);
+  // On <html> so the host route's locate button (outside this component)
+  // can sit on the same line.
+  $effect(() => {
+    const root = document.documentElement;
+    if (legendH) root.style.setProperty('--legend-top', `${48 + legendH + 8}px`);
+    else root.style.removeProperty('--legend-top');
+    return () => root.style.removeProperty('--legend-top');
+  });
+  const tierCardShown = $derived(
+    view === '3d' && !!tierContext && !panoramaActive && selected?.kind !== 'orbiter',
+  );
   // Mobile: true while any accordion tab is open — hides the altitude pill so
   // the open drawer has room (2026-07 user direction).
   let mobileDrawerOpen = $state(false);
@@ -5629,6 +5647,7 @@
   class="surface-scene"
   style:--body-tint={config.bodyTintCss}
   style:--mcd-bottom="calc(8px + env(safe-area-inset-bottom, 0px))"
+  style:--card-bottom={legendH ? `${48 + legendH + 8 + locateReservePx}px` : undefined}
 >
   <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
        Screen-reader-only mirror of the 3D-canvas site markers. Each
@@ -6088,7 +6107,7 @@ sample      ${debugInfo.projectedPxSample}`}
        with Mm there, it should not be there in panorama mode on
        any planet"). -->
   {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen}
-    <div class="altitude-indicator" aria-hidden="true">
+    <div class="altitude-indicator" class:beside-panel={panelOpen} aria-hidden="true">
       {altitudeKm >= 1000
         ? `${(altitudeKm / 1000).toFixed(1)} Mm`
         : altitudeKm >= 1
@@ -6152,7 +6171,7 @@ sample      ${debugInfo.projectedPxSample}`}
        inclination / status, and the TierContext card duplicates the
        agency chip in a smaller surface card that ALSO collides with
        the OrbitRuler's lower-left footprint. -->
-  {#if view === '3d' && tierContext && !panoramaActive && selected?.kind !== 'orbiter'}
+  {#if tierCardShown && tierContext}
     <TierContextCard
       {tierContext}
       scaleNote="Tier-2 rectangles on the sphere are stylized — true ground extent is sub-pixel at this zoom. Zoom further in to enter the flat-patch view (true scale)."
@@ -6195,7 +6214,7 @@ sample      ${debugInfo.projectedPxSample}`}
        (image 21 ask, 2026-06-03). Hidden during panorama since
        ground distance is meaningless inside the inverted skybox. -->
   {#if scaleBar && view === '3d' && !panoramaActive && !flatPatchActive}
-    <div class="distance-scale" data-testid="distance-scale">
+    <div class="distance-scale" class:beside-panel={panelOpen} data-testid="distance-scale">
       <div class="distance-scale-bar" style="width: {scaleBar.widthPx}px"></div>
       <div class="distance-scale-label mono">{scaleBar.label}</div>
     </div>
@@ -6356,7 +6375,13 @@ sample      ${debugInfo.projectedPxSample}`}
        object of that nation (surface, orbital, earth-sat). Default all-on,
        so it looks identical to the old passive legend until you click. -->
   {#if !panoramaActive}
-    <div class="legend-3d" role="group" aria-label={m.moon_legend_nation_aria()}>
+    <div
+      class="legend-3d"
+      class:beside-panel={panelOpen}
+      bind:clientHeight={legendH}
+      role="group"
+      aria-label={m.moon_legend_nation_aria()}
+    >
       {#each Object.entries(legendPalette) as [nation, color] (nation)}
         <button
           type="button"
@@ -6379,7 +6404,7 @@ sample      ${debugInfo.projectedPxSample}`}
     onClose={() => (panelOpen = false)}
   >
     {#if selected}
-      {@const tone = statusTone(selected.status, selected.kind)}
+      {@const tone = statusTone(selected.status, selected.kind, selected.site_role)}
       <div class="head" style:--accent={colorFor(selected)}>
         <AgencyRow agency={selected.agency} color={colorFor(selected)}>
           {#if inlineRegime && onRegimeOpen}
@@ -7389,9 +7414,13 @@ sample      ${debugInfo.projectedPxSample}`}
   }
 
   /* Narrow window with a mouse: the 400 px detail panel reaches the chip
-     column, so the chips sit under the panel instead of on top of the card. */
+     column and the right-edge scale bar + altitude readout, so they sit
+     under the panel (z 30) instead of on top of its text. */
   @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
-    .hud-controls {
+    .hud-controls,
+    .altitude-indicator,
+    .site-crosshair,
+    .surface-index-handle {
       z-index: 25;
     }
   }
@@ -7814,6 +7843,30 @@ sample      ${debugInfo.projectedPxSample}`}
   @media (hover: hover) and (pointer: fine) {
     .distance-scale {
       bottom: 90px;
+    }
+  }
+  /* Side-drawer panel open (desktop, touch-landscape): the right-edge scale
+     bar and altitude readout move left of it instead of covering its text. */
+  @media (min-width: 601px) {
+    :global(html[data-form='desktop']) .beside-panel,
+    :global(html[data-touch][data-orientation='landscape']) .beside-panel {
+      right: calc(var(--panel-width) + 12px);
+    }
+    /* …and above the nation legend row, which runs under that spot. */
+    :global(html[data-form='desktop']) .altitude-indicator.beside-panel,
+    :global(html[data-touch][data-orientation='landscape']) .altitude-indicator.beside-panel {
+      bottom: var(--legend-top, 96px);
+    }
+    :global(html[data-form='desktop']) .distance-scale.beside-panel,
+    :global(html[data-touch][data-orientation='landscape']) .distance-scale.beside-panel {
+      bottom: calc(var(--legend-top, 96px) + 34px);
+    }
+  }
+  /* Narrow window with a mouse: under the detail panel (z 30), like
+     .hud-controls and .altitude-indicator above. */
+  @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+    .distance-scale {
+      z-index: 25;
     }
   }
 

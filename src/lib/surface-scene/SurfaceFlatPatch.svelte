@@ -583,7 +583,7 @@
     if (traverses && traverses[selected.id]) return;
     if (selected.lat == null || selected.lon == null) return;
     const p = project(selected.lat, selected.lon, W, H);
-    const tone = statusTone(selected.status, selected.kind);
+    const tone = statusTone(selected.status, selected.kind, selected.site_role);
     const trueR = scaleAwareRadius(LANDER_FOOTPRINT_KM);
     // Floor at 6 px so the marker reads against busy HiRISE/LROC
     // terrain (the prior 4 px white-50 % dot effectively disappeared on

@@ -694,8 +694,8 @@
   "iss_label_designation": "飞行",
   "iss_label_mass": "质量",
   "iss_label_length": "长度",
-  "iss_status_active": "实际",
-  "iss_status_retired": "退休人员",
+  "iss_status_active": "运行中",
+  "iss_status_retired": "已退役",
   "ui_view_controls": "查看控件",
   "ui_visibility_layers": "可见层",
   "ui_view_2d": "二维",
@@ -3203,5 +3203,13 @@
   "galaxy_name_sextans_dwarf": "六分仪座矮星系",
   "galaxy_name_ngc_6822": "Barnard 星系 (NGC 6822)",
   "galaxy_name_ic_1613": "IC 1613",
-  "galaxy_name_wlm": "WLM (沃尔夫-隆达马克-梅洛帝星系)"
+  "galaxy_name_wlm": "WLM (沃尔夫-隆达马克-梅洛帝星系)",
+  "surface_status_active": "运行中",
+  "surface_status_in_orbit": "在轨",
+  "surface_status_crashed": "坠毁",
+  "surface_status_lost": "失联",
+  "surface_status_planned": "计划中",
+  "surface_status_ended": "已结束",
+  "surface_status_flown": "已飞行",
+  "surface_status_retired": "已停用"
 }

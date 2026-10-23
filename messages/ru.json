@@ -3203,5 +3203,13 @@
   "galaxy_name_sextans_dwarf": "Карликовая галактика Секстант",
   "galaxy_name_ngc_6822": "Галактика Barnard (NGC 6822)",
   "galaxy_name_ic_1613": "IC 1613",
-  "galaxy_name_wlm": "WLM (Галактика Вольфа-Лундмарка-Мелотта)"
+  "galaxy_name_wlm": "WLM (Галактика Вольфа-Лундмарка-Мелотта)",
+  "surface_status_active": "АКТИВЕН",
+  "surface_status_in_orbit": "НА ОРБИТЕ",
+  "surface_status_crashed": "РАЗБИЛСЯ",
+  "surface_status_lost": "ПОТЕРЯН",
+  "surface_status_planned": "ПЛАНИРУЕТСЯ",
+  "surface_status_ended": "ЗАВЕРШЁН",
+  "surface_status_flown": "ВЫПОЛНЕН",
+  "surface_status_retired": "НЕ ДЕЙСТВУЕТ"
 }

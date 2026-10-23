@@ -694,7 +694,7 @@
   "iss_label_designation": "ليلة سعيدة",
   "iss_label_mass": "الكتلة",
   "iss_label_length": "الطول",
-  "iss_status_active": "النشاط",
+  "iss_status_active": "نشط",
   "iss_status_retired": "متقاعد",
   "ui_view_controls": "مراقبة الرؤية",
   "ui_visibility_layers": "طبقات الرؤية",
@@ -3203,5 +3203,13 @@
   "galaxy_name_sextans_dwarf": "مجرة السدس القزمة",
   "galaxy_name_ngc_6822": "مجرة Barnard (NGC 6822)",
   "galaxy_name_ic_1613": "IC 1613",
-  "galaxy_name_wlm": "WLM (وولف-لوندمارك-ميلوت)"
+  "galaxy_name_wlm": "WLM (وولف-لوندمارك-ميلوت)",
+  "surface_status_active": "نشط",
+  "surface_status_in_orbit": "في المدار",
+  "surface_status_crashed": "تحطّم",
+  "surface_status_lost": "مفقود",
+  "surface_status_planned": "مخطط",
+  "surface_status_ended": "انتهى",
+  "surface_status_flown": "أُنجز",
+  "surface_status_retired": "خارج الخدمة"
 }

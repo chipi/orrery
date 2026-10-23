@@ -14,30 +14,40 @@
  * than as "ACTIVE" (which fits surface landers + ground stations). The
  * tone colour stays the same active teal regardless of kind.
  */
-import type { SiteStatus, SiteKind } from '$types/surface-site';
+import type { SiteStatus, SiteKind, SurfaceSite } from '$types/surface-site';
+import * as m from '$lib/paraglide/messages';
 
 export interface StatusBadgeTone {
   label: string;
   color: string;
 }
 
-export function statusTone(s: SiteStatus | string, kind?: SiteKind): StatusBadgeTone {
+/** A launch pad that has ended service reads "RETIRED" (the fleet's word),
+ *  not the lander-style "ENDED". */
+export function statusTone(
+  s: SiteStatus | string,
+  kind?: SiteKind,
+  role?: SurfaceSite['site_role'],
+): StatusBadgeTone {
   switch (s) {
     case 'ACTIVE':
       return {
-        label: kind === 'orbiter' ? 'IN ORBIT' : 'ACTIVE',
+        label: kind === 'orbiter' ? m.surface_status_in_orbit() : m.surface_status_active(),
         color: '#4ecdc4',
       };
     case 'CRASHED':
-      return { label: 'CRASHED', color: '#ff6b6b' };
+      return { label: m.surface_status_crashed(), color: '#ff6b6b' };
     case 'LOST':
-      return { label: 'LOST', color: '#ff8c42' };
+      return { label: m.surface_status_lost(), color: '#ff8c42' };
     case 'PLANNED':
-      return { label: 'PLANNED', color: '#7b9cff' };
+      return { label: m.surface_status_planned(), color: '#7b9cff' };
     case 'ENDED':
-      return { label: 'ENDED', color: 'rgba(255,255,255,0.5)' };
+      return {
+        label: role === 'launch-pad' ? m.surface_status_retired() : m.surface_status_ended(),
+        color: 'rgba(255,255,255,0.5)',
+      };
     case 'FLOWN':
     default:
-      return { label: 'FLOWN', color: 'rgba(255,255,255,0.5)' };
+      return { label: m.surface_status_flown(), color: 'rgba(255,255,255,0.5)' };
   }
 }

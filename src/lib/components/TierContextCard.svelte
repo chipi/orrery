@@ -62,8 +62,12 @@
   .tier-context-card {
     position: absolute;
     left: 12px;
-    bottom: 56px;
-    z-index: 6;
+    /* Above the nation legend (and the route's locate button) when the
+       scene sets --card-bottom. */
+    bottom: var(--card-bottom, 56px);
+    /* Over the layer chips (.hud-controls, z 35 on desktop) — while a site is in
+       detail the imagery card is what the user is reading. */
+    z-index: 36;
     max-width: 360px;
     padding: 10px 14px;
     background: rgba(8, 10, 22, 0.86);
@@ -160,6 +164,13 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  /* Narrow window with a mouse: the detail panel (z 30) spans the window,
+     so the card goes under it with the rest of the scene HUD. */
+  @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+    .tier-context-card {
+      z-index: 25;
     }
   }
 </style>

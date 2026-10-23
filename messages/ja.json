@@ -695,7 +695,7 @@
   "iss_label_mass": "質量",
   "iss_label_length": "全長",
   "iss_status_active": "運用中",
-  "iss_status_retired": "リリース",
+  "iss_status_retired": "退役",
   "ui_view_controls": "コントロールを見る",
   "ui_visibility_layers": "可視性層",
   "ui_view_2d": "2Dの",
@@ -3203,5 +3203,13 @@
   "galaxy_name_sextans_dwarf": "ろくぶんぎ座矮小銀河",
   "galaxy_name_ngc_6822": "Barnard 銀河 (NGC 6822)",
   "galaxy_name_ic_1613": "IC 1613",
-  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)",
+  "surface_status_active": "運用中",
+  "surface_status_in_orbit": "軌道上",
+  "surface_status_crashed": "墜落",
+  "surface_status_lost": "喪失",
+  "surface_status_planned": "計画中",
+  "surface_status_ended": "終了",
+  "surface_status_flown": "飛行済み",
+  "surface_status_retired": "運用終了"
 }

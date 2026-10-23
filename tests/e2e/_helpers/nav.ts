@@ -1,4 +1,5 @@
 import type { Page, Locator } from '@playwright/test';
+import { waitForHydration } from './hydration';
 
 /**
  * Click a top-nav link by href substring, viewport-aware.
@@ -125,6 +126,9 @@ export function localeChip(page: Page): Locator {
  * still pass without opening the drawer — only the click needs this helper.
  */
 export async function openLocaleMenu(page: Page): Promise<void> {
+  // A locale switch reloads the page; wait for the new document to hydrate or
+  // the click on the picker lands on server-rendered DOM and is dropped.
+  await waitForHydration(page);
   const barChip = page.locator('[data-locale-picker] button.chip').first();
   if (await barChip.isVisible().catch(() => false)) {
     await barChip.click();

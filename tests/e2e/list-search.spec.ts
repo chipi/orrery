@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * RFC-027 — list-route search on /missions + /fleet.
@@ -17,6 +18,7 @@ import { test, expect } from '@playwright/test';
 test.describe('/missions search (RFC-027)', () => {
   test('?q=apollo deep-link pre-fills + filters to ≥6 Apollo missions', async ({ page }) => {
     await page.goto('/missions?q=apollo');
+    await waitForHydration(page);
     const input = page.locator('[data-testid="missions-search"]');
     await expect(input).toHaveValue('apollo');
     // 11 Apollo lunar missions + Apollo-Soyuz + cards whose editorial
@@ -32,6 +34,7 @@ test.describe('/missions search (RFC-027)', () => {
 
   test('typing into the input updates the URL', async ({ page }) => {
     await page.goto('/missions');
+    await waitForHydration(page);
     const input = page.locator('[data-testid="missions-search"]');
     await input.fill('voyager');
     // 10s (matches the sibling card-visibility waits): the search→URL sync is
@@ -51,6 +54,7 @@ test.describe('/missions search (RFC-027)', () => {
 
   test('clearing the input widens back to the full set', async ({ page }) => {
     await page.goto('/missions?q=apollo');
+    await waitForHydration(page);
     const cards = page.locator('[data-testid^="mission-card-"]');
     await expect(cards.first()).toBeVisible({ timeout: 10_000 });
     const narrowed = await cards.count();
@@ -63,6 +67,7 @@ test.describe('/missions search (RFC-027)', () => {
 
   test('AND semantics: ?q=mars&dest=MARS keeps both filters', async ({ page }) => {
     await page.goto('/missions?q=mars&dest=MARS');
+    await waitForHydration(page);
     const input = page.locator('[data-testid="missions-search"]');
     await expect(input).toHaveValue('mars');
     const cards = page.locator('[data-testid^="mission-card-"]');
@@ -78,6 +83,7 @@ test.describe('/missions search (RFC-027)', () => {
 test.describe('/fleet search (RFC-027)', () => {
   test('?q=dragon deep-link pre-fills + filters to ≥4 Dragon-family entries', async ({ page }) => {
     await page.goto('/fleet?q=dragon');
+    await waitForHydration(page);
     const input = page.locator('[data-testid="fleet-search"]');
     await expect(input).toHaveValue('dragon');
     const cards = page.locator('[data-testid^="fleet-card-"]');
@@ -91,6 +97,7 @@ test.describe('/fleet search (RFC-027)', () => {
 
   test('typing into the input updates the URL', async ({ page }) => {
     await page.goto('/fleet');
+    await waitForHydration(page);
     const input = page.locator('[data-testid="fleet-search"]');
     await input.fill('hubble');
     await expect(page).toHaveURL(/q=hubble/);
@@ -103,6 +110,7 @@ test.describe('/fleet search (RFC-027)', () => {
 
   test('clearing the input widens back to the full set', async ({ page }) => {
     await page.goto('/fleet?q=dragon');
+    await waitForHydration(page);
     const cards = page.locator('[data-testid^="fleet-card-"]');
     await expect(cards.first()).toBeVisible({ timeout: 10_000 });
     const narrowed = await cards.count();

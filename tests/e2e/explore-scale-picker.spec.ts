@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /explore scale picker (#258) — quick-jump between the four nested scale shells
@@ -31,6 +32,7 @@ test.describe.configure({ timeout: 60_000 });
 test.describe('/explore — scale picker (#258)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/explore');
+    await waitForHydration(page);
     await expect(picker(page)).toBeVisible({ timeout: 10_000 });
   });
 
@@ -75,6 +77,7 @@ test.describe('/explore — scale picker (#258)', () => {
     // A black-hole takeover owns the whole viewport — `contextDeepLinkFn` knows
     // only the shells, so the ladder is hidden until you exit the sub-view.
     await page.goto('/explore?bh=sagittarius-a-star');
+    await waitForHydration(page);
     await expect(picker(page)).toBeHidden({ timeout: 40_000 });
   });
 });

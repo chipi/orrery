@@ -205,6 +205,11 @@
     // by the time data-driven lists render; it falls back to the plain src until then.
     void loadLadder();
     markAppMounted();
+    // The root layout mounts after every child component, so from here on the
+    // server-rendered buttons have their handlers. e2e waits for this before the
+    // first click (tests/e2e/_helpers/hydration.ts) — a click that lands on the
+    // pre-hydration DOM is dropped.
+    document.documentElement.dataset.hydrated = 'true';
 
     // Deploy chunk-skew reload guard: installed from hooks.client.ts (module-eval) so
     // it is live BEFORE the first route's chunks/CSS preload — see preload-guard.ts.

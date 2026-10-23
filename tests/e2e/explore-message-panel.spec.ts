@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /explore message-object panel (#410) — the outbound interstellar craft
@@ -29,6 +30,7 @@ async function openLegend(page: Page, isMobile: boolean): Promise<void> {
 test.describe('/explore — message-object panel (#410)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/explore?paths=1');
+    await waitForHydration(page);
   });
 
   test('a craft that carries a message opens the panel with its culture door', async ({
@@ -71,6 +73,7 @@ test.describe('/explore — message-object panel (#410)', () => {
 test.describe('/explore — Arecibo message at M13 (#410)', () => {
   test('M13 opens a panel carrying the Arecibo Message culture door', async ({ page }) => {
     await page.goto('/explore?deepsky=M13');
+    await waitForHydration(page);
     await expect(page.getByText('Hercules Globular Cluster', { exact: false })).toBeVisible({
       timeout: 12_000,
     });

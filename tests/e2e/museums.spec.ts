@@ -11,7 +11,7 @@ test.describe('museums', () => {
     const block = page.getByTestId('museums-for-object');
     await expect(block).toBeVisible({ timeout: 15_000 });
     const rows = block.getByTestId('museum-row');
-    expect(await rows.count()).toBeGreaterThanOrEqual(2);
+    await expect(rows.nth(1)).toBeVisible();
     // GB sorts before US: nothing favours the home country.
     await expect(rows.first()).toHaveAttribute('data-museum-id', 'science-museum-london');
     const site = rows.first().getByTestId('museum-website');
@@ -28,7 +28,7 @@ test.describe('museums', () => {
     const panel = page.getByTestId('museum-panel');
     await expect(panel).toBeVisible({ timeout: 20_000 });
     await expect(panel).toHaveAttribute('data-museum-id', 'nasm-washington');
-    expect(await panel.getByTestId('museum-panel-object').count()).toBeGreaterThanOrEqual(1);
+    await expect(panel.getByTestId('museum-panel-object').first()).toBeVisible();
     const hero = panel.getByTestId('place-hero').locator('img');
     await expect(hero).toHaveAttribute('src', /\/images\/museums\/nasm-washington\/01\.webp$/);
     await expect(hero).toHaveAttribute('alt', /.+/);
@@ -61,7 +61,9 @@ test.describe('observatories', () => {
     const panel = page.getByTestId('observatory-panel');
     await expect(panel).toBeVisible({ timeout: 20_000 });
     await expect(panel).toHaveAttribute('data-observatory-id', 'vla');
-    expect(await panel.getByTestId('observatory-article').count()).toBeGreaterThanOrEqual(1);
+    // The article list loads after the card opens (getScienceSection), so wait
+    // for it rather than counting once.
+    await expect(panel.getByTestId('observatory-article').first()).toBeVisible();
     await expect(panel.getByTestId('observatory-website')).toHaveAttribute('target', '_blank');
     await expect(panel.getByTestId('place-hero').locator('img')).toHaveAttribute(
       'src',
@@ -81,7 +83,7 @@ test.describe('observatories', () => {
     await page.goto('/science/exoplanets/detecting-extraterrestrial-life');
     const block = page.getByTestId('observatories-for-article');
     await expect(block).toBeVisible({ timeout: 15_000 });
-    expect(await block.getByTestId('observatory-row').count()).toBeGreaterThanOrEqual(3);
+    await expect(block.getByTestId('observatory-row').nth(2)).toBeVisible();
     await block
       .locator('[data-observatory-id="big-ear"]')
       .getByTestId('observatory-on-map')

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /science — encyclopedia smoke (PRD-008 / ADR-034).
@@ -131,6 +132,7 @@ test.describe('/science Phase 2 chips', () => {
 // strict-mode locators don't trip on the drawer button.
 test.describe('/science Cmd-K search', () => {
   async function openSearchButton(page: import('@playwright/test').Page): Promise<void> {
+    await waitForHydration(page);
     // Click the rail search button directly. As of #342 Phase 30 the
     // rail button is visible on mobile too (44×44 icon chip), so we
     // no longer need to open the hamburger drawer first.

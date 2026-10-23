@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /explore time playback controls (#351). The bottom scrubber governs the
@@ -43,6 +44,7 @@ async function pickSpeed(page: Page, n: number, isMobile: boolean): Promise<void
 test.describe('/explore — time playback controls', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/explore');
+    await waitForHydration(page);
     await expect(play(page)).toBeVisible({ timeout: 8_000 });
   });
 
@@ -134,6 +136,7 @@ test.describe('/explore — sim date honors a negative-UTC timezone', () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto('/explore');
+    await waitForHydration(page);
     await expect(play(page)).toBeVisible({ timeout: 8_000 });
   });
 

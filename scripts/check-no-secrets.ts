@@ -86,26 +86,31 @@ function isAllowlisted(path: string): boolean {
 // default. Give them plenty of headroom so the scan never dies with ENOBUFS.
 const GIT_MAX_BUFFER = 256 * 1024 * 1024;
 
-function gatherCandidateContent(scanAll: boolean): Map<string, string> {
-  if (scanAll) {
-    const files = execSync('git ls-files', { encoding: 'utf8', maxBuffer: GIT_MAX_BUFFER })
-      .split('\n')
-      .filter((f) => f.length > 0)
-      .filter((f) => !isAllowlisted(f));
-    const m = new Map<string, string>();
-    for (const f of files) {
-      try {
-        const content = execSync(`git show HEAD:${JSON.stringify(f)}`, {
-          encoding: 'utf8',
-          maxBuffer: GIT_MAX_BUFFER,
-        });
-        m.set(f, content);
-      } catch {
-        // file may be newly added / untracked; skip
-      }
+// --all yields one file at a time: holding every tracked file (images included)
+// in one Map ran the scan out of a 4 GB heap once the tree passed ~3k images
+// (2026-10-23). Callers scan each file as it arrives and keep only the hits.
+function* gatherAllTracked(): Generator<[string, string]> {
+  const files = execSync('git ls-files', { encoding: 'utf8', maxBuffer: GIT_MAX_BUFFER })
+    .split('\n')
+    .filter((f) => f.length > 0)
+    .filter((f) => !isAllowlisted(f));
+  for (const f of files) {
+    let content: string;
+    try {
+      content = execSync(`git show HEAD:${JSON.stringify(f)}`, {
+        encoding: 'utf8',
+        maxBuffer: GIT_MAX_BUFFER,
+      });
+    } catch {
+      // file may be newly added / untracked; skip
+      continue;
     }
-    return m;
+    yield [f, content];
   }
+}
+
+function gatherCandidateContent(scanAll: boolean): Iterable<[string, string]> {
+  if (scanAll) return gatherAllTracked();
 
   // Staged diff mode (pre-commit / preflight).
   const diff = execSync('git diff --cached --unified=0', {
@@ -140,9 +145,10 @@ function gatherCandidateContent(scanAll: boolean): Map<string, string> {
 
 type Hit = { path: string; pattern: string; severity: 'public' | 'secret'; sample: string };
 
-function scan(content: Map<string, string>): Hit[] {
+function scan(content: Iterable<[string, string]>, counted: { n: number }): Hit[] {
   const hits: Hit[] = [];
   for (const [path, body] of content) {
+    counted.n++;
     if (isAllowlisted(path)) continue;
     for (const { name, regex, severity } of PATTERNS) {
       const matches = body.match(regex);
@@ -163,19 +169,20 @@ function main(): number {
   const args = new Set(process.argv.slice(2));
   const scanAll = args.has('--all');
 
-  let content: Map<string, string>;
+  // --all reads files lazily, so a git failure surfaces during the scan.
+  const counted = { n: 0 };
+  let hits: Hit[];
   try {
-    content = gatherCandidateContent(scanAll);
+    hits = scan(gatherCandidateContent(scanAll), counted);
   } catch (err) {
     console.error(`[check-no-secrets] git command failed: ${String((err as Error).message)}`);
     return 2;
   }
 
-  const hits = scan(content);
   if (hits.length === 0) {
     if (!process.env.SILENT) {
       console.log(
-        `[check-no-secrets] ${scanAll ? 'tree' : 'staged diff'} clean (${content.size} file(s) checked)`,
+        `[check-no-secrets] ${scanAll ? 'tree' : 'staged diff'} clean (${counted.n} file(s) checked)`,
       );
     }
     return 0;

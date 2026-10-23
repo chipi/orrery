@@ -3,7 +3,7 @@
   "specVersion": "1.5",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-10-20T19:27:08.071Z",
+    "timestamp": "2026-10-23T06:12:20.906Z",
     "tools": [
       {
         "vendor": "Orrery",
@@ -14,7 +14,7 @@
     "component": {
       "type": "application",
       "name": "orrery",
-      "version": "0.9.0-wip",
+      "version": "0.9.1",
       "licenses": [
         {
           "license": {
@@ -5543,7 +5543,7 @@
     {
       "type": "library",
       "name": "vite",
-      "version": "8.1.4",
+      "version": "8.1.6",
       "description": "Native-ESM powered web dev build tool",
       "licenses": [
         {

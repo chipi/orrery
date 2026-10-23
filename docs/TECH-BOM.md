@@ -8,8 +8,8 @@ Companion to the [image bill of materials](../static/data/image-provenance.json)
 
 | | |
 |---|---|
-| **Project** | `orrery@0.9.0-wip` |
-| **Generated** | 2026-10-20 |
+| **Project** | `orrery@0.9.1` |
+| **Generated** | 2026-10-23 |
 | **Total packages** | 916 (190 runtime · 726 development) |
 | **Top-level runtime deps** | 28 |
 | **Top-level dev deps** | 35 |
@@ -268,7 +268,7 @@ _Build-time tools — not shipped to browsers._
 | [`tslib`](https://www.typescriptlang.org/) | 2.8.1 | `0BSD` | runtime |
 | [`typescript`](https://www.typescriptlang.org/) | 5.9.3 | `Apache-2.0` | runtime |
 | [`update-browserslist-db`](https://github.com/browserslist/update-db) | 1.3.2 | `MIT` | runtime |
-| [`vite`](https://vite.dev) | 8.1.4 | `MIT` | runtime |
+| [`vite`](https://vite.dev) | 8.1.6 | `MIT` | runtime |
 | [`vitefu`](https://github.com/svitejs/vitefu) | 1.1.3 | `MIT` | runtime |
 | `webgl-constants` | 1.1.1 | `MIT` | runtime |
 | [`webidl-conversions`](https://github.com/jsdom/webidl-conversions) | 8.0.1 | `BSD-2-Clause` | runtime |

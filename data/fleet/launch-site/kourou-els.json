@@ -1,0 +1,34 @@
+{
+  "id": "kourou-els",
+  "name": "Kourou ELS (Soyuz launch complex)",
+  "category": "launch-site",
+  "agency": "ESA / Arianespace",
+  "country": "French Guiana",
+  "manufacturer": "ESA / Roscosmos",
+  "first_flight": "2011-10-21",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "lat": 5.3019,
+  "lon": -52.8346,
+  "best_known_for": "Europe's Soyuz pad: first Soyuz outside Baikonur or Plesetsk (2011), 27 launches, eight for Galileo",
+  "credit": "Ensemble de Lancement Soyouz (ELS) was the Soyuz pad at Europe's Spaceport near Sinnamary, French Guiana, a joint Russian-European project operated by Arianespace. Soyuz-ST flew from it 27 times between 21 October 2011 (Galileo IOV-1, the first Soyuz launch outside Baikonur and Plesetsk) and 10 February 2022 (OneWeb F13); 26 of the 27 flights succeeded. Russia suspended operations in February 2022, and Wikipedia reports the pad was demolished on 24 April 2026 to make room for MaiaSpace's Maia rocket. Sources: ESA (Soyuz page), Wikipedia (ELS and Soyuz at the Guiana Space Centre), Arianespace press releases as cited there; coordinates from Wikipedia and Wikidata.",
+  "links": [
+    {
+      "l": "Soyuz at Europe's Spaceport — ESA",
+      "u": "https://www.esa.int/About_Us/50_years_of_ESA/Soyuz",
+      "t": "intro"
+    },
+    {
+      "l": "Ensemble de Lancement Soyouz — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Ensemble_de_Lancement_Soyouz",
+      "t": "core"
+    },
+    {
+      "l": "Soyuz at the Guiana Space Centre — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_at_the_Guiana_Space_Centre",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

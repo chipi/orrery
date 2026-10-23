@@ -14,7 +14,7 @@
     { "linked_id": "soyuz-11", "ref": "mission", "year": 1971 },
     { "linked_id": "apollo-soyuz", "ref": "mission", "year": 1975 },
     { "linked_id": "soyuz-7k-ok", "ref": "fleet", "role": "spacecraft" },
-    { "linked_id": "gagarins-start", "ref": "fleet", "role": "launch-site" }
+    { "linked_id": "baikonur-1-5", "ref": "fleet", "role": "launch-site" }
   ],
   "related_programs": ["voskhod", "salyut", "apollo"],
   "see_also": [

@@ -1,0 +1,34 @@
+{
+  "id": "naro-space-center",
+  "name": "Naro Space Center",
+  "category": "launch-site",
+  "agency": "KARI",
+  "country": "South Korea",
+  "manufacturer": "Korea Aerospace Research Institute (KARI)",
+  "first_flight": "2009-08-25",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "lat": 34.4319,
+  "lon": 127.535,
+  "best_known_for": "South Korea's spaceport: Naro-1 (2009-13) and the home-built Nuri rocket since 2021",
+  "credit": "South Korea's launch site on the coast of Goheung County, run by the Korea Aerospace Research Institute, with two pads, LC-1 and LC-2. The first Naro-1 flight on 25 August 2009 failed to reach orbit; Nuri reached orbit on 21 June 2022. Facts from Wikipedia (Naro Space Center, Naro-1, Nuri); coordinates are the Wikipedia site point, between LC-1 and LC-2.",
+  "links": [
+    {
+      "l": "Naro Space Center Space Science Museum (Korean) — KARI",
+      "u": "https://www.kari.re.kr/kor/153/spcCntr",
+      "t": "intro"
+    },
+    {
+      "l": "Naro Space Center — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Naro_Space_Center",
+      "t": "core"
+    },
+    {
+      "l": "South Korea launches research satellites on third Nuri flight — NASASpaceFlight",
+      "u": "https://www.nasaspaceflight.com/2023/05/third-nuri-flight/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

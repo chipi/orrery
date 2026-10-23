@@ -670,6 +670,90 @@
       "kind": "research-institute",
       "url": "http://hyperphysics.phy-astr.gsu.edu/",
       "license_summary": "Educational physics reference by Rod Nave, Georgia State University. Linked (never copied) as learn-more reading from the Physics Lab formula cards."
+    },
+    {
+      "id": "spacenews",
+      "name": "SpaceNews",
+      "kind": "media-platform",
+      "url": "https://spacenews.com/",
+      "license_summary": "SpaceNews — independent space-industry news. © SpaceNews; outbound reference links only."
+    },
+    {
+      "id": "nasaspaceflight",
+      "name": "NASASpaceflight",
+      "kind": "media-platform",
+      "url": "https://www.nasaspaceflight.com/",
+      "license_summary": "NASASpaceflight.com — independent spaceflight news (not affiliated with NASA). © NSF; outbound reference links only."
+    },
+    {
+      "id": "spacepolicyonline",
+      "name": "SpacePolicyOnline",
+      "kind": "media-platform",
+      "url": "https://spacepolicyonline.com/",
+      "license_summary": "SpacePolicyOnline.com — space policy news. © Space and Technology Policy Group; outbound reference links only."
+    },
+    {
+      "id": "kari",
+      "name": "Korea Aerospace Research Institute",
+      "kind": "space-agency",
+      "url": "https://www.kari.re.kr/",
+      "license_summary": "KARI — South Korea's aerospace research agency, operator of the Naro Space Center. Outbound reference links only."
+    },
+    {
+      "id": "israel-space-agency",
+      "name": "Israel Space Agency",
+      "kind": "space-agency",
+      "url": "https://www.space.gov.il/en",
+      "license_summary": "Israel Space Agency (Ministry of Innovation, Science and Technology). Outbound reference links only."
+    },
+    {
+      "id": "aeb",
+      "name": "Brazilian Space Agency (AEB)",
+      "kind": "space-agency",
+      "url": "https://www.gov.br/aeb/",
+      "license_summary": "Agência Espacial Brasileira, on the Government of Brazil portal. Outbound reference links only."
+    },
+    {
+      "id": "rocket-lab",
+      "name": "Rocket Lab",
+      "kind": "private-operator",
+      "url": "https://rocketlabcorp.com/",
+      "license_summary": "Rocket Lab — launch provider operating Launch Complex 1 in New Zealand. Outbound reference links only; no Rocket Lab copy or imagery is redistributed in-app."
+    },
+    {
+      "id": "ils",
+      "name": "International Launch Services",
+      "kind": "private-operator",
+      "url": "https://www.ilslaunch.com/",
+      "license_summary": "International Launch Services — commercial marketer of Proton launches. Outbound reference links only."
+    },
+    {
+      "id": "virginia-space",
+      "name": "Virginia Space",
+      "kind": "private-operator",
+      "url": "https://www.vaspace.org/",
+      "license_summary": "Virginia Commercial Space Flight Authority, owner and operator of the Mid-Atlantic Regional Spaceport at Wallops Island. Outbound reference links only."
+    },
+    {
+      "id": "iiss",
+      "name": "International Institute for Strategic Studies",
+      "kind": "research-institute",
+      "url": "https://www.iiss.org/",
+      "license_summary": "IISS — independent research institute on defence and security. © IISS; cited with attribution."
+    },
+    {
+      "id": "globalsecurity",
+      "name": "GlobalSecurity.org",
+      "kind": "publisher",
+      "url": "https://www.globalsecurity.org/",
+      "license_summary": "GlobalSecurity.org — defence and space reference site. Outbound reference links only."
+    },
+    {
+      "id": "engineers-australia",
+      "name": "Engineers Australia",
+      "kind": "publisher",
+      "url": "https://www.engineersaustralia.org.au/",
+      "license_summary": "Engineers Australia — engineering heritage register. Outbound reference links only."
     }
   ]
 }

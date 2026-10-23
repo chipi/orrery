@@ -19,7 +19,7 @@
     { "linked_id": "vostok-6", "ref": "mission", "year": 1963 },
     { "linked_id": "vostok", "ref": "fleet", "role": "spacecraft" },
     { "linked_id": "vostok-k", "ref": "fleet", "role": "launcher" },
-    { "linked_id": "gagarins-start", "ref": "fleet", "role": "launch-site" }
+    { "linked_id": "baikonur-1-5", "ref": "fleet", "role": "launch-site" }
   ],
   "related_programs": ["voskhod", "mercury"],
   "see_also": [

@@ -1,0 +1,874 @@
+[
+  {
+    "id": "adler-planetarium",
+    "country": "US",
+    "lat": 41.8664,
+    "lon": -87.6067,
+    "website": "https://www.adlerplanetarium.org",
+    "holds": [
+      {
+        "ref": "gemini",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/gemini",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "armstrong-air-and-space-museum",
+    "country": "US",
+    "lat": 40.5639,
+    "lon": -84.1711,
+    "website": "https://armstrongmuseum.org",
+    "holds": [
+      {
+        "ref": "gemini",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/gemini",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "aviation-museum-plovdiv-krumovo",
+    "country": "BG",
+    "lat": 42.0682,
+    "lon": 24.842,
+    "website": "https://airmuseum-bg.com",
+    "holds": [
+      {
+        "ref": "soyuz-7k-ok",
+        "kind": "flown",
+        "evidence": "https://airmuseum-bg.com/kolektsii/kosmonavtika/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "baikonur-cosmodrome-museum",
+    "country": "KZ",
+    "lat": 45.9108,
+    "lon": 63.3167,
+    "website": "https://museum-baikonur.ru/",
+    "holds": [
+      {
+        "ref": "buran",
+        "kind": "test-article",
+        "evidence": "https://commons.wikimedia.org/wiki/File:Космодром_Байконур,_ОК-МЛ1_на_площадке_2.jpg",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "bledsoe-miller-steam-center-waco",
+    "country": "US",
+    "lat": 31.5622,
+    "lon": -97.1274,
+    "website": "https://www.waco-texas.com",
+    "holds": [
+      {
+        "ref": "cargo-dragon-v1",
+        "kind": "flown",
+        "evidence": "https://www.kwtx.com/2026/01/16/wacos-new-steam-center-opens-with-historic-spacex-dragon-spacecraft",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "california-science-center",
+    "country": "US",
+    "lat": 34.0156,
+    "lon": -118.2858,
+    "website": "https://californiasciencecenter.org",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-ii",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/apollo",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "endeavour",
+        "kind": "flown",
+        "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour#Samuel_Oschin_Air_and_Space_Center",
+        "checked": "2026-10-22",
+        "from": "2026-11-13"
+      },
+      {
+        "ref": "space-shuttle-orbiter",
+        "kind": "flown",
+        "evidence": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour#Samuel_Oschin_Air_and_Space_Center",
+        "checked": "2026-10-22",
+        "from": "2026-11-13"
+      },
+      {
+        "ref": "gemini",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/gemini",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "cargo-dragon-v1",
+        "kind": "flown",
+        "evidence": "https://www.collectspace.com/news/news-062424a-spacex-dragon-california-science-center-exhibit.html",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "cape-canaveral-space-force-museum",
+    "country": "US",
+    "lat": 28.4442,
+    "lon": -80.5711,
+    "website": "https://www.spaceforcemuseum.org",
+    "holds": [
+      {
+        "ref": "titan-ii-glv",
+        "kind": "flown",
+        "evidence": "https://ccspacemuseum.org/artifacts/gemini-v-booster-segment/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "china-science-and-technology-museum",
+    "country": "CN",
+    "lat": 40.0047,
+    "lon": 116.3922,
+    "website": "https://www.cstm.org.cn/",
+    "holds": [
+      {
+        "ref": "shenzhou",
+        "kind": "flown",
+        "evidence": "https://cstm.cdstm.cn/hd/yg/tshd/art/2025/art_2655365b22714bcb96a89f417ca99220.html",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "cosmosphere-hutchinson",
+    "country": "US",
+    "lat": 38.0653,
+    "lon": -97.9213,
+    "website": "https://cosmo.org",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-ii",
+        "kind": "flown",
+        "evidence": "https://cosmo.org/gallery-guide/",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "gemini",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/gemini",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "mercury-capsule",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/mercury",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "vostok",
+        "kind": "flown",
+        "evidence": "https://cosmo.org/gallery-guide/",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "/science/history/sputnik-1957",
+        "kind": "backup",
+        "evidence": "https://en.wikipedia.org/wiki/Sputnik_1",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "merlin-1d",
+        "kind": "flown",
+        "evidence": "https://cosmo.org/gallery-guide/",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "apollo-lm",
+        "kind": "test-article",
+        "evidence": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "voskhod",
+        "kind": "test-article",
+        "evidence": "https://cosmo.org/gallery-guide/",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "f-1",
+        "kind": "flown-part",
+        "evidence": "https://cosmo.org/gallery-guide/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "cradle-of-aviation",
+    "country": "US",
+    "lat": 40.7286,
+    "lon": -73.5976,
+    "website": "https://www.cradleofaviation.org",
+    "holds": [
+      {
+        "ref": "apollo-lm",
+        "kind": "backup",
+        "evidence": "https://www.cradleofaviation.org",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "apollo-csm-block-i",
+        "kind": "test-article",
+        "evidence": "https://www.cradleofaviation.org",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "danmarks-tekniske-museum",
+    "country": "DK",
+    "lat": 56.0222,
+    "lon": 12.5625,
+    "website": "https://www.tekniskmuseum.dk",
+    "holds": [
+      {
+        "ref": "soyuz-tma",
+        "kind": "flown",
+        "evidence": "https://www.collectspace.com/news/news-051118a-soyuz-danish-museum-mogensen.html",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "esperance-museum",
+    "country": "AU",
+    "lat": -33.8586,
+    "lon": 121.8945,
+    "website": "https://www.esperancemuseum.com.au/",
+    "holds": [
+      {
+        "ref": "skylab",
+        "kind": "flown-part",
+        "evidence": "https://www.esperancemuseum.com.au/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "fernbank-science-center",
+    "country": "US",
+    "lat": 33.7787,
+    "lon": -84.3181,
+    "website": "https://fernbank.edu",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-i",
+        "kind": "flown",
+        "evidence": "https://en.wikipedia.org/wiki/Fernbank_Science_Center",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "franklin-institute",
+    "country": "US",
+    "lat": 39.9582,
+    "lon": -75.1731,
+    "website": "https://www.fi.edu",
+    "holds": [
+      {
+        "ref": "apollo-lm",
+        "kind": "test-article",
+        "evidence": "https://american-spacecraft.org/lunar-modules",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "infinity-science-center",
+    "country": "US",
+    "lat": 30.3118,
+    "lon": -89.6049,
+    "website": "https://visitinfinity.com",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-i",
+        "kind": "flown",
+        "evidence": "https://visitinfinity.com/galleries-exhibits/",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "saturn-v",
+        "kind": "backup",
+        "evidence": "https://visitinfinity.com/galleries-exhibits/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "intrepid-museum",
+    "country": "US",
+    "lat": 40.7646,
+    "lon": -73.9996,
+    "website": "https://www.intrepidmuseum.org",
+    "holds": [
+      {
+        "ref": "enterprise",
+        "kind": "test-article",
+        "evidence": "https://intrepidmuseum.org/space-shuttle-pavilion",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "space-shuttle-orbiter",
+        "kind": "test-article",
+        "evidence": "https://intrepidmuseum.org/space-shuttle-pavilion",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "jaxa-sagamihara-communication-hall",
+    "country": "JP",
+    "lat": 35.5583,
+    "lon": 139.3953,
+    "website": "https://www.isas.jaxa.jp/en/",
+    "holds": [
+      {
+        "ref": "hayabusa-2",
+        "kind": "flown",
+        "evidence": "https://www.isas.jaxa.jp/gallery/feature/isas/isas_20230609.html",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "kennedy-space-center-visitor-complex",
+    "country": "US",
+    "lat": 28.5233,
+    "lon": -80.6819,
+    "website": "https://www.kennedyspacecenter.com",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-ii",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/apollo",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "apollo-lm",
+        "kind": "backup",
+        "evidence": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "atlantis",
+        "kind": "flown",
+        "evidence": "https://www.kennedyspacecenter.com",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "space-shuttle-orbiter",
+        "kind": "flown",
+        "evidence": "https://www.kennedyspacecenter.com",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "gemini",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/gemini",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "mercury-capsule",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/mercury",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "orion",
+        "kind": "flown",
+        "evidence": "https://en.wikipedia.org/wiki/Orion_(spacecraft)",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "saturn-v",
+        "kind": "backup",
+        "evidence": "https://en.wikipedia.org/wiki/Saturn_V",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "saturn-ib",
+        "kind": "backup",
+        "evidence": "https://www.collectspace.com/news/news-070218a-saturn-ib-rocket-restoration.html",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "delta-ii",
+        "kind": "backup",
+        "evidence": "https://www.collectspace.com/news/news-032321a-delta2-rocket-garden-nasa-display.html",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "falcon-heavy",
+        "kind": "flown",
+        "evidence": "https://spaceexplored.com/guides/b1023",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "korolev-museum-zhytomyr",
+    "country": "UA",
+    "lat": 50.253,
+    "lon": 28.6776,
+    "website": "https://cosmosmuseum.info",
+    "holds": [
+      {
+        "ref": "soyuz-7k-ok",
+        "kind": "flown",
+        "evidence": "https://commons.wikimedia.org/wiki/File:Spuskaemiy_modul_soyuza_27_4.jpg",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "mao-zedong-memorial-museum-shaoshan",
+    "country": "CN",
+    "lat": 27.9084,
+    "lon": 112.4865,
+    "website": "https://www.ssmzd.com/",
+    "holds": [
+      {
+        "ref": "shenzhou",
+        "kind": "flown",
+        "evidence": "https://zh.wikipedia.org/wiki/神舟十号",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "musee-air-espace-le-bourget",
+    "country": "FR",
+    "lat": 48.9471,
+    "lon": 2.4349,
+    "website": "https://www.museeairespace.fr",
+    "holds": [
+      {
+        "ref": "soyuz-t",
+        "kind": "flown",
+        "evidence": "https://www.museeairespace.fr/aller-plus-haut/collections/capsule-soyouz-t-6/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "museum-of-flight-seattle",
+    "country": "US",
+    "lat": 47.5181,
+    "lon": -122.2969,
+    "website": "https://www.museumofflight.org",
+    "holds": [
+      {
+        "ref": "viking-1",
+        "kind": "backup",
+        "evidence": "https://www.museumofflight.org/exhibits-and-events/spacecraft/viking-lander-flight-capsule-3",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "viking2-lander",
+        "kind": "backup",
+        "evidence": "https://www.museumofflight.org/exhibits-and-events/spacecraft/viking-lander-flight-capsule-3",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "apollo-csm-block-i",
+        "kind": "test-article",
+        "evidence": "https://american-spacecraft.org/apollo",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "museum-of-science-and-industry-chicago",
+    "country": "US",
+    "lat": 41.7906,
+    "lon": -87.5828,
+    "website": "https://www.griffinmsi.org",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-ii",
+        "kind": "flown",
+        "evidence": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "mercury-capsule",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/mercury",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "nasm-washington",
+    "country": "US",
+    "lat": 38.8883,
+    "lon": -77.02,
+    "website": "https://airandspace.si.edu",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-ii",
+        "kind": "flown",
+        "evidence": "https://airandspace.si.edu/collection-objects/command-module-apollo-11/nasm_A19700102000",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "apollo-lm",
+        "kind": "backup",
+        "evidence": "https://american-spacecraft.org/lunar-modules",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "gemini",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/gemini",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "mercury-capsule",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/mercury",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "/science/history/apollo-11-1969",
+        "kind": "flown",
+        "evidence": "https://airandspace.si.edu/collection-objects/command-module-apollo-11/nasm_A19700102000",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "merlin-1d",
+        "kind": "flown",
+        "evidence": "https://airandspace.si.edu/collection-objects/rocket-engine-liquid-fuel-merlin-1d/nasm_A20220606000",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "sojourner",
+        "kind": "backup",
+        "evidence": "https://airandspace.si.edu/es/collection-objects/rover-marie-curie-mars-pathfinder-engineering-test-vehicle/nasm_A20150317000",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "tundra-sirius",
+        "kind": "backup",
+        "evidence": "https://airandspace.si.edu/collection-objects/satellite-communications-sirius-fm-4/nasm_A20130001000",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "planet-labs",
+        "kind": "backup",
+        "evidence": "https://airandspace.si.edu/collection-objects/dove-satellite/nasm_A20170023000",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "skylab",
+        "kind": "backup",
+        "evidence": "https://airandspace.si.edu/collection-objects/orbital-workshop-skylab-backup-flight-unit/nasm_A19761033000",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "lrv-apollo",
+        "kind": "test-article",
+        "evidence": "https://airandspace.si.edu/es/collection-objects/lunar-roving-vehicle-qualification-test-unit/nasm_A19760746000",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "national-military-museum-bucharest",
+    "country": "RO",
+    "lat": 44.4414,
+    "lon": 26.0765,
+    "website": "https://muzeulmilitar.ro",
+    "holds": [
+      {
+        "ref": "soyuz-7k-ok",
+        "kind": "flown",
+        "evidence": "https://www.historia.ro/sectiune/general/articol/povestea-capsula-navei-soiuz-40-sau-garsoniera-lui-prunariu-foto",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "national-museum-of-nature-and-science-tokyo",
+    "country": "JP",
+    "lat": 35.7159,
+    "lon": 139.7765,
+    "website": "https://www.kahaku.go.jp/english/",
+    "holds": [
+      {
+        "ref": "hayabusa",
+        "kind": "flown",
+        "evidence": "https://www.kahaku.go.jp/english/tenji/topics/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "national-space-centre-leicester",
+    "country": "GB",
+    "lat": 52.6538,
+    "lon": -1.1323,
+    "website": "https://spacecentre.co.uk",
+    "holds": [
+      {
+        "ref": "sokol-kv-2",
+        "kind": "flown",
+        "evidence": "https://blog.sciencemuseum.org.uk/see-tim-peakes-spacesuit-at-the-national-space-centre/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "science-museum-london",
+    "country": "GB",
+    "lat": 51.4975,
+    "lon": -0.1747,
+    "website": "https://www.sciencemuseum.org.uk",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-ii",
+        "kind": "flown",
+        "evidence": "https://www.museumsassociation.org/museums-journal/news/2025/09/science-museum-launches-space-gallery/",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "soyuz-tma",
+        "kind": "flown",
+        "evidence": "https://www.sciencemuseum.org.uk/node/9605",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "space-center-houston",
+    "country": "US",
+    "lat": 29.5519,
+    "lon": -95.0983,
+    "website": "https://spacecenter.org",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-ii",
+        "kind": "flown",
+        "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "gemini",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/gemini",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "mercury-capsule",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/mercury",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "saturn-v",
+        "kind": "backup",
+        "evidence": "https://en.wikipedia.org/wiki/Saturn_V",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "apollo-lm",
+        "kind": "test-article",
+        "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "lrv-apollo",
+        "kind": "test-article",
+        "evidence": "https://en.wikipedia.org/wiki/Space_Center_Houston",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "space-expo-noordwijk",
+    "country": "NL",
+    "lat": 52.2153,
+    "lon": 4.4206,
+    "website": "https://www.space-expo.nl",
+    "holds": [
+      {
+        "ref": "soyuz-tma",
+        "kind": "flown",
+        "evidence": "https://www.space-expo.nl/en/",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "stafford-air-and-space-museum",
+    "country": "US",
+    "lat": 35.5444,
+    "lon": -98.67,
+    "website": "https://staffordmuseum.com",
+    "holds": [
+      {
+        "ref": "gemini",
+        "kind": "flown",
+        "evidence": "https://american-spacecraft.org/gemini",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "strategic-air-space-museum",
+    "country": "US",
+    "lat": 41.018,
+    "lon": -96.32,
+    "website": "https://sacmuseum.org",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-i",
+        "kind": "flown",
+        "evidence": "https://en.wikipedia.org/wiki/Strategic_Air_Command_%26_Aerospace_Museum",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "technik-museum-speyer",
+    "country": "DE",
+    "lat": 49.3125,
+    "lon": 8.4464,
+    "website": "https://www.technik-museum.de",
+    "holds": [
+      {
+        "ref": "soyuz-tm",
+        "kind": "flown",
+        "evidence": "https://www.technik-museum.de/de/entdecken/ausstellungen/raumfahrtausstellung-apollo-and-beyond/",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "buran-ok-gli",
+        "kind": "test-article",
+        "evidence": "https://en.wikipedia.org/wiki/OK-GLI",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "tsiolkovsky-museum-kaluga",
+    "country": "RU",
+    "lat": 54.5169,
+    "lon": 36.2308,
+    "website": "https://gmik.ru",
+    "holds": [
+      {
+        "ref": "mars-3",
+        "kind": "test-article",
+        "evidence": "https://ru.wikipedia.org/wiki/Марс-3",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "udvar-hazy",
+    "country": "US",
+    "lat": 38.9114,
+    "lon": -77.4442,
+    "website": "https://airandspace.si.edu/visit/udvar-hazy-center",
+    "holds": [
+      {
+        "ref": "discovery",
+        "kind": "flown",
+        "evidence": "https://airandspace.si.edu/visit/udvar-hazy-center",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "space-shuttle-orbiter",
+        "kind": "flown",
+        "evidence": "https://airandspace.si.edu/visit/udvar-hazy-center",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "h-1",
+        "kind": "test-article",
+        "evidence": "https://airandspace.si.edu/collection-objects/rocket-engine-liquid-fuel-h-1/nasm_A19680012000",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "lr87",
+        "kind": "test-article",
+        "evidence": "https://airandspace.si.edu/collection-objects/rocket-engine-liquid-fuel-xlr-87-titan-1-missile/nasm_A19721009000",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "us-space-and-rocket-center",
+    "country": "US",
+    "lat": 34.7114,
+    "lon": -86.6542,
+    "website": "https://rocketcenter.com",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-ii",
+        "kind": "flown",
+        "evidence": "https://www.rocketcenter.com",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "space-shuttle-orbiter",
+        "kind": "test-article",
+        "evidence": "https://www.rocketcenter.com",
+        "checked": "2026-10-22"
+      },
+      {
+        "ref": "saturn-v",
+        "kind": "test-article",
+        "evidence": "https://en.wikipedia.org/wiki/Saturn_V",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "uss-hornet-museum",
+    "country": "US",
+    "lat": 37.7725,
+    "lon": -122.3028,
+    "website": "https://uss-hornet.org",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-i",
+        "kind": "flown",
+        "evidence": "https://uss-hornet.org/exhibits",
+        "checked": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "id": "virginia-air-and-space-science-center",
+    "country": "US",
+    "lat": 37.0239,
+    "lon": -76.3445,
+    "website": "https://www.vasc.org",
+    "holds": [
+      {
+        "ref": "apollo-csm-block-ii",
+        "kind": "flown",
+        "evidence": "https://www.vasc.org/exhibits",
+        "checked": "2026-10-22"
+      }
+    ]
+  }
+]

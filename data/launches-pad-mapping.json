@@ -36,7 +36,8 @@
         "Pad 39A"
       ],
       "pad_location_includes": [
-        "Kennedy"
+        "Kennedy",
+        "KSC"
       ]
     },
     "lc-39b": {
@@ -47,7 +48,8 @@
         "Pad 39B"
       ],
       "pad_location_includes": [
-        "Kennedy"
+        "Kennedy",
+        "KSC"
       ]
     },
     "vandenberg-slc-4e": {
@@ -58,7 +60,10 @@
         "SLC-4 East"
       ],
       "pad_location_includes": [
-        "Vandenberg"
+        "Vandenberg",
+        "VSFBS",
+        "VSFB",
+        "VS"
       ]
     },
     "kourou-ela-3": {
@@ -69,7 +74,8 @@
       ],
       "pad_location_includes": [
         "Kourou",
-        "French Guiana"
+        "French Guiana",
+        "CSG"
       ]
     },
     "kourou-ela-4": {
@@ -80,7 +86,8 @@
       ],
       "pad_location_includes": [
         "Kourou",
-        "French Guiana"
+        "French Guiana",
+        "CSG"
       ]
     },
     "baikonur-1-5": {
@@ -121,7 +128,9 @@
       ],
       "pad_location_includes": [
         "Plesetsk",
-        "niip-53"
+        "niip-53",
+        "GIK-1",
+        "GNIIPV"
       ]
     },
     "jiuquan-slc-43": {
@@ -132,17 +141,20 @@
         "Site 43/95A"
       ],
       "pad_location_includes": [
-        "Jiuquan"
+        "Jiuquan",
+        "JQ"
       ]
     },
     "wenchang-lc-101": {
       "pad_name": [
         "LC101",
         "LC-101",
-        "Launch Complex 101"
+        "Launch Complex 101",
+        "101"
       ],
       "pad_location_includes": [
-        "Wenchang"
+        "Wenchang",
+        "WEN"
       ]
     },
     "sriharikota-slp": {
@@ -154,7 +166,8 @@
       ],
       "pad_location_includes": [
         "Sriharikota",
-        "Satish Dhawan"
+        "Satish Dhawan",
+        "SHAR"
       ]
     },
     "tanegashima-yoshinobu": {
@@ -162,10 +175,12 @@
         "Yoshinobu",
         "LP-1",
         "LP-2",
-        "Yoshinobu Launch Complex"
+        "Yoshinobu Launch Complex",
+        "Y"
       ],
       "pad_location_includes": [
-        "Tanegashima"
+        "Tanegashima",
+        "TNSC"
       ]
     },
     "starbase-orbital-a": {
@@ -219,9 +234,7 @@
         "LC200/39",
         "LC200/40",
         "Site 200/39",
-        "Site 200/40",
-        "PU1S",
-        "PU2"
+        "Site 200/40"
       ],
       "pad_location_includes": [
         "baikonur",
@@ -265,6 +278,281 @@
       "pad_location_includes": [
         "taiyuan",
         "tysc"
+      ]
+    },
+    "cape-canaveral-lc-36b": {
+      "pad_name": [
+        "LC36B",
+        "LC-36B",
+        "Launch Complex 36B",
+        "SLC-36"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc",
+        "CCSFS"
+      ]
+    },
+    "lc-14": {
+      "pad_name": [
+        "LC14",
+        "LC-14",
+        "Launch Complex 14"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc",
+        "CCSFS"
+      ]
+    },
+    "lc-34": {
+      "pad_name": [
+        "LC34",
+        "LC-34",
+        "Launch Complex 34"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc",
+        "CCSFS"
+      ]
+    },
+    "lc-5": {
+      "pad_name": [
+        "LC5",
+        "LC-5",
+        "Launch Complex 5"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc",
+        "CCSFS"
+      ]
+    },
+    "rocket-lab-lc-1": {
+      "pad_name": [
+        "LC1A",
+        "LC1B",
+        "LC-1A",
+        "LC-1B",
+        "Rocket Lab Launch Complex 1A",
+        "Rocket Lab Launch Complex 1B",
+        "Unknown Pad",
+        "-"
+      ],
+      "pad_location_includes": [
+        "MAHIA",
+        "Mahia Peninsula"
+      ]
+    },
+    "naro-space-center": {
+      "pad_name": [
+        "LC1",
+        "LC2",
+        "LC-1",
+        "LC-2"
+      ],
+      "pad_location_includes": [
+        "NARO",
+        "Naro Space Center"
+      ]
+    },
+    "sohae": {
+      "pad_name": [
+        "LC1",
+        "LC2",
+        "LC-1",
+        "LC-2"
+      ],
+      "pad_location_includes": [
+        "SOHAE",
+        "Sohae"
+      ]
+    },
+    "semnan-imam-khomeini": {
+      "pad_name": [
+        "SAF",
+        "IKSC",
+        "-"
+      ],
+      "pad_location_includes": [
+        "SEM",
+        "Semnan",
+        "Imam Khomeini"
+      ]
+    },
+    "palmachim": {
+      "pad_name": [
+        "-",
+        "Unknown Pad"
+      ],
+      "pad_location_includes": [
+        "PALB",
+        "Palmachim"
+      ]
+    },
+    "uchinoura": {
+      "pad_name": [
+        "L",
+        "M",
+        "M1",
+        "M-V",
+        "EP",
+        "K",
+        "Mu Center"
+      ],
+      "pad_location_includes": [
+        "KASC",
+        "USC",
+        "Uchinoura"
+      ]
+    },
+    "woomera": {
+      "pad_name": [
+        "LA8",
+        "LA5B",
+        "LA6A",
+        "LA-8",
+        "LA-5B"
+      ],
+      "pad_location_includes": [
+        "WOO",
+        "Woomera"
+      ]
+    },
+    "hammaguir": {
+      "pad_name": [
+        "Brigitte",
+        "Brigitte-A"
+      ],
+      "pad_location_includes": [
+        "HMG",
+        "Hammaguir"
+      ]
+    },
+    "san-marco": {
+      "pad_name": [
+        "-",
+        "San Marco"
+      ],
+      "pad_location_includes": [
+        "SMLC",
+        "San Marco",
+        "Malindi"
+      ]
+    },
+    "alcantara": {
+      "pad_name": [
+        "VLS",
+        "HAN",
+        "HANBIT Pad"
+      ],
+      "pad_location_includes": [
+        "ALCA",
+        "Alcântara",
+        "Alcantara"
+      ]
+    },
+    "vostochny-1s": {
+      "pad_name": [
+        "PU1S",
+        "Cosmodrome Site 1S",
+        "Site 1S"
+      ],
+      "pad_location_includes": [
+        "VOST",
+        "Vostochny"
+      ]
+    },
+    "baikonur-81": {
+      "pad_name": [
+        "LC81/23",
+        "LC81/24",
+        "LC81",
+        "Site 81/23",
+        "Site 81/24",
+        "81/23",
+        "81/24"
+      ],
+      "pad_location_includes": [
+        "Baikonur",
+        "niip-5",
+        "gik-5"
+      ]
+    },
+    "cape-canaveral-lc-17": {
+      "pad_name": [
+        "LC17A",
+        "LC17B",
+        "SLC17A",
+        "SLC17B",
+        "SLC-17A",
+        "SLC-17B",
+        "Launch Complex 17A",
+        "Launch Complex 17B",
+        "Space Launch Complex 17A",
+        "Space Launch Complex 17B"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc",
+        "CCSFS"
+      ]
+    },
+    "kourou-els": {
+      "pad_name": [
+        "ELS",
+        "Soyuz Launch Complex"
+      ],
+      "pad_location_includes": [
+        "CSG",
+        "Kourou",
+        "French Guiana",
+        "Guiana Space Centre"
+      ]
+    },
+    "kourou-zlv": {
+      "pad_name": [
+        "ZLV",
+        "ELA1",
+        "ELA-1",
+        "Ariane Launch Area 1 (ELV)",
+        "Ariane Launch Area 1"
+      ],
+      "pad_location_includes": [
+        "CSG",
+        "Kourou",
+        "French Guiana",
+        "Guiana Space Centre"
+      ]
+    },
+    "wenchang-lc-201": {
+      "pad_name": [
+        "LC201",
+        "LC-201",
+        "201",
+        "Launch Complex 201"
+      ],
+      "pad_location_includes": [
+        "WEN",
+        "Wenchang"
+      ]
+    },
+    "wallops-lc-0": {
+      "pad_name": [
+        "Pad 0A",
+        "Pad 0B",
+        "Pad 0C",
+        "LA0A",
+        "LA0B",
+        "Launch Area 0 A",
+        "Launch Area 0 B",
+        "Rocket Lab Launch Complex 2 (Launch Area 0 C)"
+      ],
+      "pad_location_includes": [
+        "MARS",
+        "WI",
+        "Wallops"
       ]
     }
   }

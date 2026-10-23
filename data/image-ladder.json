@@ -3017,32 +3017,6 @@
     320,
     960
   ],
-  "/images/fleet-galleries/gagarins-start/01": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/gagarins-start/02": [
-    320,
-    1280,
-    1904
-  ],
-  "/images/fleet-galleries/gagarins-start/03": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/gagarins-start/04": [
-    320,
-    640,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/gagarins-start/05": [
-    320,
-    1280,
-    1920
-  ],
   "/images/fleet-galleries/gaia/01": [
     320,
     640,
@@ -13784,6 +13758,7 @@
   ],
   "/images/missions/vega-2/03": [
     320,
+    640,
     960
   ],
   "/images/fleet-galleries/aces/02": [
@@ -14878,6 +14853,7 @@
   ],
   "/images/missions/shenzhou-3/01": [
     320,
+    640,
     1280
   ],
   "/images/missions/shenzhou-3/02": [
@@ -15460,6 +15436,7 @@
   ],
   "/images/fleet-galleries/atlas-slv-3d/04": [
     320,
+    640,
     1280,
     1920
   ],
@@ -15490,6 +15467,7 @@
   ],
   "/images/fleet-galleries/beresheet/04": [
     320,
+    640,
     1280,
     1920
   ],
@@ -15502,5 +15480,774 @@
     640,
     853,
     1024
+  ],
+  "/images/museums/adler-planetarium/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/armstrong-air-and-space-museum/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/aviation-museum-plovdiv-krumovo/01": [
+    320,
+    1280,
+    2048,
+    2592
+  ],
+  "/images/museums/baikonur-cosmodrome-museum/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/california-science-center/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/cape-canaveral-space-force-museum/01": [
+    320,
+    1280,
+    2048,
+    2637
+  ],
+  "/images/museums/china-science-and-technology-museum/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/cosmosphere-hutchinson/01": [
+    320,
+    1280,
+    2048
+  ],
+  "/images/museums/cradle-of-aviation/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/danmarks-tekniske-museum/01": [
+    320,
+    1280,
+    2048,
+    2560
+  ],
+  "/images/museums/esperance-museum/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/fernbank-science-center/01": [
+    320,
+    1024
+  ],
+  "/images/museums/franklin-institute/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/infinity-science-center/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/intrepid-museum/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/jaxa-sagamihara-communication-hall/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/kennedy-space-center-visitor-complex/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/korolev-museum-zhytomyr/01": [
+    320,
+    1280,
+    1682
+  ],
+  "/images/museums/mao-zedong-memorial-museum-shaoshan/01": [
+    320,
+    1280,
+    1600
+  ],
+  "/images/museums/musee-air-espace-le-bourget/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/museum-of-flight-seattle/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/museum-of-science-and-industry-chicago/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/nasm-washington/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/national-military-museum-bucharest/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/national-museum-of-nature-and-science-tokyo/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/national-space-centre-leicester/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/science-museum-london/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/space-center-houston/01": [
+    320,
+    1280,
+    2048,
+    2400
+  ],
+  "/images/museums/space-expo-noordwijk/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/stafford-air-and-space-museum/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/strategic-air-space-museum/01": [
+    320,
+    1280,
+    2048,
+    2515
+  ],
+  "/images/museums/technik-museum-speyer/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/tsiolkovsky-museum-kaluga/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/udvar-hazy/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/us-space-and-rocket-center/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/museums/uss-hornet-museum/01": [
+    320,
+    1280,
+    1412
+  ],
+  "/images/museums/virginia-air-and-space-science-center/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/allen-telescope-array/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/alma/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/arecibo/01": [
+    320,
+    1280,
+    2048,
+    2304
+  ],
+  "/images/observatories/bta-6/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/canberra-dsn/01": [
+    320,
+    1280,
+    1600
+  ],
+  "/images/observatories/devasthal/01": [
+    320,
+    1280,
+    2000
+  ],
+  "/images/observatories/effelsberg/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/elt/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/fast/01": [
+    320,
+    1280,
+    2048
+  ],
+  "/images/observatories/gmrt/01": [
+    320,
+    1280,
+    2048
+  ],
+  "/images/observatories/goldstone/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/green-bank/01": [
+    320,
+    1280,
+    1920
+  ],
+  "/images/observatories/haute-provence/01": [
+    320,
+    1024
+  ],
+  "/images/observatories/jodrell-bank/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/la-palma/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/la-silla/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/lamost/01": [
+    320,
+    800
+  ],
+  "/images/observatories/lmt/01": [
+    320,
+    962,
+    1167
+  ],
+  "/images/observatories/lofar/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/madrid-dsn/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/mauna-kea/01": [
+    320,
+    1000
+  ],
+  "/images/observatories/meerkat/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/mount-wilson/01": [
+    320,
+    960,
+    1536,
+    2304
+  ],
+  "/images/observatories/nobeyama/01": [
+    320,
+    1280,
+    2048,
+    2816
+  ],
+  "/images/observatories/palomar/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/paranal/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/parkes/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/ratan-600/01": [
+    320,
+    1280,
+    1500
+  ],
+  "/images/observatories/rubin/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/salt/01": [
+    320,
+    960,
+    1536,
+    2304
+  ],
+  "/images/observatories/ska-low/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/ska-mid/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/observatories/vla/01": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/alcantara/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/alcantara/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/alcantara/03": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/alcantara/04": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/baikonur-81/01": [
+    320,
+    640,
+    879,
+    1407,
+    2110
+  ],
+  "/images/fleet-galleries/baikonur-81/02": [
+    320,
+    840,
+    1344,
+    2000
+  ],
+  "/images/fleet-galleries/baikonur-81/03": [
+    320,
+    1280,
+    1920
+  ],
+  "/images/fleet-galleries/cape-canaveral-lc-17/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3008
+  ],
+  "/images/fleet-galleries/cape-canaveral-lc-17/02": [
+    320,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/fleet-galleries/cape-canaveral-lc-17/03": [
+    320,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/fleet-galleries/cape-canaveral-lc-17/04": [
+    320,
+    1280,
+    2048,
+    2700
+  ],
+  "/images/fleet-galleries/cape-canaveral-lc-17/05": [
+    320,
+    1280,
+    1812
+  ],
+  "/images/fleet-galleries/hammaguir/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/hammaguir/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-els/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-els/02": [
+    320,
+    853,
+    1366,
+    2048
+  ],
+  "/images/fleet-galleries/kourou-els/03": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-els/04": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-els/05": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-zlv/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-zlv/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-zlv/03": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-zlv/04": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kourou-zlv/05": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/naro-space-center/01": [
+    320,
+    640,
+    1280,
+    1544
+  ],
+  "/images/fleet-galleries/naro-space-center/02": [
+    320,
+    1280,
+    1540
+  ],
+  "/images/fleet-galleries/naro-space-center/03": [
+    320,
+    1280,
+    1322
+  ],
+  "/images/fleet-galleries/palmachim/01": [
+    320,
+    600
+  ],
+  "/images/fleet-galleries/rocket-lab-lc-1/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/rocket-lab-lc-1/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/rocket-lab-lc-1/03": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/rocket-lab-lc-1/04": [
+    320,
+    1280,
+    2048,
+    2193
+  ],
+  "/images/fleet-galleries/rocket-lab-lc-1/05": [
+    320,
+    1280,
+    1920
+  ],
+  "/images/fleet-galleries/san-marco/01": [
+    320,
+    640,
+    1280,
+    2048,
+    2370
+  ],
+  "/images/fleet-galleries/san-marco/02": [
+    320,
+    968
+  ],
+  "/images/fleet-galleries/san-marco/03": [
+    320,
+    854,
+    1366,
+    1564
+  ],
+  "/images/fleet-galleries/san-marco/04": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/san-marco/05": [
+    320,
+    960,
+    1536,
+    2304
+  ],
+  "/images/fleet-galleries/semnan-imam-khomeini/01": [
+    320,
+    640,
+    800
+  ],
+  "/images/fleet-galleries/semnan-imam-khomeini/02": [
+    320,
+    800
+  ],
+  "/images/fleet-galleries/semnan-imam-khomeini/03": [
+    320,
+    800
+  ],
+  "/images/fleet-galleries/semnan-imam-khomeini/04": [
+    320,
+    1050
+  ],
+  "/images/fleet-galleries/semnan-imam-khomeini/05": [
+    320,
+    1200
+  ],
+  "/images/fleet-galleries/sohae/01": [
+    320,
+    640
+  ],
+  "/images/fleet-galleries/uchinoura/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/uchinoura/02": [
+    320,
+    960,
+    1535,
+    1638
+  ],
+  "/images/fleet-galleries/uchinoura/03": [
+    320,
+    700
+  ],
+  "/images/fleet-galleries/uchinoura/04": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/uchinoura/05": [
+    320,
+    1280,
+    1684
+  ],
+  "/images/fleet-galleries/vostochny-1s/01": [
+    320,
+    640,
+    1280,
+    1880
+  ],
+  "/images/fleet-galleries/vostochny-1s/02": [
+    320,
+    1280,
+    1880
+  ],
+  "/images/fleet-galleries/vostochny-1s/03": [
+    320,
+    1280,
+    1563
+  ],
+  "/images/fleet-galleries/vostochny-1s/04": [
+    320,
+    1280,
+    1880
+  ],
+  "/images/fleet-galleries/vostochny-1s/05": [
+    320,
+    1280,
+    1880
+  ],
+  "/images/fleet-galleries/wallops-lc-0/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/wallops-lc-0/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/wallops-lc-0/03": [
+    320,
+    1280,
+    2048,
+    2400
+  ],
+  "/images/fleet-galleries/wallops-lc-0/04": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/wallops-lc-0/05": [
+    320,
+    1280,
+    2048,
+    2469
+  ],
+  "/images/fleet-galleries/wenchang-lc-201/01": [
+    320,
+    640,
+    1280,
+    2048,
+    2560
+  ],
+  "/images/fleet-galleries/wenchang-lc-201/02": [
+    320,
+    1280,
+    2048,
+    2560
+  ],
+  "/images/fleet-galleries/wenchang-lc-201/03": [
+    320,
+    1280,
+    1557
+  ],
+  "/images/fleet-galleries/wenchang-lc-201/04": [
+    320,
+    1280,
+    2048,
+    2560
+  ],
+  "/images/fleet-galleries/woomera/01": [
+    320,
+    640,
+    960,
+    1536,
+    2304
   ]
 }

@@ -14,7 +14,7 @@
     { "linked_id": "voskhod-2", "ref": "mission", "year": 1965 },
     { "linked_id": "voskhod", "ref": "fleet", "role": "spacecraft" },
     { "linked_id": "voskhod-11a57", "ref": "fleet", "role": "launcher" },
-    { "linked_id": "gagarins-start", "ref": "fleet", "role": "launch-site" }
+    { "linked_id": "baikonur-1-5", "ref": "fleet", "role": "launch-site" }
   ],
   "related_programs": ["vostok", "soyuz", "gemini"],
   "see_also": [

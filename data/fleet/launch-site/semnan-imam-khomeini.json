@@ -1,0 +1,34 @@
+{
+  "id": "semnan-imam-khomeini",
+  "name": "Semnan Space Center (Imam Khomeini Spaceport)",
+  "category": "launch-site",
+  "agency": "ISA",
+  "country": "Iran",
+  "manufacturer": "Iranian Space Agency (ISA)",
+  "first_flight": "2008-08-17",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "lat": 35.2346,
+  "lon": 53.9221,
+  "best_known_for": "Iran's orbital launch site: Safir put Omid, Iran's first home-built satellite, in orbit in 2009",
+  "credit": "Iran's main spaceport, 50 km southeast of Semnan, operated by the Iranian Space Agency; it includes an older circular pad used by Safir and the larger Imam Khomeini Space Launch Terminal used by Simorgh. The first Safir orbital attempt, with a dummy satellite, was on 17 August 2008, and Omid reached orbit on 2 February 2009. Facts from Wikipedia (Semnan Space Center, Safir, Omid) and the IISS analysis of October 2026; coordinates are the Semnan Space Center point on Wikipedia (the Safir pad area).",
+  "links": [
+    {
+      "l": "Iran's space-launch capability: grounded? — IISS",
+      "u": "https://www.iiss.org/online-analysis/military-balance/2026/10/irans-space-launch-capability-grounded/",
+      "t": "intro"
+    },
+    {
+      "l": "Semnan Space Center — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Semnan_Space_Center",
+      "t": "core"
+    },
+    {
+      "l": "Iran's Simorgh rocket falls short of orbit with three payloads aboard — NASASpaceFlight",
+      "u": "https://www.nasaspaceflight.com/2021/12/iran-simorgh-three-payloads/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "kourou-zlv",
+  "name": "Kourou ZLV (Vega launch complex)",
+  "category": "launch-site",
+  "agency": "ESA / Arianespace",
+  "country": "French Guiana",
+  "manufacturer": "ESA / CNES",
+  "first_flight": "1971-11-05",
+  "status": "ACTIVE",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "lat": 5.2365,
+  "lon": -52.7753,
+  "best_known_for": "Kourou's first launch site: Europa II, Ariane 1 and Giotto on this ground, rebuilt in 2001 for Vega and Vega-C",
+  "credit": "The Vega launch complex (ELV, also called ZLV or SLV) stands on the site of Kourou's first launch base: built as BEC for the Europa II (one flight, 5 November 1971, failed), rebuilt as ELA-1 for Ariane 1 (first flight 24 December 1979), Ariane 2 and Ariane 3 (last flight 11 July 1989), and from November 2001 rebuilt again for Vega, keeping the Ariane 1 flame trench. Vega first flew from it on 13 February 2012 and Vega-C on 13 July 2022; Wikipedia counts 56 launches from the site by September 2026. Sources: Wikipedia (Ensemble de Lancement Vega launch tables), ESA (Vega and Vega-C pages); coordinates from Wikipedia and OpenStreetMap.",
+  "links": [
+    {
+      "l": "Europe's Spaceport — ESA",
+      "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Europe_s_Spaceport",
+      "t": "intro"
+    },
+    {
+      "l": "Ensemble de Lancement Vega — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Ensemble_de_Lancement_Vega",
+      "t": "core"
+    },
+    {
+      "l": "Vega-C — ESA",
+      "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Vega/Vega-C",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "giotto"
+  ]
+}

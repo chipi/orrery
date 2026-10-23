@@ -1,0 +1,34 @@
+{
+  "id": "wallops-lc-0",
+  "name": "Wallops Launch Pad 0 (MARS LP-0A and 0B)",
+  "category": "launch-site",
+  "agency": "Virginia Space / NASA",
+  "country": "USA",
+  "manufacturer": "Virginia Spaceport Authority / NASA Wallops",
+  "first_flight": "1995-10-23",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "lat": 37.834,
+  "lon": -75.4878,
+  "best_known_for": "Antares pad for Cygnus ISS cargo (2013-2023) and the Minotaur V launch of the LADEE Moon probe",
+  "credit": "Launch Pad 0 is the launch complex of the Mid-Atlantic Regional Spaceport (MARS) at the southern tip of Wallops Island, Virginia, owned and operated by the Virginia Spaceport Authority next to NASA's Wallops Flight Facility. Pad 0A was built for the Conestoga rocket, whose single flight on 23 October 1995 self-destructed at T+46 seconds, and was rebuilt for Antares, which flew 18 times from it between 21 April 2013 and 2 August 2023. Pad 0B launched its first Minotaur I in December 2006 and the Minotaur V with LADEE on 7 September 2013. Sources: Wikipedia (MARS, Antares, Conestoga, LADEE), Virginia Spaceport Authority, NASASpaceflight; coordinates from Wikipedia.",
+  "links": [
+    {
+      "l": "Our facilities — Virginia Spaceport Authority",
+      "u": "https://www.vaspace.org/our-facilities",
+      "t": "intro"
+    },
+    {
+      "l": "Mid-Atlantic Regional Spaceport — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mid-Atlantic_Regional_Spaceport",
+      "t": "core"
+    },
+    {
+      "l": "Antares 230 launches Cygnus OA-5 from Wallops — NASASpaceflight",
+      "u": "https://www.nasaspaceflight.com/2016/10/antares-230-launch-oa-5-cygnus/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

@@ -1,0 +1,528 @@
+[
+  {
+    "id": "allen-telescope-array",
+    "country": "US",
+    "lat": 40.8178,
+    "lon": -121.4733,
+    "website": "https://www.seti.org/ata",
+    "kind": "seti",
+    "status": "active",
+    "since": "2007",
+    "science": [
+      "/science/observation/interferometry",
+      "/science/exoplanets/detecting-extraterrestrial-life"
+    ],
+    "evidence": "https://www.seti.org/ata"
+  },
+  {
+    "id": "alma",
+    "country": "CL",
+    "lat": -23.0193,
+    "lon": -67.7532,
+    "website": "https://www.almaobservatory.org/en/home/",
+    "kind": "radio",
+    "status": "active",
+    "since": "2011",
+    "science": [
+      "/science/observation/interferometry",
+      "/science/observation/black-holes",
+      "/science/exoplanets/planet-formation",
+      "/science/observation/spectroscopy"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Atacama_Large_Millimeter_Array"
+  },
+  {
+    "id": "arecibo",
+    "country": "PR",
+    "lat": 18.347,
+    "lon": -66.753,
+    "website": "https://www.naic.edu/",
+    "kind": "radio",
+    "status": "historic",
+    "since": "1963",
+    "science": [
+      "/science/exoplanets/are-we-alone",
+      "/science/exoplanets/detecting-extraterrestrial-life"
+    ],
+    "films": [
+      "contact"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Arecibo_Observatory"
+  },
+  {
+    "id": "big-ear",
+    "country": "US",
+    "lat": 40.2511,
+    "lon": -83.0492,
+    "website": "https://www.bigear.org/",
+    "kind": "seti",
+    "status": "historic",
+    "since": "1963",
+    "science": [
+      "/science/exoplanets/detecting-extraterrestrial-life"
+    ],
+    "evidence": "https://www.bigear.org/"
+  },
+  {
+    "id": "bta-6",
+    "country": "RU",
+    "lat": 43.6468,
+    "lon": 41.4405,
+    "website": "https://www.sao.ru/",
+    "kind": "optical",
+    "status": "active",
+    "since": "1975",
+    "science": [
+      "/science/observation/spectroscopy"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Special_Astrophysical_Observatory"
+  },
+  {
+    "id": "canberra-dsn",
+    "country": "AU",
+    "lat": -35.4014,
+    "lon": 148.9817,
+    "website": "https://www.cdscc.nasa.gov/",
+    "kind": "deep-space",
+    "status": "active",
+    "since": "1965",
+    "science": [
+      "/science/planets/active-spacecraft-survey",
+      "/science/scales-time/light-minute"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Canberra_Deep_Space_Communication_Complex"
+  },
+  {
+    "id": "devasthal",
+    "country": "IN",
+    "lat": 29.3617,
+    "lon": 79.685,
+    "website": "https://www.aries.res.in/facilities/astronomical-telescopes/360cm-telescope",
+    "kind": "optical",
+    "status": "active",
+    "since": "2016",
+    "science": [
+      "/science/observation/spectroscopy"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Devasthal_Optical_Telescope"
+  },
+  {
+    "id": "effelsberg",
+    "country": "DE",
+    "lat": 50.5247,
+    "lon": 6.8828,
+    "website": "https://www.mpifr-bonn.mpg.de/effelsberg",
+    "kind": "radio",
+    "status": "active",
+    "since": "1971",
+    "science": [
+      "/science/observation/interferometry",
+      "/science/observation/black-holes"
+    ],
+    "evidence": "https://www.mpifr-bonn.mpg.de/effelsberg"
+  },
+  {
+    "id": "elt",
+    "country": "CL",
+    "lat": -24.5893,
+    "lon": -70.1916,
+    "website": "https://elt.eso.org/",
+    "kind": "optical",
+    "status": "building",
+    "since": "2029",
+    "science": [
+      "/science/exoplanets/direct-imaging",
+      "/science/exoplanets/exoplanet-atmospheres",
+      "/science/observation/adaptive-optics"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Extremely_Large_Telescope"
+  },
+  {
+    "id": "fast",
+    "country": "CN",
+    "lat": 25.6531,
+    "lon": 106.8567,
+    "website": "https://fast.bao.ac.cn/",
+    "kind": "radio",
+    "status": "active",
+    "since": "2016",
+    "science": [
+      "/science/observation/our-galaxy",
+      "/science/exoplanets/detecting-extraterrestrial-life"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Five-hundred-meter_Aperture_Spherical_Telescope"
+  },
+  {
+    "id": "gmrt",
+    "country": "IN",
+    "lat": 19.0965,
+    "lon": 74.0497,
+    "website": "https://www.gmrt.ncra.tifr.res.in/",
+    "kind": "radio",
+    "status": "active",
+    "since": "1996",
+    "science": [
+      "/science/observation/interferometry",
+      "/science/observation/galaxy-types"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Giant_Metrewave_Radio_Telescope"
+  },
+  {
+    "id": "goldstone",
+    "country": "US",
+    "lat": 35.4267,
+    "lon": -116.89,
+    "website": "https://www.nasa.gov/communicating-with-missions/dsn/",
+    "kind": "deep-space",
+    "status": "active",
+    "since": "1958",
+    "science": [
+      "/science/planets/active-spacecraft-survey",
+      "/science/scales-time/light-minute"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Goldstone_Deep_Space_Communications_Complex"
+  },
+  {
+    "id": "green-bank",
+    "country": "US",
+    "lat": 38.4331,
+    "lon": -79.8398,
+    "website": "https://greenbankobservatory.org/",
+    "kind": "radio",
+    "status": "active",
+    "since": "2001",
+    "science": [
+      "/science/observation/our-galaxy",
+      "/science/exoplanets/detecting-extraterrestrial-life"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Green_Bank_Telescope"
+  },
+  {
+    "id": "haute-provence",
+    "country": "FR",
+    "lat": 43.9308,
+    "lon": 5.7133,
+    "website": "https://ohp.osupytheas.fr/",
+    "kind": "optical",
+    "status": "active",
+    "since": "1943",
+    "science": [
+      "/science/exoplanets/fifty-one-pegasi",
+      "/science/exoplanets/radial-velocity",
+      "/science/exoplanets/hot-jupiters"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Haute-Provence_Observatory"
+  },
+  {
+    "id": "jodrell-bank",
+    "country": "GB",
+    "lat": 53.2365,
+    "lon": -2.3084,
+    "website": "https://www.jodrellbank.net/",
+    "kind": "radio",
+    "status": "active",
+    "since": "1957",
+    "science": [
+      "/science/observation/black-holes"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Lovell_Telescope"
+  },
+  {
+    "id": "la-palma",
+    "country": "ES",
+    "lat": 28.7636,
+    "lon": -17.8947,
+    "website": "https://www.iac.es/en/observatories/roque-de-los-muchachos-observatory",
+    "kind": "optical",
+    "status": "active",
+    "since": "1985",
+    "science": [
+      "/science/observation/spectroscopy",
+      "/science/observation/adaptive-optics"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Roque_de_los_Muchachos_Observatory"
+  },
+  {
+    "id": "la-silla",
+    "country": "CL",
+    "lat": -29.2575,
+    "lon": -70.7375,
+    "website": "https://www.eso.org/public/teles-instr/lasilla/",
+    "kind": "optical",
+    "status": "active",
+    "since": "1964",
+    "science": [
+      "/science/exoplanets/radial-velocity",
+      "/science/observation/spectroscopy",
+      "/science/exoplanets/proxima-system"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/La_Silla_Observatory"
+  },
+  {
+    "id": "lamost",
+    "country": "CN",
+    "lat": 40.3958,
+    "lon": 117.5759,
+    "website": "https://www.lamost.org/",
+    "kind": "optical",
+    "status": "active",
+    "since": "2008",
+    "science": [
+      "/science/observation/spectroscopy",
+      "/science/observation/our-galaxy",
+      "/science/observation/hertzsprung-russell"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/LAMOST"
+  },
+  {
+    "id": "lmt",
+    "country": "MX",
+    "lat": 18.9858,
+    "lon": -97.3147,
+    "website": "https://www.inaoep.mx/",
+    "kind": "radio",
+    "status": "active",
+    "since": "2011",
+    "science": [
+      "/science/observation/black-holes",
+      "/science/observation/spectroscopy"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Large_Millimeter_Telescope"
+  },
+  {
+    "id": "lofar",
+    "country": "NL",
+    "lat": 52.9089,
+    "lon": 6.8689,
+    "website": "https://www.astron.nl/telescopes/lofar/",
+    "kind": "radio",
+    "status": "active",
+    "since": "2010",
+    "science": [
+      "/science/observation/interferometry",
+      "/science/observation/black-holes"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Low-Frequency_Array"
+  },
+  {
+    "id": "madrid-dsn",
+    "country": "ES",
+    "lat": 40.4314,
+    "lon": -4.2481,
+    "website": "https://www.mdscc.nasa.gov/",
+    "kind": "deep-space",
+    "status": "active",
+    "since": "1964",
+    "science": [
+      "/science/planets/active-spacecraft-survey",
+      "/science/scales-time/light-minute"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Madrid_Deep_Space_Communications_Complex"
+  },
+  {
+    "id": "mauna-kea",
+    "country": "US",
+    "lat": 19.8222,
+    "lon": -155.4749,
+    "website": "https://maunakeaobservatories.org/",
+    "kind": "optical",
+    "status": "active",
+    "since": "1970",
+    "science": [
+      "/science/observation/adaptive-optics",
+      "/science/observation/spectroscopy"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Mauna_Kea_Observatories"
+  },
+  {
+    "id": "meerkat",
+    "country": "ZA",
+    "lat": -30.7132,
+    "lon": 21.4431,
+    "website": "https://www.sarao.ac.za/",
+    "kind": "radio",
+    "status": "active",
+    "since": "2018",
+    "science": [
+      "/science/observation/interferometry",
+      "/science/observation/our-galaxy",
+      "/science/observation/black-holes"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/MeerKAT"
+  },
+  {
+    "id": "mount-wilson",
+    "country": "US",
+    "lat": 34.225,
+    "lon": -118.0572,
+    "website": "https://www.mtwilson.edu/",
+    "kind": "optical",
+    "status": "active",
+    "since": "1904",
+    "science": [
+      "/science/observation/andromeda-galaxy",
+      "/science/cosmology/cosmic-distance-ladder",
+      "/science/observation/galaxy-types",
+      "/science/observation/interferometry"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Mount_Wilson_Observatory"
+  },
+  {
+    "id": "nobeyama",
+    "country": "JP",
+    "lat": 35.9417,
+    "lon": 138.4758,
+    "website": "https://www.nro.nao.ac.jp/en/",
+    "kind": "radio",
+    "status": "active",
+    "since": "1982",
+    "science": [
+      "/science/observation/spectroscopy"
+    ],
+    "evidence": "https://www.nro.nao.ac.jp/en/"
+  },
+  {
+    "id": "palomar",
+    "country": "US",
+    "lat": 33.3564,
+    "lon": -116.865,
+    "website": "https://sites.astro.caltech.edu/palomar/",
+    "kind": "optical",
+    "status": "active",
+    "since": "1949",
+    "science": [
+      "/science/observation/black-holes",
+      "/science/observation/spectroscopy"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Hale_Telescope"
+  },
+  {
+    "id": "paranal",
+    "country": "CL",
+    "lat": -24.6272,
+    "lon": -70.4042,
+    "website": "https://www.eso.org/public/teles-instr/paranal-observatory/",
+    "kind": "optical",
+    "status": "active",
+    "since": "1998",
+    "science": [
+      "/science/observation/interferometry",
+      "/science/exoplanets/direct-imaging",
+      "/science/observation/black-holes",
+      "/science/observation/adaptive-optics"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Very_Large_Telescope"
+  },
+  {
+    "id": "parkes",
+    "country": "AU",
+    "lat": -32.9978,
+    "lon": 148.2629,
+    "website": "https://www.csiro.au/en/about/facilities-collections/atnf",
+    "kind": "radio",
+    "status": "active",
+    "since": "1961",
+    "science": [
+      "/science/history/apollo-11-1969",
+      "/science/observation/our-galaxy",
+      "/science/exoplanets/detecting-extraterrestrial-life"
+    ],
+    "films": [
+      "the-dish"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Parkes_Observatory"
+  },
+  {
+    "id": "ratan-600",
+    "country": "RU",
+    "lat": 43.8258,
+    "lon": 41.5864,
+    "website": "https://www.sao.ru/ratan/",
+    "kind": "radio",
+    "status": "active",
+    "since": "1977",
+    "science": [
+      "/science/observation/black-holes"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/RATAN-600"
+  },
+  {
+    "id": "rubin",
+    "country": "CL",
+    "lat": -30.2446,
+    "lon": -70.7494,
+    "website": "https://rubinobservatory.org/",
+    "kind": "optical",
+    "status": "active",
+    "since": "2025",
+    "science": [
+      "/science/observation/space-photography",
+      "/science/cosmology/large-scale-structure",
+      "/science/planets/asteroid-belt"
+    ],
+    "evidence": "https://rubinobservatory.org/about"
+  },
+  {
+    "id": "salt",
+    "country": "ZA",
+    "lat": -32.3759,
+    "lon": 20.8108,
+    "website": "https://www.salt.ac.za/",
+    "kind": "optical",
+    "status": "active",
+    "since": "2005",
+    "science": [
+      "/science/observation/spectroscopy",
+      "/science/observation/black-holes"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Southern_African_Large_Telescope"
+  },
+  {
+    "id": "ska-low",
+    "country": "AU",
+    "lat": -26.8242,
+    "lon": 116.7644,
+    "website": "https://www.skao.int/",
+    "kind": "radio",
+    "status": "building",
+    "since": "2025",
+    "science": [
+      "/science/observation/interferometry",
+      "/science/cosmology/large-scale-structure"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Square_Kilometre_Array"
+  },
+  {
+    "id": "ska-mid",
+    "country": "ZA",
+    "lat": -30.7211,
+    "lon": 21.4111,
+    "website": "https://www.skao.int/",
+    "kind": "radio",
+    "status": "building",
+    "science": [
+      "/science/observation/interferometry",
+      "/science/cosmology/large-scale-structure"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Square_Kilometre_Array"
+  },
+  {
+    "id": "vla",
+    "country": "US",
+    "lat": 34.0787,
+    "lon": -107.6177,
+    "website": "https://science.nrao.edu/facilities/vla/",
+    "kind": "radio",
+    "status": "active",
+    "since": "1980",
+    "science": [
+      "/science/observation/interferometry",
+      "/science/observation/black-holes",
+      "/science/observation/our-galaxy"
+    ],
+    "films": [
+      "contact"
+    ],
+    "evidence": "https://en.wikipedia.org/wiki/Very_Large_Array"
+  }
+]

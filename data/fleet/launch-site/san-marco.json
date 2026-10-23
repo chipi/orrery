@@ -1,0 +1,34 @@
+{
+  "id": "san-marco",
+  "name": "San Marco Platform",
+  "category": "launch-site",
+  "agency": "ASI",
+  "country": "Kenya",
+  "manufacturer": "Sapienza University of Rome (CRA) with NASA; platform supplied by Eni",
+  "first_flight": "1967-04-26",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "lat": -2.9383,
+  "lon": 40.2125,
+  "best_known_for": "Italian sea platform off Kenya that launched Uhuru, the first satellite dedicated to X-ray astronomy",
+  "credit": "Facts from the Wikipedia articles on the Broglio Space Center, the San Marco programme, Uhuru and the Scout rocket family. Coordinates are the San Marco platform position on English Wikipedia (2 56 18 S, 40 12 45 E). OpenStreetMap maps three platforms within 700 m of it but labels them differently, so which one is San Marco is not settled. The platform was run by the University of Rome's Aerospace Research Centre (CRA) under an agreement with NASA; the Italian Space Agency (ASI) has managed the site since 2004.",
+  "links": [
+    {
+      "l": "Centro spaziale Luigi Broglio di Malindi — ASI",
+      "u": "https://www.asi.it/2025/01/open-day-al-centro-spaziale-di-malindi-scienza-turismo-e-collaborazione-internazionale/",
+      "t": "intro"
+    },
+    {
+      "l": "Broglio Space Center — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Broglio_Space_Center",
+      "t": "core"
+    },
+    {
+      "l": "San Marco — Encyclopedia Astronautica",
+      "u": "https://www.astronautix.com/s/sanmarco.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

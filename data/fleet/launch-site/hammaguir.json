@@ -1,0 +1,34 @@
+{
+  "id": "hammaguir",
+  "name": "Hammaguir Brigitte",
+  "category": "launch-site",
+  "agency": "CNES",
+  "country": "Algeria",
+  "manufacturer": "French Army (CIEES) and CNES",
+  "first_flight": "1965-11-26",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "lat": 30.7781,
+  "lon": -3.0539,
+  "best_known_for": "France's first satellite, Astérix, launched on a Diamant A in 1965",
+  "credit": "Facts from the Wikipedia articles on Hammaguir (English and French), Astérix, Diamant and the SpaceNews account of the 26 November 1965 launch. The pad position is the Diamant launch pad coordinates given on English Wikipedia. The range belonged to the French Army's CIEES; the Diamant programme was CNES's.",
+  "links": [
+    {
+      "l": "Nov. 26, 1965: France begins launch legacy of Diamant — SpaceNews",
+      "u": "https://spacenews.com/nov-26-1965-france-begins-launch-legacy-diamant/",
+      "t": "intro"
+    },
+    {
+      "l": "Hammaguir — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Hammaguir",
+      "t": "core"
+    },
+    {
+      "l": "Hammaguira — Encyclopedia Astronautica",
+      "u": "https://www.astronautix.com/h/hammaguira.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

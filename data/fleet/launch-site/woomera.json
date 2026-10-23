@@ -1,0 +1,34 @@
+{
+  "id": "woomera",
+  "name": "Woomera Range Complex",
+  "category": "launch-site",
+  "agency": "WRE",
+  "country": "Australia",
+  "manufacturer": "Anglo-Australian Joint Project (UK and Australia)",
+  "first_flight": "1967-11-29",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "lat": -30.97175,
+  "lon": 136.47563,
+  "best_known_for": "Australia's first satellite, WRESAT (1967), and Britain's Black Arrow launch of Prospero (1971)",
+  "credit": "Facts from the Wikipedia articles on the RAAF Woomera Range Complex, WRESAT, Prospero and Woomera Launch Area 5, and Encyclopedia Astronautica (Woomera and LA8 pages). Coordinates are the Launch Area 5B pad (Black Arrow, Prospero) as mapped in OpenStreetMap; Launch Area 8 has no precise published position. The range is now run by the RAAF.",
+  "links": [
+    {
+      "l": "Woomera Rocket Range, 1946- — Engineers Australia (heritage)",
+      "u": "https://portal.engineersaustralia.org.au/heritage/woomera-rocket-range-1946",
+      "t": "intro"
+    },
+    {
+      "l": "RAAF Woomera Range Complex — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/RAAF_Woomera_Range_Complex",
+      "t": "core"
+    },
+    {
+      "l": "Woomera LA8 — Encyclopedia Astronautica",
+      "u": "https://www.astronautix.com/w/woomerala8.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

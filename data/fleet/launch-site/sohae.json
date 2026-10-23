@@ -1,0 +1,34 @@
+{
+  "id": "sohae",
+  "name": "Sohae Satellite Launching Station",
+  "category": "launch-site",
+  "agency": "NADA",
+  "country": "North Korea",
+  "manufacturer": "North Korea (state-built)",
+  "first_flight": "2012-04-13",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "lat": 39.6601,
+  "lon": 124.7052,
+  "best_known_for": "North Korea's satellite launch site: Unha rockets (2012, 2016) and Chollima-1 (2023)",
+  "credit": "North Korea's main satellite launch site, also called Tongchang-ri, in Cholsan County, North Pyongan Province. The first launch from it was the failed Unha-3 flight of 13 April 2012 (07:39 Korea time); orbit was claimed on 12 December 2012 and 7 February 2016, and Chollima-1 reached orbit on 21 November 2023. Facts from Wikipedia (Sohae, Unha, Kwangmyongsong-3, Chollima-1); coordinates are the main pad (LP1) on Wikipedia.",
+  "links": [
+    {
+      "l": "After Hanoi Summit: Rebuilding of Sohae Launch Facility — CSIS Beyond Parallel",
+      "u": "https://beyondparallel.csis.org/hanoi-summit-rebuilding-sohae-launch-facility/",
+      "t": "intro"
+    },
+    {
+      "l": "Sohae Satellite Launching Station — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Sohae_Satellite_Launching_Station",
+      "t": "core"
+    },
+    {
+      "l": "Chollima-1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chollima-1",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

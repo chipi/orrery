@@ -1,0 +1,42 @@
+{
+  "id": "detecting-extraterrestrial-life",
+  "tab": "exoplanets",
+  "order": 19,
+  "links": [
+    {
+      "l": "Wikipedia · Search for extraterrestrial intelligence",
+      "u": "https://en.wikipedia.org/wiki/Search_for_extraterrestrial_intelligence",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Wow! signal",
+      "u": "https://en.wikipedia.org/wiki/Wow!_signal",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Project Ozma",
+      "u": "https://en.wikipedia.org/wiki/Project_Ozma",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Allen Telescope Array",
+      "u": "https://en.wikipedia.org/wiki/Allen_Telescope_Array",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · BLC1",
+      "u": "https://en.wikipedia.org/wiki/BLC1",
+      "t": "core"
+    },
+    {
+      "l": "Breakthrough Listen",
+      "u": "https://breakthroughinitiatives.org/initiative/1",
+      "t": "core"
+    },
+    {
+      "l": "Wright, Kanodia & Lubar (2018) · How much SETI has been done? (The Astronomical Journal)",
+      "u": "https://arxiv.org/abs/1809.07252",
+      "t": "deep"
+    }
+  ]
+}

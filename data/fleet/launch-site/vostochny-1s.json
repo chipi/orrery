@@ -1,0 +1,34 @@
+{
+  "id": "vostochny-1s",
+  "name": "Vostochny Site 1S",
+  "category": "launch-site",
+  "agency": "Roscosmos",
+  "country": "Russia",
+  "manufacturer": "Roscosmos (operator); Spetstroy (main contractor)",
+  "first_flight": "2016-04-28",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "lat": 51.8828,
+  "lon": 128.3328,
+  "best_known_for": "Russia's Soyuz-2 pad in the Far East: first launch 2016, OneWeb batches, Luna 25 (2023)",
+  "credit": "Facts from the Wikipedia articles on the Vostochny Cosmodrome and Vostochny Site 1S. Coordinates are the Site 1S position on English Wikipedia (51 52 58 N, 128 19 58 E). The cosmodrome is operated by Roscosmos.",
+  "links": [
+    {
+      "l": "Vostochny Cosmodrome — official site (vostokdrom.ru)",
+      "u": "https://vostokdrom.ru/",
+      "t": "intro"
+    },
+    {
+      "l": "Vostochny Cosmodrome Site 1S — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vostochny_Cosmodrome_Site_1S",
+      "t": "core"
+    },
+    {
+      "l": "Soyuz-2 at Vostochny — RussianSpaceWeb",
+      "u": "https://www.russianspaceweb.com/vostochny_soyuz.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

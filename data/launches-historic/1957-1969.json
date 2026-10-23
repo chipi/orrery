@@ -264,7 +264,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-5"
     },
     "1958-04-27-sputnik-8a91-d-1-no-1": {
       "id": "1958-04-27-sputnik-8a91-d-1-no-1",
@@ -490,7 +491,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-5"
     },
     "1958-08-12-nots-e-diagnostic-payload-2": {
       "id": "1958-08-12-nots-e-diagnostic-payload-2",
@@ -554,7 +556,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1958-08-22-nots-e-diagnostic-payload-3": {
       "id": "1958-08-22-nots-e-diagnostic-payload-3",
@@ -618,7 +621,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-5"
     },
     "1958-08-25-nots-e-radiation-payload-1": {
       "id": "1958-08-25-nots-e-radiation-payload-1",
@@ -811,7 +815,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1958-10-11-vostok-l-8k72-e-1-no-2": {
       "id": "1958-10-11-vostok-l-8k72-e-1-no-2",
@@ -876,7 +881,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-5"
     },
     "1958-11-08-thor-able-able-3": {
       "id": "1958-11-08-thor-able-able-3",
@@ -908,7 +914,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1958-12-04-vostok-l-8k72-e-1-no-3": {
       "id": "1958-12-04-vostok-l-8k72-e-1-no-3",
@@ -973,7 +980,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-5"
     },
     "1958-12-18-atlas-b-score": {
       "id": "1958-12-18-atlas-b-score",
@@ -1166,7 +1174,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-5"
     },
     "1959-04-13-thor-agena-corona-bio-1": {
       "id": "1959-04-13-thor-agena-corona-bio-1",
@@ -1391,7 +1400,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-5"
     },
     "1959-08-07-thor-able-nasa-s-2": {
       "id": "1959-08-07-thor-able-nasa-s-2",
@@ -1423,7 +1433,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1959-08-13-thor-agena-corona-c-2": {
       "id": "1959-08-13-thor-agena-corona-c-2",
@@ -1584,7 +1595,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1959-09-18-vanguard-magne-ray-satellite": {
       "id": "1959-09-18-vanguard-magne-ray-satellite",
@@ -1713,7 +1725,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-5"
     },
     "1959-11-07-thor-agena-corona-c-4": {
       "id": "1959-11-07-thor-agena-corona-c-4",
@@ -1809,7 +1822,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1960-02-04-thor-agena-corona-c-6": {
       "id": "1960-02-04-thor-agena-corona-c-6",
@@ -1905,7 +1919,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1960-03-11-thor-able-p-2": {
       "id": "1960-03-11-thor-able-p-2",
@@ -1937,7 +1952,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1960-03-23-juno-ii-nasa-s-46": {
       "id": "1960-03-23-juno-ii-nasa-s-46",
@@ -2001,7 +2017,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1960-04-13-thor-ablestar-transit-1b": {
       "id": "1960-04-13-thor-ablestar-transit-1b",
@@ -2033,7 +2050,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1960-04-15-vostok-l-8k72-e-3-no-1": {
       "id": "1960-04-15-vostok-l-8k72-e-3-no-1",
@@ -2163,7 +2181,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1960-05-15-vostok-8k72-vostok-1p": {
       "id": "1960-05-15-vostok-8k72-vostok-1p",
@@ -2228,7 +2247,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1960-06-22-thor-ablestar-transit-2a": {
       "id": "1960-06-22-thor-ablestar-transit-2a",
@@ -2260,7 +2280,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1960-06-29-thor-agena-corona-diagnostic-1": {
       "id": "1960-06-29-thor-agena-corona-diagnostic-1",
@@ -2389,7 +2410,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1960-08-18-thor-agena-corona-c-9": {
       "id": "1960-08-18-thor-agena-corona-c-9",
@@ -2453,7 +2475,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1960-08-19-vostok-8k72-vostok-1-no-2": {
       "id": "1960-08-19-vostok-8k72-vostok-1-no-2",
@@ -2582,7 +2605,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1960-10-10-molniya-8k78-1m-no-1": {
       "id": "1960-10-10-molniya-8k78-1m-no-1",
@@ -2808,7 +2832,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1960-11-30-thor-ablestar-transit-3a": {
       "id": "1960-11-30-thor-ablestar-transit-3a",
@@ -2840,7 +2865,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1960-12-01-vostok-8k72-vostok-1-no-3": {
       "id": "1960-12-01-vostok-8k72-vostok-1-no-3",
@@ -3260,7 +3286,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1961-02-25-juno-ii-nasa-s-45": {
       "id": "1961-02-25-juno-ii-nasa-s-45",
@@ -3390,7 +3417,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1961-03-30-thor-agena-corona-c-4": {
       "id": "1961-03-30-thor-agena-corona-c-4",
@@ -3519,7 +3547,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1961-04-27-juno-ii-nasa-s-15": {
       "id": "1961-04-27-juno-ii-nasa-s-15",
@@ -3679,7 +3708,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1961-06-30-scout-x-1-nasa-s-55": {
       "id": "1961-06-30-scout-x-1-nasa-s-55",
@@ -3775,7 +3805,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1961-07-12-atlas-agena-midas-ets-ii-f1": {
       "id": "1961-07-12-atlas-agena-midas-ets-ii-f1",
@@ -3936,7 +3967,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1961-08-23-atlas-agena-nasa-p-32": {
       "id": "1961-08-23-atlas-agena-nasa-p-32",
@@ -4128,7 +4160,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1961-09-17-thor-agena-corona-c-3": {
       "id": "1961-09-17-thor-agena-corona-c-3",
@@ -4416,7 +4449,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1961-11-18-atlas-agena-nasa-p-33": {
       "id": "1961-11-18-atlas-agena-nasa-p-33",
@@ -4512,7 +4546,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1961-12-11-vostok-8k72-zenit-2-no-1": {
       "id": "1961-12-11-vostok-8k72-zenit-2-no-1",
@@ -4705,7 +4740,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-01-26-atlas-agena-nasa-p-34": {
       "id": "1962-01-26-atlas-agena-nasa-p-34",
@@ -4769,7 +4805,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-02-20-atlas-d-mercury-sc13": {
       "id": "1962-02-20-atlas-d-mercury-sc13",
@@ -4801,7 +4838,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1962-02-21-thor-agena-ferret-1": {
       "id": "1962-02-21-thor-agena-ferret-1",
@@ -4897,7 +4935,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-03-07-atlas-agena-samos-e-5": {
       "id": "1962-03-07-atlas-agena-samos-e-5",
@@ -5218,7 +5257,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-04-26-atlas-agena-afp-201-pvp-851": {
       "id": "1962-04-26-atlas-agena-afp-201-pvp-851",
@@ -5314,7 +5354,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-05-15-thor-agena-argon-5": {
       "id": "1962-05-15-thor-agena-argon-5",
@@ -5410,7 +5451,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1962-05-28-kosmos-63s1-2ms-no-2": {
       "id": "1962-05-28-kosmos-63s1-2ms-no-2",
@@ -5635,7 +5677,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-06-23-thor-agena-corona-m-6": {
       "id": "1962-06-23-thor-agena-corona-m-6",
@@ -5763,7 +5806,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-07-18-atlas-agena-afp-201-pvp-853": {
       "id": "1962-07-18-atlas-agena-afp-201-pvp-853",
@@ -6345,7 +6389,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-09-27-vostok-8a92-zenit-2-no-7": {
       "id": "1962-09-27-vostok-8a92-zenit-2-no-7",
@@ -6474,7 +6519,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-10-03-atlas-d-mercury-sc16": {
       "id": "1962-10-03-atlas-d-mercury-sc16",
@@ -6506,7 +6552,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1962-10-09-thor-agena-argon-9": {
       "id": "1962-10-09-thor-agena-argon-9",
@@ -6764,7 +6811,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-10-31-thor-ablestar-anna-1b": {
       "id": "1962-10-31-thor-ablestar-anna-1b",
@@ -6796,7 +6844,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-11-01-molniya-8k78-2mv-4-no-2": {
       "id": "1962-11-01-molniya-8k78-2mv-4-no-2",
@@ -7054,7 +7103,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1962-12-14-thor-agena-corona-m-17": {
       "id": "1962-12-14-thor-agena-corona-m-17",
@@ -7377,7 +7427,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1963-02-28-thor-slv-2a-corona-m-20": {
       "id": "1963-02-28-thor-slv-2a-corona-m-20",
@@ -7571,7 +7622,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1963-04-05-scout-x-3-transit-va-2": {
       "id": "1963-04-05-scout-x-3-transit-va-2",
@@ -7829,7 +7881,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1963-05-09-atlas-agena-midas-ets-iii-f2": {
       "id": "1963-05-09-atlas-agena-midas-ets-iii-f2",
@@ -7893,7 +7946,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1963-05-18-thor-slv-2a-lanyard-2": {
       "id": "1963-05-18-thor-slv-2a-lanyard-2",
@@ -8248,7 +8302,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1963-06-27-thor-slv-2a-corona-m-22": {
       "id": "1963-06-27-thor-slv-2a-corona-m-22",
@@ -8505,7 +8560,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1963-07-31-thor-slv-2a-lanyard-3": {
       "id": "1963-07-31-thor-slv-2a-lanyard-3",
@@ -9117,7 +9173,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1963-11-27-atlas-centaur-ac-2": {
       "id": "1963-11-27-atlas-centaur-ac-2",
@@ -9407,7 +9464,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1963-12-21-thor-slv-2a-corona-m-26": {
       "id": "1963-12-21-thor-slv-2a-corona-m-26",
@@ -9535,7 +9593,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1964-01-25-thor-slv-2-echo-c": {
       "id": "1964-01-25-thor-slv-2-echo-c",
@@ -9889,7 +9948,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1964-03-21-molniya-8k78-e-6-no-6": {
       "id": "1964-03-21-molniya-8k78-e-6-no-6",
@@ -11152,7 +11212,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1964-08-21-thor-slv-2a-argon-22": {
       "id": "1964-08-21-thor-slv-2a-argon-22",
@@ -11604,7 +11665,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1964-10-05-thor-slv-2a-corona-j-3": {
       "id": "1964-10-05-thor-slv-2a-corona-j-3",
@@ -12537,7 +12599,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1964-12-21-thor-slv-2a-quill": {
       "id": "1964-12-21-thor-slv-2a-quill",
@@ -12730,7 +12793,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1965-01-23-atlas-slv-3-gambit-sv-965": {
       "id": "1965-01-23-atlas-slv-3-gambit-sv-965",
@@ -12794,7 +12858,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1965-02-11-titan-iiia-payload-truss": {
       "id": "1965-02-11-titan-iiia-payload-truss",
@@ -13568,7 +13633,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1965-04-10-molniya-8k78-e-6-no-8": {
       "id": "1965-04-10-molniya-8k78-e-6-no-8",
@@ -14086,7 +14152,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1965-06-03-titan-ii-gemini-sc4": {
       "id": "1965-06-03-titan-ii-gemini-sc4",
@@ -14378,7 +14445,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1965-07-02-kosmos-63s1-ds-a1-no-7": {
       "id": "1965-07-02-kosmos-63s1-ds-a1-no-7",
@@ -14539,7 +14607,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1965-07-17-thor-slv-2a-ferret-8": {
       "id": "1965-07-17-thor-slv-2a-ferret-8",
@@ -14861,7 +14930,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-36b"
     },
     "1965-08-13-thor-ablestar-dodecapole-2": {
       "id": "1965-08-13-thor-ablestar-dodecapole-2",
@@ -15055,7 +15125,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1965-09-02-thor-slv-2-corona-r-d-ftv-1602": {
       "id": "1965-09-02-thor-slv-2-corona-r-d-ftv-1602",
@@ -15573,7 +15644,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1965-10-28-voskhod-11a57-zenit-4-no-15": {
       "id": "1965-10-28-voskhod-11a57-zenit-4-no-15",
@@ -15670,7 +15742,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1965-11-06-thor-delta-geos-a": {
       "id": "1965-11-06-thor-delta-geos-a",
@@ -15702,7 +15775,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1965-11-08-atlas-slv-3-gambit-sv-973": {
       "id": "1965-11-08-atlas-slv-3-gambit-sv-973",
@@ -15897,7 +15971,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "hammaguir"
     },
     "1965-11-27-vostok-8a92-zenit-2-no-31": {
       "id": "1965-11-27-vostok-8a92-zenit-2-no-31",
@@ -16220,7 +16295,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1965-12-17-vostok-8a92m-meteor-11f614-no-3": {
       "id": "1965-12-17-vostok-8a92m-meteor-11f614-no-3",
@@ -16706,7 +16782,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1966-02-09-thor-slv-2a-ferret-9": {
       "id": "1966-02-09-thor-slv-2a-ferret-9",
@@ -16835,7 +16912,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "hammaguir"
     },
     "1966-02-19-voskhod-11a57-zenit-4-no-14": {
       "id": "1966-02-19-voskhod-11a57-zenit-4-no-14",
@@ -16965,7 +17043,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1966-03-01-molniya-8k78m-e-6s-no-204-isl": {
       "id": "1966-03-01-molniya-8k78m-e-6s-no-204-isl",
@@ -17062,7 +17141,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1966-03-16-titan-ii-gemini-sc8": {
       "id": "1966-03-16-titan-ii-gemini-sc8",
@@ -17224,7 +17304,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1966-03-26-scout-a-nns-o-8": {
       "id": "1966-03-26-scout-a-nns-o-8",
@@ -17483,7 +17564,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-36b"
     },
     "1966-04-08-atlas-slv-3-oao-a1": {
       "id": "1966-04-08-atlas-slv-3-oao-a1",
@@ -17872,7 +17954,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1966-05-19-scout-a-nns-o-9": {
       "id": "1966-05-19-scout-a-nns-o-9",
@@ -17968,7 +18051,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1966-05-30-atlas-centaur-surveyor-sc-1": {
       "id": "1966-05-30-atlas-centaur-surveyor-sc-1",
@@ -18032,7 +18116,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1966-06-03-titan-ii-gemini-sc9": {
       "id": "1966-06-03-titan-ii-gemini-sc9",
@@ -18420,7 +18505,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1966-07-05-uprated-saturn-subcritical-cryo-ln2-exp": {
       "id": "1966-07-05-uprated-saturn-subcritical-cryo-ln2-exp",
@@ -18484,7 +18570,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1966-07-12-atlas-slv-3-gambit-sv-980": {
       "id": "1966-07-12-atlas-slv-3-gambit-sv-980",
@@ -18614,7 +18701,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1966-07-18-titan-ii-gemini-sc10": {
       "id": "1966-07-18-titan-ii-gemini-sc10",
@@ -18938,7 +19026,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1966-08-18-scout-a-nns-o-10": {
       "id": "1966-08-18-scout-a-nns-o-10",
@@ -19133,7 +19222,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1966-09-12-titan-ii-gemini-sc11": {
       "id": "1966-09-12-titan-ii-gemini-sc11",
@@ -19391,7 +19481,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "1966-09-28-titan-iiib-gambit-3-mission-4302": {
       "id": "1966-09-28-titan-iiib-gambit-3-mission-4302",
@@ -19684,7 +19775,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-36b"
     },
     "1966-10-26-thor-delta-intelsat-ii-f-1": {
       "id": "1966-10-26-thor-delta-intelsat-ii-f-1",
@@ -19716,7 +19808,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1966-10-28-scout-b-ov3-2": {
       "id": "1966-10-28-scout-b-ov3-2",
@@ -19942,7 +20035,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-14"
     },
     "1966-11-11-titan-ii-gemini-sc12": {
       "id": "1966-11-11-titan-ii-gemini-sc12",
@@ -20332,7 +20426,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1966-12-19-vostok-8a92-zenit-2-no-47": {
       "id": "1966-12-19-vostok-8a92-zenit-2-no-47",
@@ -20397,7 +20492,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "1966-12-21-molniya-8k78m-e-6m-no-205": {
       "id": "1966-12-21-molniya-8k78m-e-6m-no-205",
@@ -20494,7 +20590,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1967-01-14-thor-slv-2a-corona-j-34": {
       "id": "1967-01-14-thor-slv-2a-corona-j-34",
@@ -20850,7 +20947,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "hammaguir"
     },
     "1967-02-08-voskhod-11a57-zenit-4-no-29": {
       "id": "1967-02-08-voskhod-11a57-zenit-4-no-29",
@@ -20947,7 +21045,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "hammaguir"
     },
     "1967-02-22-thor-slv-2a-corona-j-39": {
       "id": "1967-02-22-thor-slv-2a-corona-j-39",
@@ -21141,7 +21240,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1967-03-10-ur-500k-blok-d-l-1-no-2p": {
       "id": "1967-03-10-ur-500k-blok-d-l-1-no-2p",
@@ -21173,7 +21273,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1967-03-13-vostok-8a92-zenit-2-no-44": {
       "id": "1967-03-13-vostok-8a92-zenit-2-no-44",
@@ -21368,7 +21469,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1967-03-24-kosmos-11k65-strela-2": {
       "id": "1967-03-24-kosmos-11k65-strela-2",
@@ -21562,7 +21664,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1967-04-12-voskhod-11a57-zenit-4-no-28": {
       "id": "1967-04-12-voskhod-11a57-zenit-4-no-28",
@@ -21627,7 +21730,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "1967-04-14-scout-a-nns-o-12": {
       "id": "1967-04-14-scout-a-nns-o-12",
@@ -21691,7 +21795,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-36b"
     },
     "1967-04-20-thor-delta-tos-c": {
       "id": "1967-04-20-thor-delta-tos-c",
@@ -21788,7 +21893,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "san-marco"
     },
     "1967-04-26-titan-iiib-gambit-3-mission-4305": {
       "id": "1967-04-26-titan-iiib-gambit-3-mission-4305",
@@ -22958,7 +23064,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1967-07-21-voskhod-11a57-zenit-4-no-33": {
       "id": "1967-07-21-voskhod-11a57-zenit-4-no-33",
@@ -23443,7 +23550,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1967-09-08-atlas-slv-3c-surveyor-5": {
       "id": "1967-09-08-atlas-slv-3c-surveyor-5",
@@ -23475,7 +23583,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-36b"
     },
     "1967-09-11-voskhod-11a57-zenit-4-no-37": {
       "id": "1967-09-11-voskhod-11a57-zenit-4-no-37",
@@ -23832,7 +23941,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1967-09-28-thor-delta-intelsat-ii-f-4": {
       "id": "1967-09-28-thor-delta-intelsat-ii-f-4",
@@ -23864,7 +23974,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1967-10-03-molniya-8k78-molniya-1-11f67-no-9": {
       "id": "1967-10-03-molniya-8k78-molniya-1-11f67-no-9",
@@ -24059,7 +24170,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1967-10-22-molniya-8k78-molniya-1-11f67-no-12": {
       "id": "1967-10-22-molniya-8k78-molniya-1-11f67-no-12",
@@ -24449,7 +24561,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-36b"
     },
     "1967-11-09-saturn-v-apollo-cm-017": {
       "id": "1967-11-09-saturn-v-apollo-cm-017",
@@ -24579,7 +24692,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1967-11-23-kosmos-11k65m-tsiklon": {
       "id": "1967-11-23-kosmos-11k65m-tsiklon",
@@ -24677,7 +24791,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "woomera"
     },
     "1967-12-03-voskhod-11a57-zenit-4-no-39": {
       "id": "1967-12-03-voskhod-11a57-zenit-4-no-39",
@@ -24838,7 +24953,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1967-12-16-voskhod-11a57-zenit-2-no-57": {
       "id": "1967-12-16-voskhod-11a57-zenit-2-no-57",
@@ -25420,7 +25536,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1968-03-04-atlas-slv-3a-ogo-e": {
       "id": "1968-03-04-atlas-slv-3a-ogo-e",
@@ -26169,7 +26286,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1968-04-24-tsiklon-2a-i2m": {
       "id": "1968-04-24-tsiklon-2a-i2m",
@@ -27077,7 +27195,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1968-07-16-voskhod-11a57-zenit-4-no-47": {
       "id": "1968-07-16-voskhod-11a57-zenit-4-no-47",
@@ -27661,7 +27780,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1968-09-16-voskhod-11a57-zenit-4-no-49": {
       "id": "1968-09-16-voskhod-11a57-zenit-4-no-49",
@@ -27758,7 +27878,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1968-09-20-kosmos-11k63-ds-p1-i-no-4": {
       "id": "1968-09-20-kosmos-11k63-ds-p1-i-no-4",
@@ -28085,7 +28206,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "lc-34"
     },
     "1968-10-19-tsiklon-2a-i2m": {
       "id": "1968-10-19-tsiklon-2a-i2m",
@@ -28441,7 +28563,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1968-11-10-proton-k-d-l-1-no-12l": {
       "id": "1968-11-10-proton-k-d-l-1-no-12l",
@@ -28473,7 +28596,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1968-11-13-voskhod-11a57-zenit-2-no-67": {
       "id": "1968-11-13-voskhod-11a57-zenit-2-no-67",
@@ -28538,7 +28662,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1968-11-21-voskhod-11a57-zenit-4-no-50": {
       "id": "1968-11-21-voskhod-11a57-zenit-4-no-50",
@@ -28636,7 +28761,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "woomera"
     },
     "1968-11-30-kosmos-11k65m-sfera": {
       "id": "1968-11-30-kosmos-11k65m-sfera",
@@ -28766,7 +28892,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1968-12-07-atlas-slv-3c-oao-a2": {
       "id": "1968-12-07-atlas-slv-3c-oao-a2",
@@ -28798,7 +28925,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-36b"
     },
     "1968-12-10-voskhod-11a57-zenit-2-no-69": {
       "id": "1968-12-10-voskhod-11a57-zenit-2-no-69",
@@ -28992,7 +29120,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1968-12-19-kosmos-11k63-ds-u2-gk-no-1": {
       "id": "1968-12-19-kosmos-11k63-ds-u2-gk-no-1",
@@ -29287,7 +29416,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1969-01-22-thor-delta-oso-f": {
       "id": "1969-01-22-thor-delta-oso-f",
@@ -29319,7 +29449,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1969-01-22-titan-iiib-gambit-3-mission-4319": {
       "id": "1969-01-22-titan-iiib-gambit-3-mission-4319",
@@ -29545,7 +29676,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1969-02-07-kosmos-11k63-ds-p1-yu-no-21": {
       "id": "1969-02-07-kosmos-11k63-ds-p1-yu-no-21",
@@ -29643,7 +29775,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1969-02-21-n-1-11a52-l-1s-no-3-11f92": {
       "id": "1969-02-21-n-1-11a52-l-1s-no-3-11f92",
@@ -29707,7 +29840,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-36b"
     },
     "1969-02-25-voskhod-11a57-zenit-2-no-71": {
       "id": "1969-02-25-voskhod-11a57-zenit-2-no-71",
@@ -29772,7 +29906,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1969-02-26-voskhod-11a57-zenit-4-no-54": {
       "id": "1969-02-26-voskhod-11a57-zenit-4-no-54",
@@ -30229,7 +30364,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1969-03-27-atlas-slv-3c-mariner-69-2": {
       "id": "1969-03-27-atlas-slv-3c-mariner-69-2",
@@ -30326,7 +30462,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1969-04-04-voskhod-11a57-zenit-4-no-55": {
       "id": "1969-04-04-voskhod-11a57-zenit-4-no-55",
@@ -30783,7 +30920,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1969-05-23-titan-iiic-ers-29": {
       "id": "1969-05-23-titan-iiic-ers-29",
@@ -31011,7 +31149,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1969-06-15-voskhod-11a57-zenit-4-no-60": {
       "id": "1969-06-15-voskhod-11a57-zenit-4-no-60",
@@ -31174,7 +31313,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1969-07-02-europa-i-stv-6-adapter": {
       "id": "1969-07-02-europa-i-stv-6-adapter",
@@ -31206,7 +31346,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "woomera"
     },
     "1969-07-03-n-1-11a52-l-1s-no-5": {
       "id": "1969-07-03-n-1-11a52-l-1s-no-5",
@@ -31303,7 +31444,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1969-07-16-saturn-v-apollo-cm-107": {
       "id": "1969-07-16-saturn-v-apollo-cm-107",
@@ -31563,7 +31705,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1969-07-31-thorad-slv-2g-strawman-2": {
       "id": "1969-07-31-thorad-slv-2g-strawman-2",
@@ -31659,7 +31802,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1969-08-09-thor-delta-oso-g": {
       "id": "1969-08-09-thor-delta-oso-g",
@@ -31691,7 +31835,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1969-08-12-atlas-slv-3c-ats-e": {
       "id": "1969-08-12-atlas-slv-3c-ats-e",
@@ -31919,7 +32064,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1969-08-29-voskhod-11a57-zenit-4-no-68": {
       "id": "1969-08-29-voskhod-11a57-zenit-4-no-68",
@@ -32082,7 +32228,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "uchinoura"
     },
     "1969-09-22-thorad-slv-2g-corona-j-46": {
       "id": "1969-09-22-thorad-slv-2g-corona-j-46",
@@ -32146,7 +32293,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1969-09-24-voskhod-11a57-zenit-2-no-79": {
       "id": "1969-09-24-voskhod-11a57-zenit-2-no-79",
@@ -32538,7 +32686,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1969-10-24-voskhod-11a57-zenit-2m": {
       "id": "1969-10-24-voskhod-11a57-zenit-2m",
@@ -32863,7 +33012,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "cape-canaveral-lc-17"
     },
     "1969-11-24-kosmos-11k63-ds-p1-yu-no-27": {
       "id": "1969-11-24-kosmos-11k63-ds-p1-yu-no-27",
@@ -32961,7 +33111,8 @@
           "role": "primary"
         }
       ],
-      "fetched_at": "2026-07-22T18:40:40.944Z"
+      "fetched_at": "2026-07-22T18:40:40.944Z",
+      "orrery_launch_site_ref": "baikonur-81"
     },
     "1969-12-03-voskhod-11a57-zenit-2m": {
       "id": "1969-12-03-voskhod-11a57-zenit-2m",

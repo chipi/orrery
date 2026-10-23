@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "museum-overlay.schema.json",
+  "title": "MuseumOverlay",
+  "description": "Per-locale text for one museum (PRD-027): name (origin-language rule), city, a short description, and one line per holding saying what exactly is shown, keyed by holding ref.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "city", "description", "items"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "city": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "items": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    }
+  }
+}

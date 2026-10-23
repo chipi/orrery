@@ -161,6 +161,28 @@ Full-res masters live in `masters/anatomy/*.webp` (git-LFS, 4K); the app serves
 the responsive ladder (`static/images/anatomy/{id}.webp` + width rungs) via
 `<img srcset>`. The legacy `original-assets/anatomy/*.png` archive was purged.
 
+### Fixing one detail (a wrong logo, a garbled label)
+
+Never regenerate the whole picture and never hand-paint it. What works (2026-10-23,
+11 fixes):
+
+1. Re-render from the original with `nano_banana_2`, the original generation as the
+   reference, and a prompt that asks to reproduce it unchanged except the one detail
+   ("…the label 'PHYLIGHT 6C6ET' must read 'CREW CABIN'…"). Say the size for a
+   logo ("the same small size as the NASA logo, flat ink, not a 3D badge") — without
+   it the model draws an enamel badge twice the size.
+2. Composite back only the box around that detail, aligned by matching the paper and
+   grid around it (re-renders shift 0–2 px), with a narrow feathered edge; every pixel
+   outside the box stays the original. Check that nothing outside changed, and look at
+   the seam (a leader line crossing the box edge must stay one line).
+3. The raw generation stays the archive of record (`masters/originals/…`,
+   `masters/anatomy-originals/…`); the edited image becomes the master (anatomy:
+   re-upscaled to 4K first). The `edit` field in `scripts/anatomy/prompts-history.json`
+   records the change, the re-render job and the box.
+
+Higgsfield's masked inpaint (`is_inpaint` + mask) did not work for this: the job sat
+"waiting" for over 15 minutes, and it renders at 1248×832, half the master size.
+
 ---
 
 ## 5. Coverage

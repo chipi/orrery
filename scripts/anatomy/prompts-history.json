@@ -305,7 +305,15 @@
           "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3FG13dr6iAqIwHO1kDJUULPV6h7/afba2052-f8e2-41b7-8961-e3784d18e94c_resize.jpg"
         }
       ],
-      "prompt": "Exploded technical cutaway illustration of the Soyuz (11A511 class) rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. IMPORTANT booster arrangement: the four strap-on boosters are NOT stacked; they are FOUR tapering conical boosters clustered symmetrically AROUND the base of the central core — the classic Korolev cross. Show the pieces exploded apart with leader lines: the central core stage (Blok-A, one RD-108A engine, cut open LOX/RP-1 tanks) with the four tapering conical strap-on boosters (each RD-107, cut open, tapered) drawn as a cluster around its base; above, the cylindrical Blok-I upper stage (one RD-0110); on top the payload shroud. At far left a small assembled scale-reference showing the core with four conical boosters hugging its base and the tapering 'ice-cream-cone' silhouette, a tiny 1.8 m human figure, and a '46 m' dimension line. Vintage Roscosmos markings. Keep labels legible: 'SOYUZ (11A511) — EXPLODED', 'Core (Blok-A)', '4x conical booster (Korolev cross)', 'Blok-I (upper)', 'SHROUD', '46 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic."
+      "prompt": "Exploded technical cutaway illustration of the Soyuz (11A511 class) rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. IMPORTANT booster arrangement: the four strap-on boosters are NOT stacked; they are FOUR tapering conical boosters clustered symmetrically AROUND the base of the central core — the classic Korolev cross. Show the pieces exploded apart with leader lines: the central core stage (Blok-A, one RD-108A engine, cut open LOX/RP-1 tanks) with the four tapering conical strap-on boosters (each RD-107, cut open, tapered) drawn as a cluster around its base; above, the cylindrical Blok-I upper stage (one RD-0110); on top the payload shroud. At far left a small assembled scale-reference showing the core with four conical boosters hugging its base and the tapering 'ice-cream-cone' silhouette, a tiny 1.8 m human figure, and a '46 m' dimension line. Vintage Roscosmos markings. Keep labels legible: 'SOYUZ (11A511) — EXPLODED', 'Core (Blok-A)', '4x conical booster (Korolev cross)', 'Blok-I (upper)', 'SHROUD', '46 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "NASA logo in the bottom-right corner replaced by a flat red-ink CCCP pentagon stamp (Soviet vehicle).",
+        "rerender_job": "78164cb5-9d02-4cf2-90c4-610cb6ccd8bc",
+        "boxes_xywh": [[2170, 1320, 358, 376]],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/originals/anatomy-exploded/soyuz.png"
+      }
     },
     "anatomy-exploded/space-shuttle-stack": {
       "generation_id": "f34a183a-573c-4060-b32e-e75930810455",
@@ -373,7 +381,15 @@
           "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3FG13dr6iAqIwHO1kDJUULPV6h7/afba2052-f8e2-41b7-8961-e3784d18e94c_resize.jpg"
         }
       ],
-      "prompt": "Exploded technical cutaway illustration of the Voskhod (11A57) rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. IMPORTANT: four strap-on boosters clustered AROUND the base of the central core (the Korolev cross), NOT stacked. Show pieces exploded apart with leader lines: central core (Blok-A, one RD-108, cut open LOX/RP-1) with four tapering conical strap-on boosters (each RD-107) clustered around its base; above, the cylindrical Blok-I upper stage (one RD-0107); on top the payload fairing. At far left a small assembled scale-reference showing the core with four conical boosters and the tapering silhouette, a tiny 1.8 m human figure, and a '44 m' dimension line. Vintage OKB-1 Soviet markings (red star, flag, stencilled serials). Keep labels legible: 'VOSKHOD (11A57) — EXPLODED', 'Core (Blok-A)', '4x conical booster (Korolev cross)', 'Blok-I (upper)', 'FAIRING', '44 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic."
+      "prompt": "Exploded technical cutaway illustration of the Voskhod (11A57) rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. IMPORTANT: four strap-on boosters clustered AROUND the base of the central core (the Korolev cross), NOT stacked. Show pieces exploded apart with leader lines: central core (Blok-A, one RD-108, cut open LOX/RP-1) with four tapering conical strap-on boosters (each RD-107) clustered around its base; above, the cylindrical Blok-I upper stage (one RD-0107); on top the payload fairing. At far left a small assembled scale-reference showing the core with four conical boosters and the tapering silhouette, a tiny 1.8 m human figure, and a '44 m' dimension line. Vintage OKB-1 Soviet markings (red star, flag, stencilled serials). Keep labels legible: 'VOSKHOD (11A57) — EXPLODED', 'Core (Blok-A)', '4x conical booster (Korolev cross)', 'Blok-I (upper)', 'FAIRING', '44 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "NASA logo in the bottom-right corner replaced by a flat red-ink CCCP pentagon stamp (Soviet vehicle).",
+        "rerender_job": "e23df8a6-f5bf-4562-91c8-32090654a026",
+        "boxes_xywh": [[2220, 1370, 308, 326]],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/originals/anatomy-exploded/voskhod-11a57.png"
+      }
     },
     "anatomy-exploded/vostok-k": {
       "generation_id": "aa209bb6-773e-4dc1-9601-748ebd3e0a9a",
@@ -390,7 +406,15 @@
           "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3FG13dr6iAqIwHO1kDJUULPV6h7/afba2052-f8e2-41b7-8961-e3784d18e94c_resize.jpg"
         }
       ],
-      "prompt": "Exploded technical cutaway illustration of the Vostok-K (8K72K) rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. IMPORTANT: four strap-on boosters clustered AROUND the base of the central core (the Korolev cross), NOT stacked; and the crew vehicle is a SPHERICAL Vostok capsule under a shroud, NOT a pointed fairing. Show pieces exploded apart with leader lines: central core (Blok-A, one RD-108, cut open LOX/RP-1) with four tapering conical strap-on boosters (each RD-107) clustered around its base; a short Blok-E upper stage (one RD-0109); on top the spherical Vostok crew capsule under its shroud. At far left a small assembled scale-reference showing the core with four conical boosters and the tapering silhouette, a tiny 1.8 m human figure, and a '38 m' dimension line. Vintage OKB-1 Soviet markings (red star, flag, stencilled serials). Keep labels legible: 'VOSTOK-K (8K72K) — EXPLODED', 'Core (Blok-A)', '4x conical booster (Korolev cross)', 'Blok-E (upper)', 'Vostok capsule (spherical)', '38 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic."
+      "prompt": "Exploded technical cutaway illustration of the Vostok-K (8K72K) rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. IMPORTANT: four strap-on boosters clustered AROUND the base of the central core (the Korolev cross), NOT stacked; and the crew vehicle is a SPHERICAL Vostok capsule under a shroud, NOT a pointed fairing. Show pieces exploded apart with leader lines: central core (Blok-A, one RD-108, cut open LOX/RP-1) with four tapering conical strap-on boosters (each RD-107) clustered around its base; a short Blok-E upper stage (one RD-0109); on top the spherical Vostok crew capsule under its shroud. At far left a small assembled scale-reference showing the core with four conical boosters and the tapering silhouette, a tiny 1.8 m human figure, and a '38 m' dimension line. Vintage OKB-1 Soviet markings (red star, flag, stencilled serials). Keep labels legible: 'VOSTOK-K (8K72K) — EXPLODED', 'Core (Blok-A)', '4x conical booster (Korolev cross)', 'Blok-E (upper)', 'Vostok capsule (spherical)', '38 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "NASA logo in the bottom-right corner replaced by a flat red-ink CCCP pentagon stamp (Soviet vehicle).",
+        "rerender_job": "9c948af0-8540-41a7-8feb-8f2ebea3e91a",
+        "boxes_xywh": [[2240, 1390, 288, 306]],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/originals/anatomy-exploded/vostok-k.png"
+      }
     },
     "anatomy/akatsuki": {
       "generation_id": "ab464fc4-5705-4bed-b1d4-668f3a3f7523",
@@ -2199,7 +2223,15 @@
       "width": 2528,
       "height": 1696,
       "prompt": "Exploded technical cutaway illustration of the Falcon Heavy rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. The reference shows a DIFFERENT rocket: take only its art style and page layout — do NOT copy its stages, engines, tank labels, payload or text. IMPORTANT vehicle layout: three identical Falcon 9-derived cores side by side (a center core flanked by two side boosters with nose cones), each with 9 Merlin 1D engines in an octaweb (27 in total), and a single second stage with 1 Merlin Vacuum engine plus the fairing on top of the center core. Show the pieces exploded apart with leader lines, each piece cut open to reveal its LOX / RP-1 tanks with the engines drawn at the base in the exact counts given. At far left a small assembled scale-reference of the whole vehicle in its true silhouette, a tiny 1.8 m human figure, and a '70 m' dimension line. Vintage SpaceX markings (retro logo, flag, stencilled serials). Keep labels legible: 'FALCON HEAVY — EXPLODED', 'Center core', 'Side booster ×2', 'Stage 2', 'FAIRING', '70 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
-      "batch": "2026-10-23"
+      "batch": "2026-10-23",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "Garbled label 'Second 2' → 'Stage 2'.",
+        "rerender_job": "95409772-1399-4149-bfd4-d6e51140478d",
+        "boxes_xywh": [[1725, 580, 195, 62]],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/originals/anatomy-exploded/falcon-heavy.png"
+      }
     },
     "anatomy/soyuz-tm": {
       "generation_id": "0c727ca8-4923-4ef0-af0d-398ab18d0440",
@@ -2235,7 +2267,16 @@
       "height": 1696,
       "prompt": "Technical cutaway illustration of the NASA Space Shuttle orbiter Endeavour (OV-105), watercolor and ink-wash on faint graph paper, exposed internal structure — payload bay carrying the Unity node, three main engines, OMS pods, crew flight deck, RCS thrusters, delta wing spars, the drag-chute housing at the base of the vertical tail, black and white thermal tiles, 'ENDEAVOUR' lettering on the fuselage. Handwritten engineering annotations, dimension lines, faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette, vintage scientific sketchbook / editorial infographic aesthetic. 'United States' and NASA markings. Match the reference image's art style and overall layout exactly (paper, ink-wash, palette, annotation hand) — it shows a sister craft of the same family; change only the details described above and the name, so the drawing is the NASA Space Shuttle orbiter Endeavour (OV-105).",
       "batch": "2026-10-23",
-      "upscale_4k_job": "1f06fe0a-faf3-4ec2-9c9d-0c2433d15adc"
+      "upscale_4k_job": "1f06fe0a-faf3-4ec2-9c9d-0c2433d15adc",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "Garbled label 'PHYLIGHT 6C6ET' → 'CREW CABIN', then re-upscaled to 4K.",
+        "rerender_job": "718045cf-2aab-4f9d-81ff-f5fcff8cbf02",
+        "boxes_xywh": [[310, 760, 330, 60]],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/anatomy-originals/endeavour.png",
+        "upscale_4k_job": "c4d58c24-af1a-4a42-b202-c38b8b2d9fe7"
+      }
     },
     "anatomy-exploded/delta-ii": {
       "generation_id": "2b55f0e4-f3df-491a-8024-9cb8fe4f8b6d",
@@ -2282,7 +2323,16 @@
       "height": 1696,
       "prompt": "Technical cutaway illustration of the NASA Space Shuttle orbiter Columbia (OV-102), watercolor and ink-wash on faint graph paper, exposed internal structure — payload bay, three main engines, OMS pods, crew flight deck, RCS thrusters, delta wing spars, the SILTS infrared camera pod on top of the vertical tail, black wing-root chines, the heavier original airframe, 'COLUMBIA' lettering on the fuselage. Handwritten engineering annotations, dimension lines, faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette, vintage scientific sketchbook / editorial infographic aesthetic. 'United States' and NASA markings. Match the reference image's art style and overall layout exactly (paper, ink-wash, palette, annotation hand) — it shows a sister craft of the same family; change only the details described above and the name, so the drawing is the NASA Space Shuttle orbiter Columbia (OV-102).",
       "batch": "2026-10-23",
-      "upscale_4k_job": "04106e35-4cd9-4dcc-ba3a-b241e1378d3b"
+      "upscale_4k_job": "04106e35-4cd9-4dcc-ba3a-b241e1378d3b",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "Garbled label 'PHYLIGHT 6C6ET' → 'CREW CABIN', then re-upscaled to 4K.",
+        "rerender_job": "6d2bf844-b5f9-4b1e-bc30-d8363d120fcc",
+        "boxes_xywh": [[310, 765, 330, 75]],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/anatomy-originals/columbia.png",
+        "upscale_4k_job": "2cabf5a3-c91b-4639-acaf-7679a1e226ad"
+      }
     },
     "anatomy/challenger": {
       "generation_id": "f5bb9c30-dcbb-4916-8e71-0c1236a0a66a",
@@ -2294,7 +2344,16 @@
       "height": 1696,
       "prompt": "Technical cutaway illustration of the NASA Space Shuttle orbiter Challenger (OV-099), watercolor and ink-wash on faint graph paper, exposed internal structure — payload bay with a Spacelab module, three main engines, OMS pods, crew flight deck, RCS thrusters, delta wing spars, black and white thermal tiles, 'CHALLENGER' lettering on the fuselage. Handwritten engineering annotations, dimension lines, faint physics equations in the margins, ink-splatter wash clouds, warm muted metallic palette, vintage scientific sketchbook / editorial infographic aesthetic. 'United States' and NASA markings. Match the reference image's art style and overall layout exactly (paper, ink-wash, palette, annotation hand) — it shows a sister craft of the same family; change only the details described above and the name, so the drawing is the NASA Space Shuttle orbiter Challenger (OV-099).",
       "batch": "2026-10-23",
-      "upscale_4k_job": "161ceabf-04b4-43ad-9b3d-f9bac3af853f"
+      "upscale_4k_job": "161ceabf-04b4-43ad-9b3d-f9bac3af853f",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "Garbled label 'PHYLIGHT 6C6ET' → 'CREW CABIN', then re-upscaled to 4K.",
+        "rerender_job": "df85c5f6-6631-4b3f-baad-2a98cb1d3569",
+        "boxes_xywh": [[310, 765, 330, 75]],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/anatomy-originals/challenger.png",
+        "upscale_4k_job": "ac338bd0-0bd7-4a5b-bdeb-39b3142011e7"
+      }
     },
     "anatomy/soyuz-7k-ok": {
       "generation_id": "d0777b30-739e-4833-bbdf-4e965b8a92a4",
@@ -2329,7 +2388,19 @@
       "width": 2528,
       "height": 1696,
       "prompt": "Exploded technical cutaway illustration of the Soyuz-2.1b rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. The reference shows a sister rocket of the same family: keep its art style, page layout and shared structure, and change the details to match the description below. IMPORTANT vehicle layout: the Korolev cross: 4 tapered conical strap-on boosters around the Blok A core, each booster with one four-chamber RD-107A plus 2 verniers, the core with one four-chamber RD-108A plus 4 verniers; Blok I third stage with one four-chamber RD-0124; payload (often on a Fregat upper stage) under a fairing. Show the pieces exploded apart with leader lines, each piece cut open to reveal its LOX / RP-1 tanks with the engines drawn at the base in the exact counts given. At far left a small assembled scale-reference of the whole vehicle in its true silhouette, a tiny 1.8 m human figure, and a '46 m' dimension line. Vintage Roscosmos markings (retro logo, flag, stencilled serials). Keep labels legible: 'SOYUZ-2.1B — EXPLODED', 'Core (Blok-A)', '4x conical booster (Korolev cross)', 'Blok-I', 'FAIRING', '46 m', '1.8 m'. The title reads exactly 'SOYUZ-2.1B — EXPLODED'. Draw the assembled reference as a detailed painted rocket, not a silhouette. Roscosmos markings only, no NASA logo. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
-      "batch": "2026-10-23"
+      "batch": "2026-10-23",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "NASA logo in the bottom-right corner replaced by the Roscosmos emblem (Russian-era vehicle). Garbled labels corrected: 'RD-108A e engines' → 'RD-108A core engine'; '1x 4-chamber / RD-107A engines + / 22 vernier thrusters' → '1x 4-chamber / RD-107A engine + / 2 vernier thrusters'.",
+        "rerender_job": "c9a1fe07-a0dd-4eea-9b1d-780533b1864b (logo + lower block), bab28455-0f4b-4d20-bf08-caa4915efcc2 (RD-108A line)",
+        "boxes_xywh": [
+          [2240, 1460, 288, 236],
+          [1385, 1290, 396, 62],
+          [1255, 1450, 435, 155]
+        ],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/originals/anatomy-exploded/soyuz-2.png"
+      }
     },
     "anatomy/mars-2": {
       "generation_id": "a8f14ba7-0dd4-41b7-ae0d-bd7f579f2f04",
@@ -2455,7 +2526,15 @@
       "width": 2528,
       "height": 1696,
       "prompt": "Exploded technical cutaway illustration of the R-7 Semyorka (8K71PS) rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. The reference shows a sister rocket of the same family: keep its art style, page layout and shared structure, and change the details to match the description below. IMPORTANT vehicle layout: the Korolev cross: 4 tapered conical strap-on boosters (Blok B, V, G, D) clustered around the Blok A core, each booster with one four-chamber RD-107 plus 2 vernier nozzles, the core with one four-chamber RD-108 plus 4 verniers; no upper stage at all — a small conical nose fairing on top of the core housing the polished Sputnik 1 sphere with its four whip antennas. Show the pieces exploded apart with leader lines, each piece cut open to reveal its LOX / RP-1 tanks with the engines drawn at the base in the exact counts given. At far left a small assembled scale-reference of the whole vehicle in its true silhouette, a tiny 1.8 m human figure, and a '29 m' dimension line. Vintage Soviet CCCP markings (retro logo, flag, stencilled serials). Keep labels legible: 'R-7 SEMYORKA (8K71PS) — EXPLODED', 'Core (Blok-A)', '4x conical booster (Korolev cross)', 'SPUTNIK 1', '29 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
-      "batch": "2026-10-23"
+      "batch": "2026-10-23",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "NASA logo in the bottom-right corner replaced by a flat red-ink CCCP pentagon stamp (Soviet vehicle).",
+        "rerender_job": "18f160de-7bee-4ee9-aac1-0c0f271bd5a4",
+        "boxes_xywh": [[2240, 1395, 288, 301]],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/originals/anatomy-exploded/r-7-vostok.png"
+      }
     },
     "anatomy/salyut-2": {
       "generation_id": "eb2fd42e-901d-413d-9d9a-91175324618c",
@@ -2761,7 +2840,15 @@
       "width": 2528,
       "height": 1696,
       "prompt": "Exploded technical cutaway illustration of the Energia rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. The reference shows a DIFFERENT rocket: take only its art style and page layout — do NOT copy its stages, engines, tank labels, payload or text. IMPORTANT vehicle layout: side-mount: a central Blok Ts core stage with 4 RD-0120 engines, 4 strap-on Blok A boosters around it (each with one four-chamber RD-170), and the payload (the Buran orbiter) mounted on the SIDE of the core, not on top. Show the pieces exploded apart with leader lines, each piece cut open to reveal its LOX / LH2 core, LOX / RP-1 boosters tanks with the engines drawn at the base in the exact counts given. At far left a small assembled scale-reference of the whole vehicle in its true silhouette, a tiny 1.8 m human figure, and a '59 m' dimension line. Vintage Soviet CCCP markings (retro logo, flag, stencilled serials). Keep labels legible: 'ENERGIA — EXPLODED', 'Core (Blok Ts)', 'Blok A booster ×4', 'BURAN', '59 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
-      "batch": "2026-10-23"
+      "batch": "2026-10-23",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "NASA logo in the bottom-right corner replaced by a flat red-ink CCCP pentagon stamp (Soviet vehicle).",
+        "rerender_job": "86a70bcf-a7bd-4bc9-8f09-dd2e0cd2cf43",
+        "boxes_xywh": [[2150, 1320, 378, 376]],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/originals/anatomy-exploded/energia.png"
+      }
     },
     "anatomy/lunar-orbiter-3": {
       "generation_id": "58877663-46fa-4307-ae03-0cb941143332",
@@ -2843,7 +2930,15 @@
       "width": 2528,
       "height": 1696,
       "prompt": "Exploded technical cutaway illustration of the Soyuz-FG rocket, watercolor and ink-wash on faint aged graph paper, matching the reference image's art style (warm muted metallic palette, ink-splatter wash, handwritten annotations, faint physics equations in the margins), preserving tall slender proportions. The reference shows a sister rocket of the same family: keep its art style, page layout and shared structure, and change the details to match the description below. IMPORTANT vehicle layout: the Korolev cross: 4 tapered conical strap-on boosters around the Blok A core, each booster with one four-chamber RD-107A plus 2 verniers, the core with one four-chamber RD-108A plus 4 verniers; Blok I third stage with one four-chamber RD-0110; the crewed Soyuz spacecraft under its shroud with the launch escape tower on top. Show the pieces exploded apart with leader lines, each piece cut open to reveal its LOX / RP-1 tanks with the engines drawn at the base in the exact counts given. At far left a small assembled scale-reference of the whole vehicle in its true silhouette, a tiny 1.8 m human figure, and a '50 m' dimension line. Vintage Roscosmos markings (retro logo, flag, stencilled serials). Keep labels legible: 'SOYUZ-FG — EXPLODED', 'Core (Blok-A)', '4x conical booster (Korolev cross)', 'Blok-I', 'SOYUZ', 'ESCAPE TOWER', '50 m', '1.8 m'. A warm hand-painted sketchbook cutaway — not a flat vector chart, not photorealistic.",
-      "batch": "2026-10-23"
+      "batch": "2026-10-23",
+      "edit": {
+        "date": "2026-10-23",
+        "change": "NASA logo in the bottom-right corner replaced by the Roscosmos emblem (Russian-era vehicle).",
+        "rerender_job": "33aea3b2-8425-41a3-8276-26b4e9d03859",
+        "boxes_xywh": [[2240, 1460, 288, 236]],
+        "how": "Re-rendered from the original (nano_banana_2, same reference, prompt asking for this one change), then only the box(es) composited back into the original, aligned by matching the surrounding paper/grid; every pixel outside the boxes is the original.",
+        "raw_original": "masters/originals/anatomy-exploded/soyuz-fg.png"
+      }
     },
     "anatomy/mars6": {
       "generation_id": "45dce34e-09af-4a51-82a3-8eaef766f045",

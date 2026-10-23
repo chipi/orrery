@@ -92,7 +92,7 @@ cutaway — not a flat vector chart, not photorealistic.
 | Thing | Path |
 |---|---|
 | Structural sketches (input) | `docs/wip/essay-diagram-sources/launcher-cutaways/*.svg` |
-| Masters (raw Higgsfield PNG, git-LFS) | `masters/anatomy-exploded/*.png` |
+| Masters (git-LFS) | `masters/anatomy-exploded/*.png` — the raw Higgsfield PNG, or the edited one where a detail was fixed (raw kept in `masters/originals/anatomy-exploded/`) |
 | Served display images | `static/images/anatomy-exploded/*.webp` + width rungs |
 | Prompts of every shipped cutaway | `scripts/anatomy/prompts-history.json` |
 | Specs for launchers outside /fly | `scripts/anatomy/exploded-specs.mjs` |

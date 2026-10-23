@@ -129,7 +129,7 @@
     320,
     1280,
     2048,
-    2528
+    3072
   ],
   "/images/anatomy/crew-dragon": [
     320,
@@ -12291,51 +12291,51 @@
   ],
   "/images/anatomy/atlas-lv-3b": [
     320,
-    859,
-    1374,
-    1696
+    860,
+    1376,
+    2063
   ],
   "/images/anatomy/m-v": [
     320,
-    859,
-    1374,
-    1696
+    860,
+    1376,
+    2063
   ],
   "/images/anatomy/proton-k": [
     320,
-    859,
-    1374,
-    1696
+    860,
+    1376,
+    2063
   ],
   "/images/anatomy/pslv": [
     320,
-    859,
-    1374,
-    1696
+    860,
+    1376,
+    2063
   ],
   "/images/anatomy/soyuz": [
     320,
-    859,
-    1374,
-    1696
+    860,
+    1376,
+    2063
   ],
   "/images/anatomy/titan-ii-glv": [
     320,
-    859,
-    1374,
-    1696
+    860,
+    1376,
+    2063
   ],
   "/images/anatomy/voskhod-11a57": [
     320,
-    859,
-    1374,
-    1696
+    860,
+    1376,
+    2063
   ],
   "/images/anatomy/vostok-k": [
     320,
-    859,
-    1374,
-    1696
+    860,
+    1376,
+    2063
   ],
   "/images/anatomy-exploded/atlas-lv-3b": [
     320,
@@ -16249,5 +16249,377 @@
     960,
     1536,
     2304
+  ],
+  "/images/anatomy-exploded/antares": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/ariane-6": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/atlas-slv-3d": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/delta-ii": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/energia": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/falcon-heavy": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/long-march-7": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/n1": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/new-glenn": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/proton-m": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/pslv-xl": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/r-7-vostok": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/sls-block-1": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/soyuz-2": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/soyuz-fg": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/soyuz-u": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy-exploded/vulcan": [
+    320,
+    1280,
+    2048,
+    2528
+  ],
+  "/images/anatomy/apollo-csm-block-i": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/atlantis": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/atlas-slv-3d": [
+    320,
+    860,
+    1376,
+    2063
+  ],
+  "/images/anatomy/beagle2": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/buran-ok-gli": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/challenger": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/change-2": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/change1": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/change6": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/clementine": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/columbia": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/discovery": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/endeavour": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/enterprise": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/giotto": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/luna10": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/luna24": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/lunar-orbiter-1": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/lunar-orbiter-2": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/lunar-orbiter-3": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/lunar-orbiter-4": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/lunar-orbiter-5": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/mars-2": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/mars-polar-lander": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/mars2-orbiter": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/mars3-orbiter": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/mars6": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/phobos-2": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/progress-7k-tg": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/r-7-vostok": [
+    320,
+    860,
+    1376,
+    2063
+  ],
+  "/images/anatomy/salyut-2": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/salyut-3": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/salyut-4": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/salyut-5": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/soyuz-7k-ok": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/soyuz-fg": [
+    320,
+    860,
+    1376,
+    2063
+  ],
+  "/images/anatomy/soyuz-t": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/soyuz-tm": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/soyuz-u": [
+    320,
+    860,
+    1376,
+    2063
+  ],
+  "/images/anatomy/vega-1": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/vega-2": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/viking1-orbiter": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/viking2-lander": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/vikram-cy2": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/anatomy/voskhod": [
+    320,
+    1280,
+    2048,
+    3072
   ]
 }

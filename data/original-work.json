@@ -12,6 +12,11 @@
       "cover": false
     },
     {
+      "title": "Apollo CSM (Block I)",
+      "file": "/images/anatomy/apollo-csm-block-i.webp",
+      "cover": false
+    },
+    {
       "title": "Apollo CSM Block II",
       "file": "/images/anatomy/apollo-csm-block-ii.webp",
       "cover": false
@@ -37,8 +42,18 @@
       "cover": false
     },
     {
+      "title": "Space Shuttle Atlantis",
+      "file": "/images/anatomy/atlantis.webp",
+      "cover": false
+    },
+    {
       "title": "Atlas LV-3B",
       "file": "/images/anatomy/atlas-lv-3b.webp",
+      "cover": false
+    },
+    {
+      "title": "Atlas SLV-3D Centaur",
+      "file": "/images/anatomy/atlas-slv-3d.webp",
       "cover": false
     },
     {
@@ -49,6 +64,11 @@
     {
       "title": "ATV (Automated Transfer Vehicle)",
       "file": "/images/anatomy/atv.webp",
+      "cover": false
+    },
+    {
+      "title": "Beagle 2",
+      "file": "/images/anatomy/beagle2.webp",
       "cover": false
     },
     {
@@ -64,6 +84,11 @@
     {
       "title": "Blue Moon Mk1",
       "file": "/images/anatomy/blue-moon-mk1.webp",
+      "cover": false
+    },
+    {
+      "title": "Buran OK-GLI (BTS-002)",
+      "file": "/images/anatomy/buran-ok-gli.webp",
       "cover": false
     },
     {
@@ -87,6 +112,11 @@
       "cover": false
     },
     {
+      "title": "Space Shuttle Challenger",
+      "file": "/images/anatomy/challenger.webp",
+      "cover": false
+    },
+    {
       "title": "Chandra X-ray Observatory",
       "file": "/images/anatomy/chandra.webp",
       "cover": false
@@ -94,6 +124,11 @@
     {
       "title": "Chandrayaan-1",
       "file": "/images/anatomy/chandrayaan1.webp",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 2",
+      "file": "/images/anatomy/change-2.webp",
       "cover": false
     },
     {
@@ -109,6 +144,26 @@
     {
       "title": "Chang'e 5",
       "file": "/images/anatomy/change-5.webp",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 1",
+      "file": "/images/anatomy/change1.webp",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 6",
+      "file": "/images/anatomy/change6.webp",
+      "cover": false
+    },
+    {
+      "title": "Clementine",
+      "file": "/images/anatomy/clementine.webp",
+      "cover": false
+    },
+    {
+      "title": "Space Shuttle Columbia",
+      "file": "/images/anatomy/columbia.webp",
       "cover": false
     },
     {
@@ -147,8 +202,23 @@
       "cover": false
     },
     {
+      "title": "Space Shuttle Discovery",
+      "file": "/images/anatomy/discovery.webp",
+      "cover": false
+    },
+    {
+      "title": "Space Shuttle Endeavour",
+      "file": "/images/anatomy/endeavour.webp",
+      "cover": false
+    },
+    {
       "title": "Energia",
       "file": "/images/anatomy/energia.webp",
+      "cover": false
+    },
+    {
+      "title": "Space Shuttle Enterprise",
+      "file": "/images/anatomy/enterprise.webp",
       "cover": false
     },
     {
@@ -199,6 +269,11 @@
     {
       "title": "Gemini",
       "file": "/images/anatomy/gemini.webp",
+      "cover": false
+    },
+    {
+      "title": "Giotto",
+      "file": "/images/anatomy/giotto.webp",
       "cover": false
     },
     {
@@ -332,6 +407,41 @@
       "cover": false
     },
     {
+      "title": "Luna 10",
+      "file": "/images/anatomy/luna10.webp",
+      "cover": false
+    },
+    {
+      "title": "Luna 24",
+      "file": "/images/anatomy/luna24.webp",
+      "cover": false
+    },
+    {
+      "title": "Lunar Orbiter 1",
+      "file": "/images/anatomy/lunar-orbiter-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Lunar Orbiter 2",
+      "file": "/images/anatomy/lunar-orbiter-2.webp",
+      "cover": false
+    },
+    {
+      "title": "Lunar Orbiter 3",
+      "file": "/images/anatomy/lunar-orbiter-3.webp",
+      "cover": false
+    },
+    {
+      "title": "Lunar Orbiter 4",
+      "file": "/images/anatomy/lunar-orbiter-4.webp",
+      "cover": false
+    },
+    {
+      "title": "Lunar Orbiter 5",
+      "file": "/images/anatomy/lunar-orbiter-5.webp",
+      "cover": false
+    },
+    {
       "title": "Lunar Prospector",
       "file": "/images/anatomy/lunar-prospector.webp",
       "cover": false
@@ -377,6 +487,11 @@
       "cover": false
     },
     {
+      "title": "Mars 2",
+      "file": "/images/anatomy/mars-2.webp",
+      "cover": false
+    },
+    {
       "title": "Mars 3",
       "file": "/images/anatomy/mars-3.webp",
       "cover": false
@@ -389,6 +504,26 @@
     {
       "title": "2001 Mars Odyssey",
       "file": "/images/anatomy/mars-odyssey.webp",
+      "cover": false
+    },
+    {
+      "title": "Mars Polar Lander",
+      "file": "/images/anatomy/mars-polar-lander.webp",
+      "cover": false
+    },
+    {
+      "title": "Mars 2 Orbiter",
+      "file": "/images/anatomy/mars2-orbiter.webp",
+      "cover": false
+    },
+    {
+      "title": "Mars 3 Orbiter",
+      "file": "/images/anatomy/mars3-orbiter.webp",
+      "cover": false
+    },
+    {
+      "title": "Mars 6",
+      "file": "/images/anatomy/mars6.webp",
       "cover": false
     },
     {
@@ -462,6 +597,11 @@
       "cover": false
     },
     {
+      "title": "Phobos 2",
+      "file": "/images/anatomy/phobos-2.webp",
+      "cover": false
+    },
+    {
       "title": "Phoenix",
       "file": "/images/anatomy/phoenix.webp",
       "cover": false
@@ -479,6 +619,11 @@
     {
       "title": "Pragyan",
       "file": "/images/anatomy/pragyan.webp",
+      "cover": false
+    },
+    {
+      "title": "Progress 7K-TG",
+      "file": "/images/anatomy/progress-7k-tg.webp",
       "cover": false
     },
     {
@@ -517,6 +662,11 @@
       "cover": false
     },
     {
+      "title": "R-7 / Vostok rocket",
+      "file": "/images/anatomy/r-7-vostok.webp",
+      "cover": false
+    },
+    {
       "title": "Rosetta",
       "file": "/images/anatomy/rosetta.webp",
       "cover": false
@@ -524,6 +674,26 @@
     {
       "title": "Salyut 1",
       "file": "/images/anatomy/salyut-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Salyut 2 (OPS-1)",
+      "file": "/images/anatomy/salyut-2.webp",
+      "cover": false
+    },
+    {
+      "title": "Salyut 3 (OPS-2)",
+      "file": "/images/anatomy/salyut-3.webp",
+      "cover": false
+    },
+    {
+      "title": "Salyut 4 (DOS-4)",
+      "file": "/images/anatomy/salyut-4.webp",
+      "cover": false
+    },
+    {
+      "title": "Salyut 5 (OPS-3)",
+      "file": "/images/anatomy/salyut-5.webp",
       "cover": false
     },
     {
@@ -592,13 +762,38 @@
       "cover": false
     },
     {
+      "title": "Soyuz 7K-OK",
+      "file": "/images/anatomy/soyuz-7k-ok.webp",
+      "cover": false
+    },
+    {
+      "title": "Soyuz-FG",
+      "file": "/images/anatomy/soyuz-fg.webp",
+      "cover": false
+    },
+    {
       "title": "Soyuz MS",
       "file": "/images/anatomy/soyuz-ms.webp",
       "cover": false
     },
     {
+      "title": "Soyuz T",
+      "file": "/images/anatomy/soyuz-t.webp",
+      "cover": false
+    },
+    {
+      "title": "Soyuz TM",
+      "file": "/images/anatomy/soyuz-tm.webp",
+      "cover": false
+    },
+    {
       "title": "Soyuz TMA",
       "file": "/images/anatomy/soyuz-tma.webp",
+      "cover": false
+    },
+    {
+      "title": "Soyuz-U",
+      "file": "/images/anatomy/soyuz-u.webp",
       "cover": false
     },
     {
@@ -687,6 +882,16 @@
       "cover": false
     },
     {
+      "title": "Vega 1",
+      "file": "/images/anatomy/vega-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Vega 2",
+      "file": "/images/anatomy/vega-2.webp",
+      "cover": false
+    },
+    {
       "title": "Venera 13",
       "file": "/images/anatomy/venera-13.webp",
       "cover": false
@@ -702,6 +907,21 @@
       "cover": false
     },
     {
+      "title": "Viking 1 Orbiter",
+      "file": "/images/anatomy/viking1-orbiter.webp",
+      "cover": false
+    },
+    {
+      "title": "Viking 2 Lander",
+      "file": "/images/anatomy/viking2-lander.webp",
+      "cover": false
+    },
+    {
+      "title": "Vikram (Chandrayaan-2)",
+      "file": "/images/anatomy/vikram-cy2.webp",
+      "cover": false
+    },
+    {
       "title": "Vikram (Chandrayaan-3)",
       "file": "/images/anatomy/vikram-cy3.webp",
       "cover": false
@@ -709,6 +929,11 @@
     {
       "title": "Voskhod (11A57)",
       "file": "/images/anatomy/voskhod-11a57.webp",
+      "cover": false
+    },
+    {
+      "title": "Voskhod",
+      "file": "/images/anatomy/voskhod.webp",
       "cover": false
     },
     {
@@ -759,6 +984,208 @@
     {
       "title": "Zhurong",
       "file": "/images/anatomy/zhurong.webp",
+      "cover": false
+    }
+  ],
+  "exploded_art": [
+    {
+      "title": "Antares",
+      "file": "/images/anatomy-exploded/antares.webp",
+      "cover": false
+    },
+    {
+      "title": "Ariane 1",
+      "file": "/images/anatomy-exploded/ariane-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Ariane 5",
+      "file": "/images/anatomy-exploded/ariane-5.webp",
+      "cover": false
+    },
+    {
+      "title": "Ariane 6",
+      "file": "/images/anatomy-exploded/ariane-6.webp",
+      "cover": false
+    },
+    {
+      "title": "Atlas LV-3B",
+      "file": "/images/anatomy-exploded/atlas-lv-3b.webp",
+      "cover": false
+    },
+    {
+      "title": "Atlas SLV-3D Centaur",
+      "file": "/images/anatomy-exploded/atlas-slv-3d.webp",
+      "cover": false
+    },
+    {
+      "title": "Atlas V",
+      "file": "/images/anatomy-exploded/atlas-v.webp",
+      "cover": false
+    },
+    {
+      "title": "Delta II",
+      "file": "/images/anatomy-exploded/delta-ii.webp",
+      "cover": false
+    },
+    {
+      "title": "Energia",
+      "file": "/images/anatomy-exploded/energia.webp",
+      "cover": false
+    },
+    {
+      "title": "Falcon 9 Block 5",
+      "file": "/images/anatomy-exploded/falcon-9.webp",
+      "cover": false
+    },
+    {
+      "title": "Falcon Heavy",
+      "file": "/images/anatomy-exploded/falcon-heavy.webp",
+      "cover": false
+    },
+    {
+      "title": "H-IIA",
+      "file": "/images/anatomy-exploded/h-iia.webp",
+      "cover": false
+    },
+    {
+      "title": "H3",
+      "file": "/images/anatomy-exploded/h3.webp",
+      "cover": false
+    },
+    {
+      "title": "Long March 2F",
+      "file": "/images/anatomy-exploded/long-march-2f.webp",
+      "cover": false
+    },
+    {
+      "title": "Long March 3B",
+      "file": "/images/anatomy-exploded/long-march-3b.webp",
+      "cover": false
+    },
+    {
+      "title": "Long March 5 / 5B",
+      "file": "/images/anatomy-exploded/long-march-5.webp",
+      "cover": false
+    },
+    {
+      "title": "Long March 7",
+      "file": "/images/anatomy-exploded/long-march-7.webp",
+      "cover": false
+    },
+    {
+      "title": "LVM3 (GSLV Mk III)",
+      "file": "/images/anatomy-exploded/lvm3.webp",
+      "cover": false
+    },
+    {
+      "title": "M V",
+      "file": "/images/anatomy-exploded/m-v.webp",
+      "cover": false
+    },
+    {
+      "title": "Mercury-Redstone",
+      "file": "/images/anatomy-exploded/mercury-redstone.webp",
+      "cover": false
+    },
+    {
+      "title": "N1",
+      "file": "/images/anatomy-exploded/n1.webp",
+      "cover": false
+    },
+    {
+      "title": "New Glenn",
+      "file": "/images/anatomy-exploded/new-glenn.webp",
+      "cover": false
+    },
+    {
+      "title": "Proton-K",
+      "file": "/images/anatomy-exploded/proton-k.webp",
+      "cover": false
+    },
+    {
+      "title": "Proton-M",
+      "file": "/images/anatomy-exploded/proton-m.webp",
+      "cover": false
+    },
+    {
+      "title": "Pslv",
+      "file": "/images/anatomy-exploded/pslv.webp",
+      "cover": false
+    },
+    {
+      "title": "PSLV-XL",
+      "file": "/images/anatomy-exploded/pslv-xl.webp",
+      "cover": false
+    },
+    {
+      "title": "R-7 / Vostok rocket",
+      "file": "/images/anatomy-exploded/r-7-vostok.webp",
+      "cover": false
+    },
+    {
+      "title": "Saturn IB",
+      "file": "/images/anatomy-exploded/saturn-ib.webp",
+      "cover": false
+    },
+    {
+      "title": "Saturn V",
+      "file": "/images/anatomy-exploded/saturn-v.webp",
+      "cover": false
+    },
+    {
+      "title": "SLS Block 1",
+      "file": "/images/anatomy-exploded/sls-block-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Soyuz (11A511)",
+      "file": "/images/anatomy-exploded/soyuz.webp",
+      "cover": false
+    },
+    {
+      "title": "Soyuz-2",
+      "file": "/images/anatomy-exploded/soyuz-2.webp",
+      "cover": false
+    },
+    {
+      "title": "Soyuz-FG",
+      "file": "/images/anatomy-exploded/soyuz-fg.webp",
+      "cover": false
+    },
+    {
+      "title": "Soyuz-U",
+      "file": "/images/anatomy-exploded/soyuz-u.webp",
+      "cover": false
+    },
+    {
+      "title": "Space Shuttle stack",
+      "file": "/images/anatomy-exploded/space-shuttle-stack.webp",
+      "cover": false
+    },
+    {
+      "title": "Starship",
+      "file": "/images/anatomy-exploded/starship.webp",
+      "cover": false
+    },
+    {
+      "title": "Titan II GLV",
+      "file": "/images/anatomy-exploded/titan-ii-glv.webp",
+      "cover": false
+    },
+    {
+      "title": "Voskhod (11A57)",
+      "file": "/images/anatomy-exploded/voskhod-11a57.webp",
+      "cover": false
+    },
+    {
+      "title": "Vostok-K (8K72K)",
+      "file": "/images/anatomy-exploded/vostok-k.webp",
+      "cover": false
+    },
+    {
+      "title": "Vulcan Centaur",
+      "file": "/images/anatomy-exploded/vulcan.webp",
       "cover": false
     }
   ],
@@ -2161,7 +2588,7 @@
     },
     {
       "title": "Orion (Artemis)",
-      "what": "Orion crew capsule + European Service Module with four solar wings (Artemis III / IV).",
+      "what": "Orion crew capsule + European Service Module with four solar wings (Artemis IV / V).",
       "where": "Fly · cruise/approach",
       "route": "/fly",
       "thumb": "/images/colophon/model-cruise-artemis3.webp"
@@ -2560,7 +2987,8 @@
     }
   ],
   "totals": {
-    "anatomy_art": 152,
+    "anatomy_art": 197,
+    "exploded_art": 40,
     "lab_illustrations": 25,
     "diagrams_science": 114,
     "posters": 27,

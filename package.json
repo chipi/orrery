@@ -138,7 +138,7 @@
     "@modelcontextprotocol/client": "^2.3.1",
     "@playwright/test": "1.64.0",
     "@sentry/vite-plugin": "5.4.0",
-    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/adapter-static": "^4.0.0",
     "@sveltejs/kit": "2.70.3",
     "@sveltejs/vite-plugin-svelte": "7.2.0",
     "@types/katex": "^0.16.8",

@@ -197,6 +197,11 @@ test.describe('/explore — selection and panel', () => {
     // #351 Layer 2-A, `a0` is overwritten with each planet's real J2000
     // mean longitude, so Earth no longer sits at (W/2 + 113, H/2) — read
     // its live 2D offset from the page and click there.
+    // simT=0 anchors to Date.now() at page load, so Earth's angle follows
+    // the real calendar; on 2026-10-25 it landed under the bottom HUD bar
+    // in mobile-landscape and the click never became actionable. Pin the
+    // clock to a date that puts Earth in the clear upper half of the canvas.
+    await page.clock.setFixedTime(new Date('2026-04-25T12:00:00Z'));
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
     await enterTwoDMode(page, isMobile);

@@ -24,15 +24,25 @@
     onClose: () => void;
   }
   let { src, onClose }: Props = $props();
+
+  // Mounted on <body>: a panel's own stacking context (aside.panel,
+  // z-index 30) would otherwise trap the overlay under the site nav
+  // (z-index 40), hiding the close button on /explore.
+  function toBody(node: HTMLElement) {
+    document.body.appendChild(node);
+    return { destroy: () => node.remove() };
+  }
 </script>
 
 {#if src}
-  <button type="button" class="lightbox" aria-label={m.panel_lightbox_close()} onclick={onClose}>
-    <img {...responsive(src, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
-    <span class="lightbox-close" aria-hidden="true">×</span>
-  </button>
-  <div class="lightbox-meta">
-    <ImageCredit {src} />
+  <div class="lightbox-root" use:toBody>
+    <button type="button" class="lightbox" aria-label={m.panel_lightbox_close()} onclick={onClose}>
+      <img {...responsive(src, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
+      <span class="lightbox-close" aria-hidden="true">×</span>
+    </button>
+    <div class="lightbox-meta">
+      <ImageCredit {src} />
+    </div>
   </div>
 {/if}
 

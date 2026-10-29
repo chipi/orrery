@@ -33,4 +33,30 @@ test.describe('panel lightbox', () => {
     await page.goto('/fleet?id=falcon-9');
     await openAndCloseFromHero(page);
   });
+
+  // The planet panel renders its lightbox inside aside.panel; the panel's
+  // stacking context kept it under the site nav, which covered the close ×.
+  test('explore planet lightbox sits above the nav; its × closes it', async ({ page }) => {
+    await page.goto('/explore?id=mars');
+    const hero = page.locator('aside.panel .panel-hero-btn').first();
+    await expect(hero).toBeVisible({ timeout: 15_000 });
+    const lightbox = page.locator('button.lightbox');
+    // PlanetPanel ignores a hero click in its first 400 ms (open-gesture guard).
+    await expect(async () => {
+      await hero.click();
+      await expect(lightbox).toBeVisible({ timeout: 1_000 });
+    }).toPass({ timeout: 10_000 });
+    const close = lightbox.locator('.lightbox-close');
+    const box = await close.boundingBox();
+    expect(box).not.toBeNull();
+    const cx = box!.x + box!.width / 2;
+    const cy = box!.y + box!.height / 2;
+    const topmostInLightbox = await page.evaluate(
+      ([x, y]) => !!document.elementFromPoint(x!, y!)?.closest('button.lightbox'),
+      [cx, cy],
+    );
+    expect(topmostInLightbox).toBe(true);
+    await page.mouse.click(cx, cy);
+    await expect(lightbox).toHaveCount(0);
+  });
 });

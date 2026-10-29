@@ -5,7 +5,7 @@ surfaces (`/fly`, `/plan`, `/explore`). Two consumers import it unchanged: the S
 (the `/lab` Physics Lab) and a standalone Node process (the MCP server).
 
 **Governing docs:** PRD-033 + RFC-037 (both incl. Amendment 01) · boundary classification in
-`docs/wip/2026-08-29-s1-kernel-boundary-manifest.md` · epic #458.
+`docs/wip/_archive/2026-08-29-s1-kernel-boundary-manifest.md` · epic #458.
 
 ## The one rule: this subtree is PURE
 

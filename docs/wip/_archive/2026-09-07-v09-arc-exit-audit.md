@@ -55,7 +55,7 @@ Local commits (mobile-fixes, not yet pushed): H2 `fba6c93d4d` → H3 `e964c1963e
 - AR sky pass-hint (`formatPass`) is **English-only by existing design**; the H-b staleness suffix
   matches. Fully localizing that hint ×14 is its own task.
 - Higgsfield ×25 illustration batch (operator-owned, deferred) — brief in
-  `docs/wip/2026-09-07-lab-goal-illustration-prompts.md`.
+  `docs/wip/_archive/2026-09-07-lab-goal-illustration-prompts.md`.
 - ADR index backfill (086–090 missing from `docs/adr/index.md` — pre-existing drift; 091 added).
 
 **Hard constraint:** no release tag for 0.9 (operator, repeatedly).

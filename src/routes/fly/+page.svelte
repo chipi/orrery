@@ -235,7 +235,7 @@
   // are now derived from it, and every transition goes through the pure,
   // unit-tested reducer via dispatchPhase(). The show* flags depend only on
   // flyAct (declared first), so no forward-ref TDZ hazard. See the A0 contract in
-  // docs/wip/2026-08-05-fly-restructure-plan.md + flight-phase-controller.ts.
+  // docs/wip/_archive/2026-08-05-fly-restructure-plan.md + flight-phase-controller.ts.
   let flyAct = $state<FlyAct>('opening');
   const showLaunch = $derived(flyAct === 'ascent');
   const showCoast = $derived(flyAct === 'coast');

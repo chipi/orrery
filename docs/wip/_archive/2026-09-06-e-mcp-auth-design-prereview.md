@@ -1,7 +1,7 @@
 # E · MCP-auth (#534) — Fable-5 design pre-review + build record
 
-*2026-09-06 · consumes: docs/wip/2026-09-01-infra-auth-spike.md +
-docs/wip/2026-09-02-d-lab-api-design-prereview.md · feeds: F (#535), H (#464)*
+*2026-09-06 · consumes: docs/wip/_archive/2026-09-01-infra-auth-spike.md +
+docs/wip/_archive/2026-09-02-d-lab-api-design-prereview.md · feeds: F (#535), H (#464)*
 
 The Fable-5 design pre-review ran before code (standing protocol step 0) and
 returned a binding 8-item build order with four headline findings. This doc

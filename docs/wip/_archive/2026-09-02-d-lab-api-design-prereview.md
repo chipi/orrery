@@ -1,6 +1,6 @@
 # D · INFRA-lab-api (#533) — Fable-5 design pre-review + build record
 
-*2026-09-02 · consumes: docs/wip/2026-09-01-infra-auth-spike.md (option zero) ·
+*2026-09-02 · consumes: docs/wip/_archive/2026-09-01-infra-auth-spike.md (option zero) ·
 RFC-037 A01.7/A01.8 · feeds slices E (#534) and F (#535)*
 
 The Fable-5 design pre-review ran 2026-09-02 before any code (standing

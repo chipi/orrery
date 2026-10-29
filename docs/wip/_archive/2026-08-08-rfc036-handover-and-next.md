@@ -52,8 +52,8 @@ projects. Landed as many small e2e-gated commits, then pushed `content → main`
 - **Staging** (GitHub Pages, "Deploy preview" + "Validate staging") ✓.
 - **Prod** (VPS / `orrerylearn.com`, `deploy-prod` run — deploy + validate both ✓), verified
   serving: homepage/`/explore`/`/fly` all HTTP 200, fresh build. Footer `0.8.0-2026-08-07-1`.
-- Full plan docs: `docs/wip/2026-08-05-fly-restructure-plan.md`,
-  `docs/wip/2026-08-06-explore-restructure-plan.md`.
+- Full plan docs: `docs/wip/_archive/2026-08-05-fly-restructure-plan.md`,
+  `docs/wip/_archive/2026-08-06-explore-restructure-plan.md`.
 
 ### Housekeeping still open (your call — I didn't touch)
 - **Tracking issues #440 / #441 / #443 are still OPEN** but the work is done + deployed →

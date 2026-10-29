@@ -7,7 +7,7 @@
  * Precaching that many individual files never finishes installing the
  * service worker on mobile WebKit (the 0.6.3-stuck bug). Bundling to one
  * file per locale turns ~10,360 precache entries into 14, so the SW
- * install completes. See docs/wip/pwa-upgrade-path-handover.md.
+ * install completes. See docs/wip/_archive/pwa-upgrade-path-handover.md.
  *
  * The source tree lives OUTSIDE static/ (ADR-079 D2 / #377) — it is
  * build-time input, never a servable asset, so it no longer bloats the

@@ -19,11 +19,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
-import { translationClient, translationModel } from '../../lib/translate-model.mjs';
-import { TRANSLATED_LOCALES } from '../../lib/locales.mjs';
-import { LANGUAGE_NAMES } from '../../lib/translate-quality.mjs';
+import { translationClient, translationModel } from './lib/translate-model.mjs';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
+import { LANGUAGE_NAMES } from './lib/translate-quality.mjs';
 
-const ROOT = path.resolve(import.meta.dirname, '../../..');
+const ROOT = path.resolve(import.meta.dirname, '..');
 const EN = path.join(ROOT, 'i18n-src', 'en-US', 'programs');
 
 const ALL_LOCALES = TRANSLATED_LOCALES;

@@ -1,8 +1,7 @@
 /**
  * Earth orbital-context subsystems — Moon ghost mesh + per-regime
- * orbit rings. Pulled out of EarthOrbitalScene's onMount so #290
- * Slice 4 can mount the same subsystems inside SurfaceScene gated
- * on `config.earthOrbitalLayers`.
+ * orbit rings. Mounted by SurfaceScene on /earth, gated on
+ * `config.earthOrbitalLayers`.
  *
  * Moon ghost: small textured Moon sphere positioned at the real
  * Moon-orbit radius. Used as both a click target (navigate to

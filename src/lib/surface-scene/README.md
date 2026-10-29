@@ -1,8 +1,6 @@
 # `src/lib/surface-scene/`
 
-The shared renderer for rocky-surface bodies — `/moon`, `/mars`, and `/earth?mode=surface` (the launchpad layer added in #285 Phase 2). **Not used by purely-orbital views (`/iss`, `/tiangong`) or trajectory views (`/fly`)** — those have their own scene architectures because their domain isn't a planetary surface. `/earth` is a hybrid: its default orbital mode uses the bespoke `EarthOrbitalScene` (satellites + LEO/MEO/GEO rings + atmosphere shell + ozone layer); its surface mode uses SurfaceScene with `EARTH_LAUNCH_CONFIG`. SurfaceScene owns ~90 % of the rocky-surface route behaviour. Routes consume `SurfaceScene.svelte` and pass a planet config.
-
-**Status (2026-05-30):** the *contract* is written; the `SurfaceScene.svelte` component file is **not yet implemented**. The lib currently ships the contract docs (this file, `types.ts`) and the Wave A pure-helper extractions (`debug-info.ts`, `register-moon-hotspot-builders.ts`, `register-mars-hotspot-builders.ts`). Next-session work: write the `SurfaceScene.svelte` body following `types.ts`, migrate `/moon` to consume it (Task #10 / Wave D), then `/mars` (Task #11 / Wave E). Tracked in #283 Slice 2.
+The shared renderer for rocky-surface bodies — `/moon`, `/mars`, `/venus`, and `/earth`. **Not used by purely-orbital views (`/iss`, `/tiangong`) or trajectory views (`/fly`)** — those have their own scene architectures because their domain isn't a planetary surface. `/earth` is one unified SurfaceScene (launchpads, museums, observatories and the orbital stack as layers); `?mode=surface` is kept for old links and no longer changes rendering. Its preset is `EARTH_LAUNCH_CONFIG` in `src/routes/earth/earth-launch-sites-config.ts`. SurfaceScene owns ~90 % of the rocky-surface route behaviour. Routes consume `SurfaceScene.svelte` and pass a planet config.
 
 **See [ADR-072](../../../docs/adr/ADR-072.md) for the decision history.** This README is the practical contract — read it before adding any moon-vs-mars divergence.
 
@@ -33,7 +31,7 @@ A handful of `SurfaceSceneConfig` props. Each has a physical / domain justificat
 ```ts
 interface SurfaceSceneConfig {
   // Identity (used for asset paths, e2e signals, debug)
-  planet: 'moon' | 'mars';
+  planet: SurfacePlanet;          // 'moon' | 'mars' | 'earth' | 'venus' (types.ts)
 
   // Surface texture
   textureUrl: string;             // e.g. `${base}/textures/2k_moon.jpg`
@@ -85,7 +83,7 @@ To stand up a hypothetical `/mercury` route:
 
 1. Add Mercury sites to `static/data/mercury-sites.json` (schema: `static/data/schemas/surface-site.schema.json`).
 2. Add `static/textures/2k_mercury.jpg` (1:1 crop already exists per the textures dir).
-3. Add `src/lib/mercury-lander-models.ts` (currently empty — MESSENGER + BepiColombo if/when they land).
+3. Add `src/lib/mercury-lander-models.ts` (does not exist; the moon/mars/venus equivalents are `src/lib/{moon,mars,venus}-lander-models.ts`).
 4. Add `src/lib/surface-scene/register-mercury-hotspot-builders.ts` mirroring the moon/mars pattern.
 5. Create `src/routes/mercury/+page.svelte` as a thin shell:
    ```svelte
@@ -116,9 +114,14 @@ If something *can't* be expressed in this contract, that's a signal — file an 
 | File | Owns |
 |---|---|
 | `SurfaceScene.svelte` | The shared component — scene assembly, animation loop, HUD, panel state |
-| `debug-info.ts` | Shared debug overlay shape + factory (Slice 2A) |
-| `register-moon-hotspot-builders.ts` | Moon's Tier 1 model registration bundle (Slice 2A) |
-| `register-mars-hotspot-builders.ts` | Mars's Tier 1 model registration bundle (Slice 2A) |
+| `types.ts` | `SurfaceSceneConfig` and the config types it composes |
+| `SurfaceFlatPatch.svelte` | Flat ground-patch view at deep zoom (/moon, /mars; ADR-062) |
+| `SurfaceIndexPanel.svelte` | Searchable orbit/land index shared by the routes |
+| `EarthObjectPanel.svelte`, `MuseumPanel.svelte`, `ObservatoryPanel.svelte` | /earth detail panels |
+| `earth-*-layer(s).ts`, `museum-layer.ts` | /earth-only layers (atmosphere, magnetosphere, geophysics, orbital rings, satellites, place pins) |
+| `moon-lens-layers.ts`, `mars-lens-layers.ts`, `surface-sun-layers.ts`, `surface-climate-layers.ts` | Science-lens layers, per body or shared |
+| `register-{moon,mars,earth,venus}-hotspot-builders.ts` | Each body's Tier 1 model registration bundle |
+| `debug-info.ts`, `status-tone.ts` | Shared debug overlay shape + factory; site status badge mapping |
 | `README.md` | This file — the contract |
 
 ## Adjacent libs (already factored)

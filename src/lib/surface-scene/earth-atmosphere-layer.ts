@@ -1,9 +1,7 @@
 /**
  * Earth-specific atmosphere subsystems — Karman-line shell + ring at
- * 100 km, plus stratospheric ozone polar caps at ~30 km. Used by
- * /earth (currently via EarthOrbitalScene; #290 Slice 4 wires the
- * same helpers into SurfaceScene so /earth is unified with /moon
- * and /mars).
+ * 100 km, plus stratospheric ozone polar caps at ~30 km. Mounted by
+ * SurfaceScene on /earth (gated on `config.earthOrbitalLayers`).
  *
  * Both subsystems are science-lens-gated (ADR-055):
  *   - 'atmosphere' lens → Karman-line shell + equatorial ring
@@ -116,7 +114,7 @@ export function buildOzoneOverlay(opts: OzoneOverlayOpts): OzoneOverlayHandle {
 
   // South cap — phi starts at (π - coverageRatio*π) so the cap wraps
   // the south pole. Antarctic hole defaults to ~0.34π = ~61° opening
-  // from the pole, matching the canonical EarthOrbitalScene values.
+  // from the pole.
   const southPhiStart = Math.PI * (1 - opts.south.phiCoverageRatio);
   const southPhiLength = Math.PI * opts.south.phiCoverageRatio;
   const southGeo = new THREE.SphereGeometry(

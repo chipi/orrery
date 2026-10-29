@@ -192,7 +192,7 @@
     "@opentelemetry/exporter-trace-otlp-proto": "0.300.0",
     "@opentelemetry/resources": "3.0.0",
     "@opentelemetry/sdk-trace": "3.0.0",
-    "@sentry/capacitor": "^4.4.0",
+    "@sentry/capacitor": "4.3.0",
     "@sentry/node": "10.69.0",
     "@sentry/sveltekit": "10.69.0",
     "detect-gpu": "^5.0.70",

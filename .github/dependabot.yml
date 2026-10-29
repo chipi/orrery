@@ -39,6 +39,11 @@ updates:
       # @sentry/capacitor, by hand.
       - dependency-name: '@sentry/node'
       - dependency-name: '@sentry/sveltekit'
+      # 4.4.0 removed SentryCapacitor.podspec (sentry-cocoa left CocoaPods), so
+      # the CocoaPods iOS project cannot pod-install it. Pinned to 4.3.0 until
+      # the iOS project moves to Swift Package Manager (#621).
+      - dependency-name: '@sentry/capacitor'
+        versions: ['>=4.4']
       # @sentry/vite-plugin 11 pulls @sentry/bundler-plugins -> sentry@^0.45
       # (FSL-1.1-Apache-2.0), which the tech-BOM licence allowlist rejects
       # (check-tech-bom fails the build). Taking it is an operator licence

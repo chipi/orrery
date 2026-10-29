@@ -183,6 +183,21 @@ export default defineConfig(({ mode, command }) => {
         // Paraglide release that makes middleware-splitting SPA-aware,
         // or a custom dynamic-import shim. Documented as a follow-up.
       }),
+      // Production builds replace the /dev developer pages with empty stubs.
+      // src/routes/dev/+layout.ts already 404s them outside dev, but their
+      // chunks still shipped and the service worker precached them (~96 KiB
+      // per install). The layout guard stays the single source of the 404;
+      // the stubs only keep the route nodes valid.
+      {
+        name: 'orrery-stub-dev-routes',
+        enforce: 'pre',
+        apply: 'build',
+        load(id: string) {
+          const file = id.split('?')[0];
+          if (!/\/src\/routes\/dev\/(.+\/)?\+page\.(svelte|ts)$/.test(file)) return null;
+          return file.endsWith('.svelte') ? '<p>Not found</p>\n' : 'export {};\n';
+        },
+      },
       sveltekit(),
       // Prod deploy only (#595): inject Sentry debug ids DURING the build. The
       // plugin prepends the id snippet in renderChunk, before Vite names the chunk,

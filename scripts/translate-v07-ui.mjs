@@ -21,6 +21,7 @@ import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
 import { TRANSLATED_LOCALES } from './lib/locales.mjs';
+import { LANGUAGE_NAMES } from './lib/translate-quality.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const MESSAGES_DIR = path.join(ROOT, 'messages');
@@ -28,21 +29,7 @@ const OVERRIDES_PATH = path.join(ROOT, 'scripts/paraglide-key-overrides.json');
 const en = JSON.parse(fs.readFileSync(path.join(MESSAGES_DIR, 'en-US.json'), 'utf8'));
 
 const ALL = TRANSLATED_LOCALES;
-const NAMES = {
-  ar: 'Modern Standard Arabic',
-  de: 'German',
-  es: 'European Spanish',
-  fr: 'French',
-  hi: 'Hindi',
-  it: 'Italian',
-  ja: 'Japanese',
-  ko: 'Korean',
-  nl: 'Dutch',
-  'pt-BR': 'Brazilian Portuguese',
-  ru: 'Russian',
-  'sr-Cyrl': 'Serbian (Cyrillic)',
-  'zh-CN': 'Simplified Chinese',
-};
+const NAMES = LANGUAGE_NAMES;
 
 const args = Object.fromEntries(
   process.argv.slice(2).map((a) => {

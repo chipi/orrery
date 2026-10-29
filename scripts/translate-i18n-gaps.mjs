@@ -27,6 +27,7 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
 import { TRANSLATED_LOCALES } from './lib/locales.mjs';
+import { LANGUAGE_NAMES } from './lib/translate-quality.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 // i18n overlay source moved out of static/ (ADR-079 D2 / #377).
@@ -63,21 +64,7 @@ for (const [surface, file] of Object.entries(SCHEMA_BY_SURFACE)) {
 
 const LOCALES = TRANSLATED_LOCALES;
 
-const NAMES = {
-  ar: 'Modern Standard Arabic',
-  de: 'German',
-  es: 'European Spanish',
-  fr: 'French',
-  hi: 'Hindi',
-  it: 'Italian',
-  ja: 'Japanese',
-  ko: 'Korean',
-  nl: 'Dutch',
-  'pt-BR': 'Brazilian Portuguese',
-  ru: 'Russian',
-  'sr-Cyrl': 'Serbian (Cyrillic)',
-  'zh-CN': 'Simplified Chinese',
-};
+const NAMES = LANGUAGE_NAMES;
 
 const SYSTEM_BASE = `Translate Orrery editorial content from en-US.
 

@@ -129,7 +129,7 @@
     "build-cards": "node scripts/cards/generate-card-images.mjs"
   },
   "devDependencies": {
-    "@anthropic-ai/sdk": "^0.96.0",
+    "@anthropic-ai/sdk": "^1.3.0",
     "@axe-core/playwright": "^4.11.3",
     "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "^8.0.0",

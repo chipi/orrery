@@ -121,6 +121,7 @@ If something *can't* be expressed in this contract, that's a signal — file an 
 | `earth-*-layer(s).ts`, `museum-layer.ts` | /earth-only layers (atmosphere, magnetosphere, geophysics, orbital rings, satellites, place pins) |
 | `moon-lens-layers.ts`, `mars-lens-layers.ts`, `surface-sun-layers.ts`, `surface-climate-layers.ts` | Science-lens layers, per body or shared |
 | `register-{moon,mars,earth,venus}-hotspot-builders.ts` | Each body's Tier 1 model registration bundle |
+| `surface-picking.ts`, `surface-2d-map.ts`, `surface-traverses.ts`, `surface-markers.ts`, `surface-cam-tour.ts` | Extracted from SurfaceScene's `onMount` closure: 3D raycast picking + click dispatch, the flat 2D map (lunar discs / equirectangular) + its click handler, traverse rebuild, site + orbiter marker rebuild, audio-tour camera demos. Each takes a context object (`get*` getters for reactive/reassigned state, shared arrays by reference) |
 | `debug-info.ts`, `status-tone.ts` | Shared debug overlay shape + factory; site status badge mapping |
 | `README.md` | This file — the contract |
 

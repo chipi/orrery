@@ -63,7 +63,7 @@ The eleven primary nav destinations:
 | `/plan` | Mission Configurator (Earth → 9 destinations, LANDING/FLYBY) | `src/routes/plan/+page.svelte` |
 | `/fly` | Mission Arc (heliocentric + cislunar Earth-centered scenes) | `src/routes/fly/+page.svelte` |
 | `/missions` | Mission Catalog | `src/routes/missions/+page.svelte` |
-| `/earth` | Hybrid scene — default orbital mode (ISS, Tiangong, satellites, LEO/MEO/GEO regime rings, atmosphere shell, ozone overlay) + surface mode (`?mode=surface`) with 14 launchpad markers via shared `SurfaceScene` per ADR-072. Mode toggle top-center. | `src/routes/earth/+page.svelte` (router) + `src/routes/earth/EarthOrbitalScene.svelte` (bespoke orbital scene) |
+| `/earth` | One unified `SurfaceScene` (#290, ADR-072): launchpads, museums and observatories as surface layers plus the orbital stack (ISS, Tiangong, satellites, LEO/MEO/GEO regime rings, atmosphere, ozone, moon ghost) as layer chips. `?mode=surface` is kept for old links and no longer changes rendering. | `src/routes/earth/+page.svelte` + `src/routes/earth/earth-launch-sites-config.ts` (the `SurfaceSceneConfig` preset) |
 | `/moon` | Lunar surface map — rectangular hotspot regions (ADR-061), per-mission lander glyphs, lunar orbiters, tidal-lock overlay, sphere → flat-patch view at deep zoom (ADR-062) | `src/routes/moon/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
 | `/mars` | Martian surface map — rectangular hotspot regions, per-mission lander glyphs, rover traverses with curated stops, atmosphere shell, 25.19° axial tilt, sphere → flat-patch view at deep zoom | `src/routes/mars/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
 | `/iss` | ISS Explorer (18 pickable modules + visiting spacecraft) | `src/routes/iss/+page.svelte` |
@@ -451,7 +451,7 @@ The image sourcing + dedup + attribution pipeline has four parts that have to st
 | `tiangong-modules/` | (none — `buildTiangongEntries` walks disk + uses `WIKIMEDIA_TIANGONG_*` constants) |
 | `rockets/`, `science/` | (none — credits-grouping path prefixes only; not gallery-loaded) |
 
-**Routing a file to the wrong sidecar produces a duplicate manifest entry** because two code paths in `scripts/build-image-provenance.ts` cover the same file. June 2026 example: `scripts/backfill-sidecar-from-report.ts` routed `iss-modules/unity/0X.jpg` to `panel-image-sources.json` AND `buildIssEntries` walked it from disk → two entries → `validate-data` failed with `duplicate manifest entry`. Backfill now refuses to route iss-modules/tiangong-modules.
+**Routing a file to the wrong sidecar produces a duplicate manifest entry** because two code paths in `scripts/build-image-provenance.ts` cover the same file. June 2026 example: `scripts/backfill-sidecar-from-report.ts` (deleted 2026-06-29) routed `iss-modules/unity/0X.jpg` to `panel-image-sources.json` AND `buildIssEntries` walked it from disk → two entries → `validate-data` failed with `duplicate manifest entry`. Backfill now refuses to route iss-modules/tiangong-modules.
 
 **Cache-staleness after slot rename.** `static/data/image-phashes.json` is the on-disk pHash cache, keyed by URL path. Renaming `unity/03.jpg → unity/02.jpg` does NOT update the cache key — the cache still says `/images/iss-modules/unity/03.jpg → <old hash>`. Any subsequent fill-script run loads that stale cache into its localCache for the entity and lets near-duplicate candidates through the source-time pHash guard. **Always run `npx tsx scripts/compute-phash.ts --force` between `delete-intra-entity-dupes` and any fill script.** Round 1 of D shipped 26 residual dupes because this step was missed.
 
@@ -631,7 +631,7 @@ Issue [#341](https://github.com/chipi/orrery/issues/341) (13 missions) is closed
 Per-body steps (numbered to match TA.md §body-wiring):
 
 1. **Orbital data** → `static/data/small-bodies.json` entry
-2. **`DestinationId`** widening → `src/lib/lambert-grid.constants.ts`
+2. **`DestinationId`** widening → `src/lib/physics/transfer/lambert-grid.constants.ts`
 3. **`PLANET_SIZES`** → `src/lib/orbital/find-flyby-planet.ts`
 4. **Label parser** (`findFlybyPlanetFromLabel` + `findClosestPlanetToShip`) → same file. Add a synonym branch for ambiguous data labels (e.g. "Churyumov" → '67p')
 5. **`PlanetId` union + `PLANET_COMPOSITION`** → `src/lib/orbital/flyby-camera-plan.ts`
@@ -674,7 +674,7 @@ return window.__flyCislunarDebug();
 
 ## Testing rules
 
-**Unit tests** (Vitest, colocated): every function in `src/lib/orbital.ts` must have tests. Physics functions are the highest-priority testing surface.
+**Unit tests** (Vitest, colocated): every exported function under `src/lib/orbital/` and `src/lib/physics/` must have tests. Physics functions are the highest-priority testing surface.
 
 ```typescript
 // src/lib/orbital.test.ts

@@ -305,7 +305,7 @@ export const entryCorridor: FormulaDef<{
       max: 100000,
     },
     {
-      key: 'surfaceGravityMs2',
+      key: 'surfaceGravityMs2', // gitleaks:allow (field name, not a secret)
       labelKey: 'lab.f.corridor.gravity',
       units: 'm/s2', // the closed Unit union's spelling (util/units.ts)
       kind: 'number',

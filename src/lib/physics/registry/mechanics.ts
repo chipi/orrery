@@ -17,7 +17,7 @@ export const tsiolkovsky: FormulaDef<{ ispS: number; m0Kg: number; mfKg: number 
   domain: 'ascent',
   tier: 4,
   prereqs: [],
-  citationKey: 'propulsion/tsiolkovsky',
+  citationKey: 'propulsion/tsiolkovsky', // gitleaks:allow (citation id, not a secret)
   learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/rocket/rktpow.html', source: 'nasa-glenn' },
   latex: '\\Delta v = I_{sp}\\,g_0\\ln\\dfrac{m_0}{m_f}',
   inputs: [

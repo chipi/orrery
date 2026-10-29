@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { clickViaEvaluate } from './_helpers/click-via-evaluate';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * SurfaceFlatPatch — sphere → flat ground-patch transition view
@@ -111,13 +112,12 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition (desktop)',
   test('no console errors during sphere → flat-patch → back flow', async ({ page }) => {
     const errors: string[] = [];
     page.on('console', (msg) => {
-      if (msg.type() === 'error') {
-        const txt = msg.text();
-        // i18n overlay 404s are intentional fallback noise per the i18n
-        // overlay loader contract (#83 / ADR-069).
-        if (/\/data\/i18n\//.test(txt)) return;
-        errors.push(txt);
-      }
+      // Shared filter: it matches 404s on location().url — Chrome's
+      // "Failed to load resource" text carries no URL, so the old text-only
+      // i18n filter here could never match (runs 39593426169, 39608387925).
+      if (msg.type() !== 'error' || isExpectedNoise(msg)) return;
+      const url = msg.location().url;
+      errors.push(url ? `${msg.text()} [${url}]` : msg.text());
     });
     await page.goto('/mars?site=curiosity');
     await zoomIntoSurface(page);

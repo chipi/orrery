@@ -44,31 +44,9 @@ jobs:
       # eslint plugin ReDoS) are tracked separately and would otherwise
       # block unrelated work. GH #265.
       #
-      # Allowlisted advisories (re-evaluate when upstream ships a fix):
-      #
-      #   GHSA-gv7w-rqvm-qjhr — esbuild Deno-module binary integrity
-      #     bypass via NPM_CONFIG_REGISTRY. Affects the Deno path only;
-      #     orrery is a Node.js/Vite project (no Deno bundler use).
-      #     Upstream fix is in esbuild 0.28.1+, but vite 5/6/7 pin
-      #     esbuild 0.21-0.27 (newer break the chrome87 build target).
-      #     Will lift the allowlist when vite ships with esbuild 0.28+.
-      #
-      #   GHSA-fx2h-pf6j-xcff — vite server.fs.deny bypass on Windows
-      #     alternate paths. Patched range is `>6.4.2`, so vite 5.x is
-      #     not patched and a major bump (5 → 6) breaks SvelteKit 2.61.
-      #     Risk surface: dev-server only AND Windows-only. orrery is
-      #     a Mac/Linux project building a static SPA — no dev server
-      #     in production, no Windows hosts in our pipeline. Re-evaluate
-      #     when SvelteKit ships a vite ≥6.4.3 compatible release.
-      #
-      #   GHSA-2v37-7h3g-55p8 — nanoid <3.3.17 can loop indefinitely when
-      #     a custom alphabet is combined with size 0. Reaches us only as
-      #     a build-time transitive (@sentry/sveltekit → vite → postcss →
-      #     nanoid), where postcss generates source-map/module IDs with a
-      #     fixed non-zero size — never attacker-controlled and never
-      #     shipped to the static client. Fix is nanoid ≥3.3.17 (in
-      #     postcss's ^3.3.12 range); lift this when postcss/vite bump the
-      #     pinned nanoid (Dependabot PR already open).
+      # Allowlisted advisories: none. To add one, put its GHSA id in
+      # ALLOWLIST below with the reason it cannot reach users and the
+      # upstream release that lets it be lifted.
       - name: npm audit (high+critical, prod deps only)
         run: |
           set -o pipefail
@@ -81,7 +59,7 @@ jobs:
           d=json.loads(sys.stdin.read() or '{}')
           # NOTE: keep this block ASCII with NO backticks - it lives inside a
           # bash double-quoted string, so backticks would run as a subshell.
-          ALLOWLIST={'GHSA-gv7w-rqvm-qjhr', 'GHSA-fx2h-pf6j-xcff', 'GHSA-2v37-7h3g-55p8'}
+          ALLOWLIST=set()
           bad=[]
           for name, info in d.get('vulnerabilities', {}).items():
               for via in info.get('via', []):

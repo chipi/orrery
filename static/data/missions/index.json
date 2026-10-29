@@ -424,7 +424,7 @@
     "agency": "Blue Origin",
     "dest": "MOON",
     "status": "PLANNED",
-    "year": 2025,
+    "year": 2027,
     "sector": "private",
     "color": "#00264D",
     "crewed": false
@@ -1063,7 +1063,7 @@
     "id": "akatsuki",
     "agency": "JAXA",
     "dest": "VENUS",
-    "status": "ACTIVE",
+    "status": "FLOWN",
     "year": 2010,
     "sector": "gov",
     "color": "#003087",

@@ -912,14 +912,21 @@ validateFile(join(DATA_ROOT, 'missions/index.json'), validateMissionIndex);
 const missionDataDirs = listMissionDataDirs();
 const missionIds = new Set<string>();
 const missionFleetRefs = new Map<string, FleetRef[]>();
+const missionFileFacts = new Map<string, { file: string; status?: string; year?: number }>();
 for (const dest of missionDataDirs) {
   for (const file of listJson(join(DATA_ROOT, 'missions', dest))) {
     validateFile(file, validateMission);
     checkCislunarWaypoints(file);
     checkInterplanetaryWaypoints(file);
     try {
-      const mission = readJson(file) as { id: string; fleet_refs?: FleetRef[] };
+      const mission = readJson(file) as {
+        id: string;
+        status?: string;
+        year?: number;
+        fleet_refs?: FleetRef[];
+      };
       missionIds.add(mission.id);
+      missionFileFacts.set(mission.id, { file, status: mission.status, year: mission.year });
       if (mission.fleet_refs && mission.fleet_refs.length > 0) {
         missionFleetRefs.set(mission.id, mission.fleet_refs);
       }
@@ -927,6 +934,33 @@ for (const dest of missionDataDirs) {
       // schema validation already reported the parse error
     }
   }
+}
+
+// Mission index ↔ mission file: the catalogue cards read status and year from
+// index.json, the mission panel from the mission file. They drifted unseen
+// (akatsuki ACTIVE vs FLOWN, blue-moon-mk1 2025 vs 2027), so they must agree.
+try {
+  const index = readJson(join(DATA_ROOT, 'missions/index.json')) as Array<{
+    id: string;
+    status?: string;
+    year?: number;
+  }>;
+  for (const entry of index) {
+    const facts = missionFileFacts.get(entry.id);
+    if (!facts) continue; // a missing mission file is reported by its own check
+    const diffs: string[] = [];
+    if (facts.status !== undefined && entry.status !== facts.status)
+      diffs.push(`status ${entry.status} in index.json, ${facts.status} in the mission file`);
+    if (facts.year !== undefined && entry.year !== facts.year)
+      diffs.push(`year ${entry.year} in index.json, ${facts.year} in the mission file`);
+    if (diffs.length) {
+      failed++;
+      console.error(`\n  ✗ missions/index.json — ${entry.id}`);
+      for (const d of diffs) console.error(`      ${d} (${facts.file})`);
+    }
+  }
+} catch {
+  // index parse error already reported by validateFile above
 }
 
 // PRD-012 v0.2 / RFC-016 v0.2 OQ-2 — fleet ↔ missions BIDIRECTIONAL

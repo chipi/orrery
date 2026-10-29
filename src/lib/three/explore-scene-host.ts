@@ -23,7 +23,7 @@ import { contextLevel, isValidShellTarget } from '$lib/explore/scale-shell-contr
 import { describeDistanceAu, niceScaleBar, AU_PER_PC } from '$lib/universe/scale-readout';
 import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
 import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
-import { PLANETS } from '$lib/explore-scene';
+import { PLANETS, realStartAngle } from '$lib/explore-scene';
 import { auToPx } from '$lib/scale';
 import { gyro } from '$lib/sensory/device-orientation';
 import { cue } from '$lib/sensory/feedback';
@@ -3733,26 +3733,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // the eccentric ones, consistent with the stylized orrery). simT=0
   // stays "today"; small bodies / starfield are untouched. Reverting
   // this whole block falls back to Layer 2-B's decorative angles.
-  {
-    const J2000_MS = Date.UTC(2000, 0, 1, 12);
-    const MEAN_LON_J2000_DEG: Record<string, number> = {
-      mercury: 252.25,
-      venus: 181.98,
-      earth: 100.46,
-      mars: 355.43,
-      jupiter: 34.4,
-      saturn: 49.94,
-      uranus: 313.23,
-      neptune: 304.88,
-      pluto: 238.93,
-    };
-    const yrSinceJ2000 = (simEpochMs - J2000_MS) / (DAYS_PER_YEAR * 86_400_000);
-    for (const p of PLANETS) {
-      const L0 = MEAN_LON_J2000_DEG[p.id];
-      if (L0 === undefined) continue;
-      const deg = (((L0 + (360 * yrSinceJ2000) / p.period) % 360) + 360) % 360;
-      p.a0 = deg * (Math.PI / 180);
-    }
+  for (const p of PLANETS) {
+    const angle = realStartAngle(p.id, p.period, simEpochMs, DAYS_PER_YEAR);
+    if (angle !== undefined) p.a0 = angle;
   }
   let lastSimDayIndex = Number.NaN;
   let lastDateLocale = '';

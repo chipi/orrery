@@ -381,6 +381,23 @@ const MEAN_LON_J2000_DEG: Record<string, number> = {
 const DAYS_PER_YEAR = 365.25;
 const J2000_MS = Date.UTC(2000, 0, 1, 12);
 
+/** A planet's real heliocentric ecliptic longitude at `epochMs`, in radians:
+ *  J2000 mean longitude plus mean motion (circular two-body, a few degrees off
+ *  for the eccentric ones). Undefined for bodies without a J2000 entry. Shared
+ *  by /explore (explore-scene-host) and the AR sky (setInitialSimT). */
+export function realStartAngle(
+  planetId: string,
+  periodYears: number,
+  epochMs: number,
+  daysPerYear = DAYS_PER_YEAR,
+): number | undefined {
+  const L0 = MEAN_LON_J2000_DEG[planetId];
+  if (L0 === undefined) return undefined;
+  const yrSinceJ2000 = (epochMs - J2000_MS) / (daysPerYear * 86_400_000);
+  const deg = (((L0 + (360 * yrSinceJ2000) / periodYears) % 360) + 360) % 360;
+  return deg * (Math.PI / 180);
+}
+
 // ─── Public API types ────────────────────────────────────────────────────────
 
 export interface SolarSystemOptions {
@@ -422,7 +439,7 @@ export interface SolarSystem {
    * Pass the route's J2000-derived simT (which is 0 for "today").
    * AR can pass 0 to use today's sky positions, or any offset.
    */
-  setInitialSimT(simT: number): void;
+  setInitialSimT(simT: number, epochMs?: number): void;
   /** Dispose all geometries, materials, and textures created by this module. */
   dispose(): void;
 }
@@ -708,20 +725,12 @@ export function buildSolarSystem(opts: SolarSystemOptions): SolarSystem {
 
   const DAYS_PER_YEAR_LOCAL = DAYS_PER_YEAR; // local alias for closure
 
-  function setInitialSimT(simT: number): void {
+  function setInitialSimT(simT: number, epochMs = Date.now()): void {
     // Anchor planet start-angles to the real sky at the given simT offset.
-    // Same math as the route's Layer 2-A block:
-    //   deg = (L0 + 360 * yrSinceJ2000 / period) mod 360
-    // where yrSinceJ2000 = (epochMs + simT*msPerYear - J2000_MS) / msPerYear.
-    const epochMs = Date.now();
-    const yrSinceJ2000 =
-      (epochMs + simT * DAYS_PER_YEAR_LOCAL * 86_400_000 - J2000_MS) /
-      (DAYS_PER_YEAR_LOCAL * 86_400_000);
+    const at = epochMs + simT * DAYS_PER_YEAR_LOCAL * 86_400_000;
     for (const p of PLANETS) {
-      const L0 = MEAN_LON_J2000_DEG[p.id];
-      if (L0 === undefined) continue;
-      const deg = (((L0 + (360 * yrSinceJ2000) / p.period) % 360) + 360) % 360;
-      a0[p.id] = deg * (Math.PI / 180);
+      const angle = realStartAngle(p.id, p.period, at, DAYS_PER_YEAR_LOCAL);
+      if (angle !== undefined) a0[p.id] = angle;
     }
   }
 

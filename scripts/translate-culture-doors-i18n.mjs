@@ -1,14 +1,13 @@
 /**
  * Culture-door blurb translator (/explore v2 Slice 3).
  *
- * Each en-US overlay in `i18n-src/en-US/universe/named-stars/<id>.json` has the
- * shape { fact, bio, cultural, links:[{l,u,t}], photo?:{src,kind} }. Only the
- * three prose fields are translatable; `links`, `photo`, and every url/tier are
- * preserved verbatim. Structure is reassembled in code so nothing else drifts.
+ * Each en-US overlay in `i18n-src/en-US/culture-doors/<id>.json` has the shape
+ * { blurb }. The blurb is translated; anything else is preserved verbatim.
+ * Structure is reassembled in code so nothing else drifts.
  *
  * Re-runs are safe: existing non-empty locale files are skipped.
  *
- * Run: set -a; source .env; set +a; node scripts/translate-named-stars-i18n.mjs [--only=<id>] [--locales=de,fr]
+ * Run: set -a; source .env; set +a; node scripts/translate-culture-doors-i18n.mjs [--only=<id>] [--locales=de,fr]
  */
 import fs from 'node:fs';
 import path from 'node:path';

@@ -2,7 +2,10 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    # e2e/** and tech-debt/** opt a branch into CI before it reaches main
+    # (docker-e2e and mobile-e2e opt the same branches in with their own push
+    # triggers). GHCR pushes stay main-only (the image jobs' ref guards).
+    branches: [main, 'e2e/**', 'tech-debt/**']
   pull_request:
     branches: [main]
 

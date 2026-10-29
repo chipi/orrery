@@ -19,6 +19,9 @@ on:
     workflows: ['CI']
     types: [completed]
     branches: [main]
+  # Opt-in branches (same list as ci.yml / docker-e2e.yml), on push.
+  push:
+    branches: ['e2e/**', 'tech-debt/**']
   workflow_dispatch:
 
 concurrency:

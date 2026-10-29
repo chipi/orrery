@@ -29,6 +29,12 @@ on:
     workflows: ['CI']
     types: [completed]
     branches: [main]
+  # Opt-in branches run e2e on push, in parallel with their CI. Not via
+  # workflow_run: a workflow_run-triggered run is recorded against main's head,
+  # so staging.yml (workflow_run of this, branches: [main]) would accept it and
+  # deploy main on a branch's result. A push run carries its own branch.
+  push:
+    branches: ['e2e/**', 'tech-debt/**']
   workflow_dispatch:
   schedule:
     - cron: '7 5 * * *'

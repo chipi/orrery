@@ -56,7 +56,36 @@ permissions:
   contents: read
 
 jobs:
+  # The daily cron exists for external drift, but it re-ran the full 8-leg
+  # matrix on a sha a push run had passed minutes earlier (40678458529 vs
+  # 40674410743, both on 1c1fdf9). Skip the cron when this sha already has
+  # a green run in the last 6 h. Fails open: any lookup error runs the suite.
+  cron-gate:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: read
+    outputs:
+      skip: ${{ steps.check.outputs.skip }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.sha }}
+        run: |
+          since=$(date -u -d '-6 hours' +%Y-%m-%dT%H:%M:%SZ)
+          n=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/docker-e2e.yml/runs?head_sha=$SHA&status=success&created=>$since" --jq '.total_count' 2>/dev/null) || n=0
+          case "$n" in ''|*[!0-9]*) echo "lookup failed (${n:0:80}); running the suite"; n=0 ;; esac
+          if [ "$n" -gt 0 ]; then
+            echo "sha $SHA already has $n green docker-e2e run(s) since $since; skipping the cron run"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
   docker-e2e:
+    needs: cron-gate
     # Matrix: desktop is sharded across 2 parallel legs, mobile across 4,
     # via Playwright's `--shard=N/M` (GH #277 / W7).
     #
@@ -151,14 +180,15 @@ jobs:
     # secrets. Only accept CI runs that were a push to this repository (#593 H1).
     if: >-
       ${{
-        github.event_name != 'workflow_run' ||
+        !cancelled() && needs.cron-gate.outputs.skip != 'true' &&
+        (github.event_name != 'workflow_run' ||
         (
           github.event.workflow_run.conclusion == 'success' &&
           github.event.workflow_run.event == 'push' &&
           github.event.workflow_run.head_repository.full_name == github.repository &&
           !startsWith(github.event.workflow_run.head_commit.message, 'chore(launches): refresh') &&
           !startsWith(github.event.workflow_run.head_commit.message, 'chore(visual): regenerate snapshot')
-        )
+        ))
       }}
     # 45 → 60: the launch/ascent+descent epic (2026-07) added a large batch of
     # /fly + surface 3D specs, pushing the heaviest shard (mobile-landscape 1-of-2:

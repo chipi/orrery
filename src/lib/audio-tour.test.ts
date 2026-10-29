@@ -335,6 +335,12 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
     const raw = SOURCE_FILES.map((p) => readFileSync(join(process.cwd(), p), 'utf-8')).join('\n');
     // StationRoute.svelte templates its anchors over the station id.
     const haystack = ['iss', 'tiangong'].map((id) => raw.replaceAll('{config.id}', id)).join('\n');
+    // Panel tab rows declare their anchors as PanelTabRow `audioStage: '<name>'`
+    // props; they count only while PanelTabRow renders them as data-audio-stage.
+    const tabRowEmitsAnchor = readFileSync(
+      join(process.cwd(), 'src/lib/components/PanelTabRow.svelte'),
+      'utf-8',
+    ).includes('data-audio-stage={tab.audioStage}');
     const missing: string[] = [];
     for (const id of STAGED_EPISODES) {
       for (const stage of stagesForEpisode(id)) {
@@ -342,7 +348,9 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
         const match = stage.target.match(/data-audio-stage="([^"]+)"/);
         if (!match) continue;
         const name = match[1];
-        const literalPresent = haystack.includes(`data-audio-stage="${name}"`);
+        const literalPresent =
+          haystack.includes(`data-audio-stage="${name}"`) ||
+          (tabRowEmitsAnchor && haystack.includes(`audioStage: '${name}'`));
         const templatedPresent = TEMPLATED_PREFIXES.some(
           (prefix) => name.startsWith(prefix) && haystack.includes(`data-audio-stage="${prefix}`),
         );

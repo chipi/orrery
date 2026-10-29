@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
@@ -395,50 +396,28 @@
          the user's first follow-on after the overview (2026-06-17 user
          direction: "on fly details, can we get missions tab to be
          second when available"). -->
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        data-audio-stage="fleet-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}>OVERVIEW</button
-      >
-      {#if hasMissions || hasFlights}
-        <!-- MISSIONS + CREW merged (user direction): crewed vehicles show
-             their flights + crew rosters under "CREW"; everything else shows
-             the linked-mission list under "MISSIONS". Hidden when neither. -->
-        <button
-          type="button"
-          data-audio-stage="fleet-tab-missions"
-          class:active={tab === 'missions'}
-          onclick={() => (tab = 'missions')}
-          role="tab"
-          aria-selected={tab === 'missions'}>{hasFlights ? 'CREW' : 'MISSIONS'}</button
-        >
-      {/if}
-      {#if hasGallery || hasVideos}
-        <button
-          type="button"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}>GALLERY</button
-        >
-      {/if}
-      {#if hasDiagram || cutawayPath || hasLinks}
-        <!-- ANATOMY + LEARN merged (user direction) to keep the tab row from
-             overflowing. Shows the diagram (if any) then the tiered links. -->
-        <button
-          type="button"
-          data-audio-stage="fleet-tab-anatomy"
-          class:active={tab === 'anatomy'}
-          onclick={() => (tab = 'anatomy')}
-          role="tab"
-          aria-selected={tab === 'anatomy'}>DETAIL</button
-        >
-      {/if}
-    </div>
+    <!-- MISSIONS + CREW merged (user direction): crewed vehicles show their flights + crew rosters under "CREW"; everything else shows the linked-mission list under "MISSIONS". Hidden when neither. -->
+    <!-- ANATOMY + LEARN merged (user direction) to keep the tab row from overflowing. Shows the diagram (if any) then the tiered links. -->
+    <PanelTabRow
+      rowClass="tabs fleet-tabs"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview(), audioStage: 'fleet-tab-overview' },
+        {
+          id: 'missions',
+          label: hasFlights ? m.panel_tab_crew() : m.panel_tab_missions(),
+          visible: hasMissions || hasFlights,
+          audioStage: 'fleet-tab-missions',
+        },
+        { id: 'gallery', label: m.panel_tab_gallery(), visible: hasGallery || hasVideos },
+        {
+          id: 'anatomy',
+          label: m.panel_tab_detail(),
+          visible: hasDiagram || !!cutawayPath || hasLinks,
+          audioStage: 'fleet-tab-anatomy',
+        },
+      ]}
+      bind:active={tab}
+    />
 
     <div class="tab-body">
       {#if tab === 'overview'}
@@ -480,7 +459,7 @@
                   <MissionOrbitIcon />
                 </span>
                 <span class="spec-text">
-                  <span class="spec-label">MISSION</span>
+                  <span class="spec-label">{m.fleet_mission_cta_label()}</span>
                   <span class="spec-value">{missionIds[0]}</span>
                 </span>
               </a>
@@ -497,8 +476,10 @@
                   <MissionOrbitIcon />
                 </span>
                 <span class="spec-text">
-                  <span class="spec-label">MISSIONS</span>
-                  <span class="spec-value">{missionIds.length} missions →</span>
+                  <span class="spec-label">{m.panel_tab_missions()}</span>
+                  <span class="spec-value"
+                    >{m.fleet_missions_count({ count: missionIds.length })}</span
+                  >
                 </span>
               </button>
             </div>
@@ -671,7 +652,7 @@
               type="button"
               class="anatomy-open"
               onclick={() => (lightboxSrc = diagramPath)}
-              aria-label="Open {entry.name} anatomy full-size"
+              aria-label={m.fleet_anatomy_open_aria({ name: entry.name })}
             >
               {#if diagramLadder}
                 <img
@@ -700,7 +681,7 @@
               type="button"
               class="anatomy-open"
               onclick={() => (lightboxSrc = cutawayPath)}
-              aria-label="Open {entry.name} exploded cutaway full-size"
+              aria-label={m.fleet_cutaway_open_aria({ name: entry.name })}
             >
               {#if cutawayLadder}
                 <img
@@ -967,7 +948,7 @@
   /* Tab base styles inherited from src/lib/styles/panel-tabs.css —
      matches the rest of the detail-panel family. Fleet keeps its
      teal accent on the active-tab indicator as a category cue. */
-  .tabs button.active {
+  :global(.tabs.fleet-tabs button.active) {
     color: #4ecdc4;
     border-bottom-color: #4ecdc4;
   }

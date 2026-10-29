@@ -2,6 +2,7 @@
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { page } from '$app/state';
+  import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
@@ -183,48 +184,16 @@
       />
     {/if}
 
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="sbp-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="sbp-tabpanel">{m.panel_tab_overview()}</button
-      >
-      {#if gallery.length > 0}
-        <button
-          type="button"
-          id="sbp-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="sbp-tabpanel">{m.panel_tab_gallery()}</button
-        >
-      {/if}
-      <button
-        type="button"
-        id="sbp-tab-technical"
-        class:active={tab === 'technical'}
-        onclick={() => (tab = 'technical')}
-        role="tab"
-        aria-selected={tab === 'technical'}
-        aria-controls="sbp-tabpanel">{m.panel_tab_technical()}</button
-      >
-      {#if missionEntries.length > 0}
-        <button
-          type="button"
-          id="sbp-tab-missions"
-          class:active={tab === 'missions'}
-          onclick={() => (tab = 'missions')}
-          role="tab"
-          aria-selected={tab === 'missions'}
-          aria-controls="sbp-tabpanel">MISSIONS</button
-        >
-      {/if}
-    </div>
+    <PanelTabRow
+      idPrefix="sbp"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview() },
+        { id: 'gallery', label: m.panel_tab_gallery(), visible: gallery.length > 0 },
+        { id: 'technical', label: m.panel_tab_technical() },
+        { id: 'missions', label: m.panel_tab_missions(), visible: missionEntries.length > 0 },
+      ]}
+      bind:active={tab}
+    />
 
     <div class="tab-content" role="tabpanel" id="sbp-tabpanel" aria-labelledby="sbp-tab-{tab}">
       {#if tab === 'overview'}
@@ -238,7 +207,7 @@
         {/if}
         {#if scienceSections.length > 0}
           <div class="science-section">
-            <h3 class="library-heading">SCIENCE</h3>
+            <h3 class="library-heading">{m.panel_tab_science()}</h3>
             {#each scienceSections as sec (sec.tab + sec.section)}
               <ScienceCard tab={sec.tab as ScienceTabId} section={sec.section} why={sec.why} />
             {/each}

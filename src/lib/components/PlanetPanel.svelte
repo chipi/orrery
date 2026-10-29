@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
@@ -178,49 +179,20 @@
       />
     {/if}
 
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="pp-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="pp-tabpanel">{m.panel_tab_overview()}</button
-      >
-      {#if gallery.length > 0}
-        <button
-          type="button"
-          id="pp-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="pp-tabpanel">{m.panel_tab_gallery()}</button
-        >
-      {/if}
-      <button
-        type="button"
-        id="pp-tab-technical"
-        data-audio-stage="planet-tab-technical"
-        class:active={tab === 'technical'}
-        onclick={() => (tab = 'technical')}
-        role="tab"
-        aria-selected={tab === 'technical'}
-        aria-controls="pp-tabpanel">{m.panel_tab_technical()}</button
-      >
-      {#if (planet.mission_visits ?? []).length > 0}
-        <button
-          type="button"
-          id="pp-tab-missions"
-          class:active={tab === 'missions'}
-          onclick={() => (tab = 'missions')}
-          role="tab"
-          aria-selected={tab === 'missions'}
-          aria-controls="pp-tabpanel">MISSIONS</button
-        >
-      {/if}
-    </div>
+    <PanelTabRow
+      idPrefix="pp"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview() },
+        { id: 'gallery', label: m.panel_tab_gallery(), visible: gallery.length > 0 },
+        { id: 'technical', label: m.panel_tab_technical(), audioStage: 'planet-tab-technical' },
+        {
+          id: 'missions',
+          label: m.panel_tab_missions(),
+          visible: (planet.mission_visits ?? []).length > 0,
+        },
+      ]}
+      bind:active={tab}
+    />
 
     <div class="tab-content" role="tabpanel" id="pp-tabpanel" aria-labelledby="pp-tab-{tab}">
       {#if tab === 'overview'}

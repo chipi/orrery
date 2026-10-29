@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
@@ -104,54 +105,31 @@
       <PanelHeroImage src={gallery[0]} name={mod.name} onOpen={() => (lightboxSrc = gallery[0]!)} />
     {/if}
 
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="station-tab-overview"
-        data-audio-stage="station-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="station-tabpanel">{m.panel_tab_overview()}</button
-      >
-      {#if gallery.length > 0}
-        <button
-          type="button"
-          id="station-tab-gallery"
-          data-audio-stage="station-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="station-tabpanel">{m.panel_tab_gallery()}</button
-        >
-      {/if}
-      {#if hasDiagram}
-        <button
-          type="button"
-          id="station-tab-anatomy"
-          data-audio-stage="station-tab-anatomy"
-          class:active={tab === 'anatomy'}
-          onclick={() => (tab = 'anatomy')}
-          role="tab"
-          aria-selected={tab === 'anatomy'}
-          aria-controls="station-tabpanel">ANATOMY</button
-        >
-      {/if}
-      {#if hasLinks}
-        <button
-          type="button"
-          id="station-tab-learn"
-          data-audio-stage="station-tab-learn"
-          class:active={tab === 'learn'}
-          onclick={() => (tab = 'learn')}
-          role="tab"
-          aria-selected={tab === 'learn'}
-          aria-controls="station-tabpanel">{m.panel_tab_learn()}</button
-        >
-      {/if}
-    </div>
+    <PanelTabRow
+      idPrefix="station"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview(), audioStage: 'station-tab-overview' },
+        {
+          id: 'gallery',
+          label: m.panel_tab_gallery(),
+          visible: gallery.length > 0,
+          audioStage: 'station-tab-gallery',
+        },
+        {
+          id: 'anatomy',
+          label: m.panel_tab_anatomy(),
+          visible: hasDiagram,
+          audioStage: 'station-tab-anatomy',
+        },
+        {
+          id: 'learn',
+          label: m.panel_tab_learn(),
+          visible: hasLinks,
+          audioStage: 'station-tab-learn',
+        },
+      ]}
+      bind:active={tab}
+    />
 
     <div
       class="tab-content"

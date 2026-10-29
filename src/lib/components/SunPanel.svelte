@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
@@ -101,48 +102,21 @@
       <PanelHeroImage src={gallery[0]} name={sun.name} onOpen={() => (lightboxSrc = gallery[0]!)} />
     {/if}
 
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="sp-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="sp-tabpanel">{m.panel_tab_overview()}</button
-      >
-      {#if gallery.length > 0}
-        <button
-          type="button"
-          id="sp-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="sp-tabpanel">{m.panel_tab_gallery()}</button
-        >
-      {/if}
-      <button
-        type="button"
-        id="sp-tab-technical"
-        class:active={tab === 'technical'}
-        onclick={() => (tab = 'technical')}
-        role="tab"
-        aria-selected={tab === 'technical'}
-        aria-controls="sp-tabpanel">{m.panel_tab_technical()}</button
-      >
-      {#if (sun.mission_visits ?? []).length > 0}
-        <button
-          type="button"
-          id="sp-tab-missions"
-          class:active={tab === 'missions'}
-          onclick={() => (tab = 'missions')}
-          role="tab"
-          aria-selected={tab === 'missions'}
-          aria-controls="sp-tabpanel">MISSIONS</button
-        >
-      {/if}
-    </div>
+    <PanelTabRow
+      rowClass="tabs sun-tabs"
+      idPrefix="sp"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview() },
+        { id: 'gallery', label: m.panel_tab_gallery(), visible: gallery.length > 0 },
+        { id: 'technical', label: m.panel_tab_technical() },
+        {
+          id: 'missions',
+          label: m.panel_tab_missions(),
+          visible: (sun.mission_visits ?? []).length > 0,
+        },
+      ]}
+      bind:active={tab}
+    />
 
     <div class="tab-content" role="tabpanel" id="sp-tabpanel" aria-labelledby="sp-tab-{tab}">
       {#if tab === 'overview'}
@@ -150,7 +124,7 @@
         <p class="editorial">{sun.bio}</p>
         {#if (sun.science_sections ?? SUN_SCIENCE_SECTIONS).length > 0}
           <div class="science-section">
-            <h3 class="library-heading">SCIENCE</h3>
+            <h3 class="library-heading">{m.panel_tab_science()}</h3>
             {#each sun.science_sections ?? SUN_SCIENCE_SECTIONS as entry (entry.tab + entry.section)}
               <ScienceCard
                 tab={entry.tab as ScienceTabId}
@@ -359,7 +333,7 @@
 
   /* .tabs base styles in src/lib/styles/panel-tabs.css.
    * Sun overrides the active-tab border to its theme gold (#ffc850). */
-  .tabs button.active {
+  :global(.tabs.sun-tabs button.active) {
     border-bottom-color: #ffc850;
   }
 

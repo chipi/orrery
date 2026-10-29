@@ -13,6 +13,7 @@
    * Uranus + Neptune (16 total). Slice 6 wires the per-locale
    * overlay loader for translated content.
    */
+  import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import Panel from './Panel.svelte';
   import { page } from '$app/state';
@@ -141,46 +142,21 @@
       <PanelHeroImage src={assetUrl(gallery[0])} name={entry.name} />
     {/if}
 
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="sat-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="sat-tabpanel">{m.panel_tab_overview()}</button
-      >
-      <button
-        type="button"
-        id="sat-tab-gallery"
-        class:active={tab === 'gallery'}
-        onclick={() => (tab = 'gallery')}
-        role="tab"
-        aria-selected={tab === 'gallery'}
-        aria-controls="sat-tabpanel">{m.panel_tab_gallery()}</button
-      >
-      <button
-        type="button"
-        id="sat-tab-technical"
-        class:active={tab === 'technical'}
-        onclick={() => (tab = 'technical')}
-        role="tab"
-        aria-selected={tab === 'technical'}
-        aria-controls="sat-tabpanel">{m.panel_tab_technical()}</button
-      >
-      {#if (entry.mission_visits ?? []).length > 0}
-        <button
-          type="button"
-          id="sat-tab-missions"
-          class:active={tab === 'missions'}
-          onclick={() => (tab = 'missions')}
-          role="tab"
-          aria-selected={tab === 'missions'}
-          aria-controls="sat-tabpanel">MISSIONS</button
-        >
-      {/if}
-    </div>
+    <PanelTabRow
+      rowClass="tabs sat-tabs"
+      idPrefix="sat"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview() },
+        { id: 'gallery', label: m.panel_tab_gallery() },
+        { id: 'technical', label: m.panel_tab_technical() },
+        {
+          id: 'missions',
+          label: m.panel_tab_missions(),
+          visible: (entry.mission_visits ?? []).length > 0,
+        },
+      ]}
+      bind:active={tab}
+    />
 
     <div class="tab-content" role="tabpanel" id="sat-tabpanel" aria-labelledby="sat-tab-{tab}">
       {#if tab === 'overview'}
@@ -346,13 +322,13 @@
     font-size: 13px;
     color: var(--color-text);
   }
-  .tabs {
+  :global(.tabs.sat-tabs) {
     display: flex;
     gap: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     margin-bottom: 14px;
   }
-  .tabs button {
+  :global(.tabs.sat-tabs button) {
     background: transparent;
     border: 0;
     border-bottom: 2px solid transparent;
@@ -363,12 +339,12 @@
     padding: 8px 12px;
     cursor: pointer;
   }
-  .tabs button.active {
+  :global(.tabs.sat-tabs button.active) {
     color: #fff;
     border-bottom-color: #4466ff;
   }
-  .tabs button:hover:not(.active),
-  .tabs button:focus-visible {
+  :global(.tabs.sat-tabs button:hover:not(.active)),
+  :global(.tabs.sat-tabs button:focus-visible) {
     color: rgba(255, 255, 255, 0.8);
     outline: none;
   }

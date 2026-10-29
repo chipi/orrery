@@ -495,7 +495,7 @@
             <div class="lens-divider" aria-hidden="true"></div>
           {/if}
           <div class="foundations">
-            <div class="foundations-eyebrow">FOUNDATIONS</div>
+            <div class="foundations-eyebrow">{m.science_layers_foundations()}</div>
             <ul class="foundations-list">
               {#each historicalFoundations as ref (ref.section)}
                 <li>

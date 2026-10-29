@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
@@ -330,52 +331,26 @@
          after the overview (2026-06-17 user direction: "on mission
          details, can we get fly to be 2nd tab always for all missions
          in details template"). -->
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="mp-tab-overview"
-        data-audio-stage="mission-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="mp-tabpanel">{m.mp_tab_overview()}</button
-      >
-      {#if hasFlightData}
-        <button
-          type="button"
-          id="mp-tab-flight"
-          data-audio-stage="mission-tab-flight"
-          class:active={tab === 'flight'}
-          onclick={() => (tab = 'flight')}
-          role="tab"
-          aria-selected={tab === 'flight'}
-          aria-controls="mp-tabpanel">{m.mp_tab_flight()}</button
-        >
-      {/if}
-      {#if gallery.length > 0 || videos.length > 0}
-        <button
-          type="button"
-          id="mp-tab-gallery"
-          data-audio-stage="mission-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="mp-tabpanel">{m.mp_tab_gallery()}</button
-        >
-      {/if}
-      <button
-        type="button"
-        id="mp-tab-science"
-        data-audio-stage="mission-tab-science"
-        class:active={tab === 'science'}
-        onclick={() => (tab = 'science')}
-        role="tab"
-        aria-selected={tab === 'science'}
-        aria-controls="mp-tabpanel">SCIENCE</button
-      >
-    </div>
+    <PanelTabRow
+      idPrefix="mp"
+      tabs={[
+        { id: 'overview', label: m.mp_tab_overview(), audioStage: 'mission-tab-overview' },
+        {
+          id: 'flight',
+          label: m.mp_tab_flight(),
+          visible: hasFlightData,
+          audioStage: 'mission-tab-flight',
+        },
+        {
+          id: 'gallery',
+          label: m.mp_tab_gallery(),
+          visible: gallery.length > 0 || videos.length > 0,
+          audioStage: 'mission-tab-gallery',
+        },
+        { id: 'science', label: m.panel_tab_science(), audioStage: 'mission-tab-science' },
+      ]}
+      bind:active={tab}
+    />
 
     <div
       class="tab-content"

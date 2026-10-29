@@ -225,6 +225,7 @@ jobs:
             -e LAB_ISSUER=http://127.0.0.1:8093 \
             -e LAB_GOOGLE_CLIENT_ID=ci -e LAB_GOOGLE_CLIENT_SECRET=ci \
             -e LAB_CLAUDE_CLIENT_SECRET=ci-secret \
+            -e LITELLM_BASE_URL=http://127.0.0.1:4001 \
             -p 8093:8093 orrery-lab-api:ci
           for i in $(seq 1 20); do
             curl -sf http://127.0.0.1:8093/health >/dev/null && break

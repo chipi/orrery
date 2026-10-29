@@ -39,6 +39,12 @@ updates:
       # @sentry/capacitor, by hand.
       - dependency-name: '@sentry/node'
       - dependency-name: '@sentry/sveltekit'
+      # @sentry/vite-plugin 11 pulls @sentry/bundler-plugins -> sentry@^0.45
+      # (FSL-1.1-Apache-2.0), which the tech-BOM licence allowlist rejects
+      # (check-tech-bom fails the build). Taking it is an operator licence
+      # decision, not a version bump. 5.4.0 stays.
+      - dependency-name: '@sentry/vite-plugin'
+        versions: ['>=11']
       # @vite-pwa/sveltekit (latest 1.1.0, the service-worker plugin) peers
       # @sveltejs/kit ^1 || ^2, and adapter-static 4 needs kit 3 (PR #581 failed
       # npm ci). Lift both once a @vite-pwa/sveltekit release supports kit 3.

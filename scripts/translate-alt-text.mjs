@@ -39,23 +39,10 @@ import {
 } from './lib/translate-quality.mjs';
 import { translationModel, translationClient } from './lib/translate-model.mjs';
 import { nativeName } from '../src/lib/name-origins.js';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
 
 const ALT = 'static/data/image-alt-text';
-const LOCALES = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
+const LOCALES = TRANSLATED_LOCALES;
 const opt = (k, d) =>
   process.argv
     .find((a) => a.startsWith(`--${k}=`))

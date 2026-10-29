@@ -20,27 +20,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const MESSAGES_DIR = path.join(ROOT, 'messages');
 const OVERRIDES_PATH = path.join(ROOT, 'scripts/paraglide-key-overrides.json');
 const en = JSON.parse(fs.readFileSync(path.join(MESSAGES_DIR, 'en-US.json'), 'utf8'));
 
-const ALL = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
+const ALL = TRANSLATED_LOCALES;
 const NAMES = {
   ar: 'Modern Standard Arabic',
   de: 'German',

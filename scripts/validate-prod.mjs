@@ -39,6 +39,7 @@
 import { chromium } from '@playwright/test';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
 
 const BASE = (process.env.VALIDATE_URL ?? 'https://www.orrerylearn.com').replace(/\/$/, '');
 const TIER = process.env.VALIDATE_TIER ?? 'prod';
@@ -86,21 +87,7 @@ const DEEP_ROUTES = [
 // route sweep (below) checks EVERY top-level route in EVERY language: served +
 // the served page's <html lang> matches the locale (a home-fallback shows
 // lang="en-US" — the exact failure mode the PWA-shell + prerender bugs caused).
-const LOCALES = [
-  'es',
-  'fr',
-  'de',
-  'pt-BR',
-  'it',
-  'nl',
-  'sr-Cyrl',
-  'zh-CN',
-  'ja',
-  'ko',
-  'hi',
-  'ar',
-  'ru',
-];
+const LOCALES = TRANSLATED_LOCALES;
 // Localized URL for a base route (mirrors svelte.config.js expandLocalizedRoots).
 // Localized home is `/<locale>` (no trailing slash) — the app's prerendered URL
 // shape. A forced trailing slash 404s on GitHub Pages' strict static serving even

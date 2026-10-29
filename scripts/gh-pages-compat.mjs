@@ -1,3 +1,4 @@
+import { LOCALES } from './lib/locales.mjs';
 /**
  * GH Pages compatibility helpers.
  *
@@ -38,22 +39,7 @@
  */
 
 /** Mirror project.inlang/settings.json. */
-export const LOCALES = [
-  'en-US',
-  'es',
-  'fr',
-  'de',
-  'pt-BR',
-  'it',
-  'nl',
-  'sr-Cyrl',
-  'zh-CN',
-  'ja',
-  'ko',
-  'hi',
-  'ar',
-  'ru',
-];
+export { LOCALES };
 
 /**
  * Build the Paraglide `urlPatterns` config that's needed when running

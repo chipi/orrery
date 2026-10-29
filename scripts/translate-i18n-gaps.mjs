@@ -26,6 +26,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 // i18n overlay source moved out of static/ (ADR-079 D2 / #377).
@@ -60,21 +61,7 @@ for (const [surface, file] of Object.entries(SCHEMA_BY_SURFACE)) {
   VALIDATORS[surface] = _validatorCache[file];
 }
 
-const LOCALES = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
+const LOCALES = TRANSLATED_LOCALES;
 
 const NAMES = {
   ar: 'Modern Standard Arabic',

@@ -39,27 +39,14 @@ import {
   type ProvenanceRow,
   type LaunchEntryMinimal,
 } from './validate-data-helpers.js';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
 
 const DATA_ROOT = 'static/data';
 
 // i18n is core content (2026-07): every en-US overlay under i18n-src/ must have
 // a non-empty sibling in all 13 other locales. Returns one problem string per
 // missing/empty locale file. Parity with the hero-image zero-gap policy.
-const I18N_LOCALES_13 = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
+const I18N_LOCALES_13 = TRANSLATED_LOCALES;
 function overlayFileLocaleGaps(rel: string): string[] {
   const gaps: string[] = [];
   for (const loc of I18N_LOCALES_13) {

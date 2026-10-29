@@ -14,25 +14,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const EN = path.join(ROOT, 'i18n-src', 'en-US', 'universe', 'exoplanets');
 
-const ALL_LOCALES = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
+const ALL_LOCALES = TRANSLATED_LOCALES;
 const NAMES = {
   ar: 'Modern Standard Arabic',
   de: 'German',

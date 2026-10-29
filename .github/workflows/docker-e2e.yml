@@ -92,7 +92,9 @@ jobs:
 
   docker-e2e:
     needs: cron-gate
-    # Matrix: desktop is sharded across 2 parallel legs, mobile across 4,
+    # Matrix: desktop and mobile are sharded across 4 parallel legs each,
+    # mobile-landscape across 3 (desktop 2 → 4 and landscape 2 → 3 on
+    # 2026-10-29; history below),
     # via Playwright's `--shard=N/M` (GH #277 / W7).
     #
     # Sharding history:
@@ -137,12 +139,21 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # Desktop 2 → 4 shards (2026-10-29): the two desktop legs set the
+          # run's wall clock (Playwright 1897-1922 s each in 40674410743,
+          # legs 25-50 min) while mobile-chromium legs took 8-16 min.
           - project: desktop-chromium
-            shard: '1/2'
-            shard_id: '1-of-2'
+            shard: '1/4'
+            shard_id: '1-of-4'
           - project: desktop-chromium
-            shard: '2/2'
-            shard_id: '2-of-2'
+            shard: '2/4'
+            shard_id: '2-of-4'
+          - project: desktop-chromium
+            shard: '3/4'
+            shard_id: '3-of-4'
+          - project: desktop-chromium
+            shard: '4/4'
+            shard_id: '4-of-4'
           - project: mobile-chromium
             shard: '1/4'
             shard_id: '1-of-4'
@@ -159,12 +170,19 @@ jobs:
           # redesign — touch chrome / drawers, not the desktop HUD columns. 2
           # shards: the heavy /fly render-validation + explore-perf specs are
           # desktop-only (skipped here), so landscape's tail is short.
+          # 2 → 3 shards with desktop's split: 1-of-2 ran 1416 s (40674410743),
+          # the longest leg once desktop is at 4. Replaying that run's per-test
+          # times over the new splits: desktop max 17.9 min (was 31.7),
+          # landscape max 15.1 min (was 23.2).
           - project: mobile-landscape-chromium
-            shard: '1/2'
-            shard_id: '1-of-2'
+            shard: '1/3'
+            shard_id: '1-of-3'
           - project: mobile-landscape-chromium
-            shard: '2/2'
-            shard_id: '2-of-2'
+            shard: '2/3'
+            shard_id: '2-of-3'
+          - project: mobile-landscape-chromium
+            shard: '3/3'
+            shard_id: '3-of-3'
     name: docker-e2e (${{ matrix.project }} ${{ matrix.shard_id }})
     runs-on: ubuntu-latest
     # workflow_run fires on EVERY completion of the upstream workflow

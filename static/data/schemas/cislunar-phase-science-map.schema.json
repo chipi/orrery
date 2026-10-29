@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "cislunar-phase-science-map.schema.json",
+  "title": "Cislunar phase / flight-event → /science section map (ADR-058)",
+  "description": "First ref in each list is the primary chip.",
+  "type": "object",
+  "required": [
+    "phase_refs",
+    "event_refs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema_note": {
+      "type": "string"
+    },
+    "phase_refs": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": [
+            "tab",
+            "slug"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "tab": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "slug": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            }
+          }
+        }
+      }
+    },
+    "event_refs": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": [
+            "tab",
+            "slug"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "tab": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "slug": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

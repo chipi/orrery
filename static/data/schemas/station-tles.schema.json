@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "station-tles.schema.json",
+  "title": "Station two-line element sets (ISS, Tiangong)",
+  "type": "object",
+  "required": [
+    "iss",
+    "tiangong"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "iss": {
+      "type": "object",
+      "required": [
+        "name",
+        "line1",
+        "line2"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "line1": {
+          "type": "string",
+          "pattern": "^1 .{67}$",
+          "description": "69-column TLE line 1"
+        },
+        "line2": {
+          "type": "string",
+          "pattern": "^2 .{67}$",
+          "description": "69-column TLE line 2"
+        }
+      }
+    },
+    "tiangong": {
+      "type": "object",
+      "required": [
+        "name",
+        "line1",
+        "line2"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "line1": {
+          "type": "string",
+          "pattern": "^1 .{67}$",
+          "description": "69-column TLE line 1"
+        },
+        "line2": {
+          "type": "string",
+          "pattern": "^2 .{67}$",
+          "description": "69-column TLE line 2"
+        }
+      }
+    }
+  }
+}

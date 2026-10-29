@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "image-sources.schema.json",
+  "title": "Per-slot image source records (fleet-, mission-, panel-image-sources.json)",
+  "description": "Keyed by \"<entity>/<NN>[.jpg]\" (panel adds a leading surface segment). Three generations of fetcher wrote these, so no single field is in every record: legacy entries carry agency + sourceUrl, later ones credit + license + fetched_at, Slice-A ones source_type/source_url/image_url. Some fleet slots carry only an agency stamp, so records are only required to be non-empty. Unknown keys are allowed — fetchers add diagnostic fields.",
+  "type": "object",
+  "minProperties": 1,
+  "propertyNames": {
+    "pattern": "^[a-z0-9_-]+(/[a-z0-9_-]+)*/[0-9]{2}(\\.jpg)?$"
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/record"
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "agency": {
+          "type": "string"
+        },
+        "sourceUrl": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "commons_file": {
+          "type": "string"
+        },
+        "commons_url": {
+          "type": "string"
+        },
+        "credit": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string"
+        },
+        "fetched_at": {
+          "type": "string"
+        },
+        "source_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "slice_a_iteration": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "slice_a_query": {
+          "type": "string"
+        },
+        "bodies_iteration": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "query": {
+          "type": "string"
+        },
+        "vision": {
+          "type": "object"
+        },
+        "manual_source": {
+          "type": "string"
+        },
+        "manual_fetch": {
+          "type": "string"
+        },
+        "promoted_from": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "nasa_id": {
+          "type": "string"
+        },
+        "nasa_title": {
+          "type": "string"
+        },
+        "smithsonian_id": {
+          "type": "string"
+        },
+        "smithsonian_title": {
+          "type": "string"
+        },
+        "smithsonian_unit": {
+          "type": "string"
+        },
+        "shared_with": {
+          "type": "string"
+        },
+        "cross_surface_mirror_from": {
+          "type": "string"
+        },
+        "agency_archive": {
+          "type": "boolean"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

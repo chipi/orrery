@@ -1752,6 +1752,9 @@
   ) {
     openingLoadId++;
     const myLoadId = openingLoadId;
+    // untrack: this runs from effects; reading page reactively here would
+    // re-fire them on every page mutation (see the URL-sync effect below).
+    const locale = untrack(() => localeFromPage(page));
     // Mission hero — first image in the gallery.
     try {
       const gallery = await getMissionGallery(missionId);
@@ -1772,7 +1775,7 @@
         refs.map(async (ref) => {
           const idxEntry = fleetIndex.find((f) => f.id === ref.id);
           if (!idxEntry) return null;
-          const fullEntry = await getFleet(ref.id, idxEntry.category);
+          const fullEntry = await getFleet(ref.id, idxEntry.category, locale);
           if (!fullEntry) return null;
           // Hero image — prefer fleet index's hero_path; fall back to
           // the first image in the fleet gallery (most entries don't
@@ -1817,7 +1820,11 @@
           ? findFleetEntryByVehicleName(fleetIndex, missionVehicle)
           : null;
       if (launcherCandidate) {
-        const fullLauncher = await getFleet(launcherCandidate.id, launcherCandidate.category);
+        const fullLauncher = await getFleet(
+          launcherCandidate.id,
+          launcherCandidate.category,
+          locale,
+        );
         if (myLoadId !== openingLoadId) return;
         if (fullLauncher) {
           let heroPath: string | null = launcherCandidate.hero_path

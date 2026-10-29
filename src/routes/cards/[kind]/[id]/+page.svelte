@@ -13,6 +13,7 @@
     2026-09-12 hero pass).
   */
   import { page } from '$app/state';
+  import { localeFromPage } from '$lib/locale';
   import { getMission, getMissionIndex } from '$lib/data/missions';
   import {
     getMissionGallery,
@@ -55,7 +56,7 @@
       const entry = index.find((mi) => mi.id === id);
       if (!entry) return null;
       const [mission, gallery] = await Promise.all([
-        getMission(id, entry.dest),
+        getMission(id, entry.dest, localeFromPage(page)),
         getMissionGallery(id).catch(() => [] as string[]),
       ]);
       if (!mission) return null;
@@ -66,7 +67,7 @@
       const row = index.find((fi) => fi.id === id);
       if (!row) return null;
       const [entry, gallery] = await Promise.all([
-        getFleet(id, row.category),
+        getFleet(id, row.category, localeFromPage(page)),
         getFleetGallery(id).catch(() => [] as string[]),
       ]);
       if (!entry) return null;

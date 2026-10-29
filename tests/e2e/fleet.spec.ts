@@ -1,4 +1,6 @@
 import { test, expect, type ConsoleMessage, type Page } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { revealDesktopNavLink } from './_helpers/nav';
 
 function attachConsoleAndError(page: Page) {
@@ -221,5 +223,16 @@ test.describe('/fleet', () => {
       return;
     }
     await expect(await revealDesktopNavLink(page, '/fleet')).toBeVisible({ timeout: 5_000 });
+  });
+
+  test('panel text follows the page locale (de overlay, not en-US)', async ({ page }) => {
+    const de = JSON.parse(
+      readFileSync(path.resolve(process.cwd(), 'i18n-src/de/fleet/launcher/falcon-9.json'), 'utf8'),
+    );
+    await page.goto('/de/fleet?id=falcon-9');
+    await waitForFleetReady(page);
+    await expect(page.locator('aside.panel .tagline')).toHaveText(de.tagline, {
+      timeout: 10_000,
+    });
   });
 });

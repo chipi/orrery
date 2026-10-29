@@ -35,6 +35,7 @@
     isSuccess,
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
+  import { localeFromPage } from '$lib/locale';
   import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
 
   // ─── State ───────────────────────────────────────────────────────
@@ -306,7 +307,7 @@
       panelLoadingId = null;
       return;
     }
-    const full = await getFleet(id, summary.category);
+    const full = await getFleet(id, summary.category, localeFromPage(page));
     if (panelLoadingId !== id) return; // a newer load superseded us
     selectedEntry = full;
     panelOpen = true;

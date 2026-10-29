@@ -1,5 +1,5 @@
 /**
- * Named-star overlay translator (/explore v2 "Known Universe", Slice 1).
+ * Culture-door blurb translator (/explore v2 Slice 3).
  *
  * Each en-US overlay in `i18n-src/en-US/universe/named-stars/<id>.json` has the
  * shape { fact, bio, cultural, links:[{l,u,t}], photo?:{src,kind} }. Only the
@@ -13,12 +13,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
-import { translationClient, translationModel } from './lib/translate-model.mjs';
-import { TRANSLATED_LOCALES } from './lib/locales.mjs';
-import { LANGUAGE_NAMES } from './lib/translate-quality.mjs';
+import { translationClient, translationModel } from '../../lib/translate-model.mjs';
+import { TRANSLATED_LOCALES } from '../../lib/locales.mjs';
+import { LANGUAGE_NAMES } from '../../lib/translate-quality.mjs';
 
-const ROOT = path.resolve(import.meta.dirname, '..');
-const EN = path.join(ROOT, 'i18n-src', 'en-US', 'universe', 'named-stars');
+const ROOT = path.resolve(import.meta.dirname, '../../..');
+const EN = path.join(ROOT, 'i18n-src', 'en-US', 'culture-doors');
 
 const ALL_LOCALES = TRANSLATED_LOCALES;
 const NAMES = LANGUAGE_NAMES;
@@ -27,19 +27,13 @@ const argOnly = (process.argv.find((a) => a.startsWith('--only=')) || '').split(
 const argLoc = (process.argv.find((a) => a.startsWith('--locales=')) || '').split('=')[1];
 const LOCALES = argLoc ? argLoc.split(',') : ALL_LOCALES;
 
-const SYSTEM = `Translate Orrery star-description content from en-US into the target language.
-
-The register is evocative but precise popular-astronomy prose — accurate and plain, carrying a sense of wonder without hype or marketing adjectives. Translate meaning and cadence, not word-for-word.
+const SYSTEM = `Translate an Orrery 'culture door' blurb from en-US into the target language. These are short notes attaching a work of fiction, a real space message, or an interstellar visitor to a real astronomical object (e.g. Vega and Carl Sagan's Contact, Kepler-16b and Star Wars' Tatooine, the Voyager Golden Record).
 
 CRITICAL CONSTRAINTS:
-- Keep star proper names verbatim (Sirius, Vega, Betelgeuse, Rigil Kentaurus, Fomalhaut, Achernar, etc.) unless the target language has a genuinely standard native form.
-- Keep Bayer designations verbatim in their Latin form (Alpha Lyrae, Beta Orionis, Epsilon Canis Majoris) — do NOT translate the Latin genitive.
-- Translate constellation names to the standard native name where one well-established exists (e.g. Orion, Leo, the Southern Cross); otherwise keep the Latin name.
-- Keep mythological, cultural, and personal names verbatim (Dioscuri, Niulang, Zhinu, Agastya, Medusa, Perseus, Copernicus, Hipparchus, van Maanen, Luyten, Lalande) unless a standard native form exists.
-- Keep observatory / agency / instrument names untranslated (ESO, Hubble, JWST, CHARA, ALMA, GALEX).
-- Preserve numbers, units, dates, and Unicode symbols EXACTLY: light-years, the kelvin symbol K, the B−V index (keep the − minus sign and the exact token "B−V"), ×, %, the em-dash —, magnitudes.
-- Keep universal astronomy terms/acronyms sensible in the target language; do not invent jargon.
-- You are given an ordered JSON array of strings. Return an array of the SAME length, in the SAME order, each element the translation of the corresponding source string. Do not merge, split, drop, add, or reorder elements.`;
+- Keep titles of works, spacecraft, missions, and proper names verbatim (Contact, Star Wars, Tatooine, Rocheworld, Project Daedalus, Voyager, Golden Record, Arecibo, ʻOumuamua, Kepler-16b, Vega, M13), and people (Carl Sagan, George Lucas, Robert L. Forward, Frank Drake) — translate a title only where a standard local form exists.
+- Preserve numbers, units, dates, and symbols exactly (1985, 1977, 25,000 light-years, 50,000 years).
+- Keep the honest 'fiction over fact' tone: the story is a labelled layer, the science stays real.
+- You are given an ordered JSON array of strings; return an array of the SAME length + order, each the translation of the corresponding source string.`;
 
 async function translateStrings(client, locale, strings) {
   const r = await client.messages.create({
@@ -110,7 +104,7 @@ async function translateArraySafe(client, locale, strings) {
 }
 
 // Translatable prose fields, deterministic order. links/photo are preserved as-is.
-const FIELDS = ['fact', 'bio', 'cultural'];
+const FIELDS = ['blurb'];
 
 function extract(overlay) {
   return FIELDS.filter((f) => typeof overlay[f] === 'string').map((f) => overlay[f]);
@@ -149,7 +143,7 @@ async function main() {
     const overlay = JSON.parse(fs.readFileSync(path.join(EN, `${id}.json`), 'utf8'));
     const strings = extract(overlay);
     for (const loc of LOCALES) {
-      const dst = path.join(ROOT, 'i18n-src', loc, 'universe', 'named-stars', `${id}.json`);
+      const dst = path.join(ROOT, 'i18n-src', loc, 'culture-doors', `${id}.json`);
       if (fs.existsSync(dst) && fs.statSync(dst).size > 2) {
         skipped++;
         continue;
@@ -177,7 +171,7 @@ async function main() {
       console.error(`✗ ${g.id} → ${g.loc}: ${e.message}`);
     }
   });
-  console.log(`\nnamed-stars i18n: ${done} written, ${skipped} skipped, ${failed} failed`);
+  console.log(`\nculture-doors i18n: ${done} written, ${skipped} skipped, ${failed} failed`);
   if (failed > 0) process.exitCode = 1;
 }
 

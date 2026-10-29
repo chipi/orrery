@@ -24,8 +24,14 @@ import { rm, readdir, access, stat } from 'node:fs/promises';
 const DEV_ONLY_DATA = [
   'build/data/slice-a-salvage-result.json',
   'build/data/bodies-salvage-result.json',
+  'build/data/slice-a-approvals.json',
+  'build/data/bodies-approvals.json',
+  'build/data/fly-camera-audit.json',
   'build/data/image-vision.json',
 ];
+// One-shot slice dry-run outputs (scripts/_archive/slices); only provenance
+// docs name them.
+const DEV_ONLY_DATA_RE = /^slice-.*-dryrun\.json$/;
 
 try {
   await access('build');
@@ -71,7 +77,13 @@ await pruneTextureCrops();
 async function pruneDevOnlyData() {
   let count = 0;
   let bytes = 0;
-  for (const p of DEV_ONLY_DATA) {
+  let dataFiles = [];
+  try {
+    dataFiles = (await readdir('build/data')).filter((n) => DEV_ONLY_DATA_RE.test(n));
+  } catch {
+    // no build/data
+  }
+  for (const p of [...DEV_ONLY_DATA, ...dataFiles.map((n) => `build/data/${n}`)]) {
     try {
       bytes += (await stat(p)).size;
     } catch {

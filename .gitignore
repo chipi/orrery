@@ -94,6 +94,8 @@ static/images/_staging/
 
 # Generated i18n overlay bundles (scripts/build-i18n-bundles.mjs)
 static/data/i18n/*.json
+# Generated science search indexes (scripts/build-science-index.ts; build + dev)
+static/data/science-index*.json
 
 # Lavish review artifacts (generated, ephemeral)
 .lavish/

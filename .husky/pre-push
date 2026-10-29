@@ -55,6 +55,16 @@ if [ "${PREFLIGHT_INCLUDE_SMOKE:-0}" = "1" ]; then
   npm run test:e2e:smoke
 fi
 
+# Affected-spec e2e (audit #21): the specs mapped from the changed files, on
+# desktop, mobile and landscape. Opt in with PREFLIGHT_INCLUDE_AFFECTED=1.
+# It rebuilds first: smart preflight skips the build for some change types.
+if [ "${PREFLIGHT_INCLUDE_AFFECTED:-0}" = "1" ]; then
+  echo
+  echo "▶ affected-spec e2e (PREFLIGHT_INCLUDE_AFFECTED=1)"
+  echo
+  npm run e2e:affected
+fi
+
 # git-LFS upload step. core.hooksPath=.husky means git never runs the
 # hook `git lfs install` would have written, so without this line LFS
 # objects (masters/**) were never uploaded — every push to 2026-10-02

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { base } from '$app/paths';
@@ -857,16 +858,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-{#if lightboxSrc}
-  <button
-    type="button"
-    class="lightbox"
-    onclick={() => (lightboxSrc = null)}
-    aria-label={m.fleet_close_photo_aria()}
-  >
-    <img {...responsive(lightboxSrc, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
-  </button>
-{/if}
+<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
 
 <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
@@ -1403,23 +1395,5 @@
   }
   .tier ul a:hover {
     text-decoration: underline;
-  }
-
-  .lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background: rgba(0, 0, 0, 0.92);
-    border: 0;
-    padding: 0;
-    cursor: zoom-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .lightbox img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
   }
 </style>

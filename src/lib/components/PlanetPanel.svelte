@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import { base } from '$app/paths';
   import { getPlanetGallery, getPlanets } from '$lib/data';
@@ -9,7 +10,6 @@
   import { linkifyMissionEntry, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
-  import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import ScienceChip from './ScienceChip.svelte';
@@ -428,25 +428,7 @@
       {/if}
     </div>
 
-    {#if lightboxSrc}
-      <button
-        type="button"
-        class="lightbox"
-        aria-label={m.panel_lightbox_close()}
-        onclick={() => (lightboxSrc = null)}
-      >
-        <img
-          {...responsive(lightboxSrc, IMAGE_SIZES.full)}
-          alt=""
-          loading="lazy"
-          decoding="async"
-        />
-        <span class="lightbox-close" aria-hidden="true">×</span>
-      </button>
-      <div class="lightbox-meta">
-        <ImageCredit src={lightboxSrc} />
-      </div>
-    {/if}
+    <PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
 
     {#if planet.missionable && onPlanMission}
       <div class="cta-bar">

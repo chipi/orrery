@@ -2,6 +2,7 @@
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { page } from '$app/state';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import { getSmallBodyGallery, getSmallBodyI18n, type SmallBodyI18n } from '$lib/data';
   import smallBodiesData from '$data/small-bodies.json';
@@ -12,7 +13,6 @@
   import type { ScienceSectionRef } from '$types/planet';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
-  import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
@@ -418,25 +418,7 @@
       {/if}
     </div>
 
-    {#if lightboxSrc}
-      <button
-        type="button"
-        class="lightbox"
-        aria-label={m.panel_lightbox_close()}
-        onclick={() => (lightboxSrc = null)}
-      >
-        <img
-          {...responsive(lightboxSrc, IMAGE_SIZES.full)}
-          alt=""
-          loading="lazy"
-          decoding="async"
-        />
-        <span class="lightbox-close" aria-hidden="true">×</span>
-      </button>
-      <div class="lightbox-meta">
-        <ImageCredit src={lightboxSrc} />
-      </div>
-    {/if}
+    <PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
 
     <!-- #547 S5c — every small body carries its collectible card. -->
     {#if cardSpec}

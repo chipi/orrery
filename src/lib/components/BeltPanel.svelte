@@ -16,8 +16,8 @@
    * in static/data/small-bodies.json (Ceres / Pluto / Eris / Haumea /
    * Makemake all resolve today).
    */
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
-  import ImageCredit from './ImageCredit.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import * as m from '$lib/paraglide/messages';
   import { page } from '$app/state';
@@ -331,25 +331,7 @@
       {/if}
     </div>
 
-    {#if lightboxSrc}
-      <button
-        type="button"
-        class="lightbox"
-        aria-label={m.ui_close()}
-        onclick={() => (lightboxSrc = null)}
-      >
-        <img
-          {...responsive(lightboxSrc, IMAGE_SIZES.full)}
-          alt=""
-          loading="lazy"
-          decoding="async"
-        />
-        <span class="lightbox-close" aria-hidden="true">×</span>
-      </button>
-      <div class="lightbox-meta">
-        <ImageCredit src={lightboxSrc} />
-      </div>
-    {/if}
+    <PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
   {/if}
 </Panel>
 

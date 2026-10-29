@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/state';
@@ -18,7 +19,6 @@
   import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
   import { missionGalleryCredit } from '$lib/image-credits';
-  import ImageCredit from './ImageCredit.svelte';
   import MediaPlayer from './MediaPlayer.svelte';
   import VideoThumb from './VideoThumb.svelte';
   import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
@@ -959,24 +959,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-{#if lightboxSrc}
-  <!-- Lightbox overlay: clickable backdrop dismisses; outer is a
-       <button> so role+keyboard are implicit, satisfying svelte's
-       a11y plugin. The image inside is non-interactive (alt="" since
-       the gallery context already labels it). -->
-  <button
-    type="button"
-    class="lightbox"
-    aria-label={m.panel_lightbox_close()}
-    onclick={() => (lightboxSrc = null)}
-  >
-    <img {...responsive(lightboxSrc, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
-    <span class="lightbox-close" aria-hidden="true">×</span>
-  </button>
-  <div class="lightbox-meta">
-    <ImageCredit src={lightboxSrc} />
-  </div>
-{/if}
+<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
 
 <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 

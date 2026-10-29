@@ -18,12 +18,12 @@
    */
   import { page } from '$app/state';
   import { base } from '$app/paths';
+  import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import Panel from '$lib/components/Panel.svelte';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import LearnLink from '$lib/components/LearnLink.svelte';
-  import ImageCredit from '$lib/components/ImageCredit.svelte';
   import {
     getEarthObjectGallery,
     getFleet,
@@ -465,20 +465,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-{#if panelLightbox}
-  <button
-    type="button"
-    class="lightbox"
-    aria-label={m.panel_lightbox_close()}
-    onclick={() => (panelLightbox = null)}
-  >
-    <img {...responsive(panelLightbox, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
-    <span class="lightbox-close" aria-hidden="true">×</span>
-  </button>
-  <div class="lightbox-meta">
-    <ImageCredit src={panelLightbox} />
-  </div>
-{/if}
+<PanelLightbox src={panelLightbox} onClose={() => (panelLightbox = null)} />
 
 <style>
   /* #547 — card CTA in the quiet register (mirrors the missions panel). */

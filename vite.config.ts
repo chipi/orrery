@@ -552,8 +552,8 @@ export default defineConfig(({ mode, command }) => {
           lines: 93,
         },
         exclude: [
-          'node_modules/',
-          'src/lib/paraglide/',
+          'node_modules/**',
+          'src/lib/paraglide/**',
           '**/*.test.ts',
           '**/*.spec.ts',
           'src/routes/**/+page.svelte',
@@ -568,11 +568,11 @@ export default defineConfig(({ mode, command }) => {
           // Their pure-function parsers + entry mappers are covered
           // separately by *.test.ts files alongside.
           'scripts/_*.ts',
-          'scripts/hotspots/',
-          'scripts/gcat/',
+          'scripts/hotspots/**',
+          'scripts/gcat/**',
           // Hand-run translation editing tools; they never run in the app.
-          'scripts/i18n-tools/',
-          'src/lib/launches/sources/',
+          'scripts/i18n-tools/**',
+          'src/lib/launches/sources/**',
           'scripts/fetch-launches.ts',
           'scripts/audit-report-launches.ts',
           // AR runtime (RFC-021 / #150 — WebXR/ARKit sessions, XR render loops,
@@ -580,7 +580,7 @@ export default defineConfig(({ mode, command }) => {
           // WebGL-XR, no native bridge). Verified on-device; the pure helpers keep
           // their *.test.ts (which still run) — same policy as scripts/hotspots.
           'src/lib/ar.ts',
-          'src/lib/ar/',
+          'src/lib/ar/**',
           // Three.js solar-system scene builder extracted from /explore's
           // +page.svelte (already excluded above). Its build/update/dispose run
           // a WebGL render loop + GPU resource management that can't be
@@ -699,7 +699,7 @@ export default defineConfig(({ mode, command }) => {
           'src/lib/hotspot-models/**',
           'src/lib/three/dispose-object3d.ts',
           '*.config.{js,ts}',
-          '.svelte-kit/',
+          '.svelte-kit/**',
         ],
       },
     },

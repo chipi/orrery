@@ -36,6 +36,7 @@
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
+  import { surfaceStatusLabel } from '$lib/status-label';
   import type { EarthObject } from '$types/earth-object';
   import type { Mission, MissionIndex } from '$types/mission';
   import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
@@ -198,7 +199,9 @@
         {#if matchedRegime && onRegimeOpen}
           <RegimeChip regime={matchedRegime} onClick={() => onRegimeOpen?.(matchedRegime.id)} />
         {/if}
-        <span class="status status-{selected.status.toLowerCase()}">{selected.status}</span>
+        <span class="status status-{selected.status.toLowerCase()}"
+          >{surfaceStatusLabel(selected.status)}</span
+        >
       </div>
       <h1 class="name">{selected.name ?? selected.id}</h1>
     </div>

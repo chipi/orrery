@@ -19,6 +19,7 @@
   import type { FleetEpoch } from '$types/fleet';
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { missionStatusLabel } from '$lib/status-label';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
@@ -736,7 +737,7 @@
                   {mission.agency}
                 </span>
                 <span class="card-status status-{mission.status.toLowerCase()}">
-                  {mission.status}
+                  {missionStatusLabel(mission.status)}
                 </span>
                 {#if mission.flight_data_quality}
                   <span

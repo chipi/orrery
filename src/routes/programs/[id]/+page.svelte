@@ -12,6 +12,7 @@
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { programStatusLabel } from '$lib/status-label';
   import type { ProgramRosterItem } from '$types/program';
   import type { PageData } from './$types';
 
@@ -134,7 +135,9 @@
       <p class="tagline">{p.tagline}</p>
       <p class="chips">
         <span class="chip">{KIND_LABEL[p.kind] ?? p.kind}</span>
-        <span class="chip chip-status status-{p.status.toLowerCase()}">{p.status}</span>
+        <span class="chip chip-status status-{p.status.toLowerCase()}"
+          >{programStatusLabel(p.status)}</span
+        >
       </p>
     </div>
     {#if heroSrc}

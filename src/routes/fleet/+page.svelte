@@ -24,6 +24,7 @@
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
+  import { fleetStatusLabel } from '$lib/status-label';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import { cue } from '$lib/sensory/feedback';
   import {
@@ -472,7 +473,7 @@
             class:active={categoryFilter === 'ALL'}
             role="radio"
             aria-checked={categoryFilter === 'ALL'}
-            onclick={() => setCategory('ALL')}>ALL</button
+            onclick={() => setCategory('ALL')}>{m.lib_filter_status_all()}</button
           >
           {#each CATEGORIES as cat (cat)}
             <button
@@ -494,7 +495,7 @@
             class:active={statusFilter === 'ALL'}
             role="radio"
             aria-checked={statusFilter === 'ALL'}
-            onclick={() => setStatus('ALL')}>ALL</button
+            onclick={() => setStatus('ALL')}>{m.lib_filter_status_all()}</button
           >
           {#each STATUSES as st (st)}
             <button
@@ -503,7 +504,7 @@
               class:active={statusFilter === st}
               role="radio"
               aria-checked={statusFilter === st}
-              onclick={() => setStatus(st)}>{st}</button
+              onclick={() => setStatus(st)}>{fleetStatusLabel(st)}</button
             >
           {/each}
         </div>
@@ -517,7 +518,7 @@
               class:active={agencyFilter === 'ALL'}
               role="radio"
               aria-checked={agencyFilter === 'ALL'}
-              onclick={() => setAgency('ALL')}>ALL</button
+              onclick={() => setAgency('ALL')}>{m.lib_filter_status_all()}</button
             >
             {#each agencies as agency (agency)}
               {@const logo = logoFor(agency)}
@@ -584,7 +585,9 @@
               <span class="list-cat">{CATEGORY_LABEL[entry.category]}</span>
               <span class="list-agency">{entry.agency}</span>
               <span class="list-year">{entry.first_flight.slice(0, 4)}</span>
-              <span class="list-status status-{entry.status.toLowerCase()}">{entry.status}</span>
+              <span class="list-status status-{entry.status.toLowerCase()}"
+                >{fleetStatusLabel(entry.status)}</span
+              >
             </button>
           </li>
         {/each}
@@ -650,7 +653,7 @@
                     {primaryAgency}
                   </span>
                   <span class="card-status status-{entry.status.toLowerCase()}">
-                    {entry.status}
+                    {fleetStatusLabel(entry.status)}
                   </span>
                 </header>
                 <div class="card-name-row">

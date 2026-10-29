@@ -20,6 +20,7 @@
   import { localeFromPage } from '$lib/locale';
   import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
+  import { missionStatusLabel } from '$lib/status-label';
   import { missionGalleryCredit } from '$lib/image-credits';
   import MediaPlayer from './MediaPlayer.svelte';
   import VideoThumb from './VideoThumb.svelte';
@@ -291,7 +292,9 @@
   {#if mission}
     <div class="head">
       <AgencyRow agency={mission.agency} color={mission.color}>
-        <span class="status status-{mission.status.toLowerCase()}">{mission.status}</span>
+        <span class="status status-{mission.status.toLowerCase()}"
+          >{missionStatusLabel(mission.status)}</span
+        >
         {#if mission.data_quality === 'partial'}
           <span class="quality">{m.mp_data_quality_partial()}</span>
         {:else if mission.data_quality === 'reconstructed'}

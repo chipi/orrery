@@ -5200,7 +5200,9 @@ sample      ${debugInfo.projectedPxSample}`}
             </div>
             <div class="cell">
               <div class="cell-label">{m.moon_panel_status()}</div>
-              <div class="cell-value short">{selected.status}</div>
+              <div class="cell-value short">
+                {statusTone(selected.status, selected.kind, selected.site_role).label}
+              </div>
             </div>
           {:else if selected.site_role === 'launch-pad'}
             <!-- Launch pads: no landing, surface time, EVA, samples or crew

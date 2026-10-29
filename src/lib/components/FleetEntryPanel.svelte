@@ -33,6 +33,7 @@
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { MissionOrbitIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages';
+  import { fleetStatusLabel } from '$lib/status-label';
   import MediaPlayer from './MediaPlayer.svelte';
   import MuseumsForObject from './MuseumsForObject.svelte';
   import VideoThumb from './VideoThumb.svelte';
@@ -340,14 +341,6 @@
     if (role === 'orbital') return 'Operating orbit';
     return 'Operating sites';
   }
-
-  const STATUS_LABEL: Record<string, string> = {
-    ACTIVE: 'Active',
-    FLOWN: 'Flown',
-    RETIRED: 'Retired',
-    FAILED: 'Failed',
-    PLANNED: 'Planned',
-  };
 </script>
 
 <!-- grabFocus={false}: keep focus on the triggering fleet card so the
@@ -357,7 +350,7 @@
     <div class="head">
       <AgencyRow agency={entry.agency}>
         <span class="status status-{entry.status.toLowerCase()}">
-          {STATUS_LABEL[entry.status] ?? entry.status}
+          {fleetStatusLabel(entry.status)}
         </span>
         <span class="category-chip">{entry.category}</span>
       </AgencyRow>

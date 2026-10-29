@@ -211,7 +211,9 @@
     const agency = url.searchParams.get('agency');
     filterState.dest = dest && isMissionDestination(dest) ? dest : 'ALL';
     filterState.status =
-      status === 'ACTIVE' || status === 'FLOWN' || status === 'PLANNED' ? status : 'ALL';
+      status === 'ACTIVE' || status === 'FLOWN' || status === 'PLANNED' || status === 'CANCELLED'
+        ? status
+        : 'ALL';
     filterState.agency = agency ?? 'ALL';
     const crew = url.searchParams.get('crew')?.toUpperCase();
     filterState.crew = crew === 'CREWED' || crew === 'UNCREWED' ? crew : 'ALL';
@@ -574,6 +576,14 @@
           role="radio"
           aria-checked={filterState.status === 'PLANNED'}
           onclick={() => setStatus('PLANNED')}>{m.lib_filter_status_planned()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={filterState.status === 'CANCELLED'}
+          role="radio"
+          aria-checked={filterState.status === 'CANCELLED'}
+          onclick={() => setStatus('CANCELLED')}>{m.lib_filter_status_cancelled()}</button
         >
       </div>
 

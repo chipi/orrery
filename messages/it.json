@@ -215,6 +215,7 @@
   "lib_filter_status_active": "ATTIVE",
   "lib_filter_status_flown": "COMPLETATE",
   "lib_filter_status_planned": "PIANIFICATE",
+  "lib_filter_status_cancelled": "ANNULLATE",
   "lib_filter_crew_uncrewed": "NON EQUIPAGGIATA",
   "lib_filter_crew_crewed": "EQUIPAGGIATA",
   "lib_filter_crew_all": "TUTTI",

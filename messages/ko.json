@@ -340,6 +340,7 @@
   "lib_filter_status_active": "활성",
   "lib_filter_status_flown": "비행 완료",
   "lib_filter_status_planned": "계획됨",
+  "lib_filter_status_cancelled": "취소됨",
   "lib_filter_crew_uncrewed": "무인",
   "lib_filter_crew_crewed": "유인",
   "lib_filter_crew_all": "전체",

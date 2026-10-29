@@ -202,6 +202,12 @@
   border-color: rgba(123, 150, 255, 0.45);
   background: rgba(68, 102, 255, 0.1);
 }
+.entity-card-grid .card-status.status-cancelled {
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: transparent;
+  text-decoration: line-through;
+}
 .entity-card-grid .card-status.status-lost {
   color: #ff9966;
   border-color: rgba(255, 153, 102, 0.4);

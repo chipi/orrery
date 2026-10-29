@@ -215,6 +215,7 @@
   "lib_filter_status_active": "ATIVA",
   "lib_filter_status_flown": "REALIZADA",
   "lib_filter_status_planned": "PLANEJADA",
+  "lib_filter_status_cancelled": "CANCELADA",
   "lib_filter_crew_uncrewed": "NÃO TRIPULADA",
   "lib_filter_crew_crewed": "TRIPULADA",
   "lib_filter_crew_all": "TODAS",

@@ -62,7 +62,7 @@ export async function getMission(
 
 export interface MissionFilter {
   dest?: Destination;
-  status?: 'ACTIVE' | 'FLOWN' | 'PLANNED';
+  status?: 'ACTIVE' | 'FLOWN' | 'PLANNED' | 'CANCELLED';
   agency?: string;
 }
 

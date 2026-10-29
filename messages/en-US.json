@@ -1341,6 +1341,7 @@
   "lib_filter_status_flown": "FLOWN",
   "lib_filter_status_label": "STATUS",
   "lib_filter_status_planned": "PLANNED",
+  "lib_filter_status_cancelled": "CANCELLED",
   "lib_flight_data_quality_aria": "Flight data quality: {q}",
   "lib_flight_data_quality_measured": "MEASURED",
   "lib_flight_data_quality_reconstructed": "RECONSTRUCTED",

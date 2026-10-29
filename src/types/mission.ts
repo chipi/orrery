@@ -36,7 +36,7 @@ export type Destination =
   | 'ORUS'
   | 'PATROCLUS'
   | 'MENOETIUS';
-export type MissionStatus = 'ACTIVE' | 'FLOWN' | 'PLANNED';
+export type MissionStatus = 'ACTIVE' | 'FLOWN' | 'PLANNED' | 'CANCELLED';
 export type Sector = 'gov' | 'private';
 export type DataQuality = 'good' | 'partial' | 'reconstructed';
 export type LinkTier = 'intro' | 'core' | 'deep';

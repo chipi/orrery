@@ -896,7 +896,7 @@
 
     <!-- Fly-mission CTA — only render when the mission has actual
          flight data backing the /fly sim (hasFlightData), is not still
-         in the PLANNED bucket, AND a host route wired the onFly
+         in the PLANNED or CANCELLED bucket (neither flew), AND a host route wired the onFly
          callback. (2026-06-17 user correction: "I didn't ask to add
          fly this mission to all cards, you added them where it makes
          no sense. I asked to make it visible on iconic mission on
@@ -917,8 +917,8 @@
           <span class="cta-text">{m.card_open_button()}</span>
         </button>
       {/if}
-      {#if (mission.status !== 'PLANNED' && hasFlightData && onFly) || crossSite}
-        {#if mission.status !== 'PLANNED' && hasFlightData && onFly}
+      {#if (mission.status !== 'PLANNED' && mission.status !== 'CANCELLED' && hasFlightData && onFly) || crossSite}
+        {#if mission.status !== 'PLANNED' && mission.status !== 'CANCELLED' && hasFlightData && onFly}
           <button type="button" class="cta" onclick={flyMission} data-testid="fly-mission-btn">
             <!-- Trajectory-arc glyph — curved path with arrowhead.
                  Replaces the prior "▶" play-character (2026-06-15
@@ -1001,6 +1001,11 @@
     color: var(--color-accent-text, #5070ff);
     border-color: rgba(68, 102, 255, 0.4);
     background: rgba(68, 102, 255, 0.08);
+  }
+  .status-cancelled {
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.15);
+    text-decoration: line-through;
   }
   .quality {
     color: #ffc850;

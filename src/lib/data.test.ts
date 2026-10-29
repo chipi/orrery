@@ -205,7 +205,7 @@ describe('getMissionIndex', () => {
         'PATROCLUS',
         'MENOETIUS',
       ]).toContain(m.dest);
-      expect(['ACTIVE', 'FLOWN', 'PLANNED']).toContain(m.status);
+      expect(['ACTIVE', 'FLOWN', 'PLANNED', 'CANCELLED']).toContain(m.status);
       expect(['gov', 'private']).toContain(m.sector);
       expect(m.color).toMatch(/^#[0-9A-Fa-f]{6}$/);
     }

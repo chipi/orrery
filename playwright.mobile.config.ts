@@ -36,7 +36,10 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : 2,
-  reporter: process.env.CI ? [['list'], ['html', { open: 'never' }]] : 'list',
+  // JSON report feeds scripts/e2e-retry-summary.mjs (see playwright.config.ts).
+  reporter: process.env.CI
+    ? [['list'], ['html', { open: 'never' }], ['json', { outputFile: 'playwright-results.json' }]]
+    : 'list',
   timeout: 30_000,
   expect: { timeout: 5_000 },
 

@@ -303,6 +303,10 @@ jobs:
         # doesn't suppress the others' diagnostics.
         run: npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shard }}
 
+      - name: Tests that needed a retry
+        if: always()
+        run: node scripts/e2e-retry-summary.mjs playwright-results.json '${{ matrix.project }} ${{ matrix.shard_id }}'
+
       # Diagnostics fire on both failure AND cancellation. A job that
       # times out after 45 min reports `cancelled`, not `failed`, so
       # `if: failure()` alone silently dropped the playwright-report

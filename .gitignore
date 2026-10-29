@@ -30,6 +30,7 @@ Thumbs.db
 # Playwright (e2e)
 playwright-report/
 test-results/
+playwright-results.json
 playwright/.cache/
 # Visual baselines are CI-platform (linux) only. Don't commit
 # maintainer-machine snapshots (darwin / win32) — they drift from

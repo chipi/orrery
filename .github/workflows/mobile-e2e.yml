@@ -61,10 +61,7 @@ jobs:
           # moved on). Manual dispatch falls through to the ref default.
           ref: ${{ github.event.workflow_run.head_sha || github.ref }}
 
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v6
-        with:
-          node-version: 22
-          cache: npm
+      - uses: ./.github/actions/setup-node
 
       - run: npm ci
 

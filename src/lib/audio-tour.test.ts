@@ -282,6 +282,7 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'src/routes/explore/+page.svelte',
       'src/routes/iss/+page.svelte',
       'src/routes/tiangong/+page.svelte',
+      'src/lib/components/StationRoute.svelte',
       'src/lib/surface-scene/SurfaceScene.svelte',
       // Shared chrome components that carry tour anchors used across routes.
       'src/lib/components/Nav.svelte',
@@ -331,9 +332,9 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'tiangong-select-',
       'iconic-mission-',
     ];
-    const haystack = SOURCE_FILES.map((p) => readFileSync(join(process.cwd(), p), 'utf-8')).join(
-      '\n',
-    );
+    const raw = SOURCE_FILES.map((p) => readFileSync(join(process.cwd(), p), 'utf-8')).join('\n');
+    // StationRoute.svelte templates its anchors over the station id.
+    const haystack = ['iss', 'tiangong'].map((id) => raw.replaceAll('{config.id}', id)).join('\n');
     const missing: string[] = [];
     for (const id of STAGED_EPISODES) {
       for (const stage of stagesForEpisode(id)) {

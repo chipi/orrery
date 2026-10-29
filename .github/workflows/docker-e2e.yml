@@ -216,8 +216,29 @@ jobs:
           curl -sfI http://localhost:8080/data/launches.json | grep -i 'cache-control: no-cache'
           curl -sfI http://localhost:8080/data/launches.json | grep -i 'content-type: application/json'
 
+      # The browser download has failed with ENOTFOUND on
+      # playwright.download.prss.microsoft.com (runs 39593426169,
+      # 39608387925) and once took 937 s (40304194615). Cache the browser
+      # per Playwright version and retry both network steps.
+      - name: Resolve Playwright version
+        id: pw
+        run: echo "version=$(node -p "require('@playwright/test/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: ms-playwright-${{ runner.os }}-${{ steps.pw.outputs.version }}
+
       - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
+        run: |
+          retry() { for i in 1 2 3; do "$@" && return 0; echo "attempt $i failed: $*"; sleep $((i * 15)); done; return 1; }
+          if [ "${{ steps.pw-cache.outputs.cache-hit }}" = 'true' ]; then
+            retry npx playwright install-deps chromium
+          else
+            retry npx playwright install --with-deps chromium
+          fi
 
       - name: Run Playwright against docker web (${{ matrix.project }} ${{ matrix.shard_id }})
         env:

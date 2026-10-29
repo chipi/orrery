@@ -1,0 +1,68 @@
+name: native-build
+
+# Compile the Capacitor apps (Android debug APK, iOS simulator app) so a
+# Capacitor, plugin or Sentry bump that breaks a native build shows up here
+# instead of on the next hand build. Build only: no signing, no store upload
+# (fastlane / TestFlight stays manual, docs/guides/mobile-build-and-deploy.md).
+#
+# Runs when native-relevant files change on main or an opt-in branch, weekly
+# for drift (Xcode / Gradle images move under us), and by hand.
+
+on:
+  push:
+    branches: [main, 'e2e/**', 'tech-debt/**']
+    paths:
+      - 'android/**'
+      - 'ios/**'
+      - 'capacitor.config.*'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/native-build.yml'
+  schedule:
+    - cron: '23 4 * * 1' # Mondays, outside the docker-e2e (05:07) and TLE (04:00) slots
+  workflow_dispatch:
+
+concurrency:
+  group: native-build-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
+      - uses: ./.github/actions/setup-node
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: 21 # Capacitor 8 needs JDK 21
+          cache: gradle
+      - run: npm ci
+      - name: Build the mobile web bundle
+        run: npm run build:mobile
+      - name: Sync into the Android project
+        run: npx cap sync android
+      - name: Assemble debug APK
+        working-directory: android
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
+
+  ios:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
+      - uses: ./.github/actions/setup-node
+      - run: npm ci
+      - name: Build the mobile web bundle
+        run: npm run build:mobile
+      - name: Sync into the iOS project (installs pods)
+        run: npx cap sync ios
+      - name: Build for the simulator, unsigned
+        run: |
+          xcodebuild -workspace ios/App/App.xcworkspace -scheme App -configuration Debug \
+            -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath "$RUNNER_TEMP/dd" CODE_SIGNING_ALLOWED=NO build

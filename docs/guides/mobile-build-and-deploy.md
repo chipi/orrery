@@ -112,7 +112,7 @@ The switch is `src/lib/asset-url.ts` — `assetOrigin` / `assetUrl()` / `streame
 
 ## 5 · Ship — iOS TestFlight (S13)
 
-CI does **not** build the native binaries (no Xcode/Android SDK in the runners); mobile builds are local. Version lives in `package.json` (0.8.0-wip → PWA/footer), iOS `MARKETING_VERSION` (numeric, Apple requires it), Android `versionName`.
+CI compile-checks the native apps (`.github/workflows/native-build.yml`: Android debug APK, iOS simulator app) but does not sign or upload them; release builds are local. The version has one source, `package.json`: the PWA/footer read it, Android `versionName`/`versionCode` are computed from it in `android/app/build.gradle` (versionCode = major·10000 + minor·100 + patch), and `build:mobile` writes iOS `MARKETING_VERSION` (numeric x.y.z, as Apple requires) via `scripts/mobile/sync-native-version.mjs`. The iOS build number comes from fastlane per TestFlight upload.
 
 ### Telemetry tier — bake it before `sync:mobile` (ADR-082)
 

@@ -33,6 +33,19 @@ updates:
       # postinstall rejects 11.x (#571). Lift once a capacitor release supports 11.
       - dependency-name: '@sentry/*'
         versions: ['>=11']
+      # The same postinstall (check-siblings) requires @sentry/node and
+      # @sentry/sveltekit at EXACTLY 10.69.0, so any bump of those two fails
+      # npm ci (PR #615 went to 10.76.2). Move them together with
+      # @sentry/capacitor, by hand.
+      - dependency-name: '@sentry/node'
+      - dependency-name: '@sentry/sveltekit'
+      # @vite-pwa/sveltekit (latest 1.1.0, the service-worker plugin) peers
+      # @sveltejs/kit ^1 || ^2, and adapter-static 4 needs kit 3 (PR #581 failed
+      # npm ci). Lift both once a @vite-pwa/sveltekit release supports kit 3.
+      - dependency-name: '@sveltejs/kit'
+        versions: ['>=3']
+      - dependency-name: '@sveltejs/adapter-static'
+        versions: ['>=4']
 
   - package-ecosystem: github-actions
     directory: /

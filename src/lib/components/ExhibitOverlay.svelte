@@ -8,7 +8,7 @@
 -->
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import { exhibit } from '$lib/exhibit.svelte';
 
@@ -36,7 +36,7 @@
 
   function exit() {
     exhibit.deactivate();
-    void goto(`${base}${exhibit.exitHref()}`);
+    void goto(localHref(exhibit.exitHref()));
   }
 
   function onKeydown(e: KeyboardEvent) {

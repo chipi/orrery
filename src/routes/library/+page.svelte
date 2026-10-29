@@ -19,6 +19,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { getSourceLogos, type SourceLogosManifest } from '$lib/data';
   import {
     getLinkProvenanceManifest,
@@ -159,7 +160,7 @@
       <h3>{m.library_audio_episodes()}</h3>
       <p>
         Read every Curator Tour episode without playing the audio —
-        <a href="{base}/library/episodes" data-sveltekit-preload-data="hover"
+        <a href={localHref(`/library/episodes`)} data-sveltekit-preload-data="hover"
           >transcripts + editorial sources for all 33 episodes</a
         >.
       </p>
@@ -183,7 +184,7 @@
       </p>
       <p>
         Agency-direct sources: NASA · SpaceX · ESA. Per-row provenance chain on every entry of
-        <a href="{base}/missions/launches" data-sveltekit-preload-data="hover"
+        <a href={localHref(`/missions/launches`)} data-sveltekit-preload-data="hover"
           >the launches calendar</a
         >.
       </p>
@@ -247,7 +248,7 @@
                 <span class="sep">·</span>
                 <code class="ent-id">{cluster.entity_id}</code>
                 <span class="sep">·</span>
-                <a class="ent-route" href="{base}{cluster.route}">{cluster.route}</a>
+                <a class="ent-route" href={localHref(cluster.route)}>{cluster.route}</a>
               </header>
 
               <ul class="link-list">

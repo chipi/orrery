@@ -6,6 +6,7 @@
 -->
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
@@ -84,7 +85,8 @@
       <ul>
         {#each essay.read_next as r (r.href)}
           <li>
-            <a href="{base}{r.href}">{r.label}</a>{#if r.kind}<span class="tag">{r.kind}</span>{/if}
+            <a href={localHref(r.href)}>{r.label}</a>{#if r.kind}<span class="tag">{r.kind}</span
+              >{/if}
           </li>
         {/each}
       </ul>

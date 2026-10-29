@@ -34,7 +34,7 @@
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { gmstRadians } from '$lib/physics/ephemeris/earth-sidereal';
   import { heroEnvironment } from '$lib/three/hero-materials';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { buildMicrogravityAxes } from '$lib/microgravity-axes';
   import { onLayerChange } from '$lib/science-layers';
   import MicrogravityAxesLegend from '$lib/components/MicrogravityAxesLegend.svelte';
@@ -1576,7 +1576,7 @@
       {@render issControls()}
       <EnterArButton onEnter={() => void launchArScene(config.id)} />
       {#if config.liveLinkLabel}
-        <a class="hud-live-link" href="{base}/live" data-testid="{config.id}-watch-live">
+        <a class="hud-live-link" href={localHref(`/live`)} data-testid="{config.id}-watch-live">
           <span class="live-dot" aria-hidden="true"></span>{config.liveLinkLabel()}
         </a>
       {/if}

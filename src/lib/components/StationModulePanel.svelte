@@ -6,9 +6,8 @@
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
-  import { base } from '$app/paths';
   import { formatNumber } from '$lib/format';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { page } from '$app/state';
   import type { StationModule } from '$types/station';
   import * as m from '$lib/paraglide/messages';
@@ -295,45 +294,49 @@
           <h3>{m.panel_related_science_heading()}</h3>
           <ul>
             <li>
-              <a href="{base}/science/space-stations/pressurized-volume"
+              <a href={localHref(`/science/space-stations/pressurized-volume`)}
                 >{m.chip_label_pressurized_volume()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/space-stations/node-module">{m.chip_label_node_module()}</a>
+              <a href={localHref(`/science/space-stations/node-module`)}
+                >{m.chip_label_node_module()}</a
+              >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/crewed-station-design"
+              <a href={localHref(`/science/life-in-space/crewed-station-design`)}
                 >{m.chip_label_crewed_station_design()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/eclss-life-support"
+              <a href={localHref(`/science/life-in-space/eclss-life-support`)}
                 >{m.chip_label_eclss_life_support()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/crew-selection"
+              <a href={localHref(`/science/life-in-space/crew-selection`)}
                 >{m.chip_label_crew_selection()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/pre-flight-training"
+              <a href={localHref(`/science/life-in-space/pre-flight-training`)}
                 >{m.chip_label_pre_flight_training()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/crew-dynamics-psychology"
+              <a href={localHref(`/science/life-in-space/crew-dynamics-psychology`)}
                 >{m.chip_label_crew_dynamics_psychology()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/sleep-nutrition-circadian"
+              <a href={localHref(`/science/life-in-space/sleep-nutrition-circadian`)}
                 >{m.chip_label_sleep_nutrition_circadian()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/suit-lineage">{m.chip_label_suit_lineage()}</a>
+              <a href={localHref(`/science/life-in-space/suit-lineage`)}
+                >{m.chip_label_suit_lineage()}</a
+              >
             </li>
           </ul>
         </section>

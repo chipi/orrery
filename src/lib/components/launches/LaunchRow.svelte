@@ -8,7 +8,7 @@
    * PRD-020 M8 + M18 + M20.
    */
 
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { formatCountdown, formatNet, type LaunchEntry } from '$lib/launches/manifest.js';
   import * as m from '$lib/paraglide/messages';
   import ProvenanceChip from './ProvenanceChip.svelte';
@@ -68,7 +68,7 @@
     {#if entry.orrery_mission_ref}
       <a
         class="catalog-link"
-        href="{base}/missions?id={entry.orrery_mission_ref}"
+        href={localHref(`/missions?id=${entry.orrery_mission_ref}`)}
         data-sveltekit-preload-data="hover"
       >
         {m.launches_open_in_orrery()}

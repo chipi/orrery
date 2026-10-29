@@ -10,11 +10,11 @@
 -->
 <script lang="ts">
   import 'katex/dist/katex.min.css';
+  import { localHref } from '$lib/locale';
   import { untrack } from 'svelte';
   import { browser } from '$app/environment';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
-  import { base } from '$app/paths';
   import { t } from '$lib/lab/t';
   import { GOALS } from '$lib/physics/registry/goals';
   import Notebook from '$lib/lab/Notebook.svelte';
@@ -63,7 +63,7 @@
       lastGoalId = gid;
       labState.seedFromGoal(goal);
       if (browser && page.url.searchParams.has('nb')) {
-        void goto(`${base}/lab`, { replaceState: true, keepFocus: true, noScroll: true });
+        void goto(localHref(`/lab`), { replaceState: true, keepFocus: true, noScroll: true });
       }
     }
   });
@@ -164,7 +164,7 @@
           }}
           onFocusCard={(i) => {
             view = 'notebook';
-            void goto(`${base}/lab?focus=${i}`, { replaceState: true, noScroll: true });
+            void goto(localHref(`/lab?focus=${i}`), { replaceState: true, noScroll: true });
           }}
         />
         {#if isTouch}

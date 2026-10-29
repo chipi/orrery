@@ -2,14 +2,13 @@
   import { onMount, onDestroy, untrack } from 'svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
-  import { base } from '$app/paths';
   import { dvToRGB, dvToCss, dayToDate, dayToLongDate, dayToShortDate } from '$lib/porkchop';
   import { geoTransferDv } from '$lib/physics/transfer/lambert-geocentric';
   import { interplanetaryMoonDv } from '$lib/moon-transfer';
   import { MOONS } from '$lib/moon-transfer.constants';
   import { trackFilterChange, trackPlanRun, trackPlanWindowSelect } from '$lib/analytics';
   import { getRockets, getPorkchopGrid } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { localizeHref } from '$lib/paraglide/runtime';
   import type { Rocket } from '$types/rocket';
   import type { PorkchopGrid, MissionType } from '$types/porkchop-grid';
@@ -445,7 +444,7 @@
     // <html lang> to en-US. Caught by docker-e2e's "/plan loads in
     // Spanish" smoke after the 2026-06-09 Mars-only-/plan regression
     // (commit 47b35a024).
-    const target = `${localizeHref(`${base}/plan`)}${qs ? `?${qs}` : ''}`;
+    const target = `${localizeHref(localHref(`/plan`))}${qs ? `?${qs}` : ''}`;
     if (target !== page.url.pathname + page.url.search) {
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
     }
@@ -879,7 +878,7 @@
     params.set('type', missionType.toLowerCase());
     params.set('dep', String(Math.round(depDays[selected.i])));
     params.set('tof', String(Math.round(arrDays[selected.j])));
-    goto(`${base}/fly?${params.toString()}`);
+    goto(localHref(`/fly?${params.toString()}`));
   }
 
   // ─── Magnifier render (separate canvas overlay) ──────────────────
@@ -1321,7 +1320,7 @@
           <div class="rocket-links">
             <a
               class="rocket-link fleet-link"
-              href="{base}/fleet?id={ROCKET_FLEET_ID[selectedRocket.id]}"
+              href={localHref(`/fleet?id=${ROCKET_FLEET_ID[selectedRocket.id]}`)}
             >
               {m.plan_view_in_fleet({ label: selectedRocket.name ?? selectedRocket.id })} →
             </a>

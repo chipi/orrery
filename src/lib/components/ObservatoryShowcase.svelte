@@ -13,7 +13,7 @@
 -->
 <script lang="ts">
   import { dataLoadFailed } from '$lib/data/core';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { onMount } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import { getFleetByCategory, getFleetGallery } from '$lib/data';
@@ -69,7 +69,7 @@
     <ul class="strip">
       {#each items as item (item.entry.id)}
         <li>
-          <a class="card" href="{base}/fleet?id={item.entry.id}">
+          <a class="card" href={localHref(`/fleet?id=${item.entry.id}`)}>
             <figure>
               <img
                 src={item.heroUrl}

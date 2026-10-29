@@ -6,10 +6,9 @@
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { setCurrentCard, trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
-  import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import { getMissionsForLibrary, getBadges } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import type { Destination, Mission, MissionStatus } from '$types/mission';
   import { isMissionDestination } from '$lib/mission-dest';
   import MissionPanel from '$lib/components/MissionPanel.svelte';
@@ -247,7 +246,7 @@
     if (filterState.epoch !== 'ALL') params.set('epoch', filterState.epoch);
     if (filterState.q.trim() !== '') params.set('q', filterState.q.trim());
     const qs = params.toString();
-    const target = `${base}/missions${qs ? `?${qs}` : ''}`;
+    const target = localHref(`/missions${qs ? `?${qs}` : ''}`);
     if (target !== page.url.pathname + page.url.search) {
       // replaceState avoids littering the back-button history with
       // every filter toggle.
@@ -330,7 +329,7 @@
     setCurrentCard(null);
   }
   function flyMission(id: string) {
-    goto(`${base}/fly?mission=${id}`);
+    goto(localHref(`/fly?mission=${id}`));
   }
 
   // Detail-card back chain (#29) — track ?id= navigations into / out of cards.
@@ -339,7 +338,7 @@
   function seedProgramBack(url: URL): void {
     const from = url.searchParams.get('from');
     if (from?.startsWith('program:')) {
-      seedBackTarget(`${base}/programs/${from.slice('program:'.length)}`, url);
+      seedBackTarget(localHref(`/programs/${from.slice('program:'.length)}`), url);
     }
   }
   afterNavigate((nav) => {

@@ -1,6 +1,6 @@
 import { Capacitor } from '@capacitor/core';
+import { localHref } from '$lib/locale';
 import { goto } from '$app/navigation';
-import { base } from '$app/paths';
 
 /**
  * Custom-scheme deep links (S6 / #221, RFC-018 §7).
@@ -46,7 +46,7 @@ export function initDeepLinks(): () => void {
         // would map the full https host into an internal path and 404.
         if (!url.startsWith('orrery://')) return;
         const target = deepLinkTarget(url);
-        if (target) void goto(`${base}${target}`);
+        if (target) void goto(localHref(target));
       }).then((handle) => {
         removeListener = () => void handle.remove();
       });

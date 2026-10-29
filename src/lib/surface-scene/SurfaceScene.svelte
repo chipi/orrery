@@ -140,7 +140,7 @@
   import { buildSurfacePanelTabs } from '$lib/surface-map/build-panel-tabs';
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { type SiteStory } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import {
@@ -5308,7 +5308,7 @@ sample      ${debugInfo.projectedPxSample}`}
         {#if selected.mission_id}
           <a
             class="mission-link"
-            href="{base}/missions?id={selected.mission_id}"
+            href={localHref(`/missions?id=${selected.mission_id}`)}
             data-testid="mission-card-link"
           >
             FULL MISSION CARD →
@@ -5320,7 +5320,7 @@ sample      ${debugInfo.projectedPxSample}`}
              feature inline (no schema change) and naturally extends as
              more landmark sites land. -->
         {#if selected.id === 'apollo11'}
-          <a class="mission-link" href="{base}/science/history/apollo-11-1969">
+          <a class="mission-link" href={localHref(`/science/history/apollo-11-1969`)}>
             {m.surface_panel_historic_milestone()}
           </a>
         {/if}
@@ -5336,7 +5336,7 @@ sample      ${debugInfo.projectedPxSample}`}
                 <li>
                   <a
                     class="launches-chip"
-                    href="{base}/missions?id={missionId}"
+                    href={localHref(`/missions?id=${missionId}`)}
                     data-testid="launches-from-here-chip"
                   >
                     {missionId.replace(/([a-z])(\d)/g, '$1 $2').toUpperCase()}

@@ -8,6 +8,7 @@
 -->
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
@@ -102,9 +103,9 @@
 
 <article class="reading">
   <nav class="crumb">
-    <a href="{base}/science">{m.science_heading()}</a>
+    <a href={localHref(`/science`)}>{m.science_heading()}</a>
     <span class="sep">›</span>
-    <a href="{base}/science/{section.tab}">{tabLabel(section.tab)}</a>
+    <a href={localHref(`/science/${section.tab}`)}>{tabLabel(section.tab)}</a>
     <span class="sep">›</span>
     <span>{section.title}</span>
   </nav>
@@ -179,7 +180,7 @@
                  content for an interactive tool. The other half of the loop
                  that `science-section-view.source` opens. -->
             <a
-              href="{base}{link.route}{link.query ?? ''}"
+              href={localHref(`${link.route}${link.query ?? ''}`)}
               onclick={() => trackScienceToApp(section.id, link.route)}>{link.route}</a
             >
             <span class="ctx">{link.context_key}</span>

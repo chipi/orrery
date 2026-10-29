@@ -18,8 +18,8 @@
 -->
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import { localHref } from '$lib/locale';
   import ScienceCard from './ScienceCard.svelte';
-  import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import type { OrbitRegime } from '$types/orbit-regime';
   import type { ScienceTabId } from '$types/science';
@@ -161,7 +161,7 @@
             <li>
               <span class="firsts-year">{f.year}</span>
               {#if f.mission_id}
-                <a class="firsts-link" href="{base}/missions?id={f.mission_id}">
+                <a class="firsts-link" href={localHref(`/missions?id=${f.mission_id}`)}>
                   {f.label}
                   <span class="resident-arrow" aria-hidden="true">↗</span>
                 </a>

@@ -3,6 +3,7 @@
   // A single filterable stream of publicly-licensed telescope imagery. Each
   // tile opens a lightbox with the full-resolution view, caption, and credit.
   import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
@@ -270,7 +271,10 @@
           >
         </p>
         {#if current.designation && skyDesignations.has(current.designation)}
-          <a class="lb-sky" href="{base}/explore?deepsky={encodeURIComponent(current.designation)}">
+          <a
+            class="lb-sky"
+            href={localHref(`/explore?deepsky=${encodeURIComponent(current.designation)}`)}
+          >
             Show in the sky →
           </a>
         {/if}

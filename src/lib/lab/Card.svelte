@@ -22,7 +22,7 @@
   reason). Momentum (no figure) → FigureRenderer omitted. KaTeX is NOT imported here.
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import type { FormulaDef, FieldSpec, FormulaResult } from '$lib/physics/spec';
   import { bodyGravityMs2 } from '$lib/physics/mechanics/bodies';
   import FigureRenderer from './FigureRenderer.svelte';
@@ -322,7 +322,7 @@
     <footer class="card__learn">
       <span class="card__learn-label">{t('lab.ui.learn-more')}</span>
       {#if formula.citationKey}
-        <a class="card__learn-link" href="{base}/science/{formula.citationKey}"
+        <a class="card__learn-link" href={localHref(`/science/${formula.citationKey}`)}
           >{t('lab.ui.learn-more-science')}</a
         >
       {/if}

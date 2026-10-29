@@ -7,8 +7,8 @@
 -->
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
-  import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -66,9 +66,9 @@
 
   function href(r: ProgramRosterItem): string | null {
     if (!r.linked_id) return null;
-    if (r.ref === 'mission') return `${base}/missions?id=${r.linked_id}&from=program:${p.id}`;
-    if (r.ref === 'fleet') return `${base}/fleet?id=${r.linked_id}&from=program:${p.id}`;
-    if (r.ref === 'module') return `${base}/${p.id}?module=${r.linked_id}`;
+    if (r.ref === 'mission') return localHref(`/missions?id=${r.linked_id}&from=program:${p.id}`);
+    if (r.ref === 'fleet') return localHref(`/fleet?id=${r.linked_id}&from=program:${p.id}`);
+    if (r.ref === 'module') return localHref(`/${p.id}?module=${r.linked_id}`);
     return null;
   }
 
@@ -115,7 +115,7 @@
 
 <article class="program">
   <nav class="crumb">
-    <a href="{base}/programs">Programs</a>
+    <a href={localHref(`/programs`)}>Programs</a>
     <span class="sep">›</span>
     <span>{p.name}</span>
   </nav>
@@ -196,7 +196,7 @@
         {/each}
       </ol>
       <p class="assembly-foot">
-        <a href="{base}/{p.id}">Explore the assembled station, module by module, in 3D →</a>
+        <a href={localHref(`/${p.id}`)}>Explore the assembled station, module by module, in 3D →</a>
       </p>
     </section>
   {/if}
@@ -243,7 +243,7 @@
             </p>
             <h3 class="d-name">{selectedDetail.name}</h3>
             <p class="d-blurb">{selectedDetail.blurb}</p>
-            <a class="d-open" href="{base}{selectedDetail.href}&from=program:{p.id}"
+            <a class="d-open" href={localHref(`${selectedDetail.href}&from=program:${p.id}`)}
               >Open the full mission →</a
             >
           {:else}
@@ -270,7 +270,7 @@
       <ul class="surface-list">
         {#each p.surface_sites as s (s.surface + s.site)}
           <li>
-            <a href="{base}/{s.surface}?site={s.site}">
+            <a href={localHref(`/${s.surface}?site=${s.site}`)}>
               <span class="s-body">{s.surface}</span><span class="s-label">{s.label}</span>
               <span class="s-go">→</span>
             </a>
@@ -286,7 +286,7 @@
       <ul>
         {#each p.see_also as s (s.href)}
           <li>
-            <a href="{base}{s.href}"><span class="k">{s.kind}</span>{s.label} →</a>
+            <a href={localHref(s.href)}><span class="k">{s.kind}</span>{s.label} →</a>
           </li>
         {/each}
       </ul>
@@ -298,7 +298,7 @@
       <h2>{m.programs_related()}</h2>
       <p>
         {#each p.related_programs as rid (rid)}
-          <a class="rel" href="{base}/programs/{rid}">{pretty(rid)}</a>
+          <a class="rel" href={localHref(`/programs/${rid}`)}>{pretty(rid)}</a>
         {/each}
       </p>
     </section>

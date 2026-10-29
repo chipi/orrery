@@ -14,10 +14,10 @@
 -->
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { localHref } from '$lib/locale';
   import { browser } from '$app/environment';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
-  import { base } from '$app/paths';
   import type { Goal, FormulaResult } from '$lib/physics/spec';
   import { REGISTRY, defaultInputs } from '$lib/physics/registry';
   import { GOALS } from '$lib/physics/registry/goals';
@@ -186,7 +186,7 @@
 
   async function share(): Promise<void> {
     const encoded = encodeNotebook(labState.toCodec());
-    await goto(`${base}/lab?nb=${encoded}`, {
+    await goto(localHref(`/lab?nb=${encoded}`), {
       replaceState: true,
       keepFocus: true,
       noScroll: true,
@@ -253,7 +253,7 @@
     if (i == null) params.delete('focus');
     else params.set('focus', String(i));
     const qs = params.toString();
-    void goto(`${base}/lab${qs ? `?${qs}` : ''}`, {
+    void goto(localHref(`/lab${qs ? `?${qs}` : ''}`), {
       replaceState: true,
       keepFocus: true,
       noScroll: true,
@@ -603,7 +603,7 @@
         <ul class="nb__conn-links">
           {#each conn.links as link (link.href)}
             <li>
-              <a class="nb__conn-a" href="{base}{link.href}">
+              <a class="nb__conn-a" href={localHref(link.href)}>
                 <span class="nb__conn-label">{t(link.labelKey)}</span>
                 {#if link.agency}<span class="nb__conn-agency">{link.agency}</span>{/if}
               </a>

@@ -78,7 +78,7 @@
   import CultureDoorCard from '$lib/components/CultureDoorCard.svelte';
   import StarIndex from '$lib/components/StarIndex.svelte';
   import type { AnonymousStar } from '$lib/universe/anonymous-star';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { createIconicSelectionService } from './iconic-selection.svelte';
   import { auToPx } from '$lib/scale';
   import { cue } from '$lib/sensory/feedback';
@@ -1323,13 +1323,17 @@
   let setBhCurvatureFn: ((on: boolean) => void) | null = null;
   let bhCultureDoors = $state<LocalizedCultureDoor[]>([]);
   let bhLearnHref = $derived(
-    activeBlackHole ? `${base}/science/observation/${activeBlackHole.science_section}` : base,
+    activeBlackHole
+      ? localHref(`/science/observation/${activeBlackHole.science_section}`)
+      : localHref('/'),
   );
   // Time-dilation readout: √(1 − rₛ/r) at r = k·rₛ, as a percentage of a far clock.
   const dilationPct = (k: number): string => `${Math.round(Math.sqrt(1 - 1 / k) * 100)}%`;
   let selectedMwObject = $derived(mwObjects.find((o) => o.id === selectedMwId) ?? null);
   let mwLearnHref = $derived(
-    selectedMwObject ? `${base}/science/observation/${selectedMwObject.science_section}` : base,
+    selectedMwObject
+      ? localHref(`/science/observation/${selectedMwObject.science_section}`)
+      : localHref('/'),
   );
   // Set in onMount; lets the star index / ?goto= resolver select a named star.
   let closeStarFn: (() => void) | null = null;
@@ -1720,7 +1724,7 @@
 
   function onPlanMission() {
     if (selectedPlanet?.missionable) {
-      goto(`${base}/plan`);
+      goto(localHref(`/plan`));
     }
   }
 
@@ -2877,14 +2881,14 @@
         <div class="scale-schematic-size">{m.explore_mw_scale_note()}</div>
         <div class="scale-schematic-note">
           <span>{m.explore_mw_schematic_badge()}</span>
-          <a class="mw-badge-link" href="{base}/science/observation/our-galaxy"
+          <a class="mw-badge-link" href={localHref(`/science/observation/our-galaxy`)}
             >{m.science_learn_more()} →</a
           >
         </div>
       {:else if contextId === 'local-group'}
         <div class="scale-schematic-note">
           <span>{m.explore_lg_schematic_badge()}</span>
-          <a class="mw-badge-link" href="{base}/science/observation/local-group"
+          <a class="mw-badge-link" href={localHref(`/science/observation/local-group`)}
             >{m.science_learn_more()} →</a
           >
         </div>
@@ -3264,7 +3268,7 @@
       >
         <a
           class="paths-legend-why"
-          href="{base}/science/transfers/coplanar-trajectories"
+          href={localHref(`/science/transfers/coplanar-trajectories`)}
           data-testid="paths-legend-why"
         >
           ⓘ Why are they all in one plane?
@@ -3467,7 +3471,7 @@
     <div class="paths-legend" role="group" aria-label={m.explore_trajectory_legend_aria()}>
       <a
         class="paths-legend-why"
-        href="{base}/science/transfers/coplanar-trajectories"
+        href={localHref(`/science/transfers/coplanar-trajectories`)}
         data-testid="paths-legend-why"
       >
         ⓘ Why are they all in one plane?
@@ -3672,7 +3676,7 @@
 <DeepSkyPanel
   object={activeDeepSky}
   image={activeDeepSkyImage}
-  galleryHref="{base}/gallery/deep-sky"
+  galleryHref={localHref(`/gallery/deep-sky`)}
   open={deepSkyPanelOpen}
   onClose={() => exitDeepSkyFn?.()}
   onGateway={(hostId) => deepSkyGatewayFn?.(hostId)}
@@ -3746,7 +3750,7 @@
   mission={iconic.state.mission}
   open={iconic.state.panelOpen}
   onClose={() => iconic.reset()}
-  onFly={(id) => goto(`${base}/fly?mission=${id}`)}
+  onFly={(id) => goto(localHref(`/fly?mission=${id}`))}
 />
 
 <!-- Heliocentric scale ruler + zone panel (#357). Lower-left, always

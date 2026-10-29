@@ -15,7 +15,6 @@
    * implementation.
    */
   import { page } from '$app/state';
-  import { base } from '$app/paths';
   import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import Panel from '$lib/components/Panel.svelte';
@@ -34,7 +33,7 @@
   } from '$lib/data';
   import { panelGalleryCredit } from '$lib/image-credits';
   import { formatNumber } from '$lib/format';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import { surfaceStatusLabel } from '$lib/status-label';
   import type { EarthObject } from '$types/earth-object';
@@ -300,7 +299,7 @@
       {#if missionIds.has(selected.id)}
         <a
           class="mission-link"
-          href="{base}/missions?id={selected.id}"
+          href={localHref(`/missions?id=${selected.id}`)}
           data-testid="mission-card-link"
         >
           FULL MISSION CARD →
@@ -313,7 +312,7 @@
            the orbital era. Per-id check keeps the pattern open for
            additional EarthObject → history mappings later. -->
       {#if selected.id === 'iss'}
-        <a class="mission-link" href="{base}/science/history/sputnik-1957">
+        <a class="mission-link" href={localHref(`/science/history/sputnik-1957`)}>
           {m.surface_panel_historic_milestone()}
         </a>
       {/if}
@@ -327,7 +326,7 @@
       -->
       <ul class="related-orbital-concepts">
         <li>
-          <a href="{base}/science/orbits/cislunar-orbits">{m.chip_label_cislunar_orbits()}</a
+          <a href={localHref(`/science/orbits/cislunar-orbits`)}>{m.chip_label_cislunar_orbits()}</a
           ><ScienceChip
             tab="orbits"
             section="cislunar-orbits"
@@ -335,7 +334,7 @@
           />
         </li>
         <li>
-          <a href="{base}/science/orbits/sun-synchronous">{m.chip_label_sun_synchronous()}</a
+          <a href={localHref(`/science/orbits/sun-synchronous`)}>{m.chip_label_sun_synchronous()}</a
           ><ScienceChip
             tab="orbits"
             section="sun-synchronous"
@@ -343,7 +342,7 @@
           />
         </li>
         <li>
-          <a href="{base}/science/orbits/special-orbits">{m.chip_label_special_orbits()}</a
+          <a href={localHref(`/science/orbits/special-orbits`)}>{m.chip_label_special_orbits()}</a
           ><ScienceChip
             tab="orbits"
             section="special-orbits"
@@ -351,14 +350,11 @@
           />
         </li>
         <li>
-          <a href="{base}/science/orbits/space-debris">{m.chip_label_space_debris()}</a><ScienceChip
-            tab="orbits"
-            section="space-debris"
-            label={m.chip_label_space_debris()}
-          />
+          <a href={localHref(`/science/orbits/space-debris`)}>{m.chip_label_space_debris()}</a
+          ><ScienceChip tab="orbits" section="space-debris" label={m.chip_label_space_debris()} />
         </li>
         <li>
-          <a href="{base}/science/orbits/disposal-end-of-life"
+          <a href={localHref(`/science/orbits/disposal-end-of-life`)}
             >{m.chip_label_disposal_end_of_life()}</a
           ><ScienceChip
             tab="orbits"

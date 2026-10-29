@@ -6,6 +6,7 @@
   // links to the full-resolution JPG for download. Subjects + taglines
   // are baked into the artwork; `sub` here mirrors them for a11y/SEO.
   import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
   import { roving } from '$lib/a11y/roving';
@@ -104,7 +105,7 @@
     <p>
       <strong>ORRERY originals.</strong> AI-generated — not works of any space agency. Full
       provenance on
-      <a href="{base}/colophon">/colophon</a>.
+      <a href={localHref(`/colophon`)}>/colophon</a>.
     </p>
   </footer>
 </article>

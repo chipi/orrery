@@ -7,7 +7,7 @@
    */
 
   import { onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import { loadUpcoming, formatCountdown, type LaunchEntry } from '$lib/launches/manifest.js';
   import { deriveLaunchFeedState } from '$lib/live-feeds';
@@ -47,16 +47,16 @@
       <h2 class="eyebrow">{m.launches_banner_eyebrow()}</h2>
       <span class="header-links">
         {#if liveOrImminent}
-          <a class="live-pill" href="{base}/live" data-testid="launches-live-pill">
+          <a class="live-pill" href={localHref(`/live`)} data-testid="launches-live-pill">
             <span class="live-dot" aria-hidden="true"></span>{m.live_badge_live()}
           </a>
         {/if}
-        <a class="all-link" href="{base}/missions/launches">{m.launches_banner_all()}</a>
+        <a class="all-link" href={localHref(`/missions/launches`)}>{m.launches_banner_all()}</a>
       </span>
     </header>
     <div class="cards">
       {#each entries as e (e.id)}
-        <a class="card" href="{base}/missions/launches?id={e.id}" data-launch-id={e.id}>
+        <a class="card" href={localHref(`/missions/launches?id=${e.id}`)} data-launch-id={e.id}>
           <div class="card-head">
             <div class="countdown">{formatCountdown(e.net, now)}</div>
             {#if logoFor(e.agency_name)}

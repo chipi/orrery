@@ -1,5 +1,6 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   /*
     /colophon — bill-of-materials for Orrery's ORIGINAL content: every
@@ -99,7 +100,7 @@
     <p class="intro">{m.colophon_intro()}</p>
     <p class="attribution">{m.colophon_attribution()}</p>
     <p class="reused">
-      <a href="{base}/credits">{m.colophon_reused_link()} →</a>
+      <a href={localHref(`/credits`)}>{m.colophon_reused_link()} →</a>
     </p>
   </header>
 
@@ -221,8 +222,8 @@
         {m.colophon_gallery_posters()}<span class="count">{data.posters.length}</span>
       </h2>
       <p class="block-note">
-        The <a href="{base}/posters">/posters</a> gallery is {data.posters.length} ORRERY-original art
-        prints, AI-generated, then captioned and wordmarked in-house. They are not works of any space
+        The <a href={localHref(`/posters`)}>/posters</a> gallery is {data.posters.length} ORRERY-original
+        art prints, AI-generated, then captioned and wordmarked in-house. They are not works of any space
         agency and carry no agency logos.
       </p>
       <ul class="thumb-grid">
@@ -249,10 +250,10 @@
           {m.colophon_lab_illustrations()}<span class="count">{data.lab_illustrations.length}</span>
         </h2>
         <p class="block-note">
-          The <a href="{base}/lab">Physics Lab</a>'s goal illustrations are ORRERY-original art,
-          AI-generated to a house brief, then reviewed image-by-image in-house before shipping. They
-          are honest illustration — labelled as such beside the kernel's computed figures, never
-          presented as a computed result.
+          The <a href={localHref(`/lab`)}>Physics Lab</a>'s goal illustrations are ORRERY-original
+          art, AI-generated to a house brief, then reviewed image-by-image in-house before shipping.
+          They are honest illustration — labelled as such beside the kernel's computed figures,
+          never presented as a computed result.
         </p>
         <ul class="thumb-grid">
           {#each data.lab_illustrations as d (d.file)}
@@ -322,7 +323,7 @@
               {/if}
               <p class="it-title">{it.title}</p>
               <p class="it-what">{it.what}</p>
-              <a class="it-where" href="{base}{it.route}">{m.colophon_seen_on()} {it.where} →</a>
+              <a class="it-where" href={localHref(it.route)}>{m.colophon_seen_on()} {it.where} →</a>
             </li>
           {/each}
         </ul>
@@ -349,7 +350,9 @@
             </div>
             <p class="it-title">{icon.label}</p>
             <p class="it-what">{icon.what}</p>
-            <a class="it-where" href="{base}{icon.route}">{m.colophon_seen_on()} {icon.where} →</a>
+            <a class="it-where" href={localHref(icon.route)}
+              >{m.colophon_seen_on()} {icon.where} →</a
+            >
           </li>
         {/each}
       </ul>
@@ -364,7 +367,7 @@
           <li class="item">
             <p class="it-title">{it.title}</p>
             <p class="it-what">{it.what}</p>
-            <a class="it-where" href="{base}{it.route}">{m.colophon_seen_on()} {it.where} →</a>
+            <a class="it-where" href={localHref(it.route)}>{m.colophon_seen_on()} {it.where} →</a>
           </li>
         {/each}
       </ul>
@@ -420,7 +423,7 @@
       <img src={lightbox.src} alt={lightbox.title} />
       <figcaption>
         <span class="lb-title">{lightbox.title}</span>
-        <a class="lb-route" href="{base}{lightbox.route}"
+        <a class="lb-route" href={localHref(lightbox.route)}
           >{m.colophon_seen_on()} {lightbox.route} →</a
         >
       </figcaption>

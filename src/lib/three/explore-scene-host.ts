@@ -29,7 +29,7 @@ import { gyro } from '$lib/sensory/device-orientation';
 import { cue } from '$lib/sensory/feedback';
 import { getLocale } from '$lib/paraglide/runtime';
 import * as m from '$lib/paraglide/messages';
-import { localeFromPage } from '$lib/locale';
+import { localeFromPage, localHref } from '$lib/locale';
 import { assetOrigin } from '$lib/asset-url';
 import { coalesceLatest } from '$lib/async-coalesce';
 import { trackItemClick } from '$lib/analytics';
@@ -2042,7 +2042,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       );
       if (galaxyHit) {
         const section = galaxyHit.object.userData.galaxyScienceSection as string;
-        goto(`${base}/science/observation/${section}`);
+        goto(localHref(`/science/observation/${section}`));
       }
     }
   };

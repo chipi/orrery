@@ -20,7 +20,7 @@
     - Keyboard → standard <a> focus + Enter
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { track } from '$lib/analytics';
   import { InfoChipIcon } from '$lib/components/icons';
   import type { ScienceTabId } from '$types/science';
@@ -53,7 +53,7 @@
 
 <a
   class="chip"
-  href="{base}/science/{tab}/{section}"
+  href={localHref(`/science/${tab}/${section}`)}
   title={tooltip}
   aria-label={aria}
   data-science-chip

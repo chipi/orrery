@@ -19,7 +19,7 @@
   import { tourElapsedSec, tourRemainingSec, tourTotalSec } from '$lib/audio-tour-progress';
   import { fmtTime } from '$lib/audio-format';
   import { readTourCookie, clearTourCookie, type TourResumeState } from '$lib/audio-tour-cookie';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { exhibit } from '$lib/exhibit.svelte';
   import { trackStageFire } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
@@ -201,7 +201,7 @@
     const current = page.url.pathname.replace(/\/+$/, '') || '/';
     if (ep.id === lastAutoNavEpisodeId) return;
     lastAutoNavEpisodeId = ep.id;
-    const target = `${base}${ep.route === '/' ? '' : ep.route}` || '/';
+    const target = localHref(ep.route);
     const want = (target.replace(/\/+$/, '') || '/').replace(base, '') || '/';
     const have = current.replace(base, '') || '/';
     // Already on the episode's route (page-follow may have brought us
@@ -412,7 +412,7 @@
       // Prepend the deploy base — targets are route-relative (`/science/transfers`),
       // so a bare goto 404s on GitHub Pages (base `/orrery/`). Mirrors the
       // episode-nav path above (`${base}${ep.route}`).
-      void goto(`${base}${stage.target}`, { replaceState, keepFocus: true });
+      void goto(localHref(stage.target), { replaceState, keepFocus: true });
       return;
     }
     const el = document.querySelector(stage.target) as HTMLElement | null;
@@ -1243,8 +1243,8 @@
          popup keeps just the per-episode links. -->
     <footer class="origin-disclosure" aria-label={m.audio_origin_disclosure_aria()}>
       <span class="origin-detail"
-        ><a href="{base}/credits">{m.audio_credits_link()}</a> ·
-        <a href="{base}/library/episodes">{m.audio_read_transcripts()}</a></span
+        ><a href={localHref(`/credits`)}>{m.audio_credits_link()}</a> ·
+        <a href={localHref(`/library/episodes`)}>{m.audio_read_transcripts()}</a></span
       >
     </footer>
   </div>

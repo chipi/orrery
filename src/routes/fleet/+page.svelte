@@ -7,7 +7,6 @@
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
-  import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import { getFleet, getFleetGallery, getFleetIndex, getBadges } from '$lib/data';
   import type {
@@ -36,7 +35,7 @@
     isSuccess,
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
 
   // ─── State ───────────────────────────────────────────────────────
@@ -354,7 +353,7 @@
   function seedProgramBack(url: URL): void {
     const from = url.searchParams.get('from');
     if (from?.startsWith('program:')) {
-      seedBackTarget(`${base}/programs/${from.slice('program:'.length)}`, url);
+      seedBackTarget(localHref(`/programs/${from.slice('program:'.length)}`), url);
     }
   }
   afterNavigate((nav) => {

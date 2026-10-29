@@ -20,7 +20,10 @@
  * cached, and the second call resolves synchronously from cache.
  */
 import { base } from '$app/paths';
+import { localHref } from '$lib/locale';
 import { browser } from '$app/environment';
+import { loadI18nBundle } from '$lib/data/core';
+import { getLocale } from '$lib/paraglide/runtime';
 
 interface IndexEntry {
   id: string;
@@ -60,9 +63,53 @@ async function ensureLoaded(): Promise<void> {
   return inflight;
 }
 
+// Localized mission / fleet names -> route, per locale. Body panels show the
+// locale's own name ("«Луна-16»", "嫦娥四号", "चंद्रयान-3" under the
+// origin-language rule), which the id candidates below can't match.
+const nameIndex = new Map<string, Map<string, string>>();
+const namesInflight = new Map<string, Promise<void>>();
+
+function normName(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[«»"“”„'’]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function ensureNames(locale: string): Promise<void> {
+  if (!browser || nameIndex.has(locale)) return Promise.resolve();
+  const running = namesInflight.get(locale);
+  if (running) return running;
+  const job = loadI18nBundle(locale, fetch)
+    .then((bundle) => {
+      const idx = new Map<string, string>();
+      // Fleet first so a mission with the same name wins (missions open the
+      // mission panel, the more specific target).
+      for (const kind of ['fleet', 'missions'] as const) {
+        for (const [key, val] of Object.entries(bundle)) {
+          const m = new RegExp(`^${kind}/[^/]+/([^/]+)\\.json$`).exec(key);
+          const name = (val as { name?: unknown } | null)?.name;
+          if (!m || typeof name !== 'string') continue;
+          const route = `/${kind}?id=${m[1]}`;
+          for (const part of [name, ...name.split(/\s*\/\s*/)]) {
+            if (part.trim()) idx.set(normName(part), route);
+          }
+        }
+      }
+      nameIndex.set(locale, idx);
+    })
+    .catch(() => {
+      nameIndex.set(locale, new Map());
+    })
+    .finally(() => namesInflight.delete(locale));
+  namesInflight.set(locale, job);
+  return job;
+}
+
 /** Eagerly populate the cache (call once on panel mount). */
 export function loadMissionIndex(): Promise<void> {
-  return ensureLoaded();
+  return Promise.all([ensureLoaded(), ensureNames(getLocale())]).then(() => {});
 }
 
 function leadingMissionName(entry: string): string {
@@ -96,10 +143,11 @@ function resolveHref(name: string): string | null {
   for (const id of normaliseCandidates(name)) {
     // Detail views open as a modal on the index page via ?id= (there is no
     // /missions/[id] or /fleet/[id] route) — matches every other deep-link.
-    if (missionIdCache.has(id)) return `${base}/missions?id=${id}`;
-    if (fleetIdCache.has(id)) return `${base}/fleet?id=${id}`;
+    if (missionIdCache.has(id)) return localHref(`/missions?id=${id}`);
+    if (fleetIdCache.has(id)) return localHref(`/fleet?id=${id}`);
   }
-  return null;
+  const route = nameIndex.get(getLocale())?.get(normName(name));
+  return route ? localHref(route) : null;
 }
 
 /** Resolve a mission name to a link target. Returns null if neither

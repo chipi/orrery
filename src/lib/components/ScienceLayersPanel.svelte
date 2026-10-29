@@ -21,7 +21,7 @@
 -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { onScienceLensChange, markScienceLensAvailable } from '$lib/science-lens';
   import {
     LAYER_ORDER,
@@ -454,7 +454,7 @@
     {#if expanded}
       <div id="science-lens-body">
         {#if hasLensStory && tab && section}
-          <a class="lens-story" href="{base}/science/{tab}/{section}">
+          <a class="lens-story" href={localHref(`/science/${tab}/${section}`)}>
             <div class="lens-title">{title}</div>
             <div class="lens-body">{body}</div>
             <div class="lens-link">→ Read in /science</div>
@@ -481,7 +481,9 @@
                 <span class="row-desc">
                   {meta.description}
                   {#if meta.learn}
-                    <a class="row-learn" href="{base}/science/{meta.learn.tab}/{meta.learn.section}"
+                    <a
+                      class="row-learn"
+                      href={localHref(`/science/${meta.learn.tab}/${meta.learn.section}`)}
                       >→ science</a
                     >
                   {/if}
@@ -499,7 +501,10 @@
             <ul class="foundations-list">
               {#each historicalFoundations as ref (ref.section)}
                 <li>
-                  <a class="foundations-link" href="{base}/science/{ref.tab}/{ref.section}">
+                  <a
+                    class="foundations-link"
+                    href={localHref(`/science/${ref.tab}/${ref.section}`)}
+                  >
                     {ref.label} →
                   </a>
                 </li>

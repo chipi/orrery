@@ -8,6 +8,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
@@ -46,7 +47,7 @@
 </svelte:head>
 
 <nav class="crumb">
-  <a href="{base}/science">{m.science_heading()}</a>
+  <a href={localHref(`/science`)}>{m.science_heading()}</a>
   <span class="sep">›</span>
   <span>{tabLabel(data.tab)}</span>
 </nav>

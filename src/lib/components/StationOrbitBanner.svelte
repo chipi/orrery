@@ -16,7 +16,7 @@
 -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { onScienceLensChange } from '$lib/science-lens';
   import * as m from '$lib/paraglide/messages.js';
   import WhyPopover from './WhyPopover.svelte';
@@ -153,21 +153,21 @@
             body={m.why_station_sunrises_body()}
           /></span
         >
-        <a class="banner-link" href="{base}/science/orbits/orbit-regimes">
+        <a class="banner-link" href={localHref(`/science/orbits/orbit-regimes`)}>
           {m.station_banner_read_more()}
         </a>
       </p>
       <p class="banner-foot banner-foot-secondary">
-        <a class="banner-link" href="{base}/science/scales-time/long-duration">
+        <a class="banner-link" href={localHref(`/science/scales-time/long-duration`)}>
           {m.station_banner_long_duration_link()}
         </a>
-        <a class="banner-link" href="{base}/science/life-in-space/eva-operations">
+        <a class="banner-link" href={localHref(`/science/life-in-space/eva-operations`)}>
           {m.station_banner_eva_link()}
         </a>
-        <a class="banner-link" href="{base}/science/space-stations/expedition-cadence">
+        <a class="banner-link" href={localHref(`/science/space-stations/expedition-cadence`)}>
           {m.chip_label_expedition_cadence()}
         </a>
-        <a class="banner-link" href="{base}/science/space-stations/solar-power-budget">
+        <a class="banner-link" href={localHref(`/science/space-stations/solar-power-budget`)}>
           {m.chip_label_solar_power_budget()}
         </a>
       </p>

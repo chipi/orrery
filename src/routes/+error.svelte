@@ -11,6 +11,7 @@
 -->
 <script lang="ts">
   import { page } from '$app/state';
+  import { localHref } from '$lib/locale';
   import { base } from '$app/paths';
   import { browser } from '$app/environment';
   import * as m from '$lib/paraglide/messages';
@@ -52,9 +53,9 @@
     {/if}
 
     <div class="error-actions">
-      <a class="error-cta" href="{base}/">{m.error_back_home()}</a>
-      <a class="error-cta error-cta-ghost" href="{base}/missions">{m.nav_missions()}</a>
-      <a class="error-cta error-cta-ghost" href="{base}/explore">{m.nav_explore()}</a>
+      <a class="error-cta" href={localHref(`/`)}>{m.error_back_home()}</a>
+      <a class="error-cta error-cta-ghost" href={localHref(`/missions`)}>{m.nav_missions()}</a>
+      <a class="error-cta error-cta-ghost" href={localHref(`/explore`)}>{m.nav_explore()}</a>
     </div>
 
     <p class="error-tip">

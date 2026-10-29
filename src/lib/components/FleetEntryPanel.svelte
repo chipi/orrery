@@ -6,7 +6,6 @@
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
-  import { base } from '$app/paths';
   import { page } from '$app/state';
   import { assetUrl } from '$lib/asset-url';
   import {
@@ -16,7 +15,7 @@
     getMissionGallery,
     getMissionIndex,
   } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import {
     cardForFleet,
     cardForMission,
@@ -300,9 +299,9 @@
   });
 
   function siteRoute(ls: FleetSiteLink): string {
-    if (ls.type === 'moon') return `${base}/moon?site=${encodeURIComponent(ls.site_id)}`;
-    if (ls.type === 'mars') return `${base}/mars?site=${encodeURIComponent(ls.site_id)}`;
-    return `${base}/earth?id=${encodeURIComponent(ls.site_id)}`;
+    if (ls.type === 'moon') return localHref(`/moon?site=${encodeURIComponent(ls.site_id)}`);
+    if (ls.type === 'mars') return localHref(`/mars?site=${encodeURIComponent(ls.site_id)}`);
+    return localHref(`/earth?id=${encodeURIComponent(ls.site_id)}`);
   }
 
   // Per-category label: landers/rovers say "Landing site"; orbiters
@@ -420,7 +419,7 @@
         {#if entry.explorer_route}
           <a
             class="explorer-cta"
-            href="{base}{entry.explorer_route}?id={entry.id}"
+            href={localHref(`${entry.explorer_route}?id=${entry.id}`)}
             data-sveltekit-preload-data="hover"
           >
             Open {entry.name} Explorer →
@@ -444,7 +443,7 @@
             <div class="mission-cta-bar">
               <a
                 class="spec-cta spec-cta--mission"
-                href="{base}/missions?id={missionIds[0]}"
+                href={localHref(`/missions?id=${missionIds[0]}`)}
                 data-testid="fleet-mission-cta-single"
                 data-sveltekit-preload-data="hover"
               >
@@ -545,7 +544,7 @@
               <li>
                 <a
                   class="xref-link"
-                  href="{base}/science/{s.slug}"
+                  href={localHref(`/science/${s.slug}`)}
                   data-sveltekit-preload-data="hover">{s.label} →</a
                 >
               </li>
@@ -752,7 +751,7 @@
                   <span class="flight-designation">{flight.flight_designation}</span>
                   <a
                     class="mission-link"
-                    href="{base}/missions?id={flight.mission_id}"
+                    href={localHref(`/missions?id=${flight.mission_id}`)}
                     data-sveltekit-preload-data="hover"
                   >
                     Mission →
@@ -791,7 +790,7 @@
               <li>
                 <a
                   class="mission-link"
-                  href="{base}/missions?id={mid}"
+                  href={localHref(`/missions?id=${mid}`)}
                   data-sveltekit-preload-data="hover"
                 >
                   {mid}

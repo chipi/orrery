@@ -65,7 +65,7 @@
     getFleetIndex,
     getFleetGallery,
   } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { missionDestToDataFolder } from '$lib/mission-dest';
   import {
     auToMkm,
@@ -507,7 +507,7 @@
     const b = descentProfile?.body;
     const sid = descentProfile?.siteId;
     if ((b === 'moon' || b === 'mars' || b === 'venus') && sid) {
-      void goto(`${base}/${b}?site=${sid}&from=descent`);
+      void goto(localHref(`/${b}?site=${sid}&from=descent`));
     } else {
       // Earth re-entry has no surface-explore route — the reducer routes touchdown
       // by descentBody: earth → the recovery card; anything else stays put (the
@@ -3564,7 +3564,7 @@
     {@const transitDays = mission.transit_days
       ? m.mp_transit_days({ count: mission.transit_days.toString() })
       : null}
-    {@const missionLink = mission.id ? `${base}/missions?id=${mission.id}` : null}
+    {@const missionLink = mission.id ? localHref(`/missions?id=${mission.id}`) : null}
 
     <!-- Single merged opening stack — title + context + fleet all
          inside one translucent container, screen-centered. The whole
@@ -3678,7 +3678,7 @@
                   <a
                     class="opening-fleet-card"
                     class:hero={asset.role === 'spacecraft' || asset.role === 'launcher'}
-                    href="{base}/fleet?id={asset.id}"
+                    href={localHref(`/fleet?id=${asset.id}`)}
                     data-sveltekit-preload-data="off"
                   >
                     {#if asset.heroPath}
@@ -3793,8 +3793,8 @@
       </span>
       {#if mission.name === 'ORRERY DEMO'}
         <p class="hud-demo-hint">{m.fly_demo_hint()}</p>
-        <a href="{base}/plan" class="hud-demo-cta">{m.fly_demo_cta()}</a>
-        <a href="{base}/missions" class="hud-demo-cta hud-demo-cta-secondary"
+        <a href={localHref(`/plan`)} class="hud-demo-cta">{m.fly_demo_cta()}</a>
+        <a href={localHref(`/missions`)} class="hud-demo-cta hud-demo-cta-secondary"
           >{m.fly_demo_replay_cta()}</a
         >
       {/if}

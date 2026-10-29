@@ -53,7 +53,7 @@ class BundleLoadError extends Error {
   }
 }
 
-function loadI18nBundle(locale: string, fetchFn: FetchLike): Promise<Record<string, unknown>> {
+export function loadI18nBundle(locale: string, fetchFn: FetchLike): Promise<Record<string, unknown>> {
   let p = i18nBundles.get(locale);
   if (!p) {
     // Circuit open: too many failed cycles this page-load — don't hammer the

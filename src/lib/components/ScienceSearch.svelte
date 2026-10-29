@@ -16,6 +16,7 @@
 -->
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { localHref } from '$lib/locale';
   import { goto } from '$app/navigation';
   import * as m from '$lib/paraglide/messages';
   import { base } from '$app/paths';
@@ -125,7 +126,7 @@
         // pass raw user text to `track()` directly.
         trackSearchHit(query, pick.tab, pick.section);
         close();
-        void goto(`${base}/science/${pick.tab}/${pick.section}`);
+        void goto(localHref(`/science/${pick.tab}/${pick.section}`));
       }
     }
   }
@@ -170,7 +171,7 @@
             <a
               class="result"
               class:active={i === highlighted}
-              href="{base}/science/{r.tab}/{r.section}"
+              href={localHref(`/science/${r.tab}/${r.section}`)}
               onclick={() => close()}
               onmouseenter={() => (highlighted = i)}
               role="option"

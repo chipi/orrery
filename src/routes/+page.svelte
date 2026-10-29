@@ -1,13 +1,11 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
-  import { page } from '$app/state';
-  import { base } from '$app/paths';
 
   // See the about-body markup below — sentinel, not the rendered word.
   const PRIVACY_LINK_TOKEN = '\u0000privacy-link\u0000';
   import { assetOrigin } from '$lib/asset-url';
-  import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
+  import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
 
   // The author's other sites. Names are brands (not translated); the sites are
@@ -29,14 +27,6 @@
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { CURATOR_FULL_TOUR } from '$lib/audio-tour';
   import { AudioWaveIcon } from '$lib/components/icons';
-
-  const activeLocale = $derived(localeFromPage(page));
-
-  function withLang(path: string): string {
-    return activeLocale === DEFAULT_LOCALE
-      ? path
-      : `${path}?lang=${encodeURIComponent(activeLocale)}`;
-  }
 
   // Hero CTA — kicks off the Curator Tour the same way the audio overlay's
   // tour-start button does (AudioOverlay startTourFromSequence). Loads the
@@ -264,11 +254,7 @@
     <p class="tagline">{m.landing_hero_tagline()}</p>
     <p class="subhead">{m.landing_hero_subhead()}</p>
     <div class="cta-row">
-      <a
-        class="cta cta-primary"
-        href={withLang(`${base}/explore`)}
-        data-testid="landing-cta-primary"
-      >
+      <a class="cta cta-primary" href={localHref('/explore')} data-testid="landing-cta-primary">
         {m.landing_cta_primary()}
       </a>
       <button
@@ -407,7 +393,7 @@
           <li>
             <a
               class="card"
-              href={withLang(`${base}${card.route}${card.query ?? ''}`)}
+              href={localHref(`${card.route}${card.query ?? ''}`)}
               aria-label={`${card.name ?? card.route}: ${card.title}`}
               data-audio-stage="route-card-{card.glyph}"
             >
@@ -1197,7 +1183,7 @@
         .landing_footer_about({ privacy: PRIVACY_LINK_TOKEN })
         .replace(
           PRIVACY_LINK_TOKEN,
-          `<a href="${base}/privacy">${m.landing_footer_privacy_link()}</a>`,
+          `<a href="${localHref('/privacy')}">${m.landing_footer_privacy_link()}</a>`,
         )}
     </p>
     <h3 class="more-heading">{m.landing_more_heading()}</h3>

@@ -7,7 +7,6 @@
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/state';
-  import { base } from '$app/paths';
   import { assetOrigin, assetUrl } from '$lib/asset-url';
   import { trackMissionView, trackGalleryImageOpen } from '$lib/analytics';
   import { getMissionGallery, getMarsSites, getMoonSites, getBadges } from '$lib/data';
@@ -17,7 +16,7 @@
   import type { MissionIndex } from '$types/mission';
   import type { SurfaceSite } from '$types/surface-site';
   import { formatNumber } from '$lib/format';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
   import { missionStatusLabel } from '$lib/status-label';
@@ -422,7 +421,7 @@
             {#if launcherRef}
               <a
                 class="spec-cta spec-cta--vehicle"
-                href="{base}/fleet?id={launcherRef}"
+                href={localHref(`/fleet?id=${launcherRef}`)}
                 data-testid="mission-vehicle-fleet-link"
                 title="Open {mission.vehicle} in /fleet"
               >
@@ -453,7 +452,7 @@
             {#if spacecraftRef}
               <a
                 class="spec-cta spec-cta--payload"
-                href="{base}/fleet?id={spacecraftRef}"
+                href={localHref(`/fleet?id=${spacecraftRef}`)}
                 data-testid="mission-payload-fleet-link"
                 title={m.mission_open_in_fleet_title()}
               >
@@ -499,7 +498,7 @@
                at Saturn-system scale on zoom-in (Slice D). -->
           <a
             class="explore-backlink"
-            href="{base}/explore?paths=1{mission.id === 'cassini' ? '&focus=saturn' : ''}"
+            href={localHref(`/explore?paths=1${mission.id === 'cassini' ? '&focus=saturn' : ''}`)}
             data-testid="explore-backlink"
           >
             {mission.id === 'cassini' ? m.mp_see_tour_on_explore() : m.mp_see_path_on_explore()}
@@ -913,7 +912,7 @@
                 : 'ON THE LUNAR SURFACE ↗'}
           <a
             class="surface-link"
-            href={`${base}/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`}
+            href={localHref(`/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`)}
             data-testid="surface-link"
           >
             {surfaceLabel}

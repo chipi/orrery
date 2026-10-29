@@ -11,9 +11,9 @@
    */
 
   import { onMount, untrack } from 'svelte';
+  import { localHref } from '$lib/locale';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
-  import { base } from '$app/paths';
   import {
     loadUpcoming,
     loadHistoricDecade,
@@ -192,7 +192,7 @@
       params.set('outcome', filterState.outcome);
     if (filterState.year !== 'ALL') params.set('year', filterState.year);
     const qs = params.toString();
-    const target = `${base}/missions/launches${qs ? `?${qs}` : ''}`;
+    const target = localHref(`/missions/launches${qs ? `?${qs}` : ''}`);
     if (target !== page.url.pathname + page.url.search) {
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
     }
@@ -226,7 +226,7 @@
   data-loading={loading ? 'true' : null}
   data-mode={mode}
 >
-  <a class="back-link" href="{base}/missions" data-sveltekit-preload-data="hover">
+  <a class="back-link" href={localHref(`/missions`)} data-sveltekit-preload-data="hover">
     <span class="back-arrow" aria-hidden="true">←</span>
     <span class="back-label">{m.launches_back_to_missions()}</span>
   </a>

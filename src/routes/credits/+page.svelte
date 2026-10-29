@@ -13,6 +13,7 @@
 -->
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { dataLoadFailed, get } from '$lib/data/core';
@@ -351,9 +352,11 @@
                     <p class="ph-row sat">
                       <a
                         class="ph-sat"
-                        href="{base}/{photo.path.includes('/moon/')
-                          ? 'moon'
-                          : 'mars'}?site={photo.spacecraft_id}"
+                        href={localHref(
+                          `/${
+                            photo.path.includes('/moon/') ? 'moon' : 'mars'
+                          }?site=${photo.spacecraft_id}`,
+                        )}
                       >
                         <span aria-hidden="true">📡</span>
                         {photo.spacecraft_name}{photo.instrument ? ` · ${photo.instrument}` : ''}
@@ -631,7 +634,7 @@
         .credits_storage_intro({ privacy: PRIVACY_LINK_TOKEN })
         .replace(
           PRIVACY_LINK_TOKEN,
-          `<a href="${base}/privacy">${m.credits_storage_privacy_link()}</a>`,
+          `<a href="${localHref('/privacy')}">${m.credits_storage_privacy_link()}</a>`,
         )}
     </p>
     <ul class="storage-list">

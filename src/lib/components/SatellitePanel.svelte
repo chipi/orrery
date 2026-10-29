@@ -18,7 +18,7 @@
   import Panel from './Panel.svelte';
   import { page } from '$app/state';
   import { formatKm } from '$lib/format';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import {
     getSatellites,
@@ -28,7 +28,6 @@
     type SatelliteI18n,
   } from '$lib/data';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
-  import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import { cardForSatellite, type CardSpec } from '$lib/cards/card-spec';
   import CardOverlay from '$lib/cards/CardOverlay.svelte';
@@ -248,7 +247,7 @@
     </div>
     {#if entry?.id === 'moon'}
       <div class="cta-bar">
-        <a class="cta cta-secondary" href="{base}/moon">
+        <a class="cta cta-secondary" href={localHref(`/moon`)}>
           {m.panel_explore_surface_cta({ name: entry.name.toUpperCase() })}
         </a>
       </div>

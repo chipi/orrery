@@ -10,7 +10,7 @@
 -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { onLayerChange } from '$lib/science-layers';
   import { ConicIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages.js';
@@ -75,7 +75,7 @@
 {#if layerOn}
   <a
     class="panel"
-    href="{base}/science/transfers/conic-sections"
+    href={localHref(`/science/transfers/conic-sections`)}
     data-testid="conic-section-panel"
     data-shape={shape}
   >

@@ -23,9 +23,8 @@
   import ScienceCard from './ScienceCard.svelte';
   import * as m from '$lib/paraglide/messages';
   import { page } from '$app/state';
-  import { base } from '$app/paths';
   import { goto } from '$app/navigation';
-  import { localeFromPage, DEFAULT_LOCALE } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import type { ScienceTabId } from '$types/science';
   import { getBelts, getBeltGallery, getBeltI18n, type BeltEntry, type BeltI18n } from '$lib/data';
@@ -139,8 +138,14 @@
     if (!firstWord) return null;
     const sbId = SMALL_BODY_IDS[firstWord];
     if (!sbId) return null;
-    const qs = loc === DEFAULT_LOCALE ? '' : `&lang=${encodeURIComponent(loc)}`;
-    return `${base}/explore?id=${sbId}${qs}`;
+    return localHref(`/explore?id=${sbId}`);
+  }
+  // Member strings come from the locale overlay ("Церера — …"); the link is
+  // keyed on the English name, so read it from the base list at the same
+  // index (every locale keeps the base order and length).
+  function baseMember(i: number): string | undefined {
+    const baseList = baseEntry?.largest_members;
+    return baseList && baseList.length === entry?.largest_members.length ? baseList[i] : undefined;
   }
   function openMember(href: string, event: Event) {
     event.preventDefault();
@@ -157,11 +162,7 @@
     kuiper: '/science/planets/kuiper-belt',
   };
   let scienceHref = $derived(
-    entry && SCIENCE_PATHS[entry.id]
-      ? `${base}${SCIENCE_PATHS[entry.id]}${
-          loc === DEFAULT_LOCALE ? '' : `?lang=${encodeURIComponent(loc)}`
-        }`
-      : null,
+    entry && SCIENCE_PATHS[entry.id] ? localHref(SCIENCE_PATHS[entry.id]!) : null,
   );
 </script>
 
@@ -265,8 +266,8 @@
       {:else if tab === 'members'}
         <p class="editorial">{m.belt_members_intro({ name: entry.name })}</p>
         <ul class="member-list">
-          {#each entry.largest_members as member (member)}
-            {@const href = memberLink(member)}
+          {#each entry.largest_members as member, i (member)}
+            {@const href = memberLink(baseMember(i) ?? member)}
             <li>
               {#if href}
                 <a {href} onclick={(e) => openMember(href, e)} class="member-link">

@@ -49,6 +49,18 @@ jobs:
       - name: Assemble debug APK
         working-directory: android
         run: ./gradlew assembleDebug --no-daemon --stacktrace
+      - name: APK version follows package.json; FINE location up to API 30
+        run: |
+          aapt="$(find "$ANDROID_HOME/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -1)/aapt"
+          badging="$("$aapt" dump badging android/app/build/outputs/apk/debug/app-debug.apk)"
+          want="$(node -p "require('./package.json').version")"
+          got="$(sed -n "s/.*versionName='\([^']*\)'.*/\1/p" <<<"$badging" | head -1)"
+          echo "versionName: $got (package.json $want)"
+          [ "$got" = "$want" ] || { echo "::error::APK versionName $got != package.json $want"; exit 1; }
+          # Capacitor's WebView asks for COARSE+FINE together and only accepts
+          # COARSE alone from API 31, so FINE must be declared for API 24-30.
+          grep -q "uses-permission: name='android.permission.ACCESS_FINE_LOCATION' maxSdkVersion='30'" <<<"$badging" \
+            || { echo "::error::ACCESS_FINE_LOCATION (maxSdkVersion 30) missing from the APK"; exit 1; }
 
   ios:
     runs-on: macos-latest
@@ -66,3 +78,14 @@ jobs:
           xcodebuild -workspace ios/App/App.xcworkspace -scheme App -configuration Debug \
             -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
             -derivedDataPath "$RUNNER_TEMP/dd" CODE_SIGNING_ALLOWED=NO build
+      - name: App version follows package.json
+        run: |
+          # build:mobile writes MARKETING_VERSION from package.json; a diff here
+          # means the committed project.pbxproj is stale.
+          git diff --exit-code -- ios/App/App.xcodeproj/project.pbxproj \
+            || { echo "::error::project.pbxproj MARKETING_VERSION is not package.json's; commit the sync"; exit 1; }
+          want="$(node -p "require('./package.json').version.split('-')[0]")"
+          got="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' \
+            "$RUNNER_TEMP/dd/Build/Products/Debug-iphonesimulator/App.app/Info.plist")"
+          echo "CFBundleShortVersionString: $got (package.json $want)"
+          [ "$got" = "$want" ] || { echo "::error::app version $got != package.json $want"; exit 1; }

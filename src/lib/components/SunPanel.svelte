@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import { getSunGallery } from '$lib/data';
@@ -97,21 +98,7 @@
     </div>
 
     {#if gallery.length > 0}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => (lightboxSrc = gallery[0]!)}
-          aria-label={m.panel_hero_aria({ name: sun.name })}
-        >
-          <img
-            {...responsive(gallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage src={gallery[0]} name={sun.name} onOpen={() => (lightboxSrc = gallery[0]!)} />
     {/if}
 
     <div class="tabs" role="tablist">

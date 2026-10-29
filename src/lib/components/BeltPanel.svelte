@@ -16,6 +16,7 @@
    * in static/data/small-bodies.json (Ceres / Pluto / Eris / Haumea /
    * Makemake all resolve today).
    */
+  import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import ScienceCard from './ScienceCard.svelte';
@@ -183,14 +184,7 @@
     </div>
 
     {#if gallery.length > 0}
-      <div class="panel-hero">
-        <img
-          {...responsive(gallery[0], IMAGE_SIZES.panel)}
-          alt=""
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
+      <PanelHeroImage src={gallery[0]} name={entry.name} />
     {/if}
 
     <div class="tabs" role="tablist">
@@ -378,17 +372,6 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     color: var(--color-text);
-  }
-  .panel-hero {
-    margin: 0 0 14px;
-    border-radius: 3px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.4);
-  }
-  .panel-hero img {
-    display: block;
-    width: 100%;
-    height: auto;
   }
   .tabs {
     display: flex;

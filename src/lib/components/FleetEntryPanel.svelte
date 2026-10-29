@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
@@ -376,24 +377,16 @@
     </div>
 
     {#if hasGallery}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => {
-            lightboxSrc = gallery[0]!;
-            trackGalleryImageOpen('fleet', entry.id, 0);
-          }}
-          aria-label={m.fleet_view_hero_aria({ name: entry.name })}
-        >
-          <img
-            {...responsive(gallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage
+        src={gallery[0]}
+        name={entry.name}
+        ariaLabel={m.fleet_view_hero_aria({ name: entry.name })}
+        heroClass="fleet-hero"
+        onOpen={() => {
+          lightboxSrc = gallery[0]!;
+          trackGalleryImageOpen('fleet', entry.id, 0);
+        }}
+      />
     {/if}
 
     <!-- Tab order: OVERVIEW · MISSIONS (cond) · GALLERY · ANATOMY · CREW
@@ -950,13 +943,13 @@
     line-height: 1.4;
   }
 
-  .panel-hero {
+  :global(.panel-hero.fleet-hero) {
     margin: 4px 0 8px;
     aspect-ratio: 16 / 9;
     background: rgba(255, 255, 255, 0.02);
     overflow: hidden;
   }
-  .panel-hero-btn {
+  :global(.fleet-hero .panel-hero-btn) {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -964,7 +957,7 @@
     padding: 0;
     cursor: pointer;
   }
-  .panel-hero-btn img {
+  :global(.fleet-hero .panel-hero-btn img) {
     width: 100%;
     height: 100%;
     object-fit: cover;

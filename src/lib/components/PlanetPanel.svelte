@@ -1,6 +1,7 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import { base } from '$app/paths';
@@ -167,24 +168,14 @@
     </div>
 
     {#if gallery.length > 0}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => {
-            if (Date.now() - panelOpenedAt < 400) return;
-            lightboxSrc = gallery[0]!;
-          }}
-          aria-label={m.panel_hero_aria({ name: planet.name })}
-        >
-          <img
-            {...responsive(gallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage
+        src={gallery[0]}
+        name={planet.name}
+        onOpen={() => {
+          if (Date.now() - panelOpenedAt < 400) return;
+          lightboxSrc = gallery[0]!;
+        }}
+      />
     {/if}
 
     <div class="tabs" role="tablist">

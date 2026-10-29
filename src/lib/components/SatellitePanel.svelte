@@ -13,6 +13,7 @@
    * Uranus + Neptune (16 total). Slice 6 wires the per-locale
    * overlay loader for translated content.
    */
+  import PanelHeroImage from './PanelHeroImage.svelte';
   import Panel from './Panel.svelte';
   import { page } from '$app/state';
   import { formatKm } from '$lib/format';
@@ -137,14 +138,7 @@
     </div>
 
     {#if gallery.length > 0}
-      <div class="panel-hero">
-        <img
-          {...responsive(assetUrl(gallery[0]), IMAGE_SIZES.panel)}
-          alt=""
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
+      <PanelHeroImage src={assetUrl(gallery[0])} name={entry.name} />
     {/if}
 
     <div class="tabs" role="tablist">
@@ -351,17 +345,6 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 13px;
     color: var(--color-text);
-  }
-  .panel-hero {
-    margin: 0 0 14px;
-    border-radius: 3px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.4);
-  }
-  .panel-hero img {
-    display: block;
-    width: 100%;
-    height: auto;
   }
   .tabs {
     display: flex;

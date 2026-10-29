@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   /**
    * Reusable EarthObject detail panel — overview / gallery / learn
    * tabs, with hero image, mission cross-link, and lightbox. Pulled out
@@ -18,6 +16,7 @@
    */
   import { page } from '$app/state';
   import { base } from '$app/paths';
+  import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import Panel from '$lib/components/Panel.svelte';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
@@ -205,21 +204,11 @@
     </div>
 
     {#if panelGallery.length > 0}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => (panelLightbox = panelGallery[0]!)}
-          aria-label={m.panel_hero_aria({ name: selected.name ?? selected.id })}
-        >
-          <img
-            {...responsive(panelGallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage
+        src={panelGallery[0]}
+        name={selected.name ?? selected.id}
+        onOpen={() => (panelLightbox = panelGallery[0]!)}
+      />
     {/if}
 
     <PanelTabRow

@@ -384,6 +384,8 @@ export function assertProductionConfig(): void {
     'LAB_GOOGLE_CLIENT_ID',
     'LAB_GOOGLE_CLIENT_SECRET',
     'LAB_CLAUDE_CLIENT_SECRET',
+    // ask.ts falls back to the homelab hostname, which prod cannot reach.
+    'LITELLM_BASE_URL',
   ].filter((k) => !process.env[k]);
   if (missing.length) {
     throw new Error(`lab-api refuses to start in production without: ${missing.join(', ')}`);

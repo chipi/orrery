@@ -120,6 +120,7 @@ describe('assertProductionConfig', () => {
     gid: process.env.LAB_GOOGLE_CLIENT_ID,
     gsec: process.env.LAB_GOOGLE_CLIENT_SECRET,
     csec: process.env.LAB_CLAUDE_CLIENT_SECRET,
+    llm: process.env.LITELLM_BASE_URL,
   });
 
   it('throws in production when client config is missing, naming the vars', () => {
@@ -129,8 +130,9 @@ describe('assertProductionConfig', () => {
       delete process.env.LAB_GOOGLE_CLIENT_ID;
       delete process.env.LAB_GOOGLE_CLIENT_SECRET;
       process.env.LAB_CLAUDE_CLIENT_SECRET = 'x';
+      process.env.LITELLM_BASE_URL = 'http://gw:4001';
       expect(() => assertProductionConfig()).toThrow(
-        /LAB_GOOGLE_CLIENT_ID, LAB_GOOGLE_CLIENT_SECRET/,
+        /LAB_GOOGLE_CLIENT_ID, LAB_GOOGLE_CLIENT_SECRET$/,
       );
     } finally {
       Object.assign(process.env, {
@@ -138,6 +140,7 @@ describe('assertProductionConfig', () => {
         LAB_GOOGLE_CLIENT_ID: s.gid,
         LAB_GOOGLE_CLIENT_SECRET: s.gsec,
         LAB_CLAUDE_CLIENT_SECRET: s.csec,
+        LITELLM_BASE_URL: s.llm,
       });
     }
   });
@@ -149,7 +152,11 @@ describe('assertProductionConfig', () => {
       process.env.LAB_GOOGLE_CLIENT_ID = 'id';
       process.env.LAB_GOOGLE_CLIENT_SECRET = 'sec';
       process.env.LAB_CLAUDE_CLIENT_SECRET = 'csec';
+      process.env.LITELLM_BASE_URL = 'http://gw:4001';
       expect(() => assertProductionConfig()).not.toThrow();
+      delete process.env.LITELLM_BASE_URL;
+      expect(() => assertProductionConfig()).toThrow(/LITELLM_BASE_URL/);
+      process.env.LITELLM_BASE_URL = 'http://gw:4001';
       process.env.NODE_ENV = 'test';
       delete process.env.LAB_GOOGLE_CLIENT_ID;
       expect(() => assertProductionConfig()).not.toThrow();
@@ -159,6 +166,7 @@ describe('assertProductionConfig', () => {
         LAB_GOOGLE_CLIENT_ID: s.gid,
         LAB_GOOGLE_CLIENT_SECRET: s.gsec,
         LAB_CLAUDE_CLIENT_SECRET: s.csec,
+        LITELLM_BASE_URL: s.llm,
       });
     }
   });

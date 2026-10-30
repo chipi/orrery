@@ -5,11 +5,12 @@
  * exercises.
  */
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
-import { createServer, type Server } from 'node:http';
+import type { Server } from 'node:http';
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { buildLabApi, assertProductionConfig, type LabApiConfig } from './index';
+import { listenOnFreePort } from './test-listen';
 
 let dir: string;
 let server: Server;
@@ -26,14 +27,10 @@ beforeAll(async () => {
     statePath: join(dir, 'state.json'),
     allowlistPath: join(dir, 'allowlist.json'),
   };
-  const probe = createServer();
-  await new Promise<void>((r) => probe.listen(0, '127.0.0.1', r));
-  const port = (probe.address() as { port: number }).port;
-  await new Promise<void>((r) => probe.close(() => r()));
-  const built = await buildLabApi({ ...cfg, issuer: `http://127.0.0.1:${port}` });
-  await new Promise<void>((r) => built.server.listen(port, '127.0.0.1', r));
-  server = built.server;
-  base = `http://127.0.0.1:${port}`;
+  server = await listenOnFreePort(async (port) => {
+    base = `http://127.0.0.1:${port}`;
+    return (await buildLabApi({ ...cfg, issuer: base })).server;
+  });
 });
 
 afterAll(() => {

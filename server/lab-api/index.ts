@@ -19,7 +19,7 @@ import { AuthServer, type AsConfig, type StaticClient } from './as';
 import { googleConfigFromEnv } from './google';
 import { TokenCore } from './tokens';
 import { isAllowed } from './allowlist';
-import { ask, askDepsFromEnv, LlmUnavailableError } from './ask';
+import { ask, askDepsFromEnv, LlmUnavailableError, MAX_QUESTION_CHARS } from './ask';
 import { parseScenarioArgs } from './scenario';
 import { captureError, instrumentRequest } from '../observability';
 
@@ -296,6 +296,11 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
         }
         if (typeof body.question !== 'string' || !body.question.trim()) {
           return json(res, 400, { error: "'question' (non-empty string) is required" });
+        }
+        if (body.question.length > MAX_QUESTION_CHARS) {
+          return json(res, 400, {
+            error: `'question' is longer than ${MAX_QUESTION_CHARS} characters`,
+          });
         }
         // Multi-turn context (slices #540/#543) is CLIENT-held and echoed each turn. Trust
         // NOTHING about the echo — re-run compose's own guard (≤MAX_SCENARIO_CELLS +

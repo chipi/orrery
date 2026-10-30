@@ -10,7 +10,10 @@
   "locales": {
     "es": {
       "audited": null,
-      "defects": {},
+      "defects": {
+        "lab_mark_baikonur": ["differs from the glossary form"],
+        "plan_destination_eurybates": ["differs from the glossary form"]
+      },
       "variants": {
         "active": "baseline 2026-10-30: locale not audited yet",
         "all": "baseline 2026-10-30: locale not audited yet",
@@ -213,7 +216,9 @@
     },
     "it": {
       "audited": null,
-      "defects": {},
+      "defects": {
+        "plan_destination_phobos": ["differs from the glossary form"]
+      },
       "variants": {
         "about": "baseline 2026-10-30: locale not audited yet",
         "active": "baseline 2026-10-30: locale not audited yet",
@@ -325,7 +330,12 @@
         "lab_f_vis_viva_title": ["English words left untranslated"],
         "observatory_kind_deep_space": ["Latin-script words that are not names from the source"],
         "plan_explainer_title": ["English words left untranslated"],
-        "science_layer_mag_north_label": ["English words left untranslated"]
+        "science_layer_mag_north_label": ["English words left untranslated"],
+        "plan_destination_arrokoth": ["differs from the glossary form"],
+        "plan_destination_dimorphos": ["differs from the glossary form"],
+        "plan_destination_donaldjohanson": ["differs from the glossary form"],
+        "plan_destination_eurybates": ["differs from the glossary form"],
+        "lab_body_ryugu": ["differs from the glossary form"]
       },
       "variants": {
         "active": "baseline 2026-10-30: locale not audited yet",
@@ -483,7 +493,9 @@
     },
     "hi": {
       "audited": "bbae9241232",
-      "defects": {},
+      "defects": {
+        "explore_ctx_solar_system": ["differs from the glossary form"]
+      },
       "variants": {
         "anomaly": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
         "constellation": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
@@ -495,11 +507,16 @@
         "search": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
         "temp": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
         "transit": "reviewed in the hi audit (bbae9241232): the meaning differs by context"
+      },
+      "notes": {
+        "explore_ctx_solar_system": "open 2026-10-30: the site splits between two forms of \"Solar System\" in prose (i18n-src मंडल 120 / मण्डल 94; messages 9 / 24); the label keeps the UI's form until a prose-wide one-name decision; glossary has सौर मण्डल (hi Wikipedia)"
       }
     },
     "ar": {
       "audited": "7994b6378cc",
-      "defects": {},
+      "defects": {
+        "explore_ctx_solar_system": ["differs from the glossary form"]
+      },
       "variants": {
         "active": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
         "anomaly": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
@@ -535,6 +552,9 @@
         "temp": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
         "transit": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
         "watch": "reviewed in the ar audit (7994b6378cc): the meaning differs by context"
+      },
+      "notes": {
+        "explore_ctx_solar_system": "open 2026-10-30: the site splits between two forms of \"Solar System\" in prose (i18n-src المجموعة الشمسية 124 / النظام الشمسي 71; messages 1 / 24); the label keeps the UI's form until a prose-wide one-name decision; glossary has المجموعة الشمسية (ar Wikipedia)"
       }
     },
     "ru": {
@@ -557,7 +577,8 @@
         "science_page_title": ["the site name \"Orrery\" changed or missing"],
         "tiangong_page_title": ["the site name \"Orrery\" changed or missing"],
         "lab_f_porkchop_title": ["English words left untranslated"],
-        "colophon_lab_illustrations": ["English words left untranslated"]
+        "colophon_lab_illustrations": ["English words left untranslated"],
+        "plan_destination_donaldjohanson": ["differs from the glossary form"]
       },
       "variants": {
         "active": "baseline 2026-10-30: locale not audited yet",

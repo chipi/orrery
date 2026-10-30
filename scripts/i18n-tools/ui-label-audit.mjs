@@ -19,15 +19,37 @@ const read = (loc) =>
   JSON.parse(fs.readFileSync(path.join(ROOT, 'messages', `${loc}.json`), 'utf8'));
 const stem = (r) => r.split(':')[0].split(' — ')[0];
 
-/** {key: [reason stems]} for every UI string of `loc` that problems() rejects. */
+const GLOSSARY_FORM = 'differs from the glossary form';
+let TERMS;
+/** English glossary term → {locale: form}, for the classes that are always native. */
+function glossaryTerms() {
+  if (TERMS) return TERMS;
+  const g = JSON.parse(
+    fs.readFileSync(path.join(ROOT, 'scripts/i18n-tools/native-terms.json'), 'utf8'),
+  );
+  TERMS = {};
+  for (const cls of ['body', 'star', 'feature', 'place', 'person'])
+    for (const [t, forms] of Object.entries(g[cls] ?? {})) TERMS[t] = forms;
+  return TERMS;
+}
+
+/**
+ * {key: [reason stems]} for every UI string of `loc` that problems() rejects, plus
+ * a label whose whole English is a glossary term but whose value lacks that
+ * term's form for the locale (zh-CN shipped 迪迪莫斯 for the glossary's 双生星 —
+ * name-drift-scan checks names kept in English, not native forms).
+ */
 export function uiDefects(loc) {
   const en = read('en-US');
   const m = read(loc);
+  const terms = glossaryTerms();
   const out = {};
   for (const [k, e] of Object.entries(en)) {
     if (k.startsWith('$') || typeof e !== 'string' || typeof m[k] !== 'string') continue;
-    const why = problems(loc, e, m[k], { ui: true });
-    if (why.length) out[k] = [...new Set(why.map(stem))].sort();
+    const why = problems(loc, e, m[k], { ui: true }).map(stem);
+    const form = terms[e.trim()]?.[loc];
+    if (form && !m[k].toLowerCase().includes(form.toLowerCase())) why.push(GLOSSARY_FORM);
+    if (why.length) out[k] = [...new Set(why)].sort();
   }
   return out;
 }

@@ -254,7 +254,9 @@ wrong order).
   `scripts/lib/translate-quality.mjs` rejects ordinary English words left in a
   non-Latin label, glossary bodies and places left in English, a changed "Orrery" and
   backwards RTL arrows; `scripts/i18n-tools/ui-label-audit.test.ts` runs it over every
-  `messages/<loc>.json` and also fails on a label with a second translation. Known
+  `messages/<loc>.json` and also fails on a label with a second translation, and on a
+  label whose whole English is a glossary term (a planet, moon, star, place) but whose
+  value lacks the glossary form. Known
   defects of locales not audited yet are listed in
   `scripts/i18n-tools/ui-label-baseline.json`, which only shrinks.
 

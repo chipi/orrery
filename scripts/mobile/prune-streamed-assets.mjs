@@ -172,8 +172,8 @@ async function targets() {
   }
 
   // Non-default image alt-text overlays (~1 MB each since every alt text is translated,
-  // 2026-10-21): streamed like the locale bundles (+layout loads them from
-  // localeBundleOrigin). en-US is imported into the JS bundle and never fetched.
+  // 2026-10-21): streamed like the locale bundles ($lib/image-alt fetches them from
+  // localeBundleOrigin). en-US stays on device: it is the fallback for every locale.
   const alt = path.join(BUILD, 'data', 'image-alt-text');
   if (existsSync(alt)) {
     for (const name of await readdir(alt))

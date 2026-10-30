@@ -44,7 +44,29 @@ option that ships one locale to a static (prerendered) site —
 `experimentalMiddlewareLocaleSplitting` needs a server middleware. Not worked
 around here; decide with item 3.
 
-## 2. Root-layout chunk (693 KB raw / 102 KB br, every route) — next
+## 2. Root-layout chunk (693 KB raw / 102 KB br, every route) — done
+
+It was the en-US image alt-text map (4,237 entries), statically imported by
+`$lib/image-alt`, which the root layout imports. The only readers,
+PlaceHero (/earth museum and observatory cards) and SiteStoryPanel, render on
+the client only, so the static import bought no prerendered alt text.
+
+Fix: `getImageAlt` fetches the en-US map and the active locale's map on its
+first call, into a `SvelteMap` so an alt that was empty while its map loaded
+re-renders. The root layout no longer fetches the locale map on every page
+(a non-English visitor downloaded 0.8–1.5 MB of alt text on every load).
+
+- JS every page loads (root node + entry closure): 1,115 KB / 224 KB br →
+  422 KB / 122 KB br. No chunk contains the map any more.
+- Browser check on the build: `/de/earth?museum=nasm-washington` fetches
+  `en-US.json` + `de.json` and the hero alt is the German caption;
+  `/missions` fetches no alt map. Mutation: with a plain `Map` instead of
+  `SvelteMap` the alt stays empty (museums.spec.ts asserts a non-empty alt).
+- Mobile: en-US alt text stays on device (only non-default locales are
+  pruned), so the app keeps it offline.
+- Not covered: a web visitor who goes offline before any page needed alt
+  text has none offline until one online load (the `/data/*.json` runtime
+  cache stores it on first use, as it already did for the other locales).
 
 ## 3. Per-locale i18n bundle split (`static/data/i18n/<loc>.json`, 3.4–4.4 MB)
 

@@ -124,16 +124,19 @@ test.describe('/fleet', () => {
     await expect(page).toHaveURL(/id=falcon-9/);
   });
 
-  test('an engine with sea-level and vacuum specs opens its panel', async ({ page }) => {
-    // Raptor carries isp_sl_s and isp_vac_s: two "Specific impulse" rows. Keying the spec
-    // list by its label threw each_key_duplicate and the panel never rendered.
-    const errors = attachConsoleAndError(page);
-    await page.goto('/fleet?id=raptor');
-    const panel = page.locator('aside.panel');
-    await expect(panel).toBeVisible({ timeout: 10_000 });
-    await expect(panel.getByText(/Specific impulse/)).toHaveCount(2);
-    expect(errors).toEqual([]);
-  });
+  // These engines carry isp_sl_s and isp_vac_s: two "Specific impulse" rows. Keying the
+  // spec list by its label threw each_key_duplicate and the panel never rendered
+  // (GlitchTip ORRERY-PROD-20 was merlin-1d).
+  for (const id of ['raptor', 'merlin-1d']) {
+    test(`an engine with sea-level and vacuum specs opens its panel (${id})`, async ({ page }) => {
+      const errors = attachConsoleAndError(page);
+      await page.goto(`/fleet?id=${id}`);
+      const panel = page.locator('aside.panel');
+      await expect(panel).toBeVisible({ timeout: 10_000 });
+      await expect(panel.getByText(/Specific impulse/)).toHaveCount(2);
+      expect(errors).toEqual([]);
+    });
+  }
 
   test('epoch chip filter works (mobile carousel)', async ({ page }) => {
     // Mobile viewport activates the chip carousel rather than the axis.

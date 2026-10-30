@@ -124,4 +124,26 @@ fails with `/explore 1619 > 555 KB`.
 
 Not counted: dynamic imports (lazy scenes, workers) and CSS.
 
-## 5. GlitchTip PROD-20 + #616
+## 5. GlitchTip PROD-20 + #616 — done on the branch
+
+Read from GlitchTip (org `homelab`, project `orrery-prod`) on 2026-10-30.
+
+**ORRERY-PROD-20** — `each_key_duplicate`, 2 events on 2026-10-29, release
+`gha-fc31c510`, unresolved. Stack ends in `FleetEntryPanel.svelte` at the spec
+grid; the last fetch before it is `fleet/engine/merlin-1d.json`. Merlin 1D has
+sea-level and vacuum Isp, so two rows were keyed "Specific impulse". Fixed on
+this branch in d5260e2076c (rows keyed by field). The e2e test now opens both
+raptor and merlin-1d (desktop + mobile, 4 passed), and
+`src/lib/fleet-panel-keys.test.ts` checks the panel's data-keyed lists (links
+per tier, flights, crew, linked missions, linked sites) for repeats in every
+fleet entry (mutation: a repeated `linked_missions` id fails it). Resolve the
+GlitchTip issue once the fix is deployed; this branch does not deploy.
+
+**#616 / ORRERY-PROD-1O** — `reading 'universal'` in SvelteKit's
+`load_node`, 2 events on 2026-10-19, release `gha-55b3f3ec`. Cause: the
+preload guard `preventDefault()`s `vite:preloadError` to reload, which makes
+Vite resolve the failed import to `undefined`. Fixed on main by af5db703f75
+(2026-10-20; no reports while the guard is reloading), which prod release
+`gha-fc31c510` contains. GlitchTip already marks it resolved and it has not
+recurred. The GitHub issue is still open: closing it is an outside action, so it
+waits for the operator.

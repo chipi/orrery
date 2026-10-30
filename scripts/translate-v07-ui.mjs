@@ -3,9 +3,8 @@
  *
  * Translates message-bundle keys into the 13 non-en-US locales via the
  * Claude API into messages/<loc>.json. Each answer must pass problems() with
- * the UI-label checks; a key that fails is reported and left as it was. (It
- * used to also write scripts/paraglide-key-overrides.json for
- * paraglide-add-keys, now archived; that file is stale and no longer written.)
+ * the UI-label checks; a key that fails is reported and left as it was.
+ * messages/<loc>.json is the only copy of the translations.
  * Two modes:
  *
  *   --keys=k1,k2,...   translate this explicit key set

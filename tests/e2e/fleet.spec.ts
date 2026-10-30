@@ -116,7 +116,8 @@ test.describe('/fleet', () => {
     await page.goto('/fleet?id=merlin-1d');
     await waitForFleetReady(page);
     // "Flies on" surfaces the derived launcher graph — Merlin 1D → Falcon 9.
-    const fliesOn = page.getByRole('button', { name: /Falcon 9/ });
+    // Scoped to the panel: the grid card "Falcon 9 Block 5" precedes it in DOM order.
+    const fliesOn = page.locator('aside.panel').getByRole('button', { name: /Falcon 9/ });
     await expect(fliesOn.first()).toBeVisible({ timeout: 8_000 });
     await fliesOn.first().click();
     // Cross-navigation opens the Falcon 9 launcher entry in place.

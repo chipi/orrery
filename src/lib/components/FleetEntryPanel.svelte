@@ -31,6 +31,7 @@
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { MissionOrbitIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages';
+  import { epochLabel } from '$lib/epoch-label';
   import { fleetStatusLabel } from '$lib/status-label';
   import MediaPlayer from './MediaPlayer.svelte';
   import MuseumsForObject from './MuseumsForObject.svelte';
@@ -421,7 +422,7 @@
             href={localHref(`${entry.explorer_route}?id=${entry.id}`)}
             data-sveltekit-preload-data="hover"
           >
-            Open {entry.name} Explorer →
+            {m.fleet_open_explorer({ name: entry.name })}
           </a>
         {/if}
 
@@ -483,16 +484,18 @@
 
         <dl class="spec-grid">
           <div class="spec">
-            <dt>Builder</dt>
+            <dt>{m.card_stat_builder()}</dt>
             <dd>{entry.manufacturer}</dd>
           </div>
           <div class="spec">
-            <dt>Country</dt>
+            <dt>{m.card_stat_country()}</dt>
             <dd>{entry.country}</dd>
           </div>
           <div class="spec">
             <dt>{m.fleet_first_flight()}</dt>
-            <dd>{entry.first_flight === 'planned' ? 'Planned' : entry.first_flight}</dd>
+            <dd>
+              {entry.first_flight === 'planned' ? m.fleet_value_planned() : entry.first_flight}
+            </dd>
           </div>
           {#if entry.last_flight}
             <div class="spec">
@@ -501,12 +504,12 @@
             </div>
           {/if}
           <div class="spec">
-            <dt>Era</dt>
-            <dd>{entry.era}</dd>
+            <dt>{m.card_stat_era()}</dt>
+            <dd>{entry.era === 'planned' ? m.fleet_value_planned() : entry.era}</dd>
           </div>
           <div class="spec">
-            <dt>Epoch</dt>
-            <dd>{entry.epoch.replace(/-/g, ' ')}</dd>
+            <dt>{m.fleet_label_epoch()}</dt>
+            <dd>{epochLabel(entry.epoch)}</dd>
           </div>
           {#each specRows as row (row.label)}
             <div class="spec">
@@ -518,7 +521,7 @@
 
         <!-- PRD-032 — engine ↔ launcher cross-reference (the workhorse graph). -->
         {#if isEngine && engineLaunchers.length > 0}
-          <h3 class="section-h">Flies on</h3>
+          <h3 class="section-h">{m.fleet_used_on()}</h3>
           <ul class="xref-list">
             {#each engineLaunchers as v (v.launcherId)}
               <li>
@@ -552,7 +555,7 @@
         {/if}
 
         {#if entry.category === 'launcher' && launcherEngines.length > 0}
-          <h3 class="section-h">Engines</h3>
+          <h3 class="section-h">{m.fleet_engines_heading()}</h3>
           <ul class="xref-list">
             {#each launcherEngines as e (e.id)}
               <li>
@@ -614,7 +617,7 @@
                   type="button"
                   class="thumb badge-thumb"
                   onclick={() => (lightboxSrc = assetUrl(`/images/badges/fleet/${entry.id}.webp`))}
-                  aria-label="{entry.name} insignia"
+                  aria-label={m.fleet_insignia_aria({ name: entry.name })}
                 >
                   <img
                     src={assetUrl(`/images/badges/fleet/${entry.id}.webp`)}
@@ -625,7 +628,7 @@
                       if (b) b.remove();
                     }}
                   />
-                  <span class="badge-tag">Insignia</span>
+                  <span class="badge-tag">{m.fleet_insignia_tag()}</span>
                 </button>
               {/key}
             {/snippet}
@@ -645,14 +648,14 @@
                   src={diagramLadder.src}
                   srcset={diagramLadder.srcset}
                   sizes="(max-width: 640px) 100vw, 640px"
-                  alt="Anatomy diagram for {entry.name}"
+                  alt={m.fleet_anatomy_alt({ name: entry.name })}
                   loading="lazy"
                   decoding="async"
                 />
               {:else}
                 <img
                   src={diagramPath}
-                  alt="Anatomy diagram for {entry.name}"
+                  alt={m.fleet_anatomy_alt({ name: entry.name })}
                   loading="lazy"
                   decoding="async"
                 />
@@ -674,14 +677,14 @@
                   src={cutawayLadder.src}
                   srcset={cutawayLadder.srcset}
                   sizes="(max-width: 640px) 100vw, 640px"
-                  alt="Exploded-stage cutaway for {entry.name}"
+                  alt={m.fleet_cutaway_alt({ name: entry.name })}
                   loading="lazy"
                   decoding="async"
                 />
               {:else}
                 <img
                   src={cutawayPath}
-                  alt="Exploded-stage cutaway for {entry.name}"
+                  alt={m.fleet_cutaway_alt({ name: entry.name })}
                   loading="lazy"
                   decoding="async"
                 />
@@ -694,7 +697,7 @@
           <ul class="links">
             {#if linksByTier.intro.length > 0}
               <li class="tier">
-                <h4>Intro</h4>
+                <h4>{m.panel_links_intro()}</h4>
                 <ul>
                   {#each linksByTier.intro as link (link.u)}
                     <li>
@@ -708,7 +711,7 @@
             {/if}
             {#if linksByTier.core.length > 0}
               <li class="tier">
-                <h4>Core</h4>
+                <h4>{m.panel_links_core()}</h4>
                 <ul>
                   {#each linksByTier.core as link (link.u)}
                     <li>
@@ -722,7 +725,7 @@
             {/if}
             {#if linksByTier.deep.length > 0}
               <li class="tier">
-                <h4>Deep</h4>
+                <h4>{m.panel_links_deep()}</h4>
                 <ul>
                   {#each linksByTier.deep as link (link.u)}
                     <li>
@@ -748,7 +751,7 @@
                     href={localHref(`/missions?id=${flight.mission_id}`)}
                     data-sveltekit-preload-data="hover"
                   >
-                    Mission →
+                    {m.fleet_flight_mission_link()}
                   </a>
                 </header>
                 {#if flight.patch_path}

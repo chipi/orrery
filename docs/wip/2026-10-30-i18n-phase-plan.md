@@ -37,6 +37,10 @@ A Svelte-AST scan of text nodes + static `aria-label` / `title` /
 three debug panels. Plus TypeScript label maps the scan cannot see (era
 names, fleet categories, HUD labels).
 
+Also data values rendered raw: fleet `country` ("USA" in every locale —
+geography is native per guide §2), epoch ids (fixed in batch 1 with
+`epochLabel()`).
+
 Left English on purpose (developer-only): DebugPanel, FlybyDebugViewer,
 AscentCameraDebug, TargetEnvSwitcher (internal builds), the hidden
 `aria-hidden` tour anchors, the "Orrery" brand.

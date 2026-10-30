@@ -629,7 +629,7 @@
       <h3 id="storage-title">{m.credits_storage_heading()}</h3>
     </header>
     <p class="storage-blurb">
-      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + a localHref path, no user input -->
       {@html m
         .credits_storage_intro({ privacy: PRIVACY_LINK_TOKEN })
         .replace(
@@ -642,26 +642,26 @@
            visually as <code> via a post-render replace so future locales
            pick up the typography for free. -->
       <li>
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output with a fixed literal wrapped in <code> -->
         {@html m
           .credits_storage_locale_item({ code: 'orrery_locale' })
           .replace('orrery_locale', '<code>orrery_locale</code>')}
       </li>
       <li>
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output with a fixed literal wrapped in <code> -->
         {@html m
           .credits_storage_tour_item({ code: 'orrery_tour' })
           .replace('orrery_tour', '<code>orrery_tour</code>')}
       </li>
       <li>
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output with a fixed literal wrapped in <code> -->
         {@html m
           .credits_storage_optout_item({ code: 'orrery_analytics_optout' })
           .replace('orrery_analytics_optout', '<code>orrery_analytics_optout</code>')}
       </li>
     </ul>
     <p class="storage-blurb storage-fine">
-      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output with fixed literals wrapped in <code> -->
       {@html m
         .credits_storage_fine({ localStorage: 'localStorage', sessionStorage: 'sessionStorage' })
         .replace('localStorage', '<code>localStorage</code>')

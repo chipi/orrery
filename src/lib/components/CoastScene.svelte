@@ -120,9 +120,7 @@
     ar = createAscentRenderer(container, sceneObj);
 
     if (debugOn && typeof window !== 'undefined') {
-      (
-        window as unknown as { __flyCoastCamDebug?: () => CoastCamDebug | null }
-      ).__flyCoastCamDebug = () => sceneObj?.getCameraDebug() ?? null;
+      window.__flyCoastCamDebug = () => sceneObj?.getCameraDebug() ?? null;
     }
 
     // Science-Lens force vectors — the orbit trio. Free-fall coast has no thrust

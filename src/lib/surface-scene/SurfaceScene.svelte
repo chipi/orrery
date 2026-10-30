@@ -1295,20 +1295,14 @@
     // Curiosity" / "Find Tranquillity Base" without raycasting a
     // canvas pixel.
     if (typeof window !== 'undefined') {
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite = (id: string) => selectSite(id, { face: true });
+      window.__surfaceSceneSelectSite = (id: string) => selectSite(id, { face: true });
       // #380 — frame/exit the whole route, for Playwright + chrome-devtools.
-      (
-        window as Window & { __surfaceSceneFrameRoute?: (id: string) => void }
-      ).__surfaceSceneFrameRoute = (id: string) => {
+      window.__surfaceSceneFrameRoute = (id: string) => {
         selectSite(id, { face: false });
         const s = sites.find((x) => x.id === id);
         if (s) enterRouteView(s);
       };
-      (
-        window as Window & { __surfaceSceneExitRouteView?: () => void }
-      ).__surfaceSceneExitRouteView = () => exitRouteView();
+      window.__surfaceSceneExitRouteView = () => exitRouteView();
     }
 
     loadSites(localeFromPage(page))

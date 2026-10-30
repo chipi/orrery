@@ -64,6 +64,47 @@ declare global {
   interface Window {
     __flyDebug?: import('$lib/orbital/fly-debug-snapshot').FlyDebugSnapshot;
     __flyDebugFrame?: import('$lib/orbital/fly-debug-frame').FlyDebugFrameSnapshot;
+
+    // ─── Test / tour hooks ──────────────────────────────────────────────
+    // Installed by the app for e2e specs, the audio tour and devtools
+    // checks. One declaration here instead of an inline cast at each site,
+    // so a renamed or retyped hook fails typecheck.
+    /** /fly (src/lib/fly/fly-test-hooks.ts). null until a mission is applied. */
+    __flyArcHash?: () => string | null;
+    __fly2DArcHash?: () => string | null;
+    __flyMissionId?: () => string | null;
+    __flyJumpToMet?: (met: number) => void;
+    __flySetSimDay?: (met: number) => void;
+    __flyMontage?: (on: boolean) => void;
+    __flyCislunarDebug?: () => unknown;
+    __flyReentryDebug?: () => unknown;
+    __flyCoastCamDebug?: () => import('$lib/three/fly-leo-coast-scene').CoastCamDebug | null;
+    /** /explore (src/lib/three/explore-scene-host.ts). */
+    __exploreSelectStar?: (id: string) => void;
+    __exploreEnterSystem?: (id: string) => void;
+    __exploreSelectExoplanet?: (id: string) => void;
+    __exploreEnterDeepSky?: (id: string) => void;
+    __exploreEnterMilkyWay?: () => Promise<void>;
+    __exploreSelectMilkyWay?: (id: string) => Promise<void>;
+    __exploreEnterLocalGroup?: () => Promise<void>;
+    __exploreSelectLocalGroup?: (id: string) => void;
+    __exploreEnterBlackHole?: (id: string) => Promise<void>;
+    __explore2dBodyOffset?: (id: string) => { x: number; y: number } | null;
+    /** /earth, /moon, /mars surface scene (SurfaceScene, TourAnchors). */
+    __surfaceSceneSelectSite?: (id: string) => void;
+    __surfaceSceneFrameRoute?: (id: string) => void;
+    __surfaceSceneExitRouteView?: () => void;
+    /** /iss, /tiangong (StationRoute, as `__${config.id}PickAt`). */
+    __issPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;
+    __tiangongPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;
+    /** Audio tour state (AudioOverlay). */
+    __orreryAudio?: unknown;
+    /** /dev/sky-preview only. */
+    __skyDebug?: unknown;
+    __skyHandle?: unknown;
+    __skyPreviewReady?: boolean;
+    __planetAzEl?: Record<string, [number, number]>;
+    __stationAzEl?: Record<string, unknown>;
   }
 }
 

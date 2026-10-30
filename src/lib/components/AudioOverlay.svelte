@@ -82,7 +82,7 @@
     // autoplay without user gesture). Read-only access is fine; the
     // setter is the surface specs need.
     if (browser) {
-      (window as Window & { __orreryAudio?: unknown }).__orreryAudio = {
+      window.__orreryAudio = {
         state: audio,
         registry: audioRegistry,
         setPosition: (sec: number) => {
@@ -925,7 +925,7 @@
     {#if resumeOffer && !audio.compact}
       <section class="resume-offer" aria-label={m.audio_resume_offer_aria()}>
         <span class="resume-text">
-          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output; the title comes from the shipped audio registry (the cookie supplies only the episode id) and pos goes through fmtTime (digits only) -->
           {@html m.audio_resume_prompt({
             title: `<strong>${resumeOfferTitle}</strong>`,
             pos: `<span class="resume-pos">${fmtTime(resumeOffer.pos)}</span>`,
@@ -1036,7 +1036,7 @@
           ›
         </button>
         <p class="tour-note">
-          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output only, no user input -->
           {@html m.audio_tour_note({
             stop: `<strong>${m.audio_tour_note_stop()}</strong>`,
           })}

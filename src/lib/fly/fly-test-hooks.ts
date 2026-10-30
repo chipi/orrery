@@ -22,16 +22,10 @@ export interface FlyTestHooksContext {
   outVertexHash: () => string;
 }
 
-interface FlyTestHooksWindow {
-  __flyArcHash?: () => string | null;
-  __fly2DArcHash?: () => string | null;
-  __flyMissionId?: () => string | null;
-}
-
 /** Install the hooks on `window`; returns the cleanup that removes them. */
 export function installFlyTestHooks(ctx: FlyTestHooksContext): () => void {
   if (typeof window === 'undefined') return () => {};
-  const w = window as unknown as FlyTestHooksWindow;
+  const w = window;
   // null until BOTH hold: (a) an apply* committed a mission (distinguishes
   // "default state" from "URL load resolved" — the v0.6.1 race) and (b) outPts
   // is built.

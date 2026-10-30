@@ -1178,7 +1178,7 @@
          correct in en-US by luck and wrong once a translation uses it earlier.
          Same approach as the /credits storage card. -->
     <p class="about-body">
-      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + a localHref path, no user input -->
       {@html m
         .landing_footer_about({ privacy: PRIVACY_LINK_TOKEN })
         .replace(

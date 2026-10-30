@@ -958,8 +958,7 @@
     // and z<1). Mobile viewports are narrow, so the first module is not
     // always on-screen — we pick the first that is. Forces a world-
     // matrix update so the test can call this before the first render.
-    type PickAt = (moduleId?: string) => { x: number; y: number; moduleId: string } | null;
-    (window as unknown as Record<string, PickAt>)[`__${config.id}PickAt`] = (moduleId?: string) => {
+    window[`__${config.id}PickAt` as '__issPickAt' | '__tiangongPickAt'] = (moduleId?: string) => {
       camera.updateMatrixWorld(true);
       const tryMesh = (id: string) => {
         const meshes = meshById.get(id);

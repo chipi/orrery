@@ -39,9 +39,7 @@
   let { route, anchors }: Props = $props();
 
   function selectSite(siteId: string): void {
-    (
-      window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-    ).__surfaceSceneSelectSite?.(siteId);
+    window.__surfaceSceneSelectSite?.(siteId);
   }
 </script>
 

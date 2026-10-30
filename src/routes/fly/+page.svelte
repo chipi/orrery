@@ -2247,7 +2247,7 @@
     // / JUICE / Orrery Demo etc. — labeled events get timeline buttons
     // automatically; unlabeled ones don't). Mirrors __flyDebug's DEV gate.
     if (import.meta.env.DEV) {
-      (window as Window & { __flyJumpToMet?: (met: number) => void }).__flyJumpToMet = jumpToMet;
+      window.__flyJumpToMet = jumpToMet;
       // Race-free test hook for the auto-zoom / hero-composition pipeline.
       // Unlike __flyJumpToMet, this skips the upstream input concerns
       // (iconic-moment biasing via biasJumpToIconicMoment, 700 ms snap-cut
@@ -2258,9 +2258,7 @@
       // shares its browser with another agent that would otherwise race
       // pause/click events. Whatever the scene composes here is also what
       // the user sees, minus the input animations.
-      (window as Window & { __flySetSimDay?: (met: number) => void }).__flySetSimDay = (
-        met: number,
-      ) => {
+      window.__flySetSimDay = (met: number) => {
         if (!Number.isFinite(met) || met < 0) return;
         simDay = mission.timeline.dep_day + met;
         isPlaying = false;
@@ -2270,7 +2268,7 @@
       // !isMoonMission). Lets automated tests see active phase,
       // camera position, and the active hero event without spelunking
       // through Three.js scene refs.
-      (window as Window & { __flyCislunarDebug?: () => unknown }).__flyCislunarDebug = () => ({
+      window.__flyCislunarDebug = () => ({
         simDay,
         depDay: mission?.timeline?.dep_day,
         met: simDay - (mission?.timeline?.dep_day ?? 0),
@@ -2312,7 +2310,7 @@
       });
       // Tier-1 Earth-orbit re-entry diagnostic (RFC-034 §13) — the pad→coast→
       // re-entry counterpart of __flyCislunarDebug, for chrome-devtools + e2e.
-      (window as Window & { __flyReentryDebug?: () => unknown }).__flyReentryDebug = () => ({
+      window.__flyReentryDebug = () => ({
         phase: showLaunch
           ? 'launch'
           : showCoast

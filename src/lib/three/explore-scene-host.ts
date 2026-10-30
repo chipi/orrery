@@ -1643,39 +1643,23 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   deepSkyDeepLinkFn = resolveDeepSkyDeepLink;
   // Dev/e2e hook for canvas star pickability + BodyScene entry (no shipped effect).
   if (import.meta.env.DEV) {
-    (window as unknown as { __exploreSelectStar?: (id: string) => void }).__exploreSelectStar = (
-      id: string,
-    ) => void selectStar(id);
-    (window as unknown as { __exploreEnterSystem?: (id: string) => void }).__exploreEnterSystem = (
-      id: string,
-    ) => void enterBodyScene(id);
-    (
-      window as unknown as { __exploreSelectExoplanet?: (id: string) => void }
-    ).__exploreSelectExoplanet = (id: string) => selectExoplanet(id);
-    (window as unknown as { __exploreEnterDeepSky?: (id: string) => void }).__exploreEnterDeepSky =
-      (id: string) => enterDeepSky(id);
-    (window as unknown as { __exploreEnterMilkyWay?: () => Promise<void> }).__exploreEnterMilkyWay =
-      async () => {
-        if (!inNeighborhood()) await crossOutToNeighborhood();
-        await crossOutToMilkyWay();
-      };
-    (
-      window as unknown as { __exploreSelectMilkyWay?: (id: string) => Promise<void> }
-    ).__exploreSelectMilkyWay = (id: string) => resolveGalaxyDeepLink(id);
-    (
-      window as unknown as { __exploreEnterLocalGroup?: () => Promise<void> }
-    ).__exploreEnterLocalGroup = async () => {
+    window.__exploreSelectStar = (id: string) => void selectStar(id);
+    window.__exploreEnterSystem = (id: string) => void enterBodyScene(id);
+    window.__exploreSelectExoplanet = (id: string) => selectExoplanet(id);
+    window.__exploreEnterDeepSky = (id: string) => enterDeepSky(id);
+    window.__exploreEnterMilkyWay = async () => {
+      if (!inNeighborhood()) await crossOutToNeighborhood();
+      await crossOutToMilkyWay();
+    };
+    window.__exploreSelectMilkyWay = (id: string) => resolveGalaxyDeepLink(id);
+    window.__exploreEnterLocalGroup = async () => {
       if (inLocalGroup()) return;
       if (!inNeighborhood()) await crossOutToNeighborhood();
       if (!inMilkyWay()) await crossOutToMilkyWay();
       await crossOutToLocalGroup();
     };
-    (
-      window as unknown as { __exploreSelectLocalGroup?: (id: string) => void }
-    ).__exploreSelectLocalGroup = (id: string) => selectLocalGroup(id);
-    (
-      window as unknown as { __exploreEnterBlackHole?: (id: string) => Promise<void> }
-    ).__exploreEnterBlackHole = (id: string) => enterBlackHole(id);
+    window.__exploreSelectLocalGroup = (id: string) => selectLocalGroup(id);
+    window.__exploreEnterBlackHole = (id: string) => enterBlackHole(id);
   }
 
   // Camera distance → canonical AU, for the scale HUD (solar camR is AU,
@@ -3071,11 +3055,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // test can resolve a body's actual on-screen position deterministically:
   // screen = (canvas.width/2 + off.x, canvas.height/2 + off.y).
   if (typeof window !== 'undefined') {
-    (
-      window as Window & {
-        __explore2dBodyOffset?: (id: string) => { x: number; y: number } | null;
-      }
-    ).__explore2dBodyOffset = (id) => planet2dPos.get(id) ?? smallBody2dPos.get(id) ?? null;
+    window.__explore2dBodyOffset = (id) => planet2dPos.get(id) ?? smallBody2dPos.get(id) ?? null;
   }
 
   const resize2d = () => {

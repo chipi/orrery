@@ -59,6 +59,8 @@
   import { buildClimateBands } from '$lib/surface-scene/surface-climate-layers';
   import { buildMoonGhost } from '$lib/surface-scene/earth-orbital-rings-layer';
   import { buildSatelliteLayer } from '$lib/surface-scene/earth-satellite-layer';
+  import PanelLinkTiers from '$lib/components/PanelLinkTiers.svelte';
+  import PanelGalleryGrid from '$lib/components/PanelGalleryGrid.svelte';
   import EarthObjectPanel from '$lib/surface-scene/EarthObjectPanel.svelte';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
   import AgencyRow from '$lib/components/AgencyRow.svelte';
@@ -134,7 +136,7 @@
   } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { resolveInitialHotspotsMode } from '$lib/surface-map/hotspots-mode';
-  import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
+  import { siteHasLinks } from '$lib/surface-map/link-tiers';
   import type { PanelTab } from '$lib/surface-map/panel-tabs';
   import { createStoryAutopromoteTracker } from '$lib/surface-map/story-autopromote';
   import { buildSurfacePanelTabs } from '$lib/surface-map/build-panel-tabs';
@@ -185,7 +187,6 @@
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
-  import LearnLink from '$lib/components/LearnLink.svelte';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { cue } from '$lib/sensory/feedback';
   import { gyro } from '$lib/sensory/device-orientation';
@@ -1098,9 +1099,6 @@
       })();
     }
   });
-  let panelLinksByTier = $derived(
-    groupLinksByTier<SurfaceSite['links'][number]>((selected as SurfaceSite | null)?.links),
-  );
   let panelHasLinks = $derived(siteHasLinks(selected as SurfaceSite | null));
 
   // `face: true` is set by the URL-deep-link path so the moon rotates
@@ -5363,27 +5361,21 @@ sample      ${debugInfo.projectedPxSample}`}
         {#if panelGallery.length === 0 && panelVideos.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
-          <div
-            class="gallery-grid"
-            aria-label={m.panel_gallery_aria({ name: selected.name ?? selected.id })}
+          <PanelGalleryGrid
+            images={panelGalleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: selected.name ?? selected.id })}
+            thumbLabel={selected.name ?? selected.id}
+            onOpen={(src) => {
+              panelLightbox = src;
+              if (selected) trackGalleryImageOpen('site', selected.id);
+            }}
           >
-            {#each panelVideos as v (v.id)}
-              <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
-            {/each}
-            {#each panelGalleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => {
-                  panelLightbox = src;
-                  if (selected) trackGalleryImageOpen('site', selected.id);
-                }}
-                aria-label={selected.name ?? selected.id}
-              >
-                <img {src} alt="" loading="lazy" decoding="async" />
-              </button>
-            {/each}
-          </div>
+            {#snippet leading()}
+              {#each panelVideos as v (v.id)}
+                <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
+              {/each}
+            {/snippet}
+          </PanelGalleryGrid>
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
       {:else if panelTab === 'story' && panelStory}
@@ -5398,42 +5390,7 @@ sample      ${debugInfo.projectedPxSample}`}
         {#if !panelHasLinks}
           <p class="empty-tab">{m.panel_no_links()}</p>
         {:else}
-          {#if panelLinksByTier.intro.length > 0}
-            <section class="link-tier tier-intro">
-              <h3>{m.panel_links_intro()}</h3>
-              <ul>
-                {#each panelLinksByTier.intro as link (link.u)}
-                  <li>
-                    <LearnLink entityId={selected.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
-          {#if panelLinksByTier.core.length > 0}
-            <section class="link-tier tier-core">
-              <h3>{m.panel_links_core()}</h3>
-              <ul>
-                {#each panelLinksByTier.core as link (link.u)}
-                  <li>
-                    <LearnLink entityId={selected.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
-          {#if panelLinksByTier.deep.length > 0}
-            <section class="link-tier tier-deep">
-              <h3>{m.panel_links_deep()}</h3>
-              <ul>
-                {#each panelLinksByTier.deep as link (link.u)}
-                  <li>
-                    <LearnLink entityId={selected.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
+          <PanelLinkTiers links={(selected as SurfaceSite).links} entityId={selected.id} />
         {/if}
       {/if}
 

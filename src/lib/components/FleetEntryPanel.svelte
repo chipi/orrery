@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/state';
@@ -594,48 +593,43 @@
         <p class="credit">{entry.credit}</p>
       {:else if tab === 'gallery'}
         {#if hasGallery || hasVideos}
-          <div class="gallery-grid">
-            {#each videos as v (v.id)}
-              <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
-            {/each}
-            {#each gallery.slice(1) as src (src)}
-              <button
-                type="button"
-                class="thumb"
-                onclick={() => {
-                  lightboxSrc = src;
-                  trackGalleryImageOpen('fleet', entry.id);
-                }}
-                aria-label={m.fleet_view_photo_aria()}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-            {#key entry.id}
-              <button
-                type="button"
-                class="thumb badge-thumb"
-                onclick={() => (lightboxSrc = assetUrl(`/images/badges/fleet/${entry.id}.webp`))}
-                aria-label="{entry.name} insignia"
-              >
-                <img
-                  src={assetUrl(`/images/badges/fleet/${entry.id}.webp`)}
-                  alt=""
-                  decoding="async"
-                  onerror={(e) => {
-                    const b = (e.currentTarget as HTMLElement).closest('button');
-                    if (b) b.remove();
-                  }}
-                />
-                <span class="badge-tag">Insignia</span>
-              </button>
-            {/key}
-          </div>
+          <PanelGalleryGrid
+            images={gallery.slice(1)}
+            thumbLabel={m.fleet_view_photo_aria()}
+            gridClass="fleet-gallery"
+            thumbClass="thumb fleet-photo"
+            onOpen={(src) => {
+              lightboxSrc = src;
+              trackGalleryImageOpen('fleet', entry.id);
+            }}
+          >
+            {#snippet leading()}
+              {#each videos as v (v.id)}
+                <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
+              {/each}
+            {/snippet}
+            {#snippet trailing()}
+              {#key entry.id}
+                <button
+                  type="button"
+                  class="thumb badge-thumb"
+                  onclick={() => (lightboxSrc = assetUrl(`/images/badges/fleet/${entry.id}.webp`))}
+                  aria-label="{entry.name} insignia"
+                >
+                  <img
+                    src={assetUrl(`/images/badges/fleet/${entry.id}.webp`)}
+                    alt=""
+                    decoding="async"
+                    onerror={(e) => {
+                      const b = (e.currentTarget as HTMLElement).closest('button');
+                      if (b) b.remove();
+                    }}
+                  />
+                  <span class="badge-tag">Insignia</span>
+                </button>
+              {/key}
+            {/snippet}
+          </PanelGalleryGrid>
         {/if}
       {:else if tab === 'anatomy' && (diagramPath || cutawayPath || hasLinks)}
         {#if diagramPath}
@@ -1193,12 +1187,13 @@
     line-height: 1.5;
   }
 
-  .gallery-grid {
+  :global(.gallery-grid.fleet-gallery) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 6px;
   }
-  .thumb {
+  .thumb,
+  :global(.fleet-gallery .fleet-photo) {
     background: transparent;
     border: 0;
     padding: 0;
@@ -1206,7 +1201,8 @@
     aspect-ratio: 4 / 3;
     overflow: hidden;
   }
-  .thumb img {
+  .thumb img,
+  :global(.fleet-gallery .fleet-photo img) {
     width: 100%;
     height: 100%;
     object-fit: cover;

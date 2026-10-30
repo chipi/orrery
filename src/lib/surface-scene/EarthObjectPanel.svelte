@@ -15,13 +15,14 @@
    * implementation.
    */
   import { page } from '$app/state';
+  import PanelGalleryGrid from '$lib/components/PanelGalleryGrid.svelte';
+  import PanelLinkTiers from '$lib/components/PanelLinkTiers.svelte';
   import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import Panel from '$lib/components/Panel.svelte';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
-  import LearnLink from '$lib/components/LearnLink.svelte';
   import {
     getEarthObjectGallery,
     getFleet,
@@ -161,18 +162,6 @@
     }
   });
 
-  type PanelLinks = NonNullable<EarthObject['links']>;
-  let panelLinksByTier = $derived.by(() => {
-    const links = selected?.links;
-    if (!links) return { intro: [] as PanelLinks, core: [] as PanelLinks, deep: [] as PanelLinks };
-    const out = {
-      intro: [] as PanelLinks,
-      core: [] as PanelLinks,
-      deep: [] as PanelLinks,
-    };
-    for (const link of links) out[link.t].push(link);
-    return out;
-  });
   // The `as EarthObject | null` cast guards against a Svelte 5 flow-
   // analysis quirk where `selected` is narrowed to `never` after the
   // earlier $derived.by reads it inside another closure. The cast
@@ -371,21 +360,12 @@
       {#if panelGallery.length === 0}
         <p class="empty-tab">{m.panel_gallery_empty()}</p>
       {:else}
-        <div
-          class="gallery-grid"
-          aria-label={m.panel_gallery_aria({ name: selected.name ?? selected.id })}
-        >
-          {#each panelGalleryGrid as src (src)}
-            <button
-              type="button"
-              class="gallery-thumb"
-              onclick={() => (panelLightbox = src)}
-              aria-label={selected.name ?? selected.id}
-            >
-              <img {src} alt="" loading="lazy" decoding="async" />
-            </button>
-          {/each}
-        </div>
+        <PanelGalleryGrid
+          images={panelGalleryGrid}
+          gridLabel={m.panel_gallery_aria({ name: selected.name ?? selected.id })}
+          thumbLabel={selected.name ?? selected.id}
+          onOpen={(src) => (panelLightbox = src)}
+        />
         <p class="gallery-credit">
           {panelGalleryCredit(selected.agencies?.join(' / '))}
         </p>
@@ -394,42 +374,7 @@
       {#if !panelHasLinks}
         <p class="empty-tab">{m.panel_no_links()}</p>
       {:else}
-        {#if panelLinksByTier.intro.length > 0}
-          <section class="link-tier tier-intro">
-            <h3>{m.panel_links_intro()}</h3>
-            <ul>
-              {#each panelLinksByTier.intro as link (link.u)}
-                <li>
-                  <LearnLink entityId={selected.id} url={link.u} label={link.l} />
-                </li>
-              {/each}
-            </ul>
-          </section>
-        {/if}
-        {#if panelLinksByTier.core.length > 0}
-          <section class="link-tier tier-core">
-            <h3>{m.panel_links_core()}</h3>
-            <ul>
-              {#each panelLinksByTier.core as link (link.u)}
-                <li>
-                  <LearnLink entityId={selected.id} url={link.u} label={link.l} />
-                </li>
-              {/each}
-            </ul>
-          </section>
-        {/if}
-        {#if panelLinksByTier.deep.length > 0}
-          <section class="link-tier tier-deep">
-            <h3>{m.panel_links_deep()}</h3>
-            <ul>
-              {#each panelLinksByTier.deep as link (link.u)}
-                <li>
-                  <LearnLink entityId={selected.id} url={link.u} label={link.l} />
-                </li>
-              {/each}
-            </ul>
-          </section>
-        {/if}
+        <PanelLinkTiers links={selected.links} entityId={selected.id} />
       {/if}
     {/if}
 

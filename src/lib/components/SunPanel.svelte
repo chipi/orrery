@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
+  import PanelLinkTiers from './PanelLinkTiers.svelte';
   import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
@@ -9,7 +9,6 @@
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedSun } from '$types/sun';
   import * as m from '$lib/paraglide/messages';
-  import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
@@ -68,16 +67,6 @@
   let luminositySolar = $derived(sun ? sun.luminosity_w / 3.828e26 : 0);
   let remainingGyr = $derived(sun ? Math.max(0, 10 - sun.age_gyr) : 0);
 
-  let linksByTier = $derived.by(() => {
-    if (!sun?.links) return { intro: [], core: [], deep: [] };
-    const out = {
-      intro: [] as NonNullable<typeof sun.links>,
-      core: [] as NonNullable<typeof sun.links>,
-      deep: [] as NonNullable<typeof sun.links>,
-    };
-    for (const link of sun.links) out[link.t].push(link);
-    return out;
-  });
   let hasLinks = $derived((sun?.links?.length ?? 0) > 0);
 </script>
 
@@ -196,36 +185,7 @@
         {#if hasLinks}
           <div class="science-library">
             <h3 class="library-heading">{m.panel_tab_learn()}</h3>
-            {#if linksByTier.intro.length > 0}
-              <section class="link-tier tier-intro">
-                <h3>{m.panel_links_intro()}</h3>
-                <ul>
-                  {#each linksByTier.intro as link (link.u)}
-                    <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
-            {#if linksByTier.core.length > 0}
-              <section class="link-tier tier-core">
-                <h3>{m.panel_links_core()}</h3>
-                <ul>
-                  {#each linksByTier.core as link (link.u)}
-                    <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
-            {#if linksByTier.deep.length > 0}
-              <section class="link-tier tier-deep">
-                <h3>{m.panel_links_deep()}</h3>
-                <ul>
-                  {#each linksByTier.deep as link (link.u)}
-                    <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
+            <PanelLinkTiers links={sun.links} entityId="sun" />
           </div>
         {/if}
       {:else if tab === 'missions'}
@@ -249,23 +209,13 @@
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: sun.name })}>
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
-                aria-label={sun.name}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: sun.name })}
+            thumbLabel={sun.name}
+            onOpen={(src) => (lightboxSrc = src)}
+            gridClass="sun-gallery"
+          />
           <p class="gallery-credit">{m.panel_gallery_credit()}</p>
         {/if}
       {/if}
@@ -367,8 +317,8 @@
   /* GALLERY + LEARN tab CSS in src/lib/styles/panel-tabs.css.
    * Sun overrides the gallery-thumb hover border to gold to match
    * its theme. */
-  .gallery-thumb:hover,
-  .gallery-thumb:focus-visible {
+  :global(.sun-gallery .gallery-thumb:hover),
+  :global(.sun-gallery .gallery-thumb:focus-visible) {
     border-color: rgba(255, 200, 80, 0.6);
   }
 </style>

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
+  import PanelLinkTiers from './PanelLinkTiers.svelte';
   import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
@@ -12,7 +12,6 @@
   import { linkifyMissionEntry, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
-  import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import ScienceChip from './ScienceChip.svelte';
   import WhyPopover from './WhyPopover.svelte';
@@ -99,17 +98,6 @@
     }
   });
 
-  // Group LEARN-tab links by tier (intro/core/deep).
-  let linksByTier = $derived.by(() => {
-    if (!planet?.links) return { intro: [], core: [], deep: [] };
-    const out = {
-      intro: [] as NonNullable<typeof planet.links>,
-      core: [] as NonNullable<typeof planet.links>,
-      deep: [] as NonNullable<typeof planet.links>,
-    };
-    for (const link of planet.links) out[link.t].push(link);
-    return out;
-  });
   let hasLinks = $derived((planet?.links?.length ?? 0) > 0);
 
   // ─── Derived technical figures (canonical, IAU-grounded) ─────────
@@ -318,36 +306,7 @@
         {#if hasLinks}
           <div class="science-library">
             <h3 class="library-heading">{m.panel_tab_learn()}</h3>
-            {#if linksByTier.intro.length > 0}
-              <section class="link-tier tier-intro">
-                <h3>{m.panel_links_intro()}</h3>
-                <ul>
-                  {#each linksByTier.intro as link (link.u)}
-                    <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
-            {#if linksByTier.core.length > 0}
-              <section class="link-tier tier-core">
-                <h3>{m.panel_links_core()}</h3>
-                <ul>
-                  {#each linksByTier.core as link (link.u)}
-                    <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
-            {#if linksByTier.deep.length > 0}
-              <section class="link-tier tier-deep">
-                <h3>{m.panel_links_deep()}</h3>
-                <ul>
-                  {#each linksByTier.deep as link (link.u)}
-                    <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
+            <PanelLinkTiers links={planet.links} entityId={planet.id} />
           </div>
         {/if}
       {:else if tab === 'missions'}
@@ -369,23 +328,12 @@
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: planet.name })}>
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
-                aria-label={planet.name}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: planet.name })}
+            thumbLabel={planet.name}
+            onOpen={(src) => (lightboxSrc = src)}
+          />
           <p class="gallery-credit">{m.panel_gallery_credit()}</p>
         {/if}
       {/if}

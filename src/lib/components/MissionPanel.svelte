@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelLinkTiers from './PanelLinkTiers.svelte';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
@@ -24,7 +24,6 @@
   import MediaPlayer from './MediaPlayer.svelte';
   import VideoThumb from './VideoThumb.svelte';
   import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
-  import LearnLink from './LearnLink.svelte';
   import ScienceChip from './ScienceChip.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
@@ -266,19 +265,6 @@
         return type.toUpperCase();
     }
   }
-
-  // Group links by tier for the LEARN tab. The mission JSON stores
-  // links in a flat array with a `t` (tier) discriminator.
-  let linksByTier = $derived.by(() => {
-    if (!mission?.links) return { intro: [], core: [], deep: [] };
-    const out = {
-      intro: [] as typeof mission.links,
-      core: [] as typeof mission.links,
-      deep: [] as typeof mission.links,
-    };
-    for (const link of mission.links) out[link.t].push(link);
-    return out;
-  });
 
   function flyMission() {
     if (mission && onFly) onFly(mission.id);
@@ -780,42 +766,7 @@
           {#if mission.links && mission.links.length > 0}
             <div class="science-library">
               <h3 class="library-heading">{m.mp_tab_learn()}</h3>
-              {#if linksByTier.intro.length > 0}
-                <section class="link-tier tier-intro">
-                  <h3>{m.mp_links_intro()}</h3>
-                  <ul>
-                    {#each linksByTier.intro as link (link.u)}
-                      <li>
-                        <LearnLink entityId={mission.id} url={link.u} label={link.l} />
-                      </li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
-              {#if linksByTier.core.length > 0}
-                <section class="link-tier tier-core">
-                  <h3>{m.mp_links_core()}</h3>
-                  <ul>
-                    {#each linksByTier.core as link (link.u)}
-                      <li>
-                        <LearnLink entityId={mission.id} url={link.u} label={link.l} />
-                      </li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
-              {#if linksByTier.deep.length > 0}
-                <section class="link-tier tier-deep">
-                  <h3>{m.mp_links_deep()}</h3>
-                  <ul>
-                    {#each linksByTier.deep as link (link.u)}
-                      <li>
-                        <LearnLink entityId={mission.id} url={link.u} label={link.l} />
-                      </li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
+              <PanelLinkTiers links={mission.links} entityId={mission.id} />
             </div>
           {/if}
         </div>
@@ -823,40 +774,34 @@
         {#if gallery.length === 0 && videos.length === 0}
           <p class="empty-tab">{m.mp_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.mp_gallery_aria()}>
-            {#each videos as v (v.id)}
-              <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
-            {/each}
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => {
-                  lightboxSrc = src;
-                  if (mission) trackGalleryImageOpen('mission', mission.id);
-                }}
-                aria-label={mission.name ?? mission.id}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-            {#if badges[`mission:${mission.id}`]}
-              <button
-                type="button"
-                class="gallery-thumb badge-thumb"
-                onclick={() => (lightboxSrc = assetUrl(badges[`mission:${mission.id}`]))}
-                aria-label="{mission.name ?? mission.id} insignia"
-              >
-                <img src={assetUrl(badges[`mission:${mission.id}`])} alt="" decoding="async" />
-                <span class="badge-tag">Insignia</span>
-              </button>
-            {/if}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.mp_gallery_aria()}
+            thumbLabel={mission.name ?? mission.id}
+            onOpen={(src) => {
+              lightboxSrc = src;
+              if (mission) trackGalleryImageOpen('mission', mission.id);
+            }}
+          >
+            {#snippet leading()}
+              {#each videos as v (v.id)}
+                <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
+              {/each}
+            {/snippet}
+            {#snippet trailing()}
+              {#if mission && badges[`mission:${mission.id}`]}
+                <button
+                  type="button"
+                  class="gallery-thumb badge-thumb"
+                  onclick={() => (lightboxSrc = assetUrl(badges[`mission:${mission.id}`]))}
+                  aria-label="{mission.name ?? mission.id} insignia"
+                >
+                  <img src={assetUrl(badges[`mission:${mission.id}`])} alt="" decoding="async" />
+                  <span class="badge-tag">Insignia</span>
+                </button>
+              {/if}
+            {/snippet}
+          </PanelGalleryGrid>
           <p class="gallery-credit">{missionGalleryCredit(mission.agency)}</p>
         {/if}
       {/if}

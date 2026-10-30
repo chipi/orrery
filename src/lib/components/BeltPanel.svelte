@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   /**
    * BeltPanel — detail panel for the asteroid + Kuiper belts on
    * /explore (v0.7.x — user feedback 2026-06-06: "we have comet belt
@@ -16,6 +14,7 @@
    * in static/data/small-bodies.json (Ceres / Pluto / Eris / Haumea /
    * Makemake all resolve today).
    */
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
@@ -245,23 +244,12 @@
         {#if galleryGrid.length === 0}
           <p class="empty-tab">{m.panel_belt_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: entry.name })}>
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
-                aria-label={entry.name}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: entry.name })}
+            thumbLabel={entry.name}
+            onOpen={(src) => (lightboxSrc = src)}
+          />
         {/if}
       {:else if tab === 'members'}
         <p class="editorial">{m.belt_members_intro({ name: entry.name })}</p>

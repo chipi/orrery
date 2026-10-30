@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { page } from '$app/state';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
@@ -356,23 +355,12 @@
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: body.name })}>
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
-                aria-label={body.name}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: body.name })}
+            thumbLabel={body.name}
+            onOpen={(src) => (lightboxSrc = src)}
+          />
           <p class="gallery-credit">{m.panel_gallery_credit()}</p>
         {/if}
       {/if}

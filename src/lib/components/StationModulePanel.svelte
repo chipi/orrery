@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
+  import PanelLinkTiers from './PanelLinkTiers.svelte';
   import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
@@ -12,13 +12,11 @@
   import type { StationModule } from '$types/station';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
-  import LearnLink from './LearnLink.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
   import { dataLoadFailed } from '$lib/data/core';
 
-  type StationLinks = NonNullable<StationModule['links']>;
   type Tab = 'overview' | 'gallery' | 'anatomy' | 'learn';
 
   type Props = {
@@ -67,13 +65,6 @@
     .catch(dataLoadFailed);
   let diagramLadder = $derived(ladderReady && diagramPath ? ladderSources(diagramPath) : null);
 
-  let linksByTier = $derived.by(() => {
-    if (!mod?.links)
-      return { intro: [] as StationLinks, core: [] as StationLinks, deep: [] as StationLinks };
-    const out = { intro: [] as StationLinks, core: [] as StationLinks, deep: [] as StationLinks };
-    for (const link of mod.links) out[link.t].push(link);
-    return out;
-  });
   let hasLinks = $derived((mod?.links?.length ?? 0) > 0);
 
   const loc = $derived(localeFromPage(page));
@@ -195,23 +186,12 @@
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: mod.name })}>
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
-                aria-label={mod.name}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: mod.name })}
+            thumbLabel={mod.name}
+            onOpen={(src) => (lightboxSrc = src)}
+          />
           <p class="gallery-credit">{panelGalleryCredit(mod.agency)}</p>
         {/if}
       {:else if tab === 'anatomy'}
@@ -246,42 +226,7 @@
         {#if !hasLinks}
           <p class="empty-tab">{m.panel_no_links()}</p>
         {:else}
-          {#if linksByTier.intro.length > 0}
-            <section class="link-tier tier-intro">
-              <h3>{m.panel_links_intro()}</h3>
-              <ul>
-                {#each linksByTier.intro as link (link.u)}
-                  <li>
-                    <LearnLink entityId={mod.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
-          {#if linksByTier.core.length > 0}
-            <section class="link-tier tier-core">
-              <h3>{m.panel_links_core()}</h3>
-              <ul>
-                {#each linksByTier.core as link (link.u)}
-                  <li>
-                    <LearnLink entityId={mod.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
-          {#if linksByTier.deep.length > 0}
-            <section class="link-tier tier-deep">
-              <h3>{m.panel_links_deep()}</h3>
-              <ul>
-                {#each linksByTier.deep as link (link.u)}
-                  <li>
-                    <LearnLink entityId={mod.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
+          <PanelLinkTiers links={mod.links} entityId={mod.id} />
         {/if}
         <!--
           Related crew + life-support topics — issue #303 close-out.

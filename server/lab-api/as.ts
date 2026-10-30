@@ -159,6 +159,14 @@ export class AuthServer {
       };
     }
     const clientId = this.tokens.registerClient(redirectUris, this.cfg.mcpResources);
+    if (!clientId) {
+      // Every stored client holds a live refresh token; evicting one would log out a
+      // connector in use (#597).
+      return {
+        status: 503,
+        body: { error: 'temporarily_unavailable', error_description: 'client registry full' },
+      };
+    }
     return {
       status: 201,
       body: {

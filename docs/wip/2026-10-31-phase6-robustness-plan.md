@@ -38,3 +38,40 @@ Not done: moving the cron off 00:00Z. Five of the six failures were in the
 different minute or hour would avoid the 504s. It is a one-line change to the
 crontab in `deploy-prod.yml`; it waits for the operator. Takes effect on prod at
 the next deploy (the script ships with it).
+
+## 2. lab-api — done
+
+Source: GitHub #597 (v1.0 security review). Already in the code before this
+phase: the `redirect_uris` caps, the `/register` and pre-auth rate limits keyed on
+the Caddy-set client IP, `no-store` on `/token`, skipping a null `history` item.
+
+`/ask` (ask.ts, index.ts): one request could make 7 LLM calls of up to 60 s
+(~7 minutes). Now a 120 s deadline per request: each tool round gets the time
+left minus a 20 s reserve for the final synthesis; under 5 s it goes straight to
+synthesis, and with no time it returns the localized budget message without an
+LLM call. The question is capped at 2,000 characters (400), and at most 8 tool
+calls run per round (the rest get an error result the model can read).
+
+Tokens (tokens.ts, as.ts):
+
+- Refresh tokens expire 30 days after issue. They rotate on every use, so this is
+  an idle timeout; expired ones are pruned. Tokens in a state file from before
+  this change get 30 days from the first load, not instant expiry.
+- DCR eviction: when the 500-client store is full, the least recently used client
+  with no live refresh token goes. A `/register` flood (its clients never sign in)
+  can only evict itself; if every client is in use, `/register` answers 503.
+- A corrupt `state.json` no longer stops the server starting (`JSON.parse`
+  threw in `TokenCore.load`): it is moved to
+  `state.json.corrupt-<ms>` and the server starts with new keys (every client
+  signs in again).
+
+Tests: 3 /ask unit tests + 1 route test, 5 token tests; with the old files, 3/3
+and 4/5 fail (the fifth checks old tokens are not expired at once, which the old
+code also satisfies). The lab-api tests also had a port race in their setup
+(EADDRINUSE once locally): `test-listen.ts` retries on a fresh port; 5/5 runs
+pass.
+
+Not done from #597: a consent page or redirect-host allowlist for DCR clients
+(the MCP tools are pure math today). Sign-in emails in `as.ts`/`google.ts` are
+already logged through `redactEmail`; whether the server's Sentry `beforeSend`
+drops breadcrumbs was not checked.

@@ -213,11 +213,8 @@
 </script>
 
 <svelte:head>
-  <title>Launches — Orrery</title>
-  <meta
-    name="description"
-    content="Global spaceflight launches — upcoming and historic. Agency-first sourcing with provenance per row."
-  />
+  <title>{m.launches_page_title()} — Orrery</title>
+  <meta name="description" content={m.launches_meta_description()} />
 </svelte:head>
 
 <div

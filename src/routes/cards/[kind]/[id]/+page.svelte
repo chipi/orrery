@@ -13,6 +13,7 @@
     2026-09-12 hero pass).
   */
   import { page } from '$app/state';
+  import * as m from '$lib/paraglide/messages';
   import { localeFromPage } from '$lib/locale';
   import { getMission, getMissionIndex } from '$lib/data/missions';
   import {
@@ -151,7 +152,7 @@
 </script>
 
 <svelte:head>
-  <title>Card · Orrery</title>
+  <title>{m.card_page_title()} · Orrery</title>
   <meta name="robots" content="noindex" />
 </svelte:head>
 

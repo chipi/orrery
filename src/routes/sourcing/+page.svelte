@@ -21,11 +21,8 @@
 </script>
 
 <svelte:head>
-  <title>Sourcing wall · Orrery</title>
-  <meta
-    name="description"
-    content="The content Orrery could not source under its licensing bar — what we wanted, where the wall was, and how we handled it honestly."
-  />
+  <title>{m.sourcing_page_title()} · Orrery</title>
+  <meta name="description" content={m.sourcing_meta_description()} />
 </svelte:head>
 
 <article class="sourcing" data-route-ready="true">

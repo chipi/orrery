@@ -109,13 +109,13 @@
 </script>
 
 <svelte:head>
-  <title>{p.name} · Programs · Orrery</title>
+  <title>{p.name} · {m.programs_index_title()} · Orrery</title>
   <meta name="description" content={p.tagline} />
 </svelte:head>
 
 <article class="program">
   <nav class="crumb">
-    <a href={localHref(`/programs`)}>Programs</a>
+    <a href={localHref(`/programs`)}>{m.programs_index_title()}</a>
     <span class="sep">›</span>
     <span>{p.name}</span>
   </nav>
@@ -178,7 +178,7 @@
 
   {#if modules.length}
     <section class="assembly">
-      <h2>Assembly — module by module</h2>
+      <h2>{m.program_assembly_h()}</h2>
       <ol class="timeline mod-timeline">
         {#each modules as m, i (i)}
           <li>
@@ -196,13 +196,13 @@
         {/each}
       </ol>
       <p class="assembly-foot">
-        <a href={localHref(`/${p.id}`)}>Explore the assembled station, module by module, in 3D →</a>
+        <a href={localHref(`/${p.id}`)}>{m.program_assembly_cta()}</a>
       </p>
     </section>
   {/if}
 
   <section class="roster">
-    <h2>Missions</h2>
+    <h2>{m.program_section_missions()}</h2>
     <div class="roster-split" class:solo={!hasClickable}>
       <ol class="timeline">
         {#each missions as r, i (i)}
@@ -244,16 +244,16 @@
             <h3 class="d-name">{selectedDetail.name}</h3>
             <p class="d-blurb">{selectedDetail.blurb}</p>
             <a class="d-open" href={localHref(`${selectedDetail.href}&from=program:${p.id}`)}
-              >Open the full mission →</a
+              >{m.program_open_mission()}</a
             >
           {:else}
-            <p class="d-empty">Select a mission to see its details.</p>
+            <p class="d-empty">{m.program_select_mission()}</p>
           {/if}
         </aside>
       {/if}
     </div>
 
-    <h2>Hardware</h2>
+    <h2>{m.program_section_hardware()}</h2>
     <ul class="hardware">
       {#each fleet as r, i (i)}
         <li>
@@ -305,7 +305,7 @@
   {/if}
 
   <section class="sources">
-    <h2>Sources</h2>
+    <h2>{m.program_section_sources()}</h2>
     <ul>
       {#each p.links as l (l.u)}
         <li><a href={l.u} target="_blank" rel="noopener noreferrer">{l.l} ↗</a></li>

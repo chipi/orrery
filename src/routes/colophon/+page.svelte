@@ -222,9 +222,11 @@
         {m.colophon_gallery_posters()}<span class="count">{data.posters.length}</span>
       </h2>
       <p class="block-note">
-        The <a href={localHref(`/posters`)}>/posters</a> gallery is {data.posters.length} ORRERY-original
-        art prints, AI-generated, then captioned and wordmarked in-house. They are not works of any space
-        agency and carry no agency logos.
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + local path, no user input -->
+        {@html m.colophon_posters_note({
+          link: `<a href="${localHref('/posters')}">/posters</a>`,
+          count: data.posters.length,
+        })}
       </p>
       <ul class="thumb-grid">
         {#each data.posters as p (p.file)}
@@ -250,10 +252,10 @@
           {m.colophon_lab_illustrations()}<span class="count">{data.lab_illustrations.length}</span>
         </h2>
         <p class="block-note">
-          The <a href={localHref(`/lab`)}>Physics Lab</a>'s goal illustrations are ORRERY-original
-          art, AI-generated to a house brief, then reviewed image-by-image in-house before shipping.
-          They are honest illustration — labelled as such beside the kernel's computed figures,
-          never presented as a computed result.
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + local path, no user input -->
+          {@html m.colophon_lab_note({
+            link: `<a href="${localHref('/lab')}">${m.lab_ui_title()}</a>`,
+          })}
         </p>
         <ul class="thumb-grid">
           {#each data.lab_illustrations as d (d.file)}
@@ -547,11 +549,11 @@
     max-width: 720px;
     margin: 0 0 16px;
   }
-  .block-note a {
+  .block-note :global(a) {
     color: #4ecdc4;
     text-decoration: none;
   }
-  .block-note a:hover {
+  .block-note :global(a:hover) {
     text-decoration: underline;
   }
 

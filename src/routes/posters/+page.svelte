@@ -10,6 +10,7 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
   import { roving } from '$lib/a11y/roving';
+  import * as m from '$lib/paraglide/messages';
 
   type Poster = { id: string; title: string; sub: string };
 
@@ -50,22 +51,18 @@
 </script>
 
 <svelte:head>
-  <title>Posters · Gallery · Orrery</title>
+  <title>{m.gallery_posters_title()} · {m.layout_footer_gallery()} · Orrery</title>
 </svelte:head>
 
 <article class="gallery" data-route-ready="true">
   <header>
     <nav class="crumb">
-      <a href="{base}{localizeHref('/gallery')}">Gallery</a><span class="sep">›</span><span
-        >Posters</span
-      >
+      <a href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a><span class="sep"
+        >›</span
+      ><span>{m.gallery_posters_title()}</span>
     </nav>
-    <h1>POSTERS</h1>
-    <p class="lede">
-      Twenty-seven original space posters — every era and agency, from Sputnik to Starship. Free to
-      download: click any poster for the full-resolution file to set as wallpaper, print, or use as
-      a Zoom background. ORRERY wordmark on every piece.
-    </p>
+    <h1>{m.posters_h1()}</h1>
+    <p class="lede">{m.posters_lede()}</p>
   </header>
 
   <!-- Spatial roving (RFC-031 S1): one Tab stop; arrows / TV D-pad move between
@@ -76,11 +73,11 @@
         <a
           href="{assetOrigin}/images/posters/{p.id}.jpg"
           download="orrery-{p.id}.jpg"
-          aria-label="Download the {p.title} poster — {p.sub}"
+          aria-label={m.posters_download_aria({ title: p.title, sub: p.sub })}
         >
           <img
             src="{assetOrigin}/images/posters/{p.id}.thumb.jpg"
-            alt="{p.title} — {p.sub}. Orrery art poster."
+            alt={m.posters_alt({ title: p.title, sub: p.sub })}
             width="700"
             height="1050"
             loading="lazy"
@@ -92,20 +89,19 @@
 
   <footer class="gallery-footer">
     <p>
-      <strong>Free to download.</strong> Click any poster for the full-resolution JPG —
-      <em>Save as…</em> for a wallpaper, T-shirt print, or Zoom background. The ORRERY wordmark is on
-      every piece.
+      <strong>{m.posters_footer_free_title()}</strong>
+      {m.posters_footer_free_body()}
     </p>
     <p>
-      <strong>Three style families.</strong> Vintage screen-print (Solar System, Earth, Moon, Mars, Saturn
-      V, Mir) · modern comic (Sputnik, Soyuz, Voyager, Sojourner, Footprints, Gagarin, Rosetta, Huygens,
-      Hayabusa2, Artemis II) · photoreal &amp; future (ISS, Tiangong, Perseverance, Space Shuttle, Solar
-      Sail, Nuclear Drive, James Webb, Hubble, Cassini, Starship).
+      <strong>{m.posters_footer_styles_title()}</strong>
+      {m.posters_footer_styles_body()}
     </p>
     <p>
-      <strong>ORRERY originals.</strong> AI-generated — not works of any space agency. Full
-      provenance on
-      <a href={localHref(`/colophon`)}>/colophon</a>.
+      <strong>{m.posters_footer_orig_title()}</strong>
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + local path, no user input -->
+      {@html m.posters_footer_orig_body({
+        link: `<a href="${localHref('/colophon')}">${m.colophon_title()}</a>`,
+      })}
     </p>
   </footer>
 </article>
@@ -200,15 +196,11 @@
     font-weight: normal;
     letter-spacing: 1px;
   }
-  .gallery-footer em {
-    color: rgba(255, 255, 255, 0.85);
-    font-style: italic;
-  }
-  .gallery-footer a {
+  .gallery-footer :global(a) {
     color: #4ecdc4;
     text-decoration: none;
   }
-  .gallery-footer a:hover {
+  .gallery-footer :global(a:hover) {
     text-decoration: underline;
   }
   @media (max-width: 1023px) {

@@ -103,11 +103,8 @@
 </script>
 
 <svelte:head>
-  <title>Programs · Orrery</title>
-  <meta
-    name="description"
-    content="The campaigns that shaped spaceflight — Apollo, ISS, Artemis and more."
-  />
+  <title>{m.programs_index_title()} · Orrery</title>
+  <meta name="description" content={m.programs_meta_description()} />
 </svelte:head>
 
 <div class="programs-index">

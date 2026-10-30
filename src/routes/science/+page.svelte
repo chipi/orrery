@@ -124,7 +124,7 @@
     </section>
   </article>
 {:else}
-  <p class="empty">Landing content unavailable.</p>
+  <p class="empty">{m.science_landing_unavailable()}</p>
 {/if}
 
 <style>

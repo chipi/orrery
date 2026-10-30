@@ -403,18 +403,15 @@
 </script>
 
 <svelte:head>
-  <title>Fleet — Spaceflight hardware</title>
-  <meta
-    name="description"
-    content="Curated inventory of the machines used in spaceflight: launchers, crewed and cargo spacecraft, stations, rovers, landers, orbiters, observatories."
-  />
+  <title>{m.fleet_page_title()}</title>
+  <meta name="description" content={m.fleet_meta_description()} />
 </svelte:head>
 
 <div class="fleet entity-browse-page">
   {#if !isSuccess(entriesRequest) && !isError(entriesRequest)}
-    <p class="status">Loading fleet…</p>
+    <p class="status">{m.fleet_loading()}</p>
   {:else if isError(entriesRequest)}
-    <p class="status error">Failed to load fleet data.</p>
+    <p class="status error">{m.fleet_load_failed()}</p>
   {:else}
     <!-- RFC-027 — free-text search across name + agency + category +
          tagline + country. Sits above the FILTERS toggle so it's visible
@@ -566,7 +563,7 @@
           >
             <option value="chrono-desc">{m.fleet_sort_newest()}</option>
             <option value="chrono-asc">{m.fleet_sort_oldest()}</option>
-            <option value="alpha">Alphabetical</option>
+            <option value="alpha">{m.fleet_sort_alpha()}</option>
             <option value="category">{m.fleet_sort_category()}</option>
           </select>
         </div>
@@ -574,7 +571,7 @@
     {/if}
 
     {#if filtered.length === 0}
-      <p class="status">No entries match the current filters.</p>
+      <p class="status">{m.fleet_empty()}</p>
     {:else if listView}
       <ul class="fleet-list">
         {#each filtered as entry (entry.id)}

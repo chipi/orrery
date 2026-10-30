@@ -15,11 +15,8 @@
 </script>
 
 <svelte:head>
-  <title>Insignia · Gallery · Orrery</title>
-  <meta
-    name="description"
-    content="Every program and mission patch in Orrery — authentic NASA insignia, public domain, with full provenance."
-  />
+  <title>{m.gallery_insignia_title()} · {m.layout_footer_gallery()} · Orrery</title>
+  <meta name="description" content={m.patches_meta_description()} />
 </svelte:head>
 
 <article class="patches" data-route-ready="true">

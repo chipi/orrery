@@ -231,12 +231,11 @@
     {/if}
 
     <!-- Offline download — native app (durable Filesystem) OR installed PWA (Cache
-         Storage; Part 3). Hidden in a plain browser tab / where unsupported. Strings
-         are English for now; i18n before App Store ship (follow-up). -->
+         Storage; Part 3). Hidden in a plain browser tab / where unsupported. -->
     {#if offline.status !== 'unsupported'}
       <section class="section">
-        <div class="section-title">Offline</div>
-        <div class="section-hint">Download the app to browse without a connection.</div>
+        <div class="section-title">{m.offline_title()}</div>
+        <div class="section-hint">{m.offline_hint()}</div>
         <label class="radio">
           <input
             type="radio"
@@ -245,7 +244,7 @@
             disabled={offline.status === 'downloading'}
             onchange={() => pickTier('off')}
           />
-          <span>Off — stream on demand</span>
+          <span>{m.offline_off()}</span>
         </label>
         <label class="radio">
           <input
@@ -256,8 +255,9 @@
             onchange={() => pickTier('basic')}
           />
           <span
-            >Basic{offline.tierSizes.basic ? ` — ${fmtMB(offline.tierSizes.basic)}` : ''} · every page
-            + detail</span
+            >{m.offline_tier_basic()}{offline.tierSizes.basic
+              ? ` — ${fmtMB(offline.tierSizes.basic)}`
+              : ''} · {m.offline_tier_basic_desc()}</span
           >
         </label>
         <label class="radio">
@@ -269,8 +269,9 @@
             onchange={() => pickTier('full')}
           />
           <span
-            >Full{offline.tierSizes.full ? ` — ${fmtMB(offline.tierSizes.full)}` : ''} · + galleries,
-            posters, audio</span
+            >{m.offline_tier_full()}{offline.tierSizes.full
+              ? ` — ${fmtMB(offline.tierSizes.full)}`
+              : ''} · {m.offline_tier_full_desc()}</span
           >
         </label>
 
@@ -282,23 +283,27 @@
             ></div>
           </div>
           <div class="section-hint">
-            {offline.done} / {offline.total} files · {fmtMB(offline.bytesDone)}
-            <button type="button" class="reload-btn" onclick={cancelDownload}>Cancel</button>
+            {m.offline_progress({ done: offline.done, total: offline.total })} · {fmtMB(
+              offline.bytesDone,
+            )}
+            <button type="button" class="reload-btn" onclick={cancelDownload}
+              >{m.offline_cancel()}</button
+            >
           </div>
         {:else if offline.status === 'needs-cellular-confirm'}
           <div class="reload-hint">
-            On cellular — this is a large download.
+            {m.offline_cellular()}
             <button
               type="button"
               class="reload-btn"
               onclick={() => offline.pendingTier && downloadTier(offline.pendingTier, true)}
-              >Download anyway</button
+              >{m.offline_download_anyway()}</button
             >
           </div>
         {:else if offline.status === 'error'}
           <div class="section-hint offline-error">{offline.error}</div>
         {:else if offline.tier}
-          <div class="section-hint">Downloaded · {fmtMB(offline.bytesDone)}</div>
+          <div class="section-hint">{m.offline_downloaded({ size: fmtMB(offline.bytesDone) })}</div>
         {/if}
       </section>
     {/if}

@@ -159,34 +159,34 @@
     <aside class="data-sources" aria-label={m.library_transcripts_aria()}>
       <h3>{m.library_audio_episodes()}</h3>
       <p>
-        Read every Curator Tour episode without playing the audio —
-        <a href={localHref(`/library/episodes`)} data-sveltekit-preload-data="hover"
-          >transcripts + editorial sources for all 33 episodes</a
-        >.
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + local path, no user input -->
+        {@html m.library_transcripts_line({
+          link: `<a href="${localHref('/library/episodes')}" data-sveltekit-preload-data="hover">${m.library_transcripts_link({ count: 33 })}</a>`,
+        })}
       </p>
     </aside>
 
     <aside class="data-sources" aria-label={m.library_launches_sources_aria()}>
       <h3>{m.library_launches_data()}</h3>
       <p>
-        Historic launches:
+        {m.library_launches_historic()}
         <a
           href="https://planet4589.org/space/gcat/"
           rel="noopener noreferrer external"
-          hreflang="en">Jonathan McDowell — General Catalog of Artificial Space Objects (GCAT)</a
+          hreflang="en">Jonathan McDowell — {m.launches_citation_gcat_label()}</a
         >, CC&nbsp;BY&nbsp;4.0.
       </p>
       <p>
-        Upcoming gap-fill:
+        {m.library_launches_upcoming()}
         <a href="https://thespacedevs.com/llapi" rel="noopener noreferrer external" hreflang="en"
           >Launch Library 2 — The Space Devs</a
         >.
       </p>
       <p>
-        Agency-direct sources: NASA · SpaceX · ESA. Per-row provenance chain on every entry of
-        <a href={localHref(`/missions/launches`)} data-sveltekit-preload-data="hover"
-          >the launches calendar</a
-        >.
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + local path, no user input -->
+        {@html m.library_launches_agency({
+          link: `<a href="${localHref('/missions/launches')}" data-sveltekit-preload-data="hover">${m.library_launches_calendar_link()}</a>`,
+        })}
       </p>
     </aside>
   </header>
@@ -363,14 +363,14 @@
     color: rgba(255, 255, 255, 0.8);
     margin: 0 0 6px;
   }
-  .data-sources a {
+  .data-sources :global(a) {
     color: rgba(255, 255, 255, 0.95);
     text-decoration-color: rgba(255, 255, 255, 0.4);
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
   }
-  .data-sources a:hover,
-  .data-sources a:focus-visible {
+  .data-sources :global(a:hover),
+  .data-sources :global(a:focus-visible) {
     color: #c9aa6f;
     outline: none;
   }

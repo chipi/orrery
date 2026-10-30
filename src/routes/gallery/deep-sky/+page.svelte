@@ -139,26 +139,19 @@
 <svelte:window onkeydown={onKey} />
 
 <svelte:head>
-  <title>Deep-Sky · Gallery · Orrery</title>
-  <meta
-    name="description"
-    content="A curated wall of the finest publicly-licensed observatory imagery — JWST, Hubble, Chandra, Spitzer and the great space observatories."
-  />
+  <title>{m.deepsky_name()} · {m.layout_footer_gallery()} · Orrery</title>
+  <meta name="description" content={m.deepsky_meta_description()} />
 </svelte:head>
 
 <article class="gallery" data-route-ready="true">
   <header>
     <nav class="crumb">
-      <a href="{base}{localizeHref('/gallery')}">Gallery</a><span class="sep">›</span><span
-        >Deep-Sky</span
-      >
+      <a href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a><span class="sep"
+        >›</span
+      ><span>{m.deepsky_name()}</span>
     </nav>
-    <h1>DEEP-SKY</h1>
-    <p class="lede">
-      The universe's greatest hits, as seen by the great observatories. {data.images.length} images, all
-      publicly licensed — from the Pillars of Creation to the Whirlpool Galaxy. Click any frame to see
-      it full-size, with its story and credit.
-    </p>
+    <h1>{m.deepsky_h1()}</h1>
+    <p class="lede">{m.deepsky_lede({ count: data.images.length })}</p>
   </header>
 
   <div class="filters" role="tablist" aria-label={m.deepsky_filter_observatory()}>
@@ -180,7 +173,11 @@
   <div class="masonry">
     {#each shown as img, i (img.key)}
       <figure class="tile {span(img)}">
-        <button type="button" onclick={() => open(i)} aria-label="View {img.title} — {img.caption}">
+        <button
+          type="button"
+          onclick={() => open(i)}
+          aria-label={m.deepsky_view_aria({ title: img.title, caption: img.caption })}
+        >
           <img
             src="{assetOrigin}/images/deep-sky/{img.key}.thumb.jpg"
             alt="{img.title} — {img.subject}"
@@ -205,13 +202,12 @@
 
   <footer class="gallery-footer">
     <p>
-      <strong>The great observatories.</strong> Space telescopes — JWST, Hubble, Chandra and Spitzer —
-      plus ESA's Euclid and the interplanetary vantage of Voyager, New Horizons and the Solar Dynamics
-      Observatory.
+      <strong>{m.deepsky_footer_obs_title()}</strong>
+      {m.deepsky_footer_obs_body()}
     </p>
     <p>
-      <strong>All publicly licensed.</strong> Public domain or Creative Commons, sourced from Wikimedia
-      Commons. Every frame carries its credit and licence in the viewer.
+      <strong>{m.deepsky_footer_lic_title()}</strong>
+      {m.deepsky_footer_lic_body()}
     </p>
   </footer>
 </article>
@@ -242,32 +238,32 @@
         <p class="lb-caption">{current.caption}</p>
         <dl class="lb-facts">
           <div>
-            <dt>Object</dt>
+            <dt>{m.deepsky_fact_object()}</dt>
             <dd>{current.type}</dd>
           </div>
           {#if current.constellation && current.constellation !== '—'}
             <div>
-              <dt>Constellation</dt>
+              <dt>{m.explore_ds_constellation()}</dt>
               <dd>{current.constellation}</dd>
             </div>
           {/if}
           <div>
-            <dt>Distance</dt>
+            <dt>{m.explore_ds_distance()}</dt>
             <dd>{current.distance}</dd>
           </div>
           <div>
-            <dt>Captured</dt>
+            <dt>{m.deepsky_fact_captured()}</dt>
             <dd>{current.taken}</dd>
           </div>
           <div>
-            <dt>Instrument</dt>
+            <dt>{m.deepsky_fact_instrument()}</dt>
             <dd>{current.instrument}</dd>
           </div>
         </dl>
         <p class="lb-meta">
           <span class="lb-credit">{current.credit}</span>
           <a class="lb-src" href={current.source} target="_blank" rel="noopener noreferrer"
-            >{current.licence} · source ↗</a
+            >{current.licence} · {m.link_source()}</a
           >
         </p>
         {#if current.designation && skyDesignations.has(current.designation)}
@@ -275,7 +271,7 @@
             class="lb-sky"
             href={localHref(`/explore?deepsky=${encodeURIComponent(current.designation)}`)}
           >
-            Show in the sky →
+            {m.deepsky_show_in_sky()}
           </a>
         {/if}
       </figcaption>

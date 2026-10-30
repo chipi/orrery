@@ -62,7 +62,7 @@
 
 {#if data.intro}
   <section class="tab-intro" aria-label={m.science_focused_101_tab_aria()}>
-    <p class="badge">101 · zoom in</p>
+    <p class="badge">{m.science_101_badge()}</p>
     <p class="headline">{data.intro.headline}</p>
     {#each data.intro.paragraphs as para (para)}
       <p>{para}</p>
@@ -70,7 +70,7 @@
   </section>
 {/if}
 
-<p class="hint">→ Pick a section from the right rail to start reading.</p>
+<p class="hint">{m.science_pick_section()}</p>
 
 <style>
   .crumb {

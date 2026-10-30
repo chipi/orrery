@@ -131,7 +131,7 @@
 
   {#if section.narrative_101 && section.narrative_101.length > 0}
     <section class="narrative-101" aria-label={m.science_focused_101_aria()}>
-      <p class="badge">101 · zoom in</p>
+      <p class="badge">{m.science_101_badge()}</p>
       {#each section.narrative_101 as para (para)}
         <p>{para}</p>
       {/each}

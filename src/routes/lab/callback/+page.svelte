@@ -25,7 +25,7 @@
   });
 </script>
 
-<svelte:head><title>Orrery — sign in</title></svelte:head>
+<svelte:head><title>Orrery — {t('lab.signin.title')}</title></svelte:head>
 
 <main class="callback">
   {#if failed === 'denied'}

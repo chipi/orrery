@@ -226,7 +226,9 @@ wrong order).
   (`mission_status_active` ACTIVA vs `fleet_status_active` ACTIVO), never one
   shared key.
 - **Same as English** is allowed only for symbols (§1), units as §1a gives them,
-  the "Orrery" brand, and acronyms the language's own sources use.
+  the "Orrery" brand, acronyms the language's own sources use, and the /fly
+  event shorthand keys `fly-event-catalog.test.ts` pins to English
+  (`fly_event_tcm`, `_edl_or_oi`, `_anomaly`, `_loi`, `_tei`).
 - **Units next to numbers** come from a message per §1a, never a hard-coded
   English abbreviation in a component.
 

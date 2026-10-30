@@ -72,8 +72,8 @@
       type="button"
       class="ctrl"
       data-testid="assembly-play"
-      aria-label={playing ? 'Pause assembly' : 'Play assembly'}
-      title={playing ? 'Pause' : 'Play'}
+      aria-label={playing ? m.station_assembly_pause_aria() : m.station_assembly_play_aria()}
+      title={playing ? m.fly_pause() : m.fly_play()}
       onclick={onTogglePlay}
     >
       {playing ? '⏸' : '▶'}
@@ -148,7 +148,7 @@
   {/if}
 
   <p class="hint" aria-live="polite">
-    Playback {Math.round(durationMs / 1000)}s · scrub to any date · click pause to inspect
+    {m.station_assembly_hint({ seconds: Math.round(durationMs / 1000) })}
   </p>
 </div>
 

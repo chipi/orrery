@@ -68,7 +68,7 @@ languages kept a national abbreviation.
 | hi | AU | the word (प्रकाश-वर्ष) | pc | km/s | "AU या au …" |
 | ar | و.ف | the word (سنة ضوئية) | pc | كم/ث | "يرمز لها «و.ف»"; the m/s article writes م\ث (slash form normalised here) |
 | ru | а. е. | св. год | пк | км/с | "русское обозначение: а. е.", "св. год", "пк", "м/с" |
-| sr-Cyrl | АЈ | the word (светлосна година) | pc | km/s | "Астрономска јединица (АЈ)"; SI symbols in Latin |
+| sr-Cyrl | АЈ | the word (светлосна година); next to a variable number св. год. (the word cannot agree with every number) | pc | km/s | "Астрономска јединица (АЈ)"; SI symbols in Latin |
 
 Light-time shorthand (`l-min`, light-minutes) follows the light-year column: the
 language's own short form where it has one (zh-CN/ja 光分, ko 광분 — the forms

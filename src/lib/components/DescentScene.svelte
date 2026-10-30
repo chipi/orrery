@@ -13,6 +13,7 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
   import * as m from '$lib/paraglide/messages';
+  import { hudLabel } from '$lib/orbital/hud-labels';
   import { base } from '$app/paths';
   import {
     createDescentScene,
@@ -106,26 +107,48 @@
         : mission.body,
   );
 
+  const BODY_NAME: Record<DescentBody, () => string> = {
+    moon: m.lab_body_moon,
+    mars: m.lab_body_mars,
+    venus: m.lab_body_venus,
+    titan: m.lab_body_titan,
+    earth: m.lab_body_earth,
+    jupiter: m.lab_body_jupiter,
+    mercury: m.lab_body_mercury,
+    comet_67p: m.plan_destination_67p,
+    itokawa: m.lab_body_itokawa,
+    ryugu: m.lab_body_ryugu,
+    bennu: m.lab_body_bennu,
+    eros: m.lab_body_eros,
+  };
   const dossierRows: [string, string][] = $derived([
-    ['BODY', BODY_LABEL[mission.body] ?? mission.body[0].toUpperCase() + mission.body.slice(1)],
-    ['SITE', mission.siteName],
-    ['EDL SYSTEM', mission.edlSystem],
+    [m.hud_body(), BODY_NAME[mission.body]?.() ?? BODY_LABEL[mission.body] ?? mission.body],
+    [m.card_fact_site(), mission.siteName],
+    [m.hud_edl_system(), mission.edlSystem],
     ...(mission.entryVelocityKms != null
-      ? ([['ENTRY VELOCITY', `${mission.entryVelocityKms.toFixed(2)} km/s`]] as [string, string][])
+      ? ([
+          [
+            m.mp_flight_label_entry_velocity(),
+            m.mp_flight_unit_kms({ value: mission.entryVelocityKms.toFixed(2) }),
+          ],
+        ] as [string, string][])
       : []),
     // Guided entry (ADR-088): the target downrange the entry computer steers to, and (if the
     // target is inside the reachable footprint) a check that it made it. Only for a guided capsule.
     ...(summary.guidance != null
       ? ([
           [
-            'GUIDED TO',
-            `${Math.round(summary.landingDownrangeKm)} km${summary.guidance.targetReachable ? ' ✓' : ' (max)'}`,
+            m.hud_guided_to(),
+            `${m.mp_flight_unit_km({ value: Math.round(summary.landingDownrangeKm) })}${summary.guidance.targetReachable ? ' ✓' : ` ${m.hud_guided_max()}`}`,
           ],
         ] as [string, string][])
       : []),
     // Earth re-entry shows the nominal ~14 min entry→splashdown, not the 1-DOF
     // model's inflated path time (RFC-034 §13).
-    ['DESCENT', `${Math.round(profile.body === 'earth' ? 840 : duration)} s`],
+    [
+      m.hud_descent(),
+      m.unit_s_value({ value: Math.round(profile.body === 'earth' ? 840 : duration) }),
+    ],
   ]);
 
   let container: HTMLDivElement;
@@ -301,7 +324,7 @@
       class="status"
       class:hot={retroOn}
       class:land={liveState.altM <= 0}
-      data-testid="descent-status">{status}</span
+      data-testid="descent-status">{hudLabel(status)}</span
     >
   </div>
 
@@ -310,21 +333,21 @@
   <div class="lamps">
     {#if isEarthReentry}
       <span class="lamp blackout" class:on={inBlackout}
-        >BLACKOUT<ScienceChip
+        >{m.hud_blackout()}<ScienceChip
           tab="mission-phases"
           section="comms-blackout"
-          label="Communications blackout"
+          label={m.chip_label_blackout()}
         /></span
       >
-      <span class="lamp" class:on={drogueOut}>DROGUE</span>
-      <span class="lamp" class:on={mainOut}>MAIN</span>
+      <span class="lamp" class:on={drogueOut}>{m.hud_drogue()}</span>
+      <span class="lamp" class:on={mainOut}>{m.hud_main()}</span>
     {:else}
-      <span class="lamp" class:on={chuteOut}>CHUTE</span>
+      <span class="lamp" class:on={chuteOut}>{m.hud_chute()}</span>
       <span class="lamp" class:on={retroOn}
-        >RETRO<ScienceChip
+        >{m.hud_retro()}<ScienceChip
           tab="mission-phases"
           section="propulsive-landing"
-          label="Propulsive landing"
+          label={m.chip_label_propulsive_landing()}
         /></span
       >
     {/if}
@@ -336,18 +359,20 @@
         >{m.fly_descent_dossier_title()}<ScienceChip
           tab="mission-phases"
           section="edl"
-          label="Entry, Descent & Landing"
+          label={m.chip_label_edl()}
         />{#if isEarthReentry}<ScienceChip
             tab="mission-phases"
             section="deorbit-corridor"
-            label="Deorbit & the re-entry corridor"
+            label={m.chip_label_deorbit()}
           />{/if}{#if mission.edlSystem === 'Sky-crane'}<ScienceChip
             tab="mission-phases"
             section="skycrane"
-            label="Sky-crane"
+            label={m.chip_label_skycrane()}
           />{/if}</span
       >
-      {#if profile.source_tier === 'generic'}<span class="rep">REPRESENTATIVE</span>{/if}
+      {#if profile.source_tier === 'generic'}<span class="rep"
+          >{m.fly_launch_dossier_representative()}</span
+        >{/if}
     </div>
     <dl>
       {#each dossierRows as [k, v] (k)}
@@ -366,7 +391,7 @@
         class:alt={i % 2 === 1}
         style="left:{duration > 0 ? (unwarpDescentTime(b.t) / duration) * 100 : 0}%"
       >
-        <span class="tick"></span><span class="lbl">{b.label}</span>
+        <span class="tick"></span><span class="lbl">{hudLabel(b.label)}</span>
       </div>
     {/each}
     <div class="head" style="left:{progressPct}%"></div>
@@ -375,28 +400,32 @@
   <div class="readouts">
     <div class="ro">
       <span class="rl"
-        >ALTITUDE<ScienceChip
+        >{m.earth_panel_alt()}<ScienceChip
           tab="mission-phases"
           section="ballistic-coefficient"
-          label="Ballistic coefficient"
+          label={m.chip_label_ballistic_coefficient()}
         /></span
-      ><span class="rv">{alt.value}</span><span class="ru">{alt.unit}</span>
+      ><span class="rv">{alt.value}</span><span class="ru"
+        >{alt.unit === 'KM' ? m.hud_unit_km() : m.hud_unit_m()}</span
+      >
     </div>
     <div class="ro">
       <span class="rl"
-        >VELOCITY<ScienceChip
+        >{m.hud_velocity()}<ScienceChip
           tab="mission-phases"
           section="terminal-velocity"
-          label="Terminal velocity"
+          label={m.chip_label_terminal_velocity()}
         /></span
-      ><span class="rv">{liveState.velocityMs.toFixed(0)}</span><span class="ru">M/S</span>
+      ><span class="rv">{liveState.velocityMs.toFixed(0)}</span><span class="ru"
+        >{m.hud_unit_ms()}</span
+      >
     </div>
     <div class="ro">
       <span class="rl"
-        >DECEL<ScienceChip
+        >{m.hud_decel()}<ScienceChip
           tab="mission-phases"
           section="entry-heating"
-          label="Entry heating"
+          label={m.chip_label_entry_heating()}
         /></span
       ><span class="rv">{liveState.decelG.toFixed(1)}</span><span class="ru">G</span>
     </div>
@@ -404,11 +433,12 @@
       <!-- Guided range-control entry: the ground track flown + the bank the entry computer
            solved to steer to the target landing point (#29 · ADR-088). -->
       <div class="ro" data-testid="descent-downrange">
-        <span class="rl">DOWNRANGE</span><span class="rv">{liveState.downrangeKm.toFixed(0)}</span
-        ><span class="ru">KM</span>
+        <span class="rl">{m.hud_downrange()}</span><span class="rv"
+          >{liveState.downrangeKm.toFixed(0)}</span
+        ><span class="ru">{m.hud_unit_km()}</span>
       </div>
       <div class="ro" data-testid="descent-guidance" class:guidance-miss={!guidance.reachable}>
-        <span class="rl">GUIDED · BANK</span><span class="rv">{guidance.bankDeg}</span><span
+        <span class="rl">{m.hud_guided_bank()}</span><span class="rv">{guidance.bankDeg}</span><span
           class="ru">°</span
         >
       </div>
@@ -423,9 +453,11 @@
        touch viewports where the full HUD is decluttered so mobile still gets
        the key EDL telemetry. -->
   <div class="descent-mstrip" data-testid="descent-mstrip">
-    <span class="ms-phase">{status}</span>
-    <span class="ms-val">{alt.value}<i>{alt.unit}</i></span>
-    <span class="ms-val">{liveState.velocityMs.toFixed(0)}<i>M/S</i></span>
+    <span class="ms-phase">{hudLabel(status)}</span>
+    <span class="ms-val"
+      >{alt.value}<i>{alt.unit === 'KM' ? m.hud_unit_km() : m.hud_unit_m()}</i></span
+    >
+    <span class="ms-val">{liveState.velocityMs.toFixed(0)}<i>{m.hud_unit_ms()}</i></span>
   </div>
 </div>
 

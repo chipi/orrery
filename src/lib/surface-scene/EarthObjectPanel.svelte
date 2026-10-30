@@ -291,7 +291,7 @@
           href={localHref(`/missions?id=${selected.id}`)}
           data-testid="mission-card-link"
         >
-          FULL MISSION CARD →
+          {m.mission_card_full()}
         </a>
       {/if}
 

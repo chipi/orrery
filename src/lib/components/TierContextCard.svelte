@@ -47,7 +47,7 @@
             href={layer.sourceUrl}
             target="_blank"
             rel="noopener noreferrer external"
-            title={m.source_open_new_tab_title()}>source ↗</a
+            title={m.source_open_new_tab_title()}>{m.link_source()}</a
           >
         {/if}
       </div>

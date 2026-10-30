@@ -896,7 +896,7 @@
             aria-label={m.audio_minimize_aria()}
             title={audio.currentEpisode
               ? m.audio_minimize_title()
-              : 'Load an episode first — minimize collapses to the active-playback bar'}
+              : m.audio_minimize_disabled_title()}
             disabled={!audio.currentEpisode}
             onclick={() => audio.toggleCompact()}
           >
@@ -1024,7 +1024,7 @@
           aria-label={m.audio_compact_stop_aria()}
           onclick={() => audio.stopTour()}
         >
-          stop
+          {m.audio_stop_label()}
         </button>
         <button
           type="button"
@@ -1135,7 +1135,9 @@
             type="button"
             class="cc-toggle"
             class:active={audio.captionsOn}
-            aria-label={audio.captionsOn ? 'Hide captions' : 'Show captions'}
+            aria-label={audio.captionsOn
+              ? m.audio_captions_hide_aria()
+              : m.audio_captions_show_aria()}
             aria-pressed={audio.captionsOn}
             title={m.audio_captions_title()}
             onclick={toggleCaptions}
@@ -1162,7 +1164,7 @@
             aria-label={m.audio_transcript_download_aria()}
             onclick={downloadTranscript}
           >
-            ↓ transcript (.txt)
+            ↓ {m.audio_transcript_download()} (.txt)
           </button>
         </div>
       </section>
@@ -1180,7 +1182,7 @@
             disabled={routeEpisodes.length === 0}
             onclick={() => (scope = 'screen')}
           >
-            For this screen{routeEpisodes.length > 0 ? ` (${routeEpisodes.length})` : ''}
+            {m.audio_scope_screen()}{routeEpisodes.length > 0 ? ` (${routeEpisodes.length})` : ''}
           </button>
           <button
             type="button"
@@ -1190,7 +1192,7 @@
             aria-selected={scope === 'all'}
             onclick={() => (scope = 'all')}
           >
-            All episodes ({audioRegistry.episodes.length})
+            {m.audio_scope_all({ count: audioRegistry.episodes.length })}
           </button>
         </div>
 

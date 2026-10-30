@@ -63,7 +63,7 @@
               <img
                 class="agency-logo"
                 src={logoFor(e.agency_name)}
-                alt="{e.agency_name} logo"
+                alt={m.launches_logo_alt({ agency: e.agency_name })}
                 title={agencyFullName(e.agency_name) ?? e.agency_name}
                 loading="lazy"
                 decoding="async"

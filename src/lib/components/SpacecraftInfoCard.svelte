@@ -48,29 +48,37 @@
     <dl class="rows">
       <div class="row">
         <dt>
-          SPEED<ScienceChip tab="orbits" section="vis-viva" label={m.chip_label_vis_viva()} />
+          {m.fly_speed_label()}<ScienceChip
+            tab="orbits"
+            section="vis-viva"
+            label={m.chip_label_vis_viva()}
+          />
         </dt>
-        <dd>{heliocentricKms.toFixed(2)} km/s</dd>
+        <dd>{m.mp_flight_unit_kms({ value: heliocentricKms.toFixed(2) })}</dd>
       </div>
       <div class="row">
         <dt>
-          FROM EARTH<ScienceChip
+          {m.fly_hud_dist_earth()}<ScienceChip
             tab="scales-time"
             section="light-minute"
             label={m.chip_label_light_minute()}
           />
         </dt>
-        <dd>{distFromEarthAu.toFixed(3)} AU · {lightMinFromEarth.toFixed(1)} l-min</dd>
+        <dd>
+          {m.unit_au_value({ value: distFromEarthAu.toFixed(3) })} · {m.fly_hud_lmin({
+            value: lightMinFromEarth.toFixed(1),
+          })}
+        </dd>
       </div>
       <div class="row">
-        <dt>FROM TARGET</dt>
-        <dd>{distFromMarsAu.toFixed(3)} AU</dd>
+        <dt>{m.hud_from_target()}</dt>
+        <dd>{m.unit_au_value({ value: distFromMarsAu.toFixed(3) })}</dd>
       </div>
       <div class="row">
         <dt>
           MET<ScienceChip tab="mission-phases" section="met" label={m.chip_label_met()} />
         </dt>
-        <dd>{Math.round(metDays).toLocaleString()} d</dd>
+        <dd>{m.plan_sandbox_days({ value: Math.round(metDays).toLocaleString() })}</dd>
       </div>
     </dl>
   </aside>

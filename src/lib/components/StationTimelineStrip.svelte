@@ -9,6 +9,7 @@
    * One reusable component, mounted on both /iss and /tiangong.
    */
   import { resolveAgency } from '$lib/agencies';
+  import * as m from '$lib/paraglide/messages';
   import { assetOrigin } from '$lib/asset-url';
 
   type StationItem = {
@@ -148,7 +149,7 @@
   }
 </script>
 
-<section class="strip" aria-label={heading ?? 'Chronological timeline'}>
+<section class="strip" aria-label={heading ?? m.timeline_default_aria()}>
   {#if heading}
     <h2 class="strip-heading">{heading}</h2>
   {/if}

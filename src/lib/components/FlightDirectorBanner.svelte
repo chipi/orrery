@@ -182,7 +182,7 @@
       type="button"
       class="collapse-btn"
       aria-expanded={expanded}
-      aria-label={expanded ? 'Collapse Flight Director' : 'Expand Flight Director'}
+      aria-label={expanded ? m.fd_collapse_aria() : m.fd_expand_aria()}
       onclick={() => (expanded = !expanded)}
     >
       <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>

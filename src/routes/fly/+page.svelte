@@ -148,6 +148,9 @@
   import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
+  import { hudLabel } from '$lib/orbital/hud-labels';
+  import { destinationLabel } from '$lib/destination-label';
+  import { qualityTierLabel } from '$lib/quality/quality-tier-label';
   import { cue } from '$lib/sensory/feedback';
   import { sensory } from '$lib/sensory/state.svelte';
   import { flyVelocitySon } from '$lib/sensory/sonify/fly-velocity';
@@ -312,7 +315,7 @@
   let launchDossier = $derived({
     name: mission.name,
     agency: mission.agency ?? mission.agency_full ?? '',
-    site: launchProfile?.launchSite?.name ?? 'Launch complex',
+    site: launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
     destination: mission.arr_label ?? '',
     spacecraftId: mission.id,
     injectionBurn: launchInjectionBurn,
@@ -469,22 +472,22 @@
   });
   function edlSystemLabel(p: DescentProfile): string {
     const kinds = new Set<EDLPhaseKind>(p.phases.map((x) => x.kind));
-    if (kinds.has('touch_and_go_contact')) return 'Touch-and-go';
-    if (p.body === 'comet_67p') return 'Harpoon landing';
-    if (p.body === 'jupiter') return 'Atmospheric probe';
-    if (p.body === 'titan') return 'Parachute descent';
-    if (kinds.has('skycrane')) return 'Sky-crane';
-    if (kinds.has('airbag_bounce')) return 'Airbags';
-    if (kinds.has('aeroshell_descent')) return 'Aeroshell';
-    if (kinds.has('parachute') && kinds.has('powered_retro')) return 'Parachute + retro';
-    if (kinds.has('powered_retro')) return 'Powered retro';
+    if (kinds.has('touch_and_go_contact')) return m.edl_touch_and_go();
+    if (p.body === 'comet_67p') return m.edl_harpoon();
+    if (p.body === 'jupiter') return m.edl_atmospheric_probe();
+    if (p.body === 'titan') return m.edl_parachute_descent();
+    if (kinds.has('skycrane')) return m.chip_label_skycrane();
+    if (kinds.has('airbag_bounce')) return m.edl_airbags();
+    if (kinds.has('aeroshell_descent')) return m.edl_aeroshell();
+    if (kinds.has('parachute') && kinds.has('powered_retro')) return m.edl_parachute_retro();
+    if (kinds.has('powered_retro')) return m.edl_powered_retro();
     // A capsule with lift steers its entry (ADR-088): a guided one solves a bank to a target
     // downrange (Apollo/Soyuz/Dragon); a lift-up one just caps peak-g. Only a truly lift-free
     // capsule (Mercury/Vostok/Voskhod) is ballistic.
     if ((p.liftToDragRatio ?? 0) > 0) {
-      return p.targetDownrangeKm != null ? 'Lifting (guided)' : 'Lifting';
+      return p.targetDownrangeKm != null ? m.edl_lifting_guided() : m.edl_lifting();
     }
-    return 'Ballistic';
+    return m.edl_ballistic();
   }
   let descentDossier = $derived(
     descentProfile
@@ -527,8 +530,8 @@
   let recoveryOutcome = $derived.by(() => {
     const ok = descentSummaryFly?.touchdownSuccess ?? true;
     const splash = earthCoast ? SPLASHDOWN_CAPSULES.has(earthCoast.capsuleId) : true;
-    if (!ok) return { eyebrow: 'IMPACT', fail: true };
-    return { eyebrow: splash ? 'SPLASHDOWN · RECOVERY' : 'TOUCHDOWN · RECOVERY', fail: false };
+    if (!ok) return { eyebrow: m.hud_impact(), fail: true };
+    return { eyebrow: splash ? m.hud_recovery_splash() : m.hud_recovery_land(), fail: false };
   });
   /** Opening CTA (landing missions only): jump straight to the EDL act, past the
    *  launch + cruise — the descent counterpart of startLaunch. */
@@ -1185,26 +1188,27 @@
     // give the RETURN ring an "Earth arrival" subtitle. One-way
     // missions keep the original arr_label behaviour because their
     // arrival ring genuinely sits at the labelled point.
-    const destDisplay = dest.charAt(0).toUpperCase() + dest.slice(1);
-    const arrSubLabel = isRoundTrip ? `${destDisplay} arrival` : arrLabelData;
+    const arrSubLabel = isRoundTrip
+      ? m.hud_body_arrival({ body: destinationLabel(dest) })
+      : arrLabelData;
     if (isRoundTrip) {
       flyUpdaters.helio.refreshLabelSprites(
-        'LAUNCH',
+        m.fly_event_launch(),
         depLabel,
         '#4b9cd3',
-        'ARRIVAL',
+        m.fly_event_arrival(),
         arrSubLabel,
         arrColor,
-        'RETURN',
-        'Earth arrival',
+        m.hud_return(),
+        m.hud_body_arrival({ body: m.lab_body_earth() }),
         '#4b9cd3',
       );
     } else {
       flyUpdaters.helio.refreshLabelSprites(
-        'LAUNCH',
+        m.fly_event_launch(),
         depLabel,
         '#4b9cd3',
-        'ARRIVAL',
+        m.fly_event_arrival(),
         arrSubLabel,
         arrColor,
       );
@@ -3076,7 +3080,7 @@
         <div class="recovery-caption">{RECOVERY_CAPTIONS[mission.id]()}</div>
       {/if}
       <button class="recovery-close" onclick={() => dispatchPhase({ type: 'closeRecovery' })}
-        >CLOSE</button
+        >{m.hud_close()}</button
       >
     </div>
   </div>
@@ -3110,11 +3114,15 @@
 {#if oiBeatActive && orbitInsertion && !hudHidden}
   <div class="oi-callout" class:firing={oiFiring}>
     <div class="oi-tag">{orbitInsertion.tag}</div>
-    <div class="oi-label">{orbitInsertion.label}</div>
+    <div class="oi-label">{hudLabel(orbitInsertion.label)}</div>
     <div class="oi-status">
-      {oiFiring ? 'CAPTURE BURN' : 'APPROACH'}{orbitInsertion.dvKms != null
-        ? ` · Δv ${orbitInsertion.dvKms.toFixed(2)} km/s`
-        : ''}<ScienceChip tab="mission-phases" section="aerobraking" label="Aerobraking" />
+      {oiFiring ? m.hud_capture_burn() : m.hud_approach()}{orbitInsertion.dvKms != null
+        ? ` · Δv ${m.mp_flight_unit_kms({ value: orbitInsertion.dvKms.toFixed(2) })}`
+        : ''}<ScienceChip
+        tab="mission-phases"
+        section="aerobraking"
+        label={m.chip_label_aerobraking()}
+      />
     </div>
   </div>
 {/if}
@@ -3315,9 +3323,9 @@
     type="button"
     class="hud-collapse"
     onclick={toggleHud}
-    aria-label={hudHidden ? 'Show HUD panels' : 'Hide HUD panels'}
+    aria-label={hudHidden ? m.hud_show_panels_aria() : m.hud_hide_panels_aria()}
     aria-pressed={hudHidden}
-    title={hudHidden ? 'Show HUD' : 'Hide HUD'}
+    title={hudHidden ? m.coast_show_hud() : m.coast_hide_hud()}
   >
     {hudHidden ? '◐' : '◑'}
   </button>
@@ -3345,12 +3353,14 @@
     <div class="perf-toast" role="status" aria-live="polite">
       <div class="perf-toast-title">{m.fly_perf_title()}</div>
       <div class="perf-toast-body">
-        Frame time averaging {perfToastAvgMs.toFixed(0)} ms. Drop to
-        <span class="perf-toast-tier">{perfToastSuggestedTier}</span>?
+        {m.fly_perf_body({
+          ms: perfToastAvgMs.toFixed(0),
+          tier: qualityTierLabel(perfToastSuggestedTier),
+        })}
       </div>
       <div class="perf-toast-actions">
         <button type="button" class="perf-toast-apply" onclick={applyPerfSuggestion}
-          >Apply & reload</button
+          >{m.fly_perf_apply()}</button
         >
         <button type="button" class="perf-toast-dismiss" onclick={dismissPerfToast}
           >{m.fly_not_now()}</button
@@ -4048,7 +4058,7 @@
                 class="milestone-tick-button"
                 class:past
                 style="left: {pct}%;"
-                aria-label="{evt.label} at MET {evt.met_days} days. Click to jump."
+                aria-label={m.fly_milestone_aria({ label: evt.label, days: evt.met_days ?? 0 })}
                 onclick={() => jumpToMet(evt.met_days ?? 0)}
                 data-met-days={evt.met_days}
               >
@@ -4078,7 +4088,7 @@
               class="fd-stage-tick-button"
               class:past
               style="left: {cruiseTickPct(t.met_days)}%;"
-              aria-label="{t.label} stage. Click to jump."
+              aria-label={m.fly_stage_tick_aria({ label: t.label })}
               onclick={() => jumpToMet(t.met_days)}
               data-fd-stage={t.id}
             >
@@ -4227,7 +4237,7 @@
   <!-- Mobile (≤767 px): the toggle drawer is replaced by the bottom tab
        accordion below (hidden on phones via CSS). -->
   <div class="fly-mobile-view-drawer" style="--mcd-bottom:88px">
-    <MobileControlsDrawer label="View" children={flyToggles} />
+    <MobileControlsDrawer label={m.fly_view_drawer()} children={flyToggles} />
   </div>
 
   <!-- Mobile (≤767 px): bottom tab accordion — one HUD panel open at a time
@@ -4241,7 +4251,7 @@
       aria-pressed={mobilePanel === 'mission'}
       onclick={() => setMobilePanel('mission')}
     >
-      MISSION
+      {m.fleet_mission_cta_label()}
     </button>
     <button
       type="button"
@@ -4250,7 +4260,7 @@
       aria-pressed={mobilePanel === 'events'}
       onclick={() => setMobilePanel('events')}
     >
-      EVENTS
+      {m.mp_flight_section_events()}
     </button>
     {#if lensOnState}
       <button
@@ -4260,7 +4270,7 @@
         aria-pressed={mobilePanel === 'phase'}
         onclick={() => setMobilePanel('phase')}
       >
-        PHASE
+        {m.hud_phase()}
       </button>
     {/if}
   </div>
@@ -5738,10 +5748,6 @@
   .perf-toast-body {
     line-height: 1.4;
     margin-bottom: 10px;
-  }
-  .perf-toast-tier {
-    color: #4ecdc4;
-    text-transform: uppercase;
   }
   .perf-toast-actions {
     display: flex;

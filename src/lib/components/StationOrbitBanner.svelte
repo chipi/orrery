@@ -98,7 +98,7 @@
       type="button"
       class="collapse-btn"
       aria-expanded={expanded}
-      aria-label={expanded ? 'Collapse orbital regime' : 'Expand orbital regime'}
+      aria-label={expanded ? m.station_orbit_collapse_aria() : m.station_orbit_expand_aria()}
       onclick={() => (expanded = !expanded)}
     >
       <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>
@@ -148,7 +148,7 @@
       </dl>
       <p class="banner-foot">
         <span class="foot-fact"
-          >≈ {sunrisesPerDay} sunrises/day<WhyPopover
+          >{m.station_sunrises_per_day({ count: sunrisesPerDay })}<WhyPopover
             title={m.why_station_sunrises_title()}
             body={m.why_station_sunrises_body()}
           /></span

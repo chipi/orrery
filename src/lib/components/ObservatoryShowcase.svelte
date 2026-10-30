@@ -73,7 +73,7 @@
             <figure>
               <img
                 src={item.heroUrl}
-                alt="{item.entry.name} hero image"
+                alt={m.observatory_hero_alt({ name: item.entry.name })}
                 loading="lazy"
                 decoding="async"
               />

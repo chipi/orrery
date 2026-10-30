@@ -31,7 +31,7 @@
       onclick={onExit}
       title={m.panorama_exit_title()}
     >
-      Exit panorama view
+      {m.panorama_exit_label()}
     </button>
   {:else}
     <button
@@ -40,11 +40,9 @@
       data-testid="stand-at-site"
       data-audio-stage="surface-stand-at-site"
       onclick={() => onEnter(`${base}${panoramaUrl}`, siteId)}
-      title={isSaveDataActive()
-        ? 'Tap to load panorama (~8 MB) — saveData is on'
-        : 'Stand at this landing site — wrap-around ground view'}
+      title={isSaveDataActive() ? m.panorama_enter_title_savedata() : m.panorama_enter_title()}
     >
-      Stand at site{isSaveDataActive() ? ' (tap to load)' : ''}
+      {m.panorama_enter_label()}{isSaveDataActive() ? ` ${m.panorama_tap_to_load()}` : ''}
     </button>
   {/if}
 {/if}

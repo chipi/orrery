@@ -212,7 +212,9 @@
           </div>
           <div class="cell">
             <div class="cell-label">{m.panel_label_orbital_period()}</div>
-            <div class="cell-value">{planet.T.toFixed(1)} days</div>
+            <div class="cell-value">
+              {m.panel_satellite_period_unit_days({ value: planet.T.toFixed(1) })}
+            </div>
           </div>
           <div class="cell">
             <div class="cell-label">

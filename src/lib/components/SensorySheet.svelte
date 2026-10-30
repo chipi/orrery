@@ -21,6 +21,7 @@
     writeUserChoice,
     ALL_TIERS,
   } from '$lib/quality/quality-tier';
+  import { qualityTierLabel } from '$lib/quality/quality-tier-label';
   import {
     offline,
     downloadTier,
@@ -195,7 +196,9 @@
         <div class="section-title">{m.settings_graphics_quality()}</div>
         <div class="section-hint">
           {m.settings_active_label()}
-          <span class="active-tier">{settingsState.activeTier}</span>
+          <span class="active-tier"
+            >{settingsState.activeTier ? qualityTierLabel(settingsState.activeTier) : ''}</span
+          >
         </div>
         <label class="radio">
           <input
@@ -216,7 +219,7 @@
               checked={qualityChoice === tier}
               onchange={() => onQualityChange(tier)}
             />
-            <span>{tier}</span>
+            <span>{qualityTierLabel(tier)}</span>
           </label>
         {/each}
         {#if qualityDirty}

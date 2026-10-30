@@ -45,6 +45,7 @@
   } from '$lib/physics/transfer/injection-burn';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
   import * as m from '$lib/paraglide/messages';
+  import { hudLabel } from '$lib/orbital/hud-labels';
   import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';
   import AscentCameraDebug from '$lib/components/AscentCameraDebug.svelte';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
@@ -129,13 +130,15 @@
   );
 
   const vehStats: [string, string][] = $derived([
-    ['STAGES', String(profile.stages.length)],
+    [m.hud_stages(), String(profile.stages.length)],
     [
-      'LIFTOFF THRUST',
-      `${(profile.stages[0].thrustSlKN ?? profile.stages[0].thrustVacKN).toLocaleString()} kN`,
+      m.hud_liftoff_thrust(),
+      m.unit_kn_value({
+        value: (profile.stages[0].thrustSlKN ?? profile.stages[0].thrustVacKN).toLocaleString(),
+      }),
     ],
-    ['IDEAL ΔV', `${summary.idealDvKms.toFixed(2)} km/s`],
-    ['PAYLOAD', `${profile.payloadKg.toLocaleString()} kg`],
+    [m.hud_ideal_dv(), m.mp_flight_unit_kms({ value: summary.idealDvKms.toFixed(2) })],
+    [m.hud_payload(), m.mp_flight_unit_kg({ value: profile.payloadKg.toLocaleString() })],
   ]);
 
   const beats = $derived(buildAscentBeats(summary));
@@ -373,9 +376,9 @@
     <button
       class="hud-collapse"
       onclick={() => onToggleHud?.()}
-      aria-label={hudHidden ? 'Show HUD panels' : 'Hide HUD panels'}
+      aria-label={hudHidden ? m.hud_show_panels_aria() : m.hud_hide_panels_aria()}
       aria-pressed={hudHidden}
-      title={hudHidden ? 'Show HUD' : 'Hide HUD'}
+      title={hudHidden ? m.coast_show_hud() : m.coast_hide_hud()}
     >
       {hudHidden ? '◐' : '◑'}
     </button>
@@ -388,7 +391,7 @@
 
   <div class="clock">
     <span class="met">{hud.met}</span>
-    <span class="status" class:hot={t >= IGNITION_T_S && t < 6}>{status}</span>
+    <span class="status" class:hot={t >= IGNITION_T_S && t < 6}>{hudLabel(status)}</span>
   </div>
 
   <!-- Post-SECO injection-burn callout (RFC-034 §3.1): the kick/upper stage
@@ -396,26 +399,28 @@
   {#if injectionBeatActive && injection && !warping}
     <div class="injection" class:firing={injectionFiring}>
       <div class="inj-type">
-        {injectionBurnLabel(injection.burnType)}<ScienceChip
+        {hudLabel(injectionBurnLabel(injection.burnType))}<ScienceChip
           tab="mission-phases"
           section="orbit-insertion"
-          label="Orbit insertion"
+          label={m.chip_label_orbit_insertion()}
         />
       </div>
       <div class="inj-stage">{injection.stageName}</div>
       {#if injectionFiring}
-        <div class="inj-fuel" aria-label="injection burn progress">
-          <span class="inj-fuel-label">BURN</span>
+        <div class="inj-fuel" aria-label={m.hud_injection_progress_aria()}>
+          <span class="inj-fuel-label">{m.hud_burn()}</span>
           <div class="inj-fuel-bar">
             <div class="inj-fuel-fill" style="width:{injectionBurnProgress}%"></div>
           </div>
           <span class="inj-fuel-pct">{Math.round(injectionBurnProgress)}%</span>
         </div>
         <div class="inj-dv">
-          {injection.dvKms != null ? `Δv ${injection.dvKms.toFixed(2)} km/s` : 'IGNITION'}
+          {injection.dvKms != null
+            ? `Δv ${m.mp_flight_unit_kms({ value: injection.dvKms.toFixed(2) })}`
+            : m.hud_ignition()}
         </div>
       {:else}
-        <div class="inj-dv">PARKING ORBIT · STAGE ARMED</div>
+        <div class="inj-dv">{m.hud_parking_armed()}</div>
       {/if}
     </div>
   {/if}
@@ -456,7 +461,7 @@
         class:alt={i % 2 === 1}
         style="left:{(b.t / duration) * 100}%"
       >
-        <span class="tick"></span><span class="lbl">{b.label}</span>
+        <span class="tick"></span><span class="lbl">{hudLabel(b.label)}</span>
       </div>
     {/each}
     <div class="head" style="left:{progressPct}%"></div>
@@ -464,14 +469,13 @@
 
   <div class="readouts">
     <div class="ro">
-      <span class="rl">SPEED</span><span class="rv">{speedKmh.toLocaleString()}</span><span
-        class="ru">KM/H</span
-      >
+      <span class="rl">{m.fly_speed_label()}</span><span class="rv"
+        >{speedKmh.toLocaleString()}</span
+      ><span class="ru">{m.hud_unit_kmh()}</span>
     </div>
     <div class="ro">
-      <span class="rl">ALTITUDE</span><span class="rv">{hud.altKm.toFixed(0)}</span><span class="ru"
-        >KM</span
-      >
+      <span class="rl">{m.earth_panel_alt()}</span><span class="rv">{hud.altKm.toFixed(0)}</span
+      ><span class="ru">{m.hud_unit_km()}</span>
     </div>
   </div>
 

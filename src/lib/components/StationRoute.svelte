@@ -1555,7 +1555,7 @@
             }}
             title={config.msg.watchAssemblyTitle()}
           >
-            ASSEMBLY
+            {m.station_assembly_btn()}
           </button>
         </div>
       {:else}

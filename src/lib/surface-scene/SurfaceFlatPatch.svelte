@@ -767,9 +767,9 @@
        into the (true-scale) flat-patch. Added back 2026-06-08 after
        being briefly removed in the seamless-transition attempt. -->
   <div class="hud-context-banner mono" aria-hidden="true">
-    <span class="ctx-eyebrow">TRUE-SCALE GROUND VIEW</span>
+    <span class="ctx-eyebrow">{m.surface_true_scale_eyebrow()}</span>
     <span class="ctx-subline">
-      {selected.name ?? selected.id} · live orbital imagery, not a 3D model
+      {m.surface_true_scale_sub({ name: selected.name ?? selected.id })}
     </span>
   </div>
 
@@ -827,11 +827,14 @@
          layer chips so it doesn't fight the upsample warning when both
          are active near the floor. -->
     <div class="deepest-zoom-chip mono" aria-hidden="true">
-      {config.planet === 'mars'
-        ? 'DEEPEST ZOOM · HiRISE patch limit'
-        : config.planet === 'earth'
-          ? 'DEEPEST ZOOM · commercial-sat limit'
-          : 'DEEPEST ZOOM · LROC NAC patch limit'}
+      {m.surface_deepest_zoom({
+        limit:
+          config.planet === 'mars'
+            ? m.surface_zoom_limit_hirise()
+            : config.planet === 'earth'
+              ? m.surface_zoom_limit_commercial()
+              : m.surface_zoom_limit_lroc(),
+      })}
     </div>
   {/if}
   <!-- Earth shares the moon-warning copy in v1 (both read as "approaching

@@ -12,5 +12,5 @@
     "noUnusedLocals": true,
     "moduleResolution": "bundler"
   },
-  "exclude": ["scripts/_archive/"]
+  "exclude": ["scripts/_archive/", "src/lib/paraglide/"]
 }

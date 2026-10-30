@@ -448,7 +448,9 @@
       data-audio-stage="science-lens-collapse"
       onclick={() => (expanded = !expanded)}
     >
-      <span class="eyebrow">SCIENCE LENS{!expanded && hasLensStory ? ` · ${title}` : ''}</span>
+      <span class="eyebrow"
+        >{m.science_lens_eyebrow()}{!expanded && hasLensStory ? ` · ${title}` : ''}</span
+      >
       <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>
     </button>
     {#if expanded}
@@ -457,7 +459,7 @@
           <a class="lens-story" href={localHref(`/science/${tab}/${section}`)}>
             <div class="lens-title">{title}</div>
             <div class="lens-body">{body}</div>
-            <div class="lens-link">→ Read in /science</div>
+            <div class="lens-link">{m.science_lens_read()}</div>
           </a>
         {/if}
         {#if hasLayers}
@@ -484,7 +486,7 @@
                     <a
                       class="row-learn"
                       href={localHref(`/science/${meta.learn.tab}/${meta.learn.section}`)}
-                      >→ science</a
+                      >{m.science_lens_row_learn()}</a
                     >
                   {/if}
                 </span>

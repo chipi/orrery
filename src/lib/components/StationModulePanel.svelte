@@ -202,7 +202,7 @@
                 src={diagramLadder.src}
                 srcset={diagramLadder.srcset}
                 sizes="(max-width: 640px) 100vw, 640px"
-                alt="{mod.name} anatomy diagram"
+                alt={m.station_anatomy_alt({ name: mod.name })}
                 class="anatomy-svg"
                 loading="lazy"
                 decoding="async"
@@ -210,7 +210,7 @@
             {:else}
               <img
                 src={diagramPath}
-                alt="{mod.name} anatomy diagram"
+                alt={m.station_anatomy_alt({ name: mod.name })}
                 class="anatomy-svg"
                 loading="lazy"
                 decoding="async"
@@ -218,8 +218,7 @@
             {/if}
           </div>
           <p class="anatomy-caption">
-            Hand-drawn schematic showing the spacecraft's named subsystems. Not to scale —
-            proportions adjusted for label legibility.
+            {m.station_anatomy_caption()}
           </p>
         {/if}
       {:else if tab === 'learn'}

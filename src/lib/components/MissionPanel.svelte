@@ -409,7 +409,7 @@
                 class="spec-cta spec-cta--vehicle"
                 href={localHref(`/fleet?id=${launcherRef}`)}
                 data-testid="mission-vehicle-fleet-link"
-                title="Open {mission.vehicle} in /fleet"
+                title={m.mp_open_in_fleet_title({ vehicle: mission.vehicle ?? '' })}
               >
                 <span class="spec-icon" aria-hidden="true">
                   <VehicleIcon />
@@ -757,8 +757,7 @@
       {:else if tab === 'science'}
         <div class="science-tab">
           <p class="science-blurb">
-            The orbital mechanics behind {mission.name ?? mission.id} — every formula and named phase
-            the FLIGHT tab references, with the option to read deeper.
+            {m.mp_science_blurb({ name: mission.name ?? mission.id, tab: m.mp_tab_flight() })}
           </p>
           {#each missionScienceSections as { tab: t, section } (t + section)}
             <ScienceCard tab={t} {section} />
@@ -794,10 +793,10 @@
                   type="button"
                   class="gallery-thumb badge-thumb"
                   onclick={() => (lightboxSrc = assetUrl(badges[`mission:${mission.id}`]))}
-                  aria-label="{mission.name ?? mission.id} insignia"
+                  aria-label={m.mp_insignia_aria({ name: mission.name ?? mission.id })}
                 >
                   <img src={assetUrl(badges[`mission:${mission.id}`])} alt="" decoding="async" />
-                  <span class="badge-tag">Insignia</span>
+                  <span class="badge-tag">{m.gallery_insignia_title()}</span>
                 </button>
               {/if}
             {/snippet}

@@ -184,14 +184,17 @@
           </li>
         {/each}
         {#if index && results.length === 0 && query.trim().length > 0}
-          <li class="empty">No matches for "{query}".</li>
+          <li class="empty">{m.science_search_no_match({ query })}</li>
         {/if}
         {#if !index}
-          <li class="empty">Loading…</li>
+          <li class="empty">{m.missions_loading()}</li>
         {/if}
       </ul>
       <div class="hint">
-        <kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close
+        <kbd>↑</kbd><kbd>↓</kbd>
+        {m.command_palette_hint_move()} · <kbd>Enter</kbd>
+        {m.command_palette_hint_open()} · <kbd>Esc</kbd>
+        {m.command_palette_hint_close()}
       </div>
     </div>
   </div>

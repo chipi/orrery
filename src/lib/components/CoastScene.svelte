@@ -193,7 +193,9 @@
       <span class="frame br"></span>
       <div class="title">
         <span class="phase"
-          ><span class="live-dot"></span>{coast.suborbital ? 'SUBORBITAL' : 'ON ORBIT'}</span
+          ><span class="live-dot"></span>{coast.suborbital
+            ? m.hud_suborbital()
+            : m.hud_on_orbit()}</span
         >
         <span class="name">{missionName}</span>
         {#if agency}<span class="agency">{agency}</span>{/if}
@@ -202,45 +204,55 @@
       <div class="readouts">
         <div class="ro">
           <span class="k"
-            >MET<ScienceChip
-              tab="mission-phases"
-              section="met"
-              label="Mission Elapsed Time"
-            /></span
+            >MET<ScienceChip tab="mission-phases" section="met" label={m.chip_label_met()} /></span
           ><span class="v">T+{fmtClock(metS)}</span>
         </div>
         {#if !coast.suborbital}
           <div class="ro rev">
             <span class="k"
-              >REV<ScienceChip tab="orbits" section="orbit-regimes" label="Orbit regimes" /></span
+              >{m.hud_rev()}<ScienceChip
+                tab="orbits"
+                section="orbit-regimes"
+                label={m.chip_label_orbit_regimes()}
+              /></span
             ><span class="v">{rev} / {coast.revolutions}</span>
           </div>
           <div class="ro">
             <span class="k"
-              >ORBIT<ScienceChip tab="orbits" section="apsides" label="Apogee & perigee" /></span
-            ><span class="v">{coast.perigeeKm}×{coast.apogeeKm} km · {coast.inclinationDeg}°</span>
+              >{m.card_stat_orbit()}<ScienceChip
+                tab="orbits"
+                section="apsides"
+                label={m.chip_label_apsides()}
+              /></span
+            ><span class="v"
+              >{m.mp_flight_unit_km({ value: `${coast.perigeeKm}×${coast.apogeeKm}` })} · {coast.inclinationDeg}°</span
+            >
           </div>
           <div class="ro">
             <span class="k"
-              >DEORBIT&nbsp;IN<ScienceChip
+              >{m.hud_deorbit_in()}<ScienceChip
                 tab="mission-phases"
                 section="deorbit-corridor"
-                label="Deorbit & the re-entry corridor"
+                label={m.chip_label_deorbit()}
               /></span
             ><span class="v">{fmtClock(deorbitInS)}</span>
           </div>
         {:else}
           <div class="ro">
             <span class="k"
-              >APOGEE<ScienceChip tab="orbits" section="apsides" label="Apogee & perigee" /></span
-            ><span class="v">{coast.apogeeKm} km</span>
+              >{m.hud_apogee()}<ScienceChip
+                tab="orbits"
+                section="apsides"
+                label={m.chip_label_apsides()}
+              /></span
+            ><span class="v">{m.mp_flight_unit_km({ value: coast.apogeeKm })}</span>
           </div>
           <div class="ro">
             <span class="k"
-              >SPLASHDOWN&nbsp;IN<ScienceChip
+              >{m.hud_splashdown_in()}<ScienceChip
                 tab="mission-phases"
                 section="deorbit-corridor"
-                label="Deorbit & the re-entry corridor"
+                label={m.chip_label_deorbit()}
               /></span
             ><span class="v">{fmtClock(deorbitInS)}</span>
           </div>
@@ -268,14 +280,14 @@
         <button
           class="ctl"
           onclick={() => (playing = !playing)}
-          aria-label={playing ? 'Pause' : 'Play'}
+          aria-label={playing ? m.fly_pause() : m.fly_play()}
         >
           {playing ? '❚❚' : '▶'}
         </button>
         {#if onToggleHud}
           <button class="ctl" onclick={onToggleHud} aria-label={m.coast_hide_hud()}>HUD</button>
         {/if}
-        <button class="ctl skip" onclick={finish}>SKIP TO DE-ORBIT →</button>
+        <button class="ctl skip" onclick={finish}>{m.coast_skip()}</button>
       </div>
     {/if}
   {:else if onToggleHud}

@@ -394,11 +394,11 @@
       aria-disabled={!scienceLensAvailable}
       aria-label={scienceLensAvailable
         ? m.nav_science_lens_aria()
-        : `${m.nav_science_lens_aria()} (unavailable on this page)`}
+        : m.nav_unavailable_here({ label: m.nav_science_lens_aria() })}
       aria-pressed={scienceLens}
       title={scienceLensAvailable
         ? m.nav_science_lens_title()
-        : `${m.nav_science_lens_title()} (unavailable on this page)`}
+        : m.nav_unavailable_here({ label: m.nav_science_lens_title() })}
       onclick={onToggleLens}
     >
       <!-- Inline SVG, not a Unicode glyph: the ⊙/⊕ characters render
@@ -633,8 +633,8 @@
     >
     <!-- Unified debug toggle (#54) — sits next to the prod/stage switcher; gates
          all debug overlays (DebugPanel + AR HUD). All builds; default off. -->
-    <aside class="debug-switcher" aria-label="Debug overlays">
-      <span class="label">Debug</span>
+    <aside class="debug-switcher" aria-label={m.nav_debug_group_aria()}>
+      <span class="label">{m.nav_debug_label()}</span>
       <button
         type="button"
         role="switch"

@@ -7,6 +7,11 @@ const EN = JSON.parse(readFileSync('static/data/image-alt-text/en-US.json', 'utf
 >;
 const enPath = Object.keys(EN)[0];
 
+// The real asset-url pulls in the native/offline module graph; re-importing it per
+// test took >5 s under coverage. Web builds resolve every locale origin to the local
+// base (''), which is what this stands in for.
+vi.mock('$lib/asset-url', () => ({ localeBundleOrigin: () => '' }));
+
 // Fresh module per test: the maps live in module state.
 async function fresh() {
   vi.resetModules();

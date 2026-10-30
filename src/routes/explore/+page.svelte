@@ -125,13 +125,13 @@
   import { agencyToLogoPaths } from '$lib/agency-logo';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { audio } from '$lib/audio-state.svelte';
-  import { onLayerChange, setLayer, type LayerKey } from '$lib/science-layers';
+  import { onLayerChange, setLayer } from '$lib/science-layers';
   import { onScienceLensChange } from '$lib/science-lens';
-  import type { ScienceTabId } from '$types/science';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import { INTERSTELLAR_CRAFT, PATHS_LEGEND, iconicTagline } from '$lib/explore/paths-legend';
+  import { computeLensPanel, scaleNavBackTarget, type ScaleNavExit } from '$lib/explore/lens-panel';
   import {
     anonColorLabel,
     contextLabel,
@@ -606,138 +606,14 @@
   });
   onDestroy(() => exploreContext.set(null));
 
-  // WS-3 (RFC-039 Contract D) — the science lens is now uniform across every scale
-  // shell. One ScienceLayersPanel, its props derived from the active shell: each
-  // shell gets a lens-story (title + body + a → science learn link) and the set of
-  // teaching layers that make sense at that scale. Solar-system keeps its Kepler/
-  // Newton historical foundations; the outer shells surface their overlays or, where
-  // the per-tier lens is still to come (WS-5), just the story + learn link.
-  type LensPanelProps = {
-    title?: string;
-    body?: string;
-    tab?: ScienceTabId;
-    section?: string;
-    available: LayerKey[];
-    historicalFoundations?: Array<{ tab: ScienceTabId; section: string; label: string }>;
-  };
-  let lensPanel = $derived.by((): LensPanelProps => {
-    // Black-hole takeover overrides whatever shell it was entered from
-    // (2026-09-11 consistency audit): its two physics lenses (curvature
-    // grid + time dilation) are standard layers now, not bespoke chips.
-    if (activeBlackHole) {
-      return {
-        title: m.explore_lens_story_bh_title(),
-        body: m.explore_lens_story_bh_body(),
-        tab: 'observation',
-        section: 'black-holes',
-        available: ['bh-curvature', 'bh-time-dilation'],
-      };
-    }
-    switch (contextId) {
-      case 'neighborhood':
-        return {
-          title: m.explore_lens_story_nb_title(),
-          body: m.explore_lens_story_nb_body(),
-          tab: 'observation',
-          section: 'hertzsprung-russell',
-          // One region, one lens (2026-09-11): the same five layers inside
-          // an exoplanet system — mass–period is item 5 here too.
-          available: ['constellations', 'deep-sky', 'hr-diagram', 'light-cones', 'mass-period'],
-        };
-      case 'milky-way':
-        return {
-          title: m.explore_lens_story_mw_title(),
-          body: m.explore_lens_story_mw_body(),
-          tab: 'observation',
-          section: 'our-galaxy',
-          available: ['rotation-curve', 'dark-matter-halo', 'stellar-populations'],
-        };
-      case 'local-group':
-        return {
-          title: m.explore_lens_story_lg_title(),
-          body: m.explore_lens_story_lg_body(),
-          tab: 'observation',
-          section: 'local-group',
-          available: [],
-        };
-      case 'local-sheet':
-        return {
-          title: m.explore_lens_story_ls_title(),
-          body: m.explore_lens_story_ls_body(),
-          tab: 'observation',
-          section: 'galaxy-types',
-          available: [],
-        };
-      case 'virgo':
-        return {
-          title: m.explore_lens_story_virgo_title(),
-          body: m.explore_lens_story_virgo_body(),
-          tab: 'cosmology',
-          section: 'large-scale-structure',
-          available: [],
-        };
-      case 'laniakea':
-        return {
-          title: m.explore_lens_story_laniakea_title(),
-          body: m.explore_lens_story_laniakea_body(),
-          tab: 'cosmology',
-          section: 'laniakea-and-the-great-attractor',
-          available: [],
-        };
-      case 'cosmic-web':
-        return {
-          title: m.explore_lens_story_cosmic_web_title(),
-          body: m.explore_lens_story_cosmic_web_body(),
-          tab: 'cosmology',
-          section: 'large-scale-structure',
-          available: [],
-        };
-      case 'solar-system':
-        return {
-          title: m.explore_2d_view_title(),
-          body: `Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them.`,
-          tab: 'orbits',
-          section: 'keplerian-orbit',
-          available: [
-            'hover',
-            'gravity',
-            'velocity',
-            'centripetal',
-            'galaxies',
-            'hill-sphere',
-            'lagrange-points',
-            'magnetosphere',
-            'sub-solar',
-            'planet-stats',
-          ],
-          historicalFoundations: [
-            { tab: 'history', section: 'keplers-laws-1609', label: "Kepler's three laws, 1609" },
-            { tab: 'history', section: 'newton-principia-1687', label: 'Newton · Principia, 1687' },
-          ],
-        };
-      case 'body-scene':
-        // One region, one lens (2026-09-11 operator direction): inside an
-        // exoplanet system the lens is IDENTICAL to the stellar
-        // neighbourhood's — same story, same five layers, mass–period as
-        // item 5. The three charts open here too (screen-space overlays);
-        // constellations/deep-sky store the preference and apply the moment
-        // the user is back in the neighbourhood field. Solar-system body
-        // scenes keep no lens surface.
-        if (!activeBlackHole && activeBodyHostId && exoplanetHostIds.has(activeBodyHostId)) {
-          return {
-            title: m.explore_lens_story_nb_title(),
-            body: m.explore_lens_story_nb_body(),
-            tab: 'observation',
-            section: 'hertzsprung-russell',
-            available: ['constellations', 'deep-sky', 'hr-diagram', 'light-cones', 'mass-period'],
-          };
-        }
-        return { available: [] };
-      default:
-        // black-hole takeovers own the viewport; no lens surface.
-        return { available: [] };
-    }
-  });
+  let lensPanel = $derived.by(() =>
+    computeLensPanel({
+      blackHoleActive: !!activeBlackHole,
+      contextId,
+      activeBodyHostId,
+      exoplanetHostIds,
+    }),
+  );
   // Slice 2: the exoplanet host whose BodyScene is active (breadcrumb crumb) + the
   // set of host ids that have a system to descend into (drives "Enter system").
   let bodyHostName = $state('');
@@ -957,30 +833,21 @@
   // returned closure reads the exit-fn pointer at click-time, so the plain `let`
   // pointers above don't need to be reactive; only contextId + the takeover flags
   // (all $state) drive which branch is chosen.
+  const SCALE_EXITS: Record<ScaleNavExit, () => (() => void) | null> = {
+    'black-hole': () => exitBlackHoleFn,
+    'body-scene': () => exitBodySceneFn,
+    'deep-sky': () => exitDeepSkyFn,
+    neighborhood: () => exitNeighborhoodFn,
+    'milky-way': () => exitMilkyWayFn,
+    'local-group': () => exitLocalGroupFn,
+    'local-sheet': () => exitLocalSheetFn,
+    virgo: () => exitVirgoFn,
+    laniakea: () => exitLaniakeaFn,
+    'cosmic-web': () => exitCosmicWebFn,
+  };
   let scaleNavBack: { run: () => void; label: string } | null = $derived.by(() => {
-    if (activeBlackHole) return { run: () => exitBlackHoleFn?.(), label: m.explore_ctx_back() };
-    if (contextId === 'body-scene')
-      return { run: () => exitBodySceneFn?.(), label: m.explore_ctx_stellar_neighborhood() };
-    if (activeDeepSky)
-      return { run: () => exitDeepSkyFn?.(), label: m.explore_ctx_stellar_neighborhood() };
-    switch (contextId) {
-      case 'neighborhood':
-        return { run: () => exitNeighborhoodFn?.(), label: m.explore_ctx_solar_system() };
-      case 'milky-way':
-        return { run: () => exitMilkyWayFn?.(), label: m.explore_ctx_stellar_neighborhood() };
-      case 'local-group':
-        return { run: () => exitLocalGroupFn?.(), label: m.explore_ctx_milky_way() };
-      case 'local-sheet':
-        return { run: () => exitLocalSheetFn?.(), label: m.explore_ctx_local_group() };
-      case 'virgo':
-        return { run: () => exitVirgoFn?.(), label: m.explore_ctx_local_sheet() };
-      case 'laniakea':
-        return { run: () => exitLaniakeaFn?.(), label: m.explore_ctx_virgo() };
-      case 'cosmic-web':
-        return { run: () => exitCosmicWebFn?.(), label: m.explore_ctx_laniakea() };
-      default:
-        return null;
-    }
+    const target = scaleNavBackTarget(contextId, !!activeBlackHole, !!activeDeepSky);
+    return target && { run: () => SCALE_EXITS[target.exit]()?.(), label: target.label };
   });
 
   // Panel mutex: each select* below opens its own panel and explicitly

@@ -324,27 +324,7 @@
     },
     "sr-Cyrl": {
       "audited": null,
-      "defects": {
-        "fly_science_lens_toggles_aria": ["English words left untranslated"],
-        "iss_page_title": ["the site name \"Orrery\" changed or missing"],
-        "lab_f_vis_viva_title": ["English words left untranslated"],
-        "observatory_kind_deep_space": ["Latin-script words that are not names from the source"],
-        "plan_explainer_title": ["English words left untranslated"],
-        "science_layer_mag_north_label": ["English words left untranslated"],
-        "plan_destination_arrokoth": ["differs from the glossary form"],
-        "plan_destination_dimorphos": ["differs from the glossary form"],
-        "plan_destination_donaldjohanson": ["differs from the glossary form"],
-        "plan_destination_eurybates": ["differs from the glossary form"],
-        "lab_body_ryugu": ["differs from the glossary form"],
-        "explore_ctx_laniakea": [
-          "differs from the glossary form",
-          "science or place names left in English"
-        ],
-        "explore_lens_story_laniakea_title": [
-          "differs from the glossary form",
-          "science or place names left in English"
-        ]
-      },
+      "defects": {},
       "variants": {
         "active": "baseline 2026-10-30: locale not audited yet",
         "all": "baseline 2026-10-30: locale not audited yet",
@@ -357,7 +337,6 @@
         "colophon": "baseline 2026-10-30: locale not audited yet",
         "comet": "baseline 2026-10-30: locale not audited yet",
         "constellations": "baseline 2026-10-30: locale not audited yet",
-        "core": "baseline 2026-10-30: locale not audited yet",
         "country": "baseline 2026-10-30: locale not audited yet",
         "departure burn": "baseline 2026-10-30: locale not audited yet",
         "detail": "baseline 2026-10-30: locale not audited yet",
@@ -376,7 +355,6 @@
         "incl": "baseline 2026-10-30: locale not audited yet",
         "inclination": "baseline 2026-10-30: locale not audited yet",
         "insignia": "baseline 2026-10-30: locale not audited yet",
-        "intro": "baseline 2026-10-30: locale not audited yet",
         "last quarter": "baseline 2026-10-30: locale not audited yet",
         "learn": "baseline 2026-10-30: locale not audited yet",
         "learn more": "baseline 2026-10-30: locale not audited yet",
@@ -402,7 +380,6 @@
         "touchdown speed": "baseline 2026-10-30: locale not audited yet",
         "tour": "baseline 2026-10-30: locale not audited yet",
         "trajectory": "baseline 2026-10-30: locale not audited yet",
-        "transit": "baseline 2026-10-30: locale not audited yet",
         "vehicle": "baseline 2026-10-30: locale not audited yet",
         "visiting vehicles": "baseline 2026-10-30: locale not audited yet",
         "waning crescent": "baseline 2026-10-30: locale not audited yet",
@@ -410,7 +387,8 @@
         "watch list": "baseline 2026-10-30: locale not audited yet",
         "waxing crescent": "baseline 2026-10-30: locale not audited yet",
         "waxing gibbous": "baseline 2026-10-30: locale not audited yet",
-        "world": "baseline 2026-10-30: locale not audited yet"
+        "world": "baseline 2026-10-30: locale not audited yet",
+        "constellation": "a star constellation (сазвежђе) vs a satellite constellation (сателитска констелација)"
       }
     },
     "zh-CN": {

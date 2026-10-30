@@ -236,7 +236,7 @@
   }
   .ep-index-meta {
     margin: 0;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
   }
@@ -334,7 +334,7 @@
     font-variant-numeric: tabular-nums;
   }
   .ep-author {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .ep-read {
@@ -400,7 +400,7 @@
     outline: none;
   }
   .ep-sources-pending {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
     font-style: italic;
   }
 

@@ -234,7 +234,7 @@
     color: #fff;
   }
   .badge-soon {
-    background: rgba(201, 118, 47, 0.9);
+    background: rgba(154, 90, 34, 0.95);
     color: #fff;
   }
   .pin-tile .badge-live {

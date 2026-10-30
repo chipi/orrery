@@ -487,7 +487,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
-    color: rgba(230, 232, 238, 0.45);
+    color: rgba(230, 232, 238, 0.6);
     line-height: 1.6;
   }
   .footer-note a {

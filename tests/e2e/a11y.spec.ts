@@ -36,6 +36,32 @@ const GATED_ROUTES = [
   { path: '/mars', label: 'mars (landing sites)' },
   { path: '/iss', label: 'ISS (modules)' },
   { path: '/tiangong', label: 'Tiangong (modules)' },
+  // Phase 6 (2026-10-31): every other static route. Surveyed first; the serious
+  // findings (muted text below 4.5:1, links told apart by colour only, aria-label on
+  // a role-less div, the fixed footer over /fleet cards) were fixed, not excluded.
+  { path: '/catalog', label: 'catalog' },
+  { path: '/colophon', label: 'colophon' },
+  { path: '/credits', label: 'credits' },
+  { path: '/essays', label: 'essays' },
+  { path: '/explore/hub', label: 'explore hub' },
+  { path: '/fleet', label: 'fleet' },
+  { path: '/gallery', label: 'gallery' },
+  { path: '/gallery/deep-sky', label: 'deep-sky gallery' },
+  { path: '/lab', label: 'lab' },
+  { path: '/learn', label: 'learn' },
+  { path: '/library/episodes', label: 'library episodes' },
+  { path: '/live', label: 'live' },
+  { path: '/missions/launches', label: 'launches' },
+  { path: '/patches', label: 'patches' },
+  { path: '/plan', label: 'plan' },
+  { path: '/posters', label: 'posters' },
+  { path: '/privacy', label: 'privacy' },
+  { path: '/programs', label: 'programs' },
+  { path: '/science/reading-list', label: 'reading list' },
+  { path: '/science/watch-list', label: 'watch list' },
+  { path: '/sourcing', label: 'sourcing' },
+  { path: '/venus', label: 'venus' },
+  { path: '/worlds', label: 'worlds' },
 ];
 
 test.describe('a11y gate (ADR-025 — 0 critical or serious violations)', () => {
@@ -46,7 +72,7 @@ test.describe('a11y gate (ADR-025 — 0 critical or serious violations)', () => 
       // isn't enough on cold CI Ubuntu runners (35–43 s on the last
       // failing runs). Other routes finish in <5 s and stay on the
       // default.
-      if (path === '/library') {
+      if (path === '/library' || path === '/credits') {
         test.setTimeout(90_000);
       }
       await page.goto(path, { waitUntil: 'networkidle' });

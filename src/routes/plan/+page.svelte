@@ -1650,7 +1650,7 @@
     justify-content: space-between;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
     letter-spacing: 1px;
   }
   @media (max-width: 767px) {

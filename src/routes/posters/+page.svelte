@@ -198,7 +198,7 @@
   }
   .gallery-footer :global(a) {
     color: #4ecdc4;
-    text-decoration: none;
+    text-decoration: underline;
   }
   .gallery-footer :global(a:hover) {
     text-decoration: underline;

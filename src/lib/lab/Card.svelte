@@ -153,7 +153,7 @@
 
   <!-- Equation — pre-rendered KaTeX HTML, never calls renderKatex at runtime -->
   {#if equationHtml}
-    <div class="card__equation" aria-label={t('lab.ui.aria-equation')}>
+    <div class="card__equation" role="group" aria-label={t('lab.ui.aria-equation')}>
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- KaTeX server-rendered HTML, ADR-034 -->
       {@html equationHtml}
     </div>
@@ -400,7 +400,7 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.62rem;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.42);
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .card__assumptions-label {
@@ -425,7 +425,7 @@
     font-size: 0.6rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .card__learn-link {
@@ -653,7 +653,7 @@
   .card__readout-unit {
     font-size: 0.62rem;
     margin-left: 0.2rem;
-    color: rgba(78, 205, 196, 0.6);
+    color: rgba(78, 205, 196, 0.8);
     font-weight: normal;
   }
 
@@ -661,7 +661,7 @@
   .card__readout-fail {
     font-family: 'Space Mono', monospace;
     font-size: 0.8rem;
-    color: #c1440e;
+    color: #e0622a;
     display: flex;
     align-items: center;
     gap: 0.4rem;

@@ -800,7 +800,7 @@
     align-items: baseline;
   }
   .d-row .lbl {
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.55);
   }
   .d-row a {
     color: #4ecdc4;
@@ -1008,7 +1008,7 @@
     gap: 8px;
   }
   .bom-count {
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.55);
     font-size: 10px;
   }
 
@@ -1072,7 +1072,7 @@
     align-items: baseline;
   }
   .ph-row .lbl {
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.55);
   }
   .ph-row a,
   .t-row a {
@@ -1087,10 +1087,10 @@
     background: rgba(0, 0, 0, 0.3);
     padding: 1px 4px;
     border-radius: 2px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
   .ph-row.mods {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
     font-style: italic;
   }
   /* Satellite attribution chip — links surface imagery to the spacecraft
@@ -1163,14 +1163,14 @@
   .t-loc {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.55);
     margin: 0;
   }
   .t-loc code {
     background: rgba(0, 0, 0, 0.3);
     padding: 1px 4px;
     border-radius: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
   }
 
   @media (min-width: 768px) {

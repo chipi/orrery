@@ -159,7 +159,7 @@
     margin-left: auto;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
   .subjects {
     display: flex;

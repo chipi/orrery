@@ -643,7 +643,7 @@
     align-items: center;
     gap: 8px;
     padding: 4px 10px;
-    background: rgba(4, 4, 12, 0.55);
+    background: rgba(4, 4, 12, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 4px;
     backdrop-filter: blur(6px);

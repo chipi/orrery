@@ -151,7 +151,7 @@
   }
   .crumb a {
     color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
+    text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 8px;
@@ -231,7 +231,7 @@
     font-size: 9px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
     text-decoration: none;
     margin-top: 2px;
   }

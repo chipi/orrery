@@ -300,7 +300,7 @@
   }
   .crumb a {
     color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
+    text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 8px;
@@ -354,7 +354,7 @@
   }
   .chip .n {
     margin-left: 7px;
-    opacity: 0.6;
+    opacity: 0.8;
     font-size: 10px;
   }
   .chip.active .n {

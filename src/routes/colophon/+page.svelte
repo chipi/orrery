@@ -539,7 +539,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .block-note {
@@ -551,7 +551,7 @@
   }
   .block-note :global(a) {
     color: #4ecdc4;
-    text-decoration: none;
+    text-decoration: underline;
   }
   .block-note :global(a:hover) {
     text-decoration: underline;

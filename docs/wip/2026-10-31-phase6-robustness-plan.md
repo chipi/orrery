@@ -87,3 +87,21 @@ missing key `JWKSNoMatchingKey`. The first three (plus `JWKSInvalid`) now give
 `issuer_unavailable` → 503 with `Retry-After: 30`; a missing key and every token
 fault stay 401. Three new tests (refused, 500, the route's 503) fail against the
 old code; a bad token with the issuer up still gives `invalid_token`.
+
+## 4. axe on every static route — done
+
+`tests/e2e/a11y.spec.ts` gated 11 routes. A survey of the other 23 static routes
+(desktop + mobile) found serious findings on 12: muted text at 3.1–4.4:1
+(white at 0.35–0.45 alpha, 9–12 px), links told apart from prose by colour only,
+`aria-label` on a role-less `div` (lab equation), the mars red as text (3.98:1),
+the white-on-orange "imminent" badge on /live (4.11:1), and the fixed footer menu
+(55 % backdrop) over the gold launcher cards on /fleet. Fixed in place: the
+flagged rules raised to 0.55–0.6 alpha (the high-contrast theme's faint level is
+0.5), links in prose underlined, `role="group"` on the equation, a lighter red
+for the failure readout, a darker badge, an 85 % footer backdrop. All 23 are now
+in the gate (34 routes): 68 passed on desktop + mobile. Screenshots of /credits,
+/posters and the /fleet footer checked by eye.
+
+Not covered: dynamic routes (`/missions?id=`, `/programs/[id]`, `/essays/[slug]`,
+science sections, cards) and panel states opened by interaction; minor and
+moderate axe findings are logged, not gated.

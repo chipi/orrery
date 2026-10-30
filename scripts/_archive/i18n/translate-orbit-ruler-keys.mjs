@@ -1,6 +1,6 @@
 /**
  * Translate the orbit-ruler + regime-panel paraglide UI keys (#354)
- * into all 13 non-en-US locales. Mirrors `translate-panel-keys-303.mjs`.
+ * into all 13 non-en-US locales. (The panel-keys pass it mirrored was deleted 2026-10-30.)
  *
  * Run: set -a; source .env; set +a; node scripts/translate-orbit-ruler-keys.mjs
  */

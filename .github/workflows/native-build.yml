@@ -61,6 +61,11 @@ jobs:
           # COARSE alone from API 31, so FINE must be declared for API 24-30.
           grep -q "uses-permission: name='android.permission.ACCESS_FINE_LOCATION' maxSdkVersion='30'" <<<"$badging" \
             || { echo "::error::ACCESS_FINE_LOCATION (maxSdkVersion 30) missing from the APK"; exit 1; }
+          # The offline packs stay out of Auto Backup (res/xml/*_rules.xml).
+          manifest="$("$aapt" dump xmltree android/app/build/outputs/apk/debug/app-debug.apk AndroidManifest.xml)"
+          for attr in fullBackupContent dataExtractionRules; do
+            grep -q "android:$attr" <<<"$manifest" || { echo "::error::android:$attr missing from the APK manifest"; exit 1; }
+          done
 
   ios:
     runs-on: macos-latest
@@ -89,3 +94,8 @@ jobs:
             "$RUNNER_TEMP/dd/Build/Products/Debug-iphonesimulator/App.app/Info.plist")"
           echo "CFBundleShortVersionString: $got (package.json $want)"
           [ "$got" = "$want" ] || { echo "::error::app version $got != package.json $want"; exit 1; }
+      - name: Privacy manifest is in the app bundle
+        run: |
+          f="$RUNNER_TEMP/dd/Build/Products/Debug-iphonesimulator/App.app/PrivacyInfo.xcprivacy"
+          [ -f "$f" ] || { echo "::error::PrivacyInfo.xcprivacy is not in App.app (Copy Bundle Resources)"; exit 1; }
+          plutil -lint "$f"

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Offline packs (170 MB basic, ~800 MB full) live in files/offline (Capacitor
+     Directory.Data). They can be downloaded again, and Auto Backup stops backing up an
+     app's data altogether once it passes its 25 MB quota, so leave them out. -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="file" path="offline/" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="offline/" />
+    </device-transfer>
+</data-extraction-rules>

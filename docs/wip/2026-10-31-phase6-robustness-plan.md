@@ -105,3 +105,30 @@ in the gate (34 routes): 68 passed on desktop + mobile. Screenshots of /credits,
 Not covered: dynamic routes (`/missions?id=`, `/programs/[id]`, `/essays/[slug]`,
 science sections, cards) and panel states opened by interaction; minor and
 moderate axe findings are logged, not gated.
+
+## 5. iOS privacy manifest and backup rules — done (iOS build unverified locally)
+
+Privacy manifest: the App target had none, and `AppDelegate.swift` uses
+`UserDefaults` (a required-reason API; Apple rejects uploads that use one
+undeclared). `ios/App/App/PrivacyInfo.xcprivacy` declares UserDefaults `CA92.1`,
+no tracking, and the data the app sends, taken from the code: crash data
+(GlitchTip, `sendDefaultPii: false`, traces off), product interaction (Umami,
+analytics), and the email of a Lab sign-in (linked, app functionality). These must
+match the App Store Connect privacy answers — **the operator should check them**.
+Registered in `project.pbxproj` (file reference, group, Resources phase); the
+`native-build` iOS job now fails if `App.app/PrivacyInfo.xcprivacy` is missing or
+fails `plutil -lint`.
+
+Backup: offline packs (basic 170 MB, full ~800 MB) are written to Capacitor
+`Directory.Data`, which is Documents on iOS (iCloud-backed by default) and
+`filesDir` on Android (Auto Backup, which stops altogether past 25 MB) — mappings
+read from the plugin source. iOS: `AppDelegate` creates `Documents/offline` and
+sets `isExcludedFromBackup` on it at launch (covers existing downloads in place;
+moving to `Directory.LibraryNoCloud` would orphan them). Android:
+`res/xml/backup_rules.xml` + `data_extraction_rules.xml` exclude `file:offline/`,
+wired in the manifest; `./gradlew :app:processDebugResources` links them and the
+merged manifest carries both attributes. The native-build Android job now checks
+the APK manifest for them.
+
+Not verified locally: the iOS build and the Swift (no Xcode on Linux) — the CI
+`ios` job builds it; no device test of the exclusion flag.

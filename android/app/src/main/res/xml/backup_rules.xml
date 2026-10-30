@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Offline packs (170 MB basic, ~800 MB full) live in files/offline (Capacitor
+     Directory.Data). They can be downloaded again, and Auto Backup stops backing up an
+     app's data altogether once it passes its 25 MB quota, so leave them out. -->
+<full-backup-content>
+    <exclude domain="file" path="offline/" />
+</full-backup-content>

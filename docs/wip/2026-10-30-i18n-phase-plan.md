@@ -67,3 +67,7 @@ back to English at runtime. Plus the 14-locale render check from Phase 4.
 
 Content translation quality (ended 2026-10-19 at the stop rule), audio
 narration (English-only by decision), bundle size (Phase 5).
+
+Reading the translated essays and science pages (`i18n-src/<loc>/essays`,
+`science`) the way the UI strings were read: an optional item at the end of
+Phase 6 (operator, 2026-10-30), to be discussed again before it starts.

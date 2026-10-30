@@ -5,7 +5,7 @@
   "delta_v": "~2,3 km/s (rendez-vous + opérations cométaires)",
   "type": "ORBITEUR + ATTERRISSEUR · RÉALISÉE",
   "first": "Premier engin spatial à orbiter autour d'une comète — et à s'y poser (Philae, 2014-11-12)",
-  "description": "Mission phare de l'ESA de rendez-vous cométaire. Après une croisière de 10 ans intégrant trois assistance gravitationnelles terrestres, une assistance martienne, deux survols d'astéroïdes et 957 jours d'hibernation en espace lointain, Rosetta a rejoint la comète 67P/Churyumov–Gerasimenko en août 2014 et l'a orbitée pendant plus de deux ans à travers le périhélie et au-delà. L'atterrisseur Philae a atteint la surface de 67P le 2014-11-12 — premier atterrissage en douceur sur une comète — et a renvoyé ~64 heures de données scientifiques après qu'une défaillance du harpon l'ait laissé dans l'ombre d'une falaise. Rosetta elle-même a terminé la mission par une descente contrôlée vers la surface de 67P le 2016-09-30. Résultats clés : molécules organiques et glycine dans la chevelure ; le rapport D/H initialement mesuré de 67P (≈3× terrestre) contredisait l'hypothèse que les comètes de la famille de Jupiter seraient à l'origine de l'eau terrestre — un résultat qu'une réanalyse de 2024 remet en question après la découverte d'une erreur de mesure ; les premières cartes détaillées de la géométrie du dégazage cométaire.",
+  "description": "Mission phare de l'ESA de rendez-vous cométaire. Après une croisière de 10 ans intégrant trois assistance gravitationnelles terrestres, une assistance martienne, deux survols d'astéroïdes et 957 jours d'hibernation en espace lointain, Rosetta a rejoint la comète 67P/Tchourioumov-Guérassimenko en août 2014 et l'a orbitée pendant plus de deux ans à travers le périhélie et au-delà. L'atterrisseur Philae a atteint la surface de 67P le 2014-11-12 — premier atterrissage en douceur sur une comète — et a renvoyé ~64 heures de données scientifiques après qu'une défaillance du harpon l'ait laissé dans l'ombre d'une falaise. Rosetta elle-même a terminé la mission par une descente contrôlée vers la surface de 67P le 2016-09-30. Résultats clés : molécules organiques et glycine dans la chevelure ; le rapport D/H initialement mesuré de 67P (≈3× terrestre) contredisait l'hypothèse que les comètes de la famille de Jupiter seraient à l'origine de l'eau terrestre — un résultat qu'une réanalyse de 2024 remet en question après la découverte d'une erreur de mesure ; les premières cartes détaillées de la géométrie du dégazage cométaire.",
   "events": [
     {
       "met": 0,
@@ -40,7 +40,7 @@
     {
       "met": 3809,
       "label": "RENDEZ-VOUS AVEC LA COMÈTE 67P",
-      "note": "Insertion en orbite autour de la comète 67P/Churyumov–Gerasimenko. Philae atterrit le 2014-11-12.",
+      "note": "Insertion en orbite autour de la comète 67P/Tchourioumov-Guérassimenko. Philae atterrit le 2014-11-12.",
       "type": "nominal"
     }
   ]

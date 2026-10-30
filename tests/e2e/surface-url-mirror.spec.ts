@@ -19,24 +19,30 @@ async function waitForSceneReady(page: Page) {
   );
 }
 
-test('/moon — closing a site opened in-session clears ?site', async ({ page }) => {
-  await page.goto('/moon');
-  await waitForSceneReady(page);
+async function selectSite(page: Page, id: string) {
   // The site list loads after mount; selecting before it arrives is a no-op,
   // so retry the selection until the card (and its ?site=) is up.
   await expect
     .poll(
       async () => {
-        await page.evaluate(() =>
-          (
-            window as { __surfaceSceneSelectSite?: (id: string) => void }
-          ).__surfaceSceneSelectSite?.('luna9'),
+        await page.evaluate(
+          (siteId) =>
+            (
+              window as { __surfaceSceneSelectSite?: (id: string) => void }
+            ).__surfaceSceneSelectSite?.(siteId),
+          id,
         );
         return site(page);
       },
       { timeout: 20_000 },
     )
-    .toBe('luna9');
+    .toBe(id);
+}
+
+test('/moon — closing a site opened in-session clears ?site', async ({ page }) => {
+  await page.goto('/moon');
+  await waitForSceneReady(page);
+  await selectSite(page, 'luna9');
   await page.locator('aside.panel .panel-close').click();
   await expect.poll(() => site(page)).toBeNull();
 });

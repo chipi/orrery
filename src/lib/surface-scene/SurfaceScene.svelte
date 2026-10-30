@@ -2488,7 +2488,7 @@
       panoramaCurrentEntryId = null;
       // PRD-022 / ADR-074 Phase 3B — strip pano/yaw/pitch from URL so
       // the bar doesn't carry stale state back to the orbital view.
-      syncPanoramaUrl(page.url, null);
+      syncPanoramaUrl(currentUrl(), null);
       teardownPanoramaSkybox(panoramaSkybox);
       panoramaSkybox = null;
       planetMesh.visible = true;
@@ -3028,7 +3028,7 @@
           // writes (e.g. when the user holds the camera still).
           if (now - panoramaUrlLastWriteMs > 300) {
             panoramaUrlLastWriteMs = now;
-            syncPanoramaUrl(page.url, {
+            syncPanoramaUrl(currentUrl(), {
               entryId: panoramaCurrentEntryId,
               yawDeg: panoramaYawDeg,
               pitchDeg: panoramaPitchDeg,

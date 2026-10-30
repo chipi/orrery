@@ -14,6 +14,7 @@
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
+  import { scienceTabLabel } from '$lib/science-tab-label';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
   import MuseumsForObject from '$lib/components/MuseumsForObject.svelte';
   import ObservatoriesForArticle from '$lib/components/ObservatoriesForArticle.svelte';
@@ -87,13 +88,7 @@
     section.tab === 'observation' && section.id === 'space-photography',
   );
 
-  function tabLabel(tab: string): string {
-    const key = `science_tab_${tab.replace(/-/g, '_')}` as keyof typeof m;
-    const fn = m[key] as (() => string) | undefined;
-    return typeof fn === 'function'
-      ? fn()
-      : tab.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-  }
+  const tabLabel = scienceTabLabel;
 </script>
 
 <svelte:head>

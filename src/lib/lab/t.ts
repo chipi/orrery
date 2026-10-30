@@ -5,9 +5,12 @@
  * and call the message fn. Falls back to the RAW key when a message is
  * missing — which is exactly what the i18n-parity gate exists to prevent.
  */
-import * as m from '$lib/paraglide/messages';
+import { LAB_MESSAGES } from './lab-messages';
 
-const messages = m as unknown as Record<string, (inputs?: Record<string, unknown>) => string>;
+const messages = LAB_MESSAGES as unknown as Record<
+  string,
+  ((inputs?: Record<string, unknown>) => string) | undefined
+>;
 
 export function t(key: string, params?: Record<string, string | number>): string {
   const fn = messages[key.replace(/[.-]/g, '_')];

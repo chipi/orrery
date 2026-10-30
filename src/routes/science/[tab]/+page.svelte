@@ -11,18 +11,13 @@
   import { localHref } from '$lib/locale';
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
+  import { scienceTabLabel } from '$lib/science-tab-label';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
   let { data }: Props = $props();
 
-  function tabLabel(tab: string): string {
-    const key = `science_tab_${tab.replace(/-/g, '_')}` as keyof typeof m;
-    const fn = m[key] as (() => string) | undefined;
-    return typeof fn === 'function'
-      ? fn()
-      : tab.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-  }
+  const tabLabel = scienceTabLabel;
 
   // Tabs whose covers were re-done in the flat-family style ship as raster
   // webp under /images/science-covers-v2/; the rest keep their original

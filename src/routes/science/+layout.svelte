@@ -24,6 +24,7 @@
   import { onDestroy, onMount } from 'svelte';
   import { SCIENCE_TABS } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { scienceTabLabel } from '$lib/science-tab-label';
   import ScienceSearch from '$lib/components/ScienceSearch.svelte';
   import type { Snippet } from 'svelte';
   import type { LayoutData } from './$types';
@@ -51,13 +52,7 @@
     }
   });
 
-  function tabLabel(tab: string): string {
-    const key = `science_tab_${tab.replace(/-/g, '_')}` as keyof typeof m;
-    const fn = m[key] as (() => string) | undefined;
-    return typeof fn === 'function'
-      ? fn()
-      : tab.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-  }
+  const tabLabel = scienceTabLabel;
 
   // Active state + section list come from /science/+layout.ts which
   // inspects the URL and loads the right tab's sections (null on landing).

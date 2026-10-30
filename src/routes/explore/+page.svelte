@@ -1,11 +1,9 @@
 <script lang="ts">
   import { dataLoadFailed } from '$lib/data/core';
-  import { onMount, onDestroy, untrack } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import { exploreContext } from '$lib/explore-context';
   import { page } from '$app/state';
-  import { afterNavigate, goto } from '$app/navigation';
-  import { safeReplaceState } from '$lib/safe-replace-state';
-  import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
+  import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createLayeredStarField } from '$lib/three/star-field';
@@ -35,7 +33,7 @@
   // /explore v2 "The Known Universe" (PRD-030 / RFC-032). The neighborhood scene
   // is dynamically imported at the boundary so v1's bundle + first paint stay
   // untouched (RFC C-F).
-  import { resolveSolarBodyTarget, type ShellId } from '$lib/explore/scale-shell-controller';
+  import type { ShellId } from '$lib/explore/scale-shell-controller';
   import { createExploreSolarScene } from '$lib/three/explore-solar-scene';
   import {
     createExploreSceneHost,
@@ -140,6 +138,7 @@
   import { INTERSTELLAR_CRAFT, PATHS_LEGEND, iconicTagline } from '$lib/explore/paths-legend';
   import { computeLensPanel, scaleNavBackTarget, type ScaleNavExit } from '$lib/explore/lens-panel';
   import { watchExploreLayers } from '$lib/explore/layer-watchers';
+  import { createUrlGuards, setupExploreUrlSync } from '$lib/explore/explore-url-sync.svelte';
   import { fmtScale, SATELLITE_STATS } from '$lib/explore/format';
 
   // Planet visual config (PlanetVisual / SatelliteDef / PLANETS) now lives in
@@ -928,54 +927,9 @@
     trackItemClick('belt', id, '/explore');
   }
 
-  // ?id=<planetId|sun|smallBodyId> deep-link → opens the matching panel
-  // directly, mirroring the /mars?site= and /fly?mission= patterns.
-  // Bookmarkable + share-friendly; also lets e2e tests open a planet
-  // panel without depending on canvas-pixel pick math (which is fragile
-  // under mobile-chromium DPR + animation timing).
-  $effect(() => {
-    // Force re-run when planetById / smallBodyById populate async —
-    // both are $derived from localizedPlanets / SMALL_BODIES which
-    // load after mount. Without these explicit reads, the effect's
-    // dep tree is shaped only by the FIRST branch the if-ladder took,
-    // and mars (which lives in planetById only) wouldn't re-trigger
-    // when planetById updates from empty Map → 9 entries.
-    void planetById;
-    void smallBodyById;
-    const id = page.url.searchParams.get('id');
-    // The ?id= routing ladder — incl. the Pluto-in-two-catalogues nuance (it lives in
-    // both planets.json + small-bodies.json; the small-body surface's curated
-    // science_sections win for deep-link landings) — lives in scale-shell-controller,
-    // pure + unit-tested (RFC-036 WS-C/C1). Unknown id → null → no-op, never crash.
-    const target = resolveSolarBodyTarget(id, {
-      isPlanet: (x) => planetById.has(x),
-      isSmallBody: (x) => smallBodyById.has(x),
-    });
-    if (!target) return;
-    switch (target.kind) {
-      case 'sun':
-        selectSun();
-        break;
-      case 'planet':
-        selectPlanet(target.id);
-        break;
-      case 'smallBody':
-        selectSmallBody(target.id);
-        break;
-      case 'belt':
-        selectBelt(target.belt);
-        break;
-      case 'satellite':
-        selectSatellite(target.parentId, target.satelliteId);
-        break;
-    }
-  });
-
-  // #29 back-chain — mirror the open body panel into ?id= so mission
-  // cross-links can chain back here (the resolver above reopens it on
-  // back-nav). Shallow replaceState keeps canvas picks a fresh grid-style
-  // selection (no history entry / no chain step); only real navigations to
-  // other cards get chained by trackCardNavigation.
+  // Deep-link resolvers + shallow URL mirrors (?id ?goto ?system/?planet ?deepsky
+  // ?galaxy ?bh ?context ?paths/?focus) live in explore-url-sync; these deriveds
+  // are what the mirrors write.
   let openBodyUrlId = $derived.by(() => {
     if (panelState.planet && selectedId) return selectedId;
     if (panelState.sun) return 'sun';
@@ -989,205 +943,37 @@
           : selectedBeltId;
     return null;
   });
-  let everOpenedBody = false;
-  $effect(() => {
-    const id = openBodyUrlId;
-    if (id) everOpenedBody = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const cur = url.searchParams.get('id') ?? null;
-      if (cur !== id && (id || everOpenedBody)) {
-        // Never clobber a fresh ?id= deep-link before the resolver opens it —
-        // only clear once a body has actually been open (a real user close).
-        if (id) url.searchParams.set('id', id);
-        else url.searchParams.delete('id');
-        safeReplaceState(url, page.state);
-      }
-      // Record which card is on screen for the back-chain (the shallow
-      // replaceState above doesn't reach SvelteKit's nav.from).
-      if (everOpenedBody) setCurrentCard(id ? url : null);
-    });
-  });
-  afterNavigate((nav) => {
-    if (nav.to?.url) trackCardNavigation(nav.to.url, nav.type);
-  });
-
-  // v2 ?goto=<starId> — deep-link into the neighborhood + select + frame a named
-  // star. Resolves each distinct value once (the URL-sync below re-writes the same
-  // value, which must not re-fire the resolver).
-  let lastGoto: string | null = null;
-  $effect(() => {
-    const g = page.url.searchParams.get('goto');
-    // gotoStarFn is set in onMount and isn't reactive, so a cold-load ?goto= is
-    // resolved directly in onMount; this handles later in-session URL changes.
-    if (g && g !== lastGoto && gotoStarFn) {
-      lastGoto = g;
-      gotoStarFn(g);
-    }
-  });
-  // Mirror the open star panel into ?goto= (shallow, no history), like ?id= above.
   let openStarUrlId = $derived(panelState.star && selectedStarId ? selectedStarId : null);
-  let everOpenedStar = false;
-  $effect(() => {
-    const id = openStarUrlId;
-    if (id) everOpenedStar = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const cur = url.searchParams.get('goto') ?? null;
-      if (cur !== id && (id || everOpenedStar)) {
-        if (id) url.searchParams.set('goto', id);
-        else url.searchParams.delete('goto');
-        lastGoto = id; // keep the resolver from re-firing on our own write
-        safeReplaceState(url, page.state);
-      }
-    });
-  });
-
-  // v2 Slice 2 — ?system=<hostId>[&planet=<planetId>] deep-links into a BodyScene.
-  let lastSystem: string | null = null;
-  $effect(() => {
-    const s = page.url.searchParams.get('system');
-    const pl = page.url.searchParams.get('planet');
-    if (s && s !== lastSystem && enterSystemFn) {
-      lastSystem = s;
-      untrack(() => enterSystemFn?.(s, pl ?? undefined));
-    }
-  });
-  // Mirror the active BodyScene + selected planet into ?system / ?planet (shallow).
   let bodySysUrl = $derived(contextId === 'body-scene' ? activeBodyHostId : null);
-  let everEnteredSystem = false;
-  $effect(() => {
-    const host = bodySysUrl;
-    const planet = panelState.exoplanet && selectedExoplanet ? selectedExoplanet.planet.id : null;
-    if (host) everEnteredSystem = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const curSys = url.searchParams.get('system') ?? null;
-      const curPl = url.searchParams.get('planet') ?? null;
-      if (curSys !== host || curPl !== planet) {
-        if (host) url.searchParams.set('system', host);
-        else url.searchParams.delete('system');
-        if (host && planet) url.searchParams.set('planet', planet);
-        else url.searchParams.delete('planet');
-        lastSystem = host; // don't re-fire the resolver on our own write
-        if (host || everEnteredSystem) safeReplaceState(url, page.state);
-      }
-    });
-  });
-
-  // v2 Slice 4 — ?deepsky=<designation> deep-links into the immersive view.
-  let lastDeepSky: string | null = null;
-  $effect(() => {
-    const d = page.url.searchParams.get('deepsky');
-    if (d && d !== lastDeepSky && deepSkyDeepLinkFn) {
-      lastDeepSky = d;
-      untrack(() => deepSkyDeepLinkFn?.(d));
-    }
-  });
-  // Mirror the active deep-sky immersion into ?deepsky (shallow, no history).
   let deepSkyUrlDesignation = $derived(activeDeepSky ? activeDeepSky.designation : null);
-  let everImmersedDeepSky = false;
-  $effect(() => {
-    const d = deepSkyUrlDesignation;
-    if (d) everImmersedDeepSky = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const cur = url.searchParams.get('deepsky') ?? null;
-      if (cur !== d && (d || everImmersedDeepSky)) {
-        if (d) url.searchParams.set('deepsky', d);
-        else url.searchParams.delete('deepsky');
-        // Only advance the resolver guard on entry; never reset it to null on
-        // clear, or a transient URL write (e.g. the gateway's ?system write
-        // racing our ?deepsky removal) would re-fire the resolver + re-immerse.
-        if (d) lastDeepSky = d;
-        safeReplaceState(url, page.state);
-      }
-    });
-  });
-
-  // v2 Slice 5 — ?galaxy=<pinId> deep-links into the Milky Way + selects a pin.
-  let lastGalaxy: string | null = null;
-  $effect(() => {
-    const g = page.url.searchParams.get('galaxy');
-    if (g && g !== lastGalaxy && mwDeepLinkFn) {
-      lastGalaxy = g;
-      untrack(() => mwDeepLinkFn?.(g));
-    }
-  });
-  // Mirror the selected Milky Way pin into ?galaxy (shallow, no history).
   let galaxyUrlId = $derived(contextId === 'milky-way' && selectedMwId ? selectedMwId : null);
-  let everEnteredGalaxy = false;
-  $effect(() => {
-    const g = galaxyUrlId;
-    if (g) everEnteredGalaxy = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const cur = url.searchParams.get('galaxy') ?? null;
-      if (cur !== g && (g || everEnteredGalaxy)) {
-        if (g) url.searchParams.set('galaxy', g);
-        else url.searchParams.delete('galaxy');
-        if (g) lastGalaxy = g; // don't re-fire the resolver on our own write
-        safeReplaceState(url, page.state);
-      }
-    });
-  });
-
-  // v2 Slice 6 — ?bh=<id> deep-links into a black hole's lensing render.
-  let lastBh: string | null = null;
-  $effect(() => {
-    const v = page.url.searchParams.get('bh');
-    if (v && v !== lastBh && bhDeepLinkFn) {
-      lastBh = v;
-      untrack(() => bhDeepLinkFn?.(v));
-    }
-  });
-  // Mirror the active black hole into ?bh (shallow, no history).
   let bhUrlId = $derived(activeBlackHole ? activeBlackHole.id : null);
-  let everEnteredBh = false;
-  $effect(() => {
-    const v = bhUrlId;
-    if (v) everEnteredBh = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const cur = url.searchParams.get('bh') ?? null;
-      if (cur !== v && (v || everEnteredBh)) {
-        if (v) url.searchParams.set('bh', v);
-        else url.searchParams.delete('bh');
-        if (v) lastBh = v;
-        safeReplaceState(url, page.state);
-      }
-    });
-  });
-
-  // Nav shortcut — ?context=<solar-system|neighborhood|milky-way|local-group>
-  // jumps straight to that scale-shell, then clears the param (pure trigger, no
-  // staleness once you zoom onward).
-  let lastContextJump: string | null = null;
-  $effect(() => {
-    const c = page.url.searchParams.get('context');
-    if (c && c !== lastContextJump && contextDeepLinkFn) {
-      lastContextJump = c;
-      untrack(() => {
-        void contextDeepLinkFn?.(c).then(() => {
-          const url = new URL(page.url);
-          if (url.searchParams.get('context') === c) {
-            url.searchParams.delete('context');
-            safeReplaceState(url, page.state);
-          }
-        });
-      });
-    }
-  });
-
-  // #306 deep-link from MissionPanel "See path on /explore" — `?paths=1`
-  // auto-activates the PATHS layer so users land with the iconic
-  // trajectories already visible. `?focus=saturn` additionally selects
-  // Saturn so the Cassini orbital tour is in view at panel zoom.
-  $effect(() => {
-    const paths = page.url.searchParams.get('paths');
-    const focus = page.url.searchParams.get('focus');
-    if (paths === '1') layers.paths = true;
-    if (focus && planetById.has(focus)) selectPlanet(focus);
+  const urlGuards = createUrlGuards();
+  setupExploreUrlSync({
+    guards: urlGuards,
+    planetById: () => planetById,
+    smallBodyById: () => smallBodyById,
+    selectSun,
+    selectPlanet,
+    selectSmallBody,
+    selectBelt,
+    selectSatellite,
+    openBodyUrlId: () => openBodyUrlId,
+    openStarUrlId: () => openStarUrlId,
+    bodySystemUrl: () => ({
+      host: bodySysUrl,
+      planet: panelState.exoplanet && selectedExoplanet ? selectedExoplanet.planet.id : null,
+    }),
+    deepSkyUrlDesignation: () => deepSkyUrlDesignation,
+    galaxyUrlId: () => galaxyUrlId,
+    bhUrlId: () => bhUrlId,
+    gotoStar: () => gotoStarFn,
+    enterSystem: () => enterSystemFn,
+    deepSkyDeepLink: () => deepSkyDeepLinkFn,
+    mwDeepLink: () => mwDeepLinkFn,
+    bhDeepLink: () => bhDeepLinkFn,
+    contextDeepLink: () => contextDeepLinkFn,
+    showPaths: () => (layers.paths = true),
   });
 
   function closePanel() {
@@ -1919,40 +1705,40 @@
         hoverData = v;
       },
       get lastGoto() {
-        return lastGoto;
+        return urlGuards.lastGoto;
       },
       set lastGoto(v) {
-        lastGoto = v;
+        urlGuards.lastGoto = v;
       },
       get lastSystem() {
-        return lastSystem;
+        return urlGuards.lastSystem;
       },
       set lastSystem(v) {
-        lastSystem = v;
+        urlGuards.lastSystem = v;
       },
       get lastDeepSky() {
-        return lastDeepSky;
+        return urlGuards.lastDeepSky;
       },
       set lastDeepSky(v) {
-        lastDeepSky = v;
+        urlGuards.lastDeepSky = v;
       },
       get lastGalaxy() {
-        return lastGalaxy;
+        return urlGuards.lastGalaxy;
       },
       set lastGalaxy(v) {
-        lastGalaxy = v;
+        urlGuards.lastGalaxy = v;
       },
       get lastBh() {
-        return lastBh;
+        return urlGuards.lastBh;
       },
       set lastBh(v) {
-        lastBh = v;
+        urlGuards.lastBh = v;
       },
       get lastContextJump() {
-        return lastContextJump;
+        return urlGuards.lastContextJump;
       },
       set lastContextJump(v) {
-        lastContextJump = v;
+        urlGuards.lastContextJump = v;
       },
       get container() {
         return container;

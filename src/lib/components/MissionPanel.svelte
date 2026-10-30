@@ -37,7 +37,7 @@
   type Tab = 'overview' | 'gallery' | 'flight' | 'science';
 
   // #306 panel ↔ /explore PATHS-layer backlink. Stays in sync with
-  // ICONIC_TRAJECTORY_IDS in src/routes/explore/+page.svelte —
+  // ICONIC_TRAJECTORY_IDS in src/lib/three/explore-scene-host.ts —
   // updating one without the other gives misleading "see on /explore"
   // chips. Validated by the explore-paths-layer e2e spec.
   const MISSIONS_WITH_ICONIC_PATH = new Set([

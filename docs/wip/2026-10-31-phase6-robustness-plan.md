@@ -42,8 +42,8 @@ the next deploy (the script ships with it).
 ## 2. lab-api — done
 
 Source: GitHub #597 (v1.0 security review). Already in the code before this
-phase: the `redirect_uris` caps, the `/register` and pre-auth rate limits keyed on
-the Caddy-set client IP, `no-store` on `/token`, skipping a null `history` item.
+phase: the `redirect_uris` caps, the `/register` and pre-auth rate limits keyed
+on the Caddy-set client IP, `no-store` on `/token`, skipping a null `history` item.
 
 `/ask` (ask.ts, index.ts): one request could make 7 LLM calls of up to 60 s
 (~7 minutes). Now a 120 s deadline per request: each tool round gets the time
@@ -75,3 +75,15 @@ Not done from #597: a consent page or redirect-host allowlist for DCR clients
 (the MCP tools are pure math today). Sign-in emails in `as.ts`/`google.ts` are
 already logged through `redactEmail`; whether the server's Sentry `beforeSend`
 drops breadcrumbs was not checked.
+
+## 3. MCP server: issuer unreachable — done
+
+With a cold JWKS cache and lab-api unreachable, `verifyRequestToken` caught every
+error as `invalid_token`, so `/mcp` answered 401. A 401 tells the client (Claude.ai)
+its token is bad, so it drops it and the user has to sign in again. Probed against
+jose 6.2.10: a refused connection throws `TypeError: fetch failed`, a non-200
+`/jwks` a bare `JOSEError` (`ERR_JOSE_GENERIC`), a timeout `JWKSTimeout`, a
+missing key `JWKSNoMatchingKey`. The first three (plus `JWKSInvalid`) now give
+`issuer_unavailable` → 503 with `Retry-After: 30`; a missing key and every token
+fault stay 401. Three new tests (refused, 500, the route's 503) fail against the
+old code; a bad token with the issuer up still gives `invalid_token`.

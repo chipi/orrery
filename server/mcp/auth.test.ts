@@ -172,3 +172,48 @@ describe('fail posture around a lab-api outage', () => {
     }
   });
 });
+
+describe('cold cache + issuer unreachable → issuer_unavailable (503 class), not invalid_token', () => {
+  // A different JWKS URL means a fresh, cold jose cache.
+  const withJwksUrl = async (url: string, fn: () => Promise<void>) => {
+    const prev = process.env.MCP_JWKS_URL;
+    process.env.MCP_JWKS_URL = url;
+    try {
+      await fn();
+    } finally {
+      process.env.MCP_JWKS_URL = prev;
+    }
+  };
+
+  it('connection refused', async () => {
+    await withJwksUrl('http://127.0.0.1:1/jwks', async () => {
+      expect(await verifyRequestToken(await mint())).toMatchObject({
+        ok: false,
+        error: 'issuer_unavailable',
+      });
+    });
+  });
+
+  it('the issuer answers 500', async () => {
+    stubUp = false;
+    try {
+      await withJwksUrl(`${stubUrl}/jwks?cold=1`, async () => {
+        expect(await verifyRequestToken(await mint())).toMatchObject({
+          ok: false,
+          error: 'issuer_unavailable',
+        });
+      });
+    } finally {
+      stubUp = true;
+    }
+  });
+
+  it('a bad token with the issuer up is still invalid_token', async () => {
+    await withJwksUrl(`${stubUrl}/jwks?cold=2`, async () => {
+      expect(await verifyRequestToken('garbage')).toMatchObject({
+        ok: false,
+        error: 'invalid_token',
+      });
+    });
+  });
+});

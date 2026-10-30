@@ -203,17 +203,47 @@ export function ll2RawToRawEntry(
   };
 }
 
-async function fetchLL2Page(
+// LL2 answers 504 Gateway Timeout on the heavy detailed pages now and then
+// (prod 00:00Z refresh on 2026-10-23/25/28/29), and one failed page dropped the
+// whole upcoming queue for that run. Retry 5xx and network errors with backoff;
+// keep it to two retries, the free tier allows ~15 calls an hour.
+const RETRY_DELAYS_MS = [10_000, 30_000];
+
+export interface LL2PageDeps {
+  fetchFn?: typeof fetch;
+  sleep?: (ms: number) => Promise<void>;
+  retryDelaysMs?: number[];
+}
+
+export async function fetchLL2Page(
   endpoint: string,
+  {
+    fetchFn = fetch,
+    sleep = (ms) => new Promise((r) => setTimeout(r, ms)),
+    retryDelaysMs = RETRY_DELAYS_MS,
+  }: LL2PageDeps = {},
 ): Promise<{ results: LL2LaunchRaw[]; next: string | null }> {
-  const res = await fetch(endpoint);
-  if (res.status === 429) {
-    const wait = Number(res.headers.get('retry-after') ?? '60') * 1000;
-    await new Promise((r) => setTimeout(r, wait));
-    return fetchLL2Page(endpoint);
+  for (let attempt = 0; ; attempt++) {
+    let res: Response;
+    try {
+      res = await fetchFn(endpoint);
+    } catch (e) {
+      if (attempt >= retryDelaysMs.length) throw e;
+      await sleep(retryDelaysMs[attempt]);
+      continue;
+    }
+    if (res.status === 429) {
+      await sleep(Number(res.headers.get('retry-after') ?? '60') * 1000);
+      attempt--; // rate limiting is not a failure; it does not use up a retry
+      continue;
+    }
+    if (res.status >= 500 && attempt < retryDelaysMs.length) {
+      await sleep(retryDelaysMs[attempt]);
+      continue;
+    }
+    if (!res.ok) throw new Error(`LL2 ${endpoint}: ${res.status} ${res.statusText}`);
+    return (await res.json()) as { results: LL2LaunchRaw[]; next: string | null };
   }
-  if (!res.ok) throw new Error(`LL2 ${endpoint}: ${res.status} ${res.statusText}`);
-  return (await res.json()) as { results: LL2LaunchRaw[]; next: string | null };
 }
 
 function cacheKey(input: LaunchSourceWindow): string {

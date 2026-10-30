@@ -139,6 +139,7 @@
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import { INTERSTELLAR_CRAFT, PATHS_LEGEND, iconicTagline } from '$lib/explore/paths-legend';
   import { computeLensPanel, scaleNavBackTarget, type ScaleNavExit } from '$lib/explore/lens-panel';
+  import { watchExploreLayers } from '$lib/explore/layer-watchers';
   import { fmtScale, SATELLITE_STATS } from '$lib/explore/format';
 
   // Planet visual config (PlanetVisual / SatelliteDef / PLANETS) now lives in
@@ -1221,63 +1222,30 @@
       layerState.hover = on;
     });
 
-    // WS-3 (RFC-039 Contract D) — the /explore teaching layers are now standard
-    // science-layer keys, driven uniformly through the ScienceLayersPanel lens.
-    // Each subscription mirrors the effective (lens-coupled) layer state onto the
-    // existing scene wiring. Constellations + deep-sky feed page state that the
-    // neighborhood scene reads at build time (host §nbScene sync); HR + light-cones
-    // drive their overlays; the three Milky Way overlays reach the scene directly.
-    const addLayerWatch = (stop: (() => void) | undefined) => {
-      if (stop) lifecycle.add(stop);
-    };
-    addLayerWatch(
-      onLayerChange('constellations', (on) => {
-        showConstellations = on;
-        setConstellationsFn?.(on);
-      }),
-    );
-    addLayerWatch(
-      onLayerChange('deep-sky', (on) => {
-        showDeepSky = on;
-        setDeepSkyFn?.(on);
-      }),
-    );
-    addLayerWatch(
-      onLayerChange('hr-diagram', (on) => {
-        if (on !== hrLensOpen) toggleHrFn?.();
-      }),
-    );
-    addLayerWatch(
-      onLayerChange('light-cones', (on) => {
-        if (on !== causalityOpen) {
-          causalityOpen = on;
-          if (on) openCausalityFn?.();
-        }
-      }),
-    );
-    for (const key of ['rotation-curve', 'dark-matter-halo', 'stellar-populations'] as const) {
-      addLayerWatch(onLayerChange(key, (on) => setMwLensFn?.(key, on)));
-    }
-    // Mass–period plot (body-scene) — lens-layer driven since 2026-09-11
-    // (was a bespoke chip). The chart's own close button writes the layer
-    // off via setLayer so panel toggle + chart stay in sync.
-    addLayerWatch(
-      onLayerChange('mass-period', (on) => {
-        massPeriodOpen = on;
-      }),
-    );
-    // Black-hole physics lenses — layer-driven since the same audit
-    // (were bespoke chips gated only on the takeover, not on the lens).
-    addLayerWatch(
-      onLayerChange('bh-curvature', (on) => {
-        bhCurvatureLens = on;
-        setBhCurvatureFn?.(on);
-      }),
-    );
-    addLayerWatch(
-      onLayerChange('bh-time-dilation', (on) => {
-        bhTimeLens = on;
-      }),
+    watchExploreLayers(
+      {
+        setConstellations: (on) => {
+          showConstellations = on;
+          setConstellationsFn?.(on);
+        },
+        setDeepSky: (on) => {
+          showDeepSky = on;
+          setDeepSkyFn?.(on);
+        },
+        hrOpen: () => hrLensOpen,
+        toggleHr: () => toggleHrFn?.(),
+        causalityOpen: () => causalityOpen,
+        setCausalityOpen: (on) => (causalityOpen = on),
+        openCausality: () => openCausalityFn?.(),
+        setMwLens: (key, on) => setMwLensFn?.(key, on),
+        setMassPeriodOpen: (on) => (massPeriodOpen = on),
+        setBhCurvature: (on) => {
+          bhCurvatureLens = on;
+          setBhCurvatureFn?.(on);
+        },
+        setBhTimeLens: (on) => (bhTimeLens = on),
+      },
+      (stop) => lifecycle.add(stop),
     );
 
     // Async-load localised planet + sun data; safe to run alongside scene setup.

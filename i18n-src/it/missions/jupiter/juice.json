@@ -1,7 +1,7 @@
 {
   "name": "JUICE",
   "vehicle": "Ariane 5 ECA",
-  "payload": "6000 kg a pieno carico (2900 kg a secco) — la sonda interplanetaria più grande mai costruita dall'Europa. 10 strumenti: JANUS (visibile), MAJIS (IR), UVS, SWI (sub-mm), GALA (altimetro laser), RIME (radar sounder, NASA), J-MAG (magnetometro), PEP (particelle), RPWI (onde di plasma), 3GM (radioscienza). Pannelli solari da 85 m² dimensionati per operare a ~5,5 UA.",
+  "payload": "6000 kg a pieno carico (2900 kg a secco) — la sonda interplanetaria più grande mai costruita dall'Europa. 10 strumenti: JANUS (visibile), MAJIS (IR), UVS, SWI (sub-mm), GALA (altimetro laser), RIME (radar sounder, NASA), J-MAG (magnetometro), PEP (particelle), RPWI (onde di plasma), 3GM (radioscienza). Pannelli solari da 85 m² dimensionati per operare a ~5,5 au.",
   "delta_v": "~3,0 km/s (sequenza di fionde gravitazionali + inserimento in orbita attorno a Giove + inserimento in orbita attorno a Ganimede)",
   "type": "ORBITER · ATTIVO",
   "first": "Il più grande veicolo spaziale interplanetario costruito in Europa; primo veicolo spaziale mai messo in orbita attorno a una luna di un altro pianeta (Ganimede, 2034)",

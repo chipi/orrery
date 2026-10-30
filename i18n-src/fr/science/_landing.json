@@ -66,9 +66,9 @@
       "heading": "6 — Distances et temps, puisque rien de tout cela n'est à l'échelle terrestre.",
       "diagram": "au.svg",
       "diagram_alt": "L'unité astronomique, marquée le long du rayon orbital de la Terre.",
-      "diagram_caption": "Une UA = une distance Terre-Soleil. Mars est à ~1,5 UA. Jupiter est à ~5,2.",
+      "diagram_caption": "Une UA = une distance Terre-Soleil. Mars est à ~1,5 au. Jupiter est à ~5,2.",
       "paragraphs": [
-        "Trois unités apparaissent partout. L'[unité astronomique](scales-time/au) (UA) est la distance moyenne Terre-Soleil — 150 millions de km. Nous mesurons le système solaire en UA parce que les kilomètres deviennent rapidement ingérables. La [minute-lumière](scales-time/light-minute) vous indique combien de temps il faut à un signal radio pour atteindre un vaisseau spatial. Mars : 4 à 24 minutes dans un sens. Vous ne pouvez pas piloter un rover depuis la Terre avec un joystick. Tout ce qui est important est autonome.",
+        "Trois unités apparaissent partout. L'[unité astronomique](scales-time/au) (au) est la distance moyenne Terre-Soleil — 150 millions de km. Nous mesurons le système solaire en au parce que les kilomètres deviennent rapidement ingérables. La [minute-lumière](scales-time/light-minute) vous indique combien de temps il faut à un signal radio pour atteindre un vaisseau spatial. Mars : 4 à 24 minutes dans un sens. Vous ne pouvez pas piloter un rover depuis la Terre avec un joystick. Tout ce qui est important est autonome.",
         "L'[époque J2000](scales-time/j2000) est le zéro calendaire que chaque astrodynamicien utilise. Les [périodes sidérales vs. synodiques](scales-time/sidereal-synodic) expliquent pourquoi les fenêtres de Mars reviennent tous les 26 mois au lieu de tous les 23. Le [plan de l'écliptique](scales-time/ecliptic-plane) est le disque plat sur lequel les planètes se trouvent toutes (presque). Les [référentiels](scales-time/frames) sont les systèmes de coordonnées entre lesquels le contrôle de mission jongle entre les vues centrées sur la Terre, centrées sur le Soleil et centrées sur le corps."
       ]
     },

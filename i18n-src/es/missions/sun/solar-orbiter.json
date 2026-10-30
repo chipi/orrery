@@ -5,7 +5,7 @@
   "delta_v": "~3,5 km/s",
   "type": "SOLAR-ORBITER · ACTIVE",
   "first": "Primera misión diseñada para obtener imágenes detalladas de las regiones polares del Sol; complementa las mediciones in-corona de Parker Solar Probe con teledetección de alta latitud",
-  "description": "Misión liderada por ESA con lanzamiento de NASA y una contribución instrumental. Mientras que Parker Solar Probe se acerca más que nadie antes, Solar Orbiter va más alto — utilizando asistencias gravitatorias repetidas de Venus durante una década para ascender fuera de la eclíptica hacia una inclinación heliográfica de ~33°. Desde ese punto de observación, su conjunto de instrumentos (PHI, EUI, SPICE, STIX, METIS, SoloHI + cuatro paquetes in-situ) obtiene imágenes de los campos magnéticos polares del Sol, rastrea la aceleración del viento solar en tiempo real y vincula mediciones remotas e in-situ simultáneamente. Primer perihelio el 15-06-2020 a 0,51 UA. Perihelio más cercano hasta la fecha el 12-10-2022 a 0,29 UA (dentro del perihelio de Mercurio).",
+  "description": "Misión liderada por ESA con lanzamiento de NASA y una contribución instrumental. Mientras que Parker Solar Probe se acerca más que nadie antes, Solar Orbiter va más alto — utilizando asistencias gravitatorias repetidas de Venus durante una década para ascender fuera de la eclíptica hacia una inclinación heliográfica de ~33°. Desde ese punto de observación, su conjunto de instrumentos (PHI, EUI, SPICE, STIX, METIS, SoloHI + cuatro paquetes in-situ) obtiene imágenes de los campos magnéticos polares del Sol, rastrea la aceleración del viento solar en tiempo real y vincula mediciones remotas e in-situ simultáneamente. Primer perihelio el 15-06-2020 a 0,51 au. Perihelio más cercano hasta la fecha el 12-10-2022 a 0,29 au (dentro del perihelio de Mercurio).",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 125,
       "label": "P1 — PRIMER PERIHELIO",
-      "note": "15-06-2020, 0,51 UA. Comienza la ciencia inicial.",
+      "note": "15-06-2020, 0,51 au. Comienza la ciencia inicial.",
       "type": "info"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 1075,
       "label": "P4 — MÁS CERCANO HASTA LA FECHA",
-      "note": "12-10-2022, 0,29 UA. Dentro del perihelio de Mercurio.",
+      "note": "12-10-2022, 0,29 au. Dentro del perihelio de Mercurio.",
       "type": "info"
     },
     {

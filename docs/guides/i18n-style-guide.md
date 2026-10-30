@@ -70,6 +70,13 @@ languages kept a national abbreviation.
 | ru | а. е. | св. год | пк | км/с | "русское обозначение: а. е.", "св. год", "пк", "м/с" |
 | sr-Cyrl | АЈ | the word (светлосна година); next to a variable number св. год. (the word cannot agree with every number) | pc | km/s | "Астрономска јединица (АЈ)"; SI symbols in Latin |
 
+The symbol column is for the unit next to a quantity: "1,5 au", "(au)", "en au",
+"des dizaines d'au". Where a sentence names the unit as a noun with an article
+(fr "l'UA", es "la UA", it "l'UA"), the abbreviation stays as written; fr, es, it
+and pt-BR were switched from `UA` to `au` on 2026-10-31 on that basis (operator
+decision, option 1: only these four locales). Not the University of Arizona in
+"NASA/UA HiRISE".
+
 Light-time shorthand (`l-min`, light-minutes) follows the light-year column: the
 language's own short form where it has one (zh-CN/ja 光分, ko 광분 — the forms
 already shipping, not separately sourced), otherwise the word. Code that prints a unit next to a number takes the form from a

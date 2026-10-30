@@ -5,7 +5,7 @@
   "delta_v": "~3,5 km/s",
   "type": "SOLAR ORBITER · ACTIVE",
   "first": "Première mission conçue pour imager en détail les régions polaires du Soleil ; complète les mesures intra-coronales de Parker Solar Probe par télédétection à haute latitude",
-  "description": "Mission dirigée par l'ESA avec un lancement par NASA et une contribution instrumentale. Là où Parker Solar Probe s'approche plus près que quiconque ne l'a jamais fait, Solar Orbiter monte plus haut — utilisant des assistances gravitationnelles répétées de Vénus sur une décennie pour sortir de l'écliptique vers une inclinaison héliographique d'environ 33°. Depuis ce point de vue, sa suite d'instruments (PHI, EUI, SPICE, STIX, METIS, SoloHI + quatre ensembles in situ) image les champs magnétiques polaires du Soleil, trace l'accélération du vent solaire en temps réel et relie simultanément les mesures à distance et in situ. Premier périhélie le 15/06/2020 à 0,51 UA. Périhélie le plus proche à ce jour le 12/10/2022 à 0,29 UA (à l'intérieur du périhélie de Mercure).",
+  "description": "Mission dirigée par l'ESA avec un lancement par NASA et une contribution instrumentale. Là où Parker Solar Probe s'approche plus près que quiconque ne l'a jamais fait, Solar Orbiter monte plus haut — utilisant des assistances gravitationnelles répétées de Vénus sur une décennie pour sortir de l'écliptique vers une inclinaison héliographique d'environ 33°. Depuis ce point de vue, sa suite d'instruments (PHI, EUI, SPICE, STIX, METIS, SoloHI + quatre ensembles in situ) image les champs magnétiques polaires du Soleil, trace l'accélération du vent solaire en temps réel et relie simultanément les mesures à distance et in situ. Premier périhélie le 15/06/2020 à 0,51 au. Périhélie le plus proche à ce jour le 12/10/2022 à 0,29 au (à l'intérieur du périhélie de Mercure).",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 125,
       "label": "P1 — PREMIER PÉRIHÉLIE",
-      "note": "15/06/2020, 0,51 UA. Début de la science initiale.",
+      "note": "15/06/2020, 0,51 au. Début de la science initiale.",
       "type": "info"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 1075,
       "label": "P4 — LE PLUS PROCHE À CE JOUR",
-      "note": "12/10/2022, 0,29 UA. À l'intérieur du périhélie de Mercure.",
+      "note": "12/10/2022, 0,29 au. À l'intérieur du périhélie de Mercure.",
       "type": "info"
     },
     {

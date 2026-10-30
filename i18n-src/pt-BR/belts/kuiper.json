@@ -1,7 +1,7 @@
 {
   "name": "Cinturão de Kuiper",
   "kind": "Trans-netuniano — população gelada",
-  "location": "Além de Netuno · 30–50 UA do Sol",
+  "location": "Além de Netuno · 30–50 au do Sol",
   "population_estimate": "Mais de 100.000 corpos maiores que 100 km; estimados 10⁹–10¹⁰ objetos do tamanho de cometas",
   "total_mass_relative": "≈ 4–10 % da Terra (200× a massa do cinturão de asteroides)",
   "largest_members": [
@@ -11,7 +11,7 @@
     "Haumea — ≈ 1.560 km em seu eixo longo, rotator rápido com um sistema de anéis",
     "Quaoar — ≈ 1.110 km, hospeda uma pequena lua Weywot"
   ],
-  "description": "Um vasto disco de corpos gelados — água, metano e gelo de amônia com rocha incorporada — que orbita o Sol além de Netuno. O Cinturão de Kuiper é o reservatório de origem para cometas de curto período como Halley e Hartley 2: empurrões gravitacionais de Netuno ocasionalmente lançam membros para dentro, onde o aquecimento solar transforma os gelos em caudas. Ao contrário do cinturão de asteroides, o Cinturão de Kuiper não está dinamicamente esgotado — sua massa é pequena não porque Júpiter a dispersou, mas porque nada nunca se acretou completamente nessas distâncias. Além do Cinturão de Kuiper clássico, o disco disperso e a Nuvem de Oort estendem o reservatório frio até milhares de UA.",
+  "description": "Um vasto disco de corpos gelados — água, metano e gelo de amônia com rocha incorporada — que orbita o Sol além de Netuno. O Cinturão de Kuiper é o reservatório de origem para cometas de curto período como Halley e Hartley 2: empurrões gravitacionais de Netuno ocasionalmente lançam membros para dentro, onde o aquecimento solar transforma os gelos em caudas. Ao contrário do cinturão de asteroides, o Cinturão de Kuiper não está dinamicamente esgotado — sua massa é pequena não porque Júpiter a dispersou, mas porque nada nunca se acretou completamente nessas distâncias. Além do Cinturão de Kuiper clássico, o disco disperso e a Nuvem de Oort estendem o reservatório frio até milhares de au.",
   "discovered": "1992 — David Jewitt e Jane Luu detectam 1992 QB1 (agora 15760 Albion), o primeiro objeto confirmado do Cinturão de Kuiper após Plutão + Caronte. O próprio cinturão foi previsto em 1951 por Gerard Kuiper como o material remanescente do disco do sistema solar primitivo.",
   "mission_visits": [
     "New Horizons — NASA, 2015 (sobrevoo de Plutão + Caronte) + 2019 (Arrokoth, primeira visão próxima de um objeto clássico do Cinturão de Kuiper)",
@@ -27,12 +27,12 @@
     {
       "tab": "planets",
       "section": "kuiper-belt",
-      "why": "O Cinturão de Kuiper é o remanescente trans-Netuniano do disco protoplanetário — 30 a 50 UA, dominado por gelo. Plutão, Éris, Haumea, Makemake vivem aqui."
+      "why": "O Cinturão de Kuiper é o remanescente trans-Netuniano do disco protoplanetário — 30 a 50 au, dominado por gelo. Plutão, Éris, Haumea, Makemake vivem aqui."
     },
     {
       "tab": "orbits",
       "section": "semi-major-axis",
-      "why": "Os KBOs clássicos orbitam entre 42 e 48 UA em órbitas de baixa excentricidade e baixa inclinação — permaneceram praticamente inalterados desde o sistema primitivo."
+      "why": "Os KBOs clássicos orbitam entre 42 e 48 au em órbitas de baixa excentricidade e baixa inclinação — permaneceram praticamente inalterados desde o sistema primitivo."
     },
     {
       "tab": "orbits",

@@ -1,7 +1,7 @@
 {
   "name": "JUICE",
   "vehicle": "Ariane 5 ECA",
-  "payload": "6000 kg con propelente (2900 kg en seco) — la nave interplanetaria más grande que Europa haya construido. 10 instrumentos: JANUS (visible), MAJIS (IR), UVS, SWI (submilimétrico), GALA (altímetro láser), RIME (sonda de radar, NASA), J-MAG (magnetómetro), PEP (partículas), RPWI (ondas de plasma), 3GM (ciencia de radio). Paneles solares de 85 m² dimensionados para operar a ~5,5 UA.",
+  "payload": "6000 kg con propelente (2900 kg en seco) — la nave interplanetaria más grande que Europa haya construido. 10 instrumentos: JANUS (visible), MAJIS (IR), UVS, SWI (submilimétrico), GALA (altímetro láser), RIME (sonda de radar, NASA), J-MAG (magnetómetro), PEP (partículas), RPWI (ondas de plasma), 3GM (ciencia de radio). Paneles solares de 85 m² dimensionados para operar a ~5,5 au.",
   "delta_v": "~3,0 km/s (secuencia de asistencias gravitatorias + inserción en órbita de Júpiter + inserción en órbita de Ganímedes)",
   "type": "ORBITADOR · ACTIVO",
   "first": "Nave interplanetaria más grande construida en Europa; primera nave espacial en orbitar una luna de otro planeta (Ganímedes, 2034)",

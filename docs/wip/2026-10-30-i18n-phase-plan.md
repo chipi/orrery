@@ -70,10 +70,10 @@ narration (English-only by decision), bundle size (Phase 5).
 
 Unit symbols, deferred (operator, 2026-10-30, return to it later): sr-Cyrl writes
 SI symbols in both scripts (km/s 39 uses, км/с 36 in messages; the style guide
-§1a says Latin) and zh-CN writes 公里 in places where §1a says km. Open with it:
-the astronomical-unit symbol (fr/es/it/pt-BR ship UA about 120 times each; §1a
-says au) — waiting on the operator's answer to whether "the global standard"
-means au in all 14 locales or only those four.
+§1a says Latin) and zh-CN writes 公里 in places where §1a says km. The
+astronomical-unit symbol is decided (operator, 2026-10-31, option 1): fr, es, it
+and pt-BR now write au next to a quantity (517 strings); the other locales keep
+the forms in style guide §1a.
 
 Reading the translated essays and science pages (`i18n-src/<loc>/essays`,
 `science`) the way the UI strings were read: an optional item at the end of

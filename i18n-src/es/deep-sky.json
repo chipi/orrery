@@ -194,7 +194,7 @@
     "caption": "La Tierra como un único píxel, fotografiada por Voyager 1 a seis mil millones de kilómetros.",
     "subject": "Sistema Solar",
     "type": "La Tierra como un único píxel",
-    "distance": "~40,5 UA (6000 millones de km)",
+    "distance": "~40,5 au (6000 millones de km)",
     "taken": "14 de febrero de 1990"
   },
   "pluto-nh": {
@@ -202,7 +202,7 @@
     "caption": "Primera imagen en color real de Plutón y su corazón de hielo de nitrógeno capturada por New Horizons.",
     "subject": "Sistema Solar",
     "type": "Planeta enano",
-    "distance": "~34 UA (5 mil millones de km)",
+    "distance": "~34 au (5 mil millones de km)",
     "taken": "14 jul 2015"
   },
   "sun-sdo": {
@@ -210,7 +210,7 @@
     "caption": "La visión del Observatorio de Dinámica Solar de nuestra estrella en el ultravioleta extremo.",
     "subject": "El Sol",
     "type": "El Sol · ultravioleta extremo",
-    "distance": "1 UA",
+    "distance": "1 au",
     "taken": "2010–presente"
   },
   "jwst-orion": {

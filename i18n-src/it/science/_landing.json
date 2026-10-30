@@ -66,9 +66,9 @@
       "heading": "6 — Distanze e tempi, dato che niente di tutto questo ha le dimensioni della Terra.",
       "diagram": "au.svg",
       "diagram_alt": "L'unità astronomica, segnata lungo il raggio orbitale della Terra.",
-      "diagram_caption": "Una UA = una distanza Terra-Sole. Marte è ~1,5 UA. Giove è ~5,2.",
+      "diagram_caption": "Una UA = una distanza Terra-Sole. Marte è ~1,5 au. Giove è ~5,2.",
       "paragraphs": [
-        "Tre unità compaiono ovunque. L'[unità astronomica](scales-time/au) (UA) è la distanza media Terra-Sole — 150 milioni di km. Misuriamo il sistema solare in UA perché i chilometri diventano presto ingestibili. Il [minuto-luce](scales-time/light-minute) ti dice quanto tempo impiega un segnale radio a raggiungere un veicolo spaziale. Marte: da 4 a 24 minuti di sola andata. Non puoi guidare un rover dalla Terra con un joystick. Tutto ciò che è importante è autonomo.",
+        "Tre unità compaiono ovunque. L'[unità astronomica](scales-time/au) (au) è la distanza media Terra-Sole — 150 milioni di km. Misuriamo il sistema solare in au perché i chilometri diventano presto ingestibili. Il [minuto-luce](scales-time/light-minute) ti dice quanto tempo impiega un segnale radio a raggiungere un veicolo spaziale. Marte: da 4 a 24 minuti di sola andata. Non puoi guidare un rover dalla Terra con un joystick. Tutto ciò che è importante è autonomo.",
         "L'[epoca J2000](scales-time/j2000) è lo zero del calendario che usano tutti gli astrodinamici. [Periodi siderali e sinodici](scales-time/sidereal-synodic) spiegano perché le finestre per Marte si ripetono ogni 26 mesi invece che ogni 23. Il [piano dell'eclittica](scales-time/ecliptic-plane) è il disco piatto su cui giacciono (per lo più) tutti i pianeti. I [sistemi di riferimento](scales-time/frames) sono i sistemi di coordinate tra cui il controllo missione passa di continuo: vista geocentrica, eliocentrica o centrata sul corpo."
       ]
     },

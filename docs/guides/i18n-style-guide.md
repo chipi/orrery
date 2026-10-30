@@ -231,6 +231,32 @@ wrong order).
   (`fly_event_tcm`, `_edl_or_oi`, `_anomaly`, `_loi`, `_tei`).
 - **Units next to numbers** come from a message per §1a, never a hard-coded
   English abbreviation in a component.
+- **Read the meaning, not the dictionary word.** The commonest UI defect in the
+  2026-10-30 audit (the same keys wrong in up to 11 of 13 locales: coast_scrub_aria) was a word taken
+  in its everyday sense: constellation (a satellite fleet, not stars), coast
+  (unpowered flight, not a shore), scrub (drag the slider, not clean), hold (a
+  countdown hold), pinned (a UI action, not a nail), legend (a map key, not a folk
+  tale), launch (a rocket, not a product release), small body (an asteroid, not a
+  person). `scripts/i18n-tools/ui-senses.json` gives the meaning of every key found
+  this way, and the UI translators send it with the key; add a key when an audit
+  finds a new one.
+- **ALL-CAPS labels are words.** STATUS, PERIOD, ARRIVAL, DOCKED are translated like
+  any word (ja shipped スタタス, ペリド, アーリバル). Only real acronyms stay (TLI,
+  LOI, EDL, TCM, C3, ISS).
+- **Page titles keep the brand**: "<page> · Orrery", with "Orrery" in Latin script in
+  every locale (shipped: ja オーラリー, hi ऑररेरी, ar أرّيلي, ru Оррери, zh 奥雷里).
+- **Right-to-left arrows.** In ar (and he), "→" next to words points backwards,
+  because bidi does not mirror arrows: write "←" ("الأرض ← القمر", a CTA "… ←").
+  Arrows between Latin symbols in a formula (e→1) stay.
+- **One English label, one translation**, unless the meaning really differs (ja 退役
+  for a retired rocket, 運用終了 for a rover that stopped).
+- **Checked automatically.** `problems(…, { ui: true })` in
+  `scripts/lib/translate-quality.mjs` rejects ordinary English words left in a
+  non-Latin label, glossary bodies and places left in English, a changed "Orrery" and
+  backwards RTL arrows; `scripts/i18n-tools/ui-label-audit.test.ts` runs it over every
+  `messages/<loc>.json` and also fails on a label with a second translation. Known
+  defects of locales not audited yet are listed in
+  `scripts/i18n-tools/ui-label-baseline.json`, which only shrinks.
 
 ---
 

@@ -34,6 +34,8 @@ Not part of the app or CI; excluded from the coverage gate (`vite.config.ts`).
 | `convert-native.mjs` (+ `-lib`), `hs-native.mjs` | Origin-language name conversion (step 0). |
 | `cjk-spaces.mjs` | Removes spaces left between CJK characters after a Latin name was replaced. |
 | `add-msgs.mjs`, `galaxy-msgs.mjs` | Add UI message keys to every `messages/<loc>.json`. |
+| `ui-label-audit.mjs <loc\|all> [--prune]` | UI-string checks per locale: `problems(…, { ui: true })` on every key, plus short English labels translated more than one way. Compared with `ui-label-baseline.json` (known defects of locales not audited yet, and label variants with a reason); `ui-label-audit.test.ts` fails on a new entry and on one that was fixed, so `--prune` after fixing. |
+| `ui-senses.json` | What an ambiguous UI key means (satellite constellation, unpowered coast, countdown hold…). The UI translators send it with the key; a key mistranslated in two or more locales goes here. |
 | `label-*.mjs`, `same-by-key.mjs`, `stories-extract.mjs`, `origin-inventory.mjs` | Analysis: identical-to-English labels, existing translations to reuse, story extraction, names by origin country. |
 
 

@@ -20,8 +20,9 @@ for (const e of edits) {
       return '';
     }
   })();
-  const before = new Set(problems(loc, en, e.old));
-  const after = problems(loc, en, e.new).filter((p) => !before.has(p));
+  const ui = { ui: isMessages(e.rel) };
+  const before = new Set(problems(loc, en, e.old, ui));
+  const after = problems(loc, en, e.new, ui).filter((p) => !before.has(p));
   if (after.length) {
     bad.push(`${e.rel}:${e.at} — ${after.join('; ').slice(0, 160)}`);
     continue;

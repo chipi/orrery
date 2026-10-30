@@ -191,7 +191,11 @@ already in the text.
    canonical forms, §3.3), then the editorial and article text, using those forms.
 6. Gate: `validate-data`, guard replay (no new rejections), coverage scan
    (`sameAsEnglish`, `nativeNameMissing` both 0), `npm run test:coverage`, and look
-   at the routes in a browser.
+   at the routes in a browser. A new locale has no entry in
+   `scripts/i18n-tools/ui-label-baseline.json`, so `ui-label-audit.test.ts` holds it to
+   zero UI defects and one translation per label from the first commit
+   (`node scripts/i18n-tools/ui-label-audit.mjs <loc>` lists them).
+7. Read the UI strings yourself, keys in `ui-senses.json` first (style guide §4a).
 
 ## 7. Mistakes already made (and the rule each one produced)
 
@@ -203,6 +207,11 @@ already in the text.
 | The scan's "untranslated" rule missed identical Title-Case English ("Vis-Viva Equation" in 13 locales). | Title fields are checked for any remaining 4+ letter word. |
 | Planet names were left in English in running text in all non-Latin locales ("к Mars", "достиг Jupiter"). | The bodies glossary + `bodies.mjs` count; zero English bodies outside vehicle names. |
 | Hand-written maps lived in a temp folder. | Version them under `scripts/i18n-tools/maps/`. |
+| Short UI strings were translated with no context: the same keys came out wrong in up to 11 of 13 locales (satellite "constellation" → star constellation, "coast" → seashore, "pinned" → a nail; 2026-10-30 audit of ar/hi/ja: 68 keys wrong in all three). | `ui-senses.json` gives each such key's meaning; the UI translators send it. |
+| The UI translator skipped every ALL-CAPS value of up to 7 letters as an "acronym", so STATUS, AGENCY, PERIOD stayed English and were later spelled phonetically (ja スタタス). | Only real acronyms and codes with a digit are skipped. |
+| `problems()` accepted any Latin word copied from the English as a "name", so ko "Vendor", "Hover", "STARBOARD" passed. | In UI labels a copied word must be part of a name; ordinary English is rejected. |
+| Page titles transliterated the brand (ja オーラリー, ru Оррери) and ar kept "→" that rendered backwards. | Both are `problems()` checks; the UI ratchet test runs them over every locale. |
+| A UI string translated two ways in one locale (ja ステータス / 状態 / スタタス for "Status"). | `ui-label-audit.test.ts` fails on a new variant. |
 | Bare "Saturn" / "Titan" / "Jupiter" were converted to the planet where they named the rocket or missile (ja 土星ロケット, "Titan's engines" → タイタン). | Rocket families are guarded by path and nearby rocket words (`glossary-apply.mjs`); audit with `rocket-body-audit.mjs`. |
 | A glossary form that already carries the generic word landed before the text's own generic word (フラ・マウロ高地高地, "cráter cráter"). | Collapse doubles (`dedupe-descriptors.mjs`); skip a form that holds the English key. |
 | Latin-script swaps dropped articles and agreement ("en cráter Gale", "du base", "dello Centro"). | Per-language article rules after the swap, then read every edit. |

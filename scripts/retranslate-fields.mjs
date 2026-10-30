@@ -25,7 +25,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { isEditorial, translationClient, translationModel } from './lib/translate-model.mjs';
-import { fixHomoglyphs, LANGUAGE_NAMES, problems } from './lib/translate-quality.mjs';
+import {
+  fixHomoglyphs,
+  LANGUAGE_NAMES,
+  problems,
+  uiPromptNotes,
+} from './lib/translate-quality.mjs';
 import { writeJsonEdits } from './lib/json-surgical.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
@@ -151,6 +156,7 @@ async function main() {
             .join('\n')
             .slice(-4000)}`
         : '';
+    const uiNotes = u.file === 'messages' ? `\n\n${uiPromptNotes([u.at])}\n` : '';
     let feedback = '';
     // a field the batch call already translated and that passed the checks
     let result = u.preset ?? null;
@@ -177,7 +183,7 @@ async function main() {
           messages: [
             {
               role: 'user',
-              content: `Context: "${ctxTitle}" — field \`${u.at}\` (${u.file}).${prior}${limitFor(u.at) ? `\nHard limit: at most ${limitFor(u.at)} characters (the UI and schema reject longer). Shorten the wording, never the names or numbers.` : ''}${feedback}\nTranslate into ${LANGUAGE_NAMES[u.loc]}:\n\n${JSON.stringify(u.src)}`,
+              content: `Context: "${ctxTitle}" — field \`${u.at}\` (${u.file}).${uiNotes}${prior}${limitFor(u.at) ? `\nHard limit: at most ${limitFor(u.at)} characters (the UI and schema reject longer). Shorten the wording, never the names or numbers.` : ''}${feedback}\nTranslate into ${LANGUAGE_NAMES[u.loc]}:\n\n${JSON.stringify(u.src)}`,
             },
           ],
         });
@@ -197,7 +203,7 @@ async function main() {
             : t,
         );
 
-        lastProblems = problems(u.loc, u.src, unq);
+        lastProblems = problems(u.loc, u.src, unq, { ui: u.file === 'messages' });
         const lim = limitFor(u.at);
         if (lim && typeof unq === 'string' && unq.length > lim)
           lastProblems.push(`${unq.length} characters, over the ${lim} limit — shorten it`);
@@ -293,7 +299,7 @@ async function main() {
         messages: [
           {
             role: 'user',
-            content: `Context: "${ctxTitle}" (${u0.file}). Translate each of these ${part.length} fields into ${LANGUAGE_NAMES[u0.loc]}, keeping names and terms consistent across them. Return exactly ${part.length} translations, in order, one per field.\n\n${list}`,
+            content: `Context: "${ctxTitle}" (${u0.file}).${u0.file === 'messages' ? `\n\n${uiPromptNotes(part.map((u) => u.at))}\n\n` : ' '}Translate each of these ${part.length} fields into ${LANGUAGE_NAMES[u0.loc]}, keeping names and terms consistent across them. Return exactly ${part.length} translations, in order, one per field.\n\n${list}`,
           },
         ],
       });
@@ -307,7 +313,7 @@ async function main() {
             ? t.trim().slice(1, -1)
             : t,
         );
-        const p = problems(u.loc, u.src, unq);
+        const p = problems(u.loc, u.src, unq, { ui: u.file === 'messages' });
         const lim = limitFor(u.at);
         if (lim && typeof unq === 'string' && unq.length > lim) p.push('over the limit');
         if (!p.length) u.preset = unq;

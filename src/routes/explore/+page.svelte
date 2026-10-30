@@ -115,6 +115,10 @@
   import { getInterstellarCraft, type InterstellarCraft } from '$lib/data/interstellar';
   import SizesOverlay from './SizesOverlay.svelte';
   import HoverTooltip from './HoverTooltip.svelte';
+  import BlackHoleNotes from './BlackHoleNotes.svelte';
+  import AnonStarTag from './AnonStarTag.svelte';
+  import DeepSkyImmersion from './DeepSkyImmersion.svelte';
+  import WarpOverlays from './WarpOverlays.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
   import BeltPanel from '$lib/components/BeltPanel.svelte';
@@ -133,14 +137,7 @@
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import { INTERSTELLAR_CRAFT, PATHS_LEGEND, iconicTagline } from '$lib/explore/paths-legend';
   import { computeLensPanel, scaleNavBackTarget, type ScaleNavExit } from '$lib/explore/lens-panel';
-  import {
-    anonColorLabel,
-    contextLabel,
-    dilationPct,
-    fmtScale,
-    lightUnitLabel,
-    SATELLITE_STATS,
-  } from '$lib/explore/format';
+  import { contextLabel, fmtScale, lightUnitLabel, SATELLITE_STATS } from '$lib/explore/format';
 
   // Planet visual config (PlanetVisual / SatelliteDef / PLANETS) now lives in
   // $lib/explore-scene as the single source of truth, shared with the AR
@@ -2236,26 +2233,7 @@
 
   <!-- Slice 6: the black-hole render is a geodesic GR ray-trace — label it. -->
   {#if view === '3d' && activeBlackHole}
-    <div class="mw-badge" role="note">{m.explore_bh_lensing_badge()}</div>
-
-    <!-- The curvature/time toggles moved into the science-lens panel
-         (2026-09-11 audit) — bh-curvature / bh-time-dilation layers; the
-         note + table below are the layers' rendered content. -->
-    {#if bhCurvatureLens}
-      <div class="lens-note" role="note">{m.explore_lens_curvature_note()}</div>
-    {/if}
-
-    {#if bhTimeLens}
-      <div class="time-lens" role="note">
-        <div class="tl-title">{m.explore_lens_time_title()}</div>
-        <div class="tl-row">
-          <span>{m.explore_lens_time_photon()}</span><b>{dilationPct(1.5)}</b>
-        </div>
-        <div class="tl-row"><span>{m.explore_lens_time_isco()}</span><b>{dilationPct(3)}</b></div>
-        <div class="tl-row"><span>{m.explore_lens_time_ten()}</span><b>{dilationPct(10)}</b></div>
-        <div class="tl-foot">{m.explore_lens_time_note()}</div>
-      </div>
-    {/if}
+    <BlackHoleNotes curvature={bhCurvatureLens} time={bhTimeLens} />
   {/if}
 
   <!-- Slice 7's mass–period plot moved from a bespoke chip here into the
@@ -2386,20 +2364,7 @@
   <!-- v2 anonymous-star tag (Slice 1 Hybrid): tapping a background star shows the
        honest facts from the catalogue — no Panel, no invented name. -->
   {#if view === '3d' && contextId === 'neighborhood' && anonStar}
-    <div class="anon-star" role="status">
-      <span class="anon-title">{m.explore_anon_unnamed()}</span>
-      <span class="anon-facts">
-        {anonStar.distLy.toLocaleString(undefined, { maximumFractionDigits: 1 })} ly · mag {anonStar.mag.toFixed(
-          1,
-        )} · {anonColorLabel(anonStar.colorName)} (~{anonStar.kelvin.toLocaleString()} K)
-      </span>
-      <button
-        type="button"
-        class="anon-close"
-        aria-label={m.explore_anon_dismiss()}
-        onclick={() => (anonStar = null)}>×</button
-      >
-    </div>
+    <AnonStarTag star={anonStar} onDismiss={() => (anonStar = null)} />
   {/if}
 
   <!-- v2 Slice 4: full-frame deep-sky immersion. The curated photo fills the
@@ -2407,10 +2372,11 @@
        into from a glint. Sits above the canvas; the warp flash + panel render on
        top. -->
   {#if view === '3d' && activeDeepSky && deepSkyPhotoUrl}
-    <div class="deep-sky-immersion" class:visible={deepSkyImmersed} aria-hidden={!deepSkyImmersed}>
-      <img src={deepSkyPhotoUrl} alt={activeDeepSkyImage?.caption ?? activeDeepSky.name} />
-      <div class="ds-vignette"></div>
-    </div>
+    <DeepSkyImmersion
+      url={deepSkyPhotoUrl}
+      alt={activeDeepSkyImage?.caption ?? activeDeepSky.name}
+      visible={deepSkyImmersed}
+    />
   {/if}
 
   <!-- Slice 7: the HR-diagram (property-space) lens overlay — the real star field
@@ -2452,18 +2418,8 @@
 
   <!-- Warp flash — masks the scene cut at a boundary crossing. Replays whenever
        crossingFlashId changes (skipped under reduced motion, which never bumps it). -->
-  {#if view === '3d' && crossingFlashId > 0}
-    {#key crossingFlashId}
-      <div class="cross-flash" aria-hidden="true"></div>
-    {/key}
-  {/if}
-
-  <!-- v2 Slice 2: distance caption shown during a Navigator warp into a system,
-       teaching the distance it just crossed (UXS-014 §4 signature moment). -->
-  {#if view === '3d' && warpCaption}
-    {#key warpCaption}
-      <div class="warp-caption" role="status">{warpCaption}</div>
-    {/key}
+  {#if view === '3d'}
+    <WarpOverlays flashId={crossingFlashId} caption={warpCaption} />
   {/if}
 
   <!-- PRD-023 Slice E.2 — Earth-comparison ghost, doubling as the
@@ -3503,26 +3459,6 @@
   /* .nb-controls/.nb-chip removed 2026-09-11 — the black-hole curvature/time
      chips (their last consumer) moved into the science-lens layer panel. */
 
-  /* Slice 5 — Milky Way honesty badge (bottom-centre pill). */
-  .mw-badge {
-    position: absolute;
-    bottom: 26px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
-    padding: 6px 14px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #cdd4e6;
-    background: rgba(10, 14, 26, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    pointer-events: none;
-  }
-
   /* Milky Way schematic → the /science overview article (S5 · our-galaxy). */
   .mw-badge-link {
     margin-left: 10px;
@@ -3537,64 +3473,6 @@
   .mw-badge-link:hover,
   .mw-badge-link:focus-visible {
     text-decoration: underline;
-  }
-
-  /* Slice 6 — physics-lens overlays (curvature note + time-dilation readout). */
-  .lens-note {
-    position: absolute;
-    bottom: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
-    max-width: 380px;
-    padding: 7px 14px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    line-height: 1.4;
-    text-align: center;
-    color: #cdd4e6;
-    background: rgba(10, 14, 26, 0.6);
-    border: 1px solid rgba(78, 205, 196, 0.3);
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    pointer-events: none;
-  }
-  .time-lens {
-    position: absolute;
-    top: 84px;
-    left: 12px;
-    z-index: 6;
-    width: 240px;
-    padding: 12px 14px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    background: rgba(8, 11, 20, 0.82);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    backdrop-filter: blur(8px);
-    pointer-events: none;
-  }
-  .time-lens .tl-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: #e9eefc;
-    margin-bottom: 8px;
-  }
-  .time-lens .tl-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-    font-size: 11px;
-    color: #9aa4bf;
-    margin-bottom: 4px;
-  }
-  .time-lens .tl-row b {
-    color: #4ecdc4;
-  }
-  .time-lens .tl-foot {
-    margin-top: 8px;
-    font-size: 10px;
-    line-height: 1.4;
-    color: #7a8299;
   }
 
   /* #45 top scale-navigator — one row under the nav: back · scale chip · reset.
@@ -3672,145 +3550,6 @@
     }
   }
 
-  /* v2 anonymous-star tag — top-centre, dismissible. */
-  .anon-star {
-    position: absolute;
-    top: 64px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    max-width: min(92vw, 420px);
-    padding: 8px 10px 8px 12px;
-    background: rgba(6, 10, 22, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 6px;
-    backdrop-filter: blur(5px);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    color: #dde4ff;
-  }
-  .anon-title {
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
-    flex: 0 0 auto;
-  }
-  .anon-facts {
-    font-size: 12px;
-    color: #eaf6ff;
-    min-width: 0;
-  }
-  .anon-close {
-    flex: 0 0 auto;
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    padding: 2px 4px;
-    min-height: 28px;
-  }
-  .anon-close:hover {
-    color: #fff;
-  }
-
-  /* Warp flash overlay — a soft radial bloom that masks the boundary cut. */
-  .cross-flash {
-    position: absolute;
-    inset: 0;
-    z-index: 7;
-    pointer-events: none;
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(220, 235, 255, 0.55),
-      rgba(120, 180, 255, 0.12) 45%,
-      transparent 70%
-    );
-    animation: crossFlash 720ms ease-out forwards;
-  }
-  @keyframes crossFlash {
-    0% {
-      opacity: 0;
-    }
-    22% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  /* v2 Slice 4 — full-frame deep-sky immersion. Sits above the canvas (z 6),
-     below the warp flash (7) + HUD + panel. Fades in as the approach completes. */
-  .deep-sky-immersion {
-    position: absolute;
-    inset: 0;
-    z-index: 6;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 900ms ease-out;
-    background: #05070f;
-  }
-  .deep-sky-immersion.visible {
-    opacity: 1;
-  }
-  .deep-sky-immersion img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .ds-vignette {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse at 50% 45%,
-      transparent 42%,
-      rgba(3, 4, 12, 0.55) 82%,
-      rgba(3, 4, 12, 0.9) 100%
-    );
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .deep-sky-immersion {
-      transition: none;
-    }
-  }
-  .warp-caption {
-    position: absolute;
-    top: 38%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 8;
-    pointer-events: none;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(230, 240, 255, 0.92);
-    text-shadow: 0 0 12px rgba(120, 180, 255, 0.7);
-    white-space: nowrap;
-    animation: warpCaption 1800ms ease-out forwards;
-  }
-  @keyframes warpCaption {
-    0% {
-      opacity: 0;
-      transform: translate(-50%, calc(-50% + 8px));
-    }
-    18% {
-      opacity: 1;
-      transform: translate(-50%, -50%);
-    }
-    80% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
   :global(.explore canvas) {
     display: block;
   }

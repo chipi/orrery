@@ -33,6 +33,22 @@ function glossaryTerms() {
   return TERMS;
 }
 
+// Keys whose English is spelled like a glossary term but means something else.
+const NOT_THE_TERM = new Set([
+  'card_kicker_moon', // "MOON": a moon of a planet, not the Moon
+]);
+
+/** The glossary forms for a label: exact term, or an ALL-CAPS label ("CERES"). */
+function termFor(terms, e) {
+  const s = e.trim();
+  if (terms[s]) return terms[s];
+  if (!/[a-z]/.test(s) && /[A-Z]/.test(s)) {
+    const title = s.toLowerCase().replace(/(^|[\s-])\p{L}/gu, (c) => c.toUpperCase());
+    return terms[title];
+  }
+  return undefined;
+}
+
 /**
  * {key: [reason stems]} for every UI string of `loc` that problems() rejects, plus
  * a label whose whole English is a glossary term but whose value lacks that
@@ -47,7 +63,7 @@ export function uiDefects(loc) {
   for (const [k, e] of Object.entries(en)) {
     if (k.startsWith('$') || typeof e !== 'string' || typeof m[k] !== 'string') continue;
     const why = problems(loc, e, m[k], { ui: true }).map(stem);
-    const form = terms[e.trim()]?.[loc];
+    const form = NOT_THE_TERM.has(k) ? undefined : termFor(terms, e)?.[loc];
     if (form && !m[k].toLowerCase().includes(form.toLowerCase())) why.push(GLOSSARY_FORM);
     if (why.length) out[k] = [...new Set(why)].sort();
   }

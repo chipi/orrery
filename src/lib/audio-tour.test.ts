@@ -281,6 +281,7 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'src/routes/fly/+page.svelte',
       'src/routes/explore/+page.svelte',
       'src/routes/explore/TimeDock.svelte',
+      'src/routes/explore/HudControls.svelte',
       'src/routes/iss/+page.svelte',
       'src/routes/tiangong/+page.svelte',
       'src/lib/components/StationRoute.svelte',

@@ -114,11 +114,16 @@ export interface ExploreHoverData {
   velocity: string;
   distance: string;
   extras: string;
+  /** Live numeric values used by the lens-mode expanded card. */
   velocityKms: number;
   distanceAU: number;
   eccentricity: number;
   inclinationDeg: number;
+  /** Discriminator: planets + small bodies use the vis-viva tooltip; the
+   *  Lagrange-points layer uses a different schema (no orbital speed of its
+   *  own — it co-orbits with the planet), rendered with its own layout. */
   kind?: 'planet' | 'small-body' | 'lagrange';
+  /** Lagrange-only — short physics blurb + notable occupants. */
   lagrangeTitle?: string;
   lagrangeBlurb?: string;
   lagrangeNotable?: string;

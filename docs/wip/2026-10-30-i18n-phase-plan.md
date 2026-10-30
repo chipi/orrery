@@ -44,7 +44,13 @@ AscentCameraDebug, TargetEnvSwitcher (internal builds), the hidden
 ## Step 2 — translate, by hand
 
 Keys in `messages/en-US.json` + 13 locales, glossary first, the style guide's
-UI-label rules. Units per the step-0 table.
+UI-label rules (§4a). Units per §1a.
+
+Also audit the short UI strings that already ship: a 2026-10-30 sample of
+six command keys found wrong-sense machine translations (ja/ar/ko/hi "Close
+panel", ru/ar "Play", ar "Close planet references"). Read every short
+message (buttons, tabs, chips, aria-labels) per locale against its use, fix
+by hand, and record the class in the guide if a new one turns up.
 
 ## Step 3 — guard
 

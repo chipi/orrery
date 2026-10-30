@@ -84,3 +84,19 @@ column order of a hand-written table, so do not swap those lists for
 `lib/locales.mjs`. `i18n-tools/maps/2026-10-17-translation-cleanup/` (77 MB) is
 the provenance store that `native-terms.json` cites (the `wikidata-*.tsv`
 tables); keep it.
+
+**Manual tools no npm script or workflow runs** (read the header first):
+
+- `mobile/build-offline-manifest.mjs` — regenerates the committed
+  `static/data/offline-manifest.json` the native offline download reads
+  (RFC-040 Contract C). It lists images, posters, hotspot tiles and audio,
+  so it goes stale when any of those change.
+- `score-staging.ts` — scores `static/images/_staging/` for /dev/staging;
+  **paid** on vision-cache misses (Anthropic vision, needs `.env`).
+- `search-badge-candidates.mjs` → `search-badge-multisource.mjs` — find
+  mission/fleet badge candidates (Wikipedia infobox, then NASA / Commons)
+  into `/tmp` review files; a human picks before `badge-sources.json`.
+- `peg-orbit-validation.mjs` — reports whether each flagship launcher
+  profile reaches a real stable orbit (ascent integrator check).
+- `__smoke__/resolver-diversity.mjs [--skip-network]` — image resolver
+  diversity smoke (offline dedup unit + an optional live pass).

@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   /**
    * SatellitePanel — detail panel for natural satellites on /explore
    * (#304). Mirrors SmallBodyPanel + SunPanel typography + layout so
@@ -15,6 +13,8 @@
    */
   import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import { page } from '$app/state';
   import { formatKm } from '$lib/format';
@@ -65,6 +65,10 @@
   let tab: Tab = $state('overview');
   let lastKey = $state<string | null>(null);
   let gallery: string[] = $state([]);
+  // Same as the other body panels: the hero shows the first image, so the
+  // grid skips it; lightboxSrc is the image open full-screen.
+  let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
+  let lightboxSrc = $state<string | null>(null);
   let overlay: SatelliteI18n | null = $state(null);
   let baseEntry = $derived<SatelliteEntry | null>(
     satelliteKey
@@ -98,6 +102,7 @@
       tab = 'overview';
       lastKey = baseEntry.id;
       gallery = [];
+      lightboxSrc = null;
       overlay = null;
       cardOpen = false;
       const id = baseEntry.id;
@@ -138,7 +143,11 @@
     </div>
 
     {#if gallery.length > 0}
-      <PanelHeroImage src={assetUrl(gallery[0])} name={entry.name} />
+      <PanelHeroImage
+        src={assetUrl(gallery[0])}
+        name={entry.name}
+        onOpen={() => (lightboxSrc = assetUrl(gallery[0]!))}
+      />
     {/if}
 
     <PanelTabRow
@@ -176,18 +185,12 @@
         {/if}
       {:else if tab === 'gallery'}
         {#if gallery.length > 0}
-          <ul class="gallery-grid">
-            {#each gallery as src (src)}
-              <li>
-                <img
-                  {...responsive(assetUrl(src), IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </li>
-            {/each}
-          </ul>
+          <PanelGalleryGrid
+            images={galleryGrid.map((src) => assetUrl(src))}
+            gridLabel={m.panel_gallery_aria({ name: entry.name })}
+            thumbLabel={entry.name}
+            onOpen={(src) => (lightboxSrc = src)}
+          />
         {:else}
           <p class="editorial empty">{m.panel_satellite_gallery_empty()}</p>
         {/if}
@@ -268,6 +271,8 @@
     {/if}
   {/if}
 </Panel>
+
+<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
 
 {#if cardSpec}
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
@@ -383,23 +388,6 @@
   }
   /* .mission-list / .mission-link moved to src/lib/styles/panel-tabs.css
      for cross-panel consistency; SatellitePanel-local rule deleted. */
-  .gallery-grid {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 8px;
-  }
-  .gallery-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 4 / 3;
-    border-radius: 3px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    display: block;
-  }
   .learn-list {
     list-style: none;
     padding: 0;

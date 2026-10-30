@@ -185,7 +185,11 @@
     </div>
 
     {#if gallery.length > 0}
-      <PanelHeroImage src={gallery[0]} name={entry.name} />
+      <PanelHeroImage
+        src={gallery[0]}
+        name={entry.name}
+        onOpen={() => (lightboxSrc = gallery[0]!)}
+      />
     {/if}
 
     <PanelTabRow

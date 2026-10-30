@@ -59,4 +59,22 @@ test.describe('panel lightbox', () => {
     await page.mouse.click(cx, cy);
     await expect(lightbox).toHaveCount(0);
   });
+
+  // The satellite and belt panels showed images that could not be enlarged;
+  // they now open the same lightbox as every other panel.
+  test('moon (satellite) hero and gallery thumb open the lightbox', async ({ page }) => {
+    await page.goto('/explore?id=earth:moon');
+    await openAndCloseFromHero(page);
+    await page.locator('#sat-tab-gallery').click();
+    const thumb = page.locator('aside.panel .gallery-thumb').first();
+    await expect(thumb).toBeVisible({ timeout: 10_000 });
+    await thumb.click();
+    await expect(page.locator('button.lightbox')).toBeVisible({ timeout: 3_000 });
+    await expect(page.locator('.lightbox-meta')).toBeVisible();
+  });
+
+  test('asteroid belt hero opens the lightbox', async ({ page }) => {
+    await page.goto('/explore?id=asteroid-belt');
+    await openAndCloseFromHero(page);
+  });
 });

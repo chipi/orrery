@@ -108,7 +108,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | `/science` diagrams | Hand-coded SVG sources committed under `static/diagrams/science/`; fail-closed `validate-diagrams.ts` integrity check chained into `validate-data` | ADR-035 |
 | `/science` cross-screen `?` chips | Click navigates to `/science/[tab]/[section]`; desktop hover shows section intro_sentence as `title` tooltip; min 24×24px hit area | ADR-036 |
 | Service worker / PWA | `@vite-pwa/sveltekit`; offline shell after first paint; `data-high-contrast` attribute on `<html>` is the pattern Science Lens copies | ADR-029 |
-| Translation workflow | LLM via `scripts/translate-*.mjs` + `scripts/retranslate-fields.mjs`, model per locale from `translationModel()` (Haiku; Sonnet for problem locales, today sr-Cyrl), shared rules + output checks in `scripts/lib/translate-quality.mjs`; names never translated (i18n style guide §2) | ADR-033 |
+| Translation workflow | Hand edits first (`scripts/i18n-tools/`, glossary first); paid LLM runs via `scripts/translate-*.mjs` + `scripts/retranslate-fields.mjs` only with the operator's go, model per locale from `translationModel()` (Haiku; Sonnet for problem locales, today sr-Cyrl), shared rules + output checks in `scripts/lib/translate-quality.mjs`; names by the origin rule (i18n style guide §2) | ADR-033 |
 | Fonts + script strategy | Wave 1 (Latin+Cyrillic) bundled Inter + Crimson Pro; Wave 2 CJK Noto Sans/Serif CJK; RTL Arabic via `dir="rtl"`; sr-Cyrl Cyrillic gate | ADR-032, ADR-043, ADR-044, ADR-045 |
 | `/fly` trajectory math | Pure-function isolation + per-mission validation harness; committed expected values catch regressions | ADR-030 |
 | `/fly` cislunar view | Earth-centered second camera + per-mission `flight.cislunar_profile` block on Moon missions; auto-switches when destination is MOON | ADR-058 |
@@ -363,8 +363,8 @@ Cues + DOM actions in `src/lib/audio-tour.ts` are the interaction layer that run
 
 **Translation model tier (cost policy).** Every `scripts/translate-*.mjs` LLM
 call takes its model from `translationModel(locale)` in
-`scripts/lib/translate-model.mjs`: **Haiku** (`claude-haiku-4-5`) by default,
-**Sonnet** only for locales on that file's problem list, each with the evidence
+`scripts/lib/translate-model.mjs`: the latest **Haiku** (`DEFAULT_TRANSLATION_MODEL`)
+by default, the latest **Sonnet** only for locales on that file's problem list, each with the evidence
 that put it there (operator rulings 2026-09-09 and 2026-10-17; today: `sr-Cyrl`).
 No `--model` flag, no override input, never Opus. Adding a locale to the list
 needs evidence (detector counts or a graded sample) and the operator's yes; if
@@ -599,7 +599,7 @@ Before the specific checklists below (flyby body, mission, science overlay, flee
 
 For every new card, in the same PR, you ship:
 
-1. **i18n translations across all 14 locales.** English-only is not "shipped". The catalog of locales lives in `messages/*.json` (the bundle) and `i18n-src/<locale>/<surface>/<id>.json` (per-entity overlay). Use the per-surface translation scripts (`scripts/translate-*.mjs`) or the `wave23/` toolchain pattern (catalog → maps → apply-translations) — never hand-translate. Validation: `npm run validate-data` fails closed on missing locale rows for tracked entities (per ADR-069 / [overlay-completeness](docs/adr/ADR-069.md)).
+1. **i18n translations across all 14 locales.** English-only is not "shipped". The catalog of locales lives in `messages/*.json` (the bundle) and `i18n-src/<locale>/<surface>/<id>.json` (per-entity overlay). Translate by hand first, following the [i18n style guide](docs/guides/i18n-style-guide.md) and the glossary (`scripts/i18n-tools/native-terms.json`, glossary first); the `scripts/i18n-tools/` kit applies and checks hand edits. The per-surface scripts (`scripts/translate-*.mjs`) call a paid API: size the run (fields + cost) and get the operator's go before starting one. Validation: `npm run validate-data` fails closed on missing locale rows for tracked entities (per ADR-069 / [overlay-completeness](docs/adr/ADR-069.md)).
 
 2. **Image sourcing with provenance + credits — agency archives first, Commons last.** No card ships with a placeholder hero or zero-slot gallery. Source via the **agency-first** pipeline: NASA images-api → JPL Photojournal → JAXA → ESA → JHU APL → CNSA/Roscosmos/ISRO/SpaceIL → **Wikimedia Commons only as failover**. Full source-order table + rationale in [`scripts/IMAGE-PIPELINE.md` §"Source-resolution order"](scripts/IMAGE-PIPELINE.md#source-resolution-order--agency-archives-first-commons-last). Every disk file gets a TASL row in `image-provenance.json` (ADR-047), every sidecar entry gets `credit` / `license` / `fetched_at`, every count manifest gets bumped. If imagery genuinely doesn't exist for the entity, ship an honest caption (memory `feedback_ship_all_with_honest_captions` — single-frame / descent-frame with text beats graceful-absent button) — never a silent gap.
 
@@ -641,7 +641,7 @@ Per-body steps (numbered to match TA.md §body-wiring):
 9. **Debug-panel `planetIdGuess`** loop → same file
 10. **`DESTINATION_LABEL_COLORS`** → `src/lib/fly-scene-constants.ts`
 11. **`/plan` label switch case** → `src/routes/plan/+page.svelte`
-12. **14-locale messages** → `messages/en-US.json` + 13 other locales (use the Python pattern from the Arrokoth commit for the non-English transliterations)
+12. **14-locale messages** → `messages/en-US.json` + 13 other locales. Body names are science names: add the body's native form per locale to the glossary (`scripts/i18n-tools/native-terms.json`, class `body`, the form each language's Wikipedia uses) first, then use it in the messages
 13. **i18n overlay** (optional) → `i18n-src/en-US/planets/{id}.json`
 14. **Tests** → `find-flyby-planet.test.ts` — move new body out of "returns null" + add positive case
 15. **Browser-verify** → load a mission that flies past the body at its iconic MET, confirm composition

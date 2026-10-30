@@ -21,11 +21,11 @@ Adding a new locale is content-only — the i18n architecture (Paraglide-js + lo
 
 What you'll add:
 
-- **`messages/<code>.json`** — UI strings (~786 keys as of v0.6.0). Copy `messages/en-US.json` as a starting point, translate keys preserving `{placeholder}` syntax.
+- **`messages/<code>.json`** — UI strings. Copy `messages/en-US.json` as a starting point, translate keys preserving `{placeholder}` syntax.
 - **`i18n-src/<code>/`** — editorial overlays mirroring `i18n-src/en-US/`:
-  - `missions/{mars,moon}/<id>.json` — translate `name`, `description`, `first`, `type`, `events[].label`, `events[].note`. **Keep mission ID + agency proper nouns in original.**
+  - `missions/{mars,moon}/<id>.json` — translate `name`, `description`, `first`, `type`, `events[].label`, `events[].note`. **Keep the mission `id`; names follow the origin rule** (style guide §2: built things in English except in their origin language).
   - `planets/<id>.json`, `rockets/<id>.json`, `sun.json`, `scenarios/<id>.json`, `earth-objects/<id>.json`, `moon-sites/<id>.json`, `mars-sites/<id>.json`, `iss-modules/<id>.json`, `tiangong-modules/<id>.json` — same overlay pattern.
-  - `science/<tab>/_intro.json` and `science/<tab>/<section>.json` — encyclopedia overlays. The `/science` overlay tree is currently shipped for en-US/es/fr/de/it; the other 9 locales (pt-BR/zh-CN/ja/ko/hi/ar/ru/sr-Cyrl/nl) fall back per ADR-017.
+  - `science/<tab>/_intro.json` and `science/<tab>/<section>.json` — encyclopedia overlays (shipped for all 14 locales).
 - **`project.inlang/settings.json`** — add your locale code to `languageTags`.
 - **`src/lib/locale.ts`** — add an entry to `SUPPORTED_LOCALES` (with the country flag emoji used by the LocalePicker chip).
 
@@ -33,7 +33,7 @@ What you'll add:
 
 **Workflow.** Per [ADR-033](docs/adr/ADR-033.md), the workflow is LLM-only first-pass with no native-speaker review gate. If you're a native speaker offering review for a specific language, that's high value — open an issue.
 
-**Status (v0.6.0):** all 14 supported locales (en-US + es / fr / de / pt-BR / it / nl / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl) are at 100% UI parity (~786 keys each). Editorial entity-overlay coverage (missions, planets, sun, rockets, sites, station modules, scenarios) is 100% for all 14 locales. `/science` encyclopedia overlay coverage is en-US + es / fr / de / it; the other 9 locales fall back per ADR-017. Dutch (nl) was added under issue #72.
+**Status:** 14 supported locales (en-US + es / fr / de / pt-BR / it / nl / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl). `npm run validate-data` fails on a missing entity overlay in any of them; a missing UI key only warns at bundle build and falls back to English at runtime. Dutch (nl) was added under issue #72.
 
 ## 3. Code
 

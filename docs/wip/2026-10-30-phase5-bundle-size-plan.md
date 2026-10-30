@@ -56,8 +56,10 @@ first call, into a `SvelteMap` so an alt that was empty while its map loaded
 re-renders. The root layout no longer fetches the locale map on every page
 (a non-English visitor downloaded 0.8–1.5 MB of alt text on every load).
 
-- JS every page loads (root node + entry closure): 1,115 KB / 224 KB br →
-  422 KB / 122 KB br. No chunk contains the map any more.
+- Root layout node + `start` entry closure: 1,115 KB / 224 KB br → 422 KB /
+  122 KB br. That count left out the client router `app.js` (54 KB br), which
+  also loads on every page; item 4's shell (177 KB br) includes it. No chunk
+  contains the map any more.
 - Browser check on the build: `/de/earth?museum=nasm-washington` fetches
   `en-US.json` + `de.json` and the hero alt is the German caption;
   `/missions` fetches no alt map. Mutation: with a plain `Map` instead of
@@ -102,6 +104,24 @@ Not covered: `i18n-src` en-US has 1,137 keys against 1,143 elsewhere (six
 `hotspot-metadata` files only the other locales have); the builder warns on it.
 Same on main; not changed here.
 
-## 4. Per-route brotli size budget in CI
+## 4. Per-route brotli size budget in CI — done
+
+`scripts/check-route-budget.mjs` runs in `npm run build` after the precache
+budget (so in preflight, CI and the mobile build). From the Vite client
+manifest it sums the served `.br` bytes of the static import closure of:
+the shell (root layout + client entries, 177 KB br today) and each route node
+minus the shell. Budgets are in `scripts/route-budget.json`: measured size
++10% +5 KB, rounded up to 5; routes under 25 KB share a 30 KB default. Web and
+mobile builds measure the same (within 1 KB).
+
+Largest today (KB br, what the route adds): /lab 717, /lab/callback 626,
+/explore 497, /moon 395, /mars 390, /fly 390, /earth 389, /venus 379, /iss
+282, /tiangong 277, /missions 112.
+
+Mutation checks: `/lab` budget 700 → exit 1 naming the route; the old
+computed galaxy lookup put back into `galaxy-label.ts` → `npm run build`
+fails with `/explore 1619 > 555 KB`.
+
+Not counted: dynamic imports (lazy scenes, workers) and CSS.
 
 ## 5. GlitchTip PROD-20 + #616

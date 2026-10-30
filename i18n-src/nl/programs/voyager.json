@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "De diepere les is om te bouwen met veel meer marge dan het plan vereist. De Voyagers waren ontworpen voor een missie een tiende zo lang als die ze hebben gevlogen, en ze hielden stand omdat hun makers ze te stevig bouwden — redundante systemen, herprogrammeerbare computers, vermogen over. Ambitie die alleen plant voor de verwachte missie eindigt met de verwachte missie; degenen die blijven gaan zijn degenen die gebouwd zijn voor meer dan waar ze om gevraagd werden te doen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "De buitenplaneten in de 3D-verkenner",
+    "/gallery/deep-sky": "De ‘Pale Blue Dot’, in de Deep-sky-galerij",
+    "/programs/pioneer": "Pioneer — de sondes die als eerste gingen"
+  }
 }

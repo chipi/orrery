@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "フリート",
   "program_link_kind_gallery": "ギャラリー",
   "program_link_kind_program": "プログラム",
-  "program_link_kind_science": "サイエンス"
+  "program_link_kind_science": "サイエンス",
+  "engine_cycle_gas_generator": "ガス発生器",
+  "engine_cycle_staged": "二段燃焼サイクル",
+  "engine_cycle_staged_ox_rich": "二段燃焼（酸化剤リッチ）",
+  "engine_cycle_staged_full_flow": "全流量二段燃焼",
+  "engine_cycle_expander": "エキスパンダー",
+  "engine_cycle_expander_bleed": "エキスパンダーブリード",
+  "engine_prop_liquid_methane": "液体メタン",
+  "engine_prop_ethyl_alcohol": "エチルアルコール"
 }

@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "De tweede les is het gevaar van een deadline een waarschuwing te laten overrulen. Soyuz 1 vloog met gebreken die zijn eigen ingenieurs hadden gemarkeerd, omdat Apollo beantwoorden die maand belangrijker was dan toegeven dat het schip niet klaar was — en een kosmonaut stierf ervoor. Het is dezelfde mislukking die de cultuur van geheimhouding van Vostok had geoefend, uiteindelijk betaald met een leven. Wanneer de mensen die het dichtst bij de machine staan zeggen dat het niet klaar is, is het het schema dat moet wijken."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Aarde — banen, koppelingen & lanceerplaatsen",
+    "/science/mission-phases/edl": "Intrede, daling & landing"
+  }
 }

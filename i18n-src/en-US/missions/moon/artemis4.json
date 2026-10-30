@@ -14,5 +14,6 @@
     { "met": 12, "label": "ASCENT", "note": "The lander returns to lunar orbit after about a week of surface operations.", "type": "nominal" },
     { "met": 14, "label": "TEI", "note": "Trans-Earth injection.", "type": "nominal" },
     { "met": 18, "label": "SPLASHDOWN", "note": "Orion splashes down in the Pacific Ocean.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "SLS ICPS (Interim Cryogenic Propulsion Stage)"
 }

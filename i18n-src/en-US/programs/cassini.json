@@ -28,5 +28,9 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Cassini is that staying beats passing through. The same planet the Voyagers characterised in hours yielded its deepest secrets — the ocean of Enceladus, the methane cycle of Titan — only to a spacecraft willing to spend thirteen years in orbit. For the hardest questions, presence over time is worth more than any single brilliant glance." },
     { "type": "prose", "md": "The deeper lesson is that reach carries responsibility. Cassini ended by flying itself into Saturn to protect the ocean moons it had discovered — a recognition that the power to visit a possibly living world comes with a duty not to poison it. Capability without that restraint is not exploration; it is trespass." }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Saturn in the 3D explorer",
+    "/programs/voyager": "Voyager — the flybys that came first"
+  }
 }

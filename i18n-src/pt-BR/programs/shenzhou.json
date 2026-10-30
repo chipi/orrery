@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "A lição mais profunda é sobre o que vale a independência. Um assento emprestado pode ser retirado; uma capacidade que você mesmo construiu não pode. Shenzhou é o veículo que garante que a China nunca precise pedir — e essa garantia, mais do que qualquer voo individual, é a coisa que o programa foi realmente construído para entregar."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=shenzhou": "Frota — a nave Shenzhou",
+    "/programs/tiangong": "Tiangong — a estação que as tripulações Shenzhou construíram e visitam",
+    "/programs/soyuz": "Soyuz — a nave da qual descende o projeto da Shenzhou"
+  }
 }

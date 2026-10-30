@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La seconda lezione è che l'eccellenza ingegneristica non può salvare un programma dalla perdita del suo scopo e del suo budget. Buran era, in modi reali, un progetto migliore rispetto al veicolo a cui rispondeva — e volò una volta. Lo Shuttle americano, con tutti i suoi difetti, volò per trent'anni perché aveva missioni da compiere e denaro per compierle. Un veicolo spaziale è durevole solo quanto la volontà istituzionale e i finanziamenti che lo sostengono; senza quelli, anche un volo impeccabile è una fine piuttosto che un inizio."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/space-shuttle": "Space Shuttle — il veicolo a cui rispondeva",
+    "/fleet?focus=buran": "Flotta — l'orbiter Buran ed Energia"
+  }
 }

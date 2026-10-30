@@ -14,5 +14,6 @@
     { "met": 10, "label": "ASCENT", "note": "Ascent vehicle lifts off lunar surface.", "type": "nominal" },
     { "met": 13, "label": "RENDEZVOUS", "note": "First robotic lunar rendezvous; sample container transferred to orbiter.", "type": "info" },
     { "met": 23, "label": "EARTH RETURN", "note": "Sample capsule lands in Inner Mongolia 2020-12-16.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Long March 5 YZ-1 upper stage"
 }

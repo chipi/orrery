@@ -11,5 +11,6 @@
     { "met": 5, "label": "MOI", "note": "Lunar orbit insertion 2009-06-23.", "type": "nominal" },
     { "met": 90, "label": "PRIME MISSION", "note": "1-year exploration phase (NASA programme) begins.", "type": "info" },
     { "met": 455, "label": "EXTENDED SCIENCE", "note": "Mission extended to multi-year science phase under NASA SMD.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Centaur upper stage (Atlas V 401)"
 }

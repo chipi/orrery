@@ -12,5 +12,6 @@
     { "met": 1.5, "label": "TCM-1", "note": "首次中途修正", "type": "nominal" },
     { "met": 4, "label": "LOI", "note": "通过 BE-7 主发动机进行月球轨道插入", "type": "nominal" },
     { "met": 4.1, "label": "动力下降", "note": "BE-7 节流下降至月面——Blue Origin 首次月球着陆。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "New Glenn 第二级（TLI 点火）"
 }

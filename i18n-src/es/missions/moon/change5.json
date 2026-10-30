@@ -14,5 +14,6 @@
     { "met": 10, "label": "ASCENSO", "note": "El vehículo de ascenso despega de la superficie lunar.", "type": "nominal" },
     { "met": 13, "label": "ENCUENTRO", "note": "Primer encuentro lunar robótico; contenedor de muestras transferido al orbitador.", "type": "info" },
     { "met": 23, "label": "RETORNO A LA TIERRA", "note": "La cápsula de muestras aterriza en Mongolia Interior 2020-12-16.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior YZ-1 del Long March 5"
 }

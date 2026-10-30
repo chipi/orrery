@@ -11,5 +11,6 @@
     { "met": 1, "label": "軌道上での燃料補給", "note": "低軌道でタンカーとのランデブーと複数回によるプロペラント移送。", "type": "nominal" },
     { "met": 2, "label": "TMI 噴射", "note": "十分燃料を積んだ低軌道状態から火星注入。", "type": "nominal" },
     { "met": 274, "label": "火星着陸", "note": "火星表面への動力下降 — パラシュートもエアバッグもスカイクレーンもなし。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Starship 上段"
 }

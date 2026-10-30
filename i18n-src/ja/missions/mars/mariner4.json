@@ -11,5 +11,6 @@
     { "met": 8, "label": "TCM-1", "note": "第一次軌道途中修正完了；軌道確定。", "type": "nominal" },
     { "met": 228, "label": "火星フライバイ", "note": "最接近 9846 km。データ再生で八時間にわたり二十二枚の画像を返送。", "type": "nominal" },
     { "met": 228.5, "label": "最初の画像", "note": "地球へ返された史上初の別惑星の接近画像。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Agena D 上段"
 }

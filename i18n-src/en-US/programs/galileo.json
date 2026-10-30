@@ -28,5 +28,9 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Galileo is that a mission is not finished when its hardware fails. The stuck antenna removed the capability the whole spacecraft had been designed around — and the mission still succeeded, because its operators rewrote what the machine did rather than mourning what it could no longer do. When the plan breaks, the question is not what was lost but what can still be done with what remains; the difference between a dead mission and a great one is often the answer to that." },
     { "type": "prose", "md": "The deeper lesson is that patience turns hints into knowledge. Europa's ocean was invisible in any single pass; it emerged only from the accumulated weight of many, gathered over years in orbit. The most important discoveries are frequently not seen but built — assembled measurement by measurement, until a hypothesis becomes the only thing that fits the data." }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Jupiter in the 3D explorer",
+    "/programs/cassini": "Cassini — the same idea, at Saturn"
+  }
 }

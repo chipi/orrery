@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "La lección más profunda es que en una capacidad en red, el control de la cadena de suministro es estrategia. Las elecciones de lanzamiento de Kuiper — deliberadamente desviadas de su rival — muestran que cuando el acceso a órbita es escaso y parcialmente propiedad de un competidor, de quién compras tus viajes no es un detalle de adquisición sino una decisión sobre independencia, y vale la pena pagar un premio para hacerlo bien."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=kuiper": "Flota — la constelación Kuiper",
+    "/programs/starlink": "Starlink: la constelación a la que persigue",
+    "/earth": "Tierra: órbitas y la saturación de la órbita baja",
+    "/earth?site=kuiper": "La constelación Kuiper"
+  }
 }

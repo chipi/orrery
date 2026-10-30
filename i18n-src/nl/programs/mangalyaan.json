@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "De diepere les is dat een eerste-poging-succes bij Mars evenveel over nederigheid gaat als over ambitie. Het kerkhof van mislukte Mars-missies zit vol goed gefinancierde programma's die te ver reikten; ISRO reikte precies zo ver als het betrouwbaar kon beheren, bewees dat, en liet de missie zijn eigen bescheiden doelen overtreffen. Precies mikken, in plaats van hoog mikken, is soms hoe de moeilijkste primeurs worden gewonnen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — de bestemming",
+    "/fleet?focus=mangalyaan": "Vloot — de Mars Orbiter Mission",
+    "/programs/chandrayaan": "Chandrayaan — het maanprogramma van India",
+    "/mars?site=mangalyaan": "Mangalyaan in een baan om Mars"
+  }
 }

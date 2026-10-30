@@ -26,5 +26,6 @@
       "note": "Main engine burn places Cassini into Saturn orbit, beginning the 13-year tour.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur upper stage"
 }

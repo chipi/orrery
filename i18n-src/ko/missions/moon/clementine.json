@@ -12,5 +12,6 @@
     { "met": 30, "label": "매핑 시작", "note": "체계적 다중 스펙트럼·지형 매핑 시작.", "type": "info" },
     { "met": 95, "label": "출발", "note": "Geographos 소행성 근접 비행을 위해 달 궤도 이탈.", "type": "nominal" },
     { "met": 100, "label": "추진기 고장", "note": "기추진기 오작동으로 추진제 소모; 소행성 접근 취소.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Titan II Star-37 상단"
 }

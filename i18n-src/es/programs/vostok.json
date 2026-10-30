@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La segunda lección es lo que la secretividad compra, y lo que cuesta. Ocultar los fracasos y gestionar la verdad permitió que el programa pareciera invencible, lo cual tenía un valor real en la Guerra Fría. Pero también significaba que el programa nunca podía ser visto fracasar, lo cual lo hizo cauteloso en los lugares equivocados, incapaz de asumir los riesgos visibles que requiere aprender cosas difíciles. Una organización que no puede permitirse fracasar en público eventualmente tampoco puede permitirse *aprender* en público."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Tierra: órbitas y bases de lanzamiento",
+    "/science/mission-phases/edl": "Entrada, descenso y aterrizaje"
+  }
 }

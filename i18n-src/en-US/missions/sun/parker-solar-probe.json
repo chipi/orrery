@@ -13,5 +13,6 @@
     { "met": 989, "label": "P8 — CORONA ENTRY", "note": "2021-04-28. First spacecraft to dip below the Alfvén critical surface.", "type": "info" },
     { "met": 1830, "label": "VGA-6", "note": "Sixth Venus assist 2023-08-21.", "type": "info" },
     { "met": 2326, "label": "P22 — DESIGN MILESTONE", "note": "2024-12-24. 9.86 R☉ (6.1 M km from the Sun). ~191 km/s. Heat shield 1,377 °C.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Star 48BV solid third stage (Delta IV Heavy core + 2 strap-ons)"
 }

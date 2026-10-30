@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "Flotte",
   "program_link_kind_gallery": "Galerie",
   "program_link_kind_program": "Programm",
-  "program_link_kind_science": "Wissenschaft"
+  "program_link_kind_science": "Wissenschaft",
+  "engine_cycle_gas_generator": "Gasgenerator",
+  "engine_cycle_staged": "Hauptstromverfahren",
+  "engine_cycle_staged_ox_rich": "Hauptstromverfahren (oxidatorreich)",
+  "engine_cycle_staged_full_flow": "Hauptstromverfahren (Vollstrom)",
+  "engine_cycle_expander": "Expander",
+  "engine_cycle_expander_bleed": "Expander mit Abzapfung",
+  "engine_prop_liquid_methane": "Flüssigmethan",
+  "engine_prop_ethyl_alcohol": "Ethylalkohol"
 }

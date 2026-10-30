@@ -14,5 +14,6 @@
     { "met": 41, "label": "AVVICINAMENTO ALLA LUNA", "note": "Accensione translunar finale — Beresheet su traiettoria lunare diretta.", "type": "nominal" },
     { "met": 48, "label": "INSERIMENTO IN ORBITA LUNARE", "note": "Cattura in orbita lunare ellittica 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "ANOMALIA IN DISCESA", "note": "Ripristino IMU durante la discesa motorizzata → spegnimento motore → crash in Mare Serenitatis 2019-04-11.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "secondo stadio del Falcon 9 verso GTO (lancio condiviso)"
 }

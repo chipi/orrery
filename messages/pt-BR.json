@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "frota",
   "program_link_kind_gallery": "galeria",
   "program_link_kind_program": "programa",
-  "program_link_kind_science": "ciência"
+  "program_link_kind_science": "ciência",
+  "engine_cycle_gas_generator": "gerador de gás",
+  "engine_cycle_staged": "combustão em estágios",
+  "engine_cycle_staged_ox_rich": "combustão em estágios (rica em oxidante)",
+  "engine_cycle_staged_full_flow": "combustão em estágios (fluxo total)",
+  "engine_cycle_expander": "expansor",
+  "engine_cycle_expander_bleed": "expansor de sangria",
+  "engine_prop_liquid_methane": "metano líquido",
+  "engine_prop_ethyl_alcohol": "álcool etílico"
 }

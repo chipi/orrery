@@ -82,5 +82,9 @@
       "type": "prose",
       "md": "The second lesson is that international partnership can sustain what national pride cannot afford. Mir survived its hardest years because cooperation replaced competition — because a former adversary had reasons to help keep it flying. The same logic built the ISS and keeps it aloft: no single nation now funds a permanent human presence alone. Mir is where that shift was first forced by circumstance and then chosen on purpose, and it is one of the most consequential changes in the history of spaceflight."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Earth — orbits, rendezvous & launch sites",
+    "/fleet?focus=mir": "Fleet — Mir space station"
+  }
 }

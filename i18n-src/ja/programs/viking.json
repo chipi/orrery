@@ -80,5 +80,12 @@
       "type": "prose",
       "md": "より深い教訓は、全体の連鎖を証明する価値である。Vikingの永続的な贈り物は、単一の測定ではなく、火星に到達して無傷で着陸することが可能で再現可能であることの実証だった。難しいことが一度達成され——そして2回達成され——ると、それは賭けではなくなり、他の人々が構築できる基盤になる。時にミッションが返す最大の結果は、単純にそれができるということである。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "火星 — Viking が着陸した場所",
+    "/programs/mariner": "Mariner — 最初に火星を偵察したフライバイ機と周回機",
+    "/mars?site=viking1-lander": "Viking 1 — クリュセ平原",
+    "/mars?site=viking2-lander": "Viking 2 — ユートピア平原",
+    "/mars?site=viking1-orbiter": "Viking 1 周回機"
+  }
 }

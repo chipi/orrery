@@ -14,5 +14,6 @@
     { "met": 12, "label": "ASCENSO", "note": "El módulo de aterrizaje regresa a la órbita lunar tras cerca de una semana de operaciones en superficie.", "type": "nominal" },
     { "met": 14, "label": "ITT", "note": "Inyección transterrestre.", "type": "nominal" },
     { "met": 18, "label": "AMERIZAJE", "note": "Orion ameriza en el océano Pacífico.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "SLS ICPS (etapa de propulsión criogénica provisional)"
 }

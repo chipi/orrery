@@ -20,5 +20,6 @@
       "note": "Main engine burn captures Galileo into orbit; an 8-year tour of moon science begins.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Inertial Upper Stage (IUS)"
 }

@@ -88,5 +88,10 @@
       "type": "prose",
       "md": "La leçon plus profonde concerne la résilience contre la concentration. La volonté nationale singulière d'Apollo était sa puissance et sa fragilité ; Artemis échange la concentration contre une coalition qu'aucun budget unique ne peut facilement tuer. C'est plus lent, plus complexe, et plus difficile à planifier — et il parie que l'endurance, pas la vitesse, est ce qu'un retour « pour rester » nécessite réellement. Savoir si ce pari sera payant est l'histoire que la prochaine décennie racontera."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Lune — la destination",
+    "/fleet?focus=orion": "Flotte — Orion, SLS et le matériel lunaire",
+    "/programs/apollo": "Apollo — le programme dont Artemis tire son nom et qu'il dépasse"
+  }
 }

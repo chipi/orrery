@@ -11,5 +11,6 @@
     { "met": 1, "label": "在轨加注", "note": "多次飞行中在近地轨道进行油箱交会和推进剂转移。", "type": "nominal" },
     { "met": 2, "label": "TMI 点火", "note": "从完全加满燃料的近地轨道状态进行火星转移注入。", "type": "nominal" },
     { "met": 274, "label": "火星着陆", "note": "动力下降到火星表面——无降落伞、无气囊、无空中吊车。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Starship 上面级"
 }

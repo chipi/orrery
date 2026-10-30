@@ -88,5 +88,10 @@
       "type": "prose",
       "md": "De diepere les gaat over achterwaarts ontwerpen vanuit een doel. Starship heeft geen zin als een incrementele verbetering op bestaande raketten; het heeft alleen zin als het echte doel het vestigen op een andere planeet is, en elke vreemde keuze — de omvang, het volledige hergebruik, het bijtanken in een baan — volgt daaruit. Of Mars nu wordt bereikt of niet, het voertuig is een les in hoe het eruitziet om te engineeren voor een eindtoestand die het grootste deel van de industrie als een fantasie beschouwt."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starship": "Vloot — het lanceersysteem Starship",
+    "/programs/spacex": "SpaceX — de herbruikbaarheid waarop Starship voortbouwt",
+    "/mars": "Mars — de bestemming"
+  }
 }

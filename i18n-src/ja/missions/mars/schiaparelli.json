@@ -15,5 +15,6 @@
     { "met": 216.5, "label": "分離", "note": "Schiaparelliは2016年10月16日にTGOから分離し、大気圏突入の3日前でした。", "type": "nominal" },
     { "met": 219, "label": "大気圏突入", "note": "大気圏突入2016年10月19日。", "type": "nominal" },
     { "met": 219.01, "label": "降下中の異常", "note": "IMU飽和 → パラシュート早期放出 + 高度での推進器停止 → メリディアニ平原内でのおよそ150 m/sの衝突。", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Proton-M と Briz-M 上段。ExoMars 2016 は TGO と Schiaparelli を一緒に打ち上げた"
 }

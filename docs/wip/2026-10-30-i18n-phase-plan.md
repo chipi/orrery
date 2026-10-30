@@ -68,6 +68,13 @@ back to English at runtime. Plus the 14-locale render check from Phase 4.
 Content translation quality (ended 2026-10-19 at the stop rule), audio
 narration (English-only by decision), bundle size (Phase 5).
 
+Unit symbols, deferred (operator, 2026-10-30, return to it later): sr-Cyrl writes
+SI symbols in both scripts (km/s 39 uses, км/с 36 in messages; the style guide
+§1a says Latin) and zh-CN writes 公里 in places where §1a says km. Open with it:
+the astronomical-unit symbol (fr/es/it/pt-BR ship UA about 120 times each; §1a
+says au) — waiting on the operator's answer to whether "the global standard"
+means au in all 14 locales or only those four.
+
 Reading the translated essays and science pages (`i18n-src/<loc>/essays`,
 `science`) the way the UI strings were read: an optional item at the end of
 Phase 6 (operator, 2026-10-30), to be discussed again before it starts.

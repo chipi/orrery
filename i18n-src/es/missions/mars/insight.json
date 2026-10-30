@@ -13,5 +13,6 @@
     { "met": 205.01, "label": "ATERRIZAJE", "note": "El aterrizador llega 2018-11-26 19:54 UTC.", "type": "nominal" },
     { "met": 213, "label": "SISMÓMETRO DESPLEGADO", "note": "El brazo robótico coloca el instrumento SEIS sobre la superficie y lo protege del viento.", "type": "info" },
     { "met": 1683, "label": "FIN DE MISIÓN", "note": "Última transmisión de baja energía 2022-12-15. Paneles solares demasiado cubiertos de polvo para recargarse.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Centaur (Atlas V 401)"
 }

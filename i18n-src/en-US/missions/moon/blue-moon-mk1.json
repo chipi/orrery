@@ -12,5 +12,6 @@
     { "met": 1.5, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
     { "met": 4, "label": "LOI", "note": "Lunar orbit insertion via BE-7 main engine.", "type": "nominal" },
     { "met": 4.1, "label": "POWERED DESCENT", "note": "BE-7 throttled descent to lunar surface — first Blue Origin lunar touchdown.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "New Glenn 2nd stage (TLI burn)"
 }

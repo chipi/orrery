@@ -12,5 +12,6 @@
     { "met": 200, "label": "LIBERACIÓN DE BEAGLE 2", "note": "El aterrizador se separa del orbitador para el descenso independiente.", "type": "nominal" },
     { "met": 206, "label": "INSERCIÓN ORBITAL EN MARTE", "note": "Encendido del motor principal de 37 minutos captura al orbitador en órbita marciana el día de Navidad de 2003.", "type": "nominal" },
     { "met": 212, "label": "BEAGLE 2 EN SILENCIO", "note": "Primera señal esperada no recibida; el aterrizador se da por perdido.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Fregat"
 }

@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Das Mächtigste, was eine Maschine tun kann, ist, bezeugt zu werden. Sputnik veränderte die Welt nicht durch das, was er maß, sondern durch das, was er vorführte – sichtbar, hörbar, für alle zugleich. Manche Leistungen zählen wegen der Daten, die sie zurückbringen; diese zählte, weil der ganze Planet hören konnte, dass er da war."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — die Welt, die er als Erster umkreiste",
+    "/programs/vostok": "Vostok — die ersten Menschen folgen",
+    "/posters": "Das Sputnik-Poster"
+  }
 }

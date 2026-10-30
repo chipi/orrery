@@ -80,5 +80,14 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Große Fähigkeiten entstehen in Schritten, nicht in Sprüngen. Die ausgefeilte Technik, mit der Perseverance Proben deponiert, war zu Zeiten von Sojourner unvorstellbar; sie wurde nur möglich, weil jeder Rover sich den nächsten verdiente. Ehrgeizige Ziele erreicht man meist nicht mit einer einzigen entscheidenden Mission, sondern mit einer geduldigen Ahnenreihe, in der jedes Glied genug beweist, um das nächste zu rechtfertigen – Fortschritt als Staffellauf, nicht als Sprint."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — die Welt der Rover",
+    "/programs/viking": "Viking — die Lander vor den Rädern",
+    "/mars?site=mars-pathfinder": "Sojourner — Ares Vallis",
+    "/mars?site=spirit": "Spirit — Gusev-Krater",
+    "/mars?site=opportunity": "Opportunity — Meridiani Planum",
+    "/mars?site=curiosity": "Curiosity — Gale-Krater",
+    "/mars?site=perseverance": "Perseverance — Jezero-Krater"
+  }
 }

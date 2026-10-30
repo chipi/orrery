@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "A lição mais profunda é que custo é uma forma de capacidade. Ao fazer exploração profunda com baixo custo, ISRO não apenas economizou dinheiro — tornou possível uma classe de missões para uma nação que nunca poderia tê-las financiado a preços ocidentais, e redefiniu o que o resto do mundo acredita que a exploração do espaço profundo deve custar. Frugalidade, perseguida como disciplina de engenharia, é em si uma forma de poder."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Lua — a região de pouso no polo sul",
+    "/fleet?focus=chandrayaan1": "Frota — as sondas Chandrayaan"
+  }
 }

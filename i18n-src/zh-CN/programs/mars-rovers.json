@@ -80,5 +80,14 @@
       "type": "prose",
       "md": "更深一层的教训是：伟大的能力靠一步步积累，而非一蹴而就。Perseverance那样精密的样本封存系统，在Sojourner的年代难以想象；它之所以成为可能，只因每一辆漫游车都为下一辆挣得了机会。宏大的目标通常不是靠某一次决定性任务达成的，而是靠一脉耐心传承的谱系，每个成员都证明了足够多的东西，从而为后继者赢得理由——进步是一场接力，而不是冲刺。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "火星 — 火星车的世界",
+    "/programs/viking": "Viking — 早于车轮到来的着陆器",
+    "/mars?site=mars-pathfinder": "Sojourner — 阿瑞斯谷",
+    "/mars?site=spirit": "Spirit — 古瑟夫撞击坑",
+    "/mars?site=opportunity": "Opportunity — 子午线高原",
+    "/mars?site=curiosity": "Curiosity — 盖尔撞击坑",
+    "/mars?site=perseverance": "Perseverance — 耶泽罗撞击坑"
+  }
 }

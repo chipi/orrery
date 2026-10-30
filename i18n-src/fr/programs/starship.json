@@ -88,5 +88,10 @@
       "type": "prose",
       "md": "La leçon plus profonde concerne la conception à rebours depuis un objectif. Starship n'a aucun sens comme amélioration progressive des fusées existantes ; il n'a de sens que si l'objectif réel est de coloniser une autre planète, et chaque choix étrange — la taille, la réutilisation complète, le ravitaillement orbital — en découle. Que Mars soit atteinte ou non, le véhicule est une leçon sur ce à quoi ressemble l'ingénierie pour un état final que la majeure partie de l'industrie considère comme une fantaisie."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starship": "Flotte — le système de lancement Starship",
+    "/programs/spacex": "SpaceX — la réutilisabilité sur laquelle repose Starship",
+    "/mars": "Mars — la destination"
+  }
 }

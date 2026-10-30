@@ -14,5 +14,6 @@
     { "met": 12, "label": "上昇", "note": "約 1 週間の表面活動後、着陸機が月周回軌道に戻る。", "type": "nominal" },
     { "met": 14, "label": "TEI", "note": "地球移行軌道投入。", "type": "nominal" },
     { "met": 18, "label": "着水", "note": "Orion が太平洋に着水。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "SLS ICPS（暫定極低温推進ステージ）"
 }

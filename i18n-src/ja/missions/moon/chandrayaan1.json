@@ -11,5 +11,6 @@
     { "met": 17, "label": "MOI", "note": "月軌道投入 2008-11-08。", "type": "nominal" },
     { "met": 24, "label": "MIP 衝突", "note": "月 Impact Probeは南極近くへの硬着陸を目指していました。", "type": "info" },
     { "met": 320, "label": "通信途絶", "note": "通信途絶 2009-08-29；三百十二日運用。", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "PSLV 第4段 PS4"
 }

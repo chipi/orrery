@@ -11,5 +11,6 @@
     { "met": 17, "label": "ILO", "note": "Inserción en órbita lunar 2008-11-08.", "type": "nominal" },
     { "met": 24, "label": "IMPACTO MIP", "note": "Moon Impact Probe realizó un impacto controlado cerca del polo sur.", "type": "info" },
     { "met": 320, "label": "CONTACTO PERDIDO", "note": "Comunicación perdida 2009-08-29; 312 días de operaciones.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "cuarta etapa PS4 del PSLV"
 }

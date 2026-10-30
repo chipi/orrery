@@ -11,5 +11,6 @@
     { "met": 5, "label": "ILO", "note": "Inserción en órbita lunar 2009-06-23.", "type": "nominal" },
     { "met": 90, "label": "MISIÓN PRIMARIA", "note": "Comienza la fase de exploración de 1 año (programa NASA).", "type": "info" },
     { "met": 455, "label": "CIENCIA EXTENDIDA", "note": "Misión extendida a fase científica de varios años bajo NASA SMD.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Centaur (Atlas V 401)"
 }

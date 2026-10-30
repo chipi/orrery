@@ -76,5 +76,10 @@
       "type": "prose",
       "md": "A lição mais profunda é a distância entre anunciar uma estação e operá-la. A ROS tem herança, intenção e uma justificativa estratégica clara — e ainda assim deve ser construída sob sanções com um orçamento encolhido. Ambição é barata e estações são caras; o programa é um lembrete de que, nos voos espaciais, o plano é a parte fácil, e a parte difícil é pagar por ele."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/mir": "Mir — a estação modular da qual descende o segmento russo",
+    "/programs/salyut": "Salyut — as primeiras estações da Rússia",
+    "/programs/iss": "EEI — a parceria que a Rússia está deixando"
+  }
 }

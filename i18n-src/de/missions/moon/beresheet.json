@@ -14,5 +14,6 @@
     { "met": 41, "label": "ANFLUG AUF DEN MOND", "note": "Abschließendes translunares Manöver – Beresheet auf direkter Mondbahn.", "type": "nominal" },
     { "met": 48, "label": "EINTRITT IN DIE MONDUMLAUFBAHN", "note": "Einfangmanöver in elliptische Mondumlaufbahn am 04.04.2019.", "type": "nominal" },
     { "met": 48.01, "label": "ANOMALIE BEIM ABSTIEG", "note": "IMU-Rücksetzung während des motorisierten Abstiegs → Triebwerksabschaltung → Absturz im Mare Serenitatis am 11.04.2019.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "zweite Stufe der Falcon 9 in den GTO (Mitflug)"
 }

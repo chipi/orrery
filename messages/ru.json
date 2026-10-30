@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "флот",
   "program_link_kind_gallery": "галерея",
   "program_link_kind_program": "программа",
-  "program_link_kind_science": "наука"
+  "program_link_kind_science": "наука",
+  "engine_cycle_gas_generator": "газогенераторный",
+  "engine_cycle_staged": "замкнутый цикл",
+  "engine_cycle_staged_ox_rich": "замкнутый (окислительный газ)",
+  "engine_cycle_staged_full_flow": "замкнутый (полнопоточный)",
+  "engine_cycle_expander": "безгазогенераторный",
+  "engine_cycle_expander_bleed": "безгазогенераторный с отбором",
+  "engine_prop_liquid_methane": "жидкий метан",
+  "engine_prop_ethyl_alcohol": "этиловый спирт"
 }

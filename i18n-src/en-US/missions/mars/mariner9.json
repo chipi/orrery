@@ -13,5 +13,6 @@
     { "met": 168, "label": "MOI", "note": "15-min solid-motor burn places Mariner 9 into a 1398 × 17,917 km, 64.4° orbit — first ever orbit of another planet.", "type": "info" },
     { "met": 200, "label": "DUST CLEARS", "note": "Global storm subsides; imaging begins.", "type": "info" },
     { "met": 515, "label": "END OF MISSION", "note": "1972-10-27. Attitude-control gas exhausted.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Centaur D-1A upper stage"
 }

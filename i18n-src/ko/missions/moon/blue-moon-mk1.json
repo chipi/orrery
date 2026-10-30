@@ -12,5 +12,6 @@
     { "met": 1.5, "label": "TCM-1", "note": "첫 경로 중간 수정.", "type": "nominal" },
     { "met": 4, "label": "LOI", "note": "BE-7 주 엔진으로 달 궤도 삽입.", "type": "nominal" },
     { "met": 4.1, "label": "동력 하강", "note": "BE-7 스로틀 하강으로 달 표면 — Blue Origin 최초 달 착지.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "New Glenn 2단 (TLI 연소)"
 }

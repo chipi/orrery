@@ -88,5 +88,10 @@
       "type": "prose",
       "md": "Die tiefere Lektion handelt davon, vom Ziel her rückwärts zu entwerfen. Als schrittweise Verbesserung bestehender Raketen ergibt Starship keinen Sinn; es ergibt nur dann Sinn, wenn das eigentliche Ziel die Besiedlung eines anderen Planeten ist – und jede ungewöhnliche Entscheidung, die Größe, die vollständige Wiederverwendung, das Auftanken im Orbit, folgt daraus. Ob der Mars erreicht wird oder nicht: Das Fahrzeug zeigt, wie es aussieht, auf einen Endzustand hin zu konstruieren, den der Großteil der Branche für eine Fantasie hält."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starship": "Flotte — das Startsystem Starship",
+    "/programs/spacex": "SpaceX — die Wiederverwendbarkeit, auf der Starship aufbaut",
+    "/mars": "Mars — das Ziel"
+  }
 }

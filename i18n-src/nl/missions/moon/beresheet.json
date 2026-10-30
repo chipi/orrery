@@ -14,5 +14,6 @@
     { "met": 41, "label": "NADERING VAN DE MAAN", "note": "Finale transmaanverbranding — Beresheet op directe maantrajectorium.", "type": "nominal" },
     { "met": 48, "label": "INTREDE IN MAANBAAN", "note": "Vangst in elliptische maanbaan 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "AFWIJKING TIJDENS AFDALING", "note": "IMU-reset tijdens aangedreven afdaling → motorafschakeling → crash in Mare Serenitatis 2019-04-11.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "tweede trap van de Falcon 9 naar GTO (meelift)"
 }

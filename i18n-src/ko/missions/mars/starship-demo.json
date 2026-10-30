@@ -11,5 +11,6 @@
     { "met": 1, "label": "궤도 급유", "note": "LEO에서 탱커 접근 및 여러 번 비행에 걸친 추진제 이송.", "type": "nominal" },
     { "met": 2, "label": "TMI 연소", "note": "완전 급유된 LEO 상태에서 화성 이행 주입.", "type": "nominal" },
     { "met": 274, "label": "화성 착륙", "note": "화성 표면 동력 하강 — 낙하산·에어백·스카이크레인 없음.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Starship 상단"
 }

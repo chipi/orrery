@@ -11,5 +11,6 @@
     { "met": 0.01, "label": "TLI", "note": "LM-3B上段による直接月トランスジェクション投入", "type": "nominal" },
     { "met": 5, "label": "月周回軌道投入", "note": "2013年12月6日、高度100 kmの円形月周回軌道への投入。", "type": "nominal" },
     { "met": 13, "label": "着陸", "note": "雨の海への軟着陸2013年12月14日。Luna 24（1976年）以来初の軟着陸。数時間後にYutuローバーを配置。", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Long March 3B/E と YZ-1 上段"
 }

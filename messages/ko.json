@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "함대",
   "program_link_kind_gallery": "갤러리",
   "program_link_kind_program": "프로그램",
-  "program_link_kind_science": "과학"
+  "program_link_kind_science": "과학",
+  "engine_cycle_gas_generator": "가스 발생기",
+  "engine_cycle_staged": "다단 연소",
+  "engine_cycle_staged_ox_rich": "다단 연소 (산화제 과잉)",
+  "engine_cycle_staged_full_flow": "전유량 다단 연소",
+  "engine_cycle_expander": "팽창",
+  "engine_cycle_expander_bleed": "팽창 블리드",
+  "engine_prop_liquid_methane": "액체 메탄",
+  "engine_prop_ethyl_alcohol": "에틸알코올"
 }

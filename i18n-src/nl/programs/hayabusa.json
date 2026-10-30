@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "De diepere les is de kracht van focus. JAXA kon NASA niet overtreffen in uitgaven aan alles, dus koos het één buitengewoon moeilijk ding en werd er het beste ter wereld in. In een veld waar de verleiding altijd is om meer te proberen, is Hayabusa een pleidooi voor minder, dieper doen — en een primeur behalen waar grotere programma's dan naar jou moeten komen om te leren."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=hayabusa-2": "Vloot — de Hayabusa-sondes",
+    "/explore": "Verkennen — de planetoïden Itokawa en Ryugu"
+  }
 }

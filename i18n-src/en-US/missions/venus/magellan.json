@@ -13,5 +13,6 @@
     { "met": 463, "label": "VOI", "note": "Solid-motor burn into a 295 × 8543 km, 85.5° near-polar orbit.", "type": "info" },
     { "met": 950, "label": "MAPPING CYCLE 1 COMPLETE", "note": "First full pass — 84% surface coverage at 100 m resolution.", "type": "info" },
     { "met": 1988, "label": "TERMINATION EXPERIMENT", "note": "1994-10-13. Periapsis lowered into atmosphere — first planned planetary spacecraft entry.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Inertial Upper Stage (IUS)"
 }

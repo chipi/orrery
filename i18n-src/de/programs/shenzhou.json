@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "Die tiefere Lehre betrifft den Wert der Unabhängigkeit. Ein geliehener Platz kann einem genommen werden; eine Fähigkeit, die man sich selbst aufgebaut hat, nicht. Shenzhou ist das Raumschiff, das garantiert, dass China nie bitten muss – und diese Garantie ist, mehr als jeder einzelne Flug, das, was das Programm eigentlich leisten sollte."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=shenzhou": "Flotte — das Raumschiff Shenzhou",
+    "/programs/tiangong": "Tiangong — die Station, die Shenzhou-Crews bauten und anfliegen",
+    "/programs/soyuz": "Soyuz — das Raumschiff, von dem die Bauweise von Shenzhou abstammt"
+  }
 }

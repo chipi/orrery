@@ -14,5 +14,6 @@
     { "met": 41, "label": "APROXIMACIÓN LUNAR", "note": "Quemado translunar final — Beresheet en trayectoria lunar directa.", "type": "nominal" },
     { "met": 48, "label": "INSERCIÓN EN ÓRBITA LUNAR", "note": "Captura en órbita lunar elíptica el 04-04-2019.", "type": "nominal" },
     { "met": 48.01, "label": "ANOMALÍA EN EL DESCENSO", "note": "Reinicio de la IMU durante el descenso motorizado → apagado del motor → impacto en Mare Serenitatis el 11-04-2019.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "segunda etapa del Falcon 9 a GTO (lanzamiento compartido)"
 }

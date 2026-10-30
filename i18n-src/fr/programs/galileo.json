@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "La leçon plus profonde est que la patience transforme les indices en connaissance. L'océan d'Europe était invisible lors d'un seul passage ; il n'a émergé que du poids accumulé de nombreux passages, rassemblés au cours d'années en orbite. Les découvertes les plus importantes ne sont souvent pas vues mais construites — assemblées mesure par mesure, jusqu'à ce qu'une hypothèse devienne la seule chose qui corresponde aux données."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Jupiter dans l'explorateur 3D",
+    "/programs/cassini": "Cassini — la même idée, autour de Saturne"
+  }
 }

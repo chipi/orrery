@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "Die zweite Lehre betrifft den Zweck eines Notbehelfs – und seine Grenzen. Voskhod leistete genau eines gut: Es verschaffte Zeit und zwei weitere Premieren, während das eigentliche Raumschiff der nächsten Generation entstand. Das ist ein legitimer Einsatz improvisierter Hardware. Der Fehler wäre gewesen, weiterzufliegen und Schlagzeilen hinterherzujagen, bis die Sicherheitsreserve aufgebraucht war – und es gereicht Koroljow zur Ehre, dass er den Beinahe-Unfall richtig deutete und einen Schlussstrich zog. Zu erkennen, wann ein Notbehelf seine Aufgabe erfüllt hat, ist ebenso wichtig, wie ihn zu bauen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — Umlaufbahnen & Startplätze",
+    "/science/mission-phases/edl": "Eintritt, Abstieg & Landung"
+  }
 }

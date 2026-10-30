@@ -15,5 +15,6 @@
     { "met": 700, "label": "PROPELENTE DE RETORNO LISTO", "note": "La planta de ISRU ha producido suficiente metano + LOX para el propelente del viaje de retorno.", "type": "info" },
     { "met": 750, "label": "ENCENDIDO ITT", "note": "Inyección transterrestre — Starship despega de la superficie marciana y enciende para la trayectoria de retorno a la Tierra.", "type": "nominal" },
     { "met": 950, "label": "LLEGADA A LA TIERRA", "note": "Entrada atmosférica. Misión completa.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Starship"
 }

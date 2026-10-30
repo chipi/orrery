@@ -88,5 +88,10 @@
       "type": "prose",
       "md": "La lezione più profonda riguarda il progettare a ritroso da un obiettivo. Starship non ha senso come miglioramento incrementale ai razzi esistenti; ha senso solo se l'obiettivo reale è colonizzare un altro pianeta, e ogni scelta strana — le dimensioni, il riutilizzo completo, il rifornimento orbitale — segue da quello. Che Marte sia raggiunto o meno, il veicolo è una lezione su come appare progettare per uno stato finale che la maggior parte dell'industria considera una fantasia."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starship": "Flotta — il sistema di lancio Starship",
+    "/programs/spacex": "SpaceX — la riutilizzabilità su cui si basa Starship",
+    "/mars": "Marte — la destinazione"
+  }
 }

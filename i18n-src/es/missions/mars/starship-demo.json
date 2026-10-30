@@ -11,5 +11,6 @@
     { "met": 1, "label": "REPOSTAJE ORBITAL", "note": "Encuentro con cisternas y transferencia de propelente en LEO a lo largo de varios vuelos.", "type": "nominal" },
     { "met": 2, "label": "ENCENDIDO ITM", "note": "Inyección transmarciana desde un estado en LEO totalmente cargado.", "type": "nominal" },
     { "met": 274, "label": "ATERRIZAJE EN MARTE", "note": "Descenso propulsado a la superficie de Marte — sin paracaídas, sin airbags, sin grúa aérea.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Starship"
 }

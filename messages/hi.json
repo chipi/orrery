@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "बेड़ा",
   "program_link_kind_gallery": "गैलरी",
   "program_link_kind_program": "कार्यक्रम",
-  "program_link_kind_science": "विज्ञान"
+  "program_link_kind_science": "विज्ञान",
+  "engine_cycle_gas_generator": "गैस-जनित्र",
+  "engine_cycle_staged": "चरणबद्ध दहन",
+  "engine_cycle_staged_ox_rich": "चरणबद्ध दहन (ऑक्सीकारक-समृद्ध)",
+  "engine_cycle_staged_full_flow": "पूर्ण-प्रवाह चरणबद्ध दहन",
+  "engine_cycle_expander": "एक्सपैंडर",
+  "engine_cycle_expander_bleed": "ब्लीड एक्सपैंडर",
+  "engine_prop_liquid_methane": "तरल मीथेन",
+  "engine_prop_ethyl_alcohol": "एथिल अल्कोहल"
 }

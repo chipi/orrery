@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "De tweede les is dat ingenieursuitmuntendheid een programma niet kan redden van het verlies van zijn doel en zijn budget. Buran was, op echte manieren, een beter ontwerp dan het voertuig waarop het antwoordde — en het vloog één keer. De Amerikaanse Shuttle, met alle gebreken, vloog dertig jaar omdat het missies had om te vliegen en geld om ze te vliegen. Een ruimtevaartuig is slechts zo duurzaam als de institutionele wil en financiering erachter; zonder die is zelfs een foutloze vlucht een einde in plaats van een begin."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/space-shuttle": "Space Shuttle — het voertuig waarop het een antwoord was",
+    "/fleet?focus=buran": "Vloot — Buran-orbiter & Energia"
+  }
 }

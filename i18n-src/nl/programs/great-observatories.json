@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "De diepere les is de waarde van een volgehouden traditie boven een enkele triomf. De echte kracht van het programma is niet de vier oorspronkelijke telescopen maar de continuïteit van ambitie die ze begonnen — een decennialange toewijding om grotere ogen te blijven bouwen. Individuele missies verouderen en sterven; de traditie van altijd het volgende, betere observatorium bouwen is wat het uitzicht blijft uitbreiden."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=hubble": "Vloot — Hubble, Chandra, Spitzer & JWST",
+    "/programs/space-shuttle": "Space Shuttle — het voertuig dat Hubble lanceerde en onderhield",
+    "/explore": "Verkennen — de deep-sky objecten die deze telescopen onthulden",
+    "/earth?site=hubble": "Hubble in een lage baan om de Aarde",
+    "/earth?site=chandra": "Chandra-röntgenobservatorium"
+  }
 }

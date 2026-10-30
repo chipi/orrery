@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La segunda lección es el peligro de permitir que una fecha límite anule una advertencia. Soyuz 1 voló con fallos que sus propios ingenieros habían señalado, porque responder a Apollo importaba más, ese mes, que admitir que la nave no estaba lista —y un cosmonauta murió por ello. Es el mismo fallo que la cultura de secretismo a-toda-costa de Vostok había estado ensayando, finalmente pagado con una vida. Cuando las personas más cercanas a la máquina dicen que no está lista, lo que debería ceder es el calendario."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Tierra: órbitas, encuentros y bases de lanzamiento",
+    "/science/mission-phases/edl": "Entrada, descenso y aterrizaje"
+  }
 }

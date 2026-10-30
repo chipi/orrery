@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "Die zweite Lektion lautet: Partnerschaft vervielfacht ein begrenztes Budget. Indem Europa die Mittel vieler Nationen über eine einzige Agentur bündelte und sie in Fähigkeiten investierte, die ihm eine dauerhafte Rolle sicherten, erreichte es in der bemannten Raumfahrt weit mehr, als seine Ausgaben allein erwarten ließen – und machte die Beherrschung einer einzigen Nische, des automatisierten Frachttransports, zu einem Anteil an der Rückkehr zum Mond. Für eine Macht, die die Giganten nicht überbieten kann, ist es die bessere Strategie, unverzichtbar zu sein, als unabhängig zu sein – und Europa lässt diese Strategie seit vierzig Jahren aufgehen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "ISS — die Station, die Europa mitgebaut hat",
+    "/programs/ariane": "Ariane — die Trägerrakete, die das ATV beförderte"
+  }
 }

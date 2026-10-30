@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "A segunda lição está escrita nos dois acidentes: uma organização está em seu momento mais perigoso quando se acostuma com um risco que sobreviveu antes. Challenger e Columbia foram ambos perdidos por perigos que tinham aparecido repetidamente e sido reclassificados, cada vez, como aceitáveis — a normalização do desvio. As correções técnicas foram a parte fácil; a lição difícil e permanente é que um aviso recorrente deve ser tratado como um aviso não importa quantas vezes ainda não matou ninguém. Quatorze pessoas morreram provando isso duas vezes."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — órbitas e bases de lançamento",
+    "/fleet?focus=discovery": "Frota — os orbitadores do Space Shuttle"
+  }
 }

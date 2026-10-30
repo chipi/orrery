@@ -11,5 +11,6 @@
     { "met": 17, "label": "MOI", "note": "إدخال مدار قمري 2008-11-08.", "type": "nominal" },
     { "met": 24, "label": "اصطدام MIP", "note": "استهدف Moon Impact Probe هبوطاً صعباً بالقرب من القطب الجنوبي.", "type": "info" },
     { "met": 320, "label": "فقدان الاتصال", "note": "فقد الاتصال 2009-08-29؛ 312 يوم عمل.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "المرحلة الرابعة PS4 لصاروخ PSLV"
 }

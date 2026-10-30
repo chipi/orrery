@@ -12,5 +12,6 @@
     { "met": 7, "label": "ATERRIZAJE", "note": "Aterrizaje suave en Mare Imbrium 1970-11-17.", "type": "nominal" },
     { "met": 7.005, "label": "DESPLIEGUE DEL RÓVER", "note": "Lunokhod 1 baja por las rampas a la superficie lunar.", "type": "info" },
     { "met": 329, "label": "ÚLTIMO CONTACTO", "note": "Última sesión de mando 1971-09-14; el róver se conserva en la fría noche lunar.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Blok-D"
 }

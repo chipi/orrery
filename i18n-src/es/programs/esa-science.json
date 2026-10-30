@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "La lección más profunda es que el enfoque supera a la amplitud para una potencia mediana. La ESA no puede hacer todo lo que hace la NASA, así que hace unas pocas cosas que nadie más ha hecho —aterrizar sobre un cometa, mapear la galaxia, cartografiar el universo oscuro— y se convierte en líder a través de la profundidad en lugar de la escala. Escoger el problema difícil adecuado y resolverlo de forma definitiva es cómo una coalición supera su presupuesto."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Explorar: los cometas y el cielo profundo que cartografía la ESA",
+    "/fleet?focus=rosetta": "Flota — Rosetta, Gaia y Euclid",
+    "/programs/ariane": "Ariane: el cohete que lanza la ciencia de la ESA",
+    "/earth?site=gaia": "Gaia en L2",
+    "/earth?site=xmm": "XMM-Newton"
+  }
 }

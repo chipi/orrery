@@ -28,5 +28,10 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of JAXA's robotic missions is that a failed arrival is not always a failed mission. Akatsuki and SLIM both suffered failures that would normally end a program, and both delivered their science anyway because their teams treated the broken spacecraft as a problem to solve rather than a loss to accept. Ingenuity applied to a crippled mission can recover most of its value." },
     { "type": "prose", "md": "The deeper lesson is that ambition and budget are separable. JAXA does frontier science on a fraction of a superpower's funding by choosing narrow, hard goals and flying lean — proof that leadership in exploration is available to anyone willing to specialize deeply and improvise well, rather than only to those who can afford flagships." }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Moon — SLIM's landing site",
+    "/explore": "Explore — Venus and the inner planets",
+    "/programs/hayabusa": "Hayabusa — JAXA's asteroid sample-return campaign"
+  }
 }

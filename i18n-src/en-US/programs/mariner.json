@@ -28,5 +28,10 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Mariner is that a single close look can overturn a century of assumption. Telescopes had studied Venus and Mars for generations and got the essentials wrong — a warm twin, a canal-laced world of life. A few hours of flyby data corrected both. When the real evidence is finally gathered, it often bears little resemblance to the careful theories built in its absence; the first direct measurement is worth more than any amount of inference." },
     { "type": "prose", "md": "The deeper lesson is that capabilities compound. Mariner did not set out to invent the gravity assist or the planetary orbiter as ends in themselves — it solved the problem in front of it, and each solution became a permanent tool the next mission could assume. Progress on hard frontiers is often less about single triumphs than about building a grammar of moves that everyone who comes after gets to use for free." }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — the world Mariner first photographed",
+    "/programs/viking": "Viking — the landers Mariner scouted the way for",
+    "/mars?site=mariner9": "Mariner 9 in Mars orbit"
+  }
 }

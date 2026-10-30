@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "Die zweite Lehre lautet: Internationale Partnerschaft kann tragen, was sich nationaler Stolz nicht leisten kann. Mir überstand ihre schwersten Jahre, weil Zusammenarbeit an die Stelle des Wettbewerbs trat – weil ein früherer Gegner Gründe hatte, sie am Fliegen zu halten. Dieselbe Logik hat die ISS erbaut und hält sie in der Umlaufbahn: Keine einzelne Nation finanziert heute allein eine dauerhafte menschliche Präsenz im All. Mir ist der Ort, an dem dieser Wandel zunächst von den Umständen erzwungen und dann bewusst gewählt wurde – und er zählt zu den folgenreichsten Veränderungen in der Geschichte der Raumfahrt."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze",
+    "/fleet?focus=mir": "Flotte — Raumstation Mir"
+  }
 }

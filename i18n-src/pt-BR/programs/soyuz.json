@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "A segunda lição é o perigo de deixar um prazo sobrepor um alerta. A Soyuz 1 voou com falhas que seus próprios engenheiros haviam sinalizado, porque responder à Apollo importava mais, naquele mês, do que admitir que a nave não estava pronta — e um cosmonauta morreu por isso. É a mesma falha que a cultura de sigilo do deve-ter-sucesso da Vostok vinha ensaiando, finalmente paga com uma vida. Quando as pessoas mais próximas da máquina dizem que ela não está pronta, é o cronograma que deveria ceder."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — órbitas, encontros e bases de lançamento",
+    "/science/mission-phases/edl": "Entrada, descida e pouso"
+  }
 }

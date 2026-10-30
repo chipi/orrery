@@ -11,5 +11,6 @@
     { "met": 0.01, "label": "TLI", "note": "Inyección translunar directa en la etapa superior del LM-3B.", "type": "nominal" },
     { "met": 5, "label": "INSERCIÓN EN ÓRBITA LUNAR", "note": "Captura en órbita lunar circular de 100 km el 2013-12-06.", "type": "nominal" },
     { "met": 13, "label": "ATERRIZAJE", "note": "Alunizaje suave en Mare Imbrium el 2013-12-14. Primer alunizaje suave desde Luna 24 (1976). Róver Yutu desplegado horas después.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Long March 3B/E con etapa superior YZ-1"
 }

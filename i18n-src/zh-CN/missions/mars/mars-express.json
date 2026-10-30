@@ -12,5 +12,6 @@
     { "met": 200, "label": "释放 BEAGLE 2", "note": "登陆器与轨道器分离，开始独立下降", "type": "nominal" },
     { "met": 206, "label": "进入火星轨道", "note": "37分钟的主发动机燃烧将轨道器捕获进入火星轨道，时间是2003年圣诞节当天。", "type": "nominal" },
     { "met": 212, "label": "BEAGLE 2 失联", "note": "预期的首次信号未被接收；登陆器被宣布丧失。", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Fregat 上面级"
 }

@@ -80,5 +80,14 @@
       "type": "prose",
       "md": "より深い教訓は、偉大な能力は飛躍ではなく段階的に構築されるということだ。PerseveranceのサンプルキャッシングSojournerの時代には想像もできなかった。それが可能になったのは、各ローバーが次のローバーを稼いだからだ。野心的な目標は通常、単一の決定的なミッションによってではなく、忍耐強い系譜によって到達される。各メンバーが次に続くものを正当化するのに十分なことを証明する——進歩はスプリントではなくリレーなのだ。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "火星 — ローバーの世界",
+    "/programs/viking": "Viking — 車輪より先に来た着陸機",
+    "/mars?site=mars-pathfinder": "Sojourner — アレス渓谷",
+    "/mars?site=spirit": "Spirit — グセフ・クレーター",
+    "/mars?site=opportunity": "Opportunity — メリディアニ平原",
+    "/mars?site=curiosity": "Curiosity — ゲール・クレーター",
+    "/mars?site=perseverance": "Perseverance — ジェゼロ・クレーター"
+  }
 }

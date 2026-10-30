@@ -232,6 +232,21 @@
       return String(v);
     };
     type Unit = (inputs: { value: string }) => string;
+    // Engine spec values that are words (cycle names, the two non-symbol propellants);
+    // chemical designations (LOX, LH2, RP-1, N2O4, UDMH …) stay as written.
+    const CYCLE: Record<string, () => string> = {
+      'gas-generator': m.engine_cycle_gas_generator,
+      'staged-combustion': m.engine_cycle_staged,
+      'staged-combustion (ox-rich)': m.engine_cycle_staged_ox_rich,
+      'staged-combustion (full-flow)': m.engine_cycle_staged_full_flow,
+      expander: m.engine_cycle_expander,
+      'expander-bleed': m.engine_cycle_expander_bleed,
+    };
+    const cycle: Unit = ({ value }) => CYCLE[value]?.() ?? value;
+    const propellant: Unit = ({ value }) =>
+      value
+        .replace('liquid methane', m.engine_prop_liquid_methane())
+        .replace('ethyl alcohol', m.engine_prop_ethyl_alcohol());
     const push = (label: string, key: string, unit?: Unit) => {
       const v = fmt(s[key]);
       if (v !== null) rows.push({ label, value: unit ? unit({ value: v }) : v });
@@ -254,8 +269,8 @@
     push(m.fleet_spec_target(), 'mission_target');
     push(m.fleet_spec_instruments(), 'instruments_count');
     // Engine (PRD-032) — one of thrust_kn_sl/vac is present per engine.
-    push(m.fleet_spec_cycle(), 'cycle');
-    push(m.fleet_spec_propellant(), 'propellant');
+    push(m.fleet_spec_cycle(), 'cycle', cycle);
+    push(m.fleet_spec_propellant(), 'propellant', propellant);
     push(m.fleet_spec_thrust(), 'thrust_kn_sl', m.fleet_value_kn_sl);
     push(m.fleet_spec_thrust(), 'thrust_kn_vac', m.fleet_value_kn_vac);
     push(m.fleet_spec_isp(), 'isp_vac_s', m.fleet_value_isp_vac);

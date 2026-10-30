@@ -11,5 +11,6 @@
     { "met": 30, "label": "TCM-1", "note": "第一次軌道修正。", "type": "nominal" },
     { "met": 308, "label": "火星周回軌道投入", "note": "三十三分間の主エンジン燃焼で MAVEN を三十五時間楕円の科学軌道へ捕捉。", "type": "nominal" },
     { "met": 350, "label": "最初の科学観測", "note": "大気サンプリングの「ディープ・ディップ」運用開始 — 近点高度約125 km。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Centaur 上段（Atlas V 401）"
 }

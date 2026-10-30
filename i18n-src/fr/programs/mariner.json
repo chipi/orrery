@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La leçon plus profonde est que les capacités se cumulent. Mariner n'a pas cherché à inventer l'assistance gravitationnelle ou l'orbiteur planétaire comme des fins en soi — elle a résolu le problème devant elle, et chaque solution est devenue un outil permanent que la mission suivante pouvait utiliser. Le progrès aux frontières difficiles tient souvent moins à des triomphes isolés qu'à la construction d'une grammaire de manœuvres que tous ceux qui viennent après peuvent utiliser gratuitement."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — le monde que Mariner a photographié le premier",
+    "/programs/viking": "Viking — les atterrisseurs dont Mariner a reconnu la route",
+    "/mars?site=mariner9": "Mariner 9 en orbite martienne"
+  }
 }

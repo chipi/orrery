@@ -14,5 +14,6 @@
     { "met": 295.01, "label": "TOUCHDOWN", "note": "Soft landing at 68.22°N, 234.25°E — northernmost Mars surface mission.", "type": "info" },
     { "met": 302, "label": "ICE EXPOSED", "note": "Arm scrapes through topsoil. Bright white ice sublimates on camera over 4 sols.", "type": "info" },
     { "met": 458, "label": "MISSION END", "note": "2008-11-02. Mars winter; solar power below operations threshold.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Star 48B PAM-D solid upper stage"
 }

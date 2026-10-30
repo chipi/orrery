@@ -14,5 +14,6 @@
     { "met": 12, "label": "上升", "note": "约一周月面作业后，着陆器返回月球轨道。", "type": "nominal" },
     { "met": 14, "label": "TEI", "note": "地球转移注入。", "type": "nominal" },
     { "met": 18, "label": "溅落", "note": "Orion 在太平洋溅落。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "SLS ICPS（临时低温推进级）"
 }

@@ -96,5 +96,10 @@
       "type": "prose",
       "md": "E a nota humana que vale manter: a recusa dos astronautas em serem carga. Recebendo um projeto que os tratava como passageiros, eles insistiram em ser pilotos — uma janela, um manche, uma voz no voo — e essa insistência, mais que qualquer missão isolada, é o que tornou o programa deles e definiu o caráter de tudo que veio depois."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — órbitas, reentrada e bases de lançamento",
+    "/science/mission-phases/edl": "Entrada, descida e pouso",
+    "/science/propulsion/tsiolkovsky": "A equação do foguete — por que o Redstone não conseguia orbitar"
+  }
 }

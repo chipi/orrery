@@ -14,5 +14,6 @@
     { "met": 12, "label": "상승", "note": "약 1주일의 표면 작업 후 착륙선이 달 궤도로 돌아온다.", "type": "nominal" },
     { "met": 14, "label": "TEI", "note": "지구 이행 주입.", "type": "nominal" },
     { "met": 18, "label": "해상 착수", "note": "Orion이 태평양에 착수.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "SLS ICPS (임시 극저온 추진단)"
 }

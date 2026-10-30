@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "De diepere les gaat over wat onafhankelijkheid waard is. Een geleende stoel kan worden weggenomen; een capaciteit die je zelf hebt gebouwd niet. Shenzhou is het voertuig dat garandeert dat China nooit hoeft te vragen — en die garantie, meer dan enige individuele vlucht, is het ding dat het programma werkelijk is gebouwd om te leveren."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=shenzhou": "Vloot — het ruimteschip Shenzhou",
+    "/programs/tiangong": "Tiangong — het station dat Shenzhou-bemanningen bouwden en bezoeken",
+    "/programs/soyuz": "Soyuz — het ruimteschip waarvan de opbouw van Shenzhou afstamt"
+  }
 }

@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "fleet",
   "program_link_kind_gallery": "gallery",
   "program_link_kind_program": "program",
-  "program_link_kind_science": "science"
+  "program_link_kind_science": "science",
+  "engine_cycle_gas_generator": "gas generator",
+  "engine_cycle_staged": "staged combustion",
+  "engine_cycle_staged_ox_rich": "staged combustion (ox-rich)",
+  "engine_cycle_staged_full_flow": "staged combustion (full-flow)",
+  "engine_cycle_expander": "expander",
+  "engine_cycle_expander_bleed": "expander bleed",
+  "engine_prop_liquid_methane": "liquid methane",
+  "engine_prop_ethyl_alcohol": "ethyl alcohol"
 }

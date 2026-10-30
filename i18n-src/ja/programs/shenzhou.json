@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "より深い教訓は、独立が何の価値があるかについてである。借りた席は取り上げられることがある。自分で構築した能力は取り上げられない。Shenzhouは中国が決して尋ねる必要がないことを保証する機体である——そしてその保証が、どの単一の飛行よりも、プログラムが本当に届けるために構築されたものなのだ。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=shenzhou": "フリート — Shenzhou 宇宙船",
+    "/programs/tiangong": "Tiangong — Shenzhou の乗組員が建設し、通うステーション",
+    "/programs/soyuz": "Soyuz — Shenzhou の構成の元になった宇宙船"
+  }
 }

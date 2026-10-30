@@ -15,5 +15,6 @@
     { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli separated from TGO 2016-10-16, three days before atmospheric entry.", "type": "nominal" },
     { "met": 219, "label": "ENTRY", "note": "Atmospheric entry 2016-10-19.", "type": "nominal" },
     { "met": 219.01, "label": "DESCENT ANOMALY", "note": "IMU saturation → premature parachute jettison + thruster cutoff at altitude → impact ~150 m/s in Meridiani Planum.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Proton-M with Briz-M upper stage; ExoMars 2016 launched as TGO+Schiaparelli together"
 }

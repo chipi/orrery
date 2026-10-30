@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "A segunda lição é o que o sigilo compra, e o que ele custa. Esconder os fracassos e gerenciar a verdade deixou o programa parecer invencível, o que tinha valor real na Guerra Fria. Mas também significava que o programa nunca poderia ser visto falhando — o que o tornou cauteloso nos lugares errados, incapaz de assumir os riscos visíveis que aprender coisas difíceis requer. Uma organização que não pode se dar ao luxo de falhar em público eventualmente não pode se dar ao luxo de *aprender* em público também."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — órbitas e bases de lançamento",
+    "/science/mission-phases/edl": "Entrada, descida e pouso"
+  }
 }

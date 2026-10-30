@@ -11,5 +11,6 @@
     { "met": 30, "label": "TCM-1", "note": "首次轨道修正。", "type": "nominal" },
     { "met": 308, "label": "进入火星轨道", "note": "33 分钟的主发动机燃烧将 MAVEN 捕获进一个 35 小时的椭圆科学轨道。", "type": "nominal" },
     { "met": 350, "label": "首批科学数据", "note": "开始进行大气采样的\"深层俯冲\"活动，近火点高度约 125 千米。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Centaur 上面级（Atlas V 401）"
 }

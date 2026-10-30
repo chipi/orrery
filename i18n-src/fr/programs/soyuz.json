@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La deuxième leçon est le danger de laisser une échéance supplanter un avertissement. Soyuz 1 vola avec des défauts que ses propres ingénieurs avaient signalés, parce que répondre à Apollo importait plus, ce mois-là, que d'admettre que le vaisseau n'était pas prêt — et un cosmonaute mourut pour cela. C'est le même échec que la culture du secret imposant-la-réussite de Vostok avait répété, finalement payé d'une vie. Lorsque les personnes les plus proches de la machine disent qu'elle n'est pas prête, c'est le calendrier qui devrait céder."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terre — orbites, rendez-vous et sites de lancement",
+    "/science/mission-phases/edl": "Entrée, descente et atterrissage"
+  }
 }

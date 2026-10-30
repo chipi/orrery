@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La segunda lección está en cómo Gemini manejó sus primeros desastres de paseos espaciales — no como vergüenzas que enterrar, sino como información. La técnica estaba fallando, así que lo dijeron, averiguaron por qué y la reconstruyeron: asideros, sujeciones, práctica bajo el agua, hasta que funcionó. Un equipo que puede admitir que algo no está funcionando, a tiempo de arreglarlo antes de que importe, vale mucho más que uno que nunca parece fallar."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Tierra: órbitas, encuentros y bases de lanzamiento",
+    "/science/mission-phases/edl": "Entrada, descenso y aterrizaje"
+  }
 }

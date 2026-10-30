@@ -15,5 +15,6 @@
     { "met": 216.5, "label": "SEPARAZIONE", "note": "Schiaparelli si separò da TGO 2016-10-16, tre giorni prima dell'ingresso in atmosfera.", "type": "nominal" },
     { "met": 219, "label": "INGRESSO", "note": "Ingresso in atmosfera 2016-10-19.", "type": "nominal" },
     { "met": 219.01, "label": "ANOMALIA IN DISCESA", "note": "Saturazione IMU → espulsione prematura del paracadute + spegnimento dei propulsori in quota → impatto a ~150 m/s in Meridiani Planum.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Proton-M con stadio superiore Briz-M; ExoMars 2016 ha lanciato insieme TGO e Schiaparelli"
 }

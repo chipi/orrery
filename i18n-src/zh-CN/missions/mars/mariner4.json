@@ -11,5 +11,6 @@
     { "met": 8, "label": "TCM-1", "note": "首次中途修正完成；轨迹已锁定。", "type": "nominal" },
     { "met": 228, "label": "飞掠火星", "note": "最近接近距离9,846公里。数据回放期间8小时内传回22张图像。", "type": "nominal" },
     { "met": 228.5, "label": "首批图像", "note": "首次返回地球的另一颗行星近距离图像。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Agena D 上面级"
 }

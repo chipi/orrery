@@ -96,5 +96,14 @@
       "type": "prose",
       "md": "E la nota umana da conservare: lo fecero in otto anni, non avendolo mai fatto prima, con computer di bordo più deboli di un moderno campanello. Apollo è un argomento permanente che una missione chiara, le persone giuste e una scadenza onesta possono ancora battere le probabilità — una cosa utile da ricordare la prossima volta che un obiettivo sembra impossibile."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "La Luna — mappa della superficie e siti di allunaggio Apollo",
+    "/science/transfers/free-return": "Traiettoria di ritorno libero",
+    "/science/mission-phases/trans-x-injection": "Iniezione translunare",
+    "/science/mission-phases/edl": "Ingresso, discesa e atterraggio",
+    "/science/propulsion/tsiolkovsky": "L'equazione di Ciolkovskij",
+    "/moon?site=apollo15": "Apollo 15 — Hadley–Appennini",
+    "/moon?site=apollo16": "Apollo 16 — Altopiano Descartes"
+  }
 }

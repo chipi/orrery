@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "A lição mais profunda é que capacidades se acumulam. Mariner não se propôs a inventar a assistência gravitacional ou o orbitador planetário como fins em si mesmos — resolveu o problema à sua frente, e cada solução tornou-se uma ferramenta permanente que a próxima missão poderia assumir. O progresso em fronteiras difíceis é frequentemente menos sobre triunfos isolados do que sobre construir uma gramática de movimentos que todos que vêm depois podem usar de graça."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Marte — o mundo que a Mariner fotografou primeiro",
+    "/programs/viking": "Viking — os módulos de pouso para os quais a Mariner abriu caminho",
+    "/mars?site=mariner9": "Mariner 9 em órbita de Marte"
+  }
 }

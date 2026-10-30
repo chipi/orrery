@@ -90,5 +90,10 @@
       "type": "prose",
       "md": "And the human note worth keeping: the astronauts' refusal to be cargo. Handed a design that treated them as passengers, they insisted on being pilots — a window, a stick, a say in the flight — and that insistence, more than any single mission, is what made the program theirs and set the character of everything that came after."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Earth — orbits, reentry & launch sites",
+    "/science/mission-phases/edl": "Entry, descent & landing",
+    "/science/propulsion/tsiolkovsky": "The rocket equation — why Redstone couldn't orbit"
+  }
 }

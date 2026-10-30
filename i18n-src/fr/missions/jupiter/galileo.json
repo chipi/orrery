@@ -20,5 +20,6 @@
       "note": "Mise à feu du moteur principal pour placer Galileo en orbite ; débute un tour de 8 ans consacré à l'étude scientifique des lunes.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Inertial Upper Stage (IUS, étage supérieur)"
 }

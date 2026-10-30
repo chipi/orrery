@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "Die tiefere Lehre ist die Kraft der Konzentration. JAXA konnte die NASA nicht in allen Bereichen finanziell übertrumpfen, also wählte sie eine einzige außerordentlich schwierige Aufgabe und wurde darin zur Besten der Welt. In einem Feld, in dem stets die Versuchung besteht, mehr zu wagen, ist Hayabusa ein Plädoyer dafür, weniger zu tun, dafür aber gründlicher – und eine Premiere zu halten, bei der größere Programme erst bei einem selbst in die Lehre gehen müssen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=hayabusa-2": "Flotte — die Hayabusa-Sonden",
+    "/explore": "Erkunden — die Asteroiden Itokawa und Ryugu"
+  }
 }

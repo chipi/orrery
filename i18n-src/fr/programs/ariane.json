@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La deuxième leçon est écrite dans Flight 501 : un logiciel réutilisé n'est pas automatiquement un logiciel sûr. Ariane 5 a été détruit parce que le code de guidage éprouvé sur Ariane 4 a été repris sans test dans une fusée qui volait plus vite, où une hypothèse intégrée dans l'ancien code ne tenait plus. Les composants étaient solides ; l'échec résidait dans le fait de supposer que ce qui fonctionnait dans un contexte fonctionnerait sans changement dans un autre. Tout système réutilisé doit être revalidé par rapport aux nouvelles conditions auxquelles il sera réellement confronté — une leçon qui va bien au-delà des fusées."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/esa-human": "L'ESA dans le vol spatial habité — Spacelab, Columbus, ATV",
+    "/fleet?focus=ariane-5": "Flotte — lanceurs Ariane"
+  }
 }

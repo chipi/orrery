@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "flota",
   "program_link_kind_gallery": "galería",
   "program_link_kind_program": "programa",
-  "program_link_kind_science": "ciencia"
+  "program_link_kind_science": "ciencia",
+  "engine_cycle_gas_generator": "generador de gas",
+  "engine_cycle_staged": "combustión por etapas",
+  "engine_cycle_staged_ox_rich": "combustión por etapas (rica en oxidante)",
+  "engine_cycle_staged_full_flow": "combustión por etapas (flujo completo)",
+  "engine_cycle_expander": "expansor",
+  "engine_cycle_expander_bleed": "expansor de purga",
+  "engine_prop_liquid_methane": "metano líquido",
+  "engine_prop_ethyl_alcohol": "alcohol etílico"
 }

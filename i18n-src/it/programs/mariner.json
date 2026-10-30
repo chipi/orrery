@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La lezione più profonda è che le capacità si sommano. Mariner non si propose di inventare la fionda gravitazionale o l'orbitante planetario come fini a sé stessi — risolse il problema che aveva davanti, e ogni soluzione divenne uno strumento permanente che la missione successiva poteva dare per scontato. Il progresso su frontiere difficili è spesso meno una questione di trionfi singoli che di costruzione di una grammatica di mosse che tutti coloro che vengono dopo possono usare gratuitamente."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Marte — il mondo che Mariner fotografò per primo",
+    "/programs/viking": "Viking — i lander a cui Mariner aprì la strada",
+    "/mars?site=mariner9": "Mariner 9 in orbita marziana"
+  }
 }

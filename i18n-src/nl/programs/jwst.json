@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "De diepere les gaat over techniek zonder een tweede kans. JWST kon niet worden getest zoals gevlogen of gerepareerd eenmaal gevlogen, en het slaagde toch — omdat elke foutmodus vooraf werd opgespoord en eruit werd ontworpen, op de grond, over jaren. Het is het ultieme pleidooi voor nauwkeurigheid boven iteratie: wanneer je het echt niet later kunt repareren, is de enige optie om het de eerste keer goed te doen, en Webb bewees dat dit haalbaar is, zelfs bij duizelingwekkende complexiteit."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=jwst": "Vloot — de James Webb-ruimtetelescoop",
+    "/programs/great-observatories": "De Great Observatories — de lijn die JWST voortzet",
+    "/programs/ariane": "Ariane — de raket die hem lanceerde",
+    "/earth?site=jwst": "James Webb-ruimtetelescoop"
+  }
 }

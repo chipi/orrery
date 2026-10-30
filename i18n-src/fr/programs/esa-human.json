@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La deuxième leçon est que le partenariat multiplie un budget limité. En combinant les ressources de nombreuses nations par l'intermédiaire d'une agence unique et en les investissant dans des capacités qui ont gagné un rôle permanent, l'Europe a réalisé bien plus dans le vol spatial habité que ses dépenses seules ne le laisseraient prédire — et a transformé la maîtrise d'une niche, le fret automatisé, en une part du retour vers la Lune. Pour une puissance qui ne peut surpasser les géants en dépenses, être indispensable est une meilleure stratégie qu'être indépendant, et l'Europe l'a fait fonctionner pendant quarante ans."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "ISS — la station que l'Europe a aidé à construire",
+    "/programs/ariane": "Ariane — le lanceur qui a emporté l'ATV"
+  }
 }

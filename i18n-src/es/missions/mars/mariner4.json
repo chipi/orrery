@@ -11,5 +11,6 @@
     { "met": 8, "label": "TCM-1", "note": "Primera corrección de trayectoria completada; trayectoria fijada.", "type": "nominal" },
     { "met": 228, "label": "SOBREVUELO DE MARTE", "note": "Aproximación máxima 9846 km. 22 imágenes devueltas a lo largo de 8 horas durante la reproducción de datos.", "type": "nominal" },
     { "met": 228.5, "label": "PRIMERAS IMÁGENES", "note": "Primeras imágenes de cerca de otro planeta jamás devueltas a la Tierra.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Agena D"
 }

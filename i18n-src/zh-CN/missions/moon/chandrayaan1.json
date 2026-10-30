@@ -11,5 +11,6 @@
     { "met": 17, "label": "MOI", "note": "月球轨道插入 2008-11-08", "type": "nominal" },
     { "met": 24, "label": "MIP 撞月", "note": "月球撞击探测器计划在南极附近硬着陆。", "type": "info" },
     { "met": 320, "label": "失去联系", "note": "通信中断 2009-08-29；运行312天。", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "PSLV 第四级 PS4"
 }

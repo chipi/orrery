@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "vloot",
   "program_link_kind_gallery": "galerij",
   "program_link_kind_program": "programma",
-  "program_link_kind_science": "wetenschap"
+  "program_link_kind_science": "wetenschap",
+  "engine_cycle_gas_generator": "gasgenerator",
+  "engine_cycle_staged": "getrapte verbranding",
+  "engine_cycle_staged_ox_rich": "getrapte verbranding (oxidatorrijk)",
+  "engine_cycle_staged_full_flow": "getrapte verbranding (volledige stroom)",
+  "engine_cycle_expander": "expander",
+  "engine_cycle_expander_bleed": "expander met aftap",
+  "engine_prop_liquid_methane": "vloeibaar methaan",
+  "engine_prop_ethyl_alcohol": "ethylalcohol"
 }

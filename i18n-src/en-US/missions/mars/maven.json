@@ -11,5 +11,6 @@
     { "met": 30, "label": "TCM-1", "note": "First trajectory correction.", "type": "nominal" },
     { "met": 308, "label": "MARS ORBIT INSERTION", "note": "33-minute main engine burn captures MAVEN into a 35-hour elliptical science orbit.", "type": "nominal" },
     { "met": 350, "label": "FIRST SCIENCE", "note": "Begins atmosphere-sampling 'deep dip' campaigns to periapsis altitudes ~125 km.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Centaur upper stage (Atlas V 401)"
 }

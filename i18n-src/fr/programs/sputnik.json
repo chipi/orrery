@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La leçon plus profonde est que la chose la plus puissante qu'une machine puisse faire est d'être observée. Sputnik a changé le monde non pas par ce qu'il a mesuré mais par ce qu'il a démontré — visiblement, audiblement, à tout le monde à la fois. Certaines réalisations comptent pour les données qu'elles rapportent ; celle-ci a compté parce que la planète entière pouvait entendre qu'elle était là."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terre — le monde qu'il a été le premier à contourner",
+    "/programs/vostok": "Vostok — les premiers humains suivent",
+    "/posters": "L'affiche Sputnik"
+  }
 }

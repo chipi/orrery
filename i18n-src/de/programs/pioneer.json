@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Wer als Erster aufbricht, erntet selten den Ruhm – und ist trotzdem von Bedeutung. Die Pioneers sind weniger berühmt als die Voyagers, die sie möglich machten, doch ohne sie wäre die Grand Tour ein Sprung ins Ungewisse gewesen statt eines berechneten Flugs. Zu den wichtigsten Arbeiten zählt die Erkundung, an die sich niemand erinnert – und gerade deshalb lohnt es sich, sie gut zu machen, denn alles, was danach kommt, baut auf ihr auf."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Jupiter im 3D-Explorer",
+    "/programs/voyager": "Voyager — die Tour, die Pioneer erkundete"
+  }
 }

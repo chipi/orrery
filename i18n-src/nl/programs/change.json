@@ -84,5 +84,13 @@
       "type": "prose",
       "md": "De diepere les is dat stille competentie het veld hervormt. Chang'e deed geen grote proclamaties en won geen race om krantenkoppen, maar toch deed het gestage succes meer om de menselijke maanambities wereldwijd opnieuw op te starten dan welke toespraak ook — omdat een programma dat simpelweg blijft slagen, missie na missie, een strategisch feit wordt waar iedereen anders op moet reageren. Consistentie is uiteindelijk zijn eigen vorm van macht."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Maan — de Chang'e-landingsplaatsen",
+    "/fleet?focus=yutu-2": "Vloot — de Yutu-rovers en Chang'e-landers",
+    "/programs/artemis": "Artemis — de parallelle race terug naar de Maan",
+    "/moon?site=change3": "Chang’e 3 — Yutu-rover",
+    "/moon?site=change4": "Chang’e 4 — de achterkant",
+    "/moon?site=change2": "Chang’e 2"
+  }
 }

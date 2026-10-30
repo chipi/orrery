@@ -13,5 +13,6 @@
     { "met": 9.5, "label": "DRILLING", "note": "Core sample extracted from 2 m depth.", "type": "info" },
     { "met": 10, "label": "ASCENT", "note": "Ascent stage lifts off; trans-Earth injection.", "type": "nominal" },
     { "met": 13, "label": "EARTH RETURN", "note": "Capsule lands in Surgut, USSR 1976-08-22 with 170 g of regolith.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Blok-D upper stage"
 }

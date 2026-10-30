@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "La lezione più profonda è che in una capacità in rete, il controllo della catena di approvvigionamento è strategia. Le scelte di lancio di Kuiper — deliberatamente indirizzate intorno al suo rivale — mostrano che quando l'accesso all'orbita è scarso e parzialmente posseduto da un concorrente, da chi acquisti i tuoi passaggi non è un dettaglio di approvvigionamento ma una decisione sull'indipendenza, e vale la pena pagare un premio per farla nel modo giusto."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=kuiper": "Flotta — la costellazione Kuiper",
+    "/programs/starlink": "Starlink — la costellazione che insegue",
+    "/earth": "Terra — le orbite e l'affollamento dell'orbita bassa",
+    "/earth?site=kuiper": "La costellazione Kuiper"
+  }
 }

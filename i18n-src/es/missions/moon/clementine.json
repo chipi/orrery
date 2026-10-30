@@ -12,5 +12,6 @@
     { "met": 30, "label": "INICIO DE MAPEO", "note": "Comienza el mapeo multiespectral y topográfico sistemático.", "type": "info" },
     { "met": 95, "label": "PARTIDA", "note": "Sale de la órbita lunar para el sobrevuelo del asteroide Geographos.", "type": "nominal" },
     { "met": 100, "label": "FALLO DE PROPULSOR", "note": "Mal funcionamiento de propulsor a bordo agota el propelente; encuentro con el asteroide cancelado.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Star-37 del Titan II"
 }

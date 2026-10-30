@@ -82,5 +82,9 @@
       "type": "prose",
       "md": "The second lesson is that a station is only as secure as its supply line. Skylab was doomed the moment the gap between its last crew and its next possible visit stretched past the life of its orbit. Impressive hardware in space is worthless if you cannot reliably reach it; the continuous, boring, expensive work of keeping a transport system running is not a footnote to a station program but its precondition. Skylab fell because that line was allowed to lapse."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Earth — orbits & launch sites",
+    "/fleet?focus=skylab": "Fleet — Skylab orbital workshop"
+  }
 }

@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Baue mit weit mehr Reserve, als der Plan verlangt. Die Voyager-Sonden wurden für eine Mission ausgelegt, die nur ein Zehntel so lang dauern sollte wie die, die sie tatsächlich geflogen sind – und sie hielten durch, weil ihre Erbauer sie überdimensioniert hatten: redundante Systeme, umprogrammierbare Computer, Energie im Überfluss. Ein Ehrgeiz, der nur die erwartete Mission plant, endet mit der erwarteten Mission; weiter fliegen jene, die für mehr gebaut wurden, als man von ihnen verlangt hat."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Die äußeren Planeten im 3D-Explorer",
+    "/gallery/deep-sky": "Der „Pale Blue Dot“ in der Deep-Sky-Galerie",
+    "/programs/pioneer": "Pioneer — die Sonden, die zuerst flogen"
+  }
 }

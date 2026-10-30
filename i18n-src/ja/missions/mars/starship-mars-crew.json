@@ -15,5 +15,6 @@
     { "met": 700, "label": "帰還用推進剤の準備完了", "note": "ISRU プラントが帰還に十分なメタンと LOX を製造完了。", "type": "info" },
     { "met": 750, "label": "TEI 噴射", "note": "地球注入 — Starshipが火星表面から再上昇し地球帰還軌道へ。", "type": "nominal" },
     { "met": 950, "label": "地球到着", "note": "大気圏再突入。ミッション完了。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Starship 上段"
 }

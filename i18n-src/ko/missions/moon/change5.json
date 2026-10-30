@@ -14,5 +14,6 @@
     { "met": 10, "label": "상승", "note": "상승체가 달 표면에서 이륙.", "type": "nominal" },
     { "met": 13, "label": "접합", "note": "최초 무인 달 접합; 시료 용기를 궤도선으로 이관.", "type": "info" },
     { "met": 23, "label": "지구 귀환", "note": "샘플 캡슐이 2020-12-16 내몽골에 착륙.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Long March 5 YZ-1 상단"
 }

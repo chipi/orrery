@@ -88,5 +88,12 @@
       "type": "prose",
       "md": "La seconde leçon est que le secret et la responsabilité sont des contraires, et qu'un programme a plus besoin du second qu'il ne craint la perte du premier. Cacher l'effort soviétique l'a protégé de l'embarras public et, ce faisant, a supprimé toutes les forces externes qui auraient pu le forcer à affronter ses problèmes à temps. Apollo a été forcé d'être honnête parce que le monde entier regardait ; la N1 a été autorisée à échouer tranquillement, quatre fois, parce que personne ne regardait. La visibilité n'est pas seulement un risque à gérer. Pour une entreprise difficile et impitoyable, c'est l'une des choses qui rendent le succès possible."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "La Lune — surface, sites d'alunissage et exploration",
+    "/fleet?focus=n1": "Flotte — le lanceur super-lourd N1",
+    "/moon?site=luna16": "Luna 16 — premier retour d'échantillons robotisé",
+    "/moon?site=luna17": "Luna 17 — Lunokhod 1",
+    "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  }
 }

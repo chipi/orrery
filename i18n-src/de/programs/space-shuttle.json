@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "Die zweite Lehre steht in den beiden Unfällen geschrieben: Eine Organisation ist dann am gefährlichsten, wenn sie sich an ein Risiko gewöhnt, das sie schon einmal überstanden hat. Challenger und Columbia gingen beide an Gefahren verloren, die wiederholt aufgetreten und jedes Mal als akzeptabel neu eingestuft worden waren – die Normalisierung der Abweichung. Die technischen Korrekturen waren der leichte Teil; die schwere, bleibende Lehre lautet, dass eine wiederkehrende Warnung als Warnung behandelt werden muss, gleichgültig wie oft sie noch niemanden getötet hat. Vierzehn Menschen starben dafür, es gleich zweimal zu beweisen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — Umlaufbahnen & Startplätze",
+    "/fleet?focus=discovery": "Flotte — Space-Shuttle-Orbiter"
+  }
 }

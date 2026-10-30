@@ -28,5 +28,10 @@
   "lessons": [
     { "type": "prose", "md": "The lesson Gaganyaan is testing is whether the frugal, incremental method that carried India to the Moon and Mars can be extended to the one domain that punishes shortcuts hardest: human safety. Robotic missions can fail and teach; a crewed one that fails kills. Gaganyaan is the case study in whether ISRO's discipline scales to a problem where the margin for error is zero." },
     { "type": "prose", "md": "The deeper lesson is that in human spaceflight, arriving last can be a form of wisdom. India comes to crewed flight with every predecessor's accidents to study, and the chance to engineer out in advance the failures that others discovered fatally. Being decades late costs it prestige it does not seem to want; what it buys, if the method holds, is astronauts who come home." }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=gaganyaan": "Fleet — the Gaganyaan spacecraft",
+    "/programs/chandrayaan": "Chandrayaan — India's Moon program",
+    "/programs/mangalyaan": "Mangalyaan — India's first-try Mars mission"
+  }
 }

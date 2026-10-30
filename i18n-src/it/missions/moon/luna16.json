@@ -12,5 +12,6 @@
     { "met": 5, "label": "TCM", "note": "Correzione di rotta durante la crociera di 4,5 giorni.", "type": "info" },
     { "met": 5.1, "label": "ATTERRAGGIO", "note": "Allunaggio dolce in Mare Fecunditatis 1970-09-20. Operazioni in superficie + carotaggio (101 g).", "type": "nominal" },
     { "met": 8, "label": "RIENTRO DEI CAMPIONI", "note": "Capsula recuperata in Kazakistan 1970-09-24. Primo ritorno di campioni lunari non equipaggio.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "stadio superiore Blok-D"
 }

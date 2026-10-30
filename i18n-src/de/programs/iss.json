@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "Die zweite Lektion lautet: In der Raumfahrt beginnt nichts bei null. Die ISS ist die Summe aller Programme vor ihr – der Versorgung von Salyut, der Modularität von Mir, der Wissenschaft von Skylab, der Montage des Shuttles, der Zuverlässigkeit von Sojus, der Labore Europas und Japans –, nichts davon wurde neu erfunden, alles wurde geerbt und kombiniert. Die tiefste Wahrheit des Raumfahrtzeitalters ist, dass seine Errungenschaften aufeinander aufbauen: Jedes Programm steht auf den vorangegangenen, und die Station steht auf ihnen allen. Fortschritt im Weltraum ist keine Folge von Neuanfängen, sondern ein einziger, ununterbrochener Akt des Bauens, von Hand zu Hand weitergereicht über Generationen und über Grenzen hinweg."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze",
+    "/fleet?focus=iss": "Flotte — die Internationale Raumstation",
+    "/programs/mir": "Mir — die Station, deren Erbe die ISS antrat",
+    "/earth?site=iss": "Die ISS über uns"
+  }
 }

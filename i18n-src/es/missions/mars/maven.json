@@ -11,5 +11,6 @@
     { "met": 30, "label": "TCM-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
     { "met": 308, "label": "INSERCIÓN ORBITAL EN MARTE", "note": "Encendido del motor principal de 33 minutos captura a MAVEN en una órbita científica elíptica de 35 horas.", "type": "nominal" },
     { "met": 350, "label": "PRIMERA CIENCIA", "note": "Comienza las campañas de \"inmersión profunda\" para muestrear la atmósfera a altitudes de periapsis ~125 km.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Centaur (Atlas V 401)"
 }

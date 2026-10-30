@@ -11,5 +11,6 @@
     { "met": 0.01, "label": "TLI", "note": "Directe trans-maaninjection op het bovenste trapje van de LM-3B.", "type": "nominal" },
     { "met": 5, "label": "INTREDE IN MAANBAAN", "note": "Opvang in baan om de maan op 100 km hoogte, circulaire baan op 2013-12-06.", "type": "nominal" },
     { "met": 13, "label": "LANDING", "note": "Zachte landing in Mare Imbrium op 2013-12-14. Eerste zachte landing sinds Luna 24 (1976). Yutu-rover enkele uren later ingezet.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Long March 3B/E met bovenste trap YZ-1"
 }

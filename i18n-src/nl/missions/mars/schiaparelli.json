@@ -15,5 +15,6 @@
     { "met": 216.5, "label": "SCHEIDING", "note": "Schiaparelli scheidde zich van TGO af op 16 oktober 2016, drie dagen vóór de atmosfeertoetrede.", "type": "nominal" },
     { "met": 219, "label": "INTREDE", "note": "Atmosfeertoetrede 19 oktober 2016.", "type": "nominal" },
     { "met": 219.01, "label": "AFWIJKING TIJDENS AFDALING", "note": "IMU-verzadiging → voortijdig parachutebevrijding + stuwerstopping op hoogte → inslag ~150 m/s in Meridiani Planum.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Proton-M met bovenste trap Briz-M; ExoMars 2016 lanceerde TGO en Schiaparelli samen"
 }

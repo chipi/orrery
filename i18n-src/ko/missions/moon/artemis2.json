@@ -13,5 +13,6 @@
     { "met": 5.02, "label": "달 근접 비행", "note": "뒷면 최근접 고도 ~6,500 km이며, 인류가 가장 멀리 간 지점: 지구에서 406,771 km. 궤도 삽입 없음 — 자유 귀환 기하가 Orion을 지구로 슬링샷.", "type": "info" },
     { "met": 6, "label": "TCM-2", "note": "귀환 궤도 수정.", "type": "nominal" },
     { "met": 9.06, "label": "해상 착수", "note": "Orion 재진입과 태평양 해상 착수.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "SLS ICPS (임시 극저온 추진단)"
 }

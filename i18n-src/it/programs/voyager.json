@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La lezione più profonda è costruire con un margine molto maggiore di quanto richieda il piano. Le Voyager furono progettate per una missione lunga un decimo di quella che hanno compiuto, e sono sopravvissute perché i loro creatori le hanno sovradimensionate — sistemi ridondanti, computer riprogrammabili, energia in abbondanza. L'ambizione che pianifica solo per la missione prevista finisce con la missione prevista; quelle che continuano sono quelle costruite per più di quanto fosse loro richiesto."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "I pianeti esterni nell'esploratore 3D",
+    "/gallery/deep-sky": "Il «pallido puntino azzurro», nella galleria Cielo profondo",
+    "/programs/pioneer": "Pioneer — le sonde che partirono per prime"
+  }
 }

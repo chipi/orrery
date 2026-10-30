@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "De diepere les is dat capaciteiten zich ophopen. Mariner ging er niet op uit om de zwaartekrachthulp of de planetaire orbiter als doel op zich uit te vinden — het loste het probleem ervoor op, en elke oplossing werd een permanent gereedschap dat de volgende missie kon aannemen. Vooruitgang op moeilijke grenzen gaat vaak minder over individuele triomfen dan over het bouwen van een grammatica van bewegingen die iedereen die daarna komt gratis kan gebruiken."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — de wereld die Mariner als eerste fotografeerde",
+    "/programs/viking": "Viking — de landers waarvoor Mariner de weg verkende",
+    "/mars?site=mariner9": "Mariner 9 in een baan om Mars"
+  }
 }

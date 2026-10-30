@@ -82,5 +82,11 @@
       "type": "prose",
       "md": "The second lesson is that nothing in spaceflight starts from scratch. The ISS is the sum of every program before it — Salyut's resupply, Mir's modularity, Skylab's science, the Shuttle's assembly, Soyuz's reliability, Europe's and Japan's laboratories — none of it invented anew, all of it inherited and combined. The deepest truth of the space age is that its achievements are cumulative: each program stands on the ones before, and the Station stands on them all. Progress in space is not a series of fresh beginnings but a single, continuous act of building, carried forward hand to hand across generations and across borders."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Earth — orbits, rendezvous & launch sites",
+    "/fleet?focus=iss": "Fleet — the International Space Station",
+    "/programs/mir": "Mir — the station the ISS inherited from",
+    "/earth?site=iss": "The ISS overhead"
+  }
 }

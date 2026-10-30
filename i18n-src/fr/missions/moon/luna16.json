@@ -12,5 +12,6 @@
     { "met": 5, "label": "TCM", "note": "Correction de trajectoire pendant la croisière de 4,5 jours.", "type": "info" },
     { "met": 5.1, "label": "ATTERRISSAGE", "note": "Alunissage en douceur dans Mare Fecunditatis le 1970-09-20. Opérations de surface + carottage (101 g).", "type": "nominal" },
     { "met": 8, "label": "RETOUR D'ÉCHANTILLONS", "note": "Capsule récupérée au Kazakhstan le 1970-09-24. Premier retour d'échantillons lunaires non-habité.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "étage supérieur Blok-D"
 }

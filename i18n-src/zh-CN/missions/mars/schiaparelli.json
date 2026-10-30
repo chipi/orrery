@@ -15,5 +15,6 @@
     { "met": 216.5, "label": "分离", "note": "Schiaparelli于2016年10月16日与TGO分离，三天后进入大气层。", "type": "nominal" },
     { "met": 219, "label": "进入大气层", "note": "2016年10月19日大气层进入。", "type": "nominal" },
     { "met": 219.01, "label": "下降异常", "note": "惯性测量单元饱和 → 降落伞提前抛弃 + 高空制动推进器关闭 → 在子午平原以~150米/秒速度撞击。", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Proton-M 搭配 Briz-M 上面级；ExoMars 2016 将 TGO 与 Schiaparelli 一同发射"
 }

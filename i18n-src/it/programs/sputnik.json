@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La lezione più profonda è che la cosa più potente che una macchina può fare è essere testimoniata. Sputnik cambiò il mondo non attraverso ciò che misurò ma attraverso ciò che dimostrò — visibilmente, udibilmente, a tutti contemporaneamente. Alcuni successi contano per i dati che restituiscono; questo contò perché l'intero pianeta poteva sentire che era lì."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — il mondo che per primo circumnavigò",
+    "/programs/vostok": "Vostok — seguono i primi esseri umani",
+    "/posters": "Il poster dello Sputnik"
+  }
 }

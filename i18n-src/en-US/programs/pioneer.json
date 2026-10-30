@@ -28,5 +28,9 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Pioneer is the value of the scout. The most important thing the Pioneers did was reduce uncertainty for the missions behind them — turning guesses about the asteroid belt and Jupiter's radiation into hard numbers a designer could build against. On any real frontier, a cheap probe sent to measure the danger is worth far more than its cost, because it lets the expensive follow-on be built for the world as it is rather than as it was feared to be." },
     { "type": "prose", "md": "The deeper lesson is that going first rarely brings the glory, and matters anyway. The Pioneers are less famous than the Voyagers they made possible, but without them the Grand Tour would have been a leap into the unknown rather than a calculated flight. Some of the most important work is the reconnaissance nobody remembers — and it is worth doing well precisely because everything after it depends on it." }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Jupiter in the 3D explorer",
+    "/programs/voyager": "Voyager — the tour Pioneer scouted"
+  }
 }

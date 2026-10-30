@@ -11,5 +11,6 @@
     { "met": 5, "label": "MOI", "note": "달 궤도 삽입 2009-06-23.", "type": "nominal" },
     { "met": 90, "label": "본 임무", "note": "1년 탐사 단계(NASA 프로그램) 시작.", "type": "info" },
     { "met": 455, "label": "연장 과학", "note": "NASA SMD 산하 다년 과학 단계로 연장.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Centaur 상단 (Atlas V 401)"
 }

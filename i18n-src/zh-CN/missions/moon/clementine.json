@@ -12,5 +12,6 @@
     { "met": 30, "label": "开始测绘", "note": "系统性多光谱和地形图测绘工作开始。", "type": "info" },
     { "met": 95, "label": "离开", "note": "离开月球轨道前往小行星地理星飞掠。", "type": "nominal" },
     { "met": 100, "label": "推进器故障", "note": "星载推进器故障导致推进剂耗尽；小行星接近任务被取消。", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Titan II Star-37 上面级"
 }

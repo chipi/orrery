@@ -28,5 +28,13 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Chang'e is that a patient, published ladder of capability can outperform a dramatic sprint. China did not try to leap to the hardest goals; it climbed to them, proving orbiting before landing, landing before roving, roving before sample return — and by the time it attempted the truly unprecedented, the far-side landing and sample return, it had earned every prerequisite. Method, sustained over two decades, produced a run of firsts no rival matched." },
     { "type": "prose", "md": "The deeper lesson is that quiet competence reshapes the field. Chang'e made no grand proclamations and won no race for headlines, yet its steady success did more to restart human lunar ambition worldwide than any speech — because a program that simply keeps succeeding, mission after mission, becomes a strategic fact that everyone else has to answer. Consistency, in the end, is its own kind of power." }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Moon — the Chang'e landing sites",
+    "/fleet?focus=yutu-2": "Fleet — the Yutu rovers and Chang'e landers",
+    "/programs/artemis": "Artemis — the parallel race back to the Moon",
+    "/moon?site=change3": "Chang’e 3 — Yutu rover",
+    "/moon?site=change4": "Chang’e 4 — the far side",
+    "/moon?site=change2": "Chang’e 2"
+  }
 }

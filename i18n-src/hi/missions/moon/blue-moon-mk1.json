@@ -12,5 +12,6 @@
     { "met": 1.5, "label": "TCM-1", "note": "पहला मध्य-पथ सुधार।", "type": "nominal" },
     { "met": 4, "label": "LOI", "note": "BE-7 मुख्य इंजन द्वारा चंद्र कक्षा समावेश।", "type": "nominal" },
     { "met": 4.1, "label": "संचालित उतराव", "note": "BE-7 थ्रॉटल्ड उतराव चंद्र सतह तक — Blue Origin का पहला चंद्र स्पर्श।", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "New Glenn दूसरा चरण (TLI बर्न)"
 }

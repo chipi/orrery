@@ -12,5 +12,6 @@
     { "met": 5, "label": "TCM", "note": "4.5일 항행 중 중간 궤도 수정.", "type": "info" },
     { "met": 5.1, "label": "착륙", "note": "풍요의 바다에 연착륙 1970-09-20. 표면 운영 + 드릴 코어 채취 (101 g).", "type": "nominal" },
     { "met": 8, "label": "시료 귀환", "note": "카자흐스탄에서 캡슐 회수 1970-09-24. 최초의 무인 달 샘플 귀환.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Blok-D 상단"
 }

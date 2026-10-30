@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "A segunda lição está escrita no Voo 501: software reutilizado não é automaticamente software seguro. Ariane 5 foi destruída porque código de orientação comprovado em Ariane 4 foi transferido sem testes para um foguete que voava mais rápido, onde uma premissa embutida no código antigo não mais se sustentava. Os componentes eram sólidos; a falha foi assumir que o que funcionava em um contexto funcionaria inalterado em outro. Todo sistema reutilizado deve ser revalidado contra as novas condições que realmente enfrentará — uma lição que vai muito além de foguetes."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/esa-human": "A ESA no voo espacial tripulado — Spacelab, Columbus, ATV",
+    "/fleet?focus=ariane-5": "Frota — lançadores Ariane"
+  }
 }

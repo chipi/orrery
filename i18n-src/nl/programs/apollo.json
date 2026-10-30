@@ -96,5 +96,14 @@
       "type": "prose",
       "md": "En de menselijke noot die het waard is te bewaren: ze deden het in acht jaar, zonder het ooit eerder te hebben gedaan, met boordcomputers zwakker dan een moderne deurbel. Apollo is een blijvend argument dat een heldere missie, de juiste mensen en een eerlijke deadline nog steeds de kansen kunnen verslaan — een nuttig ding om te onthouden de volgende keer dat een doel onmogelijk lijkt."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "De Maan — oppervlaktekaart & Apollo-landingsplaatsen",
+    "/science/transfers/free-return": "Vrije-terugkeerbaan",
+    "/science/mission-phases/trans-x-injection": "Translunaire injectie",
+    "/science/mission-phases/edl": "Intrede, daling & landing",
+    "/science/propulsion/tsiolkovsky": "De raketvergelijking",
+    "/moon?site=apollo15": "Apollo 15 — Hadley–Apennijnen",
+    "/moon?site=apollo16": "Apollo 16 — Descartes-hoogland"
+  }
 }

@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "A lição mais profunda é que foco supera amplitude para uma potência de médio porte. A ESA não pode fazer tudo que a NASA faz, então faz algumas coisas que ninguém mais fez — pousar em um cometa, mapear a galáxia, mapear o universo escuro — e se torna líder através de profundidade em vez de escala. Escolher o problema difícil certo e resolvê-lo definitivamente é como uma coalizão joga acima de seu orçamento."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Explorar — os cometas e o céu profundo que a ESA mapeia",
+    "/fleet?focus=rosetta": "Frota — Rosetta, Gaia e Euclid",
+    "/programs/ariane": "Ariane — o foguete que lança a ciência da ESA",
+    "/earth?site=gaia": "Gaia em L2",
+    "/earth?site=xmm": "XMM-Newton"
+  }
 }

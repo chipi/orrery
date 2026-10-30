@@ -96,5 +96,10 @@
       "type": "prose",
       "md": "Et la note humaine qui mérite d'être retenue : le refus des astronautes d'être du fret. Face à une conception qui les traitait comme des passagers, ils insistèrent pour être des pilotes — un hublot, un manche, un mot à dire dans le vol — et cette insistance, plus que n'importe quelle mission, est ce qui rendit le programme leur et définit le caractère de tout ce qui suivit."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terre — orbites, rentrée et sites de lancement",
+    "/science/mission-phases/edl": "Entrée, descente et atterrissage",
+    "/science/propulsion/tsiolkovsky": "L'équation de Tsiolkovski — pourquoi la Redstone ne pouvait pas atteindre l'orbite"
+  }
 }

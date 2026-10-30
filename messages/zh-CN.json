@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "航天器",
   "program_link_kind_gallery": "图库",
   "program_link_kind_program": "计划",
-  "program_link_kind_science": "科学"
+  "program_link_kind_science": "科学",
+  "engine_cycle_gas_generator": "燃气发生器",
+  "engine_cycle_staged": "补燃循环",
+  "engine_cycle_staged_ox_rich": "补燃（富氧）",
+  "engine_cycle_staged_full_flow": "全流量补燃",
+  "engine_cycle_expander": "膨胀",
+  "engine_cycle_expander_bleed": "抽气膨胀",
+  "engine_prop_liquid_methane": "液态甲烷",
+  "engine_prop_ethyl_alcohol": "乙醇"
 }

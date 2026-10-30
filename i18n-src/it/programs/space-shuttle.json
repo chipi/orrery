@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La seconda lezione è scritta nei due incidenti: un'organizzazione è più pericolosa quando si abitua a un rischio a cui è sopravvissuta in precedenza. Challenger e Columbia furono entrambi persi a causa di pericoli che erano apparsi ripetutamente ed erano stati riclassificati, ogni volta, come accettabili — la normalizzazione della devianza. Le correzioni tecniche furono la parte facile; la lezione difficile e permanente è che un avvertimento ricorrente deve essere trattato come un avvertimento indipendentemente da quante volte non abbia ancora ucciso nessuno. Quattordici persone morirono dimostrandolo due volte."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — orbite e siti di lancio",
+    "/fleet?focus=discovery": "Flotta — gli orbiter dello Space Shuttle"
+  }
 }

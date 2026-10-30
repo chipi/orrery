@@ -11,5 +11,6 @@
     { "met": 202, "label": "화성 궤도 삽입", "note": "엔진 연소로 우주선 화성 궤도 포획.", "type": "nominal" },
     { "met": 295, "label": "주룽 착륙", "note": "착륙선/로버가 2021-05-14 유토피아 평원 하강; Zhurong이 2021-05-22 램프 하차.", "type": "nominal" },
     { "met": 651, "label": "주룽 휴면", "note": "로버 2022-05 계획 휴면; 궤도선은 계속.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Long March 5 YZ-1 상단"
 }

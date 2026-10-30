@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "Die tiefere Lehre ist der Wert einer beständigen Tradition gegenüber einem einzelnen Triumph. Die eigentliche Stärke des Programms liegt nicht in den vier ursprünglichen Teleskopen, sondern in der Kontinuität des Ehrgeizes, den sie begründeten – einer jahrzehntelangen Verpflichtung, immer größere Augen zu bauen. Einzelne Missionen altern und enden; die Tradition, stets das nächste, bessere Observatorium zu bauen, hält den Blick im Wachsen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=hubble": "Flotte — Hubble, Chandra, Spitzer & JWST",
+    "/programs/space-shuttle": "Space Shuttle — das Fahrzeug, das Hubble startete und wartete",
+    "/explore": "Erkunden — die Deep-Sky-Objekte, die diese Teleskope enthüllten",
+    "/earth?site=hubble": "Hubble in niedriger Erdumlaufbahn",
+    "/earth?site=chandra": "Röntgenobservatorium Chandra"
+  }
 }

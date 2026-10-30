@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "La leçon plus profonde est que dans une capacité en réseau, le contrôle de la chaîne d'approvisionnement est une stratégie. Les choix de lancement de Kuiper — délibérément détournés de son rival — montrent que lorsque l'accès à l'orbite est rare et partiellement détenu par un concurrent, auprès de qui vous achetez vos trajets n'est pas un détail d'approvisionnement mais une décision concernant l'indépendance, et qui vaut la peine de payer une prime pour être prise correctement."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=kuiper": "Flotte — la constellation Kuiper",
+    "/programs/starlink": "Starlink — la constellation qu'il cherche à rattraper",
+    "/earth": "Terre — les orbites et l'encombrement de l'orbite basse",
+    "/earth?site=kuiper": "La constellation Kuiper"
+  }
 }

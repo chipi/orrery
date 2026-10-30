@@ -54,6 +54,12 @@ export async function getMission(
       });
       merged.flight = { ...baseRecord.flight, events: mergedEvents };
     }
+    // The overlay carries the upper-stage line (/fly injection beat, FLIGHT tab) at the top
+    // level; the structural record keeps it under flight.launch.
+    const stage = (overlay as { vehicle_stage?: unknown }).vehicle_stage;
+    if (typeof stage === 'string' && merged.flight?.launch) {
+      merged.flight = { ...merged.flight, launch: { ...merged.flight.launch, vehicle_stage: stage } };
+    }
     return merged;
   } catch {
     return null;

@@ -11,5 +11,6 @@
     { "met": 202, "label": "火星周回軌道投入", "note": "エンジン燃焼で宇宙機を火星軌道へ捕捉。", "type": "nominal" },
     { "met": 295, "label": "ZHURONG 着陸", "note": "着陸機／ローバーが2021-05-14にユートピア平原へ下降；Zhurong が2021-05-22にランプ降下。", "type": "nominal" },
     { "met": 651, "label": "ZHURONG 休眠", "note": "ローバーが計画休眠二〇二二年五月；軌道機は継続。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Long March 5 の YZ-1 上段"
 }

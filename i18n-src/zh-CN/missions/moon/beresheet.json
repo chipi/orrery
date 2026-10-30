@@ -14,5 +14,6 @@
     { "met": 41, "label": "接近月球", "note": "最后的月球转移变轨——Beresheet 进入直接月球轨迹。", "type": "nominal" },
     { "met": 48, "label": "进入月球轨道", "note": "进入椭圆形月球轨道 2019-04-04", "type": "nominal" },
     { "met": 48.01, "label": "下降异常", "note": "惯性测量装置重置（在动力下降期间）→ 发动机关闭 → 坠毁在宁静海 2019-04-11", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Falcon 9 第二级送入 GTO（拼车发射）"
 }

@@ -11,5 +11,6 @@
     { "met": 17, "label": "MOI", "note": "달 궤도 삽입 2008-11-08.", "type": "nominal" },
     { "met": 24, "label": "MIP 충격", "note": "달 충돌 탐사선이 남극 근처에 경착륙을 목표로 했습니다.", "type": "info" },
     { "met": 320, "label": "교신 두절", "note": "2009-08-29 교신 두절; 312일 운용.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "PSLV 4단 PS4"
 }

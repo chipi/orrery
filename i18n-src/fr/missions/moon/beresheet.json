@@ -14,5 +14,6 @@
     { "met": 41, "label": "APPROCHE LUNAIRE", "note": "Dernier rehaussement trans-lunaire — Beresheet en trajectoire directe vers la Lune.", "type": "nominal" },
     { "met": 48, "label": "INSERTION EN ORBITE LUNAIRE", "note": "Capture en orbite lunaire elliptique 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "ANOMALIE DE DESCENTE", "note": "Réinitialisation de l'IMU lors de la descente motorisée → arrêt du moteur → crash dans Mer de la Sérénité 2019-04-11.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "deuxième étage du Falcon 9 vers GTO (lancement partagé)"
 }

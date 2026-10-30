@@ -28,5 +28,9 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Hayabusa is that a mission that barely survives can be worth more than one that goes smoothly, if the survival is instrumented and learned from. The first probe's cascade of failures was, in the end, the most valuable thing about it — every near-fatal problem became knowledge that made the flawless sequel possible. Failure, fully understood, is a form of progress." },
     { "type": "prose", "md": "The deeper lesson is the power of focus. JAXA could not out-spend NASA on everything, so it chose one extraordinarily hard thing and became the best in the world at it. In a field where the temptation is always to attempt more, Hayabusa is a case for doing less, deeper — and holding a first that larger programs then have to come to you to learn." }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=hayabusa-2": "Fleet — the Hayabusa probes",
+    "/explore": "Explore — asteroids Itokawa and Ryugu"
+  }
 }

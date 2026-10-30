@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "Die tiefere Lektion lautet: In der bemannten Raumfahrt kann es eine Form von Weisheit sein, als Letzter anzukommen. Indien betritt die bemannte Raumfahrt mit den Unfällen aller Vorgänger als Studienmaterial – und mit der Chance, jene Fehler von vornherein herauszukonstruieren, die andere erst tödlich entdecken mussten. Dass es Jahrzehnte zu spät kommt, kostet es Prestige, das es offenbar gar nicht will; was es sich damit erkauft, sofern die Methode trägt, sind Astronauten, die wieder nach Hause kommen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=gaganyaan": "Flotte — das Raumschiff Gaganyaan",
+    "/programs/chandrayaan": "Chandrayaan — Indiens Mondprogramm",
+    "/programs/mangalyaan": "Mangalyaan — Indiens Marsmission, die beim ersten Versuch gelang"
+  }
 }

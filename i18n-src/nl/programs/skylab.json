@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "De tweede les is dat een station slechts zo veilig is als zijn bevoorradingslijn. Skylab was gedoemd op het moment dat de kloof tussen de laatste bemanning en het eerstvolgende mogelijke bezoek de levensduur van zijn baan oversteeg. Indrukwekkende hardware in de ruimte is waardeloos als je het niet betrouwbaar kunt bereiken; het continue, saaie, dure werk om een transportsysteem draaiende te houden is geen voetnoot bij een stationprogramma maar de voorwaarde ervoor. Skylab viel omdat die lijn mocht vervallen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Aarde — banen & lanceerplaatsen",
+    "/fleet?focus=skylab": "Vloot — orbitale werkplaats Skylab"
+  }
 }

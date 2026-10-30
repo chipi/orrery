@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "De tweede les is dat niets in de ruimtevaart vanaf nul begint. Het ISS is de som van elk programma ervoor — Salyut's bevoorrading, Mir's modulariteit, Skylab's wetenschap, de Shuttle's assemblage, Soyuz's betrouwbaarheid, Europa's en Japan's laboratoria — niets ervan opnieuw uitgevonden, alles geërfd en gecombineerd. De diepste waarheid van het ruimtetijdperk is dat zijn prestaties cumulatief zijn: elk programma staat op degenen ervoor, en het Station staat op ze allemaal. Vooruitgang in de ruimte is geen reeks verse starts maar één enkele, continue daad van bouwen, van hand tot hand doorgegeven over generaties en over grenzen heen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Aarde — banen, koppelingen & lanceerplaatsen",
+    "/fleet?focus=iss": "Vloot — het Internationaal ruimtestation",
+    "/programs/mir": "Mir — het station waarvan het ISS de erfgenaam is",
+    "/earth?site=iss": "Het ISS boven ons"
+  }
 }

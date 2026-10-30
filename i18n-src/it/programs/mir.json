@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La seconda lezione è che la cooperazione internazionale può sostenere ciò che l'orgoglio nazionale non può permettersi. Mir sopravvisse ai suoi anni più duri perché la cooperazione sostituì la competizione — perché un ex avversario aveva ragioni per aiutare a mantenerla in volo. La stessa logica costruì la SSI e la mantiene in orbita: nessuna singola nazione oggi finanzia da sola una presenza umana permanente. Mir è il luogo dove quel cambiamento fu prima imposto dalle circostanze e poi scelto di proposito, ed è uno dei cambiamenti più consequenziali nella storia del volo spaziale."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — orbite, rendezvous e siti di lancio",
+    "/fleet?focus=mir": "Flotta — la stazione spaziale Mir"
+  }
 }

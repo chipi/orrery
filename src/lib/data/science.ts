@@ -87,7 +87,16 @@ export async function getProgram(
         ? null
         : await get<ProgramOverlay>(`i18n/en-US/programs/${id}.json`, fetchFn).catch(() => null));
     if (!fallback) return null;
-    return { ...baseRecord, ...fallback };
+    const labels = fallback.link_labels ?? {};
+    return {
+      ...baseRecord,
+      ...fallback,
+      see_also: baseRecord.see_also?.map((s) => ({ ...s, label: labels[s.href] ?? s.label })),
+      surface_sites: baseRecord.surface_sites?.map((s) => ({
+        ...s,
+        label: labels[`/${s.surface}?site=${s.site}`] ?? s.label,
+      })),
+    };
   } catch {
     return null;
   }

@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "La leçon plus profonde est qu'aller en premier apporte rarement la gloire, et compte quand même. Les Pioneer sont moins célèbres que les Voyager qu'elles ont rendues possibles, mais sans elles le Grand Tour aurait été un saut dans l'inconnu plutôt qu'un vol calculé. Une partie du travail le plus important est la reconnaissance dont personne ne se souvient — et il vaut la peine d'être bien fait précisément parce que tout ce qui suit en dépend."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Jupiter dans l'explorateur 3D",
+    "/programs/voyager": "Voyager — le grand tour que Pioneer avait reconnu"
+  }
 }

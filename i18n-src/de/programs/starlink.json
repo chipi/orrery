@@ -84,5 +84,11 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Eine Infrastruktur, die schneller entsteht, als sie sich regeln lässt, bringt echten Nutzen und echtes Risiko zugleich. Starlink hat tatsächlich Menschen ohne Anschluss verbunden – und zugleich entscheidende Fähigkeiten in privaten Händen gebündelt, eine gemeinsam genutzte Umlaufbahn überfüllt und den Himmel der Astronomen mit Lichtspuren durchzogen. Die Aufgabe, die es hinterlässt, besteht nicht darin, es rückgängig zu machen, sondern darin, aufzuholen: die Regeln zu schaffen, die eine so mächtige Technologie bereits vor ihrem Start hätte haben sollen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starlink": "Flotte — die Starlink-Konstellation",
+    "/programs/spacex": "SpaceX — die Falcon, die sie startet",
+    "/earth": "Erde — Umlaufbahnen und die enge niedrige Umlaufbahn",
+    "/earth?site=starlink": "Die Starlink-Konstellation"
+  }
 }

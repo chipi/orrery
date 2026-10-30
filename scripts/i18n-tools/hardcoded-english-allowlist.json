@@ -1,0 +1,60 @@
+{
+  "_comment": "Allowlist for hardcoded-english.test.ts: { file: { exact text: why it stays as written } }. Anything else the scan finds in Svelte markup must go through messages/. An entry whose text no longer occurs fails the test too — delete it. Scan: node scripts/i18n-tools/hardcoded-english.mjs",
+  "src/lib/components/AudioOverlay.svelte": {
+    "(.txt)": "file extension of the transcript download; the word before it is a message"
+  },
+  "src/lib/components/BeltPanel.svelte": {
+    "/science/planets/": "part of the link's URL path, shown as the link target",
+    "-belt": "part of the link's URL path, shown as the link target"
+  },
+  "src/lib/components/CommandPalette.svelte": {
+    "esc": "keyboard key cap"
+  },
+  "src/lib/components/ScienceSearch.svelte": {
+    "Enter": "keyboard key cap",
+    "Esc": "keyboard key cap"
+  },
+  "src/lib/components/LaunchTelemetry.svelte": {
+    "SRB": "solid rocket booster — flight-dynamics acronym kept in every locale, like MECO/SECO"
+  },
+  "src/lib/components/StarPanel.svelte": {
+    "HIP": "Hipparcos catalogue prefix of the star's designation"
+  },
+  "src/lib/components/StationRoute.svelte": {
+    "select": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen",
+    "play assembly": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen"
+  },
+  "src/lib/components/TourAnchors.svelte": {
+    "select": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen"
+  },
+  "src/lib/surface-scene/SurfaceScene.svelte": {
+    "reset view": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen"
+  },
+  "src/routes/explore/+page.svelte": {
+    "select": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen",
+    "select sun": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen"
+  },
+  "src/routes/fleet/+page.svelte": {
+    "select saturn v": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen",
+    "select iss": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen",
+    "select hubble": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen"
+  },
+  "src/routes/missions/+page.svelte": {
+    "select apollo 11": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen",
+    "select curiosity": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen",
+    "select voyager 2": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen",
+    "select cassini": "audio-tour anchor: aria-hidden, tabindex -1, clicked by the tour script, never seen"
+  },
+  "src/routes/fly/+page.svelte": {
+    "LYR": "toggle code in the FD / LYR / CON / HUD / CAP row; the button's title is a message",
+    "CON": "toggle code in the FD / LYR / CON / HUD / CAP row; the button's title is a message",
+    "CAP": "toggle code (CAPCOM) in the FD / LYR / CON / HUD / CAP row; the button's title is a message"
+  },
+  "src/routes/library/+page.svelte": {
+    "Jonathan McDowell —": "author of the cited source (GCAT); the catalogue title after it is a message",
+    "Launch Library 2 — The Space Devs": "name of the cited data source"
+  },
+  "src/routes/privacy/+page.svelte": {
+    "info@orrerylearn.com": "contact e-mail address"
+  }
+}

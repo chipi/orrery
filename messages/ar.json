@@ -3523,5 +3523,13 @@
   "program_link_kind_fleet": "الأسطول",
   "program_link_kind_gallery": "المعرض",
   "program_link_kind_program": "برنامج",
-  "program_link_kind_science": "العلوم"
+  "program_link_kind_science": "العلوم",
+  "engine_cycle_gas_generator": "مولد الغاز",
+  "engine_cycle_staged": "الاحتراق المرحلي",
+  "engine_cycle_staged_ox_rich": "الاحتراق المرحلي (غني بالمؤكسد)",
+  "engine_cycle_staged_full_flow": "الاحتراق المرحلي (التدفق الكامل)",
+  "engine_cycle_expander": "التمدد",
+  "engine_cycle_expander_bleed": "التمدد بالتنفيس",
+  "engine_prop_liquid_methane": "الميثان السائل",
+  "engine_prop_ethyl_alcohol": "الكحول الإيثيلي"
 }

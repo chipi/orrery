@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "Die zweite Lehre liegt darin, wie Gemini mit den frühen Pannen bei den Weltraumspaziergängen umging – nicht als Peinlichkeiten, die man vergräbt, sondern als Information. Die Technik funktionierte nicht, also sprach man es aus, fand heraus, warum, und baute sie neu auf: Haltegriffe, Rückhaltevorrichtungen, Training unter Wasser, bis sie funktionierte. Ein Team, das rechtzeitig zugeben kann, dass etwas nicht funktioniert, um es zu beheben, bevor es darauf ankommt, ist weit mehr wert als eines, das nie zu scheitern scheint."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze",
+    "/science/mission-phases/edl": "Eintritt, Abstieg & Landung"
+  }
 }

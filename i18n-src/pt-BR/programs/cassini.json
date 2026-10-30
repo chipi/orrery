@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "A lição mais profunda é que o alcance carrega responsabilidade. Cassini terminou voando para dentro de Saturno para proteger as luas oceânicas que havia descoberto — um reconhecimento de que o poder de visitar um mundo possivelmente vivo vem com o dever de não envená-lo. Capacidade sem essa contenção não é exploração; é invasão."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Saturno no explorador 3D",
+    "/programs/voyager": "Voyager — os sobrevoos que vieram primeiro"
+  }
 }

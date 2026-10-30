@@ -12,5 +12,6 @@
     { "met": 1.5, "label": "TCM-1", "note": "第一次軌道途中修正。", "type": "nominal" },
     { "met": 4, "label": "LOI", "note": "BE-7 主エンジンで月軌道投入。", "type": "nominal" },
     { "met": 4.1, "label": "動力降下", "note": "BE-7 の推力調整下降で月面 — Blue Origin 初の月着陸。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "New Glenn 第2段（TLI 噴射）"
 }

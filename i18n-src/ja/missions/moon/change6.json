@@ -13,5 +13,6 @@
     { "met": 30.6, "label": "試料採取", "note": "裏側レゴリスから一・九三五 kg 採取。", "type": "info" },
     { "met": 32, "label": "上昇", "note": "上昇機離昇；軌道機とランデブウ。", "type": "nominal" },
     { "met": 53, "label": "地球帰還", "note": "カプセルが二〇二四年六月二十五日内モンゴルに着陸 — 史上初の裏側試料。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Long March 5 の YZ-1 上段"
 }

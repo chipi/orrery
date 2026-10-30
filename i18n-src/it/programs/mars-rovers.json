@@ -80,5 +80,14 @@
       "type": "prose",
       "md": "La lezione più profonda è che grandi capacità si costruiscono per passi, non per salti. La sofisticazione del campionamento di Perseverance era inimmaginabile ai tempi di Sojourner; divenne possibile solo perché ogni rover guadagnò il successivo. Fini ambiziosi sono solitamente raggiunti non da una singola missione decisiva ma da una stirpe paziente, ogni membro dimostrando abbastanza da giustificare quello che segue — progresso come una staffetta, non uno sprint."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Marte — il mondo dei rover",
+    "/programs/viking": "Viking — i lander venuti prima delle ruote",
+    "/mars?site=mars-pathfinder": "Sojourner — Ares Vallis",
+    "/mars?site=spirit": "Spirit — cratere Gusev",
+    "/mars?site=opportunity": "Opportunity — Meridiani Planum",
+    "/mars?site=curiosity": "Curiosity — cratere Gale",
+    "/mars?site=perseverance": "Perseverance — cratere Jezero"
+  }
 }

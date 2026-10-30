@@ -12,5 +12,6 @@
     { "met": 4, "label": "TCM", "note": "Correzione di traiettoria durante la navigazione.", "type": "info" },
     { "met": 4.5, "label": "ATTERRAGGIO", "note": "Allunaggio dolce nel cratere Le Monnier il 15-01-1973. Lunokhod 2 scese dalle rampe poche ore dopo.", "type": "nominal" },
     { "met": 7, "label": "ROVER ATTIVO", "note": "Equipaggio da terra di cinque persone in Crimea iniziò le operazioni di guida. Percorso totale: ~39 km.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "stadio superiore Blok-D"
 }

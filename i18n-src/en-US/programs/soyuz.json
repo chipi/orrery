@@ -78,5 +78,9 @@
       "type": "prose",
       "md": "The second lesson is the danger of letting a deadline override a warning. Soyuz 1 flew with faults its own engineers had flagged, because answering Apollo mattered more, that month, than admitting the ship wasn't ready — and a cosmonaut died for it. It is the same failure Vostok's culture of must-succeed secrecy had been rehearsing, finally paid in a life. When the people closest to the machine say it isn't ready, the schedule is the thing that should yield."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Earth — orbits, rendezvous & launch sites",
+    "/science/mission-phases/edl": "Entry, descent & landing"
+  }
 }

@@ -12,5 +12,6 @@
     { "met": 30, "label": "マッピング開始", "note": "体系的な多スペクトル・地形マッピング開始。", "type": "info" },
     { "met": 95, "label": "出発", "note": "ジオグラフォス小惑星フライバイのため月軌道を離れる。", "type": "nominal" },
     { "met": 100, "label": "スラスター故障", "note": "スラスタ故障で推進剤枯渇；小惑星遭遇中止。", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Titan II の Star-37 上段"
 }

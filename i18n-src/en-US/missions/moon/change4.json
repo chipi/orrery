@@ -11,5 +11,6 @@
     { "met": 5, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
     { "met": 27, "label": "TOUCHDOWN", "note": "Lander touches down at Von Kármán Crater 2019-01-03 — first spacecraft on the far side. All comms via Queqiao relay at Earth-Moon L2.", "type": "nominal" },
     { "met": 27.01, "label": "YUTU-2 DEPLOYED", "note": "Rover rolls down ramp.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Long March 3B third stage"
 }

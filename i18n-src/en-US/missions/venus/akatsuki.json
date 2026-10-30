@@ -13,5 +13,6 @@
     { "met": 1000, "label": "SOLAR-ORBIT HOLD", "note": "12 maneuvers over 5 years to maintain a Venus re-encounter trajectory.", "type": "info" },
     { "met": 2027, "label": "VOI-R2 SUCCESS", "note": "2015-12-07. RCS-thruster 1228s burn into 400 × 440,000 km, 3° orbit.", "type": "info" },
     { "met": 2200, "label": "SCIENCE OPERATIONS", "note": "UV/IR cloud-feature tracking; super-rotation studies; bow-shaped gravity waves above Aphrodite Terra. Contact lost 2024; operations declared complete 2025-09-18.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "H-IIA 202 second stage"
 }

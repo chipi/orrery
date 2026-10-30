@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "Die zweite Lehre lautet: Erst die Versorgung macht eine Raumstation wirklich zu einer solchen. Skylab, brillant und kurzlebig, wurde nie versorgt und nie auf eine höhere Bahn gebracht und verfiel, nachdem man es sich selbst überlassen hatte. Dass Salyut darauf bestand, Betankung und Nachschub zu lösen – der zweite Kopplungsstutzen, der Progress-Frachter –, ist genau das, was seine späteren Stationen über Jahre statt nur über Wochen bewohnbar hielt. Eine dauerhafte Präsenz im All entsteht nicht dadurch, dass man ein größeres Raumfahrzeug baut, sondern dadurch, dass man die unscheinbare Logistikkette aufbaut, die ein bescheidenes Raumfahrzeug ununterbrochen am Leben hält."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze",
+    "/fleet?focus=salyut-6": "Flotte — Salyut-Stationen"
+  }
 }

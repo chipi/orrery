@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La seconda lezione è scritta nel Flight 501: il software riutilizzato non è automaticamente software sicuro. Ariane 5 fu distrutto perché il codice di guida collaudato su Ariane 4 fu trasferito senza test in un razzo che volava più velocemente, dove un'assunzione incorporata nel vecchio codice non reggeva più. I componenti erano solidi; il fallimento fu nell'assumere che ciò che funzionava in un contesto avrebbe funzionato invariato in un altro. Ogni sistema riutilizzato deve essere rivalidato rispetto alle nuove condizioni che effettivamente affronterà — una lezione che va ben oltre i razzi."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/esa-human": "L'ESA nel volo spaziale umano — Spacelab, Columbus, ATV",
+    "/fleet?focus=ariane-5": "Flotta — lanciatori Ariane"
+  }
 }

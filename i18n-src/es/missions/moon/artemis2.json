@@ -13,5 +13,6 @@
     { "met": 5.02, "label": "SOBREVUELO LUNAR", "note": "Aproximación máxima sobre la cara oculta, ~6500 km de altitud, y lo más lejos que han viajado seres humanos: 406 771 km de la Tierra. Sin inserción orbital — la geometría de retorno libre devuelve a Orion a la Tierra.", "type": "info" },
     { "met": 6, "label": "TCM-2", "note": "Corrección de trayectoria de retorno.", "type": "nominal" },
     { "met": 9.06, "label": "AMERIZAJE", "note": "Reentrada de Orion y amerizaje en el océano Pacífico.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "SLS ICPS (etapa de propulsión criogénica provisional)"
 }

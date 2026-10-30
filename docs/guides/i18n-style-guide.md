@@ -260,6 +260,35 @@ wrong order).
   defects of locales not audited yet are listed in
   `scripts/i18n-tools/ui-label-baseline.json`, which only shrinks.
 
+### §4b Kept in English on purpose — never translate these
+
+Operator decision (2026-10-30). These stay exactly as written in every locale. A
+"fix" that translates one of them is a regression:
+
+- **Developer panels and debug readouts**: `DebugPanel`, `FlybyDebugViewer`,
+  `AscentCameraDebug`, `TargetEnvSwitcher`, the `label` of `DebugPanelRegistrar` /
+  `RenderingDebugRegistrar`, anything inside `{#if …debug…}` or a `{#snippet …Debug…}`
+  (the /fly Tier-1 and cislunar debug readouts, the coast-camera readout, the
+  surface-scene debug box), and everything under `src/routes/dev/`.
+- **Acronyms and codes**: flight-dynamics acronyms (MECO, SECO, MAX-Q, MAX-G, SRB,
+  TLI, TMI, LOI, MOI, EDL, TCM, TEI, Δv, Isp, C3), the /fly toggle row codes (FD, LYR,
+  CON, HUD, CAP — each button's tooltip is translated), catalogue prefixes (HIP),
+  keyboard key caps (Esc, Enter, ↑ ↓), file extensions.
+- **Physics Lab canvases**: text drawn on the Lab hero canvases and flight maps
+  (`src/lib/lab/*Canvas.svelte`, `flight-maps.ts`), their aria-labels included —
+  ADR-090 "Canvas copy is English". DOM text around them is translated.
+- **Audio narration and captions** (`src/lib/audio-tour.ts`): English-only by
+  decision.
+- **Names that are not words**: cited source and dataset names (GCAT's author, Launch
+  Library 2 — The Space Devs, Copernicus Sentinel-2, HiRISE, USGS NAIP …), the contact
+  e-mail, in-world signage on 3D models (ISS module plaques, rocket livery).
+- **Audio-tour anchors**: the hidden `select …` buttons (aria-hidden, tabindex −1)
+  the tour script clicks.
+
+The scan in `scripts/i18n-tools/hardcoded-english.mjs` skips the developer blocks by
+structure and lists the rest in `hardcoded-english-allowlist.json` with the reason;
+`hardcoded-english.test.ts` fails on any other English string in Svelte markup.
+
 ---
 
 ## §5 Tone + register guidance

@@ -11,5 +11,6 @@
     { "met": 0.01, "label": "TLI", "note": "Direkte Erd-Mond-Übergangsinjektion auf der Oberstufe der LM-3B.", "type": "nominal" },
     { "met": 5, "label": "EINTRITT IN DIE MONDUMLAUFBAHN", "note": "Einfang in 100-km-zirkuläre Mondumlaufbahn 2013-12-06.", "type": "nominal" },
     { "met": 13, "label": "LANDUNG", "note": "Weichlandung in Mare Imbrium 2013-12-14. Erste Weichlandung seit Luna 24 (1976). Yutu-Rover Stunden später ausgesetzt.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Long March 3B/E mit Oberstufe YZ-1"
 }

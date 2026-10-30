@@ -11,5 +11,6 @@
     { "met": 5, "label": "MOI", "note": "月軌道投入 2009-06-23。", "type": "nominal" },
     { "met": 90, "label": "主ミッション", "note": "一年間の探索フェーズ（NASA 計画）開始。", "type": "info" },
     { "met": 455, "label": "延長科学ミッション", "note": "NASA SMD のもと多年科学フェーズへ延長。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Centaur 上段（Atlas V 401）"
 }

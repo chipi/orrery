@@ -88,5 +88,12 @@
       "type": "prose",
       "md": "A segunda lição é que segredo e responsabilidade são opostos, e que um programa precisa do segundo mais do que teme a perda do primeiro. Esconder o esforço soviético o protegeu do constrangimento público e, ao fazê-lo, arrancou toda força externa que poderia tê-lo feito confrontar seus problemas a tempo. A Apollo foi forçada a ser honesta porque o mundo inteiro estava assistindo; o N1 foi permitido falhar silenciosamente, quatro vezes, porque ninguém estava. Visibilidade não é apenas um risco a ser gerenciado. Para um empreendimento duro e implacável, é uma das coisas que torna o sucesso possível."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "A Lua — superfície, locais de pouso e exploração",
+    "/fleet?focus=n1": "Frota — o lançador superpesado N1",
+    "/moon?site=luna16": "Luna 16 — primeiro retorno robótico de amostras",
+    "/moon?site=luna17": "Luna 17 — Lunokhod 1",
+    "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  }
 }

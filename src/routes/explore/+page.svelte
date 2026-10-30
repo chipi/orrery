@@ -42,7 +42,7 @@
     type ExploreContextId,
     type ExploreHoverData,
   } from '$lib/three/explore-scene-host';
-  import { RUNG_LADDER, type ScaleReadout, type ScaleRung } from '$lib/universe/scale-readout';
+  import type { ScaleReadout } from '$lib/universe/scale-readout';
   import { type IconicTrajectoryHandle } from '$lib/three/iconic-trajectory';
   import {
     getPlanets,
@@ -110,7 +110,6 @@
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
   import SunPanel from '$lib/components/SunPanel.svelte';
   import ExploreBodyIndex from '$lib/components/ExploreBodyIndex.svelte';
-  import ExploreScalePicker from '$lib/components/ExploreScalePicker.svelte';
   import MessagePanel from '$lib/components/MessagePanel.svelte';
   import { getInterstellarCraft, type InterstellarCraft } from '$lib/data/interstellar';
   import SizesOverlay from './SizesOverlay.svelte';
@@ -119,6 +118,9 @@
   import AnonStarTag from './AnonStarTag.svelte';
   import DeepSkyImmersion from './DeepSkyImmersion.svelte';
   import WarpOverlays from './WarpOverlays.svelte';
+  import ScaleNav from './ScaleNav.svelte';
+  import SunCompass from './SunCompass.svelte';
+  import ScaleStrip from './ScaleStrip.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
   import BeltPanel from '$lib/components/BeltPanel.svelte';
@@ -137,7 +139,7 @@
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import { INTERSTELLAR_CRAFT, PATHS_LEGEND, iconicTagline } from '$lib/explore/paths-legend';
   import { computeLensPanel, scaleNavBackTarget, type ScaleNavExit } from '$lib/explore/lens-panel';
-  import { contextLabel, fmtScale, lightUnitLabel, SATELLITE_STATS } from '$lib/explore/format';
+  import { fmtScale, SATELLITE_STATS } from '$lib/explore/format';
 
   // Planet visual config (PlanetVisual / SatelliteDef / PLANETS) now lives in
   // $lib/explore-scene as the single source of truth, shared with the AR
@@ -695,7 +697,6 @@
     else if (contextId === 'milky-way') resetMilkyWayFn?.();
     else if (contextId === 'local-group') resetLocalGroupFn?.();
   }
-  const rungLadder: ScaleRung[] = RUNG_LADDER;
 
   // PRD-023 Slice E.2/E.4 — script-level state for the close-zoom HUD
   // overlays. `cameraState.focusedOnPlanet` is set true when the camera
@@ -2181,50 +2182,16 @@
        breadcrumb is gone. In a full-screen takeover (black-hole / body-scene /
        deep-sky) only the back arrow shows — the ladder isn't meaningful there. -->
   {#if view === '3d'}
-    <nav
-      class="scale-nav"
-      class:at-solar={contextId === 'solar-system' && !activeBlackHole}
-      aria-label={m.explore_location_aria()}
-    >
-      {#if scaleNavBack}
-        <button
-          type="button"
-          class="scale-back"
-          onclick={() => {
-            cue('select');
-            scaleNavBack.run();
-          }}
-          aria-label={scaleNavBack.label}
-          title={scaleNavBack.label}
-          data-testid="explore-scale-back"
-        >
-          ‹
-        </button>
-      {/if}
-
-      {#if !activeBlackHole && !activeDeepSky && contextId !== 'body-scene'}
-        <ExploreScalePicker
-          activeShell={contextId as ShellId}
-          disabled={!contextDeepLinkFn}
-          onJump={(shell) => {
-            cue('select');
-            void contextDeepLinkFn?.(shell);
-          }}
-        />
-        {#if scaleResetVisible}
-          <button
-            type="button"
-            class="scale-reset"
-            onclick={resetCurrentScale}
-            aria-label={m.ui_reset_view()}
-            title={m.ui_reset_view()}
-            data-testid="explore-scale-reset"
-          >
-            ⟲
-          </button>
-        {/if}
-      {/if}
-    </nav>
+    <ScaleNav
+      atSolar={contextId === 'solar-system' && !activeBlackHole}
+      back={scaleNavBack}
+      showPicker={!activeBlackHole && !activeDeepSky && contextId !== 'body-scene'}
+      activeShell={contextId as ShellId}
+      pickerDisabled={!contextDeepLinkFn}
+      onJump={(shell) => void contextDeepLinkFn?.(shell)}
+      showReset={scaleResetVisible}
+      onReset={resetCurrentScale}
+    />
   {/if}
 
   <!-- Slice 5/8 honesty badges (Milky Way … Cosmic Web are labelled schematics,
@@ -2245,16 +2212,7 @@
        are the reference; showing a needle then just reads as pointing at a Sun
        that's plainly centred). The needle points toward the off-screen Sun. -->
   {#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole && sunCompass && !sunCompass.on}
-    <div class="sun-compass" title={m.explore_hr_sun()}>
-      <div class="sc-dial">
-        <span
-          class="sc-needle"
-          style:transform="translate(-50%, -100%) rotate({90 - sunCompass.ang}deg)"
-        ></span>
-        <span class="sc-core">☉</span>
-      </div>
-      <span class="sc-ly">{sunCompass.ly.toFixed(sunCompass.ly < 10 ? 1 : 0)} ly · SOL</span>
-    </div>
+    <SunCompass ang={sunCompass.ang} ly={sunCompass.ly} />
   {/if}
 
   <!-- Neighborhood star index — the left INDEX rail. WS-3 (RFC-039 Contract D)
@@ -2290,75 +2248,15 @@
        old bottom-right `.scale-hud` and the scattered `.mw-badge` / `.mw-scale`
        floats collapsed into this single box, so it never fights the picker (now
        up top) and reads the same on every zoom. -->
-  {#if view === '3d' && scaleReadout && (contextId === 'solar-system' || contextId === 'neighborhood')}
-    <div class="scale-strip" class:neighborhood={contextId === 'neighborhood'} aria-hidden="true">
-      <div class="scale-ladder">
-        {#each rungLadder as rung (rung)}
-          <span
-            class="rung"
-            class:active={scaleReadout.rung === rung ||
-              (scaleReadout.rung === 'ly' && rung === 'pc')}
-          >
-            {rung === 'au' ? 'AU' : rung}
-          </span>
-        {/each}
-      </div>
-      <!-- Numeric distance + light-time only where the Orbit Ruler (solar
-           system) isn't already showing them — keeps the two rulers complementary,
-           not redundant. -->
-      {#if contextId === 'neighborhood'}
-        <div class="scale-readout">
-          <span class="primary"
-            >{fmtScale(scaleReadout.primary.value)} {scaleReadout.primary.unit}</span
-          >
-          {#if scaleReadout.companion}
-            <span class="companion"
-              >≈ {fmtScale(scaleReadout.companion.value)} {scaleReadout.companion.unit}</span
-            >
-          {/if}
-        </div>
-        <div class="scale-light">
-          {m.explore_scale_light_prefix()}: {fmtScale(scaleReadout.lightTravel.value)}
-          {lightUnitLabel(scaleReadout.lightTravel.unit)}
-        </div>
-      {/if}
-      {#if scaleBarPx > 0}
-        <div class="scale-bar-wrap">
-          <span class="scale-bar" style="width:{Math.round(Math.min(scaleBarPx, 220))}px"></span>
-          <span class="scale-bar-label">{scaleBarLabel}</span>
-        </div>
-      {/if}
-      <div class="scale-context">{contextLabel(contextId, bodyHostName)}</div>
-    </div>
-  {:else if view === '3d' && !activeBlackHole && (contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'virgo' || contextId === 'laniakea' || contextId === 'cosmic-web')}
-    <div class="scale-strip schematic" role="note">
-      {#if contextId === 'milky-way'}
-        <div class="scale-schematic-size">{m.explore_mw_scale_note()}</div>
-        <div class="scale-schematic-note">
-          <span>{m.explore_mw_schematic_badge()}</span>
-          <a class="mw-badge-link" href={localHref(`/science/observation/our-galaxy`)}
-            >{m.science_learn_more()} →</a
-          >
-        </div>
-      {:else if contextId === 'local-group'}
-        <div class="scale-schematic-note">
-          <span>{m.explore_lg_schematic_badge()}</span>
-          <a class="mw-badge-link" href={localHref(`/science/observation/local-group`)}
-            >{m.science_learn_more()} →</a
-          >
-        </div>
-      {:else if contextId === 'local-sheet'}
-        <div class="scale-schematic-note"><span>{m.explore_ls_schematic_badge()}</span></div>
-      {:else if contextId === 'virgo'}
-        <div class="scale-schematic-note"><span>{m.explore_virgo_schematic_badge()}</span></div>
-      {:else if contextId === 'laniakea'}
-        <div class="scale-schematic-note"><span>{m.explore_laniakea_schematic_badge()}</span></div>
-      {:else if contextId === 'cosmic-web'}
-        <div class="scale-schematic-note">
-          <span>{m.explore_cosmic_web_schematic_badge()}</span>
-        </div>
-      {/if}
-    </div>
+  {#if view === '3d'}
+    <ScaleStrip
+      readout={scaleReadout}
+      {contextId}
+      blackHole={!!activeBlackHole}
+      barPx={scaleBarPx}
+      barLabel={scaleBarLabel}
+      {bodyHostName}
+    />
   {/if}
 
   <!-- v2 anonymous-star tag (Slice 1 Hybrid): tapping a background star shows the
@@ -3256,172 +3154,11 @@
     display: none;
   }
 
-  /* v2 scale ruler HUD (PRD-030 / RFC-032). Bottom-left, unobtrusive. */
-  /* #45 unified scale strip — one bottom-right box on every shell. Same slot the
-     old .scale-hud used (proven not to overlap the bottom control stack); the
-     picker no longer shares this corner, so nothing collides here now. */
-  .scale-strip {
-    position: absolute;
-    right: 12px;
-    bottom: 46px;
-    z-index: 6;
-    padding: 9px 11px;
-    background: rgba(6, 10, 22, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    backdrop-filter: blur(5px);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    color: #dde4ff;
-    pointer-events: none;
-    max-width: 260px;
-  }
-  .scale-strip.neighborhood {
-    border-color: rgba(78, 205, 196, 0.35);
-  }
-  /* Schematic shells (Milky Way … Cosmic Web): the honesty note + optional
-     Learn-more link, in the same box. Slate-accented to read as "not to scale". */
-  .scale-strip.schematic {
-    border-color: rgba(255, 255, 255, 0.18);
-    color: #cdd4e6;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-size: 11px;
-    line-height: 1.5;
-    pointer-events: auto; /* the Learn-more link is focusable */
-  }
-  .scale-schematic-size {
-    color: #9fb2cf;
-    font-size: 10px;
-    margin-bottom: 4px;
-  }
-  .scale-schematic-note {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 2px;
-  }
-  .scale-ladder {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 6px;
-  }
-  .scale-ladder .rung {
-    font-size: 9px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 1px 5px;
-    border-radius: 3px;
-    color: rgba(255, 255, 255, 0.35);
-    background: rgba(255, 255, 255, 0.04);
-  }
-  .scale-ladder .rung.active {
-    color: #04121a;
-    background: #4ecdc4;
-    font-weight: 700;
-  }
-  .scale-readout {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .scale-readout .primary {
-    font-size: 15px;
-    color: #fff;
-  }
-  .scale-readout .companion {
-    font-size: 11px;
-    color: #9fe8e2;
-  }
-  .scale-light {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.5);
-    margin-top: 2px;
-  }
-  .scale-bar-wrap {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    margin-top: 7px;
-  }
-  .scale-bar {
-    display: inline-block;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.8);
-    border-left: 1px solid rgba(255, 255, 255, 0.8);
-    border-right: 1px solid rgba(255, 255, 255, 0.8);
-    box-sizing: border-box;
-    min-width: 12px;
-  }
-  .scale-bar-label {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.7);
-  }
-  .scale-context {
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
-    margin-top: 6px;
-  }
-
   /* Solar-system chrome hidden out in the stellar neighborhood. */
   .context-hidden {
     display: none !important;
   }
 
-  /* v2 neighborhood layer toggles — bottom-left (solar chrome is hidden here). */
-  .sun-compass {
-    position: absolute;
-    bottom: 62px;
-    left: 14px;
-    z-index: 6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    pointer-events: none;
-    user-select: none;
-  }
-  .sc-dial {
-    position: relative;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 207, 143, 0.35);
-    background: radial-gradient(circle, rgba(10, 14, 26, 0.5), rgba(6, 10, 22, 0.3));
-    backdrop-filter: blur(4px);
-  }
-  .sc-needle {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 0;
-    height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-bottom: 19px solid #ffcf8f;
-    transform-origin: 50% 100%;
-    filter: drop-shadow(0 0 3px rgba(255, 207, 143, 0.6));
-    transition: transform 0.18s linear;
-  }
-  .sc-core {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    color: #ffcf8f;
-    text-shadow: 0 0 6px rgba(255, 207, 143, 0.7);
-  }
-  .sc-ly {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    letter-spacing: 1px;
-    color: rgba(255, 224, 190, 0.82);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  }
   /* .nb-hud chip-row styles removed 2026-09-11 — the last bespoke chip
      (mass–period) moved into the science-lens layer panel; WS-3 had
      already retired the rest. */
@@ -3458,97 +3195,6 @@
   }
   /* .nb-controls/.nb-chip removed 2026-09-11 — the black-hole curvature/time
      chips (their last consumer) moved into the science-lens layer panel. */
-
-  /* Milky Way schematic → the /science overview article (S5 · our-galaxy). */
-  .mw-badge-link {
-    margin-left: 10px;
-    padding-left: 10px;
-    border-left: 1px solid rgba(255, 255, 255, 0.22);
-    color: #4ecdc4;
-    text-decoration: none;
-    pointer-events: auto;
-    white-space: nowrap;
-  }
-
-  .mw-badge-link:hover,
-  .mw-badge-link:focus-visible {
-    text-decoration: underline;
-  }
-
-  /* #45 top scale-navigator — one row under the nav: back · scale chip · reset.
-     Flush LEFT by default (neighborhood+ hide the solar-system control cluster, so
-     the top-left is free and the row sits exactly where the old breadcrumb did).
-     `top: 8px` lines it up with the mobile control row (.hud-top-mobile, top nav+8)
-     so they share a baseline. At the SOLAR SYSTEM scale the top-left is taken by
-     that cluster (2D / AR / SKY + layer chips), so the nav flips to flush RIGHT
-     (.at-solar) to clear it — no overlap with the SKY button. */
-  .scale-nav {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    z-index: 8;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    max-width: calc(100vw - 16px);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-  }
-  .scale-nav.at-solar {
-    left: auto;
-    right: 8px;
-  }
-  /* Shared square affordances flanking the chip (back ‹ / reset ⟲). Slate glass
-     to match the chip; generous tap target. */
-  .scale-back,
-  .scale-reset {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 34px;
-    min-height: 34px;
-    padding: 0 8px;
-    background: rgba(10, 14, 24, 0.62);
-    border: 1px solid rgba(154, 166, 189, 0.34);
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-    color: #c8d2e6;
-    font-family: inherit;
-    font-size: 16px;
-    line-height: 1;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .scale-back:hover,
-  .scale-back:focus-visible,
-  .scale-reset:hover,
-  .scale-reset:focus-visible {
-    background: rgba(154, 166, 189, 0.22);
-    border-color: rgba(154, 166, 189, 0.6);
-    color: #eaf1ff;
-    outline: none;
-  }
-
-  /* Compact the scale strip on phones and lift it ABOVE the two stacked bottom
-     bars (the Ruler/Controls/Missions drawer + the Scale/time controls, which
-     together occupy ~96px from the bottom edge) so it no longer overlaps them. */
-  @media (max-width: 767px) {
-    .scale-strip {
-      bottom: 104px;
-      padding: 7px 9px;
-      max-width: 190px;
-    }
-    .scale-readout .primary {
-      font-size: 13px;
-    }
-    .scale-back,
-    .scale-reset {
-      min-width: 44px;
-      min-height: 44px;
-    }
-  }
 
   :global(.explore canvas) {
     display: block;

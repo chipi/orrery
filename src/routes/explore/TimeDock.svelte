@@ -47,12 +47,14 @@
   <img src="{base}/textures/2k_earth_daymap.1x1.jpg" alt="" loading="lazy" decoding="async" />
   <span class="earth-compare-label">
     {#if planetRatio !== null}
-      EARTH FOR SCALE<br />
-      <span class="ratio">{planetRatio.toFixed(2)}× diameter</span>
+      {m.explore_earth_for_scale()}<br />
+      <span class="ratio">{m.explore_ratio_diameter({ ratio: planetRatio.toFixed(2) })}</span>
     {:else if satelliteRatio !== null}
-      EARTH FOR SCALE<br />
+      {m.explore_earth_for_scale()}<br />
       <span class="ratio"
-        >{satelliteRatio < 0.01 ? satelliteRatio.toFixed(4) : satelliteRatio.toFixed(2)}× diameter</span
+        >{m.explore_ratio_diameter({
+          ratio: satelliteRatio < 0.01 ? satelliteRatio.toFixed(4) : satelliteRatio.toFixed(2),
+        })}</span
       >
     {:else}
       {m.explore_sizes_toggle()}<br />
@@ -84,7 +86,7 @@
       {:else if satelliteRatio !== null}
         {satelliteRatio < 0.01 ? satelliteRatio.toFixed(4) : satelliteRatio.toFixed(2)}×
       {:else}
-        SCALE
+        {m.explore_scale_short()}
       {/if}
     </span>
   </button>

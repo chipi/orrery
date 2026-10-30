@@ -305,9 +305,9 @@
     <button
       class="hud-collapse"
       onclick={() => onToggleHud?.()}
-      aria-label={hudHidden ? 'Show HUD panels' : 'Hide HUD panels'}
+      aria-label={hudHidden ? m.hud_show_panels_aria() : m.hud_hide_panels_aria()}
       aria-pressed={hudHidden}
-      title={hudHidden ? 'Show HUD' : 'Hide HUD'}
+      title={hudHidden ? m.coast_show_hud() : m.coast_hide_hud()}
     >
       {hudHidden ? '◐' : '◑'}
     </button>

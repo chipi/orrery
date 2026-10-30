@@ -436,7 +436,9 @@
 
   {#if filterState.expanded}
     {#if anyFilterActive}
-      <button type="button" class="clear-filters" onclick={clearAllFilters}> CLEAR FILTERS </button>
+      <button type="button" class="clear-filters" onclick={clearAllFilters}>
+        {m.missions_clear_filters()}
+      </button>
     {/if}
     <div data-audio-stage="missions-epoch-timeline">
       <EpochTimelineStrip

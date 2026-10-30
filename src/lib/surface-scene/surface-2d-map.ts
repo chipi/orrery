@@ -9,6 +9,7 @@
  * (`equirectLayout`, `equirectProject`, `lunarDiscProject`).
  */
 import { colorFor } from '$lib/surface-map/nation-palette';
+import * as m from '$lib/paraglide/messages';
 import { pickClosest2d } from '$lib/three/pick-closest-2d';
 import type { SurfaceSite, Traverse } from '$types/surface-site';
 import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
@@ -281,8 +282,8 @@ export function createSurface2dMap(ctx: Surface2dMapContext): Surface2dMap {
     };
 
     sitePos2d.clear();
-    drawDisc(nearCx, yMid, 'NEAR SIDE · EARTH-FACING', 'rgba(220,220,200,0.85)', false);
-    drawDisc(farCx, yMid, 'FAR SIDE', 'rgba(220,220,200,0.85)', true);
+    drawDisc(nearCx, yMid, m.surface_near_side(), 'rgba(220,220,200,0.85)', false);
+    drawDisc(farCx, yMid, m.surface_far_side(), 'rgba(220,220,200,0.85)', true);
 
     // Nation legend is now the shared interactive HTML overlay (#363) —
     // painted for both 2D and 3D outside the canvas. No canvas legend here.

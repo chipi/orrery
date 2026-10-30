@@ -31,6 +31,7 @@
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { MissionOrbitIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages';
+  import { countryLabel } from '$lib/country-label';
   import { epochLabel } from '$lib/epoch-label';
   import { fleetStatusLabel } from '$lib/status-label';
   import MediaPlayer from './MediaPlayer.svelte';
@@ -230,34 +231,35 @@
       if (typeof v === 'number') return v.toLocaleString();
       return String(v);
     };
-    const push = (label: string, key: string, suffix = '') => {
+    type Unit = (inputs: { value: string }) => string;
+    const push = (label: string, key: string, unit?: Unit) => {
       const v = fmt(s[key]);
-      if (v !== null) rows.push({ label, value: v + suffix });
+      if (v !== null) rows.push({ label, value: unit ? unit({ value: v }) : v });
     };
     // Common
-    push('Height', 'height_m', ' m');
-    push('Length', 'length_m', ' m');
-    push('Diameter', 'diameter_m', ' m');
-    push('Mass', 'mass_kg', ' kg');
-    push('Thrust', 'thrust_n', ' N');
-    push('Stages', 'stages');
-    push('Payload to LEO', 'payload_to_leo_kg', ' kg');
-    push('Payload to Mars', 'payload_to_mars_kg', ' kg');
-    push('Crew capacity', 'crew_capacity');
-    push('Mission duration', 'mission_duration_days', ' d');
-    push('Pressurised volume', 'pressurized_volume_m3', ' m³');
-    push('Power source', 'power_source');
-    push('Primary mirror', 'primary_mirror_m', ' m');
-    push('Wavelength', 'wavelengths');
-    push('Mission target', 'mission_target');
-    push('Instruments', 'instruments_count');
+    push(m.fleet_spec_height(), 'height_m', m.unit_m_value);
+    push(m.fleet_spec_length(), 'length_m', m.unit_m_value);
+    push(m.fleet_spec_diameter(), 'diameter_m', m.unit_m_value);
+    push(m.fleet_spec_mass(), 'mass_kg', m.mp_flight_unit_kg);
+    push(m.fleet_spec_thrust(), 'thrust_n', m.unit_n_value);
+    push(m.fleet_spec_stages(), 'stages');
+    push(m.fleet_spec_payload_leo(), 'payload_to_leo_kg', m.mp_flight_unit_kg);
+    push(m.fleet_spec_payload_mars(), 'payload_to_mars_kg', m.mp_flight_unit_kg);
+    push(m.fleet_spec_crew(), 'crew_capacity');
+    push(m.fleet_spec_duration(), 'mission_duration_days', m.plan_sandbox_days);
+    push(m.fleet_spec_volume(), 'pressurized_volume_m3', m.unit_m3_value);
+    push(m.fleet_spec_power(), 'power_source');
+    push(m.fleet_spec_mirror(), 'primary_mirror_m', m.unit_m_value);
+    push(m.fleet_spec_wavelength(), 'wavelengths');
+    push(m.fleet_spec_target(), 'mission_target');
+    push(m.fleet_spec_instruments(), 'instruments_count');
     // Engine (PRD-032) — one of thrust_kn_sl/vac is present per engine.
-    push('Cycle', 'cycle');
-    push('Propellant', 'propellant');
-    push('Thrust', 'thrust_kn_sl', ' kN (sea level)');
-    push('Thrust', 'thrust_kn_vac', ' kN (vacuum)');
-    push('Specific impulse', 'isp_vac_s', ' s (vac)');
-    push('Specific impulse', 'isp_sl_s', ' s (sea level)');
+    push(m.fleet_spec_cycle(), 'cycle');
+    push(m.fleet_spec_propellant(), 'propellant');
+    push(m.fleet_spec_thrust(), 'thrust_kn_sl', m.fleet_value_kn_sl);
+    push(m.fleet_spec_thrust(), 'thrust_kn_vac', m.fleet_value_kn_vac);
+    push(m.fleet_spec_isp(), 'isp_vac_s', m.fleet_value_isp_vac);
+    push(m.fleet_spec_isp(), 'isp_sl_s', m.fleet_value_isp_sl);
     return rows;
   });
 
@@ -271,15 +273,15 @@
   // slugs (from the registry, PRD-032) append the specific topics that engine
   // demonstrates — e.g. staged-combustion cycle, the rocket equation. Deduped;
   // primers first. Labels here mirror the science-card titles.
-  const SCIENCE_LABELS: Record<string, string> = {
-    'propulsion/engine-types': 'How rocket engines work',
-    'propulsion/thrust-and-twr': 'Thrust & thrust-to-weight',
-    'propulsion/specific-impulse': 'Specific impulse',
-    'propulsion/tsiolkovsky': 'The rocket equation',
-    'propulsion/fuels-and-oxidizers': 'Fuels & oxidizers',
-    'propulsion/gas-generator': 'Gas-generator cycle',
-    'propulsion/staged-combustion': 'Staged combustion',
-    'propulsion/expander-cycle': 'Expander cycle',
+  const SCIENCE_LABELS: Record<string, () => string> = {
+    'propulsion/engine-types': m.fleet_sci_engine_types,
+    'propulsion/thrust-and-twr': m.fleet_sci_twr,
+    'propulsion/specific-impulse': m.fleet_spec_isp,
+    'propulsion/tsiolkovsky': m.chip_label_tsiolkovsky,
+    'propulsion/fuels-and-oxidizers': m.fleet_sci_fuels,
+    'propulsion/gas-generator': m.fleet_sci_gas_generator,
+    'propulsion/staged-combustion': m.fleet_sci_staged,
+    'propulsion/expander-cycle': m.fleet_sci_expander,
   };
   const ENGINE_SCIENCE_PRIMERS = ['propulsion/engine-types', 'propulsion/thrust-and-twr'];
   const engineScience = $derived.by(() => {
@@ -293,7 +295,7 @@
     for (const slug of [...ENGINE_SCIENCE_PRIMERS, cycleSlug, ...(entry?.science ?? [])]) {
       if (!slug || seen.has(slug)) continue;
       seen.add(slug);
-      out.push({ slug, label: SCIENCE_LABELS[slug] ?? slug.split('/').pop()! });
+      out.push({ slug, label: SCIENCE_LABELS[slug]?.() ?? slug.split('/').pop()! });
     }
     return out;
   });
@@ -318,27 +320,24 @@
   }
 
   function bodyLabel(type: string): string {
-    if (type === 'moon') return 'Moon';
-    if (type === 'mars') return 'Mars';
-    return 'Earth';
+    if (type === 'moon') return m.lab_body_moon();
+    if (type === 'mars') return m.lab_body_mars();
+    return m.lab_body_earth();
   }
 
   function siteLabel(ls: FleetSiteLink): string {
     const role = categoryRole(entry?.category);
     const body = bodyLabel(ls.type);
-    if (role === 'surface') return `Landing site · ${body} · ${ls.site_id}`;
-    if (role === 'orbital')
-      return ls.type === 'earth-object'
-        ? `In Earth orbit · ${ls.site_id}`
-        : `In ${body} orbit · ${ls.site_id}`;
+    if (role === 'surface') return `${m.surface_landing_site()} · ${body} · ${ls.site_id}`;
+    if (role === 'orbital') return `${m.fleet_in_orbit({ body })} · ${ls.site_id}`;
     return `${body} · ${ls.site_id}`;
   }
 
   function siteSectionHeading(): string {
     const role = categoryRole(entry?.category);
-    if (role === 'surface') return 'Landing site';
-    if (role === 'orbital') return 'Operating orbit';
-    return 'Operating sites';
+    if (role === 'surface') return m.surface_landing_site();
+    if (role === 'orbital') return m.fleet_operating_orbit();
+    return m.fleet_operating_sites();
   }
 </script>
 
@@ -489,7 +488,7 @@
           </div>
           <div class="spec">
             <dt>{m.card_stat_country()}</dt>
-            <dd>{entry.country}</dd>
+            <dd>{countryLabel(entry.country)}</dd>
           </div>
           <div class="spec">
             <dt>{m.fleet_first_flight()}</dt>
@@ -505,7 +504,11 @@
           {/if}
           <div class="spec">
             <dt>{m.card_stat_era()}</dt>
-            <dd>{entry.era === 'planned' ? m.fleet_value_planned() : entry.era}</dd>
+            <dd>
+              {entry.era === 'planned'
+                ? m.fleet_value_planned()
+                : entry.era.replace('now', m.programs_meta_now())}
+            </dd>
           </div>
           <div class="spec">
             <dt>{m.fleet_label_epoch()}</dt>

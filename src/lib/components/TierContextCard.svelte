@@ -37,7 +37,7 @@
       <div class="tcc-footer">
         <span class="tcc-license">{layer.licenseShort}</span>
         {#if layer.uncertaintyM != null}
-          <span class="tcc-uncertainty">±{layer.uncertaintyM} m</span>
+          <span class="tcc-uncertainty">±{m.unit_m_value({ value: layer.uncertaintyM })}</span>
         {:else if i === tierContext.layers.length - 1 && tierContext.uncertaintyM != null}
           <span class="tcc-uncertainty">±{tierContext.uncertaintyM} m</span>
         {/if}

@@ -865,7 +865,7 @@
     ctx.textAlign = 'center';
     ctx.shadowColor = 'rgba(0,0,0,0.85)';
     ctx.shadowBlur = 4;
-    ctx.fillText(`${dv.toFixed(1)} km/s`, MAG_RADIUS, sz - 10);
+    ctx.fillText(m.mp_flight_unit_kms({ value: dv.toFixed(1) }), MAG_RADIUS, sz - 10);
   }
 
   $effect(() => {
@@ -1074,7 +1074,9 @@
             <span class="cb-stop red"></span>
           </div>
           <div class="color-bar-labels" aria-hidden="true">
-            <span>3</span><span>5</span><span>7</span><span>9</span><span>11+ km/s</span>
+            <span>3</span><span>5</span><span>7</span><span>9</span><span
+              >{m.mp_flight_unit_kms({ value: '11+' })}</span
+            >
           </div>
         </dd>
         <dt>{m.plan_explainer_how_to()}</dt>
@@ -1110,7 +1112,7 @@
         <div class="cell strong">
           <span class="label">{m.plan_label_dv_required()}</span>
           <span class="value">
-            {readout.dv.toFixed(2)} km/s<WhyPopover
+            {m.mp_flight_unit_kms({ value: readout.dv.toFixed(2) })}<WhyPopover
               title={m.why_dv_required_title()}
               body={m.why_dv_required_body()}
               tab="propulsion"
@@ -1125,7 +1127,10 @@
           {:else if isMoonMissionDestination}
             <span class="label geo-caveat">
               {m.plan_dv_multileg()}{#if moonSplit}
-                · DEP {moonSplit.departure.toFixed(1)} + MOI {moonSplit.moi.toFixed(1)}{/if}
+                · {m.plan_moon_split({
+                  dep: moonSplit.departure.toFixed(1),
+                  moi: moonSplit.moi.toFixed(1),
+                })}{/if}
             </span>
           {/if}
         </div>
@@ -1140,7 +1145,7 @@
             <span class="sandbox-pin-summary">
               {pinnedReadout.dep} · {m.plan_transit_days({
                 count: pinnedReadout.tof.toFixed(0),
-              })} · {pinnedReadout.dv.toFixed(2)} km/s
+              })} · {m.mp_flight_unit_kms({ value: pinnedReadout.dv.toFixed(2) })}
             </span>
             <button type="button" class="sandbox-clear" onclick={clearPin}>
               {m.plan_sandbox_clear()}
@@ -1196,7 +1201,9 @@
         >
           {#each rocketList as r (r.id)}
             <option value={r.id}>
-              {r.name ?? r.id} — {r.delta_v_capability_km_s.toFixed(1)} km/s
+              {r.name ?? r.id} — {m.mp_flight_unit_kms({
+                value: r.delta_v_capability_km_s.toFixed(1),
+              })}
             </option>
           {/each}
         </select>
@@ -1212,7 +1219,7 @@
           <figure class="rocket-photo">
             <img
               src={pickHero('fleet', fleetId)}
-              alt="{selectedRocket.name ?? selectedRocket.id} reference photo"
+              alt={m.plan_rocket_photo_alt({ name: selectedRocket.name ?? selectedRocket.id })}
               loading="lazy"
               onerror={(e) => {
                 const fig = (e.currentTarget as HTMLImageElement).closest('figure');
@@ -1225,7 +1232,7 @@
 
         {#if selectedRocket.launch_site}
           <div class="row launch-site">
-            <span class="label">LAUNCH SITE</span>
+            <span class="label">{m.fly_launch_dossier_site()}</span>
             <span class="value">{selectedRocket.launch_site}</span>
           </div>
         {/if}
@@ -1249,7 +1256,7 @@
 
         <div class="row">
           <span class="label">{m.plan_label_vehicle_dv()}</span>
-          <span class="value">{dvBudget.toFixed(2)} km/s</span>
+          <span class="value">{m.mp_flight_unit_kms({ value: dvBudget.toFixed(2) })}</span>
         </div>
 
         <div class="budget" class:viable class:deficit={!viable}>

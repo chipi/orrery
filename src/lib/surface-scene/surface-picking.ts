@@ -231,8 +231,8 @@ export function createSurfacePicking(ctx: SurfacePickingContext): SurfacePicking
       const site = ctx.getSites().find((s) => s.id === ud.siteId);
       if (!site) return null;
       return {
-        title: 'Landing site',
-        label: site.landing_date ? `Landed ${site.landing_date}` : undefined,
+        title: m.surface_landing_site(),
+        label: site.landing_date ? m.surface_landed_on({ date: site.landing_date }) : undefined,
         lat: site.lat,
         lon: site.lon,
       };

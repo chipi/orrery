@@ -26,7 +26,8 @@
         "primary": "different senses: the central body of an orbit vs the primary source of a launch record",
         "constellations": "constelaciones are star patterns; constelaciones de satélites are satellite fleets (Starlink etc.)",
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (nivel, m.), quality_tier_* qualify the graphics quality (calidad, f.) — bajo / baja / alto / alta",
-        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (nivel, m.), quality_tier_* qualify the graphics quality (calidad, f.) — bajo / baja / alto / alta"
+        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (nivel, m.), quality_tier_* qualify the graphics quality (calidad, f.) — bajo / baja / alto / alta",
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
       }
     },
     "fr": {
@@ -51,7 +52,9 @@
         "primary": "different senses: the central body of an orbit vs the primary source of a launch record",
         "constellations": "constellations are star patterns; constellations de satellites are satellite fleets (Starlink etc.)",
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (niveau, m.), quality_tier_* qualify the graphics quality (qualité, f.; élevée is the usual word for quality) — bas / basse / haut / élevée",
-        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (niveau, m.), quality_tier_* qualify the graphics quality (qualité, f.; élevée is the usual word for quality) — bas / basse / haut / élevée"
+        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (niveau, m.), quality_tier_* qualify the graphics quality (qualité, f.; élevée is the usual word for quality) — bas / basse / haut / élevée",
+        "crewed": "agreement with the noun: lib_filter_crew_crewed qualifies a mission (habitée, f.); fleet_cat_crewed a vehicle (habité, m.)",
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
       }
     },
     "de": {
@@ -74,7 +77,8 @@
         "speed": "Geschw. is the abbreviated form for the narrow tooltip",
         "stations": "Raumstationen in the AR layer list; the 2D/3D layer toggle is a narrow chip and the context already says space",
         "constellation": "Sternbild is a star pattern; Satellitenkonstellation is a satellite fleet",
-        "historic": "historisch is an observatory status; Vergangene is the tab of past launches"
+        "historic": "historisch is an observatory status; Vergangene is the tab of past launches",
+        "program": "grammatical case: programs_index_intro_program is a word inside the /programs intro sentence (inflected there); program_link_kind_program is the standalone tag on a see-also link"
       }
     },
     "pt-BR": {
@@ -95,7 +99,9 @@
         "now": "agora is the present moment (AR pass); hoje ends a date range on program cards (\"1998–hoje\")",
         "constellations": "constelações are star patterns; constelações de satélites are satellite fleets (Starlink etc.)",
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (nível, m.), quality_tier_* qualify the graphics quality (qualidade, f.) — baixo / baixa / alto / alta",
-        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (nível, m.), quality_tier_* qualify the graphics quality (qualidade, f.) — baixo / baixa / alto / alta"
+        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (nível, m.), quality_tier_* qualify the graphics quality (qualidade, f.) — baixo / baixa / alto / alta",
+        "height": "different senses: lab_axis_height is the altitude axis of a trajectory chart; fleet_spec_height is how tall a vehicle is",
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
       }
     },
     "it": {
@@ -120,7 +126,9 @@
         "constellations": "costellazioni are star patterns; costellazioni di satelliti are satellite fleets (Starlink etc.)",
         "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface",
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (livello, m.), quality_tier_* qualify the graphics quality (qualità, f.) — basso / bassa / alto / alta",
-        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (livello, m.), quality_tier_* qualify the graphics quality (qualità, f.) — basso / bassa / alto / alta"
+        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (livello, m.), quality_tier_* qualify the graphics quality (qualità, f.) — basso / bassa / alto / alta",
+        "outcome": "different senses: launches_filter_outcome filters launches by result (success / failure); program_section_outcome heads what a program achieved",
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
       }
     },
     "nl": {
@@ -136,7 +144,8 @@
         "primary": "different senses: the central body of an orbit vs the primary source of a launch record",
         "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Kaart om te delen; card_share_card is the collector card's share action — Kaart delen",
         "constellation": "Sterrenbeeld is a star pattern; Satellietconstellatie is a satellite fleet (Starlink etc.)",
-        "now": "nu is the present moment (AR pass); heden ends a date range on program cards (\"1998–heden\")"
+        "now": "nu is the present moment (AR pass); heden ends a date range on program cards (\"1998–heden\")",
+        "outcome": "different senses: launches_filter_outcome filters launches by result (success / failure); program_section_outcome heads what a program achieved"
       }
     },
     "sr-Cyrl": {
@@ -162,7 +171,8 @@
         "learn": "the Learn tab (сазнај) vs the nav section (учи)",
         "detail": "a detail tab (детаљи) vs the detailed map layer (детаљ)",
         "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Картица за дељење; card_share_card is the collector card's share action — Подели картицу",
-        "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface"
+        "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface",
+        "program": "grammatical case: programs_index_intro_program is a word inside the /programs intro sentence (inflected there); program_link_kind_program is the standalone tag on a see-also link"
       }
     },
     "zh-CN": {
@@ -183,7 +193,9 @@
         "engines": "a count axis (发动机数量) vs a section heading",
         "weight": "the weight calculator (重量) vs the weight force vector (重力)",
         "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface",
-        "descent": "different events: fly_event_descent_start marks the moment powered descent begins (开始下降); hud_descent is the ongoing descent status in the EDL HUD (下降)"
+        "descent": "different events: fly_event_descent_start marks the moment powered descent begins (开始下降); hud_descent is the ongoing descent status in the EDL HUD (下降)",
+        "scale": "different senses: surface_flat_scale_label labels the map scale bar of the flat patch; explore_scale_short is the button that compares planet sizes with Earth",
+        "outcome": "different senses: launches_filter_outcome filters launches by result (success / failure); program_section_outcome heads what a program achieved"
       },
       "notes": {
         "plan_destination_psyche": "the asteroid destination takes the native name (灵神星); problems() reads Psyche as the spacecraft name"
@@ -209,7 +221,10 @@
         "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — 共有カード; card_share_card is the collector card's share action — カードを共有",
         "surface": "地表 is the Earth’s ground level on the altitude ruler; 表面 a body’s surface (scan, card, site story)",
         "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface",
-        "descent": "different events: fly_event_descent_start marks the moment powered descent begins (降下開始); hud_descent is the ongoing descent status in the EDL HUD (降下)"
+        "descent": "different events: fly_event_descent_start marks the moment powered descent begins (降下開始); hud_descent is the ongoing descent status in the EDL HUD (降下)",
+        "height": "different senses: lab_axis_height is the altitude axis of a trajectory chart; fleet_spec_height is how tall a vehicle is",
+        "scale": "different senses: surface_flat_scale_label labels the map scale bar of the flat patch; explore_scale_short is the button that compares planet sizes with Earth",
+        "outcome": "different senses: launches_filter_outcome filters launches by result (success / failure); program_section_outcome heads what a program achieved"
       },
       "notes": {
         "plan_destination_psyche": "the asteroid destination takes the native name (プシケ); problems() reads Psyche as the spacecraft name"
@@ -232,7 +247,8 @@
         "constellation": "a star constellation (별자리) vs a satellite constellation (위성군)",
         "constellations": "star constellations (별자리) vs satellite constellations (위성군)",
         "ask": "the Ask tab (질문) vs the submit button (질문하기)",
-        "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface"
+        "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface",
+        "height": "different senses: lab_axis_height is the altitude axis of a trajectory chart; fleet_spec_height is how tall a vehicle is"
       },
       "notes": {
         "plan_destination_psyche": "the asteroid destination takes the native name (프시케); problems() reads Psyche as the spacecraft name"
@@ -248,7 +264,8 @@
         "gravity": "गुरुत्व is the short form for the narrow tactical-scan readout",
         "primary": "different senses: the central body in a Lab diagram (lab.body.primary) vs a launch record's primary source",
         "reach orbit": "a calculator title (noun) vs a goal title (verb phrase)",
-        "temp": "ताप is the short form for the narrow tactical-scan readout"
+        "temp": "ताप is the short form for the narrow tactical-scan readout",
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
       },
       "notes": {
         "explore_ctx_solar_system": "open 2026-10-30: the site splits between two forms of \"Solar System\" in prose (i18n-src मंडल 120 / मण्डल 94; messages 9 / 24); the label keeps the UI's form until a prose-wide one-name decision; glossary has सौर मण्डल (hi Wikipedia)"
@@ -279,7 +296,8 @@
         "temp": "الحرارة is the short form for the narrow tactical-scan readout",
         "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface",
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (المستوى, m.), quality_tier_* qualify the graphics quality (الجودة, f.; عالية is the usual word for quality) — منخفض / منخفضة / مرتفع / عالية",
-        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (المستوى, m.), quality_tier_* qualify the graphics quality (الجودة, f.; عالية is the usual word for quality) — منخفض / منخفضة / مرتفع / عالية"
+        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (المستوى, m.), quality_tier_* qualify the graphics quality (الجودة, f.; عالية is the usual word for quality) — منخفض / منخفضة / مرتفع / عالية",
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
       },
       "notes": {
         "explore_ctx_solar_system": "open 2026-10-30: the site splits between two forms of \"Solar System\" in prose (i18n-src المجموعة الشمسية 124 / النظام الشمسي 71; messages 1 / 24); the label keeps the UI's form until a prose-wide one-name decision; glossary has المجموعة الشمسية (ar Wikipedia)"
@@ -316,7 +334,10 @@
         "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Карточка для публикации; card_share_card is the collector card's share action — Поделиться карточкой",
         "contact": "different senses: privacy_contact_heading is the \"Contact\" heading of the privacy page (how to reach us); hud_contact is the descent HUD beat when a lander first touches the surface",
         "low": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (детализация, f.), quality_tier_* qualify the graphics quality (качество, n.) — низкая / низкое / высокая / высокое",
-        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (детализация, f.), quality_tier_* qualify the graphics quality (качество, n.) — низкая / низкое / высокая / высокое"
+        "high": "agreement with different nouns: hotspots_mode_* qualify the hotspot detail level (детализация, f.), quality_tier_* qualify the graphics quality (качество, n.) — низкая / низкое / высокая / высокое",
+        "program": "grammatical case: programs_index_intro_program is a word inside the /programs intro sentence (inflected there); program_link_kind_program is the standalone tag on a see-also link",
+        "outcome": "different senses: launches_filter_outcome filters launches by result (success / failure); program_section_outcome heads what a program achieved",
+        "body": "different senses: lab_f_*_body and hud_body name a physical body (the object an experiment or descent acts on); program_link_kind_body tags a link to a planet or moon page — a celestial body"
       },
       "notes": {
         "plan_destination_psyche": "left \"Psyche\": problems() refuses the native Психея because it reads Psyche as the spacecraft; ja/ko/zh-CN have the native asteroid name"

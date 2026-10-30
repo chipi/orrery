@@ -12,6 +12,7 @@
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { countryLabel } from '$lib/country-label';
   import { programStatusLabel } from '$lib/status-label';
   import type { ProgramRosterItem } from '$types/program';
   import type { PageData } from './$types';
@@ -22,12 +23,26 @@
   // pre-patch-era flights) render nothing rather than firing a 404.
   let badges = $derived(data.badges ?? {});
 
-  const KIND_LABEL: Record<string, string> = {
-    'crewed-campaign': 'Crewed campaign',
-    'robotic-campaign': 'Robotic campaign',
-    station: 'Station',
-    infrastructure: 'Infrastructure',
-    'funding-line': 'Funding line',
+  const KIND_LABEL: Record<string, () => string> = {
+    'crewed-campaign': m.program_kind_crewed,
+    'robotic-campaign': m.program_kind_robotic,
+    station: m.program_kind_station,
+    infrastructure: m.program_kind_infrastructure,
+    'funding-line': m.program_kind_funding,
+  };
+  const LINK_KIND: Record<string, () => string> = {
+    body: m.program_link_kind_body,
+    explore: m.program_link_kind_explore,
+    fleet: m.program_link_kind_fleet,
+    gallery: m.program_link_kind_gallery,
+    program: m.program_link_kind_program,
+    science: m.program_link_kind_science,
+  };
+  const SURFACE_NAME: Record<string, () => string> = {
+    moon: m.lab_body_moon,
+    mars: m.lab_body_mars,
+    earth: m.lab_body_earth,
+    venus: m.lab_body_venus,
   };
 
   function imgSrc(image: { reuse?: string; id?: string }): string {
@@ -73,12 +88,12 @@
   }
 
   let sections = $derived([
-    { label: 'The land', blocks: p.the_land },
-    { label: 'Goals', blocks: p.goals },
-    { label: 'Outcome', blocks: p.outcome },
-    { label: 'The story', blocks: p.narrative },
-    { label: 'What it gave back', blocks: p.legacy },
-    { label: 'What we can learn', blocks: p.lessons },
+    { label: m.program_section_land(), blocks: p.the_land },
+    { label: m.program_section_goals(), blocks: p.goals },
+    { label: m.program_section_outcome(), blocks: p.outcome },
+    { label: m.program_section_story(), blocks: p.narrative },
+    { label: m.program_section_legacy(), blocks: p.legacy },
+    { label: m.program_section_lessons(), blocks: p.lessons },
   ]);
 
   let missions = $derived(
@@ -124,7 +139,10 @@
     <div class="hero-text">
       <p class="meta">
         <AgencyBadge agency={p.agencies?.join(' / ') ?? p.agency} />
-        <span>{p.agency} · {p.country} · {p.start_year}–{p.end_year ?? 'now'}</span>
+        <span
+          >{p.agency} · {countryLabel(p.country)} · {p.start_year}–{p.end_year ??
+            m.programs_meta_now()}</span
+        >
       </p>
       <div class="title-row">
         <h1>{p.name}</h1>
@@ -134,7 +152,7 @@
       </div>
       <p class="tagline">{p.tagline}</p>
       <p class="chips">
-        <span class="chip">{KIND_LABEL[p.kind] ?? p.kind}</span>
+        <span class="chip">{KIND_LABEL[p.kind]?.() ?? p.kind}</span>
         <span class="chip chip-status status-{p.status.toLowerCase()}"
           >{programStatusLabel(p.status)}</span
         >
@@ -271,7 +289,9 @@
         {#each p.surface_sites as s (s.surface + s.site)}
           <li>
             <a href={localHref(`/${s.surface}?site=${s.site}`)}>
-              <span class="s-body">{s.surface}</span><span class="s-label">{s.label}</span>
+              <span class="s-body">{SURFACE_NAME[s.surface]?.() ?? s.surface}</span><span
+                class="s-label">{s.label}</span
+              >
               <span class="s-go">→</span>
             </a>
           </li>
@@ -286,7 +306,9 @@
       <ul>
         {#each p.see_also as s (s.href)}
           <li>
-            <a href={localHref(s.href)}><span class="k">{s.kind}</span>{s.label} →</a>
+            <a href={localHref(s.href)}
+              ><span class="k">{LINK_KIND[s.kind]?.() ?? s.kind}</span>{s.label} →</a
+            >
           </li>
         {/each}
       </ul>

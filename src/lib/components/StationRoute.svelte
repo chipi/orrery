@@ -1202,7 +1202,7 @@
           view={viewMode === '2d-top' ? 'top' : viewMode === '2d-side' ? 'side' : 'front'}
           selectedId={selection.state.selectedId}
           onModuleClick={blueprintModuleClick}
-          ariaLabel="{config.stationName} blueprint diagram"
+          ariaLabel={m.station_blueprint_aria({ name: config.stationName })}
         />
       </div>
     {/if}

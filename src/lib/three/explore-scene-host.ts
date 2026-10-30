@@ -85,6 +85,33 @@ import type { resolveQualitySync } from '$lib/quality/quality-tier';
 import type { createRouteLifecycle } from '$lib/three/route-lifecycle';
 import type { ExploreSmallBody, createExploreSolarScene } from '$lib/three/explore-solar-scene';
 
+/** 2D-map labels in the viewer's language; bodies without a message keep their data name. */
+const PLANET_NAME_2D: Record<string, () => string> = {
+  mercury: m.lab_body_mercury,
+  venus: m.lab_body_venus,
+  earth: m.lab_body_earth,
+  mars: m.lab_body_mars,
+  jupiter: m.lab_body_jupiter,
+  saturn: m.lab_body_saturn,
+  uranus: m.lab_body_uranus,
+  neptune: m.lab_body_neptune,
+};
+const SMALL_BODY_NAME_2D: Record<string, () => string> = {
+  pluto: m.plan_destination_pluto,
+  ceres: m.plan_destination_ceres,
+  vesta: m.plan_destination_vesta,
+  halley: m.plan_destination_halley,
+  arrokoth: m.plan_destination_arrokoth,
+  '67p': m.plan_destination_67p,
+  bennu: m.plan_destination_bennu,
+  itokawa: m.plan_destination_itokawa,
+  psyche: m.plan_destination_psyche,
+  didymos: m.plan_destination_didymos,
+};
+const planetName2d = (id: string, fallback: string): string => PLANET_NAME_2D[id]?.() ?? fallback;
+const smallBodyName2d = (id: string, fallback: string): string =>
+  SMALL_BODY_NAME_2D[id]?.() ?? fallback;
+
 /**
  * `/explore` 3D scene host (RFC-036 WS-C/C2b — the whole onMount teardown).
  *
@@ -1103,7 +1130,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       out: {
         ensure: ensureMilkyWay,
         lightYears: 26700,
-        label: 'Sagittarius A*',
+        label: m.explore_deep_sgra(),
         afterPitch: () => {
           closeStarPanel();
           bridge.anonStar = null;
@@ -1166,7 +1193,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         bridge.selectedVirgoMember = null;
         virgoScene?.highlight(null);
       },
-      out: { ensure: ensureVirgo, lightYears: 53800000, label: 'Virgo Cluster' },
+      out: { ensure: ensureVirgo, lightYears: 53800000, label: m.explore_deep_virgo() },
     },
     {
       id: 'laniakea',
@@ -1184,7 +1211,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         bridge.selectedLaniakeaMember = null;
         laniakeaScene?.highlight(null);
       },
-      out: { ensure: ensureLaniakea, lightYears: 222000000, label: 'Great Attractor' },
+      out: { ensure: ensureLaniakea, lightYears: 222000000, label: m.explore_deep_attractor() },
     },
     {
       id: 'cosmic-web',
@@ -1202,7 +1229,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         bridge.selectedCosmicWebMember = null;
         cosmicWebScene?.highlight(null);
       },
-      out: { ensure: ensureCosmicWeb, lightYears: 652000000, label: 'Shapley Concentration' },
+      out: { ensure: ensureCosmicWeb, lightYears: 652000000, label: m.explore_deep_shapley() },
     },
   ];
 
@@ -3386,7 +3413,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     ctx2.font = "7px 'Space Mono',monospace";
     ctx2.fillStyle = 'rgba(160,120,220,0.32)';
     ctx2.textAlign = 'center';
-    ctx2.fillText('PLANET NINE? · HYPOTHETICAL · ~600 AU', 0, -pnR - 6);
+    ctx2.fillText(m.explore_planet_nine({ dist: m.unit_au_value({ value: 600 }) }), 0, -pnR - 6);
     ctx2.restore();
 
     // Sun glow + core
@@ -3407,7 +3434,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     ctx2.font = "7px 'Space Mono',monospace";
     ctx2.fillStyle = 'rgba(255,220,100,0.5)';
     ctx2.textAlign = 'center';
-    ctx2.fillText('SUN', 0, 22);
+    ctx2.fillText(m.explore_sun_caps(), 0, 22);
     ctx2.restore();
 
     // Planets — gated by the PLANETS layer (issue #32). When the
@@ -3534,7 +3561,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         ctx2.shadowBlur = 6;
         ctx2.fillStyle = p.css + 'cc';
         ctx2.textAlign = 'left';
-        ctx2.fillText(p.name, px + pr + 5, py + 3);
+        ctx2.fillText(planetName2d(p.id, p.name), px + pr + 5, py + 3);
         ctx2.restore();
       });
 
@@ -3591,7 +3618,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       ctx2.shadowBlur = 5;
       ctx2.fillStyle = b.color + 'aa';
       ctx2.textAlign = 'left';
-      ctx2.fillText(b.name, px + 5, py + 2);
+      ctx2.fillText(smallBodyName2d(b.id, b.name), px + 5, py + 2);
       ctx2.restore();
     });
 
@@ -3601,7 +3628,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     ctx2.save();
     ctx2.font = "8px 'Space Mono',monospace";
     ctx2.fillStyle = 'rgba(255,255,255,0.08)';
-    ctx2.fillText('ECLIPTIC PLANE · TOP-DOWN · SCROLL TO ZOOM · DRAG TO PAN', 22, H - 10);
+    ctx2.fillText(m.explore_2d_hint(), 22, H - 10);
     ctx2.restore();
   };
 

@@ -40,13 +40,14 @@
     <div class="tt-eyebrow">{hoverData.name.toUpperCase()}</div>
     <div class="tt-row">
       <span class="tt-key">{m.explore_tt_speed()}</span>
-      <span class="tt-val">{hoverData.velocityKms.toFixed(2)} km/s</span>
+      <span class="tt-val">{m.mp_flight_unit_kms({ value: hoverData.velocityKms.toFixed(2) })}</span
+      >
     </div>
     <div class="tt-row">
       <span class="tt-key">{m.explore_tt_dist()}</span>
       <span class="tt-val">
-        {hoverData.distanceAU.toFixed(3)} AU ·
-        {(hoverData.distanceAU * 8.317).toFixed(1)} l-min
+        {m.unit_au_value({ value: hoverData.distanceAU.toFixed(3) })} ·
+        {m.fly_hud_lmin({ value: (hoverData.distanceAU * 8.317).toFixed(1) })}
       </span>
     </div>
     <div class="tt-row">

@@ -419,7 +419,9 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
         const out = at.clone().addScaledVector(awayFromOther, TANGENT_OFFSET);
         return out.normalize().multiplyScalar(r + RADIAL_OFFSET);
       }
-      const startLabelText = site?.landing_date ? `LANDED ${site.landing_date}` : 'LANDING SITE';
+      const startLabelText = site?.landing_date
+        ? m.surface_landed_on_caps({ date: site.landing_date })
+        : m.surface_landing_site_caps();
       const startBuilt = buildTraverseCaption(startLabelText, '#22c55e', 0.32);
       startBuilt.group.position.copy(placeCaption(startPosWorld, tangent.clone().negate()));
       planetMesh.add(startBuilt.group);

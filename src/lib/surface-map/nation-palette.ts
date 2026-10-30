@@ -8,6 +8,7 @@
  * covers /moon's smaller set without breaking — unused entries are
  * harmless.
  */
+import { countryLabel } from '$lib/country-label';
 import type { SurfaceSite } from '$types/surface-site';
 
 /** Union of every nation tag any surface site uses on /moon + /mars. */
@@ -51,31 +52,43 @@ export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
   const nation = site.nation ?? '';
   const agency = site.agency ?? '';
   // Agency-first for pads run by a national agency abroad or by a company.
-  if (agency === 'CNES') return { label: 'France · CNES', color: '#1d4ed8' };
-  if (agency === 'ASI') return { label: 'Italy · ASI', color: '#1d4ed8' };
-  if (agency === 'Rocket Lab') return { label: 'New Zealand · Rocket Lab', color: '#00A6A6' };
-  if (agency === 'KARI') return { label: 'South Korea · KARI', color: '#5B8DEF' };
-  if (agency === 'NADA') return { label: 'North Korea · NADA', color: '#9B59B6' };
-  if (agency === 'ISA') return { label: 'Iran · ISA', color: '#6BBF59' };
-  if (agency === 'IAF') return { label: 'Israel · IAF', color: '#1d4ed8' };
-  if (agency === 'WRE') return { label: 'Australia · WRE', color: '#E0B400' };
-  if (agency === 'AEB') return { label: 'Brazil · AEB', color: '#C2185B' };
-  if (nation === 'USA' || agency === 'NASA') return { label: 'USA · NASA', color: '#3b82f6' };
+  if (agency === 'CNES') return { label: `${countryLabel('France')} · CNES`, color: '#1d4ed8' };
+  if (agency === 'ASI') return { label: `${countryLabel('Italy')} · ASI`, color: '#1d4ed8' };
+  if (agency === 'Rocket Lab')
+    return { label: `${countryLabel('New Zealand')} · Rocket Lab`, color: '#00A6A6' };
+  if (agency === 'KARI')
+    return { label: `${countryLabel('South Korea')} · KARI`, color: '#5B8DEF' };
+  if (agency === 'NADA')
+    return { label: `${countryLabel('North Korea')} · NADA`, color: '#9B59B6' };
+  if (agency === 'ISA') return { label: `${countryLabel('Iran')} · ISA`, color: '#6BBF59' };
+  if (agency === 'IAF') return { label: `${countryLabel('Israel')} · IAF`, color: '#1d4ed8' };
+  if (agency === 'WRE') return { label: `${countryLabel('Australia')} · WRE`, color: '#E0B400' };
+  if (agency === 'AEB') return { label: `${countryLabel('Brazil')} · AEB`, color: '#C2185B' };
+  if (nation === 'USA' || agency === 'NASA')
+    return { label: `${countryLabel('USA')} · NASA`, color: '#3b82f6' };
   if (nation === 'USSR' || nation === 'Russia' || agency === 'ROSCOSMOS')
-    return { label: 'USSR · Roscosmos', color: '#ef4444' };
-  if (nation === 'China' || agency === 'CNSA') return { label: 'China · CNSA', color: '#dc2626' };
-  if (nation === 'India' || agency === 'ISRO') return { label: 'India · ISRO', color: '#f97316' };
-  if (nation === 'Japan' || agency === 'JAXA') return { label: 'Japan · JAXA', color: '#1d4ed8' };
+    return { label: `${countryLabel('USSR')} · Roscosmos`, color: '#ef4444' };
+  if (nation === 'China' || agency === 'CNSA')
+    return { label: `${countryLabel('China')} · CNSA`, color: '#dc2626' };
+  if (nation === 'India' || agency === 'ISRO')
+    return { label: `${countryLabel('India')} · ISRO`, color: '#f97316' };
+  if (nation === 'Japan' || agency === 'JAXA')
+    return { label: `${countryLabel('Japan')} · JAXA`, color: '#1d4ed8' };
   if (nation === 'Israel' || agency === 'SpaceIL')
-    return { label: 'Israel · SpaceIL', color: '#1d4ed8' };
+    return { label: `${countryLabel('Israel')} · SpaceIL`, color: '#1d4ed8' };
   if (nation === 'Europe' || agency === 'ESA' || agency === 'Arianespace')
-    return { label: 'Europe · ESA', color: '#1d4ed8' };
-  if (nation === 'UK' || agency === 'ESA-UK') return { label: 'UK · ESA', color: '#1d4ed8' };
-  if (nation === 'UAE' || agency === 'UAESA') return { label: 'UAE · UAESA', color: '#00732F' };
+    return { label: `${countryLabel('Europe')} · ESA`, color: '#1d4ed8' };
+  if (nation === 'UK' || agency === 'ESA-UK')
+    return { label: `${countryLabel('UK')} · ESA`, color: '#1d4ed8' };
+  if (nation === 'UAE' || agency === 'UAESA')
+    return { label: `${countryLabel('UAE')} · UAESA`, color: '#00732F' };
   // SpaceX-operated pads on USSF property (#285 Phase 2). Distinct
   // from NASA — the operating agency drives the badge attribution.
-  if (agency === 'SpaceX') return { label: 'USA · SpaceX', color: '#3b82f6' };
-  return { label: nation || agency || '—', color: 'rgba(255,255,255,0.5)' };
+  if (agency === 'SpaceX') return { label: `${countryLabel('USA')} · SpaceX`, color: '#3b82f6' };
+  return {
+    label: nation ? countryLabel(nation) : agency || '—',
+    color: 'rgba(255,255,255,0.5)',
+  };
 }
 
 /**

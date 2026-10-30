@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import * as m from '$lib/paraglide/messages';
 import { A_MOON_KM, moonEciPos } from '$lib/orbital/cislunar/cislunar-geometry';
 import { BODY_MASS_KG, gravityAccel, logScaleLength } from '$lib/orbit-overlays';
 import {
@@ -505,7 +506,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.font = "bold 9px 'Space Mono', monospace";
       ctx2.fillStyle = 'rgba(255,255,255,0.85)';
       ctx2.textAlign = 'left';
-      ctx2.fillText('EARTH', cx + 9, cy + 3);
+      ctx2.fillText(m.nav_earth(), cx + 9, cy + 3);
 
       // Moon at current position.
       const mx = cisX(moonNow.x);
@@ -521,7 +522,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.arc(mx, my, 3.5, 0, Math.PI * 2);
       ctx2.fillStyle = '#dddddd';
       ctx2.fill();
-      ctx2.fillText('MOON', mx + 7, my + 3);
+      ctx2.fillText(m.nav_moon(), mx + 7, my + 3);
 
       // Spacecraft sprite at its cislunar-trajectory position. Walk
       // the phase list using MET to find current absolute position,
@@ -594,7 +595,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.font = "bold 9px 'Space Mono', monospace";
       ctx2.fillStyle = 'rgba(255,255,255,0.85)';
       ctx2.textAlign = 'left';
-      ctx2.fillText('LAUNCH', ptX(eAnchor.x) + 18, ptZ(eAnchor.z) + 3);
+      ctx2.fillText(m.fly_event_launch(), ptX(eAnchor.x) + 18, ptZ(eAnchor.z) + 3);
       // ARRIVAL anchor ring (where Moon will be at arrDay).
       ctx2.beginPath();
       ctx2.arc(ptX(mAnchor.x), ptZ(mAnchor.z), 13, 0, Math.PI * 2);
@@ -602,7 +603,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.lineWidth = 1.2;
       ctx2.stroke();
       ctx2.fillStyle = 'rgba(255,255,255,0.85)';
-      ctx2.fillText('ARRIVAL', ptX(mAnchor.x) + 16, ptZ(mAnchor.z) + 3);
+      ctx2.fillText(m.fly_event_arrival(), ptX(mAnchor.x) + 16, ptZ(mAnchor.z) + 3);
       // Live Earth — halo + disc.
       const ex = ptX(eLive.x);
       const ey = ptZ(eLive.z);
@@ -617,7 +618,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.arc(ex, ey, 6, 0, Math.PI * 2);
       ctx2.fillStyle = '#4b9cd3';
       ctx2.fill();
-      ctx2.fillText('EARTH', ex + 11, ey + 3);
+      ctx2.fillText(m.nav_earth(), ex + 11, ey + 3);
       // Live Moon — halo + disc.
       const mx = ptX(mLive.x);
       const my = ptZ(mLive.z);
@@ -632,7 +633,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.arc(mx, my, 4, 0, Math.PI * 2);
       ctx2.fillStyle = '#dddddd';
       ctx2.fill();
-      ctx2.fillText('MOON', mx + 9, my + 3);
+      ctx2.fillText(m.nav_moon(), mx + 9, my + 3);
     } else {
       // Mars-bound: live Earth + Mars orbit the Sun as the spacecraft
       // flies; the launch / arrival anchors stay pinned to outPts[0]
@@ -660,7 +661,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.font = "bold 9px 'Space Mono', monospace";
       ctx2.fillStyle = 'rgba(255,255,255,0.85)';
       ctx2.textAlign = 'left';
-      ctx2.fillText('LAUNCH', eAx + 16, eAy + 3);
+      ctx2.fillText(m.fly_event_launch(), eAx + 16, eAy + 3);
       // ARRIVAL anchor ring (where the arc terminates).
       ctx2.beginPath();
       ctx2.arc(mAx, mAy, 11, 0, Math.PI * 2);
@@ -668,7 +669,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.lineWidth = 1.2;
       ctx2.stroke();
       ctx2.fillStyle = 'rgba(255,255,255,0.85)';
-      ctx2.fillText('ARRIVAL', mAx + 14, mAy + 3);
+      ctx2.fillText(m.fly_event_arrival(), mAx + 14, mAy + 3);
       // Live Earth — halo + disc.
       const eg = ctx2.createRadialGradient(ex, ey, 0, ex, ey, 14);
       eg.addColorStop(0, 'rgba(75,156,211,0.6)');
@@ -681,7 +682,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.arc(ex, ey, 5, 0, Math.PI * 2);
       ctx2.fillStyle = '#4b9cd3';
       ctx2.fill();
-      ctx2.fillText('EARTH', ex + 9, ey + 3);
+      ctx2.fillText(m.nav_earth(), ex + 9, ey + 3);
       // Live Mars — halo + disc.
       const mg = ctx2.createRadialGradient(mx, my, 0, mx, my, 12);
       mg.addColorStop(0, 'rgba(193,68,14,0.6)');
@@ -694,7 +695,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.arc(mx, my, 4, 0, Math.PI * 2);
       ctx2.fillStyle = '#c1440e';
       ctx2.fill();
-      ctx2.fillText('MARS', mx + 9, my + 3);
+      ctx2.fillText(m.nav_mars(), mx + 9, my + 3);
     }
 
     // Spacecraft glyph — gold chevron sitting at sc.pos. The

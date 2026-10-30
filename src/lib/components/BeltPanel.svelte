@@ -175,7 +175,9 @@
       <div class="stat-row">
         <div class="stat">
           <div class="stat-label">{m.belt_label_location()}</div>
-          <div class="stat-value">{entry.inner_au}–{entry.outer_au} AU</div>
+          <div class="stat-value">
+            {m.unit_au_value({ value: `${entry.inner_au}–${entry.outer_au}` })}
+          </div>
         </div>
         <div class="stat">
           <div class="stat-label">{m.belt_label_total_mass()}</div>

@@ -9,7 +9,9 @@
     <span class="sc-needle" style:transform="translate(-50%, -100%) rotate({90 - ang}deg)"></span>
     <span class="sc-core">☉</span>
   </div>
-  <span class="sc-ly">{ly.toFixed(ly < 10 ? 1 : 0)} ly · SOL</span>
+  <span class="sc-ly"
+    >{m.unit_ly_value({ value: ly.toFixed(ly < 10 ? 1 : 0) })} · {m.explore_compass_sun()}</span
+  >
 </div>
 
 <style>

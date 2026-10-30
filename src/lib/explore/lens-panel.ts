@@ -103,7 +103,7 @@ export function computeLensPanel({
     case 'solar-system':
       return {
         title: m.explore_2d_view_title(),
-        body: `Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them.`,
+        body: m.explore_lens_solar_system_body(),
         tab: 'orbits',
         section: 'keplerian-orbit',
         available: [

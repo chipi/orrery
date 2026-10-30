@@ -187,6 +187,7 @@
   import { PLANET_STATS, SURFACE_BODY_KINEMATICS } from '$lib/physics/util/planet-stats';
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
+  import { countryLabel } from '$lib/country-label';
   import { panelGalleryCredit } from '$lib/image-credits';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { cue } from '$lib/sensory/feedback';
@@ -3939,19 +3940,27 @@
                   // per-pad source. Same false-provenance trap as the 2026-06
                   // Mars fix: without this branch earth read LROC credit.
                   layers.push({
-                    layerLabel: 'Regional view',
+                    layerLabel: m.surface_layer_regional(),
                     sourceTitle: 'Copernicus Sentinel-2 L2A',
                     sourceAuthor: 'Contains modified Copernicus Sentinel data',
-                    resolutionText: '~10 m/px (1600² crop · ~16 km)',
+                    resolutionText: m.surface_res_crop({
+                      res: m.unit_mpx_value({ value: '10' }),
+                      crop: '1600',
+                      km: m.mp_flight_unit_km({ value: '16' }),
+                    }),
                     sourceUrl: 'https://dataspace.copernicus.eu/',
                     licenseShort: 'COPERNICUS-S2',
                   });
                 } else if (config.planet === 'mars') {
                   layers.push({
-                    layerLabel: 'Regional view',
+                    layerLabel: m.surface_layer_regional(),
                     sourceTitle: 'MRO CTX context mosaic',
                     sourceAuthor: 'NASA / JPL / MSSS / Murray Lab',
-                    resolutionText: '~5 m/px (3072² crop · ~15 km)',
+                    resolutionText: m.surface_res_crop({
+                      res: m.unit_mpx_value({ value: '5' }),
+                      crop: '3072',
+                      km: m.mp_flight_unit_km({ value: '15' }),
+                    }),
                     sourceUrl: 'https://www.msss.com/mars_images/moc/MENU.html',
                     licenseShort: 'PD-NASA',
                     // CTX absolute georeferencing — typically ~100 m on
@@ -3965,10 +3974,14 @@
                   // landers with no LROC NAC ROI regional. ~6 m/px TC COG,
                   // window-cropped via USGS Astrogeology ARD.
                   layers.push({
-                    layerLabel: 'Regional view',
+                    layerLabel: m.surface_layer_regional(),
                     sourceTitle: 'Kaguya (SELENE) TC regional context',
                     sourceAuthor: 'JAXA / SELENE (Kaguya) Terrain Camera',
-                    resolutionText: '~6 m/px (2560² crop · ~16 km)',
+                    resolutionText: m.surface_res_crop({
+                      res: m.unit_mpx_value({ value: '6' }),
+                      crop: '2560',
+                      km: m.mp_flight_unit_km({ value: '16' }),
+                    }),
                     sourceUrl: 'https://www.kaguya.jaxa.jp/',
                     licenseShort: 'JAXA-OPEN',
                   });
@@ -3976,10 +3989,14 @@
                   // Moon regional layer — LROC NAC ROI mosaic (Apollo set),
                   // cropped at a wider 3072² window (~15 km).
                   layers.push({
-                    layerLabel: 'Regional view',
+                    layerLabel: m.surface_layer_regional(),
                     sourceTitle: 'LROC NAC ROI regional mosaic',
                     sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
-                    resolutionText: '~5 m/px (3072² crop · ~15 km)',
+                    resolutionText: m.surface_res_crop({
+                      res: m.unit_mpx_value({ value: '5' }),
+                      crop: '3072',
+                      km: m.mp_flight_unit_km({ value: '15' }),
+                    }),
                     sourceUrl: 'https://pds.lroc.im-ldi.com/',
                     licenseShort: 'PD-NASA',
                   });
@@ -4001,28 +4018,37 @@
                   // remaining US pads (the 512 m rest).
                   if ((site.hotspot_tier2_ground_m ?? 512) >= 2560) {
                     layers.push({
-                      layerLabel: 'Detail view',
+                      layerLabel: m.surface_layer_detail(),
                       sourceTitle: 'Copernicus Sentinel-2 L2A (coarse fallback)',
                       sourceAuthor: 'Contains modified Copernicus Sentinel data',
-                      resolutionText: '~10 m/px (2.56 km window — no open sub-meter source)',
+                      resolutionText: m.surface_res_window_nosub({
+                        res: m.unit_mpx_value({ value: '10' }),
+                        window: m.mp_flight_unit_km({ value: '2.56' }),
+                      }),
                       sourceUrl: 'https://dataspace.copernicus.eu/',
                       licenseShort: 'COPERNICUS-S2',
                     });
                   } else if (GSI_DETAIL_EARTH_PADS.has(site.id)) {
                     layers.push({
-                      layerLabel: 'Detail view',
+                      layerLabel: m.surface_layer_detail(),
                       sourceTitle: 'GSI seamlessphoto aerial',
                       sourceAuthor: 'Geospatial Information Authority of Japan',
-                      resolutionText: '~0.5 m/px (512 m window)',
+                      resolutionText: m.surface_res_window({
+                        res: m.unit_mpx_value({ value: '0.5' }),
+                        window: m.unit_m_value({ value: '512' }),
+                      }),
                       sourceUrl: 'https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto',
                       licenseShort: 'GSI-JP',
                     });
                   } else {
                     layers.push({
-                      layerLabel: 'Detail view',
+                      layerLabel: m.surface_layer_detail(),
                       sourceTitle: 'USGS NAIP aerial',
                       sourceAuthor: 'USDA / USGS National Agriculture Imagery Program',
-                      resolutionText: '~0.5 m/px (512 m window)',
+                      resolutionText: m.surface_res_window({
+                        res: m.unit_mpx_value({ value: '0.5' }),
+                        window: m.unit_m_value({ value: '512' }),
+                      }),
                       sourceUrl:
                         'https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer',
                       licenseShort: 'PD-USGov',
@@ -4030,7 +4056,7 @@
                   }
                 } else if (config.planet === 'mars') {
                   layers.push({
-                    layerLabel: 'Detail view',
+                    layerLabel: m.surface_layer_detail(),
                     sourceTitle: 'HiRISE detail patch',
                     sourceAuthor: 'NASA / JPL / UArizona / HiRISE team',
                     // We serve 2048² JPEG crops of HiRISE products, which
@@ -4038,7 +4064,10 @@
                     // bounding box. Source HiRISE is ~0.25 m/px native;
                     // raising the patch resolution is fetch-pipeline work
                     // tracked separately.
-                    resolutionText: '~7 m/px (from HiRISE 0.25 m/px native)',
+                    resolutionText: m.surface_res_from_hirise({
+                      res: m.unit_mpx_value({ value: '7' }),
+                      native: m.unit_mpx_value({ value: '0.25' }),
+                    }),
                     sourceUrl: 'https://www.uahirise.org/',
                     licenseShort: 'PD-NASA',
                   });
@@ -4046,10 +4075,10 @@
                   // Failover detail (#361) — this site has no LROC Featured
                   // Image, so the detail is its Kaguya TC regional crop.
                   layers.push({
-                    layerLabel: 'Detail view',
+                    layerLabel: m.surface_layer_detail(),
                     sourceTitle: 'Kaguya (SELENE) TC',
                     sourceAuthor: 'JAXA / SELENE (Kaguya) Terrain Camera',
-                    resolutionText: '~6 m/px',
+                    resolutionText: `~${m.unit_mpx_value({ value: '6' })}`,
                     sourceUrl: 'https://www.kaguya.jaxa.jp/',
                     licenseShort: 'JAXA-OPEN',
                   });
@@ -4057,10 +4086,10 @@
                   // LROC NAC Featured Image (#361) — pre-cropped orbital view
                   // published by the LROC team, ~0.5–2 m/px native.
                   layers.push({
-                    layerLabel: 'Detail view',
+                    layerLabel: m.surface_layer_detail(),
                     sourceTitle: 'LROC NAC Featured Image',
                     sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
-                    resolutionText: '~0.5–2 m/px',
+                    resolutionText: `~${m.unit_mpx_value({ value: '0.5–2' })}`,
                     sourceUrl: 'https://www.lroc.asu.edu/',
                     licenseShort: 'PD-NASA',
                   });
@@ -4587,7 +4616,7 @@
           }}
         >
           <span class="legend-dot" style:background={color}></span>
-          {nation}
+          {countryLabel(nation)}
         </button>
       {/each}
     </div>
@@ -4729,11 +4758,14 @@ sample      ${debugInfo.projectedPxSample}`}
        any planet"). -->
   {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen}
     <div class="altitude-indicator" class:beside-panel={panelOpen} aria-hidden="true">
-      {altitudeKm >= 1000
-        ? `${(altitudeKm / 1000).toFixed(1)} Mm`
-        : altitudeKm >= 1
-          ? `${altitudeKm.toFixed(0)} km`
-          : `${(altitudeKm * 1000).toFixed(0)} m`} altitude
+      {m.surface_altitude({
+        value:
+          altitudeKm >= 1000
+            ? m.unit_mm_value({ value: (altitudeKm / 1000).toFixed(1) })
+            : altitudeKm >= 1
+              ? m.mp_flight_unit_km({ value: altitudeKm.toFixed(0) })
+              : m.unit_m_value({ value: (altitudeKm * 1000).toFixed(0) }),
+      })}
     </div>
   {/if}
 
@@ -4949,7 +4981,7 @@ sample      ${debugInfo.projectedPxSample}`}
       class="surface-floating-exit"
       onclick={() => closeFlatPatch()}
       data-testid="zoom-floating-exit"
-      title="Exit zoom view (Esc)"
+      title={m.surface_exit_zoom_title()}
     >
       <span class="x mono" aria-hidden="true">✕</span>
       <span>{m.surface_exit_zoom()}</span>
@@ -4964,7 +4996,7 @@ sample      ${debugInfo.projectedPxSample}`}
       class="surface-floating-exit"
       onclick={() => exitRouteView()}
       data-testid="route-floating-exit"
-      title="Exit route view (Esc)"
+      title={m.surface_exit_route_title()}
     >
       <span class="x mono" aria-hidden="true">✕</span>
       <span>{m.surface_exit_route()}</span>
@@ -5013,7 +5045,7 @@ sample      ${debugInfo.projectedPxSample}`}
           onclick={() => toggleNation(nation)}
         >
           <span class="legend-dot" style:background={color}></span>
-          {nation}
+          {countryLabel(nation)}
         </button>
       {/each}
     </div>
@@ -5102,7 +5134,7 @@ sample      ${debugInfo.projectedPxSample}`}
                 class="zoom-to-detail-button zoom-to-detail-button--exit"
                 data-testid="exit-route-view"
                 onclick={() => exitRouteView()}
-                title="Exit route view (Esc)"
+                title={m.surface_exit_route_title()}
               >
                 <span class="icon" aria-hidden="true">✕</span>
                 <span>{m.surface_exit_route()}</span>
@@ -5126,7 +5158,7 @@ sample      ${debugInfo.projectedPxSample}`}
                 class="zoom-to-detail-button zoom-to-detail-button--exit"
                 data-testid="exit-zoom"
                 onclick={() => closeFlatPatch()}
-                title="Exit zoom view (Esc)"
+                title={m.surface_exit_zoom_title()}
               >
                 <span class="icon" aria-hidden="true">✕</span>
                 <span>{m.surface_exit_zoom_view()}</span>
@@ -5304,7 +5336,7 @@ sample      ${debugInfo.projectedPxSample}`}
             href={localHref(`/missions?id=${selected.mission_id}`)}
             data-testid="mission-card-link"
           >
-            FULL MISSION CARD →
+            {m.mission_card_full()}
           </a>
         {/if}
 

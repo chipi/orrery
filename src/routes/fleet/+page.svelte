@@ -23,6 +23,7 @@
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
+  import { countryLabel } from '$lib/country-label';
   import { fleetStatusLabel } from '$lib/status-label';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import { cue } from '$lib/sensory/feedback';
@@ -171,20 +172,21 @@
     'engine',
   ];
 
-  const CATEGORY_LABEL: Record<FleetCategory, string> = {
-    launcher: 'Launcher',
-    'crewed-spacecraft': 'Crewed',
-    'cargo-spacecraft': 'Cargo',
-    station: 'Station',
-    rover: 'Rover',
-    lander: 'Lander',
-    orbiter: 'Orbiter',
-    observatory: 'Observatory',
-    'space-suit': 'Suit',
-    constellation: 'Constellation',
-    'launch-site': 'Launch site',
-    engine: 'Engine',
+  const CATEGORY_MSG: Record<FleetCategory, () => string> = {
+    launcher: m.fleet_cat_launcher,
+    'crewed-spacecraft': m.fleet_cat_crewed,
+    'cargo-spacecraft': m.fleet_cat_cargo,
+    station: m.fleet_cat_station,
+    rover: m.fleet_cat_rover,
+    lander: m.fleet_cat_lander,
+    orbiter: m.fleet_cat_orbiter,
+    observatory: m.fleet_cat_observatory,
+    'space-suit': m.fleet_cat_suit,
+    constellation: m.fleet_cat_constellation,
+    'launch-site': m.fleet_cat_launch_site,
+    engine: m.fleet_cat_engine,
   };
+  const categoryLabel = (c: FleetCategory): string => CATEGORY_MSG[c]?.() ?? c;
 
   const CATEGORY_COLOR: Record<FleetCategory, string> = {
     launcher: '#ffc850', // gold — boosters
@@ -478,7 +480,7 @@
               class:active={categoryFilter === cat}
               role="radio"
               aria-checked={categoryFilter === cat}
-              onclick={() => setCategory(cat)}>{CATEGORY_LABEL[cat]}</button
+              onclick={() => setCategory(cat)}>{categoryLabel(cat)}</button
             >
           {/each}
         </div>
@@ -578,7 +580,7 @@
           <li>
             <button type="button" class="list-row" onclick={() => openEntry(entry)}>
               <span class="list-name">{entry.name}</span>
-              <span class="list-cat">{CATEGORY_LABEL[entry.category]}</span>
+              <span class="list-cat">{categoryLabel(entry.category)}</span>
               <span class="list-agency">{entry.agency}</span>
               <span class="list-year">{entry.first_flight.slice(0, 4)}</span>
               <span class="list-status status-{entry.status.toLowerCase()}"
@@ -664,10 +666,10 @@
                     />
                   {/if}
                 </div>
-                <p class="card-type">{CATEGORY_LABEL[entry.category]}</p>
+                <p class="card-type">{categoryLabel(entry.category)}</p>
                 <div class="card-meta">
                   <span class="card-year">{entry.first_flight.slice(0, 4)}</span>
-                  <span class="card-country">{entry.country}</span>
+                  <span class="card-country">{countryLabel(entry.country)}</span>
                 </div>
                 <p class="card-first">{entry.tagline}</p>
               </div>

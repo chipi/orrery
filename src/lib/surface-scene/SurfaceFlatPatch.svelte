@@ -391,7 +391,13 @@
     ctx.font = "bold 10px 'Space Mono', monospace";
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
+    const KIND: Record<string, () => string> = {
+      landing_ellipse: m.surface_region_landing_ellipse,
+      roi_quad: m.surface_region_roi,
+      traverse_bbox: m.surface_region_traverse,
+    };
     const kind = selected.region_kind ?? 'region';
+    const kindLabel = KIND[kind]?.() ?? kind.replace('_', ' ').toUpperCase();
     const sourceLabel =
       config.planet === 'mars'
         ? 'CTX 5 m/px · ~15 km'
@@ -401,11 +407,7 @@
     ctx.save();
     ctx.globalAlpha = alpha;
     ctx.fillStyle = '#ffc850';
-    ctx.fillText(
-      `REGIONAL · ${sourceLabel} · ${kind.replace('_', ' ').toUpperCase()}`,
-      x + 6,
-      y + 6,
-    );
+    ctx.fillText(`${m.surface_regional_caps()} · ${sourceLabel} · ${kindLabel}`, x + 6, y + 6);
     ctx.restore();
   }
 

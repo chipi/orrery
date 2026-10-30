@@ -169,7 +169,7 @@
         href={localHref(`/science/transfers/coplanar-trajectories`)}
         data-testid="paths-legend-why"
       >
-        ⓘ Why are they all in one plane?
+        {m.explore_why_plane()}
       </a>
       <!-- Hover brightens the arc + swaps the tagline but does NOT open
            the panel — click commits. Intentional after the 2026-06-19
@@ -364,7 +364,7 @@
       href={localHref(`/science/transfers/coplanar-trajectories`)}
       data-testid="paths-legend-why"
     >
-      ⓘ Why are they all in one plane?
+      {m.explore_why_plane()}
     </a>
     <div class="paths-legend-tagline" aria-live="polite">
       {#if iconic.state.hoveredId}

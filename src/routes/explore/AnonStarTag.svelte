@@ -9,9 +9,10 @@
 <div class="anon-star" role="status">
   <span class="anon-title">{m.explore_anon_unnamed()}</span>
   <span class="anon-facts">
-    {star.distLy.toLocaleString(undefined, { maximumFractionDigits: 1 })} ly · mag {star.mag.toFixed(
-      1,
-    )} · {anonColorLabel(star.colorName)} (~{star.kelvin.toLocaleString()} K)
+    {m.unit_ly_value({
+      value: star.distLy.toLocaleString(undefined, { maximumFractionDigits: 1 }),
+    })} · {m.explore_mag_value({ value: star.mag.toFixed(1) })} · {anonColorLabel(star.colorName)} (~{star.kelvin.toLocaleString()}
+    K)
   </span>
   <button type="button" class="anon-close" aria-label={m.explore_anon_dismiss()} onclick={onDismiss}
     >×</button

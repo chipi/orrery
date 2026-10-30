@@ -3,6 +3,7 @@
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
+  import { buildSpecRows } from './fleet-spec-rows';
   import { base } from '$app/paths';
   import { page } from '$app/state';
   import { assetUrl } from '$lib/asset-url';
@@ -214,49 +215,10 @@
     return out;
   });
 
-  // Render the spec grid in a stable order — only fields actually
-  // present in the entry render, so skeleton entries with empty
-  // specs simply show fewer rows.
-  type SpecRow = { label: string; value: string };
-  let specRows = $derived.by(() => {
-    if (!entry) return [] as SpecRow[];
-    const rows: SpecRow[] = [];
-    const s = entry.specs ?? {};
-    const fmt = (v: number | string | boolean | undefined): string | null => {
-      if (v === undefined || v === null || v === '') return null;
-      if (typeof v === 'number') return v.toLocaleString();
-      return String(v);
-    };
-    const push = (label: string, key: string, suffix = '') => {
-      const v = fmt(s[key]);
-      if (v !== null) rows.push({ label, value: v + suffix });
-    };
-    // Common
-    push('Height', 'height_m', ' m');
-    push('Length', 'length_m', ' m');
-    push('Diameter', 'diameter_m', ' m');
-    push('Mass', 'mass_kg', ' kg');
-    push('Thrust', 'thrust_n', ' N');
-    push('Stages', 'stages');
-    push('Payload to LEO', 'payload_to_leo_kg', ' kg');
-    push('Payload to Mars', 'payload_to_mars_kg', ' kg');
-    push('Crew capacity', 'crew_capacity');
-    push('Mission duration', 'mission_duration_days', ' d');
-    push('Pressurised volume', 'pressurized_volume_m3', ' m³');
-    push('Power source', 'power_source');
-    push('Primary mirror', 'primary_mirror_m', ' m');
-    push('Wavelength', 'wavelengths');
-    push('Mission target', 'mission_target');
-    push('Instruments', 'instruments_count');
-    // Engine (PRD-032) — one of thrust_kn_sl/vac is present per engine.
-    push('Cycle', 'cycle');
-    push('Propellant', 'propellant');
-    push('Thrust', 'thrust_kn_sl', ' kN (sea level)');
-    push('Thrust', 'thrust_kn_vac', ' kN (vacuum)');
-    push('Specific impulse', 'isp_vac_s', ' s (vac)');
-    push('Specific impulse', 'isp_sl_s', ' s (sea level)');
-    return rows;
-  });
+  // Spec grid rows live in ./fleet-spec-rows — extracted so the keyed-each
+  // key contract is unit-testable (#622: keying rows by label duplicated the
+  // "Specific impulse" key for engines shipping both isp fields).
+  let specRows = $derived(entry ? buildSpecRows(entry.specs ?? {}) : []);
 
   // PRD-032 — engine ↔ launcher graph, derived from launcher-engines.ts.
   const isEngine = $derived(entry?.category === 'engine');
@@ -542,7 +504,7 @@
             <dt>Epoch</dt>
             <dd>{entry.epoch.replace(/-/g, ' ')}</dd>
           </div>
-          {#each specRows as row (row.label)}
+          {#each specRows as row (row.key)}
             <div class="spec">
               <dt>{row.label}</dt>
               <dd>{row.value}</dd>

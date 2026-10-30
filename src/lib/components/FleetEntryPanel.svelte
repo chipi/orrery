@@ -221,7 +221,7 @@
   // Render the spec grid in a stable order — only fields actually
   // present in the entry render, so skeleton entries with empty
   // specs simply show fewer rows.
-  type SpecRow = { label: string; value: string };
+  type SpecRow = { key: string; label: string; value: string };
   let specRows = $derived.by(() => {
     if (!entry) return [] as SpecRow[];
     const rows: SpecRow[] = [];
@@ -249,7 +249,7 @@
         .replace('ethyl alcohol', m.engine_prop_ethyl_alcohol());
     const push = (label: string, key: string, unit?: Unit) => {
       const v = fmt(s[key]);
-      if (v !== null) rows.push({ label, value: unit ? unit({ value: v }) : v });
+      if (v !== null) rows.push({ key, label, value: unit ? unit({ value: v }) : v });
     };
     // Common
     push(m.fleet_spec_height(), 'height_m', m.unit_m_value);
@@ -529,7 +529,7 @@
             <dt>{m.fleet_label_epoch()}</dt>
             <dd>{epochLabel(entry.epoch)}</dd>
           </div>
-          {#each specRows as row (row.label)}
+          {#each specRows as row (row.key)}
             <div class="spec">
               <dt>{row.label}</dt>
               <dd>{row.value}</dd>

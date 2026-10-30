@@ -187,6 +187,9 @@
     engine: m.fleet_cat_engine,
   };
   const categoryLabel = (c: FleetCategory): string => CATEGORY_MSG[c]?.() ?? c;
+  // first_flight is a date, or "planned" for hardware that has not flown.
+  const firstFlightLabel = (f: string): string =>
+    f === 'planned' ? m.fleet_value_planned() : f.slice(0, 4);
 
   const CATEGORY_COLOR: Record<FleetCategory, string> = {
     launcher: '#ffc850', // gold — boosters
@@ -582,7 +585,7 @@
               <span class="list-name">{entry.name}</span>
               <span class="list-cat">{categoryLabel(entry.category)}</span>
               <span class="list-agency">{entry.agency}</span>
-              <span class="list-year">{entry.first_flight.slice(0, 4)}</span>
+              <span class="list-year">{firstFlightLabel(entry.first_flight)}</span>
               <span class="list-status status-{entry.status.toLowerCase()}"
                 >{fleetStatusLabel(entry.status)}</span
               >
@@ -611,7 +614,7 @@
               data-audio-stage="fleet-select-{entry.id}"
               onclick={() => openEntry(entry)}
               onkeydown={(e) => handleGridKeydown(e, closePanel)}
-              aria-label="{entry.name} ({entry.agency}, {entry.first_flight.slice(0, 4)})"
+              aria-label="{entry.name} ({entry.agency}, {firstFlightLabel(entry.first_flight)})"
             >
               <div class="card-accent" aria-hidden="true"></div>
               <figure class="card-photo">
@@ -668,7 +671,7 @@
                 </div>
                 <p class="card-type">{categoryLabel(entry.category)}</p>
                 <div class="card-meta">
-                  <span class="card-year">{entry.first_flight.slice(0, 4)}</span>
+                  <span class="card-year">{firstFlightLabel(entry.first_flight)}</span>
                   <span class="card-country">{countryLabel(entry.country)}</span>
                 </div>
                 <p class="card-first">{entry.tagline}</p>

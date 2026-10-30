@@ -685,6 +685,7 @@ export default defineConfig(({ mode, command }) => {
           // assembly lifted from the explore/+page.svelte onMount; same WebGL policy.
           'src/lib/three/explore-solar-scene.ts',
           'src/lib/three/explore-scene-host.ts',
+          'src/lib/three/explore-render-stack.ts',
           // Shared 3D asset builders used by the model/scene files above — hero
           // PBR materials + IBL (hero-materials) and the low-level geometry
           // helper (model-geom) both instantiate Three.js materials/geometry

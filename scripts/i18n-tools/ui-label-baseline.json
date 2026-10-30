@@ -3,7 +3,6 @@
   "_permanent": {
     "fly_event_tcm": "pinned to English in every locale by src/lib/fly-event-catalog.test.ts",
     "fly_event_edl_or_oi": "pinned to English in every locale by src/lib/fly-event-catalog.test.ts",
-    "fly_event_anomaly": "pinned to English in every locale by src/lib/fly-event-catalog.test.ts",
     "fly_event_loi": "pinned to English in every locale by src/lib/fly-event-catalog.test.ts",
     "fly_event_tei": "pinned to English in every locale by src/lib/fly-event-catalog.test.ts"
   },
@@ -13,19 +12,17 @@
       "defects": {},
       "variants": {
         "active": "agreement with the noun (activo m., activa f. for missions); en servicio is the usual Spanish for an operating observatory",
-        "all": "agreement with the noun filtered (todo for outcome/launch filters, todas for agencies and destinations, todos for crews, statuses, stars, objects)",
-        "anomaly": "fly_event_anomaly is pinned in _permanent (event id shown as-is)",
+        "all": "agreement with the noun filtered (todo for launch tier/outcome, todas for agencies and destinations, todos for crews, fleet categories/statuses, stars, objects)",
         "cancelled": "agreement with the noun (cancelada for missions, cancelado for programs)",
         "detail": "Detalles is a panel tab; DETALLE is a map zoom layer next to REGIONAL",
         "flown": "agreement with the noun (realizada for missions, realizado for surface objects); HA VOLADO for a vehicle",
         "insignia": "plural for gallery titles, singular for the tag on one item",
-        "intro": "INTRO is the short tier badge; Introducción the tier name in the list",
         "moon": "Luna is the Moon; SATÉLITE is the card kicker for any natural moon (NOT_THE_TERM)",
         "next": "Siguiente steps through a list; Próximo is the next flight event in the HUD",
         "planned": "agreement with the noun (planificada f., planificado m.)",
         "reading list": "Lecturas is the encyclopedia tab; Lecturas recomendadas the page title",
-        "retired": "retirado for vehicles and modules; desactivado for surface sites shut down",
-        "share card": "Tarjeta para compartir names the card; Compartir tarjeta is the button",
+        "retired": "iss/fleet_status_retired label retired vehicles and station modules — retirado; surface_status_retired labels the retired satellites of earth-objects.json (Earth Orbit page) and closed launch pads (status-tone.ts) — desactivado",
+        "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Tarjeta para compartir; card_share_card is the collector card's share action — Compartir tarjeta",
         "primary": "different senses: the central body of an orbit vs the primary source of a launch record",
         "constellations": "constelaciones are star patterns; constelaciones de satélites are satellite fleets (Starlink etc.)"
       }
@@ -36,21 +33,19 @@
       "variants": {
         "active": "agreement with the noun (actif m., active/actives f. for missions); en service is the usual French for an operating observatory",
         "all": "agreement: TOUT for an undifferentiated filter, TOUS for countable items (crews, stars, objects)",
-        "anomaly": "fly_event_anomaly is pinned in _permanent (event id shown as-is)",
         "cancelled": "agreement with the noun (annulée/annulées for missions, annulé for programs)",
         "detail": "Détails is a panel tab; DÉTAIL is a map zoom layer next to RÉGIONAL",
         "earth return": "fly_event_earth_return is an event id; the readable label is mp_flight_event_earth_return",
         "flown": "agreement with the noun (réalisée/réalisées for missions, réalisé for surface objects); A VOLÉ for a vehicle",
         "insignia": "plural for gallery titles, singular for the tag on one item",
-        "intro": "INTRO is the short tier badge; Introduction the tier name in the list",
         "learn": "En savoir plus is a panel tab; Apprendre is the navigation group",
         "moon": "Lune is the Moon; SATELLITE is the card kicker for any natural moon (NOT_THE_TERM)",
         "now": "maintenant is the present moment (AR pass); aujourd'hui ends a date range on program cards (\"1998–aujourd'hui\")",
         "planned": "agreement with the noun (prévue/prévues f., prévu m.)",
         "reading list": "Lectures is the encyclopedia tab; Lectures conseillées the page title",
-        "retired": "retiré for vehicles and modules; désaffecté for surface sites shut down",
+        "retired": "iss/fleet_status_retired label retired vehicles and station modules — retiré; surface_status_retired labels the retired satellites of earth-objects.json (Earth Orbit page) and closed launch pads (status-tone.ts) — désaffecté",
         "rocket": "Fusée is the rocket as a Lab body; Lanceur is the library category of launch vehicles",
-        "share card": "Carte à partager names the card; Partager la carte is the button",
+        "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Carte à partager; card_share_card is the collector card's share action — Partager la carte",
         "primary": "different senses: the central body of an orbit vs the primary source of a launch record",
         "constellations": "constellations are star patterns; constellations de satellites are satellite fleets (Starlink etc.)"
       }
@@ -60,7 +55,6 @@
       "defects": {},
       "variants": {
         "active": "in Betrieb is the usual German for an operating observatory; aktiv for missions, vehicles, programs",
-        "anomaly": "fly_event_anomaly is pinned in _permanent (event id shown as-is)",
         "cancelled": "a program is eingestellt; a mission or launch is abgesagt",
         "constellations": "Sternbilder are star patterns; Satellitenkonstellationen are satellite fleets (Starlink etc.)",
         "detail": "Details is a panel tab; DETAIL is a map zoom layer next to REGIONAL",
@@ -70,9 +64,9 @@
         "next": "Weiter steps through a list; Nächstes is the next flight event in the HUD",
         "now": "jetzt is the present moment (AR pass); heute is the end of a date range on program cards (\"1998–heute\")",
         "primary": "different senses: the central body of an orbit vs the primary source of a launch record",
-        "retired": "ausgemustert for vehicles and stations; stillgelegt for surface sites and landers that were shut down",
+        "retired": "iss/fleet_status_retired label retired vehicles and station modules — ausgemustert; surface_status_retired labels the retired satellites of earth-objects.json (Earth Orbit page) and closed launch pads (status-tone.ts) — stillgelegt",
         "semi-major axis": "GROSSE is the capitalised spelling of große (ß has no capital form in labels)",
-        "share card": "Karte zum Teilen names the card; Karte teilen is the button that shares it",
+        "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Karte zum Teilen; card_share_card is the collector card's share action — Karte teilen",
         "speed": "Geschw. is the abbreviated form for the narrow tooltip",
         "stations": "Raumstationen in the AR layer list; the 2D/3D layer toggle is a narrow chip and the context already says space",
         "constellation": "Sternbild is a star pattern; Satellitenkonstellation is a satellite fleet",
@@ -84,18 +78,16 @@
       "defects": {},
       "variants": {
         "active": "agreement with the noun (ativo m., ativa f. for missions); em operação is the usual Portuguese for an operating observatory",
-        "all": "agreement with the noun filtered (tudo for outcome/launch filters, todas for agencies and missions, todos for statuses, stars, objects)",
-        "anomaly": "fly_event_anomaly is pinned in _permanent (event id shown as-is)",
+        "all": "agreement with the noun filtered (tudo for launch tier/outcome, todas for agencies, destinations and crewed missions, todos for fleet categories/statuses, stars, objects)",
         "cancelled": "agreement with the noun (cancelada for missions, cancelado for programs)",
         "detail": "Detalhes is a panel tab; DETALHE is a map zoom layer next to REGIONAL",
         "flown": "agreement with the noun (realizada for missions, realizado for surface objects); VOOU for a vehicle",
         "insignia": "plural for gallery titles, singular for the tag on one item",
-        "intro": "INTRO is the short tier badge; Introdução the tier name in the list",
         "learn": "Saiba mais is a panel tab; Aprender is the navigation group",
         "planned": "agreement with the noun (planejada f., planejado m.)",
         "primary": "different senses: the central body of an orbit vs the primary source of a launch record",
         "reading list": "Leituras is the encyclopedia tab; Leituras recomendadas the page title",
-        "share card": "Cartão para compartilhar names the Lab's card; Compartilhar cartão is the collector-card button",
+        "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Cartão para compartilhar; card_share_card is the collector card's share action — Compartilhar cartão",
         "now": "agora is the present moment (AR pass); hoje ends a date range on program cards (\"1998–hoje\")",
         "constellations": "constelações are star patterns; constelações de satélites are satellite fleets (Starlink etc.)"
       }
@@ -105,20 +97,18 @@
       "defects": {},
       "variants": {
         "active": "agreement with the noun (attivo m., attiva/attive f. for missions); in servizio is the usual Italian for an operating observatory",
-        "all": "agreement with the noun filtered (tutto for outcome/launch filters, tutte for agencies, tutti for crews, destinations, statuses, stars, objects)",
-        "anomaly": "fly_event_anomaly is pinned in _permanent (event id shown as-is)",
+        "all": "agreement with the noun filtered (tutto for launch tier/outcome, tutte for agencies and destinations, tutti for crews, fleet categories/statuses, stars, objects)",
         "cancelled": "agreement with the noun (annullata/annullate for missions, annullato for programs)",
         "detail": "Dettagli is a panel tab; DETTAGLIO is a map zoom layer next to REGIONALE",
         "flown": "agreement with the noun (completata/completate for missions, completato for surface objects); HA VOLATO for a vehicle",
         "insignia": "plural for gallery titles, singular for the tag on one item",
-        "intro": "INTRO is the short tier badge; Introduzione the tier name in the list",
         "learn": "Scopri is a panel tab; Impara is the navigation group",
         "next": "Successivo steps through a list; Prossimo is the next flight event in the HUD",
         "now": "ora is the present moment (AR pass); oggi ends a date range on program cards (\"1998–oggi\")",
         "planned": "agreement with the noun (pianificata/pianificate f., pianificato m.)",
         "reading list": "Letture is the encyclopedia tab; Letture consigliate the page title",
-        "retired": "ritirato for vehicles and modules; dismesso for surface sites shut down",
-        "share card": "Scheda da condividere names the Lab's card; Condividi carta is the collector-card button",
+        "retired": "iss/fleet_status_retired label retired vehicles and station modules — ritirato; surface_status_retired labels the retired satellites of earth-objects.json (Earth Orbit page) and closed launch pads (status-tone.ts) — dismesso",
+        "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Scheda da condividere; card_share_card is the collector card's share action — Condividi carta",
         "moon": "Luna is the Moon; SATELLITE is the card kicker for any natural moon (NOT_THE_TERM)",
         "primary": "different senses: the central body of an orbit vs the primary source of a launch record",
         "constellations": "costellazioni are star patterns; costellazioni di satelliti are satellite fleets (Starlink etc.)"
@@ -130,13 +120,12 @@
       "variants": {
         "active": "in gebruik is the usual Dutch for an operating observatory; actief for missions, vehicles, programs",
         "all": "alles for an undifferentiated filter, alle for countable items (agencies, crews, destinations, statuses, objects)",
-        "anomaly": "fly_event_anomaly is pinned in _permanent (event id shown as-is)",
         "constellations": "sterrenbeelden are star patterns; satellietconstellaties are satellite fleets (Starlink etc.)",
         "detail": "Details is a panel tab; DETAIL is a map zoom layer next to REGIONAAL",
         "insignia": "plural for gallery titles, singular for the tag on one item",
         "learn": "Meer weten is a panel tab; Leren is the navigation group",
         "primary": "different senses: the central body of an orbit vs the primary source of a launch record",
-        "share card": "Kaart om te delen names the Lab's card; Kaart delen is the collector-card button",
+        "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Kaart om te delen; card_share_card is the collector card's share action — Kaart delen",
         "constellation": "Sterrenbeeld is a star pattern; Satellietconstellatie is a satellite fleet (Starlink etc.)",
         "now": "nu is the present moment (AR pass); heden ends a date range on program cards (\"1998–heden\")"
       }
@@ -151,10 +140,9 @@
         "next": "the next item (следећи) vs the next flight event (следеће)",
         "constellation": "a star constellation (сазвежђе) vs a satellite constellation (сателитска констелација)",
         "constellations": "star constellations vs satellite constellations",
-        "anomaly": "fly_event_anomaly is pinned to English",
         "active": "Serbian agreement: the adjective or participle agrees with the noun it qualifies (one key per noun, style guide §4a); the current flight event (у току) and a working observatory (ради) differ in meaning",
         "insignia": "a heading for many insignia vs the tag on one",
-        "retired": "a retired module or rocket (повучен) vs a surface craft no longer in use (ван употребе)",
+        "retired": "iss/fleet_status_retired label retired vehicles and station modules — повучен; surface_status_retired labels the retired satellites of earth-objects.json (Earth Orbit page) and closed launch pads (status-tone.ts) — ван употребе",
         "primary": "the central body of an orbit vs the primary data source",
         "reach orbit": "a calculator title (noun) vs a goal (imperative)",
         "historic": "a historic observatory vs the past-launches tab",
@@ -164,24 +152,19 @@
         "discovered": "Serbian agreement: the adjective or participle agrees with the noun it qualifies (one key per noun, style guide §4a)",
         "learn": "the Learn tab (сазнај) vs the nav section (учи)",
         "detail": "a detail tab (детаљи) vs the detailed map layer (детаљ)",
-        "share card": "the card itself (noun) vs the share action"
+        "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Картица за дељење; card_share_card is the collector card's share action — Подели картицу"
       }
     },
     "zh-CN": {
       "audited": "2026-10-30 (locale 5/13)",
-      "defects": {
-        "plan_destination_psyche": [
-          "names translated or missing (keep exactly as in English, or the native form in the name's own language)"
-        ]
-      },
+      "defects": {},
       "variants": {
         "now": "a satellite pass happening now (现在) vs the open end of a date range (至今)",
         "next": "the next item in a list vs the next mission event",
         "constellation": "a star constellation (星座) vs a satellite constellation (卫星星座)",
         "constellations": "star constellations (星座) vs satellite constellations (卫星星座)",
-        "anomaly": "fly_event_anomaly is pinned to English",
         "active": "a craft in service (运行中), a program in progress (进行中), the current flight event (当前事件)",
-        "retired": "a retired rocket or module (已退役) vs a surface craft no longer operated (已停用)",
+        "retired": "iss/fleet_status_retired label retired vehicles and station modules — 已退役; surface_status_retired labels the retired satellites of earth-objects.json (Earth Orbit page) and closed launch pads (status-tone.ts) — 已停用",
         "primary": "the central body of an orbit vs the primary data source",
         "historic": "a historic observatory vs the past-launches tab",
         "moon": "the Moon vs \"a moon\" (natural satellite) on a card kicker",
@@ -196,31 +179,23 @@
     },
     "ja": {
       "audited": "cbd44478200",
-      "defects": {
-        "plan_destination_psyche": [
-          "names translated or missing (keep exactly as in English, or the native form in the name's own language)"
-        ]
-      },
+      "defects": {},
       "variants": {
-        "about": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "active": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "anomaly": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "ask": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "constellation": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "constellations": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "engines": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "historic": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "moon": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "next": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "observe the sky": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "period": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "primary": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "range": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "reach orbit": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "retired": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "science": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "share card": "reviewed in the ja audit (cbd44478200): the meaning differs by context",
-        "surface": "reviewed in the ja audit (cbd44478200): the meaning differs by context"
+        "active": "進行中 for something in progress (a program, the current flight event in the HUD); 運用中 for craft, modules, missions and sites in operation",
+        "ask": "the Ask view tab (noun 質問) vs the submit button (verb 質問する)",
+        "constellation": "a star pattern (explore_ds / star panel) vs a satellite fleet (card category: Starlink etc.)",
+        "constellations": "star patterns (explore layer) vs satellite fleets (earth-orbit layer under orbiters)",
+        "engines": "a count axis in the Lab (エンジン数) vs the section heading on a fleet entry",
+        "historic": "an observatory status (歴史的) vs the tab of past launches (過去)",
+        "moon": "the Moon vs the card kicker for any natural moon (NOT_THE_TERM)",
+        "next": "the step button in the deep-sky lightbox (次へ) vs the next flight event in the HUD (次)",
+        "observe the sky": "a Lab family name (noun) vs a goal title (verb phrase)",
+        "period": "公転周期 on cards is a planet or moon’s revolution; 周期 for a satellite or station orbit",
+        "primary": "different senses: the central body in a Lab diagram (lab.body.primary) vs a launch record's primary source",
+        "reach orbit": "a calculator title (noun) vs a goal title (verb phrase)",
+        "retired": "iss/fleet_status_retired label retired vehicles and station modules — 退役; surface_status_retired labels the retired satellites of earth-objects.json (Earth Orbit page) and closed launch pads (status-tone.ts) — 運用終了",
+        "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — 共有カード; card_share_card is the collector card's share action — カードを共有",
+        "surface": "地表 is the Earth’s ground level on the altitude ruler; 表面 a body’s surface (scan, card, site story)"
       },
       "notes": {
         "plan_destination_psyche": "the asteroid destination takes the native name (プシケ); problems() reads Psyche as the spacecraft name"
@@ -228,26 +203,21 @@
     },
     "ko": {
       "audited": "2026-10-30 (locale 4/13)",
-      "defects": {
-        "plan_destination_psyche": [
-          "names translated or missing (keep exactly as in English, or the native form in the name's own language)"
-        ]
-      },
+      "defects": {},
       "variants": {
         "now": "a satellite pass happening now (지금) vs the present end of a date range (현재)",
         "speed": "vis-viva gives the scalar speed (속력); elsewhere 속도",
         "active": "an observatory is operated (운영 중), a craft in service (운용 중), a program or event in progress (진행 중)",
-        "retired": "a retired rocket or module (퇴역) vs a surface craft that stopped (운용 종료)",
+        "retired": "iss/fleet_status_retired label retired vehicles and station modules — 퇴역; surface_status_retired labels the retired satellites of earth-objects.json (Earth Orbit page) and closed launch pads (status-tone.ts) — 운용 종료",
         "primary": "the central body of an orbit vs the primary data source",
         "historic": "a historic observatory vs the past-launches tab",
         "moon": "the Moon vs \"a moon\" (natural satellite) on a card kicker",
         "engines": "a count axis (엔진 수) vs a section heading",
-        "share card": "the card itself (noun) vs the share action",
+        "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — 공유 카드; card_share_card is the collector card's share action — 카드 공유",
         "observe the sky": "a category label vs a goal title (action)",
         "constellation": "a star constellation (별자리) vs a satellite constellation (위성군)",
         "constellations": "star constellations (별자리) vs satellite constellations (위성군)",
-        "ask": "the Ask tab (질문) vs the submit button (질문하기)",
-        "anomaly": "fly_event_anomaly is pinned to English"
+        "ask": "the Ask tab (질문) vs the submit button (질문하기)"
       },
       "notes": {
         "plan_destination_psyche": "the asteroid destination takes the native name (프시케); problems() reads Psyche as the spacecraft name"
@@ -255,20 +225,15 @@
     },
     "hi": {
       "audited": "bbae9241232",
-      "defects": {
-        "explore_ctx_solar_system": ["differs from the glossary form"]
-      },
+      "defects": {},
       "variants": {
-        "anomaly": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
-        "constellation": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
-        "constellations": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
-        "detail": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
-        "gravity": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
-        "primary": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
-        "reach orbit": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
-        "search": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
-        "temp": "reviewed in the hi audit (bbae9241232): the meaning differs by context",
-        "transit": "reviewed in the hi audit (bbae9241232): the meaning differs by context"
+        "constellation": "a star pattern (explore_ds / star panel) vs a satellite fleet (card category: Starlink etc.)",
+        "constellations": "star patterns (explore layer) vs satellite fleets (earth-orbit layer under orbiters)",
+        "detail": "the Details panel tab (विवरण) vs the map zoom layer next to REGIONAL (विस्तार)",
+        "gravity": "गुरुत्व is the short form for the narrow tactical-scan readout",
+        "primary": "different senses: the central body in a Lab diagram (lab.body.primary) vs a launch record's primary source",
+        "reach orbit": "a calculator title (noun) vs a goal title (verb phrase)",
+        "temp": "ताप is the short form for the narrow tactical-scan readout"
       },
       "notes": {
         "explore_ctx_solar_system": "open 2026-10-30: the site splits between two forms of \"Solar System\" in prose (i18n-src मंडल 120 / मण्डल 94; messages 9 / 24); the label keeps the UI's form until a prose-wide one-name decision; glossary has सौर मण्डल (hi Wikipedia)"
@@ -276,44 +241,27 @@
     },
     "ar": {
       "audited": "7994b6378cc",
-      "defects": {
-        "explore_ctx_solar_system": ["differs from the glossary form"]
-      },
+      "defects": {},
       "variants": {
-        "active": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "anomaly": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "arrival": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "audio episodes": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "cancelled": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "comet": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "constellation": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "constellations": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "detail": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "discovered": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "engine": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "failure": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "fleet": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "flown": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "historic": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "insignia": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "landing": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "launch": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "learn more": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "live": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "mission": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "moon": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "notebook": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "period": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "planet": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "planned": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "primary": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "rocket": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "solar masses": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "success": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "surface": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "temp": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "transit": "reviewed in the ar audit (7994b6378cc): the meaning differs by context",
-        "watch": "reviewed in the ar audit (7994b6378cc): the meaning differs by context"
+        "active": "agreement: نشطة for a mission (feminine), نشط for craft, modules, programs, sites; يعمل is the usual Arabic for an operating observatory",
+        "cancelled": "agreement: ملغاة for a mission (feminine), ملغى for a program",
+        "constellation": "a star pattern (explore_ds / star panel) vs a satellite fleet (card category: Starlink etc.)",
+        "constellations": "star patterns (explore layer) vs satellite fleets (earth-orbit layer under orbiters)",
+        "detail": "the Details panel tab vs the map zoom layer next to REGIONAL",
+        "engine": "category tags are indefinite (card category محرك); field labels are definite (the Lab picker المحرك)",
+        "fleet": "category tags are indefinite (library category أسطول); headings and nav are definite",
+        "flown": "agreement and sense: أُطلقت for a mission (feminine), حلّق for a vehicle that has flown, أُنجز for a surface object",
+        "historic": "agreement: تاريخي for an observatory, تاريخية for the tab of past launches (feminine plural)",
+        "insignia": "plural for gallery titles, singular for the tag on one item",
+        "landing": "category tags are indefinite (plan mission-type option هبوط); field labels are definite (panel الهبوط)",
+        "live": "the on-air badge and nav item (مباشر) vs the page title (البث المباشر)",
+        "mission": "category tags are indefinite (library category مهمة); field labels are definite",
+        "moon": "the Moon vs the card kicker for any natural moon (NOT_THE_TERM)",
+        "planet": "category tags are indefinite (library/card kind كوكب); field labels are definite (Lab pickers الكوكب)",
+        "planned": "agreement: مخططة for a mission (feminine), مخطط for craft, programs, sites",
+        "primary": "different senses: the central body in a Lab diagram (lab.body.primary) vs a launch record's primary source",
+        "rocket": "category tags are indefinite (library category صاروخ); the Lab diagram body is definite (الصاروخ)",
+        "temp": "الحرارة is the short form for the narrow tactical-scan readout"
       },
       "notes": {
         "explore_ctx_solar_system": "open 2026-10-30: the site splits between two forms of \"Solar System\" in prose (i18n-src المجموعة الشمسية 124 / النظام الشمسي 71; messages 1 / 24); the label keeps the UI's form until a prose-wide one-name decision; glossary has المجموعة الشمسية (ar Wikipedia)"
@@ -331,10 +279,9 @@
         "constellation": "a star constellation (созвездие) vs a satellite constellation (спутниковая группировка)",
         "constellations": "star constellations vs satellite constellations",
         "incl": "the tooltip abbreviation (НАКЛ) vs the full banner label",
-        "anomaly": "fly_event_anomaly is pinned to English",
         "active": "Russian agreement: the adjective or participle agrees with the noun it qualifies (one key per noun, style guide §4a); the current flight event (сейчас) and a working observatory (работает) differ in meaning",
         "insignia": "a heading for many insignia (эмблемы) vs the tag on one (эмблема)",
-        "retired": "a module taken out of service, a rocket struck off, a surface craft no longer working — different nouns and senses",
+        "retired": "iss/fleet_status_retired label retired vehicles and station modules — different nouns per thing; surface_status_retired labels the retired satellites of earth-objects.json (Earth Orbit page) and closed launch pads (status-tone.ts) — a satellite or pad no longer working",
         "primary": "the central body of an orbit vs the primary data source",
         "reach orbit": "a calculator title (noun) vs a goal (infinitive)",
         "observe the sky": "a category (noun) vs a goal (infinitive)",
@@ -348,7 +295,7 @@
         "learn": "the Learn tab (подробнее) vs the nav section (обучение)",
         "detail": "a detail tab (подробности) vs the detailed map layer (детали)",
         "ask": "the Ask tab (вопрос) vs the submit button (спросить)",
-        "share card": "the card itself (noun) vs the share action"
+        "share card": "both are buttons: lab_report_card is the Lab notebook toolbar button that downloads a shareable image (Notebook.svelte, beside 'Lab report'), so it names the artifact — Карточка для публикации; card_share_card is the collector card's share action — Поделиться карточкой"
       },
       "notes": {
         "plan_destination_psyche": "left \"Psyche\": problems() refuses the native Психея because it reads Psyche as the spacecraft; ja/ko/zh-CN have the native asteroid name"

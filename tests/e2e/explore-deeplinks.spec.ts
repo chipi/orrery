@@ -41,6 +41,33 @@ test.describe('/explore — ?goto and ?system deep-links', () => {
     await expect.poll(() => params(page).goto).toBe('canopus');
   });
 
+  test('a cleared cold ?context is not written back by a later URL mirror', async ({ page }) => {
+    await page.goto('/explore?context=neighborhood');
+    await expect.poll(() => params(page).context ?? null, { timeout: 20_000 }).toBeNull();
+    await page.locator('.star-index-handle').click();
+    await page.locator('.si-row[data-index-id="canopus"]').click();
+    await expect.poll(() => params(page).goto).toBe('canopus');
+    expect(params(page).context ?? null).toBeNull();
+  });
+
+  test('leaving a system entered from its star panel clears ?system', async ({ page }) => {
+    await page.goto('/explore?context=neighborhood');
+    await page.locator('.star-index-handle').click({ timeout: 20_000 });
+    await page.locator('.si-row[data-index-id="proxima-centauri"]').click();
+    await page.locator('.enter-system').first().click({ timeout: 15_000 });
+    await expect(page.getByTestId('explore-scale-back')).toHaveAttribute(
+      'aria-label',
+      'Stellar Neighborhood',
+      { timeout: 15_000 },
+    );
+    await page.getByTestId('explore-scale-back').click();
+    await expect(page.getByTestId('explore-scale-back')).toHaveAttribute(
+      'aria-label',
+      'Solar System',
+    );
+    await expect.poll(() => params(page).system ?? null).toBeNull();
+  });
+
   test('entering a system from its star panel mirrors it into ?system', async ({ page }) => {
     await page.goto('/explore?context=neighborhood');
     await page.locator('.star-index-handle').click({ timeout: 20_000 });

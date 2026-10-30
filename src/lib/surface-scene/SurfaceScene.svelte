@@ -2,6 +2,7 @@
   import { onMount, onDestroy, untrack } from 'svelte';
   import { page } from '$app/state';
   import { afterNavigate, replaceState } from '$app/navigation';
+  import { currentUrl } from '$lib/safe-replace-state';
   import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { trackItemClick, trackGalleryImageOpen } from '$lib/analytics';
@@ -1248,7 +1249,7 @@
     const card = openSurfaceCard;
     if (card) everOpenedSurfaceCard = true;
     untrack(() => {
-      const url = new URL(page.url);
+      const url = currentUrl();
       const wantSite = card?.param === 'site' ? card.id : null;
       const wantObj = card?.param === 'object' ? card.id : null;
       const wantMuseum = card?.param === 'museum' ? card.id : null;

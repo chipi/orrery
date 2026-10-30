@@ -3,7 +3,7 @@ import { page } from '$app/state';
 import { afterNavigate } from '$app/navigation';
 import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
 import { resolveSolarBodyTarget } from '$lib/explore/scale-shell-controller';
-import { safeReplaceState } from '$lib/safe-replace-state';
+import { currentUrl, safeReplaceState } from '$lib/safe-replace-state';
 
 /**
  * Resolver guards: the last value each deep-link resolver handled. Plain (not
@@ -118,7 +118,7 @@ export function setupExploreUrlSync(d: ExploreUrlSyncDeps): void {
     const id = d.openBodyUrlId();
     if (id) everOpenedBody = true;
     untrack(() => {
-      const url = new URL(page.url);
+      const url = currentUrl();
       const cur = url.searchParams.get('id') ?? null;
       if (cur !== id && (id || everOpenedBody)) {
         // Never clobber a fresh ?id= deep-link before the resolver opens it —
@@ -155,7 +155,7 @@ export function setupExploreUrlSync(d: ExploreUrlSyncDeps): void {
     const id = d.openStarUrlId();
     if (id) everOpenedStar = true;
     untrack(() => {
-      const url = new URL(page.url);
+      const url = currentUrl();
       const cur = url.searchParams.get('goto') ?? null;
       if (cur !== id && (id || everOpenedStar)) {
         if (id) url.searchParams.set('goto', id);
@@ -181,7 +181,7 @@ export function setupExploreUrlSync(d: ExploreUrlSyncDeps): void {
     const { host, planet } = d.bodySystemUrl();
     if (host) everEnteredSystem = true;
     untrack(() => {
-      const url = new URL(page.url);
+      const url = currentUrl();
       const curSys = url.searchParams.get('system') ?? null;
       const curPl = url.searchParams.get('planet') ?? null;
       if (curSys !== host || curPl !== planet) {
@@ -209,7 +209,7 @@ export function setupExploreUrlSync(d: ExploreUrlSyncDeps): void {
     const ds = d.deepSkyUrlDesignation();
     if (ds) everImmersedDeepSky = true;
     untrack(() => {
-      const url = new URL(page.url);
+      const url = currentUrl();
       const cur = url.searchParams.get('deepsky') ?? null;
       if (cur !== ds && (ds || everImmersedDeepSky)) {
         if (ds) url.searchParams.set('deepsky', ds);
@@ -237,7 +237,7 @@ export function setupExploreUrlSync(d: ExploreUrlSyncDeps): void {
     const g = d.galaxyUrlId();
     if (g) everEnteredGalaxy = true;
     untrack(() => {
-      const url = new URL(page.url);
+      const url = currentUrl();
       const cur = url.searchParams.get('galaxy') ?? null;
       if (cur !== g && (g || everEnteredGalaxy)) {
         if (g) url.searchParams.set('galaxy', g);
@@ -262,7 +262,7 @@ export function setupExploreUrlSync(d: ExploreUrlSyncDeps): void {
     const v = d.bhUrlId();
     if (v) everEnteredBh = true;
     untrack(() => {
-      const url = new URL(page.url);
+      const url = currentUrl();
       const cur = url.searchParams.get('bh') ?? null;
       if (cur !== v && (v || everEnteredBh)) {
         if (v) url.searchParams.set('bh', v);
@@ -284,7 +284,7 @@ export function setupExploreUrlSync(d: ExploreUrlSyncDeps): void {
         void d
           .contextDeepLink()?.(c)
           .then(() => {
-            const url = new URL(page.url);
+            const url = currentUrl();
             if (url.searchParams.get('context') === c) {
               url.searchParams.delete('context');
               safeReplaceState(url, page.state);

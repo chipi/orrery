@@ -102,6 +102,19 @@ describe('core get() — i18n bundle load (#517)', () => {
     expect(urls.length).toBe(6);
   });
 
+  it('fetches only the chunk a key lives in, each chunk once', async () => {
+    const { fn, urls } = makeFetch([
+      () => json({ 'science/orbits/vis-viva.json': { title: 'Vis-viva' } }),
+      () => json({ 'planets/mars.json': { fact: 'Roter Planet' } }),
+    ]);
+    expect((await get<{ title: string }>('i18n/de/science/orbits/vis-viva.json', fn)).title).toBe(
+      'Vis-viva',
+    );
+    expect((await get<{ fact: string }>('i18n/de/planets/mars.json', fn)).fact).toBe('Roter Planet');
+    await get('i18n/de/planets/mars.json', fn);
+    expect(urls.map((u) => u.split('/').pop())).toEqual(['de.science.json', 'de.core.json']);
+  });
+
   it('reports a surviving transient failure only once per locale', async () => {
     vi.useFakeTimers();
     const { fn } = makeFetch([() => httpErr(500)]);

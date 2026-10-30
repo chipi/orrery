@@ -11,6 +11,7 @@
 
 import { base } from '$app/paths';
 import { localeBundleOrigin } from '../asset-url';
+import { i18nChunkFile, i18nChunkOf } from './i18n-chunks.js';
 
 export type FetchLike = typeof fetch;
 
@@ -19,13 +20,14 @@ const cache = new Map<string, unknown>();
 // Per-locale i18n overlay bundles. The overlay system ships ~740 tiny JSON
 // files per locale (~10,360 across 14 locales); fetching and precaching them
 // individually is what stalls the service-worker install on mobile WebKit
-// (the 0.6.3-stuck bug). They are built into one bundle per locale
-// (scripts/build-i18n-bundles.mjs, served at /data/i18n/{locale}.json). We
-// fetch a bundle once and index by each file path relative to the locale dir
-// (e.g. "sun.json", "planets/mars.json", "science/orbits/vis-viva.json").
+// (the 0.6.3-stuck bug). They are built into a few chunks per locale
+// (scripts/build-i18n-bundles.mjs, served at /data/i18n/{locale}.{chunk}.json,
+// chunks in ./i18n-chunks.js). We fetch a chunk once and index by each file path
+// relative to the locale dir (e.g. "sun.json", "science/orbits/vis-viva.json").
+// Keyed "{locale}:{chunk}".
 const i18nBundles = new Map<string, Promise<Record<string, unknown>>>();
 
-// The per-locale i18n bundle is a single ~1.75 MB fetch — the fragile step. A
+// The per-locale i18n chunk fetch (up to ~1.3 MB raw) is the fragile step. A
 // transient client-side failure (aborted nav, flaky mobile network) used to
 // drop straight to the dead per-file fallback in get(), 404-bursting and
 // silently serving overlay-less (English-fallback) content (#517). Distinguish
@@ -37,7 +39,7 @@ const BUNDLE_ATTEMPTS = 3;
 const bundleDelay = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 // Circuit breaker (#521 review L5): during a sustained outage, `.catch` drops the
-// cached promise so each subsequent get() would re-run a fresh 3-attempt × 1.75 MB
+// cached promise so each subsequent get() would re-run a fresh 3-attempt × chunk
 // cycle — amplifying load on a server that's already failing. After this many
 // FULLY-failed cycles for a locale this page-load, stop retrying and reject
 // immediately (the caller's en-US fallback still fires). Reset on resetCoreCache.
@@ -53,15 +55,20 @@ class BundleLoadError extends Error {
   }
 }
 
-export function loadI18nBundle(locale: string, fetchFn: FetchLike): Promise<Record<string, unknown>> {
-  let p = i18nBundles.get(locale);
+export function loadI18nBundle(
+  locale: string,
+  chunk: string,
+  fetchFn: FetchLike,
+): Promise<Record<string, unknown>> {
+  const id = `${locale}:${chunk}`;
+  let p = i18nBundles.get(id);
   if (!p) {
     // Circuit open: too many failed cycles this page-load — don't hammer the
     // origin again, reject immediately so the caller's fallback fires (L5).
     if ((bundleFailedCycles.get(locale) ?? 0) >= BUNDLE_MAX_FAILED_CYCLES) {
       return Promise.reject(new BundleLoadError(`i18n bundle circuit open: ${locale}`));
     }
-    const url = `${localeBundleOrigin(locale)}/data/i18n/${locale}.json`;
+    const url = `${localeBundleOrigin(locale)}/data/i18n/${i18nChunkFile(locale, chunk)}`;
     p = (async () => {
       let lastErr: BundleLoadError | undefined;
       for (let attempt = 0; attempt < BUNDLE_ATTEMPTS; attempt++) {
@@ -85,10 +92,10 @@ export function loadI18nBundle(locale: string, fetchFn: FetchLike): Promise<Reco
     // but count the failed cycle so the circuit breaker above can trip. A 4xx
     // (bundle genuinely absent) also counts: no point re-fetching a 404 either.
     p.catch(() => {
-      i18nBundles.delete(locale);
+      i18nBundles.delete(id);
       bundleFailedCycles.set(locale, (bundleFailedCycles.get(locale) ?? 0) + 1);
     });
-    i18nBundles.set(locale, p);
+    i18nBundles.set(id, p);
   }
   return p;
 }
@@ -134,7 +141,7 @@ export async function get<T>(path: string, fetchFn: FetchLike = fetch): Promise<
     const [, locale, key] = i18n;
     let bundle: Record<string, unknown> | undefined;
     try {
-      bundle = await loadI18nBundle(locale, fetchFn);
+      bundle = await loadI18nBundle(locale, i18nChunkOf(key), fetchFn);
     } catch (err) {
       const status = err instanceof BundleLoadError ? err.status : undefined;
       if (status !== undefined && status >= 400 && status < 500) {

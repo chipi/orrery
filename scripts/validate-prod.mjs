@@ -421,7 +421,13 @@ suite('i18n-full');
 suite('data');
 {
   const p = await desktop.newPage();
-  for (const f of ['/data/i18n/en-US.json', '/data/i18n/de.json']) {
+  // Whole-locale bundles (released app versions stream them) + the chunks the site loads.
+  for (const f of [
+    '/data/i18n/en-US.json',
+    '/data/i18n/de.json',
+    '/data/i18n/de.core.json',
+    '/data/i18n/de.science.json',
+  ]) {
     try {
       const resp = await p.goto(BASE + f, { timeout: 15000 });
       record(`data served ${f}`, resp && resp.status() === 200, `HTTP ${resp?.status()}`);

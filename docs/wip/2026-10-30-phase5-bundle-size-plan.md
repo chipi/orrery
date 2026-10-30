@@ -68,7 +68,39 @@ re-renders. The root layout no longer fetches the locale map on every page
   text has none offline until one online load (the `/data/*.json` runtime
   cache stores it on first use, as it already did for the other locales).
 
-## 3. Per-locale i18n bundle split (`static/data/i18n/<loc>.json`, 3.4–4.4 MB)
+## 3. Per-locale i18n bundle split (3.4–4.4 MB per locale) — done
+
+The first localized lookup on any page fetched the whole locale bundle (de
+587 KB br / 2.2 MB raw, hi 613 KB br / 4.4 MB raw) and parsed it. Five trees
+hold most of it (hi, br): science 199 KB, programs 110, essays 85, fleet 77,
+missions 75; everything else ~70.
+
+Fix: `build-i18n-bundles.mjs` also writes `<loc>.<chunk>.json` for chunks
+science, programs, essays, fleet, missions and core (the rest), mapped by
+`src/lib/data/i18n-chunks.js`, which the loader in `core.ts` shares. `get()`
+fetches only the chunk a key lives in; the missions linkifier loads fleet +
+missions. The whole `<loc>.json` is still emitted: released mobile app
+versions stream it from the web origin.
+
+Browser check on the build (files fetched, brotli):
+
+| Page | Fetched | br |
+| --- | --- | --- |
+| /de/missions?id=apollo11 | de.missions + de.core | ~188 KB |
+| /de/fleet?id=saturn-v | de.fleet + de.core | ~188 KB |
+| /de/science/orbits | de.science | ~189 KB |
+| /de/mars | de.core | ~116 KB |
+
+Before: de.json, 587 KB br, on each of them.
+
+Mobile: the app keeps the en-US chunks on device and prunes the unused whole
+`en-US.json`; the service-worker precache lists `en-US.*.json`.
+`npm run build:mobile` passes its size budget (70.5 MB / 77 MB) and
+`playwright.mobile.config.ts` passes 12/12 with the updated streaming spec.
+
+Not covered: `i18n-src` en-US has 1,137 keys against 1,143 elsewhere (six
+`hotspot-metadata` files only the other locales have); the builder warns on it.
+Same on main; not changed here.
 
 ## 4. Per-route brotli size budget in CI
 

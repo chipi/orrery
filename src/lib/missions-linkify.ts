@@ -81,8 +81,12 @@ function ensureNames(locale: string): Promise<void> {
   if (!browser || nameIndex.has(locale)) return Promise.resolve();
   const running = namesInflight.get(locale);
   if (running) return running;
-  const job = loadI18nBundle(locale, fetch)
-    .then((bundle) => {
+  const job = Promise.all([
+    loadI18nBundle(locale, 'fleet', fetch),
+    loadI18nBundle(locale, 'missions', fetch),
+  ])
+    .then(([fleet, missions]) => {
+      const bundle = { ...fleet, ...missions };
       const idx = new Map<string, string>();
       // Fleet first so a mission with the same name wins (missions open the
       // mission panel, the more specific target).

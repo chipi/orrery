@@ -20,11 +20,15 @@
  * Output: static/data/i18n/{locale}.json = { "<relpath>": <content>, ... }
  * keyed by the file's path relative to the locale dir (forward-slashed),
  * e.g. "sun.json", "planets/mars.json", "science/orbits/vis-viva.json".
- * The runtime loader (src/lib/data.ts get()) fetches this bundle once and
- * indexes by that same key.
+ * Also written per chunk (Phase 5, 2026-10-30): static/data/i18n/{locale}.{chunk}.json
+ * holds the keys of one chunk (src/lib/data/i18n-chunks.js). The runtime loader
+ * (src/lib/data/core.ts get()) fetches only the chunk a key lives in, so a
+ * /missions visitor no longer downloads the science and essay translations.
+ * The whole-locale file stays: released mobile app versions stream it.
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { i18nChunkOf, i18nChunkFile } from '../src/lib/data/i18n-chunks.js';
 
 // Source overlays live OUTSIDE the served tree (ADR-079 D2 / #377): they are
 // build-time input, not servable assets. Only the collapsed per-locale bundles
@@ -72,6 +76,15 @@ function main() {
     const outPath = path.join(I18N_OUT, `${loc}.json`);
     const json = JSON.stringify(bundle);
     fs.writeFileSync(outPath, json, 'utf8');
+    const chunks = {};
+    for (const [key, value] of Object.entries(bundle))
+      (chunks[i18nChunkOf(key)] ??= {})[key] = value;
+    for (const [chunk, keys] of Object.entries(chunks))
+      fs.writeFileSync(
+        path.join(I18N_OUT, i18nChunkFile(loc, chunk)),
+        JSON.stringify(keys),
+        'utf8',
+      );
     totalIn += files.length;
     summary.push({ loc, keys: files.length, kb: (json.length / 1024).toFixed(0) });
   }

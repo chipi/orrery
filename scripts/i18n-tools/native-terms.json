@@ -9580,11 +9580,19 @@
         "hi": ["कक्षा", "कक्षीय", "परिक्रमा", "कक्षीय पथ"],
         "ar": ["مدار", "مدارية", "يدور"],
         "sr-Cyrl": ["орбит", "путања"],
-        "de": ["Umlaufbahn", "\\bOrbit", "-Orbit", "Orbit", "Bahn"],
+        "de": [
+          "Umlaufbahn",
+          "\\bOrbit",
+          "-Orbit",
+          "Orbit",
+          "Bahn",
+          "Umlaufba\\p{L}*",
+          "-Orb\\p{L}*"
+        ],
         "fr": ["orbit"],
         "es": ["órbit", "orbit"],
         "it": ["orbit"],
-        "nl": ["\\bbaan", "omloopbaan", "banen\\b", "\\borbit", "orbit"],
+        "nl": ["\\bbaan", "omloopbaan", "banen\\b", "\\borbit", "orbit", "omloopba\\p{L}*"],
         "pt-BR": ["órbit", "orbit"]
       },
       "_confidence": {
@@ -9626,11 +9634,11 @@
         "hi": ["प्रक्षेपवक्र", "प्रक्षेप-पथ", "प्रक्षेप पथ"],
         "ar": ["مسار"],
         "sr-Cyrl": ["путањ", "трајекториј", "трајекторија"],
-        "de": ["Flugbahn", "Trajektorie", "Bahn"],
-        "fr": ["trajectoire"],
-        "es": ["trayectori"],
-        "it": ["traiettori", "percorso"],
-        "nl": ["traject", "vluchtbaan", "baan"],
+        "de": ["Flugbahn", "Trajektorie", "Bahn", "Flugba\\p{L}*", "Trajektor\\p{L}*"],
+        "fr": ["trajectoire", "trajectoi\\p{L}*"],
+        "es": ["trayectori", "trayecto\\p{L}*"],
+        "it": ["traiettori", "percorso", "traietto\\p{L}*", "percor\\p{L}*"],
+        "nl": ["traject", "vluchtbaan", "baan", "traje\\p{L}*", "vluchtba\\p{L}*"],
         "pt-BR": ["trajet[óo]ri"]
       },
       "_confidence": {
@@ -9672,11 +9680,11 @@
         "hi": ["झुकाव", "कक्षीय झुकाव", "नति"],
         "ar": ["ميل", "الميل"],
         "sr-Cyrl": ["инклинациј", "нагиб", "нагиб орбите", "нагиб путање"],
-        "de": ["Inklination", "Bahnneigung"],
-        "fr": ["inclinaison"],
-        "es": ["inclinaci"],
-        "it": ["inclinazion"],
-        "nl": ["inclinatie", "baanhelling"],
+        "de": ["Inklination", "Bahnneigung", "Inklinati\\p{L}*", "Bahnneigu\\p{L}*"],
+        "fr": ["inclinaison", "inclinais\\p{L}*"],
+        "es": ["inclinaci", "inclina\\p{L}*"],
+        "it": ["inclinazion", "inclinazi\\p{L}*"],
+        "nl": ["inclinatie", "baanhelling", "inclinat\\p{L}*", "baanhelli\\p{L}*"],
         "pt-BR": ["inclina[çc]"]
       },
       "_confidence": {
@@ -9718,12 +9726,39 @@
         "hi": ["मिलन", "कक्षीय मिलन"],
         "ar": ["التقاء", "الالتقاء"],
         "sr-Cyrl": ["сусрет", "рандеву", "сусрет у орбити"],
-        "de": ["Rendezvous", "Rendez-vous", "Rendezvous-Manöver"],
-        "fr": ["rendez-vous", "rencontre"],
-        "es": ["encuentro", "rendez", "cita espacial"],
-        "it": ["rendez-?vous", "appuntamento orbitale", "incontro"],
-        "nl": ["rendez-?vous", "ontmoeting"],
-        "pt-BR": ["encontro", "rendez", "rendezvous"]
+        "de": [
+          "Rendezvous",
+          "Rendez-vous",
+          "Rendezvous-Manöver",
+          "Rendezvo\\p{L}*",
+          "Rendez-vo\\p{L}*",
+          "Rendezvous-Manöv\\p{L}*"
+        ],
+        "fr": ["rendez-vous", "rencontre", "rendez-vo\\p{L}*", "rencont\\p{L}*"],
+        "es": [
+          "encuentro",
+          "rendez",
+          "cita espacial",
+          "encuent\\p{L}*",
+          "rend\\p{L}*",
+          "cita espaci\\p{L}*"
+        ],
+        "it": [
+          "rendez-?vous",
+          "appuntamento orbitale",
+          "incontro",
+          "appuntamen\\p{L}* orbita\\p{L}*",
+          "incont\\p{L}*"
+        ],
+        "nl": ["rendez-?vous", "ontmoeting", "ontmoeti\\p{L}*"],
+        "pt-BR": [
+          "encontro",
+          "rendez",
+          "rendezvous",
+          "encont\\p{L}*",
+          "rend\\p{L}*",
+          "rendezvo\\p{L}*"
+        ]
       },
       "_confidence": {
         "ru": "medium",
@@ -9772,12 +9807,37 @@
           "пристајање",
           "прикључн\\p{L}* прстен"
         ],
-        "de": ["[Aa]ndock", "Kopp?lung", "koppel", "Kopplung", "Docking"],
-        "fr": ["amarrage", "amarr", "arrimage"],
-        "es": ["acoplamiento", "acoplar", "atraque"],
-        "it": ["aggancio", "agganc", "docking", "attracco"],
-        "nl": ["koppel", "dock", "docken", "docking"],
-        "pt-BR": ["acoplament", "acopl", "atracação"]
+        "de": [
+          "[Aa]ndock",
+          "Kopp?lung",
+          "koppel",
+          "Kopplung",
+          "Docking",
+          "kopp\\p{L}*",
+          "Kopplu\\p{L}*",
+          "Docki\\p{L}*"
+        ],
+        "fr": ["amarrage", "amarr", "arrimage", "amarra\\p{L}*", "arrima\\p{L}*"],
+        "es": [
+          "acoplamiento",
+          "acoplar",
+          "atraque",
+          "acoplamien\\p{L}*",
+          "acopl\\p{L}*",
+          "atraq\\p{L}*"
+        ],
+        "it": [
+          "aggancio",
+          "agganc",
+          "docking",
+          "attracco",
+          "agganc\\p{L}*",
+          "agga\\p{L}*",
+          "docki\\p{L}*",
+          "attrac\\p{L}*"
+        ],
+        "nl": ["koppel", "dock", "docken", "docking", "kopp\\p{L}*", "dock\\p{L}*", "docki\\p{L}*"],
+        "pt-BR": ["acoplament", "acopl", "atracação", "acoplame\\p{L}*", "atracaç\\p{L}*"]
       },
       "_confidence": {
         "ru": "high",
@@ -9841,20 +9901,48 @@
           "Gravitationsunterst",
           "Gravitationsunterstützung",
           "Schwerkraftunterstützung",
-          "Schleudermanöver"
+          "Schleudermanöver",
+          "Schwerkraftunter\\p{L}*",
+          "Gravitationsunter\\p{L}*",
+          "Gravitationsunterstützu\\p{L}*",
+          "Schwerkraftunterstützu\\p{L}*",
+          "Schleudermanöv\\p{L}*"
         ],
-        "fr": ["assistance gravitationnelle", "fronde gravitationnelle"],
-        "es": ["asistencia gravit", "asistencia gravitacional"],
-        "it": ["fionda gravitazional", "assist gravitazionale"],
+        "fr": [
+          "assistance gravitationnelle",
+          "fronde gravitationnelle",
+          "assistan\\p{L}* gravitationnel\\p{L}*",
+          "fron\\p{L}* gravitationnel\\p{L}*"
+        ],
+        "es": [
+          "asistencia gravit",
+          "asistencia gravitacional",
+          "asistenc\\p{L}* grav\\p{L}*",
+          "asistenc\\p{L}* gravitacion\\p{L}*"
+        ],
+        "it": [
+          "fionda gravitazional",
+          "assist gravitazionale",
+          "fion\\p{L}* gravitazion\\p{L}*",
+          "assi\\p{L}* gravitaziona\\p{L}*"
+        ],
         "nl": [
           "zwaartekrachts?slinger",
           "zwaartekrachtassist",
           "swing-?by",
           "gravity assist",
           "zwaartekrachtduw",
-          "swing-by"
+          "swing-by",
+          "zwaartekrachtassi\\p{L}*",
+          "gravi\\p{L}* assi\\p{L}*",
+          "zwaartekrachtd\\p{L}*",
+          "swing-\\p{L}*"
         ],
-        "pt-BR": ["assist[êe]ncia gravitacional", "estilingue gravitacional"]
+        "pt-BR": [
+          "assist[êe]ncia gravitacional",
+          "estilingue gravitacional",
+          "estiling\\p{L}* gravitacion\\p{L}*"
+        ]
       },
       "_confidence": {
         "ru": "high",
@@ -9903,12 +9991,58 @@
         "hi": ["डेल्टा-वी", "[ΔΔ∆][vV]", "Δv", "∆v", "[Δ∆]\\s?[vV]"],
         "ar": ["دلتا[- ]في", "[ΔΔ∆][vV]", "Δv", "∆v", "[Δ∆]\\s?[vV]"],
         "sr-Cyrl": ["делта-?[вv]", "[∆Δ]\\s?[vV]", "∆v", "[Δ∆]\\s?[vV]"],
-        "de": ["[Dd]elta-?v", "[ΔΔ∆]\\s?v", "Δv", "Geschwindigkeitsänderung", "[Δ∆]\\s?[vV]"],
-        "fr": ["delta-v", "∆v", "Δv", "variation de vitesse", "[Δ∆]\\s?[vV]"],
-        "es": ["delta-v", "∆v", "Δv", "cambio de velocidad", "[Δ∆]\\s?[vV]"],
-        "it": ["delta-v", "∆v", "Δv", "variazione di velocità", "[Δ∆]\\s?[vV]"],
-        "nl": ["delta-?v", "[Δ∆]\\s?v", "Δv", "snelheidsverandering", "[Δ∆]\\s?[vV]"],
-        "pt-BR": ["delta-v", "∆v", "Δv", "variação de velocidade", "[Δ∆]\\s?[vV]"]
+        "de": [
+          "[Dd]elta-?v",
+          "[ΔΔ∆]\\s?v",
+          "Δv",
+          "Geschwindigkeitsänderung",
+          "[Δ∆]\\s?[vV]",
+          "Geschwindigkeitsänderu\\p{L}*"
+        ],
+        "fr": [
+          "delta-v",
+          "∆v",
+          "Δv",
+          "variation de vitesse",
+          "[Δ∆]\\s?[vV]",
+          "delta\\p{L}*",
+          "variati\\p{L}* de vites\\p{L}*"
+        ],
+        "es": [
+          "delta-v",
+          "∆v",
+          "Δv",
+          "cambio de velocidad",
+          "[Δ∆]\\s?[vV]",
+          "delta\\p{L}*",
+          "camb\\p{L}* de velocid\\p{L}*"
+        ],
+        "it": [
+          "delta-v",
+          "∆v",
+          "Δv",
+          "variazione di velocità",
+          "[Δ∆]\\s?[vV]",
+          "delta\\p{L}*",
+          "variazio\\p{L}* di veloci\\p{L}*"
+        ],
+        "nl": [
+          "delta-?v",
+          "[Δ∆]\\s?v",
+          "Δv",
+          "snelheidsverandering",
+          "[Δ∆]\\s?[vV]",
+          "snelheidsveranderi\\p{L}*"
+        ],
+        "pt-BR": [
+          "delta-v",
+          "∆v",
+          "Δv",
+          "variação de velocidade",
+          "[Δ∆]\\s?[vV]",
+          "delta\\p{L}*",
+          "variaç\\p{L}* de velocida\\p{L}*"
+        ]
       },
       "_confidence": {
         "ru": "medium",
@@ -9950,11 +10084,11 @@
         "ar": ["أوج", "الأوج"],
         "sr-Cyrl": ["апогеј"],
         "de": ["Apog[äa]"],
-        "fr": ["apogée"],
-        "es": ["apogeo"],
-        "it": ["apogeo"],
-        "nl": ["apogeum", "apogee"],
-        "pt-BR": ["apogeu"]
+        "fr": ["apogée", "apog\\p{L}*"],
+        "es": ["apogeo", "apog\\p{L}*"],
+        "it": ["apogeo", "apog\\p{L}*"],
+        "nl": ["apogeum", "apogee", "apoge\\p{L}*", "apog\\p{L}*"],
+        "pt-BR": ["apogeu", "apog\\p{L}*"]
       },
       "_confidence": {
         "ru": "high",
@@ -9996,11 +10130,11 @@
         "ar": ["حضيض", "الحضيض الأرضي"],
         "sr-Cyrl": ["перигеј", "перицентар"],
         "de": ["Perig[äa]"],
-        "fr": ["périgée", "périapside"],
-        "es": ["perigeo", "periapsis/periastro"],
-        "it": ["perigeo", "periasse/periapside"],
-        "nl": ["perigeum"],
-        "pt-BR": ["perigeu", "periapse/periastro"]
+        "fr": ["périgée", "périapside", "périg\\p{L}*", "périapsi\\p{L}*"],
+        "es": ["perigeo", "periapsis/periastro", "perig\\p{L}*"],
+        "it": ["perigeo", "periasse/periapside", "perig\\p{L}*"],
+        "nl": ["perigeum", "perige\\p{L}*"],
+        "pt-BR": ["perigeu", "periapse/periastro", "perig\\p{L}*"]
       },
       "_confidence": {
         "ru": "high",
@@ -10059,11 +10193,46 @@
           "Brennphase",
           "Brenndauer",
           "Manöver",
-          "Bremsmanöver"
+          "Bremsmanöver",
+          "Zündu\\p{L}*",
+          "Triebwerkszündu\\p{L}*",
+          "Brennpha\\p{L}*",
+          "Brenndau\\p{L}*",
+          "Manöv\\p{L}*",
+          "Bremsmanöv\\p{L}*"
         ],
-        "fr": ["allumage", "allumer", "poussée", "manœuvre"],
-        "es": ["encendid", "encender", "enciende", "maniobra", "quema"],
-        "it": ["accension", "accende", "accendere", "accesa", "manovra"],
+        "fr": [
+          "allumage",
+          "allumer",
+          "poussée",
+          "manœuvre",
+          "alluma\\p{L}*",
+          "allum\\p{L}*",
+          "pouss\\p{L}*",
+          "manœuv\\p{L}*"
+        ],
+        "es": [
+          "encendid",
+          "encender",
+          "enciende",
+          "maniobra",
+          "quema",
+          "encend\\p{L}*",
+          "encien\\p{L}*",
+          "maniob\\p{L}*"
+        ],
+        "it": [
+          "accension",
+          "accende",
+          "accendere",
+          "accesa",
+          "manovra",
+          "accensi\\p{L}*",
+          "accen\\p{L}*",
+          "accende\\p{L}*",
+          "acce\\p{L}*",
+          "manov\\p{L}*"
+        ],
         "nl": [
           "ontsteking",
           "ontsteek",
@@ -10071,9 +10240,27 @@
           "brandperiode",
           "brandtijd",
           "motorontsteking",
-          "manoeuvre"
+          "manoeuvre",
+          "ontsteki\\p{L}*",
+          "ontste\\p{L}*",
+          "ontstek\\p{L}*",
+          "brandperio\\p{L}*",
+          "brandti\\p{L}*",
+          "motorontsteki\\p{L}*",
+          "manoeuv\\p{L}*"
         ],
-        "pt-BR": ["queima", "queimar", "ignição", "acionamento do motor", "manobra"]
+        "pt-BR": [
+          "queima",
+          "queimar",
+          "ignição",
+          "acionamento do motor",
+          "manobra",
+          "quei\\p{L}*",
+          "queim\\p{L}*",
+          "igniç\\p{L}*",
+          "acionamen\\p{L}* do motor",
+          "manob\\p{L}*"
+        ]
       },
       "_confidence": {
         "ru": "medium",
@@ -10115,12 +10302,20 @@
         "hi": ["चरण"],
         "ar": ["مرحلة", "مراحل"],
         "sr-Cyrl": ["степен", "први степен", "горњи степен"],
-        "de": ["Stufe", "Raketenstufe", "Oberstufe", "Erststufe"],
+        "de": [
+          "Stufe",
+          "Raketenstufe",
+          "Oberstufe",
+          "Erststufe",
+          "Raketenstu\\p{L}*",
+          "Oberstu\\p{L}*",
+          "Erststu\\p{L}*"
+        ],
         "fr": ["étage"],
-        "es": ["etapa", "escalón"],
-        "it": ["stadio", "stadi"],
-        "nl": ["\\btrap", "trappen", "raketfase"],
-        "pt-BR": ["estágio"]
+        "es": ["etapa", "escalón", "escal\\p{L}*"],
+        "it": ["stadio", "stadi", "stad\\p{L}*"],
+        "nl": ["\\btrap", "trappen", "raketfase", "trapp\\p{L}*", "raketfa\\p{L}*"],
+        "pt-BR": ["estágio", "estág\\p{L}*"]
       },
       "_confidence": {
         "ru": "high",
@@ -10161,12 +10356,26 @@
         "hi": ["प्रणोदक", "नोदक"],
         "ar": ["وقود دافع", "الوقود الدافع", "مادة دافعة"],
         "sr-Cyrl": ["погонск", "гориво", "погонска компонента"],
-        "de": ["Treibstoff", "Treibmittel", "Treibstoffe"],
-        "fr": ["propergol", "ergol"],
-        "es": ["propelente", "combustible"],
-        "it": ["propellent", "combustibile"],
-        "nl": ["drijfstof", "stuwstof", "brandstof"],
-        "pt-BR": ["propelente", "combustível"]
+        "de": [
+          "Treibstoff",
+          "Treibmittel",
+          "Treibstoffe",
+          "Treibsto\\p{L}*",
+          "Treibmitt\\p{L}*",
+          "Treibstof\\p{L}*"
+        ],
+        "fr": ["propergol", "ergol", "properg\\p{L}*"],
+        "es": ["propelente", "combustible", "propelen\\p{L}*", "combustib\\p{L}*"],
+        "it": ["propellent", "combustibile", "propelle\\p{L}*", "combustibi\\p{L}*"],
+        "nl": [
+          "drijfstof",
+          "stuwstof",
+          "brandstof",
+          "drijfst\\p{L}*",
+          "stuwst\\p{L}*",
+          "brandst\\p{L}*"
+        ],
+        "pt-BR": ["propelente", "combustível", "propelen\\p{L}*", "combustív\\p{L}*"]
       },
       "_confidence": {
         "ru": "high",
@@ -10207,12 +10416,26 @@
         "hi": ["पेलोड", "उपयोगी भार"],
         "ar": ["حمول", "الحمولة النافعة", "حمولة نافعة"],
         "sr-Cyrl": ["корисн\\p{L}* терет", "терет"],
-        "de": ["Nutzlast"],
-        "fr": ["charge utile"],
-        "es": ["carga útil"],
-        "it": ["carico utile"],
-        "nl": ["\\blading", "nuttige lading", "payload"],
-        "pt-BR": ["carga útil"]
+        "de": ["Nutzlast", "Nutzla\\p{L}*"],
+        "fr": [
+          "charge utile",
+          "char\\p{L}* utile",
+          "carg\\p{L}* utiles|caric\\p{L}* utiles|charges? utiles"
+        ],
+        "es": ["carga útil", "carg\\p{L}* útiles|caric\\p{L}* útiles|charges? útiles"],
+        "it": [
+          "carico utile",
+          "cari\\p{L}* utile",
+          "carg\\p{L}* utili|caric\\p{L}* utili|charges? utili"
+        ],
+        "nl": [
+          "\\blading",
+          "nuttige lading",
+          "payload",
+          "nutti\\p{L}* ladi\\p{L}*",
+          "paylo\\p{L}*"
+        ],
+        "pt-BR": ["carga útil", "carg\\p{L}* úteis|caric\\p{L}* úteis|charges? úteis"]
       },
       "_confidence": {
         "ru": "high",
@@ -10253,11 +10476,11 @@
         "hi": ["प्रणोद(?!क|न)", "थ्रस्ट"],
         "ar": ["قوة الدفع", "الدفع"],
         "sr-Cyrl": ["потис", "сила потиска"],
-        "de": ["\\bSchub", "schub", "Schubkraft"],
-        "fr": ["poussée"],
-        "es": ["empuje"],
+        "de": ["\\bSchub", "schub", "Schubkraft", "Schubkra\\p{L}*"],
+        "fr": ["poussée", "pouss\\p{L}*"],
+        "es": ["empuje", "empu\\p{L}*"],
         "it": ["spint"],
-        "nl": ["stuwkracht", "\\bstuw", "stuw"],
+        "nl": ["stuwkracht", "\\bstuw", "stuw", "stuwkrac\\p{L}*"],
         "pt-BR": ["empux"]
       },
       "_confidence": {
@@ -10311,18 +10534,62 @@
           "бочни појачивач",
           "чврстогорива помоћна ракета"
         ],
-        "de": ["Booster", "Zusatzrakete", "Feststoffbooster", "Seitenbooster"],
+        "de": [
+          "Booster",
+          "Zusatzrakete",
+          "Feststoffbooster",
+          "Seitenbooster",
+          "Boost\\p{L}*",
+          "Zusatzrake\\p{L}*",
+          "Feststoffboost\\p{L}*",
+          "Seitenboost\\p{L}*"
+        ],
         "fr": [
           "propulseur d'appoint",
           "booster",
           "propulseurs? (d'appoint|latér)",
           "accélérateur à poudre",
-          "propulseur latéral"
+          "propulseur latéral",
+          "propulse\\p{L}* d'appoi\\p{L}*",
+          "boost\\p{L}*",
+          "accélérate\\p{L}* à poud\\p{L}*",
+          "propulse\\p{L}* latér\\p{L}*"
         ],
-        "es": ["propulsor", "acelerador", "booster", "propulsor lateral", "propulsor sólido"],
-        "it": ["booster", "propulsor", "propulsore laterale", "razzo ausiliario"],
-        "nl": ["booster", "hulpraket"],
-        "pt-BR": ["propulsor", "booster", "impulsor", "propulsor lateral", "propulsor sólido"]
+        "es": [
+          "propulsor",
+          "acelerador",
+          "booster",
+          "propulsor lateral",
+          "propulsor sólido",
+          "propuls\\p{L}*",
+          "acelerad\\p{L}*",
+          "boost\\p{L}*",
+          "propuls\\p{L}* later\\p{L}*",
+          "propuls\\p{L}* sóli\\p{L}*"
+        ],
+        "it": [
+          "booster",
+          "propulsor",
+          "propulsore laterale",
+          "razzo ausiliario",
+          "boost\\p{L}*",
+          "propuls\\p{L}*",
+          "propulso\\p{L}* latera\\p{L}*",
+          "razzo ausiliar\\p{L}*"
+        ],
+        "nl": ["booster", "hulpraket", "boost\\p{L}*", "hulprak\\p{L}*"],
+        "pt-BR": [
+          "propulsor",
+          "booster",
+          "impulsor",
+          "propulsor lateral",
+          "propulsor sólido",
+          "propuls\\p{L}*",
+          "boost\\p{L}*",
+          "impuls\\p{L}*",
+          "propuls\\p{L}* later\\p{L}*",
+          "propuls\\p{L}* sóli\\p{L}*"
+        ]
       },
       "_confidence": {
         "ru": "medium",
@@ -10364,11 +10631,11 @@
         "ar": ["الدفع النوعي", "النبضة النوعية"],
         "sr-Cyrl": ["специфичн\\p{L}* импулс"],
         "de": ["[Ss]pezifisch\\w* Impuls"],
-        "fr": ["impulsion spécifique", "Isp"],
-        "es": ["impulso específico", "Isp"],
-        "it": ["impulso specifico", "Isp"],
+        "fr": ["impulsion spécifique", "Isp", "impulsi\\p{L}* spécifiq\\p{L}*"],
+        "es": ["impulso específico", "Isp", "impul\\p{L}* específi\\p{L}*"],
+        "it": ["impulso specifico", "Isp", "impul\\p{L}* specifi\\p{L}*"],
         "nl": ["specifiek\\w* impuls"],
-        "pt-BR": ["impulso específico", "Isp"]
+        "pt-BR": ["impulso específico", "Isp", "impul\\p{L}* específi\\p{L}*"]
       },
       "_confidence": {
         "ru": "high",
@@ -10410,12 +10677,20 @@
         "hi": ["फ़?्?लाईबाई", "फ़?्?लाइबाई", "फ्लाई-बाई"],
         "ar": ["مرور (ال)?قريب", "تحليق قريب", "التحليق"],
         "sr-Cyrl": ["прелет", "прелете", "пролаз"],
-        "de": ["Vorbeiflug", "Vorbeiflüg", "Flyby"],
-        "fr": ["survol"],
-        "es": ["sobrevu", "sobrevol"],
-        "it": ["sorvol"],
-        "nl": ["flyby", "fly-by", "voorbijvlucht", "scheervlucht"],
-        "pt-BR": ["sobrevoo", "sobrevoar", "sobrevôo"]
+        "de": ["Vorbeiflug", "Vorbeiflüg", "Flyby", "Vorbeifl\\p{L}*"],
+        "fr": ["survol", "surv\\p{L}*"],
+        "es": ["sobrevu", "sobrevol", "sobre\\p{L}*", "sobrev\\p{L}*"],
+        "it": ["sorvol", "sorv\\p{L}*"],
+        "nl": [
+          "flyby",
+          "fly-by",
+          "voorbijvlucht",
+          "scheervlucht",
+          "fly-\\p{L}*",
+          "voorbijvluc\\p{L}*",
+          "scheervluc\\p{L}*"
+        ],
+        "pt-BR": ["sobrevoo", "sobrevoar", "sobrevôo", "sobrev\\p{L}*", "sobrevo\\p{L}*"]
       },
       "_confidence": {
         "ru": "high",
@@ -10479,11 +10754,26 @@
           "Orbiteinschuss",
           "Bahneinschuss",
           "Einschuss",
-          "Einschuss in die Umlaufbahn"
+          "Einschuss in die Umlaufbahn",
+          "Einschwe\\p{L}*",
+          "Orbiteinschu\\p{L}*",
+          "Bahneinschu\\p{L}*",
+          "Einschu\\p{L}*",
+          "Einschu\\p{L}* in die Umlaufba\\p{L}*"
         ],
-        "fr": ["insertion (en|orbitale)", "insertion orbitale"],
-        "es": ["inserción (en|orbital)", "insertar", "inserción orbital"],
-        "it": ["inserimento (in|orbitale)", "inserimento orbitale"],
+        "fr": ["insertion (en|orbitale)", "insertion orbitale", "inserti\\p{L}* orbita\\p{L}*"],
+        "es": [
+          "inserción (en|orbital)",
+          "insertar",
+          "inserción orbital",
+          "insert\\p{L}*",
+          "inserci\\p{L}* orbit\\p{L}*"
+        ],
+        "it": [
+          "inserimento (in|orbitale)",
+          "inserimento orbitale",
+          "inserimen\\p{L}* orbita\\p{L}*"
+        ],
         "nl": [
           "insertie",
           "inschiet",
@@ -10491,9 +10781,20 @@
           "inbrengen",
           "orbit-insertie",
           "inbrengen in een baan",
-          "baaninbrenging"
+          "baaninbrenging",
+          "insert\\p{L}*",
+          "inschi\\p{L}*",
+          "inbrengi\\p{L}*",
+          "inbreng\\p{L}*",
+          "orbit-insert\\p{L}*",
+          "inbreng\\p{L}* in een baan",
+          "baaninbrengi\\p{L}*"
         ],
-        "pt-BR": ["inserção (em órbita|orbital)", "inserção em órbita"]
+        "pt-BR": [
+          "inserção (em órbita|orbital)",
+          "inserção em órbita",
+          "inserç\\p{L}* em órbi\\p{L}*"
+        ]
       },
       "_confidence": {
         "ru": "medium",
@@ -10547,12 +10848,35 @@
           "улазак",
           "поврат\\p{L}* у атмосфер"
         ],
-        "de": ["Atmosphäreneintritt", "Eintritt", "Wiedereintritt"],
-        "fr": ["entrée", "rentrée"],
-        "es": ["entrada", "reentrada", "reingreso"],
-        "it": ["ingresso", "rientro"],
-        "nl": ["intrede", "binnenkomst", "intrede in de atmosfeer", "terugkeer"],
-        "pt-BR": ["entrada", "reentrada"]
+        "de": [
+          "Atmosphäreneintritt",
+          "Eintritt",
+          "Wiedereintritt",
+          "Atmosphäreneintri\\p{L}*",
+          "Eintri\\p{L}*",
+          "Wiedereintri\\p{L}*"
+        ],
+        "fr": ["entrée", "rentrée", "entr\\p{L}*", "rentr\\p{L}*"],
+        "es": [
+          "entrada",
+          "reentrada",
+          "reingreso",
+          "entra\\p{L}*",
+          "reentra\\p{L}*",
+          "reingre\\p{L}*"
+        ],
+        "it": ["ingresso", "rientro", "ingres\\p{L}*", "rient\\p{L}*"],
+        "nl": [
+          "intrede",
+          "binnenkomst",
+          "intrede in de atmosfeer",
+          "terugkeer",
+          "intre\\p{L}*",
+          "binnenkom\\p{L}*",
+          "intre\\p{L}* in de atmosfe\\p{L}*",
+          "terugke\\p{L}*"
+        ],
+        "pt-BR": ["entrada", "reentrada", "entra\\p{L}*", "reentra\\p{L}*"]
       },
       "_confidence": {
         "ru": "high",
@@ -10593,12 +10917,27 @@
         "hi": ["अवरोहण", "उतरना"],
         "ar": ["هبوط", "الهبوط", "النزول"],
         "sr-Cyrl": ["спуштањ", "спуст", "спусн", "слетање"],
-        "de": ["Abstieg", "Sinkflug", "Abstiegsstufe"],
-        "fr": ["descente"],
-        "es": ["descenso"],
-        "it": ["discesa"],
-        "nl": ["afdaling", "afdalings", "daling", "daal"],
-        "pt-BR": ["descida"]
+        "de": [
+          "Abstieg",
+          "Sinkflug",
+          "Abstiegsstufe",
+          "Absti\\p{L}*",
+          "Sinkfl\\p{L}*",
+          "Abstiegsstu\\p{L}*"
+        ],
+        "fr": ["descente", "descen\\p{L}*"],
+        "es": ["descenso", "descen\\p{L}*"],
+        "it": ["discesa", "disce\\p{L}*"],
+        "nl": [
+          "afdaling",
+          "afdalings",
+          "daling",
+          "daal",
+          "afdali\\p{L}*",
+          "afdalin\\p{L}*",
+          "dali\\p{L}*"
+        ],
+        "pt-BR": ["descida", "desci\\p{L}*"]
       },
       "_confidence": {
         "ru": "high",

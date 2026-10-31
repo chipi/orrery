@@ -69,3 +69,34 @@ Lowest cells, the drift the agents also saw in context:
 Operator idea, 2026-10-31: a `/glossary` page (terms, definitions, and a reverse
 index of the pages that use each term), built from this section. It is the last
 item of Phase 6, reassessed after the pilot.
+
+## Round 1 result — science (2026-10-31)
+
+- **Review:** 1,133 science fields reviewed per locale by five Sonnet reviewers
+  (keep / minimal change). Each change list was read before applying.
+- **Dropped edits:** edits that replaced correct standard usage were dropped and
+  the glossary widened instead: nl "terugkeer" and "daaltrap", sr "повратак у
+  атмосферу" and "прикључни прстен". 26 nl and 12 sr edits, plus a few added
+  clauses in fr, pt-BR and ru.
+- **Applied:** 565 field edits, 0 refused by the quality checks.
+- **Retranslated:** seven machine-garbled pages, retranslated by hand
+  (dead-reckoning, star-trackers and space-photography in fr/pt-BR;
+  dead-reckoning in ru/ja; star-trackers and lagrange-points in zh-CN).
+- **Small fixes:** a pt-BR number (thousands → hundreds of kN), ru and sr
+  typos, an ar link.
+- **zh-CN:** full-width punctuation, 1,600 marks.
+- **New guard:** `scripts/i18n-tools/link-targets.test.ts` checks that
+  translated fields keep the English link targets.
+- **Stems:** made inflection-tolerant for Latin-script locales (plurals were
+  counted as misses).
+
+Science misses: **1,317 → 656**. Most remaining cells are 90–100 %. What is left:
+reviewer "keep" decisions (pronouns, verbs of *orbit*, combustion senses of
+*burn*, spacecraft parts such as "descent module"), the 113 low-confidence pairs
+held back (nl burn 44 %, ko gravity assist 60 %, ar flyby 55 %, nl orbit
+insertion 69 %), and stem gaps still to widen (ar re-entry "العودة", pt-BR
+gravity assist 53 %).
+
+Next: record reviewer "keep" decisions so the detector can serve as a gate; a
+second opinion on the low-confidence entries (Serbian with the operator); then
+essays, missions, fleet and programs (~3,450 misses).

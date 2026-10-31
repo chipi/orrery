@@ -192,6 +192,10 @@ after that, as the very end, a small visual per glossary term in the science-dia
 (Higgsfield pipeline, `docs/guides/diagram-art-style.md`; credits sized and approved first;
 PRD-038 §5b).
 
+To reconsider at the end (operator, 2026-10-31): the Lab's internal name "plain" for the
+per-formula plain-words line (`plainKey`, `lab_f_*_plain`, `card__plain`; renamed from
+"glossary" in 889f810d7f4). Code-only, nothing on screen, so a rename is cheap.
+
 To reassess after the space-terms pilot
 ([2026-10-31-space-terms-glossary-pilot.md](2026-10-31-space-terms-glossary-pilot.md)).
 A low-profile `/glossary` page, like the glossary at the back of a technical book:

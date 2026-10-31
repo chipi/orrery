@@ -7,6 +7,9 @@
 // Writes <outdir>/<loc>.json: [{rel, at, tree, written, en, tr, terms}] and prints the pool
 // sizes. --per=all writes the whole pool: the work file for a fix round (garble-pass doc §3).
 // `terms` is the term-binding note the translators get for that English (termNotes).
+// --before=any drops the date filter: every translated field, the text readers see now (round-2
+// measurement). --exclude=<dir>[,<dir>…] skips fields listed ({rel, at}) in any <loc>.json there,
+// so a fresh sample never re-grades an earlier one.
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -25,6 +28,16 @@ const TREES = arg('trees', 'fleet,missions').split(',');
 const PER = arg('per', '25') === 'all' ? Infinity : Number(arg('per', '25'));
 const BEFORE = arg('before', '2026-07-14');
 const LOCS = arg('locales', 'ru,ja,zh-CN,ko,hi,ar,sr-Cyrl,de,fr,es,it,nl,pt-BR').split(',');
+const EXCLUDE = arg('exclude', '').split(',').filter(Boolean);
+const excluded = (loc) =>
+  new Set(
+    EXCLUDE.flatMap((d) => {
+      const f = path.join(d, `${loc}.json`);
+      return fs.existsSync(f)
+        ? JSON.parse(fs.readFileSync(f, 'utf8')).map((x) => `${x.rel}|${x.at}`)
+        : [];
+    }),
+  );
 let seed = Number(arg('seed', '31'));
 const rand = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
 
@@ -64,6 +77,7 @@ function blameDates(file) {
 fs.mkdirSync(outDir, { recursive: true });
 for (const loc of LOCS) {
   const picked = [];
+  const skip = excluded(loc);
   for (const tree of TREES) {
     const pool = [];
     for (const f of walk(`i18n-src/${loc}/${tree}`)) {
@@ -71,11 +85,12 @@ for (const loc of LOCS) {
       const enFile = `i18n-src/en-US/${rel}`;
       if (!fs.existsSync(enFile)) continue;
       const en = new Map(leaves(JSON.parse(fs.readFileSync(enFile, 'utf8'))));
-      const dates = blameDates(f);
+      const dates = BEFORE === 'any' ? new Map() : blameDates(f);
       for (const [at, tr] of leaves(JSON.parse(fs.readFileSync(f, 'utf8')))) {
         const e = en.get(at);
-        const written = dates.get(tr);
-        if (!e || !written || written > BEFORE || !isText(e) || e.length < 40) continue;
+        const written = BEFORE === 'any' ? 'any' : dates.get(tr);
+        if (!e || !written || (BEFORE !== 'any' && written > BEFORE)) continue;
+        if (!isText(e) || e.length < 40 || skip.has(`${rel}|${at}`)) continue;
         pool.push({ rel, at, tree, written, en: e, tr, terms: termNotes(loc, e).trim() });
       }
     }
@@ -85,7 +100,7 @@ for (const loc of LOCS) {
     }
     picked.push(...pool.slice(0, PER));
     console.log(
-      `${loc} ${tree}: ${pool.length} fields last written on or before ${BEFORE}; sampled ${Math.min(PER, pool.length)}`,
+      `${loc} ${tree}: ${pool.length} fields ${BEFORE === 'any' ? 'in all' : `last written on or before ${BEFORE}`}; sampled ${Math.min(PER, pool.length)}`,
     );
   }
   fs.writeFileSync(path.join(outDir, `${loc}.json`), JSON.stringify(picked, null, 1));

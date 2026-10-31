@@ -1,0 +1,842 @@
+[
+  {
+    "rel": "fleet/space-suit/sokol-m.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/uchinoura.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'supergirante' odd for super-rotating; 'capas nubosas'"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "'fase de costas' for coast phase is a meaningless mistranslation"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "note": "'filsosicatos' garbled nonword for filosilicatos"
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'en cada paso' for pass; should be sobrevuelo"
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "best_known_for",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "note": "'translunare' nonword (Italian-like); 'llevó Apollo' missing preposition"
+  },
+  {
+    "rel": "fleet/launch-site/baikonur-31-6.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/space-suit/a7l.json",
+    "at": "dispatch",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'vuelos a jet' anglicism"
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'amerizaje a gran altura' wrong; 'olores acre', 'trazó' calques"
+  },
+  {
+    "rel": "fleet/launch-site/palmachim.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "dispatch",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'taladro móvil' for mole drill"
+  },
+  {
+    "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/semnan-imam-khomeini.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-3.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "dispatch",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'propulsión media' wrong for medium-lift"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "dispatch",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Awkward word order 'Carguero de la EEI insignia de la ESA'"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "note": "'etapa de patada', 'la configuración que proporcionar' ungrammatical, strap-on left English"
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-43.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/change-5.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/space-suit/aces.json",
+    "at": "tagline",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "note": "'camisetasleeve ascent' garbled/untranslated; sentence broken"
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "dispatch",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/lvm3.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-101.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'Plataforma ... chino' gender disagreement"
+  },
+  {
+    "rel": "fleet/space-suit/orlan-mks.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.9.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.3.note",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'Asteroide C-tipo' calque"
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.4.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.5.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "payload",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'alejamiento de la transparencia' reverses meaning; 'cinta GEO' for belt"
+  },
+  {
+    "rel": "missions/earth/artemis3.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "payload",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.4.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "payload",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "vehicle_stage",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.4.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.6.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "Re-docking rendered as docking and undocking again; 'NASA estaba clara' calque"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "delta_v",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.4.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "dispatch",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'una rueda se avería' wrong tense"
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'gripe' for head cold"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "payload",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "dispatch",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

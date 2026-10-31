@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "outcome.1.md",
+    "old": "Y después continuó. Diseñado para durar seis meses, el orbitador operó durante aproximadamente ocho años, devolviendo imágenes y datos atmosféricos sobre Marte —una vista en color del disco completo, tormentas de polvo, la tenue atmósfera superior— mucho después de que se cumplieran sus objetivos de demostración. Una misión construida para demostrar algo se convirtió discretamente en una plataforma científica duradera, quedando finalmente en silencio hacia 2022 cuando se agotó su propulsante y energía.",
+    "new": "Y después continuó. Diseñado para durar seis meses, el orbitador operó durante aproximadamente ocho años, devolviendo imágenes y datos atmosféricos sobre Marte —una vista en color del disco completo, tormentas de polvo, la tenue atmósfera superior— mucho después de que se cumplieran sus objetivos de demostración. Una misión construida para demostrar algo se convirtió discretamente en una plataforma científica duradera, quedando finalmente en silencio hacia 2022 cuando se agotó su propelente y energía."
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "narrative.0.md",
+    "old": "La narrativa de Mangalyaan es la frugalidad como superpoder. Su famoso bajo coste no fue suerte ni recorte de esquinas, sino una cultura de ingeniería deliberada: reutilización de componentes probados, una nave espacial pequeña y enfocada, un conjunto de instrumentos modestos, trayectorias eficientes que intercambiaban tiempo por propulsante, y equipos reducidos trabajando con presupuestos ajustados. India no alcanzó Marte de forma económica haciéndolo peor; alcanzó Marte de forma económica mediante una disciplina de simplicidad que los programas más grandes, con más dinero para gastar, rara vez se imponen a sí mismos.",
+    "new": "La narrativa de Mangalyaan es la frugalidad como superpoder. Su famoso bajo coste no fue suerte ni recorte de esquinas, sino una cultura de ingeniería deliberada: reutilización de componentes probados, una nave espacial pequeña y enfocada, un conjunto de instrumentos modestos, trayectorias eficientes que intercambiaban tiempo por propelente, y equipos reducidos trabajando con presupuestos ajustados. India no alcanzó Marte de forma económica haciéndolo peor; alcanzó Marte de forma económica mediante una disciplina de simplicidad que los programas más grandes, con más dinero para gastar, rara vez se imponen a sí mismos."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "the_land.1.md",
+    "old": "El vehículo que surgió fue un compromiso entre esa visión y los presupuestos y requisitos militares que se le impusieron, y el compromiso importó. Para ser asequible tenía que ser reutilizable; para ser reutilizable y transportar cargas pesadas se volvió grande, complejo y — porque la tripulación viajaba junto a su tanque de combustible y propulsores en lugar de segura encima de la estructura — fundamentalmente menos tolerante que las cápsulas a las que reemplazó. Era una máquina magnífica construida sobre una promesa que no podía cumplir, y la brecha entre la promesa y la realidad es toda la historia.",
+    "new": "El vehículo que surgió fue un compromiso entre esa visión y los presupuestos y requisitos militares que se le impusieron, y el compromiso importó. Para ser asequible tenía que ser reutilizable; para ser reutilizable y transportar cargas útiles pesadas se volvió grande, complejo y — porque la tripulación viajaba junto a su tanque de combustible y propulsores en lugar de segura encima de la estructura — fundamentalmente menos tolerante que las cápsulas a las que reemplazó. Era una máquina magnífica construida sobre una promesa que no podía cumplir, y la brecha entre la promesa y la realidad es toda la historia."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "old": "Dos de esas cosas justifican el programa entero. El Shuttle desplegó el Hubble Space Telescope y luego, en cinco ocasiones, envió tripulaciones a repararlo y mejorarlo en órbita — convirtiendo un telescopio defectuoso en el observatorio más productivo de la historia y manteniéndolo actualizado durante décadas. Y ensambló la Estación Espacial Internacional, llevando los módulos, estructuras y paneles solares y uniéndolos con su brazo y sus caminantes espaciales. Ninguna de las dos cosas era posible sin un vehículo que pudiera transportar una tripulación numerosa, una carga grande y las herramientas para trabajar en el espacio. Ese era el verdadero propósito del Shuttle, y en eso, no tuvo rival.",
+    "new": "Dos de esas cosas justifican el programa entero. El Shuttle desplegó el Hubble Space Telescope y luego, en cinco ocasiones, envió tripulaciones a repararlo y mejorarlo en órbita — convirtiendo un telescopio defectuoso en el observatorio más productivo de la historia y manteniéndolo actualizado durante décadas. Y ensambló la Estación Espacial Internacional, llevando los módulos, estructuras y paneles solares y uniéndolos con su brazo y sus caminantes espaciales. Ninguna de las dos cosas era posible sin un vehículo que pudiera transportar una tripulación numerosa, una carga útil grande y las herramientas para trabajar en el espacio. Ese era el verdadero propósito del Shuttle, y en eso, no tuvo rival."
+  }
+]

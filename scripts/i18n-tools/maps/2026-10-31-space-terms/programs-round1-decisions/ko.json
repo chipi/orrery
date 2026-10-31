@@ -1,0 +1,89 @@
+[
+  {
+    "rel": "programs/mercury.json",
+    "at": "outcome.0.caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: 선회한"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "link_labels./science/transfers/free-return",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "variant: 자유 귀환 궤도 (standard compound)"
+  },
+  {
+    "rel": "programs/pioneer.json",
+    "at": "outcome.0.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "떠나는 궤도에",
+    "replace": "떠나는 궤적에",
+    "why": "binding 궤적"
+  },
+  {
+    "rel": "programs/ros.json",
+    "at": "goals.0.md",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "stem gap: 고경사"
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "outcome.2.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "중력 어시스트",
+    "replace": "중력 도움",
+    "why": "binding 중력 도움"
+  },
+  {
+    "rel": "programs/mars-rovers.json",
+    "at": "outcome.1.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "phase of a campaign, not a rocket stage"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "narrative.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "화물이 아닌",
+    "replace": "탑재체가 아닌",
+    "why": "payload binding"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "the_land.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "무거운 화물을",
+    "replace": "무거운 탑재체를",
+    "why": "payload binding"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.1.md",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: 화물칸 (standard payload bay)"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "대형 화물",
+    "replace": "대형 탑재체",
+    "why": "payload binding"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "lineage sense, not surface descent"
+  }
+]

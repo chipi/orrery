@@ -1,0 +1,104 @@
+[
+  {
+    "rel": "programs/gemini.json",
+    "at": "link_labels./earth",
+    "old": "Aarde — banen, koppelingen & lanceerplaatsen",
+    "new": "Aarde — banen, rendez-vous & lanceerplaatsen"
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "link_labels./earth",
+    "old": "Aarde — banen, koppelingen & lanceerplaatsen",
+    "new": "Aarde — banen, rendez-vous & lanceerplaatsen"
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "link_labels./earth",
+    "old": "Aarde — banen, koppelingen & lanceerplaatsen",
+    "new": "Aarde — banen, rendez-vous & lanceerplaatsen"
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "link_labels./earth",
+    "old": "Aarde — banen, koppelingen & lanceerplaatsen",
+    "new": "Aarde — banen, rendez-vous & lanceerplaatsen"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "link_labels./earth",
+    "old": "Aarde — banen, koppelingen & lanceerplaatsen",
+    "new": "Aarde — banen, rendez-vous & lanceerplaatsen"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "link_labels./earth",
+    "old": "Aarde — banen, koppelingen & lanceerplaatsen",
+    "new": "Aarde — banen, rendez-vous & lanceerplaatsen"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "outcome.1.md",
+    "old": "Soyuz' eerste bemande vlucht, in 1967, doodde zijn piloot: Vladimir Komarov vloog in een ruimtevaartuig vol bekende gebreken en stierf toen zijn parachutes faalden en de capsule de grond raakte — de eerste dood tijdens een vlucht in de geschiedenis van de ruimtevaart. Het programma herstelde, en in 1969 realiseerden Soyuz 4 en 5 het eerste aanmeren van twee bemande vaartuigen, waarbij kosmonauten tussen hen wisselden via een ruimtewandeling. Vervolgens werd in 1971 de bemanning van Soyuz 11 de eerste die aan boord van een ruimtestation leefde — en stierf op de terugweg toen een klep hun cabinelucht liet ontsnappen, de enige mensenlevens die ooit in de ruimte verloren gingen. En in 1975, in een complete verandering van toonsoort, meerde een Soyuz aan bij een Apollo in een baan, en een Amerikaan en een Sovjet schudden elkaar de hand door het luik — het symbolische einde van de ruimtewedloop.",
+    "new": "Soyuz' eerste bemande vlucht, in 1967, doodde zijn piloot: Vladimir Komarov vloog in een ruimtevaartuig vol bekende gebreken en stierf toen zijn parachutes faalden en de capsule de grond raakte — de eerste dood tijdens een vlucht in de geschiedenis van de ruimtevaart. Het programma herstelde, en in 1969 realiseerden Soyuz 4 en 5 de eerste koppeling van twee bemande vaartuigen, waarbij kosmonauten tussen hen wisselden via een ruimtewandeling. Vervolgens werd in 1971 de bemanning van Soyuz 11 de eerste die aan boord van een ruimtestation leefde — en stierf op de terugweg toen een klep hun cabinelucht liet ontsnappen, de enige mensenlevens die ooit in de ruimte verloren gingen. En in 1975, in een complete verandering van toonsoort, koppelde een Soyuz met een Apollo in een baan, en een Amerikaan en een Sovjet schudden elkaar de hand door het luik — het symbolische einde van de ruimtewedloop."
+  },
+  {
+    "rel": "programs/tiangong.json",
+    "at": "outcome.0.md",
+    "old": "Het werkte, en het werkte op schema. Tiangong-1 (2011) bewees rendezvous en aanmering; Tiangong-2 (2016) bewees dat bemanningen een maand aan boord konden leven en werken en bevoorraad konden worden door het nieuwe Tianzhou-vrachtschip. Vervolgens werden tussen april 2021 en eind 2022 de drie modules van het permanente station — de Tianhe-kern en de laboratoria Wentian en Mengtian — gelanceerd en geassembleerd tot het T-vormige Chinese Ruimtestation, dat sinds juni 2022 continu bemand is, toen de Shenzhou-14-bemanning met permanente bewoning begon.",
+    "new": "Het werkte, en het werkte op schema. Tiangong-1 (2011) bewees rendezvous en koppeling; Tiangong-2 (2016) bewees dat bemanningen een maand aan boord konden leven en werken en bevoorraad konden worden door het nieuwe Tianzhou-vrachtschip. Vervolgens werden tussen april 2021 en eind 2022 de drie modules van het permanente station — de Tianhe-kern en de laboratoria Wentian en Mengtian — gelanceerd en geassembleerd tot het T-vormige Chinese Ruimtestation, dat sinds juni 2022 continu bemand is, toen de Shenzhou-14-bemanning met permanente bewoning begon."
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "legacy.2.md",
+    "old": "Historisch markeert het een overdracht. Voskhod 2 vloog in maart 1965; Gemini's eigen programma begon weken later en nam, in de daaropvolgende twintig maanden, methodisch de voorsprong over die de Soviets sinds Sputnik hadden gehad — rendezvous, dokken, uithoudingsvermogen, EVA tot routine gemaakt. Voskhod is de laatste keer dat de Sovjet-Unie duidelijk voorlag. Wat daarna kwam, aan beide kanten, zou niet worden beslist door wie eerste was, maar door wie de diepere capaciteit had gebouwd.",
+    "new": "Historisch markeert het een overdracht. Voskhod 2 vloog in maart 1965; Gemini's eigen programma begon weken later en nam, in de daaropvolgende twintig maanden, methodisch de voorsprong over die de Soviets sinds Sputnik hadden gehad — rendezvous, koppeling, uithoudingsvermogen, EVA tot routine gemaakt. Voskhod is de laatste keer dat de Sovjet-Unie duidelijk voorlag. Wat daarna kwam, aan beide kanten, zou niet worden beslist door wie eerste was, maar door wie de diepere capaciteit had gebouwd."
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "narrative.1.md",
+    "old": "Het is ook het verhaal van hoe planetaire verkenning zijn basisbewegingen leerde. Mariner 4 bewees dat je door het zonnestelsel kon vliegen en een planeet kon fotograferen; Mariner 9 bewees dat je er één kon stoppen en verkennen; Mariner 10 bewees dat je de zwaartekracht van een planeet kon gebruiken om gratis een andere te bereiken. Die drie capaciteiten — de voorbijvlucht, de orbiter en de zwaartekrachthulp — zijn de grammatica van elke missie die volgde, en de Mariners zijn waar elk voor het eerst werd geschreven.",
+    "new": "Het is ook het verhaal van hoe planetaire verkenning zijn basisbewegingen leerde. Mariner 4 bewees dat je door het zonnestelsel kon vliegen en een planeet kon fotograferen; Mariner 9 bewees dat je er één kon stoppen en verkennen; Mariner 10 bewees dat je de zwaartekracht van een planeet kon gebruiken om gratis een andere te bereiken. Die drie capaciteiten — de voorbijvlucht, de orbiter en de zwaartekrachtassist — zijn de grammatica van elke missie die volgde, en de Mariners zijn waar elk voor het eerst werd geschreven."
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "legacy.1.md",
+    "old": "De tweede is de gereedschapskist. De voorbijvlucht, de planetaire orbiter en de interplanetaire zwaartekracht-katapult werden alle voor het eerst bereikt door Mariners, en alle drie blijven fundamenteel voor hoe ruimtevaartuigen verkennen. Latere missies vliegen verder en dragen meer, maar ze gebruiken nog steeds de bewegingen die Mariner uitvond.",
+    "new": "De tweede is de gereedschapskist. De voorbijvlucht, de planetaire orbiter en de interplanetaire zwaartekrachtassist werden alle voor het eerst bereikt door Mariners, en alle drie blijven fundamenteel voor hoe ruimtevaartuigen verkennen. Latere missies vliegen verder en dragen meer, maar ze gebruiken nog steeds de bewegingen die Mariner uitvond."
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "lessons.1.md",
+    "old": "De diepere les is dat capaciteiten zich ophopen. Mariner ging er niet op uit om de zwaartekrachthulp of de planetaire orbiter als doel op zich uit te vinden — het loste het probleem ervoor op, en elke oplossing werd een permanent gereedschap dat de volgende missie kon aannemen. Vooruitgang op moeilijke grenzen gaat vaak minder over individuele triomfen dan over het bouwen van een grammatica van bewegingen die iedereen die daarna komt gratis kan gebruiken.",
+    "new": "De diepere les is dat capaciteiten zich ophopen. Mariner ging er niet op uit om de zwaartekrachtassist of de planetaire orbiter als doel op zich uit te vinden — het loste het probleem ervoor op, en elke oplossing werd een permanent gereedschap dat de volgende missie kon aannemen. Vooruitgang op moeilijke grenzen gaat vaak minder over individuele triomfen dan over het bouwen van een grammatica van bewegingen die iedereen die daarna komt gratis kan gebruiken."
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "goals.0.md",
+    "old": "Het primaire doel was capaciteit, geen wetenschap: aantonen dat India een ruimtevaartuig kon ontwerpen, lanceren en navigeren over de interplanetaire kloof en het precies in Mars-baan kon brengen — de specifieke technologieën van diep-ruimtecommunicatie, autonome werking ver van de Aarde, en een enkele alles-of-niets baaninsertieverbanding die de meeste eerste pogingen verkeerd uitpakken. Als die werkten, was al het andere een bonus.",
+    "new": "Het primaire doel was capaciteit, geen wetenschap: aantonen dat India een ruimtevaartuig kon ontwerpen, lanceren en navigeren over de interplanetaire kloof en het precies in Mars-baan kon brengen — de specifieke technologieën van diep-ruimtecommunicatie, autonome werking ver van de Aarde, en een enkele alles-of-niets baaninsertieontsteking die de meeste eerste pogingen verkeerd uitpakken. Als die werkten, was al het andere een bonus."
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "outcome.2.md",
+    "old": "Het grootste effect van de uitkomst was op de perceptie. Mangalyaan toonde een wereldwijd publiek dat de club van Mars-capabele naties niet langer gesloten was voor de rijke minderheid, en dat ISRO — lang onderschat als regionale organisatie — een interplanetaire primeur kon leveren. Het veranderde India, in een enkele verbranding, in een erkende diep-ruimtemacht.",
+    "new": "Het grootste effect van de uitkomst was op de perceptie. Mangalyaan toonde een wereldwijd publiek dat de club van Mars-capabele naties niet langer gesloten was voor de rijke minderheid, en dat ISRO — lang onderschat als regionale organisatie — een interplanetaire primeur kon leveren. Het veranderde India, in een enkele ontsteking, in een erkende diep-ruimtemacht."
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "outcome.0.md",
+    "old": "De tour leverde meer dan verwacht. Bij Jupiter in 1979 vonden de Voyagers actieve vulkanen op de maan Io — de eerste ooit gezien buiten de aarde — en het gladde ijs van Europa dat verborg wat op een oceaan leek. Bij Saturnus losten ze de ringen op in duizenden ingewikkelde strengen en scheerden dicht langs de in nevel gehulde maan Titan. Die Titan-passage boog het pad van Voyager 1 omhoog en uit het vlak van de planeten, waardoor het opklom naar de rand van het zonnestelsel.",
+    "new": "De tour leverde meer dan verwacht. Bij Jupiter in 1979 vonden de Voyagers actieve vulkanen op de maan Io — de eerste ooit gezien buiten de aarde — en het gladde ijs van Europa dat verborg wat op een oceaan leek. Bij Saturnus losten ze de ringen op in duizenden ingewikkelde strengen en scheerden dicht langs de in nevel gehulde maan Titan. Die Titan-flyby boog het pad van Voyager 1 omhoog en uit het vlak van de planeten, waardoor het opklom naar de rand van het zonnestelsel."
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "outcome.1.md",
+    "old": "Voyager 2 vloog de volledige Grand Tour. Het bereikte Uranus in 1986 en Neptunus in 1989 — het enige ruimtevaartuig ooit dat een van beide werelden heeft bezocht — en vond een planeet gekanteld op zijn zij, een diepblauwe reus met de snelste winden in het zonnestelsel, en een maan, Triton, met geisers van stikstof die de ruimte in spuiten. Tot op de dag van vandaag is alles wat de mensheid van dichtbij weet over de ijsreuzen verzameld in die twee korte passages.",
+    "new": "Voyager 2 vloog de volledige Grand Tour. Het bereikte Uranus in 1986 en Neptunus in 1989 — het enige ruimtevaartuig ooit dat een van beide werelden heeft bezocht — en vond een planeet gekanteld op zijn zij, een diepblauwe reus met de snelste winden in het zonnestelsel, en een maan, Triton, met geisers van stikstof die de ruimte in spuiten. Tot op de dag van vandaag is alles wat de mensheid van dichtbij weet over de ijsreuzen verzameld in die twee korte flybys."
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "legacy.0.md",
+    "old": "Het eerste erfgoed van Voyager is de kaart zelf. De passages veranderden Jupiter, Saturnus, Uranus en Neptunus en hun manen van lichtpunten in plaatsen, en de ontmoetingen met Uranus en Neptunus blijven — decennia later — de enige data van dichtbij die de mensheid ooit over de ijsreuzen heeft verzameld. Elk voorstel om naar die werelden terug te keren is nog steeds gebaseerd op wat twee ruimtevaartuigen uit 1977 zagen in een paar uur.",
+    "new": "Het eerste erfgoed van Voyager is de kaart zelf. De flybys veranderden Jupiter, Saturnus, Uranus en Neptunus en hun manen van lichtpunten in plaatsen, en de ontmoetingen met Uranus en Neptunus blijven — decennia later — de enige data van dichtbij die de mensheid ooit over de ijsreuzen heeft verzameld. Elk voorstel om naar die werelden terug te keren is nog steeds gebaseerd op wat twee ruimtevaartuigen uit 1977 zagen in een paar uur."
+  }
+]

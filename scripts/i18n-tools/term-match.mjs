@@ -25,8 +25,17 @@ export function locPattern(entry, loc) {
   const stems = entry._match?.[loc] ?? (entry[loc] ? [entry[loc]] : []);
   if (!stems.length) return null;
   const re = new RegExp(stems.map((s) => `(?:${normalize(loc, s)})`).join('|'), 'iu');
+  // `_avoid.<loc>`: forms that are wrong for this sense; a field using one is a miss even
+  // when an accepted form appears elsewhere in it (zh-CN 自由返回轨迹 beside a 轨道).
+  const avoid = entry._avoid?.[loc]?.length
+    ? new RegExp(entry._avoid[loc].map((s) => `(?:${normalize(loc, s)})`).join('|'), 'iu')
+    : null;
   return {
-    test: (s) => re.test(normalize(loc, prose(s))),
+    test: (s) => {
+      const t = normalize(loc, prose(s));
+      return re.test(t) && !avoid?.test(t);
+    },
+    avoided: (s) => normalize(loc, prose(s)).match(avoid ?? /$^/)?.[0] ?? null,
     // the matched text (vowel marks removed for ar), for review listings
     match: (s) => normalize(loc, prose(s)).match(re)?.[0] ?? null,
   };

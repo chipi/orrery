@@ -95,7 +95,7 @@ node scripts/i18n-tools/term-drift.mjs --trees=essays                         # 
 
 When a tree reaches zero unreviewed misses, add it to `GATED_TREES` in
 `term-glossary.test.ts` (it runs `term-drift … --gate`), so a new translation that drifts
-fails CI. Gated since 2026-10-31: **science**, **essays**. Mutation-checked: putting "branden" back in
+fails CI. Gated since 2026-10-31: **science**, **essays**, **programs**. Mutation-checked: putting "branden" back in
 one nl field fails the test with "unreviewed misses: 1".
 
 ## Detector rules worth knowing
@@ -104,6 +104,15 @@ one nl field fails the test with "unreviewed misses: 1".
   in `term-match.mjs`). Before this, an English "delta-v" in a link target flagged fields
   whose text never used the term, and a translated field could pass on an English
   `/science/orbits/…` target.
+
+- `_avoid.<loc>` (regex list) marks forms that are wrong for the sense: a field using one
+  is a miss even when an accepted form appears elsewhere in it. First use: zh-CN trajectory
+  (自由返回轨迹, 轨迹修正, 转移轨迹).
+- Before changing a binding, list the fields earlier rounds changed *to* it (the
+  `maps/…/*-decisions/<loc>.json` change rows): a binding reversed later means those edits
+  are reversed too. zh-CN trajectory 轨迹 → 轨道 reversed 29 of my own edits.
+- Prefer the site's majority form when it is an accepted variant and the binding is a
+  minority (nl zwaartekrachtassist 42× vs slinger 8×): no third spelling.
 
 ## Not covered
 

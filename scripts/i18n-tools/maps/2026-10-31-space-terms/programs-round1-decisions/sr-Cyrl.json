@@ -1,0 +1,231 @@
+[
+  {
+    "rel": "programs/tiangong.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "стално насељени аванпост",
+    "replace": "стално насељени аванпост у орбити",
+    "why": "\"in orbit\" omitted; orbit term missing"
+  },
+  {
+    "rel": "programs/gemini.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "састајања",
+    "replace": "сусрети",
+    "why": "rendezvous rendered as meeting (састајање), binding сусрет"
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "састајања",
+    "replace": "сусрети",
+    "why": "rendezvous rendered as meeting (састајање), binding сусрет"
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "састајања",
+    "replace": "сусрети",
+    "why": "rendezvous rendered as meeting (састајање), binding сусрет"
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "састајања",
+    "replace": "сусрети",
+    "why": "rendezvous rendered as meeting (састајање), binding сусрет"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "the_land.0.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "variant: састане у орбити (accepted сусрет у орбити)"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "састајања",
+    "replace": "сусрети",
+    "why": "rendezvous rendered as meeting (састајање), binding сусрет"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "састајања",
+    "replace": "сусрети",
+    "why": "rendezvous rendered as meeting (састајање), binding сусрет"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "goals.3.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "stem gap: сусрећу"
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "goals.0.caption",
+    "term": "docking",
+    "decision": "keep",
+    "why": "stem gap: спојеним / пристајни прикључак"
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "legacy.1.md",
+    "term": "docking",
+    "decision": "change",
+    "find": "прикључивање",
+    "replace": "спајање",
+    "why": "docking rendered as прикључивање; binding спајање"
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "lessons.1.md",
+    "term": "docking",
+    "decision": "change",
+    "find": "пристанишни прикључак",
+    "replace": "пристајни прикључак",
+    "why": "пристанишни means harbour; docking port is пристајни"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "lessons.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: figurative \"burns the runway\", not an engine firing"
+  },
+  {
+    "rel": "programs/mars-rovers.json",
+    "at": "outcome.1.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "other sense: first phase of a campaign (етапа)"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "outcome.0.caption",
+    "term": "booster",
+    "decision": "change",
+    "find": "на помоћном ракетном мотору",
+    "replace": "на ракетном појачивачу",
+    "why": "booster rendered as auxiliary rocket motor"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "outcome.2.md",
+    "term": "booster",
+    "decision": "change",
+    "find": "на помоћном ракетном мотору",
+    "replace": "на ракетном појачивачу",
+    "why": "booster rendered as auxiliary rocket motor"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "narrative.1.md",
+    "term": "booster",
+    "decision": "change",
+    "find": "на помоћним ракетним моторима",
+    "replace": "на ракетним појачивачима",
+    "why": "booster rendered as auxiliary rocket motors"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "goals.1.caption",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (Falcon 9 booster)"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "outcome.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (Falcon 9 booster)"
+  },
+  {
+    "rel": "programs/sputnik.json",
+    "at": "goals.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета-носач (launch vehicle)"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "goals.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (Super Heavy booster)"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "narrative.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (Falcon 9 booster)"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "the_land.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Пролет може",
+    "replace": "Прелет може",
+    "why": "flyby rendered пролет; binding прелет"
+  },
+  {
+    "rel": "programs/jaxa-robotic.json",
+    "at": "outcome.0.md",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: уђе у орбиту / убаци у орбиту"
+  },
+  {
+    "rel": "programs/hayabusa.json",
+    "at": "goals.2.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: повратна капсула (re-entry capsule)"
+  },
+  {
+    "rel": "programs/hayabusa.json",
+    "at": "narrative.0.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: повратна капсула (re-entry capsule)"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "narrative.0.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: повратак (reentry)"
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "outcome.1.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: систем за повратак (reentry)"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "other sense: lineage (директни предак)"
+  }
+]

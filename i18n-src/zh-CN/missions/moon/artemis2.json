@@ -11,7 +11,7 @@
     { "met": 0.13, "label": "TLI", "note": "ICPS 进行跨月注入变轨——Orion 分离进入月球邻近轨迹。", "type": "nominal" },
     { "met": 1.5, "label": "TCM-1", "note": "首次中途修正", "type": "nominal" },
     { "met": 5.02, "label": "飞掠月球", "note": "月球背面最近距离约 6,500 公里，也是人类飞得最远的位置：距地球 406,771 公里。无轨道插入——自由返回轨迹将 Orion 航天器甩回地球。", "type": "info" },
-    { "met": 6, "label": "TCM-2", "note": "返回轨迹修正", "type": "nominal" },
+    { "met": 6, "label": "TCM-2", "note": "返回轨道修正", "type": "nominal" },
     { "met": 9.06, "label": "溅落", "note": "Orion 再入大气层并在太平洋溅落。", "type": "info" }
   ],
   "vehicle_stage": "SLS ICPS（临时低温推进级）"

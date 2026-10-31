@@ -1,0 +1,79 @@
+[
+  {
+    "rel": "programs/mars-rovers.json",
+    "at": "outcome.1.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "English \"stage\" = phase; fase"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "outcome.2.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "dei suoi carichi finali",
+    "replace": "dei suoi carichi utili finali",
+    "why": "carico utile binding"
+  },
+  {
+    "rel": "programs/kuiper.json",
+    "at": "outcome.2.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "bisogno di carichi",
+    "replace": "bisogno di carichi utili",
+    "why": "carico utile binding"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "the_land.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "trasportare carichi pesanti",
+    "replace": "trasportare carichi utili pesanti",
+    "why": "carico utile binding"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "una stiva di carico",
+    "replace": "una stiva per il carico utile",
+    "why": "carico utile binding"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "un carico pesante",
+    "replace": "un carico utile pesante",
+    "why": "carico utile binding"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "outcome.0.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "con un carico di routine",
+    "replace": "con un carico utile di routine",
+    "why": "carico utile binding"
+  },
+  {
+    "rel": "programs/sputnik.json",
+    "at": "goals.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: vettore (launch vehicle)"
+  },
+  {
+    "rel": "programs/galileo.json",
+    "at": "the_land.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "I passaggi ravvicinati",
+    "replace": "I sorvoli",
+    "why": "sorvolo binding"
+  }
+]

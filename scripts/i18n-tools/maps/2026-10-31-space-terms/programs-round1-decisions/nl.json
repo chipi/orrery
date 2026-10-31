@@ -1,0 +1,199 @@
+[
+  {
+    "rel": "programs/cassini.json",
+    "at": "narrative.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omloop (orbit as revolution)"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "the_land.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: eromheen draaien (verb)"
+  },
+  {
+    "rel": "programs/gemini.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "koppelingen",
+    "replace": "rendez-vous",
+    "why": "koppeling = docking, wrong"
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "koppelingen",
+    "replace": "rendez-vous",
+    "why": "koppeling = docking, wrong"
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "koppelingen",
+    "replace": "rendez-vous",
+    "why": "koppeling = docking, wrong"
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "koppelingen",
+    "replace": "rendez-vous",
+    "why": "koppeling = docking, wrong"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "koppelingen",
+    "replace": "rendez-vous",
+    "why": "koppeling = docking, wrong"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "link_labels./earth",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "koppelingen",
+    "replace": "rendez-vous",
+    "why": "koppeling = docking, wrong"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "outcome.1.md",
+    "term": "docking",
+    "decision": "change",
+    "find": "het eerste aanmeren",
+    "replace": "de eerste koppeling",
+    "why": "aanmeren = mooring"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "outcome.1.md",
+    "term": "docking",
+    "decision": "change",
+    "find": "meerde een Soyuz aan bij een Apollo",
+    "replace": "koppelde een Soyuz met een Apollo",
+    "why": "aanmeren = mooring"
+  },
+  {
+    "rel": "programs/tiangong.json",
+    "at": "outcome.0.md",
+    "term": "docking",
+    "decision": "change",
+    "find": "aanmering",
+    "replace": "koppeling",
+    "why": "aanmering = mooring"
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "legacy.2.md",
+    "term": "docking",
+    "decision": "change",
+    "find": "dokken",
+    "replace": "koppeling",
+    "why": "dokken = to dock a ship"
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "narrative.1.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "de zwaartekrachthulp",
+    "replace": "de zwaartekrachtassist",
+    "why": "gravity assist binding"
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "legacy.1.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekracht-katapult",
+    "replace": "zwaartekrachtassist",
+    "why": "gravity assist binding"
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "lessons.1.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "de zwaartekrachthulp",
+    "replace": "de zwaartekrachtassist",
+    "why": "gravity assist binding"
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "goals.0.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "baaninsertieverbanding",
+    "replace": "baaninsertieontsteking",
+    "why": "garbled/combustion; engine burn = ontsteking"
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "outcome.2.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "een enkele verbranding",
+    "replace": "een enkele ontsteking",
+    "why": "verbranding = combustion"
+  },
+  {
+    "rel": "programs/mars-rovers.json",
+    "at": "outcome.1.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "English \"stage\" = phase; fase"
+  },
+  {
+    "rel": "programs/sputnik.json",
+    "at": "goals.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: draagraket"
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "outcome.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Die Titan-passage",
+    "replace": "Die Titan-flyby",
+    "why": "flyby binding"
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "outcome.1.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "twee korte passages",
+    "replace": "twee korte flybys",
+    "why": "flyby binding"
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "legacy.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "De passages veranderden",
+    "replace": "De flybys veranderden",
+    "why": "flyby binding"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "English descent = lineage"
+  }
+]

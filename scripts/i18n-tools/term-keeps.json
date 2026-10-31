@@ -1,4 +1,16 @@
 {
+  "booster|ar|programs/spacex.json :: outcome.0.md": {
+    "why": "variant: first stage (مرحلة)",
+    "tr": "e76abaeae4"
+  },
+  "booster|de|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: Träger (launch vehicle)",
+    "tr": "5c3f1500ec"
+  },
+  "booster|es|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: cohete (launch vehicle)",
+    "tr": "69eca8ede3"
+  },
   "booster|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
     "why": "booster scale = escala de primera etapa",
     "tr": "6ba450961c"
@@ -51,9 +63,49 @@
     "why": "variant: étage",
     "tr": "329e6b077d"
   },
+  "booster|fr|programs/spacex.json :: goals.1.caption": {
+    "why": "variant: first stage booster (propulseurs)",
+    "tr": "0a2fbb58f7"
+  },
+  "booster|fr|programs/spacex.json :: narrative.0.md": {
+    "why": "variant: first stage booster (propulseurs)",
+    "tr": "3d77736b3c"
+  },
+  "booster|fr|programs/spacex.json :: outcome.0.md": {
+    "why": "variant: first stage booster (propulseur)",
+    "tr": "51e762fb70"
+  },
+  "booster|fr|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: lanceur",
+    "tr": "44f1edc1a1"
+  },
+  "booster|fr|programs/starship.json :: goals.0.md": {
+    "why": "variant: first stage (Super Heavy booster)",
+    "tr": "df6817a7a4"
+  },
+  "booster|fr|programs/starship.json :: goals.1.caption": {
+    "why": "variant: first stage (Super Heavy booster)",
+    "tr": "ca8d5ea92d"
+  },
+  "booster|fr|programs/starship.json :: narrative.0.md": {
+    "why": "variant: first stage booster",
+    "tr": "1e630145af"
+  },
+  "booster|fr|programs/starship.json :: outcome.0.md": {
+    "why": "variant: first stage (Super Heavy booster)",
+    "tr": "9d49ce6aea"
+  },
+  "booster|it|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: vettore (launch vehicle)",
+    "tr": "ef43fdd9cd"
+  },
   "booster|ja|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy is the booster by name; word omitted naturally",
     "tr": "973ca8693f"
+  },
+  "booster|nl|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: draagraket",
+    "tr": "faa5326f5e"
   },
   "booster|pt-BR|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy named, word omitted naturally",
@@ -95,6 +147,10 @@
     "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
     "tr": "fd41f279cd"
   },
+  "booster|ru|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: ракета-носитель (launch vehicle)",
+    "tr": "bf4248c9f0"
+  },
   "booster|sr-Cyrl|essays/reusable-launchers.json :: body.0.md": {
     "why": "variant: први степен (first-stage booster = stage)",
     "tr": "0d6a6a578b"
@@ -106,6 +162,26 @@
   "booster|sr-Cyrl|essays/reusable-launchers.json :: body.9.md": {
     "why": "variant: први степен / степен (first-stage booster = stage)",
     "tr": "de1065f449"
+  },
+  "booster|sr-Cyrl|programs/spacex.json :: goals.1.caption": {
+    "why": "variant: first stage (Falcon 9 booster)",
+    "tr": "30764b73e3"
+  },
+  "booster|sr-Cyrl|programs/spacex.json :: outcome.0.md": {
+    "why": "variant: first stage (Falcon 9 booster)",
+    "tr": "41bbfea076"
+  },
+  "booster|sr-Cyrl|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: ракета-носач (launch vehicle)",
+    "tr": "995ac152d7"
+  },
+  "booster|sr-Cyrl|programs/starship.json :: goals.0.md": {
+    "why": "variant: first stage (Super Heavy booster)",
+    "tr": "512617e503"
+  },
+  "booster|sr-Cyrl|programs/starship.json :: narrative.0.md": {
+    "why": "variant: first stage (Falcon 9 booster)",
+    "tr": "9bcbc54aa4"
   },
   "booster|sr-Cyrl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
     "why": "booster scale = first-stage level",
@@ -182,6 +258,10 @@
   "burn|ar|essays/seven-minutes.json :: body.4.md": {
     "why": "combustion/heating of air; engine ran twelve minutes: يعمل",
     "tr": "7becf49c9a"
+  },
+  "burn|ar|programs/vostok.json :: lessons.0.md": {
+    "why": "figurative: sprint burns the runway, not an engine firing",
+    "tr": "4637fd0fe7"
   },
   "burn|ar|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "\"burning fuel\" = combustion",
@@ -383,6 +463,10 @@
     "why": "chemical burn = combustion here (reviewer change dropped)",
     "tr": "515cd24d36"
   },
+  "burn|es|programs/mangalyaan.json :: outcome.2.md": {
+    "why": "variant: ignición",
+    "tr": "cdcf317fad"
+  },
   "burn|es|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
     "why": "fire burning, not engine",
     "tr": "4fe357c7bf"
@@ -454,6 +538,14 @@
   "burn|fr|essays/seven-minutes.json :: body.4.md": {
     "why": "'air burns off energy' = dissipation; 'moteur ... brûlait' is the correct engine verb",
     "tr": "274dfb2e86"
+  },
+  "burn|fr|programs/mangalyaan.json :: goals.0.md": {
+    "why": "variant: mise à feu",
+    "tr": "7ee570c533"
+  },
+  "burn|fr|programs/mangalyaan.json :: outcome.2.md": {
+    "why": "variant: mise à feu",
+    "tr": "ae650047a0"
   },
   "burn|fr|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion sense",
@@ -546,6 +638,10 @@
   "burn|hi|essays/seven-minutes.json :: body.4.md": {
     "why": "combustion/heating of air; engine ran for twelve minutes: variant जलता रहा",
     "tr": "c0176da97e"
+  },
+  "burn|hi|programs/vostok.json :: lessons.0.md": {
+    "why": "figurative: sprint burns the runway, not an engine firing",
+    "tr": "0c2cc36029"
   },
   "burn|hi|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion",
@@ -750,6 +846,10 @@
   "burn|ja|essays/reusable-launchers.json :: body.8.md": {
     "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
     "tr": "08b6e8f43e"
+  },
+  "burn|ja|programs/vostok.json :: lessons.0.md": {
+    "why": "metaphor: burns the runway, not an engine firing",
+    "tr": "e935e77256"
   },
   "burn|ja|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
     "why": "\"burns the crew up\" is combustion, not an engine firing",
@@ -1107,6 +1207,10 @@
     "why": "stem gap: радио (descent engine \"радио дванаест минута\" = engine firing); \"burns it off\" is the energy-dissipation sense",
     "tr": "2a0ba36320"
   },
+  "burn|sr-Cyrl|programs/vostok.json :: lessons.0.md": {
+    "why": "other sense: figurative \"burns the runway\", not an engine firing",
+    "tr": "0ad5c10b12"
+  },
   "burn|sr-Cyrl|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burn means combustion / stars burning / burn profile, not an engine firing",
     "tr": "f6ea3b457b"
@@ -1219,6 +1323,10 @@
     "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
     "tr": "3754f4d43d"
   },
+  "burn|zh-CN|programs/vostok.json :: lessons.0.md": {
+    "why": "metaphor: burns the runway, not an engine firing",
+    "tr": "c5306b4ac5"
+  },
   "burn|zh-CN|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion/consumption, not an engine firing",
     "tr": "b73ea6bc56"
@@ -1311,6 +1419,18 @@
     "why": "term not in this sentence of the English",
     "tr": "5b478e433d"
   },
+  "descent|ar|programs/vostok.json :: legacy.1.md": {
+    "why": "English means lineage (direct descent), not descent to a surface",
+    "tr": "69653bf139"
+  },
+  "descent|de|programs/shenzhou.json :: the_land.1.md": {
+    "why": "variant: Rückkehrkapsel",
+    "tr": "ef688dc44d"
+  },
+  "descent|de|programs/vostok.json :: legacy.1.md": {
+    "why": "English uses descent = lineage",
+    "tr": "98c91f757c"
+  },
   "descent|de|science/life-in-space/iva-suits.json :: body_paragraphs.0": {
     "why": "descent module = Landemodul, name of a module",
     "tr": "86bd7e78b3"
@@ -1323,9 +1443,49 @@
     "why": "proper name / Prinzip, not a descent phase",
     "tr": "0fd61cad2a"
   },
+  "descent|hi|programs/vostok.json :: legacy.1.md": {
+    "why": "English means lineage (direct descent), not descent to a surface",
+    "tr": "8b657c1ab5"
+  },
+  "descent|ja|programs/vostok.json :: legacy.1.md": {
+    "why": "lineage sense (direct descent), not a surface descent",
+    "tr": "3ec20ba924"
+  },
+  "descent|ko|programs/vostok.json :: legacy.1.md": {
+    "why": "lineage sense, not surface descent",
+    "tr": "329b9e4433"
+  },
+  "descent|nl|programs/vostok.json :: legacy.1.md": {
+    "why": "English descent = lineage",
+    "tr": "69fb5c5f9a"
+  },
   "descent|nl|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.1": {
     "why": "proper name of the engine / pintle-injector principle, not a descent phase",
     "tr": "dfa9cf107b"
+  },
+  "descent|pt-BR|programs/vostok.json :: legacy.1.md": {
+    "why": "English descent = lineage",
+    "tr": "3e34e6924a"
+  },
+  "descent|ru|programs/vostok.json :: legacy.1.md": {
+    "why": "other sense: lineage",
+    "tr": "24747fba5d"
+  },
+  "descent|sr-Cyrl|programs/vostok.json :: legacy.1.md": {
+    "why": "other sense: lineage (директни предак)",
+    "tr": "f7b0d117c3"
+  },
+  "descent|zh-CN|programs/shenzhou.json :: outcome.1.caption": {
+    "why": "variant: 返回舱 (standard descent module)",
+    "tr": "2109de1c1c"
+  },
+  "descent|zh-CN|programs/shenzhou.json :: the_land.1.md": {
+    "why": "variant: 返回舱 (standard Soyuz descent module)",
+    "tr": "5f047d8364"
+  },
+  "descent|zh-CN|programs/vostok.json :: legacy.1.md": {
+    "why": "lineage sense, not surface descent",
+    "tr": "b71c1572f0"
   },
   "docking|hi|science/space-stations/node-module.json :: body_paragraphs.4": {
     "why": "part of proper name Chinese Docking Mechanism",
@@ -1339,6 +1499,34 @@
     "why": "variant: العودة = reentry (the atmospheric reentry of a returning stage)",
     "tr": "4420e75154"
   },
+  "entry|ar|programs/buran.json :: the_land.1.md": {
+    "why": "variant: العودة إلى الغلاف الجوي (reentry)",
+    "tr": "68264e3f1c"
+  },
+  "entry|ar|programs/hayabusa.json :: goals.2.md": {
+    "why": "variant: كبسولة عودة (reentry capsule)",
+    "tr": "ba3f4dea08"
+  },
+  "entry|ar|programs/hayabusa.json :: narrative.0.md": {
+    "why": "variant: كبسولة العودة (reentry capsule)",
+    "tr": "f395136ce0"
+  },
+  "entry|ar|programs/mercury.json :: link_labels./earth": {
+    "why": "variant: العودة (reentry, short label)",
+    "tr": "15a2b794f8"
+  },
+  "entry|ar|programs/mir.json :: outcome.2.md": {
+    "why": "variant: عودة مُتحكَّم بها إلى الغلاف الجوي (reentry)",
+    "tr": "e54b96e337"
+  },
+  "entry|ar|programs/sputnik.json :: outcome.0.md": {
+    "why": "variant: عودتها إلى الغلاف الجوي (reentry)",
+    "tr": "33e7739afc"
+  },
+  "entry|ar|programs/voskhod.json :: outcome.1.md": {
+    "why": "variant: العودة الآلي إلى الغلاف الجوي (reentry)",
+    "tr": "55432ee81c"
+  },
   "entry|ar|science/life-in-space/pre-flight-training.json :: body_paragraphs.3": {
     "why": "\"re-entry engine\" is not atmospheric entry itself; محرّكات العودة is correct",
     "tr": "0aa7f80ae1"
@@ -1350,6 +1538,10 @@
   "entry|ar|science/mission-phases/deorbit-corridor.json :: narrative_101.2": {
     "why": "\"entry interface\" rendered as نقطة التماس مع الغلاف الجوي, correct",
     "tr": "ca6fdcf210"
+  },
+  "entry|de|programs/hayabusa.json :: goals.2.md": {
+    "why": "variant: Rückkehrkapsel",
+    "tr": "4dcf20721f"
   },
   "entry|de|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
     "why": "re-entry into 1 g gravity, not atmospheric entry",
@@ -1367,9 +1559,37 @@
     "why": "re-entry into 1 g is not atmospheric entry",
     "tr": "2636baa0df"
   },
+  "entry|ru|programs/soyuz.json :: narrative.0.md": {
+    "why": "variant: спуск (reentry of a crewed capsule)",
+    "tr": "cd9a430a26"
+  },
+  "entry|ru|programs/spacex.json :: goals.0.md": {
+    "why": "variant: возвращение в атмосферу",
+    "tr": "1ad4d7bba8"
+  },
+  "entry|ru|programs/voskhod.json :: outcome.1.md": {
+    "why": "variant: система возвращения",
+    "tr": "7831b3659b"
+  },
   "entry|ru|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
     "why": "'re-entry into 1 g' is vestibular, not atmospheric entry",
     "tr": "ccdfe0c658"
+  },
+  "entry|sr-Cyrl|programs/hayabusa.json :: goals.2.md": {
+    "why": "variant: повратна капсула (re-entry capsule)",
+    "tr": "b81e99cdf5"
+  },
+  "entry|sr-Cyrl|programs/hayabusa.json :: narrative.0.md": {
+    "why": "variant: повратна капсула (re-entry capsule)",
+    "tr": "5913826380"
+  },
+  "entry|sr-Cyrl|programs/soyuz.json :: narrative.0.md": {
+    "why": "variant: повратак (reentry)",
+    "tr": "5bcb6d3371"
+  },
+  "entry|sr-Cyrl|programs/voskhod.json :: outcome.1.md": {
+    "why": "variant: систем за повратак (reentry)",
+    "tr": "c9c3d2df2e"
   },
   "entry|sr-Cyrl|science/life-in-space/iva-suits.json :: intro_sentence": {
     "why": "повратак in a list of flight phases",
@@ -1386,6 +1606,10 @@
   "entry|zh-CN|science/orbits/cislunar-orbits.json :: body_paragraphs.4": {
     "why": "re-entry rendered 返回地球; natural",
     "tr": "5a18d6b6d5"
+  },
+  "flyby|ar|programs/pioneer.json :: outcome.1.md": {
+    "why": "variant: مرور قريب",
+    "tr": "624b839251"
   },
   "flyby|ar|science/transfers/conic-sections.json :: body_paragraphs.2": {
     "why": "verb: يمرّون قرب كوكب",
@@ -1410,6 +1634,10 @@
   "gravity assist|sr-Cyrl|science/transfers/_intro.json :: paragraphs.1": {
     "why": "'гравитационим маневрима' is the binding word inflected (stem check misses the case ending)",
     "tr": "5a3f03d319"
+  },
+  "inclination|de|programs/ros.json :: goals.0.md": {
+    "why": "stem gap: hochgeneigte",
+    "tr": "22ae2fc42e"
   },
   "inclination|de|science/_landing.json :: chapters.0.paragraphs.1": {
     "why": "correct as is",
@@ -1450,6 +1678,22 @@
   "orbit insertion|sr-Cyrl|science/propulsion/laser-sail.json :: body_paragraphs.2": {
     "why": "'без уласка у орбиту' is an accepted form (case ending)",
     "tr": "b21f5244bd"
+  },
+  "orbit insertion|zh-CN|programs/jaxa-robotic.json :: outcome.0.md": {
+    "why": "stem gap: 进入金星轨道",
+    "tr": "2eeedb6514"
+  },
+  "orbit|ar|programs/chandrayaan.json :: goals.2.md": {
+    "why": "variant: دوران (verb sense of orbit)",
+    "tr": "7d3247c47a"
+  },
+  "orbit|ar|programs/change.json :: the_land.0.md": {
+    "why": "variant: دوران (verb sense of orbit)",
+    "tr": "f94d3cb4a0"
+  },
+  "orbit|ar|programs/mercury.json :: outcome.2.md": {
+    "why": "variant: دوران (verb sense of orbit)",
+    "tr": "dfd6ebfcf8"
   },
   "orbit|ar|science/_landing.json :: chapters.0.diagram": {
     "why": "file name",
@@ -1514,6 +1758,14 @@
   "orbit|ar|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
     "why": "verb تدور/دارت is correct",
     "tr": "be87a422d0"
+  },
+  "orbit|de|programs/great-observatories.json :: outcome.0.md": {
+    "why": "variant: zum Absturz gebracht (controlled de-orbit)",
+    "tr": "5b2f36616d"
+  },
+  "orbit|de|programs/mercury.json :: legacy.0.caption": {
+    "why": "variant: Umläufe (orbits as revolutions); stem gap: Umläufe",
+    "tr": "9966927a12"
   },
   "orbit|de|science/_landing.json :: chapters.7.paragraphs.1": {
     "why": "verb/period sense; umkreisen/Umlauf natural",
@@ -1747,6 +1999,14 @@
     "why": "'planeten eromheen' - natural rendering of 'planets orbiting it'",
     "tr": "1846cedaa9"
   },
+  "orbit|nl|programs/cassini.json :: narrative.0.md": {
+    "why": "variant: omloop (orbit as revolution)",
+    "tr": "2e26007964"
+  },
+  "orbit|nl|programs/change.json :: the_land.0.md": {
+    "why": "variant: eromheen draaien (verb)",
+    "tr": "3d9e3d4e65"
+  },
   "orbit|nl|science/_landing.json :: chapters.7.paragraphs.1": {
     "why": "draaien/omloop verb or period sense, natural",
     "tr": "a8c61268e9"
@@ -1882,6 +2142,14 @@
   "orbit|ru|essays/interstellar-exploration.json :: body.15.md": {
     "why": "omitted naturally (\"её возможные планеты\")",
     "tr": "4bce9a096e"
+  },
+  "orbit|ru|programs/cassini.json :: narrative.0.md": {
+    "why": "variant: виток (orbit as revolution)",
+    "tr": "206c1e57aa"
+  },
+  "orbit|ru|programs/mercury.json :: legacy.0.caption": {
+    "why": "variant: витка (orbit as revolution)",
+    "tr": "833d2c6f88"
   },
   "orbit|ru|science/_landing.json :: chapters.0.diagram": {
     "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
@@ -2131,6 +2399,22 @@
     "why": "omitted naturally: 及其行星",
     "tr": "9d4b9e82f8"
   },
+  "orbit|zh-CN|programs/chandrayaan.json :: goals.2.md": {
+    "why": "variant: 绕月飞行",
+    "tr": "adbbe63cfa"
+  },
+  "orbit|zh-CN|programs/change.json :: the_land.0.md": {
+    "why": "variant: 绕它飞行",
+    "tr": "e138d2c0aa"
+  },
+  "orbit|zh-CN|programs/great-observatories.json :: outcome.0.md": {
+    "why": "variant: 离轨 (standard deorbit)",
+    "tr": "7e5b3bca08"
+  },
+  "orbit|zh-CN|programs/mercury.json :: outcome.0.caption": {
+    "why": "variant: 绕地球飞行",
+    "tr": "5adcf87421"
+  },
   "orbit|zh-CN|science/_landing.json :: chapters.0.diagram": {
     "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
     "tr": "72874f8e10"
@@ -2235,6 +2519,18 @@
     "why": "part of proper name Vega Secondary Payload Adapter",
     "tr": "5d89faaf14"
   },
+  "payload|es|programs/mercury.json :: narrative.1.md": {
+    "why": "figurative: astronaut as cargo/passenger",
+    "tr": "c1709e2177"
+  },
+  "payload|es|programs/space-shuttle.json :: goals.1.md": {
+    "why": "variant: bodega de carga (standard payload bay)",
+    "tr": "a9dd9db94a"
+  },
+  "payload|fr|programs/space-shuttle.json :: goals.1.md": {
+    "why": "variant: soute cargo",
+    "tr": "f46035b8d2"
+  },
   "payload|fr|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "\"Vega Secondary Payload Adapter\" is a proper name left in English",
     "tr": "37d0ae9a2f"
@@ -2259,9 +2555,17 @@
     "why": "variant: 탑재량 (payload capacity to LEO)",
     "tr": "1796d93fab"
   },
+  "payload|ko|programs/space-shuttle.json :: goals.1.md": {
+    "why": "variant: 화물칸 (standard payload bay)",
+    "tr": "d7bf76dada"
+  },
   "payload|ko|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name left in English",
     "tr": "4042bc064b"
+  },
+  "payload|pt-BR|programs/mercury.json :: narrative.1.md": {
+    "why": "figurative: astronaut as cargo/passenger",
+    "tr": "3804ee3244"
   },
   "payload|pt-BR|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
@@ -2274,6 +2578,14 @@
   "payload|pt-BR|science/propulsion/c3.json :: narrative_101.2": {
     "why": "carga-útil hyphenated compound present",
     "tr": "263eaa3bef"
+  },
+  "payload|ru|programs/mercury.json :: narrative.1.md": {
+    "why": "variant: грузом (cargo, figurative; contrast with passenger)",
+    "tr": "7294520177"
+  },
+  "payload|ru|programs/space-shuttle.json :: goals.1.md": {
+    "why": "variant: грузовой отсек (standard Shuttle term for payload bay); груз = cargo",
+    "tr": "a197980603"
   },
   "payload|ru|science/mission-phases/eva.json :: diagram_caption": {
     "why": "EVA worksite payload, not rocket cargo",
@@ -2335,6 +2647,30 @@
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
     "tr": "25dc1c0192"
   },
+  "rendezvous|ar|programs/gemini.json :: goals.1.md": {
+    "why": "variant: اللقاء المداري",
+    "tr": "8ede5d816d"
+  },
+  "rendezvous|ar|programs/gemini.json :: legacy.2.md": {
+    "why": "variant: اللقاء المداري",
+    "tr": "fe8b31267d"
+  },
+  "rendezvous|ar|programs/gemini.json :: narrative.2.md": {
+    "why": "variant: اللقاء المداري",
+    "tr": "4bfaf9d81a"
+  },
+  "rendezvous|ar|programs/gemini.json :: outcome.1.md": {
+    "why": "variant: لقاء مداري",
+    "tr": "709b4225db"
+  },
+  "rendezvous|ar|programs/starship.json :: goals.3.md": {
+    "why": "verb sense: تلتقي بها",
+    "tr": "fd665c4e38"
+  },
+  "rendezvous|ar|programs/voskhod.json :: legacy.2.md": {
+    "why": "variant: اللقاء المداري",
+    "tr": "cd0b2e7569"
+  },
   "rendezvous|de|science/orbits/synodic-period.json :: narrative_101.2": {
     "why": "generic meeting point (Treffpunkt), not a spacecraft rendezvous",
     "tr": "647987ca07"
@@ -2346,6 +2682,14 @@
   "rendezvous|ru|essays/navigation.json :: body.25.md": {
     "why": "variant: точке встречи",
     "tr": "d79e42fde6"
+  },
+  "rendezvous|ru|programs/starship.json :: goals.3.md": {
+    "why": "variant: встречающихся ... на орбите (accepted встреча на орбите)",
+    "tr": "eb27d62f6b"
+  },
+  "rendezvous|sr-Cyrl|programs/soyuz.json :: the_land.0.md": {
+    "why": "variant: састане у орбити (accepted сусрет у орбити)",
+    "tr": "e1790d38fe"
   },
   "specific impulse|ar|science/propulsion/antimatter-propulsion.json :: body_paragraphs.0": {
     "why": "\"للدفع النوعي\" = ل + الدفع النوعي, binding form",
@@ -2359,6 +2703,10 @@
     "why": "different sense (single-stage-to-orbit, staging orbit)",
     "tr": "dd21477194"
   },
+  "stage|fr|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "English \"stage\" = phase of a campaign; étape",
+    "tr": "ec4448ba9c"
+  },
   "stage|fr|science/orbits/special-orbits.json :: body_paragraphs.4": {
     "why": "\"staging orbit\", not a rocket stage",
     "tr": "68d6cb7fe1"
@@ -2367,9 +2715,21 @@
     "why": "single-stage-to-orbit kept as English acronym phrase; no rocket stage meant separately",
     "tr": "16403179d7"
   },
+  "stage|it|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "English \"stage\" = phase; fase",
+    "tr": "a51d5baae5"
+  },
   "stage|it|science/orbits/special-orbits.json :: body_paragraphs.4": {
     "why": "\"staging orbit\", not a rocket stage",
     "tr": "1913b8d84b"
+  },
+  "stage|ko|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "phase of a campaign, not a rocket stage",
+    "tr": "bd8b640132"
+  },
+  "stage|nl|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "English \"stage\" = phase; fase",
+    "tr": "699713d22b"
   },
   "stage|nl|science/orbits/special-orbits.json :: body_paragraphs.4": {
     "why": "different sense (single-stage-to-orbit, staging orbit)",
@@ -2382,6 +2742,10 @@
   "stage|pt-BR|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.2": {
     "why": "single-stage-to-orbit kept as English phrase",
     "tr": "c70bb875fc"
+  },
+  "stage|ru|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "other sense: first phase of a campaign",
+    "tr": "9edf363954"
   },
   "stage|ru|science/mission-phases/mission-types.json :: body_paragraphs.3": {
     "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
@@ -2406,6 +2770,14 @@
   "stage|ru|science/orbits/special-orbits.json :: body_paragraphs.4": {
     "why": "'staging orbit', not a rocket stage",
     "tr": "21867bc815"
+  },
+  "stage|sr-Cyrl|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "other sense: first phase of a campaign (етапа)",
+    "tr": "fe5c3b2427"
+  },
+  "stage|zh-CN|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "phase of a campaign, not a rocket stage",
+    "tr": "9575bb09bc"
   },
   "thrust|de|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
     "why": "\"chemical thrust\" = propulsion, Antrieb natural",
@@ -2447,6 +2819,10 @@
     "why": "figurative scale/outlook, not a flight path",
     "tr": "a798cdb6e9"
   },
+  "trajectory|de|programs/gaganyaan.json :: outcome.2.md": {
+    "why": "figurative \"Richtung\"; not a flight path",
+    "tr": "ab038ee189"
+  },
   "trajectory|hi|essays/generational-starships.json :: body.0.md": {
     "why": "variant: पलायन-पथ (escape trajectory)",
     "tr": "dc81a26485"
@@ -2454,6 +2830,14 @@
   "trajectory|hi|essays/new-propulsion.json :: body.29.md": {
     "why": "figurative direction of progress, not a flight path",
     "tr": "4d6db4245f"
+  },
+  "trajectory|hi|programs/gaganyaan.json :: outcome.2.md": {
+    "why": "figurative: direction/course, not a flight path",
+    "tr": "e20c1533cf"
+  },
+  "trajectory|hi|programs/soviet-lunar.json :: outcome.1.md": {
+    "why": "variant: पथ",
+    "tr": "57a7aac5f6"
   },
   "trajectory|ja|essays/new-propulsion.json :: body.29.md": {
     "why": "figurative sense (course of events / path ahead), not a flight path",
@@ -2470,6 +2854,10 @@
   "trajectory|ko|essays/space-comm-arrays.json :: body.23.md": {
     "why": "figurative sense (direction of progress / distance scale), not a flight path",
     "tr": "923ecc37fe"
+  },
+  "trajectory|ko|programs/apollo.json :: link_labels./science/transfers/free-return": {
+    "why": "variant: 자유 귀환 궤도 (standard compound)",
+    "tr": "508b9c214f"
   },
   "trajectory|ko|science/planets/active-spacecraft-survey.json :: body_paragraphs.1": {
     "why": "English uses trajectory loosely for an orbit around Jupiter; 궤도 correct",
@@ -2490,5 +2878,9 @@
   "trajectory|zh-CN|essays/space-comm-arrays.json :: body.23.md": {
     "why": "figurative sense (the way things are heading / scale), not a flight path",
     "tr": "ab5947dc18"
+  },
+  "trajectory|zh-CN|missions/saturn/voyager-1.json :: description": {
+    "why": "path rendered as 最直接路径, natural",
+    "tr": "854e2098eb"
   }
 }

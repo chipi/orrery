@@ -159,10 +159,29 @@ All trees: 2,689 unreviewed (essays 380, missions 1,473, fleet 578, programs 257
     instead (widen check: 48 fields, all reviewer-named forms).
 - **Essays: 379 → 0 unreviewed, gated** next to science.
 
-Open question: zh-CN *trajectory*. The binding is 轨迹, but the site mixes 轨道/轨迹 and standard
-compounds use 轨道. It needs a second opinion before missions and fleet.
+### zh-CN trajectory, settled
 
-All trees now: 2,142 unreviewed (missions 1,378, fleet 538, programs 226).
+A second opinion found 轨道 to be the standard for a spacecraft trajectory, citing CNTERM
+航天科学技术名词 (航天器轨道; 弹道 for launch-vehicle and ballistic paths), CNSA/CMSA and
+journals (自由返回轨道, 地火转移轨道, 中途修正). 轨迹 is the locus sense. The binding is now 轨道.
+轨迹 stays accepted for a computed or plotted path (43 existing fields, medium confidence).
+A new `_avoid` list flags 自由返回轨迹, 轨迹修正 and 转移轨迹. Rounds 1 and essays had changed 29
+fields 轨道 → 轨迹 under the old binding; all 29 were reversed and 6 more compounds fixed.
+
+## Programs round (2026-10-31)
+
+224 misses, four reviewers, every list read. 114 field edits in 13 locales, 0 refused:
+- nl: dokken / aanmeren → koppeling; passage → flyby; "baaninsertieverbanding" (garbled) fixed.
+- sr: «састајања» → «сусрети»; «помоћни ракетни мотор» → «ракетни појачивач».
+- pt/it/es: bare carga / carico → carga útil / carico utile.
+- hi: अवतरण → अवरोहण in EDL labels and for the descent module.
+- ar: عابرة / عبور → التحليق القريب; ترسو (mooring) → تلتحم.
+
+Adjusted: nl uses zwaartekrachtassist (the site majority, accepted) instead of a third
+spelling; fr arrimer is kept (stem widened); ar verb agreement. Arabic «اللقاء المداري» was
+aligned with the essays' «الالتقاء» (4 fields). 97 keeps. **Programs: 0 unreviewed, gated.**
+
+All trees after essays: 2,142 unreviewed (missions 1,378, fleet 538, programs 226).
 
 Next: programs, fleet, missions with the `term-consistency` skill, then the next batch of
 terms from `term-census.mjs`.

@@ -9,7 +9,7 @@
   "events": [
     { "met": 0, "label": "发射", "note": "Falcon 9 卡纳维拉尔角共乘火箭 2019-02-22", "type": "nominal" },
     { "met": 0.01, "label": "调相点火", "note": "七次近地点提升变轨中的第一次，从近地轨道爬升至月球接近轨道。", "type": "info" },
-    { "met": 10, "label": "TCM 1", "note": "多轨道爬升期间的轨迹修正。", "type": "info" },
+    { "met": 10, "label": "TCM 1", "note": "多轨道爬升期间的轨道修正。", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "第二次轨迹修正。远地点接近月球捕获距离。", "type": "info" },
     { "met": 41, "label": "接近月球", "note": "最后的月球转移变轨——Beresheet 进入直接月球轨迹。", "type": "nominal" },
     { "met": 48, "label": "进入月球轨道", "note": "进入椭圆形月球轨道 2019-04-04", "type": "nominal" },

@@ -1,0 +1,85 @@
+[
+  {
+    "rel": "programs/great-observatories.json",
+    "at": "outcome.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: zum Absturz gebracht (controlled de-orbit)"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "legacy.0.caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: Umläufe (orbits as revolutions); stem gap: Umläufe"
+  },
+  {
+    "rel": "programs/gaganyaan.json",
+    "at": "outcome.2.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative \"Richtung\"; not a flight path"
+  },
+  {
+    "rel": "programs/ros.json",
+    "at": "goals.0.md",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "stem gap: hochgeneigte"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "the_land.0.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "sich treffen und",
+    "replace": "ein Rendezvous durchführen und",
+    "why": "Rendezvous binding"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "goals.3.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "im Erdorbit mit ihm zusammentreffen",
+    "replace": "im Erdorbit ein Rendezvous mit ihm durchführen",
+    "why": "Rendezvous binding"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "Ladebucht",
+    "replace": "Nutzlastbucht",
+    "why": "payload bay"
+  },
+  {
+    "rel": "programs/sputnik.json",
+    "at": "goals.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: Träger (launch vehicle)"
+  },
+  {
+    "rel": "programs/hayabusa.json",
+    "at": "goals.2.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: Rückkehrkapsel"
+  },
+  {
+    "rel": "programs/shenzhou.json",
+    "at": "the_land.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "variant: Rückkehrkapsel"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "English uses descent = lineage"
+  }
+]

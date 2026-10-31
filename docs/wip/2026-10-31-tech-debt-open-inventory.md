@@ -172,14 +172,16 @@ the shorteners drop facts)**
 - Serbian: the operator reads it and has the final say. «Готово праволинијска» is correct
   ("готово" = almost).
 
-**Tooling debt from this pass**
+**Tools from this pass (now in `scripts/i18n-tools/`, README rows)**
 
-- The bucket helpers used for steps B and C live only in the session scratchpad:
-  `precell3.sh`, `r3commit.sh`, `caps.py` (schema caps), `numloss.py` / `numloss_zh.py` (lost
-  numbers, 万/亿 aware), `refusedin.py` / `mergefix.py` (refusals to fixer and back),
-  `r3sample.py` / `capshow.py` (reading samples). Move them into `scripts/i18n-tools/` with
-  README rows before the next round, or the next arc rebuilds them.
+- `garble-cell-prep.sh` / `garble-round-commit.sh` (bucket cell prep and commit), `schema-caps.mjs`
+  (caps read from the schemas), `number-loss.mjs` (lost numbers, 万/亿/만/억 aware),
+  `edit-fixes.mjs` (refusals → fixer file → merge back, drop), `show-edits.mjs`,
+  `split-work.mjs`, `term-misses.mjs`, `garble-flags.mjs`, `term-forms.mjs`, `garble-tally.mjs`,
+  `grade-pack.mjs`; shared `garble-lib.mjs`; tests in `garble-helpers.test.ts`. Each was checked
+  against the session's Python original on its real data. The two `.sh` ports have not yet run
+  end to end — run them on the next cell and watch the first run.
 - `garble-check.mjs` number flags are noisy (99 flags in ru science, all separator or word
-  forms); the separator-normalising check in `numloss.py` cut that to 3 real reads. Fold it in.
+  forms); `number-loss.mjs` cuts that to the real reads (3). Use it after garble-check.
 - JSON notes written by hand must go through `npx prettier --write`. An `echo`-written note
   failed the pre-push lint once.

@@ -157,7 +157,7 @@ Inputs and decisions: `scripts/i18n-tools/maps/2026-10-31-garble-pass/nl-fleet/`
 
 This is not an independent sample. The fix reviewers handled those 25 fields too.
 
-**English source errors the reviewers found** (to fix in en-US and all 13 locales):
+**English source errors the reviewers found** (fixed in `49b9fb29c1f` in all 14 locales, after a science-reviewer check; "Venera 7-class" kept as the site name; record and per-locale check in `maps/2026-10-31-garble-pass/en-fix/` and `en-fix-facts-check.mjs`):
 
 - The template sentence "Retired after first flight in YYYY" is wrong on about 11 entries:
   Titan II GLV flew 12 times, and Spirit ran until 2010.

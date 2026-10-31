@@ -182,3 +182,12 @@ gateway with a random request id; not linked, app functionality); email address
 Open: the /privacy page says "You never need an account … no name, email
 address or password to give" and does not mention the Lab sign-in or that /ask
 questions go to an LLM; it needs a section in all 14 locales.
+
+## 7. Last item of the phase: a Glossary page (operator idea, 2026-10-31)
+
+To reassess after the space-terms pilot
+([2026-10-31-space-terms-glossary-pilot.md](2026-10-31-space-terms-glossary-pilot.md)).
+A low-profile `/glossary` page, like the glossary at the back of a technical book:
+each technical term with a short definition in the reader's language, built from
+the glossary's `term` section, and optionally a reverse index of the site pages
+that use it most (`term-drift.mjs` already finds every field that uses a term).

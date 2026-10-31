@@ -63,3 +63,9 @@ Lowest cells, the drift the agents also saw in context:
 2. Second opinion on the 11 low-confidence entries. Serbian choices go to the
    operator.
 3. Then essays, missions, fleet, programs; then the next ~130 terms.
+
+## Later: a Glossary page
+
+Operator idea, 2026-10-31: a `/glossary` page (terms, definitions, and a reverse
+index of the pages that use each term), built from this section. It is the last
+item of Phase 6, reassessed after the pilot.

@@ -1,0 +1,482 @@
+[
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "en": "This is the trick that built the Voyager grand tour. Without gravity assists, you can't reach Saturn, let alone Uranus or Neptune, with chemical rockets — the fuel cost is astronomical. Voyager 2 chained four assists in a row: Jupiter, Saturn, Uranus, Neptune, all in one trip. Cassini bounced off Venus twice and Earth once on the way to Saturn. The outer solar system is only accessible because of this trick.",
+    "tr": "这就是构建 Voyager 大巡游的诀窍。没有引力辅助，你无法用化学火箭抵达土星，更不用说天王星或海王星——燃料成本高得天文数字。Voyager 2 连续串联了四次引力辅助：木星、土星、天王星、海王星，全在一次旅程中完成。Cassini 在前往土星的途中两次从金星弹射，还从地球弹射了一次。外太阳系之所以可以到达，全靠这个诀窍。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "narrative_101.0",
+    "en": "Tycho Brahe spent ~20 years at the Uraniborg observatory on Hven measuring Mars's position with quadrants made of brass and oak — better-than-arcminute precision, all with naked eyes. He died in 1601 having published little of his planetary results.",
+    "tr": "第谷·布拉厄在Hven的Uraniborg天文台花费约20年时间，用黄铜和橡木制成的象限仪测量火星位置——精度达角分级，全部凭肉眼观测。他于1601年去世时，行星观测结果鲜少发表。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "narrative_101.2",
+    "en": "Power dictates ambition. Want to run a centrifuge biology experiment? Plug it in — it'll cost 1.5 kW. Want to add ten more racks of payloads? You need a power budget, and either you grow the array (expensive — new mission) or you load-shed something else.",
+    "tr": "功率决定野心。想运行一个离心生物学实验？接入即可——它会消耗1.5 kW。想增加十个有效载荷机柜？你需要功率预算，要么扩展阵列（昂贵——需要新任务），要么卸载其他功能。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.0",
+    "en": "[Space photography](observation/space-photography) is not what people think it is. There's no shutter clicking; every observatory image you've seen is a stack of long exposures through narrow-band filters, calibrated, registered, false-colour assigned. The hardware is a CCD or CMOS sensor — a grid of photon-counters — and the data is the count, not the picture. The picture is what humans make of the count.",
+    "tr": "[太空摄影](observation/space-photography)不是人们想象的那样。没有快门咔嚓声；你见过的每一张天文台图像都是通过窄带滤光片进行的长时间曝光的叠加，经过校准、配准、分配伪彩色。硬件是 CCD 或 CMOS 传感器——一个光子计数器网格——数据是计数，而不是图片。图片是人类对计数的解读。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.0",
+    "en": "Once you start measuring distances in space, kilometres get unmanageable fast. Mars is 200 million km. Saturn is 1.4 billion km. Pluto is 6 billion km. Your brain stops parsing those numbers as anything except \"big.\" So astronomers picked a more human ruler: one Earth-Sun distance. That's an Astronomical Unit, abbreviated AU.",
+    "tr": "一旦开始测量太空中的距离，公里这个单位就会迅速变得难以处理。火星距离太阳2亿公里。土星14亿公里。冥王星60亿公里。你的大脑会停止解析这些数字，除了'很大'之外，什么都理解不了。所以天文学家选择了一个更容易理解的标尺：一个地球到太阳的距离。这就是天文单位，缩写为AU。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "body_paragraphs.2",
+    "en": "On `/fly`, turn on the thrust and velocity Science-Lens layers during any `?launch=1` ascent and watch the two arrows stay nearly parallel as the rocket tips over — that alignment is the gravity turn working. The Δv-loss ledger shows steering loss staying small while gravity loss accumulates through the climb.",
+    "tr": "在`/fly`上，在任何`?launch=1`上升过程中打开推力和速度Science-Lens层，观察火箭倾斜时两个箭头保持几乎平行——这种对齐就是重力转向在发挥作用。Δv损失账本显示方向损失保持较小，而重力损失在上升过程中不断累积。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.2",
+    "en": "'Habitable zone' is a hopeful shorthand, not a promise. A world there could still be an airless rock or a runaway greenhouse — location is necessary, not sufficient.",
+    "tr": "\"宜居带\"是一个充满希望的简称，而非承诺。位于其中的世界仍可能是一颗没有大气的岩石或失控的温室——位置是必要条件，而非充分条件。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/orbits/vis-viva.json",
+    "at": "narrative_101.1",
+    "en": "The reason it works is conservation of energy. A spacecraft trading altitude for speed (or vice versa) keeps its total energy constant on a given orbit. So if you know where it is along the ellipse, you know how that energy is split between potential and kinetic — and once you know the kinetic part you've got the speed.",
+    "tr": "它有效的原因在于能量守恒。航天器在高度和速度之间转换时，在给定轨道上保持总能量恒定。所以如果你知道它在椭圆上的位置，就知道能量如何在势能和动能之间分配——一旦知道动能部分，就得到了速度。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/max-q.json",
+    "at": "body_paragraphs.0",
+    "en": "The value of q rises with velocity squared but falls with air density, so the Max-Q altitude depends on how quickly the vehicle accelerates versus how quickly it climbs out of the dense lower atmosphere. A heavy, slow-accelerating stack hits Max-Q lower and softer; a punchy light one hits it higher. Typical crewed launchers see peak dynamic pressures around 30–35 kPa.",
+    "tr": "动压q随速度平方而升高，但随空气密度下降而下降，所以Max-Q高度取决于飞行器加速快慢与爬升出密集低空大气的快慢的相对关系。重的、加速慢的火箭堆栈会在较低高度、较小幅度处达到Max-Q；轻的、加速快的火箭会在较高高度达到Max-Q。典型载人运载火箭的峰值动压约为30–35 kPa。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.4.heading",
+    "en": "5 — The flight is just five phases on repeat.",
+    "tr": "5 — 飞行只是五个阶段的重复。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "body_paragraphs.2",
+    "en": "Food engineering is a stranger problem than it sounds. Microgravity changes swallowing (the bolus has to be actively pushed; crew members chew more times per bite than on Earth), changes taste (the fluid shift toward the head causes ~30% reduction in odour perception, which means taste is also reduced — astronauts describe everything as bland for the first 2 weeks), changes appetite (most crew lose 5-10% body weight in the first month of an expedition; the body is in a different metabolic state than at 1 g), and changes choking risk (no gravity to pull a misdirected swallow down the right pipe). The ISS Food System engineering response is foods that don't crumble (no bread; crews eat tortillas), foods that bind to themselves (a lot of sauces and gravies — they hold the meal together), strong flavours (hot sauce is iconically over-consumed on ISS), and absolutely no carbonated drinks (the bubbles don't separate from the liquid in microgravity, which makes drinking carbonated water in zero-g a uniquely unpleasant experience).",
+    "tr": "食品工程是一个比听上去更奇特的问题。微重力改变了吞咽（食团必须主动推送；乘员每口要比在地球上多嚼几下），改变了味觉（体液向头部转移使嗅觉下降约 30%，味觉也随之减弱——航天员说前 2 周吃什么都没味道），改变了食欲（大多数乘员在驻留的第一个月体重下降 5-10%；身体处于与 1 g 时不同的代谢状态），也改变了噎呛风险（没有重力把误入歧途的一口食物拉回正确的通道）。国际空间站 Food System 的工程应对是：不掉渣的食物（不吃面包，乘组吃玉米饼）、能粘在一起的食物（大量酱汁和肉汁把饭菜聚拢）、浓烈的口味（辣酱在国际空间站上的消耗量出了名地高），以及绝不提供碳酸饮料（微重力下气泡不会与液体分离，在失重状态下喝苏打水是一种格外难受的体验）。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "narrative_101.2",
+    "en": "The math has a beautiful symmetry: arrival V∞ at Mars is the same number you'd see if you watched Mars from a long way off and the spacecraft was on its way in. The whole journey, viewed from outside both planets' spheres of influence, becomes a clean Keplerian arc with two well-defined V∞ values — one at each end. That's the moment-of-truth number on the /fly HUD when the spacecraft crosses into the destination's gravity well.",
+    "tr": "这个数学有一种美妙的对称性：抵达火星时的V∞与你从很远的地方观察火星、看着航天器飞入时所看到的数值是一样的。从两颗行星影响球外部观察整个旅程，它变成了一条干净的开普勒弧线，两端各有一个明确定义的V∞值。当航天器穿越进入目的地引力井时，这就是/fly HUD上关键时刻显示的数值。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/space-stations/pressurized-volume.json",
+    "at": "body_paragraphs.4",
+    "en": "The net habitable volume guidance in NASA-STD-3001 Volume 2 is empirically derived from confined-environment psychology studies dating back to Skylab and the Soviet Salyut programme, and scales with mission duration rather than setting a single floor. Below the minimum guidance band, crew well-being and mission performance decline measurably.",
+    "tr": "NASA-STD-3001第2卷中的净宜居体积指南源自受限环境心理学研究的实证数据，这些研究可追溯至Skylab和苏联Salyut计划，其标准随任务持续时间调整而非设定单一下限。低于最低指南范围，乘组的福祉和任务表现会显著下降。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.0",
+    "en": "Once a capsule commits to re-entry it cannot add energy — no engines, no go-around. But it is not helpless about WHERE it comes down. By rolling to point its lift up it stretches the glide and flies far; by rolling lift-down it dives and lands short; by banking left or right it moves sideways. The set of all the places it could reach, given its speed and its lift, is a patch on the ground shaped like a stretched teardrop — the landing footprint.",
+    "tr": "一旦返回舱开始再入就无法增加能量——没有发动机，无法复飞。但它对着陆位置并非毫无选择。通过滚转使升力向上指向，可以延长滑翔并飞得更远；通过滚转使升力向下，可以俯冲并缩短航程；通过向左或向右倾斜可以横向移动。在给定速度和升力的情况下，它能到达的所有位置在地面上形成一片类似拉长泪滴的区域——着陆足迹。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "intro_sentence",
+    "en": "Between Earth and the Moon's surface lies a zoo of carefully-engineered orbits — none of them obvious from two-body physics, all of them exploited by modern lunar plans, from the Gateway design to robotic probes.",
+    "tr": "地球与月球表面之间存在着多种精心设计的轨道 — 这些轨道都不是由两体物理学直观推导出来的，却都被现代月球计划（从Gateway的设计到机器人探针）所利用。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/max-q.json",
+    "at": "body_paragraphs.2",
+    "en": "On `/fly`, the DYNAMIC PRESSURE strip chart in the launch telemetry peaks at Max-Q, and the timeline carries a MAX-Q beat marker. Toggle the drag Science-Lens layer to see the drag arrow swell to its longest right at that moment, then shrink as the atmosphere gives up.",
+    "tr": "在 `/fly` 上，发射遥测数据中的动态压力条形图在最大-Q 处达到峰值，时间线上有一个最大-Q 节拍标记。切换阻力科学透镜图层，可以看到阻力箭头在那一刻膨胀到最长，然后随着大气消散而缩小。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "narrative_101.1",
+    "en": "If you want to know how long Mars takes to make ONE LOOP around the Sun, the answer is 687 Earth days. That's the sidereal period — measured against the unmoving distant stars. It's the geometric truth of the orbit. Vis-viva and Kepler's third law both work in sidereal time.",
+    "tr": "如果你想知道火星绕太阳转一圈需要多长时间，答案是687个地球日。这就是恒星周期——相对于不动的遥远星辰测量而得。它是轨道的几何真实。维斯-维瓦方程和开普勒第三定律都以恒星时间工作。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/bone-density-loss.json",
+    "at": "diagram_caption",
+    "en": "ARED + treadmill + cycle keep loading on the weight-bearing skeleton; with countermeasures, modern crew lose ~0.5%/month vs the pre-ARED 1.5%/month.",
+    "tr": "ARED + 踏板车 + 周期 继续加载到有重力的骨架上；有对策，现代船员损失~0.5%/月与预ARED 1.5%/月."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "diagram_caption",
+    "en": "Equal areas in equal times: shorter arc near perihelion sweeps the same area as the longer arc near aphelion.",
+    "tr": "相等时间内的相等面积：近日点附近较短的弧扫过的面积与远日点附近较长的弧相同。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.3",
+    "en": "Arraying has real costs and limits. Downlink arraying (receiving from a spacecraft) is tractable because each antenna independently captures the signal and the combination happens in post-processing or in real time with precise timing. Uplink arraying (transmitting to a spacecraft) is harder: the signals from multiple dishes must combine coherently at the spacecraft's location, far away, requiring extremely precise phase synchronisation across sites. NASA's DSN Aperture Enhancement Program is investing in more distributed arrays specifically because it is cheaper to add 34 m dishes than to build new 70 m ones — and an array of smaller dishes is also more fault-tolerant: losing one antenna degrades performance gracefully rather than losing a unique irreplaceable asset.",
+    "tr": "阵列化有实实在在的成本和限制。接收阵列化（从航天器接收信号）是可行的，因为每个天线独立捕获信号，组合在后处理中进行或通过精确计时在实时进行。发射阵列化（向航天器发射信号）更困难：来自多个天线的信号必须在远处的航天器位置相干组合，需要各站点之间极其精确的相位同步。NASA的DSN孔径增强计划正在投资更多分布式阵列，特别是因为增加34 m天线的成本比建造新70 m天线要低——而且小口径天线组成的阵列也更容易容错：失去一个天线会优雅地降低性能，而不是失去一个独特且无法替代的资产。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "intro_sentence",
+    "en": "The solar system is a disk, and propellant is finite — so missions don't leave the disk unless they have to.",
+    "tr": "太阳系是一个圆盘，推进剂有限 — 因此除非必须，否则任务不会离开圆盘。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.0",
+    "en": "Water is liquid only over a narrow range of temperatures, and temperature falls off with distance from a star. So around every star there is a ring of orbits — the habitable zone — where an Earth-like planet could keep oceans rather than boiling or freezing them away.",
+    "tr": "水只在很窄的温度范围内保持液态，而温度随着与恒星距离的增加而降低。因此，在每颗恒星周围都存在一个轨道环带——宜居带——在这里类地行星可以保持海洋，而不是将其煮沸或冻结。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "title",
+    "en": "Laser Sails — pushing a probe with a beam from home",
+    "tr": "激光帆——用地球上的光束推动探测器"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.2",
+    "en": "Three-stage architecture was standard for the Apollo era because the engines of the day could not produce enough Isp or thrust to drop straight to two. Saturn V: S-IC kerolox booster (5 × F-1, ~2.5 minutes), S-II hydrolox sustainer (5 × J-2, ~6 minutes), S-IVB hydrolox upper (1 × J-2, two burns — one to circularise, one for trans-lunar injection). Soyuz still flies three stages plus four strap-on first-stage boosters in a 1957 architecture that is older than human spaceflight itself. China's Long March 3B/E and Long March 5 are 2.5-stage (core + strap-ons + upper) with a separate kick stage for GEO/escape. India's PSLV is uniquely four-stage with alternating solid and liquid — heritage from a 1970s programme that lacked any single propellant family capable of doing the whole job.",
+    "tr": "三级架构是Apollo时代的标准，因为当时的发动机产生的Isp或推力不足以直接降到两级。Saturn V:S-IC煤油液氧助推器(5台F-1、~2.5分钟)、S-II液氢液氧维持级(5台J-2、~6分钟)、S-IVB液氢液氧上面级(1台J-2、两次点火 — 一次圆化、一次跨月喷射)。Soyuz至今仍以三级加四个一级捆绑助推器飞行，这套1957年架构比载人航天本身还古老。中国的长征三号B/E和长征五号是2.5级(芯级 + 捆绑助推 + 上面级),配独立末级用于GEO/逃逸。印度的PSLV独树一帜为四级，固体和液体交替 — 来自1970年代一个没有任何单一推进剂家族能完成全部工作的计划遗产。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "intro_sentence",
+    "en": "A spacewalk is a 6–8 hour endurance event in a 1/3-atmosphere oxygen-pressurised suit — preceded by hours of pre-breathe to keep the bends at bay.",
+    "tr": "舱外活动是在1/3大气压纯氧加压服中进行的6–8小时耐力活动——之前需数小时的预呼吸以防止减压病。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "en": "The unit is weird — it's measured in seconds, which makes no intuitive sense at first. The reason: Isp = thrust ÷ (fuel-burned-per-second × Earth's gravity). The mass and length units cancel, leaving pure seconds — which is why you can compare any two engines with one number. The bigger the number, the more efficient the engine, and you can compare engines across decades and continents using the same number.",
+    "tr": "这个单位很奇怪——用秒来表示，乍一看没有直观的意义。原因是这样的：比冲 = 推力 ÷（每秒燃烧的燃料质量 × 地球重力加速度）。质量和长度的单位相互抵消，只剩下纯粹的秒数——这就是为什么你可以用一个数字来比较任何两个发动机。数字越大，发动机效率越高，你可以用同一个数字来比较不同时代和不同地区的发动机。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/observation/space-photography.json",
+    "at": "intro_sentence",
+    "en": "Every famous \"telescope picture\" is a stack of long exposures through narrow-band filters, calibrated, registered, false-colour mapped — the image is what humans make of the count.",
+    "tr": "每一个著名的\"望远镜图片\"都是通过窄带滤波器，校准，注册，假彩图——图像是人类对计数的制作."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/observation/local-group.json",
+    "at": "body_paragraphs.1",
+    "en": "The boundary of the Local Group is not sharp. The conventional outer edge is the zero-velocity surface, the imaginary surface at which a test galaxy would have just enough kinetic energy to escape the group's gravity but no more — roughly 1.5 Mpc from the Milky Way / Andromeda barycentre. Inside that radius, members are bound; outside it, galaxies belong to the broader Local Sheet and feel the Hubble expansion. The Sculptor Group, the Maffei Group, the M81 Group, and the Centaurus A Group are all within 4 Mpc of the Milky Way — close neighbours, but not Local Group members.",
+    "tr": "本星系群的边界并不清晰。传统上的外边界是零速度面，即一个测试星系刚好具有足以逃脱星系团引力的动能但不多的虚想面 — 大约距银河系/Andromeda质心1.5 Mpc。在这个半径内的成员是束缚的；超出这个半径，星系属于更广泛的本星系片并感受Hubble膨胀。玉夫座星系群、马费伊星系群、M81 Group和半人马座 A/M83星系团都在距银河系4 Mpc以内 — 近距离的邻居，但不是本星系群的成员。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "narrative_101.1",
+    "en": "The loop the star traces is fantastically small, measured in millionths of a degree, which is why astrometry was long the great near-miss of planet hunting: promised for decades, delivering little, because the precision simply wasn't there.",
+    "tr": "恒星绘出的环路极其微小，以百万分之一度来衡量，这就是为什么天体测量学长期以来一直是行星搜寻中差之毫厘的遗憾：承诺了数十年，却收获甚微，因为精度根本不够。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "body_paragraphs.0",
+    "en": "The Sun, Earth, and the Moon trace out paths in space. The Earth's orbit defines a plane. Looking out from Earth, the Sun appears to move along this plane against the background stars — that path on the sky is the ecliptic. Most other solar-system bodies lie close to it: the eight planets are all within a few degrees, the asteroid belt clusters near it, comets are scattered.",
+    "tr": "太阳、地球和月球在空间中描绘出轨迹。地球的轨道定义了一个平面。从地球观察，太阳似乎沿着这个平面相对于背景星空移动——天空中的这条路径就是黄道。大多数其他太阳系天体都靠近它：八颗行星都在几度以内，小行星带聚集在它附近，彗星四散分布。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "body_paragraphs.1",
+    "en": "Modern selection looks for different things. NASA's 2017 class accepted 12 from 18,300 applicants (0.07% acceptance — significantly lower than Harvard). Education requirement: STEM master's degree or equivalent operational experience (test pilot, MD, PhD). Height window: 4'9\"–6'4\" (149-193 cm — Crew Dragon and Soyuz both accommodate this range). No vision restriction beyond correctable. No upper age limit. Two years of related professional experience minimum, but actual selectees average 13 years. The fitness bar has shifted from 'jet-pilot G tolerance' to 'will not develop a serious illness on a 6-month ISS expedition' — different problem, different test.",
+    "tr": "现代选拔看重的东西不同。NASA 2017 年的航天员班从 18,300 名申请者中录取了 12 人（录取率 0.07%——远低于 Harvard）。学历要求：STEM 领域硕士学位，或同等的实际工作经验（试飞员、医生、博士）。身高范围：4'9\"–6'4\"（149-193 厘米——Crew Dragon 和 Soyuz 都能容纳这一范围）。视力只要能矫正就没有限制。没有年龄上限。至少两年相关职业经验，但实际入选者平均有 13 年。体能标准已从「喷气式飞行员级别的过载耐受」变成「在国际空间站上 6 个月的长期驻留中不会患上严重疾病」——问题不同，考核也不同。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "narrative_101.1",
+    "en": "The Tsiolkovsky equation: ∆v = vₑ × ln(m₀/m₁). The change in velocity a rocket can produce equals its exhaust velocity times the natural log of its mass ratio. That natural-log term is brutal — getting more ∆v requires exponentially more fuel. Most of every rocket is fuel. The Saturn V was 85% propellant by mass.",
+    "tr": "齐奥尔科夫斯基方程：∆v = vₑ × ln(m₀/m₁)。火箭能产生的速度变化等于排气速度乘以质量比的自然对数。这个对数项非常严苛——获得更多∆v 需要指数级增加的燃料。几乎每枚火箭的大部分质量都是燃料。土星五号的推进剂占其总质量的 85%。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.0",
+    "en": "If you've ever cared about miles-per-gallon for a car, specific impulse is the same idea for rockets. It tells you how efficiently the engine converts fuel into push. Higher Isp = better mileage = more ∆v from the same propellant load.",
+    "tr": "如果你关心汽车的百公里油耗，比冲对火箭来说就是同样的概念。它告诉你发动机如何高效地将燃料转化为推力。比冲越高 = 效率越好 = 相同推进剂负荷下获得的 ∆v 越多。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.3",
+    "en": "ISRU — In-Situ Resource Utilisation — is the architecture enabler. Mars's atmosphere is 95% CO₂ at ~0.6% Earth's pressure; the MOXIE experiment on Perseverance demonstrated electrolysis of atmospheric CO₂ to produce O₂ at ~10 g/hour scale (a flight-rated 200x larger unit could supply a crew). Mars subsurface water-ice exists in mid-to-high-latitude permafrost (verified by Phoenix, Mars Reconnaissance Orbiter, Mars Express); the SHARAD radar found subsurface ice bodies and reachable at depths of ~1 m in some sites. Combined CO₂ + water-ice ISRU produces methane + oxygen, the propellant pair used by Starship — closing the propulsion loop and reducing Earth-launched mass by a factor of ~3 for a chemical-rocket Mars architecture. The deployed ISRU plant has to operate autonomously for ~26 months before the crew arrives (the cargo-pre-deploy architecture). No spacecraft has yet survived 26 months of unattended Mars surface operation; the longest-lived was Opportunity at 14 years, but with continuous Earth oversight.",
+    "tr": "原位资源利用（ISRU）是该架构的使能技术。火星大气成分95%为CO₂，气压约为地球的0.6%；Perseverance上的MOXIE实验证明了大气CO₂电解产氧的可行性，产氧速率约10克/小时（经过飞行认证、规模扩大200倍的装置可满足一个乘员组的需求）。火星地下水冰存在于中-高纬度的永久冻土中（已由Phoenix、火星勘测轨道器、Mars Express验证）；SHARAD雷达发现了地下冰体，在某些地点的深度约1米处可到达。CO₂加水冰的组合ISRU工艺产生甲烷和氧气——Starship采用的推进剂对——闭合推进循环，使化学火箭火星架构的地球发射质量降低约3倍。已部署的ISRU设施在乘员组到达前必须自主运行约26个月（货物预部署架构）。目前还没有航天器能在无人值守条件下在火星表面存活26个月；最长寿的是Opportunity，运行14年，但需要地球的持续监测。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/orbits/apsides.json",
+    "at": "diagram_caption",
+    "en": "Line of apsides through both foci, connecting perihelion (closest) and aphelion (farthest).",
+    "tr": "通过两个焦点的近远点线，连接近日点（最近）和远日点（最远）。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.1",
+    "en": "Every Keplerian orbit is one of these four. Bound orbits — planets, moons, satellites, anything that returns — are circles or ellipses. Unbound trajectories — flybys, escapes, hyperbolic captures — are parabolas or hyperbolas. The boundary is exact: at `e = 1` you're moving at exactly the local escape velocity.",
+    "tr": "每条开普勒轨道都是这四种之一。束缚轨道——行星、卫星、任何会回来的东西——是圆或椭圆。非束缚轨迹——飞掠、逃逸、双曲线捕获——是抛物线或双曲线。边界是精确的：在 `e = 1` 时你的速度恰好等于当地逃逸速度。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "en": "Apollo 8 was the first crewed free-return. Apollo 13 famously fell back on the technique when its service module crippled — riding the free-return home, firing only the lunar module's engine for course corrections, never the crippled main engine. For Mars the geometry is harder — you need a 500-day, two-pass loop — but the concept is the same: flyby geometry doing the work of the return burn.",
+    "tr": "Apollo 8 是第一个载人自由返回任务。Apollo 13 在其服务舱瘫痪时著名地依靠这项技术——乘着自由返回轨道回家，只点燃登月舱的发动机进行航向修正，从未使用瘫痪的主发动机。对于火星，几何关系更难——你需要一个500天的双程环路——但概念相同：飞越几何关系完成返回点火的工作。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.2",
+    "en": "And the strangest objects those methods have found: [black holes](observation/black-holes) (real, mapped, shadow-imaged at the centre of two galaxies) and [wormholes](observation/wormholes) (pure mathematics, included so you know what to do with them when you see one in a film). The /fleet ↦ Observatory category has the actual machines — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — each with its own gallery of what it saw.",
+    "tr": "这些方法发现的最奇怪的物体：[黑洞](observation/black-holes)(真实的，已绘制的，在两个星系中心拍摄的阴影图像)和[虫洞](observation/wormholes)(纯数学，包括在内，这样你在电影中看到它们时就知道该怎么做)。/fleet ↦ Observatory 类别有实际的机器—— Hubble、JWST、Chandra、Spitzer、Kepler、TESS——每个都有自己看到的图库。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "narrative_101.2",
+    "en": "Then there's Saturn — a gas giant with a dynamo so cleanly aligned with its rotation axis that the magnetic tilt is essentially zero. Every other dynamo we know has at least some offset (Earth 10.5°, Jupiter 9.6°), but Saturn's is < 1°. Nobody's sure why. The leading theory is that Saturn has an unusual layer structure that mechanically smooths the field's symmetry, but the mechanism is debated. Saturn's near-perfect alignment is one of the unsolved puzzles of planetary physics.",
+    "tr": "还有土星——这颗气态巨行星的发电机效应与自转轴的排列如此整齐，磁轴倾斜角几乎为零。我们所知的其他所有发电机都至少存在一定的偏转（地球10.5°，木星9.6°），而土星的偏转角却小于1°。没有人确切知道原因。目前最主流的理论认为，土星拥有一种特殊的层状结构，能在机制上使磁场趋于对称，但具体机制仍有争议。土星近乎完美的磁轴对齐，是行星物理学中尚未解决的谜题之一。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.0",
+    "en": "Pick a vehicle. Falcon Heavy, SLS Block 1, Atlas V N22, whatever. That vehicle has a published C3-vs-payload-mass performance curve — heavier payloads shrink the reachable lobe; lighter ones expand it. For a given payload mass you can read off the maximum C3 (or equivalent departure ∆v) the vehicle can deliver, then compare against the porkchop: every cell where ∆v_cost ≤ capability is a feasible launch opportunity. Every cell where it's greater is impossible without a different vehicle or a lighter spacecraft.",
+    "tr": "选择一个运载器。Falcon Heavy、SLS Block 1、Atlas V N22，随便选。该运载器有一条公开的 C3 对比有效载荷质量的性能曲线——更重的有效载荷会缩小可达叶瓣；更轻的有效载荷会扩大它。对于给定的有效载荷质量，你可以读出运载器能够提供的最大 C3（或等效的出发 ∆v），然后与猪排图进行比较：每一个 ∆v_cost ≤ 能力 的单元都是一个可行的发射机会。每一个大于这个值的单元都是不可能的，除非使用不同的运载器或更轻的航天器。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.1",
+    "en": "Second law: the line from Sun to planet sweeps equal areas in equal times. This is angular-momentum conservation in disguise. Near perihelion the planet is close to the Sun, the line is short — so it has to swing fast to sweep the same area as a long, slow line near aphelion. It's why orbital speed isn't constant.",
+    "tr": "第二定律：从太阳到行星的连线在相等时间内扫过相等的面积。这本质上是角动量守恒的伪装形式。在近日点附近，行星靠近太阳，连线较短——因此它必须快速摆动才能扫过与远日点附近那条长而慢的连线相同的面积。这就是轨道速度不恒定的原因。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "body_paragraphs.2",
+    "en": "Gaia's all-sky, high-precision astrometry is now delivering genuine detections and, crucially, true masses for planets found by other methods — closing a chapter that stayed open for most of a century.",
+    "tr": "Gaia的全天高精度天体测量现在正在提供真正的探测结果，更重要的是，为其他方法发现的行星提供真实质量——结束了持续近一个世纪的悬而未决的篇章。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.2",
+    "en": "A range-control guidance loop closes this. Given a target range it solves for the bank angle (really a bank schedule) that lands there, then flies it, reversing bank left/right to cancel crossrange error. If the target lies outside the footprint the honest answer is that it cannot be reached — the guidance clamps to the nearest edge — which is why mission design chooses entry conditions that keep the target comfortably inside the footprint.",
+    "tr": "一个距离控制制导回路完成了这一点。给定目标距离，它求解使着陆点到达该处的倾斜角（实际上是倾斜角计划），然后执行飞行，通过左右反向倾斜来消除横向误差。如果目标位于足迹之外，诚实的答案是它无法到达——制导系统会限制到最近的边缘——这就是为什么任务设计会选择使目标舒适地位于足迹内的进入条件。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "body_paragraphs.0",
+    "en": "A modern EVA starts about 24 hours before egress. The crew reviews the procedure binder (now a tablet) — every tether transfer, every bolt torque, every contingency. Tools are pre-staged on the airlock wall in the order they'll be needed. The night before, the crew sleeps at reduced cabin pressure (10.2 psi on the US side; the Russian Orlan side skips this step because of suit-pressure differences — see the `eva-physiology` article). At T-minus 4 hours the crew is in-suit, mask-breathing pure oxygen to wash nitrogen out of body tissues — the prebreathe protocol. Pre-breathe is non-negotiable; skipping it causes decompression sickness ('the bends') from N₂ bubbling out as the suit depressurises.",
+    "tr": "一次现代出舱活动大约在出舱前 24 小时就开始了。乘组复习程序手册（如今是平板电脑）——每一次安全绳的转挂、每一个螺栓的拧紧力矩、每一种应急情况。工具按使用顺序预先摆放在气闸舱的舱壁上。前一晚，乘组在降低的舱压下睡觉（美国一侧为 10.2 psi；俄罗斯 Orlan 一侧因航天服压力不同而跳过这一步——见 `eva-physiology` 一文）。在出舱前 4 小时，乘组已穿好航天服，通过面罩吸入纯氧，把氮气从身体组织中排出——这就是预吸氧程序。它没有商量余地；跳过它会因航天服降压时 N₂ 析出成气泡而引发减压病（「the bends」）。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.2",
+    "en": "The math comes out a few percent off the truth — small enough that real missions plan with it as their first cut, then numerically refine for the launch. It's also small enough that Orrery can run all of this in your browser, in a Web Worker, fast enough to redraw the whole porkchop when you scrub the launch year. The whole simulator is built on this trick.",
+    "tr": "计算结果与真实值相差几个百分点——误差足够小，实际任务将其作为初步估算，然后在发射前进行数值优化。误差也足够小，使得 Orrery 可以在你的浏览器中的 Web Worker 里运行所有这些计算，速度快到当你调整发射年份时能重绘整个猪排图。整个模拟器都建立在这个技巧之上。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "diagram_caption",
+    "en": "Three lineages: American IVA (Mercury Mark IV → ACES → SpaceX / Starliner) + American EVA (A7L/A7LB → EMU → AxEMU). Russian IVA (Sokol K → Sokol-M) + Russian EVA (Orlan → Orlan-MKS). Chinese EVA (Feitian, derived from Orlan, second-gen on Tiangong). Cross-pollination is the rule, not the exception — every modern suit borrows from at least one ancestor in another lineage.",
+    "tr": "三条血脉：美国舱内服（水星Mark IV → ACES → SpaceX / Starliner）+美国舱外服（A7L/A7LB → EMU → AxEMU）。俄罗斯舱内服（Sokol K → Sokol-M）+俄罗斯舱外服（Orlan → Orlan-MKS）。中国舱外服（飞天，源自Orlan，第二代在天宫）。交叉融合是规则而非例外——每套现代宇航服都从至少一条其他血脉中的祖先借鉴。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.2",
+    "en": "Irregulars are everything that doesn't fit. The Magellanic Clouds are the prototypes — gas-rich, actively star-forming, no clear spiral arms or central bulge, often elongated or distorted by tidal interactions with larger neighbours. Most low-mass star-forming galaxies are irregular. Many were once classified as spiral-like but have been so tidally disrupted that the structure is no longer recognisable; others are too small to have ever developed a self-supporting disc. Irregulars dominate the count of galaxies at the low-mass end of the galactic mass function — there are far more dwarf irregulars than spirals, but they are individually faint so spirals dominate the night sky and the historical record.",
+    "tr": "不规则星系是一切不符合分类的星系。麦哲伦云是原型——富气体、积极形成恒星、没有清晰的螺旋臂或中心核球、通常被更大邻居的潮汐相互作用拉长或扭曲。大多数低质量恒星形成星系都是不规则的。许多曾被分类为类似螺旋的星系，但已被潮汐破坏到结构不再可识别；其他的则太小，从未发展出自支撑的圆盘。不规则星系在星系质量函数的低质量端占据绝大多数数量——矮不规则星系远多于螺旋星系，但它们各自较暗，因此螺旋星系主导夜空和历史记录。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.0",
+    "en": "If the X-axis tells you WHEN you leave, the Y-axis tells you HOW LONG the trip takes. Bottom of the chart: fast, short trips. Top of the chart: slow, long trips. For Mars-class destinations the axis spans roughly 100 to 500 days. For Jupiter it's years.",
+    "tr": "如果 X 轴告诉你何时出发，Y 轴就告诉你行程需要多长时间。图表底部：快速、短途行程。图表顶部：慢速、长途行程。对于火星级别的目的地，该轴大约跨越 100 到 500 天。对于木星则是以年计。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.0",
+    "en": "Take an infinite cone and cut it with a flat plane. Slice horizontally: a circle (`e = 0`). Tilt the slice: an ellipse (`0 < e < 1`). Tilt parallel to the cone's edge: a parabola (`e = 1`, the exact escape case). Tilt past that: a hyperbola (`e > 1`, escape with energy to spare). Two thousand years before Kepler, Apollonius of Perga catalogued these curves. Two centuries before Newton, Kepler discovered planets fly along them.",
+    "tr": "取一个无限圆锥，用平面切割它。水平切割：得到圆（`e = 0`）。倾斜切割：得到椭圆（`0 < e < 1`）。沿着圆锥边缘方向倾斜切割：得到抛物线（`e = 1`，恰好逃逸的情况）。进一步倾斜：得到双曲线（`e > 1`，逃逸且能量有余）。在开普勒之前两千年，佩尔吉的阿波罗尼奥斯就对这些曲线进行了分类。在牛顿之前两个世纪，开普勒发现行星沿着这些曲线运行。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/tcm.json",
+    "at": "body_paragraphs.2",
+    "en": "The `tcm_count` field on `/missions` FLIGHT tabs reports how many TCMs each mission used. Curiosity used 4. Mars Reconnaissance Orbiter used 4. Apollo missions used 4-5 mid-course corrections on the way to and from the Moon.",
+    "tr": "/missions的FLIGHT标签上的`tcm_count`字段报告了每个任务使用的TCM次数。Curiosity使用了4次。Mars Reconnaissance Orbiter使用了4次。Apollo任务在往返月球的途中使用了4到5次中途修正。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.3.diagram_caption",
+    "en": "A porkchop. Each contour is constant ∆v; the lobe is when nature makes Mars cheap.",
+    "tr": "一个 porkchop 图。每条等高线代表恒定的 ∆v;凸瓣是大自然让火星变得便宜的时候。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.1",
+    "en": "Solar-system distances in AU: Mercury 0.39, Venus 0.72, Earth 1.0, Mars 1.52, Jupiter 5.20, Saturn 9.58, Uranus 19.22, Neptune 30.05, Pluto 39.5 (averages — eccentricity makes them vary). The Voyagers are well past 150 AU and still going. The Oort Cloud reaches out tens of thousands of AU.",
+    "tr": "太阳系中以天文单位计的距离：水星 0.39、金星 0.72、地球 1.0、火星 1.52、木星 5.20、土星 9.58、天王星 19.22、海王星 30.05、冥王星 39.5（平均值——偏心率导致它们变化）。Voyager 探测器已经远超 150 AU，仍在继续运行。奥尔特云延伸至数万 AU。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/observation/local-group.json",
+    "at": "body_paragraphs.0",
+    "en": "The Local Group is dominated by three spiral galaxies — the Milky Way, Andromeda (M31), and the Triangulum Galaxy (M33). Around the Milky Way and Andromeda are clouds of satellite galaxies, mostly small and faint — the Magellanic Clouds, Sagittarius Dwarf, Sculptor, Fornax, Draco, the Leo dwarfs, and many more. Total members known today: about 80, and the count keeps rising as deep imaging surveys (DES, LSST, Euclid) find ultra-faint dwarfs missed by earlier searches. The whole structure is gravitationally bound — it is not expanding with the Hubble flow, and the Milky Way and Andromeda are actually approaching each other at about 110 km/s.",
+    "tr": "本星系群由三个旋涡星系主导——银河系、仙女座星系（M31）和三角形星系（M33）。围绕银河系和仙女座星系是卫星星系的云团，大多数又小又暗——大麦哲伦云、人马矮星系、雕塑家星系、炉鼎星系、龙星系、狮子座矮星系等等。迄今已知的总成员数：约80个，而且随着深空成像巡天（DES、LSST、Euclid）发现早期搜寻遗漏的超暗矮星系，数量还在不断增加。整个结构在引力束缚下——它不随Hubble流膨胀，银河系和仙女座星系实际上正以约110千米/秒的速度相互接近。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.3",
+    "en": "How much push per kilogram do you actually need for lift-off? With TWR 1.3 and Earth gravity 9.81 m/s², the engines need to deliver about 12.8 N/kg of vehicle mass. Stack that up for a 3000-tonne vehicle (Saturn V wet mass) and you need 38 MN of thrust — which is exactly why Saturn V used five F-1 engines totalling 33.9 MN at sea level, rising past 40 MN as ambient pressure dropped. For Starship (5000 tonnes wet) you need ~64 MN, which is why the Super Heavy booster carries 33 Raptors. The number of engines a stack carries is not a styling choice — it falls out directly from the TWR-vs-launch-mass arithmetic and the thrust of the largest engine the programme could develop.",
+    "tr": "起飞时每千克到底需要多少推力? TWR 1.3和地球重力9.81 m/s²下，发动机必须提供约12.8 N/kg载具质量。对3000吨(Saturn V湿重)载具需要38 MN — 正是Saturn V使用5台F-1合计海平面33.9 MN、随环境压下降升至40 MN以上的原因。对Starship(5000吨湿)需要~64 MN,所以Super Heavy搭载33台Raptor。一捆发动机的数量不是风格选择 — 它直接由TWR-与-起飞质量的算术、以及该计划能开发出的最大单机推力决定。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.3",
+    "en": "Dead-reckoning matters most when the DSN isn't available — during a Mars-EDL communications blackout, during the ~22 minute one-way light delay to Jupiter and beyond, or during an attitude-control crisis. Every spacecraft autonomy system is essentially a state-vector propagator running on dead-reckoning while ground operations work on the recovery.",
+    "tr": "在DSN不可用时，死后应变最为重要——在火星-EDL通信断电时，在~22分钟的单向光延迟到木星内外时，或在姿态控制危机时. 每个航天器自主系统本质上都是在地面操作进行回收时运行的州-州传播器。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "diagram_caption",
+    "en": "Sky-crane: a rocket-powered descent stage hovers and lowers the rover on tethers to the surface, then cuts the cords and flies clear.",
+    "tr": "天空吊车：一个火箭动力的下降级悬停并通过系绳将火星车降至表面，然后切断缆绳飞离。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/scales-time/au.json",
+    "at": "diagram_caption",
+    "en": "1 AU ≈ Earth-Sun distance. Planet semi-major axes in AU, log-scale to handle the outer planets.",
+    "tr": "1 AU ≈ 地球到太阳的距离。行星半长轴（单位AU），对数刻度用以容纳外行星。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "en": "Ion drives achieve specific impulses 10–30 times higher than chemical rockets by accelerating ionised gas electrically rather than burning it — at the cost of very low thrust that is measured in millinewtons, not meganewtons.",
+    "tr": "离子推进器通过电加速电离气体而非燃烧来实现比冲，达到化学火箭的10–30倍，但代价是推力极低，仅以毫牛顿而非百万牛顿计。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.2",
+    "en": "On Orrery's `/missions` FLIGHT tab the C3 of each interplanetary mission is the canonical first-row data point. It's the single number that captures 'how hard was it to launch.'",
+    "tr": "在 Orrery 的 `/missions` FLIGHT 标签页中，每个星际任务的 C3 是标准的第一行数据点。它是捕捉'发射难度有多大'的单一数字。"
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "narrative_101.2",
+    "en": "Outside the lobes: red. Most of the porkchop is red, actually. That's the lesson. There are very few cheap moments to launch a spacecraft to another planet, and they're not negotiable. \"Just wait for the right window\" almost always beats \"invent a clever trajectory.\" Reading the shape of the lobe — where it widens, where it narrows, where the optima sit — is what flight dynamicists do for a living.",
+    "tr": "在叶片之外：红色。实际上猪排图的大部分是红色。这就是教训。发射航天器到另一个行星的廉价时刻非常少，而且是不可协商的。\"只需等待合适的窗口\"几乎总是胜过\"设计一条巧妙的轨迹\"。读出叶片的形状——它在哪里拓宽，在哪里变窄，最优点坐落在哪里——这就是飞行动力学家的日常工作。"
+  }
+]

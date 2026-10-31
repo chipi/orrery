@@ -413,3 +413,22 @@ ISS and Tiangong modules and visitors, and the four orbit-regime trees.
 - 11 fields graded MINOR but kept by their reviewer were left as they are (no BROKEN field was
   kept). 1,850 retranslations were decided; 1,848 applied after the 2 dropped sr edits.
 - Each field had one reviewer, plus my sample read of about 10 per cell.
+
+## 9 · Steps C and D (operator: "yes on C and D, keep conservative spending")
+
+**D, verification of step B:** a fresh 25-field sample from each of the 12 fixed cells, excluding
+fields graded before: 300 fields, **0 BROKEN**, 20 MINOR. That puts the 95 % upper bound at about
+1 % for the 12 cells together (about 12 % for any one cell). Two MINOR slips fixed by hand
+(de Goldstone pronouns, de "Sirrah" for Alpheratz); one more (ar Satish Dhawan spelt "ستيش دون").
+One MINOR was not taken: pt-BR writes Sirius 19 times and Sírio never.
+
+**C, science in ru, zh-CN, fr:**
+
+- ru (6 BROKEN in the sweep's 60): read in full, as in step B.
+- zh-CN and fr: a second fresh 60-field sample each, before deciding on a full read.
+  - zh-CN: 4 BROKEN in 60 (6 in 120 with the sweep). Wrong terms: 死后应变 for dead reckoning,
+    注册 for image registration, 踏板车 for treadmill; wrong dwarf-galaxy names.
+  - fr: 2 BROKEN in 60 (4 in 120): "a d'abord roulé une fusée", "rester mis".
+  - The 6 BROKEN fields were fixed by hand. A full read of each cell is about 1,433 fields.
+
+Record: `maps/2026-10-31-garble-pass/step-d-check/`.

@@ -1,0 +1,482 @@
+[
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.1",
+    "en": "Reverse the geometry — approach from in front — and you slow down. Pioneer 11 used Jupiter to push toward Saturn. Voyager 2 chained Jupiter, Saturn, Uranus, Neptune in one of the most exquisite gravity-assist tours ever flown. Cassini bounced off Venus twice and Earth once before reaching Saturn. New Horizons hit Jupiter to shave three years off the trip to Pluto.",
+    "tr": "Inversez la géométrie — approchez par l'avant — et vous ralentissez. Pioneer 11 a utilisé Jupiter pour se propulser vers Saturne. Voyager 2 a enchaîné Jupiter, Saturne, Uranus, Neptune dans l'une des plus exquises tournées d'assistance gravitationnelle jamais effectuées. Cassini a rebondi sur Vénus deux fois et sur la Terre une fois avant d'atteindre Saturne. New Horizons a frappé Jupiter pour économiser trois ans du voyage vers Pluton."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "intro_sentence",
+    "en": "Tycho Brahe's lifetime of naked-eye Mars data, distilled by Kepler into the three rules every orbit obeys.",
+    "tr": "Les données de Mars observées à l'œil nu par Tycho Brahe, distillées par Kepler en trois règles universelles des orbites."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "body_paragraphs.3",
+    "en": "Battery storage: ISS uses lithium-ion battery ORUs (orbital replacement units) at ~50 kWh capacity per pair. Each battery covers one main array's night-side load. Tiangong uses similar Li-ion banks, sized for the smaller load.",
+    "tr": "Stockage par batterie : l'ISS utilise des batteries lithium-ion ORU (unités de remplacement en orbite) d'une capacité d'environ 50 kWh par paire. Chaque batterie couvre la charge côté nuit d'une aile principale. Tiangong utilise des bancs Li-ion similaires, dimensionnés pour la charge plus faible."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.7.diagram_caption",
+    "en": "Telescope + filter + spectrograph + maths. Almost every fact about the cosmos was reconstructed from light.",
+    "tr": "Télescope + filtre + spectrographe + maths. Presque chaque fait sur le cosmos a été reconstruit à partir de la lumière."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.1",
+    "en": "The unit is anchored to a specific integer number of metres — 149,597,870,700 of them, fixed in 2012 — but the practical idea is simpler. Mars is 1.5 AU from the Sun. Jupiter is 5 AU. Pluto orbits between 30 and 50 AU. Voyager 1, the most distant human-made object, is past 170 AU now and still going. Numbers you can actually hold in your head.",
+    "tr": "L'unité est ancrée à un nombre entier spécifique de mètres — 149 597 870 700 exactement, fixé en 2012 — mais l'idée pratique est plus simple. Mars est à 1,5 au du Soleil. Jupiter à 5 au. Pluton orbite entre 30 et 50 au. Voyager 1, l'objet artificiel le plus lointain, a dépassé 170 au et continue toujours. Des nombres qu'on peut réellement tenir dans sa tête."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.2",
+    "en": "DTN is already operational, not experimental. The ISS has run a DTN node since 2016, demonstrating the architecture in a real constrained-link environment. In deep space, Mars orbiters act as the relay tier: NASA's Mars Reconnaissance Orbiter, MAVEN, and ESA's Trace Gas Orbiter each carry store-and-forward relay capacity, passing bundles down from orbit to surface rovers and back up to Earth. The rovers don't talk directly to Earth for high-volume data — the orbital relay handles it, storing the downlink until a contact window with a DSN antenna opens.",
+    "tr": "DTN est déjà opérationnel, pas expérimental. L'ISS exécute un nœud DTN depuis 2016, démontrant l'architecture dans un environnement réel avec liens contraints. Dans l'espace lointain, les orbiteurs martiens servent de relais : Mars Reconnaissance Orbiter et MAVEN de la NASA, ainsi que le Trace Gas Orbiter de l'ESA, transportent chacun une capacité de relais en stockage-retransmission, transmettant les bundles de l'orbite aux rovers de surface et vice versa vers la Terre. Les rovers ne parlent pas directement à la Terre pour les données volumineuses — le relais orbital gère cela, stockant le signal descendant jusqu'à l'ouverture d'une fenêtre de contact avec une antenne DSN."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.2",
+    "en": "'Habitable zone' is a hopeful shorthand, not a promise. A world there could still be an airless rock or a runaway greenhouse — location is necessary, not sufficient.",
+    "tr": "« Zone habitable » est un raccourci plein d'espoir, pas une promesse. Un monde qui s'y trouve pourrait tout de même être un rocher sans air ou une serre atmosphérique incontrôlée — l'emplacement est nécessaire, mais non suffisant."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/orbits/vis-viva.json",
+    "at": "body_paragraphs.1",
+    "en": "The equation packages conservation of energy: total mechanical energy on a Keplerian orbit is constant, so any time you know `r` you can recover the speed. At perihelion `r` is small, the parenthetical term is large, `v` is high. At aphelion `r` is large, the term shrinks, `v` drops. Earth zips through perihelion at 30.3 km/s and crawls through aphelion at 29.3 km/s — same orbit, different speed, same energy.",
+    "tr": "L'équation synthétise la conservation de l'énergie : l'énergie mécanique totale sur une orbite képlérienne est constante, donc chaque fois que vous connaissez `r` vous pouvez retrouver la vitesse. Au périhélie `r` est petit, le terme entre parenthèses est grand, `v` est élevée. À l'aphélie `r` est grand, le terme rétrécit, `v` chute. La Terre fonce par le périhélie à 30,3 km/s et progresse lentement par l'aphélie à 29,3 km/s — même orbite, vitesse différente, même énergie."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/max-q.json",
+    "at": "diagram_caption",
+    "en": "Dynamic pressure q = ½ρv² rises with speed and falls with thinning air; the crossover peak, ~11–14 km up, is Max-Q.",
+    "tr": "La pression dynamique q = ½ρv² augmente avec la vitesse et diminue avec l'air raréfié ; le pic de croisement, ~11–14 km, est Max-Q."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.4.diagram_alt",
+    "en": "Atmospheric entry, parachute deploy, retropropulsion, landing.",
+    "tr": "Entrée atmosphérique, déploiement de parachute, rétropropulsion, atterrissage."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "title",
+    "en": "Suit lineage — Sokol to Orlan to Feitian, A7L to AxEMU",
+    "tr": "Généalogie des combinaisons spatiales — Sokol à Orlan à Feitian, A7L à AxEMU"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "narrative_101.2",
+    "en": "The math has a beautiful symmetry: arrival V∞ at Mars is the same number you'd see if you watched Mars from a long way off and the spacecraft was on its way in. The whole journey, viewed from outside both planets' spheres of influence, becomes a clean Keplerian arc with two well-defined V∞ values — one at each end. That's the moment-of-truth number on the /fly HUD when the spacecraft crosses into the destination's gravity well.",
+    "tr": "Les mathématiques ont une belle symétrie : le V∞ d'arrivée à Mars est le même nombre que vous verriez en observant Mars de très loin pendant que le vaisseau approche. Tout le voyage, vu de l'extérieur des sphères d'influence des deux planètes, devient un arc de Kepler net avec deux valeurs de V∞ bien définies — une à chaque extrémité. C'est le chiffre de vérité sur le HUD de /fly quand le vaisseau entre dans le puits de gravité de sa destination."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "narrative_101.0",
+    "en": "A space station runs on solar electricity. The solar wings run the length of the ISS's ~109 m truss — bigger than a football field — because everything else depends on the watts they pull from sunlight: life support, communications, scientific instruments, the crew's exercise machine, the toilet's air-flow fan.",
+    "tr": "Une station spatiale fonctionne à l'électricité solaire. Les ailes solaires s'étendent sur toute la longueur de la poutre de l'ISS, longue d'environ 109 m — plus grande qu'un terrain de football — car tous les autres systèmes dépendent des watts qu'elles captent du rayonnement solaire : le support de vie, les communications, les instruments scientifiques, la machine d'exercice de l'équipage, le ventilateur d'extraction d'air des toilettes."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.2",
+    "en": "A range-control guidance loop closes this. Given a target range it solves for the bank angle (really a bank schedule) that lands there, then flies it, reversing bank left/right to cancel crossrange error. If the target lies outside the footprint the honest answer is that it cannot be reached — the guidance clamps to the nearest edge — which is why mission design chooses entry conditions that keep the target comfortably inside the footprint.",
+    "tr": "Une boucle de guidage de contrôle de portée ferme ceci. Étant donné une portée cible elle résout l'angle d'inclinaison (en réalité un programme d'inclinaison) qui y atterrit, puis le pilote, inversant l'inclinaison gauche/droite pour annuler l'erreur transversale. Si la cible se trouve en dehors de l'empreinte la réponse honnête est qu'elle ne peut être atteinte — le guidage se limite au bord le plus proche — c'est pourquoi la conception de mission choisit des conditions d'entrée qui maintiennent la cible confortablement à l'intérieur de l'empreinte."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.3",
+    "en": "Lunar frozen orbits. The Moon's gravity field is highly non-spherical because its crust is uneven (mascons — mass concentrations under the maria) and the Moon has no atmosphere to damp orbital perturbations. A satellite in a circular low lunar orbit at most inclinations will see its orbit get progressively more eccentric over months until it crashes into the surface. Lunar Prospector (1999) was deliberately deorbited at end of mission because mission planners couldn't keep it stable. The 'frozen' lunar inclinations — 27°, 50°, 76°, and 86° — are the ones where the various perturbations cancel and a satellite can stay in approximate circular orbit for years without station-keeping. The Lunar Reconnaissance Orbiter (LRO, 2009-) uses a near-frozen polar orbit at ~50 km altitude that requires only modest station-keeping. The Chinese Queqiao-2 relay satellite (2024) uses a frozen elliptical orbit at L2.",
+    "tr": "Orbites gelées lunaires. Le champ gravitationnel de la Lune est très non-sphérique car sa croûte est inégale (mascons — concentrations de masse sous les mers lunaires) et la Lune n'a pas d'atmosphère pour amortir les perturbations orbitales. Un satellite en orbite lunaire circulaire basse à la plupart des inclinaisons verra son orbite devenir progressivement plus excentrique au cours des mois jusqu'à s'écraser à la surface. Lunar Prospector (1999) a été volontairement désorbité en fin de mission car les responsables de la mission ne pouvaient pas la maintenir stable. Les inclinaisons lunaires « gelées » — 27°, 50°, 76° et 86° — sont celles où les diverses perturbations s'annulent mutuellement et un satellite peut rester en orbite quasi-circulaire pendant des années sans station-keeping. Le Lunar Reconnaissance Orbiter (LRO, 2009-) utilise une orbite polaire quasi-gelée à ~50 km d'altitude qui ne nécessite qu'un station-keeping modeste. Le satellite relais Queqiao-2 chinois (2024) utilise une orbite elliptique gelée en L2."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/met.json",
+    "at": "narrative_101.0",
+    "en": "MET stands for Mission Elapsed Time. It's a stopwatch. Day zero, hour zero, minute zero, second zero is the moment the rocket leaves the pad. Everything that happens after that gets tagged with MET. Apollo 11's first step on the Moon? MET 109 hours 24 minutes. Voyager 1 crossing into interstellar space? MET 35 years.",
+    "tr": "MET signifie Mission Elapsed Time (Temps écoulé depuis le début de la mission). C'est un chronomètre. Jour zéro, heure zéro, minute zéro, seconde zéro, c'est le moment où la fusée quitte le pad. Tout ce qui se passe après reçoit un tag MET. Le premier pas d'Apollo 11 sur la Lune ? MET 109 heures 24 minutes. Voyager 1 franchissant l'espace interstellaire ? MET 35 ans."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "narrative_101.2",
+    "en": "But if you want to know how often Earth and Mars LINE UP THE SAME WAY (so you can launch a mission), the answer is 780 days — about 26 months. That's the synodic period. Why longer? Because while Mars is going around the Sun once, Earth is going around it almost twice — both planets keep moving. The line-up only repeats when Earth has lapped Mars in the dance.",
+    "tr": "Mais si vous voulez savoir à quelle fréquence la Terre et Mars S'ALIGNENT DE LA MÊME FAÇON (pour que vous puissiez lancer une mission), la réponse est 780 jours — environ 26 mois. C'est la période synodique. Pourquoi plus longue ? Parce que tandis que Mars fait une boucle autour du Soleil, la Terre en fait presque deux — les deux planètes continuent de bouger. L'alignement ne se répète que lorsque la Terre a dépassé Mars dans la danse."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "en": "Mir's 1997 was the formative year. In February, a Vika oxygen-generation candle caught fire in the Kvant-1 module — flames that Linenger described as burning for up to ~14 minutes (Russian accounts put the active flame nearer 90 seconds) tore through the corridor connecting Mir's modules to the Soyuz lifeboats, blocking the escape path. The two-cosmonaut + one-NASA-astronaut crew (Tsibliyev, Lazutkin, Linenger) put on respirators and fought the fire with extinguishers in zero-g (which is harder than it sounds; the extinguisher's reaction mass kicks the operator backward). They prevailed but the cabin was full of toxic smoke for days. Four months later (June 1997), a manual remote-controlled Progress docking went wrong — the unmanned cargo ship struck the Spektr module at 1 m/s, puncturing the hull. Tsibliyev and Lazutkin sealed Spektr in 11 minutes (the hatch had to be wired closed because cables ran through the bulkhead), preventing total station loss. After both events the same crew remained on station until the regular crew rotation. Linenger's memoir + the post-mission psychiatric debriefs documented severe cumulative stress, withdrawal, and conflict between the cosmonauts and ground control over operational decisions.",
+    "tr": "L'année 1997 à Mir fut déterminante. En février, une chandelle de génération d'oxygène Vika a pris feu dans le module Kvant-1 — les flammes décrites par Linenger comme durant ~14 minutes (les sources russes rapportent la flamme active près de 90 secondes) ont traversé le corridor reliant les modules de Mir aux capsules Soyuz, bloquant la voie d'échappement. L'équipage de deux cosmonautes et un astronaute NASA (Tsibliyev, Lazutkin, Linenger) a enfilé des respirateurs et combattu le feu avec des extincteurs en microgravité (ce qui est plus difficile qu'il n'y paraît ; la réaction de masse de l'extincteur repousse l'opérateur). Ils ont réussi mais la cabine était pleine de fumée toxique pendant des jours. Quatre mois plus tard (juin 1997), un amarrage Progress télécommandé s'est mal passé — le cargo sans équipage a frappé le module Spektr à 1 m/s, perforant la coque. Tsibliyev et Lazutkin ont scellé Spektr en 11 minutes (l'écoutille a dû être fermée au fil car les câbles traversaient la paroi), prévenant la perte totale de la station. Après les deux événements, le même équipage est resté à bord jusqu'à la rotation régulière. Les mémoires de Linenger et les débriefings psychiatriques post-mission ont documenté un stress cumulatif sévère, un retrait social, et des conflits entre les cosmonautes et le contrôle au sol sur les décisions opérationnelles."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "body_paragraphs.1",
+    "en": "Stability differs sharply. L1, L2, and L3 are **saddle points** — gravitationally balanced on the in-out axis but unstable on perpendicular axes. A spacecraft parked there will drift off within months unless it does small station-keeping burns. L4 and L5 are **stable** — they're potential-energy wells. Dust collects at the Earth-Sun L4/L5 (the Kordylewski clouds, faint but real); Trojan asteroids librate around the Sun-Jupiter L4 and L5 in their millions.",
+    "tr": "La stabilité diffère considérablement. L1, L2 et L3 sont des **points de selle** — gravitationnellement équilibrés sur l'axe intra-radial mais instables sur les axes perpendiculaires. Un engin spatial garé là dérivera au bout de quelques mois à moins qu'il n'effectue de petits allumages de station-keeping. L4 et L5 sont **stables** — ce sont des puits d'énergie potentielle. La poussière s'accumule aux points L4/L5 du système Terre-Soleil (les nuages de Kordylewski, ternes mais réels) ; les astéroïdes troyens librent autour des points L4 et L5 du système Soleil-Jupiter par millions."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "intro_sentence",
+    "en": "Getting to orbit is not a fixed script you can write in advance — it is a boundary-value problem solved anew every second, which is why spaceflight had to wait for the digital computer.",
+    "tr": "Atteindre l'orbite n'est pas un script fixe qu'on peut écrire à l'avance — c'est un problème aux limites résolu à nouveau chaque seconde, c'est pourquoi le vol spatial a dû attendre l'ordinateur numérique."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.1",
+    "en": "Now imagine planning a trip to Mars. The cheapest way to get there is a long curved arc that goes around the Sun and arrives at Mars's orbit at the same moment Mars is there. The cheapest arc lies in the same plane that Earth and Mars share — the ecliptic. Leaving the disk to take a 'detour out and over' costs propellant the spacecraft cannot afford.",
+    "tr": "Maintenant imagine planifier un voyage vers Mars. La façon la moins chère d'y aller est un long arc courbé qui contourne le Soleil et arrive à l'orbite de Mars au moment même où Mars y est. L'arc le moins cher se trouve dans le même plan que la Terre et Mars partagent — l'écliptique. Quitter le disque pour faire un \"détour vers l'extérieur\" coûte du propergol que le vaisseau ne peut pas se permettre."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.0",
+    "en": "Water is liquid only over a narrow range of temperatures, and temperature falls off with distance from a star. So around every star there is a ring of orbits — the habitable zone — where an Earth-like planet could keep oceans rather than boiling or freezing them away.",
+    "tr": "L'eau est liquide seulement sur une plage étroite de températures, et la température diminue avec la distance d'une étoile. Ainsi, autour de chaque étoile il existe un anneau d'orbites — la zone habitable — où une planète semblable à la Terre pourrait conserver des océans plutôt que de les faire bouillir ou geler."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.3",
+    "en": "The constraint is power. In the inner solar system, large solar arrays can feed tens of kilowatts to a thruster. Beyond Jupiter, sunlight is too weak for solar-powered ion propulsion at useful thrust levels; the alternative is a nuclear reactor, which no electric-propulsion mission has yet used in deep space. At high thrust levels, ion drives are also slower to respond than chemical thrusters, which limits their use for attitude control or abort manoeuvres. They are a cruise engine, not a launch engine — every ion-propelled spacecraft in history rode a chemical rocket to orbit or escape velocity first. See also: /science/propulsion/specific-impulse for the numbers in context, and /science/propulsion/tsiolkovsky for why high exhaust velocity reduces propellant mass so dramatically.",
+    "tr": "La contrainte est la puissance. Dans le système solaire interne, les grands panneaux solaires peuvent fournir des dizaines de kilowatts à un propulseur. Au-delà de Jupiter, la lumière solaire est trop faible pour la propulsion ionique alimentée par l'énergie solaire à des niveaux de poussée utiles ; l'alternative est un réacteur nucléaire, qu'aucune mission de propulsion électrique n'a encore utilisé dans l'espace lointain. À des niveaux de poussée élevés, les moteurs ioniques réagissent également plus lentement que les propulseurs chimiques, ce qui limite leur utilisation pour le contrôle d'attitude ou les manœuvres d'avortement. Ce sont des moteurs de croisière, pas des moteurs de lancement — chaque engin spatial alimenté par des ions de l'histoire a d'abord roulé une fusée chimique en orbite ou à la vitesse d'évasion. Voir aussi : /science/propulsion/specific-impulse pour les chiffres en contexte, et /science/propulsion/tsiolkovsky pour comprendre pourquoi une vitesse d'échappement élevée réduit si dramatiquement la masse de propergol."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.2",
+    "en": "Three-stage architecture was standard for the Apollo era because the engines of the day could not produce enough Isp or thrust to drop straight to two. Saturn V: S-IC kerolox booster (5 × F-1, ~2.5 minutes), S-II hydrolox sustainer (5 × J-2, ~6 minutes), S-IVB hydrolox upper (1 × J-2, two burns — one to circularise, one for trans-lunar injection). Soyuz still flies three stages plus four strap-on first-stage boosters in a 1957 architecture that is older than human spaceflight itself. China's Long March 3B/E and Long March 5 are 2.5-stage (core + strap-ons + upper) with a separate kick stage for GEO/escape. India's PSLV is uniquely four-stage with alternating solid and liquid — heritage from a 1970s programme that lacked any single propellant family capable of doing the whole job.",
+    "tr": "L'architecture triétage était standard à l'ère Apollo car les moteurs de l'époque ne produisaient pas assez d'Isp ou de poussée pour descendre directement à deux. Saturn V : S-IC booster kérolox (5 × F-1, ~2,5 min), S-II maintien hydrolox (5 × J-2, ~6 min), S-IVB supérieur hydrolox (1 × J-2, deux burns — un pour circulariser, un pour l'injection translunaire). Soyuz vole toujours trois étages plus quatre boosters strap-on de premier étage dans une architecture de 1957, plus ancienne que le vol habité lui-même. Long March 3B/E et Long March 5 chinois sont 2,5 étages (cœur + strap-ons + supérieur) avec étage d'appoint séparé pour GEO/évasion. Le PSLV indien est unique en étant quadriétage avec alternance solide et liquide — héritage d'un programme des années 1970 qui manquait d'une seule famille de propergol capable de tout faire."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "intro_sentence",
+    "en": "An EVA suit is a one-person spacecraft — pressure shell, closed-loop life support, thermal control, sun visor, and a thruster pack — built so a human can spend 6–8 hours outside in vacuum.",
+    "tr": "Une combinaison EVA est un petit vaisseau spatial à occupant unique — coque de pression, système de survie en boucle fermée, contrôle thermique, visière solaire et moteurs — conçu pour qu'un humain survive 6 à 8 heures en vacuum."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "en": "The unit is weird — it's measured in seconds, which makes no intuitive sense at first. The reason: Isp = thrust ÷ (fuel-burned-per-second × Earth's gravity). The mass and length units cancel, leaving pure seconds — which is why you can compare any two engines with one number. The bigger the number, the more efficient the engine, and you can compare engines across decades and continents using the same number.",
+    "tr": "L'unité est étrange — elle s'exprime en secondes, ce qui n'a d'abord aucun sens intuitif. La raison : Isp = poussée ÷ (propergol brûlé par seconde × gravité terrestre). Les unités de masse et de longueur s'annulent, il ne reste que des secondes — ce qui permet de comparer deux moteurs n'importe lesquels avec un seul nombre. Plus le nombre est grand, plus le moteur est efficace, et vous pouvez comparer des moteurs à travers les décennies et les continents en utilisant le même nombre."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.3",
+    "en": "For ground-based imaging the additional challenge is the atmosphere. [Adaptive optics](observation/adaptive-optics) corrects it in real time by sensing the turbulence with a laser guide star and counter-bending a deformable mirror. JWST and Hubble are in space partly to skip this problem entirely; the atmosphere is also opaque at most infrared and UV bands, which is the other reason.",
+    "tr": "Pour l'imagerie au sol, la difficulté supplémentaire est l'atmosphère. L'[optique adaptative](observation/adaptive-optics) la corrige en temps réel en mesurant la turbulence grâce à une étoile laser de guidage et en déformant en sens inverse un miroir déformable. JWST et Hubble sont dans l'espace en partie pour éviter complètement ce problème ; l'atmosphère est aussi opaque dans la plupart des bandes infrarouges et ultraviolettes, ce qui est l'autre raison."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "intro_sentence",
+    "en": "The Large and Small Magellanic Clouds are the closest galaxies large enough to see with the naked eye — irregular dwarf galaxies trailing the Milky Way's south-galactic pole, ~50 and ~62 kpc away.",
+    "tr": "Le Grand et le Petit Nuage de Magellan sont les galaxies les plus proches assez grandes pour être visibles à l'œil nu — des galaxies naines irrégulières traînant le pôle sud galactique de la Voie Lactée, à ~50 et ~62 kpc de distance."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "narrative_101.0",
+    "en": "Radial velocity catches the star moving toward and away from us. Astrometry catches the other component — the star's side-to-side wobble across the sky as a planet pulls it around.",
+    "tr": "La vitesse radiale capture le mouvement de l'étoile vers nous et en s'éloignant de nous. L'astrométrie capture l'autre composante — l'oscillation latérale de l'étoile à travers le ciel lorsqu'une planète l'attire autour d'elle."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "body_paragraphs.1",
+    "en": "The ecliptic is the reference plane for orbital inclinations of solar-system bodies. Earth's inclination is 0° by construction. Mercury at 7°, Pluto at 17°, are measured against this plane. The vernal equinox direction — where the ecliptic crosses the celestial equator going north — is the zero-longitude reference, used to anchor every orbit's longitude of ascending node and argument of periapsis.",
+    "tr": "L'écliptique est le plan de référence pour les inclinaisons orbitales des corps du système solaire. L'inclinaison de la Terre est 0° par construction. Mercure à 7°, Pluton à 17°, se mesurent par rapport à ce plan. La direction de l'équinoxe de printemps — où l'écliptique croise l'équateur céleste vers le nord — est la référence de longitude zéro, utilisée pour ancrer la longitude du nœud ascendant et l'argument du périhélie de chaque orbite."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "diagram_caption",
+    "en": "Selection funnel circa 2024: ~10,000 applicants → medical screen → physical fitness → cognitive testing → psychological screening → centrifuge / isolation → panel interview → ~10 selectees. The 99.9% drop-off is split roughly: 70% on the medical, 15% cognitive, 15% psychological/expedition-behaviour.",
+    "tr": "Entonnoir de sélection ~2024 : ~10 000 candidats → médical → physique → cognitif → psychologique → centrifugeuse / isolement → entretien panel → ~10 sélectionnés. L'élimination à 99,9% se répartit : 70% médical, 15% cognitif, 15% psychologique/expédition."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.1",
+    "en": "The equation is the inverse of Newton's third law: every kilogram of propellant ejected at velocity vₑ pushes the vehicle by 1 kg × vₑ. Integrate that over decreasing mass and you get the natural-log dependence.",
+    "tr": "L'équation est l'inverse de la troisième loi de Newton : chaque kilogramme de propergol éjecté à la vitesse vₑ pousse le véhicule de 1 kg × vₑ. Intégrez cela sur une masse décroissante et vous obtenez la dépendance logarithmique."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.0",
+    "en": "If you've ever cared about miles-per-gallon for a car, specific impulse is the same idea for rockets. It tells you how efficiently the engine converts fuel into push. Higher Isp = better mileage = more ∆v from the same propellant load.",
+    "tr": "Si vous avez déjà pensé aux kilomètres par litre pour une voiture, l'impulsion spécifique est la même idée pour les fusées. Elle indique l'efficacité avec laquelle le moteur convertit le carburant en poussée. Un Isp plus élevé = meilleure économie = plus de ∆v à partir de la même charge de propergol."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/microgravity-physiology.json",
+    "at": "intro_sentence",
+    "en": "What happens when gravity stops pulling on the human body — fluids redistribute, bones thin, muscles fade, and the inner ear loses its compass.",
+    "tr": "Que se passe-t-il quand la gravité cesse de tirer sur le corps humain — les fluides se redistribuent, les os s'amincissent, les muscles fondent, et l'oreille interne perd son compas."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.1",
+    "en": "Distant Retrograde Orbit (DRO). A large, circular-leaning orbit around the Moon in retrograde direction relative to the Moon's orbit around Earth. Distance: typically 60,000-80,000 km from the Moon. The retrograde motion plus the large radius makes DROs unusually stable — there's no station-keeping ΔV required (essentially zero, on multi-year timescales), because the orbit exploits a quirk of the three-body problem where the Earth's gravity acts as a restoring force when the spacecraft tries to drift. The Artemis-1 Orion (uncrewed flight test, November 2022) inserted into a DRO around the Moon for a 6-day stay before returning to Earth, demonstrating both the manoeuvre stack and the orbit's stability. DROs are the long-term-storage parking orbit of choice for cislunar architecture — you can park a propellant depot or a backup vehicle there and not worry about it drifting for years.",
+    "tr": "Orbite rétrograde lointaine (DRO). Une grande orbite autour de la Lune, quasi-circulaire, en direction rétrograde par rapport à l'orbite de la Lune autour de la Terre. Distance : typiquement 60 000-80 000 km de la Lune. Le mouvement rétrograde associé au grand rayon rend les DRO exceptionnellement stables — aucun ΔV de station-keeping n'est requis (pratiquement zéro, sur des échelles de temps pluriannuelles), car l'orbite exploite une particularité du problème à trois corps où la gravité terrestre agit comme une force de rappel quand l'engin spatial essaie de dériver. Orion Artemis-1 (vol d'essai sans équipage, novembre 2022) s'est inséré dans une DRO autour de la Lune pour un séjour de 6 jours avant de revenir sur Terre, démontrant à la fois la séquence de manœuvres et la stabilité de l'orbite. Les DRO sont l'orbite de stockage à long terme privilégiée pour l'architecture cislunaïre — vous pouvez y garer un dépôt de propergol ou un engin de secours et ne pas vous inquiéter de sa dérive pendant des années."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/conic-sections.json",
+    "at": "diagram_caption",
+    "en": "Four conics from cutting a cone: circle, ellipse, parabola, hyperbola. Eccentricity sets which.",
+    "tr": "Quatre coniques issues de la coupe d'un cône : cercle, ellipse, parabole, hyperbole. L'excentricité détermine laquelle."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/free-return.json",
+    "at": "diagram_caption",
+    "en": "Earth → Mars flyby → Earth. The Moon (or Mars's) gravity does the U-turn for free.",
+    "tr": "Terre → survol de Mars → Terre. La gravité de la Lune (ou de Mars) fait le demi-tour gratuitement."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "en": "[Adaptive optics](observation/adaptive-optics) defeats the atmosphere by measuring its distortion in real time and bending the mirror to cancel it. [Coronagraphs](observation/coronagraphs) block the central star to see the planets orbiting it. [Spectroscopy](observation/spectroscopy) reads a star's chemical composition from the absorption lines in its light. [Interferometry](observation/interferometry) stitches separate telescopes into one virtual aperture larger than any of them.",
+    "tr": "L'[optique adaptative](observation/adaptive-optics) vainc l'atmosphère en mesurant sa distorsion en temps réel et en pliant le miroir pour l'annuler. Les [coronographes](observation/coronagraphs) bloquent l'étoile centrale pour voir les planètes qui l'orbitent. La [spectroscopie](observation/spectroscopy) lit la composition chimique d'une étoile à partir des raies d'absorption dans sa lumière. L'[interférométrie](observation/interferometry) assemble des télescopes séparés en une ouverture virtuelle plus grande que n'importe lequel d'entre eux."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.0",
+    "en": "Magnetic-axis tilt (angle between the dipole and the rotation axis) for each planet with a known dynamo: Mercury 0.7°, Earth 10.5°, Jupiter 9.6°, Saturn ~0°, Uranus 58.6°, Neptune 46.9°. Venus, Mars, and Pluto have no globally significant dipole today. Uranus and Neptune's wildly off-axis dipoles are also offset from the planet's centre — Uranus's by about 1/3 of the planet's radius. The conventional dynamo (iron core) can't easily produce that geometry; the favoured explanation is that Uranus and Neptune host their dynamos in an outer mantle layer of ionic water + ammonia + methane, not in a deep core.",
+    "tr": "Inclinaison de l'axe magnétique (angle entre le dipôle et l'axe de rotation) pour chaque planète dotée d'une dynamo connue : Mercure 0,7°, Terre 10,5°, Jupiter 9,6°, Saturne ~0°, Uranus 58,6°, Neptune 46,9°. Vénus, Mars et Pluton ne possèdent pas de dipôle globalement significatif aujourd'hui. Les dipôles très décentrés d'Uranus et de Neptune sont également décalés par rapport au centre de la planète — celui d'Uranus d'environ 1/3 du rayon planétaire. La dynamo conventionnelle (noyau de fer) ne peut pas facilement produire cette géométrie ; l'explication privilégiée est qu'Uranus et Neptune abritent leurs dynamos dans une couche externe du manteau composée d'eau ionique, d'ammoniac et de méthane, et non dans un noyau profond."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.0",
+    "en": "Pick a vehicle. Falcon Heavy, SLS Block 1, Atlas V N22, whatever. That vehicle has a published C3-vs-payload-mass performance curve — heavier payloads shrink the reachable lobe; lighter ones expand it. For a given payload mass you can read off the maximum C3 (or equivalent departure ∆v) the vehicle can deliver, then compare against the porkchop: every cell where ∆v_cost ≤ capability is a feasible launch opportunity. Every cell where it's greater is impossible without a different vehicle or a lighter spacecraft.",
+    "tr": "Choisissez un véhicule. Falcon Heavy, SLS Block 1, Atlas V N22, peu importe. Ce véhicule possède une courbe de performance C3-vs-masse-charge-utile publiée — les charges utiles plus lourdes rétrécissent le lobe accessible ; les plus légères l'élargissent. Pour une masse de charge utile donnée, vous pouvez lire le C3 maximal (ou le ∆v de départ équivalent) que le véhicule peut fournir, puis comparer par rapport à la porkchop : chaque cellule où ∆v_coût ≤ capacité est une opportunité de lancement réalisable. Chaque cellule où c'est plus grand est impossible sans un véhicule différent ou un engin spatial plus léger."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "narrative_101.0",
+    "en": "Take any two bodies orbiting each other — Sun and Earth, Earth and Moon, Sun and Jupiter — and there are exactly five spots in the orbit plane where a third, much smaller body can stay put relative to the two big ones. Joseph-Louis Lagrange worked them out in 1772. Two and a half centuries later they are the most valuable real estate in cislunar space.",
+    "tr": "Prenez deux corps en orbite — le Soleil et la Terre, la Terre et la Lune, le Soleil et Jupiter — et il y a exactement cinq points dans le plan orbital où un troisième corps beaucoup plus petit peut rester mis par rapport aux deux grands. Joseph-Louis Lagrange les a préparés en 1772. Deux siècles et demi plus tard, ils sont les biens immobiliers les plus précieux dans l'espace cislunaire."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "body_paragraphs.1",
+    "en": "Historically it produced more retractions than planets — Barnard's Star is the classic cautionary tale, its famous 'planets' from 1960s astrometry all spurious. The signal is simply tiny, and instrumental drift easily fakes it.",
+    "tr": "Historiquement, elle a produit plus de rétractations que de planètes — l'étoile Barnard est l'exemple classique à retenir, ses fameuses « planètes » issues de l'astrométrie des années 1960 étaient toutes fallacieuses. Le signal est tout simplement minuscule, et la dérive instrumentale peut facilement le simuler."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.0",
+    "en": "Two peaks matter during entry and they do not coincide. Peak heating happens high up, where the vehicle is still fast and the heating rate (which scales roughly with velocity cubed) is enormous even in thin air. Peak deceleration happens lower down, in denser air, where the force on the vehicle is greatest — Mars entries peak around 8–15 g, Venus entries at 100–350 g. A lander's structure is sized for the g-peak; its heat shield is sized for the heat-peak.",
+    "tr": "Deux pics importants surviennent pendant l'entrée et ne coïncident pas. Le pic de chauffage se produit haut, où le véhicule est encore rapide et le taux de chauffage (qui augmente approximativement avec le cube de la vitesse) est énorme même dans l'air fin. Le pic de décélération se produit plus bas, dans l'air plus dense, où la force sur le véhicule est la plus grande — les entrées sur Mars culminent autour de 8–15 g, les entrées sur Vénus à 100–350 g. La structure d'un atterrisseur est dimensionnée pour le pic de g ; son bouclier thermique est dimensionné pour le pic de chaleur."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "intro_sentence",
+    "en": "A spacewalk is a 6–8 hour endurance event in a 1/3-atmosphere oxygen-pressurised suit — preceded by hours of pre-breathe to keep the bends at bay.",
+    "tr": "Une sortie extravéhiculaire est un événement d'endurance de 6–8 heures dans une combinaison pressurisée en oxygène pur (1/3 d'atmosphère) — précédée d'heures de pré-respiration pour éviter les accidents de décompression."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.0",
+    "en": "Real gravity is messy. A spacecraft cruising between Earth and Mars feels Earth's gravity, the Sun's gravity, Mars's gravity, plus everything else, all at once. The full math (the n-body problem) has no closed-form solution — only numerical integration. That's slow, fragile, hard to plan with.",
+    "tr": "La gravité réelle est compliquée. Un engin spatial voyageant entre la Terre et Mars subit la gravité de la Terre, celle du Soleil, celle de Mars, plus celle de tout le reste, tous à la fois. Les mathématiques complètes (le problème des n corps) n'ont pas de solution de forme fermée — seulement l'intégration numérique. C'est lent, fragile, difficile à planifier."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.0",
+    "en": "Lunar dust is mechanically dangerous in a way no terrestrial dust prepares you for. The surface is a fine regolith — particle sizes from sub-micron up to coarse sand, with a median of 70 µm — that was created by 4 billion years of micrometeorite impacts. Each impact is a tiny explosion that fragments existing rock; the fragments cool in vacuum without water to round their edges. The result is a powder of angular glass shards, sharper than ground glass. Adding to the hazard: lunar regolith is electrostatically charged by UV photoionisation on the day side and by plasma exposure in the lunar terminator zone. Charged dust clings to everything — sticks to suit fabric via electrostatic adhesion at a level that brushing alone cannot remove. Apollo crews reported that lunar dust degraded EVA suit joint seals after about 10 EVAs (Apollo 17 was the only mission to make three back-to-back EVAs, and Cernan's suit zipper was showing wear by the third).",
+    "tr": "La poussière lunaire est mécaniquement dangereuse d'une manière à laquelle aucune poussière terrestre ne prépare. La surface est un régolithe fin — tailles de particules du sub-micron au sable grossier, médiane de 70 µm — créé par 4 milliards d'années d'impacts de micrométéorites. Chaque impact est une petite explosion qui fragmente la roche existante ; les fragments refroidissent dans le vide sans eau pour arrondir leurs bords. Le résultat est une poudre d'éclats de verre angulaires, plus tranchants que du verre pilé. S'ajoutant au danger : le régolithe lunaire est chargé électrostatiquement par photoionisation UV côté jour et par exposition au plasma dans la zone du terminateur lunaire. La poussière chargée adhère à tout — colle au tissu de la combinaison par adhésion électrostatique à un niveau que le brossage seul ne peut enlever. Les équipages Apollo ont rapporté que la poussière lunaire dégradait les joints d'articulation des combinaisons EVA après environ 10 EVAs (Apollo 17 a été la seule mission à faire trois EVAs consécutives, et la fermeture éclair de la combinaison de Cernan montrait de l'usure à la troisième)."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "en": "Colour comes first. A star radiates as a near-perfect blackbody, so its colour is set almost entirely by its surface temperature: hot stars glow blue-white (~30,000 K), the Sun is yellow-white (~5,800 K), and cool stars burn deep red (~3,000 K). Astronomers measure that colour as the B–V index — the difference between a star's brightness through a blue and a visual filter — and it maps cleanly onto temperature. Sort stars left-to-right by colour and you have the spectral sequence O, B, A, F, G, K, M, hottest to coolest (mnemonic: “Oh Be A Fine Girl/Guy, Kiss Me”).",
+    "tr": "La couleur d'abord. Une étoile rayonne comme un corps noir quasi parfait, sa couleur est donc déterminée presque entièrement par sa température de surface : les étoiles chaudes brillent bleu-blanc (~30 000 K), le Soleil est blanc-jaune (~5 800 K), et les étoiles froides brûlent d'un rouge profond (~3 000 K). Les astronomes mesurent cette couleur par l'indice B–V — la différence de luminosité observée à travers un filtre bleu et un filtre visuel — qui se traduit directement en température. Classez les étoiles de gauche à droite par couleur et vous obtenez la séquence spectrale O, B, A, F, G, K, M, du plus chaud au plus froid (moyen mnémotechnique : « Oh Be A Fine Girl/Guy, Kiss Me »)."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.1",
+    "en": "Now you can read the entire trade-off in one glance. Walk straight up a column on the porkchop — that's the SAME launch date but different transit times. Near the bottom (fast trip) the cells turn red — fast trips are expensive because you're forcing a steep transfer ellipse. Higher up (slower trip) the cells go cool blue — that's the natural Hohmann band where the math wants the trip to take.",
+    "tr": "Vous pouvez maintenant lire l'intégralité du compromis en un coup d'œil. Remontez tout droit une colonne sur le diagramme en cuillère — c'est la MÊME date de lancement mais des temps de transit différents. Près du bas (trajets rapides), les cellules deviennent rouges — les trajets rapides sont coûteux car vous forcez une ellipse de transfert raide. Plus haut (trajets plus lents), les cellules deviennent bleu froid — c'est la bande naturelle de Hohmann où les mathématiques veulent que le voyage dure."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.2",
+    "en": "Mission designers exploit all four. Cruise on an ellipse, flyby a planet on a hyperbola (relative to that planet), insert into orbit on an ellipse again. The simulator's `/fly` route does this naturally — the same trajectory equation handles every case, the eccentricity tells you which conic you're flying.",
+    "tr": "Les concepteurs de missions exploitent les quatre. Naviguez sur une ellipse, survolez une planète sur une hyperbole (par rapport à cette planète), insérez-vous en orbite sur une ellipse à nouveau. L'itinéraire `/fly` du simulateur fait cela naturellement — la même équation de trajectoire gère chaque cas, l'excentricité vous dit quel conique vous volez."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "narrative_101.2",
+    "en": "Venus is the opposite. Its atmosphere is so dense — about 90 times Earth's surface pressure — that a Venera lander needed only a small parachute high up, then could jettison it and simply sink to the surface on a modest drag plate, drifting down for the better part of an hour. And the Moon, with no atmosphere at all, has no terminal velocity: a lunar lander has to cancel every metre per second of its speed with its engine, all the way to touchdown.",
+    "tr": "Vénus est l'opposé. Son atmosphère est si dense — environ 90 fois la pression de surface terrestre — qu'un atterrisseur Venera n'avait besoin que d'un petit parachute en altitude, puis pouvait le larguer et simplement couler à la surface sur une modeste plaque de traînée, dérivant pendant plus d'une heure. Et la Lune, sans atmosphère du tout, n'a pas de vitesse limite de chute : un atterrisseur lunaire doit annuler chaque mètre par seconde de sa vitesse avec son moteur, jusqu'à l'atterrissage."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.3.paragraphs.0",
+    "en": "Earth and Mars don't sit still. Earth races around the Sun every 365 days, Mars every 687. Their relative geometry repeats only every ~26 months — and most of those months, the planets are too far apart, on the wrong sides of the Sun, to reach cheaply. Mission design starts with a calendar, not a rocket.",
+    "tr": "La Terre et Mars ne restent pas immobiles. La Terre fait le tour du Soleil tous les 365 jours, Mars tous les 687. Leur géométrie relative ne se répète que tous les ~26 mois — et la plupart de ces mois, les planètes sont trop éloignées, du mauvais côté du Soleil, pour être atteintes à moindre coût. La conception de mission commence par un calendrier, pas une fusée."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.2",
+    "en": "Why AU instead of metres? Because numbers in metres are unwieldy at solar-system scale. Saturn's 1.4 billion km is unreadable. 9.58 AU is a number you can hold in your head. Orrery's panels and HUD all use AU for solar-system positions — converted to km, light-minutes, and other units only where the audience needs the conversion.",
+    "tr": "Pourquoi AU plutôt que les mètres ? Parce que les chiffres en mètres sont ingérables à l'échelle du système solaire. Les 1,4 milliard de km de Saturne sont illisibles. 9,58 au est un nombre qu'on peut tenir dans sa tête. Les panneaux et l'affichage tête-haute d'Orrery utilisent tous AU pour les positions du système solaire — convertis en km, lumière-minutes et autres unités seulement quand le public a besoin de la conversion."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "title",
+    "en": "The Magellanic Clouds — LMC and SMC, our nearest galactic neighbours",
+    "tr": "Les nuages de Magellan — LMC et SMC, nos plus proches voisins galactiques"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.2",
+    "en": "TWR also matters mid-flight. As propellant burns, mass falls and TWR climbs — by main-engine cut-off a first stage's TWR can be 3-4. Saturn V's S-IC inboard F-1 was shut down early to keep crew accelerations below 4 g. Modern reusable boosters (Falcon 9, Starship) shut down some engines and throttle the rest for the same reason — and to leave enough propellant for the boost-back and landing burns. Upper stages run at lower TWR (often 0.7 at ignition) because they are firing horizontally in vacuum where gravity losses do not eat them and high Isp matters more than getting to peak thrust quickly.",
+    "tr": "Le TWR compte aussi en vol. À mesure que le propergol brûle, la masse chute et le TWR monte — au MECO le TWR d'un premier étage peut être 3–4. Le F-1 central intérieur du S-IC de Saturn V était coupé tôt pour garder les accélérations équipage sous 4 g. Les boosters réutilisables modernes (Falcon 9, Starship) coupent certains moteurs et modulent le reste pour la même raison — et pour laisser assez de propergol pour le boost-back et l'atterrissage. Les étages supérieurs tournent à plus faible TWR (souvent 0,7 à l'allumage) car ils tirent à l'horizontale dans le vide où les pertes gravitationnelles ne les mangent pas et où l'Isp élevé compte plus que la poussée crête rapide."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.0",
+    "en": "Being in orbit means going sideways fast enough that you keep missing the ground. To come home you don't point down and dive — you slow down. A short retrograde burn, firing the engine against the direction of travel, shaves off only about a hundred metres per second. That's all it takes: the low point of the orbit now dips into the top of the atmosphere, and from there the air does the rest of the braking.",
+    "tr": "Être en orbite signifie aller assez vite latéralement pour continuer à manquer le sol. Pour rentrer chez soi, on ne pointe pas vers le bas et on ne plonge pas — on ralentit. Une courte manœuvre rétrograde, en allumant le moteur à contre-sens de la direction de vol, retranche seulement environ cent mètres par seconde. C'est tout ce qu'il faut : le point bas de l'orbite plonge désormais dans le sommet de l'atmosphère, et à partir de là, l'air se charge du reste du freinage."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "diagram_caption",
+    "en": "Camera takes exposure → identify stars by triangle-matching to catalogue → quaternion attitude solution → arcsecond-accurate \"which way am I pointing?\" — every few seconds, forever.",
+    "tr": "La caméra prend une pose → identification des étoiles par appariement de triangles avec le catalogue → solution d'attitude sous forme de quaternion → réponse, précise à la seconde d'arc, à « dans quelle direction est-ce que je pointe ? » — toutes les quelques secondes, pour toujours."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "intro_sentence",
+    "en": "The plane of Earth's orbit around the Sun — used as the reference for almost every solar-system measurement.",
+    "tr": "Le plan de l'orbite terrestre autour du Soleil — utilisé comme référence pour presque chaque mesure du système solaire."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "diagram_caption",
+    "en": "Open cycle: a fuel-rich gas generator (GG) drives the turbopump, then its exhaust is dumped overboard — that dumped propellant is the small Isp price paid for a simple, robust engine.",
+    "tr": "Cycle ouvert : un générateur de gaz riche en carburant (GG) entraîne la turbopompe, puis son échappement est rejeté — ce propergol rejeté est le petit prix en Isp payé pour un moteur simple et robuste."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.0",
+    "en": "C3 is the square of the hyperbolic excess velocity. Units: km²/s². It tells you how much energy beyond escape your launch vehicle has to deliver. C3 = 0 means you barely escape Earth's gravity, arriving at infinity with zero speed. C3 = 25 km²/s² means you arrive with V∞ = 5 km/s of leftover heliocentric velocity.",
+    "tr": "C3 est le carré de la vitesse hyperbolique excédentaire. Unités : km²/s². Il vous indique quelle énergie au-delà de l'échappement votre lanceur doit livrer. C3 = 0 signifie que vous échappez à peine à la gravité terrestre, arrivant à l'infini avec une vitesse nulle. C3 = 25 km²/s² signifie que vous arrivez avec V∞ = 5 km/s de vitesse héliocentriqueexcédentaire."
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.1",
+    "en": "Two solutions per window. The 'short way' (transfer angle < 180°) and the 'long way' (transfer angle > 180°) both connect Earth to Mars but via different ellipses. They appear as two cheap lobes in the porkchop, separated by a high-∆v ridge at the ~180° transfer angle — this ridge is literally the 'bone' of the pork chop. Sometimes both lobes appear, sometimes only one, depending on geometry.",
+    "tr": "Deux solutions par fenêtre. Le « chemin court » (angle de transfert < 180°) et le « chemin long » (angle de transfert > 180°) relient tous les deux la Terre à Mars mais via des ellipses différentes. Ils apparaissent comme deux lobes bon marché dans le diagramme, séparés par une crête à haut ∆v à l'angle de transfert ~180° — cette crête est littéralement l'« os » du diagramme. Parfois les deux lobes apparaissent, parfois un seul, selon la géométrie."
+  }
+]

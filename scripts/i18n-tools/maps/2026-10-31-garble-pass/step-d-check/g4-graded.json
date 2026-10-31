@@ -1,0 +1,542 @@
+[
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/orbits/vis-viva.json",
+    "at": "narrative_101.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/max-q.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.4.heading",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/space-stations/pressurized-volume.json",
+    "at": "body_paragraphs.4",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/max-q.json",
+    "at": "body_paragraphs.2",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "Max-Q rendered as 最大-Q; term should stay Max-Q."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "narrative_101.1",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "vis-viva as odd transliteration 维斯-维瓦; 'work in sidereal time' awkward."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/bone-density-loss.json",
+    "at": "diagram_caption",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "Treadmill/cycle wrongly rendered 踏板车/周期; garbled caption grammar."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.3",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "title",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.2",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "PSLV and last sentence awkward; 独树一帜为四级 clumsy."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/observation/space-photography.json",
+    "at": "intro_sentence",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "'registered' as 注册; fragments and 人类对计数的制作 garbled."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/observation/local-group.json",
+    "at": "body_paragraphs.1",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "'M81 Group' left English; 虚想面, 测试星系 awkward."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "narrative_101.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "narrative_101.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.3",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/orbits/apsides.json",
+    "at": "diagram_caption",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "Line of apsides should be 拱线, not 近远点线."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.2",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'each with its own gallery of what it saw' rendered awkwardly."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "diagram_caption",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "血脉 for lineage odd; 祖先 phrasing awkward."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/tcm.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.3.diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/observation/local-group.json",
+    "at": "body_paragraphs.0",
+    "grade": "BROKEN",
+    "kind": "name",
+    "note": "Fornax/Draco/Sculptor dwarfs named 炉鼎/龙/雕塑家星系; wrong, inconsistent with item 27."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.3",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'一捆发动机' for a stack of engines is wrong/awkward."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.3",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "Dead-reckoning as 死后应变, state-vector propagator as 州-州传播器; nonsense."
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/scales-time/au.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "tree": "science",
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "narrative_101.2",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "叶片 vs 叶瓣 for lobe; 不可协商 literal."
+  }
+]

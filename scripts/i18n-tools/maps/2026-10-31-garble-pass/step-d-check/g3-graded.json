@@ -1,0 +1,902 @@
+[
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "intro",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.0.images.1.caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/change3.json",
+    "at": "chapters.1.images.0.caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.0.images.0.caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "capability",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.images.1.caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.1.caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "moon-sites/luna10.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.0.images.0.caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.subtitle",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.3.subtitle",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "mars-sites/tgo.json",
+    "at": "capability",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.1.caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/change4.json",
+    "at": "intro",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "moon-sites/luna17.json",
+    "at": "fact",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "calque \"ancora seduto\" for \"still sitting\""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.1.images.0.caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.0.subtitle",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.images.0.caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.images.0.caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna17.json",
+    "at": "intro",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.0.subtitle",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "moon-sites/change3.json",
+    "at": "capability",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "mars-sites/beagle2.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/hd-62509-b.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/barnard-e.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/sirius.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/castor.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/trappist-1-f.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/altair.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/saiph.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/avior.json",
+    "at": "bio",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "mixed 竜骨座/りゅうこつ座 script within one text"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/gj-411-b.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/algol.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/luytens-star.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/trappist-1-d.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/altair.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "bio",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "\"太陽系に最も近い\" should be nearest to the Sun; slightly off"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/regulus.json",
+    "at": "bio",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "mixed 獅子座/しし座; \"接近され\" awkward passive"
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/proxima-cen-b.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/spica.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/canopus.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/trappist-1-d.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "cultural",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "closing quote is straight apostrophe, mismatched with ‚"
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/gj-273-b.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/sargas.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/atria.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/adhara.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/menkalinan.json",
+    "at": "bio",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"ein System ... der zweithellste Stern\" gender/structure mismatch"
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/algol.json",
+    "at": "fact",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "closing quote is straight apostrophe, mismatched with ‚"
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/alnair.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/lalande-21185.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/trappist-1-c.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/menkent.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/antares.json",
+    "at": "fact",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "closing quote is straight apostrophe, mismatched with ‚"
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "bio",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "Alpheratz rendered as Sirrah, inconsistent with site name"
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/toi-700-b.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/rigel.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/alphard.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/alnair.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/gj-411-b.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/barnard-e.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/spica.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/canopus.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/trappist-1-b.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/avior.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/sargas.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/adhara.json",
+    "at": "bio",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "Sirius left in Latin form; pt-BR is Sírio"
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "bio",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"Grande Concha\" odd for Big Dipper (Grande Carro)"
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/toi-700-e.json",
+    "at": "fact",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/altair.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/hadar.json",
+    "at": "cultural",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "bio",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

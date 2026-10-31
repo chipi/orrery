@@ -168,3 +168,71 @@ This is not an independent sample. The fix reviewers handled those 25 fields too
   from the First Launch Pad.
 
 **Cost:** four Sonnet reviewer runs, about 640k subagent tokens, and no paid API calls.
+
+## 5 · Every cell with a BROKEN (operator, 2026-10-31)
+
+The operator chose "every cell with a BROKEN": 11 more cells, about 2,400 fields.
+
+**Changes from the pilot:**
+
+1. **A second reader for every change.** An independent Sonnet checker read every retranslation
+   against the English
+   ([check-brief.md](../../scripts/i18n-tools/maps/2026-10-31-garble-pass/check-brief.md)), and its
+   fixes were applied with `patch-edits.mjs`.
+2. **What I read.** Every `garble-check` flag, every checker fix, and a sample of every third
+   change. Small cells I read in full: zh-CN, ko, sr-Cyrl.
+3. **The fix brief gained the pilot's lessons:**
+   - names follow the origin-language rule: ru «Союз», zh 神舟, hi चंद्रयान; LVM3 stays Latin on the hi
+     site;
+   - ISO dates stay ISO;
+   - no English left in;
+   - the 80-character milestone `label` cap.
+4. **One commit per cell** through `garble-cell-commit.sh`, which applies the edits, runs every gate
+   and stops on a failure.
+
+| Cell | Fields read | Kept | Retranslated (BROKEN) | Checker fixes | Before (OK / MINOR / BROKEN) | After |
+|---|---|---|---|---|---|---|
+| nl fleet (pilot) | 445 | 122 | 323 (130) | 18 by me | 8 / 10 / 7 | 25 / 0 / 0 |
+| it fleet | 408 | 189 | 219 (70) | 14 | 16 / 4 / 5 | 22 / 2 / 1¹ |
+| ko fleet | 101 | 76 | 25 (15) | 0 | 20 / 0 / 5 | 25 / 0 / 0 |
+| ja fleet | 112 | 63 | 49 (14) | 1 | 18 / 5 / 2 | 22 / 3 / 0 |
+| zh-CN fleet | 119 | 84 | 35 (14) | 0 | 18 / 6 / 1 | 25 / 0 / 0 |
+| hi fleet | 226 | 81 | 145 (55) | 10 | 15 / 7 / 3 | 23 / 2¹ / 0 |
+| hi missions | 155 | 78 | 77 (27) | 0 (+1 by me) | 14 / 7 / 4 | 24 / 1 / 0 |
+| nl missions | 388 | 181 | 207 (39) | 3 | 13 / 11 / 1 | 21 / 4 / 0 |
+| fr missions | 436 | 281 | 155 (30) | 15 | 20 / 4 / 1 | 22 / 3 / 0 |
+| ar missions | 164 | 88 | 76 (17) | 1 | 18 / 5 / 2 | 25 / 0 / 0 |
+| ru missions | 279 | 162 | 117 (21) | 3 | 22 / 2 / 1 | 24 / 1 / 0 |
+| sr-Cyrl missions | 7 | 5 | 2 (1) | — | 6 / 0 / 1 | 5 / 1 / 1² |
+
+**Before and after** are the same sampled fields, graded by fresh Sonnet graders.
+
+**Footnotes:**
+
+- ¹ The it BROKEN (Magellan "Il 98% della superficie di Venere.", no verb) and the hi MINOR (Venera 7
+  "पहली मिशन") sit in the 21 fields the English fixes rewrote on 2026-10-31. Those fields fell outside
+  the pool's date filter, so no reviewer saw them. A second round covered those 21 fields plus the
+  Mars 3 description for the six fleet locales in scope. It retranslated 35 fields: it 11, hi 10,
+  nl 4, ko 4, zh-CN 4 and ja 2. I read every change (commits `1aed2aa2d52` … `e69a81dc71a`).
+  **Lesson:** a date-filtered pool misses fields rewritten by a same-day English fix, so run those
+  fields through the brief as well.
+- ² The sr-Cyrl after-grade ran before the cell was committed. The cell had been skipped by a
+  broken command chain of mine and was committed later (`19e6316af61`). The BROKEN is the old
+  Luna 10 text, which is now retranslated.
+
+**Gates on every cell:**
+
+- apply refused 0;
+- term gate 0 (12 new keeps: propellant-sense "burn", ru виток counts);
+- name drift 0;
+- validate-data passed. Taglines that came out over 140 were shortened by hand in it, and two in
+  nl.
+
+**Not covered:**
+
+- cells where the sample found no BROKEN: de, es and pt-BR in both trees, and ar, fr, nl, ru and
+  sr-Cyrl fleet;
+- other trees (science, essays, programs);
+- fields rewritten after 2026-07-14, other than the en-fix fields above.
+
+The after-samples are 25 fields per cell, so the 95 % upper bound for a 0 is still about 12 %.

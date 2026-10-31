@@ -1,0 +1,821 @@
+[
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.8.note",
+    "en": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+    "old": "Траектория полета от Луны (Trans-Earth injection). SPS ∆v ~1,0 км/с.",
+    "new": "Отлётный импульс к Земле. SPS, дельта-v ~1,0 км/с."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "dispatch",
+    "en": "Pioneer 11 was the second scout, and it went further than its twin. After its own pass by Jupiter it used the planet’s gravity to cross the solar system and reach Saturn in 1979 — the first spacecraft ever to do so — deliberately flying through the ring plane to test whether the region was safe. It found the gap the Voyagers would thread a year later. Much of what made the Grand Tour possible was this: a small, cheap probe sent ahead to take the risks and map the hazards, so the flagships behind it could fly with confidence instead of fear.",
+    "old": "Pioneer 11 была вторым разведчиком, и она зашла дальше, чем её близнец. После собственного пролёта мимо Юпитера она использовала гравитацию планеты, чтобы пересечь Солнечную систему и достичь Сатурна в 1979 году — первый когда-либо космический аппарат, сделавший это — намеренно пролетев через плоскость колец, чтобы проверить, безопасна ли этот регион. Она нашла пролив, который год спустя бороздили Voyager. Большая часть того, что сделало Великий Тур возможным, была именно в этом: небольшой, дешёвый зонд, отправленный вперёд, чтобы взять на себя риски и составить карту опасностей, чтобы флагманы позади него могли лететь с уверенностью, а не со страхом.",
+    "new": "Pioneer 11 был вторым разведчиком и зашёл дальше своего близнеца. После собственного пролёта мимо Юпитера он использовал гравитацию планеты, чтобы пересечь Солнечную систему и достичь Сатурна в 1979 году — первым среди всех космических аппаратов, — намеренно пройдя сквозь плоскость колец, чтобы проверить, безопасна ли эта область. Он нашёл просвет, через который годом позже прошли аппараты Voyager. Многое из того, что сделало возможным «Великий тур», сводилось к этому: небольшой дешёвый зонд, отправленный вперёд, чтобы взять на себя риски и нанести на карту опасности, — и шедшие следом флагманы могли лететь с уверенностью, а не со страхом."
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.0.note",
+    "en": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+    "old": "Atlas V 501 (AV-081) с площадки CCAFS SLC-41, 17.05.2020.",
+    "new": "Atlas V 501 (AV-081) с площадки CCAFS SLC-41, 2020-05-17."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "first",
+    "en": "First humans to leave low Earth orbit + orbit the Moon",
+    "old": "Первые люди, покинувшие околоземную орбиту и облетевшие Луну",
+    "new": "Первые люди, покинувшие низкую околоземную орбиту и вышедшие на орбиту Луны"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "en": "2015-12-07. RCS-thruster 1228s burn into 400 × 440,000 km, 3° orbit.",
+    "old": "2015-12-07. Манёвр с двигателями ориентации длительностью 1228 секунд на орбиту 400 × 440 000 км с наклонением 3°.",
+    "new": "2015-12-07. Включение двигателей ориентации на 1228 с — выход на орбиту 400 × 440 000 км с наклонением 3°."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "dispatch",
+    "en": "Spirit was built for ninety days and worked for six years. One of a pair of golf-cart-sized geologists landed in 2004, it was sent to read the rocks for evidence of a wetter Martian past — and it found it, uncovering minerals that only form in water and, in one place, silica deposits like those left by hot springs on Earth. It climbed hills no one had planned for it to reach and survived winters it was never designed to see, until a wheel failed and it bogged down in soft sand. It kept transmitting from where it was stuck until the Martian cold finally took it.",
+    "old": "Spirit был рассчитан на девяносто дней и проработал шесть лет. Один из двух ровера размером с гольф-кар, приземлившихся в 2004 году, был отправлен для изучения пород в поисках свидетельств более влажного марсианского прошлого — и он его нашёл, обнаружив минералы, образующиеся только в воде, а в одном месте — месторождения кремнезёма, похожие на те, что оставляют горячие источники на Земле. Он взбирался на холмы, до которых никто не планировал его доставлять, и пережил зимы, для которых он никогда не был спроектирован, пока вышедшее из строя колесо не застряло в мягком песке. Он продолжал передавать сигналы из места своего застревания, пока марсианский холод не завершил его миссию.",
+    "new": "Spirit был рассчитан на девяносто дней, а проработал шесть лет. Один из пары геологов размером с гольф-кар, севших на Марс в 2004 году, он был отправлен читать породы в поисках свидетельств более влажного марсианского прошлого — и нашёл их: обнаружил минералы, образующиеся только в воде, а в одном месте — залежи кремнезёма, подобные тем, что оставляют горячие источники на Земле. Он взбирался на холмы, куда его никто не планировал отправлять, и пережил зимы, на которые не был рассчитан, пока колесо не вышло из строя и он не увяз в мягком песке. Он продолжал передавать сигнал оттуда, где застрял, пока марсианский холод наконец не добил его."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.6.note",
+    "en": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers — the first crewed-mission spacecraft stage deliberately impacted the Moon and recorded by a surface seismometer.",
+    "old": "Ступень взлёта Intrepid намеренно упала на Луну для калибровки сейсмометров ALSEP — первый случай намеренного падения ступени пилотируемой миссии на Луну и регистрации событие сейсмометром на поверхности.",
+    "new": "Взлётная ступень Intrepid намеренно сброшена на Луну для калибровки сейсмометров ALSEP — первый случай, когда ступень аппарата пилотируемой миссии была намеренно направлена на Луну, а удар зарегистрирован сейсмометром на поверхности."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.note",
+    "en": "First of four assists building the energy for Saturn arrival.",
+    "old": "Первый из четырёх манёвров, набирающих энергию для прибытия к Сатурну.",
+    "new": "Первый из четырёх гравитационных манёвров, наращивающих энергию для прибытия к Сатурну."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.6.note",
+    "en": "Hazcam returns first low-resolution image of the surface.",
+    "old": "Hazcam передаёт первое низкоразрешающее изображение поверхности.",
+    "new": "Hazcam передаёт первое изображение поверхности в низком разрешении."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.5.note",
+    "en": "First powered controlled flight on another planet — 39.1 seconds at up to 5 m altitude.",
+    "old": "Первый управляемый полет на другой планете — 39,1 секунды на высоте до 5 м.",
+    "new": "Первый управляемый полёт с работающим двигателем на другой планете — 39,1 секунды на высоте до 5 м."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "en": "Lunar orbit insertion (multiple Earth and lunar orbit-raising burns used).",
+    "old": "Выход на лунную орбиту (использовались несколько манёвров поднятия орбиты вокруг Земли и Луны).",
+    "new": "Выход на лунную орбиту (использовалось несколько включений двигателя для повышения орбиты вокруг Земли и Луны)."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.3.note",
+    "en": "Second Venus gravity assist begins the Mercury approach phase.",
+    "old": "Второй гравитационный маневр у Венеры начинает этап приближения к Меркурию.",
+    "new": "Второй гравитационный манёвр у Венеры начинает этап приближения к Меркурию."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.2.note",
+    "en": "Approach trim pin-targets the MOI periapsis.",
+    "old": "Предварительная коррекция уточняет перицентр при MOI.",
+    "new": "Коррекция на подлёте точно нацеливает аппарат на перицентр при MOI."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.note",
+    "en": "First of six assists to slow the trajectory enough to enter Mercury orbit.",
+    "old": "Первый из шести маневров, необходимых для замедления траектории достаточно, чтобы выйти на орбиту Меркурия.",
+    "new": "Первый из шести гравитационных манёвров, достаточно замедляющих аппарат на траектории, чтобы выйти на орбиту Меркурия."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.2.note",
+    "en": "Flag + gift exchange; joint experiments; 2 dockings across ~44 hours docked.",
+    "old": "Обмен флагами и подарками; совместные эксперименты; 2 стыковки на протяжении ~44 часов на стыковке.",
+    "new": "Обмен флагами и подарками; совместные эксперименты; 2 стыковки, всего ~44 часа в состыкованном состоянии."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "en": "Magellan turned Venus from a featureless cloud-veiled disc into a mapped planet. Launched from Shuttle Atlantis's payload bay 1989-05-04 — the first planetary spacecraft to ride a Shuttle — and arrived at Venus 1990-08-10 via a long Type-IV trajectory (1.5 solar revolutions). Over four mapping cycles the synthetic-aperture radar imaged 98% of Venus's surface at ~120-m resolution, revealing tessera highlands, coronae, pancake domes, and a young, volcanically-resurfaced surface. Mission ended 1994-10-13 in the Termination Experiment — the first planned controlled atmospheric entry of a planetary spacecraft.",
+    "old": "Magellan превратила Венеру из безликого облачного диска в нанесённую на карту планету. Запущена с грузового отсека Shuttle Atlantis 1989-05-04 — первый планетный аппарат, доставленный челноком — и прибыла к Венере 1990-08-10 по длинной траектории типа IV (1,5 оборота вокруг Солнца). За четыре цикла картографирования синтезированный радар с апертурой отснял 98% поверхности Венеры с разрешением ~120 м, обнаружив тессеры нагорий, коронэ, блинообразные купола и молодую, вулканически переобновляемую поверхность. Миссия завершилась 1994-10-13 в Termination Experiment — первом спланированном управляемом входе планетного аппарата в атмосферу.",
+    "new": "Magellan превратил Венеру из безликого, затянутого облаками диска в картографированную планету. Запущен из отсека полезной нагрузки шаттла Atlantis 1989-05-04 — первый планетный космический аппарат, стартовавший с борта шаттла — и прибыл к Венере 1990-08-10 по длинной траектории типа IV (1,5 оборота вокруг Солнца). За четыре цикла картографирования радар с синтезированной апертурой снял 98% поверхности Венеры с разрешением ~120 м, выявив нагорья-тессеры, короны, блинообразные купола и молодую, вулканически обновлённую поверхность. Миссия завершилась 1994-10-13 «Завершающим экспериментом» — первым плановым управляемым входом планетного космического аппарата в атмосферу."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "en": "Parker Solar Probe ran the highest-energy launch ever flown for a science mission — C3 of 154 km²/s², requiring a custom Star 48BV solid third stage atop a Delta IV Heavy just to escape Earth into a Sun-falling trajectory. Seven Venus gravity assists over six years progressively lowered perihelion from 0.16 AU (P1, 2018-11-05) to 0.046 AU (P22, 2024-12-24 — 9.86 solar radii, 6.1 million km from the surface). At P8 in 2021-04-28 Parker dipped below the Alfvén critical surface — the first spacecraft ever to enter the Sun's corona. At P22 it reached ~191 km/s, becoming the fastest human-made object ever. The 11.43-cm carbon-carbon heat shield sustained 1,377 °C while the spacecraft bus 1 metre behind it remained at room temperature.",
+    "old": "Parker Solar Probe совершил запуск с наибольшей избыточной энергией из всех когда-либо выполняемых научных миссий — C3 154 км²/с², требовавший специального твёрдотопливного третьего ступеня Star 48BV на вершине Delta IV Heavy только для выхода с околоземной орбиты на траекторию, падающую к Солнцу. Семь гравитационных манёвров у Венеры на протяжении шести лет постепенно снизили перигелий с 0,16 а.е. (P1, 2018-11-05) до 0,046 а.е. (P22, 2024-12-24 — 9,86 солнечных радиусов, 6,1 млн км от поверхности). На P8 28 апреля 2021 года Parker впервые пересёк критическую поверхность Альфвена — первый космический аппарат, когда-либо вошедший в солнечную корону. На P22 он достиг скорости ~191 км/с, став самым быстрым объектом, когда-либо созданным человеком. Тепловой экран толщиной 11,43 см из углерод-углеродного композита выдержал 1 377 °C, при этом корпус аппарата, находящийся в одном метре позади, остался при комнатной температуре.",
+    "new": "Запуск Parker Solar Probe стал самым энергичным из всех, выполнявшихся для научных миссий: C3 составил 154 км²/с², и потребовалась специальная твердотопливная третья ступень Star 48BV на ракете Delta IV Heavy — только чтобы вырваться с Земли на траекторию падения к Солнцу. Семь гравитационных манёвров у Венеры за шесть лет постепенно снизили перигелий с 0,16 а.е. (P1, 2018-11-05) до 0,046 а.е. (P22, 2024-12-24 — 9,86 солнечного радиуса, 6,1 млн км от поверхности). На P8 2021-04-28 Parker опустился ниже критической поверхности Альфвена — первый космический аппарат, вошедший в корону Солнца. На P22 он развил скорость ~191 км/с и стал самым быстрым объектом, созданным человеком. Углерод-углеродный тепловой экран толщиной 11,43 см выдержал 1 377 °C, тогда как корпус аппарата в метре позади него оставался при комнатной температуре."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "description",
+    "en": "Juno entered Jupiter orbit 2016-07-05 on a highly elliptical 53-day polar trajectory that takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto. Solar-powered — its ~50 m² triple-junction arrays deliver 14 kW at Earth but only ~500 W at Jupiter, the first time solar power has been used at that distance. Confirmed Jupiter has a diluted rocky core (not a sharp boundary), measured the polar cyclone arrangement (eight circumpolar storms around each pole), and imaged Io’s volcanism at unprecedented detail in 2023. Extended mission includes flybys of all four Galilean moons through 2025.",
+    "old": "Juno вышел на полярную орбиту Юпитера 05.07.2016 — сильно вытянутая 53-суточная траектория от внутренней части радиационных поясов (периовий ~4 200 км над облаками) до окрестностей Каллисто. Питается солнечной энергией — три-переходные панели общей площадью около 50 м² дают у Земли 14 кВт, а у Юпитера лишь ~500 Вт; впервые солнечный ток используется на таком удалении. Подтверждено, что у Юпитера «разбавленное» каменное ядро без резкой границы; измерена структура полярных циклонов (вокруг каждого полюса по восемь штормов), а в 2023 году получены беспрецедентно детальные снимки вулканизма Ио. Расширенная миссия включает облёт всех четырёх галилеевых спутников до 2025 года.",
+    "new": "Juno вышел на орбиту Юпитера 2016-07-05 по сильно вытянутой 53-суточной полярной траектории, которая проводит его от области внутри радиационных поясов (перицентр ~4200 км над верхней границей облаков) до района за орбитой Каллисто. Питается солнечной энергией — его солнечные батареи на трёхпереходных элементах площадью ~50 м² дают 14 кВт у Земли, но лишь ~500 Вт у Юпитера; впервые солнечная энергия использована на таком расстоянии. Подтвердил, что у Юпитера «разбавленное» каменное ядро (без резкой границы), измерил структуру полярных циклонов (восемь околополярных штормов вокруг каждого полюса) и в 2023 году снял вулканизм Ио с беспрецедентной детальностью. Расширенная миссия включает пролёты всех четырёх галилеевых спутников до 2025 года."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.note",
+    "en": "Trans-Mars injection (3.61 km/s ∆v) sends MSL onto a heliocentric Mars-bound trajectory.",
+    "old": "Импульс перелёта к Марсу (3,61 км/с ∆v) переводит MSL на гелиоцентрическую траекторию в направлении Марса.",
+    "new": "Отлётный импульс к Марсу (дельта-v 3,61 км/с) переводит MSL на гелиоцентрическую траекторию к Марсу."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "en": "Akatsuki — \"dawn\" — was Japan's first Venus mission. Launched 2010-05-20 from Tanegashima on an H-IIA 202, paired with the IKAROS solar-sail demonstrator. The planned Venus orbit insertion 2010-12-07 failed when salt crystal buildup in an oxidiser check valve threw the main engine off-axis 152 seconds into the burn. JAXA kept the spacecraft alive in solar orbit for five years, twelve correction maneuvers, until the next Venus encounter window. On 2015-12-07 a 1228-second burn using four attitude-control thrusters — never designed for orbital insertion — placed Akatsuki into a highly elliptical 400 × 440,000 km, 3°-inclination orbit. One of the most dramatic mission-saves in spaceflight history. Contact was lost in 2024; JAXA declared operations complete on 2025-09-18.",
+    "old": "Akatsuki — «рассвет» — была первой японской миссией к Венере. Запущена 2010-05-20 с космодрома Танэгасима на носителе H-IIA 202, совместно с демонстратором солнечного паруса IKAROS. Запланированный выход на венерианскую орбиту 2010-12-07 не удался: кристаллизация солей в клапане окислителя выбила маршевый двигатель с оси через 152 секунды после начала манёвра. JAXA сохранила космический аппарат в гелиоцентрической орбите на протяжении пяти лет, выполнив двенадцать коррекций траектории, дождалась следующего окна встречи с Венерой. 2015-12-07 манёвр длительностью 1228 секунд с использованием четырёх двигателей ориентации — никогда не предназначавшихся для выведения на орбиту — поместил Akatsuki на сильно вытянутую орбиту 400 × 440 000 км с наклонением 3°. Одно из самых драматичных спасений миссий в истории космонавтики. Связь с аппаратом потеряна в 2024 году; JAXA объявила о завершении работы 2025-09-18.",
+    "new": "Akatsuki — «рассвет» — стала первой японской миссией к Венере. Запущена 2010-05-20 с космодрома Танэгасима на H-IIA 202 вместе с демонстратором солнечного паруса IKAROS. Запланированный выход на орбиту Венеры 2010-12-07 не удался: из-за накопления кристаллов соли в обратном клапане линии окислителя маршевый двигатель отклонился от оси на 152-й секунде включения. JAXA пять лет удерживала аппарат на гелиоцентрической орбите, выполнив двенадцать коррекций, до следующего окна сближения с Венерой. 2015-12-07 включение четырёх двигателей ориентации на 1228 секунд — они не предназначались для выхода на орбиту — вывело Akatsuki на сильно вытянутую орбиту 400 × 440 000 км с наклонением 3°. Одно из самых драматичных спасений миссии в истории космонавтики. Связь потеряна в 2024 году; JAXA объявила о завершении работы 2025-09-18."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.4.note",
+    "en": "2021-05-10. 2.5-year cruise back to Earth.",
+    "old": "2021-05-10. 2,5-годичное путешествие обратно на Землю.",
+    "new": "2021-05-10. Обратный перелёт к Земле продолжительностью 2,5 года."
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "description",
+    "en": "An uncrewed demonstration of the Starship Mars architecture: launch on Super Heavy, refill in LEO from a tanker variant, then trans-Mars injection of a fully-fuelled Starship and powered descent to the Martian surface. SpaceX's stated target is a 2026-2027 launch window; engineering reality (Starship still working through orbital flight reliability and on-orbit refilling has not been demonstrated) makes 2028 or later more likely. If it succeeds, it inverts the Mars payload economics — from thousands of kg to one hundred tonnes per landing.",
+    "old": "Беспилотная демонстрация архитектуры Starship для Марса: запуск на Super Heavy, дозаправка на НОО от танкерного варианта, затем трансмарсианская инъекция полностью заправленного Starship и снижение двигателем на поверхность. Заявленная цель SpaceX — окно 2026–2027; инженерная реальность (Starship ещё нарабатывает надёжность орбитальных полётов, орбитальная дозаправка не продемонстрирована) делает вероятнее 2028 или позже. Успех перевернул бы экономику полезной нагрузки на Марс — с тысяч килограммов до ста тонн на посадку.",
+    "new": "Беспилотная демонстрация марсианской архитектуры Starship: запуск на Super Heavy, дозаправка на низкой околоземной орбите от танкерного варианта, затем разгонный импульс к Марсу для полностью заправленного Starship и спуск на работающих двигателях на поверхность Марса. Заявленная цель SpaceX — стартовое окно 2026–2027 годов; инженерные реалии (Starship всё ещё добивается надёжности орбитальных полётов, а дозаправка на орбите не продемонстрирована) делают более вероятным 2028 год или позже. В случае успеха экономика полезной нагрузки для Марса перевернётся — с тысяч килограммов до ста тонн на одну посадку."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.2.note",
+    "en": "Final pre-EDL trim 21 hours before entry.",
+    "old": "Финальная подстройка за 21 час до входа в атмосферу.",
+    "new": "Последняя коррекция перед EDL за 21 час до входа в атмосферу."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.10.note",
+    "en": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+    "old": "Спускаемый аппарат приводнился в Северном Тихом океане 1971-08-07 20:46 UTC. Один из трех основных парашютов не полностью раскрылся; приземление жесткое, но безопасное. Поднят на борт USS Okinawa.",
+    "new": "Командный модуль приводнился в северной части Тихого океана 1971-08-07 20:46 UTC. Один из трёх основных парашютов раскрылся не полностью; приводнение жёсткое, но безопасное. Подобран кораблём USS Okinawa."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.7.note",
+    "en": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+    "old": "Трансземная инъекция. SPS ∆v ≈1,0 км/с.",
+    "new": "Отлётный импульс к Земле. SPS, дельта-v ~1,0 км/с."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.5.note",
+    "en": "21-km P-type Trojan with unnamed satellite.",
+    "old": "21-км P-тип троянский астероид с безымянным спутником.",
+    "new": "Троянский астероид P-типа размером 21 км с безымянным спутником."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.3.note",
+    "en": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+    "old": "Окончательная расстыковка 19 июля 1975 года 16:26 UTC. «Союз 19» приземлился 21 июля 1975 года в Казахстане.",
+    "new": "Окончательная расстыковка 1975-07-19 16:26 UTC. «Союз 19» приземлился 1975-07-21 в Казахстане."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "en": "Until SLIM, lunar landings had a kilometre-scale targeting accuracy. JAXA's Smart Lander demonstrated 100 m accuracy — the precision required for crewed missions to dock with pre-positioned cargo, for sample-return ascent vehicles to find their orbital partners, and for any future architecture that depends on landing at specific scientifically valuable sites. SLIM also pioneered low-energy ballistic transfer to the Moon, taking 135 days to arrive but using less propellant than direct trajectories. A demonstration of the patience interplanetary missions can afford when timeline isn't the binding constraint.",
+    "old": "До SLIM лунные посадки были точны на километры. Smart Lander JAXA продемонстрировал точность ~100 м — как нужно для пилотируемых миссий со стыковкой к заранее доставленному грузу, для взлётных ступеней возврата образцов и любой архитектуры, где важна посадка в конкретную научную точку. SLIM также испробовал малозатратную баллистическую передачу на Луну: 135 суток полёта при меньшем расходе топлива, чем у прямых траекторий. Терпение, доступное межпланетным миссиям, когда время не главное ограничение.",
+    "new": "До SLIM точность лунных посадок измерялась километрами. Smart Lander от JAXA продемонстрировал точность 100 м — необходимую для пилотируемых миссий, которые стыкуются с заранее доставленным грузом, для взлётных аппаратов, возвращающих образцы, чтобы они находили своих орбитальных партнёров, и для любой будущей архитектуры, зависящей от посадки в конкретных научно ценных местах. SLIM также первым применил малозатратный баллистический перелёт к Луне: 135 суток в пути, но топлива расходуется меньше, чем при прямых траекториях. Это показывает, какое терпение могут позволить себе межпланетные миссии, когда сроки не являются главным ограничением."
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "en": "27-minute thruster burn captures Hope into Mars orbit 2021-02-09.",
+    "old": "27-минутное торможение двигателей захватывает Hope на орбиту Марса 2021-02-09.",
+    "new": "27-минутное включение двигателей захватывает Hope на орбиту Марса 2021-02-09."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.0.note",
+    "en": "Atlas-Centaur from Cape Canaveral on a Jupiter-Saturn gravity-assist trajectory.",
+    "old": "Ракета Atlas-Centaur с мыса Канаверал по траектории гравитационного манёвра Юпитер-Сатурн.",
+    "new": "Atlas-Centaur с мыса Канаверал выводит аппарат на траекторию Юпитер — Сатурн с гравитационным манёвром."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.4.note",
+    "en": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+    "old": "Spider сближается и стыкуется с Gumdrop, завершая репетицию лунной процедуры на земной орбите.",
+    "new": "Spider сближается с Gumdrop и повторно стыкуется с ним, завершая генеральную репетицию лунной процедуры на околоземной орбите."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.3.note",
+    "en": "23:14 UTC. ~6.6 km/s. 33-min orbital-period change — first deflection of an asteroid by humans.",
+    "old": "23:14 UTC. ~6,6 км/s. Изменение орбитального периода на 33 минуты — первое отклонение астероида человечеством.",
+    "new": "23:14 UTC. ~6,6 км/с. Орбитальный период изменился на 33 минуты — первое отклонение астероида человеком."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "en": "Solid-motor burn into a 295 × 8543 km, 85.5° near-polar orbit.",
+    "old": "Включение твёрдотопливного двигателя на орбиту 295 × 8543 км, наклон 85,5°, близко к полярной.",
+    "new": "Включение твердотопливного двигателя — выход на околополярную орбиту 295 × 8543 км, наклонение 85,5°."
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.0.note",
+    "en": "STS-34 deploys Galileo and an inertial upper stage from Atlantis.",
+    "old": "STS-34 выводит Galileo и разгонный блок с борта шаттла Atlantis.",
+    "new": "STS-34 выводит с борта Atlantis аппарат Galileo и инерциальную верхнюю ступень."
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "first",
+    "en": "Last Soviet lunar mission; last uncrewed lunar landing for 37 years",
+    "old": "Последняя советская лунная миссия; последное автоматическое лунное приземление на 37 лет",
+    "new": "Последняя советская лунная миссия; последняя беспилотная посадка на Луну на 37 лет"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "en": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+    "old": "CM приводнился в южной части Тихого океана, 1969-11-24 20:58 UTC. Спасение осуществлено USS Hornet.",
+    "new": "Командный модуль приводнился в южной части Тихого океана 1969-11-24 20:58 UTC. Подобран кораблём USS Hornet."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "first",
+    "en": "First mission to a metal-rich M-class asteroid; first use of Hall-effect ion thrusters as the primary cruise propulsion",
+    "old": "Первая миссия к богатому металлом M-классовому астероиду; первое использование ионных двигателей на эффекте Холла в качестве основной движительной системы круизного полёта",
+    "new": "Первая миссия к богатому металлами астероиду класса M; первое использование ионных двигателей на эффекте Холла в качестве основной маршевой двигательной установки"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.4.note",
+    "en": "Atmospheric entry, supersonic parachute, sky-crane retro-rockets, rover lowered on cables.",
+    "old": "Вход в атмосферу, сверхзвуковой парашют, ретрореактивные двигатели небесного крана, ровер спущен на тросах.",
+    "new": "Вход в атмосферу, сверхзвуковой парашют, тормозные двигатели «небесного крана», ровер спускается на тросах."
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "first",
+    "en": "USA-277 — 780 days on orbit, KSC Shuttle Landing Facility",
+    "old": "USA-277 — 780 дней на орбите, Shuttle Landing Facility KSC",
+    "new": "USA-277 — 780 дней на орбите, посадочный комплекс шаттлов KSC"
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "description",
+    "en": "Sixth X-37B flight — first under the new USSF organisational designation; record-setting 908 days on orbit (~2.5 years). Launched 2020-05-17 13:14 UTC from CCAFS SLC-41 on Atlas V 501 AV-081; landed at KSC SLF 2022-11-12 10:22 UTC. Carried the Naval Research Laboratory PRAM (Photovoltaic RF Antenna Module — 1 W solar power-to-microwave-beaming experiment) and an AFRL FalconSAT-8 deployer.",
+    "old": "Шестой полёт X-37B — первый под новым организационным обозначением USSF; рекордные 908 суток на орбите (~2,5 года). Запущена 17.05.2020 13:14 UTC с площадки CCAFS SLC-41 на Atlas V 501 AV-081; приземлилась на KSC SLF 12.11.2022 10:22 UTC. Несла полезную нагрузку Naval Research Laboratory PRAM (Photovoltaic RF Antenna Module — эксперимент по преобразованию солнечной энергии в микроволновое излучение мощностью 1 Вт) и средство развёртывания AFRL FalconSAT-8.",
+    "new": "Шестой полёт X-37B — первый под новым организационным обозначением USSF; рекордные 908 суток на орбите (~2,5 года). Запущен 2020-05-17 13:14 UTC с площадки CCAFS SLC-41 на Atlas V 501 AV-081; приземлился на KSC SLF 2022-11-12 10:22 UTC. Нёс эксперимент Naval Research Laboratory PRAM (Photovoltaic RF Antenna Module — передача солнечной энергии микроволновым лучом мощностью 1 Вт) и средство развёртывания AFRL FalconSAT-8."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.4.note",
+    "en": "Deliberate impact at 34.4° S, 46.2° W on 2006-09-03 05:42 UTC. Impact flash observed from CFHT.",
+    "old": "Преднамеренный удар в 34,4° S, 46,2° W 2006-09-03 05:42 UTC. Вспышка от удара зафиксирована телескопом CFHT.",
+    "new": "Преднамеренный удар в точке 34,4° ю. ш., 46,2° з. д. 2006-09-03 05:42 UTC. Вспышка от удара зафиксирована телескопом CFHT."
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "en": "First crewed rendezvous — station-keeps within ~30 cm of Gemini 7.",
+    "old": "Первое пилотируемое рандеву — удержание позиции в ~30 см от Gemini 7.",
+    "new": "Первое пилотируемое сближение — удержание позиции в ~30 см от Gemini 7."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.5.note",
+    "en": "1972-10-27. Attitude-control gas exhausted.",
+    "old": "27 октября 1972 года. Газ системы ориентации исчерпан.",
+    "new": "1972-10-27. Газ системы ориентации исчерпан."
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.5.note",
+    "en": "First high-resolution surface images returned.",
+    "old": "Первые высокоразрешающие снимки поверхности получены.",
+    "new": "Получены первые снимки поверхности высокого разрешения."
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.6.note",
+    "en": "CM America returns crew to Pacific Ocean 1972-12-19.",
+    "old": "КК America возвращает экипаж в Тихий океан 1972-12-19.",
+    "new": "Командный модуль America возвращает экипаж в Тихий океан 1972-12-19."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.4.note",
+    "en": "LICIACube + HST + JWST observe the ejecta plume.",
+    "old": "LICIACube + HST + JWST наблюдают плюм эжекты.",
+    "new": "LICIACube + HST + JWST наблюдают шлейф выбросов."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.4.note",
+    "en": "Soft landing at 68.22°N, 234.25°E — northernmost Mars surface mission.",
+    "old": "Мягкая посадка в точке 68.22°N, 234.25°E — самая северная поверхностная миссия на Марсе.",
+    "new": "Мягкая посадка в точке 68,22° с. ш., 234,25° в. д. — самая северная миссия на поверхности Марса."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.4.note",
+    "en": "Thruster lines freeze; final command issued 2009-06-30.",
+    "old": "Линии двигателей замерзают; финальная команда отправлена 30.6.2009.",
+    "new": "Трубопроводы двигателей замерзают; последняя команда отправлена 2009-06-30."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "en": "2025-03-01. Bends trajectory toward Earth re-encounter.",
+    "old": "1 марта 2025 года. Изменение траектории в сторону повторной встречи с Землёй.",
+    "new": "2025-03-01. Изменение траектории в сторону повторной встречи с Землёй."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "dispatch",
+    "en": "Opportunity drove a marathon across another planet. Spirit’s twin, landed in 2004 for a ninety-day mission, it worked for fourteen years and crossed more than forty-five kilometres — the longest distance any vehicle has travelled on any world. It came down, by luck, in a small crater whose walls exposed exactly the water-laid rock it was sent to find, and then it just kept going, crater to crater, reading the ancient water story of Mars mile after mile. A planet-wide dust storm finally silenced it in 2018.",
+    "old": "Opportunity проехал марафон по другой планете. Близнец Spirit, приземлившийся в 2004 году на девяносуточную миссию, проработал четырнадцать лет и преодолел более сорока пяти километров — наибольшее расстояние, которое когда-либо преодолевал какой-либо аппарат на любом мире. По счастью, он приземлился в небольшом кратере, стены которого обнажали как раз те водоносные породы, для поиска которых он был отправлен, и затем он просто продолжал движение — от кратера к кратеру, читая древнюю водную историю Марса километр за километром. Планетарная пылевая буря окончательно вывела его из строя в 2018 году.",
+    "new": "Opportunity проехал марафон по чужой планете. Близнец Spirit, севший на Марс в 2004 году для девяностодневной миссии, проработал четырнадцать лет и преодолел более сорока пяти километров — наибольшее расстояние, пройденное любым аппаратом на любом мире. Ему повезло: он опустился в небольшой кратер, стены которого обнажали именно те отложенные водой породы, ради которых его и отправили, а затем просто продолжал путь — от кратера к кратеру, читая древнюю водную историю Марса километр за километром. Глобальная пылевая буря окончательно заставила его замолчать в 2018 году."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "en": "Apogee HEO ~38,800 km × ~320 km (first highly-elliptical OTV flight); classified payload operations.",
+    "old": "Апогей HEO ~38,800 км × ~320 км (первый полёт OTV на высокоэллиптическую орбиту); засекреченные операции полезной нагрузки.",
+    "new": "Апогей HEO ~38 800 км × ~320 км (первый полёт OTV на высокоэллиптической орбите); засекреченные операции с полезной нагрузкой."
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "first",
+    "en": "USA-261 / AFSPC-5 — 718 days on orbit, KSC Shuttle Landing Facility",
+    "old": "USA-261 / AFSPC-5 — 718 дней на орбите, Shuttle Landing Facility KSC",
+    "new": "USA-261 / AFSPC-5 — 718 дней на орбите, посадочный комплекс шаттлов KSC"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "en": "760 m/s burn. 49 Europa flybys over 4 years follow.",
+    "old": "Импульс 760 м/с. Следуют 49 пролётов над Европой в течение 4 лет.",
+    "new": "Включение двигателя на 760 м/с. Далее — 49 пролётов Европы в течение 4 лет."
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "first",
+    "en": "Solved EVA — Aldrin's spacewalks; final Gemini",
+    "old": "Решена проблема EVA — выходы Олдрина в открытый космос; последний Gemini",
+    "new": "Задача внекорабельной деятельности решена — выходы Олдрина в открытый космос; последний Gemini"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.5.note",
+    "en": "1994-10-13. Periapsis lowered into atmosphere — first planned planetary spacecraft entry.",
+    "old": "1994-10-13. Перигей опущен в атмосферу — первый спланированный вход планетного аппарата.",
+    "new": "1994-10-13. Перицентр опущен в атмосферу — первый запланированный вход планетного космического аппарата в атмосферу."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "en": "Ion-thrust gravitational capture into 700-km orbit. 26-month mission, four orbit phases.",
+    "old": "Гравитационный захват на ионной тяге в орбиту на расстоянии 700 км. Миссия длительностью 26 месяцев, четыре орбитальные фазы.",
+    "new": "Гравитационный захват на ионной тяге на орбиту 700 км. Миссия длительностью 26 месяцев, четыре орбитальные фазы."
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.1.note",
+    "en": "First orbital maneuver by a crew — thrusters change the orbit shape.",
+    "old": "Первый орбитальный маневр экипажа — двигатели изменяют форму орбиты.",
+    "new": "Первый орбитальный манёвр экипажа — двигатели изменяют форму орбиты."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "first",
+    "en": "First mission to the Jupiter Trojans; visits 11 bodies across 8 asteroids and their satellites in a single 12-year trajectory — a record number of objects on separate solar orbits",
+    "old": "Первая миссия к троянцам Юпитера; посещает 11 тел на 8 астероидах и их спутниках в единой 12-летней траектории — рекордное число объектов на отдельных солнечных орбитах",
+    "new": "Первая миссия к троянцам Юпитера; посещает 11 тел — 8 астероидов и их спутники — на единой 12-летней траектории: рекордное число объектов на отдельных орбитах вокруг Солнца"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.7.note",
+    "en": "CSM re-entry and South Pacific splashdown, recovered by USS Iwo Jima.",
+    "old": "Вход КСМ и приводнение в Южном Тихом океане, спасен крейсером USS Iwo Jima.",
+    "new": "Вход CSM в атмосферу и приводнение в южной части Тихого океана; подобран кораблём USS Iwo Jima."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "first",
+    "en": "Second crewed Moon landing — pinpoint touchdown 163 m from Surveyor 3",
+    "old": "Вторая пилотируемая лунная посадка — точное приземление в 163 м от Surveyor 3",
+    "new": "Вторая пилотируемая посадка на Луну — точное прилунение в 163 м от Surveyor 3"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.2.note",
+    "en": "2005-09-12. Station-keep at 7-km gate position.",
+    "old": "2005-09-12. Стоянка на позиции входа на расстояние 7 км.",
+    "new": "2005-09-12. Удержание позиции в точке «ворот» на расстоянии 7 км."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.5.note",
+    "en": "Spider descent stage deorbited (reentered March 1969, Indian Ocean); ascent stage was fired to depletion and boosted to a high orbit — it decayed 1981.",
+    "old": "Посадочная ступень Spider выведена на деорбиту (вошла в атмосферу март 1969, Индийский океан); ступень взлёта была полностью израсходована и выведена на высокую орбиту — деградировала в 1981 году.",
+    "new": "Спускаемая ступень Spider сведена с орбиты (вошла в атмосферу в марте 1969 года, Индийский океан); взлётную ступень включили до выработки топлива и подняли на высокую орбиту — она сошла с орбиты в 1981 году."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.2.note",
+    "en": "35-minute main-engine burn places Juno into polar Jupiter orbit.",
+    "old": "35-минутный импульс маршевого двигателя выводит Juno на полярную орбиту.",
+    "new": "35-минутное включение маршевого двигателя выводит Juno на полярную орбиту Юпитера."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.3.note",
+    "en": "Main-belt bonus flyby 2025-04. 4-km C-type asteroid.",
+    "old": "Дополнительный пролёт через пояс астероидов 2025-04. C-тип астероид размером 4 км.",
+    "new": "Дополнительный пролёт у астероида главного пояса в 2025-04. Астероид C-типа размером 4 км."
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "first",
+    "en": "Europe's first interplanetary mission; longest-running non-NASA Mars orbiter",
+    "old": "Первая межпланетная миссия Европы; самый долгий не-NASA марсианский орбитёр",
+    "new": "Первая межпланетная миссия Европы; самый долго действующий марсианский орбитальный аппарат, не принадлежащий NASA"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "first",
+    "en": "First mission dedicated to studying how Mars lost its atmosphere",
+    "old": "Первая миссия, посвящённая тому, как Марс потерял атмосферу",
+    "new": "Первая миссия, посвящённая изучению того, как Марс потерял атмосферу"
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.3.note",
+    "en": "Aeroshell, supersonic parachute, twelve hydrazine retro-rockets — Viking-style propulsive descent.",
+    "old": "Аэродинамический экран, сверхзвуковой парашют, двенадцать гидразиновых тормозных двигателей — спуск с двигателями в стиле Viking.",
+    "new": "Аэродинамическая оболочка, сверхзвуковой парашют, двенадцать гидразиновых тормозных двигателей — спуск на двигателях, как у Viking."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.3.note",
+    "en": "Decayed on 1958-01-04 after ~1440 orbits; burned up over the Atlantic.",
+    "old": "Сошёл с орбиты 4 января 1958 года после ~1440 витков; сгорел над Атлантикой.",
+    "new": "Сошёл с орбиты 1958-01-04 после ~1440 витков; сгорел над Атлантикой."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.6.note",
+    "en": "CM splashed down in North Atlantic 1969-03-13 17:00 UTC after 151 orbits. Recovery by USS Guadalcanal.",
+    "old": "КМ приводнилась в Северной Атлантике 1969-03-13 17:00 UTC после 151 витка. Спасена кораблём USS Guadalcanal.",
+    "new": "Командный модуль приводнился в Северной Атлантике 1969-03-13 17:00 UTC после 151 витка. Подобрал модуль USS Guadalcanal."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "en": "Single Earth gravity assist begins the inner-system gravity-assist chain.",
+    "old": "Один гравитационный маневр у Земли начинает цепь гравитационных маневров во внутренней части системы.",
+    "new": "Единственный гравитационный манёвр у Земли открывает цепочку гравитационных манёвров во внутренней Солнечной системе."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "first",
+    "en": "First proposed crewed return mission to Mars (SpaceX architecture)",
+    "old": "Первый предложенный пилотируемый полёт с возвратом с Марса (архитектура SpaceX)",
+    "new": "Первая предложенная пилотируемая миссия на Марс с возвращением (архитектура SpaceX)"
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "description",
+    "en": "InSight gave Mars its first stethoscope. Its seismometer, deployed by a robotic arm onto the regolith, recorded over 1,300 marsquakes — including a magnitude-5 in 2022, the largest ever detected on another planet. The data revealed Mars's interior structure: a 1,800-km-radius molten core, a thick crust, and surprising mantle layering. The mole heat-flow experiment failed when the regolith proved too cohesive for its self-hammering design. The mission ended when dust accumulation on solar panels reduced power below operational threshold.",
+    "old": "InSight дал Марсу «стетоскоп». Сейсмометр, установленный манипулятором на реголит, зафиксировал более 1300 марсотрясений — в том числе магнитуду 5 в 2022 году, крупнейшую на другой планете. Данные выявили внутреннее строение: расплавленное ядро радиусом 1800 км, толстая кора и неожиданное слоистое строение мантии. Эксперимент по тепловому потоку «крот» не удался: реголит оказался слишком связным для самобурильного дизайна. Миссия завершилась, когда пыль на солнечных панелях снизила мощность ниже рабочего порога.",
+    "new": "InSight впервые дал Марсу собственный стетоскоп. Его сейсмометр, установленный роботизированным манипулятором на реголит, зарегистрировал более 1300 марсотрясений, включая марсотрясение магнитудой 5 в 2022 году — сильнейшее из когда-либо обнаруженных на другой планете. Данные раскрыли внутреннее строение Марса: расплавленное ядро радиусом 1800 км, толстую кору и неожиданную слоистость мантии. Эксперимент по измерению теплового потока с «кротом» провалился: реголит оказался слишком связным для самозабивающейся конструкции. Миссия завершилась, когда накопление пыли на солнечных панелях снизило мощность ниже рабочего порога."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.1.note",
+    "en": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+    "old": "Трансселенная инъекция — восстановление после попаданий молнии подтверждено; полёт GO на Луну.",
+    "new": "Выведение на траекторию к Луне — восстановление после ударов молнии подтверждено; полёт к Луне получил «добро» (GO)."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.4.note",
+    "en": "Perseverance touches down at Jezero 20:55 UTC.",
+    "old": "Perseverance приземляется в кратер Jezero в 20:55 UTC.",
+    "new": "Perseverance совершает посадку в кратере Jezero в 20:55 UTC."
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 3 orbits / 4 h 52 m.",
+    "old": "Посадка в Атлантике после 3 витков / 4 ч 52 м.",
+    "new": "Приводнение в Атлантике после 3 витков / 4 ч 52 м."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.2.note",
+    "en": "Captured by lunar gravity 2004-11-15 — first European spacecraft at the Moon.",
+    "old": "Захвачен лунной гравитацией 2004-11-15 — первый европейский космический аппарат на Луне.",
+    "new": "Захвачен гравитацией Луны 2004-11-15 — первый европейский космический аппарат у Луны."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.note",
+    "en": "2026-12-03. Final acceleration outbound to Jupiter.",
+    "old": "3 декабря 2026 года. Окончательное ускорение в направлении удаления к Юпитеру.",
+    "new": "2026-12-03. Заключительный разгон на пути к Юпитеру."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "dispatch",
+    "en": "Perseverance went to Mars to look for the dead. Landed in 2021 on the floor of Jezero Crater — a basin holding the delta of a river that fed a lake billions of years ago, exactly the kind of place life would have left traces — it is the first rover built specifically to search for signs of ancient life, and to do something no mission had done: seal Martian rock into tubes and set them aside for a future spacecraft to carry home. It also delivered Ingenuity, the small helicopter that made the first powered flight on another planet. If the samples it is caching are ever returned, they will be the first pieces of another planet’s surface brought back to Earth.",
+    "old": "Perseverance отправилась на Марс в поисках следов мертвого. Приземлившись в 2021 году на дно кратера Jezero — котловины, в которой находится дельта древней реки, питавшей озеро миллиарды лет назад, в идеальном месте для поиска следов жизни, — она стала первым ровером, специально разработанным для поиска признаков древней жизни и выполнила то, что не делала ни одна миссия ранее: герметично упаковала марсианский грунт в контейнеры и оставила их для будущего космического аппарата, который доставит их на Землю. Она также доставила Ingenuity — небольшой вертолет, совершивший первый управляемый полет на другой планете. Если собранные образцы когда-нибудь вернутся, они станут первыми образцами поверхности другой планеты, доставленными на Землю.",
+    "new": "Perseverance отправился на Марс искать мёртвых. Совершив в 2021 году посадку на дне кратера Jezero — котловины с дельтой реки, которая миллиарды лет назад питала озеро, именно там, где жизнь оставила бы следы, — он стал первым марсоходом, построенным специально для поиска признаков древней жизни, и сделал то, чего не делала ни одна миссия: запечатал марсианскую породу в трубки и отложил их, чтобы будущий космический аппарат доставил их домой. Он также доставил Ingenuity — небольшой вертолёт, совершивший первый управляемый полёт на другой планете. Если собираемые им образцы когда-нибудь вернут на Землю, они станут первыми фрагментами поверхности другой планеты, доставленными на Землю."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.note",
+    "en": "2026-05-15. Closest approach 4,609 km — Mars flyby completed.",
+    "old": "2026-05-15. Минимальное расстояние 4609 км — облёт Марса завершён.",
+    "new": "2026-05-15. Минимальное расстояние 4609 км — пролёт Марса завершён."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "description",
+    "en": "ESA-led mission with a NASA launch and one instrument contribution. Where Parker Solar Probe goes closer than anyone has ever been, Solar Orbiter goes higher — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. From that vantage point its instrument suite (PHI, EUI, SPICE, STIX, METIS, SoloHI + four in-situ packages) images the Sun's polar magnetic fields, traces solar-wind acceleration in real time, and links remote and in-situ measurements simultaneously. First perihelion 2020-06-15 at 0.51 AU. Closest perihelion to date 2022-10-12 at 0.29 AU (inside Mercury's perihelion).",
+    "old": "Миссия под руководством ESA с запуском от NASA и вкладом одного инструмента. Там, где Parker Solar Probe подходит ближе, чем кто-либо когда-либо, Solar Orbiter поднимается выше — используя повторяющиеся гравитационные маневры у Венеры в течение десятилетия для выхода из эклиптики к наклонению ~33° в гелиографических координатах. С этой точки наблюдения его комплекс инструментов (PHI, EUI, SPICE, STIX, METIS, SoloHI + четыре пакета для измерений in-situ) снимает полярные магнитные поля Солнца, отслеживает ускорение солнечного ветра в реальном времени и связывает дистанционные измерения и измерения in-situ одновременно. Первый перигелий 2020-06-15 на расстоянии 0,51 а.е. Ближайший на сегодняшний день перигелий 2022-10-12 на расстоянии 0,29 а.е. (внутри перигелия Меркурия).",
+    "new": "Миссия под руководством ESA, запущенная NASA, с вкладом в виде одного прибора. Там, где Parker Solar Probe подходит к Солнцу ближе, чем кто-либо прежде, Solar Orbiter поднимается выше — используя на протяжении десятилетия повторные гравитационные манёвры у Венеры, чтобы выбраться из плоскости эклиптики к гелиографическому наклонению ~33°. Из этой точки его комплекс приборов (PHI, EUI, SPICE, STIX, METIS, SoloHI + четыре прибора для измерений на месте) снимает полярные магнитные поля Солнца, в реальном времени прослеживает ускорение солнечного ветра и одновременно связывает дистанционные измерения с измерениями на месте. Первый перигелий — 2020-06-15 на расстоянии 0,51 а.е. Ближайший на сегодня перигелий — 2022-10-12 на расстоянии 0,29 а.е. (внутри перигелия Меркурия)."
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.1.note",
+    "en": "Apogee ~400 km; classified payload operations.",
+    "old": "Апогей ~400 км; выполнение секретной полезной нагрузки.",
+    "new": "Апогей ~400 км; операции с засекреченной полезной нагрузкой."
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.1.note",
+    "en": "Descent module separates + lands; balloon deploys at 54 km altitude for 46.5 hours.",
+    "old": "Спускаемый модуль отделяется + приземляется; аэростат раскрывается на высоте 54 км на 46,5 часов.",
+    "new": "Спускаемый модуль отделяется + совершает посадку; аэростат раскрывается на высоте 54 км и работает 46,5 часа."
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.1.note",
+    "en": "Main engine burn captures Galileo into orbit; an 8-year tour of moon science begins.",
+    "old": "Основной двигатель выполняет манёвр захвата Galileo на орбиту; начинается восьмилетний тур по исследованию спутников.",
+    "new": "Включение маршевого двигателя выводит Galileo на орбиту; начинается восьмилетний научный тур по спутникам."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.2.note",
+    "en": "2018-11-05, 0.16 AU. Closest-to-Sun ever, beating Helios 2.",
+    "old": "2018-11-05, 0,16 а.е. Рекордное сближение с Солнцем, превзойдя Helios 2.",
+    "new": "2018-11-05, 0,16 а.е. Самое близкое к Солнцу положение за всю историю: рекорд Helios 2 побит."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "description",
+    "en": "Europa Clipper goes to Jupiter to study Europa — a 3,121-km icy moon believed to harbour a global liquid-water ocean beneath a 15-25 km ice shell, the most accessible potentially-habitable environment in the solar system. Launched 2024-10-14 on a Falcon Heavy at C3 41.7. A Mars gravity assist in March 2025 bent the trajectory toward Earth; an Earth gravity assist 2026-12 delivers the final push outward; arrives Jupiter 2030-04-11 for orbit insertion. The orbital tour executes 49 close Europa flybys over four years — passing within 25 km of Europa's surface on the closest passes, designed to map the entire moon while limiting the spacecraft's dose in Jupiter's brutal radiation belts. Instruments: REASON ice-penetrating radar, MASPEX mass spectrometer (samples plume material if any), E-THEMIS thermal imager (finds active geysers), magnetometer + plasma instruments confirm ocean depth from induced magnetic response.",
+    "old": "Europa Clipper направляется к Юпитеру для изучения Европы — ледяного спутника диаметром 3121 км, под ледяной оболочкой толщиной 15–25 км которого предположительно скрывается глобальный жидководный океан, самая доступная потенциально обитаемая среда в Солнечной системе. Запущен 14 октября 2024 года на Falcon Heavy с величиной характеристической скорости C3 = 41,7. Гравитационный манёвр у Марса в марте 2025 года изменил траекторию в сторону Земли; гравитационный манёвр у Земли в декабре 2026 года сообщит космическому аппарату окончательное ускорение в направлении удаления; прибывает к Юпитеру 11 апреля 2030 года для выхода на орбиту. Орбитальная программа включает 49 близких пролётов над Европой в течение четырёх лет — минимальное расстояние до поверхности Европы на наиболее приближённых пролётах составляет 25 км, такая траектория позволяет картографировать весь спутник, ограничивая при этом облучение аппарата в жестоком радиационном поясе Юпитера. Приборы: радар REASON для зондирования льда, масс-спектрометр MASPEX (анализирует материал шлейфа, если он есть), тепловой имидер E-THEMIS (обнаруживает активные гейзеры), магнитометр и приборы для измерения плазмы подтверждают глубину океана по индуцированному магнитному отклику.",
+    "new": "Europa Clipper летит к Юпитеру, чтобы изучить Европу — ледяной спутник диаметром 3121 км, под ледяной оболочкой толщиной 15–25 км которого, как считается, скрывается глобальный океан жидкой воды; это самая доступная потенциально обитаемая среда в Солнечной системе. Запущен 2024-10-14 ракетой Falcon Heavy при C3 41,7. Гравитационный манёвр у Марса в марте 2025 года направил траекторию к Земле; гравитационный манёвр у Земли в 2026-12 даст последний толчок наружу; к Юпитеру аппарат прибудет 2030-04-11 для выхода на орбиту. Орбитальный тур включает 49 близких пролётов Европы в течение четырёх лет — на самых близких проходах аппарат приблизится к поверхности Европы на 25 км; такая схема позволяет закартировать весь спутник и при этом ограничить дозу облучения аппарата в жёстких радиационных поясах Юпитера. Приборы: ледопроникающий радар REASON, масс-спектрометр MASPEX (анализирует вещество шлейфа, если он есть), тепловизор E-THEMIS (находит действующие гейзеры), магнитометр и плазменные приборы подтверждают глубину океана по индуцированному магнитному отклику."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "first",
+    "en": "Only spacecraft ever to enter a high-inclination heliocentric orbit; only direct measurements of the solar wind at all heliographic latitudes",
+    "old": "Единственный когда-либо запущенный аппарат на гелиоцентрической орбите высокого наклонения; единственные прямые измерения солнечного ветра на всех гелиографических широтах",
+    "new": "Единственный аппарат, когда-либо выходивший на гелиоцентрическую орбиту высокого наклонения; единственные прямые измерения солнечного ветра на всех гелиографических широтах"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "first",
+    "en": "First of the Mars Exploration Rover twins; longest-lived rover until passed by Curiosity",
+    "old": "Первый из близнецов программы Mars Exploration Rover; самый долгоживущий ровер до появления Curiosity",
+    "new": "Первый из близнецов Mars Exploration Rover; самый долгоживущий ровер, пока его не превзошёл Curiosity"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.note",
+    "en": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+    "old": "Манёвр поднимает гелиоцентрическую энергию до достаточной для Юпитера.",
+    "new": "Гравитационный манёвр повышает гелиоцентрическую энергию настолько, чтобы достичь Юпитера."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "en": "2010-12-07. OME throttle anomaly 152s into the burn; spacecraft sails past into solar orbit.",
+    "old": "2010-12-07. Отказ регулятора тяги маршевого двигателя через 152 секунды после начала манёвра; космический аппарат ушёл в гелиоцентрическую орбиту.",
+    "new": "2010-12-07. Аномалия регулирования тяги двигателя OME на 152-й секунде включения; аппарат пролетает мимо и выходит на гелиоцентрическую орбиту."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "first",
+    "en": "First helicopter on another planet (Ingenuity); first sample caching for Mars Sample Return",
+    "old": "Первый вертолет на другой планете (Ingenuity); первый сбор образцов для программы Mars Sample Return",
+    "new": "Первый вертолёт на другой планете (Ingenuity); первое депонирование образцов для программы Mars Sample Return"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "en": "31-second LM descent-engine burn returns the spacecraft to a free-return trajectory.",
+    "old": "31-секундный импульс двигателя спуска ЛМ возвращает космический аппарат на траекторию свободного возврата.",
+    "new": "31-секундное включение двигателя спуска ЛМ возвращает космический аппарат на траекторию свободного возврата."
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.0.note",
+    "en": "Atlas-Centaur lifts Pioneer 10 on a direct ascent to Jupiter.",
+    "old": "Atlas-Centaur поднимает Pioneer 10 на прямой выход к Юпитеру.",
+    "new": "Atlas-Centaur выводит Pioneer 10 на прямую траекторию к Юпитеру."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "en": "Trans-lunar injection burn by S-IVB; CSM + LM commit to cislunar trajectory.",
+    "old": "Импульс выхода на траекторию к Луне от S-IVB; КСМ + ЛМ переходят на траекторию полёта к Луне.",
+    "new": "Включение двигателя S-IVB для выхода на траекторию к Луне; КСМ + ЛМ выходят на транслунную траекторию."
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "first",
+    "en": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
+    "old": "Первый аппарат через пояс астероидов и первый пролёт у Юпитера (04.12.1973)",
+    "new": "Первый аппарат, прошедший через пояс астероидов, и первый, пролетевший мимо Юпитера (1973-12-04)"
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.3.note",
+    "en": "Sky-crane delivers rover to Jezero Crater 2021-02-18 — site of an ancient river delta.",
+    "old": "Небесный кран доставляет ровер на кратер Jezero 2021-02-18 — место древней речной дельты.",
+    "new": "«Небесный кран» доставляет ровер в кратер Jezero 2021-02-18 — место древней речной дельты."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.3.note",
+    "en": "D-CIXS X-ray fluorescence delivers first global elemental maps of the Moon.",
+    "old": "D-CIXS рентгеновская флуоресценция предоставляет первые глобальные карты элементного состава Луны.",
+    "new": "Рентгеновская флуоресценция (D-CIXS) даёт первые глобальные карты элементного состава Луны."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "en": "Pericynthion-plus-2-hour burn shortens the return-to-Earth time by ten hours.",
+    "old": "Импульс на Pericynthion+2 часа сокращает время возврата на Землю на десять часов.",
+    "new": "Включение двигателя через 2 часа после прохождения перилуния сокращает время возвращения на Землю на десять часов."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.6.note",
+    "en": "35-km D-type Trojan, slow rotator (446 h).",
+    "old": "35-км D-тип троянский астероид, медленный ротатор (446 ч).",
+    "new": "Троянский астероид D-типа размером 35 км, медленно вращающийся (446 ч)."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.4.note",
+    "en": "Bounced 28 times. Rolled to rest at 14.57°S, 175.47°E.",
+    "old": "Совершил 28 отскоков. Остановился на 14,57°S, 175,47°E.",
+    "new": "Совершил 28 отскоков. Остановился на 14,57° ю. ш., 175,47° в. д."
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "first",
+    "en": "First fully reusable launch system to attempt Mars landing",
+    "old": "Первая полностью многоразовая система, которая попытается сесть на Марс",
+    "new": "Первая полностью многоразовая пусковая система, пытающаяся совершить посадку на Марс"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "first",
+    "en": "First mission to orbit two extraterrestrial bodies — Vesta, then Ceres",
+    "old": "Первая миссия на орбите двух небесных тел — Весты, затем Цереры",
+    "new": "Первая миссия, вышедшая на орбиту двух небесных тел — сначала Весты, затем Цереры"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "first",
+    "en": "First nuclear-powered Mars rover; first sky-crane landing",
+    "old": "Первый атомный марсоход; первая посадка на небесный кран",
+    "new": "Первый марсоход с ядерным источником энергии; первая посадка с помощью «небесного крана»"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.3.note",
+    "en": "200 km closest approach — the closest cometary flyby on record.",
+    "old": "Минимальное расстояние 200 км — ближайший пролёт кометы из когда-либо зарегистрированных.",
+    "new": "Минимальное расстояние 200 км — самый близкий пролёт у кометы за всю историю наблюдений."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.4.note",
+    "en": "2027-08. First Trojan encounter. 64-km C-type + 1-km moon.",
+    "old": "2027-08. Первая встреча с троянцем. 64-км C-тип + луна размером 1 км.",
+    "new": "2027-08. Первая встреча с троянским астероидом. Астероид C-типа размером 64 км + спутник размером 1 км."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.3.note",
+    "en": "15-min solid-motor burn places Mariner 9 into a 1398 × 17,917 km, 64.4° orbit — first ever orbit of another planet.",
+    "old": "15-минутный импульс твёрдотопливного двигателя выводит Mariner 9 на орбиту 1398 × 17 917 км с наклонением 64,4° — первая в истории орбита вокруг другой планеты.",
+    "new": "15-минутное включение твердотопливного двигателя выводит Mariner 9 на орбиту 1398 × 17 917 км с наклонением 64,4° — первая в истории орбита вокруг другой планеты."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.3.note",
+    "en": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+    "old": "Falcon приземляется в Hadley-Apennine 1971-07-30 22:16 UTC — первое приземление на нагорье (не на морской равнине).",
+    "new": "Falcon совершает посадку в районе Hadley-Apennine 1971-07-30 22:16 UTC — первая посадка в нагорном, а не морском районе."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.4.note",
+    "en": "Extended-mission flyby of 98943 Torifune (2001 CC21).",
+    "old": "Пролёт мимо 98943 Торифуне (2001 CC21) в рамках расширённой миссии.",
+    "new": "Пролёт мимо 98943 Торифуне (2001 CC21) в рамках расширенной миссии."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "type",
+    "en": "SAMPLE RETURN + LANDERS · ACTIVE (extended)",
+    "old": "ВОЗВРАТ ОБРАЗЦОВ + ПОСАДОЧНЫЕ МОДУЛИ · АКТИВНА (расширённая миссия)",
+    "new": "ВОЗВРАТ ОБРАЗЦОВ + ПОСАДОЧНЫЕ МОДУЛИ · АКТИВНА (расширенная миссия)"
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.3.note",
+    "en": "2022-09-04. Begins inclination climb out of the ecliptic.",
+    "old": "2022-09-04. Начало подъема по наклонению из эклиптики.",
+    "new": "2022-09-04. Начало увеличения наклонения: аппарат выходит из плоскости эклиптики."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "first",
+    "en": "First polar orbiter of Jupiter; solar-powered beyond the asteroid belt for the first time",
+    "old": "Первый полярный орбитер Юпитера; первая работа на солнечной энергии за поясом астероидов",
+    "new": "Первый полярный орбитер Юпитера; впервые работает на солнечной энергии за поясом астероидов"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.5.note",
+    "en": "MTM jettison + orbiter separation; science operations begin early 2027.",
+    "old": "Отделение модуля трансфера и разделение орбитальных аппаратов; научные операции начинаются в начале 2027 года.",
+    "new": "Сброс перелётного модуля (MTM) + разделение орбитальных аппаратов; научные операции начинаются в начале 2027 года."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.8.note",
+    "en": "Final Earth assist 2030-12. Heads to L5 cloud.",
+    "old": "Последний манёвр у Земли 2030-12. Курс на облако L5.",
+    "new": "Последний гравитационный манёвр у Земли в 2030-12. Курс на облако L5."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.2.note",
+    "en": "Silver-zinc batteries depleted 1957-10-26; the carriers go quiet after ~315 orbits.",
+    "old": "Серебряно-цинковые батареи разрядились 26 октября 1957 года; несущие смолкли после ~315 витков.",
+    "new": "Серебряно-цинковые батареи разряжены 1957-10-26; несущие частоты передатчиков смолкают после ~315 витков."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.5.note",
+    "en": "2018-06-10. Planet-wide dust storm cuts solar power.",
+    "old": "2018-06-10. Планетарная пылевая буря перекрывает солнечную энергию.",
+    "new": "2018-06-10. Глобальная пылевая буря сокращает выработку солнечной энергии."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "description",
+    "en": "ISRO's Mars Orbiter Mission cost $74 million — less than the budget of the film Gravity ($100M), and a fraction of NASA's MAVEN ($671M) which arrived two days earlier. Built in 18 months as a technology demonstrator, Mangalyaan succeeded at every objective: trans-Mars injection, deep-space navigation, Mars orbit insertion, and 8 years of science return. India became the fourth space agency at Mars and the first to succeed on its first try.",
+    "old": "Миссия ISRO «Mars Orbiter Mission» обошлась в $74 млн — меньше, чем бюджет фильма «Gravity» ($100 млн), и лишь доля от NASA MAVEN ($671 млн), прибывшей двумя днями раньше. Разработанная за 18 месяцев как технологический демонстратор, Mangalyaan успешно выполнила все задачи: переход на марсианскую орбиту, навигацию в глубоком космосе, захват орбитой Марса и 8 лет научных исследований. Индия стала четвёртым космическим агентством на Марсе и первым, добившимся успеха с первой попытки.",
+    "new": "Миссия ISRO «Mars Orbiter Mission» обошлась в $74 млн — меньше бюджета фильма «Гравитация» ($100 млн) и лишь малая доля стоимости MAVEN от NASA ($671 млн), прибывшего на два дня раньше. Созданная за 18 месяцев как технологический демонстратор, Mangalyaan выполнила все задачи: разгон к Марсу, навигацию в дальнем космосе, выход на орбиту Марса и 8 лет научной отдачи. Индия стала четвёртым космическим агентством на Марсе и первым, добившимся успеха с первой попытки."
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "events.1.note",
+    "en": "Apogee ~287 km; classified payload operations.",
+    "old": "Апогей ~287 км; засекреченные операции полезной нагрузки.",
+    "new": "Апогей ~287 км; операции с засекреченной полезной нагрузкой."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.5.note",
+    "en": "Heliographic latitude exceeds 17° — first close-up polar magnetic field images.",
+    "old": "Гелиографическая широта превышает 17° — первые крупным планом изображения полярных магнитных полей.",
+    "new": "Гелиографическая широта превышает 17° — первые снимки полярных магнитных полей крупным планом."
+  }
+]

@@ -1,0 +1,1100 @@
+[
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Отлётный импульс к Земле. SPS, дельта-v ~1,0 км/с.",
+    "note": "English left in; wrong rendering of trans-Earth injection."
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Pioneer 11 был вторым разведчиком и зашёл дальше своего близнеца. После собственного пролёта мимо Юпитера он использовал гравитацию планеты, чтобы пересечь Солнечную систему и достичь Сатурна в 1979 году — первым среди всех космических аппаратов, — намеренно пройдя сквозь плоскость колец, чтобы проверить, безопасна ли эта область. Он нашёл просвет, через который годом позже прошли аппараты Voyager. Многое из того, что сделало возможным «Великий тур», сводилось к этому: небольшой дешёвый зонд, отправленный вперёд, чтобы взять на себя риски и нанести на карту опасности, — и шедшие следом флагманы могли лететь с уверенностью, а не со страхом.",
+    "note": "Gap became 'пролив', gender error, broken last sentence."
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Atlas V 501 (AV-081) с площадки CCAFS SLC-41, 2020-05-17.",
+    "note": "ISO date changed to dotted format."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Первые люди, покинувшие низкую околоземную орбиту и вышедшие на орбиту Луны",
+    "note": "Orbit the Moon rendered as flyby; 'low' dropped."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "2015-12-07. Включение двигателей ориентации на 1228 с — выход на орбиту 400 × 440 000 км с наклонением 3°.",
+    "note": "Burn not rendered with the binding."
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Spirit был рассчитан на девяносто дней, а проработал шесть лет. Один из пары геологов размером с гольф-кар, севших на Марс в 2004 году, он был отправлен читать породы в поисках свидетельств более влажного марсианского прошлого — и нашёл их: обнаружил минералы, образующиеся только в воде, а в одном месте — залежи кремнезёма, подобные тем, что оставляют горячие источники на Земле. Он взбирался на холмы, куда его никто не планировал отправлять, и пережил зимы, на которые не был рассчитан, пока колесо не вышло из строя и он не увяз в мягком песке. Он продолжал передавать сигнал оттуда, где застрял, пока марсианский холод наконец не добил его.",
+    "note": "Number agreement error, wheel/bogging sequence garbled."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Взлётная ступень Intrepid намеренно сброшена на Луну для калибровки сейсмометров ALSEP — первый случай, когда ступень аппарата пилотируемой миссии была намеренно направлена на Луну, а удар зарегистрирован сейсмометром на поверхности.",
+    "note": "Ungrammatical ending ('регистрации событие')."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Первый из четырёх гравитационных манёвров, наращивающих энергию для прибытия к Сатурну.",
+    "note": "'Assists' lost its gravity meaning."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Hazcam передаёт первое изображение поверхности в низком разрешении.",
+    "note": "Non-standard 'низкоразрешающее'."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Первый управляемый полёт с работающим двигателем на другой планете — 39,1 секунды на высоте до 5 м.",
+    "note": "'Powered' dropped."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Выход на лунную орбиту (использовалось несколько включений двигателя для повышения орбиты вокруг Земли и Луны).",
+    "note": "Burn not rendered with the binding."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Второй гравитационный манёвр у Венеры начинает этап приближения к Меркурию.",
+    "note": "Binding spelled 'маневр', not 'манёвр'."
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Коррекция на подлёте точно нацеливает аппарат на перицентр при MOI.",
+    "note": "'Approach trim' rendered as 'preliminary'; pin-targeting lost."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Первый из шести гравитационных манёвров, достаточно замедляющих аппарат на траектории, чтобы выйти на орбиту Меркурия.",
+    "note": "Clumsy 'slow the trajectory'; assist not named."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Обмен флагами и подарками; совместные эксперименты; 2 стыковки, всего ~44 часа в состыкованном состоянии.",
+    "note": "Clumsy repetition 'на стыковке'."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Magellan превратил Венеру из безликого, затянутого облаками диска в картографированную планету. Запущен из отсека полезной нагрузки шаттла Atlantis 1989-05-04 — первый планетный космический аппарат, стартовавший с борта шаттла — и прибыл к Венере 1990-08-10 по длинной траектории типа IV (1,5 оборота вокруг Солнца). За четыре цикла картографирования радар с синтезированной апертурой снял 98% поверхности Венеры с разрешением ~120 м, выявив нагорья-тессеры, короны, блинообразные купола и молодую, вулканически обновлённую поверхность. Миссия завершилась 1994-10-13 «Завершающим экспериментом» — первым плановым управляемым входом планетного космического аппарата в атмосферу.",
+    "note": "Non-word 'переобновляемую', reversed radar term, English left in."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Запуск Parker Solar Probe стал самым энергичным из всех, выполнявшихся для научных миссий: C3 составил 154 км²/с², и потребовалась специальная твердотопливная третья ступень Star 48BV на ракете Delta IV Heavy — только чтобы вырваться с Земли на траекторию падения к Солнцу. Семь гравитационных манёвров у Венеры за шесть лет постепенно снизили перигелий с 0,16 а.е. (P1, 2018-11-05) до 0,046 а.е. (P22, 2024-12-24 — 9,86 солнечного радиуса, 6,1 млн км от поверхности). На P8 2021-04-28 Parker опустился ниже критической поверхности Альфвена — первый космический аппарат, вошедший в корону Солнца. На P22 он развил скорость ~191 км/с и стал самым быстрым объектом, созданным человеком. Углерод-углеродный тепловой экран толщиной 11,43 см выдержал 1 377 °C, тогда как корпус аппарата в метре позади него оставался при комнатной температуре.",
+    "note": "Gender slip 'третьего ступеня'; date format changed."
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Juno вышел на орбиту Юпитера 2016-07-05 по сильно вытянутой 53-суточной полярной траектории, которая проводит его от области внутри радиационных поясов (перицентр ~4200 км над верхней границей облаков) до района за орбитой Каллисто. Питается солнечной энергией — его солнечные батареи на трёхпереходных элементах площадью ~50 м² дают 14 кВт у Земли, но лишь ~500 Вт у Юпитера; впервые солнечная энергия использована на таком расстоянии. Подтвердил, что у Юпитера «разбавленное» каменное ядро (без резкой границы), измерил структуру полярных циклонов (восемь околополярных штормов вокруг каждого полюса) и в 2023 году снял вулканизм Ио с беспрецедентной детальностью. Расширенная миссия включает пролёты всех четырёх галилеевых спутников до 2025 года.",
+    "note": "Non-word 'периовий'; 'три-переходные', date format changed."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Отлётный импульс к Марсу (дельта-v 3,61 км/с) переводит MSL на гелиоцентрическую траекторию к Марсу.",
+    "note": "Delta-v left as symbol, not the binding."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Akatsuki — «рассвет» — стала первой японской миссией к Венере. Запущена 2010-05-20 с космодрома Танэгасима на H-IIA 202 вместе с демонстратором солнечного паруса IKAROS. Запланированный выход на орбиту Венеры 2010-12-07 не удался: из-за накопления кристаллов соли в обратном клапане линии окислителя маршевый двигатель отклонился от оси на 152-й секунде включения. JAXA пять лет удерживала аппарат на гелиоцентрической орбите, выполнив двенадцать коррекций, до следующего окна сближения с Венерой. 2015-12-07 включение четырёх двигателей ориентации на 1228 секунд — они не предназначались для выхода на орбиту — вывело Akatsuki на сильно вытянутую орбиту 400 × 440 000 км с наклонением 3°. Одно из самых драматичных спасений миссии в истории космонавтики. Связь потеряна в 2024 году; JAXA объявила о завершении работы 2025-09-18.",
+    "note": "Wrong prepositions, comma splice, missing 'в', burn binding."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2021-05-10. Обратный перелёт к Земле продолжительностью 2,5 года.",
+    "note": "Clumsy '2,5-годичное путешествие'."
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Беспилотная демонстрация марсианской архитектуры Starship: запуск на Super Heavy, дозаправка на низкой околоземной орбите от танкерного варианта, затем разгонный импульс к Марсу для полностью заправленного Starship и спуск на работающих двигателях на поверхность Марса. Заявленная цель SpaceX — стартовое окно 2026–2027 годов; инженерные реалии (Starship всё ещё добивается надёжности орбитальных полётов, а дозаправка на орбите не продемонстрирована) делают более вероятным 2028 год или позже. В случае успеха экономика полезной нагрузки для Марса перевернётся — с тысяч килограммов до ста тонн на одну посадку.",
+    "note": "Calque 'трансмарсианская инъекция'; descent binding missed."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Последняя коррекция перед EDL за 21 час до входа в атмосферу.",
+    "note": "'Pre-EDL' dropped."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.10.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Командный модуль приводнился в северной части Тихого океана 1971-08-07 20:46 UTC. Один из трёх основных парашютов раскрылся не полностью; приводнение жёсткое, но безопасное. Подобран кораблём USS Okinawa.",
+    "note": "CM as 'descent vehicle'; splashdown called landing."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.7.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Отлётный импульс к Земле. SPS, дельта-v ~1,0 км/с.",
+    "note": "Calque 'трансземная инъекция'; delta-v binding missed."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Троянский астероид P-типа размером 21 км с безымянным спутником.",
+    "note": "Ungrammatical '21-км P-тип троянский'."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Окончательная расстыковка 1975-07-19 16:26 UTC. «Союз 19» приземлился 1975-07-21 в Казахстане.",
+    "note": "ISO dates changed to long form."
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "До SLIM точность лунных посадок измерялась километрами. Smart Lander от JAXA продемонстрировал точность 100 м — необходимую для пилотируемых миссий, которые стыкуются с заранее доставленным грузом, для взлётных аппаратов, возвращающих образцы, чтобы они находили своих орбитальных партнёров, и для любой будущей архитектуры, зависящей от посадки в конкретных научно ценных местах. SLIM также первым применил малозатратный баллистический перелёт к Луне: 135 суток в пути, но топлива расходуется меньше, чем при прямых траекториях. Это показывает, какое терпение могут позволить себе межпланетные миссии, когда сроки не являются главным ограничением.",
+    "note": "Clause about orbital partners cut; 'pioneered' weakened."
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "27-минутное включение двигателей захватывает Hope на орбиту Марса 2021-02-09.",
+    "note": "Burn rendered as 'торможение', not the binding."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Atlas-Centaur с мыса Канаверал выводит аппарат на траекторию Юпитер — Сатурн с гравитационным манёвром.",
+    "note": "Awkward genitive chain and hyphen."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Spider сближается с Gumdrop и повторно стыкуется с ним, завершая генеральную репетицию лунной процедуры на околоземной орбите.",
+    "note": "'Redocks' lost its 're-'."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "23:14 UTC. ~6,6 км/с. Орбитальный период изменился на 33 минуты — первое отклонение астероида человеком.",
+    "note": "Latin 's' in km/s."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Включение твердотопливного двигателя — выход на околополярную орбиту 295 × 8543 км, наклонение 85,5°.",
+    "note": "Awkward 'наклон ..., близко к полярной'."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "STS-34 выводит с борта Atlantis аппарат Galileo и инерциальную верхнюю ступень.",
+    "note": "Stage binding missed; 'inertial' dropped."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Последняя советская лунная миссия; последняя беспилотная посадка на Луну на 37 лет",
+    "note": "Non-word 'последное'; 'приземление' for lunar landing."
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Командный модуль приводнился в южной части Тихого океана 1969-11-24 20:58 UTC. Подобран кораблём USS Hornet.",
+    "note": "'CM' left as English acronym."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Первая миссия к богатому металлами астероиду класса M; первое использование ионных двигателей на эффекте Холла в качестве основной маршевой двигательной установки",
+    "note": "Calque 'M-классовому'."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Вход в атмосферу, сверхзвуковой парашют, тормозные двигатели «небесного крана», ровер спускается на тросах.",
+    "note": "Odd 'ретрореактивные двигатели'."
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "USA-277 — 780 дней на орбите, посадочный комплекс шаттлов KSC",
+    "note": "Facility name left in English."
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Шестой полёт X-37B — первый под новым организационным обозначением USSF; рекордные 908 суток на орбите (~2,5 года). Запущен 2020-05-17 13:14 UTC с площадки CCAFS SLC-41 на Atlas V 501 AV-081; приземлился на KSC SLF 2022-11-12 10:22 UTC. Нёс эксперимент Naval Research Laboratory PRAM (Photovoltaic RF Antenna Module — передача солнечной энергии микроволновым лучом мощностью 1 Вт) и средство развёртывания AFRL FalconSAT-8.",
+    "note": "ISO dates changed; gender inconsistent with sibling text."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Преднамеренный удар в точке 34,4° ю. ш., 46,2° з. д. 2006-09-03 05:42 UTC. Вспышка от удара зафиксирована телескопом CFHT.",
+    "note": "Latin S/W in coordinates."
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Первое пилотируемое сближение — удержание позиции в ~30 см от Gemini 7.",
+    "note": "'Рандеву' instead of the binding."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "1972-10-27. Газ системы ориентации исчерпан.",
+    "note": "ISO date changed to long form."
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Получены первые снимки поверхности высокого разрешения.",
+    "note": "Non-standard 'высокоразрешающие'."
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.9.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Командный модуль America возвращает экипаж в Тихий океан 1972-12-19.",
+    "note": "'КК' misrenders command module."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "LICIACube + HST + JWST наблюдают шлейф выбросов.",
+    "note": "Calque 'плюм эжекты'."
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Мягкая посадка в точке 68,22° с. ш., 234,25° в. д. — самая северная миссия на поверхности Марса.",
+    "note": "Decimal point and Latin N/E in coordinates."
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Трубопроводы двигателей замерзают; последняя команда отправлена 2009-06-30.",
+    "note": "ISO date changed; 'линии' unclear."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2025-03-01. Изменение траектории в сторону повторной встречи с Землёй.",
+    "note": "ISO date changed to long form."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Opportunity проехал марафон по чужой планете. Близнец Spirit, севший на Марс в 2004 году для девяностодневной миссии, проработал четырнадцать лет и преодолел более сорока пяти километров — наибольшее расстояние, пройденное любым аппаратом на любом мире. Ему повезло: он опустился в небольшой кратер, стены которого обнажали именно те отложенные водой породы, ради которых его и отправили, а затем просто продолжал путь — от кратера к кратеру, читая древнюю водную историю Марса километр за километром. Глобальная пылевая буря окончательно заставила его замолчать в 2018 году.",
+    "note": "'Water-bearing rock' wrong; 'planet-wide' storm softened."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Апогей HEO ~38 800 км × ~320 км (первый полёт OTV на высокоэллиптической орбите); засекреченные операции с полезной нагрузкой.",
+    "note": "English thousands comma in Russian number."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "USA-261 / AFSPC-5 — 718 дней на орбите, посадочный комплекс шаттлов KSC",
+    "note": "Facility name left in English."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Включение двигателя на 760 м/с. Далее — 49 пролётов Европы в течение 4 лет.",
+    "note": "Burn rendered as 'импульс', not the binding."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Задача внекорабельной деятельности решена — выходы Олдрина в открытый космос; последний Gemini",
+    "note": "English acronym EVA left in."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "1994-10-13. Перицентр опущен в атмосферу — первый запланированный вход планетного космического аппарата в атмосферу.",
+    "note": "'Перигей' is Earth-only; entry binding missed."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Гравитационный захват на ионной тяге на орбиту 700 км. Миссия длительностью 26 месяцев, четыре орбитальные фазы.",
+    "note": "Wrong preposition 'в орбиту на расстоянии'."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Первый орбитальный манёвр экипажа — двигатели изменяют форму орбиты.",
+    "note": "Spelling differs from the 'манёвр' binding."
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Первая миссия к троянцам Юпитера; посещает 11 тел — 8 астероидов и их спутники — на единой 12-летней траектории: рекордное число объектов на отдельных орбитах вокруг Солнца",
+    "note": "'На 8 астероидах' wrong; bodies are the asteroids."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.7.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Вход CSM в атмосферу и приводнение в южной части Тихого океана; подобран кораблём USS Iwo Jima.",
+    "note": "Iwo Jima wrongly called a cruiser; entry binding missed."
+  }
+]

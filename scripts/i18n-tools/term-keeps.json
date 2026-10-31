@@ -1627,6 +1627,10 @@
     "why": "burned on pad = fire, not an engine firing",
     "tr": "6f497ab45a"
   },
+  "burn|ru|missions/venus/akatsuki.json :: events.2.note": {
+    "why": "binding inflected and split: двигателя OME на 152-й секунде включения",
+    "tr": "8385de784e"
+  },
   "burn|ru|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion",
     "tr": "cb421173cd"
@@ -3133,7 +3137,7 @@
   },
   "orbit|ru|missions/earth/apollo9.json :: events.6.note": {
     "why": "variant: виток (count of revolutions)",
-    "tr": "b307bd0579"
+    "tr": "78f9e9ce18"
   },
   "orbit|ru|missions/earth/aurora-7.json :: description": {
     "why": "variant: виток (count of revolutions)",
@@ -3181,7 +3185,7 @@
   },
   "orbit|ru|missions/earth/gemini3.json :: events.2.note": {
     "why": "variant: виток (count of revolutions)",
-    "tr": "56ac9e7a36"
+    "tr": "e6d16dfbf2"
   },
   "orbit|ru|missions/earth/gemini6a.json :: description": {
     "why": "variant: виток (count of revolutions)",
@@ -3221,7 +3225,7 @@
   },
   "orbit|ru|missions/earth/sputnik1.json :: events.2.note": {
     "why": "variant: виток (count of revolutions)",
-    "tr": "de52ff2240"
+    "tr": "8ad9c1d4b9"
   },
   "orbit|ru|missions/earth/sputnik1.json :: first": {
     "why": "verb orbit carried by the noun спутник Земли; omitted naturally",

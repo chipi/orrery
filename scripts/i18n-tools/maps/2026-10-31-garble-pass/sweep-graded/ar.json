@@ -1,0 +1,2402 @@
+[
+  {
+    "rel": "science/life-in-space/lunar-suits.json",
+    "at": "body_paragraphs.3",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/wormholes.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "title",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'التاريخين' (dual) for 'the exact dates'"
+  },
+  {
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "title",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "title",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/lunar-habitat-design.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "formula_caption",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/inclination.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/lifting-entry.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "diagram_caption",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "narrative_101.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "body_paragraphs.4",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'فرد حديث' and 'الخلفيات الهندسية الثقيلة' awkward"
+  },
+  {
+    "rel": "science/space-stations/node-module.json",
+    "at": "diagram_caption",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'النادري' nonstandard for nadir"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.4",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "station-keeping rendered as keeping the 'space station'"
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "title",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "title",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'ظلّت الكونيات السائدة' ungrammatical for dominant cosmology"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/detecting-extraterrestrial-life.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/space-stations/expedition-cadence.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'قدرة صاروخك من ∆v' clumsy; punchline lost"
+  },
+  {
+    "rel": "science/orbits/orbit-regimes.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.3",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "diagram_caption",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.4.paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/sun-synchronous.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'150 قمر CubeSats' number agreement"
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/keplerian-orbit.json",
+    "at": "diagram_caption",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.3",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "goals.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "goals.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "goals.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "outcome.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.19.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/great-observatories.json",
+    "at": "goals.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.23.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "outcome.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.21.caption",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'ما عاد به هذه المهمات' agreement error"
+  },
+  {
+    "rel": "programs/sputnik.json",
+    "at": "narrative.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/gaganyaan.json",
+    "at": "legacy.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/mars-rovers.json",
+    "at": "lessons.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.18.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "outcome.0.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "goals.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.14.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "link_labels./gallery/deep-sky",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.25.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'حلّقت بها روبرت جودارد' wrong verb/gender; should be launched"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "lessons.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.9.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "outcome.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "goals.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/kuiper.json",
+    "at": "goals.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/jaxa-robotic.json",
+    "at": "goals.2.md",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'سفينة رائدة' for flagship budget"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "narrative.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "link_labels./fleet?focus=yutu-2",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/skylab.json",
+    "at": "narrative.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.9.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.15.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/jaxa-robotic.json",
+    "at": "legacy.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "tagline",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.2.md",
+    "tree": "prose",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'استبدال الضوء الليزري بالراديو' reads as replacing laser with radio; reversed"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.27.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/shenzhou.json",
+    "at": "outcome.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/soviet-lunar.json",
+    "at": "goals.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "goals.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.32.md",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'الحضارة المادية' misparses 'physical extensions of civilisation'"
+  },
+  {
+    "rel": "programs/tiangong.json",
+    "at": "narrative.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/kuiper.json",
+    "at": "legacy.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.19.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.21.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "goals.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "narrative.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/hayabusa.json",
+    "at": "narrative.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.6.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "outcome.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.14.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "legacy.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.24.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/mars-rovers.json",
+    "at": "narrative.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/esa-science.json",
+    "at": "narrative.2.md",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "'تضاهي ما تعجز عنه أيٌّ منها' says rival what they cannot do"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "goals.0.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/starlink.json",
+    "at": "the_land.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/great-observatories.json",
+    "at": "tagline",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "legacy.3.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/hamal.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/peacock.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/wezen.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/luytens-star.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "person name Luyten left in Latin; glossary has لويتن"
+  },
+  {
+    "rel": "universe/named-stars/achernar.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/gacrux.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-c.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/wezen.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'الشعرى اليمانية الساطع' gender mismatch"
+  },
+  {
+    "rel": "universe/named-stars/nunki.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/canopus.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-h.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-f.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-b.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/regulus.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "'نجم Luyten' Latin; glossary form is نجم لويتن"
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'نطاق الجبار' vs 'حزام الجبار' elsewhere"
+  },
+  {
+    "rel": "universe/named-stars/atria.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/menkent.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "'Centaurus' left in Latin beside قنطورس"
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "'النظم' differs from glossary 'النظام'"
+  },
+  {
+    "rel": "universe/named-stars/antares.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "'Ares' left in Latin"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-e.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "BROKEN",
+    "kind": "name",
+    "note": "planet found 'around Barnard e' instead of Barnard's Star; also weight for mass"
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "'Flame' nebula name left in English"
+  },
+  {
+    "rel": "universe/exoplanets/proxima-cen-d.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/adhara.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alnair.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/altair.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "Niulang/Zhinu left in Latin"
+  },
+  {
+    "rel": "universe/named-stars/luytens-star.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/altair.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "'Hyades' left in Latin"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/peacock.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "'Peacock' constellation left in English"
+  },
+  {
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/hd-62509-b.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/polaris.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-b.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "'نجم Luyten' Latin vs glossary"
+  },
+  {
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/menkent.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "three spellings of Centaurus and Latin 'Alpha'"
+  },
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "Andromeda/Pegasus left in Latin"
+  },
+  {
+    "rel": "universe/named-stars/hadar.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/algol.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/gacrux.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-c.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-e.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rasalhague.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "'Asclepius' left in Latin"
+  },
+  {
+    "rel": "universe/named-stars/sargas.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'اسماً بلاد رافدينياً' malformed adjective"
+  },
+  {
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "note": "typo 'الأصلييين'"
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'النسق الأساسي' nonstandard for main sequence"
+  },
+  {
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "cryptobiosis rendered 'السبات التشفيري' (cryptographic); crash as 'الانهيار'"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.2.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mro.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'هابط' for lander; terse, awkward"
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.2.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'عبر الاتصالات' added; teleoperated awkward"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.images.2.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.0.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "left",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.2.images.2.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change1.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "note": "'الوحيدة من بين مهام ... الأجنبية' garbled; meaning unclear"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.1.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.1.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.0.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.0.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.images.2.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "intro",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "left",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'هابط Chang'e 3' for lander"
+  },
+  {
+    "rel": "moon-sites/luna17.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.2.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.0.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/hope.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna10.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "left",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "intro",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "duplicate variant spelling in parentheses"
+  },
+  {
+    "rel": "moon-sites/luna10.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.3.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.0.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars-express.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'منخفضة معدل البتات' ungrammatical"
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.0.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.2.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.2.caption",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'الصخر القاعدي' means mafic rock, not bedrock"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.3.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change5.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.1.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "left",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "plaque sentence subject/gender muddled"
+  },
+  {
+    "rel": "moon-sites/chandrayaan1.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "'عام' (general) for global"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.1.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/chandrayaan1.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.1.caption",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'الطاقم' then dual 'اضطرّا'"
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'كانت الهابط' malformed; 'لحظة تحديد' for defining moment"
+  },
+  {
+    "rel": "museums/musee-air-espace-le-bourget.json",
+    "at": "items.soyuz-t",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.1.why",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "tidal flexing as 'مرونة مدية'"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.1.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.wall",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.1.label",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.2",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.2.l",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "function_detail",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "docking",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.apollo-csm-block-ii",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "science_sections.0.why",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'ينتجه نواة' gender mismatch"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "bio",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'الأغمق والأحمر' for darkest and reddest"
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.apollo-csm-block-ii",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/stafford-air-and-space-museum.json",
+    "at": "items.gemini",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.4.l",
+    "tree": "catalogue",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "'انهداري' for runaway greenhouse; non-standard, unclear"
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "highlights.2",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "interstellar_since_label",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "place",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.3.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.7.note",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "first",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'حصان العمل' calque of workhorse"
+  },
+  {
+    "rel": "earth-objects/gps.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'هذا الكوكبة' gender mismatch"
+  },
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "place",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "comparison",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'كرة مضرب' dated for tennis"
+  },
+  {
+    "rel": "small-bodies/67p.json",
+    "at": "science_sections.1.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/esperance-museum.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "story",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/planet-labs.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.1.why",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'يقلل مداره' ambiguous for shrinking orbit"
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "function_detail",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/venera-13.json",
+    "at": "current_distance_label",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "story",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'تحتوي' fem for the star; 'النسق الرئيسي'"
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "items.discovery",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/cupola.json",
+    "at": "function_detail",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'مراقبة أرضية' for Earth observation"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "surface_composition",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.2",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "scale_fact",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "bio",
+    "tree": "catalogue",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'برغم الجاذبية' reverses 'held by gravity'; rendezvous as 'مناورة'"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.0",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.2",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/mao-zedong-memorial-museum-shaoshan.json",
+    "at": "items.shenzhou",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.0.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.2.why",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "'المهام خارج النظام' for outer-system missions"
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "highlights.2",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.0.why",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "'Keplerian' left in English"
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "place",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "fact",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.0",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "note": "'يؤكد القذائف الماء': ejecta as shells, sentence garbled"
+  },
+  {
+    "rel": "iss-modules/unity.json",
+    "at": "function_detail",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "fact",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/pluto.json",
+    "at": "bio",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.apollo-csm-block-ii",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "items.viking2-lander",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "mission_visits.0",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'حلقة طيران' for flyby"
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "comparison",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

@@ -1,0 +1,2402 @@
+[
+  {
+    "rel": "science/life-in-space/radiation-exposure.json",
+    "at": "body_paragraphs.3",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "cancro is European Portuguese, not pt-BR"
+  },
+  {
+    "rel": "science/life-in-space/muscle-atrophy.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/muscle-atrophy.json",
+    "at": "diagram_caption",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/launch.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "body_paragraphs.4",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "awkward \"base por-volume\"; stiff phrasing"
+  },
+  {
+    "rel": "science/scales-time/long-duration.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "SANS name left in English; clumsy \"e está implicado\""
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "awkward calques: \"apogeu-kick\", \"espiral de íons\""
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"circularizar-se\" wrong reflexive"
+  },
+  {
+    "rel": "science/mission-phases/skip-entry.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"recorrendo\" odd for recurring"
+  },
+  {
+    "rel": "science/mission-phases/met.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.1",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "missing \"de\" after \"exponencialmente mais\""
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.4",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"existe ou desaparece\" odd for lives-or-dies"
+  },
+  {
+    "rel": "science/orbits/vis-viva.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/space-stations/expedition-cadence.json",
+    "at": "narrative_101.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/vis-viva.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "body_paragraphs.4",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"pólvora queima\" garbled, missing \"queimada\""
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"para nunca terem desenvolvido\" awkward negation"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "cut",
+    "note": "\"tempos naturais\" drops \"de decaimento\""
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "body_paragraphs.3",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "PLSS hatch rendered \"eclusa\" (airlock)"
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.3",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "title",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"voável\" non-standard word"
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"baseline\", \"re-entrar\", \"~cada 3 anos\" awkward"
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/space-stations/expedition-cadence.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.4",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "lander rendered \"o pouso\""
+  },
+  {
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "diagram_caption",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/hill-sphere.json",
+    "at": "body_paragraphs.2",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"pequena o suficiente que\" slip"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"traçam\" for trailing; old \"pólo\""
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "awkward \"Block I de pressão estanque\", \"formação em figurino\""
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "intro_sentence",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "\"ao lançar\" blurs \"required to launch\""
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/keplerian-orbit.json",
+    "at": "narrative_101.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/inclination.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "formula_caption",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.1",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.3",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"rovô\" non-standard; \"bundle\" left English"
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.0",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.1",
+    "tree": "science",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "Space Adaptation Syndrome left in English"
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "diagram_caption",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.diagram_alt",
+    "tree": "science",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.29.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.22.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "tagline",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/ros.json",
+    "at": "goals.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.29.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/tiangong.json",
+    "at": "legacy.0.md",
+    "tree": "prose",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "note": "\"pioneirarar\" is a non-word (garbled \"pioneer\")"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "the_land.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/viking.json",
+    "at": "legacy.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/viking.json",
+    "at": "link_labels./programs/mariner",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/starlink.json",
+    "at": "goals.1.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.6.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "the_land.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.28.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/ros.json",
+    "at": "goals.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.10.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "tagline",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "\"Soviets\" left English; \"América\" imprecise"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "the_land.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "goals.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "outcome.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/skylab.json",
+    "at": "narrative.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.7.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/tiangong.json",
+    "at": "legacy.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.13.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.17.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "outcome.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "legacy.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.20.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/kuiper.json",
+    "at": "outcome.0.md",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"desdobramento\" odd for deployment"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "legacy.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "the_land.1.md",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"acidentou um módulo\", \"potência espacial profunda\" awkward"
+  },
+  {
+    "rel": "programs/new-horizons.json",
+    "at": "the_land.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.24.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "legacy.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "narrative.1.md",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Encélado with feminine adjectives; \"atração flexionante\" awkward"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.15.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/commercial-stations.json",
+    "at": "lessons.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "narrative.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/hayabusa.json",
+    "at": "legacy.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/mars-rovers.json",
+    "at": "lessons.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "outcome.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "the_land.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "legacy.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/new-horizons.json",
+    "at": "tagline",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "narrative.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.19.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "lessons.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/gaganyaan.json",
+    "at": "narrative.0.md",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"atalhar\" non-standard; \"amostras de experiência\" literal"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.29.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "lessons.0.md",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"fio duplo\", \"construída em ser a primeira\" awkward"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "the_land.1.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "legacy.0.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "outcome.2.md",
+    "tree": "prose",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"se torna devida\" calque of \"comes due\""
+  },
+  {
+    "rel": "programs/great-observatories.json",
+    "at": "link_labels./explore",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.2.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.8.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.23.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.26.caption",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "programs/new-horizons.json",
+    "at": "goals.0.md",
+    "tree": "prose",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/achernar.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/almach.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/kaus-australis.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-h.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alhena.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "\"Gemini\" left Latin; elsewhere \"Gêmeos\""
+  },
+  {
+    "rel": "universe/named-stars/hadar.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/lalande-21185.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/avior.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "\"False Cross\" left in English (Falsa Cruz)"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-c.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"muito quente demais\" redundant"
+  },
+  {
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/antares.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/vega.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "film \"Contact\" left in English (Contato)"
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/denebola.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-b.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"ultragelada\" wrong for ultracool (ultrafria)"
+  },
+  {
+    "rel": "universe/named-stars/hamal.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-g.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/castor.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/vega.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "\"Pole Star\" and \"Lyra\" left in English"
+  },
+  {
+    "rel": "universe/named-stars/hadar.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-c.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/menkent.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "\"Centaurus\" left Latin instead of Centauro"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-f.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/canopus.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "\"Troy\" left English; Portuguese is Troia"
+  },
+  {
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/gacrux.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/sargas.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-d.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-e.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-g.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/wezen.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/gacrux.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-b.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/51-peg-b.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "note": "\"rivalzando\" is a non-word (rivalizando)"
+  },
+  {
+    "rel": "universe/named-stars/elnath.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/atria.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/sargas.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "BROKEN",
+    "kind": "name",
+    "note": "Mimosa replaced by \"Becrux\" in the text"
+  },
+  {
+    "rel": "universe/named-stars/canopus.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/pollux.json",
+    "at": "fact",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/capella.json",
+    "at": "bio",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/kaus-australis.json",
+    "at": "cultural",
+    "tree": "universe",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/chandrayaan3.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "marsquakes rendered \"maremotos\" (sea quakes), wrong meaning"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.1.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.0.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars3-orbiter.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/smart-1.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"missões de ESA\" missing article; stiff"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "intro",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.0.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.0.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.0.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.0.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"relê\" misspelled relé; \"lander\" left English"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.3.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.0.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"site\" left English; \"lado distante\""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.0.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.0.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars-express.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.2.images.2.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.2.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "left",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.0.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.1.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "intro",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.0.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars-express.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"de ESA\" missing article; capital after semicolon"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.0.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "fact",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "\"jettison\" left in English"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "intro",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.1.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.2.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/viking1-lander.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"landers\" left English; \"empreendimento de ciência\" odd"
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.1.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "intro",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.2.images.2.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mangalyaan.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.images.0.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "left",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mro.json",
+    "at": "capability",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.0.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.0.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.3.subtitle",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.1.caption",
+    "tree": "places",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "film",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/htv_x.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "comparison",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "place",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.delta-ii",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/planet-labs.json",
+    "at": "scale_fact",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.saturn-v",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "surface_composition",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.4.why",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"pousadores\" odd word for landers"
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "highlights.1",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.1",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.2.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "story",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.3.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "highlights.0",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "mission_visits.0",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "highlights.2",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "\"rendezvous\" left in English"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.0.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "bio",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "surface_composition",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.atlantis",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "bio",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "science_sections.0.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "film",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "items.apollo-csm-block-i",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.1.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.2.l",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "items.soyuz-tm",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.0.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.0.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"foguete de trabalho\" calque of workhorse"
+  },
+  {
+    "rel": "museums/musee-air-espace-le-bourget.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "scale_fact",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "comparison",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "scale_fact",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"acordos EEI\" missing \"da\""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.0",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.1.why",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "decimal points \"2.2–3.2\" instead of commas"
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/goes.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "firsts.0.label",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "bio",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.2",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.2",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "first",
+    "tree": "catalogue",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "Entire English sentence left, with a few Portuguese words mixed in"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.1.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/venera-13.json",
+    "at": "current_distance_label",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.2.note",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "surface_composition",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "\"lander\" left English; \"propulsores querosene-oxigênio\" clunky"
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.1",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.1.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "science_sections.1.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.0",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"triplo\" for three-stage; \"indigenamente\" odd"
+  },
+  {
+    "rel": "museums/korolev-museum-zhytomyr.json",
+    "at": "description",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/oumuamua.json",
+    "at": "science_sections.1.why",
+    "tree": "catalogue",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

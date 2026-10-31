@@ -1,0 +1,16 @@
+[
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "en": "Mars Express is a deep-space orbiter built by EADS Astrium in Europe. ESA's first Mars orbiter; Europe's first planetary mission. In service since 2003.",
+    "old": "Mars Express は EADS Astrium によってヨーロッパで建造された深宇宙周回機です。ESA の初の火星周回機；ヨーロッパ初の惑星探査機。2003年から運用中です。",
+    "new": "Mars Expressは、ヨーロッパのEADS Astriumが製造した深宇宙周回探査機です。ESA初の火星周回機であり、ヨーロッパ初の惑星探査ミッションです。2003年から運用されています。"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "en": "India’s first successful lunar lander (August 2023), the first spacecraft to land near the lunar south pole. Four years after Vikram CY-2 crashed in the same region — the redemption arc India and ISRO needed.",
+    "old": "インド初の月面着陸成功機（2023年8月）であり、月の南極付近に着陸した最初の宇宙機。同じ地域でVikram CY-2が墜落してから4年後のことで、インドとISROが必要としていた汚名返上となった。",
+    "new": "インド初の月面着陸成功機（2023年8月）であり、月の南極付近に着陸した最初の宇宙機。同じ地域でVikram CY-2が墜落してから4年後に、インドとISROが必要としていた名誉挽回の物語を成し遂げた。"
+  }
+]

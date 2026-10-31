@@ -1,0 +1,72 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "en": "Cygnus Standard is a robotic cargo spacecraft built by Orbital Sciences in USA. Pressurised-only ISS cargo carrier. Flew 2013–2014; succeeded by the Enhanced Cygnus.",
+    "old": "Cygnus Standard संयुक्त राज्य अमेरिका में Orbital Sciences द्वारा निर्मित एक रोबोटिक कार्गो स्पेसक्राफ्ट है। दबावित-केवल आईएसएस कार्गो वाहक। 2013–2014 में उड़ान भरी; उसका उत्तराधिकारी Enhanced Cygnus है।",
+    "new": "Cygnus Standard संयुक्त राज्य अमेरिका में Orbital Sciences द्वारा निर्मित एक रोबोटिक कार्गो स्पेसक्राफ्ट है। केवल दबावयुक्त कार्गो ले जाने वाला आईएसएस कार्गो वाहक। 2013–2014 में उड़ान भरी; उसका उत्तराधिकारी Enhanced Cygnus है।"
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "en": "Phoenix is a planetary lander built by Lockheed Martin in USA. Confirmed water ice in Martian soil. Mission ended in 2008.",
+    "old": "Phoenix संयुक्त राज्य अमेरिका में Lockheed Martin द्वारा निर्मित एक ग्रहीय लैंडर है। Martian मिट्टी में पानी बर्फ की पुष्टि की। मिशन 2008 में समाप्त हुआ।",
+    "new": "Phoenix संयुक्त राज्य अमेरिका में Lockheed Martin द्वारा निर्मित एक ग्रहीय लैंडर है। मंगल की मिट्टी में जल-बर्फ की पुष्टि की। मिशन 2008 में समाप्त हुआ।"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "en": "Venera 7-class is a planetary lander built by NPO Lavochkin in USSR. First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970). Mission ended in 1970.",
+    "old": "Venera 7-class एक ग्रहीय लैंडर है जिसे USSR के NPO Lavochkin द्वारा बनाया गया था। यह किसी अन्य ग्रह पर पहली नरम लैंडिंग थी और किसी अन्य ग्रह की सतह से डेटा प्रेषित करने वाली पहली मिशन थी (शुक्र, 1970)। मिशन 1970 में समाप्त हुआ।",
+    "new": "Venera 7-class USSR के NPO Lavochkin द्वारा निर्मित एक ग्रहीय लैंडर है। यह किसी अन्य ग्रह पर पहली नरम लैंडिंग थी और किसी अन्य ग्रह की सतह से डेटा प्रेषित करने वाला पहला यान (शुक्र, 1970)। मिशन 1970 में समाप्त हुआ।"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "en": "Lunokhod 2 is a planetary rover built by NPO Lavochkin in USSR. Roamed 39 km on the Moon — record till 2014. Mission ended in 1973.",
+    "old": "Lunokhod 2 एक ग्रह रोवर है जो यूएसएसआर में NPO Lavochkin द्वारा बनाया गया है। चंद्रमा पर 39 किलोमीटर की दूरी पर - 2014 तक रिकॉर्ड। मिशन 1973 में समाप्त हुआ।",
+    "new": "Lunokhod 2 USSR में NPO Lavochkin द्वारा निर्मित एक ग्रहीय रोवर है। चंद्रमा पर 39 किमी चला — 2014 तक का रिकॉर्ड। मिशन 1973 में समाप्त हुआ।"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "en": "Yutu is a planetary rover built by CAST in China. First Chinese lunar rover; Chang'e-3. Mission ended in 2016.",
+    "old": "Yutu एक ग्रहीय रोवर है जो CAST द्वारा चीन में बनाया गया था। पहला चीनी चंद्र रोवर; Chang'e-3. मिशन 2016 में समाप्त हुआ।",
+    "new": "Yutu CAST द्वारा चीन में निर्मित एक ग्रहीय रोवर है। पहला चीनी चंद्र रोवर; Chang'e-3। मिशन 2016 में समाप्त हुआ।"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "en": "ATV (Automated Transfer Vehicle) is a robotic cargo spacecraft built by Astrium / Airbus in Europe. ESA's flagship ISS cargo carrier that flew five missions to the ISS from 2008 to 2015, delivering cargo, water, air and propellant while using its engines to reboost the Station.",
+    "old": "ATV (Automated Transfer Vehicle) Astrium / Airbus द्वारा निर्मित एक रोबोटिक कार्गो अंतरिक्ष यान है (यूरोप)। ESA का प्रमुख आईएसएस कार्गो वाहक जिसने 2008 से 2015 तक आईएसएस के लिए पाँच मिशन उड़ाए, कार्गो, पानी, हवा और प्रणोदक पहुँचाते हुए और अपने इंजनों का उपयोग करके स्टेशन को बूस्ट करते हुए।",
+    "new": "ATV (Automated Transfer Vehicle) यूरोप में Astrium / Airbus द्वारा निर्मित एक रोबोटिक कार्गो अंतरिक्ष यान है। ESA का प्रमुख आईएसएस कार्गो वाहक, जिसने 2008 से 2015 तक आईएसएस के लिए पाँच मिशन उड़ाए; यह कार्गो, पानी, हवा और प्रणोदक पहुँचाता था और अपने इंजनों से स्टेशन की कक्षा ऊँची उठाता था।"
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "en": "XMM-Newton is a space observatory built by Airbus Defence and Space in Europe. ESA's flagship X-ray observatory. In service since 1999.",
+    "old": "XMM-Newton एक अंतरिक्ष वेधशाला है जिसे Airbus Defence and Space द्वारा यूरोप में निर्मित किया गया था। ESA की प्रमुख X-ray वेधशाला। 1999 से सेवा में है।",
+    "new": "XMM-Newton यूरोप में Airbus Defence and Space द्वारा निर्मित एक अंतरिक्ष वेधशाला है। ESA की प्रमुख एक्स-रे वेधशाला। 1999 से सेवा में।"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "en": "India’s first successful lunar lander (August 2023), the first spacecraft to land near the lunar south pole. Four years after Vikram CY-2 crashed in the same region — the redemption arc India and ISRO needed.",
+    "old": "भारत का पहला सफल चंद्र लैंडर (अगस्त 2023), चंद्रमा के दक्षिणी ध्रुव के पास उतरने वाला पहला अंतरिक्ष यान। चार साल पहले विक्रम CY-2 उसी क्षेत्र में दुर्घटनाग्रस्त हुआ था — यह वह मोचन यात्रा थी जिसकी भारत और इसरो को जरूरत थी।",
+    "new": "भारत का पहला सफल चंद्र लैंडर (अगस्त 2023), चंद्रमा के दक्षिणी ध्रुव के पास उतरने वाला पहला अंतरिक्ष यान। विक्रम CY-2 के उसी क्षेत्र में दुर्घटनाग्रस्त होने के चार साल बाद — वह मोचन-कथा जिसकी भारत और इसरो को ज़रूरत थी।"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3 and the upcoming Gaganyaan crew programme",
+    "old": "भारत का भारी-उठान प्लेटफॉर्म — GSLV Mk III / LVM3 द्वारा चंद्रयान-3 और आने वाले गगनयान क्रू कार्यक्रम में",
+    "new": "भारत का भारी-प्रक्षेपण पैड — GSLV Mk III / LVM3 से चंद्रयान-3 और आगामी गगनयान क्रू कार्यक्रम तक"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3 and the upcoming Gaganyaan crew programme",
+    "old": "भारत का भारी-उठान प्रक्षेपण पैड — GSLV Mk III / LVM3 द्वारा चंद्रयान-3 और आने वाले गगनयान क्रू कार्यक्रम में",
+    "new": "भारत का भारी-प्रक्षेपण पैड — GSLV Mk III / LVM3 से चंद्रयान-3 और आगामी गगनयान क्रू कार्यक्रम तक"
+  }
+]

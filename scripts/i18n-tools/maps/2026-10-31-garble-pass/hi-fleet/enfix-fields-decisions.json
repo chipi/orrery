@@ -1,0 +1,176 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy grammar",
+    "new": "Cygnus Standard संयुक्त राज्य अमेरिका में Orbital Sciences द्वारा निर्मित एक रोबोटिक कार्गो स्पेसक्राफ्ट है। केवल दबावयुक्त कार्गो ले जाने वाला आईएसएस कार्गो वाहक। 2013–2014 में उड़ान भरी; उसका उत्तराधिकारी Enhanced Cygnus है।",
+    "note": "दबावित-केवल is unnatural"
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "English left in",
+    "new": "Phoenix संयुक्त राज्य अमेरिका में Lockheed Martin द्वारा निर्मित एक ग्रहीय लैंडर है। मंगल की मिट्टी में जल-बर्फ की पुष्टि की। मिशन 2008 में समाप्त हुआ।",
+    "note": "Martian left in English; पानी बर्फ"
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "Venera 7-class USSR के NPO Lavochkin द्वारा निर्मित एक ग्रहीय लैंडर है। यह किसी अन्य ग्रह पर पहली नरम लैंडिंग थी और किसी अन्य ग्रह की सतह से डेटा प्रेषित करने वाला पहला यान (शुक्र, 1970)। मिशन 1970 में समाप्त हुआ।",
+    "note": "पहली मिशन gender error; garbled clause"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut clause",
+    "new": "Lunokhod 2 USSR में NPO Lavochkin द्वारा निर्मित एक ग्रहीय रोवर है। चंद्रमा पर 39 किमी चला — 2014 तक का रिकॉर्ड। मिशन 1973 में समाप्त हुआ।",
+    "note": "verb roamed lost; fragment"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "punctuation",
+    "new": "Yutu CAST द्वारा चीन में निर्मित एक ग्रहीय रोवर है। पहला चीनी चंद्र रोवर; Chang'e-3। मिशन 2016 में समाप्त हुआ।",
+    "note": "full stop instead of danda"
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left in",
+    "new": "ATV (Automated Transfer Vehicle) यूरोप में Astrium / Airbus द्वारा निर्मित एक रोबोटिक कार्गो अंतरिक्ष यान है। ESA का प्रमुख आईएसएस कार्गो वाहक, जिसने 2008 से 2015 तक आईएसएस के लिए पाँच मिशन उड़ाए; यह कार्गो, पानी, हवा और प्रणोदक पहुँचाता था और अपने इंजनों से स्टेशन की कक्षा ऊँची उठाता था।",
+    "note": "बूस्ट is English; awkward parenthesis"
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left in",
+    "new": "XMM-Newton यूरोप में Airbus Defence and Space द्वारा निर्मित एक अंतरिक्ष वेधशाला है। ESA की प्रमुख एक्स-रे वेधशाला। 1999 से सेवा में।",
+    "note": "X-ray left in Latin script"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "भारत का पहला सफल चंद्र लैंडर (अगस्त 2023), चंद्रमा के दक्षिणी ध्रुव के पास उतरने वाला पहला अंतरिक्ष यान। विक्रम CY-2 के उसी क्षेत्र में दुर्घटनाग्रस्त होने के चार साल बाद — वह मोचन-कथा जिसकी भारत और इसरो को ज़रूरत थी।",
+    "note": "चार साल पहले reverses the timing"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "भारत का भारी-प्रक्षेपण पैड — GSLV Mk III / LVM3 से चंद्रयान-3 और आगामी गगनयान क्रू कार्यक्रम तक",
+    "note": "भारी-उठान is a calque, not a launch term"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "भारत का भारी-प्रक्षेपण पैड — GSLV Mk III / LVM3 से चंद्रयान-3 और आगामी गगनयान क्रू कार्यक्रम तक",
+    "note": "भारी-उठान is a calque, not a launch term"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  }
+]

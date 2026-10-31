@@ -7,7 +7,8 @@
 //   - has an English-style thousands separator (1,731 is 1.731 in nl/de/…);
 //   - loses or alters a markdown link target;
 //   - is over the 140-character tagline cap;
-//   - misses a technical term's binding form.
+//   - misses a technical term's binding form;
+//   - drops an ISO date of the English (the site keeps ISO dates in every locale).
 // Edits are written only for fields whose text in the repo is still the work file's `tr`.
 // Exit 1 when a decision is missing or does not line up with the work file.
 import fs from 'node:fs';
@@ -60,6 +61,10 @@ items.forEach((it, i) => {
   if (COMMA_DECIMAL.has(loc) && /\d,\d{3}(?!\d)/.test(nu) && !/\d,\d{3}(?!\d)/.test(it.tr))
     why.push('English-style 1,000 separator');
   if (links(it.en) !== links(nu)) why.push('link targets differ');
+  const isoLost = (it.en.match(/\b\d{4}-\d{2}(?:-\d{2})?\b/g) ?? []).filter(
+    (d) => +d.slice(5, 7) <= 12 && !nu.includes(d),
+  );
+  if (isoLost.length) why.push(`ISO date reformatted: ${isoLost.join(', ')}`);
   if (it.at === 'tagline' && nu.length > 140) why.push(`tagline ${nu.length} > 140`);
   for (const [t, e] of Object.entries(terms)) {
     if (!e[loc] || !enRegex(t, e).test(it.en)) continue;

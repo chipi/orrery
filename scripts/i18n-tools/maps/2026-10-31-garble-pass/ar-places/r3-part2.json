@@ -1,0 +1,1099 @@
+[
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars-odyssey.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "أطول مركبة فضائية نشطة باستمرار في مدار أي كوكب غير الأرض. كشفت في عام 2002 عن ترسبات هائلة من جليد الماء تحت السطح (اكتشاف وجّه اختيار مواقع Phoenix وCuriosity). ولا تزال نشطة في عام 2026 كعقدة ترحيل للأصول السطحية.",
+    "note": "Missing preposition before years; clumsy phrasing."
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.0.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.3.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "أول مسبار تجوال تابع لـ ESA على المريخ. كانت في الأصل مهمة مشتركة بقيادة روسية مخطط لها لعام 2022؛ ثم أُلغيت بعد غزو أوكرانيا عام 2022 وأُعيد تحديد نطاقها لتقودها ESA بمساهمات من NASA. أُعيد تحديد موعدها: إطلاق عام 2028 ووصول عام 2029. يحمل المسبار مثقابًا لحفر ما تحت السطح بطول مترين — وهو الأعمق المخطط له حتى الآن لمسبار تجوال على المريخ، صُمم للوصول إلى ما تحت المتر العلوي المتضرر بالإشعاع.",
+    "note": "Ungrammatical adjective; adds \"Russian\" to the invasion."
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna10.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/artemis4.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "عمليات بشرية على السطح القطبي وتجربة أولية لاستخدام الموارد في الموقع — الخطوة التمهيدية المباشرة لمهام المريخ المأهولة، التي ستعتمد على جليد الماء القطبي في المستهلكات وفي الوقود الدافع معًا.",
+    "note": "Precursor and propellant wrongly rendered."
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "هبطت Luna 17 في بحر الأمطار في 17 نوفمبر 1970، ونشرت Lunokhod 1، أول مركبة ذات عجلات تعمل على عالم آخر، وسبقت بذلك مركبة LRV التابعة لوكالة NASA بسبعة أشهر. قطعت Lunokhod 1 مسافة 10.5 كم خلال 11 يومًا قمريًا، بتحكّم فريق من خمسة أشخاص في القرم. وأرسلت 25,000 صورة فوتوغرافية و211 بانوراما قبل أن تصمت في سبتمبر 1971.",
+    "note": "Arabic-script separators instead of the ar comma/period."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "أول مركبة فضائية تهبط على الجانب البعيد من القمر — وهي تقنيًا وتشغيليًا أصعب عملية هبوط قمري جرت محاولتها على الإطلاق. تطلبت قمرًا صناعيًا مرحِّلًا (Queqiao) عند النقطة L2 لأن الجانب البعيد لا يتصل مباشرة بالأرض راديويًا. قطع المسبار الجوّال Yutu-2 أكثر من 1.6 كم قبل أن يتوقف عن الحركة في مارس 2024؛ واستمر إرسال بيانات القياس عن بعد حتى سبتمبر 2024 على الأقل. ولم يكن الجانب البعيد قد زُير من قبل.",
+    "note": "Relay mistranslated; telemetry wrong; first sentence ungrammatical."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/lro.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "استطلاع قمري حديث مرجعي — العيون في السماء لكل بعثة قمرية حديثة.",
+    "note": "\"Definitive\" rendered as \"final\"; reconnaissance weak."
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mangalyaan.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/clementine.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "أول مركبة جوّالة (روفر) على المريخ (Sojourner، 11 كغ، بحجم فرن ميكروويف). أثبتت نمط الدخول والهبوط المحمي بوسائد هوائية (EDL) — النمط نفسه الذي استخدمته لاحقًا Spirit وOpportunity. قطعت Sojourner نحو 100 م وحلّلت 16 هدفًا من الصخور والتربة قبل أن يتوقف مرحِّل المركبة الهابطة عن العمل. وقد جعلت صور Pathfinder المريخ مشهورًا على الويب في بداياته — وهي أول بعثة بين الكواكب يستهلك الجمهور بياناتها في الوقت الفعلي.",
+    "note": "Relay failure rendered as lost contact via capture devices."
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change2.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "أول مهمة صينية في الفضاء السحيق؛ أول مهمة غير تابعة لـ NASA أو ESA تصل إلى L2؛ أول تحليق قريب صيني من كويكب.",
+    "note": "Flyby not in the bound form."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.3.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars3-orbiter.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "المكوّن المداري لمهمة Mars 3. أعاد أول قياسات لدرجة حرارة سطح المريخ ولغلافه الجوي من المدار. أجرى رصدًا دام ثمانية أشهر قبل فقدان الاتصال به في أغسطس 1972.",
+    "note": "\"ثماني أشهر\" wrong number agreement."
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.3.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/chandrayaan1.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.3.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.2.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "أول مركبة تعيد بيانات عن الغلاف الجوي أثناء الهبوط إلى المريخ. فُقد الاتصال عند ملامسة السطح، لكن قياسات الهبوط — الضغط ودرجة الحرارة ومقطع جزئي لتركيب الغلاف الجوي — غذّت النماذج الهندسية التي اعتمد عليها Viking بعد ثلاث سنوات.",
+    "note": "Descent rendered \"نزول\" instead of bound الهبوط."
+  },
+  {
+    "rel": "mars-sites/mars3-orbiter.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "أول مركبة مدارية سوفييتية حول المريخ؛ أول من أوصل حمولة هبوط ناعم إلى كوكب آخر.",
+    "note": "Orbiter rendered as \"مدار\" (orbit)."
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "بانوراما رئاسية محسّنة (Improved Presidential Panorama): منظر ملوّن بزاوية 360° لأريس فاليس. ويظهر Twin Peaks عند الأفق (سُمّي تيمّنًا بالمسلسل التلفزيوني).",
+    "note": "English title left untranslated."
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "هبطت المركبة Luna 21 في فوهة لو مونييه في 15 يناير 1973، ونشرت المركبة Lunokhod 2، خليفة أول مركبة جوالة قمرية في العالم. قطعت Lunokhod 2 مسافة 42.1 كم على مدى 4 أشهر، وهو رقم قياسي ظل صامدًا حتى تجاوزته المركبة Opportunity التابعة لوكالة NASA على المريخ في يوليو 2014، بعد 41 عامًا. وأعادت 80,000 صورة تلفزيونية و86 مسحًا بانوراميًا، قبل أن تنهار كومة من الثرى القمري على المبرِّد فتسخّن المركبة الجوالة بإفراط.",
+    "note": "Verb gender mismatch with \"كومة\"; clumsy ending."
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "خريطة مسار Lunokhod 1 — تعرّج بطول 10.5 كم عبر بحر الأمطار، مع محطات علمية عند الصخور والحفر.",
+    "note": "Arabic decimal separator instead of period."
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/clementine.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "مهمة مشتركة بين NASA ووزارة الدفاع الأمريكية ضمن مبادرة الدفاع الاستراتيجي. قضت عشرة أسابيع في رسم خريطة القمر في 11 نطاقًا طيفيًا — وهي أول خريطة شاملة متعددة الأطياف منتظمة للقمر كله. أسفرت قياسات رادار ثنائي الموضع عند القطب الجنوبي عن أولى المؤشرات على جليد الماء القطبي، وأكّدته لاحقًا Lunar Prospector وChandrayaan-1.",
+    "note": "Mission description altered; \"11 نطاقات\" ungrammatical; bistatic wrong."
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "أثبتت بنية الاتصالات القائمة على قمر صناعي مرحِّل للعمليات خارج خط الرؤية المباشر — النمط نفسه الذي ستحتاج إليه أي مهمة إلى الجانب البعيد من المريخ أو إلى قطبيه.",
+    "note": "Relay satellite rendered with wrong word \"تتابع\"."
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "هبطت Apollo 14 في مرتفعات فرا ماورو في 5 فبراير 1971، وهو الهدف الأصلي لمهمة Apollo 13، وقد أُنجزت بعد الانفجار الذي أصاب مهمة Apollo 13. جرّ شيبارد وميتشيل ناقل المعدات المعياري (Modular Equipment Transporter)، وهو أشبه بعربة «ريكشا»، صعودًا على سفوح فوهة كون، وعادا بـ 43 كغ من الحَصى المتلاحم (البريشيا)، وهي شظايا من الاصطدام الهائل الذي كوّن بحر الأمطار قبل 3.9 مليار سنة. ومن المشاهد الشهيرة أن شيبارد ضرب كرتَي غولف قبل الإقلاع.",
+    "note": "Modular Equipment Transporter rendered clumsily."
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/zhurong.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/tgo.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "النصف الذي نجا من مهمة ExoMars 2016 (وكانت Schiaparelli مركبة الهبوط). يحدّد خصائص غاز الميثان في الغلاف الجوي وبخار الماء وغيرهما من الغازات الأثرية بحساسية تبلغ جزءًا واحدًا من التريليون. لم يجد ميثانًا يتجاوز 0.05 ppbv — أي أقل بكثير من جميع الاكتشافات المزعومة سابقًا — مما يعمّق لغز الميثان بدلًا من أن يحسمه. وتبقى اكتشافات Curiosity على مستوى السطح بلا تفسير.",
+    "note": "\"Characterises\" and \"trace gases\" wrongly rendered."
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "مركبة تجريبية للدخول في الغلاف الجوي والهبوط وملامسة السطح ضمن ExoMars 2016. أدّى عطل في برنامج التحكم إلى تشبّع وحدة القياس القصورية، فحسبت المركبة ارتفاعًا سالبًا وفُعّل إلقاء المظلة والغلاف الخلفي قبل أوانه. أطلقت المحركات النفاثة لوقت وجيز كما لو أنها على الأرض بالفعل، ثم توقفت. وسقطت سقوطًا حرًّا مسافة نحو 3.7 كم إلى السطح. وقد أفادت بيانات الرحلة في إعادة تصميم الدخول في الغلاف الجوي والهبوط وملامسة السطح لمهمة ExoMars 2028.",
+    "note": "Demonstrator and \"informed\" mistranslated; bound terms not used."
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "أول هبوط قمري للصين — أول هبوط ناعم على القمر منذ 37 عامًا. ولا تزال مركبة الهبوط Chang'e 3 تعمل، مما يجعلها أطول مركبة هبوط قمرية بقاءً على الإطلاق. قطعت المركبة الجوّالة Yutu مسافة 114 م قبل أن تتعطل آلية الحركة فيها، لكن أجهزتها واصلت إرسال البيانات العلمية.",
+    "note": "\"لـ الصين\" spacing; verb gender mismatch with \"آلية\"."
+  },
+  {
+    "rel": "moon-sites/change1.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "أول مهمة قمرية صينية. بُنيت وشُغّلت عمدًا كاختبار تمهيدي لمركبة الهبوط Chang'e 3 — فقد كانت مرحلتها المدارية بروفة للتأهيل الطيراني للاتصالات في الفضاء السحيق والميكانيكا المدارية اللتين ستعتمد عليهما مهمة مركبة الهبوط. واصطدمت بالقمر في نهاية عمرها اصطدامًا مضبوطًا كاختبار ارتطام.",
+    "note": "Calqued, clumsy phrasing throughout."
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "أول مركبة تحقق هبوطًا ناعمًا على القمر وتنقل صورًا من سطحه. أنهت تسع صور بانورامية الجدل حول ما إذا كانت مركبات الهبوط ستغوص في غبار قمري عميق. لحظة فارقة — صار الوصول إلى القمر ممكنًا.",
+    "note": "\"لحظة تحديد\" nonsense; gender mismatch in landers clause."
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "مركبة الهبوط Chang'e 6 على الجانب البعيد — إعادة عينات من مركبة ثابتة بلا مركبة جوالة، التقطت لها الصورة مركبة جوالة صغيرة جرى نشرها.",
+    "note": "Garbled \"stationary sample return\" and awkward capture clause."
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "أول مقطع موضعي للغلاف الجوي للمريخ أثناء الدخول والهبوط (EDL) — مدخل مباشر لكل تصاميم الدخول والهبوط اللاحقة.",
+    "note": "\"Profile\" rendered as \"ملف\" (file)."
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.3.subtitle",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "1,319 هزّة مريخية — باطن الكوكب يتكشّف",
+    "note": "Thousands separator missing (1,319)."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

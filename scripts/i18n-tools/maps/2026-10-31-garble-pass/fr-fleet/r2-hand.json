@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "description",
+    "find": "missions de la navette spatiale",
+    "replace": "missions du Space Shuttle"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "description",
+    "find": "vols de la navette spatiale",
+    "replace": "vols du Space Shuttle"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "description",
+    "find": "vols de la navette spatiale",
+    "replace": "vols du Space Shuttle"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "dispatch",
+    "find": "la flotte des navettes spatiales",
+    "replace": "la flotte du Space Shuttle"
+  },
+  {
+    "rel": "fleet/space-suit/aces.json",
+    "at": "description",
+    "find": "de la Navette spatiale",
+    "replace": "du Space Shuttle"
+  },
+  {
+    "rel": "fleet/space-suit/aces.json",
+    "at": "best_known_for",
+    "find": "de la Navette spatiale",
+    "replace": "du Space Shuttle"
+  },
+  {
+    "rel": "fleet/launch-site/uchinoura.json",
+    "at": "description",
+    "find": "Le centre spatial d'Uchinoura",
+    "replace": "L'Uchinoura Space Center"
+  }
+]

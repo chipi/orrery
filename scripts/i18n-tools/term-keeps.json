@@ -151,9 +151,13 @@
     "why": "variant: propulseurs à poudre",
     "tr": "4863ef8ee9"
   },
+  "booster|fr|fleet/crewed-spacecraft/new-shepard.json :: description": {
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md",
+    "tr": "46b588914f"
+  },
   "booster|fr|fleet/engine/h-1.json :: best_known_for": {
     "why": "variant: first stage (Saturn I/IB booster = premier étage)",
-    "tr": "7bf0bcdb5e"
+    "tr": "8a525d0429"
   },
   "booster|fr|fleet/engine/merlin-1d.json :: tagline": {
     "why": "variant: first stage (étage)",
@@ -161,15 +165,31 @@
   },
   "booster|fr|fleet/launch-site/lc-34.json :: dispatch": {
     "why": "variant: propulseurs (rockets in general sense)",
-    "tr": "2c2e620896"
+    "tr": "c349ec1eeb"
+  },
+  "booster|fr|fleet/launch-site/starbase-orbital-a.json :: description": {
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md",
+    "tr": "8d33a98044"
+  },
+  "booster|fr|fleet/launch-site/vandenberg-slc-4e.json :: description": {
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md",
+    "tr": "f8d8928646"
   },
   "booster|fr|fleet/launcher/atlas-lv-3b.json :: description": {
     "why": "variant: launcher (Atlas booster = whole vehicle)",
     "tr": "703e4508d0"
   },
+  "booster|fr|fleet/launcher/falcon-9.json :: best_known_for": {
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md",
+    "tr": "9423a6ead2"
+  },
   "booster|fr|fleet/launcher/falcon-9.json :: description": {
     "why": "variant: first stage (Falcon 9 Block 5 booster)",
     "tr": "6c9468045f"
+  },
+  "booster|fr|fleet/launcher/falcon-9.json :: tagline": {
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md",
+    "tr": "a592dc63bd"
   },
   "booster|fr|fleet/launcher/falcon-heavy.json :: best_known_for": {
     "why": "variant: lanceur (whole vehicle)",
@@ -185,11 +205,11 @@
   },
   "booster|fr|fleet/launcher/mercury-redstone.json :: description": {
     "why": "variant: propulseur (rocket body, Redstone single stage)",
-    "tr": "83a15f4a63"
+    "tr": "58ab91a0b8"
   },
   "booster|fr|fleet/launcher/mercury-redstone.json :: dispatch": {
     "why": "variant: lanceur (rocket in general sense)",
-    "tr": "f8f9536e07"
+    "tr": "d19a1141e0"
   },
   "booster|fr|fleet/launcher/soyuz-2.json :: description": {
     "why": "variant: propulseurs auxiliaires",
@@ -901,15 +921,15 @@
   },
   "burn|fr|fleet/engine/lr87.json :: description": {
     "why": "combustion: burning Aerozine",
-    "tr": "3eac6d547b"
+    "tr": "162f8292cf"
   },
   "burn|fr|fleet/engine/yf-77.json :: description": {
     "why": "combustion: burning LOX and LH2",
-    "tr": "6ab9fcaa50"
+    "tr": "f836f11ec5"
   },
   "burn|fr|fleet/launcher/new-glenn.json :: description": {
     "why": "combustion: hydrogen-burning engines",
-    "tr": "862fb0602c"
+    "tr": "c8cd617d91"
   },
   "burn|fr|fleet/launcher/starship.json :: description": {
     "why": "combustion: methane-burning engine",
@@ -917,7 +937,7 @@
   },
   "burn|fr|fleet/launcher/titan-ii-glv.json :: dispatch": {
     "why": "combustion: burned storable liquids",
-    "tr": "ee48a9a2d3"
+    "tr": "e22c860782"
   },
   "burn|fr|missions/earth/apollo-1.json :: payload": {
     "why": "burned on pad = destroyed by fire, not an engine firing",
@@ -2403,6 +2423,10 @@
     "why": "correct as is",
     "tr": "e49a596fc2"
   },
+  "inclination|fr|fleet/orbiter/luna10.json :: description": {
+    "why": "variant: orbite inclinée à 71,9° (participle of the binding)",
+    "tr": "394d3898f5"
+  },
   "inclination|fr|science/planets/kuiper-belt.json :: body_paragraphs.0": {
     "why": "rendered as adjectives inclinées/inclinée",
     "tr": "c15c757007"
@@ -3729,7 +3753,7 @@
   },
   "payload|fr|fleet/launcher/falcon-heavy.json :: description": {
     "why": "variant: capacité d'emport",
-    "tr": "8b13563fa9"
+    "tr": "9f63e040e3"
   },
   "payload|fr|missions/venus/magellan.json :: description": {
     "why": "variant: soute (payload bay)",

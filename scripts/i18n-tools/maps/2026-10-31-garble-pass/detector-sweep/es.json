@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "museums/china-science-and-technology-museum.json",
+    "at": "name",
+    "old": "China Science and Technology Museum",
+    "new": "Museo de Ciencia y Tecnología de China"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.1.l",
+    "old": "Arrokoth flyby (NASA New Horizons)",
+    "new": "Sobrevuelo de Arrokoth (NASA New Horizons)"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.1.l",
+    "old": "DART final results (NASA)",
+    "new": "Resultados finales de DART (NASA)"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "links.1.l",
+    "old": "Hayabusa mission archive (JAXA / ISAS)",
+    "new": "Archivo de la misión Hayabusa (JAXA / ISAS)"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.0.l",
+    "old": "Patroclus-Menoetius binary — Wikipedia",
+    "new": "Binario Patroclo-Menecio — Wikipedia"
+  }
+]

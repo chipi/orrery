@@ -9,7 +9,8 @@
 // `terms` is the term-binding note the translators get for that English (termNotes).
 // --before=any drops the date filter: every translated field, the text readers see now (round-2
 // measurement). --exclude=<dir>[,<dir>…] skips fields listed ({rel, at}) in any <loc>.json there,
-// so a fresh sample never re-grades an earlier one.
+// so a fresh sample never re-grades an earlier one. --merge=<name> pools all --trees into one cell
+// named <name> (a bucket of small trees sampled as one).
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -78,9 +79,11 @@ fs.mkdirSync(outDir, { recursive: true });
 for (const loc of LOCS) {
   const picked = [];
   const skip = excluded(loc);
-  for (const tree of TREES) {
+  const MERGE = arg('merge', '');
+  const groups = MERGE ? [[MERGE, TREES]] : TREES.map((t) => [t, [t]]);
+  for (const [tree, dirs] of groups) {
     const pool = [];
-    for (const f of walk(`i18n-src/${loc}/${tree}`)) {
+    for (const f of dirs.flatMap((d) => walk(`i18n-src/${loc}/${d}`))) {
       const rel = path.relative(`i18n-src/${loc}`, f);
       const enFile = `i18n-src/en-US/${rel}`;
       if (!fs.existsSync(enFile)) continue;

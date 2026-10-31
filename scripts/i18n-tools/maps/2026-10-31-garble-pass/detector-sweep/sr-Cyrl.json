@@ -1,0 +1,50 @@
+[
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.1.l",
+    "old": "Arrokoth flyby (NASA New Horizons)",
+    "new": "Прелет поред Арокота (NASA New Horizons)"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.1.l",
+    "old": "DART final results (NASA)",
+    "new": "Коначни резултати мисије DART (NASA)"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "links.1.l",
+    "old": "Hayabusa mission archive (JAXA / ISAS)",
+    "new": "Архива мисије Hayabusa (JAXA / ISAS)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.4.l",
+    "old": "Jupiter's deep interior (Nature 2018)",
+    "new": "Дубока унутрашњост Јупитера (Nature 2018)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.2.l",
+    "old": "MESSENGER mission overview (NASA)",
+    "new": "Преглед мисије MESSENGER (NASA)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.4.l",
+    "old": "Neptune's interior model (Icarus 2021)",
+    "new": "Модел унутрашњости Нептуна (Icarus 2021)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.2.l",
+    "old": "Cassini mission archive (NASA)",
+    "new": "Архива мисије Cassini (NASA)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.4.l",
+    "old": "Saturn's rings are young (Science 2019)",
+    "new": "Сатурнови прстенови су млади (Science 2019)"
+  }
+]

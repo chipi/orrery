@@ -72,7 +72,7 @@ items.forEach((it, i) => {
     counts.stale++;
     return;
   }
-  edits.push({ rel: it.rel, at: it.at, old: it.tr, new: nu });
+  edits.push({ rel: it.rel, at: it.at, en: it.en, old: it.tr, new: nu });
 });
 fs.writeFileSync(out, JSON.stringify(edits, null, 1));
 fs.writeFileSync(out.replace(/\.json$/, '.flags.json'), JSON.stringify(flags, null, 1));

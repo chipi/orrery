@@ -25,15 +25,24 @@ Rules for a retranslation:
    Never use a form listed after "never".
 3. **Names:**
    - Missions, spacecraft, rockets, programmes and designations (STS-61, OV-105, Canadarm2,
-     Saturn V) stay exactly as in the English. Never translate or respell them.
+     Saturn V, "Venera 7-class") keep the form the current `tr` uses. That is the English form,
+     except in the vehicle's origin language, where it is the native script: ru «Союз», zh 神舟,
+     hi चंद्रयान. Never translate a name into a common word: the Saturn rocket is never the
+     planet's name in the local language.
    - Bodies, places and people take the form the current `tr` uses when it is a real word of the
      language (Maan, Mars, Jupiter).
+   - Dates stay in the format the English uses (ISO `1986-03-14` stays ISO).
 4. **Markdown links:** keep `[text](target)`. Translate the text only; the target stays exactly
    the same.
-5. **Length:** `tagline` is at most **140 characters**. For other fields stay close to the
+5. **Length:** fleet `tagline` is at most **140 characters**, and a mission milestone `label` at
+   most **80**. For other fields stay close to the
    English length. If the English cannot fit in 140, write it more concisely (shorter words, no
    filler), but keep every fact.
-6. **Register:** natural, factual, the way a good popular-science site in that language writes.
+6. **No English left in** a retranslation ("comsats", "heavy-lift", "roam", "return-to-flight").
+   The exceptions are names and the acronyms the language really uses (ISS, LEO, GTO). Check
+   gender, case and genitive agreement on every noun you touch: the nl pilot's hand fixes were
+   mostly these.
+7. **Register:** natural, factual, the way a good popular-science site in that language writes.
    Keep the punctuation conventions of the language. Keep `—`, `+` and `·` where the English uses
    them as separators.
 

@@ -1,0 +1,1109 @@
+[
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars-odyssey.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "La navicella più longeva in attività continua in orbita attorno a un pianeta diverso dalla Terra. Nel 2002 ha rilevato vasti depositi di ghiaccio d'acqua nel sottosuolo (una scoperta che ha orientato la scelta dei siti di Phoenix e Curiosity). Ancora attiva nel 2026 come nodo relè per i mezzi in superficie.",
+    "note": "'assetti' wrong sense; 'targeting' left in English"
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.0.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.2.subtitle",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Mare Fecunditatis — allunaggio il 20 settembre 1970",
+    "note": "Moon landing needs allunaggio"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.3.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Precisione di atterraggio mirato — colma il divario tra «sappiamo atterrare da qualche parte su questo corpo celeste» e «sappiamo atterrare sulla specifica roccia di valore scientifico», presupposto del rendezvous con i mezzi già presenti in superficie su Marte.",
+    "note": "rendez-vous form, 'asset' English, clumsy opening"
+  },
+  {
+    "rel": "moon-sites/luna10.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/artemis4.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Luna 17 allunò nel Mare Imbrium il 17 novembre 1970 e mise in opera Lunokhod 1, il primo veicolo a ruote a operare su un altro mondo, anticipando di sette mesi l'LRV della NASA. Lunokhod 1 percorse 10,5 km nell'arco di 11 giorni lunari, guidato da una squadra di cinque persone in Crimea. Inviò 25.000 fotografie e 211 panorami prima di tacere nel settembre 1971.",
+    "note": "Moon landing needs allunare"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Il primo veicolo spaziale ad allunare sul lato nascosto della Luna — tecnicamente e operativamente l'allunaggio più difficile mai tentato. Ha richiesto un satellite relè (Queqiao) presso L2 poiché il lato nascosto non ha contatto radio diretto con la Terra. Il rover Yutu-2 ha percorso oltre 1,6 km prima di fermarsi a marzo 2024; la telemetria è continuata almeno fino a settembre 2024. Il lato nascosto non era mai stato visitato.",
+    "note": "Redundant 'allunaggio lunare'"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "David Scott sul bordo della Rima Hadley: per la prima volta degli astronauti si trovarono sull'orlo di un antico canale di lava su un altro mondo.",
+    "note": "Rille is 'rima' in Italian, not 'solco'"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Il lander SLIM prima del lancio: 200 kg, a forma di matita, progettato per dimostrare l'allunaggio di precisione a bassa massa.",
+    "note": "Moon landing needs allunaggio"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/lro.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Primo lander planetario a guida britannica; ha dimostrato che la ricognizione orbitale può localizzare con precisione metrica mezzi di superficie andati perduti.",
+    "note": "'asset' left in English; 'falliti' clumsy"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "SLIM fotografato da Sora-Q sulla superficie lunare: è allunato con il muso in giù, con i pannelli solari rivolti nella direzione sbagliata.",
+    "note": "Moon landing needs allunare"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Le prime immagini della superficie lunare: panorami grezzi, a bassa velocità di trasmissione, che mostrano una regolite rocciosa. Il radiotelescopio di Jodrell Bank, a Manchester, intercettò la trasmissione e la pubblicò prima dei sovietici.",
+    "note": "regolite is feminine"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mangalyaan.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "La prima missione interplanetaria di ISRO, con un budget di ~74 milioni di dollari, meno del film di Hollywood *Gravity*. India è diventata la prima nazione asiatica a raggiungere Marte e il primo paese a farlo al primo tentativo interplanetario. La missione ha operato per 8 anni (progettata per 6 mesi) prima che il contatto andasse perso nell'aprile 2022.",
+    "note": "'Operato' calque; dangling participle"
+  },
+  {
+    "rel": "moon-sites/clementine.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Lo Smart Lander del Giappone ha dimostrato l'allunaggio di precisione, con un obiettivo centrato entro 100 m di accuratezza contro lo standard su scala chilometrica di tutte le missioni precedenti. È allunato con il muso rivolto verso il basso, a circa 90° dall'assetto previsto, lasciando i pannelli solari inizialmente rivolti lontano dal Sole; le operazioni sono riprese nove giorni dopo, quando l'angolo del Sole è cambiato. Il Giappone è diventato la quinta nazione a effettuare un allunaggio morbido.",
+    "note": "atterraggio for Moon; 'straordinaria' shifts meaning"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Panorama degli Altopiani di Descartes: lo stadio di discesa di Orion + il LRV, con sullo sfondo Stone Mountain.",
+    "note": "Duplicated parenthetical name"
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change2.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.3.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Ritratto dell'equipaggio di Apollo 16: John Young (CDR), Ken Mattingly (CMP — escluso da Apollo 13) e Charlie Duke (LMP).",
+    "note": "'sostituito rispetto ad' unclear for 'bumped'"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars3-orbiter.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Componente orbitale della missione Mars 3. Ha restituito le prime misurazioni della temperatura superficiale e dell'atmosfera di Marte dall'orbita. Ha osservato per otto mesi prima che il contatto andasse perso nell'agosto 1972.",
+    "note": "Subjectless clipped passives, awkward"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "SLIM (Smart Lander for Investigating Moon) è allunato nel cratere Shioli il 20 gennaio 2024: il primo allunaggio morbido del Giappone sulla Luna e un dimostratore di tecnologia per l'allunaggio di precisione. SLIM si è posato a meno di 100 m dal bersaglio (il miglior risultato precedente era di oltre 1 km), ma si è rovesciato su un fianco e ha operato capovolto, con le celle solari rimaste attive, finché l'energia non si è esaurita. Due micro-rover di superficie, LEV-1 e LEV-2 (Sora-Q), sono stati rilasciati prima di quell'infelice orientamento finale.",
+    "note": "Moon landing needs allunaggio"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.subtitle",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "cratere Apollo (all'interno del Polo Sud-Aitken) — allunaggio il 1° giugno 2024",
+    "note": "Moon landing needs allunaggio"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.3.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Campione lunare 10072: basalto vescicolare dei mari lunari, vecchio di 3,7 miliardi di anni. La prima roccia proveniente da un altro mondo studiata sulla Terra.",
+    "note": "'basalto di mare' reads as sea basalt"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Progettato per mettere in deposito carote di roccia promettenti per una futura missione Mars Sample Return. Entro la metà del 2024 aveva già perforato e sigillato oltre 26 campioni. L'elicottero Ingenuity — originariamente una dimostrazione tecnologica di 30 giorni — ha volato 72 volte prima di danneggiare un rotore nel gennaio 2024. Primo volo motorizzato e controllato su un altro mondo.",
+    "note": "'cache' English-ish; 'alimentato' wrong sense of powered"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/chandrayaan1.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Prima conferma globale diretta dell'acqua sulla superficie lunare; ha trasformato ogni successiva tabella di marcia per lo sfruttamento delle risorse lunari.",
+    "note": "'mappa stradale' literal calque of roadmap"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Apollo 16 allunò negli Altopiani di Descartes il 21 aprile 1972: l'unica missione Apollo verso un sito di altopiano (e non di mare lunare), scelto per campionare quello che si credeva fosse un terreno vulcanico. Young e Duke NON trovarono rocce vulcaniche, ma solo brecce da impatto e anortosite, ribaltando il modello geologico e dimostrando che gli altopiani lunari sono una crosta antica frantumata dagli impatti, e non il prodotto di un vulcanismo successivo. Tre EVA, 27 km di percorso con il LRV, 95 kg di campioni riportati a Terra.",
+    "note": "Duplicated parenthetical name"
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Schmitt al cratere Shorty scopre il suolo arancione: sferule di vetro vulcanico generate da un'eruzione a fontana di fuoco di 3,5 Ga.",
+    "note": "'Orange Soil' left in English"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.3.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Il complesso di Chang'e 5 — veicolo a quattro elementi: lander/veicolo di risalita (superficie), orbiter (rendezvous lunare), capsula di rientro (ritorno sulla Terra).",
+    "note": "Binding term is rendezvous, not rendez-vous"
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.2.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Beresheet — in ebraico «In principio» — fu il primo tentativo di allunaggio di Israele, costruito privatamente da SpaceIL con un budget risicatissimo di 100 milioni di dollari. Lanciata il 22 febbraio 2019 e inserita in orbita lunare il 4 aprile, l'11 aprile 2019 la sonda si schiantò nel Mare Serenitatis, dopo che l'IMU e il computer di bordo si erano riavviati durante la discesa. Tra i rottami c'era una capsula del tempo piena di tardigradi. Israele divenne così la settima nazione a raggiungere la Luna, anche se solo in modo cinetico.",
+    "note": "'il 11 aprile' article error; 'da privati da'"
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Prima sonda spaziale a restituire dati atmosferici durante la discesa su Marte. Le comunicazioni furono perse al momento dell'atterraggio, ma la telemetria di discesa — pressione, temperatura e un profilo parziale della composizione atmosferica — alimentò i modelli ingegneristici su cui Viking avrebbe fatto affidamento tre anni dopo.",
+    "note": "Verb plural disagrees with telemetria; hyphens for dashes"
+  },
+  {
+    "rel": "mars-sites/mars3-orbiter.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.subtitle",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "cratere Le Monnier — allunaggio il 15 gennaio 1973",
+    "note": "Moon landing needs allunaggio"
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Luna 21 allunò nel cratere Le Monnier il 15 gennaio 1973 — e dispiegò il Lunokhod 2, il successore del primo rover lunare al mondo. Il Lunokhod 2 percorse 42,1 km in 4 mesi — un record che resistette fino a quando l'Opportunity della NASA lo superò su Marte nel luglio 2014, 41 anni dopo. Trasmise 80.000 immagini televisive e 86 panoramiche a scansione, prima che un cumulo di regolite cadesse sul radiatore e facesse surriscaldare il rover.",
+    "note": "Moon landing needs allunò"
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.1.subtitle",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "2 giugno 2003 — Soyuz/Fregat da Bajkonur, trasportato a bordo di Mars Express",
+    "note": "'in condivisione' misses piggyback on Mars Express"
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/clementine.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Apollo 14 allunò sugli altopiani di Fra Mauro il 5 febbraio 1971: era l'obiettivo originale di Apollo 13, raggiunto dopo l'esplosione che colpì quella missione. Shepard e Mitchell trascinarono il Modular Equipment Transporter (un risciò) su per i fianchi del cratere Cone e riportarono a Terra 43 kg di brecce, frammenti del gigantesco impatto che 3,9 miliardi di anni fa formò il Mare Imbrium. Shepard, com'è noto, colpì due palline da golf prima del decollo.",
+    "note": "Moon landing needs allunò"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/zhurong.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/tgo.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Dimostratore di ingresso atmosferico, discesa e atterraggio di ExoMars 2016. Un errore nel software di controllo ha causato la saturazione dell'unità di misura inerziale, portando il lander a calcolare un'altitudine negativa e attivando l'espulsione prematura del paracadute e del guscio posteriore. I propulsori si sono accesi brevemente come se fossero già al suolo, poi si sono spenti. Ha fatto una caduta libera di ~3,7 km fino alla superficie. I dati di volo hanno orientato la riprogettazione dell'EDL di ExoMars 2028.",
+    "note": "Entry term not used; 'informato' calque"
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.1.subtitle",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "cratere Von Kármán, lato nascosto — allunaggio il 3 gennaio 2019",
+    "note": "Moon landing needs allunaggio"
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Il primo allunaggio della Cina: il primo atterraggio morbido sulla Luna in 37 anni. Il lander Chang'e 3 è ancora vivo, il che lo rende il lander lunare più longevo di sempre. Yutu ha percorso 114 metri prima che il suo meccanismo di trazione si guastasse, ma i suoi strumenti hanno continuato a restituire dati scientifici.",
+    "note": "'meccanismo di guida' is steering; atterraggio for Moon"
+  },
+  {
+    "rel": "moon-sites/change1.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "La prima missione lunare della Cina. Costruita e gestita come test precursore deliberato per il lander Chang'e 3: la fase orbitale è servita da prova di qualificazione in volo per le comunicazioni nello spazio profondo e la meccanica orbitale da cui sarebbe dipesa la missione del lander. A fine vita si è schiantata sulla Luna, come prova di impatto controllato.",
+    "note": "Masculine participles disagree with missione"
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Luna 24 allunò nel Mare Crisium il 18 agosto 1976: fu l'ultima missione sovietica (e l'ultima missione robotica) di recupero di campioni lunari del XX secolo, nonché l'ultimo lander lunare di qualsiasi tipo fino al Chang'e 3 cinese nel 2013. Perforò il regolite per 2 m e riportò sulla Terra 170,1 g di campioni, tra cui indizi di ghiaccio d'acqua lunare (riconfermati decenni dopo da SOFIA + LCROSS). Il programma lunare sovietico si concluse qui.",
+    "note": "Moon landing needs allunò"
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "La prima navicella spaziale a realizzare un allunaggio morbido e a trasmettere fotografie dalla superficie. Nove immagini panoramiche hanno posto fine al dibattito sulla possibilità che i lander affondino nella profonda polvere lunare. Un momento decisivo: la Luna era raggiungibile.",
+    "note": "'potrebbe' conditional alters meaning; atterraggio for Moon"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.3.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

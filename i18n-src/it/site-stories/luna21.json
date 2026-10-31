@@ -1,10 +1,10 @@
 {
-  "intro": "Luna 21 atterrò nel cratere Le Monnier il 15 gennaio 1973 — e dispiegò il Lunokhod 2, il successore del primo rover lunare al mondo. Il Lunokhod 2 percorse 42,1 km in 4 mesi — un record che resistette fino a quando l'Opportunity della NASA lo superò su Marte nel luglio 2014, 41 anni dopo. Trasmise 80.000 immagini televisive e 86 panoramiche a scansione, prima che un cumulo di regolite cadesse sul radiatore e facesse surriscaldare il rover.",
+  "intro": "Luna 21 allunò nel cratere Le Monnier il 15 gennaio 1973 — e dispiegò il Lunokhod 2, il successore del primo rover lunare al mondo. Il Lunokhod 2 percorse 42,1 km in 4 mesi — un record che resistette fino a quando l'Opportunity della NASA lo superò su Marte nel luglio 2014, 41 anni dopo. Trasmise 80.000 immagini televisive e 86 panoramiche a scansione, prima che un cumulo di regolite cadesse sul radiatore e facesse surriscaldare il rover.",
   "chapters": [
     {
       "id": "hardware",
       "title": "Equipaggiamento",
-      "subtitle": "Lunokhod 2 — il record di percorrenza sulla terra lunare (42 km)",
+      "subtitle": "Lunokhod 2 — il record di distanza percorsa sul suolo lunare (42 km)",
       "images": [
         {
           "src": "/images/fleet-galleries/lunokhod-2/01.webp",
@@ -19,7 +19,7 @@
     {
       "id": "surface",
       "title": "Superficie",
-      "subtitle": "cratere Le Monnier — atterraggio il 15 gennaio 1973",
+      "subtitle": "cratere Le Monnier — allunaggio il 15 gennaio 1973",
       "images": [
         {
           "src": "/images/fleet-galleries/lunokhod-2/03.webp",

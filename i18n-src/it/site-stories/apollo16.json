@@ -1,5 +1,5 @@
 {
-  "intro": "Apollo 16 allunò negli Altopiani di Descartes (Altopiano Descartes) il 21 aprile 1972: l'unica missione Apollo verso un sito di altopiano (e non di mare lunare), scelto per campionare quello che si credeva fosse un terreno vulcanico. Young e Duke NON trovarono rocce vulcaniche, ma solo brecce da impatto e anortosite, ribaltando il modello geologico e dimostrando che gli altopiani lunari sono una crosta antica frantumata dagli impatti, e non il prodotto di un vulcanismo successivo. Tre EVA, 27 km di percorso con il LRV, 95 kg di campioni riportati a Terra.",
+  "intro": "Apollo 16 allunò negli Altopiani di Descartes il 21 aprile 1972: l'unica missione Apollo verso un sito di altopiano (e non di mare lunare), scelto per campionare quello che si credeva fosse un terreno vulcanico. Young e Duke NON trovarono rocce vulcaniche, ma solo brecce da impatto e anortosite, ribaltando il modello geologico e dimostrando che gli altopiani lunari sono una crosta antica frantumata dagli impatti, e non il prodotto di un vulcanismo successivo. Tre EVA, 27 km di percorso con il LRV, 95 kg di campioni riportati a Terra.",
   "chapters": [
     {
       "id": "hardware",
@@ -8,14 +8,14 @@
       "images": [
         {
           "src": "/images/missions/apollo16/01.webp",
-          "caption": "Ritratto dell'equipaggio di Apollo 16: John Young (CDR), Ken Mattingly (CMP, sostituito rispetto ad Apollo 13) e Charlie Duke (LMP)."
+          "caption": "Ritratto dell'equipaggio di Apollo 16: John Young (CDR), Ken Mattingly (CMP — escluso da Apollo 13) e Charlie Duke (LMP)."
         }
       ]
     },
     {
       "id": "surface",
       "title": "Superficie",
-      "subtitle": "Altopiani di Descartes (Altopiano Descartes): allunaggio il 21 aprile 1972",
+      "subtitle": "Altopiani di Descartes — allunaggio il 21 aprile 1972",
       "images": [
         {
           "src": "/images/missions/apollo16/02.webp",
@@ -27,7 +27,7 @@
         },
         {
           "src": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
-          "caption": "Panorama degli Altopiani di Descartes (Altopiano Descartes): lo stadio di discesa di Orion + il LRV, con sullo sfondo Stone Mountain."
+          "caption": "Panorama degli Altopiani di Descartes: lo stadio di discesa di Orion + il LRV, con sullo sfondo Stone Mountain."
         }
       ]
     },

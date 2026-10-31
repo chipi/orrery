@@ -1,5 +1,5 @@
 {
-  "intro": "SLIM (Smart Lander for Investigating Moon) è atterrato nel cratere Shioli il 20 gennaio 2024: il primo atterraggio morbido del Giappone sulla Luna e un dimostratore di tecnologia per l'atterraggio di precisione. SLIM si è posato a meno di 100 m dal bersaglio (il miglior risultato precedente era di oltre 1 km), ma si è rovesciato su un fianco e ha operato capovolto, con le celle solari rimaste attive, finché l'energia non si è esaurita. Due micro-rover di superficie, LEV-1 e LEV-2 (Sora-Q), sono stati rilasciati prima di quell'infelice orientamento finale.",
+  "intro": "SLIM (Smart Lander for Investigating Moon) è allunato nel cratere Shioli il 20 gennaio 2024: il primo allunaggio morbido del Giappone sulla Luna e un dimostratore di tecnologia per l'allunaggio di precisione. SLIM si è posato a meno di 100 m dal bersaglio (il miglior risultato precedente era di oltre 1 km), ma si è rovesciato su un fianco e ha operato capovolto, con le celle solari rimaste attive, finché l'energia non si è esaurita. Due micro-rover di superficie, LEV-1 e LEV-2 (Sora-Q), sono stati rilasciati prima di quell'infelice orientamento finale.",
   "chapters": [
     {
       "id": "hardware",
@@ -8,7 +8,7 @@
       "images": [
         {
           "src": "/images/missions/slim/01.webp",
-          "caption": "Il lander SLIM prima del lancio: 200 kg, a forma di matita, progettato per dimostrare l'atterraggio di precisione a bassa massa."
+          "caption": "Il lander SLIM prima del lancio: 200 kg, a forma di matita, progettato per dimostrare l'allunaggio di precisione a bassa massa."
         },
         {
           "src": "/images/missions/slim/02.webp",
@@ -34,7 +34,7 @@
       "images": [
         {
           "src": "/images/missions/slim/04.webp",
-          "caption": "SLIM fotografato da Sora-Q sulla superficie lunare: è atterrato con il muso in giù, con i pannelli solari rivolti nella direzione sbagliata."
+          "caption": "SLIM fotografato da Sora-Q sulla superficie lunare: è allunato con il muso in giù, con i pannelli solari rivolti nella direzione sbagliata."
         },
         {
           "src": "/images/missions/slim/05.webp",

@@ -1,0 +1,164 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "Cygnus Standard is een robotisch vrachtruimtevaartuig gebouwd door Orbital Sciences in de VS. ISS-vrachtvervoerder die uitsluitend vracht onder druk vervoerde. Vloog van 2013 tot 2014; opgevolgd door de Enhanced Cygnus.",
+    "note": "pressurised-only cargo, not pressurised cabin"
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "missing article",
+    "new": "Phoenix is een planetaire lander, gebouwd door Lockheed Martin in de VS. Bevestigde waterijs in de Marsbodem. Missie beëindigd in 2008.",
+    "note": "missing article before Marsbodem"
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "Venera 7-class is een planetaire lander gebouwd door NPO Lavochkin in de USSR. Eerste zachte landing op een andere planeet en eerste die gegevens vanaf het oppervlak van een andere planeet uitzond (Venus, 1970). Missie beëindigd in 1970.",
+    "note": "second claim narrowed to Venus only"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "Lanceerplatform van India voor zware lasten — GSLV Mk III / LVM3 naar Chandrayaan-3 en het aanstaande bemande Gaganyaan-programma",
+    "note": "Zware-draagraketplatform is a non-word"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  }
+]

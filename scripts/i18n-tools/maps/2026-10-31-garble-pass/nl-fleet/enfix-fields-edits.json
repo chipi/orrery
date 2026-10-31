@@ -1,0 +1,30 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "en": "Cygnus Standard is a robotic cargo spacecraft built by Orbital Sciences in USA. Pressurised-only ISS cargo carrier. Flew 2013–2014; succeeded by the Enhanced Cygnus.",
+    "old": "Cygnus Standard is een robotisch vrachtruimtevaartuig gebouwd door Orbital Sciences in de VS. ISS-vrachtvervoerder met uitsluitend een drukcabine. Vloog van 2013 tot 2014; opgevolgd door de Enhanced Cygnus.",
+    "new": "Cygnus Standard is een robotisch vrachtruimtevaartuig gebouwd door Orbital Sciences in de VS. ISS-vrachtvervoerder die uitsluitend vracht onder druk vervoerde. Vloog van 2013 tot 2014; opgevolgd door de Enhanced Cygnus."
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "en": "Phoenix is a planetary lander built by Lockheed Martin in USA. Confirmed water ice in Martian soil. Mission ended in 2008.",
+    "old": "Phoenix is een planetaire lander, gebouwd door Lockheed Martin in de VS. Bevestigde waterijs in Marsbodem. Missie beëindigd in 2008.",
+    "new": "Phoenix is een planetaire lander, gebouwd door Lockheed Martin in de VS. Bevestigde waterijs in de Marsbodem. Missie beëindigd in 2008."
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "en": "Venera 7-class is a planetary lander built by NPO Lavochkin in USSR. First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970). Mission ended in 1970.",
+    "old": "Venera 7-class is een planetaire lander gebouwd door NPO Lavochkin in de USSR. Eerste zachte landing op een ander planeetlichaam en eerste gegevenstransmissie vanaf het oppervlak van Venus (1970). Missie beëindigd in 1970.",
+    "new": "Venera 7-class is een planetaire lander gebouwd door NPO Lavochkin in de USSR. Eerste zachte landing op een andere planeet en eerste die gegevens vanaf het oppervlak van een andere planeet uitzond (Venus, 1970). Missie beëindigd in 1970."
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3 and the upcoming Gaganyaan crew programme",
+    "old": "Zware-draagraketplatform van India — GSLV Mk III / LVM3 voor Chandrayaan-3 en het aanstaande bemande Gaganyaan-programma",
+    "new": "Lanceerplatform van India voor zware lasten — GSLV Mk III / LVM3 naar Chandrayaan-3 en het aanstaande bemande Gaganyaan-programma"
+  }
+]

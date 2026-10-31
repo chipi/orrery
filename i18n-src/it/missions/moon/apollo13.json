@@ -5,7 +5,7 @@
   "delta_v": "~6 km/s (andata e ritorno, allunaggio abortito)",
   "type": "VOLO CON SORVOLO EQUIPAGGIO · COMPLETATO (ALLUNAGGIO ANNULLATO)",
   "first": "La missione che trasformò un quasi-disastro nel salvataggio più celebre della NASA",
-  "dispatch": "Apollo 13 non ha mai allunato, eppure è la missione che tutti ricordano. Due giorni dopo il lancio, un serbatoio di ossigeno si squarciò e trasformò un volo di routine verso gli altopiani di Fra Mauro in un problema di quattro giorni per mantenere in vita tre uomini in un'astronave morente a trecentomila chilometri da casa. A salvarli non fu l'eroismo, ma la preparazione e una stanza piena di persone che risolvevano il problema in tempo reale, improvvisando un modo per respirare e un modo per tornare a casa con quello che era già bullonato al veicolo. La NASA lo chiamò un successo mancato. È più accurato dire che è il volo che ha provato che l'agenzia era all'altezza di quello che asseriva.",
+  "dispatch": "Apollo 13 non allunò mai, eppure è la missione che tutti ricordano. Due giorni dopo la partenza, un serbatoio di ossigeno si squarciò e trasformò un volo di routine verso gli altopiani di Fra Mauro in un problema di quattro giorni: tenere in vita tre uomini in un'astronave morente, a quasi quattrocentomila chilometri da casa. A salvarli non fu l'eroismo, ma la preparazione e una sala piena di persone che affrontavano il problema in tempo reale, improvvisando un modo per respirare e un modo per tornare a casa con ciò che era già imbullonato al veicolo. La NASA lo definì un fallimento riuscito. Più vicino al vero è dire che fu il volo a dimostrare che l'agenzia valeva quanto sosteneva di valere.",
   "description": "Apollo 13 era destinata a essere il terzo allunaggio con equipaggio umano, con obiettivo l'altopiano Fra Mauro. A 55 ore e 54 minuti dal lancio, un serbatoio di ossigeno nel Modulo di Servizio si ruppe, disabilitando i sistemi elettrici e di supporto vitale del Modulo di Comando-Servizio. Con l'allunaggio cancellato, l'equipaggio — James Lovell, Jack Swigert e Fred Haise — spense il CSM, si trasferì nel Modulo Lunare Aquarius usandolo come scialuppa di salvataggio, e utilizzò il motore di discesa del LM per un'accensione a Pericynthion+2 ore che li mise su una traiettoria libera di ritorno veloce. Passarono accanto alla Luna a 254 km di altitudine il 1970-04-15 e ammararono in sicurezza nell'Oceano Pacifico meridionale il 1970-04-17. La missione è studiata oggi come modello di improvvisazione ingegneristica disciplinata in tempo reale.",
   "events": [
     {
@@ -17,7 +17,7 @@
     {
       "met": 0.117,
       "label": "TLI",
-      "note": "Accensione di iniezione trans-lunare da S-IVB; CSM + LM si impegnano verso la traiettoria cislunar.",
+      "note": "Accensione per l'iniezione translunare dell'S-IVB; CSM + LM vengono lanciati su una traiettoria cislunare.",
       "type": "nominal"
     },
     {
@@ -29,7 +29,7 @@
     {
       "met": 2.33,
       "label": "ROTTURA SERBATOIO OSSIGENO #2",
-      "note": "Il comando di mescolamento criogenico del SM innesca un cortocircuito e la rottura del serbatoio. \"Houston, abbiamo avuto un problema.\" Potenza e acqua calano; il LM Aquarius diventa la scialuppa di salvataggio.",
+      "note": "Il comando di mescolamento criogenico del SM innesca un incendio da cortocircuito e la rottura del serbatoio. «Houston, abbiamo avuto un problema.» Energia elettrica e acqua calano; il LM Aquarius diventa la scialuppa di salvataggio.",
       "type": "warning"
     },
     {
@@ -47,7 +47,7 @@
     {
       "met": 3.96,
       "label": "ACCENSIONE PC+2",
-      "note": "Accensione a Pericintio-più-2-ore riduce il tempo di ritorno sulla Terra di dieci ore.",
+      "note": "L'accensione a 2 ore dopo il pericinzio riduce di dieci ore il tempo di ritorno sulla Terra.",
       "type": "nominal"
     },
     {

@@ -3,10 +3,10 @@
   "vehicle": "Atlas LV-3B (MA-6)",
   "payload": "Capsula Mercury n. 13 (1955 kg); John Glenn",
   "delta_v": "~9,4 km/s (LEO)",
-  "dispatch": "Friendship 7 è il volo in cui gli Stati Uniti tirarono finalmente il fiato. John Glenn fu il primo americano a orbitare — tre volte attorno al pianeta, dieci mesi dopo Gagarin — e per un paese che aveva trascorso quattro anni a guardare i sovietici arrivare per primi, fu sufficiente a renderlo l'uomo più famoso della nazione da un giorno all'altro. Il dramma arrivò verso la fine: un sensore difettoso suggeriva che il suo scudo termico potesse essere allentato, e i controllori gli fecero tenere il retro-pack esaurito legato durante il rientro come tentativo disperato per tenerlo in posizione. Tenne. Glenn tornò a casa, e l'ansia che era rimasta sospesa sull'intero programma si sollevò con lui.",
+  "dispatch": "Friendship 7 è il volo in cui gli Stati Uniti tirarono finalmente il fiato. John Glenn fu il primo americano a orbitare — tre volte attorno al pianeta, dieci mesi dopo Gagarin — e per un paese che aveva trascorso quattro anni a guardare i sovietici arrivare per primi, fu sufficiente a renderlo l'uomo più famoso della nazione da un giorno all'altro. Il dramma arrivò verso la fine: un sensore difettoso suggeriva che il suo scudo termico potesse essersi allentato, e i controllori gli fecero tenere fissato il pacco dei retrorazzi esaurito durante il rientro, come ultima, improbabile speranza di tenerlo in posizione. Resistette. Glenn tornò a casa, e l'ansia che era rimasta sospesa sull'intero programma si dissolse con lui.",
   "type": "EQUIPAGGIO ORBITA TERRESTRE · VOLATO",
   "first": "Primo americano in orbita attorno alla Terra",
-  "description": "Il volo di 3 orbite di John Glenn — primo americano in orbita attorno alla Terra, 10 mesi dopo Gagarin e 4 mesi dopo Titov. Orbita: 159 × 265 km, inclinazione 32,5°. Un indicatore di allarme dello scudo termico nel controllo missione suggerì che lo scudo potesse essere allentato — per sicurezza il retropack venne mantenuto agganciato durante il rientro, dando origine alla celebre osservazione di Glenn sulle 'fireflies' mentre frammenti del retropack si consumavano davanti al finestrino. Ammaraggio a 1287 km a sud-est di Cape Canaveral, 4 h 55 min dopo il lancio. Glenn tornò nello spazio 36 anni più tardi sullo STS-95 (1998) all'età di 77 anni. Friendship 7 è esposta al National Air and Space Museum, Washington DC.",
+  "description": "Il volo di 3 orbite di John Glenn — primo americano in orbita attorno alla Terra, 10 mesi dopo Gagarin e 4 mesi dopo Titov. Orbita: 159 × 265 km, inclinazione 32,5°. Un indicatore di allarme sullo scudo termico nel controllo missione suggerì che lo scudo potesse essere allentato — per sicurezza il pacco dei retrorazzi fu lasciato attaccato durante l'ingresso atmosferico, e questo diede origine alla celebre osservazione di Glenn sulle «lucciole» mentre frammenti del pacco dei retrorazzi si consumavano davanti al finestrino. Ammaraggio a 1287 km a sud-est di Cape Canaveral, 4 h 55 min dopo il lancio. Glenn tornò nello spazio 36 anni più tardi con la STS-95 (1998), a 77 anni. Friendship 7 è esposta al National Air and Space Museum, Washington DC.",
   "events": [
     {
       "met": 0,
@@ -23,7 +23,7 @@
     {
       "met": 0.005,
       "label": "«LUCCIOLE»",
-      "note": "Glenn riferisce di «lucciole» luminose fuori dal finestrino — frammenti del retro-pacco che bruciano durante il rientro.",
+      "note": "Glenn riferisce di «lucciole» luminose fuori dal finestrino — frammenti del retropacco che si disgregano per ablazione durante l'ingresso atmosferico.",
       "type": "info"
     },
     {

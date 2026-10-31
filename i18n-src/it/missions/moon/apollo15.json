@@ -6,7 +6,7 @@
   "type": "LANDER EQUIPAGGIO · COMPLETATA",
   "first": "Prima J-mission — permanenza estesa, primo Lunar Roving Vehicle, «Genesis Rock»",
   "dispatch": "Con Apollo 15 la corsa era ormai finita, e la scienza prese il volante — letteralmente. Fu il primo volo a portare il Lunar Rover, che trasformò un raggio a piedi di circa tre chilometri in una vera spedizione sul campo di quasi trenta, e si posò non su una pianura sicura ma in una valle tra una catena montuosa e un canyon tortuoso. Scott e Irwin tornarono a casa con la «Genesis Rock», un frammento di quattro miliardi di anni della crosta originaria della Luna che confermò come si era formata. Apollo aveva smesso di visitare la Luna e aveva cominciato a studiarla — e continuò a migliorare in questo fino alla sua cancellazione.",
-  "description": "La prima «J-mission» — Apollo scientifico a permanenza estesa con il nuovo Lunar Roving Vehicle. L'LRV diede a Scott e Irwin un raggio di percorso di 27,9 km (contro i 3,5 km della sola camminata dell'Apollo 14), aprendo il drammatico sito di Hadley-Apennine al piede di una catena montuosa di 4,5 km e al margine del sinuoso solco Hadley. Tre EVA totali di 18 h 35 m, 77 kg di campioni riportati, inclusa la famosa «Genesis Rock» (campione 15415) — un'anortossite di 4,1 miliardi di anni che confermava l'origine dell'oceano magmatico della crosta degli altopiani lunari. L'«hammer-feather drop» televisivo di Scott verificò dal vivo la legge di gravità di Galileo. Worden in orbita lunare gestì una baia SIM piena di strumenti di telerilevamento (camere di mappatura, spettrometri a raggi gamma, raggi X, particelle alfa) e eseguì il primo EVA dello spazio profondo sulla via del ritorno (~EVA di 39 minuti a ~317 000 km dalla Terra per recuperare le cassette fotografiche). Il recupero dell'Apollo 15 fu compromesso dal mancato dispiegamento completo di uno dei tre paracadute principali — la CM si tuffò duramente ma l'equipaggio era salvo.",
+  "description": "La prima «missione J» — Apollo scientifico a permanenza prolungata con il nuovo Lunar Roving Vehicle. L'LRV diede a Scott e Irwin un raggio di spostamento di 27,9 km (contro i 3,5 km dell'Apollo 14, che si muoveva solo a piedi), aprendo il drammatico sito di Hadley-Apennine ai piedi di una catena montuosa alta 4,5 km e sul margine della sinuosa Hadley Rille. Tre EVA per un totale di 18 h 35 m, 77 kg di campioni riportati, inclusa la celebre «Genesis Rock» (campione 15415) — un'anortosite di 4,1 miliardi di anni che confermava l'origine da oceano di magma della crosta degli altopiani lunari. La «caduta del martello e della piuma» di Scott, trasmessa in televisione, verificò in diretta la legge di gravitazione di Galileo. Worden, in orbita lunare, gestì un vano SIM pieno di strumenti di telerilevamento (fotocamere cartografiche, spettrometri a raggi gamma, a raggi X e a particelle alfa) ed effettuò la prima EVA nello spazio profondo durante il ritorno (EVA di ~39 minuti a ~317 000 km dalla Terra per recuperare i contenitori delle pellicole). Il recupero dell'Apollo 15 fu turbato dal mancato dispiegamento di uno dei tre paracadute: il CM ammarò con un impatto violento, ma l'equipaggio era sano e salvo.",
   "events": [
     {
       "met": 0,
@@ -29,7 +29,7 @@
     {
       "met": 4.79,
       "label": "ALLUNAGGIO",
-      "note": "Falcon atterra a Hadley-Apennine 1971-07-30 22:16 UTC — primo allunaggio su un sito altopiano non-mare.",
+      "note": "Falcon atterra a Hadley-Apennine, 1971-07-30 22:16 UTC — primo allunaggio in un sito di altopiano, fuori dai mari lunari.",
       "type": "nominal"
     },
     {
@@ -41,13 +41,13 @@
     {
       "met": 5.5,
       "label": "ROCCIA DELLA GENESI",
-      "note": "EVA-2: Al Spur Crater, Scott e Irwin recuperano il campione 15415 — un'anortossite di 4,1 miliardi di anni dalla crosta lunare originale.",
+      "note": "EVA-2: al cratere Spur, Scott + Irwin recuperano il campione 15415 — un'anortosite di 4,1 miliardi di anni proveniente dalla crosta lunare originaria.",
       "type": "info"
     },
     {
       "met": 6.1,
       "label": "CADUTA DI MARTELLO E PIUMA",
-      "note": "EVA-3 / pre-ascesa: Scott trasmette televisivamente un martello e una piuma lasciati cadere insieme; entrambi colpiscono il regolite simultaneamente, verificando dal vivo la previsione di Galileo del 1589.",
+      "note": "EVA-3 / prima dell'ascesa: Scott mostra in diretta TV un martello e una piuma lasciati cadere insieme; entrambi toccano la regolite nello stesso istante, verificando dal vivo la previsione di Galileo del 1589.",
       "type": "info"
     },
     {
@@ -65,7 +65,7 @@
     {
       "met": 9.5,
       "label": "EVA DELLO SPAZIO PROFONDO",
-      "note": "Worden esegue il primo-assoluto EVA nello spazio cislunar (~39 min a ~317 000 km dalla Terra) per recuperare le cassette fotografiche della baia SIM.",
+      "note": "Worden esegue la prima EVA di sempre nello spazio cislunare (~39 min a ~317 000 km dalla Terra) per recuperare i contenitori di pellicola del vano SIM.",
       "type": "info"
     },
     {

@@ -5,7 +5,7 @@
   "delta_v": "~5 km/s",
   "type": "SAMPLE RITORNO · EFFETTUATA",
   "first": "Primo ritorno di un campione lunare in 44 anni (da Luna 24, 1976)",
-  "description": "Chang'e 5 è stato il primo campione di ritorno dalla Luna dopo Luna 24 dell'Unione Sovietica nel 1976, un intervallo di 44 anni. L'architettura: orbiter + lander + veicolo di risalita + capsula di ritorno dei campioni, tutto in un unico lancio. Il lander è atterrato a Mons Rümker, ha perforato e raccolto 1.731 kg di regolite, è decollato, si è incontrato e attraccato con l'orbiter (il primo rendezvous lunare robotico) e la capsula è tornata sulla Terra. I campioni provengono da una regione di soli 2 miliardi di anni, molto più giovane di qualsiasi campione Apollo o Luna, e riscrivono i modelli del vulcanismo lunare.",
+  "description": "Chang'e 5 è stato il primo recupero di campioni dalla Luna dopo Luna 24 dell'Unione Sovietica nel 1976, un intervallo di 44 anni. L'architettura: orbiter + lander + veicolo di risalita + capsula di ritorno dei campioni, tutto in un unico lancio. Il lander è atterrato a Mons Rümker, ha perforato e raccolto 1,731 kg di regolite, è decollato, ha eseguito il rendezvous e l'aggancio con l'orbiter (il primo rendezvous lunare robotico) e la capsula è tornata sulla Terra. I campioni provengono da una regione di soli 2 miliardi di anni, molto più giovane di qualsiasi campione Apollo o Luna, e riscrivono i modelli del vulcanismo lunare.",
   "events": [
     {
       "met": 0,
@@ -40,13 +40,13 @@
     {
       "met": 13,
       "label": "APPUNTAMENTO",
-      "note": "Primo rendez-vous lunare robotico; contenitore del campione trasferito sull'orbiter.",
+      "note": "Primo rendezvous lunare robotico; contenitore del campione trasferito all'orbiter.",
       "type": "info"
     },
     {
       "met": 23,
       "label": "TERRA RITORNO",
-      "note": "La capsula campione atterra nella Mongolia Interna 16-12-2020.",
+      "note": "La capsula dei campioni atterra nella Mongolia Interna il 2020-12-16.",
       "type": "info"
     }
   ],

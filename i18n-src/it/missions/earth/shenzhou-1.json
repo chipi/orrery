@@ -5,7 +5,7 @@
   "delta_v": "~9,4 km/s (LEO)",
   "type": "NAVETTA CON EQUIPAGGIO · SENZA EQUIPAGGIO · VOLATO",
   "first": "Il primo test orbitale Shenzhou della Cina — ha aperto il sentiero verso il volo spaziale con equipaggio della RPC",
-  "description": "Primo volo del programma di navetta con equipaggio Shenzhou. Lanciato il 1999-11-19 alle 22:30 UTC da Jiuquan nel volo inaugurale del Long March 2F (CZ-2F) certificato per equipaggio umano. La capsula ha completato 14 orbite a 195 × 315 km, inclinazione di 42,6°, e ha effettuato il rientro con recupero nella steppa della Mongolia Interna il 1999-11-20 alle 19:41 UTC. Trasportava hardware fittizio per il supporto vitale, pacchetti telemetrici e una bandiera cinese, oltre a semi per il ritorno di un carico scientifico di genetica in microgravità. Ha segnato l'impegno della Cina a seguire l'URSS/USA verso il volo spaziale con equipaggio indipendente; ha condotto direttamente allo Shenzhou 5 (2003) con Yang Liwei.",
+  "description": "Primo volo del programma di veicoli spaziali con equipaggio Shenzhou. Lanciato il 1999-11-19 alle 22:30 UTC da Jiuquan nel volo inaugurale del Long March 2F (CZ-2F) abilitato al trasporto umano. La capsula ha completato 14 orbite a 195 × 315 km, con inclinazione di 42,6°, ed è rientrata atterrando nella steppa della Mongolia Interna il 1999-11-20 alle 19:41 UTC. Trasportava hardware simulato per il supporto vitale, pacchetti di telemetria e una bandiera cinese, oltre a semi per un carico di ritorno di genetica in microgravità. Ha segnato l'impegno della Cina a seguire URSS e USA verso il volo spaziale umano indipendente; ha portato direttamente allo Shenzhou 5 (2003) con Yang Liwei.",
   "events": [
     {
       "met": 0,
@@ -28,7 +28,7 @@
     {
       "met": 0.882,
       "label": "RECUPERO",
-      "note": "La capsula è scesa a Dorbod Banner, Mongolia Interna, 1999-11-20 19:41 UTC.",
+      "note": "La capsula è atterrata nel Dorbod Banner, in Mongolia Interna, il 1999-11-20 alle 19:41 UTC.",
       "type": "nominal"
     }
   ]

@@ -1,0 +1,9 @@
+[
+  {
+    "term": "booster",
+    "loc": "it",
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "why": "variant: vettore (whole Proton-K launcher)"
+  }
+]

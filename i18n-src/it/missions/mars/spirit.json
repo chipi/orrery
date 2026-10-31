@@ -4,9 +4,9 @@
   "payload": "1063 kg (stadio di crociera + EDL + rover); 174 kg di massa in superficie",
   "delta_v": "~5,5 km/s",
   "type": "ROVER · FLOWN",
-  "first": "Il primo dei due rover Mars Exploration Rover; il rover più longevo fino al sorpasso da parte di Curiosity",
-  "dispatch": "Spirit è stato costruito per novanta giorni ed ha operato per sei anni. Uno di una coppia di geologi grandi come un golf cart, atterrato nel 2004, è stato inviato a leggere le rocce in cerca di prove di un Marte più umido in passato — e le ha trovate, scoprendo minerali che si formano solo in acqua e, in un luogo, depositi di silice simili a quelli lasciati dalle sorgenti termali sulla Terra. Ha scalato colline che nessuno aveva pianificato di raggiungere e ha sopravvissuto a inverni per i quali non era stato progettato, fino a quando una ruota si è danneggiata e si è impantanato nella sabbia soffice. Ha continuato a trasmettere dal luogo in cui era bloccato fino a quando il freddo marziano non l'ha definitivamente fermato.",
-  "description": "Spirit (MER-A) ha rimbalzato 28 volte sul fondo del cratere Gusev il 2004-01-04 e si è fermato a 250 m dal primo impatto. Progettato per una missione primaria di 90 sol, ha operato per 2.208 sol. Ha percorso 7,7 km sulle pianure di Gusev, scalato le Columbia Hills e scoperto rocce ricche di ematite che indicavano la presenza di acqua antica. Nel 2009-04 una ruota ha sfondato una crosta di solfati a \"Troy\" e Spirit si è fermato nel terreno soffice; il team l'ha convertito in una piattaforma stazionaria. Ultima trasmissione 2010-03-22; missione dichiarata conclusa 2011-05-25. Gemellato con Opportunity, che è atterrato tre settimane dopo sul lato opposto di Marte.",
+  "first": "Il primo dei gemelli Mars Exploration Rover; il rover più longevo finché non fu superato da Curiosity",
+  "dispatch": "Spirit fu costruito per novanta giorni e funzionò per sei anni. Uno di una coppia di geologi grandi quanto un carrello da golf, atterrato nel 2004, fu inviato a leggere le rocce in cerca di prove di un passato marziano più umido — e le trovò, scoprendo minerali che si formano solo in presenza di acqua e, in un punto, depositi di silice simili a quelli lasciati dalle sorgenti termali sulla Terra. Scalò colline che nessuno aveva previsto che raggiungesse e sopravvisse a inverni che non era mai stato progettato per vedere, finché una ruota cedette e il rover rimase impantanato nella sabbia soffice. Continuò a trasmettere dal punto in cui era bloccato, finché il freddo marziano non lo fermò definitivamente.",
+  "description": "Spirit (MER-A) ha rimbalzato 28 volte sul fondo del cratere Gusev il 2004-01-04 e si è fermato rotolando a 250 m dal primo impatto. Progettato per una missione primaria di 90 sol, sarebbe sopravvissuto per 2.208 sol. Ha percorso 7,7 km nelle pianure di Gusev, è salito sulle Columbia Hills e ha scoperto rocce contenenti ematite che indicavano la presenza persistente di acqua antica. Nel 2009-04 una ruota ha sfondato una crosta di solfati a «Troy» e Spirit si è bloccato nel terreno soffice; il team lo ha trasformato in una piattaforma stazionaria. Ultima trasmissione 2010-03-22; missione dichiarata conclusa 2011-05-25. Gemello di Opportunity, atterrato tre settimane dopo sul lato opposto di Marte.",
   "events": [
     {
       "met": 0,
@@ -29,7 +29,7 @@
     {
       "met": 208,
       "label": "EDL",
-      "note": "Scudo termico, paracadute, razzi retroattivi, airbag — 6 minuti d'inferno nel cratere Gusev.",
+      "note": "Scudo termico, paracadute, retrorazzi, airbag — 6 minuti d'inferno fino al cratere Gusev.",
       "type": "info"
     },
     {

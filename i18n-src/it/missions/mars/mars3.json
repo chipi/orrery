@@ -5,7 +5,7 @@
   "delta_v": "~5,5 km/s",
   "type": "ORBITER · LANDER · FLOWN",
   "first": "Primo veicolo spaziale a effettuare un atterraggio morbido su Marte",
-  "description": "La doppia missione audace dell'Unione Sovietica verso Marte nel 1971 — Mars 2 e Mars 3 lanciate a 9 giorni di distanza. L'allunatore di Mars 2 si schiantò; l'allunatore di Mars 3 realizzò il primo atterraggio morbido su Marte ma rimase silenzioso per ~110 secondi dopo il contatto — la trasmissione vera e propria durò solo ~14,5 secondi — probabilmente a causa della tempesta di polvere globale che imperversava in quel momento. L'orbiter operò per 8 mesi, restituendo decine di immagini e misurazioni atmosferiche. Nonostante la breve missione di superficie, Mars 3 dimostrò che il problema della discesa e dell'atterraggio su Marte era risolvibile.",
+  "description": "La doppia missione audace dell'Unione Sovietica verso Marte nel 1971 — Mars 2 e Mars 3, lanciate a 9 giorni di distanza. Il modulo di atterraggio di Mars 2 si schiantò; quello di Mars 3 realizzò il primo atterraggio morbido su Marte, ma tacque ~110 secondi dopo il contatto con il suolo — la trasmissione vera e propria durò solo ~14,5 secondi — forse a causa della tempesta di polvere globale che imperversava in quel momento. L'orbiter operò per 8 mesi, restituendo decine di immagini e misurazioni atmosferiche. Nonostante la breve missione in superficie, Mars 3 dimostrò che il problema della discesa e dell'atterraggio su Marte era risolvibile.",
   "events": [
     {
       "met": 0,
@@ -16,13 +16,13 @@
     {
       "met": 188,
       "label": "MOI ORBITER",
-      "note": "L'orbiter cattura l'orbita di Marte durante la tempesta di polvere globale.",
+      "note": "L'orbiter entra in orbita attorno a Marte durante la tempesta di polvere globale.",
       "type": "nominal"
     },
     {
       "met": 188.005,
       "label": "SEPARAZIONE LANDER",
-      "note": "L'allunatore si separa e inizia l'ingresso atmosferico.",
+      "note": "Il lander si separa e inizia l'ingresso atmosferico.",
       "type": "nominal"
     },
     {

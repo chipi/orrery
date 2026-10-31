@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "description",
+    "find": "due CubeSat, Juventas",
+    "replace": "due CubeSats, Juventas"
+  }
+]

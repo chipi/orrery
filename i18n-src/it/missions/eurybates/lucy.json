@@ -5,7 +5,7 @@
   "delta_v": "~6 km/s (con 3 fionde gravitazionali terrestri)",
   "type": "MULTI-SORVOLO · ATTIVA",
   "first": "Prima missione ai Troiani di Giove; visita 11 corpi su 8 asteroidi e i loro satelliti in un'unica traiettoria di 12 anni — un numero record di oggetti su orbite solari separate",
-  "description": "Lucy si protende verso le nubi di Lagrange L4 e L5 — popolazioni di asteroidi primordiali che precedono e seguono Giove di 60°, ritenute conservare materiale dal disco protoplanetario esterno. Tre fionde gravitazionali terrestri (2022, 2024, 2030) modellano un'unica traiettoria che visita sette asteroidi Troiani più bersagli del main belt bonus. Primo incontro con asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), nel quale l'imaging ha rivelato il satellite binario di contatto Selam. Main belt bonus: Donaldjohanson 2025-04. Sciame L4: Euribate + luna Queta (2027-08), Polimele (2027-09), Leuco (2028-04), Oro (2028-11). Dopo EGA-3 (2030-12), lo sciame L5 in coda: Patroclo-Menezio binario (2033-03) — il più grande binario Troiano conosciuto, un climax appropriato per l'omonimo della missione (Lucy il fossile ominide; Patroclo-Menezio i due personaggi che caddero insieme nell'Iliade).",
+  "description": "Lucy punta alle nubi di Lagrange L4 e L5 — popolazioni di asteroidi primordiali che precedono e seguono Giove di 60°, ritenute custodi di materiale del disco protoplanetario esterno. Tre fionde gravitazionali terrestri (2022, 2024, 2030) plasmano un'unica traiettoria che visita sette asteroidi troiani più alcuni bersagli aggiuntivi della fascia principale. Primo incontro con un asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), dove le immagini hanno rivelato il satellite Selam, un binario a contatto. Bersaglio aggiuntivo della fascia principale: Donaldjohanson 2025-04. Sciame L4: Euribate + la luna Queta (2027-08), Polimele (2027-09), Leuco (2028-04), Oro (2028-11). Dopo EGA-3 (2030-12), lo sciame L5 in coda: il binario Patroclo-Menezio (2033-03) — il più grande binario troiano conosciuto, un finale azzeccato per l'omonimia della missione (Lucy, il fossile di ominide; Patroclo e Menezio, i due personaggi che nell'Iliade caddero insieme).",
   "events": [
     {
       "met": 0,
@@ -22,31 +22,31 @@
     {
       "met": 746,
       "label": "DINKINESH",
-      "note": "2023-11-01. Primo sorvolo di asteroide — corpo del main belt di ~790 m; satellite Selam (binario di contatto) scoperto.",
+      "note": "2023-11-01. Primo sorvolo di un asteroide — corpo della fascia principale di ~790 m; scoperto il satellite Selam (binario a contatto).",
       "type": "info"
     },
     {
       "met": 1282,
       "label": "DONALDJOHANSON",
-      "note": "Sorvolo bonus del main belt 2025-04. Asteroide C-type di 4 km.",
+      "note": "Sorvolo aggiuntivo nella fascia principale, 2025-04. Asteroide di tipo C di 4 km.",
       "type": "info"
     },
     {
       "met": 2126.001,
       "label": "EURYBATES + QUETA",
-      "note": "2027-08. Primo incontro Troiano. C-type di 64 km + luna di 1 km.",
+      "note": "2027-08. Primo incontro con un troiano. Asteroide di tipo C di 64 km + luna di 1 km.",
       "type": "info"
     },
     {
       "met": 2160,
       "label": "POLYMELE",
-      "note": "Troiano P-type di 21 km con satellite senza nome.",
+      "note": "Troiano di tipo P di 21 km con un satellite senza nome.",
       "type": "info"
     },
     {
       "met": 2376,
       "label": "LEUCUS",
-      "note": "Troiano D-type di 35 km, rotatore lento (446 h).",
+      "note": "Troiano di tipo D di 35 km, rotatore lento (446 h).",
       "type": "info"
     },
     {
@@ -58,13 +58,13 @@
     {
       "met": 3345,
       "label": "EGA-3",
-      "note": "Ultimo assistenza di gravità terrestre 2030-12. Si dirige verso nube L5.",
+      "note": "Ultima fionda gravitazionale terrestre nel 2030-12. Si dirige verso la nube L5.",
       "type": "info"
     },
     {
       "met": 4170,
       "label": "PATROCLUS-MENOETIUS",
-      "note": "2033-03. Climax della missione: binario Troiano di 113 km + 104 km.",
+      "note": "2033-03. Culmine della missione: troiano binario di 113 km + 104 km.",
       "type": "info"
     }
   ],

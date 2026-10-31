@@ -10,13 +10,13 @@
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "PSLV-XL (C25) da Sriharikota — un lanciatore relativamente piccolo che richiedeva un'orbita di innalzamento.",
+      "note": "PSLV-XL (C25) da Sriharikota — un lanciatore relativamente piccolo, che richiedeva una sequenza di innalzamento dell'orbita.",
       "type": "nominal"
     },
     {
       "met": 7,
       "label": "ACCENSIONE PERIGEO 1",
-      "note": "Prima di sei accensioni di innalzamento dell'orbita terrestre prima dell'iniezione trans-Marte.",
+      "note": "La prima di sei accensioni di innalzamento dell'orbita terrestre prima dell'iniezione trans-Marte.",
       "type": "nominal"
     },
     {

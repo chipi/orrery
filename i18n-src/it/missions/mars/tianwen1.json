@@ -5,7 +5,7 @@
   "delta_v": "~5 km/s",
   "type": "ORBITER · LANDER · ROVER · ATTIVO",
   "first": "Prima missione che trasporta orbiter, lander e rover su Marte in un unico lancio",
-  "description": "La prima missione cinese su Marte ha realizzato ciò che nessuna agenzia aveva mai tentato in un solo lancio: inserimento orbitale, ingresso nell'atmosfera, atterraggio morbido e dispiegamento del rover. Il rover Zhurong ha operato per 358 sol a Utopia Planitia, percorrendo 1,9 km, prima di entrare in ibernazione programmata nel maggio 2022; da allora non si è più svegliato (probabilmente a causa dell'accumulo di polvere sui pannelli solari). L'orbiter rimane attivo, mappando il pianeta ad alta risoluzione e fungendo da relè per le risorse di terra.",
+  "description": "La prima missione cinese su Marte ha realizzato ciò che nessuna agenzia aveva mai tentato in un solo lancio: inserimento in orbita, ingresso atmosferico, atterraggio morbido e dispiegamento del rover. Il rover Zhurong ha operato per 358 sol a Utopia Planitia, percorrendo 1,9 km, prima di entrare in ibernazione programmata nel maggio 2022; da allora non si è più risvegliato (probabilmente a causa della polvere accumulata sui pannelli solari). L'orbiter resta attivo: mappa il pianeta ad alta risoluzione e fa da ripetitore per i mezzi a terra.",
   "events": [
     {
       "met": 0,
@@ -22,13 +22,13 @@
     {
       "met": 295,
       "label": "ATTERRAGGIO DI ZHURONG",
-      "note": "Il lander/rover scende a Utopia Planitia 14-05-2021; Zhurong esce dalla rampa 2021-05-22.",
+      "note": "Il lander/rover scende su Utopia Planitia il 2021-05-14; Zhurong esce dalla rampa il 2021-05-22.",
       "type": "nominal"
     },
     {
       "met": 651,
       "label": "IBERNAZIONE DI ZHURONG",
-      "note": "Rover entrerà in letargo nel periodo 2022-2005; l'orbiter continua le operazioni.",
+      "note": "Il rover entra in letargo programmato nel 2022-05; l'orbiter continua le operazioni.",
       "type": "info"
     }
   ],

@@ -3,10 +3,10 @@
   "vehicle": "Vostok-K (8K72K)",
   "payload": "4725 kg di massa al lancio; modulo di discesa sferico + modulo di servizio",
   "delta_v": "~9,4 km/s (LEO)",
-  "dispatch": "Vostok 1 è dove l'era spaziale comincia con una persona a bordo. Per 108 minuti, il 12 aprile 1961, Jurij Gagarin — un pilota da caccia di 27 anni — divenne il primo essere umano a lasciare il pianeta e orbitarlo, e il mondo si svegliò scoprendo che l'Unione Sovietica aveva fatto ciò che tutti presumevano avrebbe fatto per prima l'America. Non aveva quasi alcun controllo del veicolo spaziale; il volo era controllato da terra, ed era più passeggero che pilota, sigillato in una sfera costruita per riportarlo a casa che fosse cosciente o meno. Non importava. Un essere umano aveva orbitato la Terra ed era tornato, e niente riguardo a come le persone vedevano il loro posto nell'universo fu più lo stesso dopo.",
+  "dispatch": "Vostok 1 è il punto in cui l'era spaziale comincia con una persona a bordo. Per 108 minuti, il 12 aprile 1961, Jurij Gagarin — pilota da caccia ventisettenne — fu il primo essere umano a lasciare il pianeta e a compiere un'orbita attorno a esso, e il mondo si svegliò scoprendo che l'Unione Sovietica aveva fatto la cosa che tutti credevano avrebbe fatto per prima l'America. Non aveva quasi alcun controllo della navicella; il volo era gestito da terra ed egli era tanto passeggero quanto pilota, sigillato in una sfera costruita per riportarlo a casa che fosse cosciente o no. Non importava. Un essere umano aveva compiuto il giro della Terra ed era tornato, e nulla di come le persone vedevano il proprio posto nell'universo fu più lo stesso dopo.",
   "type": "ORBITA TERRESTRE CON EQUIPAGGIO · VOLATO",
   "first": "Primo essere umano nello spazio; primo volo orbitale con equipaggio",
-  "description": "Il volo orbitale singolo di 108 minuti di Jurij Gagarin — il primo volo spaziale con equipaggio della storia e il primo essere umano a orbitare attorno alla Terra. Lanciato il 12-04-1961 alle 06:07 UTC da Bajkonur su un vettore Vostok-K (8K72K); orbita 169 × 327 km, inclinazione 65°. Il modulo di discesa sferico espulse Gagarin a circa 7 km di quota (un fatto che l'URSS nascose per anni per rivendicare un atterraggio con equipaggio completo secondo le regole della FAI). Gagarin si paracadutò a Smelovka, Saratov Oblast; la capsula atterrò separatamente ed è esposta al museo RKK Energia a Korolëv, in Russia. Il volo concluse il decennio di lavoro sui missili e satelliti di Korolëv e innescò il programma statunitense di voli spaziali con equipaggio + l'impegno di Kennedy per la Luna sei settimane dopo.",
+  "description": "Il volo di 108 minuti, con una sola orbita, di Jurij Gagarin — il primo volo spaziale con equipaggio della storia e il primo essere umano a orbitare attorno alla Terra. Lanciato il 1961-04-12 alle 06:07 UTC da Bajkonur su un vettore Vostok-K (8K72K); orbita 169 × 327 km, inclinazione 65°. Il modulo di discesa sferico espulse Gagarin a circa 7 km di quota (un fatto che l'URSS nascose per anni per rivendicare un atterraggio con equipaggio completo secondo le regole della FAI). Gagarin si paracadutò a Smelovka, Saratov Oblast; la capsula atterrò separatamente ed è esposta al museo RKK Energia a Korolëv, in Russia. Il volo concluse il decennio di lavoro sui missili e satelliti di Korolëv e innescò il programma statunitense di voli spaziali con equipaggio + l'impegno di Kennedy per la Luna sei settimane dopo.",
   "events": [
     {
       "met": 0,
@@ -23,13 +23,13 @@
     {
       "met": 0.063,
       "label": "ACCENSIONE DEI RETRORAZZI",
-      "note": "Accensione del retrorazz TDU-1 per la de-orbita. Il sistema di separazione del modulo di servizio si guasta parzialmente — i cinghioni si rilasciano in ritardo, la capsula tumula per ~10 min.",
+      "note": "Il retrorazzo TDU-1 si accende per l'uscita dall'orbita. Il sistema di separazione del modulo di servizio si guasta in parte — le cinghie si sganciano in ritardo e la capsula rotola su sé stessa per ~10 min.",
       "type": "warning"
     },
     {
       "met": 0.071,
       "label": "EIEZIONE DEL COSMONAUTA",
-      "note": "Gagarin si è ejettato dal modulo di discesa a ~7 km di altitudine; ha raggiunto Smelovka, Saratov Oblast, con il paracadute. La capsula è atterrata separatamente.",
+      "note": "Gagarin si è eiettato dal modulo di discesa a ~7 km di quota; è sceso con il paracadute a Smelovka, nell'oblast di Saratov. La capsula è atterrata separatamente.",
       "type": "info"
     }
   ]

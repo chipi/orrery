@@ -4,7 +4,7 @@
   "payload": "1583 kg di massa al lancio; capsula lander da 99 kg",
   "delta_v": "~3 km/s",
   "type": "LANDER SENZA EQUIPAGGIO · COMPLETATA",
-  "first": "Primo allunaggio dolce della Luna; prime fotografie dalla superficie lunare",
+  "first": "Primo allunaggio morbido sulla Luna; prime fotografie dalla superficie lunare",
   "description": "Dopo 11 fallimenti sovietici e 5 missioni americane Ranger progettate solo per impattare, Luna 9 divenne il primo veicolo spaziale ad allunare dolcemente su un altro mondo. Nove immagini — tra cui cinque panorami — trasmesse in tre sessioni nel corso di tre giorni risolsero un dibattito scientifico di lunga data: la superficie della Luna era solida, non un mare di polvere abbastanza profondo da inghiottire un lander. La missione durò 3 giorni prima dell'esaurimento della batteria. Nel giro di pochi mesi, ogni missione diretta verso la Luna adottò l'allunaggio dolce come standard.",
   "events": [
     {
@@ -16,7 +16,7 @@
     {
       "met": 3,
       "label": "ALLUNAGGIO",
-      "note": "Allunaggio dolce a Oceanus Procellarum 03-02-1966 18:45 UTC. Primo allunaggio dolce su un altro mondo.",
+      "note": "Allunaggio morbido a Oceanus Procellarum 1966-02-03 18:45 UTC. Primo allunaggio morbido su un altro mondo.",
       "type": "nominal"
     },
     {
@@ -28,7 +28,7 @@
     {
       "met": 6,
       "label": "PERDITA DEL SEGNALE",
-      "note": "Batteria esaurita; ultima trasmissione 06-02-1966.",
+      "note": "Batteria esaurita; ultima trasmissione il 1966-02-06.",
       "type": "warning"
     }
   ],

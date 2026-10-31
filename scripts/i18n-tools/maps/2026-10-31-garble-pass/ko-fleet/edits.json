@@ -1,0 +1,177 @@
+[
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "tagline",
+    "en": "First wheeled vehicle to roam another world",
+    "old": "다른 세계로 비행하는 최초의 차량",
+    "new": "다른 세계를 누빈 최초의 바퀴 달린 탐사차"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "dispatch",
+    "en": "The Vostok spacecraft was the first machine to carry a human into space and bring one back, and its design is a study in doing the minimum that works. Reentry is the hardest part of coming home, so Vostok used the one shape that survives it from any angle — a sphere — which meant the automatic systems never had to point the craft precisely; it would tumble in and still come down heat-shield-heavy. The catch was that the sphere landed too hard for a person, so the cosmonaut ejected near the ground and parachuted separately, a fact hidden for years to protect the records. Crude, secretive, and completely effective, it flew six people to orbit and lost none — and its capsule-plus-service-module layout became the pattern for Soyuz, still flying today.",
+    "old": "Vostok 우주선은 인간을 우주로 실어 나르고 귀환시킨 최초의 기계였으며, 그 설계는 작동하는 최소한의 것을 구현한 연구였다. 재진입은 귀환 과정에서 가장 어려운 부분이므로, Vostok는 어떤 각도에서든 살아남는 하나의 형태인 구체를 사용했다. 이는 자동 시스템이 우주선을 정밀하게 지향할 필요가 없음을 의미했다. 우주선은 회전하며 진입해도 열 차폐막이 아래로 향한 채 내려올 수 있었다. 문제는 구체가 사람에게는 너무 강하게 착륙한다는 점이었고, 그래서 우주 비행사는 지면 근처에서 사출되어 별도로 낙하산으로 하강했다. 이 사실은 기록을 보호하기 위해 수년간 숨겨졌다. 조잡하고, 은밀했으며, 완전히 효과적이었던 이 우주선은 여섯 명을 궤도로 보내고 단 한 명도 잃지 않았다. 그리고 그 캡슐과 서비스 모듈 구조는 오늘날까지 비행하고 있는 Soyuz의 패턴이 되었다.",
+    "new": "Vostok 우주선은 인간을 우주로 데려가 무사히 귀환시킨 최초의 기계였으며, 그 설계는 작동하는 최소한만 갖춘다는 것이 무엇인지 보여주는 본보기였다. 대기권 진입은 귀환에서 가장 어려운 부분이므로, Vostok는 어느 각도에서든 견뎌내는 단 하나의 형태인 구체를 택했다. 덕분에 자동 시스템은 우주선을 정밀하게 겨냥할 필요가 전혀 없었고, 우주선은 마구 회전하며 진입하더라도 열 차폐막 쪽이 무거워 아래를 향한 채 내려올 수 있었다. 문제는 구체가 사람이 견디기에는 너무 거칠게 착륙한다는 점이었고, 그래서 우주비행사는 지면 가까이에서 사출되어 따로 낙하산으로 내려왔다. 이 사실은 기록을 지키기 위해 수년간 감춰졌다. 조잡하고 은밀했지만 완벽하게 효과적이었던 이 우주선은 여섯 명을 궤도로 보내고 한 명도 잃지 않았으며, 캡슐에 서비스 모듈을 붙인 그 구성은 오늘날에도 비행하는 Soyuz의 원형이 되었다."
+  },
+  {
+    "rel": "fleet/space-suit/feitian.json",
+    "at": "tagline",
+    "en": "China's EVA suit — derived from the Orlan, first flown on Shenzhou 7 in 2008",
+    "old": "중국의 EVA 우주복 — 소련의 Orlan에서 파생되었으며 2008년 Shenzhou 7에서 처음 비행",
+    "new": "중국의 EVA 우주복 — Orlan에서 파생되어 2008년 Shenzhou 7에서 처음 비행"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "best_known_for",
+    "en": "Europe's civilian GNSS — ~30 sats, sub-metre positioning",
+    "old": "유럽의 민간용 GNSS — ~30개 위성, 1미터 이하 정위치 결정",
+    "new": "유럽의 민간용 GNSS — ~30개 위성, 1m 이하 정밀 측위"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "tagline",
+    "en": "First long-duration multi-port Soviet station",
+    "old": "최초의 장거리 멀티 포트 소련 역",
+    "new": "최초의 장기 체류형 다중 포트 소련 우주 정거장"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "best_known_for",
+    "en": "First wheeled vehicle to roam another world",
+    "old": "다른 세계로 비행하는 최초의 차량",
+    "new": "다른 세계를 누빈 최초의 바퀴 달린 탐사차"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "description",
+    "en": "The longest continuous record of Earth imaging in history — Landsat 1 launched 1972 (originally as ERTS-1), continuing through Landsat 9 (2021). Currently operational pair Landsat 8 (2013) + Landsat 9 (2021) at 705 km sun-synchronous orbit, 98.2° inclination. 30 m multispectral resolution. NASA builds + launches; USGS operates and distributes data. Free public access since 2008 turned Landsat into the global reference dataset for climate change, deforestation, and urban growth.",
+    "old": "역사상 가장 긴 연속 지구 관측 기록 — Landsat 1은 1972년 발사(원래 ERTS-1)되었으며, Landsat 9(2021)까지 이어지고 있다. 현재 운용 중인 쌍은 Landsat 8(2013) + Landsat 9(2021)로 705 km 태양동기궤도, 98.2° 경사각에 위치한다. 30 m 다중분광 해상도. NASA가 제작 및 발사하고, USGS가 운영 및 데이터를 배포한다. 2008년부터 무료 공개 접근이 시작되면서 Landsat은 기후 변화, 산림 벌채, 도시 성장에 대한 전 세계 기준 데이터셋이 되었다.",
+    "new": "역사상 가장 긴 지구 관측 연속 기록 — Landsat 1은 1972년 발사되었고(원래 이름은 ERTS-1) Landsat 9(2021)까지 이어지고 있다. 현재 운용 중인 Landsat 8(2013)과 Landsat 9(2021) 한 쌍은 고도 705 km 태양동기궤도, 궤도 경사각 98.2°에 있다. 해상도는 30 m 다중분광이다. NASA가 제작하고 발사하며, USGS가 운영하고 데이터를 배포한다. 2008년부터 시작된 무료 공개 접근 덕분에 Landsat은 기후 변화, 산림 벌채, 도시 성장을 다루는 전 세계 기준 데이터셋이 되었다."
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "best_known_for",
+    "en": "Heavy-lift backbone of the Chinese space program",
+    "old": "중국 공간 프로그램의 중류 백본",
+    "new": "중국 우주 프로그램을 떠받치는 대형 발사체"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "best_known_for",
+    "en": "First long-duration multi-port Soviet station",
+    "old": "최초의 장거리 멀티 포트 소련 역",
+    "new": "최초의 장기 체류형 다중 포트 소련 우주 정거장"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "tagline",
+    "en": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+    "old": "Apollo 10 + Skylab + 53개의 셔틀 비행; 현재 NASA의 SLS / Artemis 발사대",
+    "new": "Apollo 10 + Skylab + 셔틀 53회 비행; 현재 NASA의 SLS / Artemis 발사대"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "best_known_for",
+    "en": "First Chinese Mars mission; orbiter delivered the Zhurong rover in May 2021",
+    "old": "중국 최초의 화성 탐사 임무; 2021년 5월 Zhurong 로버 착륙 성공",
+    "new": "중국 최초의 화성 탐사 임무; 궤도선이 2021년 5월 Zhurong 로버를 화성에 전달"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "best_known_for",
+    "en": "Blue Origin's two-stage reusable heavy-lift orbital launcher — BE-4 first stage + cryogenic second",
+    "old": "Blue Origin의 2단식 재사용 가능 대형 궤도 발사체 — 메탄 BE-4 1단 + 극저온 2단",
+    "new": "Blue Origin의 2단식 재사용 가능 대형 궤도 발사체 — BE-4 1단 + 극저온 2단"
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "tagline",
+    "en": "Heavy-lift backbone of the Chinese space program",
+    "old": "중국 공간 프로그램의 중류 백본",
+    "new": "중국 우주 프로그램을 떠받치는 대형 발사체"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "best_known_for",
+    "en": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+    "old": "Apollo 10 + Skylab + 53개의 셔틀 비행; 현재 NASA의 SLS / Artemis 발사대",
+    "new": "Apollo 10 + Skylab + 셔틀 53회 비행; 현재 NASA의 SLS / Artemis 발사대"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "tagline",
+    "en": "First spacecraft to orbit another planet",
+    "old": "다른 행성을 궤도에 첫 우주선",
+    "new": "다른 행성의 궤도를 돈 최초의 우주선"
+  },
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "best_known_for",
+    "en": "The white US spacewalk suit that has flown every American EVA from the Shuttle through the ISS",
+    "old": "우주왕복선부터 ISS까지 모든 미국 우주유영을 비행한 흰색 미국 우주복",
+    "new": "우주왕복선 시절부터 ISS까지 미국의 모든 우주유영에 사용된 흰색 미국 우주복"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "best_known_for",
+    "en": "First spacecraft to orbit another planet",
+    "old": "다른 행성을 궤도에 첫 우주선",
+    "new": "다른 행성의 궤도를 돈 최초의 우주선"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "best_known_for",
+    "en": "First commercial suborbital crewed vehicle",
+    "old": "첫 번째 상업 잠수함 승무원 차량",
+    "new": "최초의 상업용 준궤도 유인 비행체"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "description",
+    "en": "China's GNSS, formally BeiDou-3 in current form. Unique hybrid architecture mixing MEO (24 satellites at 21,500 km, 55°), inclined geosynchronous (IGSO, 3 satellites), and GEO (3 satellites). Full global coverage declared July 2020. The only GNSS with short-message satellite communication capability built into the signal — users can send short text messages directly through the constellation, useful in remote-area emergency comms.",
+    "old": "중국의 GNSS로, 현재 형태는 공식적으로 BeiDou-3입니다. MEO(24개 위성, 21,500 km, 55°), 경사 정지궤도(IGSO, 3개 위성), GEO(3개 위성)를 혼합한 독특한 하이브리드 아키텍처를 가지고 있습니다. 2020년 7월 전 지구 커버리지 달성을 선언했습니다. 신호에 단문 위성 통신 기능이 내장된 유일한 GNSS로, 사용자는 위성군을 통해 직접 짧은 문자 메시지를 전송할 수 있어 원격 지역 비상 통신에 유용합니다.",
+    "new": "중국의 GNSS로, 현재 형태는 공식적으로 BeiDou-3입니다. MEO(고도 21,500 km의 위성 24개, 55°), 경사 지구동기궤도(IGSO, 위성 3개), GEO(위성 3개)를 섞은 독특한 하이브리드 구조입니다. 2020년 7월 전 지구 커버리지가 완성되었음을 선언했습니다. 신호 자체에 단문 위성 통신 기능이 내장된 유일한 GNSS로, 사용자는 위성군을 통해 직접 짧은 문자 메시지를 보낼 수 있어 외딴 지역의 긴급 통신에 유용합니다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "description",
+    "en": "The Soviet shuttle, externally similar to the American orbiter but with no main engines (Energia carried it). Flew exactly once, in 1988, fully autonomous and unmanned — the only Soviet shuttle to ever reach orbit before the program ended.",
+    "old": "소련 셔틀, 외면적으로 미국의 궤도와 유사하지만 주요 엔진 (Energia는 그것을 수행). 정확히 한 번, 1988, 완전히 자율적이고 무인 - 프로그램이 종료되기 전에 궤도에 도달하는 유일한 소련 셔틀.",
+    "new": "소련의 셔틀로, 외관은 미국의 궤도선(오비터)과 비슷하지만 주 엔진이 없었다(Energia 로켓이 실어 날랐다). 1988년에 단 한 번, 완전 자율 무인으로 비행했다 — 계획이 끝나기 전에 궤도에 도달한 유일한 소련 셔틀이다."
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "tagline",
+    "en": "Europe's civilian GNSS — ~30 sats, sub-metre positioning",
+    "old": "유럽의 민간용 GNSS — ~30개 위성, 1미터 이하 정위치 결정",
+    "new": "유럽의 민간용 GNSS — ~30개 위성, 1m 이하 정밀 측위"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "best_known_for",
+    "en": "Soviet shuttle; one unmanned flight, never crewed",
+    "old": "소련 셔틀; 하나의 무인 비행, 결코 승무원",
+    "new": "소련 셔틀; 무인 비행 1회, 유인 비행은 한 번도 없음"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "tagline",
+    "en": "First commercial suborbital crewed vehicle",
+    "old": "첫 번째 상업 잠수함 승무원 차량",
+    "new": "최초의 상업용 준궤도 유인 비행체"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "tagline",
+    "en": "Soviet shuttle; one unmanned flight, never crewed",
+    "old": "소련 셔틀; 하나의 무인 비행, 결코 승무원",
+    "new": "소련 셔틀; 무인 비행 1회, 유인 비행은 한 번도 없음"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "tagline",
+    "en": "First Chinese Mars mission; delivered Zhurong",
+    "old": "중국 최초의 화성 탐사 임무; Zhurong 착륙",
+    "new": "중국 최초의 화성 탐사 임무; Zhurong 로버를 화성에 전달"
+  }
+]

@@ -243,7 +243,7 @@ jobs:
 
       - name: Join the tailnet
         if: steps.preflight.outputs.skip != 'true'
-        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        uses: tailscale/github-action@99a8333667fff04fdd6cffb46dfd409f8329a7bf # v4
         with:
           # OAuth client (shared chipi deployer identity, same as podcast_scraper) — does not
           # expire like an auth key did (2026-08-02: the old TS_AUTHKEY lapsed and blocked prod

@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+    "at": "tagline",
+    "find": "verso l'SSI",
+    "replace": "verso la SSI"
+  }
+]

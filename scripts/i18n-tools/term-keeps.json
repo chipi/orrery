@@ -1177,15 +1177,15 @@
   },
   "burn|it|fleet/engine/ce-20.json :: description": {
     "why": "combustion: brucia LOX e LH2",
-    "tr": "01acc8a2a8"
+    "tr": "c543588fe4"
   },
   "burn|it|fleet/engine/f-1.json :: description": {
     "why": "combustion: bruciava LOX e RP-1, camera di combustione",
-    "tr": "41d91fd3fb"
+    "tr": "58f34a8c55"
   },
   "burn|it|fleet/engine/rd-180.json :: description": {
     "why": "combustion: bruciare l'ossidante in eccesso",
-    "tr": "567fae3b05"
+    "tr": "fba44808e2"
   },
   "burn|it|fleet/engine/yf-77.json :: description": {
     "why": "combustion: brucia LOX e LH2",

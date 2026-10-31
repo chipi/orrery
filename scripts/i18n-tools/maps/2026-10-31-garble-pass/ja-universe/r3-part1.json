@@ -1,0 +1,1064 @@
+[
+  {
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/pollux.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "ポルックスとその隣のカストルは、ギリシャ・ローマ神話の双子の兄弟「ディオスクロイ」である――ポルックスは神ゼウスの不死の息子。この二つの星は古代から航海者たちを導き、守ってきた。",
+    "note": "Dioscuri and Zeus left in Latin script"
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alphard.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "このアラビア語の名は「孤独なもの」を意味し、明るい近隣の星がまったくないことにちなんで付けられた。その孤立ゆえに、ほかに暗い星の多いこの空域で、はっきりとした頼れる目印となった。",
+    "note": "clumsy second sentence"
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alnair.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "この名はアラビア語で「熊」を意味する。指極星は何千年もの間、旅人たちを北極星へと導いてきたため、ドゥベーは北天で最も実用的な星の一つとなっている。",
+    "note": "awkward Pointers term and wording"
+  },
+  {
+    "rel": "universe/named-stars/proxima-centauri.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "太陽に最も近い恒星――わずか4.24光年の距離にある暗い赤色矮星で、ハビタブルゾーンに岩石質の可能性がある惑星を持つ。",
+    "note": "redundant 'planet' wording"
+  },
+  {
+    "rel": "universe/named-stars/sargas.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "サソリの反り上がった尾にある明るい巨星。古代メソポタミアに由来する名を持つ。",
+    "note": "repeated 輝 wording"
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "ルイテン星のハビタブルゾーンにある惑星の内側を回る、高温の惑星。",
+    "note": "planet rendered as companion star; Luyten left in Latin"
+  },
+  {
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "バーナード星は既知の恒星の中で最大の固有運動を持ち、およそ180年ごとに月の見かけの幅ぶんだけ天空を移動する——このため「バーナードの逃走星」という異名を持つ。この星は古く、質量の小さい赤色矮星である。",
+    "note": "nickname left in English"
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-d.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/menkalinan.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "この名はアラビア語で「手綱を握る者の肩」を意味する。御者を表すぎょしゃ座は、肩にヤギのカペラを載せて北天の冬空を駆けめぐる。",
+    "note": "Auriga left in Latin, clumsy syntax"
+  },
+  {
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/menkalinan.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "白鳥の尾——肉眼で見える恒星の中でも屈指の高光度星で、銀河のはるか彼方から輝く。",
+    "note": "luminous rendered as merely bright"
+  },
+  {
+    "rel": "universe/named-stars/sargas.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/hd-62509-b.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/antares.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "ギリシャ語の名は「アレス(火星)に対抗するもの」を意味し、火星に似た色合いにちなむ。多くの文化において、天の川に沿って横たわる大きなサソリや蛇の心臓、あるいは毒針の位置に置かれてきた。",
+    "note": "Ares left in Latin"
+  },
+  {
+    "rel": "universe/named-stars/wezen.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/proxima-cen-b.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/menkent.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/menkent.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/barnard-b.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "太陽からわずか6光年足らずの距離にある最も近い単独の恒星バーナード星は、SFの定番である。1970年代の英国惑星間協会による恒星間宇宙船の研究「ダイダロス計画」の目的地であり、ロバート・フォワードの『ロシュワールド』からその後の『ラーマ』シリーズに至るまで、恒星間を舞台にした小説の中継地点として描かれてきた。1世紀にわたって主張されてきた惑星はどれも精査のなかで消え去ったが、Barnard b は2024年についに確認された。生命には熱すぎるサブアースだが、ついに実在が確かめられた惑星である。",
+    "note": "titles left in English, register mismatch"
+  },
+  {
+    "rel": "universe/named-stars/lalande-21185.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/wezen.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/peacock.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "くじゃく座で最も明るい恒星――20世紀の航海術から生まれた英語名。",
+    "note": "constellation left in English"
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "この名前はアラビア語の「剣」に由来する。サイフは狩人(オリオン)の膝を、リゲルは足を示し、夜空で最も見分けやすい星座の一つの下辺を縁取っている。",
+    "note": "garbled 'Orion Hunter'"
+  },
+  {
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alnair.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-b.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "TOI-700 bは、約101光年離れた赤色矮星TOI-700のすぐ近くを周回する、ほぼ地球サイズの岩石惑星で、わずか約10日で1周する。NASAのTESSミッションが、より外側の温暖な惑星群で有名にした系のうち、内側を回る暖かい惑星である。",
+    "note": "clumsy 'warm member' wording"
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "オリオン座の三つ星の東端の星 — 輝く燃える木星雲のそばにある青色超巨星。",
+    "note": "Flame left in English"
+  },
+  {
+    "rel": "universe/named-stars/van-maanens-star.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/hadar.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/almach.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alioth.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/regulus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/polaris.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/menkalinan.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "「手綱を握る者の肩」— 数日ごとに互いを隠し合う食連星。",
+    "note": "'eat each other' wording for eclipse"
+  },
+  {
+    "rel": "universe/named-stars/spica.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/van-maanens-star.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "この名は、1917年にこの星を発見したアドリアン・ヴァン・マーネンにちなむ。そのスペクトルには重元素が見られ、岩石質の破片がこの星に降り注いでいることを示している。惑星系が主星より長く存続しうることを示す初期の証拠である。",
+    "note": "named after the star, garbled spectrum clause"
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "アルデバラン――牡牛の燃えるような眼であり、SFの寄港地でもある――に存在が提案されている巨大惑星。",
+    "note": "garbled, planet and star confused"
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "ラテン語名は「女戦士」または「アマゾネスの星」を意味する。古くから、北天の冬空で進路を見いだすのに使われてきた、オリオン座の姿を形づくる見分けやすい角の一つである。",
+    "note": "Amazon left in English"
+  },
+  {
+    "rel": "universe/named-stars/hadar.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "アルフェラッツ(アンドロメダ座アルファ星)は約97光年離れた青白い星で、水銀マンガン星と呼ばれる珍しい化学的特異性を持つ。アンドロメダ座の頭を示すとともに、ペガスス座の大四辺形の北東の角にもなっている。",
+    "note": "constellation names left in Latin"
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/atria.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "その名は、バイエル符号「Alpha Trianguli Australis(みなみのさんかく座α星)」を縮めたものにすぎない。みなみのさんかく座は、16世紀後半に南天の星々を測量した航海者たちが導入した星座の一つである。",
+    "note": "Australis left untranslated"
+  },
+  {
+    "rel": "universe/named-stars/gacrux.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "ガクルックス(みなみじゅうじ座ガンマ星)は、約89光年離れた低温の赤色巨星で、太陽系に最も近い赤色巨星である。その温かなオレンジ色の光はみなみじゅうじ座の頂点に位置し、十字の残りを形づくる高温の青い星々と鮮やかな対比をなしている。",
+    "note": "Latin designation left"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-h.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/castor.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/pollux.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/luytens-star.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-c.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "TRAPPIST-1 cは大きさが金星に近いが、金星とは異なり、2023年のJWST観測により厚い二酸化炭素の覆いを持たないことが示唆された。この惑星の研究は、この惑星系の中心的な問いの一部である――小型でフレアを起こしやすい赤色矮星の周りの惑星は、そもそも大気を保持できるのか。",
+    "note": "system rendered as katakana システム"
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/adhara.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-e.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-c.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "7つのうち2番目の惑星――ウェッブ望遠鏡が厚いCO₂大気の存在を除外した金星サイズの世界。",
+    "note": "Webb left in English"
+  },
+  {
+    "rel": "universe/named-stars/capella.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "そのラテン語名は「小さな雌ヤギ」を意味する――ぎょしゃ座の御者の肩に担がれたヤギで、傍らには近くの「子ヤギたち」が寄り添う。最も北に位置する明るい星の一つとして、ヨーロッパと近東全域で冬の夜空になじみ深い目印となってきた。",
+    "note": "Auriga left in Latin, garbled phrase"
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/proxima-centauri.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/elnath.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/sadr.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/spica.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/sadr.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "この名はアラビア語で「胸」を意味する。北十字の中心として、サドルは夏の天の川の最も明るい領域に位置し、最も豊かな恒星雲の一つの方向にある。",
+    "note": "star clouds rendered as nebulae"
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/achernar.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "アケルナル(エリダヌス座α星)は約139光年離れた高温の青い星で、天の川ではなく、天上の河エリダヌスの南端を示す星である。分裂寸前に近い速さで自転しており、赤道部が強く膨らむため、そこでの直径は極方向の直径より3分の1以上大きい――明るい星のなかで最も扁平な星として知られる。",
+    "note": "river confused with Milky Way, garbled bulge clause"
+  },
+  {
+    "rel": "universe/named-stars/menkent.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "バーナード星で新たに明らかになった内側の惑星系にある、地球より小さい惑星。",
+    "note": "awkward wording"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-c.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "名高いバーナード星の周りを回る、最近見つかったコンパクトなサブアース群の一つ。",
+    "note": "nonword 亜地球族"
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-c.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "TOI-700系の中ほどを回るサブ海王星。",
+    "note": "system rendered as katakana システム"
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-d.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/lalande-21185.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/kaus-australis.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/hd-62509-b.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "ポルックスの周りを公転する巨大惑星——近傍の巨星の周りで最初に発見された惑星の一つ。",
+    "note": "giant star rendered 巨大星"
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alhena.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/vega.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "ベガは紀元前12,000年頃に北極星であり、西暦13,700年頃に再び北極星となる。デネブ、アルタイルとともに夏の大三角を形作り、カール・セーガンの『コンタクト』では異星人の信号の発信源として登場する。",
+    "note": "title left in English"
+  },
+  {
+    "rel": "universe/named-stars/castor.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/barnard-e.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "フォーマルハウト(みなみのうお座アルファ星)は約25光年先にある高温の白色星で、夜空で最も明るい星の一つであり、ほかの明るい星々から目立って孤立している。目に見えない天体の重力によって形づくられた印象的な塵の残骸リングに取り囲まれており、可視光で撮像された最初期の同種のリングの一つである。",
+    "note": "Latin designation, ring called disk"
+  },
+  {
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "この名はアラビア語で「肘」に由来する。古典的な星座図ではペルセウスが、瞬く悪魔星アルゴルの近くでメドゥーサの首を持ち、ミルファクはこの英雄の脇腹を示している。",
+    "note": "Perseus and Medusa left in Latin"
+  },
+  {
+    "rel": "universe/named-stars/adhara.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/avior.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "アルフェッカ(かんむり座アルファ星)は、ゲンマとも呼ばれ、約75光年の距離にある白色の恒星で、北の冠をかたどるかんむり座で最も明るい星である。かすかな食連星であり、ベガやフォーマルハウトと同様に、塵の円盤に取り巻かれている。",
+    "note": "Gemma left, inconsistent constellation name"
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/spica.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "そのラテン名は「穀物の穂」を意味し、収穫の乙女であるおとめ座が手に持つ麦の束を表している。スピカの観測により、ヒッパルコスは2000年以上前に春分点の緩やかな歳差運動を検出することができた。",
+    "note": "Virgo left in Latin"
+  },
+  {
+    "rel": "universe/named-stars/alioth.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/gj-411-b.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-f.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "この名はアラビア語の「雌馬のへそ」に由来し、かつてこの星がペガスス座の一部に数えられていた時代にさかのぼる。鎖につながれた王女アンドロメダと、その傍らの翼ある馬の神話を結ぶ星である。",
+    "note": "Pegasus and Andromeda left in Latin"
+  },
+  {
+    "rel": "universe/named-stars/almach.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "名前はアラビア語で小さな砂漠の猫、またはオオヤマネコを意味する言葉に由来する。アルマクは鎖につながれた王女アンドロメダの足元を示し、星座の反対の端にあるアルフェラッツの彼女の頭部から最も遠い位置にある。",
+    "note": "Andromeda left in Latin"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-e.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/denebola.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/lalande-21185.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/regulus.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "二つの星座が共有する角——アンドロメダ座の頭であり、ペガスス座の大四辺形の一角。",
+    "note": "names left in English"
+  },
+  {
+    "rel": "universe/named-stars/altair.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "この名はアラビア語の「al-nasr al-ta'ir(飛翔する鷲)」に由来する。アルタイルはベガ、デネブとともに夏の大三角の一角を成し、中国の伝承では、天の川という銀の河を隔てて機織りの織女(ベガ)と引き離された牛飼いの牛郎である。",
+    "note": "garbled river phrase, names in Latin"
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "竜骨座の第二の光 — 奇妙に混ざり合った名を持つ白色星。",
+    "note": "Keel left in English"
+  },
+  {
+    "rel": "universe/exoplanets/gj-411-b.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  }
+]

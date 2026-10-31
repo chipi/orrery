@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "universe/named-stars/achernar.json",
+    "at": "bio",
+    "find": "天の川ではなく、天上の河エリダヌス",
+    "replace": "天上の河エリダヌス"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-b.json",
+    "at": "bio",
+    "find": "SFの定番",
+    "replace": "サイエンスフィクションの定番"
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "fact",
+    "find": "SFの寄港地",
+    "replace": "サイエンスフィクションの寄港地"
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "bio",
+    "find": "SFが何度も",
+    "replace": "サイエンスフィクションが何度も"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-b.json",
+    "at": "bio",
+    "find": "ジェームズ・ウェッブ宇宙望遠鏡",
+    "replace": "James Webb宇宙望遠鏡"
+  }
+]

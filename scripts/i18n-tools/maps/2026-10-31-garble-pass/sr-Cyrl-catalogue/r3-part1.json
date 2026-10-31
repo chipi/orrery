@@ -1,0 +1,1244 @@
+[
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Најудаљеније тело које је свемирска летелица икада посетила — 4,1 милијарде km од Сунца када је New Horizons на Нову годину 2019. прелетела на удаљености од 3.500 km. Његова два режња (Wenu и Weeyo) нежно су се спојила у зору Сунчевог система и остала спојена 4,5 милијарди година на ~40 K.",
+    "note": "Wrong numeral case: 4,1 милијарду."
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Око 1/600 пута до Месеца. МСС на 408 km кружи на истој висини колико износи растојање од Лондона до Женеве — само положено водоравно.",
+    "note": "English 'About' and London/Geneva left in."
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.2.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Висоравни од анортозита (калцијум-алуминијумски силикати) + базалтна мора поплављена древном лавом; реголит дубок 4–15 m; трагови воденог леда у трајно засењеним поларним кратерима.",
+    "note": "Maria/lava relation reads ambiguously."
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "film",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Паркс је „тањир“ из филма The Dish (2000), приче о томе како је ретранслирао телевизијски пренос шетње Apollo 11 по Месецу.",
+    "note": "'Relayed' became 'recording'; dish ambiguous."
+  },
+  {
+    "rel": "earth-objects/smart-1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/tsiolkovsky-museum-kaluga.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/change1.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/unity.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Двостепени наследник ракете H-IIA компаније Mitsubishi Heavy Industries први пут је успешно полетео 2024. године (његов деби 2023. није успео). Може се конфигурисати са 0, 2 или 4 ракетна појачивача на чврсто гориво и са заштитном капом од 5,2 m или 4 m. Мотор првог степена LE-9 први је на свету једнократни хидрогенски мотор са експандер-блид циклусом. Лансираће мисију MMX агенције JAXA за повратак узорака са Фобоса 2026. године.",
+    "note": "Booster term not used; fairing/expendable wording off."
+  },
+  {
+    "rel": "museums/aviation-museum-plovdiv-krumovo.json",
+    "at": "items.soyuz-7k-ok",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "highlights.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Описује се као појединачни радио-телескоп највећег пречника на свету.",
+    "note": "'Individual' (single dish) dropped."
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Кратак прекид сигнала у Х-опсегу (8 s). DSN је поново успоставио везу. Узрок: заклањање млазом потисника. Подаци нису изгубљени.",
+    "note": "'X-band' left in English."
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-military-museum-bucharest.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Национални војни музеј Румуније у Букурешту, у коме се налази капсула која је понела првог Румуна у свемир.",
+    "note": "'Carried into space' became 'returned from space'."
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Звездани картограф агенције ESA у тачки L2. Картографише 1,8 милијарди звезда — положаје мери с тачношћу од 7 микролучних секунди. Измерио је удаљености до звезда које су од нас далеко 30.000 светлосних година, с прецизношћу ширине људске власи на удаљености од 1.000 km. Најдетаљнија мапа Млечног пута икад направљена.",
+    "note": "English word 'Mapping' left in."
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.orion",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/juno.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/vega-1.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Титан је у спин-орбиталној резонанцији 1:1 са Сатурном — увек показује исто лице. Његова велика полуоса од 1,22 милиона km смешта га близу Сатурнове спољашње Хилове сфере.",
+    "note": "Non-word 'сместа'; 'spin-orbit' dropped; 'км' unit."
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/armstrong-air-and-space-museum.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/rassvet.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.voskhod",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.4.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.tundra-sirius",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/kibo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/mengtian.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/goes.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cape-canaveral-space-force-museum.json",
+    "at": "items.titan-ii-glv",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/clementine.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.4",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "interstellar_since_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/baikonur-cosmodrome-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "library_labels.phobos-mmx",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "interstellar_since_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/destiny.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/virginia-air-and-space-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Највећи Нептунов месец и један од геолошки најактивнијих светова у Сунчевом систему. Тритон кружи око Нептуна уназад (ретроградно) и под екстремним нагибом — што је обележје заробљеног објекта из Куперовог појаса и чини га вероватним сродником Плутона, а не изворним месецом Нептуна. Voyager 2 је открио активне гејзире азота који избацују тамну органску прашину осам километара увис, у веома танку азотну атмосферу; јужна хемисфера има „терен налик динји“ — мрежу удубљења и гребена какву нигде другде у Сунчевом систему нисмо видели. Тритонова ретроградна орбита се плимски смањује; за отприлике 3,6 милијарди година он ће бити или растргнут у прстен налик Сатурновом или ће се срушити на Нептун.",
+    "note": "Unit 'Gyr' left untranslated."
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Теретни брод са херметизованим теретним одељком, лансиран ракетом Long March 7 са Венчанга: погонско гориво, храна, вода и опрема за експерименте допремају се отприлике сваких шест месеци.",
+    "note": "Propellant bound term not used."
+  },
+  {
+    "rel": "earth-objects/oneweb.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "648 сателита на 1.200 km у 12 поларних орбиталних равни — широкопојасни интернет прве генерације у ниској Земљиној орбити (LEO). Од спајања 2023. њима управља Eutelsat OneWeb. Поларне орбите омогућавају покривеност од пола до пола, до које љуске система Starlink средње инклинације не допиру.",
+    "note": "Inclination bound term not used."
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "library_labels.ganymede-magfield",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/galileo.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Калистова ексцентричност од 0,007 је мала и није принудна — без резонантног подстицања, без плимског савијања, без подповршинског океана (вероватно).",
+    "note": "Misspelt 'екцентричност'; 'unforced' rendered as 'natural'."
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.4.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Други по величини месец у Сунчевом систему и једини месец са значајном атмосфером — гушћом од Земљине. Испод наранџасте измаглице толина налази се једино познато тело осим Земље са стабилном течношћу на површини: угљоводоничка језера и мора метана и етана у поларним областима, а њих напаја активан хидролошки циклус метана који обухвата облаке, кишу и реке које усецају корито у подлогу од воденог леда. Huygens (ESA) извео је 2005. прво слетање на неки месец осим Земљиног. Dragonfly агенције NASA стићи ће 2034. као ротокоптер на нуклеарни погон, прескачући између Титанових предела богатих органским једињењима.",
+    "note": "Feeding relation reversed: lakes feed the cycle."
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.4.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Енцелад је у резонанцији средњег кретања 2:1 са Дионом — принудни ексцентрицитет (0,0047) покреће плимско савијање које напаја криовулканске перјанице на јужном полу.",
+    "note": "Case errors: резонанци, са Дионе."
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "JUICE — ESA, долазак 2031. (убацивање у Ганимедову орбиту 2034.)",
+    "note": "Orbit insertion bound term not used."
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/musee-air-espace-le-bourget.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.resolution",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "docking",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/geo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Ракета-носач са два степена у две конфигурације: Ariane 62 са два чврста ракетна појачивача и Ariane 64 са четири. Криогени горњи степен, који покреће мотор Vinci, може се поново палити, што омогућава сложена убацивања у више орбита и директно убацивање на међупланетарну путању. Први лет у јулу 2024.",
+    "note": "Booster bound term not used."
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Commercial Resupply Services; само херметизовани терет; кружни соларни панели UltraFlex; уклања се разарајућим поновним уласком у атмосферу изнад јужног Пацифика.",
+    "note": "Awkward 'под притиском утоварен терет'."
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/menoetius.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Кружи око Месеца од 2009. Картографише површину у резолуцији од 50 cm — довољно да се виде степени спуштања Apollo који и даље стоје на површини. Пронашла је водени лед на половима. Идентификовала је 200+ потенцијалних места за слетање Артемис. Извиђач за повратак.",
+    "note": "Stage bound term violated; 'sit' literal; unit."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-expo-noordwijk.json",
+    "at": "items.soyuz-tma",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/galileo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "library_labels.enceladus-cassini",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/fernbank-science-center.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Командни модул CM-020, који је летео на мисији Apollo 6 без посаде (1968)",
+    "note": "'Ненасељен' is wrong word for uncrewed."
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Тело густо прекривено кратерима, налик угљеничним хондритима, вероватно заробљени астероид или остатак акреције; површином доминира кратер Stickney од 9 km и паралелни жљебови који су вероватно повезани са избаченим материјалом из тог удара.",
+    "note": "'Гушће' is comparative; should be 'густо'."
+  },
+  {
+    "rel": "earth-objects/iridium-next.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Капсула компаније SpaceX са четири седишта која је мисијом Demo-2 2020. године прекинула зависност агенције NASA од летелице Soyuz после ере програма Shuttle.",
+    "note": "English possessive \"SpaceX's\" left in."
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  }
+]

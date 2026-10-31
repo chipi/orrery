@@ -1,6 +1,6 @@
 {
   "title": "Vols spatiaux de longue durée",
-  "intro_sentence": "Au-delà d'environ trois mois, l'absence de gravité cesse d'être neutre et commence à infliger des dommages mesurables au corps humain.",
+  "intro_sentence": "Au-delà d'environ trois mois, la microgravité cesse d'être neutre et commence à entamer de façon mesurable le corps humain.",
   "narrative_101": [
     "Sur Terre, la gravité travaille en arrière-plan toute la journée : elle attire les fluides vers vos pieds, charge vos os à chaque pas, exerce votre cœur contre le poids de votre sang. Ôtez cela et le corps se déconstruit — les os perdent ~1-2 % de densité par mois si vous ne luttez pas, les muscles s'atrophient, le système cardiovasculaire se déconditionne, les déplacements de fluides exercent une pression sur votre crâne et compriment légèrement vos yeux. Deux heures par jour sur un tapis roulant avec harnais et un appareil d'exercice de résistance en récupère la plupart, mais pas tout.",
     "Le record actuel d'une seule mission à bord de l'ISS est Frank Rubio avec 371 jours (sep 2022 – sep 2023). Le record de tous les temps est Valeri Poliakov à bord de Mir avec 437,7 jours en 1994-95 — un test intentionnel pour une potentielle mission vers Mars. Les équipages de Tiangong changent actuellement à des intervalles d'environ 6 mois, ce qui correspond à la norme de l'ISS.",
@@ -8,8 +8,8 @@
   ],
   "body_paragraphs": [
     "OS + MUSCLES — les astronautes perdent 1-2 % de densité minérale osseuse par mois dans les os porteurs de charge sans contre-mesures (~0,5 % avec l'Advanced Resistive Exercise Device et les bisphosphonates). Les fibres musculaires de type I s'atrophient le plus rapidement ; l'exercice quotidien de 2 heures sur tapis roulant + vélo ergométrique + ARED préserve environ 90 % de la masse musculaire avant le vol.",
-    "CARDIOVASCULAIRE + DÉPLACEMENT DE FLUIDES — le ventricule gauche du cœur perd environ 9–12 % de sa masse au cours d'une mission de 6 mois ; l'intolérance orthostatique persiste pendant des semaines après le retour. Environ 2 L de fluide migrent des jambes vers la tête en microgravité, causant une bouffissure du visage, une augmentation de la pression intracrânienne, et sont impliqués dans le syndrome neuro-oculaire associé au vol spatial (SANS).",
-    "VESTIBULAIRE / SENSORI-MOTEUR — la réadaptation à la gravité prend des heures à des jours après l'atterrissage ; le contrôle moteur fin est mesurément dégradé pendant ~2 semaines.",
+    "CARDIOVASCULAIRE + REDISTRIBUTION DES LIQUIDES — le ventricule gauche du cœur perd environ 9–12 % de sa masse au cours d'une mission de 6 mois ; l'intolérance orthostatique persiste des semaines après le retour. Environ 2 L de liquide migrent des jambes vers la tête en microgravité, ce qui provoque un gonflement du visage, une hausse de la pression intracrânienne, et est impliqué dans le syndrome neuro-oculaire associé aux vols spatiaux (SANS).",
+    "VESTIBULAIRE / SENSORI-MOTEUR — la réadaptation à la gravité prend de quelques heures à quelques jours après l'atterrissage ; la motricité fine est mesurablement dégradée pendant ~2 semaines.",
     "RAYONNEMENT — l'équipage en LEO reçoit ~150-180 mSv par mission de 6 mois. Les limites de carrière sont établies par agence ; le cadre de limite de dose efficace de la NASA plafonne le risque de carrière à 3 % de mortalité accrue par cancer, ce qui se traduit par environ 3-5 missions de la longueur de l'ISS pour la plupart des astronautes.",
     "Records : Poliakov 437,7 j (Mir, 1994-95) ; Rubio 371 j (ISS, 2022-23) ; Vande Hei 355 j (ISS, 2021-22) ; Kononenko cumulatif >1000 j sur 5 missions."
   ],

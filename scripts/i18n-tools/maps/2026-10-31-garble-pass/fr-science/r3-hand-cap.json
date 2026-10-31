@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "intro_sentence",
+    "find": "l'hydrogène y chauffe au-delà de toute flamme chimique et se détend dans une tuyère",
+    "replace": "l'hydrogène y dépasse en chaleur toute flamme chimique puis se détend en tuyère"
+  }
+]

@@ -1,10 +1,10 @@
 {
   "title": "Les Lois de Kepler · 1609–1619",
-  "intro_sentence": "Les données de Mars observées à l'œil nu par Tycho Brahe, distillées par Kepler en trois règles universelles des orbites.",
+  "intro_sentence": "Toute une vie de données sur Mars, relevées à l'œil nu par Tycho Brahe, distillées par Kepler en trois règles que toute orbite respecte.",
   "narrative_101": [
     "Tycho Brahe a passé environ 20 ans à l'observatoire Uraniborg sur l'île de Hven à mesurer la position de Mars avec des quadrants en laiton et en chêne — une précision meilleure que la minute d'arc, tout à l'œil nu. Il est mort en 1601 sans avoir publié l'essentiel de ses résultats planétaires.",
     "Kepler a hérité des carnets d'observations de Mars. Il a passé une décennie supplémentaire à essayer de les adapter à des cercles et a échoué. La percée est venue quand il a essayé une ellipse — Mars correspondait immédiatement. De là ont émergé trois lois : les orbites sont des ellipses avec le Soleil à un foyer ; les aires balayées en temps égaux sont égales ; le carré de la période égale le cube du demi-grand axe.",
-    "Sans ces trois lois, aucune trajectoire de vaisseau spatial dans cette application ne se calculerait. Chaque cellule de graphique de transit, chaque arc de transfert, chaque planète sur /explore est une solution keplerienne."
+    "Sans ces trois lois, aucune trajectoire d'engin spatial ne pourrait être calculée dans cette application. Chaque cellule du diagramme porkchop, chaque arc de transfert, chaque planète de /explore est une solution képlérienne."
   ],
   "body_paragraphs": [
     "Astronomia Nova (1609) a publié les Lois 1 et 2 — les règles de l'ellipse et des aires égales, dérivées des données d'opposition de Mars. Harmonices Mundi (1619) a publié la Loi 3 — période² ∝ demi-grand axe³.",

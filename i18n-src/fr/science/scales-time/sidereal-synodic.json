@@ -1,16 +1,16 @@
 {
   "title": "Période sidérale ou synodique",
-  "intro_sentence": "Deux façons de demander \"à quelle fréquence ?\" — même corps, repères différents.",
+  "intro_sentence": "Deux manières de demander « à quelle fréquence cela revient-il ? » — même corps, repère de référence différent, réponse différente.",
   "narrative_101": [
-    "Deux réponses à \"combien dure une année Mars ?\".",
+    "Il existe deux réponses différentes à la question « quelle est la durée d'une année sur Mars ? » — et celle qu'il vous faut dépend de ce que vous cherchez à faire.",
     "Si vous voulez savoir combien de temps Mars met pour faire UNE BOUCLE autour du Soleil, la réponse est 687 jours terrestres. C'est la période sidérale — mesurée par rapport aux étoiles lointaines immobiles. C'est la vérité géométrique de l'orbite. La vis-viva et la troisième loi de Kepler fonctionnent toutes deux en temps sidéral.",
     "Mais si vous voulez savoir à quelle fréquence la Terre et Mars S'ALIGNENT DE LA MÊME FAÇON (pour que vous puissiez lancer une mission), la réponse est 780 jours — environ 26 mois. C'est la période synodique. Pourquoi plus longue ? Parce que tandis que Mars fait une boucle autour du Soleil, la Terre en fait presque deux — les deux planètes continuent de bouger. L'alignement ne se répète que lorsque la Terre a dépassé Mars dans la danse.",
     "C'est pourquoi les fenêtres de lancement vers Mars apparaissent tous les 26 mois. Si vous en manquez une, vous attendez deux ans. Chaque mission vers Mars dont vous avez jamais entendu parler a dû se caler sur une fenêtre synodique — Curiosity en 2011, Perseverance en 2020, la prochaine en 2026. La période synodique est le battement cardiaque de la planification des missions interplanétaires."
   ],
   "body_paragraphs": [
-    "Période sidérale : temps pour une orbite complète par rapport aux étoiles fixes. C'est la période géométrique, celle de la troisième loi de Kepler — l'année sidérale de Mars est 687 jours terrestres. Période synodique : temps pour qu'un corps revienne à la même position par rapport à un autre corps, généralement tel qu'on l'observe depuis un troisième. Période synodique de Mars — temps entre les alignements Terre-Mars — est 780 jours, ou environ 26 mois.",
+    "Période sidérale : temps mis pour accomplir une orbite complète par rapport aux étoiles fixes. C'est la période géométrique, celle de la troisième loi de Kepler — l'année sidérale de Mars dure 687 jours terrestres. Période synodique : temps mis par un corps pour revenir à la même position par rapport à un autre corps, généralement vue d'un troisième. La période synodique de Mars — le temps entre deux alignements Terre-Mars — est de 780 jours, soit environ 26 mois.",
     "La période synodique est celle qui préoccupe les planificateurs de missions. Les transferts de Hohmann Terre-Mars ne fonctionnent que lorsque Mars est au bon endroit. La prochaine fenêtre de lancement viable apparaît tous les 26 mois. En manquer une, attendre deux ans pour une autre. C'est la cadence de chaque mission vers Mars jamais effectuée.",
-    "Mathématiquement : `1/T_syn = 1/T_inner − 1/T_outer`. Si l'année de la Terre est 1,0 an et celle de Mars est 1,88 an : `1/T_syn = 1 − 1/1,88 = 0,468`, donc `T_syn = 2,14 an ≈ 26 mois`. Les mathématiques sont simples ; la conséquence opérationnelle — chaque calendrier de mission doit la respecter — est où elle vit dans la planification de mission."
+    "Mathématiquement : `1/T_syn = 1/T_inner − 1/T_outer`. Si l'année terrestre dure 1,0 an et celle de Mars 1,88 an : `1/T_syn = 1 − 1/1,88 = 0,468`, donc `T_syn = 2,14 ans ≈ 26 mois`. Le calcul est simple ; c'est sa conséquence opérationnelle — chaque calendrier de mission doit la respecter — qui pèse dans la planification des missions."
   ],
-  "diagram_caption": "Sidéral : même alignement étoiles. Synodique : même alignement Terre-Mars-Soleil."
+  "diagram_caption": "Sidéral : même alignement par rapport aux étoiles. Synodique : même alignement Terre-Mars-Soleil, plus long parce que les deux planètes se sont déplacées."
 }

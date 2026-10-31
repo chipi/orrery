@@ -1,0 +1,100 @@
+[
+  {
+    "term": "orbit",
+    "loc": "fr",
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "why": "orbit as verb (tourner autour), not the orbit noun"
+  },
+  {
+    "term": "orbit",
+    "loc": "fr",
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.1",
+    "why": "orbit as verb (tourner autour), not the orbit noun"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "why": "burn out = exhaust fuel, not engine"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.0",
+    "why": "combustion in main chamber"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "why": "kerosene burns dirty = combustion"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "why": "hydrogen burns to water = combustion"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "why": "combustion of propellant sliver"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "why": "combustion in gas generator"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "why": "combustion of drive gas"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "why": "combustion in chamber"
+  },
+  {
+    "term": "stage",
+    "loc": "fr",
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.4",
+    "why": "\"staging orbit\", not a rocket stage"
+  },
+  {
+    "term": "propellant",
+    "loc": "fr",
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "why": "RP-1 name in English; text uses kérosène/carburant for fuel, no propellant sense"
+  },
+  {
+    "term": "payload",
+    "loc": "fr",
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "why": "\"Vega Secondary Payload Adapter\" is a proper name left in English"
+  },
+  {
+    "term": "entry",
+    "loc": "fr",
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "why": "re-entry into 1 g is vestibular, not atmospheric entry"
+  }
+]

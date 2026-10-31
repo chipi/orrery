@@ -969,35 +969,35 @@
   },
   "burn|fr|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
     "why": "burn out = exhaust fuel, not engine",
-    "tr": "8ea07e268d"
+    "tr": "b06eab8c38"
   },
   "burn|fr|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
     "why": "combustion in main chamber",
-    "tr": "beba81a1d0"
+    "tr": "b784051650"
   },
   "burn|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "kerosene burns dirty = combustion",
-    "tr": "640326ff91"
+    "tr": "87372ab221"
   },
   "burn|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
     "why": "hydrogen burns to water = combustion",
-    "tr": "f50b6a8635"
+    "tr": "128223253f"
   },
   "burn|fr|science/propulsion/gas-generator.json :: body_paragraphs.0": {
     "why": "combustion in gas generator",
-    "tr": "c1dee14a5e"
+    "tr": "531cd57bfb"
   },
   "burn|fr|science/propulsion/gas-generator.json :: intro_sentence": {
     "why": "combustion of propellant sliver",
-    "tr": "436edde195"
+    "tr": "e76b31b2e2"
   },
   "burn|fr|science/propulsion/staged-combustion.json :: diagram_caption": {
     "why": "combustion in chamber",
-    "tr": "8add1e43e7"
+    "tr": "00c2ade2ec"
   },
   "burn|fr|science/propulsion/staged-combustion.json :: intro_sentence": {
     "why": "combustion of drive gas",
-    "tr": "4b036b1ee3"
+    "tr": "27719a2e56"
   },
   "burn|fr|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
     "why": "rough burning = combustion",
@@ -2303,6 +2303,10 @@
     "why": "re-entry into 1 g gravity, not atmospheric",
     "tr": "423ca0e2e9"
   },
+  "entry|fr|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "re-entry into 1 g is vestibular, not atmospheric entry",
+    "tr": "71626c57e9"
+  },
   "entry|hi|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
     "why": "\"re-entry into 1 g\" is not atmospheric entry",
     "tr": "84f0be49f2"
@@ -2806,6 +2810,14 @@
   "orbit|fr|missions/earth/vostok-1.json :: dispatch": {
     "why": "variant: en faire le tour (circled the Earth)",
     "tr": "b41eca8bf4"
+  },
+  "orbit|fr|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "orbit as verb (tourner autour), not the orbit noun",
+    "tr": "ee840f324c"
+  },
+  "orbit|fr|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "orbit as verb (tourner autour), not the orbit noun",
+    "tr": "1821763e7e"
   },
   "orbit|hi|missions/earth/gemini8.json :: type": {
     "why": "field left untranslated English; term not rendered (garble listed)",
@@ -3797,7 +3809,7 @@
   },
   "payload|fr|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "\"Vega Secondary Payload Adapter\" is a proper name left in English",
-    "tr": "37d0ae9a2f"
+    "tr": "ff8d16d8e2"
   },
   "payload|hi|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "part of the product name Vega Secondary Payload Adapter",
@@ -4025,7 +4037,7 @@
   },
   "propellant|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "RP-1 name in English; text uses kérosène/carburant for fuel, no propellant sense",
-    "tr": "640326ff91"
+    "tr": "87372ab221"
   },
   "propellant|hi|missions/mars/starship-mars-crew.json :: events.5.note": {
     "why": "natural omission",
@@ -4173,7 +4185,7 @@
   },
   "stage|fr|science/orbits/special-orbits.json :: body_paragraphs.4": {
     "why": "\"staging orbit\", not a rocket stage",
-    "tr": "68d6cb7fe1"
+    "tr": "9d6303e39e"
   },
   "stage|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.2": {
     "why": "single-stage-to-orbit kept as English acronym phrase; no rocket stage meant separately",

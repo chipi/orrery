@@ -5,7 +5,7 @@
   "delta_v": "~4 km/s",
   "type": "ORBITEUR · ACTIF",
   "first": "Cartes lunaires avec la plus haute résolution jamais réalisée",
-  "description": "En orbite autour de la Lune depuis 2009 à 50 km d'altitude lunaire moyenne, la caméra à angle étroit de LRO images à 50 cm/pixel – suffisamment haute pour voir les étages de descente d'Apollo, les traces du rover et les sentiers des astronautes encore préservés dans le régolithe. Il a trouvé Lunokhod 1 trente-neuf ans après que le rover soit devenu sombre. Il a identifié plus de 200 sites d’atterrissage candidats pour Artemis. Les dépôts de glace d'eau au pôle sud lunaire qui pilotent chaque programme lunaire moderne ont été quantifiés par les instruments LRO. Une mission de reconnaissance qui est devenue le fondement de l’ère lunaire moderne.",
+  "description": "En orbite autour de la Lune depuis 2009 à une altitude lunaire moyenne de 50 km, la caméra à champ étroit de LRO prend des images à 50 cm/pixel — une résolution suffisante pour distinguer les étages de descente d'Apollo, les traces des rovers et les sentiers des astronautes, encore conservés dans le régolithe. Elle a retrouvé Lunokhod 1 trente-neuf ans après que le rover s'est tu. Elle a identifié plus de 200 sites d'atterrissage candidats pour Artemis. Les dépôts de glace d'eau du pôle sud lunaire, qui motivent tous les programmes lunaires modernes, ont été quantifiés par les instruments de LRO. Une mission d'éclaireur devenue le fondement de l'ère lunaire moderne.",
   "events": [
     {
       "met": 0,
@@ -28,7 +28,7 @@
     {
       "met": 455,
       "label": "SCIENCE ÉTENDU",
-      "note": "Mission étendue à une phase scientifique pluriannuelle sous NASA SMD.",
+      "note": "Mission prolongée en phase scientifique pluriannuelle sous l'égide du SMD de la NASA.",
       "type": "info"
     }
   ],

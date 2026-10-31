@@ -5,8 +5,8 @@
   "delta_v": "~16 km/s (approximatif)",
   "type": "SURVOL · VOLÉ",
   "first": "Premier survol de Pluton et de ses lunes ; les images les plus nettes d'un monde de la ceinture de Kuiper",
-  "dispatch": "New Horizons n'avait qu'une seule chance et l'a saisie. Pas de mise en orbite, pas de moyen de ralentir — neuf ans et demi de voyage, le lancement le plus rapide de l'histoire, le tout convergeant vers quelques heures à Pluton, exécuté par une machine si lointaine que chaque commande mettait des heures à arriver. Elle a réussi le survol le 14 juillet 2015 et a bouleversé l'idée d'un monde mort : Pluton s'est révélée avoir des montagnes de glace d'eau, un vaste glacier en forme de cœur d'azote gelé encore lentement en mouvement, et une surface jeune et active que personne ne pensait qu'un corps aussi petit et froid pouvait conserver. Puis elle a poursuivi sa route vers Arrokoth, un milliard de kilomètres au-delà de Pluton — le monde le plus lointain jamais vu de près — et elle continue encore.",
-  "description": "Neuf ans après le lancement le plus rapide à ce jour, New Horizons a compressé des décennies d'anticipation en un seul jour de juillet 2015 – un monde transformé d'un flou pixelisé en montagnes de glace d'eau et de glaciers d'azote sur la région de Tombaugh en forme de cœur de Pluton. Le vaisseau spatial a ensuite volé sur Arrokoth, reliant la mission au système solaire primordial. Les arcs de vol dans Orrery sont des modèles d'enseignement à transfert direct, et non l'assistance gravitationnelle réelle de Jupiter.",
+  "dispatch": "New Horizons n'avait qu'une seule chance, et elle l'a saisie. Pas de mise en orbite, aucun moyen de ralentir — neuf ans et demi de voyage, le lancement le plus rapide de l'histoire, le tout convergeant vers quelques heures à Pluton, menées par une machine si lointaine que chaque commande mettait des heures à arriver. Elle a réussi son survol le 14 juillet 2015 et a renversé l'idée d'un monde mort : Pluton s'est révélé abriter des montagnes de glace d'eau, un vaste glacier en forme de cœur d'azote gelé encore lentement en mouvement, et une surface jeune et active qu'on n'aurait jamais crue possible pour un corps aussi petit et froid. Puis elle a poursuivi sa route vers Arrokoth, à un milliard de kilomètres au-delà de Pluton — le monde le plus lointain jamais vu de près — et elle continue encore.",
+  "description": "Un sprint de neuf ans après le lancement le plus rapide à ce jour : New Horizons a condensé des décennies d'attente en une seule journée de juillet 2015 — un monde passé d'un flou pixelisé à des montagnes de glace d'eau et des glaciers d'azote sur la région de Tombaugh, en forme de cœur, de Pluton. La sonde a ensuite survolé Arrokoth, reliant la mission au système solaire primordial. Les arcs de vol d'Orrery sont des modèles pédagogiques à transfert direct, et non l'assistance gravitationnelle réelle de Jupiter.",
   "events": [
     {
       "met": 0,
@@ -17,7 +17,7 @@
     {
       "met": 3463,
       "label": "SURVOL DE PLUTON",
-      "note": "Approche la plus proche de Pluton ; L'imagerie à haut débit et les données plasma inondent la Terre.",
+      "note": "Passage au plus près de Pluton ; l'imagerie à haut débit et les données plasma inondent la Terre.",
       "type": "nominal"
     }
   ],

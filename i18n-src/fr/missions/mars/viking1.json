@@ -5,7 +5,7 @@
   "delta_v": "~4,5 km/s",
   "type": "ORBITEUR · ATTERRISSEUR · RÉALISÉE",
   "first": "Premier atterrissage martien entièrement réussi ; première science de surface longue durée",
-  "description": "La mission qui nous a donné notre premier regard soutenu sur la surface martienne. L'atterrisseur Viking 1 a fonctionné pendant 6 ans 4 mois à Chryse Planitia — en exécutant des expériences biologiques conçues pour détecter la vie (résultats ambigus ; une expérience a produit un signal positif toujours débattu des décennies plus tard), mesurant la météo, retournant des images panoramiques et analysant la composition du sol. Les orbiteurs Viking ensemble ont cartographié 97 % de Mars à une résolution ~300 m et ont contribué à reconnaître les sites d'atterrissage pour des missions encore décennies loin.",
+  "description": "La mission qui nous a offert notre premier regard prolongé sur la surface martienne. L'atterrisseur de Viking 1 a fonctionné pendant 6 ans et 4 mois à Chryse Planitia — menant des expériences de biologie conçues pour détecter la vie (résultats ambigus ; l'une d'elles a produit un signal positif encore débattu des décennies plus tard), mesurant la météo, transmettant des images panoramiques et analysant la composition du sol. Ensemble, les orbiteurs Viking ont cartographié 97 % de Mars avec une résolution d'environ 300 m et ont aidé à repérer des sites d'atterrissage pour des missions encore distantes de plusieurs décennies.",
   "events": [
     {
       "met": 0,
@@ -40,7 +40,7 @@
     {
       "met": 335.1,
       "label": "PREMIER PANORAMA",
-      "note": "Premières images de surface haute résolution retournées.",
+      "note": "Premières images de la surface en haute résolution transmises.",
       "type": "info"
     }
   ],

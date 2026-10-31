@@ -16,7 +16,7 @@
     {
       "met": 150,
       "label": "MI-CROISIÈRE",
-      "note": "TCM + démonstration du propulseur ionique NEXT-C.",
+      "note": "TCM + tirs de démonstration du propulseur ionique NEXT-C.",
       "type": "nominal"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 306.002,
       "label": "PERTE DE SIGNAL",
-      "note": "LICIACube + HST + JWST observent le panache d'éjecta.",
+      "note": "LICIACube + HST + JWST observent le panache d'éjectas.",
       "type": "warning"
     }
   ],

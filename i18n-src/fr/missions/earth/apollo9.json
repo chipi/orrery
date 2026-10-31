@@ -5,7 +5,7 @@
   "delta_v": "~9,5 km/s (jusqu'en LEO)",
   "type": "MISSION HABITÉE EN ORBITE TERRESTRE · RÉALISÉE",
   "first": "Premier vol habité du Module Lunaire — tests de séparation et rendez-vous en orbite terrestre",
-  "description": "Le premier vol habité du Module Lunaire. En orbite terrestre, McDivitt et Schweickart se sont séparés du LM Spider du CSM Gumdrop, se sont éloignés jusqu'à 183 km sur six heures, puis se sont rendez-vous et redéverrouillés — chaque étape de la procédure de rendez-vous lunaire a été testée sans l'option de ramener l'équipage à la maison dans le CSM en cas de problème. Schweickart a effectué une EVA de 38 minutes sur le porche du LM, démontrant la combinaison spatiale Apollo EVA et la conception du sac à dos PLSS que les équipages marchant sur la Lune utiliseraient. Scott a effectué une EVA en position debout depuis l'écoutille du CSM. Avec le matériel LM et les procédures de rendez-vous vérifiés, la NASA était prête à envoyer Apollo 10 sur la Lune deux mois plus tard.",
+  "description": "Le premier vol habité du module lunaire. En orbite terrestre, McDivitt et Schweickart ont séparé le LM Spider du CSM Gumdrop, se sont éloignés jusqu'à 183 km en six heures, puis ont effectué le rendez-vous et se sont amarrés de nouveau — chaque étape de la procédure de rendez-vous lunaire a été testée sans la possibilité de ramener l'équipage sur Terre dans le CSM en cas de problème. Schweickart a effectué une EVA de 38 minutes sur le porche du LM, démontrant la combinaison d'EVA Apollo et le sac à dos PLSS que les équipages marchant sur la Lune utiliseraient. Scott a effectué une EVA debout depuis l'écoutille du CSM. Le matériel du LM et les procédures de rendez-vous ainsi validés, la NASA pouvait envoyer Apollo 10 sur la Lune deux mois plus tard.",
   "events": [
     {
       "met": 0,
@@ -16,13 +16,13 @@
     {
       "met": 0.13,
       "label": "EXTRACTION CSM-LM",
-      "note": "Le CSM Gumdrop fait demi-tour et s'arrime au LM Spider dans l'adaptateur SLA — premier transposition et amarrage habités. Toutes les missions Apollo lunaires répètent cette manœuvre.",
+      "note": "Le CSM Gumdrop fait demi-tour et s'arrime au LM Spider dans l'adaptateur SLA — première transposition et premier amarrage habités. Toutes les missions lunaires Apollo répètent cette manœuvre.",
       "type": "nominal"
     },
     {
       "met": 4.2,
       "label": "SÉPARATION LM",
-      "note": "McDivitt et Schweickart se séparent de Spider, s'éloignent jusqu'à 183 km de Gumdrop sur six heures. Premier vol habité où le vaisseau spatial et l'équipage ne sont pas tous deux attachés à un véhicule de rentrée.",
+      "note": "McDivitt et Schweickart désamarrent Spider et s'éloignent jusqu'à 183 km de Gumdrop pendant six heures. Premier vol habité où le vaisseau et l'équipage ne sont pas tous deux rattachés à un véhicule de rentrée.",
       "type": "info"
     },
     {

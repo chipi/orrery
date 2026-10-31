@@ -47,7 +47,7 @@
     {
       "met": 254.01,
       "label": "PREMIÈRES IMAGES",
-      "note": "Hazcam retourne la première image de basse résolution de la surface.",
+      "note": "Hazcam transmet la première image en basse résolution de la surface.",
       "type": "info"
     }
   ],

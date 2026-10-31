@@ -28,13 +28,13 @@
     {
       "met": 135,
       "label": "ATTERRISSAGE",
-      "note": "Atterrissage en douceur au cratère Shioli 2024-01-19 15:20 UTC. Précision de la cible : ~55 m hors centre.",
+      "note": "Atterrissage en douceur au cratère Shioli 2024-01-19 15:20 UTC. Dans la précision visée : à ~55 m du centre.",
       "type": "nominal"
     },
     {
       "met": 135.01,
       "label": "ATTERRISSAGE INCLINÉ",
-      "note": "L'atterrisseur se repose en piqué en raison d'une anomalie moteur lors de la descente finale. Panneaux solaires initialement dans l'ombre.",
+      "note": "L'atterrisseur repose le nez vers le bas à cause d'une anomalie moteur lors de la descente finale. Panneaux solaires d'abord dans l'ombre.",
       "type": "warning"
     },
     {

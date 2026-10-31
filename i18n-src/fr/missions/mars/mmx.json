@@ -10,13 +10,13 @@
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "H3-24L de Tanegashima — le nouveau poids lourd de JAXA.",
+      "note": "H3-24L depuis Tanegashima — le nouveau lanceur lourd de la JAXA.",
       "type": "nominal"
     },
     {
       "met": 334,
       "label": "INSERTION EN ORBITE DE MARS",
-      "note": "Capturer sur l'orbite de Mars ; transfert sur la quasi-orbite de Phobos dans les mois suivants.",
+      "note": "Capture en orbite de Mars ; transfert vers la quasi-orbite de Phobos au cours des mois suivants.",
       "type": "nominal"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 1500,
       "label": "RETOUR DE LA TERRE",
-      "note": "Un échantillon de capsule de rentrée arrive sur Terre vers 2031.",
+      "note": "La capsule de rentrée contenant l'échantillon arrive sur Terre vers 2031.",
       "type": "info"
     }
   ],

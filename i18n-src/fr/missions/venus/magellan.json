@@ -5,7 +5,7 @@
   "delta_v": "~3,7 km/s",
   "type": "ORBITEUR · EXPLORÉ",
   "first": "Carte radar la plus complète de Vénus — 98 % de la surface à ~120 m de résolution ; premier engin spatial planétaire lancé depuis la Space Shuttle",
-  "description": "Magellan a transformé Vénus d'un disque feuilleté et sans traits en une planète cartographiée. Lancé de la soute de la navette Atlantis le 1989-05-04 — premier engin spatial planétaire à voyager à bord d'une navette — et arrivé à Vénus le 1990-08-10 via une longue trajectoire de type IV (1,5 révolutions solaires). Au cours de quatre cycles de cartographie, le radar à synthèse d'ouverture a imagé 98 % de la surface de Vénus à ~120 m de résolution, révélant des hauts plateaux tessérés, des coronae, des dômes en forme de crêpes et une surface jeune, régulièrement resurfacée par le volcanisme. La mission s'est terminée le 1994-10-13 par l'Expérience de fin de mission — première rentrée atmosphérique contrôlée et planifiée d'un engin spatial planétaire.",
+  "description": "Magellan a fait de Vénus, autrefois un disque sans relief voilé de nuages, une planète cartographiée. Lancé depuis la soute de charge utile de la navette Atlantis le 1989-05-04 — premier engin spatial planétaire à voyager à bord d'une navette — il est arrivé à Vénus le 1990-08-10 par une longue trajectoire de type IV (1,5 révolution solaire). Au cours de quatre cycles de cartographie, le radar à synthèse d'ouverture a imagé 98 % de la surface de Vénus avec une résolution d'environ 120 m, révélant des hautes terres tessérées, des coronae, des dômes en crêpe et une surface jeune, resurfacée par le volcanisme. La mission s'est achevée le 1994-10-13 avec l'expérience de fin de mission — première entrée atmosphérique contrôlée et planifiée d'un engin spatial planétaire.",
   "events": [
     {
       "met": 0,
@@ -40,7 +40,7 @@
     {
       "met": 1988,
       "label": "EXPÉRIENCE DE FIN DE MISSION",
-      "note": "1994-10-13. Périapsis abaissé dans l'atmosphère — première rentrée planétaire contrôlée et planifiée.",
+      "note": "1994-10-13. Périapside abaissé dans l'atmosphère — première entrée atmosphérique planifiée d'un engin spatial planétaire.",
       "type": "warning"
     }
   ],

@@ -131,8 +131,9 @@ gravity assist 53 %).
   two fleet descriptions garbled throughout (Clementine, Lunar Prospector), retranslated
   from the English. The nl compounds are now an explicit list.
 
-Science misses: **656 → 1 unreviewed**. That one is the Serbian «скокове уз помоћ
-гравитације» for *gravity-assist hops*, which waits for the operator.
+Science misses: **656 → 0 unreviewed**. The operator confirmed all 20 Serbian forms and
+accepted «уз помоћ гравитације» next to «гравитациони маневар». Science is now gated:
+`term-glossary.test.ts` fails on any new unreviewed miss.
 
 All trees: 2,689 unreviewed (essays 380, missions 1,473, fleet 578, programs 257).
 

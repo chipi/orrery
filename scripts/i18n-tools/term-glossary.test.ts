@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { keepKey, locPattern, normalize } from './term-match.mjs';
 
 // The `term` section of the glossary (technical space terms, 2026-10-31 pilot) feeds
@@ -78,4 +79,24 @@ describe('glossary · reviewed keeps', () => {
     }
     expect(bad, bad.slice(0, 20).join('\n')).toEqual([]);
   });
+});
+
+// Trees that reached zero unreviewed misses are gated: a new translation that drops a
+// binding form fails here until it is fixed or recorded as a keep (term-consistency skill).
+const GATED_TREES = ['science'];
+describe('glossary · term gate', () => {
+  it(`no unreviewed term misses in ${GATED_TREES.join(', ')}`, () => {
+    let out = '';
+    try {
+      out = execFileSync(
+        'node',
+        ['scripts/i18n-tools/term-drift.mjs', `--trees=${GATED_TREES.join(',')}`, '--gate'],
+        { encoding: 'utf8' },
+      );
+    } catch (e) {
+      out = (e as { stdout?: string }).stdout ?? String(e);
+      expect.fail(`term-drift --gate failed:\n${out.split('\n').slice(-3).join('\n')}`);
+    }
+    expect(out).toContain('unreviewed misses: 0');
+  }, 30_000);
 });

@@ -1,0 +1,9 @@
+[
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.4.note",
+    "find": "تتدحرج المركبة الجوالة على المنحدر نزولاً",
+    "replace": "تنزل المركبة الجوالة على المنحدر",
+    "why": "'rolls down' mistranslated as tumbling; unnatural"
+  }
+]

@@ -1661,7 +1661,7 @@
   },
   "burn|ru|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion",
-    "tr": "cb421173cd"
+    "tr": "dcdc3ea001"
   },
   "burn|ru|science/history/_intro.json :: paragraphs.0": {
     "why": "Goddard's first liquid-fuel engine run, not a manoeuvre",
@@ -1673,7 +1673,7 @@
   },
   "burn|ru|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
-    "tr": "d95395142a"
+    "tr": "9256f0835f"
   },
   "burn|ru|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
     "why": "burn is 'burns the crew up', not an engine firing",
@@ -1681,7 +1681,7 @@
   },
   "burn|ru|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
-    "tr": "6fe2edf31f"
+    "tr": "a3f179b916"
   },
   "burn|ru|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
@@ -1689,11 +1689,11 @@
   },
   "burn|ru|science/propulsion/engine-types.json :: body_paragraphs.0": {
     "why": "solid motor burns at a controlled rate = combustion",
-    "tr": "89e9ac54c1"
+    "tr": "bcd2efc820"
   },
   "burn|ru|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
-    "tr": "48ff284124"
+    "tr": "73c8a23ff9"
   },
   "burn|ru|science/propulsion/expander-cycle.json :: diagram_caption": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
@@ -1701,7 +1701,7 @@
   },
   "burn|ru|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
-    "tr": "560775bfe2"
+    "tr": "a4b0002ac7"
   },
   "burn|ru|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.4": {
     "why": "burn-rate profile = combustion",
@@ -1713,23 +1713,23 @@
   },
   "burn|ru|science/propulsion/gas-generator.json :: intro_sentence": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
-    "tr": "5003a86737"
+    "tr": "1efcedf645"
   },
   "burn|ru|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
-    "tr": "2a3df91060"
+    "tr": "22147a5472"
   },
   "burn|ru|science/propulsion/specific-impulse.json :: narrative_101.1": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
-    "tr": "f6fff0ee2f"
+    "tr": "749121c258"
   },
   "burn|ru|science/propulsion/staged-combustion.json :: diagram_caption": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
-    "tr": "a857be45b5"
+    "tr": "e9a664db4f"
   },
   "burn|ru|science/propulsion/staged-combustion.json :: intro_sentence": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
-    "tr": "e074936567"
+    "tr": "92b0ffdf13"
   },
   "burn|ru|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
     "why": "burn here means combustion / burning up / burn rate, not an engine firing",
@@ -1985,7 +1985,7 @@
   },
   "burn|zh-CN|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
     "why": "stars \"burn\" red is figurative glow",
-    "tr": "a9404e84b0"
+    "tr": "24087ec4f9"
   },
   "burn|zh-CN|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
     "why": "\"burn out\" is stellar fuel exhaustion",
@@ -1993,7 +1993,7 @@
   },
   "burn|zh-CN|science/propulsion/engine-types.json :: body_paragraphs.0": {
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
-    "tr": "c31e997a19"
+    "tr": "626f6ad993"
   },
   "burn|zh-CN|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
@@ -2005,15 +2005,15 @@
   },
   "burn|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
-    "tr": "25dc1c0192"
+    "tr": "080f3933a3"
   },
   "burn|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
-    "tr": "49d2d05c01"
+    "tr": "92730a41aa"
   },
   "burn|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.4": {
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
-    "tr": "f36200d507"
+    "tr": "8daa973c6e"
   },
   "burn|zh-CN|science/propulsion/gas-generator.json :: body_paragraphs.0": {
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
@@ -2025,11 +2025,11 @@
   },
   "burn|zh-CN|science/propulsion/ion-drive.json :: intro_sentence": {
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
-    "tr": "3fa8af9011"
+    "tr": "5f2123fd6c"
   },
   "burn|zh-CN|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
-    "tr": "fff0966a82"
+    "tr": "09627eb252"
   },
   "burn|zh-CN|science/propulsion/oberth-effect.json :: narrative_101.0": {
     "why": "\"fuel to burn\" = fuel to expend/combust, not a firing",
@@ -2049,15 +2049,15 @@
   },
   "burn|zh-CN|science/propulsion/staged-combustion.json :: diagram_caption": {
     "why": "combustion / fuel consumption, not an engine firing",
-    "tr": "901fe6247d"
+    "tr": "e2062c8f9c"
   },
   "burn|zh-CN|science/propulsion/staged-combustion.json :: intro_sentence": {
     "why": "combustion / fuel consumption, not an engine firing",
-    "tr": "c87d95dbd4"
+    "tr": "50682ab04b"
   },
   "burn|zh-CN|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
     "why": "combustion / fuel consumption, not an engine firing",
-    "tr": "6eea8fe05e"
+    "tr": "b6564d9d47"
   },
   "delta-v|hi|essays/interstellar-exploration.json :: body.10.md": {
     "why": "term not in this sentence of the English",
@@ -2347,9 +2347,13 @@
     "why": "variant: система возвращения",
     "tr": "7831b3659b"
   },
+  "entry|ru|science/life-in-space/pre-flight-training.json :: body_paragraphs.3": {
+    "why": "re-entry engine = the braking (deorbit) engine, not atmospheric entry",
+    "tr": "0bc5924b0b"
+  },
   "entry|ru|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
     "why": "'re-entry into 1 g' is vestibular, not atmospheric entry",
-    "tr": "ccdfe0c658"
+    "tr": "e4151b4db4"
   },
   "entry|sr-Cyrl|programs/hayabusa.json :: goals.2.md": {
     "why": "variant: повратна капсула (re-entry capsule)",
@@ -2498,6 +2502,10 @@
   "orbit insertion|zh-CN|programs/jaxa-robotic.json :: outcome.0.md": {
     "why": "stem gap: 进入金星轨道",
     "tr": "2eeedb6514"
+  },
+  "orbit insertion|zh-CN|science/mission-phases/launch.json :: body_paragraphs.0": {
+    "why": "ascent to orbit; the binding 制动捕获 is for capture braking at a destination",
+    "tr": "65db741d35"
   },
   "orbit|ar|missions/earth/aurora-7.json :: description": {
     "why": "variant: بثلاث دورات (laps)",
@@ -3373,7 +3381,7 @@
   },
   "orbit|ru|science/exoplanets/transit-timing.json :: narrative_101.0": {
     "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
-    "tr": "d49bd904de"
+    "tr": "4831824eb6"
   },
   "orbit|ru|science/observation/black-holes.json :: body_paragraphs.2": {
     "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
@@ -3665,7 +3673,7 @@
   },
   "orbit|zh-CN|science/exoplanets/proxima-system.json :: narrative_101.0": {
     "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
-    "tr": "5089f75bc7"
+    "tr": "c9ffd099dd"
   },
   "orbit|zh-CN|science/exoplanets/radial-velocity.json :: diagram_caption": {
     "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
@@ -3703,6 +3711,14 @@
     "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
     "tr": "a2bdc0e0d3"
   },
+  "orbit|zh-CN|science/orbits/disposal-end-of-life.json :: body_paragraphs.0": {
+    "why": "orbit as verb / orbiting body (绕转、在轨), not the orbit noun",
+    "tr": "18e2dc995a"
+  },
+  "orbit|zh-CN|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
+    "why": "orbit as verb / orbiting body (绕转、在轨), not the orbit noun",
+    "tr": "6f0665a3d1"
+  },
   "orbit|zh-CN|science/planets/axial-tilt-and-seasons.json :: body_paragraphs.1": {
     "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
     "tr": "27acf82b38"
@@ -3726,6 +3742,10 @@
   "orbit|zh-CN|science/planets/tides.json :: body_paragraphs.3": {
     "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
     "tr": "860982d115"
+  },
+  "orbit|zh-CN|science/propulsion/laser-sail.json :: body_paragraphs.2": {
+    "why": "orbit as verb / orbiting body (绕转、在轨), not the orbit noun",
+    "tr": "c4130ff477"
   },
   "orbit|zh-CN|science/scales-time/_intro.json :: paragraphs.0": {
     "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
@@ -4065,7 +4085,7 @@
   },
   "propellant|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
-    "tr": "25dc1c0192"
+    "tr": "080f3933a3"
   },
   "rendezvous|ar|programs/gemini.json :: goals.1.md": {
     "why": "variant: اللقاء المداري",
@@ -4353,7 +4373,7 @@
   },
   "thrust|zh-CN|science/mission-phases/ascent-guidance.json :: body_paragraphs.2": {
     "why": "推重比 is the standard term for thrust-to-weight ratio",
-    "tr": "c554918e29"
+    "tr": "09fb3e660c"
   },
   "thrust|zh-CN|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
     "why": "化学推进 = chemical propulsion as a method; natural",
@@ -4458,5 +4478,9 @@
   "trajectory|zh-CN|missions/saturn/voyager-1.json :: description": {
     "why": "path rendered as 最直接路径, natural",
     "tr": "854e2098eb"
+  },
+  "trajectory|zh-CN|science/mission-phases/entry-heating.json :: body_paragraphs.1": {
+    "why": "the flight path is described (飞过最炽热的一段), no trajectory noun in the sentence",
+    "tr": "60ece7da1c"
   }
 }

@@ -102,6 +102,12 @@ for the failure readout, a darker badge, an 85 % footer backdrop. All 23 are now
 in the gate (34 routes): 68 passed on desktop + mobile. Screenshots of /credits,
 /posters and the /fleet footer checked by eye.
 
+CI (ee4174ea1d9) then timed out on /credits on three shards: axe walked all
+2,760 photo rows (57–60 s locally, more on a CI runner). The gate now scans the
+first 5 rows per source (`exclude: '.photo-list > .photo:nth-child(n+6)'`):
+22–26 s locally, and putting back one of the fixed low-contrast labels still
+fails it (150 nodes).
+
 Not covered: dynamic routes (`/missions?id=`, `/programs/[id]`, `/essays/[slug]`,
 science sections, cards) and panel states opened by interaction; minor and
 moderate axe findings are logged, not gated.

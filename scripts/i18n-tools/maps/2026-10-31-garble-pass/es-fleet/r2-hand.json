@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "description",
+    "find": "hasta enero de 2015",
+    "replace": "hasta 2015-01"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "find": "el 13 de octubre de 2023",
+    "replace": "el 2023-10-13"
+  }
+]

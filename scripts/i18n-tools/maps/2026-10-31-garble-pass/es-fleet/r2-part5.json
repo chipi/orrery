@@ -1,0 +1,1133 @@
+[
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/change-5.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "El orbitador polar de Júpiter de la NASA, en órbita desde 2016. Alimentado por energía solar (una primicia a la distancia de Júpiter), girando para mantener la estabilidad y orbitando tan cerca de las cimas de las nubes de Júpiter que cada pasada arriesga daños graves por radiación.",
+    "note": "'en cada paso' awkward for each pass"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "La nave Vostok fue la primera máquina en llevar a un ser humano al espacio y traerlo de vuelta, y su diseño es un estudio de hacer lo mínimo que funciona. La entrada atmosférica es la parte más difícil del regreso a casa, así que Vostok usó la única forma que sobrevive a ella desde cualquier ángulo — una esfera —, lo que significaba que los sistemas automáticos nunca tenían que orientar la nave con precisión; entraría dando tumbos y aun así descendería con el escudo térmico hacia abajo. El problema era que la esfera aterrizaba demasiado bruscamente para una persona, así que el cosmonauta se eyectaba cerca del suelo y descendía en paracaídas por separado, un hecho ocultado durante años para proteger los récords. Rudimentaria, secreta y completamente eficaz, llevó a seis personas a órbita sin perder a ninguna — y su configuración de cápsula más módulo de servicio se convirtió en el patrón del Soyuz, que sigue volando hoy.",
+    "note": "'reentrada' instead of bound 'entrada atmosférica'"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Segundo orbitador lunar estadounidense (1966-11-10). Tomó la 'Imagen del Siglo' — vista oblicua del cráter Copérnico a ~45 km de altitud",
+    "note": "'altitude' dropped from the tagline"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Comunicaciones LEO polares — 66 satélites operativos +9 de repuesto, socio GMDSS, voz/datos globales",
+    "note": "'Comms' left as English abbreviation"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-3.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-4.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Acceso de Japón a los lanzadores pesados — H-IIA + H3, carga HTV / HTV-X a la EEI",
+    "note": "'puerta de lanzamiento pesado' is garbled"
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-ms.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-201.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "La primera de las tres estaciones espaciales militares soviéticas Almaz, llamada públicamente Salyut 2 para disimular su verdadero propósito (reconocimiento de estilo DoD, con una cámara panorámica de 6,4 m de distancia focal y una cápsula de retorno de película). Lanzada el 1973-04-03 en un Proton-K desde Baikonur, Salyut 2 alcanzó la órbita con éxito, pero los restos de la tercera etapa agotada del Proton — que explotó tres días después del lanzamiento — golpearon la estación unos 10 días más tarde, arrancando ambos paneles solares y perforando el casco. La pérdida de energía resultante provocó la despresurización el día 13 (1973-04-14) e inutilizó la estación antes de que se pudiera enviar a ninguna tripulación. La tripulación prevista (Pável Popóvich + Yuri Artíujin) voló en cambio en la Salyut 3 al año siguiente. Salyut 2 reentró en la atmósfera el 1973-05-28 — el programa de estaciones espaciales más breve de la historia hasta ese momento. Su existencia como estación militar solo se desclasificó tras el colapso de la Unión Soviética.",
+    "note": "'puncturing' rendered as 'impactando'; plural agreement with 'primera' wrong"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gaganyaan.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "La primera nave espacial tripulada de India, con un vuelo tripulado previsto para 2027 en el LVM3 (antes GSLV Mk III). Tres astronautas en una misión de unos siete días en órbita terrestre baja — el inicio de un programa indio de vuelos espaciales humanos. ISRO ha completado las pruebas de calificación del módulo de tripulación y ha entrenado a candidatos a astronauta.",
+    "note": "clumsy word order, 'dirigido a', 'indio' placement"
+  },
+  {
+    "rel": "fleet/launch-site/baikonur-1-5.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Primer orbitador lunar de EE. UU. (1966-08-14); cartografió sitios Apollo y tomó la primera foto de la Tierra desde la órbita lunar (1966).",
+    "note": "'from lunar orbit' became 'desde la Luna'; '1.ª' abbreviation"
+  },
+  {
+    "rel": "fleet/space-suit/shenzhou-iva.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Traje de lanzamiento y entrada de China, usado en cada vuelo Shenzhou desde 2003",
+    "note": "'entry' dropped; lowercase start"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Cuarto orbitador lunar de EE. UU. (1967-05-08). Primera órbita lunar polar; cartografió el 99 % de la cara visible a 60 m/píxel + regiones de la cara oculta",
+    "note": "'far-side regions' became whole far side"
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-41-1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Primera misión lunar china. Mapa topográfico global de 200 m; impacto deliberado en Mare Fecunditatis 2009-03-01: primer objeto chino lunar",
+    "note": "'topo' abbreviation, awkward ending"
+  },
+  {
+    "rel": "fleet/rover/curiosity.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Róver del Mars Science Laboratory con energía nuclear",
+    "note": "'propulsión nuclear' wrong: powered, not propelled"
+  },
+  {
+    "rel": "fleet/launch-site/jiuquan-slc-43.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "Gemelo idéntico de Vega 1, lanzado el 1984-12-21 (6 días después de Vega 1). Bus de sobrevuelo de 4920 kg + módulo de descenso de ~1500 kg con un segundo aterrizador de estilo Venera + aeróstato de helio. Llegada a Venus el 1985-06-15: el aterrizador tocó suelo a 8,5°S, 164,5°E (Aphrodite Terra) y devolvió 57 minutos de datos científicos de la superficie; el globo flotó en la capa de nubes durante 46 horas junto al de Vega 1. El bus de sobrevuelo siguió su camino y se encontró con el cometa 1P/Halley el 1986-03-09 a 8030 km — el segundo encuentro con Halley de la armada, 3 días después de Vega 1 y 5 días antes de Giotto. El seguimiento de Vega 1 + Vega 2 afinó la posición del núcleo de Halley a menos de 50 km para la aproximación mucho más cercana de Giotto.",
+    "note": "'aproximamiento' is not a word; some clumsy phrasing"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-lc-17.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Hermana de Vega 1 — segunda misión doble soviética a Venus + Halley, aterrizador + globo y luego sobrevuelo de Halley",
+    "note": "added '3 días tras Vega 1' not in English"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Plataforma principal del Atlas V — lanzó todas las misiones del Atlas V, incluidas Mars Perseverance, Lucy y el Starliner CFT",
+    "note": "'Marte Perseverance' translates part of a name"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/engine/rs-25.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/starliner.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Vehículo del programa Commercial Crew de Boeing, con un sistema de aborto de lanzamiento por empuje que usa los propulsores de su propio módulo de servicio. El Crew Flight Test (junio de 2024) sufrió fallos en los propulsores y fugas de helio; la NASA devolvió la cápsula sin tripulación (septiembre de 2024). Wilmore y Williams regresaron con la Crew-9 de SpaceX (febrero de 2025). Los vuelos tripulados quedan suspendidos hasta la recertificación.",
+    "note": "'pusher' left in English"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Misión pionera de retorno de muestras de asteroide de JAXA. Lanzada el 2003-05-09 hacia Itokawa con cuatro propulsores iónicos de descarga por microondas μ10. Sobrevivió a una fuga de hidrazina, al fallo de tres de cuatro ruedas de reacción, al fallo de un motor iónico y a siete semanas de comunicaciones perdidas antes de que los ingenieros lograran traerla de vuelta a la Tierra con un motor funcional ensamblado a partir de las mitades supervivientes de dos motores dañados. Cápsula de muestras recuperada en Woomera, Australia, el 2010-06-13 con 1500 μg de material de Itokawa — la primera muestra de asteroide devuelta a la Tierra.",
+    "note": "dates not in ISO format as English; ambiguous 09/05"
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "El YF-100 es el motor que llevó la capacidad de lanzamiento de China al nivel de rendimiento que Rusia y Estados Unidos ocupaban desde hacía décadas. Desarrollado por la AALPT en Xi'an, aplica combustión escalonada rica en oxígeno a LOX y RP-1 — el ciclo termodinámico que extrae la máxima energía de los propelentes de queroseno — y realizó su primer vuelo el 20 de septiembre de 2015. Dos YF-100 impulsan la etapa central del Long March 5, el cohete operativo más pesado de China, y variantes agrupadas vuelan en el Long March 6 y el Long March 7. El YF-100 sustenta el programa lunar de China, el reabastecimiento de su estación espacial y su creciente cadencia de lanzamientos comerciales.",
+    "note": "'core stage' rendered 'núcleo' instead of etapa central"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Se desmembró girando en órbita; su pérdida impulsó el desarrollo de XRISM",
+    "note": "'Spun apart' reduced to plain 'desintegración'"
+  },
+  {
+    "rel": "fleet/space-suit/starliner-suit.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Traje azul de Boeing para el lanzamiento y la entrada en el Starliner",
+    "note": "awkward word order, clumsy hyphen compound"
+  },
+  {
+    "rel": "fleet/orbiter/hope.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/semnan-imam-khomeini.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Ocho motores, ocho misiones — el caballo de batalla del Saturn I",
+    "note": "'Saturno I' uses planet name; 'motor de carga' mistranslates workhorse"
+  },
+  {
+    "rel": "fleet/constellation/gps-gnss.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Sistema de Posicionamiento Global — el GNSS original y todavía el más utilizado. 31 satélites activos a 20 180 km en 6 planos orbitales inclinados 55°. Operado por la Fuerza Espacial de EE. UU.; originalmente por el Departamento de Defensa. La directiva de 1983 del presidente Reagan prometió acceso futuro al GPS civil después del derribo del vuelo 007 de Korean Air Lines, pero el acceso civil a la señal L1 C/A sin encriptar no estuvo disponible hasta que se desactivó la Disponibilidad Selectiva en mayo de 2000, lo que mejoró drásticamente la precisión civil. Señales modernizadas L1C, L2C y L5 en los satélites Block IIF y III.",
+    "note": "missing article before 'Disponibilidad Selectiva'"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/woomera.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/baikonur-81.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Aterrizador UK/ESA de Mars Express (2003). Mudo al llegar; HiRISE lo halló intacto en 2015 — un panel solar no se desplegó",
+    "note": "'Módulo ... de Marte' is a poor rendering of lander"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "El RD-180 representa una rama de la tecnología de propulsión que Estados Unidos cedió, en la práctica, a la Unión Soviética durante la Guerra Fría. La combustión escalonada rica en oxígeno —quemar el oxidante en exceso en la precámara para impulsar la turbobomba— exige materiales y tolerancias de fabricación que la industria estadounidense no había dominado. El diseño de dos cámaras y una única turbobomba de NPO Energomash voló en el Atlas V desde mayo de 2000 y dio a la primera etapa una combinación de empuje y eficiencia que ningún motor estadounidense de queroseno y oxígeno líquido de su época podía igualar. Se retiró con el Atlas V en 2023.",
+    "note": "'primer piso' for first stage; 'fabricado en América'"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "OV-101 — Shuttle prototipo. Antes Constitution; renombrado por campaña de fans de Star Trek. Pruebas atmosféricas 1977; nunca alcanzó órbita",
+    "note": "'from Constitution' dropped"
+  },
+  {
+    "rel": "fleet/launch-site/baikonur-200.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-43.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Primer aterrizaje suave en otro planeta y primer envío de datos desde la superficie de otro planeta (Venus, 1970)",
+    "note": "'alunizaje' means Moon landing, wrong for Venus"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Motor propulsor del Saturn I/IB en racimo de ocho — el ensayo del F-1",
+    "note": "garbled 'de ocho agrupados'; 'Saturno' planet name"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/lc-14.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/rover/curiosity.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "El róver Mars Science Laboratory de la NASA, con energía nuclear, en Marte desde agosto de 2012. Descubrió moléculas orgánicas, antiguos entornos de lechos fluviales y pruebas de que el cráter Gale de Marte fue habitable en el pasado. Sigue operativo más de una década después.",
+    "note": "'propulsión nuclear' wrong: powered, not propelled"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Segundo orbitador lunar de China, lanzado el 2010-10-01. Chang'e 2 orbitó la Luna de 2010 a 2011 y abandonó la órbita lunar en junio de 2011 para una misión ampliada en el espacio profundo. Se dirigió al punto L2 Sol-Tierra (llegada en agosto de 2011) y salió de L2 en abril de 2012 para un histórico sobrevuelo del asteroide 4179 Toutatis, con una aproximación el 2012-12-13 a ~770 m de distancia — la primera nave espacial en visitar el asteroide. Tras el encuentro con Toutatis, Chang'e 2 siguió hacia el espacio profundo en una trayectoria heliocéntrica y se convirtió en un objeto interplanetario a la deriva.",
+    "note": "asteroid Toutatis misnamed 'Teutates'; redundant 'acercamiento cercano'"
+  },
+  {
+    "rel": "fleet/launch-site/semnan-imam-khomeini.json",
+    "at": "name",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Centro Espacial de Semnan (Puerto Espacial Imam Khomeini)",
+    "note": "parenthetical alternate name dropped"
+  },
+  {
+    "rel": "fleet/lander/viking2-lander.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "2.º aterrizador marciano de EE. UU. (Utopia Planitia 1976-09-03). Gemelo de Viking 1; biología, química del suelo + meteorología hasta 1980",
+    "note": "'módulo lunar' for a Mars lander; exact date dropped"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "El orbitador reutilizable, el tanque externo y los dos cohetes propulsores sólidos que volaron 135 misiones entre 1981 y 2011. Construyeron la EEI, desplegaron y dieron servicio al Hubble, y demostraron los compromisos de ingeniería de un lanzador tripulado parcialmente reutilizable.",
+    "note": "'atendieron al Hubble' and 'concesiones' are awkward"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/space-suit/krechet-94.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/semnan-imam-khomeini.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Centro iraní de lanzamientos orbitales: el Safir puso en órbita a Omid, el primer satélite de fabricación propia de Irán, en 2009",
+    "note": "'launch' dropped: 'Centro orbital'"
+  },
+  {
+    "rel": "fleet/launcher/long-march-3b.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Lanzador líquido hipergólico de tres etapas (UDMH/N2O4 en las etapas inferiores, LH2/LOX en la tercera) con cuatro propulsores laterales adosados. Coloca ~11 t en órbita terrestre baja / ~5,1 t en órbita de transferencia geoestacionaria desde el Centro de Lanzamiento de Satélites de Xichang. El vuelo inaugural (1996-02-15, Intelsat 708) fracasó de manera catastrófica por un fallo en el bucle de guiado y mató a aldeanos situados a lo largo de la trayectoria de vuelo; el vehículo rediseñado ha realizado desde entonces más de 100 misiones exitosas y es el lanzador estándar de la exploración lunar Chang'e.",
+    "note": "'aceleradores auxiliares' not the booster binding; guidance loop lost"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/antares.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Lanzador de carga media de Northrop Grumman, construido originalmente con primeras etapas con el Aerojet AJ26 y, más tarde, con el RD-181, y una segunda etapa sólida Castor. Transportó Cygnus a la EEI de 2013 a NG-19 en 2023. El sucesor Antares 330 (desarrollado conjuntamente con Firefly Aerospace) sustituye la primera etapa rusa por siete motores Miranda.",
+    "note": "AJ26 and RD-181 merged into one garbled engine"
+  },
+  {
+    "rel": "fleet/engine/vulcain-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Vulcain 2 fue el motor que Europa construyó para lograr un acceso independiente a la órbita geoestacionaria. Desarrollado por Snecma dentro del programa Ariane 5 de la ESA, funciona con un ciclo de generador de gas con LOX y LH2 y propulsa la etapa principal criogénica desde el despegue hasta el corte del motor principal, mientras los propulsores sólidos hacen el trabajo pesado de los primeros minutos. Su debut en diciembre de 2002 se perdió por un fallo de refrigeración de la tobera que destruyó el vehículo; tras el rediseño voló con éxito desde 2005 y se convirtió en el corazón fiable del Ariane 5 hasta el último vuelo del cohete en julio de 2023, colocando satélites y sondas interplanetarias — incluido el JWST — en sus trayectorias.",
+    "note": "'impulsores' not the booster binding; 'levantamiento pesado' calque"
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Primera estación militar Almaz — despresurizada en órbita antes de que llegara ninguna tripulación; volvió a entrar en la atmósfera el 1973-05-28 tras 54 días",
+    "note": "'reentrada el 1973-05-28' is ungrammatical as a verb"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Aterrizador soviético a Marte de 1973 — primera telemetría de descenso de la atmósfera de Marte (224 s, en su mayoría corrompida)",
+    "note": "'primer telemetría' gender error; 'sonda' for lander"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/station/tiangong-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Tiangong-2 es una estación espacial construida por CAST en China. Segunda estación de prueba china. Lanzada en septiembre de 2016, acogió la Shenzhou 11 (misión de 30 días, octubre–noviembre de 2016, la misión tripulada más larga de China en ese momento) y la nave de carga Tianzhou-1 (2017); fue desorbitada el 19 de julio de 2019.",
+    "note": "'fue desorbita' is a broken verb form"
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/palmachim.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "El carguero presurizado de Northrop Grumman, reconocible por sus paneles solares circulares UltraFlex — un patrón plegable en abanico, como un acordeón, que no comparte ningún otro visitante de la EEI. Se desintegra en la entrada atmosférica; no devuelve carga a la Tierra.",
+    "note": "'reentrada' not the bound 'entrada atmosférica'; calque 'carga de bajada'"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "Primera sonda de espacio profundo de la ESA. Bus en forma de tambor estabilizado por rotación, protegido por un escudo antipolvo tipo Whipple, construido en torno a la Halley Multicolour Camera y otros 9 instrumentos aportados por 11 países europeos, la NASA y Japón. Mayor aproximación al cometa 1P/Halley el 1986-03-14 a 596 km — el escudo sobrevivió, aunque el impacto de una partícula de polvo de 100 mg 14 segundos antes de la máxima aproximación desvió el eje de rotación e interrumpió el contacto con la cámara. Reactivada en 1990 para un sobrevuelo a 200 km del cometa Grigg-Skjellerup en 1992, la primera vez que una nave volvía a un objetivo cometario distinto.",
+    "note": "final clause cut; 'Kevlar and aluminium' invented; bumper survival dropped"
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Vehículo hipergólico (N2O4 / UDMH) de tres etapas y carga pesada con etapas superiores de alta energía opcionales Blok-D / D-1 / D-2. 311 lanzamientos entre 1967-03-10 y 2012-03-30: lanzó todos los módulos Salyut + Mir + segmento ruso de la EEI, todas las sondas Venera y Vega a Venus, todas las misiones Luna de retorno de muestras y las Mars-2/-3/-5/-7 soviéticas. La etapa superior Blok-D se desarrolló originalmente para la arquitectura lunar tripulada cancelada N1-L3; reutilizarla en el Proton-K mantuvo viable la línea planetaria soviética de alta energía hasta los años 80. Sustituido por el Proton-M, que sigue volando.",
+    "note": "'ancló', 'sondas Venus Venera y Vega' calques"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Primera nave orbital comercial certificada para vuelos tripulados",
+    "note": "'human-rated' rendered clumsily"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Activo marciano más longevo — en órbita desde 2001-10-24. Mapas de agua-hielo (gamma + neutrones); repetidor UHF de la flota en superficie",
+    "note": "date not ISO; 'surface' dropped; gamma/neutron map vague"
+  },
+  {
+    "rel": "fleet/space-suit/axemu.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Vehículo de Lanzamiento de Satélites Polares de cuatro etapas en su configuración extendida (XL): seis propulsores laterales sólidos PS0M-XL con ~50 % más propelente que el PSLV estándar. Eleva ~3,8 t a LEO / ~1,8 t a SSO / ~1,4 t a GTO y ha transportado las misiones interplanetarias más significativas de India — Chandrayaan-1 (2008) y Mangalyaan / Mars Orbiter Mission (2013) — desde la Primera Plataforma de Lanzamiento de Sriharikota. Sigue activo en despliegues de observación de la Tierra hiperespectral + radar.",
+    "note": "'aceleradores' not the booster binding"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Primer orbitador del Shuttle en volar al espacio (STS-1, 1981); perdido en la entrada atmosférica del STS-107 (2003)",
+    "note": "'reentrada' not bound term; clipped phrasing"
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/ariane-5.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Lanzador pesado de larga trayectoria de la ESA, retirado en 2023 tras 117 lanzamientos. Transportó la Rosetta al cometa 67P, el JWST a L2 y, durante dos décadas, cargas útiles comerciales geoestacionarias en lanzamientos dobles.",
+    "note": "'dual-manifested' became meaningless 'doble asignación'"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Primer objeto fabricado por el ser humano en alcanzar la superficie de Marte; el aterrizador se estrelló (1971)",
+    "note": "missing article before 'módulo de descenso'"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Soyuz de la era de la EEI; rango de estatura de la tripulación ampliado",
+    "note": "'envolvente de altura tripulada' is garbled nonsense"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Variante del PSLV de la ISRO con propulsores laterales grandes — lanzó Chandrayaan-1 + Mars Orbiter Mission",
+    "note": "'heavy-strap-on' reduced to vague 'reforzada'"
+  },
+  {
+    "rel": "fleet/launcher/voskhod-11a57.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/engine/vulcain-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Motor europeo de hidrógeno de la etapa central — todos los Ariane 5 dependían de él",
+    "note": "'core engine' rendered as odd 'motor de núcleo de hidrógeno'"
+  },
+  {
+    "rel": "fleet/orbiter/europa-clipper.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "Venus Climate Orbiter de JAXA, la primera nave espacial japonesa que logró orbitar Venus. Su inserción orbital falló originalmente en 2010, pero se recuperó en un segundo intento cinco años después (2015) con propulsores menos eficientes. Estudió los vientos de la cima de las nubes, los rayos y la dinámica atmosférica de la atmósfera superrotante de Venus. La misión terminó en septiembre de 2025 tras perderse el contacto.",
+    "note": "'supergirante' nonword; 'capas nubosas' for cloud-tops"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "El Complejo de Lanzamiento 34 de Cabo Cañaveral sirvió a la NASA desde 1961-10-27 (primer Saturn I, SA-1) hasta 1968-10-11 (Apollo 7, el primer vuelo tripulado del Apollo). La única torre umbilical de acero del LC-34 albergó cuatro vuelos sin tripulación del Saturn I (SA-1 a SA-4, 1961-1963), fue luego reconstruida para el Saturn IB y realizó dos vuelos sin tripulación del Saturn IB (AS-201 en 1966, AS-202 en 1966) antes de la prueba del Apollo 1. El 1967-01-27, durante una prueba Plugs-Out del Apollo 1 —el primer vuelo tripulado previsto del módulo de mando y servicio (CSM) Block I—, un incendio súbito en la cabina de oxígeno puro mató en segundos a Gus Grissom, Ed White y Roger Chaffee. La plataforma fue reconstruida para el Apollo 7 (1968-10-11), que lanzó el primer vuelo tripulado del Apollo, y después se desactivó en 1968-11. El anillo de riego de hormigón de la plataforma + la trinchera de llamas principal siguen en pie; una placa conmemorativa en el lugar reza «Entregaron sus vidas al servicio de su país en la exploración continua de la última frontera de la humanidad».",
+    "note": "'coliseo' for pad; CSM expanded wrongly; 'Saturno I'"
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "La única constelación comercial de banda ancha MEO operativa — la O3b original, desplegada en 2013-2019, y la O3b mPOWER de segunda generación, desde 2022. Más de 20 satélites en órbita ecuatorial a 8063 km. Latencia intermedia entre GEO y LEO; clientela centrada en el transporte troncal de telecomunicaciones, el sector marítimo y las empresas remotas. Operada por SES (Luxemburgo). El nombre alude a los «otros 3000 millones» — la misión original era llevar conectividad a zonas sin banda ancha terrestre.",
+    "note": "'backhaul' left in English; mismatched list items"
+  },
+  {
+    "rel": "fleet/launch-site/wallops-lc-0.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/change-4.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Tres núcleos de primera etapa del Falcon 9 unidos entre sí; los dos propulsores laterales regresan a tierra, mientras que el núcleo central aterriza más lejos, a lo largo de la trayectoria, sobre una barcaza autónoma. Actualmente figura entre los cohetes de carga pesada operativos más potentes, con una capacidad de carga útil comparable a la del Saturn V a un coste por kilogramo muy inferior. (A mediados de 2026, el Starship ha demostrado una capacidad operativa cada vez mayor.)",
+    "note": "'downrange' became meaningless 'en línea'"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/phobos-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "La cápsula Mercury fue diseñada para ser lo más pequeño que pudiera mantener con vida a una persona en el espacio — y se nota. No había espacio para hacer mucho más que sentarse; el astronauta se ponía la nave tanto como viajaba en ella. Pero su forma resolvió el problema más difícil aún sin resolver de la época — cómo volver. El extremo romo, recubierto de un escudo hecho para carbonizarse y llevarse el calor consigo, convirtió la entrada atmosférica de una certeza fatal en algo que se podía sobrevivir, y su cono fue la primera respuesta estadounidense a la pregunta de qué aspecto tiene siquiera una nave espacial tripulada. Todas las cápsulas posteriores — Gemini, Apollo, Dragon — descienden de este diminuto y apretado cono.",
+    "note": "'survivible' is a nonword; 'reingreso' not bound term; 'ride' as 'pilotar'"
+  },
+  {
+    "rel": "fleet/launch-site/naro-space-center.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/constellation/gps-gnss.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Primer objeto fabricado por el ser humano en alcanzar la superficie marciana; el aterrizador se estrelló al impactar (1971)",
+    "note": "missing article before 'módulo de descenso'"
+  },
+  {
+    "rel": "fleet/launch-site/semnan-imam-khomeini.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Centro iraní de lanzamientos orbitales: el Safir puso en órbita a Omid, el primer satélite de fabricación propia de Irán, en 2009",
+    "note": "'launch' dropped: 'Centro orbital'"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "ATV (Automated Transfer Vehicle) es una nave de carga robótica construida por Astrium / Airbus en Europa. Carguero insignia de la ESA para la EEI, realizó cinco misiones entre 2008 y 2015, entregando carga, agua, aire y propelente y usando sus motores para elevar la órbita de la Estación.",
+    "note": "'reacelerar' wrong for reboost; clumsy flagship clause"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/space-suit/starliner-suit.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Traje de presión ligero para el lanzamiento y la entrada, fabricado por David Clark Company para la nave de tripulación comercial CST-100 Starliner de Boeing. Guantes compatibles con pantallas táctiles, gorro de comunicaciones integrado, casco ventilado. Debutó en la misión Crew Flight Test (junio de 2024), tripulada por Butch Wilmore y Suni Williams, que regresaron con la Crew-9 en febrero de 2025, después de que la Starliner volviera sin tripulación.",
+    "note": "hyphen compound 'lanzamiento-reentrada'; 'vía Crew-9'"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-lc-17.json",
+    "at": "name",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Complejo de Lanzamiento 17 de Cabo Cañaveral (LC-17)",
+    "note": "'Launch Complex 17' dropped from name"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Lanzador soviético derivado del R-7 que puso a Gagarin en el espacio — Vostok 1 (1961-04-12) y 5 vuelos Vostok más hasta 1963",
+    "note": "date not in ISO format as English"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/engine/vikas.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "El Vikas desciende directamente del motor francés Viking: la ISRO licenció el diseño en los años 70 y lo asimiló como tecnología propia en el Liquid Propulsion Systems Centre, adaptándolo a la fabricación india y aumentando progresivamente su rendimiento a lo largo de sucesivas versiones. Con un ciclo de generador de gas que usa tetróxido de nitrógeno y UDMH, el Vikas voló por primera vez en septiembre de 1993 en el PSLV y desde entonces se ha convertido en la etapa líquida central del PSLV, el GSLV y el LVM3. Es el motor que llevó al Chandrayaan-1 a la órbita lunar, al Mangalyaan a Marte y a la misión Chandrayaan-3, que posó a Vikram en la región del polo sur de la Luna.",
+    "note": "'e lo indigenizó' ungrammatical; 'núcleo líquido' for core stage"
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-201.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Apollo 10 + Skylab + 53 vuelos del Shuttle; ahora plataforma de la NASA para el SLS / Artemis",
+    "note": "'rampa NASA SLS / Artemis' telegraphic, ungrammatical"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "El módulo de descenso esférico que devolvió a Yuri Gagarin de la órbita el 1961-04-12 — el primer vuelo espacial humano. Seis vuelos tripulados entre 1961 y 1963, incluida la misión orbital en solitario de Valentina Tereshkova como primera mujer en el espacio.",
+    "note": "date not in ISO format as English"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/space-suit/krechet-94.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK"
+  }
+]

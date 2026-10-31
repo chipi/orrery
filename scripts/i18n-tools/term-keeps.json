@@ -811,6 +811,10 @@
     "why": "combustion: hydrogen-burning rendered de hidrógeno",
     "tr": "e14b56addf"
   },
+  "burn|es|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "the Titan burned storable liquids = propellant consumption, not an engine firing",
+    "tr": "ff29dce41c"
+  },
   "burn|es|missions/earth/vostok-6.json :: description": {
     "why": "burn omitted naturally ('corrección de órbita')",
     "tr": "b5565f38e2"

@@ -5,7 +5,7 @@
   "delta_v": "~1,6 km/s",
   "type": "ORBITADOR · COMPLETADA",
   "first": "Primera nave espacial en orbitar otro planeta",
-  "description": "Mariner 9 hizo posible cada orbitador que la siguió. Tras un encendido de inyección en órbita de 15 minutos que la colocó en órbita marciana el 1971-11-14, el planeta bajo resultaba irreconocible — una tormenta de polvo global había ocultado todo excepto las cuatro cimas del volcán Tharsis. El JPL esperó pacientemente. A lo largo de enero de 1972 el polvo se asentó y Mariner 9 devolvió 7329 imágenes cubriendo ~85% de la superficie marciana, revelando Olympus Mons (el volcán más grande del sistema solar), Valles Marineris (el sistema de cañones que lleva su nombre), canales fluviales secos que sugieren una era antigua con líquidos, y los primeros planos de Fobos y Deimos. La misión finalizó el 1972-10-27 cuando se agotó el gas de control de actitud; la nave sigue en órbita, decayendo lentamente.",
+  "description": "Mariner 9 hizo posibles todos los orbitadores que vinieron después. Tras un encendido de 15 minutos para la inserción en órbita (MOI) que la colocó en órbita de Marte el 1971-11-14, el planeta de abajo era irreconocible — una tormenta de polvo global lo había ocultado todo salvo las cimas de los cuatro volcanes de Tharsis. El JPL esperó a que pasara. A lo largo de enero de 1972 el polvo se asentó y Mariner 9 devolvió 7329 imágenes que cubrían ~85% de la superficie marciana y revelaron el Olympus Mons (el volcán más grande del sistema solar), el Valles Marineris (el sistema de cañones que lleva su nombre), cauces fluviales secos que sugieren una antigua era líquida y los primeros primeros planos de Fobos y Deimos. La misión terminó el 1972-10-27, cuando se agotó el gas del control de actitud; la nave sigue en órbita, decayendo lentamente.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 98,
       "label": "TCM-2",
-      "note": "El paso de aproximación orienta los puntos de referencias del periapsis de la MOI.",
+      "note": "El ajuste de aproximación apunta con precisión al periapsis de la MOI.",
       "type": "nominal"
     },
     {

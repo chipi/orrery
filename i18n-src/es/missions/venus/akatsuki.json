@@ -4,8 +4,8 @@
   "payload": "517 kg (incl. 196 kg de propelente)",
   "delta_v": "~1,2 km/s",
   "type": "ORBITADOR · VOLADO",
-  "first": "Recuperado de una retención en órbita solar de 5 años para alcanzar la órbita de Venus en un intento de reserva; el único orbitador de Venus activo en sus años finales de operación",
-  "description": "Akatsuki —«amanecer»— fue la primera misión de Japón a Venus. Lanzado el 2010-05-20 desde Tanegashima en un H-IIA 202, junto con el demostrador de vela solar IKAROS. La inserción en órbita de Venus planeada para el 2010-12-07 falló cuando la acumulación de cristales de sal en una válvula de comprobación del oxidante sacó del eje el motor principal 152 segundos después del inicio de la maniobra. JAXA mantuvo la sonda viva en órbita solar durante cinco años, doce maniobras de corrección, hasta la siguiente ventana de encuentro con Venus. El 2015-12-07 una maniobra de 1228 segundos usando cuatro propulsores de control de actitud —nunca diseñados para inserción orbital— colocó Akatsuki en una órbita altamente elíptica de 400 × 440 000 km con inclinación de 3°. Uno de los salvamentos de misión más dramáticos en la historia de la exploración espacial. Se perdió el contacto en 2024; JAXA declaró las operaciones completadas el 2025-09-18.",
+  "first": "Se recuperó tras permanecer 5 años en espera en órbita solar y alcanzó la órbita de Venus en un intento de reserva; el único orbitador de Venus activo en sus últimos años de operación",
+  "description": "Akatsuki —«amanecer»— fue la primera misión de Japón a Venus. Lanzada el 2010-05-20 desde Tanegashima en un H-IIA 202, junto con el demostrador de vela solar IKAROS. La inserción orbital en Venus prevista para el 2010-12-07 falló cuando la acumulación de cristales de sal en una válvula de retención del oxidante desvió del eje el motor principal 152 segundos después de iniciado el encendido. JAXA mantuvo viva la nave en órbita solar durante cinco años, con doce maniobras de corrección, hasta la siguiente ventana de encuentro con Venus. El 2015-12-07, un encendido de 1228 segundos con cuatro propulsores de control de actitud —nunca diseñados para la inserción orbital— colocó a Akatsuki en una órbita muy elíptica de 400 × 440 000 km con una inclinación de 3°. Uno de los salvamentos de misión más dramáticos de la historia de los vuelos espaciales. Se perdió el contacto en 2024; JAXA dio por concluidas las operaciones el 2025-09-18.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 201,
       "label": "FALLO VOI-1",
-      "note": "2010-12-07. Anomalía de OME 152 s después del inicio de la maniobra; la sonda continúa hacia la órbita solar.",
+      "note": "2010-12-07. Anomalía de aceleración del OME a los 152 s del encendido; la sonda sigue de largo hacia la órbita solar.",
       "type": "warning"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 2027,
       "label": "VOI-R2 EXITOSA",
-      "note": "2015-12-07. Maniobra de propulsores RCS de 1228 s hacia órbita de 400 × 440 000 km, 3°.",
+      "note": "2015-12-07. Encendido de 1228 s de los propulsores RCS hacia una órbita de 400 × 440 000 km, 3°.",
       "type": "info"
     },
     {

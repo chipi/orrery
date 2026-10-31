@@ -4,9 +4,9 @@
   "payload": "44069 kg lanzados (CSM Odyssey + LM Aquarius)",
   "delta_v": "~6 km/s (ida y vuelta, alunizaje abortado)",
   "type": "SOBREVUELO LUNAR TRIPULADO · REALIZADO (ATERRIZAJE ABORTADO)",
-  "first": "La misión que convirtió un desastre casi seguro en el rescate más celebrado de la NASA",
-  "dispatch": "Apollo 13 nunca aterrizó, y es la misión que todos recuerdan. Dos días después del despegue, un tanque de oxígeno se desgarró y transformó un vuelo de rutina hacia las tierras altas de Fra Mauro en un problema de cuatro días: mantener vivos a tres hombres en una nave agonizante a un cuarto de millón de millas de casa. Lo que los salvó no fue el heroísmo, sino la preparación y una sala llena de personas resolviendo el problema en tiempo real, improvisando una manera de respirar y una ruta a casa con lo que ya estaba atornillado al vehículo. La NASA lo llamó un fracaso exitoso. Es más cercano a la verdad decir que es el vuelo que demostró que la agencia era tan competente como afirmaba serlo.",
-  "description": "Apollo 13 estaba destinada a ser el tercer aterrizaje lunar tripulado, apuntando a las tierras altas de Fra Mauro. A las 55 horas 54 minutos del vuelo, un tanque de oxígeno en el Módulo de Servicio se rompió, incapacitando los sistemas eléctricos y de soporte vital del Módulo de Comando-Servicio. Con el aterrizaje cancelado, la tripulación —James Lovell, Jack Swigert y Fred Haise— apagó el CSM, se trasladó al Lunar Module Aquarius como bote salvavidas, y utilizó el motor de descenso del LM para un encendido de Pericynthion+2 horas que los colocó en una trayectoria de retorno libre rápida. Pasaron junto a la Luna a 254 km de altitud el 1970-04-15 y amarizaron con seguridad en el Pacífico Sur el 1970-04-17. La misión se estudia hoy como un modelo de improvisación de ingeniería disciplinada en tiempo real.",
+  "first": "La misión que convirtió un casi desastre en el rescate más celebrado de la NASA",
+  "dispatch": "Apollo 13 nunca aterrizó, y es la misión que todos recuerdan. Dos días después del despegue, un tanque de oxígeno se desgarró y transformó un vuelo de rutina hacia las tierras altas de Fra Mauro en un problema de cuatro días: mantener vivos a tres hombres en una nave agonizante a un cuarto de millón de millas de casa. Lo que los salvó no fue el heroísmo, sino la preparación y una sala llena de personas resolviendo el problema en tiempo real, improvisando una manera de respirar y una ruta a casa con lo que ya estaba atornillado al vehículo. La NASA lo llamó un fracaso exitoso. Más cerca de la verdad está decir que fue el vuelo que demostró que la agencia era tan buena como presumía.",
+  "description": "Apollo 13 iba a ser el tercer alunizaje tripulado, con destino a las tierras altas de Fra Mauro. A las 55 horas y 54 minutos de vuelo, un tanque de oxígeno del Módulo de Servicio reventó y dejó inutilizados los sistemas eléctricos y de soporte vital del Módulo de Comando y Servicio. Con el alunizaje cancelado, la tripulación —James Lovell, Jack Swigert y Fred Haise— apagó el CSM, pasó al Módulo Lunar Aquarius, que hizo de bote salvavidas, y usó el motor de descenso del LM para un encendido dos horas después del periselenio que los colocó en una trayectoria rápida de retorno libre. Pasaron junto a la Luna a 254 km de altitud el 1970-04-15 y amerizaron sin novedad en el Pacífico Sur el 1970-04-17. Hoy la misión se estudia como modelo de improvisación de ingeniería disciplinada en tiempo real.",
   "events": [
     {
       "met": 0,
@@ -17,13 +17,13 @@
     {
       "met": 0.117,
       "label": "TLI",
-      "note": "Encendido de inyección translunar por S-IVB; CSM + LM se comprometen a trayectoria cislunar.",
+      "note": "Encendido de inyección translunar a cargo del S-IVB; el CSM + LM quedan en trayectoria cislunar.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "MCC-2",
-      "note": "Corrección de curso media desplaza la nave de la trayectoria de retorno libre hacia un enfoque a Fra Mauro.",
+      "note": "Una corrección a mitad de trayecto saca la nave de la trayectoria de retorno libre y la sitúa en una aproximación a Fra Mauro.",
       "type": "nominal"
     },
     {
@@ -35,7 +35,7 @@
     {
       "met": 2.92,
       "label": "ENCENDIDO DE RETORNO LIBRE",
-      "note": "Encendido de 31 segundos del motor de descenso del LM devuelve la nave a una trayectoria de retorno libre.",
+      "note": "Un encendido de 31 segundos del motor de descenso del LM devuelve la nave a una trayectoria de retorno libre.",
       "type": "info"
     },
     {

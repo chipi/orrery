@@ -1,19 +1,19 @@
 {
   "name": "Starship tripulación a Marte",
   "vehicle": "Starship (Super Heavy + Starship + flota de cisternas para reabastecimiento en órbita)",
-  "payload": "Tripulación de ~10 + equipo ISRU + hardware de producción de propelente de retorno",
+  "payload": "Tripulación de ~10 + equipo ISRU + equipos de producción del propelente de retorno",
   "delta_v": "~21 km/s (ida y vuelta con reabastecimiento en la superficie de Marte)",
   "type": "RETORNO DE MUESTRAS TRIPULADO · CONCEPTO",
   "first": "Primera misión propuesta de retorno tripulado a Marte (arquitectura SpaceX)",
   "description": "La arquitectura de SpaceX para misiones tripuladas a Marte a largo plazo, tal como la expuso Elon Musk en sus presentaciones del IAC de 2016, 2017 y 2024. Una Starship despega de la Tierra y se carga por completo de propelente en órbita baja terrestre mediante una flota de vuelos cisterna de repostaje, realiza la inyección transmarciana y posa en la superficie marciana una tripulación de unas 10 personas con carga y equipo de ISRU. El propelente del viaje de vuelta (metano + oxígeno líquido) se fabrica en Marte a partir del CO₂ atmosférico y del hielo de agua del subsuelo mediante el proceso Sabatier, lo que permite que la misma Starship despegue de nuevo, realice la inyección transterrestre y devuelva a la tripulación. La duración del viaje de ida y vuelta depende de la ventana de lanzamiento y de la estancia en superficie; la cronología ilustrativa que se muestra aquí es de ~2,5 años puerta a puerta (213 días de ida, ~500 días de estancia en superficie y regreso en la siguiente ventana favorable). La arquitectura es conceptual: la fecha y los parámetros están sujetos a revisiones sustanciales a la espera de la maduración de Starship y la validación de ISRU.",
   "events": [
     { "met": 0, "label": "LANZAMIENTO STARSHIP", "note": "Starship tripulada despega desde Boca Chica o Cabo Cañaveral.", "type": "nominal" },
-    { "met": 1, "label": "REPOSTAJE ORBITAL", "note": "Flota de cisternas se encuentra y transfiere propelente en LEO a lo largo de varios vuelos.", "type": "nominal" },
-    { "met": 2, "label": "ENCENDIDO ITM", "note": "Inyección transmarciana desde un estado en LEO totalmente cargado.", "type": "nominal" },
+    { "met": 1, "label": "REPOSTAJE ORBITAL", "note": "Encuentro de la flota de cisternas y transferencia de propelente en LEO a lo largo de varios vuelos.", "type": "nominal" },
+    { "met": 2, "label": "ENCENDIDO ITM", "note": "Inyección transmarciana desde la LEO, con los depósitos completamente llenos.", "type": "nominal" },
     { "met": 30, "label": "TCM-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
     { "met": 213, "label": "ATERRIZAJE EN MARTE", "note": "Descenso propulsado a la superficie de Marte — sin paracaídas, sin airbags, sin grúa aérea.", "type": "info" },
     { "met": 700, "label": "PROPELENTE DE RETORNO LISTO", "note": "La planta de ISRU ha producido suficiente metano + LOX para el propelente del viaje de retorno.", "type": "info" },
-    { "met": 750, "label": "ENCENDIDO ITT", "note": "Inyección transterrestre — Starship despega de la superficie marciana y enciende para la trayectoria de retorno a la Tierra.", "type": "nominal" },
+    { "met": 750, "label": "ENCENDIDO ITT", "note": "Inyección transterrestre — Starship despega de la superficie marciana y realiza un encendido hacia la trayectoria de retorno a la Tierra.", "type": "nominal" },
     { "met": 950, "label": "LLEGADA A LA TIERRA", "note": "Entrada atmosférica. Misión completa.", "type": "info" }
   ],
   "vehicle_stage": "etapa superior Starship"

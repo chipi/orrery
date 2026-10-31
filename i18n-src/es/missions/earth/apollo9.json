@@ -5,7 +5,7 @@
   "delta_v": "~9,5 km/s (hasta LEO)",
   "type": "VUELO TRIPULADO EN ÓRBITA TERRESTRE · COMPLETADO",
   "first": "Primer vuelo tripulado del LM — pruebas de separación y encuentro en órbita terrestre",
-  "description": "El primer vuelo tripulado del Módulo Lunar. En órbita terrestre, McDivitt y Schweickart desacoplaron el Módulo Lunar Spider de la Cápsula de Servicio Gumdrop, se alejaron hasta 183 km en el transcurso de seis horas, y luego realizaron el acoplamiento y desacoplamiento nuevamente — cada paso del procedimiento de encuentro lunar fue puesto a prueba sin la posibilidad de traer la tripulación de vuelta en la CSM si algo salía mal. Schweickart realizó una EVA de 38 minutos en el porche del Módulo Lunar, demostrando el traje espacial Apollo EVA + diseño de la mochila PLSS que usarían las tripulaciones que caminaron en la Luna. Scott realizó una EVA de pie desde la escotilla de la CSM. Con el hardware del Módulo Lunar y los procedimientos de encuentro verificados, la NASA estaba clara para enviar el Apollo 10 a la Luna dos meses después.",
+  "description": "El primer vuelo tripulado del módulo lunar. En órbita terrestre, McDivitt y Schweickart desacoplaron el LM Spider del CSM Gumdrop, se alejaron hasta 183 km a lo largo de seis horas y luego realizaron el encuentro y volvieron a acoplarse — se puso a prueba cada paso del procedimiento de encuentro lunar sin la opción de devolver a la tripulación a casa en el CSM si algo salía mal. Schweickart realizó una EVA de 38 minutos en el porche del LM, demostrando el diseño del traje espacial Apollo para EVA y de la mochila PLSS que usarían las tripulaciones que caminarían por la Luna. Scott realizó una EVA de pie desde la escotilla del CSM. Con el hardware del LM y los procedimientos de encuentro verificados, la NASA quedó libre para enviar el Apollo 10 a la Luna dos meses después.",
   "events": [
     {
       "met": 0,
@@ -16,7 +16,7 @@
     {
       "met": 0.13,
       "label": "EXTRACCIÓN CSM-ML",
-      "note": "CSM Gumdrop gira alrededor y se acopla con el LM Spider en el adaptador SLA — primer acoplamiento y transposición tripulados. Todas las misiones lunares de Apollo repiten esta maniobra.",
+      "note": "El CSM Gumdrop da la vuelta y se acopla con el LM Spider dentro del adaptador SLA — primera transposición y acoplamiento tripulados. Todas las misiones lunares Apollo repiten esta maniobra.",
       "type": "nominal"
     },
     {
@@ -28,7 +28,7 @@
     {
       "met": 4.5,
       "label": "EVA",
-      "note": "Schweickart realiza un EVA de 38 minutos en el porche del Módulo Lunar. Scott realiza un EVA de pié desde la escotilla de la Cápsula de Servicio. Primera validación del sistema de soporte vital portátil Apollo PLSS.",
+      "note": "Schweickart realiza una EVA de 38 min en el porche del módulo lunar. Scott realiza una EVA de pie desde la escotilla del CSM. Primera validación de la mochila de soporte vital PLSS de Apollo.",
       "type": "info"
     },
     {
@@ -40,13 +40,13 @@
     {
       "met": 5,
       "label": "EXPULSIÓN DEL ML",
-      "note": "La etapa de descenso de Spider fue desorbida (reentró en marzo de 1969, Océano Índico); la etapa de ascenso fue impulsada hasta el agotamiento y llevada a una órbita alta — se desintegró en 1981.",
+      "note": "La etapa de descenso de Spider fue sacada de órbita (reentró en marzo de 1969, Océano Índico); la etapa de ascenso se encendió hasta agotar el propelente y se elevó a una órbita alta — decayó en 1981.",
       "type": "nominal"
     },
     {
       "met": 10.04,
       "label": "AMERIZAJE",
-      "note": "El Módulo de Comando se amerizó en el Atlántico Norte el 1969-03-13 17:00 UTC tras 151 órbitas. Recuperado por el USS Guadalcanal.",
+      "note": "El Módulo de Comando (CM) amerizó en el Atlántico Norte el 1969-03-13 a las 17:00 UTC tras 151 órbitas. La recuperación estuvo a cargo del USS Guadalcanal.",
       "type": "nominal"
     }
   ]

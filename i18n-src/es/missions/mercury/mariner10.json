@@ -5,7 +5,7 @@
   "delta_v": "~13,7 km/s (trayectoria con asistencia gravitatoria de Venus)",
   "type": "SOBREVUELO PLANETARIO · VOLADO",
   "first": "Primer sobrevuelo de Mercurio; primer sobrevuelo doble planetario; primera misión con asistencia gravitatoria",
-  "description": "Primera nave espacial en visitar Mercurio, primera en sobrevolar dos planetas y primera en utilizar una asistencia gravitatoria para alcanzar su destino. Lanzada el 1973-11-03 a las 05:45 UTC desde Cabo Cañaveral LC-36B en un Atlas SLV-3D Centaur AC-34. Mariner 10 sobrevoló Venus el 1974-02-05 (5768 km de mayor aproximación, primeras imágenes UV de las bandas nubosas de Venus) usando el encuentro para bajar su perihelio al ámbito orbital de Mercurio — la primera trayectoria deliberada de asistencia gravitatoria en la historia espacial. Realizó tres sobrevuelos de Mercurio: 1974-03-29 (703 km), 1974-09-21 (48069 km) y 1975-03-16 (327 km). Fotografió aproximadamente el 45 % de la superficie de Mercurio — las únicas imágenes con resolución disponibles hasta MESSENGER (2008-2015). Descubrió el campo magnético intrínseco de Mercurio y su delgada exosfera de sodio y helio. La gestión térmica de los paneles solares fue un problema abierto de ingeniería de misión: los científicos del proyecto inclinaron los paneles y rotaron la nave para mantenerlos por debajo de 115 °C. La misión finalizó el 1975-03-24 al agotarse el nitrógeno de control de actitud; se presume que la nave se encuentra en órbita heliocéntrica, pasando periódicamente por Mercurio.",
+  "description": "Primera nave en visitar Mercurio, primera en sobrevolar dos planetas y primera en utilizar una asistencia gravitatoria para alcanzar su destino. Lanzada el 1973-11-03 a las 05:45 UTC desde Cabo Cañaveral LC-36B en un Atlas SLV-3D Centaur AC-34. Mariner 10 sobrevoló Venus el 1974-02-05 (5768 km de mayor aproximación, primeras imágenes UV de las bandas nubosas de Venus) y aprovechó el encuentro para bajar su perihelio hasta la región orbital de Mercurio — la primera trayectoria deliberada de asistencia gravitatoria de la historia espacial. Realizó tres sobrevuelos de Mercurio: 1974-03-29 (703 km), 1974-09-21 (48069 km) y 1975-03-16 (327 km). Fotografió aproximadamente el 45 % de la superficie de Mercurio — las únicas imágenes con resolución disponibles hasta MESSENGER (2008-2015). Descubrió el campo magnético intrínseco de Mercurio y su delgada exosfera de sodio y helio. La gestión térmica de los paneles solares fue un problema de ingeniería abierto en la misión: los científicos del proyecto inclinaron los paneles e hicieron rodar la nave para mantenerlos por debajo de 115 °C. La misión terminó el 1975-03-24 al agotarse el propelente de nitrógeno del control de actitud; se presume que la nave sigue en órbita heliocéntrica, pasando periódicamente por Mercurio.",
   "events": [
     {
       "met": 0,
@@ -16,31 +16,31 @@
     {
       "met": 94,
       "label": "SOBREVUELO DE VENUS",
-      "note": "Máxima aproximación de 5768 km el 5 de febrero de 1974; primera trayectoria de asistencia gravitatoria deliberada en la historia de la exploración espacial.",
+      "note": "Máxima aproximación de 5768 km el 1974-02-05; primera trayectoria de asistencia gravitatoria deliberada de la historia espacial.",
       "type": "nominal"
     },
     {
       "met": 146,
       "label": "MERCURIO 1",
-      "note": "Máxima aproximación de 703 km el 29 de marzo de 1974; primeras imágenes de Mercurio.",
+      "note": "Máxima aproximación de 703 km el 1974-03-29; primeras imágenes de Mercurio.",
       "type": "nominal"
     },
     {
       "met": 322,
       "label": "MERCURIO 2",
-      "note": "Máxima aproximación de 48069 km el 21 de septiembre de 1974; imágenes del hemisferio austral.",
+      "note": "Máxima aproximación de 48069 km el 1974-09-21; imágenes del hemisferio sur.",
       "type": "nominal"
     },
     {
       "met": 498,
       "label": "MERCURIO 3",
-      "note": "Máxima aproximación de 327 km el 16 de marzo de 1975; reconfirmación del campo magnético.",
+      "note": "Máxima aproximación de 327 km el 1975-03-16; reconfirmación del campo magnético.",
       "type": "nominal"
     },
     {
       "met": 506,
       "label": "FIN DEL PROPELENTE",
-      "note": "Gas de control de actitud N₂ agotado el 24 de marzo de 1975; transmisor desactivado por comando.",
+      "note": "Gas N₂ de control de actitud agotado el 1975-03-24; transmisor apagado por comando.",
       "type": "nominal"
     }
   ],

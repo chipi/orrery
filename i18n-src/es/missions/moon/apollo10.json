@@ -3,15 +3,15 @@
   "vehicle": "Saturn V (AS-505)",
   "payload": "42775 kg lanzados (CSM Charlie Brown (CSM-106) + LM Snoopy (LM-4))",
   "delta_v": "~6 km/s (ida y vuelta)",
-  "dispatch": "Apollo 10 voló todo el alunizaje — hasta los últimos quince kilómetros — y luego, según lo previsto, dio la vuelta. Stafford y Cernan llevaron el Lunar Module hasta prácticamente rozar la superficie en Tranquility, ejecutaron cada paso del descenso y regresaron a órbita sin posarse. La NASA incluso dejó los tanques de ascenso medio vacíos, de modo que por muy tentador que resultara, intentarlo nunca fue una opción. Es el vuelo menos celebrado del programa y uno de los más disciplinados: un ensayo a velocidad real de dos hombres que volaron un cuarto de millón de millas sabiendo que el alunizaje le pertenecía a otro.",
+  "dispatch": "Apollo 10 voló todo el alunizaje —hasta los últimos quince kilómetros— y luego, por diseño, dio la vuelta. Stafford y Cernan llevaron el módulo lunar hasta casi rozar la superficie en Tranquilidad, ejecutaron cada paso del descenso y regresaron a la órbita sin posarse. La NASA incluso dejó los tanques de ascenso medio vacíos, de modo que por muy tentador que resultara, intentarlo nunca fue una opción. Es el vuelo menos celebrado del programa y uno de los más disciplinados: un ensayo a plena velocidad de dos hombres que recorrieron un cuarto de millón de millas sabiendo que el alunizaje pertenecía a otros.",
   "type": "TRIPULADO ÓRBITA LUNAR · VOLÓ",
   "first": "Ensayo general completo del alunizaje — el LM descendió a ~15,6 km de altitud",
-  "description": "El ensayo general completo del primer alunizaje. Stafford y Cernan volaron el LM Snoopy a ~15,6 km de altitud sobre el sitio de aterrizaje previsto del Apollo 11 en Mare Tranquillitatis — cada paso de una aproximación de aterrizaje excepto el aterrizaje mismo. Confirmaron el perfil de descenso, el radar de aterrizaje, la trayectoria de ascenso y el procedimiento de rendez-vous que Apollo 11 usaría dos meses después. Los tanques de propelente de ascenso del LM fueron deliberadamente subllenados (~50 % de lo nominal) para evitar cualquier tentación de intentar aterrizar. La etapa de ascenso de Snoopy fue la única que dejó la órbita lunar con ∆v positivo — lanzada a una órbita heliocéntrica donde permanece hoy, redetectada de forma intermitente por astrónomos aficionados (la confirmación más reciente, de Nick Howes / Faulkes Telescope, en 2019).",
+  "description": "El ensayo general completo del primer alunizaje. Stafford y Cernan hicieron descender el LM Snoopy hasta ~15,6 km de altitud sobre el lugar de alunizaje previsto para el Apollo 11 en Mare Tranquillitatis — cada paso de una aproximación de aterrizaje salvo el aterrizaje en sí. Confirmaron el perfil de descenso, el radar de aterrizaje, la trayectoria de ascenso y el procedimiento de encuentro que el Apollo 11 usaría dos meses después. Los tanques de propelente de la etapa de ascenso del LM se llenaron deliberadamente a medias (~50 % de lo nominal) para evitar cualquier tentación de intentar aterrizar. La etapa de ascenso de Snoopy fue la única que dejó la órbita lunar con ∆v positivo: fue lanzada a una órbita heliocéntrica donde permanece hoy, redetectada de forma intermitente por astrónomos aficionados (la confirmación más reciente, de Nick Howes / Faulkes Telescope, en 2019).",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Saturn V (AS-505) desde el Centro Espacial Kennedy LC-39B el 18/05/1969 16:49 UTC — primer lanzamiento tripulado desde LC-39B.",
+      "note": "Saturn V (AS-505) desde el Centro Espacial Kennedy LC-39B el 1969-05-18 a las 16:49 UTC — primer lanzamiento tripulado desde LC-39B.",
       "type": "nominal"
     },
     {
@@ -35,13 +35,13 @@
     {
       "met": 4.66,
       "label": "MÁXIMO ACERCAMIENTO",
-      "note": "Snoopy alcanza ~15,6 km sobre el sitio de destino del Apollo 11 — sin alunizaje; todo verificado excepto el descenso en sí.",
+      "note": "Snoopy llega a ~15,6 km sobre el lugar de alunizaje previsto del Apollo 11 — sin alunizaje; todo verificado salvo el propio alunizaje.",
       "type": "info"
     },
     {
       "met": 4.76,
       "label": "ASCENSO + ENCUENTRO",
-      "note": "Etapa de ascenso de Snoopy en encuentro con Charlie Brown — primer acoplamiento completo de LM con CSM en órbita lunar.",
+      "note": "La etapa de ascenso de Snoopy realiza el encuentro con Charlie Brown — primer reacoplamiento completo del LM con el CSM en órbita lunar.",
       "type": "nominal"
     },
     {
@@ -53,7 +53,7 @@
     {
       "met": 8.05,
       "label": "AMERIZAJE",
-      "note": "CM amerizó en el Pacífico Sur el 26/05/1969 16:52 UTC. Recuperado por USS Princeton.",
+      "note": "El CM amerizó en el Pacífico Sur el 1969-05-26 a las 16:52 UTC. Recuperado por el USS Princeton.",
       "type": "nominal"
     }
   ]

@@ -1168,12 +1168,12 @@
     "tr": "92792d010d"
   },
   "burn|it|fleet/launcher/new-glenn.json :: description": {
-    "why": "combustion: hydrogen-burning engines, rendered a idrogeno",
-    "tr": "be2dc57dcf"
+    "why": "combustion: hydrogen-burning engines, rendered a idrogeno; not an engine firing",
+    "tr": "5cbc090323"
   },
   "burn|it|fleet/launcher/starship.json :: description": {
-    "why": "combustion: Raptor a combustione di metano",
-    "tr": "739d9c3541"
+    "why": "combustion: methane-burning Raptor, rendered alimentato a metano; not an engine firing",
+    "tr": "7d4bb0c859"
   },
   "burn|it|fleet/launcher/titan-ii-glv.json :: dispatch": {
     "why": "combustion: bruciava liquidi immagazzinabili",

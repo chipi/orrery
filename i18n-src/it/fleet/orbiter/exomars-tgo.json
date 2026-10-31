@@ -1,6 +1,6 @@
 {
   "name": "ExoMars TGO",
-  "tagline": "Analisi di gas traccia + relè di superficie ESA/NASA",
+  "tagline": "Analisi dei gas in traccia + ponte radio per le missioni di superficie ESA/NASA",
   "description": "Trace Gas Orbiter dell'ESA, in orbita attorno a Marte dal 2016. Analizza l'atmosfera alla ricerca di metano e vapore acqueo che potrebbero indicare attività biologica o geologica, e trasmette i dati per le missioni di superficie su Marte attraverso il suo relè UHF.",
-  "best_known_for": "Analisi di gas traccia su Marte; relè per le missioni di superficie dell'ESA e della NASA"
+  "best_known_for": "Analisi dei gas in traccia su Marte; ponte radio per le missioni di superficie dell'ESA e della NASA"
 }

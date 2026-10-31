@@ -62,6 +62,7 @@ const GATED_ROUTES: { path: string; label: string; exclude?: string }[] = [
   { path: '/programs', label: 'programs' },
   { path: '/science/reading-list', label: 'reading list' },
   { path: '/science/watch-list', label: 'watch list' },
+  { path: '/science/glossary', label: 'glossary' },
   { path: '/sourcing', label: 'sourcing' },
   { path: '/venus', label: 'venus' },
   { path: '/worlds', label: 'worlds' },

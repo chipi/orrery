@@ -121,6 +121,9 @@
         {/each}
       </ul>
       <p class="closing">{landing.closing}</p>
+      <p class="closing">
+        <a href={localHref('/science/glossary')}>→ {m.layout_footer_glossary()}</a>
+      </p>
     </section>
   </article>
 {:else}

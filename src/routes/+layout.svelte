@@ -543,6 +543,8 @@
       <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href={localHref(`/library`)}>{m.layout_footer_library()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link" href={localHref(`/science/glossary`)}>{m.layout_footer_glossary()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
       <!-- ABOUT is a hover-only group: not itself a link, just a label.
            The submenu (LICENSE + README) sits in a popover ABOVE the
            label; reveals on hover/focus-within (2026-06-15 user

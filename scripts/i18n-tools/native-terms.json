@@ -9649,7 +9649,8 @@
       "es": "órbita",
       "it": "orbita",
       "nl": "baan",
-      "pt-BR": "órbita"
+      "pt-BR": "órbita",
+      "_read_more": "orbits/keplerian-orbit"
     },
     "trajectory": {
       "_sense": "a flight path (often interplanetary)",
@@ -9713,7 +9714,8 @@
       "pt-BR": "trajetória",
       "_avoid": {
         "zh-CN": ["自由返回轨迹", "轨迹修正", "转移轨迹", "逃逸轨迹", "返回轨迹"]
-      }
+      },
+      "_read_more": "transfers/conic-sections"
     },
     "inclination": {
       "_sense": "orbital inclination",
@@ -9765,7 +9767,8 @@
       "es": "inclinación",
       "it": "inclinazione",
       "nl": "inclinatie",
-      "pt-BR": "inclinação"
+      "pt-BR": "inclinação",
+      "_read_more": "orbits/inclination"
     },
     "rendezvous": {
       "_sense": "two spacecraft meeting in orbit",
@@ -9931,7 +9934,8 @@
       "es": "acoplamiento",
       "it": "aggancio",
       "nl": "koppeling",
-      "pt-BR": "acoplamento"
+      "pt-BR": "acoplamento",
+      "_read_more": "space-stations/node-module"
     },
     "gravity assist": {
       "_sense": "using a planet’s gravity to change speed/direction",
@@ -10044,7 +10048,8 @@
       "es": "asistencia gravitatoria",
       "it": "fionda gravitazionale",
       "nl": "zwaartekrachtassist",
-      "pt-BR": "assistência gravitacional"
+      "pt-BR": "assistência gravitacional",
+      "_read_more": "transfers/gravity-assist"
     },
     "delta-v": {
       "_sense": "change in velocity; manoeuvre budget",
@@ -10144,7 +10149,8 @@
       "es": "delta-v",
       "it": "delta-v",
       "nl": "delta-v",
-      "pt-BR": "delta-v"
+      "pt-BR": "delta-v",
+      "_read_more": "propulsion/dv-budget"
     },
     "apogee": {
       "_sense": "highest point of an Earth orbit",
@@ -10190,7 +10196,8 @@
       "es": "apogeo",
       "it": "apogeo",
       "nl": "apogeum",
-      "pt-BR": "apogeu"
+      "pt-BR": "apogeu",
+      "_read_more": "orbits/apsides"
     },
     "perigee": {
       "_sense": "lowest point of an Earth orbit",
@@ -10236,7 +10243,8 @@
       "es": "perigeo",
       "it": "perigeo",
       "nl": "perigeum",
-      "pt-BR": "perigeu"
+      "pt-BR": "perigeu",
+      "_read_more": "orbits/apsides"
     },
     "burn": {
       "_sense": "an ENGINE FIRING (perigee burn, braking burn, TLI burn) — not combustion, not braking",
@@ -10382,7 +10390,8 @@
       "es": "encendido",
       "it": "accensione",
       "nl": "ontsteking",
-      "pt-BR": "queima"
+      "pt-BR": "queima",
+      "_read_more": "propulsion/oberth-effect"
     },
     "stage": {
       "_sense": "a ROCKET stage",
@@ -10453,7 +10462,8 @@
       "es": "etapa",
       "it": "stadio",
       "nl": "trap",
-      "pt-BR": "estágio"
+      "pt-BR": "estágio",
+      "_read_more": "propulsion/rocket-stages"
     },
     "propellant": {
       "_sense": "rocket propellant (fuel + oxidizer)",
@@ -10513,7 +10523,8 @@
       "es": "propelente",
       "it": "propellente",
       "nl": "drijfstof",
-      "pt-BR": "propelente"
+      "pt-BR": "propelente",
+      "_read_more": "propulsion/fuels-and-oxidizers"
     },
     "payload": {
       "_sense": "the cargo a rocket carries",
@@ -10632,7 +10643,8 @@
       "es": "empuje",
       "it": "spinta",
       "nl": "stuwkracht",
-      "pt-BR": "empuxo"
+      "pt-BR": "empuxo",
+      "_read_more": "propulsion/thrust-and-twr"
     },
     "booster": {
       "_sense": "booster rocket / side booster",
@@ -10745,7 +10757,8 @@
       "es": "propulsor",
       "it": "booster",
       "nl": "booster",
-      "pt-BR": "propulsor"
+      "pt-BR": "propulsor",
+      "_read_more": "propulsion/rocket-stages"
     },
     "specific impulse": {
       "_sense": "Isp, engine efficiency",
@@ -10791,7 +10804,8 @@
       "es": "impulso específico",
       "it": "impulso specifico",
       "nl": "specifieke impuls",
-      "pt-BR": "impulso específico"
+      "pt-BR": "impulso específico",
+      "_read_more": "propulsion/specific-impulse"
     },
     "flyby": {
       "_sense": "a close pass without stopping",
@@ -10860,7 +10874,8 @@
       "es": "sobrevuelo",
       "it": "sorvolo",
       "nl": "flyby",
-      "pt-BR": "sobrevoo"
+      "pt-BR": "sobrevoo",
+      "_read_more": "mission-phases/mission-types"
     },
     "orbit insertion": {
       "_sense": "manoeuvre into orbit around a body",
@@ -10999,7 +11014,8 @@
       "es": "inserción orbital",
       "it": "inserimento in orbita",
       "nl": "baaninsertie",
-      "pt-BR": "inserção orbital"
+      "pt-BR": "inserção orbital",
+      "_read_more": "mission-phases/orbit-insertion"
     },
     "entry": {
       "_sense": "ATMOSPHERIC entry (EDL)",
@@ -11091,7 +11107,8 @@
       "es": "entrada atmosférica",
       "it": "ingresso atmosferico",
       "nl": "atmosferische intrede",
-      "pt-BR": "entrada atmosférica"
+      "pt-BR": "entrada atmosférica",
+      "_read_more": "mission-phases/edl"
     },
     "descent": {
       "_sense": "descent to a surface",
@@ -11156,7 +11173,8 @@
       "es": "descenso",
       "it": "discesa",
       "nl": "afdaling",
-      "pt-BR": "descida"
+      "pt-BR": "descida",
+      "_read_more": "mission-phases/edl"
     }
   }
 }

@@ -238,5 +238,5 @@ Found on the way, not part of the term work:
 - Garble and grammar slips outside the terms, collected in
   `2026-10-31-fleet-garble-findings.md`.
 
-Next: missions with the `term-consistency` skill, then the next batch of
-terms from `term-census.mjs`.
+Next: the /science/glossary page (PRD-038, done), the garble pass, a plan for the next term
+batch from `term-census.mjs`, and last, term links from the article text to the glossary.

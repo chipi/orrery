@@ -21,7 +21,7 @@ export const deorbitBurn: FormulaDef<{
 }> = {
   id: 'deorbit-burn',
   titleKey: 'lab.f.deorbit.title',
-  glossaryKey: 'lab.f.deorbit.glossary',
+  plainKey: 'lab.f.deorbit.plain',
   citationKey: 'mission-phases/deorbit-corridor',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Atmospheric_entry', source: 'wikipedia' },
   domain: 'descent',
@@ -118,7 +118,7 @@ export const entryHeating: FormulaDef<{
 }> = {
   id: 'entry-heating',
   titleKey: 'lab.f.entry.title',
-  glossaryKey: 'lab.f.entry.glossary',
+  plainKey: 'lab.f.entry.plain',
   citationKey: 'mission-phases/entry-heating',
   learnMore: {
     url: 'https://en.wikipedia.org/wiki/Atmospheric_entry#Entry_heating',
@@ -243,7 +243,7 @@ export const entryCorridor: FormulaDef<{
 }> = {
   id: 'entry-corridor',
   titleKey: 'lab.f.corridor.title',
-  glossaryKey: 'lab.f.corridor.glossary',
+  plainKey: 'lab.f.corridor.plain',
   citationKey: 'mission-phases/deorbit-corridor',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Atmospheric_entry', source: 'wikipedia' },
   domain: 'descent',

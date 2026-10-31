@@ -35,7 +35,7 @@ const HELIO_PLANET_IDS = [
 export const interplanetaryTransfer: FormulaDef<{ depart: string; arrive: string }> = {
   id: 'interplanetary-transfer',
   titleKey: 'lab.f.interplanetary.title',
-  glossaryKey: 'lab.f.interplanetary.glossary',
+  plainKey: 'lab.f.interplanetary.plain',
   citationKey: 'transfers/patched-conics',
   learnMore: {
     url: 'https://en.wikipedia.org/wiki/Interplanetary_Transport_Network',
@@ -146,7 +146,7 @@ export const interplanetaryTransfer: FormulaDef<{ depart: string; arrive: string
 export const launchWindow: FormulaDef<{ depart: string; arrive: string }> = {
   id: 'launch-window',
   titleKey: 'lab.f.synodic.title',
-  glossaryKey: 'lab.f.synodic.glossary',
+  plainKey: 'lab.f.synodic.plain',
   citationKey: 'porkchop/what-is-a-porkchop',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Launch_window', source: 'wikipedia' },
   domain: 'transfer',
@@ -251,7 +251,7 @@ const PORKCHOP_DEST_IDS = ['venus', 'mars', 'jupiter'] as const;
 export const porkchop: FormulaDef<{ destination: string }> = {
   id: 'porkchop',
   titleKey: 'lab.f.porkchop.title',
-  glossaryKey: 'lab.f.porkchop.glossary',
+  plainKey: 'lab.f.porkchop.plain',
   citationKey: 'porkchop/what-is-a-porkchop',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Porkchop_plot', source: 'wikipedia' },
   domain: 'transfer',
@@ -354,7 +354,7 @@ export const porkchop: FormulaDef<{ destination: string }> = {
 export const cislunarTransfer: FormulaDef<Record<string, never>> = {
   id: 'cislunar-transfer',
   titleKey: 'lab.f.cislunar.title',
-  glossaryKey: 'lab.f.cislunar.glossary',
+  plainKey: 'lab.f.cislunar.plain',
   citationKey: 'orbits/cislunar-orbits',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Trans-lunar_injection', source: 'wikipedia' },
   domain: 'transfer',

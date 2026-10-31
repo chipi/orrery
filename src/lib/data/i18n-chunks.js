@@ -8,7 +8,7 @@
 // essays 85, fleet 77, missions 75 and everything else ~70 (2026-10-30).
 
 /** Top-level overlay trees that get their own chunk; every other key is in `core`. */
-export const I18N_SPLIT_TREES = ['science', 'programs', 'essays', 'fleet', 'missions'];
+export const I18N_SPLIT_TREES = ['science', 'programs', 'essays', 'fleet', 'missions', 'glossary'];
 
 /**
  * @param {string} key overlay key, e.g. "science/orbits/vis-viva.json"

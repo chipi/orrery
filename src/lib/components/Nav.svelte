@@ -591,6 +591,11 @@
       <a class="drawer-link drawer-link-sm" href={localHref(`/library`)} onclick={closeMobileMenu}
         >{m.layout_footer_library()}</a
       >
+      <a
+        class="drawer-link drawer-link-sm"
+        href={localHref(`/science/glossary`)}
+        onclick={closeMobileMenu}>{m.layout_footer_glossary()}</a
+      >
       <!-- License + README fold under an "About" sub-heading, mirroring the
            desktop footer's ABOUT hover-group (+layout.svelte). Designed to
            grow (imprint, privacy, …) alongside the desktop menu. -->

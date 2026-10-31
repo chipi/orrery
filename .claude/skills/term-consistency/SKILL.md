@@ -30,6 +30,13 @@ question in two rounds. Every rule below comes from a mistake made in those roun
 | `lessons.md` (this folder) | per-language lessons from earlier rounds; give it to every fix reviewer with the brief, and extend it after each round |
 | `scripts/i18n-tools/maps/2026-10-31-space-terms/` | the pilot's decisions, hand edits and glossary steps |
 
+## The glossary page (/science/glossary)
+
+Every `term` entry appears on `/science/glossary` (PRD-038). Adding a term means also adding its
+one-sentence definition to `i18n-src/<loc>/glossary/terms.json` in all 14 locales, and its
+`_read_more` science page if one exists; `scripts/build-glossary.test.ts` fails until they are
+there. `npm run build-glossary -- --check` reports what is missing.
+
 ## A. Add terms (the next batch)
 
 1. `node scripts/i18n-tools/term-census.mjs`. Take the most used uncovered terms. Extend

@@ -6,6 +6,7 @@ import type { ScienceTabId } from '$types/science';
 const TAB_MSG: Record<ScienceTabId, () => string> = {
   cosmology: m.science_tab_cosmology,
   exoplanets: m.science_tab_exoplanets,
+  glossary: m.science_tab_glossary,
   history: m.science_tab_history,
   'life-in-space': m.science_tab_life_in_space,
   'mission-phases': m.science_tab_mission_phases,

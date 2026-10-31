@@ -37,7 +37,7 @@ const terms = arg('terms', Object.keys(TERMS).join(','))
   .split(',')
   .filter((t) => TERMS[t]);
 const locales = arg('locales', LOCALES.join(',')).split(',');
-const trees = arg('trees', 'science,essays,missions,fleet,programs').split(',');
+const trees = arg('trees', 'science,essays,missions,fleet,programs,glossary').split(',');
 const missesOut = arg('misses', null);
 const gate = process.argv.includes('--gate');
 const KEEPS_FILE = 'scripts/i18n-tools/term-keeps.json';

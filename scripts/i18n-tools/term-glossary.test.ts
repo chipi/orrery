@@ -83,7 +83,7 @@ describe('glossary · reviewed keeps', () => {
 
 // Trees that reached zero unreviewed misses are gated: a new translation that drops a
 // binding form fails here until it is fixed or recorded as a keep (term-consistency skill).
-const GATED_TREES = ['science', 'essays', 'programs', 'fleet', 'missions'];
+const GATED_TREES = ['science', 'essays', 'programs', 'fleet', 'missions', 'glossary'];
 describe('glossary · term gate', () => {
   it(`no unreviewed term misses in ${GATED_TREES.join(', ')}`, () => {
     const run = () => {

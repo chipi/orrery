@@ -16,7 +16,7 @@ import { ORBIT_BODY_IDS } from './shared';
 export const solarEscapeVelocity: FormulaDef<{ distanceAu: number }> = {
   id: 'solar-escape-velocity',
   titleKey: 'lab.f.solesc.title',
-  glossaryKey: 'lab.f.solesc.glossary',
+  plainKey: 'lab.f.solesc.plain',
   citationKey: 'orbits/escape-velocity',
   learnMore: {
     url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/vesc.html',
@@ -81,7 +81,7 @@ export const solarEscapeVelocity: FormulaDef<{ distanceAu: number }> = {
 export const heliocentricEscapeDv: FormulaDef<{ escapeKms: number; orbitalKms: number }> = {
   id: 'heliocentric-escape-dv',
   titleKey: 'lab.f.helesc.title',
-  glossaryKey: 'lab.f.helesc.glossary',
+  plainKey: 'lab.f.helesc.plain',
   citationKey: 'propulsion/c3',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Characteristic_energy', source: 'wikipedia' },
   domain: 'transfer',
@@ -149,7 +149,7 @@ export const oberthDepartureDv: FormulaDef<{ vInfKms: number; body: string; alti
   {
     id: 'oberth-departure-dv',
     titleKey: 'lab.f.oberth.title',
-    glossaryKey: 'lab.f.oberth.glossary',
+    plainKey: 'lab.f.oberth.plain',
     citationKey: 'propulsion/oberth-effect',
     learnMore: { url: 'https://en.wikipedia.org/wiki/Oberth_effect', source: 'wikipedia' },
     domain: 'transfer',
@@ -238,7 +238,7 @@ export const oberthDepartureDv: FormulaDef<{ vInfKms: number; body: string; alti
 export const gravityAssist: FormulaDef<{ vInfKms: number }> = {
   id: 'gravity-assist',
   titleKey: 'lab.f.grav.title',
-  glossaryKey: 'lab.f.grav.glossary',
+  plainKey: 'lab.f.grav.plain',
   citationKey: 'transfers/gravity-assist',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Gravity_assist', source: 'wikipedia' },
   domain: 'transfer',
@@ -298,7 +298,7 @@ export const escapeVerdict: FormulaDef<{
 }> = {
   id: 'escape-verdict',
   titleKey: 'lab.f.escverd.title',
-  glossaryKey: 'lab.f.escverd.glossary',
+  plainKey: 'lab.f.escverd.plain',
   citationKey: 'orbits/escape-velocity',
   learnMore: {
     url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/vesc.html',
@@ -395,7 +395,7 @@ export const escapeVerdict: FormulaDef<{
 export const assistChain: FormulaDef<{ flybys: number; vInfKms: number }> = {
   id: 'assist-chain',
   titleKey: 'lab.f.assistchain.title',
-  glossaryKey: 'lab.f.assistchain.glossary',
+  plainKey: 'lab.f.assistchain.plain',
   citationKey: 'transfers/gravity-assist',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Gravity_assist', source: 'wikipedia' },
   domain: 'transfer',

@@ -100,6 +100,7 @@ _Top-level routes: catalog · colophon · credits · earth · essays · explore 
 | `/posters` | Art-print posters (Orrery originals, AI-generated; provenance on `/colophon`), downloadable full-resolution | ADR-080 / PRD-015 |
 | `/patches` | Insignia gallery · every program and mission patch with per-badge credit and licence (`badges.json` + `badge-provenance.json` from `scripts/fetch-badges.ts`) | — |
 | `/sourcing` | Public sourcing-debt ledger · content Orrery wanted but could not source under its licensing bar (`i18n-src/<locale>/sourcing/gaps.json`) | PRD-037 |
+| `/science/glossary` | A /science "see also" tab: the site's technical terms, one sentence each in the reader's language, with the /science page that explains each and the pages that use it most (`native-terms.json` `term` + `i18n-src/<locale>/glossary/terms.json` → `scripts/build-glossary.mjs` → `static/data/glossary/<locale>.json`) | PRD-038 |
 | `/library` | Outbound-link inventory · agency mastheads + per-link provenance | ADR-051 |
 | `/credits` | Bill of materials for every image and reused text fragment | ADR-046 / ADR-047 |
 | `/colophon` | How Orrery is made, including AI-generated asset provenance | — |

@@ -1,0 +1,22 @@
+{
+  "orbit": "Il percorso chiuso che un corpo segue attorno a un altro per effetto della gravità: un'ellisse nel caso più semplice.",
+  "trajectory": "Il percorso che un veicolo spaziale segue nello spazio, aperto o chiuso, per esempio l'arco dalla Terra a Marte.",
+  "inclination": "L'inclinazione del piano di un'orbita rispetto a un piano di riferimento, come l'equatore terrestre o l'eclittica, in gradi.",
+  "rendezvous": "Portare due veicoli spaziali nello stesso luogo alla stessa velocità in modo che volino insieme, di solito il passo che precede l'aggancio.",
+  "docking": "Unire meccanicamente due veicoli spaziali perché equipaggio o merci possano passare dall'uno all'altro.",
+  "gravity assist": "Sfruttare un passaggio ravvicinato a un pianeta per cambiare velocità e direzione di un veicolo spaziale senza consumare propellente.",
+  "delta-v": "Variazione di velocità, scritta Δv: quanto un veicolo spaziale può cambiare il proprio moto, la moneta di ogni piano di missione, in km/s.",
+  "apogee": "Il punto di un'orbita attorno alla Terra più lontano dalla Terra.",
+  "perigee": "Il punto di un'orbita attorno alla Terra più vicino alla Terra.",
+  "burn": "L'accensione di un motore a razzo per un certo tempo per cambiare la velocità di un veicolo spaziale.",
+  "stage": "Una sezione di un razzo con propri motori e proprio propellente, che viene sganciata quando il propellente è esaurito.",
+  "propellant": "Ciò che un motore a razzo consuma per produrre spinta: di solito un combustibile e un comburente insieme.",
+  "payload": "Ciò che un razzo trasporta per la missione: satelliti, un veicolo con equipaggio, merci o strumenti.",
+  "thrust": "La forza che un motore a razzo produce per spingere il veicolo in avanti, misurata in newton.",
+  "booster": "Un razzo che fornisce spinta al lancio: un primo stadio o un razzo laterale fissato accanto al nucleo.",
+  "specific impulse": "Quanto efficientemente un motore usa il proprio propellente, in secondi: più è alto, più Δv si ottiene dallo stesso propellente.",
+  "flyby": "Un passaggio ravvicinato a un pianeta, una luna o un altro corpo senza inserimento in orbita attorno ad esso né atterraggio.",
+  "orbit insertion": "L'accensione del motore che rallenta un veicolo spaziale quanto basta perché sia catturato in orbita attorno alla sua destinazione.",
+  "entry": "Il passaggio di un veicolo spaziale nell'atmosfera di un pianeta, dove resistenza e riscaldamento lo rallentano.",
+  "descent": "Il percorso verso il basso fino a una superficie, dall'orbita o dall'atmosfera fino al contatto col suolo."
+}

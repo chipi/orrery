@@ -12,7 +12,7 @@ import { ORBIT_BODY_IDS } from './shared';
 export const orbitalVelocity: FormulaDef<{ altitudeKm: number; body: string }> = {
   id: 'orbital-velocity',
   titleKey: 'lab.f.orbital-velocity.title',
-  glossaryKey: 'lab.f.orbital-velocity.glossary',
+  plainKey: 'lab.f.orbital-velocity.plain',
   citationKey: 'orbits/keplerian-orbit',
   learnMore: {
     url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/orbv.html',
@@ -81,7 +81,7 @@ export const orbitalVelocity: FormulaDef<{ altitudeKm: number; body: string }> =
 export const visVivaFormula: FormulaDef<{ rKm: number; aKm: number; body: string }> = {
   id: 'vis-viva',
   titleKey: 'lab.f.vis-viva.title',
-  glossaryKey: 'lab.f.vis-viva.glossary',
+  plainKey: 'lab.f.vis-viva.plain',
   citationKey: 'orbits/vis-viva',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Vis-viva_equation', source: 'wikipedia' },
   domain: 'satellite',
@@ -167,7 +167,7 @@ export const visVivaFormula: FormulaDef<{ rKm: number; aKm: number; body: string
 export const hohmannFormula: FormulaDef<{ r1Km: number; r2Km: number; body: string }> = {
   id: 'hohmann-transfer',
   titleKey: 'lab.f.hohmann.title',
-  glossaryKey: 'lab.f.hohmann.glossary',
+  plainKey: 'lab.f.hohmann.plain',
   citationKey: 'transfers/hohmann-transfer',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Hohmann_transfer_orbit', source: 'wikipedia' },
   domain: 'transfer',
@@ -289,7 +289,7 @@ export const hohmannFormula: FormulaDef<{ r1Km: number; r2Km: number; body: stri
 export const launchSite: FormulaDef<{ latitudeDeg: number; body: string }> = {
   id: 'launch-site',
   titleKey: 'lab.f.launch-site.title',
-  glossaryKey: 'lab.f.launch-site.glossary',
+  plainKey: 'lab.f.launch-site.plain',
   citationKey: 'mission-phases/launch',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Spaceport', source: 'wikipedia' },
   domain: 'ascent',
@@ -391,7 +391,7 @@ export const reachOrbitVerdict: FormulaDef<{
 }> = {
   id: 'reach-orbit-verdict',
   titleKey: 'lab.f.reach-orbit.title',
-  glossaryKey: 'lab.f.reach-orbit.glossary',
+  plainKey: 'lab.f.reach-orbit.plain',
   citationKey: 'mission-phases/orbit-insertion',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Orbital_spaceflight', source: 'wikipedia' },
   domain: 'ascent',

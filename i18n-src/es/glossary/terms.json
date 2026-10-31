@@ -1,0 +1,22 @@
+{
+  "orbit": "El camino cerrado que sigue un cuerpo alrededor de otro por efecto de la gravedad; una elipse en el caso más simple.",
+  "trajectory": "El camino que sigue una nave espacial por el espacio, abierto o cerrado; por ejemplo, el arco de la Tierra a Marte.",
+  "inclination": "La inclinación del plano de una órbita respecto de un plano de referencia, como el ecuador terrestre o la eclíptica, en grados.",
+  "rendezvous": "Llevar dos naves espaciales al mismo lugar a la misma velocidad para que vuelen juntas; suele ser el paso previo al acoplamiento.",
+  "docking": "Unir mecánicamente dos naves espaciales para que la tripulación o la carga puedan pasar de una a otra.",
+  "gravity assist": "Aprovechar el paso cercano a un planeta para cambiar la velocidad y la dirección de una nave espacial sin gastar propelente.",
+  "delta-v": "Cambio de velocidad, escrito Δv: cuánto puede cambiar una nave espacial su movimiento, la moneda de todo plan de misión, en km/s.",
+  "apogee": "El punto de una órbita alrededor de la Tierra más alejado de la Tierra.",
+  "perigee": "El punto de una órbita alrededor de la Tierra más cercano a la Tierra.",
+  "burn": "El encendido de un motor cohete durante un tiempo para cambiar la velocidad de una nave espacial.",
+  "stage": "Una sección de un cohete con sus propios motores y propelente, que se desecha cuando el propelente se agota.",
+  "propellant": "Lo que gasta un motor cohete para producir empuje: normalmente un combustible y un oxidante juntos.",
+  "payload": "Lo que un cohete lleva para la misión: satélites, una nave tripulada, carga o instrumentos.",
+  "thrust": "La fuerza que produce un motor cohete para empujar el vehículo hacia delante, medida en newtons.",
+  "booster": "Un cohete que da empuje en el lanzamiento: una primera etapa o un cohete lateral acoplado al lado del núcleo.",
+  "specific impulse": "Lo eficientemente que un motor usa su propelente, en segundos: cuanto más alto es, más Δv se obtiene del mismo propelente.",
+  "flyby": "Un paso cercano por un planeta, luna u otro cuerpo sin realizar una inserción orbital a su alrededor ni aterrizar.",
+  "orbit insertion": "El encendido del motor que frena una nave espacial lo suficiente para que sea capturada en órbita alrededor de su destino.",
+  "entry": "El paso de una nave espacial a la atmósfera de un planeta, donde la resistencia y el calentamiento la frenan.",
+  "descent": "El camino hacia abajo hasta una superficie, desde la órbita o desde la atmósfera hasta el contacto con el suelo."
+}

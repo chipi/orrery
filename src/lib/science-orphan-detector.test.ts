@@ -212,7 +212,7 @@ const ORPHAN_ALLOWLIST: AllowlistEntry[] = [
   // history (6 — entire tab orphan)
 ];
 
-const NON_CONTENT_TABS = new Set(['reading-list', 'watch-list']);
+const NON_CONTENT_TABS = new Set(['glossary', 'reading-list', 'watch-list']);
 
 function listSourceFiles(dir: string): string[] {
   const out: string[] = [];

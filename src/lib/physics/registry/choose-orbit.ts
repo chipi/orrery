@@ -29,7 +29,7 @@ const SPEED_OF_LIGHT_KMS = 299792.458;
 export const orbitRegime: FormulaDef<{ body: string; altitudeKm: number }> = {
   id: 'orbit-regime',
   titleKey: 'lab.f.regime.title',
-  glossaryKey: 'lab.f.regime.glossary',
+  plainKey: 'lab.f.regime.plain',
   citationKey: 'orbits/orbit-regimes',
   learnMore: { url: 'https://en.wikipedia.org/wiki/List_of_orbits', source: 'wikipedia' },
   domain: 'satellite',
@@ -118,7 +118,7 @@ export const orbitRegime: FormulaDef<{ body: string; altitudeKm: number }> = {
 export const geostationaryAltitude: FormulaDef<{ body: string }> = {
   id: 'geostationary-altitude',
   titleKey: 'lab.f.geo.title',
-  glossaryKey: 'lab.f.geo.glossary',
+  plainKey: 'lab.f.geo.plain',
   citationKey: 'orbits/special-orbits',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Geostationary_orbit', source: 'wikipedia' },
   domain: 'satellite',
@@ -193,7 +193,7 @@ export const geostationaryAltitude: FormulaDef<{ body: string }> = {
 export const signalLatency: FormulaDef<{ altitudeKm: number }> = {
   id: 'signal-latency',
   titleKey: 'lab.f.latency.title',
-  glossaryKey: 'lab.f.latency.glossary',
+  plainKey: 'lab.f.latency.plain',
   citationKey: 'scales-time/light-minute',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Speed_of_light', source: 'wikipedia' },
   domain: 'satellite',
@@ -256,7 +256,7 @@ export const signalLatency: FormulaDef<{ altitudeKm: number }> = {
 export const sunSynchronous: FormulaDef<{ altitudeKm: number }> = {
   id: 'sun-synchronous',
   titleKey: 'lab.f.sso.title',
-  glossaryKey: 'lab.f.sso.glossary',
+  plainKey: 'lab.f.sso.plain',
   citationKey: 'orbits/sun-synchronous',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Sun-synchronous_orbit', source: 'wikipedia' },
   domain: 'satellite',
@@ -327,7 +327,7 @@ export const sunSynchronous: FormulaDef<{ altitudeKm: number }> = {
 export const frozenOrbit: FormulaDef<{ inclinationDeg: number }> = {
   id: 'frozen-orbit',
   titleKey: 'lab.f.frozen.title',
-  glossaryKey: 'lab.f.frozen.glossary',
+  plainKey: 'lab.f.frozen.plain',
   citationKey: 'orbits/inclination',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Frozen_orbit', source: 'wikipedia' },
   domain: 'satellite',
@@ -399,7 +399,7 @@ export const frozenOrbit: FormulaDef<{ inclinationDeg: number }> = {
 export const constellationCoverage: FormulaDef<{ altitudeKm: number; minElevationDeg: number }> = {
   id: 'constellation-coverage',
   titleKey: 'lab.f.coverage.title',
-  glossaryKey: 'lab.f.coverage.glossary',
+  plainKey: 'lab.f.coverage.plain',
   citationKey: 'orbits/orbit-regimes',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Satellite_constellation', source: 'wikipedia' },
   domain: 'satellite',
@@ -493,7 +493,7 @@ export const launchAzimuth: FormulaDef<{
 }> = {
   id: 'launch-azimuth',
   titleKey: 'lab.f.azimuth.title',
-  glossaryKey: 'lab.f.azimuth.glossary',
+  plainKey: 'lab.f.azimuth.plain',
   citationKey: 'orbits/inclination',
   learnMore: {
     url: 'https://en.wikipedia.org/wiki/Launch_window',

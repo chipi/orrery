@@ -13,11 +13,16 @@ export const normalize = (loc, s) => (loc === 'ar' ? s.replace(AR_MARKS, '') : s
 export const prose = (s) => s.replace(/\]\([^)\s]*\)/g, ']');
 export const isText = (s) => /\s/.test(prose(s).trim());
 
-export function enPattern(term, entry) {
+/** The English sense pattern as a RegExp (flags as given, e.g. 'gi' to count uses). */
+export function enRegex(term, entry, flags = 'i') {
   const esc = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const re = entry._en
-    ? new RegExp(entry._en, 'i')
-    : new RegExp(`\\b${esc}(?:s|es|ed|ing)?\\b`, 'i');
+  return entry._en
+    ? new RegExp(entry._en, flags)
+    : new RegExp(`\\b${esc}(?:s|es|ed|ing)?\\b`, flags);
+}
+
+export function enPattern(term, entry) {
+  const re = enRegex(term, entry);
   return { test: (s) => isText(s) && re.test(prose(s)) };
 }
 

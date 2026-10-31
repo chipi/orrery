@@ -84,6 +84,7 @@ Technical terms (the `term` class: burn, flyby, orbit insertion …). Runbook: t
 | `term-apply-check.mjs <loc> <edits.json> …` | After `term-apply`: lists every `change` decision whose replace text is not in the file now (a field is refused whole when one of its finds is missing). Exit 1 if any. |
 | `term-keep.mjs <decisions.json> [loc]` | Records `keep` decisions in `term-keeps.json` with the hash of the field's text; a later edit to the field brings the miss back. |
 | `term-glossary.test.ts` | Every term entry complete for 13 locales, stems compile, the binding form matches its own stems; keeps well-formed. |
+| `../build-glossary.mjs [--check]` | Builds the `/glossary` page data (PRD-038) from the `term` section, the definitions in `i18n-src/<loc>/glossary/terms.json` and the "used on" counts. |
 | `link-targets.test.ts` | Translated overlays keep the English markdown link targets. |
 
 ## maps/

@@ -469,6 +469,10 @@ jobs:
         # VPS keeps fetching from the upstream sources every 6h — no redeploy, no
         # GitHub. Non-fatal: a failure here doesn't fail the deploy (the site is
         # already up); the log shows what happened.
+        # 01:17, 07:17, 13:17, 19:17 UTC, not on the hour: Launch Library answered
+        # 504 to five of six failed runs at 00:00 UTC (2026-10-23..29), the top of
+        # the hour being when scheduled jobs everywhere hit it. The stale-data alert
+        # counts successes over 7h, so the shift never trips it.
         if: steps.preflight.outputs.skip != 'true'
         continue-on-error: true
         env:
@@ -478,7 +482,7 @@ jobs:
             -o StrictHostKeyChecking=yes -o BatchMode=yes "$SSH_TARGET" \
             'set -euo pipefail; cd /srv/orrery; \
              bash ops/refresh-prod-data.sh; \
-             CRON="0 */6 * * * /usr/bin/env bash /srv/orrery/ops/refresh-prod-data.sh >> /srv/orrery/data-refresh.log 2>&1"; \
+             CRON="17 1-23/6 * * * /usr/bin/env bash /srv/orrery/ops/refresh-prod-data.sh >> /srv/orrery/data-refresh.log 2>&1"; \
              ( crontab -l 2>/dev/null | grep -vF refresh-prod-data.sh || true; echo "$CRON" ) | crontab -; \
              if crontab -l | grep -qF refresh-prod-data.sh; then echo "cron installed:"; crontab -l | grep -F refresh-prod-data.sh; else echo "WARN: cron not installed"; fi'
 

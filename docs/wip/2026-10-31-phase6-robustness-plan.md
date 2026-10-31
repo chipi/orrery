@@ -33,11 +33,12 @@ open in append mode: a 100-line log is left alone; a 6,000-line one keeps lines
 1001–6000 plus the notice, and a later write through the open descriptor lands at
 the end.
 
-Not done: moving the cron off 00:00Z. Five of the six failures were in the
-00:00Z run, but every run starts on the hour, so the logs do not show whether a
-different minute or hour would avoid the 504s. It is a one-line change to the
-crontab in `deploy-prod.yml`; it waits for the operator. Takes effect on prod at
-the next deploy (the script ships with it).
+Cron moved off the hour (operator yes, 2026-10-31): `17 1-23/6` — 01:17, 07:17,
+13:17, 19:17 UTC. Five of the six failures were in the 00:00Z run; every run
+started on the hour, so the logs could not show whether another time avoids the
+504s — the retries are the fix, the shift is a cheap bet. The homelab alert
+(`orrery-launch-data-stale`) counts successes over 7h, so the shift cannot trip
+it. Both reach prod at the next deploy (the deploy installs the crontab).
 
 ## 2. lab-api — done
 

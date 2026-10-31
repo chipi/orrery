@@ -5,7 +5,7 @@
   "delta_v": "~5 km/s",
   "type": "ORBITER · LANDER · ROVER · ACTIEF",
   "first": "Eerste missie die orbiter, lander en rover in één lancering naar Mars levert",
-  "description": "China's eerste Mars-missie volbracht wat geen agentschap ooit in één lancering had geprobeerd: orbitale insertie, atmosferische intrede, zachte landing en rover-inzet. De Zhurong-rover werkte 358 sols bij Utopia Planitia, doorkruiste 1,9 km, voordat hij in mei 2022 in geplande hibernatie ging; hij is sindsdien niet wakker geworden (waarschijnlijk vanwege stofophoping op zonnepanelen). De orbiter blijft actief, brengt de planeet in hoge resolutie in kaart en dient als relais voor grondactieven.",
+  "description": "China's eerste Marsmissie volbracht wat geen ruimtevaartorganisatie ooit in één lancering had geprobeerd: baaninsertie, atmosferische intrede, zachte landing en het uitzetten van een rover. De rover Zhurong werkte 358 sols op Utopia Planitia, legde 1,9 km af en ging in mei 2022 in geplande hibernatie; sindsdien is hij niet meer wakker geworden (waarschijnlijk door stofophoping op de zonnepanelen). De orbiter blijft actief, brengt de planeet met hoge resolutie in kaart en dient als relais voor de toestellen op de grond.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 295,
       "label": "ZHURONG-LANDING",
-      "note": "Lander/rover daalt af naar Utopia Planitia 2021-05-14; Zhurong rolt van helling 2021-05-22.",
+      "note": "Lander/rover daalt neer op Utopia Planitia 2021-05-14; Zhurong rolt 2021-05-22 van de oprijplaat.",
       "type": "nominal"
     },
     {

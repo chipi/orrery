@@ -16,7 +16,7 @@
     {
       "met": 90,
       "label": "BALLISTISCHE TRANSFER",
-      "note": "Lage-energie ballistische vangsttraject in uitvoering.",
+      "note": "Ballistisch vangsttraject met lage energie in uitvoering.",
       "type": "info"
     },
     {
@@ -34,13 +34,13 @@
     {
       "met": 135.01,
       "label": "GEKANTELDE LANDING",
-      "note": "Lander rust met neus naar beneden vanwege motor-anomalie tijdens eindafdaling. Zonnepanelen aanvankelijk in schaduw.",
+      "note": "De lander ligt met de neus omlaag door een motoranomalie tijdens de laatste afdaling. Zonnepanelen aanvankelijk in de schaduw.",
       "type": "warning"
     },
     {
       "met": 144,
       "label": "STROOM HERVAT",
-      "note": "Zonnehoek verandert; zonnepanelen genereren stroom; operaties hervat voor één maandag.",
+      "note": "Zonnehoek verandert; zonnepanelen leveren stroom; de operaties worden hervat voor één lunaire dag.",
       "type": "info"
     }
   ],

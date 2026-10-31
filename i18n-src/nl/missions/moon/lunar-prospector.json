@@ -28,13 +28,13 @@
     {
       "met": 60,
       "label": "POLAIRE WATERSTOF",
-      "note": "Neutronenspectrometer detecteert scherpe neutronfluxdeficits over beide maanpolen — sterk waterstofsignaal, consistent met polaire waterjijs.",
+      "note": "Neutronenspectrometer detecteert scherpe tekorten in de neutronenflux boven beide maanpolen — sterk waterstofsignaal, passend bij polair waterijs.",
       "type": "info"
     },
     {
       "met": 569,
       "label": "SHACKLETON-INSLAG",
-      "note": "Opzettelijke inslag nabij Shackleton-krater 1999-07-31 09:52 UTC. Geen waterdampluim gedetecteerd vanaf Aarde.",
+      "note": "Opzettelijke inslag nabij de krater Shackleton 1999-07-31 09:52 UTC. Geen waterdampwolk waargenomen vanaf de Aarde.",
       "type": "nominal"
     }
   ],

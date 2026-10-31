@@ -17,25 +17,25 @@
     {
       "met": 1.85,
       "label": "KOPPELING",
-      "note": "Apollo + Soyuz 19 docken 1975-07-17 16:09 UTC. Eerste US-USSR rendezvous + dock. Luik opent 19:17 UTC; Stafford–Leonov handdruk ~3 uur later (~22:19 UTC).",
+      "note": "Apollo + Soyuz 19 koppelen 1975-07-17 16:09 UTC. Eerste rendez-vous + koppeling tussen de VS en de USSR. Luik gaat open 19:17 UTC; handdruk Stafford–Leonov ~3 uur later (~22:19 UTC).",
       "type": "info"
     },
     {
       "met": 2,
       "label": "GEZAMENLIJKE OPERATIES",
-      "note": "Vlag- en geschenkuitwisseling; gezamenlijke experimenten; 2 dockings over ~44 uur gedockt.",
+      "note": "Vlag- en geschenkuitwisseling; gezamenlijke experimenten; 2 koppelingen, ~44 uur aan elkaar gekoppeld.",
       "type": "nominal"
     },
     {
       "met": 3.8,
       "label": "UNDOCKING",
-      "note": "Definitieve undocking 1975-07-19 16:26 UTC. Soyuz 19 landt 1975-07-21 in Kazachstan.",
+      "note": "Definitieve ontkoppeling 1975-07-19 16:26 UTC. Soyuz 19 landt 1975-07-21 in Kazachstan.",
       "type": "nominal"
     },
     {
       "met": 9.06,
       "label": "NEERKOMING (Apollo)",
-      "note": "Apollo kwam neer in Stille Oceaan 1975-07-24 21:18 UTC — laatste Apollo-neerkoming ooit, en de laatste bemande waterlanding van de VS tot SpaceX Crew Dragon in 2020. CSM-111 tentoongesteld in California Science Center LA.",
+      "note": "Apollo maakte een waterlanding in de Stille Oceaan 1975-07-24 21:18 UTC — laatste Apollo-waterlanding ooit, en de laatste bemande Amerikaanse waterlanding tot SpaceX Crew Dragon in 2020. CSM-111 tentoongesteld in het California Science Center in LA.",
       "type": "nominal"
     }
   ]

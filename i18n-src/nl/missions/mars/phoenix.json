@@ -5,7 +5,7 @@
   "delta_v": "~5,7 km/s",
   "type": "LANDER · FLOWN",
   "first": "Eerste bevestiging van waterijs in het Martiaanse arctische regoliet; eerste zachte voortstuwingslanding op Mars sinds Viking 2",
-  "description": "Phoenix werd gered uit het geannuleerde Mars Surveyor 2001-programma — vluchthardware die zes jaar in opslag was geweest, opnieuw gemonteerd en gericht op de noordelijke poolvlakten van Mars. De naam werd letterlijk gekozen. Landde op 25-05-2008 op 68,22°N, 234,25°O op Vastitas Borealis, verder naar het noorden dan enige eerdere oppervlaktemissie. Binnen enkele dagen schraapte de robotarm door de toplaag en legde helder wit ijs bloot dat zichtbaar sublimeerde voor de camera gedurende vier sols — directe bevestiging van ondergronds waterijs in het Martiaanse poolgebied. Detecteerde perchloraten in het regoliet en observeerde sneeuw die uit wolken viel. Missie eindigde op 02-11-2008 toen de zonne-energie onder de operationele drempel viel bij het begin van de Marswinter; de lander werd nooit verwacht de poolnacht te overleven.",
+  "description": "Phoenix werd gered uit het geannuleerde Mars Surveyor 2001-programma — vluchthardware die zes jaar in opslag had gelegen, opnieuw gemonteerd en herbestemd voor de noordelijke poolvlakten van Mars. De naam werd letterlijk gekozen. De lander landde op 2008-05-25 op 68,22°N, 234,25°O in Vastitas Borealis, verder noordelijk dan enige eerdere oppervlaktemissie. Binnen enkele dagen schraapte de robotarm door de toplaag en legde helder wit ijs bloot dat gedurende vier sols zichtbaar sublimeerde voor de camera — directe bevestiging van waterijs onder de oppervlakte in het Martiaanse poolgebied. De lander detecteerde perchloraten in het regoliet en zag sneeuw uit wolken vallen. De missie eindigde op 2008-11-02 toen de zonne-energie onder de operationele drempel zakte bij het begin van de Marswinter; niemand verwachtte dat de lander de poolnacht zou overleven.",
   "events": [
     {
       "met": 0,
@@ -22,19 +22,19 @@
     {
       "met": 294,
       "label": "TCM-6",
-      "note": "Finale pre-EDL bijstelling 21 uur voor binnenkomst.",
+      "note": "Laatste koerscorrectie vóór de EDL, 21 uur vóór de atmosferische intrede.",
       "type": "nominal"
     },
     {
       "met": 295,
       "label": "EDL",
-      "note": "Aeroshell, supersonische parachute, twaalf hydrazine retro-raketten — Viking-stijl voortstuwingsdaling.",
+      "note": "Aeroshell, supersonische parachute, twaalf hydrazine-retroraketten — aangedreven afdaling in Viking-stijl.",
       "type": "info"
     },
     {
       "met": 295.01,
       "label": "LANDING",
-      "note": "Zachte landing op 68,22°N, 234,25°O — noordelijkste Mars oppervlaktemissie.",
+      "note": "Zachte landing op 68,22°N, 234,25°O — de noordelijkste oppervlaktemissie op Mars.",
       "type": "info"
     },
     {
@@ -46,7 +46,7 @@
     {
       "met": 458,
       "label": "MISSIE EINDE",
-      "note": "02-11-2008. Marswinter; zonne-energie onder operationele drempel.",
+      "note": "2008-11-02. Marswinter; zonne-energie onder de operationele drempel.",
       "type": "warning"
     }
   ],

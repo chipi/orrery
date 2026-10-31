@@ -4,7 +4,7 @@
   "payload": "974 kg (incl. 449 kg drijfstof)",
   "delta_v": "~1,6 km/s",
   "type": "ORBITER · GEVLOGEN",
-  "first": "Eerste ruimtevaartuig dat een ander hemellichaam omcirkelde",
+  "first": "Eerste ruimtevaartuig in een baan om een andere planeet",
   "description": "Mariner 9 maakte alle orbiters die daarna volgden mogelijk. Nadat een MOI-ontsteking van 15 minuten het op 1971-11-14 in een baan om Mars had gebracht, was de planeet eronder onherkenbaar — een globale stofstorm had alles verborgen behalve de vier vulkaantoppen van Tharsis. JPL wachtte het af. Door januari 1972 heen zakte het stof neer en Mariner 9 stuurde 7.329 beelden terug die ~85% van het Marsoppervlak bedekten, waaruit Olympus Mons (de grootste vulkaan in het zonnestelsel), Valles Marineris (het canyonsysteem dat zijn naam draagt), uitgedroogde rivierkanalen die wijzen op een voorbije tijd met vloeibaar water, en de eerste close-ups van Phobos en Deimos naar voren kwamen. De missie eindigde op 1972-10-27 toen het gas voor de standregeling op was; het ruimtevaartuig blijft in een baan, langzaam vervallend.",
   "events": [
     {
@@ -22,13 +22,13 @@
     {
       "met": 98,
       "label": "TCM-2",
-      "note": "Aanvlieging verfijning richt zich op periapsis van MOI.",
+      "note": "De correctie tijdens de nadering richt zich nauwkeurig op het periapsis van de MOI.",
       "type": "nominal"
     },
     {
       "met": 168,
       "label": "MOI",
-      "note": "15 min. ontsteking van vaste motor plaatst Mariner 9 in een 1398 × 17.917 km-baan met hellingshoek 64,4° — de eerste omloop om een ander hemellichaam ooit.",
+      "note": "15 min. ontsteking van de vastebrandstofmotor plaatst Mariner 9 in een baan van 1398 × 17.917 km met een inclinatie van 64,4° — de eerste baan om een andere planeet ooit.",
       "type": "info"
     },
     {
@@ -40,7 +40,7 @@
     {
       "met": 515,
       "label": "MISSIE AFGELOPEN",
-      "note": "1972-10-27. Houdings­regelingsgas verbruikt.",
+      "note": "1972-10-27. Gas voor standregeling uitgeput.",
       "type": "warning"
     }
   ],

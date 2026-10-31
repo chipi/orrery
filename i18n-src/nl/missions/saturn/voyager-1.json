@@ -11,19 +11,19 @@
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Titan IIIE / Centaur tilt Voyager 1 op vanaf Cape Canaveral.",
+      "note": "Titan IIIE / Centaur lanceert Voyager 1 vanaf Cape Canaveral.",
       "type": "nominal"
     },
     {
       "met": 546,
       "label": "DICHTSTE BENADERING JUPITER",
-      "note": "Voorbijvlucht op ongeveer 349.000 km; ontdekte vulkanisme op Io, in kaart gebracht oppervlak van Europa.",
+      "note": "Flyby op ongeveer 349.000 km; ontdekte het vulkanisme op Io en bracht het oppervlak van Europa in kaart.",
       "type": "nominal"
     },
     {
       "met": 1164,
       "label": "VOORBIJVLUCHTEN SATURNUS EN TITAN",
-      "note": "Titan-voorbijvlucht boog baan uit het eclipticavlak — geen verdere planetaire ontmoeting mogelijk.",
+      "note": "De Titan-flyby boog het traject uit het eclipticavlak — geen verdere ontmoeting met een planeet mogelijk.",
       "type": "nominal"
     }
   ],

@@ -4,13 +4,13 @@
   "payload": "~3000 kg lading naar het maanoppervlak (CLPS-ladingen)",
   "delta_v": "~6 km/s",
   "type": "VRACHTLANDER · GEPLAND",
-  "first": "Eerste vlucht van Blue Origin's Blue Moon maanlander-architectuur",
+  "first": "Eerste vlucht van de maanlanderarchitectuur Blue Moon van Blue Origin",
   "description": "Blue Origins eerste vracht-lander van het type Blue Moon, gecontracteerd onder NASA's programma Commercial Lunar Payload Services (CLPS). Een eentraps afdaalvoertuig aangedreven door de cryogene BE-7-motor, ontworpen om tot ~3 ton lading aan het maanoppervlak te leveren. Lanceert op Blue Origins New Glenn vanuit Cape Canaveral, voert trans-lunaire injectie uit met de tweede trap van de New Glenn, en voert vervolgens maanbaaninsertie en aangedreven afdaling uit. De vrachtvlucht van de Mark 1 gaat vooraf aan de Mark 2, die geschikt is voor bemanning en waarvoor NASA een contract sloot voor bemande Artemis-landingen — nu een van de twee kandidaat-landers voor Artemis IV en latere missies.",
   "events": [
     {
       "met": 0,
       "label": "NEW GLENN-LANCERING",
-      "note": "Heft af van Cape Canaveral LC-36; eerste trap keert terug voor downrange-recovery.",
+      "note": "Stijgt op van Cape Canaveral LC-36; de eerste trap keert terug voor berging verderop langs het vluchtpad.",
       "type": "nominal"
     },
     {
@@ -28,13 +28,13 @@
     {
       "met": 4,
       "label": "LOI",
-      "note": "Maanbaan-insertie via BE-7-hoofdmotor.",
+      "note": "Maanbaaninsertie met de BE-7-hoofdmotor.",
       "type": "nominal"
     },
     {
       "met": 4.1,
       "label": "AANGEDREVEN AFDALING",
-      "note": "BE-7 throttled afdaling naar maanoppervlak — eerste Blue Origin maanlanding.",
+      "note": "BE-7 afdaling met regelbare stuwkracht naar het maanoppervlak — eerste maanlanding van Blue Origin.",
       "type": "info"
     }
   ],

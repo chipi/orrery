@@ -4,9 +4,9 @@
   "payload": "Gemini 7; Frank Borman en Jim Lovell",
   "delta_v": "~7,8 km/s (LEO)",
   "type": "BEMAND AARDBAAN · GEVLOGEN",
-  "first": "14-daagse uithoudingsvlucht; rendezvous-doelwit voor Gemini 6A",
-  "dispatch": "Gemini 7 beantwoordde de minst glamoureuze maar meest fundamentele vraag: kon een bemanning overleven gedurende een reis naar de Maan en terug? Frank Borman en Jim Lovell brachten veertien dagen door opgesloten in een cabine ter grootte van de voorbank van een kleine auto — geen ruimte om te staan, zich uit te rekken, of aan elkaar te ontsnappen — om te bewijzen dat het menselijk lichaam en de geest het aankonden. Het was saai en fysiek ellendig, en het werkte: ze kwamen gezond terug, waarmee de angst verdween dat lange ruimtevluchten onmogelijk zouden zijn. Onderweg dienden ze ook als doelwit voor de rendezvous van Gemini 6A, zodat de enkele vlucht stilletjes twee van Apollo's vereisten tegelijk bewees — dat mensen de afstand konden volhouden, en dat twee schepen elkaar konden ontmoeten.",
-  "description": "Frank Borman en Jim Lovell voerden een 14-daagse, 206-omwentelingen durende uithoudingsmissie uit vanaf 4 december 1965 — de langste bemande ruimtevlucht tot op dat moment — en dienden als rendezvous-doelwit voor Gemini 6A. Het toonde aan dat een bemanning een ruimtevlucht van volledige maanmissie-duur kon doorstaan.",
+  "first": "14-daagse uithoudingsvlucht; rendez-vousdoelwit voor Gemini 6A",
+  "dispatch": "Gemini 7 beantwoordde de minst glamoureuze maar meest fundamentele vraag: kon een bemanning even lang overleven als een reis naar de Maan en terug? Frank Borman en Jim Lovell brachten veertien dagen door opgesloten in een cabine ter grootte van de voorbank van een kleine auto — geen ruimte om te staan, zich uit te rekken of aan elkaar te ontsnappen — om te bewijzen dat het menselijk lichaam en de geest het aankonden. Het was saai en lichamelijk ellendig, en het werkte: ze kwamen gezond terug, waarmee de angst verdween dat lange ruimtevluchten onmogelijk zouden zijn. Onderweg dienden ze ook als doelwit voor het rendez-vous van Gemini 6A, zodat die ene vlucht stilletjes twee van Apollo's vereisten tegelijk bewees — dat mensen de afstand konden volhouden en dat twee ruimtevaartuigen elkaar konden ontmoeten.",
+  "description": "Frank Borman en Jim Lovell voerden vanaf 4 december 1965 een uithoudingsmissie van 14 dagen en 206 banen uit — de langste bemande ruimtevlucht tot dan toe — en dienden als doelwit voor het rendez-vous van Gemini 6A. Het toonde aan dat een bemanning een ruimtevlucht kon doorstaan die even lang duurde als een volledige maanmissie.",
   "events": [
     {
       "met": 0,
@@ -17,13 +17,13 @@
     {
       "met": 11,
       "label": "RENDEZVOUS-DOELWIT",
-      "note": "Dient als doelwit voor de eerste bemande rendezvous van Gemini 6A.",
+      "note": "Dient als doelwit voor het eerste bemande rendez-vous van Gemini 6A.",
       "type": "info"
     },
     {
       "met": 14,
       "label": "WATERLANDING",
-      "note": "Atlantic splashdown na 14 dagen / 206 omwentelingen.",
+      "note": "Waterlanding in de Atlantische Oceaan na 14 dagen / 206 banen.",
       "type": "nominal"
     }
   ]

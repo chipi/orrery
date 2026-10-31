@@ -10,7 +10,7 @@
     {
       "met": 0,
       "label": "START",
-      "note": "STS-30 / Atlantis vanuit Kennedy LC-39B; IUS uitgeplaatst vanuit Shuttle-laadruimte.",
+      "note": "STS-30 / Atlantis vanuit Kennedy LC-39B; IUS ontplooid vanuit het laadruim van de Shuttle.",
       "type": "nominal"
     },
     {
@@ -40,7 +40,7 @@
     {
       "met": 1988,
       "label": "AFSLUITEND EXPERIMENT",
-      "note": "1994-10-13. Periapsis verlaagd in atmosfeer — eerste geplande planetaire ruimtevaartuiggang.",
+      "note": "1994-10-13. Periapsis verlaagd tot in de atmosfeer — eerste geplande atmosferische intrede van een planetair ruimtevaartuig.",
       "type": "warning"
     }
   ],

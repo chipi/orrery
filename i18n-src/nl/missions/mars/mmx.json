@@ -16,19 +16,19 @@
     {
       "met": 334,
       "label": "MARS-BAAN INSERTIE",
-      "note": "Vangst in Mars-baan; transfer naar Phobos quasi-baan over volgende maanden.",
+      "note": "Invangen in een baan om Mars; in de maanden daarna overgang naar een quasi-baan om Phobos.",
       "type": "nominal"
     },
     {
       "met": 600,
       "label": "ROVER INZET",
-      "note": "DLR/CNES rover (~25 kg) vrijgegeven op Phobos-oppervlak voor in-situ studies.",
+      "note": "DLR/CNES-rover (~25 kg) op het oppervlak van Phobos afgezet voor in-situonderzoek.",
       "type": "info"
     },
     {
       "met": 1100,
       "label": "PHOBOS-MONSTER",
-      "note": "MMX zet neer op Phobos; ~10 g regoliet verzameld.",
+      "note": "MMX landt op Phobos; ~10 g regoliet verzameld.",
       "type": "info"
     },
     {

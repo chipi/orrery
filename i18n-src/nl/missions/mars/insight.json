@@ -22,7 +22,7 @@
     {
       "met": 205,
       "label": "EDL",
-      "note": "Atmosferische intrede, parachute, eindafdaling-raketlanding bij Elysium Planitia.",
+      "note": "Atmosferische intrede, parachute en landing met raketten tijdens de eindafdaling op Elysium Planitia.",
       "type": "nominal"
     },
     {
@@ -40,7 +40,7 @@
     {
       "met": 1683,
       "label": "MISSIE-EINDE",
-      "note": "Laatste lage-vermogen transmissie 2022-12-15. Zonnepanelen te bedekt met stof om op te laden.",
+      "note": "Laatste transmissie met laag vermogen op 2022-12-15. Zonnepanelen te zeer met stof bedekt om op te laden.",
       "type": "warning"
     }
   ],

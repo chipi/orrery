@@ -4,8 +4,8 @@
   "payload": "42400 kg gelanceerd (CSM Gumdrop (CSM-104) + LM Spider (LM-3))",
   "delta_v": "~9,5 km/s (naar LEO)",
   "type": "BEMANDE AARDBAAN · UITGEVOERD",
-  "first": "Eerste bemande vlucht van de LM — test van LM-scheiding en rendezvous in aardbaan",
-  "description": "De eerste bemande vlucht van de Lunar Module. In aardbaan ontkoppelden McDivitt en Schweickart de LM Spider van CSM Gumdrop, vlogen tot 183 km weg in zes uur, en voerden vervolgens rendezvous en opnieuw aankoppen uit — elke stap van de maanrendezvous-procedure werd getest zonder de mogelijkheid om de bemanning naar huis te brengen in de CSM als iets mis zou gaan. Schweickart voerde een 38 minuten durende EVA uit op de LM-veranda, waarbij hij het Apollo EVA-pak en PLSS-rugzakontwerp demonstreerde dat de maanwandelaars zouden gebruiken. Scott voerde een stand-up EVA uit vanuit de CSM-luik. Met de LM-hardware en rendezvous-procedures geverifieerd, was NASA klaar om Apollo 10 twee maanden later naar de maan te sturen.",
+  "first": "Eerste bemande vlucht van de LM — tests van LM-scheiding en rendez-vous in een baan om de Aarde",
+  "description": "De eerste bemande vlucht van de Lunar Module. In een aardbaan koppelden McDivitt en Schweickart de LM Spider los van CSM Gumdrop, vlogen tot 183 km weg in zes uur, en voerden daarna een rendez-vous uit en koppelden opnieuw aan — elke stap van de maanrendez-vousprocedure werd getest zonder de mogelijkheid om de bemanning bij problemen met de CSM naar huis te brengen. Schweickart maakte een EVA van 38 minuten op de LM-veranda, waarmee hij het ontwerp van het Apollo-EVA-pak met PLSS-rugzak demonstreerde dat de maanwandelaars zouden gebruiken. Scott maakte een stand-up-EVA vanuit het CSM-luik. Nu de LM-hardware en de rendez-vousprocedures waren geverifieerd, kon NASA twee maanden later Apollo 10 naar de Maan sturen.",
   "events": [
     {
       "met": 0,
@@ -16,13 +16,13 @@
     {
       "met": 0.13,
       "label": "CSM-LM EXTRACTIE",
-      "note": "CSM Gumdrop draait om en dockt aan bij LM Spider in de SLA-adapter — eerste bemande transposities en aankoppen. Alle Apollo-maanmissies herhalen deze manoeuvre.",
+      "note": "CSM Gumdrop draait om + koppelt aan LM Spider in de SLA-adapter — eerste bemande transpositie + koppeling. Alle Apollo-maanmissies herhalen deze manoeuvre.",
       "type": "nominal"
     },
     {
       "met": 4.2,
       "label": "LM-SCHEIDING",
-      "note": "McDivitt en Schweickart ontkoppelen Spider, vliegen tot 183 km weg van Gumdrop in zes uur. Eerste bemande vlucht waarbij het ruimtevaartuig en bemanning niet beide aan een re-intreeveelheid zijn bevestigd.",
+      "note": "McDivitt + Schweickart ontkoppelen Spider en vliegen in zes uur tot 183 km van Gumdrop. Eerste bemande vlucht waarbij het ruimtevaartuig + de bemanning niet beide vastzitten aan een voertuig voor de atmosferische intrede.",
       "type": "info"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 4.5,
       "label": "RENDEZVOUS EN OPNIEUW AANKOPPEN",
-      "note": "Spider voert rendezvous uit en koppelt opnieuw aan bij Gumdrop, waarmee de maanprocedure-oefening in aardbaan wordt voltooid.",
+      "note": "Spider voert een rendez-vous uit en koppelt opnieuw aan Gumdrop, waarmee de generale repetitie van de maanprocedure in een aardbaan wordt voltooid.",
       "type": "nominal"
     },
     {

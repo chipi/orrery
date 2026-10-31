@@ -23,13 +23,13 @@
     {
       "met": 3.25,
       "label": "LOI",
-      "note": "Maanorbitale inbrengings. SPS ∆v ~0,91 km/s.",
+      "note": "Maanbaaninsertie. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.79,
       "label": "LANDING",
-      "note": "Falcon landt op Hadley-Apennine 1971-07-30 22:16 UTC — eerste landing op een niet-marijn hooglande gebied.",
+      "note": "Falcon landt op 1971-07-30 22:16 UTC bij Hadley-Apennine — eerste landing op een hooglandlocatie die geen mare is.",
       "type": "nominal"
     },
     {
@@ -47,13 +47,13 @@
     {
       "met": 6.1,
       "label": "HAMER-VEERDROP",
-      "note": "EVA-3 / pre-opstijging: Scott zendt televisie uit van een hamer + veertje samen gedropt; beide raken het regoliet tegelijk, Galileo's 1589 voorspelling live verifiërend.",
+      "note": "EVA-3 / vóór de opstijging: Scott laat voor de tv-camera een hamer + veer tegelijk vallen; beide raken tegelijk het regoliet, waarmee de voorspelling van Galileo uit 1589 live wordt bevestigd.",
       "type": "info"
     },
     {
       "met": 6.25,
       "label": "OPSTIJGING",
-      "note": "Falcon stijgt op na 66 u 55 m op oppervlak. 77 kg monsters + eerste opstijging televisie-uitgezonden vanaf LRV-gemonteerde camera (op afstand bediend door Houston).",
+      "note": "Falcon stijgt op na 66 u 55 m op het oppervlak. 77 kg monsters + eerste opstijging die op televisie werd uitgezonden via de op de LRV gemonteerde camera (op afstand bediend door Houston).",
       "type": "nominal"
     },
     {
@@ -71,7 +71,7 @@
     {
       "met": 12.31,
       "label": "SPLASH-DOWN",
-      "note": "CM splash-down in Noord-Stille Oceaan 1971-08-07 20:46 UTC. Een van drie grote parachutes falen volledig uit te vouwen; landing hard maar veilig. Bergingsdienst USS Okinawa.",
+      "note": "De CM maakt een waterlanding in de noordelijke Stille Oceaan 1971-08-07 20:46 UTC. Een van de drie hoofdparachutes gaat niet volledig open; harde maar veilige landing. Berging door de USS Okinawa.",
       "type": "warning"
     }
   ]

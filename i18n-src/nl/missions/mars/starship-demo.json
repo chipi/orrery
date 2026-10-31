@@ -22,13 +22,13 @@
     {
       "met": 2,
       "label": "TMI-ONTSTEKING",
-      "note": "Trans-Mars-injectie vanuit volledig getankte LEO-toestand.",
+      "note": "Trans-Mars-injectie vanuit een lage aardbaan (LEO) met volle tanks.",
       "type": "nominal"
     },
     {
       "met": 274,
       "label": "MARS-LANDING",
-      "note": "Aangedreven afdaling naar Mars-oppervlak — geen parachutes, geen airbags, geen sky-crane.",
+      "note": "Aangedreven afdaling naar het Marsoppervlak — geen parachutes, geen airbags, geen sky-crane.",
       "type": "info"
     }
   ],

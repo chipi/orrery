@@ -7,11 +7,13 @@
 -->
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
-  import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { countryLabel } from '$lib/country-label';
+  import { programStatusLabel } from '$lib/status-label';
   import type { ProgramRosterItem } from '$types/program';
   import type { PageData } from './$types';
 
@@ -21,12 +23,26 @@
   // pre-patch-era flights) render nothing rather than firing a 404.
   let badges = $derived(data.badges ?? {});
 
-  const KIND_LABEL: Record<string, string> = {
-    'crewed-campaign': 'Crewed campaign',
-    'robotic-campaign': 'Robotic campaign',
-    station: 'Station',
-    infrastructure: 'Infrastructure',
-    'funding-line': 'Funding line',
+  const KIND_LABEL: Record<string, () => string> = {
+    'crewed-campaign': m.program_kind_crewed,
+    'robotic-campaign': m.program_kind_robotic,
+    station: m.program_kind_station,
+    infrastructure: m.program_kind_infrastructure,
+    'funding-line': m.program_kind_funding,
+  };
+  const LINK_KIND: Record<string, () => string> = {
+    body: m.program_link_kind_body,
+    explore: m.program_link_kind_explore,
+    fleet: m.program_link_kind_fleet,
+    gallery: m.program_link_kind_gallery,
+    program: m.program_link_kind_program,
+    science: m.program_link_kind_science,
+  };
+  const SURFACE_NAME: Record<string, () => string> = {
+    moon: m.lab_body_moon,
+    mars: m.lab_body_mars,
+    earth: m.lab_body_earth,
+    venus: m.lab_body_venus,
   };
 
   function imgSrc(image: { reuse?: string; id?: string }): string {
@@ -65,19 +81,19 @@
 
   function href(r: ProgramRosterItem): string | null {
     if (!r.linked_id) return null;
-    if (r.ref === 'mission') return `${base}/missions?id=${r.linked_id}&from=program:${p.id}`;
-    if (r.ref === 'fleet') return `${base}/fleet?id=${r.linked_id}&from=program:${p.id}`;
-    if (r.ref === 'module') return `${base}/${p.id}?module=${r.linked_id}`;
+    if (r.ref === 'mission') return localHref(`/missions?id=${r.linked_id}&from=program:${p.id}`);
+    if (r.ref === 'fleet') return localHref(`/fleet?id=${r.linked_id}&from=program:${p.id}`);
+    if (r.ref === 'module') return localHref(`/${p.id}?module=${r.linked_id}`);
     return null;
   }
 
   let sections = $derived([
-    { label: 'The land', blocks: p.the_land },
-    { label: 'Goals', blocks: p.goals },
-    { label: 'Outcome', blocks: p.outcome },
-    { label: 'The story', blocks: p.narrative },
-    { label: 'What it gave back', blocks: p.legacy },
-    { label: 'What we can learn', blocks: p.lessons },
+    { label: m.program_section_land(), blocks: p.the_land },
+    { label: m.program_section_goals(), blocks: p.goals },
+    { label: m.program_section_outcome(), blocks: p.outcome },
+    { label: m.program_section_story(), blocks: p.narrative },
+    { label: m.program_section_legacy(), blocks: p.legacy },
+    { label: m.program_section_lessons(), blocks: p.lessons },
   ]);
 
   let missions = $derived(
@@ -108,13 +124,13 @@
 </script>
 
 <svelte:head>
-  <title>{p.name} · Programs · Orrery</title>
+  <title>{p.name} · {m.programs_index_title()} · Orrery</title>
   <meta name="description" content={p.tagline} />
 </svelte:head>
 
 <article class="program">
   <nav class="crumb">
-    <a href="{base}/programs">Programs</a>
+    <a href={localHref(`/programs`)}>{m.programs_index_title()}</a>
     <span class="sep">›</span>
     <span>{p.name}</span>
   </nav>
@@ -123,7 +139,10 @@
     <div class="hero-text">
       <p class="meta">
         <AgencyBadge agency={p.agencies?.join(' / ') ?? p.agency} />
-        <span>{p.agency} · {p.country} · {p.start_year}–{p.end_year ?? 'now'}</span>
+        <span
+          >{p.agency} · {countryLabel(p.country)} · {p.start_year}–{p.end_year ??
+            m.programs_meta_now()}</span
+        >
       </p>
       <div class="title-row">
         <h1>{p.name}</h1>
@@ -133,8 +152,10 @@
       </div>
       <p class="tagline">{p.tagline}</p>
       <p class="chips">
-        <span class="chip">{KIND_LABEL[p.kind] ?? p.kind}</span>
-        <span class="chip chip-status status-{p.status.toLowerCase()}">{p.status}</span>
+        <span class="chip">{KIND_LABEL[p.kind]?.() ?? p.kind}</span>
+        <span class="chip chip-status status-{p.status.toLowerCase()}"
+          >{programStatusLabel(p.status)}</span
+        >
       </p>
     </div>
     {#if heroSrc}
@@ -175,7 +196,7 @@
 
   {#if modules.length}
     <section class="assembly">
-      <h2>Assembly — module by module</h2>
+      <h2>{m.program_assembly_h()}</h2>
       <ol class="timeline mod-timeline">
         {#each modules as m, i (i)}
           <li>
@@ -193,13 +214,13 @@
         {/each}
       </ol>
       <p class="assembly-foot">
-        <a href="{base}/{p.id}">Explore the assembled station, module by module, in 3D →</a>
+        <a href={localHref(`/${p.id}`)}>{m.program_assembly_cta()}</a>
       </p>
     </section>
   {/if}
 
   <section class="roster">
-    <h2>Missions</h2>
+    <h2>{m.program_section_missions()}</h2>
     <div class="roster-split" class:solo={!hasClickable}>
       <ol class="timeline">
         {#each missions as r, i (i)}
@@ -240,17 +261,17 @@
             </p>
             <h3 class="d-name">{selectedDetail.name}</h3>
             <p class="d-blurb">{selectedDetail.blurb}</p>
-            <a class="d-open" href="{base}{selectedDetail.href}&from=program:{p.id}"
-              >Open the full mission →</a
+            <a class="d-open" href={localHref(`${selectedDetail.href}&from=program:${p.id}`)}
+              >{m.program_open_mission()}</a
             >
           {:else}
-            <p class="d-empty">Select a mission to see its details.</p>
+            <p class="d-empty">{m.program_select_mission()}</p>
           {/if}
         </aside>
       {/if}
     </div>
 
-    <h2>Hardware</h2>
+    <h2>{m.program_section_hardware()}</h2>
     <ul class="hardware">
       {#each fleet as r, i (i)}
         <li>
@@ -267,8 +288,10 @@
       <ul class="surface-list">
         {#each p.surface_sites as s (s.surface + s.site)}
           <li>
-            <a href="{base}/{s.surface}?site={s.site}">
-              <span class="s-body">{s.surface}</span><span class="s-label">{s.label}</span>
+            <a href={localHref(`/${s.surface}?site=${s.site}`)}>
+              <span class="s-body">{SURFACE_NAME[s.surface]?.() ?? s.surface}</span><span
+                class="s-label">{s.label}</span
+              >
               <span class="s-go">→</span>
             </a>
           </li>
@@ -283,7 +306,9 @@
       <ul>
         {#each p.see_also as s (s.href)}
           <li>
-            <a href="{base}{s.href}"><span class="k">{s.kind}</span>{s.label} →</a>
+            <a href={localHref(s.href)}
+              ><span class="k">{LINK_KIND[s.kind]?.() ?? s.kind}</span>{s.label} →</a
+            >
           </li>
         {/each}
       </ul>
@@ -295,14 +320,14 @@
       <h2>{m.programs_related()}</h2>
       <p>
         {#each p.related_programs as rid (rid)}
-          <a class="rel" href="{base}/programs/{rid}">{pretty(rid)}</a>
+          <a class="rel" href={localHref(`/programs/${rid}`)}>{pretty(rid)}</a>
         {/each}
       </p>
     </section>
   {/if}
 
   <section class="sources">
-    <h2>Sources</h2>
+    <h2>{m.program_section_sources()}</h2>
     <ul>
       {#each p.links as l (l.u)}
         <li><a href={l.u} target="_blank" rel="noopener noreferrer">{l.l} ↗</a></li>

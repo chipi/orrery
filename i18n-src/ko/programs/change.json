@@ -84,5 +84,13 @@
       "type": "prose",
       "md": "더 깊은 교훈은 조용한 역량이 분야를 재편한다는 것이다. Chang'e는 거창한 선언을 하지 않았고 헤드라인 경쟁에서 승리하지도 않았지만, 그 꾸준한 성공은 전 세계의 인간 달 야망을 재시작하는 데 어떤 연설보다 더 많은 기여를 했다 — 왜냐하면 단순히 임무마다 계속 성공하는 프로그램은 다른 모든 이들이 답해야 할 전략적 사실이 되기 때문이다. 결국 일관성은 그 자체로 하나의 힘이다."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "달 — Chang'e 착륙 지점",
+    "/fleet?focus=yutu-2": "함대 — Yutu 로버와 Chang'e 착륙선",
+    "/programs/artemis": "Artemis — 달로 돌아가는 또 하나의 경쟁",
+    "/moon?site=change3": "Chang’e 3 — Yutu 로버",
+    "/moon?site=change4": "Chang’e 4 — 달의 뒷면",
+    "/moon?site=change2": "Chang’e 2"
+  }
 }

@@ -22,7 +22,7 @@
     {
       "met": 201,
       "label": "VOI-1 FALHA",
-      "note": "2010-12-07. Anomalia no acelerador do OME 152s após o início da queimada; espaçonave segue para órbita solar.",
+      "note": "2010-12-07. Anomalia no acelerador do OME 152s após o início da queima; espaçonave segue para órbita solar.",
       "type": "warning"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 2027,
       "label": "VOI-R2 SUCESSO",
-      "note": "2015-12-07. Queimada de propulsor RCS de 1228s para órbita de 400 × 440.000 km, 3° de inclinação.",
+      "note": "2015-12-07. Queima de propulsor RCS de 1228s para órbita de 400 × 440.000 km, 3° de inclinação.",
       "type": "info"
     },
     {
@@ -43,5 +43,6 @@
       "note": "Rastreamento de características de nuvens UV/IR; estudos de super-rotação; ondas gravitacionais em forma de arco acima de Aphrodite Terra. Contato perdido em 2024; operações declaradas completas em 2025-09-18.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "segundo estágio do H-IIA 202"
 }

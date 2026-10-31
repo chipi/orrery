@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "A lição mais profunda é que ir primeiro raramente traz a glória, e importa de qualquer forma. As Pioneer são menos famosas que as Voyagers que tornaram possíveis, mas sem elas o Grand Tour teria sido um salto no desconhecido em vez de um voo calculado. Parte do trabalho mais importante é o reconhecimento que ninguém lembra — e vale a pena fazê-lo bem precisamente porque tudo depois dele depende disso."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Júpiter no explorador 3D",
+    "/programs/voyager": "Voyager — o tour que a Pioneer explorou antes"
+  }
 }

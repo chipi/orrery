@@ -17,15 +17,27 @@
   } from '$lib/physics/ascent/ascent-physics';
   import { IGNITION_T_S, ORBIT_TARGET_KMS } from '$lib/orbital/ascent-hud';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import * as m from '$lib/paraglide/messages';
   import type { ScienceTabId } from '$types/science';
 
   // Chart/section shorthand → the /science article it cross-links (RFC-034 §11.2).
   // Only the beats that have a real article are linked; the rest stay plain text.
-  const SCI_LINK: Record<string, { tab: ScienceTabId; section: string }> = {
-    tsiolkovsky: { tab: 'propulsion', section: 'tsiolkovsky' },
-    'dv-budget': { tab: 'propulsion', section: 'dv-budget' },
-    'max-q': { tab: 'mission-phases', section: 'max-q' },
-    launch: { tab: 'mission-phases', section: 'launch' },
+  const SCI_LINK: Record<string, { tab: ScienceTabId; section: string; label: () => string }> = {
+    tsiolkovsky: { tab: 'propulsion', section: 'tsiolkovsky', label: m.chip_label_tsiolkovsky },
+    'dv-budget': { tab: 'propulsion', section: 'dv-budget', label: m.chip_label_dv_budget },
+    'max-q': { tab: 'mission-phases', section: 'max-q', label: m.chip_label_max_q },
+    launch: { tab: 'mission-phases', section: 'launch', label: m.chip_label_launch },
+    twr: { tab: 'propulsion', section: 'thrust-and-twr', label: m.chip_label_twr },
+    'engine-types': {
+      tab: 'propulsion',
+      section: 'engine-types',
+      label: m.chip_label_engine_types,
+    },
+    'engine-clustering': {
+      tab: 'propulsion',
+      section: 'engine-clustering',
+      label: m.chip_label_engine_clustering,
+    },
   };
 
   interface Props {
@@ -122,20 +134,27 @@
 </script>
 
 <div class="console">
-  <div class="console-title">LAUNCH TELEMETRY<em>{vehicleName}</em></div>
+  <div class="console-title">{m.hud_launch_telemetry()}<em>{vehicleName}</em></div>
 
   <!-- PROPELLANT — the tyranny of the rocket equation made kinetic -->
   <section>
     <header>
-      PROPELLANT<ScienceChip tab="propulsion" section="tsiolkovsky" label="tsiolkovsky" />
+      {m.hud_propellant()}<ScienceChip
+        tab="propulsion"
+        section="tsiolkovsky"
+        label={m.chip_label_tsiolkovsky()}
+      />
     </header>
-    <div class="fuel-headline"><b>{propPct}%</b> fuel by mass · payload {payloadPct}%</div>
+    <div class="fuel-headline">
+      <b>{propPct}%</b>
+      {m.hud_fuel_rest({ payload: payloadPct })}
+    </div>
     {#if boosters}
       <div class="reservoir">
         <span class="rlabel blabel">{boosters.count}×{boosters.name}</span>
         <div class="rbar"><div class="rfill srb" style="width:{boosterFuelPct}%"></div></div>
         <span class="rpct" class:sep={boostersJettisoned}
-          >{boostersJettisoned ? 'SEP' : `${boosterFuelPct}%`}</span
+          >{boostersJettisoned ? m.hud_sep() : `${boosterFuelPct}%`}</span
         >
       </div>
     {/if}
@@ -154,8 +173,8 @@
         {label}{#if SCI_LINK[sci]}<ScienceChip
             tab={SCI_LINK[sci].tab}
             section={SCI_LINK[sci].section}
-            label={sci}
-          />{:else}<em>{sci}</em>{/if}
+            label={SCI_LINK[sci].label()}
+          />{/if}
       </header>
       <div class="chart-wrap">
         <svg class="chart" viewBox="0 0 {CHART_W} {CHART_H}" preserveAspectRatio="none">
@@ -176,26 +195,38 @@
     </section>
   {/snippet}
 
-  {@render chartRow('ALTITUDE', 'launch', altPts, '#5ac8ff', `${state.altKm.toFixed(0)} km`)}
   {@render chartRow(
-    'VELOCITY',
+    m.earth_panel_alt(),
+    'launch',
+    altPts,
+    '#5ac8ff',
+    m.mp_flight_unit_km({ value: state.altKm.toFixed(0) }),
+  )}
+  {@render chartRow(
+    m.hud_velocity(),
     'dv-budget',
     velPts,
     '#7fe0ff',
-    `${state.speedKms.toFixed(2)} km/s`,
+    m.mp_flight_unit_kms({ value: state.speedKms.toFixed(2) }),
   )}
   {@render chartRow(
-    'DYNAMIC PRESSURE',
+    m.hud_dynamic_pressure(),
     'max-q',
     qPts,
     '#9a8bff',
     `${(state.qPa / 1000).toFixed(1)} kPa`,
   )}
-  {@render chartRow('AERO HEATING', 'launch', heatPts, '#ff8a4a', `${heatPct}%`)}
+  {@render chartRow(m.hud_aero_heating(), 'launch', heatPts, '#ff8a4a', `${heatPct}%`)}
 
   <section class="dual">
     <div>
-      <header>T/W<em>twr</em></header>
+      <header>
+        T/W<ScienceChip
+          tab={SCI_LINK.twr.tab}
+          section={SCI_LINK.twr.section}
+          label={SCI_LINK.twr.label()}
+        />
+      </header>
       <div class="gauge">
         <div class="gfill" class:go={state.twr >= 1} style="width:{twrPct}%"></div>
         <div class="gmark" style="left:40%"></div>
@@ -203,18 +234,28 @@
       </div>
     </div>
     <div>
-      <header>CHAMBER<em>engine-types</em></header>
+      <header>
+        {m.hud_chamber()}<ScienceChip
+          tab={SCI_LINK['engine-types'].tab}
+          section={SCI_LINK['engine-types'].section}
+          label={SCI_LINK['engine-types'].label()}
+        />
+      </header>
       <div class="gauge">
         <div class="gfill temp" style="width:{chamberK > 0 ? 100 : 0}%"></div>
-        <span class="gval">{chamberK > 0 ? `${chamberK} K` : '— cold'}</span>
+        <span class="gval">{chamberK > 0 ? `${chamberK} K` : m.hud_cold()}</span>
       </div>
     </div>
   </section>
 
   <section>
     <header>
-      ENGINES · {activeEngines} ONLINE{#if state.boostersActive && boosters}
-        + {boosters.count} SRB{/if}<em>engine-clustering</em>
+      {m.hud_engines_online({ count: activeEngines })}{#if state.boostersActive && boosters}
+        + {boosters.count} SRB{/if}<ScienceChip
+        tab={SCI_LINK['engine-clustering'].tab}
+        section={SCI_LINK['engine-clustering'].section}
+        label={SCI_LINK['engine-clustering'].label()}
+      />
     </header>
     <div class="engines">
       {#each Array(activeEngines) as _, i (i)}
@@ -329,15 +370,6 @@
     font-size: 10px;
     letter-spacing: 1.5px;
     color: #8fbfe0;
-  }
-  header em {
-    font-style: normal;
-    font-size: 8px;
-    letter-spacing: 1px;
-    color: #4d7fa0;
-  }
-  header em::before {
-    content: '▸ ';
   }
   .fuel-headline {
     font-size: 10px;

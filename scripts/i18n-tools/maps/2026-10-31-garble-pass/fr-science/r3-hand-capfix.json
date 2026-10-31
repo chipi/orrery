@@ -1,0 +1,242 @@
+[
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "intro_sentence",
+    "old": "Une carte 2D montrant le coût de trajectoire pour chaque paire (date de départ, temps de transit) — l'outil standard pour trouver les fenêtres de lancement. (Standards : C3 et V∞ à l'arrivée ; Orrery utilise ∆v en km/s.)",
+    "new": "Carte de chaleur 2D du coût de trajectoire par couple (date de départ, durée de transit) — l'outil standard des fenêtres de tir. (Les diagrammes porkchop usuels tracent C3 et V∞ d'arrivée ; Orrery : échelle simplifiée en ∆v, km/s.)"
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "intro_sentence",
+    "old": "Les séjours en surface dépendent de la distance parcourable. Le LRV d'Apollo fit passer le rayon d'exploration de 1 km à 35,7 km. La génération suivante — les rovers pressurisés — le porte à plusieurs semaines et centaines de km.",
+    "new": "Les séjours habités en surface vivent ou meurent selon la distance parcourable. Le LRV d'Apollo a porté la portée de 1 à 35,7 km ; les rovers pressurisés, génération suivante, visent des expéditions de plusieurs semaines et centaines de km."
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "intro_sentence",
+    "old": "L'orbite terrestre contient ~36 000 débris repérés > 10 cm et environ 100+ millions de fragments plus petits. Deux événements ASAT et une collision accidentelle en sont responsables. Le nettoyage commence à peine.",
+    "new": "L'orbite terrestre compte ~36 000 débris suivis de plus de 10 cm et, estime-t-on, plus de 100 millions de fragments plus petits. Deux essais ASAT et une collision accidentelle en ont produit l'essentiel. Le nettoyage démarre à peine."
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "intro_sentence",
+    "old": "Une fois un moteur allumé, deux entrées de commande restent : avec quelle force il pousse (modulation) et où il pointe (orientation). Ensemble elles dirigent l'ascension, gèrent les g équipage et permettent les atterrissages propulsifs.",
+    "new": "Une fois le moteur allumé, il reste deux commandes : la force de poussée (régime) et la direction (cardan). Ensemble, elles pilotent l'ascension, limitent les charges en g de l'équipage et permettent les atterrissages propulsifs."
+  },
+  {
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "intro_sentence",
+    "old": "Une combinaison EVA est un petit vaisseau spatial à occupant unique — coque de pression, système de survie en boucle fermée, contrôle thermique, visière solaire et moteurs — conçu pour qu'un humain survive 6 à 8 heures en vacuum.",
+    "new": "Une combinaison EVA est un vaisseau spatial pour une seule personne — coque de pression, survie en boucle fermée, contrôle thermique, visière pare-soleil et bloc de propulseurs — conçu pour passer 6 à 8 heures à l'extérieur, dans le vide."
+  },
+  {
+    "rel": "science/mission-phases/skip-entry.json",
+    "at": "intro_sentence",
+    "old": "Plutôt que de perdre la vitesse de retour lunaire en une seule plongée, la capsule rebondit sur l'atmosphère, file en coasting et rentre — deux pics modérés de chaleur et d'accélération au lieu d'un.",
+    "new": "Plutôt que de dissiper la vitesse de retour lunaire en une seule plongée, la capsule ressort de l'atmosphère, poursuit en vol balistique puis y rentre — deux pics de chaleur et d'accélération plus modérés au lieu d'un seul."
+  },
+  {
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "intro_sentence",
+    "old": "Chaque agence spatiale opère grossièrement le même entonnoir de sélection — physique, cognitif, psychologique, opérationnel — qui filtre ~10 000 candidats à ~10 sélectionnés. Le goulot d'étranglement est la dynamique d'équipage sous stress.",
+    "new": "Toutes les agences appliquent à peu près le même entonnoir — physique, cognitif, psychologique, opérationnel — qui réduit ~10 000 candidats à une dizaine de sélectionnés. Le goulet d'étranglement : la dynamique d'équipage sous pression."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "intro_sentence",
+    "old": "En 2014, les astronomes ont redésiné la carte de notre adresse cosmique en traçant les flux de galaxies plutôt que leur position. La réponse était Laniakea, un superamas bien plus grand que le Superamas de la Vierge.",
+    "new": "En 2014, les astronomes ont redessiné notre adresse cosmique — non en relevant où sont les galaxies, mais où elles s'écoulent. Résultat : Laniakea, superamas bien plus vaste que celui de la Vierge, que nous croyions être notre foyer."
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "intro_sentence",
+    "old": "Chaque satellite doit avoir un plan d'élimination en fin de vie au lancement — soit désorbitation atmosphérique, soit poussée vers une orbite cimetière stable. Une mauvaise élimination produit le problème des débris du prochain article.",
+    "new": "Tout satellite doit avoir un plan d'élimination en fin de vie pour être lancé : désorbitation dans l'atmosphère ou remontée vers une orbite cimetière stable. Une élimination mal gérée cause le problème des débris orbitaux (article suivant)."
+  },
+  {
+    "rel": "science/mission-phases/lifting-entry.json",
+    "at": "intro_sentence",
+    "old": "Une capsule émoussée n'est pas qu'un caillou en chute libre. Décentrez sa masse et elle vole avec un peu de portance — qui, orientée en roulant la capsule, devient un volant qui transforme une rentrée tranchante en une rentrée survivable.",
+    "new": "Une capsule émoussée n'est pas qu'un caillou qui tombe. Décalez son centre de masse et elle vole avec un peu de portance — orientée en faisant rouler la capsule, c'est un volant qui rend survivable une entrée sur le fil du rasoir."
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "old": "Les moteurs ioniques atteignent des impulsions spécifiques 10–30 fois supérieures aux fusées chimiques en accélérant le gaz ionisé électriquement plutôt que de le brûler — au prix d'une très faible poussée mesurée en millinewtons.",
+    "new": "Les moteurs ioniques atteignent des impulsions spécifiques 10 à 30 fois supérieures à celles des fusées chimiques en accélérant électriquement un gaz ionisé au lieu de le brûler — poussée très faible : millinewtons, non méganewtons."
+  },
+  {
+    "rel": "science/life-in-space/radiation-exposure.json",
+    "at": "intro_sentence",
+    "old": "Rayons cosmiques galactiques + événements de particules solaires + ceintures piégées de la Terre – l'environnement de rayonnement en dehors de la magnétosphère est le plus grand problème non résolu pour une mission humaine Mars.",
+    "new": "Rayons cosmiques galactiques + événements de particules solaires + ceintures de radiation piégées de la Terre — le rayonnement hors de la magnétosphère est le plus grand problème non résolu d'une mission humaine vers Mars."
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "intro_sentence",
+    "old": "La couleur d'une étoile est un thermomètre, sa luminosité est son histoire. Tracez ces deux grandeurs l'une contre l'autre et presque toutes les étoiles se regroupent sur une bande diagonale — le diagramme de Hertzsprung–Russell.",
+    "new": "La couleur d'une étoile est un thermomètre, sa luminosité une histoire de vie. Croisez-les : presque toutes les étoiles tombent sur une bande diagonale — le diagramme de Hertzsprung–Russell, le plus important de l'astronomie stellaire."
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "intro_sentence",
+    "old": "La plupart de ce que nous savons sur la psychologie humaine dans l'espace provient de Mir (1986–2001) : 15 ans, 28 expéditions, quatre événements critiques, et un changement majeur dans la composition des équipages.",
+    "new": "L'essentiel de ce que nous savons de la psychologie humaine dans l'espace date de Mir, 1986–2001. Quinze ans, 28 expéditions, quatre quasi-pertes, et un changement durable dans la composition des équipages de toutes les agences spatiales."
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "intro_sentence",
+    "old": "La rencontre de matière et d'antimatière s'annihile entièrement, libérant une énergie sans égale — quelques milligrammes pourraient propulser une sonde interstellaire.",
+    "new": "Quand matière et antimatière se rencontrent, elles s'annihilent complètement, libérant une énergie sans égale — quelques milligrammes pourraient propulser une sonde interstellaire, mais l'humanité en a produit moins d'un nanogramme."
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "old": "Au lieu de rejeter le gaz d'entraînement de la turbopompe, l'injecter dans la chambre principale et le brûler aussi. Aucune perte, moteur plus chaud, sous plus haute pression, meilleure performance.",
+    "new": "Au lieu de rejeter le gaz d'entraînement de la turbopompe, injectez-le dans la chambre principale et brûlez-le aussi. Rien n'est perdu : moteur plus chaud, pression plus haute, meilleures performances — au prix d'une tuyauterie redoutable."
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "intro_sentence",
+    "old": "Laissez le carburant cryogénique absorber la chaleur de la tuyère, se vaporiser et entraîner la turbopompe. Ni générateur de gaz ni prébrûleur : la chaleur perdue du moteur est la source d'énergie. Propre et fiable, mais non extensible.",
+    "new": "Le carburant cryogénique absorbe la chaleur de la tuyère, se vaporise et entraîne la turbopompe. Ni générateur de gaz ni prébrûleur : la chaleur perdue du moteur est la source d'énergie. Propre, fiable, mais impossible à agrandir."
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "intro_sentence",
+    "old": "Les galaxies appartiennent à quelques grandes familles structurelles : les spirales (Voie lactée, Andromeda), les elliptiques (M87, NGC 4889), les irrégulières (nuages de Magellan) et les naines. Taxonomie de Hubble (1936), affinée.",
+    "new": "Les galaxies se rangent en quelques familles structurelles : spirales (Voie lactée, Andromède), elliptiques (M87, NGC 4889), irrégulières (Nuages de Magellan) et naines, de plusieurs sous-classes. Taxonomie de Hubble (1936), affinée."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "intro_sentence",
+    "old": "Combiner les signaux de plusieurs antennes en temps réel crée une ouverture virtuelle unique plus grande que chaque parabole, captant les signaux des engins spatiaux les plus faibles.",
+    "new": "Combiner en temps réel les signaux de plusieurs antennes crée une ouverture virtuelle unique, plus grande que n'importe quelle parabole isolée, et capte des signaux d'engins plus faibles sans construire des structures toujours plus grandes."
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "old": "Brûler une petite portion de propergol dans une chambre auxiliaire, utiliser le gaz chaud pour entraîner les turbopompes, puis rejeter ce gaz. Simple et robuste, c'est le cycle le plus volé en fusée.",
+    "new": "Brûlez un peu de propergol dans une petite chambre latérale, entraînez les turbopompes avec le gaz chaud, puis rejetez-le. Un peu de performance perdue, mais c'est simple, robuste, et la façon la plus répandue de construire un moteur-fusée."
+  },
+  {
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "intro_sentence",
+    "old": "Les protocoles internet échouent sur plusieurs minutes-lumière et lors des occultations. Le réseau tolérant les délais résout ce défi par bundles stockés et transmis en attente du prochain lien.",
+    "new": "Les protocoles internet standard échouent sur des minutes-lumière et lors des occultations planétaires ; le réseau tolérant aux délais et aux ruptures (DTN) stocke puis retransmet des paquets (bundles) qui attendent la prochaine liaison."
+  },
+  {
+    "rel": "science/observation/our-galaxy.json",
+    "at": "intro_sentence",
+    "old": "Nous vivons dans une galaxie spirale barrée de quelques centaines de milliards d'étoiles, sans jamais la voir de l'extérieur. Tout ce que nous savons de sa forme provient de reconstructions faites depuis le disque.",
+    "new": "Nous vivons dans une galaxie spirale barrée de quelques centaines de milliards d'étoiles, sans l'avoir jamais vue de l'extérieur. Tout ce que nous savons de sa forme est reconstitué de l'intérieur du disque, en le traversant du regard."
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "intro_sentence",
+    "old": "Au-delà de LEO / MEO / GEO / HEO, quelques orbites spéciales nommées assurent des missions précises : communications au-delà de 70° de latitude, transfert géostationnaire, station-keeping sans dérive.",
+    "new": "Au-delà des orbites LEO / MEO / GEO / HEO, quelques orbites spéciales remplissent des missions précises : communications au-delà de 70° de latitude, transfert géostationnaire, maintien à poste sans dérive — astuces de mécanique orbitale."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "intro_sentence",
+    "old": "Équipages Apollo revenus avec combinaisons abrasées après 10 EVAs et sas bloqués. Régolithe martien chimiquement toxique. Toute architecture longue bâtie autour de protocoles poussière — danger opérationnel persistant.",
+    "new": "Les équipages d'Apollo sont revenus avec des combinaisons abrasées après 10 EVA et des sas coincés par la poussière. Le régolithe martien est chimiquement toxique. Tout long séjour s'organise contre la poussière, un danger permanent."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "intro_sentence",
+    "old": "La régolithe est la couche meuble de roche fragmentée et de poussière vitrifiée qui recouvre la Lune, Mercure et la plupart des astéroïdes, usée par des milliards d'années de bombardement de micrométéorites.",
+    "new": "Le régolithe est la couche meuble de roche fragmentée et de poussière de verre qui couvre la Lune, Mercure et la plupart des astéroïdes — broyée par des milliards d'années de micrométéorites, sans vent ni eau pour en arrondir les arêtes."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "intro_sentence",
+    "old": "À l'échelle la plus grande, les galaxies forment des groupes et des amas reliés par des filaments et des feuilles qui enserrent d'immenses vides — un motif que les astronomes appellent la toile cosmique.",
+    "new": "À très grande échelle, les galaxies ne sont pas réparties au hasard : en groupes et en amas, le long de filaments et de nappes autour de vastes vides, elles dessinent une structure spongieuse, la toile cosmique des astronomes."
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "intro_sentence",
+    "old": "Une voile solaire n'emporte aucun propergol : elle est poussée par l'impulsion des photons, ce qui en fait le seul système de propulsion avec une impulsion spécifique effectivement illimitée.",
+    "new": "Une voile solaire n'emporte aucun propergol : elle est poussée par la quantité de mouvement des photons, d'où une impulsion spécifique pratiquement illimitée — et le seul système dont l'usage coûte d'autant moins cher qu'il vole longtemps."
+  },
+  {
+    "rel": "science/cosmology/cosmic-distance-ladder.json",
+    "at": "intro_sentence",
+    "old": "Aucune méthode ne mesure toutes les distances cosmiques. Les astronomes construisent une échelle : chaque technique va plus loin, calibrée par l'échelon du dessous, du radar solaire aux confins de l'univers.",
+    "new": "Aucune méthode ne mesure toutes les distances. Les astronomes bâtissent une échelle : chaque technique porte un peu plus loin, calibrée par l'échelon du dessous, du radar dans le système solaire aux confins de l'univers observable."
+  },
+  {
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "intro_sentence",
+    "old": "Apollo est allé à la Lune et est revenu en 8 jours. Mars habité est une mission de 2-3 ans avec 6-9 mois de transit à l'aller et au retour, des blackouts de conjonction, et un séjour autonome en surface.",
+    "new": "Apollo est allé sur la Lune et en est revenu en 8 jours. Mars habitée, c'est 2 à 3 ans : transits de 6 à 9 mois chacun, coupures de communication à la conjonction, séjour en surface autonome. Aucune technologie n'est entièrement prête."
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "intro_sentence",
+    "old": "Mars ajoute trois problèmes que la Lune n'a pas : un aller-retour de 25 mois sans abandon, des tempêtes de poussière qui peuvent recouvrir la planète, et un régolithe imprégné de sels chlorés qui empoisonnent quiconque le respire.",
+    "new": "Mars ajoute trois problèmes que la Lune n'a pas : un aller-retour de 25 mois sans retour d'urgence, des tempêtes de poussière capables de recouvrir la planète, et un régolithe imprégné de sels chlorés qui empoisonnent quiconque les respire."
+  },
+  {
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "intro_sentence",
+    "old": "L'ISS voit 16 levers de soleil par jour. L'équipage reste sur Greenwich Mean Time, mange de la nourriture qui ne flotte pas, et dort systématiquement moins bien que sur Terre. Les longues missions vivent ou meurent par cette pile.",
+    "new": "L'ISS voit 16 levers de Soleil par jour. L'équipage vit pourtant à l'heure de Greenwich (GMT), mange une nourriture conçue pour ne pas flotter et dort moins bien que sur Terre. Les longues missions dépendent de la qualité de cet ensemble."
+  },
+  {
+    "rel": "science/life-in-space/isru-resource-utilization.json",
+    "at": "intro_sentence",
+    "old": "Transporter oxygène et propergol depuis la Terre passe mal à l'échelle. L'ISRU — extraction depuis régolithe, glace et atmosphère locaux — transforme les séjours de surface de plantations de drapeau en vie année-longue.",
+    "new": "Acheminer oxygène et propergol depuis la Terre ne passe pas à l'échelle. L'ISRU — les extraire du régolithe, de la glace et de l'atmosphère locaux — fait passer les séjours de 30 jours de plantage de drapeau à une vie sur place d'un an."
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "intro_sentence",
+    "old": "Deux philosophies opposées pour la poussée mégatonne : construire un moteur géant et en utiliser quelques-uns (F-1, RS-25), ou construire un moteur moyen et en utiliser beaucoup (Merlin, Raptor). Le second a gagné.",
+    "new": "Deux philosophies opposées pour une poussée de classe mégatonne : un moteur géant, en peu d'exemplaires (F-1, RS-25), ou un moteur moyen, en grand nombre (Merlin, Raptor). C'est la seconde qui l'a emporté."
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "intro_sentence",
+    "old": "Une fusée nucléo-thermique remplace la chambre de combustion par un réacteur à fission : l'hydrogène, chauffé au-delà de toute flamme chimique, se détend dans une tuyère — deux fois l'Isp des moteurs chimiques, avec une forte poussée.",
+    "new": "Une fusée nucléaire thermique remplace la chambre de combustion par un réacteur à fission : l'hydrogène y chauffe au-delà de toute flamme chimique et se détend dans une tuyère — près du double de l'Isp des meilleurs moteurs chimiques, à vraie poussée."
+  },
+  {
+    "rel": "science/observation/andromeda-galaxy.json",
+    "at": "intro_sentence",
+    "old": "Andromède est la grande galaxie la plus proche de la Voie lactée, à 2,5 millions d'années-lumière. Elle s'approche à 110 km/s et pourrait entrer en collision avec la Voie lactée dans plusieurs milliards d'années.",
+    "new": "Andromède, à 2,5 millions d'années-lumière, est la grande galaxie la plus proche de la Voie lactée. L'un des objets les plus lointains visibles à l'œil nu, elle approche à 110 km/s et pourrait nous percuter dans quelques milliards d'années."
+  },
+  {
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "intro_sentence",
+    "old": "La combinaison de vol – portée à l'intérieur de l'engin spatial pendant les minutes à risque élevé de lancement, d'arrêt, de rentrée et d'atterrissage – est un conteneur sous pression doté d'armes qui offre à l'équipage suffisamment de.",
+    "new": "La combinaison de vol — portée aux minutes à risque du lancement, de l'interruption de montée, de la rentrée et de l'atterrissage — est un conteneur sous pression à bras, qui laisse le temps de se poser si la cabine se dépressurise."
+  },
+  {
+    "rel": "science/orbits/sun-synchronous.json",
+    "at": "intro_sentence",
+    "old": "Les orbites héliosynchrones croisent chaque point de la Terre à la même heure solaire locale quotidiennement. Quasi-polaires, rétrogrades, ajustées pour utiliser le renflement équatorial terrestre comme moteur de précession.",
+    "new": "Les orbites héliosynchrones survolent chaque point terrestre à la même heure solaire locale, chaque jour. Quasi polaires, rétrogrades, réglées pour que le renflement équatorial serve de moteur de précession — d'où une observation régulière."
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "intro_sentence",
+    "old": "La fusion de noyaux atomiques légers libère bien plus d'énergie par kilogramme que toute réaction chimique, faisant de la propulsion par fusion le chemin le plus crédible vers le transit interstellaire rapide.",
+    "new": "La fusion de noyaux légers libère bien plus d'énergie par kilogramme que toute réaction chimique : voie la plus crédible vers le transit interstellaire rapide — si l'on sait construire un moteur à fusion fonctionnel, ce que nul n'a fait."
+  },
+  {
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "intro_sentence",
+    "old": "Apollo a donné à l'humanité 12 marcheurs lunaires, 22 EVA, ~80 heures de surface, 382 kg d'échantillons. Artemis reconstruit le manuel EVA lunaire à partir de leurs apprentissages.",
+    "new": "Apollo a donné à l'humanité 12 marcheurs lunaires, 22 EVA, ~80 heures en surface, 382 kg d'échantillons. Chaque équipage est revenu en souhaitant autre chose. Artemis refait le manuel des EVA lunaires d'après ce qu'ont appris ces 12 hommes."
+  },
+  {
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "intro_sentence",
+    "old": "Les astronautes modernes s'entraînent 18-24 mois en basics + 2-3 ans en spécifique avant décollage. Les équipages Apollo s'entraînaient 5 ans pour 10 jours d'orbite. Le ratio sol-vol est le plus élevé de tout métier opérationnel.",
+    "new": "Les astronautes modernes s'entraînent 18 à 24 mois à la base, puis 2 à 3 ans sur la mission. Ceux d'Apollo : 5 ans pour 10 jours de mission. Le rapport temps au sol / temps en vol est le plus élevé de tous les métiers opérationnels."
+  }
+]

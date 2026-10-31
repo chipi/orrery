@@ -16,13 +16,13 @@
     {
       "met": 454,
       "label": "OPERATIES IN BAAN",
-      "note": "Apogeïm ~400 km; geclassificeerde payloadoperaties.",
+      "note": "Apogeum ~400 km; operaties met geclassificeerde lading.",
       "type": "info"
     },
     {
       "met": 908,
       "label": "LANDING",
-      "note": "Autonome landingsbaanlandingsmaan op KSC Shuttle Landing Facility 2022-11-12.",
+      "note": "Autonome landing op de landingsbaan van de KSC Shuttle Landing Facility 2022-11-12.",
       "type": "nominal"
     }
   ]

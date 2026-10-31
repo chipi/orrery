@@ -1,0 +1,143 @@
+[
+  {
+    "rel": "fleet/launch-site/plesetsk-43.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "variant: 高傾斜軌道"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "variant: 高傾斜"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "傾斜80°",
+    "replace": "傾斜角80°",
+    "why": "bare 傾斜 lacks 角"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "tagline",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "木星重力で土星へ",
+    "replace": "木星のスイングバイで土星へ",
+    "why": "重力 alone is not the term"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: 燃やす"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "methane-burning = fuel: 燃料とする"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned storable liquids = combustion"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "keep",
+    "why": "variant: コアステージ"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "単段式液体燃料（",
+    "replace": "単段式液体推進剤（",
+    "why": "propellant, not fuel"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "液体推進ロケット",
+    "replace": "液体推進剤ロケット",
+    "why": "propellant stem missing"
+  },
+  {
+    "rel": "fleet/launch-site/palmachim.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "搭載能力が減る",
+    "replace": "ペイロードが減る",
+    "why": "payload binding"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "7年間の飛行",
+    "replace": "7年間のフライバイ巡航",
+    "why": "flyby cruise"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "tagline",
+    "term": "flyby",
+    "decision": "change",
+    "find": "マーズフライビー",
+    "replace": "マーズフライバイ",
+    "why": "wrong spelling フライビー"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "マーズフライビー",
+    "replace": "マーズフライバイ",
+    "why": "wrong spelling フライビー"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "木星を43 000 kmで通過",
+    "replace": "木星フライバイ（43 000 km）",
+    "why": "flyby binding"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ハレー彗星観測",
+    "replace": "ハレー彗星フライバイ",
+    "why": "flyby binding"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降時",
+    "replace": "降下時",
+    "why": "降下 is binding"
+  }
+]

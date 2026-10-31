@@ -23,13 +23,13 @@ import { contextLevel, isValidShellTarget } from '$lib/explore/scale-shell-contr
 import { describeDistanceAu, niceScaleBar, AU_PER_PC } from '$lib/universe/scale-readout';
 import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
 import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
-import { PLANETS } from '$lib/explore-scene';
+import { PLANETS, realStartAngle } from '$lib/explore-scene';
 import { auToPx } from '$lib/scale';
 import { gyro } from '$lib/sensory/device-orientation';
 import { cue } from '$lib/sensory/feedback';
 import { getLocale } from '$lib/paraglide/runtime';
 import * as m from '$lib/paraglide/messages';
-import { localeFromPage } from '$lib/locale';
+import { localeFromPage, localHref } from '$lib/locale';
 import { assetOrigin } from '$lib/asset-url';
 import { coalesceLatest } from '$lib/async-coalesce';
 import { trackItemClick } from '$lib/analytics';
@@ -85,6 +85,33 @@ import type { resolveQualitySync } from '$lib/quality/quality-tier';
 import type { createRouteLifecycle } from '$lib/three/route-lifecycle';
 import type { ExploreSmallBody, createExploreSolarScene } from '$lib/three/explore-solar-scene';
 
+/** 2D-map labels in the viewer's language; bodies without a message keep their data name. */
+const PLANET_NAME_2D: Record<string, () => string> = {
+  mercury: m.lab_body_mercury,
+  venus: m.lab_body_venus,
+  earth: m.lab_body_earth,
+  mars: m.lab_body_mars,
+  jupiter: m.lab_body_jupiter,
+  saturn: m.lab_body_saturn,
+  uranus: m.lab_body_uranus,
+  neptune: m.lab_body_neptune,
+};
+const SMALL_BODY_NAME_2D: Record<string, () => string> = {
+  pluto: m.plan_destination_pluto,
+  ceres: m.plan_destination_ceres,
+  vesta: m.plan_destination_vesta,
+  halley: m.plan_destination_halley,
+  arrokoth: m.plan_destination_arrokoth,
+  '67p': m.plan_destination_67p,
+  bennu: m.plan_destination_bennu,
+  itokawa: m.plan_destination_itokawa,
+  psyche: m.plan_destination_psyche,
+  didymos: m.plan_destination_didymos,
+};
+const planetName2d = (id: string, fallback: string): string => PLANET_NAME_2D[id]?.() ?? fallback;
+const smallBodyName2d = (id: string, fallback: string): string =>
+  SMALL_BODY_NAME_2D[id]?.() ?? fallback;
+
 /**
  * `/explore` 3D scene host (RFC-036 WS-C/C2b — the whole onMount teardown).
  *
@@ -114,11 +141,16 @@ export interface ExploreHoverData {
   velocity: string;
   distance: string;
   extras: string;
+  /** Live numeric values used by the lens-mode expanded card. */
   velocityKms: number;
   distanceAU: number;
   eccentricity: number;
   inclinationDeg: number;
+  /** Discriminator: planets + small bodies use the vis-viva tooltip; the
+   *  Lagrange-points layer uses a different schema (no orbital speed of its
+   *  own — it co-orbits with the planet), rendered with its own layout. */
   kind?: 'planet' | 'small-body' | 'lagrange';
+  /** Lagrange-only — short physics blurb + notable occupants. */
   lagrangeTitle?: string;
   lagrangeBlurb?: string;
   lagrangeNotable?: string;
@@ -1040,295 +1072,237 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   }
   resetLocalGroupFn = resetLocalGroupView;
 
-  // ── Milky Way context (Slice 5) — zoom out of the neighborhood into the
-  // galaxy. The schematic is not to scale, so this is a warp framing (nominal
-  // units), mirroring the BodyScene entry rather than a physical re-base. ──
-  async function crossOutToMilkyWay(): Promise<void> {
-    if (inMilkyWay()) return;
-    const scene = await ensureMilkyWay();
-    if (!scene) return; // load failed — stay in the neighborhood
-    contextGraph.setActive('milky-way');
-    bridge.contextId = 'milky-way'; // flip chrome immediately, ahead of the HUD tick
-    camRMin = MW_CAM_R_MIN;
-    camRMax = MW_CAM_R_MAX;
-    camera.far = MW_FAR;
-    camera.near = 1;
+  // ── Scale-ladder boundary crossings: Neighborhood ↔ Milky Way ↔ Local Group ↔
+  // Local Sheet ↔ Virgo ↔ Laniakea ↔ Cosmic Web. Every crossing is the same
+  // machinery; LEVELS carries only what differs per rung. Camera frames are
+  // closures because ensure<X>() overwrites the LG_/LS_/… `let`s on first load. ──
+  interface CrossFrame {
+    rMin: number;
+    rMax: number;
+    far: number;
+    near: number;
+    entryP?: number; // absent: keep the current pitch on re-entry (neighborhood)
+    entryR: number;
+    dollyFromR?: number; // default entryR × 1.3
+  }
+  interface CrossLevel {
+    id: ExploreContextId;
+    inside: () => boolean;
+    frame: () => CrossFrame;
+    clearPanel?: () => void; // drop this rung's panel/selection/highlight when leaving it
+    out?: {
+      ensure: () => Promise<unknown>;
+      lightYears: number;
+      label: string;
+      afterPitch?: () => void; // runs right after the entry pitch is set
+    };
+  }
+
+  const LEVELS: CrossLevel[] = [
+    {
+      id: 'neighborhood',
+      inside: inNeighborhood,
+      frame: () => ({
+        rMin: NB_CAM_R_MIN,
+        rMax: NB_CAM_R_MAX,
+        far: NB_FAR,
+        near: 0.001,
+        entryR: NB_CAM_R_MAX,
+      }),
+    },
+    {
+      id: 'milky-way',
+      inside: inMilkyWay,
+      frame: () => ({
+        rMin: MW_CAM_R_MIN,
+        rMax: MW_CAM_R_MAX,
+        far: MW_FAR,
+        near: 1,
+        entryP: MW_ENTRY_CAM_P,
+        entryR: MW_ENTRY_CAM_R,
+        dollyFromR: MW_SCENE_RADIUS * 1.8,
+      }),
+      clearPanel: () => {
+        bridge.mwPanelOpen = false;
+        bridge.selectedMwId = null;
+        mwScene?.highlight(null);
+      },
+      out: {
+        ensure: ensureMilkyWay,
+        lightYears: 26700,
+        label: m.explore_deep_sgra(),
+        afterPitch: () => {
+          closeStarPanel();
+          bridge.anonStar = null;
+        },
+      },
+    },
+    {
+      id: 'local-group',
+      inside: inLocalGroup,
+      frame: () => {
+        const portrait =
+          (bridge.container?.clientHeight ?? 0) > (bridge.container?.clientWidth ?? 1);
+        return {
+          rMin: LG_CAM_R_MIN,
+          rMax: LG_CAM_R_MAX,
+          far: LG_FAR,
+          near: 1,
+          entryP: LG_ENTRY_CAM_P,
+          entryR: portrait ? LG_ENTRY_CAM_R_MOBILE : LG_ENTRY_CAM_R,
+        };
+      },
+      clearPanel: () => {
+        bridge.lgPanelOpen = false;
+        bridge.selectedLgMember = null;
+        lgScene?.highlight(null);
+      },
+      out: { ensure: ensureLocalGroup, lightYears: 2540000, label: 'Andromeda' },
+    },
+    {
+      id: 'local-sheet',
+      inside: inLocalSheet,
+      frame: () => ({
+        rMin: LS_CAM_R_MIN,
+        rMax: LS_CAM_R_MAX,
+        far: LS_FAR,
+        near: 1,
+        entryP: LS_ENTRY_CAM_P,
+        entryR: LS_ENTRY_CAM_R,
+      }),
+      clearPanel: () => {
+        bridge.lsPanelOpen = false;
+        bridge.selectedLsMember = null;
+        lsScene?.highlight(null);
+      },
+      out: { ensure: ensureLocalSheet, lightYears: 11000000, label: 'IC 342 Group' },
+    },
+    {
+      id: 'virgo',
+      inside: inVirgo,
+      frame: () => ({
+        rMin: VIRGO_CAM_R_MIN,
+        rMax: VIRGO_CAM_R_MAX,
+        far: VIRGO_FAR,
+        near: 1,
+        entryP: VIRGO_ENTRY_CAM_P,
+        entryR: VIRGO_ENTRY_CAM_R,
+      }),
+      clearPanel: () => {
+        bridge.virgoPanelOpen = false;
+        bridge.selectedVirgoMember = null;
+        virgoScene?.highlight(null);
+      },
+      out: { ensure: ensureVirgo, lightYears: 53800000, label: m.explore_deep_virgo() },
+    },
+    {
+      id: 'laniakea',
+      inside: inLaniakea,
+      frame: () => ({
+        rMin: LANIAKEA_CAM_R_MIN,
+        rMax: LANIAKEA_CAM_R_MAX,
+        far: LANIAKEA_FAR,
+        near: 1,
+        entryP: LANIAKEA_ENTRY_CAM_P,
+        entryR: LANIAKEA_ENTRY_CAM_R,
+      }),
+      clearPanel: () => {
+        bridge.laniakeaPanelOpen = false;
+        bridge.selectedLaniakeaMember = null;
+        laniakeaScene?.highlight(null);
+      },
+      out: { ensure: ensureLaniakea, lightYears: 222000000, label: m.explore_deep_attractor() },
+    },
+    {
+      id: 'cosmic-web',
+      inside: inCosmicWeb,
+      frame: () => ({
+        rMin: COSMIC_WEB_CAM_R_MIN,
+        rMax: COSMIC_WEB_CAM_R_MAX,
+        far: COSMIC_WEB_FAR,
+        near: 1,
+        entryP: COSMIC_WEB_ENTRY_CAM_P,
+        entryR: COSMIC_WEB_ENTRY_CAM_R,
+      }),
+      clearPanel: () => {
+        bridge.cosmicWebPanelOpen = false;
+        bridge.selectedCosmicWebMember = null;
+        cosmicWebScene?.highlight(null);
+      },
+      out: { ensure: ensureCosmicWeb, lightYears: 652000000, label: m.explore_deep_shapley() },
+    },
+  ];
+
+  // Zoom out from LEVELS[i-1] into LEVELS[i] with a warp framing (nominal units).
+  async function crossOut(i: number): Promise<void> {
+    const level = LEVELS[i];
+    const out = level.out!;
+    if (level.inside()) return;
+    const scene = await out.ensure();
+    if (!scene) return; // load failed — stay on the rung below
+    LEVELS[i - 1].clearPanel?.();
+    contextGraph.setActive(level.id);
+    bridge.contextId = level.id; // flip chrome immediately, ahead of the HUD tick
+    const f = level.frame();
+    camRMin = f.rMin;
+    camRMax = f.rMax;
+    camera.far = f.far;
+    camera.near = f.near;
     camera.updateProjectionMatrix();
-    camP = MW_ENTRY_CAM_P; // tilt to a face-on 3/4 view of the disk
-    closeStarPanel();
-    bridge.anonStar = null;
+    camP = f.entryP!;
+    out.afterPitch?.();
     if (deps.getReducedMotion()) {
-      camR = MW_ENTRY_CAM_R;
+      camR = f.entryR;
     } else {
-      camR = MW_SCENE_RADIUS * 1.8;
-      startCrossDolly(MW_SCENE_RADIUS * 1.8, MW_ENTRY_CAM_R, 1300);
+      const from = f.dollyFromR ?? f.entryR * 1.3;
+      camR = from;
+      startCrossDolly(from, f.entryR, 1300);
       bridge.crossingFlashId++;
-      showWarpCaption(`${(26700).toLocaleString()} ${m.explore_light_years()} · Sagittarius A*`);
+      showWarpCaption(
+        `${out.lightYears.toLocaleString()} ${m.explore_light_years()} · ${out.label}`,
+      );
     }
     updateCam();
   }
 
-  function crossInToNeighborhood(): void {
-    if (!inMilkyWay()) return;
+  // Zoom back in from LEVELS[i] to LEVELS[i-1], re-entering at its outer edge.
+  function crossIn(i: number): void {
+    const level = LEVELS[i];
+    if (!level.inside()) return;
     dollyActive = false;
     if (!deps.getReducedMotion()) bridge.crossingFlashId++;
-    bridge.mwPanelOpen = false;
-    bridge.selectedMwId = null;
-    mwScene?.highlight(null);
-    contextGraph.setActive('neighborhood');
-    bridge.contextId = 'neighborhood'; // flip chrome immediately
-    camRMin = NB_CAM_R_MIN;
-    camRMax = NB_CAM_R_MAX;
-    camR = NB_CAM_R_MAX; // re-enter at the neighborhood's outer edge
-    camera.far = NB_FAR;
-    camera.near = 0.001;
+    level.clearPanel?.();
+    const target = LEVELS[i - 1];
+    contextGraph.setActive(target.id);
+    bridge.contextId = target.id; // flip chrome immediately
+    const f = target.frame();
+    camRMin = f.rMin;
+    camRMax = f.rMax;
+    camR = f.rMax;
+    camera.far = f.far;
+    camera.near = f.near;
     camera.updateProjectionMatrix();
+    if (f.entryP !== undefined) camP = f.entryP;
     updateCam();
   }
+
+  const crossOutToMilkyWay = () => crossOut(1);
+  const crossInToNeighborhood = () => crossIn(1);
   exitMilkyWayFn = crossInToNeighborhood;
-
-  // ── Slice 8: MilkyWay ↔ Local Group crossing ─────────────────────────────
-  // Zoom out past the galaxy's ceiling and the Milky Way collapses to one member
-  // of the Local Group schematic; zoom back in past the inner edge (or tap the
-  // crumb) to drop back into the galaxy. Same machinery as the MW crossing.
-  async function crossOutToLocalGroup(): Promise<void> {
-    if (inLocalGroup()) return;
-    const scene = await ensureLocalGroup();
-    if (!scene) return; // load failed — stay in the Milky Way
-    bridge.mwPanelOpen = false;
-    bridge.selectedMwId = null;
-    mwScene?.highlight(null);
-    contextGraph.setActive('local-group');
-    bridge.contextId = 'local-group'; // flip chrome immediately
-    camRMin = LG_CAM_R_MIN;
-    camRMax = LG_CAM_R_MAX;
-    camera.far = LG_FAR;
-    camera.near = 1;
-    camera.updateProjectionMatrix();
-    camP = LG_ENTRY_CAM_P;
-    const portrait = (bridge.container?.clientHeight ?? 0) > (bridge.container?.clientWidth ?? 1);
-    const entryR = portrait ? LG_ENTRY_CAM_R_MOBILE : LG_ENTRY_CAM_R;
-    if (deps.getReducedMotion()) {
-      camR = entryR;
-    } else {
-      camR = entryR * 1.3;
-      startCrossDolly(entryR * 1.3, entryR, 1300);
-      bridge.crossingFlashId++;
-      showWarpCaption(`${(2540000).toLocaleString()} ${m.explore_light_years()} · Andromeda`);
-    }
-    updateCam();
-  }
-
-  function crossInToMilkyWay(): void {
-    if (!inLocalGroup()) return;
-    dollyActive = false;
-    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
-    bridge.lgPanelOpen = false;
-    bridge.selectedLgMember = null;
-    lgScene?.highlight(null);
-    contextGraph.setActive('milky-way');
-    bridge.contextId = 'milky-way'; // flip chrome immediately
-    camRMin = MW_CAM_R_MIN;
-    camRMax = MW_CAM_R_MAX;
-    camR = MW_CAM_R_MAX; // re-enter at the galaxy's outer edge
-    camera.far = MW_FAR;
-    camera.near = 1;
-    camera.updateProjectionMatrix();
-    camP = MW_ENTRY_CAM_P;
-    updateCam();
-  }
+  const crossOutToLocalGroup = () => crossOut(2);
+  const crossInToMilkyWay = () => crossIn(2);
   exitLocalGroupFn = crossInToMilkyWay;
-
-  // ── WS-1: Local Group ↔ Local Sheet crossing (same machinery). ────────────
-  async function crossOutToLocalSheet(): Promise<void> {
-    if (inLocalSheet()) return;
-    const scene = await ensureLocalSheet();
-    if (!scene) return; // load failed — stay in the Local Group
-    bridge.lgPanelOpen = false;
-    bridge.selectedLgMember = null;
-    lgScene?.highlight(null);
-    contextGraph.setActive('local-sheet');
-    bridge.contextId = 'local-sheet'; // flip chrome immediately
-    camRMin = LS_CAM_R_MIN;
-    camRMax = LS_CAM_R_MAX;
-    camera.far = LS_FAR;
-    camera.near = 1;
-    camera.updateProjectionMatrix();
-    camP = LS_ENTRY_CAM_P;
-    if (deps.getReducedMotion()) {
-      camR = LS_ENTRY_CAM_R;
-    } else {
-      camR = LS_ENTRY_CAM_R * 1.3;
-      startCrossDolly(LS_ENTRY_CAM_R * 1.3, LS_ENTRY_CAM_R, 1300);
-      bridge.crossingFlashId++;
-      showWarpCaption(`${(11000000).toLocaleString()} ${m.explore_light_years()} · IC 342 Group`);
-    }
-    updateCam();
-  }
-
-  function crossInToLocalGroup(): void {
-    if (!inLocalSheet()) return;
-    dollyActive = false;
-    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
-    bridge.lsPanelOpen = false;
-    bridge.selectedLsMember = null;
-    lsScene?.highlight(null);
-    contextGraph.setActive('local-group');
-    bridge.contextId = 'local-group'; // flip chrome immediately
-    camRMin = LG_CAM_R_MIN;
-    camRMax = LG_CAM_R_MAX;
-    camR = LG_CAM_R_MAX; // re-enter at the Local Group's outer edge
-    camera.far = LG_FAR;
-    camera.near = 1;
-    camera.updateProjectionMatrix();
-    camP = LG_ENTRY_CAM_P;
-    updateCam();
-  }
+  const crossOutToLocalSheet = () => crossOut(3);
+  const crossInToLocalGroup = () => crossIn(3);
   exitLocalSheetFn = crossInToLocalGroup;
-
-  // ── WS-5b: Local Sheet ↔ Virgo Supercluster crossing (same machinery). ──────
-  async function crossOutToVirgo(): Promise<void> {
-    if (inVirgo()) return;
-    const scene = await ensureVirgo();
-    if (!scene) return; // load failed — stay in the Local Sheet
-    bridge.lsPanelOpen = false;
-    bridge.selectedLsMember = null;
-    lsScene?.highlight(null);
-    contextGraph.setActive('virgo');
-    bridge.contextId = 'virgo'; // flip chrome immediately
-    camRMin = VIRGO_CAM_R_MIN;
-    camRMax = VIRGO_CAM_R_MAX;
-    camera.far = VIRGO_FAR;
-    camera.near = 1;
-    camera.updateProjectionMatrix();
-    camP = VIRGO_ENTRY_CAM_P;
-    if (deps.getReducedMotion()) {
-      camR = VIRGO_ENTRY_CAM_R;
-    } else {
-      camR = VIRGO_ENTRY_CAM_R * 1.3;
-      startCrossDolly(VIRGO_ENTRY_CAM_R * 1.3, VIRGO_ENTRY_CAM_R, 1300);
-      bridge.crossingFlashId++;
-      showWarpCaption(`${(53800000).toLocaleString()} ${m.explore_light_years()} · Virgo Cluster`);
-    }
-    updateCam();
-  }
-
-  function crossInToLocalSheet(): void {
-    if (!inVirgo()) return;
-    dollyActive = false;
-    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
-    bridge.virgoPanelOpen = false;
-    bridge.selectedVirgoMember = null;
-    virgoScene?.highlight(null);
-    contextGraph.setActive('local-sheet');
-    bridge.contextId = 'local-sheet'; // flip chrome immediately
-    camRMin = LS_CAM_R_MIN;
-    camRMax = LS_CAM_R_MAX;
-    camR = LS_CAM_R_MAX; // re-enter at the Local Sheet's outer edge
-    camera.far = LS_FAR;
-    camera.near = 1;
-    camera.updateProjectionMatrix();
-    camP = LS_ENTRY_CAM_P;
-    updateCam();
-  }
+  const crossOutToVirgo = () => crossOut(4);
+  const crossInToLocalSheet = () => crossIn(4);
   exitVirgoFn = crossInToLocalSheet;
-
-  // ── WS-5c: Virgo ↔ Laniakea Supercluster crossing (same machinery). ─────────
-  async function crossOutToLaniakea(): Promise<void> {
-    if (inLaniakea()) return;
-    const scene = await ensureLaniakea();
-    if (!scene) return; // load failed — stay in Virgo
-    bridge.virgoPanelOpen = false;
-    bridge.selectedVirgoMember = null;
-    virgoScene?.highlight(null);
-    contextGraph.setActive('laniakea');
-    bridge.contextId = 'laniakea'; // flip chrome immediately
-    camRMin = LANIAKEA_CAM_R_MIN;
-    camRMax = LANIAKEA_CAM_R_MAX;
-    camera.far = LANIAKEA_FAR;
-    camera.near = 1;
-    camera.updateProjectionMatrix();
-    camP = LANIAKEA_ENTRY_CAM_P;
-    if (deps.getReducedMotion()) {
-      camR = LANIAKEA_ENTRY_CAM_R;
-    } else {
-      camR = LANIAKEA_ENTRY_CAM_R * 1.3;
-      startCrossDolly(LANIAKEA_ENTRY_CAM_R * 1.3, LANIAKEA_ENTRY_CAM_R, 1300);
-      bridge.crossingFlashId++;
-      showWarpCaption(
-        `${(222000000).toLocaleString()} ${m.explore_light_years()} · Great Attractor`,
-      );
-    }
-    updateCam();
-  }
-
-  function crossInToVirgo(): void {
-    if (!inLaniakea()) return;
-    dollyActive = false;
-    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
-    bridge.laniakeaPanelOpen = false;
-    bridge.selectedLaniakeaMember = null;
-    laniakeaScene?.highlight(null);
-    contextGraph.setActive('virgo');
-    bridge.contextId = 'virgo'; // flip chrome immediately
-    camRMin = VIRGO_CAM_R_MIN;
-    camRMax = VIRGO_CAM_R_MAX;
-    camR = VIRGO_CAM_R_MAX; // re-enter at Virgo's outer edge
-    camera.far = VIRGO_FAR;
-    camera.near = 1;
-    camera.updateProjectionMatrix();
-    camP = VIRGO_ENTRY_CAM_P;
-    updateCam();
-  }
+  const crossOutToLaniakea = () => crossOut(5);
+  const crossInToVirgo = () => crossIn(5);
   exitLaniakeaFn = crossInToVirgo;
-
-  // ── WS-5d: Laniakea ↔ Cosmic Web crossing (same machinery, the ladder's top). ─
-  async function crossOutToCosmicWeb(): Promise<void> {
-    if (inCosmicWeb()) return;
-    const scene = await ensureCosmicWeb();
-    if (!scene) return; // load failed — stay in Laniakea
-    bridge.laniakeaPanelOpen = false;
-    bridge.selectedLaniakeaMember = null;
-    laniakeaScene?.highlight(null);
-    contextGraph.setActive('cosmic-web');
-    bridge.contextId = 'cosmic-web'; // flip chrome immediately
-    camRMin = COSMIC_WEB_CAM_R_MIN;
-    camRMax = COSMIC_WEB_CAM_R_MAX;
-    camera.far = COSMIC_WEB_FAR;
-    camera.near = 1;
-    camera.updateProjectionMatrix();
-    camP = COSMIC_WEB_ENTRY_CAM_P;
-    if (deps.getReducedMotion()) {
-      camR = COSMIC_WEB_ENTRY_CAM_R;
-    } else {
-      camR = COSMIC_WEB_ENTRY_CAM_R * 1.3;
-      startCrossDolly(COSMIC_WEB_ENTRY_CAM_R * 1.3, COSMIC_WEB_ENTRY_CAM_R, 1300);
-      bridge.crossingFlashId++;
-      showWarpCaption(
-        `${(652000000).toLocaleString()} ${m.explore_light_years()} · Shapley Concentration`,
-      );
-    }
-    updateCam();
-  }
-
-  function crossInToLaniakea(): void {
-    if (!inCosmicWeb()) return;
-    dollyActive = false;
-    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
-    bridge.cosmicWebPanelOpen = false;
-    bridge.selectedCosmicWebMember = null;
-    cosmicWebScene?.highlight(null);
-    contextGraph.setActive('laniakea');
-    bridge.contextId = 'laniakea'; // flip chrome immediately
-    camRMin = LANIAKEA_CAM_R_MIN;
-    camRMax = LANIAKEA_CAM_R_MAX;
-    camR = LANIAKEA_CAM_R_MAX; // re-enter at Laniakea's outer edge
-    camera.far = LANIAKEA_FAR;
-    camera.near = 1;
-    camera.updateProjectionMatrix();
-    camP = LANIAKEA_ENTRY_CAM_P;
-    updateCam();
-  }
+  const crossOutToCosmicWeb = () => crossOut(6);
+  const crossInToLaniakea = () => crossIn(6);
   exitCosmicWebFn = crossInToLaniakea;
 
   // ── Exoplanet BodyScene (Slice 2) ────────────────────────────────────────
@@ -1701,39 +1675,23 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   deepSkyDeepLinkFn = resolveDeepSkyDeepLink;
   // Dev/e2e hook for canvas star pickability + BodyScene entry (no shipped effect).
   if (import.meta.env.DEV) {
-    (window as unknown as { __exploreSelectStar?: (id: string) => void }).__exploreSelectStar = (
-      id: string,
-    ) => void selectStar(id);
-    (window as unknown as { __exploreEnterSystem?: (id: string) => void }).__exploreEnterSystem = (
-      id: string,
-    ) => void enterBodyScene(id);
-    (
-      window as unknown as { __exploreSelectExoplanet?: (id: string) => void }
-    ).__exploreSelectExoplanet = (id: string) => selectExoplanet(id);
-    (window as unknown as { __exploreEnterDeepSky?: (id: string) => void }).__exploreEnterDeepSky =
-      (id: string) => enterDeepSky(id);
-    (window as unknown as { __exploreEnterMilkyWay?: () => Promise<void> }).__exploreEnterMilkyWay =
-      async () => {
-        if (!inNeighborhood()) await crossOutToNeighborhood();
-        await crossOutToMilkyWay();
-      };
-    (
-      window as unknown as { __exploreSelectMilkyWay?: (id: string) => Promise<void> }
-    ).__exploreSelectMilkyWay = (id: string) => resolveGalaxyDeepLink(id);
-    (
-      window as unknown as { __exploreEnterLocalGroup?: () => Promise<void> }
-    ).__exploreEnterLocalGroup = async () => {
+    window.__exploreSelectStar = (id: string) => void selectStar(id);
+    window.__exploreEnterSystem = (id: string) => void enterBodyScene(id);
+    window.__exploreSelectExoplanet = (id: string) => selectExoplanet(id);
+    window.__exploreEnterDeepSky = (id: string) => enterDeepSky(id);
+    window.__exploreEnterMilkyWay = async () => {
+      if (!inNeighborhood()) await crossOutToNeighborhood();
+      await crossOutToMilkyWay();
+    };
+    window.__exploreSelectMilkyWay = (id: string) => resolveGalaxyDeepLink(id);
+    window.__exploreEnterLocalGroup = async () => {
       if (inLocalGroup()) return;
       if (!inNeighborhood()) await crossOutToNeighborhood();
       if (!inMilkyWay()) await crossOutToMilkyWay();
       await crossOutToLocalGroup();
     };
-    (
-      window as unknown as { __exploreSelectLocalGroup?: (id: string) => void }
-    ).__exploreSelectLocalGroup = (id: string) => selectLocalGroup(id);
-    (
-      window as unknown as { __exploreEnterBlackHole?: (id: string) => Promise<void> }
-    ).__exploreEnterBlackHole = (id: string) => enterBlackHole(id);
+    window.__exploreSelectLocalGroup = (id: string) => selectLocalGroup(id);
+    window.__exploreEnterBlackHole = (id: string) => enterBlackHole(id);
   }
 
   // Camera distance → canonical AU, for the scale HUD (solar camR is AU,
@@ -2100,7 +2058,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       );
       if (galaxyHit) {
         const section = galaxyHit.object.userData.galaxyScienceSection as string;
-        goto(`${base}/science/observation/${section}`);
+        goto(localHref(`/science/observation/${section}`));
       }
     }
   };
@@ -3129,11 +3087,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // test can resolve a body's actual on-screen position deterministically:
   // screen = (canvas.width/2 + off.x, canvas.height/2 + off.y).
   if (typeof window !== 'undefined') {
-    (
-      window as Window & {
-        __explore2dBodyOffset?: (id: string) => { x: number; y: number } | null;
-      }
-    ).__explore2dBodyOffset = (id) => planet2dPos.get(id) ?? smallBody2dPos.get(id) ?? null;
+    window.__explore2dBodyOffset = (id) => planet2dPos.get(id) ?? smallBody2dPos.get(id) ?? null;
   }
 
   const resize2d = () => {
@@ -3459,7 +3413,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     ctx2.font = "7px 'Space Mono',monospace";
     ctx2.fillStyle = 'rgba(160,120,220,0.32)';
     ctx2.textAlign = 'center';
-    ctx2.fillText('PLANET NINE? · HYPOTHETICAL · ~600 AU', 0, -pnR - 6);
+    ctx2.fillText(m.explore_planet_nine({ dist: m.unit_au_value({ value: 600 }) }), 0, -pnR - 6);
     ctx2.restore();
 
     // Sun glow + core
@@ -3480,7 +3434,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     ctx2.font = "7px 'Space Mono',monospace";
     ctx2.fillStyle = 'rgba(255,220,100,0.5)';
     ctx2.textAlign = 'center';
-    ctx2.fillText('SUN', 0, 22);
+    ctx2.fillText(m.explore_sun_caps(), 0, 22);
     ctx2.restore();
 
     // Planets — gated by the PLANETS layer (issue #32). When the
@@ -3607,7 +3561,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         ctx2.shadowBlur = 6;
         ctx2.fillStyle = p.css + 'cc';
         ctx2.textAlign = 'left';
-        ctx2.fillText(p.name, px + pr + 5, py + 3);
+        ctx2.fillText(planetName2d(p.id, p.name), px + pr + 5, py + 3);
         ctx2.restore();
       });
 
@@ -3664,7 +3618,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       ctx2.shadowBlur = 5;
       ctx2.fillStyle = b.color + 'aa';
       ctx2.textAlign = 'left';
-      ctx2.fillText(b.name, px + 5, py + 2);
+      ctx2.fillText(smallBodyName2d(b.id, b.name), px + 5, py + 2);
       ctx2.restore();
     });
 
@@ -3674,7 +3628,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     ctx2.save();
     ctx2.font = "8px 'Space Mono',monospace";
     ctx2.fillStyle = 'rgba(255,255,255,0.08)';
-    ctx2.fillText('ECLIPTIC PLANE · TOP-DOWN · SCROLL TO ZOOM · DRAG TO PAN', 22, H - 10);
+    ctx2.fillText(m.explore_2d_hint(), 22, H - 10);
     ctx2.restore();
   };
 
@@ -3733,26 +3687,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // the eccentric ones, consistent with the stylized orrery). simT=0
   // stays "today"; small bodies / starfield are untouched. Reverting
   // this whole block falls back to Layer 2-B's decorative angles.
-  {
-    const J2000_MS = Date.UTC(2000, 0, 1, 12);
-    const MEAN_LON_J2000_DEG: Record<string, number> = {
-      mercury: 252.25,
-      venus: 181.98,
-      earth: 100.46,
-      mars: 355.43,
-      jupiter: 34.4,
-      saturn: 49.94,
-      uranus: 313.23,
-      neptune: 304.88,
-      pluto: 238.93,
-    };
-    const yrSinceJ2000 = (simEpochMs - J2000_MS) / (DAYS_PER_YEAR * 86_400_000);
-    for (const p of PLANETS) {
-      const L0 = MEAN_LON_J2000_DEG[p.id];
-      if (L0 === undefined) continue;
-      const deg = (((L0 + (360 * yrSinceJ2000) / p.period) % 360) + 360) % 360;
-      p.a0 = deg * (Math.PI / 180);
-    }
+  for (const p of PLANETS) {
+    const angle = realStartAngle(p.id, p.period, simEpochMs, DAYS_PER_YEAR);
+    if (angle !== undefined) p.a0 = angle;
   }
   let lastSimDayIndex = Number.NaN;
   let lastDateLocale = '';

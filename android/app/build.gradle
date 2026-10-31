@@ -1,5 +1,12 @@
 apply plugin: 'com.android.application'
 
+// The app version follows package.json, so the store version cannot drift
+// from the web build. versionCode = major*10000 + minor*100 + patch.
+def appVersion = new groovy.json.JsonSlurper()
+        .parse(file('../../package.json')).version.toString()
+def appVersionCore = appVersion.split('-')[0].tokenize('.').collect { it as int }
+def appVersionCode = appVersionCore[0] * 10000 + appVersionCore[1] * 100 + appVersionCore[2]
+
 android {
     namespace = "io.github.chipi.orrery"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -7,8 +14,8 @@ android {
         applicationId "io.github.chipi.orrery"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "0.8.0-wip"
+        versionCode appVersionCode
+        versionName appVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.

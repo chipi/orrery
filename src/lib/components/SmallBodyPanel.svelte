@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { page } from '$app/state';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
+  import PanelTabRow from './PanelTabRow.svelte';
+  import PanelHeroImage from './PanelHeroImage.svelte';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import { getSmallBodyGallery, getSmallBodyI18n, type SmallBodyI18n } from '$lib/data';
   import smallBodiesData from '$data/small-bodies.json';
@@ -12,7 +14,6 @@
   import type { ScienceSectionRef } from '$types/planet';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
-  import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
@@ -175,65 +176,23 @@
     </div>
 
     {#if gallery.length > 0}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => (lightboxSrc = gallery[0]!)}
-          aria-label={m.panel_hero_aria({ name: body.name })}
-        >
-          <img
-            {...responsive(gallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage
+        src={gallery[0]}
+        name={body.name}
+        onOpen={() => (lightboxSrc = gallery[0]!)}
+      />
     {/if}
 
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="sbp-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="sbp-tabpanel">{m.panel_tab_overview()}</button
-      >
-      {#if gallery.length > 0}
-        <button
-          type="button"
-          id="sbp-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="sbp-tabpanel">{m.panel_tab_gallery()}</button
-        >
-      {/if}
-      <button
-        type="button"
-        id="sbp-tab-technical"
-        class:active={tab === 'technical'}
-        onclick={() => (tab = 'technical')}
-        role="tab"
-        aria-selected={tab === 'technical'}
-        aria-controls="sbp-tabpanel">{m.panel_tab_technical()}</button
-      >
-      {#if missionEntries.length > 0}
-        <button
-          type="button"
-          id="sbp-tab-missions"
-          class:active={tab === 'missions'}
-          onclick={() => (tab = 'missions')}
-          role="tab"
-          aria-selected={tab === 'missions'}
-          aria-controls="sbp-tabpanel">MISSIONS</button
-        >
-      {/if}
-    </div>
+    <PanelTabRow
+      idPrefix="sbp"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview() },
+        { id: 'gallery', label: m.panel_tab_gallery(), visible: gallery.length > 0 },
+        { id: 'technical', label: m.panel_tab_technical() },
+        { id: 'missions', label: m.panel_tab_missions(), visible: missionEntries.length > 0 },
+      ]}
+      bind:active={tab}
+    />
 
     <div class="tab-content" role="tabpanel" id="sbp-tabpanel" aria-labelledby="sbp-tab-{tab}">
       {#if tab === 'overview'}
@@ -247,7 +206,7 @@
         {/if}
         {#if scienceSections.length > 0}
           <div class="science-section">
-            <h3 class="library-heading">SCIENCE</h3>
+            <h3 class="library-heading">{m.panel_tab_science()}</h3>
             {#each scienceSections as sec (sec.tab + sec.section)}
               <ScienceCard tab={sec.tab as ScienceTabId} section={sec.section} why={sec.why} />
             {/each}
@@ -396,47 +355,18 @@
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: body.name })}>
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
-                aria-label={body.name}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: body.name })}
+            thumbLabel={body.name}
+            onOpen={(src) => (lightboxSrc = src)}
+          />
           <p class="gallery-credit">{m.panel_gallery_credit()}</p>
         {/if}
       {/if}
     </div>
 
-    {#if lightboxSrc}
-      <button
-        type="button"
-        class="lightbox"
-        aria-label={m.panel_lightbox_close()}
-        onclick={() => (lightboxSrc = null)}
-      >
-        <img
-          {...responsive(lightboxSrc, IMAGE_SIZES.full)}
-          alt=""
-          loading="lazy"
-          decoding="async"
-        />
-        <span class="lightbox-close" aria-hidden="true">×</span>
-      </button>
-      <div class="lightbox-meta">
-        <ImageCredit src={lightboxSrc} />
-      </div>
-    {/if}
+    <PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
 
     <!-- #547 S5c — every small body carries its collectible card. -->
     {#if cardSpec}

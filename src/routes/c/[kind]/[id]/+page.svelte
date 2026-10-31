@@ -5,14 +5,14 @@
     single link, for the no-JS case and as the crawl-able anchor.
   */
   import { onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { goto } from '$app/navigation';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
 
   onMount(() => {
-    void goto(`${base}${data.target}`, { replaceState: true });
+    void goto(localHref(data.target), { replaceState: true });
   });
 </script>
 
@@ -37,7 +37,7 @@
 </svelte:head>
 
 <main class="stub">
-  <a href="{base}{data.target}">{data.title} → Orrery</a>
+  <a href={localHref(data.target)}>{data.title} → Orrery</a>
 </main>
 
 <style>

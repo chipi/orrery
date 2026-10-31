@@ -1,0 +1,23 @@
+[
+  {
+    "term": "orbit",
+    "loc": "ja",
+    "rel": "missions/earth/aurora-7.json",
+    "at": "dispatch",
+    "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun"
+  },
+  {
+    "term": "orbit",
+    "loc": "ja",
+    "rel": "missions/earth/aurora-7.json",
+    "at": "description",
+    "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun"
+  },
+  {
+    "term": "stage",
+    "loc": "ja",
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "why": "vehicle name (Inertial Upper Stage) kept in Latin"
+  }
+]

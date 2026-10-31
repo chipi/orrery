@@ -1,0 +1,23 @@
+[
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.3.note",
+    "find": "двигательный спуск, как у Viking",
+    "replace": "спуск на двигателях, как у Viking",
+    "why": "unnatural phrase for propulsive descent"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "find": "проходит мимо Венеры и выходит",
+    "replace": "пролетает мимо и выходит",
+    "why": "Venus added; not in English"
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "first",
+    "find": "первое складирование образцов",
+    "replace": "первое депонирование образцов",
+    "why": "caching rendered as unnatural 'warehousing'"
+  }
+]

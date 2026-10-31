@@ -96,5 +96,14 @@
       "type": "prose",
       "md": "そして保持する価値のある人間的な注記。彼らは8年でそれをやり遂げた、一度もやったことがないのに、現代のドアベルよりも弱い搭載コンピューターで。Apolloは、明確なミッション、適切な人材、そして正直な締め切りがまだ確率を上回れるという恒久的な論拠だ——次に目標が不可能に見えたときに覚えておくべき有用なことだ。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "月 — 表面地図と Apollo の着陸地点",
+    "/science/transfers/free-return": "自由帰還軌道",
+    "/science/mission-phases/trans-x-injection": "月遷移軌道投入",
+    "/science/mission-phases/edl": "突入・降下・着陸",
+    "/science/propulsion/tsiolkovsky": "ロケット方程式",
+    "/moon?site=apollo15": "Apollo 15 — ハドリー・アペニン",
+    "/moon?site=apollo16": "Apollo 16 — デカルト高地"
+  }
 }

@@ -24,7 +24,7 @@ import { expect, test } from '@playwright/test';
 /* v0.7.0 raised the floor to `0 critical violations` on 11 routes; 1.0 raises it
  * to `0 critical or serious` (2026-10-21: the last serious ones, contrast on
  * landing headings, accent links and agency badges, were fixed). */
-const GATED_ROUTES = [
+const GATED_ROUTES: { path: string; label: string; exclude?: string }[] = [
   { path: '/', label: 'landing' },
   { path: '/missions', label: 'mission catalog' },
   { path: '/fly', label: 'fly (HUD chrome only — canvas is opaque to axe)' },
@@ -36,17 +36,47 @@ const GATED_ROUTES = [
   { path: '/mars', label: 'mars (landing sites)' },
   { path: '/iss', label: 'ISS (modules)' },
   { path: '/tiangong', label: 'Tiangong (modules)' },
+  // Phase 6 (2026-10-31): every other static route. Surveyed first; the serious
+  // findings (muted text below 4.5:1, links told apart by colour only, aria-label on
+  // a role-less div, the fixed footer over /fleet cards) were fixed, not excluded.
+  { path: '/catalog', label: 'catalog' },
+  { path: '/colophon', label: 'colophon' },
+  // /credits lists 2,760 photos, each a row of identical markup: scanning all of them
+  // took ~60 s locally and timed out on CI (2026-10-31). The first 5 rows per source
+  // exercise every rule and style the rest repeat.
+  { path: '/credits', label: 'credits', exclude: '.photo-list > .photo:nth-child(n+6)' },
+  { path: '/essays', label: 'essays' },
+  { path: '/explore/hub', label: 'explore hub' },
+  { path: '/fleet', label: 'fleet' },
+  { path: '/gallery', label: 'gallery' },
+  { path: '/gallery/deep-sky', label: 'deep-sky gallery' },
+  { path: '/lab', label: 'lab' },
+  { path: '/learn', label: 'learn' },
+  { path: '/library/episodes', label: 'library episodes' },
+  { path: '/live', label: 'live' },
+  { path: '/missions/launches', label: 'launches' },
+  { path: '/patches', label: 'patches' },
+  { path: '/plan', label: 'plan' },
+  { path: '/posters', label: 'posters' },
+  { path: '/privacy', label: 'privacy' },
+  { path: '/programs', label: 'programs' },
+  { path: '/science/reading-list', label: 'reading list' },
+  { path: '/science/watch-list', label: 'watch list' },
+  { path: '/science/glossary', label: 'glossary' },
+  { path: '/sourcing', label: 'sourcing' },
+  { path: '/venus', label: 'venus' },
+  { path: '/worlds', label: 'worlds' },
 ];
 
 test.describe('a11y gate (ADR-025 — 0 critical or serious violations)', () => {
-  for (const { path, label } of GATED_ROUTES) {
+  for (const { path, label, exclude } of GATED_ROUTES) {
     test(`${label} (${path}) — 0 critical or serious axe violations`, async ({ page }) => {
       // /library carries 678 outbound-link rows; axe scans every rule
       // against every node, so the per-test 30 s playwright budget
       // isn't enough on cold CI Ubuntu runners (35–43 s on the last
       // failing runs). Other routes finish in <5 s and stay on the
       // default.
-      if (path === '/library') {
+      if (path === '/library' || path === '/credits') {
         test.setTimeout(90_000);
       }
       await page.goto(path, { waitUntil: 'networkidle' });
@@ -68,10 +98,11 @@ test.describe('a11y gate (ADR-025 — 0 critical or serious violations)', () => 
       // the 1.60 test Page doesn't carry. `as never` defers the
       // structural check so the test stays version-resilient.
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const results = await new AxeBuilder({ page: page as any })
+      let builder = new AxeBuilder({ page: page as any })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-        .disableRules(['region'])
-        .analyze();
+        .disableRules(['region']);
+      if (exclude) builder = builder.exclude(exclude);
+      const results = await builder.analyze();
 
       // Surface ALL violations to the console for triage visibility.
       if (results.violations.length > 0) {

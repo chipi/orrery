@@ -1,7 +1,7 @@
 {
   "name": "Galileo",
   "vehicle": "Space Shuttle Atlantis + IUS",
-  "payload": "Galileo-sonde en atmosferische ingangssonde; ~2,5 t droge massa",
+  "payload": "Galileo-sonde en atmosferische intredesonde; ~2,5 t droge massa",
   "delta_v": "~14 km/s (bij benadering)",
   "type": "ORBITER · UITGEVOERD",
   "first": "Eerste ruimtevaartuig dat Jupiter omcirkelde; atmosferische sonde in Jupiters wolken",
@@ -11,14 +11,15 @@
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "STS-34 zet Galileo en een inertiaal booster uit vanuit Atlantis.",
+      "note": "STS-34 zet Galileo en een inertiale boventrap uit vanuit Atlantis.",
       "type": "nominal"
     },
     {
       "met": 2243,
-      "label": "JUPITER-BAANOPNAME",
-      "note": "Hoofdmotorinbranding brengt Galileo in een baan; een 8 jaar durende wetenschappelijke maantour begint.",
+      "label": "JUPITER-BAANINSERTIE",
+      "note": "Hoofdmotorontsteking brengt Galileo in een baan; een 8 jaar durende wetenschappelijke maantour begint.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Inertial Upper Stage (IUS, bovenste trap)"
 }

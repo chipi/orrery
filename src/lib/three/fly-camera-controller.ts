@@ -172,7 +172,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
   // `window.__flyMontage(false)` in DEV.
   let montageEnabled = new URLSearchParams(window.location.search).get('montage') !== '0';
   if (import.meta.env.DEV) {
-    (window as unknown as { __flyMontage?: (on: boolean) => void }).__flyMontage = (on) => {
+    window.__flyMontage = (on) => {
       montageEnabled = on;
     };
   }

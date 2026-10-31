@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "La seconda lezione è che niente nel volo spaziale parte da zero. La SSI è la somma di ogni programma prima di essa — il rifornimento di Salyut, la modularità di Mir, la scienza di Skylab, l'assemblaggio dello Shuttle, l'affidabilità della Soyuz, i laboratori europei e giapponesi — niente inventato di nuovo, tutto ereditato e combinato. La verità più profonda dell'era spaziale è che i suoi risultati sono cumulativi: ogni programma si basa su quelli precedenti, e la Stazione si basa su tutti. Il progresso nello spazio non è una serie di nuovi inizi ma un singolo, continuo atto di costruzione, portato avanti di mano in mano attraverso le generazioni e attraverso i confini."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — orbite, rendezvous e siti di lancio",
+    "/fleet?focus=iss": "Flotta — la Stazione spaziale internazionale",
+    "/programs/mir": "Mir — la stazione da cui la SSI ha ereditato",
+    "/earth?site=iss": "La SSI sopra di noi"
+  }
 }

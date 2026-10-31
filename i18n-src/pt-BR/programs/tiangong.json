@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "A lição mais profunda é sobre ritmo. Tiangong mostra que no voo espacial o programa que parece mais rápido raramente é o mais forte. A China chegou atrasada a todos os primeiros lugares e não se importou com nenhum deles, otimizando em vez disso para uma estação que seria concluída, confiável e permanente. Quando o objetivo é ainda estar voando em 2035, paciência não é cautela — é a estratégia."
     }
-  ]
+  ],
+  "link_labels": {
+    "/tiangong": "Tiangong — a estação em 3D",
+    "/fleet?focus=tiangong": "Frota — Shenzhou, Tianzhou e a família Long March",
+    "/programs/iss": "EEI — a estação da qual o Tiangong ficou de fora",
+    "/earth?site=tiangong": "Tiangong sobre nós"
+  }
 }

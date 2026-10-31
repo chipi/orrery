@@ -1,0 +1,116 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "old": "Cygnus Standard是Orbital ATK在美国制造的机器人货运航天器，是仅载增压货物的国际空间站货运飞船。2013年首飞后退役。",
+    "new": "Cygnus Standard是Orbital Sciences在美国制造的机器人货运航天器，是仅载增压货物的国际空间站货运飞船。2013年至2014年飞行，后继型号为Enhanced Cygnus。"
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "old": "Phoenix是美国Lockheed Martin建造的行星着陆器。确认了火星土壤中的水冰。2008年首飞后退役。",
+    "new": "Phoenix是美国Lockheed Martin建造的行星着陆器。确认了火星土壤中的水冰。任务于2008年结束。"
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "old": "Surveyor 3是Hughes Aircraft在美国建造的行星着陆器。Apollo 12于两年半后到访。1967年首飞后退役。",
+    "new": "Surveyor 3是Hughes Aircraft在美国建造的行星着陆器。Apollo 12于两年半后到访。任务于1967年结束。"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "old": "Venera 7-class是由苏联NPO Lavochkin公司研制的行星着陆器。首次在另一颗行星上软着陆，首次从另一颗行星表面传输数据（金星，1970年）。在1970年首次飞行后停用。",
+    "new": "Venera 7-class是由苏联NPO Lavochkin公司研制的行星着陆器。首次在另一颗行星上软着陆，首次从另一颗行星表面传输数据（金星，1970年）。任务于1970年结束。"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "old": "Titan II GLV 是美国 Martin Marietta 建造的轨道运载火箭。Project Gemini 的主力火箭。1964 年首飞后退役。",
+    "new": "Titan II GLV 是美国 Martin Marietta 建造的轨道运载火箭。Project Gemini 的主力火箭。共飞行 12 次，时间为 1964–1966 年。"
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "old": "Magellan是美国Martin Marietta建造的深空轨道器。用雷达测绘了98%的金星表面。1989年首飞后退役。",
+    "new": "Magellan是美国Martin Marietta建造的深空轨道器。用雷达测绘了98%的金星表面。任务于1994年结束。"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "old": "Lunokhod 2是苏联NPO Lavochkin建造的行星漫游车。在月球上行驶39公里——纪录保持到2014年。1973年首次飞行后退役。",
+    "new": "Lunokhod 2是苏联NPO Lavochkin建造的行星漫游车。在月球上行驶39公里——纪录保持到2014年。任务于1973年结束。"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "old": "Pragyan 是印度 ISRO 建造的行星漫游车。首个月球南极漫游车；搭载于 Chandrayaan-3。在 2023 年首次飞行后退役。",
+    "new": "Pragyan 是印度 ISRO 建造的行星漫游车。首个月球南极漫游车；搭载于 Chandrayaan-3。自 2023 年起处于休眠状态。"
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "old": "Sojourner是美国NASA JPL建造的行星漫游车。首辆火星漫游车；Pathfinder任务。1997年首次飞行后退役。",
+    "new": "Sojourner是美国NASA JPL建造的行星漫游车。首辆火星漫游车；Pathfinder任务。任务于1997年结束。"
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "old": "Spirit（MER-A）是美国NASA JPL建造的行星漫游车。火星探测漫游车；运行6年。2004年首飞后退役。",
+    "new": "Spirit（MER-A）是美国NASA JPL建造的行星漫游车。火星探测漫游车；运行6年。2010年最后一次取得联系。"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "old": "玉兔是中国空间技术研究院在中国建造的行星漫游车。中国首辆月球车；嫦娥三号。2013年首次飞行后退役。",
+    "new": "玉兔是中国空间技术研究院在中国建造的行星漫游车。中国首辆月球车；嫦娥三号。任务于2016年结束。"
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "old": "祝融是中国空间技术研究院在中国建造的行星探测车。中国首辆火星探测车；天问一号。在2021年首次飞行后退役。",
+    "new": "祝融是中国空间技术研究院在中国建造的行星探测车。中国首辆火星探测车；天问一号。自2022年起处于休眠状态。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "old": "ATV（Automated Transfer Vehicle）是由Astrium / Airbus在欧洲（多国）建造的机器人货运航天器。它是ESA的旗舰国际空间站货运飞船，2008年至2015年共执行五次国际空间站飞行任务，运送货物、水、空气和推进剂，同时利用自身发动机为空间站提升轨道。",
+    "new": "ATV（Automated Transfer Vehicle）是由Astrium / Airbus在欧洲建造的机器人货运航天器。它是ESA的旗舰国际空间站货运飞船，2008年至2015年共执行五次国际空间站飞行任务，运送货物、水、空气和推进剂，同时利用自身发动机为空间站提升轨道。"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "old": "Mars Express是由EADS Astrium在欧洲制造的深空轨道器。ESA首个也是唯一的火星轨道器；欧洲首次行星际任务。自2003年以来一直在役。",
+    "new": "Mars Express是由EADS Astrium在欧洲制造的深空轨道器。ESA首个火星轨道器；欧洲首次行星际任务。自2003年以来一直在役。"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "old": "印度首台成功的月球着陆器（2023年8月），也是首个在月球南极附近着陆的航天器。此前两年，Vikram CY-2在同一区域坠毁——这是印度和ISRO需要的“救赎弧”。",
+    "new": "印度首台成功的月球着陆器（2023年8月），也是首个在月球南极附近着陆的航天器。此前四年，Vikram CY-2在同一区域坠毁——这是印度和ISRO需要的“救赎弧”。"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "old": "印度重型发射台——GSLV Mk III / LVM3，通向Chandrayaan-3、Mangalyaan，以及即将开始的Gaganyaan载人项目",
+    "new": "印度重型发射台——GSLV Mk III / LVM3，通向Chandrayaan-3，以及即将开始的Gaganyaan载人项目"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "old": "印度重型发射台——GSLV Mk III / LVM3，通向Chandrayaan-3、Mangalyaan，以及即将开始的Gaganyaan载人项目",
+    "new": "印度重型发射台——GSLV Mk III / LVM3，通向Chandrayaan-3，以及即将开始的Gaganyaan载人项目"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "old": "ESA首个也是唯一的火星轨道器；欧洲首次行星际任务",
+    "new": "ESA首个火星轨道器；欧洲首次行星际任务"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "old": "ESA首个也是唯一的火星轨道器；欧洲首次行星际任务",
+    "new": "ESA首个火星轨道器；欧洲首次行星际任务"
+  }
+]

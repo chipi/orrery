@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "gallery-counts.schema.json",
+  "title": "Gallery slot-count manifest (<id → number of 01..NN images>)",
+  "description": "Shared by belt-/earth-object-/iss-/mars-site-/moon-site-/planet-/small-body-/tiangong-galleries.json. Each key is an entity id, each value the number of numbered gallery slots the loaders enumerate. 0 is legal (entity has no gallery yet).",
+  "type": "object",
+  "minProperties": 1,
+  "propertyNames": {
+    "pattern": "^[a-z0-9][a-z0-9_-]*$"
+  },
+  "additionalProperties": {
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 20
+  }
+}

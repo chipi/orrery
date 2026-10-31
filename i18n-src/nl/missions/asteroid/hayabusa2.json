@@ -3,44 +3,44 @@
   "vehicle": "H-IIA 202",
   "payload": "609 kg droog, elektrische ionenaandrijving (4 μ10-thrusters) + chemisch bi-drijfgas + 1,6 m HGA. Lading aan boord — Small Carry-on Impactor (SCI, 2,5 kg holle lading), MASCOT-lander (10 kg, DLR/CNES), 3× MINERVA-II-rovers (~1 kg per stuk), monsterretourcapsule (16 kg, terugkeer met parachute).",
   "delta_v": "~2 km/s (cumulatief van de ionenmotor)",
-  "type": "MONSTERMONSTERRUGKEER + LANDERS · ACTIEF (uitgebreid)",
-  "first": "Tweede terugkeer van asteroïdemonster (Ryugu, 2020); eerste kunstmatige impactkrater op een asteroïde; eerste ondergrondse asteroïdemateriaal naar Aarde teruggebracht",
-  "description": "Vervolgmissie van JAXA op de oorspronkelijke Hayabusa. Hayabusa2 werd gelanceerd op 2014-12-03 en bereikte de koolstofrijke aardscheerder (162173) Ryugu op 2018-06-27, na een tocht van 3,5 jaar met een ionenmotor met lage stuwkracht en een zwaartekrachtsteun van de Aarde. Werkzaamheden aan het oppervlak in 2018–2019: twee touchdown-and-go-monsternames rond een experiment met de Small Carry-on Impactor (2019-04-05), die voor het tweede monster een krater van 14 m groef. Drie MINERVA-II-rovers maakten de eerste beelden van het oppervlak van een asteroïde; de MASCOT-lander van DLR/CNES werkte 17 uur. De monsterterugkeercapsule kwam op 2020-12-05 (UTC; geborgen op 2020-12-06 lokale tijd/JST) boven Woomera de atmosfeer in en leverde 5,4 g ongerept Ryugu-materiaal af — het eerste asteroïdemonster met ondergrondse gelaagdheid. Verlengde missie: scheervlucht langs 98943 Torifune (2001 CC21) in 2026-07; ontmoeting met de snel roterende (1998 KY26) gepland voor 2031-07.",
+  "type": "MONSTERTERUGKEER + LANDERS · ACTIEF (uitgebreid)",
+  "first": "Tweede asteroïdemonster naar de Aarde (Ryugu, 2020); eerste kunstmatige inslagkrater op een asteroïde; eerste ondergronds asteroïdemateriaal naar de Aarde",
+  "description": "Vervolgmissie van JAXA op de oorspronkelijke Hayabusa. Hayabusa2 werd gelanceerd op 2014-12-03 en bereikte de koolstofrijke aardscheerder (162173) Ryugu op 2018-06-27, na een tocht van 3,5 jaar met een ionenmotor met lage stuwkracht en een zwaartekrachtassist van de Aarde. Werkzaamheden aan het oppervlak in 2018–2019: twee touchdown-and-go-monsternames rond een experiment met de Small Carry-on Impactor (2019-04-05), die voor het tweede monster een krater van 14 m groef. Drie MINERVA-II-rovers maakten de eerste beelden van het oppervlak van een asteroïde; de MASCOT-lander van DLR/CNES werkte 17 uur. De monsterterugkeercapsule kwam op 2020-12-05 (UTC; geborgen op 2020-12-06 lokale tijd/JST) boven Woomera de atmosfeer in en leverde 5,4 g ongerept Ryugu-materiaal af — het eerste asteroïdemonster met ondergrondse gelaagdheid. Verlengde missie: scheervlucht langs 98943 Torifune (2001 CC21) in 2026-07; ontmoeting met de snel roterende (1998 KY26) gepland voor 2031-07.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "H-IIA 202 van Tanegashima begint de 3,5-jarige cruise naar asteroïde Ryugu.",
+      "note": "H-IIA 202 vanaf Tanegashima begint de reis van 3,5 jaar naar asteroïde Ryugu.",
       "type": "nominal"
     },
     {
       "met": 366,
-      "label": "AARDEVLIEGBY",
-      "note": "Earth gravity assist fasen de rendezvous-baan.",
+      "label": "AARDE-FLYBY",
+      "note": "Een zwaartekrachtassist bij de Aarde stemt de fasering van de rendez-vous-baan af.",
       "type": "nominal"
     },
     {
       "met": 1302,
       "label": "RYUGU AANKOMST",
-      "note": "Hoveren op 20 km — begin van 1,5-jarige proximity operations inclusief monsterophaling.",
+      "note": "Zweven op 20 km — begin van 1,5 jaar operaties in de nabijheid van de asteroïde, inclusief monsterverzameling.",
       "type": "nominal"
     },
     {
       "met": 1880,
       "label": "AARDETUGKEER",
-      "note": "Monstercapsule landen in Woomera, Australië met 5,4 g Ryugu materiaal.",
+      "note": "Monstercapsule landt in Woomera, Australië, met 5,4 g Ryugu-materiaal.",
       "type": "nominal"
     },
     {
       "met": 4250,
-      "label": "TORIFUNE VLIEGBY",
-      "note": "Uitgebreide-missie fly-by van 98943 Torifune (2001 CC21).",
+      "label": "TORIFUNE FLYBY",
+      "note": "Flyby van 98943 Torifune (2001 CC21) in de verlengde missie.",
       "type": "info"
     },
     {
       "met": 6092,
       "label": "RENDEZVOUS MET 1998 KY26",
-      "note": "Geplande rendezvous met snelroterende asteroïde (1998 KY26).",
+      "note": "Gepland rendez-vous met een snel roterende asteroïde (1998 KY26).",
       "type": "info"
     }
   ]

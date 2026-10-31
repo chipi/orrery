@@ -88,5 +88,10 @@
       "type": "prose",
       "md": "A lição mais profunda é sobre resiliência versus foco. A vontade nacional singular do Apollo era seu poder e sua fragilidade; Artemis troca foco por uma coalizão que nenhum orçamento único pode facilmente matar. É mais lento, mais complexo e mais difícil de agendar — e está apostando que resistência, não velocidade, é o que um retorno 'para ficar' realmente requer. Se essa aposta compensa é a história que a próxima década contará."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Lua — o destino",
+    "/fleet?focus=orion": "Frota — Orion, SLS e o equipamento lunar",
+    "/programs/apollo": "Apollo — o programa que dá nome ao Artemis e que ele supera"
+  }
 }

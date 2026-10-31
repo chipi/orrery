@@ -76,5 +76,9 @@
       "type": "prose",
       "md": "La lezione più profonda, ancora in formazione, riguarda il pericolo di ritirare una capacità prima che la sua sostituzione sia sicura. La SSI ha una data di fine fissa; i suoi successori commerciali non volano ancora. Scommettere che un mercato si materializzerà nei tempi previsti, con una scadenza rigida e un rivale già in orbita, è una scommessa le cui poste in gioco non sono altro che la presenza umana continua nell'orbita terrestre bassa stessa."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "SSI — la stazione che sono costruite per sostituire",
+    "/programs/spacex": "SpaceX — il trasporto di equipaggi e merci su cui faranno affidamento"
+  }
 }

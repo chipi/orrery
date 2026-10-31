@@ -28,5 +28,11 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Starlink is that scale changes the nature of a thing. A hundred satellites is a communications network; ten thousand is an alteration of the sky and a new commons to be governed. Quantity, past a threshold, becomes a qualitative change — and the megaconstellation crossed that threshold before anyone had agreed on the rules for what lies on the other side." },
     { "type": "prose", "md": "The deeper lesson is that infrastructure built faster than it can be governed delivers real good and real risk at once. Starlink genuinely connected the unconnected — and simultaneously concentrated critical capability in private hands, crowded a shared orbit, and streaked the astronomers' sky. The task it leaves is not to undo it but to catch up to it: to build the governance a technology this powerful should have had before it flew." }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starlink": "Fleet — the Starlink constellation",
+    "/programs/spacex": "SpaceX — the Falcon that launches it",
+    "/earth": "Earth — orbits and the crowding of low orbit",
+    "/earth?site=starlink": "The Starlink constellation"
+  }
 }

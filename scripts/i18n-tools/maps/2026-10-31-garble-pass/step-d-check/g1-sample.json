@@ -1,0 +1,802 @@
+[
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "observatories/rubin.json",
+    "at": "highlights.0",
+    "en": "The LSST Camera is described as the largest digital camera ever built.",
+    "tr": "Камеру LSST называют крупнейшей цифровой камерой из когда-либо построенных."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "story",
+    "en": "The boundary where the Sun's solar wind loses its battle against the interstellar medium — roughly 120 AU out. Inside lies the heliosphere, a bubble of charged solar particles streaming outward at hundreds of km/s. Beyond it: the cold, dense gas and cosmic rays of the galaxy itself. The Voyager probes are the only artefacts humanity has ever placed across this boundary — Voyager 1 crossed in 2012, Voyager 2 in 2018. Both still transmit data, faintly, from interstellar space.",
+    "tr": "Граница, где солнечный ветер Солнца проигрывает битву с межзвёздной средой — примерно в 120 а. е. от светила. Внутри находится гелиосфера — пузырь заряженных солнечных частиц, несущихся наружу со скоростью сотни км/с. За её пределами — холодный плотный газ и космические лучи самой галактики. Зонды Voyager — единственные артефакты человечества, когда-либо пересёкшие эту границу: Voyager 1 пересёк её в 2012 году, Voyager 2 — в 2018-м. Оба по-прежнему слабо передают данные из межзвёздного пространства."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "satellites/moon.json",
+    "at": "science_sections.0.why",
+    "en": "The Moon's orbit around Earth is the textbook two-body Keplerian system — every other moon-around-planet calculation generalises from here.",
+    "tr": "Орбита Луны вокруг Земли — хрестоматийная кеплеровская система двух тел: от неё обобщаются все прочие расчёты для спутников планет."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "earth-objects/hubble.json",
+    "at": "scale_fact",
+    "en": "Hubble orbits 547 km up — just above the ISS. Low Earth Orbit is crammed with infrastructure we've completely forgotten about.",
+    "tr": "Hubble обращается по орбите на высоте 547 км — чуть выше МКС. Низкая околоземная орбита забита инфраструктурой, о которой мы совсем забыли."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "satellites/triton.json",
+    "at": "science_sections.0.why",
+    "en": "Triton's 156.8° orbital inclination — retrograde, steeply tilted to Neptune's equator — is the smoking-gun for capture from the Kuiper Belt rather than formation with Neptune.",
+    "tr": "Наклонение орбиты Тритона 156,8° — ретроградное, круто наклонённое к экватору Нептуна — служит веским доказательством захвата из пояса Койпера, а не формирования вместе с Нептуном."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "museums/science-museum-london.json",
+    "at": "items.apollo-csm-block-ii",
+    "en": "Command module Charlie Brown, flown on Apollo 10 (1969)",
+    "tr": "Командный модуль Charlie Brown, летавший на Apollo 10 (1969)"
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "satellites/titan.json",
+    "at": "science_sections.1.why",
+    "en": "Titan has a dense N₂-CH₄ atmosphere — the only moon with one. Surface temperatures sit at 94 K, where methane and ethane exist as liquid lakes.",
+    "tr": "Титан имеет плотную атмосферу N₂-CH₄ — единственный спутник с такой атмосферой. Температуры поверхности составляют 94 K, где метан и этан существуют в виде жидких озёр."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.1.label",
+    "en": "Dawn — first dedicated asteroid orbiter (Vesta, USA)",
+    "tr": "Dawn — первый специализированный орбитальный аппарат у астероида (Веста, США)"
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "small-bodies/psyche.json",
+    "at": "science_sections.0.why",
+    "en": "16 Psyche may be the exposed nickel-iron core of a protoplanet that lost its mantle in the early belt's violent youth. NASA Psyche (launched 2023) arrives in 2029.",
+    "tr": "16 Psyche может быть обнажённым никель-железным ядром протопланеты, потерявшей мантию в бурную раннюю эпоху пояса. Аппарат NASA Psyche (запущен в 2023 году) прибудет в 2029 году."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "scale_fact",
+    "en": "The 63.4° inclination is no accident — it's the 'critical inclination' where Earth's J2 perturbation locks the apogee in place over the chosen hemisphere.",
+    "tr": "Наклонение 63,4° — не случайность, это «критическое наклонение», при котором возмущение J2 Земли фиксирует апогей над выбранным полушарием."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "satellites/moon.json",
+    "at": "library_labels.moon-apollo",
+    "en": "NASA Apollo program — landing-mission archive",
+    "tr": "Программа NASA Apollo — архив посадочных миссий"
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "observatories/green-bank.json",
+    "at": "description",
+    "en": "A fully steerable radio telescope with a 100-metre-diameter collecting area, operated by the Green Bank Observatory. It works from meter to millimeter wavelengths (0.1-116 GHz).",
+    "tr": "Полноповоротный радиотелескоп с собирающей поверхностью диаметром 100 метров, которым управляет обсерватория Грин-Бэнк. Он работает от метровых до миллиметровых волн (0,1–116 ГГц)."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "story",
+    "en": "The closest band to the lunar surface — typically 50 to 100 km up. Spacecraft here can image the surface at sub-metre resolution but pay a steep price: the Moon's mass distribution is wildly uneven (giant subsurface mascons under the maria), so a low orbit perturbs aggressively. Most LLO missions need active station-keeping or a carefully chosen 'frozen' inclination that resists the drift. LRO has flown here continuously since 2009 — the longest-lived lunar mission.",
+    "tr": "Ближайшая к лунной поверхности область — обычно от 50 до 100 км в высоту. Космические аппараты здесь могут снимать поверхность с разрешением менее метра, но платят за это высокую цену: распределение массы Луны крайне неравномерно (гигантские подповерхностные масконы под морями), поэтому низкая орбита возмущается очень сильно. Большинство миссий на LLO требуют активного поддержания орбиты или тщательно выбранного «замороженного» наклонения, которое сопротивляется дрейфу. LRO находится здесь непрерывно с 2009 года — самая долгоживущая лунная миссия."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "mission_visits.0",
+    "en": "Voyager 2 — USA, 1986 (only spacecraft visit; southern-hemisphere flyby)",
+    "tr": "Voyager 2 — США, 1986 (единственный визит космического аппарата; пролёт над южным полушарием)"
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "en": "Asteroid · Moonlet · Kinetic-impact target",
+    "tr": "Астероид · Малый спутник · Мишень кинетического удара"
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.1.why",
+    "en": "Callisto's 0.007 eccentricity is small and unforced — without resonant pumping, no tidal flexing, no subsurface ocean (probably).",
+    "tr": "Эксцентриситет Каллисто, равный 0,007, мал и не вынужден — без резонансной накачки нет приливных деформаций и (вероятно) нет подповерхностного океана."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "comparison",
+    "en": "All four terrestrials would fit inside Jupiter's Great Red Spot. The four together hold less than 0.5% of the system's planetary mass.",
+    "tr": "Все четыре планеты земной группы поместились бы внутри Большого Красного Пятна Юпитера. Все четыре вместе содержат менее 0,5% планетарной массы системы."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.1",
+    "en": "Wikimedia Commons — China Manned Space Agency logo",
+    "tr": "Wikimedia Commons — логотип China Manned Space Agency"
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "docking",
+    "en": "Joining two spacecraft mechanically so that crew or cargo can pass between them.",
+    "tr": "Механическое соединение двух космических аппаратов, позволяющее экипажу или грузам переходить из одного в другой."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "delta-v",
+    "en": "Change in velocity, written Δv: how much a spacecraft can change its motion, the currency of every mission plan, in km/s.",
+    "tr": "Изменение скорости, обозначаемое Δv: насколько космический аппарат может изменить своё движение, «валюта» любого плана миссии, в км/с."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "satellites/oberon.json",
+    "at": "science_sections.0.why",
+    "en": "Oberon is the outermost of the five major Uranian moons (583,500 km orbit) — its surface is the most cratered, suggesting it has the oldest exposed surface in the Uranus system.",
+    "tr": "Оберон — самый внешний из пяти крупных спутников Урана (орбита 583 500 км) — его поверхность наиболее кратеризирована, что указывает на самую древнюю открытую поверхность в системе Урана."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "orbit-regimes/HEO.json",
+    "at": "firsts.0.label",
+    "en": "Molniya 1-01 — first highly elliptical comsat (USSR)",
+    "tr": "Молния-1-01 — первый спутник связи на высокоэллиптической орбите (СССР)"
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "observatories/la-palma.json",
+    "at": "highlights.0",
+    "en": "The Gran Telescopio Canarias had first light on 13 July 2007 and was inaugurated on 24 July 2009 by King Juan Carlos I.",
+    "tr": "Большой Канарский телескоп получил первый свет 13 июля 2007 года, а 24 июля 2009 года его открыл король Хуан Карлос I."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "satellites/moon.json",
+    "at": "science_sections.1.why",
+    "en": "The Moon's 0.055 eccentricity is small but matters — at perigee the disc looks 12 % larger and brighter than at apogee ('supermoon').",
+    "tr": "Эксцентриситет Луны 0,055 невелик, но значим — в перигее диск выглядит на 12 % больше и ярче, чем в апогее («суперлуние»)."
+  },
+  {
+    "loc": "ru",
+    "tree": "catalogue",
+    "rel": "iss-visitors/starliner.json",
+    "at": "description",
+    "en": "Boeing's CST-100 — Atlas V launch, parachute landing on US soil instead of ocean splashdown.",
+    "tr": "CST-100 от Boeing — пуск Atlas V, парашютная посадка на американскую землю вместо приводнения в океан."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "observatories/rubin.json",
+    "at": "description",
+    "en": "A US NSF-DOE facility on Cerro Pachón with the 8.4 m Simonyi Survey Telescope and the 3.2-gigapixel LSST Camera. It images the whole southern sky every few nights.",
+    "tr": "منشأة أمريكية مشتركة بين NSF وDOE على سيرو باتشون، فيها تلسكوب سيموني للمسح بقطر 8.4 م وكاميرا LSST بدقة 3.2 غيغابكسل. تصوّر السماء الجنوبية كلها كل بضع ليالٍ."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "comparison",
+    "en": "Jupiter is 318× more massive than Earth. The four giants together would form a system 25× the diameter of the inner planets combined.",
+    "tr": "المشتري أكثر كتلة من الأرض بمقدار 318×. العمالقة الأربعة معاً ستشكل نظاماً يبلغ قطره 25× قطر الكواكب الداخلية مجتمعة."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "surface_composition",
+    "en": "Water-ice + silicate rock; surface a patchwork of ancient cratered terrain crossed by huge coronae — concentric ridges and grooves that include Verona Rupes, the tallest known cliff in the solar system (~20 km vertical drop).",
+    "tr": "جليد مائي + صخور سيليكاتية؛ السطح عبارة عن رقعة من التضاريس المفوهة القديمة تقطعها أكاليل ضخمة متحدة المركز — نتوءات وأخاديد متحدة المركز تتضمن جرف فيرونا، أعلى جرف معروف في المجموعة الشمسية (انحدار عمودي ~20 km)."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "earth-objects/gps.json",
+    "at": "scale_fact",
+    "en": "GPS is 50× higher than the ISS. You've never looked up and seen it — but it knows exactly where you are.",
+    "tr": "GPS أعلى من محطة الفضاء الدولية بـ50×. لم تنظر إلى السماء يومًا لتراه — لكنه يعرف مكانك بدقة."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "satellites/triton.json",
+    "at": "surface_composition",
+    "en": "Frozen nitrogen + water ice + carbon dioxide ice; surface covered with cantaloupe-textured terrain unique in the solar system, and active nitrogen cryogeysers venting dark plumes 8 km into a thin nitrogen atmosphere.",
+    "tr": "نيتروجين متجمد + جليد مائي + جليد ثاني أكسيد الكربون؛ السطح مغطى بتضاريس ذات نسيج الشمام فريدة في المجموعة الشمسية، وسخانات نيتروجين بركانية جليدية نشطة تقذف أعمدة داكنة لمسافة 8 كم في غلاف نيتروجيني رقيق."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "items.hayabusa",
+    "en": "Hayabusa's return capsule, which brought samples of asteroid Itokawa to Earth (2010)",
+    "tr": "كبسولة العودة في Hayabusa، التي أعادت إلى الأرض عيّنات من الكويكب Itokawa (2010)"
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.3",
+    "en": "Dragonfly — USA, launch 2028 (rotorcraft lander)",
+    "tr": "Dragonfly — الولايات المتحدة، الإطلاق 2028 (هابط بأجنحة دوارة)"
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "story",
+    "en": "A ring of rocky leftovers between Mars and Jupiter — 2.2 to 3.2 AU. Hundreds of thousands of bodies catalogued; total estimated mass less than 4% of the Moon. Not the densely-packed asteroid field of science fiction: typical spacing between objects is about 1 million kilometres. The belt never accreted into a planet because Jupiter's gravity kept stirring the orbits, preventing collisions from sticking. Three Kirkwood gaps mark resonances with Jupiter where asteroids get cleared out.",
+    "tr": "حلقة من البقايا الصخرية بين المريخ والمشتري — من 2.2 إلى 3.2 وحدة فلكية. فُهرست مئات الآلاف من الأجرام، ويُقدَّر إجمالي كتلتها بأقل من 4% من كتلة القمر. وهو ليس حقل الكويكبات المزدحم كما في الخيال العلمي: فالمسافة النموذجية بين الأجرام نحو مليون كيلومتر. لم يتجمّع الحزام قط ليكوّن كوكبًا لأن جاذبية المشتري ظلّت تُحرّك المدارات وتمنع الاصطدامات من أن تُفضي إلى الالتحام. وتدل ثلاث فجوات كيركوود على رنينات مع المشتري تُخلى عندها المنطقة من الكويكبات."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.0.why",
+    "en": "Pluto's 0.249 eccentricity dips its orbit inside Neptune's for 20 years per 248-year cycle.",
+    "tr": "الانحراف المركزي لبلوتو البالغ 0.249 يجعل مداره ينخفض داخل مدار نبتون لمدة 20 سنة في كل دورة مدتها 248 سنة."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "scale_fact",
+    "en": "The 63.4° inclination is no accident — it's the 'critical inclination' where Earth's J2 perturbation locks the apogee in place over the chosen hemisphere.",
+    "tr": "ميل 63.4° ليس صدفة — إنه \"الميل الحرج\" حيث يؤمّن اضطراب J2 للأرض موضع الأوج فوق نصف الكرة المختار."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "satellites/moon.json",
+    "at": "description",
+    "en": "Earth's only natural satellite and the only world other than Earth that humans have walked on. Its 1:1 tidal lock keeps the same hemisphere facing Earth at all times — the near side dominated by lava-flooded mare basins, the far side an ancient highland-cratered terrain crowned by the South Pole–Aitken basin, the largest impact structure in the solar system (~2,500 km wide, ~13 km deep). The Moon's slow recession from Earth (~3.8 cm/year) is gradually lengthening Earth's day; in the distant past it appeared nearly three times its current angular size in the sky.",
+    "tr": "القمر هو التابع الطبيعي الوحيد للأرض، والعالم الوحيد غير الأرض الذي مشى عليه البشر. ويُبقي قفله المدّي بنسبة 1:1 النصف نفسه من سطحه مواجهًا للأرض دائمًا — فالجانب القريب تهيمن عليه أحواض البحار القمرية المغمورة بالحمم، أما الجانب البعيد فتضاريس مرتفعات قديمة محفورة بالفوهات يتوّجها حوض القطب الجنوبي–إيتكن، أكبر بنية اصطدامية في المجموعة الشمسية (~2,500 كم عرضًا، ~13 كم عمقًا). ويؤدي ابتعاد القمر البطيء عن الأرض (~3.8 سم/سنة) إلى إطالة يوم الأرض تدريجيًا؛ وفي الماضي البعيد بدا في السماء بحجم زاوي يقارب ثلاثة أضعاف حجمه الحالي."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.0",
+    "en": "Its 70 m antenna DSS-14, the 'Mars' dish, was upgraded from 64 m in 1988 to support Voyager and keeps contact with Voyager 1.",
+    "tr": "هوائيه DSS-14 بقطر 70 م، المعروف بطبق \"المريخ\"، رُفع قطره من 64 م عام 1988 لدعم Voyager، ولا يزال على اتصال بVoyager 1."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "residents.0.label",
+    "en": "Queqiao — Chang'e 4 farside relay (2018)",
+    "tr": "Queqiao — مرحّل الوجه البعيد لـ Chang'e 4 (2018)"
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "satellites/io.json",
+    "at": "science_sections.0.why",
+    "en": "Io / Europa / Ganymede are locked in a 4:2:1 Laplace resonance — for every 4 Io orbits, Europa makes 2 and Ganymede 1. The resonance keeps Io's orbit non-circular.",
+    "tr": "آيو / أوروبا / غانيميد محصورة في رنين لابلاس 4:2:1 — فلكل 4 مدارات آيو، تكمل أوروبا 2 وغانيميد 1. يحافظ الرنين على مدار آيو غير دائري."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "planets/didymos.json",
+    "at": "bio",
+    "en": "S-type near-Earth binary discovered 1996, with the 160-m moonlet Dimorphos in an 11.9-hour orbit at 1.2-km separation. Classified as a chondritic body — LL-class silicate composition, common in the inner main belt. ESA's Hera mission (launched 2024) will arrive 2026 to survey the post-impact system in detail.",
+    "tr": "ثنائي قريب من الأرض من النوع S اكتُشف عام 1996، يضم القمير ديمورفوس بقطر 160 م في مدار مدته 11.9 ساعة على بُعد فصل 1.2 كم. مصنف كجسم كندري — تركيبة سيليكاتية من الفئة LL، وهي شائعة في الحزام الرئيسي الداخلي. ستصل بعثة Hera التابعة لـ ESA (المطلقة عام 2024) عام 2026 لمسح النظام بعد الاصطدام بالتفصيل."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "satellites/callisto.json",
+    "at": "surface_composition",
+    "en": "Roughly 40% water ice + 60% silicate rock; surface the most heavily-cratered in the solar system — almost saturated, untouched by resurfacing. Notable feature: the 3,800 km Valhalla multi-ring impact basin.",
+    "tr": "يتكوّن تقريبًا من 40% جليد مائي + 60% صخور سيليكاتية؛ ويُعدّ سطحه الأكثر تعرّضًا للحُفر الاصطدامية في المجموعة الشمسية — مُشبَع تقريبًا، ولم يطرأ عليه أي تجديد سطحي. ميزة بارزة: حوض الارتطام متعدد الحلقات Valhalla الذي يبلغ قُطره 3,800 كم."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.1.label",
+    "en": "Solar Orbiter — first close-Sun imaging (ESA)",
+    "tr": "Solar Orbiter — أول تصوير قريب للشمس (ESA)"
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.wall",
+    "en": "China's crewed programme does use mission patches — every Shenzhou crew has one — but the CMS emblem and the Shenzhou insignia are held under copyright by the China Manned Space Agency, not released under a free licence. Wikimedia Commons carries none of them; the only free-licensed images returned for these searches are unrelated NASA photographs.",
+    "tr": "يستخدم برنامج الفضاء الصيني المأهول شارات المهمات فعلاً — كل طاقم Shenzhou لديه واحدة — لكن شعار CMS وشارة Shenzhou محفوظان بحقوق الطبع والنشر لدى وكالة الفضاء الصينية المأهولة، ولم يُطلقا بترخيص حر. لا يضم موقع Wikimedia Commons أيًا منها؛ والصور الوحيدة ذات الترخيص الحر التي ظهرت في عمليات البحث هذه هي صور NASA لا صلة لها بالموضوع."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "inclination",
+    "en": "The tilt of an orbit's plane against a reference plane, such as Earth's equator or the ecliptic, in degrees.",
+    "tr": "زاوية ميل مستوى المدار عن مستوى مرجعي، مثل مستوى خط استواء الأرض أو مستوى دائرة البروج، بالدرجات."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "gravity assist",
+    "en": "Using a close pass of a planet to change a spacecraft's speed and direction without spending propellant.",
+    "tr": "استخدام المرور القريب من كوكب لتغيير سرعة المركبة الفضائية واتجاهها دون إنفاق وقود دافع."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "satellites/oberon.json",
+    "at": "description",
+    "en": "The outermost of Uranus's major moons. Oberon's surface is heavily cratered and reddish-tinged — older than Titania's, with no clear evidence of resurfacing since the late heavy bombardment ~4 Gyr ago. Several large craters have notably dark floors; spectra are consistent with hydrocarbon residues left by space-weathered organics. A 6 km mountain — possibly the central peak of a large impact basin — rises near the limb in Voyager 2's best image.",
+    "tr": "القمر الأبعد من بين أقمار أورانوس الرئيسية. سطح أوبيرون مليء بالفوهات بكثافة ومُصبَّغ بلون ضارب إلى الحمرة — أقدم من سطح تيتانيا، دون أدلة واضحة على إعادة تشكيل السطح منذ القصف الثقيل المتأخر قبل ~4 مليار سنة. عدة فوهات كبيرة لها أرضيات داكنة بشكل ملحوظ؛ الأطياف متسقة مع بقايا هيدروكربونية خلفتها المواد العضوية المُتجوِّية فضائياً. يرتفع جبل بارتفاع 6 كم — ربما يكون القمة المركزية لحوض ارتطام كبير — بالقرب من الحافة في أفضل صورة التقطتها Voyager 2."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "firsts.0.label",
+    "en": "Syncom 2 — first geosynchronous satellite (USA)",
+    "tr": "Syncom 2 — أول قمر اصطناعي متزامن جغرافياً (الولايات المتحدة)"
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.2",
+    "en": "It was influential in early detections of quasars, astrophysical masers and Einstein rings.",
+    "tr": "كان له دور مؤثر في الاكتشافات المبكرة للكوازارات والميزرات الفيزيائية الفلكية وحلقات أينشتاين."
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "mission_visits.0",
+    "en": "Voyager 2 — USA, 1986 (only spacecraft visit; southern-hemisphere flyby)",
+    "tr": "Voyager 2 — الولايات المتحدة، 1986 (الزيارة الوحيدة لمركبة فضائية؛ تحليق قريب فوق نصف الكرة الجنوبي)"
+  },
+  {
+    "loc": "ar",
+    "tree": "catalogue",
+    "rel": "iss-visitors/progress_ms.json",
+    "at": "function_detail",
+    "en": "Cargo and propellant resupply; reboost burns from the aft Zvezda port to maintain ISS orbit altitude.",
+    "tr": "إعادة إمداد بالشحنات والوقود الدافع؛ وعمليات إشعال لإعادة رفع المدار تُنفَّذ من منفذ Zvezda الخلفي للحفاظ على ارتفاع مدار محطة الفضاء الدولية."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "observatories/rubin.json",
+    "at": "highlights.1",
+    "en": "Its ten-year survey is expected to catalogue millions of supernovae and more than five million asteroids.",
+    "tr": "Очекује се да ће његов десетогодишњи преглед каталогизовати милионе супернова и више од пет милиона астероида."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.2.label",
+    "en": "Voyager 2 — only Neptune flyby ever (USA)",
+    "tr": "Voyager 2 — једини прелет поред Нептуна икада (САД)"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "satellites/io.json",
+    "at": "science_sections.1.why",
+    "en": "Io's tidal heating (which makes it the most volcanically active world in the solar system) comes from forced eccentricity — pumped by Europa and Ganymede through the Laplace resonance.",
+    "tr": "Плимно загревање Ио (због којег је то најактивнији вулкански свет у Сунчевом систему) потиче од принудног ексцентрицитета — који Европа и Ганимед одржавају кроз Лапласову резонанцију."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "earth-objects/inmarsat.json",
+    "at": "description",
+    "en": "14+ geostationary satellites providing maritime, aviation, and remote-area voice + data comms. Backbone of GMDSS — the Global Maritime Distress and Safety System every ocean-going vessel depends on. Acquired by Viasat in 2023.",
+    "tr": "Више од 14 геостационарних сателита који обезбеђују гласовне и податковне комуникације за поморски и ваздушни саобраћај и удаљена подручја. Окосница система GMDSS — Глобалног поморског система за случај опасности и безбедност, на који се ослања сваки прекоокеански брод. Преузела је компанија Viasat 2023. године."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "satellites/titania.json",
+    "at": "mission_visits.0",
+    "en": "Voyager 2 — USA, 1986 (southern-hemisphere flyby)",
+    "tr": "Voyager 2 — САД, 1986. (прелет јужне хемисфере)"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "museums/science-museum-london.json",
+    "at": "items.soyuz-tma",
+    "en": "Soyuz TMA-19M descent module, flown by Tim Peake (2015–2016)",
+    "tr": "Спусни модул Soyuz TMA-19M, којим је летео Тим Пик (2015–2016)"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.1",
+    "en": "Voyager 1 — USA, 1980 (atmospheric profile)",
+    "tr": "Voyager 1 — САД, 1980. (профил атмосфере)"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.0.label",
+    "en": "Ceres — first asteroid discovered (Piazzi, Italy)",
+    "tr": "Церера — први откривени астероид (Пјаци, Италија)"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.0.why",
+    "en": "Pluto's 0.249 eccentricity dips its orbit inside Neptune's for 20 years per 248-year cycle.",
+    "tr": "Због ексцентричности од 0,249 Плутонова орбита залази унутар Нептунове на 20 година у сваком циклусу од 248 година."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "scale_fact",
+    "en": "The 63.4° inclination is no accident — it's the 'critical inclination' where Earth's J2 perturbation locks the apogee in place over the chosen hemisphere.",
+    "tr": "Инклинација од 63,4° није случајност — то је „критична инклинација“ при којој J2 пертурбација Земље фиксира апогеј изнад изабране хемисфере."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "library_labels.miranda-voyager2",
+    "en": "NASA Voyager 2 — only Uranian-system flyby (1986)",
+    "tr": "NASA Voyager 2 — једини прелет система Урана (1986)"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.0",
+    "en": "Frank Drake's Project Ozma, the first modern search for signals from other civilisations, was carried out at Green Bank in 1960 with an earlier 26-metre dish.",
+    "tr": "Пројекат „Озма“ Френка Дрејка, прва савремена потрага за сигналима других цивилизација, спроведен је у Грин Банку 1960. раније изграђеним тањиром од 26 метара."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "firsts.0.label",
+    "en": "Luna 10 — first artificial lunar orbiter (USSR)",
+    "tr": "Luna 10 — први вештачки месечев орбитер (СССР)"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "satellites/io.json",
+    "at": "mission_visits.1",
+    "en": "Galileo orbiter — USA, 1995–2003 (multiple close flybys)",
+    "tr": "Galileo орбитер — САД, 1995–2003. (вишеструки блиски прелети)"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "planets/arrokoth.json",
+    "at": "fact",
+    "en": "The most distant body ever visited by a spacecraft — 4.1 billion km from the Sun when New Horizons flew within 3,500 km on New Year's Day 2019. Its two lobes (Wenu and Weeyo) gently merged at the dawn of the solar system and have stayed merged for 4.5 billion years at ~40 K.",
+    "tr": "Најудаљеније тело које је свемирска летелица икада посетила — 4,1 милијарде km од Сунца када је New Horizons на Нову годину 2019. прелетела на удаљености од 3.500 km. Његова два режња (Wenu и Weeyo) нежно су се спојила у зору Сунчевог система и остала спојена 4,5 милијарди година на ~40 K."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "satellites/callisto.json",
+    "at": "mission_visits.1",
+    "en": "Galileo orbiter — USA, 1995–2003 (multiple flybys; ocean candidate)",
+    "tr": "Galileo орбитер — САД, 1995–2003 (више прелета; кандидат за океан)"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "museums/baikonur-cosmodrome-museum.json",
+    "at": "description",
+    "en": "The museum of the Baikonur Cosmodrome, at Site 2 near Gagarin's Start, the pad from which Sputnik and Vostok 1 were launched.",
+    "tr": "Музеј космодрома Бајконур на локацији 2, поред Гагаринове стартне рампе, са које су лансирани Sputnik и Vostok 1."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.rejected.1",
+    "en": "Modern fan reproductions (e.g. a CC-BY Buran emblem by a game artist) — freely licensed but not authentic insignia",
+    "tr": "Савремене репродукције које су направили обожаваоци (нпр. емблем Buran под лиценцом CC-BY, чији је аутор уметник за видео-игре) — слободно лиценциране, али не и аутентични амблеми"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "inclination",
+    "en": "The tilt of an orbit's plane against a reference plane, such as Earth's equator or the ecliptic, in degrees.",
+    "tr": "Нагиб равни орбите у односу на референтну раван, као што је раван Земљиног екватора или еклиптика, у степенима."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "docking",
+    "en": "Joining two spacecraft mechanically so that crew or cargo can pass between them.",
+    "tr": "Механичко повезивање две свемирске летелице тако да посада или терет могу да прелазе из једне у другу."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.4",
+    "en": "Chandrayaan-3 — India, 2023 (first south-pole landing)",
+    "tr": "Chandrayaan-3 — Индија, 2023 (прво слетање код јужног пола)"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "story",
+    "en": "Exactly 35,786 km up — the altitude where an orbit takes one sidereal day (23 h 56 min), so the satellite hangs motionless over a fixed longitude on the equator. Weather satellites stare at the same continent forever; communications satellites paint a dish-sized footprint and never move. There are no parking spaces, only parking slots — each operator gets a longitude band assigned by the ITU.",
+    "tr": "Тачно 35.786 km изнад Земље — висина на којој један обилазак орбите траје један звездани дан (23 ч 56 мин), па сателит непомично виси изнад исте географске дужине на екватору. Метеоролошки сателити заувек гледају исти континент; комуникациони сателити покривају подручје величине антене и никад се не крећу. Нема паркинг места, већ само паркинг позиција — сваки оператор добија од ITU додељену траку географске дужине."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "observatories/la-palma.json",
+    "at": "highlights.0",
+    "en": "The Gran Telescopio Canarias had first light on 13 July 2007 and was inaugurated on 24 July 2009 by King Juan Carlos I.",
+    "tr": "Велики канарски телескоп добио је прво светло 13. јула 2007, а свечано га је отворио краљ Хуан Карлос I 24. јула 2009."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "description",
+    "en": "The innermost and smallest of Uranus's five major moons — and visually the most extreme. Voyager 2's flyby imagery revealed a surface that looks like it was assembled from mismatched pieces: enormous cliffs, fractured plateaus, and concentric coronae jutting from heavily-cratered older terrain. The leading hypothesis is that Miranda was disrupted by an impact at least once, with the fragments reassembling under their own gravity. Verona Rupes drops ~20 km — under Miranda's low gravity, a falling object would take roughly 12 minutes to reach the bottom.",
+    "tr": "Најунутрашњи и најмањи од пет великих Уранових месеца — и визуелно најекстремнији. Снимци са прелета летелице Voyager 2 открили су површину која изгледа као да је састављена од парчади која не одговарају једно другом: огромне литице, испуцала висораван и концентричне короне које вире из јако кратерисаног старијег терена. Водећа хипотеза је да је Миранда најмање једном била разорена ударом, а да су се њени фрагменти потом поново спојили под сопственом гравитацијом. Литица Верона пада ~20 km — при Мирандиној слабој гравитацији, предмету који пада било би потребно отприлике 12 минута да стигне до дна."
+  },
+  {
+    "loc": "sr-Cyrl",
+    "tree": "catalogue",
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "description",
+    "en": "Russia's evergreen 3-seat crew taxi—2.5-day rendezvous from Baikonur and a parachute landing on the Kazakh steppe.",
+    "tr": "Вечити руски такси за превоз посаде са 3 седишта — сусрет у орбити 2,5 дана након лансирања са Бајконура и слетање падобраном на казахстанској степи."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.subtitle",
+    "en": "July 14, 2023 — LVM3 from Satish Dhawan Space Centre",
+    "tr": "14 يوليو 2023 — الصاروخ LVM3 من مركز ستيش دون للفضاء"
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.0.subtitle",
+    "en": "Soviet E-8-5M lander — improved sample-return rig",
+    "tr": "مركبة الهبوط السوفيتية E-8-5M — منظومة محسّنة لإعادة العيّنات"
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/change4.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Chang'e 4 lander + Yutu-2 rover during pre-launch integration in Beijing.",
+    "tr": "مركبة الهبوط Chang'e 4 + العربة الجوالة Yutu-2 أثناء التجميع قبل الإطلاق في بكين."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/luna9.json",
+    "at": "intro",
+    "en": "Luna 9 touched down in Oceanus Procellarum on February 3, 1966 — the first soft landing on another world. The 99 kg spherical capsule survived a 22 km/h impact by deploying inflatable cushions, then unfolded petals to right itself and transmitted the first photographs from the lunar surface. Operated for 3 days before battery exhaustion.",
+    "tr": "هبطت Luna 9 في محيط العواصف في 3 فبراير 1966، في أول هبوط ناعم على عالم آخر. نجت الكبسولة الكروية البالغة كتلتها 99 كغ من اصطدام بسرعة 22 كم/س بفضل وسائد قابلة للنفخ، ثم فتحت بتلاتها لتعدّل وضعها، وأرسلت أولى الصور الفوتوغرافية من سطح القمر. وعملت ثلاثة أيام إلى أن نفدت بطارياتها."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "mars-sites/insight.json",
+    "at": "capability",
+    "en": "First seismic exploration of another planet's interior — established Mars's core size and crustal thickness.",
+    "tr": "أول استكشاف زلزالي لداخل كوكب آخر — حدد حجم نواة المريخ وسمك قشرته."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.0.subtitle",
+    "en": "Solar-powered rover, twin of Opportunity",
+    "tr": "مركبة جوّالة تعمل بالطاقة الشمسية، توأم Opportunity"
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.1.images.0.caption",
+    "en": "Liftoff at 13:32 UTC, July 16 1969 — TLI burn 2h 44m later sent Apollo 11 toward the Moon at 11 km/s.",
+    "tr": "الإقلاع عند الساعة 13:32 بالتوقيت العالمي المنسّق، 16 يوليو 1969 — وبعد ساعتين و44 دقيقة دفع إشعال TLI المركبة Apollo 11 نحو القمر بسرعة 11 كم/ث."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "intro",
+    "en": "Chandrayaan-3 landed near the lunar south pole on August 23, 2023 — India's first soft landing on the Moon and the closest landing to the south pole by any nation. The Vikram lander deployed the Pragyan rover, which drove ~100 m across 14 days searching for water ice in permanently shadowed terrain. India became the fourth nation to soft-land on the Moon, after USSR, USA, and China.",
+    "tr": "هبطت المركبة Chandrayaan-3 قرب القطب الجنوبي للقمر في 23 أغسطس 2023، في أول هبوط هادئ للهند على سطح القمر، وهو أقرب هبوط إلى القطب الجنوبي تنفّذه أي دولة. وقد أنزلت المركبة الهابطة Vikram المركبة الجوّالة Pragyan، التي قطعت نحو 100 م على مدى 14 يومًا بحثًا عن جليد الماء في تضاريس تقع في ظلٍّ دائم. وبذلك أصبحت الهند رابع دولة تهبط هبوطًا هادئًا على القمر، بعد الاتحاد السوفييتي والولايات المتحدة والصين."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "moon-sites/luna17.json",
+    "at": "fact",
+    "en": "The first remote-controlled rover to operate on another world. Drove 10.5 km over 322 days, photographing over 20,000 images. Lost to history until 2010, when the Lunar Reconnaissance Orbiter spotted it from orbit — still sitting exactly where it stopped.",
+    "tr": "أول مركبة جوّالة يتم التحكّم بها عن بُعد تعمل على عالم آخر. قطعت 10.5 كم على مدى 322 يوماً، وصوّرت أكثر من 20,000 صورة. ظلّت في طيّ النسيان حتى عام 2010، عندما رصدتها مركبة Lunar Reconnaissance Orbiter من المدار — ولا تزال جالسة بالضبط حيث توقّفت."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.2.images.2.caption",
+    "en": "First view of the Martian surface, captured minutes after touchdown by Camera 2.",
+    "tr": "أول منظر لسطح المريخ، التقطته الكاميرا 2 بعد دقائق من الهبوط."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/change5.json",
+    "at": "chapters.1.subtitle",
+    "en": "November 23, 2020 — Long March 5 from Wenchang",
+    "tr": "23 نوفمبر 2020 — صاروخ Long March 5 من وينتشانغ"
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.0.caption",
+    "en": "Buzz Aldrin descending the LM ladder, photographed by Armstrong. \"Magnificent desolation\" — Aldrin's first words on the surface.",
+    "tr": "بز ألدرن ينزل سلّم المركبة القمرية، بعدسة آرمسترونغ. «عزلة مهيبة» — أولى كلمات ألدرن على السطح."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "mars-sites/tianwen1-orbiter.json",
+    "at": "fact",
+    "en": "Orbital component of China's first Mars mission. Acted as relay for the Zhurong rover; conducts global imaging, subsurface radar, and magnetic-field mapping. Continues to operate after Zhurong's 2022 communications loss.",
+    "tr": "المكوّن المداري لأول مهمة صينية إلى المريخ. عمل كمحطة ترحيل لعربة Zhurong الجوالة؛ ويجري تصويرًا شاملًا ورصدًا راداريًا تحت السطح ورسمًا لخرائط المجال المغناطيسي. وما زال يعمل بعد فقدان الاتصال بـ Zhurong في عام 2022."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.2.caption",
+    "en": "First Ingenuity flight, April 19 2021 — a 3-second hover at 3 m altitude. The Wright Brothers' Flyer carried a swatch of fabric on the helicopter for this exact moment.",
+    "tr": "أول رحلة لـ Ingenuity في 19 أبريل 2021 — تحليق ثابت لمدة 3 ثوانٍ على ارتفاع 3 أمتار. حملت المروحية قطعة صغيرة من قماش طائرة Flyer للأخوين رايت من أجل هذه اللحظة بالذات."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/change4.json",
+    "at": "chapters.1.images.0.caption",
+    "en": "Yutu-2 rover photographed by Chang'e 4 lander — first wheels on the far side of the Moon.",
+    "tr": "العربة الجوالة Yutu-2 كما صوّرتها مركبة الهبوط Chang'e 4 — أولى العجلات على الجانب البعيد من القمر."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "en": "Legacy Pan, sols 5084-5111 (May-June 2018) — Opportunity's final 360° panorama before the dust storm. Perseverance Valley descends into Endeavour Crater.",
+    "tr": "Legacy Pan، الأيام المريخية 5084-5111 (مايو-يونيو 2018) — آخر بانوراما بزاوية 360° التقطتها Opportunity قبل العاصفة الغبارية. ينحدر Perseverance Valley نحو فوهة إنديفور."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "moon-sites/lunar-prospector.json",
+    "at": "fact",
+    "en": "Direct neutron-spectrometer detection of hydrogen at both lunar poles — strong evidence for water ice in permanently-shadowed crater floors. Deliberately impacted into Shoemaker crater at end of mission, hoping the impact ejecta would confirm water; Earth-based observers detected nothing definitive (a follow-up only delivered by LCROSS in 2009).",
+    "tr": "رصد مباشر للهيدروجين بمطياف النيوترونات عند القطبين القمريين — دليل قوي على وجود جليد مائي في أرضيات الفوهات الدائمة الظل. اصطدمت المركبة عمداً بفوهة شوميكر في نهاية المهمة، على أمل أن تؤكد المقذوفات وجود الماء؛ ولم يرصد المراقبون من الأرض شيئاً حاسماً (ولم تتحقق المتابعة إلا بواسطة LCROSS في 2009)."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Luna 24 spacecraft on display at a Soviet space museum — descent stage + ascent vehicle + return capsule.",
+    "tr": "مركبة Luna 24 معروضة في متحف فضاء سوفيتي — مرحلة الهبوط ومركبة الإقلاع وكبسولة العودة."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.0.images.1.caption",
+    "en": "Diagram of the sample-collection mechanism — drill core with sealed transfer to the return capsule.",
+    "tr": "رسم تخطيطي لآلية جمع العيّنات — لبّ الحفر مع نقل محكم الإغلاق إلى كبسولة العودة."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.subtitle",
+    "en": "Apollo Crater (within South Pole-Aitken) — landed June 1, 2024",
+    "tr": "فوهة Apollo (داخل حوض القطب الجنوبي – أيتكن) — الهبوط في 1 يونيو 2024"
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.0.images.1.caption",
+    "en": "Time capsule payload — Israeli memorabilia + 30 million pages of human knowledge etched onto nickel plates + (controversially) tardigrades, the world's most resilient micro-animals.",
+    "tr": "حمولة الكبسولة الزمنية — تذكارات إسرائيلية، و30 مليون صفحة من المعرفة البشرية محفورة على صفائح من النيكل، و(على نحو مثير للجدل) دببة مائية، أكثر الحيوانات الدقيقة صلابة في العالم."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.1.caption",
+    "en": "Lunokhod 1 traverse map — 10.5 km zigzag across Mare Imbrium, with science stops at rocks and craters.",
+    "tr": "خريطة مسار Lunokhod 1 — تعرّج بطول 10.5 كم عبر بحر الأمطار، مع محطات علمية عند الصخور والحفر."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Lunokhod 2 — improved over Lunokhod 1: more cameras, finer steering control, third-axis manipulator, larger solar panels.",
+    "tr": "Lunokhod 2 — نسخة مطوَّرة عن Lunokhod 1: كاميرات أكثر، وتحكم أدق في التوجيه، ومناوِر بمحور ثالث، وألواح شمسية أكبر."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "moon-sites/clementine.json",
+    "at": "fact",
+    "en": "Joint NASA/DoD Strategic Defense Initiative mission. Spent ten weeks mapping the Moon at 11 spectral bands — the first systematic global multispectral map. Bistatic radar measurements at the south pole produced the first hints of polar water ice, later confirmed by Lunar Prospector and Chandrayaan-1.",
+    "tr": "مهمة مشتركة بين NASA ووزارة الدفاع الأمريكية ضمن مبادرة الدفاع الاستراتيجي. قضت عشرة أسابيع في رسم خريطة القمر في 11 نطاقًا طيفيًا — وهي أول خريطة شاملة متعددة الأطياف منتظمة للقمر كله. أسفرت قياسات رادار ثنائي الموضع عند القطب الجنوبي عن أولى المؤشرات على جليد الماء القطبي، وأكّدته لاحقًا Lunar Prospector وChandrayaan-1."
+  },
+  {
+    "loc": "ar",
+    "tree": "places",
+    "rel": "mars-sites/hope.json",
+    "at": "site_name",
+    "en": "~20,000 × 43,000 km highly elliptical, 25° inclination",
+    "tr": "~20,000 × 43,000 كم، شديد الإهليلجية، الميل المداري 25°"
+  }
+]

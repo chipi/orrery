@@ -15,7 +15,7 @@
     },
     {
       "met": 334,
-      "label": "MARS-ORBIT-EINFÜHRUNG",
+      "label": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
       "note": "Einfangen in der Marsumlaufbahn; Transfer in die Quasi-Umlaufbahn von Phobos in den folgenden Monaten.",
       "type": "nominal"
     },
@@ -37,5 +37,6 @@
       "note": "Proben-Wiedereintrittskapsel erreicht die Erde etwa 2031.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "zweite Stufe der H3-24L"
 }

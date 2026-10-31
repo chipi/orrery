@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La deuxième leçon est qu'une station n'est sûre que dans la mesure où sa ligne d'approvisionnement l'est. Skylab fut condamnée au moment où l'écart entre son dernier équipage et sa prochaine visite possible dépassa la durée de vie de son orbite. Un matériel impressionnant dans l'espace ne vaut rien si vous ne pouvez pas l'atteindre de façon fiable ; le travail continu, ennuyeux et coûteux de maintenir un système de transport en fonctionnement n'est pas une note de bas de page d'un programme de station mais sa condition préalable. Skylab tomba parce que cette ligne fut laissée se rompre."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terre — orbites et sites de lancement",
+    "/fleet?focus=skylab": "Flotte — l'atelier orbital Skylab"
+  }
 }

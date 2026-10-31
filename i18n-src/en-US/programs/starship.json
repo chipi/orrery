@@ -29,5 +29,10 @@
   "lessons": [
     { "type": "prose", "md": "The lesson Starship is testing is whether the method that made small rockets cheap can make enormous ones cheap too. Iteration through visible failure worked for Falcon; Starship is the experiment in whether it scales to the largest, most complex vehicle ever built — and whether it can cross the line into human spaceflight, where failure is far less acceptable. The answer is not yet in." },
     { "type": "prose", "md": "The deeper lesson is about designing backwards from a goal. Starship makes no sense as an incremental improvement to existing rockets; it only makes sense if the real objective is settling another planet, and every strange choice — the size, the full reuse, the orbital refuelling — follows from that. Whether or not Mars is reached, the vehicle is a lesson in what it looks like to engineer for an end state most of the industry considers a fantasy." }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starship": "Fleet — the Starship launch system",
+    "/programs/spacex": "SpaceX — the reusability Starship is built on",
+    "/mars": "Mars — the destination"
+  }
 }

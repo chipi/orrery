@@ -16,7 +16,7 @@
     {
       "met": 30,
       "label": "TCM-1",
-      "note": "第一次轨迹修正。",
+      "note": "第一次轨道修正。",
       "type": "nominal"
     },
     {
@@ -43,5 +43,6 @@
       "note": "返回首批高分辨率表面图像。",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur D-1T 上面级"
 }

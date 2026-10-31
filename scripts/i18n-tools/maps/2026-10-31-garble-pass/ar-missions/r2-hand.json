@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "description",
+    "find": "مكعبيين (CubeSat)",
+    "replace": "مكعبيين (CubeSats)"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "find": "مكوك الفضاء Atlantis (STS-30) + المرحلة العليا بالقصور الذاتي (IUS)",
+    "replace": "Space Shuttle Atlantis (STS-30) + Inertial Upper Stage"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "description",
+    "find": "المكوك الفضائي Atlantis",
+    "replace": "Space Shuttle Atlantis"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "description",
+    "find": "أول «بعثة من نوع J»",
+    "replace": "Apollo 15: أول «بعثة من نوع J»"
+  }
+]

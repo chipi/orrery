@@ -1,0 +1,122 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "old": "Cygnus Standard è un veicolo di carico robotico costruito da Orbital ATK negli Stati Uniti. Porta carico SSI solo pressurizzato. Ritirato dopo il primo volo nel 2013.",
+    "new": "Cygnus Standard è un veicolo di carico robotico costruito da Orbital Sciences negli Stati Uniti. Porta carico SSI solo pressurizzato. Ha volato tra il 2013 e il 2014; sostituito dall'Enhanced Cygnus."
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "old": "Phoenix è un lander planetario costruito da Lockheed Martin negli Stati Uniti. Ghiaccio d'acqua confermato nel suolo marziano. Ritirato dopo il primo volo nel 2008.",
+    "new": "Phoenix è un lander planetario costruito da Lockheed Martin negli Stati Uniti. Ghiaccio d'acqua confermato nel suolo marziano. Missione conclusa nel 2008."
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "old": "Surveyor 3 è un lander planetario costruito da Hughes Aircraft negli Stati Uniti. Apollo 12 lo visitò 2,5 anni dopo. Ritirato dopo il primo volo nel 1967.",
+    "new": "Surveyor 3 è un lander planetario costruito da Hughes Aircraft negli Stati Uniti. Apollo 12 lo visitò 2,5 anni dopo. Missione conclusa nel 1967."
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "old": "Venera 7-class è un lander planetario costruito da NPO Lavochkin nell'URSS. Primo atterraggio dolce su un altro pianeta e primo a trasmettere dati dalla superficie di un altro pianeta (Venere, 1970). Ritirato dopo il primo volo nel 1970.",
+    "new": "Venera 7-class è un lander planetario costruito da NPO Lavochkin nell'URSS. Primo atterraggio dolce su un altro pianeta e primo a trasmettere dati dalla superficie di un altro pianeta (Venere, 1970). Missione conclusa nel 1970."
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "old": "Titan II GLV è un lanciatore orbitale costruito da Martin Marietta negli USA. Cavallo da battaglia del Progetto Gemini. Ritirato dopo il primo volo nel 1964.",
+    "new": "Titan II GLV è un lanciatore orbitale costruito da Martin Marietta negli USA. Cavallo da battaglia del Progetto Gemini. Ha volato 12 volte tra il 1964 e il 1966."
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "old": "Magellan è un orbiter profondo-spazio costruito da Martin Marietta negli Stati Uniti. Il 98% della superficie di Venere. Ritirato dopo il primo volo nel 1989.",
+    "new": "Magellan è un orbiter profondo-spazio costruito da Martin Marietta negli Stati Uniti. Il 98% della superficie di Venere. Missione conclusa nel 1994."
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "old": "Lunokhod 2 è un rover planetario costruito da NPO Lavochkin in URSS. Roamed 39 km sulla Luna — record fino al 2014. Ritirato dopo il primo volo nel 1973.",
+    "new": "Lunokhod 2 è un rover planetario costruito da NPO Lavochkin in URSS. Roamed 39 km sulla Luna — record fino al 2014. Missione conclusa nel 1973."
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "old": "Pragyan è un rover planetario costruito da ISRO in India. Primo rover lunare a sud-poli; Chandrayaan-3. Ritirato dopo il primo volo nel 2023.",
+    "new": "Pragyan è un rover planetario costruito da ISRO in India. Primo rover lunare a sud-poli; Chandrayaan-3. Inattivo dal 2023."
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "old": "Sojourner è un rover planetario costruito dalla NASA JPL negli Stati Uniti. Primo rover di Marte; missione Pathfinder. Ritirato dopo il primo volo nel 1997.",
+    "new": "Sojourner è un rover planetario costruito dalla NASA JPL negli Stati Uniti. Primo rover di Marte; missione Pathfinder. Missione conclusa nel 1997."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "old": "Spirit (MER-A) è un rover planetario costruito dalla NASA JPL negli Stati Uniti. Mars Exploration Rover; operazione di 6 anni. Ritirato dopo il primo volo nel 2004.",
+    "new": "Spirit (MER-A) è un rover planetario costruito dalla NASA JPL negli Stati Uniti. Mars Exploration Rover; operazione di 6 anni. Ultimo contatto nel 2010."
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "old": "Yutu è un rover planetario costruito da CAST in Cina. Primo rover lunare cinese; Chang'e-3. Ritirato dopo il primo volo nel 2013.",
+    "new": "Yutu è un rover planetario costruito da CAST in Cina. Primo rover lunare cinese; Chang'e-3. Missione conclusa nel 2016."
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "old": "Zhurong è un rover planetario costruito da CAST in Cina. Primo rover di Marte cinese; Tianwen-1. Ritirato dopo il primo volo nel 2021.",
+    "new": "Zhurong è un rover planetario costruito da CAST in Cina. Primo rover di Marte cinese; Tianwen-1. Inattivo dal 2022."
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "old": "Ariane 6 è un lanciatore orbitale costruito da ArianeGroup in Multi (Europa). Successore ad Ariane 5. In servizio dal 2024.",
+    "new": "Ariane 6 è un lanciatore orbitale costruito da ArianeGroup in Europa. Successore ad Ariane 5. In servizio dal 2024."
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "old": "XMM-Newton è un osservatorio spaziale costruito da Airbus Defence and Space in Multi (Europa). L'osservatorio radiografico dell'ESA. In servizio dal 1999.",
+    "new": "XMM-Newton è un osservatorio spaziale costruito da Airbus Defence and Space in Europa. L'osservatorio radiografico dell'ESA. In servizio dal 1999."
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "old": "Mars Express è un orbiter per lo spazio profondo costruito da EADS Astrium a Multi (Europa). L'unico orbiter di Marte dell'ESA; la prima missione planetaria europea. In servizio dal 2003.",
+    "new": "Mars Express è un orbiter per lo spazio profondo costruito da EADS Astrium in Europa. Il primo orbiter di Marte dell'ESA; la prima missione planetaria europea. In servizio dal 2003."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "old": "Il primo lander lunare dell'India con successo (agosto 2023), il primo veicolo spaziale ad allunare vicino al polo sud lunare. Due anni dopo che il Vikram CY-2 si schiantò nella stessa regione — l'arco di redenzione che l'India e l'ISRO attendevano.",
+    "new": "Il primo lander lunare dell'India con successo (agosto 2023), il primo veicolo spaziale ad allunare vicino al polo sud lunare. Quattro anni dopo che il Vikram CY-2 si schiantò nella stessa regione — l'arco di redenzione che l'India e l'ISRO attendevano."
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "old": "La rampa di lancio pesante dell'India — GSLV Mk III / LVM3 per Chandrayaan-3, Mangalyaan e il programma equipaggio Gaganyaan in arrivo",
+    "new": "La rampa di lancio pesante dell'India — GSLV Mk III / LVM3 per Chandrayaan-3 e il programma equipaggio Gaganyaan in arrivo"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "old": "La rampa di lancio pesante dell'India — GSLV Mk III / LVM3 per Chandrayaan-3, Mangalyaan e il programma equipaggio Gaganyaan in arrivo",
+    "new": "La rampa di lancio pesante dell'India — GSLV Mk III / LVM3 per Chandrayaan-3 e il programma equipaggio Gaganyaan in arrivo"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "old": "L'unico orbiter di Marte dell'ESA; la prima missione planetaria europea",
+    "new": "Il primo orbiter di Marte dell'ESA; la prima missione planetaria europea"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "old": "Il primo e unico orbiter di Marte dell'ESA; la prima missione planetaria europea",
+    "new": "Il primo orbiter di Marte dell'ESA; la prima missione planetaria europea"
+  }
+]

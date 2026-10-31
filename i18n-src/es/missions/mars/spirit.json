@@ -5,7 +5,7 @@
   "delta_v": "~5,5 km/s",
   "type": "ROVER · COMPLETADA",
   "first": "Primero de los mellizos Mars Exploration Rover; rover más longevo hasta ser superado por Curiosity",
-  "dispatch": "Spirit fue construido para noventa días y funcionó durante seis años. Uno de un par de geólogos del tamaño de un carrito de golf aterrizó en 2004; fue enviado para leer las rocas en busca de evidencia de un Marte más húmedo en el pasado — y la encontró, descubriendo minerales que solo se forman en agua y, en un lugar, depósitos de sílice como los dejados por fuentes termales en la Tierra. Escaló colinas que nadie había planeado que alcanzara y sobrevivió inviernos para los que nunca fue diseñado, hasta que una rueda se avería y quedó atrapado en arena blanda. Continuó transmitiendo desde donde quedó atrapado hasta que el frío marciano finalmente lo apagó.",
+  "dispatch": "Spirit fue construido para noventa días y funcionó durante seis años. Uno de un par de geólogos del tamaño de un carrito de golf que aterrizaron en 2004, fue enviado a leer las rocas en busca de indicios de un pasado marciano más húmedo — y los encontró: descubrió minerales que solo se forman en el agua y, en un lugar, depósitos de sílice como los que dejan las fuentes termales en la Tierra. Escaló colinas que nadie había previsto que alcanzara y sobrevivió a inviernos que nunca fue diseñado para ver, hasta que falló una rueda y quedó atascado en arena blanda. Siguió transmitiendo desde donde estaba atrapado hasta que el frío marciano acabó por apagarlo.",
   "description": "Spirit (MER-A) rebotó 28 veces sobre el suelo del cráter Gusev el 2004-01-04 y se detuvo a 250 m del primer impacto. Diseñado para una misión primaria de 90 soles, sobreviviría 2208 soles. Recorrió 7,7 km por las llanuras de Gusev, escaló las colinas Columbia y descubrió rocas portadoras de hematita que señalaban agua antigua persistente. En 2009-04 una rueda atravesó una costra de sulfato en \"Troy\" y Spirit se detuvo en suelo blando; el equipo lo convirtió en una plataforma estacionaria. Última transmisión 2010-03-22; misión declarada finalizada 2011-05-25. Hermanado con Opportunity, que aterrizó tres semanas después en el lado opuesto de Marte.",
   "events": [
     {
@@ -41,7 +41,7 @@
     {
       "met": 1990,
       "label": "ATRAPADO EN TROY",
-      "note": "Una rueda atraviesa la costra de sulfato; rover queda atrapado en suelo blando. 2009-04.",
+      "note": "Una rueda rompe la costra de sulfato; el róver se atasca en suelo blando. 2009-04.",
       "type": "warning"
     },
     {
@@ -50,5 +50,6 @@
       "note": "2010-03-22. Misión declarada finalizada 2011-05-25.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "etapa superior sólida Star 48B PAM-D"
 }

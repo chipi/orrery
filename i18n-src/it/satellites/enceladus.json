@@ -3,19 +3,19 @@
   "surface_composition": "Crosta di ghiaccio d'acqua incontaminata sopra un oceano subsuperficiale globale; fratture polari meridionali a 'strisce di tigre' che emettono pennacchi di vapore acqueo, composti organici, sali, nanograni di silice e idrogeno molecolare.",
   "mission_visits": [
     "Voyager 2 — USA, 1981 (mappatura preliminare)",
-    "Cassini — NASA/ESA/ASI, 2005–2015 (scoperta del pennacchio + passaggio attraverso)"
+    "Cassini — NASA/ESA/ASI, 2005–2015 (scoperta del pennacchio + attraversamento in volo)"
   ],
   "library_labels": {
     "enceladus-wiki": "Wikipedia — Encelado",
     "enceladus-nasa": "NASA Science — panoramica di Encelado",
-    "enceladus-cassini": "NASA Cassini — archivio storico dei passaggi ravvicinati ai pennacchi",
-    "enceladus-habitability": "Astrobiology — Encelado come obiettivo di ricerca della vita"
+    "enceladus-cassini": "NASA Cassini — archivio storico dei sorvoli dei pennacchi",
+    "enceladus-habitability": "Astrobiologia — Encelado come bersaglio nella ricerca della vita"
   },
   "science_sections": [
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "Encelado è in risonanza di moto medio 2:1 con Dione — l'eccentricità forzata (0,0047) alimenta la flessione di marea che alimenta i pennacchi crivovolcanici del polo sud."
+      "why": "Encelado è in risonanza di moto medio 2:1 con Dione — l'eccentricità forzata (0,0047) genera la flessione mareale che alimenta i pennacchi criovulcanici del polo sud."
     }
   ]
 }

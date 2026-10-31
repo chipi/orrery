@@ -5,8 +5,8 @@
   "delta_v": "~7,8 km/s (LEO)",
   "type": "BEMAND AARDBAAN · GEVLOGEN",
   "first": "Eerste koppeling van twee ruimtevaartuigen; noodterugkeer",
-  "dispatch": "Gemini 8 maakte de eerste koppeling van twee ruimtevaartuigen in een baan — en bracht vervolgens bijna zijn bemanning om het leven. Minuten nadat Neil Armstrong zijn Gemini in een vergrendelde verbinding met een Agena-doelwit had gemanoeuvreerd, begon het gekoppelde paar te rollen, steeds sneller, tot het ongeveer eenmaal per seconde tuimelde en het zicht van de astronauten begon te verduisteren richting bewusteloosheid. Armstrong ontkoppelde — wat het alleen maar erger maakte, omdat de fout in zijn eigen ruimtevaartuig zat — schakelde vervolgens de hoofdstuwraketten uit en stopte de draaiing met het terugkeer-controlesysteem, een beslissing die hun leven redde maar volgens de regels een onmiddellijke noodterugkeer afdwong. Het was het gevaarlijkste moment van het programma, en het was Armstrongs eerste ruimtevlucht. De kalme, snelle diagnose onder een falende situatie is precies het temperament dat NASA zich zou herinneren toen het koos wie op de Maan zou landen.",
-  "description": "Neil Armstrong en David Scott bereikten de eerste koppeling van twee ruimtevaartuigen — met een Agena-doelwit — op 16 maart 1966. Een vastgelopen houdingsstuwraket veroorzaakte vervolgens een heftige tuimeling; Armstrong ontkoppelde en gebruikte het terugkeer-controlesysteem om te herstellen, wat een noodlanding afdwong na 10 u 41 m. Het was Armstrongs eerste ruimtevlucht.",
+  "dispatch": "Gemini 8 voerde de eerste koppeling van twee ruimtevaartuigen in een baan uit — en bracht daarna bijna zijn bemanning om het leven. Minuten nadat Neil Armstrong zijn Gemini voorzichtig in een vergrendelde koppeling met een Agena-doelwit had gemanoeuvreerd, begon het gekoppelde paar te rollen, steeds sneller, tot het ongeveer eens per seconde tolde en het zicht van de astronauten grijs begon te worden, richting bewusteloosheid. Armstrong koppelde los — wat het alleen maar erger maakte, omdat de fout in zijn eigen ruimtevaartuig zat — schakelde daarna de hoofdstuwraketten uit en stopte de draaiing met het besturingssysteem voor de atmosferische intrede, een beslissing die hun leven redde maar volgens de regels een onmiddellijke noodterugkeer afdwong. Het was het gevaarlijkste moment van het programma, en het was Armstrongs eerste ruimtevlucht. De kalme, snelle diagnose in een situatie die uit de hand liep, is precies het temperament dat NASA zich zou herinneren toen het koos wie op de Maan zou landen.",
+  "description": "Neil Armstrong en David Scott voltooiden op 16 maart 1966 de eerste koppeling van twee ruimtevaartuigen — met een Agena-doelvoertuig. Een vastzittende standregelraket veroorzaakte daarna een heftige tuimeling; Armstrong ontkoppelde en gebruikte het controlesysteem voor de atmosferische intrede om de controle te herstellen, wat na 10 u 41 min een noodlanding afdwong. Het was Armstrongs eerste ruimtevlucht.",
   "events": [
     {
       "met": 0,
@@ -23,7 +23,7 @@
     {
       "met": 0.3,
       "label": "TUIMELING",
-      "note": "Vastgelopen stuwraket laat de stapel tuimelen ~1 omw/s; Armstrong herstelt met het terugkeer-controlesysteem.",
+      "note": "Een vastzittende stuurraket laat de gekoppelde voertuigen met ~1 omw/s tuimelen; Armstrong herstelt de controle met het terugkeerbesturingssysteem.",
       "type": "warning"
     },
     {

@@ -1,6 +1,6 @@
 {
-  "description": "Die hellste und (nach Miranda) am jüngsten wirkende Oberfläche im Uranus-System — Voyager 2 Aufnahmen zeigen breite Grabenbrüche und möglicherweise Fließstrukturen, die auf vergangene oder gegenwärtige kryovulkanische Aktivität hindeuten. Gezeitenheizung durch eine 2:1-Bahnresonanz mit Umbriel, die in der fernen Vergangenheit existierte, könnte das Innere geschmolzen haben; ob heute noch flüssiges Wasser vorhanden ist, ist unbekannt. Wie bei den anderen großen Uranus-Monden wurde nur die Südhalbkugel aus der Nähe abgebildet.",
-  "surface_composition": "Wassereiskruste + Silikat-/kohlenstoffhaltiges Gesteinsinneres; Oberfläche die hellste der großen Uranus-Monde, mit relativ wenigen Kratern — interpretiert als Hinweis auf kryovulkanische Oberflächenerneuerung innerhalb der letzten ~1 Gyr.",
+  "description": "Die hellste und (nach Miranda) am jüngsten wirkende Oberfläche im Uranus-System — Aufnahmen von Voyager 2 zeigen breite Grabenbrüche und möglicherweise Fließstrukturen, die auf vergangene oder gegenwärtige kryovulkanische Aktivität hindeuten. Gezeitenheizung durch eine 2:1-Bahnresonanz mit Umbriel, die in der fernen Vergangenheit existierte, könnte das Innere geschmolzen haben; ob heute noch flüssiges Wasser vorhanden ist, ist unbekannt. Wie bei den anderen großen Uranus-Monden wurde nur die Südhalbkugel aus der Nähe abgebildet.",
+  "surface_composition": "Wassereiskruste + Inneres aus Silikat- und kohlenstoffhaltigem Gestein; Oberfläche die hellste der großen Uranusmonde, mit relativ wenigen Kratern — gedeutet als Hinweis auf kryovulkanische Oberflächenerneuerung innerhalb der letzten ~1 Mrd. Jahre.",
   "mission_visits": [
     "Voyager 2 — USA, 1986 (Vorbeiflug an der südlichen Hemisphäre)"
   ],
@@ -13,7 +13,7 @@
     {
       "tab": "orbits",
       "section": "semi-major-axis",
-      "why": "Ariel umkreist Uranus in 190.900 km Entfernung — der zweite innerste der großen Monde. Wie alle Uranusmonde teilt seine Umlaufbahn die 97°-Achsenneigung des Planeten."
+      "why": "Ariel umkreist Uranus in 190.900 km Entfernung — der zweitinnerste der großen Monde. Wie alle Uranusmonde teilt seine Umlaufbahn die 97°-Achsenneigung des Planeten."
     }
   ]
 }

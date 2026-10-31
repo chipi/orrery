@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.2",
+    "find": "полезны для концепций лунного шлюза,",
+    "replace": "полезны для концепций окололунной станции,"
+  }
+]

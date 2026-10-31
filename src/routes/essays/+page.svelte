@@ -10,6 +10,7 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetUrl } from '$lib/asset-url';
   import LongViewHero from '$lib/components/LongViewHero.svelte';
+  import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -24,36 +25,19 @@
 
   // The spiral, in order. Essays without a listed movement fall to the end.
   const MOVEMENTS: { key: string; label: string; blurb: string }[] = [
-    {
-      key: 'into-the-dark',
-      label: 'Into the Dark',
-      blurb:
-        'The fundamentals of going — how we find our way, move, and stay in touch where there are no roads.',
-    },
-    {
-      key: 'the-machines',
-      label: 'The Machines',
-      blurb:
-        'How we build the going — leaving the ground, and the exits beyond the chemical rocket.',
-    },
+    { key: 'into-the-dark', label: m.essays_mv_dark(), blurb: m.essays_mv_dark_blurb() },
+    { key: 'the-machines', label: m.essays_mv_machines(), blurb: m.essays_mv_machines_blurb() },
     {
       key: 'the-destinations',
-      label: 'The Destinations',
-      blurb:
-        'Where we are actually going — the Moon we keep relearning, the Mars that breaks every plan, and the rocks worth more as fuel than as gold.',
+      label: m.essays_mv_destinations(),
+      blurb: m.essays_mv_destinations_blurb(),
     },
     {
       key: 'arrival-and-the-body',
-      label: 'Arrival & the Body',
-      blurb:
-        'The cost of getting there — the violence of landing, and the fragile traveller the whole enterprise exists to carry.',
+      label: m.essays_mv_arrival(),
+      blurb: m.essays_mv_arrival_blurb(),
     },
-    {
-      key: 'the-far-horizon',
-      label: 'The Far Horizon',
-      blurb:
-        'The honest edge of the map — the arithmetic of the stars, and the ship that would have to become a world.',
-    },
+    { key: 'the-far-horizon', label: m.essays_mv_horizon(), blurb: m.essays_mv_horizon_blurb() },
   ];
 
   let groups = $derived(
@@ -65,21 +49,14 @@
 </script>
 
 <svelte:head>
-  <title>The Long View · Essays · Orrery</title>
-  <meta
-    name="description"
-    content="The Long View — long-form essays on how we reach into the solar system: navigation, propulsion, reuse, and the long history of getting anywhere."
-  />
+  <title>{m.essays_title()} · {m.essays_label()} · Orrery</title>
+  <meta name="description" content={m.essays_meta_description()} />
 </svelte:head>
 
 <section class="longview" data-route-ready="true">
   <header class="head">
     <LongViewHero />
-    <p class="intro">
-      Essays that step back from any one mission and take in the whole subject — how we find our way
-      out there, how we get off the ground, how we go farther, and what seventy years of it all adds
-      up to. One story, told in a spiral.
-    </p>
+    <p class="intro">{m.essays_intro()}</p>
   </header>
 
   {#each groups as g (g.key)}
@@ -100,7 +77,7 @@
             {/if}
             <h3>{e.title}</h3>
             <p class="card-dek">{e.dek}</p>
-            <span class="go">Read →</span>
+            <span class="go">{m.essays_read()}</span>
           </a>
         {/each}
       </div>

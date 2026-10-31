@@ -10,6 +10,70 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+## [0.9.2] — 2026-10-31
+
+A quality release: the translations were read field by field and corrected in every
+language, the remaining English UI text was translated, a site-wide **glossary** was added,
+and the code went through a tech-debt pass (shared panel parts, the `/explore` page split,
+robustness fixes on the Lab API and MCP server, size budgets, an accessibility gate). More of
+the tech debt and further translation checks follow in the next release.
+
+### Translations
+
+- **UI strings read in full** in all 13 languages (the ~1,980 short labels), with checks for
+  label variants, words read in the wrong sense and English left in.
+- **Hard-coded English in page and panel markup translated** (headings, empty states, panel
+  text), with a scan guard against new hard-coded text; some TypeScript label maps remain.
+- **Content read field by field against the English**, garbled or wrong text retranslated:
+  fleet and missions in every language; catalogue, places and universe pages where samples
+  found errors; the science explainers in Russian, Chinese and French. A fresh sample after
+  each round found no broken text.
+- Site-wide fixes: Moon-landing words used for Mars or comet landings, long-scale
+  billion/trillion errors, English thousands separators, untranslated asteroid and rocket
+  labels, orbit-region names left in English, one spelling per name per language (Soyuz,
+  porkchop plot).
+- Two errors in the English source corrected in all languages: the Hill sphere (Earth is
+  ~333,000× less massive than the Sun, not 80×) and the Apollo suits (twelve moonwalkers,
+  twelve custom-fitted suits).
+
+### New
+
+- **`/science/glossary`** — the site's technical terms, with an A–Z bar that follows each
+  language's alphabet.
+- **Missions that never flew** get a CANCELLED status (Apollo 1).
+- Satellite and belt images open in the lightbox like every other panel.
+
+### Fixes and robustness
+
+- **Lab API**: a whole-request deadline on `/ask`, question and tool-call caps, refresh-token
+  TTL, client eviction that spares clients in use, survival of a corrupt `state.json`; refuses
+  to start in production without its model gateway.
+- **MCP server**: 503 with Retry-After (not 401) when the token issuer is unreachable.
+- **Launches feed**: retries Launch Library 5xx and network errors; the refresh runs off the
+  hour; the prod refresh log is trimmed.
+- **Accessibility**: an axe gate on every static route; serious findings fixed on 12 routes.
+- **Native apps**: Android geolocation on API 24–30; app versions follow `package.json`; iOS
+  privacy manifest; offline packs kept out of iCloud and Auto Backup.
+- Fleet engine panels with two Isp rows render; station module selection keeps the language;
+  the lightbox sits above the site nav on `/explore`; URL mirrors start from the address bar.
+- Observability: breadcrumbs scrubbed on web and servers.
+
+### Under the hood
+
+- Shared panel parts: one tab row, hero image, lightbox, gallery grid and link tiers for every
+  detail panel.
+- `/explore` split from one page into route components (11 steps); `/iss` and `/tiangong`
+  share one station route; the 5,883-line physics registry split into 13 family files.
+- Per-route JavaScript size budget (brotli) in the build; alt-text maps load on first use
+  instead of shipping in every page.
+- Production builds stub out the `/dev` pages; generated science indexes are no longer
+  committed.
+- Schemas for 30+ data files that had none; mission index status and year enforced.
+- Unit suite 11.5 s → 6.7 s; CI runs on tech-debt and e2e branches; native-build workflow for
+  Android and iOS.
+- Dependencies: Vitest 5, TypeScript 6, OpenTelemetry 3, @anthropic-ai/sdk 1.3,
+  @google-cloud/text-to-speech 7.2.
+
 ## [0.9.1] — 2026-10-23
 
 The first release since 0.8.1 (0.9.0 was never tagged). It adds the **Physics

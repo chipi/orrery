@@ -1,0 +1,1056 @@
+[
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.6.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/aurora-7.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "term": "inclination",
+    "decision": "change",
+    "find": "Orbitalkorrekturen der Sinkneigung",
+    "replace": "Orbitalkorrekturen der Abstiegsinklination",
+    "why": "binding Inklination; Sinkneigung also covers 'descent inclination'"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Einfügung in die Mondumlaufbahn",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "term": "descent",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "440.000 km, 3°-Neigung-Umlaufbahn",
+    "replace": "440.000-km-Umlaufbahn mit 3° Inklination",
+    "why": "binding Inklination"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "ERDE GRAVITY ASSIST",
+    "replace": "ERDE-SWING-BY",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Erde-Gravity-Assist richtet",
+    "replace": "Erde-Swing-by richtet",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Erde-Gravitationsassists",
+    "replace": "Erde-Swing-bys",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Mars-Gravitationsassist",
+    "replace": "Mars-Swing-by",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Gravity-Assist-Manöver",
+    "replace": "Swing-by-Manöver",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Venus-Gravity-Assist",
+    "replace": "Venus-Swing-by",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "ERDSCHWUNG",
+    "replace": "ERD-SWING-BY",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Gravitationshilfe-Bahn",
+    "replace": "Swing-by-Bahn",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "sechs Schwerkrafthilfen",
+    "replace": "sechs Swing-bys",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "SCHWERKRAFTHILFE ERDE",
+    "replace": "SWING-BY ERDE",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "von Jupiter unterstützten Weg",
+    "replace": "Jupiter-Swing-by-Weg",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Mars-Gravitationsassist",
+    "replace": "Mars-Swing-by",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "die die Ionentriebwerke allein nicht rechtzeitig liefern konnten",
+    "replace": "die der Ionenschub allein nicht rechtzeitig liefern konnte",
+    "why": "binding Schub (ion thrust, not thrusters)"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Erste Venusgravitationshilfe",
+    "replace": "Erster Venus-Swing-by",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Gravitationsassistenz lenkt",
+    "replace": "Ein Swing-by lenkt",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "die Gravitationshilfe der Venus",
+    "replace": "den Swing-by an der Venus",
+    "why": "binding Swing-by"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.note",
+    "term": "apogee",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "term": "burn",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Haupttriebwerk-Abbrand",
+    "replace": "Haupttriebwerk-Brennphase",
+    "why": "Abbrand = burn-off, not an engine firing; binding Brennphase"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "TMI-BURN",
+    "replace": "TMI-ZÜNDUNG",
+    "why": "binding Zündung"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "27-Minuten-Triebwerksbrand",
+    "replace": "27-minütige Brennphase",
+    "why": "Triebwerksbrand = engine fire; binding Brennphase"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "TMI-VERBRENNUNG",
+    "replace": "TMI-ZÜNDUNG",
+    "why": "Verbrennung = combustion; binding Zündung"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "TMI-VERBRENNUNG",
+    "replace": "TMI-ZÜNDUNG",
+    "why": "Verbrennung = combustion; binding Zündung"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "brennt auf die Flugbahn zur Erde zurück",
+    "replace": "zündet für die Flugbahn zurück zur Erde",
+    "why": "binding Zündung (verb zünden)"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Haupttriebwerk-Abbrand",
+    "replace": "Haupttriebwerk-Brennphase",
+    "why": "Abbrand wrong; binding Brennphase"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Translunare Injektionsverbrennung",
+    "replace": "Translunare Injektionszündung",
+    "why": "Verbrennung = combustion; binding Zündung"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "einen Brennvorgang",
+    "replace": "eine Zündung",
+    "why": "binding Zündung"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Trans-Lunar-Injection-Abbrand",
+    "replace": "Trans-Lunar-Injection-Zündung",
+    "why": "Abbrand wrong; binding Zündung"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "FREIFLUGBAHN-ABBRAND",
+    "replace": "FREIFLUGBAHN-ZÜNDUNG",
+    "why": "Abbrand wrong; binding Zündung"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Abstiegstriebwerks-Abbrand",
+    "replace": "Abstiegstriebwerks-Brennphase",
+    "why": "Abbrand wrong; binding Brennphase (31 s duration)"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "PC+2-ABBRAND",
+    "replace": "PC+2-ZÜNDUNG",
+    "why": "Abbrand wrong; binding Zündung"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Plus-2-Stunden-Abbrand",
+    "replace": "Plus-2-Stunden-Zündung",
+    "why": "Abbrand wrong; binding Zündung"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Trans-lunar injection burn",
+    "replace": "Translunare Injektionszündung",
+    "why": "untranslated English; binding Zündung"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "SPS-Abbrand",
+    "replace": "SPS-Zündung",
+    "why": "Abbrand wrong; binding Zündung"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "translunare Injektionsverbrennung",
+    "replace": "translunare Injektionszündung",
+    "why": "Verbrennung = combustion; binding Zündung"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "1228s Brennvorgang",
+    "replace": "1228s Brennphase",
+    "why": "binding Brennphase"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Feststoffmotor-Abbrand",
+    "replace": "Feststoffmotor-Zündung",
+    "why": "Abbrand wrong; binding Zündung"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "des Aufstiegsstadiums",
+    "replace": "der Aufstiegsstufe",
+    "why": "binding Stufe (Stadium = phase)"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "term": "stage",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.4.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "Raumfahrzeugbrennstoff",
+    "replace": "Raumfahrzeug-Treibstoff",
+    "why": "binding Treibstoff"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "schwachem Ionenantrieb",
+    "replace": "schubarmem Ionenantrieb",
+    "why": "binding Schub (low-thrust)"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "kontinuierlichen Ionenantrieb",
+    "replace": "kontinuierlichen ionenelektrischen Schub",
+    "why": "binding Schub"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Merkurorbit-Eintritt",
+    "replace": "Einschwenken in die Merkurumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "term": "thrust",
+    "decision": "change",
+    "find": "Ionentriebwerk-",
+    "replace": "Ionenschub-",
+    "why": "binding Schub"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "first",
+    "term": "flyby",
+    "decision": "change",
+    "find": "nächster Kometenflug",
+    "replace": "nächster Kometen-Vorbeiflug",
+    "why": "binding Vorbeiflug"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Vorbeflügen",
+    "replace": "Vorbeiflügen",
+    "why": "typo; binding Vorbeiflug"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "EROS-ORBITALEINFÜHRUNG",
+    "replace": "EINSCHWENKEN IN DIE EROS-UMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.5.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Orbit-Einsatz um den Kometen",
+    "replace": "Einschwenken in die Umlaufbahn um den Kometen",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "zur Orbitaleinfügung",
+    "replace": "zum Einschwenken in die Umlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "JUPITER-ORBITALEINFÜGUNG",
+    "replace": "EINSCHWENKEN IN DIE JUPITERUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "delta_v",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "JUPITER-BAHNEINFÜHRUNG",
+    "replace": "EINSCHWENKEN IN DIE JUPITERUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "delta_v",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "JUPITER-ORBITEINFÜGUNG",
+    "replace": "EINSCHWENKEN IN DIE JUPITERUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "MARS-ORBIT-EINTRITT",
+    "replace": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Marsorbiteintritt",
+    "replace": "Einschwenken in die Marsumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "MARSORBITEINTRITT",
+    "replace": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "MARS-ORBIT-EINFÜHRUNG",
+    "replace": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "MARS-ORBIT-EINFÜHRUNG",
+    "replace": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "MARS-ORBIT-EINFÜHRUNG",
+    "replace": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Orbitaleinführung",
+    "replace": "Einschwenken in die Umlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "MARS-ORBIT-EINFÜHRUNG",
+    "replace": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.5.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "MERKURORBIT-EINTRITT",
+    "replace": "EINSCHWENKEN IN DIE MERKURUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "delta_v",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "MERKURORBIT-EINTRITT",
+    "replace": "EINSCHWENKEN IN DIE MERKURUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Lunar-Orbit-Insertion",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "untranslated English; binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Einfügung in die Mondumlaufbahn",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Mondorbiteintritt",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Mondumlaufbahn-Eintritt",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Mondorbitalisierung",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Einfügung in die Mondumlaufbahn",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Kein Einsetzen in die Umlaufbahn",
+    "replace": "Kein Einschwenken in die Umlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "erfolgreicher Mondumlaufbahneinschießung",
+    "replace": "erfolgreichem Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken; dative agreement"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.5.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "EINTRITT IN DIE MONDUMLAUFBAHN",
+    "replace": "EINSCHWENKEN IN DIE MONDUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.3.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Einsetzen in die Mondumlaufbahn",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Einfügung in die Mondumlaufbahn",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "der Mondorbitinsertion",
+    "replace": "dem Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "EINTRITT IN DIE MONDUMLAUFBAHN",
+    "replace": "EINSCHWENKEN IN DIE MONDUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Mondorbitale Zirkularisierung",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "Zirkularisierung is a different manoeuvre; binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Einfügung in die Mondumlaufbahn",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Einfügung in die Mondumlaufbahn",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Einfügung in die Mondumlaufbahn",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Einfügung in die Mondumlaufbahn",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Einfügung in die Mondumlaufbahn",
+    "replace": "Einschwenken in die Mondumlaufbahn",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "delta_v",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "SATURN-ORBITEINFÜGUNG",
+    "replace": "EINSCHWENKEN IN DIE SATURNUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "SATURN-ORBITEINFÜGUNG",
+    "replace": "EINSCHWENKEN IN DIE SATURNUMLAUFBAHN",
+    "why": "binding Einschwenken"
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "mit Bahnrückkehr und Landung",
+    "replace": "mit Wiedereintritt und Landung",
+    "why": "Bahnrückkehr not the term; binding Wiedereintritt"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.7.note",
+    "term": "entry",
+    "decision": "change",
+    "find": "Stimmungsvoller Auftritt",
+    "replace": "Eintritt in die Atmosphäre",
+    "why": "garbled mistranslation; binding Eintritt in die Atmosphäre"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "payload",
+    "term": "descent",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "payload",
+    "term": "descent",
+    "decision": "keep",
+    "why": ""
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "term": "descent",
+    "decision": "change",
+    "find": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "replace": "DEMONSTRATOR FÜR EINTRITT, ABSTIEG UND LANDUNG · ABGESTÜRZT",
+    "why": "field left untranslated; binding Abstieg"
+  }
+]

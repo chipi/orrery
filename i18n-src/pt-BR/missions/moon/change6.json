@@ -16,7 +16,7 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Inserção da órbita lunar.",
+      "note": "Inserção em órbita lunar.",
       "type": "nominal"
     },
     {
@@ -43,5 +43,6 @@
       "note": "A cápsula pousa na Mongólia Interior em 25/06/2024 com as primeiras amostras do outro lado já recuperadas.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "estágio superior YZ-1 do Long March 5"
 }

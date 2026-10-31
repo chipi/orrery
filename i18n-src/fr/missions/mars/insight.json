@@ -5,7 +5,7 @@
   "delta_v": "~5,5 km/s",
   "type": "ATTERRISSEUR · VOLÉ",
   "first": "Premier sismomètre sur Mars ; premier lancement interplanétaire depuis la côte ouest des États-Unis",
-  "description": "InSight a offert à Mars son premier stéthoscope. Son sismomètre, déployé par un bras robotique sur le régolithe, a enregistré plus de 1 300 tremblements de terre, dont une magnitude de 5 en 2022, le plus important jamais détecté sur une autre planète. Les données ont révélé la structure intérieure de Mars : un noyau fondu d'un rayon de 1 800 km, une croûte épaisse et une surprenante stratification du manteau. L'expérience sur le flux de chaleur des taupes a échoué lorsque le régolithe s'est révélé trop cohérent pour sa conception auto-martelante. La mission s'est terminée lorsque l'accumulation de poussière sur les panneaux solaires a réduit la puissance en dessous du seuil opérationnel.",
+  "description": "InSight a donné à Mars son premier stéthoscope. Son sismomètre, déposé par un bras robotique sur le régolithe, a enregistré plus de 1 300 séismes martiens — dont un de magnitude 5 en 2022, le plus fort jamais détecté sur une autre planète. Les données ont révélé la structure interne de Mars : un noyau fondu d'un rayon de 1 800 km, une croûte épaisse et une surprenante stratification du manteau. L'expérience de flux thermique à taupe a échoué parce que le régolithe s'est révélé trop cohésif pour son système à auto-martelage. La mission s'est achevée lorsque l'accumulation de poussière sur les panneaux solaires a fait passer la puissance sous le seuil opérationnel.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 205,
       "label": "JDE",
-      "note": "Entrée atmosphérique, parachute, atterrissage de fusée à descente terminale à Elysium Planitia.",
+      "note": "Entrée atmosphérique, parachute, descente terminale propulsée par fusée jusqu'à l'atterrissage à Elysium Planitia.",
       "type": "nominal"
     },
     {
@@ -43,5 +43,6 @@
       "note": "Transmission finale à faible puissance 2022-12-15. Panneaux solaires trop recouverts de poussière pour se recharger.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "étage supérieur Centaur (Atlas V 401)"
 }

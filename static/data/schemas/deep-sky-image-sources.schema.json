@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "deep-sky-image-sources.schema.json",
+  "title": "Deep-sky gallery image sources (Wikimedia Commons)",
+  "description": "Keyed by deep-sky gallery id; every record is a full Commons provenance record.",
+  "type": "object",
+  "minProperties": 1,
+  "propertyNames": {
+    "pattern": "^[a-z0-9][a-z0-9_-]*$"
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/record"
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": [
+        "source_type",
+        "source_url",
+        "image_url",
+        "commons_file",
+        "credit",
+        "author",
+        "agency",
+        "license",
+        "license_rationale",
+        "fetched_at"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "const": "wikimedia-commons"
+        },
+        "source_url": {
+          "type": "string",
+          "pattern": "^https?://\\S+$"
+        },
+        "image_url": {
+          "type": "string",
+          "pattern": "^https?://\\S+$"
+        },
+        "commons_file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "credit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agency": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fetched_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "Akatsuki",
   "vehicle": "H-IIA 202",
-  "payload": "517 kg (incl. 196 kg drijfgas)",
+  "payload": "517 kg (incl. 196 kg drijfstof)",
   "delta_v": "~1,2 km/s",
   "type": "ORBITER · GEVLOGEN",
   "first": "Herstelde na vijf jaar in een baan om de Zon en bereikte Venus bij een reservepoging; de enige actieve Venus-orbiter in de laatste jaren van zijn operaties",
@@ -22,26 +22,27 @@
     {
       "met": 201,
       "label": "VOI-1 MISLUKING",
-      "note": "2010-12-07. OME throttle-anomalie 152s in de brand; ruimtesonde zeilt voorbij in heliocentrische baan.",
+      "note": "2010-12-07. OME throttle-anomalie 152s in de ontsteking; ruimtesonde zeilt voorbij in heliocentrische baan.",
       "type": "warning"
     },
     {
       "met": 1000,
       "label": "HELIOCENTRISCHE-BAANPAUZE",
-      "note": "12 maneuvers gedurende 5 jaar om een Venus-terugkeer-traject te behouden.",
+      "note": "12 manoeuvres gedurende 5 jaar om een traject voor een nieuwe ontmoeting met Venus te behouden.",
       "type": "info"
     },
     {
       "met": 2027,
       "label": "VOI-R2 SUCCES",
-      "note": "2015-12-07. RCS-verbrandingsbrand van 1228s in baan 400 × 440.000 km, 3° inclinatie.",
+      "note": "2015-12-07. RCS-ontsteking van 1228s in baan 400 × 440.000 km, 3° inclinatie.",
       "type": "info"
     },
     {
       "met": 2200,
       "label": "WETENSCHAPPELIJKE OPERATIES",
-      "note": "UV/IR wolkenkenmerk-tracking; super-rotatieonderzoeken; boogvormige zwaartekrachtgolven boven Aphrodite Terra. Contact verloren 2024; operaties op 2025-09-18 voltooid.",
+      "note": "UV/IR-volgen van wolkenstructuren; onderzoek naar superrotatie; boogvormige zwaartekrachtgolven boven Aphrodite Terra. Contact verloren in 2024; operaties op 2025-09-18 voltooid verklaard.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "tweede trap van de H-IIA 202"
 }

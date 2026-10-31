@@ -12,11 +12,13 @@
  * name this server, so both are accepted — at issuance (lab-api registers
  * both) and here at verification.
  *
- * Fail posture: fail-closed. Cold cache + lab-api down → 401. jose's
- * createRemoteJWKSet keeps a warm cache (10 min default, 30 s unknown-kid
- * cooldown), which IS the outage grace — no extra caching built.
+ * Fail posture: fail-closed, but honest about why. jose's createRemoteJWKSet keeps
+ * a warm cache (10 min default, 30 s unknown-kid cooldown), which IS the outage
+ * grace. With a cold cache and lab-api unreachable the token could not be checked
+ * at all: that is 503 + Retry-After, not 401 — a 401 tells the client its token is
+ * bad, so it throws it away and makes the user sign in again for a blip.
  */
-import { createRemoteJWKSet, jwtVerify } from 'jose';
+import { createRemoteJWKSet, errors, jwtVerify } from 'jose';
 
 export function mcpResource(): string {
   return process.env.MCP_RESOURCE ?? 'https://mcp.orrerylearn.com';
@@ -47,7 +49,24 @@ function remoteJwks(): ReturnType<typeof createRemoteJWKSet> {
 
 export type AuthResult =
   | { ok: true; sub: string; email: string }
-  | { ok: false; error: 'invalid_token' | 'insufficient_scope'; description: string };
+  | {
+      ok: false;
+      error: 'invalid_token' | 'insufficient_scope' | 'issuer_unavailable';
+      description: string;
+    };
+
+/** The JWKS could not be fetched (network, timeout, non-200, unparseable set), as
+ *  opposed to a token that fails verification. Classes checked against jose 6. */
+function jwksUnavailable(e: unknown): boolean {
+  if (e instanceof TypeError) return true; // fetch failed: refused, DNS, reset
+  if (e instanceof errors.JWKSTimeout || e instanceof errors.JWKSInvalid) return true;
+  // A non-200 /jwks response is a bare JOSEError with the generic code.
+  return (
+    e instanceof errors.JOSEError &&
+    e.constructor === errors.JOSEError &&
+    e.code === 'ERR_JOSE_GENERIC'
+  );
+}
 
 /**
  * Verify a bearer token for this resource server. RFC 6750 failure classes:
@@ -61,7 +80,14 @@ export async function verifyRequestToken(token: string): Promise<AuthResult> {
       audience: [mcpResource(), `${mcpResource()}/mcp`],
       algorithms: ['ES256'],
     }));
-  } catch {
+  } catch (e) {
+    if (jwksUnavailable(e)) {
+      return {
+        ok: false,
+        error: 'issuer_unavailable',
+        description: 'cannot reach the token issuer',
+      };
+    }
     return { ok: false, error: 'invalid_token', description: 'token verification failed' };
   }
   // Space-delimited-list treatment future-proofs multi-scope tokens; lab-api

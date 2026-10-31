@@ -8,7 +8,7 @@
   ],
   "body_paragraphs": [
     "Na de lancering zit je doorgaans in een lage baan om de Aarde (LEO). Om ergens anders heen te gaan, heb je een tweede stoot nodig die je apogeum verhoogt tot aan de bestemming — dat is de trans-X-injectie. De X is de eerste letter van de bestemming: TLI voor trans-lunair, TMI voor trans-Mars, TVI voor trans-Venus, TJI voor trans-Jupiter. Dezelfde natuurkunde, ander richtpunt.",
-    "De stoot vindt plaats in het perigeum van de parkeerbaan, waar het Oberth-effect je de meeste energie per kilo drijfgas geeft. Voor een Hohmann-overdracht naar Mars kost TMI ongeveer 3,6 km/s — grofweg een derde van de ~9,4 km/s aan ∆v voor de opstijging die nodig was om LEO te bereiken. De trans-Jupiter-injectie van Voyager 2 was ~7 km/s, de grootste enkele stoot; Saturnus, Uranus en Neptunus werden daarna bereikt met zwaartekrachtassistenties, niet met extra vertrekstoten.",
+    "De stoot vindt plaats in het perigeum van de parkeerbaan, waar het Oberth-effect je de meeste energie per kilo drijfstof geeft. Voor een Hohmann-overdracht naar Mars kost TMI ongeveer 3,6 km/s — grofweg een derde van de ~9,4 km/s aan ∆v voor de opstijging die nodig was om LEO te bereiken. De trans-Jupiter-injectie van Voyager 2 was ~7 km/s, de grootste enkele stoot; Saturnus, Uranus en Neptunus werden daarna bereikt met zwaartekrachtassistenties, niet met extra vertrekstoten.",
     "Op het VLUCHT-tabblad van elke interplanetaire missiekaart in `/missions` vind je dit getal als ∆v_TLI of ∆v_TMI. Het is de prijs voor het verlaten van de omgeving van de Aarde, los van de prijs om LEO überhaupt te bereiken."
   ]
 }

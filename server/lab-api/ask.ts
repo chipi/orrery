@@ -41,11 +41,26 @@ const MAX_TOOL_ROUNDS = 6;
 // cap bounds the echoed transcript's LLM-prompt cost under the 64 KiB body cap.
 const MAX_HISTORY_TURNS = 8;
 const MAX_HISTORY_ITEM_CHARS = 4000;
+// A question longer than this is refused (400) by the route: it all goes into the prompt.
+export const MAX_QUESTION_CHARS = 2000;
+// Tool calls the model may make in ONE round; the rest get an error result it can read
+// (#597 deferred item). Each formula needs one call; 8 covers a full ladder.
+const MAX_TOOL_CALLS_PER_ROUND = 8;
+// One /ask is up to MAX_TOOL_ROUNDS + 1 LLM calls of up to 60 s each — ~7 minutes with a
+// slow gateway. Bound the whole request instead: rounds stop early enough to leave
+// SYNTHESIS_RESERVE_MS for the final answer, and every call gets only the time left.
+const ASK_DEADLINE_MS = 120_000;
+const LLM_CALL_TIMEOUT_MS = 60_000;
+const SYNTHESIS_RESERVE_MS = 20_000;
+const MIN_CALL_MS = 5_000;
 
 export interface AskDeps {
   llmBaseUrl: string;
   llmApiKey: string;
   model: string;
+  /** Test seams: the clock and the whole-request deadline. */
+  now?: () => number;
+  deadlineMs?: number;
 }
 
 export function askDepsFromEnv(): AskDeps {
@@ -105,11 +120,12 @@ async function chat(
   withTools: boolean,
   requestId: string,
   generationName: string,
+  timeoutMs: number,
 ): Promise<ChatMessage> {
   return withSpan(
     'llm chat',
     { 'gen_ai.request.model': deps.model, 'gen_ai.operation.name': generationName },
-    () => chatOnce(deps, messages, withTools, llmMetadata(requestId, generationName)),
+    () => chatOnce(deps, messages, withTools, llmMetadata(requestId, generationName), timeoutMs),
   );
 }
 
@@ -118,13 +134,14 @@ async function chatOnce(
   messages: ChatMessage[],
   withTools: boolean,
   metadata: Record<string, string>,
+  timeoutMs: number,
 ): Promise<ChatMessage> {
   let resp: Response;
   try {
     resp = await fetch(`${deps.llmBaseUrl}/chat/completions`, {
       method: 'POST',
       // A hung LiteLLM (tailnet blip) must not strand /ask sockets (MINOR-3).
-      signal: AbortSignal.timeout(60_000),
+      signal: AbortSignal.timeout(timeoutMs),
       headers: {
         'content-type': 'application/json',
         authorization: `Bearer ${deps.llmApiKey}`,
@@ -208,6 +225,8 @@ export async function ask(
   const t = makeT(locale);
   // One id for the whole ask: the response's requestId and Langfuse's session.
   const requestId = newRequestId();
+  const now = deps.now ?? Date.now;
+  const deadline = now() + (deps.deadlineMs ?? ASK_DEADLINE_MS);
   const messages: ChatMessage[] = [{ role: 'system', content: systemPrompt(locale) }];
   // Prior turns (slice #540) — prose only; the client sends the transcript, we cap it
   // (turn count AND per-item chars — the echo is untrusted).
@@ -234,7 +253,9 @@ export async function ask(
   const toolCalls: AskToolCall[] = [];
 
   for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
-    const msg = await chat(deps, messages, true, requestId, `round-${round + 1}`);
+    const roundMs = Math.min(LLM_CALL_TIMEOUT_MS, deadline - now() - SYNTHESIS_RESERVE_MS);
+    if (roundMs < MIN_CALL_MS) break; // out of time: answer from what we have
+    const msg = await chat(deps, messages, true, requestId, `round-${round + 1}`, roundMs);
     messages.push(msg);
     if (!msg.tool_calls?.length) {
       return {
@@ -245,7 +266,14 @@ export async function ask(
         requestId,
       };
     }
-    for (const call of msg.tool_calls) {
+    for (const [i, call] of msg.tool_calls.entries()) {
+      if (i >= MAX_TOOL_CALLS_PER_ROUND) {
+        const result = {
+          error: `at most ${MAX_TOOL_CALLS_PER_ROUND} tool calls per round; call this again next round`,
+        };
+        messages.push({ role: 'tool', content: JSON.stringify(result), tool_call_id: call.id });
+        continue;
+      }
       let args: Record<string, unknown> = {};
       let resultText: string;
       let result: unknown;
@@ -289,13 +317,15 @@ export async function ask(
   // if that pass itself fails/returns nothing do we fall back to the honest
   // budget message (localized ×14, full-arc review MINOR-2).
   try {
+    const finalMs = Math.min(LLM_CALL_TIMEOUT_MS, deadline - now());
+    if (finalMs < MIN_CALL_MS) throw new Error('ask deadline reached');
     messages.push({
       role: 'user',
       content:
         'You have used all available tool calls. Do NOT request more tools. Write ' +
         'the final answer for the user now, using ONLY the tool results above.',
     });
-    const final = await chat(deps, messages, false, requestId, 'final-synthesis');
+    const final = await chat(deps, messages, false, requestId, 'final-synthesis', finalMs);
     const answer = (final.content ?? '').trim();
     if (answer) {
       return { answer, toolCalls, scenario, model: deps.model, requestId };

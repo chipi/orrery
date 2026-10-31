@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "De diepere les gaat over de prijs van een enkele vlucht. Het bedrijf overleefde op de vierde Falcon 1-lancering en niets meer; was het mislukt, dan zou niets van de rest bestaan. Grote capaciteiten hangen vaak aan één fragiel moment vroeg in het proces — en het verschil tussen de bedrijven die een industrie hervormen en degenen die verdwijnen is soms gewoon of die ene vlucht omhoog ging."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=falcon-9": "Vloot — Falcon 9, Falcon Heavy & Dragon",
+    "/programs/iss": "ISS — het station waar Crew Dragon naartoe vliegt",
+    "/earth": "Aarde — banen, rendez-vous & lanceerplaatsen"
+  }
 }

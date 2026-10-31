@@ -5,7 +5,7 @@
   "delta_v": "~3 km/s",
   "type": "ATTERRISSEUR DE PRÉCISION · ACTIF",
   "first": "Premier atterrissage de précision à moins de 100 m de la cible sur un autre monde",
-  "description": "Jusqu'à SLIM, les alunissages avaient une précision de ciblage à l'échelle kilométrique. Le Smart Lander de JAXA a démontré une précision de 100 m - la précision requise pour que les missions avec équipage s'amarrent avec une cargaison prépositionnée, pour que les véhicules de remontée d'échantillons trouvent leurs partenaires orbitaux et pour toute architecture future qui dépend de l'atterrissage sur des sites spécifiques de valeur scientifique. SLIM a également été le pionnier du transfert balistique à faible énergie vers la Lune, prenant 135 jours pour arriver mais utilisant moins de propulseur que les trajectoires directes. Une démonstration de la patience que les missions interplanétaires peuvent permettre lorsque le calendrier n’est pas la contrainte contraignante.",
+  "description": "Jusqu'à SLIM, les alunissages avaient une précision de ciblage à l'échelle kilométrique. Le Smart Lander de JAXA a démontré une précision de 100 m - la précision requise pour que les missions avec équipage s'amarrent avec une cargaison prépositionnée, pour que les véhicules de remontée d'échantillons trouvent leurs partenaires orbitaux et pour toute architecture future qui dépend de l'atterrissage sur des sites spécifiques de valeur scientifique. SLIM a également été le pionnier du transfert balistique à faible énergie vers la Lune, prenant 135 jours pour arriver mais utilisant moins de propergol que les trajectoires directes. Une démonstration de la patience que les missions interplanétaires peuvent permettre lorsque le calendrier n’est pas la contrainte contraignante.",
   "events": [
     {
       "met": 0,
@@ -22,19 +22,19 @@
     {
       "met": 110,
       "label": "Moi",
-      "note": "Insertion de l'orbite lunaire.",
+      "note": "Insertion en orbite lunaire.",
       "type": "nominal"
     },
     {
       "met": 135,
       "label": "ATTERRISSAGE",
-      "note": "Atterrissage en douceur au cratère Shioli 2024-01-19 15:20 UTC. Précision de la cible : ~55 m hors centre.",
+      "note": "Atterrissage en douceur au cratère Shioli 2024-01-19 15:20 UTC. Dans la précision visée : à ~55 m du centre.",
       "type": "nominal"
     },
     {
       "met": 135.01,
       "label": "ATTERRISSAGE INCLINÉ",
-      "note": "L'atterrisseur se repose en piqué en raison d'une anomalie moteur lors de la descente finale. Panneaux solaires initialement dans l'ombre.",
+      "note": "L'atterrisseur repose le nez vers le bas à cause d'une anomalie moteur lors de la descente finale. Panneaux solaires d'abord dans l'ombre.",
       "type": "warning"
     },
     {
@@ -43,5 +43,6 @@
       "note": "Changements d’angle du soleil ; les panneaux solaires produisent de l'électricité ; les opérations ont repris pendant un jour lunaire.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "deuxième étage du H-IIA"
 }

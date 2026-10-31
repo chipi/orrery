@@ -22,7 +22,7 @@
     {
       "met": 205,
       "label": "INSERTION EN ORBITE MARTIENNE",
-      "note": "Une poussée de 27 minutes capture Hope en orbite martienne 2021-02-09.",
+      "note": "Un allumage de 27 minutes des propulseurs capture Hope en orbite martienne le 2021-02-09.",
       "type": "nominal"
     },
     {
@@ -31,5 +31,6 @@
       "note": "Les manœuvres d'ajustement placent Hope dans son orbite scientifique de 55 heures.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "deuxième étage du H-IIA"
 }

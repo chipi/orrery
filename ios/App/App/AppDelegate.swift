@@ -61,7 +61,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         purgeStaleServiceWorker()
+        excludeOfflineDownloadsFromBackup()
         return true
+    }
+
+    // Offline packs (170 MB basic, ~800 MB full) are written by the Capacitor
+    // Filesystem plugin under Documents/offline (Directory.Data), which iCloud backs
+    // up by default. They can be downloaded again, so Apple's storage guidelines
+    // want them excluded. The flag on the directory covers everything inside it;
+    // creating the directory first lets the flag hold before the first download.
+    private func excludeOfflineDownloadsFromBackup() {
+        guard var dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?
+            .appendingPathComponent("offline", isDirectory: true) else { return }
+        do {
+            try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+            var values = URLResourceValues()
+            values.isExcludedFromBackup = true
+            try dir.setResourceValues(values)
+        } catch {
+            NSLog("[orrery] could not exclude offline downloads from backup: \(error)")
+        }
     }
 
     // #53 — one-time purge of the WKWebView service worker + web caches. A workbox

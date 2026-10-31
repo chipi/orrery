@@ -82,5 +82,9 @@
       "type": "prose",
       "md": "The second lesson is written in Flight 501: reused software is not automatically safe software. Ariane 5 was destroyed because guidance code proven on Ariane 4 was carried over untested into a rocket that flew faster, where an assumption baked into the old code no longer held. The components were sound; the failure was in assuming that what worked in one context would work unchanged in another. Every reused system must be re-validated against the new conditions it will actually face — a lesson that reaches far beyond rockets."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/esa-human": "ESA in human spaceflight — Spacelab, Columbus, ATV",
+    "/fleet?focus=ariane-5": "Fleet — Ariane launchers"
+  }
 }

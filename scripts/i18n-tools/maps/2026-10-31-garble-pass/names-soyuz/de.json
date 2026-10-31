@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "posters./images/posters/soyuz_jpg.title",
+    "old": "Sojus",
+    "new": "Soyuz"
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.18.md",
+    "old": "Der körperliche Verfall ist messbar und zumindest teilweise behandelbar. Die psychologische Dimension ist schwerer zu erforschen, denn sie hängt von Variablen ab – Persönlichkeit, Zusammensetzung der Crew, Beschaffenheit der Enge, Beziehung zwischen Crew und Bodenkontrolle –, die sich kontrollierten Experimenten entziehen. Was die Analogstudien nahelegen, ist nicht beruhigend. Die [Psychologie von Isolation und Enge](/science/life-in-space/crew-dynamics-psychology) wurde am systematischsten in antarktischen Überwinterungsstationen untersucht: kleine Gruppen in echter Dunkelheit und Kälte, ohne die Möglichkeit, die Station zu verlassen. Die Muster sind über die Studien hinweg konsistent – ein Mittwinter-Syndrom mit verschlechterter Stimmung und eingeschränkter Kognition, zwischenmenschliche Reibung, die sich auf engem Raum aufschaukelt, und eine psychische Distanzierung von der Außenwelt, die über die Rückkehr hinaus anhalten kann. Antarktis-Crews können immerhin Außenluft atmen und eine Landschaft sehen. Eine Mars-Crew kann das nicht. Das Experiment Mars-500 in Moskau (2010–2011) simulierte eine 520 Tage lange Mission in einem abgeriegelten Habitat; sechs Freiwillige hielten die gesamte Dauer durch, ohne es zu verlassen. Das Bewegungsverhalten wurde im Verlauf zunehmend träger. Ein Teilnehmer verschlief den Großteil der letzten Monate. Ein anderer zeigte Symptome, die mit einer klinischen Depression vereinbar sind. Als die Kommunikationsverzögerung sich den simulierten 20 Minuten näherte, berichteten die Crews, es fühle sich nicht nur langsamer, sondern grundlegend einsamer an: Entscheidungen, die man sonst an die Bodenkontrolle delegiert hätte, mussten an Bord getroffen werden, und das Gefühl, dass man jederzeit jemanden erreichen könne, schwand allmählich. Ein Besatzungsmitglied auf der [ISS](/programs/iss) hat jederzeit eine Sojus an die Station angedockt. Auf einem Transit zum Mars gibt es den Notausgang nicht. Ab dem Moment der Trans-Mars-Injektion kann keine Entscheidung irgendeines Controllers auf der Erde die Crew in nützlicher Zeit nach Hause bringen. Die Crew weiß das. Was das dauerhafte Wissen um die eigene Unrettbarkeit über 18 Monate im menschlichen Geist anrichtet, ist eine Frage, der sich die Analogstudien angenähert haben, die sie aber nicht beantworten können. Wir werden es nicht wissen, bis die erste Crew aufbricht.",
+    "new": "Der körperliche Verfall ist messbar und zumindest teilweise behandelbar. Die psychologische Dimension ist schwerer zu erforschen, denn sie hängt von Variablen ab – Persönlichkeit, Zusammensetzung der Crew, Beschaffenheit der Enge, Beziehung zwischen Crew und Bodenkontrolle –, die sich kontrollierten Experimenten entziehen. Was die Analogstudien nahelegen, ist nicht beruhigend. Die [Psychologie von Isolation und Enge](/science/life-in-space/crew-dynamics-psychology) wurde am systematischsten in antarktischen Überwinterungsstationen untersucht: kleine Gruppen in echter Dunkelheit und Kälte, ohne die Möglichkeit, die Station zu verlassen. Die Muster sind über die Studien hinweg konsistent – ein Mittwinter-Syndrom mit verschlechterter Stimmung und eingeschränkter Kognition, zwischenmenschliche Reibung, die sich auf engem Raum aufschaukelt, und eine psychische Distanzierung von der Außenwelt, die über die Rückkehr hinaus anhalten kann. Antarktis-Crews können immerhin Außenluft atmen und eine Landschaft sehen. Eine Mars-Crew kann das nicht. Das Experiment Mars-500 in Moskau (2010–2011) simulierte eine 520 Tage lange Mission in einem abgeriegelten Habitat; sechs Freiwillige hielten die gesamte Dauer durch, ohne es zu verlassen. Das Bewegungsverhalten wurde im Verlauf zunehmend träger. Ein Teilnehmer verschlief den Großteil der letzten Monate. Ein anderer zeigte Symptome, die mit einer klinischen Depression vereinbar sind. Als die Kommunikationsverzögerung sich den simulierten 20 Minuten näherte, berichteten die Crews, es fühle sich nicht nur langsamer, sondern grundlegend einsamer an: Entscheidungen, die man sonst an die Bodenkontrolle delegiert hätte, mussten an Bord getroffen werden, und das Gefühl, dass man jederzeit jemanden erreichen könne, schwand allmählich. Ein Besatzungsmitglied auf der [ISS](/programs/iss) hat jederzeit eine Soyuz an die Station angedockt. Auf einem Transit zum Mars gibt es den Notausgang nicht. Ab dem Moment der Trans-Mars-Injektion kann keine Entscheidung irgendeines Controllers auf der Erde die Crew in nützlicher Zeit nach Hause bringen. Die Crew weiß das. Was das dauerhafte Wissen um die eigene Unrettbarkeit über 18 Monate im menschlichen Geist anrichtet, ist eine Frage, der sich die Analogstudien angenähert haben, die sie aber nicht beantworten können. Wir werden es nicht wissen, bis die erste Crew aufbricht."
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "the_land.1.md",
+    "old": "Den Anfang machte 1983 Spacelab – ein in Europa gebautes Labor, das in der Nutzlastbucht des Space Shuttle mitflog, das Shuttle in eine Wissenschaftsplattform verwandelte und beim ersten Flug den ersten ESA-Astronauten an Bord hatte. Es folgte Columbus, Europas dauerhaftes Labor, das an die Internationale Raumstation geschraubt wurde, sowie das Automated Transfer Vehicle, das größte und anspruchsvollste Frachtraumschiff seiner Zeit. Auf dem Weg dorthin flogen europäische Astronauten mit Shuttles und Sojus, lebten an Bord von Mir und der ISS und kommandierten die Station. Europa startete nie eine eigene Besatzung – und wurde dennoch für fast alle, die es taten, unentbehrlich.",
+    "new": "Den Anfang machte 1983 Spacelab – ein in Europa gebautes Labor, das in der Nutzlastbucht des Space Shuttle mitflog, das Shuttle in eine Wissenschaftsplattform verwandelte und beim ersten Flug den ersten ESA-Astronauten an Bord hatte. Es folgte Columbus, Europas dauerhaftes Labor, das an die Internationale Raumstation geschraubt wurde, sowie das Automated Transfer Vehicle, das größte und anspruchsvollste Frachtraumschiff seiner Zeit. Auf dem Weg dorthin flogen europäische Astronauten mit Shuttles und Soyuz, lebten an Bord von Mir und der ISS und kommandierten die Station. Europa startete nie eine eigene Besatzung – und wurde dennoch für fast alle, die es taten, unentbehrlich."
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "outcome.2.md",
+    "old": "Im Betrieb der Station werden alle Lehren aller früheren Programme zugleich fällig. Ihr modularer Aufbau ist Mirs Idee, ins Große gesteigert und internationalisiert. Ihre Logistik aus Nachschub und Betankung stammt von Salyut, weiter ausgereift. Ihre ununterbrochene Besetzung und ihre Langzeitforschung führen Skylab und Mir fort. Sojus bringt ihre Besatzungen noch immer hinauf, genau wie vor fünfzig Jahren zu Salyut; Progress und seine westlichen Vettern – Europas ATV, Japans HTV, Amerikas Cygnus und Dragon – halten sie versorgt. Die Station ist nicht bloß die Nachfolgerin der Stationsprogramme; sie ist deren Summe und wendet all ihre mühsam errungenen Techniken gleichzeitig und zuverlässig an.",
+    "new": "Im Betrieb der Station werden alle Lehren aller früheren Programme zugleich fällig. Ihr modularer Aufbau ist Mirs Idee, ins Große gesteigert und internationalisiert. Ihre Logistik aus Nachschub und Betankung stammt von Salyut, weiter ausgereift. Ihre ununterbrochene Besetzung und ihre Langzeitforschung führen Skylab und Mir fort. Soyuz bringt ihre Besatzungen noch immer hinauf, genau wie vor fünfzig Jahren zu Salyut; Progress und seine westlichen Vettern – Europas ATV, Japans HTV, Amerikas Cygnus und Dragon – halten sie versorgt. Die Station ist nicht bloß die Nachfolgerin der Stationsprogramme; sie ist deren Summe und wendet all ihre mühsam errungenen Techniken gleichzeitig und zuverlässig an."
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "lessons.1.md",
+    "old": "Die zweite Lektion lautet: In der Raumfahrt beginnt nichts bei null. Die ISS ist die Summe aller Programme vor ihr – der Versorgung von Salyut, der Modularität von Mir, der Wissenschaft von Skylab, der Montage des Shuttles, der Zuverlässigkeit von Sojus, der Labore Europas und Japans –, nichts davon wurde neu erfunden, alles wurde geerbt und kombiniert. Die tiefste Wahrheit des Raumfahrtzeitalters ist, dass seine Errungenschaften aufeinander aufbauen: Jedes Programm steht auf den vorangegangenen, und die Station steht auf ihnen allen. Fortschritt im Weltraum ist keine Folge von Neuanfängen, sondern ein einziger, ununterbrochener Akt des Bauens, von Hand zu Hand weitergereicht über Generationen und über Grenzen hinweg.",
+    "new": "Die zweite Lektion lautet: In der Raumfahrt beginnt nichts bei null. Die ISS ist die Summe aller Programme vor ihr – der Versorgung von Salyut, der Modularität von Mir, der Wissenschaft von Skylab, der Montage des Shuttles, der Zuverlässigkeit von Soyuz, der Labore Europas und Japans –, nichts davon wurde neu erfunden, alles wurde geerbt und kombiniert. Die tiefste Wahrheit des Raumfahrtzeitalters ist, dass seine Errungenschaften aufeinander aufbauen: Jedes Programm steht auf den vorangegangenen, und die Station steht auf ihnen allen. Fortschritt im Weltraum ist keine Folge von Neuanfängen, sondern ein einziger, ununterbrochener Akt des Bauens, von Hand zu Hand weitergereicht über Generationen und über Grenzen hinweg."
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.1.subtitle",
+    "old": "2. Juni 2003 – Sojus/Fregat von Baikonur, als Huckepack-Nutzlast auf Mars Express",
+    "new": "2. Juni 2003 – Soyuz/Fregat von Baikonur, als Huckepack-Nutzlast auf Mars Express"
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "old": "Kommandomodul CM-111, geflogen beim Apollo-Sojus-Testprojekt (1975)",
+    "new": "Kommandomodul CM-111, geflogen beim Apollo-Soyuz-Testprojekt (1975)"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.saturn-ib",
+    "old": "Saturn IB SA-209, die nie geflogene Rettungsrakete für Skylab und Ersatzrakete für Apollo-Sojus",
+    "new": "Saturn IB SA-209, die nie geflogene Rettungsrakete für Skylab und Ersatzrakete für Apollo-Soyuz"
+  },
+  {
+    "rel": "museums/korolev-museum-zhytomyr.json",
+    "at": "items.soyuz-7k-ok",
+    "old": "Landekapsel von Sojus 27 (1978), der 7K-T-Version, die auf die 7K-OK folgte",
+    "new": "Landekapsel von Soyuz 27 (1978), der 7K-T-Version, die auf die 7K-OK folgte"
+  },
+  {
+    "rel": "museums/national-military-museum-bucharest.json",
+    "at": "items.soyuz-7k-ok",
+    "old": "Landekapsel von Sojus 40 (1981), der 7K-T-Version, die auf die 7K-OK folgte, geflogen von Leonid Popow und Dumitru Prunariu",
+    "new": "Landekapsel von Soyuz 40 (1981), der 7K-T-Version, die auf die 7K-OK folgte, geflogen von Leonid Popow und Dumitru Prunariu"
+  },
+  {
+    "rel": "museums/aviation-museum-plovdiv-krumovo.json",
+    "at": "items.soyuz-7k-ok",
+    "old": "Abstiegsmodul von Sojus 33 (1979), der Version 7K-T, die auf die 7K-OK folgte, geflogen von Nikolai Rukawischnikow und Georgi Iwanow",
+    "new": "Abstiegsmodul von Soyuz 33 (1979), der Version 7K-T, die auf die 7K-OK folgte, geflogen von Nikolai Rukawischnikow und Georgi Iwanow"
+  }
+]

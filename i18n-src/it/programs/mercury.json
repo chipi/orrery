@@ -96,5 +96,10 @@
       "type": "prose",
       "md": "E la nota umana che vale la pena conservare: il rifiuto degli astronauti di essere carico. Presentati con un progetto che li trattava come passeggeri, insistettero per essere piloti — un finestrino, un comando, voce in capitolo nel volo — e quell'insistenza, più di ogni singola missione, è ciò che rese il programma loro e stabilì il carattere di tutto ciò che venne dopo."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — orbite, rientro e siti di lancio",
+    "/science/mission-phases/edl": "Ingresso, discesa e atterraggio",
+    "/science/propulsion/tsiolkovsky": "L'equazione di Ciolkovskij — perché il Redstone non poteva andare in orbita"
+  }
 }

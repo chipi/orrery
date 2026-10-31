@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "Die zweite Lehre steht in Flug 501 geschrieben: Wiederverwendete Software ist nicht automatisch sichere Software. Die Ariane 5 wurde zerstört, weil Lenkungscode, der sich auf der Ariane 4 bewährt hatte, ungetestet in eine Rakete übernommen wurde, die schneller flog – und bei der eine im alten Code verankerte Annahme nicht mehr galt. Die Bauteile waren einwandfrei; der Fehler lag in der Annahme, dass sich das, was in einem Kontext funktioniert hatte, in einem anderen unverändert bewähren würde. Jedes wiederverwendete System muss erneut gegen die neuen Bedingungen validiert werden, denen es tatsächlich begegnen wird – eine Lehre, die weit über die Raketentechnik hinausreicht."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/esa-human": "Die ESA in der bemannten Raumfahrt — Spacelab, Columbus, ATV",
+    "/fleet?focus=ariane-5": "Flotte — Ariane-Trägerraketen"
+  }
 }

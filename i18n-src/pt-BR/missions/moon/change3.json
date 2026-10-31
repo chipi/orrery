@@ -11,5 +11,6 @@
     { "met": 0.01, "label": "TLI", "note": "Injeção translunar direta no estágio superior do LM-3B.", "type": "nominal" },
     { "met": 5, "label": "INSERÇÃO EM ÓRBITA LUNAR", "note": "Captura em órbita lunar circular de 100 km em 2013-12-06.", "type": "nominal" },
     { "met": 13, "label": "POUSO", "note": "Pouso suave no Mar das Chuvas em 2013-12-14. Primeiro pouso suave desde Luna 24 (1976). Rover Yutu liberado horas depois.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Long March 3B/E com estágio superior YZ-1"
 }

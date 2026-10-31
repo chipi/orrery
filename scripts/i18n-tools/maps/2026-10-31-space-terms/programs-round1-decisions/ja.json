@@ -1,0 +1,25 @@
+[
+  {
+    "rel": "programs/vostok.json",
+    "at": "lessons.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "metaphor: burns the runway, not an engine firing"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "narrative.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "貨物ではなく",
+    "replace": "ペイロードではなく",
+    "why": "payload binding"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "lineage sense (direct descent), not a surface descent"
+  }
+]

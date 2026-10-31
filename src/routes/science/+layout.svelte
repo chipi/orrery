@@ -20,10 +20,11 @@
 -->
 <script lang="ts">
   import 'katex/dist/katex.min.css';
+  import { localHref } from '$lib/locale';
   import { onDestroy, onMount } from 'svelte';
-  import { base } from '$app/paths';
   import { SCIENCE_TABS } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { scienceTabLabel } from '$lib/science-tab-label';
   import ScienceSearch from '$lib/components/ScienceSearch.svelte';
   import type { Snippet } from 'svelte';
   import type { LayoutData } from './$types';
@@ -51,13 +52,7 @@
     }
   });
 
-  function tabLabel(tab: string): string {
-    const key = `science_tab_${tab.replace(/-/g, '_')}` as keyof typeof m;
-    const fn = m[key] as (() => string) | undefined;
-    return typeof fn === 'function'
-      ? fn()
-      : tab.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-  }
+  const tabLabel = scienceTabLabel;
 
   // Active state + section list come from /science/+layout.ts which
   // inspects the URL and loads the right tab's sections (null on landing).
@@ -141,7 +136,7 @@
                 class="tab-card"
                 class:active={tab === activeTab}
                 data-audio-stage="science-tab-{tab}"
-                href="{base}/science/{tab}"
+                href={localHref(`/science/${tab}`)}
                 aria-current={tab === activeTab ? 'page' : undefined}
                 onkeydown={onTabKeydown}
                 data-sveltekit-keepfocus
@@ -167,7 +162,7 @@
                   class="section-row"
                   class:active={section.id === activeSection}
                   data-audio-stage="science-section-{section.id}"
-                  href="{base}/science/{activeTab}/{section.id}"
+                  href={localHref(`/science/${activeTab}/${section.id}`)}
                   aria-current={section.id === activeSection ? 'page' : undefined}
                   onkeydown={onSectionKeydown}
                   data-sveltekit-keepfocus

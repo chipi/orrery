@@ -13,5 +13,6 @@
     { "met": 30.6, "label": "MUESTREO", "note": "1,935 kg recogidos del regolito de la cara oculta.", "type": "info" },
     { "met": 32, "label": "ASCENSO", "note": "El vehículo de ascenso despega; encuentro con el orbitador.", "type": "nominal" },
     { "met": 53, "label": "RETORNO A LA TIERRA", "note": "La cápsula aterriza en Mongolia Interior 2024-06-25 con las primeras muestras de la cara oculta jamás recuperadas.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "etapa superior YZ-1 del Long March 5"
 }

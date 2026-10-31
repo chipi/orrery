@@ -12,5 +12,5 @@
     "In Orrery, vis-viva è ciò che calcola le letture di velocità che vedi sull'HUD di `/fly` mentre un veicolo spaziale passa vicino a un pianeta — e i numeri di energia di partenza e velocità di arrivo che alimentano la mappa di calore porkchop su `/plan`."
   ],
   "formula_caption": "v da μ, r, a.",
-  "diagram_caption": "Velocità variabile: alta al perielio, bassa all'afelio."
+  "diagram_caption": "La velocità varia lungo l'orbita: alta al perielio, bassa all'afelio."
 }

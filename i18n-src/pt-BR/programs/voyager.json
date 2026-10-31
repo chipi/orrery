@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "A lição mais profunda é construir com muito mais margem do que o plano exige. As Voyagers foram projetadas para uma missão um décimo do tamanho da que voaram, e resistiram porque seus criadores as construíram além do necessário — sistemas redundantes, computadores reprogramáveis, energia de sobra. Ambição que planeja apenas para a missão esperada termina com a missão esperada; as que continuam são aquelas construídas para mais do que foram solicitadas a fazer."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Os planetas externos no explorador 3D",
+    "/gallery/deep-sky": "O “pálido ponto azul”, na galeria Céu profundo",
+    "/programs/pioneer": "Pioneer — as sondas que foram primeiro"
+  }
 }

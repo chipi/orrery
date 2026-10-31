@@ -5,8 +5,8 @@
   "delta_v": "~6 km/s (andata e ritorno)",
   "dispatch": "Apollo 14 doveva dimostrare che il programma poteva ancora allunare. Volò nove mesi dopo che Apollo 13 aveva quasi ucciso il suo equipaggio, subentrò all'obiettivo che Apollo 13 non aveva mai raggiunto e riportò Alan Shepard nello spazio un decennio dopo che era diventato il primo americano a lasciare il pianeta — tenuto a terra nel frattempo per anni a causa di un disturbo dell'orecchio interno, e ora, a quarantasette anni, la persona più anziana a camminare sulla Luna. Lui e Mitchell arrivarono a circa trenta metri dal bordo del cratere Cone, incapaci di capire nel terreno confuso quanto si fossero effettivamente avvicinati. Poi, negli ultimi minuti sulla superficie, Shepard colpì con un ferro sei improvvisato due palline da golf — una trovata pubblicitaria, e anche un segnale discreto che la crisi era alle spalle e Apollo volava di nuovo.",
   "type": "LANDER EQUIPAGGIATO · VOLATO",
-  "first": "Terzo allunaggio — raggiunto l'obiettivo perso di Apollo 13; tiri di golf di Shepard",
-  "description": "Il terzo allunaggio con equipaggio e il secondo volo di Alan Shepard — facendolo sia il primo americano nello spazio (Freedom 7, 1961) che il quinto uomo sulla Luna, a 47 anni il più anziano Moonwalker. Apollo 14 fu la missione di recupero dopo l'allunaggio abortito dell'Apollo 13, assumendo l'obiettivo previsto dell'Apollo 13 negli altopiani di Fra Mauro. Shepard e Mitchell distribuirono ALSEP, completarono due EVA per un totale di 9 h 23 m, e trascinarono il trasportatore modulare di equipaggiamento (MET, un carrello in stile risciò — l'LRV era ancora a una missione di distanza) verso il Crater Cone, anche se arrivarono a circa 30 m di distanza dal ciglio a causa dell'incertezza di navigazione nel terreno craterizzato. Negli ultimi minuti dell'EVA-2, Shepard ha improvvisato una testa di bastone da golf six-iron su un manico per la raccolta di campioni e ha colpito due palline da golf «chilometri e chilometri e chilometri» (una in seguito fu analizzata dalle immagini a circa 24 m e circa 37 m). Stuart Roosa portò semi di alberi in Kitty Hawk che divennero gli «Moon Trees» piantati in tutto gli Stati Uniti. 42 kg di campioni rientrati.",
+  "first": "Terzo allunaggio — raggiunto l'obiettivo mancato da Apollo 13; colpi di golf di Shepard",
+  "description": "Il terzo allunaggio con equipaggio e il secondo volo di Alan Shepard — che ne fece sia il primo americano nello spazio (Freedom 7, 1961) sia il quinto uomo sulla Luna, e a 47 anni il più anziano tra chi ha camminato sulla Luna. Apollo 14 fu la missione di recupero dopo l'allunaggio annullato dell'Apollo 13, e ne rilevò l'obiettivo previsto, gli altopiani di Fra Mauro. Shepard e Mitchell installarono l'ALSEP, completarono due EVA per un totale di 9 h 23 m e trainarono il trasportatore modulare di attrezzature (MET, un carrello in stile risciò — il LRV era ancora a una missione di distanza) verso il cratere Cone, anche se si fermarono a circa 30 m dal bordo a causa dell'incertezza di navigazione nel terreno butterato di crateri. Negli ultimi minuti dell'EVA-2 Shepard improvvisò la testa di una mazza da golf, un ferro 6, su un manico per la raccolta di campioni e colpì due palline da golf «per miglia e miglia e miglia» (una fu analizzata in seguito dalle immagini: circa 24 m e circa 37 m). Stuart Roosa portò semi di alberi nel Kitty Hawk, da cui nacquero i «Moon Trees» piantati in tutti gli Stati Uniti. Riportati 42 kg di campioni.",
   "events": [
     {
       "met": 0,
@@ -17,13 +17,13 @@
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Iniezione translunar. S-IVB ∆v ~3,05 km/s.",
+      "note": "Iniezione translunare. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 0.25,
       "label": "AGGANCIO CSM-LM",
-      "note": "Cinque tentativi di attracco prima che Kitty Hawk catturasse dolcemente Antares — anomalia nei meccanismi di aggancio; la causa radice non è mai stata riprodotta da terra.",
+      "note": "Cinque tentativi di aggancio prima che Kitty Hawk riuscisse a catturare dolcemente Antares — anomalia nei ganci dell'aggancio; la causa all'origine non è mai stata riprodotta a terra.",
       "type": "warning"
     },
     {
@@ -41,13 +41,13 @@
     {
       "met": 5,
       "label": "EVA-1",
-      "note": "Shepard + Mitchell dispiegano ALSEP + primo traverse geologico lunare in questa missione.",
+      "note": "Shepard + Mitchell dispiegano l'ALSEP + primo percorso di geologia lunare di questa missione.",
       "type": "info"
     },
     {
       "met": 5.4,
       "label": "CONE CRATER + GOLF",
-      "note": "EVA-2: traverse verso il cratere Cone (raggiunsero circa 30 m dal bordo). Ultimi minuti — Shepard colpisce due palline da golf con una mazza improvvisata.",
+      "note": "EVA-2: spostamento verso il cratere Cone (mancarono circa 30 m al bordo). Ultimi minuti — Shepard colpisce due palline da golf con una mazza improvvisata.",
       "type": "info"
     },
     {

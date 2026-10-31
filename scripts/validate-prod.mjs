@@ -39,6 +39,7 @@
 import { chromium } from '@playwright/test';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
 
 const BASE = (process.env.VALIDATE_URL ?? 'https://www.orrerylearn.com').replace(/\/$/, '');
 const TIER = process.env.VALIDATE_TIER ?? 'prod';
@@ -86,21 +87,7 @@ const DEEP_ROUTES = [
 // route sweep (below) checks EVERY top-level route in EVERY language: served +
 // the served page's <html lang> matches the locale (a home-fallback shows
 // lang="en-US" — the exact failure mode the PWA-shell + prerender bugs caused).
-const LOCALES = [
-  'es',
-  'fr',
-  'de',
-  'pt-BR',
-  'it',
-  'nl',
-  'sr-Cyrl',
-  'zh-CN',
-  'ja',
-  'ko',
-  'hi',
-  'ar',
-  'ru',
-];
+const LOCALES = TRANSLATED_LOCALES;
 // Localized URL for a base route (mirrors svelte.config.js expandLocalizedRoots).
 // Localized home is `/<locale>` (no trailing slash) — the app's prerendered URL
 // shape. A forced trailing slash 404s on GitHub Pages' strict static serving even
@@ -434,7 +421,13 @@ suite('i18n-full');
 suite('data');
 {
   const p = await desktop.newPage();
-  for (const f of ['/data/i18n/en-US.json', '/data/i18n/de.json']) {
+  // Whole-locale bundles (released app versions stream them) + the chunks the site loads.
+  for (const f of [
+    '/data/i18n/en-US.json',
+    '/data/i18n/de.json',
+    '/data/i18n/de.core.json',
+    '/data/i18n/de.science.json',
+  ]) {
     try {
       const resp = await p.goto(BASE + f, { timeout: 15000 });
       record(`data served ${f}`, resp && resp.status() === 200, `HTTP ${resp?.status()}`);

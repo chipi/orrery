@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La segunda lección es que la excelencia en ingeniería no puede salvar a un programa de la pérdida de su propósito y su presupuesto. Buran fue, en aspectos reales, un diseño mejor que el vehículo al que respondía — y voló una vez. El Shuttle estadounidense, con todos sus defectos, voló durante treinta años porque tenía misiones que cumplir y dinero para realizarlas. Una nave espacial es tan duradera como la voluntad institucional y la financiación que la respaldan; sin ellas, incluso un vuelo impecable es un final en lugar de un comienzo."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/space-shuttle": "Space Shuttle: el vehículo al que respondía",
+    "/fleet?focus=buran": "Flota — el orbitador Buran y Energia"
+  }
 }

@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "original-work.json",
+    "at": "capsules./images/colophon/model-capsule-soyuz-sa_webp.title",
+    "old": "Module de descente Soyouz",
+    "new": "Module de descente Soyuz"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "capsules./images/colophon/model-capsule-shenzhou-reentry_webp.what",
+    "old": "Une cloche au lignage Soyouz large — sa propre coque gris-argenté plus légère avec une bande d'équipement grise (Shenzhou-1 et suivants).",
+    "new": "Une cloche au lignage Soyuz large — sa propre coque gris-argenté plus légère avec une bande d'équipement grise (Shenzhou-1 et suivants)."
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "description",
+    "old": "Le J-2 brûlait de l'hydrogène et de l'oxygène, et il pouvait redémarrer dans le vide de l'espace — une capacité qui a rendu possible l'allumage d'injection translunaire de Saturn V. Le moteur à générateur de gaz de Rocketdyne a volé sur les deuxième et troisième étages de Saturn V et sur Saturn IB, alliant performances et redémarrages dans l'espace, ce qui a fait d'un lanceur un véritable étage de départ. Il a volé pour la première fois en février 1966 et pour la dernière fois lors du programme d'essai Apollo-Soyouz (Apollo-Soyuz Test Project) en juillet 1975.",
+    "new": "Le J-2 brûlait de l'hydrogène et de l'oxygène, et il pouvait redémarrer dans le vide de l'espace — une capacité qui a rendu possible l'allumage d'injection translunaire de Saturn V. Le moteur à générateur de gaz de Rocketdyne a volé sur les deuxième et troisième étages de Saturn V et sur Saturn IB, alliant performances et redémarrages dans l'espace, ce qui a fait d'un lanceur un véritable étage de départ. Il a volé pour la première fois en février 1966 et pour la dernière fois lors du programme d'essai Apollo-Soyuz (Apollo-Soyuz Test Project) en juillet 1975."
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "function_detail",
+    "old": "Hub d'amarrage radial qui élargit la capacité de stationnement des Soyouz/Progress, indépendamment des anciens ports axiaux.",
+    "new": "Hub d'amarrage radial qui élargit la capacité de stationnement des Soyuz/Progress, indépendamment des anciens ports axiaux."
+  },
+  {
+    "rel": "museums/aviation-museum-plovdiv-krumovo.json",
+    "at": "items.soyuz-7k-ok",
+    "old": "Module de descente de Soyouz 33 (1979), la version 7K-T qui a succédé à la 7K-OK, piloté par Nikolaï Roukavichnikov et Gueorgui Ivanov",
+    "new": "Module de descente de Soyuz 33 (1979), la version 7K-T qui a succédé à la 7K-OK, piloté par Nikolaï Roukavichnikov et Gueorgui Ivanov"
+  },
+  {
+    "rel": "museums/korolev-museum-zhytomyr.json",
+    "at": "items.soyuz-7k-ok",
+    "old": "Module de descente de Soyouz 27 (1978), la version 7K-T qui a succédé à la 7K-OK",
+    "new": "Module de descente de Soyuz 27 (1978), la version 7K-T qui a succédé à la 7K-OK"
+  },
+  {
+    "rel": "museums/national-military-museum-bucharest.json",
+    "at": "items.soyuz-7k-ok",
+    "old": "Module de descente de Soyouz 40 (1981), la version 7K-T qui a succédé à la 7K-OK, piloté par Leonid Popov et Dumitru Prunariu",
+    "new": "Module de descente de Soyuz 40 (1981), la version 7K-T qui a succédé à la 7K-OK, piloté par Leonid Popov et Dumitru Prunariu"
+  }
+]

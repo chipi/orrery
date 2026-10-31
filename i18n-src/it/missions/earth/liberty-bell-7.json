@@ -4,9 +4,9 @@
   "payload": "Capsula Mercury n. 11 (1832 kg); Gus Grissom",
   "delta_v": "~2,3 km/s (suborbitale)",
   "type": "VOLO SUBORBITALE CON EQUIPAGGIO · COMPLETATO",
-  "first": "Secondo volo suborbitale americano; il malfunzionamento del portello ha perduto la capsula (recuperata 1999)",
-  "dispatch": "Liberty Bell 7 ha volato perfettamente ed è ricordato per i trenta secondi dopo che ha smesso di volare. Il salto suborbitale di Gus Grissom ha ripetuto quello di Shepard — prova che il primo volo non era stato un caso fortuito — ma sull'acqua il nuovo portello esplosivo si è azionato da solo, la capsula si è allagata, e si è inabissata sul fondo dell'Atlantico mentre Grissom rischiava quasi di annegare nel suo tuta che si riempiva d'acqua. Se aveva urtato il grilletto o se si era azionato spontaneamente fu oggetto di discussione per il resto della sua vita e mai risolto. La vera lezione del volo era più tranquilla e più utile: la parte più pericolosa di un volo spaziale non è sempre il volo spaziale stesso.",
-  "description": "Il volo suborbitale di 15 minuti di Gus Grissom — secondo americano nello spazio, primo volo a presentare un portello di fuga esplosivo. Dopo l'ammaraggio il portello si è azionato prematuramente, la capsula si è allagata, e Liberty Bell 7 si è inabissata in 4900 m di acqua; Grissom è scappato ma la sua tuta ha assorbito acqua ed è quasi annegato durante il recupero dell'elicottero. La causa dell'azionamento del portello rimase controversa per decenni; Grissom ha sostenuto di non aver urtato il percussore. Recuperata 1999-07-20 da una spedizione Oceaneering/Discovery Channel, restaurata e ora esposta al Kansas Cosmosphere & Space Center, Hutchinson KS. Il libro di Tom Wolfe / film del 1983 The Right Stuff ha drammatizzato questo volo e la controversia del portello.",
+  "first": "Secondo volo suborbitale americano; un guasto al portello causò la perdita della capsula (recuperata nel 1999)",
+  "dispatch": "La Liberty Bell 7 volò alla perfezione ed è ricordata per i trenta secondi dopo che aveva smesso di volare. Il balzo suborbitale di Gus Grissom ripeté quello di Shepard — la prova che il primo volo non era stato un caso fortunato — ma sull'acqua il nuovo portello esplosivo scattò da solo, la capsula si allagò e affondò sul fondo dell'Atlantico mentre Grissom rischiava di annegare nella tuta che si riempiva d'acqua. Se avesse urtato l'innesco o se questo fosse scattato da solo fu oggetto di discussione per il resto della sua vita e non fu mai chiarito. La vera lezione del volo era più discreta e più utile: la parte più pericolosa di un volo spaziale non è sempre il volo spaziale.",
+  "description": "Il volo suborbitale di 15 minuti di Gus Grissom — secondo americano nello spazio, primo volo con un portello di fuga esplosivo. Dopo l'ammaraggio il portello si è azionato prematuramente, la capsula si è allagata e la Liberty Bell 7 è affondata in 4900 m d'acqua; Grissom è riuscito a mettersi in salvo, ma la sua tuta ha imbarcato acqua e per poco non è annegato mentre l'elicottero lo recuperava. La causa dell'azionamento del portello rimase controversa per decenni; Grissom sostenne di non aver urtato il percussore. Recuperata il 1999-07-20 da una spedizione di Oceaneering e Discovery Channel, restaurata e oggi esposta al Kansas Cosmosphere & Space Center di Hutchinson (Kansas). Il libro di Tom Wolfe e il film del 1983 The Right Stuff hanno drammatizzato questo volo e la controversia sul portello.",
   "events": [
     {
       "met": 0,
@@ -23,7 +23,7 @@
     {
       "met": 0.000174,
       "label": "AMMARAGGIO",
-      "note": "Oceano Atlantico 480 km a valle della traiettoria. Il portello si è azionato prematuramente — la capsula si è allagata e si è inabissata. Grissom è scappato; recuperato da USS Randolph.",
+      "note": "Oceano Atlantico, a 480 km dalla rampa di lancio nella direzione del volo. Il portello si è azionato prematuramente — la capsula si è allagata ed è affondata. Grissom è riuscito a mettersi in salvo; recuperato dalla USS Randolph.",
       "type": "warning"
     },
     {

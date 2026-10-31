@@ -20,11 +20,11 @@
     },
     {
       "type": "prose",
-      "md": "De wegwerpraket is verspillend op een manier die bijna komisch is als je het eenvoudig beschrijft. Een [Saturn V](/fleet?id=saturn-v) kostte zo'n 185 miljoen dollar in dollars van eind jaren zestig — omgerekend ongeveer 1,5 miljard dollar tegen huidige prijzen — en elk exemplaar vloog ongeveer twaalf minuten voordat het werd weggegooid. De vijf F-1-motoren in de eerste trap, stuk voor stuk een verbijsterend stuk machinerie dat ongeveer 2.600 kilogram drijfgas per seconde verbrandde, eindigden hun leven roestend op de bodem van de Atlantische Oceaan. Een particuliere expeditie, gefinancierd door Jeff Bezos, haalde in 2013 twee sets F-1-motoren van de Saturn V van de zeebodem, bijna een halve eeuw nadat ze daar waren achtergelaten, en vond ze grotendeels intact. Ze gingen naar musea, niet terug de lucht in. Ze de eerste keer weggooien was het plan."
+      "md": "De wegwerpraket is verspillend op een manier die bijna komisch is als je het eenvoudig beschrijft. Een [Saturn V](/fleet?id=saturn-v) kostte zo'n 185 miljoen dollar in dollars van eind jaren zestig — omgerekend ongeveer 1,5 miljard dollar tegen huidige prijzen — en elk exemplaar vloog ongeveer twaalf minuten voordat het werd weggegooid. De vijf F-1-motoren in de eerste trap, stuk voor stuk een verbijsterend stuk machinerie dat ongeveer 2.600 kilogram drijfstof per seconde verbrandde, eindigden hun leven roestend op de bodem van de Atlantische Oceaan. Een particuliere expeditie, gefinancierd door Jeff Bezos, haalde in 2013 twee sets F-1-motoren van de Saturn V van de zeebodem, bijna een halve eeuw nadat ze daar waren achtergelaten, en vond ze grotendeels intact. Ze gingen naar musea, niet terug de lucht in. Ze de eerste keer weggooien was het plan."
     },
     {
       "type": "prose",
-      "md": "De logica achter dit plan was geen domheid. Het was de logica van de ruimtewedloop van de jaren zestig: als eerste aankomen, wat het ook kost. Een herbruikbare raket bouwen is moeilijker dan een wegwerpraket bouwen. Herbruikbaarheid voegt gewicht toe — hitteschilden, landingspoten, drijfgas dat voor de terugkeerontsteking wordt gereserveerd — en gewicht is de vijand, want elk kilogram dat je aan de constructie toevoegt, is een kilogram dat je niet in een baan kunt brengen. Vroege ontwerpers rekenden het door en concludeerden dat de gewichtsstraf te zwaar was. Beter, besloten ze, om goedkoop te bouwen en weg te gooien. Die berekening klopte voor haar tijd, en ze zette een reeks aannames vast die twee generaties standhielden."
+      "md": "De logica achter dit plan was geen domheid. Het was de logica van de ruimtewedloop van de jaren zestig: als eerste aankomen, wat het ook kost. Een herbruikbare raket bouwen is moeilijker dan een wegwerpraket bouwen. Herbruikbaarheid voegt gewicht toe — hitteschilden, landingspoten, drijfstof die voor de terugkeerontsteking wordt gereserveerd — en gewicht is de vijand, want elk kilogram dat je aan de constructie toevoegt, is een kilogram dat je niet in een baan kunt brengen. Vroege ontwerpers rekenden het door en concludeerden dat de gewichtsstraf te zwaar was. Beter, besloten ze, om goedkoop te bouwen en weg te gooien. Die berekening klopte voor haar tijd, en ze zette een reeks aannames vast die twee generaties standhielden."
     },
     {
       "type": "prose",
@@ -36,7 +36,7 @@
     },
     {
       "type": "prose",
-      "md": "SpaceX pakte het probleem anders aan. In plaats van te proberen het hele voertuig te hergebruiken — de keuze die de Shuttle zo complex maakte — richtte het bedrijf zich op het duurste afzonderlijke onderdeel: de booster van de eerste trap. Bij een typische raket doet de eerste trap het zwaarste werk: hij verbruikt het meeste drijfgas, draagt de meeste motormassa en kost het meest in de productie. Het is ook het onderdeel dat je bij een wegwerpraket elke keer verliest. Bewaar de eerste trap en je hebt het grootste deel van de waarde van het voertuig teruggewonnen."
+      "md": "SpaceX pakte het probleem anders aan. In plaats van te proberen het hele voertuig te hergebruiken — de keuze die de Shuttle zo complex maakte — richtte het bedrijf zich op het duurste afzonderlijke onderdeel: de booster van de eerste trap. Bij een typische raket doet de eerste trap het zwaarste werk: hij verbruikt de meeste drijfstof, draagt de meeste motormassa en kost het meest in de productie. Het is ook het onderdeel dat je bij een wegwerpraket elke keer verliest. Bewaar de eerste trap en je hebt het grootste deel van de waarde van het voertuig teruggewonnen."
     },
     {
       "type": "prose",
@@ -44,13 +44,13 @@
     },
     {
       "type": "prose",
-      "md": "Na de landing van december 2015 volgden een tweede en een derde, en daarna de hervlucht: in maart 2017 lanceerde SpaceX een Falcon 9 op een booster die al had gevlogen, voor het eerst in de geschiedenis dat een trap van een orbitale raket twee keer de ruimte in ging. Medio 2026 heeft de meest gevlogen eerste trap van de Falcon 9 33 missies voltooid met dezelfde hardware — meer dan de meeste wegwerpraketten in totaal vliegen over hun hele vloot. De marginale kosten van een hergebruikte lancering, inclusief drijfgas en opknapbeurt, liggen rond de 15 tot 20 miljoen dollar tegenover een lijstprijs van 74 miljoen dollar. Het verschil is, grofweg, de kostprijs van de booster zelf, terugverdiend door de terugwinning."
+      "md": "Na de landing van december 2015 volgden een tweede en een derde, en daarna de hervlucht: in maart 2017 lanceerde SpaceX een Falcon 9 op een booster die al had gevlogen, voor het eerst in de geschiedenis dat een trap van een orbitale raket twee keer de ruimte in ging. Medio 2026 heeft de meest gevlogen eerste trap van de Falcon 9 33 missies voltooid met dezelfde hardware — meer dan de meeste wegwerpraketten in totaal vliegen over hun hele vloot. De marginale kosten van een hergebruikte lancering, inclusief drijfstof en opknapbeurt, liggen rond de 15 tot 20 miljoen dollar tegenover een lijstprijs van 74 miljoen dollar. Het verschil is, grofweg, de kostprijs van de booster zelf, terugverdiend door de terugwinning."
     },
     {
       "type": "figure",
       "image": "essays/reusable-launchers/landing-profile",
       "kind": "diagram",
-      "caption": "De truc is bijna beledigend eenvoudig om te beschrijven en meedogenloos om uit te voeren: houd genoeg drijfgas achter, draai de booster om en ontsteek hem drie keer op weg naar beneden — boostback, terugkeer, landing — tot hij op zijn poten neerkomt. Dezelfde trap wordt daarna geïnspecteerd, bijgetankt en opnieuw gelanceerd.",
+      "caption": "De truc is bijna beledigend eenvoudig om te beschrijven en meedogenloos om uit te voeren: houd genoeg drijfstof achter, draai de booster om en ontsteek hem drie keer op weg naar beneden — boostback, terugkeer, landing — tot hij op zijn poten neerkomt. Dezelfde trap wordt daarna geïnspecteerd, bijgetankt en opnieuw gelanceerd.",
       "align": "wide"
     },
     {
@@ -133,7 +133,7 @@
     },
     {
       "type": "prose",
-      "md": "Wat veranderde, was niet de natuurkunde. Wat veranderde, was de productiebasis, de keuze van het drijfgas — methaan verbrandt schoner dan kerosine, laat minder residu achter en maakt opknappen sneller — en, meer dan al het andere, de bereidheid om vanaf het begin voor hergebruik te ontwerpen in plaats van het achteraf in te bouwen in een voertuig dat voor wegwerpgebruik was geoptimaliseerd. De Shuttle was een wegwerpraket aan wie was opgedragen naar huis te komen. De booster van de Falcon 9 werd vanaf het begin ontworpen rond de vraag hoe te landen. Dat verschil in ontwerpintentie verklaart het grootste deel van het verschil in uitkomst."
+      "md": "Wat veranderde, was niet de natuurkunde. Wat veranderde, was de productiebasis, de keuze van de drijfstof — methaan verbrandt schoner dan kerosine, laat minder residu achter en maakt opknappen sneller — en, meer dan al het andere, de bereidheid om vanaf het begin voor hergebruik te ontwerpen in plaats van het achteraf in te bouwen in een voertuig dat voor wegwerpgebruik was geoptimaliseerd. De Shuttle was een wegwerpraket aan wie was opgedragen naar huis te komen. De booster van de Falcon 9 werd vanaf het begin ontworpen rond de vraag hoe te landen. Dat verschil in ontwerpintentie verklaart het grootste deel van het verschil in uitkomst."
     },
     {
       "type": "prose",

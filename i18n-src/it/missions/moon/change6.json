@@ -4,8 +4,8 @@
   "payload": "8200 kg di massa al lancio; 1,935 kg di campione riportato",
   "delta_v": "~5 km/s",
   "type": "RITORNO DEL CAMPIONE DAL LATO LONTANO · VOLATO",
-  "first": "Primo campione di ritorno dal lato nascosto della Luna",
-  "description": "Combina le architetture di Chang'e 4 (comunicazioni far-side) e Chang'e 5 (ritorno del campione). Il satellite relè Queqiao-2 è stato lanciato per primo (marzo 2024) per supportare la missione. Chang'e 6 ha poi raccolto 1.935 kg dal cratere Apollo sul lato opposto: materiale con una composizione molto diversa da qualsiasi campione lunare precedentemente restituito. I due emisferi della Luna sono radicalmente diversi (il lato nascosto ha una crosta più spessa, meno mare); questi campioni potrebbero finalmente spiegare il perché.",
+  "first": "Primo ritorno di campioni dal lato nascosto della Luna",
+  "description": "Combina le architetture di Chang'e 4 (comunicazioni sul lato nascosto) e di Chang'e 5 (ritorno di campioni). Il satellite relè Queqiao-2 è stato lanciato per primo (marzo 2024) a supporto della missione. Chang'e 6 ha poi raccolto 1,935 kg dal cratere Apollo, sul lato nascosto: materiale con una composizione molto diversa da qualsiasi campione lunare riportato in precedenza. I due emisferi della Luna sono radicalmente diversi (il lato nascosto ha una crosta più spessa e meno mari); questi campioni potrebbero finalmente spiegare perché.",
   "events": [
     {
       "met": 0,
@@ -28,20 +28,21 @@
     {
       "met": 30.6,
       "label": "CAMPIONAMENTO",
-      "note": "1.935 kg raccolti dalla regolite del lato lontano.",
+      "note": "1,935 kg raccolti dalla regolite del lato nascosto.",
       "type": "info"
     },
     {
       "met": 32,
       "label": "SALITA",
-      "note": "Il veicolo di salita si solleva; appuntamento con l'orbiter.",
+      "note": "Il veicolo di risalita decolla; rendezvous con l'orbiter.",
       "type": "nominal"
     },
     {
       "met": 53,
       "label": "RITORNO DELLA TERRA",
-      "note": "La capsula atterra nella Mongolia Interna il 25-06-2024 con i primi campioni lontani mai recuperati.",
+      "note": "La capsula atterra nella Mongolia Interna il 2024-06-25 con i primi campioni mai recuperati dal lato nascosto della Luna.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "stadio superiore YZ-1 del Long March 5"
 }

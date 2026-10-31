@@ -2,6 +2,7 @@
  * Observability (ADR-094) against local stub sinks — no network leaves the box.
  */
 import { afterEach, describe, expect, it } from 'vitest';
+import * as Sentry from '@sentry/node';
 import { createServer, request, type IncomingMessage, type Server } from 'node:http';
 import type { AddressInfo } from 'node:net';
 import {
@@ -293,6 +294,41 @@ describe('errors (GlitchTip via @sentry/node)', () => {
     expect(text).toContain('"environment":"test"');
     expect(text).toContain('"release":"sha-abc1234"');
     expect(text).not.toContain('"user"');
+    await gt.close();
+  });
+
+  it('breadcrumbs reach GlitchTip without query strings or email addresses', async () => {
+    const gt = await sink();
+    const dsn = gt.url.replace('http://', 'http://publickey@') + '/31';
+    initObservability(base({ sentryDsn: dsn }), () => {});
+    Sentry.addBreadcrumb({
+      category: 'http',
+      data: { url: 'https://oauth2.example/token?code=SECRETCODE&state=s1', method: 'POST' },
+    });
+    Sentry.addBreadcrumb({ category: 'console', message: 'denied for someone@example.com' });
+    captureError(new Error('with crumbs'));
+    await shutdownObservability();
+    const envelope = gt.hits.find(
+      (h) => h.url.startsWith('/api/31/envelope') && h.body.includes('{"type":"event"'),
+    );
+    // Assert on the breadcrumbs themselves: the event's source-context lines quote this
+    // test file, literals included.
+    const event = envelope!.body
+      .toString('utf8')
+      .split('\n')
+      .map((l) => {
+        try {
+          return JSON.parse(l) as { breadcrumbs?: { data?: { url?: string }; message?: string }[] };
+        } catch {
+          return {};
+        }
+      })
+      .find((o) => Array.isArray(o.breadcrumbs));
+    const crumbs = JSON.stringify(event?.breadcrumbs);
+    expect(crumbs).toContain('"url":"https://oauth2.example/token"');
+    expect(crumbs).not.toContain('SECRETCODE');
+    expect(crumbs).not.toContain('someone@example.com');
+    expect(crumbs).toContain('denied for [email]');
     await gt.close();
   });
 });

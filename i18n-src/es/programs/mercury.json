@@ -96,5 +96,10 @@
       "type": "prose",
       "md": "Y la nota humana que vale la pena conservar: la negativa de los astronautas a ser carga. Ante un diseño que los trataba como pasajeros, insistieron en ser pilotos — una ventana, una palanca, voz en el vuelo — y esa insistencia, más que cualquier misión individual, es lo que hizo suyo el programa y fijó el carácter de todo lo que vino después."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Tierra: órbitas, reentrada y bases de lanzamiento",
+    "/science/mission-phases/edl": "Entrada, descenso y aterrizaje",
+    "/science/propulsion/tsiolkovsky": "La ecuación del cohete: por qué el Redstone no podía orbitar"
+  }
 }

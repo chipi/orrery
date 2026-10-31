@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "Den Anfang machte 1983 Spacelab – ein in Europa gebautes Labor, das in der Nutzlastbucht des Space Shuttle mitflog, das Shuttle in eine Wissenschaftsplattform verwandelte und beim ersten Flug den ersten ESA-Astronauten an Bord hatte. Es folgte Columbus, Europas dauerhaftes Labor, das an die Internationale Raumstation geschraubt wurde, sowie das Automated Transfer Vehicle, das größte und anspruchsvollste Frachtraumschiff seiner Zeit. Auf dem Weg dorthin flogen europäische Astronauten mit Shuttles und Sojus, lebten an Bord von Mir und der ISS und kommandierten die Station. Europa startete nie eine eigene Besatzung – und wurde dennoch für fast alle, die es taten, unentbehrlich."
+      "md": "Den Anfang machte 1983 Spacelab – ein in Europa gebautes Labor, das in der Nutzlastbucht des Space Shuttle mitflog, das Shuttle in eine Wissenschaftsplattform verwandelte und beim ersten Flug den ersten ESA-Astronauten an Bord hatte. Es folgte Columbus, Europas dauerhaftes Labor, das an die Internationale Raumstation geschraubt wurde, sowie das Automated Transfer Vehicle, das größte und anspruchsvollste Frachtraumschiff seiner Zeit. Auf dem Weg dorthin flogen europäische Astronauten mit Shuttles und Soyuz, lebten an Bord von Mir und der ISS und kommandierten die Station. Europa startete nie eine eigene Besatzung – und wurde dennoch für fast alle, die es taten, unentbehrlich."
     }
   ],
   "goals": [
@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "Die zweite Lektion lautet: Partnerschaft vervielfacht ein begrenztes Budget. Indem Europa die Mittel vieler Nationen über eine einzige Agentur bündelte und sie in Fähigkeiten investierte, die ihm eine dauerhafte Rolle sicherten, erreichte es in der bemannten Raumfahrt weit mehr, als seine Ausgaben allein erwarten ließen – und machte die Beherrschung einer einzigen Nische, des automatisierten Frachttransports, zu einem Anteil an der Rückkehr zum Mond. Für eine Macht, die die Giganten nicht überbieten kann, ist es die bessere Strategie, unverzichtbar zu sein, als unabhängig zu sein – und Europa lässt diese Strategie seit vierzig Jahren aufgehen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "ISS — die Station, die Europa mitgebaut hat",
+    "/programs/ariane": "Ariane — die Trägerrakete, die das ATV beförderte"
+  }
 }

@@ -1,0 +1,127 @@
+[
+  {
+    "rel": "programs/soyuz.json",
+    "at": "the_land.0.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "de se rendre-vous",
+    "replace": "d'effectuer un rendez-vous",
+    "why": "garbled; rendez-vous binding"
+  },
+  {
+    "rel": "programs/gemini.json",
+    "at": "the_land.0.md",
+    "term": "docking",
+    "decision": "keep",
+    "why": "variant: arrimer (stem widened; reviewer change dropped)"
+  },
+  {
+    "rel": "programs/gemini.json",
+    "at": "legacy.1.md",
+    "term": "docking",
+    "decision": "keep",
+    "why": "variant: arrimer (stem widened; reviewer change dropped)"
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "goals.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "variant: mise à feu"
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "outcome.2.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "variant: mise à feu"
+  },
+  {
+    "rel": "programs/mars-rovers.json",
+    "at": "outcome.1.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "English \"stage\" = phase of a campaign; étape"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "goals.0.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "carburant de fusée",
+    "replace": "propergol",
+    "why": "propergol binding"
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "outcome.0.caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "et du carburant",
+    "replace": "et du propergol",
+    "why": "propergol binding"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.1.md",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: soute cargo"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "goals.1.caption",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage booster (propulseurs)"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "outcome.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage booster (propulseur)"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "narrative.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage booster (propulseurs)"
+  },
+  {
+    "rel": "programs/sputnik.json",
+    "at": "goals.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanceur"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "goals.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (Super Heavy booster)"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "goals.1.caption",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (Super Heavy booster)"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "outcome.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (Super Heavy booster)"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "narrative.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage booster"
+  }
+]

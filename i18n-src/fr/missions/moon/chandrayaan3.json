@@ -16,7 +16,7 @@
     {
       "met": 22.2,
       "label": "MOI",
-      "note": "Insertion en orbite lunaire (plusieurs brûlages d'orbite terrestre et lunaire utilisés).",
+      "note": "Insertion en orbite lunaire (plusieurs allumages d'orbite terrestre et lunaire utilisés).",
       "type": "nominal"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 40.5,
       "label": "PRAGYAN DÉPLOYÉ",
-      "note": "Le rover descend la rampe ; commence les sciences de surface.",
+      "note": "Le rover descend la rampe et entame ses recherches scientifiques en surface.",
       "type": "info"
     },
     {
@@ -43,5 +43,6 @@
       "note": "L'atterrisseur et le rover sont mis en hibernation alors que la nuit lunaire commence.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "étage supérieur cryogénique C25 du LVM3"
 }

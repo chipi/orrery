@@ -1,0 +1,86 @@
+[
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "tagline",
+    "old": "Plataforma polar dos Long March 2D / 4B / 4C — Yaogan, Gaofen, satélites meteorológicos",
+    "new": "Plataforma de órbita polar dos Long March 2D / 4B / 4C — Yaogan, Gaofen, satélites meteorológicos"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "best_known_for",
+    "old": "Plataforma polar Yaogan/Gaofen/Fengyun",
+    "new": "Plataforma de órbita polar para Yaogan/Gaofen/Fengyun"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "old": "Missão conjunta ESA + JAXA. Lançada em 2018-10-20 em um Ariane 5 ECA. O Mercury Transfer Module leva o conjunto em um cruzeiro de 7 anos com sobrevoos (1 da Terra + 2 de Vênus + 6 de Mercúrio, todos com auxílio gravitacional) antes da inserção em órbita de Mercúrio em 2026-11-21. Na chegada, os dois orbitadores científicos se separam: o Mercury Planetary Orbiter (MPO) da ESA voa em órbita polar de 480 × 1500 km com 11 instrumentos para composição da superfície, topografia, gravidade e exosfera; o Mio (Mercury Magnetospheric Orbiter) da JAXA voa em órbita polar de 590 × 11 640 km com 5 instrumentos para a magnetosfera e o plasma. Juntos, são as primeiras espaçonaves europeia e japonesa em órbita de Mercúrio.",
+    "new": "Missão conjunta ESA + JAXA. Lançada em 2018-10-20 em um Ariane 5 ECA. O Mercury Transfer Module leva o conjunto em um cruzeiro de 7 anos com sobrevoos (1 da Terra + 2 de Vênus + 6 de Mercúrio, todos com assistência gravitacional) antes da inserção em órbita de Mercúrio em 2026-11-21. Na chegada, os dois orbitadores científicos se separam: o Mercury Planetary Orbiter (MPO) da ESA voa em órbita polar de 480 × 1500 km com 11 instrumentos para composição da superfície, topografia, gravidade e exosfera; o Mio (Mercury Magnetospheric Orbiter) da JAXA voa em órbita polar de 590 × 11 640 km com 5 instrumentos para a magnetosfera e o plasma. Juntos, são as primeiras espaçonaves europeia e japonesa em órbita de Mercúrio."
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "old": "Originalmente uma plataforma Titan III / Titan IV de 1965 a 2005, modernizada pela SpaceX em 2008 para o Falcon 9. Hoje a SLC-40 é a plataforma orbital de maior cadência já operada, lançando lotes Starlink, satélites comerciais, reabastecimento à EEI via Cargo Dragon e cargas de segurança nacional dos EUA. Reconstruída após a explosão do AMOS-6 em setembro de 2016 com um sistema de propelente aprimorado; a plataforma ainda cumpre a maior parte do manifesto SpaceX que o mundo vê.",
+    "new": "Originalmente uma plataforma Titan III / Titan IV de 1965 a 2005, modernizada pela SpaceX em 2008 para o Falcon 9. Hoje a SLC-40 é a plataforma orbital de maior cadência já operada, lançando lotes Starlink, satélites comerciais, reabastecimento à EEI via Cargo Dragon e cargas úteis de segurança nacional dos EUA. Reconstruída após a explosão do AMOS-6 em setembro de 2016 com um sistema de propelente aprimorado; a plataforma ainda cumpre a maior parte do manifesto SpaceX que o mundo vê."
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-4.json",
+    "at": "description",
+    "old": "A plataforma irmã do ELA-3 no Centre Spatial Guyanais. Construção iniciada em 2015; o voo inaugural do Ariane 6, o VA262, decolou daqui em 9 de julho de 2024. O ELA-4 herda a mesma vantagem equatorial de 5,2°N que fez do Ariane 5 o lançador geoestacionário ocidental de maior sucesso de sua época, com um segmento terrestre redesenhado para maior cadência: edifício de integração horizontal, pórtico móvel deslizante, integração completa do novo estágio superior ESC-B. É o lançador de autonomia estratégica da Europa para cargas institucionais (atualização do Galileo, Copernicus, missões científicas da ESA) mais o tráfego GEO comercial.",
+    "new": "A plataforma irmã do ELA-3 no Centre Spatial Guyanais. Construção iniciada em 2015; o voo inaugural do Ariane 6, o VA262, decolou daqui em 9 de julho de 2024. O ELA-4 herda a mesma vantagem equatorial de 5,2°N que fez do Ariane 5 o lançador geoestacionário ocidental de maior sucesso de sua época, com um segmento terrestre redesenhado para maior cadência: edifício de integração horizontal, pórtico móvel deslizante, integração completa do novo estágio superior ESC-B. É o lançador de autonomia estratégica da Europa para cargas úteis institucionais (atualização do Galileo, Copernicus, missões científicas da ESA) mais o tráfego GEO comercial."
+  },
+  {
+    "rel": "fleet/launch-site/kourou-els.json",
+    "at": "description",
+    "old": "A ELS era a plataforma do Soyuz no Porto Espacial da Europa, cerca de 13 km a noroeste das plataformas do Ariane, perto de Sinnamary. O Soyuz-ST voou dela 27 vezes entre 21 de outubro de 2011 e 10 de fevereiro de 2022, os primeiros lançamentos do Soyuz fora de Baikonur e Plesetsk. A 5,3 graus norte, o foguete podia levar até 3 toneladas à órbita de transferência geoestacionária, contra 1,7 tonelada a partir de Baikonur. Entre as cargas estavam oito lançamentos do Galileo, Pleiades 1A e 1B, Gaia (2013), Sentinel-1A e 1B, MetOp-C e CHEOPS. Vinte e seis dos 27 voos tiveram sucesso; em 22 de agosto de 2014, uma falha no estágio superior Fregat deixou dois satélites Galileo na órbita errada. A Rússia suspendeu as operações em fevereiro de 2022 e, segundo a Wikipédia, a plataforma foi demolida em 24 de abril de 2026 para dar lugar ao foguete Maia, da MaiaSpace.",
+    "new": "A ELS era a plataforma do Soyuz no Porto Espacial da Europa, cerca de 13 km a noroeste das plataformas do Ariane, perto de Sinnamary. O Soyuz-ST voou dela 27 vezes entre 21 de outubro de 2011 e 10 de fevereiro de 2022, os primeiros lançamentos do Soyuz fora de Baikonur e Plesetsk. A 5,3 graus norte, o foguete podia levar até 3 toneladas à órbita de transferência geoestacionária, contra 1,7 tonelada a partir de Baikonur. Entre as cargas úteis estavam oito lançamentos do Galileo, Pleiades 1A e 1B, Gaia (2013), Sentinel-1A e 1B, MetOp-C e CHEOPS. Vinte e seis dos 27 voos tiveram sucesso; em 22 de agosto de 2014, uma falha no estágio superior Fregat deixou dois satélites Galileo na órbita errada. A Rússia suspendeu as operações em fevereiro de 2022 e, segundo a Wikipédia, a plataforma foi demolida em 24 de abril de 2026 para dar lugar ao foguete Maia, da MaiaSpace."
+  },
+  {
+    "rel": "fleet/launch-site/kourou-zlv.json",
+    "at": "description",
+    "old": "Três bases de lançamento já estiveram neste ponto de Kourou. A Europa construiu a primeira para o Europa II, cujo único voo, em 5 de novembro de 1971, fracassou. Reconstruída como ELA-1, lançou o Ariane 1 a partir de 24 de dezembro de 1979, depois o Ariane 2 e o 3 até 11 de julho de 1989. A Giotto partiu daqui num Ariane 1 em 2 de julho de 1985 para encontrar o cometa Halley. A partir de novembro de 2001, a plataforma foi reconstruída para o Vega, mantendo a vala de chamas do Ariane 1 e acrescentando um edifício de montagem retrátil de 50 m. O Vega voou pela primeira vez em 13 de fevereiro de 2012, e o Vega-C em 13 de julho de 2022. Entre as cargas estão LISA Pathfinder, Sentinel-2A e 2B, ADM-Aeolus e BIOMASS. Segundo a Wikipédia, em setembro de 2026 o local somava 56 lançamentos, 22 deles do Vega e 8 do Vega-C. A torre fica perto do equador, a 5,2 graus norte.",
+    "new": "Três bases de lançamento já estiveram neste ponto de Kourou. A Europa construiu a primeira para o Europa II, cujo único voo, em 5 de novembro de 1971, fracassou. Reconstruída como ELA-1, lançou o Ariane 1 a partir de 24 de dezembro de 1979, depois o Ariane 2 e o 3 até 11 de julho de 1989. A Giotto partiu daqui num Ariane 1 em 2 de julho de 1985 para encontrar o cometa Halley. A partir de novembro de 2001, a plataforma foi reconstruída para o Vega, mantendo a vala de chamas do Ariane 1 e acrescentando um edifício de montagem retrátil de 50 m. O Vega voou pela primeira vez em 13 de fevereiro de 2012, e o Vega-C em 13 de julho de 2022. Entre as cargas úteis estão LISA Pathfinder, Sentinel-2A e 2B, ADM-Aeolus e BIOMASS. Segundo a Wikipédia, em setembro de 2026 o local somava 56 lançamentos, 22 deles do Vega e 8 do Vega-C. A torre fica perto do equador, a 5,2 graus norte."
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "old": "O LC-9 (também chamado de Plataforma 9) do Centro de Lançamento de Satélites de Taiyuan atende à maior parte dos lançamentos do TYSC em órbitas polares e heliossíncronas com os Long March 2D, 4B, 4C e 6A. As cargas típicas incluem a série de reconhecimento Yaogan, a constelação de observação da Terra Gaofen e os satélites meteorológicos Fengyun. Ativo desde 2008.",
+    "new": "O LC-9 (também chamado de Plataforma 9) do Centro de Lançamento de Satélites de Taiyuan atende à maior parte dos lançamentos do TYSC em órbitas polares e heliossíncronas com os Long March 2D, 4B, 4C e 6A. As cargas úteis típicas incluem a série de reconhecimento Yaogan, a constelação de observação da Terra Gaofen e os satélites meteorológicos Fengyun. Ativo desde 2008."
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "description",
+    "old": "A porta de entrada orbital da costa oeste dos EUA. Construída para o Atlas-Agena em 1963; Titan III/IV até 2005; modernizada pela SpaceX em 2011. A vantagem geográfica de Vandenberg é o corredor direto ao sul sobre o Pacífico — é assim que as cargas dos EUA alcançam órbitas polares e heliossíncronas sem sobrevoar terras povoadas. Hoje a SLC-4E lança o Falcon 9 para as camadas polares da Starlink, cargas sigilosas do NRO e satélites de observação da Terra da USSF e comerciais. A SLC-4W, ao lado, é a zona de recuperação dos propulsores.",
+    "new": "A porta de entrada orbital da costa oeste dos EUA. Construída para o Atlas-Agena em 1963; Titan III/IV até 2005; modernizada pela SpaceX em 2011. A vantagem geográfica de Vandenberg é o corredor direto ao sul sobre o Pacífico — é assim que as cargas úteis dos EUA alcançam órbitas polares e heliossíncronas sem sobrevoar terras povoadas. Hoje a SLC-4E lança o Falcon 9 para as camadas polares da Starlink, cargas úteis sigilosas do NRO e satélites de observação da Terra da USSF e comerciais. A SLC-4W, ao lado, é a zona de recuperação dos propulsores."
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "dispatch",
+    "old": "O Energia foi o foguete que redimiu o N1 — o lançador superpesado que a União Soviética finalmente acertou. Onde o N1 explodiu em todas as quatro tentativas, o Energia funcionou, levando a carga Polyus em 1987 e o orbitador Buran em 1988. O ponto crucial é que era um lançador por direito próprio, e não um conjunto de ônibus espacial: como o Buran não tinha motores principais, o Energia fazia todo o trabalho de chegar à órbita e poderia muito bem ter levado outras cargas pesadas sem orbitador algum. Foi o foguete mais potente que a União Soviética já fez voar com sucesso — e, como o Buran, foi cancelado por falta de qualquer coisa que restasse para lançar.",
+    "new": "O Energia foi o foguete que redimiu o N1 — o lançador superpesado que a União Soviética finalmente acertou. Onde o N1 explodiu em todas as quatro tentativas, o Energia funcionou, levando a carga útil Polyus em 1987 e o orbitador Buran em 1988. O ponto crucial é que era um lançador por direito próprio, e não um conjunto de ônibus espacial: como o Buran não tinha motores principais, o Energia fazia todo o trabalho de chegar à órbita e poderia muito bem ter levado outras cargas úteis pesadas sem orbitador algum. Foi o foguete mais potente que a União Soviética já fez voar com sucesso — e, como o Buran, foi cancelado por falta de qualquer coisa que restasse para lançar."
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "description",
+    "old": "O único lançador superpesado soviético a voar com sucesso. Projetado para levar o orbitador Buran ou cargas independentes de até 100 t à LEO. Dois voos: o teste da carga Polyus (1987) e o orbitador Buran (1988), ambos bem-sucedidos. Programa engavetado no fim da Guerra Fria.",
+    "new": "O único lançador superpesado soviético a voar com sucesso. Projetado para levar o orbitador Buran ou cargas úteis independentes de até 100 t à LEO. Dois voos: o teste da carga útil Polyus (1987) e o orbitador Buran (1988), ambos bem-sucedidos. Programa engavetado no fim da Guerra Fria."
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "old": "Missão da NASA rasante ao Sol. Lançada em 2018-08-12 em um conjunto Delta IV Heavy + Star 48BV, com o maior C3 já alcançado para uma carga científica (154 km²/s²). Sete assistências gravitacionais de Vênus ao longo de seis anos aproximaram o periélio de 0,16 au (P1) até 0,046 au (P22, 2024-12-24) — 9,86 raios solares, a 6,1 milhões de km da superfície do Sol. No P8 (2021-04-28), a Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira espaçonave a entrar na coroa solar. Velocidade máxima no periélio: 192,22 km/s, o objeto mais rápido já feito pela humanidade.",
+    "new": "Missão da NASA rasante ao Sol. Lançada em 2018-08-12 em um conjunto Delta IV Heavy + Star 48BV, com o maior C3 já alcançado para uma carga útil científica (154 km²/s²). Sete assistências gravitacionais de Vênus ao longo de seis anos aproximaram o periélio de 0,16 au (P1) até 0,046 au (P22, 2024-12-24) — 9,86 raios solares, a 6,1 milhões de km da superfície do Sol. No P8 (2021-04-28), a Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira espaçonave a entrar na coroa solar. Velocidade máxima no periélio: 192,22 km/s, o objeto mais rápido já feito pela humanidade."
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "old": "Missão da NASA de retorno de amostras de asteroide. Aproximou-se do asteroide Bennu em 2018, coletou uma amostra com seu braço TAGSAM em 2020 e devolveu a cápsula de amostra a Utah em setembro de 2023. Agora redesignada OSIRIS-APEX, está a caminho do asteroide Apófis para sua passagem próxima da Terra em 2029.",
+    "new": "Missão da NASA de retorno de amostras de asteroide. Aproximou-se do asteroide Bennu em 2018, coletou uma amostra com seu braço TAGSAM em 2020 e devolveu a cápsula de amostra a Utah em setembro de 2023. Agora redesignada OSIRIS-APEX, está a caminho do asteroide Apófis para seu sobrevoo próximo da Terra em 2029."
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "old": "Sonda estabilizada por rotação e alimentada por RTG (~259 kg), irmã da Pioneer 10, com o mesmo barramento e a mesma mensagem Pioneer Plaque para as estrelas. Lançada em 1973-04-06 em um Atlas SLV-3D Centaur D-1A + Star-37E, a partir de Cabo Canaveral. Passagem por Júpiter em 1974-12-03 a 43 000 km — o encontro mais próximo de qualquer Pioneer — rendeu as primeiras imagens das regiões polares e a assistência gravitacional necessária para chegar a Saturno. Encontro com Saturno em 1979-09-01 a 21 000 km do topo das nuvens — primeiras imagens detalhadas do sistema de anéis, descoberta de um novo anel (anel F) e de uma nova lua, confirmação do campo magnético quase alinhado de Saturno. Seguiu observando rumo ao espaço exterior até o último contato, em 1995-11-24. Agora a ~93 au do Sol, rumo a Aquila.",
+    "new": "Sonda estabilizada por rotação e alimentada por RTG (~259 kg), irmã da Pioneer 10, com o mesmo barramento e a mesma mensagem Pioneer Plaque para as estrelas. Lançada em 1973-04-06 em um Atlas SLV-3D Centaur D-1A + Star-37E, a partir de Cabo Canaveral. Sobrevoo de Júpiter em 1974-12-03 a 43 000 km — o encontro mais próximo de qualquer Pioneer — rendeu as primeiras imagens das regiões polares e a assistência gravitacional necessária para chegar a Saturno. Encontro com Saturno em 1979-09-01 a 21 000 km do topo das nuvens — primeiras imagens detalhadas do sistema de anéis, descoberta de um novo anel (anel F) e de uma nova lua, confirmação do campo magnético quase alinhado de Saturno. Seguiu observando rumo ao espaço exterior até o último contato, em 1995-11-24. Agora a ~93 au do Sol, rumo a Aquila."
+  }
+]

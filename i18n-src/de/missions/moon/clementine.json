@@ -16,7 +16,7 @@
     {
       "met": 25,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn 19.02.1994.",
+      "note": "Einschwenken in die Mondumlaufbahn 19.02.1994.",
       "type": "nominal"
     },
     {
@@ -37,5 +37,6 @@
       "note": "Fehlfunktion des Bordstrahlruders führt zur Erschöpfung des Treibstoffs; Asteroidenbegegnung abgesagt.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "Oberstufe Star-37 der Titan II"
 }

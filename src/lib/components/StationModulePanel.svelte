@@ -1,23 +1,22 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
+  import PanelLinkTiers from './PanelLinkTiers.svelte';
+  import PanelTabRow from './PanelTabRow.svelte';
+  import PanelHeroImage from './PanelHeroImage.svelte';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
-  import { base } from '$app/paths';
   import { formatNumber } from '$lib/format';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { page } from '$app/state';
   import type { StationModule } from '$types/station';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
-  import ImageCredit from './ImageCredit.svelte';
-  import LearnLink from './LearnLink.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
   import { dataLoadFailed } from '$lib/data/core';
 
-  type StationLinks = NonNullable<StationModule['links']>;
   type Tab = 'overview' | 'gallery' | 'anatomy' | 'learn';
 
   type Props = {
@@ -66,13 +65,6 @@
     .catch(dataLoadFailed);
   let diagramLadder = $derived(ladderReady && diagramPath ? ladderSources(diagramPath) : null);
 
-  let linksByTier = $derived.by(() => {
-    if (!mod?.links)
-      return { intro: [] as StationLinks, core: [] as StationLinks, deep: [] as StationLinks };
-    const out = { intro: [] as StationLinks, core: [] as StationLinks, deep: [] as StationLinks };
-    for (const link of mod.links) out[link.t].push(link);
-    return out;
-  });
   let hasLinks = $derived((mod?.links?.length ?? 0) > 0);
 
   const loc = $derived(localeFromPage(page));
@@ -100,71 +92,34 @@
     </div>
 
     {#if gallery.length > 0}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => (lightboxSrc = gallery[0]!)}
-          aria-label={m.panel_hero_aria({ name: mod.name })}
-        >
-          <img
-            {...responsive(gallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage src={gallery[0]} name={mod.name} onOpen={() => (lightboxSrc = gallery[0]!)} />
     {/if}
 
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="station-tab-overview"
-        data-audio-stage="station-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="station-tabpanel">{m.panel_tab_overview()}</button
-      >
-      {#if gallery.length > 0}
-        <button
-          type="button"
-          id="station-tab-gallery"
-          data-audio-stage="station-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="station-tabpanel">{m.panel_tab_gallery()}</button
-        >
-      {/if}
-      {#if hasDiagram}
-        <button
-          type="button"
-          id="station-tab-anatomy"
-          data-audio-stage="station-tab-anatomy"
-          class:active={tab === 'anatomy'}
-          onclick={() => (tab = 'anatomy')}
-          role="tab"
-          aria-selected={tab === 'anatomy'}
-          aria-controls="station-tabpanel">ANATOMY</button
-        >
-      {/if}
-      {#if hasLinks}
-        <button
-          type="button"
-          id="station-tab-learn"
-          data-audio-stage="station-tab-learn"
-          class:active={tab === 'learn'}
-          onclick={() => (tab = 'learn')}
-          role="tab"
-          aria-selected={tab === 'learn'}
-          aria-controls="station-tabpanel">{m.panel_tab_learn()}</button
-        >
-      {/if}
-    </div>
+    <PanelTabRow
+      idPrefix="station"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview(), audioStage: 'station-tab-overview' },
+        {
+          id: 'gallery',
+          label: m.panel_tab_gallery(),
+          visible: gallery.length > 0,
+          audioStage: 'station-tab-gallery',
+        },
+        {
+          id: 'anatomy',
+          label: m.panel_tab_anatomy(),
+          visible: hasDiagram,
+          audioStage: 'station-tab-anatomy',
+        },
+        {
+          id: 'learn',
+          label: m.panel_tab_learn(),
+          visible: hasLinks,
+          audioStage: 'station-tab-learn',
+        },
+      ]}
+      bind:active={tab}
+    />
 
     <div
       class="tab-content"
@@ -231,23 +186,12 @@
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: mod.name })}>
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
-                aria-label={mod.name}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: mod.name })}
+            thumbLabel={mod.name}
+            onOpen={(src) => (lightboxSrc = src)}
+          />
           <p class="gallery-credit">{panelGalleryCredit(mod.agency)}</p>
         {/if}
       {:else if tab === 'anatomy'}
@@ -258,7 +202,7 @@
                 src={diagramLadder.src}
                 srcset={diagramLadder.srcset}
                 sizes="(max-width: 640px) 100vw, 640px"
-                alt="{mod.name} anatomy diagram"
+                alt={m.station_anatomy_alt({ name: mod.name })}
                 class="anatomy-svg"
                 loading="lazy"
                 decoding="async"
@@ -266,7 +210,7 @@
             {:else}
               <img
                 src={diagramPath}
-                alt="{mod.name} anatomy diagram"
+                alt={m.station_anatomy_alt({ name: mod.name })}
                 class="anatomy-svg"
                 loading="lazy"
                 decoding="async"
@@ -274,50 +218,14 @@
             {/if}
           </div>
           <p class="anatomy-caption">
-            Hand-drawn schematic showing the spacecraft's named subsystems. Not to scale —
-            proportions adjusted for label legibility.
+            {m.station_anatomy_caption()}
           </p>
         {/if}
       {:else if tab === 'learn'}
         {#if !hasLinks}
           <p class="empty-tab">{m.panel_no_links()}</p>
         {:else}
-          {#if linksByTier.intro.length > 0}
-            <section class="link-tier tier-intro">
-              <h3>{m.panel_links_intro()}</h3>
-              <ul>
-                {#each linksByTier.intro as link (link.u)}
-                  <li>
-                    <LearnLink entityId={mod.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
-          {#if linksByTier.core.length > 0}
-            <section class="link-tier tier-core">
-              <h3>{m.panel_links_core()}</h3>
-              <ul>
-                {#each linksByTier.core as link (link.u)}
-                  <li>
-                    <LearnLink entityId={mod.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
-          {#if linksByTier.deep.length > 0}
-            <section class="link-tier tier-deep">
-              <h3>{m.panel_links_deep()}</h3>
-              <ul>
-                {#each linksByTier.deep as link (link.u)}
-                  <li>
-                    <LearnLink entityId={mod.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
+          <PanelLinkTiers links={mod.links} entityId={mod.id} />
         {/if}
         <!--
           Related crew + life-support topics — issue #303 close-out.
@@ -330,45 +238,49 @@
           <h3>{m.panel_related_science_heading()}</h3>
           <ul>
             <li>
-              <a href="{base}/science/space-stations/pressurized-volume"
+              <a href={localHref(`/science/space-stations/pressurized-volume`)}
                 >{m.chip_label_pressurized_volume()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/space-stations/node-module">{m.chip_label_node_module()}</a>
+              <a href={localHref(`/science/space-stations/node-module`)}
+                >{m.chip_label_node_module()}</a
+              >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/crewed-station-design"
+              <a href={localHref(`/science/life-in-space/crewed-station-design`)}
                 >{m.chip_label_crewed_station_design()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/eclss-life-support"
+              <a href={localHref(`/science/life-in-space/eclss-life-support`)}
                 >{m.chip_label_eclss_life_support()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/crew-selection"
+              <a href={localHref(`/science/life-in-space/crew-selection`)}
                 >{m.chip_label_crew_selection()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/pre-flight-training"
+              <a href={localHref(`/science/life-in-space/pre-flight-training`)}
                 >{m.chip_label_pre_flight_training()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/crew-dynamics-psychology"
+              <a href={localHref(`/science/life-in-space/crew-dynamics-psychology`)}
                 >{m.chip_label_crew_dynamics_psychology()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/sleep-nutrition-circadian"
+              <a href={localHref(`/science/life-in-space/sleep-nutrition-circadian`)}
                 >{m.chip_label_sleep_nutrition_circadian()}</a
               >
             </li>
             <li>
-              <a href="{base}/science/life-in-space/suit-lineage">{m.chip_label_suit_lineage()}</a>
+              <a href={localHref(`/science/life-in-space/suit-lineage`)}
+                >{m.chip_label_suit_lineage()}</a
+              >
             </li>
           </ul>
         </section>
@@ -377,20 +289,7 @@
   {/if}
 </Panel>
 
-{#if lightboxSrc}
-  <button
-    type="button"
-    class="lightbox"
-    aria-label={m.panel_lightbox_close()}
-    onclick={() => (lightboxSrc = null)}
-  >
-    <img {...responsive(lightboxSrc, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
-    <span class="lightbox-close" aria-hidden="true">×</span>
-  </button>
-  <div class="lightbox-meta">
-    <ImageCredit src={lightboxSrc} />
-  </div>
-{/if}
+<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
 
 <style>
   .head {

@@ -101,7 +101,7 @@
               type="button"
               class="thumb"
               onclick={() => onLightbox(assetUrl(img.src))}
-              aria-label="Open {img.caption}"
+              aria-label={m.site_story_image_open_aria({ caption: img.caption })}
             >
               <img
                 src={assetUrl(img.src)}

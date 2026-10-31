@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "より深い教訓は、中規模の勢力にとって焦点が幅広さに勝るということだ。ESAはNASAがやることすべてをできないので、他の誰もやったことのない少数のことをやる——彗星に着陸し、銀河を地図化し、暗黒宇宙を調査する——そして規模ではなく深さを通してリーダーになる。正しい困難な問題を選び、それを決定的に解決すること、それが連合が予算を超えた力を発揮する方法である。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "探索 — 彗星と、ESA が観測する深宇宙",
+    "/fleet?focus=rosetta": "フリート — Rosetta、Gaia、Euclid",
+    "/programs/ariane": "Ariane — ESA の科学ミッションを打ち上げるロケット",
+    "/earth?site=gaia": "L2 の Gaia",
+    "/earth?site=xmm": "XMM-Newton"
+  }
 }

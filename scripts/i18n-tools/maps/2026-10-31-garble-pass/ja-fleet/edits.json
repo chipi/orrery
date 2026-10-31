@@ -1,0 +1,345 @@
+[
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "tagline",
+    "en": "Pinpoint lunar landing; toppled but operational",
+    "old": "月面着陸の精密性；倒れたが稼働中",
+    "new": "ピンポイントでの月面着陸；転倒したが稼働を継続"
+  },
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "tagline",
+    "en": "Joint BMDO + NASA lunar orbiter — first global multispectral map and first bistatic-radar evidence for polar water ice",
+    "old": "BMDO・NASA 共同の月周回機 — 月の世界初の完全マルチスペクトル地図と極水氷の最初のバイスタティックレーダー証拠",
+    "new": "BMDOとNASAの共同月周回機 — 世界初の月全球マルチスペクトル地図と、極域の水氷を示す初のバイスタティックレーダー証拠"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "tagline",
+    "en": "Reusable booster reshaped commercial launch",
+    "old": "再利用可能なブースター再定型商業起動",
+    "new": "再利用可能なブースターが商業打ち上げを一変させた"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "tagline",
+    "en": "Roamed 39 km on the Moon — record till 2014",
+    "old": "月面に39キロローム - まで2014",
+    "new": "月面を39 km走行 — 2014年まで最長記録"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "best_known_for",
+    "en": "Only spacecraft to visit all four giant planets",
+    "old": "宇宙船だけが4つの巨大な惑星を訪問する",
+    "new": "4つの巨大惑星すべてを訪れた唯一の探査機"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "best_known_for",
+    "en": "First Mercury orbiter — 4 years mapping the planet, ended in controlled impact 2015-04-30",
+    "old": "初の水星周回機 — 4 年間の地図化、2015 年 4 月 30 日制御衝突で終了",
+    "new": "初の水星周回機 — 4年間にわたり水星を地図化し、2015-04-30に制御された衝突で終了"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "best_known_for",
+    "en": "Highest-resolution Mars imaging from orbit",
+    "old": "軌道から最も高解像度の火星イメージング",
+    "new": "軌道からの火星撮像で最高の解像度"
+  },
+  {
+    "rel": "fleet/observatory/kepler.json",
+    "at": "description",
+    "en": "NASA’s exoplanet hunter (2009–2018). Stared at a single patch of sky and detected exoplanets via transit photometry — the brief dip in starlight when a planet passes in front of its star. Discovered more than 2,700 confirmed exoplanets and demonstrated that Earth-sized worlds are common.",
+    "old": "NASAの系外惑星探索機（2009～2018年）。空の一部を見つめて、トランジット測光法により系外惑星を検出しました——惑星がその星の前を通過するときの恒星光の短い減光を利用します。2,700個以上の系外惑星を発見し、地球サイズの世界が一般的であることを実証しました。",
+    "new": "NASAの系外惑星ハンター（2009–2018年）。天球上の一つの領域を見つめ続け、トランジット測光法——惑星が恒星の前を横切る際に起こる、恒星光の短時間の減光——によって系外惑星を検出した。確認された系外惑星は2,700個以上にのぼり、地球サイズの惑星が珍しくないことを示した。"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "tagline",
+    "en": "First Mercury orbiter — 6 planetary gravity assists over 6.6 years to bleed energy before insertion in 2011",
+    "old": "初の水星周回機 — 2011 年の周回投入までに 6.6 年で 6 回の惑星スイングバイ",
+    "new": "初の水星周回機 — 2011年の軌道投入前に、6.6年かけて惑星スイングバイを6回行い、エネルギーを減らした"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "best_known_for",
+    "en": "First spacecraft to traverse the asteroid belt",
+    "old": "アスタノイドベルトを横断する初の宇宙船",
+    "new": "小惑星帯を横断した最初の探査機"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "tagline",
+    "en": "Japan's first Venus orbiter; recovered from a 2010 orbit-insertion failure to study cloud-top dynamics",
+    "old": "日本初の金星軌道衛星。2010年の軌道投入失敗から復帰し、雲頂部の動力学を研究",
+    "new": "日本初の金星周回機。2010年の軌道投入失敗から復帰し、雲頂の動力学を研究"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "best_known_for",
+    "en": "First spacecraft to orbit another planet",
+    "old": "別の惑星を軌道にする最初の宇宙船",
+    "new": "他の惑星の軌道を周回した最初の宇宙機"
+  },
+  {
+    "rel": "fleet/orbiter/hope.json",
+    "at": "best_known_for",
+    "en": "First Arab interplanetary mission; first holistic global view of the Martian atmosphere through a Mars year",
+    "old": "初のアラブ惑星間ミッション;火星の1年を通した火星大気の初の包括的全球観測",
+    "new": "アラブ初の惑星間ミッション；火星の1年間を通じて、火星大気を初めて全球的かつ総合的に観測"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "best_known_for",
+    "en": "Blue Origin's two-stage reusable heavy-lift orbital launcher — BE-4 first stage + cryogenic second",
+    "old": "Blue Origin の二段式再利用可能大型軌道打ち上げ機 — メタン BE-4 一段目 + 液水二段目",
+    "new": "Blue Originの二段式再利用可能な大型軌道打ち上げロケット — BE-4の一段目 + 極低温の二段目"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "best_known_for",
+    "en": "Russian-German X-ray sky-mapping observatory",
+    "old": "ロシアのドイツX線の空マッピング展望台",
+    "new": "ロシアとドイツのX線全天マッピング観測衛星"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "tagline",
+    "en": "Russian 12-hour HEO comms — 63.4° critical inclination locks apogee over the north",
+    "old": "ロシアの12時間HEO通信 — 63.4°の臨界傾斜角により遠地点を北半球に固定",
+    "new": "ロシアの12時間周期HEO通信 — 臨界軌道傾斜角63.4°が遠地点を北半球上空に固定"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "best_known_for",
+    "en": "12-hour HEO at 63.4° critical inclination — apogee parked over Russia",
+    "old": "63.4°臨界傾斜角の12時間HEO — 遠地点をロシア上空に固定",
+    "new": "臨界軌道傾斜角63.4°の12時間周期HEO — 遠地点をロシア上空に固定"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "tagline",
+    "en": "First spacecraft to orbit another planet",
+    "old": "別の惑星を軌道にする最初の宇宙船",
+    "new": "他の惑星の軌道を周回した最初の宇宙機"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "tagline",
+    "en": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+    "old": "Apollo 10、Skylab、53回のスペースシャトル飛行；現在はNASAのSLS / Artemisパッド",
+    "new": "Apollo 10 + Skylab + スペースシャトル53回の打ち上げ；現在はNASAのSLS / Artemis用発射台"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "best_known_for",
+    "en": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+    "old": "Apollo 10、Skylab、53回のスペースシャトル飛行；現在はNASAのSLS / Artemisパッド",
+    "new": "Apollo 10 + Skylab + スペースシャトル53回の打ち上げ；現在はNASAのSLS / Artemis用発射台"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "best_known_for",
+    "en": "Fourth US lunar orbiter (1967-05-08). First polar lunar orbit; mapped 99 % of the near side at 60 m/pixel + far-side regions",
+    "old": "米国4番目の月周回機（1967-05-08）。月初の極軌道；表側の99%を60m/画素で地図化＋裏側の重要領域",
+    "new": "米国4番目の月周回機（1967-05-08）。初の月極軌道；表側の99 %を60 m/ピクセルで地図化 + 裏側の一部領域"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "tagline",
+    "en": "Highest-resolution Mars imaging from orbit",
+    "old": "軌道から最も高解像度の火星イメージング",
+    "new": "軌道からの火星撮像で最高の解像度"
+  },
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "best_known_for",
+    "en": "First complete global lunar multispectral map and first hint of polar water ice — 1994",
+    "old": "月の世界初の完全マルチスペクトル地図と極水氷の初の手がかり — 1994",
+    "new": "世界初の月全球マルチスペクトル地図と、極域の水氷の初の手がかり — 1994"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "best_known_for",
+    "en": "Reusable booster reshaped commercial launch",
+    "old": "再利用可能なブースター再定型商業起動",
+    "new": "再利用可能なブースターが商業打ち上げを一変させた"
+  },
+  {
+    "rel": "fleet/station/salyut-7.json",
+    "at": "dispatch",
+    "en": "Salyut 7 was the last Salyut and the bridge to Mir — and the setting for the hardest repair job ever attempted in orbit. In 1985, after the abandoned station fell silent, frozen, and slowly tumbling, two cosmonauts flew up, manually docked with the dead and unpowered hulk, and brought it back to life by hand, thawing it out and restarting its systems one by one. Salyut 7 carried the two-port, Progress-resupplied architecture to full maturity and handed it, essentially complete, to the modular station that would replace it.",
+    "old": "Salyut 7は最後のSalyutであり、Mirへの橋渡しとなった宇宙ステーションで、軌道上で試みられた最も困難な修理作業の舞台となった。1985年、放棄されたステーションが沈黙し、凍結し、ゆっくりと回転していた後、2人の宇宙飛行士が飛行し、死んで電力を失った船体に手動でドッキングし、それを解凍してシステムを一つずつ再起動させることで、手作業で再び命を吹き込んだ。Salyut 7は、2ポート構造とProgressによる補給システムを完全に成熟させ、それを本質的に完成した形で、後継となるモジュール式ステーションに引き継いだ。",
+    "new": "Salyut 7は最後のSalyutであり、Mirへの架け橋となったステーションである。同時に、軌道上で試みられた中で最も困難な修理作業の舞台でもあった。1985年、放棄されたステーションが交信を絶ち、凍りつき、ゆっくりと回転し始めたのち、2人の宇宙飛行士が宇宙へ向かい、機能を停止し電力も失ったその船体に手動でドッキングし、解凍とシステムの再起動を一つずつ手作業で進めて、ステーションを蘇らせた。Salyut 7は、2ポート構成とProgress補給船による補給という構想を完全な成熟に導き、ほぼ完成した形で、後継となるモジュール式ステーションに引き渡した。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "best_known_for",
+    "en": "Second Shuttle; lost 73s after launch on STS-51-L 1986-01-28 with 7 crew",
+    "old": "2番目のシャトル。1986年1月28日のSTS-51-Lで打ち上げから73秒後に喪失。乗組員7名",
+    "new": "2番目のスペースシャトル。1986-01-28のSTS-51-Lで打ち上げ73秒後に喪失、搭乗員7名"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "best_known_for",
+    "en": "India's first Moon mission. Discovered widespread surface water on the Moon (M3 + MIP, 2009). Lost contact 2009-08-29 after only 312 days",
+    "old": "インドの初月面探査機。月の広範な地表水を発見（M3 + MIP、2009年）。2009年8月29日に通信喪失、312日間の運用",
+    "new": "インド初の月探査ミッション。月面に広く水が存在することを発見（M3 + MIP、2009年）。2009-08-29にわずか312日で通信途絶"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "description",
+    "en": "India’s first interplanetary mission and the first successful Mars mission by an Asian space agency. Delivered an orbiter to Mars on its first attempt — a feat no other national space agency had managed (ESA, a multi-national organization, succeeded on its first Mars attempt with Mars Express in 2003). Operated for nearly eight years before contact was lost in 2022.",
+    "old": "インドの初の惑星間ミッションであり、アジアの宇宙機関による初の成功した火星ミッションである。初回の試みで火星軌道器を到達させた — 他のどの国家宇宙機関も成し遂げていない成果である（ESA という多国間組織は 2003 年の Mars Express で初回の火星ミッションに成功している）。約 8 年間の運用を続けた後、2022 年に通信が途絶えた。",
+    "new": "インド初の惑星間ミッションであり、アジアの宇宙機関として初めて成功した火星ミッション。最初の挑戦で火星に周回機を送り届けた — これは他のどの国の宇宙機関も成し遂げていない快挙である（多国間組織であるESAは、2003年のMars Expressで最初の火星挑戦に成功している）。ほぼ8年間運用されたのち、2022年に通信が途絶えた。"
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "best_known_for",
+    "en": "Pinpoint lunar landing; toppled but operational",
+    "old": "月面着陸の精密性；倒れたが稼働中",
+    "new": "ピンポイントでの月面着陸；転倒したが稼働を継続"
+  },
+  {
+    "rel": "fleet/orbiter/phobos-2.json",
+    "at": "description",
+    "en": "The last Soviet planetary mission. Reached Mars orbit in January 1989 but lost contact with Earth on March 27, 1989, just before its planned encounter with the moon Phobos. Phobos 2 returned 37 images of Phobos before contact was lost. The loss was attributed to an on-board computer failure causing loss of attitude control and power, though the complete sequence was never fully reconstructed.",
+    "old": "最後のソビエト惑星探査機。1989年1月に火星軌道に到達したが、衛星フォボスの計画された遭遇直前の1989年3月27日に地球との通信を喪失した。Phobos 2は通信喪失前にフォボスの37枚の画像を送信した。喪失の原因は、機上コンピュータの故障による姿勢制御と電力供給の喪失と推定されているが、完全な経過は決して完全には再構成されていない。",
+    "new": "ソ連最後の惑星探査ミッション。1989年1月に火星軌道に到達したが、衛星フォボスとの接近遭遇を予定していた直前の1989年3月27日に、地球との通信を失った。Phobos 2は通信途絶までにフォボスの画像37枚を送信した。喪失の原因は、搭載コンピュータの故障により姿勢制御と電力を失ったことと考えられているが、一連の経緯は完全には解明されていない。"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "best_known_for",
+    "en": "Roamed 39 km on the Moon — record till 2014",
+    "old": "月面に39キロローム - まで2014",
+    "new": "月面を39 km走行 — 2014年まで最長記録"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "best_known_for",
+    "en": "Japan's first Venus orbiter; studied cloud-top winds and atmospheric dynamics. Recovered after a 2010 orbit-insertion failure",
+    "old": "日本初の金星軌道衛星。雲頂部の風と大気力学を研究し、2010年の軌道投入失敗から復帰",
+    "new": "日本初の金星周回機。雲頂付近の風と大気力学を研究。2010年の軌道投入失敗から復帰"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "best_known_for",
+    "en": "Spun apart in orbit; loss drove XRISM development",
+    "old": "軌道上で分裂；その喪失はXRISM開発を推進した",
+    "new": "軌道上で回転して分裂；その喪失がXRISM開発を推進した"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "en": "Only spacecraft to visit all four giant planets",
+    "old": "宇宙船だけが4つの巨大な惑星を訪問する",
+    "new": "4つの巨大惑星すべてを訪れた唯一の探査機"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "description",
+    "en": "SpaceX-designed launch-entry pressure suit. Single-piece front-entry, touchscreen-capable gloves to operate Crew Dragon's tablet console, custom-3D-printed helmets fitted to each crew member. Worn for ascent and re-entry on Crew Dragon. Distinctive minimalist white-and-black aesthetic.",
+    "old": "SpaceX が設計した打ち上げ・帰還用圧力スーツ。1 枚型の前部開口設計で、タッチスクリーン対応手袋は Crew Dragon のタブレットコンソール操作に対応。各クルーメンバーに合わせてカスタム 3D プリントされたヘルメット。Crew Dragon での上昇および再突入時に着用。白と黒のミニマリストデザインが特徴。",
+    "new": "SpaceXが設計した、打ち上げ・大気圏突入用の与圧服。ワンピース型の前面開口式で、Crew Dragonのタブレット式コンソールを操作できるタッチスクリーン対応グローブを備え、ヘルメットは乗組員一人ひとりに合わせてカスタム3Dプリントされている。Crew Dragonでの上昇時と大気圏突入時に着用する。白と黒のミニマルなデザインが特徴。"
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "en": "ESA-led Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in close detail — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. Carries ten instruments combining remote sensing (PHI magnetograph, EUI extreme-UV imager, SPICE spectrometer, STIX X-ray imager, METIS coronagraph, SoloHI heliospheric imager) with in-situ measurement (magnetometer, energetic particles, solar-wind plasma, radio + plasma waves). Launched 2020-02-10 from Cape Canaveral on a NASA Atlas V 411. First perihelion 2020-06-15 at 0.51 AU. Working perihelion 0.28 AU (~62 R☉), inside Mercury's perihelion distance.",
+    "old": "ESA主導のSolar Orbiterは、太陽の極域を近距離で詳細に撮影するために設計された初の宇宙機——10年以上にわたる金星重力アシストを繰り返し利用して黄道面から離脱し、太陽緯度約33°の軌道傾斜角を目指す。リモートセンシング(PHI磁力計、EUI極端紫外線撮像装置、SPICE分光計、STIX X線撮像装置、METISコロナグラフ、SoloHI太陽圏撮像装置)とその場測定(磁力計、高エネルギー粒子、太陽風プラズマ、電波+プラズマ波)を組み合わせた10の観測機器を搭載。2020年2月10日にケープカナベラルからNASAのAtlas V 411で打ち上げ。初回近日点通過は2020年6月15日、0.51 AU。運用時近日点距離は0.28 AU(約62 R☉)で、水星の近日点距離より内側。",
+    "new": "ESA主導のSolar Orbiterは、太陽の極域を間近から詳細に撮影するよう設計された初の宇宙機で、10年かけて金星でのスイングバイを繰り返し、黄道面から離れて日面基準で約33°の軌道傾斜角を目指す。リモートセンシング（PHI磁力計、EUI極端紫外線撮像装置、SPICE分光計、STIX X線撮像装置、METISコロナグラフ、SoloHI太陽圏撮像装置）と、その場計測（磁力計、高エネルギー粒子、太陽風プラズマ、電波+プラズマ波）を組み合わせた10の観測機器を搭載する。2020-02-10にケープカナベラルからNASAのAtlas V 411で打ち上げられた。初の近日点通過は2020-06-15、0.51 AU。運用上の近日点は0.28 AU（約62 R☉）で、水星の近日点距離より内側にある。"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "tagline",
+    "en": "First spacecraft to traverse the asteroid belt",
+    "old": "アスタノイドベルトを横断する初の宇宙船",
+    "new": "小惑星帯を横断した最初の探査機"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "description",
+    "en": "First-generation LEO broadband constellation, 648 satellites at 1,200 km in 12 polar planes. Polar orbits give full pole-to-pole coverage that mid-inclination Starlink shells cannot reach. Acquired by Eutelsat in 2023 to form Eutelsat OneWeb; commercial service now bundled with Eutelsat GEO assets. Higher altitude than Starlink means slightly higher latency but fewer satellites needed.",
+    "old": "第一世代LEOブロードバンドコンステレーション、高度1,200 kmに12の極軌道面で648基の衛星を配置。極軌道により、中傾斜角のStarlink群では到達できない極域から極域までの完全なカバレッジを提供。2023年にEutelsatが買収してEutelsat OneWebを形成し、商用サービスはEutelsatのGEO資産と統合されている。Starlinkより高い軌道高度のため、レイテンシはわずかに高いが、必要な衛星数は少ない。",
+    "new": "第1世代のLEOブロードバンド・コンステレーション。高度1,200 kmの12の極軌道面に648基の衛星を配置している。極軌道により、軌道傾斜角が中程度のStarlinkのシェルが届かない、極から極までの全域を覆える。2023年にEutelsatが買収してEutelsat OneWebとなり、商用サービスは現在EutelsatのGEO資産と一体で提供されている。Starlinkより高度が高いため、レイテンシはわずかに大きくなるが、必要な衛星数は少なくて済む。"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "tagline",
+    "en": "India's first Moon mission. Discovered widespread surface water on the Moon (M3 + MIP, 2009). Lost contact 2009-08-29 after only 312 days",
+    "old": "インドの初月面探査機。月の広範な地表水を発見（M3 + MIP、2009年）。2009年8月29日に通信喪失、312日間の運用",
+    "new": "インド初の月探査ミッション。月面に広く水が存在することを発見（M3 + MIP、2009年）。2009-08-29にわずか312日で通信途絶"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "best_known_for",
+    "en": "Joint ESA + JAXA twin-orbiter Mercury mission — MPO + Mio at Mercury, 2026 arrival",
+    "old": "ESA + JAXA共同双衛星水星ミッション——2026年到着予定のMPO + Mio",
+    "new": "ESA + JAXA共同の水星周回機2機ミッション — 水星のMPO + Mio、2026年到着"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "tagline",
+    "en": "Russian-German X-ray sky-mapping observatory",
+    "old": "ロシアのドイツX線の空マッピング展望台",
+    "new": "ロシアとドイツのX線全天マッピング観測衛星"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "best_known_for",
+    "en": "Studying Mars atmospheric loss to solar wind; revealed Mars lost its atmosphere over billions of years",
+    "old": "火星大気の太陽風への流出を研究; 火星が数十億年かけて大気を失ったことを解明",
+    "new": "火星大気の太陽風による散逸を研究；火星が数十億年かけて大気を失ったことを解明"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "tagline",
+    "en": "Atlas V + Delta IV successor; certifies for NSSL Phase 3 + planned for Dream Chaser",
+    "old": "Atlas V + Delta IVの後継機; NSSL Phase 3認定対象 + Dream Chaserの計画搭載機",
+    "new": "Atlas V + Delta IVの後継機；NSSL Phase 3の認証対象 + Dream Chaser向けに計画"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "tagline",
+    "en": "Spun apart in orbit; loss drove XRISM development",
+    "old": "軌道上で分裂；その喪失はXRISM開発を推進した",
+    "new": "軌道上で回転して分裂；その喪失がXRISM開発を推進した"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "tagline",
+    "en": "First wheeled vehicle to roam another world",
+    "old": "別の世界をロームする最初のホイール車",
+    "new": "地球以外の天体を走行した初の車輪式車両"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "tagline",
+    "en": "Fourth US lunar orbiter (1967-05-08). First polar lunar orbit; mapped 99 % of the near side at 60 m/pixel + far-side regions",
+    "old": "米国4番目の月周回機（1967-05-08）。月初の極軌道；表側の99%を60m/画素で地図化＋裏側の重要領域",
+    "new": "米国4番目の月周回機（1967-05-08）。初の月極軌道；表側の99 %を60 m/ピクセルで地図化 + 裏側の一部領域"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "tagline",
+    "en": "Twin-orbiter joint ESA + JAXA Mercury mission — splits into MPO + Mio at Mercury arrival in 2026",
+    "old": "ESA + JAXA共同水星双衛星ミッション——2026年の水星到着時にMPO + Mioに分離",
+    "new": "ESA + JAXA共同の水星周回機2機ミッション — 2026年の水星到着時にMPOとMioに分離"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "best_known_for",
+    "en": "First wheeled vehicle to roam another world",
+    "old": "別の世界をロームする最初のホイール車",
+    "new": "地球以外の天体を走行した初の車輪式車両"
+  },
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "description",
+    "en": "Extravehicular Mobility Unit — modular EVA suit with a hard upper torso, soft fabric arms and legs, and a Primary Life Support System backpack. Operates at 4.3 psi pure O₂. First EVA flown on STS-6 (April 1983) and still in service on the ISS more than 40 years later. SAFER mini-thruster pack added in 1994 for tether-loss rescue (1.4 kg N₂, ~3 m/s Δv).",
+    "old": "船外活動用可動ユニット(Extravehicular Mobility Unit)— 硬質上部胴体、軟質布製腕脚、一次生命維持装置(Primary Life Support System)バックパックを備えたモジュール型EVA宇宙服。純O₂4.3 psiで動作。1983年4月のSTS-6での初EVA飛行から現在まで40年以上経過してもなおISSで現役運用中。1994年にはテザー喪失時の救難用として小型スラスターパックSAFER(N₂ 1.4 kg、Δv約3 m/s)が追加装備された。",
+    "new": "船外活動ユニット — 硬質の上半身、軟質の布製の腕と脚、一次生命維持装置のバックパックを備えたモジュール式EVA宇宙服。純O₂の4.3 psiで動作する。初のEVAは1983年4月のSTS-6で行われ、40年以上たった今もISSで現役。1994年には、テザー喪失時の救助用にSAFER小型スラスターパックが追加された（N₂ 1.4 kg、デルタV約3 m/s）。"
+  }
+]

@@ -22,7 +22,7 @@ const SCIENCE_ROOT = 'static/data/science';
 // content directories — reading-list and watch-list are curated
 // companion lists rendered by a dedicated route, no per-section
 // JSON files (issue #128 + #129, v0.6.3).
-const NON_CONTENT_TABS = new Set(['reading-list', 'watch-list']);
+const NON_CONTENT_TABS = new Set(['glossary', 'reading-list', 'watch-list']);
 
 describe('SCIENCE_TABS vs static/data/science/ directories', () => {
   it('every content tab in SCIENCE_TABS has a matching directory with _index.json', () => {

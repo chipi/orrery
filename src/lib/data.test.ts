@@ -205,7 +205,7 @@ describe('getMissionIndex', () => {
         'PATROCLUS',
         'MENOETIUS',
       ]).toContain(m.dest);
-      expect(['ACTIVE', 'FLOWN', 'PLANNED']).toContain(m.status);
+      expect(['ACTIVE', 'FLOWN', 'PLANNED', 'CANCELLED']).toContain(m.status);
       expect(['gov', 'private']).toContain(m.sector);
       expect(m.color).toMatch(/^#[0-9A-Fa-f]{6}$/);
     }
@@ -291,6 +291,13 @@ describe('getMission', () => {
     expect(m!.transit_days).toBe(254);
     // Overlay-only fields absent
     expect(m!.name).toBeUndefined();
+  });
+
+  it('puts the overlay upper-stage line under flight.launch', async () => {
+    const de = await getMission('apollo11', 'moon', 'de');
+    expect(de?.flight?.launch?.vehicle_stage).toBe('Saturn V S-IVB (dritte Stufe)');
+    const en = await getMission('apollo11', 'moon');
+    expect(en?.flight?.launch?.vehicle_stage).toBe('Saturn V S-IVB (third stage)');
   });
 
   it('returns null for unknown mission', async () => {
@@ -756,6 +763,7 @@ describe('SCIENCE_TABS', () => {
       'observation',
       'cosmology',
       'history',
+      'glossary',
       'reading-list',
       'watch-list',
     ]);
@@ -767,7 +775,9 @@ describe('SCIENCE_TABS', () => {
 // don't satisfy the section-completeness or intro-presence assertions
 // below. Filter them out at the test layer rather than weakening the
 // invariants for tabs that DO have sections.
-const TEACHING_TABS = SCIENCE_TABS.filter((t) => t !== 'reading-list' && t !== 'watch-list');
+const TEACHING_TABS = SCIENCE_TABS.filter(
+  (t) => t !== 'glossary' && t !== 'reading-list' && t !== 'watch-list',
+);
 
 describe('getScienceSection', () => {
   it('merges base + en-US overlay for a known section', async () => {
@@ -1293,6 +1303,17 @@ describe('programs / badges / sourcing loaders (PRD-029)', () => {
     const de = await getProgram('apollo', 'de');
     expect(de).not.toBeNull();
     expect(await getProgram('not-a-real-program')).toBeNull();
+  });
+
+  it('getProgram takes link text from the overlay, keeping the base links', async () => {
+    const de = await getProgram('apollo', 'de');
+    const en = await getProgram('apollo');
+    const free = (p: typeof de) =>
+      p?.see_also?.find((s) => s.href === '/science/transfers/free-return');
+    expect(free(de)?.label).toBe('Free-Return-Bahn');
+    expect(free(en)?.label).toBe('Free-return trajectory');
+    expect(de?.see_also?.map((s) => s.href)).toEqual(en?.see_also?.map((s) => s.href));
+    expect(de?.surface_sites?.[0]?.label).toBe('Apollo 15 — Hadley–Apennin');
   });
 
   it('getBadges returns the insignia map', async () => {

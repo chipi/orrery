@@ -5,8 +5,8 @@
   "delta_v": "~5,5 km/s",
   "type": "ROVER · FLOWN",
   "first": "Rover marziano con la più lunga percorrenza (45,16 km); 14 anni di attività sulla superficie contro una missione progettata per 90 sol",
-  "dispatch": "Opportunity ha percorso una maratona su un altro pianeta. Gemello di Spirit, atterrato nel 2004 per una missione di novanta giorni, ha funzionato per quattordici anni e ha attraversato più di quarantacinque chilometri — la distanza maggiore che qualsiasi veicolo ha mai percorso su qualsiasi mondo. È arrivato, per fortuna, in un piccolo cratere le cui pareti esponevano esattamente la roccia alterata dall'acqua che era stato inviato a trovare, e poi ha continuato a procedere, cratere dopo cratere, leggendo l'antica storia dell'acqua su Marte chilometro dopo chilometro. Una tempesta di polvere globale ha infine zittito il rover nel 2018.",
-  "description": "Opportunity (MER-B) ha colpito il jackpot planetario — il suo lander avvolto in airbag ha rimbalzato 26 volte attraverso Meridiani Planum e si è rotolato in un cratere di 22 m (Eagle) per pura fortuna, circondato da roccia affiorante che un rover poteva leggere senza muoversi. Le prime immagini mostravano concrezioni di jarosite + ematite \"blueberry\", la più forte evidenza minerale fino a quel momento di acqua liquida stabile sul Marte primitivo. Nel corso di 14 anni 138 giorni (5.111 sol) Opportunity ha attraversato 45,16 km — il record di maratona per rover marziani — visitando i crateri Endurance, Victoria e Endeavour. Una tempesta di polvere globale nel giugno 2018 ha bloccato la luce solare dai suoi pannelli solari; l'ultima trasmissione è stata il 2018-06-10, e la NASA ha dichiarato la fine della missione il 2019-02-13.",
+  "dispatch": "Opportunity ha percorso una maratona su un altro pianeta. Gemello di Spirit, atterrato nel 2004 per una missione di novanta giorni, ha funzionato per quattordici anni e ha percorso più di quarantacinque chilometri — la distanza maggiore mai coperta da un veicolo su qualsiasi mondo. È arrivato, per fortuna, in un piccolo cratere le cui pareti mostravano esattamente la roccia depositata dall'acqua che era stato inviato a cercare, e poi ha semplicemente continuato, da cratere a cratere, leggendo l'antica storia dell'acqua su Marte chilometro dopo chilometro. Una tempesta di polvere su scala planetaria lo ha infine ridotto al silenzio nel 2018.",
+  "description": "Opportunity (MER-B) ha centrato il jackpot planetario — il suo lander avvolto in un bozzolo di airbag è rimbalzato 26 volte su Meridiani Planum ed è rotolato in un cratere di 22 m (Eagle) per pura fortuna, circondato da roccia affiorante che un rover poteva leggere senza spostarsi. Le prime immagini mostravano jarosite e concrezioni di ematite a «mirtillo», la più forte evidenza minerale fino a quel momento di acqua liquida stagnante sul Marte primordiale. In 14 anni e 138 giorni (5.111 sol) Opportunity ha percorso 45,16 km — il record di maratona dei rover marziani — visitando i crateri Endurance, Victoria ed Endeavour. Una tempesta di polvere globale nel giugno 2018 ha bloccato la luce solare ai suoi pannelli solari; l'ultima trasmissione risale al 2018-06-10, e la NASA ha dichiarato la fine della missione il 2019-02-13.",
   "events": [
     {
       "met": 0,
@@ -35,7 +35,7 @@
     {
       "met": 202.01,
       "label": "ATTERRAGGIO — NEL CRATERE EAGLE",
-      "note": "Ha rimbalzato 26 volte. Si è rotolato in un cratere di 22 m per caso, circondato da roccia affiorante.",
+      "note": "Ha rimbalzato 26 volte. È rotolato per caso in un cratere di 22 m, circondato da roccia affiorante.",
       "type": "info"
     },
     {
@@ -50,5 +50,6 @@
       "note": "La NASA dichiara la fine della missione il 2019-02-13. 45,16 km percorsi.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "stadio superiore a propellente solido Star 48B PAM-D"
 }

@@ -16,7 +16,7 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn.",
+      "note": "Einschwenken in die Mondumlaufbahn.",
       "type": "nominal"
     },
     {
@@ -43,5 +43,6 @@
       "note": "Kapsel landet in der Inneren Mongolei am 25.06.2024 mit den ersten jemals geborgenen Proben von der Rückseite.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Oberstufe YZ-1 der Long March 5"
 }

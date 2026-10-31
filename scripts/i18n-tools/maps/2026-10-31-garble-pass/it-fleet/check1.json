@@ -1,0 +1,51 @@
+[
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "tagline",
+    "find": "gemello del lander",
+    "replace": "compagno del lander",
+    "why": "sense: companion, not twin; old used compagno"
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "tagline",
+    "find": "relè",
+    "replace": "ripetitore",
+    "why": "relay is ripetitore, not electrical relè"
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "best_known_for",
+    "find": "gemello del lander",
+    "replace": "compagno del lander",
+    "why": "sense: companion, not twin; old used compagno"
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "description",
+    "find": "lunetta asteroidale",
+    "replace": "satellite asteroidale",
+    "why": "non-idiomatic term for asteroid moonlet"
+  },
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "tagline",
+    "find": "ultimo ritorno lunare",
+    "replace": "ultimo ritorno di campioni lunari",
+    "why": "omitted \"sample\" in sample return"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "tagline",
+    "find": "di media portata",
+    "replace": "a media capacità",
+    "why": "medium-lift is capacity, not range; match sibling"
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "dispatch",
+    "find": "un Salyut",
+    "replace": "una Salyut",
+    "why": "gender: station feminine, as elsewhere"
+  }
+]

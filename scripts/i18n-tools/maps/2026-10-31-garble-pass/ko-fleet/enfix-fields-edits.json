@@ -1,0 +1,30 @@
+[
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "en": "Lunokhod 2 is a planetary rover built by NPO Lavochkin in USSR. Roamed 39 km on the Moon — record till 2014. Mission ended in 1973.",
+    "old": "Lunokhod 2는 소련의 NPO Lavochkin이 제작한 행성 탐사 로버입니다. 달에서 39 km 주행 — 2014년까지 기록. 1973년 임무를 마쳤습니다.",
+    "new": "Lunokhod 2는 소련의 NPO Lavochkin이 제작한 행성 탐사 로버입니다. 달에서 39 km를 주행했으며, 이 기록은 2014년까지 깨지지 않았습니다. 1973년 임무를 마쳤습니다."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "en": "Spirit (MER-A) is a planetary rover built by NASA JPL in USA. Mars Exploration Rover; 6-year operation. Last contact in 2010.",
+    "old": "Spirit (MER-A)는 미국 NASA JPL이 제작한 행성 탐사 로버입니다. Mars Exploration Rover 계획의 일부로 6년간 가동되었습니다. 2010년 마지막으로 교신했습니다.",
+    "new": "Spirit (MER-A)는 미국 NASA JPL이 제작한 행성 탐사 로버입니다. Mars Exploration Rover로, 6년간 운용되었습니다. 2010년 마지막으로 교신했습니다."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "en": "ATV (Automated Transfer Vehicle) is a robotic cargo spacecraft built by Astrium / Airbus in Europe. ESA's flagship ISS cargo carrier that flew five missions to the ISS from 2008 to 2015, delivering cargo, water, air and propellant while using its engines to reboost the Station.",
+    "old": "Automated Transfer Vehicle(ATV)는 Astrium / Airbus가 유럽에서 제작한 무인 화물 우주선이다. ESA의 주력 ISS 화물 운반선으로 2008년부터 2015년까지 ISS로 다섯 차례 임무를 수행했으며, 화물, 물, 공기, 추진제를 전달하는 한편 자체 엔진으로 우주정거장의 궤도를 끌어올렸다.",
+    "new": "ATV(Automated Transfer Vehicle)는 유럽의 Astrium / Airbus가 제작한 무인 화물 우주선입니다. 2008년부터 2015년까지 ISS로 다섯 차례 임무를 수행한 ESA의 대표 ISS 화물 운반선으로, 화물, 물, 공기, 추진제를 전달하는 한편 자체 엔진으로 우주정거장의 궤도를 끌어올렸습니다."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "en": "India’s first successful lunar lander (August 2023), the first spacecraft to land near the lunar south pole. Four years after Vikram CY-2 crashed in the same region — the redemption arc India and ISRO needed.",
+    "old": "인도의 첫 번째 달 착륙선(2023년 8월)이자 달의 남극 근처에 착륙한 첫 우주선입니다. 같은 지역에서 4년 전 Vikram CY-2가 추락한 이후, 인도와 ISRO가 필요로 했던 명예 회복의 순간이었습니다.",
+    "new": "인도 최초로 착륙에 성공한 달 착륙선(2023년 8월)이자 달 남극 근처에 착륙한 최초의 우주선입니다. Vikram CY-2가 같은 지역에 추락한 지 4년 만에 이룬, 인도와 ISRO가 필요로 했던 명예 회복의 서사였습니다."
+  }
+]

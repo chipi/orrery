@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "bio",
+    "old": "Sirrah (Alpha Andromedae) ist ein bläulich-weißer Stern etwa 97 Lichtjahre entfernt mit einer ungewöhnlichen Quecksilber-Mangan-Besonderheit in seiner chemischen Zusammensetzung. Er markiert den Kopf der Andromeda und bildet zugleich die nordöstliche Ecke des Großen Quadrats von Pegasus.",
+    "new": "Alpheratz (Alpha Andromedae) ist ein bläulich-weißer Stern etwa 97 Lichtjahre entfernt mit einer ungewöhnlichen Quecksilber-Mangan-Besonderheit in seiner chemischen Zusammensetzung. Er markiert den Kopf der Andromeda und bildet zugleich die nordöstliche Ecke des Großen Quadrats von Pegasus."
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.2",
+    "old": "Wenn sie keine Raumfahrzeuge verfolgen, kartieren seine Antennen auch Quasare und betreiben Planetenradar.",
+    "new": "Wenn seine Antennen keine Raumfahrzeuge verfolgen, kartieren sie auch Quasare und betreiben Planetenradar."
+  }
+]

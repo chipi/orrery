@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "De diepere les is dat ambitie en budget scheidbaar zijn. JAXA doet grensverleggende wetenschap op een fractie van de financiering van een grootmacht door smalle, moeilijke doelen te kiezen en zuinig te vliegen — bewijs dat leiderschap in verkenning beschikbaar is voor iedereen die bereid is diep te specialiseren en goed te improviseren, in plaats van alleen voor degenen die zich vlaggenschepen kunnen veroorloven."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Maan — de landingsplaats van SLIM",
+    "/explore": "Verkennen — Venus en de binnenplaneten",
+    "/programs/hayabusa": "Hayabusa — de JAXA-campagne die monsters van planetoïden terugbracht"
+  }
 }

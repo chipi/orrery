@@ -90,5 +90,14 @@
       "type": "prose",
       "md": "And the human note worth keeping: they did it in eight years, having never done it before, with onboard computers weaker than a modern doorbell. Apollo is a standing argument that a clear mission, the right people, and an honest deadline can still outrun the odds — a useful thing to remember the next time a goal looks impossible."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "The Moon — surface map & Apollo landing sites",
+    "/science/transfers/free-return": "Free-return trajectory",
+    "/science/mission-phases/trans-x-injection": "Trans-lunar injection",
+    "/science/mission-phases/edl": "Entry, descent & landing",
+    "/science/propulsion/tsiolkovsky": "The rocket equation",
+    "/moon?site=apollo15": "Apollo 15 — Hadley–Apennine",
+    "/moon?site=apollo16": "Apollo 16 — Descartes Highlands"
+  }
 }

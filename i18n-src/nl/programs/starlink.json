@@ -84,5 +84,11 @@
       "type": "prose",
       "md": "De diepere les is dat infrastructuur die sneller wordt gebouwd dan het kan worden bestuurd, tegelijkertijd echt goed en echt risico levert. Starlink verbond daadwerkelijk de niet-verbondenen — en concentreerde tegelijkertijd kritieke capaciteit in particuliere handen, maakte een gedeelde baan vol, en streepte de hemel van de astronomen. De taak die het achterlaat is niet om het ongedaan te maken maar om het bij te benen: om het bestuur te bouwen dat een technologie zo machtig had moeten hebben voordat het vloog."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starlink": "Vloot — de Starlink-constellatie",
+    "/programs/spacex": "SpaceX — de Falcon die haar lanceert",
+    "/earth": "Aarde — banen en de drukte in de lage baan",
+    "/earth?site=starlink": "De Starlink-constellatie"
+  }
 }

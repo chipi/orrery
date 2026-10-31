@@ -10,6 +10,7 @@
 <script lang="ts">
   import type { AscentState } from '$lib/physics/ascent/ascent-physics';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import * as m from '$lib/paraglide/messages';
 
   interface Props {
     /** Live sampled state at the current mission time. */
@@ -27,15 +28,25 @@
 
   type Row = { key: string; label: string; value: number; color: string; section: string };
   const rows: Row[] = $derived([
-    { key: 'g', label: 'GRAVITY', value: gravity, color: '#ff5a5a', section: 'gravity-turn' },
-    { key: 'd', label: 'DRAG', value: drag, color: '#5aa0ff', section: 'max-q' },
-    { key: 's', label: 'STEERING', value: steering, color: '#54e08a', section: 'gravity-turn' },
+    { key: 'g', label: m.hud_gravity(), value: gravity, color: '#ff5a5a', section: 'gravity-turn' },
+    { key: 'd', label: m.hud_drag(), value: drag, color: '#5aa0ff', section: 'max-q' },
+    {
+      key: 's',
+      label: m.hud_steering(),
+      value: steering,
+      color: '#54e08a',
+      section: 'gravity-turn',
+    },
   ]);
 </script>
 
 <div class="ledger">
   <div class="title">
-    Δv LOSSES<ScienceChip tab="propulsion" section="tsiolkovsky" label="The rocket equation" />
+    {m.hud_dv_losses()}<ScienceChip
+      tab="propulsion"
+      section="tsiolkovsky"
+      label={m.chip_label_tsiolkovsky()}
+    />
   </div>
   {#each rows as r (r.key)}
     <div class="row">
@@ -47,11 +58,11 @@
     </div>
   {/each}
   <div class="row total">
-    <span class="lbl">TOTAL</span>
+    <span class="lbl">{m.hud_total()}</span>
     <div class="bar"><div class="fill total-fill" style="width:100%"></div></div>
     <span class="val">{total.toFixed(2)}</span>
   </div>
-  <div class="unit">km·s⁻¹ spent vs the ideal budget</div>
+  <div class="unit">{m.hud_losses_unit()}</div>
 </div>
 
 <style>

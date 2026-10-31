@@ -1,0 +1,660 @@
+[
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "capability",
+    "en": "First soft landing — required before any subsequent lunar surface operation, and the prerequisite proof-of-concept for every Mars lander since.",
+    "old": "أول هبوط ناعم — لازم قبل أي عملية سطح قمرية لاحقة، والإثبات المسبق لكل هابط مريخي منذئذ.",
+    "new": "أول هبوط ناعم — شرط لازم قبل أي عملية لاحقة على سطح القمر، وإثبات الجدوى المسبق لكل مركبة هبوط على المريخ منذ ذلك الحين."
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "capability",
+    "en": "First Mars sample-caching for future return; first powered flight in another atmosphere (Ingenuity).",
+    "old": "أول تخزين لعينات المريخ لإرجاعها في المستقبل؛ أول رحلة مدفوعة في غلاف جوي آخر (إنجينيويتي).",
+    "new": "أول تخزين لعينات المريخ تمهيدًا لإعادتها مستقبلًا؛ وأول رحلة طيران بمحرك في غلاف جوي لكوكب آخر (إنجينيويتي)."
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "capability",
+    "en": "Long-distance teleoperated mobility — proved a remote crew can drive an unmanned vehicle across an alien surface in real time (with light-delay).",
+    "old": "التنقل عن بعد عبر الاتصالات — أثبتت أن فريقًا بشريًا يمكنه القيادة الحية لمركبة غير مأهولة عبر سطح كوكب غريب (مع تأخير الإشارة الضوئية).",
+    "new": "التنقل بالتحكم عن بُعد لمسافات طويلة — أثبتت أن طاقمًا بعيدًا يستطيع قيادة مركبة غير مأهولة عبر سطح غريب في الزمن الحقيقي (مع تأخر الإشارة بسبب سرعة الضوء)."
+  },
+  {
+    "rel": "moon-sites/chandrayaan1.json",
+    "at": "fact",
+    "en": "India's first lunar mission. Carried NASA's Moon Mineralogy Mapper (M³) — which in 2009 returned the first orbital spectroscopic confirmation of water (H₂O and OH) widely distributed across the lunar surface, not just at the poles. Mission ended after 312 days when communications were lost; M³ data is still being analysed today.",
+    "old": "أول مهمة قمرية هندية. حملت جهاز NASA لرسم خرائط معادن القمر (M³) — الذي عاد في عام 2009 بأول تأكيد طيفي مداري للماء (H₂O و OH) موزع على نطاق واسع عبر سطح القمر، وليس فقط عند القطبين. انتهت المهمة بعد 312 يوماً عندما فقدت الاتصالات؛ لا تزال بيانات M³ قيد التحليل حتى اليوم.",
+    "new": "أول مهمة قمرية هندية. حملت جهاز NASA لرسم خرائط معادن القمر (M³) — الذي قدّم عام 2009 أول تأكيد طيفي من المدار للماء (H₂O وOH) الموزع على نطاق واسع عبر سطح القمر، وليس عند القطبين فقط. انتهت المهمة بعد 312 يوماً عندما فُقد الاتصال؛ ولا تزال بيانات M³ قيد التحليل حتى اليوم."
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "fact",
+    "en": "The only mission to land in the lunar highlands. Charles Duke left a photo of his family sealed in a bag on the lunar surface. On the back he wrote: 'This is the family of Astronaut Duke from Planet Earth. Landed on the Moon, April 1972.' It will outlast civilisation.",
+    "old": "المهمة الوحيدة التي هبطت في المرتفعات القمرية. ترك تشارلز ديوك صورة عائلته مغلقة في كيس على السطح. على ظهرها كتب: «هذه عائلة رائد الفضاء ديوك من كوكب الأرض. هبطنا على القمر، أبريل 1972». ستصمد بعد الحضارات.",
+    "new": "المهمة الوحيدة التي هبطت في المرتفعات القمرية. ترك تشارلز ديوك صورة لعائلته مختومة داخل كيس على سطح القمر. وكتب على ظهرها: «هذه عائلة رائد الفضاء ديوك من كوكب الأرض. هبطت على القمر في أبريل 1972». وستبقى أطول عمرًا من الحضارة."
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "capability",
+    "en": "Demonstrated that a small private team can reach the Moon. The crash itself surfaced lessons about descent-engine restart and IMU redundancy adopted by later commercial landers.",
+    "old": "أثبت أن فريقاً خاصاً صغيراً يمكنه الوصول إلى القمر. وقد أفرزت حادثة التصادم نفسها دروساً حول إعادة تشغيل محرك الهبوط وتكرار أجهزة القياس الموضعية (IMU) التي اعتمدتها مركبات الهبوط التجارية لاحقاً.",
+    "new": "أثبت أن فريقاً خاصاً صغيراً يستطيع الوصول إلى القمر. وقد أفرز التصادم نفسه دروساً حول إعادة تشغيل محرك الهبوط والتكرار الاحتياطي لوحدات القياس بالقصور الذاتي (IMU) اعتمدتها لاحقاً مركبات الهبوط التجارية."
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "fact",
+    "en": "First mission with the Lunar Roving Vehicle — drove 27.9 km. Scott left a small aluminium figurine, 'Fallen Astronaut', and a plaque listing all astronauts and cosmonauts who died in the space race. It is the only artwork on the Moon, left without public announcement at the time.",
+    "old": "أول مهمة تتضمن مركبة جوالة قمرية — قطعت مسافة ٢٧٫٩ كم. ترك سكوت تمثالاً صغيراً من الألومنيوم بعنوان «Fallen Astronaut»، ولوحة تحمل أسماء جميع رواد الفضاء ورجال الفضاء السوفييت الذين فقدوا حياتهم في سباق الفضاء. وهي الوحيدة من بين الأعمال الفنية على القمر، تركت دون إعلان علني في ذلك الوقت.",
+    "new": "أول مهمة تستخدم مركبة التجوال القمرية — قطعت 27.9 كم. ترك سكوت تمثالاً صغيراً من الألومنيوم بعنوان «Fallen Astronaut»، ولوحة تحمل أسماء جميع رواد الفضاء والرواد السوفييت الذين لقوا حتفهم في سباق الفضاء. وهو العمل الفني الوحيد على القمر، وقد تُرك دون إعلان عام في ذلك الوقت."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.images.0.caption",
+    "en": "Drill hole at Yellowknife Bay — the first sample from Mars's past lake-bed environment, January 2013.",
+    "old": "حفرة حفر في Yellowknife Bay — أول عيّنة من بيئة قاع بحيرة في ماضي المريخ، يناير 2013.",
+    "new": "ثقب الحفر في Yellowknife Bay — أول عيّنة من بيئة قاع بحيرة في ماضي المريخ، يناير 2013."
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "left",
+    "en": "Descent stage · ALSEP · LRV rover · flag · Fallen Astronaut sculpture",
+    "old": "مرحلة النزول · ALSEP · LRV · علم · تمثال Fallen Astronaut",
+    "new": "مرحلة الهبوط · ALSEP · مركبة LRV الجوالة · العلم · تمثال Fallen Astronaut"
+  },
+  {
+    "rel": "moon-sites/lro.json",
+    "at": "site_name",
+    "en": "Lunar polar orbit (~50 km science phase; elliptical since 2011)",
+    "old": "مدار قطبي قمري (~50 كم مرحلة العلم؛ بيضاوي منذ 2011)",
+    "new": "مدار قطبي قمري (~50 كم في المرحلة العلمية؛ إهليلجي منذ 2011)"
+  },
+  {
+    "rel": "mars-sites/tianwen1-orbiter.json",
+    "at": "site_name",
+    "en": "~265 × 12,000 km elliptical, 87° inclination",
+    "old": "~265 × 12000 كم إهليلجي، ميل 87°",
+    "new": "~265 × 12,000 كم إهليلجي، ميل مداري 87°"
+  },
+  {
+    "rel": "mars-sites/phoenix.json",
+    "at": "fact",
+    "en": "First spacecraft to physically touch Martian water ice. Phoenix's robotic arm scooped ice that sublimated in front of its cameras within hours — direct visual confirmation of the subsurface ice that Mars Odyssey's neutron spectrometer had inferred from orbit. Operated 157 sols before the northern winter froze its solar panels.",
+    "old": "أول مركبة فضائية تلامست مباشرة جليد الماء على المريخ. احتوت ذراع Phoenix الآلية على الجليد الذي تصاعد بالتسامي أمام كاميراتها في غضون ساعات — تأكيد بصري مباشر للجليد تحت السطح الذي كان مطياف النيوترونات على متن Mars Odyssey قد استدل عليه من المدار. عملت لمدة 157 يوماً مريخياً قبل أن يجمد الشتاء الشمالي ألواحها الشمسية.",
+    "new": "أول مركبة فضائية تلمس جليد الماء على المريخ فعليًا. جرفت ذراع Phoenix الآلية جليدًا تصاعد بالتسامي أمام كاميراتها في غضون ساعات — تأكيد بصري مباشر للجليد تحت السطح الذي كان مطياف النيوترونات على متن Mars Odyssey قد استدل عليه من المدار. عملت 157 يومًا مريخيًا قبل أن يجمّد الشتاء الشمالي ألواحها الشمسية."
+  },
+  {
+    "rel": "mars-sites/mariner9.json",
+    "at": "fact",
+    "en": "First spacecraft to orbit another planet. Arrived at Mars during a planet-wide dust storm and waited until the atmosphere cleared. Returned 7,329 images covering 85% of the Martian surface — the first global mosaic of any planet besides Earth. Discovered Olympus Mons, Valles Marineris, and the polar layered terrain.",
+    "old": "أول مركبة فضائية تدور حول كوكب آخر. وصلت إلى المريخ أثناء عاصفة غبار كوكبية واسعة النطاق وانتظرت حتى تصفت الغلاف الجوي. أرسلت 7,329 صورة غطّت 85% من سطح المريخ — أول فسيفساء كونية شاملة لأي كوكب غير الأرض. اكتشفت جبل أوليمبوس ووادي مارينر والتضاريس المطبقة عند القطبين.",
+    "new": "أول مركبة فضائية تدخل مداراً حول كوكب آخر. وصلت إلى المريخ أثناء عاصفة غبارية غطّت الكوكب بأكمله، وانتظرت حتى صفا الغلاف الجوي. أرسلت 7,329 صورة غطّت 85% من سطح المريخ — أول فسيفساء عالمية لأي كوكب غير الأرض. اكتشفت جبل أوليمبوس ووادي مارينر والتضاريس الطبقية عند القطبين."
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "fact",
+    "en": "The last Soviet lunar mission — and the last uncrewed Moon landing until China's Chang'e 3 in 2013: a gap of 37 years. Returned 170 g of samples including minerals containing water, foreshadowing the later discovery of lunar water ice.",
+    "old": "آخر بعثة سوفييتية للقمر — وآخر هبوط غير مأهول بالبشر على سطح القمر حتى بعثة Chang'e 3 الصينية في عام 2013: فترة فاصلة مدتها 37 سنة. عادت بـ 170 غرام من العينات تتضمن معادن تحتوي على الماء، ممهدة الطريق لاكتشاف جليد الماء على سطح القمر في وقت لاحق.",
+    "new": "آخر بعثة سوفييتية إلى القمر — وآخر هبوط غير مأهول على سطحه حتى بعثة Chang'e 3 الصينية عام 2013، أي بفارق 37 سنة. أعادت 170 غرامًا من العينات، منها معادن تحتوي على الماء، في إشارة مبكرة إلى اكتشاف جليد الماء القمري لاحقًا."
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "capability",
+    "en": "First long-distance Mars rover; demonstrated multi-year robotic geology on the Martian surface.",
+    "old": "أول عربة مريخية لمسافات طويلة؛ أثبتت جيولوجيا آلية لسنوات متعددة على سطح المريخ.",
+    "new": "أول مركبة جوّالة على المريخ تقطع مسافات طويلة؛ أثبتت إمكان إجراء أعمال جيولوجية آلية على سطح المريخ على مدى سنوات."
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "fact",
+    "en": "Mars Science Laboratory. RTG-powered (no solar reliance), car-sized (899 kg), still operational over a decade after landing. Confirmed Gale Crater hosted a habitable lake environment in the deep past. Climbing Mt. Sharp's stratigraphic sequence — billion-year-by-billion-year readings of Mars's environmental history.",
+    "old": "مختبر علوم المريخ. يعمل بمُولّد حراري نووي (لا يعتمد على الشمس)، بحجم سيارة (899 كغ)، لا يزال يعمل بعد أكثر من عقد على الهبوط. أكد أن فوهة غيل احتضنت بحيرة صالحة للحياة في الماضي البعيد. يصعد تسلسل طبقات Mt Sharp — قراءة تلو الأخرى لتأريخ بيئة المريخ على مقياس المليارات.",
+    "new": "مختبر علوم المريخ. يعمل بمُولّد حراري نووي (لا يعتمد على الشمس)، بحجم سيارة (899 كغ)، ولا يزال يعمل بعد أكثر من عقد على الهبوط. أكد أن فوهة غيل احتضنت بحيرة صالحة للحياة في الماضي البعيد. يتسلق التتابع الطبقي لجبل Mt. Sharp — قراءات تغطي مليار سنة تلو مليار سنة من تاريخ بيئة المريخ."
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.0.images.1.caption",
+    "en": "Tianwen-1 launch stack — orbiter + lander + rover combined, the most ambitious first-attempt Mars mission ever flown.",
+    "old": "حزمة إطلاق Tianwen-1 — مدارٌ ومركبة هابطة ومركبة جوالة في حزمة واحدة، وهي أكثر مهمات المريخ طموحًا في محاولة أولى على الإطلاق.",
+    "new": "حزمة إطلاق Tianwen-1 — مركبة مدارية ومركبة هابطة ومركبة جوالة في حزمة واحدة، وهي أكثر مهمات المريخ طموحًا في محاولة أولى على الإطلاق."
+  },
+  {
+    "rel": "moon-sites/luna17.json",
+    "at": "capability",
+    "en": "First teleoperated rover — established the architecture every Mars rover from Sojourner to Perseverance has built on.",
+    "old": "أول مركبة جوّالة يتم التحكّم بها عن بُعد — وضعت الهندسة المعمارية التي بنت عليها كل مركبة جوّالة على المريخ من Sojourner إلى Perseverance.",
+    "new": "أول مركبة جوّالة تُدار بالتحكم عن بُعد — أرست البنية التي بنت عليها كل مركبة جوّالة على المريخ، من Sojourner إلى Perseverance."
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "left",
+    "en": "SLIM lander · two micro-rovers (LEV-1, LEV-2)",
+    "old": "هابط SLIM · روافع صغيرة اثنتان (LEV-1, LEV-2)",
+    "new": "مركبة SLIM الهابطة · مركبتان جوّالتان صغيرتان (LEV-1 وLEV-2)"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "en": "Apollo 15 landed in Hadley Rille / Apennine Mountains on July 30, 1971 — the first \"J-class\" mission with extended surface stay, Lunar Roving Vehicle (LRV), and a scientist-trained pilot (David Scott). Scott and Irwin drove 28 km total across three EVAs, found the Genesis Rock (~4.1 Ga anorthosite, primary crust), and on live TV dropped a feather + hammer to demonstrate Galileo's gravity test.",
+    "old": "هبطت Apollo 15 في أخدود هادلي / جبال الأبينيني في 30 يوليو 1971، وكانت أولى بعثات «الفئة J» التي تميّزت بإقامة مطوّلة على السطح، ومركبة التجوال القمرية (LRV)، وطيّار تدرّب على علوم الأرض تدريب العلماء (ديفيد سكوت). قاد سكوت وإروين المركبة مسافة إجمالية بلغت 28 كم عبر ثلاث مهام خارج المركبة (EVA)، وعثرا على Genesis Rock (أنورثوسيت عمره نحو 4.1 مليار سنة، من القشرة الأولية)، وأسقطا أمام الكاميرات في بثّ تلفزيوني مباشر ريشةً ومطرقة لإعادة تجسيد تجربة غاليليو في الجاذبية.",
+    "new": "هبطت Apollo 15 في أخدود هادلي / جبال الأبينيني في 30 يوليو 1971، وكانت أولى بعثات «الفئة J» التي تميّزت بإقامة مطوّلة على السطح، ومركبة التجوال القمرية (LRV)، وطيّار تلقّى تدريبًا علميًا (ديفيد سكوت). قاد سكوت وإروين المركبة مسافة إجمالية بلغت 28 كم عبر ثلاث مهام خارج المركبة (EVA)، وعثرا على Genesis Rock (أنورثوسيت عمره نحو 4.1 مليار سنة، من القشرة الأولية)، وأسقطا أمام الكاميرات في بثّ تلفزيوني مباشر ريشةً ومطرقة لإعادة تجسيد تجربة غاليليو في الجاذبية."
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "left",
+    "en": "Chang'e 3 lander (still active 2024+) · Yutu rover",
+    "old": "هابط Chang'e 3 (لا يزال نشطًا 2024+) · مركبة Yutu الجوّالة",
+    "new": "مركبة Chang'e 3 الهابطة (لا تزال نشطة 2024+) · مركبة Yutu الجوّالة"
+  },
+  {
+    "rel": "moon-sites/change5.json",
+    "at": "capability",
+    "en": "Modern robotic sample return architecture — direct precursor to Mars Sample Return's lander/ascent vehicle/orbiter chain.",
+    "old": "بنية إعادة عينات آلية حديثة — مقدمة مباشرة لسلسلة هابط/مركبة صعود/مدار إعادة عينات المريخ.",
+    "new": "بنية حديثة لإعادة العينات آليًا — سلف مباشر لسلسلة مركبة الهبوط ومركبة الصعود والمركبة المدارية في مهمة إعادة عينات المريخ."
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "fact",
+    "en": "First human-built object to reach the Martian surface — by impact. The lander's parachute failed during EDL on 27 November 1971; it crashed at high speed in the Hellas region. The orbiter component continued to return data for eight months. Mars 2 began the Soviet attempt to leapfrog the Americans to the Martian surface in the 1971 launch window.",
+    "old": "أول جسم بناه الإنسان يصل إلى سطح المريخ — بالارتطام. فشلت المظلة الخاصة بالمركبة الهابطة أثناء الهبوط والدخول والفرملة (EDL) في 27 نوفمبر 1971؛ فقد تحطمت بسرعة عالية في منطقة Hellas. استمرت مكونة المدار في إرسال البيانات لمدة ثمانية أشهر. بدأت Mars 2 محاولة سوفيتية لتجاوز الأمريكيين نحو سطح المريخ في نافذة الإطلاق عام 1971.",
+    "new": "أول جسم من صنع الإنسان يصل إلى سطح المريخ — بالارتطام. فشلت مظلة المركبة الهابطة أثناء الدخول والهبوط (EDL) في 27 نوفمبر 1971، فتحطمت بسرعة عالية في منطقة Hellas. واستمر المكوّن المداري في إرسال البيانات ثمانية أشهر. وكانت Mars 2 بداية المحاولة السوفييتية لسبق الأمريكيين إلى سطح المريخ في نافذة الإطلاق عام 1971."
+  },
+  {
+    "rel": "mars-sites/hope.json",
+    "at": "fact",
+    "en": "First Arab interplanetary mission. The unusual high-altitude, low-inclination orbit lets Hope observe the same point on Mars's equator across all hours of the local day — building the first comprehensive global picture of Martian weather, atmospheric circulation, and atmospheric escape.",
+    "old": "أول مهمة بينكوكبية عربية. المدار الغريب عالي الارتفاع ومنخفض الميل يتيح لمسبار الأمل مراقبة النقطة نفسها على خط استواء المريخ عبر جميع ساعات اليوم المحلي — أول صورة شاملة عالمية للطقس المريخي والدورة الغلافية وهروب الغلاف.",
+    "new": "أول مهمة عربية بين كوكبية. يتيح المدار غير المعتاد، العالي الارتفاع والمنخفض الميل المداري، لمسبار الأمل رصد النقطة نفسها على خط استواء المريخ في جميع ساعات اليوم المحلي — لبناء أول صورة عالمية شاملة لطقس المريخ والدوران الجوي وهروب الغلاف الجوي."
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "capability",
+    "en": "First successful Mars EDL — proved soft-landing was a solved problem before American hardware tried it.",
+    "old": "أول مهمة إدخال وهبوط ناعم على المريخ بنجاح — أثبتت أن الهبوط الناعم كان مشكلة محلولة قبل محاولة الأجهزة الأمريكية.",
+    "new": "أول عملية دخول وهبوط ناجحة على المريخ — أثبتت أن الهبوط الناعم مسألة محسومة قبل أن تجربه المركبات الأمريكية."
+  },
+  {
+    "rel": "moon-sites/change1.json",
+    "at": "capability",
+    "en": "First Chinese lunar mission; opened the Chang'e programme that delivered the only foreign sample-return missions (Chang'e 5, 6) of the 21st century.",
+    "old": "أول مهمة قمرية صينية؛ فتحت برنامج Chang'e الذي وفّر الوحيدة من بين مهام العودة بالعينات الأجنبية (Chang'e 5, Chang'e 6) في القرن الحادي والعشرين.",
+    "new": "أول مهمة قمرية صينية؛ فتحت برنامج Chang'e الذي أنجز مهمتي إعادة العينات الأجنبيتين الوحيدتين (Chang'e 5 وChang'e 6) في القرن الحادي والعشرين."
+  },
+  {
+    "rel": "mars-sites/mars-odyssey.json",
+    "at": "capability",
+    "en": "First detection of large subsurface water-ice reservoirs; longest-running interplanetary mission in history.",
+    "old": "أول كشف لمخازن جليد مائي تحت السطح الكبيرة؛ أطول مهمة بينكوكبية في التاريخ.",
+    "new": "أول كشف لمخازن كبيرة من الجليد المائي تحت السطح؛ أطول مهمة بينكوكبية في التاريخ."
+  },
+  {
+    "rel": "moon-sites/artemis4.json",
+    "at": "fact",
+    "en": "Planned as the first crewed lunar landing since Apollo 17 in 1972 — a gap of more than 55 years, and the first ever near the south pole. The target is the water ice in permanently shadowed craters, which may one day supply drinking water, oxygen and rocket propellant. Artemis IV took this role in 2026, when NASA turned Artemis III into an Earth-orbit test; it is planned for early 2028.",
+    "old": "يُخطَّط له ليكون أول هبوط قمري مأهول منذ Apollo 17 عام 1972 — فجوة تزيد على 55 سنة — وأول هبوط على الإطلاق قرب القطب الجنوبي. والهدف هو جليد الماء في الفوهات الدائمة الظل، الذي قد يوفر يومًا ماء للشرب وأكسجين ووقودًا للصواريخ. وقد تولّت Artemis IV هذا الدور عام 2026 حين حوّلت NASA مهمة Artemis III إلى اختبار في المدار الأرضي؛ والموعد المخطط له أوائل عام 2028.",
+    "new": "يُخطَّط له ليكون أول هبوط قمري مأهول منذ Apollo 17 عام 1972 — فجوة تزيد على 55 سنة — وأول هبوط على الإطلاق قرب القطب الجنوبي. والهدف هو جليد الماء في الفوهات الدائمة الظل، الذي قد يوفر يومًا ماءً للشرب وأكسجينًا ووقودًا دافعًا للصواريخ. وقد تولّت Artemis IV هذا الدور عام 2026 حين حوّلت NASA مهمة Artemis III إلى اختبار في مدار الأرض؛ والموعد المخطط له أوائل عام 2028."
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "fact",
+    "en": "Alan Shepard, the first American in space (1961), became the only person to play golf on the Moon. He smuggled a club head and two balls aboard. He claimed one 'went miles and miles' — LRO images suggest about 37 m (40 yards). Still: the furthest sporting achievement in history.",
+    "old": "ألان شيبارد، أول أمريكي في الفضاء (1961)، أصبح الشخص الوحيد الذي لعب الجولف على القمر. فقد هرّب رأس ناد وكرتين على متن المركبة. ادعى أن إحداهما \"ذهبت أميالاً وأميالاً\" — تشير صور LRO إلى حوالي 37 م (40 ياردة). ومع ذلك: فإن هذا يمثل أبعد إنجاز رياضي في التاريخ.",
+    "new": "ألان شيبارد، أول أمريكي في الفضاء (1961)، أصبح الشخص الوحيد الذي لعب الجولف على القمر. فقد هرّب رأس مضرب وكرتين على متن المركبة. وادّعى أن إحداهما «قطعت أميالاً وأميالاً» — تشير صور LRO إلى نحو 37 م (40 ياردة). ومع ذلك فهو أبعد إنجاز رياضي في التاريخ."
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "fact",
+    "en": "First sample return from the lunar far side — possibly the most scientifically significant lunar mission since Apollo. Far-side material (thicker crust, older surface, different composition) was completely unstudied. These samples may finally explain why the Moon's two hemispheres are so fundamentally different.",
+    "old": "أول عودة عينات من الجانب البعيد للقمر — ربما الأكثر أهمية من الناحية العلمية بين جميع المهام القمرية منذ Apollo. لم تُدرَس مادة الجانب البعيد (القشرة الأسمك، السطح الأقدم، التركيب المختلف) من قبل قط. قد توفر هذه العينات أخيراً تفسيراً لسبب اختلاف نصفي القمر بشكل جذري.",
+    "new": "أول إعادة لعينات من الجانب البعيد للقمر — وربما كانت أهم مهمة قمرية من الناحية العلمية منذ Apollo. لم تُدرَس مادة الجانب البعيد (القشرة الأسمك، السطح الأقدم، التركيب المختلف) من قبل قط. وقد توفر هذه العينات أخيراً تفسيراً لسبب اختلاف نصفي القمر اختلافاً جذرياً."
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "capability",
+    "en": "Sample return from a relay-only site — combines the architectures of Chang'e 4 (far-side comms) and Chang'e 5 (sample return). The full set of capabilities for Mars Sample Return at any latitude.",
+    "old": "عودة عينات من موقع يعتمد على الاتصالات عبر قمر صناعي وسيط فقط — يجمع بين معمارية Chang'e 4 (الاتصالات مع الجانب البعيد) و Chang'e 5 (عودة العينات). مجموعة القدرات الكاملة لمهمة جلب عينات من المريخ في أي خط عرض.",
+    "new": "إعادة عينات من موقع يعتمد على المرحِّلات فقط في الاتصالات — تجمع بين بنية Chang'e 4 (الاتصالات مع الجانب البعيد) وبنية Chang'e 5 (إعادة العينات). المجموعة الكاملة من القدرات اللازمة لمهمة إعادة عينات المريخ عند أي خط عرض."
+  },
+  {
+    "rel": "mars-sites/viking2-lander.json",
+    "at": "fact",
+    "en": "Operated 1,281 days at 48°N — the highest-latitude Mars surface mission until Phoenix. Detected the first frost on Mars in September 1977 — water ice confirmed — with an iconic high-resolution image captured in May 1979. The lander's biological experiments returned the same ambiguous results as Viking 1's: chemistry that mimicked metabolism, but without unambiguous biology.",
+    "old": "عملت لمدة 1,281 يومًا عند 48°N — أعلى مهمة سطح مريخ بالعرض الجغرافي حتى مهمة Phoenix. اكتشفت الصقيع الأول على المريخ في سبتمبر 1977 — تم تأكيد جليد الماء — مع صورة عالية الدقة أيقونية التقطت في مايو 1979. أعادت تجارب المسبار البيولوجية نفس النتائج الغامضة لمسبار Viking 1: كيمياء حاكت الأيض، لكن بدون بيولوجيا واضحة.",
+    "new": "عملت 1,281 يومًا عند خط العرض 48° شمالًا — أعلى خطوط العرض لمهمة سطحية على المريخ حتى Phoenix. رصدت أول صقيع على المريخ في سبتمبر 1977 — وتأكد أنه جليد ماء — مع صورة أيقونية عالية الدقة التقطت في مايو 1979. وأعادت التجارب البيولوجية للمركبة الهابطة النتائج الغامضة نفسها التي أعادتها تجارب Viking 1: كيمياء تحاكي الأيض، لكن من دون بيولوجيا قاطعة."
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "left",
+    "en": "Chang'e 4 lander · Yutu-2 rover (stationary since March 2024)",
+    "old": "مركبة Chang'e 4 الهابطة · مستكشف Yutu-2 الروفر (ثابت منذ مارس 2024)",
+    "new": "مركبة Chang'e 4 الهابطة · مركبة Yutu-2 الجوّالة (ثابتة منذ مارس 2024)"
+  },
+  {
+    "rel": "moon-sites/lro.json",
+    "at": "fact",
+    "en": "The longest-running active lunar orbital mission. LROC's narrow-angle camera resolves objects ≥50 cm — sharp enough to image every Apollo descent stage, both Lunokhod rover tracks, and every recent landed asset. Built the topographic and imagery base maps used by every recent Moon-landing mission. Currently mapping permanently-shadowed craters for Artemis south-pole site selection.",
+    "old": "أطول بعثة مدارية قمرية نشطة تعمل حالياً. تحسم كاميرا LROC ذات الزاوية الضيقة الأجسام التي يبلغ حجمها ≥50 سم — بوضوح كافٍ لتصوير كل مرحلة هبوط Apollo، وكلا مسارات مركبة Lunokhod، وكل أصل هبطت حديثاً. بنت الخرائط الطوبوغرافية والصورية الأساسية المستخدمة من قبل كل بعثة هبوط قمري حديثة. تقوم حالياً برسم خريطة الحفر الدائمة المظللة لاختيار موقع Artemis بالقطب الجنوبي.",
+    "new": "أطول مهمة مدارية قمرية لا تزال نشطة. تتمكن كاميرا LROC ذات الزاوية الضيقة من تمييز أجسام بحجم 50 سم أو أكثر — وهي دقة كافية لتصوير كل مرحلة هبوط من Apollo، ومساري المركبتين الجوالتين Lunokhod، وكل مركبة هبطت حديثًا. وقد أنتجت الخرائط الطبوغرافية والصورية الأساسية التي اعتمدت عليها كل مهمة هبوط قمرية حديثة. وترسم حاليًا خرائط للفوهات الدائمة الظل لاختيار موقع Artemis قرب القطب الجنوبي."
+  },
+  {
+    "rel": "mars-sites/mars-odyssey.json",
+    "at": "fact",
+    "en": "The longest continuously-active spacecraft in orbit around any planet other than Earth. Detected vast subsurface water-ice deposits in 2002 (a discovery that drove the Phoenix and Curiosity targeting). Still active in 2026 as a relay node for surface assets.",
+    "old": "أطول مركبة فضائية نشطة باستمرار في مدار أي كوكب غير الأرض. كشفت مخازن جليد مائي ضخمة تحت السطح 2002 (اكتشاف وجّه Phoenix و Curiosity). لا يزال نشطًا 2026 كعقدة مرحّل للأصول السطحية.",
+    "new": "أطول مركبة فضائية نشطة باستمرار في مدار أي كوكب غير الأرض. كشفت في عام 2002 عن ترسبات هائلة من جليد الماء تحت السطح (اكتشاف وجّه اختيار مواقع Phoenix وCuriosity). ولا تزال نشطة في عام 2026 كعقدة ترحيل للأصول السطحية."
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "fact",
+    "en": "ESA's first Mars rover. Originally a Russian-led joint mission planned for 2022; cancelled after the 2022 invasion of Ukraine and rescoped as ESA-led with NASA contributions. Re-targeted for 2028 launch, 2029 arrival. Carries a 2-metre subsurface drill — the deepest yet planned for a Mars rover, designed to reach below the radiation-damaged top metre.",
+    "old": "أول مسبار تجوال تابع لـ ESA على المريخ. كانت في الأصل مهمة مشتركة بقيادة روسية مُخطط لها لسنة 2022؛ ألغيت بعد الغزو الروسي لأوكرانيا سنة 2022 وأُعيد تصميمها كمهمة بقيادة ESA مع مساهمات من NASA. أُعيد توجيه المسبار للإطلاق سنة 2028 والوصول سنة 2029. يحمل مثقابًا تحت السطحي بطول مترين — وهو الأعمق المخطط له حتى الآن لمسبار تجوال على المريخ، مصمم للوصول تحت الطبقة العليا التي تضررت من الإشعاع بمتر واحد.",
+    "new": "أول مسبار تجوال تابع لـ ESA على المريخ. كانت في الأصل مهمة مشتركة بقيادة روسية مخطط لها لعام 2022؛ ثم أُلغيت بعد غزو أوكرانيا عام 2022 وأُعيد تحديد نطاقها لتقودها ESA بمساهمات من NASA. أُعيد تحديد موعدها: إطلاق عام 2028 ووصول عام 2029. يحمل المسبار مثقابًا لحفر ما تحت السطح بطول مترين — وهو الأعمق المخطط له حتى الآن لمسبار تجوال على المريخ، صُمم للوصول إلى ما تحت المتر العلوي المتضرر بالإشعاع."
+  },
+  {
+    "rel": "moon-sites/artemis4.json",
+    "at": "capability",
+    "en": "Human polar surface operations and in-situ resource utilisation rehearsal — the direct precursor to crewed Mars missions, which will depend on polar water ice for both consumables and propellant.",
+    "old": "عمليات قطبية بشرية وتمرين استخدام الموارد الموضعية — المقدمة المباشرة لمهام المريخ بأطقم، التي ستعتمد على جليد الماء القطبي للاستهلاك والوقود.",
+    "new": "عمليات بشرية على السطح القطبي وتجربة أولية لاستخدام الموارد في الموقع — الخطوة التمهيدية المباشرة لمهام المريخ المأهولة، التي ستعتمد على جليد الماء القطبي في المستهلكات وفي الوقود الدافع معًا."
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "intro",
+    "en": "Luna 17 landed in Mare Imbrium on November 17, 1970 — and deployed Lunokhod 1, the first wheeled vehicle to operate on another world, beating NASA's LRV by seven months. Lunokhod 1 drove 10.5 km over 11 lunar days, controlled by a five-person team in Crimea. Returned 25,000 photographs and 211 panoramas before going silent in September 1971.",
+    "old": "هبطت Luna 17 في بحر الأمطار في 17 نوفمبر 1970، ونشرت Lunokhod 1، أول مركبة ذات عجلات تعمل على عالم آخر، وسبقت بذلك مركبة LRV التابعة لوكالة NASA بسبعة أشهر. قطعت Lunokhod 1 مسافة 10٫5 كم خلال 11 يومًا قمريًا، بتحكّم فريق من خمسة أشخاص في القرم. وأرسلت 25٬000 صورة فوتوغرافية و211 بانوراما قبل أن تصمت في سبتمبر 1971.",
+    "new": "هبطت Luna 17 في بحر الأمطار في 17 نوفمبر 1970، ونشرت Lunokhod 1، أول مركبة ذات عجلات تعمل على عالم آخر، وسبقت بذلك مركبة LRV التابعة لوكالة NASA بسبعة أشهر. قطعت Lunokhod 1 مسافة 10.5 كم خلال 11 يومًا قمريًا، بتحكّم فريق من خمسة أشخاص في القرم. وأرسلت 25,000 صورة فوتوغرافية و211 بانوراما قبل أن تصمت في سبتمبر 1971."
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "fact",
+    "en": "The first spacecraft to land on the Moon's far side — technically and operationally the hardest lunar landing ever attempted. Required a relay satellite (Queqiao) at L2 since the far side has no direct radio contact with Earth. Yutu-2 rover drove over 1.6 km before becoming stationary in March 2024; telemetry continued through at least September 2024. The far side had never been visited.",
+    "old": "أول مركبة فضائية تهبط على الجانب البعيد للقمر — وهي التقنيّة والتشغيليّة الأصعب عملياً في عمليات الهبوط القمري. تطلبت قمراً صناعياً للتتابع (Queqiao) عند نقطة L2 لأنّ الجانب البعيد لا يتمتع بأيّ اتصال راديوي مباشر مع الأرض. تحرّك مستكشف Yutu-2 الروفر لأكثر من 1.6 كم قبل أن يصبح ثابتاً في مارس 2024؛ استمرّت بيانات المراقبة حتى سبتمبر 2024 على الأقلّ. لم يزُر الجانب البعيد من قبل.",
+    "new": "أول مركبة فضائية تهبط على الجانب البعيد من القمر — وهي تقنيًا وتشغيليًا أصعب عملية هبوط قمري جرت محاولتها على الإطلاق. تطلبت قمرًا صناعيًا مرحِّلًا (Queqiao) عند النقطة L2 لأن الجانب البعيد لا يتصل مباشرة بالأرض راديويًا. قطع المسبار الجوّال Yutu-2 أكثر من 1.6 كم قبل أن يتوقف عن الحركة في مارس 2024؛ واستمر إرسال بيانات القياس عن بعد حتى سبتمبر 2024 على الأقل. ولم يكن الجانب البعيد قد زُير من قبل."
+  },
+  {
+    "rel": "moon-sites/lro.json",
+    "at": "capability",
+    "en": "Definitive modern lunar reconnaissance — the eyes-in-the-sky for every recent Moon mission.",
+    "old": "استكشاف قمري حديث نهائي — العيون في السماء لكل بعثة قمرية حديثة.",
+    "new": "استطلاع قمري حديث مرجعي — العيون في السماء لكل بعثة قمرية حديثة."
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "fact",
+    "en": "First-ever Mars rover (Sojourner, 11 kg, microwave-sized). Demonstrated airbag-cushioned EDL — the same pattern Spirit and Opportunity later used. Sojourner traversed ~100 m and analysed 16 rock and soil targets before the lander relay died. Pathfinder's images popularised Mars on the early web — the first interplanetary mission whose data the public consumed in real time.",
+    "old": "أول جوّال (روفر) على المريخ (Sojourner، 11 كجم، بحجم فرن الموجات الدقيقة). وأثبتت نمط الهبوط المحمي بوسائد النفخ (EDL) — الذي استخدمته لاحقاً مركبتا Spirit و Opportunity. عبرت Sojourner حوالي 100 متر وحللت 16 هدفاً صخرياً وتربياً قبل انقطاع التواصل عبر أجهزة الالتقاط. حولت صور Pathfinder كوكب المريخ إلى موضوع شهير على الويب الأولى — أول بعثة بين الكواكب استهلك الجمهور بياناتها في الوقت الفعلي.",
+    "new": "أول مركبة جوّالة (روفر) على المريخ (Sojourner، 11 كغ، بحجم فرن ميكروويف). أثبتت نمط الدخول والهبوط المحمي بوسائد هوائية (EDL) — النمط نفسه الذي استخدمته لاحقًا Spirit وOpportunity. قطعت Sojourner نحو 100 م وحلّلت 16 هدفًا من الصخور والتربة قبل أن يتوقف مرحِّل المركبة الهابطة عن العمل. وقد جعلت صور Pathfinder المريخ مشهورًا على الويب في بداياته — وهي أول بعثة بين الكواكب يستهلك الجمهور بياناتها في الوقت الفعلي."
+  },
+  {
+    "rel": "moon-sites/change2.json",
+    "at": "capability",
+    "en": "First Chinese deep-space mission; first non-NASA-non-ESA mission to L2; first Chinese asteroid flyby.",
+    "old": "أول مهمة فضاء سحيق صينية؛ أول مهمة غير NASA وغير ESA توصل مسبار إلى L2؛ أول تحليق صيني قرب كويكب.",
+    "new": "أول مهمة صينية في الفضاء السحيق؛ أول مهمة غير تابعة لـ NASA أو ESA تصل إلى L2؛ أول تحليق قريب صيني من كويكب."
+  },
+  {
+    "rel": "mars-sites/mars3-orbiter.json",
+    "at": "fact",
+    "en": "Orbital component of the Mars 3 mission. Returned the first surface temperature and atmospheric measurements of Mars from orbit. Made eight months of observations before contact was lost in August 1972.",
+    "old": "المكون المداري لمهمة Mars 3. أرسل أول قياسات لدرجة حرارة السطح والغلاف الجوي للمريخ من المدار. أجرى ثماني أشهر من الرصد قبل فقدان الاتصال به في أغسطس 1972.",
+    "new": "المكوّن المداري لمهمة Mars 3. أعاد أول قياسات لدرجة حرارة سطح المريخ ولغلافه الجوي من المدار. أجرى رصدًا دام ثمانية أشهر قبل فقدان الاتصال به في أغسطس 1972."
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "fact",
+    "en": "First spacecraft to return atmospheric data during Mars descent. Communications were lost at touchdown, but the descent telemetry — pressure, temperature, and a partial atmospheric composition profile — fed the engineering models that Viking would rely on three years later.",
+    "old": "أول مركبة تعيد بيانات غلاف جوي أثناء النزول إلى المريخ. فُقد الاتصال عند اللمس، لكن قياسات النزول — الضغط والحرارة وجزء من تكوين الغلاف — غذت النماذج الهندسية التي اعتمد عليها Viking بعد ثلاث سنوات.",
+    "new": "أول مركبة تعيد بيانات عن الغلاف الجوي أثناء الهبوط إلى المريخ. فُقد الاتصال عند ملامسة السطح، لكن قياسات الهبوط — الضغط ودرجة الحرارة ومقطع جزئي لتركيب الغلاف الجوي — غذّت النماذج الهندسية التي اعتمد عليها Viking بعد ثلاث سنوات."
+  },
+  {
+    "rel": "mars-sites/mars3-orbiter.json",
+    "at": "capability",
+    "en": "First Soviet Mars orbiter; first to deliver a soft-landing payload to another planet.",
+    "old": "أول مدار مريخ سوفيتي؛ أول من سلّم حمولة هبوط ناعم إلى كوكب آخر.",
+    "new": "أول مركبة مدارية سوفييتية حول المريخ؛ أول من أوصل حمولة هبوط ناعم إلى كوكب آخر."
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.images.0.caption",
+    "en": "Improved Presidential Panorama — 360° colour view of Ares Vallis. Twin Peaks visible on the horizon (named for the TV show).",
+    "old": "Improved Presidential Panorama: منظر بانورامي ملوّن بزاوية 360° لأريس فاليس. ويظهر Twin Peaks عند الأفق (سُمّي تيمّنًا بالمسلسل التلفزيوني).",
+    "new": "بانوراما رئاسية محسّنة (Improved Presidential Panorama): منظر ملوّن بزاوية 360° لأريس فاليس. ويظهر Twin Peaks عند الأفق (سُمّي تيمّنًا بالمسلسل التلفزيوني)."
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "intro",
+    "en": "Luna 21 landed in Le Monnier Crater on January 15, 1973 — and deployed Lunokhod 2, the successor to the world's first lunar rover. Lunokhod 2 drove 42.1 km over 4 months — a record that stood until NASA's Opportunity surpassed it on Mars in July 2014, 41 years later. Returned 80,000 TV images and 86 panoramic sweeps before a regolith pile fell onto the radiator and overheated the rover.",
+    "old": "هبطت المركبة Luna 21 في فوهة لو مونييه في 15 يناير 1973، ونشرت المركبة Lunokhod 2، خليفة أول مركبة جوالة قمرية في العالم. قطعت Lunokhod 2 مسافة 42.1 كم على مدى 4 أشهر، وهو رقم قياسي ظل صامدًا حتى تجاوزته المركبة Opportunity التابعة لوكالة NASA على المريخ في يوليو 2014، بعد 41 عامًا. وأعادت 80,000 صورة تلفزيونية و86 مسحًا بانوراميًا، قبل أن ينهار كومة من الثرى القمري على المبرِّد فيرفع حرارة المركبة الجوالة إلى حدّ الارتفاع المفرط.",
+    "new": "هبطت المركبة Luna 21 في فوهة لو مونييه في 15 يناير 1973، ونشرت المركبة Lunokhod 2، خليفة أول مركبة جوالة قمرية في العالم. قطعت Lunokhod 2 مسافة 42.1 كم على مدى 4 أشهر، وهو رقم قياسي ظل صامدًا حتى تجاوزته المركبة Opportunity التابعة لوكالة NASA على المريخ في يوليو 2014، بعد 41 عامًا. وأعادت 80,000 صورة تلفزيونية و86 مسحًا بانوراميًا، قبل أن تنهار كومة من الثرى القمري على المبرِّد فتسخّن المركبة الجوالة بإفراط."
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.1.caption",
+    "en": "Lunokhod 1 traverse map — 10.5 km zigzag across Mare Imbrium, with science stops at rocks and craters.",
+    "old": "خريطة مسار Lunokhod 1 — تعرّج بطول 10٫5 كم عبر بحر الأمطار، مع محطات علمية عند الصخور والحفر.",
+    "new": "خريطة مسار Lunokhod 1 — تعرّج بطول 10.5 كم عبر بحر الأمطار، مع محطات علمية عند الصخور والحفر."
+  },
+  {
+    "rel": "moon-sites/clementine.json",
+    "at": "fact",
+    "en": "Joint NASA/DoD Strategic Defense Initiative mission. Spent ten weeks mapping the Moon at 11 spectral bands — the first systematic global multispectral map. Bistatic radar measurements at the south pole produced the first hints of polar water ice, later confirmed by Lunar Prospector and Chandrayaan-1.",
+    "old": "مهمة استراتيجية مشتركة بين NASA ووزارة الدفاع الأمريكية من خلال مبادرة الدفاع الاستراتيجي. قضت عشرة أسابيع في رسم خريطة القمر عبر 11 نطاقات طيفية — وهي أول خريطة متعددة الأطياف شاملة منتظمة على المستوى العالمي. أسفرت قياسات الرادار ثنائية المسار عند القطب الجنوبي عن أول مؤشرات على جليد الماء القطبي، والذي تم تأكيده لاحقاً بواسطة Lunar Prospector و Chandrayaan-1.",
+    "new": "مهمة مشتركة بين NASA ووزارة الدفاع الأمريكية ضمن مبادرة الدفاع الاستراتيجي. قضت عشرة أسابيع في رسم خريطة القمر في 11 نطاقًا طيفيًا — وهي أول خريطة شاملة متعددة الأطياف منتظمة للقمر كله. أسفرت قياسات رادار ثنائي الموضع عند القطب الجنوبي عن أولى المؤشرات على جليد الماء القطبي، وأكّدته لاحقًا Lunar Prospector وChandrayaan-1."
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "capability",
+    "en": "Demonstrated relay-satellite communications architecture for operations beyond direct line-of-sight — the exact pattern any Mars far-side or polar mission will need.",
+    "old": "أثبتت معمارية اتصالات القمر الصناعي للتتابع من أجل العمليات خارج نطاق الاتصال المباشر — النمط ذاته الذي ستحتاجه أي مهمة إلى الجانب البعيد من المريخ أو إلى أقطابه.",
+    "new": "أثبتت بنية الاتصالات القائمة على قمر صناعي مرحِّل للعمليات خارج خط الرؤية المباشر — النمط نفسه الذي ستحتاج إليه أي مهمة إلى الجانب البعيد من المريخ أو إلى قطبيه."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "en": "Apollo 14 landed in the Fra Mauro highlands on February 5, 1971 — the original Apollo 13 target, completed after the 13 explosion. Shepard and Mitchell hauled the Modular Equipment Transporter (a rickshaw) up Cone Crater's flanks and brought back 43 kg of breccia — fragments of the giant impact that formed Mare Imbrium 3.9 billion years ago. Shepard famously hit two golf balls before liftoff.",
+    "old": "هبطت Apollo 14 في مرتفعات فرا ماورو في 5 فبراير 1971، وهو الهدف الأصلي لمهمة Apollo 13، وقد أُنجزت بعد الانفجار الذي أصاب مهمة Apollo 13. جرّ شيبارد وميتشيل عربة معدّات الأدوات المعيارية Modular Equipment Transporter (وهي أشبه بعربة «ريكشا») صعودًا على سفوح فوهة كون، وعادا بـ 43 كغ من الحَصى المتلاحم (البريشيا)، وهي شظايا من الاصطدام الهائل الذي كوّن بحر الأمطار قبل 3.9 مليار سنة. ومن المشاهد الشهيرة أن شيبارد ضرب كرتَي غولف قبل الإقلاع.",
+    "new": "هبطت Apollo 14 في مرتفعات فرا ماورو في 5 فبراير 1971، وهو الهدف الأصلي لمهمة Apollo 13، وقد أُنجزت بعد الانفجار الذي أصاب مهمة Apollo 13. جرّ شيبارد وميتشيل ناقل المعدات المعياري (Modular Equipment Transporter)، وهو أشبه بعربة «ريكشا»، صعودًا على سفوح فوهة كون، وعادا بـ 43 كغ من الحَصى المتلاحم (البريشيا)، وهي شظايا من الاصطدام الهائل الذي كوّن بحر الأمطار قبل 3.9 مليار سنة. ومن المشاهد الشهيرة أن شيبارد ضرب كرتَي غولف قبل الإقلاع."
+  },
+  {
+    "rel": "mars-sites/tgo.json",
+    "at": "fact",
+    "en": "ExoMars 2016 mission's surviving half (Schiaparelli was the lander). Characterises atmospheric methane, water vapour, and other trace gases at part-per-trillion sensitivity. Found no methane above 0.05 ppbv — far below all prior claimed detections — deepening rather than settling the methane mystery. Curiosity's surface-level detections remain unexplained.",
+    "old": "النصف الناجي من مهمة ExoMars 2016 (كان Schiaparelli هو الهابط). يميز غاز الميثان في الغلاف الجوي وبخار الماء والغازات النادرة الأخرى بحساسية تبلغ واحد من التريليون. لم يجد أي ميثان أعلى من 0.05 ppbv — أقل بكثير من جميع الكشفات المزعومة السابقة — مما يعمق الغموض حول الميثان بدلاً من حله. الكشفات على مستوى السطح من Curiosity تبقى بلا تفسير.",
+    "new": "النصف الذي نجا من مهمة ExoMars 2016 (وكانت Schiaparelli مركبة الهبوط). يحدّد خصائص غاز الميثان في الغلاف الجوي وبخار الماء وغيرهما من الغازات الأثرية بحساسية تبلغ جزءًا واحدًا من التريليون. لم يجد ميثانًا يتجاوز 0.05 ppbv — أي أقل بكثير من جميع الاكتشافات المزعومة سابقًا — مما يعمّق لغز الميثان بدلًا من أن يحسمه. وتبقى اكتشافات Curiosity على مستوى السطح بلا تفسير."
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "fact",
+    "en": "ExoMars 2016 Entry, Descent, Landing Demonstrator. A control software fault caused the inertial measurement unit to saturate, leading the lander to compute a negative altitude and triggering premature parachute and backshell jettison. The thrusters fired briefly as if already on the ground, then shut off. It free-fell ~3.7 km to the surface. The flight data informed the ExoMars 2028 EDL redesign.",
+    "old": "مُظهِر الدخول والنزول والهبوط في ExoMars 2016. أدّى عطل في برنامج التحكم إلى تشبّع وحدة قياس القصور الذاتي، ممّا أدّى إلى حساب المسبار لارتفاع سالب وتفعيل إلقاء المظلّة والقشرة الخارجية مبكّراً. أطلقت المحركات النفّاثة لفترة وجيزة كما لو أنّها موجودة على الأرض بالفعل، ثم توقّفت. سقط بسقوط حرّ مسافة ~3.7 كم إلى السطح. أطلعت بيانات الرحلة تصميم ExoMars 2028 الجديد للدخول والنزول والهبوط.",
+    "new": "مركبة تجريبية للدخول في الغلاف الجوي والهبوط وملامسة السطح ضمن ExoMars 2016. أدّى عطل في برنامج التحكم إلى تشبّع وحدة القياس القصورية، فحسبت المركبة ارتفاعًا سالبًا وفُعّل إلقاء المظلة والغلاف الخلفي قبل أوانه. أطلقت المحركات النفاثة لوقت وجيز كما لو أنها على الأرض بالفعل، ثم توقفت. وسقطت سقوطًا حرًّا مسافة نحو 3.7 كم إلى السطح. وقد أفادت بيانات الرحلة في إعادة تصميم الدخول في الغلاف الجوي والهبوط وملامسة السطح لمهمة ExoMars 2028."
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "fact",
+    "en": "China's first lunar landing — the first soft landing anywhere on the Moon in 37 years. The Chang'e 3 lander is still alive, making it the longest-surviving lunar lander ever. Yutu drove 114 m before its drive mechanism failed, but its instruments continued returning science data.",
+    "old": "أول هبوط قمري لـ الصين — أول هبوط ناعم على القمر منذ 37 سنة. هابط Chang'e 3 لا يزال نشطًا، مما يجعله أطول هابط قمري بقاءً على الإطلاق. قادت مركبة Yutu الجوّالة 114 م قبل أن يتعطل آلية الدفع لديها، لكن أجهزتها استمرت في إعادة بيانات العلوم.",
+    "new": "أول هبوط قمري للصين — أول هبوط ناعم على القمر منذ 37 عامًا. ولا تزال مركبة الهبوط Chang'e 3 تعمل، مما يجعلها أطول مركبة هبوط قمرية بقاءً على الإطلاق. قطعت المركبة الجوّالة Yutu مسافة 114 م قبل أن تتعطل آلية الحركة فيها، لكن أجهزتها واصلت إرسال البيانات العلمية."
+  },
+  {
+    "rel": "moon-sites/change1.json",
+    "at": "fact",
+    "en": "China's first lunar mission. Built and operated as a deliberate precursor test for the Chang'e 3 lander — the orbital phase served as a flight-qualification rehearsal for the deep-space communications and orbital mechanics that the lander mission would depend on. Crashed into the Moon at end of life as a controlled impact-test.",
+    "old": "أول مهمة قمرية صينية. تم بناؤها وتشغيلها كاختبار مقدمة متعمد لمهمة هابط Chang'e 3 — حيث خدمت المرحلة المدارية كتدريب للتأهيل الفعلي للاتصالات في الفضاء السحيق والميكانيكا المدارية التي ستعتمد عليها مهمة الهابط. ارتطمت بالقمر في نهاية حياتها كاختبار تأثير مُتحكّم به.",
+    "new": "أول مهمة قمرية صينية. بُنيت وشُغّلت عمدًا كاختبار تمهيدي لمركبة الهبوط Chang'e 3 — فقد كانت مرحلتها المدارية بروفة للتأهيل الطيراني للاتصالات في الفضاء السحيق والميكانيكا المدارية اللتين ستعتمد عليهما مهمة مركبة الهبوط. واصطدمت بالقمر في نهاية عمرها اصطدامًا مضبوطًا كاختبار ارتطام."
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "fact",
+    "en": "The first spacecraft to achieve a soft landing on the Moon and transmit photographs from the surface. Nine panoramic images ended the debate about whether landers would sink into deep lunar dust. A defining moment — the Moon could be reached.",
+    "old": "أول مركبة تحقق هبوطًا ناعمًا على القمر وتنقل صورًا من السطح. تسع صور بانورامية أنهت الجدل إن كانت الهابط ستغرق في غبار قمري عميق. لحظة تحديد — يمكن الوصول إلى القمر.",
+    "new": "أول مركبة تحقق هبوطًا ناعمًا على القمر وتنقل صورًا من سطحه. أنهت تسع صور بانورامية الجدل حول ما إذا كانت مركبات الهبوط ستغوص في غبار قمري عميق. لحظة فارقة — صار الوصول إلى القمر ممكنًا."
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.images.0.caption",
+    "en": "Chang'e 6 lander on the far side — the rover-less stationary sample return, captured by a deployed minirover.",
+    "old": "مركبة الهبوط Chang'e 6 على الجانب البعيد — إعادة عينات ثابتة بلا مركبة جوالة، التقطتها صورةً مركبة جوالة صغيرة جرى نشرها.",
+    "new": "مركبة الهبوط Chang'e 6 على الجانب البعيد — إعادة عينات من مركبة ثابتة بلا مركبة جوالة، التقطت لها الصورة مركبة جوالة صغيرة جرى نشرها."
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "capability",
+    "en": "First in-situ atmospheric profile of Mars during EDL — direct input to all subsequent EDL designs.",
+    "old": "أول ملف غلاف جوي موضعي للمريخ أثناء الدخول والهبوط — مدخل مباشر لكل تصاميم الدخول والهبوط اللاحقة.",
+    "new": "أول مقطع موضعي للغلاف الجوي للمريخ أثناء الدخول والهبوط (EDL) — مدخل مباشر لكل تصاميم الدخول والهبوط اللاحقة."
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.3.subtitle",
+    "en": "1,319 marsquakes — the planet's interior, revealed",
+    "old": "1319 هزّة مريخية — باطن الكوكب يتكشّف",
+    "new": "1,319 هزّة مريخية — باطن الكوكب يتكشّف"
+  },
+  {
+    "rel": "mars-sites/tianwen1-orbiter.json",
+    "at": "capability",
+    "en": "China's first Mars orbiter; demonstrated combined orbiter+lander+rover capability on a single mission.",
+    "old": "أول مدار مريخ صيني؛ أثبت قدرة مدار+هابط+عربة في مهمة واحدة.",
+    "new": "أول مركبة مدارية صينية إلى المريخ؛ أثبتت القدرة المشتركة للمركبة المدارية والهابطة والعربة الجوالة في مهمة واحدة."
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "intro",
+    "en": "Chang'e 6 landed in the South Pole-Aitken basin on June 1, 2024 — the first sample-return mission from the far side of the Moon, the deepest, oldest, largest impact structure in the inner Solar System. Returned 1,935 g of far-side material to Earth on June 25, 2024 — samples that may contain mantle fragments from the 4.2-billion-year-old basin-forming impact.",
+    "old": "هبطت المركبة Chang'e 6 في حوض القطب الجنوبي – أيتكن (القطب الجنوبي-أيتكين) في 1 يونيو 2024، في أول مهمة لإعادة عينات من الجانب البعيد للقمر، حيث توجد أعمق بنية اصطدامية في المجموعة الشمسية الداخلية وأقدمها وأكبرها. وأعادت إلى الأرض 1,935 غرامًا من مواد الجانب البعيد في 25 يونيو 2024، وهي عينات قد تحتوي على شظايا من الوشاح تعود إلى الاصطدام الذي شكّل الحوض قبل 4.2 مليار سنة.",
+    "new": "هبطت المركبة Chang'e 6 في حوض القطب الجنوبي – أيتكن في 1 يونيو 2024، في أول مهمة لإعادة عينات من الجانب البعيد للقمر، داخل أعمق بنية اصطدامية في المجموعة الشمسية الداخلية وأقدمها وأكبرها. وأعادت إلى الأرض 1,935 غرامًا من مواد الجانب البعيد في 25 يونيو 2024، وهي عينات قد تحتوي على شظايا من الوشاح تعود إلى الاصطدام الذي شكّل الحوض قبل 4.2 مليار سنة."
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Chang'e 6 stack — added Queqiao-2 relay for far-side comms, otherwise inheriting Chang'e 5 architecture.",
+    "old": "مجموعة Chang'e 6 — أُضيفت إليها مرحّلة الاتصالات Queqiao-2 للتواصل مع الجانب البعيد، فيما ورثت بقية المركبة بنية Chang'e 5.",
+    "new": "مجموعة Chang'e 6 — أُضيف إليها ساتل الترحيل Queqiao-2 للاتصالات مع الجانب البعيد، بينما ورثت في ما عدا ذلك بنية Chang'e 5."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.0.subtitle",
+    "en": "Twin of Spirit, lander on the opposite side of Mars",
+    "old": "توأم Spirit، وهبوطٌ على الجانب المقابل من المريخ",
+    "new": "توأم Spirit، ومركبة هابطة على الجانب المقابل من المريخ"
+  },
+  {
+    "rel": "moon-sites/lunar-prospector.json",
+    "at": "capability",
+    "en": "Confirmed Clementine's polar-ice hypothesis; established neutron-spectroscopy as the primary tool for lunar volatiles.",
+    "old": "أكّد فرضية الجليد القطبي في Clementine؛ وأرسى طيف تحليل النيوترونات كأداة أساسية للكشف عن المتطايرات القمرية.",
+    "new": "أكّد فرضية الجليد القطبي التي طرحتها Clementine؛ وأرسى مطيافية النيوترونات أداةً أساسية لرصد المتطايرات القمرية."
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "fact",
+    "en": "First soft landing on Mars. The lander touched down successfully and began transmitting data — for roughly 14–20 seconds. A planet-wide dust storm at the time of arrival is the leading explanation for the silence that followed. Despite the brevity, Mars 3 proved a Martian soft landing was possible: a foundational engineering result built on by every Mars lander since.",
+    "old": "أول هبوط ناعم على المريخ. هبط المسبار بنجاح وبدأ بنقل البيانات — لمدة تقارب 14 إلى 20 ثانية. وتُعتبر عاصفة غبار عالمية الكوكب وقت الوصول الشرح الأساسي للصمت الذي تلاها. وعلى الرغم من قِصر المدة، أثبت Mars 3 أن هبوطاً ناعماً على المريخ كان ممكناً: نتيجة هندسية أساسية بُنِي عليها كل مسبار للمريخ منذ ذلك الحين.",
+    "new": "أول هبوط ناعم على المريخ. حطّت المركبة الهابطة بنجاح وبدأت إرسال البيانات — لمدة تتراوح بين 14 و20 ثانية تقريبًا. وتُعدّ عاصفة غبارية عمّت الكوكب وقت الوصول التفسير الأرجح للصمت الذي تلا ذلك. وعلى الرغم من قصر المدة، أثبتت Mars 3 أن الهبوط الناعم على المريخ ممكن: نتيجة هندسية أساسية بنت عليها كل مركبة هابطة على المريخ منذ ذلك الحين."
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "capability",
+    "en": "First nuclear-powered Mars rover; first to confirm a past habitable environment on Mars.",
+    "old": "أول عربة مريخ نووية التغذية؛ أول من أكد بيئة صالحة للحياة في الماضي على المريخ.",
+    "new": "أول عربة جوالة على المريخ تعمل بالطاقة النووية؛ وأول من أكد وجود بيئة صالحة للحياة في الماضي على المريخ."
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "capability",
+    "en": "Highland geological sampling — diversified the lunar sample inventory beyond mare basalts and reshaped models of planetary crust formation, methods reused for Mars.",
+    "old": "أخذ عينات جيولوجية مرتفعة — نوّع مخزون عينات القمر خارج بازلت البحار وأعاد تشكيل نماذج تشكل القشرة، أساليب أُعيد استخدامها على المريخ.",
+    "new": "أخذ عينات جيولوجية من المرتفعات القمرية — نوّع مخزون العينات القمرية فوق بازلت البحار وأعاد تشكيل نماذج تكوّن القشرة الكوكبية، وأُعيد استخدام أساليبه على المريخ."
+  },
+  {
+    "rel": "mars-sites/opportunity.json",
+    "at": "fact",
+    "en": "Mars Exploration Rover B — the marathon rover. 5,111 sols of active operation (over 14 years), 45.16 km traversed (the most by any vehicle on another world until Curiosity broke the cumulative record). Confirmed past liquid water at Endurance, Victoria, and Endeavour craters. During the final 2018 dust storm, the rover's last telemetry showed depleted power — a moment poetically paraphrased as \"my battery is low and it's getting dark.\"",
+    "old": "Mars Exploration Rover B — الروفير الماراثوني. 5,111 سول من التشغيل النشط (أكثر من 14 سنة)، و45.16 كم قطعتها (وهي الأكبر لأي مركبة على عالم آخر حتى كسرت Curiosity الرقم القياسي التراكمي). أكّدت وجود ماء سائل في الماضي في فوهات Endurance وVictoria وEndeavour. خلال عاصفة الغبار الأخيرة في 2018، أظهرت آخر بيانات الاتصال من الروفير نضوب الطاقة — لحظة أعيد صياغتها بشاعرية كـ \"بطاريتي منخفضة وبدأ الظلام.\"\"",
+    "new": "Mars Exploration Rover B — العربة الجوالة الماراثونية. 5,111 يومًا مريخيًا من التشغيل النشط (أكثر من 14 سنة)، و45.16 كم قطعتها (وهي الأكبر لأي مركبة على عالم آخر حتى كسرت Curiosity الرقم القياسي التراكمي). أكّدت وجود ماء سائل في الماضي في فوهات Endurance وVictoria وEndeavour. خلال عاصفة الغبار الأخيرة في 2018، أظهرت آخر بيانات الاتصال من العربة نضوب الطاقة — لحظة أُعيدت صياغتها شعريًا بعبارة «بطاريتي منخفضة وبدأ الظلام»."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "intro",
+    "en": "NASA's Curiosity rover launched November 26, 2011 atop an Atlas V from Cape Canaveral. After 254 days of cruise, Mars Science Laboratory delivered the 899-kg nuclear-powered rover to Gale Crater on August 6, 2012 via the now-famous sky-crane landing. More than a decade later Curiosity is still climbing Mount Sharp, drilling rocks that hold a record of Mars's once-habitable past.",
+    "old": "انطلقت مركبة الجوّالة Curiosity التابعة لوكالة NASA في 26 نوفمبر 2011 فوق صاروخ Atlas V من رأس كانافيرال. وبعد 254 يومًا من الرحلة عبر الفضاء، أوصل مختبر علوم المريخ (Mars Science Laboratory) الجوّالة التي تعمل بالطاقة النووية ويبلغ وزنها 899 كغ إلى فوهة غيل في 6 أغسطس 2012 بفضل عملية الهبوط الشهيرة اليوم بالرافعة السماوية. وبعد أكثر من عقد، لا تزال Curiosity تتسلق جبل شارب، وتحفر في صخور تحتفظ بسجلّ لماضي المريخ الذي كان صالحًا للحياة يومًا ما.",
+    "new": "انطلقت الجوّالة Curiosity التابعة لوكالة NASA في 26 نوفمبر 2011 على متن صاروخ Atlas V من رأس كانافيرال. وبعد 254 يومًا من الرحلة عبر الفضاء، أوصل مختبر علوم المريخ (Mars Science Laboratory) الجوّالة التي تعمل بالطاقة النووية ويبلغ وزنها 899 كغ إلى فوهة غيل في 6 أغسطس 2012 عبر عملية الهبوط بالرافعة السماوية التي اشتهرت لاحقًا. وبعد أكثر من عقد، لا تزال Curiosity تتسلق جبل شارب، وتحفر في صخور تحتفظ بسجلّ لماضي المريخ الذي كان صالحًا للحياة يومًا ما."
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "capability",
+    "en": "Proved low-cost, faster-cheaper Mars missions could deliver primary science. Inaugurated mobile robotic exploration of Mars.",
+    "old": "أثبتت أن مهام المريخ منخفضة الكلفة يمكن أن تقدم علمًا أساسيًا. افتتحت استكشافًا آليًا متحركًا للمريخ.",
+    "new": "أثبتت أن مهام المريخ منخفضة الكلفة والأسرع إنجازًا يمكن أن تقدّم علمًا أساسيًا. دشّنت الاستكشاف الآلي المتنقل للمريخ."
+  },
+  {
+    "rel": "moon-sites/smart-1.json",
+    "at": "capability",
+    "en": "First operational use of ion propulsion for a lunar mission — a template for ESA's later BepiColombo and Hera deep-space missions.",
+    "old": "أول استخدام تشغيلي للدفع الأيوني لمهمة قمرية — نموذج لاحق لمهمات وكالة الفضاء الأوروبية ESA العميقة BepiColombo و Hera.",
+    "new": "أول استخدام تشغيلي للدفع الأيوني في مهمة قمرية — نموذج يُحتذى لمهمتَي وكالة الفضاء الأوروبية ESA اللاحقتين في الفضاء السحيق، BepiColombo وHera."
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "mission_type",
+    "en": "Uncrewed Lander + Rover · Mission Complete",
+    "old": "هابط + عربة غير مأهولة · المهمة منتهية",
+    "new": "مركبة هبوط + عربة جوالة غير مأهولتين · المهمة منتهية"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.2.images.0.caption",
+    "en": "Zhurong navigation-camera panorama showing lander deck + Mars surface beyond — first ground-view from a non-NASA non-Soviet Mars mission.",
+    "old": "بانوراما من كاميرا الملاحة في المركبة Zhurong تُظهر سطح المركبة الهابطة وسطح المريخ من ورائها — أول منظر من على الأرض تلتقطه مهمة مريخية لا تعود إلى NASA ولا إلى الاتحاد السوفييتي.",
+    "new": "بانوراما من كاميرا الملاحة في Zhurong تُظهر سطح المركبة الهابطة وسطح المريخ خلفه — أول منظر من سطح المريخ تلتقطه مهمة مريخية لا تعود إلى NASA ولا إلى الاتحاد السوفييتي."
+  },
+  {
+    "rel": "mars-sites/hope.json",
+    "at": "site_name",
+    "en": "~20,000 × 43,000 km highly elliptical, 25° inclination",
+    "old": "~20000 × 43000 كم شديد الإهليلجية، ميل 25°",
+    "new": "~20,000 × 43,000 كم، شديد الإهليلجية، الميل المداري 25°"
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "intro",
+    "en": "InSight landed in Elysium Planitia on November 26, 2018 — the first geophysical observatory on Mars. The mission listened for marsquakes with the SEIS seismometer for four years, recording over 1,300 quakes that revealed the planet's core, mantle, and crust in unprecedented detail. The mole drill (HP³) failed to bury itself, but SEIS more than made up for the disappointment. Mission ended December 2022 when dust accumulation killed the solar panels.",
+    "old": "هبط InSight في سهل إليزيوم في 26 نوفمبر 2018، وكان أول مرصد جيوفيزيائي على المريخ. أصغت المهمة طوال أربع سنوات إلى الهزّات المريخية بمقياس الزلازل SEIS، وسجّلت أكثر من 1300 هزّة كشفت عن نواة الكوكب ووشاحه وقشرته بتفصيل غير مسبوق. أما أداة الحفر «الخلد» (HP³) فقد أخفقت في دفن نفسها في التربة، لكن SEIS عوّض خيبة الأمل وزاد عليها. انتهت المهمة في ديسمبر 2022 حين أدى تراكم الغبار إلى تعطّل الألواح الشمسية.",
+    "new": "هبط InSight في سهل إليزيوم في 26 نوفمبر 2018، وكان أول مرصد جيوفيزيائي على المريخ. أصغت المهمة طوال أربع سنوات إلى الهزّات المريخية بمقياس الزلازل SEIS، وسجّلت أكثر من 1,300 هزّة كشفت عن نواة الكوكب ووشاحه وقشرته بتفصيل غير مسبوق. أما أداة الحفر «الخلد» (HP³) فقد أخفقت في دفن نفسها في التربة، لكن SEIS عوّض خيبة الأمل وزاد عليها. انتهت المهمة في ديسمبر 2022 حين أدى تراكم الغبار إلى تعطّل الألواح الشمسية."
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.0.subtitle",
+    "en": "EDM — Entry, Descent, and Landing Demonstrator Module",
+    "old": "EDM — وحدة تجريب الدخول والهبوط والإنزال",
+    "new": "EDM — وحدة تجريبية للدخول في الغلاف الجوي والهبوط والإنزال"
+  },
+  {
+    "rel": "mars-sites/maven.json",
+    "at": "site_name",
+    "en": "Nominal ~150 × 6,200 km, ~75° inclination",
+    "old": "مدار اسمي ~150 × 6,200 كم، ~75° ميل",
+    "new": "المدار الاسمي ~150 × 6,200 كم، الميل المداري ~75°"
+  },
+  {
+    "rel": "mars-sites/viking1-lander.json",
+    "at": "capability",
+    "en": "First long-duration in-situ Martian science — every modern lander runs on Viking's playbook.",
+    "old": "أول علوم مارسية موضعية طويلة الأمد — كل مركبة هبوط حديثة تعمل وفقاً لكتيب استراتيجية Viking.",
+    "new": "أول علم مريخي ميداني طويل الأمد في الموقع ذاته — كل مركبة هابطة حديثة تتبع خطة عمل Viking."
+  },
+  {
+    "rel": "mars-sites/phoenix.json",
+    "at": "capability",
+    "en": "Validated water-ice-driven Mars exploration strategy; baselined polar-region surface operations.",
+    "old": "صدّق استراتيجية استكشاف المريخ المعتمدة على الجليد؛ أسس عمليات المناطق القطبية السطحية.",
+    "new": "أثبتت جدوى استراتيجية استكشاف المريخ القائمة على جليد الماء؛ وأرست الأساس المرجعي لعمليات السطح في المناطق القطبية."
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.3.images.0.caption",
+    "en": "Sample return capsule on the snow in Inner Mongolia, December 17 2020 — 1,731 g of young basalt back on Earth.",
+    "old": "كبسولة إعادة العينات على الثلج في منغوليا الداخلية، 17 ديسمبر 2020 — 1٬731 غرامًا من البازلت الفتي عادت إلى الأرض.",
+    "new": "كبسولة إعادة العينات على الثلج في منغوليا الداخلية، 17 ديسمبر 2020 — 1,731 غرامًا من البازلت الفتي عادت إلى الأرض."
+  },
+  {
+    "rel": "moon-sites/smart-1.json",
+    "at": "fact",
+    "en": "ESA's first lunar mission. Used solar-electric (ion) propulsion to spiral out from a geostationary transfer orbit to lunar capture — a 14-month, fuel-efficient transit that pioneered low-thrust trajectories for ESA's later interplanetary missions. Deliberately impacted the lunar surface in 2006 for an observed end-of-life experiment.",
+    "old": "أول مهمة قمرية تابعة لوكالة الفضاء الأوروبية ESA. استخدمت الدفع الكهربائي الشمسي (الدفع الأيوني) للخروج في مدار حلزوني من مدار نقل ثابت بالنسبة للأرض إلى الاستيلاء القمري — عبور استغرق 14 شهراً وكان فعالاً من حيث استهلاك الوقود وفتح الطريق أمام مسارات منخفضة الدفع لمهمات وكالة الفضاء الأوروبية ESA اللاحقة بين الكواكب. تأثرت بشكل متعمد بسطح القمر في عام 2006 كتجربة نهاية حياة محلاحظة.",
+    "new": "أول مهمة قمرية لوكالة الفضاء الأوروبية ESA. استخدمت الدفع الكهربائي الشمسي (الأيوني) للارتقاء حلزونيًا من مدار نقل أرضي ثابت إلى الأسر القمري — عبور استغرق 14 شهرًا وكان اقتصاديًا في الوقود، ومهّد لمسارات منخفضة قوة الدفع في مهمات ESA اللاحقة بين الكواكب. وارتطمت عمدًا بسطح القمر في عام 2006 في تجربة رُصدت عن كثب لنهاية عمرها التشغيلي."
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "fact",
+    "en": "First privately-funded lunar landing attempt — Israeli non-profit SpaceIL, 585 kg lander. Reached lunar orbit but a gyroscope failure during descent led to engine shutdown and a crash at ~950 m/s (nearly 1 km/s). Carrying a 'lunar library' of human knowledge etched on nickel discs, plus a sample of tardigrades — extremophiles capable of cryptobiosis — that may or may not have survived the impact. Inspired Beresheet 2 (planned).",
+    "old": "محاولة هبوط على سطح القمر ممولة من القطاع الخاص لأول مرة — مركبة الهبوط الإسرائيلية من منظمة SpaceIL غير الربحية بوزن 585 كغ. وصلت إلى مدار القمر، لكن فشل جيروسكوبي أثناء الهبوط أدى إلى إيقاف المحرك والانهيار بسرعة ~950 م/ث (تقريباً 1 كم/ث). كانت تحمل 'مكتبة قمرية' من معرفة إنسانية محفورة على أقراص نيكل، بالإضافة إلى عينة من حيوانات الدب المائي — كائنات متطرفة قادرة على السبات التشفيري — قد تكون أو لا تكون قد نجت من الارتطام. ألهمت Beresheet 2 (مخطط لها).",
+    "new": "أول محاولة هبوط على القمر بتمويل خاص — مركبة هبوط وزنها 585 كغ من تطوير SpaceIL الإسرائيلية غير الربحية. وصلت إلى مدار القمر، لكن عطلًا في الجيروسكوب أثناء الهبوط أدى إلى إيقاف المحرك وتحطّمها بسرعة نحو 950 م/ث (قرابة 1 كم/ث). كانت تحمل «مكتبة قمرية» من المعرفة الإنسانية محفورة على أقراص من النيكل، إضافةً إلى عينة من الدببة المائية — كائنات متطرفة قادرة على الكمون الأيضي — ربما نجت من الارتطام وربما لم تنجُ. وألهمت Beresheet 2 (المخطط لها)."
+  },
+  {
+    "rel": "mars-sites/viking1-lander.json",
+    "at": "fact",
+    "en": "First fully successful Mars surface mission. Viking 1 operated for over six years on the surface — the longest-duration surface mission until Opportunity (a rover) broke the record in 2010. It returned the first colour images from the Martian surface, conducted the first life-detection experiments (results famously inconclusive), and characterised the regolith and weather.",
+    "old": "أول مهمة سطح المريخ ناجحة بالكامل. عملت مركبة Viking 1 على السطح لأكثر من ستة سنوات — أطول مهمة سطح حتى تجاوزت Opportunity (روفر) الرقم القياسي في عام 2010. أعادت أول صور ملونة من سطح المريخ، وأجرت أول تجارب الكشف عن الحياة (النتائج كانت سيئة السمعة غير حاسمة)، وحددت خصائص التربة والطقس.",
+    "new": "أول مهمة ناجحة بالكامل على سطح المريخ. عملت Viking 1 على السطح أكثر من ست سنوات — وهي أطول مهمة سطحية إلى أن حطّمت Opportunity (عربة جوالة) الرقم القياسي في عام 2010. أعادت أولى الصور الملونة من سطح المريخ، وأجرت أولى تجارب الكشف عن الحياة (التي اشتهرت بنتائجها غير الحاسمة)، ووصفت خصائص الريغوليث والطقس."
+  },
+  {
+    "rel": "moon-sites/change2.json",
+    "at": "fact",
+    "en": "Began as a higher-resolution remap of the Moon following Chang'e 1, then repurposed for an extended deep-space mission. After completing lunar mapping in 2011, Chang'e 2 departed for Sun-Earth L2 — China's first deep-space mission — and then on to a 2012 flyby of asteroid 4179 Toutatis. Still tracked in heliocentric orbit.",
+    "old": "بدأت كإعادة رسم عالية الدقة للقمر تالية لمسبار Chang'e 1، ثم أُعيد توجيهها لمهمة استكشافية في الفضاء السحيق الممتدة. بعد إنجاز رسم الخريطة القمرية في عام 2011، غادرت Chang'e 2 باتجاه نقطة L2 بين الشمس والأرض — وهي أول مهمة فضاء سحيق صينية — ثم تابعت رحلتها إلى تحليق بالقرب من الكويكب 4179 توتاتيس عام 2012. لا تزال تحت المراقبة في مدار حول الشمس.",
+    "new": "بدأت كإعادة رسم خريطة القمر بدقة أعلى بعد Chang'e 1، ثم أُعيد توجيهها إلى مهمة ممتدة في الفضاء السحيق. وبعد إتمام رسم الخرائط القمرية في عام 2011، توجّهت Chang'e 2 إلى نقطة L2 بين الشمس والأرض — وهي أول مهمة صينية في الفضاء السحيق — ثم واصلت إلى تحليق قريب من الكويكب 4179 توتاتيس في عام 2012. ولا تزال تُتتبَّع في مدار حول الشمس."
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "fact",
+    "en": "UK-led astrobiology lander aboard ESA's Mars Express. Touched down on Christmas Day 2003 but never made contact. The lander was located in 2015 by NASA's MRO HiRISE camera — it had reached the surface intact, but at least one of its four solar panels failed to deploy, blocking its radio antenna. A 12-year mystery solved by orbital imagery.",
+    "old": "مركبة هبوط استروبيولوجيا بقيادة المملكة المتحدة على متن مسبار ESA للمريخ Mars Express. هبطت في يوم عيد الميلاد 2003 لكنها لم تتمكن من إجراء أي اتصال. تم تحديد موقع المركبة عام 2015 بواسطة كاميرا NASA HiRISE الموجودة على متن المسبار MRO — وقد وصلت إلى السطح سليمة، لكن واحدة على الأقل من ألواحها الشمسية الأربعة فشلت في الانتشار، مما حجب هوائي الراديو الخاص بها. لغز استمر لمدة 12 عاماً تم حله بفضل الصور المأخوذة من المدار.",
+    "new": "مركبة هبوط للأحياء الفلكية بقيادة المملكة المتحدة على متن Mars Express التابعة لوكالة ESA. حطّت يوم عيد الميلاد 2003 لكنها لم تُجرِ أي اتصال. وحددت كاميرا HiRISE على MRO التابعة لـ NASA موقع المركبة عام 2015 — فقد بلغت السطح سليمة، لكن واحدًا على الأقل من ألواحها الشمسية الأربعة لم ينتشر، فحجب هوائي الراديو الخاص بها. لغز دام 12 عامًا حُلّ بفضل التصوير المداري."
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.0.caption",
+    "en": "Lunokhod 1 driving on Mare Imbrium — controlled by a five-person team in real time despite the 2.5 second light-speed delay each way.",
+    "old": "Lunokhod 1 تسير على بحر الأمطار — يتحكم بها فريق من خمسة أشخاص في الزمن الفعلي، رغم تأخّر سرعة الضوء البالغ 2٫5 ثانية في كل اتجاه.",
+    "new": "Lunokhod 1 تسير على بحر الأمطار — يتحكم بها فريق من خمسة أشخاص في الزمن الفعلي رغم تأخر الإشارة الناتج عن سرعة الضوء، وهو 2.5 ثانية في كل اتجاه."
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "capability",
+    "en": "First crewed surface mobility — extended exploration radius from hundreds of metres to tens of kilometres, the model for crewed Mars surface operations.",
+    "old": "أول حركة سطحية مأهولة بالفضاء — توسعت نطاق الاستكشاف من مئات الأمتار إلى عشرات الكيلومترات، مما أرسى النموذج لعمليات سطح المريخ المأهولة بالفضاء.",
+    "new": "أول تنقّل مأهول على سطح القمر — وسّع نطاق الاستكشاف من مئات الأمتار إلى عشرات الكيلومترات، وأرسى النموذج لعمليات سطح المريخ المأهولة."
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "intro",
+    "en": "Chang'e 5 landed in Mons Rümker on December 1, 2020 — China's first lunar sample-return mission and the first lunar sample return by any nation since Luna 24 (1976), 44 years earlier. Returned 1,731 g of samples from young volcanic terrain (~2 billion years old, compared to ~3.5 Ga Apollo samples), proving that lunar volcanism continued far later than previously known.",
+    "old": "هبطت المركبة Chang'e 5 في جبل رومكر في 1 ديسمبر 2020، في أول مهمة صينية لإعادة عينات من القمر، وأول مهمة تعيد عينات قمرية تنفذها أي دولة منذ Luna 24 (عام 1976)، أي قبل 44 عامًا. وقد أعادت 1٬731 غرامًا من العينات من تضاريس بركانية فتية (عمرها نحو 2 مليار سنة، مقارنةً بنحو 3.5 مليار سنة لعينات Apollo)، مثبتةً أن النشاط البركاني القمري استمر إلى زمن أحدث بكثير مما كان معروفًا من قبل.",
+    "new": "هبطت المركبة Chang'e 5 في جبل رومكر في 1 ديسمبر 2020، في أول مهمة صينية لإعادة عينات من القمر، وأول مهمة تعيد عينات قمرية تنفذها أي دولة منذ Luna 24 (عام 1976)، أي قبل 44 عامًا. وقد أعادت 1,731 غرامًا من العينات من تضاريس بركانية فتية (عمرها نحو 2 مليار سنة، مقارنةً بنحو 3.5 مليار سنة لعينات Apollo)، مثبتةً أن النشاط البركاني القمري استمر إلى زمن أحدث بكثير مما كان معروفًا من قبل."
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "fact",
+    "en": "The last time humans visited the Moon. Gene Cernan was the last person to walk on its surface. Before climbing the ladder, he said: 'We leave as we came, and God willing, we shall return.' Harrison Schmitt, the only trained geologist on the Moon, collected samples that reshaped our understanding of lunar geology.",
+    "old": "آخر مرة زار فيها بشر القمر. يوجين سيرنان كان آخر من مشى على سطحه. قبل صعود السلم قال: «نغادر كما أتينا، وإن شاء الله نعود». هاريسون شميت، جيولوجي مدرب وحيد على القمر، جمع عينات أعادت تشكيل فهمنا لجيولوجيا القمر.",
+    "new": "آخر مرة زار فيها البشر القمر. كان جين سيرنان آخر من مشى على سطحه. وقبل صعود السلم قال: «نغادر كما أتينا، وإن شاء الله نعود». وجمع هاريسون شميت، الجيولوجي المدرَّب الوحيد الذي مشى على القمر، عينات أعادت تشكيل فهمنا لجيولوجيا القمر."
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "capability",
+    "en": "First precision landing at a designated point — the prerequisite for any sample-return rendezvous architecture, including Mars.",
+    "old": "أول هبوط دقيق في نقطة محددة — الشرط الأساسي لأي معمارية التقاط عينات بالالتقاء، بما في ذلك المريخ.",
+    "new": "أول هبوط دقيق عند نقطة محددة — الشرط المسبق لأي بنية لمهمة إعادة عينات تقوم على الالتقاء، بما في ذلك المريخ."
+  },
+  {
+    "rel": "moon-sites/chandrayaan3.json",
+    "at": "fact",
+    "en": "First spacecraft to land near the lunar south pole — the most contested territory in current space exploration, where permanently shadowed craters harbour water ice. Pragyan made the first in-situ detection of sulfur near the lunar south pole using its LIBS instrument. India became the fourth nation to soft-land on the Moon, and the first to reach the poles.",
+    "old": "أول مركبة فضائية تهبط بالقرب من القطب الجنوبي للقمر — الإقليم الأكثر تنازعاً في استكشاف الفضاء الحالي، حيث تحتوي الحفر المظللة بشكل دائم على جليد مائي. قامت Pragyan بأول كشف موضعي للكبريت بالقرب من القطب الجنوبي للقمر باستخدام جهاز LIBS الخاص بها. أصبحت الهند الدولة الرابعة التي تنجح في الهبوط الناعم على القمر، والأولى التي تصل إلى القطبين.",
+    "new": "أول مركبة فضائية تهبط بالقرب من القطب الجنوبي للقمر — أكثر مناطق استكشاف الفضاء الحالي تنازعًا، إذ تحتضن فوهاتها الدائمة الظل جليد الماء. وأجرت Pragyan أول كشف موضعي عن الكبريت قرب القطب الجنوبي للقمر باستخدام جهازها LIBS. وأصبحت الهند الدولة الرابعة التي تهبط هبوطًا ناعمًا على القمر، والأولى التي تبلغ القطبين."
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.1.caption",
+    "en": "Cone Crater rim — the crew climbed to within ~30 m of the rim but were forced back by exhaustion + comms limits.",
+    "old": "حافة فوهة كون — صعد الطاقم إلى مسافة نحو 30 م من الحافة، لكنهما اضطرّا إلى العودة بسبب الإرهاق وقيود الاتصالات.",
+    "new": "حافة فوهة كون — صعد الطاقم إلى مسافة نحو 30 م من الحافة، لكن الإرهاق وقيود الاتصالات أجبراهما على العودة."
+  },
+  {
+    "rel": "mars-sites/tianwen1-orbiter.json",
+    "at": "fact",
+    "en": "Orbital component of China's first Mars mission. Acted as relay for the Zhurong rover; conducts global imaging, subsurface radar, and magnetic-field mapping. Continues to operate after Zhurong's 2022 communications loss.",
+    "old": "الجزء المداري من أول مهمة مريخ صينية. عمل مرحّلًا لعربة Zhurong؛ يجري تصويرًا عالميًا ورادارًا تحت السطح ورسمًا للمجال المغناطيسي. لا يزال يعمل بعد فقدان اتصال Zhurong 2022.",
+    "new": "المكوّن المداري لأول مهمة صينية إلى المريخ. عمل كمحطة ترحيل لعربة Zhurong الجوالة؛ ويجري تصويرًا شاملًا ورصدًا راداريًا تحت السطح ورسمًا لخرائط المجال المغناطيسي. وما زال يعمل بعد فقدان الاتصال بـ Zhurong في عام 2022."
+  },
+  {
+    "rel": "mars-sites/opportunity.json",
+    "at": "capability",
+    "en": "Set the bar for rover endurance; established the field-geology playbook every subsequent rover has followed.",
+    "old": "وضعت المعيار لقدرة تحمّل المركبات الجوّالة؛ أرست سياق العمل الجيولوجي الميداني الذي اتّبعته كل مركبة جوّالة لاحقة.",
+    "new": "وضعت معيارًا لتحمّل المركبات الجوّالة؛ وأرست دليل عمل الجيولوجيا الميدانية الذي اتّبعته كل مركبة جوّالة لاحقة."
+  }
+]

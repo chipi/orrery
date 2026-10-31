@@ -15,20 +15,20 @@
     },
     {
       "met": 7,
-      "label": "TIRATION PÉRIGÉE 1",
-      "note": "Première des six propulsions de rehaussement d'orbite terrestre avant l'injection trans-Mars.",
+      "label": "ALLUMAGE AU PÉRIGÉE 1",
+      "note": "Première des six allumages de rehaussement d'orbite terrestre avant l'injection trans-Mars.",
       "type": "nominal"
     },
     {
       "met": 30,
       "label": "INJECTION TRANS-MARS",
-      "note": "La propulsion périgée finale place le vaisseau sur la trajectoire de Mars.",
+      "note": "L'allumage final au périgée place le vaisseau sur la trajectoire de Mars.",
       "type": "nominal"
     },
     {
       "met": 324,
       "label": "INSERTION EN ORBITE MARTIENNE",
-      "note": "Le moteur d'apogée liquide s'allume après ~10 mois d'inactivité — a tiré pendant 24 minutes pour capturer en orbite.",
+      "note": "Le moteur d'apogée liquide s'allume après ~10 mois d'inactivité — il fonctionne pendant 24 minutes pour réaliser la capture en orbite.",
       "type": "nominal"
     },
     {
@@ -37,5 +37,6 @@
       "note": "Perte de contact en 2022-04 après épuisement du propergol du vaisseau.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "quatrième étage PS4 du PSLV"
 }

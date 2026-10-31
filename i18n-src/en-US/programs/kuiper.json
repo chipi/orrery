@@ -28,5 +28,11 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Kuiper is that proving something is possible invites competition to build it better or cheaper — and that the second mover's problem is entirely different from the first's. Starlink had to prove the megaconstellation could work at all; Kuiper has to prove a latecomer can catch a leader who owns the road to orbit. Money helps; a head start and your own rockets may help more." },
     { "type": "prose", "md": "The deeper lesson is that in a networked capability, control of the supply chain is strategy. Kuiper's launch choices — deliberately routed around its rival — show that when access to orbit is scarce and partly owned by a competitor, who you buy your rides from is not a procurement detail but a decision about independence, and worth paying a premium to get right." }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=kuiper": "Fleet — the Kuiper constellation",
+    "/programs/starlink": "Starlink — the constellation it is chasing",
+    "/earth": "Earth — orbits and the crowding of low orbit",
+    "/earth?site=kuiper": "The Kuiper constellation"
+  }
 }

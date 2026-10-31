@@ -5,13 +5,13 @@
   "delta_v": "~9,4 km/s (LEO)",
   "type": "VUELO TRIPULADO EN ÓRBITA TERRESTRE · REALIZADO",
   "first": "Primer vuelo Mercury de manual — 6 órbitas; el doble de la duración de Glenn / Carpenter",
-  "dispatch": "Después de dos vuelos que terminaron en sustos, Sigma 7 fue el que fue aburrido a propósito — y ese fue el logro. Wally Schirra lo llamó una prueba de ingeniería de manual y lo voló como tal: experimentos mínimos, conservación cuidadosa de cada kilogramo de combustible y cada amperio de energía, seis órbitas dedicadas a demostrar que la nave espacial podía ser operada con disciplina en lugar de ser dominada por la fuerza. Se posó casi justo encima del portaaviones de recuperación. En un programa que había estado improvisando bajo presión, Sigma 7 mostró que los estadounidenses habían aprendido a volar la cosa con calma — el requisito previo para las misiones mucho más largas que vendrían después.",
-  "description": "Vuelo de 6 órbitas de Wally Schirra — duplicó la duración de la misión de Glenn y Carpenter. Schirra llamó a su vuelo una «prueba de ingeniería de manual» — carga experimental mínima, enfoque en conservar consumibles, validar la nave para duraciones más largas. Duración del vuelo 9 h 13 min; parámetros orbitales 161 × 283 km. Se posó en el Océano Pacífico ~445 km NE de Midway — primer vuelo Mercury en posarse en el Pacífico. Aurora 7 había utilizado 38 kg de gas de control de actitud; Schirra utilizó solo 32 kg con el doble del tiempo de vuelo. La cápsula Sigma 7 está en exhibición en el Astronaut Memorial Planetarium and Observatory, Cocoa, FL.",
+  "dispatch": "Tras dos vuelos que terminaron con sustos, Sigma 7 fue el que resultó aburrido a propósito — y ese fue el logro. Wally Schirra lo llamó una prueba de ingeniería de manual y lo voló como tal: experimentos mínimos, un cuidadoso ahorro de cada kilogramo de combustible y de cada amperio de energía, seis órbitas dedicadas a demostrar que la nave podía manejarse con disciplina en lugar de domarse a la fuerza. Amerizó casi encima del portaaviones de recuperación. En un programa que había estado improvisando bajo presión, Sigma 7 demostró que los estadounidenses habían aprendido a pilotar la nave con calma — requisito previo para las misiones mucho más largas que vendrían.",
+  "description": "Vuelo de 6 órbitas de Wally Schirra — duplicó la duración de la misión de Glenn y Carpenter. Schirra llamó a su vuelo una «prueba de ingeniería de manual» — carga experimental mínima, enfoque en conservar consumibles, validar la nave para duraciones más largas. Duración del vuelo 9 h 13 min; parámetros orbitales 161 × 283 km. Amerizó a ~445 km al NE de Midway, en el Pacífico — primer vuelo Mercury en amerizar en el Pacífico. Aurora 7 había utilizado 38 kg de gas de control de actitud; Schirra utilizó solo 32 kg con el doble de tiempo de vuelo. La cápsula Sigma 7 está expuesta en el Astronaut Memorial Planetarium and Observatory, Cocoa, FL.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Atlas LV-3B desde Cabo Cañaveral LC-14 el 3 de octubre de 1962, 12:15 UTC.",
+      "note": "Atlas LV-3B desde Cabo Cañaveral LC-14, 1962-10-03 12:15 UTC.",
       "type": "nominal"
     },
     {

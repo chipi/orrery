@@ -1,6 +1,9 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
+  import PanelLinkTiers from './PanelLinkTiers.svelte';
+  import PanelTabRow from './PanelTabRow.svelte';
+  import PanelHeroImage from './PanelHeroImage.svelte';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import { base } from '$app/paths';
   import { getPlanetGallery, getPlanets } from '$lib/data';
@@ -9,8 +12,6 @@
   import { linkifyMissionEntry, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
-  import ImageCredit from './ImageCredit.svelte';
-  import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import ScienceChip from './ScienceChip.svelte';
   import WhyPopover from './WhyPopover.svelte';
@@ -97,17 +98,6 @@
     }
   });
 
-  // Group LEARN-tab links by tier (intro/core/deep).
-  let linksByTier = $derived.by(() => {
-    if (!planet?.links) return { intro: [], core: [], deep: [] };
-    const out = {
-      intro: [] as NonNullable<typeof planet.links>,
-      core: [] as NonNullable<typeof planet.links>,
-      deep: [] as NonNullable<typeof planet.links>,
-    };
-    for (const link of planet.links) out[link.t].push(link);
-    return out;
-  });
   let hasLinks = $derived((planet?.links?.length ?? 0) > 0);
 
   // ─── Derived technical figures (canonical, IAU-grounded) ─────────
@@ -167,69 +157,30 @@
     </div>
 
     {#if gallery.length > 0}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => {
-            if (Date.now() - panelOpenedAt < 400) return;
-            lightboxSrc = gallery[0]!;
-          }}
-          aria-label={m.panel_hero_aria({ name: planet.name })}
-        >
-          <img
-            {...responsive(gallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage
+        src={gallery[0]}
+        name={planet.name}
+        onOpen={() => {
+          if (Date.now() - panelOpenedAt < 400) return;
+          lightboxSrc = gallery[0]!;
+        }}
+      />
     {/if}
 
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="pp-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="pp-tabpanel">{m.panel_tab_overview()}</button
-      >
-      {#if gallery.length > 0}
-        <button
-          type="button"
-          id="pp-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="pp-tabpanel">{m.panel_tab_gallery()}</button
-        >
-      {/if}
-      <button
-        type="button"
-        id="pp-tab-technical"
-        data-audio-stage="planet-tab-technical"
-        class:active={tab === 'technical'}
-        onclick={() => (tab = 'technical')}
-        role="tab"
-        aria-selected={tab === 'technical'}
-        aria-controls="pp-tabpanel">{m.panel_tab_technical()}</button
-      >
-      {#if (planet.mission_visits ?? []).length > 0}
-        <button
-          type="button"
-          id="pp-tab-missions"
-          class:active={tab === 'missions'}
-          onclick={() => (tab = 'missions')}
-          role="tab"
-          aria-selected={tab === 'missions'}
-          aria-controls="pp-tabpanel">MISSIONS</button
-        >
-      {/if}
-    </div>
+    <PanelTabRow
+      idPrefix="pp"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview() },
+        { id: 'gallery', label: m.panel_tab_gallery(), visible: gallery.length > 0 },
+        { id: 'technical', label: m.panel_tab_technical(), audioStage: 'planet-tab-technical' },
+        {
+          id: 'missions',
+          label: m.panel_tab_missions(),
+          visible: (planet.mission_visits ?? []).length > 0,
+        },
+      ]}
+      bind:active={tab}
+    />
 
     <div class="tab-content" role="tabpanel" id="pp-tabpanel" aria-labelledby="pp-tab-{tab}">
       {#if tab === 'overview'}
@@ -261,7 +212,9 @@
           </div>
           <div class="cell">
             <div class="cell-label">{m.panel_label_orbital_period()}</div>
-            <div class="cell-value">{planet.T.toFixed(1)} days</div>
+            <div class="cell-value">
+              {m.panel_satellite_period_unit_days({ value: planet.T.toFixed(1) })}
+            </div>
           </div>
           <div class="cell">
             <div class="cell-label">
@@ -355,36 +308,7 @@
         {#if hasLinks}
           <div class="science-library">
             <h3 class="library-heading">{m.panel_tab_learn()}</h3>
-            {#if linksByTier.intro.length > 0}
-              <section class="link-tier tier-intro">
-                <h3>{m.panel_links_intro()}</h3>
-                <ul>
-                  {#each linksByTier.intro as link (link.u)}
-                    <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
-            {#if linksByTier.core.length > 0}
-              <section class="link-tier tier-core">
-                <h3>{m.panel_links_core()}</h3>
-                <ul>
-                  {#each linksByTier.core as link (link.u)}
-                    <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
-            {#if linksByTier.deep.length > 0}
-              <section class="link-tier tier-deep">
-                <h3>{m.panel_links_deep()}</h3>
-                <ul>
-                  {#each linksByTier.deep as link (link.u)}
-                    <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
+            <PanelLinkTiers links={planet.links} entityId={planet.id} />
           </div>
         {/if}
       {:else if tab === 'missions'}
@@ -406,47 +330,18 @@
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: planet.name })}>
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
-                aria-label={planet.name}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: planet.name })}
+            thumbLabel={planet.name}
+            onOpen={(src) => (lightboxSrc = src)}
+          />
           <p class="gallery-credit">{m.panel_gallery_credit()}</p>
         {/if}
       {/if}
     </div>
 
-    {#if lightboxSrc}
-      <button
-        type="button"
-        class="lightbox"
-        aria-label={m.panel_lightbox_close()}
-        onclick={() => (lightboxSrc = null)}
-      >
-        <img
-          {...responsive(lightboxSrc, IMAGE_SIZES.full)}
-          alt=""
-          loading="lazy"
-          decoding="async"
-        />
-        <span class="lightbox-close" aria-hidden="true">×</span>
-      </button>
-      <div class="lightbox-meta">
-        <ImageCredit src={lightboxSrc} />
-      </div>
-    {/if}
+    <PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
 
     {#if planet.missionable && onPlanMission}
       <div class="cta-bar">

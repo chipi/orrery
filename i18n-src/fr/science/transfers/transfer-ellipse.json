@@ -1,15 +1,15 @@
 {
   "title": "Ellipse de transfert",
-  "intro_sentence": "L'arc Keplerian qui porte une sonde d'une orbite à une autre — Soleil au foyer.",
+  "intro_sentence": "L'arc képlérien qui conduit un engin spatial d'une orbite à une autre — avec le Soleil à un foyer, comme pour toute autre orbite.",
   "narrative_101": [
     "La planification de mission a l'air d'une affaire de moteurs et de fusées. C'est surtout une affaire de choix d'ellipse. Chaque croisière interplanétaire — Apollo vers la Lune, Voyager vers Neptune, Perseverance vers Mars — n'est qu'un vaisseau qui suit une orbite elliptique entre son point de départ et sa destination. Le terme savant pour cette ellipse est l'orbite de transfert.",
     "Elle obéit aux mêmes règles que toute autre orbite de Kepler. Le Soleil occupe l'un des foyers. Le vaisseau est lent à l'extrémité lointaine et rapide à l'extrémité proche. L'équation vis-viva donne toujours sa vitesse. La troisième loi de Kepler donne toujours la durée du vol à partir de la taille. Rien d'exotique.",
-    "La seule chose qui distingue une ellipse de transfert de l'orbite d'une planète, c'est que le vaisseau n'en parcourt que la MOITIÉ. Il monte à une extrémité, se laisse porter jusqu'à l'autre et descend. C'est pourquoi le budget ∆v comporte toujours deux grandes manœuvres — une pour entrer sur l'ellipse, une pour la quitter. La partie du milieu, les huit mois de croisière, ne coûte absolument rien."
+    "La seule chose qui distingue une ellipse de transfert de l'orbite d'une planète, c'est que le vaisseau n'en parcourt que la MOITIÉ. Il monte à une extrémité, se laisse porter jusqu'à l'autre et descend. C'est pourquoi le budget de delta-v comporte toujours deux gros allumages — un pour entrer sur l'ellipse, un pour la quitter. La partie du milieu, les huit mois de croisière, ne coûte absolument rien."
   ],
   "body_paragraphs": [
-    "Une fois que vous avez brûlé votre carburant pour sortir de l'orbite terrestre, vous êtes sur une ellipse autour du Soleil. Cette ellipse est l'orbite de transfert, et elle possède toutes les mêmes propriétés que toute autre : demi-grand axe, excentricité, périhélie, aphélie. Le fait que vous alliez quelque part ne change pas la géométrie — la gravité se fiche de votre destination.",
+    "Une fois que vous avez effectué un allumage pour sortir de l'orbite terrestre, vous êtes sur une ellipse autour du Soleil. Cette ellipse est l'orbite de transfert, et elle possède toutes les mêmes propriétés que toute autre : demi-grand axe, excentricité, périhélie, aphélie. Le fait que vous alliez quelque part ne change pas la géométrie — la gravité se fiche de votre destination.",
     "Deux ancres définissent une ellipse de transfert : le point d'où vous partez (périhélie si vous allez vers l'extérieur) et le point où vous aboutirez (aphélie). Le demi-grand axe est la moyenne de ces deux rayons. Modifiez l'une ou l'autre ancre et toute l'ellipse se remodèle — allez plus loin, l'ellipse s'étire, le voyage dure plus longtemps.",
     "Sur le HUD `/fly` d'Orrery, vous verrez le vaisseau spatial tracer cette ellipse en temps réel. L'arc de transfert à l'écran est un rendu visuel de la même conique que les mathématiques le décrivent — le Soleil à l'un des foyers, le périhélie derrière vous, l'aphélie devant vous."
   ],
-  "diagram_caption": "Deux orbites coplanaires connectées par ellipse de transfert avec Soleil au foyer."
+  "diagram_caption": "Deux orbites coplanaires (départ sur l'orbite intérieure, destination sur l'orbite extérieure) reliées par une ellipse de transfert dont le Soleil occupe un foyer."
 }

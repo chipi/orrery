@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "La leçon plus profonde concerne ce que vaut l'indépendance. Un siège emprunté peut être retiré ; une capacité que vous avez construite vous-même ne le peut pas. Shenzhou est le véhicule qui garantit que la Chine n'aura jamais à demander — et cette garantie, plus que n'importe quel vol unique, est la chose que le programme fut réellement construit pour livrer."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=shenzhou": "Flotte — le vaisseau Shenzhou",
+    "/programs/tiangong": "Tiangong — la station que les équipages Shenzhou ont construite et rejoignent",
+    "/programs/soyuz": "Soyuz — le vaisseau dont descend l'architecture de Shenzhou"
+  }
 }

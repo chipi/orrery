@@ -5,18 +5,18 @@
   "delta_v": "~6 km/s",
   "type": "LANDER CARGO · PIANIFICATO",
   "first": "Primo volo dell'architettura del lander lunare Blue Moon di Blue Origin",
-  "description": "Il primo lander cargo Blue Moon di Blue Origin, contratto nell'ambito del programma CLPS (Commercial Lunar Payload Services) di NASA. Un veicolo di discesa a stadio singolo alimentato dal motore criogenico BE-7, progettato per trasportare fino a circa 3 tonnellate di carico utile sulla superficie lunare. Si lancia sul New Glenn di Blue Origin da Cape Canaveral, esegue l'iniezione translunare sul secondo stadio del New Glenn, quindi esegue l'inserimento nell'orbita lunare e la discesa motorizzata. Il volo cargo Mark 1 precede il Mark 2, classificato per voli umani, che la NASA ha ingaggiato per gli allunaggi con equipaggio di Artemis — ora uno dei due lander candidati per Artemis IV e le missioni successive.",
+  "description": "Il primo lander cargo Blue Moon di Blue Origin, commissionato nell'ambito del programma CLPS (Commercial Lunar Payload Services) della NASA. Un veicolo di discesa a stadio singolo alimentato dal motore criogenico BE-7, progettato per portare fino a circa 3 tonnellate di carico utile sulla superficie lunare. Viene lanciato dal New Glenn di Blue Origin da Cape Canaveral, esegue l'iniezione translunare con il secondo stadio del New Glenn, poi l'inserimento in orbita lunare e la discesa propulsa. Il volo cargo Mark 1 precede il Mark 2, certificato per il trasporto di esseri umani, che la NASA ha commissionato per gli allunaggi con equipaggio di Artemis — ora uno dei due lander candidati per Artemis IV e le missioni successive.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO DEL NUOVO GLENN",
-      "note": "Decolla da Cape Canaveral LC-36; ritorni della prima fase per il recupero del downrange.",
+      "note": "Decolla da Cape Canaveral LC-36; il primo stadio rientra per il recupero lungo la rotta di volo.",
       "type": "nominal"
     },
     {
       "met": 0.2,
       "label": "TLI",
-      "note": "Il secondo stadio del New Glenn esegue l'iniezione translunare.",
+      "note": "Il secondo stadio del New Glenn esegue l'accensione di iniezione translunare.",
       "type": "nominal"
     },
     {
@@ -34,8 +34,9 @@
     {
       "met": 4.1,
       "label": "DISCESA MOTORIZZATA",
-      "note": "BE-7 ha rallentato la discesa sulla superficie lunare: il primo touchdown lunare di Blue Origin.",
+      "note": "Discesa a spinta regolata del BE-7 verso la superficie lunare — primo allunaggio di Blue Origin.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "secondo stadio del New Glenn (accensione TLI)"
 }

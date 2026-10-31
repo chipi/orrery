@@ -1,0 +1,145 @@
+[
+  {
+    "rel": "programs/cassini.json",
+    "at": "narrative.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (orbit as revolution)"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "legacy.0.caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: витка (orbit as revolution)"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "narrative.2.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "маневрировать и стыковаться",
+    "replace": "маневрировать и сближаться",
+    "why": "rendezvous was rendered as docking"
+  },
+  {
+    "rel": "programs/shenzhou.json",
+    "at": "goals.2.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "стыковка, длительное",
+    "replace": "сближение, длительное",
+    "why": "rendezvous rendered as docking"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "the_land.0.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "stem gap: сближаться"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "goals.3.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "variant: встречающихся ... на орбите (accepted встреча на орбите)"
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "the_land.0.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "stem gap: сближаться"
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "outcome.2.md",
+    "term": "docking",
+    "decision": "keep",
+    "why": "stem gap: стыкующегося"
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "outcome.0.caption",
+    "term": "docking",
+    "decision": "change",
+    "find": "причаливающие",
+    "replace": "стыкующиеся",
+    "why": "docking rendered as berthing"
+  },
+  {
+    "rel": "programs/mars-rovers.json",
+    "at": "outcome.1.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "other sense: first phase of a campaign"
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "goals.1.caption",
+    "term": "payload",
+    "decision": "change",
+    "find": "настоящей нагрузкой",
+    "replace": "настоящей полезной нагрузкой",
+    "why": "payload lacked полезная"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "narrative.1.md",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: грузом (cargo, figurative; contrast with passenger)"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "the_land.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "тяжёлые грузы",
+    "replace": "тяжёлую полезную нагрузку",
+    "why": "payload rendered as plain cargo"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.1.md",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: грузовой отсек (standard Shuttle term for payload bay); груз = cargo"
+  },
+  {
+    "rel": "programs/sputnik.json",
+    "at": "goals.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета-носитель (launch vehicle)"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "narrative.0.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: спуск (reentry of a crewed capsule)"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "goals.0.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: возвращение в атмосферу"
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "outcome.1.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: система возвращения"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "other sense: lineage"
+  }
+]

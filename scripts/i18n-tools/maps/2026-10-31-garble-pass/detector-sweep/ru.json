@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.1.l",
+    "old": "Arrokoth flyby (NASA New Horizons)",
+    "new": "Пролёт мимо Аррокота (NASA New Horizons)"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.1.l",
+    "old": "DART final results (NASA)",
+    "new": "Окончательные результаты миссии DART (NASA)"
+  }
+]

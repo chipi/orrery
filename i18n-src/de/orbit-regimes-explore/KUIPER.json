@@ -1,8 +1,8 @@
 {
-  "name": "Kuiper Belt",
+  "name": "Kuipergürtel",
   "short": "KUIPER",
-  "story": "Ein Ring aus Eiskörpern jenseits des Neptun — 30 bis 50 AE. Das gefrorene Analogon des Asteroidengürtels: Hundertausende Körper, von denen nur die größten wenigen aufgelöst wurden. Zusammengesetzt aus Methan, Ammoniak, Wassereis und Gestein. Pluto war das erste identifizierte Mitglied 1930, aber der Gürtel wurde erst als Population anerkannt, als Jewitt und Luu in den 1990er Jahren das zweite Mitglied fanden (1992 QB1). New Horizons gab der Menschheit ihre ersten nahsichtigen Blicke auf ZWEI Kuiper-Objekte — Pluto 2015 und Arrokoth 2019.",
-  "comparison": "Wenn der Asteroidengürtel ein dünner Ring um das innere Sonnensystem ist, ist der Kuiper-Gürtel 1.000× breiter und enthält viele Male mehr Masse (~50×+). Sonnenlicht bei Pluto hat bei der Erde nur 1/1.600tel seiner Stärke.",
+  "story": "Ein Ring aus Eiskörpern jenseits des Neptun — 30 bis 50 AE. Das gefrorene Analogon des Asteroidengürtels: Hunderttausende Körper, von denen nur die größten wenigen aufgelöst wurden. Zusammengesetzt aus Methan, Ammoniak, Wassereis und Gestein. Pluto war 1930 das erste identifizierte Mitglied, doch der Gürtel wurde erst in den 1990er Jahren als Population erkannt, als Jewitt und Luu das zweite Mitglied fanden (1992 QB1). New Horizons verschaffte der Menschheit die ersten Nahaufnahmen von ZWEI Kuiper-Objekten — Pluto 2015 und Arrokoth 2019.",
+  "comparison": "Wenn der Asteroidengürtel ein dünner Ring um das innere Sonnensystem ist, ist der Kuiper-Gürtel 1.000× breiter und enthält Dutzende Male mehr Masse (~50×+). Das Sonnenlicht ist bei Pluto nur 1/1.600 so stark wie bei der Erde.",
   "residents": [
     {
       "id": "pluto",

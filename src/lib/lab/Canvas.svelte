@@ -685,7 +685,7 @@
     top: 0;
     left: 0;
     /* Pin to the layout constant (CARD_W). Unconstrained, the inner Card grows to
-       its 600px max — the FB2 glossary prose did exactly that, overlapping the
+       its 600px max — the FB2 plain-words line did exactly that, overlapping the
        cascade (spaced for 320) and pushing spawn-column out-sockets past the
        surface's clipped right edge (the wire-drag e2e caught it at 971 > 954). */
     width: 320px;

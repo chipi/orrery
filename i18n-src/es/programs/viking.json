@@ -80,5 +80,12 @@
       "type": "prose",
       "md": "La lección más profunda es el valor de demostrar toda la cadena. El regalo duradero de Viking no fue ninguna medición particular sino la demostración de que alcanzar Marte y aterrizar intacto era posible y repetible. Una vez que algo difícil se ha hecho —y se ha hecho dos veces— deja de ser una apuesta y se convierte en una base sobre la que otros pueden construir. A veces el mayor resultado que devuelve una misión es simplemente que se puede hacer."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Marte: donde aterrizó Viking",
+    "/programs/mariner": "Mariner: los sobrevuelos y orbitadores que exploraron Marte primero",
+    "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
+    "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
+    "/mars?site=viking1-orbiter": "orbitador Viking 1"
+  }
 }

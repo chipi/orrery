@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "A lição mais profunda é que um sucesso na primeira tentativa em Marte tem tanto a ver com humildade quanto com ambição. O cemitério de missões fracassadas a Marte está cheio de programas bem financiados que foram longe demais; a ISRO alcançou exatamente até onde poderia gerenciar de forma confiável, provou isso e deixou a missão superar seus próprios objetivos modestos. Mirar com precisão, em vez de mirar alto, é às vezes como os feitos inéditos mais difíceis são conquistados."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Marte — o destino",
+    "/fleet?focus=mangalyaan": "Frota — a Mars Orbiter Mission",
+    "/programs/chandrayaan": "Chandrayaan — o programa lunar da Índia",
+    "/mars?site=mangalyaan": "Mangalyaan em órbita de Marte"
+  }
 }

@@ -10,12 +10,12 @@
       "t": "intro"
     },
     {
-      "l": "Earth (NASA Solar System Exploration)",
+      "l": "Aarde (NASA Solar System Exploration)",
       "u": "https://science.nasa.gov/earth/",
       "t": "intro"
     },
     {
-      "l": "Earth Observing System (NASA)",
+      "l": "Aardobservatiesysteem (NASA)",
       "u": "https://eospso.nasa.gov/",
       "t": "core"
     },
@@ -34,27 +34,27 @@
     {
       "tab": "scales-time",
       "section": "au",
-      "why": "De astronomische eenheid IS de gemiddelde afstand Aarde-Zon — Aarde is de letterlijke maatstaf voor elke meting in het zonnestelsel."
+      "why": "De astronomische eenheid IS de gemiddelde afstand tussen Aarde en Zon — de Aarde is de letterlijke maatstaf voor elke meting in het zonnestelsel."
     },
     {
       "tab": "scales-time",
       "section": "ecliptic-plane",
-      "why": "De baan van Aarde bepaalt het eclipticavlak. De inclinatie van elke andere planeet wordt ten opzichte van deze referentie gemeten."
+      "why": "De baan van de Aarde bepaalt het eclipticavlak. De inclinatie van elke andere planeet wordt ten opzichte van die referentie gemeten."
     },
     {
       "tab": "planets",
       "section": "axial-tilt-and-seasons",
-      "why": "De tilt van Aarde van 23.4° is de handboek-seizoenen-machine — equinoxen en solstitia ontstaan rechtstreeks uit de hoek tussen rotatieas en baanvlak."
+      "why": "De ashelling van 23,4° van de Aarde is dé seizoensmachine uit het leerboek — dag-en-nachtevening en zonnewende ontstaan rechtstreeks uit de hoek tussen rotatieas en baanvlak."
     },
     {
       "tab": "transfers",
       "section": "hohmann-transfer",
-      "why": "Elk Marsvertrekvenster — elke 26 maanden — is een Hohmann-transferbaan vanuit Aarde. De ladder vertrekt vanaf hier."
+      "why": "Elk vertrekvenster naar Mars — elke 26 maanden — is een Hohmann-transferbaan vanaf de Aarde. De ladder vertrekt vanaf hier."
     },
     {
       "tab": "planets",
       "section": "moons-of-the-system",
-      "why": "De Maan is ongewoon groot voor zijn moederplaneet — de verhouding (diameter ≈ 0,27 van Aarde) is de hoogste van elk planeet–satellietpaar."
+      "why": "De Maan is ongewoon groot voor zijn moederplaneet — de verhouding (diameter ≈ 0,27 van die van de Aarde) is de hoogste van alle planeet–satellietparen."
     }
   ]
 }

@@ -34,9 +34,9 @@ const EXPECTED_MAGNETIC_TILT_DEG: Record<string, number | undefined> = {
   pluto: undefined,
 };
 
-// Mirror of the inline /explore PLANETS array's magneticTiltDeg
-// values. If this file is updated, /explore's PLANETS array
-// (src/routes/explore/+page.svelte) must be updated to match.
+// Mirror of the PLANETS array's magneticTiltDeg
+// values (src/lib/explore-scene.ts). If this file is updated, that PLANETS array
+// must be updated to match.
 // The values here are the contract.
 const EXPLORE_MAGNETIC_TILT_DEG: Record<string, number | undefined> = {
   mercury: 0.7,

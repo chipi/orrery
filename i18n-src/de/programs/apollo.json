@@ -96,5 +96,14 @@
       "type": "prose",
       "md": "Und die menschliche Note, die es zu bewahren gilt: Sie schafften es in acht Jahren, ohne es je zuvor getan zu haben, mit Bordcomputern, die schwächer waren als eine heutige Türklingel. Apollo ist ein bleibendes Argument dafür, dass eine klare Mission, die richtigen Leute und eine ehrliche Frist noch immer gegen alle Wahrscheinlichkeit bestehen können – eine nützliche Erinnerung für den Moment, in dem ein Ziel das nächste Mal unmöglich erscheint."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Der Mond — Oberflächenkarte & Apollo-Landeplätze",
+    "/science/transfers/free-return": "Free-Return-Bahn",
+    "/science/mission-phases/trans-x-injection": "Translunare Injektion",
+    "/science/mission-phases/edl": "Eintritt, Abstieg & Landung",
+    "/science/propulsion/tsiolkovsky": "Die Raketengleichung",
+    "/moon?site=apollo15": "Apollo 15 — Hadley–Apennin",
+    "/moon?site=apollo16": "Apollo 16 — Descartes-Hochland"
+  }
 }

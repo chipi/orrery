@@ -1,0 +1,1004 @@
+[
+  {
+    "rel": "science/orbits/sun-synchronous.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "几乎每颗今天在役的地球观测卫星都在SSO上运行。ESA的Copernicus计划（Sentinel-1A/B/C/D雷达成像、Sentinel-2A/B/C/D光学成像、Sentinel-3A/B海洋监测、Sentinel-5P大气监测）——全部为SSO。NASA/USGS Landsat 8与Landsat 9——SSO，705 km，98.2°，下降节点当地时间10:00。NOAA极地气象卫星（NOAA-20、NOAA-21、Suomi NPP）——SSO。Planet Labs的PlanetScope卫星群（约150颗活跃CubeSats）——475 km SSO。日本的GCOM-W1、中国的高分系列、印度的Resourcesat。每个运营商选择SSO的原因相同：一致的照明几何使你能够构建跨越多年具有物理意义的时间序列数据产品（植被指数、积雪范围、海洋颜色）。",
+    "note": "Gaofen is Chinese, should be 高分"
+  },
+  {
+    "rel": "science/mission-phases/met.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "打开 /fly 界面，观察 MET 在模拟行程推进过程中以天为单位递增。当航天器飞掠火星时，HUD 显示 MET 173d。含义：从航天器的视角来看，距离发射已经过去了173天。地球上是什么日期？不重要。任务控制中心只认 MET。",
+    "note": "half-width question mark"
+  },
+  {
+    "rel": "science/observation/local-group.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "本星系群：约80个星系，直径约3 Mpc，受引力束缚。以银河系和仙女星系两个旋涡星系为主导，三角座星系M33为第三大成员。大多数成员是这两个大旋涡星系之一的矮卫星星系。边界位于零速度面（约1.5 Mpc）。未来：银河系与仙女星系有可能合并为“银河仙女星系”（Milkomeda），据Sawala等人2025年的研究，概率约为50%；若发生，约在45亿年后。",
+    "note": "garbled Milky Way + Andromeda clause"
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "范围很大。固体火箭（Space Shuttle 上的助推器）：约 250 秒。液态氢-液态氧（化学推进的最优选择）：约 450 秒。可贮存自燃推进剂（便宜可靠，大多数航天器用来进行轨道修正）：约 310 秒。离子发动机（超高效但推力很小）：3000-9000 秒。实际规则：要离开行星需要高推力；在深空巡航要高比冲。真实的任务会分级选择——化学推进用来逃离地球，离子推进用来巡航。",
+    "note": "hypergolic storables mistranslated as explosive"
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.3",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/exoplanets/direct-imaging.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "body_paragraphs.4",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "水是热平衡的另一个变量。国际空间站乘组每天饮水 2.0-2.5 升，全部来自 水回收系统（见环控生保系统（ECLSS）一文——大部分是回收的尿液、冷凝水和出舱航天服中的水）。饮水量与骨密度和肾结石风险密切相关，因此数据每天都要监测。俄罗斯舱段的水来自 俄罗斯航天局（Roscosmos）的一套并行系统，它不处理尿液（水源是湿气冷凝水和补给）；两半可以共享用水，但通常并不这样做。天宫在天和上运行自己的闭环系统。JSC、EAC 和 IKI 正在研究的火星级架构明确假设 98% 以上的水实现闭环——低于这个比例，所需的发射质量就会超出化学火箭火星架构所能现实提供的范围。",
+    "note": "English terms left in"
+  },
+  {
+    "rel": "science/orbits/hill-sphere.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "行星引力超过太阳引力的空间区域。",
+    "note": "重力 used for gravity"
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "由于飞行器不携带推进剂，比冲的概念在数学上趋于无穷大：没有推进剂质量流量可以用来除推力。更有用的指标是帆的特征加速度——推力除以航天器总质量。目前的演示任务只达到每二次方秒零点几毫米的量级；若扩展为大型轻质帆，在某些轨道类型上可达到与离子发动机相当的数值。太阳帆还可以换舷机动：将帆倾斜一定角度，垂直于太阳—航天器连线的推力分量就能抬高或降低轨道，或使航天器向内螺旋靠近太阳，实现近距离飞掠太阳，然后沿双曲线轨道向外飞去。",
+    "note": "mm/s2 scale wrong, trajectory term"
+  },
+  {
+    "rel": "science/mission-phases/max-q.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "气动阻力——上升过程三大速度增量损耗之一——与动压q曲线同步变化，因此阻力损耗恰好在Max-Q附近累积得最快。这正是重力转弯如此重要的原因：如果过早、过于激进地俯仰转弯，飞行器会在q上升的当口横着穿过最稠密的大气，使结构载荷和阻力损耗成倍增加。",
+    "note": "delta-v binding, clumsy clause"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "diagram_caption",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "坦率地说，目前的现状是：尚未在地球之外探测到生命，也没有确认任何生物标志。但探测的工具第一次成为现实——这正是系外行星时代带来的静默革命。",
+    "note": "生物特征 means biometrics"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "他们作弊。他们假设在任何时刻，只有一个天体的引力起作用。在地球附近，只有地球产生引力。在巡航阶段，只有太阳。在火星附近，只有火星。每个这样的区域称为影响球，在每个影响球内，航天器沿着一条干净的开普勒圆锥曲线飞行。当航天器越过边界时，你切换坐标系并开始一条新的圆锥曲线。拼接在一起，它们形成轨道。这就是拼接圆锥曲线。",
+    "note": "trajectory binding is 轨道"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "朗伯问题问的是：我在这里，我想到那里，而且我有这么多时间。我应该飞什么椭圆？两个位置矢量和一个飞行时间，方程就能产生唯一的转移轨道（或者两条——绕中心天体有长路和短路两种方式）。",
+    "note": "half-width punctuation"
+  },
+  {
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/space-stations/node-module.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "节点是连接舱——具有多个通用停泊机构（CBM）或对接口的加压枢纽——允许空间站采用树形拓扑而不是线性链式构成。",
+    "note": "CBM left in English"
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "现在你知道了坐标轴和色阶。下一个技能是读出廉价区的形状。青色的瓣状区域不仅仅是一个泛泛的斑点——它是一张字面意义上的地图，显示哪些轨迹可行，哪些不可行。",
+    "note": "lobe as leaf blade"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "tools.3.text",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "36 个真实航天器，从 Luna 9 到 Artemis II。每一个的 FLIGHT 选项卡都按上述各个阶段分解了其实际速度增量预算。",
+    "note": "delta-v binding"
+  },
+  {
+    "rel": "science/life-in-space/_intro.json",
+    "at": "headline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "太空中的生命——引力消失时，人体会怎样。",
+    "note": "half-width period, literal"
+  },
+  {
+    "rel": "science/mission-phases/launch.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/exoplanets/_intro.json",
+    "at": "paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "本页介绍我们如何找到它们——你无法拍摄大多数系外行星，所以我们通过它们的指纹来探测：恒星的摆动、周期性的变暗、引力闪光。然后转向我们所了解的内容：宜居带、热木星、TRAPPIST-1的七个共振世界，以及每个人都会问的那个问题的真实状况——我们是孤独的吗？",
+    "note": "half-width question mark"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "tools.2.text",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "飞一段真实的任务弧线。HUD 显示速度增量（∆v）、V∞、MET 和到地球的距离。每个数字都是你刚学到的东西。",
+    "note": "delta-v binding"
+  },
+  {
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "历史上，它产生的撤回论文比行星还多——巴纳德星就是一个经典的警示故事，其在1960年代通过天体测量法发现的著名“行星”全都是假的。信号实在太微弱了，仪器漂移很容易伪造出这种信号。",
+    "note": "ascii quotes"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "开式循环：富燃燃气发生器（GG）驱动涡轮泵，其排气被排出——这部分排出的推进剂是采用简单、可靠发动机所付出的较小比冲代价。",
+    "note": "fuel-rich rendered as lean-burn"
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Apollo 的月球车（Lunar Roving Vehicle，LRV）搭载于最后三次 Apollo 任务（15、16、17 号，1971–72 年）。在 LRV 出现之前，月面行进受宇航服消耗品所限，离登月舱（LM）的半径只有约 1 km——而且穿着增压服在 1/6 g 环境下行走造成的舱外活动（EVA）疲劳，让这个距离也已相当吃力。LRV 经过刻意设计，可折叠后装入 LM 的 Quad-1 储物舱（0.7 × 0.7 m 的包络空间），空载仅重 210 kg，由两块 36 V 银锌电池供电（不可充电——LRV 是单次任务的一次性装备）。最高速度：18 km/h。这些电池的总航程：约 92 km（57 英里），但有一条严格的步行返回限制：剩余消耗品必须始终够一半用于步行返回（因此实际行进距离是外出 5–10 km、返回 5–10 km）。Apollo 17 在三次 EVA 中共行驶 35.7 km，是人类在天体表面驾驶的历史纪录。LRV 的设计模板——开放式框架、不增压、仅穿宇航服乘坐、单次任务一次性使用——正是 Artemis 现在作为 LTV 重新打造的蓝本。",
+    "note": "garbled walk-back clause, half-width punctuation"
+  },
+  {
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "假设引力一次只来自一个天体——这种近似方法将无解的三体问题转化为一系列可以实际求解的二体开普勒问题。",
+    "note": "重力 for gravity"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "headline",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/life-in-space/radiation-exposure.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "三种辐射源：GCR（稳定的背景辐射，最难屏蔽）、SPE（罕见的爆发，需要风暴避难所）以及被俘获辐射带（国际空间站从其下方掠过，Apollo 则穿越而过）。",
+    "note": "storm shelter became rainstorm, belts garbled"
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "ISRU对火星来说没有商量的余地。返回地球所需的质量比，使得从地球运送返程燃料根本不可能；必须就地制造。MOXIE（火星氧气原位资源利用实验）搭载于Perseverance上，小规模演示了从火星大气中的CO₂制取O₂（5–12 g/小时，2021–2023年共16次运行，总计122 g）。有人任务所需的放大倍数：约200倍，在18个月内以2–3 kg/小时的速率生产，共25–30吨O₂——足以满足上升飞行器的氧化剂需求和乘员呼吸的余量。上升飞行器的甲烷燃料来自萨巴蒂埃反应：CO₂ + 4 H₂ → CH₄ + 2 H₂O，其中的H₂来自对开采自地下冰沉积层的水进行电解（MRO的SHARAD雷达已广泛探测到这些冰层）。整套ISRU工厂属于预先部署的有效载荷，在乘员抵达前自主运行18–26个月，并生产测试用推进剂样品，让载人任务抵达后可在决定执行上升点火之前先行验证。",
+    "note": "half-width punctuation, English left in"
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "月球永久阴影区（PSR）中水冰总量的估计差异很大——数亿吨到数十亿吨的数字已被发表——但确切的数量、深度分布、浓度和物理形态（纯冰、冰与月壤混合，或薄霜层）仍不确定。冰层似乎是非均质的：呈斑驳状、与尘土混合，并非均匀的冰层。ISRO的Chandrayaan-3在2023年在南极地区着陆，部分目的是开始近距离表征这一地形。",
+    "note": "PSRs left in English"
+  },
+  {
+    "rel": "science/orbits/orbit-regimes.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "这些数字很直白。ESA 的空间碎片办公室、NASA 的轨道碎片计划办公室和美国太空军第 18 空间防御中队对轨道物体数量的估计相互吻合（截至 2024-2025 年）：约 36,000 个直径 ≥10 厘米的编目物体，其中约 9,000 个是在役航天器，其余都是碎片。约 100 万块估计在 1 厘米至 10 厘米之间的碎片，大部分未被追踪。超过 1 亿块 1 毫米至 1 厘米之间的碎片，完全未被追踪，但每一块都能在撞击时使航天器瘫痪（1 厘米铝合金碎片以 14 千米/秒的相对速度撞击传递的动能相当于一枚手榴弹）。地球轨道上的总质量：大约 11,000 吨。其中，大约 8,000 吨是碎片——废旧卫星、用尽的上面级、碎裂产生的碎片、油漆片和火箭发动机熔渣。",
+    "note": "awkward literal renderings"
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "第二个问题是存储。反物质与普通物质接触会湮灭，这意味着它不能与任何壁面、任何容器、任何痕量残余气体相接触。已知的唯一方法是磁性或电磁捕获——在潘宁阱中捕获反质子，或在磁瓶中捕获反氢。存储反氢的记录以分钟至小时计量，且仅限少量原子。要在多年的运输过程中在航天器上存储毫克级反物质，还要经受发射振动和辐射，在任何工程意义上都不是已解决的问题。",
+    "note": "wrong terms for trapping"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.5.diagram_caption",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "这是一次单独的、猛烈的、戏剧性的点火——通常持续 5 到 30 分钟，取决于发动机类型——在停泊轨道的近地点执行，此时你已经以最快的速度运行（又是奥伯特效应）。它将你抛上转移椭圆轨道，带你到达目的地。完成这次点火后，发动机基本上将沉默数月。你在惯性滑行。",
+    "note": "burn binding 点火, parking orbit term"
+  },
+  {
+    "rel": "science/life-in-space/isru-resource-utilization.json",
+    "at": "title",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "本标签页的七个部分涵盖了这些几何学原理。霍曼转移是两条轨道之间成本最低的转移方式——两次点火，八个月的惯性飞行。朗伯问题将霍曼转移推广到任意出发和到达时间。引力辅助让你（基本上）免费从行星那里窃取速度，这就是Voyager 2到达海王星的方式。自由返回轨道是安全网，它将Apollo 13带回了家。拼接圆锥曲线法是一种实用的近似方法，让我们能在浏览器中计算所有这些。",
+    "note": "patched conics inconsistent term"
+  },
+  {
+    "rel": "science/orbits/inclination.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Apollo 月球车（Lunar Roving Vehicle，Apollo 15–17 号任务）是每一个没有月球车的 Apollo 乘组最常提出的改进诉求。月球车有 4 台轮毂电机（每台 0.25 hp），设计最高速度约 13 km/h（塞尔南在 Apollo 17 任务中下坡时达到约 18 km/h，创下速度纪录），步行返回半径约为距登月舱 5–7.6 km（视任务和消耗品而定）——这就是舱外活动步行返回约束：如果月球车失灵，乘组必须能在消耗品预算内步行返回。Artemis 计划对应的是 LTV（月球地形车，2024 年起有三个商业设计方案签约）。加压月球车（“月球房车”是 NASA 早期的称呼）计划用于后续的 Artemis 飞行——Toyota 与 JAXA 有一个联合设计，名为 Lunar Cruiser；中国载人航天工程办公室正为首次载人登月（目标 2030 年）研制不加压的双人月球车“探索”。加压移动能力将作业范围扩展到距着陆器约 200 km，彻底改变了“表面作业”的含义。",
+    "note": "half-width punctuation, clumsy phrasing"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "如果你在意过汽车每升油能跑多远，那么比冲对火箭来说就是同一个概念。它告诉你发动机把燃料转化为推力的效率有多高。比冲越高 = 跑得越远 = 同样的推进剂装载量能带来更多的速度增量（∆v）。",
+    "note": "fuel-per-distance is inverted vs mileage"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/mission-phases/eva.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/exoplanets/direct-imaging.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Saturn V 的一级捆绑了五台 F-1 发动机。每台 F-1 在海平面产生 6.77 MN 推力——在当时以及此后五十年里，都是飞行过的最大的液体发动机。研制过程漫长而痛苦：在 1960 年代初，燃烧不稳定几乎使整个项目夭折；Rocketdyne 最终通过调整喷注器面板、打断共振模态解决了这个问题。Apollo 计划的赌注是：发动机更少、更大，意味着在一级 165 秒的点火期间故障点更少。苏联的应对恰恰相反：N1 的一级捆绑了*三十*台 NK-15 发动机。苏联手里没有 F-1 级别的发动机，而 NK-15 体积小、生产成本低，于是他们选择了发动机数量而非发动机尺寸。N1 的四次飞行全部失败——不过故障的原因，既在于管路和 KORD 关机控制器软件，也在于发动机集群本身。",
+    "note": "telegraphic, clumsy grammar"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "diagram_caption",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/scales-time/long-duration.json",
+    "at": "body_paragraphs.3",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.4",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "TWR = 推力 / (质量 × g)。小于 1：留在发射台。1.0–1.2：勉强，重力损失大。1.3–1.5：实际运行的最佳区间。大于 1.5：乘员加速度和气动载荷成为限制。发动机数量 = 所需推力 / 单台发动机推力。",
+    "note": "half-width colons, awkward phrases"
+  },
+  {
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "辐射是尚未解决的生理问题。地火转移飞行发生在地球磁层之外；乘组受到的银河宇宙射线（GCR）辐射剂量在飞行途中以约 1.8 mSv/天的速率累积（相比之下，国际空间站上约为 0.3–0.5 mSv/天，依据 MSL/RAD 的测量）。单程 6 个月的飞行加上 18 个月的地表停留（火星稀薄的大气提供部分 GCR 屏蔽，但没有磁场屏蔽），GCR 暴露总量约为 1 Sv——对应火星乘组成员终身癌症风险估计增加几个百分点——这个数字的不确定性很大（大约相差 2–4 倍），因为风险模型是从截然不同的辐射类型外推而来的。太阳粒子事件（SPE）会带来不规则的急性剂量峰值；1859 年卡林顿级别的 SPE 会让没有庇护的火星转移乘组遭受致命伤害。应对措施是多层组合：一部分是被动防护（乘组休息区周围的水基或聚乙烯基辐射屏蔽），一部分是主动防护（通过电磁偏转实现的主动屏蔽——已有研究，但尚未经过飞行验证），还有一部分来自结构布局（在地表栖息地上方堆筑火星风化层土堤，约 3 m 厚的风化层所提供的屏蔽相当于地球大气）。",
+    "note": "Galactic dropped, transit as 运输, stack"
+  },
+  {
+    "rel": "science/orbits/vis-viva.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "title",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "火星栖息地设计 — 预先部署、ISRU 供给、考虑高氯酸盐",
+    "note": "perchlorate-aware rendered literally"
+  },
+  {
+    "rel": "science/observation/adaptive-optics.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "激光导星 → 波前传感器 → 1000 Hz 的可变形镜 → 图像清晰 10 倍。无需发射望远镜，即可克服大气的影响。",
+    "note": "says destroys the atmosphere"
+  },
+  {
+    "rel": "science/cosmology/_intro.json",
+    "at": "paragraphs.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "把视野拉远到足够远，单个星系就不再重要了。映入眼帘的是结构：星系聚集成星系群，星系群汇聚成星系团，星系团沿着纤维状结构和片状结构排列，环绕着近乎空无一物的空洞——这就是宇宙网。本标签页讲的就是这个最大的尺度，以及让我们能够为其给出可靠距离的测量链。",
+    "note": "groups/clusters mistranslated, 星系团簇 nonword"
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "diagram_caption",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/observation/dwarf-spheroidals.json",
+    "at": "title",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "行星上的季节由其自转轴与太阳-行星连线夹角随公转而变化所驱动。日下点纬度（太阳在正午时直射的纬度）在一年间振荡——在地球上在23.4°N（6月至点）和23.4°S（12月至点）之间。当半球的极点指向太阳时，该半球接收更多太阳辐射；当背离太阳倾斜时接收更少；这种辐射差异在数月间积累，驱动地表和大气温度变化。",
+    "note": "sub-solar and solstice terms wrong"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "离心率（`e`）是决定形状的数。把它设为 0，就得到一个圆——两个焦点重合于同一个中心，绕转的天体永远保持相同的距离。把它调高到接近 1，椭圆就会被拉成雪茄形——天体在近日点呼啸掠过焦点，然后在远日点慢悠悠地徘徊，轨道的大部分时间都耗在那里。",
+    "note": "half-width punctuation"
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "title",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "麦哲伦云 — LMC 和 SMC，我们最近的星系邻居",
+    "note": "half-width comma"
+  },
+  {
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "五个飞行中未解决的问题：航行时长与速度增量（NTP/Starship）、辐射（被动+主动屏蔽）、1/3重力长期生理学（未测量）、ISRU（从CO₂和水冰产甲烷和O₂）、人类规模火星EDL（20吨超声速反推进）。",
+    "note": "delta-v binding, water-ice"
+  },
+  {
+    "rel": "science/life-in-space/long-duration-effects.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "主生保系统（**PLSS**）背包在两个储罐中携带约6800 kPa（1000 psi）的氧气、电池、LiOH罐、通过头盔循环空气的风扇、冷却用水箱和升华器——一种多孔板，使液态水在真空中沸腾，将约250 W的代谢热以水蒸气形式散发到太空。液冷服紧贴皮肤穿着：水通过贴着身体的管道吸收热量后返回升华器。手臂和手套配有加压手套；身体配有玻璃纤维或复合材料制成的硬上半身（HUT）；腿部通过软织物关节活动。工作压力为4.3 psi（美国EMU，纯O₂）或5.7 psi（俄罗斯Orlan，纯O₂）。压力越低=越容易活动；压力越高=预呼吸时间越短。",
+    "note": "redundant wording"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.6.paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "然后是 [EVA](life-in-space/eva-physiology)（在 4.3 psi 纯氧宇航服中进行 6 小时的耐力活动）和 [长期影响](life-in-space/long-duration-effects)，如 SANS——太空相关神经眼综合征——60% 的长期飞行机组人员出现可测量的眼部变化，并且不能完全逆转。这些是阻碍人类前往火星的未解决问题。",
+    "note": "half-width parentheses"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "牛顿没有解释的是：万有引力为什么遵循1/r²？他本人的著名评论——添加于1713年第二版——是“我不虚构假说”（Hypotheses non fingo）。这一机制直到1915年爱因斯坦才给出答案。",
+    "note": "Japanese corner brackets"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.diagram_alt",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/orbits/keplerian-orbit.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "椭圆，焦点 F₁ 位于太阳。半长轴 a · 近日点（最近）和远日点（最远）位于拱线上。",
+    "note": "half-width parentheses"
+  },
+  {
+    "rel": "science/mission-phases/nrho.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "NRHO是一种晕轨道——环绕拉格朗日点运行的周期性三体轨道——但被拉长，直到一端几乎触及月球南极。它看起来更像极轨道而不是晕轨道，因此称为“近直线”。绕行一整圈约需6.5天；Gateway的9:2共振中的“9”指的是每两个朔望月绕行九圈NRHO，而不是9天周期。",
+    "note": "trajectory binding, synodic month, ascii quotes"
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "最初的八个 35 m × 12 m 国际空间站太阳翼，在寿命初期的光照期峰值功率约为 160 kW，并随使用年限衰减；再加上六个 iROSA 卷展式太阳翼（覆盖八个原始翼中的六个，每个增加超过 20 kW），总装机发电容量达到约 215 kW。输送给负载的轨道平均功率——考虑到约 0.6 的光照比例以及电池和调节损耗——大约为 84–120 kW。天宫的规模更小，峰值约 27 kW——乘组更少、实验更少、热负荷也更简单。",
+    "note": "nonstandard 晒电, garbled order"
+  },
+  {
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/life-in-space/bone-density-loss.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "作为对比，地球上绝经后骨质疏松症导致的骨量流失约为每**年** 1–2%。为期六个月的国际空间站任务，相当于把大约十年与年龄相关的流失压缩到半年之内。其中一部分会在飞行后恢复，另一部分则不会。对长期飞行乘组的研究表明，即使经过专门的康复训练，飞行后骨矿密度的可测量缺损仍会持续数年。",
+    "note": "rehabilitation became 改造, bold moved"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "这是火星如此难以征服的隐秘原因。它的空气很稀薄，所以即使是一个中等着陆器上的大降落伞也只能减速到一定程度——弹道系数太高，仅靠阻力无法停下。每个火星着陆器都需要第二步（反推火箭、气囊、空中吊车），而金星上的轻型探测器，在浓密的空气中，仅靠阻力就能飘然下降。",
+    "note": "probe as 探针"
+  },
+  {
+    "rel": "science/scales-time/light-minute.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/mission-phases/nrho.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/mission-phases/max-q.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "在 `/fly` 上，发射遥测数据中的动态压力条形图在Max-Q 处达到峰值，时间线上有一个Max-Q 节拍标记。切换阻力科学透镜图层，可以看到阻力箭头在那一刻膨胀到最长，然后随着大气消散而缩小。",
+    "note": "Max-Q inconsistent with other text"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "地球 → 火星飞掠 → 地球。月球（或火星）的引力免费完成掉头。",
+    "note": "flyby binding"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "它遵循与所有其他开普勒轨道相同的规则。太阳位于其中一个焦点。航天器在远端移动缓慢，在近端移动迅速。活力公式仍然可用于计算其速度。开普勒第三定律仍然能根据轨道尺寸给出飞行时间。没有什么特殊的。",
+    "note": "Keplerian left in English"
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "对火星任务而言，悬而未决的问题是：地表的前庭环境（0.38 g）是否足以在抵达时让前庭系统重新定位，还是乘组走出着陆器时会处于一种混合的平衡状态——部分适应了太空，部分在重新学习重力。国际空间站上的离心机研究和地球上的人体旋转研究表明，答案介于两者之间；任务规划假定着陆后紧接着的几天内地表活动能力会下降。",
+    "note": "surface mobility rendered 流动能力; lander as 登陆舱"
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "这里共有六个部分，按阅读顺序排列。从“什么是porkchop图？”开始，逐步了解坐标轴（出发、飞行时间）、色阶（∆v 热图）、如何读取瓣形（读取等高线），以及如何把porkchop图映射到具体的火箭上（可行性）。关于惯例的说明：标准的porkchop图在出发处绘制特征能量C3（km²/s²）的等高线，在到达处绘制V∞（km/s）的等高线——Orrery为了便于阅读，将其简化为单一的以 km/s 为单位的速度增量色阶。读完之后，你就能查看/plan中九个目的地中任意一个的porkchop图，并像飞行动力学专家一样读懂它。",
+    "note": "garbled contour clause, lobe term"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "地球同步轨道处置：墓地轨道。地球同步轨道卫星无法经济地进行受控脱轨，因为从地球同步轨道（35,786 km）降到撞击地球所需的速度增量代价巨大（约 1.5 km/s），而且卫星在下降途中仍然必须穿过密集的低轨道碎片带。因此，IADC指南（以及大多数国家的监管机构）要求地球同步轨道运营商在耗尽定位保持推进剂之前，将其航天器推升到地球同步轨道上方至少235 km的“墓地轨道”。235 km这一数值，由受保护地球同步轨道区上方200 km的缓冲区，加上失效卫星因日月引力和地球扁率而可能发生的约35 km近地点下降组成；太阳辐射压力的影响（随卫星的面积质量比而变化）则按IADC公式另行叠加。推升到超过这一组合高度，就能保证失效卫星不会漂回地球同步轨道环带。每次墓地轨道推升通常消耗5–10 kg推进剂，相当于数月的定位保持裕度。未能执行墓地轨道点火的运营商（通常是因为卫星失效得太快，来不及留出燃料）会在地球同步轨道上或其附近留下一颗失效卫星，在可预见的长远未来持续威胁在役通信卫星——这就是所谓的“地球同步轨道墓地失效卫星”。",
+    "note": "delta-v binding, 变轨 for burn, 月日"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "大多数燃气发生器有意运行在富燃状态，因为化学计量比的火焰会熔化涡轮叶片；一些早期苏联发动机（包括RD-107和RD-108）则利用催化分解过氧化氢产生的蒸汽来驱动涡轮。无论哪种方式，涡轮入口温度是限制设计的关键参数——它决定了泵能被驱动多快，因此也决定了发动机能达到的燃烧室压力。与闭式循环相比，排出气体的损失导致比冲低几秒钟，因为这部分推进剂产生的有用推力很少。对于第一级火箭，原始推力和低成本比最后几秒的比冲更重要，所以这种权衡几乎总是值得的。",
+    "note": "fuel-rich rendered as lean"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.6.diagram_alt",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "首先是颜色。恒星辐射如同近乎完美的黑体，因此其颜色几乎完全由其表面温度决定：炽热的恒星发出蓝白光（约30,000 K），太阳是黄白色（约5,800 K），而冷的恒星发出深红光（约3,000 K）。天文学家用B–V指数来测量这种颜色——即恒星通过蓝色和视觉滤光片的亮度之差——它与温度有清晰的对应关系。按颜色从左到右排列恒星，你就得到光谱序列O、B、A、F、G、K、M，从最炽热到最冷（记忆法：“Oh Be A Fine Girl/Guy, Kiss Me”）。",
+    "note": "colour comes first mistranslated"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "向一列行驶的火车扔一个网球。球从车头弹回，返回时的速度比你扔出时更快——因为火车正向它驶来，火车的速度被加到了弹回的球上。基本上，这就是引力辅助。航天器就是网球，行星就是火车，而“弹回”被替换成了“沿双曲线坠落而过”。",
+    "note": "Japanese corner brackets"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.diagram_alt",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "国际空间站第 1 长期考察组（Expedition 1，谢泼德、克里卡廖夫、吉津科，2000–01 年）是第一支真正意义上的国际长期驻留乘组。其行为规范体系——每日地面上行计划、强制休息时段、与飞行医生每周一次的私密精神科会谈（PPC）、强制性的家庭视频通话——是依据和平号（Mir）的经验教训设计的。人际模式更接近小型潜艇艇组，而不是企业办公室：权威明确，但在非紧急情况下决策扁平；冲突解决有章可循（先讨论，分歧持续则投票，仍有分歧则交由指令长裁决）；地面还会主动管理性格摩擦（与某位成员合不来的乘员，可以在任务中改与第三人搭档）。自 Expedition 1 以来，每支多国乘组都以英语为共同的操作语言（NASA 与俄罗斯混编乘组在俄罗斯舱段的操作中使用俄语，联合操作中使用英语）；中美之间的直接合作在操作上仍受《沃尔夫修正案》（Wolf Amendment）限制，但国际空间站与天宫的运行模式还是趋同于类似的通信规范。",
+    "note": "mixed-script names, English left in"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/orbits/orbit-regimes.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "核热推进（NTP）是自1965年来一直几乎就绪的发动机族。工作原理：氢流过炽热的核反应堆，加热至2500~3000 K，然后通过喷嘴膨胀。比冲为800~1000秒——是液氢液氧发动机的两倍——推力范围50~250 kN（低于化学推进，但远高于电推进）。NASA的NERVA计划在1960年代试车了全尺寸发动机；较新的DRACO演示器（NASA+DARPA）目标在约2027年进行在轨测试，但在2026年预算中被取消。截至2026年，还没有NTP发动机飞过。障碍一直是政治和监管方面的，而非技术方面：发射核反应堆（即使是设计为仅在轨道上临界的未加燃料堆），涉及公众接受和条约制约的范畴，这在历史上每隔十来年就会让计划夭折。",
+    "note": "test-fired became flight-tested"
+  },
+  {
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "T-24h：审查程序 → T-12h：工具准备 → T-4h：预呼吸 + 穿戴航天服 → T-0：船舱减压至真空，双系绳出舱 → 在脚部固定装置上工作6–8小时，SAFER作为最后备用系统 → 返舱，增压，脱服。50多个程序步骤，每一步都是安全失效的机会。",
+    "note": "egress rendered as EVA"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "title",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "在闪闪发光的细丝之间，存在着空洞——巨大的、大致球形的区域，跨度达数千万秒差距，几乎不含星系。宇宙体积的大部分是空洞；大多数星系生活在这些空洞之间的薄壁和细线上。从最大的尺度来看，分布看起来像海绵，或者像环绕暗色气泡的发光线索之网。",
+    "note": "voids as 虚空"
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "body_paragraphs.3",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "所以任务规划者不与圆盘对抗。他们等待轨道几何排列（这就是“发射窗口”的含义），将火箭沿着黄道指向，并让行星负责转向。结果，当你查看我们拥有的每条航天器轨道时，会看到一堆都紧贴同一平面的曲线 — 就像看汽车在平坦的赛道上比赛。",
+    "note": "trajectory binding"
+  },
+  {
+    "rel": "science/life-in-space/muscle-atrophy.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "姿势肌最先衰退——小腿和背部的肌肉，直到回到 1 g 环境中它们罢工了，你才意识到自己一直在用它们。",
+    "note": "muddled sense of the sentence"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "大气压力：动态范围巨大。水星基本为零。火星 0.006 巴（一层稀薄的 CO₂ 气息）。地球 1 巴。金星 92 巴（相当于地球海洋下 900 米处的压力——会把你压扁）。气态巨行星没有真正的“表面压力”，因为它们没有表面；惯例是以大气内部的 1 巴层作为参考。在此之下，压力会连续上升，直至深处达到数百万巴。",
+    "note": "half-width parentheses"
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "想象一颗行星沿着椭圆轨道运行。我们已经给了它大小、形状、倾角。现在唯一还需要的是：此时此刻它在轨道上的哪里？这就是真近点角。站在太阳处，指向行星最接近的那一点，然后测量到行星实际位置的角度。就是这样。",
+    "note": "half-width question mark"
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "diagram_caption",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/cosmology/cosmic-distance-ladder.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/orbits/synodic-period.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/space-stations/expedition-cadence.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "NRHO：围绕地月 L2 的晕轨道，周期 6 天，近月点（约 1,500 km）位于月球北极上空，远月点（约 70,000 km）位于南极上空，以实现南极覆盖，轨道保持约 5 m/s/年。DRO：大型逆行月球轨道，基本无需轨道保持。EML1/EML2 晕轨道：可持续与地球及月球背面通信。冻结月球轨道：轨道倾角为 27°/50°/76°/86°，此时质量瘤引起的摄动相互抵消。",
+    "note": "质量瘫 nonword for mascon"
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "在`/fly`上，在任何`?launch=1`上升过程中打开推力和速度科学透镜图层，观察火箭倾斜时两个箭头保持几乎平行——这种对齐就是重力转弯在发挥作用。Δv损失账本显示转向损失保持较小，而重力损失在上升过程中不断累积。",
+    "note": "untranslated Science-Lens, gravity turn term"
+  },
+  {
+    "rel": "science/observation/andromeda-galaxy.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "仙女星系有自己的卫星系统。最突出的成员是 M32（一个致密的椭圆伴星系，可能是一个曾经更大的星系与 M31 发生潮汐相互作用后被剥去外层所剩的核心）、M110（矮椭圆伴星系），以及约 20 个已知的矮椭球星系和不规则星系（M31 的星系群）。M32 的恒星中心密度很高，仙女星系晕中也存在恒星流，这都是过去发生吸积事件的证据——仙女星系过去吞并过矮星系，就像银河系今天正在吞并人马座矮星系一样。两个大旋涡星系加上 M33 及其矮星系随从，构成了本星系群的核心。",
+    "note": "companion rendered as 伴星, dwarf spheroidal garbled"
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "这正是沉默显得如此响亮的原因。如果宜居的星球遍布各处，那么所有人都在哪里？——恩里科·费米在午餐时提出的这个问题，至今仍未得到解答。",
+    "note": "half-width question mark"
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "火星则是相反的取舍。火星只有地球质量的 11%，但直径是地球的 53%。这使其表面重力为地球的 38%——远高于仅凭质量比例所能预测的值，因为你离一个更小的中心更近。让这两种情况都说得通的关系是：表面重力按 质量 / 半径² 缩放。对于平均密度相近的行星，重力随半径线性变化。土星（直径为地球的 9.14 倍）的表面重力几乎等于地球（1.07 g），因为土星的密度远低于地球——土星主要由氢氦组成，密度还不到水的 0.7 倍。",
+    "note": "half-width punctuation"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "在 `/fly` 上，用 `?descent=1` 参数飞行Curiosity或Perseverance，观看下降级的系绳在降落伞和反推序列下方展开，将火星车降至表面，然后下降级飞离——空中吊车的精妙之处可视化呈现。",
+    "note": "sky-crane inconsistent term"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "在没有空气的世界上，降落伞无处着力。唯一的减速方法是让引擎指向地面并点火——用推进剂换取每秒米级的速度消减。这就是动力着陆，从Apollo到今天的每一个月球着陆器都是这样接触月面的：先是一次长时间的制动点火，再通过发动机节流轻柔地悬停并降到月面。",
+    "note": "burn binding, garbled hover clause"
+  },
+  {
+    "rel": "science/mission-phases/optical-comms.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "body_paragraphs.3",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK"
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "goals.2.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 绕月飞行"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "the_land.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 绕它飞行"
+  },
+  {
+    "rel": "programs/great-observatories.json",
+    "at": "outcome.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 离轨 (standard deorbit)"
+  },
+  {
+    "rel": "programs/kuiper.json",
+    "at": "narrative.2.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: 低轨"
+  },
+  {
+    "rel": "programs/kuiper.json",
+    "at": "legacy.2.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: 低轨"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "outcome.0.caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 绕地球飞行"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "goals.3.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "与其会合",
+    "replace": "与其交会",
+    "why": "binding 交会"
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "narrative.1.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推",
+    "replace": "引力辅助",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "lessons.1.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推",
+    "replace": "引力辅助",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "lessons.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "metaphor: burns the runway, not an engine firing"
+  },
+  {
+    "rel": "programs/mars-rovers.json",
+    "at": "outcome.1.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "phase of a campaign, not a rocket stage"
+  },
+  {
+    "rel": "programs/jaxa-robotic.json",
+    "at": "outcome.0.md",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: 进入金星轨道"
+  },
+  {
+    "rel": "programs/shenzhou.json",
+    "at": "the_land.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "variant: 返回舱 (standard Soyuz descent module)"
+  },
+  {
+    "rel": "programs/shenzhou.json",
+    "at": "outcome.1.caption",
+    "term": "descent",
+    "decision": "keep",
+    "why": "variant: 返回舱 (standard descent module)"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "lineage sense, not surface descent"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "term": "orbit",
+    "loc": "ru",
+    "rel": "missions/earth/vostok-6.json",
+    "at": "type",
+    "why": "ОКОЛОЗЕМНЫЙ (near-Earth, orbit implied) for EARTH-ORBIT in a type label"
+  },
+  {
+    "term": "booster",
+    "loc": "ru",
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "why": "variant: launcher (Proton-K booster = ракета-носитель)"
+  },
+  {
+    "term": "booster",
+    "loc": "es",
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "why": "variant: launcher (Proton-K booster = lanzador)"
+  }
+]

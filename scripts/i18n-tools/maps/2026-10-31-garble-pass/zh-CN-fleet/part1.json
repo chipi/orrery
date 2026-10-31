@@ -1,0 +1,905 @@
+[
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "中国航天计划的重型运载骨干",
+    "note": "举重 means weightlifting; wrong sense of heavy-lift"
+  },
+  {
+    "rel": "fleet/constellation/sentinel-copernicus.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy, half-width punctuation",
+    "new": "首个木星轨道器；开展了8年的测量",
+    "note": "Awkward phrasing, half-width semicolon"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "俄德X射线全天巡天观测站",
+    "note": "天图 is not a word for sky-mapping"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "unnatural term",
+    "new": "首次多人乘组飞行；首次太空行走",
+    "note": "多机组 unnatural; half-width semicolon"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong word",
+    "new": "首个商用亚轨道载人飞行器",
+    "note": "乘务车 means attendant car, not crewed vehicle"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "broken grammar",
+    "new": "唯一造访过全部四颗巨行星的航天器",
+    "note": "Garbled sentence, lost the 'only' sense"
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "俄德X射线全天巡天观测站",
+    "note": "天图 is not a word for sky-mapping"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong word",
+    "new": "苏联首个可长期驻留的多对接口空间站",
+    "note": "车站 is railway station, not space station"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning changed",
+    "new": "可重复使用的助推器重塑了商业发射",
+    "note": "Commercial launch dropped; meaning changed"
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "broken grammar",
+    "new": "首辆在另一个世界漫游的轮式车辆",
+    "note": "Sentence structure broken; wrong subject"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "俄罗斯12小时HEO通信——63.4°临界轨道倾角将远地点锁定在北方上空",
+    "note": "Inclination binding 轨道倾角 missing"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "half-width punctuation",
+    "new": "最大的红外空间望远镜；L2轨道",
+    "note": "Half-width semicolon, missing particle"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "火星地震仪；已探测到1300多次火星地震",
+    "note": "Awkward 检测到1300+; half-width semicolon"
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "telegraphic",
+    "new": "从轨道获取的最高分辨率火星影像",
+    "note": "Telegraphic, orbit relation unclear"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong word",
+    "new": "首个商用亚轨道载人飞行器",
+    "note": "乘务车 means attendant car, not crewed vehicle"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "中国第二个月球轨道器；首个飞掠小行星 4179 Toutatis 的航天器（2012 年 12 月 13 日，最近距离约 770 m）",
+    "note": "Flyby should be 飞掠, not 飞越"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy, half-width punctuation",
+    "new": "首个木星轨道器；开展了8年的测量",
+    "note": "Awkward phrasing, half-width semicolon"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy, half-width punctuation",
+    "new": "木星极地轨道器；磁层研究",
+    "note": "Awkward word order, half-width semicolon"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning changed",
+    "new": "可重复使用的助推器重塑了商业发射",
+    "note": "Commercial launch dropped; meaning changed"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "half-width punctuation",
+    "new": "火星探测漫游者；6年运作期",
+    "note": "Half-width semicolon"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "added content",
+    "new": "双人乘组；交会与舱外活动训练",
+    "note": "Added 对接 (docking) not in English"
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gaganyaan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "half-width punctuation",
+    "new": "最大的红外空间望远镜；L2轨道",
+    "note": "Half-width semicolon, missing particle"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong preposition",
+    "new": "研究火星大气被太阳风剥离的过程；揭示火星在数十亿年间失去了大气层",
+    "note": "Awkward 流失至太阳风; unclear relation"
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy, half-width punctuation",
+    "new": "木星极地轨道器；磁层研究",
+    "note": "Awkward word order, half-width semicolon"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "12小时HEO，63.4°临界轨道倾角——远地点停驻于俄罗斯上空",
+    "note": "Inclination binding 轨道倾角 missing"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong word",
+    "new": "苏联首个可长期驻留的多对接口空间站",
+    "note": "车站 is railway station, not space station"
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "中国航天计划的重型运载骨干",
+    "note": "举重 means weightlifting; wrong sense of heavy-lift"
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/change-5.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "broken grammar",
+    "new": "唯一造访过全部四颗巨行星的航天器",
+    "note": "Garbled sentence, lost the 'only' sense"
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/observatory/kepler.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "俄罗斯高椭圆轨道星座。12小时Molniya轨道（~600 × 40,000 km）采用63.4°临界轨道倾角，利用地球J2摄动锁定拱线——远地点始终停驻于北半球上空，为高纬度用户提供地球静止卫星无法实现的仰角。Molniya-1于1965年发射；该系列延续至Molniya-1/2/3、Oko预警卫星，以及目前在役的Meridian通信后继星。",
+    "note": "Inclination binding 轨道倾角 missing"
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "火星地震仪；已探测到1300多次火星地震",
+    "note": "Awkward 检测到1300+; half-width semicolon"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "added content",
+    "new": "双人乘组；交会与舱外活动训练",
+    "note": "Added 对接 (docking) not in English"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "unnatural term",
+    "new": "首次多人乘组飞行；首次太空行走",
+    "note": "多机组 unnatural; half-width semicolon"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "telegraphic",
+    "new": "从轨道获取的最高分辨率火星影像",
+    "note": "Telegraphic, orbit relation unclear"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "唯一成功飞行的苏联超重型运载火箭。设计用于将Buran轨道飞行器或独立有效载荷（最重100吨）送入LEO。两次飞行：Polyus有效载荷测试（1987年）和Buran轨道飞行器（1988年），均成功。冷战结束时项目被搁置。",
+    "note": "Payload binding 有效载荷 missing"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/constellation/sentinel-copernicus.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Accurate and natural"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "broken grammar",
+    "new": "首辆在另一个世界漫游的轮式车辆",
+    "note": "Sentence structure broken; wrong subject"
+  }
+]

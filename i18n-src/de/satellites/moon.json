@@ -1,15 +1,15 @@
 {
-  "description": "Der einzige natürliche Satellit der Erde und die einzige Welt neben der Erde, auf der Menschen gelaufen sind. Seine 1:1-Gezeitenblockierung hält dieselbe Hemisphäre ständig der Erde zugewandt — die nahe Seite wird von lavagefüllten Maria-Becken dominiert, die ferne Seite ist ein altes hochlandbedecktes Kraterlandschaft, gekrönt vom Südpol-Aitken-Becken, der größten Impaktstruktur des Sonnensystems (~2.500 km breit, ~13 km tief). Der langsame Rückzug des Mondes von der Erde (~3,8 cm/Jahr) verlängert allmählich Erdes Tag; in der fernen Vergangenheit erschien er fast dreimal so groß am Himmel wie heute.",
+  "description": "Der einzige natürliche Satellit der Erde und die einzige Welt außer der Erde, die Menschen betreten haben. Durch die gebundene Rotation im Verhältnis 1:1 zeigt immer dieselbe Hemisphäre zur Erde — die Vorderseite wird von lavaüberfluteten Mare-Becken dominiert, die Rückseite ist eine alte, von Kratern übersäte Hochlandlandschaft, gekrönt vom Südpol-Aitken-Becken, der größten Einschlagstruktur des Sonnensystems (~2.500 km breit, ~13 km tief). Die langsame Entfernung des Mondes von der Erde (~3,8 cm/Jahr) verlängert allmählich den Tag der Erde; in ferner Vergangenheit erschien er am Himmel fast dreimal so groß wie heute.",
   "science_sections": [
     {
       "tab": "orbits",
       "section": "keplerian-orbit",
-      "why": "Die Umlaufbahn des Mondes um die Erde ist das klassische Zweikörper-Keplersystem — jede andere Mond-um-Planet-Berechnung verallgemeinert sich davon."
+      "why": "Die Umlaufbahn des Mondes um die Erde ist das klassische Zweikörper-Keplersystem — jede andere Berechnung eines Mondes um einen Planeten lässt sich von hier aus verallgemeinern."
     },
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "Die Exzentrizität des Mondes von 0,055 ist klein, aber relevant — im Perigäum wirkt die Scheibe 12 % größer und heller als im Apogäum ('Supermond')."
+      "why": "Die Exzentrizität des Mondes von 0,055 ist klein, aber relevant — im Perigäum wirkt die Scheibe 12 % größer und heller als im Apogäum („Supermond“)."
     },
     {
       "tab": "orbits",

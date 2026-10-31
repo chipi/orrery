@@ -5,24 +5,24 @@
   "delta_v": "~3,5 km/s",
   "type": "ORBITER · GEVLOGEN",
   "first": "Eerste Aziatische Marsmissie; eerste Marsucces op eerste poging",
-  "description": "ISRO's Mars Orbiter Mission kostte $74 miljoen — minder dan het budget van de film Gravity ($100M), en een fractie van NASA's MAVEN ($671M) die twee dagen eerder arriveerde. Gebouwd in 18 maanden als technologiedemonstrator, Mangalyaan slaagde in elk objectief: trans-Mars-injectie, navigatie in diepe ruimte, Mars-baaninsertie en 8 jaar wetenschappelijke opbrengst. India werd het vierde ruimtevaartagentschap op Mars en het eerste dat op de eerste poging slaagde.",
+  "description": "De Mars Orbiter Mission van ISRO kostte $74 miljoen — minder dan het budget van de film Gravity ($100 mln) en een fractie van NASA's MAVEN ($671 mln), die twee dagen eerder arriveerde. Gebouwd in 18 maanden als technologiedemonstrator, slaagde Mangalyaan in elk doel: trans-Mars-injectie, navigatie in de diepe ruimte, baaninsertie bij Mars en 8 jaar wetenschappelijke opbrengst. India werd het vierde ruimtevaartagentschap bij Mars en het eerste dat in één keer slaagde.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "PSLV-XL (C25) vanaf Sriharikota — een relatief kleine draagraket die een baan-verhogingslus vereiste.",
+      "note": "PSLV-XL (C25) vanaf Sriharikota — een relatief kleine draagraket die een lus voor baanverhoging vereiste.",
       "type": "nominal"
     },
     {
       "met": 7,
-      "label": "PERIGEUM-BRAND 1",
-      "note": "Eerste van zes baan-verhogingsbranden rond Aarde voorafgaand aan trans-Mars-injectie.",
+      "label": "PERIGEUM-ONTSTEKING 1",
+      "note": "Eerste van zes baanverhogingsontstekingen rond Aarde voorafgaand aan trans-Mars-injectie.",
       "type": "nominal"
     },
     {
       "met": 30,
       "label": "TRANS-MARS-INJECTIE",
-      "note": "Laatste perigeum-brand plaatst het ruimtevaartuig op Mars-traject.",
+      "note": "Laatste perigeum-ontsteking plaatst het ruimtevaartuig op Mars-traject.",
       "type": "nominal"
     },
     {
@@ -34,8 +34,9 @@
     {
       "met": 3300,
       "label": "MISSIËINDE",
-      "note": "Contactverlies in 2022-04 nadat de brandstof van het ruimtevaartuig was uitgeput.",
+      "note": "Contactverlies in 2022-04 nadat de drijfstof van het ruimtevaartuig was uitgeput.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "vierde trap PS4 van de PSLV"
 }

@@ -14,6 +14,13 @@
     onCycle: () => void;
   }
   let { mode, onCycle }: Props = $props();
+
+  const MODE_LABEL: Record<HotspotMode, () => string> = {
+    auto: m.hotspots_mode_auto,
+    low: m.hotspots_mode_low,
+    high: m.hotspots_mode_high,
+  };
+  const modeLabel = $derived(MODE_LABEL[mode]());
 </script>
 
 <button
@@ -22,9 +29,9 @@
   class:active={mode !== 'low'}
   onclick={onCycle}
   title={m.hotspots_lod_title()}
-  aria-label="Hotspots tier: {mode}"
+  aria-label={m.hotspots_aria({ mode: modeLabel })}
   data-testid="layer-hotspots"
   data-hotspots-mode={mode}
 >
-  HOTSPOTS · {mode.toUpperCase()}
+  {m.hotspots_chip()} · {modeLabel}
 </button>

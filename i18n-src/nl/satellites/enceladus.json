@@ -1,21 +1,21 @@
 {
-  "description": "Minuscuul — slechts 504 km doorsnee — maar het meest reflecterende lichaam in het zonnestelsel en één van de sterkste kandidaten voor bewoonbaarheid in het heden buiten de aarde. Cassini vloog rechtstreeks door pluimen die uit vier 130 km lange breuken aan de zuidpool uitbarsten; de spectrometer detecteerde moleculair waterstof, organische stoffen waaronder methaan, zouten en silica-nanodeeltjes die actieve hydrothermale chemie op de oceaanbodem aanduiden. De oceaan staat in direct contact met een rotsachtige zeebodem — dezelfde energie- en chemieomstandigheden die aan de eigen diepzee-hydrothermale bronnen van de aarde tot leven hebben geleid.",
-  "surface_composition": "Ongerepte waterijskorst boven een globale ondergrondse oceaan; zuidpool-'tijgerstreep'-breuken die pluimen van waterdamp, organische stoffen, zouten, silica-nanodeeltjes en moleculair waterstof uitstoten.",
+  "description": "Klein — slechts 504 km in doorsnee — maar het meest reflecterende hemellichaam van het zonnestelsel en een van de sterkste kandidaten voor actuele bewoonbaarheid buiten de Aarde. Cassini vloog rechtstreeks door pluimen die uit vier breuken van 130 km lengte aan de zuidpool opspuiten; de spectrometer detecteerde moleculaire waterstof, organische stoffen waaronder methaan, zouten en silica-nanokorrels, wat wijst op actieve hydrothermale chemie op de oceaanbodem. De oceaan staat in direct contact met een rotsachtige zeebodem — dezelfde energie- en chemische omstandigheden waaruit het leven ontstond bij de hydrothermale bronnen in de diepzee van de Aarde zelf.",
+  "surface_composition": "Ongerepte korst van waterijs boven een wereldwijde ondergrondse oceaan; breuken in de 'tijgerstrepen' bij de zuidpool die pluimen van waterdamp, organische stoffen, zouten, silica-nanokorrels en moleculaire waterstof uitstoten.",
   "mission_visits": [
     "Voyager 2 — USA, 1981 (voorlopige kartering)",
-    "Cassini — NASA/ESA/ASI, 2005–2015 (ontdekking van pluim + doorvlucht)"
+    "Cassini — NASA/ESA/ASI, 2005–2015 (ontdekking van de pluim + vlucht erdoorheen)"
   ],
   "library_labels": {
     "enceladus-wiki": "Wikipedia — Enceladus",
     "enceladus-nasa": "NASA Science — Enceladus overzicht",
-    "enceladus-cassini": "NASA Cassini — pluim-voorbijvlucht archiefcollectie",
-    "enceladus-habitability": "Astrobiology — Enceladus als doel voor levensonderzoek"
+    "enceladus-cassini": "NASA Cassini — erfgoedarchief van de pluim-flybys",
+    "enceladus-habitability": "Astrobiologie — Enceladus als doelwit in de zoektocht naar leven"
   },
   "science_sections": [
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "Enceladus is in 2:1 gemiddelde-bewegingsresonantie met Dione — de geforceerde excentriciteit (0,0047) drijft de getijdenbuiging aan die de zuid-polaire cryovulkanische pluimen aandrijft."
+      "why": "Enceladus bevindt zich in een 2:1-resonantie van de gemiddelde beweging met Dione — de gedwongen excentriciteit (0,0047) veroorzaakt de getijdenvervorming die de cryovulkanische pluimen bij de zuidpool van energie voorziet."
     }
   ]
 }

@@ -21,7 +21,7 @@
     },
     {
       "met": 304,
-      "label": "MARSBAANOPNAME",
+      "label": "MARSBAANINSERTIE",
       "note": "Orbiter gaat in een baan rond Mars; lander blijft bevestigd voor terreinverkenning.",
       "type": "nominal"
     },
@@ -40,8 +40,9 @@
     {
       "met": 335.1,
       "label": "EERSTE PANORAMA",
-      "note": "Eerste hoogresolutie oppervlakteafbeeldingen teruggezonden.",
+      "note": "Eerste oppervlaktebeelden met hoge resolutie teruggezonden.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur D-1T-bovenste trap"
 }

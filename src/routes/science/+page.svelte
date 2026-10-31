@@ -10,6 +10,7 @@
 -->
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { assetOrigin } from '$lib/asset-url';
@@ -35,8 +36,8 @@
       const text = match[1];
       const target = match[2];
       const href = target.startsWith('app:/')
-        ? `${base}${target.slice(4)}`
-        : `${base}/science/${target}`;
+        ? localHref(target.slice(4))
+        : localHref(`/science/${target}`);
       segs.push({ kind: 'link', text, href });
       last = match.index + match[0].length;
     }
@@ -112,7 +113,7 @@
           <li>
             {#each tool.paths as path, p (path)}
               <!-- eslint-disable-next-line svelte/no-useless-mustaches -- literal separator; the wrapping mustache preserves the surrounding spaces Svelte would otherwise trim -->
-              <a href="{base}{path}">{path}</a>{#if p < tool.paths.length - 1}{' · '}{/if}
+              <a href={localHref(path)}>{path}</a>{#if p < tool.paths.length - 1}{' · '}{/if}
             {/each}
             <!-- eslint-disable-next-line svelte/no-useless-mustaches -- literal separator; leading space would be trimmed as indentation without the mustache -->
             {' — '}{tool.text}
@@ -120,10 +121,13 @@
         {/each}
       </ul>
       <p class="closing">{landing.closing}</p>
+      <p class="closing">
+        <a href={localHref('/science/glossary')}>→ {m.layout_footer_glossary()}</a>
+      </p>
     </section>
   </article>
 {:else}
-  <p class="empty">Landing content unavailable.</p>
+  <p class="empty">{m.science_landing_unavailable()}</p>
 {/if}
 
 <style>

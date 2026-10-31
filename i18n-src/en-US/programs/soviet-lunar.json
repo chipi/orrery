@@ -82,5 +82,12 @@
       "type": "prose",
       "md": "The second lesson is that secrecy and accountability are opposites, and that a programme needs the second more than it fears the loss of the first. Hiding the Soviet effort protected it from public embarrassment and, in doing so, stripped away every external force that might have made it confront its problems in time. Apollo was forced to be honest because the whole world was watching; the N1 was allowed to fail quietly, four times, because no one was. Visibility is not just a risk to be managed. For a hard, unforgiving endeavour, it is one of the things that makes success possible at all."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "The Moon — surface, landing sites & exploration",
+    "/fleet?focus=n1": "Fleet — N1 super-heavy launcher",
+    "/moon?site=luna16": "Luna 16 — first robotic sample return",
+    "/moon?site=luna17": "Luna 17 — Lunokhod 1",
+    "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  }
 }

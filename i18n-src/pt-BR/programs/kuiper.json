@@ -40,7 +40,7 @@
     },
     {
       "type": "prose",
-      "md": "Kuiper também testa o mercado de lançamentos em si. Sua estratégia de múltiplos fornecedores é uma tábua de salvação para foguetes que precisam de cargas — Vulcan, Ariane 6 e New Glenn se beneficiam de ter um cliente desse porte — e uma aposta de que uma constelação pode ser construída sem integração vertical, comprando seus voos em vez de operar os próprios. Se isso é competitivo contra um rival que lança a si mesmo é uma das questões abertas que o programa responderá."
+      "md": "Kuiper também testa o mercado de lançamentos em si. Sua estratégia de múltiplos fornecedores é uma tábua de salvação para foguetes que precisam de cargas úteis — Vulcan, Ariane 6 e New Glenn se beneficiam de ter um cliente desse porte — e uma aposta de que uma constelação pode ser construída sem integração vertical, comprando seus voos em vez de operar os próprios. Se isso é competitivo contra um rival que lança a si mesmo é uma das questões abertas que o programa responderá."
     }
   ],
   "narrative": [
@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "A lição mais profunda é que em uma capacidade em rede, o controle da cadeia de suprimentos é estratégia. As escolhas de lançamento da Kuiper — deliberadamente roteadas para longe de sua rival — mostram que quando o acesso à órbita é escasso e parcialmente de propriedade de um concorrente, de quem você compra seus voos não é um detalhe de aquisição, mas uma decisão sobre independência, e vale a pena pagar um prêmio para acertar."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=kuiper": "Frota — a constelação Kuiper",
+    "/programs/starlink": "Starlink — a constelação que ele persegue",
+    "/earth": "Terra — órbitas e a superlotação da órbita baixa",
+    "/earth?site=kuiper": "A constelação Kuiper"
+  }
 }

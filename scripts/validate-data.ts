@@ -39,27 +39,14 @@ import {
   type ProvenanceRow,
   type LaunchEntryMinimal,
 } from './validate-data-helpers.js';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
 
 const DATA_ROOT = 'static/data';
 
 // i18n is core content (2026-07): every en-US overlay under i18n-src/ must have
 // a non-empty sibling in all 13 other locales. Returns one problem string per
 // missing/empty locale file. Parity with the hero-image zero-gap policy.
-const I18N_LOCALES_13 = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
+const I18N_LOCALES_13 = TRANSLATED_LOCALES;
 function overlayFileLocaleGaps(rel: string): string[] {
   const gaps: string[] = [];
   for (const loc of I18N_LOCALES_13) {
@@ -233,6 +220,37 @@ const validateVoices = ajv.compile(voicesSchema);
 const validateCostLedger = ajv.compile(costLedgerSchema);
 const validateAudioProvenance = ajv.compile(audioProvenanceSchema);
 const validateAudioSourceProvenance = ajv.compile(audioSourceProvenanceSchema);
+
+// User-facing manifests that predate schema coverage (galleries, hero overrides,
+// image-source ledgers, orbit regimes, traverses, site stories, …).
+const validateGalleryCounts = ajv.compile(loadSchema('gallery-counts.schema.json'));
+const validateSunGallery = ajv.compile(loadSchema('sun-gallery.schema.json'));
+const validateHeroOverrides = ajv.compile(loadSchema('hero-overrides.schema.json'));
+const validateImageSources = ajv.compile(loadSchema('image-sources.schema.json'));
+const validateDeepSkyImageSources = ajv.compile(loadSchema('deep-sky-image-sources.schema.json'));
+const validateBadgeSources = ajv.compile(loadSchema('badge-sources.schema.json'));
+const validateBadgeProvenance = ajv.compile(loadSchema('badge-provenance.schema.json'));
+const validateOrbitRegimes = ajv.compile(loadSchema('orbit-regimes.schema.json'));
+const validateOrbitRegimesExplore = ajv.compile(loadSchema('orbit-regimes-explore.schema.json'));
+const validateLocalGroupGalaxies = ajv.compile(loadSchema('local-group-galaxies.schema.json'));
+const validateExploreOrbiters = ajv.compile(loadSchema('explore-orbiters.schema.json'));
+const validateStationTles = ajv.compile(loadSchema('station-tles.schema.json'));
+const validateLabIllustrations = ajv.compile(loadSchema('lab-illustrations.schema.json'));
+const validateLabIllustrationProvenance = ajv.compile(
+  loadSchema('lab-illustration-provenance.schema.json'),
+);
+const validateOriginalWork = ajv.compile(loadSchema('original-work.schema.json'));
+const validateAgencyArchives = ajv.compile(loadSchema('agency-archives.schema.json'));
+const validateSourceFetchProvenance = ajv.compile(
+  loadSchema('source-fetch-provenance.schema.json'),
+);
+const validateCislunarPhaseScienceMap = ajv.compile(
+  loadSchema('cislunar-phase-science-map.schema.json'),
+);
+const validateTraverse = ajv.compile(loadSchema('traverse.schema.json'));
+const validateTraverseRoutePatches = ajv.compile(loadSchema('traverse-route-patches.schema.json'));
+const validateSiteStory = ajv.compile(loadSchema('site-story.schema.json'));
+const validateSiteStoriesIndex = ajv.compile(loadSchema('site-stories-index.schema.json'));
 
 let failed = 0;
 let passed = 0;
@@ -650,6 +668,71 @@ validateFile(join(DATA_ROOT, 'audio-source-provenance.json'), validateAudioSourc
   }
 }
 
+// Previously-unvalidated user-facing manifests. Gallery slot counts: one shared shape.
+for (const f of [
+  'belt-galleries',
+  'earth-object-galleries',
+  'iss-galleries',
+  'mars-site-galleries',
+  'moon-site-galleries',
+  'planet-galleries',
+  'small-body-galleries',
+  'tiangong-galleries',
+]) {
+  validateFile(join(DATA_ROOT, `${f}.json`), validateGalleryCounts);
+}
+validateFile(join(DATA_ROOT, 'sun-gallery.json'), validateSunGallery);
+for (const f of [
+  'fleet',
+  'mars-sites',
+  'missions',
+  'moon-sites',
+  'planets',
+  'satellites',
+  'small-bodies',
+]) {
+  validateFile(join(DATA_ROOT, `${f}-hero-overrides.json`), validateHeroOverrides);
+}
+for (const f of ['fleet', 'mission', 'panel']) {
+  validateFile(join(DATA_ROOT, `${f}-image-sources.json`), validateImageSources);
+}
+validateFile(join(DATA_ROOT, 'deep-sky-image-sources.json'), validateDeepSkyImageSources);
+validateFile(join(DATA_ROOT, 'badge-sources.json'), validateBadgeSources);
+validateFile(join(DATA_ROOT, 'badge-provenance.json'), validateBadgeProvenance);
+for (const f of ['orbit-regimes', 'orbit-regimes-mars', 'orbit-regimes-moon']) {
+  validateFile(join(DATA_ROOT, `${f}.json`), validateOrbitRegimes);
+}
+validateFile(join(DATA_ROOT, 'orbit-regimes-explore.json'), validateOrbitRegimesExplore);
+validateFile(join(DATA_ROOT, 'local-group-galaxies.json'), validateLocalGroupGalaxies);
+validateFile(join(DATA_ROOT, 'explore-orbiters.json'), validateExploreOrbiters);
+validateFile(join(DATA_ROOT, 'station-tles.json'), validateStationTles);
+validateFile(join(DATA_ROOT, 'lab-illustrations.json'), validateLabIllustrations);
+validateFile(
+  join(DATA_ROOT, 'lab-illustration-provenance.json'),
+  validateLabIllustrationProvenance,
+);
+validateFile(join(DATA_ROOT, 'original-work.json'), validateOriginalWork);
+validateFile(join(DATA_ROOT, 'agency-archives.json'), validateAgencyArchives);
+validateFile(join(DATA_ROOT, 'source-fetch-provenance.json'), validateSourceFetchProvenance);
+validateFile(join(DATA_ROOT, 'cislunar-phase-science-map.json'), validateCislunarPhaseScienceMap);
+// Rover traverses: <rover>.json polylines, <rover>.route-patches.json imagery patches.
+for (const dir of ['mars-traverses', 'moon-traverses']) {
+  for (const file of listJson(join(DATA_ROOT, dir))) {
+    validateFile(
+      file,
+      file.endsWith('.route-patches.json') ? validateTraverseRoutePatches : validateTraverse,
+    );
+  }
+}
+// launches-historic/<decade>.json share the launches.json manifest shape.
+for (const file of listJson(join(DATA_ROOT, 'launches-historic'))) {
+  validateFile(file, validateLaunches);
+}
+// site-stories/<site>.json (null = deliberate stub) + the id index.
+for (const file of listJson(join(DATA_ROOT, 'site-stories'))) {
+  validateFile(file, file.endsWith('/index.json') ? validateSiteStoriesIndex : validateSiteStory);
+}
+
 // Scenario base records
 for (const file of listJson(join(DATA_ROOT, 'scenarios'))) {
   validateFile(file, validateScenario);
@@ -829,14 +912,21 @@ validateFile(join(DATA_ROOT, 'missions/index.json'), validateMissionIndex);
 const missionDataDirs = listMissionDataDirs();
 const missionIds = new Set<string>();
 const missionFleetRefs = new Map<string, FleetRef[]>();
+const missionFileFacts = new Map<string, { file: string; status?: string; year?: number }>();
 for (const dest of missionDataDirs) {
   for (const file of listJson(join(DATA_ROOT, 'missions', dest))) {
     validateFile(file, validateMission);
     checkCislunarWaypoints(file);
     checkInterplanetaryWaypoints(file);
     try {
-      const mission = readJson(file) as { id: string; fleet_refs?: FleetRef[] };
+      const mission = readJson(file) as {
+        id: string;
+        status?: string;
+        year?: number;
+        fleet_refs?: FleetRef[];
+      };
       missionIds.add(mission.id);
+      missionFileFacts.set(mission.id, { file, status: mission.status, year: mission.year });
       if (mission.fleet_refs && mission.fleet_refs.length > 0) {
         missionFleetRefs.set(mission.id, mission.fleet_refs);
       }
@@ -844,6 +934,33 @@ for (const dest of missionDataDirs) {
       // schema validation already reported the parse error
     }
   }
+}
+
+// Mission index ↔ mission file: the catalogue cards read status and year from
+// index.json, the mission panel from the mission file. They drifted unseen
+// (akatsuki ACTIVE vs FLOWN, blue-moon-mk1 2025 vs 2027), so they must agree.
+try {
+  const index = readJson(join(DATA_ROOT, 'missions/index.json')) as Array<{
+    id: string;
+    status?: string;
+    year?: number;
+  }>;
+  for (const entry of index) {
+    const facts = missionFileFacts.get(entry.id);
+    if (!facts) continue; // a missing mission file is reported by its own check
+    const diffs: string[] = [];
+    if (facts.status !== undefined && entry.status !== facts.status)
+      diffs.push(`status ${entry.status} in index.json, ${facts.status} in the mission file`);
+    if (facts.year !== undefined && entry.year !== facts.year)
+      diffs.push(`year ${entry.year} in index.json, ${facts.year} in the mission file`);
+    if (diffs.length) {
+      failed++;
+      console.error(`\n  ✗ missions/index.json — ${entry.id}`);
+      for (const d of diffs) console.error(`      ${d} (${facts.file})`);
+    }
+  }
+} catch {
+  // index parse error already reported by validateFile above
 }
 
 // PRD-012 v0.2 / RFC-016 v0.2 OQ-2 — fleet ↔ missions BIDIRECTIONAL

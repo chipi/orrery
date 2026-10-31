@@ -3,9 +3,9 @@
   "vehicle": "H-IIA 202",
   "payload": "609 kg en seco, propulsión eléctrica iónica (4 propulsores μ10) + bipropelente químico + HGA de 1,6 m. Carga útil a bordo — Small Carry-on Impactor (SCI, carga hueca de 2,5 kg), módulo de aterrizaje MASCOT (10 kg, DLR/CNES), 3 rovers MINERVA-II (~1 kg cada uno), cápsula de retorno de muestras (16 kg, reentrada con paracaídas).",
   "delta_v": "~2 km/s (acumulado del motor iónico)",
-  "type": "RETORNO DE MUESTRAS + LANDERS · ACTIVA (extendida)",
+  "type": "RETORNO DE MUESTRAS + MÓDULOS DE ATERRIZAJE · ACTIVA (extendida)",
   "first": "Segundo retorno de muestras de asteroide (Ryugu, 2020); primer cráter de impacto artificial en un asteroide; primer material de subsuperficie de asteroide devuelto a la Tierra",
-  "description": "Misión de continuación de la Hayabusa original de JAXA. Lanzada el 2014-12-03, Hayabusa2 alcanzó el asteroide carbonáceo cercano a la Tierra (162173) Ryugu el 2018-06-27 tras un crucero iónico de bajo empuje de 3,5 años con asistencia gravitatoria terrestre. Operaciones de superficie 2018–2019: dos recogidas de muestras mediante aterrizaje y despegue que rodearon un experimento de Impactador de Carga Pequeña (2019-04-05) que excavó un cráter de 14 m para la segunda muestra. Tres rovers MINERVA-II devolvieron las primeras imágenes de superficie desde un asteroide; el módulo de aterrizaje MASCOT de DLR/CNES operó durante 17 horas. La cápsula de retorno de muestras reingresó sobre Woomera el 2020-12-05 (UTC; recuperada el 2020-12-06 hora local/JST) entregó 5,4 g de material prístino de Ryugu —la primera muestra de asteroide con estratigrafía subsuperficial. Misión extendida: sobrevuelo de 98943 Torifune (2001 CC21) en 2026-07; encuentro con (1998 KY26), de rápida rotación, previsto para 2031-07.",
+  "description": "Sucesora de la Hayabusa original de JAXA. Lanzada el 2014-12-03, la Hayabusa2 llegó al asteroide carbonáceo cercano a la Tierra (162173) Ryugu el 2018-06-27 tras un crucero iónico de bajo empuje de 3,5 años con una asistencia gravitatoria terrestre. Operaciones en superficie 2018–2019: dos recogidas de muestras por contacto y despegue, a uno y otro lado de un experimento con el Impactador Portátil Pequeño (2019-04-05) que excavó un cráter de 14 m para la segunda muestra. Tres róveres MINERVA-II enviaron las primeras imágenes de la superficie de un asteroide; el módulo de aterrizaje MASCOT de DLR/CNES funcionó durante 17 horas. La cápsula de retorno de muestras, tras su entrada atmosférica sobre Woomera el 2020-12-05 (UTC; recuperada el 2020-12-06, hora local/JST), entregó 5,4 g de material prístino de Ryugu — la primera muestra de asteroide con estratigrafía del subsuelo. Misión extendida: sobrevuelo de 98943 Torifune (2001 CC21) en 2026-07; encuentro con el asteroide de rotación rápida (1998 KY26), previsto para 2031-07.",
   "events": [
     {
       "met": 0,
@@ -16,13 +16,13 @@
     {
       "met": 366,
       "label": "SOBREVUELO TERRESTRE",
-      "note": "La asistencia gravitatoria terrestre modula la órbita de encuentro.",
+      "note": "La asistencia gravitatoria terrestre ajusta la fase de la órbita de encuentro.",
       "type": "nominal"
     },
     {
       "met": 1302,
       "label": "LLEGADA A RYUGU",
-      "note": "Mantención a 20 km — inicio de 1,5 años de operaciones de proximidad incluyendo recolección de muestras.",
+      "note": "Vuelo estacionario a 20 km — inicio de 1,5 años de operaciones de proximidad, incluida la recogida de muestras.",
       "type": "nominal"
     },
     {

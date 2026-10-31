@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La segunda lección es que la asociación multiplica un presupuesto limitado. Al combinar los recursos de muchas naciones a través de una sola agencia e invertirlos en capacidades que ganaron un papel permanente, Europa logró mucho más en vuelos espaciales tripulados de lo que su gasto por sí solo predeciría — y convirtió el dominio de un nicho, la carga automatizada, en una participación en el regreso a la Luna. Para una potencia que no puede gastar más que los gigantes, ser indispensable es una mejor estrategia que ser independiente, y Europa lo ha hecho funcionar durante cuarenta años."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "EEI: la estación que Europa ayudó a construir",
+    "/programs/ariane": "Ariane: el lanzador que llevó el ATV"
+  }
 }

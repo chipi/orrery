@@ -1,0 +1,201 @@
+[
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.15.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: gravitent (verb, planets orbiting)"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "rejoindre en orbite un vaisseau qui l'attend",
+    "replace": "effectuer un rendez-vous en orbite avec un vaisseau qui l'attend",
+    "why": "rendezvous rendered as plain 'rejoindre'"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burned manuscript' - fire damage"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burn it on the way up' = consume the machine"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "Une fois la combustion d'injection trans-martienne réalisée",
+    "replace": "Une fois l'allumage d'injection trans-martienne réalisé",
+    "why": "engine burn rendered 'combustion'"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "une fois la combustion d'injection trans-martienne réalisée",
+    "replace": "une fois l'allumage d'injection trans-martienne réalisé",
+    "why": "engine burn rendered 'combustion'"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.9.caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "une fois la combustion de transfert exécutée",
+    "replace": "une fois l'allumage de transfert exécuté",
+    "why": "engine burn rendered 'combustion'"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.10.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'propellant-burning vehicle' = combustion sense (consommant des ergols)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'propellant-burning architecture' = combustion sense"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'engine burns a fuel' = combustion sense"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burned propellant per second' = consumption"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "la combustion de retour",
+    "replace": "l'allumage de retour",
+    "why": "'return burn' (engine firing) rendered 'combustion'"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burning the most propellant' = consumption"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: premier étage (a Falcon 9 first-stage booster is correctly an étage; propulseur d'appoint = strap-on)"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'air burns off energy' = dissipation; 'moteur ... brûlait' is the correct engine verb"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: étage / premier étage (returned first stage)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.9.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: étage"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.10.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: étage"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.14.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: étage Super Heavy"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.16.caption",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: étage"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.20.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: premier étage"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.21.caption",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: étage"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.23.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: étage du Falcon 9"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.29.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: étage du Falcon 9"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.30.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: étage"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.32.caption",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: étage"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.22.md",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "variant: mise en orbite"
+  }
+]

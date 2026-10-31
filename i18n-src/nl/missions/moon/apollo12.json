@@ -17,13 +17,13 @@
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunaire injectie — herstel van blikseminslagen geverifieerd; missie GO voor maan.",
+      "note": "Trans-lunaire injectie — herstel van blikseminslagen geverifieerd; missie GO voor de Maan.",
       "type": "nominal"
     },
     {
       "met": 3.39,
       "label": "LOI",
-      "note": "Maanbaaninvoeging. SPS ∆v ~0,89 km/s.",
+      "note": "Maanbaaninsertie. SPS ∆v ~0,89 km/s.",
       "type": "nominal"
     },
     {
@@ -47,7 +47,7 @@
     {
       "met": 6.93,
       "label": "LM INSLAG",
-      "note": "Intrepid-opstijgfase opzettelijk op de maan laten neerstorten om ALSEP-seismometers te kalibreren — de eerste bemande-missie ruimtevaartuigfase die opzettelijk op de maan werd geïmpacteerd en geregistreerd door een oppervlakteseismometer.",
+      "note": "Intrepid-opstijgtrap opzettelijk op de maan laten neerstorten om ALSEP-seismometers te kalibreren — de eerste bemande-missie ruimtevaartuigtrap die opzettelijk op de maan werd geïmpacteerd en geregistreerd door een oppervlakteseismometer.",
       "type": "info"
     },
     {
@@ -59,7 +59,7 @@
     {
       "met": 10.18,
       "label": "NEERKOMEN",
-      "note": "CM kwam neer in Stille Zuidzee 1969-11-24 20:58 UTC. Berging door USS Hornet.",
+      "note": "CM maakte een waterlanding in de zuidelijke Stille Oceaan 1969-11-24 20:58 UTC. Berging door USS Hornet.",
       "type": "nominal"
     }
   ]

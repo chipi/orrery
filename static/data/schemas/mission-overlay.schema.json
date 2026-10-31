@@ -26,6 +26,11 @@
       "minLength": 1,
       "description": "Localized Δv line (the base record's `delta_v`)."
     },
+    "vehicle_stage": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Localized upper-stage line (the base record's `flight.launch.vehicle_stage`), shown in the /fly injection-burn callout and the FLIGHT tab; getMission() puts it back under flight.launch."
+    },
     "dispatch": {
       "type": "string",
       "minLength": 1,

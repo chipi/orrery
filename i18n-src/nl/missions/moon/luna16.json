@@ -12,5 +12,6 @@
     { "met": 5, "label": "TCM", "note": "Correctie halverwege de cruise van 4,5 dagen.", "type": "info" },
     { "met": 5.1, "label": "LANDING", "note": "Zachte landing in Mare Fecunditatis 1970-09-20. Oppervlaktebewerkingen + boorkern (101 g).", "type": "nominal" },
     { "met": 8, "label": "MONSTERTERUGKEER", "note": "Capsule hersteld in Kazakhstan 1970-09-24. Eerste niet-bemande terugkeer van maanmonsters.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "bovenste trap Blok-D"
 }

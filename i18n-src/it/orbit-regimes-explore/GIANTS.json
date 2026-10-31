@@ -1,27 +1,27 @@
 {
-  "name": "Gas + Ice Giants",
+  "name": "Giganti Gassosi + Ghiacciati",
   "short": "GIANTS",
-  "story": "Il regno planetario esterno — da 5 a 30 UA. Due giganti gassosi (Giove, Saturno) con involucri di idrogeno-elio profondi migliaia di chilometri sopra piccoli nuclei rocciosi; due giganti ghiacciati (Urano, Nettuno) con mantelli di acqua/ammoniaca/metano sotto strati di gas più sottili. Insieme racchiudono il 99% di tutta la massa planetaria del sistema solare. Ciascuno ha un proprio sistema di lune che si presenta come un sistema solare in miniatura — solo Giove ha 95 lune note, di cui quattro più grandi di Plutone.",
+  "story": "Il regno planetario esterno — da 5 a 30 au. Due giganti gassosi (Giove, Saturno) con involucri di idrogeno-elio profondi migliaia di chilometri sopra piccoli nuclei rocciosi; due giganti ghiacciati (Urano, Nettuno) con mantelli di acqua/ammoniaca/metano sotto strati di gas più sottili. Insieme racchiudono il 99% di tutta la massa planetaria del sistema solare. Ciascuno ha un proprio sistema di lune che si presenta come un sistema solare in miniatura — solo Giove ha 95 lune note, di cui quattro più grandi di Plutone.",
   "comparison": "Giove è 318× più massiccio della Terra. I quattro giganti insieme formerebbero un sistema 25× il diametro dei pianeti interni combinati.",
   "residents": [
     {
       "id": "jupiter",
-      "label": "Giove — 5,20 UA",
+      "label": "Giove — 5,20 au",
       "agency": "NATURAL"
     },
     {
       "id": "saturn",
-      "label": "Saturno — 9,58 UA, sistema di anelli",
+      "label": "Saturno — 9,58 au, sistema di anelli",
       "agency": "NATURAL"
     },
     {
       "id": "uranus",
-      "label": "Urano — 19,18 UA, inclinato 97°",
+      "label": "Urano — 19,18 au, inclinato 97°",
       "agency": "NATURAL"
     },
     {
       "id": "neptune",
-      "label": "Nettuno — 30,07 UA, i venti più veloci del sistema",
+      "label": "Nettuno — 30,07 au, i venti più veloci del sistema",
       "agency": "NATURAL"
     }
   ],

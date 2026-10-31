@@ -11,7 +11,7 @@
   "arrival_date": "1973-12-04",
   "transit_days": 641,
   "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
-  "payload": "Outer-system flyby spacecraft; first to use SNAP-19 RTGs; 25 W at launch (decaying to ~65 W of usable power; signal lost 2003)",
+  "payload": "Outer-system flyby spacecraft; first to use SNAP-19 RTGs; ~155 W at launch (decaying to ~65 W of usable power; signal lost 2003)",
   "delta_v": "~14.4 km/s (post-Jupiter heliocentric)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",

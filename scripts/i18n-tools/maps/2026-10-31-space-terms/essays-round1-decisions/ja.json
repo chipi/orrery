@@ -1,0 +1,370 @@
+[
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 回る / その周囲の (orbiting rendered naturally)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.15.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 回る / その周囲の (orbiting rendered naturally)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.29.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative sense (course of events / path ahead), not a flight path"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.23.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative sense (course of events / path ahead), not a flight path"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.25.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "会合点",
+    "replace": "ランデブー点",
+    "why": "会合 is conjunction; binding ランデブー"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.3.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.4.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.5.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.8.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.10.caption",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.13.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "title",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "Delta-V",
+    "replace": "デルタV",
+    "why": "Delta-V -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.0.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.5.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.6.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.8.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "がデルタ・ブイ",
+    "replace": "がデルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.8.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "のデルタ・ブイ",
+    "replace": "のデルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.8.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "、デルタ・ブイ",
+    "replace": "、デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.10.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.12.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.14.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.18.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "じデルタ・ブイ",
+    "replace": "じデルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.18.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "るデルタ・ブイ",
+    "replace": "るデルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.22.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.23.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.24.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.27.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "はデルタ・ブイ",
+    "replace": "はデルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.27.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "。デルタ・ブイ",
+    "replace": "。デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.28.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.30.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.31.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "デルタ・ブイ",
+    "replace": "デルタV",
+    "why": "デルタ・ブイ -> デルタV"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.10.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.14.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.9.md",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: 打ち上げ能力 (capacity to LEO)"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.26.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "科学観測機器",
+    "replace": "科学ペイロード",
+    "why": "science payload -> ペイロード"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.2.md",
+    "term": "entry",
+    "decision": "change",
+    "find": "進入、下降、着陸",
+    "replace": "大気圏突入、降下、着陸",
+    "why": "EDL: 進入 -> 大気圏突入 and 下降 -> 降下 (one edit)"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.2.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "changed together with entry in the same phrase (下降 -> 降下)"
+  }
+]

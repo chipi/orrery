@@ -1,0 +1,218 @@
+[
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "type",
+    "old": "VOO ESPACIAL TRIPULADO · REALIZADO",
+    "new": "VOO TRIPULADO EM ÓRBITA TERRESTRE · REALIZADO"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "events.2.note",
+    "old": "O foguete retrorracete TDU-1 dispara para reentrada. Sistema de separação do módulo de serviço falha parcialmente — as tiras se soltam tarde, a cápsula gira descontrolada por ~10 min.",
+    "new": "O foguete retrorracete TDU-1 dispara para sair de órbita. Sistema de separação do módulo de serviço falha parcialmente — as tiras se soltam tarde, a cápsula gira descontrolada por ~10 min."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "old": "Missão do programa Discovery da NASA, liderada pelo APL da Universidade Johns Hopkins. Lançada em 17-02-1996, NEAR Shoemaker voou próximo ao asteroide 253 Mathilde (27-06-1997) antes de um sobrevoo de gravidade terrestre (23-01-1998) que ajustou sua órbita para coincidir com Eros. A inserção orbital em torno de 433 Eros em 14-02-2000 iniciou um levantamento de 12 meses que retornou 160.000 imagens e mapas espectrais, composicionais e gravitacionais completos do corpo tipo S de 34 × 11 × 11 km. Em 12-02-2001, cinco queimas de abaixamento orbital trouxeram a nave a 5 km de altitude; descida controlada a ~1,7 m/s terminou com pouso suave perto da sela de Himeros (35°N, 280°O), retornando imagens até 125 m da superfície. A nave sobreviveu e transmitiu da superfície por ~16 dias.",
+    "new": "Missão do programa Discovery da NASA, liderada pelo APL da Universidade Johns Hopkins. Lançada em 17-02-1996, NEAR Shoemaker voou próximo ao asteroide 253 Mathilde (27-06-1997) antes de uma assistência gravitacional terrestre (23-01-1998) que ajustou sua órbita para coincidir com Eros. A inserção orbital em torno de 433 Eros em 14-02-2000 iniciou um levantamento de 12 meses que retornou 160.000 imagens e mapas espectrais, composicionais e gravitacionais completos do corpo tipo S de 34 × 11 × 11 km. Em 12-02-2001, cinco queimas de abaixamento orbital trouxeram a nave a 5 km de altitude; descida controlada a ~1,7 m/s terminou com pouso suave perto da sela de Himeros (35°N, 280°O), retornando imagens até 125 m da superfície. A nave sobreviveu e transmitiu da superfície por ~16 dias."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "old": "SOBREVOO DE GRAVIDADE TERRESTRE",
+    "new": "ASSISTÊNCIA GRAVITACIONAL TERRESTRE"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.4.note",
+    "old": "Primeiro de seis sobrevoos gravitacionais de Mercúrio.",
+    "new": "Primeira de seis assistências gravitacionais de Mercúrio."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "old": "Atlas V 551 deixa a Terra em um caminho assistido pela gravidade de Júpiter até Plutão.",
+    "new": "Atlas V 551 deixa a Terra em um caminho com assistência gravitacional de Júpiter até Plutão."
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "old": "O voo de 48 órbitas e 2 dias 23 horas de Valentina Tereshkova — a primeira mulher no espaço e ainda a única mulher a ter realizado uma missão espacial em solo. Selecionada de um grupo de cinco candidatas a cosmonauta femininas reunido em 1962, Tereshkova lançou em 1963-06-16 09:30 UTC, apenas 2 anos após o primeiro voo orbital de Gagarin. Sua cápsula estava programada para uma correção de órbita ascendente em vez de descendente — ela identificou manualmente o erro e controladores em terra recarregaram o software de atitude corrigido no dia seguinte. Pousou em 1963-06-19 08:20 UTC perto de Bayevo, Altai Krai. Tereshkova posteriormente se tornou figura sênior na política soviética e continua sendo a mulher mais jovem já enviada à órbita, com 26 anos.",
+    "new": "O voo de 48 órbitas e 2 dias 23 horas de Valentina Tereshkova — a primeira mulher no espaço e ainda a única mulher a ter realizado uma missão espacial em solo. Selecionada de um grupo de cinco candidatas a cosmonauta femininas reunido em 1962, Tereshkova lançou em 1963-06-16 09:30 UTC, apenas 2 anos após o primeiro voo orbital de Gagarin. Sua cápsula estava programada para uma queima de correção de órbita ascendente em vez de descendente — ela identificou manualmente o erro e controladores em terra recarregaram o software de atitude corrigido no dia seguinte. Pousou em 1963-06-19 08:20 UTC perto de Bayevo, Altai Krai. Tereshkova posteriormente se tornou figura sênior na política soviética e continua sendo a mulher mais jovem já enviada à órbita, com 26 anos."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "old": "A planta ISRU produziu metano + LOX suficiente para propulsor de viagem de retorno.",
+    "new": "A planta ISRU produziu metano + LOX suficiente para propelente de viagem de retorno."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "old": "Até o SLIM, os pousos lunares tinham uma precisão de mira em escala de quilômetros. O Smart Lander do JAXA demonstrou precisão de 100 m - a precisão necessária para missões tripuladas para atracar com carga pré-posicionada, para veículos de subida de retorno de amostra encontrarem seus parceiros orbitais e para qualquer arquitetura futura que dependa do pouso em locais específicos cientificamente valiosos. O SLIM também foi pioneiro na transferência balística de baixa energia para a Lua, demorando 135 dias para chegar, mas usando menos propulsor do que as trajetórias diretas. Uma demonstração da paciência que as missões interplanetárias podem oferecer quando o cronograma não é a restrição vinculativa.",
+    "new": "Até o SLIM, os pousos lunares tinham uma precisão de mira em escala de quilômetros. O Smart Lander do JAXA demonstrou precisão de 100 m - a precisão necessária para missões tripuladas para atracar com carga pré-posicionada, para veículos de subida de retorno de amostra encontrarem seus parceiros orbitais e para qualquer arquitetura futura que dependa do pouso em locais específicos cientificamente valiosos. O SLIM também foi pioneiro na transferência balística de baixa energia para a Lua, demorando 135 dias para chegar, mas usando menos propelente do que as trajetórias diretas. Uma demonstração da paciência que as missões interplanetárias podem oferecer quando o cronograma não é a restrição vinculativa."
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.1.note",
+    "old": "Apogeu ~325 km; operações com carga classificada.",
+    "new": "Apogeu ~325 km; operações com carga útil classificada."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "description",
+    "old": "A missão de ponta que definiu a exploração moderna de Marte. Curiosity é do tamanho de um carro, alimentado por plutônio, e percorreu mais de 36 km pela Cratera Gale desde seu pouso em 2012. Seus instrumentos confirmaram que Marte já teve condições habitáveis — água fluindo, moléculas orgânicas complexas, a química que a vida precisaria. A sequência EDL dos 'sete minutos de terror', terminando com um sky crane baixando o rover em cabos, é agora o padrão da NASA para entregar grandes cargas à superfície de Marte.",
+    "new": "A missão de ponta que definiu a exploração moderna de Marte. Curiosity é do tamanho de um carro, alimentado por plutônio, e percorreu mais de 36 km pela Cratera Gale desde seu pouso em 2012. Seus instrumentos confirmaram que Marte já teve condições habitáveis — água fluindo, moléculas orgânicas complexas, a química que a vida precisaria. A sequência EDL dos 'sete minutos de terror', terminando com um sky crane baixando o rover em cabos, é agora o padrão da NASA para entregar grandes cargas úteis à superfície de Marte."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "vehicle",
+    "old": "Ariane 5 (carga compartilhada)",
+    "new": "Ariane 5 (carga útil compartilhada)"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "events.0.note",
+    "old": "Delta II eleva Dawn em direção a Vesta e Ceres em uma rodovia espiral de baixo impulso.",
+    "new": "Delta II eleva Dawn em direção a Vesta e Ceres em uma rodovia espiral de baixo empuxo."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "old": "Psyche alcança o núcleo níquel-ferro exposto de um proto-planeta diferenciado — um corpo metálico de 226 km que pode ser a analogia mais próxima do núcleo da Terra entre todos os acessíveis. Lançado em 2023-10-13 em um Falcon Heavy a partir de Kennedy LC-39A. Quatro propulsores de íons de efeito Hall SPT-140 espiralam a trajetória para fora; uma assistência gravitacional de Marte em maio de 2026 (aproximação mais próxima de 4.609 km) adicionou a energia que apenas o impulso iônico não conseguiria entregar em tempo. Chegada planejada para 2029-08, seguida por uma descida de 26 meses em quatro fases orbitais (A → B → C → D) mapeando a gravidade, magnetismo, topografia e composição do asteroide. Se a hipótese de núcleo metálico estiver correta, Psyche terá uma aparência diferente de qualquer coisa que já visitamos — superfície de metal puro, depósitos de sulfeto de ferro, nenhum do caos de escombros de asteroides típicos.",
+    "new": "Psyche alcança o núcleo níquel-ferro exposto de um proto-planeta diferenciado — um corpo metálico de 226 km que pode ser a analogia mais próxima do núcleo da Terra entre todos os acessíveis. Lançado em 2023-10-13 em um Falcon Heavy a partir de Kennedy LC-39A. Quatro propulsores de íons de efeito Hall SPT-140 espiralam a trajetória para fora; uma assistência gravitacional de Marte em maio de 2026 (aproximação mais próxima de 4.609 km) adicionou a energia que apenas o empuxo iônico não conseguiria entregar em tempo. Chegada planejada para 2029-08, seguida por uma descida de 26 meses em quatro fases orbitais (A → B → C → D) mapeando a gravidade, magnetismo, topografia e composição do asteroide. Se a hipótese de núcleo metálico estiver correta, Psyche terá uma aparência diferente de qualquer coisa que já visitamos — superfície de metal puro, depósitos de sulfeto de ferro, nenhum do caos de escombros de asteroides típicos."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.1.note",
+    "old": "Quatro propulsores de íons de efeito Hall assumem o controle. Aceleração contínua de baixo impulso durante 4+ anos.",
+    "new": "Quatro propulsores de íons de efeito Hall assumem o controle. Aceleração contínua de baixo empuxo durante 4+ anos."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "old": "Captura gravitacional por impulso iônico em órbita de 700 km. Missão de 26 meses, quatro fases orbitais.",
+    "new": "Captura gravitacional por empuxo iônico em órbita de 700 km. Missão de 26 meses, quatro fases orbitais."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "description",
+    "old": "Juno entrou na órbita de Júpiter em 2016-07-05 seguindo uma trajetória polar altamente elíptica de 53 dias que a leva de dentro dos cinturões de radiação (perijove ~4200 km acima do topo das nuvens) até além de Calisto. Alimentada por energia solar — seus arranjos de junção tripla com ~50 m² entregam 14 kW na Terra, mas apenas ~500 W em Júpiter, a primeira vez que energia solar é utilizada a essa distância. Confirmou que Júpiter possui um núcleo rochoso diluído (sem uma fronteira bem definida), mediu a disposição do ciclone polar (oito tempestades circunpolares ao redor de cada pólo) e capturou imagens do vulcanismo de Io com detalhes sem precedentes em 2023. A missão estendida inclui aproximações de todas as quatro luas galileanas até 2025.",
+    "new": "Juno entrou na órbita de Júpiter em 2016-07-05 seguindo uma trajetória polar altamente elíptica de 53 dias que a leva de dentro dos cinturões de radiação (perijove ~4200 km acima do topo das nuvens) até além de Calisto. Alimentada por energia solar — seus arranjos de junção tripla com ~50 m² entregam 14 kW na Terra, mas apenas ~500 W em Júpiter, a primeira vez que energia solar é utilizada a essa distância. Confirmou que Júpiter possui um núcleo rochoso diluído (sem uma fronteira bem definida), mediu a disposição do ciclone polar (oito tempestades circunpolares ao redor de cada pólo) e capturou imagens do vulcanismo de Io com detalhes sem precedentes em 2023. A missão estendida inclui sobrevoos de todas as quatro luas galileanas até 2025."
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "type",
+    "old": "VOAR · VOAR",
+    "new": "SOBREVOO · REALIZADO"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.2.label",
+    "old": "VOO DE MARTE",
+    "new": "SOBREVOO DE MARTE"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "type",
+    "old": "CREWED FLYBY · REALIZADA",
+    "new": "SOBREVOO TRIPULADO · REALIZADO"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.label",
+    "old": "VOO LUNAR",
+    "new": "SOBREVOO LUNAR"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "type",
+    "old": "VOAR · VOAR",
+    "new": "SOBREVOO · REALIZADO"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "type",
+    "old": "VOAR · VOAR",
+    "new": "SOBREVOO · REALIZADO"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.1.label",
+    "old": "VOO DE PLUTÃO",
+    "new": "SOBREVOO DE PLUTÃO"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.label",
+    "old": "INSERÇÃO DA ÓRBITA DE MARTE",
+    "new": "INSERÇÃO EM ÓRBITA DE MARTE"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.label",
+    "old": "INSERÇÃO DA ÓRBITA DE MARTE",
+    "new": "INSERÇÃO EM ÓRBITA DE MARTE"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.1.label",
+    "old": "INSERÇÃO DA ÓRBITA DE MARTE",
+    "new": "INSERÇÃO EM ÓRBITA DE MARTE"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.2.note",
+    "old": "Inserção da órbita lunar.",
+    "new": "Inserção em órbita lunar."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.note",
+    "old": "Aproximação mais próxima pelo outro lado, aproximadamente 6.500 km de altitude, e a maior distância já percorrida por humanos: 406.771 km da Terra. Sem inserção de órbita - a geometria de retorno livre lança Orion de volta à Terra.",
+    "new": "Aproximação mais próxima pelo outro lado, aproximadamente 6.500 km de altitude, e a maior distância já percorrida por humanos: 406.771 km da Terra. Sem inserção em órbita - a geometria de retorno livre lança Orion de volta à Terra."
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.1.note",
+    "old": "Inserção da órbita lunar.",
+    "new": "Inserção em órbita lunar."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "old": "Inserção da órbita lunar.",
+    "new": "Inserção em órbita lunar."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.2.note",
+    "old": "Inserção da órbita lunar.",
+    "new": "Inserção em órbita lunar."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "old": "Missão de acompanhamento da JAXA à Hayabusa original. Lançada em 2014-12-03, Hayabusa2 chegou ao asteroide carbonáceo próximo à Terra (162173) Ryugu em 2018-06-27 após um cruzeiro de 3,5 anos com propulsão iônica de baixo empuxo + assistência gravitacional terrestre. Operações de superfície 2018–2019: duas coletas de amostra por toque-e-vai envolvendo um experimento Small Carry-on Impactor (2019-04-05) que escavou um crater de 14 m para a segunda amostra. Três sondas MINERVA-II retornaram as primeiras imagens de superfície de um asteroide; o módulo de pouso MASCOT da DLR/CNES operou por 17 horas. A cápsula de retorno de amostra reingressou sobre Woomera em 2020-12-05 (UTC; recuperada em 2020-12-06 hora local/JST) e entregou 5,4 g de material prístino de Ryugu — a primeira amostra de asteroide com estratigrafia subsuperficial. Missão estendida: sobrevoo de 98943 Torifune (2001 CC21) em 2026-07; encontro de órbita com (1998 KY26) de rotação rápida previsto para 2031-07.",
+    "new": "Missão de acompanhamento da JAXA à Hayabusa original. Lançada em 2014-12-03, Hayabusa2 chegou ao asteroide carbonáceo próximo à Terra (162173) Ryugu em 2018-06-27 após um cruzeiro de 3,5 anos com propulsão iônica de baixo empuxo + assistência gravitacional terrestre. Operações de superfície 2018–2019: duas coletas de amostra por toque-e-vai envolvendo um experimento Small Carry-on Impactor (2019-04-05) que escavou um crater de 14 m para a segunda amostra. Três sondas MINERVA-II retornaram as primeiras imagens de superfície de um asteroide; o módulo de pouso MASCOT da DLR/CNES operou por 17 horas. A cápsula de retorno de amostra fez a reentrada sobre Woomera em 2020-12-05 (UTC; recuperada em 2020-12-06 hora local/JST) e entregou 5,4 g de material prístino de Ryugu — a primeira amostra de asteroide com estratigrafia subsuperficial. Missão estendida: sobrevoo de 98943 Torifune (2001 CC21) em 2026-07; encontro de órbita com (1998 KY26) de rotação rápida previsto para 2031-07."
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "description",
+    "old": "Primeiro voo do programa Boeing X-37B Orbital Test Vehicle. Lançado em 2010-04-22 23:52 UTC do Cabo Canaveral SLC-41 no Atlas V 501 AV-012; o primeiro reingresso de avião espacial orbital autônomo com operações de pouso em pista desde o Buran 1.01 soviético em 1988. Pousou na Base da Força Aérea de Vandenberg em 2010-12-03 09:16 UTC após 224 dias. Cargas úteis e parâmetros orbitais classificados.",
+    "new": "Primeiro voo do programa Boeing X-37B Orbital Test Vehicle. Lançado em 2010-04-22 23:52 UTC do Cabo Canaveral SLC-41 no Atlas V 501 AV-012; a primeira reentrada de avião espacial orbital autônomo com operações de pouso em pista desde o Buran 1.01 soviético em 1988. Pousou na Base da Força Aérea de Vandenberg em 2010-12-03 09:16 UTC após 224 dias. Cargas úteis e parâmetros orbitais classificados."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "dispatch",
+    "old": "Voskhod 2 realizou o primeiro spacewalk e quase o transformou no primeiro morte no espaço. Aleksei Leonov flutuou para fora de um compartimento de ar inflável para o vácuo, o primeiro ser humano completamente fora de uma nave — e então seu traje inchado ficou tão rígido que ele não conseguia se dobrar para voltar. Ele teve que abrir uma válvula e deixar seu próprio ar escapar, correndo o risco de embolia, apenas para encolher o suficiente para passar pela escotilha. Não acabou aí: o repouso automático falhou, a tripulação desceu manualmente, e pousaram centenas de quilômetros fora do curso na floresta gelada siberiana, onde esperaram por duas noites entre lobos antes que os resgatadores os alcançassem de esqui. O público viu doze minutos triunfantes; o quão perto chegou permaneceu secreto por anos.",
+    "new": "Voskhod 2 realizou o primeiro spacewalk e quase o transformou no primeiro morte no espaço. Aleksei Leonov flutuou para fora de um compartimento de ar inflável para o vácuo, o primeiro ser humano completamente fora de uma nave — e então seu traje inchado ficou tão rígido que ele não conseguia se dobrar para voltar. Ele teve que abrir uma válvula e deixar seu próprio ar escapar, correndo o risco de embolia, apenas para encolher o suficiente para passar pela escotilha. Não acabou aí: a reentrada automática falhou, a tripulação desceu manualmente, e pousaram centenas de quilômetros fora do curso na floresta gelada siberiana, onde esperaram por duas noites entre lobos antes que os resgatadores os alcançassem de esqui. O público viu doze minutos triunfantes; o quão perto chegou permaneceu secreto por anos."
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "old": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "new": "DEMONSTRADOR DE ENTRADA/DESCIDA/POUSO · ACIDENTADO"
+  }
+]

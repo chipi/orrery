@@ -1,0 +1,124 @@
+[
+  {
+    "rel": "programs/ariane.json",
+    "at": "goals.2.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "cargas europeias",
+    "replace": "cargas úteis europeias",
+    "why": "carga útil binding"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "outcome.2.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "cargas finais",
+    "replace": "cargas úteis finais",
+    "why": "carga útil binding"
+  },
+  {
+    "rel": "programs/kuiper.json",
+    "at": "outcome.2.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "precisam de cargas",
+    "replace": "precisam de cargas úteis",
+    "why": "carga útil binding"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "narrative.1.md",
+    "term": "payload",
+    "decision": "keep",
+    "why": "figurative: astronaut as cargo/passenger"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "the_land.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "carregar cargas pesadas",
+    "replace": "carregar cargas úteis pesadas",
+    "why": "carga útil binding"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "compartimento de carga do",
+    "replace": "compartimento de carga útil do",
+    "why": "carga útil binding"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "uma carga grande",
+    "replace": "uma carga útil grande",
+    "why": "carga útil binding"
+  },
+  {
+    "rel": "programs/soviet-lunar.json",
+    "at": "outcome.2.md",
+    "term": "thrust",
+    "decision": "change",
+    "find": "perdeu impulso",
+    "replace": "perdeu empuxo",
+    "why": "thrust = empuxo"
+  },
+  {
+    "rel": "programs/galileo.json",
+    "at": "the_land.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Passagens rápidas",
+    "replace": "Sobrevoos",
+    "why": "sobrevoo binding"
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "outcome.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "uma passagem de cada vez",
+    "replace": "um sobrevoo de cada vez",
+    "why": "sobrevoo binding"
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "narrative.1.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "a passagem, o orbitador",
+    "replace": "o sobrevoo, o orbitador",
+    "why": "sobrevoo binding"
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "legacy.1.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "A passagem, o orbitador",
+    "replace": "O sobrevoo, o orbitador",
+    "why": "sobrevoo binding"
+  },
+  {
+    "rel": "programs/mariner.json",
+    "at": "lessons.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "dados de passagem",
+    "replace": "dados de sobrevoo",
+    "why": "sobrevoo binding"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "English descent = lineage"
+  }
+]

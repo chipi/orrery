@@ -84,5 +84,11 @@
       "type": "prose",
       "md": "La leçon plus profonde est qu'une infrastructure construite plus vite qu'elle ne peut être gouvernée apporte à la fois un bien réel et un risque réel. Starlink a véritablement connecté les non-connectés — et simultanément concentré des capacités critiques dans des mains privées, encombré une orbite partagée, et strié le ciel des astronomes. La tâche qu'elle laisse n'est pas de la défaire mais de la rattraper : de construire la gouvernance qu'une technologie aussi puissante aurait dû avoir avant de voler."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starlink": "Flotte — la constellation Starlink",
+    "/programs/spacex": "SpaceX — le Falcon qui la lance",
+    "/earth": "Terre — les orbites et l'encombrement de l'orbite basse",
+    "/earth?site=starlink": "La constellation Starlink"
+  }
 }

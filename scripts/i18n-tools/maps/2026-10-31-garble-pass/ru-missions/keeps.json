@@ -1,0 +1,30 @@
+[
+  {
+    "term": "orbit",
+    "loc": "ru",
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.6.note",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "term": "orbit",
+    "loc": "ru",
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "term": "orbit",
+    "loc": "ru",
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.2.note",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "why": "binding inflected and split: двигателя OME на 152-й секунде включения"
+  }
+]

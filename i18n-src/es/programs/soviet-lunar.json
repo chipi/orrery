@@ -88,5 +88,12 @@
       "type": "prose",
       "md": "La segunda lección es que el secreto y la responsabilidad son opuestos, y que un programa necesita lo segundo más de lo que teme la pérdida de lo primero. Ocultar el esfuerzo soviético lo protegió de la vergüenza pública y, al hacerlo, eliminó toda fuerza externa que podría haberlo obligado a enfrentar sus problemas a tiempo. Apollo se vio obligado a ser honesto porque el mundo entero estaba mirando; al N1 se le permitió fallar discretamente, cuatro veces, porque nadie lo hacía. La visibilidad no es solo un riesgo a gestionar. Para un empeño duro e implacable, es una de las cosas que hace posible el éxito."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "La Luna: superficie, lugares de alunizaje y exploración",
+    "/fleet?focus=n1": "Flota — el lanzador superpesado N1",
+    "/moon?site=luna16": "Luna 16: primer retorno robótico de muestras",
+    "/moon?site=luna17": "Luna 17 — Lunokhod 1",
+    "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  }
 }

@@ -16,7 +16,7 @@
     },
     {
       "met": 0.005,
-      "label": "TMI-BURN",
+      "label": "TMI-ZÜNDUNG",
       "note": "Trans-Mars-Injektion (3,61 km/s ∆v) schickt MSL auf eine heliozentrische Mars-Bahn.",
       "type": "nominal"
     },
@@ -50,5 +50,6 @@
       "note": "Hazcam liefert erstes Low-Resolution-Bild der Oberfläche.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur-Oberstufe (Atlas V 541)"
 }

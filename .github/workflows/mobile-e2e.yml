@@ -19,6 +19,9 @@ on:
     workflows: ['CI']
     types: [completed]
     branches: [main]
+  # Opt-in branches (same list as ci.yml / docker-e2e.yml), on push.
+  push:
+    branches: ['e2e/**', 'tech-debt/**']
   workflow_dispatch:
 
 concurrency:
@@ -58,10 +61,7 @@ jobs:
           # moved on). Manual dispatch falls through to the ref default.
           ref: ${{ github.event.workflow_run.head_sha || github.ref }}
 
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v6
-        with:
-          node-version: 22
-          cache: npm
+      - uses: ./.github/actions/setup-node
 
       - run: npm ci
 
@@ -77,9 +77,13 @@ jobs:
       - name: Run mobile Playwright suite against the pruned build/
         run: npx playwright test --config=playwright.mobile.config.ts
 
+      - name: Tests that needed a retry
+        if: always()
+        run: node scripts/e2e-retry-summary.mjs playwright-results.json mobile-build
+
       - name: Upload Playwright report on failure
         if: failure()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: mobile-e2e-playwright-report
           path: playwright-report/
@@ -87,7 +91,7 @@ jobs:
 
       - name: Upload raw test-results on failure
         if: failure()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: mobile-e2e-test-results
           path: test-results/

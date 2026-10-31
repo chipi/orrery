@@ -76,5 +76,9 @@
       "type": "prose",
       "md": "La leçon plus profonde, encore en formation, concerne le danger de retirer une capacité avant que son remplacement ne soit assuré. L'ISS a une date de fin fixe ; ses successeurs commerciaux ne volent pas encore. Parier qu'un marché se matérialisera selon le calendrier, avec une date limite ferme et un rival déjà en orbite, est un pari dont l'enjeu n'est rien de moins que la présence humaine continue en orbite terrestre basse elle-même."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "ISS — la station qu'ils doivent remplacer",
+    "/programs/spacex": "SpaceX — le transport d'équipages et de fret dont elles dépendront"
+  }
 }

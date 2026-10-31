@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "science/observation/andromeda-galaxy.json",
+    "at": "intro_sentence",
+    "find": "крупная галактика, 2,5 млн световых лет.",
+    "replace": "крупная галактика (2,5 млн св. лет)."
+  }
+]

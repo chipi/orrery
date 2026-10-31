@@ -1,0 +1,158 @@
+[
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "tagline",
+    "old": "Plataforma polar Long March 2D/4B/4C — Yaogan, Gaofen, meteorológicos",
+    "new": "Plataforma de órbita polar Long March 2D/4B/4C — Yaogan, Gaofen, meteorológicos"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "old": "El LC-9 (también Pad 9) del Centro de Lanzamiento de Satélites Taiyuan gestiona la mayoría de los lanzamientos polares y heliosincrónicos del TYSC con Long March 2D, 4B, 4C y 6A. Cargas típicas incluyen la serie de reconocimiento Yaogan, la constelación de observación terrestre Gaofen y los satélites meteorológicos Fengyun. Activo desde 2008.",
+    "new": "El LC-9 (también Pad 9) del Centro de Lanzamiento de Satélites Taiyuan gestiona la mayoría de los lanzamientos polares y heliosincrónicos del TYSC con Long March 2D, 4B, 4C y 6A. Las cargas útiles típicas incluyen la serie de reconocimiento Yaogan, la constelación de observación terrestre Gaofen y los satélites meteorológicos Fengyun. Activo desde 2008."
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "best_known_for",
+    "old": "Plataforma polar Yaogan/Gaofen/Fengyun",
+    "new": "Plataforma de órbita polar Yaogan/Gaofen/Fengyun"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "description",
+    "old": "La generación actual de Soyuz, en servicio desde 2016. El nuevo software y los sistemas de cita asistidos por GLONASS/GPS permiten atracar en la EEI en tan solo 3 horas. Forma parte de la familia Soyuz, la dinastía de naves tripuladas más utilizada en la historia.",
+    "new": "La generación actual de Soyuz, en servicio desde 2016. El nuevo software y los sistemas de encuentro asistidos por GLONASS/GPS permiten atracar en la EEI en tan solo 3 horas. Forma parte de la familia Soyuz, la dinastía de naves tripuladas más utilizada en la historia."
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "old": "La primera misión de retorno de muestras del lado oculto lunar — un hito 53 años después de Apollo que ninguna otra agencia espacial ha intentado aún. Lanzada el 2024-05-03 en un Long March 5 desde Wenchang, Chang'e 6 utilizó el satélite de retransmisión Queqiao-2 (posicionado en órbita de halo alrededor del punto L2 Tierra-Luna desde marzo de 2024) para comunicarse con la Tierra a través del limbo lunar. El módulo de aterrizaje tocó tierra en la cuenca Apollo dentro de la gigantesca cuenca de impacto del Polo Sur-Aitken (-153,99° O, -41,64° S) el 2024-06-01 (UTC, 2024-06-02 hora de Pekín). Su taladro + pala recogieron ~1935 g de regolito de una región que ha permanecido prácticamente intacta desde el impacto formador de la cuenca hace ~4300 millones de años — material del manto lunar excavado por SPA. El módulo de ascenso despegó el 2024-06-03, se reunió con el orbitador en órbita lunar, y la cápsula de retorno aterrizó en Siziwang Banner, Mongolia Interior, el 2024-06-25 a las 14:07 hora local. Francia, Italia, Suecia y Pakistán contribuyeron con instrumentos — las primeras cargas científicas internacionales en una misión china de retorno de muestras.",
+    "new": "La primera misión de retorno de muestras del lado oculto lunar — un hito 53 años después de Apollo que ninguna otra agencia espacial ha intentado aún. Lanzada el 2024-05-03 en un Long March 5 desde Wenchang, Chang'e 6 utilizó el satélite de retransmisión Queqiao-2 (posicionado en órbita de halo alrededor del punto L2 Tierra-Luna desde marzo de 2024) para comunicarse con la Tierra a través del limbo lunar. El módulo de aterrizaje tocó tierra en la cuenca Apollo dentro de la gigantesca cuenca de impacto del Polo Sur-Aitken (-153,99° O, -41,64° S) el 2024-06-01 (UTC, 2024-06-02 hora de Pekín). Su taladro + pala recogieron ~1935 g de regolito de una región que ha permanecido prácticamente intacta desde el impacto formador de la cuenca hace ~4300 millones de años — material del manto lunar excavado por SPA. El módulo de ascenso despegó el 2024-06-03, realizó el encuentro con el orbitador en órbita lunar, y la cápsula de retorno aterrizó en Siziwang Banner, Mongolia Interior, el 2024-06-25 a las 14:07 hora local. Francia, Italia, Suecia y Pakistán contribuyeron con instrumentos — las primeras cargas útiles científicas internacionales en una misión china de retorno de muestras."
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "old": "Misión de la NASA a un asteroide de tipo M de ~230 km, creído ser el núcleo metálico expuesto de un proto-planeta diferenciado. Lanzada el 13 de octubre de 2023 en un Falcon Heavy desde Kennedy LC-39A; utiliza cuatro propulsores iónicos de efecto Hall SPT-140 como propulsión primaria de crucero y una asistencia gravitatoria de Marte en 2026 en ruta hacia una cita en Psyche en 2029. Lleva magnetómetro, formador de imágenes multiespectral y espectrómetro de rayos gamma + neutrones.",
+    "new": "Misión de la NASA a un asteroide de tipo M de ~230 km, creído ser el núcleo metálico expuesto de un proto-planeta diferenciado. Lanzada el 13 de octubre de 2023 en un Falcon Heavy desde Kennedy LC-39A; utiliza cuatro propulsores iónicos de efecto Hall SPT-140 como propulsión primaria de crucero y una asistencia gravitatoria de Marte en 2026 en ruta hacia un encuentro con Psyche en 2029. Lleva magnetómetro, formador de imágenes multiespectral y espectrómetro de rayos gamma + neutrones."
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "old": "Vehículo pesado de dos etapas construido en torno a siete motores BE-4 de metano en la primera etapa (el mismo motor que usa Vulcan) y dos motores BE-3U de hidrógeno en la segunda. Diseñado para recuperar la primera etapa mediante aterrizaje en una nave de recuperación. Coloca ~45 t en órbita baja y está certificado para despliegues NSSL Phase 3 + Project Kuiper. El vuelo inaugural NG-1 despegó de Cabo Cañaveral LC-36 el 16-01-2025 y entregó con éxito al Blue Ring pathfinder en órbita — se perdió el intento de aterrizaje de la primera etapa pero la inyección orbital fue limpia.",
+    "new": "Vehículo pesado de dos etapas construido en torno a siete motores BE-4 de metano en la primera etapa (el mismo motor que usa Vulcan) y dos motores BE-3U de hidrógeno en la segunda. Diseñado para recuperar la primera etapa mediante aterrizaje en una nave de recuperación. Coloca ~45 t en órbita baja y está certificado para despliegues NSSL Phase 3 + Project Kuiper. El vuelo inaugural NG-1 despegó de Cabo Cañaveral LC-36 el 16-01-2025 y entregó con éxito al Blue Ring pathfinder en órbita — se perdió el intento de aterrizaje de la primera etapa pero la inserción orbital fue limpia."
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "tagline",
+    "old": "Alunizador de carga lunar de primera generación de Blue Origin — vehículo de un solo estadio con hidrógeno/oxígeno, ~3 t hasta la superficie",
+    "new": "Alunizador de carga lunar de primera generación de Blue Origin — vehículo de una sola etapa con hidrógeno/oxígeno, ~3 t hasta la superficie"
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "description",
+    "old": "Alunizador criogénico de un solo estadio basado en el motor BE-7 de LH₂/LOX. El Mk1 es el precursor solo de carga de la variante de aterrizaje Artemis Mk2 tripulada mucho más grande; ambos comparten la propulsión BE-7 y la arquitectura de reutilización basada en hidrógeno. El primer vuelo lunar tripulado para transportar el Blue Moon Mk1 aún no ha despegado, con el primer aterrizaje actualmente previsto no antes de 2026. El Mk1 de carga entregará hasta ~3000 kg en la superficie lunar; el derivado tripulado Mk2 fundamentó el contrato HLS de Blue Origin otorgado por la NASA en 2023 como el segundo alunizador humano de la era Artemis junto al Starship HLS de SpaceX.",
+    "new": "Alunizador criogénico de una sola etapa basado en el motor BE-7 de LH₂/LOX. El Mk1 es el precursor solo de carga de la variante de aterrizaje Artemis Mk2 tripulada mucho más grande; ambos comparten la propulsión BE-7 y la arquitectura de reutilización basada en hidrógeno. El primer vuelo lunar tripulado para transportar el Blue Moon Mk1 aún no ha despegado, con el primer aterrizaje actualmente previsto no antes de 2026. El Mk1 de carga entregará hasta ~3000 kg en la superficie lunar; el derivado tripulado Mk2 fundamentó el contrato HLS de Blue Origin otorgado por la NASA en 2023 como el segundo alunizador humano de la era Artemis junto al Starship HLS de SpaceX."
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "old": "Familia Soyuz modernizada de RKTs Progress, con controles de vuelo digital que reemplazan los sistemas analógicos de Soyuz-FG / Soyuz-U. Variantes 2.1a (primer estadio RD-107A/RD-108A + tercer estadio RD-0124), 2.1b (tercer estadio mejorado) y 2.1v (sin impulsores, estadio único RD-110). Transporta todos los vuelos tripulados y de carga rusos modernos a la EEI además de cargas útiles Glonass, Resurs-P y Lotos-S.",
+    "new": "Familia Soyuz modernizada de RKTs Progress, con controles de vuelo digital que reemplazan los sistemas analógicos de Soyuz-FG / Soyuz-U. Variantes 2.1a (primera etapa RD-107A/RD-108A + tercera etapa RD-0124), 2.1b (tercera etapa mejorada) y 2.1v (sin impulsores, etapa única RD-110). Transporta todos los vuelos tripulados y de carga rusos modernos a la EEI además de cargas útiles Glonass, Resurs-P y Lotos-S."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "old": "La nave de carga china para la estación espacial Tiangong, que comparte herencia de la estructura básica de la nave con Tiangong-1. Reabastece los depósitos de propulsor de Tiangong y entrega racks de experimentos; primer vuelo en 2017.",
+    "new": "La nave de carga china para la estación espacial Tiangong, que comparte herencia de la estructura básica de la nave con Tiangong-1. Reabastece los depósitos de propelente de Tiangong y entrega racks de experimentos; primer vuelo en 2017."
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "description",
+    "old": "El LR87 es el motor que lanzó las diez misiones tripuladas del Gemini en el Titan II. El diseño de Aerojet coloca dos cámaras de combustión en un único conjunto turbo bomba, quemando Aerozine-50 y tetróxido de nitrógeno en un ciclo de generador de gas — una combinación hipergólica que fue equipo estándar en los misiles balísticos intercontinentales estadounidenses de la época. La elección del propulsor tuvo una consecuencia directa para la seguridad de la tripulación: a diferencia del RP-1 o el hidrógeno, la Aerozine-50 y el N2O4 se encienden al contacto, brindando una fiabilidad hipergólica que permitió al Gemini volar con asientos eyectables en lugar de una torre de escape de lanzamiento en las diez misiones tripuladas. El LR87 se desarrolló posteriormente en variantes más grandes que volaron en los Titan III y Titan IV en misiones comerciales y militares hasta octubre de 2005.",
+    "new": "El LR87 es el motor que lanzó las diez misiones tripuladas del Gemini en el Titan II. El diseño de Aerojet coloca dos cámaras de combustión en un único conjunto turbo bomba, quemando Aerozine-50 y tetróxido de nitrógeno en un ciclo de generador de gas — una combinación hipergólica que fue equipo estándar en los misiles balísticos intercontinentales estadounidenses de la época. La elección del propelente tuvo una consecuencia directa para la seguridad de la tripulación: a diferencia del RP-1 o el hidrógeno, la Aerozine-50 y el N2O4 se encienden al contacto, brindando una fiabilidad hipergólica que permitió al Gemini volar con asientos eyectables en lugar de una torre de escape de lanzamiento en las diez misiones tripuladas. El LR87 se desarrolló posteriormente en variantes más grandes que volaron en los Titan III y Titan IV en misiones comerciales y militares hasta octubre de 2005."
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "description",
+    "old": "El Raptor es el primer motor de combustión por etapas de flujo completo en alcanzar vuelo operacional. En este ciclo termodinámico, ambos propulsores —LOX y metano líquido— pasan a través de precámaras de combustión antes de entrar en la cámara de combustión principal, extrayendo la máxima energía y dejando prácticamente sin quemar propulsor residual. Los ingenieros habían estudiado el concepto durante décadas y concluyeron que era prohibitivamente complejo; SpaceX lo construyó de todas formas. Treinta y tres Raptors se encienden simultáneamente en la primera etapa de Super Heavy, y una variante optimizada para el vacío impulsa la etapa superior de Starship. El primer vuelo integrado de Starship con motores Raptor despegó el 20 de abril de 2023.",
+    "new": "El Raptor es el primer motor de combustión por etapas de flujo completo en alcanzar vuelo operacional. En este ciclo termodinámico, ambos propelentes —LOX y metano líquido— pasan a través de precámaras de combustión antes de entrar en la cámara de combustión principal, extrayendo la máxima energía y dejando prácticamente sin quemar propelente residual. Los ingenieros habían estudiado el concepto durante décadas y concluyeron que era prohibitivamente complejo; SpaceX lo construyó de todas formas. Treinta y tres Raptors se encienden simultáneamente en la primera etapa de Super Heavy, y una variante optimizada para el vacío impulsa la etapa superior de Starship. El primer vuelo integrado de Starship con motores Raptor despegó el 20 de abril de 2023."
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "description",
+    "old": "El YF-100 es el motor que llevó la capacidad de lanzamiento de China al nivel de rendimiento que Rusia y los Estados Unidos habían ocupado durante décadas. Desarrollado por AALPT en Xi'an, aplica combustión escalonada rica en oxígeno a LOX y RP-1 — el ciclo termodinámico que extrae la máxima energía de los propulsores de queroseno — y realizó su primer vuelo el 20 de septiembre de 2015. Dos YF-100 impulsan el núcleo del Long March 5, el cohete operacional más pesado de China, y variantes agrupadas vuelan en Long March 6 y Long March 7. El YF-100 sustenta el programa lunar de China, su reabastecimiento de estación espacial y su creciente cadencia de lanzamientos comerciales.",
+    "new": "El YF-100 es el motor que llevó la capacidad de lanzamiento de China al nivel de rendimiento que Rusia y los Estados Unidos habían ocupado durante décadas. Desarrollado por AALPT en Xi'an, aplica combustión escalonada rica en oxígeno a LOX y RP-1 — el ciclo termodinámico que extrae la máxima energía de los propelentes de queroseno — y realizó su primer vuelo el 20 de septiembre de 2015. Dos YF-100 impulsan el núcleo del Long March 5, el cohete operacional más pesado de China, y variantes agrupadas vuelan en Long March 6 y Long March 7. El YF-100 sustenta el programa lunar de China, su reabastecimiento de estación espacial y su creciente cadencia de lanzamientos comerciales."
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "old": "El YF-77 es el primer motor criogénico de gran escala de China que quema LOX y LH2, acabando con la dependencia de varias décadas en propulsores hipergólicos almacenables para las etapas principales. Desarrollado por AALPT y funcionando con un ciclo de generador de gas, dos YF-77 impulsan el núcleo central de Long March 5, proporcionando el aumento de eficiencia que hizo posible las misiones de regreso lunar y módulos de estación espacial sin un cohete prohibitivamente grande. Realizó su primer vuelo el 3 de noviembre de 2016, y los primeros vuelos no estuvieron exentos de dificultades — una anomalía en el YF-77 inmovilizó Long March 5 durante casi tres años antes de que los ingenieros identificaran y resolvieran el modo de fallo.",
+    "new": "El YF-77 es el primer motor criogénico de gran escala de China que quema LOX y LH2, acabando con la dependencia de varias décadas en propelentes hipergólicos almacenables para las etapas principales. Desarrollado por AALPT y funcionando con un ciclo de generador de gas, dos YF-77 impulsan el núcleo central de Long March 5, proporcionando el aumento de eficiencia que hizo posible las misiones de regreso lunar y módulos de estación espacial sin un cohete prohibitivamente grande. Realizó su primer vuelo el 3 de noviembre de 2016, y los primeros vuelos no estuvieron exentos de dificultades — una anomalía en el YF-77 inmovilizó Long March 5 durante casi tres años antes de que los ingenieros identificaran y resolvieran el modo de fallo."
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "old": "El vehículo de lanzamiento Mercury-Redstone era un derivado apto para vuelo tripulado del misil balístico Redstone del Ejército de EE. UU., modificado en el NASA Marshall Space Flight Center para las misiones tripuladas suborbitales Mercury. Propulsante líquido de una sola etapa (LOX + alcohol), 25 metros de altura con cápsula y torre de escape (~18 m sólo el propulsor), produciendo aproximadamente 347 kN (~35 toneladas-fuerza) de empuje. El primer vuelo tripulado fue Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — el primer estadounidense en el espacio, 23 días después de Gagarin. Mercury-Redstone 4 / Liberty Bell 7 siguió (1961-07-21, Gus Grissom). Tras el fallo de la escotilla de Liberty Bell 7, la NASA trasladó los vuelos orbitales Mercury al más potente Atlas LV-3B. Último vuelo 1961-07-21; total 6 vehículos Mercury-Redstone construidos, 2 vuelos tripulados realizados.",
+    "new": "El vehículo de lanzamiento Mercury-Redstone era un derivado apto para vuelo tripulado del misil balístico Redstone del Ejército de EE. UU., modificado en el NASA Marshall Space Flight Center para las misiones tripuladas suborbitales Mercury. De una sola etapa y propelente líquido (LOX + alcohol), 25 metros de altura con cápsula y torre de escape (~18 m sólo el propulsor), produciendo aproximadamente 347 kN (~35 toneladas-fuerza) de empuje. El primer vuelo tripulado fue Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — el primer estadounidense en el espacio, 23 días después de Gagarin. Mercury-Redstone 4 / Liberty Bell 7 siguió (1961-07-21, Gus Grissom). Tras el fallo de la escotilla de Liberty Bell 7, la NASA trasladó los vuelos orbitales Mercury al más potente Atlas LV-3B. Último vuelo 1961-07-21; total 6 vehículos Mercury-Redstone construidos, 2 vuelos tripulados realizados."
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "old": "El Saturn V existía para resolver una cuestión de aritmética brutal: poner una tripulación en la Luna significa lanzar aproximadamente 45 toneladas hacia una trayectoria fuera de la gravedad terrestre, y en 1961 nada en la Tierra podía lanzar una fracción de esa cantidad. Así que el equipo de Marshall de von Braun construyó la máquina más grande que jamás había volado — cinco motores F-1 en su base, cada uno el motor de cohete de cámara única más potente jamás encendido en esa época, juntos quemando aproximadamente trece toneladas de propulsor cada segundo. Todo en ella estaba dimensionado por el destino, no por lo que pareciera razonable. Que volara trece veces y jamás una sola vez dejara de alcanzar el espacio es la parte que aún sigue pareciendo casi imposible.",
+    "new": "El Saturn V existía para resolver una cuestión de aritmética brutal: poner una tripulación en la Luna significa lanzar aproximadamente 45 toneladas hacia una trayectoria fuera de la gravedad terrestre, y en 1961 nada en la Tierra podía lanzar una fracción de esa cantidad. Así que el equipo de Marshall de von Braun construyó la máquina más grande que jamás había volado — cinco motores F-1 en su base, cada uno el motor de cohete de cámara única más potente jamás encendido en esa época, juntos quemando aproximadamente trece toneladas de propelente cada segundo. Todo en ella estaba dimensionado por el destino, no por lo que pareciera razonable. Que volara trece veces y jamás una sola vez dejara de alcanzar el espacio es la parte que aún sigue pareciendo casi imposible."
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "old": "GNSS civil europeo — 34 satélites lanzados (4 IOV + 30 FOC); 27 operacionales + 1 en comisionamiento a mayo de 2026; la constelación objetivo es de 30 en órbita MEO a 23 222 km en 3 planos orbitales inclinados 56°. Primer servicio operacional en 2016; la declaración de capacidad operacional completa está pendiente del anuncio oficial de ESA/EUSPA. A diferencia de GPS (operador militar) y GLONASS (operador militar), Galileo está gestionado por EUSPA, una agencia civil de la UE. Diseñado para posicionamiento submétrico con capas de servicio abierto + comercial + Servicio Público Regulado. Carga de utilidad de Búsqueda y Rescate integrada para la detección de balizas de emergencia.",
+    "new": "GNSS civil europeo — 34 satélites lanzados (4 IOV + 30 FOC); 27 operacionales + 1 en comisionamiento a mayo de 2026; la constelación objetivo es de 30 en órbita MEO a 23 222 km en 3 planos orbitales inclinados 56°. Primer servicio operacional en 2016; la declaración de capacidad operacional completa está pendiente del anuncio oficial de ESA/EUSPA. A diferencia de GPS (operador militar) y GLONASS (operador militar), Galileo está gestionado por EUSPA, una agencia civil de la UE. Diseñado para posicionamiento submétrico con capas de servicio abierto + comercial + Servicio Público Regulado. Carga útil de Búsqueda y Rescate integrada para la detección de balizas de emergencia."
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "old": "Originalmente una plataforma Titan III / Titan IV de 1965 hasta 2005, modernizada por SpaceX en 2008 para Falcon 9. Hoy SLC-40 es la plataforma orbital de mayor cadencia jamás operada, lanzando tandas Starlink, satélites comerciales, reabastecimiento a la EEI vía Cargo Dragon y cargas de seguridad nacional estadounidense. Reconstruida tras la explosión de AMOS-6 en septiembre de 2016 con un sistema de propelente mejorado; la plataforma sigue cumpliendo la mayor parte del manifiesto SpaceX que ve el mundo.",
+    "new": "Originalmente una plataforma Titan III / Titan IV de 1965 hasta 2005, modernizada por SpaceX en 2008 para Falcon 9. Hoy SLC-40 es la plataforma orbital de mayor cadencia jamás operada, lanzando tandas Starlink, satélites comerciales, reabastecimiento a la EEI vía Cargo Dragon y cargas útiles de seguridad nacional estadounidense. Reconstruida tras la explosión de AMOS-6 en septiembre de 2016 con un sistema de propelente mejorado; la plataforma sigue cumpliendo la mayor parte del manifiesto SpaceX que ve el mundo."
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "description",
+    "old": "La pasarela orbital de la costa oeste estadounidense. Construida para Atlas-Agena en 1963; Titan III/IV hasta 2005; modernizada por SpaceX en 2011. La ventaja geográfica de Vandenberg es el corredor directo al sur sobre el Pacífico — así las cargas estadounidenses alcanzan órbitas polares y heliosíncronas sin sobrevolar tierra poblada. Hoy SLC-4E vuela Falcon 9 a las cajas polares Starlink, cargas clasificadas de la NRO, satélites de observación terrestre comerciales + USSF. SLC-4W al lado es la zona de recuperación de propulsores.",
+    "new": "La pasarela orbital de la costa oeste estadounidense. Construida para Atlas-Agena en 1963; Titan III/IV hasta 2005; modernizada por SpaceX en 2011. La ventaja geográfica de Vandenberg es el corredor directo al sur sobre el Pacífico — así las cargas útiles estadounidenses alcanzan órbitas polares y heliosíncronas sin sobrevolar tierra poblada. Hoy SLC-4E vuela Falcon 9 a las cajas polares Starlink, cargas útiles clasificadas de la NRO, satélites de observación terrestre comerciales + USSF. SLC-4W al lado es la zona de recuperación de propulsores."
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "old": "Misión rasante del Sol de la NASA. Lanzada el 2018-08-12 en un cohete Delta IV Heavy + Star 48BV con el C3 más alto jamás conseguido para una carga científica (154 km²/s²). Siete asistencias gravitacionales de Venus en seis años acercaron el perihelio desde 0,16 au (P1) hasta 0,046 au (P22, 2024-12-24) — 9,86 radios solares, 6,1 millones de km de la superficie del Sol. En P8 (2021-04-28), Parker traspasó la superficie crítica de Alfvén — la primera nave espacial en entrar en la corona solar. Velocidad máxima en el perihelio: 192,22 km/s, el objeto más rápido jamás fabricado por el ser humano.",
+    "new": "Misión rasante del Sol de la NASA. Lanzada el 2018-08-12 en un cohete Delta IV Heavy + Star 48BV con el C3 más alto jamás conseguido para una carga útil científica (154 km²/s²). Siete asistencias gravitacionales de Venus en seis años acercaron el perihelio desde 0,16 au (P1) hasta 0,046 au (P22, 2024-12-24) — 9,86 radios solares, 6,1 millones de km de la superficie del Sol. En P8 (2021-04-28), Parker traspasó la superficie crítica de Alfvén — la primera nave espacial en entrar en la corona solar. Velocidad máxima en el perihelio: 192,22 km/s, el objeto más rápido jamás fabricado por el ser humano."
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "description",
+    "old": "La primera misión lunar de la ESA y la primera nave europea en llegar a la Luna. SMART = Small Missions for Advanced Research in Technology — y la tecnología clave fue un propulsor iónico solar-eléctrico de efecto Hall (PPS-1350, el mayor de su tipo volado hasta entonces). Lanzada el 2003-09-27 como carga compartida en un Ariane 5 desde Kourou, la nave de 367 kg usó su propulsor iónico de xenón de 1,2 kW durante 13 meses para elevar lentamente su órbita terrestre, hasta ser capturada por la gravedad lunar el 2004-11-15. Operó 16 meses en una órbita lunar polar, devolviendo imágenes de alta resolución de la cámara AMIE, los primeros mapas elementales por fluorescencia de rayos X de la Luna (D-CIXS) y espectroscopía mineral infrarroja (SIR). Impactó deliberadamente en Lacus Excellentiae (34,4° S, 46,2° O) el 2006-09-03 a las 02:42 UTC — el destello del impacto fue observado desde el Telescopio Canadá-Francia-Hawái.",
+    "new": "La primera misión lunar de la ESA y la primera nave europea en llegar a la Luna. SMART = Small Missions for Advanced Research in Technology — y la tecnología clave fue un propulsor iónico solar-eléctrico de efecto Hall (PPS-1350, el mayor de su tipo volado hasta entonces). Lanzada el 2003-09-27 como carga útil compartida en un Ariane 5 desde Kourou, la nave de 367 kg usó su propulsor iónico de xenón de 1,2 kW durante 13 meses para elevar lentamente su órbita terrestre, hasta ser capturada por la gravedad lunar el 2004-11-15. Operó 16 meses en una órbita lunar polar, devolviendo imágenes de alta resolución de la cámara AMIE, los primeros mapas elementales por fluorescencia de rayos X de la Luna (D-CIXS) y espectroscopía mineral infrarroja (SIR). Impactó deliberadamente en Lacus Excellentiae (34,4° S, 46,2° O) el 2006-09-03 a las 02:42 UTC — el destello del impacto fue observado desde el Telescopio Canadá-Francia-Hawái."
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "old": "Motor de impulsor de ocho agrupados para Saturno I/IB — el ensayo del F-1",
+    "new": "Motor de primera etapa de ocho agrupados para Saturno I/IB — el ensayo del F-1"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "description",
+    "old": "Cohete de tres etapas construido por el CNES por encargo de la ESA tras la cancelación del programa Europa — primeras y segundas etapas hipergólicas con UH-25 / N2O4, coronadas por la etapa superior HM7 criogénica (LH₂ / LOX). 11 lanzamientos desde Kourou entre el 24-12-1979 y el 22-02-1986 llevaron 27 satélites europeos de telecomunicaciones y ciencia, incluidos ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B y la sonda Giotto de la ESA al cometa Halley. Retirado en favor de los Ariane 2/3/4 más grandes; la tecnología criogénica HM7 perduró a través de Ariane 4 y llegó a la etapa ESC-A del Ariane 5.",
+    "new": "Cohete de tres etapas construido por el CNES por encargo de la ESA tras la cancelación del programa Europa — primeras y segundas etapas hipergólicas con UH-25 / N2O4, coronadas por la etapa superior HM7 criogénica (LH₂ / LOX). 11 lanzamientos desde Kourou entre el 24-12-1979 y el 22-02-1986 llevaron 27 satélites europeos de telecomunicaciones y ciencia, incluidos ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B y la sonda Giotto de la ESA para el sobrevuelo del cometa Halley. Retirado en favor de los Ariane 2/3/4 más grandes; la tecnología criogénica HM7 perduró a través de Ariane 4 y llegó a la etapa ESC-A del Ariane 5."
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "old": "Segundo orbitador lunar de China, lanzado el 2010-10-01. Chang'e 2 orbitó la Luna desde 2010 hasta 2011 y luego abandonó la órbita lunar en junio de 2011 para realizar una misión de exploración espacial profunda ampliada. Procedió hacia el punto L2 Sol-Tierra (llegada en agosto de 2011), luego abandonó L2 en abril de 2012 para realizar un histórico vuelo rasante del asteroide 4179 Teutates, ejecutando un acercamiento cercano el 2012-12-13 a una distancia de ~770 m — la primera nave espacial en visitar el asteroide. Después del encuentro con Teutates, Chang'e 2 continuó en el espacio profundo en una trayectoria heliocéntrica, convirtiéndose en un objeto interplanetario a la deriva.",
+    "new": "Segundo orbitador lunar de China, lanzado el 2010-10-01. Chang'e 2 orbitó la Luna desde 2010 hasta 2011 y luego abandonó la órbita lunar en junio de 2011 para realizar una misión de exploración espacial profunda ampliada. Procedió hacia el punto L2 Sol-Tierra (llegada en agosto de 2011), luego abandonó L2 en abril de 2012 para realizar un histórico sobrevuelo del asteroide 4179 Teutates, ejecutando un acercamiento cercano el 2012-12-13 a una distancia de ~770 m — la primera nave espacial en visitar el asteroide. Después del encuentro con Teutates, Chang'e 2 continuó en el espacio profundo en una trayectoria heliocéntrica, convirtiéndose en un objeto interplanetario a la deriva."
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "old": "Segundo orbitador lunar chino; primer vuelo rasante de nave espacial al asteroide 4179 Teutates (13 de diciembre de 2012, acercamiento mínimo de ~770 m)",
+    "new": "Segundo orbitador lunar chino; primer sobrevuelo de una nave espacial al asteroide 4179 Teutates (13 de diciembre de 2012, acercamiento mínimo de ~770 m)"
+  }
+]

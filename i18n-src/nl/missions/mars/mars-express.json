@@ -4,7 +4,7 @@
   "payload": "1183 kg (1123 kg orbiter + 60 kg Beagle 2-lander)",
   "delta_v": "~4,5 km/s",
   "type": "ORBITER · ACTIEF",
-  "first": "Europa's eerste interplanetaire missie; langst lopende niet-NASA Mars-orbiter",
+  "first": "Europa's eerste interplanetaire missie; langstlopende Marsorbiter buiten NASA",
   "description": "ESA's eerste missie naar een andere planeet dan de Aarde. De orbiter heeft het langste continue record van Mars' atmosfeer geproduceerd, met kartering van waterijsdepots, methaanpluimen en het driedimensionale weer van de planeet. Beagle 2, de Britse lander die het droeg, bereikte het oppervlak maar ontvouwde nooit volledig zijn zonnepanelen — verklaard verloren in 2004, intact gevonden door NASA's Mars Reconnaissance Orbiter in 2015. De orbiter is in zijn derde decennium van werking.",
   "events": [
     {
@@ -22,13 +22,13 @@
     {
       "met": 200,
       "label": "BEAGLE 2 VRIJGAVE",
-      "note": "Lander scheidt van orbiter voor onafhankelijke afdaling.",
+      "note": "De lander scheidt zich los van de orbiter voor een onafhankelijke afdaling.",
       "type": "nominal"
     },
     {
       "met": 206,
       "label": "MARS-BAAN INSERTIE",
-      "note": "Hoofdmotorverbranding van 37 minuten vangt orbiter in Mars-baan op kerstdag 2003.",
+      "note": "Hoofdmotorontsteking van 37 minuten vangt orbiter in Mars-baan op kerstdag 2003.",
       "type": "nominal"
     },
     {
@@ -37,5 +37,6 @@
       "note": "Verwacht eerste signaal niet ontvangen; lander verklaard verloren.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "bovenste trap Fregat"
 }

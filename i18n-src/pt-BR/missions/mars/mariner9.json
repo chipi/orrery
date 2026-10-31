@@ -28,7 +28,7 @@
     {
       "met": 168,
       "label": "MOI",
-      "note": "Queimada de motor sólido de 15 min coloca Mariner 9 em órbita de 1.398 × 17.917 km, 64,4° — primeira órbita de outro planeta.",
+      "note": "Queima de motor sólido de 15 min coloca Mariner 9 em órbita de 1.398 × 17.917 km, 64,4° — primeira órbita de outro planeta.",
       "type": "info"
     },
     {
@@ -43,5 +43,6 @@
       "note": "1972-10-27. Gás de controle de atitude esgotado.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "estágio superior Centaur D-1A"
 }

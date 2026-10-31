@@ -1,6 +1,6 @@
 {
   "name": "Ariane 6",
-  "type": "Heavy-lift, expendable",
+  "type": "重型运载火箭，一次性",
   "first": "欧洲对Ariane 5的继任者，配备可重新启动的上面级用于直接入轨",
   "description": "双级运载火箭，有两种构型：Ariane 62配备两台固体助推器，Ariane 64配备四台。采用Vinci发动机的低温上面级可重新启动，能够进行复杂的多轨道部署和直接行星际注入。首次飞行于2024年7月。"
 }

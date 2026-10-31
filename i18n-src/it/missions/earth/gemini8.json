@@ -6,7 +6,7 @@
   "type": "CON EQUIPAGGIO IN ORBITA TERRESTRE · VOLATO",
   "first": "Primo aggancio di due veicoli spaziali; rientro d'emergenza",
   "dispatch": "Gemini 8 realizzò il primo aggancio di due veicoli spaziali in orbita — e poi rischiò di uccidere il suo equipaggio. Pochi minuti dopo che Neil Armstrong aveva manovrato la sua Gemini in un aggancio bloccato con un target Agena, la coppia collegata iniziò a ruotare, sempre più velocemente, fino a ruzzolare circa una volta al secondo e la vista degli astronauti cominciò a oscurarsi verso il blackout. Armstrong sganciò — il che peggiorò solo la situazione, dato che il guasto era nel suo stesso veicolo — poi spense i propulsori principali e fermò la rotazione con il sistema di controllo per il rientro, una decisione che salvò le loro vite ma, secondo le regole, impose un rientro d'emergenza immediato. Fu il momento più pericoloso del programma, ed era il primo volo spaziale di Armstrong. La diagnosi calma e rapida in una situazione critica è esattamente il temperamento che la NASA avrebbe ricordato quando scelse chi sarebbe atterrato sulla Luna.",
-  "description": "Neil Armstrong e David Scott realizzarono il primo aggancio di due veicoli spaziali — con un target Agena — il 16 marzo 1966. Un propulsore di assetto bloccato causò poi un violento ruzzolamento; Armstrong sganciò e usò il sistema di controllo per il rientro per recuperare, forzando un atterraggio d'emergenza dopo 10 h 41 m. Fu il primo volo spaziale di Armstrong.",
+  "description": "Neil Armstrong e David Scott realizzarono il primo aggancio di due veicoli spaziali — con un veicolo bersaglio Agena — il 16 marzo 1966. Un propulsore di assetto rimasto bloccato provocò poi una violenta rotazione incontrollata; Armstrong si sganciò e usò il sistema di controllo dell'ingresso atmosferico per riprendere il controllo, costringendo a un atterraggio d'emergenza dopo 10 h 41 m. Fu il primo volo spaziale di Armstrong.",
   "events": [
     {
       "met": 0,
@@ -17,7 +17,7 @@
     {
       "met": 0.28,
       "label": "PRIMO AGGANCIO",
-      "note": "Primo aggancio di due veicoli spaziali — Gemini 8 con il target Agena.",
+      "note": "Primo aggancio di due veicoli spaziali — Gemini 8 con il veicolo bersaglio Agena.",
       "type": "info"
     },
     {

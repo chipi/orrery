@@ -1,21 +1,21 @@
 {
   "name": "수성",
-  "type": "유형 행성",
+  "type": "지구형 행성",
   "fact": "표면 온도가 하루 동안 610°C까지 출렁인다. 대기는 없고 우주에 그대로 노출된다.",
   "bio": "가장 작은 행성이다. 큰 이심률(e=0.206) 궤도로 근일점 부근에서 눈에 띄게 가속한다. 태양에 가장 가깝지만, 금성이 더 뜨겁다.",
   "links": [
     {
-      "l": "Mercury — Wikipedia",
+      "l": "수성 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Mercury_(planet)",
       "t": "intro"
     },
     {
-      "l": "Mercury (NASA Solar System Exploration)",
+      "l": "수성 (NASA Solar System Exploration)",
       "u": "https://science.nasa.gov/mercury/",
       "t": "intro"
     },
     {
-      "l": "MESSENGER mission overview (NASA)",
+      "l": "MESSENGER 임무 개요 (NASA)",
       "u": "https://science.nasa.gov/mission/messenger/",
       "t": "core"
     },

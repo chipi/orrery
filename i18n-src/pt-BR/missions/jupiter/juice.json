@@ -1,7 +1,7 @@
 {
   "name": "JUICE",
   "vehicle": "Ariane 5 ECA",
-  "payload": "6000 kg com propelente (2900 kg a seco) — a maior espaçonave interplanetária já construída pela Europa. 10 instrumentos: JANUS (visível), MAJIS (IV), UVS, SWI (sub-mm), GALA (altímetro a laser), RIME (sondador de radar, NASA), J-MAG (magnetômetro), PEP (partículas), RPWI (ondas de plasma), 3GM (ciência de rádio). Painéis solares de 85 m² dimensionados para operar a ~5,5 UA.",
+  "payload": "6000 kg com propelente (2900 kg a seco) — a maior espaçonave interplanetária já construída pela Europa. 10 instrumentos: JANUS (visível), MAJIS (IV), UVS, SWI (sub-mm), GALA (altímetro a laser), RIME (sondador de radar, NASA), J-MAG (magnetômetro), PEP (partículas), RPWI (ondas de plasma), 3GM (ciência de rádio). Painéis solares de 85 m² dimensionados para operar a ~5,5 au.",
   "delta_v": "~3,0 km/s (sequência de assistências gravitacionais + inserção em órbita de Júpiter + inserção em órbita de Ganimedes)",
   "type": "ORBITADOR · ATIVO",
   "first": "Maior sonda interplanetária construída na Europa; primeira sonda a orbitar uma lua de outro planeta (Ganimedes, 2034)",

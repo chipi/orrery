@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "A lição mais profunda é que ambição e orçamento são separáveis. A JAXA faz ciência de fronteira com uma fração do financiamento de uma superpotência ao escolher objetivos estreitos e difíceis e voar enxuto — prova de que a liderança na exploração está disponível para qualquer um disposto a se especializar profundamente e improvisar bem, em vez de apenas para aqueles que podem pagar naves principais."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Lua — o local de pouso do SLIM",
+    "/explore": "Explorar — Vênus e os planetas internos",
+    "/programs/hayabusa": "Hayabusa — a campanha da JAXA de retorno de amostras de asteroides"
+  }
 }

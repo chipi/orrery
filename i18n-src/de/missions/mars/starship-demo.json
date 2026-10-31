@@ -21,7 +21,7 @@
     },
     {
       "met": 2,
-      "label": "TMI-VERBRENNUNG",
+      "label": "TMI-ZÜNDUNG",
       "note": "Trans-Mars-Injektion aus vollgetanktem LEO-Zustand.",
       "type": "nominal"
     },
@@ -31,5 +31,6 @@
       "note": "Angetriebener Abstieg zur Marsoberfläche – keine Fallschirme, keine Airbags, kein Himmelskran.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Starship-Oberstufe"
 }

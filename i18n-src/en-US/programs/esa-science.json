@@ -28,5 +28,12 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of ESA's science is that patience is a scientific instrument. Missions like Rosetta and Gaia deliver nothing for years and then everything at once, and they are only possible for an organization willing to commit to a decade-long payoff. The willingness to wait — to fund and fly a mission whose results arrive near its end — is itself a capability, and one Europe has made a specialty." },
     { "type": "prose", "md": "The deeper lesson is that focus beats breadth for a mid-sized power. ESA cannot do everything NASA does, so it does a few things no one else has done — land on a comet, map the galaxy, survey the dark universe — and becomes a leader through depth rather than scale. Picking the right hard problem, and solving it definitively, is how a coalition punches above its budget." }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Explore — comets, and the deep sky ESA charts",
+    "/fleet?focus=rosetta": "Fleet — Rosetta, Gaia & Euclid",
+    "/programs/ariane": "Ariane — the rocket that launches ESA's science",
+    "/earth?site=gaia": "Gaia at L2",
+    "/earth?site=xmm": "XMM-Newton"
+  }
 }

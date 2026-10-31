@@ -1,0 +1,4 @@
+{
+  "prompt": ["\\b(terminolog|space terms?|term drift|the glossary|glossary terms?|translated the same)"],
+  "bash": ["term-drift\\.mjs", "term-apply\\.mjs", "term-keep\\.mjs", "term-workfile\\.mjs"]
+}

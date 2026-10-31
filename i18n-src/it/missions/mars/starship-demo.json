@@ -16,12 +16,12 @@
     {
       "met": 1,
       "label": "RICARICA ORBITALE",
-      "note": "Appuntamento con petroliera e trasferimento di propellente in LEO su più voli.",
+      "note": "Rendezvous con la Starship cisterna e trasferimento di propellente in LEO nell'arco di più voli.",
       "type": "nominal"
     },
     {
       "met": 2,
-      "label": "BRUCIATURA TMI",
+      "label": "ACCENSIONE TMI",
       "note": "Iniezione Trans-Mars dallo stato LEO a pieno carburante.",
       "type": "nominal"
     },
@@ -31,5 +31,6 @@
       "note": "Discesa motorizzata sulla superficie di Marte: senza paracadute, senza airbag, senza gru aerea.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "stadio superiore Starship"
 }

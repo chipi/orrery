@@ -9,6 +9,7 @@
  * so Settings reflects it across launches.
  */
 import { base } from '$app/paths';
+import * as m from '$lib/paraglide/messages';
 import { assetUrl } from '$lib/asset-url';
 import { getStorageBackend, type StorageBackend } from './storage-backend';
 import { initOfflineResolver, clearOfflineResolver } from './offline-assets';
@@ -154,7 +155,7 @@ export async function downloadTier(tier: OfflineTier, allowCellular = false): Pr
   try {
     manifest = await fetchManifest();
   } catch (e) {
-    offline.error = `Couldn't load the asset list (${(e as Error).message}).`;
+    offline.error = m.offline_error_list({ reason: (e as Error).message });
     offline.status = 'error';
     return;
   }

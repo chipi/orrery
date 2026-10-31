@@ -1,0 +1,107 @@
+[
+  {
+    "term": "inclination",
+    "loc": "fr",
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "description",
+    "why": "variant: orbite inclinée à 71,9° (participle of the binding)"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "fleet/engine/lr87.json",
+    "at": "description",
+    "why": "combustion: burning Aerozine"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "why": "combustion: burning LOX and LH2"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "why": "combustion: hydrogen-burning engines"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "why": "combustion: burned storable liquids"
+  },
+  {
+    "term": "payload",
+    "loc": "fr",
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "why": "variant: capacité d'emport"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "description",
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "why": "variant: first stage (Saturn I/IB booster = premier étage)"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "dispatch",
+    "why": "variant: propulseurs (rockets in general sense)"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/launch-site/starbase-orbital-a.json",
+    "at": "description",
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "description",
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "tagline",
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "best_known_for",
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "dispatch",
+    "why": "variant: lanceur (rocket in general sense)"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "why": "variant: propulseur (rocket body, Redstone single stage)"
+  }
+]

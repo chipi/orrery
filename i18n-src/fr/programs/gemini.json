@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La deuxième leçon se trouve dans la façon dont Gemini a géré ses premiers désastres de sortie spatiale — non pas comme des embarras à enterrer, mais comme de l'information. La technique échouait, alors ils l'ont dit, ont compris pourquoi, et l'ont reconstruite : prises, attaches, pratique sous l'eau, jusqu'à ce que cela fonctionne. Une équipe qui peut admettre qu'une chose ne fonctionne pas, à temps pour la corriger avant que cela compte, vaut bien plus qu'une équipe qui ne semble jamais échouer."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terre — orbites, rendez-vous et sites de lancement",
+    "/science/mission-phases/edl": "Entrée, descente et atterrissage"
+  }
 }

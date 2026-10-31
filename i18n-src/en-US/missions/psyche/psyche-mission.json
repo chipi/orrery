@@ -11,5 +11,6 @@
     { "met": 30, "label": "ION CRUISE BEGINS", "note": "Four Hall-effect ion thrusters take over. Continuous low-thrust acceleration over 4+ years.", "type": "info" },
     { "met": 945, "label": "MARS GRAVITY ASSIST", "note": "2026-05-15. Closest approach 4,609 km — Mars flyby completed.", "type": "info" },
     { "met": 2118, "label": "PSYCHE ARRIVAL", "note": "Ion-thrust gravitational capture into 700-km orbit. 26-month mission, four orbit phases.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Falcon Heavy second stage"
 }

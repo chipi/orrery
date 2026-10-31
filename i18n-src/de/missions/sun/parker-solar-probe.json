@@ -16,7 +16,7 @@
     {
       "met": 52,
       "label": "VGA-1",
-      "note": "Erste Venusgravitationshilfe 2018-10-03.",
+      "note": "Erster Venus-Swing-by 2018-10-03.",
       "type": "info"
     },
     {
@@ -43,5 +43,6 @@
       "note": "2024-12-24. 9,86 R☉ (6,1 M km von der Sonne). ~191 km/s. Wärmeschutzschild 1.377 °C.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "dritte Feststoffstufe Star 48BV (Delta IV Heavy: Zentralstufe + 2 Booster)"
 }

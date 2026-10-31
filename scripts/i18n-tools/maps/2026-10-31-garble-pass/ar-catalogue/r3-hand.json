@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "bio",
+    "find": "صوّرت المكعبة الفضائية LICIACube",
+    "replace": "صوّرت المكعبة الفضائية CubeSat LICIACube"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "description",
+    "find": "للأقمار الصناعية (PSLV) من ISRO",
+    "replace": "للأقمار الصناعية من ISRO"
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "find": "من فئة أبولو",
+    "replace": "من فئة Apollo"
+  }
+]

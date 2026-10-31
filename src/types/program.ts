@@ -74,6 +74,9 @@ export interface ProgramOverlay {
   narrative: ProgramBlock[];
   legacy: ProgramBlock[];
   lessons: ProgramBlock[];
+  /** Translated see-also and surface-site link text, keyed by the link's href
+   *  (surface sites: `/<surface>?site=<site>`). */
+  link_labels?: Record<string, string>;
 }
 
 export type Program = ProgramBase & ProgramOverlay;

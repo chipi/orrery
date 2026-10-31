@@ -191,9 +191,7 @@
   // INTENTIONALLY do not close the regime panel (per #354's 2026-06-22
   // stacking direction); the satellite panel paints on top at z=30.
   function onResidentClick(id: string) {
-    (
-      window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-    ).__surfaceSceneSelectSite?.(id);
+    window.__surfaceSceneSelectSite?.(id);
   }
 
   onMount(async () => {

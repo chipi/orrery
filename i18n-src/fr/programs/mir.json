@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La deuxième leçon est que le partenariat international peut soutenir ce que la fierté nationale ne peut se permettre. Mir a survécu à ses années les plus difficiles parce que la coopération a remplacé la compétition — parce qu'un ancien adversaire avait des raisons d'aider à la maintenir en vol. La même logique a construit l'ISS et la maintient en orbite : aucune nation seule ne finance plus une présence humaine permanente. Mir est l'endroit où ce changement a d'abord été imposé par les circonstances puis choisi délibérément, et c'est l'un des changements les plus lourds de conséquences dans l'histoire du vol spatial."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terre — orbites, rendez-vous et sites de lancement",
+    "/fleet?focus=mir": "Flotte — la station spatiale Mir"
+  }
 }

@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "description",
+    "find": "El primer orbitador operativo del transbordador espacial",
+    "replace": "El primer orbitador operativo del Space Shuttle"
+  }
+]

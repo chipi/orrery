@@ -1,11 +1,11 @@
 {
-  "description": "Zweitgrößter Mond des Sonnensystems und der einzige Mond mit einer substanziellen Atmosphäre — dichter als die der Erde. Unter dem orangefarbenen Tholin-Dunst liegt der einzige bekannte Himmelskörper außer der Erde mit stabilen Flüssigkeiten an seiner Oberfläche: Kohlenwasserstoffseen und -meere aus Methan und Ethan in den Polregionen, gespeist von einem aktiven Methan-Wasserkreislauf mit Wolken, Regen und Flüssen, die ein Grundgestein aus Wassereis ausformen. Huygens (ESA) führte 2005 die erste Landung auf einem anderen Mond als dem der Erde durch. NASAs Dragonfly wird 2034 als nuklear betriebener Drehflügler eintreffen und zwischen Titans organikreichen Landschaften umherspringen.",
+  "description": "Zweitgrößter Mond des Sonnensystems und der einzige Mond mit einer nennenswerten Atmosphäre — dichter als die der Erde. Unter dem orangefarbenen Tholin-Dunst liegt der einzige bekannte Himmelskörper außer der Erde mit stabiler Flüssigkeit an der Oberfläche: Kohlenwasserstoffseen und -meere aus Methan und Ethan in den Polarregionen, gespeist von einem aktiven hydrologischen Kreislauf des Methans mit Wolken, Regen und Flüssen, die sich in das Grundgestein aus Wassereis graben. Huygens (ESA) gelang 2005 die erste Landung auf einem anderen Mond als dem der Erde. NASAs Dragonfly wird 2034 als nuklear angetriebener Drehflügler eintreffen und zwischen Titans organikreichen Landschaften umherhüpfen.",
   "surface_composition": "Grundgestein aus Wassereis unter organischen Dünen + Kohlenwasserstoffseen (Methan / Ethan) + eine Stickstoff-Methan-Atmosphäre mit dem 1,45-fachen des irdischen Meeresspiegeldrucks. Tholin-Dunst färbt den Himmel orange.",
   "mission_visits": [
     "Pioneer 11 — USA, 1979 (erste Nahaufnahmen)",
     "Voyager 1 — USA, 1980 (Atmosphärenprofil)",
     "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (Orbitalvermessung + Landung auf der Oberfläche)",
-    "Dragonfly — USA, Start 2028 (Rotorcraft-Lander)"
+    "Dragonfly — USA, Start 2028 (Drehflügler-Lander)"
   ],
   "library_labels": {
     "titan-wiki": "Wikipedia — Titan",
@@ -17,7 +17,7 @@
     {
       "tab": "orbits",
       "section": "apsides",
-      "why": "Titan befindet sich in 1:1 Spin-Orbit-Resonanz mit Saturn — zeigt immer dieselbe Seite. Seine 1,22-Millionen-km-Halbachse platziert es in der Nähe von Saturns äußerer Hill-Sphäre."
+      "why": "Titan steht in einer 1:1-Spin-Bahn-Resonanz mit dem Saturn — er zeigt ihm immer dieselbe Seite. Mit einer großen Halbachse von 1,22 Millionen km liegt er nahe der äußeren Hill-Sphäre des Saturn."
     },
     {
       "tab": "planets",

@@ -22,8 +22,10 @@ function seed(root: string) {
   writeFileSync(path.join(b, 'images/fleet-galleries/dawn/01.jpg'), 'x');
   writeFileSync(path.join(b, 'audio/episodes/a.mp3'), 'x');
   writeFileSync(path.join(b, 'textures/2k_mars.jpg'), 'x'); // bundled — must survive
-  writeFileSync(path.join(b, 'data/i18n/en-US.json'), '{}'); // default — must survive
+  writeFileSync(path.join(b, 'data/i18n/en-US.json'), '{}'); // default whole bundle — pruned
+  writeFileSync(path.join(b, 'data/i18n/en-US.core.json'), '{}'); // default chunk — must survive
   writeFileSync(path.join(b, 'data/i18n/de.json'), '{}'); // non-default — pruned
+  writeFileSync(path.join(b, 'data/i18n/de.core.json'), '{}'); // non-default chunk — pruned
   writeFileSync(path.join(b, 'data/i18n/en-US/missions/x.json'), '{}'); // raw tree — pruned
   writeFileSync(path.join(b, 'data/i18n/de/missions/x.json'), '{}'); // raw tree — pruned
   writeFileSync(path.join(b, 'app.js'), 'x'); // survives
@@ -50,12 +52,14 @@ describe('prune-streamed-assets (MOBILE=1)', () => {
     expect(existsSync(path.join(b, 'images'))).toBe(false);
     expect(existsSync(path.join(b, 'audio'))).toBe(false);
     expect(existsSync(path.join(b, 'data/i18n/de.json'))).toBe(false);
+    expect(existsSync(path.join(b, 'data/i18n/de.core.json'))).toBe(false);
+    expect(existsSync(path.join(b, 'data/i18n/en-US.json'))).toBe(false); // whole bundle, unused
     expect(existsSync(path.join(b, 'data/i18n/en-US'))).toBe(false); // raw tree
     expect(existsSync(path.join(b, 'data/i18n/de'))).toBe(false);
     expect(existsSync(path.join(b, 'app.js.br'))).toBe(false);
     // kept
     expect(existsSync(path.join(b, 'textures/2k_mars.jpg'))).toBe(true);
-    expect(existsSync(path.join(b, 'data/i18n/en-US.json'))).toBe(true); // default locale
+    expect(existsSync(path.join(b, 'data/i18n/en-US.core.json'))).toBe(true); // default chunk
     expect(existsSync(path.join(b, 'app.js'))).toBe(true);
   });
 });

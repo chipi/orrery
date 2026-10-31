@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "更深层的教训在于持续传统的价值，而非单次胜利。该项目的真正力量不在于最初的四台望远镜，而在于它们所开启的雄心延续——数十年如一日地致力于建造更强大的观测之眼。单个任务会老化和终结；而始终建造下一代更优秀天文台的传统，才是保持视野不断拓展的关键。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=hubble": "航天器 — Hubble、Chandra、Spitzer 与 JWST",
+    "/programs/space-shuttle": "Space Shuttle — 发射并维修 Hubble 的飞行器",
+    "/explore": "探索 — 这些望远镜揭示的深空天体",
+    "/earth?site=hubble": "近地轨道上的 Hubble",
+    "/earth?site=chandra": "Chandra X 射线天文台"
+  }
 }

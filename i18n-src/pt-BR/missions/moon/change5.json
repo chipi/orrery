@@ -16,7 +16,7 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Inserção da órbita lunar.",
+      "note": "Inserção em órbita lunar.",
       "type": "nominal"
     },
     {
@@ -49,5 +49,6 @@
       "note": "Cápsula de amostra pousa na Mongólia Interior em 16/12/2020.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "estágio superior YZ-1 do Long March 5"
 }

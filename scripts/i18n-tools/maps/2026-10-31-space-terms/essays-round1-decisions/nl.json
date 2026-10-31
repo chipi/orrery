@@ -1,0 +1,300 @@
+[
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb omitted naturally (hemellichaam in de asteroidengordel)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.15.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'planeten eromheen' - natural rendering of 'planets orbiting it'"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.13.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: cirkelt (verb, planet orbits the Sun)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.5.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "variant: banen (hyperbolic trajectories / trajectory design)"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.28.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "variant: koerscorrecties (standard term for trajectory-correction maneuvers)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.29.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative 'the course/direction is clear'"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.29.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "geen drijfgas dat kan opraken",
+    "replace": "geen drijfstof die kan opraken",
+    "why": "propellant rendered drijfgas; relative pronoun agrees with de-word"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "in een baan te koppelen met een wachtend schip",
+    "replace": "in een baan een rendez-vous met een wachtend schip uit te voeren",
+    "why": "rendezvous rendered 'koppelen' (= docking)"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.7.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "diepe burns",
+    "replace": "diepe ontstekingen",
+    "why": "English loanword 'burns' left in; binding ontsteking"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burned manuscript' - fire damage"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burn it on the way up' = consume the machine"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "variant: ontstoken (engines ignited) - correct verb form of ontsteking"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "variant: ontstoken (engines ignited)"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.9.caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "de overdrachtsburn",
+    "replace": "de overdrachtsontsteking",
+    "why": "English loanword 'burn' left in; binding ontsteking"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "elke motorbrand",
+    "replace": "elke motorontsteking",
+    "why": "'motorbrand' means an engine fire; engine burn is ontsteking"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "chemical burn = combustion here (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burning the most propellant' = consumption (verbruikt)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "het meeste drijfgas",
+    "replace": "de meeste drijfstof",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.16.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "stem gap: tweetraps"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.6.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "zoveel drijfgas",
+    "replace": "zoveel drijfstof",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.10.text",
+    "term": "propellant",
+    "decision": "change",
+    "find": "Zonder drijfgas",
+    "replace": "Zonder drijfstof",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.11.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "altijd drijfgas mee",
+    "replace": "altijd drijfstof mee",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.11.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "gebruiken het veel efficiënter",
+    "replace": "gebruiken die veel efficiënter",
+    "why": "pronoun agrees with de-word drijfstof"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.11.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "geen drijfgas meenemen",
+    "replace": "geen drijfstof meenemen",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.12.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgasbudget",
+    "replace": "drijfstofbudget",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.15.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "door drijfgas beperkt systeem",
+    "replace": "door drijfstof beperkt systeem",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.15.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "extra drijfgasmassa",
+    "replace": "extra drijfstofmassa",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.17.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "kan een drijfgas verhitten",
+    "replace": "kan een drijfstof verhitten",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.17.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "en dat door een straalpijp uitstoten",
+    "replace": "en die door een straalpijp uitstoten",
+    "why": "pronoun agrees with de-word drijfstof"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.25.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "enorm duur in drijfgas",
+    "replace": "enorm duur in drijfstof",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.25.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "jaren aan drijfgas",
+    "replace": "jaren aan drijfstof",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "kilogram drijfgas per seconde",
+    "replace": "kilogram drijfstof per seconde",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.5.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgas dat voor de terugkeerontsteking",
+    "replace": "drijfstof die voor de terugkeerontsteking",
+    "why": "propellant rendered drijfgas; relative pronoun agrees with de-word"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.10.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "inclusief drijfgas",
+    "replace": "inclusief drijfstof",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.11.caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "genoeg drijfgas",
+    "replace": "genoeg drijfstof",
+    "why": "propellant rendered drijfgas"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.29.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "de keuze van het drijfgas",
+    "replace": "de keuze van de drijfstof",
+    "why": "propellant rendered drijfgas"
+  }
+]

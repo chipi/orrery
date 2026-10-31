@@ -1,0 +1,100 @@
+[
+  {
+    "term": "orbit",
+    "loc": "ru",
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "narrative_101.0",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/_landing.json",
+    "at": "chapters.1.diagram_caption",
+    "why": "burning fuel = combustion"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.0",
+    "why": "solid motor burns at a controlled rate = combustion"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.0",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "body_paragraphs.0",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "term": "entry",
+    "loc": "ru",
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "body_paragraphs.3",
+    "why": "re-entry engine = the braking (deorbit) engine, not atmospheric entry"
+  },
+  {
+    "term": "entry",
+    "loc": "ru",
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "why": "'re-entry into 1 g' is vestibular, not atmospheric entry"
+  }
+]

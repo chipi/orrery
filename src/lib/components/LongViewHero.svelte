@@ -6,6 +6,7 @@
   is real HTML type (Bebas) overlaid, so it stays sharp + localisable.
 -->
 <script lang="ts">
+  import * as m from '$lib/paraglide/messages';
   // Deterministic star scatter (no Math.random so SSR + client match).
   const STARS = [
     [40, 44, 1.1, 0.5],
@@ -136,8 +137,8 @@
   </svg>
 
   <div class="lv-text">
-    <h1 class="lv-title">The Long View</h1>
-    <p class="lv-kicker">Essays from Orrery · one story, told in a spiral</p>
+    <h1 class="lv-title">{m.essays_title()}</h1>
+    <p class="lv-kicker">{m.essays_kicker()}</p>
   </div>
 </div>
 

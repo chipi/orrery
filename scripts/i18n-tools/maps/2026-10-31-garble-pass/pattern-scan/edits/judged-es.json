@@ -1,0 +1,50 @@
+[
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "fact",
+    "old": "Mars Science Laboratory. Alimentado por RTG (sin dependencia solar), del tamaño de un coche (899 kg), aún operativo más de una década después del aterrizaje. Confirmó que el cráter Gale albergó un entorno lacustre habitable en el pasado lejano. Asciende la secuencia estratigráfica del Monte Sharp — lecturas mil-millón-de-años-tras-mil-millón-de-años de la historia ambiental de Marte.",
+    "new": "Mars Science Laboratory. Alimentado por RTG (sin dependencia solar), del tamaño de un coche (899 kg), aún operativo más de una década después del aterrizaje. Confirmó que el cráter Gale albergó un entorno lacustre habitable en el pasado lejano. Asciende la secuencia estratigráfica del Monte Sharp — lecturas de mil millones de años en mil millones de años de la historia ambiental de Marte."
+  },
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "fact",
+    "old": "Primer sismógrafo planetario dedicado en Marte. Detectó más de 1300 maremotos, incluido un terremoto récord de magnitud 4,7 (S1222a) en mayo de 2022. La sonda de flujo de calor (HP³) no logró penetrar el regolito inesperadamente cohesivo. La misión terminó en diciembre de 2022 cuando la acumulación de polvo en los paneles solares redujo la potencia por debajo del umbral de funcionamiento.",
+    "new": "Primer sismógrafo planetario dedicado en Marte. Detectó más de 1300 sismos marcianos, incluido un terremoto récord de magnitud 4,7 (S1222a) en mayo de 2022. La sonda de flujo de calor (HP³) no logró penetrar el regolito inesperadamente cohesivo. La misión terminó en diciembre de 2022 cuando la acumulación de polvo en los paneles solares redujo la potencia por debajo del umbral de funcionamiento."
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "capability",
+    "old": "Primer EDL marciano exitoso: demostró que el alunizaje suave era un problema resuelto antes de que el hardware estadounidense lo intentara.",
+    "new": "Primer EDL marciano exitoso: demostró que el aterrizaje suave era un problema resuelto antes de que el hardware estadounidense lo intentara."
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "first",
+    "old": "Primera nave espacial en alunizar suavemente en Marte",
+    "new": "Primera nave espacial en aterrizar suavemente en Marte"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/space-shuttle-stack_webp.title",
+    "old": "Space Shuttle stack",
+    "new": "Space Shuttle en configuración de lanzamiento"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-891377070a16.title",
+    "old": "Viking 1 — primer alunizaje estadounidense en Marte",
+    "new": "Viking 1 — primer aterrizaje estadounidense en Marte"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-8fbc2e4af96b.caption",
+    "old": "Retrospectiva del JPL que marca el alunizaje del rover Spirit — aterrizó en enero de 2004.",
+    "new": "Retrospectiva del JPL que marca el aterrizaje del rover Spirit — aterrizó en enero de 2004."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-98b4fdd31e64.caption",
+    "old": "Dramatización del JPL de la secuencia autónoma de entrada-descenso-alunizaje, previa al descenso de 2012.",
+    "new": "Dramatización del JPL de la secuencia autónoma de entrada-descenso-aterrizaje, previa al descenso de 2012."
+  }
+]

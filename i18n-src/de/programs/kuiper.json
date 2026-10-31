@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Bei einer vernetzten Fähigkeit ist die Kontrolle über die Lieferkette Strategie. Kuipers Startentscheidungen – bewusst an der Konkurrenz vorbeigeplant – zeigen: Wenn der Zugang zum Orbit knapp ist und teilweise einem Wettbewerber gehört, ist die Frage, bei wem man seine Flüge bucht, kein Beschaffungsdetail, sondern eine Entscheidung über Unabhängigkeit – und es lohnt sich, dafür einen Aufpreis zu zahlen, um sie richtig zu treffen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=kuiper": "Flotte — die Kuiper-Konstellation",
+    "/programs/starlink": "Starlink — die Konstellation, der es nacheifert",
+    "/earth": "Erde — Umlaufbahnen und die enge niedrige Umlaufbahn",
+    "/earth?site=kuiper": "Die Kuiper-Konstellation"
+  }
 }

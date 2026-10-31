@@ -201,19 +201,60 @@ Browse: `https://<PROD_TAILNET_FQDN>:8443/` — full app, with the live `/data` 
 
 ## Rollback
 
-Re-run the workflow with `override_image_sha` set to the previously-deployed SHA:
+What a deploy is made of decides how it rolls back. The workflow only runs on
+`main` (`if: github.ref == 'refs/heads/main'` on the deploy job), so dispatching
+it from an older tag, branch or commit does nothing: the job is skipped. Every
+deploy builds the static bundle and resets the VPS checkout from main's HEAD;
+only the three backend images can be pinned to another commit.
+
+| Part | Comes from | Roll back by |
+|---|---|---|
+| Static bundle (`/srv/orrery/build`) | built in the job from main's HEAD | a revert commit on main, then deploy |
+| Server files (compose, Caddy drop-ins, `ops/`) | VPS `git reset --hard origin/main` | a revert commit on main, then deploy |
+| `orrery-mcp`, `orrery-lab-api`, `orrery-pipeline-runner` images | GHCR `sha-<7>`, default main's HEAD | `override_image_sha=<earlier sha>` |
+| Lab state (`/srv/orrery/lab-api-state`: tokens, allowlist, signing key) | the volume on the box | not touched by any deploy; nothing to roll back |
+| Data overlay (`/srv/orrery/static/data`) | on-box refresh cron (RFC-035) | not touched by a deploy |
+
+**Backend-only rollback** (a bad mcp / lab-api image; the site is fine):
 
 ```bash
-gh workflow run "Deploy to prod VPS (orrery)" \
-  --ref main \
-  --field override_image_sha=abc1234
+# the last good commit's 7-char sha; its sha-<7> images must exist on GHCR
+gh workflow run "Deploy to prod VPS (orrery)" --ref main --field override_image_sha=abc1234
 ```
 
-For the static bundle, check out the previous commit locally and re-run the deploy:
+The "Refuse a tag GHCR does not have" step fails the run before it touches the
+box if any of the three images is missing for that sha. The static bundle still
+comes from main's HEAD, so this only helps when the site itself is good.
+
+**Full rollback** (the site or server files are bad):
 
 ```bash
-gh workflow run "Deploy to prod VPS (orrery)" --ref <previous-commit-sha>
+git revert <bad-commit>...        # on main; keeps history, no force-push
+git push origin main              # CI + docker-e2e publish sha-<7> for the revert
+# wait for CI + docker-e2e to go green on the revert commit, then:
+gh workflow run "Deploy to prod VPS (orrery)" --ref main
 ```
+
+Waiting for docker-e2e matters: it publishes the pipeline-runner `sha-<7>`
+image, and the deploy refuses a commit whose images are missing. If that wait
+is too long during an incident, deploy the revert with
+`override_image_sha=<last good sha>` so the images come from the last good
+commit while the bundle is built from the revert.
+
+**After any rollback:**
+
+1. The `validate` job in the same run executes `npm run validate-prod` against
+   the public URL; it must be green.
+2. Check the release on the box: `ORRERY_RELEASE` in `/srv/orrery/.env` is
+   `sha-<7>` of the commit the workflow ran on (main's HEAD), not the
+   `override_image_sha`.
+3. Run the `orrery-deploy-verify` skill (`.claude/skills/orrery-deploy-verify`: logs, GlitchTip since the deploy,
+   Umami events, source maps).
+
+Staging (GitHub Pages, `staging.yml`) needs no rollback procedure of its own:
+it redeploys from main after every green docker-e2e, so the revert commit
+above fixes staging too. It can also be re-run by hand with
+`gh workflow run "Deploy preview" --ref main`.
 
 ---
 

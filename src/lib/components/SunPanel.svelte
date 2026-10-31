@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
+  import PanelLinkTiers from './PanelLinkTiers.svelte';
+  import PanelTabRow from './PanelTabRow.svelte';
+  import PanelHeroImage from './PanelHeroImage.svelte';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import { getSunGallery } from '$lib/data';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedSun } from '$types/sun';
   import * as m from '$lib/paraglide/messages';
-  import ImageCredit from './ImageCredit.svelte';
-  import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
@@ -66,16 +67,6 @@
   let luminositySolar = $derived(sun ? sun.luminosity_w / 3.828e26 : 0);
   let remainingGyr = $derived(sun ? Math.max(0, 10 - sun.age_gyr) : 0);
 
-  let linksByTier = $derived.by(() => {
-    if (!sun?.links) return { intro: [], core: [], deep: [] };
-    const out = {
-      intro: [] as NonNullable<typeof sun.links>,
-      core: [] as NonNullable<typeof sun.links>,
-      deep: [] as NonNullable<typeof sun.links>,
-    };
-    for (const link of sun.links) out[link.t].push(link);
-    return out;
-  });
   let hasLinks = $derived((sun?.links?.length ?? 0) > 0);
 </script>
 
@@ -97,65 +88,24 @@
     </div>
 
     {#if gallery.length > 0}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => (lightboxSrc = gallery[0]!)}
-          aria-label={m.panel_hero_aria({ name: sun.name })}
-        >
-          <img
-            {...responsive(gallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage src={gallery[0]} name={sun.name} onOpen={() => (lightboxSrc = gallery[0]!)} />
     {/if}
 
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="sp-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="sp-tabpanel">{m.panel_tab_overview()}</button
-      >
-      {#if gallery.length > 0}
-        <button
-          type="button"
-          id="sp-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="sp-tabpanel">{m.panel_tab_gallery()}</button
-        >
-      {/if}
-      <button
-        type="button"
-        id="sp-tab-technical"
-        class:active={tab === 'technical'}
-        onclick={() => (tab = 'technical')}
-        role="tab"
-        aria-selected={tab === 'technical'}
-        aria-controls="sp-tabpanel">{m.panel_tab_technical()}</button
-      >
-      {#if (sun.mission_visits ?? []).length > 0}
-        <button
-          type="button"
-          id="sp-tab-missions"
-          class:active={tab === 'missions'}
-          onclick={() => (tab = 'missions')}
-          role="tab"
-          aria-selected={tab === 'missions'}
-          aria-controls="sp-tabpanel">MISSIONS</button
-        >
-      {/if}
-    </div>
+    <PanelTabRow
+      rowClass="tabs sun-tabs"
+      idPrefix="sp"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview() },
+        { id: 'gallery', label: m.panel_tab_gallery(), visible: gallery.length > 0 },
+        { id: 'technical', label: m.panel_tab_technical() },
+        {
+          id: 'missions',
+          label: m.panel_tab_missions(),
+          visible: (sun.mission_visits ?? []).length > 0,
+        },
+      ]}
+      bind:active={tab}
+    />
 
     <div class="tab-content" role="tabpanel" id="sp-tabpanel" aria-labelledby="sp-tab-{tab}">
       {#if tab === 'overview'}
@@ -163,7 +113,7 @@
         <p class="editorial">{sun.bio}</p>
         {#if (sun.science_sections ?? SUN_SCIENCE_SECTIONS).length > 0}
           <div class="science-section">
-            <h3 class="library-heading">SCIENCE</h3>
+            <h3 class="library-heading">{m.panel_tab_science()}</h3>
             {#each sun.science_sections ?? SUN_SCIENCE_SECTIONS as entry (entry.tab + entry.section)}
               <ScienceCard
                 tab={entry.tab as ScienceTabId}
@@ -235,36 +185,7 @@
         {#if hasLinks}
           <div class="science-library">
             <h3 class="library-heading">{m.panel_tab_learn()}</h3>
-            {#if linksByTier.intro.length > 0}
-              <section class="link-tier tier-intro">
-                <h3>{m.panel_links_intro()}</h3>
-                <ul>
-                  {#each linksByTier.intro as link (link.u)}
-                    <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
-            {#if linksByTier.core.length > 0}
-              <section class="link-tier tier-core">
-                <h3>{m.panel_links_core()}</h3>
-                <ul>
-                  {#each linksByTier.core as link (link.u)}
-                    <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
-            {#if linksByTier.deep.length > 0}
-              <section class="link-tier tier-deep">
-                <h3>{m.panel_links_deep()}</h3>
-                <ul>
-                  {#each linksByTier.deep as link (link.u)}
-                    <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
-                  {/each}
-                </ul>
-              </section>
-            {/if}
+            <PanelLinkTiers links={sun.links} entityId="sun" />
           </div>
         {/if}
       {:else if tab === 'missions'}
@@ -288,46 +209,18 @@
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: sun.name })}>
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
-                aria-label={sun.name}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: sun.name })}
+            thumbLabel={sun.name}
+            onOpen={(src) => (lightboxSrc = src)}
+            gridClass="sun-gallery"
+          />
           <p class="gallery-credit">{m.panel_gallery_credit()}</p>
         {/if}
       {/if}
     </div>
-    {#if lightboxSrc}
-      <button
-        type="button"
-        class="lightbox"
-        aria-label={m.panel_lightbox_close()}
-        onclick={() => (lightboxSrc = null)}
-      >
-        <img
-          {...responsive(lightboxSrc, IMAGE_SIZES.full)}
-          alt=""
-          loading="lazy"
-          decoding="async"
-        />
-        <span class="lightbox-close" aria-hidden="true">×</span>
-      </button>
-      <div class="lightbox-meta">
-        <ImageCredit src={lightboxSrc} />
-      </div>
-    {/if}
+    <PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
   {/if}
 </Panel>
 
@@ -390,7 +283,7 @@
 
   /* .tabs base styles in src/lib/styles/panel-tabs.css.
    * Sun overrides the active-tab border to its theme gold (#ffc850). */
-  .tabs button.active {
+  :global(.tabs.sun-tabs button.active) {
     border-bottom-color: #ffc850;
   }
 
@@ -424,8 +317,8 @@
   /* GALLERY + LEARN tab CSS in src/lib/styles/panel-tabs.css.
    * Sun overrides the gallery-thumb hover border to gold to match
    * its theme. */
-  .gallery-thumb:hover,
-  .gallery-thumb:focus-visible {
+  :global(.sun-gallery .gallery-thumb:hover),
+  :global(.sun-gallery .gallery-thumb:focus-visible) {
     border-color: rgba(255, 200, 80, 0.6);
   }
 </style>

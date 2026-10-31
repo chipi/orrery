@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Ehrgeiz und Budget lassen sich voneinander trennen. Die JAXA betreibt Spitzenforschung mit einem Bruchteil der Mittel einer Supermacht, indem sie enge, schwierige Ziele wählt und schlank fliegt – der Beweis dafür, dass Führungsstärke in der Erkundung jedem offensteht, der bereit ist, sich tief zu spezialisieren und gut zu improvisieren, und nicht nur denen, die sich Flaggschiffmissionen leisten können."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Mond — der Landeplatz von SLIM",
+    "/explore": "Erkunden — Venus und die inneren Planeten",
+    "/programs/hayabusa": "Hayabusa — die Asteroiden-Probenrückführung der JAXA"
+  }
 }

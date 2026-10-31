@@ -1,8 +1,7 @@
 /**
  * Earth-orbital satellite-rendering subsystem — per-EarthObject
  * 3D model + label + halo + orbit ring + invisible hit sphere.
- * Pulled out of EarthOrbitalScene's onMount so #290 Slice 4 can
- * mount the same rendering inside SurfaceScene gated on
+ * Mounted by SurfaceScene on /earth, gated on
  * `config.earthOrbitalLayers.satellites`.
  *
  * Each satellite group lives at a position derived from:

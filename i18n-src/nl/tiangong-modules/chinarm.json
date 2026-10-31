@@ -1,5 +1,5 @@
 {
   "name": "Chinarm (Chinese robotarm)",
-  "description": "Een 10-meter, zeven-graden-vrijheid robotarm gemonteerd op de Tianhe-romp, gebruikt voor module-relocaties en EVA-ondersteuning. Een tweede kleinere arm op Wentian dient voor lokaal werk.",
-  "function_detail": "Aanlegsteun voor Tianzhou-vracht, EVA-ondersteuning voor bemanning, en overdracht van externe ladingen; werkt samen met Wentian's kleine experimentele arm voor nauwkeurig werk."
+  "description": "De primaire manipulator van het station — een robotarm van 10 meter met zeven gewrichten die hand over hand over Tianhe en de laboratoriummodules loopt om vracht te vangen en externe lading te verplaatsen.",
+  "function_detail": "Hulp bij het aanmeren van Tianzhou-vracht, EVA-ondersteuning voor de bemanning en overdracht van externe ladingen; werkt samen met de kleine experimentele arm van Wentian voor fijn werk."
 }

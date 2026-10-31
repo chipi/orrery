@@ -11,7 +11,7 @@
     {
       "met": 0,
       "label": "발사",
-      "note": "Titan IIIE가 케이프 커내버럴에서 Grand-Tour 궤도로 Voyager 2를 올린다.",
+      "note": "Titan IIIE가 케이프 커내버럴에서 Grand-Tour 궤적으로 Voyager 2를 올린다.",
       "type": "nominal"
     },
     {
@@ -20,5 +20,6 @@
       "note": "해왕성과 큰 위성 트리톤 근접 비행; Grand Tour 마지막 행성 접촉.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur + TE-364-4 (Star-37E)"
 }

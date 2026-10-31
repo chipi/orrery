@@ -12,7 +12,7 @@
     {
       "met": 0.4,
       "label": "TMI-VERBRANDING",
-      "note": "Trans-Mars Injection: 3,61 km/s. Ontsnappingssnelheid bereikt.",
+      "note": "Trans-Mars-injectie: 3,61 km/s. Ontsnappingssnelheid bereikt.",
       "type": "nominal"
     },
     {
@@ -36,7 +36,7 @@
     {
       "met": 220,
       "label": "COMMUNICATIESTORING",
-      "note": "Korte X-band signaalonderbreking (8 s). DSN heroverde. Oorzaak: stuwgasplume-occlusie. Geen gegevens verloren.",
+      "note": "Korte uitval van het X-bandsignaal (8 s). DSN kreeg het signaal weer vast. Oorzaak: afscherming door de pluim van de stuwraketten. Geen gegevens verloren.",
       "type": "warning"
     },
     {
@@ -48,7 +48,7 @@
     {
       "met": 260,
       "label": "TERUGKEERTRAJECT",
-      "note": "Vrije-terugkeer-zwaartekrachtassist voltooid. Ruimtevaartuig op Aarde-traject.",
+      "note": "Zwaartekrachtassist met vrije terugkeer voltooid. Ruimtevaartuig op traject naar de Aarde.",
       "type": "nominal"
     },
     {

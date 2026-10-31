@@ -21,7 +21,7 @@
     },
     {
       "met": 308,
-      "label": "MARS-ORBIT-EINFÜHRUNG",
+      "label": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
       "note": "Die 33-minütige Zündung des Haupttriebwerks bringt MAVEN in eine 35-stündige elliptische Wissenschaftsumlaufbahn.",
       "type": "nominal"
     },
@@ -31,5 +31,6 @@
       "note": "Beginnt mit „Deep Dip“-Kampagnen zur Atmosphärenprobenahme in Periapsishöhen von ca. 125 km.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur-Oberstufe (Atlas V 401)"
 }

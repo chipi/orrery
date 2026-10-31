@@ -2,7 +2,10 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    # e2e/** and tech-debt/** opt a branch into CI before it reaches main
+    # (docker-e2e and mobile-e2e opt the same branches in with their own push
+    # triggers). GHCR pushes stay main-only (the image jobs' ref guards).
+    branches: [main, 'e2e/**', 'tech-debt/**']
   pull_request:
     branches: [main]
 
@@ -34,41 +37,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v6
-        with:
-          node-version: 22
-          cache: npm
+      - uses: ./.github/actions/setup-node
       - run: npm ci
       # Fail merges on HIGH/CRITICAL prod-dep advisories. Scoped to
       # --omit=dev because dev-time advisories (esbuild dev-server CORS,
       # eslint plugin ReDoS) are tracked separately and would otherwise
       # block unrelated work. GH #265.
       #
-      # Allowlisted advisories (re-evaluate when upstream ships a fix):
-      #
-      #   GHSA-gv7w-rqvm-qjhr — esbuild Deno-module binary integrity
-      #     bypass via NPM_CONFIG_REGISTRY. Affects the Deno path only;
-      #     orrery is a Node.js/Vite project (no Deno bundler use).
-      #     Upstream fix is in esbuild 0.28.1+, but vite 5/6/7 pin
-      #     esbuild 0.21-0.27 (newer break the chrome87 build target).
-      #     Will lift the allowlist when vite ships with esbuild 0.28+.
-      #
-      #   GHSA-fx2h-pf6j-xcff — vite server.fs.deny bypass on Windows
-      #     alternate paths. Patched range is `>6.4.2`, so vite 5.x is
-      #     not patched and a major bump (5 → 6) breaks SvelteKit 2.61.
-      #     Risk surface: dev-server only AND Windows-only. orrery is
-      #     a Mac/Linux project building a static SPA — no dev server
-      #     in production, no Windows hosts in our pipeline. Re-evaluate
-      #     when SvelteKit ships a vite ≥6.4.3 compatible release.
-      #
-      #   GHSA-2v37-7h3g-55p8 — nanoid <3.3.17 can loop indefinitely when
-      #     a custom alphabet is combined with size 0. Reaches us only as
-      #     a build-time transitive (@sentry/sveltekit → vite → postcss →
-      #     nanoid), where postcss generates source-map/module IDs with a
-      #     fixed non-zero size — never attacker-controlled and never
-      #     shipped to the static client. Fix is nanoid ≥3.3.17 (in
-      #     postcss's ^3.3.12 range); lift this when postcss/vite bump the
-      #     pinned nanoid (Dependabot PR already open).
+      # Allowlisted advisories: none. To add one, put its GHSA id in
+      # ALLOWLIST below with the reason it cannot reach users and the
+      # upstream release that lets it be lifted.
       - name: npm audit (high+critical, prod deps only)
         run: |
           set -o pipefail
@@ -81,7 +59,7 @@ jobs:
           d=json.loads(sys.stdin.read() or '{}')
           # NOTE: keep this block ASCII with NO backticks - it lives inside a
           # bash double-quoted string, so backticks would run as a subshell.
-          ALLOWLIST={'GHSA-gv7w-rqvm-qjhr', 'GHSA-fx2h-pf6j-xcff', 'GHSA-2v37-7h3g-55p8'}
+          ALLOWLIST=set()
           bad=[]
           for name, info in d.get('vulnerabilities', {}).items():
               for via in info.get('via', []):
@@ -153,10 +131,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
       - name: Build image
         run: docker build -f Dockerfile.mcp -t orrery-mcp:ci .
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v6
-        with:
-          node-version: 22
-          cache: npm
+      - uses: ./.github/actions/setup-node
       - name: Install deps (jose for the JWT minter)
         run: npm ci --ignore-scripts
       # E (#534): the image bakes NODE_ENV=production, where the dev bearer
@@ -250,6 +225,7 @@ jobs:
             -e LAB_ISSUER=http://127.0.0.1:8093 \
             -e LAB_GOOGLE_CLIENT_ID=ci -e LAB_GOOGLE_CLIENT_SECRET=ci \
             -e LAB_CLAUDE_CLIENT_SECRET=ci-secret \
+            -e LITELLM_BASE_URL=http://127.0.0.1:4001 \
             -p 8093:8093 orrery-lab-api:ci
           for i in $(seq 1 20); do
             curl -sf http://127.0.0.1:8093/health >/dev/null && break

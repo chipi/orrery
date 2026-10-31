@@ -1,0 +1,701 @@
+[
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "change",
+    "find": "vroege aardbaantesten",
+    "replace": "vroege tests in een baan om de aarde",
+    "why": "aardbaan = Earth's orbit round the Sun, wrong sense"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "change",
+    "find": "als zuiver aardbaantest",
+    "replace": "als zuiver testvoertuig in een baan om de aarde",
+    "why": "aardbaan = Earth's orbit round the Sun, wrong sense"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Nooit in de ruimte",
+    "replace": "Nooit in een baan om de aarde",
+    "why": "never to orbit lost the orbit"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "change",
+    "find": "nooit naar de ruimte",
+    "replace": "nooit in een baan om de aarde",
+    "why": "never to orbit lost the orbit"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit adjective omitted naturally (polaire en zonsynchrone lanceringen)"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omcirkeld (verb to orbit)"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: draait om (verb to orbit)"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: draait om (verb to orbit)"
+  },
+  {
+    "rel": "fleet/orbiter/rosetta.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: draait om (verb to orbit)"
+  },
+  {
+    "rel": "fleet/orbiter/rosetta.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: draait om (verb to orbit)"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "hoe je kunt rendezvouzeren, koppelen en in de ruimte kunt lopen",
+    "replace": "hoe je een rendez-vous uitvoert, koppelt en in de ruimte loopt",
+    "why": "rendezvouzeren is a non-word; binding rendez-vous"
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "het Igla-ondersteuningssysteem",
+    "replace": "het Igla-rendez-voussysteem",
+    "why": "rendezvous system mistranslated as support system"
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "description",
+    "term": "docking",
+    "decision": "change",
+    "find": "kon niet aanmeren",
+    "replace": "kon niet koppelen",
+    "why": "docking is koppeling, not aanmeren"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "description",
+    "term": "docking",
+    "decision": "change",
+    "find": "ISS-aanduikeling",
+    "replace": "ISS-koppeling",
+    "why": "aanduikeling is not docking"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+    "at": "description",
+    "term": "docking",
+    "decision": "change",
+    "find": "voor automatisch aanmeren",
+    "replace": "voor automatisch koppelen",
+    "why": "docking is koppeling, not aanmeren"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "(1 aardvoorbijgang + 2 Venusvoorbijgangen + 6 Mercuriusvoorbijgangen)",
+    "replace": "(1 zwaartekrachtassist bij de Aarde + 2 bij Venus + 6 bij Mercurius)",
+    "why": "gravity assists rendered as voorbijgangen"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "op een 7-jarige vliegbaan",
+    "replace": "op een 7-jarige flyby-cruise",
+    "why": "flyby cruise rendered as vliegbaan"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Mercuriusorbitinsertion",
+    "replace": "Mercuriusbaaninsertie",
+    "why": "English leftover insertion"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Aarde-Venus-Aarde-Aarde-zwaartekrachtsondersteuning",
+    "replace": "Aarde-Venus-Aarde-Aarde-zwaartekrachtassists",
+    "why": "zwaartekrachtsondersteuning -> zwaartekrachtassist"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "Tien instrumenten waaronder de ijs-penetrerende radar RIME.",
+    "replace": "Nuttige lading van tien instrumenten, waaronder de ijsdoordringende radar RIME, spectrometers, een magnetometer en een laserhoogtemeter, geoptimaliseerd om de drie ijsmanen te karakteriseren als potentieel bewoonbare werelden met een oceaan onder het oppervlak.",
+    "why": "sentence truncated, payload lost; restored from English"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "tagline",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "6 planetaire zwaartekrachtsondersteuningen",
+    "replace": "6 planetaire zwaartekrachtassists",
+    "why": "zwaartekrachtsondersteuning -> zwaartekrachtassist"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "6 zwaartekrachtsondersteuningen",
+    "replace": "6 zwaartekrachtassists",
+    "why": "zwaartekrachtsondersteuning -> zwaartekrachtassist"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "heliocentrische energie te verliezen.",
+    "replace": "heliocentrische energie te verliezen — directe baaninsertie zou een onmogelijke delta-v hebben vereist.",
+    "why": "clause with delta-v omitted; restored from English"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "tagline",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "via zwaartekrachtsondersteuning",
+    "replace": "via een zwaartekrachtassist",
+    "why": "zwaartekrachtsondersteuning -> zwaartekrachtassist"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "de zwaartekrachtsondersteuning nodig",
+    "replace": "de zwaartekrachtassist nodig",
+    "why": "zwaartekrachtsondersteuning -> zwaartekrachtassist"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Mars-zwaartekrachtsteun",
+    "replace": "Mars-zwaartekrachtassist",
+    "why": "zwaartekrachtsteun -> zwaartekrachtassist"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "tagline",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Jupiter-zwaartekrachtsondersteuning 1992",
+    "replace": "Jupiter-zwaartekrachtassist 1992",
+    "why": "zwaartekrachtsondersteuning -> zwaartekrachtassist"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "voor inzet- en landingsbranden",
+    "replace": "voor ontstekingen bij terugkeer en landing",
+    "why": "entry and landing burns = engine firings; brand is a fire"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning excess oxidiser = combustion (verbrand)"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "hydrogen-burning = propellant type (waterstof-BE-3U-motoren)"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "together burning thirteen tonnes of propellant = combustion/consumption (verbruikend)"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "methane-burning = propellant type (methaangestookte)"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "dispatch",
+    "term": "stage",
+    "decision": "change",
+    "find": "een afdaalmodule die",
+    "replace": "een afdalingstrap die",
+    "why": "descent stage -> afdalingstrap"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "dispatch",
+    "term": "stage",
+    "decision": "change",
+    "find": "een afzonderlijke stijgmodule",
+    "replace": "een afzonderlijke opstijgtrap",
+    "why": "ascent stage -> opstijgtrap"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "dispatch",
+    "term": "stage",
+    "decision": "change",
+    "find": "omdat die fasering",
+    "replace": "omdat die opdeling in trappen",
+    "why": "staging, not phasing"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "De afdaling van het podium blijft op de Maan; het klimmende podium keerde terug",
+    "replace": "De afdalingstrap blijft op de Maan; de opstijgtrap keerde terug",
+    "why": "podium garble; descent/ascent stage"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "de bovenstap van LVM3",
+    "replace": "de bovenste trap van LVM3",
+    "why": "bovenstap non-word"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "best_known_for",
+    "term": "stage",
+    "decision": "change",
+    "find": "LVM3 bovenstap",
+    "replace": "LVM3 bovenste trap",
+    "why": "bovenstap non-word"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "tagline",
+    "term": "stage",
+    "decision": "change",
+    "find": "cryogene boventraptmotor, drie",
+    "replace": "cryogene boventrap, drie",
+    "why": "English says upper stage; garbled compound"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "best_known_for",
+    "term": "stage",
+    "decision": "change",
+    "find": "Europese cryogene boventraptmotor",
+    "replace": "Europese cryogene motor voor de bovenste trap",
+    "why": "garbled compound boventraptmotor"
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "best_known_for",
+    "term": "stage",
+    "decision": "change",
+    "find": "in de hogere atmosfeer",
+    "replace": "voor de bovenste trap",
+    "why": "upper-stage rendered as upper atmosphere"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "tagline",
+    "term": "stage",
+    "decision": "change",
+    "find": "boventrip, in gebruik",
+    "replace": "bovenste trap, in gebruik",
+    "why": "boventrip non-word"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "de cryogene boventrip-motor die",
+    "replace": "de cryogene motor voor de bovenste trap die",
+    "why": "boventrip non-word"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "ononderbroken boventrip-continuïteit",
+    "replace": "ononderbroken continuïteit van de bovenste trap",
+    "why": "boventrip non-word"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "de natuurlijke boventrip-aanvulling op",
+    "replace": "de natuurlijke aanvulling voor de bovenste trap op",
+    "why": "boventrip non-word"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "best_known_for",
+    "term": "stage",
+    "decision": "change",
+    "find": "cryogene boventrip",
+    "replace": "cryogene bovenste trap",
+    "why": "boventrip non-word"
+  },
+  {
+    "rel": "fleet/engine/rs-25.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "de kernfase van SLS",
+    "replace": "de kerntrap van SLS",
+    "why": "core stage -> kerntrap"
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "de kernfase van Long March 5",
+    "replace": "de kerntrap van Long March 5",
+    "why": "core stage -> kerntrap"
+  },
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "de opstijgingsfase die",
+    "replace": "de opstijgtrap die",
+    "why": "ascent stage -> opstijgtrap"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "Tweestadia-opvolger",
+    "replace": "Tweetraps-opvolger",
+    "why": "two-stage -> tweetraps"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "op het eerste stadium",
+    "replace": "in de eerste trap",
+    "why": "first stage -> eerste trap"
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "afdalingsfase van de LM",
+    "replace": "afdalingstrap van de LM",
+    "why": "descent stage -> afdalingstrap"
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "dispatch",
+    "term": "stage",
+    "decision": "change",
+    "find": "een verbruikte Saturn V-bovenfase",
+    "replace": "een verbruikte bovenste trap van een Saturn V",
+    "why": "upper stage -> bovenste trap"
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "bovenste fase",
+    "replace": "bovenste trap",
+    "why": "upper stage -> bovenste trap"
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "waterstofpropellant",
+    "replace": "waterstofdrijfstof",
+    "why": "propellant -> drijfstof"
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "dezelfde propellantcombinatie",
+    "replace": "dezelfde drijfstofcombinatie",
+    "why": "propellant -> drijfstof"
+  },
+  {
+    "rel": "fleet/engine/viking.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "hypergolische stofcombinatie",
+    "replace": "hypergolische drijfstofcombinatie",
+    "why": "propellant dropped to stof"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "verbeterd voortstuwingssysteem",
+    "replace": "verbeterd drijfstofsysteem",
+    "why": "propellant system -> drijfstofsysteem"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "Amerikaanse nationale veiligheidslasten",
+    "replace": "Amerikaanse ladingen voor de nationale veiligheid",
+    "why": "lasten = burdens; payload -> lading"
+  },
+  {
+    "rel": "fleet/launcher/h-iia.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "Een betrouwbare vloeiststofraket die een van",
+    "replace": "Een betrouwbaar werkpaard op vloeibare drijfstof dat een van",
+    "why": "liquid-propellant workhorse; vloeiststof is a non-word"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "Drietrapsvloeistofmotor",
+    "replace": "Drietrapsraket op vloeibare drijfstof",
+    "why": "liquid-propellant rocket, not liquid motor"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "Blok-E-boventraptrap",
+    "replace": "Blok-E-bovenste trap",
+    "why": "garbled boventraptrap"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "tagline",
+    "term": "payload",
+    "decision": "change",
+    "find": "uitgebreid lastvermogen",
+    "replace": "grotere lading",
+    "why": "payload -> lading"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "best_known_for",
+    "term": "payload",
+    "decision": "change",
+    "find": "uitgebreid lastvermogen",
+    "replace": "grotere lading",
+    "why": "payload -> lading"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: laadvermogen (payload capacity)"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "Lotos-S-lasten",
+    "replace": "Lotos-S-ladingen",
+    "why": "lasten = burdens; payload -> lading"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: raket (launch vehicle failure)"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "keep",
+    "why": "stem gap: voorbijvloog"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "multi-vliegby-missie",
+    "replace": "multi-flyby-missie",
+    "why": "vliegby is a garbled hybrid"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "De eerste succesvolle Mars vliegt door juli 1965.",
+    "replace": "De eerste succesvolle Mars-flyby — juli 1965.",
+    "why": "flyby garbled into a verb"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "4920 kg vliegende bus",
+    "replace": "4920 kg flyby-bus",
+    "why": "flyby bus -> flyby-bus"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "De vliegende bus vervolgde",
+    "replace": "De flyby-bus vervolgde",
+    "why": "flyby bus -> flyby-bus"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "directe inzetstelling",
+    "replace": "directe baaninsertie",
+    "why": "orbit insertion -> baaninsertie"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "Twee- of driestaps-Delta-variant",
+    "replace": "Twee- of drietraps-Delta-variant",
+    "why": "driestaps non-word; stage -> trap"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "De initiële orbitale inbraak",
+    "replace": "De initiële baaninsertie",
+    "why": "inbraak = burglary"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "tagline",
+    "term": "entry",
+    "decision": "change",
+    "find": "bij terugkomst STS-107",
+    "replace": "bij terugkeer STS-107",
+    "why": "re-entry -> terugkeer"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "hete terugkomstgassen",
+    "replace": "hete gassen van de terugkeer",
+    "why": "reentry -> terugkeer"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "best_known_for",
+    "term": "entry",
+    "decision": "change",
+    "find": "bij terugkomst STS-107",
+    "replace": "bij terugkeer STS-107",
+    "why": "re-entry -> terugkeer"
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "re-entry-voorspelling",
+    "replace": "terugkeervoorspelling",
+    "why": "re-entry -> terugkeer"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "dispatch",
+    "term": "descent",
+    "decision": "keep",
+    "why": "variant: landingscapsule (Soyuz descent module)"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "keep",
+    "why": "stem gap: af te dalen"
+  }
+]

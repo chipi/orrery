@@ -16,20 +16,21 @@
     {
       "met": 1,
       "label": "REMPLISSAGE ORBITAL",
-      "note": "Rendez-vous des ravitailleurs et transfert de propulseur en LEO sur plusieurs vols.",
+      "note": "Rendez-vous des ravitailleurs et transfert de propergol en LEO sur plusieurs vols.",
       "type": "nominal"
     },
     {
       "met": 2,
-      "label": "BRÛLURE TMI",
-      "note": "Injection Trans-Mars à partir d’un état LEO entièrement alimenté.",
+      "label": "ALLUMAGE TMI",
+      "note": "Injection trans-martienne à partir d'un état LEO à réservoirs pleins.",
       "type": "nominal"
     },
     {
       "met": 274,
       "label": "ATTERRISSAGE SUR MARS",
-      "note": "Descente propulsée vers la surface de Mars – pas de parachutes, pas d'airbags, pas de grue céleste.",
+      "note": "Descente propulsée vers la surface de Mars — pas de parachutes, pas d'airbags, pas de grue céleste.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "étage supérieur Starship"
 }

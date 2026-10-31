@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import MediaPlayer from '$lib/components/MediaPlayer.svelte';
   import { posterUrlFor, type VideoProvenanceEntry } from '$lib/video-provenance';
   import { getLiveFeeds, getNextLaunch, type LiveFeed } from '$lib/live-feeds';
@@ -136,7 +136,7 @@
       </ul>
     {/if}
     <p class="all-launches">
-      <a href="{base}/missions/launches">{m.live_all_launches()}</a>
+      <a href={localHref(`/missions/launches`)}>{m.live_all_launches()}</a>
     </p>
   </section>
 </section>
@@ -234,7 +234,7 @@
     color: #fff;
   }
   .badge-soon {
-    background: rgba(201, 118, 47, 0.9);
+    background: rgba(154, 90, 34, 0.95);
     color: #fff;
   }
   .pin-tile .badge-live {

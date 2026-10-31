@@ -78,10 +78,7 @@ jobs:
           # of main, which may have moved on). For manual + cron
           # triggers, falls through to the default (latest of main).
           ref: ${{ github.event.workflow_run.head_sha || github.ref }}
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v6
-        with:
-          node-version: 22
-          cache: npm
+      - uses: ./.github/actions/setup-node
       - run: npm ci
       # Same release-name format as deploy-prod.yml: `gha-` + the first 8 hex of the
       # SHA, so one commit is one release name in every tier's GlitchTip project. It

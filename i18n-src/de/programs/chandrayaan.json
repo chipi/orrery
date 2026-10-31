@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Kosten sind eine Form von Leistungsfähigkeit. Indem die ISRO anspruchsvolle Forschung günstig betrieb, sparte sie nicht bloß Geld – sie machte eine ganze Klasse von Missionen für eine Nation möglich, die sie sich zu westlichen Preisen nie hätte leisten können, und sie veränderte, was der Rest der Welt für die Erkundung des tiefen Weltraums als nötigen Preis ansieht. Sparsamkeit, als technische Disziplin verfolgt, ist selbst eine Form von Macht."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Mond — die Landeregion am Südpol",
+    "/fleet?focus=chandrayaan1": "Flotte — die Chandrayaan-Raumsonden"
+  }
 }

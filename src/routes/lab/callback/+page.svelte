@@ -7,7 +7,7 @@
    * this page's one job is to finish the handshake and bounce to /lab.
    */
   import { goto } from '$app/navigation';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { browser } from '$app/environment';
   import { t } from '$lib/lab/t';
   import { AskAuth, browserDeps } from '$lib/lab/ask/auth';
@@ -19,21 +19,21 @@
     if (!browser) return;
     const auth = new AskAuth(browserDeps(), redirectUri(), () => {});
     void auth.completeLogin(new URLSearchParams(location.search)).then((res) => {
-      if (res.ok) void goto(`${base}/lab`, { replaceState: true });
+      if (res.ok) void goto(localHref(`/lab`), { replaceState: true });
       else failed = res.denied ? 'denied' : 'error';
     });
   });
 </script>
 
-<svelte:head><title>Orrery — sign in</title></svelte:head>
+<svelte:head><title>Orrery — {t('lab.signin.title')}</title></svelte:head>
 
 <main class="callback">
   {#if failed === 'denied'}
     <p class="callback__denied">{t('lab.ask.callback-denied')}</p>
-    <a href="{base}/lab">{t('lab.ask.callback-back')}</a>
+    <a href={localHref(`/lab`)}>{t('lab.ask.callback-back')}</a>
   {:else if failed === 'error'}
     <p>{t('lab.ask.callback-error')}</p>
-    <a href="{base}/lab">{t('lab.ask.callback-back')}</a>
+    <a href={localHref(`/lab`)}>{t('lab.ask.callback-back')}</a>
   {:else}
     <p>{t('lab.ask.callback-working')}</p>
   {/if}

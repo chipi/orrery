@@ -23,7 +23,7 @@
     {
       "met": 3.4,
       "label": "MOI",
-      "note": "Inserção da órbita lunar.",
+      "note": "Inserção em órbita lunar.",
       "type": "nominal"
     },
     {
@@ -50,5 +50,6 @@
       "note": "CM America retorna tripulação para o Oceano Pacífico em 19/12/1972.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Saturn V S-IVB (terceiro estágio)"
 }

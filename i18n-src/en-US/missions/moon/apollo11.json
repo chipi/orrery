@@ -15,5 +15,6 @@
     { "met": 4.56, "label": "FIRST STEP", "note": "Armstrong steps onto lunar surface; 'one small step for [a] man'.", "type": "info" },
     { "met": 5.18, "label": "ASCENT", "note": "Eagle lifts off after 21h 36m on surface.", "type": "nominal" },
     { "met": 8.13, "label": "SPLASHDOWN", "note": "CM Columbia returns crew to Pacific Ocean 1969-07-24.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Saturn V S-IVB (third stage)"
 }

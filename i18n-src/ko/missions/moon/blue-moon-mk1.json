@@ -10,7 +10,8 @@
     { "met": 0, "label": "뉴 글렌 발사", "note": "케이프 커내버럴 LC-36에서 이륙; 1단은 하류 방향 회수.", "type": "nominal" },
     { "met": 0.2, "label": "TLI", "note": "New Glenn 2단이 달 이행 주입 연소.", "type": "nominal" },
     { "met": 1.5, "label": "TCM-1", "note": "첫 경로 중간 수정.", "type": "nominal" },
-    { "met": 4, "label": "LOI", "note": "BE-7 주 엔진으로 달 궤도 삽입.", "type": "nominal" },
+    { "met": 4, "label": "LOI", "note": "BE-7 주 엔진으로 달 궤도 진입.", "type": "nominal" },
     { "met": 4.1, "label": "동력 하강", "note": "BE-7 스로틀 하강으로 달 표면 — Blue Origin 최초 달 착지.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "New Glenn 2단 (TLI 연소)"
 }

@@ -75,4 +75,18 @@ platform :ios do
 
     UI.success("Uploaded Orrery build #{next_build} to TestFlight.")
   end
+
+  # App Store Connect's "App Privacy" answers, from app_privacy_details.json — the
+  # same facts as App/PrivacyInfo.xcprivacy, so keep the two in step. Apple has no
+  # API-key route for these, so this signs in with an Apple ID (owner/admin on the
+  # team; fastlane asks for the password and the 2FA code):
+  #   APPLE_ID=you@example.com bundle exec fastlane privacy
+  desc "Upload the App Privacy answers to App Store Connect"
+  lane :privacy do
+    upload_app_privacy_details_to_app_store(
+      username: ENV.fetch("APPLE_ID"),
+      app_identifier: APP_IDENTIFIER,
+      json_path: "fastlane/app_privacy_details.json",
+    )
+  end
 end

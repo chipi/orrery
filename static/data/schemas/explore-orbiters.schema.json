@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "explore-orbiters.schema.json",
+  "title": "Active orbiters rendered at planet-focus zoom on /explore (PRD-023 Slice A)",
+  "type": "object",
+  "required": [
+    "orbiters"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$comment": {
+      "type": "string"
+    },
+    "orbiters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "parent",
+          "fleet_id",
+          "name",
+          "long_name",
+          "agency",
+          "country",
+          "altitude_km",
+          "inclination_deg",
+          "launched",
+          "status",
+          "color"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "parent": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "fleet_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "null while the mission has no fleet entry yet (see file $comment)"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "long_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "agency": {
+            "type": "string",
+            "minLength": 1
+          },
+          "country": {
+            "type": "string",
+            "minLength": 1
+          },
+          "altitude_km": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "inclination_deg": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 180
+          },
+          "launched": {
+            "type": "string",
+            "format": "date"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "ENDED"
+            ]
+          },
+          "color": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          }
+        }
+      }
+    }
+  }
+}

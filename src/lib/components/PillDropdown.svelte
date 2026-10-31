@@ -137,7 +137,7 @@
             bind:this={searchEl}
             bind:value={query}
             placeholder={m.dropdown_filter_placeholder()}
-            aria-label="Filter {label}"
+            aria-label={m.dropdown_filter_aria({ label })}
           />
         </div>
       {/if}
@@ -173,7 +173,7 @@
           </button>
         {/each}
         {#if filteredOptions.length === 0 && query.trim()}
-          <p class="empty">No match for "{query}".</p>
+          <p class="empty">{m.dropdown_no_match({ query })}</p>
         {/if}
       </div>
     </div>

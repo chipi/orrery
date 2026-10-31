@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "science/orbits/hill-sphere.json",
+    "at": "narrative_101.0",
+    "old": "En la órbita de la Tierra, el tirón del Sol sobre ti sería unas 46 000× más débil que en la superficie solar, pero sigue siendo fuerte. ¿Por qué entonces la Luna orbita la Tierra y no el Sol? Porque, junto a la Tierra, estás TAN cerca de ella que su masa 80× menor aún gana. El límite donde eso cambia —donde estás lo bastante lejos como para que el Sol vuelva a mandar— es la esfera de Hill.",
+    "new": "En la órbita de la Tierra, el tirón del Sol sobre ti sería unas 46 000× más débil que en la superficie solar, pero sigue siendo fuerte. ¿Por qué entonces la Luna orbita la Tierra y no el Sol? Porque, junto a la Tierra, estás TAN cerca de ella que su masa ~333 000× menor aún gana. El límite donde eso cambia —donde estás lo bastante lejos como para que el Sol vuelva a mandar— es la esfera de Hill."
+  }
+]

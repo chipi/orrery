@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La lezione più profonda è che nel volo spaziale umano, arrivare ultimi può essere una forma di saggezza. L'India arriva al volo con equipaggio con tutti gli incidenti dei predecessori da studiare, e la possibilità di eliminare in anticipo attraverso l'ingegneria i fallimenti che altri hanno scoperto fatalmente. Essere decenni in ritardo le costa prestigio che non sembra volere; ciò che compra, se il metodo tiene, sono astronauti che tornano a casa."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=gaganyaan": "Flotta — la navicella Gaganyaan",
+    "/programs/chandrayaan": "Chandrayaan — il programma lunare dell'India",
+    "/programs/mangalyaan": "Mangalyaan — la missione marziana dell'India riuscita al primo tentativo"
+  }
 }

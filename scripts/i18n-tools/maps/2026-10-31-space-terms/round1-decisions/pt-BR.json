@@ -1,0 +1,602 @@
+[
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistências gravitacionais is binding"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "perigee",
+    "decision": "change",
+    "find": "periélio da órbita de estacionamento",
+    "replace": "perigeu da órbita de estacionamento",
+    "why": "Earth parking orbit: perigeu (periélio is wrong)"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "O queimador ocorre",
+    "replace": "A queima ocorre",
+    "why": "\"queimador\" (burner) is wrong word; queima"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "o maior queimador isolado",
+    "replace": "a maior queima isolada",
+    "why": "queimador -> queima"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "por queimadores de partida",
+    "replace": "por queimas de partida",
+    "why": "queimador -> queima"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistências gravitacionais is binding"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistências gravitacionais is binding"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistências gravitacionais is binding"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistências gravitacionais is binding"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistências gravitacionais is binding"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistências gravitacionais is binding"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "term": "perigee",
+    "decision": "change",
+    "find": "no periélio da sua órbita",
+    "replace": "no perigeu da sua órbita",
+    "why": "Earth parking orbit: perigeu"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "único queimador violento e dramático",
+    "replace": "única queima violenta e dramática",
+    "why": "\"queimador\" (burner) is wrong word; queima"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "Depois desse queimador",
+    "replace": "Depois dessa queima",
+    "why": "queimador -> queima"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burns up = incinera, not engine"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stars glow, not engine"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn out = esgotam, not engine"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "o impulso de partida de LEO",
+    "replace": "a queima de partida de LEO",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "o mínimo do impulso de partida",
+    "replace": "o mínimo da queima de partida",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.2",
+    "term": "burn",
+    "decision": "keep",
+    "why": "imperative queime = verb form of queima"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "um burn de primeiro estágio",
+    "replace": "uma queima de primeiro estágio",
+    "why": "untranslated burn"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "term": "thrust",
+    "decision": "change",
+    "find": "produzia 6,77 MN",
+    "replace": "produzia 6,77 MN de empuxo",
+    "why": "restores omitted \"of thrust\""
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion of propellant sliver"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning gas = combustion"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "specific impulse",
+    "decision": "keep",
+    "why": "plural impulsos específicos present"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "imperative queime = verb form of queima"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "fazer o burn superior de uma vez",
+    "replace": "fazer a queima do estágio superior de uma vez",
+    "why": "untranslated burn"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "dá um burn final preciso",
+    "replace": "dá uma queima final precisa",
+    "why": "untranslated burn"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "dois burns — um para circularizar, um para injeção translunar",
+    "replace": "duas queimas — uma para circularizar, uma para injeção translunar",
+    "why": "untranslated burn"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "queimá-lo = combustion of drive gas"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "de dois impulsos mais barata",
+    "replace": "de duas queimas mais barata",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "Dois impulsos, no total",
+    "replace": "Duas queimas, no total",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "um impulso de frenagem muito maior",
+    "replace": "uma queima de frenagem muito maior",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Dois impulsos do motor o levarão lá. Um no periélio",
+    "replace": "Duas queimas do motor o levarão lá. Uma no periélio",
+    "why": "engine firing + agreement"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Outro no apélio",
+    "replace": "Outra no apélio",
+    "why": "agreement with queima"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "o impulso de entrada no destino fica maior",
+    "replace": "a queima de entrada no destino fica maior",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"Acione com mais força\" is a verb form; acceptable"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "single-stage-to-orbit kept as English phrase"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "RP-1 \"Rocket Propellant 1\" is a name"
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "uma carga de 1 tonelada",
+    "replace": "uma carga útil de 1 tonelada",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "narrative_101.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "Quanto maior e mais pesado o carregamento",
+    "replace": "Quanto maior e mais pesada a carga útil",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "diagram_caption",
+    "term": "payload",
+    "decision": "change",
+    "find": "carregamento leve",
+    "replace": "carga útil leve",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/mission-phases/eva.json",
+    "at": "diagram_caption",
+    "term": "payload",
+    "decision": "change",
+    "find": "(bateria/carga)",
+    "replace": "(bateria/carga útil)",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "payload",
+    "decision": "keep",
+    "why": "Vega Secondary Payload Adapter is a proper name"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "entregar a carga nesses",
+    "replace": "entregar a carga útil nesses",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "ou cargas não sensíveis",
+    "replace": "ou cargas úteis não sensíveis",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.0",
+    "term": "payload",
+    "decision": "change",
+    "find": "massa de carga.",
+    "replace": "massa de carga útil.",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "a carga ou o cronograma",
+    "replace": "a carga útil ou o cronograma",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.0",
+    "term": "payload",
+    "decision": "change",
+    "find": "cargas mais pesadas",
+    "replace": "cargas úteis mais pesadas",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.0",
+    "term": "payload",
+    "decision": "change",
+    "find": "dada massa de carga você",
+    "replace": "dada massa de carga útil você",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "massas de carga,",
+    "replace": "massas de carga útil,",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "narrative_101.2",
+    "term": "payload",
+    "decision": "keep",
+    "why": "carga-útil hyphenated compound present"
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "keep",
+    "why": "carga-útil hyphenated compound present"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "ainda inseriu a carga.",
+    "replace": "ainda inseriu a carga útil.",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "narrative_101.2",
+    "term": "payload",
+    "decision": "keep",
+    "why": "cargas úteis plural present"
+  },
+  {
+    "rel": "science/mission-phases/launch.json",
+    "at": "body_paragraphs.0",
+    "term": "thrust",
+    "decision": "change",
+    "find": "desperdiça impulso em altitude",
+    "replace": "desperdiça empuxo em altitude",
+    "why": "binding empuxo"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.1",
+    "term": "thrust",
+    "decision": "change",
+    "find": "desde potência máxima até uma fração dela",
+    "replace": "desde o empuxo máximo até uma fração dele",
+    "why": "binding empuxo"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.1",
+    "term": "thrust",
+    "decision": "change",
+    "find": "Mas o impulso — e portanto",
+    "replace": "Mas o empuxo — e portanto",
+    "why": "binding empuxo"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.1",
+    "term": "thrust",
+    "decision": "change",
+    "find": "quilonewtons de impulso",
+    "replace": "quilonewtons de empuxo",
+    "why": "binding empuxo"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.2",
+    "term": "thrust",
+    "decision": "change",
+    "find": "Esse teto de impulso",
+    "replace": "Esse teto de empuxo",
+    "why": "binding empuxo"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "diagram_caption",
+    "term": "thrust",
+    "decision": "change",
+    "find": "teto de impulso",
+    "replace": "teto de empuxo",
+    "why": "binding empuxo"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "term": "thrust",
+    "decision": "change",
+    "find": "produza impulso",
+    "replace": "produza empuxo",
+    "why": "binding empuxo"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "term": "thrust",
+    "decision": "change",
+    "find": "para o mesmo impulso",
+    "replace": "para o mesmo empuxo",
+    "why": "binding empuxo"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.paragraphs.3",
+    "term": "flyby",
+    "decision": "change",
+    "find": "usa uma passagem para",
+    "replace": "usa um sobrevoo para",
+    "why": "binding sobrevoo"
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "o encontro de Voyager 2 com Netuno",
+    "replace": "o sobrevoo de Netuno pela Voyager 2",
+    "why": "binding sobrevoo"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "title",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Flyby, Orbiter",
+    "replace": "Sobrevoo, Orbiter",
+    "why": "binding sobrevoo"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "FLYBY: apontar",
+    "replace": "SOBREVOO: apontar",
+    "why": "binding sobrevoo"
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "keep",
+    "why": "verb form sobrevoe"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Lunar Orbit Insertion, Marte Orbit Insertion",
+    "replace": "Inserção em Órbita Lunar, Inserção em Órbita de Marte",
+    "why": "binding inserção em órbita"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "durante o pouso)",
+    "replace": "durante a descida)",
+    "why": "binding descida (EN: during descent)"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.3",
+    "term": "descent",
+    "decision": "change",
+    "find": "1202 durante o pouso",
+    "replace": "1202 durante a descida",
+    "why": "binding descida (EN: during descent)"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "do descent HUD",
+    "replace": "do HUD de descida",
+    "why": "binding descida"
+  }
+]

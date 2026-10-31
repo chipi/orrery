@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "より深い教訓はテンポについてである。Tiangongは、宇宙飛行において最も速く見えるプログラムが最も強いプログラムであることはめったにないことを示している。中国はすべての初記録に遅れて到着し、そのどれも気にかけず、代わりに完成し、信頼性があり、恒久的なステーションのために最適化した。2035年にまだ飛行していることが目標である場合、忍耐は慎重さではない――それは戦略である。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/tiangong": "Tiangong — 3D で見るステーション",
+    "/fleet?focus=tiangong": "フリート — Shenzhou、Tianzhou と Long March ファミリー",
+    "/programs/iss": "ISS — Tiangong が締め出されたステーション",
+    "/earth?site=tiangong": "頭上の Tiangong"
+  }
 }

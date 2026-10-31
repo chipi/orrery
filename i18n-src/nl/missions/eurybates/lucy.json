@@ -1,9 +1,9 @@
 {
   "name": "Lucy",
   "vehicle": "Atlas V 401",
-  "payload": "1550 kg (incl. 1003 kg hydrazine — Lucy draagt veel meer drijfgas dan droge massa)",
-  "delta_v": "~6 km/s (met 3 aardse zwaartekrachtsteunen)",
-  "type": "MEERVOUDIGE VLIEGBY · ACTIEF",
+  "payload": "1550 kg (incl. 1003 kg hydrazine — Lucy draagt veel meer drijfstof dan droge massa)",
+  "delta_v": "~6 km/s (met 3 aardse zwaartekrachtassists)",
+  "type": "MEERVOUDIGE FLYBY · ACTIEF",
   "first": "Eerste missie naar de Jupiter-trojanen; bezoekt 11 lichamen verspreid over 8 asteroïden en hun satellieten in een enkel traject van 12 jaar — een recordaantal objecten op afzonderlijke zonnebanen",
   "description": "Lucy reikt naar de L4- en L5-Lagrange-wolken — populaties van primordiale asteroïden die Jupiter met 60° voorafgaan en volgen, waarvan wordt aangenomen dat ze materiaal uit de buitenste protoplanetaire schijf bewaren. Drie zwaartekrachtassistenties vanuit de Aarde (2022, 2024, 2030) bepalen een enkele baan die zeven Trojaanse asteroïden bezoekt plus extra doelen in de hoofdgordel. Eerste asteroïde-ontmoeting: 152830 Dinkinesh (2023-11-01, ~790 m), waarbij beeldvorming de contactbinaire satelliet Selam onthulde. Bonus hoofdgordel: Donaldjohanson 2025-04. L4-zwerm: Eurybates + maan Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Na EGA-3 (2030-12) volgt de achterlopende L5-zwerm: binair Patroclus-Menoetius (2033-03) — de grootste bekende Trojaanse binaire, een passende climax voor de naamgever van de missie (Lucy het hominide-fossiel; Patroclus-Menoetius de twee karakters die samen vielen in de Iliade).",
   "events": [
@@ -22,19 +22,19 @@
     {
       "met": 746,
       "label": "DINKINESH",
-      "note": "2023-11-01. Eerste asteroïde-vliegby — ~790 m lichaam uit de hoofdgordel; satelliet Selam (contact-binaire) ontdekt.",
+      "note": "2023-11-01. Eerste asteroïde-flyby — ~790 m lichaam uit de hoofdgordel; satelliet Selam (contact-binaire) ontdekt.",
       "type": "info"
     },
     {
       "met": 1282,
       "label": "DONALDJOHANSON",
-      "note": "Bonus vliegby door hoofdgordel 2025-04. 4-km C-type asteroïde.",
+      "note": "Bonus-flyby door hoofdgordel 2025-04. 4-km C-type asteroïde.",
       "type": "info"
     },
     {
       "met": 2126.001,
       "label": "EURYBATES + QUETA",
-      "note": "2027-08. Eerste Trojaanse ontmoeting. 64-km C-type + 1-km maan.",
+      "note": "2027-08. Eerste ontmoeting met een Trojaan. C-type van 64 km + maan van 1 km.",
       "type": "info"
     },
     {
@@ -58,7 +58,7 @@
     {
       "met": 3345,
       "label": "EGA-3",
-      "note": "Laatste assistentie vanuit de Aarde 2030-12. Koers naar L5-wolk.",
+      "note": "Laatste zwaartekrachtassist langs de Aarde 2030-12. Koers naar de L5-wolk.",
       "type": "info"
     },
     {
@@ -67,5 +67,6 @@
       "note": "2033-03. Missie-climax: 113-km + 104-km binaire Trojaan.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur-bovenste trap (Atlas V 401)"
 }

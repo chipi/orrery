@@ -11,5 +11,6 @@
     { "met": 8, "label": "TCM-1", "note": "First mid-course correction completed; trajectory locked.", "type": "nominal" },
     { "met": 228, "label": "MARS FLYBY", "note": "Closest approach 9,846 km. 22 images returned over 8 hours during data playback.", "type": "nominal" },
     { "met": 228.5, "label": "FIRST IMAGES", "note": "First close-up images of another planet ever returned to Earth.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Agena D upper stage"
 }

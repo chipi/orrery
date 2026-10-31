@@ -1,0 +1,337 @@
+[
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Plataforma polar",
+    "replace": "Plataforma de órbita polar",
+    "why": "orbit dropped"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "natural omission: lanzamientos polares y heliosincrónicos"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "Cargas típicas",
+    "replace": "Las cargas útiles típicas",
+    "why": "carga alone lacks útil"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Plataforma polar",
+    "replace": "Plataforma de órbita polar",
+    "why": "orbit dropped"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "sistemas de cita",
+    "replace": "sistemas de encuentro",
+    "why": "cita alone is an appointment"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "description",
+    "term": "docking",
+    "decision": "keep",
+    "why": "stem gap: atracar"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "se reunió con el orbitador",
+    "replace": "realizó el encuentro con el orbitador",
+    "why": "rendezvous rendered as met up"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "primeras cargas científicas",
+    "replace": "primeras cargas útiles científicas",
+    "why": "útiles dropped"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "una cita en Psyche en 2029",
+    "replace": "un encuentro con Psyche en 2029",
+    "why": "cita alone is an appointment"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: hydrogen-burning rendered de hidrógeno"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "la inyección orbital",
+    "replace": "la inserción orbital",
+    "why": "inyección is not the binding"
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "tagline",
+    "term": "stage",
+    "decision": "change",
+    "find": "un solo estadio",
+    "replace": "una sola etapa",
+    "why": "estadio is a stadium"
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "un solo estadio",
+    "replace": "una sola etapa",
+    "why": "estadio is a stadium"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "primer estadio RD-107A/RD-108A + tercer estadio RD-0124",
+    "replace": "primera etapa RD-107A/RD-108A + tercera etapa RD-0124",
+    "why": "estadio is a stadium"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "tercer estadio mejorado",
+    "replace": "tercera etapa mejorada",
+    "why": "estadio is a stadium"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "estadio único RD-110",
+    "replace": "etapa única RD-110",
+    "why": "estadio is a stadium"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: impulsores"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "depósitos de propulsor",
+    "replace": "depósitos de propelente",
+    "why": "propulsor is a thruster"
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "La elección del propulsor",
+    "replace": "La elección del propelente",
+    "why": "propulsor is a thruster"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ambos propulsores",
+    "replace": "ambos propelentes",
+    "why": "propulsor is a thruster"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "propulsor residual",
+    "replace": "propelente residual",
+    "why": "propulsor is a thruster"
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "los propulsores de queroseno",
+    "replace": "los propelentes de queroseno",
+    "why": "propulsor is a thruster"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "propulsores hipergólicos almacenables",
+    "replace": "propelentes hipergólicos almacenables",
+    "why": "propulsor is a thruster"
+  },
+  {
+    "rel": "fleet/launcher/h-iia.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "variant: propulsión líquida"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "Propulsante líquido de una sola etapa",
+    "replace": "De una sola etapa y propelente líquido",
+    "why": "propulsante is not the binding; word order of single-stage liquid-propellant"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "term": "propellant",
+    "decision": "change",
+    "find": "trece toneladas de propulsor",
+    "replace": "trece toneladas de propelente",
+    "why": "propulsor is a thruster"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "Carga de utilidad",
+    "replace": "Carga útil",
+    "why": "de utilidad is wrong"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "y cargas de seguridad",
+    "replace": "y cargas útiles de seguridad",
+    "why": "útiles dropped"
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "las cargas estadounidenses",
+    "replace": "las cargas útiles estadounidenses",
+    "why": "útiles dropped"
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "cargas clasificadas",
+    "replace": "cargas útiles clasificadas",
+    "why": "útiles dropped"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "una carga científica",
+    "replace": "una carga útil científica",
+    "why": "útil dropped"
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "como carga compartida",
+    "replace": "como carga útil compartida",
+    "why": "útil dropped"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "term": "booster",
+    "decision": "change",
+    "find": "Motor de impulsor",
+    "replace": "Motor de primera etapa",
+    "why": "H-1 powers the first stage of Saturn I/IB"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "tagline",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanzador (whole vehicle)"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "best_known_for",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanzador (whole vehicle)"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: cohete (launch vehicle failure)"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "la sonda Giotto de la ESA al cometa Halley",
+    "replace": "la sonda Giotto de la ESA para el sobrevuelo del cometa Halley",
+    "why": "flyby dropped"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "vuelo rasante del asteroide",
+    "replace": "sobrevuelo del asteroide",
+    "why": "vuelo rasante is low-level flight"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "primer vuelo rasante de nave espacial",
+    "replace": "primer sobrevuelo de una nave espacial",
+    "why": "vuelo rasante is low-level flight"
+  }
+]

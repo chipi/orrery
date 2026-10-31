@@ -38,6 +38,8 @@ npm run images:hotspots -- <args>
 | `fetch-moon-traverse.ts` | Moon along-route detail patches | Apollo 16/17 only (map-projected LROC NAC). Samples polyline, crops 1024² tiles at native res. Other rovers = Kaguya regional-only (same res as context). |
 | `fetch-mars-traverse.ts` | Mars along-route detail patches | Samples 5 rover traverses (Curiosity, Perseverance, Opportunity, Spirit, Zhurong) every ~2 km + curated stops. HiRISE crops 512 m @ 0.25 m/px. Cache-local: consecutive points reuse same HiRISE swath. |
 | `regenerate-tier3-variants.mjs` | Variant rebuilder (NO vision API) | **REQUIRED:** after ANY hotspot base change. Regenerates `.1x1.jpg` variant at clamped resolution (MAX_VARIANT_LONG_SIDE=1920). Deterministic centred focal (0.5, 0.5) for equirectangular. |
+| `coreg-contact-sheet.mjs [site …]` | Mars co-registration review sheet (read-only) | One row per site: HiRISE detail, CTX central 512 m, CTX 15.4 km with a red box. Writes `/tmp/coreg-contact-sheet.jpg`. |
+| `coreg-seam-test.mjs <site> [site …]` | Mars co-registration seam test (read-only) | HiRISE detail downsampled into the CTX context at its footprint; a visible seam means a misregistration. Writes `/tmp/coreg-seam-<site>.jpg`. |
 
 ## Self-crediting
 

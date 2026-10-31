@@ -4,8 +4,8 @@
   "payload": "510 kg (incl. 60 kg di xeno per quattro propulsori a ioni μ10)",
   "delta_v": "~4,0 km/s",
   "type": "SAMPLE-RETURN · FLOWN",
-  "first": "Primo campione da asteroide mai riportato sulla Terra (~1.500 grani di polvere di Itokawa, totale sub-milligrammo)",
-  "description": "La Hayabusa della JAXA (che in giapponese significa 'falco') ha condotto la più eroica missione di salvataggio della storia dei voli spaziali. Lanciata il 2003-05-09 su un M-V-5 con quattro propulsori ionici μ10 — il sottosistema di propulsione ionica più potente mai volato fino a quel momento. Arrivò a 25143 Itokawa il 2005-09-12 — un asteroide near-Earth di forma irregolare di 540×270×210 m. Due allunaggi (2005-11-20 e 25), entrambi con guasti ai proiettili di raccolta campioni, ma il suolo fu comunque proiettato nel corno di raccolta. Poi una perdita di idrazina ha paralizzato il controllo d'assetto, due delle tre ruote di reazione si sono guastate, le comunicazioni si sono perse per sette settimane, la finestra di rientro dalla Terra si è spostata di tre anni. Gli ingegneri hanno assemblato un singolo motore ionico funzionante dalle metà superstiti di due motori danneggiati e hanno riportato Hayabusa sulla Terra. La capsula di campioni recuperata a Woomera AUS il 2010-06-13 conteneva ~1.500 grani di polvere di Itokawa (totale sub-milligrammo) — confermando la composizione di tipo S dell'asteroide e la struttura di mucchio di macerie, e provando che il recupero di campioni da asteroidi era possibile.",
+  "first": "Primo campione di asteroide mai riportato sulla Terra (circa 1.500 granelli di polvere di Itokawa, meno di un milligrammo in totale)",
+  "description": "La Hayabusa della JAXA (in giapponese 'falco') compì il più eroico salvataggio di una missione nella storia dei voli spaziali. Lanciata il 2003-05-09 su un M-V-5 con quattro propulsori ionici μ10 — il sottosistema di propulsione ionica più potente mai volato fino ad allora. Raggiunse 25143 Itokawa il 2005-09-12 — un asteroide vicino alla Terra, a mucchio di detriti, di 540×270×210 m. Due contatti con il suolo (2005-11-20 e 25), entrambi con guasto dei proiettili per la raccolta dei campioni, anche se la regolite fu comunque sollevata nel corno di raccolta. Poi una perdita di idrazina compromise il controllo d'assetto, due delle tre ruote di reazione si guastarono, le comunicazioni andarono perse per sette settimane e la finestra per il ritorno sulla Terra slittò di tre anni. Gli ingegneri assemblarono un unico motore ionico funzionante con le metà sopravvissute di due motori danneggiati e riportarono Hayabusa sulla Terra. La capsula con i campioni, recuperata a Woomera (AUS) il 2010-06-13, conteneva ~1.500 granelli di polvere di Itokawa (meno di un milligrammo in tutto) — a conferma della composizione di tipo S dell'asteroide e della sua struttura a mucchio di detriti, e a prova che il ritorno di campioni da un asteroide era possibile.",
   "events": [
     {
       "met": 0,
@@ -22,13 +22,13 @@
     {
       "met": 857,
       "label": "ARRIVO A ITOKAWA",
-      "note": "2005-09-12. Mantenimento stazione a gate position di 7 km.",
+      "note": "2005-09-12. Mantenimento stazione nel punto d'ingresso a 7 km.",
       "type": "info"
     },
     {
       "met": 857.01,
-      "label": "ALLUNAGGI",
-      "note": "Due contatti di superficie 2005-11-20 e 25. I proiettili di raccolta campioni non si sparano su comando.",
+      "label": "ATTERRAGGI",
+      "note": "Due contatti con la superficie 2005-11-20 e 25. I proiettili per la raccolta di campioni non partono al comando.",
       "type": "warning"
     },
     {
@@ -46,8 +46,9 @@
     {
       "met": 2592,
       "label": "RIENTRO CAMPIONI",
-      "note": "2010-06-13. ~1.500 grani di polvere di Itokawa (totale sub-milligrammo) recuperati a Woomera. Primo campione da asteroide mai riportato.",
+      "note": "2010-06-13. Circa 1.500 granelli di polvere di Itokawa (meno di un milligrammo in totale) recuperati a Woomera. Primo campione di asteroide mai riportato.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "quarto stadio dell'M-V-5 (KM-V2)"
 }

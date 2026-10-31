@@ -84,5 +84,13 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Stille Kompetenz verändert das Spielfeld. Chang'e machte keine großen Verlautbarungen und gewann kein Rennen um Schlagzeilen, und doch trug sein stetiger Erfolg mehr dazu bei, weltweit den Ehrgeiz einer bemannten Mondfahrt neu zu entfachen, als jede Rede – denn ein Programm, das schlicht immer weiter Erfolg hat, Mission um Mission, wird zu einer strategischen Tatsache, auf die alle anderen eine Antwort finden müssen. Beständigkeit ist am Ende eine eigene Form von Macht."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Mond — die Chang'e-Landeplätze",
+    "/fleet?focus=yutu-2": "Flotte — die Yutu-Rover und Chang'e-Lander",
+    "/programs/artemis": "Artemis — das parallele Rennen zurück zum Mond",
+    "/moon?site=change3": "Chang’e 3 — Rover Yutu",
+    "/moon?site=change4": "Chang’e 4 — die Rückseite",
+    "/moon?site=change2": "Chang’e 2"
+  }
 }

@@ -183,6 +183,21 @@ export default defineConfig(({ mode, command }) => {
         // Paraglide release that makes middleware-splitting SPA-aware,
         // or a custom dynamic-import shim. Documented as a follow-up.
       }),
+      // Production builds replace the /dev developer pages with empty stubs.
+      // src/routes/dev/+layout.ts already 404s them outside dev, but their
+      // chunks still shipped and the service worker precached them (~96 KiB
+      // per install). The layout guard stays the single source of the 404;
+      // the stubs only keep the route nodes valid.
+      {
+        name: 'orrery-stub-dev-routes',
+        enforce: 'pre',
+        apply: 'build',
+        load(id: string) {
+          const file = id.split('?')[0];
+          if (!/\/src\/routes\/dev\/(.+\/)?\+page\.(svelte|ts)$/.test(file)) return null;
+          return file.endsWith('.svelte') ? '<p>Not found</p>\n' : 'export {};\n';
+        },
+      },
       sveltekit(),
       // Prod deploy only (#595): inject Sentry debug ids DURING the build. The
       // plugin prepends the id snippet in renderChunk, before Vite names the chunk,
@@ -259,7 +274,7 @@ export default defineConfig(({ mode, command }) => {
           // data JSON, imagery and audio load at runtime via the rules below.
           globPatterns: [
             'client/**/*.{js,css,woff2,svg,ico}',
-            // Precache ONLY the default-locale bundle — on web AND mobile (#518).
+            // Precache ONLY the default locale's chunks (en-US.<chunk>.json) — on web AND mobile (#518).
             // The precache is an all-or-nothing cache.addAll(): every extra entry
             // is another chance for the atomic install to reject, and the 13
             // non-default bundles (~22 MB) were the bulk of that surface. They
@@ -268,7 +283,7 @@ export default defineConfig(({ mode, command }) => {
             // still gets their bundle cached — just on demand, not up front. On
             // MOBILE the other bundles are additionally pruned off-device
             // (streamed via S3), so referencing them here would 404 the install.
-            'client/data/i18n/en-US.json',
+            'client/data/i18n/en-US.*.json',
             // Keep a `prerendered/`-prefixed pattern here: @vite-pwa's
             // buildGlobPatterns force-adds prerendered/**/*.{html,json} (~60 MB
             // of data JSON → blows the precache budget) UNLESS some pattern
@@ -537,8 +552,8 @@ export default defineConfig(({ mode, command }) => {
           lines: 93,
         },
         exclude: [
-          'node_modules/',
-          'src/lib/paraglide/',
+          'node_modules/**',
+          'src/lib/paraglide/**',
           '**/*.test.ts',
           '**/*.spec.ts',
           'src/routes/**/+page.svelte',
@@ -553,11 +568,11 @@ export default defineConfig(({ mode, command }) => {
           // Their pure-function parsers + entry mappers are covered
           // separately by *.test.ts files alongside.
           'scripts/_*.ts',
-          'scripts/hotspots/',
-          'scripts/gcat/',
+          'scripts/hotspots/**',
+          'scripts/gcat/**',
           // Hand-run translation editing tools; they never run in the app.
-          'scripts/i18n-tools/',
-          'src/lib/launches/sources/',
+          'scripts/i18n-tools/**',
+          'src/lib/launches/sources/**',
           'scripts/fetch-launches.ts',
           'scripts/audit-report-launches.ts',
           // AR runtime (RFC-021 / #150 — WebXR/ARKit sessions, XR render loops,
@@ -565,7 +580,7 @@ export default defineConfig(({ mode, command }) => {
           // WebGL-XR, no native bridge). Verified on-device; the pure helpers keep
           // their *.test.ts (which still run) — same policy as scripts/hotspots.
           'src/lib/ar.ts',
-          'src/lib/ar/',
+          'src/lib/ar/**',
           // Three.js solar-system scene builder extracted from /explore's
           // +page.svelte (already excluded above). Its build/update/dispose run
           // a WebGL render loop + GPU resource management that can't be
@@ -670,6 +685,7 @@ export default defineConfig(({ mode, command }) => {
           // assembly lifted from the explore/+page.svelte onMount; same WebGL policy.
           'src/lib/three/explore-solar-scene.ts',
           'src/lib/three/explore-scene-host.ts',
+          'src/lib/three/explore-render-stack.ts',
           // Shared 3D asset builders used by the model/scene files above — hero
           // PBR materials + IBL (hero-materials) and the low-level geometry
           // helper (model-geom) both instantiate Three.js materials/geometry
@@ -684,7 +700,7 @@ export default defineConfig(({ mode, command }) => {
           'src/lib/hotspot-models/**',
           'src/lib/three/dispose-object3d.ts',
           '*.config.{js,ts}',
-          '.svelte-kit/',
+          '.svelte-kit/**',
         ],
       },
     },

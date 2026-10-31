@@ -6,7 +6,7 @@
   is the escape hatch. Modelled on ScienceSearch's proven modal pattern.
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { goto } from '$app/navigation';
   import { untrack } from 'svelte';
   import * as m from '$lib/paraglide/messages';
@@ -72,7 +72,7 @@
 
   function go(item: CommandItem) {
     onClose();
-    void goto(`${base}${item.href}`);
+    void goto(localHref(item.href));
   }
 
   function onKeydown(ev: KeyboardEvent) {

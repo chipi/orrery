@@ -33,6 +33,8 @@
     visible?: boolean;
     /** Optional test id for Playwright (e.g. 'panel-tab-story'). */
     testid?: string;
+    /** Optional audio-tour stage hook (data-audio-stage). */
+    audioStage?: string;
   }
   interface Props {
     tabs: TabDef[];
@@ -44,8 +46,18 @@
     rowClass?: string;
     /** Optional CSS class on each button (e.g. 'tab-btn' on /mars). */
     buttonClass?: string;
+    /** When set, each tab gets id `<prefix>-tab-<id>` and aria-controls
+     *  `<prefix>-tabpanel`; the caller renders that tabpanel with
+     *  aria-labelledby `<prefix>-tab-<active>`. */
+    idPrefix?: string;
   }
-  let { tabs, active = $bindable(), rowClass = 'tabs', buttonClass = '' }: Props = $props();
+  let {
+    tabs,
+    active = $bindable(),
+    rowClass = 'tabs',
+    buttonClass = '',
+    idPrefix,
+  }: Props = $props();
 </script>
 
 <div class={rowClass} role="tablist">
@@ -58,6 +70,9 @@
         onclick={() => (active = tab.id)}
         role="tab"
         aria-selected={active === tab.id}
+        id={idPrefix ? `${idPrefix}-tab-${tab.id}` : undefined}
+        aria-controls={idPrefix ? `${idPrefix}-tabpanel` : undefined}
+        data-audio-stage={tab.audioStage}
         data-testid={tab.testid}
       >
         {tab.label}

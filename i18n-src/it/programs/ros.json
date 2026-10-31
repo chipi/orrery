@@ -76,5 +76,10 @@
       "type": "prose",
       "md": "La lezione più profonda è la distanza tra annunciare una stazione e farla volare. La ROS ha patrimonio, intenzioni e una chiara logica strategica — e deve comunque essere costruita sotto sanzioni con un budget ridotto. L'ambizione costa poco e le stazioni sono costose; il programma è un promemoria che nel volo spaziale, il piano è la parte facile, e la parte difficile è pagarla."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/mir": "Mir — la stazione modulare da cui discende il segmento russo",
+    "/programs/salyut": "Salyut — le prime stazioni della Russia",
+    "/programs/iss": "SSI — la collaborazione che la Russia sta lasciando"
+  }
 }

@@ -1,0 +1,65 @@
+[
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.4.note",
+    "find": "capsule d'entrée atmosphérique contenant",
+    "replace": "capsule de rentrée contenant",
+    "why": "re-entry rendered as atmospheric entry"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "first",
+    "find": "en service depuis le plus longtemps",
+    "replace": "en activité le plus longtemps",
+    "why": "ungrammatical 'longest-running' phrasing"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.2.note",
+    "find": "la position « gate » de 7 km",
+    "replace": "la position « porte » de 7 km",
+    "why": "English 'gate' left in"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "description",
+    "find": "en quatre ans, à moins de 25 km",
+    "replace": "en quatre ans — à moins de 25 km",
+    "why": "English has em dash here; keep it"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "dispatch",
+    "find": "l'entrée atmosphérique à la main",
+    "replace": "la rentrée à la main",
+    "why": "reentry, not atmospheric entry"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "dispatch",
+    "find": "sur un autre monde",
+    "replace": "sur n'importe quel monde",
+    "why": "English says any world, not another"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.2.note",
+    "find": "contrôle d'entrée atmosphérique",
+    "replace": "contrôle de rentrée",
+    "why": "reentry-control system; keep old term"
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "description",
+    "find": "Pendant l'entrée atmosphérique",
+    "replace": "Pendant la rentrée",
+    "why": "reentry, not atmospheric entry"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "first",
+    "find": "en l'un des sauvetages les plus célèbres",
+    "replace": "en l'opération de sauvetage la plus célèbre",
+    "why": "English says most celebrated, not one of"
+  }
+]

@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "A segunda lição é que excelência em engenharia não pode salvar um programa da perda de seu propósito e seu orçamento. Buran foi, de formas reais, um projeto melhor que o veículo ao qual respondia — e voou uma vez. O Shuttle americano, apesar de todas as suas falhas, voou por trinta anos porque tinha missões para voar e dinheiro para voá-las. Uma espaçonave é tão durável quanto a vontade institucional e o financiamento por trás dela; sem esses, mesmo um voo impecável é um fim em vez de um começo."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/space-shuttle": "Space Shuttle — o veículo ao qual respondia",
+    "/fleet?focus=buran": "Frota — o orbitador Buran e a Energia"
+  }
 }

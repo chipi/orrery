@@ -1,0 +1,1124 @@
+[
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "H-IIA 202 vanaf Tanegashima begint de reis van 3,5 jaar naar asteroïde Ryugu.",
+    "note": "\"cruise\" is English left in"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Eerste terugkeer van maanmonsters in 44 jaar (sinds Luna 24, 1976)",
+    "note": "Clumsy compound \"maanmonster-terugkeer\""
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Atlas V 401 vanaf Cape Canaveral SLC-41 (met LCROSS-impactor als secundaire lading).",
+    "note": "\"als secundair\" lacks the noun"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Spider voert een rendez-vous uit en koppelt opnieuw aan Gumdrop, waarmee de generale repetitie van de maanprocedure in een aardbaan wordt voltooid.",
+    "note": "rendezvous should be rendez-vous"
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "De Titan-flyby boog het traject uit het eclipticavlak — geen verdere ontmoeting met een planeet mogelijk.",
+    "note": "trajectory rendered as baan; flyby not used"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Dichtste nadering van 596 km tot komeet 1P/Halley; eerste close-upbeelden van een komeetkern.",
+    "note": "Awkward \"dichtstbijzijnde benadering tot\", \"close-up beeldvorming\""
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Eerste ruimtesonde die voorbij Saturnus vloog (1979-09-01); demonstreerde de zwaartekrachtassist die Voyager 2 verder stuurde",
+    "note": "zwaartekrachtassistentie instead of zwaartekrachtassist"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Koerscorrectie halverwege verplaatst het ruimtevaartuig van het vrije-terugkeertraject naar een Fra Mauro-benadering.",
+    "note": "trajectory rendered as baan; \"Midcourse\" English"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Allereerste manoeuvre met een zwaartekrachtassist van Maan en Aarde — Maan + Aarde in één zwaai.",
+    "note": "Wrong assist form, \"Eerste-ooit\", English \"swing\""
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Voltooiing van de eerste volledige polaire baan om de Zon.",
+    "note": "\"polaire zonsbaan\" is an odd coinage"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Eerste close-upbeelden van een andere planeet die ooit naar de Aarde zijn teruggestuurd.",
+    "note": "Garbled participle phrase \"ooit teruggekeerd naar de Aarde\""
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Gebruikte een zwaartekrachtassist van Jupiter om af te buigen naar een traject richting Saturnus.",
+    "note": "\"Jupiter-assistentie\" misses the assist binding"
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Eerste dag in de ruimte — 17 banen in 25 uur",
+    "note": "orbit count should use baan"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Lander/rover daalt neer op Utopia Planitia 2021-05-14; Zhurong rolt 2021-05-22 van de oprijplaat.",
+    "note": "\"rolt van helling\" unnatural; \"daalt af\" for descends to"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "De afdalingsmodule scheidt + landt; de ballon wordt ontplooid op 54 km hoogte en vliegt 46,5 uur.",
+    "note": "\"ballon ontvouwt\" and \"voor 46,5 uur\" unnatural"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Gemini 8 voerde de eerste koppeling van twee ruimtevaartuigen in een baan uit — en bracht daarna bijna zijn bemanning om het leven. Minuten nadat Neil Armstrong zijn Gemini voorzichtig in een vergrendelde koppeling met een Agena-doelwit had gemanoeuvreerd, begon het gekoppelde paar te rollen, steeds sneller, tot het ongeveer eens per seconde tolde en het zicht van de astronauten grijs begon te worden, richting bewusteloosheid. Armstrong koppelde los — wat het alleen maar erger maakte, omdat de fout in zijn eigen ruimtevaartuig zat — schakelde daarna de hoofdstuwraketten uit en stopte de draaiing met het besturingssysteem voor de atmosferische intrede, een beslissing die hun leven redde maar volgens de regels een onmiddellijke noodterugkeer afdwong. Het was het gevaarlijkste moment van het programma, en het was Armstrongs eerste ruimtevlucht. De kalme, snelle diagnose in een situatie die uit de hand liep, is precies het temperament dat NASA zich zou herinneren toen het koos wie op de Maan zou landen.",
+    "note": "reentry-control rendered literally; clumsy phrasing; entry binding missed"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) gebruikte zes zwaartekrachtassists gedurende zeven jaar — Aarde, Venus twee keer, Mercurius drie keer — om af te remmen en op 2011-03-18 in een baan om Mercurius te komen. Door een zonnescherm beschermd, met één zijde op 370 °C en de andere op -45 °C. Tot de ontdekkingen behoorden waterijs in permanent in schaduw liggende poolkraters, voorheen onbekende geologische structuren die “hollows” worden genoemd, en de bevestiging dat de ijzeren kern van Mercurius ongeveer 85 % van de straal van de planeet beslaat (de grootste verhouding tussen kern en straal van alle planeten in het zonnestelsel). De missie eindigde op 2015-04-30 met een gecontroleerde inslag op het oppervlak van Mercurius, nadat de brandstof op was.",
+    "note": "Clumsy sunshade sentence, \"hollows geologische kenmerken\", \"kern-tot-straal verhouding\""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "De eerste bemande vlucht van de Lunar Module. In een aardbaan koppelden McDivitt en Schweickart de LM Spider los van CSM Gumdrop, vlogen tot 183 km weg in zes uur, en voerden daarna een rendez-vous uit en koppelden opnieuw aan — elke stap van de maanrendez-vousprocedure werd getest zonder de mogelijkheid om de bemanning bij problemen met de CSM naar huis te brengen. Schweickart maakte een EVA van 38 minuten op de LM-veranda, waarmee hij het ontwerp van het Apollo-EVA-pak met PLSS-rugzak demonstreerde dat de maanwandelaars zouden gebruiken. Scott maakte een stand-up-EVA vanuit het CSM-luik. Nu de LM-hardware en de rendez-vousprocedures waren geverifieerd, kon NASA twee maanden later Apollo 10 naar de Maan sturen.",
+    "note": "rendezvous binding missed; \"vanuit de CSM-luik\" gender error; \"gehost\""
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Dient als doelwit voor het eerste bemande rendez-vous van Gemini 6A.",
+    "note": "rendezvous should be rendez-vous, gender het"
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Eerste gemotoriseerde, gecontroleerde vlucht op een andere planeet — 39,1 seconden op tot 5 m hoogte.",
+    "note": "\"controleerde\" and \"een ander planet\" are ungrammatical"
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Skylab 3 nam de vraag naar het uithoudingsvermogen en verdubbelde het antwoord bijna. De eerste bemanning was 28 dagen gebleven, de bemanning van Alan Bean bleef er 59 — en bracht het menselijk lichaam verder in langdurige gewichtloosheid dan iemand ooit was gegaan, om gezonder terug te keren dan de pessimisten hadden gevreesd. Ze verzamelden een enorme hoeveelheid zonnewaarnemingen met de Apollo Telescope Mount en doorstonden een schrikmoment toen lekken in de stuurraketten van hun Apollo-pendelschip even de mogelijkheid van een reddingsvlucht opriepen. Bij Skylab 3 begonnen lange verblijven in de ruimte niet alleen overleefbaar maar ook routine te lijken — het stille voorwerk voor elke maandenlange stationsmissie sindsdien.",
+    "note": "Clumsy sentence switch, \"uithoudingsvraag\", \"stationtour\""
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "1972-10-27. Gas voor standregeling uitgeput.",
+    "note": "\"Houdingsregelingsgas\" is an odd compound with soft hyphen"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Laatste zwaartekrachtassist langs de Aarde 2030-12. Koers naar de L5-wolk.",
+    "note": "\"assistentie vanuit de Aarde\" misstates the Earth assist"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Trans-lunaire injectie — herstel van blikseminslagen geverifieerd; missie GO voor de Maan.",
+    "note": "\"maan\" lowercase; stiff \"Trans-lunaire\""
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "BE-7 afdaling met regelbare stuwkracht naar het maanoppervlak — eerste maanlanding van Blue Origin.",
+    "note": "\"throttled\" left in English"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Eerste polaire orbiter van Jupiter; voor het eerst op zonne-energie voorbij de planetoïdengordel",
+    "note": "Missing \"op\" makes the solar-power clause incomplete"
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Capsule daalde neer in Dorbod Banner, Binnen-Mongolië, op 1999-11-20 19:41 UTC.",
+    "note": "Noun phrase without verb; \"Binnenmongolie\" misspelt"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "CM maakte een waterlanding in de zuidelijke Stille Oceaan 1969-11-24 20:58 UTC. Berging door USS Hornet.",
+    "note": "\"kwam neer\" and \"Stille Zuidzee\" dated or unnatural"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Ballistisch vangsttraject met lage energie in uitvoering.",
+    "note": "Wrong adjective agreement and broken compound"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Titan IIIE lanceert Voyager 2 vanaf Cape Canaveral op een Grand Tour-traject.",
+    "note": "\"tilt ... op\" is not a launch verb"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Atlas LV-3 Agena-D stijgt op vanaf Cape Canaveral LC-12.",
+    "note": "\"heft af\" is not Dutch for lift off"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Dichtste nadering 9.846 km. 22 beelden teruggestuurd in 8 uur tijdens het afspelen van de gegevens.",
+    "note": "\"teruggegeven\", \"gegevensafspeling\" unnatural"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "type",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "MONSTERTERUGKEER + LANDERS · ACTIEF (uitgebreid)",
+    "note": "\"MONSTERMONSTERRUGKEER\" is a garbled nonword"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Eerste missie gewijd aan het karakteriseren van de bewoonbaarheid van een ijzige maan; grootste ruimtevaartuig voor een planetaire missie ooit gelanceerd (6065 kg, 100-m² zonnepanelen)",
+    "note": "\"planetaire missie-ruimtevaartuig\" clumsy compound"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "13 jaar in baan om Saturnus — Huygens landde op 2005-01-14 op Titan (eerste zachte landing in het buitenste zonnestelsel)",
+    "note": "Date reformatted away from ISO"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "14-daagse uithoudingsvlucht; rendez-vousdoelwit voor Gemini 6A",
+    "note": "rendezvous should be rendez-vous"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Eerste bemande rendez-vous — houdt positie binnen ~30 cm van Gemini 7.",
+    "note": "rendezvous should be rendez-vous"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Gemini 3 was de proefvlucht — de eerste vlucht van het nieuwe tweezitsruimtevaartuig, en de eerste keer dat een Amerikaanse bemanning haar eigen baan veranderde in plaats van alleen mee te rijden op de baan die de raket haar gaf. Gus Grissom voerde het commando, vier jaar nadat zijn Mercury-capsule bij de landing in zee was gezonken, en noemde dit ruimtevaartuig „Molly Brown” naar de onzinkbare heldin — een stukje galgenhumor waar de voorlichtingsdienst van NASA niet blij mee was. De vlucht zelf was kort en bewust bescheiden: drie banen om te bewijzen dat de machine vloog zoals ontworpen. Maar dat kleine bijsturen van de baan met boordmotoren was de eerste stap van alles waarvoor Gemini bestond.",
+    "note": "\"omwentelingen\" for orbits; plural \"hun\" for a crew"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Flyby van ~120 km langs een van de grootste asteroïden in de hoofdgordel die ooit van dichtbij zijn waargenomen.",
+    "note": "\"asteröïden\" is a misspelt nonword"
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Neutronenspectrometer detecteert scherpe tekorten in de neutronenflux boven beide maanpolen — sterk waterstofsignaal, passend bij polair waterijs.",
+    "note": "\"waterjijs\" nonword; \"consistent met\" anglicism"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Apogeum in HEO ~38.800 km × ~320 km (eerste zeer elliptische OTV-vlucht); operaties met geclassificeerde lading.",
+    "note": "apogee and payload bindings not used"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Allereerste close-up van een asteroïde van type E.",
+    "note": "\"asteröïde\" is a misspelt nonword"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "2025-03-01. Buigt het traject af richting een nieuwe ontmoeting met de Aarde.",
+    "note": "\"Aarde-tegenontmoeting\" nonword; trajectory not rendered as traject"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Contactverlies in 2022-04 nadat de drijfstof van het ruimtevaartuig was uitgeput.",
+    "note": "brandstof used instead of the drijfstof binding"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Maanbaaninsertie. SPS ∆v ~0,91 km/s.",
+    "note": "\"Maanorbitale inbrengings\" is truncated and not a word"
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "De ambitieuze dubbelmissie van de Sovjet-Unie naar Mars in 1971 — Mars 2 en Mars 3 werden met 9 dagen tussentijd gelanceerd. De lander van Mars 2 stortte neer; de lander van Mars 3 maakte de eerste zachte landing op Mars, maar zweeg ~110 seconden na de landing — de eigenlijke transmissie duurde slechts ~14,5 seconden — mogelijk door de wereldwijde stofstorm die toen woedde. De orbiter werkte 8 maanden en leverde tientallen beelden en atmosferische metingen op. Ondanks de korte oppervlaktemissie toonde Mars 3 aan dat het probleem van afdaling en landing op Mars oplosbaar was.",
+    "note": "\"haalde de eerste zachte landing\" unnatural"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "EVA-3 / vóór de opstijging: Scott laat voor de tv-camera een hamer + veer tegelijk vallen; beide raken tegelijk het regoliet, waarmee de voorspelling van Galileo uit 1589 live wordt bevestigd.",
+    "note": "Garbled participle phrases, \"gedropt\", \"veertje\""
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Ariane 1 lanceert Giotto vanaf Kourou — de eerste missie van ESA in de diepe ruimte.",
+    "note": "\"deep-space missie\" English; \"van Kourou\" wrong preposition"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Eerste Mercury-vlucht volgens het boekje — 6 banen; tweemaal de duur van Glenn / Carpenter",
+    "note": "\"modelmatige\" and \"dubbele duur\" unnatural"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "CSM Gumdrop draait om + koppelt aan LM Spider in de SLA-adapter — eerste bemande transpositie + koppeling. Alle Apollo-maanmissies herhalen deze manoeuvre.",
+    "note": "\"dockt aan\" and plural nouns; docking binding is koppeling"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Apollo maakte een waterlanding in de Stille Oceaan 1975-07-24 21:18 UTC — laatste Apollo-waterlanding ooit, en de laatste bemande Amerikaanse waterlanding tot SpaceX Crew Dragon in 2020. CSM-111 tentoongesteld in het California Science Center in LA.",
+    "note": "\"neerkoming\" is not a natural word for splashdown"
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Mars Pathfinder was het bewijs van NASA dat landen op Mars geen fortuin hoefde te kosten. In plaats van de zweefvlucht op remraketten van de Vikings kwam het achter een hitteschild de atmosfeer in, opende een parachute, blies een cocon van airbags op en stuiterde tientallen keren over het oppervlak voordat het tot stilstand kwam en zich opende als een bloem. Eruit reed Sojourner — een rover ter grootte van een magnetron, de eerste wielen ooit die op een andere planeet draaiden. De wetenschap was bescheiden; het ging om de methode. De airbaglanding en de sneller-goedkoper-beter-aanpak die daarmee werd bewezen, werden het voorbeeld voor de veel ambitieuzere rovers — Spirit, Opportunity, Curiosity — die volgden.",
+    "note": "\"hitteescherm\" nonword; retrorocket hover mistranslated as terugkeerraket"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Eerste bemanning naar een ruimtestation (Salyut 1); alle 3 stierven door decompressie bij de atmosferische intrede",
+    "note": "reentry lacks atmosferische intrede binding; \"van\" for \"to\""
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Eagle stijgt op na 21u 36m op het oppervlak.",
+    "note": "\"heft af\" is not Dutch for lift off"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Waterlanding in de Atlantische Oceaan na 3 banen / 4 u 52 m.",
+    "note": "orbits rendered as omwentelingen"
+  },
+  {
+    "rel": "missions/earth/skylab-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "De missie die de dromen van een leefbare Mars beëindigde. De 22 korrelige beelden van Mariner 4, genomen tijdens een 25 minuten durende dichtste nadering op 9.846 km hoogte, toonden een gekraterd oppervlak dat op de Maan leek — geen kanalen, geen vegetatie, geen duidelijk leven. De atmosfeer was 100× dunner dan verwacht. De ontdekking veranderde Mars in de publieke verbeelding van zusterplaneet van de Aarde in een dode wereld. Het volgen van het ruimtevaartuig leverde ook de eerste meting op van de structuur van de zonnewind tussen de planeten.",
+    "note": "\"25-minuten dichtste benadering\" clumsy"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "MMX landt op Phobos; ~10 g regoliet verzameld.",
+    "note": "\"zet neer\" is intransitive misuse"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Atlas V 551 verlaat de Aarde op weg naar Pluto via een zwaartekrachtassist bij Jupiter.",
+    "note": "\"zwaartekrachtassist-pad\" awkward compound"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "200 km dichtste nadering — de dichtste flyby van een komeet ooit.",
+    "note": "flyby binding not used; clumsy superlative"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "15 min. ontsteking van de vastebrandstofmotor plaatst Mariner 9 in een baan van 1398 × 17.917 km met een inclinatie van 64,4° — de eerste baan om een andere planeet ooit.",
+    "note": "\"hellingshoek\" and \"omloop\" imprecise; baan binding"
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Dodelijke brand op het lanceerplatform vóór de lancering op 1967-01-27 doodde Grissom + White + Chaffee",
+    "note": "\"pre-launch\" left in English; date reformatted"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Eerste beelden van de planeet van dichtbij; ontdekte de F-ring en een kleine binnenmaan (later onderscheiden als het co-orbitale paar Janus/Epimetheus).",
+    "note": "\"opgelost\" means dissolved, not resolved into"
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "ISRO’s eerste interplanetaire ruimtevaartuig. De orbiter bracht de Moon Impact Probe naar het maanoppervlak — het eerste Indiase object op een andere wereld — en had 11 instrumenten uit 6 landen aan boord. Het instrument Moon Mineralogy Mapper (M3) van NASA, dat aan boord van Chandrayaan-1 meevloog, deed de ontdekking die de leerboeken herschreef: watermoleculen zijn wijdverspreid over het maanoppervlak, niet alleen opgesloten in kraters die permanent in de schaduw liggen bij de polen. De missie eindigde abrupt in augustus 2009 toen ISRO de communicatie met het ruimtevaartuig verloor.",
+    "note": "\"gehost\" anglicism; clumsy instrument phrase"
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Apogeum ~400 km; operaties met geclassificeerde lading.",
+    "note": "\"Apogeïm\" nonword; \"payloadoperaties\" English left in"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Aldrins EVA’s (5 u 30 m in totaal) met handgrepen + onderwatertraining bewijzen dat ruimtewandelen routine kan zijn.",
+    "note": "\"Aldrin's\" wrong genitive; unit spacing"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Titan IVB / Centaur lanceert het gecombineerde Cassini-Huygens-geheel.",
+    "note": "\"tilt ... op\" is not a launch verb"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "2026-05-15. Dichtste nadering 4.609 km — flyby van Mars voltooid.",
+    "note": "flyby binding not used"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Eerste ruimtevaartuig in een baan om een andere planeet",
+    "note": "\"hemellichaam\" broadens planet; baan binding missed"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Waterlanding in de Atlantische Oceaan na 4 dagen / 59 banen — de laatste Gemini.",
+    "note": "orbits rendered as omlopen"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Orion stijgt op van KSC LC-39B met vier bemanningsleden aan boord.",
+    "note": "\"heft af\" is not Dutch for lift off"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Capsule landt in Binnen-Mongolië 2024-06-25 met de eerste monsters van de achterkant van de Maan die ooit zijn teruggebracht.",
+    "note": "\"achterzijde-monsters\" clumsy compound"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Waterlanding in de Atlantische Oceaan na 4 dagen / 62 banen.",
+    "note": "\"Splashdown\" left in English"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "STS-30 / Atlantis vanuit Kennedy LC-39B; IUS ontplooid vanuit het laadruim van de Shuttle.",
+    "note": "\"uitgeplaatst\" and \"Shuttle-laadruimte\" unnatural"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2026-12-03. Laatste versnelling op de uitgaande route naar Jupiter.",
+    "note": "\"Finale versnelling naar buiten\" is clumsy"
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Enkele zwaartekrachtassist langs de Aarde start de keten van zwaartekrachtassists in het binnenste zonnestelsel.",
+    "note": "\"gravitatieassists\" violates zwaartekrachtassist binding; missing article"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Flyby van 98943 Torifune (2001 CC21) in de verlengde missie.",
+    "note": "\"fly-by\" should be flyby"
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Atlas-Centaur lanceert Pioneer 10 op een directe route naar Jupiter.",
+    "note": "\"tilt ... op in directe klim\" unnatural"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "PSLV-XL (C25) vanaf Sriharikota — een relatief kleine draagraket die een lus voor baanverhoging vereiste.",
+    "note": "Wrongly hyphenated \"baan-verhogingslus\""
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Friendship 7 is de vlucht waarmee de Verenigde Staten eindelijk even op adem kwamen. John Glenn was de eerste Amerikaan in een baan om de aarde — drie keer rond de planeet, tien maanden na Gagarin — en voor een land dat vier jaar lang had toegekeken hoe de Sovjets steeds de eerste waren, was dat genoeg om hem van de ene dag op de andere de beroemdste man van het land te maken. Het drama kwam tegen het einde: een defecte sensor wekte de indruk dat zijn hitteschild los kon zitten, en de vluchtleiding liet hem zijn gebruikte remraketpakket tijdens de atmosferische intrede omgegespt houden, als een gok met weinig kans op succes om het schild op zijn plaats te houden. Het hield. Glenn kwam thuis, en de spanning die boven het hele programma had gehangen, verdween met hem.",
+    "note": "\"retro-pack\" left in English; entry binding missed; \"wanhopige poging\""
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "CSM-118 maakte een waterlanding in de Stille Oceaan 1974-02-08 15:17 UTC — laatste Skylab-waterlanding.",
+    "note": "\"waterlandde\" is a stilted verb"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Vier Hall-effectionenmotoren nemen het over. Continue versnelling met lage stuwkracht gedurende meer dan 4 jaar.",
+    "note": "\"Hall-effect ionenthrusters\", \"lage-stuwing-versnelling\" English and clumsy"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Vlag- en geschenkuitwisseling; gezamenlijke experimenten; 2 koppelingen, ~44 uur aan elkaar gekoppeld.",
+    "note": "\"dockings\"/\"gedockt\" should use koppeling"
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

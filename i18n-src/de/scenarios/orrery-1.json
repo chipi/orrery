@@ -12,13 +12,13 @@
     {
       "met": 0.4,
       "label": "TMI-VERBRENNUNG",
-      "note": "Trans-Mars Injection: 3,61 km/s. Fluchtgeschwindigkeit erreicht.",
+      "note": "Einschuss auf die Marstransferbahn: 3,61 km/s. Fluchtgeschwindigkeit erreicht.",
       "type": "nominal"
     },
     {
       "met": 1,
       "label": "TAG 1 CHECK",
-      "note": "Erster Systemzustandscheck abgeschlossen. Alles nominell.",
+      "note": "Erste Systemzustandsprüfung abgeschlossen. Alles nominal.",
       "type": "nominal"
     },
     {
@@ -36,19 +36,19 @@
     {
       "met": 220,
       "label": "Kommunikationsfehler",
-      "note": "Kurzzeitiger X-Band-Signalausfall (8 s). DSN erneut erworben. Ursache: Verstopfung der Triebwerksfahne. Keine Daten verloren.",
+      "note": "Kurzer X-Band-Signalausfall (8 s). DSN hat das Signal wieder erfasst. Ursache: Abschattung durch die Triebwerksfahne. Keine Daten verloren.",
       "type": "warning"
     },
     {
       "met": 259,
       "label": "Vorbeiflug am Mars",
-      "note": "Nächste Annäherung: ~300 km Höhe. Die Schwerkraftunterstützung leitet die Rückkehr ein.",
+      "note": "Nächste Annäherung: ~300 km Höhe. Der Swing-by leitet die Rückkehr ein.",
       "type": "nominal"
     },
     {
       "met": 260,
       "label": "RÜCKKEHRFLUGBAHN",
-      "note": "Freie Rücklauf-Schwerkraftunterstützung komplett. Raumschiff auf der Flugbahn der Erde.",
+      "note": "Swing-by auf freier Rückkehrbahn abgeschlossen. Raumfahrzeug auf Flugbahn zur Erde.",
       "type": "nominal"
     },
     {

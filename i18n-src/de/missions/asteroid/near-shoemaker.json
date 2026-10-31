@@ -28,15 +28,16 @@
     },
     {
       "met": 1458,
-      "label": "EROS-ORBITALEINFÜHRUNG",
+      "label": "EINSCHWENKEN IN DIE EROS-UMLAUFBAHN",
       "note": "14.02.2000: erstes Raumschiff im Orbit um einen Asteroiden; 12 Monate Orbitalwissenschaft.",
       "type": "nominal"
     },
     {
       "met": 1822,
       "label": "EROS-LANDUNG — EDL",
-      "note": "12.02.2001: kontrollierter Abstieg mit 1,7 m/s — erste sanfte Landung auf einem Kleingestirn.",
+      "note": "2001-02-12: kontrollierter Abstieg mit 1,7 m/s — erste sanfte Landung auf einem Kleinkörper überhaupt.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "dritte Stufe der Delta II 7925-8"
 }

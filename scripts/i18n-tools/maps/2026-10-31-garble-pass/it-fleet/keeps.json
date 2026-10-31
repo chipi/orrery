@@ -1,0 +1,16 @@
+[
+  {
+    "term": "burn",
+    "loc": "it",
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "why": "combustion: hydrogen-burning engines, rendered a idrogeno; not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "it",
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "why": "combustion: methane-burning Raptor, rendered alimentato a metano; not an engine firing"
+  }
+]

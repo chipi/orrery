@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "更深一层的教训是：在网络化的能力中，供应链的控制权就是战略。Kuiper的发射选择——刻意绕开对手——表明，当入轨通道稀缺、又有一部分掌握在竞争对手手里时，向谁购买发射服务就不是采购细节，而是一项关乎独立性的决策，值得付出溢价把它做对。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=kuiper": "航天器 — Kuiper 卫星星座",
+    "/programs/starlink": "Starlink — 它正在追赶的星座",
+    "/earth": "地球 — 轨道与日益拥挤的近地轨道",
+    "/earth?site=kuiper": "Kuiper 卫星星座"
+  }
 }

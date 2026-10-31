@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "La lezione più profonda è che un successo al primo tentativo su Marte dipende tanto dall'umiltà quanto dall'ambizione. Il cimitero delle missioni marziane fallite è pieno di programmi ben finanziati che hanno osato troppo; l'ISRO arrivò esattamente dove poteva gestire in modo affidabile, lo dimostrò e lasciò che la missione superasse i propri obiettivi modesti. Mirare con precisione, piuttosto che mirare in alto, è talvolta il modo in cui si conquistano i primati più difficili."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Marte — la destinazione",
+    "/fleet?focus=mangalyaan": "Flotta — la Mars Orbiter Mission",
+    "/programs/chandrayaan": "Chandrayaan — il programma lunare dell'India",
+    "/mars?site=mangalyaan": "Mangalyaan in orbita marziana"
+  }
 }

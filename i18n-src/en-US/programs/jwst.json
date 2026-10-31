@@ -29,5 +29,11 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of JWST is that some payoffs are worth an almost unreasonable amount of patience and pain. For most of two decades the telescope was late, expensive, and nearly cancelled; the case for continuing rested entirely on a promise that could not be proven until it flew. The first images vindicated the promise — a reminder that the most transformative projects are often the ones that look, for years, like failures waiting to happen." },
     { "type": "prose", "md": "The deeper lesson is about engineering without a second chance. JWST could not be tested as flown or repaired once flown, and it still succeeded — because every failure mode was hunted down and designed out in advance, on the ground, over years. It is the ultimate case for rigor over iteration: when you truly cannot fix it later, the only option is to be right the first time, and Webb proved that is achievable, even at staggering complexity." }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=jwst": "Fleet — the James Webb Space Telescope",
+    "/programs/great-observatories": "The Great Observatories — the lineage JWST continues",
+    "/programs/ariane": "Ariane — the rocket that launched it",
+    "/earth?site=jwst": "James Webb Space Telescope"
+  }
 }

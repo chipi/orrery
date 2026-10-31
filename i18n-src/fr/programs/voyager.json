@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La leçon plus profonde est de construire avec bien plus de marge que le plan ne l'exige. Les Voyager ont été conçues pour une mission dix fois plus courte que celle qu'elles ont accomplie, et elles ont perduré parce que leurs créateurs les ont sur-construites — systèmes redondants, ordinateurs reprogrammables, puissance en réserve. L'ambition qui ne planifie que pour la mission attendue se termine avec la mission attendue ; celles qui continuent sont celles construites pour plus que ce qu'on leur demandait de faire."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Les planètes extérieures dans l'explorateur 3D",
+    "/gallery/deep-sky": "Le « point bleu pâle », dans la galerie Ciel profond",
+    "/programs/pioneer": "Pioneer — les sondes qui sont parties en premier"
+  }
 }

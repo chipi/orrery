@@ -45,7 +45,10 @@ export function syncStationUrl(routePath: '/iss' | '/tiangong', partial: Station
   if (partial.moduleId === null) params.delete('module');
   else if (partial.moduleId !== undefined) params.set('module', partial.moduleId);
   const qs = params.toString();
-  const target = `${base}${routePath}${qs ? `?${qs}` : ''}`;
+  // Keep the current path when it is this route: it carries the locale prefix
+  // (/de/iss). Rebuilding from base + routePath sent every locale to /iss.
+  const path = url.pathname.endsWith(routePath) ? url.pathname : `${base}${routePath}`;
+  const target = `${path}${qs ? `?${qs}` : ''}`;
   const cur = `${url.pathname}${url.search}`;
   if (target !== cur) {
     void goto(target, { replaceState: true, keepFocus: true, noScroll: true });

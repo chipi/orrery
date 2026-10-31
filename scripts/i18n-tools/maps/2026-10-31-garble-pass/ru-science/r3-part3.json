@@ -1,0 +1,1073 @@
+[
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Наведение на участке выведения — дело двухфазное. В первой, атмосферной фазе аппарат летит без обратной связи: небольшой толчок по тангажу сразу после отхода от башни запускает гравитационный разворот, а затем он выдерживает заранее рассчитанную программу тангажа, при которой угол атаки остаётся близким к нулю, так что аэродинамические и конструкционные нагрузки не выходят за допустимые пределы вплоть до максимального скоростного напора (max-Q). Свободы здесь мало — путь диктует воздух.",
+    "note": "Pitch rendered as наклон; ascent as набор высоты."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.3",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Этот центр — Великий аттрактор, концентрация массы вокруг скопления в Наугольнике (Abell 3627), примерно в 65 мегапарсеках от нас. Изучать его трудно, потому что он лежит за плотными звёздными облаками и пылью самого диска Млечного Пути — в «зоне избегания», — поэтому большая часть наших знаний получена из радио- и инфракрасных обзоров, которые видят сквозь поглощающую среду, и из самих движений галактик.",
+    "note": "Missing hyphens in radio-/infrared; obscuration rendered as obstacles."
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "У Кеплера не было математического анализа. У него не было ньютоновской гравитации. У него не было компьютера. У него были двадцать лет кропотливых наблюдений Марса, которые его начальник Тихо Браге вёл на глаз по квадранту, и было терпение. Из этого он вывел три правила, которые остаются абсолютно точными и сегодня, четыреста лет спустя.",
+    "note": "Calculus rendered as исчисления; eyeballed-with-quadrant garbled."
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "title",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Отлётный разгон Trans-X — TLI / TMI / TVI / TJI",
+    "note": "Injection rendered as Инъекция (medical injection)."
+  },
+  {
+    "rel": "science/exoplanets/biosignatures.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Двухступенчатая схема — современный минимум. Falcon 9 (ускоритель + вторая ступень), Falcon Heavy (трёхблочный ускоритель + вторая ступень), Starship (Super Heavy + Starship), Electron (первая и вторая ступени на керосине и кислороде, иногда плюс разгонный блок Curie), Neutron (планируется), Terran R (планируется). Ускоритель выполняет основную работу в плотных нижних слоях атмосферы, где высокая тяга важнее удельного импульса (Isp); верхняя ступень работает в вакууме при меньшей тяговооружённости (TWR), где окупается высокий Isp. Почему не три ступени? Потому что каждое разделение ступеней — это отдельный вид отказа (пиротехника разделения, управление струёй при горячем разделении, обломки межступенчатого отсека), а современные двигатели достаточно хороши, чтобы отработать верхнюю ступень одним включением двигателя. Исключения — обычно миссии на GTO или межпланетные, где разгонный блок (Star 48, «Бриз-М», «Фрегат», YZ-1/2, Centaur в роли третьей ступени) даёт последнее точное включение двигателя — Voyager, New Horizons, Solar Orbiter, JUICE, все марсоходы.",
+    "note": "Kick stage, plume management left as English calques; wording garbled."
+  },
+  {
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/inclination.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Результат — Ланиакея, что по-гавайски значит «безмерные небеса»: около 160 мегапарсек (500 миллионов световых лет) в поперечнике и примерно 100 000 галактик. Наше сверхскопление Девы, которое когда-то считали всей окрестностью, оказалось лишь одной из окраинных его ветвей. Всё внутри Ланиакеи медленно течёт к единой гравитационной впадине.",
+    "note": "Gender mismatch (сверхскопление... оказался); awkward flow phrase."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Кислород получают электролизом. Американская система генерации кислорода МКС (OGS, в узловом модуле Tranquility) разлагает электролизом воду, поступающую из системы регенерации воды, на O₂ (выпускается в гермоотсек) и H₂ (до 2010 года сбрасывался в космос, затем направляется в реактор Сабатье; см. ниже). При номинальной нагрузке OGS вырабатывает около 9 кг O₂ в сутки, что покрывает потребности 6 членов экипажа по 1,5 кг каждому плюс потери. Российский «Электрон-ВМ» делает то же самое с другой стороны станции, а резервом служат кислородные шашки на твёрдом топливе (по сути дымовые шашки, выделяющие O₂ при поджиге; их использовали в недели после пожара на «Мире» в 1997 году, причиной которого они же и были). Модуль Tianhe станции Tiangong использует похожий электролизёр; китайская архитектура сознательно повторяет замкнутый цикл МКС «электролиз — реакция Сабатье».",
+    "note": "Wrong terms: кислородообразования, other side, fire weeks garbled, Sabatier."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Марсоходы пока были исключительно роботами — Sojourner (1997), Spirit и Opportunity (2004–2010 и 2004–2018), Curiosity (2012 — по настоящее время), Perseverance (2021 — по настоящее время), Zhurong (2021–2022), Pragyan (2023). Все они на четырёх или шести колёсах, все негерметичные, все автономные под наблюдением с Земли. Пилотируемые марсианские архитектуры во многом опираются на этот опыт: программа автономной навигации Perseverance (AutoNav 2.0, способная проезжать более 200 м за сол без вмешательства) дорабатывается до навигационного стека для герметичных пилотируемых марсоходов. Герметичный вездеход для Марса по сути та же машина, что и лунный, но с двумя дополнительными требованиями: он должен переживать пылевые бури (сценарии тайфунного масштаба, которые могут длиться неделями) и справляться с перхлоратами и загрязнением пылью при каждом цикле шлюза. Обе задачи сегодня не решены на инженерном уровне; обе из тех, что решаются 5–10 годами полевых испытаний герметичных лунных вездеходов до Марса.",
+    "note": "Nonword четырёх-/шеститёлые instead of wheeled; rover/airlock wording off."
+  },
+  {
+    "rel": "science/exoplanets/direct-imaging.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Большинство экзопланет находят косвенно — по их влиянию на звезду. Прямое наблюдение — исключение: оно ловит настоящие фотоны от самой планеты, подлинный снимок другого мира.",
+    "note": "Direct imaging rendered as прямое изображение."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.4.diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Вход в атмосферу, спуск, посадка. Шесть минут чистого ужаса.",
+    "note": "Entry rendered as bare Вход; binding is вход в атмосферу."
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "title",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Конструкция пилотируемых станций — от «Салюта» до МКС и Tiangong",
+    "note": "Salyut/ISS/Tiangong not declined; reads as broken list."
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "title",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Неправильные галактики — это всё, что никуда не вписывается. Прототипы — Магеллановы Облака: богатые газом, активно образующие звёзды, без чётких спиральных рукавов и центрального балджа, часто вытянутые или искажённые приливным взаимодействием с более крупными соседями. Большинство маломассивных галактик со звездообразованием — неправильные. Многие когда-то имели спиральную структуру, но приливное воздействие разрушило её настолько, что она больше не узнаётся; другие слишком малы, чтобы когда-либо сформировать самоподдерживающийся диск. Неправильные галактики преобладают по числу на маломассивном краю функции масс галактик: карликовых неправильных галактик гораздо больше, чем спиральных, но по отдельности они слабы, поэтому ночное небо и историческую летопись наблюдений занимают спирали.",
+    "note": "Calqued phrasing: низкомассивных, приливно нарушены, bulge as ядро."
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Первым космическим аппаратом, пролетевшим в межпланетном пространстве на солнечном парусе, стал IKAROS агентства JAXA, запущенный в мае 2010 года как попутная полезная нагрузка к миссии Akatsuki к Венере. IKAROS развернул полиимидный парус площадью 196 м² и толщиной всего 7,5 микрометра — тоньше человеческого волоса — и показал измеримое ускорение и управление ориентацией с помощью жидкокристаллических панелей по краям паруса. LightSail 2 организации Planetary Society (2019) стал первым аппаратом, поднявшим орбиту только за счёт тяги солнечного паруса, показав устойчивую тягу на низкой околоземной орбите. CubeSat NEA Scout от NASA (запущен в 2022 году на Artemis I) был первой американской межпланетной миссией с солнечным парусом, хотя после развёртывания связь установить не удалось. Миссия ACS3 от NASA (2024) испытала более крупную композитную штангу для будущего масштабирования.",
+    "note": "Garbled word order for LightSail 2; attitude control dropped to ориентация."
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Планировщики миссий не вычисляют одну траекторию к Марсу — они вычисляют миллионы, в гигантской сетке, и строят по ним тепловую карту. Дешёвые траектории выглядят как прохладные синие области. Дорогие краснеют. Результат, как ни странно, напоминает свиную отбивную. Дешёвая зона — это мякоть отбивной, дорогой гребень — кость.",
+    "note": "Lobes rendered as лопасти (blades); планировщики wording."
+  },
+  {
+    "rel": "science/life-in-space/muscle-atrophy.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Замороженные орбиты. Орбиты, у которых высота перигея не дрейфует со временем, несмотря на различные возмущающие силы (J2, J3, сопротивление атмосферы, притяжение Луны и Солнца). Классический рецепт замороженной орбиты: аргумент перигея = 90° (перигей находится в южном апексе орбиты), эксцентриситет подбирается по наклонению и высоте из уравнения баланса J2 и J3. Такие орбиты используют миссии наблюдения Земли, которым нужно точно удерживать высоту съёмки годами (лазерная альтиметрия льда ICESat-2, измерение гравитационного поля GRACE-FO). Замораживание приближённое — сопротивление и возмущения от третьих тел со временем отклоняют орбиту, и каждые несколько месяцев требуются небольшие включения двигателя для удержания орбиты, — но дрейф, вызванный J2, который иначе преобладал бы, компенсируется.",
+    "note": "«управляемый J2 дрейф» wrong (J2-driven); gender slip апекс; station-keeping garbled."
+  },
+  {
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "На `/fly` именно поэтому три тела так по-разному выглядят при `?descent=1`. Спуск на Марс гасит большую часть скорости под парашютом, затем передаёт управление посадке на двигателях или на воздушные подушки; спуск на Венеру — долгий медленный дрейф только за счёт сопротивления; спуск на Луну идёт на двигателях от начала до конца, потому что воздуха, который мог бы помочь, нет.",
+    "note": "Powered landing rendered as управляемой; airbag wording off."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Это самый дешёвый возможный перелёт, но и самый медленный. Эти 8,5 месяца ожидания не обсуждаются: таймер задаёт физика. Хотите быстрее? Можно, но придётся заплатить: более крутой эллипс, более быстрое пересечение и намного более мощное тормозное включение двигателя на другом конце. Именно этот компромисс вы увидите на каждой porkchop-диаграмме в /plan.",
+    "note": "Porkchop plot rendered as диаграмма стоимости; ехать instead of лететь."
+  },
+  {
+    "rel": "science/mission-phases/optical-comms.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Лазерный луч с космического аппарата → малый угол расходимости → намного большая принимаемая мощность на каждый Гц → на порядки больше данных на ватт, чем по радио, но допуск на наведение измеряется в микрорадианах.",
+    "note": "Грамматика: допуск в микрорадианы; per Hz phrasing clumsy."
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Выше `e = 1` вы уже не связаны. Ровно `e = 1` — это параболическая траектория (уход от притяжения, едва-едва). Всё, что выше, — гиперболическая траектория, пролёт, после которого возврата нет. Большинство траекторий аппаратов, которые показывает Orrery, — гелиоцентрические эллипсы с `e < 1`. Исключение: дуги гравитационных манёвров вокруг Юпитера или Сатурна уходят в гиперболическую область.",
+    "note": "Escape rendered as убегание; gravity-assist arms garbled."
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "body_paragraphs.3",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Две ступени: современный минимум (Falcon 9, Starship, Electron). Три ступени: эпоха Apollo и наследие «Союза» (Saturn V, «Союз», Long March 3B). 2,5 ступени: центральный блок и боковые ускорители (Long March 5, Ariane 5/6, Delta IV Heavy, SLS). Плюс по желанию разгонный блок для точных конечных орбит (Star 48, Centaur, «Фрегат», «Бриз-М», YZ-1).",
+    "note": "Kick stage left as кикстейдж calque."
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Два выхода. Первый: лучшие двигатели (выше удельный импульс) — это поднимает множитель, и из того же отношения масс вы получаете больше ∆v. Второй: ступени — сбрасывать пустые баки по мере опустошения, чтобы не таскать мёртвый груз. Настоящие ракеты используют оба способа. Но и тогда ракеты одного запуска упираются примерно в 10–15 км/с ∆v. Дальше уравнение требует дозаправки на орбите, или экзотических двигателей, или помощи планеты.",
+    "note": "Staging rendered as ступенчатость; single-shot as одноразовые."
+  },
+  {
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "body_paragraphs.4",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "ISRU — использование ресурсов на месте (In-Situ Resource Utilisation) — задача, определяющая архитектуру любого пребывания на Луне дольше примерно недели. Apollo привозил всё с Земли; у лунного модуля запас расходных материалов сверх запланированных выходов на поверхность составлял около 12 часов. Artemis IV планирует похожую архитектуру «всё с Земли» для первой миссии на поверхности, но Artemis V и любой будущий проект постоянного присутствия на Луне обязан использовать лунные ресурсы. Главных ресурса два: водяной лёд (в постоянно затенённых кратерах у южного полюса — Chang'e 5 доставил образцы реголита с обнаруживаемым содержанием воды; планировавшийся ровер NASA VIPER вёл бы разведку прямо на месте; коммерческие миссии класса Polaris Dawn могли бы нести собственные аппараты-разведчики) и лунный реголит для защиты (от радиации и от перепадов температуры — тот же реголит, который внутри опасен для дыхания, снаружи служит полезным экраном). Китайские лунные планы на основе Tiangong, концепция ESA Moon Village и Artemis Base Camp от NASA — все исходят из того, что вода из ISRU и защита из ISRU станут необходимыми условиями; без них постоянное присутствие на Луне не по карману.",
+    "note": "ISRU expansion left in English; awkward ISRU phrasing."
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/inclination.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Это важно, потому что менять наклонение чудовищно дорого по топливу. Если вы запускаете ракету с Флориды, Земля уже вращается на восток со скоростью 0,4 км/с — это вам достаётся бесплатно, если ваша орбита идёт на восток. Попробуйте вместо этого выйти на полярную орбиту, и вы не просто теряете этот бонус, а вынуждены бороться против вращения. Выбор наклонения при запуске — одно из главных решений миссии; менять его позже вам почти никогда не захочется.",
+    "note": "Unit km/s left Latin; colloquial халява."
+  },
+  {
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Обычный интернет исходит из того, что можно отправить пакет, за долю секунды получить подтверждение и отправить заново, если оно не пришло. В дальнем космосе эта модель катастрофически ломается. Радиосигнал с Земли идёт до Марса от 4 до 24 минут в зависимости от орбитальной геометрии; во время соединения с Солнцем связь полностью пропадает на недели. Допущение TCP/IP о времени прохождения сигнала туда и обратно означает, что сеанс завершается по тайм-ауту и обрывается задолго до того, как закончится хотя бы один обмен.",
+    "note": "Planetary conjunction, round-trip assumption, session expiry mistranslated."
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "body_paragraphs.4",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Наклон оси = угол между осью вращения и нормалью к плоскости орбиты. Земля с наклоном 23,4° создаёт времена года. Уран, наклонённый на 97,8°, лежит на боку; каждый полюс получает 42 года темноты.",
+    "note": "Облик­вость is a nonword with soft hyphen; obliquity is наклон оси."
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Марсианская архитектура: жилой модуль, установка ISRU и взлётный аппарат доставляются заранее, за 26 месяцев до экипажа; ISRU получает O₂ из атмосферного CO₂ (технология на основе MOXIE), метан из атмосферного CO₂ и водород электролизом воды из подповерхностного льда. Экипаж летит ~6–9 месяцев. Пребывание на поверхности 500+ дней определяется следующим гомановским окном Марс—Земля. Радиация: засыпка реголитом. Пыль: HEPA-фильтрация от перхлоратов.",
+    "note": "Awkward case/wording: погребение в реголит, производное MOXIE."
+  },
+  {
+    "rel": "science/orbits/inclination.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/lifting-entry.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Управление углом крена: поворот капсулы по крену направляет её небольшую подъёмную силу вверх (растянутое планирование, малая перегрузка) или вниз (более крутой вход), расширяя допустимый коридор входа в атмосферу.",
+    "note": "Re-entry corridor rendered as коридор спуска."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/interferometry.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Оптическая и инфракрасная интерферометрия существует, но гораздо сложнее: оптические длины волн короче радиоволн на 6 и более порядков, поэтому нужно согласовывать длины путей с нанометровой точностью, стабилизируя их лазерами. CHARA, NPOI и VLTI — те, что уцелели. Космические интерферометры вроде LISA (обнаружение гравитационных волн по лазерным плечам между тремя свободно летящими аппаратами) — архитектура будущего, как для гравитационно-волновой астрономии, так и для долгосрочной цели — получения изображений экзопланет-двойников Земли с высоким контрастом.",
+    "note": "Laser arms as рукава, nonsense phrase о высокой контрастности, wrong construction."
+  },
+  {
+    "rel": "science/exoplanets/detecting-extraterrestrial-life.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "diagram_caption",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Гидролокс (жидкий водород + жидкий кислород) — химическая пара с самым высоким удельным импульсом (Isp) из всех, на которых летает человечество (~450 с в вакууме на RS-25). Водород сгорает в воду, без сажи. Расплата — плотность: жидкий H₂ имеет около 70 кг/м³ против 800 кг/м³ у керосина, поэтому топливный бак огромен, а большая часть ракеты превращается в теплоизоляцию. Поэтому гидролокс — топливо *верхних ступеней* почти всех ракет-носителей (Centaur, DCSS, ICPS, верхние ступени Ariane 5/6, Long March 5, H-IIA) и применяется в масштабе ускорителя только там, где экстремальный Isp оправдывает размер аппарата: S-II и S-IVB ракеты Saturn V, внешний бак Space Shuttle с RS-25, центральная ступень SLS, центральная ступень Ariane 5 с двигателем Vulcain. Главная эксплуатационная головная боль — выкипание: жидкий H₂ при 20 K нельзя долго держать на стартовой площадке.",
+    "note": "Upper stage rendered as верхний этап; boil-off, core stage terms wrong."
+  },
+  {
+    "rel": "science/exoplanets/detecting-extraterrestrial-life.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/transit.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Ключевые сотрудники помимо экипажа: Джордж Мюллер (директор программы Apollo в NASA), Кристофер Крафт (основатель Центра управления полётами, Mission Control), Маргарет Гамильтон (руководитель разработки ПО бортового компьютера Apollo Guidance Computer: она возглавляла команду, написавшую код AGC, который работал на лунном модуле при спуске), Глинн Ланни, Джин Кранц и Клифф Чарлсворт (руководители полётов).",
+    "note": "Names inconsistently left Latin (Mueller, Charlesworth); descent as снижение."
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "18–24 месяца базовой подготовки (Хьюстон / Звёздный городок / Кёльн / Цукуба) → 2,5–5 лет подготовки по конкретной миссии (NBL или Hydrolab, тренажёры модулей и тренажёры аппаратов) → 6 месяцев итоговых тренировок и медосмотров → 14 суток карантина → запуск. Всего ~12 000 часов на экспедицию на МКС.",
+    "note": "Star City, Cologne, Tsukuba left Latin while Houston is Cyrillic."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.6.diagram_caption",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Если вы хотите узнать, за какое время Марс совершает ОДИН ОБОРОТ вокруг Солнца, ответ — 687 земных суток. Это сидерический период, измеряемый относительно неподвижных далёких звёзд. Это геометрическая истина об орбите. Уравнение vis-viva и третий закон Кеплера оба работают в сидерическом времени.",
+    "note": "Vis-viva transliterated as вив-вива; dangling measured clause."
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Именно поэтому капсулы Apollo смогли приводниться рядом с поисково-спасательным авианосцем, а Perseverance — попасть на Марсе в посадочный эллипс поперечником меньше 8 километров (примерно 7,7 на 6,6 км) с расстояния в миллионы километров. Компьютер не столько наводится на точку, сколько выбирает точку внутри области достижимости (footprint) и затем управляет подъёмной силой, чтобы к ней прийти.",
+    "note": "Footprint rendered as отпечаток; recovery carrier as корабль-носитель."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.5.paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "[Эпоха J2000](scales-time/j2000) — календарный ноль, которым пользуется каждый специалист по астродинамике. [Сидерические и синодические периоды](scales-time/sidereal-synodic) объясняют, почему окна для Марса повторяются каждые 26 месяцев, а не каждые 23. [Плоскость эклиптики](scales-time/ecliptic-plane) — плоский диск, на котором (в основном) лежат все планеты. [Системы отсчёта](scales-time/frames) — это системы координат, между которыми центр управления полётом постоянно переключается: с центром в Земле, в Солнце или в самом теле.",
+    "note": "Clumsy centered-on-views phrase; jargon-like juggling."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Выберите дату отлёта на оси X. Выберите время перелёта на оси Y. Цвет этой ячейки показывает, сколько ∆v обойдётся такая миссия. Прохладный бирюзовый: дёшево. Жёлтый: умеренно. Красный: очень дорого. Повторите для каждого пикселя — и получится диаграмма porkchop («свиная отбивная»), названная так потому, что контуры зоны низкой стоимости образуют область в форме свиной отбивной.",
+    "note": "Porkchop as свиной отруб (cut of meat); transit time and phrasing off."
+  },
+  {
+    "rel": "science/observation/spectroscopy.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Современные спектрографы разлагают свет дифракционной решёткой (отражающая поверхность с тонкой нарезкой, нередко с тысячами штрихов на миллиметр) и направляют разложенный спектр на ПЗС-матрицу (CCD). Разрешение измеряется величиной R = λ/Δλ: любительская аппаратура достигает R ~ 1000, NIRSpec на JWST — R ~ 2700, спектрограф ESPRESSO на VLT — R ~ 140 000, чего достаточно, чтобы обнаружить вызванное планетой колебание скорости звезды всего в несколько сантиметров в секунду.",
+    "note": "Finely-ruled as управляемая; dispersed, reflex velocity, consumer kit mistranslated."
+  },
+  {
+    "rel": "science/exoplanets/orbital-resonance.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Предельная скорость падения: сопротивление растёт со скоростью, пока не уравновесит вес; парашют увеличивает площадь сопротивления, так что равновесие достигается при безопасной скорости спуска.",
+    "note": "Soft descent speed rendered as мягкая скорость."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.heading",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Когда теплозащитный экран и парашют отработали, управление берёт ступень спуска с ракетными двигателями: она включает восемь двигателей, чтобы замедлиться почти до зависания в нескольких метрах над землёй. Затем, вместо того чтобы садиться самой, она опускает ровер под собой на тросах — как вертолёт, ставящий груз, — пока колёса ровера не коснутся грунта. Ровер служит собственным посадочным шасси.",
+    "note": "Descent stage rendered as спускаемый модуль; tethers phrasing."
+  },
+  {
+    "rel": "science/observation/wormholes.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Так зачем вообще включать их в научную энциклопедию? Потому что это прекрасная иллюстрация пределов общей теории относительности: уравнения допускают решения, которыми Вселенная, похоже, не пользуется, и выяснить, *почему*, — одна из живых границ теоретической физики. Квантовая гравитация, соответствие AdS/CFT, гипотеза ER=EPR — всё это затрагивает геометрию червоточин. Это настоящая математика. Это не настоящие космические аппараты.",
+    "note": "Broken clause «выясняют, почему это одна из границ»."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Поверх этого накладываются продвинутые методы. **Delta-DOR** (Delta-Differential One-way Range, дельта-дифференциальные измерения дальности) использует две антенны, одновременно наблюдающие один и тот же космический аппарат и близкий квазар; разность времён прихода сигнала даёт угловое положение с точностью до нанорадиан. Навигация при входе, спуске и посадке на Марс (EDL) теперь регулярно достигает точности посадочного эллипса около 100 м после многомесячного пассивного полёта со скоростью 30 000 км/ч. Причина тому — DSN, Сеть дальней космической связи.",
+    "note": "«Побережье» for coast, nonsense angular-position phrase, DSN is the reason."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Вблизи лунных полюсов дно некоторых кратеров никогда не видело солнечного света, и в этом вечном холоде накопился и остался в ловушке водяной лёд, доставленный кометами и астероидами за миллиарды лет.",
+    "note": "Некоторые дна: agreement error; tense of accumulation off."
+  },
+  {
+    "rel": "science/observation/dwarf-spheroidals.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Карликовые сфероидальные галактики (часто сокращённо dSph) — малые, тусклые, бедные газом, примерно эллиптические спутники более крупных галактик. Вокруг Млечного Пути самые яркие из них — Стрелец, Скульптор, Печь, Дракон, Малая Медведица, Лев I, Лев II, Секстант, Киль, Гончие Псы I, а также длинный хвост ультраслабых карликов, открытых обзорами SDSS, DES, Pan-STARRS, а теперь и LSST обсерватории Веры Рубин (Vera C. Rubin Observatory). Общее число известных dSph-спутников Млечного Пути сейчас превышает 60 и продолжает расти. У каждого обычно лишь от миллионов до десятков миллионов звёзд, тогда как у Млечного Пути их сотни миллиардов, и десятилетиями их считали скучными отстающими. Картина изменилась в 1980-х, когда измерения дисперсии звёздных скоростей показали, что они далеко не скучны.",
+    "note": "Galaxy names mixed Latin/Russian; членов, отстающих awkward."
+  },
+  {
+    "rel": "science/observation/coronagraphs.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Затеняющий диск внутри телескопа закрывает звезду-хозяйку, и находящаяся рядом планета, в миллиард раз более слабая, становится видимой.",
+    "note": "Occulting disc rendered as оккультный (occult)."
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Следствие — экстремальный постоянный температурный контраст между подзвёздным «глазом» и антизвёздной ночной стороной. Обитаема ли такая планета, зависит от переноса тепла: климатические модели показывают, что достаточно плотная атмосфера или глобальный океан могут перераспределять тепло и сохранять умеренные условия на терминаторе — а то и на значительной части ночной стороны.",
+    "note": "Substellar eye rendered as точка; habitability phrasing off."
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Магеллановы Облака господствуют в небе южного полушария с любого достаточно тёмного места южнее примерно +20° широты. Выглядят они именно так, как звучит название: два обособленных размытых пятна на ночном небе, БМО (Большое Магелланово Облако) шириной около 5° и ММО (Малое Магелланово Облако) около 3°. Они значатся в каталогах под несколькими названиями, но «магеллановы» — от кругосветного плавания Фернана Магеллана в 1519–1522 годах, когда эти облака были для его экипажа самым надёжным навигационным ориентиром в Южной Атлантике. Люди наблюдают облака непрерывно столько, сколько живут в южном полушарии; наскальные рисунки и устные предания австралийских аборигенов, койсанов и андских культур называют их по имени, и это задолго до контактов с европейцами.",
+    "note": "LMC/SMC left English; clumsy predate-contact phrasing."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Кеплеровская дуга, переносящая космический аппарат с одной орбиты на другую: Солнце в одном из фокусов, как и у любой другой орбиты.",
+    "note": "Wrong preposition: в любой другой орбите."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Циолковский также понял: жидкое топливо превзойдёт твёрдое; для преодоления земного притяжения необходима многоступенчатость; орбитальные станции могут постоянно принимать людей. Он умер в 1935 году, за два года до того, как ракеты Годдарда достигли серьёзной высоты.",
+    "note": "Goddard left Latin and undeclined."
+  },
+  {
+    "rel": "science/observation/coronagraphs.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Классический коронограф Лио (1930 год, изобретён Бернаром Лио для фотографирования Солнца) ставит непрозрачный диск в фокальной плоскости телескопа, чтобы закрыть звезду, а ниже по ходу луча — вторую маску, чтобы перекрыть свет, дифрагировавший на краю первой. Современные коронографы с аподизацией зрачка и вихревые коронографы используют сложные фазовые рисунки, чтобы довести подавление до 10⁻⁹ и лучше в узких областях изображения.",
+    "note": "Awkward coronagraph terms: коронографы зрачков, паттерны, подтолкнуть подавление."
+  },
+  {
+    "rel": "science/mission-phases/skip-entry.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/sun-synchronous.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Механизм — гравитационный. Земля не идеальная сфера: экваториальное вздутие (радиус на экваторе больше, чем у полюсов, примерно на 21 км) создаёт нецентральное гравитационное поле. Для спутника на неэкваториальной орбите эта асимметрия создаёт момент, который постепенно вызывает прецессию плоскости орбиты. Скорость прецессии зависит от высоты и наклонения: на меньших высотах прецессия быстрее; при наклонениях от 90° до 180° (ретроградные орбиты) прецессия идёт к востоку. Для каждой высоты существует ровно одно наклонение, при котором прецессия равна 0,9856°/сут, — это солнечно-синхронные орбиты. На высоте 800 км наклонение ССО — 98,6° (на 8,6° за полюсом, ретроградное). На высоте 600 км — 97,8°. На высоте 400 км — 97,0°.",
+    "note": "Gender slip экваториальное выпуклость; прецессируют as verb awkward."
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "У космонавтики есть одна универсальная валюта: ∆v, читается «дельта-ви», измеряется в километрах в секунду. Каждое включение двигателя забирает часть этого запаса. Каждое движение по траектории имеет свою цену. Бюджет ∆v миссии — сумма всего, что вы потратите от начала до конца, — это единственное число, которое говорит, сможет ли миссия состояться.",
+    "note": "Burn rendered as манёвр instead of включение двигателя binding."
+  },
+  {
+    "rel": "science/orbits/vis-viva.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/_intro.json",
+    "at": "paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Сколько тяги на каждый килограмм действительно нужно для старта? При TWR 1,3 и земной гравитации 9,81 м/с² двигатели должны развивать около 12,8 Н на килограмм массы аппарата. Для машины массой 3000 тонн (полная заправленная масса Saturn V) это 38 МН тяги — именно поэтому Saturn V имел пять двигателей F-1 общей тягой 33,9 МН у земли, превышавшей 40 МН по мере падения внешнего давления. Для Starship (5000 тонн заправленной массы) нужно ~64 МН, и поэтому ускоритель Super Heavy несёт 33 двигателя Raptor. Число двигателей в связке — не вопрос стиля: оно прямо следует из арифметики соотношения TWR и стартовой массы и из тяги самого крупного двигателя, который программа смогла создать.",
+    "note": "Missing «что» after потому; clumsy TWR-vs-стартовой-массы."
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.4",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Утилизация больше не факультативна. До ~2015 года увод аппарата с орбиты в конце срока службы формально требовался, но соблюдение вяло контролировали. С тех пор ряд изменений в регулировании поменял расчёт: правило FCC о пяти годах для низкой околоземной орбиты (LEO, 2022) требует от всех спутников с лицензиями США сходить с орбиты не позднее чем через 5 лет после завершения миссии; Хартия ESA «Ноль мусора» (Zero Debris Charter, 2023) обязывает подписавшихся не оставлять мусора на орбите; Руководящие принципы ООН по долгосрочной устойчивости (2019) делают утилизацию условием лицензирования. Современные проекты спутников теперь включают топливо для утилизации как жёсткую статью массового бюджета, с запасом, который обеспечивается проверками проекта миссии. Статья об орбитальном мусоре рассказывает, что происходит, когда утилизация не удаётся.",
+    "note": "Calqued bureaucratese: принуждаемым, США-лицензированных, правило 5 лет LEO."
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "«Салют-6» (СССР, 1977–82) стал первой станцией, рассчитанной на длительные экспедиции, и первой, где проявилась психологическая проблема, свойственная каждой последующей станции с долгими миссиями: примерно на 4–6-й неделе даже тщательно отобранные экипажи входят в фазу, которую советские психологи называли *астенией* — усталость, раздражительность, замыкание и ослабление общения с Землёй, снижение мотивации. Сначала её объясняли физической детренированностью, но на «Салюте-7» и «Мире» стало ясно, что она прежде всего психологическая: новизна орбиты проходит, работа становится рутиной, экипаж остро сознаёт, что не сможет улететь ещё 5 месяцев, а отношения с наземным управлением становятся враждебными. Советские специалисты наземного управления намеренно планировали свободное личное время, видеозвонки с семьёй и редкие сюрпризы с грузовыми кораблями (шоколад, свежие фрукты) как меры противодействия; теперь эта практика стандартна на МКС, Tiangong и на всех аналоговых станциях.",
+    "note": "Salyut-7/Mir not declined; adversarial rendered as напряжёнными."
+  },
+  {
+    "rel": "science/mission-phases/launch.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Тормозное включение двигателя, которое захватывает космический аппарат на орбиту, вместо того чтобы дать ему пролететь мимо навсегда.",
+    "note": "Burn rendered as импульс instead of binding включение двигателя."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Плутон и Харон уникальны: при радиусе 606 км против 1188 км у Плутона диаметр Харона вдвое меньше плутонова — это наибольшее отношение спутника к планете в системе. Два тела обращаются вокруг общего центра масс, лежащего вне поверхности Плутона, поэтому ни одно из них на самом деле не обращается вокруг другого: они обращаются друг вокруг друга, вокруг общего барицентра. Пролёт New Horizons в 2015 году впервые снял оба тела, обнаружив красные экваториальные отложения на Хароне (толины из атмосферы Плутона, занесённые туда) и сердцеобразную равнину азотного льда на Плутоне. Тритон у Нептуна тоже захвачен (ретроградная орбита, геологически молод — возможно, захвачен из пояса Койпера) и, как Харон, почти наверняка имеет подповерхностный океан.",
+    "note": "Triton «принимает океан» wrong sense; repetitive orbiting phrasing."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "У этой замкнутой схемы есть название — Powered Explicit Guidance (PEG), явное наведение на активном участке, — и предшественник на Saturn V, Iterative Guidance Mode (IGM), итерационный режим наведения; именно благодаря ей верхняя ступень с малой тягой может вести свою траекторию ниже горизонта и всё равно вовремя выйти на орбитальную скорость. Это, буквально, причина, по которой космонавтике понадобились бортовые компьютеры: человек не может решать задачу заново каждую секунду, а бортовой компьютер может.",
+    "note": "Нonsense «переразрешать»; acronyms unexplained; clumsy closed-loop wording."
+  },
+  {
+    "rel": "science/exoplanets/transit.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "**Точки Лагранжа системы Земля—Луна** — стратегически ценные места для программы Artemis. EML2 (~64 500 км за Луной) была запланирована как промежуточная точка для Gateway на NRHO (околопрямолинейной гало-орбите вокруг неё); Gateway приостановили в 2026 году. Оттуда есть прямая видимость как обратной стороны Луны (где совершил посадку Chang'e-4; Queqiao ретранслирует сигнал из EML2), так и Земли. EML1, между Землёй и Луной, — естественный промежуточный пункт для любой окололунной архитектуры, где нужно многократно спускаться и подниматься, не тратя ∆v на переходы. Следующее десятилетие пилотируемых операций у Луны — во многом история точек Лагранжа.",
+    "note": "Real estate rendered as районы; приземлился for landing."
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Уравнение Циолковского: ∆v = vₑ × ln(m₀/m₁). Изменение скорости, которое может дать ракета, равно скорости истечения газов, умноженной на натуральный логарифм отношения масс. Этот логарифм беспощаден: чтобы получить больше ∆v, нужно экспоненциально больше топлива. Большая часть любой ракеты — топливо. Saturn V на 85% по массе состояла из топлива.",
+    "note": "Exhaust velocity as скорость выхлопа; brutal as жестокий."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Это неточно, но полезно. Погрешности на границах малы — самое большее несколько процентов ∆v для окололунных задач, меньше для гелиоцентрических, — а математика становится достаточно простой, чтобы уместиться в Web Worker. Диаграммы porkchop в `/plan` Orrery считаются именно так; так же считаются и траектории в `/fly`. Реальное планирование полётов в NASA берёт это же приближение за первую прикидку, а перед запуском уточняет численно.",
+    "note": "Porkchops rendered as свиные котлеты (pork cutlets)."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Американская линия скафандров для ВКД начинается с A7L (Apollo, 1969–72) и A7LB (поздний Apollo, 1971–72), затем идёт EMU (Extravehicular Mobility Unit, 1981 — по настоящее время): знаковый белый модульный скафандр, использовавшийся для каждого выхода американской стороны на Skylab, Shuttle и МКС. EMU служит уже более 40 лет — он новее большинства самолётов, но старше большей части действующего оборудования станции. В его состав входят HUT (Hard Upper Torso, белая жёсткая верхняя часть), LCVG (Liquid Cooling and Ventilation Garment — костюм жидкостного охлаждения и вентиляции, водяные трубки у кожи), LTA (Lower Torso Assembly, нижняя часть), PLSS (Portable Life Support System, ранец: поглощение CO₂, водяное охлаждение, кислород и радио) и MAG (Maximum Absorbency Garment — подгузник астронавта, закупка у Lockheed Martin в 1980-х). Производство EMU прекратили после программы Shuttle; сегодняшние скафандры — восстановленные образцы сборки 1980–90-х годов с деталями от списанных экземпляров. AxEMU (Axiom Space EMU, для лунных ВКД Artemis, начиная с Artemis IV) — первый новый американский скафандр для ВКД после оригинального; он наследует модульную философию, но перестраивает каждую подсистему.",
+    "note": "«Новый скафандр с оригинала» garbled; MAG acquisition and EMU clauses off."
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/orbit-regimes.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Выберите спутник. Главное в нём — не то, что он делает, а на какой высоте он живёт. Высота определяет, как часто он видит один и тот же участок земной поверхности, сколько идёт до него радиосигнал, сколько топлива нужно для поддержания орбиты и каков его полезный срок службы. Конструкторы космических аппаратов группируют орбиты в четыре диапазона — LEO, MEO, GEO, HEO, — потому что по мере подъёма компромиссы меняются скачками.",
+    "note": "Space-vehicle engineers rendered as инженеры космических кораблей; полосы for bands."
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Аэродинамический захват (aerocapture) — более смелый родственник: торможение за ОДИН глубокий проход в атмосфере, достаточное, чтобы сразу после прибытия выйти на орбиту захвата, вообще без тормозного включения двигателя. Он сэкономил бы ещё больше топлива, но требует теплозащитного экрана и наведения с точностью до долей секунды, и ни одна миссия пока его не применяла, поэтому рабочей лошадкой остаётся терпеливая, малорисковая версия — аэродинамическое торможение.",
+    "note": "Garbled «перехода из входа в захватываемую орбиту»; burn not rendered."
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Замороженные лунные орбиты. Гравитационное поле Луны сильно отличается от сферического, потому что кора неровная (масконы — концентрации массы под морями), а атмосферы, гасящей орбитальные возмущения, нет. Спутник на круговой низкой окололунной орбите при большинстве наклонений будет за месяцы всё сильнее вытягивать орбиту, пока не врежется в поверхность. Lunar Prospector (1999) был намеренно сведён с орбиты в конце миссии, потому что планировщики не смогли удержать его стабильным. «Замороженные» лунные наклонения — 27°, 50°, 76° и 86° — это те, при которых различные возмущения взаимно компенсируются, и спутник может годами оставаться на почти круговой орбите без коррекций. Lunar Reconnaissance Orbiter (LRO, с 2009 года) использует почти замороженную полярную орбиту на высоте ~50 км, для которой нужны лишь умеренные коррекции удержания орбиты. Китайский спутник-ретранслятор Queqiao-2 (2024) использует замороженную эллиптическую орбиту в точке L2.",
+    "note": "Frozen orbit rendered as зафиксированные; «станции-держания» nonsense."
+  },
+  {
+    "rel": "science/life-in-space/radiation-exposure.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Защититься трудно. Алюминий (естественный материал корпуса) в некоторых режимах даже хуже против галактических космических лучей (GCR), чем отсутствие защиты: вторичные частицы с большим Z, возникающие при расщеплении ядер, могут быть биологически опаснее первичных. Материалы, богатые водородом (полиэтилен, вода), лучше; в некоторых проектах обитаемых модулей баки с водой используют как пассивный теневой экран. Активная магнитная защита существует пока только в теории. Самая экономичная «защита» — сократить время полёта, поэтому всерьёз рассматриваются концепции быстрых полётов к Марсу на химических и ядерно-тепловых двигателях.",
+    "note": "«Щит - это тяжело» wrong; spallation, hab, nuclear-thermal garbled."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Apollo 8 стал первым пилотируемым полётом по траектории свободного возврата. Apollo 13 как известно вернулся именно этим приёмом, когда вышел из строя его служебный модуль: корабль шёл домой по траектории свободного возврата, а для коррекций курса включали только двигатель лунного модуля, ни разу — повреждённый главный двигатель. Для Марса геометрия сложнее — нужна петля из двух проходов длительностью 500 суток, — но принцип тот же: геометрия пролёта выполняет работу возвратного включения двигателя.",
+    "note": "«никогда основной повреждённый двигатель» ungrammatical; return burn as разворотный манёвр."
+  },
+  {
+    "rel": "science/mission-phases/eva.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Запасы скафандра: EMU (Extravehicular Mobility Unit) на МКС несёт примерно на 8 часов кислорода, заряда батареи и воды для сублимационного охлаждения. Типичный ограничитель — поглощение CO₂: когда насыщается картридж с LiOH или аминовый регенерируемый поглотитель, выход в открытый космос заканчивается.",
+    "note": "Garbled consumables: oxygen + battery supplied as items; amine-swing, EVA end wrong."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "diagram_caption",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/nrho.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Почему именно эта орбита? Устойчивость при малых затратах ∆v на поддержание — около 5 м/с в год на удержание орбиты. Непрерывная прямая видимость Земли (аппарат там никогда надолго не уходит за Луну). Недорогой по ∆v доступ с Земли (около 4 км/с на перелёт и выход на орбиту, сопоставимо с низкой окололунной орбитой, но с заметно лучшей тепловой устойчивостью). Доступ к лунной поверхности с помощью небольших посадочных аппаратов из периселения.",
+    "note": "LLO rendered as окололунная орбита, losing «low»; wording slips."
+  },
+  {
+    "rel": "science/mission-phases/eva.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "ВКД начинаются в шлюзе — небольшом отсеке с двумя люками, где экипаж 60–90 минут предварительно дышит 100%-м кислородом (вымывая азот из крови, чтобы не получить кессонную болезнь), затем сбрасывает давление в шлюзе и выплывает наружу. На МКС американская сторона использует модуль Quest как основной шлюз для ВКД; российский сегмент использует «Пирс» (теперь «Поиск», после того как «Пирс» был сведён с орбиты в 2021 году). Основной шлюз Tiangong расположен на модуле Wentian.",
+    "note": "EVA left in English acronym; Quest hub phrasing."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "То, что могло их убить: сигналы тревоги AGC 1201 и 1202 при спуске (переполнение планировщика задач Executive — продуманная надёжная архитектура ПО Гамильтон позволила системе восстановиться автоматически); ручная посадка, потому что автоматическая точка оказалась на поле валунов (Армстронг сел, когда топлива оставалось секунд на 25); взлётный двигатель лунного модуля имел ОДНУ попытку включения и ни разу не проходил испытаний в полёте на полную длительность работы.",
+    "note": "Executive overflow as стек; full duration as full power; descent as снижение."
+  },
+  {
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Здесь шесть разделов. А. е. и световая минута дают вам линейки. J2000 — универсальный календарный нуль, о котором договорились все астрономы. Сидерический и синодический периоды объясняют, почему окна для Марса повторяются каждые 26 месяцев, а не 23. Плоскость эклиптики — плоский диск, на котором (в основном) лежат все планеты. Системы отсчёта — это бухгалтерия переключения между видами с центром в Солнце, в Земле и в самом теле, чем центр управления полётом занимается постоянно.",
+    "note": "«на который согласны» ungrammatical; AU left Latin."
+  },
+  {
+    "rel": "science/cosmology/cosmic-distance-ladder.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Для дальних ступеней лестницы нужна более яркая свеча. Сверхновые типа Ia — термоядерный взрыв белого карлика — все достигают почти одинаковой светимости в максимуме и могут ненадолго соперничать по блеску со всей галактикой-хозяйкой, поэтому видны на расстояниях в миллиарды световых лет. Откалиброванные по цефеидам в галактиках, где встречаются те и другие, они продлевают лестницу далеко в расширяющуюся Вселенную.",
+    "note": "Dangling «Откалиброванные Cepheids... они»; Type Ia and Cepheids left Latin."
+  },
+  {
+    "rel": "science/observation/dwarf-spheroidals.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Константин Циолковский был глухим русским школьным учителем, который думал о космических полётах в свободное время, за десятилетия до того, как кто-то смог построить настоящую ракету. В 1903 году он записал уравнение, от которого никому не уйти, и мы до сих пор не ушли. Оно гласит: ∆v, который можно выжать из ракеты, зависит от двух вещей — от того, насколько хорош двигатель, и от того, какая доля ракеты приходится на топливо. И зависимость ЛОГАРИФМИЧЕСКАЯ.",
+    "note": "«сколько топлива составляет ваша ракета» garbled fuel fraction."
+  },
+  {
+    "rel": "science/life-in-space/food-production-off-world.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "На Марсе добавляется проблема реголита. Сажать растения прямо в марсианский грунт нельзя по той же причине, по какой нельзя им дышать, — из-за перхлоратов. Марсианский реголит пропитан 0,5–1% ClO₄⁻ — токсина для щитовидной железы и, вероятно, ингибитора корневой системы. Исследуются такие способы смягчения: бактерии, восстанавливающие перхлораты (некоторые земные виды естественным образом используют перхлорат как акцептор электронов), предварительная обработка электрохимическим восстановлением (с помощью H₂ из электролиза на ISRU) или просто гидропоника, вообще не касающаяся реголита. Самый простой путь — третий: держать производство пищи отдельно от реголита и использовать его только для защиты и строительства жилья. В лунном реголите нет проблемы перхлоратов, но он метаболически инертен и физически абразивен: большинство видов растений не развивается на лунном имитаторе грунта, если его сильно не обогатить компостированной органикой.",
+    "note": "Garbled «щитовидным токсином», «процветают в симулянте», mitigations phrasing."
+  },
+  {
+    "rel": "science/life-in-space/radiation-exposure.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Самое полезное уравнение, которое вы здесь встретите, — [vis-viva](orbits/vis-viva). Подставьте свой радиус и размер орбиты — и на выходе получите скорость. Вот и всё. Земля в перигелии: 30,3 км/с. Земля в афелии: 29,3 км/с. Та же орбита, та же энергия, разная скорость.",
+    "note": "Decimal point instead of comma in 30.3 and 29.3."
+  },
+  {
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "body_paragraphs.4",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "formula_caption",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "У двух главных подходов к удержанию плазмы есть свои трудности. Магнитное удержание (токамаки, стеллараторы) требует сверхпроводящих магнитов и устойчивого управления плазмой; ITER — международный токамак, строящийся во Франции, — рассчитан на демонстрацию положительного выхода энергии, но электричество вырабатывать не будет. Инерциальное удержание требует драйверов — лазеров или пучков частиц — достаточно мощных, чтобы сжать топливо до звёздных условий; зажигание, достигнутое на NIF, потребовало тщательно спроектированной капсулы и далеко от частоты повторения, нужной двигательной установке. Ни у одного из подходов нет чёткого инженерного пути к применению в двигательной установке.",
+    "note": "Calques пропульсионный, драйверы, чистая энергия, звездные; wording unnatural."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "И эта цена жестока. [Уравнение Циолковского](propulsion/tsiolkovsky) говорит, что ∆v растёт как логарифм доли топлива в вашей ракете. Хотите вдвое больше ∆v? Вы несёте не вдвое больше топлива, а экспоненциально больше. Поэтому Saturn V на 90% состоял из топлива. Большая часть ракеты — это топливо, которое поднимает топливо, которое поднимает топливо, которое поднимает космический аппарат.",
+    "note": "Propellant rendered as горючее; ratio phrasing clumsy."
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "title",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Прохладный бирюзовый цвет — малое ∆v (~3 км/с): минимум отлётного включения двигателя для марсианского перелёта Гомана (это ∆v отлёта к Марсу с LEO, а не ∆v всей миссии). Синий — около 5 км/с. Жёлтый — около 7 км/с, порог дороговизны. Оранжевый и красный — выше 9 км/с: ячейки с лавинообразно растущей стоимостью, где понадобилась бы ракета класса SLS, лишь бы расчёт сошёлся.",
+    "note": "Burn binding ignored; runaway-cost as убегающая стоимость."
+  }
+]

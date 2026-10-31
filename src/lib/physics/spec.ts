@@ -1,6 +1,6 @@
 /**
  * The Physics-Lab contract types (S2a · RFC-037 §4/§5 + Amendment 01) — FROZEN
- * after two Fable-5 pre-freeze rounds (docs/wip/2026-08-29-s2-contracts-draft.md).
+ * after two Fable-5 pre-freeze rounds (docs/wip/_archive/2026-08-29-s2-contracts-draft.md).
  *
  * These are the shapes the whole flagship shares: the registry, the Lab views,
  * the MCP server, and the `.orrlab.json` document format. They live in the kernel
@@ -83,7 +83,7 @@ export interface FormulaDef<I = Record<string, number | string>> {
   // "How to read this equation": names each symbol, ties it to the physical law, and links
   // back to earlier rungs (FB2). Rendered under the symbolic equation, BEFORE the inputs, so
   // the learner meets the formula as meaning before substituting numbers. i18n-keyed, ×14.
-  glossaryKey?: string;
+  plainKey?: string;
   compute(inputs: I): FormulaResult;
 }
 

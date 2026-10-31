@@ -1,0 +1,1449 @@
+[
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "payload",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: draaide (verb to orbit)"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: draaide (verb to orbit)"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: draaide (verb to orbit)"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: draaide er omheen (verb to orbit)"
+  },
+  {
+    "rel": "missions/earth/aurora-7.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omwentelingen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omwentelingen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omwentelingen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omwentelingen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omwentelingen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omwentelingen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omwentelingen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: aardomloopvlucht / omwentelingen"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omlopen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omlopen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omlopen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: omlopen (counted revolutions)"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "change",
+    "find": "AARDEORBIET",
+    "replace": "AARDBAAN",
+    "why": "loan spelling orbiet; binding baan"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.1.note",
+    "term": "orbit",
+    "decision": "change",
+    "find": "aardeorbiet",
+    "replace": "aardbaan",
+    "why": "loan spelling orbiet; binding baan"
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: AARDBAANSATELLIET"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.label",
+    "term": "orbit",
+    "decision": "change",
+    "find": "MARSBANDINVOERING",
+    "replace": "MARSBAANINSERTIE",
+    "why": "BAND typo (tape) for BAAN; invoering is not the orbit-insertion binding"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "merged into the orbit edit (MARSBAANINSERTIE)"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.2.label",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: MARSBAANOPNAME"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "MARSBAANOPNAME",
+    "replace": "MARSBAANINSERTIE",
+    "why": "opname -> insertie"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: Maanbaaninvoeging"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Maanbaaninvoeging",
+    "replace": "Maanbaaninsertie",
+    "why": "invoeging -> insertie"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "change",
+    "find": "maanomloop",
+    "replace": "maanbaan",
+    "why": "omloop for the body path; binding baan"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: maanbaaninsertie"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: maanbaaninsertie"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: maanbaaninvoering"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "maanbaaninvoering",
+    "replace": "maanbaaninsertie",
+    "why": "invoering -> insertie"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.1.note",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Maanbaninvoering",
+    "replace": "Maanbaaninsertie",
+    "why": "typo Maanban; invoering -> insertie"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "merged into the orbit edit (Maanbaaninsertie)"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "change",
+    "find": "om te draaien",
+    "replace": "om te cirkelen",
+    "why": "bare \"draaien\" loses the orbit sense; cirkelen is the accepted verb"
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "een hellingshoek van",
+    "replace": "een inclinatie van",
+    "why": "hellingshoek -> inclinatie"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "term": "inclination",
+    "decision": "change",
+    "find": "afdaalhellingshoek",
+    "replace": "afdalingsinclinatie",
+    "why": "hellingshoek -> inclinatie"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "first",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "eerste koppeling tussen",
+    "replace": "eerste rendez-vous en koppeling tussen",
+    "why": "English has rendezvous + docking; only docking was rendered"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteun",
+    "replace": "zwaartekrachtassist",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteun",
+    "replace": "zwaartekrachtassist",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "burns",
+    "replace": "ontstekingen",
+    "why": "untranslated burn"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "AARDSE ZWAARTEKRACHTSTEUN",
+    "replace": "AARDSE ZWAARTEKRACHTASSIST",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteun",
+    "replace": "zwaartekrachtassist",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "AARDZWAARTEASSISTENTIE",
+    "replace": "AARDSE ZWAARTEKRACHTASSIST",
+    "why": "assistentie is not the term"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsvlucht",
+    "replace": "zwaartekrachtassist",
+    "why": "vlucht -> slinger"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtssteun",
+    "replace": "zwaartekrachtassist",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "payload",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Mars-zwaartekrachtsteun",
+    "replace": "Mars-zwaartekrachtassist",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "aardzwaartekrachtbijstanden",
+    "replace": "aardse zwaartekrachtassists",
+    "why": "bijstand -> slinger"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "marszwaartekrachtbijstand",
+    "replace": "Mars-zwaartekrachtassist",
+    "why": "bijstand -> slinger"
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "delta_v",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteun",
+    "replace": "zwaartekrachtassist",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsvlucht",
+    "replace": "zwaartekrachtassist",
+    "why": "vlucht -> slinger"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "delta_v",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteunen",
+    "replace": "zwaartekrachtassists",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "delta_v",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteunen",
+    "replace": "zwaartekrachtassists",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Mars-zwaartekrachtmanoeuvre",
+    "replace": "Mars-zwaartekrachtassist",
+    "why": "manoeuvre -> slinger"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Aarde-zwaartekrachtmanoeuvre",
+    "replace": "Aarde-zwaartekrachtassist",
+    "why": "manoeuvre -> slinger"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "baaninsluiting",
+    "replace": "baaninsertie",
+    "why": "insluiting -> insertie"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "MARS-ZWAARTEKRACHTMANOEUVRE",
+    "replace": "MARS-ZWAARTEKRACHTASSIST",
+    "why": "manoeuvre -> slinger"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "AARDE-ZWAARTEKRACHTMANOEUVRE",
+    "replace": "AARDE-ZWAARTEKRACHTASSIST",
+    "why": "manoeuvre -> slinger"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "delta_v",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteunen",
+    "replace": "zwaartekrachtassists",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "AARDSLINGER",
+    "replace": "AARDSE ZWAARTEKRACHTASSIST",
+    "why": "abbreviated compound; binding form in full"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "delta_v",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteunen",
+    "replace": "zwaartekrachtassists",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "delta_v",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteun",
+    "replace": "zwaartekrachtassist",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "gravity-assist trajectorie",
+    "replace": "zwaartekrachtassisttraject",
+    "why": "untranslated English"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "VENUS-SLINGER",
+    "replace": "VENUS-ZWAARTEKRACHTASSIST",
+    "why": "abbreviated compound; binding form in full"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "delta_v",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteunen",
+    "replace": "zwaartekrachtassists",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Venus-zwaartekrachtmanoeuvres",
+    "replace": "Venus-zwaartekrachtassists",
+    "why": "manoeuvre -> slinger"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Venus-zwaartekrachtmanoeuvre",
+    "replace": "Venus-zwaartekrachtassist",
+    "why": "manoeuvre -> slinger"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "delta_v",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "zwaartekrachtsteun",
+    "replace": "zwaartekrachtassist",
+    "why": "steun -> slinger"
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned = destroyed by fire (uitgebrand), not an engine firing"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "SPS-brandingsreeks",
+    "replace": "SPS-ontstekingsreeks",
+    "why": "branding -> ontsteking"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "8 branden",
+    "replace": "8 ontstekingen",
+    "why": "branden -> ontstekingen"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "correctiebrand",
+    "replace": "correctie-ontsteking",
+    "why": "brand -> ontsteking"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "760 m/s-brand",
+    "replace": "760 m/s-ontsteking",
+    "why": "brand -> ontsteking"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Hoofdmotorinbranding",
+    "replace": "Hoofdmotorontsteking",
+    "why": "inbranding -> ontsteking"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Motorbrand",
+    "replace": "Motorontsteking",
+    "why": "brand -> ontsteking"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Hoofdmotor-burn",
+    "replace": "Hoofdmotorontsteking",
+    "why": "untranslated burn"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "TMI-BRANDING",
+    "replace": "TMI-ONTSTEKING",
+    "why": "branding -> ontsteking"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "stuwerbrand",
+    "replace": "stuwerontsteking",
+    "why": "brand -> ontsteking"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "PERIGEUM-BRAND 1",
+    "replace": "PERIGEUM-ONTSTEKING 1",
+    "why": "brand -> ontsteking"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "baan-verhogingsbranden",
+    "replace": "baanverhogingsontstekingen",
+    "why": "branden -> ontstekingen"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "perigeum-brand",
+    "replace": "perigeum-ontsteking",
+    "why": "brand -> ontsteking"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Hoofdmotorverbranding",
+    "replace": "Hoofdmotorontsteking",
+    "why": "verbranding = combustion; engine firing wanted"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "hoofdmotorverbranding",
+    "replace": "hoofdmotorontsteking",
+    "why": "verbranding = combustion; engine firing wanted"
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "TMI-BRANDING",
+    "replace": "TMI-ONTSTEKING",
+    "why": "branding -> ontsteking"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "TMI-VERBRANDING",
+    "replace": "TMI-ONTSTEKING",
+    "why": "verbranding -> ontsteking"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "TMI-VERBRANDING",
+    "replace": "TMI-ONTSTEKING",
+    "why": "verbranding -> ontsteking"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "TEI-VERBRANDING",
+    "replace": "TEI-ONTSTEKING",
+    "why": "verbranding -> ontsteking"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Motorverbranding",
+    "replace": "Motorontsteking",
+    "why": "verbranding -> ontsteking"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Hoofdmotor-brand",
+    "replace": "Hoofdmotorontsteking",
+    "why": "brand -> ontsteking"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "injectie verbranding",
+    "replace": "injectie-ontsteking",
+    "why": "verbranding -> ontsteking"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "motorbrand",
+    "replace": "motorontsteking",
+    "why": "brand -> ontsteking"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "VRIJE-TERUGKEERBRAND",
+    "replace": "VRIJE-TERUGKEERONTSTEKING",
+    "why": "brand -> ontsteking"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "afdalings-engine burn",
+    "replace": "afdalingsmotorontsteking",
+    "why": "untranslated engine burn"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "PC+2-BURN",
+    "replace": "PC+2-ONTSTEKING",
+    "why": "untranslated burn"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Pericynthion-plus-2-uur-burn",
+    "replace": "Pericynthion-plus-2-uur-ontsteking",
+    "why": "untranslated burn"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "SPS burn",
+    "replace": "SPS-ontsteking",
+    "why": "untranslated burn"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "injectie verbranding",
+    "replace": "injectie-ontsteking",
+    "why": "verbranding -> ontsteking"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "FASERINGSBRANDING",
+    "replace": "FASERINGSONTSTEKING",
+    "why": "branding -> ontsteking"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "transmaanverbranding",
+    "replace": "transmaanontsteking",
+    "why": "verbranding -> ontsteking"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "injectie verbranding",
+    "replace": "injectie-ontsteking",
+    "why": "verbranding -> ontsteking"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "vehicle_stage",
+    "term": "burn",
+    "decision": "change",
+    "find": "TLI-branding",
+    "replace": "TLI-ontsteking",
+    "why": "branding -> ontsteking"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Hoofdmotor-burn",
+    "replace": "Hoofdmotorontsteking",
+    "why": "untranslated burn"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "152s in de brand",
+    "replace": "152s in de ontsteking",
+    "why": "brand -> ontsteking"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "RCS-verbrandingsbrand",
+    "replace": "RCS-ontsteking",
+    "why": "verbrandingsbrand -> ontsteking"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Stuwraketmotor-branding",
+    "replace": "Stuwraketmotor-ontsteking",
+    "why": "branding -> ontsteking"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.0.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "een inertiaal booster",
+    "replace": "een inertiale boventrap",
+    "why": "IUS is an upper stage; also gender slip"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.0.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "boventrip",
+    "replace": "boventrap",
+    "why": "typo trip"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.1.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "boventrip",
+    "replace": "boventrap",
+    "why": "typo trip"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "het LM-opstijgingsstadium",
+    "replace": "de LM-opstijgtrap",
+    "why": "stadium -> trap"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "Het opstijgingsstadium van Snoopy was het enige dat",
+    "replace": "De opstijgtrap van Snoopy was de enige die",
+    "why": "stadium -> trap; article agreement"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "Opstijgingsfase",
+    "replace": "Opstijgtrap",
+    "why": "fase -> trap"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.6.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "Intrepid-opstijgfase",
+    "replace": "Intrepid-opstijgtrap",
+    "why": "fase -> trap"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.6.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "ruimtevaartuigfase",
+    "replace": "ruimtevaartuigtrap",
+    "why": "fase -> trap"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.4.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "Opstijgingsmodule",
+    "replace": "Opstijgtrap",
+    "why": "module -> trap"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "bovenstadia",
+    "replace": "boventrappen",
+    "why": "stadia -> trappen"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "term": "stage",
+    "decision": "keep",
+    "why": "proper vehicle name kept in English (Inertial Upper Stage)"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "payload",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgas",
+    "replace": "drijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "payload",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgas",
+    "replace": "drijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgasoverdracht",
+    "replace": "drijfstofoverdracht",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "payload",
+    "term": "propellant",
+    "decision": "change",
+    "find": "retourdrijfgas",
+    "replace": "retourdrijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "Terugkeer-drijfgas",
+    "replace": "Terugkeer-drijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgasoverdracht",
+    "replace": "drijfstofoverdracht",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "terugreis-drijfgas",
+    "replace": "terugreis-drijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "propellant omitted naturally: \"het stikstof voor standregeling\" is the propellant"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "payload",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgas",
+    "replace": "drijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "het drijfgas",
+    "replace": "de drijfstof",
+    "why": "drijfgas -> drijfstof; de-word"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.4.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgas",
+    "replace": "drijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgas",
+    "replace": "drijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "payload",
+    "term": "propellant",
+    "decision": "change",
+    "find": "xenon-drijfgas",
+    "replace": "xenon-drijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "payload",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgas",
+    "replace": "drijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "payload",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgas",
+    "replace": "drijfstof",
+    "why": "drijfgas -> drijfstof"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "Mars-laadeconomie",
+    "replace": "Mars-ladingeconomie",
+    "why": "laad- prefix is not lading"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: laadruim (payload bay, standard word)"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "AARDEVLIEGBY",
+    "replace": "AARDE-FLYBY",
+    "why": "vliegby is not the binding spelling"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.4.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VLIEGBY",
+    "replace": "FLYBY",
+    "why": "vliegby -> flyby"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VLIEGBY",
+    "replace": "FLYBY",
+    "why": "vliegby -> flyby"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.1.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "vliegby",
+    "replace": "flyby",
+    "why": "vliegby -> flyby"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "AARDBIJSTAND #1",
+    "replace": "AARDE-FLYBY #1",
+    "why": "bijstand is gravity assist, not flyby"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "MARSBIJSTAND",
+    "replace": "MARS-FLYBY",
+    "why": "bijstand is gravity assist, not flyby"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VLIEGBY",
+    "replace": "FLYBY",
+    "why": "vliegby -> flyby"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.2.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "asteroïde-vliegby",
+    "replace": "asteroïde-flyby",
+    "why": "vliegby -> flyby"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.3.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Bonus vliegby",
+    "replace": "Bonus-flyby",
+    "why": "vliegby -> flyby"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "zeer dichte vluchten voorbij",
+    "replace": "zeer dichte flybys van",
+    "why": "vluchten voorbij -> flybys"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "baanintrede",
+    "replace": "baaninsertie",
+    "why": "intrede is the atmospheric-entry binding"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.0.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "vliegby's",
+    "replace": "flybys",
+    "why": "vliegby -> flyby"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "maanpassages",
+    "replace": "maanflybys",
+    "why": "passage is not the flyby binding"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.5.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Baanopstelling",
+    "replace": "Baaninsertie",
+    "why": "opstelling -> insertie"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "BAANINSLUITING",
+    "replace": "BAANINSERTIE",
+    "why": "insluiting -> insertie"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "BAANOPNAME",
+    "replace": "BAANINSERTIE",
+    "why": "opname -> insertie"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "BAANINSLUITING",
+    "replace": "BAANINSERTIE",
+    "why": "insluiting -> insertie"
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "baanopstelling",
+    "replace": "baaninsertie",
+    "why": "opstelling -> insertie"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "baanopname",
+    "replace": "baaninsertie",
+    "why": "opname -> insertie"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Maanbaan-insluiting",
+    "replace": "Maanbaaninsertie",
+    "why": "insluiting -> insertie"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.5.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INTREDE IN MAANBAAN",
+    "replace": "MAANBAANINSERTIE",
+    "why": "intrede is the atmospheric-entry binding"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INTREDE IN MAANBAAN",
+    "replace": "MAANBAANINSERTIE",
+    "why": "intrede is the atmospheric-entry binding"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Maanbaan-inbranding",
+    "replace": "Maanbaaninsertie",
+    "why": "inbranding -> insertie"
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Maanorbitinzweving",
+    "replace": "Maanbaaninsertie",
+    "why": "inzweving -> insertie"
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Maanbaanopstelling",
+    "replace": "Maanbaaninsertie",
+    "why": "opstelling -> insertie"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "BAANINSLUITING",
+    "replace": "BAANINSERTIE",
+    "why": "insluiting -> insertie"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "BAANINSLUITING",
+    "replace": "BAANINSERTIE",
+    "why": "insluiting -> insertie"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "payload",
+    "term": "entry",
+    "decision": "change",
+    "find": "atmosferische ingangssonde",
+    "replace": "atmosferische intredesonde",
+    "why": "ingang -> intrede"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.4.note",
+    "term": "entry",
+    "decision": "change",
+    "find": "Atmosferische ingang",
+    "replace": "Atmosferische intrede",
+    "why": "ingang -> intrede"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.2.note",
+    "term": "entry",
+    "decision": "change",
+    "find": "atmosferische ingang",
+    "replace": "atmosferische intrede",
+    "why": "ingang -> intrede"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.4.note",
+    "term": "entry",
+    "decision": "change",
+    "find": "Monster-herbetredingscapsule",
+    "replace": "Monsterterugkeercapsule",
+    "why": "herbetreding is not the term; matches monsterterugkeercapsule elsewhere"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.5.note",
+    "term": "entry",
+    "decision": "change",
+    "find": "de atmosfeertoetrede",
+    "replace": "de atmosferische intrede",
+    "why": "toetrede -> intrede"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.6.note",
+    "term": "entry",
+    "decision": "change",
+    "find": "Atmosfeertoetrede",
+    "replace": "Atmosferische intrede",
+    "why": "toetrede -> intrede"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "terugkeermodule",
+    "replace": "afdalingsmodule",
+    "why": "terugkeer = return; descent module wanted"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "term": "descent",
+    "decision": "change",
+    "find": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "replace": "DEMONSTRATOR VOOR INTREDE, AFDALING EN LANDING · NEERGESTORT",
+    "why": "untranslated English (CRASHED left, outside the term)"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "Pre-descent",
+    "replace": "Voor de afdaling",
+    "why": "untranslated English"
+  }
+]

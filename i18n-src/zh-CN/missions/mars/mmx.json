@@ -12,5 +12,6 @@
     { "met": 600, "label": "释放巡视器", "note": "DLR/CNES漫游车（约25千克）在火卫一表面释放，进行原位研究。", "type": "info" },
     { "met": 1100, "label": "PHOBOS 样品", "note": "MMX在火卫一着陆；收集约10克风化层样本。", "type": "info" },
     { "met": 1500, "label": "返回地球", "note": "样本返回舱约于2031年抵达地球。", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "H3-24L 第二级"
 }

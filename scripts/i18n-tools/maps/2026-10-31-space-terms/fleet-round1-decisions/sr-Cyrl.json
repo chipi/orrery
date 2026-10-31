@@ -1,0 +1,241 @@
+[
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "stem gap: нагнуту (нагиб accepted)"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "dispatch",
+    "term": "docking",
+    "decision": "change",
+    "find": "Њено друго пристаниште значило је",
+    "replace": "Њен други пристајни прикључак значио је",
+    "why": "docking port -> пристајни прикључак (пристаниште = harbour)"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "гравитационо убрзање потребно",
+    "replace": "гравитациони маневар потребан",
+    "why": "gravity assist binding, agreement fixed"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "сагорева LOX и LH2 = combustion"
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "сагоревао LOX и RP-1 = combustion"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning oxidiser = combustion"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "engine burning LOX/LH2 = combustion"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "hydrogen-burning engines = combustion"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "сагоревали тона погонског горива = combustion"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "methane-burning engine = combustion"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned storable liquids = combustion"
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "stem gap: горива (комбинација горива)"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "variant: течни погон (liquid-propellant rocket)"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "variant: течни погон (liquid-propellant rocket)"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "stem gap: горива (више горива)"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "tagline",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: корисна носивост (payload capacity)"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "best_known_for",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: корисна носивост (payload capacity)"
+  },
+  {
+    "rel": "fleet/launch-site/starbase-orbital-a.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "способност за носивости веће класе",
+    "replace": "способност за корисне терете веће класе",
+    "why": "payload binding; garbled phrase fixed"
+  },
+  {
+    "rel": "fleet/launch-site/starbase-orbital-a.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: први степен (Super Heavy first-stage booster)"
+  },
+  {
+    "rel": "fleet/launcher/ariane-5.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: сателита (the payloads are satellites)"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: први степен (first-stage engine cluster)"
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "dispatch",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракете (whole Saturn rockets)"
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: први степен (first-stage recovery)"
+  },
+  {
+    "rel": "fleet/launcher/atlas-lv-3b.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета (whole vehicle)"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "tagline",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: први степен"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: први степен"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "best_known_for",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: први степен"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "tagline",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета-носач (whole three-core vehicle)"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "best_known_for",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета-носач (whole three-core vehicle)"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "dispatch",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета-носач (whole launch vehicle)"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета (whole single-stage vehicle)"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета-носач (launch vehicle failure)"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "за уметање у орбиту",
+    "replace": "за убацивање у орбиту",
+    "why": "insertion -> убацивање"
+  }
+]

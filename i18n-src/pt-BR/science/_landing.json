@@ -37,7 +37,7 @@
         "Robert Heinlein escreveu: \"Uma vez em órbita, você está no meio do caminho para qualquer lugar no sistema solar.\" Ele não estava brincando. Alcançar a órbita baixa da Terra custa ~9,4 km/s de ∆v. Ir de lá para Marte custa outros ~3,6 km/s. A parte mais difícil já está para trás.",
         "A rota interplanetária mais barata é uma [transferência de Hohmann](transfers/hohmann-transfer): uma elipse que mal toca a órbita da Terra em uma ponta e a órbita do destino na outra. Duas queimas, combustível zero desperdiçado. Para Marte leva ~8,5 meses. Lento, mas ideal.",
         "Quer ir mais rápido? Resolva um [problema de Lambert](transfers/lambert-problem) — escolha sua data de partida e seu tempo de trânsito, e Lambert diz a você a [elipse de transferência](transfers/transfer-ellipse) única que as conecta. É exatamente isso que a tela [/plan](app:/plan) do Orrery faz, dez mil vezes em paralelo, para desenhar um gráfico porkchop.",
-        "Precisa ir ainda mais longe? Roube velocidade de um planeta. Uma [assistência gravitacional](transfers/gravity-assist) usa uma passagem para mudar sua trajetória com custo zero de combustível — Voyager 2 usou quatro delas para alcançar Netuno. Todo o sistema solar se costura como [cônicas remendadas](transfers/patched-conics): uma série de arcos de [seções cônicas](transfers/conic-sections) passados entre vizinhanças gravitacionais como bastões em uma corrida de revezamento."
+        "Precisa ir ainda mais longe? Roube velocidade de um planeta. Uma [assistência gravitacional](transfers/gravity-assist) usa um sobrevoo para mudar sua trajetória com custo zero de combustível — Voyager 2 usou quatro delas para alcançar Netuno. Todo o sistema solar se costura como [cônicas remendadas](transfers/patched-conics): uma série de arcos de [seções cônicas](transfers/conic-sections) passados entre vizinhanças gravitacionais como bastões em uma corrida de revezamento."
       ]
     },
     {
@@ -66,7 +66,7 @@
       "heading": "6 — Distâncias e tempo, já que nada disso é do tamanho da Terra.",
       "diagram": "au.svg",
       "diagram_alt": "A unidade astronômica, marcada ao longo do raio orbital da Terra.",
-      "diagram_caption": "Uma AU = uma distância Terra-Sol. Marte está a ~1,5 UA. Júpiter a ~5,2.",
+      "diagram_caption": "Uma AU = uma distância Terra-Sol. Marte está a ~1,5 au. Júpiter a ~5,2.",
       "paragraphs": [
         "Três unidades aparecem em todo lugar. A [unidade astronômica](scales-time/au) (AU) é a distância média Terra-Sol — 150 milhões de km. Medimos o sistema solar em AU porque quilômetros ficam impraticáveis rápido. O [minuto-luz](scales-time/light-minute) diz quanto tempo leva para um sinal de rádio alcançar uma nave espacial. Marte: 4 a 24 minutos só de ida. Você não pode controlar um rover da Terra com joystick. Tudo importante é autônomo.",
         "A [época J2000](scales-time/j2000) é o calendário zero que todo astrodinamicista usa. [Períodos sideral vs. sinódico](scales-time/sidereal-synodic) explicam por que janelas de Marte recorrem a cada 26 meses em vez de a cada 23. O [plano da eclíptica](scales-time/ecliptic-plane) é o disco plano no qual os planetas todos (na maioria) se encontram. [Sistemas de referência](scales-time/frames) são os sistemas de coordenadas que o controle da missão alterna entre visões centradas na Terra, centradas no Sol e centradas no corpo."

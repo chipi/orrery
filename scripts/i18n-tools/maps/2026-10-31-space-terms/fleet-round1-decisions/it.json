@@ -1,0 +1,471 @@
+[
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Rampa polare",
+    "replace": "Rampa per orbite polari",
+    "why": "orbit dropped"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "natural omission: lanci polari ed eliosincroni"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "Carichi tipici",
+    "replace": "I carichi utili tipici",
+    "why": "carico alone is cargo"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Rampa polare",
+    "replace": "Rampa per orbite polari",
+    "why": "orbit dropped"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "si è agganciato con l'orbiter",
+    "replace": "ha eseguito il rendezvous con l'orbiter",
+    "why": "rendezvous rendered as docking"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "primi payload scientifici",
+    "replace": "primi carichi utili scientifici",
+    "why": "English loanword"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "raggiunga l'asteroide 1998 KY26",
+    "replace": "effettui il rendezvous con l'asteroide 1998 KY26",
+    "why": "rendezvous rendered as reach"
+  },
+  {
+    "rel": "fleet/orbiter/rosetta.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "La missione di ritrovo dell’ESA",
+    "replace": "La missione di rendezvous cometario dell’ESA",
+    "why": "ritrovo = meeting place"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: brucia LOX e LH2"
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: bruciava LOX e RP-1, camera di combustione"
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "l'iniezione translubare",
+    "replace": "l'accensione per l'iniezione translunare",
+    "why": "TLI burn dropped; translubare typo"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "per i burn di rientro e atterraggio",
+    "replace": "per le accensioni di rientro e atterraggio",
+    "why": "English loanword burn"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: bruciare l'ossidante in eccesso"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: brucia LOX e LH2"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: hydrogen-burning engines, rendered a idrogeno"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: Raptor a combustione di metano"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: bruciava liquidi immagazzinabili"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "La fase discendente",
+    "replace": "Lo stadio di discesa",
+    "why": "fase is a phase, not a rocket stage"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "la fase di salita",
+    "replace": "lo stadio di salita",
+    "why": "fase is a phase, not a rocket stage"
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "tagline",
+    "term": "stage",
+    "decision": "change",
+    "find": "a propellente singolo",
+    "replace": "monostadio",
+    "why": "single-stage rendered as single propellant"
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "sezione di discesa",
+    "replace": "stadio di discesa",
+    "why": "section rather than stage"
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "da una fase superiore",
+    "replace": "da uno stadio superiore",
+    "why": "fase is a phase, not a rocket stage"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "sistema propulsivo migliorato",
+    "replace": "sistema di propellenti migliorato",
+    "why": "propulsion system is not propellant system"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "payload di sicurezza",
+    "replace": "carichi utili di sicurezza",
+    "why": "English loanword"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "tagline",
+    "term": "payload",
+    "decision": "change",
+    "find": "carico espandibile",
+    "replace": "carico utile ampliato",
+    "why": "expanded payload; espandibile = expandable"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "best_known_for",
+    "term": "payload",
+    "decision": "change",
+    "find": "carico espandibile",
+    "replace": "carico utile ampliato",
+    "why": "expanded payload; espandibile = expandable"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "Payload Search and Rescue",
+    "replace": "Carico utile Search and Rescue",
+    "why": "English loanword"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "come payload ospitato",
+    "replace": "come carico utile ospitato",
+    "why": "English loanword"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "carichi scientifici",
+    "replace": "carichi utili scientifici",
+    "why": "utili dropped"
+  },
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "un payload a conchiglia",
+    "replace": "un carico utile a conchiglia",
+    "why": "English loanword"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-4.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "per payload istituzionali",
+    "replace": "per carichi utili istituzionali",
+    "why": "English loanword"
+  },
+  {
+    "rel": "fleet/launch-site/starbase-orbital-a.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: capacità di carico"
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "i payload statunitensi",
+    "replace": "i carichi utili statunitensi",
+    "why": "English loanword"
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "payload classificati NRO",
+    "replace": "carichi utili classificati NRO",
+    "why": "English loanword"
+  },
+  {
+    "rel": "fleet/launcher/ariane-5.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "carichi commerciali geostazionari",
+    "replace": "carichi utili commerciali geostazionari",
+    "why": "utili dropped"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "dispatch",
+    "term": "payload",
+    "decision": "change",
+    "find": "il carico Polyus",
+    "replace": "il carico utile Polyus",
+    "why": "utile dropped"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "dispatch",
+    "term": "payload",
+    "decision": "change",
+    "find": "altri carichi pesanti",
+    "replace": "altri carichi utili pesanti",
+    "why": "utili dropped"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "carichi autonomi",
+    "replace": "carichi utili autonomi",
+    "why": "utili dropped"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "test di carico Polyus",
+    "replace": "test del carico utile Polyus",
+    "why": "load test is a different sense"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: capacità di carico"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "Carico di dieci strumenti incluso",
+    "replace": "Il carico utile di dieci strumenti comprende",
+    "why": "utile dropped; grammar"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "un carico scientifico",
+    "replace": "un carico utile scientifico",
+    "why": "utile dropped"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "change",
+    "find": "Rinnovatore riutilizzabile + capsule di architettura",
+    "replace": "Architettura con booster riutilizzabile + capsula",
+    "why": "booster rendered as Rinnovatore (renovator)"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "tagline",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanciatore (whole vehicle)"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "best_known_for",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanciatore (whole vehicle)"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanciatore (launcher failure)"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "la sonda Giotto dell'ESA verso la cometa di Halley",
+    "replace": "la sonda Giotto dell'ESA per il sorvolo della cometa di Halley",
+    "why": "flyby dropped"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "con flyby",
+    "replace": "con sorvoli",
+    "why": "English loanword"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "un sorpasso storico dell'asteroide",
+    "replace": "uno storico sorvolo dell'asteroide",
+    "why": "sorpasso = overtaking"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "primo sorpasso di veicolo spaziale dell'asteroide",
+    "replace": "primo sorvolo di un veicolo spaziale dell'asteroide",
+    "why": "sorpasso = overtaking"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "tagline",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Il primo volo di successo di Marte",
+    "replace": "Il primo sorvolo di successo di Marte",
+    "why": "flyby rendered as volo"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Il primo volo di successo di Marte",
+    "replace": "Il primo sorvolo di successo di Marte",
+    "why": "flyby rendered as volo"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Il primo volo di successo di Marte",
+    "replace": "Il primo sorvolo di successo di Marte",
+    "why": "flyby rendered as volo"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "il suo flyby della Terra 2029 vicino",
+    "replace": "il suo sorvolo ravvicinato della Terra nel 2029",
+    "why": "English loanword, garbled order"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "su reentry",
+    "replace": "al rientro",
+    "why": "English loanword"
+  }
+]

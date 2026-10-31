@@ -5,7 +5,7 @@
   "delta_v": "~16 km/s (dont 7 assistances gravitationnelles de Vénus)",
   "type": "ORBITEUR SOLAIRE · ACTIF",
   "first": "Engin spatial le plus proche du Soleil jamais lancé (6,1 M km, 9,86 R☉) ; premier engin spatial à entrer dans la couronne solaire (2021-04-28) ; objet fabriqué par l'humanité le plus rapide (~191 km/s)",
-  "description": "Parker Solar Probe a exécuté le lancement à la plus haute énergie jamais réalisé pour une mission scientifique — C3 de 154 km²/s², nécessitant un étage solide Star 48BV personnalisé au sommet d'une Delta IV Heavy pour s'échapper de la Terre et entrer dans une trajectoire de chute vers le Soleil. Sept assistances gravitationnelles de Vénus sur six ans ont progressivement abaissé le périhélie de 0,16 UA (P1, 2018-11-05) à 0,046 UA (P22, 2024-12-24 — 9,86 rayons solaires, 6,1 millions de km de la surface). À P8 le 2021-04-28, Parker a plongé sous la surface critique d'Alfvén — le premier engin spatial jamais à entrer dans la couronne du Soleil. À P22, il a atteint ~191 km/s, devenant l'objet fabriqué par l'humanité le plus rapide jamais enregistré. Le bouclier thermique en carbone-carbone de 11,43 cm a soutenu 1 377 °C tandis que le bus spatial à 1 mètre derrière lui est resté à température ambiante.",
+  "description": "Parker Solar Probe a exécuté le lancement à la plus haute énergie jamais réalisé pour une mission scientifique — C3 de 154 km²/s², nécessitant un étage solide Star 48BV personnalisé au sommet d'une Delta IV Heavy pour s'échapper de la Terre et entrer dans une trajectoire de chute vers le Soleil. Sept assistances gravitationnelles de Vénus sur six ans ont progressivement abaissé le périhélie de 0,16 au (P1, 2018-11-05) à 0,046 au (P22, 2024-12-24 — 9,86 rayons solaires, 6,1 millions de km de la surface). À P8 le 2021-04-28, Parker a plongé sous la surface critique d'Alfvén — le premier engin spatial jamais à entrer dans la couronne du Soleil. À P22, il a atteint ~191 km/s, devenant l'objet fabriqué par l'humanité le plus rapide jamais enregistré. Le bouclier thermique en carbone-carbone de 11,43 cm a soutenu 1 377 °C tandis que le bus spatial à 1 mètre derrière lui est resté à température ambiante.",
   "events": [
     {
       "met": 0,
@@ -22,7 +22,7 @@
     {
       "met": 85,
       "label": "P1 — PREMIER PÉRIHÉLIE",
-      "note": "2018-11-05, 0,16 UA. Plus proche du Soleil jamais atteint, surpassant Helios 2.",
+      "note": "2018-11-05, 0,16 au. Plus proche du Soleil jamais atteint, surpassant Helios 2.",
       "type": "info"
     },
     {
@@ -43,5 +43,6 @@
       "note": "2024-12-24. 9,86 R☉ (6,1 M km du Soleil). ~191 km/s. Bouclier thermique 1 377 °C.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "troisième étage à poudre Star 48BV (Delta IV Heavy : corps central + 2 propulseurs)"
 }

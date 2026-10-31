@@ -100,7 +100,14 @@ describe('sentry dev rung (vite dev, no deploy env)', () => {
       category: 'navigation',
       data: { to: 'https://orrery.test/missions?q=apollo' },
     });
-    expect(nav.data.to).toBe('/missions');
+    expect(nav.data.to).toBe('https://orrery.test/missions');
+
+    // http crumbs used to keep their query strings (Phase 6 o11y gap).
+    const fetchCrumb = beforeBreadcrumb({
+      category: 'fetch',
+      data: { url: 'https://lab-api.test/auth/google/callback?code=abc&state=xyz', method: 'GET' },
+    });
+    expect(fetchCrumb.data.url).toBe('https://lab-api.test/auth/google/callback');
   });
 
   describe('beforeSend noise filter', () => {

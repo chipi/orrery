@@ -1,0 +1,477 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/hot-jupiters.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "maanbaan is the correct compound"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "maanbaan is the correct compound"
+  },
+  {
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "\"in de ruimte\" for on orbit, natural"
+  },
+  {
+    "rel": "science/life-in-space/long-duration-effects.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit omitted naturally in \"in 24 uur\""
+  },
+  {
+    "rel": "science/life-in-space/radiation-exposure.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "aardbaan compound"
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "doelbaan compound"
+  },
+  {
+    "rel": "science/mission-phases/nrho.json",
+    "at": "title",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "halobaan correct"
+  },
+  {
+    "rel": "science/mission-phases/nrho.json",
+    "at": "narrative_101.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "maanbaan compound"
+  },
+  {
+    "rel": "science/mission-phases/nrho.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/mission-phases/nrho.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "maanbaan compound"
+  },
+  {
+    "rel": "science/mission-phases/nrho.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Uitgerekte haloorbaan",
+    "replace": "Uitgerekte halobaan",
+    "why": "typo haloorbaan -> halobaan (baan)"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "parkeerbaan compound"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "per kilo drijfgas",
+    "replace": "per kilo drijfstof",
+    "why": "drijfstof"
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/orbits/_intro.json",
+    "at": "paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "Keplerbaan compound"
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/orbits/hill-sphere.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.3",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "draaien/omloop verb or period sense, natural"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "overdrachtsbaan compound"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.1",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "English says \"tilt\"; helling is the plain word"
+  },
+  {
+    "rel": "science/scales-time/j2000.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "change",
+    "find": "hellingen slingeren",
+    "replace": "baanhellingen slingeren",
+    "why": "baanhelling"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "in een van de fraaiste slingertochten",
+    "replace": "in een van de fraaiste tochten met zwaartekrachtsslingers",
+    "why": "zwaartekrachtsslinger"
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "trap is correct; daaltrap fixed under descent"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.3",
+    "term": "stage",
+    "decision": "keep",
+    "why": "opstijgtrap is correct"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.3",
+    "term": "stage",
+    "decision": "keep",
+    "why": "afdalingstrap/kruistrap correct"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "narrative_101.1",
+    "term": "stage",
+    "decision": "keep",
+    "why": "trap is correct; daaltrap fixed under descent"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "narrative_101.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "trap is correct; daaltrap fixed under descent"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "diagram_caption",
+    "term": "stage",
+    "decision": "keep",
+    "why": "trap is correct; daaltrap fixed under descent"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "stage",
+    "decision": "keep",
+    "why": "different sense (single-stage-to-orbit, staging orbit)"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "different sense (single-stage-to-orbit)"
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "als drijfgas gebruiken",
+    "replace": "als drijfstof gebruiken",
+    "why": "drijfstof"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "narrative_101.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "hij drijfgas verbrandt",
+    "replace": "hij drijfstof verbrandt",
+    "why": "drijfstof"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "drijfgas ruilen",
+    "replace": "drijfstof ruilen",
+    "why": "drijfstof"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "zijn resterende drijfgas",
+    "replace": "zijn resterende drijfstof",
+    "why": "drijfstof"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.4",
+    "term": "propellant",
+    "decision": "change",
+    "find": "nemen drijfgas voor verwijdering",
+    "replace": "nemen drijfstof voor verwijdering",
+    "why": "drijfstof"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "zonder drijfgas",
+    "replace": "zonder drijfstof",
+    "why": "drijfstof"
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "keep",
+    "why": "re-entry into 1 g gravity, not atmospheric entry"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.1",
+    "term": "descent",
+    "decision": "keep",
+    "why": "proper name of the engine / pintle-injector principle, not a descent phase"
+  }
+]

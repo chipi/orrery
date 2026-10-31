@@ -27,23 +27,10 @@ export { nameCandidates };
 import { nonNameChanges, outsideNamesSimilarity } from './lib/name-diff.mjs';
 import { SKIP_KEY } from './i18n-manifest.mjs';
 import { writeJsonEdits } from './lib/json-surgical.mjs';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-const LOCALES = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
+const LOCALES = TRANSLATED_LOCALES;
 
 function walk(dir, out = []) {
   for (const n of fs.readdirSync(dir).sort()) {

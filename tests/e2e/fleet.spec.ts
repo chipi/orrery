@@ -1,4 +1,6 @@
 import { test, expect, type ConsoleMessage, type Page } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { revealDesktopNavLink } from './_helpers/nav';
 
 function attachConsoleAndError(page: Page) {
@@ -114,12 +116,27 @@ test.describe('/fleet', () => {
     await page.goto('/fleet?id=merlin-1d');
     await waitForFleetReady(page);
     // "Flies on" surfaces the derived launcher graph — Merlin 1D → Falcon 9.
-    const fliesOn = page.getByRole('button', { name: /Falcon 9/ });
+    // Scoped to the panel: the grid card "Falcon 9 Block 5" precedes it in DOM order.
+    const fliesOn = page.locator('aside.panel').getByRole('button', { name: /Falcon 9/ });
     await expect(fliesOn.first()).toBeVisible({ timeout: 8_000 });
     await fliesOn.first().click();
     // Cross-navigation opens the Falcon 9 launcher entry in place.
     await expect(page).toHaveURL(/id=falcon-9/);
   });
+
+  // These engines carry isp_sl_s and isp_vac_s: two "Specific impulse" rows. Keying the
+  // spec list by its label threw each_key_duplicate and the panel never rendered
+  // (GlitchTip ORRERY-PROD-20 was merlin-1d).
+  for (const id of ['raptor', 'merlin-1d']) {
+    test(`an engine with sea-level and vacuum specs opens its panel (${id})`, async ({ page }) => {
+      const errors = attachConsoleAndError(page);
+      await page.goto(`/fleet?id=${id}`);
+      const panel = page.locator('aside.panel');
+      await expect(panel).toBeVisible({ timeout: 10_000 });
+      await expect(panel.getByText(/Specific impulse/)).toHaveCount(2);
+      expect(errors).toEqual([]);
+    });
+  }
 
   test('epoch chip filter works (mobile carousel)', async ({ page }) => {
     // Mobile viewport activates the chip carousel rather than the axis.
@@ -221,5 +238,16 @@ test.describe('/fleet', () => {
       return;
     }
     await expect(await revealDesktopNavLink(page, '/fleet')).toBeVisible({ timeout: 5_000 });
+  });
+
+  test('panel text follows the page locale (de overlay, not en-US)', async ({ page }) => {
+    const de = JSON.parse(
+      readFileSync(path.resolve(process.cwd(), 'i18n-src/de/fleet/launcher/falcon-9.json'), 'utf8'),
+    );
+    await page.goto('/de/fleet?id=falcon-9');
+    await waitForFleetReady(page);
+    await expect(page.locator('aside.panel .tagline')).toHaveText(de.tagline, {
+      timeout: 10_000,
+    });
   });
 });

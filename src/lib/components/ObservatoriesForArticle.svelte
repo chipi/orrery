@@ -4,9 +4,8 @@
   /earth globe. Renders nothing when no observatory links the article.
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
   import { page } from '$app/state';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { getObservatories, observatoriesForArticle } from '$lib/data';
   import type { Observatory } from '$types/observatory';
   import * as m from '$lib/paraglide/messages';
@@ -44,7 +43,7 @@
           <span class="place">{o.place}</span>
           <a
             class="map"
-            href="{base}/earth?observatory={o.id}"
+            href={localHref(`/earth?observatory=${o.id}`)}
             data-testid="observatory-on-map"
             data-sveltekit-preload-data="hover">{m.museum_on_map()}</a
           >

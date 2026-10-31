@@ -28,20 +28,21 @@
     {
       "met": 30.6,
       "label": "BEMONSTERING",
-      "note": "1,935 kg verzameld uit achterzijde-regoliet.",
+      "note": "1,935 kg verzameld uit regoliet van de achterkant van de Maan.",
       "type": "info"
     },
     {
       "met": 32,
       "label": "ASCENSIE",
-      "note": "Opstijgvoertuig heft af; rendezvous met orbiter.",
+      "note": "Het opstijgvoertuig stijgt op; rendez-vous met de orbiter.",
       "type": "nominal"
     },
     {
       "met": 53,
       "label": "AARDE-TERUGKEER",
-      "note": "Capsule landt in Binnen-Mongolië 2024-06-25 met de eerste achterzijde-monsters die ooit zijn opgehaald.",
+      "note": "Capsule landt in Binnen-Mongolië 2024-06-25 met de eerste monsters van de achterkant van de Maan die ooit zijn teruggebracht.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "bovenste trap YZ-1 van de Long March 5"
 }

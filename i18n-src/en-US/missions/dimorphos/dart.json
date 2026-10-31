@@ -12,5 +12,6 @@
     { "met": 306, "label": "APPROACH", "note": "2022-09-26. SMART Nav takes over 4h pre-impact.", "type": "info" },
     { "met": 306.001, "label": "IMPACT", "note": "23:14 UTC. ~6.6 km/s. 33-min orbital-period change — first deflection of an asteroid by humans.", "type": "info" },
     { "met": 306.002, "label": "LOSS OF SIGNAL", "note": "LICIACube + HST + JWST observe the ejecta plume.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Falcon 9 Block 5 second stage"
 }

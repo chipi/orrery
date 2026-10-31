@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La seconda lezione è cosa compra il segreto, e cosa costa. Nascondere i fallimenti e gestire la verità fece sembrare il programma invincibile, il che aveva un reale valore nella Guerra Fredda. Ma significava anche che il programma non poteva mai essere visto fallire — il che lo rese cauto nei posti sbagliati, incapace di correre i rischi visibili che imparare cose difficili richiede. Un'organizzazione che non può permettersi di fallire in pubblico alla fine non può permettersi nemmeno di *imparare* in pubblico."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — orbite e siti di lancio",
+    "/science/mission-phases/edl": "Ingresso, discesa e atterraggio"
+  }
 }

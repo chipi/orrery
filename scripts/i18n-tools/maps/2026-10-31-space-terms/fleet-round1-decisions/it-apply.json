@@ -1,0 +1,218 @@
+[
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "tagline",
+    "old": "Rampa polare Lunga Marcia 2D/4B/4C — Yaogan, Gaofen, meteo",
+    "new": "Rampa per orbite polari Lunga Marcia 2D/4B/4C — Yaogan, Gaofen, meteo"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "old": "Il LC-9 (anche Pad 9) del Centro Lanci Satellitari di Taiyuan gestisce la maggior parte dei lanci polari ed eliosincroni del TYSC con Lunga Marcia 2D, 4B, 4C e 6A. Carichi tipici includono la serie di ricognizione Yaogan, la costellazione di osservazione terrestre Gaofen e i satelliti meteorologici Fengyun. Attivo dal 2008.",
+    "new": "Il LC-9 (anche Pad 9) del Centro Lanci Satellitari di Taiyuan gestisce la maggior parte dei lanci polari ed eliosincroni del TYSC con Lunga Marcia 2D, 4B, 4C e 6A. I carichi utili tipici includono la serie di ricognizione Yaogan, la costellazione di osservazione terrestre Gaofen e i satelliti meteorologici Fengyun. Attivo dal 2008."
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "best_known_for",
+    "old": "Rampa polare Yaogan/Gaofen/Fengyun",
+    "new": "Rampa per orbite polari Yaogan/Gaofen/Fengyun"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "old": "La prima missione di ritorno campioni dal lato lontano della Luna — un traguardo storico 53 anni dopo Apollo che nessun'altra agenzia spaziale ha ancora tentato. Lanciata il 2024-05-03 su un Long March 5 da Wenchang, Chang'e 6 ha utilizzato il satellite relay Queqiao-2 (posizionato in orbita di alone attorno al punto L2 Terra-Luna da marzo 2024) per comunicare con la Terra attraverso il bordo lunare. Il lander è atterrato nel bacino Apollo all'interno del gigantesco bacino d'impatto Polo Sud-Aitken (-153,99° W, -41,64° S) il 2024-06-01 (UTC, 2024-06-02 ora di Pechino). La sua trivella + raccoglitore ha raccolto ~1935 g di regolite da una regione rimasta in gran parte indisturbata dall'impatto che ha formato il bacino ~4,3 miliardi di anni fa — materiale del mantello lunare scavato da SPA. L'ascender è decollato il 2024-06-03, si è agganciato con l'orbiter in orbita lunare, e la capsula di rientro è atterrata a Siziwang Banner, Mongolia Interna, il 2024-06-25 alle 14:07 ora locale. Francia, Italia, Svezia e Pakistan hanno contribuito con strumenti — i primi payload scientifici internazionali su una missione cinese di ritorno campioni.",
+    "new": "La prima missione di ritorno campioni dal lato lontano della Luna — un traguardo storico 53 anni dopo Apollo che nessun'altra agenzia spaziale ha ancora tentato. Lanciata il 2024-05-03 su un Long March 5 da Wenchang, Chang'e 6 ha utilizzato il satellite relay Queqiao-2 (posizionato in orbita di alone attorno al punto L2 Terra-Luna da marzo 2024) per comunicare con la Terra attraverso il bordo lunare. Il lander è atterrato nel bacino Apollo all'interno del gigantesco bacino d'impatto Polo Sud-Aitken (-153,99° W, -41,64° S) il 2024-06-01 (UTC, 2024-06-02 ora di Pechino). La sua trivella + raccoglitore ha raccolto ~1935 g di regolite da una regione rimasta in gran parte indisturbata dall'impatto che ha formato il bacino ~4,3 miliardi di anni fa — materiale del mantello lunare scavato da SPA. L'ascender è decollato il 2024-06-03, ha eseguito il rendezvous con l'orbiter in orbita lunare, e la capsula di rientro è atterrata a Siziwang Banner, Mongolia Interna, il 2024-06-25 alle 14:07 ora locale. Francia, Italia, Svezia e Pakistan hanno contribuito con strumenti — i primi carichi utili scientifici internazionali su una missione cinese di ritorno campioni."
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "old": "Hayabusa2 è un orbiter dello spazio profondo costruito dalla NEC in Giappone. Ha restituito con successo ~5,4 grammi di campioni dall'asteroide 162173 Ryugu il 6 dicembre 2020. Dopo la consegna dei campioni, il veicolo spaziale ha proseguito una missione estesa SHARP (Small Hazardous Asteroid Reconnaissance Probe) verso altri asteroidi. Ha sorvolato l'asteroide Torifune il 5 luglio 2026 ed è previsto che raggiunga l'asteroide 1998 KY26 nel 2031.",
+    "new": "Hayabusa2 è un orbiter dello spazio profondo costruito dalla NEC in Giappone. Ha restituito con successo ~5,4 grammi di campioni dall'asteroide 162173 Ryugu il 6 dicembre 2020. Dopo la consegna dei campioni, il veicolo spaziale ha proseguito una missione estesa SHARP (Small Hazardous Asteroid Reconnaissance Probe) verso altri asteroidi. Ha sorvolato l'asteroide Torifune il 5 luglio 2026 ed è previsto che effettui il rendezvous con l'asteroide 1998 KY26 nel 2031."
+  },
+  {
+    "rel": "fleet/orbiter/rosetta.json",
+    "at": "description",
+    "old": "La missione di ritrovo dell’ESA. Risalito a Comet 67P/Churyumov-Gerasimenko nell'agosto 2014, ha schierato il lavanda Philae (che ha rimbalzato e caduto in una crevasse), e ha accompagnato la cometa attraverso il suo perielio 2015 prima di schiantarsi sulla superficie stessa nel settembre 2016.",
+    "new": "La missione di rendezvous cometario dell’ESA. Risalito a Comet 67P/Churyumov-Gerasimenko nell'agosto 2014, ha schierato il lavanda Philae (che ha rimbalzato e caduto in una crevasse), e ha accompagnato la cometa attraverso il suo perielio 2015 prima di schiantarsi sulla superficie stessa nel settembre 2016."
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "description",
+    "old": "Il J-2 bruciava idrogeno e ossigeno e poteva riavviarsi nel vuoto dello spazio — una capacità che rese possibile l'iniezione translubare del Saturn V. Il progetto a generatore di gas di Rocketdyne volò sugli stadi secondo e terzo del Saturn V e sul Saturn IB, combinando prestazioni con i riavvii nello spazio che trasformavano un lanciatore in un vero stadio di partenza. Compì il suo primo volo nel febbraio 1966 e l'ultimo volo durante l'Apollo-Soyuz Test Project nel luglio 1975.",
+    "new": "Il J-2 bruciava idrogeno e ossigeno e poteva riavviarsi nel vuoto dello spazio — una capacità che rese possibile l'accensione per l'iniezione translunare del Saturn V. Il progetto a generatore di gas di Rocketdyne volò sugli stadi secondo e terzo del Saturn V e sul Saturn IB, combinando prestazioni con i riavvii nello spazio che trasformavano un lanciatore in un vero stadio di partenza. Compì il suo primo volo nel febbraio 1966 e l'ultimo volo durante l'Apollo-Soyuz Test Project nel luglio 1975."
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "description",
+    "old": "Il Merlin 1D di SpaceX è il motore che ha reso possibile il Falcon 9 riutilizzabile. Nove di essi sono raggruppati sul primo stadio del Falcon 9, con ciclo a generatore di gas su LOX e RP-1, con il motore centrale utilizzato anche per i burn di rientro e atterraggio. Primo volo nel settembre 2013, il Merlin 1D si è evoluto in un cavallo da lavoro ad alta cadenza: i singoli motori hanno accumulato più di venti voli ciascuno, un record di riutilizzo che ha cambiato ciò che l'industria riteneva economicamente fattibile. La variante sottovuoto, Merlin 1D Vacuum, alimenta lo stadio superiore del Falcon 9 con un ugello più grande ottimizzato per l'ambiente quasi-sottovuoto.",
+    "new": "Il Merlin 1D di SpaceX è il motore che ha reso possibile il Falcon 9 riutilizzabile. Nove di essi sono raggruppati sul primo stadio del Falcon 9, con ciclo a generatore di gas su LOX e RP-1, con il motore centrale utilizzato anche per le accensioni di rientro e atterraggio. Primo volo nel settembre 2013, il Merlin 1D si è evoluto in un cavallo da lavoro ad alta cadenza: i singoli motori hanno accumulato più di venti voli ciascuno, un record di riutilizzo che ha cambiato ciò che l'industria riteneva economicamente fattibile. La variante sottovuoto, Merlin 1D Vacuum, alimenta lo stadio superiore del Falcon 9 con un ugello più grande ottimizzato per l'ambiente quasi-sottovuoto."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "old": "L'unico lander lunare equipaggiato mai costruito. Sei sbarchi di successo tra il 1969 e il 1972 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — più Aquarius, che ha servito come barca a vita di Apollo 13. La fase discendente rimane sulla Luna; la fase di salita si unì al CSM in orbita lunare.",
+    "new": "L'unico lander lunare equipaggiato mai costruito. Sei sbarchi di successo tra il 1969 e il 1972 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — più Aquarius, che ha servito come barca a vita di Apollo 13. Lo stadio di discesa rimane sulla Luna; lo stadio di salita si unì al CSM in orbita lunare."
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "tagline",
+    "old": "Primo lander lunare cargo di Blue Origin — veicolo a propellente singolo a idrogeno/ossigeno, ~3 t fino alla superficie",
+    "new": "Primo lander lunare cargo di Blue Origin — veicolo monostadio a idrogeno/ossigeno, ~3 t fino alla superficie"
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "description",
+    "old": "Il Lunar Roving Vehicle — il primo rover con equipaggio. Tre missioni Apollo (15, 16, 17) lo hanno utilizzato per estendere l'esplorazione della superficie, coprendo fino a 35,9 km per missione (record di Apollo 17). Costruito da Boeing e Delco; ripiegato nella sezione di discesa dell'LM.",
+    "new": "Il Lunar Roving Vehicle — il primo rover con equipaggio. Tre missioni Apollo (15, 16, 17) lo hanno utilizzato per estendere l'esplorazione della superficie, coprendo fino a 35,9 km per missione (record di Apollo 17). Costruito da Boeing e Delco; ripiegato nella stadio di discesa dell'LM."
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "description",
+    "old": "La prima stazione spaziale dell'America, costruita da una fase superiore Saturn V S-IVB. Tre equipaggi di tre hanno vissuto a bordo tra il 1973 e il 1974, conducendo osservazioni solari e esperimenti zero-g. Rientrato incontrollato in Australia nel 1979.",
+    "new": "La prima stazione spaziale dell'America, costruita da uno stadio superiore Saturn V S-IVB. Tre equipaggi di tre hanno vissuto a bordo tra il 1973 e il 1974, conducendo osservazioni solari e esperimenti zero-g. Rientrato incontrollato in Australia nel 1979."
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "old": "Originariamente un pad Titan III / Titan IV dal 1965 al 2005, riadattato da SpaceX nel 2008 per Falcon 9. Oggi SLC-40 è il pad orbitale con la cadenza più alta mai operato, lanciando lotti Starlink, satelliti commerciali, rifornimenti SSI tramite Cargo Dragon e payload di sicurezza nazionale statunitense. Ricostruito dopo l'esplosione di AMOS-6 nel settembre 2016 con un sistema propulsivo migliorato; il pad ancora gestisce la maggior parte del manifesto SpaceX che il mondo vede.",
+    "new": "Originariamente un pad Titan III / Titan IV dal 1965 al 2005, riadattato da SpaceX nel 2008 per Falcon 9. Oggi SLC-40 è il pad orbitale con la cadenza più alta mai operato, lanciando lotti Starlink, satelliti commerciali, rifornimenti SSI tramite Cargo Dragon e carichi utili di sicurezza nazionale statunitense. Ricostruito dopo l'esplosione di AMOS-6 nel settembre 2016 con un sistema di propellenti migliorato; il pad ancora gestisce la maggior parte del manifesto SpaceX che il mondo vede."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "tagline",
+    "old": "Successore dell'HTV; carico espandibile",
+    "new": "Successore dell'HTV; carico utile ampliato"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "best_known_for",
+    "old": "Successore dell'HTV; carico espandibile",
+    "new": "Successore dell'HTV; carico utile ampliato"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "old": "GNSS civile europeo — 34 satelliti sono stati lanciati (4 IOV + 30 FOC); 27 operazionali + 1 in commissioning a maggio 2026; l'obiettivo della costellazione è 30 satelliti a 23.222 km in MEO su 3 piani orbitali inclinati di 56°. Primo servizio operativo nel 2016; dichiarazione di capacità operativa completa in sospeso dall'annuncio ufficiale di ESA/EUSPA. A differenza di GPS (operatore militare) e GLONASS (operatore militare), Galileo è gestito da EUSPA, un'agenzia civile dell'UE. Progettato per il posizionamento sub-metrico con livelli di servizio aperto, commerciale e a servizio regolamentato pubblico. Payload Search and Rescue integrato per il rilevamento dei radiofari di emergenza.",
+    "new": "GNSS civile europeo — 34 satelliti sono stati lanciati (4 IOV + 30 FOC); 27 operazionali + 1 in commissioning a maggio 2026; l'obiettivo della costellazione è 30 satelliti a 23.222 km in MEO su 3 piani orbitali inclinati di 56°. Primo servizio operativo nel 2016; dichiarazione di capacità operativa completa in sospeso dall'annuncio ufficiale di ESA/EUSPA. A differenza di GPS (operatore militare) e GLONASS (operatore militare), Galileo è gestito da EUSPA, un'agenzia civile dell'UE. Progettato per il posizionamento sub-metrico con livelli di servizio aperto, commerciale e a servizio regolamentato pubblico. Carico utile Search and Rescue integrato per il rilevamento dei radiofari di emergenza."
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "description",
+    "old": "Il segmento HEO dello Space-Based Infrared System (SBIRS) degli Stati Uniti — sensori di preallarme missilistico a infrarossi ospitati su satelliti host classificati nell'orbita Tundra di 24 ore con inclinazione critica di 63,4°. Sostando all'apogeo sopra le alte latitudini, SBIRS-HEO copre le regioni polari dove i sensori geostazionari DSP / SBIRS-GEO osservano con un angolo troppo basso. SBIRS HEO-1 è stato lanciato nel 2006 come payload ospitato su USA-184.",
+    "new": "Il segmento HEO dello Space-Based Infrared System (SBIRS) degli Stati Uniti — sensori di preallarme missilistico a infrarossi ospitati su satelliti host classificati nell'orbita Tundra di 24 ore con inclinazione critica di 63,4°. Sostando all'apogeo sopra le alte latitudini, SBIRS-HEO copre le regioni polari dove i sensori geostazionari DSP / SBIRS-GEO osservano con un angolo troppo basso. SBIRS HEO-1 è stato lanciato nel 2006 come carico utile ospitato su USA-184."
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "description",
+    "old": "L'HM7B è il motore dello stadio superiore alimentato a idrogeno che ha conferito ai razzi Ariane una spinta ad alta energia dopo lo spegnimento dello stadio centrale. Funzionando con un ciclo a generatore di gas su LOX e LH2, ha volato per la prima volta su Ariane 2 nel maggio 1986 e ha continuato fino alla fine della vita operativa di Ariane 5 nel luglio 2023. Le sue dimensioni contenute celano un impulso specifico elevato che ne ha fatto il cavallo da lavoro per le iniezioni in orbita geostazionaria, trasportando satelliti commerciali e carichi scientifici — inclusi Rosetta, Mars Express e Venus Express — verso le loro traiettorie di partenza nel corso di più di tre decenni.",
+    "new": "L'HM7B è il motore dello stadio superiore alimentato a idrogeno che ha conferito ai razzi Ariane una spinta ad alta energia dopo lo spegnimento dello stadio centrale. Funzionando con un ciclo a generatore di gas su LOX e LH2, ha volato per la prima volta su Ariane 2 nel maggio 1986 e ha continuato fino alla fine della vita operativa di Ariane 5 nel luglio 2023. Le sue dimensioni contenute celano un impulso specifico elevato che ne ha fatto il cavallo da lavoro per le iniezioni in orbita geostazionaria, trasportando satelliti commerciali e carichi utili scientifici — inclusi Rosetta, Mars Express e Venus Express — verso le loro traiettorie di partenza nel corso di più di tre decenni."
+  },
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "description",
+    "old": "Un lander marziano da 33 kg guidato dal Regno Unito, rilasciato dalla sonda Mars Express dell'ESA il 19 dicembre 2003, sei giorni prima dell'atterraggio pianificato per il 25 dicembre 2003 a Isidis Planitia. Beagle 2 (dal nome della HMS Beagle che trasportò Darwin) trasportava un payload a conchiglia composto da uno spettrometro Gas Analysis Package per l'analisi di volatili atmosferici e del sottosuolo, una fotocamera stereo, un microscopio, una coppia di spettrometri Mössbauer e APX, e una trivella-talpa. Divenne silenzioso alla separazione e fu considerato schiantatosi per 12 anni — fino al gennaio 2015, quando immagini ad alta risoluzione di HiRISE dal Mars Reconnaissance Orbiter mostrarono chiaramente Beagle 2 sulla superficie marziana (~5 km dal suo obiettivo), con uno dei quattro pannelli solari (petali) che non si era completamente aperto, impedendo all'antenna di liberarsi dall'alloggiamento e di raccogliere sufficiente energia. Quindi: un atterraggio riuscito, un dispiegamento fallito e un mistero di 12 anni risolto dallo stesso tipo di immagini che LRO usa per la Luna.",
+    "new": "Un lander marziano da 33 kg guidato dal Regno Unito, rilasciato dalla sonda Mars Express dell'ESA il 19 dicembre 2003, sei giorni prima dell'atterraggio pianificato per il 25 dicembre 2003 a Isidis Planitia. Beagle 2 (dal nome della HMS Beagle che trasportò Darwin) trasportava un carico utile a conchiglia composto da uno spettrometro Gas Analysis Package per l'analisi di volatili atmosferici e del sottosuolo, una fotocamera stereo, un microscopio, una coppia di spettrometri Mössbauer e APX, e una trivella-talpa. Divenne silenzioso alla separazione e fu considerato schiantatosi per 12 anni — fino al gennaio 2015, quando immagini ad alta risoluzione di HiRISE dal Mars Reconnaissance Orbiter mostrarono chiaramente Beagle 2 sulla superficie marziana (~5 km dal suo obiettivo), con uno dei quattro pannelli solari (petali) che non si era completamente aperto, impedendo all'antenna di liberarsi dall'alloggiamento e di raccogliere sufficiente energia. Quindi: un atterraggio riuscito, un dispiegamento fallito e un mistero di 12 anni risolto dallo stesso tipo di immagini che LRO usa per la Luna."
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-4.json",
+    "at": "description",
+    "old": "Il pad gemello di ELA-3 al Centre Spatial Guyanais. Costruzione iniziata nel 2015; volo inaugurale di Ariane 6 VA262 decollato da qui il 9 luglio 2024. ELA-4 eredita lo stesso vantaggio equatoriale di 5,2°N che ha reso Ariane 5 il lanciatore geostazionario occidentale di maggior successo della sua epoca, con un segmento terrestre ridisegnato per cadenza superiore: edificio di integrazione orizzontale, portico mobile scorrevole, integrazione completa del nuovo stadio superiore ESC-B. Il lanciatore di autonomia strategica europea per payload istituzionali (aggiornamento Galileo, Copernicus, missioni scientifiche ESA) più traffico GEO commerciale.",
+    "new": "Il pad gemello di ELA-3 al Centre Spatial Guyanais. Costruzione iniziata nel 2015; volo inaugurale di Ariane 6 VA262 decollato da qui il 9 luglio 2024. ELA-4 eredita lo stesso vantaggio equatoriale di 5,2°N che ha reso Ariane 5 il lanciatore geostazionario occidentale di maggior successo della sua epoca, con un segmento terrestre ridisegnato per cadenza superiore: edificio di integrazione orizzontale, portico mobile scorrevole, integrazione completa del nuovo stadio superiore ESC-B. Il lanciatore di autonomia strategica europea per carichi utili istituzionali (aggiornamento Galileo, Copernicus, missioni scientifiche ESA) più traffico GEO commerciale."
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "description",
+    "old": "Il gateway orbitale della costa ovest statunitense. Costruito per Atlas-Agena nel 1963; Titan III/IV fino al 2005; riadattato da SpaceX nel 2011. Il vantaggio geografico di Vandenberg è il corridoio in direzione sud sull'Oceano Pacifico — è così che i payload statunitensi raggiungono orbite polari ed eliosincrone senza sorvolare terre popolate. Oggi SLC-4E fa volare Falcon 9 verso i gusci polari Starlink, payload classificati NRO, satelliti USSF + commerciali di osservazione terrestre. SLC-4W accanto è la zona di recupero dei booster.",
+    "new": "Il gateway orbitale della costa ovest statunitense. Costruito per Atlas-Agena nel 1963; Titan III/IV fino al 2005; riadattato da SpaceX nel 2011. Il vantaggio geografico di Vandenberg è il corridoio in direzione sud sull'Oceano Pacifico — è così che i carichi utili statunitensi raggiungono orbite polari ed eliosincrone senza sorvolare terre popolate. Oggi SLC-4E fa volare Falcon 9 verso i gusci polari Starlink, carichi utili classificati NRO, satelliti USSF + commerciali di osservazione terrestre. SLC-4W accanto è la zona di recupero dei booster."
+  },
+  {
+    "rel": "fleet/launcher/ariane-5.json",
+    "at": "description",
+    "old": "Il lanciatore pesante di lunga durata dell'ESA, ritirato nel 2023 dopo 117 lanci. Ha trasportato Rosetta verso la cometa 67P, JWST a L2, e carichi commerciali geostazionari dual-manifested per due decenni.",
+    "new": "Il lanciatore pesante di lunga durata dell'ESA, ritirato nel 2023 dopo 117 lanci. Ha trasportato Rosetta verso la cometa 67P, JWST a L2, e carichi utili commerciali geostazionari dual-manifested per due decenni."
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "dispatch",
+    "old": "Energia era il razzo che ha riscattato l'N1 — il lanciatore superpesante che l'Unione Sovietica finalmente realizzò correttamente. Mentre l'N1 esplose in tutti e quattro i tentativi, Energia funzionò, sollevando il carico Polyus nel 1987 e l'orbiter Buran nel 1988. Crucialmente, era un lanciatore a sé stante, non uno stack shuttle: poiché Buran non aveva motori principali, Energia fece l'intero lavoro di raggiungere l'orbita e avrebbe potuto altrettanto bene sollevare altri carichi pesanti senza orbiter. Era il razzo più potente che l'Unione Sovietica abbia mai lanciato con successo — e, come Buran, fu cancellato per la mancanza di qualcosa da lanciare.",
+    "new": "Energia era il razzo che ha riscattato l'N1 — il lanciatore superpesante che l'Unione Sovietica finalmente realizzò correttamente. Mentre l'N1 esplose in tutti e quattro i tentativi, Energia funzionò, sollevando il carico utile Polyus nel 1987 e l'orbiter Buran nel 1988. Crucialmente, era un lanciatore a sé stante, non uno stack shuttle: poiché Buran non aveva motori principali, Energia fece l'intero lavoro di raggiungere l'orbita e avrebbe potuto altrettanto bene sollevare altri carichi utili pesanti senza orbiter. Era il razzo più potente che l'Unione Sovietica abbia mai lanciato con successo — e, come Buran, fu cancellato per la mancanza di qualcosa da lanciare."
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "description",
+    "old": "L'unico lanciatore superpesante sovietico a volare con successo. Progettato per trasportare l'orbiter Buran o carichi autonomi fino a 100 t in LEO. Due missioni: test di carico Polyus (1987) e orbiter Buran (1988), entrambi riusciti. Programma sospeso alla fine della Guerra Fredda.",
+    "new": "L'unico lanciatore superpesante sovietico a volare con successo. Progettato per trasportare l'orbiter Buran o carichi utili autonomi fino a 100 t in LEO. Due missioni: test del carico utile Polyus (1987) e orbiter Buran (1988), entrambi riusciti. Programma sospeso alla fine della Guerra Fredda."
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "old": "Esploratore delle lune ghiacciate di Giove. Lanciato il 14-04-2023 su Ariane 5 ECA+ da Kourou per una crociera di 8,5 anni con fionde gravitazionali Terra-Venere-Terra-Terra fino all'arrivo a Giove a luglio 2031. Nel sistema gioviano JUICE compie ~35 flyby di Europa, Ganimede e Callisto prima di entrare in orbita attorno a Ganimede nel 2034 — primo veicolo in assoluto a orbitare una luna diversa dalla Luna terrestre. Carico di dieci strumenti incluso il radar penetrante di ghiaccio RIME.",
+    "new": "Esploratore delle lune ghiacciate di Giove. Lanciato il 14-04-2023 su Ariane 5 ECA+ da Kourou per una crociera di 8,5 anni con fionde gravitazionali Terra-Venere-Terra-Terra fino all'arrivo a Giove a luglio 2031. Nel sistema gioviano JUICE compie ~35 flyby di Europa, Ganimede e Callisto prima di entrare in orbita attorno a Ganimede nel 2034 — primo veicolo in assoluto a orbitare una luna diversa dalla Luna terrestre. Il carico utile di dieci strumenti comprende il radar penetrante di ghiaccio RIME."
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "old": "La missione di sfioramento solare della NASA. Lanciata il 2018-08-12 con un razzo Delta IV Heavy + Star 48BV nel più alto C3 mai raggiunto per un carico scientifico (154 km²/s²). Sette fionde gravitazionali di Venere nel corso di sei anni hanno ridotto il perielio da 0,16 au (P1) a 0,046 au (P22, 2024-12-24) — 9,86 raggi solari, 6,1 milioni di km dalla superficie del Sole. Al passaggio P8 (2021-04-28) Parker è scesa al di sotto della superficie critica di Alfvén — il primo veicolo spaziale a entrare nella corona solare. Velocità massima al perielio: 192,22 km/s, l'oggetto più veloce mai creato dall'uomo.",
+    "new": "La missione di sfioramento solare della NASA. Lanciata il 2018-08-12 con un razzo Delta IV Heavy + Star 48BV nel più alto C3 mai raggiunto per un carico utile scientifico (154 km²/s²). Sette fionde gravitazionali di Venere nel corso di sei anni hanno ridotto il perielio da 0,16 au (P1) a 0,046 au (P22, 2024-12-24) — 9,86 raggi solari, 6,1 milioni di km dalla superficie del Sole. Al passaggio P8 (2021-04-28) Parker è scesa al di sotto della superficie critica di Alfvén — il primo veicolo spaziale a entrare nella corona solare. Velocità massima al perielio: 192,22 km/s, l'oggetto più veloce mai creato dall'uomo."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "description",
+    "old": "L’astronave suborbitale di Blue Origin, chiamata Alan Shepard. Rinnovatore riutilizzabile + capsule di architettura, con la capsula di atterraggio sotto paracadute. Crewed dal 2021; portato Jeff Bezos, William Shatner, e altri su brevi voli suborbitali.",
+    "new": "L’astronave suborbitale di Blue Origin, chiamata Alan Shepard. Architettura con booster riutilizzabile + capsula, con la capsula di atterraggio sotto paracadute. Crewed dal 2021; portato Jeff Bezos, William Shatner, e altri su brevi voli suborbitali."
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "description",
+    "old": "Razzo a tre stadi costruito da CNES su richiesta dell'ESA dopo la cancellazione del programma Europa — primo e secondo stadio ipergolici UH-25 / N2O4, sormontati dal terzo stadio criogenico HM7 (LH₂ / LOX). 11 lanci da Kourou tra il 24/12/1979 e il 22/02/1986 hanno portato 27 satelliti europei di telecomunicazioni e scienza, inclusi ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B e la sonda Giotto dell'ESA verso la cometa di Halley. Ritirato a favore degli Ariane 2/3/4 più grandi; la tecnologia criogenica HM7 è proseguita attraverso Ariane 4 fino allo stadio ESC-A di Ariane 5.",
+    "new": "Razzo a tre stadi costruito da CNES su richiesta dell'ESA dopo la cancellazione del programma Europa — primo e secondo stadio ipergolici UH-25 / N2O4, sormontati dal terzo stadio criogenico HM7 (LH₂ / LOX). 11 lanci da Kourou tra il 24/12/1979 e il 22/02/1986 hanno portato 27 satelliti europei di telecomunicazioni e scienza, inclusi ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B e la sonda Giotto dell'ESA per il sorvolo della cometa di Halley. Ritirato a favore degli Ariane 2/3/4 più grandi; la tecnologia criogenica HM7 è proseguita attraverso Ariane 4 fino allo stadio ESC-A di Ariane 5."
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "old": "Missione congiunta ESA + JAXA. Lanciata il 2018-10-20 su un Ariane 5 ECA. Il Mercury Transfer Module trasporta lo stack durante una crociera di 7 anni con flyby (1 Terra + 2 Venere + 6 fionde gravitazionali da Mercurio) prima dell'inserimento in orbita su Mercurio il 2026-11-21. All'arrivo i due orbiter scientifici si separano: Mercury Planetary Orbiter (MPO) dell'ESA vola un'orbita polare 480 × 1500 km con 11 strumenti per la composizione della superficie, topografia, gravità ed esosfera; Mio della JAXA (Mercury Magnetospheric Orbiter) vola un'orbita polare 590 × 11 640 km con 5 strumenti per la magnetosfera e il plasma. Insieme sono i primi spacecraft europei + giapponesi mai in orbita attorno a Mercurio.",
+    "new": "Missione congiunta ESA + JAXA. Lanciata il 2018-10-20 su un Ariane 5 ECA. Il Mercury Transfer Module trasporta lo stack durante una crociera di 7 anni con sorvoli (1 Terra + 2 Venere + 6 fionde gravitazionali da Mercurio) prima dell'inserimento in orbita su Mercurio il 2026-11-21. All'arrivo i due orbiter scientifici si separano: Mercury Planetary Orbiter (MPO) dell'ESA vola un'orbita polare 480 × 1500 km con 11 strumenti per la composizione della superficie, topografia, gravità ed esosfera; Mio della JAXA (Mercury Magnetospheric Orbiter) vola un'orbita polare 590 × 11 640 km con 5 strumenti per la magnetosfera e il plasma. Insieme sono i primi spacecraft europei + giapponesi mai in orbita attorno a Mercurio."
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "old": "Secondo orbiter lunare della Cina, lanciato il 2010-10-01. Chang'e 2 ha orbitato attorno alla Luna dal 2010 al 2011, quindi ha abbandonato l'orbita lunare a giugno 2011 per una missione estesa nello spazio profondo. Ha raggiunto il punto L2 del sistema Terra-Sole (giungendovi nell'agosto 2011), quindi ha abbandonato L2 nell'aprile 2012 per un sorpasso storico dell'asteroide 4179 Toutatis, eseguendo un avvicinamento ravvicinato il 2012-12-13 a una distanza di ~770 m — il primo veicolo spaziale a visitare l'asteroide. Dopo l'incontro con Toutatis, Chang'e 2 ha continuato nello spazio profondo su una traiettoria eliocentrica, divenendo un oggetto interplanetario alla deriva.",
+    "new": "Secondo orbiter lunare della Cina, lanciato il 2010-10-01. Chang'e 2 ha orbitato attorno alla Luna dal 2010 al 2011, quindi ha abbandonato l'orbita lunare a giugno 2011 per una missione estesa nello spazio profondo. Ha raggiunto il punto L2 del sistema Terra-Sole (giungendovi nell'agosto 2011), quindi ha abbandonato L2 nell'aprile 2012 per uno storico sorvolo dell'asteroide 4179 Toutatis, eseguendo un avvicinamento ravvicinato il 2012-12-13 a una distanza di ~770 m — il primo veicolo spaziale a visitare l'asteroide. Dopo l'incontro con Toutatis, Chang'e 2 ha continuato nello spazio profondo su una traiettoria eliocentrica, divenendo un oggetto interplanetario alla deriva."
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "old": "Secondo orbiter lunare cinese; primo sorpasso di veicolo spaziale dell'asteroide 4179 Toutatis (13 dic 2012, ~770 m di distanza minima)",
+    "new": "Secondo orbiter lunare cinese; primo sorvolo di un veicolo spaziale dell'asteroide 4179 Toutatis (13 dic 2012, ~770 m di distanza minima)"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "tagline",
+    "old": "Il primo volo di successo di Marte",
+    "new": "Il primo sorvolo di successo di Marte"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "description",
+    "old": "Il primo volo di successo di Marte — luglio 1965. Le 22 fotografie bianche e nere venose tornate terminarono nel corso di un secolo di speculazione sui canali marziani e sulla vita mostrando una superficie craterizzata simile alla luna.",
+    "new": "Il primo sorvolo di successo di Marte — luglio 1965. Le 22 fotografie bianche e nere venose tornate terminarono nel corso di un secolo di speculazione sui canali marziani e sulla vita mostrando una superficie craterizzata simile alla luna."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "old": "Il primo volo di successo di Marte",
+    "new": "Il primo sorvolo di successo di Marte"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "old": "missione di ritorno dell’asteroide della NASA. Approccio asteroide Bennu nel 2018, catturato un campione con il suo braccio TAGSAM nel 2020, e restituito la capsula campione a Utah nel settembre 2023. Ora ridisegnata OSIRIS-APEX, in rotta verso l'asteroide Apophis per il suo flyby della Terra 2029 vicino.",
+    "new": "missione di ritorno dell’asteroide della NASA. Approccio asteroide Bennu nel 2018, catturato un campione con il suo braccio TAGSAM nel 2020, e restituito la capsula campione a Utah nel settembre 2023. Ora ridisegnata OSIRIS-APEX, in rotta verso l'asteroide Apophis per il suo sorvolo ravvicinato della Terra nel 2029."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "description",
+    "old": "Il vettore pressurizzato-cargo di Northrop Grumman, riconoscibile dai suoi array solari UltraFlex rotondi — un modello di fisarmonica a ventaglio condiviso con nessun altro visitatore SSI. Brucia su reentry; nessun downmass.",
+    "new": "Il vettore pressurizzato-cargo di Northrop Grumman, riconoscibile dai suoi array solari UltraFlex rotondi — un modello di fisarmonica a ventaglio condiviso con nessun altro visitatore SSI. Brucia al rientro; nessun downmass."
+  }
+]

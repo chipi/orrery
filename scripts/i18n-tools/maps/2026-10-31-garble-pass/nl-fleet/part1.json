@@ -1,0 +1,1263 @@
+[
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "OV-105 — vijfde Shuttle, uit reservedelen gebouwd als Challenger-vervanger. Eerste Hubble-onderhoud STS-61 (1993); bracht Unity + Canadarm2",
+    "note": "Stale; dropped built-from-spares clause, added extra modules"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Het witte, slim-fit Crew Dragon IVA-pak, gevlogen sinds Demo-2",
+    "note": "Awkward 'in vlucht sinds'"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/orion.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Bemand voertuig voor het Artemis-maanprogramma",
+    "note": "Article/compound slip"
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Eerste inslagsonde voor planetaire verdediging (Dimorphos)",
+    "note": "Clumsy invented compound 'botslichaam'"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "OK-GLI was de atmosferische testorbiter van Buran — het equivalent van NASA's Enterprise, gebouwd om te bewijzen dat het ruimtevliegtuig kon glijden en landen voordat er iets in een baan om de Aarde vloog. Uitgerust met vier straalmotoren voerde het zijn eigen landingsbenaderingen en landingen uit in de atmosfeer, waarmee de aerodynamica van Buran en zijn geautomatiseerde landingssystemen werden gevalideerd. Het ging nooit de ruimte in en was daar ook nooit voor bedoeld, en het overleefde de orbiter die dat wel deed: terwijl de gevlogen Buran in 2002 werd vernietigd, bestaat OK-GLI voort als museumstuk in Duitsland, een van de weinige tastbare overblijfselen van het grootste ruimtevaartprogramma dat de Sovjet-Unie ooit ondernam.",
+    "note": "English 'was' left in; glide, landings detail"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Eerste zachte landing op een andere planeet en eerste die gegevens vanaf het oppervlak van een andere planeet doorstuurde (Venus, 1970)",
+    "note": "Merged two claims, 'planeetlichaam' odd"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Mars Reconnaissance Orbiter is een orbiter voor de diepe ruimte, gebouwd door Lockheed Martin in de VS. Mars-beeldvorming met de hoogste resolutie vanuit een baan. In dienst sinds 2005.",
+    "note": "'ruimtebaan' wrong meaning; clumsy phrase"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "De enige operationele commerciële MEO-breedbandconstellatie — de oorspronkelijke O3b ingezet in 2013-2019, de tweede generatie O3b mPOWER vanaf 2022. 20+ satellieten in een equatoriale baan op 8.063 km. Latentie tussen GEO en LEO, klantenbestand gericht op telecom-backhaul, scheepvaart en bedrijven op afgelegen locaties. Geëxploiteerd door SES (Luxemburg). Genoemd naar de 'andere 3 miljard' — de oorspronkelijke missie was connectiviteit brengen naar gebieden die niet door terrestrische breedband worden bediend.",
+    "note": "English quote left untranslated; orbit phrase clumsy"
+  },
+  {
+    "rel": "fleet/launcher/h3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "H3 is een orbitale draagraket, gebouwd door Mitsubishi Heavy Industries in Japan. Vervangt H-IIA / H-IIB tegen lagere kosten. In dienst sinds 2024.",
+    "note": "'baanwerper' is a non-word"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Begeleidende orbiter van de Viking-1-lander — relais + 50000 oppervlaktebeelden op 150-300 m/pixel, de eerste mondiale Marskaart. Actief 1976-1980",
+    "note": "Dropped 'surface'; article missing"
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Het GNSS van Rusland — 24 actieve satellieten op 19.130 km MEO in 3 vlakken met een inclinatie van 64,8° (de hoge inclinatie is opzettelijk voor betere dekking op hoge breedtegraden ten opzichte van GPS). Eerste lancering in 1982; bereikte volledige constellatie in 1995, stortte vervolgens in de late jaren 1990 / begin jaren 2000 na afloop van de Sovjet-financiering; hersteld naar volledige operationele status van 24 satellieten rond 2010-2011 met hernieuwde financiering. Blijft operationeel in 2026. Beheerd door Roscosmos in coördinatie met het Russische ministerie van Defensie.",
+    "note": "'Rusland's' ungrammatical genitive"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "Bracht monsters van Bennu terug (2023); nu onderweg naar Apophis",
+    "note": "Sample-return clause missing"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Eerste Chinese Marsmissie; de orbiter bracht de Zhurong-rover in mei 2021 naar Mars",
+    "note": "Compound should be hyphenated"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Drietraps zware draagraket met hypergolische drijfstoffen (N2O4 / UDMH) en optionele Blok-D / D-1 / D-2 hoogenergetische boventrappen. 311 lanceringen tussen 1967-03-10 en 2012-03-30 — lanceerde elke Salyut-, Mir- en ISS-module van het Russische segment, elke Venera- en Vega-sonde naar Venus, elke Luna-monsterretourmissie en de Sovjet Mars-2/-3/-5/-7. De Blok-D boventrap werd oorspronkelijk ontwikkeld voor de geannuleerde bemande maanarchitectuur N1-L3; hergebruik ervan op de Proton-K hield de hoogenergetische Sovjetlijn van planeetmissies tot in de jaren 80 levensvatbaar. Vervangen door de Proton-M, die nog steeds vliegt.",
+    "note": "'anchored' rendered as supported; heavy-lift lost; clumsy phrases"
+  },
+  {
+    "rel": "fleet/lander/luna-9.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "De eerste zachte landing op een andere wereld. Landde in februari 1966 op de Oceanus Procellarum en stuurde de eerste foto's van het maanoppervlak terug — een panorama van het kraterlandschap op slechts centimeters van het oog van de lander.",
+    "note": "Ungrammatical fragments, dash lost, wrong verb"
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Mars-seismometer; 1300+ marsbevingen gedetecteerd",
+    "note": "Compound should be hyphenated"
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "De Chang'e-4-rover van China, de eerste rover die op de achterkant van de Maan opereert. Landde in januari 2019 in de krater Von Kármán en was meer dan zes jaar actief, ver boven zijn ontwerplevensduur van drie maanden; sinds begin 2024 grotendeels stilstaand.",
+    "note": "'maankant' wrong for far side"
+  },
+  {
+    "rel": "fleet/station/salyut-7.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/lc-14.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Als Complex 5 de plek is waar Amerikanen voor het eerst de ruimte aanraakten, dan is Complex 14 de plek waar ze voor het eerst bleven. Dit was het Atlas-platform, en alle vier de Mercury-vluchten in een baan vertrokken ervandaan — Glenn, Carpenter, Schirra, Cooper — de vluchten die een Amerikaan in een baan brachten in plaats van op een boog. Later lanceerde het de Gemini-Atlas-doelvoertuigen die bemanningen het rendez-vous leerden, zodat dezelfde lap grond de eerste banen verbindt met de koppelvaardigheden die Apollo nodig zou hebben. Waar 5 de startlijn herbergt, herbergt 14 het moment waarop de Verenigde Staten een waarlijk orbitale natie werden.",
+    "note": "'arc' rendered as orbit; term rendezvous unbound; grammar"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Sporengasanalyse + ESA/NASA-oppervlakterelay",
+    "note": "Compound spelling"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Het eiland Sriharikota aan de oostkust van India, op 13,7°N — dichter bij de evenaar dan Cape Canaveral, met een lege corridor boven de Golf van Bengalen in de lanceerrichting. Het tweede lanceerplatform (SLP) verzorgt het zware-draagraketprogramma van ISRO: PSLV-lanceerschema's, LVM3 (voorheen GSLV Mk III), Chandrayaan-1 (oktober 2008, maanorbiter/-impactor), Chandrayaan-2 (juli 2019, verloren bij de landing), Chandrayaan-3 (juli 2023, geslaagde zachte landing nabij de zuidpool) en de geplande bemande Gaganyaan-missies. Het eerste lanceerplatform ernaast verzorgt kleinere PSLV-/SSLV-lanceerschema's en was de lanceerplaats van de Mars-lancering van Mangalyaan (november 2013).",
+    "note": "English left in (downrange, Launch Pad, heavy-lift, Bay of Bengal)"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Amerikaanse IR-vroegwaarschuwingssensoren, meegevoerd op geheime platforms in Tundra-banen",
+    "note": "'gehost', 'baanplatforms' calqued"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Het primaire Atlas V-lanceerplatform van United Launch Alliance op Cape Canaveral, oorspronkelijk gebouwd voor Titan III in de jaren 1960, in 1999 volledig gesloopt en herbouwd als Atlas V-platform; eerste Atlas V-vlucht 2002-08-21. Elke Atlas V-vlucht is vanaf hier gelanceerd — Mars Reconnaissance Orbiter, Curiosity, Perseverance, Lucy, Juno, de Boeing Starliner Crew Flight Test en tientallen nationale veiligheidsmissies van de NSSL. Is ook het platform van Vulcan Centaur, die in januari 2024 vanaf SLC-41 begon te vliegen.",
+    "note": "'hosts' mistranslated; NSSL missions garbled"
+  },
+  {
+    "rel": "fleet/launcher/atlas-slv-3d.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/soyuz-fg.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Soyuz-FG is een orbitale draagraket gebouwd door Progress Rocket Space Centre in Rusland. Bemande Soyuz-lanceringen 2001-2019.",
+    "note": "'lanceerder' nonstandard"
+  },
+  {
+    "rel": "fleet/space-suit/sokol-m.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Het Russische lancerings- en terugkeerpak van de nieuwe generatie voor Soyuz/PTK",
+    "note": "Entry dropped; 'Rusland's' ungrammatical"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/lc-5.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Het ruimtevaartuig dat het dichtst bij de Zon is gekomen (9,86 R☉)",
+    "note": "'gelanceerd' wrong; missing article"
+  },
+  {
+    "rel": "fleet/launcher/proton-m.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Opvolger van Proton-K; gemoderniseerde zware draagraket",
+    "note": "'zware lift' calque"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Tweetrapsvoertuig gebouwd rond de methaanverbrandende Raptor-motor — Super Heavy eerste trap (33 Raptors) + Starship tweede trap (6 Raptors). Ontworpen voor volledig en snel hergebruik door beide trappen met een toren op te vangen, gericht op Mars-transittijdlijnen + Artemis Human Landing System. De eerste geïntegreerde vluchttest (IFT-1) verliet het lanceerplatform op 2023-04-20 maar verloor de besturing van het voertuig vóór de trapscheiding; vanaf IFT-4 in juni 2024 werd gecontroleerd herstel van beide trappen gedemonstreerd.",
+    "note": "Ungrammatical, invented words (torenvangstherwinning, vehiclebesturing)"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Derde van de vijf Lunar Orbiter-ruimtevaartuigen. Gelanceerd op 1967-02-04 vanaf Cape Canaveral, kwam op 1967-02-08 in een maanbaan. Zette de Apollo-locatiemapping voort met 477 frames over 30 dagen, waaronder een gevierde foto van 1967-02-22 waarop de 3 meter grote Surveyor 1-lander op het oppervlak van de Oceanus Procellarum te onderscheiden was — de eerste foto van het ene ruimtevaartuig genomen door een ander op een andere wereld. Een storing halverwege de missie in het filmtransportsysteem van de camera beperkte de beeldcampagne op 1967-03-04. Bleef werken als Apollo-volgbaken voor navigatietests. Sloeg opzettelijk in op 1967-10-09 op 14,6° N, 91,7° W.",
+    "note": "'oploste' wrong sense of resolved"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Eerste Jupiter-orbiter; 8 jaar metingen",
+    "note": "Compound should be hyphenated"
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Tweede generatie van de Iridium-constellatie — 66 operationele satellieten op 780 km in 6 polaire vlakken (11 per vlak), met 9 reservesatellieten in een baan, ingezet in 2017-2019 ter vervanging van de oorspronkelijke Iridium-vloot uit 1998. In totaal zijn 75 satellieten gelanceerd; in mei 2023 werden nog 5 reservesatellieten voor op de grond gelanceerd. Biedt spraak- + data- + machine-to-machine- + satelliettelefoondiensten. Een van de twee aanbieders van satellietdiensten voor het GMDSS (Global Maritime Distress and Safety System), naast Inmarsat — zeegaande schepen kunnen de GMDSS-eisen vervullen via Iridium OF Inmarsat. De botsing van de oorspronkelijke Iridium 33 met de afgedankte Cosmos 2251 in 2009 was de eerste bekende botsing tussen twee satellieten in de geschiedenis.",
+    "note": "'satellaten' non-word; GMDSS clause garbled"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Het herbruikbare gevleugelde ruimtevaartuig dat tussen 1981 en 2011 135 missies vloog — het enige bemande voertuig dat ooit als een zweefvliegtuig landde. Er werden vijf vluchtklare orbiters gebouwd (Columbia, Challenger, Discovery, Atlantis, Endeavour); Columbia en Challenger gingen verloren met hun bemanning.",
+    "note": "'vliegbanen' wrong; verb 'gingen verloren' missing"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Cygnus Standard is een robotisch vrachtruimtevaartuig gebouwd door Orbital ATK in de VS. ISS-vrachtvervoerder met uitsluitend een drukcabine. Buiten dienst gesteld na de eerste vlucht in 2013.",
+    "note": "'Pressurised-only' meaning lost"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Grootste infrarode ruimtetelescoop; baan bij L2",
+    "note": "Compound/phrase awkward"
+  },
+  {
+    "rel": "fleet/launcher/lvm3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "LVM3 (GSLV Mk III) is een orbitale draagraket gebouwd door ISRO in India. Draagraket gecertificeerd voor bemande vluchten voor Gaganyaan. In dienst sinds 2014.",
+    "note": "'baanwerper' non-word; crew-rated wrong"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Verlengde Cygnus; ronde UltraFlex-zonnepanelen",
+    "note": "English left in"
+  },
+  {
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Sovjet-orbiter bij Mars 3 — in een baan om Mars van 1971-12-02 tot 1972-08; eerste temperatuurmetingen van de hoge atmosfeer van Mars",
+    "note": "'upper' dropped; orbiter lost"
+  },
+  {
+    "rel": "fleet/rover/opportunity.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Opportunity (MER-B) is een planetaire rover gebouwd door NASA JPL in de VS. Tweelingrover van Spirit; bijna 15 jaar actief op Mars. Vestigde het rijrecord buiten de Aarde op 45,16 km en ontdekte hematiet 'blauwe bessen' die op water in het verleden wijzen. Buiten dienst gesteld in 2019.",
+    "note": "'ruim 14 jaar' vs nearly 15; record phrase garbled"
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-101.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Het lanceerplatform van China voor zware draagraketten — Long March 5 naar Tianhe, Chang'e 5/6, Tianwen-1 en het maanretourprogramma",
+    "note": "Ungrammatical 'Chinas zwaar lanceerplatform'"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Het eerste door mensen gemaakte object dat het Marsoppervlak bereikte — door harde inslag. De afdaalmodule crashte tijdens de stofstorm van 1971 die elke andere Marssonde die toen in een baan om Mars draaide aan het zicht onttrok. De begeleidende sonde Mars 3 maakte twee dagen later de eerste zachte landing.",
+    "note": "'gezelsonde' non-word"
+  },
+  {
+    "rel": "fleet/orbiter/hope.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De Hope-orbiter van de VAE — Emirates Mars Mission, in het Arabisch bekend als Al-Amal. Bereikte Mars in 2021 en leverde het eerste holistische, globale beeld van de Marsatmosfeer gedurende een volledig Marsjaar. Gebouwd in samenwerking met LASP van de University of Colorado.",
+    "note": "Compound spelling slip"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Polaire Discovery-orbiter van NASA — waterstof ontdekt bij beide polen 1998; opzettelijke Shackleton-inslag beëindigde de missie 1999",
+    "note": "English 'detected' left in"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Tweetraps herbruikbare zware orbitale draagraket van Blue Origin — BE-4 eerste trap + cryogene tweede trap",
+    "note": "Ungrammatical, 'second' lacks noun"
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Laatste Almaz-militairstation — bemanningen van Soyuz 21 + Soyuz 24; Soyuz 23 mislukte nadering; keerde terug in de atmosfeer 1977-08-08 na 412 dagen",
+    "note": "'herbrand' wrong; English 'approach' left"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-5.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Laatste Amerikaanse maanorbiter (1967-08-05). Kartering achterzijde Maan op 60 m/pixel voltooid; inslag 1968-01-31 vóór Apollo-maanoperaties",
+    "note": "Mapping/impact anglicisms"
+  },
+  {
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "De eerste Marsrover van ESA, vernoemd naar DNA-pionier Rosalind Franklin. Ontworpen om te landen op Oxia Planum (een oude, kleihoudende Marsregio, gekozen vanwege het grote potentieel om biosignaturen te bewaren) en een ondergrondse boor van 2 meter te gebruiken — dieper dan enige eerdere Marsmissie — om monsters te nemen op diepten die beschermd zijn tegen de kosmische straling en de uv-straling die organische stoffen aan het oppervlak vernietigt. De Analytical Laboratory Drawer bevat drie instrumenten voor levensdetectie: MOMA (Mars Organic Molecule Analyser, een gaschromatograaf + massaspectrometer met dubbele bron), MicrOmega (infraroodbeeldspectroscopie) en de Raman Laser Spectrometer. Oorspronkelijk gepland voor lancering in 2022 op een Russische Proton met een in Rusland gebouwd landingsplatform (Kazachok); nadat Rusland in 2022 Oekraïne binnenviel, schortte ESA de samenwerking op en werd de lancering van Rosalind Franklin uitgesteld. Momenteel gepland voor 2028 op een door NASA geleverde draagraket met een door ESA / Airbus herbouwd landingsplatform.",
+    "note": "Dropped Kazachok, MOMA detail, deferral clause"
+  },
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Atlantis, OV-104, markeerde beide uiteinden van de grootste partnerschappen van de Shuttle. Het maakte de meeste koppelingen met het Russische station Mir, waarmee het tijdperk van Amerikaans-Russische samenwerking begon, en het vloog STS-125, de laatste, gedurfde onderhoudsmissie die de Hubble Space Telescope in goede staat achterliet voor nog een decennium. In juli 2011 vloog Atlantis STS-135, de 135ste en laatste Shuttle-missie — de vlucht die dertig jaar herbruikbare Amerikaanse ruimtevaart afsloot en het ruimtestation dat het had helpen bouwen in een baan erboven achterliet.",
+    "note": "'Space Station' left in; bookends calqued"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Discovery, OV-103, was de meest gevlogen en meest vertrouwde orbiter van de vloot, met 39 missies over 27 jaar. Het was de keuze van NASA om de Shuttle weer te laten vliegen na beide rampen — het voertuig dat als eerste werd opgestuurd toen het programma het meest moest bewijzen dat het weer veilig was. Onder zijn vluchten was degene die misschien het belangrijkst is: STS-31, die de Hubble Space Telescope naar een baan om de aarde bracht en vrijgaf, waarmee het productiefste hoofdstuk in de geschiedenis van de astronomie begon.",
+    "note": "'terug naar de vlucht' calque"
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-43.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Het Soyuz-werkpaardplatform van Plesetsk op 62,9°N — het actieve orbitale lanceercomplex op de hoogste breedtegraad ter wereld",
+    "note": "Ungrammatical, non-word 'lanceringscomplexe'"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Gebouwd voor de Saturn V, bewaard voor de Shuttle, in 2014 verhuurd aan SpaceX. Vanaf Pad A: Apollo 4 (de eerste Saturn V), Apollo 11 (de eerste maanlanding), Apollo 13, Apollo 17 (de laatste maanlanding), Skylab, tweeëntachtig Space Shuttle-vluchten inclusief de eerste, STS-1, en sinds 2017 elke Falcon Heavy en elke Crew Dragon naar het ISS. Dezelfde vlammengoot, dezelfde crawlerweg, drie tijdperken van bemande Amerikaanse ruimtevaart.",
+    "note": "'kruipweg' odd for crawlerway"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Het civiele GNSS van Europa — ~30 satellieten, positiebepaling met submeternauwkeurigheid",
+    "note": "Wrong article/gender"
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Sojourner is een planetaire rover gebouwd door NASA JPL in de VS. Eerste Mars-rover; Pathfinder-missie. Buiten dienst gesteld na de eerste vlucht in 1997.",
+    "note": "Compound spelling; 'gepensioneerd'"
+  },
+  {
+    "rel": "fleet/constellation/planet-labs.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "De eerste sonde voor de diepe ruimte van ESA. Draaistabiele, trommelvormige bus beschermd door een Whipple-schild als stofbumper, gebouwd rond de Halley Multicolour Camera plus 9 andere instrumenten, bijgedragen door 11 Europese landen, NASA en Japan. Dichtste nadering van komeet 1P/Halley op 14-03-1986 op 596 km — de bumper overleefde het, al verschoof een stofinslag van 100 mg, 14 seconden voor de dichtste nadering, de draaias en verbrak het cameracontact. In 1990 opnieuw geactiveerd voor een flyby op 200 km van komeet Grigg-Skjellerup in 1992, de eerste keer dat een ruimtevaartuig terugkeerde naar een ander komeetdoel.",
+    "note": "Final clause cut; invented Kevlar/aluminium fact"
+  },
+  {
+    "rel": "fleet/lander/beresheet.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De eerste poging tot een private maanlanding, door de non-profitorganisatie SpaceIL uit Israël. Stortte in april 2019 neer toen een storing van een IMU-gyroscoop herhaalde computerherstarts veroorzaakte, waarbij elke herstart de motor uitschakelde; tegen de tijd dat de besturing was hersteld, was de lander te laag en te snel om te overleven. Dit toonde aan dat landen op de Maan veel moeilijker is dan er komen.",
+    "note": "Compound/grammar slips"
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Het antwoord van Amazon op Starlink — 3.236 satellieten op 590-630 km hoogte in 98 baanvlakken. Eerste prototypelancering in oktober 2023 (KuiperSat-1 en -2 testlancering); de eerste 27 productiesatellieten werden in april 2025 gelanceerd met een Atlas V. Medio 2026 zijn ~230+ productiesatellieten operationeel. De FCC-licentie vereist 50% inzet (1.618 satellieten) tegen juli 2026 en 100% tegen juli 2029; Amazon heeft een verlenging van twee jaar aangevraagd vanwege het huidige tekort. De constellatie zal naar verwachting de populatie actieve LEO-satellieten ruwweg verdubbelen als ze volledig is uitgerold.",
+    "note": "'verlening' should be 'verlenging'"
+  },
+  {
+    "rel": "fleet/station/tiangong-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Tiangong-2 is een ruimtestation gebouwd door CAST in China. Tweede Chinese teststation. Gelanceerd in september 2016, ontving het Shenzhou 11 (30 dagen durende missie, oktober–november 2016, destijds de langste bemande missie van China) en het vrachtschip Tianzhou-1 (2017); op 19 juli 2019 uit zijn baan gebracht.",
+    "note": "'vrachtkip' non-word; mixed English"
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Eerste Almaz-militairstation — in de baan drukloos geraakt voordat er een bemanning aankwam; keerde terug in de atmosfeer op 1973-05-28 na 54 dagen",
+    "note": "'hervallen', 'ontlucht' wrong words"
+  },
+  {
+    "rel": "fleet/space-suit/starliner-suit.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Het blauwe lancerings- en terugkeerpak van Boeing voor Starliner",
+    "note": "'lunchuitrusting' = lunch gear; entry lost"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Eerste zachte landing op een andere planeet en eerste die gegevens vanaf het oppervlak van een andere planeet doorstuurde (Venus, 1970)",
+    "note": "Dropped 'surface' claim; odd noun"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Soyuz uit het ISS-tijdperk; ruimere lengtemarge voor bemanningsleden",
+    "note": "Garbled 'bemanningshoogte envelop'"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Eerste Soyuz-generatie; de fatale vlucht van Komarov",
+    "note": "Compound spelling, possessive"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Eerste rover bij de zuidpool van de Maan; Chandrayaan-3",
+    "note": "Awkward compound"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "De herbruikbare orbiter, externe tank en twee vastebrandstofboosters die tussen 1981 en 2011 135 missies vlogen. Bouwde het ISS, zette Hubble in een baan en onderhield de telescoop, en liet de technische afwegingen zien van een gedeeltelijk herbruikbare bemande draagraket.",
+    "note": "Garbled sentence, English left in"
+  },
+  {
+    "rel": "fleet/launcher/ariane-5.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Het langdurig ingezette zware draagraket van ESA, in 2023 uit dienst genomen na 117 lanceringen. Bracht Rosetta naar komeet 67P, JWST naar L2 en lanceerde twee decennia lang commerciële geostationaire ladingen in tweetallen.",
+    "note": "'heavy lifter' left in; 'lang uitgevoerde' wrong"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "India's eerste Maanmissie. Ontdekte wijdverbreid oppervlaktewater op de Maan (M3 + MIP, 2009). Contact kwijt 2009-08-29 na slechts 312 dagen",
+    "note": "'Indias' missing apostrophe; 'widespread' lost"
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Mars Exploration Rover; 6 jaar actief",
+    "note": "'operatie' calque"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Herbruikbare booster gaf de commerciële lancering een nieuwe vorm",
+    "note": "English 'reforming' left in"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "Draaide uiteen in een baan; het verlies gaf aanleiding tot de ontwikkeling van XRISM",
+    "note": "'gespind' not a proper word"
+  },
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Het witte Amerikaanse ruimtewandelpak — elke Amerikaanse EVA van de Shuttle tot het ISS",
+    "note": "Wrong gender/article"
+  },
+  {
+    "rel": "fleet/lander/schiaparelli.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Zware-draagraketplatform van India — GSLV Mk III / LVM3 voor Chandrayaan-3, Mangalyaan en het aanstaande bemande Gaganyaan-programma",
+    "note": "English 'heavy-lift pad' left in"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Herbruikbaar robotisch ruimtevliegtuig van de USSF — geheime meerjarige orbitale missies, Amerikaans ruimtevliegtuig na de Shuttle",
+    "note": "Mixed English 'post-Shuttle US'"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Vrachtruimtevaartuig van China voor het ruimtestation Tiangong, dat de erfenis van de ruimtevaartuigbus met Tiangong-1 deelt. Vult de drijfstoftanks van Tiangong bij en levert experimentrekken af; eerste vlucht in 2017.",
+    "note": "Clumsy compounds, propellant binding missing"
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Orbiter bij de Viking-1-lander — relais + 50000 oppervlaktebeelden op 150-300 m/pixel, eerste mondiale Marskaart. Actief 1976-1980",
+    "note": "Dropped 'surface'; article missing"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "De Mercury-Redstone-draagraket was een voor bemanning geschikte afgeleide van de ballistische Redstone-raket van het Amerikaanse leger (U.S. Army), aangepast bij het Marshall Space Flight Center van NASA voor de suborbitale bemande Mercury-missies. Eentraps met vloeibare drijfstof (LOX + alcohol), 25 meter hoog met capsule en ontsnappingstoren (~18 m alleen de booster), met ongeveer 347 kN (~35 ton-kracht) stuwkracht. De eerste bemande vlucht was Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — de eerste Amerikaan in de ruimte, 23 dagen na Gagarin. Mercury-Redstone 4 / Liberty Bell 7 volgde (1961-07-21, Gus Grissom). Na de luikstoring van Liberty Bell 7 verplaatste NASA de orbitale Mercury-vluchten naar de krachtigere Atlas LV-3B. Laatste vlucht 1961-07-21; in totaal 6 Mercury-Redstone-voertuigen gebouwd, 2 bemande vluchten uitgevoerd.",
+    "note": "'man-rated' as 'bemand'; hatch malfunction as emergency hatch; calques"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/space-suit/a7l.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Eerste Almaz-militairstation — in de baan drukloos geraakt voor de komst van een bemanning; terugkeer 1973-05-28 na 54 dagen",
+    "note": "'hervallen', 'ontlucht' wrong words"
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-3.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Eerste voertuig op wielen dat over een andere wereld rondreed",
+    "note": "Garbled ungrammatical fragment"
+  },
+  {
+    "rel": "fleet/launcher/long-march-3b.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "GTO-werkpaard van China — Chang'e 3 / 4 maanlanders + de meeste commerciële comsats vanuit Xichang",
+    "note": "'Chinas' missing apostrophe"
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Niet elke Apollo-taak had de Maanraket nodig. De Saturn IB was de pragmatische optie — een voor bemanning gecertificeerde draagraket voor het werk dat in een baan om de Aarde bleef: de beproeving van het herontworpen ruimtevaartuig door Apollo 7, de pendelvluchten naar Skylab en de handdruk in een baan van Apollo-Soyuz. De eerste trap was beroemd om zijn bundel tanks, geleend van de eerdere raketten Redstone en Jupiter en bij elkaar geclusterd — beproefde onderdelen met een nieuwe taak in plaats van een geheel nieuw ontwerp. Het is de minst glamoureuze raket van het programma en een stille les in niet-overbouwen: stem de machine af op de missie.",
+    "note": "'lifter' left in; 'Het eerste trap' wrong gender"
+  },
+  {
+    "rel": "fleet/observatory/tess.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Energia was de raket die de N1 goedmaakte — de superzware draagraket die de Sovjet-Unie uiteindelijk goed deed. Waar de N1 bij alle vier pogingen explodeerde, werkte Energia, waarmee in 1987 de Polyus-lading en in 1988 de Buran-orbiter werden gelanceerd. Cruciaal was dat het een draagraket op zichzelf was, geen shuttle-configuratie: omdat Buran geen hoofdmotoren had, deed Energia het hele werk om een baan te bereiken en had het net zo goed andere zware ladingen zonder orbiter kunnen tillen. Het was de krachtigste raket die de Sovjet-Unie ooit succesvol lanceerde — en, net als Buran, werd het programma stopgezet omdat er niets meer te lanceren was.",
+    "note": "'revalideerde' wrong sense; 'lanceerder' nonstandard"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-4.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "Het thuisplatform van Ariane 6 — de geostationaire toegang van Europa na Ariane 5",
+    "note": "'thuispad' calque"
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Mars-seismometer; 1300+ marsbevingen gedetecteerd",
+    "note": "Compound should be hyphenated"
+  },
+  {
+    "rel": "fleet/launch-site/lc-5.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Het eerste commerciële ruimtevaartuig die aanmeerde bij het ISS (COTS-2, mei 2012); eerste gecontracteerde ISS-bevoorrading (CRS-1, oktober 2012). Eenentwintig CRS-missies plus twee COTS-demonstraties vlogen tussen 2010 en 2020 voordat de verbeterde Dragon 2 het overnam.",
+    "note": "Number spelling error"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "NASA's werkpaard voor planetaire wetenschap, een middelzware draagraket — 155 vluchten 1989-2018",
+    "note": "Garbled invented compounds"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Het enige ruimtevaartuig dat alle vier de reuzenplaneten heeft bezocht",
+    "note": "Ungrammatical telegraphic phrasing"
+  },
+  {
+    "rel": "fleet/space-suit/krechet-94.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "De eerste Marsmissie van CNSA — een orbiter die de Zhurong-rover in mei 2021 naar het Marsoppervlak bracht. Na het loslaten van Zhurong zette de orbiter zijn wetenschappelijke werk alleen voort, waaronder beeldvorming met hoge resolutie en kartering van het oppervlak.",
+    "note": "English 'imaging', 'mapping' left in"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Russisch-Duits observatorium dat de röntgenhemel in kaart brengt",
+    "note": "Mostly English left in"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "De 110,6 m hoge drietrapsraket die 24 mensen op een translunair traject bracht, van wie 12 op het maanoppervlak. Dertien lanceringen tussen 1967 en 1973, geen enkel verlies tijdens de opstijging. Meer dan vijf decennia lang de krachtigste raket die een baan bereikte, totdat de Super Heavy van Starship hem in 2024 overtrof.",
+    "note": "'translunaarbaan' wrong term; sentence garbled"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Oorspronkelijk Constitution genoemd, hernoemd tot Enterprise na een briefcampagne van Star Trek-fans in 1976, toen de Shuttle zijn naam kreeg. Gebouwd als prototype voor de Approach and Landing Tests (ALT) — acht vluchten vastgekoppeld aan het Shuttle Carrier Aircraft en vijf vrije vluchten daarvanaf, boven Edwards Air Force Base in 1977. De eerste vrije vlucht op 1977-08-12, gevlogen door Fred Haise en Gordon Fullerton, bewees dat de orbiter kon glijden en landen. Had GEEN aandrijving of actieve TPS-tegels; het ombouwen van Enterprise tot een vliegklaar toestel werd als zwaarder ingeschat dan het bouwen van een nieuwe orbiter uit structurele reserveonderdelen, dus werd in plaats daarvan Challenger gebouwd. Nu tentoongesteld in het Intrepid Sea, Air & Space Museum in NYC.",
+    "note": "'voortorting' non-word; captive/free flights left in English"
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "Eerste Europese maanmissie — zonne-elektrische ionenaandrijving. Bewoog in 13 maanden spiraalsgewijs naar de Maan; bewuste inslag 2006-09-03",
+    "note": "'gespiraald' not a word"
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/jiuquan-slc-43.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Chinees lanceerplatform voor bemande ruimtevluchten — elke Shenzhou-bemanning",
+    "note": "Awkward compound"
+  },
+  {
+    "rel": "fleet/orbiter/phobos-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "De Lunar Rover was de eerste auto op een andere wereld, en zijn hele bestaansreden was bereik. Te voet kan een astronaut zich niet ver van de lander verwijderen — loop je te ver weg, dan kun je niet terug als het pak begint te falen. Wielen schreven die rekensom om: Apollo 15 tot en met 17 reisden kilometers van huis, waardoor één landingsplek een volwaardig onderzoeksgebied werd en geologen daadwerkelijk konden kiezen waar ze wilden kijken. Het bouwen ervan was zelf al een puzzel — het moest plat opgevouwen in een wigvorm aan de zijkant van de Lunar Module passen, zich op het oppervlak ontvouwen en vervolgens door schurend stof en temperatuurschommelingen van honderden graden rijden op wielen van draadgaas en batterijkracht. Het reed nooit snel. Het reed ver, en dat was het hele punt.",
+    "note": "'morsig' for abrasive; wedge phrasing"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Eerste generatie LEO-breedbandconstellatie — 648 satellieten in 12 polaire vlakken",
+    "note": "'constellation' left in English"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Sovjet-orbiter die Mars 2 vergezelde — tweede ruimtevaartuig ooit in een baan om Mars (13 dagen na Mariner 9). Actief 1971-11-27 tot 1972-08",
+    "note": "'orbiter naar Mars 2' loses companion sense"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "Eerste onafhankelijke orbitale draagraket van Europa — opende voor ESA het tijdperk van commerciële comsats, bracht Giotto naar Halley",
+    "note": "Cut: commercial era and Giotto meaning lost"
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Het J-missiepak (Apollo 15, 16, 17) — kreeg een flexibele plooi ter hoogte van de taille, waardoor astronauten in de Lunar Roving Vehicle konden zitten",
+    "note": "'taillgewricht' non-word"
+  },
+  {
+    "rel": "fleet/launcher/atlas-slv-3d.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "NASA's werkpaard voor de buitenste planeten in de jaren 70 — de eerste H₂-bovenste trap, Centaur D-1A, ontsloot de gasreuzen",
+    "note": "Word order/compound slip"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Atlas-Centaur-lanceerplatform van de USAF — Mariner 10 + Pioneer 11 (1973), Pioneer Venus (1978), Intelsat — nu Blue Origin New Glenn (sinds 2015)",
+    "note": "'plein' (square) wrong for pad"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-ms.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Huidige Progress-generatie; bevoorrading van het ISS",
+    "note": "'resupply' left in English"
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Een van de vier \"Great Observatories\" van NASA, naast Hubble, Chandra en Spitzer. Van 1991 tot 2000 in een baan; bracht de gammastralenhemel in kaart en ontdekte dat gammaflitsen van kosmologische afstanden komen en niet van nabije bronnen.",
+    "note": "Garbled grammar, wrong 'gamma-stralen barsten'"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Zusterschip van Vega 1 — tweede Sovjet-dubbelmissie naar Venus + Halley, lander + ballon, daarna Halley-flyby",
+    "note": "Added fact '3 days after Vega 1'"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Eerste kleurenbeelden van het oppervlak van Venus — 127 minuten overleefd bij 457 °C en 89 atm",
+    "note": "Awkward compounds"
+  },
+  {
+    "rel": "fleet/orbiter/vega-1.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Sovjet-dubbelmissie naar Venus + Halley — eerste interplanetaire ballon, eerste Halley-flyby",
+    "note": "Telegraphic phrase ungrammatical"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Vierde Amerikaanse maanorbiter (1967-05-08). Eerste polaire maanbaan; bracht 99 % van de zichtbare zijde in kaart op 60 m/pixel + regio's van de afgekeerde zijde",
+    "note": "Missing article/verb"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Platform 39B lanceerde Apollo 10 (de generale repetitie voor de maanlanding), de bemanningslanceringen van Skylab 2/3/4 en drieënvijftig Space Shuttle-vluchten — waarvan de eerste de noodlottige STS-51-L Challenger was in januari 1986. Eind jaren 2000 herbouwd als kaal platform — geen vaste servicetoren, een mobiel lanceerplatform per missie — om de volgende generatie voertuigen te ontvangen. Artemis I steeg in november 2022 op vanaf 39B; Artemis II en III zullen volgen.",
+    "note": "'een schone pad' wrong gender/meaning of clean pad"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Meest gevlogen Shuttle (39 missies); zette Hubble uit + vloog beide hervattingsvluchten na de rampen",
+    "note": "'return-to-flight' left in English"
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Zhurong is een planetaire rover gebouwd door CAST in China. Eerste Chinese Mars-rover; Tianwen-1. Buiten dienst gesteld na de eerste vlucht in 2021.",
+    "note": "Compound spelling; 'gepensioneerd'"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Sovjet-draagraket afgeleid van de R-7 die Gagarin de ruimte in bracht — Vostok 1 (12-04-1961) en nog 5 Vostok-vluchten tot 1963",
+    "note": "'more' dropped"
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-101.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Het lanceerplatform van China voor zware draagraketten — Long March 5 naar Tianhe, Chang'e 5/6, Tianwen-1 en het maanretourprogramma",
+    "note": "Ungrammatical 'Chinas zwaar lanceerplatform'"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Het civiele GNSS van Europa — 34 satellieten gelanceerd (4 IOV + 30 FOC); 27 operationeel + 1 in inbedrijfstelling per mei 2026; het doel van de constellatie is 30 op 23.222 km MEO in 3 baanvlakken met een inclinatie van 56°. Eerste operationele dienst in 2016; de verklaring van volledige operationele capaciteit wacht op de officiële aankondiging van ESA/EUSPA. In tegenstelling tot GPS (militaire exploitant) en GLONASS (militaire exploitant) wordt Galileo beheerd door EUSPA, een civiel EU-agentschap. Ontworpen voor positiebepaling op submeterniveau met open, commerciële en Public Regulated Service-niveaus. Lading voor opsporing en redding (Search and Rescue) geïntegreerd voor de detectie van noodbakens.",
+    "note": "English left in; wrong gender; 'hellend' for inclination"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Het orbitale deel van de Sovjet-missie Mars 3 (de lander maakte op 1971-12-02 de eerste zachte landing op Mars, maar zond slechts 14,5 seconden uit voordat het signaal verloren ging in een wereldwijde stofstorm). De orbiter was veel succesvoller — kwam op 1971-12-02 in een sterk elliptische baan om Mars van 1500 × 211400 km, het derde ruimtevaartuig ooit in een baan om Mars (na Mariner 9 op 1971-11-14 en de Mars 2-orbiter op 1971-11-27). Droeg infrarood- en ultravioletspectrometers, fotometers, een Lyman-alfasensor, een magnetometer, een plasma-analysator en kosmischestralingsdetectoren. Leverde de eerste metingen van het temperatuurprofiel van de hoge atmosfeer, bracht oppervlaktetemperaturen in kaart (piek +13 °C, laagste -93 °C) en bevestigde waterdamp in de atmosfeer. Leverde ongeveer 60 beeldframes af; de beeldkwaliteit leed onder de wereldwijde stofstorm op Mars die al aan de gang was toen de orbiter aankwam. Einde van de missie 1972-08-22.",
+    "note": "'plasmagebruiker' non-word; broken grammar"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  }
+]

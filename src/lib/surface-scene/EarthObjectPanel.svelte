@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   /**
    * Reusable EarthObject detail panel — overview / gallery / learn
    * tabs, with hero image, mission cross-link, and lightbox. Pulled out
@@ -17,13 +15,14 @@
    * implementation.
    */
   import { page } from '$app/state';
-  import { base } from '$app/paths';
+  import PanelGalleryGrid from '$lib/components/PanelGalleryGrid.svelte';
+  import PanelLinkTiers from '$lib/components/PanelLinkTiers.svelte';
+  import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
+  import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import Panel from '$lib/components/Panel.svelte';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
-  import LearnLink from '$lib/components/LearnLink.svelte';
-  import ImageCredit from '$lib/components/ImageCredit.svelte';
   import {
     getEarthObjectGallery,
     getFleet,
@@ -35,8 +34,9 @@
   } from '$lib/data';
   import { panelGalleryCredit } from '$lib/image-credits';
   import { formatNumber } from '$lib/format';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
+  import { surfaceStatusLabel } from '$lib/status-label';
   import type { EarthObject } from '$types/earth-object';
   import type { Mission, MissionIndex } from '$types/mission';
   import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
@@ -162,18 +162,6 @@
     }
   });
 
-  type PanelLinks = NonNullable<EarthObject['links']>;
-  let panelLinksByTier = $derived.by(() => {
-    const links = selected?.links;
-    if (!links) return { intro: [] as PanelLinks, core: [] as PanelLinks, deep: [] as PanelLinks };
-    const out = {
-      intro: [] as PanelLinks,
-      core: [] as PanelLinks,
-      deep: [] as PanelLinks,
-    };
-    for (const link of links) out[link.t].push(link);
-    return out;
-  });
   // The `as EarthObject | null` cast guards against a Svelte 5 flow-
   // analysis quirk where `selected` is narrowed to `never` after the
   // earlier $derived.by reads it inside another closure. The cast
@@ -199,27 +187,19 @@
         {#if matchedRegime && onRegimeOpen}
           <RegimeChip regime={matchedRegime} onClick={() => onRegimeOpen?.(matchedRegime.id)} />
         {/if}
-        <span class="status status-{selected.status.toLowerCase()}">{selected.status}</span>
+        <span class="status status-{selected.status.toLowerCase()}"
+          >{surfaceStatusLabel(selected.status)}</span
+        >
       </div>
       <h1 class="name">{selected.name ?? selected.id}</h1>
     </div>
 
     {#if panelGallery.length > 0}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => (panelLightbox = panelGallery[0]!)}
-          aria-label={m.panel_hero_aria({ name: selected.name ?? selected.id })}
-        >
-          <img
-            {...responsive(panelGallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage
+        src={panelGallery[0]}
+        name={selected.name ?? selected.id}
+        onOpen={() => (panelLightbox = panelGallery[0]!)}
+      />
     {/if}
 
     <PanelTabRow
@@ -308,10 +288,10 @@
       {#if missionIds.has(selected.id)}
         <a
           class="mission-link"
-          href="{base}/missions?id={selected.id}"
+          href={localHref(`/missions?id=${selected.id}`)}
           data-testid="mission-card-link"
         >
-          FULL MISSION CARD →
+          {m.mission_card_full()}
         </a>
       {/if}
 
@@ -321,7 +301,7 @@
            the orbital era. Per-id check keeps the pattern open for
            additional EarthObject → history mappings later. -->
       {#if selected.id === 'iss'}
-        <a class="mission-link" href="{base}/science/history/sputnik-1957">
+        <a class="mission-link" href={localHref(`/science/history/sputnik-1957`)}>
           {m.surface_panel_historic_milestone()}
         </a>
       {/if}
@@ -335,7 +315,7 @@
       -->
       <ul class="related-orbital-concepts">
         <li>
-          <a href="{base}/science/orbits/cislunar-orbits">{m.chip_label_cislunar_orbits()}</a
+          <a href={localHref(`/science/orbits/cislunar-orbits`)}>{m.chip_label_cislunar_orbits()}</a
           ><ScienceChip
             tab="orbits"
             section="cislunar-orbits"
@@ -343,7 +323,7 @@
           />
         </li>
         <li>
-          <a href="{base}/science/orbits/sun-synchronous">{m.chip_label_sun_synchronous()}</a
+          <a href={localHref(`/science/orbits/sun-synchronous`)}>{m.chip_label_sun_synchronous()}</a
           ><ScienceChip
             tab="orbits"
             section="sun-synchronous"
@@ -351,7 +331,7 @@
           />
         </li>
         <li>
-          <a href="{base}/science/orbits/special-orbits">{m.chip_label_special_orbits()}</a
+          <a href={localHref(`/science/orbits/special-orbits`)}>{m.chip_label_special_orbits()}</a
           ><ScienceChip
             tab="orbits"
             section="special-orbits"
@@ -359,14 +339,11 @@
           />
         </li>
         <li>
-          <a href="{base}/science/orbits/space-debris">{m.chip_label_space_debris()}</a><ScienceChip
-            tab="orbits"
-            section="space-debris"
-            label={m.chip_label_space_debris()}
-          />
+          <a href={localHref(`/science/orbits/space-debris`)}>{m.chip_label_space_debris()}</a
+          ><ScienceChip tab="orbits" section="space-debris" label={m.chip_label_space_debris()} />
         </li>
         <li>
-          <a href="{base}/science/orbits/disposal-end-of-life"
+          <a href={localHref(`/science/orbits/disposal-end-of-life`)}
             >{m.chip_label_disposal_end_of_life()}</a
           ><ScienceChip
             tab="orbits"
@@ -383,21 +360,12 @@
       {#if panelGallery.length === 0}
         <p class="empty-tab">{m.panel_gallery_empty()}</p>
       {:else}
-        <div
-          class="gallery-grid"
-          aria-label={m.panel_gallery_aria({ name: selected.name ?? selected.id })}
-        >
-          {#each panelGalleryGrid as src (src)}
-            <button
-              type="button"
-              class="gallery-thumb"
-              onclick={() => (panelLightbox = src)}
-              aria-label={selected.name ?? selected.id}
-            >
-              <img {src} alt="" loading="lazy" decoding="async" />
-            </button>
-          {/each}
-        </div>
+        <PanelGalleryGrid
+          images={panelGalleryGrid}
+          gridLabel={m.panel_gallery_aria({ name: selected.name ?? selected.id })}
+          thumbLabel={selected.name ?? selected.id}
+          onOpen={(src) => (panelLightbox = src)}
+        />
         <p class="gallery-credit">
           {panelGalleryCredit(selected.agencies?.join(' / '))}
         </p>
@@ -406,42 +374,7 @@
       {#if !panelHasLinks}
         <p class="empty-tab">{m.panel_no_links()}</p>
       {:else}
-        {#if panelLinksByTier.intro.length > 0}
-          <section class="link-tier tier-intro">
-            <h3>{m.panel_links_intro()}</h3>
-            <ul>
-              {#each panelLinksByTier.intro as link (link.u)}
-                <li>
-                  <LearnLink entityId={selected.id} url={link.u} label={link.l} />
-                </li>
-              {/each}
-            </ul>
-          </section>
-        {/if}
-        {#if panelLinksByTier.core.length > 0}
-          <section class="link-tier tier-core">
-            <h3>{m.panel_links_core()}</h3>
-            <ul>
-              {#each panelLinksByTier.core as link (link.u)}
-                <li>
-                  <LearnLink entityId={selected.id} url={link.u} label={link.l} />
-                </li>
-              {/each}
-            </ul>
-          </section>
-        {/if}
-        {#if panelLinksByTier.deep.length > 0}
-          <section class="link-tier tier-deep">
-            <h3>{m.panel_links_deep()}</h3>
-            <ul>
-              {#each panelLinksByTier.deep as link (link.u)}
-                <li>
-                  <LearnLink entityId={selected.id} url={link.u} label={link.l} />
-                </li>
-              {/each}
-            </ul>
-          </section>
-        {/if}
+        <PanelLinkTiers links={selected.links} entityId={selected.id} />
       {/if}
     {/if}
 
@@ -465,20 +398,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-{#if panelLightbox}
-  <button
-    type="button"
-    class="lightbox"
-    aria-label={m.panel_lightbox_close()}
-    onclick={() => (panelLightbox = null)}
-  >
-    <img {...responsive(panelLightbox, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
-    <span class="lightbox-close" aria-hidden="true">×</span>
-  </button>
-  <div class="lightbox-meta">
-    <ImageCredit src={panelLightbox} />
-  </div>
-{/if}
+<PanelLightbox src={panelLightbox} onClose={() => (panelLightbox = null)} />
 
 <style>
   /* #547 — card CTA in the quiet register (mirrors the missions panel). */

@@ -6,6 +6,7 @@
 -->
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
@@ -33,13 +34,13 @@
 </script>
 
 <svelte:head>
-  <title>{essay.title} · The Long View · Orrery</title>
+  <title>{essay.title} · {m.essays_title()} · Orrery</title>
   <meta name="description" content={essay.dek} />
 </svelte:head>
 
 <article class="essay" data-route-ready="true">
   <nav class="crumb">
-    <a href="{base}{localizeHref('/essays')}">The Long View</a><span class="sep">›</span><span
+    <a href="{base}{localizeHref('/essays')}">{m.essays_title()}</a><span class="sep">›</span><span
       >{essay.title}</span
     >
   </nav>
@@ -84,7 +85,8 @@
       <ul>
         {#each essay.read_next as r (r.href)}
           <li>
-            <a href="{base}{r.href}">{r.label}</a>{#if r.kind}<span class="tag">{r.kind}</span>{/if}
+            <a href={localHref(r.href)}>{r.label}</a>{#if r.kind}<span class="tag">{r.kind}</span
+              >{/if}
           </li>
         {/each}
       </ul>
@@ -93,7 +95,7 @@
 
   {#if essay.sources && essay.sources.length}
     <section class="sources">
-      <h3>Sources &amp; further reading</h3>
+      <h3>{m.essays_sources_h()}</h3>
       <ul>
         {#each essay.sources as s (s.url)}
           <li><a href={s.url} target="_blank" rel="noopener noreferrer external">{s.title}</a></li>

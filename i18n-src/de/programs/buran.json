@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "Die zweite Lehre lautet: Technische Exzellenz kann ein Programm nicht davor bewahren, seinen Zweck und sein Budget zu verlieren. Buran war in mancher Hinsicht tatsächlich der bessere Entwurf als das Fahrzeug, auf das es antwortete – und es flog nur ein einziges Mal. Der amerikanische Shuttle flog bei allen Schwächen dreißig Jahre lang, weil es Missionen zu fliegen gab und Geld, um sie zu finanzieren. Ein Raumfahrzeug ist nur so beständig wie der institutionelle Wille und die Finanzierung, die hinter ihm stehen; fehlen diese, ist selbst ein makelloser Flug ein Ende und kein Anfang."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/space-shuttle": "Space Shuttle — das Fahrzeug, auf das es die Antwort war",
+    "/fleet?focus=buran": "Flotte — Raumgleiter Buran & Energia"
+  }
 }

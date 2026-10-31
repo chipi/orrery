@@ -23,13 +23,13 @@
     {
       "met": 42,
       "label": "RÉINITIALISATION DE CALENDRIER",
-      "note": "Jour de repos contesté en arrêt (l'équipage et la NASA ont dit par la suite qu'aucune grève formelle ne s'était produite) ; la réelle surcharge de calendrier a conduit à des réformes permanentes de la NASA.",
+      "note": "Arrêt de travail d'un jour de repos, contesté (l'équipage et la NASA ont affirmé par la suite qu'aucune grève formelle n'avait eu lieu) ; la surcharge réelle du calendrier a conduit à des réformes permanentes au sein de la NASA.",
       "type": "warning"
     },
     {
       "met": 84.05,
       "label": "AMERRISSAGE",
-      "note": "CSM-118 amerri dans le Pacifique 1974-02-08 15:17 UTC — dernier amerrissage de Skylab.",
+      "note": "CSM-118 a amerri dans le Pacifique 1974-02-08 15:17 UTC — dernier amerrissage de Skylab.",
       "type": "nominal"
     }
   ]

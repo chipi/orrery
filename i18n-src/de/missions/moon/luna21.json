@@ -12,5 +12,6 @@
     { "met": 4, "label": "TCM", "note": "Kursmittenkorrektur während des Reiseflugs.", "type": "info" },
     { "met": 4.5, "label": "LANDUNG", "note": "Sanfte Landung im Le Monnier-Krater 1973-01-15. Lunokhod 2 rollte wenige Stunden später die Rampen hinab.", "type": "nominal" },
     { "met": 7, "label": "ROVER AKTIV", "note": "Fünfköpfiges Bodenteam auf der Krim begann die Fahroperationen. Gesamtstrecke: ~39 km.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Oberstufe Blok-D"
 }

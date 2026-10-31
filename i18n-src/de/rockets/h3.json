@@ -1,6 +1,6 @@
 {
   "name": "H3",
-  "type": "Heavy-lift, expendable",
+  "type": "Schwerlastrakete, Einweg",
   "first": "JAXAs Flaggschiff-Trägerrakete der nächsten Generation – gebaut für MMX und für den Nachschub des Lunar Gateway, bevor Gateway 2026 pausiert wurde",
-  "description": "Zweistufiger Nachfolger von Mitsubishi Heavy Industries' H-IIA, der 2024 seinen ersten erfolgreichen Flug absolvierte (sein Debüt 2023 scheiterte). Konfigurierbar mit 0, 2 oder 4 Feststoffverstärkern und entweder einer 5,2-m- oder 4-m-Nutzlastverkleidung. Das LE-9-Triebwerk der ersten Stufe ist das weltweit erste expandierbares Wasserstofftriebwerk mit Expander-Bleed-Zyklus für Einmalverwendung. Wird JAXAs MMX-Phobos-Probeneinsatzrückholmission 2026 starten."
+  "description": "Zweistufiger Nachfolger der H-IIA von Mitsubishi Heavy Industries; erster erfolgreicher Flug 2024 (das Debüt 2023 scheiterte). Konfigurierbar mit 0, 2 oder 4 Feststoff-Boostern und wahlweise einer 5,2 m oder 4 m großen Nutzlastverkleidung. Das LE-9-Triebwerk der ersten Stufe ist das erste Einweg-Wasserstofftriebwerk der Welt mit Expander-Bleed-Zyklus. Soll 2026 JAXAs Mission MMX starten, die Proben vom Marsmond Phobos zur Erde bringt."
 }

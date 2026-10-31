@@ -1,0 +1,1161 @@
+[
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "De Marslanceervensters openen elke 26 maanden — de synodische periode tussen Mars en Aarde — en de Hohmann-overgangsbaan is de reden dat elke Marsmissie in een van die vensters vertrekt.",
+    "note": "Hohmann transfer rendered as 'overdracht'; awkward"
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/destiny.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Maantje van 160 m rond 65803 Didymos, ontdekt in 2003. Het oppervlak waar DART insloeg bleek een 'losse puinhoop' te zijn — het ruimtevaartuig zonk tijdens de halve seconde van het contact ongeveer 50 cm in de bodem, en de versterkingsfactor van de impulsoverdracht β ≈ 3,6 wees op een aanzienlijke bijdrage van uitgeworpen oppervlaktemateriaal. De CubeSat LICIACube fotografeerde de pluim in real time; HST en JWST namen wekenlang de staart van uitgeworpen materiaal waar.",
+    "note": "English phrases left, soft hyphens, odd grammar"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Ontdekt in 1997, vernoemd naar Leucus (een strijdmakker van Odysseus, gedood bij Troje). Spectrale classificatie D — de donkerste en roodste van de Trojaanse familie. De ontmoeting van Lucy op 2028-04-18 brengt de vorm, de oppervlaktesamenstelling en de ontwikkeling van de rotatietoestand achter de trage rotatie in kaart.",
+    "note": "English word order and 'spectral' left; clumsy compound"
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "ru.wikipedia — afbeeldingen uit artikelen voor Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран",
+    "note": "Cyrillic search strings must stay as in English"
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Het observatorium van de ESO op Cerro Paranal op 2.635 m, thuis van de Very Large Telescope: vier telescopen van 8,2 m die ook samen als interferometer kunnen werken, plus vier hulptelescopen van 1,8 m. Het herbergt ook de surveytelescopen VISTA en VLT Survey Telescope.",
+    "note": "Missing thousands separator (2635)"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.wall",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "items.viking2-lander",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/o3b.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "library_labels.moon-artemis",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/barnard-rocheworld.json",
+    "at": "blurb",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De Ster van Barnard is een vaste waarde in interstellaire fictie en techniek. In Rocheworld van Robert L. Forward vertrekt er een bemande missie naartoe, en het 'Project Daedalus' van de British Interplanetary Society uit de jaren zeventig koos de ster als doel van een echte ontwerpstudie voor een onbemand sterrenschip — decennia voordat Barnard b in 2024 definitief werd bevestigd.",
+    "note": "Anglicised possessives and clumsy phrasing"
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/tsiolkovsky-museum-kaluga.json",
+    "at": "items.mars-3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Het Mars-equivalent van de geostationaire baan — op 17.031 km hoogte, waar één omloop precies één Martiaanse siderische dag duurt (24 u 37 min 22 s), zodat een ruimtevaartuig bewegingloos boven een vaste Martiaanse lengtegraad zou hangen. Nog nooit heeft een ruimtevaartuig deze baan gebruikt. Het is het ontwerpdoel voor toekomstige Mars-relaisconstellaties: naarmate bemande missies en oppervlaktebases groeien, zou het plaatsen van communicatiesatellieten op areostationaire posities het aardse GEO-netwerk van communicatiesatellieten evenaren en de dagelijkse communicatie-onderbrekingen wegnemen die de huidige relais in een lage baan elke oppervlaktemissie opleggen.",
+    "note": "English comsat left, grammar error, wrong compound"
+  },
+  {
+    "rel": "museums/korolev-museum-zhytomyr.json",
+    "at": "items.soyuz-7k-ok",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Afdalingsmodule van Sojoez 27 (1978), de 7K-T-versie die op de 7K-OK volgde",
+    "note": "'descent module' not rendered with binding afdaling"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "De enige natuurlijke satelliet van de Aarde en de enige wereld buiten de Aarde waarop mensen hebben gelopen. Door het getijdenslot van 1:1 blijft steeds dezelfde kant naar de Aarde gericht — de voorzijde wordt gedomineerd door met lava gevulde maria-bekkens, de achterzijde is een oud hooglandterrein vol inslagkraters, met als kroon het Zuidpool-Aitken-bekken, de grootste inslagstructuur in het zonnestelsel (~2.500 km breed, ~13 km diep). De Maan verwijdert zich langzaam van de Aarde (~3,8 cm/jaar), waardoor de dag op Aarde geleidelijk langer wordt; in het verre verleden leek ze aan de hemel bijna drie keer zo groot als nu.",
+    "note": "'under leadership of' for crowned; wrong gender; clumsy"
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "gravity assist",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "library_labels.phobos-hirise",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Klein — slechts 504 km in doorsnee — maar het meest reflecterende hemellichaam van het zonnestelsel en een van de sterkste kandidaten voor actuele bewoonbaarheid buiten de Aarde. Cassini vloog rechtstreeks door pluimen die uit vier breuken van 130 km lengte aan de zuidpool opspuiten; de spectrometer detecteerde moleculaire waterstof, organische stoffen waaronder methaan, zouten en silica-nanokorrels, wat wijst op actieve hydrothermale chemie op de oceaanbodem. De oceaan staat in direct contact met een rotsachtige zeebodem — dezelfde energie- en chemische omstandigheden waaruit het leven ontstond bij de hydrothermale bronnen in de diepzee van de Aarde zelf.",
+    "note": "Lowercase aarde, 'in het heden', moleculair waterstof"
+  },
+  {
+    "rel": "earth-objects/o3b.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Galileo-ruimtesonde — VS, 1995–2003 (meerdere flybys van dichtbij)",
+    "note": "flyby rendered 'voorbijvluchten' against binding; orbiter English"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Op een gemiddelde afstand van 30,07 AE is Neptunus zo ver weg dat een lichtsignaal er in één richting 4 uur over doet. Voyager 2 had 12 jaar nodig om de planeet te bereiken.",
+    "note": "'one-way signal per side' contradictory"
+  },
+  {
+    "rel": "orbit-regimes/MEO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Door de excentriciteit van 0,204 heeft Bennu een baan met een kleine kans op een inslag op de Aarde in de 22e eeuw — een van de redenen waarom de asteroïde werd gekozen voor OSIRIS-REx (verkenning voor planetaire verdediging).",
+    "note": "English phrase left, garbled 'laag waarschijnlijke impactbaan', '2100s'"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "De schommeling van Phobos tussen perihelium en aphelium is klein, maar de maan draait drie keer per Martiaanse dag om Mars — de maan met de meeste omlopen per dag van de moederplaneet in het systeem.",
+    "note": "'ouderdag', perihelium variation, 'meeste banen' garbled"
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Radiaal koppelingsknooppunt dat de parkeerplaatsen voor Soyuz/Progress uitbreidt, onafhankelijk van de oudere axiale poorten.",
+    "note": "docking not rendered koppeling; awkward"
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/sentinel-copernicus.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/vega-oumuamua.json",
+    "at": "blurb",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Het eerste interstellaire object dat ooit door het zonnestelsel is waargenomen, ʻOumuamua (2017), naderde vanuit de richting van het sterrenbeeld Lier, dicht bij Wega — hoewel zijn werkelijke oorsprong veel verder ligt. Een echte bezoeker uit een ander sterrensysteem, geen boodschap, maar een herinnering dat materiaal werkelijk tussen de sterren reist.",
+    "note": "'sterrenstelsel' means galaxy, not star system"
+  },
+  {
+    "rel": "museums/mao-zedong-memorial-museum-shaoshan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "apogee",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "residents.5.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Het tweetrapswerkpaard van Mitsubishi Heavy Industries, in dienst van 2001 tot de uitdienststelling in 2025. Cryogene hoofdtrap met 2-4 vastebrandstofboosters. Opvallende interplanetaire missies: Hayabusa (2003) en Hayabusa2 (2014) naar asteroïden; Akatsuki (2010) naar Venus; de Hope Probe (2020) van de VAE naar Mars; SLIM (2023) naar de Maan. Vervangen door de H3.",
+    "note": "tweefasen vs tweetraps; Anglicised possessive; booster term"
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/hayabusa2.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "1,24 AE · onderweg naar (98943) 2001 CC21, flyby 2026-07 (verlengde missie)",
+    "note": "flyby rendered voorbijvlucht; ISO date turned into month name"
+  },
+  {
+    "rel": "culture-doors/gargantua-interstellar.json",
+    "at": "blurb",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Gargantua is het superzware zwarte gat in het hart van Interstellar (2014). Natuurkundige Kip Thorne schreef de echte vergelijkingen uit de algemene relativiteitstheorie achter het beeld, dus de gloeiende schijf die zich over en onder de schaduw welft is echte zwaartekrachtlenswerking — dezelfde natuurkunde die deze weergave met raytracing berekent. De wetenschap vond zelfs haar weg terug naar onderzoeksartikelen.",
+    "note": "'ray-traced' left in English; 'gravitatielenzen' awkward"
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "De baaninclinatie van Triton van 156,8° — retrograde, sterk gekanteld ten opzichte van de evenaar van Neptunus — is het doorslaggevende bewijs voor invangst uit de Kuipergordel in plaats van vorming samen met Neptunus.",
+    "note": "'equator' unnatural, 'invanging' odd"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De schommeling tussen perihelium en aphelium (46–70 miljoen km) zorgt voor enorme verschillen in zonnestraling — het oppervlak van Mercurius warmt sterker op en koelt sterker af dan dat van elke andere planeet.",
+    "note": "'enig ander planeet' gender error; heating/cooling wording"
+  },
+  {
+    "rel": "iss-modules/cupola.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Zeven ramen op de Aarde gericht — de collectieve ogen van het station voor robotoperaties en voor de ansichtkaartfoto van astronauten.",
+    "note": "Clumsy 'ansichtkaart-fotoshoot'"
+  },
+  {
+    "rel": "iss-visitors/progress_ms.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Bevoorrading met vracht en drijfstof; ontstekingen voor baanverhoging vanaf de achterste Zvezda-poort om de baanhoogte van het ISS op peil te houden.",
+    "note": "'reboost-branders' English and burn term wrong"
+  },
+  {
+    "rel": "iss-modules/harmony.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De voorste utiliteitsknoop die Destiny met de Europese en Japanse labs verbond — denk aan een drukke gang die is uitgegroeid tot een internationaal knooppunt.",
+    "note": "'tot internationale knooppunt' grammar slip"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Zware draagraket uit het Sovjettijdperk — lanceerde alle Sovjet-Mars- en Luna-missies en de Russische ISS-modules",
+    "note": "'voerde ... modules uit' wrong verb; should be launched"
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Callisto ligt buiten de Laplace-resonantie die de getijdenverwarming van Io, Europa en Ganymedes aandrijft — daardoor smolt het binnenste nooit genoeg om volledig te differentiëren of de korst te vernieuwen. Het resultaat is het meest ongerepte archief van inslagbombardement in het binnenste Galileïsche stelsel, met onder meer het spectaculaire Valhalla-bekken, een systeem van ~10 ringen dat ruwweg een kwart van de omtrek van de maan beslaat. Ondanks het ontbreken van getijdenverwarming detecteerde de magnetometer van Galileo een geïnduceerd magnetisch veld, passend bij een diepe zoute oceaan ~100 km onder het oppervlak. De lage stralingsomgeving (vergeleken met Europa of Ganymedes) en het langlevende water maken Callisto een waarschijnlijke uitvalsbasis voor toekomstige bemande missies naar het Jupiterstelsel.",
+    "note": "Typo stralingomgeving, 'interne Galilese', literal wording"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cradle-of-aviation.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Het apogeum kan 1/8e van de weg naar de Maan bereiken; het perigeum kan de bovenkant van LEO raken. De satelliet sprint dicht bij de Aarde en kruipt bovenaan.",
+    "note": "Lowercase maan/aarde"
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Het verbeterde vrachtruimtevaartuig van Northrop Grumman — wordt door Canadarm2 aangemeerd (niet gekoppeld) en draagt bij elke vlucht de naam van een gevallen astronaut.",
+    "note": "'vrachtvliegtuig' (cargo plane) wrong, gender error, 'gedockt'"
+  },
+  {
+    "rel": "tiangong-modules/chinarm.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Hulp bij het aanmeren van Tianzhou-vracht, EVA-ondersteuning voor de bemanning en overdracht van externe ladingen; werkt samen met de kleine experimentele arm van Wentian voor fijn werk.",
+    "note": "Anglicised possessive 'Wentian's'"
+  },
+  {
+    "rel": "museums/jaxa-sagamihara-communication-hall.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Wisselvluchten van de bemanning in het kader van Commercial Crew naar het Amerikaanse Orbitale Segment; SuperDraco-systeem voor het afbreken van de lancering; op de laadsectie achter de capsule gemonteerde zonnepanelen; gedeeltelijk herbruikbare capsule.",
+    "note": "'trunk', 'abortsysteem' English-style"
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Waterijs als vaste ondergrond onder organische duinen + koolwaterstofmeren (methaan / ethaan) + een atmosfeer van stikstof en methaan met 1,45× de luchtdruk op zeeniveau op Aarde. Tholinennevel kleurt de hemel oranje.",
+    "note": "'Waterijsbedding' misreads bedrock"
+  },
+  {
+    "rel": "small-bodies/eurybates.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Eurybates draait in een baan binnen de Trojanenwolk van Jupiter bij L4 — 60° vóór op de planeet. Lucy wordt het eerste ruimtevaartuig dat een Trojaan bezoekt (augustus 2027).",
+    "note": "'Jupiter Trojan-wolk' English fragment; clumsy"
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.3.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Mars heeft twee kleine manen die ingevangen lijken — Phobos (draait in een baan onder de synchrone hoogte en spiraalt naar binnen) en Deimos (verwijdert zich langzaam).",
+    "note": "'captured-looking' rendered as 'uit gesleept'; nonsense"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Saturnus heeft ~274 bevestigde manen — meer dan enige andere planeet — met Titan, groot genoeg voor een eigen dichte atmosfeer, en Enceladus, die actief water uit een ondergrondse oceaan uitstoot.",
+    "note": "'enig ander planet' gender error; clumsy 'met Titan groot genoeg'"
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/bledsoe-miller-steam-center-waco.json",
+    "at": "items.cargo-dragon-v1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/starlink.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/cassini.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "9,5 AE · in een baan om Saturnus 2004-2017 — op 2017-09-15 in de atmosfeer van Saturnus gestort",
+    "note": "'afgevoerd' misrenders disposed into atmosphere"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Mars Express — ESA, 2010 (flyby op minder dan 100 m hoogte)",
+    "note": "flyby rendered voorbijvlucht against binding"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "library_labels.moon-apollo",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/virginia-air-and-space-science-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/landsat.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Eerste Chinese draagraket die een Marsmissie kon lanceren",
+    "note": "Stale/wrong text: says heaviest active rocket, launched Tianhe"
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Het Lagrangepunt op ongeveer 61.000 km achter de Maan, gezien vanaf de Aarde — het zwaartekrachtszadelpunt waar de zwaartekracht van Aarde en Maan en de middelpuntvliedende krachten elkaar in evenwicht houden. De Maan staat altijd tussen het ruimtevaartuig en de Aarde, dus directe communicatie is onmogelijk — maar een satelliet die hier in een haloobaan ROND L2 is geparkeerd, heeft zichtlijn naar ZOWEL de achterzijde van de Maan ALS de Aarde. Zo liet China in 2019 Chang'e 4 op de achterzijde landen: de relaissatelliet Queqiao, geparkeerd in een haloobaan rond het Aarde-Maan-punt L2, overbrugt elk commando en elk beeld.",
+    "note": "'relaisSatelliet' casing, 'gravitationele zadelpunt', clumsy forces"
+  },
+  {
+    "rel": "earth-objects/clementine.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Polaire maanbaan op ~425 km hoogte. Eerste aanwijzing voor water op de Maan — de ontdekking die elke moderne missie naar de zuidpool motiveert, waaronder de bemande Artemis-landingen.",
+    "note": "'hint' English-style; word order"
+  },
+  {
+    "rel": "earth-objects/glonass.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Het wereldwijde navigatiesysteem van Rusland. Ontworpen tijdens de Koude Oorlog, gelanceerd in 1982. Gebruikt een grotere inclinatie dan GPS — betere dekking van poolgebieden. Rusland stelde het in 2007 open voor civiel gebruik.",
+    "note": "'Rusland's wereldwijd' ungrammatical; hellingshoek vs inclinatie"
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "De buitengrens van het zwaartekrachtsgezag van Mars — ongeveer 1,08 miljoen kilometer vanaf het middelpunt van de planeet. Binnen deze bol wint de zwaartekracht van Mars het van die van de Zon; daarbuiten haalt de Zon alles terug wat je achterlaat. De Hill-sfeer van Mars is kleiner dan die van de Aarde (1,5 mln km) omdat Mars minder massa heeft, ook al staat Mars verder van de Zon. Beide manen van Mars draaien diep binnenin in hun baan (Deimos op 2% van de Hill-straal). Er is nog nooit een ruimtevaartuig in de buurt van de grens geplaatst.",
+    "note": "'bolsfeer' non-standard for Hill sphere; 'M km'"
+  },
+  {
+    "rel": "earth-objects/goes.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Het verzamelend oppervlak bedraagt 1.960 vierkante meter.",
+    "note": "Missing thousands separator (1960)"
+  },
+  {
+    "rel": "museums/china-science-and-technology-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De grootste maan van Uranus en de achtste grootste in het zonnestelsel. Beelden van Voyager 2 toonden een oppervlak dat wordt doorsneden door enorme canyonsystemen — alleen al Messina Chasma strekt zich 1.500 km uit over het zuidelijk halfrond — naast grote inslagbekkens en de kleine, fris ogende Ursula-krater. Een stellaire occultatie in 2017 detecteerde voorlopig een dunne kooldioxideatmosfeer, wat de eerste atmosfeer zou zijn die op een maan van Uranus is gevonden.",
+    "note": "'een oppervlak doorsneden door' participle agreement"
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Ontdekt in 2014 door Hubble en oorspronkelijk gecatalogiseerd als 2014 MU69. In 2019 hernoemd tot Arrokoth (Powhatan voor 'hemel') na de flyby van New Horizons — een ongerept overblijfsel van de planetesimale schijf, sinds de vorming onveranderd bewaard. De rode, zachtjes aangegroeide vorm van een contactbinair is een directe vingerafdruk van hoe de planeetvorming in het buitenste zonnestelsel begon.",
+    "note": "'contactdubbelvorm' nonword, gender error, flyby term"
+  },
+  {
+    "rel": "museums/science-museum-london.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/leonardo.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Opslagruimte onder druk voor voorraden en hardwaretassen, zodat de labs vrij blijven voor wetenschappelijke racks.",
+    "note": "'Drukgevoede' nonword for pressurised"
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De inclinatie van 17,2° van Pluto houdt het ver uit de buurt van Neptunus, ook al kruisen de banen elkaar in projectie.",
+    "note": "Decimal point 17.2, 'Pluto's', 'ondanks dat'"
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Hypergolische draagraket met drie trappen en vier vloeistofboosters, in dienst sinds 1996. Standaardconfiguratie voor commerciële lanceringen naar GTO en de meeste maanmissies: Chang'e 1 (2007), Chang'e 2 (2010), Chang'e 3 (2013) en Chang'e 4 (2018). Uit de maandienst genomen toen de grotere Long March 5 het overnam voor de missies met monsterterugkeer (Chang'e 5/6) en Tianwen-1.",
+    "note": "'terugreermonitoring' garbled for sample-return"
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Een hypothetische bolvormige schil van ijzige lichamen die het hele zonnestelsel omringt — zich uitstrekkend van ongeveer 2.000 tot 100.000 AE. Nooit direct waargenomen, alleen afgeleid: de langperiodieke kometen die we zien hebben banen die zo wijd zijn dat ze hiervandaan moeten komen. Geschatte populatie: biljoenen lichamen. De Oortwolk vertegenwoordigt de overblijfselen van de geboortewolk van het zonnestelsel, dynamisch stabiel gedurende miljarden jaren op deze afstand van de Zon. Passerende sterren kunnen afzonderlijke objecten naar binnen storen, waardoor die de kometen worden die wij waarnemen.",
+    "note": "Lowercase 'zon'; 'naar binnen verstoren' awkward"
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Wanneer de antennes geen ruimtevaartuigen volgen, brengen ze ook quasars in kaart en verrichten ze planetair radaronderzoek.",
+    "note": "Pronoun mix ze/zijn; 'doen planetaire radar'"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "items.discovery",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/tranquility.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Belangrijke ECLSS-hardware, een volume voor trainingsapparatuur en de leidingroutering tussen Amerikaanse voorzieningen en de Cupola.",
+    "note": "Clumsy 'oefenhardware-volume', 'nutsvoorzieningen'"
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "De betrouwbaarste middelzware draagraket in dienst — lanceerde Chandrayaan-1 (2008) en Mangalyaan (2013)",
+    "note": "'voerde ... uit' wrong verb; should be launched"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Wikimedia Commons — Cyrillisch zoeken (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+    "note": "Cyrillic search strings transliterated; must stay Cyrillic"
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Genoemd naar de Griekse heraut van Odysseus (Ilias / Odyssee), ontdekt in 1973. Het spectrum van type C wijst op een koolstofrijke, primitieve samenstelling — van de Trojanen wordt aangenomen dat het overgebleven planetesimalen zijn, die tijdens de vroege migratie in het zonnestelsel werden ingevangen in de Lagrangepunten L4 / L5 van Jupiter en zo de samenstellingskenmerken van de buitenste protoplanetaire schijf hebben bewaard.",
+    "note": "'relatische' nonword for relict"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-science-and-industry-chicago.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/inmarsat.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Oorspronkelijk in 1979 opgericht als intergouvernementele verdragsorganisatie — ouder dan het internet en een van de weinige communicatieconstellaties die sindsdien voortdurend is vernieuwd.",
+    "note": "'geüpgraded' English-derived"
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "In 1929 toonden Edwin Hubble en Milton Humason aan dat het heelal uitdijt.",
+    "note": "First name Edwin dropped"
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.endeavour",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

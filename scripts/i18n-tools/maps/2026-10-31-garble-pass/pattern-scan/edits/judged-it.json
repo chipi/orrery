@@ -1,0 +1,176 @@
+[
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "fact",
+    "old": "Primo allunaggio morbido su Marte. Il lander si posò con successo e iniziò a trasmettere dati — per approssimativamente 14–20 secondi. Una tempesta di polvere su scala planetaria al momento dell'arrivo è la spiegazione più accreditata del silenzio che seguì. Nonostante la brevità, Mars 3 dimostrò che un allunaggio morbido su Marte era possibile: un risultato ingegneristico fondamentale su cui si basano tutti i lander marziani successivi.",
+    "new": "Primo atterraggio morbido su Marte. Il lander si posò con successo e iniziò a trasmettere dati — per approssimativamente 14–20 secondi. Una tempesta di polvere su scala planetaria al momento dell'arrivo è la spiegazione più accreditata del silenzio che seguì. Nonostante la brevità, Mars 3 dimostrò che un atterraggio morbido su Marte era possibile: un risultato ingegneristico fondamentale su cui si basano tutti i lander marziani successivi."
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "capability",
+    "old": "Primo EDL marziano riuscito — ha provato che l'allunaggio morbido era un problema già risolto prima che l'hardware americano lo tentasse.",
+    "new": "Primo EDL marziano riuscito — ha provato che l'atterraggio morbido era un problema già risolto prima che l'hardware americano lo tentasse."
+  },
+  {
+    "rel": "mars-sites/tgo.json",
+    "at": "fact",
+    "old": "La metà sopravvissuta della missione ExoMars 2016 (Schiaparelli era il lander). Caratterizza il metano atmosferico, il vapore acqueo e altri gas traccia con sensibilità a parti per trilione. Non ha rilevato metano al di sopra di 0,05 ppbv — ben al di sotto di tutti i precedenti rilevamenti dichiarati — approfondendo piuttosto che risolvendo il mistero del metano. I rilevamenti a livello di superficie di Curiosity rimangono inspiegati.",
+    "new": "La metà sopravvissuta della missione ExoMars 2016 (Schiaparelli era il lander). Caratterizza il metano atmosferico, il vapore acqueo e altri gas traccia con sensibilità a parti per bilione. Non ha rilevato metano al di sopra di 0,05 ppbv — ben al di sotto di tutti i precedenti rilevamenti dichiarati — approfondendo piuttosto che risolvendo il mistero del metano. I rilevamenti a livello di superficie di Curiosity rimangono inspiegati."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.4.label",
+    "old": "ALLUNAGGIO SU EROS — EDL",
+    "new": "ATTERRAGGIO SU EROS — EDL"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.3.label",
+    "old": "ALLUNAGGI",
+    "new": "ATTERRAGGI"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.4.label",
+    "old": "ALLUNAGGIO",
+    "new": "ATTERRAGGIO"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.3.label",
+    "old": "ENTRATA A TITANO + ALLUNAGGIO",
+    "new": "ENTRATA A TITANO + ATTERRAGGIO"
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "story",
+    "old": "Un ipotetico guscio sferico di corpi ghiacciati che circonda l'intero sistema solare — estendendosi da circa 2.000 a 100.000 au. Mai osservata direttamente, solo dedotta: le comete a lungo periodo che vediamo hanno orbite così ampie che devono provenire da qui. Popolazione stimata: trilioni di corpi. La nube di Oort rappresenta i resti della nube primordiale del sistema solare, dinamicamente stabile per miliardi di anni a questa distanza dal Sole. Stelle di passaggio possono perturbare singoli oggetti verso l'interno, trasformandoli nelle comete che osserviamo.",
+    "new": "Un ipotetico guscio sferico di corpi ghiacciati che circonda l'intero sistema solare — estendendosi da circa 2.000 a 100.000 au. Mai osservata direttamente, solo dedotta: le comete a lungo periodo che vediamo hanno orbite così ampie che devono provenire da qui. Popolazione stimata: bilioni di corpi. La nube di Oort rappresenta i resti della nube primordiale del sistema solare, dinamicamente stabile per miliardi di anni a questa distanza dal Sole. Stelle di passaggio possono perturbare singoli oggetti verso l'interno, trasformandoli nelle comete che osserviamo."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/space-shuttle-stack_webp.title",
+    "old": "Space Shuttle stack",
+    "new": "Space Shuttle in configurazione di lancio"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/propulsive-landing_webp.title",
+    "old": "Allunaggio Propulsivo",
+    "new": "Atterraggio Propulsivo"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-mars-retro_webp.where",
+    "old": "Vola · discesa/allunaggio",
+    "new": "Vola · discesa/atterraggio"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-airbag_webp.where",
+    "old": "Vola · discesa/allunaggio",
+    "new": "Vola · discesa/atterraggio"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-skycrane_webp.where",
+    "old": "Vola · discesa/allunaggio",
+    "new": "Vola · discesa/atterraggio"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-venus-aeroshell_webp.where",
+    "old": "Vola · discesa/allunaggio",
+    "new": "Vola · discesa/atterraggio"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-asteroid-sampler_webp.where",
+    "old": "Vola · discesa/allunaggio",
+    "new": "Vola · discesa/atterraggio"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-comet-lander_webp.where",
+    "old": "Vola · discesa/allunaggio",
+    "new": "Vola · discesa/atterraggio"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-jupiter-probe_webp.where",
+    "old": "Vola · discesa/allunaggio",
+    "new": "Vola · discesa/atterraggio"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-titan-parachute_webp.where",
+    "old": "Vola · discesa/allunaggio",
+    "new": "Vola · discesa/atterraggio"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.2",
+    "old": "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (mappatura orbitale + allunaggio in superficie)",
+    "new": "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (mappatura orbitale + atterraggio in superficie)"
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "description",
+    "old": "La capsula dell'equipaggio a tre posti della Cina—rendezvous rapido (3,5 ore dal Shenzhou 21) da Jiuquan e allunaggio con paracadute sulla steppa della Mongolia Interna.",
+    "new": "La capsula dell'equipaggio a tre posti della Cina—rendezvous rapido (3,5 ore dal Shenzhou 21) da Jiuquan e atterraggio con paracadute sulla steppa della Mongolia Interna."
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "waypoints.11.label",
+    "old": "Allunaggio di Philae",
+    "new": "Atterraggio di Philae"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-30d2195a63fa.title",
+    "old": "Rosetta — l'allunaggio su una cometa",
+    "new": "Rosetta — l'atterraggio su una cometa"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-30d2195a63fa.caption",
+    "old": "Philae diventa il primo veicolo spaziale ad allunare dolcemente su una cometa — 67P, 12 nov 2014.",
+    "new": "Philae diventa il primo veicolo spaziale ad atterrare dolcemente su una cometa — 67P, 12 nov 2014."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-891377070a16.title",
+    "old": "Viking 1 — primo allunaggio statunitense su Marte",
+    "new": "Viking 1 — primo atterraggio statunitense su Marte"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-98b4fdd31e64.caption",
+    "old": "La dramatizzazione JPL della sequenza autonoma di entrata-discesa-atterraggio, in vista dell'allunaggio del 2012.",
+    "new": "La dramatizzazione JPL della sequenza autonoma di entrata-discesa-atterraggio, in vista dell'atterraggio del 2012."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.title",
+    "old": "Hayabusa2 — allunaggio sull'asteroide Ryugu",
+    "new": "Hayabusa2 — atterraggio sull'asteroide Ryugu"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.caption",
+    "old": "Riprese di bordo del primo allunaggio su Ryugu — 22 feb 2019.",
+    "new": "Riprese di bordo del primo atterraggio su Ryugu — 22 feb 2019."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-f9fd2a71d5f8.title",
+    "old": "Starship SN15 — volo di prova ad alta quota e allunaggio",
+    "new": "Starship SN15 — volo di prova ad alta quota e atterraggio"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-f9fd2a71d5f8.caption",
+    "old": "La manovra a pancia in giù, il capovolgimento e il primo allunaggio dolce di un prototipo di Starship — 5 mag 2021.",
+    "new": "La manovra a pancia in giù, il capovolgimento e il primo atterraggio dolce di un prototipo di Starship — 5 mag 2021."
+  }
+]

@@ -1,9 +1,9 @@
 {
-  "description": "Glattester großer Körper im Sonnensystem — kein Berg auf Europa erhebt sich höher als wenige hundert Meter. Unter seiner 20 km dicken Eiskruste liegt ein globaler Salzwasserozean von ~100 km Tiefe, der mehr als doppelt so viel Wasser enthält wie alle Ozeane der Erde zusammen. Gezeitenkräfte des Jupiter halten diesen Ozean flüssig und chemisch aktiv; Signaturen des Magnetfelds und Hubble-Beobachtungen von Plumes legen nahe, dass Material aus dem unterirdischen Ozean die Oberfläche periodisch erreicht. NASAs Europa Clipper (auf dem Weg) und ESAs JUICE werden beide bis in die frühen 2030er Jahre die Eishülle und die Ozeandynamik genau untersuchen.",
+  "description": "Der glatteste große Körper im Sonnensystem — kein Berg auf Europa ist höher als einige hundert Meter. Unter seiner 20 km dicken Eiskruste liegt ein globaler Salzwasserozean von ~100 km Tiefe, der mehr als doppelt so viel Wasser enthält wie alle Ozeane der Erde zusammen. Gezeitenkräfte des Jupiter halten diesen Ozean flüssig und chemisch aktiv; Signaturen des Magnetfelds und Hubble-Beobachtungen von Fontänen legen nahe, dass Material aus dem Ozean unter der Eiskruste die Oberfläche periodisch erreicht. NASAs Europa Clipper (unterwegs) und ESAs JUICE werden beide bis in die frühen 2030er Jahre die Eishülle und die Ozeandynamik genau untersuchen.",
   "surface_composition": "Wassereiskruste ~15–25 km dick, durch Chaos-Terrain in ein Netzwerk aus bogenförmigen Rücken und Lenticulae zerbrochen; Salze (wahrscheinlich Magnesiumsulfat + Natriumchlorid) färben das Eis in den Chaos-Regionen rotbraun.",
   "mission_visits": [
     "Voyager 1 + 2 — USA, 1979 (Kartierung)",
-    "Galileo orbiter – USA, 1995–2003 (Hinweise auf Subsurface-Ozean)",
+    "Galileo-Orbiter – USA, 1995–2003 (Hinweise auf einen Ozean unter der Oberfläche)",
     "Juno – USA, 2022 (nächster Vorbeiflug seit Galileo)",
     "Europa Clipper – USA, Start 2024 (Mission läuft)"
   ],
@@ -17,12 +17,12 @@
     {
       "tab": "orbits",
       "section": "keplers-laws",
-      "why": "Europa ist das mittlere Glied der Io–Europa–Ganymed 4:2:1 Laplace-Resonanz — seine erzwungene Exzentrizität treibt die Gezeitendeformation an, die einen Subsurfazean flüssig hält."
+      "why": "Europa ist das mittlere Glied der Laplace-Resonanz 4:2:1 von Io–Europa–Ganymed — ihre erzwungene Exzentrizität treibt die Gezeitenverformung an, die einen Ozean unter der Oberfläche flüssig hält."
     },
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "Europas winzige Exzentrizität von 0,009 wird durch Ios Störungen erzwungen — ohne sie würde der Subsurfazean einfrieren. Europa Clipper (NASA, 2024–) startet, um ihn zu untersuchen."
+      "why": "Europas winzige Exzentrizität von 0,009 wird durch Ios Störungen erzwungen — ohne sie würde der Ozean unter der Oberfläche gefrieren. Europa Clipper (NASA, 2024–) startet, um Europa zu untersuchen."
     }
   ]
 }

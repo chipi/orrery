@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La leçon plus profonde est que dans le vol spatial habité, arriver en dernier peut être une forme de sagesse. L'Inde arrive au vol habité avec les accidents de tous ses prédécesseurs à étudier, et la possibilité d'éliminer par avance les défaillances que d'autres ont découvertes fatalement. Arriver avec des décennies de retard lui coûte un prestige qu'elle ne semble pas rechercher ; ce que cela lui achète, si la méthode tient, ce sont des astronautes qui rentrent chez eux."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=gaganyaan": "Flotte — le vaisseau Gaganyaan",
+    "/programs/chandrayaan": "Chandrayaan — le programme lunaire de l'Inde",
+    "/programs/mangalyaan": "Mangalyaan — la mission martienne de l'Inde réussie du premier coup"
+  }
 }

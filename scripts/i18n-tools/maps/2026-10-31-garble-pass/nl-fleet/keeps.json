@@ -1,0 +1,30 @@
+[
+  {
+    "term": "burn",
+    "loc": "nl",
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "why": "hydrogen-burning = propellant type (op waterstof werkende), not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "nl",
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "why": "burning propellant every second = consumption (verbrande drijfstof), not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "nl",
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "why": "methane-burning = propellant type (methaanverbrandende), not an engine firing"
+  },
+  {
+    "term": "payload",
+    "loc": "nl",
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "description",
+    "why": "hosted payload = gastlading, the compound carries the binding lading"
+  }
+]

@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La deuxième leçon concerne l'utilité d'un expédient, et ce qu'il n'est pas. Voskhod a fait exactement une chose bien — il a gagné du temps et deux premières de plus pendant que le véritable vaisseau de nouvelle génération était en construction. C'est une utilisation légitime de matériel improvisé. L'erreur aurait été de continuer à le faire voler, à poursuivre les gros titres au-delà du point où la marge s'épuise — et à l'honneur de Korolev, il a correctement lu la quasi-catastrophe et s'est arrêté. Savoir quand un expédient a fait son travail est aussi important que d'en construire un."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terre — orbites et sites de lancement",
+    "/science/mission-phases/edl": "Entrée, descente et atterrissage"
+  }
 }

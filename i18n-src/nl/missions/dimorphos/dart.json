@@ -16,7 +16,7 @@
     {
       "met": 150,
       "label": "KRUISBAAN HALVERWEGE",
-      "note": "TCM + NEXT-C ion-thruster demonstratiebrandingen.",
+      "note": "TCM + demonstratie-ontstekingen van de NEXT-C-ionenstuwer.",
       "type": "nominal"
     },
     {
@@ -37,5 +37,6 @@
       "note": "LICIACube + HST + JWST observeren de ejectapluim.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "tweede trap van de Falcon 9 Block 5"
 }

@@ -1,0 +1,130 @@
+[
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 도는 (orbiting the belt)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.15.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "omitted naturally: 그 둘레의 행성들"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.6.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 돌다 / 둘레를 돈 (orbit a body)"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.13.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 태양 둘레를 도는 (orbits the Sun)"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.0.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "standard term 탈출 궤도 (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.29.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative sense (direction of progress / distance scale), not a flight path"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.23.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative sense (direction of progress / distance scale), not a flight path"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.25.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "만남 지점",
+    "replace": "랑데부 지점",
+    "why": "rendezvous point: 만남 -> 랑데부"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.10.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "stem gap: 1단에도 (재사용 1단에도)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.9.md",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: 탑재량 (payload capacity to LEO)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.22.md",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: 궤도에 진입할"
+  }
+]

@@ -13,5 +13,6 @@
     { "met": 1503, "label": "TAG SAMPLE COLLECTION", "note": "2020-10-20. Touch-and-Go arm sinks 50 cm into the rubble-pile surface; grabs 121.6 g.", "type": "info" },
     { "met": 1705, "label": "BENNU DEPARTURE", "note": "2021-05-10. 2.5-year cruise back to Earth.", "type": "nominal" },
     { "met": 2572, "label": "SAMPLE RETURN", "note": "2023-09-24. SRC parachutes into Utah Test and Training Range; spacecraft becomes OSIRIS-APEX.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Centaur upper stage (Atlas V 411)"
 }

@@ -9,7 +9,7 @@
   "body_paragraphs": [
     "Tsiolkovsky publicou a equação, o conceito de foguete multietapas e o conceito de estação orbital anos antes de engenharia de foguetes séria existir. Goddard construiria o primeiro foguete movido a combustível líquido em 1926 (EUA); o V-2 de von Braun em 1942 (Alemanha); o R-7 de Korolev em 1957 (URSS).",
     "A equação é o inverso da terceira lei de Newton: cada quilograma de propelente ejetado à velocidade vₑ empurra o veículo por 1 kg × vₑ. Integrando isso sobre a massa decrescente, você obtém a dependência de logaritmo natural.",
-    "Por que escala logarítmica importa: duplicar ∆v exige a razão de massa ao quadrado. Triplicar exige ao cubo. Para ir de 0 a velocidade de escape (~11,2 km/s) com uma típica velocidade de exaustão química de 4,4 km/s, razão de massa = e^(11,2/4,4) ≈ 13. Portanto, uma carga de 1 tonelada precisa de 12 toneladas de propelente, mais a estrutura para mantê-la.",
+    "Por que escala logarítmica importa: duplicar ∆v exige a razão de massa ao quadrado. Triplicar exige ao cubo. Para ir de 0 a velocidade de escape (~11,2 km/s) com uma típica velocidade de exaustão química de 4,4 km/s, razão de massa = e^(11,2/4,4) ≈ 13. Portanto, uma carga útil de 1 tonelada precisa de 12 toneladas de propelente, mais a estrutura para mantê-la.",
     "Tsiolkovsky nunca testou nada. Ele não era um engenheiro — era um teórico com giz. O programa espacial soviético o canonizou postumamente; sua casa em Kaluga é agora um museu e seu nome está em uma cratera no lado oculto que os soviéticos lunares miravam."
   ],
   "formula_caption": "A equação do foguete. m₀ = massa úmida (cheia); m₁ = massa seca (vazia); vₑ = velocidade de exaustão."

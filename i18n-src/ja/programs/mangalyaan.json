@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "より深い教訓は、火星での初挑戦成功は野心と同じくらい謙虚さに関するものだということである。失敗した火星ミッションの墓場は、手を伸ばしすぎた潤沢な予算のプログラムで満ちている。ISROは確実に管理できる範囲まで正確に手を伸ばし、それを証明し、ミッション自身の控えめな目標を超えさせた。高く狙うのではなく正確に狙うことが、時として最も困難な初を勝ち取る方法なのである。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "火星 — 目的地",
+    "/fleet?focus=mangalyaan": "フリート — Mars Orbiter Mission",
+    "/programs/chandrayaan": "Chandrayaan — インドの月探査計画",
+    "/mars?site=mangalyaan": "火星周回軌道の Mangalyaan"
+  }
 }

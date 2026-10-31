@@ -96,5 +96,10 @@
       "type": "prose",
       "md": "En de menselijke noot die het waard is te bewaren: de weigering van de astronauten om vracht te zijn. Overhandigd met een ontwerp dat hen als passagiers behandelde, stonden ze erop piloten te zijn — een venster, een stuurknuppel, een stem in de vlucht — en dat aandringen, meer dan welke enkele missie ook, is wat het programma van hen maakte en het karakter bepaalde van alles wat erna kwam."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Aarde — banen, terugkeer & lanceerplaatsen",
+    "/science/mission-phases/edl": "Intrede, daling & landing",
+    "/science/propulsion/tsiolkovsky": "De raketvergelijking — waarom de Redstone geen baan haalde"
+  }
 }

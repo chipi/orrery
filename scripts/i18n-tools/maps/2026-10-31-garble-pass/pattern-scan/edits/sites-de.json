@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "fleet/launch-site/alcantara.json",
+    "at": "name",
+    "old": "Alcântara Space Center",
+    "new": "Raumfahrtzentrum Alcântara"
+  },
+  {
+    "rel": "fleet/launch-site/naro-space-center.json",
+    "at": "name",
+    "old": "Naro Space Center",
+    "new": "Raumfahrtzentrum Naro"
+  },
+  {
+    "rel": "fleet/launch-site/naro-space-center.json",
+    "at": "description",
+    "old": "Das Naro Space Center liegt an der Südküste Südkoreas im Landkreis Goheung, etwa 485 km südlich von Seoul, und wird von KARI betrieben. Es hat zwei Rampen. Die Rakete Naro-1 mit russischer erster Stufe startete dreimal von LC-1: Die Flüge vom 25. August 2009 und 10. Juni 2010 erreichten keine Umlaufbahn, und am 30. Januar 2013 brachte der dritte den Satelliten STSAT-2C in eine niedrige Umlaufbahn. Am 28. November 2018 absolvierte ein Nuri-Testfahrzeug einen zehnminütigen suborbitalen Sprung, um sein Triebwerk KRE-075 zu qualifizieren. Nuri, die erste vollständig in Südkorea entworfene und gebaute Orbitalrakete, hob am 21. Oktober 2021 von LC-2 ab und scheiterte in der dritten Stufe. Ihr zweiter Flug am 21. Juni 2022 erreichte eine Umlaufbahn in 700 km Höhe; weitere Flüge folgten am 25. Mai 2023, 26. November 2025 und 7. Oktober 2026, alle von LC-2.",
+    "new": "Das Raumfahrtzentrum Naro liegt an der Südküste Südkoreas im Landkreis Goheung, etwa 485 km südlich von Seoul, und wird von KARI betrieben. Es hat zwei Rampen. Die Rakete Naro-1 mit russischer erster Stufe startete dreimal von LC-1: Die Flüge vom 25. August 2009 und 10. Juni 2010 erreichten keine Umlaufbahn, und am 30. Januar 2013 brachte der dritte den Satelliten STSAT-2C in eine niedrige Umlaufbahn. Am 28. November 2018 absolvierte ein Nuri-Testfahrzeug einen zehnminütigen suborbitalen Sprung, um sein Triebwerk KRE-075 zu qualifizieren. Nuri, die erste vollständig in Südkorea entworfene und gebaute Orbitalrakete, hob am 21. Oktober 2021 von LC-2 ab und scheiterte in der dritten Stufe. Ihr zweiter Flug am 21. Juni 2022 erreichte eine Umlaufbahn in 700 km Höhe; weitere Flüge folgten am 25. Mai 2023, 26. November 2025 und 7. Oktober 2026, alle von LC-2."
+  },
+  {
+    "rel": "fleet/launch-site/uchinoura.json",
+    "at": "name",
+    "old": "Uchinoura Space Center",
+    "new": "Raumfahrtzentrum Uchinoura"
+  },
+  {
+    "rel": "fleet/launch-site/uchinoura.json",
+    "at": "description",
+    "old": "Das Uchinoura Space Center liegt an der Pazifikküste der Präfektur Kagoshima auf Kyushu, in hügeligem Gelände bei 31 Grad Nord. Es wurde im Februar 1962 als Kagoshima Space Center eröffnet und erhielt seinen heutigen Namen, als 2003 die JAXA entstand. Nach vier gescheiterten Starts brachte eine Lambda 4S-5 am 11. Februar 1970 Ohsumi in die Umlaufbahn, Japans ersten Satelliten. Bis zur Ausmusterung der Feststoffraketen M-V im Jahr 2006 startete von hier jeder japanische Wissenschaftssatellit: HALCA 1997, die Marssonde Nozomi im Juli 1998, Hayabusa zum Asteroiden Itokawa am 9. Mai 2003, ASTRO-E2 2005 und Hinode am 22. September 2006. Die kleinere Rakete Epsilon startete am 14. September 2013 mit dem Satelliten SPRINT-A erstmals von Uchinoura. Große Antennen auf dem Gelände kommunizieren außerdem mit Raumsonden im tiefen Weltraum.",
+    "new": "Das Raumfahrtzentrum Uchinoura liegt an der Pazifikküste der Präfektur Kagoshima auf Kyushu, in hügeligem Gelände bei 31 Grad Nord. Es wurde im Februar 1962 als Kagoshima Space Center eröffnet und erhielt seinen heutigen Namen, als 2003 die JAXA entstand. Nach vier gescheiterten Starts brachte eine Lambda 4S-5 am 11. Februar 1970 Ohsumi in die Umlaufbahn, Japans ersten Satelliten. Bis zur Ausmusterung der Feststoffraketen M-V im Jahr 2006 startete von hier jeder japanische Wissenschaftssatellit: HALCA 1997, die Marssonde Nozomi im Juli 1998, Hayabusa zum Asteroiden Itokawa am 9. Mai 2003, ASTRO-E2 2005 und Hinode am 22. September 2006. Die kleinere Rakete Epsilon startete am 14. September 2013 mit dem Satelliten SPRINT-A erstmals von Uchinoura. Große Antennen auf dem Gelände kommunizieren außerdem mit Raumsonden im tiefen Weltraum."
+  },
+  {
+    "rel": "fleet/launch-site/sohae.json",
+    "at": "name",
+    "old": "Sohae Satellite Launching Station",
+    "new": "Satellitenstartstation Sohae"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "name",
+    "old": "Launch Complex 39A",
+    "new": "Startkomplex 39A"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "dispatch",
+    "old": "Launch Complex 39A wurde um eine Idee herum gebaut, die fast so radikal war wie die Rakete, der sie diente: die Rakete nicht auf der Rampe bauen. Stattdessen wird die Saturn V im riesigen Vehicle Assembly Building gestapelt und der gesamte ~3.000 Tonnen schwere Stapel dann aufrecht stehend auf einem Crawler-Transporter im Schritttempo zur Rampe gefahren. Dieser Ansatz der „sauberen Rampe“ erlaubte es einem einzigen Standort, die größte je geflogene Rakete weit schneller startklar zu machen, als es eine Montage vor Ort je gekonnt hätte. Das Konzept überdauerte Apollo um ein halbes Jahrhundert: Dieselbe Rampe startete den Großteil der Space-Shuttle-Flotte und trägt, seit 2014 an SpaceX verpachtet, heute Falcon Heavy und Astronauten auf Crew Dragon. Gute Infrastruktur ist, wie sich zeigt, die leiseste Art von Mondprojekt — einmal gebaut, zahlt sie sich weiter aus.",
+    "new": "Startkomplex 39A wurde um eine Idee herum gebaut, die fast so radikal war wie die Rakete, der sie diente: die Rakete nicht auf der Rampe bauen. Stattdessen wird die Saturn V im riesigen Vehicle Assembly Building gestapelt und der gesamte ~3.000 Tonnen schwere Stapel dann aufrecht stehend auf einem Crawler-Transporter im Schritttempo zur Rampe gefahren. Dieser Ansatz der „sauberen Rampe“ erlaubte es einem einzigen Standort, die größte je geflogene Rakete weit schneller startklar zu machen, als es eine Montage vor Ort je gekonnt hätte. Das Konzept überdauerte Apollo um ein halbes Jahrhundert: Dieselbe Rampe startete den Großteil der Space-Shuttle-Flotte und trägt, seit 2014 an SpaceX verpachtet, heute Falcon Heavy und Astronauten auf Crew Dragon. Gute Infrastruktur ist, wie sich zeigt, die leiseste Art von Mondprojekt — einmal gebaut, zahlt sie sich weiter aus."
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "name",
+    "old": "Launch Complex 39B",
+    "new": "Startkomplex 39B"
+  },
+  {
+    "rel": "fleet/launch-site/rocket-lab-lc-1.json",
+    "at": "name",
+    "old": "Rocket Lab Launch Complex 1",
+    "new": "Rocket Lab Startkomplex 1"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.0.note",
+    "old": "M-V-5 vom Uchinoura Space Center.",
+    "new": "M-V-5 vom Raumfahrtzentrum Uchinoura."
+  }
+]

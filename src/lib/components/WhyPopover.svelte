@@ -26,7 +26,7 @@
 -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages.js';
   import type { ScienceTabId } from '$types/science';
 
@@ -105,7 +105,7 @@
       <p class="title">{title}</p>
       <p class="body">{body}</p>
       {#if tab && section}
-        <a class="more" href="{base}/science/{tab}/{section}" onclick={close}>
+        <a class="more" href={localHref(`/science/${tab}/${section}`)} onclick={close}>
           {m.why_popover_read_full()}
         </a>
       {/if}

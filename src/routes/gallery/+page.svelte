@@ -45,11 +45,8 @@
 </script>
 
 <svelte:head>
-  <title>Gallery · Orrery</title>
-  <meta
-    name="description"
-    content="Orrery's visual collections — deep-sky imagery, original space posters, and authentic mission insignia."
-  />
+  <title>{m.layout_footer_gallery()} · Orrery</title>
+  <meta name="description" content={m.gallery_meta_description()} />
 </svelte:head>
 
 <article class="gallery-hub" data-route-ready="true">
@@ -67,11 +64,9 @@
       </div>
       <div class="strip-scrim"></div>
       <div class="strip-text">
-        <h2>Deep-Sky</h2>
-        <p>
-          The universe's greatest hits, as seen by the great observatories — Webb, Hubble, Chandra.
-        </p>
-        <span class="go">Browse the sky →</span>
+        <h2>{m.deepsky_name()}</h2>
+        <p>{m.gallery_deepsky_body()}</p>
+        <span class="go">{m.gallery_deepsky_cta()}</span>
       </div>
     </a>
 

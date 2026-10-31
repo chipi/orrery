@@ -1,0 +1,1104 @@
+[
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Psyche vise le noyau de nickel-fer exposé d'une proto-planète différenciée — un corps métallique de 226 km qui pourrait être l'analogue le plus proche du noyau terrestre qu'il soit possible d'atteindre. Lancée le 2023-10-13 sur une Falcon Heavy depuis le LC-39A de Kennedy. Quatre propulseurs ioniques à effet Hall SPT-140 font spiraler la trajectoire vers l'extérieur ; une assistance gravitationnelle de Mars en mai 2026 (approche minimale à 4 609 km) a apporté l'énergie que la seule poussée ionique n'aurait pas pu fournir à temps. Arrivée prévue en 2029-08, suivie d'une descente de 26 mois en quatre phases orbitales (A → B → C → D) cartographiant la gravité, le magnétisme, la topographie et la composition de l'astéroïde. Si l'hypothèse du noyau métallique est juste, Psyche ne ressemblera à rien de ce que nous avons déjà visité — surface de métal nu, dépôts de sulfure de fer, aucun du chaos d'amas de débris typique des astéroïdes.",
+    "note": "'semblera comme rien' ungrammatical; clumsy phrasing"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Combine les architectures de Chang'e 4 (communications avec la face cachée) et de Chang'e 5 (retour d'échantillons). Le satellite relais Queqiao-2 a été lancé en premier (mars 2024) pour appuyer la mission. Chang'e 6 a ensuite prélevé 1,935 kg dans le cratère Apollo, sur la face cachée — un matériau de composition très différente de tout échantillon lunaire rapporté jusqu'ici. Les deux hémisphères de la Lune sont radicalement différents (la face cachée a une croûte plus épaisse et moins de mers) ; ces échantillons pourraient enfin expliquer pourquoi.",
+    "note": "'côté éloigné', 'moins de mare', 'renvoyé' awkward or wrong"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Juno est entrée en orbite de Jupiter le 2016-07-05, sur une trajectoire polaire très elliptique de 53 jours qui la fait passer de l'intérieur des ceintures de radiations (périjove à ~4 200 km au-dessus des sommets des nuages) jusqu'au-delà de Callisto. Alimentée à l'énergie solaire — ses panneaux triple-jonction d'environ 50 m² fournissent 14 kW au niveau de la Terre mais seulement ~500 W à Jupiter, première utilisation de l'énergie solaire à une telle distance. Elle a confirmé que Jupiter possède un noyau rocheux dilué (sans frontière nette), mesuré la disposition des cyclones polaires (huit tempêtes circumpolaires autour de chaque pôle) et photographié en 2023 le volcanisme d'Io avec un niveau de détail sans précédent. La mission étendue comprend des survols des quatre lunes galiléennes jusqu'en 2025.",
+    "note": "ISO date rewritten as 05-07-2016; 'a imagé' anglicism"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Vol de 6 orbites de Wally Schirra — le double de la durée des missions de Glenn et de Carpenter. Schirra a qualifié son vol de « test d'ingénierie dans les règles de l'art » — charge expérimentale minimale, priorité à la conservation des consommables, validation du vaisseau pour des durées plus longues. Durée du vol : 9 h 13 min ; paramètres orbitaux : 161 × 283 km. Amerrissage à ~445 km au NE de Midway, dans le Pacifique — premier vol Mercury à amerrir dans le Pacifique. Aurora 7 avait consommé 38 kg de gaz de contrôle d'attitude ; Schirra n'en a utilisé que 32 kg avec une durée de vol double. La capsule Sigma 7 est exposée à l'Astronaut Memorial Planetarium and Observatory, à Cocoa (FL).",
+    "note": "Splashdown rendered as 'amarrage' (docking), twice"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Dernière mission lunaire soviétique ; dernier alunissage sans équipage pendant 37 ans",
+    "note": "'uncrewed' mistranslated as 'habité zéro'"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Atlas SLV-3C / Centaur depuis le pas de tir LC-36B de Cap Canaveral.",
+    "note": "'le pas LC-36B' drops 'de tir'"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Avec le dernier vol Gemini, un problème restait entier : les sorties extravéhiculaires ne fonctionnaient pas. Les vols entre Ed White et Gemini 12 avaient fait des EVA une série de quasi-échecs épuisants — des astronautes qui luttaient pour chaque mouvement, surchauffaient, manquaient de temps. Buzz Aldrin y a remédié, et le remède tenait à la préparation : il a répété l'ensemble sous l'eau jusqu'à en faire une routine, et le vaisseau a été équipé de poignées, de cale-pieds et de longes pour qu'il ait un appui contre lequel travailler. Pendant plus de cinq heures à l'extérieur, il a accompli des tâches ordinaires avec calme et est rentré sans être à bout de forces — preuve que l'EVA pouvait être rendue fiable. C'était le dernier point de la liste de contrôle de Gemini ; avec lui, le programme s'est achevé, ayant appris à la NASA tout ce dont la Lune aurait besoin.",
+    "note": "'near-failures' rendered as plain 'échecs'"
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "variant: rentrée"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Première mission planétaire conjointe Europe + Japon ; deuxième vaisseau spatial de l'histoire à se placer en orbite autour de Mercure (après Messenger)",
+    "note": "transitive 'orbiter Mercure' is not French"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Signal perdu ~110 s après l'atterrissage (la transmission a duré ~14,5 s). Cause non confirmée ; la tempête de poussière en est la principale suspecte.",
+    "note": "missing articles in 'tempête de poussière principal suspect'"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.10.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Le module de commande amerrit dans le Pacifique Nord, 1971-08-07 20:46 UTC. Un des trois parachutes principaux ne s'est pas entièrement déployé ; amerrissage brutal mais sans danger. Récupération par l'USS Okinawa.",
+    "note": "Atlantic instead of Pacific; 'amarri'; broken grammar"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.7.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Premiers humains à quitter l'orbite terrestre basse + à se mettre en orbite autour de la Lune",
+    "note": "transitive 'orbiter la Lune' is not French"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Avec Apollo 15, la course était terminée depuis longtemps, et la science a pris le volant — au sens propre. Ce fut le premier vol à emporter le Lunar Rover, qui a fait passer un rayon de marche de deux miles (3 km) à une véritable expédition de terrain de dix-huit miles (29 km), et la mission s'est posée non sur une plaine plate et sûre mais dans une vallée entre une chaîne de montagnes et un canyon sinueux. Scott et Irwin sont rentrés avec la « Genesis Rock », un éclat vieux de quatre milliards d'années de la croûte lunaire originelle, qui a confirmé comment celle-ci s'était formée. Apollo avait cessé de visiter la Lune pour se mettre à l'étudier — et il n'a cessé de s'y améliorer jusqu'à son annulation.",
+    "note": "'confirmed how it formed' weakened; 'sécuritaire'; miles silently converted"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "variant: first stage"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Premier rendez-vous habité — le vaisseau se maintient à poste à moins de ~30 cm de Gemini 7.",
+    "note": "'maintient une station' unclear calque of station-keeps"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Spirit avait été conçu pour quatre-vingt-dix jours et a fonctionné six ans. Posé en 2004, l'un d'une paire de géologues de la taille d'une voiturette de golf, il avait été envoyé lire les roches à la recherche de preuves d'un passé martien plus humide — et il en a trouvé, mettant au jour des minéraux qui ne se forment que dans l'eau et, à un endroit, des dépôts de silice semblables à ceux que laissent les sources chaudes sur Terre. Il a gravi des collines que personne n'avait prévu qu'il atteigne et survécu à des hivers qu'il n'était pas censé voir, jusqu'à ce qu'une roue lâche et qu'il s'enlise dans du sable meuble. Il a continué à transmettre depuis l'endroit où il était coincé, jusqu'à ce que le froid martien finisse par l'emporter.",
+    "note": "Ungrammatical clauses; 'le retire' for 'took it'; wrong agreement"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Wally Schirra et Tom Stafford ont réalisé le premier rendez-vous spatial habité le 15 décembre 1965, se maintenant à poste à moins de ~30 cm de Gemini 7 pendant plus de cinq heures. Il faisait suite à un arrêt des moteurs sur le pas de tir trois jours plus tôt, lors duquel Schirra avait choisi de ne pas déclencher l'abandon. Durée ~1 j 1 h ; 16 orbites.",
+    "note": "Calque 'maintenant une station'; ambiguous relative clause; tense mix"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Premier engin spatial à se placer en orbite autour de Mercure ; première carte complète de la surface de la planète la plus intérieure",
+    "note": "transitive 'orbiter Mercure' is not French"
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Premier engin spatial à se placer en orbite autour de la Lune (et de tout corps autre que la Terre)",
+    "note": "transitive 'orbiter la Lune' is not French"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "variant: rentrée"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "Ariane 1 décolle de Kourou avec Giotto — première mission de l'ESA dans l'espace lointain.",
+    "note": "'décole' is a typo; article oddly placed"
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Skylab 3 a saisi la question de l'endurance et a presque doublé la réponse. Là où le premier équipage était resté 28 jours, l'équipage d'Alan Bean en a passé 59 — poussant le corps humain plus loin dans l'apesanteur de longue durée que personne ne l'avait fait, et rentrant en meilleure santé que ne le craignaient les pessimistes. Il a engrangé une énorme moisson d'observations solaires avec l'Apollo Telescope Mount et traversé une alerte lorsque des fuites de propulseurs sur leur vaisseau Apollo de liaison ont brièvement fait envisager un vol de sauvetage. Skylab 3 est le moment où les longs séjours dans l'espace ont commencé à paraître non seulement supportables mais routiniers — le travail de fond discret derrière chaque séjour de plusieurs mois en station depuis.",
+    "note": "'navette Apollo' misleads (shuttle); calque 'soulevé la perspective'"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Intrepid décolle après 31 h 31 m en surface. 34 kg d'échantillons ramenés.",
+    "note": "'ramené' fails to agree with 'échantillons'"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Descente à poussée modulée du BE-7 vers la surface lunaire — premier atterrissage lunaire de Blue Origin.",
+    "note": "'throttled' rendered as 'accélérée' (accelerated)"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Sixième vol du X-37B — premier sous la nouvelle désignation organisationnelle de l'USSF ; record de 908 jours en orbite (~2,5 ans). Lancé le 2020-05-17 à 13:14 UTC depuis CCAFS SLC-41 sur Atlas V 501 AV-081 ; atterri à KSC SLF le 2022-11-12 à 10:22 UTC. Il emportait le PRAM du Naval Research Laboratory (Photovoltaic RF Antenna Module — expérience de 1 W de conversion d'énergie solaire en faisceau de micro-ondes) et un déployeur FalconSAT-8 de l'AFRL.",
+    "note": "Garbled 'micro-ondes solaires'; 'dispenseur' anglicism for deployer"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Apollo 10 a effectué tout l'atterrissage — jusqu'aux quinze derniers kilomètres — puis, volontairement, a fait demi-tour. Stafford et Cernan ont amené le module lunaire à un jet de pierre de la surface, à Tranquility, ont exécuté chaque étape de la descente, puis sont remontés en orbite sans se poser. La NASA est même allée jusqu'à laisser les réservoirs de remontée à moitié vides, afin que, quelle que soit la tentation, aller jusqu'au bout ne soit jamais une option. C'est le vol le moins célébré du programme et l'un des plus disciplinés : une répétition à pleine vitesse menée par deux hommes qui ont parcouru un quart de million de miles en sachant que l'atterrissage reviendrait à quelqu'un d'autre.",
+    "note": "'portée de pierre' is a wrong idiom; missing article before NASA"
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Troyen de type P de 21 km avec un satellite non nommé.",
+    "note": "'P-type' left in English; 'sans nom' awkward"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Après deux vols qui s'étaient terminés par des frayeurs, Sigma 7 a été celui qui était ennuyeux à dessein — et c'était là l'exploit. Wally Schirra l'a qualifié de test d'ingénierie dans les règles de l'art et l'a piloté comme tel : expériences réduites au minimum, conservation soigneuse de chaque kilogramme de carburant et de chaque ampère d'électricité, six orbites passées à prouver que le vaisseau pouvait être exploité avec discipline plutôt que dompté de force. Il a amerri pratiquement sur le porte-avions de récupération. Dans un programme qui avait improvisé sous pression, Sigma 7 a montré que les Américains avaient appris à piloter l'engin calmement — condition préalable aux missions bien plus longues à venir.",
+    "note": "Splashdown rendered as 'amarré' (docked) above the carrier"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "La capsule atterrit en Mongolie-Intérieure le 2024-06-25 avec les premiers échantillons de la face cachée jamais récupérés.",
+    "note": "ISO date rewritten as 25/06/2024"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Plus longue survie en surface de toute mission vers Vénus (127 min) ; premières images panoramiques en couleur et premier enregistrement audio depuis la surface d'une autre planète",
+    "note": "'premières panoramiques' drops 'images'; 'audio' bare"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Suivi des structures nuageuses en UV/IR ; études de la super-rotation ; ondes de gravité en forme d'arc au-dessus d'Aphrodite Terra. Contact perdu en 2024 ; opérations déclarées terminées le 2025-09-18.",
+    "note": "'Terra Aphrodite' reverses the IAU name Aphrodite Terra"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "DÉMONSTRATEUR D'ENTRÉE ATMOSPHÉRIQUE, DE DESCENTE ET D'ATTERRISSAGE · ÉCRASÉ",
+    "note": "Entire field left in English"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Approche minimale de la comète 1P/Halley à 8890 km — première observation d'un noyau cométaire.",
+    "note": "'Approche maximale' for closest approach is wrong"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Rover martien ayant parcouru la plus grande distance (45,16 km) ; 14 ans de vie en surface pour une durée de conception de 90 sols",
+    "note": "'une conception pour 90 sols' is clumsy"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Premier vol Mercury dans les règles de l'art — 6 orbites ; durée double de celles de Glenn et Carpenter",
+    "note": "'selon les règles' misses 'textbook'"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "En orbite autour de la Lune depuis 2009 à une altitude lunaire moyenne de 50 km, la caméra à champ étroit de LRO prend des images à 50 cm/pixel — une résolution suffisante pour distinguer les étages de descente d'Apollo, les traces des rovers et les sentiers des astronautes, encore conservés dans le régolithe. Elle a retrouvé Lunokhod 1 trente-neuf ans après que le rover s'est tu. Elle a identifié plus de 200 sites d'atterrissage candidats pour Artemis. Les dépôts de glace d'eau du pôle sud lunaire, qui motivent tous les programmes lunaires modernes, ont été quantifiés par les instruments de LRO. Une mission d'éclaireur devenue le fondement de l'ère lunaire moderne.",
+    "note": "English verb 'images' left in; 'devenu sombre' wrong; 'haute' resolution"
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "CSM-118 a amerri dans le Pacifique 1974-02-08 15:17 UTC — dernier amerrissage de Skylab.",
+    "note": "Missing auxiliary: 'CSM-118 amerri'"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.7.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Phoenix a été récupéré du programme annulé Mars Surveyor 2001 — du matériel de vol resté six ans en stockage, réassemblé et redirigé vers les plaines polaires nord de Mars. Le nom a été choisi au sens littéral. Atterrissage le 2008-05-25 à 68,22°N, 234,25°E sur Vastitas Borealis, plus au nord que toute mission de surface précédente. En quelques jours, le bras robotisé a gratté la couche superficielle du sol et mis à nu une glace d'un blanc éclatant qui s'est visiblement sublimée devant la caméra en quatre sols — confirmation directe de la présence de glace d'eau sous la surface dans l'Arctique martien. Il a détecté des perchlorates dans le régolithe et observé de la neige tombant des nuages. La mission s'est achevée le 2008-11-02, lorsque l'énergie solaire est tombée sous le seuil de fonctionnement au début de l'hiver martien ; l'atterrisseur n'avait jamais été censé survivre à la nuit polaire.",
+    "note": "'couche arable' means farmland topsoil; dates rewritten from ISO"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "2008-11-02. Hiver martien ; énergie solaire sous le seuil opérationnel.",
+    "note": "ISO date rewritten as '2 novembre 2008'"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "MAVEN — Mars Atmosphere and Volatile Evolution — répond à la question « où est passé l'air de Mars ? » Son orbite elliptique plonge dans la haute atmosphère, où elle échantillonne les ions et les neutres que le vent solaire arrache. Résultats : Mars perd environ 100 g d'atmosphère par seconde dans l'espace — sur des milliards d'années, de quoi expliquer le climat disparu. La sonde sert aussi de relais essentiel pour les engins en surface, dont Curiosity et Perseverance.",
+    "note": "Closing guillemet missing; 'actifs de surface' calque of 'assets'"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Première des trois assistances gravitationnelles terrestres pour gagner de la vitesse en vue du rendez-vous avec la comète.",
+    "note": "'Premier' fails to agree with 'assistances'; 'vélocité' calque"
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Injection trans-Mars à partir de l'état LEO, réservoirs entièrement remplis.",
+    "note": "'alimenté' means powered, not fuelled"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Spirit (MER-A) a rebondi 28 fois sur le fond du cratère Gusev le 2004-01-04 et s'est immobilisé à 250 m de son premier impact. Conçu pour une mission primaire de 90 sols, il allait survivre pendant 2 208 sols. Il a parcouru 7,7 km à travers les plaines de Gusev, gravi les Columbia Hills et mis au jour des roches à hématite qui signalaient la présence persistante d'eau dans un passé lointain. En 2009-04, une roue a percé une croûte de sulfate à « Troy » et Spirit s'est immobilisé dans un sol meuble ; l'équipe l'a transformé en plateforme stationnaire. Dernière transmission le 2010-03-22 ; mission déclarée terminée le 2011-05-25. Jumeau d'Opportunity, qui s'est posé trois semaines plus tard de l'autre côté de Mars.",
+    "note": "'aurait survécu' conditional contradicts fact; missing 'à'"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Le rover entre en dormance prévue en 2022-05 ; l'orbiteur poursuit ses opérations.",
+    "note": "Missing article; capital after semicolon"
+  },
+  {
+    "rel": "missions/earth/skylab-2.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Apollo 13 n'a jamais aluni, et c'est la mission dont tout le monde se souvient. À deux jours du départ, un réservoir d'oxygène s'est déchiré de lui-même et a transformé un vol de routine vers les hautes terres de Fra Mauro en quatre jours à lutter pour garder trois hommes en vie dans un vaisseau mourant, à un quart de million de miles de chez eux. Ce qui les a sauvés n'était pas de l'héroïsme ; c'était la préparation et une salle pleine de gens qui travaillaient le problème en temps réel, improvisant de quoi respirer et un moyen de rentrer avec ce qui était déjà boulonné au véhicule. La NASA a parlé d'un « échec réussi ». Il est plus proche de la vérité de dire que c'est le vol qui a prouvé que l'agence valait ce qu'elle prétendait valoir.",
+    "note": "Miles became kilometres (wrong distance); broken verb; 'succès avec échec'"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Atlas-Centaur lance Pioneer 10 en trajectoire directe vers Jupiter.",
+    "note": "'élève ... en ascension directe' is a calque"
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Soyuz 1 est le vol qui a tué un cosmonaute, et il n'aurait jamais dû avoir lieu. Le nouveau vaisseau Soyuz a été mis en service dans la précipitation, sous pression politique, avec des centaines de défauts connus et non résolus — les ingénieurs auraient supplié qu'on reporte — et, en orbite, il s'est mis à défaillir : un panneau solaire refusait de se déployer, le contrôle d'attitude luttait contre le pilote. Vladimir Komarov l'a ramené quand même, et à la rentrée les parachutes se sont emmêlés et ont lâché. Il a heurté le sol à pleine vitesse. Ce fut le premier mort de l'histoire du vol spatial habité, et sa cause tenait moins à la malchance qu'à un programme qui ne pouvait pas se permettre d'admettre que sa machine n'était pas prête — l'échec exact vers lequel avait toujours mené la culture des premières secrètes, où il fallait réussir à tout prix.",
+    "note": "Final clause garbled ('premières cachées ... s'était construite')"
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "La grue volante dépose le rover dans le cratère Jezero le 2021-02-18 — site d'un ancien delta fluvial.",
+    "note": "'délivre' is the wrong verb for delivering"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Le rendez-vous — deux engins spatiaux qui se trouvent et se rejoignent en orbite — était la compétence dont Apollo ne pouvait se passer, et c'est avec Gemini 6A qu'elle a été réalisée pour la première fois. Le vol a failli ne jamais avoir lieu : sa cible initiale a explosé en route vers l'orbite, puis, alors que l'équipage était sanglé pour le lancement reprogrammé, les moteurs du Titan se sont allumés puis éteints brutalement sur le pas de tir — un moment où le règlement disait d'éjecter, et Wally Schirra, ne sentant aucun mouvement, a calmement choisi de ne pas le faire. Trois jours plus tard, la mission a décollé et accompli ce qui n'avait jamais été fait : rattraper Gemini 7 et se maintenir à poste à trente centimètres, les équipages assez proches pour lire les expressions de leurs visages. Cela paraissait facile et ne l'était pas du tout — la mécanique orbitale pour rattraper un autre engin est profondément contre-intuitive — et la maîtriser a été le moment où le rendez-vous en orbite lunaire, et tout le plan Apollo, sont devenus réels.",
+    "note": "'sur l'aire' cut off; dangling 'sanglés'; calque 'maintenir une station'"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Une unique assistance gravitationnelle terrestre amorce la chaîne d'assistances gravitationnelles du système solaire interne.",
+    "note": "Missing article; 'intra-système' is an odd calque"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/skylab-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  }
+]

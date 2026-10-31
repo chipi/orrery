@@ -40,10 +40,6 @@
   } from '$lib/quality/frame-monitor';
   import type { FlyUpdaters } from '$lib/three/fly-updaters';
   import {
-    computeMissionApply,
-    computeScenarioApply,
-    computePlanApply,
-    computePlanApplyMoon,
     type LoadedMission,
     type MissionApplyDefaults,
     type TrajectoryOverride,
@@ -69,7 +65,7 @@
     getFleetIndex,
     getFleetGallery,
   } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { missionDestToDataFolder } from '$lib/mission-dest';
   import {
     auToMkm,
@@ -107,7 +103,32 @@
   import type { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
   import { type PlanetId as FlybyPlanetId } from '$lib/orbital/flyby-camera-plan';
   import { type ShotKind } from '$lib/orbital/flyby-shots';
-  import { biasJumpToIconicMoment } from '$lib/orbital/jump-to-met-bias';
+  import { installFlyTestHooks } from '$lib/fly/fly-test-hooks';
+  import {
+    applyMissionToPage,
+    applyPlanSelectionMoonToPage,
+    applyPlanSelectionToPage,
+    applyScenarioToPage,
+    type FlyApplyContext,
+  } from '$lib/fly/apply-to-page';
+  import {
+    coastAscentFraction,
+    cruiseTickPercent,
+    descentSeparationTimes,
+    isCinematicCutJump,
+    isOrbitInsertionBeatActive,
+    isOrbitInsertionFiring,
+    jumpToMet as jumpToMetImpl,
+    launchSeparationTimes,
+    masterScrubFraction,
+    masterScrubTarget,
+    type JumpToMetContext,
+  } from '$lib/fly/fly-clock';
+  import {
+    anomalyLevel as deriveAnomalyLevel,
+    dvRemaining as deriveDvRemaining,
+    pastEvents as derivePastEvents,
+  } from '$lib/fly/capcom';
   import { PLANET_SIZES } from '$lib/orbital/find-flyby-planet';
 
   import {
@@ -127,6 +148,9 @@
   import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
+  import { hudLabel } from '$lib/orbital/hud-labels';
+  import { destinationLabel } from '$lib/destination-label';
+  import { qualityTierLabel } from '$lib/quality/quality-tier-label';
   import { cue } from '$lib/sensory/feedback';
   import { sensory } from '$lib/sensory/state.svelte';
   import { flyVelocitySon } from '$lib/sensory/sonify/fly-velocity';
@@ -153,13 +177,10 @@
   } from '$lib/physics/descent/descent-physics';
   import {
     makeTimeline,
-    scrubberToPoint,
-    pointToScrubber,
     ASCENT_SPEED_MULTIPLIERS,
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
-  import { terminalStartTime, unwarpDescentTime } from '$lib/orbital/descent-timewarp';
   import { T_MINUS_S, INJECTION_COAST_S, INJECTION_BURN_S } from '$lib/orbital/ascent-hud';
   import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
   import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
@@ -235,7 +256,7 @@
   // are now derived from it, and every transition goes through the pure,
   // unit-tested reducer via dispatchPhase(). The show* flags depend only on
   // flyAct (declared first), so no forward-ref TDZ hazard. See the A0 contract in
-  // docs/wip/2026-08-05-fly-restructure-plan.md + flight-phase-controller.ts.
+  // docs/wip/_archive/2026-08-05-fly-restructure-plan.md + flight-phase-controller.ts.
   let flyAct = $state<FlyAct>('opening');
   const showLaunch = $derived(flyAct === 'ascent');
   const showCoast = $derived(flyAct === 'coast');
@@ -294,7 +315,7 @@
   let launchDossier = $derived({
     name: mission.name,
     agency: mission.agency ?? mission.agency_full ?? '',
-    site: launchProfile?.launchSite?.name ?? 'Launch complex',
+    site: launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
     destination: mission.arr_label ?? '',
     spacecraftId: mission.id,
     injectionBurn: launchInjectionBurn,
@@ -451,22 +472,22 @@
   });
   function edlSystemLabel(p: DescentProfile): string {
     const kinds = new Set<EDLPhaseKind>(p.phases.map((x) => x.kind));
-    if (kinds.has('touch_and_go_contact')) return 'Touch-and-go';
-    if (p.body === 'comet_67p') return 'Harpoon landing';
-    if (p.body === 'jupiter') return 'Atmospheric probe';
-    if (p.body === 'titan') return 'Parachute descent';
-    if (kinds.has('skycrane')) return 'Sky-crane';
-    if (kinds.has('airbag_bounce')) return 'Airbags';
-    if (kinds.has('aeroshell_descent')) return 'Aeroshell';
-    if (kinds.has('parachute') && kinds.has('powered_retro')) return 'Parachute + retro';
-    if (kinds.has('powered_retro')) return 'Powered retro';
+    if (kinds.has('touch_and_go_contact')) return m.edl_touch_and_go();
+    if (p.body === 'comet_67p') return m.edl_harpoon();
+    if (p.body === 'jupiter') return m.edl_atmospheric_probe();
+    if (p.body === 'titan') return m.edl_parachute_descent();
+    if (kinds.has('skycrane')) return m.chip_label_skycrane();
+    if (kinds.has('airbag_bounce')) return m.edl_airbags();
+    if (kinds.has('aeroshell_descent')) return m.edl_aeroshell();
+    if (kinds.has('parachute') && kinds.has('powered_retro')) return m.edl_parachute_retro();
+    if (kinds.has('powered_retro')) return m.edl_powered_retro();
     // A capsule with lift steers its entry (ADR-088): a guided one solves a bank to a target
     // downrange (Apollo/Soyuz/Dragon); a lift-up one just caps peak-g. Only a truly lift-free
     // capsule (Mercury/Vostok/Voskhod) is ballistic.
     if ((p.liftToDragRatio ?? 0) > 0) {
-      return p.targetDownrangeKm != null ? 'Lifting (guided)' : 'Lifting';
+      return p.targetDownrangeKm != null ? m.edl_lifting_guided() : m.edl_lifting();
     }
-    return 'Ballistic';
+    return m.edl_ballistic();
   }
   let descentDossier = $derived(
     descentProfile
@@ -489,7 +510,7 @@
     const b = descentProfile?.body;
     const sid = descentProfile?.siteId;
     if ((b === 'moon' || b === 'mars' || b === 'venus') && sid) {
-      void goto(`${base}/${b}?site=${sid}&from=descent`);
+      void goto(localHref(`/${b}?site=${sid}&from=descent`));
     } else {
       // Earth re-entry has no surface-explore route — the reducer routes touchdown
       // by descentBody: earth → the recovery card; anything else stays put (the
@@ -509,8 +530,8 @@
   let recoveryOutcome = $derived.by(() => {
     const ok = descentSummaryFly?.touchdownSuccess ?? true;
     const splash = earthCoast ? SPLASHDOWN_CAPSULES.has(earthCoast.capsuleId) : true;
-    if (!ok) return { eyebrow: 'IMPACT', fail: true };
-    return { eyebrow: splash ? 'SPLASHDOWN · RECOVERY' : 'TOUCHDOWN · RECOVERY', fail: false };
+    if (!ok) return { eyebrow: m.hud_impact(), fail: true };
+    return { eyebrow: splash ? m.hud_recovery_splash() : m.hud_recovery_land(), fail: false };
   });
   /** Opening CTA (landing missions only): jump straight to the EDL act, past the
    *  launch + cruise — the descent counterpart of startLaunch. */
@@ -1167,26 +1188,27 @@
     // give the RETURN ring an "Earth arrival" subtitle. One-way
     // missions keep the original arr_label behaviour because their
     // arrival ring genuinely sits at the labelled point.
-    const destDisplay = dest.charAt(0).toUpperCase() + dest.slice(1);
-    const arrSubLabel = isRoundTrip ? `${destDisplay} arrival` : arrLabelData;
+    const arrSubLabel = isRoundTrip
+      ? m.hud_body_arrival({ body: destinationLabel(dest) })
+      : arrLabelData;
     if (isRoundTrip) {
       flyUpdaters.helio.refreshLabelSprites(
-        'LAUNCH',
+        m.fly_event_launch(),
         depLabel,
         '#4b9cd3',
-        'ARRIVAL',
+        m.fly_event_arrival(),
         arrSubLabel,
         arrColor,
-        'RETURN',
-        'Earth arrival',
+        m.hud_return(),
+        m.hud_body_arrival({ body: m.lab_body_earth() }),
         '#4b9cd3',
       );
     } else {
       flyUpdaters.helio.refreshLabelSprites(
-        'LAUNCH',
+        m.fly_event_launch(),
         depLabel,
         '#4b9cd3',
-        'ARRIVAL',
+        m.fly_event_arrival(),
         arrSubLabel,
         arrColor,
       );
@@ -1298,50 +1320,15 @@
   );
 
   // ─── Test-only readiness hooks (ADR-056) — issue #133 ────────────
-  // `window.__flyArcHash` + `window.__fly2DArcHash` are introspection
-  // functions for the fly-render-validation e2e suite. Both return
-  // `null` while hydrating (outPts not yet populated) and the stable
-  // outVertexHash string once the current mission's geometry has
-  // settled. Reading from reactive `$state` at CALL TIME (not at
-  // closure-capture time) means there's no microtask gap between
-  // Svelte's reactive flush and what the test sees — fixes the
-  // pre-v0.6.2 flake where the e2e poll read the DOM attribute
-  // mid-flush and got the previous mission's hash.
-  //
-  // The 3D and 2D views share `outPts` / `retPts` as their geometry
-  // source; only the projection differs. So both hashes reflect the
-  // same math invariant — assertions like `s2d.hash === s3d.hash`
-  // collapse to "the 2D toggle didn't accidentally re-derive the
-  // arc from a different source".
-  $effect(() => {
-    if (typeof window === 'undefined') return;
-    const w = window as unknown as {
-      __flyArcHash?: () => string | null;
-      __fly2DArcHash?: () => string | null;
-      __flyMissionId?: () => string | null;
-    };
-    // Hash returns null until BOTH conditions hold:
-    //   (a) an apply* function has committed a mission/scenario to
-    //       page state (lastAppliedMissionId !== null) — distinguishes
-    //       "page rendered with default state" from "URL load
-    //       resolved", which is the race that bit v0.6.1.
-    //   (b) outPts has been built (length ≥ 11 — the hash samples 11
-    //       vertices).
-    const hashOrNull = (): string | null =>
-      lastAppliedMissionId === null || outPts.length < 11 ? null : outVertexHash;
-    w.__flyArcHash = hashOrNull;
-    w.__fly2DArcHash = hashOrNull;
-    // Mission ID lets the test verify the URL-requested mission is the
-    // one currently rendered (not the static default). Tests that load
-    // `/fly?mission=X` should await `__flyMissionId() === 'X'` before
-    // reading the hash.
-    w.__flyMissionId = () => lastAppliedMissionId;
-    return () => {
-      delete w.__flyArcHash;
-      delete w.__fly2DArcHash;
-      delete w.__flyMissionId;
-    };
-  });
+  // `window.__flyArcHash` / `__fly2DArcHash` / `__flyMissionId` — installed from
+  // $lib/fly/fly-test-hooks; they ship in the prod bundle (e2e runs against it).
+  $effect(() =>
+    installFlyTestHooks({
+      lastAppliedMissionId: () => lastAppliedMissionId,
+      outPtsLength: () => outPts.length,
+      outVertexHash: () => outVertexHash,
+    }),
+  );
 
   // Mission elapsed time = days since the simulation departed the arc's
   // start, mapped to the loaded mission's apparent transit time so the
@@ -1429,29 +1416,14 @@
   // surface the scenario's headline numbers without re-running an
   // optimal-burn schedule. A future slice with per-burn data could
   // refine this into a live consume-as-you-go ledger.
-  let dvRemaining = $derived(
-    mission.dv_used == null ? null : Math.max(0, mission.dv_total - mission.dv_used),
-  );
+  let dvRemaining = $derived(deriveDvRemaining(mission.dv_total, mission.dv_used));
 
-  // ─── CAPCOM derivations ──────────────────────────────────────────
+  // ─── CAPCOM derivations (pure logic in $lib/fly/capcom) ──────────
   // Past events (met ≤ current met), most-recent-first.
-  let pastEvents = $derived(
-    missionEvents
-      .filter((e) => e.met <= met)
-      .slice()
-      .reverse(),
-  );
-  // Anomaly state — collapses past `warning` events into a worst-case
-  // banner. CAUTION when a warning is present, NOMINAL otherwise; we
-  // promote to CRITICAL when a real ∆v ledger leaves under 0.3 km/s (the
-  // prototype's threshold). Missions carry no ledger (dv_used null).
-  let anomalyLevel = $derived<'nominal' | 'caution' | 'critical'>(
-    dvRemaining != null && dvRemaining < 0.3
-      ? 'critical'
-      : pastEvents.some((e) => e.type === 'warning')
-        ? 'caution'
-        : 'nominal',
-  );
+  let pastEvents = $derived(derivePastEvents(missionEvents, met));
+  // Anomaly state — worst-case banner from past `warning` events and the ∆v
+  // ledger (missions carry no ledger: dv_used null).
+  let anomalyLevel = $derived(deriveAnomalyLevel(dvRemaining, pastEvents));
   let anomalyLabel = $derived(
     anomalyLevel === 'critical'
       ? m.fly_capcom_anomaly_critical()
@@ -1572,19 +1544,18 @@
       ? null // landers descend; they don't capture into orbit
       : resolveOrbitInsertion(mission.dest, mission.flight?.arrival?.orbit_insertion_dv_km_s),
   );
-  const OI_WINDOW_DAYS = 5; // the capture-burn window straddling arrival
   let oiBeatActive = $derived(
     !!orbitInsertion &&
-      !showLaunch &&
-      !showDescent &&
-      simDay >= arcTimeline.arr_day - OI_WINDOW_DAYS &&
-      simDay <= arcTimeline.arr_day + 1,
+      isOrbitInsertionBeatActive({
+        showLaunch,
+        showDescent,
+        simDay,
+        arrDay: arcTimeline.arr_day,
+      }),
   );
   /** Burn firing — the last half of the window into arrival (the retro burn). */
   let oiFiring = $derived(
-    !!orbitInsertion &&
-      simDay >= arcTimeline.arr_day - OI_WINDOW_DAYS / 2 &&
-      simDay <= arcTimeline.arr_day + 0.5,
+    !!orbitInsertion && isOrbitInsertionFiring({ simDay, arrDay: arcTimeline.arr_day }),
   );
 
   // The descent act (RFC-034 §9): integrate the EDL profile and give it the
@@ -1597,42 +1568,11 @@
   // the launch clock's base; descent times are in *trajectory* time, so they're
   // unwarped into raw-scrubber time to align with where the sep actually renders
   // (the descent scene warps its sample clock — descent-timewarp.ts).
-  let launchSepTimes = $derived(
-    launchSummaryFly
-      ? launchSummaryFly.events
-          .filter((e) => e.type === 'staging' || e.type === 'fairing_jettison' || e.type === 'seco')
-          .map((e) => e.t)
-      : [],
-  );
-  let descentSepTimes = $derived.by(() => {
-    if (!descentSummaryFly) return [] as number[];
-    const dur = descentSummaryFly.totalDurationS;
-    const tB = terminalStartTime(descentSummaryFly.states, dur);
-    const beats = new Set([
-      'entry_flip',
-      'parachute_deploy',
-      'heatshield_sep',
-      'backshell_sep',
-      'skycrane_lower',
-      'skycrane_flyaway',
-      'retro_ignition',
-      'airbag_deploy',
-      'touchdown',
-    ]);
-    return descentSummaryFly.events
-      .filter((e) => beats.has(e.type))
-      .map((e) => unwarpDescentTime(e.t, dur, tB));
-  });
+  let launchSepTimes = $derived(launchSeparationTimes(launchSummaryFly));
+  let descentSepTimes = $derived(descentSeparationTimes(descentSummaryFly));
   // Compressive coast-band width (RFC-034 §13): a 1-orbit hop and an 84-day
-  // marathon shouldn't own the same slice of the scrubber. Shrink the ascent
-  // fraction with log(coast hours) so the coast band *widens* with real duration
-  // (~0.71 for one orbit → ~0.80 for months), bounded so the launch stays
-  // scrubbable. Interplanetary missions keep the default 0.15.
-  let coastAscentFrac = $derived(
-    earthCoast
-      ? Math.max(0.1, Math.min(0.2, 0.2 - 0.03 * Math.log10(Math.max(1, coastDurationDays * 24))))
-      : 0.15,
-  );
+  // marathon shouldn't own the same slice of the scrubber (see fly-clock).
+  let coastAscentFrac = $derived(coastAscentFraction(!!earthCoast, coastDurationDays));
   let masterTimeline: JourneyTimeline = $derived(
     makeTimeline(
       launchDurationS,
@@ -1662,34 +1602,17 @@
   let activeSpeed = $derived(showLaunch ? launchSpeed : showDescent ? descentSpeed : simSpeed);
   // The scrubber fraction for the live phase (∈ [0,1]).
   let masterU = $derived(
-    showLaunch
-      ? pointToScrubber(
-          { phase: 'ascent', ascentT: Math.max(0, launchT), cruiseMetDays: 0 },
-          masterTimeline,
-        )
-      : showDescent
-        ? pointToScrubber(
-            {
-              phase: 'descent',
-              ascentT: launchDurationS,
-              cruiseMetDays: earthCoast ? coastDurationDays : arcTotalDays,
-              descentT: Math.max(0, descentT),
-            },
-            masterTimeline,
-          )
-        : showCoast
-          ? pointToScrubber(
-              { phase: 'cruise', ascentT: launchDurationS, cruiseMetDays: coastMetDays },
-              masterTimeline,
-            )
-          : pointToScrubber(
-              {
-                phase: 'cruise',
-                ascentT: launchDurationS,
-                cruiseMetDays: Math.max(0, simDay - arcTimeline.dep_day),
-              },
-              masterTimeline,
-            ),
+    masterScrubFraction({
+      timeline: masterTimeline,
+      live: showLaunch ? 'ascent' : showDescent ? 'descent' : showCoast ? 'coast' : 'cruise',
+      launchT,
+      descentT,
+      launchDurationS,
+      cruiseDays: earthCoast ? coastDurationDays : arcTotalDays,
+      coastMetDays,
+      simDay,
+      depDay: arcTimeline.dep_day,
+    }),
   );
   // The value the scrubber input + fill render: the master fraction once a
   // launch act exists, else the plain cruise progress (unchanged).
@@ -1697,9 +1620,8 @@
   // A cruise MET (days) → its % position on the ACTIVE bar. On the unified bar
   // the cruise occupies `[seam, 1]`; on the cruise-only bar it is `[0, 1]`.
   function cruiseTickPct(metDays: number): number {
-    const frac = arcTotalDays > 0 ? metDays / arcTotalDays : 0;
     const seam = hasLaunchAct ? masterTimeline.ascentScrubberFraction : 0;
-    return Math.max(0, Math.min(100, (seam + (1 - seam) * frac) * 100));
+    return cruiseTickPercent(metDays, arcTotalDays, seam);
   }
   function masterTogglePlay() {
     if (showLaunch || showDescent) {
@@ -1722,24 +1644,24 @@
   }
   function onMasterScrub(event: Event) {
     const u = Number((event.target as HTMLInputElement).value);
-    const pt = scrubberToPoint(u, masterTimeline);
-    if (pt.phase === 'ascent') {
+    const target = masterScrubTarget(u, masterTimeline, !!earthCoast);
+    if (target.phase === 'ascent') {
       // Scrubbing back into the ascent re-mounts LaunchScene fresh (resets any
       // completed warp) and drives it to the scrubbed MET.
       dispatchPhase({ type: 'scrubTo', phase: 'ascent' });
-      launchT = pt.ascentT;
-    } else if (pt.phase === 'descent') {
+      launchT = target.launchT;
+    } else if (target.phase === 'descent') {
       // Scrubbing into the tail enters the descent act at the scrubbed EDL time.
       dispatchPhase({ type: 'scrubTo', phase: 'descent' });
-      descentT = pt.descentT ?? 0;
-    } else if (earthCoast) {
+      descentT = target.descentT;
+    } else if (target.phase === 'coast') {
       // Cruise band of a Tier-1 Earth-orbit flight = the orbit-coast act (the
       // reducer maps the cruise band → coast when earthCoast is set).
       dispatchPhase({ type: 'scrubTo', phase: 'cruise' });
-      coastMetDays = pt.cruiseMetDays;
+      coastMetDays = target.coastMetDays;
     } else {
       dispatchPhase({ type: 'scrubTo', phase: 'cruise' });
-      simDay = arcTimeline.dep_day + pt.cruiseMetDays;
+      simDay = arcTimeline.dep_day + target.cruiseMetDays;
     }
   }
   // ─── Scrubber ──────────────────────────────────────────────────
@@ -1834,6 +1756,9 @@
   ) {
     openingLoadId++;
     const myLoadId = openingLoadId;
+    // untrack: this runs from effects; reading page reactively here would
+    // re-fire them on every page mutation (see the URL-sync effect below).
+    const locale = untrack(() => localeFromPage(page));
     // Mission hero — first image in the gallery.
     try {
       const gallery = await getMissionGallery(missionId);
@@ -1854,7 +1779,7 @@
         refs.map(async (ref) => {
           const idxEntry = fleetIndex.find((f) => f.id === ref.id);
           if (!idxEntry) return null;
-          const fullEntry = await getFleet(ref.id, idxEntry.category);
+          const fullEntry = await getFleet(ref.id, idxEntry.category, locale);
           if (!fullEntry) return null;
           // Hero image — prefer fleet index's hero_path; fall back to
           // the first image in the fleet gallery (most entries don't
@@ -1899,7 +1824,11 @@
           ? findFleetEntryByVehicleName(fleetIndex, missionVehicle)
           : null;
       if (launcherCandidate) {
-        const fullLauncher = await getFleet(launcherCandidate.id, launcherCandidate.category);
+        const fullLauncher = await getFleet(
+          launcherCandidate.id,
+          launcherCandidate.category,
+          locale,
+        );
         if (myLoadId !== openingLoadId) return;
         if (fullLauncher) {
           let heroPath: string | null = launcherCandidate.hero_path
@@ -2072,54 +2001,29 @@
     return () => flyVelocitySon.stop();
   });
 
-  function jumpToMet(metDays: number) {
-    if (!Number.isFinite(metDays) || metDays < 0) return;
-    cue('select');
-    const previousSimDay = simDay;
-    // Bias the target onto the iconic-shot hold window when the jump
-    // lands on a flyby / EDL event. See $lib/orbital/jump-to-met-bias
-    // for the rationale; the function is unit-tested.
-    const landMet = biasJumpToIconicMoment(metDays, mission?.flight?.events);
-    simDay = mission.timeline.dep_day + landMet;
-    if (isPlaying) isPlaying = false;
-    camSnapUntil = performance.now() + 700;
-    // Re-jumping to the same flyby would normally fail to re-arm
-    // peakHold because the arming guard (peakHoldArmedForFlybyMet !==
-    // currentFrameFlybyMet) treats the prior arm as still valid even
-    // though the hold's peakHoldUntil has long expired. Clearing the
-    // arm flag lets the next animate frame re-detect the window and
-    // re-fire the freeze, so every timeline click yields the iconic
-    // hold instead of just the first one.
-    cine.peakHoldArmedForFlybyMet = null;
-    cine.peakHoldUntil = 0;
-    // W3.3 — re-arm the pre-launch dwell when the user jumps back to
-    // MET 0 (Launch milestone). Gives them the cinematic prelaunch
-    // beat on demand instead of just a quiet snap to dep_day. Skipped
-    // for non-zero MET jumps; those want the snap behavior the
-    // camSnapUntil window already provides.
-    if (metDays === 0) {
-      // #86 — jumping back to Launch milestone replays the cinematic
-      // opening. Re-arm opening state + extend the dwell to cover the
-      // 9.5 s opening + 4 s prelaunch.
+  const jumpToMetCtx: JumpToMetContext = {
+    getSimDay: () => simDay,
+    setSimDay: (d) => (simDay = d),
+    getIsPlaying: () => isPlaying,
+    setIsPlaying: (v) => (isPlaying = v),
+    getMissionDepDay: () => mission.timeline.dep_day,
+    getMissionFlightEvents: () => mission?.flight?.events,
+    setCamSnapUntil: (ms) => (camSnapUntil = ms),
+    setLaunchDwellUntil: (ms) => (launchDwellUntil = ms),
+    getOpeningDurationMs: () => openingDurationMs,
+    restartOpening: () => {
       openingStartedAt = performance.now();
       dispatchPhase({ type: 'enterOpening' });
       openingTitleOpacity = 0;
       openingContextOpacity = 0;
       openingFleetOpacity = 0;
-      // Hold sim until opening fade-out fully completes + 300 ms
-      // settle so the first animate frame doesn't fire under
-      // visible opening text.
-      launchDwellUntil = performance.now() + openingDurationMs + 300;
-      // W3.7 — re-arm the cruise hold so it fires again on the
-      // mission replay.
-      cine.cruiseHoldFired = false;
-    }
-    // W3.6 — deliberate cut when the jump crosses > 1 mission year.
-    // Fade-to-black overlay handles the visual cut; camSnapUntil at
-    // 700 ms gives the camera time to converge after the fade.
-    if (Math.abs(simDay - previousSimDay) > CINEMATIC_TIMINGS.CUT_THRESHOLD_DAYS) {
-      cine.cutStartedAt = performance.now();
-    }
+    },
+    cine,
+    cueSelect: () => cue('select'),
+    now: () => performance.now(),
+  };
+  function jumpToMet(metDays: number) {
+    jumpToMetImpl(jumpToMetCtx, metDays);
   }
   function onScrub(event: Event) {
     const t = parseFloat((event.target as HTMLInputElement).value);
@@ -2130,7 +2034,7 @@
     // triggers the cinematic cut. Continuous-drag scrubs that drift
     // through the year boundary in increments stay under the
     // threshold per-event, so only big jumps fire the cut.
-    if (Math.abs(simDay - previousSimDay) > CINEMATIC_TIMINGS.CUT_THRESHOLD_DAYS) {
+    if (isCinematicCutJump(previousSimDay, simDay)) {
       cine.cutStartedAt = performance.now();
     }
   }
@@ -2156,6 +2060,33 @@
     arrLabelFallback: defaultScenarioOverlay.arr_label,
   };
 
+  // State writers for the apply* paths (write sequences live in $lib/fly/apply-to-page).
+  const flyApplyCtx: FlyApplyContext = {
+    setArcTimeline: (v) => (arcTimeline = v),
+    setIsFreeReturn: (v) => (isFreeReturn = v),
+    setIsMoonMission: (v) => (isMoonMission = v),
+    setActiveDestination: (v) => (activeDestination = v),
+    setCurrentDestMeshId: (v) => (currentDestMeshId = v),
+    setCislunarTrajectory: (v) => (cislunarTrajectory = v),
+    setInterplanetaryTrajectory: (v) => (interplanetaryTrajectory = v),
+    setOutPts: (v) => (outPts = v),
+    setRetPts: (v) => (retPts = v),
+    setMission: (v) => (mission = v),
+    setSimDay: (v) => (simDay = v),
+    setSimSpeed: (v) => (simSpeed = v),
+    setMissionEvents: (v) => (missionEvents = v),
+    setLastAppliedMissionId: (v) => (lastAppliedMissionId = v),
+    getFlyUpdaters: () => flyUpdaters,
+    resetCinematicForMissionSwap,
+    isOpeningActive: () => openingActive,
+    getOpeningDurationMs: () => openingDurationMs,
+    setLaunchDwellUntil: (ms) => (launchDwellUntil = ms),
+    now: () => performance.now(),
+    missionDefaults: MISSION_APPLY_DEFAULTS,
+    planDefaults: { dvFallback: defaultScenarioBase.dv_total_km_s },
+    defaultScenarioId: DEFAULT_SCENARIO_ID,
+  };
+
   function applyMissionAsLoaded(m: Mission, trajectoryOverride?: TrajectoryOverride) {
     // Umami custom event — anonymous, production-host only.
     track('mission-load', {
@@ -2165,190 +2096,24 @@
       view: m.dest === 'MOON' || m.dest === 'EARTH' ? 'cislunar' : 'heliocentric',
     });
     completedForId = null; // new mission loaded — re-arm the completion event
-    // Math layer: derive every value from the Mission. See
-    // $lib/fly-mission-apply for the timeline / arc / trajectory
-    // derivations and the round-trip vs one-way semantics.
-    const r = computeMissionApply(m, MISSION_APPLY_DEFAULTS, trajectoryOverride);
-    // Write state in the same order the prior inline impl did, so
-    // any reactive $effect that watched isMoonMission + outPts +
-    // retPts together still sees the same end state.
-    arcTimeline = r.timeline;
-    isFreeReturn = r.isFreeReturn;
-    isMoonMission = r.isMoonMission;
-    activeDestination = r.activeDestination;
-    flyUpdaters?.helio.applyDestination(r.activeDestination);
-    currentDestMeshId = r.activeDestination;
-    flyUpdaters?.helio.setSpacecraftModel(m.id);
-    cislunarTrajectory = r.cislunarTrajectory;
-    interplanetaryTrajectory = r.interplanetaryTrajectory;
-    // Three.js side effects for cislunar lines + annotations — fire
-    // on both branches (null clears the previous mission's geometry).
-    flyUpdaters?.cislunar.rebuildLines(r.cislunarTrajectory);
-    flyUpdaters?.cislunar.rebuildAnnotations(r.cislunarTrajectory, m.flight?.cislunar_profile);
-    outPts = r.outPts;
-    retPts = r.retPts;
-    flyUpdaters?.helio.resetCamera();
-    mission = r.missionMeta;
-    simDay = r.timeline.dep_day;
-    simSpeed = r.simSpeed;
-    missionEvents = r.missionEvents;
-    // Launch dwell — hold MET 0 for ~3.5 s wall-clock so the camera
-    // lerps in to the prelaunch composition before the clock starts.
-    // Without this the ship is already accelerating away while the
-    // viewer is still parsing where Earth is.
-    // W3.3 — 4-second pre-launch beat. Was 3500 ms; bumped to 4000 so the
-    // audience sits longer with the static Earth-closeup composition (the
-    // "weight of decades of work" register from the creative-direction
-    // guide §5).
-    // Audit recommendation #1 — clear lingering W3.1-W3.7 timers from
-    // any prior mission so we don't accidentally start the new one
-    // already inside a stale held beat. Also arms the #86 opening
-    // sequence, so the launchDwellUntil set below must come after.
-    resetCinematicForMissionSwap();
-    // #86 — opening sequence runs until openingDurationMs elapses
-    // (9.5-22 s depending on description + fleet ref count). Sim
-    // stays paused until the opening fully fades out so the
-    // simulation doesn't start advancing under visible text. 300 ms
-    // buffer past the fade-out endpoint gives a clean black-ish
-    // moment before the first animate frame. Non-opening missions
-    // keep the 4 s dwell (W3.3 prelaunch beat).
-    launchDwellUntil = performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
-    // After all derived state has updated. The render-state hook
-    // reads this LAST so a test gated on __flyArcHash() != null
-    // sees an outPts / hash that already reflects the new mission.
-    lastAppliedMissionId = m.id;
+    applyMissionToPage(flyApplyCtx, m, trajectoryOverride);
   }
 
   function applyScenarioAsLoaded(s: LocalizedScenario) {
-    const r = computeScenarioApply(s);
-    arcTimeline = r.timeline;
-    isFreeReturn = r.isFreeReturn;
-    activeDestination = r.activeDestination;
-    flyUpdaters?.helio.applyDestination(r.activeDestination);
-    currentDestMeshId = r.activeDestination;
-    // Default scenario is the ORRERY-1 demo — no dedicated spacecraft
-    // model, so this clears any previously-loaded mission model.
-    flyUpdaters?.helio.setSpacecraftModel(DEFAULT_SCENARIO_ID);
-    isMoonMission = r.isMoonMission;
-    cislunarTrajectory = r.cislunarTrajectory;
-    interplanetaryTrajectory = r.interplanetaryTrajectory;
-    outPts = r.outPts;
-    retPts = r.retPts;
-    flyUpdaters?.helio.resetCamera();
-    mission = r.missionMeta;
-    simDay = r.timeline.dep_day;
-    missionEvents = r.missionEvents;
-    // W3.3 — 4-second pre-launch beat. Was 3500 ms; bumped to 4000 so the
-    // audience sits longer with the static Earth-closeup composition (the
-    // "weight of decades of work" register from the creative-direction
-    // guide §5).
-    // Audit recommendation #1 — clear lingering W3.1-W3.7 timers from
-    // any prior mission so we don't accidentally start the new one
-    // already inside a stale held beat. Also arms the #86 opening
-    // sequence, so the launchDwellUntil set below must come after.
-    resetCinematicForMissionSwap();
-    // #86 — opening sequence runs until openingDurationMs elapses
-    // (9.5-22 s depending on description + fleet ref count). Sim
-    // stays paused until the opening fully fades out so the
-    // simulation doesn't start advancing under visible text. 300 ms
-    // buffer past the fade-out endpoint gives a clean black-ish
-    // moment before the first animate frame. Non-opening missions
-    // keep the 4 s dwell (W3.3 prelaunch beat).
-    launchDwellUntil = performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
-    // The page-default state initialises with this same scenario at
-    // module load, so the test hook can't distinguish "first paint"
-    // from "applyScenarioAsLoaded ran" by mission name alone. Setting
-    // this $state explicitly here is the test's only signal that the
-    // URL load committed.
-    lastAppliedMissionId = DEFAULT_SCENARIO_ID;
+    applyScenarioToPage(flyApplyCtx, s);
   }
 
-  /**
-   * /plan-driven entry: when /fly receives `?dest=...&type=...&dep=N&tof=N`
-   * (no `?mission=`), we synthesise a one-way trajectory for the
-   * chosen destination instead of falling through to the ORRERY DEMO
-   * scenario. Per ADR-026 §FLY-button experience.
-   *
-   * Math (timeline shape, arc construction, synthesised LoadedMission)
-   * lives in $lib/fly-mission-apply → computePlanApply.
-   */
   function applyPlanSelection(
     dest: DestinationId,
     type: 'LANDING' | 'FLYBY',
     depDay: number,
     tofDays: number,
   ) {
-    const r = computePlanApply(dest, type, depDay, tofDays, {
-      dvFallback: defaultScenarioBase.dv_total_km_s,
-    });
-    arcTimeline = r.timeline;
-    isFreeReturn = r.isFreeReturn;
-    activeDestination = r.activeDestination;
-    flyUpdaters?.helio.applyDestination(r.activeDestination);
-    currentDestMeshId = r.activeDestination;
-    // /plan-driven entry — no mission id, clear any previous model.
-    flyUpdaters?.helio.setSpacecraftModel('');
-    isMoonMission = r.isMoonMission;
-    cislunarTrajectory = r.cislunarTrajectory;
-    interplanetaryTrajectory = r.interplanetaryTrajectory;
-    outPts = r.outPts;
-    retPts = r.retPts;
-    flyUpdaters?.helio.resetCamera();
-    mission = r.missionMeta;
-    simDay = r.timeline.dep_day;
-    missionEvents = r.missionEvents;
-    // W3.3 — 4-second pre-launch beat. Was 3500 ms; bumped to 4000 so the
-    // audience sits longer with the static Earth-closeup composition (the
-    // "weight of decades of work" register from the creative-direction
-    // guide §5).
-    // Audit recommendation #1 — clear lingering W3.1-W3.7 timers from
-    // any prior mission so we don't accidentally start the new one
-    // already inside a stale held beat. Also arms the #86 opening
-    // sequence, so the launchDwellUntil set below must come after.
-    resetCinematicForMissionSwap();
-    // #86 — opening sequence runs until openingDurationMs elapses
-    // (9.5-22 s depending on description + fleet ref count). Sim
-    // stays paused until the opening fully fades out so the
-    // simulation doesn't start advancing under visible text. 300 ms
-    // buffer past the fade-out endpoint gives a clean black-ish
-    // moment before the first animate frame. Non-opening missions
-    // keep the 4 s dwell (W3.3 prelaunch beat).
-    launchDwellUntil = performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
-    lastAppliedMissionId = r.appliedId;
+    applyPlanSelectionToPage(flyApplyCtx, dest, type, depDay, tofDays);
   }
 
-  /**
-   * Cislunar sibling of {@link applyPlanSelection} for the geocentric Moon
-   * (ADR-085 · #308). `?dest=moon&dep&tof` from /plan's Earth→Moon porkchop
-   * synthesises a cislunar flight so the trip you plan is the trip you fly.
-   */
   function applyPlanSelectionMoon(depDay: number, tofDays: number) {
-    const r = computePlanApplyMoon(depDay, tofDays, {
-      dvFallback: defaultScenarioBase.dv_total_km_s,
-    });
-    arcTimeline = r.timeline;
-    isFreeReturn = r.isFreeReturn;
-    activeDestination = r.activeDestination;
-    flyUpdaters?.helio.applyDestination(r.activeDestination);
-    currentDestMeshId = r.activeDestination;
-    flyUpdaters?.helio.setSpacecraftModel('');
-    isMoonMission = r.isMoonMission;
-    cislunarTrajectory = r.cislunarTrajectory;
-    interplanetaryTrajectory = r.interplanetaryTrajectory;
-    outPts = r.outPts;
-    retPts = r.retPts;
-    flyUpdaters?.helio.resetCamera();
-    mission = r.missionMeta;
-    simDay = r.timeline.dep_day;
-    missionEvents = r.missionEvents;
-    // Cislunar trips are 2.5–5.5 days, not the 100–500 d of a helio plan; the
-    // default 7 d/s would play the whole flight in under a second. Match the
-    // Moon-mission cadence (review fix — the helio applyPlanSelection relies on
-    // the 7 d/s default, which is right for its long transfers).
-    simSpeed = 0.4;
-    resetCinematicForMissionSwap();
-    launchDwellUntil = performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
-    lastAppliedMissionId = r.appliedId;
+    applyPlanSelectionMoonToPage(flyApplyCtx, depDay, tofDays);
   }
 
   async function loadMissionFromUrl(url: URL): Promise<void> {
@@ -2486,7 +2251,7 @@
     // / JUICE / Orrery Demo etc. — labeled events get timeline buttons
     // automatically; unlabeled ones don't). Mirrors __flyDebug's DEV gate.
     if (import.meta.env.DEV) {
-      (window as Window & { __flyJumpToMet?: (met: number) => void }).__flyJumpToMet = jumpToMet;
+      window.__flyJumpToMet = jumpToMet;
       // Race-free test hook for the auto-zoom / hero-composition pipeline.
       // Unlike __flyJumpToMet, this skips the upstream input concerns
       // (iconic-moment biasing via biasJumpToIconicMoment, 700 ms snap-cut
@@ -2497,9 +2262,7 @@
       // shares its browser with another agent that would otherwise race
       // pause/click events. Whatever the scene composes here is also what
       // the user sees, minus the input animations.
-      (window as Window & { __flySetSimDay?: (met: number) => void }).__flySetSimDay = (
-        met: number,
-      ) => {
+      window.__flySetSimDay = (met: number) => {
         if (!Number.isFinite(met) || met < 0) return;
         simDay = mission.timeline.dep_day + met;
         isPlaying = false;
@@ -2509,7 +2272,7 @@
       // !isMoonMission). Lets automated tests see active phase,
       // camera position, and the active hero event without spelunking
       // through Three.js scene refs.
-      (window as Window & { __flyCislunarDebug?: () => unknown }).__flyCislunarDebug = () => ({
+      window.__flyCislunarDebug = () => ({
         simDay,
         depDay: mission?.timeline?.dep_day,
         met: simDay - (mission?.timeline?.dep_day ?? 0),
@@ -2551,7 +2314,7 @@
       });
       // Tier-1 Earth-orbit re-entry diagnostic (RFC-034 §13) — the pad→coast→
       // re-entry counterpart of __flyCislunarDebug, for chrome-devtools + e2e.
-      (window as Window & { __flyReentryDebug?: () => unknown }).__flyReentryDebug = () => ({
+      window.__flyReentryDebug = () => ({
         phase: showLaunch
           ? 'launch'
           : showCoast
@@ -3317,7 +3080,7 @@
         <div class="recovery-caption">{RECOVERY_CAPTIONS[mission.id]()}</div>
       {/if}
       <button class="recovery-close" onclick={() => dispatchPhase({ type: 'closeRecovery' })}
-        >CLOSE</button
+        >{m.hud_close()}</button
       >
     </div>
   </div>
@@ -3351,11 +3114,15 @@
 {#if oiBeatActive && orbitInsertion && !hudHidden}
   <div class="oi-callout" class:firing={oiFiring}>
     <div class="oi-tag">{orbitInsertion.tag}</div>
-    <div class="oi-label">{orbitInsertion.label}</div>
+    <div class="oi-label">{hudLabel(orbitInsertion.label)}</div>
     <div class="oi-status">
-      {oiFiring ? 'CAPTURE BURN' : 'APPROACH'}{orbitInsertion.dvKms != null
-        ? ` · Δv ${orbitInsertion.dvKms.toFixed(2)} km/s`
-        : ''}<ScienceChip tab="mission-phases" section="aerobraking" label="Aerobraking" />
+      {oiFiring ? m.hud_capture_burn() : m.hud_approach()}{orbitInsertion.dvKms != null
+        ? ` · Δv ${m.mp_flight_unit_kms({ value: orbitInsertion.dvKms.toFixed(2) })}`
+        : ''}<ScienceChip
+        tab="mission-phases"
+        section="aerobraking"
+        label={m.chip_label_aerobraking()}
+      />
     </div>
   </div>
 {/if}
@@ -3556,9 +3323,9 @@
     type="button"
     class="hud-collapse"
     onclick={toggleHud}
-    aria-label={hudHidden ? 'Show HUD panels' : 'Hide HUD panels'}
+    aria-label={hudHidden ? m.hud_show_panels_aria() : m.hud_hide_panels_aria()}
     aria-pressed={hudHidden}
-    title={hudHidden ? 'Show HUD' : 'Hide HUD'}
+    title={hudHidden ? m.coast_show_hud() : m.coast_hide_hud()}
   >
     {hudHidden ? '◐' : '◑'}
   </button>
@@ -3586,12 +3353,14 @@
     <div class="perf-toast" role="status" aria-live="polite">
       <div class="perf-toast-title">{m.fly_perf_title()}</div>
       <div class="perf-toast-body">
-        Frame time averaging {perfToastAvgMs.toFixed(0)} ms. Drop to
-        <span class="perf-toast-tier">{perfToastSuggestedTier}</span>?
+        {m.fly_perf_body({
+          ms: perfToastAvgMs.toFixed(0),
+          tier: qualityTierLabel(perfToastSuggestedTier),
+        })}
       </div>
       <div class="perf-toast-actions">
         <button type="button" class="perf-toast-apply" onclick={applyPerfSuggestion}
-          >Apply & reload</button
+          >{m.fly_perf_apply()}</button
         >
         <button type="button" class="perf-toast-dismiss" onclick={dismissPerfToast}
           >{m.fly_not_now()}</button
@@ -3803,7 +3572,7 @@
     {@const transitDays = mission.transit_days
       ? m.mp_transit_days({ count: mission.transit_days.toString() })
       : null}
-    {@const missionLink = mission.id ? `${base}/missions?id=${mission.id}` : null}
+    {@const missionLink = mission.id ? localHref(`/missions?id=${mission.id}`) : null}
 
     <!-- Single merged opening stack — title + context + fleet all
          inside one translucent container, screen-centered. The whole
@@ -3917,7 +3686,7 @@
                   <a
                     class="opening-fleet-card"
                     class:hero={asset.role === 'spacecraft' || asset.role === 'launcher'}
-                    href="{base}/fleet?id={asset.id}"
+                    href={localHref(`/fleet?id=${asset.id}`)}
                     data-sveltekit-preload-data="off"
                   >
                     {#if asset.heroPath}
@@ -4032,8 +3801,8 @@
       </span>
       {#if mission.name === 'ORRERY DEMO'}
         <p class="hud-demo-hint">{m.fly_demo_hint()}</p>
-        <a href="{base}/plan" class="hud-demo-cta">{m.fly_demo_cta()}</a>
-        <a href="{base}/missions" class="hud-demo-cta hud-demo-cta-secondary"
+        <a href={localHref(`/plan`)} class="hud-demo-cta">{m.fly_demo_cta()}</a>
+        <a href={localHref(`/missions`)} class="hud-demo-cta hud-demo-cta-secondary"
           >{m.fly_demo_replay_cta()}</a
         >
       {/if}
@@ -4289,7 +4058,7 @@
                 class="milestone-tick-button"
                 class:past
                 style="left: {pct}%;"
-                aria-label="{evt.label} at MET {evt.met_days} days. Click to jump."
+                aria-label={m.fly_milestone_aria({ label: evt.label, days: evt.met_days ?? 0 })}
                 onclick={() => jumpToMet(evt.met_days ?? 0)}
                 data-met-days={evt.met_days}
               >
@@ -4319,7 +4088,7 @@
               class="fd-stage-tick-button"
               class:past
               style="left: {cruiseTickPct(t.met_days)}%;"
-              aria-label="{t.label} stage. Click to jump."
+              aria-label={m.fly_stage_tick_aria({ label: t.label })}
               onclick={() => jumpToMet(t.met_days)}
               data-fd-stage={t.id}
             >
@@ -4468,7 +4237,7 @@
   <!-- Mobile (≤767 px): the toggle drawer is replaced by the bottom tab
        accordion below (hidden on phones via CSS). -->
   <div class="fly-mobile-view-drawer" style="--mcd-bottom:88px">
-    <MobileControlsDrawer label="View" children={flyToggles} />
+    <MobileControlsDrawer label={m.fly_view_drawer()} children={flyToggles} />
   </div>
 
   <!-- Mobile (≤767 px): bottom tab accordion — one HUD panel open at a time
@@ -4482,7 +4251,7 @@
       aria-pressed={mobilePanel === 'mission'}
       onclick={() => setMobilePanel('mission')}
     >
-      MISSION
+      {m.fleet_mission_cta_label()}
     </button>
     <button
       type="button"
@@ -4491,7 +4260,7 @@
       aria-pressed={mobilePanel === 'events'}
       onclick={() => setMobilePanel('events')}
     >
-      EVENTS
+      {m.mp_flight_section_events()}
     </button>
     {#if lensOnState}
       <button
@@ -4501,7 +4270,7 @@
         aria-pressed={mobilePanel === 'phase'}
         onclick={() => setMobilePanel('phase')}
       >
-        PHASE
+        {m.hud_phase()}
       </button>
     {/if}
   </div>
@@ -5979,10 +5748,6 @@
   .perf-toast-body {
     line-height: 1.4;
     margin-bottom: 10px;
-  }
-  .perf-toast-tier {
-    color: #4ecdc4;
-    text-transform: uppercase;
   }
   .perf-toast-actions {
     display: flex;

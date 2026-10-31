@@ -6,7 +6,7 @@
  * blob, survives a dead art URL gracefully, and the illustration lookup's
  * empty-manifest path answers undefined (m-3).
  */
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { composeReportCard } from './report-card';
 import { illustrationFor } from './illustration';
 
@@ -32,12 +32,20 @@ describe('composeReportCard', () => {
   it('a dead illustration URL degrades gracefully — card still composes, no throw', async () => {
     // jsdom fires neither onload nor onerror — this exercises the 4s
     // never-hang timeout path, which browsers also need for stalled loads.
-    const blob = await composeReportCard({
-      ...baseInput,
-      illustrationUrl: 'http://127.0.0.1:1/nope.webp',
-    });
-    expect(blob).toBeInstanceOf(Blob);
-  }, 10_000);
+    // Fake setTimeout only, so the 4s passes without the suite waiting it.
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] });
+    try {
+      const pending = composeReportCard({
+        ...baseInput,
+        illustrationUrl: 'http://127.0.0.1:1/nope.webp',
+      });
+      await vi.advanceTimersByTimeAsync(4000);
+      const blob = await pending;
+      expect(blob).toBeInstanceOf(Blob);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
 });
 
 describe('illustrationFor (m-3)', () => {

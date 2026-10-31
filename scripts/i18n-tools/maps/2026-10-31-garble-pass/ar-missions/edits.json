@@ -1,0 +1,534 @@
+[
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "en": "First of three Earth gravity assists to build velocity for the comet rendezvous.",
+    "old": "أول ثلاث مساعدات جاذبية من الأرض لبناء السرعة للالتقاء بالمذنب.",
+    "new": "أولى مساعدات الجاذبية الأرضية الثلاث لبناء السرعة اللازمة للالتقاء بالمذنب."
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.1.note",
+    "en": "Orbiter captures into Mars orbit during global dust storm.",
+    "old": "يدخل المدار مدار المريخ أثناء عاصفة الغبار العالمية.",
+    "new": "يدخل المسبار المداري في مدار المريخ أثناء عاصفة الغبار العالمية."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.4.note",
+    "en": "~120 km flyby of one of the largest main-belt asteroids ever observed close-up.",
+    "old": "تحليق على بعد ~120 كم من أحد أكبر الكويكبات في النطاق الرئيسي التي تمت ملاحظتها عن قرب.",
+    "new": "التحليق القريب على بعد ~120 كم من أحد أكبر كويكبات الحزام الرئيسي التي رُصدت عن قرب."
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "description",
+    "en": "The Soviet Union's audacious double-mission to Mars in 1971 — Mars 2 and Mars 3 launched 9 days apart. Mars 2's lander crashed; Mars 3's lander achieved the first soft-landing on Mars but went silent ~110 seconds after touchdown — the actual transmission lasted only ~14.5 seconds — possibly due to the global dust storm raging at the time. The orbiter operated for 8 months, returning dozens of images and atmospheric measurements. Despite the brief surface mission, Mars 3 demonstrated that the descent and landing problem on Mars was solvable.",
+    "old": "مهمة مزدوجة جريئة من الاتحاد السوفياتي إلى المريخ في عام 1971 — أُطلقت مركبتا Mars 2 و Mars 3 بفاصل 9 أيام. تحطم هابط Mars 2؛ بينما حقق هابط Mars 3 أول هبوط ناعم على المريخ لكنه توقف عن الإرسال بعد ~110 ثوانٍ من الهبوط — والإرسال الفعلي استمر فقط ~14.5 ثانية — يُحتمل أن يكون ذلك بسبب العاصفة الغبارية العالمية التي كانت تحتدم في ذلك الوقت. عمل المدار لمدة 8 أشهر، حيث أعاد عشرات الصور والقياسات الجوية. وعلى الرغم من قِصَر المهمة السطحية، أثبتت Mars 3 أن مشكلة الهبوط والنزول على المريخ كانت قابلة للحل.",
+    "new": "مهمة مزدوجة جريئة من الاتحاد السوفياتي إلى المريخ في عام 1971 — أُطلقت Mars 2 وMars 3 بفاصل 9 أيام. تحطم هابط Mars 2؛ أما هابط Mars 3 فحقق أول هبوط ناعم على المريخ لكنه توقف عن الإرسال بعد ~110 ثوانٍ من ملامسة السطح — ولم يستمر الإرسال الفعلي سوى ~14.5 ثانية — ربما بسبب العاصفة الغبارية العالمية التي كانت مستعرة آنذاك. وعمل المسبار المداري 8 أشهر، وأعاد عشرات الصور وقياسات الغلاف الجوي. ورغم قصر المهمة على السطح، أثبتت Mars 3 أن مشكلة الهبوط وإنزال المركبة على المريخ قابلة للحل."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.4.note",
+    "en": "Rover rolls down ramp; begins surface science.",
+    "old": "تنزل الماربة من المنحدر؛ وتبدأ العلوم السطحية.",
+    "new": "تنزل المركبة الجوالة على المنحدر؛ وتبدأ العلوم السطحية."
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.3.note",
+    "en": "Emergency Pacific splashdown after 10 h 41 m.",
+    "old": "هبوط طارئ في المحيط الهادئ بعد 10 ساعة 41 دقيقة.",
+    "new": "هبوط مائي طارئ في المحيط الهادئ بعد 10 ساعات و41 دقيقة."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.4.note",
+    "en": "Hydrazine leak, 2 reaction wheels dead, comms lost 7 weeks.",
+    "old": "تسرب الهيدرازين، عجلتان رد فعل ميتتان، فُقد الاتصال 7 أسابيع.",
+    "new": "تسرب الهيدرازين، وتعطل عجلتَي رد الفعل، وانقطاع الاتصال 7 أسابيع."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.5.note",
+    "en": "MTM jettison + orbiter separation; science operations begin early 2027.",
+    "old": "رمي وحدة النقل والفصل بين الساتلين؛ تبدأ عمليات العلم في أوائل 2027.",
+    "new": "التخلص من وحدة النقل MTM وفصل المركبتين المداريتين؛ تبدأ العمليات العلمية في أوائل 2027."
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "first",
+    "en": "Last solo American crewed spaceflight; 22 orbits / 34 hours",
+    "old": "آخر رحلة فضاء أمريكية مأهولة منفردة؛ 22 دورة / 34 ساعة",
+    "new": "آخر رحلة فضاء أمريكية مأهولة منفردة؛ 22 مدارًا / 34 ساعة"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "en": "2025-03-01. Bends trajectory toward Earth re-encounter.",
+    "old": "2025-03-01. ينحني المسار نحو لقاء الأرض.",
+    "new": "2025-03-01. يحني المسار نحو لقاء الأرض مجددًا."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.note",
+    "en": "Liquid Apogee Motor fires after ~10 months dormant — fired for 24 minutes to capture into orbit.",
+    "old": "يشتعل محرك الأوج السائل بعد حوالي 10 أشهر من السكون — اشتعل لمدة 24 دقيقة للالتقاط في المدار.",
+    "new": "يشتعل محرك الأوج السائل بعد نحو 10 أشهر من الخمول — اشتعل 24 دقيقة ليُؤسَر المسبار في المدار."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.4.note",
+    "en": "Armstrong steps onto lunar surface; 'one small step for [a] man'.",
+    "old": "أرمسترونج يخطو على السطح؛ «خطوة صغيرة لإنسان».",
+    "new": "أرمسترونج يخطو على سطح القمر؛ «خطوة صغيرة لإنسان»."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.4.note",
+    "en": "2027-08. First Trojan encounter. 64-km C-type + 1-km moon.",
+    "old": "2027-08. أول لقاء طروادي. كويكب من النوع C بطول 64 كم + قمر بطول 1 كم.",
+    "new": "2027-08. أول لقاء مع كويكب طروادي. كويكب من النوع C بقطر 64 كم + قمر بقطر 1 كم."
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.2.note",
+    "en": "Nine images including five panoramas, returned in three transmission sessions over three days.",
+    "old": "تسع صور بما فيها خمس بانورامات، عادت في ثلاث جلسات إرسال على مدى ثلاثة أيام.",
+    "new": "تسع صور، بينها خمس بانوراميات، أُرسلت في ثلاث جلسات إرسال على مدى ثلاثة أيام."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.1.note",
+    "en": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+    "old": "حقن عبر القمر — تم التحقق من الاسترجاع من ضربات البرق؛ المهمة GO للقمر.",
+    "new": "الحقن نحو القمر — تم التحقق من التعافي من صواعق البرق؛ أُعطيت المهمة الضوء الأخضر للتوجه إلى القمر."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.note",
+    "en": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+    "old": "تَرفع المناورة طاقة المسار حول الشمس بما يكفي للوصول إلى المشتري.",
+    "new": "يرفع المقلاع الجاذبي طاقة المركبة بالنسبة إلى الشمس بما يكفي للوصول إلى المشتري."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.2.note",
+    "en": "Approach trim pin-targets the MOI periapsis.",
+    "old": "دقة الاقتراب توجه نقطة الحضيض في MOI.",
+    "new": "يستهدف تصحيح الاقتراب بدقة نقطة الحضيض لإدخال المدار (MOI)."
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.1.note",
+    "en": "Insertion into 161 × 283 km Earth orbit.",
+    "old": "إدراج في المدار الأرضي 161 × 283 كم.",
+    "new": "الإدخال في مدار أرضي 161 × 283 كم."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.2.note",
+    "en": "Silver-zinc batteries depleted 1957-10-26; the carriers go quiet after ~315 orbits.",
+    "old": "نفدت بطاريات الفضة والزنك في 1957-10-26؛ صمتت الموجات الحاملة بعد نحو 315 دورة.",
+    "new": "نفدت بطاريات الفضة والزنك في 1957-10-26؛ وسكتت الإشارات الحاملة بعد نحو 315 مدارًا."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.4.note",
+    "en": "Bounced 26 times. Rolled into a 22-m crater by chance, surrounded by exposed bedrock.",
+    "old": "ارتدت 26 مرة. دخلت فوهة قطرها 22 متراً من خالص الحظ، محاطة بصخور ظاهرة.",
+    "new": "ارتدت 26 مرة. دخلت فوهة قطرها 22 مترًا مصادفةً، محاطة بصخر أساسي مكشوف."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.5.note",
+    "en": "21-km P-type Trojan with unnamed satellite.",
+    "old": "كويكب طروادي من النوع P بطول 21 كم مع قمر غير مسمى.",
+    "new": "كويكب طروادي من النوع P بقطر 21 كم له قمر تابع غير مسمى."
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.2.note",
+    "en": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+    "old": "هبوط مدرج مستقل في مرفق هبوط مكوك KSC بتاريخ 2022-11-12",
+    "new": "هبوط ذاتي القيادة على المدرج في مرفق هبوط المكوك بمركز KSC بتاريخ 2022-11-12."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.note",
+    "en": "First of four assists building the energy for Saturn arrival.",
+    "old": "أولى أربع مساعدات تُراكم الطاقة اللازمة للوصول إلى زحل.",
+    "new": "أولى مساعدات الجاذبية الأربع التي تبني الطاقة اللازمة للوصول إلى زحل."
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.5.note",
+    "en": "First high-resolution surface images returned.",
+    "old": "أول صور عالية الدقة للسطح يتم إعادتها.",
+    "new": "أُرسلت أول صور عالية الدقة للسطح."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.4.note",
+    "en": "First full pass — 84% surface coverage at 100 m resolution.",
+    "old": "المسار الأول الكامل — تغطية سطحية بنسبة 84% بدقة 100 متر.",
+    "new": "أول مسح كامل — تغطية 84% من السطح بدقة 100 متر."
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "events.1.note",
+    "en": "14-orbit flight at 195 × 315 km, 42.6° inclination.",
+    "old": "رحلة 14 مدارًا على ارتفاع 195 × 315 كم، ميل 42.6°.",
+    "new": "رحلة من 14 مدارًا على ارتفاع 195 × 315 كم، بالميل المداري 42.6°."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.1.note",
+    "en": "TCM + NEXT-C ion-thruster demonstration firings.",
+    "old": "TCM + عروض توضيحية لمحركات NEXT-C الأيونية.",
+    "new": "TCM + تشغيلات تجريبية للمحرك الأيوني NEXT-C."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.1.note",
+    "en": "Closest approach to Pluto; high-rate imaging and plasma data flood Earth.",
+    "old": "أقرب اقتراب لبلوتو؛ صور عالية المعدل وبيانات بلازما تفيض إلى الأرض.",
+    "new": "أقرب اقتراب من بلوتو؛ فيض من الصور عالية المعدل وبيانات البلازما يتدفق إلى الأرض."
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 4 days / 59 orbits — the last Gemini.",
+    "old": "هبوط مائي في المحيط الأطلسي بعد 4 أيام / 59 دورة مدارية — آخر Gemini.",
+    "new": "هبوط مائي في الأطلسي بعد 4 أيام / 59 مدارًا — آخر مركبة Gemini."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.3.note",
+    "en": "Decayed on 1958-01-04 after ~1440 orbits; burned up over the Atlantic.",
+    "old": "تحلل في 1958-01-04 بعد نحو 1440 دورة؛ احترق فوق المحيط الأطلسي.",
+    "new": "تحلل مداره في 1958-01-04 بعد نحو 1440 مدارًا؛ واحترق فوق المحيط الأطلسي."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.2.note",
+    "en": "2022-09-26. SMART Nav takes over 4h pre-impact.",
+    "old": "2022-09-26. يتولى SMART Nav السيطرة قبل 4 ساعات من التأثير.",
+    "new": "2022-09-26. يتولى SMART Nav القيادة قبل 4 ساعات من الاصطدام."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.4.note",
+    "en": "LICIACube + HST + JWST observe the ejecta plume.",
+    "old": "يراقب LICIACube و HST و JWST دخان الحطام.",
+    "new": "يرصد LICIACube وHST وJWST عمود المقذوفات."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "en": "Ion-thrust gravitational capture into 700-km orbit. 26-month mission, four orbit phases.",
+    "old": "التقاط جاذبي بمحرك أيوني في مدار 700 كم. مهمة مدتها 26 شهراً، أربع مراحل مدارية.",
+    "new": "أسر جاذبي بقوة الدفع الأيونية في مدار 700 كم. مهمة مدتها 26 شهرًا، وأربع مراحل مدارية."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.8.note",
+    "en": "Final Earth assist 2030-12. Heads to L5 cloud.",
+    "old": "آخر مساعدة جاذبية أرضية 2030-12. التوجه نحو سحب L5.",
+    "new": "آخر مساعدة جاذبية أرضية 2030-12. تتجه نحو سحابة L5."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.1.note",
+    "en": "Four Hall-effect ion thrusters take over. Continuous low-thrust acceleration over 4+ years.",
+    "old": "أربع محركات أيونية بتأثير هول تتولى السيطرة. تسارع مستمر منخفض الدفع على مدى 4+ سنوات.",
+    "new": "أربعة محركات أيونية بتأثير هول تتولى المهمة. تسارع مستمر بقوة دفع منخفضة على مدى أكثر من 4 سنوات."
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.3.note",
+    "en": "Battery depleted; final transmission 1966-02-06.",
+    "old": "استنزاف البطارية؛ آخر إرسال 1966-02-06.",
+    "new": "نفدت البطارية؛ آخر إرسال 1966-02-06."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.5.note",
+    "en": "Wheel breaks through sulphate crust; rover bogs down in soft soil. 2009-04.",
+    "old": "اخترقت عجلة القشرة الكبريتية؛ انغرقت المركبة الجوّالة في التراب الناعم. 2009-04.",
+    "new": "اخترقت عجلة قشرة الكبريتات؛ وغاصت المركبة الجوالة في التربة الرخوة. 2009-04."
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "events.2.note",
+    "en": "Lander touches down at Von Kármán Crater 2019-01-03 — first spacecraft on the far side. All comms via Queqiao relay at Earth-Moon L2.",
+    "old": "يهبط الهابط في فوهة Von Kármán 2019-01-03 — أول مركبة فضائية على الجانب البعيد. جميع الاتصالات عبر موصل Queqiao في نقطة L2 للأرض-القمر.",
+    "new": "يهبط الهابط في فوهة Von Kármán في 2019-01-03 — أول مركبة فضائية على الجانب البعيد. تمر جميع الاتصالات عبر ساتل الترحيل Queqiao عند النقطة L2 للأرض-القمر."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.5.note",
+    "en": "Intrepid lifts off after 31 h 31 m on surface. 34 kg of samples returned.",
+    "old": "تقلع إنترépيد بعد 31 س 31 د على السطح. تم إعادة 34 كغ من العينات.",
+    "new": "تقلع إنتريبد بعد 31 س 31 د على السطح. أُعيد 34 كغ من العينات."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.6.note",
+    "en": "Rotor blade damaged on 72nd flight 2024-01-18; helicopter grounded, repurposed as a stationary weather and data station storing readings for future retrieval.",
+    "old": "تلف شفرة الدوار في الرحلة 72 في 2024-01-18؛ الطائرة مؤرضة، أعيد تعديلها كمحطة طقس وجمع بيانات ثابتة تخزن القراءات للاسترجاع المستقبلي.",
+    "new": "تضررت شفرة الدوار في الرحلة الـ72 في 2024-01-18؛ أُوقفت المروحية عن الطيران وأُعيد توظيفها كمحطة ثابتة للطقس والبيانات تخزن القياسات لاسترجاعها مستقبلاً."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.3.note",
+    "en": "Second Venus gravity assist begins the Mercury approach phase.",
+    "old": "ثاني مساعدة جاذبية للزهرة تبدأ مرحلة الاقتراب من عطارد.",
+    "new": "مساعدة الجاذبية الثانية من الزهرة تبدأ مرحلة الاقتراب من عطارد."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.5.note",
+    "en": "First powered controlled flight on another planet — 39.1 seconds at up to 5 m altitude.",
+    "old": "أول رحلة محكومة بقوة محركات على كوكب آخر — 39.1 ثانية حتى ارتفاع 5 أمتار.",
+    "new": "أول طيران مُحرَّك ومُتحكَّم به على كوكب آخر — 39.1 ثانية على ارتفاع يصل إلى 5 أمتار."
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "first",
+    "en": "First Mercury flyby; first dual-planet flyby; first gravity-assist mission",
+    "old": "أول تحليق بعطارد؛ أول مهمة تحليق بكوكبين؛ أول مهمة بمساعدة جاذبية",
+    "new": "أول تحليق قريب بعطارد؛ أول تحليق قريب بكوكبين؛ أول مهمة بمساعدة الجاذبية"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.5.note",
+    "en": "Lander/rover put into hibernation as lunar night begins.",
+    "old": "يتم إدخال الهابط والماربة في السبات حيث يبدأ الليل القمري.",
+    "new": "يُدخَل الهابط والمركبة الجوالة في السبات مع بدء الليل القمري."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.10.note",
+    "en": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+    "old": "هبطت وحدة القيادة في المحيط الهادئ الشمالي في 1971-08-07 20:46 UTC. فشل أحد المظلات الرئيسية الثلاث في الانتشار بالكامل؛ هبوط قاسٍ لكن آمن. تم الاسترجاع بواسطة USS Okinawa.",
+    "new": "هبطت وحدة القيادة هبوطًا مائيًا في شمال المحيط الهادئ في 1971-08-07 20:46 UTC. فشلت إحدى المظلات الرئيسية الثلاث في الانتشار بالكامل؛ هبوط قاسٍ لكنه آمن. جرى الانتشال بواسطة USS Okinawa."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.6.note",
+    "en": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers — the first crewed-mission spacecraft stage deliberately impacted the Moon and recorded by a surface seismometer.",
+    "old": "تحطمت مرحلة صعود إنترépيد بشكل متعمد على القمر لمعايرة مقاييس الزلازل ALSEP — أول مرة تتحطم فيها مرحلة مركبة فضائية من مهمة مأهولة بشكل متعمد على القمر وتم تسجيلها بواسطة مقياس زلازل على السطح.",
+    "new": "تحطمت مرحلة صعود إنتريبد عمدًا على القمر لمعايرة مقاييس الزلازل ALSEP — وهي أول مرحلة مركبة فضائية من مهمة مأهولة تصطدم بالقمر عمدًا ويسجّل ارتطامها مقياس زلازل على السطح."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.3.note",
+    "en": "Two surface contacts 2005-11-20 + 25. Sample-collection projectiles fail to fire on command.",
+    "old": "اتصالان سطحيان في 2005-11-20 و 25. آليات جمع العينات بالمقذوفات فشلت في التشغيل بأمر.",
+    "new": "ملامستان للسطح في 2005-11-20 و25. لم تنطلق مقذوفات جمع العينات عند إعطاء الأمر."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.6.note",
+    "en": "35-km D-type Trojan, slow rotator (446 h).",
+    "old": "كويكب طروادي من النوع D بطول 35 كم، دوار بطيء (446 ساعة).",
+    "new": "كويكب طروادي من النوع D بقطر 35 كم، بطيء الدوران (446 ساعة)."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.0.note",
+    "en": "Delta II 7925H lifts MESSENGER on a six-flyby trajectory.",
+    "old": "ينطلق صاروخ Delta II 7925H حاملاً MESSENGER في مسار يتضمن ستة تحليقات.",
+    "new": "ينطلق صاروخ Delta II 7925H حاملاً MESSENGER في مسار يتضمن ستة تحليقات قريبة."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.2.note",
+    "en": "Final pre-EDL trim 21 hours before entry.",
+    "old": "التعديل النهائي قبل EDL بـ 21 ساعة من الدخول.",
+    "new": "آخر تصحيح للمسار قبل مرحلة EDL، قبل 21 ساعة من الدخول."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.3.note",
+    "en": "Heat shield, parachute, retro-rockets, airbags.",
+    "old": "درع حراري، مظلة، صواريخ هبوط عكسية، أكياس هواء.",
+    "new": "درع حراري، مظلة، صواريخ رجعية، وسائد هوائية."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "en": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+    "old": "انزلقت وحدة القيادة في المحيط الهادئ الجنوبي 1969-11-24 20:58 بالتوقيت العالمي. تم استرجاعها بواسطة USS Hornet.",
+    "new": "هبطت وحدة القيادة هبوطًا مائيًا في جنوب المحيط الهادئ في 1969-11-24 20:58 بالتوقيت العالمي. جرى الانتشال بواسطة USS Hornet."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.5.note",
+    "en": "Eagle lifts off after 21h 36m on surface.",
+    "old": "إيجل تقوم بعد 21س 36د على السطح.",
+    "new": "تقلع إيجل بعد 21 س 36 د على السطح."
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.1.note",
+    "en": "Flyby at ~132,000 km — first close-range photographs of the planet.",
+    "old": "تحليق على نحو 132.000 كم — أول صور للكوكب عن قرب.",
+    "new": "التحليق القريب على بعد نحو 132,000 كم — أول صور للكوكب من مسافة قريبة."
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 3 orbits / 4 h 52 m.",
+    "old": "هبوط على الماء في المحيط الأطلسي بعد 3 دورات مدارية / 4 ساعات و52 دقيقة.",
+    "new": "هبوط مائي في المحيط الأطلسي بعد 3 مدارات / 4 ساعات و52 دقيقة."
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "en": "First crewed rendezvous — station-keeps within ~30 cm of Gemini 7.",
+    "old": "أول التقاء مأهول — حافظ على المحطة ضمن ~30 سم من Gemini 7.",
+    "new": "أول التقاء مأهول — تحافظ المركبة على موضعها ضمن ~30 سم من Gemini 7."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.4.note",
+    "en": "Thruster lines freeze; final command issued 2009-06-30.",
+    "old": "تجمد خطوط الدافع؛ صدر الأمر النهائي في 30 يونيو 2009.",
+    "new": "تتجمد خطوط وقود الدوافع؛ صدر الأمر الأخير في 2009-06-30."
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.1.note",
+    "en": "Apogee ~400 km; classified payload operations.",
+    "old": "الأوج ~400 km؛ عمليات الحمولة المصنفة",
+    "new": "الأوج ~400 كم؛ عمليات الحمولة المصنفة."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.4.note",
+    "en": "Bounced 28 times. Rolled to rest at 14.57°S, 175.47°E.",
+    "old": "ارتدت 28 مرة. توقفت عند 14.57°S, 175.47°E.",
+    "new": "ارتدت 28 مرة. استقرت عند 14.57° جنوباً، 175.47° شرقاً."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.5.note",
+    "en": "Arm scrapes through topsoil. Bright white ice sublimates on camera over 4 sols.",
+    "old": "الذراع تكشط التربة السطحية. جليد أبيض لامع يتصاعد أمام الكاميرا على مدار 4 أيام مريخية.",
+    "new": "تكشط الذراع التربة السطحية. جليد أبيض لامع يتسامى أمام الكاميرا على مدى 4 أيام مريخية."
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.1.note",
+    "en": "First orbital maneuver by a crew — thrusters change the orbit shape.",
+    "old": "أول مناورة مدارية بواسطة طاقم — الدفاعات تُغيّر شكل المدار.",
+    "new": "أول مناورة مدارية يجريها طاقم — تغيّر الدوافع شكل المدار."
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.2.note",
+    "en": "Lander separates and begins atmospheric entry.",
+    "old": "ينفصل الهابط ويبدأ الدخول الجوي.",
+    "new": "ينفصل الهابط ويبدأ الدخول في الغلاف الجوي."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.8.note",
+    "en": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+    "old": "حقن المسار نحو الأرض. SPS ∆v ≈1.0 km/s.",
+    "new": "الحقن نحو الأرض. دلتا-في لمحرك SPS نحو 1.0 كم/ث."
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 4 days / 62 orbits.",
+    "old": "هبوط في المحيط الأطلسي بعد 4 أيام / 62 دورة حول الأرض.",
+    "new": "هبوط مائي في المحيط الأطلسي بعد 4 أيام / 62 مدارًا."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.note",
+    "en": "2026-12-03. Final acceleration outbound to Jupiter.",
+    "old": "2026-12-03. التسارع النهائي للخارج نحو المشتري.",
+    "new": "2026-12-03. التسارع الأخير في رحلة الذهاب نحو المشتري."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.4.note",
+    "en": "2021-05-10. 2.5-year cruise back to Earth.",
+    "old": "2021-05-10. رحلة استرجاع لمدة 2.5 سنة إلى الأرض.",
+    "new": "2021-05-10. رحلة عودة إلى الأرض مدتها 2.5 سنة."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.3.note",
+    "en": "2022-09-04. Begins inclination climb out of the ecliptic.",
+    "old": "2022-09-04. بداية الصعود بالميل خارج دائرة البروج.",
+    "new": "2022-09-04. يبدأ رفع الميل المداري خارج مستوى دائرة البروج."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.note",
+    "en": "Trans-Mars injection (3.61 km/s ∆v) sends MSL onto a heliocentric Mars-bound trajectory.",
+    "old": "حقن الانتقال إلى المريخ (3.61 كم/ث ∆v) ترسل MSL على مسار مركزي الشمس نحو المريخ.",
+    "new": "الحقن نحو المريخ (دلتا-في 3.61 كم/ث) يرسل MSL على مسار شمسي المركز متجه نحو المريخ."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.note",
+    "en": "First of six assists to slow the trajectory enough to enter Mercury orbit.",
+    "old": "الأولى من ستة مساعدات لتبطيء المسار بما يكفي للدخول في مدار عطارد.",
+    "new": "الأولى من ست مساعدات جاذبية لإبطاء المسار بما يكفي للدخول في مدار عطارد."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.1.note",
+    "en": "Used Jupiter assist to bend onto a Saturn-bound path.",
+    "old": "استخدام مساعدة المشتري لثني المسار نحو طريق تحت سيطرة زحل.",
+    "new": "استخدمت مساعدة جاذبية المشتري لحرف المسار نحو مسار متجه إلى زحل."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.9.note",
+    "en": "2033-03. Mission climax: 113-km + 104-km binary Trojan.",
+    "old": "2033-03. ذروة المهمة: ثنائي طروادي بطول 113 كم + 104 كم.",
+    "new": "2033-03. ذروة المهمة: كويكب طروادي ثنائي بقطري 113 كم + 104 كم."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.1.note",
+    "en": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+    "old": "الإدراج في مدار الأرض 167 × 475 كم، ميل 64.8°.",
+    "new": "الإدخال في مدار أرضي 167 × 475 كم، بالميل المداري 64.8°."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.3.note",
+    "en": "D-CIXS X-ray fluorescence delivers first global elemental maps of the Moon.",
+    "old": "يقدم D-CIXS حيود الأشعة السينية أول خرائط عنصرية عالمية للقمر.",
+    "new": "يقدم D-CIXS، بالتألق الفلوري للأشعة السينية، أول خرائط عنصرية شاملة للقمر."
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "events.1.note",
+    "en": "Solar panel fails to deploy; attitude control degrades — mission cut short.",
+    "old": "اللوح الشمسي يفشل في الانفتاح؛ التحكم بالموقف يتدهور — المهمة تُختصر.",
+    "new": "اللوح الشمسي لا ينفتح؛ ويتدهور التحكم بالاتجاه — تُقطع المهمة قبل أوانها."
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.4.note",
+    "en": "Signal lost ~110 s after touchdown (transmission lasted ~14.5 s). Cause unconfirmed; dust storm leading suspect.",
+    "old": "فُقدت الإشارة ~110 ثوانٍ بعد الهبوط (استمر الإرسال ~14.5 ثانية). السبب غير مؤكد؛ العاصفة الغبارية هي المشبوهة الأولى.",
+    "new": "فُقدت الإشارة بعد ~110 ثوانٍ من الهبوط (استمر الإرسال ~14.5 ثانية). السبب غير مؤكد؛ والعاصفة الغبارية هي الاحتمال الأبرز."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.note",
+    "en": "2026-05-15. Closest approach 4,609 km — Mars flyby completed.",
+    "old": "2026-05-15. أقرب اقتراب 4,609 كم — اكتمل التحليق بجانب المريخ.",
+    "new": "2026-05-15. أقرب اقتراب 4,609 كم — اكتمل التحليق القريب بالمريخ."
+  }
+]

@@ -16,7 +16,7 @@
     },
     {
       "met": 0.005,
-      "label": "QUEIMADA TMI",
+      "label": "QUEIMA TMI",
       "note": "Injeção Trans-Marte.",
       "type": "nominal"
     },
@@ -50,5 +50,6 @@
       "note": "Pá do rotor danificada no 72º voo em 2024-01-18; helicóptero desativado, repurposado como estação meteorológica e de dados estacionária armazenando leituras para futura recuperação.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "estágio superior Centaur (Atlas V 541)"
 }

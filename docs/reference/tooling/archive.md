@@ -22,12 +22,14 @@ agents from cargo-culting a dead per-batch script when a standing tool exists.
 
 ## Groups
 
-### `_archive/i18n/` (36) — per-wave translation passes
+### `_archive/i18n/` (28) — per-wave translation passes
 The historical translation toolchain: `translate-*.mjs` (per-surface: satellites,
 belts, science, iconic missions, orbit rulers, fly phases, launchers, shuttles,
-panel/chip labels, tides, v0.7 UI, …), `apply-slice-*-translations.mjs`,
-`seed-satellite-i18n.mjs`, `paraglide-add-keys.mjs`, `add-flat-patch-i18n.mjs`,
+tides, v0.7 UI, …), `apply-slice-*-translations.mjs`, `seed-satellite-i18n.mjs`,
 `patch-tooltip-messages.mjs`, `wave-credits-keys.mjs`, `fill-moon-sites-locale-gaps.ts`.
+The scripts that wrote or replayed `paraglide-key-overrides.json` (paraglide-add-keys,
+add-flat-patch-i18n and four translate passes) were deleted with that file on
+2026-10-30: it was stale and replaying it would have undone reviewed translations.
 **Superseded by** `scripts/wave23/` (catalog → maps → apply) + the ADR-069
 overlay-completeness gate in `validate-data`.
 

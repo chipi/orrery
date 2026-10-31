@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "De diepere les is dat kosten een vorm van bekwaamheid zijn. Door ingrijpende exploratie goedkoop te doen, heeft ISRO niet alleen geld bespaard — het maakte een klasse van missies mogelijk voor een natie die ze zich nooit had kunnen veroorloven tegen westerse prijzen, en herdefinieerde wat de rest van de wereld gelooft dat deep-space exploratie moet kosten. Zuinigheid, nagestreefd als ingenieursdiscipline, is zelf een vorm van macht."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Maan — het landingsgebied bij de zuidpool",
+    "/fleet?focus=chandrayaan1": "Vloot — de Chandrayaan-ruimtesondes"
+  }
 }

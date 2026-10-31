@@ -3,9 +3,9 @@
   "vehicle": "SLS Block 1 + Orion (con equipaggio)",
   "payload": "Orion + equipaggio di 4 persone (Wiseman / Glover / Koch / Hansen)",
   "delta_v": "~6,5 km/s (andata e ritorno)",
-  "type": "FLYBY CON EQUIPAGGIO · VOLATO",
-  "first": "Primo volo con equipaggio oltre l'orbita terrestre bassa dall'Apollo 17 (1972) - e la missione che ha ispirato questo progetto",
-  "description": "Il primo volo con equipaggio del programma Artemis e la scintilla che divenne Orrery. Il 1° aprile 2026 l'SLS Block 1 di NASA ha lanciato una navicella spaziale Orion con quattro astronauti - Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) e Jeremy Hansen (MS) di CSA - su una traiettoria di ritorno libero che li ha fatti oscillare attorno al lato nascosto della Luna a circa 6.500 km sopra la superficie e li ha riportati a casa senza alcuna bruciatura da inserzione nell'orbita lunare. A 406.771 km dalla Terra hanno viaggiato più lontano di qualsiasi essere umano prima di loro, battendo il record dell'Apollo 13 del 1970. Dopo un volo di 9 giorni, Orion è ammarato nel Pacifico al largo di San Diego il 10 aprile. Il volo ha qualificato supporto vitale, navigazione e scudo termico di Orion per le missioni con equipaggio in vista del primo allunaggio, ora previsto con Artemis IV.",
+  "type": "SORVOLO CON EQUIPAGGIO · VOLATO",
+  "first": "Primo volo con equipaggio oltre l'orbita terrestre bassa dall'Apollo 17 (1972) — e la missione che ha ispirato questo progetto",
+  "description": "Il primo volo con equipaggio del programma Artemis e la scintilla da cui nacque Orrery. Il 1° aprile 2026 l'SLS Block 1 della NASA ha lanciato una navicella Orion con quattro astronauti — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) e Jeremy Hansen (MS) della CSA — su una traiettoria di ritorno libero che li ha fatti girare attorno al lato nascosto della Luna a circa 6.500 km dalla superficie e li ha riportati a casa senza alcuna accensione di inserimento in orbita lunare. A 406.771 km dalla Terra hanno viaggiato più lontano di qualsiasi essere umano prima di loro, battendo il record dell'Apollo 13 del 1970. Dopo un volo di 9 giorni, Orion è ammarato nel Pacifico al largo di San Diego il 10 aprile. Il volo ha qualificato supporto vitale, navigazione e scudo termico di Orion per le missioni con equipaggio in vista del primo allunaggio, ora previsto con Artemis IV.",
   "events": [
     {
       "met": 0,
@@ -27,8 +27,8 @@
     },
     {
       "met": 5.02,
-      "label": "VIAGGIO LUNARE",
-      "note": "Avvicinamento più vicino dal lato opposto, ~6.500 km di altitudine, e punto più lontano mai raggiunto da esseri umani: 406.771 km dalla Terra. Nessun inserimento in orbita: la geometria a ritorno libero riporta Orione sulla Terra.",
+      "label": "SORVOLO LUNARE",
+      "note": "Massimo avvicinamento sul lato nascosto, a ~6.500 km di altitudine, e punto più lontano mai raggiunto da esseri umani: 406.771 km dalla Terra. Nessun inserimento in orbita: la geometria a ritorno libero riporta Orion sulla Terra.",
       "type": "info"
     },
     {
@@ -43,5 +43,6 @@
       "note": "Rientro di Orion e ammaraggio nell'Oceano Pacifico.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "SLS ICPS (stadio di propulsione criogenico provvisorio)"
 }

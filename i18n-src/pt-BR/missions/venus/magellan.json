@@ -28,7 +28,7 @@
     {
       "met": 463,
       "label": "VOI",
-      "note": "Queimada do motor sólido em uma órbita quase polar de 295 × 8543 km, 85,5°.",
+      "note": "Queima do motor sólido em uma órbita quase polar de 295 × 8543 km, 85,5°.",
       "type": "info"
     },
     {
@@ -43,5 +43,6 @@
       "note": "1994-10-13. Periapse baixado para a atmosfera — primeira entrada atmosférica planejada de uma sonda planetária.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "Inertial Upper Stage (IUS, estágio superior)"
 }

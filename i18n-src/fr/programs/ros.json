@@ -76,5 +76,10 @@
       "type": "prose",
       "md": "La leçon plus profonde est la distance entre annoncer une station et en faire voler une. La ROS a un héritage, une intention et une justification stratégique claire — et elle doit encore être construite sous sanctions sur un budget rétréci. L'ambition est bon marché et les stations sont coûteuses ; le programme est un rappel qu'en matière de vol spatial, le plan est la partie facile, et la partie difficile est de le financer."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/mir": "Mir — la station modulaire dont descend le segment russe",
+    "/programs/salyut": "Salyut — les premières stations russes",
+    "/programs/iss": "ISS — le partenariat que la Russie quitte"
+  }
 }

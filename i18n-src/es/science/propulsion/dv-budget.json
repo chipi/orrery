@@ -1,6 +1,6 @@
 {
   "title": "∆v: presupuesto de misión",
-  "intro_sentence": "El número único que determina si una misión es posible: el cambio de velocidad total que necesitas gastar, sumado en cada impulso.",
+  "intro_sentence": "El número único que determina si una misión es posible: el cambio de velocidad total que necesitas gastar, sumado en cada encendido.",
   "narrative_101": [
     "El dinero para viajes espaciales no son dólares. Es ∆v —pronunciado «delta-v»—, y se mide en kilómetros por segundo. Cada impulso que realiza tu cohete cuesta algo de ∆v. Cada maniobra en una trayectoria tiene un precio en km/s. El presupuesto de ∆v de la misión es simplemente el total acumulado: lanzamiento + inyección + correcciones de rumbo + llegada + aterrizaje. Súmalo todo y tienes tu factura.",
     "Ahora viene el giro crucial. Tu cohete no tiene ∆v ilimitado. Tiene un techo infranqueable, fijado por la ecuación de Tsiolkovski y determinado por completo por la parte de tu cohete que es combustible y por lo buenos que son tus motores. Si tu factura supera el techo, la misión es imposible. Gastar más dinero no lo arregla. Ganan las matemáticas.",

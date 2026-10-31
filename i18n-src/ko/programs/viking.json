@@ -80,5 +80,12 @@
       "type": "prose",
       "md": "더 깊은 교훈은 전체 과정을 증명하는 것의 가치다. Viking의 지속적인 선물은 어떤 단일 측정이 아니라 화성에 도달하여 온전하게 착륙하는 것이 가능하고 반복 가능하다는 실증이었다. 어려운 일이 한 번 — 그리고 두 번 — 완수되면, 그것은 도박이기를 멈추고 다른 이들이 그 위에 건설할 수 있는 토대가 된다. 때로 임무가 가져오는 가장 위대한 결과는 단순히 그것이 될 수 있다는 것이다."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "화성 — Viking이 착륙한 곳",
+    "/programs/mariner": "Mariner — 화성을 처음 정찰한 근접 비행선과 궤도선",
+    "/mars?site=viking1-lander": "Viking 1 — 크리세 평원",
+    "/mars?site=viking2-lander": "Viking 2 — 유토피아 평원",
+    "/mars?site=viking1-orbiter": "Viking 1 궤도선"
+  }
 }

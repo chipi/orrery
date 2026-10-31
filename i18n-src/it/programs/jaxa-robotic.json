@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "La lezione più profonda è che ambizione e budget sono separabili. La JAXA fa scienza di frontiera con una frazione del finanziamento di una superpotenza scegliendo obiettivi ristretti e difficili e volando leggera — prova che la leadership nell'esplorazione è disponibile a chiunque sia disposto a specializzarsi profondamente e improvvisare bene, piuttosto che solo a coloro che possono permettersi ammiraglie."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Luna — il sito di allunaggio di SLIM",
+    "/explore": "Esplora — Venere e i pianeti interni",
+    "/programs/hayabusa": "Hayabusa — la campagna JAXA di ritorno di campioni da asteroidi"
+  }
 }

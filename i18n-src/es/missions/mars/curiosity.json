@@ -6,7 +6,7 @@
   "type": "ROVER · ACTIVO",
   "first": "Primer róver marciano con energía nuclear; primer aterrizaje con grúa celeste",
   "dispatch": "Curiosity es un laboratorio con energía nuclear del tamaño de un coche pequeño, y lo difícil fue bajarlo. Demasiado pesado para bolsas de aire, fue descendido a Marte en 2012 por una grúa celeste impulsada por cohetes en una secuencia tan arriesgada que sus planificadores la llamaron siete minutos de terror — y funcionó a la primera. Desde entonces ha perforado su camino a través del cráter Gale y respondió la pregunta para la que fue enviado: el cráter albergó alguna vez un lago, con la química que algo viviente podría haber utilizado. Marte había sido habitable. Curiosity sigue funcionando, escalando una montaña de roca estratificada que se lee como el propio libro de historia del planeta.",
-  "description": "La misión insignia que definió la exploración moderna de Marte. Curiosity tiene el tamaño de un coche, está impulsado por plutonio, y ha recorrido más de 36 km a través del cráter Gale desde su aterrizaje en 2012. Sus instrumentos confirmaron que Marte alguna vez tuvo condiciones habitables — agua en movimiento, compuestos orgánicos complejos, la química que la vida necesitaría. La secuencia de EDL de los «siete minutos de terror», terminando con una grúa celeste bajando el róver por cables, es ahora el estándar de NASA para entregar cargas útiles grandes a la superficie de Marte.",
+  "description": "La misión insignia que definió la exploración moderna de Marte. Curiosity tiene el tamaño de un coche, funciona con plutonio y ha recorrido más de 36 km por el cráter Gale desde su aterrizaje en 2012. Sus instrumentos confirmaron que Marte tuvo en el pasado condiciones habitables — agua corriente, compuestos orgánicos complejos, la química que necesitaría la vida. La secuencia de EDL de los «siete minutos de terror», que termina con una grúa celeste que baja el róver con cables, es hoy el estándar de la NASA para llevar cargas útiles grandes a la superficie de Marte.",
   "events": [
     {
       "met": 0,
@@ -29,7 +29,7 @@
     {
       "met": 110,
       "label": "TCM-3",
-      "note": "Corrección previa a EDL final; la trayectoria apunta a la elipse de aterrizaje en el cráter Gale.",
+      "note": "Última corrección previa a la EDL; la trayectoria apunta a la elipse de aterrizaje en el cráter Gale.",
       "type": "nominal"
     },
     {
@@ -50,5 +50,6 @@
       "note": "Hazcam devuelve la primera imagen de baja resolución de la superficie.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Centaur (Atlas V 541)"
 }

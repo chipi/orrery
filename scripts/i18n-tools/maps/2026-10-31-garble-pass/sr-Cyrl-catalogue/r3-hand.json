@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "culture-doors/arecibo-message.json",
+    "at": "blurb",
+    "find": "трoминутни",
+    "replace": "троминутни"
+  }
+]

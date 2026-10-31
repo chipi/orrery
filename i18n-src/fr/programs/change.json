@@ -84,5 +84,13 @@
       "type": "prose",
       "md": "La leçon plus profonde est que la compétence discrète remodèle le terrain. Chang'e n'a fait aucune grande proclamation et n'a gagné aucune course aux gros titres, mais son succès régulier a fait plus pour relancer l'ambition lunaire humaine mondiale que n'importe quel discours — parce qu'un programme qui continue simplement de réussir, mission après mission, devient un fait stratégique auquel tous les autres doivent répondre. La constance, au final, est son propre type de pouvoir."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Lune — les sites d'alunissage Chang'e",
+    "/fleet?focus=yutu-2": "Flotte — les rovers Yutu et les atterrisseurs Chang'e",
+    "/programs/artemis": "Artemis — la course parallèle vers la Lune",
+    "/moon?site=change3": "Chang’e 3 — rover Yutu",
+    "/moon?site=change4": "Chang’e 4 — la face cachée",
+    "/moon?site=change2": "Chang’e 2"
+  }
 }

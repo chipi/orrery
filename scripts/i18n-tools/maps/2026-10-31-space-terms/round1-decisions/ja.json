@@ -1,0 +1,727 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.diagram",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "filename"
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "narrative_101.2",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "トラジェクトリが",
+    "replace": "軌道が",
+    "why": "trajectory = 軌道"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.1",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "English says tilt; 傾き matches source"
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.1",
+    "term": "inclination",
+    "decision": "change",
+    "find": "傾斜も関係ない",
+    "replace": "軌道傾斜角も関係ない",
+    "why": "binding 軌道傾斜角"
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "body_paragraphs.1",
+    "term": "inclination",
+    "decision": "change",
+    "find": "軌道傾斜の参照平面",
+    "replace": "軌道傾斜角の参照平面",
+    "why": "binding"
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "body_paragraphs.1",
+    "term": "inclination",
+    "decision": "change",
+    "find": "地球の傾斜は",
+    "replace": "地球の軌道傾斜角は",
+    "why": "binding"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "change",
+    "find": "Ulysses軌道の傾斜を",
+    "replace": "太陽中心軌道の軌道傾斜角を",
+    "why": "binding; Ulysses軌道 mistranslated heliocentric trajectory"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "化学推進 = chemical propulsion as a method; natural"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "term": "inclination",
+    "decision": "change",
+    "find": "~80°の傾斜が",
+    "replace": "~80°の軌道傾斜角が",
+    "why": "binding"
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "body_paragraphs.2",
+    "term": "docking",
+    "decision": "change",
+    "find": "対接近フェーズングバーン",
+    "replace": "ドッキングのフェージング噴射",
+    "why": "garbled; docking = ドッキング, burn = 噴射"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.1",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力支援によるホップ",
+    "replace": "スイングバイによるホップ",
+    "why": "binding スイングバイ"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "大きな単一バーン",
+    "replace": "大きな単一の噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "制動バーン",
+    "replace": "制動噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "軌道挿入",
+    "replace": "軌道投入",
+    "why": "binding 軌道投入"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "term": "entry",
+    "decision": "change",
+    "find": "EDL — 進入",
+    "replace": "EDL — 突入",
+    "why": "binding 大気圏突入"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "キャプチャバーン",
+    "replace": "捕捉噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "小さなキャプチャバーン",
+    "replace": "小さな捕捉噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "キャプチャバーンなし",
+    "replace": "捕捉噴射なし",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン間および",
+    "replace": "噴射の合間および",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burns the crew up\" is combustion, not an engine firing"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "ブレーキバーンなし",
+    "replace": "制動噴射なし",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "軌道投入バーン",
+    "replace": "軌道投入噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "離脱バーン",
+    "replace": "離脱噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "2番目のバーン",
+    "replace": "2番目の噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "大きな劇的なバーン",
+    "replace": "大きな劇的な噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "このバーンの後",
+    "replace": "この噴射の後",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "2番目のバーン",
+    "replace": "2番目の噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stars \"burn red\" is figurative glow"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burn out\" is stellar fusion exhaustion"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "近地点を~200 kmまで燃やす",
+    "replace": "噴射して近地点を~200 kmまで下げる",
+    "why": "Burn perigee down = engine firing; 燃やす is wrong"
+  },
+  {
+    "rel": "science/orbits/hill-sphere.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "ステーション・キーピング・バーン",
+    "replace": "ステーション・キーピング噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "ハロー軌道侵入火バーン",
+    "replace": "ハロー軌道投入噴射",
+    "why": "garbled; burn = 噴射"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.3",
+    "term": "burn",
+    "decision": "change",
+    "find": "ステーション保持バーン",
+    "replace": "ステーション保持噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "マルチバーン",
+    "replace": "複数回の噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "出発バーン",
+    "replace": "出発噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "出発バーン最小値",
+    "replace": "出発噴射最小値",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "あらゆるバーン全体",
+    "replace": "あらゆる噴射全体",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "すべてのバーンが",
+    "replace": "すべての噴射が",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "エンジンバーン",
+    "replace": "エンジン噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.3",
+    "term": "burn",
+    "decision": "change",
+    "find": "OMS バーン",
+    "replace": "OMS 噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.3",
+    "term": "descent",
+    "decision": "change",
+    "find": "上昇 + 下降エンジン",
+    "replace": "上昇 + 降下エンジン",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "fuel-burned-per-second is combustion; 燃料消費量 correct"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burn it\" = combustion; 燃やす correct"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "注入バーン",
+    "replace": "注入噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "2回のバーン",
+    "replace": "2回の噴射",
+    "why": "binding 噴射 (burn = engine firing)"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "軌道上での中途補正なし",
+    "replace": "途中の噴射なし",
+    "why": "mid-course burns = engine firings"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "二段階加速経路",
+    "replace": "2回の噴射による経路",
+    "why": "two-burn = 2回の噴射"
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "change",
+    "find": "降下ステージ",
+    "replace": "降下段",
+    "why": "binding 段"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "燃料を消費して",
+    "replace": "推進剤を消費して",
+    "why": "binding 推進剤"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "燃料が少なすぎる",
+    "replace": "推進剤が少なすぎる",
+    "why": "binding 推進剤"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "プロペラント当たり",
+    "replace": "推進剤当たり",
+    "why": "binding 推進剤"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "Rocket Propellant 1 is a proper name"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "プロペラント質量を速度",
+    "replace": "推進剤質量を速度",
+    "why": "binding"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "必要なプロペラントは",
+    "replace": "必要な推進剤は",
+    "why": "binding"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "実用的なプロペラント組み合わせ",
+    "replace": "実用的な推進剤組み合わせ",
+    "why": "binding"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "プロペラント（通常は",
+    "replace": "推進剤（通常は",
+    "why": "binding"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "プロペラントをイオン化",
+    "replace": "推進剤をイオン化",
+    "why": "binding"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "プロペラント量が少なく",
+    "replace": "推進剤量が少なく",
+    "why": "binding"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "プロペラント質量分率",
+    "replace": "推進剤質量分率",
+    "why": "binding"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "プロペラント量が必要でしか",
+    "replace": "推進剤量が必要でしか",
+    "why": "binding"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.3",
+    "term": "propellant",
+    "decision": "change",
+    "find": "プロペラント質量を劇的",
+    "replace": "推進剤質量を劇的",
+    "why": "binding"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "payload",
+    "decision": "keep",
+    "why": "Vega Secondary Payload Adapter is a proper name"
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "推進力有効搭載量",
+    "replace": "ペイロード",
+    "why": "binding ペイロード"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "term": "thrust",
+    "decision": "change",
+    "find": "6.77 MNを発生",
+    "replace": "6.77 MNの推力を発生",
+    "why": "thrust omitted; binding 推力"
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.3",
+    "term": "thrust",
+    "decision": "change",
+    "find": "スラストは",
+    "replace": "推力は",
+    "why": "binding 推力"
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.3",
+    "term": "booster",
+    "decision": "keep",
+    "why": "Super Heavy is the booster by name; word omitted naturally"
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "減速しない通過",
+    "replace": "減速しないフライバイ",
+    "why": "binding フライバイ"
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "narrative_101.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "土星に向かう木星での重力支援は",
+    "replace": "土星に向かう途中の木星フライバイは",
+    "why": "flyby was mistranslated as gravity assist"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "月軌道挿入であれ火星軌道挿入であれ",
+    "replace": "月軌道投入であれ火星軌道投入であれ",
+    "why": "binding 軌道投入"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "が軌道挿入です",
+    "replace": "が軌道投入です",
+    "why": "binding"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "月軌道挿入を",
+    "replace": "月軌道投入を",
+    "why": "binding"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "火星軌道挿入を",
+    "replace": "火星軌道投入を",
+    "why": "binding"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "土星軌道挿入",
+    "replace": "土星軌道投入",
+    "why": "binding"
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "narrative_101.1",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "軌道挿入を再試行",
+    "replace": "軌道投入を再試行",
+    "why": "binding"
+  },
+  {
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "intro_sentence",
+    "term": "entry",
+    "decision": "change",
+    "find": "再入国",
+    "replace": "大気圏再突入",
+    "why": "binding 大気圏突入 (再入国 = immigration)"
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "change",
+    "find": "エントリー加熱",
+    "replace": "大気圏突入加熱",
+    "why": "binding 大気圏突入"
+  },
+  {
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "body_paragraphs.0",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降モジュール",
+    "replace": "降下モジュール",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.1",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降が緩く柔らかく",
+    "replace": "降下が緩く柔らかく",
+    "why": "binding"
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.1",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降が急で厳しく",
+    "replace": "降下が急で厳しく",
+    "why": "binding"
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降HUD",
+    "replace": "降下HUD",
+    "why": "binding"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降HUD",
+    "replace": "降下HUD",
+    "why": "binding"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "diagram_caption",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降速度",
+    "replace": "降下速度",
+    "why": "binding"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降を担当",
+    "replace": "降下を担当",
+    "why": "binding"
+  }
+]

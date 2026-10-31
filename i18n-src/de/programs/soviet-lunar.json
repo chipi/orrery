@@ -88,5 +88,12 @@
       "type": "prose",
       "md": "Die zweite Lektion lautet: Geheimhaltung und Rechenschaftspflicht sind Gegensätze, und ein Programm braucht Letztere mehr, als es den Verlust der Ersteren fürchten sollte. Die Geheimhaltung des sowjetischen Vorhabens bewahrte es vor öffentlicher Blamage und nahm ihm damit jede äußere Kraft, die es hätte zwingen können, sich seinen Problemen rechtzeitig zu stellen. Apollo musste ehrlich sein, weil die ganze Welt zusah; die N1 durfte vier Mal leise scheitern, weil niemand zusah. Sichtbarkeit ist nicht bloß ein Risiko, das es zu handhaben gilt. Für ein schwieriges, unerbittliches Unterfangen gehört sie zu den Dingen, die Erfolg überhaupt erst möglich machen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Der Mond — Oberfläche, Landeplätze & Erkundung",
+    "/fleet?focus=n1": "Flotte — Schwerlastrakete N1",
+    "/moon?site=luna16": "Luna 16 — erste robotische Probenrückführung",
+    "/moon?site=luna17": "Luna 17 — Lunokhod 1",
+    "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  }
 }

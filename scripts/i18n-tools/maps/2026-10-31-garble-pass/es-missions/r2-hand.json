@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "description",
+    "find": "el 19 de noviembre de 1999 a las 22:30 UTC",
+    "replace": "el 1999-11-19 a las 22:30 UTC"
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "description",
+    "find": "el 20 de noviembre de 1999 a las 19:41 UTC",
+    "replace": "el 1999-11-20 a las 19:41 UTC"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.5.note",
+    "find": "el 16 de octubre de 2016",
+    "replace": "el 2016-10-16"
+  }
+]

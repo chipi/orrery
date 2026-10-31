@@ -81,6 +81,28 @@ describe('S4 · live MCP round-trip', () => {
     expect(wrong.status).toBe(401);
   });
 
+  it('answers 503 + Retry-After, not 401, when the token issuer is unreachable', async () => {
+    const token = await core.issueAccessToken({
+      sub: 'g-1',
+      email: 'a@b.c',
+      scope: 'physics:read',
+      aud: RESOURCE,
+    });
+    const prev = process.env.MCP_JWKS_URL;
+    process.env.MCP_JWKS_URL = 'http://127.0.0.1:1/jwks';
+    try {
+      const res = await fetch(`${baseUrl}/mcp`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` },
+        body: '{}',
+      });
+      expect(res.status).toBe(503);
+      expect(res.headers.get('retry-after')).toBe('30');
+    } finally {
+      process.env.MCP_JWKS_URL = prev;
+    }
+  });
+
   it('lists transfer-domain tools; ja locale localizes descriptions', async () => {
     const { c, connect } = client();
     await connect();

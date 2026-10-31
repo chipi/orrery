@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La segunda lección es que la cooperación internacional puede sostener lo que el orgullo nacional no puede costear. Mir sobrevivió sus años más duros porque la cooperación reemplazó a la competencia — porque un antiguo adversario tenía razones para ayudar a mantenerla en vuelo. La misma lógica construyó la EEI y la mantiene en órbita: ninguna nación por sí sola financia ahora una presencia humana permanente. Mir es donde ese cambio fue primero forzado por las circunstancias y luego elegido intencionalmente, y es uno de los cambios más trascendentales en la historia del vuelo espacial."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Tierra: órbitas, encuentros y bases de lanzamiento",
+    "/fleet?focus=mir": "Flota — la estación espacial Mir"
+  }
 }

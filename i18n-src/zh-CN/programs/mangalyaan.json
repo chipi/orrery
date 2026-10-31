@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "更深一层的教训是：火星任务首次尝试即告成功，关乎谦逊，不亚于关乎雄心。失败的火星任务的坟场里，满是资金充足却好高骛远的计划；ISRO只伸手够到自己能可靠做到的距离，证明了这一点，并让任务超越了自己并不高的目标。瞄得准而不是瞄得高，有时正是赢得最艰难的“第一”的办法。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "火星 — 目的地",
+    "/fleet?focus=mangalyaan": "航天器 — Mars Orbiter Mission",
+    "/programs/chandrayaan": "Chandrayaan — 印度的探月计划",
+    "/mars?site=mangalyaan": "环绕火星的 Mangalyaan"
+  }
 }

@@ -28,5 +28,9 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Chandrayaan is that a public failure, fully owned and learned from, can become the foundation of a greater success. Chandrayaan-2's crash could have ended the program's ambition; instead it became the data that made Chandrayaan-3's historic landing possible. The willingness to try again, in the same public eye that watched the failure, is the whole story." },
     { "type": "prose", "md": "The deeper lesson is that cost is a form of capability. By doing profound exploration cheaply, ISRO did not merely save money — it made a class of missions possible for a nation that could never have afforded them at Western prices, and reset what the rest of the world believes deep-space exploration must cost. Frugality, pursued as engineering discipline, is itself a kind of power." }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Moon — the south-pole landing region",
+    "/fleet?focus=chandrayaan1": "Fleet — the Chandrayaan spacecraft"
+  }
 }

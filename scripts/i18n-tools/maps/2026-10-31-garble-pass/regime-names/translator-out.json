@@ -1,0 +1,807 @@
+[
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "name",
+    "old": "Asteroid Main Belt",
+    "new": "小惑星メインベルト"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "name",
+    "old": "Asteroid Main Belt",
+    "new": "小行星主带"
+  },
+  {
+    "loc": "ko",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "name",
+    "old": "Asteroid Main Belt",
+    "new": "주 소행성대"
+  },
+  {
+    "loc": "de",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "name",
+    "old": "Asteroid Main Belt",
+    "new": "Asteroiden-Hauptgürtel"
+  },
+  {
+    "loc": "fr",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "name",
+    "old": "Asteroid Main Belt",
+    "new": "Ceinture principale d'astéroïdes"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "name",
+    "old": "Asteroid Main Belt",
+    "new": "Cinturón Principal de Asteroides"
+  },
+  {
+    "loc": "it",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "name",
+    "old": "Asteroid Main Belt",
+    "new": "Fascia Principale degli Asteroidi"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "name",
+    "old": "Asteroid Main Belt",
+    "new": "Hoofdgordel van de planetoïden"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "name",
+    "old": "Asteroid Main Belt",
+    "new": "Cinturão Principal de Asteroides"
+  },
+  {
+    "loc": "ru",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "Газовые + ледяные гиганты"
+  },
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "ガス + 氷の巨大惑星"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "气态 + 冰巨行星"
+  },
+  {
+    "loc": "ko",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "가스 + 얼음 거대 행성"
+  },
+  {
+    "loc": "hi",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "गैस + हिम दानव ग्रह"
+  },
+  {
+    "loc": "ar",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "العمالقة الغازية + الجليدية"
+  },
+  {
+    "loc": "de",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "Gas- + Eisriesen"
+  },
+  {
+    "loc": "fr",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "Géantes gazeuses + géantes glacées"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "Gigantes Gaseosos + Helados"
+  },
+  {
+    "loc": "it",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "Giganti Gassosi + Ghiacciati"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "Gas- + ijsreuzen"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "name",
+    "old": "Gas + Ice Giants",
+    "new": "Gigantes Gasosos + Gelados"
+  },
+  {
+    "loc": "ru",
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "name",
+    "old": "Heliopause + Interstellar Space",
+    "new": "Гелиопауза + межзвёздное пространство"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "name",
+    "old": "Heliopause + Interstellar Space",
+    "new": "日球层顶 + 星际空间"
+  },
+  {
+    "loc": "ko",
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "name",
+    "old": "Heliopause + Interstellar Space",
+    "new": "태양권계면 + 성간 공간"
+  },
+  {
+    "loc": "ar",
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "name",
+    "old": "Heliopause + Interstellar Space",
+    "new": "الهليوبوز + الفضاء بين النجمي"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "name",
+    "old": "Heliopause + Interstellar Space",
+    "new": "Heliopausa + Espacio Interestelar"
+  },
+  {
+    "loc": "it",
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "name",
+    "old": "Heliopause + Interstellar Space",
+    "new": "Eliopausa + Spazio Interstellare"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "name",
+    "old": "Heliopause + Interstellar Space",
+    "new": "Heliopauze + Interstellaire ruimte"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "name",
+    "old": "Heliopause + Interstellar Space",
+    "new": "Heliopausa + Espaço Interestelar"
+  },
+  {
+    "loc": "ru",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "Пояс Койпера"
+  },
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "カイパーベルト"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "柯伊伯带"
+  },
+  {
+    "loc": "ko",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "카이퍼 벨트"
+  },
+  {
+    "loc": "hi",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "काइपर पट्टी"
+  },
+  {
+    "loc": "ar",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "حزام كايبر"
+  },
+  {
+    "loc": "de",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "Kuipergürtel"
+  },
+  {
+    "loc": "fr",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "Ceinture de Kuiper"
+  },
+  {
+    "loc": "it",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "Fascia di Kuiper"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "Kuipergordel"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "name",
+    "old": "Kuiper Belt",
+    "new": "Cinturão de Kuiper"
+  },
+  {
+    "loc": "de",
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "name",
+    "old": "Oort Cloud",
+    "new": "Oortsche Wolke"
+  },
+  {
+    "loc": "fr",
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "name",
+    "old": "Oort Cloud",
+    "new": "Nuage d'Oort"
+  },
+  {
+    "loc": "it",
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "name",
+    "old": "Oort Cloud",
+    "new": "Nube di Oort"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "name",
+    "old": "Oort Cloud",
+    "new": "Oortwolk"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "name",
+    "old": "Oort Cloud",
+    "new": "Nuvem de Oort"
+  },
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "name",
+    "old": "Scattered Disc + Sednoids",
+    "new": "散乱円盤 + セドノイド"
+  },
+  {
+    "loc": "ko",
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "name",
+    "old": "Scattered Disc + Sednoids",
+    "new": "산란 원반 + 세드노이드"
+  },
+  {
+    "loc": "hi",
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "name",
+    "old": "Scattered Disc + Sednoids",
+    "new": "प्रकीर्णित चक्र + सेडनॉइड"
+  },
+  {
+    "loc": "ar",
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "name",
+    "old": "Scattered Disc + Sednoids",
+    "new": "القرص المبعثر + السدنويدات"
+  },
+  {
+    "loc": "de",
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "name",
+    "old": "Scattered Disc + Sednoids",
+    "new": "Streuscheibe + Sednoiden"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "name",
+    "old": "Scattered Disc + Sednoids",
+    "new": "Verstrooide schijf + Sednoïden"
+  },
+  {
+    "loc": "ru",
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "name",
+    "old": "Areostationary Orbit",
+    "new": "Ареостационарная орбита"
+  },
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "name",
+    "old": "Areostationary Orbit",
+    "new": "火星静止軌道"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "name",
+    "old": "Areostationary Orbit",
+    "new": "火星静止轨道"
+  },
+  {
+    "loc": "ko",
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "name",
+    "old": "Areostationary Orbit",
+    "new": "화성 정지 궤도"
+  },
+  {
+    "loc": "de",
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "name",
+    "old": "Areostationary Orbit",
+    "new": "Areostationärer Orbit"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "name",
+    "old": "Areostationary Orbit",
+    "new": "Órbita Areoestacionaria"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "name",
+    "old": "Areostationair Orbit",
+    "new": "Areostationaire baan"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "name",
+    "old": "Areostationary Orbit",
+    "new": "Órbita Areoestacionária"
+  },
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "name",
+    "old": "火星のHill Sphere",
+    "new": "火星のヒル球"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "name",
+    "old": "火星Hill Sphere",
+    "new": "火星希尔球"
+  },
+  {
+    "loc": "hi",
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "name",
+    "old": "मंगल का Hill Sphere",
+    "new": "मंगल का हिल गोला"
+  },
+  {
+    "loc": "fr",
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "name",
+    "old": "Hill Sphere martienne",
+    "new": "Sphère de Hill martienne"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "name",
+    "old": "Marsbolsfeer",
+    "new": "Hill-sfeer van Mars"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "name",
+    "old": "High Mars Orbit",
+    "new": "Hoge Mars-baan"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "name",
+    "old": "Low Mars Orbit",
+    "new": "Lage Mars-baan"
+  },
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "name",
+    "old": "月のHill Sphere",
+    "new": "月のヒル球"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "name",
+    "old": "月球Hill Sphere",
+    "new": "月球希尔球"
+  },
+  {
+    "loc": "hi",
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "name",
+    "old": "चंद्र Hill Sphere",
+    "new": "चंद्र हिल गोला"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "name",
+    "old": "Lunar Hill Sphere",
+    "new": "Hill-sfeer van de Maan"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "name",
+    "old": "Lunar Hill Sphere",
+    "new": "Esfera de Hill Lunar"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "name",
+    "old": "High Lunar Orbit",
+    "new": "Órbita Lunar Alta"
+  },
+  {
+    "loc": "ru",
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "name",
+    "old": "Earth-Moon L2",
+    "new": "Земля–Луна L2"
+  },
+  {
+    "loc": "de",
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "name",
+    "old": "Earth-Moon L2",
+    "new": "Erde–Mond L2"
+  },
+  {
+    "loc": "de",
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "name",
+    "old": "Niedriger Mondumlaufbahn",
+    "new": "Niedrige Mondumlaufbahn"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "name",
+    "old": "Low Lunar Orbit",
+    "new": "Órbita Lunar Baja"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "name",
+    "old": "Low Lunar Orbit",
+    "new": "Órbita Lunar Baixa"
+  },
+  {
+    "loc": "ru",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Near-Rectilinear Halo Orbit",
+    "new": "Околопрямолинейная гало-орбита"
+  },
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Near-Rectilinear Halo Orbit",
+    "new": "近直線ハロー軌道"
+  },
+  {
+    "loc": "ko",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Near-Rectilinear Halo Orbit",
+    "new": "근직선 헤일로 궤도"
+  },
+  {
+    "loc": "hi",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Near-Rectilinear Halo Orbit",
+    "new": "निकट-सीधी हैलो कक्षा"
+  },
+  {
+    "loc": "ar",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Near-Rectilinear Halo Orbit",
+    "new": "المدار الهالي شبه المستقيم"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Готово праволинијска хало орбита",
+    "new": "Скоро праволинијска хало орбита"
+  },
+  {
+    "loc": "de",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Near-Rectilinear Halo Orbit",
+    "new": "Nahezu geradlinige Halo-Umlaufbahn"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Near-Rectilinear Halo Orbit",
+    "new": "Órbita Halo Casi Rectilínea"
+  },
+  {
+    "loc": "it",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Near-Rectilinear Halo Orbit",
+    "new": "Orbita Halo Quasi Rettilinea"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Near-Rectilinear Halo Orbit",
+    "new": "Bijna-rechtlijnige halobaan"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "name",
+    "old": "Near-Rectilinear Halo Orbit",
+    "new": "Órbita Halo Quase Retilínea"
+  },
+  {
+    "loc": "ru",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "name",
+    "old": "Geostationary Orbit",
+    "new": "Геостационарная орбита"
+  },
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "name",
+    "old": "Geostationary Orbit",
+    "new": "静止軌道"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "name",
+    "old": "Geostationary Orbit",
+    "new": "地球静止轨道"
+  },
+  {
+    "loc": "ar",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "name",
+    "old": "Geostationary Orbit",
+    "new": "المدار الثابت بالنسبة للأرض"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "name",
+    "old": "Geostationary Orbit",
+    "new": "Órbita Geoestacionaria"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "name",
+    "old": "Geostationary Orbit",
+    "new": "Geostationaire baan"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "name",
+    "old": "Geostationary Orbit",
+    "new": "Órbita Geoestacionária"
+  },
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes/HEO.json",
+    "at": "name",
+    "old": "Highly Elliptical Orbit",
+    "new": "高楕円軌道"
+  },
+  {
+    "loc": "ko",
+    "rel": "orbit-regimes/HEO.json",
+    "at": "name",
+    "old": "Highly Elliptical Orbit",
+    "new": "고타원 궤도"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes/HEO.json",
+    "at": "name",
+    "old": "Highly Elliptical Orbit",
+    "new": "Órbita Altamente Elíptica"
+  },
+  {
+    "loc": "it",
+    "rel": "orbit-regimes/HEO.json",
+    "at": "name",
+    "old": "Highly Elliptical Orbit",
+    "new": "Orbita Altamente Ellittica"
+  },
+  {
+    "loc": "ru",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "Солнце–Земля L2"
+  },
+  {
+    "loc": "ja",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "太陽–地球 L2"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "日地 L2点"
+  },
+  {
+    "loc": "ko",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "태양–지구 L2"
+  },
+  {
+    "loc": "hi",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "सूर्य–पृथ्वी L2"
+  },
+  {
+    "loc": "ar",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "الشمس–الأرض L2"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "Сунце–Земља L2"
+  },
+  {
+    "loc": "de",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "Sonne–Erde L2"
+  },
+  {
+    "loc": "fr",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "L2 Soleil-Terre"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "Sol–Tierra L2"
+  },
+  {
+    "loc": "it",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "Sole–Terra L2"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "Zon–Aarde L2"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes/L2.json",
+    "at": "name",
+    "old": "Sun–Earth L2",
+    "new": "L2 Sol-Terra"
+  },
+  {
+    "loc": "nl",
+    "rel": "orbit-regimes/MEO.json",
+    "at": "name",
+    "old": "Medium Earth Orbit",
+    "new": "Middelhoge aardorbiet"
+  },
+  {
+    "loc": "es",
+    "rel": "orbit-regimes/MOON.json",
+    "at": "name",
+    "old": "Lunar Orbit",
+    "new": "Órbita Lunar"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "orbit-regimes/MOON.json",
+    "at": "name",
+    "old": "Lunar Orbit",
+    "new": "Órbita Lunar"
+  }
+]

@@ -80,5 +80,14 @@
       "type": "prose",
       "md": "더 깊은 교훈은 위대한 능력은 도약이 아니라 단계적으로 구축된다는 것이다. Perseverance의 샘플 보관 정교함은 Sojourner 시대에는 상상할 수 없었다; 각 로버가 다음 것을 정당화했기 때문에만 가능해졌다. 야심 찬 목표는 보통 단일 결정적 임무가 아니라 인내심 있는 계보에 의해 도달한다, 각 구성원이 다음 것을 정당화하기에 충분히 증명하면서 — 진보는 단거리 달리기가 아니라 릴레이다."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "화성 — 로버들의 세계",
+    "/programs/viking": "Viking — 바퀴보다 먼저 온 착륙선",
+    "/mars?site=mars-pathfinder": "Sojourner — 아레스 계곡",
+    "/mars?site=spirit": "Spirit — 구세프 분화구",
+    "/mars?site=opportunity": "Opportunity — 메리디아니 평원",
+    "/mars?site=curiosity": "Curiosity — 게일 분화구",
+    "/mars?site=perseverance": "Perseverance — 예제로 분화구"
+  }
 }

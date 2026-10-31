@@ -16,7 +16,7 @@
     {
       "met": 17,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn 08.11.2008.",
+      "note": "Einschwenken in die Mondumlaufbahn 08.11.2008.",
       "type": "nominal"
     },
     {
@@ -31,5 +31,6 @@
       "note": "Kommunikation verloren 29.08.2009; 312 Einsatztage.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "vierte Stufe PS4 der PSLV"
 }

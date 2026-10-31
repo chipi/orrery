@@ -1,0 +1,200 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Cygnus Standard is a robotic cargo spacecraft built by Orbital Sciences in USA. Pressurised-only ISS cargo carrier. Flew 2013–2014; succeeded by the Enhanced Cygnus.",
+    "tr": "Cygnus Standard is een robotisch vrachtruimtevaartuig gebouwd door Orbital Sciences in de VS. ISS-vrachtvervoerder met uitsluitend een drukcabine. Vloog van 2013 tot 2014; opgevolgd door de Enhanced Cygnus.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Phoenix is a planetary lander built by Lockheed Martin in USA. Confirmed water ice in Martian soil. Mission ended in 2008.",
+    "tr": "Phoenix is een planetaire lander, gebouwd door Lockheed Martin in de VS. Bevestigde waterijs in Marsbodem. Missie beëindigd in 2008.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Surveyor 3 is a planetary lander built by Hughes Aircraft in USA. Apollo 12 visited it 2.5 years later. Mission ended in 1967.",
+    "tr": "Surveyor 3 is een planetaire lander gebouwd door Hughes Aircraft in de VS. Apollo 12 bezocht het 2,5 jaar later. Missie beëindigd in 1967.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Venera 7-class is a planetary lander built by NPO Lavochkin in USSR. First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970). Mission ended in 1970.",
+    "tr": "Venera 7-class is een planetaire lander gebouwd door NPO Lavochkin in de USSR. Eerste zachte landing op een ander planeetlichaam en eerste gegevenstransmissie vanaf het oppervlak van Venus (1970). Missie beëindigd in 1970.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Titan II GLV is an orbital launcher built by Martin Marietta in USA. Workhorse for Project Gemini. Flew 12 times, 1964–1966.",
+    "tr": "Titan II GLV is een orbitale draagraket, gebouwd door Martin Marietta in de VS. Werkpaard voor Project Gemini. Vloog 12 keer tussen 1964 en 1966.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Magellan is a deep-space orbiter built by Martin Marietta in USA. Radar-mapped 98% of Venus's surface. Mission ended in 1994.",
+    "tr": "Magellan is een orbiter voor de diepe ruimte, gebouwd door Martin Marietta in de VS. Bracht 98% van het oppervlak van Venus met radar in kaart. Missie beëindigd in 1994.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Lunokhod 2 is a planetary rover built by NPO Lavochkin in USSR. Roamed 39 km on the Moon — record till 2014. Mission ended in 1973.",
+    "tr": "Lunokhod 2 is een planetaire rover, gebouwd door NPO Lavochkin in de USSR. Legde 39 km af op de Maan — record tot 2014. Missie beëindigd in 1973.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Pragyan is a planetary rover built by ISRO in India. First lunar south-pole rover; Chandrayaan-3. Dormant since 2023.",
+    "tr": "Pragyan is een planetaire rover, gebouwd door ISRO in India. Eerste rover bij de zuidpool van de Maan; Chandrayaan-3. Inactief sinds 2023.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Sojourner is a planetary rover built by NASA JPL in USA. First Mars rover; Pathfinder mission. Mission ended in 1997.",
+    "tr": "Sojourner is een planetaire rover gebouwd door NASA JPL in de VS. Eerste Mars-rover; Pathfinder-missie. Missie beëindigd in 1997.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Spirit (MER-A) is a planetary rover built by NASA JPL in USA. Mars Exploration Rover; 6-year operation. Last contact in 2010.",
+    "tr": "Spirit (MER-A) is een planetaire rover, gebouwd door NASA JPL in de VS. Mars Exploration Rover; 6 jaar in bedrijf. Laatste contact in 2010.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Yutu is a planetary rover built by CAST in China. First Chinese lunar rover; Chang'e-3. Mission ended in 2016.",
+    "tr": "Yutu is een planetaire rover, gebouwd door CAST in China. Eerste Chinese maanrover; Chang'e-3. Missie beëindigd in 2016.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Zhurong is a planetary rover built by CAST in China. First Chinese Mars rover; Tianwen-1. Dormant since 2022.",
+    "tr": "Zhurong is een planetaire rover gebouwd door CAST in China. Eerste Chinese Mars-rover; Tianwen-1. Inactief sinds 2022.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "ATV (Automated Transfer Vehicle) is a robotic cargo spacecraft built by Astrium / Airbus in Europe. ESA's flagship ISS cargo carrier that flew five missions to the ISS from 2008 to 2015, delivering cargo, water, air and propellant while using its engines to reboost the Station.",
+    "tr": "ATV (Automated Transfer Vehicle) is een robotisch vrachtruimtevaartuig, gebouwd door Astrium / Airbus in Europa. Het vlaggenschip van ESA onder de ISS-vrachtschepen, dat van 2008 tot 2015 vijf missies naar het ISS vloog en vracht, water, lucht en drijfstof afleverde, terwijl het met zijn motoren de baan van het Station verhoogde.",
+    "terms": "Technical terms — use exactly these words, inflected as the grammar needs: propellant → drijfstof."
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Ariane 6 is an orbital launcher built by ArianeGroup in Europe. Successor to Ariane 5. In service since 2024.",
+    "tr": "Ariane 6 is een orbitale draagraket, gebouwd door ArianeGroup in Europa. Opvolger van de Ariane 5. In dienst sinds 2024.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "XMM-Newton is a space observatory built by Airbus Defence and Space in Europe. ESA's flagship X-ray observatory. In service since 1999.",
+    "tr": "XMM-Newton is een ruimteobservatorium, gebouwd door Airbus Defence and Space in Europa. Het vlaggenschip van ESA onder de röntgenobservatoria. In dienst sinds 1999.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Mars Express is a deep-space orbiter built by EADS Astrium in Europe. ESA's first Mars orbiter; Europe's first planetary mission. In service since 2003.",
+    "tr": "Mars Express is een orbiter voor de diepe ruimte, gebouwd door EADS Astrium in Europa. ESA's eerste Mars-orbiter; Europa's eerste planetaire missie. Sinds 2003 in bedrijf.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "India’s first successful lunar lander (August 2023), the first spacecraft to land near the lunar south pole. Four years after Vikram CY-2 crashed in the same region — the redemption arc India and ISRO needed.",
+    "tr": "India's eerste geslaagde maanlander (augustus 2023), het eerste ruimtevaartuig dat nabij de zuidpool van de Maan landde. Vier jaar nadat Vikram CY-2 in dezelfde regio neerstortte — het eerherstel dat India en ISRO nodig hadden.",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3 and the upcoming Gaganyaan crew programme",
+    "tr": "Zware-draagraketplatform van India — GSLV Mk III / LVM3 voor Chandrayaan-3 en het aanstaande bemande Gaganyaan-programma",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3 and the upcoming Gaganyaan crew programme",
+    "tr": "India's lanceerplatform voor zware lasten — GSLV Mk III / LVM3 voor Chandrayaan-3 en het aanstaande bemande programma Gaganyaan",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "ESA's first Mars orbiter; Europe's first planetary mission",
+    "tr": "ESA's eerste Mars-orbiter; Europa's eerste planetaire missie",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "ESA's first Mars orbiter; Europe's first planetary mission",
+    "tr": "ESA's eerste Mars-orbiter; Europa's eerste planetaire missie",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "The first soft landing on Mars (December 1971). Began transmitting what would have been a surface image, but contact was lost after ~20 seconds leaving only a featureless grey frame. The global dust storm raging across the planet may have contributed to the early transmission loss.",
+    "tr": "De eerste zachte landing op Mars (december 1971). Begon met het uitzenden van wat een beeld van het oppervlak had moeten worden, maar het contact viel na ~20 seconden weg, waardoor alleen een kenmerkloos grijs beeld overbleef. De wereldwijde stofstorm die over de planeet woedde, kan hebben bijgedragen aan het vroege verlies van de verbinding.",
+    "terms": ""
+  }
+]

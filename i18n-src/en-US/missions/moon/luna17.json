@@ -12,5 +12,6 @@
     { "met": 7, "label": "TOUCHDOWN", "note": "Soft-landing at Mare Imbrium 1970-11-17.", "type": "nominal" },
     { "met": 7.005, "label": "ROVER DEPLOYED", "note": "Lunokhod 1 rolls down ramps onto lunar surface.", "type": "info" },
     { "met": 329, "label": "FINAL CONTACT", "note": "Last command session 1971-09-14; rover preserved in cold lunar night.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Blok-D upper stage"
 }

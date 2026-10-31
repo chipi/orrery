@@ -84,5 +84,13 @@
       "type": "prose",
       "md": "より深い教訓は、静かな能力がフィールドを再構築するということである。Chang'eは壮大な宣言をせず、見出しを飾る競争にも勝たなかったが、その着実な成功は、どの演説よりも世界中の人類の月への野望を再始動させた — なぜなら、ミッション後にミッションで単に成功し続ける計画は、他のすべての人が答えなければならない戦略的事実となるからである。一貫性は、結局のところ、それ自体が一種の力なのである。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "月 — Chang'e の着陸地点",
+    "/fleet?focus=yutu-2": "フリート — Yutu ローバーと Chang'e 着陸機",
+    "/programs/artemis": "Artemis — 並行する月への再挑戦",
+    "/moon?site=change3": "Chang’e 3 — Yutu ローバー",
+    "/moon?site=change4": "Chang’e 4 — 月の裏側",
+    "/moon?site=change2": "Chang’e 2"
+  }
 }

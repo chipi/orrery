@@ -1,0 +1,917 @@
+[
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.2.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "film",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/smart-1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "La prima missione lunare dell'ESA, 2003-2006. Ha usato la propulsione solare-elettrica (ionica) per allontanarsi a spirale da un'orbita di trasferimento geostazionaria fino alla cattura lunare: un transito di 14 mesi, a basso consumo di carburante, che ha aperto la strada alle traiettorie a bassa spinta per le successive missioni interplanetarie dell'ESA. Nel 2006 è stata fatta cadere deliberatamente sulla superficie lunare.",
+    "note": "Awkward 'ebbe un impatto' phrasing; ESA article."
+  },
+  {
+    "rel": "museums/tsiolkovsky-museum-kaluga.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/change1.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/unity.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Il successore a due stadi dell'H-IIA di Mitsubishi Heavy Industries ha volato con successo per la prima volta nel 2024 (il debutto del 2023 è fallito). Configurabile con 0, 2 o 4 booster a propellente solido e con carenatura da 5,2 m o da 4 m. Il motore del primo stadio LE-9 è il primo motore a idrogeno monouso al mondo a ciclo expander-bleed. Lancerà nel 2026 la missione JAXA MMX di ritorno di campioni da Phobos.",
+    "note": "'biennale' means two-year, not two-stage; booster term broken."
+  },
+  {
+    "rel": "museums/aviation-museum-plovdiv-krumovo.json",
+    "at": "items.soyuz-7k-ok",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Breve perdita del segnale in banda X (8 s). La DSN ha riagganciato il segnale. Causa: occlusione dovuta al pennacchio dei propulsori. Nessun dato perso.",
+    "note": "'riacquistato' means bought back, not reacquired."
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/national-military-museum-bucharest.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.orion",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/juno.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/vega-1.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/armstrong-air-and-space-museum.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/rassvet.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Un compatto compartimento di aggancio russo che ha ampliato le opzioni di parcheggio per i veicoli cargo vicino a Zarya.",
+    "note": "Docking term should be aggancio."
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.voskhod",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.4.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.tundra-sirius",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/kibo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "tiangong-modules/mengtian.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/goes.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/cape-canaveral-space-force-museum.json",
+    "at": "items.titan-ii-glv",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Iniezione trans-marziana: 3,61 km/s. Velocità di fuga raggiunta.",
+    "note": "English maneuver name left untranslated."
+  },
+  {
+    "rel": "earth-objects/clementine.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.4",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "interstellar_since_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/baikonur-cosmodrome-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "library_labels.phobos-mmx",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "interstellar_since_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Ultimo contatto 2003 — in moto inerziale verso il Toro, passerà vicino ad Aldebaran tra ~2 milioni di anni",
+    "note": "'coast' left in English."
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Il telescopio a specchio segmentato da 39,3 m dell’ESO, in costruzione sul Cerro Armazones a 3.046 m, a circa 23 km da Paranal. La prima luce è prevista per marzo 2029.",
+    "note": "Thousands separator missing in 3046."
+  },
+  {
+    "rel": "iss-modules/destiny.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/virginia-air-and-space-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "La più grande luna di Nettuno e uno dei mondi geologicamente più attivi del sistema solare. Tritone orbita attorno a Nettuno all'indietro (retrogrado) e con un'inclinazione estrema: un indizio tipico di un oggetto catturato dalla fascia di Kuiper, il che lo rende probabilmente un parente di Plutone piuttosto che una luna nativa di Nettuno. La Voyager 2 ha rilevato geyser attivi di azoto che spingono polvere organica scura fino a 8 km di altezza in una tenue atmosfera di azoto; l'emisfero meridionale presenta il «terreno a melone», una rete di fossette e creste che non si vede in nessun altro luogo del sistema solare. L'orbita retrograda di Tritone sta decadendo per effetto delle maree: tra circa 3,6 miliardi di anni verrà o dilaniato in un anello simile a quello di Saturno o si schianterà su Nettuno.",
+    "note": "'Gyr' unit left; 'diagnostico di' calque."
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/oneweb.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "648 satelliti a 1.200 km in 12 piani orbitali polari — banda larga LEO di prima generazione. Gestito da Eutelsat OneWeb dalla fusione del 2023. Le orbite polari offrono una copertura da polo a polo che i gusci orbitali a media inclinazione di Starlink non possono raggiungere.",
+    "note": "'shell' left in English."
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Un telescopio a onde millimetriche a parabola singola da 50 m a 4.850 m di quota sulla Sierra Negra, progetto messicano-statunitense dell’INAOE e dell’Università del Massachusetts Amherst.",
+    "note": "Thousands separator missing in 4850."
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "library_labels.ganymede-magfield",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/galileo.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Un radiotelescopio a parabola singola di 500 metri costruito in una depressione naturale nel Guizhou, con una superficie attiva di 4.500 pannelli metallici che forma una parabola mobile. Osserva lunghezze d’onda radio da 10 cm a 4,3 m.",
+    "note": "Thousands separator missing in 4500."
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Il cavallo di battaglia lunare della Cina — ha lanciato tutte le missioni Chang'e dalla 1 alla 4",
+    "note": "Half English, garbled mixed-language sentence."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.4.l",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Seconda luna più grande del sistema solare e unica luna con un'atmosfera consistente, più densa di quella terrestre. Sotto la foschia arancione di toline si trova l'unico altro corpo noto, oltre alla Terra, con liquidi stabili in superficie: laghi e mari di idrocarburi, metano ed etano, nelle regioni polari, alimentati da un ciclo idrologico attivo del metano che comprende nuvole, pioggia e fiumi che incidono un substrato di ghiaccio d'acqua. Huygens (ESA) ha compiuto nel 2005 il primo atterraggio su una luna diversa da quella terrestre. Il Dragonfly della NASA arriverà nel 2034 come velivolo a rotori a propulsione nucleare, saltellando tra i paesaggi ricchi di composti organici di Titano.",
+    "note": "Rotorcraft rendered as 'rotore'; awkward hydrocarbon phrase."
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.4.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Encelado è in risonanza di moto medio 2:1 con Dione — l'eccentricità forzata (0,0047) genera la flessione mareale che alimenta i pennacchi criovulcanici del polo sud.",
+    "note": "'alimenta' repeated twice; clumsy."
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.3",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "links.2.l",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Yano et al. (2006) — Atterraggio di Hayabusa su Itokawa (Science)",
+    "note": "Link label left in English."
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/musee-air-espace-le-bourget.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.3.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "L'orbita di Saturno è regolare (eccentricità 0,054) ma la sua distanza media di 9,6 au fa sì che perielio e afelio differiscano di 100 milioni di km — Cassini ha calcolato i tempi del suo arrivo per sfruttare la velocità in avvicinamento.",
+    "note": "'dolce' is a literal calque for orbit."
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.resolution",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "I loghi delle agenzie JAXA e ISRO fanno da marchio sincero sulle schede e sulle pagine dei programmi interessati.",
+    "note": "'segno onesto' is an unclear calque."
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "docking",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Primo sistema di lancio orbitale completamente riutilizzabile, progettato per l'insediamento su Marte",
+    "note": "Mixed English and ungrammatical Italian."
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Il secondo punto di Lagrange — a 1,5 milioni di km dalla Terra, sulla linea che va dal Sole attraverso la Terra e prosegue oltre. La gravità combinata di Sole e Terra permette a una sonda di restare in stazione con un consumo minimo di carburante. Un cielo sempre notturno, un lato rivolto verso la Terra sempre caldo, lo stesso angolo solare per sempre — il parcheggio perfetto per telescopi a infrarossi che devono restare freddi e puntati lontano dal Sole. JWST è parcheggiato qui, in un'orbita ad alone larga ~800.000 km.",
+    "note": "Subject-verb agreement: 'gravità ... si combinano'."
+  },
+  {
+    "rel": "earth-objects/geo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Umbriel è il gemello scuro del sistema uraniano — grande circa come Ariel ma capace di riflettere meno della metà della luce solare, con un'antica superficie craterizzata che mostra poche tracce di rimodellamento dalla sua formazione. La caratteristica più notevole è Wunda, un cratere di 131 km con un anello di materiale brillante simile a brina lungo il bordo, vicino all'equatore della luna. La causa del colore scuro complessivo di Umbriel è sconosciuta; un'ipotesi la collega alla polvere delle lune esterne irregolari di Urano che attraversa il sistema interno.",
+    "note": "Reflectivity clause garbled; resurfacing mistranslated."
+  },
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Hubble orbita a 547 km di altezza, appena sopra la SSI. L'orbita terrestre bassa è piena zeppa di infrastrutture che abbiamo completamente dimenticato.",
+    "note": "Missing article before SSI."
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Orbita polare a 100 km di altitudine. Ha confermato l'ipotesi del ghiaccio polare di Clementine; ha fatto della spettroscopia neutronica lo strumento principale per i volatili lunari.",
+    "note": "Verb tenses inconsistent; fragment."
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "La Voyager 2 sorvolò Nettuno nel 1989 dopo un viaggio di 12 anni. È tuttora l'unico veicolo spaziale ad averlo visitato.",
+    "note": "Meaning reversed: 'visited' rendered as 'was visited'."
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "La più esterna delle lune principali di Urano. La superficie di Oberon è fortemente craterizzata e di tonalità rossastra — più antica di quella di Titania, senza prove evidenti di rimodellamento superficiale dal tardo bombardamento intenso, circa 4 miliardi di anni fa. Diversi grandi crateri hanno fondali nettamente scuri; gli spettri sono compatibili con residui di idrocarburi lasciati da composti organici alterati dall'esposizione all'ambiente spaziale. Una montagna di 6 km — forse il picco centrale di un grande bacino da impatto — si erge vicino al lembo nella migliore immagine di Voyager 2.",
+    "note": "'Gyr' left in; 'meteo spaziale' wrong term."
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/menoetius.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "In orbita attorno alla Luna dal 2009. Mappatura della superficie con una risoluzione di 50 cm: abbastanza buona da vedere gli stadi di discesa dell'Apollo ancora sulla superficie. Trovato ghiaccio d'acqua ai poli. Identificati oltre 200 potenziali siti di atterraggio di Artemis. Un esploratore in avanscoperta per il ritorno.",
+    "note": "'fasi della discesa' wrong; 'scout' English."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/space-expo-noordwijk.json",
+    "at": "items.soyuz-tma",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Asteroide binario di tipo S vicino alla Terra, scoperto nel 1996, con il satellite Dimorphos di 160 m su un'orbita di 11,9 ore a una separazione di 1,2 km. Classificato come corpo condritico — composizione silicatica di classe LL, comune nella fascia principale interna. La missione Hera dell'ESA (lanciata nel 2024) arriverà nel 2026 per studiare in dettaglio il sistema dopo l'impatto.",
+    "note": "'near-Earth' left in English."
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/galileo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "library_labels.enceladus-cassini",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "NASA Cassini — archivio storico dei sorvoli dei pennacchi",
+    "note": "Flyby not rendered with bound term sorvolo."
+  },
+  {
+    "rel": "museums/fernbank-science-center.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/iridium-next.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "66 satelliti operativi (più 9 di riserva in orbita) a 780 km su 6 piani polari — sostituzione di seconda generazione della flotta Iridium originaria del 1998. Voce, dati, comunicazione da macchina a macchina. Spina dorsale del GMDSS (sistema globale di soccorso e sicurezza marittima); il tuo telefono satellitare in un oceano remoto passa attraverso questa rete.",
+    "note": "English machine-to-machine and GMDSS expansion left."
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "0,94 au · in viaggio verso il sorvolo terrestre n. 2 del 2026-09-29 (tratto di crociera 2 di 5)",
+    "note": "'flyby' left in English; 'gamba' calque."
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  }
+]

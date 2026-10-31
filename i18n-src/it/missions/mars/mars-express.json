@@ -4,7 +4,7 @@
   "payload": "1183 kg (1123 kg di orbiter + 60 kg del lander Beagle 2)",
   "delta_v": "~4,5 km/s",
   "type": "ORBITORE · ATTIVO",
-  "first": "La prima missione interplanetaria dell'Europa; l'orbiter marziano nonNASA più longevo",
+  "first": "Prima missione interplanetaria europea; il più longevo tra gli orbiter di Marte non NASA",
   "description": "La prima missione di ESA su un pianeta diverso dalla Terra. L'orbiter ha prodotto la più lunga registrazione continua dell'atmosfera di Marte, mappando i depositi di ghiaccio d'acqua, i pennacchi di metano e il clima tridimensionale del pianeta. Beagle 2, il lander di costruzione britannica che trasportava, raggiunse la superficie ma non dispiegò mai completamente i pannelli solari: dichiarato disperso nel 2004, ritrovato intatto dal Mars Reconnaissance Orbiter di NASA nel 2015. L'orbiter è nel suo terzo decennio di attività.",
   "events": [
     {
@@ -27,7 +27,7 @@
     },
     {
       "met": 206,
-      "label": "INSERIMENTO MARTE ORBITA",
+      "label": "INSERIMENTO IN ORBITA DI MARTE",
       "note": "L'accensione del motore principale di 37 minuti cattura l'orbiter nell'orbita di Marte il giorno di Natale del 2003.",
       "type": "nominal"
     },
@@ -37,5 +37,6 @@
       "note": "Primo segnale atteso non ricevuto; lander dichiarato disperso.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "stadio superiore Fregat"
 }

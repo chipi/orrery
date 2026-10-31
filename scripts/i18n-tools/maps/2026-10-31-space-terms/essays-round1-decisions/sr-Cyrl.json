@@ -1,0 +1,200 @@
+[
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: кружи (verb orbit)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.15.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: круже око ње (verb orbit)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.9.caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: кружила око (verb orbit)"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.13.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: обилази око Сунца (verb orbit)"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.11.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Гравитациони поспешитељ",
+    "replace": "Гравитациони маневар",
+    "why": "\"поспешитељ\" (agent noun) is not the term; binding гравитациони маневар"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.18.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "гравитационим поспешитељем",
+    "replace": "гравитационим маневром",
+    "why": "\"поспешитељ\" -> binding, instrumental"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.18.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "на поспешивање",
+    "replace": "на гравитациони маневар",
+    "why": "\"поспешивање\" -> binding, accusative"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.19.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Гравитациона убрзања",
+    "replace": "Гравитациони маневри",
+    "why": "\"убрзања\" is not the term; binding гравитациони маневар, nom. pl. masc."
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.19.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "учинила су спољашње",
+    "replace": "учинили су спољашње",
+    "why": "verb agrees with masc. pl. subject \"маневри\""
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.10.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: propellant-burning vehicle (combustion)"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: burned manuscript, not engine firing"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: expend/consume the stage, not engine firing"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: propellant combustion (propellant-burning architecture)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: combustion of fuel"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: combustion / consuming propellant"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "Непрекидним сагоревањем силе тежине",
+    "replace": "Непрекидним потиском јачине тежине",
+    "why": "engine firing, not combustion of a force; binding рад мотора — operator-session rewrite: thrust of an apple's weight"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "chemical burn = combustion here (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: propellant consumption rate"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: consuming propellant"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: први степен ракете (first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stem gap: радио (descent engine \"радио дванаест минута\" = engine firing); \"burns it off\" is the energy-dissipation sense"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: први степен (first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.9.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: први степен / степен (first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.22.md",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: уласка у орбиту"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.9.md",
+    "term": "stage",
+    "decision": "change",
+    "find": "с новим први степеном",
+    "replace": "с новим првим степеном",
+    "why": "case agreement"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "а ваздух је полако сагорева",
+    "replace": "а ваздух га полако сагорева",
+    "why": "pronoun agrees with буџет (masc.)"
+  }
+]

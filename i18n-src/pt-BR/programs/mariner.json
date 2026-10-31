@@ -32,7 +32,7 @@
   "outcome": [
     {
       "type": "prose",
-      "md": "As Mariners reescreveram o sistema solar interno uma passagem de cada vez. Mariner 2 alcançou Vênus em 1962 — a primeira espaçonave a alcançar outro planeta — e encontrou não um gêmeo tropical, mas uma fornalha, sua superfície centenas de graus quente sob nuvens esmagadoras. Três anos depois, Mariner 4 passou por Marte e enviou de volta as primeiras fotografias já tiradas de outro planeta a curta distância: um deserto craterizado, semelhante à Lua, que silenciosamente matou os velhos sonhos de canais e civilizações."
+      "md": "As Mariners reescreveram o sistema solar interno um sobrevoo de cada vez. Mariner 2 alcançou Vênus em 1962 — a primeira espaçonave a alcançar outro planeta — e encontrou não um gêmeo tropical, mas uma fornalha, sua superfície centenas de graus quente sob nuvens esmagadoras. Três anos depois, Mariner 4 passou por Marte e enviou de volta as primeiras fotografias já tiradas de outro planeta a curta distância: um deserto craterizado, semelhante à Lua, que silenciosamente matou os velhos sonhos de canais e civilizações."
     },
     {
       "type": "prose",
@@ -50,7 +50,7 @@
     },
     {
       "type": "prose",
-      "md": "É também a história de como a exploração planetária aprendeu seus movimentos básicos. Mariner 4 provou que você poderia voar através do sistema solar e fotografar um planeta; Mariner 9 provou que você poderia parar e fazer um levantamento de um; Mariner 10 provou que você poderia usar a gravidade de um planeta para alcançar outro de graça. Essas três capacidades — a passagem, o orbitador e a assistência gravitacional — são a gramática de cada missão que se seguiu, e as Mariners são onde cada uma foi escrita pela primeira vez."
+      "md": "É também a história de como a exploração planetária aprendeu seus movimentos básicos. Mariner 4 provou que você poderia voar através do sistema solar e fotografar um planeta; Mariner 9 provou que você poderia parar e fazer um levantamento de um; Mariner 10 provou que você poderia usar a gravidade de um planeta para alcançar outro de graça. Essas três capacidades — o sobrevoo, o orbitador e a assistência gravitacional — são a gramática de cada missão que se seguiu, e as Mariners são onde cada uma foi escrita pela primeira vez."
     },
     {
       "type": "prose",
@@ -64,7 +64,7 @@
     },
     {
       "type": "prose",
-      "md": "O segundo é o conjunto de ferramentas. A passagem, o orbitador planetário e o estilingue gravitacional interplanetário foram todos realizados pela primeira vez pelas Mariners, e os três permanecem fundamentais para como as espaçonaves exploram. Missões posteriores voam mais longe e carregam mais, mas ainda usam os movimentos que a Mariner inventou."
+      "md": "O segundo é o conjunto de ferramentas. O sobrevoo, o orbitador planetário e o estilingue gravitacional interplanetário foram todos realizados pela primeira vez pelas Mariners, e os três permanecem fundamentais para como as espaçonaves exploram. Missões posteriores voam mais longe e carregam mais, mas ainda usam os movimentos que a Mariner inventou."
     },
     {
       "type": "prose",
@@ -74,11 +74,16 @@
   "lessons": [
     {
       "type": "prose",
-      "md": "A lição da Mariner é que um único olhar de perto pode derrubar um século de suposições. Telescópios haviam estudado Vênus e Marte por gerações e erraram o essencial — um gêmeo quente, um mundo entrelaçado por canais cheio de vida. Algumas horas de dados de passagem corrigiram ambos. Quando a evidência real é finalmente reunida, ela frequentemente tem pouca semelhança com as teorias cuidadosas construídas em sua ausência; a primeira medição direta vale mais do que qualquer quantidade de inferência."
+      "md": "A lição da Mariner é que um único olhar de perto pode derrubar um século de suposições. Telescópios haviam estudado Vênus e Marte por gerações e erraram o essencial — um gêmeo quente, um mundo entrelaçado por canais cheio de vida. Algumas horas de dados de sobrevoo corrigiram ambos. Quando a evidência real é finalmente reunida, ela frequentemente tem pouca semelhança com as teorias cuidadosas construídas em sua ausência; a primeira medição direta vale mais do que qualquer quantidade de inferência."
     },
     {
       "type": "prose",
       "md": "A lição mais profunda é que capacidades se acumulam. Mariner não se propôs a inventar a assistência gravitacional ou o orbitador planetário como fins em si mesmos — resolveu o problema à sua frente, e cada solução tornou-se uma ferramenta permanente que a próxima missão poderia assumir. O progresso em fronteiras difíceis é frequentemente menos sobre triunfos isolados do que sobre construir uma gramática de movimentos que todos que vêm depois podem usar de graça."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Marte — o mundo que a Mariner fotografou primeiro",
+    "/programs/viking": "Viking — os módulos de pouso para os quais a Mariner abriu caminho",
+    "/mars?site=mariner9": "Mariner 9 em órbita de Marte"
+  }
 }

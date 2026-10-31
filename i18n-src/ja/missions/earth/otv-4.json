@@ -1,7 +1,7 @@
 {
   "name": "X-37B OTV-4号 (USA-261, AFSPC-5)",
   "vehicle": "Atlas V 501 (AV-054)",
-  "payload": "USA-261 / AFSPC-5；X-37B Orbital Test Vehicle（~5000 kg）。ペイロードの大半は非公開。",
+  "payload": "USA-261 / AFSPC-5；X-37B軌道試験機（Orbital Test Vehicle、約5000 kg）。ペイロードの大半は非公開。",
   "delta_v": "~9.4 km/s（低軌道）",
   "type": "無人スペースプレーン · 飛行済",
   "first": "USA-261 / AFSPC-5 — 軌道上718日、KSC シャトル着陸施設",
@@ -22,7 +22,7 @@
     {
       "met": 718,
       "label": "着陸",
-      "note": "2017-05-07 に KSC Shuttle Landing Facility で自動滑走路着陸。",
+      "note": "2017-05-07、KSCのシャトル着陸施設で自動滑走路着陸。",
       "type": "nominal"
     }
   ]

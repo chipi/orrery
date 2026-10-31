@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet, dass ein Erfolg beim ersten Anlauf am Mars ebenso sehr eine Frage der Demut wie des Ehrgeizes ist. Der Friedhof gescheiterter Mars-Missionen ist voll von gut finanzierten Programmen, die zu weit gegriffen haben; ISRO griff genau so weit, wie es verlässlich bewältigen konnte, bewies das und ließ die Mission ihre eigenen bescheidenen Ziele übertreffen. Präzise zu zielen, statt hoch zu zielen, ist manchmal der Weg, auf dem die schwierigsten Premieren gelingen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — das Ziel",
+    "/fleet?focus=mangalyaan": "Flotte — die Mars Orbiter Mission",
+    "/programs/chandrayaan": "Chandrayaan — Indiens Mondprogramm",
+    "/mars?site=mangalyaan": "Mangalyaan in der Marsumlaufbahn"
+  }
 }

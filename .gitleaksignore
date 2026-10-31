@@ -1,0 +1,14 @@
+# gitleaks false positives, one fingerprint per finding (commit:file:rule:line).
+# Add an entry only for a finding that is shown not to be a credential, with
+# the reason. Anything not listed here still fails the secrets scan.
+# (Don't quote the matched text in a comment: it matches the rule again.)
+#
+# These cover history scans (gitleaks git, per commit). The current lines also
+# carry an inline gitleaks:allow, which is what the pre-push guard's
+# `gitleaks stdin` honours (it has no commit context, so it ignores this file).
+
+# Physics registry split commit, code moved verbatim from index.ts.
+# come-home.ts:308 is the name of an input field (surface gravity).
+732cd7b808feac5a94015c71de4df7b5ea6af691:src/lib/physics/registry/come-home.ts:generic-api-key:308
+# mechanics.ts:20 is a science-article citation id (the Tsiolkovsky article).
+732cd7b808feac5a94015c71de4df7b5ea6af691:src/lib/physics/registry/mechanics.ts:generic-api-key:20

@@ -1,0 +1,288 @@
+[
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 돈 (verb to orbit)"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "태양 중심 궤도를 따라",
+    "replace": "태양 중심 궤적을 따라",
+    "why": "궤적 binding for trajectory"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "경사가 큰",
+    "replace": "궤도 경사각이 큰",
+    "why": "궤도 경사각 binding"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "80° 경사의",
+    "replace": "궤도 경사각 80°의",
+    "why": "궤도 경사각 binding"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "목성 근처를 통과하면서",
+    "replace": "목성 플라이바이로",
+    "why": "플라이바이 binding"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: 태워"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "keep",
+    "why": "stem gap: 하강단 / 상승단"
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "2단계와 3단계",
+    "replace": "2단과 3단",
+    "why": "단 for rocket stage, 단계 is phase"
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "출발 단계로",
+    "replace": "출발단으로",
+    "why": "rocket stage = 단"
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "keep",
+    "why": "variant: 코어 스테이지"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "keep",
+    "why": "variant: 코어 스테이지"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "tagline",
+    "term": "stage",
+    "decision": "keep",
+    "why": "stem gap: 2단식"
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "하강 단계에",
+    "replace": "하강단에",
+    "why": "rocket/vehicle stage = 단"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "액체추진(",
+    "replace": "액체추진제(",
+    "why": "추진제 binding"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "액체추진(",
+    "replace": "액체추진제(",
+    "why": "추진제 binding"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "액체추진(",
+    "replace": "액체추진제(",
+    "why": "추진제 binding"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "tagline",
+    "term": "payload",
+    "decision": "change",
+    "find": "확대된 화물",
+    "replace": "확대된 탑재체",
+    "why": "탑재체 binding"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "best_known_for",
+    "term": "payload",
+    "decision": "change",
+    "find": "확대된 화물",
+    "replace": "확대된 탑재체",
+    "why": "탑재체 binding"
+  },
+  {
+    "rel": "fleet/launch-site/palmachim.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: 탑재량 (payload mass)"
+  },
+  {
+    "rel": "fleet/launch-site/starbase-orbital-a.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: 탑재량급"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: 탑재 능력"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "natural omission: 기기 7개를 탑재한"
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "접근해 지나갔으며",
+    "replace": "플라이바이했으며",
+    "why": "플라이바이 binding"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "근지구 통과",
+    "replace": "지구 근접 플라이바이",
+    "why": "플라이바이 binding"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "tagline",
+    "term": "flyby",
+    "decision": "change",
+    "find": "목성 비행",
+    "replace": "목성 플라이바이",
+    "why": "플라이바이 binding"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "목성을 43 000 km 거리에서 통과",
+    "replace": "목성 플라이바이, 43 000 km 거리",
+    "why": "플라이바이 binding"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "1979-09-01 비행",
+    "replace": "1979-09-01 플라이바이",
+    "why": "플라이바이 binding"
+  },
+  {
+    "rel": "fleet/orbiter/vega-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "4920 kg 비행 모선",
+    "replace": "4920 kg 플라이바이 모선",
+    "why": "flyby bus"
+  },
+  {
+    "rel": "fleet/orbiter/vega-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "비행 모선은 9개월",
+    "replace": "플라이바이 모선은 9개월",
+    "why": "flyby bus"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "4920 kg 비행 모선 +",
+    "replace": "4920 kg 플라이바이 모선 +",
+    "why": "flyby bus"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "비행 모선은 계속",
+    "replace": "플라이바이 모선은 계속",
+    "why": "flyby bus"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "핼리 혜성 비행",
+    "replace": "핼리 혜성 플라이바이",
+    "why": "플라이바이 binding"
+  },
+  {
+    "rel": "fleet/space-suit/sokol-kv-2.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "모든 발사와 귀환 때마다",
+    "replace": "모든 발사와 재진입 때마다",
+    "why": "재진입 binding"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "dispatch",
+    "term": "descent",
+    "decision": "change",
+    "find": "귀환 모듈",
+    "replace": "하강 모듈",
+    "why": "하강 binding"
+  }
+]

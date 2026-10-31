@@ -28,5 +28,10 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of the ROS is that partnerships in space are as fragile as the politics that underpin them. The ISS cooperation survived two decades and was meant to be a permanent bridge; it is ending because the relationship beneath it broke. No amount of orbital hardware can outlast the terrestrial goodwill that made it possible — a sobering counterpoint to the hope that space cooperation floats above earthly conflict." },
     { "type": "prose", "md": "The deeper lesson is the distance between announcing a station and flying one. The ROS has heritage, intent, and a clear strategic rationale — and it must still be built under sanctions on a shrunken budget. Ambition is cheap and stations are expensive; the program is a reminder that in spaceflight, the plan is the easy part, and the hard part is paying for it." }
-  ]
+  ],
+  "link_labels": {
+    "/programs/mir": "Mir — the modular station ROS descends from",
+    "/programs/salyut": "Salyut — Russia's original stations",
+    "/programs/iss": "ISS — the partnership Russia is leaving"
+  }
 }

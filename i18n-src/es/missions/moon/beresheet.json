@@ -4,15 +4,16 @@
   "payload": "585 kg de masa de lanzamiento; primera nave privada en alcanzar la órbita lunar; perdida durante el descenso propulsado a ~150 m sobre la superficie",
   "delta_v": "~6 km/s (órbitas de fase muy elípticas, no TLI directa)",
   "type": "PRIVATE LANDER · CRASHED",
-  "first": "Primera misión financiada por capital privado en alcanzar la Luna; primer alunizaje lunar israelí",
-  "description": "El Beresheet de SpaceIL (hebreo: «In the beginning») se lanzó como pasajero de viaje compartido en un Falcon 9 en febrero de 2019. En lugar de una inyección translunar directa, el pequeño módulo lunar realizó semanas de quemados de cambio de fase para elevar el perigeo y ascender desde una órbita de estacionamiento hasta la Luna — una trayectoria de ahorro de combustible pionera en misiones de bajo presupuesto. Tras una inserción exitosa en órbita lunar el 4 de abril de 2019, un reinicio de la unidad de medición inercial durante el descenso causó el apagón del motor principal. El Beresheet se estrelló en Mare Serenitatis. SpaceIL se comprometió a un sucesor (Beresheet 2) en cuestión de días.",
+  "first": "Primera misión lunar financiada con capital privado en llegar a la Luna; primera misión lunar israelí",
+  "description": "El Beresheet de SpaceIL (hebreo: «En el principio») se lanzó como pasajero compartido en un Falcon 9 en febrero de 2019. En lugar de una inyección translunar directa, el pequeño módulo de aterrizaje realizó semanas de encendidos de ajuste de fase para elevar el perigeo y ascender desde una órbita de aparcamiento hasta la Luna — una trayectoria de ahorro de combustible, pionera en misiones de bajo presupuesto. Tras una inserción orbital lunar exitosa el 4 de abril de 2019, un reinicio de la unidad de medición inercial durante el descenso provocó el apagado del motor principal. El Beresheet se estrelló en Mare Serenitatis. SpaceIL se comprometió con un sucesor (Beresheet 2) en cuestión de días.",
   "events": [
     { "met": 0, "label": "LANZAMIENTO", "note": "Vuelo compartido en Falcon 9 desde Cabo Cañaveral el 22-02-2019.", "type": "nominal" },
     { "met": 0.01, "label": "MANIOBRA DE FASE", "note": "Primero de siete ascensos del perigeo para elevarse desde la órbita terrestre baja hacia la aproximación lunar.", "type": "info" },
     { "met": 10, "label": "TCM 1", "note": "Corrección de trayectoria durante el ascenso de múltiples órbitas.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "Segundo TCM. El apogeo se aproxima a la distancia de captura lunar.", "type": "info" },
-    { "met": 41, "label": "APROXIMACIÓN LUNAR", "note": "Quemado translunar final — Beresheet en trayectoria lunar directa.", "type": "nominal" },
-    { "met": 48, "label": "INSERCIÓN EN ÓRBITA LUNAR", "note": "Captura en órbita lunar elíptica el 04-04-2019.", "type": "nominal" },
-    { "met": 48.01, "label": "ANOMALÍA EN EL DESCENSO", "note": "Reinicio de la IMU durante el descenso motorizado → apagado del motor → impacto en Mare Serenitatis el 11-04-2019.", "type": "warning" }
-  ]
+    { "met": 41, "label": "APROXIMACIÓN LUNAR", "note": "Encendido translunar final — Beresheet en trayectoria lunar directa.", "type": "nominal" },
+    { "met": 48, "label": "INSERCIÓN EN ÓRBITA LUNAR", "note": "Captura en órbita lunar elíptica el 2019-04-04.", "type": "nominal" },
+    { "met": 48.01, "label": "ANOMALÍA EN EL DESCENSO", "note": "Reinicio de la IMU durante el descenso propulsado → apagado del motor → impacto en Mare Serenitatis el 2019-04-11.", "type": "warning" }
+  ],
+  "vehicle_stage": "segunda etapa del Falcon 9 a GTO (lanzamiento compartido)"
 }

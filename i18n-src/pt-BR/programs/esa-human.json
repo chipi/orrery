@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "A segunda lição é que parceria multiplica um orçamento limitado. Ao combinar os recursos de muitas nações através de uma única agência e investi-los em capacidades que conquistaram um papel permanente, a Europa alcançou muito mais no voo espacial tripulado do que seus gastos isoladamente preveriam — e transformou o domínio de um nicho, carga automatizada, em uma participação no retorno à Lua. Para uma potência que não pode gastar mais que os gigantes, ser indispensável é uma estratégia melhor que ser independente, e a Europa a fez funcionar por quarenta anos."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "EEI — a estação que a Europa ajudou a construir",
+    "/programs/ariane": "Ariane — o lançador que levou o ATV"
+  }
 }

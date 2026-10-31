@@ -1,0 +1,314 @@
+[
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "old": "Appuntamento con petroliera e trasferimento di propellente in LEO su più voli.",
+    "new": "Rendezvous con petroliera e trasferimento di propellente in LEO su più voli."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "old": "Appuntamento con la flotta di navi cisterna e trasferimento di propellente in LEO su più voli.",
+    "new": "Rendezvous con la flotta di navi cisterna e trasferimento di propellente in LEO su più voli."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "old": "Stadio di ascesa di Snoopy si aggancia a Charlie Brown — primo aggancio completo da LM a CSM in orbita lunare.",
+    "new": "Stadio di ascesa di Snoopy effettua il rendezvous con Charlie Brown — primo aggancio completo da LM a CSM in orbita lunare."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.4.note",
+    "old": "Il veicolo di salita si solleva; appuntamento con l'orbiter.",
+    "new": "Il veicolo di salita si solleva; rendezvous con l'orbiter."
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.note",
+    "old": "Aiuto gravitazionale della Terra per cambiare la rotta di Giotto verso la cometa 26P/Grigg-Skjellerup.",
+    "new": "Fionda gravitazionale della Terra per cambiare la rotta di Giotto verso la cometa 26P/Grigg-Skjellerup."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "description",
+    "old": "Lucy si protende verso le nubi di Lagrange L4 e L5 — popolazioni di asteroidi primordiali che precedono e seguono Giove di 60°, ritenute conservare materiale dal disco protoplanetario esterno. Tre assistenze di gravità terrestre (2022, 2024, 2030) modellano un'unica traiettoria che visita sette asteroidi Troiani più bersagli del main belt bonus. Primo incontro con asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), nel quale l'imaging ha rivelato il satellite binario di contatto Selam. Main belt bonus: Donaldjohanson 2025-04. Sciame L4: Euribate + luna Queta (2027-08), Polimele (2027-09), Leuco (2028-04), Oro (2028-11). Dopo EGA-3 (2030-12), lo sciame L5 in coda: Patroclo-Menezio binario (2033-03) — il più grande binario Troiano conosciuto, un climax appropriato per l'omonimo della missione (Lucy il fossile ominide; Patroclo-Menezio i due personaggi che caddero insieme nell'Iliade).",
+    "new": "Lucy si protende verso le nubi di Lagrange L4 e L5 — popolazioni di asteroidi primordiali che precedono e seguono Giove di 60°, ritenute conservare materiale dal disco protoplanetario esterno. Tre fionde gravitazionali terrestri (2022, 2024, 2030) modellano un'unica traiettoria che visita sette asteroidi Troiani più bersagli del main belt bonus. Primo incontro con asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), nel quale l'imaging ha rivelato il satellite binario di contatto Selam. Main belt bonus: Donaldjohanson 2025-04. Sciame L4: Euribate + luna Queta (2027-08), Polimele (2027-09), Leuco (2028-04), Oro (2028-11). Dopo EGA-3 (2030-12), lo sciame L5 in coda: Patroclo-Menezio binario (2033-03) — il più grande binario Troiano conosciuto, un climax appropriato per l'omonimo della missione (Lucy il fossile ominide; Patroclo-Menezio i due personaggi che caddero insieme nell'Iliade)."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.1.note",
+    "old": "Primo assistenza di gravità terrestre 2022-10-16.",
+    "new": "Prima fionda gravitazionale terrestre 2022-10-16."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "old": "Missione congiunta ESA / JAXA verso Mercurio, lanciata 2018-10-20 — denominata dal matematico italiano Giuseppe (Bepi) Colombo, che progettò la traiettoria multi-flyby di Mariner 10. La crociera di 8 anni utilizza 9 gravity assist (Terra 2020, Venere 2020, Venere 2021, poi sei flyby di Mercurio 2021–2025) più spinta continua da ioni-elettrica dal Mercury Transfer Module per dissipare l'enorme gradiente di gravità solare tra le orbite della Terra e Mercurio. Inserimento in orbita di Mercurio 2026-11-21; le operazioni scientifiche iniziano all'inizio del 2027 dopo lo scarico del MTM e la separazione dei due orbitali — l'MPO dell'ESA (superficie planetaria + composizione) e il Mio della JAXA (magnetosfera). Sono inoltre previsti test della relatività generale attraverso il radio-science range tracking nell'intenso ambiente di gravità solare di Mercurio.",
+    "new": "Missione congiunta ESA / JAXA verso Mercurio, lanciata 2018-10-20 — denominata dal matematico italiano Giuseppe (Bepi) Colombo, che progettò la traiettoria a sorvoli multipli di Mariner 10. La crociera di 8 anni utilizza 9 fionde gravitazionali (Terra 2020, Venere 2020, Venere 2021, poi sei sorvoli di Mercurio 2021–2025) più spinta continua da ioni-elettrica dal Mercury Transfer Module per dissipare l'enorme gradiente di gravità solare tra le orbite della Terra e Mercurio. Inserimento in orbita di Mercurio 2026-11-21; le operazioni scientifiche iniziano all'inizio del 2027 dopo lo scarico del MTM e la separazione dei due orbitali — l'MPO dell'ESA (superficie planetaria + composizione) e il Mio della JAXA (magnetosfera). Sono inoltre previsti test della relatività generale attraverso il radio-science range tracking nell'intenso ambiente di gravità solare di Mercurio."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "old": "Un singolo gravity assist terrestre inizia la catena di gravity assist nel sistema interno.",
+    "new": "Una singola fionda gravitazionale terrestre inizia la catena di fionde gravitazionali nel sistema interno."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.2.note",
+    "old": "Primo gravity assist di Venere.",
+    "new": "Prima fionda gravitazionale di Venere."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.3.note",
+    "old": "Secondo gravity assist di Venere inizia la fase di avvicinamento a Mercurio.",
+    "new": "Seconda fionda gravitazionale di Venere inizia la fase di avvicinamento a Mercurio."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.4.note",
+    "old": "Primo dei sei gravity assist di Mercurio.",
+    "new": "Prima delle sei fionde gravitazionali di Mercurio."
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "description",
+    "old": "La gemella che continuò ad andare avanti anche quando i budget si ridussero, la Voyager 2 portò il Grand Tour da Giove e Saturno fino a Urano e Nettuno – ancora oggi le uniche immagini ravvicinate che abbiamo dei giganti di ghiaccio. Il suo incontro con Nettuno nel 1989 rivelò la Grande Macchia Oscura e i geyser di Tritone. Oggi entrambe le Voyager navigano nello spazio interstellare con un disco d'oro come biglietto da visita dell'umanità. Orrery elenca Nettuno come destinazione del catalogo; il percorso reale si basava su molteplici aiuti gravitazionali.",
+    "new": "La gemella che continuò ad andare avanti anche quando i budget si ridussero, la Voyager 2 portò il Grand Tour da Giove e Saturno fino a Urano e Nettuno – ancora oggi le uniche immagini ravvicinate che abbiamo dei giganti di ghiaccio. Il suo incontro con Nettuno nel 1989 rivelò la Grande Macchia Oscura e i geyser di Tritone. Oggi entrambe le Voyager navigano nello spazio interstellare con un disco d'oro come biglietto da visita dell'umanità. Orrery elenca Nettuno come destinazione del catalogo; il percorso reale si basava su molteplici fionde gravitazionali."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "description",
+    "old": "Uno sprint di nove anni dopo il lancio più veloce fino ad oggi, New Horizons ha compresso decenni di anticipazione in un giorno di luglio 2015: un mondo trasformato da una sfocatura pixelata in montagne di ghiaccio d'acqua e ghiacciai di azoto sul Tombaugh Regio di Plutone a forma di cuore. La navicella spaziale successivamente volò su Arrokoth, collegando la missione al sistema solare primordiale. Gli archi di volo in Orrery sono modelli di insegnamento a trasferimento diretto, non l'effettivo supporto gravitazionale di Giove.",
+    "new": "Uno sprint di nove anni dopo il lancio più veloce fino ad oggi, New Horizons ha compresso decenni di anticipazione in un giorno di luglio 2015: un mondo trasformato da una sfocatura pixelata in montagne di ghiaccio d'acqua e ghiacciai di azoto sul Tombaugh Regio di Plutone a forma di cuore. La navicella spaziale successivamente volò su Arrokoth, collegando la missione al sistema solare primordiale. Gli archi di volo in Orrery sono modelli di insegnamento a trasferimento diretto, non l'effettiva fionda gravitazionale di Giove."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "old": "Atlas V 551 lascia la Terra su un percorso assistito dalla gravità di Giove verso Plutone.",
+    "new": "Atlas V 551 lascia la Terra su un percorso con fionda gravitazionale di Giove verso Plutone."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "first",
+    "old": "Primo veicolo spaziale a sorvolare Saturno (1979-09-01); ha dimostrato la manovra gravitazionale che ha mandato avanti Voyager 2",
+    "new": "Primo veicolo spaziale a sorvolare Saturno (1979-09-01); ha dimostrato la fionda gravitazionale che ha mandato avanti Voyager 2"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.0.note",
+    "old": "Atlas-Centaur da Cape Canaveral con una traiettoria a manovra gravitazionale verso Giove e Saturno.",
+    "new": "Atlas-Centaur da Cape Canaveral con una traiettoria a fionda gravitazionale verso Giove e Saturno."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "old": "Missione del programma Discovery della NASA, guidata dall'APL dell'Università Johns Hopkins. Lanciata il 17-02-1996, NEAR Shoemaker ha volato vicino all'asteroide 253 Mathilde (27-06-1997) prima di una fionda gravitazionale terrestre (23-01-1998) che ha messo in fase la sua orbita per corrispondere a Eros. L'inserimento orbitale attorno a 433 Eros il 14-02-2000 ha iniziato un sondaggio di 12 mesi che ha restituito 160.000 immagini e mappe complete spettrali, composizionali e gravitazionali del corpo di tipo S di 34 × 11 × 11 km. Il 12-02-2001, cinque bruciature di abbassamento orbitale hanno portato il veicolo a 5 km di altitudine; la discesa controllata a ~1,7 m/s si è conclusa con un allunaggio dolce vicino alla sella di Himeros (35°N, 280°O), restituendo immagini fino a 125 m dalla superficie. Il veicolo spaziale è sopravvissuto e ha trasmesso dalla superficie per ~16 giorni.",
+    "new": "Missione del programma Discovery della NASA, guidata dall'APL dell'Università Johns Hopkins. Lanciata il 17-02-1996, NEAR Shoemaker ha volato vicino all'asteroide 253 Mathilde (27-06-1997) prima di una fionda gravitazionale terrestre (23-01-1998) che ha messo in fase la sua orbita per corrispondere a Eros. L'inserimento orbitale attorno a 433 Eros il 14-02-2000 ha iniziato un sondaggio di 12 mesi che ha restituito 160.000 immagini e mappe complete spettrali, composizionali e gravitazionali del corpo di tipo S di 34 × 11 × 11 km. Il 12-02-2001, cinque accensioni di abbassamento orbitale hanno portato il veicolo a 5 km di altitudine; la discesa controllata a ~1,7 m/s si è conclusa con un allunaggio dolce vicino alla sella di Himeros (35°N, 280°O), restituendo immagini fino a 125 m dalla superficie. Il veicolo spaziale è sopravvissuto e ha trasmesso dalla superficie per ~16 giorni."
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "old": "Il volo di Valentina Tereškova di 48 orbite, durato 2 giorni e 23 ore — la prima donna nello spazio, e ancora l'unica donna che abbia mai completato una missione spaziale in solitaria. Selezionata da un gruppo di cinque candidate cosmonauta donne riunite nel 1962, Tereškova è decollata il 1963-06-16 alle 09:30 UTC, soli 2 anni dopo il primo volo orbitale di Gagarin. La sua capsula era programmata per una correzione orbitale verso l'alto anziché verso il basso — lei identificò manualmente l'errore e i controllori a terra caricarono il software di assetto corretto il giorno successivo. Atterrata il 1963-06-19 alle 08:20 UTC nei pressi di Bayevo, Altai Krai. Tereškova successivamente divenne una figura di primo piano nella politica sovietica e rimane la donna più giovane mai lanciata in orbita, all'età di 26 anni.",
+    "new": "Il volo di Valentina Tereškova di 48 orbite, durato 2 giorni e 23 ore — la prima donna nello spazio, e ancora l'unica donna che abbia mai completato una missione spaziale in solitaria. Selezionata da un gruppo di cinque candidate cosmonauta donne riunite nel 1962, Tereškova è decollata il 1963-06-16 alle 09:30 UTC, soli 2 anni dopo il primo volo orbitale di Gagarin. La sua capsula era programmata per un'accensione di correzione orbitale verso l'alto anziché verso il basso — lei identificò manualmente l'errore e i controllori a terra caricarono il software di assetto corretto il giorno successivo. Atterrata il 1963-06-19 alle 08:20 UTC nei pressi di Bayevo, Altai Krai. Tereškova successivamente divenne una figura di primo piano nella politica sovietica e rimane la donna più giovane mai lanciata in orbita, all'età di 26 anni."
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.label",
+    "old": "BRUCIATURA TMI",
+    "new": "ACCENSIONE TMI"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.label",
+    "old": "BRUCIATURA TMI",
+    "new": "ACCENSIONE TMI"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.label",
+    "old": "TEI BRUCIA",
+    "new": "ACCENSIONE TEI"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "old": "Iniezione trans-terrestre: Starship si solleva dalla superficie di Marte e brucia per la traiettoria di ritorno alla Terra.",
+    "new": "Iniezione trans-terrestre: Starship si solleva dalla superficie di Marte e accende i motori per la traiettoria di ritorno alla Terra."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "old": "Ustione da iniezione translunare: lo stadio S-IVB spinge il CSM/LM verso la Luna.",
+    "new": "Accensione per iniezione translunare: lo stadio S-IVB spinge il CSM/LM verso la Luna."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "old": "Inserzione in orbita lunare dietro la Luna, fuori contatto radio. SPS burn ~0,91 km/s. I primi umani a orbitare intorno a un altro corpo celeste.",
+    "new": "Inserimento in orbita lunare dietro la Luna, fuori contatto radio. accensione SPS ~0,91 km/s. I primi umani a orbitare intorno a un altro corpo celeste."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "old": "Il primo volo con equipaggio del programma Artemis e la scintilla che divenne Orrery. Il 1° aprile 2026 l'SLS Block 1 di NASA ha lanciato una navicella spaziale Orion con quattro astronauti - Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) e Jeremy Hansen (MS) di CSA - su una traiettoria di ritorno libero che li ha fatti oscillare attorno al lato nascosto della Luna a circa 6.500 km sopra la superficie e li ha riportati a casa senza alcuna bruciatura da inserzione nell'orbita lunare. A 406.771 km dalla Terra hanno viaggiato più lontano di qualsiasi essere umano prima di loro, battendo il record dell'Apollo 13 del 1970. Dopo un volo di 9 giorni, Orion è ammarato nel Pacifico al largo di San Diego il 10 aprile. Il volo ha qualificato supporto vitale, navigazione e scudo termico di Orion per le missioni con equipaggio in vista del primo allunaggio, ora previsto con Artemis IV.",
+    "new": "Il primo volo con equipaggio del programma Artemis e la scintilla che divenne Orrery. Il 1° aprile 2026 l'SLS Block 1 di NASA ha lanciato una navicella spaziale Orion con quattro astronauti - Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) e Jeremy Hansen (MS) di CSA - su una traiettoria di ritorno libero che li ha fatti oscillare attorno al lato nascosto della Luna a circa 6.500 km sopra la superficie e li ha riportati a casa senza alcuna accensione di inserimento in orbita lunare. A 406.771 km dalla Terra hanno viaggiato più lontano di qualsiasi essere umano prima di loro, battendo il record dell'Apollo 13 del 1970. Dopo un volo di 9 giorni, Orion è ammarato nel Pacifico al largo di San Diego il 10 aprile. Il volo ha qualificato supporto vitale, navigazione e scudo termico di Orion per le missioni con equipaggio in vista del primo allunaggio, ora previsto con Artemis IV."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "old": "Il secondo stadio del New Glenn esegue l'iniezione translunare.",
+    "new": "Il secondo stadio del New Glenn esegue l'accensione di iniezione translunare."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "old": "Inserimento in orbita lunare (con più correzioni di orbita terrestre e lunare).",
+    "new": "Inserimento in orbita lunare (con più accensioni di innalzamento dell'orbita terrestre e lunare)."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.0.note",
+    "old": "Decolla da Cape Canaveral LC-36; ritorni della prima fase per il recupero del downrange.",
+    "new": "Decolla da Cape Canaveral LC-36; il primo stadio ritorna per il recupero del downrange."
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "description",
+    "old": "In orbita attorno alla Luna dal 2009 a 50 km significa altitudine lunare, le immagini della telecamera ad angolo stretto di LRO a 50 cm/pixel - abbastanza in alto da vedere le fasi di discesa dell'Apollo, le tracce del rover e i sentieri degli astronauti ancora conservati nella regolite. Ha trovato Lunokhod 1 trentanove anni dopo che il rover si era oscurato. Ha identificato oltre 200 siti di atterraggio candidati per Artemis. I depositi di ghiaccio d'acqua al polo sud lunare che guidano ogni moderno programma lunare sono stati quantificati dagli strumenti LRO. Una missione esplorativa che divenne il fondamento della moderna era lunare.",
+    "new": "In orbita attorno alla Luna dal 2009 a 50 km significa altitudine lunare, le immagini della telecamera ad angolo stretto di LRO a 50 cm/pixel - abbastanza in alto da vedere gli stadi di discesa dell'Apollo, le tracce del rover e i sentieri degli astronauti ancora conservati nella regolite. Ha trovato Lunokhod 1 trentanove anni dopo che il rover si era oscurato. Ha identificato oltre 200 siti di atterraggio candidati per Artemis. I depositi di ghiaccio d'acqua al polo sud lunare che guidano ogni moderno programma lunare sono stati quantificati dagli strumenti LRO. Una missione esplorativa che divenne il fondamento della moderna era lunare."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "old": "La prova generale completa per il primo allunaggio. Stafford e Cernan volarono con il LM Snoopy fino a un'altitudine di ~15,6 km sopra il sito di allunaggio pianificato dell'Apollo 11 nel Mare Tranquillitatis — ogni fase di un approccio di discesa, eccetto l'allunaggio vero e proprio. Confermarono il profilo di discesa, il radar di allunaggio, la traiettoria di salita e la procedura di rendezvous che l'Apollo 11 avrebbe utilizzato due mesi dopo. I serbatoi del carburante dello stadio di salita del LM furono deliberatamente riempiti sottodimensionati (~50 % rispetto ai valori nominali) per evitare qualsiasi tentazione di tentare un allunaggio. Lo stadio di salita di Snoopy fu l'unico a lasciare l'orbita lunare con ∆v positivo — espulso in un'orbita eliocentrica dove rimane ancora oggi, rilevato intermittentemente da astronomi dilettanti (confermato più di recente da Nick Howes / Faulkes Telescope, 2019).",
+    "new": "La prova generale completa per il primo allunaggio. Stafford e Cernan volarono con il LM Snoopy fino a un'altitudine di ~15,6 km sopra il sito di allunaggio pianificato dell'Apollo 11 nel Mare Tranquillitatis — ogni fase di un approccio di discesa, eccetto l'allunaggio vero e proprio. Confermarono il profilo di discesa, il radar di allunaggio, la traiettoria di salita e la procedura di rendezvous che l'Apollo 11 avrebbe utilizzato due mesi dopo. I serbatoi del propellente dello stadio di salita del LM furono deliberatamente riempiti sottodimensionati (~50 % rispetto ai valori nominali) per evitare qualsiasi tentazione di tentare un allunaggio. Lo stadio di salita di Snoopy fu l'unico a lasciare l'orbita lunare con ∆v positivo — espulso in un'orbita eliocentrica dove rimane ancora oggi, rilevato intermittentemente da astronomi dilettanti (confermato più di recente da Nick Howes / Faulkes Telescope, 2019)."
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.1.note",
+    "old": "Apogeo ~325 km; operazioni di carico classificate.",
+    "new": "Apogeo ~325 km; operazioni del carico utile classificate."
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.1.note",
+    "old": "Apogeo ~400 km; operazioni con carico pagante classificate.",
+    "new": "Apogeo ~400 km; operazioni con carico utile classificate."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "vehicle",
+    "old": "Ariane 5 (carico condiviso)",
+    "new": "Ariane 5 (carico utile condiviso)"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "type",
+    "old": "MULTI-FLYBY · ATTIVA",
+    "new": "MULTI-SORVOLO · ATTIVA"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "type",
+    "old": "ORBITER + MULTI-FLYBY · ATTIVO",
+    "new": "ORBITER + MULTI-SORVOLO · ATTIVO"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "description",
+    "old": "Europa Clipper si dirige verso Giove per studiare Europa — una luna ghiacciata di 3.121 km ritenuta ospitare un oceano di acqua liquida globale sotto un guscio di ghiaccio di 15-25 km, l'ambiente potenzialmente abitabile più accessibile del sistema solare. Lanciato il 2024-10-14 su un Falcon Heavy a C3 41,7. Una fionda gravitazionale da Marte a marzo 2025 ha curvato la traiettoria verso la Terra; una fionda gravitazionale da Terra nel 2026-12 fornisce la spinta finale verso l'esterno; arriva a Giove il 2030-04-11 per l'inserimento orbitale. Il tour orbitale esegue 49 fly-by ravvicinati di Europa nel corso di quattro anni — passando entro 25 km dalla superficie di Europa nei passaggi più vicini, progettato per mappare l'intera luna limitando la dose di radiazione del veicolo spaziale nelle brutali fasce di radiazione di Giove. Strumenti: radar REASON per penetrare il ghiaccio, spettrometro di massa MASPEX (campiona il materiale del pennacchio se presente), termocamera E-THEMIS (individua i geyser attivi), magnetometro + strumenti al plasma confermano la profondità dell'oceano dalla risposta magnetica indotta.",
+    "new": "Europa Clipper si dirige verso Giove per studiare Europa — una luna ghiacciata di 3.121 km ritenuta ospitare un oceano di acqua liquida globale sotto un guscio di ghiaccio di 15-25 km, l'ambiente potenzialmente abitabile più accessibile del sistema solare. Lanciato il 2024-10-14 su un Falcon Heavy a C3 41,7. Una fionda gravitazionale da Marte a marzo 2025 ha curvato la traiettoria verso la Terra; una fionda gravitazionale da Terra nel 2026-12 fornisce la spinta finale verso l'esterno; arriva a Giove il 2030-04-11 per l'inserimento orbitale. Il tour orbitale esegue 49 sorvoli ravvicinati di Europa nel corso di quattro anni — passando entro 25 km dalla superficie di Europa nei passaggi più vicini, progettato per mappare l'intera luna limitando la dose di radiazione del veicolo spaziale nelle brutali fasce di radiazione di Giove. Strumenti: radar REASON per penetrare il ghiaccio, spettrometro di massa MASPEX (campiona il materiale del pennacchio se presente), termocamera E-THEMIS (individua i geyser attivi), magnetometro + strumenti al plasma confermano la profondità dell'oceano dalla risposta magnetica indotta."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "old": "Manovra di 760 m/s. Seguono 49 fly-by di Europa in 4 anni.",
+    "new": "Manovra di 760 m/s. Seguono 49 sorvoli di Europa in 4 anni."
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "type",
+    "old": "FLYBY · EFFETTUATA",
+    "new": "SORVOLO · EFFETTUATO"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.2.label",
+    "old": "MARTE FLYBY",
+    "new": "SORVOLO DI MARTE"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "type",
+    "old": "FLYBY PLANETARIO · VOLATO",
+    "new": "SORVOLO PLANETARIO · VOLATO"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "first",
+    "old": "Primo flyby di Mercurio; primo flyby a doppio pianeta; prima missione con fionda gravitazionale",
+    "new": "Primo sorvolo di Mercurio; primo sorvolo a doppio pianeta; prima missione con fionda gravitazionale"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "type",
+    "old": "FLYBY CON EQUIPAGGIO · VOLATO",
+    "new": "SORVOLO CON EQUIPAGGIO · VOLATO"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.label",
+    "old": "VIAGGIO LUNARE",
+    "new": "SORVOLO LUNARE"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "type",
+    "old": "FLYBY · EFFETTUATA",
+    "new": "SORVOLO · EFFETTUATO"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "type",
+    "old": "FLYBY · VOLATO",
+    "new": "SORVOLO · VOLATO"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "dispatch",
+    "old": "New Horizons ha avuto esattamente una possibilità e l'ha colta. Non c'era orbita né modo di rallentare — nove anni e mezzo di viaggio, il lancio più veloce della storia, tutto convergente su poche ore presso Plutone, eseguito da una macchina così lontana che ogni comando impiegava ore ad arrivare. Ha centrato il flyby il 14 luglio 2015 e ha ribaltato l'aspettativa di un mondo morto: Plutone si è rivelato avere montagne di ghiaccio d'acqua, un vasto ghiacciaio a forma di cuore di azoto congelato ancora in lento movimento, e una superficie giovane e attiva che nessuno pensava un corpo così piccolo e freddo potesse mantenere. Poi ha proseguito verso Arrokoth, un miliardo di chilometri oltre Plutone — il mondo più distante mai visto da vicino — e sta ancora andando.",
+    "new": "New Horizons ha avuto esattamente una possibilità e l'ha colta. Non c'era orbita né modo di rallentare — nove anni e mezzo di viaggio, il lancio più veloce della storia, tutto convergente su poche ore presso Plutone, eseguito da una macchina così lontana che ogni comando impiegava ore ad arrivare. Ha centrato il sorvolo il 14 luglio 2015 e ha ribaltato l'aspettativa di un mondo morto: Plutone si è rivelato avere montagne di ghiaccio d'acqua, un vasto ghiacciaio a forma di cuore di azoto congelato ancora in lento movimento, e una superficie giovane e attiva che nessuno pensava un corpo così piccolo e freddo potesse mantenere. Poi ha proseguito verso Arrokoth, un miliardo di chilometri oltre Plutone — il mondo più distante mai visto da vicino — e sta ancora andando."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.1.label",
+    "old": "PLUTONE IN VOLO",
+    "new": "SORVOLO DI PLUTONE"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "old": "Ammiraglia sovietico-ESA dell'armata di Halley. Vega 1 fu lanciato il 1984-12-15 con un lander della linea Venera più un innovativo pallone di elio costruito da ESA/CNES che si addentrò nella coltre nuvolosa di Venere a 54 km di altitudine per 46,5 ore, trasmettendo dati di vento e temperatura attraverso una rete radiofonica globale di 20 stazioni. Dopo aver rilasciato il modulo di discesa, il bus utilizzò la fionda gravitazionale di Venere per riorientarsi verso la cometa 1P/Halley, raggiungendo il massimo avvicinamento di 8890 km il 1986-03-06 — il primo incontro con un nucleo cometario, e il fix di posizione che la Giotto dell'ESA utilizzò per navigare il suo proprio avvicinamento a Halley molto più ravvicinato una settimana dopo.",
+    "new": "Ammiraglia sovietico-ESA dell'armata di Halley. Vega 1 fu lanciato il 1984-12-15 con un lander della linea Venera più un innovativo pallone di elio costruito da ESA/CNES che si addentrò nella coltre nuvolosa di Venere a 54 km di altitudine per 46,5 ore, trasmettendo dati di vento e temperatura attraverso una rete radiofonica globale di 20 stazioni. Dopo aver rilasciato il modulo di discesa, il bus utilizzò la fionda gravitazionale di Venere per riorientarsi verso la cometa 1P/Halley, raggiungendo il massimo avvicinamento di 8890 km il 1986-03-06 — il primo incontro con un nucleo cometario, e il fix di posizione che la Giotto dell'ESA utilizzò per navigare il suo proprio sorvolo di Halley molto più ravvicinato una settimana dopo."
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.label",
+    "old": "INSERIMENTO MARTE ORBITA",
+    "new": "INSERIMENTO IN ORBITA DI MARTE"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.label",
+    "old": "INSERIMENTO MARTE ORBITA",
+    "new": "INSERIMENTO IN ORBITA DI MARTE"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "old": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "new": "DIMOSTRATORE DI INGRESSO/DISCESA/ATTERRAGGIO · SCHIANTATO"
+  }
+]

@@ -19,6 +19,7 @@ import type { LocalizedPlanet } from '$types/planet';
 import type { SatelliteEntry } from '$lib/data/small-bodies';
 import { PLANET_STATS } from '$lib/physics/util/planet-stats';
 import * as m from '$lib/paraglide/messages';
+import { countryLabel } from '$lib/country-label';
 import { SITE_ORIGIN } from '$lib/seo';
 
 // Human-readable host printed on the card footer — rides the SITE_ORIGIN
@@ -224,8 +225,16 @@ export function cardForFleet(
   // truncate in the half-width stat cell — lead with the prime contractor.
   if (entry.manufacturer)
     stats.push({ label: m.card_stat_builder(), value: chip(entry.manufacturer.split(' / ')[0]) });
-  if (entry.country) stats.push({ label: m.card_stat_country(), value: chip(entry.country) });
-  if (entry.era) stats.push({ label: m.card_stat_era(), value: entry.era });
+  if (entry.country)
+    stats.push({ label: m.card_stat_country(), value: chip(countryLabel(entry.country)) });
+  if (entry.era)
+    stats.push({
+      label: m.card_stat_era(),
+      value:
+        entry.era === 'planned'
+          ? m.fleet_value_planned()
+          : entry.era.replace('now', m.programs_meta_now()),
+    });
   if (entry.linked_missions?.length)
     stats.push({ label: m.card_stat_missions(), value: String(entry.linked_missions.length) });
   stats.push({ label: m.card_stat_status(), value: entry.status });

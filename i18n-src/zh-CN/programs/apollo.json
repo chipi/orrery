@@ -96,5 +96,14 @@
       "type": "prose",
       "md": "值得铭记的人性注脚是：他们在八年内完成了这一切，此前从未做过，机载计算机还不如今天的门铃强大。Apollo是一份长久的证明：明确的任务、合适的人和诚实的期限，仍然可以战胜一切困难——下次目标看似不可能时，值得想起这一点。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "月球 — 表面地图与 Apollo 着陆点",
+    "/science/transfers/free-return": "自由返回轨道",
+    "/science/mission-phases/trans-x-injection": "地月转移轨道入轨",
+    "/science/mission-phases/edl": "进入、下降与着陆",
+    "/science/propulsion/tsiolkovsky": "火箭方程",
+    "/moon?site=apollo15": "Apollo 15 — 哈德利-亚平宁区",
+    "/moon?site=apollo16": "Apollo 16 — 笛卡尔高地"
+  }
 }

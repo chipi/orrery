@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La lección más profunda es el poder del enfoque. JAXA no podía superar en gastos a la NASA en todo, así que eligió una cosa extraordinariamente difícil y se convirtió en la mejor del mundo en ello. En un campo donde la tentación es siempre intentar más, Hayabusa es un argumento a favor de hacer menos, pero más profundo, y lograr un primero que los programas más grandes luego tienen que acudir a ti para aprender."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=hayabusa-2": "Flota — las sondas Hayabusa",
+    "/explore": "Explorar: los asteroides Itokawa y Ryugu"
+  }
 }

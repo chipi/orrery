@@ -1,0 +1,664 @@
+[
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "dispatch",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "Outlived USSR by a decade rendered as surpassed it; fire-fighting clause garbled; untranslated Shuttles"
+  },
+  {
+    "rel": "fleet/station/salyut-7.json",
+    "at": "dispatch",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Relative clause attaches to engines instead of missile"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Fragmentary stage list, agreement errors in first sentence"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/viking2-lander.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/starbase-orbital-a.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/woomera.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/palmachim.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "dispatch",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Awkward 'youngest and busiest' clause and agreement"
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "best_known_for",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "'failed approach' rendered as विफल दृष्टिकोण (failed viewpoint)"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/space-suit/krechet-94.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "परिक्रमणकार unusual word for orbiter"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "tagline",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'312 days' misplaced; reads contact lost in 312 days after date"
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-101.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Manifests as 'announcements'; last clause ungrammatical"
+  },
+  {
+    "rel": "fleet/engine/le-9.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Awkward word order 'कभी निर्मित'"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "'January 2024' left in English"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Awkward 'क्रूवाले उड़ान नहीं भरी'"
+  },
+  {
+    "rel": "fleet/engine/rl10.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Final clause tense and agreement broken"
+  },
+  {
+    "rel": "fleet/launch-site/jiuquan-slc-43.json",
+    "at": "best_known_for",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "'crewed' transliterated as क्रूड, reads like 'crude'"
+  },
+  {
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Fragment missing verb; परिक्रमाकारी unusual"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Gender disagreement 'पहला Soyuz पीढ़ी'"
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "Bumper survived and first-return-to-new-comet dropped; Kevlar added"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Unnatural English loanwords कैडेंस, वर्कहॉर्स"
+  },
+  {
+    "rel": "fleet/launch-site/sohae.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/rover/curiosity.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Last clause ungrammatical, verb missing"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Gender disagreement 'एक ... परिक्रमणकार है'"
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "dispatch",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "tagline",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-zlv.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "best_known_for",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.3.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "payload",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "first",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.0.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "events.2.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.1.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Transliterated English terms instead of Hindi equivalents"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "dispatch",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'architecture' rendered as वास्तुकला (building architecture)"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.6.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Missing postposition after Pacific Ocean; awkward"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "events.0.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "dispatch",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "first",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "first",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/freedom-7.json",
+    "at": "payload",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "dispatch",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.0.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.1.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.0.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.5.note",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Philae written in Devanagari while other craft names stay Latin"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Craft names in Devanagari; क्रू युक्त awkward"
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.3.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "events.0.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.0.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Gender disagreement 'पहली मानवयुक्त प्रक्षेपण'"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.5.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "events.1.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "first",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "First Lunar Roving Vehicle becomes 'first lunar rover', implying wrong claim"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "payload",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.4.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.0.note",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'भारी लिफ्टर' unnatural loanword"
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.2.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.6.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "first",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "delta_v",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.3.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "first",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "payload",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "description",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.2.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.1.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'उतराव झुकाव सुधार' unclear compressed phrase"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Gender disagreement 'पहली ... प्रक्षेप पथ'"
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "payload",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.2.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "first",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "events.0.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.3.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Double superlative 'सबसे निकटतम'"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.3.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "first",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.0.note",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.4.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Elliptical 'Spider मिलन' reads awkwardly"
+  }
+]

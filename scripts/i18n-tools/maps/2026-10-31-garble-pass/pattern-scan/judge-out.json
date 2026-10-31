@@ -1,0 +1,1325 @@
+[
+  {
+    "loc": "ru",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "quadrilhões ok"
+  },
+  {
+    "loc": "ru",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "квинтиллион=10^18 correct"
+  },
+  {
+    "loc": "ru",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "values correct"
+  },
+  {
+    "loc": "ru",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "correct"
+  },
+  {
+    "loc": "ru",
+    "rel": "mars-sites/curiosity.json",
+    "at": "fact",
+    "decision": "keep",
+    "fixes": [],
+    "note": "no scale word; epochs paraphrase"
+  },
+  {
+    "loc": "ru",
+    "rel": "trajectories/pioneer-11.json",
+    "at": "interstellar_since_label",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "Водолей",
+        "replace": "Орёл"
+      }
+    ],
+    "note": "Aquila is Орёл, not Aquarius"
+  },
+  {
+    "loc": "ja",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "ja",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "ja",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "ja",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "ko",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "ko",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "ko",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "ko",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "hi",
+    "rel": "earth-objects/smart-1.json",
+    "at": "description",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "चंद्र ग्रहण तक",
+        "replace": "चंद्र कक्षा में प्रवेश तक"
+      }
+    ],
+    "note": "lunar capture = orbit insertion"
+  },
+  {
+    "loc": "hi",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "hi",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "hi",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "hi",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "hi",
+    "rel": "moon-sites/smart-1.json",
+    "at": "fact",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "चंद्र ग्रहण तक",
+        "replace": "चंद्र कक्षा में प्रवेश तक"
+      }
+    ],
+    "note": "lunar capture = orbit insertion"
+  },
+  {
+    "loc": "hi",
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "story",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "खरबों पिंड",
+        "replace": "ट्रिलियनों पिंड"
+      }
+    ],
+    "note": "trillions = ट्रिलियन, खरब is 10^11"
+  },
+  {
+    "loc": "hi",
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.1",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "सैकड़ों खरब डॉलर",
+        "replace": "सैकड़ों ट्रिलियन डॉलर"
+      }
+    ],
+    "note": "trillions = ट्रिलियन, खरब is 10^11"
+  },
+  {
+    "loc": "ar",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "ar",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "ar",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "ar",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "квадрилионе",
+        "replace": "билијарде"
+      }
+    ],
+    "note": "quadrillion 10^15 = билијарда"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "десет квинтилиона",
+        "replace": "десет трилиона"
+      }
+    ],
+    "note": "quintillion 10^18 = трилион"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "fix",
+    "fixes": [],
+    "note": "same field as item 31; fixed there"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "10 квинтилиона",
+        "replace": "10 трилиона"
+      }
+    ],
+    "note": "quintillion 10^18 = трилион"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "тиче квинтилиона",
+        "replace": "тиче трилиона"
+      }
+    ],
+    "note": "quintillion 10^18 = трилион"
+  },
+  {
+    "loc": "sr-Cyrl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "fix",
+    "fixes": [],
+    "note": "same field as item 34; fixed there"
+  },
+  {
+    "loc": "de",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "de",
+    "rel": "fleet/launch-site/alcantara.json",
+    "at": "name",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "Alcântara Space Center",
+        "replace": "Raumfahrtzentrum Alcântara"
+      }
+    ],
+    "note": "generic words translated"
+  },
+  {
+    "loc": "de",
+    "rel": "trajectories/rosetta.json",
+    "at": "waypoints.5.label",
+    "decision": "keep",
+    "fixes": [],
+    "note": "proper name, asteroid same word in de"
+  },
+  {
+    "loc": "fr",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "fr",
+    "rel": "fleet/space-suit/axemu.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "fixes": [],
+    "note": "Artemis lunar landing"
+  },
+  {
+    "loc": "fr",
+    "rel": "mars-sites/tgo.json",
+    "at": "fact",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "partie par trillion",
+        "replace": "partie par billion"
+      }
+    ],
+    "note": "fr ppt = partie par billion"
+  },
+  {
+    "loc": "fr",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/space-shuttle-stack_webp.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "stack",
+        "replace": "en configuration de lancement"
+      }
+    ],
+    "note": "stack untranslated"
+  },
+  {
+    "loc": "fr",
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.2",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunissage",
+        "replace": "atterrissage"
+      }
+    ],
+    "note": "Titan landing not lunar"
+  },
+  {
+    "loc": "fr",
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.1",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "des trillions",
+        "replace": "des billions"
+      }
+    ],
+    "note": "fr trillion is 10^18; 10^12 = billion"
+  },
+  {
+    "loc": "fr",
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-30d2195a63fa.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunissage",
+        "replace": "atterrissage"
+      }
+    ],
+    "note": "comet landing"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-30d2195a63fa.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunir en douceur",
+        "replace": "se poser en douceur"
+      }
+    ],
+    "note": "comet landing"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-681dfc9a2920.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunissage",
+        "replace": "atterrissage"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-7170adc7d99b.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunissage",
+        "replace": "atterrissage"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-891377070a16.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunissage",
+        "replace": "atterrissage"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-8fbc2e4af96b.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "l'alunissage",
+        "replace": "l'atterrissage"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-98b4fdd31e64.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "descente-alunissage",
+        "replace": "descente-atterrissage"
+      }
+    ],
+    "note": "Mars EDL"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-98b4fdd31e64.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "descente-alunissage",
+        "replace": "descente-atterrissage"
+      },
+      {
+        "find": "avant l'alunissage",
+        "replace": "avant l'atterrissage"
+      }
+    ],
+    "note": "Mars EDL"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunissage",
+        "replace": "atterrissage"
+      }
+    ],
+    "note": "asteroid touchdown"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunissage",
+        "replace": "atterrissage"
+      }
+    ],
+    "note": "asteroid touchdown"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-f9fd2a71d5f8.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunissage",
+        "replace": "atterrissage"
+      }
+    ],
+    "note": "Earth landing"
+  },
+  {
+    "loc": "fr",
+    "rel": "videos.json",
+    "at": "vid-f9fd2a71d5f8.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunissage",
+        "replace": "atterrissage"
+      }
+    ],
+    "note": "Earth landing"
+  },
+  {
+    "loc": "es",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "es",
+    "rel": "mars-sites/curiosity.json",
+    "at": "fact",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "lecturas mil-millón-de-años-tras-mil-millón-de-años de la",
+        "replace": "lecturas de mil millones de años en mil millones de años de la"
+      }
+    ],
+    "note": "garbled 'mil-millón' compound"
+  },
+  {
+    "loc": "es",
+    "rel": "mars-sites/insight.json",
+    "at": "fact",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "1300 maremotos",
+        "replace": "1300 sismos marcianos"
+      }
+    ],
+    "note": "maremoto=tsunami; marsquake"
+  },
+  {
+    "loc": "es",
+    "rel": "mars-sites/mars3.json",
+    "at": "capability",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunizaje suave",
+        "replace": "aterrizaje suave"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "es",
+    "rel": "missions/mars/mars3.json",
+    "at": "first",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunizar suavemente",
+        "replace": "aterrizar suavemente"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "es",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/space-shuttle-stack_webp.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "stack",
+        "replace": "en configuración de lanzamiento"
+      }
+    ],
+    "note": "stack untranslated"
+  },
+  {
+    "loc": "es",
+    "rel": "videos.json",
+    "at": "vid-891377070a16.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunizaje",
+        "replace": "aterrizaje"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "es",
+    "rel": "videos.json",
+    "at": "vid-8fbc2e4af96b.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "alunizaje",
+        "replace": "aterrizaje"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "es",
+    "rel": "videos.json",
+    "at": "vid-98b4fdd31e64.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "entrada-descenso-alunizaje",
+        "replace": "entrada-descenso-aterrizaje"
+      }
+    ],
+    "note": "Mars EDL"
+  },
+  {
+    "loc": "it",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "it",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "it",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "it",
+    "rel": "fleet/space-suit/axemu.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "fixes": [],
+    "note": "Artemis lunar landing"
+  },
+  {
+    "loc": "it",
+    "rel": "mars-sites/mars3.json",
+    "at": "fact",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "Primo allunaggio",
+        "replace": "Primo atterraggio"
+      },
+      {
+        "find": "un allunaggio morbido",
+        "replace": "un atterraggio morbido"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "it",
+    "rel": "mars-sites/mars3.json",
+    "at": "capability",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "it",
+    "rel": "mars-sites/tgo.json",
+    "at": "fact",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "parti per trilione",
+        "replace": "parti per bilione"
+      }
+    ],
+    "note": "it ppt = parti per bilione"
+  },
+  {
+    "loc": "it",
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.4.label",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "ALLUNAGGIO",
+        "replace": "ATTERRAGGIO"
+      }
+    ],
+    "note": "Eros landing"
+  },
+  {
+    "loc": "it",
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.3.label",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "ALLUNAGGI",
+        "replace": "ATTERRAGGI"
+      }
+    ],
+    "note": "Itokawa touchdowns"
+  },
+  {
+    "loc": "it",
+    "rel": "missions/mars/viking1.json",
+    "at": "payload",
+    "decision": "keep",
+    "fixes": [],
+    "note": "orbiter/lander standard loanwords in it"
+  },
+  {
+    "loc": "it",
+    "rel": "missions/mars/viking1.json",
+    "at": "events.4.label",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "ALLUNAGGIO",
+        "replace": "ATTERRAGGIO"
+      }
+    ],
+    "note": "Mars touchdown"
+  },
+  {
+    "loc": "it",
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.3.label",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "ALLUNAGGIO",
+        "replace": "ATTERRAGGIO"
+      }
+    ],
+    "note": "Titan landing"
+  },
+  {
+    "loc": "it",
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "story",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "trilioni di corpi",
+        "replace": "bilioni di corpi"
+      }
+    ],
+    "note": "it trilione is 10^18; 10^12 = bilione"
+  },
+  {
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/space-shuttle-stack_webp.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "stack",
+        "replace": "in configurazione di lancio"
+      }
+    ],
+    "note": "stack untranslated"
+  },
+  {
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/propulsive-landing_webp.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "Allunaggio",
+        "replace": "Atterraggio"
+      }
+    ],
+    "note": "generic propulsive landing"
+  },
+  {
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-mars-retro_webp.where",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "non-lunar descent/landing"
+  },
+  {
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-airbag_webp.where",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "non-lunar descent/landing"
+  },
+  {
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-skycrane_webp.where",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "non-lunar descent/landing"
+  },
+  {
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-venus-aeroshell_webp.where",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "non-lunar descent/landing"
+  },
+  {
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-asteroid-sampler_webp.where",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "non-lunar descent/landing"
+  },
+  {
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-comet-lander_webp.where",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "non-lunar descent/landing"
+  },
+  {
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-jupiter-probe_webp.where",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "non-lunar descent/landing"
+  },
+  {
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-titan-parachute_webp.where",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "non-lunar descent/landing"
+  },
+  {
+    "loc": "it",
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.2",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "Titan landing"
+  },
+  {
+    "loc": "it",
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "it",
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "it",
+    "rel": "science/scales-time/light-minute.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "it",
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "description",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "Earth parachute landing"
+  },
+  {
+    "loc": "it",
+    "rel": "trajectories/rosetta.json",
+    "at": "waypoints.11.label",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "Allunaggio",
+        "replace": "Atterraggio"
+      }
+    ],
+    "note": "comet landing"
+  },
+  {
+    "loc": "it",
+    "rel": "videos.json",
+    "at": "vid-30d2195a63fa.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "comet landing"
+  },
+  {
+    "loc": "it",
+    "rel": "videos.json",
+    "at": "vid-30d2195a63fa.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunare",
+        "replace": "atterrare"
+      }
+    ],
+    "note": "comet landing"
+  },
+  {
+    "loc": "it",
+    "rel": "videos.json",
+    "at": "vid-891377070a16.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "it",
+    "rel": "videos.json",
+    "at": "vid-98b4fdd31e64.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "dell'allunaggio",
+        "replace": "dell'atterraggio"
+      }
+    ],
+    "note": "Mars landing"
+  },
+  {
+    "loc": "it",
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "asteroid touchdown"
+  },
+  {
+    "loc": "it",
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "asteroid touchdown"
+  },
+  {
+    "loc": "it",
+    "rel": "videos.json",
+    "at": "vid-f9fd2a71d5f8.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "Earth landing"
+  },
+  {
+    "loc": "it",
+    "rel": "videos.json",
+    "at": "vid-f9fd2a71d5f8.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "allunaggio",
+        "replace": "atterraggio"
+      }
+    ],
+    "note": "Earth landing"
+  },
+  {
+    "loc": "nl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "nl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "nl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "nl",
+    "rel": "fleet/launch-site/alcantara.json",
+    "at": "name",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "Alcântara Space Center",
+        "replace": "Ruimtecentrum Alcântara"
+      }
+    ],
+    "note": "generic words translated"
+  },
+  {
+    "loc": "nl",
+    "rel": "missions/mars/viking1.json",
+    "at": "payload",
+    "decision": "keep",
+    "fixes": [],
+    "note": "orbiter/lander standard loanwords in nl"
+  },
+  {
+    "loc": "nl",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/space-shuttle-stack_webp.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "stack",
+        "replace": "in lanceerconfiguratie"
+      }
+    ],
+    "note": "stack untranslated"
+  },
+  {
+    "loc": "nl",
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "body_paragraphs.2",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "De maandag is",
+        "replace": "De dag op de Maan is"
+      }
+    ],
+    "note": "maandag=Monday, not lunar day"
+  },
+  {
+    "loc": "nl",
+    "rel": "site-stories/change3.json",
+    "at": "intro",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "maandagen",
+        "replace": "maanetmalen"
+      }
+    ],
+    "note": "maandag=Monday; lunar days cycles"
+  },
+  {
+    "loc": "nl",
+    "rel": "site-stories/luna17.json",
+    "at": "intro",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "maandagen",
+        "replace": "maanetmalen"
+      }
+    ],
+    "note": "maandag=Monday; lunar days cycles"
+  },
+  {
+    "loc": "nl",
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "maandagen",
+        "replace": "maanetmalen"
+      }
+    ],
+    "note": "maandag=Monday; lunar days cycles"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "decision": "keep",
+    "fixes": [],
+    "note": "scale value correct for locale"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "mars-sites/insight.json",
+    "at": "fact",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "1.300 maremotos",
+        "replace": "1.300 sismos marcianos"
+      }
+    ],
+    "note": "maremoto=tsunami; marsquake"
+  },
+  {
+    "loc": "pt-BR",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/space-shuttle-stack_webp.title",
+    "decision": "fix",
+    "fixes": [
+      {
+        "find": "stack",
+        "replace": "em configuração de lançamento"
+      }
+    ],
+    "note": "stack untranslated"
+  }
+]

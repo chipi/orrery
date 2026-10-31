@@ -1,6 +1,6 @@
 {
-  "description": "La più grande luna di Nettuno e uno dei mondi geologicamente più attivi del sistema solare. Tritone orbita attorno a Nettuno all'indietro (retrogrado) e con un'inclinazione estrema — diagnostico di un oggetto catturato dalla Fascia di Kuiper, il che lo rende probabilmente un fratello di Plutone piuttosto che una luna nettuniana nativa. Voyager 2 ha rilevato geyser attivi di azoto che espellono polvere organica scura per 8 km in una tenue atmosfera di azoto; l'emisfero meridionale presenta il 'terreno a melone' — una rete di fossette e creste mai vista altrove nel sistema solare. L'orbita retrograda di Tritone sta decadendo per effetto delle maree; in circa 3,6 Gyr verrà o frantumato in un anello simile a quello di Saturno o si schianterà su Nettuno.",
-  "surface_composition": "Azoto congelato + ghiaccio d'acqua + ghiaccio di anidride carbonica; superficie coperta da terreno con texture a melone unico nel sistema solare, e criogeyser attivi di azoto che espellono pennacchi scuri per 8 km in una sottile atmosfera di azoto.",
+  "description": "La più grande luna di Nettuno e uno dei mondi geologicamente più attivi del sistema solare. Tritone orbita attorno a Nettuno all'indietro (retrogrado) e con un'inclinazione estrema: un indizio tipico di un oggetto catturato dalla fascia di Kuiper, il che lo rende probabilmente un parente di Plutone piuttosto che una luna nativa di Nettuno. La Voyager 2 ha rilevato geyser attivi di azoto che spingono polvere organica scura fino a 8 km di altezza in una tenue atmosfera di azoto; l'emisfero meridionale presenta il «terreno a melone», una rete di fossette e creste che non si vede in nessun altro luogo del sistema solare. L'orbita retrograda di Tritone sta decadendo per effetto delle maree: tra circa 3,6 miliardi di anni verrà o dilaniato in un anello simile a quello di Saturno o si schianterà su Nettuno.",
+  "surface_composition": "Azoto congelato + ghiaccio d'acqua + ghiaccio di anidride carbonica; superficie coperta da un terreno dalla trama a buccia di melone cantalupo, unico nel sistema solare, e da criogeyser di azoto attivi che sprigionano pennacchi scuri fino a 8 km di altezza in una sottile atmosfera di azoto.",
   "mission_visits": [
     "Voyager 2 — USA, 1989 (massimo avvicinamento ~40.000 km)"
   ],
@@ -8,7 +8,7 @@
     "triton-wiki": "Wikipedia — Tritone",
     "triton-nasa": "NASA Science — panoramica di Tritone",
     "triton-voyager2": "NASA Voyager 2 — incontro con il sistema di Nettuno (1989)",
-    "triton-trident": "Trident — proposta missione Discovery-class per sorvolo di Tritone"
+    "triton-trident": "Trident — proposta missione di sorvolo di Tritone della classe Discovery"
   },
   "science_sections": [
     {

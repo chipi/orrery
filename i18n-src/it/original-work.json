@@ -367,7 +367,7 @@
       "title": "Space Shuttle Orbiter"
     },
     "/images/anatomy/space-shuttle-stack_webp": {
-      "title": "Space Shuttle stack"
+      "title": "Space Shuttle in configurazione di lancio"
     },
     "/images/anatomy/spektr-rg_webp": {
       "title": "Spektr-RG"
@@ -848,7 +848,7 @@
       "title": "Storia Sputnik"
     },
     "/diagrams/science/history-tsiolkovsky_webp": {
-      "title": "Storia Tsiolkovsky"
+      "title": "Storia Ciolkovskij"
     },
     "/diagrams/science/hohmann-transfer_webp": {
       "title": "Trasferimento di Hohmann"
@@ -947,7 +947,7 @@
       "title": "Volume Pressurizzato"
     },
     "/diagrams/science/propulsive-landing_webp": {
-      "title": "Allunaggio Propulsivo"
+      "title": "Atterraggio Propulsivo"
     },
     "/diagrams/science/regolith_webp": {
       "title": "Regolite"
@@ -1001,7 +1001,7 @@
       "title": "Anomalia vera"
     },
     "/diagrams/science/tsiolkovsky_webp": {
-      "title": "Tsiolkovsky"
+      "title": "Ciolkovskij"
     },
     "/diagrams/science/v-infinity_webp": {
       "title": "Velocità all'infinito"
@@ -1400,42 +1400,42 @@
     "/images/colophon/model-descent-mars-retro_webp": {
       "title": "Paracadute Marte + retro",
       "what": "Aeroshell, paracadute supersonico e razzi retro terminali (Viking / Phoenix / InSight).",
-      "where": "Vola · discesa/allunaggio"
+      "where": "Vola · discesa/atterraggio"
     },
     "/images/colophon/model-descent-airbag_webp": {
       "title": "Rimbalzo con airbag su Marte",
       "what": "Bozzolo tetraedrico a airbag che rimbalza fino al fermo (Pathfinder / Spirit / Opportunity).",
-      "where": "Vola · discesa/allunaggio"
+      "where": "Vola · discesa/atterraggio"
     },
     "/images/colophon/model-descent-skycrane_webp": {
       "title": "Gru volante su Marte",
       "what": "Stadio di discesa alimentato a razzo che abbassa il rover su cavi (Curiosity / Perseverance).",
-      "where": "Vola · discesa/allunaggio"
+      "where": "Vola · discesa/atterraggio"
     },
     "/images/colophon/model-descent-venus-aeroshell_webp": {
       "title": "Aeroshell di Venere",
       "what": "Capsula di entrata a forma di sfera-cono e disco frenante per l'atmosfera densa (Venera / Vega).",
-      "where": "Vola · discesa/allunaggio"
+      "where": "Vola · discesa/atterraggio"
     },
     "/images/colophon/model-descent-asteroid-sampler_webp": {
       "title": "Contatto e stacco da asteroide",
       "what": "Bus campionatore con corno di raccolta — contatto e stacco in microgravità (Hayabusa / OSIRIS-REx).",
-      "where": "Vola · discesa/allunaggio"
+      "where": "Vola · discesa/atterraggio"
     },
     "/images/colophon/model-descent-comet-lander_webp": {
       "title": "Lander con arpione su cometa",
       "what": "Lander in microgravità a tre gambe con arpioni di ancoraggio (Philae sulla cometa 67P).",
-      "where": "Vola · discesa/allunaggio"
+      "where": "Vola · discesa/atterraggio"
     },
     "/images/colophon/model-descent-jupiter-probe_webp": {
       "title": "Sonda atmosferica di Giove",
       "what": "Aeroshell a forma di sfera-cono e paracadute per un'entrata nell'atmosfera profonda (sonda Galileo).",
-      "where": "Vola · discesa/allunaggio"
+      "where": "Vola · discesa/atterraggio"
     },
     "/images/colophon/model-descent-titan-parachute_webp": {
       "title": "Discesa con paracadute su Titano",
       "what": "Aeroshell e grande paracadute per una discesa lenta attraverso la foschia di Titano (Huygens).",
-      "where": "Vola · discesa/allunaggio"
+      "where": "Vola · discesa/atterraggio"
     },
     "/images/colophon/model-cruise-curiosity_webp": {
       "title": "Stadio di crociera Curiosity",

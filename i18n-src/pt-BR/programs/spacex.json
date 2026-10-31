@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "A lição mais profunda é sobre o preço de um único voo. A empresa sobreviveu no quarto lançamento do Falcon 1 e nada mais; se tivesse fracassado, nada do resto existiria. Grandes capacidades frequentemente dependem de um momento frágil no início — e a diferença entre as empresas que remodelam uma indústria e as que desaparecem às vezes é apenas se aquele único voo decolou."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=falcon-9": "Frota — Falcon 9, Falcon Heavy e Dragon",
+    "/programs/iss": "EEI — a estação para onde voa a Crew Dragon",
+    "/earth": "Terra — órbitas, encontros e bases de lançamento"
+  }
 }

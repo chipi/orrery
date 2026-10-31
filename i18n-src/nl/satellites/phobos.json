@@ -1,10 +1,10 @@
 {
   "description": "De grootste en binnenste van de twee manen van Mars — een onregelmatig, aardappelvormig lichaam van slechts 22 km op zijn breedst. Phobos draait elke 7 uur en 39 minuten om Mars, sneller dan Mars zelf roteert, waardoor de maan vanaf het Marsoppervlak twee keer per Marsdag in het westen opkomt en in het oosten ondergaat. Zijn baan vervalt met ~2 cm per jaar; over 30–50 miljoen jaar zullen getijdenkrachten hem ofwel uiteenrijten tot een tijdelijke ring ofwel op de planeet doen neerstorten. De Japanse MMX-missie (lancering ~2026) zal oppervlaktemonsters terugbrengen.",
-  "surface_composition": "Sterk gekraterd lichaam met een samenstelling vergelijkbaar met koolstofhoudende chondrieten, mogelijk een ingevangen planetoïde of een accretieresten; het oppervlak wordt gedomineerd door de 9 km grote krater Stickney en parallelle groeven die waarschijnlijk verband houden met ejecta van die inslag.",
+  "surface_composition": "Sterk bekraterd lichaam dat lijkt op een koolstofhoudende chondriet, mogelijk een ingevangen planetoïde of een restant van accretie; het oppervlak wordt gedomineerd door de krater Stickney van 9 km en door evenwijdige groeven die waarschijnlijk samenhangen met het uitgeworpen materiaal van die inslag.",
   "mission_visits": [
     "Viking 1 orbiter — USA, 1977 (eerste beelden van dichtbij)",
     "Mars Global Surveyor — USA, 1998 (kaarten met hoge resolutie)",
-    "Mars Express — ESA, 2010 (voorbijvlucht op minder dan 100 m hoogte)"
+    "Mars Express — ESA, 2010 (flyby op minder dan 100 m hoogte)"
   ],
   "library_labels": {
     "phobos-wiki": "Wikipedia — Phobos",
@@ -21,7 +21,7 @@
     {
       "tab": "orbits",
       "section": "apsides",
-      "why": "Phobos's perihelium-aphelium variatie is klein, maar het omcirkelt Mars drie keer per Martiaanse dag — de maan met de meeste banen per ouderdag in het systeem."
+      "why": "De schommeling van Phobos tussen perihelium en aphelium is klein, maar de maan draait drie keer per Martiaanse dag om Mars — de maan met de meeste omlopen per dag van de moederplaneet in het systeem."
     }
   ]
 }

@@ -35,7 +35,12 @@ export default defineConfig({
   // concurrency, which destabilises canvas-based tests that wait for
   // a paint frame. CI uses a single worker for determinism.
   workers: process.env.CI ? 1 : 2,
-  reporter: process.env.CI ? [['list'], ['html', { open: 'never' }]] : 'list',
+  // CI adds a JSON report so scripts/e2e-retry-summary.mjs can list the tests
+  // that only passed on a retry — the list reporter's retries are otherwise
+  // invisible on a green run.
+  reporter: process.env.CI
+    ? [['list'], ['html', { open: 'never' }], ['json', { outputFile: 'playwright-results.json' }]]
+    : 'list',
   timeout: 30_000,
   expect: { timeout: 5_000 },
 

@@ -1,7 +1,7 @@
 /**
  * Geometry reference sketches for the 12 geometry-bearing Lab goal
  * illustrations (G · #536). NOT shipped assets — these are Higgsfield
- * composition references (docs/wip/2026-09-07-lab-goal-illustration-prompts.md):
+ * composition references (docs/wip/_archive/2026-09-07-lab-goal-illustration-prompts.md):
  * the art is text-free, so unlike the /science diagrams these carry NO labels;
  * their one job is CORRECT GEOMETRY (ellipse tangency, the free-return
  * figure-eight, phase arcs) that freestyle generation reliably gets wrong.

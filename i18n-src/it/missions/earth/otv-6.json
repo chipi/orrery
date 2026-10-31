@@ -5,7 +5,7 @@
   "delta_v": "~9,4 km/s (LEO)",
   "type": "SPAZIO AEREO SENZA EQUIPAGGIO · COMPLETATO",
   "first": "USA-299 / USSF-7 — 908 giorni in orbita, KSC Shuttle Landing Facility",
-  "description": "Sesto volo dell'X-37B — primo con la nuova designazione organizzativa USSF; record di 908 giorni in orbita (~2,5 anni). Lanciato il 2020-05-17 13:14 UTC da CCAFS SLC-41 su un Atlas V 501 AV-081; atterrato a KSC SLF il 2022-11-12 10:22 UTC. Trasportava il modulo PRAM (Photovoltaic RF Antenna Module — esperimento di trasmissione di potenza solare a microonde da 1 W) del Naval Research Laboratory e uno schieramento FalconSAT-8 dell'AFRL.",
+  "description": "Sesto volo dell'X-37B — primo con la nuova designazione organizzativa USSF; record di 908 giorni in orbita (~2,5 anni). Lanciato il 2020-05-17 13:14 UTC da CCAFS SLC-41 su un Atlas V 501 AV-081; atterrato a KSC SLF il 2022-11-12 10:22 UTC. Trasportava il PRAM (Photovoltaic RF Antenna Module — esperimento di trasmissione a microonde di energia solare da 1 W) del Naval Research Laboratory e un dispositivo di rilascio per FalconSAT-8 dell'AFRL.",
   "events": [
     {
       "met": 0,
@@ -16,7 +16,7 @@
     {
       "met": 454,
       "label": "OPS IN ORBITA",
-      "note": "Apogeo ~400 km; operazioni con carico pagante classificate.",
+      "note": "Apogeo ~400 km; operazioni con carico utile classificate.",
       "type": "info"
     },
     {

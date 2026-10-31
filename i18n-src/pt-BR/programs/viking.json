@@ -80,5 +80,12 @@
       "type": "prose",
       "md": "A lição mais profunda é o valor de provar toda a cadeia. O presente duradouro da Viking não foi nenhuma medição isolada, mas a demonstração de que alcançar Marte e pousar intacta era possível e repetível. Uma vez que uma coisa difícil foi feita — e feita duas vezes — ela deixa de ser uma aposta e se torna uma fundação sobre a qual outros podem construir. Às vezes o maior resultado que uma missão retorna é simplesmente que pode ser feito."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Marte — onde a Viking pousou",
+    "/programs/mariner": "Mariner — os sobrevoos e orbitadores que exploraram Marte primeiro",
+    "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
+    "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
+    "/mars?site=viking1-orbiter": "orbitador Viking 1"
+  }
 }

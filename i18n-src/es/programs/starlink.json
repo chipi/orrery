@@ -84,5 +84,11 @@
       "type": "prose",
       "md": "La lección más profunda es que la infraestructura construida más rápido de lo que puede ser gobernada entrega beneficio real y riesgo real al mismo tiempo. Starlink genuinamente conectó a los desconectados y simultáneamente concentró capacidad crítica en manos privadas, abarrotó una órbita compartida y llenó de rastros el cielo de los astrónomos. La tarea que deja no es deshacerla sino ponerse a su altura: construir la gobernanza que una tecnología tan poderosa debería haber tenido antes de volar."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starlink": "Flota — la constelación Starlink",
+    "/programs/spacex": "SpaceX: el Falcon que la lanza",
+    "/earth": "Tierra: órbitas y la saturación de la órbita baja",
+    "/earth?site=starlink": "La constelación Starlink"
+  }
 }

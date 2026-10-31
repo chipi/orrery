@@ -15,6 +15,16 @@
 set -euo pipefail
 cd /srv/orrery
 
+# The deploy@ crontab appends this script's output to data-refresh.log forever.
+# Trim it in place (not mv: cron's `>>` already holds the file open and would
+# keep writing to the moved one) once it passes 2 MB, keeping the last 5,000
+# lines. VictoriaLogs keeps the full history (job orrery-data-refresh).
+LOG=/srv/orrery/data-refresh.log
+if [ -f "$LOG" ] && [ "$(wc -c < "$LOG")" -gt 2000000 ]; then
+  tail -n 5000 "$LOG" > "$LOG.trim" && cat "$LOG.trim" > "$LOG" && rm -f "$LOG.trim"
+  echo "[refresh-prod-data] $(date -u +%FT%TZ) trimmed $LOG to its last 5000 lines"
+fi
+
 COMPOSE=(docker compose -f compose/docker-compose.prod.yml --project-directory . --env-file .env --profile manual run --rm pipeline-runner)
 
 # Station TLEs (#404 · H4c #464) — the SAME overlay pattern as launches: refresh

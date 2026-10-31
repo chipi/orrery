@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "trajectories/hayabusa2.json",
+    "at": "current_distance_label",
+    "find": "2001 CC21, luglio 2026",
+    "replace": "2001 CC21, 2026-07"
+  }
+]

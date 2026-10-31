@@ -4,7 +4,7 @@
   "payload": "8200 kg lanceermassa; 1,731 kg monster teruggebracht",
   "delta_v": "~5 km/s",
   "type": "MONSTERTERUGKEER · GEVLOGEN",
-  "first": "Eerste maanmonster-terugkeer in 44 jaar (sinds Luna 24, 1976)",
+  "first": "Eerste terugkeer van maanmonsters in 44 jaar (sinds Luna 24, 1976)",
   "description": "Chang'e 5 was de eerste monsterterugkeer van de Maan sinds de Sovjet-Unie's Luna 24 in 1976 — een gat van 44 jaar. De architectuur: orbiter + lander + opstijgvoertuig + monsterterugkeercapsule, allemaal in één lancering. De lander landde bij Mons Rümker, boorde en schepte 1,731 kg regoliet, steeg op, voerde een rendez-vous uit en dockte met de orbiter (het eerste robotische rendez-vous bij de Maan), en de capsule keerde terug naar de Aarde. De monsters komen uit een regio van slechts 2 miljard jaar oud — veel jonger dan enig Apollo- of Luna-monster, en herschrijven modellen van het maanvulkanisme.",
   "events": [
     {
@@ -40,7 +40,7 @@
     {
       "met": 13,
       "label": "RENDEZVOUS",
-      "note": "Eerste robotische maan-rendezvous; monstercontainer overgedragen aan orbiter.",
+      "note": "Eerste robotische rendez-vous bij de Maan; monstercontainer overgedragen aan de orbiter.",
       "type": "info"
     },
     {
@@ -49,5 +49,6 @@
       "note": "Monstercapsule landt in Binnen-Mongolië 2020-12-16.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "bovenste trap YZ-1 van de Long March 5"
 }

@@ -41,14 +41,15 @@
     {
       "met": 5300,
       "label": "LAATSTE TRANSMISSIE",
-      "note": "2018-06-10. Planeetbrede stofstorm blokkeert zonnekracht.",
+      "note": "2018-06-10. Een stofstorm over de hele planeet beperkt de zonnestroom.",
       "type": "warning"
     },
     {
       "met": 5543,
       "label": "EINDE MISSIE",
-      "note": "NASA verklaart einde-van-missie op 2019-02-13. 45,16 km afgelegd.",
+      "note": "NASA verklaart de missie op 2019-02-13 voor beëindigd. 45,16 km afgelegd.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "vastestofbovenste trap Star 48B PAM-D"
 }

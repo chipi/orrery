@@ -1,0 +1,416 @@
+[
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "type",
+    "old": "MISSION SPATIALE HABITÉE · RÉALISÉE",
+    "new": "MISSION HABITÉE EN ORBITE TERRESTRE · RÉALISÉE"
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "type",
+    "old": "VOL SPATIAL HABITÉ · EFFECTUÉ",
+    "new": "VOL HABITÉ EN ORBITE TERRESTRE · EFFECTUÉ"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.4.note",
+    "old": "Spider se rend-vous et se réarrime à Gumdrop, achevant la répétition générale de la procédure lunaire en orbite terrestre.",
+    "new": "Spider effectue un rendez-vous avec Gumdrop et s'y réarrime, achevant la répétition générale de la procédure lunaire en orbite terrestre."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "old": "Mission du programme Discovery de la NASA, dirigée par l'APL de l'Université Johns Hopkins. Lancée le 17-02-1996, NEAR Shoemaker a survolé l'astéroïde 253 Mathilde (27-06-1997) avant un survol de gravité terrestre (23-01-1998) qui a fait correspondre son orbite à celle d'Éros. L'insertion orbitale autour de 433 Éros le 14-02-2000 a commencé un relevé de 12 mois qui a retourné 160 000 images et des cartes spectrales, compositionnelles et gravitationnelles complètes du corps de type S de 34 × 11 × 11 km. Le 12-02-2001, cinq corrections de descente orbitale ont amené le vaisseau à 5 km d'altitude ; la descente contrôlée à ~1,7 m/s s'est terminée par un atterrissage en douceur près de la selle Himeros (35°N, 280°O), renvoyant des images jusqu'à 125 m de la surface. Le vaisseau a survécu et a transmis depuis la surface pendant ~16 jours.",
+    "new": "Mission du programme Discovery de la NASA, dirigée par l'APL de l'Université Johns Hopkins. Lancée le 17-02-1996, NEAR Shoemaker a survolé l'astéroïde 253 Mathilde (27-06-1997) avant une assistance gravitationnelle terrestre (23-01-1998) qui a fait correspondre son orbite à celle d'Éros. L'insertion orbitale autour de 433 Éros le 14-02-2000 a commencé un relevé de 12 mois qui a retourné 160 000 images et des cartes spectrales, compositionnelles et gravitationnelles complètes du corps de type S de 34 × 11 × 11 km. Le 12-02-2001, cinq allumages d'abaissement d'orbite ont amené le vaisseau à 5 km d'altitude ; la descente contrôlée à ~1,7 m/s s'est terminée par un atterrissage en douceur près de la selle Himeros (35°N, 280°O), renvoyant des images jusqu'à 125 m de la surface. Le vaisseau a survécu et a transmis depuis la surface pendant ~16 jours."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "old": "SURVOL DE GRAVITÉ TERRESTRE",
+    "new": "ASSISTANCE GRAVITATIONNELLE TERRESTRE"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "old": "OSIRIS-REx a réalisé l'une des opérations les plus précises jamais tentées à proximité d'un astéroïde. Lancé 2016-09-08 depuis Cap Canaveral sur un Atlas V 411, il a utilisé un survol gravitationnel terrestre en 2017 pour faire pivoter son plan orbital sur l'inclinaison de 6° de Bénou, et s'est rendez-vous avec l'astéroïde carbonacé proche de la Terre de 492 m 2018-12-03. Après un stationnement à ~19 km, il a ensuite atteint une orbite record de ~1,4 km — l'orbite de vaisseau spatial la plus proche jamais effectuée autour de n'importe quel corps céleste. Il a passé deux ans à cartographier la surface jonchée de rochers de Bénou et à découvrir des éjections de particules actives. 2020-10-20 le bras préleveur Touch-and-Go est descendu sur le site Nightingale, a tiré du gaz N₂ à la surface et a attrapé un panache — s'enfonçant de 50 cm dans une surface de « fluide de tas de décombres ». La capsule de retour d'échantillon a livré 121,6 g de matériau de Bénou à l'Utah 2023-09-24. Le vaisseau spatial lui-même a été immédiatement rebaptisé OSIRIS-APEX, en route vers un rendez-vous avec Apophis en 2029.",
+    "new": "OSIRIS-REx a réalisé l'une des opérations les plus précises jamais tentées à proximité d'un astéroïde. Lancé 2016-09-08 depuis Cap Canaveral sur un Atlas V 411, il a utilisé une assistance gravitationnelle terrestre en 2017 pour faire pivoter son plan orbital sur l'inclinaison de 6° de Bénou, et s'est rendez-vous avec l'astéroïde carbonacé proche de la Terre de 492 m 2018-12-03. Après un stationnement à ~19 km, il a ensuite atteint une orbite record de ~1,4 km — l'orbite de vaisseau spatial la plus proche jamais effectuée autour de n'importe quel corps céleste. Il a passé deux ans à cartographier la surface jonchée de rochers de Bénou et à découvrir des éjections de particules actives. 2020-10-20 le bras préleveur Touch-and-Go est descendu sur le site Nightingale, a tiré du gaz N₂ à la surface et a attrapé un panache — s'enfonçant de 50 cm dans une surface de « fluide de tas de décombres ». La capsule de retour d'échantillon a livré 121,6 g de matériau de Bénou à l'Utah 2023-09-24. Le vaisseau spatial lui-même a été immédiatement rebaptisé OSIRIS-APEX, en route vers un rendez-vous avec Apophis en 2029."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.label",
+    "old": "SURVOL GRAVITATIONNEL TERRESTRE",
+    "new": "ASSISTANCE GRAVITATIONNELLE TERRESTRE"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.1.note",
+    "old": "Approche minimale 5768 km le 1974-02-05 ; première trajectoire de survol gravitationnel délibérée dans l'histoire de l'exploration spatiale.",
+    "new": "Approche minimale 5768 km le 1974-02-05 ; première trajectoire d'assistance gravitationnelle délibérée dans l'histoire de l'exploration spatiale."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "description",
+    "old": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) a utilisé six assists gravitationnels sur sept ans — la Terre, Vénus deux fois, Mercure trois fois — pour ralentir et entrer en orbite autour de Mercure le 2011-03-18. Protégé par un écran thermique avec un côté à 370 °C et l'autre à -45 °C. Les découvertes incluaient de la glace d'eau dans les cratères polaires permanemment ombragés, des formations géologiques « creux » jusqu'alors inconnues, et la confirmation que le noyau de fer de Mercure occupe environ 85 % du rayon de la planète (le plus grand rapport noyau-rayon de toute planète du système solaire). La mission s'est terminée par un impact contrôlé sur la surface de Mercure le 2015-04-30 après l'épuisement du carburant.",
+    "new": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) a utilisé six assistances gravitationnelles sur sept ans — la Terre, Vénus deux fois, Mercure trois fois — pour ralentir et entrer en orbite autour de Mercure le 2011-03-18. Protégé par un écran thermique avec un côté à 370 °C et l'autre à -45 °C. Les découvertes incluaient de la glace d'eau dans les cratères polaires permanemment ombragés, des formations géologiques « creux » jusqu'alors inconnues, et la confirmation que le noyau de fer de Mercure occupe environ 85 % du rayon de la planète (le plus grand rapport noyau-rayon de toute planète du système solaire). La mission s'est terminée par un impact contrôlé sur la surface de Mercure le 2015-04-30 après l'épuisement du carburant."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.label",
+    "old": "ASSIST GRAVITATIONNEL DE LA TERRE",
+    "new": "ASSISTANCE GRAVITATIONNELLE DE LA TERRE"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "old": "Vol de 48 orbites sur 2 jours et 23 heures de Valentina Terechkova — la première femme dans l'espace, et toujours l'unique femme à avoir piloté en solo une mission spatiale. Sélectionnée parmi un groupe de cinq candidates cosmonautes assemblé en 1962, Terechkova a lancé le 1963-06-16 à 09:30 UTC, seulement 2 ans après le premier vol orbital de Gagarine. Sa capsule était programmée pour une correction d'orbite vers le haut plutôt que vers le bas — elle a manuellement identifié l'erreur et les contrôleurs au sol ont téléchargé à nouveau le logiciel d'attitude corrigé le lendemain. Atterrissage le 1963-06-19 à 08:20 UTC près de Bayevo, Altai Krai. Terechkova est devenue plus tard une figure importante de la politique soviétique et reste la plus jeune femme jamais envoyée en orbite à 26 ans.",
+    "new": "Vol de 48 orbites sur 2 jours et 23 heures de Valentina Terechkova — la première femme dans l'espace, et toujours l'unique femme à avoir piloté en solo une mission spatiale. Sélectionnée parmi un groupe de cinq candidates cosmonautes assemblé en 1962, Terechkova a lancé le 1963-06-16 à 09:30 UTC, seulement 2 ans après le premier vol orbital de Gagarine. Sa capsule était programmée pour un allumage de correction d'orbite vers le haut plutôt que vers le bas — elle a manuellement identifié l'erreur et les contrôleurs au sol ont téléchargé à nouveau le logiciel d'attitude corrigé le lendemain. Atterrissage le 1963-06-19 à 08:20 UTC près de Bayevo, Altai Krai. Terechkova est devenue plus tard une figure importante de la politique soviétique et reste la plus jeune femme jamais envoyée en orbite à 26 ans."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "old": "Combustion de 760 m/s. 49 survols d'Europe sur 4 ans à suivre.",
+    "new": "Allumage de 760 m/s. 49 survols d'Europe sur 4 ans à suivre."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.label",
+    "old": "INJECTION TRANS-MARTIENNE",
+    "new": "ALLUMAGE D'INJECTION TRANS-MARTIENNE"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.label",
+    "old": "TIRATION PÉRIGÉE 1",
+    "new": "ALLUMAGE AU PÉRIGÉE 1"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.note",
+    "old": "Première des six propulsions de rehaussement d'orbite terrestre avant l'injection trans-Mars.",
+    "new": "Première des six allumages de rehaussement d'orbite terrestre avant l'injection trans-Mars."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "old": "La propulsion périgée finale place le vaisseau sur la trajectoire de Mars.",
+    "new": "L'allumage final au périgée place le vaisseau sur la trajectoire de Mars."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.3.note",
+    "old": "Combustion du moteur solide de 15 min place Mariner 9 en orbite 1398 × 17 917 km, 64,4° — première orbite jamais réalisée d'une autre planète.",
+    "new": "Allumage du moteur solide de 15 min place Mariner 9 en orbite 1398 × 17 917 km, 64,4° — première orbite jamais réalisée d'une autre planète."
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.note",
+    "old": "La combustion du moteur principal de 37 minutes capture l'orbiteur sur l'orbite de Mars le jour de Noël 2003.",
+    "new": "L'allumage du moteur principal de 37 minutes capture l'orbiteur sur l'orbite de Mars le jour de Noël 2003."
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.note",
+    "old": "La combustion du moteur principal de 33 minutes capture MAVEN sur une orbite scientifique elliptique de 35 heures.",
+    "new": "L'allumage du moteur principal de 33 minutes capture MAVEN sur une orbite scientifique elliptique de 35 heures."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.1.label",
+    "old": "INJECTION VERS MARS",
+    "new": "ALLUMAGE D'INJECTION VERS MARS"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.label",
+    "old": "BRÛLURE TMI",
+    "new": "ALLUMAGE TMI"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.label",
+    "old": "BRÛLURE TMI",
+    "new": "ALLUMAGE TMI"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.label",
+    "old": "BRÛLURE DE TEI",
+    "new": "ALLUMAGE TEI"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "old": "Injection trans-Terre – Le Starship décolle de la surface de Mars et brûle pour la trajectoire de retour vers la Terre.",
+    "new": "Injection trans-Terre – Le Starship décolle de la surface de Mars et allume ses moteurs pour la trajectoire de retour vers la Terre."
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.note",
+    "old": "La combustion du moteur place le vaisseau en orbite autour de Mars.",
+    "new": "L'allumage du moteur place le vaisseau en orbite autour de Mars."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "old": "Brûlure par injection trans-lunaire – Le stade S-IVB propulse le CSM/LM vers la Lune.",
+    "new": "Allumage d'injection trans-lunaire – Le stade S-IVB propulse le CSM/LM vers la Lune."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "old": "Apollo 13 devait être le troisième alunissage habité, ciblé sur les hautes terres de Fra Mauro. À 55 heures 54 minutes dans le vol, un réservoir d'oxygène du module de service a éclaté, paralysant les systèmes électriques et de maintien de la vie du module de commande-service. L'alunissage étant annulé, l'équipage — James Lovell, Jack Swigert et Fred Haise — a désactivé le CSM, s'est déplacé vers le module lunaire Aquarius en tant que canot de sauvetage, et a utilisé le moteur de descente du LM pour une combustion à Pericynthion+2 heures qui les a placés sur une trajectoire de retour libre rapide. Ils ont contourné la Lune à 254 km d'altitude le 1970-04-15 et ont amerri en toute sécurité dans le Pacifique Sud le 1970-04-17. La mission est étudiée aujourd'hui comme un modèle d'improvisation d'ingénierie en temps réel disciplinée.",
+    "new": "Apollo 13 devait être le troisième alunissage habité, ciblé sur les hautes terres de Fra Mauro. À 55 heures 54 minutes dans le vol, un réservoir d'oxygène du module de service a éclaté, paralysant les systèmes électriques et de maintien de la vie du module de commande-service. L'alunissage étant annulé, l'équipage — James Lovell, Jack Swigert et Fred Haise — a désactivé le CSM, s'est déplacé vers le module lunaire Aquarius en tant que canot de sauvetage, et a utilisé le moteur de descente du LM pour un allumage à Pericynthion+2 heures qui les a placés sur une trajectoire de retour libre rapide. Ils ont contourné la Lune à 254 km d'altitude le 1970-04-15 et ont amerri en toute sécurité dans le Pacifique Sud le 1970-04-17. La mission est étudiée aujourd'hui comme un modèle d'improvisation d'ingénierie en temps réel disciplinée."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "old": "Combustion d'injection trans-lunaire par S-IVB ; CSM + LM s'engagent sur une trajectoire cislunairedans.",
+    "new": "Allumage d'injection trans-lunaire par S-IVB ; CSM + LM s'engagent sur une trajectoire cislunairedans."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.label",
+    "old": "COMBUSTION DE RETOUR LIBRE",
+    "new": "ALLUMAGE DE RETOUR LIBRE"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "old": "Combustion de 31 secondes du moteur de descente du LM ramène le vaisseau sur une trajectoire de retour libre.",
+    "new": "Allumage de 31 secondes du moteur de descente du LM ramène le vaisseau sur une trajectoire de retour libre."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.label",
+    "old": "COMBUSTION PC+2",
+    "new": "ALLUMAGE PC+2"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "old": "Combustion à Péricynthion-plus-2-heures raccourcit le temps de retour à la Terre de dix heures.",
+    "new": "L'allumage à Péricynthion-plus-2-heures raccourcit le temps de retour à la Terre de dix heures."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.1.note",
+    "old": "Brûlage de mise en route translunaireΗ — première évasion habitée de la gravité terrestre. S-IVB ∆v ~3,05 km/s.",
+    "new": "Allumage d'injection translunaire — première évasion habitée de la gravité terrestre. S-IVB ∆v ~3,05 km/s."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "old": "Insertion en orbite lunaire derrière la Lune, hors contact radio. Brûlage SPS ~0,91 km/s. Premiers humains à orbiter autour d'un autre corps céleste.",
+    "new": "Insertion en orbite lunaire derrière la Lune, hors contact radio. Allumage SPS ~0,91 km/s. Premiers humains à orbiter autour d'un autre corps céleste."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "old": "Le premier vol en équipage du programme Artemis et l'étincelle qui est devenue Orrery. Le 1er avril 2026, le SLS Block 1 de NASA a lancé un vaisseau spatial Orion avec quatre astronautes — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) et Jeremy Hansen (MS) de l'ASC — sur une trajectoire à retour libre qui les a fait pivoter autour de la face cachée de la Lune à environ 6 500 km au-dessus de la surface et les a ramenés chez eux sans aucune brûlure d'insertion sur l'orbite lunaire. À 406 771 km de la Terre, ils ont voyagé plus loin que tout humain avant eux, battant le record d'Apollo 13 en 1970. Après un vol de 9 jours, Orion a amerri dans le Pacifique au large de San Diego le 10 avril. Le vol a qualifié le soutien-vie, la navigation et le bouclier thermique d'Orion pour les missions en équipage avant le premier alunissage, désormais prévu pour Artemis IV.",
+    "new": "Le premier vol en équipage du programme Artemis et l'étincelle qui est devenue Orrery. Le 1er avril 2026, le SLS Block 1 de NASA a lancé un vaisseau spatial Orion avec quatre astronautes — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) et Jeremy Hansen (MS) de l'ASC — sur une trajectoire à retour libre qui les a fait pivoter autour de la face cachée de la Lune à environ 6 500 km au-dessus de la surface et les a ramenés chez eux sans aucun allumage d'insertion en orbite lunaire. À 406 771 km de la Terre, ils ont voyagé plus loin que tout humain avant eux, battant le record d'Apollo 13 en 1970. Après un vol de 9 jours, Orion a amerri dans le Pacifique au large de San Diego le 10 avril. Le vol a qualifié le soutien-vie, la navigation et le bouclier thermique d'Orion pour les missions en équipage avant le premier alunissage, désormais prévu pour Artemis IV."
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.4.note",
+    "old": "Dernier rehaussement trans-lunaire — Beresheet en trajectoire directe vers la Lune.",
+    "new": "Dernier allumage trans-lunaire — Beresheet en trajectoire directe vers la Lune."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "old": "Le deuxième étage de New Glenn effectue une brûlure par injection trans-lunaire.",
+    "new": "Le deuxième étage de New Glenn effectue un allumage d'injection trans-lunaire."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "vehicle_stage",
+    "old": "deuxième étage du New Glenn (injection TLI)",
+    "new": "deuxième étage du New Glenn (allumage TLI)"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "old": "Insertion en orbite lunaire (plusieurs brûlages d'orbite terrestre et lunaire utilisés).",
+    "new": "Insertion en orbite lunaire (plusieurs allumages d'orbite terrestre et lunaire utilisés)."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "old": "Combustion du moteur solide pour une orbite quasi-polaire de 295 × 8543 km, inclinaison 85,5°.",
+    "new": "Allumage du moteur solide pour une orbite quasi-polaire de 295 × 8543 km, inclinaison 85,5°."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.5.note",
+    "old": "Le stage de descente Spider a été désorbitée (rentrée en mars 1969, océan Indien) ; le stage de montée a été vidé par les tirs et poussé vers une orbite haute — il s'est désintégré en 1981.",
+    "new": "L'étage de descente Spider a été désorbité (rentrée en mars 1969, océan Indien) ; l'étage de montée a été vidé par les tirs et poussé vers une orbite haute — il s'est désintégré en 1981."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "old": "La répétition générale du premier alunissage. Stafford et Cernan ont piloté le LM Snoopy jusqu'à une altitude d'environ 15,6 km au-dessus du site d'alunissage prévu d'Apollo 11 à Mer de la Tranquillité — chaque étape d'une approche d'alunissage sauf l'alunissage lui-même. Ils ont confirmé le profil de descente, le radar d'alunissage, la trajectoire d'ascension et la procédure de rendez-vous qu'Apollo 11 utiliserait deux mois plus tard. Les réservoirs de carburant du stage d'ascension du LM ont été volontairement sous-alimentés (~50 % de la valeur nominale) pour empêcher toute tentation de tenter un alunissage. Le stage d'ascension de Snoopy était le seul à quitter l'orbite lunaire avec un ∆v positif — éjecté dans une orbite héliocentriste où il se trouve toujours aujourd'hui, redécelé par intermittence par des astronomes amateurs (confirmation la plus récente par Nick Howes / Faulkes Telescope, 2019).",
+    "new": "La répétition générale du premier alunissage. Stafford et Cernan ont piloté le LM Snoopy jusqu'à une altitude d'environ 15,6 km au-dessus du site d'alunissage prévu d'Apollo 11 à Mer de la Tranquillité — chaque étape d'une approche d'alunissage sauf l'alunissage lui-même. Ils ont confirmé le profil de descente, le radar d'alunissage, la trajectoire d'ascension et la procédure de rendez-vous qu'Apollo 11 utiliserait deux mois plus tard. Les réservoirs de propergol de l'étage d'ascension du LM ont été volontairement sous-alimentés (~50 % de la valeur nominale) pour empêcher toute tentation de tenter un alunissage. L'étage d'ascension de Snoopy était le seul à quitter l'orbite lunaire avec un ∆v positif — éjecté dans une orbite héliocentriste où il se trouve toujours aujourd'hui, redécelé par intermittence par des astronomes amateurs (confirmation la plus récente par Nick Howes / Faulkes Telescope, 2019)."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "old": "Rendez-vous du module de remontée de Snoopy avec Charlie Brown — premier amarrage complet LM-vers-CSM en orbite lunaire.",
+    "new": "Rendez-vous de l'étage de remontée de Snoopy avec Charlie Brown — premier amarrage complet LM-vers-CSM en orbite lunaire."
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "old": "Luna 16 était la première mission de retour d'échantillons par engin automatique réussie de l'Union soviétique et le premier retour lunaire non-habité de quelque nature qu'il soit. Après qu'Apollo 11 ait ramené 22 kg d'échantillons prélevés en équipage en 1969, Luna 16 a rapporté 101 grammes de régolithe provenant de Mare Fecunditatis un an plus tard — une fraction de la charge utile d'Apollo, mais une preuve de concept profonde pour l'architecture alternative. La mission a utilisé un lanceur Proton-K et un profil de retour direct : descente à la surface, forage carotté, lancement du module de remontée, capsule de retour balistique vers le Kazakhstan. La technique a été réutilisée pour Luna 20 et Luna 24, et décennies plus tard par Chang'e 5 et Chang'e 6.",
+    "new": "Luna 16 était la première mission de retour d'échantillons par engin automatique réussie de l'Union soviétique et le premier retour lunaire non-habité de quelque nature qu'il soit. Après qu'Apollo 11 ait ramené 22 kg d'échantillons prélevés en équipage en 1969, Luna 16 a rapporté 101 grammes de régolithe provenant de Mare Fecunditatis un an plus tard — une fraction de la charge utile d'Apollo, mais une preuve de concept profonde pour l'architecture alternative. La mission a utilisé un lanceur Proton-K et un profil de retour direct : descente à la surface, forage carotté, lancement de l'étage de remontée, capsule de retour balistique vers le Kazakhstan. La technique a été réutilisée pour Luna 20 et Luna 24, et décennies plus tard par Chang'e 5 et Chang'e 6."
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "old": "Rendez-vous des ravitailleurs et transfert de propulseur en LEO sur plusieurs vols.",
+    "new": "Rendez-vous des ravitailleurs et transfert de propergol en LEO sur plusieurs vols."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "description",
+    "old": "L'architecture martienne à long terme de SpaceX, telle que décrite dans les présentations IAC d'Elon Musk en 2016, 2017 et 2024. Un vaisseau spatial décolle de la Terre entièrement ravitaillé en orbite terrestre basse via une flotte de vols de ravitaillement, effectue une injection trans-Mars et fait atterrir un équipage d'environ 10 personnes avec une cargaison et des équipements ISRU sur la surface martienne. Le propulseur de retour (méthane + oxygène liquide) est fabriqué sur Mars à partir de CO₂ atmosphérique et de glace d'eau souterraine via le procédé Sabatier, permettant au même vaisseau spatial de décoller à nouveau, d'effectuer une injection trans-Terre et de ramener l'équipage. La durée de l'aller-retour dépend de la fenêtre de lancement et du séjour en surface ; le calendrier indicatif présenté ici est d'environ 2,5 ans en porte-à-porte (213 jours à l'aller, ~ 500 jours en surface, retour à la prochaine fenêtre favorable). L'architecture est conceptuelle - la date et les paramètres sont sujets à des révisions substantielles en attendant la maturation du Starship et la validation de l'ISRU.",
+    "new": "L'architecture martienne à long terme de SpaceX, telle que décrite dans les présentations IAC d'Elon Musk en 2016, 2017 et 2024. Un vaisseau spatial décolle de la Terre entièrement ravitaillé en orbite terrestre basse via une flotte de vols de ravitaillement, effectue une injection trans-Mars et fait atterrir un équipage d'environ 10 personnes avec une cargaison et des équipements ISRU sur la surface martienne. Le propergol de retour (méthane + oxygène liquide) est fabriqué sur Mars à partir de CO₂ atmosphérique et de glace d'eau souterraine via le procédé Sabatier, permettant au même vaisseau spatial de décoller à nouveau, d'effectuer une injection trans-Terre et de ramener l'équipage. La durée de l'aller-retour dépend de la fenêtre de lancement et du séjour en surface ; le calendrier indicatif présenté ici est d'environ 2,5 ans en porte-à-porte (213 jours à l'aller, ~ 500 jours en surface, retour à la prochaine fenêtre favorable). L'architecture est conceptuelle - la date et les paramètres sont sujets à des révisions substantielles en attendant la maturation du Starship et la validation de l'ISRU."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "old": "Rendez-vous de la flotte de pétroliers et transfert de propulseur en LEO sur plusieurs vols.",
+    "new": "Rendez-vous de la flotte de pétroliers et transfert de propergol en LEO sur plusieurs vols."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "old": "L'usine ISRU a produit suffisamment de méthane + LOX pour le propulseur aller-retour.",
+    "new": "L'usine ISRU a produit suffisamment de méthane + LOX pour le propergol aller-retour."
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "description",
+    "old": "Conçu principalement comme un démonstrateur technologique de l'Initiative de Défense Stratégique, Clementine a passé 10 semaines en orbite lunaire et a renvoyé la première carte topographique et multispectrale mondiale systématique de la Lune. Les mesures radar bistatiques au pôle sud lunaire ont produit les premiers indices alléchants de glace d'eau – confirmés des années plus tard par Lunar Prospector et Chandrayaan-1. La mission de suivi visant à survoler l'astéroïde Géographos a échoué lorsqu'un dysfonctionnement du propulseur a épuisé le propulseur du vaisseau spatial.",
+    "new": "Conçu principalement comme un démonstrateur technologique de l'Initiative de Défense Stratégique, Clementine a passé 10 semaines en orbite lunaire et a renvoyé la première carte topographique et multispectrale mondiale systématique de la Lune. Les mesures radar bistatiques au pôle sud lunaire ont produit les premiers indices alléchants de glace d'eau – confirmés des années plus tard par Lunar Prospector et Chandrayaan-1. La mission de suivi visant à survoler l'astéroïde Géographos a échoué lorsqu'un dysfonctionnement du propulseur a épuisé le propergol du vaisseau spatial."
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.4.note",
+    "old": "Un dysfonctionnement du propulseur embarqué épuise le propulseur ; rencontre avec un astéroïde annulée.",
+    "new": "Un dysfonctionnement du propulseur embarqué épuise le propergol ; rencontre avec un astéroïde annulée."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "old": "Jusqu'à SLIM, les alunissages avaient une précision de ciblage à l'échelle kilométrique. Le Smart Lander de JAXA a démontré une précision de 100 m - la précision requise pour que les missions avec équipage s'amarrent avec une cargaison prépositionnée, pour que les véhicules de remontée d'échantillons trouvent leurs partenaires orbitaux et pour toute architecture future qui dépend de l'atterrissage sur des sites spécifiques de valeur scientifique. SLIM a également été le pionnier du transfert balistique à faible énergie vers la Lune, prenant 135 jours pour arriver mais utilisant moins de propulseur que les trajectoires directes. Une démonstration de la patience que les missions interplanétaires peuvent permettre lorsque le calendrier n’est pas la contrainte contraignante.",
+    "new": "Jusqu'à SLIM, les alunissages avaient une précision de ciblage à l'échelle kilométrique. Le Smart Lander de JAXA a démontré une précision de 100 m - la précision requise pour que les missions avec équipage s'amarrent avec une cargaison prépositionnée, pour que les véhicules de remontée d'échantillons trouvent leurs partenaires orbitaux et pour toute architecture future qui dépend de l'atterrissage sur des sites spécifiques de valeur scientifique. SLIM a également été le pionnier du transfert balistique à faible énergie vers la Lune, prenant 135 jours pour arriver mais utilisant moins de propergol que les trajectoires directes. Une démonstration de la patience que les missions interplanétaires peuvent permettre lorsque le calendrier n’est pas la contrainte contraignante."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "old": "Suite directe par la JAXA de la sonde Hayabusa originale. Lancée le 2014-12-03, Hayabusa2 a atteint l'astéroïde carbonacé proche de la Terre (162173) Ryugu le 2018-06-27 après une croisière de 3,5 ans à propulsion ionique faible ponctuée d'une assistance gravitationnelle terrestre. Opérations de surface 2018–2019 : deux collectes d'échantillons en « touch-and-go » encadrant une expérience Small Carry-on Impactor (2019-04-05) qui a excavé un cratère de 14 m pour le deuxième prélèvement. Trois rovers MINERVA-II ont retourné les premières images de surface d'un astéroïde ; l'atterrisseur MASCOT du DLR/CNES a opéré pendant 17 heures. La capsule de retour d'échantillons est rentrée au-dessus de Woomera le 2020-12-05 (UTC ; récupérée le 2020-12-06 heure locale/JST) et a livré 5,4 g de matériau pristine de Ryugu — le premier échantillon d'astéroïde avec stratigraphie subsuperficielle. Mission étendue : survol de 98943 Torifune (2001 CC21) en 2026-07 ; rendez-vous avec (1998 KY26) en rotation rapide prévu pour 2031-07.",
+    "new": "Suite directe par la JAXA de la sonde Hayabusa originale. Lancée le 2014-12-03, Hayabusa2 a atteint l'astéroïde carbonacé proche de la Terre (162173) Ryugu le 2018-06-27 après une croisière de 3,5 ans à propulsion ionique à faible poussée ponctuée d'une assistance gravitationnelle terrestre. Opérations de surface 2018–2019 : deux collectes d'échantillons en « touch-and-go » encadrant une expérience Small Carry-on Impactor (2019-04-05) qui a excavé un cratère de 14 m pour le deuxième prélèvement. Trois rovers MINERVA-II ont retourné les premières images de surface d'un astéroïde ; l'atterrisseur MASCOT du DLR/CNES a opéré pendant 17 heures. La capsule de retour d'échantillons est rentrée au-dessus de Woomera le 2020-12-05 (UTC ; récupérée le 2020-12-06 heure locale/JST) et a livré 5,4 g de matériau pristine de Ryugu — le premier échantillon d'astéroïde avec stratigraphie subsuperficielle. Mission étendue : survol de 98943 Torifune (2001 CC21) en 2026-07 ; rendez-vous avec (1998 KY26) en rotation rapide prévu pour 2031-07."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "old": "Mission conjointe ESA / JAXA vers Mercure, lancée 2018-10-20 — nommée d'après le mathématicien italien Giuseppe (Bepi) Colombo, qui a conçu la trajectoire multi-survols de Mariner 10. La croisière de 8 ans utilise 9 assistances gravitationnelles (Terre 2020, Vénus 2020, Vénus 2021, puis six survols Mercure 2021–2025) plus une propulsion ionique-électrique continue du Module de Transfert vers Mercure pour réduire l'énorme gradient de gravité solaire entre les orbites terrestre et mercurienne. Insertion en orbite de Mercure 2026-11-21 ; les opérations scientifiques commencent début 2027 après l'éjection du MTM et la séparation des deux orbiteurs — l'OMM d'ESA (surface et composition planétaires) et Mio de JAXA (magnétosphère). Des tests de relativité générale par suivi radio-scientifique du télémètre à travers l'environnement fort de gravité solaire de Mercure sont également prévus.",
+    "new": "Mission conjointe ESA / JAXA vers Mercure, lancée 2018-10-20 — nommée d'après le mathématicien italien Giuseppe (Bepi) Colombo, qui a conçu la trajectoire multi-survols de Mariner 10. La croisière de 8 ans utilise 9 assistances gravitationnelles (Terre 2020, Vénus 2020, Vénus 2021, puis six survols Mercure 2021–2025) plus une poussée ionique-électrique continue du Module de Transfert vers Mercure pour réduire l'énorme gradient de gravité solaire entre les orbites terrestre et mercurienne. Insertion en orbite de Mercure 2026-11-21 ; les opérations scientifiques commencent début 2027 après l'éjection du MTM et la séparation des deux orbiteurs — l'OMM d'ESA (surface et composition planétaires) et Mio de JAXA (magnétosphère). Des tests de relativité générale par suivi radio-scientifique du télémètre à travers l'environnement fort de gravité solaire de Mercure sont également prévus."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "type",
+    "old": "VOL HABITÉ AUTOUR DE LA LUNE · EFFECTUÉ (ALUNISSAGE AVORTÉ)",
+    "new": "SURVOL HABITÉ · EFFECTUÉ (ALUNISSAGE AVORTÉ)"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.label",
+    "old": "INSERTION DE L'ORBITE DE MARS",
+    "new": "INSERTION EN ORBITE DE MARS"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.label",
+    "old": "INSERTION DE L'ORBITE DE MARS",
+    "new": "INSERTION EN ORBITE DE MARS"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.1.label",
+    "old": "INSERTION DE L'ORBITE DE MARS",
+    "new": "INSERTION EN ORBITE DE MARS"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.label",
+    "old": "INSERTION DE L'ORBITE DE MARS",
+    "new": "INSERTION EN ORBITE DE MARS"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.2.note",
+    "old": "Insertion de l'orbite lunaire.",
+    "new": "Insertion en orbite lunaire."
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.2.note",
+    "old": "Insertion de l'orbite lunaire.",
+    "new": "Insertion en orbite lunaire."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.note",
+    "old": "Approche la plus proche de l’autre côté, ~6 500 km d’altitude, et la plus grande distance jamais parcourue par des humains : 406 771 km de la Terre. Pas d'insertion d'orbite - la géométrie à retour libre ramène Orion sur Terre.",
+    "new": "Approche la plus proche de l’autre côté, ~6 500 km d’altitude, et la plus grande distance jamais parcourue par des humains : 406 771 km de la Terre. Pas d'insertion en orbite - la géométrie à retour libre ramène Orion sur Terre."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.3.note",
+    "old": "Insertion de l'orbite lunaire via le moteur principal BE-7.",
+    "new": "Insertion en orbite lunaire via le moteur principal BE-7."
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "events.1.note",
+    "old": "Insertion de l'orbite lunaire 2008-11-08.",
+    "new": "Insertion en orbite lunaire 2008-11-08."
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.1.note",
+    "old": "Insertion de l'orbite lunaire.",
+    "new": "Insertion en orbite lunaire."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "old": "Insertion de l'orbite lunaire.",
+    "new": "Insertion en orbite lunaire."
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.1.note",
+    "old": "Insertion de l'orbite lunaire 1994-02-19.",
+    "new": "Insertion en orbite lunaire 1994-02-19."
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.1.note",
+    "old": "Insertion de l'orbite lunaire 2009-06-23.",
+    "new": "Insertion en orbite lunaire 2009-06-23."
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "old": "Insertion de l'orbite lunaire ; Corrections orbitales de l'inclinaison de descente.",
+    "new": "Insertion en orbite lunaire ; Corrections orbitales de l'inclinaison de descente."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.2.note",
+    "old": "Insertion de l'orbite lunaire.",
+    "new": "Insertion en orbite lunaire."
+  }
+]

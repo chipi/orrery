@@ -8,20 +8,16 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
+  import { scienceTabLabel } from '$lib/science-tab-label';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
   let { data }: Props = $props();
 
-  function tabLabel(tab: string): string {
-    const key = `science_tab_${tab.replace(/-/g, '_')}` as keyof typeof m;
-    const fn = m[key] as (() => string) | undefined;
-    return typeof fn === 'function'
-      ? fn()
-      : tab.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-  }
+  const tabLabel = scienceTabLabel;
 
   // Tabs whose covers were re-done in the flat-family style ship as raster
   // webp under /images/science-covers-v2/; the rest keep their original
@@ -46,7 +42,7 @@
 </svelte:head>
 
 <nav class="crumb">
-  <a href="{base}/science">{m.science_heading()}</a>
+  <a href={localHref(`/science`)}>{m.science_heading()}</a>
   <span class="sep">›</span>
   <span>{tabLabel(data.tab)}</span>
 </nav>
@@ -61,7 +57,7 @@
 
 {#if data.intro}
   <section class="tab-intro" aria-label={m.science_focused_101_tab_aria()}>
-    <p class="badge">101 · zoom in</p>
+    <p class="badge">{m.science_101_badge()}</p>
     <p class="headline">{data.intro.headline}</p>
     {#each data.intro.paragraphs as para (para)}
       <p>{para}</p>
@@ -69,7 +65,7 @@
   </section>
 {/if}
 
-<p class="hint">→ Pick a section from the right rail to start reading.</p>
+<p class="hint">{m.science_pick_section()}</p>
 
 <style>
   .crumb {

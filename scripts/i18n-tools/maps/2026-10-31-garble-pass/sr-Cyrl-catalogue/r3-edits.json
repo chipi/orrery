@@ -1,0 +1,891 @@
+[
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "fact",
+    "en": "The most distant body ever visited by a spacecraft — 4.1 billion km from the Sun when New Horizons flew within 3,500 km on New Year's Day 2019. Its two lobes (Wenu and Weeyo) gently merged at the dawn of the solar system and have stayed merged for 4.5 billion years at ~40 K.",
+    "old": "Најудаљеније тело које је свемирска летелица икада посетила — 4,1 милијарду km од Сунца када је New Horizons на Нову годину 2019. прелетела на удаљености од 3.500 km. Његова два режња (Wenu и Weeyo) нежно су се спојила у зору Сунчевог система и остала спојена 4,5 милијарди година на ~40 K.",
+    "new": "Најудаљеније тело које је свемирска летелица икада посетила — 4,1 милијарде km од Сунца када је New Horizons на Нову годину 2019. прелетела на удаљености од 3.500 km. Његова два режња (Wenu и Weeyo) нежно су се спојила у зору Сунчевог система и остала спојена 4,5 милијарди година на ~40 K."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "comparison",
+    "en": "About 1/600th of the way to the Moon. The ISS at 408 km orbits at the same altitude as the distance from London to Geneva — laid sideways.",
+    "old": "About 1/600 пута до Месеца. МСС на 408 km кружи на истој висини колико износи растојање од London до Geneva — само положено водоравно.",
+    "new": "Око 1/600 пута до Месеца. МСС на 408 km кружи на истој висини колико износи растојање од Лондона до Женеве — само положено водоравно."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "surface_composition",
+    "en": "Anorthosite highlands (calcium-aluminium silicates) + basaltic mare flooded by ancient lava; regolith depth 4–15 m; trace water ice in permanently-shadowed polar craters.",
+    "old": "Висоравни од анортозита (калцијум-алуминијумски силикати) + базалтна мора која је поплавила древна лава; реголит дубок 4–15 m; трагови воденог леда у трајно засењеним поларним кратерима.",
+    "new": "Висоравни од анортозита (калцијум-алуминијумски силикати) + базалтна мора поплављена древном лавом; реголит дубок 4–15 m; трагови воденог леда у трајно засењеним поларним кратерима."
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "film",
+    "en": "Parkes is the dish in The Dish (2000), the story of how it relayed the Apollo 11 moonwalk television.",
+    "old": "Паркс је тањир из филма The Dish (2000), приче о томе како је пренео телевизијски снимак шетње Apollo 11 по Месецу.",
+    "new": "Паркс је „тањир“ из филма The Dish (2000), приче о томе како је ретранслирао телевизијски пренос шетње Apollo 11 по Месецу."
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "description",
+    "en": "Mitsubishi Heavy Industries' two-stage successor to the H-IIA, first flew successfully in 2024 (its 2023 debut failed). Configurable with 0, 2, or 4 solid boosters and either a 5.2m or 4m fairing. The LE-9 first-stage engine is the world's first expendable expander-bleed cycle hydrogen engine. Will launch JAXA's MMX Phobos sample-return mission in 2026.",
+    "old": "Двостепени наследник ракете H-IIA компаније Mitsubishi Heavy Industries први пут је успешно полетео 2024. године (његов деби 2023. није успео). Може се конфигурисати са 0, 2 или 4 помоћна ракетна мотора на чврсто гориво и са аеродинамичком капом од 5,2 m или 4 m. Мотор првог степена LE-9 први је на свету потрошни хидрогенски мотор са експандер-блид циклусом. Лансираће мисију MMX агенције JAXA за повратак узорака са Фобоса 2026. године.",
+    "new": "Двостепени наследник ракете H-IIA компаније Mitsubishi Heavy Industries први пут је успешно полетео 2024. године (његов деби 2023. није успео). Може се конфигурисати са 0, 2 или 4 ракетна појачивача на чврсто гориво и са заштитном капом од 5,2 m или 4 m. Мотор првог степена LE-9 први је на свету једнократни хидрогенски мотор са експандер-блид циклусом. Лансираће мисију MMX агенције JAXA за повратак узорака са Фобоса 2026. године."
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "highlights.1",
+    "en": "Described as the world's largest-diameter individual radio telescope.",
+    "old": "Описује се као радио-телескоп највећег пречника на свету.",
+    "new": "Описује се као појединачни радио-телескоп највећег пречника на свету."
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.5.note",
+    "en": "Brief X-band signal dropout (8 s). DSN reacquired. Cause: thruster plume occlusion. No data lost.",
+    "old": "Кратак прекид X-band сигнала (8 s). DSN је поново успоставио везу. Узрок: заклањање млазом потисника. Подаци нису изгубљени.",
+    "new": "Кратак прекид сигнала у Х-опсегу (8 s). DSN је поново успоставио везу. Узрок: заклањање млазом потисника. Подаци нису изгубљени."
+  },
+  {
+    "rel": "museums/national-military-museum-bucharest.json",
+    "at": "description",
+    "en": "Romania's national military museum in Bucharest, which shows the capsule that carried the first Romanian in space.",
+    "old": "Национални војни музеј Румуније у Букурешту, у коме се налази капсула која је вратила првог Румуна из свемира.",
+    "new": "Национални војни музеј Румуније у Букурешту, у коме се налази капсула која је понела првог Румуна у свемир."
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "description",
+    "en": "ESA's stellar cartographer at L2. Mapping 1.8 billion stars — measuring positions to 7 microarcseconds. Has measured distances to stars 30,000 light-years away with the precision of a human hair's width at 1,000 km distance. The most detailed map of the Milky Way ever made.",
+    "old": "Звездани картограф агенције ESA у тачки L2. Mapping 1,8 милијарди звезда — положаје мери с тачношћу од 7 микролучних секунди. Измерио је удаљености до звезда које су од нас далеко 30.000 светлосних година, с прецизношћу ширине људске власи косе на удаљености од 1.000 km. Најдетаљнија мапа Млечног пута икад направљена.",
+    "new": "Звездани картограф агенције ESA у тачки L2. Картографише 1,8 милијарди звезда — положаје мери с тачношћу од 7 микролучних секунди. Измерио је удаљености до звезда које су од нас далеко 30.000 светлосних година, с прецизношћу ширине људске власи на удаљености од 1.000 km. Најдетаљнија мапа Млечног пута икад направљена."
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "science_sections.0.why",
+    "en": "Titan is in 1:1 spin-orbit resonance with Saturn — always shows the same face. Its 1.22-million-km semi-major axis places it near Saturn's outer Hill sphere.",
+    "old": "Титан је у резонанцији 1:1 са Сатурном — увек показује исто лице. Његова полу-велика оса од 1,22 милиона км га сместа близу Сатурнове спољашње Хилове сфере.",
+    "new": "Титан је у спин-орбиталној резонанцији 1:1 са Сатурном — увек показује исто лице. Његова велика полуоса од 1,22 милиона km смешта га близу Сатурнове спољашње Хилове сфере."
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "description",
+    "en": "Neptune's largest moon and one of the most geologically active worlds in the solar system. Triton orbits Neptune backwards (retrograde) and at an extreme tilt — diagnostic of a captured Kuiper Belt object, making it likely a sibling of Pluto rather than a native Neptunian moon. Voyager 2 detected active nitrogen geysers venting dark organic dust 8 km into a tenuous nitrogen atmosphere; the southern hemisphere features 'cantaloupe terrain' — a network of dimples and ridges seen nowhere else in the solar system. Triton's retrograde orbit is decaying tidally; in roughly 3.6 Gyr it will either be torn into a Saturn-like ring or crash into Neptune.",
+    "old": "Највећи Нептунов месец и један од геолошки најактивнијих светова у Сунчевом систему. Тритон кружи око Нептуна уназад (ретроградно) и под екстремним нагибом — што је обележје заробљеног објекта из Куперовог појаса и чини га вероватним сродником Плутона, а не изворним месецом Нептуна. Voyager 2 је открио активне гејзире азота који избацују тамну органску прашину осам километара увис, у веома танку азотну атмосферу; јужна хемисфера има „терен налик динји“ — мрежу удубљења и гребена какву нигде другде у Сунчевом систему нисмо видели. Тритонова ретроградна орбита се плимски смањује; за отприлике 3,6 Gyr он ће бити или растргнут у прстен налик Сатурновом или ће се срушити на Нептун.",
+    "new": "Највећи Нептунов месец и један од геолошки најактивнијих светова у Сунчевом систему. Тритон кружи око Нептуна уназад (ретроградно) и под екстремним нагибом — што је обележје заробљеног објекта из Куперовог појаса и чини га вероватним сродником Плутона, а не изворним месецом Нептуна. Voyager 2 је открио активне гејзире азота који избацују тамну органску прашину осам километара увис, у веома танку азотну атмосферу; јужна хемисфера има „терен налик динји“ — мрежу удубљења и гребена какву нигде другде у Сунчевом систему нисмо видели. Тритонова ретроградна орбита се плимски смањује; за отприлике 3,6 милијарди година он ће бити или растргнут у прстен налик Сатурновом или ће се срушити на Нептун."
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "description",
+    "en": "The pressurised cargo freighter, launched on Long March 7 from Wenchang—propellant, food, water, and experiment hardware delivered roughly every six months.",
+    "old": "Теретни брод са херметизованим теретним одељком, лансиран ракетом Long March 7 са Венчанга: гориво, храна, вода и опрема за експерименте допремају се отприлике сваких шест месеци.",
+    "new": "Теретни брод са херметизованим теретним одељком, лансиран ракетом Long March 7 са Венчанга: погонско гориво, храна, вода и опрема за експерименте допремају се отприлике сваких шест месеци."
+  },
+  {
+    "rel": "earth-objects/oneweb.json",
+    "at": "description",
+    "en": "648 satellites at 1,200 km in 12 polar orbital planes — first-generation LEO broadband. Operated by Eutelsat OneWeb since the 2023 merger. Polar orbits give pole-to-pole coverage that mid-inclination Starlink shells can't reach.",
+    "old": "648 сателита на 1.200 km у 12 поларних орбиталних равни — широкопојасни интернет прве генерације у ниској Земљиној орбити (LEO). Од спајања 2023. њима управља Eutelsat OneWeb. Поларне орбите омогућавају покривеност од пола до пола, до које љуске средњег нагиба система Starlink не допиру.",
+    "new": "648 сателита на 1.200 km у 12 поларних орбиталних равни — широкопојасни интернет прве генерације у ниској Земљиној орбити (LEO). Од спајања 2023. њима управља Eutelsat OneWeb. Поларне орбите омогућавају покривеност од пола до пола, до које љуске система Starlink средње инклинације не допиру."
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.1.why",
+    "en": "Callisto's 0.007 eccentricity is small and unforced — without resonant pumping, no tidal flexing, no subsurface ocean (probably).",
+    "old": "Калистова екцентричност од 0,007 је мала и природна — без резонантног утицаја, без плимског савијања, без подземног океана (вероватно).",
+    "new": "Калистова ексцентричност од 0,007 је мала и није принудна — без резонантног подстицања, без плимског савијања, без подповршинског океана (вероватно)."
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "description",
+    "en": "Second-largest moon in the solar system and the only moon with a substantial atmosphere — thicker than Earth's. Below the orange tholin haze sits the only known body besides Earth with stable liquid on its surface: hydrocarbon lakes and seas of methane and ethane in the polar regions, fed by an active methane hydrologic cycle that includes clouds, rain, and rivers carving water-ice bedrock. Huygens (ESA) made the first landing on a moon other than Earth's in 2005. NASA's Dragonfly will arrive in 2034 as a nuclear-powered rotorcraft, hopping between Titan's organic-rich landscapes.",
+    "old": "Други по величини месец у Сунчевом систему и једини месец са значајном атмосфером — гушћом од Земљине. Испод наранџасте измаглице толина налази се једино познато тело осим Земље са стабилном течношћу на површини: угљоводоничка језера и мора метана и етана у поларним областима, која храни активан хидролошки циклус метана, а он обухвата облаке, кишу и реке које усецају корито у подлогу од воденог леда. Huygens (ESA) извео је 2005. прво слетање на неки месец осим Земљиног. Dragonfly агенције NASA стићи ће 2034. као ротокоптер на нуклеарни погон, прескачући између Титанових предела богатих органским једињењима.",
+    "new": "Други по величини месец у Сунчевом систему и једини месец са значајном атмосфером — гушћом од Земљине. Испод наранџасте измаглице толина налази се једино познато тело осим Земље са стабилном течношћу на површини: угљоводоничка језера и мора метана и етана у поларним областима, а њих напаја активан хидролошки циклус метана који обухвата облаке, кишу и реке које усецају корито у подлогу од воденог леда. Huygens (ESA) извео је 2005. прво слетање на неки месец осим Земљиног. Dragonfly агенције NASA стићи ће 2034. као ротокоптер на нуклеарни погон, прескачући између Титанових предела богатих органским једињењима."
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "science_sections.0.why",
+    "en": "Enceladus is in 2:1 mean-motion resonance with Dione — the forced eccentricity (0.0047) drives the tidal flexing that powers the south-polar cryovolcanic plumes.",
+    "old": "Енцелад је у резонанци средњег кретања 2:1 са Дионе — принудни ексцентрицитет (0,0047) покреће плимско савијање које напаја криовулканске перјанице на јужном полу.",
+    "new": "Енцелад је у резонанцији средњег кретања 2:1 са Дионом — принудни ексцентрицитет (0,0047) покреће плимско савијање које напаја криовулканске перјанице на јужном полу."
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.3",
+    "en": "JUICE — ESA, arrival 2031 (Ganymede orbit insertion 2034)",
+    "old": "JUICE — ESA, долазак 2031. (улазак у Ганимедову орбиту 2034.)",
+    "new": "JUICE — ESA, долазак 2031. (убацивање у Ганимедову орбиту 2034.)"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "description",
+    "en": "Two-stage launcher in two configurations: Ariane 62 with two solid boosters and Ariane 64 with four. The Vinci-powered cryogenic upper stage is restartable, enabling complex multi-orbit deployments and direct interplanetary injection. Inaugural flight July 2024.",
+    "old": "Ракета-носач са два степена у две конфигурације: Ariane 62 са два чврста бустера и Ariane 64 са четири. Криогени горњи степен, који покреће мотор Vinci, може се поново палити, што омогућава сложена убацивања у више орбита и директно убацивање на међупланетарну путању. Први лет у јулу 2024.",
+    "new": "Ракета-носач са два степена у две конфигурације: Ariane 62 са два чврста ракетна појачивача и Ariane 64 са четири. Криогени горњи степен, који покреће мотор Vinci, може се поново палити, што омогућава сложена убацивања у више орбита и директно убацивање на међупланетарну путању. Први лет у јулу 2024."
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "function_detail",
+    "en": "Commercial Resupply Services; pressurised cargo only; UltraFlex circular solar arrays; disposed via destructive reentry over the South Pacific.",
+    "old": "Commercial Resupply Services; само под притиском утоварен терет; кружни соларни панели UltraFlex; одлаже се разарајућим поновним уласком у атмосферу изнад јужног Пацифика.",
+    "new": "Commercial Resupply Services; само херметизовани терет; кружни соларни панели UltraFlex; уклања се разарајућим поновним уласком у атмосферу изнад јужног Пацифика."
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "description",
+    "en": "Orbiting the Moon since 2009. Mapping the surface at 50 cm resolution — good enough to see the Apollo descent stages still sitting on the surface. Found water ice at the poles. Identified 200+ potential Artemis landing sites. A scout for the return.",
+    "old": "Орбитира око Месеца од 2009. Мапирање површине у резолуцији од 50 цм — довољно добро да се виде фазе спуштања Apollo како још увек седе на површини. Пронађен водени лед на половима. Идентификовано је 200+ потенцијалних места за слетање Артемис. Извиђач за повратак.",
+    "new": "Кружи око Месеца од 2009. Картографише површину у резолуцији од 50 cm — довољно да се виде степени спуштања Apollo који и даље стоје на површини. Пронашла је водени лед на половима. Идентификовала је 200+ потенцијалних места за слетање Артемис. Извиђач за повратак."
+  },
+  {
+    "rel": "museums/fernbank-science-center.json",
+    "at": "items.apollo-csm-block-i",
+    "en": "Command module CM-020, flown on the uncrewed Apollo 6 (1968)",
+    "old": "Командни модул CM-020, који је летео на ненасељеном Apollo 6 (1968)",
+    "new": "Командни модул CM-020, који је летео на мисији Apollo 6 без посаде (1968)"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "surface_composition",
+    "en": "Heavily-cratered carbonaceous chondrite-like body, possibly a captured asteroid or accretion remnant; surface dominated by the 9 km Stickney crater and parallel grooves likely tied to ejecta from that impact.",
+    "old": "Тело гушће прекривено кратерима, сличног састава као угљенични хондрити, вероватно заробљени астероид или остатак акреције; површином доминира кратер Stickney од 9 km и паралелни жљебови, који су вероватно повезани са избаченим материјалом из тог удара.",
+    "new": "Тело густо прекривено кратерима, налик угљеничним хондритима, вероватно заробљени астероид или остатак акреције; површином доминира кратер Stickney од 9 km и паралелни жљебови који су вероватно повезани са избаченим материјалом из тог удара."
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "description",
+    "en": "SpaceX's 4-seat capsule that ended NASA's post-Shuttle reliance on Soyuz with Demo-2 in 2020.",
+    "old": "SpaceX's 4-седишна капсула која је мисијом Demo-2 2020. године прекинула зависност агенције NASA од летелице Soyuz после ере програма Shuttle.",
+    "new": "Капсула компаније SpaceX са четири седишта која је мисијом Demo-2 2020. године прекинула зависност агенције NASA од летелице Soyuz после ере програма Shuttle."
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.2.why",
+    "en": "Mars launch windows open every 26 months — the synodic period between Mars and Earth — and Hohmann transfer is why every Mars mission departs in one of those windows.",
+    "old": "Прозори за лансирање ка Марсу отварају се сваких 26 месеци — колики је синодички период између Марса и Земље — а Хоманов трансфер је разлог зашто свака мисија ка Марсу полеће у једном од тих прозора.",
+    "new": "Прозори за лансирање ка Марсу отварају се сваких 26 месеци — што је синодички период између Марса и Земље — а Хоманов трансфер је разлог зашто свака мисија ка Марсу полеће у једном од тих прозора."
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "bio",
+    "en": "Discovered 1997, named for Leucus (a comrade of Odysseus, killed at Troy). D-type spectral classification — the darkest and reddest of the Trojan family. Lucy's 2028-04-18 encounter will profile shape, surface composition, and the rotation-state evolution behind the slow spin.",
+    "old": "Откривен 1997. године, назван по Леуку (Одисејевом саборцу кога су убили код Троје). Спектрална класа D — најтамији и најцрвенији међу тројанцима. Сусрет са сондом Lucy 18. 4. 2028. откриће облик, састав површине и еволуцију стања ротације која стоји иза споре ротације.",
+    "new": "Откривен 1997. године, назван по Леуку (Одисејевом саборцу кога су убили код Троје). Спектрална класа D — најтамији и најцрвенији међу тројанцима. Сусрет сонде Lucy 2028-04-18 одредиће облик, састав површине и развој стања ротације које стоји иза споре ротације."
+  },
+  {
+    "rel": "culture-doors/barnard-rocheworld.json",
+    "at": "blurb",
+    "en": "Barnard's Star is a fixture of interstellar fiction and engineering. Robert L. Forward's Rocheworld sends a crewed mission there, and the British Interplanetary Society's 1970s 'Project Daedalus' chose it as the target for a real unmanned starship design study — decades before Barnard b was finally confirmed in 2024.",
+    "old": "Барнардова звезда је стални мотив међузвездане фантастике и инжењерства. У роману Rocheworld (Robert L. Forward) тамо стиже посада, а British Interplanetary Society's 1970s „Project Daedalus“ изабрао ју је за циљ праве студије пројекта беспилотног звезданог брода — деценијама пре него што је Barnard b коначно потврђен 2024. године.",
+    "new": "Барнардова звезда је стални мотив међузвездане фантастике и инжењерства. У роману Rocheworld (Robert L. Forward) тамо стиже посада, а Британско међупланетарно друштво (British Interplanetary Society) је у пројекту „Project Daedalus“ из 1970-их изабрало ту звезду за циљ праве студије беспилотног звезданог брода — деценијама пре него што је Barnard b коначно потврђен 2024. године."
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "description",
+    "en": "Tiny — just 504 km across — but the most reflective body in the solar system and one of the strongest candidates for present-day habitability beyond Earth. Cassini flew directly through plumes erupting from four 130-km-long fractures at the south pole; the spectrometer detected molecular hydrogen, organics including methane, salts, and silica nanograins indicating active hydrothermal chemistry on the ocean floor. The ocean is in direct contact with rocky seafloor — the same energy and chemistry conditions that gave rise to life at Earth's own deep-sea hydrothermal vents.",
+    "old": "Сићушан — свега 504 km у пречнику — али најрефлектантније тело у Сунчевом систему и један од најснажнијих кандидата за садашњу настањивост изван Земље. Cassini је прелетео управо кроз перјанице које избијају из четири раседа дугачка по 130 km на јужном полу; спектрометар је детектовао молекуларни водоник, органске материје укључујући метан, соли и наночестице силицијум-диоксида, што указује на активну хидротермалну хемију на дну океана. Океан је у директном додиру са стеновитим морским дном — под истим енергетским и хемијским условима који су довели до појаве живота у хидротермалним изворима на дну Земљиних дубоких мора.",
+    "new": "Сићушан — свега 504 km у пречнику — али тело које најбоље одбија светлост у Сунчевом систему и један од најснажнијих кандидата за садашњу настањивост изван Земље. Cassini је прелетео управо кроз перјанице које избијају из четири пукотине дугачке по 130 km на јужном полу; спектрометар је детектовао молекуларни водоник, органске материје укључујући метан, соли и наночестице силицијум-диоксида, што указује на активну хидротермалну хемију на дну океана. Океан је у директном додиру са стеновитим морским дном — под истим енергетским и хемијским условима који су довели до појаве живота у хидротермалним изворима на дну Земљиних дубоких мора."
+  },
+  {
+    "rel": "earth-objects/o3b.json",
+    "at": "description",
+    "en": "20 satellites at 8,063 km equatorial MEO — only operational MEO commercial broadband. O3b mPOWER successors launching since 2022 with software-defined beam allocation. Lower latency than GEO, more coverage than LEO; aimed at the 'other 3 billion' (origin of the name).",
+    "old": "20 сателита на екваторијалној MEO орбити на 8.063 km — једини оперативни комерцијални широкопојасни систем у MEO. Наследници O3b mPOWER лансирају се од 2022. и имају софтверски дефинисану расподелу снопова. Мања латенција него у GEO, шира покривеност него у LEO; намењен је „осталим 3 милијарде“ (одатле назив).",
+    "new": "20 сателита на екваторијалној MEO орбити на 8.063 km — једини оперативни комерцијални широкопојасни систем у MEO. Наследници O3b mPOWER лансирају се од 2022. и имају софтверски дефинисану расподелу снопова. Мања латенција него у GEO, шира покривеност него у LEO; усмерен је на „осталих 3 милијарде“ (одатле назив)."
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "function_detail",
+    "en": "Radial docking hub expanding Soyuz/Progress parking independent of older axial ports.",
+    "old": "Радијално пристајно чвориште које проширује простор за паркирање летелица Soyuz и Progress, независно од старијих аксијалних отвора.",
+    "new": "Радијално чвориште за спајање које проширује простор за паркирање летелица Soyuz и Progress, независно од старијих аксијалних прикључака."
+  },
+  {
+    "rel": "culture-doors/vega-oumuamua.json",
+    "at": "blurb",
+    "en": "The first interstellar object ever seen passing through the Solar System, ʻOumuamua (2017), approached from the direction of the constellation Lyra, close to Vega — though its true origin lies far beyond. A genuine visitor from another star system, not a message, but a reminder that material really does cross between the stars.",
+    "old": "Први међузвездани објекат који је икада виђен како пролази кроз Сунчев систем, ʻOumuamua (2017), приближио се из правца сазвежђа Lyra, близу Веге — иако његово право порекло лежи далеко иза тога. Прави посетилац из другог звезданог система, не порука, већ подсетник да материја заиста путује из једног звезданог система у други.",
+    "new": "Први међузвездани објекат који је икада виђен како пролази кроз Сунчев систем, ʻOumuamua (2017), приближио се из правца сазвежђа Лира, близу Веге — иако његово право порекло лежи далеко иза тога. Прави посетилац из другог звезданог система, не порука, већ подсетник да материја заиста путује из једног звезданог система у други."
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "description",
+    "en": "Mitsubishi Heavy Industries' two-stage workhorse, in service from 2001 through retirement in 2025. Cryogenic core stage with 2-4 solid boosters. Notable interplanetary missions: Hayabusa (2003) and Hayabusa2 (2014) to asteroids; Akatsuki (2010) to Venus; the UAE's Hope Probe (2020) to Mars; SLIM (2023) to the Moon. Replaced by the H3.",
+    "old": "Двостепени радни коњ компаније Mitsubishi Heavy Industries, у употреби од 2001. до повлачења из службе 2025. године. Криогени главни степен са 2–4 помоћна ракетна мотора на чврсто гориво. Значајне међупланетарне мисије: Hayabusa (2003) и Hayabusa2 (2014) ка астероидима; Akatsuki (2010) ка Венери; Hope Probe (2020) Уједињених Арапских Емирата ка Марсу; SLIM (2023) ка Месецу. Замењена ракетом H3.",
+    "new": "Двостепени радни коњ компаније Mitsubishi Heavy Industries, у употреби од 2001. до повлачења из службе 2025. године. Криогени главни степен са 2–4 чврста ракетна појачивача. Значајне међупланетарне мисије: Hayabusa (2003) и Hayabusa2 (2014) ка астероидима; Akatsuki (2010) ка Венери; Hope Probe (2020) Уједињених Арапских Емирата ка Марсу; SLIM (2023) ка Месецу. Замењена ракетом H3."
+  },
+  {
+    "rel": "trajectories/hayabusa2.json",
+    "at": "current_distance_label",
+    "en": "1.24 AU · en route to (98943) 2001 CC21 flyby 2026-07 (extended mission)",
+    "old": "1,24 AU · на путу ка прелету поред (98943) 2001 CC21, јул 2026. (продужена мисија)",
+    "new": "1,24 AU · на путу ка (98943) 2001 CC21, прелет 2026-07 (продужена мисија)"
+  },
+  {
+    "rel": "culture-doors/gargantua-interstellar.json",
+    "at": "blurb",
+    "en": "Gargantua is the supermassive black hole at the heart of Interstellar (2014). Physicist Kip Thorne wrote the real general-relativity equations behind its image, so the film's glowing disk wrapping over and under the shadow is genuine gravitational lensing — the same physics this view ray-traces. The science even fed back into research papers.",
+    "old": "Gargantua је супермасивна црна рупа у срцу филма Interstellar (2014). Физичар Кип Торн написао је праве једначине опште теорије релативности на којима почива њен приказ, па је сјајни диск у филму, који се увија изнад и испод сенке, права гравитациона сочива — иста физика коју овај приказ прати методом праћења зрака. Та наука се чак вратила и у истраживачке радове.",
+    "new": "Gargantua је супермасивна црна рупа у срцу филма Interstellar (2014). Физичар Кип Торн написао је праве једначине опште теорије релативности на којима почива њен приказ, па је сјајни диск у филму, који се увија изнад и испод сенке, право гравитационо сочивљење — иста физика коју овај приказ прати методом праћења зрака. Та наука се чак вратила и у истраживачке радове."
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.0.why",
+    "en": "Triton's 156.8° orbital inclination — retrograde, steeply tilted to Neptune's equator — is the smoking-gun for capture from the Kuiper Belt rather than formation with Neptune.",
+    "old": "Нагиб орбите Тритона од 156,8° — ретрограда и стрмо нагнута у односу на Нептунов екватор — неоспоран је доказ да је Тритон заробљен из Куперовог појаса, а не да је настао заједно са Нептуном.",
+    "new": "Инклинација орбите Тритона од 156,8° — ретроградна и стрмо нагнута у односу на Нептунов екватор — неоспоран је доказ да је Тритон заробљен из Куперовог појаса, а не да је настао заједно са Нептуном."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.1.why",
+    "en": "The classical KBOs orbit between 42 and 48 AU in low-eccentricity, low-inclination orbits — they have been mostly undisturbed since the early system.",
+    "old": "Класични објекти Кајперовог појаса круже између 42 и 48 AU по орбитама мале ексцентричности и малог нагиба — од раног Сунчевог система углавном су остали неометани.",
+    "new": "Класични објекти Кајперовог појаса круже између 42 и 48 AU по орбитама мале ексцентричности и мале инклинације — од раног Сунчевог система углавном су остали неометани."
+  },
+  {
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "description",
+    "en": "High-eccentricity orbits at 63.4° critical inclination. Molniya (12-hour, 600 × 40,000 km) — Russian high-latitude comms + Oko/Meridian early warning since 1965. Tundra (24-hour, ~25,000 × ~47,000 km) — Sirius XM Satellite Radio + US SBIRS-HEO sensors.",
+    "old": "Орбите велике ексцентричности са критичним нагибом од 63,4°. Molniya (12-часовна, 600 × 40.000 km) — руске комуникације на високим географским ширинама + Oko/Meridian рано упозоравање од 1965. Tundra (24-часовна, ~25.000 × ~47.000 km) — Sirius XM Satellite Radio + америчке SBIRS-HEO сензорске системе.",
+    "new": "Орбите велике ексцентричности са критичном инклинацијом од 63,4°. Molniya (12-часовна, 600 × 40.000 km) — руске комуникације на високим географским ширинама + систем раног упозоравања Oko/Meridian од 1965. Tundra (24-часовна, ~25.000 × ~47.000 km) — Sirius XM Satellite Radio + амерички сензори SBIRS-HEO."
+  },
+  {
+    "rel": "trajectories/cassini.json",
+    "at": "current_distance_label",
+    "en": "9.5 AU · in Saturn orbit 2004-2017 — disposed into Saturn's atmosphere 2017-09-15",
+    "old": "9,5 АЈ · у орбити Сатурна 2004–2017 — одложена у Сатурнову атмосферу 2017-09-15",
+    "new": "9,5 AU · у орбити Сатурна 2004–2017 — усмерена у Сатурнову атмосферу 2017-09-15"
+  },
+  {
+    "rel": "earth-objects/landsat.json",
+    "at": "description",
+    "en": "Longest continuous Earth-imaging record in history — Landsat 1 through 9 spanning 50+ years (since 1972). Currently Landsat 8 + 9 at 705 km sun-synchronous, 98.2° inclination, 10:00 local descending node. 30 m multispectral; the climate-change reference dataset.",
+    "old": "Најдужи непрекидан запис снимања Земље у историји — Landsat 1 до 9, који обухватају више од 50 година (од 1972). Тренутно су активни Landsat 8 + 9 на сунчево-синхроној орбити висине 705 km, са нагибом од 98,2° и локалним временом силазног čвора у 10:00. Мултиспектрална резолуција од 30 m; референтни скуп података о климатским променама.",
+    "new": "Најдужи непрекидан запис снимања Земље у историји — Landsat 1 до 9, који обухватају више од 50 година (од 1972). Тренутно су активни Landsat 8 + 9 на сунчево-синхроној орбити висине 705 km, инклинације 98,2° и локалног времена силазног чвора у 10:00. Мултиспектрална резолуција од 30 m; референтни скуп података о климатским променама."
+  },
+  {
+    "rel": "earth-objects/clementine.json",
+    "at": "scale_fact",
+    "en": "Lunar polar orbit ~425 km altitude. First hint of lunar water — the discovery that motivates every modern south-pole mission, including the crewed Artemis landings.",
+    "old": "Поларна орбита око Месеца на висини од ~425 km. Први наговештај воде на Месецу — открић које покреће сваку савремену мисију на јужни пол, укључујући слетања људске посаде у оквиру програма Artemis.",
+    "new": "Поларна орбита око Месеца на висини од ~425 km. Први наговештај воде на Месецу — откриће које покреће сваку савремену мисију на јужни пол, укључујући слетања људске посаде у оквиру програма Artemis."
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "items.apollo-csm-block-i",
+    "en": "Command module CM-017, flown on the uncrewed Apollo 4 (1967)",
+    "old": "Командни модул CM-017, који је летео на ненасељеном Apollo 4 (1967)",
+    "new": "Командни модул CM-017, који је летео на мисији Apollo 4 без посаде (1967)"
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "description",
+    "en": "The largest moon of Uranus and eighth-largest in the solar system. Voyager 2 imagery revealed a surface cut by enormous canyon systems — Messina Chasma alone stretches 1,500 km across the southern hemisphere — alongside large impact basins and the small fresh-looking Ursula crater. A 2017 stellar occultation tentatively detected a thin carbon-dioxide atmosphere, which would be the first atmosphere found on a Uranian moon.",
+    "old": "Највећи месец Урана и осми по величини у Сунчевом систему. Снимци сонде Voyager 2 открили су површину зарезану огромним системима кањона — сам кањон Месина протеже се 1.500 km преко јужне хемисфере — као и велике ударне басене и мали, на изглед свеж кратер Ursula. Звездана оклузија из 2017. привремено је откривена танка атмосфера угљен-диоксида, што би била прва атмосфера пронађена на неком месецу Урана.",
+    "new": "Највећи месец Урана и осми по величини у Сунчевом систему. Снимци сонде Voyager 2 открили су површину зарезану огромним системима кањона — сам кањон Месина протеже се 1.500 km преко јужне хемисфере — као и велике ударне басене и мали, на изглед свеж кратер Ursula. Звездана окултација 2017. условно је открила танку атмосферу угљен-диоксида, што би била прва атмосфера пронађена на неком месецу Урана."
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "description",
+    "en": "A ring of 895 rectangular radio reflectors, each 2 m x 7.4 m, in a 576 m diameter circle at 970 m altitude, run by the Special Astrophysical Observatory. With its central receiver it has the resolving power of a nearly 600-metre dish.",
+    "old": "Прстен од 895 правоугаоних радио-рефлектора, свака величине 2 m × 7,4 m, у кругу пречника 576 m на висини од 970 m, којим управља Специјална астрофизичка опсерваторија. Са централним пријемником има моћ разлагања готово тањира од 600 метара.",
+    "new": "Прстен од 895 правоугаоних радио-рефлектора, од којих је сваки величине 2 m × 7,4 m, у кругу пречника 576 m на висини од 970 m, којим управља Специјална астрофизичка опсерваторија. Са централним пријемником има моћ разлагања готово 600-метарског тањира."
+  },
+  {
+    "rel": "iss-modules/leonardo.json",
+    "at": "function_detail",
+    "en": "Pressurised stowage for supplies and hardware bags so labs stay clear for science racks.",
+    "old": "Складиште под притиском за залихе и торбе с опремом, како би лабораторије остале слободне за научне ормаре.",
+    "new": "Складиште под притиском за залихе и торбе с опремом, како би лабораторије остале слободне за научне стативе."
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.1.why",
+    "en": "Pluto's 17.2° inclination keeps it well clear of Neptune even though the orbits cross in projection.",
+    "old": "Плутонов нагиб од 17,2° држи га на безбедној удаљености од Нептуна, иако се орбите у пројекцији секу.",
+    "new": "Плутонова инклинација од 17,2° држи га на безбедној удаљености од Нептуна, иако се орбите у пројекцији секу."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.0",
+    "en": "Wikimedia Commons — English keyword search (China Manned Space / Shenzhou / Tiangong emblem, patch, insignia)",
+    "old": "Wikimedia Commons — претрага по кључним речима на енглеском (China Manned Space / Shenzhou / Tiangong, амблем, нашивка, ознака)",
+    "new": "Wikimedia Commons — претрага по кључним речима на енглеском (China Manned Space / Shenzhou / Tiangong emblem, patch, insignia)"
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.2.why",
+    "en": "Most belt asteroids stay near the ecliptic (< 10° inclination) but the high-inclination Pallas family at 33° reminds you the belt is a 3-D disc, not a 2-D ring.",
+    "old": "Већина астероида у појасу остаје близу еклиптике (нагиб < 10°), али Паласова породица са великим нагибом од 33° подсећа да је појас тродимензионални диск, а не дводимензионални прстен.",
+    "new": "Већина астероида у појасу остаје близу еклиптике (инклинација < 10°), али Паласова породица са великом инклинацијом од 33° подсећа да је појас тродимензионални диск, а не дводимензионални прстен."
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "items.apollo-csm-block-i",
+    "en": "Command module CM-009, flown on the uncrewed AS-201 test (1966)",
+    "old": "Командни модул CM-009, који је летео у ненасељеном тесту AS-201 (1966)",
+    "new": "Командни модул CM-009, који је летео у тесту AS-201 без посаде (1966)"
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.0",
+    "en": "The Hale Telescope had first light on 26 January 1949, with Edwin Hubble pointing it at NGC 2261.",
+    "old": "Телескоп Хејл добио је прво светло 26. јануара 1949, а Едвин Хабл (Hubble) га је усмерио на NGC 2261.",
+    "new": "Телескоп Хејл добио је прво светло 26. јануара 1949, а Едвин Хабл га је усмерио на NGC 2261."
+  },
+  {
+    "rel": "earth-objects/luna10.json",
+    "at": "description",
+    "en": "First artificial satellite of any body other than Earth. Reached lunar orbit in April 1966 — three months before NASA's Lunar Orbiter 1 — and broadcast The Internationale from lunar orbit during a Communist Party Congress. Operated 56 days before its batteries died.",
+    "old": "Први вештачки сателит неког другог небеског тела осим Земље. Достигао је лунарну орбиту у априлу 1966. — три месеца пре летелице Lunar Orbiter 1 агенције NASA — и емитовао „Интернационалу“ из лунарне орбите током конгреса Комунистичке партије. Operated 56 дана, све док се његове батерије нису истрошиле.",
+    "new": "Први вештачки сателит неког другог небеског тела осим Земље. Достигао је лунарну орбиту у априлу 1966. — три месеца пре летелице Lunar Orbiter 1 агенције NASA — и емитовао „Интернационалу“ из лунарне орбите током конгреса Комунистичке партије. Радио је 56 дана, све док се његове батерије нису истрошиле."
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "function_detail",
+    "en": "Tianhe propellant top-up, dry-cargo crew supplies, and on-orbit waste removal via destructive reentry over the South Pacific.",
+    "old": "Допуна горива за Tianhe, залихе сувог терета за посаду и уклањање отпада из орбите његовим рушилачким поновним уласком у атмосферу изнад јужног Пацифика.",
+    "new": "Допуна погонског горива за Tianhe, залихе сувог терета за посаду и уклањање отпада из орбите уништавајућим поновним уласком у атмосферу изнад јужног Пацифика."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.wall",
+    "en": "Two walls at once. First, most never existed: the USSR did not adopt the mission-patch tradition until Apollo–Soyuz in 1975, so Vostok, Voskhod and the first Soyuz flights simply had no patch. Second, what does exist later — Soyuz TM/TMA expedition patches, Roscosmos emblems — is copyrighted or uploaded only under fair-use, never released under a free licence.",
+    "old": "Два зида истовремено. Прво, већина амблема уопште никад не постоји: СССР је традицију амблема мисија усвојио тек са Apollo–Soyuz 1975. године, па Vostok, Voskhod и први летови Soyuz просто нису имали амблем. Друго, оно што постоји од тада — амблеми експедиција Soyuz TM/TMA и амблеми Roscosmos — заштићено је ауторским правом или је отпремљено само уз позивање на поштену употребу, а никада не бива објављено под слободном лиценцом.",
+    "new": "Два зида истовремено. Прво, већина амблема никада није ни постојала: СССР је традицију амблема мисија усвојио тек са Apollo–Soyuz 1975. године, па Vostok, Voskhod и први летови Soyuz једноставно нису имали амблем. Друго, оно што постоји од тада — амблеми експедиција Soyuz TM/TMA и амблеми Roscosmos — заштићено је ауторским правом или је отпремљено само уз позивање на поштену употребу, а никада није објављено под слободном лиценцом."
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.0",
+    "en": "Viking 1 orbiter — USA, 1977 (first close-range imagery)",
+    "old": "Орбитер Viking 1 — САД, 1977. (прве снимке изблиза)",
+    "new": "Орбитер Viking 1 — САД, 1977. (први снимци изблиза)"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.1.why",
+    "en": "The Moon's 0.055 eccentricity is small but matters — at perigee the disc looks 12 % larger and brighter than at apogee ('supermoon').",
+    "old": "Лунина екцентричност од 0,055 је мала али значајна — у перигеју диск изгледа 12 % већи и светлији него у апогеју ('суперљуба').",
+    "new": "Лунина екцентричност од 0,055 мала је, али значајна — у перигеју диск изгледа 12 % већи и светлији него у апогеју („супермесец“)."
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "function_detail",
+    "en": "Stage spacewalks (EVAs), suit servicing, and alternate egress separate from Soyuz or Dragon docking interfaces.",
+    "old": "Омогућава припрему и извођење шетњи свемиром, одржавање скафандера и алтернативни излаз, одвојено од пристајних прикључака на летелицама Soyuz или Dragon.",
+    "new": "Припрема шетњи свемиром (EVA), одржавање скафандера и алтернативни излаз, одвојен од интерфејса за спајање летелица Soyuz или Dragon."
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "description",
+    "en": "Half Pluto's diameter — the largest moon-to-planet size ratio in the solar system. Charon and Pluto are mutually tidally locked, orbiting a common centre of mass about 980 km above Pluto's surface — effectively a binary planet system. New Horizons revealed a startlingly varied terrain: the smooth Vulcan Planitia plain to the south, an ancient cratered hemisphere to the north, and a dark red polar cap (Mordor Macula) of tholins formed when methane molecules escaping from Pluto's atmosphere collected on Charon and were processed by ultraviolet light. The four smaller Pluto moons (Styx, Nix, Kerberos, Hydra) orbit the Pluto-Charon barycentre with chaotic rotations driven by the binary system's shifting gravity.",
+    "old": "Половина пречника Плутона — највећи однос величине месеца и планете у Сунчевом систему. Харон и Плутон су међусобно плимски закључани и круже око заједничког центра масе који се налази око 980 km изнад површине Плутона — заправо је реч о систему двојне планете. New Horizons је открио запањујуће разнолик терен: глатку равницу Вулкан на југу, древну хемисферу прекривену кратерима на северу и тамну црвену поларну капу (Mordor Macula) од толина, насталих када су се молекули метана који измичу из атмосфере Плутона накупили на Харону и били обрађени ултраљубичастом светлошћу. Четири мања месеца Плутона (Стикс, Никт, Кербер, Хидра) круже око барицентра система Плутон–Харон уз хаотичне ротације изазване променљивом гравитацијом двојног система.",
+    "new": "Половина пречника Плутона — највећи однос величине месеца и планете у Сунчевом систему. Харон и Плутон су међусобно плимски закључани и круже око заједничког центра масе који се налази око 980 km изнад површине Плутона — заправо је реч о систему двојне планете. New Horizons је открио запањујуће разнолик терен: глатку равницу Vulcan Planitia на југу, древну хемисферу прекривену кратерима на северу и тамну црвену поларну капу (Mordor Macula) од толина, насталих када су се молекули метана који измичу из атмосфере Плутона накупили на Харону и били обрађени ултраљубичастом светлошћу. Четири мања месеца Плутона (Стикс, Никт, Кербер, Хидра) круже око барицентра система Плутон–Харон уз хаотичне ротације изазване променљивом гравитацијом двојног система."
+  },
+  {
+    "rel": "iss-visitors/cargo_dragon.json",
+    "at": "function_detail",
+    "en": "Commercial Resupply Services 2; downmass capability for time-critical experiments and failed hardware; reusable capsule with PICA-X heatshield.",
+    "old": "Commercial Resupply Services 2; могућност враћања терета на Земљу (downmass) за експерименте осетљиве на време и за покварену опрему; вишекратна капсула са топлотним штитом PICA-X.",
+    "new": "Commercial Resupply Services 2; могућност повратка терета на Земљу за експерименте осетљиве на време и за покварену опрему; вишекратна капсула са топлотним штитом PICA-X."
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "story",
+    "en": "Exactly 35,786 km up — the altitude where an orbit takes one sidereal day (23 h 56 min), so the satellite hangs motionless over a fixed longitude on the equator. Weather satellites stare at the same continent forever; communications satellites paint a dish-sized footprint and never move. There are no parking spaces, only parking slots — each operator gets a longitude band assigned by the ITU.",
+    "old": "Тачно 35.786 km висине — висина на којој орбита траје један звездани дан (23 ч 56 мин), па сателит виси непомично изнад фиксне дужине на екватору. Метеоролошки сателити заувек гледају исти континент; комуникациони сателити покривају подручје величине антене и никад се не крећу. Нема паркинг места, само паркинг слотови — сваки оператор добија од ITU додељену дужинску траку.",
+    "new": "Тачно 35.786 km изнад Земље — висина на којој један обилазак орбите траје један звездани дан (23 ч 56 мин), па сателит непомично виси изнад исте географске дужине на екватору. Метеоролошки сателити заувек гледају исти континент; комуникациони сателити покривају подручје величине антене и никад се не крећу. Нема паркинг места, већ само паркинг позиција — сваки оператор добија од ITU додељену траку географске дужине."
+  },
+  {
+    "rel": "trajectories/giotto.json",
+    "at": "current_distance_label",
+    "en": "1.04 AU · in heliocentric orbit since Grigg-Skjellerup flyby 1992-07-10",
+    "old": "1,04 AU · у хелиоцентричној орбити од прелета поред комете Григ-Шелеруп 10. 7. 1992.",
+    "new": "1,04 AU · у хелиоцентричној орбити од прелета поред комете Григ-Шелеруп 1992-07-10"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "current_distance_label",
+    "en": "5.4 AU · disposed into Jupiter 2003-09-21 (Europa protection)",
+    "old": "5,4 АЈ · одложен у Јупитер 2003-09-21 (заштита месеца Европе)",
+    "new": "5,4 AU · одлагање у Јупитеру 2003-09-21 (заштита месеца Европе)"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "surface_composition",
+    "en": "Roughly half water ice + half silicate rock; surface a mix of dark cratered terrain (~4 Gyr old) and lighter grooved terrain (tectonic resurfacing ~2 Gyr ago); thin oxygen exosphere.",
+    "old": "Отприлике половина водени лед, а половина силикатна стена; површина је мешавина тамног кратерисаног терена (стар ~4 Gyr) и светлијег избраног терена (тектонско обнављање површине пре ~2 Gyr); танка кисеоничка егзосфера.",
+    "new": "Отприлике подједнако водени лед и силикатне стене; површина је мешавина тамног кратерисаног терена (стар око 4 млрд. година) и светлијег избразданог терена (тектонско обнављање површине пре око 2 млрд. година); танка кисеонична егзосфера."
+  },
+  {
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "story",
+    "en": "The boundary of the Moon's gravitational authority — roughly 60,000 km from the lunar centre. Inside this sphere, the Moon's gravity wins out over Earth's; outside, anything you leave behind drifts back toward Earth. Most stable lunar orbits live well inside, below 70% of the Hill radius, because mascon perturbation makes higher orbits unstable. The Hill sphere is also why the Moon has no natural moonlets — none can hold an orbit for long.",
+    "old": "Граница гравитационне власти Месеца — отприлике 60.000 km од центра Месеца. Унутар ове сфере Месечева гравитација надјачава Земљину; изван ње све што оставите за собом полако се враћа ка Земљи. Већина стабилних месечевих орбита налази се знатно дубље унутра, испод 70% полупречника Хилове сфере, јер пертурбације услед маскона чине више орбите нестабилним. Хилова сфера је и разлог зашто Месец нема природне месечиће — ниједан не може дуго да одржи орбиту.",
+    "new": "Граница гравитационе власти Месеца — отприлике 60.000 km од центра Месеца. Унутар ове сфере Месечева гравитација надјачава Земљину; изван ње све што оставите за собом полако се враћа ка Земљи. Већина стабилних месечевих орбита налази се знатно дубље унутра, испод 70% полупречника Хилове сфере, јер пертурбације услед маскона чине више орбите нестабилним. Хилова сфера је и разлог зашто Месец нема природне месечиће — ниједан не може дуго да одржи орбиту."
+  },
+  {
+    "rel": "culture-doors/vega-contact.json",
+    "at": "blurb",
+    "en": "In Carl Sagan's Contact, humanity's first message from another civilisation arrives from Vega — a prime-number signal that becomes blueprints for a machine to meet the senders. Sagan chose Vega for its fame and nearness; in reality no signal has ever been detected from it.",
+    "old": "У роману *Contact* Карла Сејгана прва порука човечанства од неке друге цивилизације стиже из система Веге — сигнал састављен од простих бројева, који постаје нацрт за машину помоћу које би се срели с пошиљаоцима. Сејган је изабрао Вега због њене славе и близине; у стварности никада није откривен ниједан сигнал с ње.",
+    "new": "У роману *Contact* Карла Сејгана прва порука човечанства од неке друге цивилизације стиже из система Веге — сигнал састављен од простих бројева, који постаје нацрт за машину помоћу које би се срели с пошиљаоцима. Сејган је изабрао Вегу због њене славе и близине; у стварности никада није откривен ниједан сигнал с ње."
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.1.why",
+    "en": "Makemake is the fourth-largest known KBO and the only one of the IAU-recognised dwarf planets without a confirmed moon until Hubble found MK2 in 2016.",
+    "old": "Макемаке је четврти по величини познати објекат Кајперовог појаса и једина од патуљастих планета које признаје IAU која није имала потврђен месец све док Hubble 2016. године није открио MK2.",
+    "new": "Макемаке је четврти по величини познати објекат Кајперовог појаса и једина од патуљастих планета признатих од IAU без потврђеног месеца, све док Hubble 2016. године није открио MK2."
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.0",
+    "en": "Pioneer 11 — USA, 1979 (first close imagery)",
+    "old": "Pioneer 11 — САД, 1979. (прве снимке изблиза)",
+    "new": "Pioneer 11 — САД, 1979. (први снимци изблиза)"
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.0.label",
+    "en": "Parker Solar Probe — closest-ever Sun flyby (USA)",
+    "old": "Parker Solar Probe — најбући прелет поред Сунца икада (САД)",
+    "new": "Parker Solar Probe — најближи прелет поред Сунца икада (САД)"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "comparison",
+    "en": "All four terrestrials would fit inside Jupiter's Great Red Spot. The four together hold less than 0.5% of the system's planetary mass.",
+    "old": "Све четири планете копненог типа стале би унутар Great Red Spot на Јупитеру. Заједно садрже мање од 0,5% планетарне масе Сунчевог система.",
+    "new": "Све четири планете копненог типа стале би унутар Велике црвене пеге на Јупитеру. Заједно садрже мање од 0,5% планетарне масе Сунчевог система."
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "bio",
+    "en": "Discovered 1999, named for Orus — a Trojan ally killed by Ajax in the Iliad. Lucy's 2028-11-11 encounter will measure surface composition, regolith properties, and any satellite presence, completing the survey of the leading-cloud spectral range (C → P → D).",
+    "old": "Откривен 1999. године, назван по Ору, тројанском савезнику којег је у Илијади убио Ајант. Сусрет сонде Lucy са овим астероидом, 11. 11. 2028, измериће површински састав, својства реголита и евентуално присуство пратилаца, чиме ће бити завршено истраживање спектралног опсега предњег облака (C → P → D).",
+    "new": "Откривен 1999. године, назван по Ору, тројанском савезнику којег је у Илијади убио Ајант. Сусрет сонде Lucy са овим астероидом, 2028-11-11, измериће површински састав, својства реголита и евентуално присуство пратилаца, чиме ће бити завршено истраживање спектралног опсега предњег облака (C → P → D)."
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "description",
+    "en": "ISRO's four-stage Polar Satellite Launch Vehicle in its XL configuration with six strap-on solid boosters. Originally designed for sun-synchronous Earth orbits; subsequently used for interplanetary missions including India's first lunar orbiter and first Mars probe. Notable launch-cost efficiency (~$30M per launch) drove the Mangalyaan mission's $74M total budget.",
+    "old": "Четворостепена ракета-носач агенције ISRO Polar Satellite Launch Vehicle у конфигурацији XL са шест чврстих помоћних ракетних побољшивача. Првобитно је пројектована за Сунцу синхроне орбите око Земље, а потом је коришћена за међупланетарне мисије, укључујући први индијски лунарни орбитер и прву индијску сонду за Марс. Изузетна исплативост лансирања (~30 милиона долара по лансирању) омогућила је да укупан буџет мисије Mangalyaan износи 74 милиона долара.",
+    "new": "Четворостепена ракета-носач агенције ISRO Polar Satellite Launch Vehicle у конфигурацији XL са шест чврстих ракетних појачивача. Првобитно је пројектована за орбите синхроне са Сунцем, а потом је коришћена за међупланетарне мисије, укључујући први индијски лунарни орбитер и прву индијску сонду за Марс. Изузетна исплативост лансирања (~30 милиона долара по лансирању) омогућила је да укупан буџет мисије Mangalyaan износи 74 милиона долара."
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "fact",
+    "en": "Largest member of the L4 Eurybates Trojan family — a collisional cluster of 64-km parent and ~280 smaller fragments. Lucy's 2027-08-12 encounter at 5.7 km/s will be the first close-up of a Jupiter Trojan ever, accompanied by Eurybates's 1-km moon Queta (discovered by Hubble in 2018).",
+    "old": "Највећи члан породице тројанаца Еурибат у тачки L4 — сударног скупа који чине матично тело пречника 64 km и ~280 мањих фрагмената. Сусрет сонде Lucy 12. 8. 2027. при брзини од 5,7 km/s биће први снимак изблиза неког Јупитеровог тројанца икада, а пратиће га Еурибатов месец Queta пречника 1 km (открио га је Hubble 2018. године).",
+    "new": "Највећи члан породице тројанаца Еурибат у тачки L4 — сударног скупа који чине матично тело пречника 64 km и ~280 мањих фрагмената. Сусрет сонде Lucy 2027-08-12 при брзини од 5,7 km/s биће први снимак изблиза неког Јупитеровог тројанца икада, а пратиће га Еурибатов месец Queta пречника 1 km (открио га је Hubble 2018. године)."
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "bio",
+    "en": "Discovered 1906, classified as a P-type with low-albedo, reddish reflectance. Lucy's 2033-03-02 encounter at 8.4 km/s closes the primary mission — the spacecraft will image both partners of the binary in one approach, mapping the surface terrain, composition, and the gravitational dance that has bound them through 4.5 Gyr.",
+    "old": "Откривен 1906. године, класификован као P-тип са ниским албедом и црвенкастом рефлексијом. Сусрет сонде Lucy 2. 3. 2033. при брзини од 8,4 km/s завршава њену основну мисију — летелица ће у једном приласку снимити оба члана двојног система, картирајући рељеф површине, састав и гравитациони плес који их везује већ 4,5 милијарди година.",
+    "new": "Откривен 1906. године, класификован као P-тип са ниским албедом и црвенкастом рефлексијом. Сусрет сонде Lucy 2033-03-02 при брзини од 8,4 km/s завршава њену основну мисију — летелица ће у једном приласку снимити оба члана двојног система, картирајући рељеф површине, састав и гравитациони плес који их везује већ 4,5 милијарди година."
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "description",
+    "en": "The brightest and (after Miranda) youngest-looking surface in the Uranian system — Voyager 2 imagery shows broad rift valleys and what may be flow features hinting at past or present cryovolcanic activity. Tidal heating from a 2:1 orbital resonance with Umbriel that existed in the deep past could have melted the interior; whether any liquid water remains today is unknown. Like the other Uranian major moons, only its southern hemisphere has been imaged at close range.",
+    "old": "Најсветлија и (после Миранде) која изгледа најмлађе површина у систему Урана — снимци мисије Voyager 2 показују широке долине раседа и оно што би могле бити назнаке токова, што упућује на прошлу или садашњу криовулканску активност. Плимно загревање услед орбиталне резонанције 2:1 са Умбријелом, која је постојала у далекој прошлости, могло је да отопи унутрашњост; да ли данас остаје и мало течне воде, није познато. Као и остали велики месеци Урана, и њему је из близине снимљена само јужна хемисфера.",
+    "new": "Најсветлија површина у систему Урана и (после Миранде) она која изгледа најмлађе — снимци мисије Voyager 2 показују широке долине раседа и оно што могу бити токови, који наговештавају прошлу или садашњу криовулканску активност. Плимно загревање услед орбиталне резонанције 2:1 са Умбријелом, која је постојала у далекој прошлости, могло је да отопи унутрашњост; да ли данас остаје и мало течне воде, није познато. Као и остали велики месеци Урана, и њему је из близине снимљена само јужна хемисфера."
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "surface_composition",
+    "en": "Frozen nitrogen + water ice + carbon dioxide ice; surface covered with cantaloupe-textured terrain unique in the solar system, and active nitrogen cryogeysers venting dark plumes 8 km into a thin nitrogen atmosphere.",
+    "old": "Залеђени азот + водени лед + лед од угљен-диоксида; површина је прекривена теменом са текстуром налик кори динје канталупа, јединственом у Сунчевом систему, и активним азотним криогејзирима који избацују тамне млазеве 8 km увис, у танку азотну атмосферу.",
+    "new": "Залеђени азот + водени лед + лед од угљен-диоксида; површина је прекривена тереном са текстуром налик кори динје канталупа, јединственим у Сунчевом систему, и активним азотним криогејзирима који избацују тамне млазеве 8 km увис, у танку азотну атмосферу."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "surface_composition",
+    "en": "Carbonaceous chondrite-like; smoother surface than Phobos because its weaker gravity lets ejecta from impacts escape into Mars orbit rather than re-accumulating. Two named craters: Swift and Voltaire (both ~3 km).",
+    "old": "Налик угљеничним хондритима; глаткија површина од Фобосове, јер његова слабија гравитација допушта да избачени материјал при ударима побегне у орбиту око Марса, уместо да се поново накупља. Два именована кратера: Swift и Волтер (оба ~3 km).",
+    "new": "Налик угљеничним хондритима; глаткија површина од Фобосове, јер његова слабија гравитација допушта да избачени материјал при ударима побегне у орбиту око Марса, уместо да се поново накупља. Два именована кратера: Свифт и Волтер (оба ~3 km)."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.2.why",
+    "en": "The scattered-disc subpopulation (e.g. Eris) sits at high inclinations — gravitationally scattered by Neptune's outward migration; Sedna, by contrast, is a detached 'sednoid' whose distant perihelion lies beyond Neptune's reach and currently spreading the belt vertically.",
+    "old": "Подпопулација расејаног диска (нпр. Ерида) налази се на великим нагибима орбита — гравитационо је расејана услед миграције Нептуна ка спољашњим деловима система; Седна је, насупрот томе, одвојени „седноид“ чији се далеки перихел налази изван домашаја Нептуна и који тренутно шири појас по вертикали.",
+    "new": "Подпопулација расејаног диска (нпр. Ерида) налази се на великим инклинацијама — гравитационо је расејана услед миграције Нептуна ка спољашњим деловима система; Седна је, насупрот томе, одвојени „седноид“ чији се далеки перихел налази изван домашаја Нептуна и који тренутно шири појас по вертикали."
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "story",
+    "en": "The mapping band — typically 150 to 500 km above the Martian surface. Most Mars orbiters live here: it's high enough to dodge the atmospheric drag from the upper thermosphere yet low enough for metre-scale imaging. The thin atmosphere is a gift — Mars Reconnaissance Orbiter and Mars Odyssey have used aerobraking (dipping repeatedly through it) to circularise their orbits for free, saving years of propellant. Six nations are flying spacecraft here right now.",
+    "old": "Појас за картографисање — обично од 150 до 500 km изнад површине Марса. Већина марсовских орбитера борави управо овде: довољно је високо да се избегне отпор горњих слојева термосфере, а ипак довољно ниско за снимање с резолуцијом од неколико метара. Танка атмосфера је права привилегија — Mars Reconnaissance Orbiter и Mars Odyssey користили су аеро-кочење (поновљено урањање кроз њу) да бесплатно циркуларизују своје орбите и тако уштеде годинама погонског горива. Шест нација тренутно овде лети своје летелице.",
+    "new": "Појас за картографисање — обично од 150 до 500 km изнад површине Марса. Већина марсовских орбитера борави управо овде: довољно је високо да се избегне отпор горњих слојева термосфере, а ипак довољно ниско за снимање с резолуцијом од неколико метара. Танка атмосфера је права благодат — Mars Reconnaissance Orbiter и Mars Odyssey користили су аеро-кочење (поновљено урањање кроз њу) да бесплатно претворе своје орбите у кружне и тако уштеде погонско гориво које би иначе трајало годинама. Шест нација тренутно овде управља својим летелицама."
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "description",
+    "en": "China's largest operational launcher: cryogenic core stage with two YF-77 hydrogen engines, four kerolox boosters, and a hydrogen upper stage. Launched the Tianwen-1 orbiter / lander / rover to Mars in July 2020 and the Chang'e lunar sample return missions.",
+    "old": "Највећа кинеска ракета-носач у употреби: криогени главни степен са два водоникова мотора YF-77, четири помоћна степена на керосин и течни кисеоник (керолокс) и водоников горњи степен. Лансирала је орбитер, лендер и ровер Tianwen-1 ка Марсу у јулу 2020. године, као и мисије Chang'e за повратак лунарних узорака на Земљу.",
+    "new": "Највећа кинеска ракета-носач у употреби: криогени главни степен са два водоникова мотора YF-77, четири ракетна појачивача на керосин и течни кисеоник (керолокс) и водоников горњи степен. Лансирала је орбитер, лендер и ровер Tianwen-1 ка Марсу у јулу 2020. године, као и мисије Chang'e за повратак лунарних узорака на Земљу."
+  },
+  {
+    "rel": "trajectories/ulysses.json",
+    "at": "current_distance_label",
+    "en": "5.2 AU · mission ended 2009-06-30 (thruster lines froze) — hardware in polar heliocentric orbit",
+    "old": "5,2 AU · мисија окончана 30. 6. 2009. (водови потисника су се заледеле) — летелица у поларној хелиоцентричној орбити",
+    "new": "5,2 AU · мисија окончана 2009-06-30 (замрзли су се водови потисника) — летелица у поларној хелиоцентричној орбити"
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "en": "Itokawa is a near-Earth Apollo asteroid — semi-major axis 1.32 AU. Hayabusa's 2005 rendezvous + 2010 sample return was the first NEA round-trip.",
+    "old": "Итокава је астероид из групе Apollo који пролази близу Земље — велика полуоса му је 1,32 AU. Сусрет у орбити са летелицом Hayabusa 2005. и повратак узорка 2010. били су прво путовање до астероида блиског Земљи и назад.",
+    "new": "Итокава је астероид из групе Apollo који пролази близу Земље — велика полуоса му је 1,32 AU. Сусрет летелице Hayabusa са њим 2005. и повратак узорка 2010. били су прво путовање до астероида блиског Земљи и назад."
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "fact",
+    "en": "The first celestial body whose orbit was deliberately altered by humans. NASA's DART struck Dimorphos at 6.14 km/s on 2022-09-26, shortening its 11.9-hour orbit around Didymos by 33 minutes (4.2%) — exceeding the success threshold by ~25× and demonstrating planetary defense is possible.",
+    "old": "Прво небеско тело чију су орбиту људи намерно изменили. Сонда DART агенције NASA ударила је у Диморфос брзином од 6,14 km/s 26. септембра 2022, скративши његову орбиту од 11,9 сати око Дидимоса за 33 минута (4,2%) — премашивши праг успеха за ~25 пута и показавши да је планетарна одбрана могућа.",
+    "new": "Прво небеско тело чију су орбиту људи намерно изменили. Сонда DART агенције NASA ударила је у Диморфос брзином од 6,14 km/s 2022-09-26, скративши његову орбиту од 11,9 сати око Дидимоса за 33 минута (4,2%) — премашивши праг успеха ~25 пута и показавши да је планетарна одбрана могућа."
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "comparison",
+    "en": "About 1/11th of the way to the Moon. A round-trip TV signal via GEO comsat takes ~240 ms — long enough to hear on a phone call (\"satellite delay\").",
+    "old": "Око 1/11 пута до Месеца. Повратни ТВ сигнал преко GEO комсата траје ~240 ms — довољно дуго да се чује на телефонском позиву („сателитско кашњење\").",
+    "new": "Око 1/11 пута до Месеца. Повратни ТВ сигнал преко GEO телекомуникационог сателита траје ~240 ms — довољно дуго да се примети у телефонском разговору („сателитско кашњење“)."
+  },
+  {
+    "rel": "trajectories/bepicolombo.json",
+    "at": "current_distance_label",
+    "en": "0.48 AU · en route to Mercury orbit insertion 2026-12-05",
+    "old": "0,48 АЈ · на путу ка уласку у орбиту Меркура 2026-12-05",
+    "new": "0,48 AU · на путу ка убацивању у орбиту Меркура 2026-12-05"
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "residents.0.label",
+    "en": "Queqiao — Chang'e 4 farside relay (2018)",
+    "old": "Queqiao — релејни сателит мисије Chang'e 4 за掩 невидљиву страну Месеца (2018)",
+    "new": "Queqiao — релејни сателит мисије Chang'e 4 за невидљиву страну Месеца (2018)"
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "description",
+    "en": "The most geologically active body in the solar system. Tidal heating from Jupiter's gravity plus orbital resonance with Europa and Ganymede pumps roughly 100 terawatts of heat into Io's interior — enough to drive ~400 active volcanoes and surface temperatures that swing from -130 °C (frozen sulfur dioxide) to +1,600 °C (ultra-mafic lava). Its surface is repainted faster than impact cratering can mark it. Loki Patera, a 200 km lava lake, is the single most powerful volcanic feature in the solar system.",
+    "old": "Најгеолошки активније тело у Сунчевом систему. Плимно загревање услед Јупитерове гравитације, заједно са орбиталном резонанцијом са Европом и Ганимедом, упумпава око 100 теравата топлоте у унутрашњост Ија — довољно да покреће ~400 активних вулкана и површинске температуре које се крећу од -130 °C (залеђени сумпор-диоксид) до +1.600 °C (ултрамафична лава). Његова површина се обнавља брже него што је ударни кратери могу обележити. патера Локи, лавно језеро широко 200 km, најмоћнија је појединачна вулканска творевина у Сунчевом систему.",
+    "new": "Геолошки најактивније тело у Сунчевом систему. Плимно загревање услед Јупитерове гравитације, заједно са орбиталном резонанцијом са Европом и Ганимедом, упумпава око 100 теравата топлоте у унутрашњост Ија — довољно да покреће ~400 активних вулкана и површинске температуре које се крећу од -130 °C (залеђени сумпор-диоксид) до +1.600 °C (ултрамафична лава). Његова површина се обнавља брже него што ударни кратери могу да је обележе. Патера Локи, лавно језеро широко 200 km, најмоћнија је појединачна вулканска творевина у Сунчевом систему."
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.2.why",
+    "en": "Jupiter is the favoured gravity-assist target for outer-system missions — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper and JUICE all used or use a Jovian flyby for velocity gain.",
+    "old": "Јупитер је омиљена мета за гравитациону праћку код мисија ка спољашњем делу Сунчевог система — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper и JUICE користили су или користе јовијански прелет за добијање брзине.",
+    "new": "Јупитер је омиљена мета за гравитациони маневар код мисија ка спољашњем делу Сунчевог система — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper и JUICE користили су или користе јовијански прелет за добијање брзине."
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.1.why",
+    "en": "The inclination of the planet matters less than the tilt of its rotation axis — Uranus has the most dramatic axial inclination in the system, even though its orbital inclination is modest (0.77°).",
+    "old": "Нагиб орбите планете мање је важан од нагиба њене осе ротације — Уран има најдраматичнији нагиб осе у Сунчевом систему, иако је нагиб његове орбите скроман (0,77°).",
+    "new": "Инклинација планете мање је важна од нагиба њене осе ротације — Уран има најдраматичнију аксијалну инклинацију у Сунчевом систему, иако је његова орбитална инклинација скромна (0,77°)."
+  },
+  {
+    "rel": "tiangong-modules/wentian.json",
+    "at": "description",
+    "en": "The first laboratory, berthed July 2022—two large solar wings, an external payload airlock, and a small experimental robotic arm bolted to its hull.",
+    "old": "Прва лабораторија, спојена са станицом у јулу 2022—два велика соларна крила, спољна преносна ваздушна комора за кориснички терет и мала експериментална роботска рука причвршћена за труп.",
+    "new": "Прва лабораторија, спојена са станицом у јулу 2022—два велика соларна крила, спољна ваздушна комора за корисни терет и мала експериментална роботска рука причвршћена за њен труп."
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "description",
+    "en": "A spherical docking node—six ports to cluster visiting vehicles around the Russian segment.",
+    "old": "Сферни пристајни чвор — шест прикључних отвора за груписање посећујућих летелица око руског сегмента.",
+    "new": "Сферни чвор за спајање — шест прикључних отвора за груписање летелица у посети око руског сегмента."
+  },
+  {
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "scale_fact",
+    "en": "The 63.4° inclination is no accident — it's the 'critical inclination' where Earth's J2 perturbation locks the apogee in place over the chosen hemisphere.",
+    "old": "Инклинација од 63,4° није случајност — то је „критична инклинација\" при којој J2 пертурбација Земље фиксира апогеј изнад изабране хемисфере.",
+    "new": "Инклинација од 63,4° није случајност — то је „критична инклинација“ при којој J2 пертурбација Земље фиксира апогеј изнад изабране хемисфере."
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.0.note",
+    "en": "Falcon Heavy lifts off. Free-return — no landing.",
+    "old": "Falcon Heavy полеће. Повратна путања без слетања — нема спуштања.",
+    "new": "Falcon Heavy полеће. Путања слободног повратка — без слетања."
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "description",
+    "en": "Three-core Falcon 9 derivative. The two side boosters return to launch sites or droneships; the centre core lands at sea or is expended for maximum payload. Demonstrated in 2018 with the launch of a Tesla Roadster on a heliocentric trajectory crossing the orbit of Mars.",
+    "old": "Дериват ракете Falcon 9 са три језгра. Два бочна бустера враћају се на места лансирања или на бродове-дронове; централно језгро слеће на море или се жртвује ради максималне корисне носивости. Демонстрирана је 2018. лансирањем аутомобила Tesla Roadster на хелиоцентричну путању која прелази орбиту Марса.",
+    "new": "Дериват ракете Falcon 9 са три језгра. Два бочна ракетна појачивача враћају се на места лансирања или на бродове-дронове; централно језгро слеће на море или се жртвује ради максималног корисног терета. Демонстрирана је 2018. лансирањем аутомобила Tesla Roadster на хелиоцентричну путању која прелази орбиту Марса."
+  },
+  {
+    "rel": "iss-modules/poisk.json",
+    "at": "description",
+    "en": "Russian Mini-Research Module 2—a twin-port docking compartment and EVA airlock attached to Zvezda's zenith port since 2009.",
+    "old": "Руски мини-истраживачки Module 2 — спојни одељак са два прикључка и ваздушна комора за излазак у свемир, причвршћен за зенитни прикључак модула Zvezda од 2009. године.",
+    "new": "Руски мини-истраживачки модул 2 — одељак за спајање са два прикључка и ваздушна комора за излазак у свемир, причвршћен за зенитни прикључак модула Zvezda од 2009. године."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "story",
+    "en": "A ring of icy bodies beyond Neptune — 30 to 50 AU. The frozen analog of the asteroid belt: hundreds of thousands of bodies of which only the largest few have been resolved. Composed of methane, ammonia, water ice + rock. Pluto was the first member identified, in 1930, though the belt wasn't recognised as a population until the 1990s when Jewitt + Luu found the second member (1992 QB1). New Horizons gave humanity its first close looks at TWO Kuiper objects — Pluto in 2015 and Arrokoth in 2019.",
+    "old": "Прстен ледених тела иза Нептуна — од 30 до 50 AU. Залеђени пандан астероидном појасу: стотине хиљада тела, од којих је разлучено тек неколико највећих. Састоји се од метана, амонијака, воденог леда + стене. Плутон је био први уочени члан, 1930. године, мада појас није препознат као засебна популација све до 1990-их, када су Jewitt + Luu пронашли други члан (1992 QB1). New Horizons је човечанству први пут пружио изблиза поглед на ДВА Кајперова објекта — Плутон 2015. и Арокот 2019. године.",
+    "new": "Прстен ледених тела иза Нептуна — од 30 до 50 AU. Залеђени пандан астероидном појасу: стотине хиљада тела, од којих је разлучено тек неколико највећих. Састоји се од метана, амонијака, воденог леда + стене. Плутон је био први уочени члан, 1930. године, мада појас није препознат као засебна популација све до 1990-их, када су Џуит + Лу пронашли други члан (1992 QB1). New Horizons је човечанству први пут омогућио да изблиза види ДВА Кајперова објекта — Плутон 2015. и Арокот 2019. године."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "firsts.0.label",
+    "en": "Pluto discovered — first KBO identified (Tombaugh, USA)",
+    "old": "Откривен Плутон — први идентификовани KBO (Tombaugh, САД)",
+    "new": "Откривен Плутон — први идентификовани KBO (Томбо, САД)"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.8.note",
+    "en": "TCM-3: 22 m/s. Return trajectory corrected.",
+    "old": "TCM-3: 22 m/s. Повратна путања је коригов   ана.",
+    "new": "TCM-3: 22 m/s. Повратна путања је коригована."
+  },
+  {
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "comparison",
+    "en": "About 16% of the way back to Earth. The Earth-Moon L2 point sits roughly on the Hill sphere boundary on the far side — the same geometric reason both exist.",
+    "old": "About 16% пута назад ка Земљи. Тачка L2 система Земља–Месец налази се отприлике на граници Хилове сфере на даљој страни — из истог геометријског разлога због ког постоје обе.",
+    "new": "Око 16% пута назад ка Земљи. Тачка L2 система Земља–Месец налази се отприлике на граници Хилове сфере на даљој страни — из истог геометријског разлога због ког постоје обе."
+  },
+  {
+    "rel": "earth-objects/change1.json",
+    "at": "description",
+    "en": "China's first lunar mission, 2007-2009. Built and operated as a deliberate precursor test for the Chang'e 3 lander — the orbital phase served as a flight-qualification rehearsal for the deep-space communications and orbital mechanics that the lander mission would depend on. Crashed into the Moon at end of life as a controlled impact test.",
+    "old": "Прва кинеска мисија према Месецу, 2007–2009. Изграђена је и вођена као намерни претходни тест за лендер Chang'e 3 — орбитална фаза послужила је као проба за летну квалификацију комуникација у далеком свемиру и орбиталне механике од којих би зависила мисија лендера. На крају животног века завршила је ударом у Месец као контролисани тест судара.",
+    "new": "Прва кинеска мисија према Месецу, 2007–2009. Изграђена је и вођена као намерни претходни тест за слетник Chang'e 3 — орбитална фаза послужила је као проба за летну квалификацију комуникација у далеком свемиру и орбиталне механике од којих би зависила мисија слетника. На крају животног века завршила је ударом у Месец као контролисани тест судара."
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "surface_composition",
+    "en": "Water-ice + silicate rock; surface a patchwork of ancient cratered terrain crossed by huge coronae — concentric ridges and grooves that include Verona Rupes, the tallest known cliff in the solar system (~20 km vertical drop).",
+    "old": "Водени лед + силикатна стена; површина је крпеж древног кратерисаног терена који пресецају огромне короне — концентрични гребени и жлебови међу којима је и литица Верона, највећа позната литица у Сунчевом систему (вертикални пад од ~20 km).",
+    "new": "Водени лед + силикатна стена; површина је мозаик древног кратерисаног терена који пресецају огромне короне — концентрични гребени и жлебови међу којима је и литица Верона, највиша позната литица у Сунчевом систему (вертикални пад од ~20 km)."
+  },
+  {
+    "rel": "culture-doors/arecibo-message.json",
+    "at": "blurb",
+    "en": "In 1974 the Arecibo radio telescope beamed a 3-minute pictogram — our numbers, DNA, a human figure, and the telescope itself — toward the globular cluster M13, 25,000 light-years away. It was a demonstration more than a conversation: any reply would take 50,000 years.",
+    "old": "Године 1974. радио-телескоп Arecibo емитовао је тро­минутну пиктограму — наше бројеве, ДНК, људску фигуру и сам телескоп — према глобуларном јату M13, удаљеном 25.000 светлосних година. То је била пре демонстрација него разговор: сваки одговор стизао би 50.000 година.",
+    "new": "Године 1974. радио-телескоп Arecibo емитовао је троминутни пиктограм — наше бројеве, ДНК, људску фигуру и сам телескоп — према глобуларном јату M13, удаљеном 25.000 светлосних година. То је била пре демонстрација него разговор: сваки одговор стизао би 50.000 година."
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "current_distance_label",
+    "en": "135 AU · ~18.8 light-hours from the Sun (last contact 2003-01-23)",
+    "old": "135 AU · ~18,8 светлосних сати од Сунца (последњи контакт 23. 1. 2003.)",
+    "new": "135 AU · ~18,8 светлосних сати од Сунца (последњи контакт 2003-01-23)"
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "description",
+    "en": "ISRO's three-stage launch vehicle (formerly GSLV Mk III): two solid S200 boosters, a liquid L110 core, and the indigenously-developed cryogenic CE-20 upper stage. Lifted Chandrayaan-2 (2019) and Chandrayaan-3 (2023) to lunar trajectories. Human-rated for the upcoming Gaganyaan crewed programme.",
+    "old": "Тростепена ракета-носач агенције ISRO (раније GSLV Mk III): два чврста боостера S200, течни главни степен L110 и домаће развијен криогени горњи степен CE-20. Изнела је Chandrayaan-2 (2019) и Chandrayaan-3 (2023) на путање ка Месецу. Добија сертификат за лансирање људске посаде за предстојећи програм Gaganyaan са посадом.",
+    "new": "Тростепена ракета-носач агенције ISRO (раније GSLV Mk III): два чврстогоривна ракетна појачивача S200, течни главни степен L110 и домаће развијен криогени горњи степен CE-20. Изнела је Chandrayaan-2 (2019) и Chandrayaan-3 (2023) на путање ка Месецу. Сертификована за лет људи за предстојећи програм Gaganyaan."
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "current_distance_label",
+    "en": "4.1 AU · controlled descent to 67P surface 2016-09-30 (end of mission)",
+    "old": "4,1 AU · контролисано спуштање на површину 67P 30. 9. 2016. (крај мисије)",
+    "new": "4,1 AU · контролисано спуштање на површину 67P 2016-09-30 (крај мисије)"
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "description",
+    "en": "NASA's flagship deep-space rocket. Two five-segment solid rocket boosters and a core stage with four RS-25 engines (the same engines that flew on Space Shuttle), topped by an Interim Cryogenic Propulsion Stage. Debuted on Artemis I (Nov 2022), sending an uncrewed Orion capsule around the Moon.",
+    "old": "Водећа ракета агенције NASA за далеки свемир. Два чврстогоривна потисника са по пет сегмената и централни степен са четири мотора RS-25 (истих мотора који су летели на летелици Space Shuttle), а на врху је Interim Cryogenic Propulsion Stage. Дебитовала је мисијом Artemis I (нов. 2022), када је послала Orion капсулу без посаде око Месеца.",
+    "new": "Водећа ракета агенције NASA за далеки свемир. Два чврстогоривна ракетна појачивача са по пет сегмената и централни степен са четири мотора RS-25 (истих мотора који су летели на летелици Space Shuttle), а на врху је Interim Cryogenic Propulsion Stage. Дебитовала је мисијом Artemis I (нов. 2022), када је послала Orion капсулу без посаде око Месеца."
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.1.why",
+    "en": "Charon's 19,591-km mean distance from Pluto, combined with mutual tidal locking, means both bodies show the same face to each other forever.",
+    "old": "Харонова средња удаљеност од 19.591 км од Плутона, комбинована са међусобним плимским закључавањем, значи да оба тела заувек показују исто лице једно према другом.",
+    "new": "Харонова средња удаљеност од 19.591 km од Плутона, комбинована са међусобним плимским закључавањем, значи да оба тела заувек показују исто лице једно према другом."
+  },
+  {
+    "rel": "museums/uss-hornet-museum.json",
+    "at": "items.apollo-csm-block-i",
+    "en": "Command module CM-011, flown on the uncrewed AS-202 test (1966)",
+    "old": "Командни модул CM-011, који је летео у ненасељеном тесту AS-202 (1966)",
+    "new": "Командни модул CM-011, који је летео у тесту AS-202 без посаде (1966)"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "fact",
+    "en": "First asteroid sample ever returned to Earth — JAXA's Hayabusa survived a hydrazine leak, three dead reaction wheels, an ion engine failure, and a seven-week communications blackout to bring 1500 micrograms of Itokawa material to Woomera AUS on 2010-06-13.",
+    "old": "Први узорак астероида икада враћен на Земљу — летелица Hayabusa агенције JAXA преживела је цурење хидразина, отказивање три реакциона точка, квар јонског мотора и седмонедељни прекид комуникације да би 13. јуна 2010. у Вумери (Аустралија) допремила 1500 микрограма материјала са Итокаве.",
+    "new": "Први узорак астероида икада враћен на Земљу — летелица Hayabusa агенције JAXA преживела је цурење хидразина, отказивање три реакциона точка, квар јонског мотора и седмонедељни прекид комуникације да би 2010-06-13 у Вумери (Аустралија) допремила 1500 микрограма материјала са Итокаве."
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "library_labels.miranda-voyager2",
+    "en": "NASA Voyager 2 — only Uranian-system flyby (1986)",
+    "old": "NASA Voyager 2 — једини прелет Уновог система (1986)",
+    "new": "NASA Voyager 2 — једини прелет система Урана (1986)"
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "description",
+    "en": "The innermost and smallest of Uranus's five major moons — and visually the most extreme. Voyager 2's flyby imagery revealed a surface that looks like it was assembled from mismatched pieces: enormous cliffs, fractured plateaus, and concentric coronae jutting from heavily-cratered older terrain. The leading hypothesis is that Miranda was disrupted by an impact at least once, with the fragments reassembling under their own gravity. Verona Rupes drops ~20 km — under Miranda's low gravity, a falling object would take roughly 12 minutes to reach the bottom.",
+    "old": "Најунутрашњи и најмањи од пет великих Уранових месеца — и визуелно најекстремнији. Снимци са прелета летелице Voyager 2 открили су површину која изгледа као да је састављена од парчади која не одговарају једно другом: огромне литице, испуцала висораван и концентричне короне које вире из јако кратерисаног старијег терена. Водећа хипотеза је да је Миранда најмање једном била разорена ударом, а да су се њени фрагменти потом поново спојили под сопственом гравитацијом. литица Верона пада готово 20 km — при Мирандиној слабој гравитацији, предмету који пада било би потребно отприлике 12 минута да стигне до дна.",
+    "new": "Најунутрашњи и најмањи од пет великих Уранових месеца — и визуелно најекстремнији. Снимци са прелета летелице Voyager 2 открили су површину која изгледа као да је састављена од парчади која не одговарају једно другом: огромне литице, испуцала висораван и концентричне короне које вире из јако кратерисаног старијег терена. Водећа хипотеза је да је Миранда најмање једном била разорена ударом, а да су се њени фрагменти потом поново спојили под сопственом гравитацијом. Литица Верона пада ~20 km — при Мирандиној слабој гравитацији, предмету који пада било би потребно отприлике 12 минута да стигне до дна."
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "function_detail",
+    "en": "Docking and EVA staging on the Russian segment until de-orbit in 2021 to clear the port for Nauka.",
+    "old": "Пристајање и припрема за излазак у свемир на руском сегменту до силаска из орбите 2021. године, како би се ослободио прикључак за Nauka.",
+    "new": "Спајање и припрема за излазак у свемир на руском сегменту до силаска из орбите 2021. године, како би се ослободио прикључак за Nauka."
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "current_distance_label",
+    "en": "89 AU · ~12.3 light-hours from the Sun (signal lost 1995-09-30)",
+    "old": "89 AU · ~12,3 светлосних сати од Сунца (сигнал изгубљен 30. 9. 1995)",
+    "new": "89 AU · ~12,3 светлосних сати од Сунца (сигнал изгубљен 1995-09-30)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.1.why",
+    "en": "Earth's orbit defines the ecliptic plane. Every other planet's inclination is measured relative to this reference.",
+    "old": "Земљина орбита одређује раван еклиптике. Нагиб путање сваке друге планете мери се у односу на ову референтну раван.",
+    "new": "Земљина орбита одређује раван еклиптике. Инклинација сваке друге планете мери се у односу на ову референтну раван."
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.4.why",
+    "en": "Three missions span Mercury's exploration: Mariner 10 (1974), MESSENGER (2011–15), and BepiColombo (orbit insertion late 2026).",
+    "old": "Истраживање Меркура обухватају три мисије: Mariner 10 (1974), MESSENGER (2011–15) и BepiColombo (улазак у орбиту крајем 2026).",
+    "new": "Истраживање Меркура обележавају три мисије: Mariner 10 (1974), MESSENGER (2011–15) и BepiColombo (убацивање у орбиту крајем 2026)."
+  },
+  {
+    "rel": "small-bodies/eris.json",
+    "at": "science_sections.0.why",
+    "en": "Eris's 44° orbital inclination is among the highest of any catalogued large body — its scattered-disc origin puts it well off the ecliptic.",
+    "old": "Нагиб орбите Ериде од 44° међу највећима је код свих каталогизованих великих тела — њено порекло у расејаном диску смешта је далеко од еклиптике.",
+    "new": "Инклинација орбите Ериде од 44° међу највећима је код свих каталогизованих великих тела — њено порекло у расејаном диску смешта је далеко од еклиптике."
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.4.l",
+    "en": "Pale Blue Dot — Carl Sagan reflection (Planetary Society)",
+    "old": "Бледоплава тачка — одраз Карла Сагана (Planetary Society)",
+    "new": "Бледоплава тачка — размишљање Карла Сагана (Planetary Society)"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "first",
+    "en": "Europe's successor to Ariane 5, with restartable upper stage for direct injection",
+    "old": "Наследник ракете Ariane 5 у Европи, са горњим степеном који се може поново паљити за директно убацивање у орбиту",
+    "new": "Европски наследник ракете Ariane 5, са горњим степеном који се може поново паљити за директно убацивање у орбиту"
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.1.label",
+    "en": "Solar Orbiter — first close-Sun imaging (ESA)",
+    "old": "Solar Orbiter — прве снимке Сунца изблиза (ESA)",
+    "new": "Solar Orbiter — прво снимање Сунца изблиза (ESA)"
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "description",
+    "en": "The National Air and Space Museum's second site, a pair of huge hangars beside Washington Dulles Airport, built for the largest aircraft and spacecraft.",
+    "old": "Друга локација Националног музеја авијације и астронаутике, пар огромних хангара поред аеродрома Далас у Вашингтону, изграђених за највеће авионе и свемирске летелице.",
+    "new": "Друга локација Националног музеја авијације и астронаутике, пар огромних хангара поред вашингтонског аеродрома Далс, изграђених за највеће авионе и свемирске летелице."
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "comparison",
+    "en": "Half a light-year out. The Sun's gravitational reach extends roughly to the inner Oort cloud edge — beyond that, the galaxy's tides start to dominate. The Voyagers will take 30,000 years just to reach the inner boundary.",
+    "old": "Пола светлосне године даље. Сунчев гравитациони домет допире отприлике до унутрашње ивице Ортовог облака — иза ње почињу да преовладавају галактичке плиме. Летелицама Voyagers биће потребно 30.000 година само да стигну до унутрашње границе.",
+    "new": "Пола светлосне године даље. Сунчев гравитациони домет допире отприлике до унутрашње ивице Ортовог облака — иза ње почињу да преовладавају галактичке плиме. Летелицама Voyager биће потребно 30.000 година само да стигну до унутрашње границе."
+  },
+  {
+    "rel": "iss-visitors/htv_x.json",
+    "at": "function_detail",
+    "en": "Berthed via Canadarm2; pressurised + unpressurised payload; technology demonstration flights for future cislunar logistics.",
+    "old": "Привезује се помоћу Canadarm2; терет под притиском и терет изван притисног дела; летови за демонстрацију технологије за будућу цислунарну логистику.",
+    "new": "Привезује се помоћу Canadarm2; корисни терет под притиском и без притиска; летови за демонстрацију технологије за будућу цислунарну логистику."
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "comparison",
+    "en": "About 1/6th the distance from Earth to the Moon. Without a relay at L2, the entire lunar farside is a comms blackout — every spacecraft that ever landed there has needed one.",
+    "old": "Око 1/6 растојања од Земље до Месеца. Без релеја на L2, цела далека страна Месеца је комуникацијски мрак — свака летелица која је икада тамо слетела је имала потребу за њим.",
+    "new": "Око 1/6 растојања од Земље до Месеца. Без релеја у тачки L2 цела далека страна Месеца остаје без везе — релеј је био потребан свакој летелици која је икада тамо слетела."
+  },
+  {
+    "rel": "culture-doors/voyager-golden-record.json",
+    "at": "blurb",
+    "en": "Bolted to both Voyager spacecraft is a gold-plated record carrying greetings in 55 languages, music from Bach to Chuck Berry, and images of Earth — a message in a bottle now drifting beyond the Solar System toward the stars, meant for whoever, or whatever, might one day find it.",
+    "old": "На оба свемирска летелице Voyager привијен је позлаћени диск са поздравима на 55 језика, музиком од Баха до Чака Берија и сликама Земље — порука у боци која сада плута изван Сунчевог система ка звездама, намењена ономе, или ономе нечему, ко је једног дана пронађе.",
+    "new": "На обе летелице Voyager причвршћен је позлаћени диск са поздравима на 55 језика, музиком од Баха до Чака Берија и сликама Земље — порука у боци која сада плута изван Сунчевог система ка звездама, намењена ономе ко је једног дана пронађе — било да је то неко или нешто."
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "description",
+    "en": "The U.S. segment’s crew airlock—where suited astronauts step into vacuum without opening a docking port on a crew vehicle.",
+    "old": "Ваздушна комора за посаду америчког сегмента — место где астронаути у скафандерима излазе у вакуум, а да не морају да отварају пристајни прикључак на летелици са посадом.",
+    "new": "Ваздушна комора за посаду америчког сегмента — место где астронаути у скафандерима излазе у вакуум, а да не морају да отварају прикључак за спајање на летелици са посадом."
+  },
+  {
+    "rel": "iss-modules/columbus.json",
+    "at": "function_detail",
+    "en": "Materials science, biology, and fluid physics racks with crew-tended payloads and Earth observation capability.",
+    "old": "Ормари за науку о материјалима, биологију и физику флуида са теретом о коме се стара посада, као и могућност посматрања Земље.",
+    "new": "Ормари за науку о материјалима, биологију и физику флуида са корисним теретом о коме брине посада, као и могућност посматрања Земље."
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "description",
+    "en": "Russian docking compartment and EVA airlock used for years before removal—small but busy real estate on the aft complex.",
+    "old": "Руски пристајни одељак и преседаник за излазак у свемир, коришћен годинама пре уклањања — мали, али прометан простор на крменом делу комплекса.",
+    "new": "Руски одељак за спајање и ваздушна комора за излазак у свемир, коришћен годинама пре уклањања — мали, али прометан простор на крменом делу комплекса."
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "description",
+    "en": "Soyuz-FG (now retired) plus the Fregat upper stage — the standard ESA-Roscosmos pairing for medium interplanetary missions. The cryogenic-free design uses kerosene-LOX in the lower stages and Fregat's restartable hypergolic propellants for precise injection. Launched ESA's Mars Express (2003), the Cluster magnetospheric quartet, and most pre-Soyuz-2 ISS resupply flights.",
+    "old": "Soyuz-FG (сада повучена) уз горњи степен Fregat — стандардан пар агенција ESA и Roscosmos за средње међупланетарне мисије. Конструкција без криогених горива користи керозин и течни кисеоник у доњим степенима, а хиперголични погонски горива степена Fregat за поновно паљење омогућавају прецизно убацивање у путању. Њоме су лансирани Mars Express агенције ESA (2003), магнетосферски квартет Cluster и већина летова за снабдевање МСС пре појаве ракете Soyuz-2.",
+    "new": "Soyuz-FG (сада повучена) уз горњи степен Fregat — стандардан пар агенција ESA и Roscosmos за средње међупланетарне мисије. Конструкција без криогених горива користи керозин и течни кисеоник у доњим степенима, а хиперголична погонска горива степена Fregat, која се могу поново палити, омогућавају прецизно убацивање у путању. Њоме су лансирани Mars Express агенције ESA (2003), магнетосферски квартет Cluster и већина летова за снабдевање МСС пре појаве ракете Soyuz-2."
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "fact",
+    "en": "A 4-km main-belt C-type named for the discoverer of the Lucy hominid fossil. Added late in Lucy's mission design as a bonus en-route flyby (2025-04-20, 960 km closest approach at 13.4 km/s) — a chance to test instruments before the harder Trojan encounters.",
+    "old": "Астероид C-типа из главног астероидног појаса, пречника 4 km, назван по човеку који је открио фосил хоминида Lucy. Додат је касно, током пројектовања мисије Lucy, као бонус прелет на путу ка главним метама (20. 4. 2025, најмање растојање 960 km, при брзини од 13,4 km/s) — прилика да се инструменти испробају пре захтевнијих сусрета са тројанцима.",
+    "new": "Астероид C-типа из главног астероидног појаса, пречника 4 km, назван по човеку који је открио фосил хоминида Lucy. Додат је касно, током пројектовања мисије Lucy, као бонус прелет на путу ка главним метама (2025-04-20, најмање растојање 960 km, при брзини од 13,4 km/s) — прилика да се инструменти испробају пре захтевнијих сусрета са тројанцима."
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "story",
+    "en": "A ring of rocky leftovers between Mars and Jupiter — 2.2 to 3.2 AU. Hundreds of thousands of bodies catalogued; total estimated mass less than 4% of the Moon. Not the densely-packed asteroid field of science fiction: typical spacing between objects is about 1 million kilometres. The belt never accreted into a planet because Jupiter's gravity kept stirring the orbits, preventing collisions from sticking. Three Kirkwood gaps mark resonances with Jupiter where asteroids get cleared out.",
+    "old": "Прстен каменитих остатака између Марса и Јупитера — од 2,2 до 3,2 AU. Каталожено је стотине хиљада тела, а процењена укупна маса износи мање од 4% масе Месеца. То није густо збијено астероидно поље из научне фантастике: типично растојање између објеката износи око милион километара. Појас никада није обликовао планету јер је Јупитерова гравитација непрестано мешкала орбите и спречавала да се тела након судара споје. Три Кирквудове празнине обележавају резонанције са Јупитером у којима се астероиди чисте из појаса.",
+    "new": "Прстен каменитих остатака између Марса и Јупитера — од 2,2 до 3,2 AU. Каталогизовано је стотине хиљада тела, а процењена укупна маса износи мање од 4% масе Месеца. То није густо збијено астероидно поље из научне фантастике: типично растојање између објеката износи око милион километара. Појас се никада није сабио у планету јер је Јупитерова гравитација непрестано мешала орбите и спречавала да се тела након судара споје. Три Кирквудове празнине обележавају резонанције са Јупитером у којима се астероиди чисте из појаса."
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "description",
+    "en": "Two-stage stainless-steel vehicle with a Super Heavy booster (33 Raptor engines) and a Starship upper stage (6 Raptors). Architected around orbital propellant transfer: a tanker variant refills Starship in LEO, enabling ~100 t to Mars surface — orders of magnitude more than any prior launcher. Orbital flight programme began 2023.",
+    "old": "Двостепено возило од нерђајућег челика са ракетним појачивачем Super Heavy (33 мотора Raptor) и горњим степеном Starship (6 мотора Raptor). Конципирано је око преточа погонског горива у орбити: варијанта цистерне допуњава Starship у LEO, што омогућава пренос ~100 t на површину Марса — за редове величине више него било која претходна ракета-носач. Програм орбиталних летова почео је 2023. године.",
+    "new": "Двостепено возило од нерђајућег челика са ракетним појачивачем Super Heavy (33 мотора Raptor) и горњим степеном Starship (6 мотора Raptor). Конципирано је око претакања погонског горива у орбити: варијанта цистерне допуњава Starship у LEO, што омогућава пренос ~100 t на површину Марса — за редове величине више него било која претходна ракета-носач. Програм орбиталних летова почео је 2023. године."
+  }
+]

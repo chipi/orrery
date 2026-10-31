@@ -1,7 +1,7 @@
 {
   "name": "Nettuno",
   "type": "Gigante del ghiaccio",
-  "fact": "La Voyager 2 sorvolò Nettuno nel 1989 dopo un viaggio durato 12 anni. Rimane l'unico veicolo spaziale mai visitato.",
+  "fact": "La Voyager 2 sorvolò Nettuno nel 1989 dopo un viaggio di 12 anni. È tuttora l'unico veicolo spaziale ad averlo visitato.",
   "bio": "Il pianeta più ventoso: venti superficiali a 2.100 km/h. Scoperto tramite previsione matematica prima dell'osservazione diretta, perché l'orbita di Urano mostrava un'influenza gravitazionale invisibile.",
   "links": [
     {
@@ -34,7 +34,7 @@
     {
       "tab": "orbits",
       "section": "semi-major-axis",
-      "why": "A 30.07 UA di distanza media, Nettuno è così lontano che un singolo segnale luminoso in una direzione impiega 4 ore per percorso. Il Voyager 2 ha impiegato 12 anni per raggiungerlo."
+      "why": "A 30,07 au di distanza media, Nettuno è così lontano che un segnale luminoso impiega 4 ore per percorrere il tragitto in ciascuna direzione. Il Voyager 2 ha impiegato 12 anni per raggiungerlo."
     },
     {
       "tab": "planets",
@@ -44,7 +44,7 @@
     {
       "tab": "orbits",
       "section": "apsides",
-      "why": "La debole eccentricità di Nettuno di 0.0086 produce un'orbita così circolare che l'oscillazione perielio-afelio è inferiore a 200 milioni di km su un semiasse maggiore di 30 UA — una variazione dell'1.4 %."
+      "why": "La debole eccentricità di Nettuno, pari a 0,0086, produce un'orbita così circolare che l'oscillazione perielio-afelio è inferiore a 200 milioni di km su un semiasse maggiore di 30 au — una variazione dell'1,4 %."
     },
     {
       "tab": "planets",

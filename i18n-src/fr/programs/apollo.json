@@ -96,5 +96,14 @@
       "type": "prose",
       "md": "Et la note humaine qui mérite d'être gardée : ils l'ont fait en huit ans, sans jamais l'avoir fait auparavant, avec des ordinateurs de bord plus faibles qu'une sonnette moderne. Apollo est un argument solide qu'une mission claire, les bonnes personnes et une échéance honnête peuvent encore dépasser les probabilités — une chose utile à se rappeler la prochaine fois qu'un objectif semble impossible."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "La Lune — carte de la surface et sites d'alunissage Apollo",
+    "/science/transfers/free-return": "Trajectoire de retour libre",
+    "/science/mission-phases/trans-x-injection": "Injection translunaire",
+    "/science/mission-phases/edl": "Entrée, descente et atterrissage",
+    "/science/propulsion/tsiolkovsky": "L'équation de Tsiolkovski",
+    "/moon?site=apollo15": "Apollo 15 — Hadley–Apennine",
+    "/moon?site=apollo16": "Apollo 16 — hauts plateaux Descartes"
+  }
 }

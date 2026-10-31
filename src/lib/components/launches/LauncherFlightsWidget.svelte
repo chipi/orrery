@@ -10,7 +10,7 @@
    */
 
   import { onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import {
     loadUpcoming,
@@ -62,7 +62,7 @@
     {#if next}
       <article class="next">
         <h3 class="section-title">{m.launches_widget_next_flight_one()}</h3>
-        <a class="row" href="{base}/missions/launches?id={next.id}">
+        <a class="row" href={localHref(`/missions/launches?id=${next.id}`)}>
           <span class="when">{formatCountdown(next.net)}</span>
           <span class="payload">{next.mission_name ?? next.name}</span>
           {#if next.pad_name}<span class="pad">{next.pad_name}</span>{/if}
@@ -85,7 +85,7 @@
             </li>
           {/each}
         </ul>
-        <a class="see-all" href="{base}/missions/launches?vehicle={launcherId}"
+        <a class="see-all" href={localHref(`/missions/launches?vehicle=${launcherId}`)}
           >{m.launches_widget_see_all_for_vehicle()}</a
         >
       </article>

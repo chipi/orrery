@@ -28,20 +28,21 @@
     {
       "met": 135,
       "label": "TOCCO",
-      "note": "Atterraggio morbido al cratere Shioli 2024-01-19 15:20 UTC. Entro la precisione del target: ~55 m fuori centro.",
+      "note": "Atterraggio morbido al cratere Shioli 2024-01-19 15:20 UTC. Entro la precisione prevista: ~55 m fuori centro.",
       "type": "nominal"
     },
     {
       "met": 135.01,
       "label": "ATTERRAGGIO INCLINATO",
-      "note": "Lander appoggiato a testa in giù a causa di un'anomalia al motore durante la discesa finale. Pannelli solari inizialmente in ombra.",
+      "note": "Lander fermo con il muso rivolto verso il basso a causa di un'anomalia al motore durante la discesa finale. Pannelli solari inizialmente in ombra.",
       "type": "warning"
     },
     {
       "met": 144,
       "label": "POTENZA RIPRESA",
-      "note": "Cambiamenti dell'angolo del sole; i pannelli solari generano energia; le operazioni ripresero per un giorno lunare.",
+      "note": "L'angolo del Sole cambia; i pannelli solari generano energia; le operazioni riprendono per un giorno lunare.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "secondo stadio dell'H-IIA"
 }

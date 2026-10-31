@@ -16,13 +16,13 @@
     {
       "met": 150,
       "label": "मध्य-यात्रा",
-      "note": "TCM + NEXT-C ion-thruster प्रदर्शन फायरिंग।",
+      "note": "TCM + NEXT-C आयन थ्रस्टर के प्रदर्शनात्मक परीक्षण-प्रज्वलन।",
       "type": "nominal"
     },
     {
       "met": 306,
       "label": "दृष्टिकोण",
-      "note": "2022-09-26। SMART Nav प्रभाव से 4 घंटे पहले नियंत्रण लेता है।",
+      "note": "2022-09-26। टक्कर से 4 घंटे पहले SMART Nav नियंत्रण संभाल लेता है।",
       "type": "info"
     },
     {
@@ -37,5 +37,6 @@
       "note": "LICIACube + HST + JWST उत्क्षेप के धूम का अवलोकन करते हैं।",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "Falcon 9 Block 5 दूसरा चरण"
 }

@@ -16,6 +16,7 @@
 -->
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { localHref } from '$lib/locale';
   import { goto } from '$app/navigation';
   import * as m from '$lib/paraglide/messages';
   import { base } from '$app/paths';
@@ -125,7 +126,7 @@
         // pass raw user text to `track()` directly.
         trackSearchHit(query, pick.tab, pick.section);
         close();
-        void goto(`${base}/science/${pick.tab}/${pick.section}`);
+        void goto(localHref(`/science/${pick.tab}/${pick.section}`));
       }
     }
   }
@@ -170,7 +171,7 @@
             <a
               class="result"
               class:active={i === highlighted}
-              href="{base}/science/{r.tab}/{r.section}"
+              href={localHref(`/science/${r.tab}/${r.section}`)}
               onclick={() => close()}
               onmouseenter={() => (highlighted = i)}
               role="option"
@@ -183,14 +184,17 @@
           </li>
         {/each}
         {#if index && results.length === 0 && query.trim().length > 0}
-          <li class="empty">No matches for "{query}".</li>
+          <li class="empty">{m.science_search_no_match({ query })}</li>
         {/if}
         {#if !index}
-          <li class="empty">Loading…</li>
+          <li class="empty">{m.missions_loading()}</li>
         {/if}
       </ul>
       <div class="hint">
-        <kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close
+        <kbd>↑</kbd><kbd>↓</kbd>
+        {m.command_palette_hint_move()} · <kbd>Enter</kbd>
+        {m.command_palette_hint_open()} · <kbd>Esc</kbd>
+        {m.command_palette_hint_close()}
       </div>
     </div>
   </div>

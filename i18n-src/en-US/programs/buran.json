@@ -78,5 +78,9 @@
       "type": "prose",
       "md": "The second lesson is that engineering excellence cannot save a program from the loss of its purpose and its budget. Buran was, in real ways, a better design than the vehicle it answered — and it flew once. The American Shuttle, for all its flaws, flew for thirty years because it had missions to fly and money to fly them. A spacecraft is only as durable as the institutional will and funding behind it; without those, even a flawless flight is an ending rather than a beginning."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/space-shuttle": "Space Shuttle — the vehicle it answered",
+    "/fleet?focus=buran": "Fleet — Buran orbiter & Energia"
+  }
 }

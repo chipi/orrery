@@ -3,7 +3,7 @@
   "vehicle": "Atlas LV-3 Agena-D",
   "payload": "261 kg",
   "delta_v": "~3,6 km/s",
-  "type": "VOAR · VOAR",
+  "type": "SOBREVOO · REALIZADO",
   "first": "Primeira espaçonave a chegar a Marte e retornar imagens em close de outro planeta",
   "description": "A missão que acabou com os sonhos de um Marte habitável. As 22 imagens granuladas da Mariner 4, tiradas durante uma aproximação máxima de 25 minutos a 9.846 km de altitude, mostraram uma superfície com crateras semelhante à Lua - sem canais, sem vegetação, sem vida óbvia. A atmosfera era 100 vezes mais fina do que o esperado. A descoberta remodelou Marte na imaginação do público, de uma irmã-Terra para um mundo morto. O rastreamento da espaçonave também produziu a primeira medição da estrutura do vento solar entre os planetas.",
   "events": [
@@ -21,7 +21,7 @@
     },
     {
       "met": 228,
-      "label": "VOO DE MARTE",
+      "label": "SOBREVOO DE MARTE",
       "note": "Abordagem mais próxima 9.846 km. 22 imagens retornadas em 8 horas durante a reprodução de dados.",
       "type": "nominal"
     },
@@ -31,5 +31,6 @@
       "note": "As primeiras imagens em close de outro planeta retornaram à Terra.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "estágio superior Agena D"
 }

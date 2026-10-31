@@ -17,8 +17,9 @@
     {
       "met": 2243,
       "label": "INSERTION EN ORBITE AUTOUR DE JUPITER",
-      "note": "Mise à feu du moteur principal pour placer Galileo en orbite ; débute un tour de 8 ans consacré à l'étude scientifique des lunes.",
+      "note": "L'allumage du moteur principal place Galileo en orbite ; une tournée de 8 ans consacrée à la science des lunes commence.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Inertial Upper Stage (IUS, étage supérieur)"
 }

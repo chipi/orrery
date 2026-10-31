@@ -1,0 +1,9 @@
+[
+  {
+    "term": "burn",
+    "loc": "es",
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "why": "the Titan burned storable liquids = propellant consumption, not an engine firing"
+  }
+]

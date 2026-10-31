@@ -1,9 +1,9 @@
 {
-  "description": "Het geologisch meest actieve hemellichaam van het zonnestelsel. Getijdenwarmte van Jupiters zwaartekracht plus orbitale resonantie met Europa en Ganymedes pompt ongeveer 100 terawatt aan warmte in Io's binnenste — genoeg om ongeveer 400 actieve vulkanen aan te drijven en oppervlaktetemperaturen die variëren van -130 °C (bevroren zwaveldioxide) tot +1.600 °C (ultramaïsch lava). Het oppervlak wordt sneller opnieuw geschilderd dan impactinslagen het kunnen markeren. Loki Patera, een lavameer van 200 km, is het enkele meest krachtige vulkanische kenmerk van het zonnestelsel.",
+  "description": "Het geologisch meest actieve hemellichaam van het zonnestelsel. Getijdenverwarming door de zwaartekracht van Jupiter plus baanresonantie met Europa en Ganymedes pompt ongeveer 100 terawatt aan warmte in het binnenste van Io — genoeg om ongeveer 400 actieve vulkanen aan te drijven en oppervlaktetemperaturen die variëren van -130 °C (bevroren zwaveldioxide) tot +1.600 °C (ultramafische lava). Het oppervlak wordt sneller opnieuw 'geschilderd' dan inslagkraters het kunnen markeren. Loki Patera, een lavameer van 200 km, is het krachtigste vulkanische verschijnsel van het zonnestelsel.",
   "surface_composition": "Zwavel + zwaveldioxiderijp over een silicaatkorst; de oppervlaktelaag wordt regelmatig vernieuwd door vulkanische lavastromen — geen enkele inslagkrater blijft lang genoeg bestaan om zichtbaar te zijn.",
   "mission_visits": [
     "Voyager 1 — VS, 1979 (ontdekte actief vulkanisme)",
-    "Galileo orbiter — VS, 1995–2003 (meerdere dichte voorbijvluchten)",
+    "Galileo-ruimtesonde — VS, 1995–2003 (meerdere flybys van dichtbij)",
     "Juno — VS, 2023–2024 (dichtste benaderingen ooit)"
   ],
   "library_labels": {
@@ -16,7 +16,7 @@
     {
       "tab": "orbits",
       "section": "keplers-laws",
-      "why": "Io / Europa / Ganymedes zijn opgesloten in een 4:2:1 Laplace-resonantie — voor elke 4 banen van Io, maakt Europa er 2 en Ganymedes 1. De resonantie houdt de baan van Io niet-circulair."
+      "why": "Io, Europa en Ganymedes zitten vergrendeld in een Laplace-resonantie van 4:2:1 — op elke 4 banen van Io maakt Europa er 2 en Ganymedes 1. De resonantie houdt de baan van Io niet-circulair."
     },
     {
       "tab": "orbits",

@@ -1,0 +1,731 @@
+[
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "change",
+    "find": "MISSION SPATIALE HABITÉE",
+    "replace": "MISSION HABITÉE EN ORBITE TERRESTRE",
+    "why": "orbit dropped from CREWED EARTH-ORBIT"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: en faire le tour (circled the Earth)"
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "change",
+    "find": "VOL SPATIAL HABITÉ",
+    "replace": "VOL HABITÉ EN ORBITE TERRESTRE",
+    "why": "orbit dropped from CREWED EARTH-ORBIT"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.4.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "se rend-vous et se réarrime à Gumdrop",
+    "replace": "effectue un rendez-vous avec Gumdrop et s'y réarrime",
+    "why": "garbled 'se rend-vous'"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "un survol de gravité terrestre",
+    "replace": "une assistance gravitationnelle terrestre",
+    "why": "survol de gravité is wrong"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "cinq corrections de descente orbitale",
+    "replace": "cinq allumages d'abaissement d'orbite",
+    "why": "orbit-lowering burns"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "SURVOL DE GRAVITÉ TERRESTRE",
+    "replace": "ASSISTANCE GRAVITATIONNELLE TERRESTRE",
+    "why": "survol is flyby"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "un survol gravitationnel terrestre",
+    "replace": "une assistance gravitationnelle terrestre",
+    "why": "survol is flyby"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "SURVOL GRAVITATIONNEL TERRESTRE",
+    "replace": "ASSISTANCE GRAVITATIONNELLE TERRESTRE",
+    "why": "survol is flyby"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "trajectoire de survol gravitationnel délibérée",
+    "replace": "trajectoire d'assistance gravitationnelle délibérée",
+    "why": "survol is flyby"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "six assists gravitationnels",
+    "replace": "six assistances gravitationnelles",
+    "why": "anglicism, stems miss"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "ASSIST GRAVITATIONNEL DE LA TERRE",
+    "replace": "ASSISTANCE GRAVITATIONNELLE DE LA TERRE",
+    "why": "anglicism"
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned on pad = destroyed by fire, not an engine firing"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "pour une correction d'orbite",
+    "replace": "pour un allumage de correction d'orbite",
+    "why": "orbit-correction burn, burn dropped"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Combustion de 760",
+    "replace": "Allumage de 760",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "keep",
+    "why": "variant: mise à feu"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "INJECTION TRANS-MARTIENNE",
+    "replace": "ALLUMAGE D'INJECTION TRANS-MARTIENNE",
+    "why": "TMI BURN, burn dropped"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "TIRATION PÉRIGÉE 1",
+    "replace": "ALLUMAGE AU PÉRIGÉE 1",
+    "why": "garbled 'tiration'"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "six propulsions de rehaussement",
+    "replace": "six allumages de rehaussement",
+    "why": "burn rendered propulsion"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "La propulsion périgée finale",
+    "replace": "L'allumage final au périgée",
+    "why": "burn rendered propulsion"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Combustion du moteur solide",
+    "replace": "Allumage du moteur solide",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "La combustion du moteur",
+    "replace": "L'allumage du moteur",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "La combustion du moteur",
+    "replace": "L'allumage du moteur",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "INJECTION VERS MARS",
+    "replace": "ALLUMAGE D'INJECTION VERS MARS",
+    "why": "TMI BURN, burn dropped"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "BRÛLURE TMI",
+    "replace": "ALLUMAGE TMI",
+    "why": "skin-burn word"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "BRÛLURE TMI",
+    "replace": "ALLUMAGE TMI",
+    "why": "skin-burn word"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "BRÛLURE DE TEI",
+    "replace": "ALLUMAGE TEI",
+    "why": "skin-burn word"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "et brûle pour",
+    "replace": "et allume ses moteurs pour",
+    "why": "engine firing, not burning"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "La combustion du moteur",
+    "replace": "L'allumage du moteur",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Brûlure par injection trans-lunaire",
+    "replace": "Allumage d'injection trans-lunaire",
+    "why": "skin-burn word"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "une combustion à",
+    "replace": "un allumage à",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Combustion d'injection",
+    "replace": "Allumage d'injection",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "COMBUSTION DE RETOUR LIBRE",
+    "replace": "ALLUMAGE DE RETOUR LIBRE",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Combustion de 31",
+    "replace": "Allumage de 31",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "COMBUSTION PC+2",
+    "replace": "ALLUMAGE PC+2",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Combustion à",
+    "replace": "L'allumage à",
+    "why": "engine burn; article added for grammar"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Brûlage de mise en route translunaireΗ",
+    "replace": "Allumage d'injection translunaire",
+    "why": "burn word and stray Greek letter inside the term"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Brûlage SPS",
+    "replace": "Allumage SPS",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "aucune brûlure",
+    "replace": "aucun allumage",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "sur l'orbite lunaire",
+    "replace": "en orbite lunaire",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Dernier rehaussement trans-lunaire",
+    "replace": "Dernier allumage trans-lunaire",
+    "why": "burn rendered 'raising'"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "une brûlure par injection",
+    "replace": "un allumage d'injection",
+    "why": "skin-burn word"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "vehicle_stage",
+    "term": "burn",
+    "decision": "change",
+    "find": "(injection TLI)",
+    "replace": "(allumage TLI)",
+    "why": "TLI burn, burn dropped"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "brûlages",
+    "replace": "allumages",
+    "why": "burn word"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Combustion du moteur solide",
+    "replace": "Allumage du moteur solide",
+    "why": "engine burn"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.5.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "Le stage de descente Spider a été désorbitée",
+    "replace": "L'étage de descente Spider a été désorbité",
+    "why": "stage anglicism; participle agrees with masculine"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.5.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "le stage de montée",
+    "replace": "l'étage de montée",
+    "why": "stage anglicism"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "du stage d'ascension du LM",
+    "replace": "de l'étage d'ascension du LM",
+    "why": "stage anglicism"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "Le stage d'ascension de Snoopy",
+    "replace": "L'étage d'ascension de Snoopy",
+    "why": "stage anglicism"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "réservoirs de carburant",
+    "replace": "réservoirs de propergol",
+    "why": "propellant tanks, not fuel"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "du module de remontée",
+    "replace": "de l'étage de remontée",
+    "why": "ascent stage"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "lancement du module de remontée",
+    "replace": "lancement de l'étage de remontée",
+    "why": "ascent stage"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanceur (whole Proton-K launcher)"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "term": "stage",
+    "decision": "keep",
+    "why": "proper name 'Inertial Upper Stage' left in English as a vehicle name"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "transfert de propulseur",
+    "replace": "transfert de propergol",
+    "why": "propulseur is thruster"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "Le propulseur de retour",
+    "replace": "Le propergol de retour",
+    "why": "propulseur is thruster"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "transfert de propulseur",
+    "replace": "transfert de propergol",
+    "why": "propulseur is thruster"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "pour le propulseur aller-retour",
+    "replace": "pour le propergol aller-retour",
+    "why": "propulseur is thruster"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "épuisé le propulseur",
+    "replace": "épuisé le propergol",
+    "why": "propulseur is thruster; first 'propulseur' (thruster) is right"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.4.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "épuise le propulseur",
+    "replace": "épuise le propergol",
+    "why": "propulseur is thruster"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "moins de propulseur",
+    "replace": "moins de propergol",
+    "why": "propulseur is thruster"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: soute (payload bay)"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "propulsion ionique faible",
+    "replace": "propulsion ionique à faible poussée",
+    "why": "low-thrust, thrust dropped"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "propulsion ionique-électrique",
+    "replace": "poussée ionique-électrique",
+    "why": "thrust rendered propulsion"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "variant: propulsion ionique (ion propulsion)"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: premier étage (first-stage booster)"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VOL HABITÉ AUTOUR DE LA LUNE",
+    "replace": "SURVOL HABITÉ",
+    "why": "CREWED FLYBY"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INSERTION DE L'ORBITE DE MARS",
+    "replace": "INSERTION EN ORBITE DE MARS",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INSERTION DE L'ORBITE DE MARS",
+    "replace": "INSERTION EN ORBITE DE MARS",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INSERTION DE L'ORBITE DE MARS",
+    "replace": "INSERTION EN ORBITE DE MARS",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INSERTION DE L'ORBITE DE MARS",
+    "replace": "INSERTION EN ORBITE DE MARS",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Insertion de l'orbite",
+    "replace": "Insertion en orbite",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Insertion de l'orbite",
+    "replace": "Insertion en orbite",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "insertion d'orbite",
+    "replace": "insertion en orbite",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: insertion réussie en orbite lunaire"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.3.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Insertion de l'orbite",
+    "replace": "Insertion en orbite",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Insertion de l'orbite",
+    "replace": "Insertion en orbite",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Insertion de l'orbite",
+    "replace": "Insertion en orbite",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Insertion de l'orbite",
+    "replace": "Insertion en orbite",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Insertion de l'orbite",
+    "replace": "Insertion en orbite",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Insertion de l'orbite",
+    "replace": "Insertion en orbite",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Insertion de l'orbite",
+    "replace": "Insertion en orbite",
+    "why": "insertion en orbite"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Insertion de l'orbite",
+    "replace": "Insertion en orbite",
+    "why": "insertion en orbite"
+  }
+]

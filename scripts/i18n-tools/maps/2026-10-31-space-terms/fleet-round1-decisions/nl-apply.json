@@ -1,0 +1,314 @@
+[
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "dispatch",
+    "old": "Block I is de Apollo-hardware die nooit een bemanning heeft gehad, en deels de reden waarom de rest van het programma overleefde. Het was de eerste versie van de Command Module — bedoeld alleen voor onbemande en vroege aardbaantesten — en het droeg aannames uit 1966: een zuiverzuurstofcabine onder zeespiegelniveau-druk, een naar binnen openend luik, en interieurmaterialen zonder veel aandacht voor brand. Op 27 januari 1967 veroorzaakte een vonk op het lanceerplatform in seconden dodelijke omstandigheden, en de Apollo 1-bemanning stierf bij een test die iedereen routineus beschouwde. Block I werd met die les buiten werking gesteld; de Block II die naar de Maan ging was grotendeels de lijst van alles wat Block I fout deed.",
+    "new": "Block I is de Apollo-hardware die nooit een bemanning heeft gehad, en deels de reden waarom de rest van het programma overleefde. Het was de eerste versie van de Command Module — bedoeld alleen voor onbemande en vroege tests in een baan om de aarde — en het droeg aannames uit 1966: een zuiverzuurstofcabine onder zeespiegelniveau-druk, een naar binnen openend luik, en interieurmaterialen zonder veel aandacht voor brand. Op 27 januari 1967 veroorzaakte een vonk op het lanceerplatform in seconden dodelijke omstandigheden, en de Apollo 1-bemanning stierf bij een test die iedereen routineus beschouwde. Block I werd met die les buiten werking gesteld; de Block II die naar de Maan ging was grotendeels de lijst van alles wat Block I fout deed."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "description",
+    "old": "Block I was de eerste ontwerpiteratie van de Apollo Command and Service Module — bedoeld als zuiver aardbaantest voor de maanvaardige Block II. Zuiverzuurstofcabine onder druk van 16,7 psi vóór lancering (5 psi in vlucht); naar binnen openend luik afgesloten door luchtdruk-differentiaal. CSM-009 + CSM-011 vlogen onbemande suborbiale testen (AS-201 26 februari 1966 + AS-202 25 augustus 1966). CSM-017 en CSM-020 vlogen onbemand op Apollo 4 (9 november 1967) en Apollo 6 (4 april 1968) respectievelijk — Block I commandomodules op de eerste twee Saturn V-vluchten. CSM-012 — het Apollo 1-schip — werd verzegeld voor een Plugs-Out-test op 27 januari 1967 toen een laaivuur in de benedenuitrustingsbocht ontstak, de bemanning in seconden doodde; de cabine kon niet worden ontlast omdat het luik naar binnen opende tegen de piek tot 29 psi. De Apollo 204 Accident Review Board leidde tot het Block II-ontwerp: naar buiten openend eenheidsluik, niet-brandbare cabineMaterialen, stikstofrijke pre-lanceeratmosfeer, opnieuw ontworpen bekabelingssets. Geen Block I CSM vloog ooit bemand; Block II vloog Apollo 7 (1968) tot ASTP (1975).",
+    "new": "Block I was de eerste ontwerpiteratie van de Apollo Command and Service Module — bedoeld als zuiver testvoertuig in een baan om de aarde voor de maanvaardige Block II. Zuiverzuurstofcabine onder druk van 16,7 psi vóór lancering (5 psi in vlucht); naar binnen openend luik afgesloten door luchtdruk-differentiaal. CSM-009 + CSM-011 vlogen onbemande suborbiale testen (AS-201 26 februari 1966 + AS-202 25 augustus 1966). CSM-017 en CSM-020 vlogen onbemand op Apollo 4 (9 november 1967) en Apollo 6 (4 april 1968) respectievelijk — Block I commandomodules op de eerste twee Saturn V-vluchten. CSM-012 — het Apollo 1-schip — werd verzegeld voor een Plugs-Out-test op 27 januari 1967 toen een laaivuur in de benedenuitrustingsbocht ontstak, de bemanning in seconden doodde; de cabine kon niet worden ontlast omdat het luik naar binnen opende tegen de piek tot 29 psi. De Apollo 204 Accident Review Board leidde tot het Block II-ontwerp: naar buiten openend eenheidsluik, niet-brandbare cabineMaterialen, stikstofrijke pre-lanceeratmosfeer, opnieuw ontworpen bekabelingssets. Geen Block I CSM vloog ooit bemand; Block II vloog Apollo 7 (1968) tot ASTP (1975)."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "tagline",
+    "old": "Burans atmosferische analoog — equivalent van NASA's Enterprise. Vier jetmotoren, 24 atmosferische testvluchten 1985-88. Nooit in de ruimte",
+    "new": "Burans atmosferische analoog — equivalent van NASA's Enterprise. Vier jetmotoren, 24 atmosferische testvluchten 1985-88. Nooit in een baan om de aarde"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "best_known_for",
+    "old": "Burans atmosferische analoog; 24 jetvluchten 1985-88 in Zhukovsky; nooit naar de ruimte",
+    "new": "Burans atmosferische analoog; 24 jetvluchten 1985-88 in Zhukovsky; nooit in een baan om de aarde"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "description",
+    "old": "Het twee-persoons ruimtevaartuig dat NASA leerde hoe je kunt rendezvouzeren, koppelen en in de ruimte kunt lopen — de technieken die Apollo mogelijk maakten. Twee onbemande testfluchten (Gemini 1 en 2) in 1964–1965 gingen vooraf aan tien bemande missies (Gemini 3–12) in 1965–1966, elk een stap naar de Maan.",
+    "new": "Het twee-persoons ruimtevaartuig dat NASA leerde hoe je een rendez-vous uitvoert, koppelt en in de ruimte loopt — de technieken die Apollo mogelijk maakten. Twee onbemande testfluchten (Gemini 1 en 2) in 1964–1965 gingen vooraf aan tien bemande missies (Gemini 3–12) in 1965–1966, elk een stap naar de Maan."
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "description",
+    "old": "Het derde en laatste Sovjetmilitaire Almaz-station. Gelanceerd 1976-06-22 op een Proton-K, Salyut 5 herbergde twee bemanningen: Soyuz 21 (Volynov + Zjolobov, 49 dagen, 1976-07-06 tot 1976-08-24 — ingekort door stekende geuren die de bemanning toewees aan een gecorrodeerde zegel van de filmterugkeepcapsule) en Soyuz 24 (Gorbatko + Glazkov, 17 dagen, 1977-02-07 tot 1977-02-25 — eerste kosmonauten die de atmosfeer van een station ververselden via ventilatie + opnieuw vullen). Soyuz 23 (Zoedov + Rozjdestvenski, 1976-10-14) kon niet aanmeren nadat het Igla-ondersteuningssysteem niet meer functioneerde; de bemanning overleefde een landing met veel water in Lake Tengiz, de enige Sovjetwaterlanding. Salyut 5 was de laatste Almaz-missie — het programma werd gestopt na deorbitale afbraak van het station op 1977-08-08.",
+    "new": "Het derde en laatste Sovjetmilitaire Almaz-station. Gelanceerd 1976-06-22 op een Proton-K, Salyut 5 herbergde twee bemanningen: Soyuz 21 (Volynov + Zjolobov, 49 dagen, 1976-07-06 tot 1976-08-24 — ingekort door stekende geuren die de bemanning toewees aan een gecorrodeerde zegel van de filmterugkeepcapsule) en Soyuz 24 (Gorbatko + Glazkov, 17 dagen, 1977-02-07 tot 1977-02-25 — eerste kosmonauten die de atmosfeer van een station ververselden via ventilatie + opnieuw vullen). Soyuz 23 (Zoedov + Rozjdestvenski, 1976-10-14) kon niet koppelen nadat het Igla-rendez-voussysteem niet meer functioneerde; de bemanning overleefde een landing met veel water in Lake Tengiz, de enige Sovjetwaterlanding. Salyut 5 was de laatste Almaz-missie — het programma werd gestopt na deorbitale afbraak van het station op 1977-08-08."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "description",
+    "old": "De huidige Soyuz-generatie, in dienst sinds 2016. Nieuwe software en GLONASS/GPS-ondersteunde rendez-vous maakt ISS-aanduikeling mogelijk in slechts 3 uur. Onderdeel van de Soyuz-familie — de meest gebruikte bemande ruimtevaartuiglijn in de geschiedenis.",
+    "new": "De huidige Soyuz-generatie, in dienst sinds 2016. Nieuwe software en GLONASS/GPS-ondersteunde rendez-vous maakt ISS-koppeling mogelijk in slechts 3 uur. Onderdeel van de Soyuz-familie — de meest gebruikte bemande ruimtevaartuiglijn in de geschiedenis."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+    "at": "description",
+    "old": "De Mir-era Soyuz (1986–2002), met vernieuwde avionica en het nieuwe Kurs-systeem voor automatisch aanmeren. Voerde gedurende 15 jaar Sovjet-, Russische en cosmonauten van partnerlanden naar Mir.",
+    "new": "De Mir-era Soyuz (1986–2002), met vernieuwde avionica en het nieuwe Kurs-systeem voor automatisch koppelen. Voerde gedurende 15 jaar Sovjet-, Russische en cosmonauten van partnerlanden naar Mir."
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "old": "Gezamenlijke ESA + JAXA-missie. Gelanceerd op 2018-10-20 met een Ariane 5 ECA. De Mercury Transfer Module voert de stack mee op een 7-jarige vliegbaan (1 aardvoorbijgang + 2 Venusvoorbijgangen + 6 Mercuriusvoorbijgangen) voordat Mercuriusorbitinsertion plaatsvindt op 2026-11-21. Bij aankomst scheiden de twee wetenschappelijke orbiters zich: de Mercury Planetary Orbiter (MPO) van ESA vliegt een polaire baan van 480 × 1500 km met 11 instrumenten voor oppervlaktesamenstelling, topografie, zwaartekrachtveld en exosfeer; Mio van JAXA (Mercury Magnetospheric Orbiter) vliegt een polaire baan van 590 × 11 640 km met 5 instrumenten voor de magnetosfeer en plasma. Samen zijn zij de eerste Europese + Japanse ruimtevaartuigen ooit in een Mercuriusbaan.",
+    "new": "Gezamenlijke ESA + JAXA-missie. Gelanceerd op 2018-10-20 met een Ariane 5 ECA. De Mercury Transfer Module voert de stack mee op een 7-jarige flyby-cruise (1 zwaartekrachtassist bij de Aarde + 2 bij Venus + 6 bij Mercurius) voordat Mercuriusbaaninsertie plaatsvindt op 2026-11-21. Bij aankomst scheiden de twee wetenschappelijke orbiters zich: de Mercury Planetary Orbiter (MPO) van ESA vliegt een polaire baan van 480 × 1500 km met 11 instrumenten voor oppervlaktesamenstelling, topografie, zwaartekrachtveld en exosfeer; Mio van JAXA (Mercury Magnetospheric Orbiter) vliegt een polaire baan van 590 × 11 640 km met 5 instrumenten voor de magnetosfeer en plasma. Samen zijn zij de eerste Europese + Japanse ruimtevaartuigen ooit in een Mercuriusbaan."
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "old": "Jupiter Icy Moons Explorer. Gelanceerd op 14-04-2023 met een Ariane 5 ECA+ vanuit Kourou voor een cruise van 8,5 jaar via Aarde-Venus-Aarde-Aarde-zwaartekrachtsondersteuning, met Jupiter-aankomst in juli 2031. In het Jupiter-systeem voert JUICE ~35 flybys uit van Europa, Ganymedes en Callisto voor het in 2034 binnentreden van een Ganymedes-baan — het eerste ruimtevaartuig ooit dat een andere maan dan die van de Aarde omcirkelt. Tien instrumenten waaronder de ijs-penetrerende radar RIME.",
+    "new": "Jupiter Icy Moons Explorer. Gelanceerd op 14-04-2023 met een Ariane 5 ECA+ vanuit Kourou voor een cruise van 8,5 jaar via Aarde-Venus-Aarde-Aarde-zwaartekrachtassists, met Jupiter-aankomst in juli 2031. In het Jupiter-systeem voert JUICE ~35 flybys uit van Europa, Ganymedes en Callisto voor het in 2034 binnentreden van een Ganymedes-baan — het eerste ruimtevaartuig ooit dat een andere maan dan die van de Aarde omcirkelt. Nuttige lading van tien instrumenten, waaronder de ijsdoordringende radar RIME, spectrometers, een magnetometer en een laserhoogtemeter, geoptimaliseerd om de drie ijsmanen te karakteriseren als potentieel bewoonbare werelden met een oceaan onder het oppervlak."
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "tagline",
+    "old": "Eerste Mercurius-orbiter — 6 planetaire zwaartekrachtsondersteuningen over 6,6 jaar voor inschieting in 2011",
+    "new": "Eerste Mercurius-orbiter — 6 planetaire zwaartekrachtassists over 6,6 jaar voor inschieting in 2011"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "old": "NASA Discovery-missie (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Gelanceerd op 03-08-2004 met een Delta II 7925H-9.5. De cruise van 6,6 jaar gebruikte 6 zwaartekrachtsondersteuningen (1 Aarde, 2 Venus, 3 Mercurius) om ~5 km/s heliocentrische energie te verliezen. Mercurius-baaninschieting op 18-03-2011. Ontdekkingen: waterijs in permanent beschaduwde poolkraters, organisch-rijk donker materiaal aan de polen, magneetveld verschoven vanaf het planeetmiddelpunt. Stortte op 30-04-2015 op Mercurius na uitputting van het stuwstof.",
+    "new": "NASA Discovery-missie (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Gelanceerd op 03-08-2004 met een Delta II 7925H-9.5. De cruise van 6,6 jaar gebruikte 6 zwaartekrachtassists (1 Aarde, 2 Venus, 3 Mercurius) om ~5 km/s heliocentrische energie te verliezen — directe baaninsertie zou een onmogelijke delta-v hebben vereist. Mercurius-baaninschieting op 18-03-2011. Ontdekkingen: waterijs in permanent beschaduwde poolkraters, organisch-rijk donker materiaal aan de polen, magneetveld verschoven vanaf het planeetmiddelpunt. Stortte op 30-04-2015 op Mercurius na uitputting van het stuwstof."
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "tagline",
+    "old": "Eerste sonde die Saturnus bereikte — Jupiter-flyby 1974 en daarna Saturnus 1979 via zwaartekrachtsondersteuning",
+    "new": "Eerste sonde die Saturnus bereikte — Jupiter-flyby 1974 en daarna Saturnus 1979 via een zwaartekrachtassist"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "old": "Spin-gestabiliseerde RTG-aangedreven sonde (~259 kg), zus van Pioneer 10 met dezelfde bus en Pioneer Plaque. Gelanceerd op 06-04-1973 met Atlas SLV-3D Centaur D-1A + Star-37E vanaf Cape Canaveral LC-36B. Jupiter-flyby op 03-12-1974 op 43 000 km — de dichtstbij van elke Pioneer-ontmoeting, leverde de eerste poolregio-beelden en de zwaartekrachtsondersteuning nodig voor Saturnus. Saturnus-ontmoeting op 01-09-1979 op 21 000 km van de wolkenkoppen — eerste gedetailleerde beelden van het ringensysteem. Heliosfeer-waarnemingen voortgezet tot het laatste contact op 24-11-1995. Nu ~93 AE van de Zon, op weg naar de Arend.",
+    "new": "Spin-gestabiliseerde RTG-aangedreven sonde (~259 kg), zus van Pioneer 10 met dezelfde bus en Pioneer Plaque. Gelanceerd op 06-04-1973 met Atlas SLV-3D Centaur D-1A + Star-37E vanaf Cape Canaveral LC-36B. Jupiter-flyby op 03-12-1974 op 43 000 km — de dichtstbij van elke Pioneer-ontmoeting, leverde de eerste poolregio-beelden en de zwaartekrachtassist nodig voor Saturnus. Saturnus-ontmoeting op 01-09-1979 op 21 000 km van de wolkenkoppen — eerste gedetailleerde beelden van het ringensysteem. Heliosfeer-waarnemingen voortgezet tot het laatste contact op 24-11-1995. Nu ~93 AE van de Zon, op weg naar de Arend."
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "old": "NASA's missie naar een ~230-km M-type asteroïde waarvan wordt aangenomen dat het de blootgestelde metalen kern is van een gedifferentieerde proto-planeet. Gelanceerd op 2023-10-13 op een Falcon Heavy vanaf Kennedy LC-39A; gebruikt vier SPT-140 Hall-effect ionenstraalaandrijvingen als primaire kruisfoortdrijving en een Mars-zwaartekrachtsteun in 2026 op weg naar een ontmoeting met Psyche in 2029. Draagt een magnetometer, multispectrale imager en gamma-straling + neutronenspectrometer.",
+    "new": "NASA's missie naar een ~230-km M-type asteroïde waarvan wordt aangenomen dat het de blootgestelde metalen kern is van een gedifferentieerde proto-planeet. Gelanceerd op 2023-10-13 op een Falcon Heavy vanaf Kennedy LC-39A; gebruikt vier SPT-140 Hall-effect ionenstraalaandrijvingen als primaire kruisfoortdrijving en een Mars-zwaartekrachtassist in 2026 op weg naar een ontmoeting met Psyche in 2029. Draagt een magnetometer, multispectrale imager en gamma-straling + neutronenspectrometer."
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "tagline",
+    "old": "Eerste sonde die de zonnepolen vanaf boven en onder de ecliptica observeerde — Jupiter-zwaartekrachtsondersteuning 1992",
+    "new": "Eerste sonde die de zonnepolen vanaf boven en onder de ecliptica observeerde — Jupiter-zwaartekrachtassist 1992"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "description",
+    "old": "De Merlin 1D van SpaceX is de motor die de herbruikbare Falcon 9 mogelijk maakte. Negen stuks bevinden zich in cluster op de eerste trap van de Falcon 9, werkend volgens een gas-generator-cyclus op LOX en RP-1, waarbij de middenmotoren ook gebruikt worden voor inzet- en landingsbranden. Voor het eerst gevlogen in september 2013, groeide de Merlin 1D uit tot een hoogfrequente werkpaard: afzonderlijke motoren hebben meer dan twintig vluchten per stuk geaccumuleerd, een hergebruiksrecord dat veranderde wat de industrie economisch haalbaar achtte. De vacuümvariant, Merlin 1D Vacuum, drijft de bovenste trap van Falcon 9 aan met een grotere mondstuk geoptimaliseerd voor de bijna-vacuümomgeving.",
+    "new": "De Merlin 1D van SpaceX is de motor die de herbruikbare Falcon 9 mogelijk maakte. Negen stuks bevinden zich in cluster op de eerste trap van de Falcon 9, werkend volgens een gas-generator-cyclus op LOX en RP-1, waarbij de middenmotoren ook gebruikt worden voor ontstekingen bij terugkeer en landing. Voor het eerst gevlogen in september 2013, groeide de Merlin 1D uit tot een hoogfrequente werkpaard: afzonderlijke motoren hebben meer dan twintig vluchten per stuk geaccumuleerd, een hergebruiksrecord dat veranderde wat de industrie economisch haalbaar achtte. De vacuümvariant, Merlin 1D Vacuum, drijft de bovenste trap van Falcon 9 aan met een grotere mondstuk geoptimaliseerd voor de bijna-vacuümomgeving."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "dispatch",
+    "old": "De Lunar Module was het eerste echte ruimtevaartuig — het eerste bemande voertuig gebouwd om alleen in vacuüm te vliegen, nooit door een atmosfeer, zodat het gestroomlijndheid en hitteschilden kon weggooien en precies kon worden wat het was: een machine voor één taak. Grumman splitste het in tweeën — een afdaalmodule die de bemanning naar beneden bracht en vervolgens diende als lanceerplatform voor een afzonderlijke stijgmodule die hen weer naar boven bracht — omdat die fasering de enige manier was om het massabudget voor een maanlanding rond te krijgen. Het vloog op spinachtige poten, zijn huid op sommige plekken zo dun als een paar lagen folie. Niets daarvoor had mensen op een andere wereld gezet, en zijn lomp ogende, doelgebouwde vorm is simpelweg hoe een ruimtevaartuig eruitziet wanneer het nooit de thuiskomst hoeft te overleven.",
+    "new": "De Lunar Module was het eerste echte ruimtevaartuig — het eerste bemande voertuig gebouwd om alleen in vacuüm te vliegen, nooit door een atmosfeer, zodat het gestroomlijndheid en hitteschilden kon weggooien en precies kon worden wat het was: een machine voor één taak. Grumman splitste het in tweeën — een afdalingstrap die de bemanning naar beneden bracht en vervolgens diende als lanceerplatform voor een afzonderlijke opstijgtrap die hen weer naar boven bracht — omdat die opdeling in trappen de enige manier was om het massabudget voor een maanlanding rond te krijgen. Het vloog op spinachtige poten, zijn huid op sommige plekken zo dun als een paar lagen folie. Niets daarvoor had mensen op een andere wereld gezet, en zijn lomp ogende, doelgebouwde vorm is simpelweg hoe een ruimtevaartuig eruitziet wanneer het nooit de thuiskomst hoeft te overleven."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "old": "De enige bemande maanlander ooit gebouwd. Zes succesvolle landingen tussen 1969 en 1972 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — plus Aquarius, die dienst deed als reddingsboot van Apollo 13. De afdaling van het podium blijft op de Maan; het klimmende podium keerde terug naar de CSM in de maanbaan.",
+    "new": "De enige bemande maanlander ooit gebouwd. Zes succesvolle landingen tussen 1969 en 1972 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — plus Aquarius, die dienst deed als reddingsboot van Apollo 13. De afdalingstrap blijft op de Maan; de opstijgtrap keerde terug naar de CSM in de maanbaan."
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "old": "Toen technologieoverdracht beperkingen India in de vroege jaren 1990 verhinderde cryogene motortechnologie te verwerven, ontwikkelde het Liquid Propulsion Systems Centre van ISRO er een helemaal zelf. De CE-20 is het resultaat: een gas-generatorcyclus die LOX en LH2 verbrandt en die de bovenstap van LVM3, Indiaś zwaarste operationele raket, aandrijft. Het vloog voor het eerst op 5 juni 2017 op de GSLV Mk III D1 ontwikkelingsvlucht, wat een twintig jaar durend ontwikkelingsprogramma afsloot dat een geopolitieke hindernis in onafhankelijke mogelijkheid omzette. De CE-20 is de motor die Gaganyaan — Indiaś eerste bemande missie — naar baan zal brengen.",
+    "new": "Toen technologieoverdracht beperkingen India in de vroege jaren 1990 verhinderde cryogene motortechnologie te verwerven, ontwikkelde het Liquid Propulsion Systems Centre van ISRO er een helemaal zelf. De CE-20 is het resultaat: een gas-generatorcyclus die LOX en LH2 verbrandt en die de bovenste trap van LVM3, Indiaś zwaarste operationele raket, aandrijft. Het vloog voor het eerst op 5 juni 2017 op de GSLV Mk III D1 ontwikkelingsvlucht, wat een twintig jaar durend ontwikkelingsprogramma afsloot dat een geopolitieke hindernis in onafhankelijke mogelijkheid omzette. De CE-20 is de motor die Gaganyaan — Indiaś eerste bemande missie — naar baan zal brengen."
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "best_known_for",
+    "old": "Indiaś eerste inheemse cryogene motor — de LVM3 bovenstap",
+    "new": "Indiaś eerste inheemse cryogene motor — de LVM3 bovenste trap"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "tagline",
+    "old": "Arianes cryogene boventraptmotor, drie decennia in dienst",
+    "new": "Arianes cryogene boventrap, drie decennia in dienst"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "best_known_for",
+    "old": "Europese cryogene boventraptmotor — Arianes workhorse voor translunairtransport",
+    "new": "Europese cryogene motor voor de bovenste trap — Arianes workhorse voor translunairtransport"
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "best_known_for",
+    "old": "Herstart-waterstofmotor in de hogere atmosfeer die Apollo naar translunaas stuurde",
+    "new": "Herstart-waterstofmotor voor de bovenste trap die Apollo naar translunaas stuurde"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "tagline",
+    "old": "Japans restartbare boventrip, in gebruik op H-IIA tot H3",
+    "new": "Japans restartbare bovenste trap, in gebruik op H-IIA tot H3"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "description",
+    "old": "De LE-5B is de cryogene boventrip-motor die twee generaties Japanse draagraket-systemen verbonden heeft. Met een expander-bleed-cyclus op LOX en LH2 kan het in vlucht opnieuw worden gestart — een vereiste voor het plaatsen van lading in nauwkeurige banen na een kustefase. Het vloog voor het eerst op H-IIA in augustus 2001 en is sindsdien geüpgraded naar de LE-5B-3 voor voortgezet gebruik op H3, wat Japan ononderbroken boventrip-continuïteit geeft vanaf het ISS-montageperiode tot vandaag. De combinatie van herstart-vermogen en de schone eenvoud van de expander-bleed-cyclus maakten het de natuurlijke boventrip-aanvulling op zowel de LE-7A als de LE-9.",
+    "new": "De LE-5B is de cryogene motor voor de bovenste trap die twee generaties Japanse draagraket-systemen verbonden heeft. Met een expander-bleed-cyclus op LOX en LH2 kan het in vlucht opnieuw worden gestart — een vereiste voor het plaatsen van lading in nauwkeurige banen na een kustefase. Het vloog voor het eerst op H-IIA in augustus 2001 en is sindsdien geüpgraded naar de LE-5B-3 voor voortgezet gebruik op H3, wat Japan ononderbroken continuïteit van de bovenste trap geeft vanaf het ISS-montageperiode tot vandaag. De combinatie van herstart-vermogen en de schone eenvoud van de expander-bleed-cyclus maakten het de natuurlijke aanvulling voor de bovenste trap op zowel de LE-7A als de LE-9."
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "best_known_for",
+    "old": "Japans restartbare cryogene boventrip — H-IIA tot H3",
+    "new": "Japans restartbare cryogene bovenste trap — H-IIA tot H3"
+  },
+  {
+    "rel": "fleet/engine/rs-25.json",
+    "at": "description",
+    "old": "De RS-25 was de motor die het Space Shuttle Main Engine-programma een decennium aan het perfectioneren was: een staged-combustion-cyclus op LOX en LH2 die kon worden gereduceerd, opnieuw kon starten en kon worden gereviseerd voor de volgende vlucht. Over meer dan 135 Space Shuttle-missies vanaf april 1981 werd een vrijwel perfecte operationele geschiedenis opgebouwd. De motoren werden teruggewonnen, geïnspecteerd en opnieuw gebruikt — een ambitie die geen eerdere raketmotor op dit vermogensniveau had bereikt. Na de pensionering van de Shuttle werd de voorraad opnieuw gekwalificeerd en geschikt gemaakt voor NASA's Space Launch System, waar RS-25s nu de kernfase van SLS aandrijven.",
+    "new": "De RS-25 was de motor die het Space Shuttle Main Engine-programma een decennium aan het perfectioneren was: een staged-combustion-cyclus op LOX en LH2 die kon worden gereduceerd, opnieuw kon starten en kon worden gereviseerd voor de volgende vlucht. Over meer dan 135 Space Shuttle-missies vanaf april 1981 werd een vrijwel perfecte operationele geschiedenis opgebouwd. De motoren werden teruggewonnen, geïnspecteerd en opnieuw gebruikt — een ambitie die geen eerdere raketmotor op dit vermogensniveau had bereikt. Na de pensionering van de Shuttle werd de voorraad opnieuw gekwalificeerd en geschikt gemaakt voor NASA's Space Launch System, waar RS-25s nu de kerntrap van SLS aandrijven."
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "description",
+    "old": "De YF-100 is de motor die Chinas lanceercapaciteit naar het prestatieniveau tilde dat Rusland en de Verenigde Staten decennialang hadden bezet. Ontwikkeld door AALPT in Xi'an, past het zuurstofrijke staged combustion toe op LOX en RP-1 — de thermodynamische cyclus die de meeste energie uit kerosinebrandstof haalt — en vloog voor het eerst op 20 september 2015. Twee YF-100's drijven de kernfase van Long March 5 voort, Chinas zwaarste operationele raket, en geclusterde varianten vliegen op Long March 6 en Long March 7. De YF-100 ondersteunt Chinas maanprogramma, de bevoorradingsactiviteiten van zijn ruimtestation en zijn groeiend commercieel lanceerprogramma.",
+    "new": "De YF-100 is de motor die Chinas lanceercapaciteit naar het prestatieniveau tilde dat Rusland en de Verenigde Staten decennialang hadden bezet. Ontwikkeld door AALPT in Xi'an, past het zuurstofrijke staged combustion toe op LOX en RP-1 — de thermodynamische cyclus die de meeste energie uit kerosinebrandstof haalt — en vloog voor het eerst op 20 september 2015. Twee YF-100's drijven de kerntrap van Long March 5 voort, Chinas zwaarste operationele raket, en geclusterde varianten vliegen op Long March 6 en Long March 7. De YF-100 ondersteunt Chinas maanprogramma, de bevoorradingsactiviteiten van zijn ruimtestation en zijn groeiend commercieel lanceerprogramma."
+  },
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "description",
+    "old": "De laatste succesvolle Sovjet-maanmissie en de laatste monsterterugkeerlander op de maan tot Chang'e 5 in 2020 — een gat van 44 jaar. Gelanceerd 1976-08-09 vanaf Bajkonoer op een Proton-K, Luna 24 landde zacht in Mare Crisium (12,7° N, 62,2° O) op 1976-08-18, boorde tot een diepte van 2,25 m met behulp van zijn roterend-percussieve boor, haalde een 1,6 m kernmonster op, en liftde af met de opstijgingsfase die 170,1 g maanregoliet naar West-Siberië (~200 km zuidoost van Surgut) terugbracht op 1976-08-22. Sovjetwetenschappers van het Vernadsky Institute bevestigden de aanwezigheid van water (~0,1 % naar massa) in de monsters in een artikel uit 1978 dat grotendeels werd genegeerd in het Westen tot LCROSS en Chandrayaan-1 (2008-09) maanwater opnieuw bevestigden.",
+    "new": "De laatste succesvolle Sovjet-maanmissie en de laatste monsterterugkeerlander op de maan tot Chang'e 5 in 2020 — een gat van 44 jaar. Gelanceerd 1976-08-09 vanaf Bajkonoer op een Proton-K, Luna 24 landde zacht in Mare Crisium (12,7° N, 62,2° O) op 1976-08-18, boorde tot een diepte van 2,25 m met behulp van zijn roterend-percussieve boor, haalde een 1,6 m kernmonster op, en liftde af met de opstijgtrap die 170,1 g maanregoliet naar West-Siberië (~200 km zuidoost van Surgut) terugbracht op 1976-08-22. Sovjetwetenschappers van het Vernadsky Institute bevestigden de aanwezigheid van water (~0,1 % naar massa) in de monsters in een artikel uit 1978 dat grotendeels werd genegeerd in het Westen tot LCROSS en Chandrayaan-1 (2008-09) maanwater opnieuw bevestigden."
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "description",
+    "old": "Tweestadia-opvolger van United Launch Alliance op Atlas V en Delta IV. Aangedreven door twee BE-4 methaanvuurstofmotoren op het eerste stadium en Centaur V (RL10) erboven. Eerste vlucht 2024-01-08 droeg Astrobotic Peregrine. Staat gepland om gecertificeerd te worden voor National Security Space Launch Phase 3-contracten en is voorzien als lanceringsvehicule voor Sierra Space's Dream Chaser vrachtruimtevliegtuig.",
+    "new": "Tweetraps-opvolger van United Launch Alliance op Atlas V en Delta IV. Aangedreven door twee BE-4 methaanvuurstofmotoren in de eerste trap en Centaur V (RL10) erboven. Eerste vlucht 2024-01-08 droeg Astrobotic Peregrine. Staat gepland om gecertificeerd te worden voor National Security Space Launch Phase 3-contracten en is voorzien als lanceringsvehicule voor Sierra Space's Dream Chaser vrachtruimtevliegtuig."
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "description",
+    "old": "The Lunar Roving Vehicle — de eerste bemande rover. Drie Apollo's (15, 16, 17) gebruikten het voor hun oppervlakverkenning, waarmee zij tot 35,9 km per missie aflegden (Apollo 17 recordhouder). Gebouwd door Boeing en Delco; opgeklapt in de afdalingsfase van de LM.",
+    "new": "The Lunar Roving Vehicle — de eerste bemande rover. Drie Apollo's (15, 16, 17) gebruikten het voor hun oppervlakverkenning, waarmee zij tot 35,9 km per missie aflegden (Apollo 17 recordhouder). Gebouwd door Boeing en Delco; opgeklapt in de afdalingstrap van de LM."
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "dispatch",
+    "old": "Skylab was Amerika's eerste ruimtestation, en een van de grootste improvisaties uit de geschiedenis — een volledig orbitaal werkplaats gebouwd in de lege waterstoftank van een verbruikte Saturn V-bovenfase. In plaats van een station vanaf nul te ontwerpen, verbouwde NASA de hardware die overgebleven was van de geannuleerde maanlandingen tot een laboratorium ter grootte van een huis met bemanningsverblijven, een douche en een bemand zonneobservatorium. Bijna vernietigd bij de lancering toen het zonnescherm loskwam, werd het gered door de geïmproviseerde reparaties van de eerste bemanning en bewees het vervolgens wat elk later station veronderstelde: dat mensen maanden in een baan om de aarde kunnen leven en werken, en hun ruimtevaartuig kunnen repareren wanneer het kapot gaat.",
+    "new": "Skylab was Amerika's eerste ruimtestation, en een van de grootste improvisaties uit de geschiedenis — een volledig orbitaal werkplaats gebouwd in de lege waterstoftank van een verbruikte bovenste trap van een Saturn V. In plaats van een station vanaf nul te ontwerpen, verbouwde NASA de hardware die overgebleven was van de geannuleerde maanlandingen tot een laboratorium ter grootte van een huis met bemanningsverblijven, een douche en een bemand zonneobservatorium. Bijna vernietigd bij de lancering toen het zonnescherm loskwam, werd het gered door de geïmproviseerde reparaties van de eerste bemanning en bewees het vervolgens wat elk later station veronderstelde: dat mensen maanden in een baan om de aarde kunnen leven en werken, en hun ruimtevaartuig kunnen repareren wanneer het kapot gaat."
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "description",
+    "old": "Amerika's eerste ruimtestation, gebouwd vanuit een Saturnus V S-IVB bovenste fase. Tussen 1973 en 1974 leefden drie bemanningen van elk drie aan boord, die zonnewaarnemingen en nul-g experimenten uitvoerden. In 1979 ging hij ongecontroleerd terug naar Australië.",
+    "new": "Amerika's eerste ruimtestation, gebouwd vanuit een Saturnus V S-IVB bovenste trap. Tussen 1973 en 1974 leefden drie bemanningen van elk drie aan boord, die zonnewaarnemingen en nul-g experimenten uitvoerden. In 1979 ging hij ongecontroleerd terug naar Australië."
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "old": "De LE-7A is de motor die Japan een volledig inheemse zware-liftcapaciteit gaf. Ontwikkeld door Mitsubishi Heavy Industries voor JAXA, werkt het op basis van een staged-combustion-cyclus met LOX en LH2 — de thermodynamische benadering die maximale efficiëntie uit waterstofpropellant haalt — en vloog voor het eerst in augustus 2001 op H-IIA als een verfijnd opvolger van LE-7. Het herontwerp adresseerde turbopompproblemen die vroege H-II-mislukkingen hadden veroorzaakt, en LE-7A zou vervolgens de operationele carrières van H-IIA en H-IIB tot 2024 bepalen, lancerend Japans HTV-vrachtschepen naar ISS en de ALOS-aardobservatiesatellieten van JAXA.",
+    "new": "De LE-7A is de motor die Japan een volledig inheemse zware-liftcapaciteit gaf. Ontwikkeld door Mitsubishi Heavy Industries voor JAXA, werkt het op basis van een staged-combustion-cyclus met LOX en LH2 — de thermodynamische benadering die maximale efficiëntie uit waterstofdrijfstof haalt — en vloog voor het eerst in augustus 2001 op H-IIA als een verfijnd opvolger van LE-7. Het herontwerp adresseerde turbopompproblemen die vroege H-II-mislukkingen hadden veroorzaakt, en LE-7A zou vervolgens de operationele carrières van H-IIA en H-IIB tot 2024 bepalen, lancerend Japans HTV-vrachtschepen naar ISS en de ALOS-aardobservatiesatellieten van JAXA."
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "description",
+    "old": "Op 5 mei 1961 voerde Alan Shepard een Mercury-Redstone-raket naar een hoogte van 187 kilometer en terug — wat hem de eerste Amerikaan in de ruimte maakte — en de motor die hem omhoog bracht was de Rocketdyne A-7. Afgeleid van de A-6 die de Redstone-ballistische raket aandreef, liep de A-7 een gas-generatorcyclus op LOX en ethylalcohol: dezelfde propellantcombinatie die terugging naar de Duitse V-2 via Redstone. Shepards Freedom 7-vlucht duurde vijftien minuten en veranderde de politieke calculus van de Space Race. De A-7 vloog alleen op Mercury-Redstone-missies en ging met pensioen in mei 1963.",
+    "new": "Op 5 mei 1961 voerde Alan Shepard een Mercury-Redstone-raket naar een hoogte van 187 kilometer en terug — wat hem de eerste Amerikaan in de ruimte maakte — en de motor die hem omhoog bracht was de Rocketdyne A-7. Afgeleid van de A-6 die de Redstone-ballistische raket aandreef, liep de A-7 een gas-generatorcyclus op LOX en ethylalcohol: dezelfde drijfstofcombinatie die terugging naar de Duitse V-2 via Redstone. Shepards Freedom 7-vlucht duurde vijftien minuten en veranderde de politieke calculus van de Space Race. De A-7 vloog alleen op Mercury-Redstone-missies en ging met pensioen in mei 1963."
+  },
+  {
+    "rel": "fleet/engine/viking.json",
+    "at": "description",
+    "old": "De Viking-motor, ontwikkeld door SEP in Frankrijk voor CNES en ESA, voorzag de eerste tot vierde generatie van de Ariane-familie van stuwkracht vanaf de eerste lancering van Ariane 1 op 24 december 1979. Het verbrand stikstoftetroxide en UH25 — een stikstof-hydrazinemenging — in een gascyclus, een hypergolische stofcombinatie die efficiëntie inruilt voor opslagbaarheid op kamertemperatuur en ontstekingseenvoud. Het meest gevolgenrijke tweede bedrijf van de Viking vond plaats toen ISRO in de jaren 1970 het ontwerp van Frankrijk licenseerde en het uitwerkte tot de Vikas-motor, die vandaag de dag nog steeds op Indiase lanceervoertuigen vliegt. Eén Frans motorontwerp zorgde voor toegang tot de ruimte van twee naties.",
+    "new": "De Viking-motor, ontwikkeld door SEP in Frankrijk voor CNES en ESA, voorzag de eerste tot vierde generatie van de Ariane-familie van stuwkracht vanaf de eerste lancering van Ariane 1 op 24 december 1979. Het verbrand stikstoftetroxide en UH25 — een stikstof-hydrazinemenging — in een gascyclus, een hypergolische drijfstofcombinatie die efficiëntie inruilt voor opslagbaarheid op kamertemperatuur en ontstekingseenvoud. Het meest gevolgenrijke tweede bedrijf van de Viking vond plaats toen ISRO in de jaren 1970 het ontwerp van Frankrijk licenseerde en het uitwerkte tot de Vikas-motor, die vandaag de dag nog steeds op Indiase lanceervoertuigen vliegt. Eén Frans motorontwerp zorgde voor toegang tot de ruimte van twee naties."
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "old": "Oorspronkelijk een Titan III / Titan IV-pad van 1965 tot 2005, in 2008 door SpaceX omgebouwd voor Falcon 9. Vandaag is SLC-40 het orbitale pad met de hoogste cadens ooit geëxploiteerd, met Starlink-batches, commerciële satellieten, ISS-bevoorrading via Cargo Dragon en Amerikaanse nationale veiligheidslasten. Na de AMOS-6-explosie in september 2016 herbouwd met een verbeterd voortstuwingssysteem; het pad doet nog steeds het grootste deel van het SpaceX-manifest dat de wereld ziet.",
+    "new": "Oorspronkelijk een Titan III / Titan IV-pad van 1965 tot 2005, in 2008 door SpaceX omgebouwd voor Falcon 9. Vandaag is SLC-40 het orbitale pad met de hoogste cadens ooit geëxploiteerd, met Starlink-batches, commerciële satellieten, ISS-bevoorrading via Cargo Dragon en Amerikaanse ladingen voor de nationale veiligheid. Na de AMOS-6-explosie in september 2016 herbouwd met een verbeterd drijfstofsysteem; het pad doet nog steeds het grootste deel van het SpaceX-manifest dat de wereld ziet."
+  },
+  {
+    "rel": "fleet/launcher/h-iia.json",
+    "at": "description",
+    "old": "Japan's H-IIA voerde tussen 2001 en juni 2025 50 succesvolle missies uit voor JAXA's vlaggenschipbissies, waaronder Hayabusa, Hayabusa2, Himawari en SLIM. Een betrouwbare vloeiststofraket die een van de meest betrouwbare lanceervoertuigen ooit werd.",
+    "new": "Japan's H-IIA voerde tussen 2001 en juni 2025 50 succesvolle missies uit voor JAXA's vlaggenschipbissies, waaronder Hayabusa, Hayabusa2, Himawari en SLIM. Een betrouwbaar werkpaard op vloeibare drijfstof dat een van de meest betrouwbare lanceervoertuigen ooit werd."
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "description",
+    "old": "Vostok-K (GRAU-index 8K72K) was de humaan-gerateerde afgeleide van Koroljovs R-7 ICBM, met een Blok-E-boventraptrap en bemande parameters. Drietrapsvloeistofmotor (LOX + kerosine), 38 meter hoog, 287 ton liftoffmassa. Lanceerde alle zes bemande Vostok-vluchten (1-6, 1961-1963) plus enkele onbemande voorgangers. Betrouwbaarheid evolueerde van vroege R-7-kinderziekten (3 van 6 eerste-trapfouten vóór Gagarin) naar volmaakte record over de bemande serie. De Vostok-K-ontwerpstamboom loopt vandaag door als de Soyuz-2-lanceerder (het enige bemande-gekapte Russische lanceervoertuig van 2026).",
+    "new": "Vostok-K (GRAU-index 8K72K) was de humaan-gerateerde afgeleide van Koroljovs R-7 ICBM, met een Blok-E-bovenste trap en bemande parameters. Drietrapsraket op vloeibare drijfstof (LOX + kerosine), 38 meter hoog, 287 ton liftoffmassa. Lanceerde alle zes bemande Vostok-vluchten (1-6, 1961-1963) plus enkele onbemande voorgangers. Betrouwbaarheid evolueerde van vroege R-7-kinderziekten (3 van 6 eerste-trapfouten vóór Gagarin) naar volmaakte record over de bemande serie. De Vostok-K-ontwerpstamboom loopt vandaag door als de Soyuz-2-lanceerder (het enige bemande-gekapte Russische lanceervoertuig van 2026)."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "tagline",
+    "old": "Opvolger van HTV; uitgebreid lastvermogen",
+    "new": "Opvolger van HTV; grotere lading"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "best_known_for",
+    "old": "Opvolger van HTV; uitgebreid lastvermogen",
+    "new": "Opvolger van HTV; grotere lading"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "old": "RKTs Progress's gemoderniseerde Soyuz-familie, met digitale vluchtbesturing ter vervanging van de analoge systemen van Soyuz-FG / Soyuz-U. Varianten 2.1a (RD-107A/RD-108A eerste trap + RD-0124 derde trap), 2.1b (opgevoerde derde trap), en 2.1v (geen boostertrap, enkele RD-110 trap). Verzorgt alle moderne Russische bemande en vrachtvluchten naar het ISS plus Glonass, Resurs-P, en Lotos-S-lasten.",
+    "new": "RKTs Progress's gemoderniseerde Soyuz-familie, met digitale vluchtbesturing ter vervanging van de analoge systemen van Soyuz-FG / Soyuz-U. Varianten 2.1a (RD-107A/RD-108A eerste trap + RD-0124 derde trap), 2.1b (opgevoerde derde trap), en 2.1v (geen boostertrap, enkele RD-110 trap). Verzorgt alle moderne Russische bemande en vrachtvluchten naar het ISS plus Glonass, Resurs-P, en Lotos-S-ladingen."
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "old": "NASA's 12-jarige multi-vliegby-missie naar 6 asteroïdensystemen van Trojanen en 2 asteroïden in de hoofdgordel (11 ontmoetingen totaal, inclusief satellieten). Drie aardse zwaartekrachtassistanties vormen een enkel traject dat beide Trojaanse wolken L4 en L5 bezoekt. Voert 1003 kg hydrazine mee — meer drijfstof dan droge massa. Genoemd naar het Australopithecus afarensis-fossiel uit 1974, zelf genoemd naar het Beatles-lied — wat suggereert dat Trojanen materiaal uit het vroege zonnestelsel bewaren op dezelfde wijze als het fossiel vroeg-menselijke geschiedenis bewaart.",
+    "new": "NASA's 12-jarige multi-flyby-missie naar 6 asteroïdensystemen van Trojanen en 2 asteroïden in de hoofdgordel (11 ontmoetingen totaal, inclusief satellieten). Drie aardse zwaartekrachtassistanties vormen een enkel traject dat beide Trojaanse wolken L4 en L5 bezoekt. Voert 1003 kg hydrazine mee — meer drijfstof dan droge massa. Genoemd naar het Australopithecus afarensis-fossiel uit 1974, zelf genoemd naar het Beatles-lied — wat suggereert dat Trojanen materiaal uit het vroege zonnestelsel bewaren op dezelfde wijze als het fossiel vroeg-menselijke geschiedenis bewaart."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "description",
+    "old": "De eerste succesvolle Mars vliegt door juli 1965. De 22 korrelige zwart-wit foto's die terugkwamen eindigden over een eeuw van speculatie over Martiaanse kanalen en leven door een krater te tonen, Maan-achtig oppervlak.",
+    "new": "De eerste succesvolle Mars-flyby — juli 1965. De 22 korrelige zwart-wit foto's die terugkwamen eindigden over een eeuw van speculatie over Martiaanse kanalen en leven door een krater te tonen, Maan-achtig oppervlak."
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "description",
+    "old": "Identieke tweelingbroer van Vega 1, gelanceerd op 1984-12-21 (6 dagen na Vega 1). 4920 kg vliegende bus + ~1500 kg afdaalmodule met tweede Venera-stijl lander + heliumaërostat. Venusaankomst op 1985-06-15: lander landde op 8,5°Z, 164,5°O (Aphrodite Terra), retourneerde 57 minuten oppervlaktewetenschap; ballon dreef 46 uur in het wolkendek naast die van Vega 1. De vliegende bus vervolgde zijn weg en trof komeet 1P/Halley op 1986-03-09 aan op 8030 km — het tweede Halleyontmoeting van de vloot, 3 dagen na Vega 1 en 5 dagen voor Giotto. Vega 1 + Vega 2-tracking verfijnde de Halleys kernpositie tot binnen 50 km voor Giotto's veel dichterbij aanpak.",
+    "new": "Identieke tweelingbroer van Vega 1, gelanceerd op 1984-12-21 (6 dagen na Vega 1). 4920 kg flyby-bus + ~1500 kg afdaalmodule met tweede Venera-stijl lander + heliumaërostat. Venusaankomst op 1985-06-15: lander landde op 8,5°Z, 164,5°O (Aphrodite Terra), retourneerde 57 minuten oppervlaktewetenschap; ballon dreef 46 uur in het wolkendek naast die van Vega 1. De flyby-bus vervolgde zijn weg en trof komeet 1P/Halley op 1986-03-09 aan op 8030 km — het tweede Halleyontmoeting van de vloot, 3 dagen na Vega 1 en 5 dagen voor Giotto. Vega 1 + Vega 2-tracking verfijnde de Halleys kernpositie tot binnen 50 km voor Giotto's veel dichterbij aanpak."
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "description",
+    "old": "Twee- of driestaps-Delta-variant met een RS-27A LOX/RP-1 eerste trap, tot negen GEM-boosters en een optionele Star-48B-motortrap voor banen met hoge ontsnappingsenergie. 155 lanceringen over 29 jaar met een succespercentage van 98,7%; transporteerde Dawn, Messenger, MRO, Phoenix, Kepler, Spitzer, GRAIL en de originele GPS Block II-constellatie. De 'Delta II Heavy' (7920H + Star-48B) was de configuratie die voldoende C3 leverde voor directe inzetstelling rond Ceres en Mercurius. Buiten bedrijf gesteld nadat de markt voor middeltauw-lanceervermogen verschoof naar Atlas V en Falcon 9.",
+    "new": "Twee- of drietraps-Delta-variant met een RS-27A LOX/RP-1 eerste trap, tot negen GEM-boosters en een optionele Star-48B-motortrap voor banen met hoge ontsnappingsenergie. 155 lanceringen over 29 jaar met een succespercentage van 98,7%; transporteerde Dawn, Messenger, MRO, Phoenix, Kepler, Spitzer, GRAIL en de originele GPS Block II-constellatie. De 'Delta II Heavy' (7920H + Star-48B) was de configuratie die voldoende C3 leverde voor directe baaninsertie rond Ceres en Mercurius. Buiten bedrijf gesteld nadat de markt voor middeltauw-lanceervermogen verschoof naar Atlas V en Falcon 9."
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "description",
+    "old": "JAXA's Venus Climate Orbiter, Japans eerste ruimtevaartuig dat met succes Venus met een baan omkreist. De initiële orbitale inbraak in 2010 mislukte, maar werd vijf jaar later (2015) hersteld met een back-uppoging met minder efficiënte stuwmotoren. Bestudeerde wolkentoponderwinden, bliksem en atmosferische dynamica van de super-roterend atmosfeer van Venus. De missie eindigde in september 2025 nadat het contact verloren ging.",
+    "new": "JAXA's Venus Climate Orbiter, Japans eerste ruimtevaartuig dat met succes Venus met een baan omkreist. De initiële baaninsertie in 2010 mislukte, maar werd vijf jaar later (2015) hersteld met een back-uppoging met minder efficiënte stuwmotoren. Bestudeerde wolkentoponderwinden, bliksem en atmosferische dynamica van de super-roterend atmosfeer van Venus. De missie eindigde in september 2025 nadat het contact verloren ging."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "tagline",
+    "old": "OV-102 — de eerste Space Shuttle-orbiter die naar de ruimte vloog (STS-1, 1981-04-12); verloren bij terugkomst STS-107 2003-02-01",
+    "new": "OV-102 — de eerste Space Shuttle-orbiter die naar de ruimte vloog (STS-1, 1981-04-12); verloren bij terugkeer STS-107 2003-02-01"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "dispatch",
+    "old": "Columbia was de eerste — OV-102, de orbiter die het Shuttle-tijdperk opende. Op STS-1 in april 1981 deed het iets wat geen bemand ruimtevaartuig daarvoor of daarna heeft gedaan: naar een baan vliegen op zijn eerste lancering, met twee astronauten aan boord van een onbewezen herbruikbaar voertuig, en glijdend landen op een landingsbaan. Het was het zwaarste van de vloot en vloog veel van de wetenschap van het programma, inclusief de Spacelab-laboratoria. In 2003 veroorzaakte op STS-107 een gat in de vleugel — geslagen door lanceringspuin — dat hete terugkomstgassen in de constructie binnendrongen, en Columbia viel uiteen boven Texas, minuten van thuis — het verlies dat de complacentie van het programma over puin­aanvaringen beëindigde.",
+    "new": "Columbia was de eerste — OV-102, de orbiter die het Shuttle-tijdperk opende. Op STS-1 in april 1981 deed het iets wat geen bemand ruimtevaartuig daarvoor of daarna heeft gedaan: naar een baan vliegen op zijn eerste lancering, met twee astronauten aan boord van een onbewezen herbruikbaar voertuig, en glijdend landen op een landingsbaan. Het was het zwaarste van de vloot en vloog veel van de wetenschap van het programma, inclusief de Spacelab-laboratoria. In 2003 veroorzaakte op STS-107 een gat in de vleugel — geslagen door lanceringspuin — dat hete gassen van de terugkeer in de constructie binnendrongen, en Columbia viel uiteen boven Texas, minuten van thuis — het verlies dat de complacentie van het programma over puin­aanvaringen beëindigde."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "best_known_for",
+    "old": "Eerste Space Shuttle-orbiter die naar de ruimte vloog (STS-1, 1981); verloren bij terugkomst STS-107 2003",
+    "new": "Eerste Space Shuttle-orbiter die naar de ruimte vloog (STS-1, 1981); verloren bij terugkeer STS-107 2003"
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "description",
+    "old": "De orbitale helft van NASA's Viking 1-missie — de eerste Amerikaanse Mars-orbiter en een van twee bijna identieke Viking-orbiters die tussen 1976 en 1980 ongeveer 50.000 oppervlaktebeelden op 150-300 m/pixel terugzonden. Gelanceerd op 20-08-1975 vanaf Cape Canaveral met een Titan IIIE-Centaur, kwam Viking 1 op 19-06-1976 in een baan rond Mars; de orbiter bracht een maand door met het in kaart brengen van kandidaat-landingsplaatsen voordat de Viking 1-lander op 20-07-1976 werd vrijgegeven voor de eerste succesvolle Amerikaanse Marslanding op Chryse Planitia. De orbiter bleef bijna vier jaar langer functioneren als wetenschapsplatform, maakte de eerste globale topografische + thermische kaart van Mars, onderzocht Phobos + Deimos en diende als UHF-relais voor de lander. Het stuurgas van de standregeling raakte op 07-08-1980 op. Bewust verhoogd naar een parkeerbaan van 357 × 33614 km die naar verwachting stabiel zou blijven tot ~2024 (vervallen ~2025 volgens de re-entry-voorspelling van Aerospace Corp).",
+    "new": "De orbitale helft van NASA's Viking 1-missie — de eerste Amerikaanse Mars-orbiter en een van twee bijna identieke Viking-orbiters die tussen 1976 en 1980 ongeveer 50.000 oppervlaktebeelden op 150-300 m/pixel terugzonden. Gelanceerd op 20-08-1975 vanaf Cape Canaveral met een Titan IIIE-Centaur, kwam Viking 1 op 19-06-1976 in een baan rond Mars; de orbiter bracht een maand door met het in kaart brengen van kandidaat-landingsplaatsen voordat de Viking 1-lander op 20-07-1976 werd vrijgegeven voor de eerste succesvolle Amerikaanse Marslanding op Chryse Planitia. De orbiter bleef bijna vier jaar langer functioneren als wetenschapsplatform, maakte de eerste globale topografische + thermische kaart van Mars, onderzocht Phobos + Deimos en diende als UHF-relais voor de lander. Het stuurgas van de standregeling raakte op 07-08-1980 op. Bewust verhoogd naar een parkeerbaan van 357 × 33614 km die naar verwachting stabiel zou blijven tot ~2024 (vervallen ~2025 volgens de terugkeervoorspelling van Aerospace Corp)."
+  }
+]

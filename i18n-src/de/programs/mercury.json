@@ -96,5 +96,10 @@
       "type": "prose",
       "md": "Und der menschliche Zug, der es wert ist, bewahrt zu werden: die Weigerung der Astronauten, bloße Fracht zu sein. Man gab ihnen einen Entwurf, der sie als Passagiere behandelte, doch sie bestanden darauf, Piloten zu sein – ein Fenster, ein Steuerknüppel, ein Mitspracherecht beim Flug –, und dieses Beharren, mehr als jede einzelne Mission, machte das Programm zu ihrem eigenen und prägte den Charakter von allem, was danach kam."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — Umlaufbahnen, Wiedereintritt & Startplätze",
+    "/science/mission-phases/edl": "Eintritt, Abstieg & Landung",
+    "/science/propulsion/tsiolkovsky": "Die Raketengleichung — warum die Redstone keinen Orbit erreichte"
+  }
 }

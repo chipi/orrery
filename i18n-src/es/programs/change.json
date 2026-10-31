@@ -84,5 +84,13 @@
       "type": "prose",
       "md": "La lección más profunda es que la competencia silenciosa reconfigura el campo. Chang'e no hizo grandes proclamaciones ni ganó ninguna carrera por titulares, pero su éxito constante hizo más por reiniciar la ambición lunar humana en todo el mundo que cualquier discurso — porque un programa que simplemente sigue teniendo éxito, misión tras misión, se convierte en un hecho estratégico que todos los demás deben responder. La consistencia, al final, es su propio tipo de poder."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Luna: los lugares de alunizaje de Chang'e",
+    "/fleet?focus=yutu-2": "Flota — los róveres Yutu y los módulos Chang'e",
+    "/programs/artemis": "Artemis: la carrera paralela de regreso a la Luna",
+    "/moon?site=change3": "Chang’e 3 — róver Yutu",
+    "/moon?site=change4": "Chang’e 4 — la cara oculta",
+    "/moon?site=change2": "Chang’e 2"
+  }
 }

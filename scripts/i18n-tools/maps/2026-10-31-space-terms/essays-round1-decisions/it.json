@@ -1,0 +1,110 @@
+[
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.13.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: gira attorno al Sole (verb)"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.25.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "nello stesso punto di appuntamento",
+    "replace": "nello stesso punto di rendezvous",
+    "why": "rendezvous point rendered 'punto di appuntamento'"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burned manuscript' - fire damage"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burn it on the way up' = consume the machine"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'propellant-burning architecture' = combustion sense (a combustione)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'engine burns a fuel' = combustion sense"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burned propellant per second' = consumption"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "alla combustione di ritorno",
+    "replace": "all'accensione di ritorno",
+    "why": "'return burn' (engine firing) rendered 'combustione'"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burning the most propellant' = consumption"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'air burns off energy' = dissipation; 'motore ... bruciò' is the correct engine verb"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.3.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "ogni chilogrammo di carico che",
+    "replace": "ogni chilogrammo di carico utile che",
+    "why": "payload rendered 'carico' without 'utile'"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.21.caption",
+    "term": "payload",
+    "decision": "change",
+    "find": "un carico in orbita",
+    "replace": "un carico utile in orbita",
+    "why": "payload rendered 'carico' without 'utile'"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.22.md",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "variant: immissione in orbita"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.32.md",
+    "term": "entry",
+    "decision": "change",
+    "find": "entrata, discesa e atterraggio",
+    "replace": "ingresso atmosferico, discesa e atterraggio",
+    "why": "EDL 'entry' rendered 'entrata'; binding ingresso atmosferico"
+  }
+]

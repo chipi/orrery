@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "culture-doors/arecibo-message.json",
+    "at": "blurb",
+    "old": "En 1974, le radiotélescope Arecibo a émis un pictogramme de 3 minutes — nos nombres, l'ADN, une silhouette humaine et le télescope lui-même — en direction de l'amas globulaire M13, situé à 25,000 années-lumière. C'était davantage une démonstration qu'une conversation : toute réponse prendrait 50,000 ans.",
+    "new": "En 1974, le radiotélescope Arecibo a émis un pictogramme de 3 minutes — nos nombres, l'ADN, une silhouette humaine et le télescope lui-même — en direction de l'amas globulaire M13, situé à 25 000 années-lumière. C'était davantage une démonstration qu'une conversation : toute réponse prendrait 50 000 ans."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "science_sections.0.why",
+    "old": "Déimos est la lune extérieure de Mars (23,460 km) — sa période orbitale (1.26 j) est plus longue que le jour martien, donc les forces de marée la poussent lentement vers l'extérieur.",
+    "new": "Déimos est la lune extérieure de Mars (23 460 km) — sa période orbitale (1.26 j) est plus longue que le jour martien, donc les forces de marée la poussent lentement vers l'extérieur."
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "science_sections.0.why",
+    "old": "Titania est la plus grande lune d'Uranus (1,578 km de diamètre) — comparable en taille à Pluton. Seul Voyager 2 l'a imagée (1986).",
+    "new": "Titania est la plus grande lune d'Uranus (1 578 km de diamètre) — comparable en taille à Pluton. Seul Voyager 2 l'a imagée (1986)."
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "science_sections.0.why",
+    "old": "Umbriel orbite Uranus à 266,000 km — son plan orbital est incliné avec la planète, si bien que ses saisons reflètent la géométrie axiale extrême de la planète mère.",
+    "new": "Umbriel orbite Uranus à 266 000 km — son plan orbital est incliné avec la planète, si bien que ses saisons reflètent la géométrie axiale extrême de la planète mère."
+  },
+  {
+    "rel": "science/observation/spectroscopy.json",
+    "at": "body_paragraphs.2",
+    "old": "Les spectrographes modernes divisent la lumière avec une grille de diffraction (une surface réfléchissante à réglage fin, souvent avec des milliers de lignes par millimètre) et alimentent le spectre dispersé en CCD. La résolution est mesurée par R = λ/Δλ; le kit de consommation frappe R~1000, JWST NIRSpec frappe R~2700, le spectrographe ESPRESSO sur le VLT frappe R~140,000 — assez pour détecter la vitesse réflexe d'une planète de seulement centimètres par seconde.",
+    "new": "Les spectrographes modernes divisent la lumière avec une grille de diffraction (une surface réfléchissante à réglage fin, souvent avec des milliers de lignes par millimètre) et alimentent le spectre dispersé en CCD. La résolution est mesurée par R = λ/Δλ; le kit de consommation frappe R~1000, JWST NIRSpec frappe R~2700, le spectrographe ESPRESSO sur le VLT frappe R~140 000 — assez pour détecter la vitesse réflexe d'une planète de seulement centimètres par seconde."
+  }
+]

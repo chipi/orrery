@@ -1,0 +1,311 @@
+[
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "goals.2.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: دوران (verb sense of orbit)"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "the_land.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: دوران (verb sense of orbit)"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "outcome.2.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: دوران (verb sense of orbit)"
+  },
+  {
+    "rel": "programs/gemini.json",
+    "at": "goals.1.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "variant: اللقاء المداري"
+  },
+  {
+    "rel": "programs/gemini.json",
+    "at": "outcome.1.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "variant: لقاء مداري"
+  },
+  {
+    "rel": "programs/gemini.json",
+    "at": "narrative.2.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "variant: اللقاء المداري"
+  },
+  {
+    "rel": "programs/gemini.json",
+    "at": "legacy.2.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "variant: اللقاء المداري"
+  },
+  {
+    "rel": "programs/starship.json",
+    "at": "goals.3.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "verb sense: تلتقي بها"
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "legacy.2.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "variant: اللقاء المداري"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "outcome.0.md",
+    "term": "docking",
+    "decision": "keep",
+    "why": "stem gap: تلتحم"
+  },
+  {
+    "rel": "programs/commercial-stations.json",
+    "at": "outcome.0.md",
+    "term": "docking",
+    "decision": "change",
+    "find": "التي ترسو بها",
+    "replace": "التي تلتحم بها",
+    "why": "docking = التحام, not mooring"
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "outcome.0.caption",
+    "term": "docking",
+    "decision": "change",
+    "find": "ترسو آليًا",
+    "replace": "تلتحم آليًا",
+    "why": "docking"
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "outcome.2.md",
+    "term": "docking",
+    "decision": "change",
+    "find": "وترسو بمحطة",
+    "replace": "وتلتحم بمحطة",
+    "why": "docking"
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "outcome.0.caption",
+    "term": "docking",
+    "decision": "change",
+    "find": "ترسو المكوكات",
+    "replace": "تلتحم المكوكات",
+    "why": "docking"
+  },
+  {
+    "rel": "programs/shenzhou.json",
+    "at": "outcome.0.md",
+    "term": "docking",
+    "decision": "change",
+    "find": "عملية اقتران",
+    "replace": "عملية التحام",
+    "why": "docking"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "lessons.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "figurative: sprint burns the runway, not an engine firing"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "goals.0.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "وقودًا للصواريخ",
+    "replace": "وقودًا دافعًا للصواريخ",
+    "why": "propellant"
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "outcome.1.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "نفد وقودها وطاقتها",
+    "replace": "نفد وقودها الدافع وطاقتها",
+    "why": "propellant"
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "legacy.1.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ووقود تصل",
+    "replace": "ووقود دافع تصل",
+    "why": "propellant"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "goals.1.caption",
+    "term": "booster",
+    "decision": "change",
+    "find": "الصواريخ الدافعة",
+    "replace": "المعزِّزات",
+    "why": "booster"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "outcome.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (مرحلة)"
+  },
+  {
+    "rel": "programs/spacex.json",
+    "at": "narrative.0.md",
+    "term": "booster",
+    "decision": "change",
+    "find": "صواريخها الدافعة",
+    "replace": "معزِّزاتها",
+    "why": "booster"
+  },
+  {
+    "rel": "programs/sputnik.json",
+    "at": "goals.0.md",
+    "term": "booster",
+    "decision": "change",
+    "find": "الصاروخ الدافع نفسه",
+    "replace": "المعزِّز نفسه",
+    "why": "booster"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "goals.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "لا تقدر عليه أي مركبة عابرة",
+    "replace": "لا يقدر عليه أي تحليق قريب",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "narrative.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "العبورَ الأول",
+    "replace": "التحليقَ القريبَ الأول",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "legacy.2.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "عبورٍ سريع",
+    "replace": "تحليقٍ قريبٍ سريع",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/new-horizons.json",
+    "at": "the_land.1.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "عبور واحد",
+    "replace": "تحليق قريب واحد",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/pioneer.json",
+    "at": "outcome.1.md",
+    "term": "flyby",
+    "decision": "keep",
+    "why": "variant: مرور قريب"
+  },
+  {
+    "rel": "programs/viking.json",
+    "at": "the_land.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "مهمات Mariner العابرة",
+    "replace": "مهمات Mariner للتحليق القريب",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/viking.json",
+    "at": "goals.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "أي مهمة عابرة",
+    "replace": "أي مهمة تحليق قريب",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "outcome.1.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ذينك المرورين الخاطفين",
+    "replace": "ذينك التحليقين القريبين الخاطفين",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "the_land.1.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: العودة إلى الغلاف الجوي (reentry)"
+  },
+  {
+    "rel": "programs/hayabusa.json",
+    "at": "goals.2.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: كبسولة عودة (reentry capsule)"
+  },
+  {
+    "rel": "programs/hayabusa.json",
+    "at": "narrative.0.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: كبسولة العودة (reentry capsule)"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "link_labels./earth",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: العودة (reentry, short label)"
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "outcome.2.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: عودة مُتحكَّم بها إلى الغلاف الجوي (reentry)"
+  },
+  {
+    "rel": "programs/sputnik.json",
+    "at": "outcome.0.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: عودتها إلى الغلاف الجوي (reentry)"
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "outcome.1.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: العودة الآلي إلى الغلاف الجوي (reentry)"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "English means lineage (direct descent), not descent to a surface"
+  }
+]

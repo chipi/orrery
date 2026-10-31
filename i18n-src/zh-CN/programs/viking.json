@@ -80,5 +80,12 @@
       "type": "prose",
       "md": "更深层的教训在于证明整条链条的价值。Viking留下的持久馈赠，不是任何一次单独的测量，而是证明了到达火星并完好着陆既有可能，又可以重复。一件难事一旦做成——而且做成了两次——就不再是一场赌博，而成为他人可以在其上继续建造的基础。有时，一项任务带回的最伟大的结果，就是证明这件事可以做到。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "火星 — Viking 着陆的地方",
+    "/programs/mariner": "Mariner — 率先侦察火星的飞掠器与轨道器",
+    "/mars?site=viking1-lander": "Viking 1 — 克律塞平原",
+    "/mars?site=viking2-lander": "Viking 2 — 乌托邦平原",
+    "/mars?site=viking1-orbiter": "Viking 1 轨道器"
+  }
 }

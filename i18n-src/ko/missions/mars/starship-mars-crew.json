@@ -8,12 +8,13 @@
   "description": "SpaceX의 장기 유인 화성 아키텍처로, 일론 머스크의 2016년, 2017년, 2024년 IAC 발표에서 개요가 제시되었습니다. Starship 한 대가 저지구궤도에서 탱커 비행 여러 차례로 연료를 가득 채운 채 지구를 떠나 화성 전이 궤도에 진입하고, 승무원 약 10명과 화물, ISRU 장비를 화성 표면에 내려놓습니다. 귀환 구간의 추진제(메탄 + 액체 산소)는 Sabatier 공정으로 화성 대기의 CO₂와 지하 물얼음에서 현지 제조되므로, 같은 Starship이 다시 이륙해 지구 전이 궤도에 진입하고 승무원을 돌려보낼 수 있습니다. 왕복 기간은 발사 창과 표면 체류 기간에 달려 있으며, 여기에 제시한 예시 일정은 출발부터 귀환까지 약 2.5년입니다(편도 213일, 표면 체류 약 500일, 다음 유리한 발사 창에 귀환). 이 아키텍처는 개념 단계이며 — Starship의 성숙과 ISRU 검증에 따라 날짜와 매개변수가 크게 바뀔 수 있습니다.",
   "events": [
     { "met": 0, "label": "스타십 발사", "note": "유인 Starship이 Boca Chica 또는 케이프 커내버럴에서 이륙.", "type": "nominal" },
-    { "met": 1, "label": "궤도 급유", "note": "LEO에서 탱커 함대 접근 및 여러 비행에 걸친 추진제 이송.", "type": "nominal" },
+    { "met": 1, "label": "궤도 급유", "note": "LEO에서 탱커 함대 랑데부 및 여러 비행에 걸친 추진제 이송.", "type": "nominal" },
     { "met": 2, "label": "TMI 연소", "note": "완전 급유된 LEO 상태에서 화성 이행 주입.", "type": "nominal" },
     { "met": 30, "label": "TCM-1", "note": "첫 경로 중간 수정.", "type": "nominal" },
     { "met": 213, "label": "화성 착륙", "note": "화성 표면 동력 하강 — 낙하산·에어백·스카이크레인 없음.", "type": "info" },
-    { "met": 700, "label": "귀환 추진 완료", "note": "ISRU 설비가 귀환용 메탄·LOX를 충분히 생산.", "type": "info" },
-    { "met": 750, "label": "TEI 연소", "note": "지구 이행 주입 — Starship이 화성 표면에서 이륙해 지구 귀환 궤도로 연소.", "type": "nominal" },
+    { "met": 700, "label": "귀환 추진 완료", "note": "ISRU 설비가 귀환 추진제용 메탄·LOX를 충분히 생산.", "type": "info" },
+    { "met": 750, "label": "TEI 연소", "note": "지구 이행 주입 — Starship이 화성 표면에서 이륙해 지구 귀환 궤적으로 연소.", "type": "nominal" },
     { "met": 950, "label": "지구 도착", "note": "대기 재진입. 임무 완료.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Starship 상단"
 }

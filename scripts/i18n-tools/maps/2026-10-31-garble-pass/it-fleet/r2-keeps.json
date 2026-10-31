@@ -1,0 +1,23 @@
+[
+  {
+    "term": "burn",
+    "loc": "it",
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "why": "combustion: brucia LOX e LH2"
+  },
+  {
+    "term": "burn",
+    "loc": "it",
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "why": "combustion: bruciava LOX e RP-1, camera di combustione"
+  },
+  {
+    "term": "burn",
+    "loc": "it",
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "why": "combustion: bruciare l'ossidante in eccesso"
+  }
+]

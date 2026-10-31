@@ -2,14 +2,13 @@
   import { onMount, onDestroy, untrack } from 'svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
-  import { base } from '$app/paths';
   import { dvToRGB, dvToCss, dayToDate, dayToLongDate, dayToShortDate } from '$lib/porkchop';
   import { geoTransferDv } from '$lib/physics/transfer/lambert-geocentric';
   import { interplanetaryMoonDv } from '$lib/moon-transfer';
   import { MOONS } from '$lib/moon-transfer.constants';
   import { trackFilterChange, trackPlanRun, trackPlanWindowSelect } from '$lib/analytics';
   import { getRockets, getPorkchopGrid } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { localizeHref } from '$lib/paraglide/runtime';
   import type { Rocket } from '$types/rocket';
   import type { PorkchopGrid, MissionType } from '$types/porkchop-grid';
@@ -20,6 +19,7 @@
     type PlanDestinationId,
   } from '$lib/physics/transfer/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
+  import { destinationLabel } from '$lib/destination-label';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { TrajectoryArrowIcon } from '$lib/components/icons';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
@@ -100,87 +100,6 @@
     'soyuz-fregat': 'soyuz-2',
     'proton-m': 'proton-m',
   };
-
-  function destinationLabel(id: PlanDestinationId): string {
-    switch (id) {
-      case 'moon':
-        return m.plan_destination_moon();
-      case 'mercury':
-        return m.plan_destination_mercury();
-      case 'venus':
-        return m.plan_destination_venus();
-      case 'mars':
-        return m.plan_destination_mars();
-      case 'jupiter':
-        return m.plan_destination_jupiter();
-      case 'saturn':
-        return m.plan_destination_saturn();
-      case 'uranus':
-        return m.plan_destination_uranus();
-      case 'neptune':
-        return m.plan_destination_neptune();
-      case 'pluto':
-        return m.plan_destination_pluto();
-      case 'ceres':
-        return m.plan_destination_ceres();
-      case 'vesta':
-        return m.plan_destination_vesta();
-      case 'psyche':
-        return m.plan_destination_psyche();
-      case 'bennu':
-        return m.plan_destination_bennu();
-      case 'arrokoth':
-        return m.plan_destination_arrokoth();
-      case 'halley':
-        return m.plan_destination_halley();
-      case '67p':
-        return m.plan_destination_67p();
-      // #341 Batch 5 small bodies.
-      case 'itokawa':
-        return m.plan_destination_itokawa();
-      case 'didymos':
-        return m.plan_destination_didymos();
-      case 'dimorphos':
-        return m.plan_destination_dimorphos();
-      case 'donaldjohanson':
-        return m.plan_destination_donaldjohanson();
-      case 'eurybates':
-        return m.plan_destination_eurybates();
-      case 'polymele':
-        return m.plan_destination_polymele();
-      case 'leucus':
-        return m.plan_destination_leucus();
-      case 'orus':
-        return m.plan_destination_orus();
-      case 'patroclus':
-        return m.plan_destination_patroclus();
-      case 'menoetius':
-        return m.plan_destination_menoetius();
-      // ADR-086 planetary moons.
-      case 'phobos':
-        return m.plan_destination_phobos();
-      case 'deimos':
-        return m.plan_destination_deimos();
-      case 'io':
-        return m.plan_destination_io();
-      case 'europa':
-        return m.plan_destination_europa();
-      case 'ganymede':
-        return m.plan_destination_ganymede();
-      case 'callisto':
-        return m.plan_destination_callisto();
-      case 'titan':
-        return m.plan_destination_titan();
-      case 'enceladus':
-        return m.plan_destination_enceladus();
-      case 'triton':
-        return m.plan_destination_triton();
-      default: {
-        const _exhaustive: never = id;
-        return _exhaustive;
-      }
-    }
-  }
 
   // ─── Grid state — driven by loaded JSON (v0.1.6 / ADR-026) ───────
   // The pre-computed grid file declares its own dep_range / tof_range
@@ -445,7 +364,7 @@
     // <html lang> to en-US. Caught by docker-e2e's "/plan loads in
     // Spanish" smoke after the 2026-06-09 Mars-only-/plan regression
     // (commit 47b35a024).
-    const target = `${localizeHref(`${base}/plan`)}${qs ? `?${qs}` : ''}`;
+    const target = `${localizeHref(localHref(`/plan`))}${qs ? `?${qs}` : ''}`;
     if (target !== page.url.pathname + page.url.search) {
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
     }
@@ -879,7 +798,7 @@
     params.set('type', missionType.toLowerCase());
     params.set('dep', String(Math.round(depDays[selected.i])));
     params.set('tof', String(Math.round(arrDays[selected.j])));
-    goto(`${base}/fly?${params.toString()}`);
+    goto(localHref(`/fly?${params.toString()}`));
   }
 
   // ─── Magnifier render (separate canvas overlay) ──────────────────
@@ -946,7 +865,7 @@
     ctx.textAlign = 'center';
     ctx.shadowColor = 'rgba(0,0,0,0.85)';
     ctx.shadowBlur = 4;
-    ctx.fillText(`${dv.toFixed(1)} km/s`, MAG_RADIUS, sz - 10);
+    ctx.fillText(m.mp_flight_unit_kms({ value: dv.toFixed(1) }), MAG_RADIUS, sz - 10);
   }
 
   $effect(() => {
@@ -1155,7 +1074,9 @@
             <span class="cb-stop red"></span>
           </div>
           <div class="color-bar-labels" aria-hidden="true">
-            <span>3</span><span>5</span><span>7</span><span>9</span><span>11+ km/s</span>
+            <span>3</span><span>5</span><span>7</span><span>9</span><span
+              >{m.mp_flight_unit_kms({ value: '11+' })}</span
+            >
           </div>
         </dd>
         <dt>{m.plan_explainer_how_to()}</dt>
@@ -1191,7 +1112,7 @@
         <div class="cell strong">
           <span class="label">{m.plan_label_dv_required()}</span>
           <span class="value">
-            {readout.dv.toFixed(2)} km/s<WhyPopover
+            {m.mp_flight_unit_kms({ value: readout.dv.toFixed(2) })}<WhyPopover
               title={m.why_dv_required_title()}
               body={m.why_dv_required_body()}
               tab="propulsion"
@@ -1206,7 +1127,10 @@
           {:else if isMoonMissionDestination}
             <span class="label geo-caveat">
               {m.plan_dv_multileg()}{#if moonSplit}
-                · DEP {moonSplit.departure.toFixed(1)} + MOI {moonSplit.moi.toFixed(1)}{/if}
+                · {m.plan_moon_split({
+                  dep: moonSplit.departure.toFixed(1),
+                  moi: moonSplit.moi.toFixed(1),
+                })}{/if}
             </span>
           {/if}
         </div>
@@ -1221,7 +1145,7 @@
             <span class="sandbox-pin-summary">
               {pinnedReadout.dep} · {m.plan_transit_days({
                 count: pinnedReadout.tof.toFixed(0),
-              })} · {pinnedReadout.dv.toFixed(2)} km/s
+              })} · {m.mp_flight_unit_kms({ value: pinnedReadout.dv.toFixed(2) })}
             </span>
             <button type="button" class="sandbox-clear" onclick={clearPin}>
               {m.plan_sandbox_clear()}
@@ -1277,7 +1201,9 @@
         >
           {#each rocketList as r (r.id)}
             <option value={r.id}>
-              {r.name ?? r.id} — {r.delta_v_capability_km_s.toFixed(1)} km/s
+              {r.name ?? r.id} — {m.mp_flight_unit_kms({
+                value: r.delta_v_capability_km_s.toFixed(1),
+              })}
             </option>
           {/each}
         </select>
@@ -1293,7 +1219,7 @@
           <figure class="rocket-photo">
             <img
               src={pickHero('fleet', fleetId)}
-              alt="{selectedRocket.name ?? selectedRocket.id} reference photo"
+              alt={m.plan_rocket_photo_alt({ name: selectedRocket.name ?? selectedRocket.id })}
               loading="lazy"
               onerror={(e) => {
                 const fig = (e.currentTarget as HTMLImageElement).closest('figure');
@@ -1306,7 +1232,7 @@
 
         {#if selectedRocket.launch_site}
           <div class="row launch-site">
-            <span class="label">LAUNCH SITE</span>
+            <span class="label">{m.fly_launch_dossier_site()}</span>
             <span class="value">{selectedRocket.launch_site}</span>
           </div>
         {/if}
@@ -1321,7 +1247,7 @@
           <div class="rocket-links">
             <a
               class="rocket-link fleet-link"
-              href="{base}/fleet?id={ROCKET_FLEET_ID[selectedRocket.id]}"
+              href={localHref(`/fleet?id=${ROCKET_FLEET_ID[selectedRocket.id]}`)}
             >
               {m.plan_view_in_fleet({ label: selectedRocket.name ?? selectedRocket.id })} →
             </a>
@@ -1330,7 +1256,7 @@
 
         <div class="row">
           <span class="label">{m.plan_label_vehicle_dv()}</span>
-          <span class="value">{dvBudget.toFixed(2)} km/s</span>
+          <span class="value">{m.mp_flight_unit_kms({ value: dvBudget.toFixed(2) })}</span>
         </div>
 
         <div class="budget" class:viable class:deficit={!viable}>
@@ -1724,7 +1650,7 @@
     justify-content: space-between;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
     letter-spacing: 1px;
   }
   @media (max-width: 767px) {

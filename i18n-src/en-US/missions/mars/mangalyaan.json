@@ -12,5 +12,6 @@
     { "met": 30, "label": "TRANS-MARS INJECTION", "note": "Final perigee burn places spacecraft on Mars trajectory.", "type": "nominal" },
     { "met": 324, "label": "MARS ORBIT INSERTION", "note": "Liquid Apogee Motor fires after ~10 months dormant — fired for 24 minutes to capture into orbit.", "type": "nominal" },
     { "met": 3300, "label": "MISSION END", "note": "Lost contact 2022-04 after spacecraft propellant exhausted.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "PSLV PS4 fourth stage"
 }

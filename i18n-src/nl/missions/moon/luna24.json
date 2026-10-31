@@ -16,7 +16,7 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Maanbaninvoering.",
+      "note": "Maanbaaninsertie.",
       "type": "nominal"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 10,
       "label": "OPSTIJGING",
-      "note": "Opstijgingsmodule stijgt op; trans-aardse injectie.",
+      "note": "Opstijgtrap stijgt op; trans-aardse injectie.",
       "type": "nominal"
     },
     {
@@ -43,5 +43,6 @@
       "note": "Capsule landt in Surgut, USSR 1976-08-22 met 170 g regoliet.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "bovenste trap Blok-D"
 }

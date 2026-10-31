@@ -23,7 +23,7 @@
     {
       "met": 3.4,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn.",
+      "note": "Einschwenken in die Mondumlaufbahn.",
       "type": "nominal"
     },
     {
@@ -50,5 +50,6 @@
       "note": "CM America bringt seine Besatzung am 19.12.1972 in den Pazifischen Ozean zurück.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Saturn V S-IVB (dritte Stufe)"
 }

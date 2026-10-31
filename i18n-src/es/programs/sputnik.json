@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La lección más profunda es que lo más poderoso que puede hacer una máquina es ser presenciada. Sputnik cambió el mundo no por lo que midió sino por lo que demostró — visible, audiblemente, a todos a la vez. Algunos logros importan por los datos que devuelven; este importó porque todo el planeta pudo oír que estaba allí."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Tierra: el mundo que rodeó por primera vez",
+    "/programs/vostok": "Vostok: siguen los primeros humanos",
+    "/posters": "El póster de Sputnik"
+  }
 }

@@ -1,0 +1,417 @@
+[
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "change",
+    "find": "VOO ESPACIAL TRIPULADO",
+    "replace": "VOO TRIPULADO EM ÓRBITA TERRESTRE",
+    "why": "orbit dropped from CREWED EARTH-ORBIT"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "change",
+    "find": "dispara para reentrada",
+    "replace": "dispara para sair de órbita",
+    "why": "de-orbit rendered as reentry"
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "description",
+    "term": "docking",
+    "decision": "keep",
+    "why": "stem gap: atracagem (same family as accepted atracação)"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "um sobrevoo de gravidade terrestre",
+    "replace": "uma assistência gravitacional terrestre",
+    "why": "sobrevoo is flyby"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "SOBREVOO DE GRAVIDADE TERRESTRE",
+    "replace": "ASSISTÊNCIA GRAVITACIONAL TERRESTRE",
+    "why": "sobrevoo is flyby"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.4.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Primeiro de seis sobrevoos gravitacionais",
+    "replace": "Primeira de seis assistências gravitacionais",
+    "why": "sobrevoo is flyby"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "assistido pela gravidade de Júpiter",
+    "replace": "com assistência gravitacional de Júpiter",
+    "why": "paraphrase of the term"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "uma correção de órbita",
+    "replace": "uma queima de correção de órbita",
+    "why": "orbit-correction burn, burn dropped"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "term": "stage",
+    "decision": "keep",
+    "why": "proper name 'Inertial Upper Stage' left in English"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "para propulsor de",
+    "replace": "para propelente de",
+    "why": "propulsor is thruster"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "nitrogen itself is the propellant; omission is natural"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "menos propulsor",
+    "replace": "menos propelente",
+    "why": "propulsor is thruster"
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.1.note",
+    "term": "payload",
+    "decision": "change",
+    "find": "carga classificada",
+    "replace": "carga útil classificada",
+    "why": "payload"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "grandes cargas",
+    "replace": "grandes cargas úteis",
+    "why": "payload"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "vehicle",
+    "term": "payload",
+    "decision": "change",
+    "find": "carga compartilhada",
+    "replace": "carga útil compartilhada",
+    "why": "payload"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: baía de carga (payload bay)"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "events.0.note",
+    "term": "thrust",
+    "decision": "change",
+    "find": "baixo impulso",
+    "replace": "baixo empuxo",
+    "why": "impulso is not thrust"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "o impulso iônico",
+    "replace": "o empuxo iônico",
+    "why": "impulso is not thrust"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.1.note",
+    "term": "thrust",
+    "decision": "change",
+    "find": "baixo impulso",
+    "replace": "baixo empuxo",
+    "why": "impulso is not thrust"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "term": "thrust",
+    "decision": "change",
+    "find": "por impulso iônico",
+    "replace": "por empuxo iônico",
+    "why": "impulso is not thrust"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "stem gap: foguetes laterais (plural of accepted foguete lateral)"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: foguete (whole Proton-K launcher)"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "aproximações de todas",
+    "replace": "sobrevoos de todas",
+    "why": "flyby rendered as approach"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VOAR · VOAR",
+    "replace": "SOBREVOO · REALIZADO",
+    "why": "garbled (verb 'voar' twice)"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.2.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VOO DE MARTE",
+    "replace": "SOBREVOO DE MARTE",
+    "why": "voo is not flyby"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "CREWED FLYBY · REALIZADA",
+    "replace": "SOBREVOO TRIPULADO · REALIZADO",
+    "why": "left in English"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VOO LUNAR",
+    "replace": "SOBREVOO LUNAR",
+    "why": "voo is not flyby"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VOAR · VOAR",
+    "replace": "SOBREVOO · REALIZADO",
+    "why": "garbled (verb 'voar' twice)"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VOAR · VOAR",
+    "replace": "SOBREVOO · REALIZADO",
+    "why": "garbled (verb 'voar' twice)"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VOO DE PLUTÃO",
+    "replace": "SOBREVOO DE PLUTÃO",
+    "why": "voo is not flyby"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INSERÇÃO DA ÓRBITA DE MARTE",
+    "replace": "INSERÇÃO EM ÓRBITA DE MARTE",
+    "why": "inserção em órbita"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INSERÇÃO DA ÓRBITA DE MARTE",
+    "replace": "INSERÇÃO EM ÓRBITA DE MARTE",
+    "why": "inserção em órbita"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INSERÇÃO DA ÓRBITA DE MARTE",
+    "replace": "INSERÇÃO EM ÓRBITA DE MARTE",
+    "why": "inserção em órbita"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Inserção da órbita",
+    "replace": "Inserção em órbita",
+    "why": "inserção em órbita"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: inserção na órbita (correct Portuguese)"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "inserção de órbita",
+    "replace": "inserção em órbita",
+    "why": "inserção em órbita"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: inserção na órbita (correct Portuguese)"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.3.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: inserção na órbita (correct Portuguese)"
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: inserção na órbita (correct Portuguese)"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Inserção da órbita",
+    "replace": "Inserção em órbita",
+    "why": "inserção em órbita"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Inserção da órbita",
+    "replace": "Inserção em órbita",
+    "why": "inserção em órbita"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: inserção na órbita (correct Portuguese)"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: inserção na órbita (correct Portuguese)"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: inserção na órbita (correct Portuguese)"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Inserção da órbita",
+    "replace": "Inserção em órbita",
+    "why": "inserção em órbita"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "reingressou sobre Woomera",
+    "replace": "fez a reentrada sobre Woomera",
+    "why": "reingressar is not the term"
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "o primeiro reingresso",
+    "replace": "a primeira reentrada",
+    "why": "reingresso is not the term"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "o repouso automático",
+    "replace": "a reentrada automática",
+    "why": "reentry mistranslated as 'repouso' (rest)"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "term": "descent",
+    "decision": "change",
+    "find": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "replace": "DEMONSTRADOR DE ENTRADA/DESCIDA/POUSO · ACIDENTADO",
+    "why": "label left in English"
+  }
+]

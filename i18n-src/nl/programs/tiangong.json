@@ -32,7 +32,7 @@
   "outcome": [
     {
       "type": "prose",
-      "md": "Het werkte, en het werkte op schema. Tiangong-1 (2011) bewees rendezvous en aanmering; Tiangong-2 (2016) bewees dat bemanningen een maand aan boord konden leven en werken en bevoorraad konden worden door het nieuwe Tianzhou-vrachtschip. Vervolgens werden tussen april 2021 en eind 2022 de drie modules van het permanente station — de Tianhe-kern en de laboratoria Wentian en Mengtian — gelanceerd en geassembleerd tot het T-vormige Chinese Ruimtestation, dat sinds juni 2022 continu bemand is, toen de Shenzhou-14-bemanning met permanente bewoning begon."
+      "md": "Het werkte, en het werkte op schema. Tiangong-1 (2011) bewees rendezvous en koppeling; Tiangong-2 (2016) bewees dat bemanningen een maand aan boord konden leven en werken en bevoorraad konden worden door het nieuwe Tianzhou-vrachtschip. Vervolgens werden tussen april 2021 en eind 2022 de drie modules van het permanente station — de Tianhe-kern en de laboratoria Wentian en Mengtian — gelanceerd en geassembleerd tot het T-vormige Chinese Ruimtestation, dat sinds juni 2022 continu bemand is, toen de Shenzhou-14-bemanning met permanente bewoning begon."
     },
     {
       "type": "figure",
@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "De diepere les gaat over tempo. Tiangong laat zien dat in de ruimtevaart het snelst lijkende programma zelden het sterkste is. China arriveerde laat bij elke primeur en gaf om geen ervan, en optimaliseerde in plaats daarvan voor een station dat voltooid, betrouwbaar en permanent zou zijn. Wanneer het doel is om in 2035 nog steeds te vliegen, is geduld geen voorzichtigheid — het is de strategie."
     }
-  ]
+  ],
+  "link_labels": {
+    "/tiangong": "Tiangong — het station in 3D",
+    "/fleet?focus=tiangong": "Vloot — Shenzhou, Tianzhou & de Long March-familie",
+    "/programs/iss": "ISS — het station waarvan Tiangong werd buitengesloten",
+    "/earth?site=tiangong": "Tiangong boven ons"
+  }
 }

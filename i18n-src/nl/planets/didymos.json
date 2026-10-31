@@ -1,8 +1,8 @@
 {
   "name": "Didymos",
-  "type": "Asteroid · Near-Earth · S-type · Binary primary",
-  "fact": "Ouderkern van de 160-m-maantje Dimorphos geraakt door NASA's DART op 2022-09-26 — de eerste demonstratie van kinetische-impactor planetaire verdediging. Didymos zelf bleef intact als een 780-m S-type-asteroïde die de verandering van de binaire periode observeerde.",
-  "bio": "S-type near-Earth binary ontdekt in 1996, met het 160-m-maantje Dimorphos in een baan van 11,9 uur op 1,2-km scheiding. Geclassificeerd als een chondritische massa — LL-klasse silicaatsamenstelling, algemeen in de binnenste hoofdgordel. De Hera-missie van ESA (gelanceerd 2024) zal in 2026 aankomen om het systeem na de impact gedetailleerd in kaart te brengen.",
+  "type": "Planetoïde · Aardscheerder · S-type · Primaire van dubbelsysteem",
+  "fact": "Moederlichaam van het maantje Dimorphos van 160 m, waar NASA's DART op 2022-09-26 op insloeg — de eerste demonstratie van planetaire verdediging met een kinetische impactor. Didymos zelf bleef intact als een S-type-asteroïde van 780 m, waaraan de verandering van de binaire periode werd waargenomen.",
+  "bio": "Aardscheerder van het S-type, een dubbelasteroïde, ontdekt in 1996, met het maantje Dimorphos van 160 m in een baan van 11,9 uur op 1,2 km afstand. Ingedeeld als een chondritisch lichaam — silicaatsamenstelling van de LL-klasse, gebruikelijk in de binnenste hoofdgordel. De Hera-missie van ESA (gelanceerd in 2024) komt in 2026 aan om het systeem na de inslag in detail in kaart te brengen.",
   "links": [
     {
       "l": "65803 Didymos — Wikipedia",
@@ -10,12 +10,12 @@
       "t": "intro"
     },
     {
-      "l": "DART mission (NASA)",
+      "l": "DART-missie (NASA)",
       "u": "https://science.nasa.gov/mission/dart/",
       "t": "core"
     },
     {
-      "l": "Hera mission (ESA)",
+      "l": "Hera-missie (ESA)",
       "u": "https://www.esa.int/Space_Safety/Hera",
       "t": "deep"
     }

@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "science/orbits/hill-sphere.json",
+    "at": "narrative_101.0",
+    "old": "Out at Earth's orbit, the Sun's pull on you would be about 46,000× weaker than it is on the Sun's surface — but it's still strong. So why does the Moon orbit Earth and not the Sun? Because right next to Earth, you're SO close to Earth that its 80× smaller mass still wins. The boundary where that flips — where you're far enough away that the Sun is back in charge — is the Hill sphere.",
+    "new": "Out at Earth's orbit, the Sun's pull on you would be about 46,000× weaker than it is on the Sun's surface — but it's still strong. So why does the Moon orbit Earth and not the Sun? Because right next to Earth, you're SO close to Earth that its ~333,000× smaller mass still wins. The boundary where that flips — where you're far enough away that the Sun is back in charge — is the Hill sphere."
+  }
+]

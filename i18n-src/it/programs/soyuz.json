@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La seconda lezione è il pericolo di lasciare che una scadenza prevalga su un avvertimento. Soyuz 1 volò con difetti che i suoi stessi ingegneri avevano segnalato, perché rispondere ad Apollo contava di più, quel mese, che ammettere che la nave non era pronta — e un cosmonauta morì per questo. È lo stesso fallimento che la cultura del segreto e del successo obbligatorio di Vostok aveva provato, finalmente pagato con una vita. Quando le persone più vicine alla macchina dicono che non è pronta, è la pianificazione la cosa che dovrebbe cedere."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — orbite, rendezvous e siti di lancio",
+    "/science/mission-phases/edl": "Ingresso, discesa e atterraggio"
+  }
 }

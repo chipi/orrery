@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "programs/soyuz.json",
+    "at": "the_land.0.md",
+    "old": "Au milieu des années 1960, l'ère des dérivés de Vostok était terminée, et les deux superpuissances avaient besoin d'un véritable vaisseau spatial de deuxième génération — capable de manœuvrer, de se rendre-vous et de s'amarrer, les compétences qu'exigerait la Lune. La réponse soviétique fut Soyuz : la conception de Sergueï Korolev pour un vaisseau modulaire en trois parties — un module orbital sphérique pour vivre, un module de descente pour revenir sur la Terre, et un module de service pour l'alimentation et la propulsion. C'était un véritable bond en avant. Mais Korolev mourut sur la table d'opération en 1966, avant qu'il ne vole, et le programme perdit le seul homme ayant l'autorité pour dire qu'une machine n'était pas prête.",
+    "new": "Au milieu des années 1960, l'ère des dérivés de Vostok était terminée, et les deux superpuissances avaient besoin d'un véritable vaisseau spatial de deuxième génération — capable de manœuvrer, d'effectuer un rendez-vous et de s'amarrer, les compétences qu'exigerait la Lune. La réponse soviétique fut Soyuz : la conception de Sergueï Korolev pour un vaisseau modulaire en trois parties — un module orbital sphérique pour vivre, un module de descente pour revenir sur la Terre, et un module de service pour l'alimentation et la propulsion. C'était un véritable bond en avant. Mais Korolev mourut sur la table d'opération en 1966, avant qu'il ne vole, et le programme perdit le seul homme ayant l'autorité pour dire qu'une machine n'était pas prête."
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "goals.0.md",
+    "old": "L'objectif principal est un atterrissage habité près du pôle sud lunaire — une région qu'Apollo n'a jamais visitée, choisie parce que des cratères en ombre permanente y contiennent de la glace d'eau. L'eau est le prix : scindée en hydrogène et oxygène, elle devient carburant de fusée et air respirable, et une Lune qui peut fournir sa propre eau est une Lune sur laquelle on peut rester, et depuis laquelle on peut opérer, plutôt que simplement visiter.",
+    "new": "L'objectif principal est un atterrissage habité près du pôle sud lunaire — une région qu'Apollo n'a jamais visitée, choisie parce que des cratères en ombre permanente y contiennent de la glace d'eau. L'eau est le prix : scindée en hydrogène et oxygène, elle devient propergol et air respirable, et une Lune qui peut fournir sa propre eau est une Lune sur laquelle on peut rester, et depuis laquelle on peut opérer, plutôt que simplement visiter."
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "outcome.0.caption",
+    "old": "L'Automated Transfer Vehicle — le cargo européen pour l'ISS. Vingt tonnes à pleine charge, il volait de manière autonome jusqu'à un amarrage automatique avec la Station, livrait du fret, de l'eau, de l'air et du carburant, et utilisait ses moteurs pour rehausser l'orbite de l'ISS.",
+    "new": "L'Automated Transfer Vehicle — le cargo européen pour l'ISS. Vingt tonnes à pleine charge, il volait de manière autonome jusqu'à un amarrage automatique avec la Station, livrait du fret, de l'eau, de l'air et du propergol, et utilisait ses moteurs pour rehausser l'orbite de l'ISS."
+  }
+]

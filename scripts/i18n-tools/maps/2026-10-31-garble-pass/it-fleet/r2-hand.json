@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "fleet/constellation/planet-labs.json",
+    "at": "best_known_for",
+    "find": "~150 CubeSat + 21 SkySat",
+    "replace": "~150 CubeSats + 21 SkySats"
+  },
+  {
+    "rel": "fleet/constellation/planet-labs.json",
+    "at": "tagline",
+    "find": "~150 CubeSat + 21 SkySat",
+    "replace": "~150 CubeSats + 21 SkySats"
+  }
+]

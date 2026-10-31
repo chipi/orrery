@@ -1,16 +1,16 @@
 {
   "title": "Principia de Newton · 1687",
-  "intro_sentence": "Un livre, trois lois du mouvement et la loi de la gravitation en inverse-carré — la fondation sur laquelle repose encore tout ce que l'astronautique réalise.",
+  "intro_sentence": "Un livre, trois lois du mouvement et la loi de la gravitation en inverse du carré de la distance — le socle sur lequel repose encore tout ce que fait l'astronautique.",
   "narrative_101": [
-    "En 1684, Halley posait à tout le monde la bonne question : quelle forme prendrait une orbite si l'attraction du Soleil variait en 1/r² ? Christopher Wren paria un livre de quarante shillings que personne ne pourrait le prouver ; Hooke prétendait avoir une preuve qu'il n'avait pas. Halley demanda à Newton — Newton répondit « une ellipse » sans hésiter, déterra la preuve à partir de notes vieilles de plusieurs années, et trois ans plus tard publia la Principia.",
-    "Trois lois du mouvement (inertie, F = ma, action-réaction) plus la loi de la gravitation en inverse-carré (F = Gm₁m₂/r²) plus le calcul infinitésimal pour le réaliser — un livre, trois ans, aucune évaluation par les pairs. Halley paya les frais d'impression lui-même quand la Royal Society n'eut plus d'argent pour un ouvrage d'anatomie ichtyologique.",
+    "En 1684, Halley demandait aux bonnes personnes quelle forme prendrait une orbite si l'attraction du Soleil variait en 1/r². Christopher Wren paria un livre de quarante shillings que personne ne pourrait le démontrer ; Hooke prétendait détenir une démonstration qu'il n'avait pas. Halley interrogea Newton — qui répondit « une ellipse » sans hésiter, exhuma la démonstration de notes vieilles de plusieurs années et publia, trois ans plus tard, les Principia.",
+    "Trois lois du mouvement (inertie, F = ma, action-réaction) plus la loi de la gravitation en inverse du carré de la distance (F = Gm₁m₂/r²) plus le calcul infinitésimal pour tout mettre en œuvre — un livre, trois ans, aucune évaluation par les pairs. Halley paya les frais d'impression lui-même quand la Royal Society n'eut plus d'argent pour un ouvrage sur l'anatomie des poissons.",
     "De ces équations : les trois lois de Kepler se déduisent clairement. Les marées, le mouvement des projectiles, la précession des équinoxes, la forme de la Terre — autant de conséquences. L'astronautique, 280 ans plus tard, n'est que de la mécanique newtonienne ordinaire avec des moteurs en plus."
   ],
   "body_paragraphs": [
     "Philosophiæ Naturalis Principia Mathematica a été publié en juillet 1687 en latin. Trois livres : le mouvement dans le vide, le mouvement dans des milieux résistants, le système du monde. Le troisième livre applique les lois à l'univers réel et reproduit toutes les données de Kepler à partir de premiers principes.",
-    "Le calcul infinitésimal était l'invention de Newton spécifiquement pour cela. Il l'appelait « fluxions » — Leibniz inventa indépendamment une mécanique essentiellement identique en Allemagne à peu près à la même époque, et la rivalité sur la priorité dura des décennies.",
+    "Newton a inventé le calcul infinitésimal précisément pour cela. Il l'appelait « fluxions » — Leibniz a inventé indépendamment, en Allemagne et à peu près à la même époque, un outillage essentiellement identique, et la querelle de priorité a duré des décennies.",
     "Ce que Newton N'A PAS expliqué : POURQUOI la gravitation suit 1/r². Son propre commentaire célèbre — ajouté à la deuxième édition de 1713 : « Hypotheses non fingo » — « Je ne formule aucune hypothèse. » Le mécanisme attendrait Einstein en 1915.",
-    "Les propagateurs d'orbite numériques modernes exécutent essentiellement les équations de Newton avec l'arithmétique en virgule flottante. L'arc héliocentrique de /fly, le graphique en grains de café de /plan, chaque solution keplerienne — la gravitation newtonienne jusqu'au bout."
+    "Les propagateurs d'orbite numériques modernes exécutent pour l'essentiel les équations de Newton en arithmétique à virgule flottante. L'arc héliocentrique de /fly, le diagramme porkchop de /plan, chaque solution képlérienne — la gravitation newtonienne jusqu'au bout."
   ],
   "formula_caption": "Loi newtonienne de la gravitation universelle. G ≈ 6,674 × 10⁻¹¹ N·m²/kg²."
 }

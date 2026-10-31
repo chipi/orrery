@@ -1,0 +1,1208 @@
+[
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.2.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.3.images.1.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Molecole organiche rilevate dallo strumento SHERLOC nella roccia fangosa di Wildcat Ridge: un'impronta chimica di possibili indizi di antica biologia marziana.",
+    "note": "mudstone left in; candidates clumsy"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "HiRISE di MRO riprende il sito d'impatto di Schiaparelli — il cratere principale è visibile in alto; paracadute + guscio posteriore in basso a destra.",
+    "note": "backshell left in English"
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "site_name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Primo deposito di campioni su Marte in vista di un futuro ritorno; primo volo a motore in un'altra atmosfera (Ingenuity).",
+    "note": "caching and powered flight loosely rendered"
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Mars Exploration Rover durante l'integrazione: 185 kg, 6 ruote, la telecamera Pancam sull'albero e lo strumento di abrasione delle rocce RAT.",
+    "note": "mast left in English"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/zhurong.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Il primo rover marziano della Cina. Ha operato per 358 sol, percorrendo 1,92 km. Il suo radar a penetrazione del suolo ha fornito indizi di strati sepolti nel sottosuolo coerenti con antichi eventi di inondazione catastrofica. Ha perso il contatto durante l'inverno marziano del 2022; la CNSA ha confermato l'assenza di ulteriori comunicazioni.",
+    "note": "radar clause clumsy and unclear"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/viking1-orbiter.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Ha restituito oltre 50.000 immagini della superficie di Marte e delle sue lune nell'arco di quattro anni. Ha mappato in anticipo i potenziali siti di atterraggio di entrambi i lander Viking. Ha terminato le operazioni nell'agosto 1980, quando il gas per il controllo dell'assetto si è esaurito.",
+    "note": "ungrammatical participles without subject"
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.images.1.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Rocce sedimentarie sulla cresta Vera Rubin: formazioni ferrifere a bande e minerali argillosi indicano la presenza di acqua liquida antica e di un ambiente chimico abitabile.",
+    "note": "'a cresta' wrong preposition"
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/chandrayaan1.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.3.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Prima missione con il Lunar Roving Vehicle: ha percorso 27,9 km. Scott ha lasciato una piccola figurina in alluminio, «Fallen Astronaut», e una targa che elenca tutti gli astronauti e i cosmonauti morti nella corsa allo spazio. È l'unica opera d'arte sulla Luna, lasciata senza annuncio pubblico all'epoca.",
+    "note": "'First mission' rendered as 'primo volo'"
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Il lander Vikram sulla superficie del polo sud: allunaggio a 69,37° S, quello alla latitudine più alta mai realizzato.",
+    "note": "touchdown left in English"
+  },
+  {
+    "rel": "mars-sites/maven.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/lro.json",
+    "at": "site_name",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Orbita polare lunare (fase scientifica a ~50 km; ellittica dal 2011)",
+    "note": "'~50 km fase scientifica' ungrammatical"
+  },
+  {
+    "rel": "mars-sites/tianwen1-orbiter.json",
+    "at": "site_name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.3.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.2.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/phoenix.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Primo sismografo planetario dedicato su Marte. Ha rilevato oltre 1.300 terremoti marziani, tra cui un evento record di magnitudo 4,7 (S1222a) nel maggio 2022. La sonda di flusso termico (HP³) non è riuscita a penetrare il regolite, inaspettatamente coesivo. La missione è terminata a dicembre 2022, quando l'accumulo di polvere sui pannelli solari ha ridotto l'energia al di sotto della soglia operativa.",
+    "note": "marsquake left in English"
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mariner9.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Primo veicolo spaziale a entrare in orbita attorno a un altro pianeta. Arrivò su Marte durante una tempesta di polvere globale e attese che l'atmosfera si schiarisse. Restituì 7.329 immagini che coprivano l'85% della superficie marziana — il primo mosaico globale di un pianeta diverso dalla Terra. Scoprì l'Olympus Mons, le Valles Marineris e il terreno stratificato polare.",
+    "note": "atmosphere 'dissolved' instead of cleared"
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.3.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.3.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Il lander Phoenix, il paracadute e il guscio posteriore: tutti ripresi da HiRISE su MRO dopo l'atterraggio.",
+    "note": "backshell left in English"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.2.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Mars Science Laboratory. Alimentato da RTG (senza dipendere dall'energia solare), grande come un'auto (899 kg), ancora operativo oltre un decennio dopo l'atterraggio. Ha confermato che il cratere Gale ospitava un ambiente lacustre abitabile nel passato remoto. Sta risalendo la sequenza stratigrafica del Monte Sharp, con letture della storia ambientale di Marte, un miliardo di anni dopo l'altro.",
+    "note": "dangling gerund, garbled last clause"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.subtitle",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Cratere Jezero — atterraggio il 18 febbraio 2021",
+    "note": "subtitle starts lowercase"
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.2.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Il complesso di lancio di Tianwen-1: orbiter, lander e rover combinati, la missione marziana al primo tentativo più ambiziosa mai realizzata.",
+    "note": "stack left in English"
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Profilo del radar a penetrazione del suolo di Yutu nel sottosuolo di Mare Imbrium: colate di basalto a più strati fino a circa 330 m di profondità.",
+    "note": "clumsy word order"
+  },
+  {
+    "rel": "moon-sites/luna17.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Primo rover teleoperato — ha stabilito l'architettura su cui si sono basati tutti i rover marziani, da Sojourner a Perseverance.",
+    "note": "'teleopesato' is a non-word"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars-express.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "La prima missione interplanetaria dell'ESA. Portò Beagle 2 al suo atterraggio perduto. La telecamera stereo HRSC continua a mappare Marte a 10 m/pixel; il radar per il sottosuolo MARSIS nel 2018 ha scoperto prove di acqua liquida sotto la calotta polare sud.",
+    "note": "'di ESA', stray capital after semicolon"
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change5.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.3.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Mars Pathfinder atterrò in Ares Vallis il 4 luglio 1997, la prima missione statunitense su Marte a 21 anni dalle Viking. Il lander dispiegò Sojourner, le prime ruote su Marte, dimostrando che l'atterraggio con airbag e l'esplorazione su ruote erano possibili in una missione a basso costo da 265 milioni di dollari, secondo la filosofia «più veloce, migliore, più economica», che restituì circa 16.500 immagini. Il percorso di 100 metri di Sojourner mappò dodici rocce battezzate con nomi di personaggi dei cartoni animati (Yogi, Barnacle Bill, Scooby Doo) prima che il lander cessasse di funzionare.",
+    "note": "'dopo le Viking, 21 anni prima' contradicts itself; English slogan"
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.2.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.0.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Il Saturn V SA-506 con Apollo 11 sulla rampa 39A: 110,6 m di altezza, il lanciatore più potente mai volato in una missione operativa.",
+    "note": "'Pad' left in English"
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Il carico utile della capsula del tempo — cimeli israeliani, 30 milioni di pagine di conoscenza umana incise su lastre di nichel e (non senza polemiche) i tardigradi, i microanimali più resistenti del mondo.",
+    "note": "payload not rendered as carico utile"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/insight.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.0.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/luna10.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.2.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Il primo volo di Ingenuity, 19 aprile 2021: un volo stazionario di 3 secondi a 3 m di quota. Sull'elicottero, per questo preciso momento, viaggiava un frammento di tessuto del Flyer dei fratelli Wright.",
+    "note": "hovering left in English"
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.0.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/hope.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/phoenix.json",
+    "at": "site_name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.1.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Ha dimostrato l'allunaggio negli altopiani — ha aperto tipi di terreno scientificamente preziosi, prima considerati troppo pericolosi, un modello per i siti di Marte non di tipo mare.",
+    "note": "highland as 'regioni montuose', 'non-maria' odd"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.3.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mangalyaan.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Ha dimostrato la fattibilità di missioni interplanetarie a basso costo; prima missione asiatica su Marte.",
+    "note": "awkward passive fragment"
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.3.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change1.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/viking2-lander.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/mars-odyssey.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/artemis4.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Dal cratere Eagle a Endeavour: 14 anni di prove",
+    "note": "'Da cratere' missing article"
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.2.subtitle",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/apollo12.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Alan Shepard, il primo americano nello spazio (1961), divenne l'unica persona a giocare a golf sulla Luna. Portò di nascosto a bordo la testa di una mazza e due palline. Affermò che una era «andata per miglia e miglia» — le immagini LRO suggeriscono circa 37 m (40 yard). Eppure: il traguardo sportivo più lontano della storia.",
+    "note": "club head as 'bastone', tense mix"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Primo ritorno di campioni dal lato nascosto della Luna: forse la missione lunare scientificamente più significativa dai tempi dell'Apollo. Il materiale del lato nascosto (crosta più spessa, superficie più antica, composizione diversa) non era mai stato studiato. Questi campioni potrebbero finalmente spiegare perché i due emisferi della Luna sono così profondamente diversi.",
+    "note": "'unstudied' rendered as 'not completely studied'"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "capability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Ritorno di campioni da un sito che comunica solo tramite relè: combina le architetture di Chang'e 4 (comunicazioni dal lato nascosto) e di Chang'e 5 (ritorno di campioni). L'insieme completo di capacità per Mars Sample Return a qualsiasi latitudine.",
+    "note": "'comunicazioni remote' wrong; article-less fragments"
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "mars-sites/maven.json",
+    "at": "capability",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Legacy Pan, sol 5084-5111 (maggio-giugno 2018): l'ultimo panorama a 360° di Opportunity prima della tempesta di polvere. Perseverance Valley scende verso il cratere Endeavour.",
+    "note": "missing article before cratere"
+  },
+  {
+    "rel": "mars-sites/viking2-lander.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "left",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/mars3.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "intro",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.2.images.1.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "chapters.1.images.2.caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "new": "",
+    "note": ""
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "intro",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Zhurong è atterrato su Utopia Planitia il 14 maggio 2021: il primo atterraggio riuscito della Cina su Marte e la prima missione marziana di una qualsiasi nazione a combinare orbiter, lander e rover in un unico lancio (Tianwen-1). Il suo nome deriva dal dio cinese del fuoco; Zhurong ha percorso 1,92 km sulle pianure meridionali di Utopia prima di essere messo in ibernazione nel maggio 2022, durante la stagione delle polveri. La CNSA non ha confermato il risveglio.",
+    "note": "'Preso il nome' ungrammatical"
+  },
+  {
+    "rel": "moon-sites/lro.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "La missione orbitale lunare attiva più longeva. La fotocamera a campo stretto LROC risolve oggetti di ≥50 cm — abbastanza nitida da fotografare ogni stadio di discesa dell'Apollo, le tracce di entrambi i rover Lunokhod e ogni mezzo atterrato di recente. Ha realizzato le mappe di base topografiche e fotografiche usate da ogni recente missione di allunaggio. Attualmente sta mappando i crateri in ombra permanente per la scelta del sito Artemis al polo sud.",
+    "note": "dangling 'mappando', 'asset' left in English"
+  }
+]

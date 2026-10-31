@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "La leçon plus profonde concerne le tempo. Tiangong montre qu'en matière de vol spatial, le programme ayant l'air le plus rapide est rarement le plus solide. La Chine est arrivée en retard à toutes les premières et ne s'en est souciée d'aucune, optimisant plutôt pour une station qui serait achevée, fiable et permanente. Lorsque l'objectif est de voler encore en 2035, la patience n'est pas de la prudence — c'est la stratégie."
     }
-  ]
+  ],
+  "link_labels": {
+    "/tiangong": "Tiangong — la station en 3D",
+    "/fleet?focus=tiangong": "Flotte — Shenzhou, Tianzhou et la famille Long March",
+    "/programs/iss": "ISS — la station dont Tiangong a été tenu à l'écart",
+    "/earth?site=tiangong": "Tiangong au-dessus de nous"
+  }
 }

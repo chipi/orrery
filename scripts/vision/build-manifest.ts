@@ -80,7 +80,8 @@ export function computeRejectedBy(input: {
   category: VisionCategory;
   rejectedByHuman?: boolean;
   subjectMatch?: boolean;
-  missionStatus?: 'PLANNED' | 'FLOWN' | 'ACTIVE' | 'ENDED' | 'CRASHED' | 'LOST' | string;
+  missionStatus?:
+    'PLANNED' | 'CANCELLED' | 'FLOWN' | 'ACTIVE' | 'ENDED' | 'CRASHED' | 'LOST' | string;
 }): RejectedBy {
   if (input.rejectedByHuman) return 'human';
   // Off-subject beats every quality signal — a pristine photo of the wrong
@@ -88,7 +89,11 @@ export function computeRejectedBy(input: {
   if (input.subjectMatch === false) return 'off-subject';
   if (input.category === 'people') return 'category-people';
   if (input.category === 'diagram') return 'category-diagram';
-  if (input.category === 'render' && input.missionStatus !== 'PLANNED') {
+  if (
+    input.category === 'render' &&
+    input.missionStatus !== 'PLANNED' &&
+    input.missionStatus !== 'CANCELLED'
+  ) {
     return 'score-below-threshold';
   }
   if (input.score < SCORE_THRESHOLD) return 'score-below-threshold';

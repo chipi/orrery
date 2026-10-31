@@ -4,6 +4,7 @@ import { REGISTRY, defaultInputs } from '$lib/physics/registry';
 import { GOALS } from '$lib/physics/registry/goals';
 import { allIllustrations } from './illustration';
 import type { FormulaResult } from '$lib/physics/spec';
+import { LAB_MESSAGES } from './lab-messages';
 
 /**
  * Resolver key-parity (S3d review M2). The `t` resolver maps a dotted registry key
@@ -15,7 +16,8 @@ import type { FormulaResult } from '$lib/physics/spec';
  * resolves. As S3e/S4 add formulas, this catches an unauthored key at test time.
  */
 const en = JSON.parse(readFileSync('messages/en-US.json', 'utf8')) as Record<string, string>;
-const resolves = (key: string): boolean => key.replace(/[.-]/g, '_') in en;
+// t() looks keys up in the generated lab table, not the whole catalogue.
+const resolves = (key: string): boolean => key.replace(/[.-]/g, '_') in LAB_MESSAGES;
 
 function collectFromResult(res: FormulaResult, add: (k?: string) => void): void {
   res.assumptions.forEach(add);
@@ -199,10 +201,25 @@ function collectAllKeys(): string[] {
     'waning-crescent',
   ].forEach((n) => add(`lab.moon.phase.${n}`));
 
-  return [...keys].filter((k) => k.startsWith('lab.'));
+  return [...keys];
 }
 
 describe('lab i18n · resolver key parity', () => {
+  it('the generated lab table holds exactly the en-US lab_* messages', () => {
+    const want = Object.keys(en)
+      .filter((k) => k.startsWith('lab_'))
+      .sort();
+    expect(
+      Object.keys(LAB_MESSAGES).sort(),
+      'stale src/lib/lab/lab-messages.ts — run node scripts/i18n-tools/gen-lab-messages.mjs',
+    ).toEqual(want);
+  });
+
+  it('every key the lab UI can reach is a lab.* key (the table holds no others)', () => {
+    const other = collectAllKeys().filter((k) => !k.startsWith('lab.'));
+    expect(other, `non-lab keys reach t(): ${other.join(', ')}`).toEqual([]);
+  });
+
   it('every registry/goal/figure lab.* key resolves to an authored en-US message', () => {
     const missing = collectAllKeys().filter((k) => !resolves(k));
     expect(

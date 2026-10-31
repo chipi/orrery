@@ -16,8 +16,8 @@
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
-  import { loadLadder, ladderSources } from '$lib/image-srcset';
-  import { dataLoadFailed } from '$lib/data/core';
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
 
   interface Props {
     src: string | null;
@@ -25,33 +25,24 @@
   }
   let { src, onClose }: Props = $props();
 
-  // Responsive WebP ladder for the full-screen view; plain jpg until the
-  // manifest loads / for images with no ladder. RFC-030 Slice 3.
-  let ladderReady = $state(false);
-  loadLadder()
-    .then(() => (ladderReady = true))
-    .catch(dataLoadFailed);
-  const ladder = $derived(ladderReady && src ? ladderSources(src) : null);
+  // Mounted on <body>: a panel's own stacking context (aside.panel,
+  // z-index 30) would otherwise trap the overlay under the site nav
+  // (z-index 40), hiding the close button on /explore.
+  function toBody(node: HTMLElement) {
+    document.body.appendChild(node);
+    return { destroy: () => node.remove() };
+  }
 </script>
 
 {#if src}
-  <button type="button" class="lightbox" aria-label={m.panel_lightbox_close()} onclick={onClose}>
-    {#if ladder}
-      <img
-        src={ladder.src}
-        srcset={ladder.srcset}
-        sizes="90vw"
-        alt=""
-        loading="lazy"
-        decoding="async"
-      />
-    {:else}
-      <img {src} alt="" loading="lazy" decoding="async" />
-    {/if}
-    <span class="lightbox-close" aria-hidden="true">×</span>
-  </button>
-  <div class="lightbox-meta">
-    <ImageCredit {src} />
+  <div class="lightbox-root" use:toBody>
+    <button type="button" class="lightbox" aria-label={m.panel_lightbox_close()} onclick={onClose}>
+      <img {...responsive(src, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
+      <span class="lightbox-close" aria-hidden="true">×</span>
+    </button>
+    <div class="lightbox-meta">
+      <ImageCredit {src} />
+    </div>
   </div>
 {/if}
 

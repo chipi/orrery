@@ -80,5 +80,14 @@
       "type": "prose",
       "md": "De diepere les is dat grote capaciteit in stappen wordt opgebouwd, niet in sprongen. Perseverance's monster-verzamelende verfijning was onvoorstelbaar in Sojourner's tijd; het werd alleen mogelijk omdat elke rover de volgende verdiende. Ambitieuze doelen worden meestal niet bereikt door een enkele beslissende missie maar door een geduldige lijn, elk lid bewijst genoeg om de volgende te rechtvaardigen — vooruitgang als een estafette, niet een sprint."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — de wereld van de rovers",
+    "/programs/viking": "Viking — de landers van vóór de wielen",
+    "/mars?site=mars-pathfinder": "Sojourner — Ares Vallis",
+    "/mars?site=spirit": "Spirit — Gusev-krater",
+    "/mars?site=opportunity": "Opportunity — Meridiani Planum",
+    "/mars?site=curiosity": "Curiosity — Gale-krater",
+    "/mars?site=perseverance": "Perseverance — Jezero-krater"
+  }
 }

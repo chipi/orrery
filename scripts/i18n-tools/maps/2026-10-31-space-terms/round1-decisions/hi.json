@@ -1,0 +1,1025 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.diagram",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "file name"
+  },
+  {
+    "rel": "science/life-in-space/long-duration-effects.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "\"24 h orbit\" omitted naturally"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "intro_sentence",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "प्रक्षेपण-पथ में",
+    "replace": "प्रक्षेपवक्र में",
+    "why": "binding trajectory"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "एक छोटा बर्न",
+    "replace": "एक छोटा दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/observation/andromeda-galaxy.json",
+    "at": "body_paragraphs.1",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "टक्कर वाले पथ का",
+    "replace": "टक्कर वाले प्रक्षेपवक्र का",
+    "why": "binding trajectory"
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.1",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "भूमध्यरेखीय पथ पर",
+    "replace": "भूमध्यरेखीय प्रक्षेपवक्र पर",
+    "why": "binding trajectory"
+  },
+  {
+    "rel": "science/space-stations/node-module.json",
+    "at": "body_paragraphs.4",
+    "term": "docking",
+    "decision": "keep",
+    "why": "part of proper name Chinese Docking Mechanism"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.0",
+    "term": "apogee",
+    "decision": "change",
+    "find": "आपके अपोजी को",
+    "replace": "आपके अपभू को",
+    "why": "binding apogee"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "दूसरा बर्न चाहिए",
+    "replace": "दूसरा दहन चाहिए",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "term": "perigee",
+    "decision": "change",
+    "find": "पेरिजी पर",
+    "replace": "उपभू पर",
+    "why": "binding perigee"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "नाटकीय बर्न है",
+    "replace": "नाटकीय दहन है",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "इस बर्न के बाद",
+    "replace": "इस दहन के बाद",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "perigee",
+    "decision": "change",
+    "find": "के पेरिजी पर",
+    "replace": "के उपभू पर",
+    "why": "binding perigee"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "यह बर्न पार्किंग",
+    "replace": "यह दहन पार्किंग",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "सबसे बड़ा एकल बर्न",
+    "replace": "सबसे बड़ा एकल दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "प्रस्थान-बर्न से",
+    "replace": "प्रस्थान-दहन से",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning fuel = combustion"
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "fire burning = combustion"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burns the crew up\" = incineration"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "ब्रेकिंग बर्न",
+    "replace": "ब्रेकिंग दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "प्रवेश बर्न महँगा",
+    "replace": "प्रवेश दहन महँगा",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "वाला बर्न पूरी",
+    "replace": "वाला दहन पूरी",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "ब्रेकिंग बर्न",
+    "replace": "ब्रेकिंग दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "ब्रेकिंग बर्न",
+    "replace": "ब्रेकिंग दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.0",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "English manoeuvre names kept as proper names"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "समय पर किया गया बर्न",
+    "replace": "समय पर किया गया दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "तक बर्न किया",
+    "replace": "तक दहन किया",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "सबसे लंबा बर्न",
+    "replace": "सबसे लंबा दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "अगर बर्न विफल",
+    "replace": "अगर दहन विफल",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "प्रवेश बर्न बहुत",
+    "replace": "प्रवेश दहन बहुत",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "ब्रेकिंग बर्न ही",
+    "replace": "ब्रेकिंग दहन ही",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न आगमन",
+    "replace": "दहन आगमन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न को सबसे",
+    "replace": "दहन को सबसे",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "मिनट का बर्न",
+    "replace": "मिनट का दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "अगर बर्न विफल",
+    "replace": "अगर दहन विफल",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "MOI बर्न बहुत",
+    "replace": "MOI दहन बहुत",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"point engine and burn\" = fire engine, rendered as जलाना"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "ब्रेकिंग बर्न",
+    "replace": "ब्रेकिंग दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "लैंडिंग बर्न",
+    "replace": "लैंडिंग दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "एक बड़ा बर्न",
+    "replace": "एक बड़ा दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न का हिसाब",
+    "replace": "दहन का हिसाब",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "keep",
+    "why": "UI label \"descent HUD\" kept as transliterated feature name"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "ब्रेकिंग बर्न",
+    "replace": "ब्रेकिंग दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "diagram_caption",
+    "term": "descent",
+    "decision": "keep",
+    "why": "\"उतरने की गति\" is a correct inflected form of उतरना"
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न करने",
+    "replace": "दहन संपन्न करने",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न के बीच",
+    "replace": "दहन के बीच",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "छोटे बर्न होते",
+    "replace": "छोटे दहन होते",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "हर बर्न कुछ",
+    "replace": "हर दहन कुछ",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "हर बर्न कुछ",
+    "replace": "हर दहन कुछ",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "प्रस्थान-बर्न",
+    "replace": "प्रस्थान-दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "दूसरा बर्न चाहिए",
+    "replace": "दूसरा दहन चाहिए",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stars \"burn red\" = glow"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burn out\" = exhaust fuel"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.2",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"इंजन चलाएँ\" correctly renders firing the engine"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption sense, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption sense, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption sense, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption sense, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption sense, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption sense, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption sense, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption sense, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption sense, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"इंजन चलाएँ\" correctly renders firing the engine"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"इंजन जलाता है\" correctly renders firing the engine"
+  },
+  {
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "आगमन बर्न तय",
+    "replace": "आगमन दहन तय",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "का बर्न किया",
+    "replace": "का दहन किया",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "आगमन बर्न कितना",
+    "replace": "आगमन दहन कितना",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "आगमन बर्न और",
+    "replace": "आगमन दहन और",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "का बर्न केवल",
+    "replace": "का दहन केवल",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "दो बर्न,",
+    "replace": "दो दहन,",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "इंजन बर्न की",
+    "replace": "इंजन दहन की",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "कोई बर्न नहीं",
+    "replace": "कोई दहन नहीं",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "वापसी के बर्न का",
+    "replace": "वापसी के दहन का",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "प्रवेश बर्न नहीं",
+    "replace": "प्रवेश दहन नहीं",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "दो बर्न वाली",
+    "replace": "दो दहन वाली",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "कुल दो बर्न।",
+    "replace": "कुल दो दहन।",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "ब्रेकिंग बर्न",
+    "replace": "ब्रेकिंग दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "दो इंजन बर्न",
+    "replace": "दो इंजन दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न और ज़ोरदार",
+    "replace": "दहन और ज़ोरदार",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "प्रवेश बर्न बड़ा",
+    "replace": "प्रवेश दहन बड़ा",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "दो बड़े बर्न",
+    "replace": "दो बड़े दहन",
+    "why": "burn -> दहन"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burned out of orbit\" rendered idiomatically without the term"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.3",
+    "term": "stage",
+    "decision": "change",
+    "find": "डिसेंट स्टेज, डिसेंट स्टेज को पहुँचाने वाला क्रूज़ स्टेज, और क्रूज़ स्टेज को",
+    "replace": "अवरोहण चरण, अवरोहण चरण को पहुँचाने वाला क्रूज़ चरण, और क्रूज़ चरण को",
+    "why": "binding stage चरण (also applies descent अवरोहण)"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.3",
+    "term": "stage",
+    "decision": "change",
+    "find": "~0.5 टन का क्रूज़ स्टेज",
+    "replace": "~0.5 टन का क्रूज़ चरण",
+    "why": "binding stage चरण"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.3",
+    "term": "descent",
+    "decision": "keep",
+    "why": "applied in the stage edit (डिसेंट स्टेज -> अवरोहण चरण)"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "narrative_101.1",
+    "term": "stage",
+    "decision": "change",
+    "find": "डिसेंट स्टेज कमान",
+    "replace": "अवरोहण चरण कमान",
+    "why": "binding stage + descent"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "narrative_101.1",
+    "term": "descent",
+    "decision": "keep",
+    "why": "applied in the stage edit (डिसेंट स्टेज -> अवरोहण चरण)"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "narrative_101.2",
+    "term": "stage",
+    "decision": "change",
+    "find": "डिसेंट स्टेज रस्सियाँ",
+    "replace": "अवरोहण चरण रस्सियाँ",
+    "why": "binding stage + descent"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "narrative_101.2",
+    "term": "descent",
+    "decision": "keep",
+    "why": "applied in the stage edit"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "change",
+    "find": "डिसेंट स्टेज की रस्सियाँ",
+    "replace": "अवरोहण चरण की रस्सियाँ",
+    "why": "binding stage + descent"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "change",
+    "find": "स्टेज के दूर",
+    "replace": "चरण के दूर",
+    "why": "binding stage चरण"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "keep",
+    "why": "applied in the stage edit"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "diagram_caption",
+    "term": "stage",
+    "decision": "change",
+    "find": "डिसेंट स्टेज मँडराता",
+    "replace": "अवरोहण चरण मँडराता",
+    "why": "binding stage + descent"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "diagram_caption",
+    "term": "descent",
+    "decision": "keep",
+    "why": "applied in the stage edit"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "\"Rocket Propellant 1\" is the grade name RP-1"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "उतना ईंधन लगता",
+    "replace": "उतना प्रणोदक लगता",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "और ईंधन भी आपको",
+    "replace": "और प्रणोदक भी आपको",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "diagram_caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "बेहद अधिक ईंधन लगता",
+    "replace": "बेहद अधिक प्रणोदक लगता",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "payload",
+    "decision": "keep",
+    "why": "part of the product name Vega Secondary Payload Adapter"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "किसी ग्रह के पास से गुज़रना",
+    "replace": "किसी ग्रह का फ्लाईबाई",
+    "why": "binding flyby"
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Gaspra के पास से गुज़रना",
+    "replace": "Gaspra फ्लाईबाई",
+    "why": "binding flyby"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "शैरन के पास से गुज़रने पर",
+    "replace": "शैरन के फ्लाईबाई पर",
+    "why": "binding flyby"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "New Horizons के पास से गुज़रने पर",
+    "replace": "New Horizons के फ्लाईबाई पर",
+    "why": "binding flyby"
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "पास से गुज़रने वाली उड़ान के रूप में",
+    "replace": "फ्लाईबाई के रूप में",
+    "why": "binding flyby"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "सूर्य के निकट से गुज़रकर",
+    "replace": "सूर्य के निकट फ्लाईबाई करके",
+    "why": "binding flyby"
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "narrative_101.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "बृहस्पति के पास से गुज़रना",
+    "replace": "बृहस्पति का फ्लाईबाई",
+    "why": "binding flyby"
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "किसी ग्रह के पास से (उस ग्रह के सापेक्ष) अतिपरवलय पर गुज़रें",
+    "replace": "किसी ग्रह का फ्लाईबाई (उस ग्रह के सापेक्ष) अतिपरवलय पर करें",
+    "why": "binding flyby"
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"re-entry into 1 g\" is not atmospheric entry"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण के दौरान",
+    "replace": "अवरोहण के दौरान",
+    "why": "binding descent"
+  },
+  {
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "body_paragraphs.0",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण मॉड्यूल",
+    "replace": "अवरोहण मॉड्यूल",
+    "why": "binding descent"
+  },
+  {
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.4",
+    "term": "descent",
+    "decision": "change",
+    "find": "प्रवेश, अवतरण, भूस्पर्श",
+    "replace": "प्रवेश, अवरोहण, भूस्पर्श",
+    "why": "binding descent in EDL gloss"
+  },
+  {
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.4",
+    "term": "descent",
+    "decision": "change",
+    "find": "प्रणोदित अवतरण",
+    "replace": "प्रणोदित अवरोहण",
+    "why": "binding descent"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.1",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण में असली",
+    "replace": "अवरोहण में असली",
+    "why": "binding descent"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "तीन बिल्कुल अलग अवतरण",
+    "replace": "तीन बिल्कुल अलग अवरोहण",
+    "why": "binding descent"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "प्रवेश, अवतरण, लैंडिंग",
+    "replace": "प्रवेश, अवरोहण, लैंडिंग",
+    "why": "binding descent"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.1",
+    "term": "descent",
+    "decision": "change",
+    "find": "डिसेंट इंजन",
+    "replace": "अवरोहण इंजन",
+    "why": "binding descent"
+  },
+  {
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "मंगल का अवतरण",
+    "replace": "मंगल का अवरोहण",
+    "why": "binding descent"
+  },
+  {
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "शुक्र का अवतरण",
+    "replace": "शुक्र का अवरोहण",
+    "why": "binding descent"
+  },
+  {
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "चंद्रमा का अवतरण",
+    "replace": "चंद्रमा का अवरोहण",
+    "why": "binding descent"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण मंगल का",
+    "replace": "अवरोहण मंगल का",
+    "why": "binding descent"
+  }
+]

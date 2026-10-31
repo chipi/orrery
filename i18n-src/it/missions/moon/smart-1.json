@@ -1,6 +1,6 @@
 {
   "name": "SMART-1",
-  "vehicle": "Ariane 5 (carico condiviso)",
+  "vehicle": "Ariane 5 (carico utile condiviso)",
   "payload": "367 kg di massa al lancio; propulsore a ioni a effetto Hall solare-elettrico da 1,2 kW",
   "delta_v": "~3,9 km/s (propulsione ionica cumulativa in 13 mesi)",
   "type": "ORBITER ROBOTICO · COMPLETATO",
@@ -16,13 +16,13 @@
     {
       "met": 0,
       "label": "AVVIO MOTORE IONICO",
-      "note": "Il propulsore ioni Hall-effect PPS-1350-G inizia la spirale a bassa spinta di 13 mesi.",
+      "note": "Il propulsore ionico a effetto Hall PPS-1350-G avvia una spirale a bassa spinta di 13 mesi.",
       "type": "nominal"
     },
     {
       "met": 414,
       "label": "CATTURA LUNARE",
-      "note": "Catturato dalla gravità lunare il 2004-11-15 — primo spacecraft europeo alla Luna.",
+      "note": "Catturato dalla gravità lunare il 2004-11-15 — primo veicolo spaziale europeo alla Luna.",
       "type": "nominal"
     },
     {

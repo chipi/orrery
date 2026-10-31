@@ -96,5 +96,14 @@
       "type": "prose",
       "md": "그리고 간직할 가치가 있는 인간적 음표: 그들은 전에 해본 적도 없이 8년 만에 해냈고, 현대 도어벨보다 약한 탑재 컴퓨터로 해냈다. Apollo는 명확한 임무, 적합한 사람들, 그리고 정직한 마감 기한이 여전히 확률을 앞지를 수 있다는 확고한 논거다 — 다음에 목표가 불가능해 보일 때 기억할 만한 유용한 것."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "달 — 표면 지도와 Apollo 착륙 지점",
+    "/science/transfers/free-return": "자유 귀환 궤도",
+    "/science/mission-phases/trans-x-injection": "달 전이 궤도 투입",
+    "/science/mission-phases/edl": "진입·하강·착륙",
+    "/science/propulsion/tsiolkovsky": "로켓 방정식",
+    "/moon?site=apollo15": "Apollo 15 — 해들리-아펜니노",
+    "/moon?site=apollo16": "Apollo 16 — 데카르트 고지"
+  }
 }

@@ -7,10 +7,10 @@
     "Quand vous dimensionnez une mission, c'est le premier levier que vous actionnez. Vous voulez atteindre Mars ? Votre ellipse de transfert doit avoir un demi-grand axe compris entre celui de la Terre et celui de Mars. Choisissez la taille, la durée du vol en découle automatiquement."
   ],
   "body_paragraphs": [
-    "Si vous aplatissez une ellipse keplerienne dans sa plus grande dimension, la ligne que vous avez tracée est le grand axe. Coupez-le en deux et vous obtenez le demi-grand axe — noté `a`. C'est la distance moyenne du corps en orbite jusqu'au foyer, en quelque sorte : une moyenne arithmétique du périhélie (le plus proche) et de l'aphélie (le plus lointain).",
-    "Pourquoi s'en préoccuper ? À cause de la loi de Kepler : `T² ∝ a³`. La période orbitale dépend uniquement du demi-grand axe. La forme n'a pas d'importance. L'inclinaison n'a pas d'importance. Étirez une orbite pour qu'elle ressemble à un cigare et une autre pour qu'elle soit un cercle — si les deux ont le même `a`, elles prennent exactement le même temps pour revenir.",
-    "Dans les panneaux `/explore` d'Orrery, vous verrez ce nombre en unités astronomiques. Terre : a ≈ 1,0 UA. Mars : 1,52 UA. Jupiter : 5,2 UA. Appliquez la formule de période et vous avez reproduit l'horloge de l'orrery : 1 an, 687 jours, 11,86 ans."
+    "Si vous aplatissez une ellipse képlérienne selon sa plus grande dimension, la ligne que vous avez tracée est le grand axe. Coupez-le en deux et vous obtenez le demi-grand axe — noté `a`. C'est en quelque sorte la distance moyenne entre le corps en orbite et le foyer : la moyenne arithmétique du périhélie (le plus proche) et de l'aphélie (le plus lointain).",
+    "Pourquoi s'en soucier ? À cause de la troisième loi de Kepler : `T² ∝ a³`. La période orbitale ne dépend que du demi-grand axe. La forme n'a pas d'importance. L'inclinaison non plus. Étirez une orbite en cigare et une autre en cercle — si les deux ont le même `a`, elles mettent exactement le même temps à revenir à leur point de départ.",
+    "Dans les panneaux `/explore` d'Orrery, vous verrez ce nombre en unités astronomiques. Terre : a ≈ 1,0 ua. Mars : 1,52 ua. Jupiter : 5,2 ua. Injectez-les dans la formule de la période et vous retrouvez l'horloge de l'orrery : 1 an, 687 jours, 11,86 ans."
   ],
   "formula_caption": "Demi-grand axe comme moyenne des rayons périhélie et aphélie.",
-  "diagram_caption": "Axe majeur de périhélie à aphélie. Demi-grand axe a est la moitié."
+  "diagram_caption": "L'axe majeur s'étend du périhélie à l'aphélie en passant par les deux foyers. Le demi-grand axe a en est la moitié."
 }

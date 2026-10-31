@@ -80,5 +80,12 @@
       "type": "prose",
       "md": "Die tiefere Lehre liegt im Wert, die gesamte Kette zu beweisen. Das bleibende Geschenk von Viking war nicht eine einzelne Messung, sondern der Nachweis, dass es möglich und wiederholbar war, den Mars zu erreichen und unversehrt zu landen. Ist etwas Schwieriges erst einmal gelungen – und zwar zweimal –, hört es auf, ein Wagnis zu sein, und wird zu einem Fundament, auf dem andere aufbauen können. Manchmal besteht das größte Ergebnis, das eine Mission zurückbringt, schlicht darin, dass es machbar ist."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — wo Viking landete",
+    "/programs/mariner": "Mariner — die Vorbeiflüge und Orbiter, die den Mars zuerst erkundeten",
+    "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
+    "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
+    "/mars?site=viking1-orbiter": "Orbiter von Viking 1"
+  }
 }

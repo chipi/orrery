@@ -1,0 +1,255 @@
+[
+  {
+    "rel": "programs/gaganyaan.json",
+    "at": "outcome.2.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative: direction/course, not a flight path"
+  },
+  {
+    "rel": "programs/pioneer.json",
+    "at": "legacy.1.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "पलायन-पथ",
+    "replace": "पलायन प्रक्षेपवक्र",
+    "why": "escape trajectory"
+  },
+  {
+    "rel": "programs/soviet-lunar.json",
+    "at": "outcome.1.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "variant: पथ"
+  },
+  {
+    "rel": "programs/commercial-stations.json",
+    "at": "outcome.0.md",
+    "term": "docking",
+    "decision": "change",
+    "find": "आईएसएस से जुड़ेगा",
+    "replace": "आईएसएस से डॉक करेगा",
+    "why": "docking"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "lessons.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "figurative: sprint burns the runway, not an engine firing"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "the_land.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "भारी माल उठाने",
+    "replace": "भारी पेलोड उठाने",
+    "why": "payload"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "कार्गो बे",
+    "replace": "पेलोड बे",
+    "why": "payload bay"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "बड़ा माल",
+    "replace": "बड़ा पेलोड",
+    "why": "payload"
+  },
+  {
+    "rel": "programs/viking.json",
+    "at": "the_land.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Mariner के पास से गुज़रे यानों",
+    "replace": "Mariner फ्लाईबाई यानों",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/viking.json",
+    "at": "goals.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "पास से गुज़रने वाला कोई यान",
+    "replace": "फ्लाईबाई वाला कोई यान",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "outcome.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "टाइटन के पास से उस गुज़रने ने",
+    "replace": "टाइटन के उस फ्लाईबाई ने",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "outcome.1.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "दो संक्षिप्त उड़ानों",
+    "replace": "दो संक्षिप्त फ्लाईबाई",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "legacy.0.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "उसकी उड़ानों ने",
+    "replace": "उसके फ्लाईबाई ने",
+    "why": "flyby"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "goals.0.caption",
+    "term": "entry",
+    "decision": "change",
+    "find": "लौटकर बच",
+    "replace": "पुनःप्रवेश करके बच",
+    "why": "reentry = प्रवेश"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "goals.1.md",
+    "term": "entry",
+    "decision": "change",
+    "find": "वायुमंडल में वापसी से",
+    "replace": "वायुमंडल में पुनःप्रवेश से",
+    "why": "reentry = प्रवेश"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "goals.1.md",
+    "term": "entry",
+    "decision": "change",
+    "find": "सुरक्षित रूप से लौट आता है",
+    "replace": "सुरक्षित रूप से पुनःप्रवेश करता है",
+    "why": "reentry = प्रवेश"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "goals.1.md",
+    "term": "entry",
+    "decision": "change",
+    "find": "वापसी की आग",
+    "replace": "पुनःप्रवेश की आग",
+    "why": "reentry = प्रवेश"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "link_labels./science/mission-phases/edl",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent (अवरोहण), not landing"
+  },
+  {
+    "rel": "programs/gemini.json",
+    "at": "link_labels./science/mission-phases/edl",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent (अवरोहण), not landing"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "link_labels./science/mission-phases/edl",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent (अवरोहण), not landing"
+  },
+  {
+    "rel": "programs/shenzhou.json",
+    "at": "the_land.1.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण कैप्सूल",
+    "replace": "अवरोहण कैप्सूल",
+    "why": "descent capsule"
+  },
+  {
+    "rel": "programs/shenzhou.json",
+    "at": "outcome.1.caption",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण मॉड्यूल",
+    "replace": "अवरोहण मॉड्यूल",
+    "why": "descent module"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "the_land.0.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण मॉड्यूल",
+    "replace": "अवरोहण मॉड्यूल",
+    "why": "descent module"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "goals.0.caption",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण मॉड्यूल",
+    "replace": "अवरोहण मॉड्यूल",
+    "why": "descent module"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "goals.1.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण मॉड्यूल",
+    "replace": "अवरोहण मॉड्यूल",
+    "why": "descent module"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "link_labels./science/mission-phases/edl",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent (अवरोहण), not landing"
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "link_labels./science/mission-phases/edl",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent (अवरोहण), not landing"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.1.md",
+    "term": "descent",
+    "decision": "keep",
+    "why": "English means lineage (direct descent), not descent to a surface"
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "link_labels./science/mission-phases/edl",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent (अवरोहण), not landing"
+  }
+]

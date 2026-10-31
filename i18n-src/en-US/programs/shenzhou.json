@@ -28,5 +28,10 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Shenzhou is that in human spaceflight, patience is a safety system. By refusing to rush a crew onto an unproven vehicle, China achieved every major milestone its predecessors did without paying their price in lives. Being decades late cost it nothing that mattered; being careful bought it everything." },
     { "type": "prose", "md": "The deeper lesson is about what independence is worth. A borrowed seat can be taken away; a capability you built yourself cannot. Shenzhou is the vehicle that guarantees China never has to ask — and that guarantee, more than any single flight, is the thing the program was really built to deliver." }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=shenzhou": "Fleet — the Shenzhou spacecraft",
+    "/programs/tiangong": "Tiangong — the station Shenzhou crews built and fly to",
+    "/programs/soyuz": "Soyuz — the vehicle Shenzhou's layout descends from"
+  }
 }

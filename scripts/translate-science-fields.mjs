@@ -22,6 +22,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
+import { LANGUAGE_NAMES } from './lib/translate-quality.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 // Subdir under i18n-src/<loc>/ holding the overlay. Defaults to 'science' (the
@@ -29,21 +30,7 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 let SUBDIR = 'science';
 const SCIENCE = (loc) => path.join(ROOT, 'i18n-src', loc, SUBDIR);
 
-const NAMES = {
-  ar: 'Modern Standard Arabic',
-  de: 'German',
-  es: 'European Spanish',
-  fr: 'French',
-  hi: 'Hindi',
-  it: 'Italian',
-  ja: 'Japanese',
-  ko: 'Korean',
-  nl: 'Dutch',
-  'pt-BR': 'Brazilian Portuguese',
-  ru: 'Russian',
-  'sr-Cyrl': 'Serbian (Cyrillic)',
-  'zh-CN': 'Simplified Chinese',
-};
+const NAMES = LANGUAGE_NAMES;
 const ALL = Object.keys(NAMES);
 
 const SYSTEM = `You are a professional literary translator localising a premium space-science encyclopedia into {LANG}. Translate each English string into {LANG}, preserving:

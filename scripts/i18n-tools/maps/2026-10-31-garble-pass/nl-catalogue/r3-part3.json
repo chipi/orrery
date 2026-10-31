@@ -1,0 +1,1068 @@
+[
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "De 6 m grote altazimut-telescoop (BTA-6) van het Speciaal Astrofysisch Observatorium van de Russische Academie van Wetenschappen, opgericht in 1966, aan de voet van de Kaukasus.",
+    "note": "Institution name left in English; altazimuth mistranslated as azimutale."
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Laboratoriumfaciliteiten, extra verblijfsruimten voor de bemanning en uitrusting voor drijfstofoverdracht die het achterste Russische complex verankeren.",
+    "note": "Propellant must be drijfstof, not drijfgas; clumsy compound."
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.falcon-heavy",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.lrv-apollo",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/tianhe.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Gelanceerd in april 2021 als ruggengraat van het station — voortstuwing, energie, levensondersteuning en het koppelingsknooppunt waar Wentian en Mengtian in de daaropvolgende achttien maanden in de loodrechte T-vorm werden gezwenkt.",
+    "note": "'aanlegplaatshub' for docking hub; docking must be koppeling."
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/esperance-museum.json",
+    "at": "items.skylab",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/haumea.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/pioneer-plaque.json",
+    "at": "blurb",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Aan Pioneer 10 en 11 is een goudgeanodiseerde plaquette bevestigd waarin een man en een vrouw zijn gegraveerd, een kaart van de positie van de Zon, getekend aan de hand van veertien pulsars, en het waterstofatoom als gemeenschappelijke maatstaf — de eerste fysieke boodschap die de mensheid ooit naar de sterren stuurde, vijf jaar voordat de Voyager-platen volgden.",
+    "note": "Awkward syntax; 'getekend vanuit' wrong."
+  },
+  {
+    "rel": "earth-objects/chandrayaan1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De eerste maanmissie van India, 2008-2009. Droeg NASA's Moon Mineralogy Mapper (M³) mee — die in 2009 de eerste directe spectroscopische bevestiging opleverde van water (H₂O en OH), wijdverbreid over het maanoppervlak en niet alleen aan de polen. De missie eindigde na 312 dagen toen de communicatie verloren ging; M³-gegevens worden tot op de dag van vandaag nog geanalyseerd.",
+    "note": "Missing articles; telegraphic clauses."
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.saturn-ib",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/korolev-museum-zhytomyr.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/beidou.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Het wereldwijde navigatiesatellietsysteem van China. 46+ satellieten in MEO-, GEO- en IGSO-banen. Biedt sinds 2020 wereldwijde dekking. Werkt ook als berichtendienst — satellieten geven korte teksten door.",
+    "note": "'China's wereldwijd navigatiesatellietsysteem' ungrammatical."
+  },
+  {
+    "rel": "museums/cradle-of-aviation.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/esperance-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (kartering vanuit een baan + landing op het oppervlak)",
+    "note": "'baankartering' and 'landing op oppervlak' awkward."
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "trajectory",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Het traject dat een ruimtevaartuig door de ruimte volgt, open of gesloten — bijvoorbeeld de boog van de Aarde naar Mars.",
+    "note": "En dash used where English has em dash."
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.planet-labs",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/glonass.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "De hoge inclinatie (64,8°) betekent dat GLONASS een betere dekking biedt voor Rusland en het Noordpoolgebied — de geografie bepaalde het baanontwerp.",
+    "note": "Inclination must be inclinatie; 'orbitale ontwerp' wrong gender."
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/luna10.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De astronomische eenheid IS de gemiddelde afstand tussen Aarde en Zon — de Aarde is de letterlijke maatstaf voor elke meting in het zonnestelsel.",
+    "note": "Missing article before Aarde."
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Bijvullen van de drijfstof van Tianhe, droge lading met bemanningsbenodigdheden en afvalverwijdering in de baan via destructieve atmosferische intrede boven de Stille Zuidzee.",
+    "note": "Stale: describes reboost burns, not propellant top-up, cargo, waste removal."
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.wall",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/oneweb.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-science-and-industry-chicago.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/jwst.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "De excentriciteit van de Maan (0,055) is klein maar relevant — bij perigeum lijkt de schijf 12 % groter en helderder dan bij apogeum ('supermaan').",
+    "note": "Decimal point 0.055 instead of comma; clumsy phrasing."
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/beam.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Een opblaasbaar compartiment voor een technologiedemonstratie — de zachte schil van Bigelow, vastgeschroefd aan Tranquility om uitbreidbare volumes in de baan te bewijzen.",
+    "note": "'uitzetbare' for expandable; clumsy compounds."
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "De getijdenweerstand van Triton verkleint zijn baan — over 3,6 miljard jaar zal hij ofwel op Neptunus inslaan ofwel binnen de Roche-limiet uiteenvallen en een ringstelsel vormen.",
+    "note": "'verzwakt zijn baan' wrong: drag shrinks the orbit."
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/armstrong-air-and-space-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-space-centre-leicester.json",
+    "at": "items.sokol-kv-2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/science-museum-london.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/tianhe.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Bemanningsverblijf, commando- en gegevensverwerking, stuwraketten voor het op positie houden van het station en de centrale koppelpoort voor aankomende Shenzhou-bemanning en Tianzhou-vracht.",
+    "note": "English terms left: datahandling, stationkeeping."
+  },
+  {
+    "rel": "museums/stafford-air-and-space-museum.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/patroclus.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Patroclus is een binair systeem op L5 — 60° achter Jupiter aan. Lucy bereikt het in 2033 en voltooit zo de eerste tocht van een ruimtevaartuig langs beide Trojaanse zwermen.",
+    "note": "'volgt Jupiter met 60° achter' garbled."
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Ontdekt in 1999, genoemd naar Polymele — moeder van Patroklos in de Homerische traditie. P-type asteroïden vertonen roodachtige, kenmerkloze reflectiespectra die als organisch-rijk en gedehydrateerd worden geïnterpreteerd; hun dynamische geschiedenis plaatst hen stellig onder de oorspronkelijke planetesimalen van de buitenste schijf die Lucy moest bemonsteren.",
+    "note": "'Homeridische' should be Homerische; 'karakterloze' for featureless."
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "perigee",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/beam.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/inmarsat.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "14+ geostationaire satellieten die spraak- en datacommunicatie verzorgen voor de scheepvaart, de luchtvaart en afgelegen gebieden. Ruggengraat van het GMDSS — het wereldwijde maritieme nood- en veiligheidssysteem waarvan elk zeegaand schip afhankelijk is. In 2023 overgenomen door Viasat.",
+    "note": "GMDSS name left English; clumsy 'afgelegen-gebiedscommunicatie'."
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "486958 Arrokoth (bezocht door New Horizons in 2019) is het verst verwijderde object van het zonnestelsel dat ooit is verkend — een oorspronkelijk contactbinair object uit de Kuipergordel dat waarschijnlijk nooit door de Zon is opgewarmd.",
+    "note": "'Kuiper-belt' left in English; 'meest verre' awkward."
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Voyager 2 — USA, 1986 (flyby van het zuidelijk halfrond)",
+    "note": "flyby must stay flyby, not 'voorbijvlucht'."
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De gordel beslaat de ring van 2,2–3,2 AE. Kirkwood-gaten — lege baanzones bij de middelbewegingsresonanties met Jupiter — bepalen het patroon van de populatie.",
+    "note": "Decimal points; 'Jupiter middel-bewegingsresonanties' ungrammatical."
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Voorbereiding van ruimtewandelingen (EVA's), onderhoud van ruimtepakken en een alternatieve uitgang, los van de koppelinterfaces van Soyuz of Dragon.",
+    "note": "'dockinginterfaces' violates koppeling; 'pakdienst' odd."
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Half de diameter van Pluto — de grootste verhouding tussen maan- en planeetgrootte in het zonnestelsel. Charon en Pluto zijn wederzijds getijdengebonden en volgen een baan om een gemeenschappelijk massamiddelpunt ongeveer 980 km boven het oppervlak van Pluto — in feite een dubbelplanetensysteem. New Horizons onthulde een verrassend gevarieerd terrein: de gladde vlakte Vulcan Planitia in het zuiden, een oud halfrond vol kraters in het noorden en een donkerrode poolkap (Mordor Macula) van tholinen, gevormd toen methaanmoleculen die uit de atmosfeer van Pluto ontsnapten zich op Charon verzamelden en door ultraviolet licht werden omgezet. De vier kleinere manen van Pluto (Styx, Nix, Kerberos, Hydra) volgen een baan om het zwaartepunt van Pluto en Charon, met chaotische rotaties aangedreven door de wisselende zwaartekracht van het dubbelsysteem.",
+    "note": "'Pluteaus' is a nonword (Pluto's); several awkward phrasings."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/pluto.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "library_labels.triton-voyager2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "NASA Voyager 2 — ontmoeting met het Neptunussysteem (1989)",
+    "note": "'Neptunus-systeem ontmoeting' ungrammatical."
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cargo_dragon.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/zarya.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Het Functional Cargo Block werd als eerste gelanceerd — voortstuwing, energie en standregeling, waardoor Unity dagen later kon koppelen. NASA financierde de Russische bouw tijdens de moeilijkste overgangsjaren van het programma.",
+    "note": "'docken' violates koppeling; sentence fragment; missing article."
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/giotto.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "1,04 AE · in heliocentrische baan sinds de flyby van Grigg-Skjellerup op 1992-07-10",
+    "note": "flyby rendered as 'passage'; term binds flyby."
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "specific impulse",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Ruwweg de helft waterijs + de helft silicaatgesteente; het oppervlak is een mix van donker, met kraters bezaaid terrein (~4 miljard jaar oud) en lichter, gegroefd terrein (tektonische heroppervlakking ~2 miljard jaar geleden); dunne zuurstofexosfeer.",
+    "note": "'Gjr' is not a standard Dutch abbreviation."
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Io, Europa en Ganymedes zitten vergrendeld in een Laplace-resonantie van 4:2:1 — op elke 4 banen van Io maakt Europa er 2 en Ganymedes 1. De resonantie houdt de baan van Io niet-circulair.",
+    "note": "Comma splice; 'opgesloten' for locked."
+  },
+  {
+    "rel": "trajectories/dawn.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "De grens van het gravitatiegezag van de Maan — ongeveer 60.000 km vanaf het maancentrum. Binnen deze sfeer wint de zwaartekracht van de Maan het van die van de Aarde; daarbuiten drijft alles wat je achterlaat terug naar de Aarde. De meeste stabiele maanbanen bevinden zich ruim binnen de sfeer, onder 70% van de Hill-straal, omdat mascon-verstoring hogere banen instabiel maakt. De Hill-sfeer is ook de reden waarom de Maan geen natuurlijke maantjes heeft — geen enkel maantje kan lang genoeg een baan vasthouden.",
+    "note": "'maanmaantjes' is a nonword."
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/poisk.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Koppelinterface voor bemanning en vracht van Soyuz / Progress, voorbereidingsplek voor ruimtewandelingen in het Russische segment en externe montagepunten voor wetenschappelijke lading op de romp.",
+    "note": "English left in: Docking interface, staging; terms koppeling/lading ignored."
+  },
+  {
+    "rel": "museums/adler-planetarium.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/mengtian.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Het tweede laboratorium — voltooide in oktober 2022 het kenmerkende T-vormige silhouet, met twee extra zonnevleugels en een externe luchtsluis voor lading in vrachtstijl die geen ruimtewandelaar nodig heeft om te worden bediend.",
+    "note": "Stale: describes a different launch/experiments, not T-shape, wings, airlock."
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/iss.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/vega-contact.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/oumuamua.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Het traject van ʻOumuamua was het schoolvoorbeeld van een hyperbolische kegelsnede — gedefinieerd doordat de ontsnappingssnelheid op elk punt werd overschreden. Toen het werd ontdekt, was het al aan het vertrekken.",
+    "note": "'de leerboek' wrong gender, 'trajectorie' nonword, clause garbled."
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Net onder Deimos (23.460 km), de buitenste maan van Mars. Drie areostationaire satellieten op 120° van elkaar zouden de hele Marsschijf bestrijken — hetzelfde trucje dat communicatiesatellieten in een GEO gebruiken voor tv-uitzendingen op Aarde.",
+    "note": "English left (comsats, broadcast-tv); 'Drie areostationair satellieten' ungrammatical."
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Het Californische station van het Deep Space Network van NASA, beheerd door het JPL, dat interplanetaire ruimtevaartuigen volgt en ermee communiceert. Het is een van drie DSN-locaties die ongeveer 120 graden uit elkaar rond de Aarde liggen.",
+    "note": "'aarde' lowercase for the planet."
+  },
+  {
+    "rel": "iss-visitors/cargo_dragon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "De vrachtvariant van Dragon 2 — lading onder druk en zonder druk, wetenschappelijke vracht die naar de Aarde terugkeert, geen zitplaatsen.",
+    "note": "'drukgevoede' and 'nuttige lading' wrong; payload must be lading."
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.merlin-1d",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Pioneer 11 — USA, 1979 (eerste opnamen van dichtbij)",
+    "note": "'nahefoto's' is German, not Dutch."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Parker Solar Probe — dichtste flyby ooit langs de Zon (USA)",
+    "note": "flyby rendered 'scheervlucht'; term binds flyby."
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-huygens",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/leucus.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Leucus is een ongewoon langzaam roterende L4-Trojaan (periode van 445 uur) — de Lucy-flyby in april 2028 brengt zijn vreemde langwerpige vorm van dichtbij in beeld.",
+    "note": "'voorbijvlucht' should be flyby; awkward '445-uurperiode'."
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/uss-hornet-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "orbit",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Het gesloten pad dat een lichaam onder invloed van de zwaartekracht rond een ander lichaam volgt — in het eenvoudigste geval een ellips.",
+    "note": "En dash used where English has em dash."
+  },
+  {
+    "rel": "trajectories/vega-2.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "0,95 AE · ruimtevaartuig in heliocentrische baan sinds de flyby van Halley op 1986-03-09",
+    "note": "'voorbijvlucht' should be flyby."
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.wall",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/orus.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Orus is een C-type L4-Trojaan — Lucy-flyby in november 2028. Het donkere, koolstofrijke spectrum lijkt meer op dat van objecten in de Kuipergordel dan op dat van asteroïden in de binnenste gordel.",
+    "note": "'voorbijvlucht' should be flyby; 'Kuiper-gordel-objecten' clumsy."
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Zeer elliptische banen met periapsissen rond 1.000-2.500 km maar apoapsissen die tienduizenden kilometers bereiken, grotendeels historisch. Mariner 9 bereikte deze baan in 1971 — het eerste ruimtevaartuig dat een andere planeet in een baan omcirkelde, enkele weken eerder dan Mars 2. De Sovjet-Mars 3 en de Amerikaanse Viking 1-orbiter volgden, allemaal geparkeerd in lange ellipsen die brandstof voor het op positie houden minimaliseerden in het Mariner-tijdperk van beperkte delta-v-budgetten. Phobos passeert deze band op 9.376 km — zowel Viking als Mars Express gebruikten deze geometrie om de maan van dichtbij te bestuderen.",
+    "note": "'ander hemellichaam in een baan om zich heen draaide' garbled."
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Miranda heeft de hoogste baaninclinatie (4,3°) van de grote manen van Uranus — in combinatie met een verstoring in het vroege stelsel verklaart dit de beroemde klifwanden die Voyager 2 in 1986 in beeld bracht.",
+    "note": "'verstoringsevenement' anglicism."
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Voyager 2 — VS, 1986 (flyby van het zuidelijk halfrond)",
+    "note": "'voorbijvlucht' should be flyby."
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "ISRO's viertrapsraket Polar Satellite Launch Vehicle in de XL-configuratie, met zes aangebouwde vaste boosters. Oorspronkelijk ontworpen voor zonsynchrone banen om de Aarde; later ingezet voor interplanetaire missies, waaronder India's eerste maanorbiter en eerste Marssonde. De opvallend lage lanceerkosten (~$30M per lancering) maakten het totale budget van $74M voor de Mangalyaan-missie mogelijk.",
+    "note": "'vierfasige' for four-stage; stage must be trap; 'aarde' lowercase."
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-dragonfly",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "NASA Dragonfly — missie met een nucleair aangedreven rotorvaartuig naar Titan",
+    "note": "'rotorcraft' left in English."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.3.label",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Grootste lid van de L4-familie van Trojanen rond Eurybates — een botsingscluster met een moederlichaam van 64 km en ongeveer 280 kleinere fragmenten. De ontmoeting van Lucy op 2027-08-12 met een snelheid van 5,7 km/s wordt de eerste opname van dichtbij van een Jupiter-Trojaan ooit, samen met de maan van Eurybates, Queta (1 km, in 2018 door Hubble ontdekt).",
+    "note": "'kern' for parent body; Eurybates's genitive; clumsy."
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Eerste herbruikbare zware draagraket voor banen om de Aarde",
+    "note": "'zware orbitale draagraket' awkward."
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Ontdekt in 1906, geclassificeerd als P-type met lage albedo en roodachtige reflectie. De ontmoeting van Lucy op 2033-03-02 met 8,4 km/s sluit de primaire missie af — het ruimtevaartuig brengt beide partners van het dubbelsysteem in één nadering in beeld en brengt het oppervlaktereliëf, de samenstelling en de zwaartekrachtdans die hen al 4,5 miljard jaar aan elkaar bindt in kaart.",
+    "note": "'Gyr' left untranslated; clumsy clauses."
+  },
+  {
+    "rel": "iss-modules/harmony.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Aanmeerpunten voor de Columbus- en Kibo-elementen, bemanningsdoorgang en bevestigingspunten voor robotica om camera's te richten.",
+    "note": "'camera-richtende robotica' clumsy."
+  },
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  }
+]

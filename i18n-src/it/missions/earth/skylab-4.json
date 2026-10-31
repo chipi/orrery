@@ -6,7 +6,7 @@
   "type": "EQUIPAGGIO STAZIONE ORBITALE · COMPLETATO",
   "first": "Permanenza su Skylab più lunga — 84 giorni, osservazioni della Cometa Kohoutek, controverso riposo \"sciopero di Skylab\"",
   "description": "Carr, Gibson e Pogue — l'ultimo e più lungo equipaggio di Skylab, 84 giorni e 1 ora, tutti alla prima missione. Lanciato il 1973-11-16 14:01 UTC su Saturn IB (SA-208). Osservazioni complete delle risorse terrestri e del Sole, inclusa una campagna completa sulla cometa Kohoutek tra dicembre e gennaio. La missione è ricordata soprattutto per quello che la NASA chiamò in seguito un «ammutinamento di Skylab» o «sciopero» — un resoconto controverso di una pausa nel giorno di riposo intorno al giorno 42, dopo che le richieste incessanti dei controllori a terra avevano compresso ogni minuto di veglia; la NASA e l'equipaggio hanno dichiarato che non vi fu alcuno sciopero organizzato, ma il sovraccarico del programma di attività era reale e portò a riforme permanenti della NASA nella pianificazione dei tempi di lavoro dell'equipaggio per le missioni di lunga durata. Ammaraggio il 1974-02-08 15:17 UTC — l'ultimo ammaraggio di Skylab. CSM-118 esposto al National Museum of the US Air Force, Dayton OH.",
-  "dispatch": "Skylab 4 stabilì un record di durata che restò valido per anni — 84 giorni nello spazio — e divenne un punto di riferimento per qualcosa di meno atteso: chi gestisce davvero una missione. L'equipaggio di Gerald Carr arrivò a un calendario massacrante radiato da terra, rimase indietro, e infine si ribellò, prendendosi un periodo di riposo non programmato — la NASA e l'equipaggio stesso in seguito contestarono il grado di intenzionalità dello stand-down — costringendo il mission control a negoziare un carico di lavoro che gli umani potessero effettivamente sostenere. Catturarono anche le migliori osservazioni dell'epoca della Cometa Kohoutek. Il volo è ricordato sia per il record che per aver affermato, per la prima volta chiaramente, che le persone in orbita — non solo i pianificatori a terra — hanno voce in capitolo su come viene condotta una missione di lunga durata.",
+  "dispatch": "Skylab 4 stabilì un record di durata che resistette per anni — 84 giorni nello spazio — e divenne un punto di riferimento in qualcosa di meno atteso: chi decide come si conduce una missione. L'equipaggio di Gerald Carr si trovò di fronte a un programma massacrante trasmesso via radio da terra, rimase indietro e alla fine si ribellò, prendendosi un periodo di riposo non programmato — in seguito la NASA e lo stesso equipaggio discussero su quanto quella sospensione fosse stata deliberata — e costringendo il controllo missione a negoziare un carico di lavoro che gli esseri umani potessero davvero sostenere. Realizzarono anche le migliori osservazioni dell'epoca della cometa Kohoutek. Il volo è ricordato sia per il record sia per aver affermato, per la prima volta in modo chiaro, che le persone in orbita — non solo i pianificatori a terra — hanno voce in capitolo su come viene condotta una missione di lunga durata.",
   "events": [
     {
       "met": 0,
@@ -17,19 +17,19 @@
     {
       "met": 30,
       "label": "CAMPAGNA KOHOUTEK",
-      "note": "Osservazioni comprehensive da ATM + finestre della Cometa Kohoutek.",
+      "note": "Osservazioni complete della cometa Kohoutek con l'ATM e dalle finestre.",
       "type": "info"
     },
     {
       "met": 42,
       "label": "RIPRISTINO DELLA TIMELINE",
-      "note": "Controverso stand-down di giorno di riposo (equipaggio e NASA in seguito dichiararono che non si verificò alcuno sciopero formale); il genuino sovraccarico della timeline condusse a riforme permanenti della NASA.",
+      "note": "Sospensione del lavoro nel giorno di riposo, oggetto di controversia (l'equipaggio e la NASA affermarono poi che non vi fu alcuno sciopero formale); il reale sovraccarico del programma di lavoro portò a riforme permanenti della NASA.",
       "type": "warning"
     },
     {
       "met": 84.05,
       "label": "AMMARAGGIO",
-      "note": "CSM-118 ammarato nell'Oceano Pacifico il 1974-02-08 15:17 UTC — ultimo ammaraggio di Skylab.",
+      "note": "Il CSM-118 è ammarato nell'Oceano Pacifico il 1974-02-08 alle 15:17 UTC — ultimo ammaraggio del programma Skylab.",
       "type": "nominal"
     }
   ]

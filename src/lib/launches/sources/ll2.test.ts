@@ -3,7 +3,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
-import { LL2Source, ll2RawToRawEntry } from './ll2.js';
+import { LL2Source, fetchLL2Page, ll2RawToRawEntry } from './ll2.js';
 
 const fakeRaw = {
   id: 'ef65c43b-aaaa-4ddd-9155-289eaabdd000',
@@ -204,5 +204,61 @@ describe('LL2Source', () => {
       toIso: '2027-01-01T00:00:00Z',
     });
     expect(entries).toHaveLength(0);
+  });
+});
+
+describe('fetchLL2Page — transient upstream failures', () => {
+  const page = { results: [], next: null };
+  const ok = () => new Response(JSON.stringify(page), { status: 200 });
+  const status = (n: number, headers: Record<string, string> = {}) =>
+    new Response('', { status: n, headers });
+  function run(steps: Array<() => Response | Promise<Response>>) {
+    let i = 0;
+    const waits: number[] = [];
+    const fetchFn = (async () => steps[i++]()) as typeof fetch;
+    const sleep = async (ms: number) => {
+      waits.push(ms);
+    };
+    return { call: () => fetchLL2Page('https://ll2/x', { fetchFn, sleep }), waits, calls: () => i };
+  }
+
+  it('retries a 504 and returns the page (prod 2026-10-29 00:02Z)', async () => {
+    const r = run([() => status(504), ok]);
+    expect(await r.call()).toEqual(page);
+    expect(r.waits).toEqual([10_000]);
+  });
+
+  it('gives up after two retries and throws with the status', async () => {
+    const r = run([() => status(504), () => status(502), () => status(503)]);
+    await expect(r.call()).rejects.toThrow('503');
+    expect(r.calls()).toBe(3);
+    expect(r.waits).toEqual([10_000, 30_000]);
+  });
+
+  it('retries a network error', async () => {
+    const r = run([
+      () => {
+        throw new TypeError('fetch failed');
+      },
+      ok,
+    ]);
+    expect(await r.call()).toEqual(page);
+  });
+
+  it('does not retry a 4xx', async () => {
+    const r = run([() => status(404), ok]);
+    await expect(r.call()).rejects.toThrow('404');
+    expect(r.calls()).toBe(1);
+  });
+
+  it('waits out a 429 without spending a retry', async () => {
+    const r = run([
+      () => status(429, { 'retry-after': '2' }),
+      () => status(504),
+      () => status(504),
+      ok,
+    ]);
+    expect(await r.call()).toEqual(page);
+    expect(r.waits).toEqual([2_000, 10_000, 30_000]);
   });
 });

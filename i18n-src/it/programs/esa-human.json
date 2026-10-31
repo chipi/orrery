@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La seconda lezione è che la partnership moltiplica un budget limitato. Combinando le risorse di molte nazioni attraverso un'unica agenzia e investendole in capacità che hanno guadagnato un ruolo permanente, l'Europa ha ottenuto molto di più nel volo spaziale umano di quanto la sua spesa da sola lascerebbe prevedere — e ha trasformato la padronanza di una nicchia, il cargo automatizzato, in una quota del ritorno sulla Luna. Per una potenza che non può superare in spesa i giganti, essere indispensabili è una strategia migliore che essere indipendenti, e l'Europa l'ha fatta funzionare per quarant'anni."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "SSI — la stazione che l'Europa ha aiutato a costruire",
+    "/programs/ariane": "Ariane — il lanciatore che ha portato l'ATV"
+  }
 }

@@ -11,6 +11,7 @@ import { join } from 'node:path';
 import { createHash, randomBytes } from 'node:crypto';
 import { SignJWT, generateKeyPair, exportJWK, importJWK, jwtVerify, type JWK } from 'jose';
 import { buildLabApi, configFromEnv } from './index';
+import { listenOnFreePort } from './test-listen';
 
 const GOOGLE_CLIENT_ID = 'test-google-client';
 const CLAUDE_SECRET = 'claude-secret-for-tests';
@@ -92,18 +93,14 @@ beforeAll(async () => {
   // The whole suite fires from one address in one window — keep the limiter
   // out of the way here; its behavior gets its own dedicated test below.
   process.env.LAB_RATE_LIMIT_PER_MIN = '100000';
-  // Issuer must equal the reachable base (it's baked into metadata + iss), so
-  // bind a throwaway server to learn the ephemeral port, then build for real.
-  const probe = createServer();
-  await new Promise<void>((r) => probe.listen(0, '127.0.0.1', r));
-  const port = (probe.address() as { port: number }).port;
-  await new Promise<void>((r) => probe.close(() => r()));
-  base = `http://127.0.0.1:${port}`;
-  issuer = base;
-  process.env.LAB_ISSUER = issuer;
-  const built = await buildLabApi({ ...configFromEnv(), issuer });
-  await new Promise<void>((r) => built.server.listen(port, '127.0.0.1', r));
-  labApi = built.server;
+  // Issuer must equal the reachable base (it's baked into metadata + iss), so the
+  // port is chosen before the build.
+  labApi = await listenOnFreePort(async (port) => {
+    base = `http://127.0.0.1:${port}`;
+    issuer = base;
+    process.env.LAB_ISSUER = issuer;
+    return (await buildLabApi({ ...configFromEnv(), issuer })).server;
+  });
 });
 
 afterAll(async () => {
@@ -495,6 +492,33 @@ describe('negative paths', () => {
     }
   });
 
+  it('/ask refuses a question over the length cap (400) before any LLM call', async () => {
+    const v = randomBytes(32).toString('base64url');
+    const flow = await runAuthLeg({
+      email: ALLOWED_EMAIL,
+      verifier: v,
+      clientId: 'orrery-lab-web',
+      redirectUri: 'http://localhost:5373/lab/callback',
+      resource: issuer,
+    });
+    const token = (
+      await postToken({
+        grant_type: 'authorization_code',
+        client_id: 'orrery-lab-web',
+        code: flow.ourCode!,
+        redirect_uri: 'http://localhost:5373/lab/callback',
+        code_verifier: v,
+      })
+    ).body.access_token as string;
+    const resp = await fetch(`${base}/ask`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` },
+      body: JSON.stringify({ question: 'x'.repeat(2001) }),
+    });
+    expect(resp.status).toBe(400);
+    expect(((await resp.json()) as { error: string }).error).toMatch(/longer than 2000/);
+  });
+
   it('refresh after allowlist removal → revoked (the revocation lever)', async () => {
     const verifier = randomBytes(32).toString('base64url');
     const flow = await runAuthLeg({ email: ALLOWED_EMAIL, verifier });
@@ -591,5 +615,70 @@ describe('DCR — dynamic client registration (#464, shareable connector)', () =
     expect((await register(many)).status).toBe(400);
     expect((await register(['https://evil.example/' + 'x'.repeat(520)])).status).toBe(400);
     expect((await register([CB, 'https://claude.ai/api/mcp/auth_callback2'])).status).toBe(201);
+  });
+});
+
+/** A Door-1 (SPA, physics:ask) access token for the allowlisted account. */
+async function door1Token(): Promise<string> {
+  const v = randomBytes(32).toString('base64url');
+  const flow = await runAuthLeg({
+    email: ALLOWED_EMAIL,
+    verifier: v,
+    clientId: 'orrery-lab-web',
+    redirectUri: 'http://localhost:5373/lab/callback',
+    resource: issuer,
+  });
+  return (
+    await postToken({
+      grant_type: 'authorization_code',
+      client_id: 'orrery-lab-web',
+      code: flow.ourCode!,
+      redirect_uri: 'http://localhost:5373/lab/callback',
+      code_verifier: v,
+    })
+  ).body.access_token as string;
+}
+
+describe('/ask when the LLM gateway is down or slow (Phase 6 o11y gap)', () => {
+  const ask = (token: string) =>
+    fetch(`${base}/ask`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` },
+      body: JSON.stringify({ question: 'How long to Mars?' }),
+    });
+
+  it('an unreachable gateway is a 502 llm_unavailable, not a 500', async () => {
+    const token = await door1Token();
+    const prev = process.env.LITELLM_BASE_URL;
+    process.env.LITELLM_BASE_URL = 'http://127.0.0.1:1';
+    try {
+      const resp = await ask(token);
+      expect(resp.status).toBe(502);
+      expect(((await resp.json()) as { error: string }).error).toBe('llm_unavailable');
+    } finally {
+      process.env.LITELLM_BASE_URL = prev;
+    }
+  });
+
+  it('a fifth concurrent ask is turned away with 503 + Retry-After while four are in flight', async () => {
+    const token = await door1Token();
+    // A gateway that accepts and never answers holds every /ask open.
+    const hang = createServer(() => {});
+    await new Promise<void>((r) => hang.listen(0, '127.0.0.1', r));
+    const prev = process.env.LITELLM_BASE_URL;
+    process.env.LITELLM_BASE_URL = `http://127.0.0.1:${(hang.address() as { port: number }).port}`;
+    const inFlight = Array.from({ length: 4 }, () => ask(token).catch(() => null));
+    try {
+      // Let the four reach the gateway before the fifth arrives.
+      await new Promise((r) => setTimeout(r, 300));
+      const resp = await ask(token);
+      expect(resp.status).toBe(503);
+      expect(resp.headers.get('retry-after')).toBe('10');
+    } finally {
+      process.env.LITELLM_BASE_URL = prev;
+      hang.closeAllConnections();
+      await new Promise<void>((r) => hang.close(() => r()));
+      await Promise.all(inFlight);
+    }
   });
 });

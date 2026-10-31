@@ -32,11 +32,11 @@
   "outcome": [
     {
       "type": "prose",
-      "md": "De tour leverde meer dan verwacht. Bij Jupiter in 1979 vonden de Voyagers actieve vulkanen op de maan Io — de eerste ooit gezien buiten de aarde — en het gladde ijs van Europa dat verborg wat op een oceaan leek. Bij Saturnus losten ze de ringen op in duizenden ingewikkelde strengen en scheerden dicht langs de in nevel gehulde maan Titan. Die Titan-passage boog het pad van Voyager 1 omhoog en uit het vlak van de planeten, waardoor het opklom naar de rand van het zonnestelsel."
+      "md": "De tour leverde meer dan verwacht. Bij Jupiter in 1979 vonden de Voyagers actieve vulkanen op de maan Io — de eerste ooit gezien buiten de aarde — en het gladde ijs van Europa dat verborg wat op een oceaan leek. Bij Saturnus losten ze de ringen op in duizenden ingewikkelde strengen en scheerden dicht langs de in nevel gehulde maan Titan. Die Titan-flyby boog het pad van Voyager 1 omhoog en uit het vlak van de planeten, waardoor het opklom naar de rand van het zonnestelsel."
     },
     {
       "type": "prose",
-      "md": "Voyager 2 vloog de volledige Grand Tour. Het bereikte Uranus in 1986 en Neptunus in 1989 — het enige ruimtevaartuig ooit dat een van beide werelden heeft bezocht — en vond een planeet gekanteld op zijn zij, een diepblauwe reus met de snelste winden in het zonnestelsel, en een maan, Triton, met geisers van stikstof die de ruimte in spuiten. Tot op de dag van vandaag is alles wat de mensheid van dichtbij weet over de ijsreuzen verzameld in die twee korte passages."
+      "md": "Voyager 2 vloog de volledige Grand Tour. Het bereikte Uranus in 1986 en Neptunus in 1989 — het enige ruimtevaartuig ooit dat een van beide werelden heeft bezocht — en vond een planeet gekanteld op zijn zij, een diepblauwe reus met de snelste winden in het zonnestelsel, en een maan, Triton, met geisers van stikstof die de ruimte in spuiten. Tot op de dag van vandaag is alles wat de mensheid van dichtbij weet over de ijsreuzen verzameld in die twee korte flybys."
     },
     {
       "type": "prose",
@@ -60,7 +60,7 @@
   "legacy": [
     {
       "type": "prose",
-      "md": "Het eerste erfgoed van Voyager is de kaart zelf. De passages veranderden Jupiter, Saturnus, Uranus en Neptunus en hun manen van lichtpunten in plaatsen, en de ontmoetingen met Uranus en Neptunus blijven — decennia later — de enige data van dichtbij die de mensheid ooit over de ijsreuzen heeft verzameld. Elk voorstel om naar die werelden terug te keren is nog steeds gebaseerd op wat twee ruimtevaartuigen uit 1977 zagen in een paar uur."
+      "md": "Het eerste erfgoed van Voyager is de kaart zelf. De flybys veranderden Jupiter, Saturnus, Uranus en Neptunus en hun manen van lichtpunten in plaatsen, en de ontmoetingen met Uranus en Neptunus blijven — decennia later — de enige data van dichtbij die de mensheid ooit over de ijsreuzen heeft verzameld. Elk voorstel om naar die werelden terug te keren is nog steeds gebaseerd op wat twee ruimtevaartuigen uit 1977 zagen in een paar uur."
     },
     {
       "type": "prose",
@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "De diepere les is om te bouwen met veel meer marge dan het plan vereist. De Voyagers waren ontworpen voor een missie een tiende zo lang als die ze hebben gevlogen, en ze hielden stand omdat hun makers ze te stevig bouwden — redundante systemen, herprogrammeerbare computers, vermogen over. Ambitie die alleen plant voor de verwachte missie eindigt met de verwachte missie; degenen die blijven gaan zijn degenen die gebouwd zijn voor meer dan waar ze om gevraagd werden te doen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "De buitenplaneten in de 3D-verkenner",
+    "/gallery/deep-sky": "De ‘Pale Blue Dot’, in de Deep-sky-galerij",
+    "/programs/pioneer": "Pioneer — de sondes die als eerste gingen"
+  }
 }

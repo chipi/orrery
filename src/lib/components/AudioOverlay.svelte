@@ -19,7 +19,7 @@
   import { tourElapsedSec, tourRemainingSec, tourTotalSec } from '$lib/audio-tour-progress';
   import { fmtTime } from '$lib/audio-format';
   import { readTourCookie, clearTourCookie, type TourResumeState } from '$lib/audio-tour-cookie';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { exhibit } from '$lib/exhibit.svelte';
   import { trackStageFire } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
@@ -82,7 +82,7 @@
     // autoplay without user gesture). Read-only access is fine; the
     // setter is the surface specs need.
     if (browser) {
-      (window as Window & { __orreryAudio?: unknown }).__orreryAudio = {
+      window.__orreryAudio = {
         state: audio,
         registry: audioRegistry,
         setPosition: (sec: number) => {
@@ -201,7 +201,7 @@
     const current = page.url.pathname.replace(/\/+$/, '') || '/';
     if (ep.id === lastAutoNavEpisodeId) return;
     lastAutoNavEpisodeId = ep.id;
-    const target = `${base}${ep.route === '/' ? '' : ep.route}` || '/';
+    const target = localHref(ep.route);
     const want = (target.replace(/\/+$/, '') || '/').replace(base, '') || '/';
     const have = current.replace(base, '') || '/';
     // Already on the episode's route (page-follow may have brought us
@@ -412,7 +412,7 @@
       // Prepend the deploy base — targets are route-relative (`/science/transfers`),
       // so a bare goto 404s on GitHub Pages (base `/orrery/`). Mirrors the
       // episode-nav path above (`${base}${ep.route}`).
-      void goto(`${base}${stage.target}`, { replaceState, keepFocus: true });
+      void goto(localHref(stage.target), { replaceState, keepFocus: true });
       return;
     }
     const el = document.querySelector(stage.target) as HTMLElement | null;
@@ -896,7 +896,7 @@
             aria-label={m.audio_minimize_aria()}
             title={audio.currentEpisode
               ? m.audio_minimize_title()
-              : 'Load an episode first — minimize collapses to the active-playback bar'}
+              : m.audio_minimize_disabled_title()}
             disabled={!audio.currentEpisode}
             onclick={() => audio.toggleCompact()}
           >
@@ -925,7 +925,7 @@
     {#if resumeOffer && !audio.compact}
       <section class="resume-offer" aria-label={m.audio_resume_offer_aria()}>
         <span class="resume-text">
-          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output; the title comes from the shipped audio registry (the cookie supplies only the episode id) and pos goes through fmtTime (digits only) -->
           {@html m.audio_resume_prompt({
             title: `<strong>${resumeOfferTitle}</strong>`,
             pos: `<span class="resume-pos">${fmtTime(resumeOffer.pos)}</span>`,
@@ -1024,7 +1024,7 @@
           aria-label={m.audio_compact_stop_aria()}
           onclick={() => audio.stopTour()}
         >
-          stop
+          {m.audio_stop_label()}
         </button>
         <button
           type="button"
@@ -1036,7 +1036,7 @@
           ›
         </button>
         <p class="tour-note">
-          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output only, no user input -->
           {@html m.audio_tour_note({
             stop: `<strong>${m.audio_tour_note_stop()}</strong>`,
           })}
@@ -1135,7 +1135,9 @@
             type="button"
             class="cc-toggle"
             class:active={audio.captionsOn}
-            aria-label={audio.captionsOn ? 'Hide captions' : 'Show captions'}
+            aria-label={audio.captionsOn
+              ? m.audio_captions_hide_aria()
+              : m.audio_captions_show_aria()}
             aria-pressed={audio.captionsOn}
             title={m.audio_captions_title()}
             onclick={toggleCaptions}
@@ -1162,7 +1164,7 @@
             aria-label={m.audio_transcript_download_aria()}
             onclick={downloadTranscript}
           >
-            ↓ transcript (.txt)
+            ↓ {m.audio_transcript_download()} (.txt)
           </button>
         </div>
       </section>
@@ -1180,7 +1182,7 @@
             disabled={routeEpisodes.length === 0}
             onclick={() => (scope = 'screen')}
           >
-            For this screen{routeEpisodes.length > 0 ? ` (${routeEpisodes.length})` : ''}
+            {m.audio_scope_screen()}{routeEpisodes.length > 0 ? ` (${routeEpisodes.length})` : ''}
           </button>
           <button
             type="button"
@@ -1190,7 +1192,7 @@
             aria-selected={scope === 'all'}
             onclick={() => (scope = 'all')}
           >
-            All episodes ({audioRegistry.episodes.length})
+            {m.audio_scope_all({ count: audioRegistry.episodes.length })}
           </button>
         </div>
 
@@ -1243,8 +1245,8 @@
          popup keeps just the per-episode links. -->
     <footer class="origin-disclosure" aria-label={m.audio_origin_disclosure_aria()}>
       <span class="origin-detail"
-        ><a href="{base}/credits">{m.audio_credits_link()}</a> ·
-        <a href="{base}/library/episodes">{m.audio_read_transcripts()}</a></span
+        ><a href={localHref(`/credits`)}>{m.audio_credits_link()}</a> ·
+        <a href={localHref(`/library/episodes`)}>{m.audio_read_transcripts()}</a></span
       >
     </footer>
   </div>

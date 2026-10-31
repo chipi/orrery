@@ -20,7 +20,8 @@
     - Keyboard → standard <a> focus + Enter
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
+  import * as m from '$lib/paraglide/messages';
   import { track } from '$lib/analytics';
   import { InfoChipIcon } from '$lib/components/icons';
   import type { ScienceTabId } from '$types/science';
@@ -37,8 +38,10 @@
   };
   let { tab, section, label, ariaLabel }: Props = $props();
 
-  const tooltip = $derived(label ?? 'Open in /science');
-  const aria = $derived(ariaLabel ?? `Learn more about ${label ?? `${tab}/${section}`}`);
+  const tooltip = $derived(label ?? m.science_chip_open());
+  const aria = $derived(
+    ariaLabel ?? (label ? m.science_chip_aria({ label }) : m.science_chip_open()),
+  );
 
   function onClick() {
     // Umami custom event: cross-screen chip → /science. Captures the
@@ -53,7 +56,7 @@
 
 <a
   class="chip"
-  href="{base}/science/{tab}/{section}"
+  href={localHref(`/science/${tab}/${section}`)}
   title={tooltip}
   aria-label={aria}
   data-science-chip

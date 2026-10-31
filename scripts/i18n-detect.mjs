@@ -20,23 +20,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { SKIP_KEY } from './i18n-manifest.mjs';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-export const LOCALES = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
+export const LOCALES = TRANSLATED_LOCALES;
 export const KINDS = [
   'untranslated',
   'englishProse',

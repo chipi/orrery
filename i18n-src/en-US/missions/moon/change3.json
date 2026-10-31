@@ -11,5 +11,6 @@
     { "met": 0.01, "label": "TLI", "note": "Direct trans-lunar injection on the LM-3B upper stage.", "type": "nominal" },
     { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "Capture into 100-km circular lunar orbit 2013-12-06.", "type": "nominal" },
     { "met": 13, "label": "LANDING", "note": "Soft landing in Mare Imbrium 2013-12-14. First soft landing since Luna 24 (1976). Yutu rover deployed hours later.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Long March 3B/E with YZ-1 upper stage"
 }

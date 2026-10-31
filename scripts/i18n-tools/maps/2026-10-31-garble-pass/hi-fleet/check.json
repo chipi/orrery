@@ -1,0 +1,72 @@
+[
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "dispatch",
+    "find": "दो मशीनें थी",
+    "replace": "दो मशीनें थीं",
+    "why": "plural feminine verb agreement"
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "best_known_for",
+    "find": "अमेरिका महाद्वीपों",
+    "replace": "अमेरिकी महाद्वीपों",
+    "why": "Americas needs adjective form"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "find": "सटीकता वाली स्थिति-निर्धारण",
+    "replace": "सटीकता वाले स्थिति-निर्धारण",
+    "why": "masculine noun agreement"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "dispatch",
+    "find": "Buran का वायुगतिकी",
+    "replace": "Buran की वायुगतिकी",
+    "why": "feminine noun genitive"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "dispatch",
+    "find": "सोवियत संघ का Space Shuttle को जवाब",
+    "replace": "Space Shuttle को सोवियत संघ का जवाब",
+    "why": "ungrammatical का ... को construction"
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "dispatch",
+    "find": "जब तक स्वचालित जासूसी उपग्रहों ने",
+    "replace": "जब स्वचालित जासूसी उपग्रहों ने अभी",
+    "why": "'until' reading wrong; means era before"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "dispatch",
+    "find": "अपने बनाने में मदद किए गए अंतरिक्ष स्टेशन को ऊपर कक्षा में",
+    "replace": "उस अंतरिक्ष स्टेशन को, जिसे बनाने में इसने मदद की थी, ऊपर कक्षा में",
+    "why": "awkward participle phrase"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "best_known_for",
+    "find": "सॉफ़्ट लैंडिंग",
+    "replace": "नरम लैंडिंग",
+    "why": "inconsistent with नरम लैंडिंग used elsewhere"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "best_known_for",
+    "find": "सॉफ़्ट लैंडिंग",
+    "replace": "नरम लैंडिंग",
+    "why": "inconsistent with नरम लैंडिंग used elsewhere"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "tagline",
+    "find": "पहली अंतरिक्ष-चहलक़दमी",
+    "replace": "पहला स्पेसवॉक",
+    "why": "unnatural; match voskhod best_known_for"
+  }
+]

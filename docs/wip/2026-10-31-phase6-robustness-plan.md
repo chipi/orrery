@@ -132,3 +132,26 @@ the APK manifest for them.
 
 Not verified locally: the iOS build and the Swift (no Xcode on Linux) — the CI
 `ios` job builds it; no device test of the exclusion flag.
+
+## 6. Observability gaps — done
+
+Source: the 2026-10-29 "not covered" review of observability config. The code
+gaps it named:
+
+- Breadcrumbs: the web hook only stripped navigation URLs, so http/fetch/xhr
+  crumbs kept query strings (an OAuth `code`/`state`, search terms), and the
+  servers had no `beforeBreadcrumb`. One scrubber,
+  `src/lib/observability/scrub-breadcrumb.ts`, now serves both: typed input
+  dropped, query and hash stripped from every crumb URL, emails masked in console
+  crumbs. Tested as a unit, through the web `initSentry` options, and end to end
+  on the server (an envelope sent to a sink carries the scrubbed crumbs; removing
+  the hook fails that test). Both server bundles build with it.
+- `/ask` 502 and 503 had no HTTP test: an unreachable gateway gives
+  `502 llm_unavailable`; a fifth ask while four are held open by a gateway that
+  never answers gives `503` with `Retry-After: 10`. Server + observability suites
+  passed 3/3 runs (205 tests).
+
+Not changed: Umami `search` / `cmdk-search-hit` events still carry the typed query
+(truncated to 40 characters); the OTLP exporter has no sampler set (the default
+applies). The review's "not verified" items (Umami ingestion, source-map
+resolution, an outage drill on prod) are checks against live systems, not code.

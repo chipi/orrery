@@ -617,3 +617,68 @@ describe('DCR — dynamic client registration (#464, shareable connector)', () =
     expect((await register([CB, 'https://claude.ai/api/mcp/auth_callback2'])).status).toBe(201);
   });
 });
+
+/** A Door-1 (SPA, physics:ask) access token for the allowlisted account. */
+async function door1Token(): Promise<string> {
+  const v = randomBytes(32).toString('base64url');
+  const flow = await runAuthLeg({
+    email: ALLOWED_EMAIL,
+    verifier: v,
+    clientId: 'orrery-lab-web',
+    redirectUri: 'http://localhost:5373/lab/callback',
+    resource: issuer,
+  });
+  return (
+    await postToken({
+      grant_type: 'authorization_code',
+      client_id: 'orrery-lab-web',
+      code: flow.ourCode!,
+      redirect_uri: 'http://localhost:5373/lab/callback',
+      code_verifier: v,
+    })
+  ).body.access_token as string;
+}
+
+describe('/ask when the LLM gateway is down or slow (Phase 6 o11y gap)', () => {
+  const ask = (token: string) =>
+    fetch(`${base}/ask`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` },
+      body: JSON.stringify({ question: 'How long to Mars?' }),
+    });
+
+  it('an unreachable gateway is a 502 llm_unavailable, not a 500', async () => {
+    const token = await door1Token();
+    const prev = process.env.LITELLM_BASE_URL;
+    process.env.LITELLM_BASE_URL = 'http://127.0.0.1:1';
+    try {
+      const resp = await ask(token);
+      expect(resp.status).toBe(502);
+      expect(((await resp.json()) as { error: string }).error).toBe('llm_unavailable');
+    } finally {
+      process.env.LITELLM_BASE_URL = prev;
+    }
+  });
+
+  it('a fifth concurrent ask is turned away with 503 + Retry-After while four are in flight', async () => {
+    const token = await door1Token();
+    // A gateway that accepts and never answers holds every /ask open.
+    const hang = createServer(() => {});
+    await new Promise<void>((r) => hang.listen(0, '127.0.0.1', r));
+    const prev = process.env.LITELLM_BASE_URL;
+    process.env.LITELLM_BASE_URL = `http://127.0.0.1:${(hang.address() as { port: number }).port}`;
+    const inFlight = Array.from({ length: 4 }, () => ask(token).catch(() => null));
+    try {
+      // Let the four reach the gateway before the fifth arrives.
+      await new Promise((r) => setTimeout(r, 300));
+      const resp = await ask(token);
+      expect(resp.status).toBe(503);
+      expect(resp.headers.get('retry-after')).toBe('10');
+    } finally {
+      process.env.LITELLM_BASE_URL = prev;
+      hang.closeAllConnections();
+      await new Promise<void>((r) => hang.close(() => r()));
+      await Promise.all(inFlight);
+    }
+  });
+});

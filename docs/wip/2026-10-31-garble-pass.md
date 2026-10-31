@@ -236,3 +236,80 @@ The operator chose "every cell with a BROKEN": 11 more cells, about 2,400 fields
 - fields rewritten after 2026-07-14, other than the en-fix fields above.
 
 The after-samples are 25 fields per cell, so the 95 % upper bound for a 0 is still about 12 %.
+
+## 6 · Round 2: a fresh, wider sample (operator, 2026-10-31)
+
+The operator asked whether 0 in 25 was enough to call a cell clean. It is not: it only rules out
+rates above about 12 %.
+
+**Round-2 measurement:**
+
+- 60 fresh fields per locale × tree, all 26 cells, 1,560 fields.
+- Drawn from all current text (`garble-sample --before=any`), excluding every field graded before
+  (`--exclude`).
+- Graded by 7 Sonnet graders. Grades are in `maps/2026-10-31-garble-pass/round2-graded/`.
+
+**Result: 28 BROKEN (1.8 %).**
+
+- None in fields round 1 retranslated (0 / 68) or kept (0 / 84).
+- 11 in fixed cells, in text written after 2026-07-14 that round 1's date filter never showed to a
+  reviewer.
+- 17 in cells round 1 had not fixed. Examples: es fleet 6 / 60 (round 1 had seen 0 / 25), it, fr,
+  ja and ar.
+
+**Lesson:** garble is not limited to the July runs. The October rewrites have it too. A fix round
+must read every field of the cell, not a date-filtered pool.
+
+**Rule set beforehand:** 2 or more BROKEN in 60 means a fix round.
+
+- 8 cells qualified. The operator chose reviewer-only, because our retranslations measured 0 BROKEN
+  in 68.
+- 4 cells had exactly 1 BROKEN. Those fields were fixed by hand.
+
+| Cell | Fields read | Retranslated (BROKEN) | Round-3 check, 60 fresh (OK / MINOR / BROKEN) |
+|---|---|---|---|
+| es fleet | 780 (all) | 264 (49) | 55 / 5 / 0 |
+| es missions | 946 (all) | 258 (52) | 59 / 1 / 0 |
+| fr fleet | 780 (all) | 400 (118) | 58 / 2 / 0 |
+| it fleet | 372 (not seen in round 1) | 158 (44) | 59 / 1 / 0 |
+| it missions | 946 (all) | 342 (79) | 58 / 2 / 0 |
+| ja missions | 946 (all) | 368 (80) | 56 / 4 / 0 |
+| hi fleet | 554 (not seen in round 1) | 316 (100) | 57 / 3 / 0 |
+| ar missions | 782 (not seen in round 1) | 286 (43) | 57 / 3 / 0 |
+
+**Round 2 in numbers:**
+
+- 6,106 fields read, 2,392 retranslated (565 BROKEN), by 40 Sonnet reviewers.
+- I read every flag and a sample of every 9th to 30th change.
+
+**Fixes applied by hand before commit:**
+
+- Names the guard requires kept as in English: Space Shuttle, CubeSats, Apollo 15, EVA-2,
+  Uchinoura Space Center.
+- 21 ISO dates restored: 5 by hand in es, 16 in ja with the new `iso-restore.mjs`.
+- 27 new term keeps, all for real variant forms:
+  - propellant-sense "burn";
+  - "premier étage" for a whole-stage booster;
+  - 周 / виток revolution counts.
+
+**Round-3 check:** 0 BROKEN in 480 fresh fields across the 8 cells. That puts the 95 % upper bound at
+about 5 % per cell and about 0.6 % for the 8 cells together.
+
+**Also fixed:**
+
+- The four 1-BROKEN fields, by hand:
+  - de: "Kleingestirn";
+  - nl: "Lunar orbit insertion." left in English;
+  - pt-BR: "primeira-ever … cislunare";
+  - zh-CN: 太阳系外 for "outer solar system".
+- The garbled English rd-253 tagline ("built every Proton mission"), corrected in all 14 locales.
+- `garble-check.mjs` now flags dropped ISO dates.
+
+**Not covered:**
+
+- The 14 cells with 0 BROKEN in 60 were not read in full. Each could still hold up to about 5 %
+  BROKEN.
+- MINOR wording, about 10 % of fields: style and agreement slips, left where a reviewer kept the
+  field.
+- Science, essays and programs.
+- No second, independent checker in round 2, by the operator's choice.

@@ -1,0 +1,230 @@
+[
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Binary primary",
+    "new": "Asteroide · Próximo da Terra · Tipo S · Primário do sistema binário"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "old": "Asteroid · Moonlet · Kinetic-impact target",
+    "new": "Asteroide · Satélite menor · Alvo de impacto cinético"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "type",
+    "old": "Asteroid · Main-belt · C-type",
+    "new": "Asteroide · Cinturão principal · Tipo C"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · C-type",
+    "new": "Asteroide · Troiano de Júpiter · L4 · Tipo C"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Rubble pile",
+    "new": "Asteroide · Próximo da Terra · Tipo S · Pilha de escombros"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type · Slow rotator",
+    "new": "Asteroide · Troiano de Júpiter · L4 · Tipo D · Rotador lento"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · Binary secondary",
+    "new": "Asteroide · Troiano de Júpiter · L5 · Secundário do sistema binário"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type",
+    "new": "Asteroide · Troiano de Júpiter · L4 · Tipo D"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · P-type · Binary primary",
+    "new": "Asteroide · Troiano de Júpiter · L5 · Tipo P · Primário do sistema binário"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · P-type",
+    "new": "Asteroide · Troiano de Júpiter · L4 · Tipo P"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Lançador pesado, descartável"
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Lançador médio, descartável"
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "type",
+    "old": "Heavy-lift, partially reusable",
+    "new": "Lançador pesado, parcialmente reutilizável"
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Lançador médio, descartável"
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Lançador pesado, descartável"
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Lançador médio, descartável"
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Lançador pesado, descartável"
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Lançador pesado, descartável"
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Lançador pesado, descartável"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Lançador médio, descartável"
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "type",
+    "old": "Super-heavy, expendable",
+    "new": "Lançador superpesado, descartável"
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Lançador médio, descartável"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "type",
+    "old": "Super-heavy, fully reusable",
+    "new": "Lançador superpesado, totalmente reutilizável"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "type",
+    "old": "Início · Órbita de referência",
+    "new": "Lar · Órbita de referência"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.1.l",
+    "old": "DART mission (NASA)",
+    "new": "Missão DART (NASA)"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.2.l",
+    "old": "Hera mission (ESA)",
+    "new": "Missão Hera (ESA)"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missão Lucy (NASA)"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missão Lucy (NASA)"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missão Lucy (NASA)"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missão Lucy (NASA)"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missão Lucy (NASA)"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missão Lucy (NASA)"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missão Lucy (NASA)"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "old": "Renaming 2014 MU69 → Arrokoth (NASA, 2019-11-12)",
+    "new": "Renomeação de 2014 MU69 para Arrokoth (NASA, 2019-11-12)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.3.l",
+    "old": "DAVINCI + VERDADE (NASA)",
+    "new": "DAVINCI + VERITAS (NASA)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.4.l",
+    "old": "O interior profundo de Júpiter (Natureza 2018)",
+    "new": "O interior profundo de Júpiter (Nature 2018)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.2.l",
+    "old": "Programa Vênus - Wikipedia",
+    "new": "Programa Venera — Wikipédia"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.3.l",
+    "old": "Luas da Galiléia — Wikipedia",
+    "new": "Luas galileanas — Wikipédia"
+  }
+]

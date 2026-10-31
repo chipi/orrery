@@ -1,0 +1,200 @@
+[
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Binary primary",
+    "new": "小行星 · 近地 · S型 · 双小行星主星"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "old": "Asteroid · Moonlet · Kinetic-impact target",
+    "new": "小行星 · 小卫星 · 动能撞击目标"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "type",
+    "old": "Asteroid · Main-belt · C-type",
+    "new": "小行星 · 主带 · C型"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · C-type",
+    "new": "小行星 · 木星特洛伊群 · L4 · C型"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Rubble pile",
+    "new": "小行星 · 近地 · S型 · 碎石堆"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type · Slow rotator",
+    "new": "小行星 · 木星特洛伊群 · L4 · D型 · 慢自转"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · Binary secondary",
+    "new": "小行星 · 木星特洛伊群 · L5 · 双小行星伴星"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type",
+    "new": "小行星 · 木星特洛伊群 · L4 · D型"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · P-type · Binary primary",
+    "new": "小行星 · 木星特洛伊群 · L5 · P型 · 双小行星主星"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · P-type",
+    "new": "小行星 · 木星特洛伊群 · L4 · P型"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "重型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "中型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "type",
+    "old": "Heavy-lift, partially reusable",
+    "new": "重型运载火箭，部分可重复使用"
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "中型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "重型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "中型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "重型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "重型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "重型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "中型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "type",
+    "old": "Super-heavy, expendable",
+    "new": "超重型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "中型运载火箭，一次性"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "type",
+    "old": "Super-heavy, fully reusable",
+    "new": "超重型运载火箭，完全可重复使用"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.1.l",
+    "old": "DART mission (NASA)",
+    "new": "DART 任务（NASA）"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.2.l",
+    "old": "Hera mission (ESA)",
+    "new": "Hera 任务（ESA）"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 任务（NASA）"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 任务（NASA）"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 任务（NASA）"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 任务（NASA）"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 任务（NASA）"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 任务（NASA）"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 任务（NASA）"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "old": "Renaming 2014 MU69 → Arrokoth (NASA, 2019-11-12)",
+    "new": "2014 MU69 更名为阿罗科斯（NASA, 2019-11-12）"
+  }
+]

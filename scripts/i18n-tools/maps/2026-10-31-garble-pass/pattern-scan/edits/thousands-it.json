@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.1.why",
+    "old": "La distanza media di 19,591 km di Caronte da Plutone, combinata con il mutuo blocco di marea, significa che entrambi i corpi mostrano la stessa faccia l'uno all'altro in eterno.",
+    "new": "La distanza media di 19.591 km di Caronte da Plutone, combinata con il mutuo blocco di marea, significa che entrambi i corpi mostrano la stessa faccia l'uno all'altro in eterno."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "science_sections.0.why",
+    "old": "Deimos è la luna esterna di Marte (23,460 km) — il suo periodo orbitale (1.26 d) è più lungo del giorno marziano, quindi le forze di marea la stanno spingendo lentamente verso l'esterno.",
+    "new": "Deimos è la luna esterna di Marte (23.460 km) — il suo periodo orbitale (1.26 d) è più lungo del giorno marziano, quindi le forze di marea la stanno spingendo lentamente verso l'esterno."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.2.why",
+    "old": "Il perigeo (~363,000 km) e l'apogeo (~405,000 km) determinano la dimensione apparente della Luna e la fase del rigonfiamento di marea che attira la maggior quantità d'acqua sulla Terra.",
+    "new": "Il perigeo (~363.000 km) e l'apogeo (~405.000 km) determinano la dimensione apparente della Luna e la fase del rigonfiamento di marea che attira la maggior quantità d'acqua sulla Terra."
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "science_sections.0.why",
+    "old": "Oberon è la più esterna dei cinque maggiori satelliti di Urano (orbita a 583,500 km) — la sua superficie è la più crateri, suggerendo che abbia la superficie esposta più antica del sistema di Urano.",
+    "new": "Oberon è la più esterna dei cinque maggiori satelliti di Urano (orbita a 583.500 km) — la sua superficie è la più crateri, suggerendo che abbia la superficie esposta più antica del sistema di Urano."
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "science_sections.0.why",
+    "old": "Umbriel orbita Urano a 266,000 km — il suo piano orbitale è inclinato con il pianeta, quindi le sue stagioni rispecchiano la geometria assiale estrema del pianeta madre.",
+    "new": "Umbriel orbita Urano a 266.000 km — il suo piano orbitale è inclinato con il pianeta, quindi le sue stagioni rispecchiano la geometria assiale estrema del pianeta madre."
+  }
+]

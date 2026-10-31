@@ -1,6 +1,6 @@
 {
   "name": "Земља",
-  "type": "Почетна · Референтна орбита",
+  "type": "Дом · Референтна орбита",
   "fact": "Сваки човек који је икада живео, живео је овде. Референтна орбита по којој се мере све остале.",
   "bio": "Нагиб осе од 23,44° ствара годишња доба — а не удаљеност од Сунца. Земља је заправо ближа Сунцу у јануару него у јулу.",
   "links": [
@@ -10,12 +10,12 @@
       "t": "intro"
     },
     {
-      "l": "Earth (NASA Solar System Exploration)",
+      "l": "Земља (NASA Solar System Exploration)",
       "u": "https://science.nasa.gov/earth/",
       "t": "intro"
     },
     {
-      "l": "Earth Observing System (NASA)",
+      "l": "Систем за посматрање Земље (NASA)",
       "u": "https://eospso.nasa.gov/",
       "t": "core"
     },

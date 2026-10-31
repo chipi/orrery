@@ -1,0 +1,230 @@
+[
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Binary primary",
+    "new": "Planetoïde · Aardscheerder · S-type · Primaire van dubbelsysteem"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "old": "Asteroid · Moonlet · Kinetic-impact target",
+    "new": "Planetoïde · Maantje · Doelwit van kinetische inslag"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "type",
+    "old": "Asteroid · Main-belt · C-type",
+    "new": "Planetoïde · Hoofdgordel · C-type"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · C-type",
+    "new": "Planetoïde · Jupiter-trojaan · L4 · C-type"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Rubble pile",
+    "new": "Planetoïde · Aardscheerder · S-type · Puinstapel"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type · Slow rotator",
+    "new": "Planetoïde · Jupiter-trojaan · L4 · D-type · Langzame rotator"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · Binary secondary",
+    "new": "Planetoïde · Jupiter-trojaan · L5 · Secundaire van dubbelsysteem"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type",
+    "new": "Planetoïde · Jupiter-trojaan · L4 · D-type"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · P-type · Binary primary",
+    "new": "Planetoïde · Jupiter-trojaan · L5 · P-type · Primaire van dubbelsysteem"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · P-type",
+    "new": "Planetoïde · Jupiter-trojaan · L4 · P-type"
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "type",
+    "old": "Middelzwaar · Wegwerp",
+    "new": "Middelzware draagraket · Wegwerp"
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "type",
+    "old": "Middelzwaar · Wegwerp",
+    "new": "Middelzware draagraket · Wegwerp"
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "type",
+    "old": "Middelzwaar · Wegwerp",
+    "new": "Zware draagraket · Wegwerp"
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "type",
+    "old": "Middelzwaar · Wegwerp",
+    "new": "Middelzware draagraket · Wegwerp"
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "type",
+    "old": "Middelzwaar · Wegwerp",
+    "new": "Zware draagraket · Wegwerp"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "type",
+    "old": "Lichte draagraket · Wegwerp",
+    "new": "Middelzware draagraket · Wegwerp"
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "type",
+    "old": "Middelzwaar · Wegwerp",
+    "new": "Middelzware draagraket · Wegwerp"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "type",
+    "old": "Superzware draagraket · Volledig herbruikbaar (in ontwikkeling)",
+    "new": "Superzware draagraket · Volledig herbruikbaar"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.1.l",
+    "old": "DART mission (NASA)",
+    "new": "DART-missie (NASA)"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.2.l",
+    "old": "Hera mission (ESA)",
+    "new": "Hera-missie (ESA)"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-missie (NASA)"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-missie (NASA)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.2.l",
+    "old": "Juno mission (NASA)",
+    "new": "Juno-missie (NASA)"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-missie (NASA)"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-missie (NASA)"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-missie (NASA)"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-missie (NASA)"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-missie (NASA)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "Earth (NASA Solar System Exploration)",
+    "new": "Aarde (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "Mercury (NASA Solar System Exploration)",
+    "new": "Mercurius (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "Neptune (NASA Solar System Exploration)",
+    "new": "Neptunus (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.2.l",
+    "old": "Voyager 2 at Neptune (NASA JPL)",
+    "new": "Voyager 2 bij Neptunus (NASA JPL)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "Saturn (NASA Solar System Exploration)",
+    "new": "Saturnus (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.2.l",
+    "old": "Voyager 2 at Uranus (NASA JPL)",
+    "new": "Voyager 2 bij Uranus (NASA JPL)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.3.l",
+    "old": "Discovery of Neptune — Wikipedia",
+    "new": "Ontdekking van Neptunus — Wikipedia"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.2.l",
+    "old": "Mars Exploration Program (NASA)",
+    "new": "Marsverkenningsprogramma (NASA)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.2.l",
+    "old": "Earth Observing System (NASA)",
+    "new": "Aardobservatiesysteem (NASA)"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "old": "Renaming 2014 MU69 → Arrokoth (NASA, 2019-11-12)",
+    "new": "Hernoeming van 2014 MU69 naar Arrokoth (NASA, 2019-11-12)"
+  }
+]

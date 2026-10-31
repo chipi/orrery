@@ -2,6 +2,6 @@
   "name": "ExoMars Trace Gas Orbiter",
   "mission_type": "Orbiteur actif · 2016 – présent",
   "site_name": "Orbite circulaire ~400 km, inclinaison 74°",
-  "fact": "Moitié survivante de la mission ExoMars 2016 (Schiaparelli était l'atterrisseur). Caractérise le méthane atmosphérique, la vapeur d'eau et autres gaz traces avec une sensibilité au ppt (partie par trillion). N'a détecté aucun méthane au-delà de 0,05 ppbv — bien en dessous de toutes les détections antérieures revendiquées — approfondissant plutôt que ne résolvant le mystère du méthane. Les détections de surface de Curiosity restent inexpliquées.",
+  "fact": "Moitié survivante de la mission ExoMars 2016 (Schiaparelli était l'atterrisseur). Caractérise le méthane atmosphérique, la vapeur d'eau et autres gaz traces avec une sensibilité au ppt (partie par billion). N'a détecté aucun méthane au-delà de 0,05 ppbv — bien en dessous de toutes les détections antérieures revendiquées — approfondissant plutôt que ne résolvant le mystère du méthane. Les détections de surface de Curiosity restent inexpliquées.",
   "capability": "Cartographie atmosphérique des gaz traces avec la sensibilité la plus élevée de toute planète."
 }

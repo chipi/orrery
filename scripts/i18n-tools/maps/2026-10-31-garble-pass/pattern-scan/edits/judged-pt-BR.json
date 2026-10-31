@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "fact",
+    "old": "Primeiro sismógrafo planetário dedicado em Marte. Detectou mais de 1.300 maremotos, incluindo um tremor recorde de magnitude 4,7 (S1222a) em maio de 2022. A sonda de fluxo térmico (HP³) falhou em penetrar o regolito inesperadamente coeso. A missão terminou em dezembro de 2022 quando o acúmulo de poeira nos painéis solares reduziu a energia para abaixo do limite operacional.",
+    "new": "Primeiro sismógrafo planetário dedicado em Marte. Detectou mais de 1.300 sismos marcianos, incluindo um tremor recorde de magnitude 4,7 (S1222a) em maio de 2022. A sonda de fluxo térmico (HP³) falhou em penetrar o regolito inesperadamente coeso. A missão terminou em dezembro de 2022 quando o acúmulo de poeira nos painéis solares reduziu a energia para abaixo do limite operacional."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/space-shuttle-stack_webp.title",
+    "old": "Space Shuttle stack",
+    "new": "Space Shuttle em configuração de lançamento"
+  }
+]

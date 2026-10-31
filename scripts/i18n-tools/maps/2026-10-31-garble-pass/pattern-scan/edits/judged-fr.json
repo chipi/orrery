@@ -1,0 +1,98 @@
+[
+  {
+    "rel": "mars-sites/tgo.json",
+    "at": "fact",
+    "old": "Moitié survivante de la mission ExoMars 2016 (Schiaparelli était l'atterrisseur). Caractérise le méthane atmosphérique, la vapeur d'eau et autres gaz traces avec une sensibilité au ppt (partie par trillion). N'a détecté aucun méthane au-delà de 0,05 ppbv — bien en dessous de toutes les détections antérieures revendiquées — approfondissant plutôt que ne résolvant le mystère du méthane. Les détections de surface de Curiosity restent inexpliquées.",
+    "new": "Moitié survivante de la mission ExoMars 2016 (Schiaparelli était l'atterrisseur). Caractérise le méthane atmosphérique, la vapeur d'eau et autres gaz traces avec une sensibilité au ppt (partie par billion). N'a détecté aucun méthane au-delà de 0,05 ppbv — bien en dessous de toutes les détections antérieures revendiquées — approfondissant plutôt que ne résolvant le mystère du méthane. Les détections de surface de Curiosity restent inexpliquées."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/space-shuttle-stack_webp.title",
+    "old": "Space Shuttle stack",
+    "new": "Space Shuttle en configuration de lancement"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.2",
+    "old": "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (cartographie orbitale + alunissage de surface)",
+    "new": "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (cartographie orbitale + atterrissage de surface)"
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.1",
+    "old": "Les galaxies elliptiques sont des sphères soutenues par la dispersion, composées principalement de vieilles étoiles avec peu de gaz, peu de poussière et presque aucune formation stellaire en cours. Elles vont des petites (M32, la compagne elliptique naine compacte d'Andromeda) aux énormes (M87 au cœur de l'amas de la Vierge, hôte du premier trou noir supermassif imagé ; galaxies des amas les plus brillants de classe cD comme NGC 4889 dans Coma qui contiennent des trillions d'étoiles). La plupart des elliptiques sont le produit de fusions majeures passées — quand deux spirales entrent en collision, la structure du disque est perturbée, le gaz est consommé dans une explosion de formation stellaire, et le résidu fusionné se stabilise en une elliptique. La Voie lactée est destinée à devenir une elliptique une fois qu'elle fusionnera avec Andromeda. Il n'existe essentiellement pas d'elliptiques dans le groupe local sauf M32, M110, NGC 147 et NGC 185 — de petites compagnes de M31. Les grandes elliptiques vivent toutes dans des environnements d'amas denses.",
+    "new": "Les galaxies elliptiques sont des sphères soutenues par la dispersion, composées principalement de vieilles étoiles avec peu de gaz, peu de poussière et presque aucune formation stellaire en cours. Elles vont des petites (M32, la compagne elliptique naine compacte d'Andromeda) aux énormes (M87 au cœur de l'amas de la Vierge, hôte du premier trou noir supermassif imagé ; galaxies des amas les plus brillants de classe cD comme NGC 4889 dans Coma qui contiennent des billions d'étoiles). La plupart des elliptiques sont le produit de fusions majeures passées — quand deux spirales entrent en collision, la structure du disque est perturbée, le gaz est consommé dans une explosion de formation stellaire, et le résidu fusionné se stabilise en une elliptique. La Voie lactée est destinée à devenir une elliptique une fois qu'elle fusionnera avec Andromeda. Il n'existe essentiellement pas d'elliptiques dans le groupe local sauf M32, M110, NGC 147 et NGC 185 — de petites compagnes de M31. Les grandes elliptiques vivent toutes dans des environnements d'amas denses."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-30d2195a63fa.title",
+    "old": "Rosetta — alunissage sur une comète",
+    "new": "Rosetta — atterrissage sur une comète"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-30d2195a63fa.caption",
+    "old": "Philae devient le premier engin spatial à alunir en douceur sur une comète — 67P, 12 nov. 2014.",
+    "new": "Philae devient le premier engin spatial à se poser en douceur sur une comète — 67P, 12 nov. 2014."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-681dfc9a2920.title",
+    "old": "InSight — alunissage sur Mars (centre de contrôle de mission)",
+    "new": "InSight — atterrissage sur Mars (centre de contrôle de mission)"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-7170adc7d99b.title",
+    "old": "Phoenix — alunissage sur Mars",
+    "new": "Phoenix — atterrissage sur Mars"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-891377070a16.title",
+    "old": "Viking 1 — premier alunissage américain sur Mars",
+    "new": "Viking 1 — premier atterrissage américain sur Mars"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-8fbc2e4af96b.caption",
+    "old": "Rétrospective du JPL marquant l'alunissage du rover Spirit — atterri en janv. 2004.",
+    "new": "Rétrospective du JPL marquant l'atterrissage du rover Spirit — atterri en janv. 2004."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-98b4fdd31e64.title",
+    "old": "Curiosity — Sept Minutes de Terreur (animation d'entrée-descente-alunissage)",
+    "new": "Curiosity — Sept Minutes de Terreur (animation d'entrée-descente-atterrissage)"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-98b4fdd31e64.caption",
+    "old": "Dramatisation du JPL de la séquence autonome d'entrée-descente-alunissage, avant l'alunissage de 2012.",
+    "new": "Dramatisation du JPL de la séquence autonome d'entrée-descente-atterrissage, avant l'atterrissage de 2012."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.title",
+    "old": "Hayabusa2 — alunissage sur l'astéroïde Ryugu",
+    "new": "Hayabusa2 — atterrissage sur l'astéroïde Ryugu"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ddd21b3aecd3.caption",
+    "old": "Séquences d'à bord du premier alunissage sur Ryugu — 22 février 2019.",
+    "new": "Séquences d'à bord du premier atterrissage sur Ryugu — 22 février 2019."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-f9fd2a71d5f8.title",
+    "old": "Starship SN15 — test de vol en haute altitude et alunissage",
+    "new": "Starship SN15 — test de vol en haute altitude et atterrissage"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-f9fd2a71d5f8.caption",
+    "old": "Le ventre en l'air, le tonneau, et le premier alunissage en douceur d'un prototype Starship — 5 mai 2021.",
+    "new": "Le ventre en l'air, le tonneau, et le premier atterrissage en douceur d'un prototype Starship — 5 mai 2021."
+  }
+]

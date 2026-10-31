@@ -260,6 +260,13 @@ const GAZETTEER_SKIP = new Set([
   'Cygnus Standard',
   'Cygnus Enhanced',
   'Hope',
+  // launch sites named for their place: the place is geography (Алкантара), the rest
+  // a description (Raumfahrtzentrum Alcântara, Centre spatial d'Alcântara)
+  'Alcântara Space Center',
+  'Naro Space Center',
+  'Uchinoura Space Center',
+  'Semnan Space Center',
+  'Sohae Satellite Launching', // "Station" is stripped as a generic tail
 ]);
 let GAZETTEER = null;
 /** Every entity name the data knows: en-US `name` fields of missions, spacecraft,

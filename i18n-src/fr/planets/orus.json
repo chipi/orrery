@@ -1,6 +1,6 @@
 {
   "name": "Orus",
-  "type": "Asteroid · Jupiter Trojan · L4 · D-type",
+  "type": "Astéroïde · Troyen de Jupiter · L4 · Type D",
   "fact": "Un astéroïde D de 51 km, Troyen dans l'essaim L4 de Jupiter. Les astéroïdes de type D sont considérés parmi les corps les plus primitifs du système solaire, avec une composition de surface qui préserve la chimie du disque protoplanétaire externe pratiquement inchangée depuis 4,5 milliards d'années.",
   "bio": "Découvert en 1999, nommé d'après Orus — un allié Troyen tué par Ajax dans l'Iliade. La rencontre de Lucy le 2028-11-11 mesurera la composition de surface, les propriétés du régolithe et la présence éventuelle de satellites, complétant l'étude de la gamme spectrale du nuage principal (C → P → D).",
   "links": [
@@ -10,7 +10,7 @@
       "t": "intro"
     },
     {
-      "l": "Lucy mission (NASA)",
+      "l": "Mission Lucy (NASA)",
       "u": "https://science.nasa.gov/mission/lucy/",
       "t": "core"
     }

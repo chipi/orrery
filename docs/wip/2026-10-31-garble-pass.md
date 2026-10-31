@@ -313,3 +313,50 @@ about 5 % per cell and about 0.6 % for the 8 cells together.
   field.
 - Science, essays and programs.
 - No second, independent checker in round 2, by the operator's choice.
+
+## 7 · Pattern scans across every tree (close-out step A, 2026-10-31)
+
+The close-out sweep (3,900 fields, 5 buckets × 13 locales) found the same few error classes again
+and again, so `pattern-scan.mjs` looks for them in every tree, every locale. Record:
+`scripts/i18n-tools/maps/2026-10-31-garble-pass/pattern-scan/`.
+
+**Found and fixed:**
+
+- 32 numbers with the English thousands comma in comma-decimal locales (1,578 km reads as 1.578):
+  es 10, ru 7, fr 5, it 5, pt-BR 3, de 1, sr-Cyrl 1. Applied mechanically (Spanish 4-digit
+  numbers take no separator, RAE).
+- 120 flagged fields judged by a reviewer: 63 fixed, 57 correct as written.
+  - 44 Moon-landing words for landings that are not on the Moon (it allunaggio 27, fr alunissage
+    13, es alunizaje 4): Mars, Titan, Eros, Itokawa, comets, Earth.
+  - 10 long-scale errors: fr/it "trillion" for 10^12, sr квинтилион for 10^18, hi खरब for trillion.
+  - 12 false friends: nl maandag (Monday) for lunar day, maremoto (tsunami) for marsquake,
+    ru Водолей (Aquarius) for Aquila, hi चंद्र ग्रहण (eclipse) for lunar orbit insertion.
+  - 7 fields left in English. Two more nl "maandag" forms the regex missed (maandageraad,
+    maanddag) were fixed by hand, and the rule now catches them.
+- 449 planet/rocket labels in 13 locales, mostly untranslated or inconsistent:
+  - asteroid `type` lines ("Asteroid · Jupiter Trojan · L4 · C-type") were English in every locale;
+  - rocket classes were English in 6 locales and wrong in ja (超重搬送) and nl (heavy-lift given as
+    medium or light);
+  - "Home" was rendered in the website sense (de Startseite, fr Accueil, sr Почетна);
+  - mission link labels ("Lucy mission (NASA)").
+  Each locale's glossary is in `struct-glossary.json`. Cited paper titles stay in English.
+- 11 launch-site names left in English in de and nl ("Naro Space Center", "Uchinoura Space Center", …;
+  fr, es, ru and the rest translate them). The cause was the name guard: it read the whole facility
+  name as a name to keep, so round 2 had kept "Uchinoura Space Center" in English. These five
+  names are now `GAZETTEER_SKIP` entries. Guard replay before and after: identical rejection
+  counts in all 13 locales. Widening `GENERIC_TAIL` instead was tried and reverted: it demanded
+  "Alcântara" in Latin script inside ru/ja/ko/ar prose.
+
+**After:** the rerun lists 90 items, every one judged correct: site-rule names (Venera 7-class,
+ALMA, Mons Rümker), the Artemis Moon landing, and scale words right for their locale.
+
+**Not covered:**
+
+- Error classes the regexes do not describe: the scan finds only what it names.
+- Scale words written as digits or in prose without the English scale word nearby.
+- The 449 label changes and the glossaries were written by one reviewer and read by me in a
+  list of distinct changes; there was no second checker.
+- "Binary primary / secondary" and "Contact binary" wording is a new coinage in every
+  locale.
+- "Rocket Lab Launch Complex 1" stays English in de: the facility-code check refuses a
+  change.

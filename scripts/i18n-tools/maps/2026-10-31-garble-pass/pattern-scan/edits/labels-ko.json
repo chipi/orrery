@@ -1,0 +1,290 @@
+[
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Binary primary",
+    "new": "소행성 · 지구 근접 · S형 · 쌍성의 주천체"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "old": "Asteroid · Moonlet · Kinetic-impact target",
+    "new": "소행성 · 소형 위성 · 운동 충돌 표적"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "type",
+    "old": "Asteroid · Main-belt · C-type",
+    "new": "소행성 · 주 소행성대 · C형"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · C-type",
+    "new": "소행성 · 목성 트로이군 · L4 · C형"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Rubble pile",
+    "new": "소행성 · 지구 근접 · S형 · 잔해 더미"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type · Slow rotator",
+    "new": "소행성 · 목성 트로이군 · L4 · D형 · 느린 자전"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · Binary secondary",
+    "new": "소행성 · 목성 트로이군 · L5 · 쌍성의 동반천체"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type",
+    "new": "소행성 · 목성 트로이군 · L4 · D형"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · P-type · Binary primary",
+    "new": "소행성 · 목성 트로이군 · L5 · P형 · 쌍성의 주천체"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · P-type",
+    "new": "소행성 · 목성 트로이군 · L4 · P형"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "type",
+    "old": "가스 행성",
+    "new": "가스 거대 행성"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "type",
+    "old": "유형 행성",
+    "new": "지구형 행성"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "type",
+    "old": "얼음 거성",
+    "new": "얼음 거대 행성"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "type",
+    "old": "가스 행성 · 고리",
+    "new": "가스 거대 행성 · 고리"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "type",
+    "old": "얼음 거성",
+    "new": "얼음 거대 행성"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "type",
+    "old": "유형 행성",
+    "new": "지구형 행성"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.1.l",
+    "old": "DART mission (NASA)",
+    "new": "DART 임무 (NASA)"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.2.l",
+    "old": "Hera mission (ESA)",
+    "new": "Hera 임무 (ESA)"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 임무 (NASA)"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 임무 (NASA)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.2.l",
+    "old": "Juno mission (NASA)",
+    "new": "Juno 임무 (NASA)"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 임무 (NASA)"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 임무 (NASA)"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 임무 (NASA)"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 임무 (NASA)"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy 임무 (NASA)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.0.l",
+    "old": "Earth — Wikipedia",
+    "new": "지구 — Wikipedia"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "Earth (NASA Solar System Exploration)",
+    "new": "지구 (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.0.l",
+    "old": "Jupiter — Wikipedia",
+    "new": "목성 — Wikipedia"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.1.l",
+    "old": "Jupiter (NASA Solar System Exploration)",
+    "new": "목성 (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.0.l",
+    "old": "Mars — Wikipedia",
+    "new": "화성 — Wikipedia"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.1.l",
+    "old": "Mars (NASA Solar System Exploration)",
+    "new": "화성 (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.0.l",
+    "old": "Mercury — Wikipedia",
+    "new": "수성 — Wikipedia"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "Mercury (NASA Solar System Exploration)",
+    "new": "수성 (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.0.l",
+    "old": "Neptune — Wikipedia",
+    "new": "해왕성 — Wikipedia"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "Neptune (NASA Solar System Exploration)",
+    "new": "해왕성 (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.2.l",
+    "old": "Voyager 2 at Neptune (NASA JPL)",
+    "new": "해왕성에서의 Voyager 2 (NASA JPL)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.0.l",
+    "old": "Saturn — Wikipedia",
+    "new": "토성 — Wikipedia"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "Saturn (NASA Solar System Exploration)",
+    "new": "토성 (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.0.l",
+    "old": "Uranus — Wikipedia",
+    "new": "천왕성 — Wikipedia"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.1.l",
+    "old": "Uranus (NASA Solar System Exploration)",
+    "new": "천왕성 (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.2.l",
+    "old": "Voyager 2 at Uranus (NASA JPL)",
+    "new": "천왕성에서의 Voyager 2 (NASA JPL)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.0.l",
+    "old": "Venus — Wikipedia",
+    "new": "금성 — Wikipedia"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.1.l",
+    "old": "Venus (NASA Solar System Exploration)",
+    "new": "금성 (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.3.l",
+    "old": "Rings of Saturn — Wikipedia",
+    "new": "토성의 고리 — Wikipedia"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.2.l",
+    "old": "Mars Exploration Program (NASA)",
+    "new": "화성 탐사 프로그램 (NASA)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.2.l",
+    "old": "Earth Observing System (NASA)",
+    "new": "지구 관측 시스템 (NASA)"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "old": "Renaming 2014 MU69 → Arrokoth (NASA, 2019-11-12)",
+    "new": "2014 MU69에서 아로코트로 개명 (NASA, 2019-11-12)"
+  }
+]

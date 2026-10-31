@@ -1,6 +1,6 @@
 {
   "name": "Oro",
-  "type": "Asteroid · Jupiter Trojan · L4 · D-type",
+  "type": "Asteroide · Troiano di Giove · L4 · Tipo D",
   "fact": "Un asteroide di tipo D Troiano di 51 km nella nube L4 che precede Giove. Gli asteroidi di tipo D sono ritenuti tra i corpi più primitivi del sistema solare, con una composizione superficiale che preserva la chimica del disco protoplanetario esterno praticamente immutata per 4,5 miliardi di anni.",
   "bio": "Scoperto nel 1999, prende nome da Oro — un alleato troiano ucciso da Aiace nell'Iliade. L'incontro della missione Lucy l'11 novembre 2028 misurerà la composizione superficiale, le proprietà del regolite e l'eventuale presenza di satelliti, completando l'indagine spettrale della nube precedente (C → P → D).",
   "links": [
@@ -10,7 +10,7 @@
       "t": "intro"
     },
     {
-      "l": "Lucy mission (NASA)",
+      "l": "Missione Lucy (NASA)",
       "u": "https://science.nasa.gov/mission/lucy/",
       "t": "core"
     }

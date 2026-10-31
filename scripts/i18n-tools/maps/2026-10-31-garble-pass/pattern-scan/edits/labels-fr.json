@@ -1,0 +1,206 @@
+[
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Binary primary",
+    "new": "Astéroïde · Géocroiseur · Type S · Primaire du système binaire"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "old": "Asteroid · Moonlet · Kinetic-impact target",
+    "new": "Astéroïde · Satellite mineur · Cible d'impact cinétique"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "type",
+    "old": "Asteroid · Main-belt · C-type",
+    "new": "Astéroïde · Ceinture principale · Type C"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · C-type",
+    "new": "Astéroïde · Troyen de Jupiter · L4 · Type C"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Rubble pile",
+    "new": "Astéroïde · Géocroiseur · Type S · Amas de débris"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type · Slow rotator",
+    "new": "Astéroïde · Troyen de Jupiter · L4 · Type D · Rotateur lent"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · Binary secondary",
+    "new": "Astéroïde · Troyen de Jupiter · L5 · Secondaire du système binaire"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type",
+    "new": "Astéroïde · Troyen de Jupiter · L4 · Type D"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · P-type · Binary primary",
+    "new": "Astéroïde · Troyen de Jupiter · L5 · Type P · Primaire du système binaire"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · P-type",
+    "new": "Astéroïde · Troyen de Jupiter · L4 · Type P"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Lanceur lourd, non réutilisable"
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Lanceur moyen, non réutilisable"
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "type",
+    "old": "Heavy-lift, partially reusable",
+    "new": "Lanceur lourd, partiellement réutilisable"
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Lanceur moyen, non réutilisable"
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Lanceur lourd, non réutilisable"
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Lanceur moyen, non réutilisable"
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Lanceur lourd, non réutilisable"
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Lanceur lourd, non réutilisable"
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Lanceur lourd, non réutilisable"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Lanceur moyen, non réutilisable"
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "type",
+    "old": "Super-heavy, expendable",
+    "new": "Lanceur super-lourd, non réutilisable"
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Lanceur moyen, non réutilisable"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "type",
+    "old": "Super-heavy, fully reusable",
+    "new": "Lanceur super-lourd, entièrement réutilisable"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "type",
+    "old": "Accueil · Orbite de référence",
+    "new": "Planète natale · Orbite de référence"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.1.l",
+    "old": "DART mission (NASA)",
+    "new": "Mission DART (NASA)"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.2.l",
+    "old": "Hera mission (ESA)",
+    "new": "Mission Hera (ESA)"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Mission Lucy (NASA)"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Mission Lucy (NASA)"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Mission Lucy (NASA)"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Mission Lucy (NASA)"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Mission Lucy (NASA)"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Mission Lucy (NASA)"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Mission Lucy (NASA)"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "old": "Renaming 2014 MU69 → Arrokoth (NASA, 2019-11-12)",
+    "new": "Renommage de 2014 MU69 en Arrokoth (NASA, 2019-11-12)"
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Binary primary",
+    "new": "Asteroid · Erdnah · S-Typ · Primärkörper im Doppelsystem"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "old": "Asteroid · Moonlet · Kinetic-impact target",
+    "new": "Asteroid · Kleinmond · Ziel des kinetischen Einschlags"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "type",
+    "old": "Asteroid · Main-belt · C-type",
+    "new": "Asteroid · Hauptgürtel · C-Typ"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · C-type",
+    "new": "Asteroid · Jupiter-Trojaner · L4 · C-Typ"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Rubble pile",
+    "new": "Asteroid · Erdnah · S-Typ · Schutthaufen"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type · Slow rotator",
+    "new": "Asteroid · Jupiter-Trojaner · L4 · D-Typ · Langsamer Rotator"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · Binary secondary",
+    "new": "Asteroid · Jupiter-Trojaner · L5 · Sekundärkörper im Doppelsystem"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type",
+    "new": "Asteroid · Jupiter-Trojaner · L4 · D-Typ"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · P-type · Binary primary",
+    "new": "Asteroid · Jupiter-Trojaner · L5 · P-Typ · Primärkörper im Doppelsystem"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · P-type",
+    "new": "Asteroid · Jupiter-Trojaner · L4 · P-Typ"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Schwerlastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Mittellastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "type",
+    "old": "Heavy-lift, partially reusable",
+    "new": "Schwerlastrakete, teilweise wiederverwendbar"
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Mittellastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Schwerlastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Mittellastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Schwerlastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Schwerlastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Schwerlastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Mittellastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "type",
+    "old": "Super-heavy, expendable",
+    "new": "Super-Schwerlastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Mittellastrakete, Einweg"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "type",
+    "old": "Super-heavy, fully reusable",
+    "new": "Super-Schwerlastrakete, vollständig wiederverwendbar"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "type",
+    "old": "Startseite · Referenzorbit",
+    "new": "Heimat · Referenzorbit"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.1.l",
+    "old": "DART mission (NASA)",
+    "new": "DART-Mission (NASA)"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.2.l",
+    "old": "Hera mission (ESA)",
+    "new": "Hera-Mission (ESA)"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-Mission (NASA)"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-Mission (NASA)"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-Mission (NASA)"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-Mission (NASA)"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-Mission (NASA)"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-Mission (NASA)"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Lucy-Mission (NASA)"
+  }
+]

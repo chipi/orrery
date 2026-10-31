@@ -115,3 +115,56 @@ What the numbers do not say:
 3. **One commit per locale × tree**, so any of it can be reverted cleanly.
 4. **Pilot:** nl fleet, measured before and after, then a decision with the operator on how wide
    to go.
+
+## 4 · Pilot: nl fleet (2026-10-31)
+
+**The round:**
+
+1. **Work file.** `garble-sample.mjs <dir> --per=all --locales=nl --trees=fleet` gave 445 fields,
+   128 of them with term bindings.
+2. **Fix reviewers.** Three Sonnet reviewers worked through the file with
+   [fix-brief.md](../../scripts/i18n-tools/maps/2026-10-31-garble-pass/fix-brief.md), about 150
+   fields each, writing every retranslation by hand.
+3. **Check.** `garble-check.mjs` checked the decisions and wrote the edits.
+4. **Read.** I read all 323 changes against the English.
+5. **Apply.** `apply-edits.mjs` applied them.
+
+Inputs and decisions: `scripts/i18n-tools/maps/2026-10-31-garble-pass/nl-fleet/`.
+
+| | Fields |
+|---|---|
+| Kept (graded OK) | 122 |
+| Retranslated | 323 (193 MINOR, 130 BROKEN; the sample predicted 28 % BROKEN, the full read found 29 %) |
+| Applied | 322; 1 refused by `problems()` (Venera 7 description: the English template "Venera 7-class", left for the English fix below) |
+| Flagged by `garble-check` | 10, all fine on reading: decades written out ("jaren 80"), "burn" or "payload" used in another sense, and Chang'e-5's "1,731 kg", which is right because the English 1.731 kg is a decimal |
+| Hand-fixed after reading | 18 in 16 fields: "comsats" left in English, two gender slips, "Chinas", dates switched from ISO to dd-mm-yyyy, "Almaz-militairstation", "Saturnus" for the Saturn rocket, "ooit" for "at all" |
+| New term keeps | 4 ("methane-burning", "hydrogen-burning", "burning propellant", "hosted payload" → gastlading) |
+
+**Gates:**
+
+- `term-drift --gate`: 0 unreviewed misses.
+- `name-drift-scan nl`: 0.
+- `link-targets` and `term-glossary` tests: 25 passed.
+- `validate-data`: 12,524 files passed. Two taglines first came out over 140 characters because
+  of my hand fixes; I shortened them.
+
+**Before / after** on the same 25 sampled fields, graded by a fresh Sonnet grader:
+
+| | OK | MINOR | BROKEN |
+|---|---|---|---|
+| Before | 8 | 10 | 7 |
+| After | 25 | 0 | 0 |
+
+This is not an independent sample. The fix reviewers handled those 25 fields too.
+
+**English source errors the reviewers found** (to fix in en-US and all 13 locales):
+
+- The template sentence "Retired after first flight in YYYY" is wrong on about 11 entries:
+  Titan II GLV flew 12 times, and Spirit ran until 2010.
+- "Built … in Multi (Europe)" appears on Ariane 6, XMM-Newton, Mars Express and ATV.
+- "Venera 7-class" is template text.
+- Vikram CY-3 says "two years after" the Chandrayaan-2 crash; the gap is four years.
+- The Sriharikota SLP tagline lists Mangalyaan under GSLV Mk III / LVM3. It launched on a PSLV-XL
+  from the First Launch Pad.
+
+**Cost:** four Sonnet reviewer runs, about 640k subagent tokens, and no paid API calls.

@@ -93,6 +93,7 @@ fix rules: `docs/wip/2026-10-31-garble-pass.md`.
 | Tool | What it does |
 |---|---|
 | `garble-sample.mjs <outdir> [--trees] [--per=25\|all] [--before] [--locales] [--seed]` | Per locale × tree: fields whose text was last written on or before `--before` (git blame). `--per=25` is the graded sample (brief: `maps/2026-10-31-garble-pass/grade-brief.md`). `--per=all` is the fix round's work file, with each field's term bindings (brief: `fix-brief.md`), applied with `apply-edits.mjs`. |
+| `garble-check.mjs <loc> <workfile> <decisions>… --out=<edits.json>` | Checks a fix round's decisions against the work file (numbers changed, English-style 1,000 separators, link targets, 140-char taglines, term bindings) and writes the edits for `apply-edits.mjs` plus `<edits>.flags.json` to read. Skips fields whose text changed since the work file. |
 
 ## maps/
 

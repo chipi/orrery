@@ -1420,16 +1420,16 @@
     "tr": "eec8fcc48c"
   },
   "burn|nl|fleet/launcher/new-glenn.json :: description": {
-    "why": "hydrogen-burning = propellant type (waterstof-BE-3U-motoren)",
-    "tr": "031744c1a3"
+    "why": "hydrogen-burning = propellant type (op waterstof werkende), not an engine firing",
+    "tr": "0d9b7a413e"
   },
   "burn|nl|fleet/launcher/saturn-v.json :: dispatch": {
-    "why": "together burning thirteen tonnes of propellant = combustion/consumption (verbruikend)",
-    "tr": "9e540a975a"
+    "why": "burning propellant every second = consumption (verbrande drijfstof), not an engine firing",
+    "tr": "2090c33253"
   },
   "burn|nl|fleet/launcher/starship.json :: description": {
-    "why": "methane-burning = propellant type (methaangestookte)",
-    "tr": "9c91ea7cec"
+    "why": "methane-burning = propellant type (methaanverbrandende), not an engine firing",
+    "tr": "7b3a0086bf"
   },
   "burn|nl|missions/earth/apollo-1.json :: payload": {
     "why": "burned = destroyed by fire (uitgebrand), not an engine firing",
@@ -3818,6 +3818,10 @@
   "payload|ko|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name left in English",
     "tr": "4042bc064b"
+  },
+  "payload|nl|fleet/constellation/sbirs-heo.json :: description": {
+    "why": "hosted payload = gastlading, the compound carries the binding lading",
+    "tr": "c34982443d"
   },
   "payload|nl|fleet/launcher/falcon-heavy.json :: description": {
     "why": "variant: laadvermogen (payload capacity)",

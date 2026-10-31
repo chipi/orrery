@@ -1,0 +1,32 @@
+[
+  ["crewed-spacecraft/endeavour.json", null, null],
+  [
+    "launcher/ariane-5.json",
+    "Het langdurig ingezette zware draagraket",
+    "De langdurig ingezette zware draagraket"
+  ],
+  [
+    "cargo-spacecraft/cargo-dragon-v1.json",
+    "ruimtevaartuig die aanmeerde",
+    "ruimtevaartuig dat aanmeerde"
+  ],
+  ["orbiter/chandrayaan1.json", "India's eerste Maanmissie", "India's eerste maanmissie"],
+  ["launcher/long-march-3b.json", "commerciële comsats", "commerciële communicatiesatellieten"],
+  ["launcher/ariane-1.json", "commerciële comsats", "commerciële communicatiesatellieten"],
+  ["station/tiangong-2.json", "ontving het Shenzhou 11", "ontving Shenzhou 11"],
+  [
+    "launcher/energia.json",
+    "die de Sovjet-Unie uiteindelijk goed deed",
+    "die de Sovjet-Unie uiteindelijk wél lukte"
+  ],
+  ["orbiter/giotto.json", "op 14-03-1986", "op 1986-03-14"],
+  ["launcher/vostok-k.json", "(12-04-1961)", "(1961-04-12)"],
+  ["orbiter/change1.json", "Chinas eerste", "China's eerste"],
+  ["station/salyut-5.json", "Laatste Almaz-militairstation", "Laatste militaire Almaz-station"],
+  ["station/salyut-5.json", "Laatste Almaz-militair station", "Laatste militaire Almaz-station"],
+  ["station/salyut-2.json", "Eerste Almaz-militairstation", "Eerste militaire Almaz-station"],
+  ["station/salyut-3.json", "Tweede Almaz-militairstation", "Tweede militaire Almaz-station"],
+  ["launch-site/lc-34.json", "Saturnustijdperk", "Saturn-tijdperk"],
+  ["launch-site/lc-34.json", "De eerste Saturnusraket", "De eerste Saturn-raket"],
+  ["launch-site/lc-34.json", "ooit konden vliegen", "überhaupt konden vliegen"]
+]

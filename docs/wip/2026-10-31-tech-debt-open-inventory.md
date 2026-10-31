@@ -60,6 +60,7 @@ Other Phase 4 items are done; see "Done in this arc".
 | "Language spirit" audit | open | Search the site for English- or Latin-only assumptions: sorting (Intl.Collator), search normalization, initial-letter UI, separators and quotes, number/date/unit formats, truncation, RTL icon mirroring, keyboard assumptions. | Phase 6 doc section 7 |
 | Separate `/glossary` page idea | open | Low-profile page built from the glossary `term` section, optional reverse index; to be reassessed after the pilot. `/science/glossary` exists. | Phase 6 doc last paragraph |
 | Hand read of translated essays and science | partly done | Spot check done (208 items) and the science reads in ru/zh-CN/fr done; the rest is under "Translation quality". | `e522e5f4535` |
+| `/fly` probes `data/trajectories/<id>.json` for every mission | open | Found in the 0.9.2 local e2e: 233 404s in one run. The optional fetch (since `a1c43a0b181`) 404s for every mission without a trajectory file, in prod too. Ship a manifest of trajectory ids (or a field on the mission index) and fetch only when listed. | `src/routes/fly/+page.svelte` ~2197; e2e webServer log |
 
 ## Phase 7 — content
 

@@ -1,12 +1,21 @@
 #!/usr/bin/env bash
 # Garble pass, one locale × tree: apply the checked edits, run the gates, commit (never push).
 #   scripts/i18n-tools/garble-cell-commit.sh <loc> <tree> <edits.json> <round-dir> [summary]
+# <tree> may be a bucket, <name>:<tree,tree,…> (a garble-sample --merge cell): the record is
+# <loc>-<name> and every listed tree is staged.
 # <round-dir> holds the round's inputs (decisions, check fixes) and is copied into
 # scripts/i18n-tools/maps/2026-10-31-garble-pass/<loc>-<tree>/ as the record.
 # Stops (exit 1) on a refused edit, a term miss, a name problem or a validate-data failure; the
-# working tree then holds the applied edits for inspection (git checkout -- i18n-src/<loc>/<tree> undoes).
+# working tree then holds the applied edits for inspection (git checkout -- the tree(s) undoes).
 set -euo pipefail
 loc=$1 tree=$2 edits=$3 round=$4 summary=${5:-}
+paths=()
+if [[ $tree == *:* ]]; then
+  IFS=, read -ra list <<<"${tree#*:}"; tree=${tree%%:*}
+  for t in "${list[@]}"; do paths+=("i18n-src/$loc/$t"); done
+else
+  paths=("i18n-src/$loc/$tree")
+fi
 cd "$(git rev-parse --show-toplevel)"
 out=$(node scripts/i18n-tools/apply-edits.mjs "$loc" "$edits")
 echo "$out"
@@ -21,7 +30,7 @@ rm -f /tmp/garble-drift.$$ /tmp/garble-vd.$$
 rec=scripts/i18n-tools/maps/2026-10-31-garble-pass/$loc-$tree
 mkdir -p "$rec" && cp "$round"/*.json "$rec"/ && npx prettier --write "$rec"/*.json >/dev/null
 n=$(grep -o 'applied [0-9]*' <<<"$out" | grep -o '[0-9]*')
-git add "i18n-src/$loc/$tree" "$rec" scripts/i18n-tools/term-keeps.json
+git add "${paths[@]}" "$rec" scripts/i18n-tools/term-keeps.json
 git commit -q -F - <<EOF
 fix(i18n): $loc $tree garble pass — $n fields retranslated from English
 

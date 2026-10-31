@@ -1,0 +1,30 @@
+[
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "en": "Mars Express is a deep-space orbiter built by EADS Astrium in Europe. ESA's first Mars orbiter; Europe's first planetary mission. In service since 2003.",
+    "old": "Mars Express是由EADS Astrium在欧洲制造的深空轨道器。ESA首个火星轨道器；欧洲首次行星际任务。自2003年以来一直在役。",
+    "new": "Mars Express是EADS Astrium在欧洲制造的深空轨道器。ESA首个火星轨道器；欧洲首次行星探测任务。自2003年起在役。"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "en": "India’s first successful lunar lander (August 2023), the first spacecraft to land near the lunar south pole. Four years after Vikram CY-2 crashed in the same region — the redemption arc India and ISRO needed.",
+    "old": "印度首台成功的月球着陆器（2023年8月），也是首个在月球南极附近着陆的航天器。此前四年，Vikram CY-2在同一区域坠毁——这是印度和ISRO需要的“救赎弧”。",
+    "new": "印度首个成功的月球着陆器（2023年8月），也是首个在月球南极附近着陆的航天器。在Vikram CY-2于同一地区坠毁四年之后，它为印度和ISRO带来了急需的“救赎”。"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "en": "ESA's first Mars orbiter; Europe's first planetary mission",
+    "old": "ESA首个火星轨道器；欧洲首次行星际任务",
+    "new": "ESA首个火星轨道器；欧洲首次行星探测任务"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "en": "ESA's first Mars orbiter; Europe's first planetary mission",
+    "old": "ESA首个火星轨道器；欧洲首次行星际任务",
+    "new": "ESA首个火星轨道器；欧洲首次行星探测任务"
+  }
+]

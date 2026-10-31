@@ -5,12 +5,12 @@
   "delta_v": "~3 km/s",
   "type": "軌道機 · 飛行済み",
   "first": "インド初の月ミッション；月面に広く水があることを確認",
-  "description": "ISROの最初の惑星間宇宙探査機。軌道船は月 Impact Probeを月面に送り届けました。これは別の世界に到達したインドの最初の物体です。また、6カ国から提供された11個の機器を搭載していました。Chandrayaan-1に搭載されたNASAのMoon Mineralogy Mapper（M3）は、教科書を書き直す発見をしました。水分子は月面全体に広く存在し、極地の暗い影のクレーターだけに閉じ込められているのではなかったのです。ミッションは2009年8月、ISROが宇宙探査機との通信を失ったときに突然終了しました。",
+  "description": "ISROにとって初の惑星間探査機。周回機はMoon Impact Probe（月衝突探査機）を月面に送り届けた。インドの物体が別の天体に到達した初の例であり、6か国の11機器を搭載していた。Chandrayaan-1に搭載されたNASAのMoon Mineralogy Mapper（M3）は、教科書を書き換える発見をした。水分子は、極域の影になったクレーターに閉じ込められているだけでなく、月面全体に広く存在していたのである。ミッションは2009年8月、ISROが探査機との交信を失って突然終わった。",
   "events": [
     { "met": 0, "label": "打ち上げ", "note": "PSLV-XL (C11) からシュリーハリコータ。", "type": "nominal" },
     { "met": 17, "label": "MOI", "note": "月軌道投入 2008-11-08。", "type": "nominal" },
-    { "met": 24, "label": "MIP 衝突", "note": "月 Impact Probeは南極近くへの硬着陸を目指していました。", "type": "info" },
-    { "met": 320, "label": "通信途絶", "note": "通信途絶 2009-08-29；三百十二日運用。", "type": "warning" }
+    { "met": 24, "label": "MIP 衝突", "note": "月のImpact Probeは、南極付近への硬着陸を目標とした。", "type": "info" },
+    { "met": 320, "label": "通信途絶", "note": "2009-08-29に通信途絶。運用は312日間。", "type": "warning" }
   ],
   "vehicle_stage": "PSLV 第4段 PS4"
 }

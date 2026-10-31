@@ -1,0 +1,1222 @@
+[
+  {
+    "rel": "missions/earth/aurora-7.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "Blok-D上段による月遷移軌道への投入。",
+    "note": "上段機 is odd; use 上段"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2009年3月1日、南緯1.50°、東経52.36°に制御衝突——中国初の月面到達物体。",
+    "note": "月面着陸物体 awkward"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "ESAとNASAの共同ミッション。1990年10月6日、スペースシャトルDiscovery（STS-41）からIUSおよびPAM-S上段とともに打ち上げられたUlyssesは、1992年2月8日に木星でスイングバイを行い、黄道面から約80°外へ自らの軌道を傾けました。地球のほぼ赤道面上の軌道から、太陽に対する極軌道に到達できる唯一の方法です。18.5年間に太陽を周回する完全な極軌道を3周し、あらゆる日面緯度で太陽風、太陽圏磁場、高エネルギー粒子を観測しました。この直接測定により、赤道付近の低速太陽風領域と、コロナホールから吹き出す高緯度の高速太陽風流とで、太陽風の構造がどう異なるかが明らかになりました。ミッションは2009年6月30日、スラスタのヒドラジンが配管内で凍結したため終了しました。機体は太陽周回の極軌道に残っています。",
+    "note": "上段段階 nonword; 重力アシスト not スイングバイ; clumsy"
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "delta_v",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "約1.1 km/s（深宇宙での機動；火星スイングバイ）",
+    "note": "gravity assist term not used"
+  },
+  {
+    "rel": "missions/earth/freedom-7.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "アラン・シェパードによる15分間の弾道飛行——アメリカ人として初めて宇宙へ到達した。ユーリイ・ガガーリンのVostok 1による軌道飛行から23日後のことである。遠地点187 km、大気圏突入時の最大加速度11.6 G、最大Q時は3.7 G。カプセルFreedom 7は射点から487 km離れた大西洋に着水した。シェパードは遠地点で「なんて美しい眺めだ」と語ったと伝えられる。Mercury-Redstoneロケットでは軌道速度に達せず、飛行は弾道飛行にとどまった。以降の軌道飛行のMercuryミッションでは、より強力なAtlas LV-3Bが使われた。カプセルFreedom 7は、マサチューセッツ州ボストンのJFK大統領図書館に展示されている。",
+    "note": "再突入 vs bound 大気圏突入; max-Q wrong"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Chang'e 3はCNSAのChang'e計画で3番目の着陸船であり、1976年のソ連のLuna 24以来、37年ぶりとなる月面への軟着陸成功を果たしました。Long March 3Bは2013年12月に月への直接軌道へ打ち上げられ、月周回軌道投入の前に中間軌道補正を1回行いました。着陸船は12月14日に雨の海へ降り立ち、Yutu（玉兎）探査車を展開しました。探査車は月の昼の2日目に移動機能の故障で走行を終えましたが、31か月間稼働しました。Chang'e 3の着陸船はその後も数年にわたり撮像を続けました。",
+    "note": "touchdown date read as 14 days; Jade Rabbit left in English"
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "2017-05-07、KSCのシャトル着陸施設で自動滑走路着陸。",
+    "note": "English facility name left"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "エミレーツ火星探査計画（Emirates Mars Mission）——「アル・アマル」（希望）——は、2021年のUAE連邦樹立50周年を記念して2014年に構想されました。MBRSCのチームはコロラド大学、アリゾナ州立大学、カリフォルニア大学バークレー校と提携して探査機を設計・統合しましたが、製造は自分たちで行いました。科学観測軌道（周期55時間、約20,000 km × 43,000 km）はすべての経度と時間帯をカバーし、他のどの火星周回機にも解像できない気象パターンを捉えています。ミッションは初挑戦で成功し、UAEは火星に到達した5番目の機関となりました。",
+    "note": "spacecraft rendered 航空機; English left in; mixed script"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "日面緯度が17°を超える——極域の磁場を初めて至近から捉えた画像。",
+    "note": "heliographic latitude is 日面緯度"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "月軌道投入；降下用の軌道傾斜角への軌道修正。",
+    "note": "降下傾斜角 lacks 軌道 binding"
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "OSIRIS-RExは、これまで試みられた中でも屈指の精密さが求められた小惑星近傍運用を成し遂げました。2016-09-08にケープ・カナベラルからAtlas V 411で打ち上げられ、2017年の地球スイングバイで軌道面をベンヌの軌道傾斜角6°に合わせ、492 mの炭素質の地球近傍小惑星に2018-12-03にランデブーしました。約19 kmの距離で位置を保った後、約1.4 kmという記録的な軌道に入りました——天体の周回軌道として、探査機が到達した史上最も近い軌道です。その後2年間、ベンヌの巨礫に覆われた表面の地図を作り、粒子が活発に放出される現象を発見しました。2020-10-20、タッチ・アンド・ゴー採取アームがナイチンゲール地点に降下し、N₂ガスを表面に噴射して舞い上がった物質をつかみ取りました——アームは「ラブルパイル流体」のような表面に50 cm沈み込みました。サンプルリターンカプセルは121.6 gのベンヌの物質を2023-09-24にユタ州へ届けました。探査機本体はただちにOSIRIS-APEXと改称され、2029年のアポフィスとのランデブーに向かっています。",
+    "note": "English names left in; clumsy phrasing"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "月軌道投入。SPSのデルタVは約0.89 km/s。",
+    "note": "delta-v binding デルタV not used"
+  },
+  {
+    "rel": "missions/earth/aurora-7.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Aurora 7は再現飛行になるはずが、肝を冷やす事態となった。スコット・カーペンターはグレンと同じ3周の飛行プロファイルをたどったが、実験と不調な制御系に気を取られて姿勢制御用の燃料を使い果たし、逆噴射ロケットの点火も数秒遅れ、向きもわずかにずれていた——その結果、着水目標から約400キロメートルも先へ運ばれてしまった。長く静まり返った1時間のあいだ、彼が生きているのかどうか誰にもわからなかったが、やがて捜索機が救命いかだに揺られる彼を見つけた。余裕がほとんどない機械の中では小さな誤りがすぐに積み重なること、そしてそこから立て直すこと自体が一つの技術であることを、この飛行は端的に教えてくれる。",
+    "note": "clumsy last sentence; raft as boat"
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "周回機が、地球規模のダストストームのさなかに火星軌道へ投入される。",
+    "note": "subject Orbiter dropped; no period"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "月の裏側上空で最接近（高度約6,500キロメートル）、地球から406,771キロメートルと、人類がこれまでに到達した最遠距離。軌道投入は行わず、フリーリターンの軌道形状でOrionを地球へ振り戻す。",
+    "note": "final clause cut and clumsy"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "vehicle_stage",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Atlas-CentaurがPioneer 10を打ち上げ、木星への直接飛行軌道に乗せる。",
+    "note": "fragment without verb"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "vehicle_stage",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "ジェームズ・マクディヴィットとエドワード・ホワイトは、1965年6月3日から4日間、62周回のミッションを飛行した。3周目にホワイトがアメリカ初の宇宙遊泳を行い、命綱につながれた状態で約23分間船外に出て、手持ち式の機動装置を使った。この飛行ではアメリカ初の長期にわたる医学・科学プログラムも実施された。",
+    "note": "umbilical/steering unit wrong sense"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "payload",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "打上げ質量367 kg；出力1.2 kWの太陽電気式ホール効果イオンスラスター",
+    "note": "太陽電力 awkward"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "月の裏側で地球帰還軌道への投入（1968-12-25 06:10 UTC）。SPSのデルタVは約1.07 km/s。",
+    "note": "transliteration; delta-v binding"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/skylab-2.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "コンラッドとカーウィンは3.5時間のEVAで、引っかかって開かなかった太陽電池翼を解放した。",
+    "note": "ジャムした is jargon calque"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "地球スイングバイにより、Giottoの目標がグリッグ・シェレルップ彗星（26P）に変更される。",
+    "note": "リターゲット calque"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "2.5分後に遠地点190 km；約5分間の無重力状態。",
+    "note": "最高点 not bound 遠地点"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "月周回軌道投入。SPSのデルタVは約0.91 km/s。",
+    "note": "delta-v binding not used"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "ESAのHuygensプローブは、NASAのCassini探査機に載って7年間の惑星間航行で土星系へ向かい、2004年7月に土星に到着しました。2004年12月25日に切り離されて20日間慣性飛行したのち、2005年1月14日、秒速6 kmでタイタンの窒素・メタンの大気に突入しました。エアロシェルがプローブを亜音速まで減速させ、続いて3段階のパラシュートが2時間27分の降下の間プローブを導き、あらゆる高度での気温、気圧、風、化学組成というタイタン大気の初の直接測定が行われました。プローブは降下中に350枚の画像を送信し、着地後も72分間、表面から送信を続けました。その結果、南緯10.3°、西経192.3°の地点で、液体メタンの薄い膜の下に、丸い水氷の小石が敷きつめられた氾濫原が広がっていることがわかりました。",
+    "note": "ベニア nonsense; 星間 wrong; coordinates garbled"
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "休息日をめぐる作業拒否は真偽が争われている（乗組員もNASAも後に正式なストライキはなかったと述べた）。一方、スケジュールが実際に過密だったことは、NASAの恒久的な改革につながった。",
+    "note": "タイムライン過負荷 odd; added clause"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "地球帰還軌道投入。SPSのデルタVは約1.0 km/s。",
+    "note": "Trans-Earth injection mistranslated as lunar departure"
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Huygensは、軌道を周回するためではなく、落下するために送られた。7年間Cassiniに固定されて運ばれ、2004年のクリスマスに切り離されると、20日間ただ一機でタイタンへ慣性飛行した。秒速6キロメートルでタイタンの大気に突入したとき、耐熱シールドが必要な時間を稼いでくれた。続いて3段階のパラシュートが、どんな機器もそれまで通り抜けたことのないオレンジ色の霞の中を、2時間半かけて減速させながら降ろしていった。川の谷を撮影し、風速を測り、大気のにおいを嗅ぎ——そして丸い水氷の小石が敷きつめられた氾濫原に着地した。太陽系外縁部では初めての着陸であり、それ以来、そこに降りた探査機はない。",
+    "note": "外部太陽系 calque; 接続 stiff"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Ariane 5G+がクールーからRosettaを打ち上げ、彗星67Pへの10年間の航行が始まる。",
+    "note": "Kourou rendered クール"
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "中国初の月探査ミッションであり、月に到達した中国初の宇宙機",
+    "note": "月面ミッション wrong for orbiter"
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/skylab-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "コンラッド、カーウィン、ワイツ——アメリカのスペースステーションSkylabに初めて滞在した乗組員。1973-05-25 13:00 UTCにSaturn IB（SA-206）で打ち上げられた。これはSkylab本体が打ち上げ時に損傷を受けてから11日後のことである（微小隕石防護兼日よけシールドが剥ぎ取られ、その際に太陽電池翼の1枚も持ち去られ、もう1枚は固着した）。乗組員は28日間にわたる修復作業を行った。ワイツは1日目、38分間のスタンドアップEVAで固着した翼の解放を試みたが失敗し、その後14日目の3.5時間のEVAでコンラッドとカーウィンが拘束ストラップを切断して解放に成功し、電力を回復させた。また、マーシャル設計のパラソル型熱シールドを科学実験用エアロックから展開し、船内温度を54℃から24℃に下げた。1973-06-22 13:50 UTCに帰還。CSM-116はワシントンDCの国立航空宇宙博物館に展示されている。",
+    "note": "Chinese-script 気闸; paddle/damage wording garbled"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2025年3月1日。地球への再遭遇に向けて軌道を曲げる。",
+    "note": "register です/ます in note list"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "他の惑星の大気中に初めて展開された気球型エアロスタット（金星、1985年）；太陽系の2つの異なる天体に科学観測機器を運んだ初の宇宙機",
+    "note": "calque 科学を搭載"
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "あかつき（「暁」）は日本初の金星探査機である。2010-05-20に種子島からH-IIA 202で打ち上げられ、イカロス太陽帆実証機と共に運用された。予定されていた2010-12-07の金星軌道投入は、酸化剤チェック弁への塩結晶の付着により主エンジンが噴射開始152秒時点で軸がずれたことで失敗した。JAXAは宇宙機を太陽軌道で5年間生存させ、12回の軌道修正を実施して次の金星遭遇の機会を迎えた。2015-12-07、当初は軌道投入用として設計されていなかった4基の姿勢制御スラスタにより1228秒間の噴射が実施され、あかつきは400 × 440,000 km、軌道傾斜角3°の高楕円軌道に投入された。宇宙飛行史上最も劇的なミッション復旧の一つである。2024年に交信が途絶え、JAXAは2025-09-18に運用完了を宣言した。",
+    "note": "inclination binding 軌道傾斜角 missing"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "ジャレッド・アイザックマン（船長）、スコット・“キッド”・ポティート（パイロット）、サラ・ギリスとアンナ・メノン（SpaceXのエンジニア／ミッションスペシャリスト）。2024-09-10 09:23 UTC、LC-39AからFalcon 9 B1083で打ち上げられ、Crew Dragon Resilience（C207、3回目の飛行）に搭乗した。1日目に遠地点を1408 kmまで上げた——アポロ月ミッションを除けば、人類が飛んだ史上最も高い軌道である。その後、EVAに備えて遠地点を下げ、730 kmの円軌道とした。3日目には初の民間EVAが行われ、アイザックマンとギリスが開いたハッチから、新型のSpaceX EVAスーツで船外に出た（エアロックはなく、乗員4人全員が船室ごと真空にさらされた）。2人はそれぞれ約8分間、真空中で動きやすさを試した。軌道上からStarlinkのレーザー衛星間リンクも試験した。2024-09-15 07:36 UTC、フロリダ沖に着水した。",
+    "note": "crew names left in Latin; clumsy wording"
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "payload",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "USA-261 / AFSPC-5；X-37B軌道試験機（Orbital Test Vehicle、約5000 kg）。ペイロードの大半は非公開。",
+    "note": "English vehicle description left"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "海王星と大型衛星トリトンのフライバイ；グランドツアー最後の惑星遭遇。",
+    "note": "Grand Tour left in English"
+  },
+  {
+    "rel": "missions/earth/artemis3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "33分間の主エンジン噴射でMAVENを周期35時間の楕円科学軌道に投入。",
+    "note": "燃焼 not bound 噴射; clumsy"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "vehicle",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "最後の指令セッション 1971-09-14；ローバーは月の厳寒の夜に保全された。",
+    "note": "寒い月夜に保存 awkward"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Martian Moons eXploration（MMX）はJAXAの計画で、フォボスに着陸して約10 gのレゴリスを採取し、地球へ持ち帰る。試料は、フォボスとダイモスは捕獲された小惑星なのか、それとも火星自体に起きた太古の衝突の破片なのかという、長年の論争に決着をつけるかもしれない。ミッションにはフォボス表面を移動するドイツ・フランス共同のローバーも含まれ、はやぶさ系ミッションがイトカワやリュウグウで行ったこととはまったく異なる運用モデルとなる。打ち上げは2024年の予定だったが、JAXAのH3ロケットの遅れにより2026年にずれ込んだ。",
+    "note": "kanji numerals, telegraphic fragments"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "delta_v",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "~13.7 km/s（金星スイングバイ軌道）",
+    "note": "gravity assist binding スイングバイ not used"
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Starshipによる火星計画の無人実証飛行。Super Heavyで打ち上げ、タンカー型から低軌道上で推進剤を補給し、燃料を満載したStarshipを火星遷移軌道へ投入、火星表面へ動力降下で着陸する。SpaceXが掲げる目標は2026〜2027年の打ち上げウィンドウだが、技術的な現実（Starshipは軌道飛行の信頼性向上に取り組んでいる最中で、軌道上での推進剤補給は実証されていない）を踏まえると、2028年以降のほうが現実的である。成功すれば、火星へ運べるペイロードの経済性が一変する——着陸1回あたり数千kgから100トンへ。",
+    "note": "Chinese-script 吨, 火星注入 non-term, 工学現実 calque"
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "スペースシャトルAtlantis（STS-30）＋慣性上段ロケット（IUS）",
+    "note": "English description left untranslated"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "裏側のレゴリスから1.935 kgを採取。",
+    "note": "kanji numerals odd"
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "欧州初の惑星間ミッション；NASA以外では最も長く運用されている火星周回機",
+    "note": "火星軌道機 not a word"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "小惑星を周回する軌道に入った初の宇宙機（433エロス、2000年）、および小天体への初の軟着陸（2001年2月12日）",
+    "note": "小惑星周回の宇宙船 clumsy"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "STS-41 DiscoveryがUlysses + IUS / PAM-S上段を展開。",
+    "note": "PAM-D wrong; English says PAM-S"
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "delta_v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Voskhod 11A57、バイコヌール第1射点（ガガーリン発射台）から、1965年3月18日07時00分UTC。",
+    "note": "Gagarin's Start rendered 開始地点"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "X-37Bの5回目の飛行で、Atlas Vではなく初めてFalcon 9で打ち上げられた便——そしてBlock 4のFalcon 9で飛んだ唯一のX-37B飛行。2017-09-07 14:00 UTCにKSC LC-39Aから打ち上げられ（ブースターは射点から先のLZ-1で回収）、2019-10-27 07:51 UTCにKSCのシャトル着陸施設に着陸した。軌道上滞在は780日。X-37Bとして初めて、軌道傾斜角の高い軌道（54.5°）に投入され、公開情報で追跡できる上空通過パターンを広げた。",
+    "note": "downrange rendered 下流; SLF left; inclination binding"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "高度585 kmの円軌道、軌道傾斜角51.6° — Hubble保守ミッション以来、最も高い有人軌道。",
+    "note": "inclination binding missing"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "大事故寸前の事態をNASA史上最も称賛される救出劇へと変えたミッション",
+    "note": "絶望的 overstates near-disaster"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "近月点通過の2時間後の噴射により、地球への帰還時間を10時間短縮。",
+    "note": "Pericynthion transliterated, not a Japanese word"
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "vehicle_stage",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Delta IIがDawnを打ち上げ、低推力の螺旋軌道でベスタとケレスへ向かわせる。",
+    "note": "スパイラルハイウェイ calque"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "ケープ・カナベラルLC-19からTitan II GLV（GT-4）、1965年6月3日 15:16 UTC。",
+    "note": "Particle よりケープ garbled word order"
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "1967年1月27日、打ち上げ前の発射台火災でグリソム、ホワイト、チャフィーが死亡",
+    "note": "致命的な発射台前火災 awkward"
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "宇宙ステーションへの初の有人ミッション——Salyut 1——は、1971年6月6日にゲオルギー・ドブロボルスキー、ヴラディスラフ・ヴォルコフ、ヴィクトル・パツァーエフを乗せて打ち上げられた。乗員はSalyut 1に22日間滞在した（ミッション全体は23日18時間）。6月30日の大気圏突入の際、モジュール分離時（高度約168 km）に気圧均等化弁が早く開いてしまい、船室が減圧して、宇宙服を着ていなかった3人の宇宙飛行士は数秒のうちに死亡した。カプセルは正常に着陸した。彼らは、カーマン・ラインより上で死亡した唯一の人類である。",
+    "note": "大気圏突入 binding not used; clumsy clause"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "ランダーが1976年7月20日に着陸。Apollo 11のちょうど7年後。",
+    "note": "missing particle after ランダー"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "1966年3月31日にバイコヌールから打ち上げられたLuna 10は、1966年4月3日に軌道傾斜角71.9°、350 × 1017 kmの月周回軌道へ入り、月を周回した最初の宇宙機となりました。地球以外の天体を回る最初の人工衛星でもあります。有人のApollo 8が月に到達する2年半前のことでした。磁力計、ガンマ線分光器、赤外放射計、微小隕石検出器、プラズマセンサ、そして月の重力場を調べる電波実験装置を搭載していました。ガンマ線データは月の組成を遠隔で探る初めての観測であり、海が玄武岩に似た組成であることを示唆しました。1966年4月4日、ソビエト連邦共産党第23回大会の最中に「インターナショナル」を放送したことでも知られますが、これは科学というより宣伝のための演出でした。56日間・460周回運用され、1966年5月30日にNiCd電池が尽きましたが、現在も月周回軌道にとどまっています。",
+    "note": "radio probe rendered 無線探査機; mare/orbits awkward; binding"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "最接近9,846 km。データ再生の8時間で22枚の画像を送信。",
+    "note": "kanji numerals odd for numbers"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "167 × 475 kmの地球周回軌道、軌道傾斜角64.8°への投入。",
+    "note": "inclination binding 軌道傾斜角 missing"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "NEAR Shoemakerがエロスへ向かったのは、小惑星を間近で見ればどんな姿なのか、誰も本当には知らなかったからだ。たどり着いてみると、そこはクレーターだらけで、ゆっくりした自転によって鞍のような形に引き伸ばされ、ほぼ無重力のため行き場のない細かいレゴリスに覆われた世界だった。1年間、軌道上からすべての尾根と岩塊を地図に描いたのち、2001年2月、管制チームは大きな賭けに出た。2週間で5回にわたって探査機の軌道を下げ、歩く程度の速度まで減速させて、表面に降ろしたのだ。探査機は生き延びた。さらに16日間、エロスから送信を続けた——小天体の上に降り立った、地球からの最初の使者である。",
+    "note": "fragment なぜなら; 準ゼログラビティ, 休むために wrong"
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "JAXAの初代はやぶさの後継機。2014-12-03に打ち上げられたはやぶさ2は、イオンエンジンによる3.5年間の低推力航行と地球スイングバイを経て、2018-06-27に炭素質の地球近傍小惑星（162173）リュウグウに到着した。2018〜2019年の表面運用では、小型搭載型衝突装置（SCI）の実験（2019-04-05）をはさんで2回のタッチダウン・サンプル採取を行い、この実験で14 mのクレーターを掘って2回目の試料を得た。3機のMINERVA-IIローバーは小惑星表面の画像を初めて送り届け、DLR/CNESのMASCOTランダーは17時間運用された。サンプルリターンカプセルは2020-12-05（UTC。回収は現地・日本時間の2020-12-06）にウーメラ上空で大気圏突入し、変質していないリュウグウの物質5.4 gを届けた——地下の層構造を持つ初の小惑星試料である。拡張ミッションでは、2026-07に98943トリフネ（2001 CC21）のフライバイを行い、2031-07には高速自転する天体（1998 KY26）とのランデブーを目指す。",
+    "note": "bindings スイングバイ/大気圏突入 unused; 挟まれた garbled; 未処理"
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/freedom-7.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/skylab-2.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "予算が厳しくなっても飛び続けた双子の片割れ、Voyager 2は、木星と土星から天王星と海王星へとグランドツアーを続けた——氷巨星の接写画像は、いまもこれしかない。1989年の海王星接近では、大暗斑とトリトンの間欠泉が明らかになった。現在、2機のVoyagerはどちらも、人類の名刺である金のレコードを携えて恒星間空間を航行している。Orreryはカタログ上の目的地として海王星を掲げているが、実際の航路は複数のスイングバイに頼っていた。",
+    "note": "kanji numerals, 重力アシスト not bound スイングバイ, fragments"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "payload",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "USA-212；X-37B軌道試験機（Orbital Test Vehicle、約5000 kg）。ペイロードの大半は非公開。",
+    "note": "English vehicle description left"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "この惑星を至近距離から撮った初の画像；F環と小さな内側の衛星を発見（のちに共軌道の対であるヤヌスとエピメテウスに分離）。",
+    "note": "Epimetheu truncated; half-width punctuation"
+  }
+]

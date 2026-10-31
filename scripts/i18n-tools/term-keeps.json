@@ -2823,6 +2823,14 @@
     "why": "variant: 回る / その周囲の (orbiting rendered naturally)",
     "tr": "5ee6441d3b"
   },
+  "orbit|ja|missions/earth/aurora-7.json :: description": {
+    "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun",
+    "tr": "e3b3e45110"
+  },
+  "orbit|ja|missions/earth/aurora-7.json :: dispatch": {
+    "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun",
+    "tr": "39dfbc3810"
+  },
   "orbit|ja|missions/earth/faith-7.json :: events.3.note": {
     "why": "variant: 周 (revolution counter)",
     "tr": "afacbb06d9"
@@ -4169,7 +4177,7 @@
   },
   "stage|ja|missions/venus/magellan.json :: vehicle": {
     "why": "vehicle name (Inertial Upper Stage) kept in Latin",
-    "tr": "7eaa95e254"
+    "tr": "1ae85aceb2"
   },
   "stage|ko|fleet/engine/yf-100.json :: description": {
     "why": "variant: 코어 스테이지",

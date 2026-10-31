@@ -75,7 +75,14 @@ node scripts/i18n-tools/term-drift.mjs --trees=essays                         # 
   A pattern that is too wide hides real misses. On 2026-10-31 an open nl `\p{L}*baan` let
   "lanchbaan" (for *launch pad*), "polaairbaan" and "ontbaan" pass. **List compounds
   explicitly** (`(?<!\p{L})(?:aarde?|maan|halo|…)baan`); never use an open prefix.
-- Apply first, keep second: a keep hashes the text as it is now.
+- Apply first, keep second: a keep hashes the text as it is now. `term-keep.mjs` skips a
+  decision whose field already matches (stems widened after the review).
+- Recurring "variant" keeps across locales (essays round: the plain verbs for *to orbit* —
+  umkreist, gravitent, обращается, кружи, 公转) belong in the stems, not in keeps.
+- A reviewer told to apply the binding will also rewrite standard compounds (zh-CN
+  自由返回轨道 → 自由返回轨迹). Drop those edits and accept the compound.
+- One sentence, one decision in every locale: "no chemical burn could reach" is combustion,
+  so the change was dropped in de, es, nl, ar and sr alike.
 - A field changed for one term makes another term's keep stale. Re-review it; don't
   re-record it blind.
 - Garbled text found along the way (broken links, nonsense) gets retranslated from the
@@ -88,8 +95,15 @@ node scripts/i18n-tools/term-drift.mjs --trees=essays                         # 
 
 When a tree reaches zero unreviewed misses, add it to `GATED_TREES` in
 `term-glossary.test.ts` (it runs `term-drift … --gate`), so a new translation that drifts
-fails CI. Gated since 2026-10-31: **science**. Mutation-checked: putting "branden" back in
+fails CI. Gated since 2026-10-31: **science**, **essays**. Mutation-checked: putting "branden" back in
 one nl field fails the test with "unreviewed misses: 1".
+
+## Detector rules worth knowing
+
+- Markdown link targets and path-only fields (image keys) are not text (`prose`/`isText`
+  in `term-match.mjs`). Before this, an English "delta-v" in a link target flagged fields
+  whose text never used the term, and a translated field could pass on an English
+  `/science/orbits/…` target.
 
 ## Not covered
 

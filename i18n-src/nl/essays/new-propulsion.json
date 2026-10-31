@@ -28,7 +28,7 @@
     },
     {
       "type": "prose",
-      "md": "Dawn werd in 2007 gelanceerd met drie NSTAR-ionenstuwers — directe afstammelingen van de motor van Deep Space 1 — en gebruikte ze voor iets wat nog geen ruimtevaartuig had gedaan: een lichaam in de asteroïdengordel in een baan brengen, afremmen tot stilstand bij [Vesta](/explore), daar een jaar omheen draaien, dan opnieuw ontsteken en spiraalsgewijs naar een tweede lichaam, [Ceres](/explore), vliegen en ook dat in een baan brengen. Een chemische missie met dezelfde doelen had zoveel drijfgas vereist dat geen enkele bestaande raket haar had kunnen lanceren. De ionenmotoren, die samen meer dan vijfenhalf jaar aan stuwtijd opbouwden, volbrachten dezelfde reis op 425 kilogram xenon. De specifieke impuls van Dawn bedroeg 3.100 seconden. Elk kilogram xenon deed het werk van zeven kilogram vloeibare waterstof."
+      "md": "Dawn werd in 2007 gelanceerd met drie NSTAR-ionenstuwers — directe afstammelingen van de motor van Deep Space 1 — en gebruikte ze voor iets wat nog geen ruimtevaartuig had gedaan: een lichaam in de asteroïdengordel in een baan brengen, afremmen tot stilstand bij [Vesta](/explore), daar een jaar omheen draaien, dan opnieuw ontsteken en spiraalsgewijs naar een tweede lichaam, [Ceres](/explore), vliegen en ook dat in een baan brengen. Een chemische missie met dezelfde doelen had zoveel drijfstof vereist dat geen enkele bestaande raket haar had kunnen lanceren. De ionenmotoren, die samen meer dan vijfenhalf jaar aan stuwtijd opbouwden, volbrachten dezelfde reis op 425 kilogram xenon. De specifieke impuls van Dawn bedroeg 3.100 seconden. Elk kilogram xenon deed het werk van zeven kilogram vloeibare waterstof."
     },
     {
       "type": "prose",
@@ -51,15 +51,15 @@
     },
     {
       "type": "heading",
-      "text": "Zonder drijfgas"
+      "text": "Zonder drijfstof"
     },
     {
       "type": "prose",
-      "md": "Ionen- en Hall-motoren dragen nog altijd drijfgas mee. Veel minder, en ze gebruiken het veel efficiënter, maar de raketvergelijking blijft gelden: het xenon raakt op, en dan houdt de stuwkracht op. De meest radicale ontsnapping aan de vergelijking is helemaal geen drijfgas meenemen — duwen tegen iets buiten het ruimtevaartuig."
+      "md": "Ionen- en Hall-motoren dragen nog altijd drijfstof mee. Veel minder, en ze gebruiken die veel efficiënter, maar de raketvergelijking blijft gelden: het xenon raakt op, en dan houdt de stuwkracht op. De meest radicale ontsnapping aan de vergelijking is helemaal geen drijfstof meenemen — duwen tegen iets buiten het ruimtevaartuig."
     },
     {
       "type": "prose",
-      "md": "Fotonen hebben impuls. Licht duwt. De druk is minuscuul — op de afstand van de Aarde tot de Zon oefent zonlicht ongeveer negen micronewton per vierkante meter beschenen oppervlak uit — maar hij is gratis, onuitputtelijk, en raakt nooit op. Een zeil dat groot en licht genoeg is, blijft versnellen zolang het naar de Zon is gericht, waarbij het stuwkracht inruilt voor geduld zoals een ionenmotor dat doet, maar zonder enig drijfgasbudget."
+      "md": "Fotonen hebben impuls. Licht duwt. De druk is minuscuul — op de afstand van de Aarde tot de Zon oefent zonlicht ongeveer negen micronewton per vierkante meter beschenen oppervlak uit — maar hij is gratis, onuitputtelijk, en raakt nooit op. Een zeil dat groot en licht genoeg is, blijft versnellen zolang het naar de Zon is gericht, waarbij het stuwkracht inruilt voor geduld zoals een ionenmotor dat doet, maar zonder enig drijfstofbudget."
     },
     {
       "type": "prose",
@@ -71,7 +71,7 @@
     },
     {
       "type": "prose",
-      "md": "Het Advanced Composite Solar Sail System van NASA — ACS3 — werd in april 2024 gelanceerd, met een zeil van 80 vierkante meter aan composieten uitschuifarmen die stijver en lichter waren dan elk eerder ontwerp, en demonstreerde zo de constructietechnologie die nodig is om op te schalen. NEA Scout, dat het eerste zonnezeil zou zijn geweest dat een asteroïde nabij de Aarde bezocht, werd in november 2022 aan boord van Artemis I gelanceerd en ging verloren — zijn radio maakte na de ontplooiing nooit contact, een herinnering dat kleine missies met kleine marges vliegen. De tegenslag maakte geen einde aan het programma. De reden dat zeilen het nastreven waard zijn, is niet de versnelling die ze vandaag geven maar de versnelling die ze morgen geven: een zonnezeil van tien kilometer breed, gelanceerd naar het binnenste zonnestelsel waar het zonlicht sterker is, zou snelheden halen die voor geen enkel door drijfgas beperkt systeem haalbaar zijn. Zeilen zijn de enige architectuur waarbij *het zeil groter maken* de natuurkunde gunstiger maakt, zonder extra drijfgasmassa."
+      "md": "Het Advanced Composite Solar Sail System van NASA — ACS3 — werd in april 2024 gelanceerd, met een zeil van 80 vierkante meter aan composieten uitschuifarmen die stijver en lichter waren dan elk eerder ontwerp, en demonstreerde zo de constructietechnologie die nodig is om op te schalen. NEA Scout, dat het eerste zonnezeil zou zijn geweest dat een asteroïde nabij de Aarde bezocht, werd in november 2022 aan boord van Artemis I gelanceerd en ging verloren — zijn radio maakte na de ontplooiing nooit contact, een herinnering dat kleine missies met kleine marges vliegen. De tegenslag maakte geen einde aan het programma. De reden dat zeilen het nastreven waard zijn, is niet de versnelling die ze vandaag geven maar de versnelling die ze morgen geven: een zonnezeil van tien kilometer breed, gelanceerd naar het binnenste zonnestelsel waar het zonlicht sterker is, zou snelheden halen die voor geen enkel door drijfstof beperkt systeem haalbaar zijn. Zeilen zijn de enige architectuur waarbij *het zeil groter maken* de natuurkunde gunstiger maakt, zonder extra drijfstofmassa."
     },
     {
       "type": "heading",
@@ -79,7 +79,7 @@
     },
     {
       "type": "prose",
-      "md": "Er is een derde uitgang, en in de jaren zestig leek dat degene die het meeste kans maakte als eerste te vliegen. Een kernreactor die op hoge temperatuur draait, kan een drijfgas verhitten — waterstof is de beste keuze, omdat het het lichtste gas is en dus het snelst wordt uitgestoten — en dat door een straalpijp uitstoten. Geen verbranding. Geen bindingsenergieën. De warmtebron is kernsplijting, en de temperaturen die een reactor aankan, worden niet beperkt door scheikunde maar door metallurgie: hoe heet kunnen de splijtstofelementen en de keel van de straalpijp worden gemaakt voordat ze bezwijken? Het antwoord, in de motoren die van 1959 tot 1969 onder het programma NERVA werden getest op het Nevada Test Site, was heet genoeg voor een specifieke impuls van rond de 825 seconden — bijna het dubbele van de beste chemische motor, bij een stuwkracht van tientallen kilonewton, bruikbaar voor een bemande Marsmissie."
+      "md": "Er is een derde uitgang, en in de jaren zestig leek dat degene die het meeste kans maakte als eerste te vliegen. Een kernreactor die op hoge temperatuur draait, kan een drijfstof verhitten — waterstof is de beste keuze, omdat het het lichtste gas is en dus het snelst wordt uitgestoten — en die door een straalpijp uitstoten. Geen verbranding. Geen bindingsenergieën. De warmtebron is kernsplijting, en de temperaturen die een reactor aankan, worden niet beperkt door scheikunde maar door metallurgie: hoe heet kunnen de splijtstofelementen en de keel van de straalpijp worden gemaakt voordat ze bezwijken? Het antwoord, in de motoren die van 1959 tot 1969 onder het programma NERVA werden getest op het Nevada Test Site, was heet genoeg voor een specifieke impuls van rond de 825 seconden — bijna het dubbele van de beste chemische motor, bij een stuwkracht van tientallen kilonewton, bruikbaar voor een bemande Marsmissie."
     },
     {
       "type": "prose",
@@ -114,7 +114,7 @@
     },
     {
       "type": "prose",
-      "md": "De druk loopt op. De [raketvergelijking van Tsiolkovski](/science/propulsion/tsiolkovsky) is niet veranderd. Een bemande retourvlucht naar Mars met chemische Isp is niet onmogelijk — alleen enorm duur in drijfgas, en dus in lanceermassa, en dus in lanceerkosten, en dus in politieke wil. Naarmate de kosten per kilogram naar een baan dalen en de ambitie van missies stijgt, groeit de kloof tussen wat chemie kan en wat de missie vraagt. Elk nieuw doel — de ijsreuzen, een asteroïde binnen een korte tijdlijn, Mars met een bemande vlucht waarvoor niet jaren aan drijfgas vooraf hoeft te worden klaargezet — drukt iets harder tegen dat plafond."
+      "md": "De druk loopt op. De [raketvergelijking van Tsiolkovski](/science/propulsion/tsiolkovsky) is niet veranderd. Een bemande retourvlucht naar Mars met chemische Isp is niet onmogelijk — alleen enorm duur in drijfstof, en dus in lanceermassa, en dus in lanceerkosten, en dus in politieke wil. Naarmate de kosten per kilogram naar een baan dalen en de ambitie van missies stijgt, groeit de kloof tussen wat chemie kan en wat de missie vraagt. Elk nieuw doel — de ijsreuzen, een asteroïde binnen een korte tijdlijn, Mars met een bemande vlucht waarvoor niet jaren aan drijfstof vooraf hoeft te worden klaargezet — drukt iets harder tegen dat plafond."
     },
     {
       "type": "heading",
@@ -130,7 +130,7 @@
     },
     {
       "type": "prose",
-      "md": "Zonnezeilen zijn verder van routine verwijderd, maar de koers is duidelijk: elke generatie zeil is groter, de uitschuifarmen lichter, de besturingssystemen geavanceerder. De natuurkunde beloont schaalvergroting zoals geen enkele andere voortstuwingsvorm. Een zeil zo groot als een sportstadion, met een ruimtevaartuigbus met de massa van een bureau, versneld door een laser vanuit het binnenste zonnestelsel in plaats van door het omgevingszonlicht — dat is de architectuur die wordt voorgesteld voor interstellaire voorloper-missies, met snelheden van honderden kilometers per seconde. Het zeil trekt zich niets aan van de raketvergelijking. Het heeft geen drijfgas dat kan opraken."
+      "md": "Zonnezeilen zijn verder van routine verwijderd, maar de koers is duidelijk: elke generatie zeil is groter, de uitschuifarmen lichter, de besturingssystemen geavanceerder. De natuurkunde beloont schaalvergroting zoals geen enkele andere voortstuwingsvorm. Een zeil zo groot als een sportstadion, met een ruimtevaartuigbus met de massa van een bureau, versneld door een laser vanuit het binnenste zonnestelsel in plaats van door het omgevingszonlicht — dat is de architectuur die wordt voorgesteld voor interstellaire voorloper-missies, met snelheden van honderden kilometers per seconde. Het zeil trekt zich niets aan van de raketvergelijking. Het heeft geen drijfstof die kan opraken."
     },
     {
       "type": "prose",

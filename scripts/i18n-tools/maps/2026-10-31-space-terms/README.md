@@ -16,6 +16,8 @@ The record of the 20-term pilot on the science tree (runbook: skill
 | `glossary-steps/3c-es-orbit-insertion.mjs` | es orbit insertion binding aligned with the style guide §4 (inserción orbital). |
 | `glossary-steps/4-nl-explicit-compounds.mjs` | nl -baan / -trap / -stoot compounds as an explicit list: the open stems hid garbled words (found by `term-widen-check.mjs`). |
 | `glossary-steps/5-sr-operator-confirmed.mjs` | Operator: all 20 Serbian forms confirmed (high), «уз помоћ гравитације» accepted for gravity assist. |
+| `essays-round1-decisions/<loc>.json`, `essays-round1-adjust.mjs` | Essays round: the four reviewers' lists as applied (after the adjustments in the script: combustion-sense changes dropped in 5 locales, zh-CN standard 轨道 compounds and ko 탈출 궤도 kept, de Brennphase, nl de-word), the brief, and the stems their keep reasons showed. |
+| `glossary-steps/6-orbit-and-burn-verbs.mjs` | Plain orbit verbs (umkreist, gravitent, cirkelt, обращается, кружи, 도는, 周回, 公转, 绕…运行) and nl ontstoken / pt acender os motores; sr маневри, ru полезная … нагрузка. |
 | `hand-edits/nl-widen-garbles.mjs` | The 9 nl strings those open stems hid: typos, "lanchbaan" for launch pad, and two fleet descriptions retranslated from the English. |
 | `hand-edits/` | Apply-edits files for fields fixed by hand: retranslated garbled pages (`retr-*`), small fixes, escaped quotes, the zh-CN full-width punctuation pass (`zh-punct.mjs` writes `zh-punct.json`), shortened intros, and the nuclear-thermal / Oberth intros (`sci-hand2.mjs`, `hand3-ru.mjs`). |
 

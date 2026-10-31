@@ -5,7 +5,9 @@
 // so it lapses when the field is edited. Prunes keeps whose field no longer exists.
 import fs from 'node:fs';
 import path from 'node:path';
-import { keepKey, textHash } from './term-match.mjs';
+import { keepKey, locPattern, textHash } from './term-match.mjs';
+
+const TERMS = JSON.parse(fs.readFileSync('scripts/i18n-tools/native-terms.json', 'utf8')).term;
 
 const [file, locArg] = process.argv.slice(2);
 if (!file) {
@@ -25,7 +27,8 @@ function fieldText(loc, rel, at) {
 }
 
 let added = 0,
-  missing = 0;
+  missing = 0,
+  matched = 0;
 for (const d of JSON.parse(fs.readFileSync(file, 'utf8'))) {
   if (d.decision && d.decision !== 'keep') continue;
   const loc = d.loc ?? locArg;
@@ -33,6 +36,11 @@ for (const d of JSON.parse(fs.readFileSync(file, 'utf8'))) {
   if (tr == null) {
     missing++;
     console.error(`no field: ${loc} ${d.rel} :: ${d.at}`);
+    continue;
+  }
+  // a field that uses an accepted form now (stems widened after the review) needs no keep
+  if (TERMS[d.term] && locPattern(TERMS[d.term], loc)?.test(tr)) {
+    matched++;
     continue;
   }
   keeps[keepKey(d.term, loc, `${d.rel} :: ${d.at}`)] = { why: d.why ?? '', tr: textHash(tr) };
@@ -50,6 +58,6 @@ for (const k of Object.keys(keeps)) {
 const sorted = Object.fromEntries(Object.entries(keeps).sort(([a], [b]) => a.localeCompare(b)));
 fs.writeFileSync(KEEPS, JSON.stringify(sorted, null, 2) + '\n');
 console.log(
-  `keeps: +${added}, ${missing} not found, ${pruned} pruned, ${Object.keys(sorted).length} total`,
+  `keeps: +${added}, ${matched} already match, ${missing} not found, ${pruned} pruned, ${Object.keys(sorted).length} total`,
 );
 if (missing) process.exit(1);

@@ -1,0 +1,192 @@
+[
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: обращающееся (verb orbit)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.15.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "omitted naturally (\"её возможные планеты\")"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.13.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: обращается вокруг Солнца"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.4.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "пути домой по требованию",
+    "replace": "траектории домой по требованию",
+    "why": "trajectory rendered as \"путь\"; binding траектория"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "variant: встретиться (verb, with \"на орбите\")"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.25.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "variant: точке встречи"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "title",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "Delta-V",
+    "replace": "дельта-v",
+    "why": "Latin Delta-V in title; binding дельта-v"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: burned manuscript, not engine firing"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: expend/consume the stage, not engine firing"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: combustion of fuel"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: combustion (not ionizing)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: fuel consumption / combustion of F-1 propellant"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "other sense: consuming propellant"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.3.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "груза, который вы хотите",
+    "replace": "полезной нагрузки, которую вы хотите",
+    "why": "payload rendered as plain \"груз\"; binding полезная нагрузка"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.26.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "научную нагрузку",
+    "replace": "полезную научную нагрузку",
+    "why": "payload lacks \"полезная\"; binding полезная нагрузка"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.16.caption",
+    "term": "payload",
+    "decision": "keep",
+    "why": "stem gap: полезным грузом (accepted variant полезный груз, instrumental)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.16.caption",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ступень (first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.6.md",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "omitted naturally (\"проработав суммарно более пяти с половиной лет\")"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ступень (first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.9.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.10.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.11.caption",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.21.caption",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.23.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.29.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.30.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)"
+  }
+]

@@ -20,7 +20,7 @@
     },
     {
       "type": "prose",
-      "md": "La Lune est, comme le présente l'[essai sur le voyage vers la Lune](/essays/going-to-the-moon), un terrain d'entraînement : trois jours de trajet, abandon de mission possible, radio en temps réel, pannes catastrophiques dont on peut réchapper. Mars n'est rien de tout cela. Au plus près, elle est à environ 54 millions de kilomètres ; au plus loin, à plus de 400 millions. Un signal radio met de trois à vingt-deux minutes à sens unique. Le transfert plausible le plus rapide demande de six à neuf mois de croisière balistique. Une fois la combustion d'injection trans-martienne réalisée, il n'existe aucune trajectoire de retour à la demande. L'équipage qui part pour Mars est engagé sans retour."
+      "md": "La Lune est, comme le présente l'[essai sur le voyage vers la Lune](/essays/going-to-the-moon), un terrain d'entraînement : trois jours de trajet, abandon de mission possible, radio en temps réel, pannes catastrophiques dont on peut réchapper. Mars n'est rien de tout cela. Au plus près, elle est à environ 54 millions de kilomètres ; au plus loin, à plus de 400 millions. Un signal radio met de trois à vingt-deux minutes à sens unique. Le transfert plausible le plus rapide demande de six à neuf mois de croisière balistique. Une fois l'allumage d'injection trans-martienne réalisé, il n'existe aucune trajectoire de retour à la demande. L'équipage qui part pour Mars est engagé sans retour."
     },
     {
       "type": "heading",
@@ -36,13 +36,13 @@
     },
     {
       "type": "prose",
-      "md": "L'engagement que la fenêtre impose est absolu. Contrairement à une mission lunaire Apollo — où une [trajectoire de retour libre](/science/transfers/free-return) laissait possible un retour d'urgence vers la Terre pendant une bonne partie de la croisière aller —, une mission martienne sur un arc de Hohmann n'a plus cette option une fois la combustion d'injection trans-martienne réalisée. Aucune trajectoire ne ramène vite l'équipage chez lui si quelque chose tourne mal en route. Il existe des trajectoires d'abandon à plus haute énergie, mais elles exigent d'énormes réserves de propergol qu'aucune mission n'a encore proposé d'emporter, précisément parce que le propergol est le deuxième mur."
+      "md": "L'engagement que la fenêtre impose est absolu. Contrairement à une mission lunaire Apollo — où une [trajectoire de retour libre](/science/transfers/free-return) laissait possible un retour d'urgence vers la Terre pendant une bonne partie de la croisière aller —, une mission martienne sur un arc de Hohmann n'a plus cette option une fois l'allumage d'injection trans-martienne réalisé. Aucune trajectoire ne ramène vite l'équipage chez lui si quelque chose tourne mal en route. Il existe des trajectoires d'abandon à plus haute énergie, mais elles exigent d'énormes réserves de propergol qu'aucune mission n'a encore proposé d'emporter, précisément parce que le propergol est le deuxième mur."
     },
     {
       "type": "figure",
       "image": "essays/going-to-mars/launch-window",
       "kind": "diagram",
-      "caption": "On ne part pas pour Mars quand on est prêt ; on part quand les deux planètes sont alignées, ce qui n'arrive que pendant quelques semaines environ tous les vingt-six mois. Ratez cette fenêtre, et vous attendez deux ans. Et une fois la combustion de transfert exécutée et l'équipage engagé dans six à neuf mois de croisière, il n'y a aucun retour d'urgence vers la Terre.",
+      "caption": "On ne part pas pour Mars quand on est prêt ; on part quand les deux planètes sont alignées, ce qui n'arrive que pendant quelques semaines environ tous les vingt-six mois. Ratez cette fenêtre, et vous attendez deux ans. Et une fois l'allumage de transfert exécuté et l'équipage engagé dans six à neuf mois de croisière, il n'y a aucun retour d'urgence vers la Terre.",
       "align": "wide"
     },
     {
@@ -55,7 +55,7 @@
     },
     {
       "type": "prose",
-      "md": "Le propergol du retour en est la version la plus aiguë. Un atterrisseur habité qui descend vers la surface martienne doit aussi emporter le propergol nécessaire pour en décoller, rejoindre en orbite un vaisseau qui l'attend, puis allumer ses moteurs pour le retour. La masse de ce propergol alourdit l'atterrisseur, ce qui demande davantage de propergol pour le poser, ce qui l'alourdit encore — une spirale, étudiée de près, qui aboutit à des dizaines de tonnes de propergol à acheminer jusqu'à la surface de Mars. Les emporter depuis la Terre en un seul lancement coûte une fortune. La sortie de cette spirale est l'[utilisation des ressources in situ](/science/life-in-space/isru-resource-utilization) : fabriquer le propergol sur Mars, à partir de ressources martiennes, plutôt que de le traîner depuis la Terre."
+      "md": "Le propergol du retour en est la version la plus aiguë. Un atterrisseur habité qui descend vers la surface martienne doit aussi emporter le propergol nécessaire pour en décoller, effectuer un rendez-vous en orbite avec un vaisseau qui l'attend, puis allumer ses moteurs pour le retour. La masse de ce propergol alourdit l'atterrisseur, ce qui demande davantage de propergol pour le poser, ce qui l'alourdit encore — une spirale, étudiée de près, qui aboutit à des dizaines de tonnes de propergol à acheminer jusqu'à la surface de Mars. Les emporter depuis la Terre en un seul lancement coûte une fortune. La sortie de cette spirale est l'[utilisation des ressources in situ](/science/life-in-space/isru-resource-utilization) : fabriquer le propergol sur Mars, à partir de ressources martiennes, plutôt que de le traîner depuis la Terre."
     },
     {
       "type": "prose",

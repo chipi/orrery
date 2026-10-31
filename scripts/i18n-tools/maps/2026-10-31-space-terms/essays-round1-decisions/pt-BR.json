@@ -1,0 +1,63 @@
+[
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.19.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Os [auxílios gravitacionais]",
+    "replace": "As [assistências gravitacionais]",
+    "why": "gravity assist rendered 'auxílio gravitacional'; binding assistência gravitacional (link target untouched)"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.19.caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "Dispare baixo",
+    "replace": "Queime baixo",
+    "why": "burn (imperative) rendered 'Dispare'; binding queima"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.19.caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "o mesmo disparo do motor",
+    "replace": "a mesma queima do motor",
+    "why": "engine burn rendered 'disparo'"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.27.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "para o disparo de retorno",
+    "replace": "para a queima de retorno",
+    "why": "return burn rendered 'disparo'"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "variant: acender os motores (engine firing verb)"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.3.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "cada quilograma de carga que",
+    "replace": "cada quilograma de carga útil que",
+    "why": "payload rendered 'carga' without 'útil'"
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.22.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "continua sendo a carga.",
+    "replace": "continua sendo a carga útil.",
+    "why": "payload rendered 'carga' without 'útil'"
+  }
+]

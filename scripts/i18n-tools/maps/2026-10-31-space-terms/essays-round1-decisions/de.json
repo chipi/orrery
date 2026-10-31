@@ -1,0 +1,202 @@
+[
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: kreist (verb, orbiting)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.15.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: umkreisen (verb)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.6.md",
+    "term": "orbit",
+    "decision": "change",
+    "find": "einen Körper im Asteroidengürtel anzusteuern",
+    "replace": "einen Körper im Asteroidengürtel zu umkreisen",
+    "why": "'orbit one body' rendered as 'approach/steer to'; the next clause already uses umkreisen"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.9.caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: umkreist (verb)"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.13.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: umkreist (verb, planet orbits the Sun)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.29.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative 'the direction/trend is clear', not a flight path"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.23.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative scale/outlook, not a flight path"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "sich mit einem wartenden Schiff im Orbit zu treffen",
+    "replace": "im Orbit ein Rendezvous mit einem wartenden Schiff durchzuführen",
+    "why": "rendezvous maneuver rendered as plain 'meet'"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.25.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "am selben Treffpunkt",
+    "replace": "am selben Rendezvous-Punkt",
+    "why": "rendezvous point rendered as 'Treffpunkt'"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burned manuscript' - fire damage, not an engine burn"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.17.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "Ein Triebwerksbrand, der bei 10 km/s 1 km/s hinzufügt",
+    "replace": "Eine Zündung, die bei 10 km/s 1 km/s hinzufügt",
+    "why": "engine burn rendered 'Triebwerksbrand' (= engine fire)"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.17.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "derselbe Brand",
+    "replace": "dieselbe Zündung",
+    "why": "engine burn rendered 'Brand'"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.17.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "während des Brennens",
+    "replace": "während der Brennphase",
+    "why": "engine burn rendered 'Brennen'"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burn it on the way up' = consume the machine, not an engine firing"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "bei der Brennzeit",
+    "replace": "beim Zündzeitpunkt",
+    "why": "'burn timing' = when to fire; Brennzeit means burn duration. 'brannte zwölf Minuten' (engine verb) kept"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.10.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'propellant-burning' = combustion sense"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'propellant-burning architecture' = combustion sense"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'engine burns a fuel' = combustion sense"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'instead of burning it' / 'burned through propellant' = combustion/consumption"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "chemical burn = combustion here (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burned propellant per second' = consumption, verbrannte fine"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'burning the most propellant' = consumption"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'air burns off energy' = dissipation; 'Triebwerk ... brannte' is the correct engine verb"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.16.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "stem gap: zweistufiges"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.29.md",
+    "term": "booster",
+    "decision": "change",
+    "find": "Die Falcon-9-Erststufe wurde von Beginn an um die Frage herum entworfen, wie sie landen könnte",
+    "replace": "Der Falcon-9-Booster wurde von Beginn an um die Frage herum entworfen, wie er landen könnte",
+    "why": "'booster' rendered Erststufe; binding Booster (as used in the rest of the locale)"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.16.caption",
+    "term": "descent",
+    "decision": "change",
+    "find": "Bremsflug mit Triebwerken",
+    "replace": "Abstieg mit Triebwerken",
+    "why": "'powered descent' rendered 'Bremsflug' (braking flight)"
+  }
+]

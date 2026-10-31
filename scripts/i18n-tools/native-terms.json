@@ -9573,13 +9573,22 @@
     "orbit": {
       "_sense": "the path of a body around another; also the verb",
       "_match": {
-        "ru": ["орбит", "вращаться по орбите", "выйти на орбиту"],
-        "ja": ["軌道", "周回", "公転"],
-        "zh-CN": ["轨道", "入轨", "环绕", "绕行", "绕轨道运行"],
-        "ko": ["궤도", "공전", "선회하다"],
+        "ru": ["орбит", "вращаться по орбите", "выйти на орбиту", "обраща\\p{L}*"],
+        "ja": ["軌道", "周回", "公転", "(?:周り|周囲)を回"],
+        "zh-CN": [
+          "轨道",
+          "入轨",
+          "环绕",
+          "绕行",
+          "绕轨道运行",
+          "在轨",
+          "公转",
+          "绕\\p{L}{0,3}运行"
+        ],
+        "ko": ["궤도", "공전", "선회하다", "(?:둘레|주위)를 ?(?:도는|돈|돌)", "도는"],
         "hi": ["कक्षा", "कक्षीय", "परिक्रमा", "कक्षीय पथ"],
-        "ar": ["مدار", "مدارية", "يدور"],
-        "sr-Cyrl": ["орбит", "путања"],
+        "ar": ["مدار", "مدارية", "يدور", "تدور", "دارت"],
+        "sr-Cyrl": ["орбит", "путања", "круж\\p{L}*", "обилаз\\p{L}* око"],
         "de": [
           "Umlaufbahn",
           "\\bOrbit",
@@ -9587,11 +9596,13 @@
           "Orbit",
           "Bahn",
           "Umlaufba\\p{L}*",
-          "-Orb\\p{L}*"
+          "-Orb\\p{L}*",
+          "umkreis\\p{L}*",
+          "(?<!\\p{L})kreis(?:t|en|te|ten)\\b"
         ],
-        "fr": ["orbit"],
+        "fr": ["orbit", "gravit(?:e|ent|ait|aient|er|ant)\\b"],
         "es": ["órbit", "orbit"],
-        "it": ["orbit"],
+        "it": ["orbit", "gira\\p{L}* attorno"],
         "nl": [
           "\\bbaan",
           "omloopbaan",
@@ -9599,7 +9610,8 @@
           "\\borbit",
           "orbit",
           "omloopba\\p{L}*",
-          "(?<!\\p{L})(?:aarde?|maan|mars|venus|zonne|zons|halo|doel|overdrachts|parkeer|transfer|kepler|kerkhof|wetenschaps|werk|eind|polaire|ellips)ba(?:an|nen)\\b"
+          "(?<!\\p{L})(?:aarde?|maan|mars|venus|zonne|zons|halo|doel|overdrachts|parkeer|transfer|kepler|kerkhof|wetenschaps|werk|eind|polaire|ellips)ba(?:an|nen)\\b",
+          "cirkel(?:t|en|de|den)\\b"
         ],
         "pt-BR": ["órbit", "orbit"]
       },
@@ -9637,8 +9649,15 @@
       "_match": {
         "ru": ["траектор"],
         "ja": ["軌道", "飛行経路", "軌跡"],
-        "zh-CN": ["轨迹", "弹道", "飞行轨道"],
-        "ko": ["궤적", "경로", "비행 경로"],
+        "zh-CN": [
+          "轨迹",
+          "弹道",
+          "飞行轨道",
+          "(?:自由返回|中止|双曲线?|转移|逃逸)轨道",
+          "轨道修正",
+          "中途修正"
+        ],
+        "ko": ["궤적", "경로", "비행 경로", "탈출 궤도"],
         "hi": ["प्रक्षेपवक्र", "प्रक्षेप-पथ", "प्रक्षेप पथ"],
         "ar": ["مسار"],
         "sr-Cyrl": ["путањ", "трајекториј", "трајекторија"],
@@ -9646,7 +9665,14 @@
         "fr": ["trajectoire", "trajectoi\\p{L}*"],
         "es": ["trayectori", "trayecto\\p{L}*"],
         "it": ["traiettori", "percorso", "traietto\\p{L}*", "percor\\p{L}*"],
-        "nl": ["traject", "vluchtbaan", "baan", "traje\\p{L}*", "vluchtba\\p{L}*"],
+        "nl": [
+          "traject",
+          "vluchtbaan",
+          "baan",
+          "traje\\p{L}*",
+          "vluchtba\\p{L}*",
+          "koerscorrecti\\p{L}*"
+        ],
         "pt-BR": ["trajet[óo]ri"]
       },
       "_confidence": {
@@ -9749,7 +9775,8 @@
           "cita espacial",
           "encuent\\p{L}*",
           "rend\\p{L}*",
-          "cita espaci\\p{L}*"
+          "cita espaci\\p{L}*",
+          "encontrarse"
         ],
         "it": [
           "rendez-?vous",
@@ -9908,7 +9935,8 @@
           "праћк",
           "асистенциј",
           "гравитациона праћка",
-          "уз помоћ гравитациј"
+          "уз помоћ гравитациј",
+          "гравитацион\\p{L}* маневр"
         ],
         "de": [
           "[Ss]wing-?by",
@@ -10279,7 +10307,8 @@
           "manoeuv\\p{L}*",
           "brandt\\b",
           "brandde\\p{L}*",
-          "(?<!\\p{L})(?:rem|motor|landings|vertrek|aankomst|correctie|stuw)?sto(?:ot|ten)\\b"
+          "(?<!\\p{L})(?:rem|motor|landings|vertrek|aankomst|correctie|stuw)?sto(?:ot|ten)\\b",
+          "ontstoken"
         ],
         "pt-BR": [
           "queima",
@@ -10291,7 +10320,8 @@
           "queim\\p{L}*",
           "igniç\\p{L}*",
           "acionamen\\p{L}* do motor",
-          "manob\\p{L}*"
+          "manob\\p{L}*",
+          "acend\\p{L}* (?:o|os) motor"
         ]
       },
       "_confidence": {
@@ -10333,10 +10363,11 @@
         "ko": [
           "[0-9一二三]?단(?![가-힣])",
           "상단",
-          "(?:^|[\\s0-9(])단(?:에서는|에서|에는|에|은|는|이|을|를|의|도|과|으로|만)?(?![가-힣])"
+          "(?:^|[\\s0-9(])단(?:에서는|에서|에는|에|은|는|이|을|를|의|도|과|으로|만)?(?![가-힣])",
+          "(?:^|[\\s0-9(])단에도"
         ],
         "hi": ["चरण"],
-        "ar": ["مرحلة", "مراحل"],
+        "ar": ["مرحلة", "مراحل", "مرحلت\\p{L}*"],
         "sr-Cyrl": ["степен", "први степен", "горњи степен"],
         "de": [
           "Stufe",
@@ -10345,7 +10376,8 @@
           "Erststufe",
           "Raketenstu\\p{L}*",
           "Oberstu\\p{L}*",
-          "Erststu\\p{L}*"
+          "Erststu\\p{L}*",
+          "\\p{L}*stufig\\p{L}*"
         ],
         "fr": ["étage"],
         "es": ["etapa", "escalón", "escal\\p{L}*"],
@@ -10356,7 +10388,8 @@
           "raketfase",
           "trapp\\p{L}*",
           "raketfa\\p{L}*",
-          "(?<!\\p{L})(?:afdalings|daal|boven|opstijg|kern|kick|onder|raket|vastestof|vastebrandstof|kruis)trap(?:pen)?\\b"
+          "(?<!\\p{L})(?:afdalings|daal|boven|opstijg|kern|kick|onder|raket|vastestof|vastebrandstof|kruis)trap(?:pen)?\\b",
+          "(?<!\\p{L})(?:een|twee|drie)traps\\p{L}*"
         ],
         "pt-BR": ["estágio", "estág\\p{L}*"]
       },
@@ -10457,7 +10490,9 @@
           "грузоподъёмн",
           "полезный груз",
           "грузоподъёмность",
-          "полезн\\p{L}* нагруз"
+          "полезн\\p{L}* нагруз",
+          "полезн\\p{L}* груз",
+          "полезн\\p{L}* (?:\\p{L}+ )?нагруз"
         ],
         "ja": ["ペイロード", "搭載物"],
         "zh-CN": ["有效载荷", "载荷"],
@@ -10806,7 +10841,7 @@
         ],
         "ja": ["軌道投入", "周回軌道投入"],
         "zh-CN": ["捕获", "入轨", "轨道插入", "进入轨道", "制动", "进入环\\p{L}轨道"],
-        "ko": ["궤도 ?진입", "임무궤도 진입기동"],
+        "ko": ["궤도 ?진입", "임무궤도 진입기동", "궤도에 진입"],
         "hi": ["कक्षा[- ]प्रवेश", "कक्षा में प्रवेश", "कक्षा-निवेशन", "कक्षा निवेशन"],
         "ar": [
           "الدخول (إلى|في) (ال)?مدار",
@@ -10819,7 +10854,8 @@
           "улазак у орбит",
           "улаз\\p{L}* у орбит",
           "улазак у орбиту",
-          "хватање у орбиту"
+          "хватање у орбиту",
+          "улас\\p{L}* у орбит"
         ],
         "de": [
           "Einschwenk",
@@ -10833,7 +10869,12 @@
           "Einschu\\p{L}*",
           "Einschu\\p{L}* in die Umlaufba\\p{L}*"
         ],
-        "fr": ["insertion (en|orbitale)", "insertion orbitale", "inserti\\p{L}* orbita\\p{L}*"],
+        "fr": [
+          "insertion (en|orbitale)",
+          "insertion orbitale",
+          "inserti\\p{L}* orbita\\p{L}*",
+          "mise en orbite"
+        ],
         "es": [
           "inserción (en|orbital)",
           "insertar",
@@ -10844,7 +10885,8 @@
         "it": [
           "inserimento (in|orbitale)",
           "inserimento orbitale",
-          "inserimen\\p{L}* orbita\\p{L}*"
+          "inserimen\\p{L}* orbita\\p{L}*",
+          "immissione in orbita"
         ],
         "nl": [
           "insertie",

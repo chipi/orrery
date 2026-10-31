@@ -137,5 +137,32 @@ accepted «уз помоћ гравитације» next to «гравитаци
 
 All trees: 2,689 unreviewed (essays 380, missions 1,473, fleet 578, programs 257).
 
-Next: a fix round per tree with the `term-consistency` skill, then the science gate,
-then the next batch of terms from `term-census.mjs`.
+## Essays round (2026-10-31)
+
+- **Detector fix first:** markdown link targets and image paths no longer count as text.
+  That removed 46 false misses, and stops a translation passing on an English link target.
+- **Review:** 379 misses, four Sonnet reviewers by language group, every change list read.
+  - Applied: 154 field edits in 13 locales, 0 refused. Examples: ja デルタ・ブイ → デルタV (27);
+    nl drijfgas → drijfstof (16); ar bare الوقود → الوقود الدافع (19) and دلتا-ف → دلتا-في;
+    hi अवतरण → अवरोहण where the English is *descent*, since the glossary keeps अवतरण for
+    landing; sr «гравитациони поспешитељ» → «гравитациони маневар»; engine-burn "combustion"
+    and "Brand" in fr, it, de and nl → allumage, accensione, Zündung, ontsteking.
+  - Dropped or changed:
+    - "no chemical burn could reach" is combustion, so the change was dropped in de, es, nl,
+      ar and sr.
+    - zh-CN standard 轨道 compounds were kept (自由返回轨道, 轨道修正, 中止轨道, 双曲线轨道).
+    - ko 탈출 궤도 was kept.
+    - de "während der Zündung" became "während der Brennphase".
+    - nl "het meeste drijfstof" became "de meeste".
+    - Two sr grammar slips were fixed.
+  - Keeps: 149 recorded. Plain orbit verbs and other recurring variants went into the stems
+    instead (widen check: 48 fields, all reviewer-named forms).
+- **Essays: 379 → 0 unreviewed, gated** next to science.
+
+Open question: zh-CN *trajectory*. The binding is 轨迹, but the site mixes 轨道/轨迹 and standard
+compounds use 轨道. It needs a second opinion before missions and fleet.
+
+All trees now: 2,142 unreviewed (missions 1,378, fleet 538, programs 226).
+
+Next: programs, fleet, missions with the `term-consistency` skill, then the next batch of
+terms from `term-census.mjs`.

@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "stem gap: encontrarse (en órbita con una nave)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'propellant-burning architecture' = combustion sense"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "chemical burn = combustion here (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.3.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "cada kilogramo de carga que",
+    "replace": "cada kilogramo de carga útil que",
+    "why": "payload rendered 'carga' without 'útil'"
+  }
+]

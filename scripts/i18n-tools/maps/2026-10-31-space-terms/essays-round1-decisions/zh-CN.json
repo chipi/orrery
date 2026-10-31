@@ -1,0 +1,319 @@
+[
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 运行在 (orbiting in the belt)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.15.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "omitted naturally: 及其行星"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.20.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: 在轨"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.13.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 公转 (orbits the Sun)"
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.14.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: 在轨"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.7.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "飞往火星的轨道",
+    "replace": "飞往火星的轨迹",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.20.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "路径也不同",
+    "replace": "轨迹也不同",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.4.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "的轨道把它带到",
+    "replace": "的轨迹把它带到",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.17.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "standard compound with 轨道 (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.8.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "更快的轨道",
+    "replace": "更快的轨迹",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.14.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "它的轨道设计",
+    "replace": "它的轨迹设计",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.0.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "逃离太阳系的轨道",
+    "replace": "逃离太阳系的轨迹",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.4.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "返回轨道",
+    "replace": "返回轨迹",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.8.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "standard compound with 轨道 (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.8.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "没有哪条轨道能",
+    "replace": "没有哪条轨迹能",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.8.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "standard compound with 轨道 (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.5.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "standard compound with 轨道 (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.5.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "引力辅助轨道设计",
+    "replace": "引力辅助轨迹设计",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.19.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "轨道上错误的方向",
+    "replace": "轨迹上错误的方向",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.28.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "standard compound with 轨道 (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.29.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative sense (the way things are heading / scale), not a flight path"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.24.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "standard compound with 轨道 (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.29.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "轨道精修",
+    "replace": "轨迹精修",
+    "why": "轨道/路径 -> 轨迹 (trajectory)"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.23.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative sense (the way things are heading / scale), not a flight path"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.25.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "会合点",
+    "replace": "交会点",
+    "why": "会合 is conjunction; binding 交会"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.10.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.14.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "燃烧十二分钟",
+    "replace": "点火工作十二分钟",
+    "why": "engine burned for 12 min = engine firing -> 点火"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.9.md",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: 运载能力 (capacity to LEO)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.6.md",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "thrust time rendered by 工作 (natural omission)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.33.caption",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "figurative brute thrust = 蛮力"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "pronoun 它 / 第一级火箭 in this sentence"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.15.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "绕月飞行",
+    "replace": "月球飞掠",
+    "why": "flyby -> 飞掠"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.9.md",
+    "term": "entry",
+    "decision": "change",
+    "find": "穿越大气层重返",
+    "replace": "再入大气层",
+    "why": "reentry -> 再入大气层 (accepted stem 再入)"
+  }
+]

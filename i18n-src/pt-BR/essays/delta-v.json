@@ -96,7 +96,7 @@
       "type": "figure",
       "image": "essays/delta-v/oberth-effect",
       "kind": "diagram",
-      "caption": "Dispare baixo, ganhe mais: no fundo de um poço gravitacional uma espaçonave está se movendo mais rápido, e o mesmo disparo do motor ali compra muito mais energia do que teria lá em cima no topo lento e distante da órbita.",
+      "caption": "Queime baixo, ganhe mais: no fundo de um poço gravitacional uma espaçonave está se movendo mais rápido, e a mesma queima do motor ali compra muito mais energia do que teria lá em cima no topo lento e distante da órbita.",
       "align": "wide"
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "type": "prose",
-      "md": "Pousar um estágio de foguete e voar com ele de novo muda o denominador, mas não da forma que a equação prevê. Estruturalmente, um estágio reutilizável é ligeiramente mais pesado — precisa de pernas de pouso, aletas reticuladas, proteção térmica, reservas de propelente residuais para o disparo de retorno — o que significa que a vantagem de [impulso específico](/science/propulsion/specific-impulse) se estreita e a razão de massa encolhe. A equação, estritamente lida, diz que reutilização custa delta-v. O que a equação não modela é que você pode voar o estágio novamente na semana que vem, a uma fração do custo de construir um novo, o que significa que você pode se dar ao luxo de realizar mais missões, o que significa que o orçamento que importa — dólares por quilograma em órbita — colapsa. A lógica de delta-v não mudou. A lógica econômica que corre ao lado dela mudou."
+      "md": "Pousar um estágio de foguete e voar com ele de novo muda o denominador, mas não da forma que a equação prevê. Estruturalmente, um estágio reutilizável é ligeiramente mais pesado — precisa de pernas de pouso, aletas reticuladas, proteção térmica, reservas de propelente residuais para a queima de retorno — o que significa que a vantagem de [impulso específico](/science/propulsion/specific-impulse) se estreita e a razão de massa encolhe. A equação, estritamente lida, diz que reutilização custa delta-v. O que a equação não modela é que você pode voar o estágio novamente na semana que vem, a uma fração do custo de construir um novo, o que significa que você pode se dar ao luxo de realizar mais missões, o que significa que o orçamento que importa — dólares por quilograma em órbita — colapsa. A lógica de delta-v não mudou. A lógica econômica que corre ao lado dela mudou."
     },
     {
       "type": "prose",

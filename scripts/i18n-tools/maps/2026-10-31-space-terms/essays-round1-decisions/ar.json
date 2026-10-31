@@ -1,0 +1,563 @@
+[
+  {
+    "rel": "essays/comms.json",
+    "at": "body.13.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: تدور (verb to orbit)"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.15.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: تدور (verb to orbit)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.6.md",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: تدور (verb to orbit)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.9.caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "stem gap: دارت (verb to orbit)"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "واللقاء بسفينة",
+    "replace": "والالتقاء بسفينة",
+    "why": "اللقاء -> binding الالتقاء"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "مشكلة وقود العودة",
+    "replace": "مشكلة الوقود الدافع للعودة",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "تصنيع الوقود على",
+    "replace": "تصنيع الوقود الدافع على",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.25.md",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "نقطة اللقاء",
+    "replace": "نقطة الالتقاء",
+    "why": "اللقاء -> binding الالتقاء"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.26.md",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "المساعدة الجذبية",
+    "replace": "مساعدة الجاذبية",
+    "why": "binding form"
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.27.caption",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "المساعدة الجذبية",
+    "replace": "مساعدة الجاذبية",
+    "why": "binding form"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.3.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "دلتا-ف",
+    "replace": "دلتا-في",
+    "why": "binding form"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.3.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ما يكفي من وقود الدفع",
+    "replace": "ما يكفي من الوقود الدافع",
+    "why": "وقود الدفع (propulsion fuel) -> binding"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.4.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "دلتا-ف",
+    "replace": "دلتا-في",
+    "why": "binding form"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.5.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "دلتا-ف",
+    "replace": "دلتا-في",
+    "why": "binding form"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.8.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "دلتا-ف",
+    "replace": "دلتا-في",
+    "why": "binding form"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.10.caption",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "دلتا-ف",
+    "replace": "دلتا-في",
+    "why": "binding form"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.13.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "دلتا-ف",
+    "replace": "دلتا-في",
+    "why": "binding form"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.13.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "مستودع وقود عند",
+    "replace": "مستودع وقود دافع عند",
+    "why": "propellant depot"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.13.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "يمدّ المركبات بالوقود",
+    "replace": "يمدّ المركبات بالوقود الدافع",
+    "why": "propellant supply"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.7.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "دلتا-ف",
+    "replace": "دلتا-في",
+    "why": "binding form"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.30.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "التغيّر في السرعة (delta-v)",
+    "replace": "دلتا-في",
+    "why": "Latin term / gloss instead of binding"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.10.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion sense: تحرق وقودًا دافعًا"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned manuscript, not an engine"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.6.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "بين هذين الاحتراقين",
+    "replace": "بين هذين الإشعالين",
+    "why": "engine firings rendered as combustion"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "دفعات التصحيح",
+    "replace": "إشعالات التصحيح",
+    "why": "correction burns"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.17.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "إن دفعة تضيف 1 كم/ث عند سرعة 10 كم/ث تضيف",
+    "replace": "إن إشعالًا يضيف 1 كم/ث عند سرعة 10 كم/ث يضيف",
+    "why": "burn rendered دفعة"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.17.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "من الدفعة نفسها",
+    "replace": "من الإشعال نفسه",
+    "why": "burn rendered دفعة"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.17.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "زمن الدفعة",
+    "replace": "زمن الإشعال",
+    "why": "burn rendered دفعة"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.24.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "دفعات التصحيح",
+    "replace": "إشعالات التصحيح",
+    "why": "correction burns"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion sense: burn the machine on the way up (احرقها)"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.27.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "لدفعة العودة",
+    "replace": "لإشعال العودة",
+    "why": "return burn"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "يشتعل محرك الدفع الخاص بالحقن نحو المريخ",
+    "replace": "يجري إشعال الحقن نحو المريخ",
+    "why": "TMI burn"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "اشتعل محرك الدفع الخاص بالحقن نحو المريخ",
+    "replace": "جرى إشعال الحقن نحو المريخ",
+    "why": "TMI burn"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "توقيت الاحتراق",
+    "replace": "توقيت الإشعال",
+    "why": "burn timing rendered combustion"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion sense: تحرق وقودًا دافعًا"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: المحرّك يحرق وقودًا"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption sense: يحرقه / burned through"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "chemical burn = combustion here (reviewer change dropped)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: تحرق ... الوقود الدافع"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "stem gap: مرحلته (first stage with possessive suffix)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion sense: فتحرق أكبر كمية من الوقود"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "أكبر كمية من الوقود،",
+    "replace": "أكبر كمية من الوقود الدافع،",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.14.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: محرك Raptor تحرق الميثان"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.14.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "stem gap: مرحلته / مرحلته العليا (possessive suffix)"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/heating of air; engine ran twelve minutes: يعمل"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.4.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "كل كيلوغرام من الوقود اللازم",
+    "replace": "كل كيلوغرام من الوقود الدافع اللازم",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.16.md",
+    "term": "stage",
+    "decision": "keep",
+    "why": "stem gap: مرحلتين (dual of مرحلة)"
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.15.caption",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "variant: وقود الصواريخ (rocket propellant)"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.14.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "حمولتها الدافعة",
+    "replace": "حمولتها من الوقود الدافع",
+    "why": "ambiguous حمولة (payload) -> binding"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.13.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "من دوامة الوقود",
+    "replace": "من دوامة الوقود الدافع",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.13.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "أطنان الوقود التي",
+    "replace": "أطنان الوقود الدافع التي",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.14.caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ما يكفي من الوقود من الأرض",
+    "replace": "ما يكفي من الوقود الدافع من الأرض",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.27.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "وتنتج وقود العودة",
+    "replace": "وتنتج الوقود الدافع للعودة",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.27.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "نقل الوقود في الفضاء",
+    "replace": "نقل الوقود الدافع في الفضاء",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.29.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "مخزون وقود العودة",
+    "replace": "مخزون الوقود الدافع للعودة",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.14.md",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "variant: وقود صاروخي (rocket propellant)"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.26.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "وتحرق الوقود عند",
+    "replace": "وتحرق الوقود الدافع عند",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.5.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ووقودًا يُحتجز",
+    "replace": "ووقودًا دافعًا يُحتجز",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.9.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ما يكفي من الوقود لسلسلة",
+    "replace": "ما يكفي من الوقود الدافع لسلسلة",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.9.md",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: العودة = reentry (the atmospheric reentry of a returning stage)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.10.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "شاملةً الوقود",
+    "replace": "شاملةً الوقود الدافع",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.11.caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ما يكفي من الوقود،",
+    "replace": "ما يكفي من الوقود الدافع،",
+    "why": "bare وقود for propellant"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.0.md",
+    "term": "booster",
+    "decision": "change",
+    "find": "كان الداعم قد",
+    "replace": "كان المعزِّز قد",
+    "why": "الداعم -> binding معزِّز"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.25.md",
+    "term": "specific impulse",
+    "decision": "change",
+    "find": "سقف النبض النوعي",
+    "replace": "سقف الدفع النوعي",
+    "why": "النبض -> binding"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.17.md",
+    "term": "specific impulse",
+    "decision": "change",
+    "find": "نبضات نوعية تقارب",
+    "replace": "دفع نوعي يقارب",
+    "why": "نبضات -> binding"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.4.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "رحلة عبور واحدة قرب كوكب واحد",
+    "replace": "رحلة تحليق قريب واحدة لكوكب واحد",
+    "why": "flyby rendered عبور"
+  },
+  {
+    "rel": "essays/space-comm-arrays.json",
+    "at": "body.4.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "من أجل عبور واحد لكوكب واحد",
+    "replace": "من أجل تحليق قريب واحد لكوكب واحد",
+    "why": "flyby rendered عبور"
+  }
+]

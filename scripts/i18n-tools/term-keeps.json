@@ -3,6 +3,54 @@
     "why": "booster scale = escala de primera etapa",
     "tr": "6ba450961c"
   },
+  "booster|fr|essays/reusable-launchers.json :: body.0.md": {
+    "why": "variant: étage / premier étage (returned first stage)",
+    "tr": "efc7def037"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.10.md": {
+    "why": "variant: étage",
+    "tr": "d801243ab6"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.14.md": {
+    "why": "variant: étage Super Heavy",
+    "tr": "0f800a5fbb"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.16.caption": {
+    "why": "variant: étage",
+    "tr": "2f64527806"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.20.md": {
+    "why": "variant: premier étage",
+    "tr": "47fff2702d"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.21.caption": {
+    "why": "variant: étage",
+    "tr": "680f2f5786"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.23.md": {
+    "why": "variant: étage du Falcon 9",
+    "tr": "db4218f669"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.29.md": {
+    "why": "variant: étage du Falcon 9",
+    "tr": "95559ecda7"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.30.md": {
+    "why": "variant: étage",
+    "tr": "da9545f4a5"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.32.caption": {
+    "why": "variant: étage",
+    "tr": "872044e6fe"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.8.md": {
+    "why": "variant: premier étage (a Falcon 9 first-stage booster is correctly an étage; propulseur d'appoint = strap-on)",
+    "tr": "fbf3a166e9"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.9.md": {
+    "why": "variant: étage",
+    "tr": "329e6b077d"
+  },
   "booster|ja|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy is the booster by name; word omitted naturally",
     "tr": "973ca8693f"
@@ -10,6 +58,54 @@
   "booster|pt-BR|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy named, word omitted naturally",
     "tr": "f1f185c3c6"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.0.md": {
+    "why": "variant: ступень (first-stage booster = stage)",
+    "tr": "e856f0f8f0"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.10.md": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "25533173eb"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.11.caption": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "b162c1c76f"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.16.caption": {
+    "why": "variant: ступень (first-stage booster = stage)",
+    "tr": "4eb1193ef5"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.21.caption": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "89f1473376"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.23.md": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "52a4f3a94f"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.29.md": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "4f07c8e9f3"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.30.md": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "31e598e36f"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.9.md": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "fd41f279cd"
+  },
+  "booster|sr-Cyrl|essays/reusable-launchers.json :: body.0.md": {
+    "why": "variant: први степен (first-stage booster = stage)",
+    "tr": "0d6a6a578b"
+  },
+  "booster|sr-Cyrl|essays/reusable-launchers.json :: body.8.md": {
+    "why": "variant: први степен ракете (first-stage booster = stage)",
+    "tr": "1baaaa4f08"
+  },
+  "booster|sr-Cyrl|essays/reusable-launchers.json :: body.9.md": {
+    "why": "variant: први степен / степен (first-stage booster = stage)",
+    "tr": "de1065f449"
   },
   "booster|sr-Cyrl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
     "why": "booster scale = first-stage level",
@@ -35,9 +131,57 @@
     "why": "booster = first stage 'први степен' is standard",
     "tr": "c4eeacfa99"
   },
+  "booster|zh-CN|essays/reusable-launchers.json :: body.0.md": {
+    "why": "pronoun 它 / 第一级火箭 in this sentence",
+    "tr": "452422ccc9"
+  },
   "booster|zh-CN|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy is the booster by name; word omitted naturally",
     "tr": "61ccb84385"
+  },
+  "burn|ar|essays/comms.json :: body.8.md": {
+    "why": "burned manuscript, not an engine",
+    "tr": "82a40f5210"
+  },
+  "burn|ar|essays/delta-v.json :: body.26.md": {
+    "why": "combustion sense: burn the machine on the way up (احرقها)",
+    "tr": "6e8f6840c3"
+  },
+  "burn|ar|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "combustion sense: تحرق وقودًا دافعًا",
+    "tr": "d1d6b7f641"
+  },
+  "burn|ar|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "combustion sense: تحرق وقودًا دافعًا",
+    "tr": "6e4b02f37e"
+  },
+  "burn|ar|essays/new-propulsion.json :: body.0.md": {
+    "why": "combustion: المحرّك يحرق وقودًا",
+    "tr": "7ad8d12357"
+  },
+  "burn|ar|essays/new-propulsion.json :: body.4.md": {
+    "why": "combustion/consumption sense: يحرقه / burned through",
+    "tr": "08378bd32f"
+  },
+  "burn|ar|essays/new-propulsion.json :: body.5.md": {
+    "why": "chemical burn = combustion here (reviewer change dropped)",
+    "tr": "ff83449604"
+  },
+  "burn|ar|essays/reusable-launchers.json :: body.14.md": {
+    "why": "combustion: محرك Raptor تحرق الميثان",
+    "tr": "de6debe2fa"
+  },
+  "burn|ar|essays/reusable-launchers.json :: body.4.md": {
+    "why": "combustion: تحرق ... الوقود الدافع",
+    "tr": "6c8a2c8608"
+  },
+  "burn|ar|essays/reusable-launchers.json :: body.8.md": {
+    "why": "combustion sense: فتحرق أكبر كمية من الوقود",
+    "tr": "15f7ce2d53"
+  },
+  "burn|ar|essays/seven-minutes.json :: body.4.md": {
+    "why": "combustion/heating of air; engine ran twelve minutes: يعمل",
+    "tr": "7becf49c9a"
   },
   "burn|ar|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "\"burning fuel\" = combustion",
@@ -123,6 +267,46 @@
     "why": "combustion / consumption sense",
     "tr": "7187a990d1"
   },
+  "burn|de|essays/comms.json :: body.8.md": {
+    "why": "'burned manuscript' - fire damage, not an engine burn",
+    "tr": "46d09ca618"
+  },
+  "burn|de|essays/delta-v.json :: body.26.md": {
+    "why": "'burn it on the way up' = consume the machine, not an engine firing",
+    "tr": "defecc6ab1"
+  },
+  "burn|de|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "'propellant-burning' = combustion sense",
+    "tr": "3714b605fd"
+  },
+  "burn|de|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "'propellant-burning architecture' = combustion sense",
+    "tr": "65ef0fb0a5"
+  },
+  "burn|de|essays/new-propulsion.json :: body.0.md": {
+    "why": "'engine burns a fuel' = combustion sense",
+    "tr": "965a9fc7b9"
+  },
+  "burn|de|essays/new-propulsion.json :: body.4.md": {
+    "why": "'instead of burning it' / 'burned through propellant' = combustion/consumption",
+    "tr": "915ef0ae27"
+  },
+  "burn|de|essays/new-propulsion.json :: body.5.md": {
+    "why": "chemical burn = combustion here (reviewer change dropped)",
+    "tr": "5863da0fb4"
+  },
+  "burn|de|essays/reusable-launchers.json :: body.4.md": {
+    "why": "'burned propellant per second' = consumption, verbrannte fine",
+    "tr": "08c2a3716d"
+  },
+  "burn|de|essays/reusable-launchers.json :: body.8.md": {
+    "why": "'burning the most propellant' = consumption",
+    "tr": "f6b2df62ca"
+  },
+  "burn|de|essays/seven-minutes.json :: body.4.md": {
+    "why": "'air burns off energy' = dissipation; 'Triebwerk ... brannte' is the correct engine verb",
+    "tr": "f7cb8f5de8"
+  },
   "burn|de|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "combustion sense (burning fuel)",
     "tr": "167bb80175"
@@ -191,6 +375,14 @@
     "why": "combustion / solid burn profile",
     "tr": "b6fdfcbff9"
   },
+  "burn|es|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "'propellant-burning architecture' = combustion sense",
+    "tr": "19a1a3a739"
+  },
+  "burn|es|essays/new-propulsion.json :: body.5.md": {
+    "why": "chemical burn = combustion here (reviewer change dropped)",
+    "tr": "515cd24d36"
+  },
   "burn|es|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
     "why": "fire burning, not engine",
     "tr": "4fe357c7bf"
@@ -230,6 +422,38 @@
   "burn|es|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
     "why": "combustion temperature",
     "tr": "842ba944fb"
+  },
+  "burn|fr|essays/comms.json :: body.8.md": {
+    "why": "'burned manuscript' - fire damage",
+    "tr": "99263d4731"
+  },
+  "burn|fr|essays/delta-v.json :: body.26.md": {
+    "why": "'burn it on the way up' = consume the machine",
+    "tr": "f73a1cc725"
+  },
+  "burn|fr|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "'propellant-burning vehicle' = combustion sense (consommant des ergols)",
+    "tr": "3913595e76"
+  },
+  "burn|fr|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "'propellant-burning architecture' = combustion sense",
+    "tr": "4cc99f584c"
+  },
+  "burn|fr|essays/new-propulsion.json :: body.0.md": {
+    "why": "'engine burns a fuel' = combustion sense",
+    "tr": "581c46e08d"
+  },
+  "burn|fr|essays/reusable-launchers.json :: body.4.md": {
+    "why": "'burned propellant per second' = consumption",
+    "tr": "ace3a1f3b9"
+  },
+  "burn|fr|essays/reusable-launchers.json :: body.8.md": {
+    "why": "'burning the most propellant' = consumption",
+    "tr": "fbf3a166e9"
+  },
+  "burn|fr|essays/seven-minutes.json :: body.4.md": {
+    "why": "'air burns off energy' = dissipation; 'moteur ... brûlait' is the correct engine verb",
+    "tr": "274dfb2e86"
   },
   "burn|fr|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion sense",
@@ -282,6 +506,46 @@
   "burn|fr|science/transfers/_intro.json :: paragraphs.0": {
     "why": "injection noun denotes the burn",
     "tr": "2f647ce368"
+  },
+  "burn|hi|essays/comms.json :: body.8.md": {
+    "why": "burned manuscript, not an engine",
+    "tr": "5c19db254a"
+  },
+  "burn|hi|essays/delta-v.json :: body.26.md": {
+    "why": "combustion sense (burn the stage on the way up): जला दो",
+    "tr": "99a8131751"
+  },
+  "burn|hi|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "combustion sense (propellant-burning vehicle): प्रणोदक जलाने वाले",
+    "tr": "5b478e433d"
+  },
+  "burn|hi|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "combustion sense: प्रणोदक जलाने वाली",
+    "tr": "08297a60c3"
+  },
+  "burn|hi|essays/new-propulsion.json :: body.0.md": {
+    "why": "combustion: burns a fuel and an oxidizer",
+    "tr": "a234cd06d1"
+  },
+  "burn|hi|essays/new-propulsion.json :: body.4.md": {
+    "why": "combustion/consumption: जलाने, burned through",
+    "tr": "5f1f74130b"
+  },
+  "burn|hi|essays/reusable-launchers.json :: body.14.md": {
+    "why": "combustion: engines burning methane and oxygen",
+    "tr": "076caaa48c"
+  },
+  "burn|hi|essays/reusable-launchers.json :: body.4.md": {
+    "why": "combustion: propellant burned per second",
+    "tr": "f208b62855"
+  },
+  "burn|hi|essays/reusable-launchers.json :: body.8.md": {
+    "why": "combustion: first stage burns propellant",
+    "tr": "c838d2b30e"
+  },
+  "burn|hi|essays/seven-minutes.json :: body.4.md": {
+    "why": "combustion/heating of air; engine ran for twelve minutes: variant जलता रहा",
+    "tr": "c0176da97e"
   },
   "burn|hi|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion",
@@ -355,6 +619,34 @@
     "why": "\"burned out of orbit\" rendered idiomatically without the term",
     "tr": "fbba9fe4d2"
   },
+  "burn|it|essays/comms.json :: body.8.md": {
+    "why": "'burned manuscript' - fire damage",
+    "tr": "a7f2a47821"
+  },
+  "burn|it|essays/delta-v.json :: body.26.md": {
+    "why": "'burn it on the way up' = consume the machine",
+    "tr": "7f30514194"
+  },
+  "burn|it|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "'propellant-burning architecture' = combustion sense (a combustione)",
+    "tr": "d3203a1a32"
+  },
+  "burn|it|essays/new-propulsion.json :: body.0.md": {
+    "why": "'engine burns a fuel' = combustion sense",
+    "tr": "e86e604388"
+  },
+  "burn|it|essays/reusable-launchers.json :: body.4.md": {
+    "why": "'burned propellant per second' = consumption",
+    "tr": "fc36dd71c1"
+  },
+  "burn|it|essays/reusable-launchers.json :: body.8.md": {
+    "why": "'burning the most propellant' = consumption",
+    "tr": "c6dc4218de"
+  },
+  "burn|it|essays/seven-minutes.json :: body.4.md": {
+    "why": "'air burns off energy' = dissipation; 'motore ... bruciò' is the correct engine verb",
+    "tr": "ed9101587b"
+  },
   "burn|it|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion",
     "tr": "ebcd308f40"
@@ -427,6 +719,38 @@
     "why": "injection noun denotes the burn",
     "tr": "e74815f278"
   },
+  "burn|ja|essays/comms.json :: body.8.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "1ae505beaf"
+  },
+  "burn|ja|essays/delta-v.json :: body.26.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "7e2267454d"
+  },
+  "burn|ja|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "35141eafa9"
+  },
+  "burn|ja|essays/new-propulsion.json :: body.0.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "be951b4488"
+  },
+  "burn|ja|essays/new-propulsion.json :: body.4.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "3205e0cc81"
+  },
+  "burn|ja|essays/reusable-launchers.json :: body.14.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "bac41be841"
+  },
+  "burn|ja|essays/reusable-launchers.json :: body.4.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "814420bf2b"
+  },
+  "burn|ja|essays/reusable-launchers.json :: body.8.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "08b6e8f43e"
+  },
   "burn|ja|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
     "why": "\"burns the crew up\" is combustion, not an engine firing",
     "tr": "6b9e11a62d"
@@ -446,6 +770,34 @@
   "burn|ja|science/propulsion/staged-combustion.json :: intro_sentence": {
     "why": "\"burn it\" = combustion; 燃やす correct",
     "tr": "a5296688d6"
+  },
+  "burn|ko|essays/comms.json :: body.8.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "e35159a5f7"
+  },
+  "burn|ko|essays/delta-v.json :: body.26.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "7e164d4ab6"
+  },
+  "burn|ko|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "136d7b1185"
+  },
+  "burn|ko|essays/new-propulsion.json :: body.0.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "c5615868f8"
+  },
+  "burn|ko|essays/new-propulsion.json :: body.4.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "aa70e37416"
+  },
+  "burn|ko|essays/reusable-launchers.json :: body.4.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "1130886e3f"
+  },
+  "burn|ko|essays/reusable-launchers.json :: body.8.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "060d222e7f"
   },
   "burn|ko|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "combustion / fire, not an engine firing",
@@ -478,6 +830,22 @@
   "burn|ko|science/propulsion/ion-drive.json :: intro_sentence": {
     "why": "combustion / fire, not an engine firing",
     "tr": "2cd3f46750"
+  },
+  "burn|nl|essays/comms.json :: body.8.md": {
+    "why": "'burned manuscript' - fire damage",
+    "tr": "827639ecae"
+  },
+  "burn|nl|essays/delta-v.json :: body.26.md": {
+    "why": "'burn it on the way up' = consume the machine",
+    "tr": "8b665d07af"
+  },
+  "burn|nl|essays/new-propulsion.json :: body.5.md": {
+    "why": "chemical burn = combustion here (reviewer change dropped)",
+    "tr": "940d737455"
+  },
+  "burn|nl|essays/reusable-launchers.json :: body.8.md": {
+    "why": "'burning the most propellant' = consumption (verbruikt)",
+    "tr": "cbb0e0bae0"
   },
   "burn|nl|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "combustion / fire, not an engine firing",
@@ -595,6 +963,30 @@
     "why": "burn out = esgotam, not engine",
     "tr": "890589dd71"
   },
+  "burn|ru|essays/comms.json :: body.8.md": {
+    "why": "other sense: burned manuscript, not engine firing",
+    "tr": "5681a838ca"
+  },
+  "burn|ru|essays/delta-v.json :: body.26.md": {
+    "why": "other sense: expend/consume the stage, not engine firing",
+    "tr": "ace21d9c92"
+  },
+  "burn|ru|essays/new-propulsion.json :: body.0.md": {
+    "why": "other sense: combustion of fuel",
+    "tr": "77606b01bc"
+  },
+  "burn|ru|essays/new-propulsion.json :: body.4.md": {
+    "why": "other sense: combustion (not ionizing)",
+    "tr": "9baeac4f28"
+  },
+  "burn|ru|essays/reusable-launchers.json :: body.4.md": {
+    "why": "other sense: fuel consumption / combustion of F-1 propellant",
+    "tr": "03d49502ef"
+  },
+  "burn|ru|essays/reusable-launchers.json :: body.8.md": {
+    "why": "other sense: consuming propellant",
+    "tr": "69e4f79e95"
+  },
   "burn|ru|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion",
     "tr": "cb421173cd"
@@ -675,6 +1067,46 @@
     "why": "'коррекций курса' is the correct rendering of mid-course burns (TCMs)",
     "tr": "3c3ea193bf"
   },
+  "burn|sr-Cyrl|essays/comms.json :: body.8.md": {
+    "why": "other sense: burned manuscript, not engine firing",
+    "tr": "65d721d930"
+  },
+  "burn|sr-Cyrl|essays/delta-v.json :: body.26.md": {
+    "why": "other sense: expend/consume the stage, not engine firing",
+    "tr": "e49adbe998"
+  },
+  "burn|sr-Cyrl|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "other sense: propellant-burning vehicle (combustion)",
+    "tr": "61c29533a6"
+  },
+  "burn|sr-Cyrl|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "other sense: propellant combustion (propellant-burning architecture)",
+    "tr": "327c056526"
+  },
+  "burn|sr-Cyrl|essays/new-propulsion.json :: body.0.md": {
+    "why": "other sense: combustion of fuel",
+    "tr": "3431d590b0"
+  },
+  "burn|sr-Cyrl|essays/new-propulsion.json :: body.4.md": {
+    "why": "other sense: combustion / consuming propellant",
+    "tr": "187125124b"
+  },
+  "burn|sr-Cyrl|essays/new-propulsion.json :: body.5.md": {
+    "why": "chemical burn = combustion here (reviewer change dropped)",
+    "tr": "0780279cb5"
+  },
+  "burn|sr-Cyrl|essays/reusable-launchers.json :: body.4.md": {
+    "why": "other sense: propellant consumption rate",
+    "tr": "c91a8d4176"
+  },
+  "burn|sr-Cyrl|essays/reusable-launchers.json :: body.8.md": {
+    "why": "other sense: consuming propellant",
+    "tr": "1baaaa4f08"
+  },
+  "burn|sr-Cyrl|essays/seven-minutes.json :: body.4.md": {
+    "why": "stem gap: радио (descent engine \"радио дванаест минута\" = engine firing); \"burns it off\" is the energy-dissipation sense",
+    "tr": "2a0ba36320"
+  },
   "burn|sr-Cyrl|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burn means combustion / stars burning / burn profile, not an engine firing",
     "tr": "f6ea3b457b"
@@ -750,6 +1182,42 @@
   "burn|sr-Cyrl|science/scales-time/frames.json :: narrative_101.1": {
     "why": "'маневре кочења' is the correct rendering of arrival burns",
     "tr": "a783b54d91"
+  },
+  "burn|zh-CN|essays/comms.json :: body.8.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "ae14b2f045"
+  },
+  "burn|zh-CN|essays/delta-v.json :: body.26.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "4dc90204e4"
+  },
+  "burn|zh-CN|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "3d82916ae1"
+  },
+  "burn|zh-CN|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "27ba8d22b7"
+  },
+  "burn|zh-CN|essays/new-propulsion.json :: body.0.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "5a1987e607"
+  },
+  "burn|zh-CN|essays/new-propulsion.json :: body.4.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "4d131c354e"
+  },
+  "burn|zh-CN|essays/reusable-launchers.json :: body.14.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "68cf7ac1a4"
+  },
+  "burn|zh-CN|essays/reusable-launchers.json :: body.4.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "730448f9b3"
+  },
+  "burn|zh-CN|essays/reusable-launchers.json :: body.8.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "3754f4d43d"
   },
   "burn|zh-CN|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion/consumption, not an engine firing",
@@ -839,6 +1307,10 @@
     "why": "combustion / fuel consumption, not an engine firing",
     "tr": "6eea8fe05e"
   },
+  "delta-v|hi|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "term not in this sentence of the English",
+    "tr": "5b478e433d"
+  },
   "descent|de|science/life-in-space/iva-suits.json :: body_paragraphs.0": {
     "why": "descent module = Landemodul, name of a module",
     "tr": "86bd7e78b3"
@@ -862,6 +1334,10 @@
   "docking|ko|science/space-stations/node-module.json :: body_paragraphs.4": {
     "why": "Chinese Docking Mechanism is a proper name left in English",
     "tr": "7a82c63b61"
+  },
+  "entry|ar|essays/reusable-launchers.json :: body.9.md": {
+    "why": "variant: العودة = reentry (the atmospheric reentry of a returning stage)",
+    "tr": "4420e75154"
   },
   "entry|ar|science/life-in-space/pre-flight-training.json :: body_paragraphs.3": {
     "why": "\"re-entry engine\" is not atmospheric entry itself; محرّكات العودة is correct",
@@ -1203,9 +1679,21 @@
     "why": "\"24 h orbit\" omitted naturally",
     "tr": "fddbe8e6fb"
   },
+  "orbit|ja|essays/asteroid-mining.json :: body.0.md": {
+    "why": "variant: 回る / その周囲の (orbiting rendered naturally)",
+    "tr": "0d0c060831"
+  },
+  "orbit|ja|essays/interstellar-exploration.json :: body.15.md": {
+    "why": "variant: 回る / その周囲の (orbiting rendered naturally)",
+    "tr": "5ee6441d3b"
+  },
   "orbit|ja|science/_landing.json :: chapters.0.diagram": {
     "why": "filename",
     "tr": "72874f8e10"
+  },
+  "orbit|ko|essays/interstellar-exploration.json :: body.15.md": {
+    "why": "omitted naturally: 그 둘레의 행성들",
+    "tr": "db09aeaa15"
   },
   "orbit|ko|science/_landing.json :: chapters.0.diagram": {
     "why": "orbit verb rendered 돌다 (natural); or filename",
@@ -1250,6 +1738,14 @@
   "orbit|ko|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
     "why": "orbit verb rendered 돌다 (natural); or filename",
     "tr": "75925f46eb"
+  },
+  "orbit|nl|essays/asteroid-mining.json :: body.0.md": {
+    "why": "verb omitted naturally (hemellichaam in de asteroidengordel)",
+    "tr": "248101e479"
+  },
+  "orbit|nl|essays/interstellar-exploration.json :: body.15.md": {
+    "why": "'planeten eromheen' - natural rendering of 'planets orbiting it'",
+    "tr": "1846cedaa9"
   },
   "orbit|nl|science/_landing.json :: chapters.7.paragraphs.1": {
     "why": "draaien/omloop verb or period sense, natural",
@@ -1382,6 +1878,10 @@
   "orbit|pt-BR|science/planets/_intro.json :: paragraphs.0": {
     "why": "\"from orbit\" as do espaço, natural",
     "tr": "7b82d3f7b2"
+  },
+  "orbit|ru|essays/interstellar-exploration.json :: body.15.md": {
+    "why": "omitted naturally (\"её возможные планеты\")",
+    "tr": "4bce9a096e"
   },
   "orbit|ru|science/_landing.json :: chapters.0.diagram": {
     "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
@@ -1623,6 +2123,14 @@
     "why": "'кружи/обилази око' is the correct verb for orbiting",
     "tr": "e415c46837"
   },
+  "orbit|zh-CN|essays/asteroid-mining.json :: body.0.md": {
+    "why": "variant: 运行在 (orbiting in the belt)",
+    "tr": "8fc72a18f0"
+  },
+  "orbit|zh-CN|essays/interstellar-exploration.json :: body.15.md": {
+    "why": "omitted naturally: 及其行星",
+    "tr": "9d4b9e82f8"
+  },
   "orbit|zh-CN|science/_landing.json :: chapters.0.diagram": {
     "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
     "tr": "72874f8e10"
@@ -1739,9 +2247,17 @@
     "why": "Vega Secondary Payload Adapter is a proper name",
     "tr": "714623570e"
   },
+  "payload|ja|essays/going-to-the-moon.json :: body.9.md": {
+    "why": "variant: 打ち上げ能力 (capacity to LEO)",
+    "tr": "c5c2c6ee50"
+  },
   "payload|ja|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
     "tr": "c91fcc9d16"
+  },
+  "payload|ko|essays/going-to-the-moon.json :: body.9.md": {
+    "why": "variant: 탑재량 (payload capacity to LEO)",
+    "tr": "1796d93fab"
   },
   "payload|ko|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name left in English",
@@ -1771,9 +2287,21 @@
     "why": "proper name 'Vega Secondary Payload Adapter'",
     "tr": "6e7ea25f36"
   },
+  "payload|zh-CN|essays/going-to-the-moon.json :: body.9.md": {
+    "why": "variant: 运载能力 (capacity to LEO)",
+    "tr": "1c7dfd6d6c"
+  },
   "payload|zh-CN|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
     "tr": "8ca1f489b3"
+  },
+  "propellant|ar|essays/asteroid-mining.json :: body.15.caption": {
+    "why": "variant: وقود الصواريخ (rocket propellant)",
+    "tr": "a83d4cdee0"
+  },
+  "propellant|ar|essays/going-to-the-moon.json :: body.14.md": {
+    "why": "variant: وقود صاروخي (rocket propellant)",
+    "tr": "9d006c7891"
   },
   "propellant|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "RP-1 name; combustible stem present in text",
@@ -1810,6 +2338,14 @@
   "rendezvous|de|science/orbits/synodic-period.json :: narrative_101.2": {
     "why": "generic meeting point (Treffpunkt), not a spacecraft rendezvous",
     "tr": "647987ca07"
+  },
+  "rendezvous|ru|essays/going-to-mars.json :: body.12.md": {
+    "why": "variant: встретиться (verb, with \"на орбите\")",
+    "tr": "d31913e23b"
+  },
+  "rendezvous|ru|essays/navigation.json :: body.25.md": {
+    "why": "variant: точке встречи",
+    "tr": "d79e42fde6"
   },
   "specific impulse|ar|science/propulsion/antimatter-propulsion.json :: body_paragraphs.0": {
     "why": "\"للدفع النوعي\" = ل + الدفع النوعي, binding form",
@@ -1883,6 +2419,18 @@
     "why": "화학 추진 = chemical propulsion method; natural for \"chemical thrust\" as means",
     "tr": "f6ba624598"
   },
+  "thrust|ru|essays/new-propulsion.json :: body.6.md": {
+    "why": "omitted naturally (\"проработав суммарно более пяти с половиной лет\")",
+    "tr": "7abd0ee404"
+  },
+  "thrust|zh-CN|essays/new-propulsion.json :: body.33.caption": {
+    "why": "figurative brute thrust = 蛮力",
+    "tr": "78e68901dd"
+  },
+  "thrust|zh-CN|essays/new-propulsion.json :: body.6.md": {
+    "why": "thrust time rendered by 工作 (natural omission)",
+    "tr": "104d14cfb6"
+  },
   "thrust|zh-CN|science/mission-phases/ascent-guidance.json :: body_paragraphs.2": {
     "why": "推重比 is the standard term for thrust-to-weight ratio",
     "tr": "c554918e29"
@@ -1891,8 +2439,56 @@
     "why": "化学推进 = chemical propulsion as a method; natural",
     "tr": "e9a011f2ba"
   },
+  "trajectory|de|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative 'the direction/trend is clear', not a flight path",
+    "tr": "c25913ec2b"
+  },
+  "trajectory|de|essays/space-comm-arrays.json :: body.23.md": {
+    "why": "figurative scale/outlook, not a flight path",
+    "tr": "a798cdb6e9"
+  },
+  "trajectory|hi|essays/generational-starships.json :: body.0.md": {
+    "why": "variant: पलायन-पथ (escape trajectory)",
+    "tr": "dc81a26485"
+  },
+  "trajectory|hi|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative direction of progress, not a flight path",
+    "tr": "4d6db4245f"
+  },
+  "trajectory|ja|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative sense (course of events / path ahead), not a flight path",
+    "tr": "fd515e983f"
+  },
+  "trajectory|ja|essays/space-comm-arrays.json :: body.23.md": {
+    "why": "figurative sense (course of events / path ahead), not a flight path",
+    "tr": "91ea40daa0"
+  },
+  "trajectory|ko|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative sense (direction of progress / distance scale), not a flight path",
+    "tr": "493b55afe6"
+  },
+  "trajectory|ko|essays/space-comm-arrays.json :: body.23.md": {
+    "why": "figurative sense (direction of progress / distance scale), not a flight path",
+    "tr": "923ecc37fe"
+  },
   "trajectory|ko|science/planets/active-spacecraft-survey.json :: body_paragraphs.1": {
     "why": "English uses trajectory loosely for an orbit around Jupiter; 궤도 correct",
     "tr": "7032d40f21"
+  },
+  "trajectory|nl|essays/interstellar-exploration.json :: body.5.md": {
+    "why": "variant: banen (hyperbolic trajectories / trajectory design)",
+    "tr": "7ae2e9d0ae"
+  },
+  "trajectory|nl|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative 'the course/direction is clear'",
+    "tr": "8dd15f16dd"
+  },
+  "trajectory|zh-CN|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative sense (the way things are heading / scale), not a flight path",
+    "tr": "7aff581353"
+  },
+  "trajectory|zh-CN|essays/space-comm-arrays.json :: body.23.md": {
+    "why": "figurative sense (the way things are heading / scale), not a flight path",
+    "tr": "ab5947dc18"
   }
 }

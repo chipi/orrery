@@ -24,7 +24,7 @@
     },
     {
       "type": "prose",
-      "md": "La logica di questo piano non era stupidità. Era la logica della corsa allo spazio degli anni Sessanta: arrivare per primi, a qualunque costo. Costruire un razzo riutilizzabile è più difficile che costruirne uno usa-e-getta. La riutilizzabilità aggiunge peso — scudi termici, gambe d'atterraggio, propellente riservato alla combustione di ritorno — e il peso è il nemico, perché ogni chilogrammo aggiunto alla struttura è un chilogrammo che non puoi consegnare in orbita. I primi progettisti fecero i conti e conclusero che la penalizzazione era troppo alta. Meglio, decisero, costruire a basso costo e buttare via. Quel calcolo era giusto per il suo momento, e fissò una serie di presupposti che durarono due generazioni."
+      "md": "La logica di questo piano non era stupidità. Era la logica della corsa allo spazio degli anni Sessanta: arrivare per primi, a qualunque costo. Costruire un razzo riutilizzabile è più difficile che costruirne uno usa-e-getta. La riutilizzabilità aggiunge peso — scudi termici, gambe d'atterraggio, propellente riservato all'accensione di ritorno — e il peso è il nemico, perché ogni chilogrammo aggiunto alla struttura è un chilogrammo che non puoi consegnare in orbita. I primi progettisti fecero i conti e conclusero che la penalizzazione era troppo alta. Meglio, decisero, costruire a basso costo e buttare via. Quel calcolo era giusto per il suo momento, e fissò una serie di presupposti che durarono due generazioni."
     },
     {
       "type": "prose",
@@ -96,7 +96,7 @@
       "type": "figure",
       "image": "fleet/falcon-9/01",
       "kind": "photo",
-      "caption": "Un primo stadio di Falcon 9 si rimette in piedi sulle sue gambe dopo aver portato un carico in orbita — il momento in cui un presupposto lungo sessant'anni è crollato in silenzio. Quando un'azienda ha dimostrato che un booster poteva volare di nuovo, tutte le altre hanno dovuto imparare a salvare anche il proprio.",
+      "caption": "Un primo stadio di Falcon 9 si rimette in piedi sulle sue gambe dopo aver portato un carico utile in orbita — il momento in cui un presupposto lungo sessant'anni è crollato in silenzio. Quando un'azienda ha dimostrato che un booster poteva volare di nuovo, tutte le altre hanno dovuto imparare a salvare anche il proprio.",
       "align": "wide",
       "credit": "SpaceX"
     },

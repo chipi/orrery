@@ -1,0 +1,1158 @@
+[
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "highlights.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "حتى عام 2019 كان يضم 52 محطة، منها 38 في هولندا.",
+    "note": "Colloquial \"فيه\" for a telescope."
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "أبعد جسم زارته مركبة فضائية على الإطلاق — يبعد 4.1 مليار كم عن الشمس حين حلّقت New Horizons على بُعد 3,500 كم منه في يوم رأس السنة 2019. اندمج فصّاه (Wenu و Weeyo) بلطف عند فجر المجموعة الشمسية، وظلا مندمجين طوال 4.5 مليار سنة عند ~40 K.",
+    "note": "Latin \"km\" left in Arabic text."
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "المختبر الروسي الضخم متعدد الأغراض الذي وصل متأخراً أربعة عشر عاماً عن الموعد المحدد—حجم علمي إضافةً إلى طموحات نقل الوقود الدافع.",
+    "note": "Propellant rendered as plain fuel, not bound term."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "حوالي 1/600 من المسافة إلى القمر. تدور محطة الفضاء الدولية في مدارها على ارتفاع 408 كم، وهو ما يعادل المسافة من لندن إلى جنيف — لو وُضعت جانبياً.",
+    "note": "Garbled \"orbits at the same altitude that equals\" clause."
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "قشرة من جليد الماء بسُمك يتراوح بين 15 و25 كم تقريباً، تصدّعت بفعل تضاريس الفوضى إلى شبكة من الحروف المقوّسة والعدسات (lenticulae)؛ وتُضفي الأملاح (على الأرجح كبريتات المغنيسيوم وكلوريد الصوديوم) لوناً أحمر مائلاً إلى البني على الجليد في مناطق الفوضى.",
+    "note": "Ridges rendered as \"الحيود\" (diffraction)."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.2.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Voyager 2 — التحليق القريب الوحيد من نبتون حتى الآن (الولايات المتحدة)",
+    "note": "English \"USA\" left in label."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "film",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/smart-1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "أول مهمة قمرية لـ ESA، 2003-2006. استخدمت الدفع الشمسي-الكهربائي (الأيوني) لتدور حلزونياً إلى الخارج من مدار انتقالي ثابت بالنسبة إلى الأرض حتى الالتقاط القمري — رحلة عبور استغرقت 14 شهراً وتوفّر الوقود، وكانت رائدة في المسارات منخفضة قوة الدفع لمهام ESA اللاحقة بين الكواكب. ارتطمت عمداً بسطح القمر في 2006.",
+    "note": "Spiral-out from GTO garbled as \"wrap around\"; clumsy relative clause."
+  },
+  {
+    "rel": "museums/tsiolkovsky-museum-kaluga.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/change1.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "مدار قطبي حول القمر على ارتفاع ~200 كم. أول مهمة صينية إلى القمر؛ افتتحت برنامج Chang'e الذي نفّذ المهام الأجنبية الوحيدة لإعادة العينات في القرن الحادي والعشرين.",
+    "note": "Sample-return clause garbled (\"the only of the missions\")."
+  },
+  {
+    "rel": "iss-modules/unity.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "محور رسو مركزي وممر خدمات للطاقة/البيانات بين الجزأين الأمريكي والروسي.",
+    "note": "Utility trunk rendered obscurely; segments need dual."
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/aviation-museum-plovdiv-krumovo.json",
+    "at": "items.soyuz-7k-ok",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "انقطاع موجز لإشارة النطاق X (8 ث). أعادت شبكة DSN التقاطها. السبب: حجب بفعل عمود غاز الدافعات. لم تُفقد أي بيانات.",
+    "note": "Plume rendered \"لوثة\" (taint); X-band left in English."
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-military-museum-bucharest.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "رسّام خرائط النجوم لـ ESA عند L2. يرسم خريطة لـ 1.8 مليار نجم — يقيس المواقع بدقة 7 ميكروثانية قوسية. قاس مسافات لنجوم تبعد 30000 سنة ضوئية بدقة عرض شعرة بشرية على مسافة 1000 كم. أدق خريطة لدرب التبانة على الإطلاق.",
+    "note": "\"يخطط\" means plans; star count noun; missing preposition."
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "الجرم الأساسي في أكبر ثنائي معروف بين كويكبات المشتري الطروادية — باتروكلس بقطر 113 كم يقترن بمينويتيوس بقطر 104 كم على مسافة فصل متبادلة قدرها 680 كم. والاقتران الإلياذي مقصود: فباتروكلس هو رفيق أخيل المحبوب، ومينويتيوس والد باتروكلس، وكلاهما يسقط معاً في الملحمة.",
+    "note": "\"Primary\" rendered as \"star\"; Trojans and relation ambiguous."
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.orion",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/juno.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/vega-1.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "0.98 وحدة فلكية · مركبة فضائية في مدار حول الشمس منذ التحليق القريب من مذنب هالي 1986-03-06",
+    "note": "Flyby not bound term; Arabic decimal mark inconsistent."
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/armstrong-air-and-space-museum.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/rassvet.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "حجرة التحام روسية مدمجة وسّعت خيارات ركن مركبات الشحن بالقرب من Zarya.",
+    "note": "Docking rendered as \"رسو\"; \"إيقاف\" for parking."
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.voskhod",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.4.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.tundra-sirius",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/kibo.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "المجمّع الياباني متعدد التخصصات—القطاع الوحيد في محطة الفضاء الدولية الذي يضم مختبراً مضغوطاً و\"شرفة\" مكشوفة للحمولات الخارجية.",
+    "note": "Pressurised and exposed rendered wrongly (بضغط موجب، معرضة)."
+  },
+  {
+    "rel": "tiangong-modules/mengtian.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "تجارب فيزياء الجاذبية الصغرى وميكانيكا الموائع والاحتراق؛ نشر آلي للحمولة عبر آلية نقل روبوتية صغيرة.",
+    "note": "\"Robotic\" dropped from transfer mechanism."
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "أوروبا هي العضو الأوسط في رنين لابلاس 4:2:1 بين آيو وأوروبا وغانيميد — إذ يفرض انحرافها المداري القسري الانثناء المدّي الذي يُبقي المحيط تحت السطح سائلاً.",
+    "note": "Eccentricity rendered \"الغريبة\" (strange)."
+  },
+  {
+    "rel": "earth-objects/goes.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "كل خريطة طقس تلفزيونية شاهدتها يوماً لإعصار أمريكي كانت صورة GOES التُقطت قبل دقائق من ارتفاع 35,786 كم.",
+    "note": "Latin \"km\" left in Arabic text."
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cape-canaveral-space-force-museum.json",
+    "at": "items.titan-ii-glv",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "أصغر الكواكب. مداره الإهليلجي الشديد (الانحراف المداري e=0.206) يجعل تسارعه ملحوظاً قرب الحضيض. ورغم أنه الأقرب إلى الشمس، فإن الزهرة أشد حرارة.",
+    "note": "Nonword \"مُحدَّ اللامَركزية\" in eccentricity gloss."
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "حُدِّد جرماً منفصلاً عام 2001 عبر رصد الأحداث المتبادلة. يتشارك مينويتيوس (والد باتروكلس في التقليد الهوميري) مع باتروكلس مدار L5 المستقر متخلفاً 60° عن المشتري. وتُنتج هندسة النظام الثنائي المتقارب الكتلة مركز كتلة يقع خارج كلا الجرمين، مما يجعل باتروكلس–مينويتيوس أكبر ثنائي متقارب معروف بين كويكبات طروادة.",
+    "note": "Garbled \"تهندس\" sentence; \"Trojan\" left in English; name drift."
+  },
+  {
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "حقن نحو المريخ: 3.61 كم/ث. تحققت سرعة الهروب.",
+    "note": "Arabic decimal mark with Western digits, inconsistent."
+  },
+  {
+    "rel": "earth-objects/clementine.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "مهمة مشتركة بين NASA وDoD ضمن مبادرة الدفاع الاستراتيجي، 1994. قضت عشرة أسابيع في رسم خريطة للقمر عبر 11 نطاقاً طيفياً — أول خريطة عالمية منهجية متعددة الأطياف. وأعطت قياسات الرادار ثنائي الموقع عند القطب الجنوبي أولى الإشارات على وجود جليد مائي قطبي، وأكدته لاحقاً Lunar Prospector و Chandrayaan-1.",
+    "note": "Bistatic radar rendered \"two-way\"; clumsy multispectral phrase."
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.3.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Akatsuki (JAXA، 2015–) هي المركبة المدارية النشطة الوحيدة حول الزهرة؛ وما زالت حملة Venera السوفييتية (1961–83) تحتفظ بصور السطح الوحيدة التي التُقطت على الإطلاق.",
+    "note": "Orbiter rendered as \"المدار\" (the orbit)."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.4",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "تدور دوراناً رجعياً — إلى الوراء — وببطء شديد حتى إن يوم الزهرة أطول من سنتها. ميل المحور البالغ 177.4° هو السبب: الزهرة مقلوبة رأساً على عقب عملياً.",
+    "note": "Slip \"ببطء بحيث أن\"; vague \"backwards\"."
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "interstellar_since_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/baikonur-cosmodrome-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "library_labels.phobos-mmx",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "interstellar_since_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/destiny.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "المختبر الأمريكي الرئيسي—مساحة عمل يعمل فيها الطاقم بلا بدلات فضائية، حلّت فيها تجارب مثبتة على رفوف محل العروض التجريبية المنفردة في الطابق الأوسط من المكوك.",
+    "note": "\"Shirtsleeve\" and \"middeck demos\" garbled into nonsense."
+  },
+  {
+    "rel": "museums/virginia-air-and-space-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "أكبر أقمار نبتون وواحد من أكثر العوالم نشاطًا جيولوجيًا في المجموعة الشمسية. يدور ترايتون حول نبتون بشكل عكسي (رجعي) وبميل شديد — ما يدل على أنه جسم من حزام كايبر جرى التقاطه، مما يجعله على الأرجح شقيقًا لبلوتو لا قمرًا نبتونيًا أصليًا. رصدت Voyager 2 ينابيع نيتروجين نشطة تقذف غبارًا عضويًا داكنًا إلى ارتفاع 8 كم في غلاف نيتروجيني رقيق؛ ويتميز نصف الكرة الجنوبي بـ\"تضاريس الشمام\" — شبكة من الحفر والحروف لا تُرى في أي مكان آخر في المجموعة الشمسية. ومدار ترايتون الرجعي يضمحل مدّيًا؛ وبعد نحو 3.6 مليار سنة إما سيتمزق إلى حلقة شبيهة بحلقات زحل وإما سيصطدم بنبتون.",
+    "note": "Geysers rendered \"سخانات\" (heaters)."
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "سفينة الشحن المضغوطة، التي تُطلق على صاروخ Long March 7 من وينتشانغ—تُوصل الوقود الدافع والغذاء والماء ومعدات التجارب تقريباً كل ستة أشهر.",
+    "note": "\"Pressurised\" rendered \"manned by pressure\"; propellant unbound."
+  },
+  {
+    "rel": "earth-objects/oneweb.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "648 قمراً صناعياً على ارتفاع 1,200 كم في 12 مستوى مدارياً قطبياً — إنترنت نطاق عريض من الجيل الأول في LEO. تشغّلها Eutelsat OneWeb منذ اندماج 2023. توفر المدارات القطبية تغطية من قطب إلى قطب لا تبلغها طبقات Starlink ذات الميل المداري المتوسط.",
+    "note": "Inclination not bound term; Latin km; \"shells\" as \"أغلفة\"."
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "name",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "متحف قيادة الجو الاستراتيجية للطيران والفضاء",
+    "note": "Strategic Air Command rendered \"Strategic Attack Command\"."
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "library_labels.ganymede-magfield",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/galileo.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "توجد الآن أربعة أنظمة ملاحة عالمية مستقلة: GPS (الولايات المتحدة)، GLONASS (روسيا)، Galileo (الاتحاد الأوروبي)، BeiDou (الصين). كل قوة كبرى أرادت نظامها الخاص.",
+    "note": "Number-noun agreement: \"أربع أنظمة\"."
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "انحراف كاليستو المداري البالغ 0.007 صغير وغير قسري — فمن دون تغذية رنينية لا يوجد انثناء مدّي ولا محيط تحت السطح (على الأرجح).",
+    "note": "Tidal flexing rendered \"مرونة\" (elasticity)."
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "العمود الفقري لبعثات الصين القمرية — أطلق كل بعثات Chang'e من الأولى إلى الرابعة",
+    "note": "Calque \"حصان العمل\" for workhorse."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.4.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "ميل محور المريخ البالغ 25.2° قريب جداً من ميل الأرض — لكنه مع انحرافه المداري يجعل الصيف الجنوبي شديد الحرارة وقصيراً، بينما الصيف الشمالي طويل ومعتدل.",
+    "note": "\"لـ المريخ\" spacing error; \"خفيف\" for mild."
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.4.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "يستضيف المريخ أكبر تجمع للمركبات الفضائية العاملة خارج الأرض من حيث الكثافة — مركبات مدارية من خمس وكالات ومركبات جوالة / هابطات من ثلاث.",
+    "note": "Awkward census phrase; \"روفرز\" transliteration."
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "مسبار JUICE — ESA، الوصول 2031 (الدخول في مدار غانيميد 2034)",
+    "note": "Orbit insertion rendered \"إدراج المدار\", not bound term."
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/musee-air-espace-le-bourget.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.3.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "مدار زحل هادئ (الانحراف المداري 0.054) لكن متوسط بعده البالغ 9.6 وحدة فلكية يعني أن الحضيض والأوج يختلفان بنحو 100 مليون كم — وقد وقّتت كاسيني وصولها للاستفادة من سرعة الاقتراب.",
+    "note": "Latin AU and km left in Arabic text."
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.resolution",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "docking",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "ميل زحل البالغ 26.7° هو ما يجعل حلقاته تبدو وكأنها تنفتح وتنغلق خلال دورته المدارية البالغة 29 سنة — وهو ما يمنح كل نصف من الكوكب فصولاً تدوم أكثر من سبع سنوات أرضية.",
+    "note": "\"مدار مداره\" and \"فصولاً نصفية\" garbled."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/geo.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "الحلقة الجيوستاتيونية. عند 35,786 كم بالضبط، يصبح الدور المداري مساوياً لدوران الأرض — فتبدو الأقمار ثابتة في السماء. أقمار GOES للطقس، وMeteosat، وآلاف أقمار الاتصالات. الارتفاع المحدد الذي تتوافق عنده الفيزياء والمنفعة تماماً.",
+    "note": "Verb-subject agreement slip in last sentence."
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "صاروخ إطلاق من مرحلتين بتشكيلتين: Ariane 62 بمعززين صلبين وAriane 64 بأربعة. المرحلة العليا المبرّدة بمحرك Vinci قابلة لإعادة التشغيل، ما يتيح عمليات نشر معقدة في مدارات متعددة وحقناً مباشراً بين الكواكب. أول رحلة في يوليو 2024.",
+    "note": "Deployments rendered \"نشرات\" (bulletins); configurations garbled."
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "خدمات إعادة الإمداد التجارية؛ شحن مضغوط فقط؛ مصفوفات شمسية دائرية من طراز UltraFlex؛ يُتخلص منها بإعادة الدخول المدمِّرة في الغلاف الجوي فوق جنوب المحيط الهادئ.",
+    "note": "Entry not bound term; passive calque."
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Voyager 2 — الولايات المتحدة، 1986 (التحليق القريب فوق نصف الكرة الجنوبي)",
+    "note": "Flyby rendered as garbled \"حلول بالقرب من\"."
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "القمر يبعد 384,400 كم — أي ما يقارب ألف ضعف بُعد محطة الفضاء الدولية. على هذه الخريطة اللوغاريتمية يبدو قريباً، لكنه في الواقع لم يصله إنسان منذ عام 1972.",
+    "note": "Clumsy \"1000× أبعد\"; missing comma; \"there\" dropped."
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "المركبة المدارية Viking 2 — الولايات المتحدة، 1977 (أعلى دقة تصويرية قبل عام 2000)",
+    "note": "Orbiter rendered \"مدار Viking 2\" (its orbit)."
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "مدار قطبي على ارتفاع 100 كم. أكد فرضية Clementine عن الجليد القطبي، وأرسى مطيافية النيوترونات أداةً أساسية لدراسة المواد المتطايرة القمرية.",
+    "note": "Neutron spectroscopy rendered \"neutron spectrum\"."
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Voyager 2 حلّق قرب نبتون عام 1989 بعد رحلة دامت 12 عاماً، ولا تزال المركبة الوحيدة التي زارته.",
+    "note": "Gender slip \"لا يزال المركبة\"."
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/menoetius.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "name",
+    "new": "مينويتيوس هو رفيق باتروكلس في النظام الثنائي عند نقطة L5. أبقت هندستهما الثنائية المتقاربة عليهما مستقرين ديناميكياً لمدة 4.5 مليار سنة.",
+    "note": "Nonword name \"مينيتوس\"; should be مينويتيوس."
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "يدور حول القمر منذ 2009. يرسم خريطة للسطح بدقة 50 سم — كافية لرؤية مراحل هبوط Apollo الباقية على السطح. وجد جليد ماء عند القطبين. حدد أكثر من 200 موقع هبوط محتمل لبرنامج أرتميس. كشّاف للعودة.",
+    "note": "\"يخطط\" means plans, not maps."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-expo-noordwijk.json",
+    "at": "items.soyuz-tma",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "ثنائي قريب من الأرض من النوع S اكتُشف عام 1996، يضم القمير ديمورفوس بقطر 160 م في مدار مدته 11.9 ساعة على بُعد فصل 1.2 كم. مصنف كجسم كندري — تركيبة سيليكاتية من الفئة LL، وهي شائعة في الحزام الرئيسي الداخلي. ستصل بعثة Hera التابعة لـ ESA (المطلقة عام 2024) عام 2026 لمسح النظام بعد الاصطدام بالتفصيل.",
+    "note": "Moonlet rendered \"الجسيم\" (particle)."
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/galileo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "library_labels.enceladus-cassini",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "NASA Cassini — أرشيف تحليقاتها القريبة عبر الأعمدة",
+    "note": "Garbled \"legacy of crossing through plumes\"; flyby not bound."
+  },
+  {
+    "rel": "museums/fernbank-science-center.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/iridium-next.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "0.94 وحدة فلكية · في الطريق إلى التحليق القريب الثاني من الأرض في 2026-09-29 (مرحلة الإبحار 2 من 5)",
+    "note": "Flyby not bound term; Arabic decimal mark."
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Voyager 2 — الولايات المتحدة، 1986 (التحليق القريب فوق نصف الكرة الجنوبي)",
+    "note": "Flyby phrase garbled (\"near the Earth sphere\")."
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "تعبر Voyager 1 الهيليوبوز — أول جسم من صنع الإنسان في الفضاء بين النجمي (الولايات المتحدة)",
+    "note": "Heliopause as \"heliosphere\"; artefact as \"archaeological piece\"; USA."
+  }
+]

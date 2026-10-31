@@ -1,0 +1,999 @@
+[
+  {
+    "rel": "satellites/titan.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "items.buran-ok-gli",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Pluton est le plus grand corps connu de la ceinture de Kuiper — sa découverte, en 1930, a précédé de 60 ans le concept même de cette ceinture.",
+    "note": "awkward 'de 60 ans' placement"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.3.l",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/franklin-institute.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "residents.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Amarrage et préparation des sorties extravéhiculaires (EVA) sur le segment russe jusqu'à sa désorbitation en 2021, afin de libérer le port pour Nauka.",
+    "note": "'mise en scène' wrong; 'désorbite' nonword"
+  },
+  {
+    "rel": "earth-objects/beidou.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/venera-13.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "0,74 au · atterrissage sur Vénus le 1982-03-01 (127 min de survie en surface)",
+    "note": "date not ISO"
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.rejected.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/change2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Conçue au départ comme une recartographie de la Lune à plus haute résolution, dans le prolongement de Chang'e 1, la sonde a ensuite été réaffectée à une mission prolongée dans l'espace lointain. Après avoir achevé la cartographie lunaire en 2011, Chang'e 2 s'est dirigée vers le point L2 Soleil-Terre — première mission chinoise dans l'espace lointain — puis a effectué en 2012 un survol de l'astéroïde 4179 Toutatis. Elle est toujours suivie en orbite héliocentrique.",
+    "note": "gender agreement, odd 'Soleil-Terre L2'"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.rejected.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "items.hayabusa",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/donaldjohanson.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/wentian.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Recherche en sciences du vivant, sas EVA pour les sorties de l'équipage, et contrôle d'attitude de secours pour Tianhe grâce à des systèmes de guidage redondants.",
+    "note": "redundant guidance clause dropped"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.4.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/eris.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "L'inclinaison orbitale de 44° d'Éris figure parmi les plus élevées de tous les grands corps catalogués — son origine dans le disque épars la place bien en dehors de l'écliptique.",
+    "note": "scattered disc is 'disque épars'"
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/htv_x.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.4.l",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Pale Blue Dot — réflexion de Carl Sagan (Planetary Society)",
+    "note": "stray capital"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Successeur européen d'Ariane 5, avec un étage supérieur rallumable pour l'injection directe",
+    "note": "English left in, mixed"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.want",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/bledsoe-miller-steam-center-waco.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Voyager 2 — USA, 1986 (seul engin spatial à l'avoir visitée ; survol de l'hémisphère sud)",
+    "note": "'seul survol' repeated, imprecise"
+  },
+  {
+    "rel": "small-bodies/didymos.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/chandrayaan1.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Orbite polaire à 100 km d'altitude. Première confirmation globale directe de l'eau à la surface de la Lune ; elle a transformé toutes les feuilles de route ultérieures d'exploitation des ressources lunaires.",
+    "note": "missing auxiliary in clause"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/danmarks-tekniske-museum.json",
+    "at": "items.soyuz-tma",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "XMM-Newton et Chandra sont des parallèles diplomatiques : la NASA et l'ESA ont chacune construit leur propre observatoire de rayons X plutôt que de collaborer sur un seul. La science y a gagné deux télescopes.",
+    "note": "'Science got two' mistranslated"
+  },
+  {
+    "rel": "museums/national-space-centre-leicester.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/htv_x.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Amarré grâce à Canadarm2 ; charge utile pressurisée et non pressurisée ; vols de démonstration technologique pour la future logistique cislunaire.",
+    "note": "payload must be charge utile"
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/iss.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/voyager-golden-record.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Le sas de l'équipage du segment américain, où des astronautes en combinaison pénètrent dans le vide sans ouvrir de port d'amarrage sur un véhicule d'équipage.",
+    "note": "'adaptés' wrong for suited"
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/columbus.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "propellant",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.7.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Assistance gravitationnelle à retour libre terminée. Le vaisseau spatial est sur une trajectoire vers la Terre.",
+    "note": "bound term assistance gravitationnelle; clumsy"
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Environ 1/9 de la distance entre Mars et Phobos. Depuis la LMO, on peut distinguer un court de tennis à la surface (HiRISE sur MRO offre 25 cm/px).",
+    "note": "'1/9ème' incorrect"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Compartiment d'amarrage russe et sas EVA utilisés pendant des années avant leur retrait : un module petit mais très sollicité sur la partie arrière du complexe.",
+    "note": "literal 'espace immobilier'"
+  },
+  {
+    "rel": "culture-doors/kepler16b-tatooine.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/jaxa-sagamihara-communication-hall.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.f-1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/starlink.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/67p.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Corps principal du petit satellite Dimorphos (160 m), percuté par DART de la NASA le 2022-09-26 — première démonstration de défense planétaire par impacteur cinétique. Didymos lui-même est resté intact — astéroïde de type S de 780 m — tandis que l'on observait le changement de période du système binaire.",
+    "note": "'observing' misread; 'Mère' odd"
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Soyuz-FG (maintenant retiré du service) plus l'étage supérieur Fregat — l'association standard ESA-Roscosmos pour les missions interplanétaires de classe moyenne. La conception sans cryogénie utilise du kérosène-LOX dans les étages inférieurs et les propergols hypergoliques redémarrables de Fregat pour une injection précise. A lancé Mars Express (2003) de l'ESA, le quartet magnétosphérique Cluster et la plupart des vols de ravitaillement de l'ISS antérieurs à Soyuz-2.",
+    "note": "'appairage' nonword; ergols vs propergol"
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Luna 1 — premier engin à atteindre le voisinage de la Lune (URSS)",
+    "note": "USSR should be URSS"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Un astéroïde de ceinture principale de type C de 4 km de diamètre, nommé d'après le découvreur du fossile d'hominidé Lucy. Ajouté tardivement au concept de mission de Lucy comme survol bonus en route (2025-04-20, approche minimale à 960 km à 13,4 km/s) — une opportunité de tester les instruments avant les rencontres plus difficiles avec les Troyens.",
+    "note": "date not ISO; 'en-route'"
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/science-museum-london.json",
+    "at": "items.soyuz-tma",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.3",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/mao-zedong-memorial-museum-shaoshan.json",
+    "at": "items.shenzhou",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/salt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/zvezda.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/china-science-and-technology-museum.json",
+    "at": "items.shenzhou",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/kuiper.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Orbiteur Galileo — États-Unis, 1995–2003 (détection du champ magnétique)",
+    "note": "'orbiter' left in English"
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.3",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "interstellar_since_label",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Signal perdu en 1995 — en dérive inertielle vers l'Aigle, atteindra l'espace interstellaire vers 2027",
+    "note": "'coaste' is not a word"
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/planet-labs.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/musee-air-espace-le-bourget.json",
+    "at": "items.soyuz-t",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/dimorphos.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/columbus.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Le module scientifique phare de l'Europe : le laboratoire intérieur permanent de l'ESA, conçu dans les limites imposées par la soute de la navette.",
+    "note": "'de ESA'; awkward 'découpé'"
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/jaxa-sagamihara-communication-hall.json",
+    "at": "items.hayabusa-2",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Les fenêtres de lancement Terre-Mars s'ouvrent tous les 26 mois, déterminées par la résonance orbitale. Si vous manquez la fenêtre, attendez deux ans.",
+    "note": "'grâce à' wrong sense of driven by"
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Space Shuttle Endeavour, dressé à la verticale en position de lancement avec un vrai réservoir externe et deux propulseurs d'appoint à poudre",
+    "note": "booster must be propulseur d'appoint"
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Véhicule en acier inoxydable à deux étages, avec un propulseur d'appoint Super Heavy (33 moteurs Raptor) et un étage supérieur Starship (6 Raptor). Conçu autour du transfert de propergol en orbite : une version ravitailleur remplit Starship en LEO, ce qui permet d'envoyer ~100 t à la surface de Mars — des ordres de grandeur de plus que tout lanceur antérieur. Le programme de vols orbitaux a débuté en 2023.",
+    "note": "mostly English prose"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "delta-v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  }
+]

@@ -1,7 +1,7 @@
 {
   "name": "Neptune",
   "type": "Géant de glace",
-  "fact": "Voyager 2 a survolé Neptune en 1989 après un voyage de 12 ans. Il reste le seul vaisseau spatial jamais visité.",
+  "fact": "Voyager 2 a survolé Neptune en 1989 après un voyage de 12 ans. C'est resté la seule sonde à l'avoir jamais visitée.",
   "bio": "Planète la plus venteuse – vents de surface de 2 100 km/h. Découvert par prédiction mathématique avant l'observation directe, car l'orbite d'Uranus montrait une influence gravitationnelle invisible.",
   "links": [
     {
@@ -34,7 +34,7 @@
     {
       "tab": "orbits",
       "section": "semi-major-axis",
-      "why": "À une distance moyenne de 30,07 au, Neptune est si lointaine qu'un signal lumineux aller-retour prend 4 heures. Voyager 2 a nécessité 12 ans pour l'atteindre."
+      "why": "À une distance moyenne de 30,07 au, Neptune est si lointaine qu'un signal lumineux met 4 heures pour faire le trajet dans un seul sens. Voyager 2 a nécessité 12 ans pour l'atteindre."
     },
     {
       "tab": "planets",
@@ -44,7 +44,7 @@
     {
       "tab": "orbits",
       "section": "apsides",
-      "why": "L'excentricité douce de Neptune de 0,0086 donne une orbite si circulaire que l'oscillation périhélie–aphélie est inférieure à 200 millions de km sur un demi-grand axe de 30 au — une variation de 1,4 %."
+      "why": "La faible excentricité de Neptune, 0,0086, donne une orbite si circulaire que l'écart périhélie–aphélie est inférieur à 200 millions de km sur un demi-grand axe de 30 au — une variation de 1,4 %."
     },
     {
       "tab": "planets",

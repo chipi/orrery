@@ -1,0 +1,1220 @@
+[
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "description",
+    "en": "The massive Russian multipurpose lab that arrived fourteen years behind schedule—science volume plus propellant transfer ambitions.",
+    "old": "Le laboratoire polyvalent russe massif arrivé avec quatorze ans de retard—ambitions de volume scientifique et de transfert de carburant.",
+    "new": "Le laboratoire polyvalent russe massif arrivé avec quatorze ans de retard — ambitions de volume scientifique et de transfert de propergol."
+  },
+  {
+    "rel": "earth-objects/smart-1.json",
+    "at": "description",
+    "en": "ESA's first lunar mission, 2003-2006. Used solar-electric (ion) propulsion to spiral out from a geostationary transfer orbit to lunar capture — a 14-month, fuel-efficient transit that pioneered low-thrust trajectories for ESA's later interplanetary missions. Deliberately impacted the lunar surface in 2006.",
+    "old": "Première mission lunaire de ESA, 2003-2006. Utilisé la propulsion solaire-électrique (ion) pour sortir d'une orbite de transfert géostationnaire vers la capture lunaire - un transit de 14 mois économe en carburant qui a été le pionnier des trajectoires à faible poussée pour les missions interplanétaires ultérieures de ESA. A délibérément impacté la surface lunaire en 2006.",
+    "new": "Première mission lunaire de l'ESA, 2003-2006. A utilisé la propulsion solaire-électrique (ionique) pour s'éloigner en spirale d'une orbite de transfert géostationnaire jusqu'à la capture lunaire — un trajet de 14 mois économe en carburant qui a ouvert la voie aux trajectoires à faible poussée des missions interplanétaires ultérieures de l'ESA. S'est volontairement écrasée sur la surface lunaire en 2006."
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "description",
+    "en": "Mitsubishi Heavy Industries' two-stage successor to the H-IIA, first flew successfully in 2024 (its 2023 debut failed). Configurable with 0, 2, or 4 solid boosters and either a 5.2m or 4m fairing. The LE-9 first-stage engine is the world's first expendable expander-bleed cycle hydrogen engine. Will launch JAXA's MMX Phobos sample-return mission in 2026.",
+    "old": "Successeur en deux étages du H-IIA de Mitsubishi Heavy Industries, premier vol réussi en 2024 (sa tentative initiale en 2023 a échoué). Configurable avec 0, 2 ou 4 accélérateurs solides et une coiffe de 5,2 m ou 4 m. Le moteur de premier étage LE-9 est le premier moteur à hydrogène à cycle expanseur-saignée consommable au monde. Lancera la mission MMX de la JAXA pour le retour d'échantillons de Phobos en 2026.",
+    "new": "Successeur en deux étages du H-IIA de Mitsubishi Heavy Industries, il a effectué son premier vol réussi en 2024 (son lancement inaugural de 2023 a échoué). Configurable avec 0, 2 ou 4 propulseurs d'appoint à poudre et une coiffe de 5,2 m ou 4 m. Le moteur LE-9 du premier étage est le premier moteur à hydrogène non réutilisable à cycle expandeur à prélèvement (expander-bleed) au monde. Lancera la mission MMX de la JAXA de retour d'échantillons de Phobos en 2026."
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "description",
+    "en": "Khrunichev-built three-stage hypergolic launcher (four with a Briz-M upper stage) in service since 1965 (M variant from 2001). Notable interplanetary missions: Mars 2 / 3 (1971), Luna 17 / Lunokhod 1 (1970), Luna 24 (1976), Vega (1984), Phobos 1 / 2 (1988), Mars 96 (1996, lost). Last commercial launch in 2023; being phased out in favour of Angara-A5.",
+    "old": "Lanceur hypergolique à trois étages construit par Khrunichev (quatre étages avec un étage supérieur Briz-M) en service depuis 1965 (variante M à partir de 2001). Missions interplanétaires notables : Mars 2 / 3 (1971), Luna 17 / Lunokhod 1 (1970), Luna 24 (1976), Vega (1984), Phobos 1 / 2 (1988), Mars 96 (1996, perdue). Dernier lancement commercial en 2023 ; en cours de retrait au profit du Angara-A5.",
+    "new": "Lanceur hypergolique à trois étages construit par Khrunichev (quatre avec un étage supérieur Briz-M), en service depuis 1965 (variante M à partir de 2001). Missions interplanétaires notables : Mars 2 / 3 (1971), Luna 17 / Lunokhod 1 (1970), Luna 24 (1976), Vega (1984), Phobos 1 / 2 (1988), Mars 96 (1996, perdue). Dernier lancement commercial en 2023 ; en cours de retrait au profit de l'Angara-A5."
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.5.note",
+    "en": "Brief X-band signal dropout (8 s). DSN reacquired. Cause: thruster plume occlusion. No data lost.",
+    "old": "Brève interruption du signal en bande X (8 s). DSN racheté. Cause : occlusion du panache du propulseur. Aucune donnée perdue.",
+    "new": "Brève perte du signal en bande X (8 s). Le DSN a réacquis le signal. Cause : occultation par le panache des propulseurs. Aucune donnée perdue."
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "description",
+    "en": "ESA's stellar cartographer at L2. Mapping 1.8 billion stars — measuring positions to 7 microarcseconds. Has measured distances to stars 30,000 light-years away with the precision of a human hair's width at 1,000 km distance. The most detailed map of the Milky Way ever made.",
+    "old": "Le cartographe stellaire de ESA en L2. Cartographie de 1,8 milliard d'étoiles - mesure des positions à 7 microsecondes d'arc. A mesuré des distances jusqu'à des étoiles situées à 30 000 années-lumière avec la précision de la largeur d'un cheveu humain à 1 000 km de distance. La carte la plus détaillée de la Voie lactée jamais réalisée.",
+    "new": "Le cartographe stellaire de l'ESA en L2. Cartographie de 1,8 milliard d'étoiles — mesure des positions à 7 microsecondes d'arc. A mesuré des distances jusqu'à des étoiles situées à 30 000 années-lumière avec la précision de la largeur d'un cheveu humain à 1 000 km de distance. La carte la plus détaillée de la Voie lactée jamais réalisée."
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.4.why",
+    "en": "The Moon is unusually large for its parent — the ratio (diameter ≈ 0.27 of Earth) is the highest in any planet–satellite pair.",
+    "old": "La Lune est exceptionnellement grande pour son astre-mère — le rapport (diamètre ≈ 0.27 de la Terre) est le plus élevé de toute paire planète–satellite.",
+    "new": "La Lune est exceptionnellement grande pour son astre-mère — le rapport (diamètre ≈ 0,27 de celui de la Terre) est le plus élevé de toute paire planète–satellite."
+  },
+  {
+    "rel": "iss-modules/kibo.json",
+    "at": "description",
+    "en": "Japan’s multidisciplinary complex—the only ISS segment with both pressurised lab and exposed “porch” for outdoor payloads.",
+    "old": "Le complexe multidisciplinaire du Japon : le seul segment ISS doté à la fois d'un laboratoire pressurisé et d'un « porche » exposé pour les charges utiles extérieures.",
+    "new": "Le complexe multidisciplinaire du Japon : le seul segment de l'ISS doté à la fois d'un laboratoire pressurisé et d'un « porche » exposé pour les charges utiles extérieures."
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "science_sections.0.why",
+    "en": "Europa is the middle member of the Io–Europa–Ganymede 4:2:1 Laplace resonance — its forced eccentricity drives the tidal flexing that keeps a subsurface ocean liquid.",
+    "old": "Europe est le membre central de la résonance de Laplace 4:2:1 Io–Europe–Ganymède — son excentricité forcée provoque les flexions de marée qui maintiennent liquide l'océan subsurface.",
+    "new": "Europe est le membre central de la résonance de Laplace 4:2:1 Io–Europe–Ganymède — son excentricité forcée provoque les flexions de marée qui maintiennent liquide l'océan sous sa surface."
+  },
+  {
+    "rel": "museums/cape-canaveral-space-force-museum.json",
+    "at": "items.titan-ii-glv",
+    "en": "First-stage section of the Titan II that launched Gemini V (1965)",
+    "old": "Section du premier étage de la Titan II qui a lancé Gemini V (1965)",
+    "new": "Section du premier étage du Titan II qui a lancé Gemini V (1965)"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "bio",
+    "en": "Identified as a separate body in 2001 via mutual-events observations. Menoetius (father of Patroclus in Homeric tradition) shares the L5 stable orbit with Patroclus 60° trailing Jupiter. The near-equal-mass binary geometry produces a barycenter that lies outside either body, making Patroclus-Menoetius the largest known close-binary in the Trojan population.",
+    "old": "Identifié comme corps distinct en 2001 via des observations d'événements mutuels. Ménétios (père de Patrocle dans la tradition homérique) partage l'orbite stable L5 avec Patrocle, à 60° en arrière de Jupiter. La géométrie du système binaire de masse quasi-égale produit un barycentre situé en dehors de chacun des deux corps, faisant du système Patrocle-Ménétios le plus grand système binaire serré connu de la population troyen.",
+    "new": "Identifié comme corps distinct en 2001 grâce à des observations d'événements mutuels. Ménétios (père de Patrocle dans la tradition homérique) partage l'orbite stable L5 avec Patrocle, à 60° en arrière de Jupiter. La géométrie du système binaire, aux masses quasi égales, produit un barycentre situé à l'extérieur de chacun des deux corps, ce qui fait du système Patrocle-Ménétios le plus grand binaire serré connu de la population des Troyens."
+  },
+  {
+    "rel": "earth-objects/clementine.json",
+    "at": "description",
+    "en": "Joint NASA/DoD Strategic Defense Initiative mission, 1994. Spent ten weeks mapping the Moon at 11 spectral bands — the first systematic global multispectral map. Bistatic radar measurements at the south pole produced the first hints of polar water ice, later confirmed by Lunar Prospector and Chandrayaan-1.",
+    "old": "Mission conjointe NASA/DoD Strategic Defense Initiative, 1994. A passé dix semaines à cartographier la Lune à 11 bandes spectrales — la première carte multispectrale globale systématique. Des mesures de radar bistatique au pôle sud ont produit les premiers indices de glace polaire, confirmés ultérieurement par Lunar Prospector et Chandrayaan-1.",
+    "new": "Mission conjointe NASA/DoD pour l'Initiative de défense stratégique, 1994. A passé dix semaines à cartographier la Lune dans 11 bandes spectrales — la première carte multispectrale globale systématique. Des mesures de radar bistatique au pôle sud ont produit les premiers indices de glace d'eau polaire, confirmés plus tard par Lunar Prospector et Chandrayaan-1."
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "bio",
+    "en": "Rotates retrograde — backwards and so slowly that a Venusian day is longer than its year. The 177.4° axial tilt is why: Venus is essentially upside down.",
+    "old": "Tourne en rotation rétrograde — à l'envers et si lentement qu'un jour vénusien est plus long que son année. L'inclinaison axiale de 177,4° en est la cause : Vénus est essentiellement sens dessus dessous.",
+    "new": "Sa rotation est rétrograde — à l'envers et si lente qu'un jour vénusien est plus long que son année. L'inclinaison axiale de 177,4° en est la cause : Vénus est pratiquement sens dessus dessous."
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "description",
+    "en": "ESA's X-ray multi-mirror mission. 3 telescopes in one spacecraft. Like Chandra, uses a highly elliptical orbit to escape Earth's radiation. Over 1,000 peer-reviewed papers published from its data. Launched the same year as Chandra — two observatories, two continents, the same invisible sky.",
+    "old": "Mission multi-miroirs à rayons X de ESA. 3 télescopes dans un vaisseau spatial. Comme Chandra, utilise une orbite hautement elliptique pour échapper au rayonnement terrestre. Plus de 1 000 articles évalués par des pairs ont été publiés à partir de ses données. Lancé la même année que Chandra : deux observatoires, deux continents, le même ciel invisible.",
+    "new": "Mission à rayons X multi-miroirs de l'ESA. 3 télescopes dans un seul vaisseau spatial. Comme Chandra, utilise une orbite très elliptique pour échapper au rayonnement terrestre. Plus de 1 000 articles évalués par des pairs ont été publiés à partir de ses données. Lancé la même année que Chandra : deux observatoires, deux continents, le même ciel invisible."
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "interstellar_since_label",
+    "en": "Last contact 2003 — coasting toward Taurus, will pass near Aldebaran in ~2 million years",
+    "old": "Dernier contact en 2003 — en phase de coast vers le Taureau, passera près d'Aldébaran dans ~2 millions d'années",
+    "new": "Dernier contact en 2003 — poursuit sa dérive vers le Taureau, passera près d'Aldébaran dans ~2 millions d'années"
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "description",
+    "en": "Neptune's largest moon and one of the most geologically active worlds in the solar system. Triton orbits Neptune backwards (retrograde) and at an extreme tilt — diagnostic of a captured Kuiper Belt object, making it likely a sibling of Pluto rather than a native Neptunian moon. Voyager 2 detected active nitrogen geysers venting dark organic dust 8 km into a tenuous nitrogen atmosphere; the southern hemisphere features 'cantaloupe terrain' — a network of dimples and ridges seen nowhere else in the solar system. Triton's retrograde orbit is decaying tidally; in roughly 3.6 Gyr it will either be torn into a Saturn-like ring or crash into Neptune.",
+    "old": "La plus grande lune de Neptune et l'un des mondes les plus actifs géologiquement du système solaire. Triton orbite Neptune en arrière (rétrograde) et avec une inclinaison extrême — caractéristiques d'un objet capturé de la ceinture de Kuiper, ce qui en fait probablement un frère de Pluton plutôt qu'une lune neptunienne native. Voyager 2 a détecté des geysers d'azote actifs éjectant de la poussière organique sombre à 8 km dans une atmosphère d'azote ténue ; l'hémisphère sud présente un « terrain cantaloup » — un réseau d'alvéoles et de crêtes que l'on ne voit nulle part ailleurs dans le système solaire. L'orbite rétrograde de Triton se dégrade par effet de marée ; dans environ 3,6 Ga, elle sera soit déchirée en un anneau semblable à celui de Saturne, soit s'écrasera sur Neptune.",
+    "new": "Plus grande lune de Neptune et l'un des mondes géologiquement les plus actifs du système solaire. Triton orbite Neptune à rebours (rétrograde) et avec une inclinaison extrême — signature d'un objet de la ceinture de Kuiper capturé, ce qui en fait probablement un frère de Pluton plutôt qu'une lune native de Neptune. Voyager 2 a détecté des geysers d'azote actifs projetant de la poussière organique sombre à 8 km d'altitude dans une atmosphère d'azote ténue ; l'hémisphère sud présente un « terrain cantaloup » — un réseau de cuvettes et de crêtes que l'on ne voit nulle part ailleurs dans le système solaire. L'orbite rétrograde de Triton se dégrade par effet de marée ; dans environ 3,6 Ga, la lune sera soit déchirée en un anneau semblable à celui de Saturne, soit précipitée sur Neptune."
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "description",
+    "en": "The pressurised cargo freighter, launched on Long March 7 from Wenchang—propellant, food, water, and experiment hardware delivered roughly every six months.",
+    "old": "Le cargo pressurisé, lancé par Long March 7 depuis Wenchang, achemine du carburant, de la nourriture, de l'eau et du matériel expérimental environ tous les six mois.",
+    "new": "Le cargo pressurisé, lancé par Long March 7 depuis Wenchang, achemine du propergol, de la nourriture, de l'eau et du matériel expérimental environ tous les six mois."
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "first",
+    "en": "China's lunar-mission workhorse — flew every Chang'e mission from 1 through 4",
+    "old": "China's lunar-mission workhorse — flew every Chang'e mission de 1 through 4",
+    "new": "Le cheval de bataille lunaire de la Chine — a lancé toutes les missions Chang'e de 1 à 4"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "first",
+    "en": "First fully reusable orbital launch system, designed for Mars settlement",
+    "old": "First fully reusable orbital lancement system, designed for Mars settlement",
+    "new": "Premier système de lancement orbital entièrement réutilisable, conçu pour l'établissement humain sur Mars"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "description",
+    "en": "Two-stage launcher in two configurations: Ariane 62 with two solid boosters and Ariane 64 with four. The Vinci-powered cryogenic upper stage is restartable, enabling complex multi-orbit deployments and direct interplanetary injection. Inaugural flight July 2024.",
+    "old": "Lanceur à deux étages disponible en deux configurations : Ariane 62 avec deux accélérateurs solides et Ariane 64 avec quatre. L'étage supérieur cryogénique propulsé par Vinci est redémarrable, permettant des déploiements complexes en multi-orbite et l'injection directe interplanétaire. Vol inaugural juillet 2024.",
+    "new": "Lanceur à deux étages en deux configurations : Ariane 62 avec deux propulseurs d'appoint à poudre et Ariane 64 avec quatre. L'étage supérieur cryogénique propulsé par Vinci est rallumable, ce qui permet des déploiements complexes sur plusieurs orbites et l'injection interplanétaire directe. Vol inaugural en juillet 2024."
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "description",
+    "en": "Umbriel is the dark twin in the Uranian system — about the same size as Ariel but reflecting less than half the sunlight, with an ancient cratered surface that shows little evidence of resurfacing since formation. The standout feature is Wunda, a 131 km crater ringed with bright frost-like material around its rim, sitting near the moon's equator. The cause of Umbriel's overall dark colour is unknown; one hypothesis ties it to dust from Uranus's irregular outer moons sweeping across the inner system.",
+    "old": "Umbriel est le jumeau sombre du système uranien — à peu près de la même taille qu'Ariel mais réfléchissant moins de la moitié de la lumière solaire, avec une surface cratérisée ancienne qui montre peu de preuves de rénovation depuis sa formation. L'élément marquant est Wunda, un cratère de 131 km cerclé de matériau brillant semblable à du givre autour de son rebord, situé près de l'équateur de la lune. La cause de la couleur sombre globale d'Umbriel est inconnue ; une hypothèse l'associe à la poussière provenant des lunes extérieures irrégulières d'Uranus balayant le système interne.",
+    "new": "Umbriel est le jumeau sombre du système uranien — de taille à peu près égale à Ariel mais réfléchissant moins de la moitié de la lumière solaire, avec une surface ancienne et cratérisée qui montre peu de signes de remodelage depuis sa formation. Son trait le plus marquant est Wunda, un cratère de 131 km dont le rebord est cerclé d'un matériau brillant semblable à du givre, situé près de l'équateur de la lune. La cause de la couleur globalement sombre d'Umbriel est inconnue ; une hypothèse l'associe à la poussière des lunes extérieures irrégulières d'Uranus qui balaierait le système interne."
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "function_detail",
+    "en": "Commercial Resupply Services; pressurised cargo only; UltraFlex circular solar arrays; disposed via destructive reentry over the South Pacific.",
+    "old": "Commercial Resupply Services ; cargo pressurisé uniquement ; panneaux solaires circulaires UltraFlex ; éliminé par rentrée destructive au-dessus du Pacifique Sud.",
+    "new": "Services commerciaux de ravitaillement (CRS) ; cargo pressurisé uniquement ; panneaux solaires circulaires UltraFlex ; éliminé par entrée atmosphérique destructive au-dessus du Pacifique Sud."
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "scale_fact",
+    "en": "The Moon is 384,400 km away — almost 1,000 times farther than the ISS. On this logarithmic map it looks close. In reality, no human has been there since 1972.",
+    "old": "La Lune est à 384 400 km, soit près de 1 000 fois plus loin que le ISS. Sur cette carte logarithmique, cela semble proche. En réalité, aucun humain n’y est allé depuis 1972.",
+    "new": "La Lune est à 384 400 km, soit près de 1 000 fois plus loin que l'ISS. Sur cette carte logarithmique, elle semble proche. En réalité, aucun humain n'y est allé depuis 1972."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.0",
+    "en": "Viking 2 orbiter — USA, 1977 (highest-resolution pre-2000 imagery)",
+    "old": "Viking 2 orbiter — États-Unis, 1977 (images haute résolution les plus détaillées de l'époque pré-2000)",
+    "new": "Orbiteur Viking 2 — États-Unis, 1977 (images à la plus haute résolution d'avant 2000)"
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "scale_fact",
+    "en": "Polar orbit at 100 km altitude. Confirmed Clementine's polar-ice hypothesis; established neutron spectroscopy as the primary tool for lunar volatiles.",
+    "old": "Orbite polaire à 100 km d'altitude. Confirmation de l'hypothèse des glaces polaires de Clementine ; a établi la spectroscopie neutronique comme outil principal pour les substances volatiles lunaires.",
+    "new": "Orbite polaire à 100 km d'altitude. A confirmé l'hypothèse de Clementine sur la glace polaire ; a établi la spectroscopie neutronique comme principal outil d'étude des volatils lunaires."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "fact",
+    "en": "Voyager 2 flew past Neptune in 1989 after a 12-year journey. It remains the only spacecraft ever to visit.",
+    "old": "Voyager 2 a survolé Neptune en 1989 après un voyage de 12 ans. Il reste le seul vaisseau spatial jamais visité.",
+    "new": "Voyager 2 a survolé Neptune en 1989 après un voyage de 12 ans. C'est resté la seule sonde à l'avoir jamais visitée."
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "description",
+    "en": "Orbiting the Moon since 2009. Mapping the surface at 50 cm resolution — good enough to see the Apollo descent stages still sitting on the surface. Found water ice at the poles. Identified 200+ potential Artemis landing sites. A scout for the return.",
+    "old": "En orbite autour de la Lune depuis 2009. Cartographie de la surface à une résolution de 50 cm – assez bonne pour voir les étages de descente d'Apollo toujours assis à la surface. J'ai trouvé de la glace d'eau aux pôles. Identification de plus de 200 sites potentiels d'atterrissage d'Artemis. Un éclaireur pour le retour.",
+    "new": "En orbite autour de la Lune depuis 2009. Cartographie de la surface à une résolution de 50 cm — suffisante pour voir les étages de descente d'Apollo toujours posés à la surface. A trouvé de la glace d'eau aux pôles. A identifié plus de 200 sites d'atterrissage potentiels pour Artemis. Un éclaireur pour le retour."
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "description",
+    "en": "China's three-seat crew capsule—fast rendezvous (3.5 hours since Shenzhou 21) from Jiuquan and a parachute landing on the Inner Mongolian grassland.",
+    "old": "Capsule d'équipage chinoise à trois places — rendez-vous rapide (3,5 heures après le Shenzhou 21) au départ de Jiuquan et amarrage sur la steppe de Mongolie-Intérieure.",
+    "new": "Capsule d'équipage chinoise à trois places — rendez-vous rapide (3,5 heures depuis Shenzhou 21) au départ de Jiuquan et atterrissage en parachute sur la steppe de Mongolie-Intérieure."
+  },
+  {
+    "rel": "earth-objects/iridium-next.json",
+    "at": "description",
+    "en": "66 operational satellites (plus 9 on-orbit spares) at 780 km in 6 polar planes — second-generation replacement of the original 1998 Iridium fleet. Voice, data, machine-to-machine. Backbone of GMDSS (Global Maritime Distress and Safety System); your sat-phone in a remote ocean runs through this.",
+    "old": "66 satellites opérationnels (plus 9 de secours en orbite) à 780 km répartis dans 6 plans polaires — remplaçants de deuxième génération de la constellation Iridium originale de 1998. Voix, données, machine-à-machine. Épine dorsale du GMDSS (Système mondial de détresse et de sécurité maritimes) ; votre téléphone par satellite en océan lointain fonctionne par ce réseau.",
+    "new": "66 satellites opérationnels (plus 9 de rechange en orbite) à 780 km répartis sur 6 plans polaires — remplaçants de deuxième génération de la flotte Iridium d'origine de 1998. Voix, données, machine à machine. Épine dorsale du GMDSS (Système mondial de détresse et de sécurité en mer) ; votre téléphone satellite au milieu de l'océan passe par ce réseau."
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "en": "0.94 AU · en route to Earth #2 flyby 2026-09-29 (cruise leg 2 of 5)",
+    "old": "0,94 au · en route vers le survol terrestre n°2 le 2026-09-29 (jambe de croisière 2 sur 5)",
+    "new": "0,94 au · en route vers le survol de la Terre n°2 le 2026-09-29 (étape de croisière 2 sur 5)"
+  },
+  {
+    "rel": "iss-modules/destiny.json",
+    "at": "function_detail",
+    "en": "Microgravity research racks, Earth-facing science windows infrastructure, and NASA’s main indoor lab volume.",
+    "old": "Des supports de recherche en microgravité, une infrastructure de fenêtres scientifiques face à la Terre et le principal volume de laboratoire intérieur de NASA.",
+    "new": "Baies de recherche en microgravité, infrastructure de fenêtres scientifiques tournées vers la Terre et principal volume de laboratoire intérieur de la NASA."
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "bio",
+    "en": "160-m moonlet of 65803 Didymos, discovered 2003. The DART surface turned out to be 'rubble-pile fluid' — the spacecraft sank ~50 cm into the surface during the half-second of contact, and the momentum-transfer enhancement factor β ≈ 3.6 indicated significant carry from ejected surface material. The CubeSat LICIACube imaged the plume in real time; HST and JWST observed the ejecta tail for weeks.",
+    "old": "Petit satellite de 160 m de 65803 Didymos, découvert en 2003. La surface de DART s'est avérée être un « fluide en tas désorganisé » — l'engin spatial s'est enfoncé d'environ 50 cm dans la surface pendant la demi-seconde de contact, et le facteur d'amélioration du transfert de quantité de mouvement β ≈ 3,6 indiquait un apport significatif du matériau de surface éjecté. Le CubeSat LICIACube a imag la gerbe en temps réel ; HST et JWST ont observé la queue d'éjecta pendant des semaines.",
+    "new": "Petite lune de 160 m de 65803 Didymos, découverte en 2003. La surface visée par DART s'est révélée être un « fluide de tas de débris » — l'engin spatial s'est enfoncé d'environ 50 cm dans la surface pendant la demi-seconde du contact, et le facteur d'amplification du transfert de quantité de mouvement β ≈ 3,6 indiquait un apport important du matériau de surface éjecté. Le CubeSat LICIACube a imagé le panache en temps réel ; HST et JWST ont observé la queue d'éjectas pendant des semaines."
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "bio",
+    "en": "Discovered 1997, named for Leucus (a comrade of Odysseus, killed at Troy). D-type spectral classification — the darkest and reddest of the Trojan family. Lucy's 2028-04-18 encounter will profile shape, surface composition, and the rotation-state evolution behind the slow spin.",
+    "old": "Découvert en 1997, nommé pour Leucus (un compagnon d'Odysseus, tué à Troie). Classification spectrale de type D — le plus sombre et le plus rouge de la famille Troyenne. L'approche de Lucy le 2028-04-18 permettra de profiler la forme, la composition de surface et l'évolution de l'état de rotation derrière la rotation lente.",
+    "new": "Découvert en 1997, nommé d'après Leucus (un compagnon d'Ulysse, tué à Troie). Classification spectrale de type D — le plus sombre et le plus rouge de la famille des Troyens. La rencontre de Lucy le 2028-04-18 permettra de déterminer la forme, la composition de surface et l'évolution de l'état de rotation à l'origine de la rotation lente."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.3",
+    "en": "ru.wikipedia — article imagery for Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран",
+    "old": "ru.wikipedia — imagerie d'article pour Vostok-1, Voskhod-2, Soyouz-1, Soyouz-11, Mir, Bourane",
+    "new": "ru.wikipedia — images d'articles pour Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.wall",
+    "en": "Both agencies do produce mission logos and emblems — Hayabusa2, SLIM, Chandrayaan-3 and the rest all have them — but they are held under the agencies' own copyright and are not released under a free licence. Wikimedia Commons carries none of them; the only free-licensed results for these searches are unrelated NASA photographs.",
+    "old": "Les deux agences produisent effectivement des logos et emblèmes de mission — Hayabusa2, SLIM, Chandrayaan-3 et tous les autres en ont — mais ils sont détenus sous les droits d'auteur propres aux agences et ne sont pas publiés sous licence libre. Wikimedia Commons n'en contient aucun ; les seuls résultats sous licence libre pour ces recherches sont des photographies de la NASA sans rapport.",
+    "new": "Les deux agences produisent bien des logos et des emblèmes de mission — Hayabusa2, SLIM, Chandrayaan-3 et tous les autres en ont — mais ils relèvent du droit d'auteur des agences elles-mêmes et ne sont pas publiés sous licence libre. Wikimedia Commons n'en contient aucun ; les seuls résultats sous licence libre pour ces recherches sont des photographies de la NASA sans rapport."
+  },
+  {
+    "rel": "earth-objects/o3b.json",
+    "at": "scale_fact",
+    "en": "MEO orbits are an underused middle ground — fast enough for low-latency calls, fewer satellites needed than LEO. O3b is the only operator using it commercially.",
+    "old": "Les orbites MEO constituent un terrain intermédiaire sous-exploité — suffisamment rapides pour des appels à faible latence, nécessitant moins de satellites que le LEO. O3b est le seul opérateur à l'utiliser commercialement.",
+    "new": "Les orbites MEO constituent un compromis sous-exploité — assez rapides pour des appels à faible latence, avec moins de satellites nécessaires qu'en LEO. O3b est le seul opérateur à les utiliser commercialement."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "description",
+    "en": "Earth's only natural satellite and the only world other than Earth that humans have walked on. Its 1:1 tidal lock keeps the same hemisphere facing Earth at all times — the near side dominated by lava-flooded mare basins, the far side an ancient highland-cratered terrain crowned by the South Pole–Aitken basin, the largest impact structure in the solar system (~2,500 km wide, ~13 km deep). The Moon's slow recession from Earth (~3.8 cm/year) is gradually lengthening Earth's day; in the distant past it appeared nearly three times its current angular size in the sky.",
+    "old": "Le seul satellite naturel de la Terre et le seul monde autre que la Terre sur lequel des humains ont marché. Son verrouillage de marée 1:1 maintient le même hémisphère face à la Terre en permanence — le côté proche dominé par des bassins de mares inondés de lave, le côté lointain un ancien terrain de highlands cratérisés couronné par le bassin du Pôle Sud–Aitken, la plus grande structure d'impact du système solaire (~2 500 km de large, ~13 km de profondeur). La lente récession de la Lune par rapport à la Terre (~3,8 cm/an) allonge progressivement le jour terrestre ; dans un passé lointain elle apparaissait presque trois fois sa taille angulaire actuelle dans le ciel.",
+    "new": "Le seul satellite naturel de la Terre et le seul monde autre que la Terre où des humains ont marché. Son verrouillage de marée 1:1 maintient en permanence le même hémisphère face à la Terre — la face visible dominée par des bassins de mers inondés de lave, la face cachée un ancien terrain de hautes terres cratérisées couronné par le bassin du Pôle Sud–Aitken, la plus grande structure d'impact du système solaire (~2 500 km de large, ~13 km de profondeur). L'éloignement progressif de la Lune par rapport à la Terre (~3,8 cm/an) allonge peu à peu le jour terrestre ; dans un passé lointain, elle apparaissait presque trois fois plus grande qu'aujourd'hui dans le ciel."
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.0.why",
+    "en": "Ceres holds ~25% of the main belt's total mass in a single body — and is the only main-belt object classified as a dwarf planet.",
+    "old": "Cérès concentre ~25% de la masse totale de la ceinture principale dans un seul corps — et est le seul objet de la ceinture principale classé comme planète naine.",
+    "new": "Cérès concentre ~25 % de la masse totale de la ceinture principale dans un seul corps — et est le seul objet de la ceinture principale classé comme planète naine."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.0.why",
+    "en": "At 30.07 AU mean distance, Neptune is so far that a single one-way light signal takes 4 hours each way. Voyager 2 needed 12 years to reach it.",
+    "old": "À une distance moyenne de 30,07 au, Neptune est si lointaine qu'un signal lumineux aller-retour prend 4 heures. Voyager 2 a nécessité 12 ans pour l'atteindre.",
+    "new": "À une distance moyenne de 30,07 au, Neptune est si lointaine qu'un signal lumineux met 4 heures pour faire le trajet dans un seul sens. Voyager 2 a nécessité 12 ans pour l'atteindre."
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "function_detail",
+    "en": "Radial docking hub expanding Soyuz/Progress parking independent of older axial ports.",
+    "old": "Hub d'amarrage radial élargissant le stationnement Soyuz/Progress indépendamment des anciens ports axiaux.",
+    "new": "Hub d'amarrage radial qui élargit la capacité de stationnement des Soyouz/Progress, indépendamment des anciens ports axiaux."
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "description",
+    "en": "Mitsubishi Heavy Industries' two-stage workhorse, in service from 2001 through retirement in 2025. Cryogenic core stage with 2-4 solid boosters. Notable interplanetary missions: Hayabusa (2003) and Hayabusa2 (2014) to asteroids; Akatsuki (2010) to Venus; the UAE's Hope Probe (2020) to Mars; SLIM (2023) to the Moon. Replaced by the H3.",
+    "old": "Le fidèle lanceur bivalent de Mitsubishi Heavy Industries, en service de 2001 à son retrait en 2025. Étage central cryogénique avec 2 à 4 boosters solides. Missions interplanétaires notables : Hayabusa (2003) et Hayabusa2 (2014) vers des astéroïdes ; Akatsuki (2010) vers Vénus ; Hope Probe (2020) des Émirats arabes unis vers Mars ; SLIM (2023) vers la Lune. Remplacé par le H3.",
+    "new": "Le fidèle lanceur à deux étages de Mitsubishi Heavy Industries, en service de 2001 à son retrait en 2025. Étage central cryogénique avec 2 à 4 propulseurs d'appoint à poudre. Missions interplanétaires notables : Hayabusa (2003) et Hayabusa2 (2014) vers des astéroïdes ; Akatsuki (2010) vers Vénus ; Hope Probe (2020) des Émirats arabes unis vers Mars ; SLIM (2023) vers la Lune. Remplacé par le H3."
+  },
+  {
+    "rel": "iss-modules/cupola.json",
+    "at": "description",
+    "en": "Seven windows aimed Earthward—the station’s collective eyes for robotics ops and the astronaut postcard shot.",
+    "old": "Sept fenêtres pointaient vers la Terre : les yeux collectifs de la station pour les opérations robotiques et la carte postale de l'astronaute.",
+    "new": "Sept fenêtres tournées vers la Terre — les yeux collectifs de la station pour les opérations robotiques et le cliché-carte postale de l'astronaute."
+  },
+  {
+    "rel": "iss-modules/harmony.json",
+    "at": "description",
+    "en": "The forward utility node that bridged Destiny to European and Japanese labs—think crowded corridor turned international interchange.",
+    "old": "Le nœud de services publics avancé qui reliait Destiny aux laboratoires européens et japonais – pensez à un couloir bondé devenu un échange international.",
+    "new": "Le nœud utilitaire avant qui reliait Destiny aux laboratoires européen et japonais — un couloir encombré devenu échangeur international."
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "first",
+    "en": "Soviet-era heavy launcher — flew every Soviet Mars + Luna mission and Russia's ISS modules",
+    "old": "Lanceur lourd de l'époque soviétique — a assuré tous les vols soviétiques vers Mars et la Lune, ainsi que les modules russes de la ISS",
+    "new": "Lanceur lourd de l'ère soviétique — a assuré tous les vols soviétiques vers Mars et la Lune, ainsi que les modules russes de l'ISS"
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "description",
+    "en": "Callisto sits outside the Laplace resonance that drives the tidal heating in Io, Europa, and Ganymede — so its interior never melted enough to differentiate fully or resurface its crust. The result is the most pristine record of impact bombardment in the inner Galilean system, including the spectacular Valhalla basin's ~10-ring system spanning roughly a quarter of the moon's circumference. Despite the lack of tidal heating, Galileo's magnetometer detected an induced magnetic field consistent with a deep salty ocean ~100 km below the surface. Its low radiation environment (compared to Europa or Ganymede) and long-lived water make it a likely staging point for future crewed missions to the Jupiter system.",
+    "old": "Callisto se situe en dehors de la résonance de Laplace qui engendre le chauffage de marée dans Io, Europe et Ganymède — son intérieur n'a donc jamais fondu suffisamment pour se différencier complètement ou pour renouveler sa croûte. Il en résulte le plus pristine des archives d'une bombardement d'impact du système galiléen interne, incluant le bassin spectaculaire de Valhalla avec son système d'~10 anneaux s'étendant sur environ un quart de la circonférence de la lune. Malgré l'absence de chauffage de marée, le magnétomètre de Galileo a détecté un champ magnétique induit compatible avec un océan salé profond situé ~100 km sous la surface. Son environnement à faible radiation (comparé à Europe ou Ganymède) et sa persistante présence d'eau en font un point de départ probable pour les futures missions habitées vers le système jovien.",
+    "new": "Callisto se situe en dehors de la résonance de Laplace qui entraîne le chauffage de marée d'Io, d'Europe et de Ganymède — son intérieur n'a donc jamais assez fondu pour se différencier complètement ni pour renouveler sa croûte. Il en résulte le témoignage le mieux préservé du bombardement d'impacts dans le système galiléen interne, y compris le spectaculaire bassin de Valhalla, dont le système d'environ 10 anneaux couvre à peu près un quart de la circonférence de la lune. Malgré l'absence de chauffage de marée, le magnétomètre de Galileo a détecté un champ magnétique induit compatible avec un océan salé profond, à ~100 km sous la surface. Son faible environnement de rayonnement (comparé à Europe ou Ganymède) et son eau de longue durée en font un point de départ probable pour de futures missions habitées vers le système jovien."
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "comparison",
+    "en": "Apogee can reach 1/8th of the way to the Moon; perigee can graze the top of LEO. The orbiter sprints near Earth and crawls at the top.",
+    "old": "L'apogée peut atteindre 1/8ème du chemin vers la Lune ; le périgée peut frôler le sommet de LEO. Le satellite sprinte près de la Terre et rampe au sommet.",
+    "new": "L'apogée peut atteindre 1/8 du chemin vers la Lune ; le périgée peut frôler le sommet de l'orbite basse. Le satellite sprinte près de la Terre et rampe au sommet."
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "description",
+    "en": "Northrop Grumman's enhanced cargo freighter—berthed (not docked) by Canadarm2, named after a fallen astronaut on each flight.",
+    "old": "Le cargo amélioré de Northrop Grumman — amarré (pas docké) par le Canadarm2, baptisé du nom d'un astronaute disparu à chaque vol.",
+    "new": "Cargo amélioré de Northrop Grumman — amarré (et non arrimé) par Canadarm2, baptisé à chaque vol du nom d'un astronaute disparu."
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "firsts.0.label",
+    "en": "Molniya 1-01 — first highly elliptical comsat (USSR)",
+    "old": "Molniya 1-01 — premier satellite de communication en orbite hautement elliptique (USSR)",
+    "new": "Molniya 1-01 — premier satellite de communication en orbite fortement elliptique (URSS)"
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "function_detail",
+    "en": "Commercial Crew rotation flights to the US Orbital Segment; SuperDraco abort system; trunk-mounted solar arrays; partially reusable capsule.",
+    "old": "Vols de rotation Commercial Crew vers le segment orbital américain ; système d'éjection SuperDraco ; panneaux solaires sur le tronc ; capsule partiellement réutilisable.",
+    "new": "Vols de rotation Commercial Crew vers le segment orbital américain ; système d'abandon de lancement SuperDraco ; panneaux solaires montés sur le tronc ; capsule partiellement réutilisable."
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "first",
+    "en": "First Chinese rocket capable of delivering a Mars mission",
+    "old": "Première fusée chinoise capable de délivrer une mission vers Mars",
+    "new": "Première fusée chinoise capable d'envoyer une mission vers Mars"
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "story",
+    "en": "The Lagrange point about 61,000 km behind the Moon as seen from Earth — the gravitational saddle where Earth, Moon, and centrifugal forces balance. The Moon always sits between the spacecraft and Earth, so direct comms are impossible — but a satellite parked here in a halo orbit AROUND L2 has line-of-sight to BOTH the lunar farside AND Earth. That's how China landed Chang'e 4 on the farside in 2019: the Queqiao relay satellite, parked in a halo around Earth-Moon L2, bridges every command and image.",
+    "old": "Le point de Lagrange situé à environ 61 000 km derrière la Lune vue de la Terre — le col gravitationnel où les forces de la Terre, de la Lune et centrifuge s'équilibrent. La Lune se situe toujours entre le vaisseau spatial et la Terre, ce qui rend les communications directes impossibles — mais un satellite stationné ici dans une orbite halo autour de L2 a une ligne de visée vers BOTH the lunar farside AND Terre. C'est ainsi que la Chine a fait atterrir Chang'e 4 sur le côté éloigné en 2019 : le satellite relais Queqiao, stationné dans une orbite halo autour du point L2 Terre-Lune, assure toutes les communications et le transfert d'images.",
+    "new": "Le point de Lagrange situé à environ 61 000 km derrière la Lune vue de la Terre — le col gravitationnel où les forces de la Terre, de la Lune et centrifuge s'équilibrent. La Lune se trouve toujours entre le vaisseau spatial et la Terre, ce qui rend les communications directes impossibles — mais un satellite stationné ici sur une orbite halo AUTOUR de L2 a une ligne de visée à la fois vers la face cachée de la Lune ET vers la Terre. C'est ainsi que la Chine a fait atterrir Chang'e 4 sur la face cachée en 2019 : le satellite relais Queqiao, stationné sur une orbite halo autour du point L2 Terre-Lune, assure la transmission de chaque commande et de chaque image."
+  },
+  {
+    "rel": "iss-modules/leonardo.json",
+    "at": "function_detail",
+    "en": "Pressurised stowage for supplies and hardware bags so labs stay clear for science racks.",
+    "old": "Rangement sous pression pour les sacs de fournitures et de matériel afin que les laboratoires restent à l'écart des supports scientifiques.",
+    "new": "Rangement sous pression pour les fournitures et les sacs de matériel, afin que les laboratoires restent libres pour les baies scientifiques."
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "description",
+    "en": "Three-stage hypergolic launcher with four liquid strap-ons, in service since 1996. Standard configuration for GTO commercial launches and most lunar missions: Chang'e 1 (2007), Chang'e 2 (2010), Chang'e 3 (2013) and Chang'e 4 (2018). Retired from lunar duty when the larger Long March 5 took over for sample-return missions (Chang'e 5/6) and Tianwen-1.",
+    "old": "Lanceur hypergolique à trois étages avec quatre accélérateurs liquides, en service depuis 1996. Configuration standard pour les lancements commerciaux vers l'orbite de transfert géostationnaire et la plupart des missions lunaires : Chang'e 1 (2007), Chang'e 2 (2010), Chang'e 3 (2013) et Chang'e 4 (2018). Retiré des missions lunaires lorsque la plus grande Long March 5 a pris le relais pour les missions de retour d'échantillons (Chang'e 5/6) et Tianwen-1.",
+    "new": "Lanceur hypergolique à trois étages avec quatre propulseurs d'appoint à propergols liquides, en service depuis 1996. Configuration standard pour les lancements commerciaux vers l'orbite de transfert géostationnaire et la plupart des missions lunaires : Chang'e 1 (2007), Chang'e 2 (2010), Chang'e 3 (2013) et Chang'e 4 (2018). Retiré du service lunaire lorsque le plus grand Long March 5 a pris le relais pour les missions de retour d'échantillons (Chang'e 5/6) et Tianwen-1."
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.0.why",
+    "en": "Charon and Pluto orbit a barycentre that sits OUTSIDE Pluto — making it the only known true binary system in the solar system rather than a planet-with-moon.",
+    "old": "Charon et Pluton orbite autour d'un barycentre situé EN DEHORS de Pluton — ce qui en fait le seul système binaire vrai connu du système solaire plutôt qu'une planète avec un satellite.",
+    "new": "Charon et Pluton orbitent autour d'un barycentre situé EN DEHORS de Pluton — ce qui en fait le seul véritable système binaire connu du système solaire, plutôt qu'une planète accompagnée d'une lune."
+  },
+  {
+    "rel": "iss-modules/tranquility.json",
+    "at": "function_detail",
+    "en": "Major ECLSS hardware, exercise hardware volume, and routing between U.S. utilities and the Cupola.",
+    "old": "Équipement majeur du système ECLSS, volume d'équipement d'exercice et routage entre les utilités américaines et la Cupola.",
+    "new": "Équipement majeur du système ECLSS, volume d'équipement d'exercice et acheminement des servitudes américaines vers la Cupola."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.1",
+    "en": "Wikimedia Commons — Cyrillic search (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+    "old": "Wikimedia Commons — recherche en cyrillique (Soyouz / Saliout / Mir / Voskhod / Bourane emblème écusson)",
+    "new": "Wikimedia Commons — recherche en cyrillique (Союз / Салют / Мир / Восход / Буран эмблема нашивка)"
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.endeavour",
+    "en": "Space Shuttle Endeavour, standing upright in launch position with a real external tank and two solid rocket boosters",
+    "old": "Space Shuttle Endeavour, dressé à la verticale en position de lancement avec un vrai réservoir externe et deux propulseurs à poudre",
+    "new": "Space Shuttle Endeavour, dressé à la verticale en position de lancement avec un vrai réservoir externe et deux propulseurs d'appoint à poudre"
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "function_detail",
+    "en": "Laboratory facilities, crew quarters additions, and propellant transfer gear anchoring the aft Russian complex.",
+    "old": "Installations de laboratoire, ajouts de quartiers d'équipage et équipement de transfert de propulseur ancrant le complexe russe arrière.",
+    "new": "Installations de laboratoire, ajouts de quartiers d'équipage et équipement de transfert de propergol ancrant le complexe russe arrière."
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.falcon-heavy",
+    "en": "Booster B1023, flown as a Falcon 9 first stage and as a side booster on the first Falcon Heavy (2018)",
+    "old": "Propulseur B1023, ayant volé comme premier étage d'une Falcon 9 et comme propulseur latéral du premier Falcon Heavy (2018)",
+    "new": "Propulseur d'appoint B1023, utilisé comme premier étage d'une Falcon 9 puis comme propulseur d'appoint latéral du premier Falcon Heavy (2018)"
+  },
+  {
+    "rel": "earth-objects/chandrayaan1.json",
+    "at": "description",
+    "en": "India's first lunar mission, 2008-2009. Carried NASA's Moon Mineralogy Mapper (M³) — which in 2009 returned the first direct spectroscopic confirmation of water (H₂O and OH) widely distributed across the lunar surface, not just at the poles. Mission ended after 312 days when communications were lost; M³ data is still being analysed today.",
+    "old": "Première mission lunaire de l'Inde, 2008-2009. Porté du Moon Mineralogy Mapper (M³) de NASA – qui, en 2009, a renvoyé la première confirmation spectroscopique directe de l'eau (H₂O et OH) largement distribuée sur la surface lunaire, pas seulement aux pôles. La mission s'est terminée après 312 jours lorsque les communications ont été perdues ; Les données M³ sont encore en cours d’analyse aujourd’hui.",
+    "new": "Première mission lunaire de l'Inde, 2008-2009. Elle emportait le Moon Mineralogy Mapper (M³) de la NASA — qui, en 2009, a livré la première confirmation spectroscopique directe de la présence d'eau (H₂O et OH) largement répartie sur la surface lunaire, et pas seulement aux pôles. La mission s'est achevée après 312 jours, quand les communications ont été perdues ; les données de M³ sont encore analysées aujourd'hui."
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "function_detail",
+    "en": "Tianhe propellant top-up, dry-cargo crew supplies, and on-orbit waste removal via destructive reentry over the South Pacific.",
+    "old": "Réapprovisionnement en propergol de Tianhe, fournitures sèches pour l'équipage et élimination des déchets par rentrée destructive au-dessus du Pacifique Sud.",
+    "new": "Réapprovisionnement en propergol de Tianhe, fournitures sèches pour l'équipage et évacuation en orbite des déchets par entrée atmosphérique destructive au-dessus du Pacifique Sud."
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.0",
+    "en": "Viking 1 orbiter — USA, 1977 (first close-range imagery)",
+    "old": "Viking 1 orbiter — USA, 1977 (premières images en gros plan)",
+    "new": "Orbiteur Viking 1 — États-Unis, 1977 (premières images en gros plan)"
+  },
+  {
+    "rel": "earth-objects/jwst.json",
+    "at": "scale_fact",
+    "en": "JWST is 3,676 times farther from Earth than the ISS. The Hubble servicing missions took 10 days. JWST cannot be serviced at all — it was designed to be perfect first time.",
+    "old": "JWST est 3 676 fois plus éloigné de la Terre que ISS. Les missions de maintenance de Hubble ont duré 10 jours. JWST ne peut pas être réparé du tout – il a été conçu pour être parfait du premier coup.",
+    "new": "JWST est 3 676 fois plus éloigné de la Terre que l'ISS. Les missions de maintenance de Hubble ont duré 10 jours. JWST ne peut pas du tout être réparé — il a été conçu pour être parfait du premier coup."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.1.why",
+    "en": "The Moon's 0.055 eccentricity is small but matters — at perigee the disc looks 12 % larger and brighter than at apogee ('supermoon').",
+    "old": "L'excentricité de 0.055 de la Lune est faible mais significative — au périgée le disque semble 12 % plus grand et plus brillant qu'à l'apogée (« superlune »).",
+    "new": "L'excentricité de 0,055 de la Lune est faible mais compte — au périgée, le disque paraît 12 % plus grand et plus brillant qu'à l'apogée (« superlune »)."
+  },
+  {
+    "rel": "tiangong-modules/tianhe.json",
+    "at": "function_detail",
+    "en": "Crew habitat, command and data handling, station-keeping thrusters, and the central dock for arriving Shenzhou crew and Tianzhou cargo.",
+    "old": "Habitat de l'équipage, gestion des commandes et données, propulseurs de tenue d'attitude et port d'amarrage central pour l'arrivée des Shenzhou et Tianzhou.",
+    "new": "Habitat de l'équipage, gestion des commandes et des données, propulseurs de maintien à poste de la station et port d'amarrage central pour l'arrivée des équipages Shenzhou et du fret Tianzhou."
+  },
+  {
+    "rel": "small-bodies/patroclus.json",
+    "at": "science_sections.0.why",
+    "en": "Patroclus is a binary system at L5 — trailing Jupiter by 60°. Lucy reaches it in 2033 to complete the first spacecraft tour of both Trojan clouds.",
+    "old": "Patrocle est un système binaire au point L5 — traînant Jupiter de 60°. Lucy l'atteint en 2033 pour accomplir le premier survol spatial des deux nuages de Troyens.",
+    "new": "Patrocle est un système binaire au point L5, à 60° derrière Jupiter. Lucy l'atteint en 2033 et achève ainsi la première visite d'une sonde spatiale aux deux nuages de Troyens."
+  },
+  {
+    "rel": "earth-objects/inmarsat.json",
+    "at": "description",
+    "en": "14+ geostationary satellites providing maritime, aviation, and remote-area voice + data comms. Backbone of GMDSS — the Global Maritime Distress and Safety System every ocean-going vessel depends on. Acquired by Viasat in 2023.",
+    "old": "Plus de 14 satellites géostationnaires fournissant des communications vocales et de données maritimes, aéronautiques et pour zones isolées. Colonne vertébrale du GMDSS — le Global Maritime Distress and Safety System dont dépend tout navire hauturier. Acquis par Viasat en 2023.",
+    "new": "Plus de 14 satellites géostationnaires assurant des communications vocales et de données pour le maritime, l'aviation et les zones isolées. Colonne vertébrale du SMDSM — le Système mondial de détresse et de sécurité en mer dont dépend tout navire hauturier. Acquis par Viasat en 2023."
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "function_detail",
+    "en": "Stage spacewalks (EVAs), suit servicing, and alternate egress separate from Soyuz or Dragon docking interfaces.",
+    "old": "Marches dans l'espace (EVAs), entretien des combinaisons et sorties alternatives distinctes des interfaces d'amarrage Soyuz ou Dragon.",
+    "new": "Préparation des sorties extravéhiculaires (EVA), entretien des combinaisons et sortie alternative, distincte des interfaces d'amarrage Soyuz ou Dragon."
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "description",
+    "en": "Half Pluto's diameter — the largest moon-to-planet size ratio in the solar system. Charon and Pluto are mutually tidally locked, orbiting a common centre of mass about 980 km above Pluto's surface — effectively a binary planet system. New Horizons revealed a startlingly varied terrain: the smooth Vulcan Planitia plain to the south, an ancient cratered hemisphere to the north, and a dark red polar cap (Mordor Macula) of tholins formed when methane molecules escaping from Pluto's atmosphere collected on Charon and were processed by ultraviolet light. The four smaller Pluto moons (Styx, Nix, Kerberos, Hydra) orbit the Pluto-Charon barycentre with chaotic rotations driven by the binary system's shifting gravity.",
+    "old": "La moitié du diamètre de Pluton — le plus grand rapport taille lune-planète du système solaire. Charon et Pluton sont verrouillés par les marées mutuellement, orbitant autour d'un centre de masse commun situé à environ 980 km au-dessus de la surface de Pluton — constituant effectivement un système de planète double. New Horizons a révélé un terrain étonnamment varié : la plaine lisse Vulcan Planitia au sud, un hémisphère ancien et cratérisé au nord, et une calotte polaire rouge foncé (Mordor Macula) composée de tholines formées lorsque les molécules de méthane s'échappant de l'atmosphère de Pluton se sont accumulées sur Charon et ont été traitées par la lumière ultraviolette. Les quatre petites lunes de Pluton (Styx, Nix, Kerbéros, Hydre) orbitent autour du barycentre Pluton-Charon avec des rotations chaotiques entraînées par la gravité fluctuante du système binaire.",
+    "new": "La moitié du diamètre de Pluton — le plus grand rapport de taille entre une lune et sa planète dans le système solaire. Charon et Pluton sont en verrouillage de marée mutuel et orbitent autour d'un centre de masse commun situé à environ 980 km au-dessus de la surface de Pluton — c'est en pratique un système de planète double. New Horizons a révélé un terrain étonnamment varié : la plaine lisse de Vulcan Planitia au sud, un hémisphère ancien criblé de cratères au nord, et une calotte polaire rouge sombre (Mordor Macula) de tholines, formées lorsque des molécules de méthane s'échappant de l'atmosphère de Pluton se sont accumulées sur Charon et ont été transformées par le rayonnement ultraviolet. Les quatre petites lunes de Pluton (Styx, Nix, Kerbéros, Hydre) orbitent autour du barycentre Pluton-Charon avec des rotations chaotiques, entraînées par la gravité changeante du système binaire."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "firsts.1.label",
+    "en": "Vostok 1 — Yuri Gagarin, first crewed orbital flight (USSR)",
+    "old": "Vostok 1 — Youri Gagarine, premier vol orbital habité (USSR)",
+    "new": "Vostok 1 — Youri Gagarine, premier vol orbital habité (URSS)"
+  },
+  {
+    "rel": "planets/pluto.json",
+    "at": "fact",
+    "en": "The largest known Kuiper Belt body and the first object beyond Neptune ever discovered (1930). Reclassified from planet to dwarf planet by the IAU in 2006.",
+    "old": "Le plus grand corps connu de la ceinture de Kuiper et le premier objet au-delà de Neptune jamais découvert (1930). Reclassé de planète à planète naine par l'IAU en 2006.",
+    "new": "Le plus grand corps connu de la ceinture de Kuiper et le premier objet découvert au-delà de Neptune (1930). Reclassé de planète en planète naine par l'UAI en 2006."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "science_sections.0.why",
+    "en": "Deimos is the outer Mars moon (23,460 km) — its orbital period (1.26 d) is longer than the Martian day, so tidal forces are pushing it slowly outward.",
+    "old": "Déimos est la lune extérieure de Mars (23 460 km) — sa période orbitale (1.26 j) est plus longue que le jour martien, donc les forces de marée la poussent lentement vers l'extérieur.",
+    "new": "Déimos est la lune extérieure de Mars (23 460 km) — sa période orbitale (1,26 j) est plus longue que le jour martien, si bien que les forces de marée la repoussent lentement vers l'extérieur."
+  },
+  {
+    "rel": "trajectories/dawn.json",
+    "at": "current_distance_label",
+    "en": "2.8 AU · in stable Ceres orbit since EOM 2018-10-31 (~20-year orbital lifetime)",
+    "old": "2,8 au · en orbite stable autour de Cérès depuis fin octobre 2018 (~20 ans de durée de vie orbitale)",
+    "new": "2,8 au · en orbite stable autour de Cérès depuis la fin de mission (EOM) 2018-10-31 (~20 ans de durée de vie orbitale)"
+  },
+  {
+    "rel": "iss-modules/poisk.json",
+    "at": "function_detail",
+    "en": "Docking interface for Soyuz / Progress crew and cargo, EVA staging for Russian-segment spacewalks, and external scientific payload mounts on the hull.",
+    "old": "Interface d'amarrage Soyuz / Progress, préparation EVA pour les sorties du segment russe et supports de charges utiles scientifiques externes sur la coque.",
+    "new": "Interface d'amarrage pour les Soyuz et Progress (équipage et fret), préparation des sorties extravéhiculaires du segment russe et supports de charges utiles scientifiques externes sur la coque."
+  },
+  {
+    "rel": "museums/adler-planetarium.json",
+    "at": "description",
+    "en": "America's first planetarium, opened in 1930 on Chicago's lakefront.",
+    "old": "Le premier planétarium d'Amérique, ouvert en 1930 sur le front de lac de Chicago.",
+    "new": "Le premier planétarium d'Amérique, ouvert en 1930 au bord du lac, à Chicago."
+  },
+  {
+    "rel": "tiangong-modules/mengtian.json",
+    "at": "description",
+    "en": "The second laboratory—completed the canonical T-shape silhouette in October 2022, two more solar wings, and a cargo-style external payload airlock that doesn't need a spacewalker to operate.",
+    "old": "Le second laboratoire — a complété la silhouette canonique en T en octobre 2022, deux ailes solaires supplémentaires et un sas de charge utile externe automatisé.",
+    "new": "Le second laboratoire — il a achevé la silhouette canonique en T en octobre 2022, avec deux ailes solaires supplémentaires et un sas externe pour charges utiles, de type fret, qui se manœuvre sans sortie extravéhiculaire."
+  },
+  {
+    "rel": "earth-objects/iss.json",
+    "at": "scale_fact",
+    "en": "The ISS orbits at 408 km. You could drive there in 4 hours at motorway speed. It feels impossibly far — it is impossibly close.",
+    "old": "Le ISS orbite à 408 km. Vous pouvez vous y rendre en 4 heures à vitesse d'autoroute. Cela semble incroyablement loin – c’est incroyablement proche.",
+    "new": "L'ISS orbite à 408 km. Vous pourriez y aller en voiture en 4 heures, à vitesse d'autoroute. Cela semble incroyablement loin — c'est incroyablement proche."
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.1.why",
+    "en": "Makemake is the fourth-largest known KBO and the only one of the IAU-recognised dwarf planets without a confirmed moon until Hubble found MK2 in 2016.",
+    "old": "Makémaké est le quatrième plus grand KBO connu et le seul des planètes naines reconnues par l'IAU sans lune confirmée jusqu'à ce que Hubble découvre MK2 en 2016.",
+    "new": "Makémaké est le quatrième plus grand objet connu de la ceinture de Kuiper et la seule des planètes naines reconnues par l'UAI sans lune confirmée jusqu'à ce que Hubble découvre MK2 en 2016."
+  },
+  {
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "comparison",
+    "en": "Just below Mars's outer moon Deimos (23,460 km). Three areostationary satellites spaced 120° apart would cover the entire Martian disc — the same trick GEO comsats use for Earth broadcast TV.",
+    "old": "Juste en dessous de Déimos, la lune extérieure de Mars (23 460 km). Trois satellites aréostationnaires espacés de 120° couvriraient l'ensemble du disque martien — la même astuce que les satellites de communication GEO utilisent pour la télévision terrestre par satellite.",
+    "new": "Juste en dessous de Déimos, la lune extérieure de Mars (23 460 km). Trois satellites aréostationnaires espacés de 120° couvriraient l'ensemble du disque martien — la même astuce que les satellites de communication GEO emploient pour diffuser la télévision sur Terre."
+  },
+  {
+    "rel": "iss-visitors/cargo_dragon.json",
+    "at": "description",
+    "en": "The Dragon 2 cargo variant—pressurised + unpressurised payload, returned-to-Earth science freight, no seats.",
+    "old": "La variante cargo de Dragon 2 — fret pressurisé et non pressurisé, retour de fret scientifique vers la Terre, pas de sièges.",
+    "new": "La variante cargo de Dragon 2 — charge utile pressurisée et non pressurisée, fret scientifique ramené sur Terre, pas de sièges."
+  },
+  {
+    "rel": "trajectories/vega-2.json",
+    "at": "current_distance_label",
+    "en": "0.95 AU · spacecraft in heliocentric orbit since Halley flyby 1986-03-09",
+    "old": "0,95 au · engin spatial en orbite héliocentriquedepuis le survol de Halley 1986-03-09",
+    "new": "0,95 au · engin spatial en orbite héliocentrique depuis le survol de Halley 1986-03-09"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "description",
+    "en": "ISRO's four-stage Polar Satellite Launch Vehicle in its XL configuration with six strap-on solid boosters. Originally designed for sun-synchronous Earth orbits; subsequently used for interplanetary missions including India's first lunar orbiter and first Mars probe. Notable launch-cost efficiency (~$30M per launch) drove the Mangalyaan mission's $74M total budget.",
+    "old": "Lanceur polaire pour satellite de l'ISRO, à quatre étages, en configuration XL avec six propulseurs d'appoint solides fixés en grappe. Initialement conçu pour les orbites héliosynchrones autour de la Terre, il a été par la suite utilisé pour des missions interplanétaires, notamment l'orbiteur lunaire et la sonde martienne de l'Inde. Son efficacité remarquable en termes de coût de lancement (~30 M$ par lancement) a conduit au budget total de 74 M$ de la mission Mangalyaan.",
+    "new": "Lanceur polaire de satellites (PSLV) de l'ISRO, à quatre étages, en configuration XL avec six propulseurs d'appoint solides fixés autour du corps central. Conçu à l'origine pour les orbites terrestres héliosynchrones, il a ensuite servi à des missions interplanétaires, dont le premier orbiteur lunaire et la première sonde martienne de l'Inde. Son excellent rapport coût-lancement (~30 M$ par lancement) a rendu possible le budget total de 74 M$ de la mission Mangalyaan."
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "bio",
+    "en": "Discovered 1906, classified as a P-type with low-albedo, reddish reflectance. Lucy's 2033-03-02 encounter at 8.4 km/s closes the primary mission — the spacecraft will image both partners of the binary in one approach, mapping the surface terrain, composition, and the gravitational dance that has bound them through 4.5 Gyr.",
+    "old": "Découvert en 1906, classé comme astéroïde de type P avec une faible albédo et une réflectance rougeâtre. La rencontre de Lucy le 2033-03-02 à 8,4 km/s conclut la mission principale — le vaisseau imagera les deux partenaires du binaire en une seule approche, cartographiant le terrain de surface, la composition, et la danse gravitationnelle qui les a liés pendant 4,5 Ga.",
+    "new": "Découvert en 1906, classé comme astéroïde de type P, à faible albédo et à réflectance rougeâtre. La rencontre de Lucy le 2033-03-02 à 8,4 km/s conclut la mission principale — la sonde imagera les deux partenaires du binaire en une seule approche, cartographiant le terrain de surface, la composition et la danse gravitationnelle qui les lie depuis 4,5 Ga."
+  },
+  {
+    "rel": "iss-modules/harmony.json",
+    "at": "function_detail",
+    "en": "Berthing for Columbus and Kibo elements, crew passage, and camera-pointing robotics attachment points.",
+    "old": "Accostage des éléments Columbus et Kibo, passage de l'équipage et points de fixation robotiques de pointage de caméra.",
+    "new": "Accostage des éléments Columbus et Kibo, passage de l'équipage et points de fixation pour la robotique de pointage des caméras."
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "scale_fact",
+    "en": "39 metres long. 180 tonnes. China built this with no international partners after being excluded from ISS agreements.",
+    "old": "39 mètres de long. 180 tonnes. La Chine a construit cela sans partenaires internationaux après avoir été exclue des accords ISS.",
+    "new": "39 mètres de long. 180 tonnes. La Chine l'a construite sans partenaires internationaux, après avoir été exclue des accords de l'ISS."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.2.why",
+    "en": "The scattered-disc subpopulation (e.g. Eris) sits at high inclinations — gravitationally scattered by Neptune's outward migration; Sedna, by contrast, is a detached 'sednoid' whose distant perihelion lies beyond Neptune's reach and currently spreading the belt vertically.",
+    "old": "La sous-population de la ceinture dispersée (par exemple Éris) orbite à fortes inclinaisons — gravitationnellement dispersée par la migration vers l'extérieur de Neptune ; Sedna, en revanche, est une « sédnoïde » détachée dont le périhélie lointain échappe à l'emprise gravitationnelle de Neptune et qui élargit actuellement la ceinture verticalement.",
+    "new": "La sous-population du disque dispersé (par exemple Éris) se situe à de fortes inclinaisons — dispersée gravitationnellement par la migration vers l'extérieur de Neptune ; Sedna, en revanche, est une « sednoïde » détachée dont le périhélie lointain échappe à l'emprise de Neptune, et qui élargit actuellement la ceinture verticalement."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.0.why",
+    "en": "The Moon's orbit around Earth is the textbook two-body Keplerian system — every other moon-around-planet calculation generalises from here.",
+    "old": "L'orbite de la Lune autour de la Terre est le système Keplerian à deux corps du manuel — tous les autres calculs lune-autour-de-planète se généralisent à partir de là.",
+    "new": "L'orbite de la Lune autour de la Terre est le système képlérien à deux corps des manuels — tous les autres calculs de lune autour d'une planète en découlent."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.1.why",
+    "en": "Halley's enormous perihelion-aphelion swing (35 to 0.59 AU) drives the surface ices to sublimate violently near perihelion, producing the coma and tail. Next perihelion: 2061.",
+    "old": "L'énorme oscillation périhélie-aphélie de Halley (35 à 0.59 au) force les glaces de surface à sublimer violemment près du périhélie, produisant la chevelure et la queue. Prochain périhélie : 2061.",
+    "new": "L'énorme oscillation périhélie-aphélie de Halley (de 35 à 0,59 au) force les glaces de surface à sublimer violemment près du périhélie, produisant la chevelure et la queue. Prochain périhélie : 2061."
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.1.why",
+    "en": "Vesta orbits at 2.36 AU — inner belt. Its proximity drove Dawn's choice to visit Vesta first (2011), then leave for Ceres (2015).",
+    "old": "Vesta orbite à 2,36 au — ceinture interne. Sa proximité a motivé Dawn à visiter Vesta en premier (2011), puis à partir pour Cérès (2015).",
+    "new": "Vesta orbite à 2,36 au — dans la ceinture interne. Sa proximité a conduit à choisir de visiter d'abord Vesta avec Dawn (2011), avant de partir pour Cérès (2015)."
+  },
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "description",
+    "en": "The telescope that changed how humanity sees the universe. Launched 1990 with a flawed mirror — corrected by Space Shuttle astronauts in 1993. Has since observed 1.4 million celestial objects. Operating 34+ years.",
+    "old": "Le télescope qui a changé la façon dont l'humanité voit l'univers. Lancé en 1990 avec un miroir défectueux — corrigé par les astronautes de la Space Shuttle en 1993. A observé depuis 1,4 million d'objets célestes. En exploitation depuis 34+ ans.",
+    "new": "Le télescope qui a changé la façon dont l'humanité voit l'univers. Lancé en 1990 avec un miroir défectueux, corrigé par des astronautes de la navette Space Shuttle en 1993. Il a depuis observé 1,4 million d'objets célestes. En service depuis plus de 34 ans."
+  },
+  {
+    "rel": "iss-modules/rassvet.json",
+    "at": "function_detail",
+    "en": "Docking port extension and small cargo stowage adjacent to the Russian segment core.",
+    "old": "Extension du port d'amarrage et stockage de petites marchandises à côté du cœur du segment russe.",
+    "new": "Extension du port d'amarrage et stockage de petit fret à côté du cœur du segment russe."
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "description",
+    "en": "China's largest operational launcher: cryogenic core stage with two YF-77 hydrogen engines, four kerolox boosters, and a hydrogen upper stage. Launched the Tianwen-1 orbiter / lander / rover to Mars in July 2020 and the Chang'e lunar sample return missions.",
+    "old": "Le plus grand lanceur en opération de la Chine : étage central cryogénique équipé de deux moteurs à hydrogène YF-77, quatre propulseurs au kérolox et un étage supérieur à hydrogène. Il a lancé l'orbiteur/module de descente/rover Tianwen-1 vers Mars en juillet 2020 et les missions de retour d'échantillons lunaires Chang'e.",
+    "new": "Le plus grand lanceur en service de la Chine : étage central cryogénique équipé de deux moteurs à hydrogène YF-77, quatre propulseurs d'appoint au kérolox et un étage supérieur à hydrogène. Il a lancé l'orbiteur/module de descente/rover Tianwen-1 vers Mars en juillet 2020 et les missions de retour d'échantillons lunaires Chang'e."
+  },
+  {
+    "rel": "tiangong-modules/chinarm.json",
+    "at": "description",
+    "en": "The station's primary manipulator—a 10-metre, seven-joint arm that walks hand-over-hand across Tianhe and the lab modules to capture cargo and reposition external payloads.",
+    "old": "Le manipulateur principal de 10 mètres — se déplace main par main autour de Tianhe et des modules de laboratoire pour capturer la cargaison et repositionner les charges utiles externes.",
+    "new": "Le manipulateur principal de la station — un bras de 10 mètres à sept articulations qui se déplace main après main sur Tianhe et les modules de laboratoire pour capturer la cargaison et repositionner les charges utiles externes."
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "first",
+    "en": "India's heavy-lift workhorse — first lunar launch (Chandrayaan-3, 2023)",
+    "old": "Le cheval de trait lourd de l'Inde — premier lancement lunaire (Chandrayaan-3, 2023)",
+    "new": "Le lanceur lourd, bête de somme de l'Inde — premier lancement lunaire (Chandrayaan-3, 2023)"
+  },
+  {
+    "rel": "trajectories/ulysses.json",
+    "at": "current_distance_label",
+    "en": "5.2 AU · mission ended 2009-06-30 (thruster lines froze) — hardware in polar heliocentric orbit",
+    "old": "5,2 au · mission terminée le 30 juin 2009 (gélification des tuyauteries d'attitude) — matériel en orbite héliocentriquepolaire",
+    "new": "5,2 au · mission terminée le 2009-06-30 (gel des conduites des propulseurs) — matériel en orbite héliocentrique polaire"
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "mission_visits.1",
+    "en": "Galileo orbiter — USA, 1995–2003 (multiple flybys; ocean candidate)",
+    "old": "Galileo orbiter — USA, 1995–2003 (survols multiples ; candidate océan)",
+    "new": "Orbiteur Galileo — États-Unis, 1995–2003 (survols multiples ; présence d'un océan envisagée)"
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "en": "Itokawa is a near-Earth Apollo asteroid — semi-major axis 1.32 AU. Hayabusa's 2005 rendezvous + 2010 sample return was the first NEA round-trip.",
+    "old": "Itokawa est un astéroïde Apollo proche de la Terre — demi-grand axe 1,32 au. Le rendez-vous de Hayabusa en 2005 et le retour d'échantillons en 2010 constituaient le premier aller-retour vers un NEA.",
+    "new": "Itokawa est un astéroïde Apollo géocroiseur — demi-grand axe 1,32 au. Le rendez-vous de Hayabusa en 2005, suivi du retour d'échantillons en 2010, fut le premier aller-retour vers un astéroïde géocroiseur."
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.4.l",
+    "en": "Venus's runaway greenhouse (Nature Astronomy 2020)",
+    "old": "La serre incontrôlable de Vénus (Nature Astronomy 2020)",
+    "new": "L'effet de serre incontrôlable de Vénus (Nature Astronomy 2020)"
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "library_labels.enceladus-habitability",
+    "en": "Astrobiology — Enceladus as life-search target",
+    "old": "Astrobiology — Encelade comme cible de recherche de vie",
+    "new": "Astrobiologie — Encelade comme cible de recherche de vie"
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "description",
+    "en": "China's independent space station. Core module Tianhe launched April 2021. Fully assembled 2022. Operates independently from the ISS — the only other permanently inhabited station.",
+    "old": "La station spatiale indépendante de la Chine. Module de base Tianhe lancé en avril 2021. Entièrement assemblé en 2022. Fonctionne indépendamment du ISS — la seule autre station habitée en permanence.",
+    "new": "La station spatiale indépendante de la Chine. Module de base Tianhe lancé en avril 2021. Entièrement assemblée en 2022. Fonctionne indépendamment de l'ISS — la seule autre station habitée en permanence."
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "fact",
+    "en": "Surface temperatures swing 610°C in a single day. No atmosphere — just raw exposure to space.",
+    "old": "Les températures de surface oscillent jusqu’à 610°C en une seule journée. Pas d'atmosphère, juste une exposition brute à l'espace.",
+    "new": "Les températures de surface varient de 610 °C en une seule journée. Aucune atmosphère : une exposition brute à l'espace."
+  },
+  {
+    "rel": "earth-objects/luna10.json",
+    "at": "scale_fact",
+    "en": "Lunar orbit ~350 km altitude. The Moon is 384,400 km away — three orders of magnitude farther than ISS — but Luna 10 was the first object placed in orbit there.",
+    "old": "Orbite lunaire ~350 km d'altitude. La Lune est à 384 400 km – trois ordres de grandeur de plus que ISS – mais Luna 10 a été le premier objet placé en orbite à cet endroit.",
+    "new": "Orbite lunaire à ~350 km d'altitude. La Lune est à 384 400 km — trois ordres de grandeur plus loin que l'ISS — mais Luna 10 a été le premier objet placé en orbite autour d'elle."
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "firsts.0.label",
+    "en": "Oort cloud proposed — Jan Oort (Netherlands)",
+    "old": "Nuage d'Oort proposé — Jan Oort (Netherlands)",
+    "new": "Nuage d'Oort proposé — Jan Oort (Pays-Bas)"
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "mission_visits.0",
+    "en": "New Horizons — USA, 2015 (first and only flyby)",
+    "old": "New Horizons — États-Unis, 2015 (unique survol)",
+    "new": "New Horizons — États-Unis, 2015 (premier et seul survol)"
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "description",
+    "en": "A US NSF-DOE facility on Cerro Pachón with the 8.4 m Simonyi Survey Telescope and the 3.2-gigapixel LSST Camera. It images the whole southern sky every few nights.",
+    "old": "Une installation de la NSF et du DOE américains sur le Cerro Pachón, avec le Simonyi Survey Telescope de 8,4 m et la caméra LSST de 3,2 gigapixels. Il image tout le ciel austral toutes les quelques nuits.",
+    "new": "Une installation de la NSF et du DOE américains sur le Cerro Pachón, dotée du Simonyi Survey Telescope de 8,4 m et de la caméra LSST de 3,2 gigapixels. Elle photographie tout le ciel austral toutes les quelques nuits."
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "surface_composition",
+    "en": "Water-ice crust + silicate / carbonaceous rock interior; surface the brightest of Uranus's major moons, with relatively few craters — interpreted as evidence of cryovolcanic resurfacing within the last ~1 Gyr.",
+    "old": "Croûte de glace d'eau + intérieur de roche silicatée / carbonée ; surface la plus brillante des lunes majeures d'Uranus, avec relativement peu de cratères — interprété comme une preuve de resurfaçage cryovolcanique au cours du dernier ~1 Gyr.",
+    "new": "Croûte de glace d'eau + intérieur de roche silicatée / carbonée ; surface la plus brillante des lunes majeures d'Uranus, avec relativement peu de cratères — interprété comme la preuve d'un resurfaçage cryovolcanique au cours du dernier milliard d'années environ."
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "fact",
+    "en": "One of the slowest-rotating bodies of its size known — a 446-hour (18.6-day) rotation period, unusually long for a 35-km asteroid. The slow spin suggests a complex collisional or tidal history with another body, possibly a recent (in geologic terms) major event.",
+    "old": "L'un des corps les plus lentement rotatifs de sa taille connus — une période de rotation de 446 heures (18,6 jours), inhabituellement longue pour un astéroïde de 35 km. La rotation lente suggère un historique collisionnel ou de marée complexe avec un autre corps, possiblement un événement majeur récent (en termes géologiques).",
+    "new": "L'un des corps de cette taille connus pour tourner le plus lentement — période de rotation de 446 heures (18,6 jours), exceptionnellement longue pour un astéroïde de 35 km. Cette rotation lente laisse penser à une histoire de collisions ou de marées complexe avec un autre corps, peut-être un événement majeur récent (à l'échelle géologique)."
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.0.why",
+    "en": "Bennu is a near-Earth asteroid (semi-major axis 1.13 AU) — close enough that OSIRIS-REx could rendezvous, sample, and return material to Earth in 7 years.",
+    "old": "Bénou est un astéroïde géocroiseur (demi-grand axe 1,13 au) — suffisamment proche pour que OSIRIS-REx puisse le rejoindre, en collecter des échantillons et ramener du matériel sur la Terre en 7 ans.",
+    "new": "Bénou est un astéroïde géocroiseur (demi-grand axe 1,13 au) — suffisamment proche pour qu'OSIRIS-REx puisse effectuer un rendez-vous, prélever des échantillons et rapporter de la matière sur Terre en 7 ans."
+  },
+  {
+    "rel": "iss-modules/tranquility.json",
+    "at": "description",
+    "en": "Life-support heavy lifting and astronaut treadmill fame—where habitability engineering quietly dominates the headlines.",
+    "old": "Le levage de charges lourdes et la renommée des tapis roulants d'astronautes, où l'ingénierie de l'habitabilité domine discrètement les gros titres.",
+    "new": "Le gros du travail des systèmes de survie et la célébrité du tapis roulant des astronautes — là où l'ingénierie de l'habitabilité domine discrètement les gros titres."
+  },
+  {
+    "rel": "earth-objects/kuiper.json",
+    "at": "description",
+    "en": "Amazon's LEO broadband answer to Starlink — planned 3,236 satellites at 590-630 km in 98 orbital planes. First prototype launches in 2023; production launches began in 2025; FCC license requires 50% deployment by 2026, 100% by 2029.",
+    "old": "La réponse LEO d'Amazon à Starlink — 3 236 satellites prévus à 590-630 km répartis dans 98 plans orbitaux. Premier prototype lancé en 2023 ; les lancements de production ont commencé en 2025 ; la licence FCC exige un déploiement de 50 % d'ici 2026, 100 % d'ici 2029.",
+    "new": "La réponse d'Amazon à Starlink pour l'internet haut débit en LEO — 3 236 satellites prévus à 590-630 km répartis dans 98 plans orbitaux. Premiers lancements de prototypes en 2023 ; les lancements de production ont commencé en 2025 ; la licence FCC exige un déploiement de 50 % d'ici 2026, 100 % d'ici 2029."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.rejected.1",
+    "en": "Modern fan reproductions (e.g. a CC-BY Buran emblem by a game artist) — freely licensed but not authentic insignia",
+    "old": "Reproductions modernes de fans (par exemple un emblème Buran CC-BY par un artiste de jeu) — librement sous licence mais pas des insignes authentiques",
+    "new": "Reproductions modernes de fans (par exemple un emblème Buran CC-BY réalisé par un artiste de jeux vidéo) — sous licence libre mais pas des insignes authentiques"
+  },
+  {
+    "rel": "earth-objects/geo.json",
+    "at": "scale_fact",
+    "en": "35,786 km is not a round number by design — it's the exact altitude where gravity and orbital speed balance to give a 24-hour period. Physics chose it.",
+    "old": "35 786 km n'est pas un nombre rond de par sa conception - c'est l'altitude exacte à laquelle la gravité et la vitesse orbitale s'équilibrent pour donner une période de 24 heures. La physique l'a choisi.",
+    "new": "35 786 km n'est pas un nombre rond par hasard : c'est l'altitude exacte à laquelle la gravité et la vitesse orbitale s'équilibrent pour donner une période de 24 heures. La physique l'a choisie."
+  },
+  {
+    "rel": "iss-modules/canadarm2.json",
+    "at": "description",
+    "en": "The station’s long white crane—walking hand-over-hand along the truss to capture cargo vehicles without astronaut wrestle matches.",
+    "old": "La grue blanche effilée de la station—progressant main après main le long de la poutre pour saisir les véhicules de ravitaillement sans combat rapproché d'astronautes.",
+    "new": "La longue grue blanche de la station — elle progresse main après main le long de la poutre pour saisir les véhicules cargo sans que des astronautes aient à lutter avec eux."
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "description",
+    "en": "ULA Atlas V configured with a 5-metre fairing, four solid rocket boosters, and a single-engine Centaur upper stage. Launched Curiosity to Mars in November 2011. Retired in 2024 in favour of the Vulcan Centaur.",
+    "old": "Lance spatial ULA Atlas V configuré avec un carénage de 5 mètres, quatre propulseurs d'appoint à propergol solide et un étage supérieur Centaur à moteur unique. A lancé Curiosity vers Mars en novembre 2011. Retiré du service en 2024 au profit du Vulcan Centaur.",
+    "new": "Lanceur ULA Atlas V configuré avec une coiffe de 5 mètres, quatre propulseurs d'appoint à propergol solide et un étage supérieur Centaur à moteur unique. A lancé Curiosity vers Mars en novembre 2011. Retiré du service en 2024 au profit du Vulcan Centaur."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "story",
+    "en": "The closest band of space — 160 to 2,000 km up. Short comms latency (~7 ms one-way), atmospheric drag still tugs at the lower edge, and the radiation belts haven't kicked in yet. Crewed spaceflight lives here for the same reasons: rescuable, reachable, and the human body tolerates a few-hundred-kilometre commute. Every space station that has ever flown has parked in LEO.",
+    "old": "La bande d'espace la plus proche — de 160 à 2 000 km d'altitude. Latence de communication courte (~7 ms aller simple), la traînée atmosphérique tire encore sur le bord inférieur, et les ceintures de radiations ne se sont pas encore manifestées. Les vols habités vivent ici pour les mêmes raisons : secourable, accessible, et le corps humain tolère un trajet de quelques centaines de kilomètres. Toutes les stations spatiales ayant jamais volé se sont garées en LEO.",
+    "new": "La bande d'espace la plus proche — de 160 à 2 000 km d'altitude. Latence de communication courte (~7 ms à l'aller), traînée atmosphérique qui tire encore sur la limite basse, et ceintures de radiation pas encore atteintes. Les vols habités y ont lieu pour les mêmes raisons : on peut y secourir l'équipage, on y accède facilement, et le corps humain supporte un trajet de quelques centaines de kilomètres. Toutes les stations spatiales ayant jamais volé se sont placées en LEO."
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "fact",
+    "en": "104-km secondary of the Patroclus-Menoetius binary in the L5 Trojan swarm — nearly equal-mass partner to Patroclus, separated by 680 km. Lucy's 2033-03 encounter will be the first close-up of a Trojan binary system, mapping both partners simultaneously.",
+    "old": "Secondaire de 104 km du système binaire Patrocle-Ménétios dans l'essaim troyen L5 — partenaire de masse presque égale à Patrocle, séparé par 680 km. La rencontre de Lucy en 2033-03 sera la première observation rapprochée d'un système binaire troyen, cartographiant les deux partenaires simultanément.",
+    "new": "Secondaire de 104 km du système binaire Patrocle-Ménétios dans l'essaim troyen L5 — partenaire de masse presque égale à celle de Patrocle, dont il est distant de 680 km. La rencontre de Lucy en 2033-03 sera la première observation rapprochée d'un système binaire troyen, cartographiant les deux partenaires simultanément."
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.0.note",
+    "en": "Falcon Heavy lifts off. Free-return — no landing.",
+    "old": "Falcon Heavy décolle. Retour gratuit – pas d’atterrissage.",
+    "new": "Falcon Heavy décolle. Retour libre — pas d'atterrissage."
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "library_labels.triton-trident",
+    "en": "Trident — proposed Discovery-class Triton flyby",
+    "old": "Trident — survol de Triton proposé de classe Discovery",
+    "new": "Trident — proposition de survol de Triton, mission de classe Discovery"
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "description",
+    "en": "Three-core Falcon 9 derivative. The two side boosters return to launch sites or droneships; the centre core lands at sea or is expended for maximum payload. Demonstrated in 2018 with the launch of a Tesla Roadster on a heliocentric trajectory crossing the orbit of Mars.",
+    "old": "Dérivé de Falcon 9 à trois noyaux. Les deux propulseurs latéraux reviennent aux pas de tir ou sur des navires-drones ; le noyau central atterrit en mer ou est consommable pour une charge utile maximale. Démontrée en 2018 lors du lancement d'une Tesla Roadster sur une trajectoire héliocentriquie croisant l'orbite de Mars.",
+    "new": "Dérivé de Falcon 9 à trois corps. Les deux propulseurs d'appoint latéraux reviennent vers les sites de lancement ou des navires-drones ; le corps central se pose en mer ou est sacrifié pour emporter une charge utile maximale. Démontré en 2018 avec le lancement d'une Tesla Roadster sur une trajectoire héliocentrique croisant l'orbite de Mars."
+  },
+  {
+    "rel": "iss-modules/poisk.json",
+    "at": "description",
+    "en": "Russian Mini-Research Module 2—a twin-port docking compartment and EVA airlock attached to Zvezda's zenith port since 2009.",
+    "old": "Mini-Module Russe de Recherche 2 — sas d'amarrage double port et sas de sortie pour EVA attaché au port zénith de Zvezda depuis 2009.",
+    "new": "Mini-module de recherche russe 2 — compartiment d'amarrage à deux ports et sas de sortie extravéhiculaire, fixé au port zénith de Zvezda depuis 2009."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "story",
+    "en": "A ring of icy bodies beyond Neptune — 30 to 50 AU. The frozen analog of the asteroid belt: hundreds of thousands of bodies of which only the largest few have been resolved. Composed of methane, ammonia, water ice + rock. Pluto was the first member identified, in 1930, though the belt wasn't recognised as a population until the 1990s when Jewitt + Luu found the second member (1992 QB1). New Horizons gave humanity its first close looks at TWO Kuiper objects — Pluto in 2015 and Arrokoth in 2019.",
+    "old": "Une ceinture de corps glacés au-delà de Neptune — 30 à 50 au. L'analogue gelé de la ceinture d'astéroïdes : des centaines de milliers de corps dont seuls les plus grands ont été résolus. Composée de méthane, d'ammoniac, de glace d'eau et de roche. Pluton en fut le premier membre identifié, en 1930, bien que la ceinture n'ait été reconnue comme une population qu'aux années 1990 quand Jewitt et Luu ont découvert le deuxième membre (1992 QB1). New Horizons a offert à l'humanité ses premiers aperçus rapprochés de DEUX objets de la ceinture de Kuiper — Pluton en 2015 et Arrokoth en 2019.",
+    "new": "Une ceinture de corps glacés au-delà de Neptune — 30 à 50 au. L'analogue gelé de la ceinture d'astéroïdes : des centaines de milliers de corps dont seuls les plus grands ont été résolus. Composée de méthane, d'ammoniac, de glace d'eau et de roche. Pluton en fut le premier membre identifié, en 1930, bien que la ceinture n'ait été reconnue comme une population que dans les années 1990, quand Jewitt et Luu ont découvert le deuxième membre (1992 QB1). New Horizons a offert à l'humanité ses premiers aperçus rapprochés de DEUX objets de la ceinture de Kuiper — Pluton en 2015 et Arrokoth en 2019."
+  },
+  {
+    "rel": "small-bodies/haumea.json",
+    "at": "science_sections.0.why",
+    "en": "Haumea's elongated shape (a 3.9-hour rotation deforms it into a triaxial ellipsoid) is a clue to the violent collision that created its family of icy fragments.",
+    "old": "La forme allongée de Hauméa (sa rotation de 3,9 heures la déforme en ellipsoïde triaxiale) est un indice de la collision violente qui a créé sa famille de fragments glacés.",
+    "new": "La forme allongée de Hauméa (sa rotation de 3,9 heures la déforme en ellipsoïde triaxial) est un indice de la collision violente qui a créé sa famille de fragments glacés."
+  },
+  {
+    "rel": "iss-modules/zarya.json",
+    "at": "function_detail",
+    "en": "Battery power, fuel storage, and early attitude control until Zvezda arrived; still provides clearance and structural continuity along the Russian segment.",
+    "old": "Alimentation par batterie, stockage de carburant et contrôle d'attitude précoce jusqu'à l'arrivée de Zvezda ; assure toujours le dégagement et la continuité structurelle le long du segment russe.",
+    "new": "Alimentation par batterie, stockage de carburant et contrôle d'attitude initial jusqu'à l'arrivée de Zvezda ; assure encore le dégagement et la continuité structurelle le long du segment russe."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "firsts.0.label",
+    "en": "Sputnik 1 — first artificial Earth satellite (USSR)",
+    "old": "Sputnik 1 — premier satellite artificiel terrestre (USSR)",
+    "new": "Sputnik 1 — premier satellite artificiel de la Terre (URSS)"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "fact",
+    "en": "A 21-km P-type Trojan in Jupiter's leading swarm. After Lucy selected it as a target, Hubble follow-up observations revealed a previously-unknown satellite — a 5-km moonlet for which a name has yet to be approved.",
+    "old": "Un astéroïde de type P, troyen de 21 km dans l'essaim précédent de Jupiter. Après que Lucy l'ait sélectionné comme cible, des observations de suivi effectuées par Hubble ont révélé un satellite jusque-là inconnu — une petite lune de 5 km pour laquelle un nom n'a pas encore été approuvé.",
+    "new": "Un troyen de type P de 21 km dans l'essaim de tête de Jupiter. Après que Lucy l'a sélectionné comme cible, des observations de suivi de Hubble ont révélé un satellite jusque-là inconnu — une petite lune de 5 km dont le nom n'a pas encore été approuvé."
+  },
+  {
+    "rel": "earth-objects/smart-1.json",
+    "at": "scale_fact",
+    "en": "Polar orbit at ~470 km altitude. First operational use of ion propulsion for a lunar mission — a template for ESA's later BepiColombo and Hera deep-space missions.",
+    "old": "Orbite polaire à ~470 km d'altitude. Première utilisation opérationnelle de la propulsion ionique pour une mission lunaire — un modèle pour les missions ultérieures dans l'espace lointain BepiColombo et Hera de ESA.",
+    "new": "Orbite polaire à ~470 km d'altitude. Première utilisation opérationnelle de la propulsion ionique pour une mission lunaire — un modèle pour les missions ultérieures de l'ESA dans l'espace lointain, BepiColombo et Hera."
+  },
+  {
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "description",
+    "en": "Russia's evergreen 3-seat crew taxi—2.5-day rendezvous from Baikonur and a parachute landing on the Kazakh steppe.",
+    "old": "Le taxi habité 3 places intemporel de la Russie — rendez-vous de 2,5 jours depuis Baïkonour et atterrissage en parachute sur la steppe kazakhe.",
+    "new": "Le taxi habité à 3 places indémodable de la Russie — rendez-vous de 2,5 jours depuis Baïkonour et atterrissage en parachute sur la steppe kazakhe."
+  },
+  {
+    "rel": "earth-objects/change1.json",
+    "at": "description",
+    "en": "China's first lunar mission, 2007-2009. Built and operated as a deliberate precursor test for the Chang'e 3 lander — the orbital phase served as a flight-qualification rehearsal for the deep-space communications and orbital mechanics that the lander mission would depend on. Crashed into the Moon at end of life as a controlled impact test.",
+    "old": "Première mission lunaire de la Chine, 2007-2009. Construite et exploitée comme un test délibéré de précurseur pour l'atterrisseur Chang'e 3, la phase orbitale a servi de répétition de qualification en vol pour les communications dans l'espace lointain et la mécanique orbitale dont dépendrait la mission de l'atterrisseur. S'est écrasé sur la Lune en fin de vie dans le cadre d'un test d'impact contrôlé.",
+    "new": "Première mission lunaire de la Chine, 2007-2009. Conçue et exploitée comme un test précurseur délibéré de l'atterrisseur Chang'e 3, la mission a servi, durant sa phase orbitale, de répétition de qualification en vol pour les communications dans l'espace lointain et la mécanique orbitale dont dépendrait la mission de l'atterrisseur. Elle s'est écrasée sur la Lune en fin de vie, lors d'un test d'impact contrôlé."
+  },
+  {
+    "rel": "earth-objects/chandra.json",
+    "at": "description",
+    "en": "NASA's X-ray eye. Its extreme elliptical orbit swings from 9,942 km to 133,600 km — one third of the way to the Moon. This takes it outside Earth's radiation belts for long, clean observations. Sees black holes, neutron stars, supernovae — the violent high-energy universe invisible to optical telescopes.",
+    "old": "L'œil aux rayons X de NASA. Son orbite elliptique extrême oscille entre 9 942 km et 133 600 km, soit un tiers du chemin vers la Lune. Cela l'emmène en dehors des ceintures de radiations terrestres pour des observations longues et propres. Voit des trous noirs, des étoiles à neutrons, des supernovae – l’univers violent à haute énergie invisible aux télescopes optiques.",
+    "new": "L'œil de la NASA sur les rayons X. Son orbite extrêmement elliptique oscille entre 9 942 km et 133 600 km, soit un tiers du chemin vers la Lune. Elle l'emmène hors des ceintures de radiation terrestres, ce qui permet des observations longues et sans perturbation. Il voit les trous noirs, les étoiles à neutrons, les supernovae — l'univers violent des hautes énergies, invisible aux télescopes optiques."
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "current_distance_label",
+    "en": "135 AU · ~18.8 light-hours from the Sun (last contact 2003-01-23)",
+    "old": "135 au · ~18,8 heures-lumière du Soleil (dernier contact le 23 janvier 2003)",
+    "new": "135 au · ~18,8 heures-lumière du Soleil (dernier contact le 2003-01-23)"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.6.note",
+    "en": "Closest approach: ~300 km altitude. Gravity assist initiates return.",
+    "old": "Approche la plus proche : ~300 km d'altitude. L'assistance gravitationnelle initie le retour.",
+    "new": "Approche la plus proche : ~300 km d'altitude. L'assistance gravitationnelle amorce le retour."
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "description",
+    "en": "ISRO's three-stage launch vehicle (formerly GSLV Mk III): two solid S200 boosters, a liquid L110 core, and the indigenously-developed cryogenic CE-20 upper stage. Lifted Chandrayaan-2 (2019) and Chandrayaan-3 (2023) to lunar trajectories. Human-rated for the upcoming Gaganyaan crewed programme.",
+    "old": "Lanceur spatial triétagé de l'ISRO (anciennement GSLV Mk III) : deux propulseurs solides S200, un étage core liquide L110 et l'étage supérieur cryogénique CE-20 développé en Inde. A mis en orbite Chandrayaan-2 (2019) et Chandrayaan-3 (2023) vers des trajectoires lunaires. Certifié pour le programme spatial habité Gaganyaan à venir.",
+    "new": "Lanceur triétagé de l'ISRO (anciennement GSLV Mk III) : deux propulseurs d'appoint à propergol solide S200, un étage central liquide L110 et l'étage supérieur cryogénique CE-20, développé en Inde. Il a placé Chandrayaan-2 (2019) et Chandrayaan-3 (2023) sur des trajectoires lunaires. Certifié pour le vol habité du futur programme Gaganyaan."
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "science_sections.1.why",
+    "en": "Europa's tiny 0.009 eccentricity is forced by Io's perturbations — without it the subsurface ocean would freeze. Europa Clipper (NASA, 2024–) is launching to study it.",
+    "old": "La minuscule excentricité de 0,009 d'Europe est forcée par les perturbations d'Io — sans elle, l'océan subsurface gèlerait. Europa Clipper (NASA, 2024–) est en cours de lancement pour l'étudier.",
+    "new": "La minuscule excentricité de 0,009 d'Europe est forcée par les perturbations d'Io — sans elle, l'océan sous la surface gèlerait. Europa Clipper (NASA, 2024–) a été lancé pour l'étudier."
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "current_distance_label",
+    "en": "4.1 AU · controlled descent to 67P surface 2016-09-30 (end of mission)",
+    "old": "4,1 au · descente contrôlée sur la surface de 67P 2016-09-30 (fin de mission)",
+    "new": "4,1 au · descente contrôlée sur la surface de 67P le 2016-09-30 (fin de mission)"
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "highlights.2",
+    "en": "In February 2020 it contributed to observations of the Ophiuchus Supercluster explosion.",
+    "old": "En février 2020, il a contribué aux observations de l’explosion de l’amas du Serpentaire.",
+    "new": "En février 2020, il a contribué aux observations de l'explosion du superamas d'Ophiuchus."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.2.why",
+    "en": "Neptune's gentle 0.0086 eccentricity gives an orbit so circular that perihelion–aphelion swing is under 200 million km on a 30-AU semi-major axis — a 1.4 % variation.",
+    "old": "L'excentricité douce de Neptune de 0,0086 donne une orbite si circulaire que l'oscillation périhélie–aphélie est inférieure à 200 millions de km sur un demi-grand axe de 30 au — une variation de 1,4 %.",
+    "new": "La faible excentricité de Neptune, 0,0086, donne une orbite si circulaire que l'écart périhélie–aphélie est inférieur à 200 millions de km sur un demi-grand axe de 30 au — une variation de 1,4 %."
+  },
+  {
+    "rel": "small-bodies/psyche.json",
+    "at": "science_sections.0.why",
+    "en": "16 Psyche may be the exposed nickel-iron core of a protoplanet that lost its mantle in the early belt's violent youth. NASA Psyche (launched 2023) arrives in 2029.",
+    "old": "16 Psyche pourrait être le noyau nickel-fer exposé d'une protoplanète ayant perdu son manteau lors de la jeunesse violente de la ceinture primitive. NASA Psyche (lancée 2023) arrive en 2029.",
+    "new": "16 Psyche pourrait être le noyau nickel-fer exposé d'une protoplanète ayant perdu son manteau lors de la jeunesse violente de la ceinture primitive. NASA Psyche (lancée en 2023) arrive en 2029."
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "description",
+    "en": "NASA's flagship deep-space rocket. Two five-segment solid rocket boosters and a core stage with four RS-25 engines (the same engines that flew on Space Shuttle), topped by an Interim Cryogenic Propulsion Stage. Debuted on Artemis I (Nov 2022), sending an uncrewed Orion capsule around the Moon.",
+    "old": "Le lanceur de exploration spatiale lointaine phare de la NASA. Deux propulseurs à ergols solides de cinq segments et un étage central équipé de quatre moteurs RS-25 (les mêmes moteurs qui ont volé sur Space Shuttle), surmonté d'un Interim Cryogenic Propulsion Stage. A fait ses débuts lors d'Artemis I (nov 2022), envoyant une capsule Orion sans équipage autour de la Lune.",
+    "new": "Le lanceur phare de la NASA pour l'espace lointain. Deux propulseurs d'appoint à propergol solide de cinq segments et un étage central équipé de quatre moteurs RS-25 (les mêmes que ceux du Space Shuttle), surmonté d'un étage de propulsion cryogénique intermédiaire (Interim Cryogenic Propulsion Stage). A fait ses débuts avec Artemis I (nov. 2022), envoyant une capsule Orion sans équipage autour de la Lune."
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "highlights.0",
+    "en": "Built in 1982 with positioning errors under 0.1 mm.",
+    "old": "Construit en 1982, avec des erreurs de pointage inférieures à 0,1 mm.",
+    "new": "Construit en 1982, avec des erreurs de positionnement inférieures à 0,1 mm."
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.2.why",
+    "en": "Earth's 23.4° tilt is the textbook seasons-machine — equinoxes and solstices arise directly from the angle between rotation axis and orbital plane.",
+    "old": "L'inclinaison de 23.4° de la Terre est la machine des saisons par excellence — équinoxes et solstices découlent directement de l'angle entre l'axe de rotation et le plan orbital.",
+    "new": "L'inclinaison de 23,4° de la Terre est la machine des saisons par excellence — équinoxes et solstices découlent directement de l'angle entre l'axe de rotation et le plan orbital."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.rejected.0",
+    "en": "jaxa.jp / isro.gov.in imagery — copyrighted, no free licence",
+    "old": "jaxa.jp / isro.gov.in imagery — protégées par des droits d'auteur, pas de licence libre",
+    "new": "images de jaxa.jp / isro.gov.in — protégées par des droits d'auteur, pas de licence libre"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "mission_visits.1",
+    "en": "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
+    "old": "Galileo orbiter — États-Unis, 1995–2003 (indications d'un océan souterrain)",
+    "new": "Orbiteur Galileo — États-Unis, 1995–2003 (indices d'un océan souterrain)"
+  },
+  {
+    "rel": "earth-objects/jwst.json",
+    "at": "description",
+    "en": "At the Sun-Earth L2 Lagrange point — 1.5 million km from Earth. Never to be serviced. Sees light from 13.4 billion years ago, from the first stars and galaxies after the Big Bang. 25 years to build. The most complex scientific instrument ever deployed. It works.",
+    "old": "Au point de Lagrange L2 Soleil-Terre — à 1,5 million de km de la Terre. Jamais ne sera entretenu. Voit la lumière d'il y a 13,4 milliards d'années, celle des premières étoiles et galaxies après le Big Bang. 25 ans de construction. L'instrument scientifique le plus complexe jamais déployé. Il fonctionne.",
+    "new": "Au point de Lagrange L2 Soleil-Terre — à 1,5 million de km de la Terre. Aucun entretien en vol ne sera jamais possible. Il voit la lumière d'il y a 13,4 milliards d'années, celle des premières étoiles et galaxies après le Big Bang. 25 ans de construction. L'instrument scientifique le plus complexe jamais déployé. Et il fonctionne."
+  },
+  {
+    "rel": "iss-modules/zvezda.json",
+    "at": "function_detail",
+    "en": "Crew quarters, ECLSS support, refuellable propulsion, and early command functions for the Russian Orbital Segment.",
+    "old": "Quartiers de l'équipage, support ECLSS, propulsion rechargeable et premières fonctions de commandement pour le segment orbital russe.",
+    "new": "Quartiers de l'équipage, support ECLSS, propulsion ravitaillable en ergols et fonctions de commandement initiales pour le segment orbital russe."
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "descent",
+    "en": "The way down to a surface, from orbit or from the atmosphere to touchdown.",
+    "old": "Le trajet vers le bas jusqu'à une surface, depuis l'orbite ou depuis l'atmosphère jusqu'au toucher.",
+    "new": "Le trajet vers le bas jusqu'à une surface, depuis l'orbite ou depuis l'atmosphère jusqu'au toucher du sol."
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "first",
+    "en": "First launch vehicle to deliver a nuclear-powered rover to another world",
+    "old": "First lancement vehicle vers deliver a nuclear-powered rover vers another world",
+    "new": "Premier lanceur à livrer un rover à propulsion nucléaire sur un autre monde"
+  },
+  {
+    "rel": "iss-visitors/progress_ms.json",
+    "at": "description",
+    "en": "Russia's automated cargo workhorse—propellant, water, and supplies on every Soyuz-2.1a stack since 2015.",
+    "old": "Le cheval de bataille du ravitaillement automatisé russe — ergols, eau et fournitures à bord de chaque lanceur Soyuz-2.1a depuis 2015.",
+    "new": "Le cheval de bataille du fret automatisé russe — propergol, eau et fournitures à bord de chaque lanceur Soyuz-2.1a depuis 2015."
+  },
+  {
+    "rel": "earth-objects/gps.json",
+    "at": "scale_fact",
+    "en": "GPS is 50× higher than the ISS. You've never looked up and seen it — but it knows exactly where you are.",
+    "old": "GPS est 50 fois plus élevé que ISS. Vous n'avez jamais levé les yeux et ne l'avez jamais vu, mais il sait exactement où vous êtes.",
+    "new": "Le GPS est 50 fois plus haut que l'ISS. Vous ne l'avez jamais vu en levant les yeux, mais il sait exactement où vous êtes."
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.2.why",
+    "en": "Pluto is the largest known Kuiper-belt body — its 1930 discovery predated the belt concept by 60 years.",
+    "old": "Pluton est le plus grand corps connu de la ceinture de Kuiper — sa découverte en 1930 a précédé le concept de ceinture de 60 ans.",
+    "new": "Pluton est le plus grand corps connu de la ceinture de Kuiper — sa découverte, en 1930, a précédé de 60 ans le concept même de cette ceinture."
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "function_detail",
+    "en": "Docking and EVA staging on the Russian segment until de-orbit in 2021 to clear the port for Nauka.",
+    "old": "Amarrage et mise en scène EVA sur le segment russe jusqu'à la désorbite en 2021 pour libérer le port de Nauka.",
+    "new": "Amarrage et préparation des sorties extravéhiculaires (EVA) sur le segment russe jusqu'à sa désorbitation en 2021, afin de libérer le port pour Nauka."
+  },
+  {
+    "rel": "trajectories/venera-13.json",
+    "at": "current_distance_label",
+    "en": "0.74 AU · landed on Venus 1982-03-01 (127 min surface survival)",
+    "old": "0,74 au · posée sur Vénus le 1er mars 1982 (127 min de survie à la surface)",
+    "new": "0,74 au · atterrissage sur Vénus le 1982-03-01 (127 min de survie en surface)"
+  },
+  {
+    "rel": "earth-objects/change2.json",
+    "at": "description",
+    "en": "Began as a higher-resolution remap of the Moon following Chang'e 1, then repurposed for an extended deep-space mission. After completing lunar mapping in 2011, Chang'e 2 departed for Sun-Earth L2 — China's first deep-space mission — and then on to a 2012 flyby of asteroid 4179 Toutatis. Still tracked in heliocentric orbit.",
+    "old": "A commencé comme une recartographie à plus haute résolution de la Lune après Chang'e 1, puis réutilisée pour une mission prolongée dans l'espace lointain. Après avoir terminé la cartographie lunaire en 2011, Chang'e 2 est parti pour Soleil-Terre L2 – la première mission dans l'espace lointain de la Chine – puis a survolé en 2012 l'astéroïde 4179 Toutatis. Toujours suivi en orbite héliocentrique.",
+    "new": "Conçue au départ comme une recartographie de la Lune à plus haute résolution, dans le prolongement de Chang'e 1, la sonde a ensuite été réaffectée à une mission prolongée dans l'espace lointain. Après avoir achevé la cartographie lunaire en 2011, Chang'e 2 s'est dirigée vers le point L2 Soleil-Terre — première mission chinoise dans l'espace lointain — puis a effectué en 2012 un survol de l'astéroïde 4179 Toutatis. Elle est toujours suivie en orbite héliocentrique."
+  },
+  {
+    "rel": "tiangong-modules/wentian.json",
+    "at": "function_detail",
+    "en": "Life-science research, EVA airlock for crew exits, and backup attitude control for Tianhe via redundant guidance systems.",
+    "old": "Recherche en sciences du vivant, sas EVA pour les sorties d'équipage, et contrôle d'attitude de secours pour Tianhe.",
+    "new": "Recherche en sciences du vivant, sas EVA pour les sorties de l'équipage, et contrôle d'attitude de secours pour Tianhe grâce à des systèmes de guidage redondants."
+  },
+  {
+    "rel": "small-bodies/eris.json",
+    "at": "science_sections.0.why",
+    "en": "Eris's 44° orbital inclination is among the highest of any catalogued large body — its scattered-disc origin puts it well off the ecliptic.",
+    "old": "L'inclinaison orbitale de 44° d'Éris figure parmi les plus élevées de tous les grands corps catalogués — son origine dans la ceinture éparse la place bien en dehors de l'écliptique.",
+    "new": "L'inclinaison orbitale de 44° d'Éris figure parmi les plus élevées de tous les grands corps catalogués — son origine dans le disque épars la place bien en dehors de l'écliptique."
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.4.l",
+    "en": "Pale Blue Dot — Carl Sagan reflection (Planetary Society)",
+    "old": "Pale Blue Dot — Réflexion de Carl Sagan (Planetary Society)",
+    "new": "Pale Blue Dot — réflexion de Carl Sagan (Planetary Society)"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "first",
+    "en": "Europe's successor to Ariane 5, with restartable upper stage for direct injection",
+    "old": "Europe's successor vers Ariane 5, with restartable upper stage for direct injection",
+    "new": "Successeur européen d'Ariane 5, avec un étage supérieur rallumable pour l'injection directe"
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "mission_visits.0",
+    "en": "Voyager 2 — USA, 1986 (only spacecraft visit; southern-hemisphere flyby)",
+    "old": "Voyager 2 — USA, 1986 (seul survol d'un engin spatial ; survol de l'hémisphère sud)",
+    "new": "Voyager 2 — USA, 1986 (seul engin spatial à l'avoir visitée ; survol de l'hémisphère sud)"
+  },
+  {
+    "rel": "earth-objects/chandrayaan1.json",
+    "at": "scale_fact",
+    "en": "Polar orbit at 100 km altitude. First direct global confirmation of lunar surface water; transformed every subsequent lunar resource-utilisation roadmap.",
+    "old": "Orbite polaire à 100 km d'altitude. Première confirmation mondiale directe de la présence d'eau à la surface de la Lune ; transformé chaque feuille de route ultérieure d’utilisation des ressources lunaires.",
+    "new": "Orbite polaire à 100 km d'altitude. Première confirmation globale directe de l'eau à la surface de la Lune ; elle a transformé toutes les feuilles de route ultérieures d'exploitation des ressources lunaires."
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "scale_fact",
+    "en": "XMM-Newton and Chandra are diplomatic parallels — NASA and ESA each built their own X-ray observatory rather than collaborating on one. Science got two telescopes.",
+    "old": "XMM-Newton et Chandra sont des parallèles diplomatiques : NASA et ESA ont chacun construit leur propre observatoire à rayons X plutôt que de collaborer à la création d'un seul. La science a deux télescopes.",
+    "new": "XMM-Newton et Chandra sont des parallèles diplomatiques : la NASA et l'ESA ont chacune construit leur propre observatoire de rayons X plutôt que de collaborer sur un seul. La science y a gagné deux télescopes."
+  },
+  {
+    "rel": "iss-visitors/htv_x.json",
+    "at": "function_detail",
+    "en": "Berthed via Canadarm2; pressurised + unpressurised payload; technology demonstration flights for future cislunar logistics.",
+    "old": "Amarré via Canadarm2 ; cargaison pressurisée et non pressurisée ; vols de démonstration technologique pour la future logistique cislunaire.",
+    "new": "Amarré grâce à Canadarm2 ; charge utile pressurisée et non pressurisée ; vols de démonstration technologique pour la future logistique cislunaire."
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "description",
+    "en": "The U.S. segment’s crew airlock—where suited astronauts step into vacuum without opening a docking port on a crew vehicle.",
+    "old": "Le sas de l'équipage du segment américain, où les astronautes adaptés entrent dans le vide sans ouvrir de port d'amarrage sur un véhicule d'équipage.",
+    "new": "Le sas de l'équipage du segment américain, où des astronautes en combinaison pénètrent dans le vide sans ouvrir de port d'amarrage sur un véhicule d'équipage."
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.7.note",
+    "en": "Free-return gravity assist complete. Spacecraft on Earth trajectory.",
+    "old": "Assistance par gravité à retour libre complète. Trajectoire du vaisseau spatial sur Terre.",
+    "new": "Assistance gravitationnelle à retour libre terminée. Le vaisseau spatial est sur une trajectoire vers la Terre."
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "comparison",
+    "en": "About 1/9th the distance from Mars to Phobos. From LMO you can resolve a tennis court on the surface (HiRISE on MRO does 25 cm/px).",
+    "old": "Environ 1/9ème de la distance entre Mars et Phobos. Depuis la LMO, vous pouvez distinguer un court de tennis à la surface (HiRISE sur MRO fait 25 cm/px).",
+    "new": "Environ 1/9 de la distance entre Mars et Phobos. Depuis la LMO, on peut distinguer un court de tennis à la surface (HiRISE sur MRO offre 25 cm/px)."
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "description",
+    "en": "Russian docking compartment and EVA airlock used for years before removal—small but busy real estate on the aft complex.",
+    "old": "Compartiment d'amarrage russe et sas EVA utilisés pendant des années avant leur retrait : un espace immobilier petit mais très fréquenté sur le complexe arrière.",
+    "new": "Compartiment d'amarrage russe et sas EVA utilisés pendant des années avant leur retrait : un module petit mais très sollicité sur la partie arrière du complexe."
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "fact",
+    "en": "Parent of the 160-m moonlet Dimorphos struck by NASA's DART on 2022-09-26 — the first demonstration of kinetic-impactor planetary defense. Didymos itself remained intact as a 780-m S-type observing the binary period change.",
+    "old": "Mère du petit satellite Dimorphos de 160 m frappé par DART de la NASA le 2022-09-26 — première démonstration d'une défense planétaire par impacteur cinétique. Didymos elle-même est restée intacte, astéroïde de type S de 780 m, observable lors de la modification de la période binaire.",
+    "new": "Corps principal du petit satellite Dimorphos (160 m), percuté par DART de la NASA le 2022-09-26 — première démonstration de défense planétaire par impacteur cinétique. Didymos lui-même est resté intact — astéroïde de type S de 780 m — tandis que l'on observait le changement de période du système binaire."
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "description",
+    "en": "Soyuz-FG (now retired) plus the Fregat upper stage — the standard ESA-Roscosmos pairing for medium interplanetary missions. The cryogenic-free design uses kerosene-LOX in the lower stages and Fregat's restartable hypergolic propellants for precise injection. Launched ESA's Mars Express (2003), the Cluster magnetospheric quartet, and most pre-Soyuz-2 ISS resupply flights.",
+    "old": "Soyuz-FG (maintenant retiré du service) plus l'étage supérieur Fregat — l'appairage standard ESA-Roscosmos pour les missions interplanétaires de classe moyenne. La conception sans cryogénie utilise du kérosène-LOX dans les étages inférieurs et les ergols hypergoliques redémarrables de Fregat pour une injection précise. A lancé Mars Express (2003) de l'ESA, le quartet magnétosphérique Cluster et la plupart des vols de ravitaillement de l'ISS antérieurs à Soyuz-2.",
+    "new": "Soyuz-FG (maintenant retiré du service) plus l'étage supérieur Fregat — l'association standard ESA-Roscosmos pour les missions interplanétaires de classe moyenne. La conception sans cryogénie utilise du kérosène-LOX dans les étages inférieurs et les propergols hypergoliques redémarrables de Fregat pour une injection précise. A lancé Mars Express (2003) de l'ESA, le quartet magnétosphérique Cluster et la plupart des vols de ravitaillement de l'ISS antérieurs à Soyuz-2."
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "firsts.0.label",
+    "en": "Luna 1 — first to reach lunar vicinity (USSR)",
+    "old": "Luna 1 — premier à atteindre la proximité lunaire (USSR)",
+    "new": "Luna 1 — premier engin à atteindre le voisinage de la Lune (URSS)"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "fact",
+    "en": "A 4-km main-belt C-type named for the discoverer of the Lucy hominid fossil. Added late in Lucy's mission design as a bonus en-route flyby (2025-04-20, 960 km closest approach at 13.4 km/s) — a chance to test instruments before the harder Trojan encounters.",
+    "old": "Un astéroïde de ceinture principale de type C de 4 km de diamètre, nommé d'après le découvreur du fossile d'hominidé Lucy. Ajouté tardivement au concept de mission de Lucy comme survol bonus en-route (20 avril 2025, approche minimale à 960 km à 13,4 km/s) — une opportunité de tester les instruments avant les rencontres plus difficiles avec les Troyens.",
+    "new": "Un astéroïde de ceinture principale de type C de 4 km de diamètre, nommé d'après le découvreur du fossile d'hominidé Lucy. Ajouté tardivement au concept de mission de Lucy comme survol bonus en route (2025-04-20, approche minimale à 960 km à 13,4 km/s) — une opportunité de tester les instruments avant les rencontres plus difficiles avec les Troyens."
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.1",
+    "en": "Galileo orbiter — USA, 1995–2003 (magnetic-field detection)",
+    "old": "Galileo orbiter — États-Unis, 1995–2003 (détection du champ magnétique)",
+    "new": "Orbiteur Galileo — États-Unis, 1995–2003 (détection du champ magnétique)"
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "interstellar_since_label",
+    "en": "Signal lost 1995 — coasting toward Aquila, will reach interstellar space around 2027",
+    "old": "Signal perdu en 1995 — en phase de coaste vers l'Aigle, atteindra l'espace interstellaire vers 2027",
+    "new": "Signal perdu en 1995 — en dérive inertielle vers l'Aigle, atteindra l'espace interstellaire vers 2027"
+  },
+  {
+    "rel": "iss-modules/columbus.json",
+    "at": "description",
+    "en": "Europe’s flagship science module—ESA’s permanent indoor laboratory carved out of shuttle cargo bay constraints.",
+    "old": "Le module scientifique phare d’Europe : le laboratoire intérieur permanent de ESA, découpé dans les contraintes de la soute de la navette.",
+    "new": "Le module scientifique phare de l'Europe : le laboratoire intérieur permanent de l'ESA, conçu dans les limites imposées par la soute de la navette."
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "fact",
+    "en": "Earth–Mars launch windows open every 26 months — driven by orbital resonance. Miss the window and wait two years.",
+    "old": "Les fenêtres de lancement Terre-Mars s'ouvrent tous les 26 mois, grâce à la résonance orbitale. Manquez la fenêtre et attendez deux ans.",
+    "new": "Les fenêtres de lancement Terre-Mars s'ouvrent tous les 26 mois, déterminées par la résonance orbitale. Si vous manquez la fenêtre, attendez deux ans."
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.space-shuttle-orbiter",
+    "en": "Space Shuttle Endeavour, standing upright in launch position with a real external tank and two solid rocket boosters",
+    "old": "Space Shuttle Endeavour, dressé à la verticale en position de lancement avec un vrai réservoir externe et deux propulseurs à poudre",
+    "new": "Space Shuttle Endeavour, dressé à la verticale en position de lancement avec un vrai réservoir externe et deux propulseurs d'appoint à poudre"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "description",
+    "en": "Two-stage stainless-steel vehicle with a Super Heavy booster (33 Raptor engines) and a Starship upper stage (6 Raptors). Architected around orbital propellant transfer: a tanker variant refills Starship in LEO, enabling ~100 t to Mars surface — orders of magnitude more than any prior launcher. Orbital flight programme began 2023.",
+    "old": "Two-stage stainless-steel vehicle with a Super Heavy booster (33 Raptor engines) and a Starship upper stage (6 Raptors). Architected around orbital propellant transfer: a tanker variant refills Starship in LEO, enabling ~100 t vers Mars surface — orders of magnitude more than any prior launcher. Orbital vol programme began 2023.",
+    "new": "Véhicule en acier inoxydable à deux étages, avec un propulseur d'appoint Super Heavy (33 moteurs Raptor) et un étage supérieur Starship (6 Raptor). Conçu autour du transfert de propergol en orbite : une version ravitailleur remplit Starship en LEO, ce qui permet d'envoyer ~100 t à la surface de Mars — des ordres de grandeur de plus que tout lanceur antérieur. Le programme de vols orbitaux a débuté en 2023."
+  }
+]

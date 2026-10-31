@@ -2,7 +2,7 @@
   "name": "Orbite hautement elliptique",
   "short": "HEO",
   "story": "Pas une altitude, une forme. Une longue ellipse avec un périgée bas (près de la Terre) et un apogée très élevé (parfois plus haut que GEO). Le satellite passe la majeure partie de son temps près de l'apogée, planant lentement au-dessus des hautes latitudes — l'astuce utilisée par les ingénieurs soviétiques pour obtenir des communications continues au-dessus des régions polaires de la Russie où un satellite GEO au-dessus de l'équateur est trop bas sur l'horizon pour être visible. Utilisé aujourd'hui pour l'alerte aux missiles, le suivi de l'espace lointain et le haut débit en haute latitude.",
-  "comparison": "L'apogée peut atteindre 1/8ème du chemin vers la Lune ; le périgée peut frôler le sommet de LEO. Le satellite sprinte près de la Terre et rampe au sommet.",
+  "comparison": "L'apogée peut atteindre 1/8 du chemin vers la Lune ; le périgée peut frôler le sommet de l'orbite basse. Le satellite sprinte près de la Terre et rampe au sommet.",
   "residents": [
     {
       "id": "molniya",
@@ -23,7 +23,7 @@
   "firsts": [
     {
       "year": 1965,
-      "label": "Molniya 1-01 — premier satellite de communication en orbite hautement elliptique (USSR)"
+      "label": "Molniya 1-01 — premier satellite de communication en orbite fortement elliptique (URSS)"
     }
   ],
   "science_link": {

@@ -1,15 +1,15 @@
 {
-  "description": "Le seul satellite naturel de la Terre et le seul monde autre que la Terre sur lequel des humains ont marché. Son verrouillage de marée 1:1 maintient le même hémisphère face à la Terre en permanence — le côté proche dominé par des bassins de mares inondés de lave, le côté lointain un ancien terrain de highlands cratérisés couronné par le bassin du Pôle Sud–Aitken, la plus grande structure d'impact du système solaire (~2 500 km de large, ~13 km de profondeur). La lente récession de la Lune par rapport à la Terre (~3,8 cm/an) allonge progressivement le jour terrestre ; dans un passé lointain elle apparaissait presque trois fois sa taille angulaire actuelle dans le ciel.",
+  "description": "Le seul satellite naturel de la Terre et le seul monde autre que la Terre où des humains ont marché. Son verrouillage de marée 1:1 maintient en permanence le même hémisphère face à la Terre — la face visible dominée par des bassins de mers inondés de lave, la face cachée un ancien terrain de hautes terres cratérisées couronné par le bassin du Pôle Sud–Aitken, la plus grande structure d'impact du système solaire (~2 500 km de large, ~13 km de profondeur). L'éloignement progressif de la Lune par rapport à la Terre (~3,8 cm/an) allonge peu à peu le jour terrestre ; dans un passé lointain, elle apparaissait presque trois fois plus grande qu'aujourd'hui dans le ciel.",
   "science_sections": [
     {
       "tab": "orbits",
       "section": "keplerian-orbit",
-      "why": "L'orbite de la Lune autour de la Terre est le système Keplerian à deux corps du manuel — tous les autres calculs lune-autour-de-planète se généralisent à partir de là."
+      "why": "L'orbite de la Lune autour de la Terre est le système képlérien à deux corps des manuels — tous les autres calculs de lune autour d'une planète en découlent."
     },
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "L'excentricité de 0.055 de la Lune est faible mais significative — au périgée le disque semble 12 % plus grand et plus brillant qu'à l'apogée (« superlune »)."
+      "why": "L'excentricité de 0,055 de la Lune est faible mais compte — au périgée, le disque paraît 12 % plus grand et plus brillant qu'à l'apogée (« superlune »)."
     },
     {
       "tab": "orbits",

@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "description",
+    "find": "des astronautes de la navette spatiale",
+    "replace": "des astronautes de la navette Space Shuttle"
+  }
+]

@@ -1,0 +1,920 @@
+[
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Le laboratoire polyvalent russe massif arrivé avec quatorze ans de retard — ambitions de volume scientifique et de transfert de propergol.",
+    "note": "carburant instead of propergol"
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.2.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "film",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/smart-1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Première mission lunaire de l'ESA, 2003-2006. A utilisé la propulsion solaire-électrique (ionique) pour s'éloigner en spirale d'une orbite de transfert géostationnaire jusqu'à la capture lunaire — un trajet de 14 mois économe en carburant qui a ouvert la voie aux trajectoires à faible poussée des missions interplanétaires ultérieures de l'ESA. S'est volontairement écrasée sur la surface lunaire en 2006.",
+    "note": "Ungrammatical participle, 'de ESA', sense of spiral lost"
+  },
+  {
+    "rel": "museums/tsiolkovsky-museum-kaluga.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/change1.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/unity.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Successeur en deux étages du H-IIA de Mitsubishi Heavy Industries, il a effectué son premier vol réussi en 2024 (son lancement inaugural de 2023 a échoué). Configurable avec 0, 2 ou 4 propulseurs d'appoint à poudre et une coiffe de 5,2 m ou 4 m. Le moteur LE-9 du premier étage est le premier moteur à hydrogène non réutilisable à cycle expandeur à prélèvement (expander-bleed) au monde. Lancera la mission MMX de la JAXA de retour d'échantillons de Phobos en 2026.",
+    "note": "booster term, odd expander-bleed rendering"
+  },
+  {
+    "rel": "museums/aviation-museum-plovdiv-krumovo.json",
+    "at": "items.soyuz-7k-ok",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Lanceur hypergolique à trois étages construit par Khrunichev (quatre avec un étage supérieur Briz-M), en service depuis 1965 (variante M à partir de 2001). Missions interplanétaires notables : Mars 2 / 3 (1971), Luna 17 / Lunokhod 1 (1970), Luna 24 (1976), Vega (1984), Phobos 1 / 2 (1988), Mars 96 (1996, perdue). Dernier lancement commercial en 2023 ; en cours de retrait au profit de l'Angara-A5.",
+    "note": "'du Angara' elision error"
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Brève perte du signal en bande X (8 s). Le DSN a réacquis le signal. Cause : occultation par le panache des propulseurs. Aucune donnée perdue.",
+    "note": "'racheté' (bought) for reacquired"
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/national-military-museum-bucharest.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Le cartographe stellaire de l'ESA en L2. Cartographie de 1,8 milliard d'étoiles — mesure des positions à 7 microsecondes d'arc. A mesuré des distances jusqu'à des étoiles situées à 30 000 années-lumière avec la précision de la largeur d'un cheveu humain à 1 000 km de distance. La carte la plus détaillée de la Voie lactée jamais réalisée.",
+    "note": "'de ESA' elision, hyphen separators"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.orion",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/juno.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/vega-1.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/armstrong-air-and-space-museum.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/rassvet.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.voskhod",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.4.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "La Lune est exceptionnellement grande pour son astre-mère — le rapport (diamètre ≈ 0,27 de celui de la Terre) est le plus élevé de toute paire planète–satellite.",
+    "note": "decimal point instead of comma"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.tundra-sirius",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/kibo.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Le complexe multidisciplinaire du Japon : le seul segment de l'ISS doté à la fois d'un laboratoire pressurisé et d'un « porche » exposé pour les charges utiles extérieures.",
+    "note": "'segment ISS' missing preposition"
+  },
+  {
+    "rel": "tiangong-modules/mengtian.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Europe est le membre central de la résonance de Laplace 4:2:1 Io–Europe–Ganymède — son excentricité forcée provoque les flexions de marée qui maintiennent liquide l'océan sous sa surface.",
+    "note": "'océan subsurface' awkward"
+  },
+  {
+    "rel": "earth-objects/goes.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/cape-canaveral-space-force-museum.json",
+    "at": "items.titan-ii-glv",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Section du premier étage du Titan II qui a lancé Gemini V (1965)",
+    "note": "wrong gender 'la Titan II'"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Identifié comme corps distinct en 2001 grâce à des observations d'événements mutuels. Ménétios (père de Patrocle dans la tradition homérique) partage l'orbite stable L5 avec Patrocle, à 60° en arrière de Jupiter. La géométrie du système binaire, aux masses quasi égales, produit un barycentre situé à l'extérieur de chacun des deux corps, ce qui fait du système Patrocle-Ménétios le plus grand binaire serré connu de la population des Troyens.",
+    "note": "'population troyen' agreement error"
+  },
+  {
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/clementine.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Mission conjointe NASA/DoD pour l'Initiative de défense stratégique, 1994. A passé dix semaines à cartographier la Lune dans 11 bandes spectrales — la première carte multispectrale globale systématique. Des mesures de radar bistatique au pôle sud ont produit les premiers indices de glace d'eau polaire, confirmés plus tard par Lunar Prospector et Chandrayaan-1.",
+    "note": "'water' dropped; English programme name left"
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.4",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Sa rotation est rétrograde — à l'envers et si lente qu'un jour vénusien est plus long que son année. L'inclinaison axiale de 177,4° en est la cause : Vénus est pratiquement sens dessus dessous.",
+    "note": "'Tourne en rotation' redundant"
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "interstellar_since_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Mission à rayons X multi-miroirs de l'ESA. 3 télescopes dans un seul vaisseau spatial. Comme Chandra, utilise une orbite très elliptique pour échapper au rayonnement terrestre. Plus de 1 000 articles évalués par des pairs ont été publiés à partir de ses données. Lancé la même année que Chandra : deux observatoires, deux continents, le même ciel invisible.",
+    "note": "'de ESA' elision error"
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/baikonur-cosmodrome-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "library_labels.phobos-mmx",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "interstellar_since_label",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Dernier contact en 2003 — poursuit sa dérive vers le Taureau, passera près d'Aldébaran dans ~2 millions d'années",
+    "note": "English 'coast' left in"
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/destiny.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/virginia-air-and-space-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Plus grande lune de Neptune et l'un des mondes géologiquement les plus actifs du système solaire. Triton orbite Neptune à rebours (rétrograde) et avec une inclinaison extrême — signature d'un objet de la ceinture de Kuiper capturé, ce qui en fait probablement un frère de Pluton plutôt qu'une lune native de Neptune. Voyager 2 a détecté des geysers d'azote actifs projetant de la poussière organique sombre à 8 km d'altitude dans une atmosphère d'azote ténue ; l'hémisphère sud présente un « terrain cantaloup » — un réseau de cuvettes et de crêtes que l'on ne voit nulle part ailleurs dans le système solaire. L'orbite rétrograde de Triton se dégrade par effet de marée ; dans environ 3,6 Ga, la lune sera soit déchirée en un anneau semblable à celui de Saturne, soit précipitée sur Neptune.",
+    "note": "pronoun 'elle' refers to orbit"
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Le cargo pressurisé, lancé par Long March 7 depuis Wenchang, achemine du propergol, de la nourriture, de l'eau et du matériel expérimental environ tous les six mois.",
+    "note": "carburant instead of propergol"
+  },
+  {
+    "rel": "earth-objects/oneweb.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "library_labels.ganymede-magfield",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/galileo.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Le cheval de bataille lunaire de la Chine — a lancé toutes les missions Chang'e de 1 à 4",
+    "note": "English left, mixed sentence"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.4.l",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.4.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.3",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/musee-air-espace-le-bourget.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.resolution",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "docking",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Premier système de lancement orbital entièrement réutilisable, conçu pour l'établissement humain sur Mars",
+    "note": "English left, mixed sentence"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/geo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Lanceur à deux étages en deux configurations : Ariane 62 avec deux propulseurs d'appoint à poudre et Ariane 64 avec quatre. L'étage supérieur cryogénique propulsé par Vinci est rallumable, ce qui permet des déploiements complexes sur plusieurs orbites et l'injection interplanétaire directe. Vol inaugural en juillet 2024.",
+    "note": "booster term not used"
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Umbriel est le jumeau sombre du système uranien — de taille à peu près égale à Ariel mais réfléchissant moins de la moitié de la lumière solaire, avec une surface ancienne et cratérisée qui montre peu de signes de remodelage depuis sa formation. Son trait le plus marquant est Wunda, un cratère de 131 km dont le rebord est cerclé d'un matériau brillant semblable à du givre, situé près de l'équateur de la lune. La cause de la couleur globalement sombre d'Umbriel est inconnue ; une hypothèse l'associe à la poussière des lunes extérieures irrégulières d'Uranus qui balaierait le système interne.",
+    "note": "'rénovation' wrong sense for resurfacing"
+  },
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Services commerciaux de ravitaillement (CRS) ; cargo pressurisé uniquement ; panneaux solaires circulaires UltraFlex ; éliminé par entrée atmosphérique destructive au-dessus du Pacifique Sud.",
+    "note": "English programme name; entry term"
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "La Lune est à 384 400 km, soit près de 1 000 fois plus loin que l'ISS. Sur cette carte logarithmique, elle semble proche. En réalité, aucun humain n'y est allé depuis 1972.",
+    "note": "'le ISS' elision error"
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Orbiteur Viking 2 — États-Unis, 1977 (images à la plus haute résolution d'avant 2000)",
+    "note": "English 'orbiter' left, clumsy phrase"
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Orbite polaire à 100 km d'altitude. A confirmé l'hypothèse de Clementine sur la glace polaire ; a établi la spectroscopie neutronique comme principal outil d'étude des volatils lunaires.",
+    "note": "mixed nominal/verbal register"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Voyager 2 a survolé Neptune en 1989 après un voyage de 12 ans. C'est resté la seule sonde à l'avoir jamais visitée.",
+    "note": "passive reversed: spacecraft 'visited'"
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/menoetius.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "En orbite autour de la Lune depuis 2009. Cartographie de la surface à une résolution de 50 cm — suffisante pour voir les étages de descente d'Apollo toujours posés à la surface. A trouvé de la glace d'eau aux pôles. A identifié plus de 200 sites d'atterrissage potentiels pour Artemis. Un éclaireur pour le retour.",
+    "note": "first-person 'J'ai trouvé', 'assis'"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/space-expo-noordwijk.json",
+    "at": "items.soyuz-tma",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Capsule d'équipage chinoise à trois places — rendez-vous rapide (3,5 heures depuis Shenzhou 21) au départ de Jiuquan et atterrissage en parachute sur la steppe de Mongolie-Intérieure.",
+    "note": "landing rendered as 'amarrage' (docking)"
+  },
+  {
+    "rel": "earth-objects/galileo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "library_labels.enceladus-cassini",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/fernbank-science-center.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/iridium-next.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "66 satellites opérationnels (plus 9 de rechange en orbite) à 780 km répartis sur 6 plans polaires — remplaçants de deuxième génération de la flotte Iridium d'origine de 1998. Voix, données, machine à machine. Épine dorsale du GMDSS (Système mondial de détresse et de sécurité en mer) ; votre téléphone satellite au milieu de l'océan passe par ce réseau.",
+    "note": "'en océan lointain' ungrammatical"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "0,94 au · en route vers le survol de la Terre n°2 le 2026-09-29 (étape de croisière 2 sur 5)",
+    "note": "'jambe' literal for leg"
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  }
+]

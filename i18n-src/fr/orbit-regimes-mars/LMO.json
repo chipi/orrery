@@ -2,7 +2,7 @@
   "name": "Orbite Basse Martienne",
   "short": "LMO",
   "story": "La bande de cartographie — typiquement entre 150 et 500 km au-dessus de la surface martienne. La plupart des orbiteurs martiens évoluent ici : c'est suffisamment haut pour éviter la traînée atmosphérique de la haute thermosphère, mais assez bas pour obtenir des images à l'échelle métrique. L'atmosphère ténue est un atout — Mars Reconnaissance Orbiter et Mars Odyssey ont utilisé l'aérofreinage (plongeant à plusieurs reprises dans l'atmosphère) pour circulariser leurs orbites gratuitement, économisant des années d'ergol. Six nations font actuellement voler des engins spatiaux ici.",
-  "comparison": "Environ 1/9ème de la distance entre Mars et Phobos. Depuis la LMO, vous pouvez distinguer un court de tennis à la surface (HiRISE sur MRO fait 25 cm/px).",
+  "comparison": "Environ 1/9 de la distance entre Mars et Phobos. Depuis la LMO, on peut distinguer un court de tennis à la surface (HiRISE sur MRO offre 25 cm/px).",
   "residents": [
     {
       "id": "maven",

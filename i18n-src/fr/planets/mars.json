@@ -1,7 +1,7 @@
 {
   "name": "Mars",
   "type": "Objectif de la mission",
-  "fact": "Les fenêtres de lancement Terre-Mars s'ouvrent tous les 26 mois, grâce à la résonance orbitale. Manquez la fenêtre et attendez deux ans.",
+  "fact": "Les fenêtres de lancement Terre-Mars s'ouvrent tous les 26 mois, déterminées par la résonance orbitale. Si vous manquez la fenêtre, attendez deux ans.",
   "bio": "L'excentricité la plus élevée des planètes intérieures (e=0,093) — Mars s'éloigne ~20 % davantage du Soleil à l'aphélie qu'au périhélie, provoquant d'importants écarts saisonniers et des tempêtes de poussière spectaculaires. Les fenêtres de lancement, en revanche, sont déterminées par la période synodique Terre–Mars d'~26 mois.",
   "missionable": true,
   "links": [

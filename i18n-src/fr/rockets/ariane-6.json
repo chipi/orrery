@@ -1,6 +1,6 @@
 {
   "name": "Ariane 6",
   "type": "Lanceur lourd, non réutilisable",
-  "first": "Europe's successor vers Ariane 5, with restartable upper stage for direct injection",
-  "description": "Lanceur à deux étages disponible en deux configurations : Ariane 62 avec deux accélérateurs solides et Ariane 64 avec quatre. L'étage supérieur cryogénique propulsé par Vinci est redémarrable, permettant des déploiements complexes en multi-orbite et l'injection directe interplanétaire. Vol inaugural juillet 2024."
+  "first": "Successeur européen d'Ariane 5, avec un étage supérieur rallumable pour l'injection directe",
+  "description": "Lanceur à deux étages en deux configurations : Ariane 62 avec deux propulseurs d'appoint à poudre et Ariane 64 avec quatre. L'étage supérieur cryogénique propulsé par Vinci est rallumable, ce qui permet des déploiements complexes sur plusieurs orbites et l'injection interplanétaire directe. Vol inaugural en juillet 2024."
 }

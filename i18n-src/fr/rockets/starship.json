@@ -1,6 +1,6 @@
 {
   "name": "Starship",
   "type": "Lanceur super-lourd, entièrement réutilisable",
-  "first": "First fully reusable orbital lancement system, designed for Mars settlement",
-  "description": "Two-stage stainless-steel vehicle with a Super Heavy booster (33 Raptor engines) and a Starship upper stage (6 Raptors). Architected around orbital propellant transfer: a tanker variant refills Starship in LEO, enabling ~100 t vers Mars surface — orders of magnitude more than any prior launcher. Orbital vol programme began 2023."
+  "first": "Premier système de lancement orbital entièrement réutilisable, conçu pour l'établissement humain sur Mars",
+  "description": "Véhicule en acier inoxydable à deux étages, avec un propulseur d'appoint Super Heavy (33 moteurs Raptor) et un étage supérieur Starship (6 Raptor). Conçu autour du transfert de propergol en orbite : une version ravitailleur remplit Starship en LEO, ce qui permet d'envoyer ~100 t à la surface de Mars — des ordres de grandeur de plus que tout lanceur antérieur. Le programme de vols orbitaux a débuté en 2023."
 }

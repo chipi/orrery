@@ -3987,6 +3987,10 @@
     "why": "variant: وقود صاروخي (rocket propellant)",
     "tr": "9d006c7891"
   },
+  "propellant|ar|missions/mercury/mariner10.json :: description": {
+    "why": "binding split by its noun (وقود النيتروجين الدافع = nitrogen propellant)",
+    "tr": "172107151d"
+  },
   "propellant|es|fleet/launcher/h-iia.json :: description": {
     "why": "variant: propulsión líquida",
     "tr": "a195b6c42a"

@@ -1,0 +1,1097 @@
+[
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "الهبوط القمري الثالث — بلوغ الهدف الذي فات Apollo 13؛ ضربات الغولف لدى شيبارد",
+    "note": "Clumsy passive; reworded"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "الدخول في المدار القمري. دلتا-في لمحرك SPS نحو 0.91 كم/ث.",
+    "note": "Delta-v term and units left in English"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Saturn V (AS-510) من مركز كينيدي للفضاء LC-39A في 1971-07-26 الساعة 13:34 بتوقيت UTC.",
+    "note": "Date not in English ISO format"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "delta_v",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "انفصل Schiaparelli عن TGO في 2016-10-16، قبل ثلاثة أيام من الدخول في الغلاف الجوي.",
+    "note": "Date reversed; entry binding preposition"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "هبوط ذاتي على مدرج قاعدة فاندنبرغ الجوية في 2012-06-16.",
+    "note": "Autonomous rendered as independent"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "هبط بالقرب من قاراغندا في 1962-08-15 الساعة 06:59 بتوقيت UTC.",
+    "note": "Place name left in Latin"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "الأوج في مدار HEO نحو 38,800 كم × نحو 320 كم (أول رحلة OTV في مدار شديد الإهليلجية)؛ عمليات الحمولة السرية.",
+    "note": "Units English; elliptical term weak"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "قبل الهبوط: تذبذب في جيمبل محرك SPS الاحتياطي أجبر على مراجعة هندسية فورية استمرت 6 ساعات بين الهبوط والإلغاء. تمت الموافقة على الهبوط في النهاية.",
+    "note": "Gimbal dropped; precautionary wrongly added"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "المرحلة الثانية من New Glenn تنفذ إشعال الحقن نحو القمر.",
+    "note": "Trans-lunar injection rendered unclearly"
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.9.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "هبطت CM هبوطًا مائيًا في جنوب المحيط الهادئ في 1971-02-09 الساعة 21:05 بتوقيت UTC. انتشلتها USS New Orleans. آخر حجر صحي في برنامج Apollo.",
+    "note": "Splashed down rendered as launched"
+  },
+  {
+    "rel": "missions/earth/freedom-7.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "مدار واحد بارتفاع 169 × 327 كم، بميل مداري 65°.",
+    "note": "Inclination binding form missing"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "يحوّل تصحيح منتصف المسار المركبة الفضائية عن مسار العودة الحرة إلى مسار يقترب من فرا ماورو.",
+    "note": "Free-return rendered as free motion"
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "يرفع Titan IVB / Centaur حزمة Cassini–Huygens. يسافر Huygens مسبارًا ملحقًا طوال رحلة العبور VVEJGA التي تستمر 7 سنوات.",
+    "note": "Cruise rendered as research journey"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "الحقن نحو القمر. دلتا-في لمرحلة S-IVB نحو 3.05 كم/ث.",
+    "note": "Delta-v and units left in English"
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "حقن العودة إلى الأرض. دلتا-في لمحرك SPS نحو 1.0 كم/ث.",
+    "note": "Delta-v term left as symbol"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "أول مهمة أوروبية بين الكواكب؛ أطول مركبة مدارية للمريخ عملًا من خارج NASA",
+    "note": "Longest-running lost; non-standard interplanetary"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "أقرب اقتراب على بعد 5768 كم في 1974-02-05؛ أول مسار متعمد لمساعدة الجاذبية في تاريخ الفضاء.",
+    "note": "Clumsy noun chain for gravity-assist path"
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "أُطلقت في 1966-03-31 من بايكونور، وأصبحت Luna 10 أول مركبة فضائية تدور حول القمر — وأول قمر صناعي لأي جرم سماوي آخر غير الأرض — عندما دخلت في 1966-04-03 مداراً قمرياً أبعاده 350 × 1017 كم وميله المداري 71.9°. جاء ذلك قبل وصول Apollo 8 إلى القمر وعلى متنها بشر بعامين ونصف. حملت مقياس مغناطيسية، ومطياف أشعة غاما، ومقياس إشعاع بالأشعة تحت الحمراء، وكواشف للنيازك الدقيقة، ومستشعرات بلازما، ومجساً راديوياً لدراسة حقل الجاذبية القمري. وكانت بيانات أشعة غاما أول استشعار عن بُعد لتركيب القمر، وأوحت بتركيب شبيه بالبازلت في البحار القمرية. بثّت على نحو شهير نشيد الأممية خلال المؤتمر الثالث والعشرين للحزب الشيوعي السوفييتي في 1966-04-04 — حركة دعائية أكثر منها علمية. عملت 56 يوماً / 460 مداراً قبل نفاد بطاريات NiCd في 1966-05-30، ولا تزال في المدار القمري.",
+    "note": "Inclination binding missing; magnetometer wording"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "تنفصل المركبة الهابطة عن المركبة المدارية لهبوط مستقل.",
+    "note": "Descent binding not used"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "الذراع الآلية تضع جهاز SEIS على السطح وتحميه من الرياح.",
+    "note": "Robotic dropped; instrument omitted"
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.9.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "حقن العودة إلى الأرض. دلتا-في لمحرك SPS نحو 1.0 كم/ث.",
+    "note": "Delta-v and units left in English"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "تحرف مساعدة الجاذبية مركبة Ulysses بنحو 80° خارج مستوى مسير الشمس إلى مدار قطبي بالنسبة للشمس.",
+    "note": "Ungrammatical verb with subject"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "هبوط ناعم في بحر الأمطار في 2013-12-14. أول هبوط ناعم منذ Luna 24 (1976). نُشرت المركبة الجوالة Yutu بعد ساعات.",
+    "note": "Rover term inconsistent; passive clumsy"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Saturn IB (AS-205) من رأس كينيدي LC-34، 1968-10-11 15:02 UTC.",
+    "note": "Place name left in Latin"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "كانت Voskhod 1 أول رحلة تحمل أكثر من شخص واحد إلى الفضاء، وقد حققت ذلك بالحذف. لم يكن في Vostok ذات المقعد الواحد متسع لطاقم من ثلاثة أشخاص، فأزال المهندسون أشياء — مقاعد القذف التي أنقذت كل رائد فضاء سابق، وبدلات الضغط أيضًا لأن المكان ظل ضيقًا حتى بعد ذلك. طار كوماروف وفيوكتيستوف ويغوروف يومًا كاملًا بأكمام القمصان، بلا أي وسيلة للنجاة من طارئ في الإطلاق أو في إعادة الدخول في الغلاف الجوي، وبلا حماية إن فقدت المقصورة هواءها. لم يحدث أي خطأ، فبدا الأمر انتصارًا. لكنه كان في الواقع رهانًا — على أن الزوايا التي جرى اختصارها لإحراز سبق لن تكون تلك التي تهم — وقد صادف أن كسبه.",
+    "note": "Reentry binding missing; clumsy passives"
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "قام شويكارت بسير فضائي مدته 38 دقيقة على شرفة وحدة LM. وقام سكوت بسير فضائي وقوفًا من فتحة CSM. أول اختبار تحقق لحقيبة Apollo PLSS الظهرية.",
+    "note": "Person name left in Latin"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "رحلة بافيل بلياييف وألكسي ليونوف التي استغرقت يوماً واحداً — أول سير فضائي في التاريخ. قضى ليونوف 12 دقيقة خارج Voskhod 2 (1965-03-18 11:34 UTC)، بعد أن خرج عبر غرفة معادلة ضغط قابلة للنفخ من طراز Volga أضافها المهندسون السوفييت لأن هيكل Voskhod لم يتسع لإزالة الضغط الكاملة. انتفخت بدلة ليونوف في الفراغ فعلق خارج غرفة معادلة الضغط؛ واضطر إلى تفريغ ضغط البدلة ليعود إلى الداخل، مما رفع خطر مرض الضغط. وكانت إعادة الدخول في الغلاف الجوي مثيرة بالقدر نفسه — فقد فشل نظام الهبوط الآلي، وقاد بلياييف وحدة الهبوط يدوياً إلى هبوط عنيف في ثلوج جبال الأورال العميقة على بعد نحو 390 كم عن الهدف؛ ونجا الطاقم ليلتين في الغابة بين الذئاب قبل وصول مروحيات الإنقاذ في 1965-03-21. كما أصبح هواء المقصورة غنياً بالأكسجين في المدار بعد أن تعذر إحكام إغلاق فتحة السير الفضائي، فتعرّض لخطر الاشتعال التلقائي لفترة وجيزة.",
+    "note": "Entry binding missing; stiff phrasing"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.7.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "إشعال المحرك يُدخل المركبة الفضائية في مدار المريخ.",
+    "note": "Non-word verb for captures"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "مركبة جوالة من DLR/CNES (~25 كغ) تُنزل على سطح فوبوس لإجراء دراسات في الموقع.",
+    "note": "Rover rendered as cart; released as launched"
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "يرفع Atlas-Centaur مركبة Pioneer 10 في مسار مباشر نحو المشتري.",
+    "note": "Direct ascent rendered oddly"
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "يبدأ محرك تأثير هول الأيوني PPS-1350-G مساراً حلزونياً منخفض قوة الدفع مدته 13 شهراً.",
+    "note": "Non-word spiral noun; thrust binding"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/freedom-7.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "حقن العودة إلى الأرض. دلتا-في لمحرك SPS نحو 1.0 كم/ث.",
+    "note": "Delta-v symbol; decimal comma"
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "أبلغ غلين عن «يراعات» مضيئة خارج النافذة — قطع من حزمة صواريخ الكبح تحترق أثناء إعادة الدخول في الغلاف الجوي.",
+    "note": "Entry binding form missing"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "هبطت وحدة القيادة هبوطًا مائيًا في شمال المحيط الأطلسي في 1968-10-22 الساعة 11:11 بتوقيت UTC بعد 163 مداراً / 7.4 مليون كم / 10 أيام 20 ساعة. انتشلتها USS Essex.",
+    "note": "Verb gender disagreement; clumsy passive"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "delta_v",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "تلتحم Apollo وSoyuz 19 في 1975-07-17 الساعة 16:09 بتوقيت UTC. أول التقاء والتحام بين الولايات المتحدة والاتحاد السوفييتي. تُفتح الفتحة في 19:17 بتوقيت UTC؛ ومصافحة ستافورد–ليونوف بعد نحو 3 ساعات (نحو 22:19 بتوقيت UTC).",
+    "note": "Docking not rendered with site binding"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "البروفة الكاملة لأول هبوط قمري. قاد ستافورد وسيرنان وحدة القمر LM المسماة Snoopy إلى ارتفاع نحو 15.6 كم فوق موقع هبوط Apollo 11 المخطط في بحر السكون — كل خطوة من خطوات الاقتراب للهبوط عدا الهبوط نفسه. وأكدا مخطط الهبوط ورادار الهبوط ومسار الصعود وإجراء الالتقاء الذي ستستخدمه Apollo 11 بعد شهرين. وعُبّئت خزانات الوقود الدافع في مرحلة الصعود من LM عمدًا بنحو 50% من القيمة الاسمية لمنع أي إغراء بمحاولة الهبوط. وكانت مرحلة صعود Snoopy الوحيدة التي غادرت المدار القمري بدلتا-في موجبة — أُلقيت في مدار حول الشمس لا تزال فيه حتى اليوم، ويعاد رصدها بين حين وآخر على يد هواة الفلك (وآخر تأكيد كان على يد Nick Howes / Faulkes Telescope عام 2019).",
+    "note": "Descent and delta-v bindings missing"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "أول مركبة فضائية تزور عطارد، وأول مركبة تحلق قرب كوكبين، وأول من استخدم مساعدة الجاذبية للوصول إلى وجهته. أُطلقت في 1973-11-03 الساعة 05:45 بتوقيت UTC من رأس كانافيرال LC-36B على صاروخ Atlas SLV-3D Centaur AC-34. مرت Mariner 10 بجوار الزهرة في 1974-02-05 (أقرب اقتراب 5768 كم، وأول تصوير بالأشعة فوق البنفسجية لحزام السحب على الزهرة) مستفيدة من اللقاء لخفض حضيضها إلى نطاق مدار عطارد — أول مسار متعمد لمساعدة الجاذبية في تاريخ الفضاء. أجرت ثلاث عمليات تحليق قريب من عطارد: 1974-03-29 (703 كم)، 1974-09-21 (48069 كم)، و1975-03-16 (327 كم). صوّرت نحو 45% من سطح عطارد — وهي الصور الوحيدة المتاحة بدقة جيدة حتى MESSENGER (2008-2015). اكتشفت المجال المغناطيسي الذاتي لعطارد وغلافه الخارجي الرقيق من الصوديوم والهيليوم. كانت إدارة درجة حرارة الألواح الشمسية مشكلة هندسية مفتوحة: قام علماء المشروع بإمالة الألواح ولف المركبة لإبقائها تحت 115°م. انتهت المهمة في 1975-03-24 عند نفاد وقود النيتروجين الدافع المخصص للتحكم في الوضعية؛ يُفترض أن المركبة في مدار حول الشمس، تمر بعطارد بشكل دوري.",
+    "note": "Ungrammatical gravity-assist phrase; flyby binding"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "تهبط Antares في مرتفعات فرا ماورو في 1971-02-05 الساعة 09:18 بتوقيت UTC — على بعد 53 م من الهدف رغم خلل في برنامج الإلغاء بحاسوب LM عالجه الفريق في الوقت الفعلي.",
+    "note": "Abort rendered as abortion"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "vehicle",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "PSLV-XL (C25) من سريهاريكوتا — صاروخ إطلاق صغير نسبياً يتطلب حلقة رفع المدار.",
+    "note": "Non-word for launcher"
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "إد وايت — أول سير فضائي أمريكي، نحو 23 دقيقة، مربوطًا بحبل، مع وحدة مناورة محمولة باليد.",
+    "note": "Awkward word order; tethered unclear"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "كبسولة إعادة الدخول في الغلاف الجوي المحمّلة بالعينات تصل إلى الأرض نحو عام 2031.",
+    "note": "Garbled phrase for re-entry capsule"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "يبدأ سيرنان وشميت أولى عمليات السير القمرية الثلاث (المجموع 22 ساعة و4 دقائق).",
+    "note": "EVA rendered as vague activities"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "Atlas V 401 من قاعدة فاندنبرغ الجوية — أول مهمة بين الكواكب تُطلق من الساحل الغربي للولايات المتحدة على الإطلاق.",
+    "note": "Malformed interplanetary word"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "لا يملك الجانب البعيد من القمر خط رؤية راديويًا مباشرًا إلى الأرض. ولإنزال مركبة هناك أطلقت الصين أولًا القمر الصناعي المرحِّل Queqiao إلى مدار هالة حول نقطة لاغرانج L2 في منظومة الأرض-القمر — موقع يرى الجانب البعيد والأرض معًا. ومع وجود هذه البنية التحتية أصبحت Chang'e 4 أول مركبة فضائية تهبط هبوطًا ناعمًا على الجانب البعيد. وتعمل المركبة الجوالة Yutu-2 منذ يناير 2019 وقد قطعت نحو 1.6 كم حتى عام 2024، ما يجعلها أطول مركبة جوالة قمرية عملًا في التاريخ.",
+    "note": "Halo orbit rendered as Halley orbit"
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "الرحلة الرابعة لـ X-37B. أُطلقت في 2015-05-20 الساعة 15:05 بتوقيت UTC من CCAFS SLC-41 على الصاروخ Atlas V 501 AV-054؛ أول هبوط لـ OTV في مرفق الهبوط بمكوك الفضاء بمركز كينيدي للفضاء (نفس المدرج البالغ طوله 4.6 كم الذي استخدمته مكوكات Space Shuttle المدارية سابقًا) في 2017-05-07 الساعة 11:47 بتوقيت UTC. حملت تجربة دافع بتأثير هول من AFRL (XR-5A، الدفع الأيوني) ومنصة اختبار تعريض المواد من NASA.",
+    "note": "Test bed rendered as bed; decimal sign"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.7.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "إعادة دخول CSM في الغلاف الجوي وهبوطها هبوطًا مائيًا في جنوب المحيط الهادئ، وانتشلتها USS Iwo Jima.",
+    "note": "Entry binding missing; splashdown vague"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "هبطت الكبسولة في لواء دوربود، منغوليا الداخلية، في 1999-11-20 الساعة 19:41 بتوقيت UTC.",
+    "note": "Place left in Latin; descended mistranslated"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "مهمة مشتركة بين ESA و JAXA إلى عطارد، أُطلقت في 2018-10-20 — سُميت تيمّنًا بعالم الرياضيات الإيطالي جوزيبي (بيبي) كولومبو، الذي صمّم مسار التحليقات القريبة المتعددة للمركبة Mariner 10. تستخدم رحلة العبور التي تستغرق 8 سنوات 9 عمليات مساعدة جاذبية (الأرض 2020، والزهرة 2020، والزهرة 2021، ثم ستة تحليقات قريبة حول عطارد 2021–2025) بالإضافة إلى قوة دفع أيونية كهربائية مستمرة من وحدة نقل عطارد للتخلص من تدرج الجاذبية الشمسية الهائل بين مدارَي الأرض وعطارد. الدخول في المدار حول عطارد في 2026-11-21؛ تبدأ العمليات العلمية في أوائل 2027 بعد التخلص من وحدة نقل عطارد وفصل المركبتين المداريتين — MPO التابعة لوكالة ESA (سطح الكوكب والتركيب) و Mio التابعة لوكالة JAXA (الغلاف المغناطيسي). كما يُخطط لإجراء اختبارات للنسبية العامة عبر قياس المدى بالعلوم الراديوية في بيئة جاذبية شمسية قوية قرب عطارد.",
+    "note": "Flyby and thrust bindings missing"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "رحلة X-37B الخامسة، وأول إطلاق على Falcon 9 بدلاً من Atlas V — والرحلة الوحيدة لـ X-37B على صاروخ Falcon 9 من الفئة Block 4. أُطلقت في 2017-09-07 الساعة 14:00 بتوقيت UTC من KSC LC-39A (استُعيد المعزز في LZ-1)؛ وهبطت المركبة في KSC SLF في 2019-10-27 الساعة 07:51 بتوقيت UTC. 780 يومًا في المدار. أول رحلة X-37B إلى مدار ذي ميل مداري أعلى (54.5°) — يوسّع نمط المرور فوق الأرض الذي يُتتبَّع علنًا.",
+    "note": "Inclination binding missing"
+  },
+  {
+    "rel": "missions/earth/artemis3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "لم تعد Artemis III تهبط على القمر. ففي فبراير 2026 غيّرت NASA الخطة: فقبل المخاطرة بالهبوط، سيحلّق طاقم بمركبة Orion في مدار أرضي منخفض ويتدرّب على أصعب خطوة جديدة — الالتقاء والالتحام بمركبات الهبوط التجارية التي ستنقل رواد الفضاء لاحقًا إلى السطح. يطلق صاروخ SLS مركبة Orion بأربعة من أفراد الطاقم، وتحلّق بقطعة فاصلة بدلًا من مرحلتها العليا، إذ لا حاجة إلى دفعة نحو القمر. وفي المدار تلتقي Orion بنسختين تجريبيتين من مركبة الهبوط Starship من SpaceX ومن Blue Moon من Blue Origin، وتلتحم بهما، ويختبر الطاقم أنظمة دعم الحياة والاتصالات والدفع في المركبات المتصلة، إلى جانب بدلات الفضاء الجديدة AxEMU. تستغرق الرحلة نحو أسبوعين. وهي تؤدي الدور الذي أدّته Apollo 9 عام 1969، حين طارت الوحدة القمرية والتحمت بالمركبة في المدار الأرضي قبل أن يأخذها أحد إلى القمر. الطاقم، الذي أُعلن عنه في يونيو 2026: راندي بريسنيك (القائد)، ولوكا بارميتانو من ESA (الطيار)، وأندريه دوغلاس، وفرانك روبيو. وتخطط NASA للرحلة في عام 2027.",
+    "note": "Docking rendered as mooring"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "2001-02-12: هبوط متحكَّم به بسرعة 1.7 م/ث — أول هبوط ناعم على أي جرم صغير.",
+    "note": "Date reversed from ISO; wording"
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK"
+  }
+]

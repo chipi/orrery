@@ -15,13 +15,13 @@
     },
     {
       "met": 796,
-      "label": "ERDSCHWUNG",
+      "label": "ERD-SWING-BY",
       "note": "Schwerkraftunterstützung erhöht die heliozentrische Energie bis zum Erreichen Jupiters.",
       "type": "nominal"
     },
     {
       "met": 1796,
-      "label": "JUPITER-ORBITEINFÜGUNG",
+      "label": "EINSCHWENKEN IN DIE JUPITERUMLAUFBAHN",
       "note": "35-minütige Haupttriebwerk-Zündung setzt Juno in Jupiter-Polarbahn.",
       "type": "nominal"
     }

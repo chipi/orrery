@@ -15,14 +15,14 @@
     },
     {
       "met": 796,
-      "label": "AARDSLINGER",
+      "label": "AARDSE ZWAARTEKRACHTASSIST",
       "note": "De zwaartekrachtsslinger verhoogt de heliocentrische energie genoeg om Jupiter te bereiken.",
       "type": "nominal"
     },
     {
       "met": 1796,
-      "label": "JUPITER-BAANINSLUITING",
-      "note": "Hoofdmotor-burn van 35 minuten plaatst Juno in een polaire Jupiter-baan.",
+      "label": "JUPITER-BAANINSERTIE",
+      "note": "Hoofdmotorontsteking van 35 minuten plaatst Juno in een polaire Jupiter-baan.",
       "type": "nominal"
     }
   ]

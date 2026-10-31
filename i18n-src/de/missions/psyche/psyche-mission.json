@@ -5,7 +5,7 @@
   "delta_v": "~6,6 km/s",
   "type": "ORBITER · AKTIV",
   "first": "Erste Mission zu einem metallreichen M-Klasse-Asteroiden; erste Verwendung von Hall-Effekt-Ionentriebwerken als primärer Antrieb für die Reisephase",
-  "description": "Psyche zielt auf den freigelegten Nickel-Eisen-Kern eines differenzierten Protoplaneten — einen 226 km großen Metallkörper, der möglicherweise das erreichbare Gegenstück zum Erdkern darstellt. Gestartet am 2023-10-13 von einer Falcon Heavy vom Kennedy LC-39A. Vier SPT-140 Hall-Effekt-Ionentriebwerke treiben die Flugbahn spiralförmig nach außen; ein Mars-Gravitationsassist im Mai 2026 (nächste Annäherung 4.609 km) brachte die Energie, die die Ionentriebwerke allein nicht rechtzeitig liefern konnten. Ankunft geplant 2029-08, gefolgt von einer 26-monatigen vierphasigen Bahnabsenkung (A → B → C → D) zur Kartierung von Gravitation, Magnetismus, Topografie und Zusammensetzung des Asteroiden. Wenn die Metallkern-Hypothese richtig ist, wird Psyche anders aussehen als alles andere, das wir je besucht haben — bloße Metalloberfläche, Eisensulfid-Lagerstätten, nichts vom Trümmerhaufen-Chaos typischer Asteroiden.",
+  "description": "Psyche zielt auf den freigelegten Nickel-Eisen-Kern eines differenzierten Protoplaneten — einen 226 km großen Metallkörper, der möglicherweise das erreichbare Gegenstück zum Erdkern darstellt. Gestartet am 2023-10-13 von einer Falcon Heavy vom Kennedy LC-39A. Vier SPT-140 Hall-Effekt-Ionentriebwerke treiben die Flugbahn spiralförmig nach außen; ein Mars-Swing-by im Mai 2026 (nächste Annäherung 4.609 km) brachte die Energie, die der Ionenschub allein nicht rechtzeitig liefern konnte. Ankunft geplant 2029-08, gefolgt von einer 26-monatigen vierphasigen Bahnabsenkung (A → B → C → D) zur Kartierung von Gravitation, Magnetismus, Topografie und Zusammensetzung des Asteroiden. Wenn die Metallkern-Hypothese richtig ist, wird Psyche anders aussehen als alles andere, das wir je besucht haben — bloße Metalloberfläche, Eisensulfid-Lagerstätten, nichts vom Trümmerhaufen-Chaos typischer Asteroiden.",
   "events": [
     {
       "met": 0,
@@ -28,7 +28,7 @@
     {
       "met": 2118,
       "label": "PSYCHE-ANKUNFT",
-      "note": "Ionentriebwerk-Gravitationsfang in 700-km-Umlaufbahn. 26-monatige Mission, vier Bahnphasen.",
+      "note": "Ionenschub-Gravitationsfang in 700-km-Umlaufbahn. 26-monatige Mission, vier Bahnphasen.",
       "type": "info"
     }
   ],

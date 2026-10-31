@@ -8,11 +8,11 @@
   "description": "Chang'e 5는 1976년 소련의 Luna 24 이후 처음 이루어진 달 시료 귀환이었다 — 44년 만이다. 구성: 궤도선 + 착륙선 + 상승선 + 시료 귀환 캡슐이 모두 한 번의 발사에 실렸다. 착륙선은 륌케르산에 내려 레골리스 1.731 kg을 시추하고 퍼 담은 뒤 이륙해 궤도선과 랑데부·도킹했고(최초의 무인 달 랑데부), 캡슐은 지구로 돌아왔다. 시료는 20억 년밖에 되지 않은 지역에서 나온 것으로, 어떤 Apollo나 Luna 시료보다 훨씬 젊어 달 화산 활동 모델을 다시 쓰게 했다.",
   "events": [
     { "met": 0, "label": "발사", "note": "원창의 Long March 5.", "type": "nominal" },
-    { "met": 5, "label": "MOI", "note": "달 궤도 삽입.", "type": "nominal" },
+    { "met": 5, "label": "MOI", "note": "달 궤도 진입.", "type": "nominal" },
     { "met": 8, "label": "착지", "note": "착륙선이 륌케르산(폭풍의 대양)에 하강 2020-12-01.", "type": "nominal" },
     { "met": 8.5, "label": "시료 채취", "note": "스쿱과 드릴로 1.731 kg.", "type": "info" },
     { "met": 10, "label": "상승", "note": "상승체가 달 표면에서 이륙.", "type": "nominal" },
-    { "met": 13, "label": "접합", "note": "최초 무인 달 접합; 시료 용기를 궤도선으로 이관.", "type": "info" },
+    { "met": 13, "label": "접합", "note": "최초 무인 달 랑데부; 시료 용기를 궤도선으로 이관.", "type": "info" },
     { "met": 23, "label": "지구 귀환", "note": "샘플 캡슐이 2020-12-16 내몽골에 착륙.", "type": "info" }
   ],
   "vehicle_stage": "Long March 5 YZ-1 상단"

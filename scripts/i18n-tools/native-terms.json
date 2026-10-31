@@ -89,7 +89,7 @@
     "term:gravity assist:fr": "FranceTerme/CNES: assistance gravitationnelle",
     "term:gravity assist:es": "ESA español: asistencia gravitatoria",
     "term:gravity assist:it": "ASI/INAF: fionda gravitazionale",
-    "term:gravity assist:nl": "https://nl.wikipedia.org/wiki/Zwaartekrachtsslinger; site mixes zwaartekrachtassist 41, slinger 13, assist 48",
+    "term:gravity assist:nl": "site majority zwaartekrachtassist (42+) over zwaartekrachtslinger; ESA NL uses both; binding changed 2026-10-31 after reviewers kept re-introducing the minority form",
     "term:gravity assist:pt-BR": "ESA/Brazilian usage: assistência gravitacional",
     "term:delta-v:ru": "site writes «дельта-v» / ∆v; ru.wikipedia uses «характеристическая скорость» with Δv. Keep the site form",
     "term:delta-v:ja": "JAXA/ja Wikipedia (デルタV, ΔV)",
@@ -9585,7 +9585,10 @@
           "公转",
           "绕\\p{L}{0,3}运行",
           "低轨",
-          "进入\\p{L}{1,3}轨道"
+          "进入\\p{L}{1,3}轨道",
+          "绕\\p{L}{0,6}运行",
+          "绕轨",
+          "高轨"
         ],
         "ko": ["궤도", "공전", "선회하다", "(?:둘레|주위)를 ?(?:도는|돈|돌)", "도는", "선회"],
         "hi": ["कक्षा", "कक्षीय", "परिक्रमा", "कक्षीय पथ"],
@@ -9600,7 +9603,8 @@
           "Umlaufba\\p{L}*",
           "-Orb\\p{L}*",
           "umkreis\\p{L}*",
-          "(?<!\\p{L})kreis(?:t|en|te|ten)\\b"
+          "(?<!\\p{L})kreis(?:t|en|te|ten)\\b",
+          "Uml(?:a|ä)uf\\p{L}*"
         ],
         "fr": ["orbit", "gravit(?:e|ent|ait|aient|er|ant)\\b"],
         "es": ["órbit", "orbit"],
@@ -9613,7 +9617,8 @@
           "orbit",
           "omloopba\\p{L}*",
           "(?<!\\p{L})(?:aarde?|maan|mars|venus|zonne|zons|halo|doel|overdrachts|parkeer|transfer|kepler|kerkhof|wetenschaps|werk|eind|polaire|ellips)ba(?:an|nen)\\b",
-          "cirkel(?:t|en|de|den)\\b"
+          "cirkel(?:t|en|de|den)\\b",
+          "(?<!\\p{L})(?:aarde?|maan|mars)ba(?:an|nen)\\p{L}*"
         ],
         "pt-BR": ["órbit", "orbit"]
       },
@@ -9652,7 +9657,15 @@
         "ru": ["траектор"],
         "ja": ["軌道", "飛行経路", "軌跡"],
         "zh-CN": ["轨道", "轨迹", "飞行轨道", "弹道", "中途修正"],
-        "ko": ["궤적", "경로", "비행 경로", "탈출 궤도"],
+        "ko": [
+          "궤적",
+          "경로",
+          "비행 경로",
+          "탈출 궤도",
+          "궤도 ?수정",
+          "자유 ?복귀 ?궤도",
+          "자유 ?귀환 ?궤도"
+        ],
         "hi": ["प्रक्षेपवक्र", "प्रक्षेप-पथ", "प्रक्षेप पथ"],
         "ar": ["مسار"],
         "sr-Cyrl": ["путањ", "трајекториј", "трајекторија"],
@@ -9708,7 +9721,7 @@
         "ru": ["наклонени"],
         "ja": ["傾斜角"],
         "zh-CN": ["倾角"],
-        "ko": ["경사각", "궤도경사", "고경사"],
+        "ko": ["경사각", "궤도경사", "고경사", "궤도 ?경사"],
         "hi": ["झुकाव", "कक्षीय झुकाव", "नति"],
         "ar": ["ميل", "الميل", "ميول"],
         "sr-Cyrl": ["инклинациј", "нагиб", "нагиб орбите", "нагиб путање", "нагнут\\p{L}*"],
@@ -9847,7 +9860,9 @@
           "прикључн\\p{L}* прстен",
           "прикључн\\p{L}* адаптер",
           "споје\\p{L}*",
-          "пристајн\\p{L}* прикључ"
+          "пристајн\\p{L}* прикључ",
+          "спојио",
+          "спојил\\p{L}*"
         ],
         "de": [
           "[Aa]ndock",
@@ -9880,7 +9895,14 @@
           "attrac\\p{L}*"
         ],
         "nl": ["koppel", "dock", "docken", "docking", "kopp\\p{L}*", "dock\\p{L}*", "docki\\p{L}*"],
-        "pt-BR": ["acoplament", "acopl", "atracação", "acoplame\\p{L}*", "atracaç\\p{L}*"]
+        "pt-BR": [
+          "acoplament",
+          "acopl",
+          "atracação",
+          "acoplame\\p{L}*",
+          "atracaç\\p{L}*",
+          "atracag\\p{L}*"
+        ]
       },
       "_confidence": {
         "ru": "high",
@@ -10021,7 +10043,7 @@
       "fr": "assistance gravitationnelle",
       "es": "asistencia gravitatoria",
       "it": "fionda gravitazionale",
-      "nl": "zwaartekrachtsslinger",
+      "nl": "zwaartekrachtassist",
       "pt-BR": "assistência gravitacional"
     },
     "delta-v": {
@@ -10231,7 +10253,8 @@
           "корректирующий импульс",
           "работа двигателя",
           "работ\\p{L}* двигател",
-          "включа\\p{L}* двигател"
+          "включа\\p{L}* двигател",
+          "включени\\p{L}* (?:\\p{L}+ )?двигател"
         ],
         "ja": ["噴射", "燃焼", "点火"],
         "zh-CN": ["点火", "变轨", "制动", "发动机工作"],
@@ -10248,7 +10271,8 @@
           "маневар",
           "рад мотора",
           "пал\\p{L}* мотор",
-          "рад\\p{L}* мотор"
+          "рад\\p{L}* мотор",
+          "рад\\p{L}* (?:\\p{L}+ )?мотора"
         ],
         "de": [
           "Zündung",
@@ -10690,7 +10714,8 @@
           "propuls\\p{L}* sóli\\p{L}*",
           "impulsionador\\p{L}*",
           "foguete lateral",
-          "acelerad\\p{L}*"
+          "acelerad\\p{L}*",
+          "foguetes? laterais"
         ]
       },
       "_confidence": {
@@ -10775,7 +10800,7 @@
         "ru": ["пролёт", "пролет", "облёт", "облет", "пролёт мимо"],
         "ja": ["フライバイ", "接近通過"],
         "zh-CN": ["飞掠", "飞越"],
-        "ko": ["플라이바이", "근접 통과", "근접 ?비행", "근접 ?통과"],
+        "ko": ["플라이바이", "근접 통과", "근접 ?비행", "근접 ?통과", "근접 ?위성 ?비행"],
         "hi": ["फ़?्?लाईबाई", "फ़?्?लाइबाई", "फ्लाई-बाई"],
         "ar": [
           "مرور (ال)?قريب",
@@ -10848,10 +10873,22 @@
           "выведени\\p{L}* на орбит",
           "перевод на орбиту",
           "торможение для выхода на орбиту",
-          "выход\\p{L}* \\p{L}+ на орбит"
+          "выход\\p{L}* \\p{L}+ на орбит",
+          "вы(?:шел|шла|шли|ходит) на (?:\\p{L}+ )?орбит",
+          "захват\\p{L}* (?:\\p{L}+ )?орбит",
+          "захват\\p{L}* на орбит"
         ],
-        "ja": ["軌道投入", "周回軌道投入"],
-        "zh-CN": ["捕获", "入轨", "轨道插入", "进入轨道", "制动", "进入环\\p{L}轨道"],
+        "ja": ["軌道投入", "周回軌道投入", "軌道への投入"],
+        "zh-CN": [
+          "捕获",
+          "入轨",
+          "轨道插入",
+          "进入轨道",
+          "制动",
+          "进入环\\p{L}轨道",
+          "入\\p{L}{1,3}轨道",
+          "进入.{1,12}轨道"
+        ],
         "ko": ["궤도 ?진입", "임무궤도 진입기동", "궤도에 진입"],
         "hi": ["कक्षा[- ]प्रवेश", "कक्षा में प्रवेश", "कक्षा-निवेशन", "कक्षा निवेशन"],
         "ar": [
@@ -10868,7 +10905,8 @@
           "улазак у орбиту",
           "хватање у орбиту",
           "улас\\p{L}* у орбит",
-          "(?:уђ|убац)\\p{L}* у орбит"
+          "(?:уђ|убац)\\p{L}* у орбит",
+          "ула\\p{L}* у (?:\\p{L}+ )?орбит"
         ],
         "de": [
           "Einschwenk",
@@ -10880,26 +10918,31 @@
           "Orbiteinschu\\p{L}*",
           "Bahneinschu\\p{L}*",
           "Einschu\\p{L}*",
-          "Einschu\\p{L}* in die Umlaufba\\p{L}*"
+          "Einschu\\p{L}* in die Umlaufba\\p{L}*",
+          "Einschwu\\p{L}*"
         ],
         "fr": [
           "insertion (en|orbitale)",
           "insertion orbitale",
           "inserti\\p{L}* orbita\\p{L}*",
-          "mise en orbite"
+          "mise en orbite",
+          "insertion \\p{L}+ en orbite"
         ],
         "es": [
           "inserción (en|orbital)",
           "insertar",
           "inserción orbital",
           "insert\\p{L}*",
-          "inserci\\p{L}* orbit\\p{L}*"
+          "inserci\\p{L}* orbit\\p{L}*",
+          "inserción \\p{L}+ en (?:la )?órbita"
         ],
         "it": [
           "inserimento (in|orbitale)",
           "inserimento orbitale",
           "inserimen\\p{L}* orbita\\p{L}*",
-          "immissione in orbita"
+          "immissione in orbita",
+          "inserimento nell'orbita",
+          "inseriment\\p{L}* in orbita"
         ],
         "nl": [
           "insertie",
@@ -10918,12 +10961,15 @@
           "baaninbrengi\\p{L}*",
           "in een baan (?:om \\p{L}+ )?(?:te )?(?:brengen|gebracht)",
           "ingaan van de \\p{L}*baan",
-          "in een baan (?:te )?komen"
+          "in een baan (?:te )?komen",
+          "baaninvoe\\p{L}*",
+          "baanopname"
         ],
         "pt-BR": [
           "inserção (em órbita|orbital)",
           "inserção em órbita",
-          "inserç\\p{L}* em órbi\\p{L}*"
+          "inserç\\p{L}* em órbi\\p{L}*",
+          "inserção na órbita"
         ]
       },
       "_confidence": {
@@ -10976,14 +11022,17 @@
           "العودة إلى الغلاف الجوي",
           "دخول",
           "العودة عبر الغلاف الجوي",
-          "عود\\S* (?:\\S+ ){0,2}إلى الغلاف الجوي"
+          "عود\\S* (?:\\S+ ){0,2}إلى الغلاف الجوي",
+          "العودة لل?غلاف الجوي",
+          "دخل\\p{L}* (?:\\S+ ){0,3}الغلاف الجوي"
         ],
         "sr-Cyrl": [
           "улазак у атмосфер",
           "улаз\\p{L}* у атмосфер",
           "уласк",
           "улазак",
-          "поврат\\p{L}* у атмосфер"
+          "поврат\\p{L}* у атмосфер",
+          "поврат\\p{L}* кроз атмосфер"
         ],
         "de": [
           "Atmosphäreneintritt",
@@ -11051,9 +11100,9 @@
         "ja": ["降下", "動力降下"],
         "zh-CN": ["下降", "动力下降"],
         "ko": ["하강", "동력하강", "강하"],
-        "hi": ["अवरोहण", "उतरना", "उतर"],
+        "hi": ["अवरोहण", "उतरना", "उतर", "अवरोही"],
         "ar": ["هبوط", "الهبوط", "النزول", "نزول"],
-        "sr-Cyrl": ["спуштањ", "спуст", "спусн", "слетање"],
+        "sr-Cyrl": ["спуштањ", "спуст", "спусн", "слетање", "спуштајућ\\p{L}*"],
         "de": [
           "Abstieg",
           "Sinkflug",

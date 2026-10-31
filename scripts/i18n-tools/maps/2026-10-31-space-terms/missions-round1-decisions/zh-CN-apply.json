@@ -1,0 +1,386 @@
+[
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "description",
+    "old": "ESA 主导的任务，由 NASA 提供发射和一项仪器贡献。Parker Solar Probe 飞得比任何探测器都更接近太阳，而 Solar Orbiter 则飞得更高——在十年时间里通过反复的金星引力助推脱离黄道面，爬升至约 33° 日心纬度。从该有利位置，其仪器套件（PHI、EUI、SPICE、STIX、METIS、SoloHI + 四个原位探测仪器包）可对太阳极区磁场成像，实时追踪太阳风加速过程，并同时关联遥感和就地测量数据。首次近日点于 2020-06-15，距离 0.51 AU。迄今最近的近日点为 2022-10-12，距离 0.29 AU（位于水星近日点内侧）。",
+    "new": "ESA 主导的任务，由 NASA 提供发射和一项仪器贡献。Parker Solar Probe 飞得比任何探测器都更接近太阳，而 Solar Orbiter 则飞得更高——在十年时间里通过反复的金星引力辅助脱离黄道面，爬升至约 33° 的日心轨道倾角。从该有利位置，其仪器套件（PHI、EUI、SPICE、STIX、METIS、SoloHI + 四个原位探测仪器包）可对太阳极区磁场成像，实时追踪太阳风加速过程，并同时关联遥感和就地测量数据。首次近日点于 2020-06-15，距离 0.51 AU。迄今最近的近日点为 2022-10-12，距离 0.29 AU（位于水星近日点内侧）。"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.note",
+    "old": "地球引力助推为相汇聚轨道调相。",
+    "new": "地球引力辅助为交会轨道调相。"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.5.label",
+    "old": "1998 KY26 相汇聚",
+    "new": "1998 KY26 交会"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.5.note",
+    "old": "计划与快速自旋小行星（1998 KY26）进行的相汇聚。",
+    "new": "计划与快速自旋小行星（1998 KY26）进行的交会。"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.2.label",
+    "old": "贝努会合",
+    "new": "贝努交会"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "old": "三次地球重力借力中的首次，用于增加飞向彗星会合所需的速度。",
+    "new": "三次地球引力辅助中的首次，用于增加飞向彗星交会所需的速度。"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.5.label",
+    "old": "67P彗星会合",
+    "new": "67P彗星交会"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "old": "油轮舰队在近地轨道进行多次汇合和推进剂转移。",
+    "new": "油轮舰队在近地轨道进行多次交会和推进剂转移。"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "old": "地球重力辅助",
+    "new": "地球引力辅助"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "old": "OSIRIS-REx 执行了迄今尝试过的最为精密的小行星近距离操作之一。它于2016年9月8日从卡纳维拉尔角搭乘 Atlas V 411 火箭发射，利用2017年的地球引力助推，把轨道平面转到与贝努6°的倾角一致，并于2018年12月3日与这颗直径492米的碳质近地小行星交会。在约19千米处定点保持之后，它又进入一条创纪录的约1.4千米轨道——这是航天器绕任何天体飞行过的最近轨道。它用两年时间绘制了贝努遍布巨石的表面，并发现了活跃的粒子喷射。2020年10月20日，“接触即走”采样臂下降到 Nightingale 采样点，向表面喷射氮气，并抓取了一股扬起的物质——采样头陷入这个“碎石堆流体”般的表面约50厘米。样本返回舱于2023年9月24日把121.6克贝努物质送到犹他州。航天器本身随即被重新命名为 OSIRIS-APEX，前往2029年与 Apophis 的交会。",
+    "new": "OSIRIS-REx 执行了迄今尝试过的最为精密的小行星近距离操作之一。它于2016年9月8日从卡纳维拉尔角搭乘 Atlas V 411 火箭发射，利用2017年的地球引力辅助，把轨道平面转到与贝努6°的倾角一致，并于2018年12月3日与这颗直径492米的碳质近地小行星交会。在约19千米处定点保持之后，它又进入一条创纪录的约1.4千米轨道——这是航天器绕任何天体飞行过的最近轨道。它用两年时间绘制了贝努遍布巨石的表面，并发现了活跃的粒子喷射。2020年10月20日，“接触即走”采样臂下降到 Nightingale 采样点，向表面喷射氮气，并抓取了一股扬起的物质——采样头陷入这个“碎石堆流体”般的表面约50厘米。样本返回舱于2023年9月24日把121.6克贝努物质送到犹他州。航天器本身随即被重新命名为 OSIRIS-APEX，前往2029年与 Apophis 的交会。"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.label",
+    "old": "地球重力辅助",
+    "new": "地球引力辅助"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.note",
+    "old": "地球引力助推将Giotto重新锁定目标为葛里格-斯杰勒鲁普彗星。",
+    "new": "地球引力辅助将Giotto重新锁定目标为葛里格-斯杰勒鲁普彗星。"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.note",
+    "old": "单次火星重力借力 + 首次在250 km距离处对火卫一和火星进行近距离成像。",
+    "new": "单次火星引力辅助 + 首次在250 km距离处对火卫一和火星进行近距离成像。"
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "description",
+    "old": "Hera是欧洲航天局对人类首次行星防御实验的贡献。2022年，NASA的DART航天器故意撞击了小行星双生星的小月球双卫一，并可测量地缩短了其轨道。Hera于2024年10月在Falcon 9上发射，正在飞向同一颗双小行星（途中进行2025年火星重力辅助），以进行DART无法完成的详细撞击后调查：陨石坑的大小、双卫一的质量和内部结构，以及撞击转移了多少动量。DART和Hera一起，将一次性演示变成可重复、特征明确的偏转技术。Hera携带两颗CubeSats立方体卫星Juventas和Milani，用于近距离雷达探测和矿物学研究。",
+    "new": "Hera是欧洲航天局对人类首次行星防御实验的贡献。2022年，NASA的DART航天器故意撞击了小行星双生星的小月球双卫一，并可测量地缩短了其轨道。Hera于2024年10月在Falcon 9上发射，正在飞向同一颗双小行星（途中进行2025年火星引力辅助），以进行DART无法完成的详细撞击后调查：陨石坑的大小、双卫一的质量和内部结构，以及撞击转移了多少动量。DART和Hera一起，将一次性演示变成可重复、特征明确的偏转技术。Hera携带两颗CubeSats立方体卫星Juventas和Milani，用于近距离雷达探测和矿物学研究。"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.1.note",
+    "old": "首次地球重力辅助 2022-10-16。",
+    "new": "首次地球引力辅助 2022-10-16。"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.label",
+    "old": "火星引力助推",
+    "new": "火星引力辅助"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.label",
+    "old": "地球引力助推",
+    "new": "地球引力辅助"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "old": "首次月-地重力助推机动——月球和地球在同一轨迹上协作。",
+    "new": "首次月-地引力辅助机动——月球和地球在同一轨迹上协作。"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.note",
+    "old": "金星重力助推，返程中进行两次额外地球近距离通过。",
+    "new": "金星引力辅助，返程中进行两次额外地球近距离通过。"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "old": "单次地球重力助推启动内行星重力助推链。",
+    "new": "单次地球引力辅助启动内行星引力辅助链。"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.2.note",
+    "old": "首次金星重力助推。",
+    "new": "首次金星引力辅助。"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.3.note",
+    "old": "第二次金星重力助推，启动水星接近阶段。",
+    "new": "第二次金星引力辅助，启动水星接近阶段。"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.4.note",
+    "old": "六次水星重力助推中的首次。",
+    "new": "六次水星引力辅助中的首次。"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.1.note",
+    "old": "最近距离 5768 千米 1974-02-05；太空历史上第一次刻意利用重力辅助轨迹。",
+    "new": "最近距离 5768 千米 1974-02-05；太空历史上第一次刻意利用引力辅助轨迹。"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.label",
+    "old": "地球重力辅助加速",
+    "new": "地球引力辅助加速"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "old": "Atlas V 551 离开地球，沿着木星引力助推路径前往冥王星。",
+    "new": "Atlas V 551 离开地球，沿着木星引力辅助路径前往冥王星。"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.label",
+    "old": "火星引力助推",
+    "new": "火星引力辅助"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.0.note",
+    "old": "Atlas-Centaur运载火箭从卡纳维拉尔角发射，采用木星-土星重力助推轨迹。",
+    "new": "Atlas-Centaur运载火箭从卡纳维拉尔角发射，采用木星-土星引力辅助轨迹。"
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "events.1.note",
+    "old": "近地点≈287 km；保密载荷运行。",
+    "new": "远地点≈287 km；保密载荷运行。"
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.1.note",
+    "old": "近地点约325公里；机密载荷作业。",
+    "new": "远地点约325公里；机密载荷作业。"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.3.note",
+    "old": "主发动机燃烧将JUICE送入木星轨道，开始冰月考察。",
+    "new": "主发动机点火将JUICE送入木星轨道，开始冰月考察。"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "old": "27分钟推进器燃烧将Hope捕获进入火星轨道，时间为2021-02-09。",
+    "new": "27分钟推进器点火将Hope捕获进入火星轨道，时间为2021-02-09。"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.3.note",
+    "old": "15分钟固体火箭发动机燃烧将Mariner 9 送入1398 × 17917 km、倾角64.4°的轨道——有史以来第一次绕另一颗行星的轨道插入。",
+    "new": "15分钟固体火箭发动机点火将Mariner 9 送入1398 × 17917 km、倾角64.4°的轨道——有史以来第一次绕另一颗行星的轨道插入。"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.note",
+    "old": "37分钟的主发动机燃烧将轨道器捕获进入火星轨道，时间是2003年圣诞节当天。",
+    "new": "37分钟的主发动机点火将轨道器捕获进入火星轨道，时间是2003年圣诞节当天。"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.note",
+    "old": "33 分钟的主发动机燃烧将 MAVEN 捕获进一个 35 小时的椭圆科学轨道。",
+    "new": "33 分钟的主发动机点火将 MAVEN 捕获进一个 35 小时的椭圆科学轨道。"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "old": "New Glenn 第二级执行月球转移注入燃烧。",
+    "new": "New Glenn 第二级执行月球转移注入点火。"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "old": "2015年12月7日。RCS推进器1228秒燃烧进入400 × 440,000 km、3°轨道。",
+    "new": "2015年12月7日。RCS推进器1228秒点火进入400 × 440,000 km、3°轨道。"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "old": "固体火箭发动机燃烧进入295×8543千米、倾角85.5°的近极地轨道。",
+    "new": "固体火箭发动机点火进入295×8543千米、倾角85.5°的近极地轨道。"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.label",
+    "old": "火星转移注入",
+    "new": "火星转移注入点火"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "old": "跨月球注入点燃烧——S-IVB级火箭将指挥舱/登月舱推向月球。",
+    "new": "跨月球注入点火——S-IVB级火箭将指挥舱/登月舱推向月球。"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "old": "2010-12-07。OME节流阀异常，燃烧进行至152秒时异常发生；航天器继续飞行，进入太阳轨道。",
+    "new": "2010-12-07。OME节流阀异常，点火进行至152秒时异常发生；航天器继续飞行，进入太阳轨道。"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "old": "Psyche 要去探访一颗分异原行星裸露的镍铁核——一个 226 千米的金属天体，很可能是我们能够抵达的、与地球自身内核最相近的对应物。于2023年10月13日由 Falcon Heavy 从肯尼迪航天中心 LC-39A 发射。四台 SPT-140 霍尔效应离子推进器让轨迹逐步向外螺旋；2026年5月的火星引力辅助（最近距离 4,609 千米）补上了仅靠离子推进来不及提供的能量。计划于2029年8月抵达，随后进入为期26个月、分四个轨道阶段（A → B → C → D）的逐级下降，测绘小行星的重力、磁场、地形和成分。如果金属核假说成立，Psyche 将与我们到访过的任何天体都不一样——裸露的金属表面、硫化铁矿床，没有典型小行星那种碎石堆式的混乱。",
+    "new": "Psyche 要去探访一颗分异原行星裸露的镍铁核——一个 226 千米的金属天体，很可能是我们能够抵达的、与地球自身内核最相近的对应物。于2023年10月13日由 Falcon Heavy 从肯尼迪航天中心 LC-39A 发射。四台 SPT-140 霍尔效应离子推进器让轨迹逐步向外螺旋；2026年5月的火星引力辅助（最近距离 4,609 千米）补上了仅靠离子推力来不及提供的能量。计划于2029年8月抵达，随后进入为期26个月、分四个轨道阶段（A → B → C → D）的逐级下降，测绘小行星的重力、磁场、地形和成分。如果金属核假说成立，Psyche 将与我们到访过的任何天体都不一样——裸露的金属表面、硫化铁矿床，没有典型小行星那种碎石堆式的混乱。"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "old": "离子推进引力捕获进入700千米轨道。26个月任务，四个轨道阶段。",
+    "new": "离子推力引力捕获进入700千米轨道。26个月任务，四个轨道阶段。"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.1.label",
+    "old": "253马蒂尔德掠过",
+    "new": "253马蒂尔德飞掠"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.1.note",
+    "old": "1997年6月27日：掠过碳质小行星梅西尔德星 1,212公里；500张图像。",
+    "new": "1997年6月27日：飞掠碳质小行星梅西尔德星 1,212公里；500张图像。"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.label",
+    "old": "地球掠过 #1",
+    "new": "地球飞掠 #1"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.label",
+    "old": "火星掠过",
+    "new": "火星飞掠"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.4.note",
+    "old": "距离~120 km的掠过，观测主小行星带中最大的小行星之一。",
+    "new": "距离~120 km的飞掠，观测主小行星带中最大的小行星之一。"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "type",
+    "old": "多次掠过 · 运行中",
+    "new": "多次飞掠 · 运行中"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.2.note",
+    "old": "2023-11-01。首次小行星掠过——约790 m主小行星带天体；发现卫星Selam（接触双星）。",
+    "new": "2023-11-01。首次小行星飞掠——约790 m主小行星带天体；发现卫星Selam（接触双星）。"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.3.note",
+    "old": "主小行星带额外掠过 2025-04。4-km C型小行星。",
+    "new": "主小行星带额外飞掠 2025-04。4-km C型小行星。"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.note",
+    "old": "2026-05-15。最近距离4,609千米——火星掠过完成。",
+    "new": "2026-05-15。最近距离4,609千米——火星飞掠完成。"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "events.2.label",
+    "old": "哈雷彗星掠过",
+    "new": "哈雷彗星飞掠"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "type",
+    "old": "掠过 + 着陆器 + 气球 · 已执行",
+    "new": "飞掠 + 着陆器 + 气球 · 已执行"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "type",
+    "old": "轨道器+多次掠飞 · 活跃",
+    "new": "轨道器+多次飞掠 · 活跃"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "old": "760 m/s变轨。随后进行4年内的49次欧罗巴掠飞。",
+    "new": "760 m/s变轨。随后进行4年内的49次欧罗巴飞掠。"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "type",
+    "old": "FLYBY · FLOWN",
+    "new": "飞掠 · 已执行"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "type",
+    "old": "CREWED FLYBY · FLOWN",
+    "new": "载人飞掠 · 已执行"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "type",
+    "old": "FLYBY · FLOWN",
+    "new": "飞掠 · 已执行"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "type",
+    "old": "FLYBY · FLOWN",
+    "new": "飞掠 · 已执行"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.2.label",
+    "old": "木星轨道注入",
+    "new": "进入木星轨道"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.2.label",
+    "old": "土星轨道注入",
+    "new": "进入土星轨道"
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "description",
+    "old": "首次载人空间站任务——Salyut 1——于 1971 年 6 月 6 日发射，宇航员为格奥尔基·多布罗沃尔斯基、弗拉迪斯拉夫·沃尔科夫和维克托·帕特萨耶夫。乘组在 Salyut 1 上驻留 22 天（总任务时长 23 天 18 小时）。在 6 月 30 日返回过程中，舱段分离时（约 168 千米处），压力平衡阀提前打开；座舱失压，三名宇航员未穿宇航服，在数秒内身亡。返回舱正常着陆。他们是仅有的在 卡门线上方丧生的人类。",
+    "new": "首次载人空间站任务——Salyut 1——于 1971 年 6 月 6 日发射，宇航员为格奥尔基·多布罗沃尔斯基、弗拉迪斯拉夫·沃尔科夫和维克托·帕特萨耶夫。乘组在 Salyut 1 上驻留 22 天（总任务时长 23 天 18 小时）。在 6 月 30 日再入过程中，舱段分离时（约 168 千米处），压力平衡阀提前打开；座舱失压，三名宇航员未穿宇航服，在数秒内身亡。返回舱正常着陆。他们是仅有的在 卡门线上方丧生的人类。"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "old": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "new": "进入/下降/着陆演示器 · 已坠毁"
+  }
+]

@@ -16,12 +16,12 @@
     {
       "met": 1,
       "label": "REMPLISSAGE ORBITAL",
-      "note": "Rendez-vous des ravitailleurs et transfert de propulseur en LEO sur plusieurs vols.",
+      "note": "Rendez-vous des ravitailleurs et transfert de propergol en LEO sur plusieurs vols.",
       "type": "nominal"
     },
     {
       "met": 2,
-      "label": "BRÛLURE TMI",
+      "label": "ALLUMAGE TMI",
       "note": "Injection Trans-Mars à partir d’un état LEO entièrement alimenté.",
       "type": "nominal"
     },

@@ -11,7 +11,7 @@
     { "met": 0.01, "label": "위상 조정 분사", "note": "지구 저궤도에서 달 접근까지 올라가기 위한 7번의 근지점 상승 중 첫 번째입니다.", "type": "info" },
     { "met": 10, "label": "TCM 1", "note": "다중 궤도 상승 중 궤적 수정.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "두 번째 궤적 수정. 원지점이 달 포획 거리에 접근 중입니다.", "type": "info" },
-    { "met": 41, "label": "달 접근", "note": "최종 달 방향 번턴 — Beresheet이 달 직진 궤적 위에 있습니다.", "type": "nominal" },
+    { "met": 41, "label": "달 접근", "note": "최종 달 전이 연소 — Beresheet이 달 직진 궤적 위에 있습니다.", "type": "nominal" },
     { "met": 48, "label": "달 궤도 진입", "note": "달의 타원형 궤도로 포획 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "하강 중 이상", "note": "동력 강하 중 관성 측정 장치 리셋 → 엔진 차단 → 평온의 바다 충돌 2019-04-11.", "type": "warning" }
   ],

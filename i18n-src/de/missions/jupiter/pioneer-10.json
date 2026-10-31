@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 10",
   "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
-  "payload": "Vorbeiflug-Raumsonde für das äußere Sonnensystem; erste mit SNAP-19-RTGs; 25 W beim Start (abfallend auf ~65 W nutzbare Leistung; Signalverlust 2003)",
+  "payload": "Vorbeiflug-Raumsonde für das äußere Sonnensystem; erste mit SNAP-19-RTGs; ~155 W beim Start (abfallend auf ~65 W nutzbare Leistung; Signalverlust 2003)",
   "delta_v": "~14,4 km/s (heliozentrisch, nach Jupiter)",
   "type": "Vorbeiflug · Geflogen",
   "first": "Erste Raumsonde durch den Asteroidengürtel und erster Vorbeiflug am Jupiter (04.12.1973)",

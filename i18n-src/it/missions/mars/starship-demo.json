@@ -16,12 +16,12 @@
     {
       "met": 1,
       "label": "RICARICA ORBITALE",
-      "note": "Appuntamento con petroliera e trasferimento di propellente in LEO su più voli.",
+      "note": "Rendezvous con petroliera e trasferimento di propellente in LEO su più voli.",
       "type": "nominal"
     },
     {
       "met": 2,
-      "label": "BRUCIATURA TMI",
+      "label": "ACCENSIONE TMI",
       "note": "Iniezione Trans-Mars dallo stato LEO a pieno carburante.",
       "type": "nominal"
     },

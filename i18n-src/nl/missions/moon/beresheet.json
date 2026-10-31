@@ -8,11 +8,11 @@
   "description": "SpaceIL's Beresheet (Hebreeuws: 'In het begin') lanceerde als passagier op een gezamenlijke vlucht op een Falcon 9 in februari 2019. In plaats van een directe trans-maaninjectie voerde de kleine lander weken van faseringsmanoeuvres uit die het perigeum verhoogden om vanaf een parkeerbaan naar de Maan te klimmen — een brandstofbesparende baan die voor goedkope missies werd gepioneerd. Na succesvolle maanbaaninsertie op 4 april 2019 veroorzaakte een reset van een traagheidsmeeteenheid tijdens de afdaling dat de hoofdmotor uitviel. Beresheet stortte neer in Mare Serenitatis. SpaceIL verbond zich binnen enkele dagen aan een opvolger (Beresheet 2).",
   "events": [
     { "met": 0, "label": "LANCERING", "note": "Falcon 9 rideshare vanaf Cape Canaveral 2019-02-22.", "type": "nominal" },
-    { "met": 0.01, "label": "FASERINGSBRANDING", "note": "Eerste van zeven perigeumverhogingen om van LEO naar de maanbenadering te klimmen.", "type": "info" },
+    { "met": 0.01, "label": "FASERINGSONTSTEKING", "note": "Eerste van zeven perigeumverhogingen om van LEO naar de maanbenadering te klimmen.", "type": "info" },
     { "met": 10, "label": "TCM 1", "note": "Trajectcorrectie tijdens meerorbitalige klimming.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "Tweede TCM. Apogeum nadert afstand van maanvangst.", "type": "info" },
-    { "met": 41, "label": "NADERING VAN DE MAAN", "note": "Finale transmaanverbranding — Beresheet op directe maantrajectorium.", "type": "nominal" },
-    { "met": 48, "label": "INTREDE IN MAANBAAN", "note": "Vangst in elliptische maanbaan 2019-04-04.", "type": "nominal" },
+    { "met": 41, "label": "NADERING VAN DE MAAN", "note": "Finale transmaanontsteking — Beresheet op directe maantrajectorium.", "type": "nominal" },
+    { "met": 48, "label": "MAANBAANINSERTIE", "note": "Vangst in elliptische maanbaan 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "AFWIJKING TIJDENS AFDALING", "note": "IMU-reset tijdens aangedreven afdaling → motorafschakeling → crash in Mare Serenitatis 2019-04-11.", "type": "warning" }
   ],
   "vehicle_stage": "tweede trap van de Falcon 9 naar GTO (meelift)"

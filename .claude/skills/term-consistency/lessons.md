@@ -24,7 +24,8 @@ reviewer made or nearly made. Add to it after every round.
 
 - **nl:** the noun "brand" is a fire — an engine burn is "ontsteking" (the verb "de motor
   brandt" is fine). Propellant is "drijfstof" (de-word: "de drijfstof", "die"), not
-  "drijfgas". Gravity assist: the site writes "zwaartekrachtassist" (accepted, majority).
+  "drijfgas". Gravity assist is "zwaartekrachtassist" (the binding since the missions round; never
+  "zwaartekrachtsslinger" in new edits).
   Docking is "koppeling", not "aanmeren" or "dokken".
 - **de:** "Zündung" is the instant of ignition; for the duration use "Brennphase".
 - **fr / it / es:** "propulseur d'appoint", "booster laterale" and "propulsor lateral" are
@@ -39,6 +40,7 @@ reviewer made or nearly made. Add to it after every round.
 - **hi:** sun-synchronous is सूर्य-तुल्यकालिक, not सूर्य-स्थैतिक.
 - **hi:** अवरोहण is descent and अवतरण is landing: change अवतरण only where the English means
   descent.
+- **hi:** an engine burn is दहन (the site's form, 221×); प्रज्वलित is fine as the verb.
 - **ar:** Modern Standard Arabic; matching ignores vowel marks. Flyby is التحليق القريب
   (مرور قريب accepted); الاقتراب (approach) and عبور (transit) are wrong. Rendezvous is
   الالتقاء. Make verbs agree with the gender of the new noun.
@@ -46,4 +48,4 @@ reviewer made or nearly made. Add to it after every round.
   轨迹修正. Full-width punctuation ，：；.
 - **ja:** delta-v is デルタV.
 - **ko:** keep particles grammatical (받침). 스윙바이 is gravity assist; a flyby is 플라이바이.
-  탈출 궤도 is standard.
+  탈출 궤도, 궤도 수정 and 자유복귀 궤도 are standard compounds.

@@ -20,6 +20,7 @@ question in two rounds. Every rule below comes from a mistake made in those roun
 | `scripts/i18n-tools/term-keeps.json` | reviewed misses that are right as they are; each holds the hash of the text judged, so an edit to the field brings it back ("stale keep") |
 | `scripts/i18n-tools/term-workfile.mjs` | misses → per-locale review files for a fix round |
 | `scripts/i18n-tools/term-apply.mjs` | applies `change` decisions (exact find/replace, through `apply-edits.mjs` and `problems()`) |
+| `scripts/i18n-tools/term-apply-check.mjs <loc> <edits.json> …` | after applying: every `change` decision whose replace text is not in the file (a field is refused whole when one of its finds is missing) |
 | `scripts/i18n-tools/term-keep.mjs` | records `keep` decisions; prunes keeps whose field is gone |
 | `scripts/i18n-tools/term-contexts.mjs` | how the site writes a term now (counts + sample pairs) |
 | `scripts/i18n-tools/term-widen-check.mjs <old-glossary>` | after widening stems: every field that passes only under the new stems and nobody reviewed, grouped by the matched word |
@@ -61,6 +62,7 @@ node scripts/i18n-tools/term-workfile.mjs $W/misses.json $W/work        # <loc>.
 # subagents: fix-brief.md, one per work file (Sonnet), write <loc>-edits.json
 node scripts/i18n-tools/term-apply.mjs <loc> $W/work/<loc>-edits.json --dry   # READ the list
 node scripts/i18n-tools/term-apply.mjs <loc> $W/work/<loc>-edits.json
+node scripts/i18n-tools/term-apply-check.mjs <loc> $W/work/<loc>-edits.json   # every change landed?
 node scripts/i18n-tools/term-keep.mjs $W/work/<loc>-edits.json <loc>          # after apply
 node scripts/i18n-tools/term-drift.mjs --trees=essays                         # measure
 ```
@@ -76,6 +78,9 @@ node scripts/i18n-tools/term-drift.mjs --trees=essays                         # 
   A pattern that is too wide hides real misses. On 2026-10-31 an open nl `\p{L}*baan` let
   "lanchbaan" (for *launch pad*), "polaairbaan" and "ontbaan" pass. **List compounds
   explicitly** (`(?<!\p{L})(?:aarde?|maan|halo|…)baan`); never use an open prefix.
+- Never cut term-apply's output to its last line: the "N refused before writing" count is on
+  the line above. Run `term-apply-check.mjs` after every apply. On 2026-10-31 a field with two
+  edits (the second's text removed by the first) was refused whole, and `| tail -1` hid it.
 - Apply first, keep second: a keep hashes the text as it is now. `term-keep.mjs` skips a
   decision whose field already matches (stems widened after the review).
 - Recurring "variant" keeps across locales (essays round: the plain verbs for *to orbit* —
@@ -96,7 +101,7 @@ node scripts/i18n-tools/term-drift.mjs --trees=essays                         # 
 
 When a tree reaches zero unreviewed misses, add it to `GATED_TREES` in
 `term-glossary.test.ts` (it runs `term-drift … --gate`), so a new translation that drifts
-fails CI. Gated since 2026-10-31: **science**, **essays**, **programs**, **fleet**. Mutation-checked: putting "branden" back in
+fails CI. Gated since 2026-10-31: all five trees — **science**, **essays**, **programs**, **fleet**, **missions**. Mutation-checked: putting "branden" back in
 one nl field fails the test with "unreviewed misses: 1".
 
 ## Detector rules worth knowing

@@ -10,13 +10,13 @@
     {
       "met": 0,
       "label": "LANCIO DEL NUOVO GLENN",
-      "note": "Decolla da Cape Canaveral LC-36; ritorni della prima fase per il recupero del downrange.",
+      "note": "Decolla da Cape Canaveral LC-36; il primo stadio ritorna per il recupero del downrange.",
       "type": "nominal"
     },
     {
       "met": 0.2,
       "label": "TLI",
-      "note": "Il secondo stadio del New Glenn esegue l'iniezione translunare.",
+      "note": "Il secondo stadio del New Glenn esegue l'accensione di iniezione translunare.",
       "type": "nominal"
     },
     {

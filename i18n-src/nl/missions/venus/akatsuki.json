@@ -1,7 +1,7 @@
 {
   "name": "Akatsuki",
   "vehicle": "H-IIA 202",
-  "payload": "517 kg (incl. 196 kg drijfgas)",
+  "payload": "517 kg (incl. 196 kg drijfstof)",
   "delta_v": "~1,2 km/s",
   "type": "ORBITER · GEVLOGEN",
   "first": "Herstelde na vijf jaar in een baan om de Zon en bereikte Venus bij een reservepoging; de enige actieve Venus-orbiter in de laatste jaren van zijn operaties",
@@ -22,7 +22,7 @@
     {
       "met": 201,
       "label": "VOI-1 MISLUKING",
-      "note": "2010-12-07. OME throttle-anomalie 152s in de brand; ruimtesonde zeilt voorbij in heliocentrische baan.",
+      "note": "2010-12-07. OME throttle-anomalie 152s in de ontsteking; ruimtesonde zeilt voorbij in heliocentrische baan.",
       "type": "warning"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 2027,
       "label": "VOI-R2 SUCCES",
-      "note": "2015-12-07. RCS-verbrandingsbrand van 1228s in baan 400 × 440.000 km, 3° inclinatie.",
+      "note": "2015-12-07. RCS-ontsteking van 1228s in baan 400 × 440.000 km, 3° inclinatie.",
       "type": "info"
     },
     {

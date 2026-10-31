@@ -16,7 +16,7 @@
     {
       "met": 0.2,
       "label": "TLI",
-      "note": "Le deuxième étage de New Glenn effectue une brûlure par injection trans-lunaire.",
+      "note": "Le deuxième étage de New Glenn effectue un allumage d'injection trans-lunaire.",
       "type": "nominal"
     },
     {
@@ -28,7 +28,7 @@
     {
       "met": 4,
       "label": "Lettre d'intention",
-      "note": "Insertion de l'orbite lunaire via le moteur principal BE-7.",
+      "note": "Insertion en orbite lunaire via le moteur principal BE-7.",
       "type": "nominal"
     },
     {
@@ -38,5 +38,5 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "deuxième étage du New Glenn (injection TLI)"
+  "vehicle_stage": "deuxième étage du New Glenn (allumage TLI)"
 }

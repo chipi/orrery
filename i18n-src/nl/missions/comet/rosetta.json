@@ -1,7 +1,7 @@
 {
   "name": "Rosetta",
   "vehicle": "Ariane 5G+",
-  "payload": "Orbiter (~2900 kg droog, 11 instrumenten) + Philae-afdalingslander (~100 kg, 10 instrumenten). Hitteschild, twee aardse + één Mars-zwaartekrachtsteun, 957 dagen winterslaap in de diepe ruimte 2011–2014.",
+  "payload": "Orbiter (~2900 kg droog, 11 instrumenten) + Philae-afdalingslander (~100 kg, 10 instrumenten). Hitteschild, twee aardse + één Mars-zwaartekrachtassist, 957 dagen winterslaap in de diepe ruimte 2011–2014.",
   "delta_v": "~2,3 km/s (rendez-vous + kometenoperaties)",
   "type": "ORBITER + LANDER · VOLTOOID",
   "first": "Eerste ruimtevaartuig om een komeet te omcirkelen — en om erop te landen (Philae, 2014-11-12)",
@@ -15,14 +15,14 @@
     },
     {
       "met": 367,
-      "label": "AARDBIJSTAND #1",
-      "note": "Eerste van drie aardzwaartekrachtbijstanden om snelheid voor de kometenontmoeting op te bouwen.",
+      "label": "AARDE-FLYBY #1",
+      "note": "Eerste van drie aardse zwaartekrachtassists om snelheid voor de kometenontmoeting op te bouwen.",
       "type": "nominal"
     },
     {
       "met": 1090,
-      "label": "MARSBIJSTAND",
-      "note": "Enkele marszwaartekrachtbijstand + eerste close-up beelden van Phobos en Mars op 250 km.",
+      "label": "MARS-FLYBY",
+      "note": "Enkele Mars-zwaartekrachtassist + eerste close-up beelden van Phobos en Mars op 250 km.",
       "type": "nominal"
     },
     {
@@ -40,7 +40,7 @@
     {
       "met": 3809,
       "label": "KOMEET 67P ONTMOETING",
-      "note": "Baanopstelling rond komeet 67P/Tsjoerjoemov-Gerasimenko. Philae landt op 2014-11-12.",
+      "note": "Baaninsertie rond komeet 67P/Tsjoerjoemov-Gerasimenko. Philae landt op 2014-11-12.",
       "type": "nominal"
     }
   ]

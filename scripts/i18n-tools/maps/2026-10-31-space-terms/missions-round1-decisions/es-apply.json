@@ -1,0 +1,110 @@
+[
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "dispatch",
+    "old": "La cita —dos naves espaciales encontrándose y uniéndose en órbita— era la habilidad sin la cual Apollo no podría funcionar, y Gemini 6A es donde se realizó por primera vez. Casi no voló: su objetivo original explotó en el camino a órbita, y luego, ya abrochados para el lanzamiento reprogramado, los motores del Titan se encendieron y murieron abruptamente en la plataforma —un momento en que las reglas decían eyectar, y Wally Schirra, sin sentir movimiento, eligió fríamente no hacerlo. Tres días después voló e hizo lo que nunca se había hecho: alcanzó al Gemini 7 y mantuvo estación a treinta centímetros de distancia, las tripulaciones lo bastante cerca como para leer las expresiones en sus rostros. Parecía fácil y fue todo menos eso —la mecánica orbital de alcanzar otra nave es profundamente contraintuitiva— y resolverlo fue el momento en que la cita en órbita lunar, y todo el plan Apollo, se volvió real.",
+    "new": "El encuentro —dos naves espaciales encontrándose y uniéndose en órbita— era la habilidad sin la cual Apollo no podría funcionar, y Gemini 6A es donde se realizó por primera vez. Casi no voló: su objetivo original explotó en el camino a órbita, y luego, ya abrochados para el lanzamiento reprogramado, los motores del Titan se encendieron y murieron abruptamente en la plataforma —un momento en que las reglas decían eyectar, y Wally Schirra, sin sentir movimiento, eligió fríamente no hacerlo. Tres días después voló e hizo lo que nunca se había hecho: alcanzó al Gemini 7 y mantuvo estación a treinta centímetros de distancia, las tripulaciones lo bastante cerca como para leer las expresiones en sus rostros. Parecía fácil y fue todo menos eso —la mecánica orbital de alcanzar otra nave es profundamente contraintuitiva— y resolverlo fue el momento en que el encuentro en órbita lunar, y todo el plan Apollo, se volvió real."
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "old": "Primera cita tripulada — mantiene estación a ~30 cm del Gemini 7.",
+    "new": "Primer encuentro tripulado — mantiene estación a ~30 cm del Gemini 7."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "old": "Etapa de ascenso de Snoopy en cita con Charlie Brown — primer acoplamiento completo de LM con CSM en órbita lunar.",
+    "new": "Etapa de ascenso de Snoopy en encuentro con Charlie Brown — primer acoplamiento completo de LM con CSM en órbita lunar."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "old": "Misión del programa Discovery de la NASA, dirigida por Johns Hopkins University APL. Lanzada el 17-02-1996, NEAR Shoemaker pasó volando cerca del asteroide 253 Mathilde (27-06-1997) antes de un asistencia de gravedad terrestre (23-01-1998) que ajustó su órbita para coincidir con Eros. La inserción orbital alrededor de 433 Eros el 14-02-2000 comenzó un estudio de 12 meses que devolvió 160 000 imágenes y mapas completos espectrales, composicionales y gravitacionales del cuerpo tipo S de 34 × 11 × 11 km. El 12-02-2001, cinco quemadas de descenso orbital llevaron la nave a 5 km de altitud; el descenso controlado a ~1.7 m/s terminó con un aterrizaje suave cerca de la silla de montar de Himeros (35°N, 280°W), devolviendo imágenes hasta 125 m de la superficie. La nave sobrevivió y transmitió desde la superficie durante ~16 días.",
+    "new": "Misión del programa Discovery de la NASA, dirigida por Johns Hopkins University APL. Lanzada el 17-02-1996, NEAR Shoemaker pasó volando cerca del asteroide 253 Mathilde (27-06-1997) antes de una asistencia gravitatoria terrestre (23-01-1998) que ajustó su órbita para coincidir con Eros. La inserción orbital alrededor de 433 Eros el 14-02-2000 comenzó un estudio de 12 meses que devolvió 160 000 imágenes y mapas completos espectrales, composicionales y gravitacionales del cuerpo tipo S de 34 × 11 × 11 km. El 12-02-2001, cinco quemadas de descenso orbital llevaron la nave a 5 km de altitud; el descenso controlado a ~1.7 m/s terminó con un aterrizaje suave cerca de la silla de montar de Himeros (35°N, 280°W), devolviendo imágenes hasta 125 m de la superficie. La nave sobrevivió y transmitió desde la superficie durante ~16 días."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "old": "ASISTENCIA DE GRAVEDAD TERRESTRE",
+    "new": "ASISTENCIA GRAVITATORIA TERRESTRE"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.5.label",
+    "old": "FIN DEL PROPULSANTE",
+    "new": "FIN DEL PROPELENTE"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "old": "El ensayo general completo del primer alunizaje. Stafford y Cernan volaron el LM Snoopy a ~15,6 km de altitud sobre el sitio de aterrizaje previsto del Apollo 11 en Mare Tranquillitatis — cada paso de una aproximación de aterrizaje excepto el aterrizaje mismo. Confirmaron el perfil de descenso, el radar de aterrizaje, la trayectoria de ascenso y el procedimiento de rendez-vous que Apollo 11 usaría dos meses después. Los tanques de propulsante de ascenso del LM fueron deliberadamente subllenados (~50 % de lo nominal) para evitar cualquier tentación de intentar aterrizar. La etapa de ascenso de Snoopy fue la única que dejó la órbita lunar con ∆v positivo — lanzada a una órbita heliocéntrica donde permanece hoy, redetectada de forma intermitente por astrónomos aficionados (la confirmación más reciente, de Nick Howes / Faulkes Telescope, en 2019).",
+    "new": "El ensayo general completo del primer alunizaje. Stafford y Cernan volaron el LM Snoopy a ~15,6 km de altitud sobre el sitio de aterrizaje previsto del Apollo 11 en Mare Tranquillitatis — cada paso de una aproximación de aterrizaje excepto el aterrizaje mismo. Confirmaron el perfil de descenso, el radar de aterrizaje, la trayectoria de ascenso y el procedimiento de rendez-vous que Apollo 11 usaría dos meses después. Los tanques de propelente de ascenso del LM fueron deliberadamente subllenados (~50 % de lo nominal) para evitar cualquier tentación de intentar aterrizar. La etapa de ascenso de Snoopy fue la única que dejó la órbita lunar con ∆v positivo — lanzada a una órbita heliocéntrica donde permanece hoy, redetectada de forma intermitente por astrónomos aficionados (la confirmación más reciente, de Nick Howes / Faulkes Telescope, en 2019)."
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.1.note",
+    "old": "Apogeo ~325 km; operaciones de carga clasificada.",
+    "new": "Apogeo ~325 km; operaciones de carga útil clasificada."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "old": "Apogeo HEO ~38 800 km × ~320 km (primer vuelo OTV en órbita altamente elíptica); operaciones de carga clasificadas.",
+    "new": "Apogeo HEO ~38 800 km × ~320 km (primer vuelo OTV en órbita altamente elíptica); operaciones de carga útil clasificadas."
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "old": "Luna 16 fue la primera misión robótica de devolución de muestras exitosa de la Unión Soviética y el primer regreso lunar no tripulado de cualquier tipo. Después de que Apollo 11 llevara a casa 22 kg de muestras tripuladas en 1969, Luna 16 devolvió 101 gramos de regolito de Mare Fecunditatis un año después —una fracción de la carga de Apollo, pero una prueba profunda del concepto de la arquitectura alternativa. La misión utilizó un impulsor Proton-K y un perfil de retorno directo: descenso a la superficie, núcleo taladrado, lanzamiento de la etapa de ascenso, cápsula de retorno balístico a Kazajistán. La técnica fue reutilizada para Luna 20 y Luna 24, y décadas más tarde por Chang'e 5 y Chang'e 6.",
+    "new": "Luna 16 fue la primera misión robótica de devolución de muestras exitosa de la Unión Soviética y el primer regreso lunar no tripulado de cualquier tipo. Después de que Apollo 11 llevara a casa 22 kg de muestras tripuladas en 1969, Luna 16 devolvió 101 gramos de regolito de Mare Fecunditatis un año después —una fracción de la carga útil de Apollo, pero una prueba profunda del concepto de la arquitectura alternativa. La misión utilizó un lanzador Proton-K y un perfil de retorno directo: descenso a la superficie, núcleo taladrado, lanzamiento de la etapa de ascenso, cápsula de retorno balístico a Kazajistán. La técnica fue reutilizada para Luna 20 y Luna 24, y décadas más tarde por Chang'e 5 y Chang'e 6."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "vehicle",
+    "old": "Ariane 5 (carga compartida)",
+    "new": "Ariane 5 (carga útil compartida)"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "description",
+    "old": "Primera misión lunar de la ESA y el primer satélite europeo en alcanzar la Luna. SMART = Small Missions for Advanced Research in Technology (Pequeñas Misiones de Investigación Avanzada en Tecnología) — y la tecnología clave era un motor de iones de efecto Hall con energía solar (PPS-1350-G), en su momento el propulsor de este tipo más grande jamás lanzado. Lanzada el 2003-09-27 como carga compartida en un Ariane 5 desde Kourou, la sonda de 367 kg utilizó su motor de iones de xenón de 1,2 kW durante 13 meses para elevar gradualmente su órbita terrestre, siendo finalmente capturada por la gravedad lunar el 2004-11-15 — una espiral de bajo empuje de 13 meses en lugar de la transferencia química de cuestión de días de todas las misiones lunares anteriores. Operó durante 16 meses en una órbita lunar polar devolviendo imágenes de la cámara AMIE, los primeros mapas elementales de fluorescencia de rayos X de la Luna (D-CIXS), y espectroscopia mineral infrarroja (SIR). Impactó deliberadamente en Lacus Excellentiae (34,4° S, 46,2° O) el 2006-09-03 05:42 UTC — el destello del impacto fue observado en directo desde el Telescopio Canadá-Francia-Hawái.",
+    "new": "Primera misión lunar de la ESA y el primer satélite europeo en alcanzar la Luna. SMART = Small Missions for Advanced Research in Technology (Pequeñas Misiones de Investigación Avanzada en Tecnología) — y la tecnología clave era un motor de iones de efecto Hall con energía solar (PPS-1350-G), en su momento el propulsor de este tipo más grande jamás lanzado. Lanzada el 2003-09-27 como carga útil compartida en un Ariane 5 desde Kourou, la sonda de 367 kg utilizó su motor de iones de xenón de 1,2 kW durante 13 meses para elevar gradualmente su órbita terrestre, siendo finalmente capturada por la gravedad lunar el 2004-11-15 — una espiral de bajo empuje de 13 meses en lugar de la transferencia química de cuestión de días de todas las misiones lunares anteriores. Operó durante 16 meses en una órbita lunar polar devolviendo imágenes de la cámara AMIE, los primeros mapas elementales de fluorescencia de rayos X de la Luna (D-CIXS), y espectroscopia mineral infrarroja (SIR). Impactó deliberadamente en Lacus Excellentiae (34,4° S, 46,2° O) el 2006-09-03 05:42 UTC — el destello del impacto fue observado en directo desde el Telescopio Canadá-Francia-Hawái."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.0.note",
+    "old": "Ariane 5G desde Kourou el 2003-09-27 23:14 UTC — carga compartida con Insat-3E + e-Bird.",
+    "new": "Ariane 5G desde Kourou el 2003-09-27 23:14 UTC — carga útil compartida con Insat-3E + e-Bird."
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "events.0.note",
+    "old": "Delta II lanza Dawn hacia Vesta y Ceres con baja aceleración continua.",
+    "new": "Delta II lanza Dawn hacia Vesta y Ceres con bajo empuje continuo."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "old": "Psyche apunta hacia el núcleo de níquel-hierro expuesto de un protoplaneta diferenciado — un cuerpo metálico de 226 km que podría ser el análogo más cercano al núcleo de la Tierra accesible en el espacio. Lanzado 2023-10-13 en un Falcon Heavy desde Kennedy LC-39A. Cuatro propulsores iónicos de efecto Hall SPT-140 espiralizan la trayectoria hacia afuera; una asistencia gravitatoria de Marte en mayo de 2026 (4609 km de máxima aproximación) aportó la energía que el impulso iónico solo no podría entregar a tiempo. Llegada prevista 2029-08, seguida de un descenso de 26 meses en cuatro fases de órbita (A → B → C → D) cartografiando la gravedad, magnetismo, topografía y composición del asteroide. Si la hipótesis del núcleo metálico es correcta, Psyche se verá diferente a cualquier otro lugar que hayamos visitado — superficie de metal desnudo, depósitos de sulfuro de hierro, nada del caos de escombros típico de los asteroides.",
+    "new": "Psyche apunta hacia el núcleo de níquel-hierro expuesto de un protoplaneta diferenciado — un cuerpo metálico de 226 km que podría ser el análogo más cercano al núcleo de la Tierra accesible en el espacio. Lanzado 2023-10-13 en un Falcon Heavy desde Kennedy LC-39A. Cuatro propulsores iónicos de efecto Hall SPT-140 espiralizan la trayectoria hacia afuera; una asistencia gravitatoria de Marte en mayo de 2026 (4609 km de máxima aproximación) aportó la energía que el empuje iónico solo no podría entregar a tiempo. Llegada prevista 2029-08, seguida de un descenso de 26 meses en cuatro fases de órbita (A → B → C → D) cartografiando la gravedad, magnetismo, topografía y composición del asteroide. Si la hipótesis del núcleo metálico es correcta, Psyche se verá diferente a cualquier otro lugar que hayamos visitado — superficie de metal desnudo, depósitos de sulfuro de hierro, nada del caos de escombros típico de los asteroides."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "old": "Captura gravitatoria por propulsión iónica en órbita de 700 km. Misión de 26 meses, cuatro fases orbitales.",
+    "new": "Captura gravitatoria por empuje iónico en órbita de 700 km. Misión de 26 meses, cuatro fases orbitales."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.0.note",
+    "old": "Un cohete Delta II 7925H lanza MESSENGER en una trayectoria de seis encuentros.",
+    "new": "Un cohete Delta II 7925H lanza MESSENGER en una trayectoria de seis sobrevuelos."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "type",
+    "old": "VUELO TRIPULADO LUNAR · REALIZADO (ATERRIZAJE ABORTADO)",
+    "new": "SOBREVUELO LUNAR TRIPULADO · REALIZADO (ATERRIZAJE ABORTADO)"
+  }
+]

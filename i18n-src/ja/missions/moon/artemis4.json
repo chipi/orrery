@@ -10,7 +10,7 @@
     { "met": 0, "label": "SLS 打ち上げ", "note": "Orion が KSC LC-39B から四人で離昇。", "type": "nominal" },
     { "met": 0.13, "label": "TLI", "note": "月移行軌道投入。", "type": "nominal" },
     { "met": 4, "label": "NRHO 到着", "note": "Orion が高い月周回軌道に到着し、待機していた着陸機とランデブー。", "type": "nominal" },
-    { "met": 5, "label": "降下", "note": "2 人の乗員が着陸機に移乗し、月の南極への動力着陸を行う。", "type": "info" },
+    { "met": 5, "label": "降下", "note": "2 人の乗員が着陸機に移乗し、月の南極への動力降下を行う。", "type": "info" },
     { "met": 12, "label": "上昇", "note": "約 1 週間の表面活動後、着陸機が月周回軌道に戻る。", "type": "nominal" },
     { "met": 14, "label": "TEI", "note": "地球移行軌道投入。", "type": "nominal" },
     { "met": 18, "label": "着水", "note": "Orion が太平洋に着水。", "type": "info" }

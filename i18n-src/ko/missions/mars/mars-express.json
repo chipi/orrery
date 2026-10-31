@@ -10,7 +10,7 @@
     { "met": 0, "label": "발사", "note": "바이코누르에서 발사된 Soyuz-FG / Fregat", "type": "nominal" },
     { "met": 25, "label": "TCM-1", "note": "첫 경로 중간 수정.", "type": "nominal" },
     { "met": 200, "label": "비글 2 분리", "note": "착륙선이 궤도선에서 분리해 독립 하강.", "type": "nominal" },
-    { "met": 206, "label": "화성 궤도 삽입", "note": "37분간 주 엔진 연소로 2003년 성탄절 화성 궤도 포획.", "type": "nominal" },
+    { "met": 206, "label": "화성 궤도 진입", "note": "37분간 주 엔진 연소로 2003년 성탄절 화성 궤도 포획.", "type": "nominal" },
     { "met": 212, "label": "비글 2 침묵", "note": "예정 첫 신호 미수신; 착륙선 실종 선언.", "type": "warning" }
   ],
   "vehicle_stage": "Fregat 상단"

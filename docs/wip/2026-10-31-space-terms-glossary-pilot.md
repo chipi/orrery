@@ -206,5 +206,37 @@ separate pass.
 All trees after essays: 2,142 unreviewed (missions 1,378, fleet 538, programs 226).
 All trees after fleet: 1,350 unreviewed, all in missions.
 
+## Missions round (2026-10-31) — the pilot is complete
+
+1,350 misses in 1,292 fields, eight reviewers, every list read. 998 field edits in 13 locales,
+0 refused (checked by `term-apply-check.mjs`), 231 keeps.
+- Burn as combustion, a skin burn or a loanword (fr brûlure/combustion, it ustione/bruciatura,
+  ar حرق, hi बर्न, ja バーン, ko 번/소각 (incineration), nl brand/verbranding, de Abbrand) →
+  the engine-firing binding.
+- Orbit insertion as "insertion of the orbit" (de Einfügung/Orbitalisierung, fr/pt "de l'orbite",
+  ar إدراج المدار, hi सम्मिलन, ko 궤도 삽입) → the binding.
+- Facts: zh-CN, ja, ko and ar notes had **perigee written for apogee** (OTV-1/2/3/4/6); hi had
+  अपसौर (aphelion) for apogee.
+- Flyby as a generic flight or pass, and English left in `type` labels, in ja/ko/zh/sr/pt/it.
+
+Adjusted:
+- hi burn noun → दहन (the site's form, 221×) instead of the reviewer's प्रज्वलन.
+- nl gravity assist → zwaartekrachtassist, now also the binding (reviewers kept re-introducing
+  the minority "slinger").
+- ko 궤도 수정 / 자유복귀 궤도 kept as standard.
+- sr ПАЛЕЊЕ → ПАЉЕЊЕ in the whole label.
+- ar agreement after حرقة → إشعال.
+- nl Schiaparelli label fully translated.
+
+**All five trees: 0 unreviewed term misses, all gated** (`term-glossary.test.ts`).
+
+Totals for the 20-term pilot: about 2,200 field edits and 1,122 recorded keeps; science
+1,317 → 0, essays 380 → 0, programs 226 → 0, fleet 538 → 0, missions 1,350 → 0.
+
+Found on the way, not part of the term work:
+- English fact, fixed: Pioneer 10's RTG power read "25 W at launch"; it is ~155 W (NASA PDS Pioneer 10 spacecraft description). Corrected in all 14 locales and `static/data`.
+- Garble and grammar slips outside the terms, collected in
+  `2026-10-31-fleet-garble-findings.md`.
+
 Next: missions with the `term-consistency` skill, then the next batch of
 terms from `term-census.mjs`.

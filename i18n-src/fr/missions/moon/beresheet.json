@@ -11,7 +11,7 @@
     { "met": 0.01, "label": "MANŒUVRE DE PHASAGE", "note": "Premier des sept rehaussements de périgée pour s'échapper de l'orbite terrestre basse et atteindre l'approche lunaire.", "type": "info" },
     { "met": 10, "label": "TCM 1", "note": "Correction de trajectoire lors de la montée multi-orbitale.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "Deuxième correction de trajectoire. L'apogée s'approche de la distance de capture lunaire.", "type": "info" },
-    { "met": 41, "label": "APPROCHE LUNAIRE", "note": "Dernier rehaussement trans-lunaire — Beresheet en trajectoire directe vers la Lune.", "type": "nominal" },
+    { "met": 41, "label": "APPROCHE LUNAIRE", "note": "Dernier allumage trans-lunaire — Beresheet en trajectoire directe vers la Lune.", "type": "nominal" },
     { "met": 48, "label": "INSERTION EN ORBITE LUNAIRE", "note": "Capture en orbite lunaire elliptique 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "ANOMALIE DE DESCENTE", "note": "Réinitialisation de l'IMU lors de la descente motorisée → arrêt du moteur → crash dans Mer de la Sérénité 2019-04-11.", "type": "warning" }
   ],

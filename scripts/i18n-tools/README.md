@@ -81,6 +81,7 @@ Technical terms (the `term` class: burn, flyby, orbit insertion …). Runbook: t
 | `term-widen-check.mjs <old-glossary.json> [--trees] [--out=f]` | After widening stems: fields that pass only under the new stems with no reviewed keep, grouped by the matched word, so a too-wide stem cannot hide misses. |
 | `term-workfile.mjs <misses.json> <outdir> [--max=150]` | Misses → per-locale review files (field, English, current text, each term's sense, binding form and stems) for a fix round. |
 | `term-apply.mjs <loc> <edits.json> [--dry]` | Applies the round's `change` decisions (exact find, once) through `apply-edits.mjs`. |
+| `term-apply-check.mjs <loc> <edits.json> …` | After `term-apply`: lists every `change` decision whose replace text is not in the file now (a field is refused whole when one of its finds is missing). Exit 1 if any. |
 | `term-keep.mjs <decisions.json> [loc]` | Records `keep` decisions in `term-keeps.json` with the hash of the field's text; a later edit to the field brings the miss back. |
 | `term-glossary.test.ts` | Every term entry complete for 13 locales, stems compile, the binding form matches its own stems; keeps well-formed. |
 | `link-targets.test.ts` | Translated overlays keep the English markdown link targets. |

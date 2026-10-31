@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 10",
   "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
-  "payload": "Sonde de survol du système solaire externe ; première à utiliser des RTG SNAP-19 ; 25 W au lancement (déclinant à ~65 W de puissance utilisable ; signal perdu en 2003)",
+  "payload": "Sonde de survol du système solaire externe ; première à utiliser des RTG SNAP-19 ; ~155 W au lancement (déclinant à ~65 W de puissance utilisable ; signal perdu en 2003)",
   "delta_v": "~14,4 km/s (héliocentrique, après Jupiter)",
   "type": "SURVOL · VOLÉ",
   "first": "Premier vaisseau à traverser la ceinture d'astéroïdes et à survoler Jupiter (04-12-1973)",

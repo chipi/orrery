@@ -16,7 +16,7 @@
     {
       "met": 0.2,
       "label": "TLI",
-      "note": "New Glenn tweede trap voert trans-lunaire injectie verbranding uit.",
+      "note": "New Glenn tweede trap voert trans-lunaire injectie-ontsteking uit.",
       "type": "nominal"
     },
     {
@@ -38,5 +38,5 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "tweede trap van de New Glenn (TLI-branding)"
+  "vehicle_stage": "tweede trap van de New Glenn (TLI-ontsteking)"
 }

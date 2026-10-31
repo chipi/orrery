@@ -15,14 +15,14 @@
     },
     {
       "met": 7,
-      "label": "TIRATION PÉRIGÉE 1",
-      "note": "Première des six propulsions de rehaussement d'orbite terrestre avant l'injection trans-Mars.",
+      "label": "ALLUMAGE AU PÉRIGÉE 1",
+      "note": "Première des six allumages de rehaussement d'orbite terrestre avant l'injection trans-Mars.",
       "type": "nominal"
     },
     {
       "met": 30,
       "label": "INJECTION TRANS-MARS",
-      "note": "La propulsion périgée finale place le vaisseau sur la trajectoire de Mars.",
+      "note": "L'allumage final au périgée place le vaisseau sur la trajectoire de Mars.",
       "type": "nominal"
     },
     {

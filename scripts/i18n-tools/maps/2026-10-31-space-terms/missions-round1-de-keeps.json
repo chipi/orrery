@@ -1,0 +1,93 @@
+[
+  {
+    "term": "apogee",
+    "loc": "de",
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.note",
+    "why": "engine name: Liquid Apogee Motor"
+  },
+  {
+    "term": "booster",
+    "loc": "de",
+    "rel": "missions/earth/otv-5.json",
+    "at": "description",
+    "why": "variant: first stage (Falcon 9 booster recovered)"
+  },
+  {
+    "term": "booster",
+    "loc": "de",
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "why": "variant: launcher (Proton-K booster)"
+  },
+  {
+    "term": "burn",
+    "loc": "de",
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "why": "fire: burned on the pad"
+  },
+  {
+    "term": "burn",
+    "loc": "de",
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "why": "variant: Brennbeginn (\"into the burn\")"
+  },
+  {
+    "term": "descent",
+    "loc": "de",
+    "rel": "missions/comet/rosetta.json",
+    "at": "payload",
+    "why": "variant: Landeeinheit Philae (descent lander)"
+  },
+  {
+    "term": "descent",
+    "loc": "de",
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "description",
+    "why": "variant: Landemodul (descent module)"
+  },
+  {
+    "term": "descent",
+    "loc": "de",
+    "rel": "missions/earth/vostok-1.json",
+    "at": "payload",
+    "why": "variant: Landekapsel (descent module)"
+  },
+  {
+    "term": "descent",
+    "loc": "de",
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "why": "variant: Bahnabsenkung (orbit-lowering phases)"
+  },
+  {
+    "term": "orbit",
+    "loc": "de",
+    "rel": "missions/earth/sigma-7.json",
+    "at": "dispatch",
+    "why": "orbit count rendered in the sentence, natural"
+  },
+  {
+    "term": "orbit",
+    "loc": "de",
+    "rel": "missions/earth/vostok-6.json",
+    "at": "dispatch",
+    "why": "orbit count rendered in the sentence, natural"
+  },
+  {
+    "term": "stage",
+    "loc": "de",
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "why": "vehicle name: Inertial Upper Stage"
+  },
+  {
+    "term": "trajectory",
+    "loc": "de",
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "why": "variant: Marskurs"
+  }
+]

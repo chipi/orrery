@@ -1,4 +1,36 @@
 {
+  "apogee|de|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "engine name: Liquid Apogee Motor",
+    "tr": "31b9b9beda"
+  },
+  "apogee|hi|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "engine proper name: Liquid Apogee Motor",
+    "tr": "7e4545da7c"
+  },
+  "apogee|ja|missions/earth/liberty-bell-7.json :: events.1.note": {
+    "why": "variant: 最高点 (suborbital ballistic arc, not an orbit apogee)",
+    "tr": "b7ddea8866"
+  },
+  "apogee|ja|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "Liquid Apogee Motor is a proper engine name kept in Latin",
+    "tr": "eb7c0e663b"
+  },
+  "apogee|ko|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "Liquid Apogee Motor is a proper engine name kept in Latin",
+    "tr": "7d10028216"
+  },
+  "apogee|ru|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "Liquid Apogee Motor is a proper name left in English",
+    "tr": "08bcd9be03"
+  },
+  "apogee|zh-CN|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "engine name left in English (Liquid Apogee Motor)",
+    "tr": "4924c9f2e3"
+  },
+  "booster|ar|missions/moon/luna16.json :: description": {
+    "why": "variant: صاروخ Proton-K (launch vehicle, not a strap-on)",
+    "tr": "e017e7ce97"
+  },
   "booster|ar|programs/spacex.json :: outcome.0.md": {
     "why": "variant: first stage (مرحلة)",
     "tr": "e76abaeae4"
@@ -23,6 +55,14 @@
     "why": "variant: Trägerrakete (launch vehicle failure)",
     "tr": "a11aced073"
   },
+  "booster|de|missions/earth/otv-5.json :: description": {
+    "why": "variant: first stage (Falcon 9 booster recovered)",
+    "tr": "1f7b407ac4"
+  },
+  "booster|de|missions/moon/luna16.json :: description": {
+    "why": "variant: launcher (Proton-K booster)",
+    "tr": "b723c8f12f"
+  },
   "booster|de|programs/sputnik.json :: goals.0.md": {
     "why": "variant: Träger (launch vehicle)",
     "tr": "5c3f1500ec"
@@ -46,6 +86,10 @@
   "booster|es|fleet/station/salyut-4.json :: description": {
     "why": "variant: cohete (launch vehicle failure)",
     "tr": "6484983e9c"
+  },
+  "booster|es|missions/moon/luna16.json :: description": {
+    "why": "variant: launcher (Proton-K booster = lanzador)",
+    "tr": "0b4d84a676"
   },
   "booster|es|programs/sputnik.json :: goals.0.md": {
     "why": "variant: cohete (launch vehicle)",
@@ -155,6 +199,14 @@
     "why": "variant: lanceur (launch vehicle failure)",
     "tr": "1900cfc189"
   },
+  "booster|fr|missions/earth/otv-5.json :: description": {
+    "why": "variant: premier étage (first-stage booster)",
+    "tr": "3c12afd40a"
+  },
+  "booster|fr|missions/moon/luna16.json :: description": {
+    "why": "variant: lanceur (whole Proton-K launcher)",
+    "tr": "494d405325"
+  },
   "booster|fr|programs/spacex.json :: goals.1.caption": {
     "why": "variant: first stage booster (propulseurs)",
     "tr": "0a2fbb58f7"
@@ -199,6 +251,10 @@
     "why": "variant: lanciatore (launcher failure)",
     "tr": "1fd0d5558b"
   },
+  "booster|it|missions/moon/luna16.json :: description": {
+    "why": "variant: vettore (whole Proton-K launcher)",
+    "tr": "feeb500543"
+  },
   "booster|it|programs/sputnik.json :: goals.0.md": {
     "why": "variant: vettore (launch vehicle)",
     "tr": "ef43fdd9cd"
@@ -222,6 +278,10 @@
   "booster|pt-BR|fleet/launch-site/lc-34.json :: dispatch": {
     "why": "variant: megafoguetes (Saturn rockets in general)",
     "tr": "8f5291e410"
+  },
+  "booster|pt-BR|missions/moon/luna16.json :: description": {
+    "why": "variant: foguete (whole Proton-K launcher)",
+    "tr": "ba60d291d1"
   },
   "booster|pt-BR|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy named, word omitted naturally",
@@ -278,6 +338,14 @@
   "booster|ru|fleet/station/salyut-4.json :: description": {
     "why": "variant: ракета-носитель (launch vehicle failure)",
     "tr": "1ea2d95d98"
+  },
+  "booster|ru|missions/earth/otv-5.json :: description": {
+    "why": "variant: first stage (Falcon 9 first-stage booster, первая ступень)",
+    "tr": "6cf86da617"
+  },
+  "booster|ru|missions/moon/luna16.json :: description": {
+    "why": "variant: launcher (Proton-K booster = ракета-носитель)",
+    "tr": "7b98500854"
   },
   "booster|ru|programs/sputnik.json :: goals.0.md": {
     "why": "variant: ракета-носитель (launch vehicle)",
@@ -347,6 +415,14 @@
     "why": "variant: ракета-носач (launch vehicle failure)",
     "tr": "15ce998b0e"
   },
+  "booster|sr-Cyrl|missions/earth/otv-5.json :: description": {
+    "why": "variant: први степен (Falcon 9 first stage)",
+    "tr": "2a9fe9cb8b"
+  },
+  "booster|sr-Cyrl|missions/moon/luna16.json :: description": {
+    "why": "variant: ракета (whole launcher Proton-K)",
+    "tr": "a3ce0d8b06"
+  },
   "booster|sr-Cyrl|programs/spacex.json :: goals.1.caption": {
     "why": "variant: first stage (Falcon 9 booster)",
     "tr": "30764b73e3"
@@ -406,6 +482,10 @@
   "booster|zh-CN|fleet/launcher/falcon-heavy.json :: tagline": {
     "why": "whole vehicle: variant 运载火箭",
     "tr": "4d7f284b02"
+  },
+  "booster|zh-CN|missions/moon/luna16.json :: description": {
+    "why": "variant: 运载火箭 (Proton-K is the whole launcher)",
+    "tr": "fc6ac1d602"
   },
   "booster|zh-CN|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy is the booster by name; word omitted naturally",
@@ -482,6 +562,10 @@
   "burn|ar|fleet/launcher/titan-ii-glv.json :: dispatch": {
     "why": "burned storable liquids = combustion (أحرق)",
     "tr": "9f3e89f548"
+  },
+  "burn|ar|missions/earth/apollo-1.json :: payload": {
+    "why": "combustion (burned on pad)",
+    "tr": "6c00b156a2"
   },
   "burn|ar|programs/vostok.json :: lessons.0.md": {
     "why": "figurative: sprint burns the runway, not an engine firing",
@@ -639,6 +723,14 @@
     "why": "burned storable liquids = combustion",
     "tr": "0bad85d962"
   },
+  "burn|de|missions/earth/apollo-1.json :: payload": {
+    "why": "fire: burned on the pad",
+    "tr": "f60a6cd7cd"
+  },
+  "burn|de|missions/venus/akatsuki.json :: events.2.note": {
+    "why": "variant: Brennbeginn (\"into the burn\")",
+    "tr": "26054b7512"
+  },
   "burn|de|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "combustion sense (burning fuel)",
     "tr": "167bb80175"
@@ -718,6 +810,10 @@
   "burn|es|fleet/launcher/new-glenn.json :: description": {
     "why": "combustion: hydrogen-burning rendered de hidrógeno",
     "tr": "e14b56addf"
+  },
+  "burn|es|missions/earth/vostok-6.json :: description": {
+    "why": "burn omitted naturally ('corrección de órbita')",
+    "tr": "b5565f38e2"
   },
   "burn|es|programs/mangalyaan.json :: outcome.2.md": {
     "why": "variant: ignición",
@@ -818,6 +914,14 @@
   "burn|fr|fleet/launcher/titan-ii-glv.json :: dispatch": {
     "why": "combustion: burned storable liquids",
     "tr": "ee48a9a2d3"
+  },
+  "burn|fr|missions/earth/apollo-1.json :: payload": {
+    "why": "burned on pad = destroyed by fire, not an engine firing",
+    "tr": "2515e24719"
+  },
+  "burn|fr|missions/jupiter/galileo.json :: events.1.note": {
+    "why": "variant: mise à feu",
+    "tr": "baa64d0e2b"
   },
   "burn|fr|programs/mangalyaan.json :: goals.0.md": {
     "why": "variant: mise à feu",
@@ -938,6 +1042,10 @@
   "burn|hi|fleet/launcher/titan-ii-glv.json :: dispatch": {
     "why": "burned storable liquids = combustion of propellant, not an engine firing",
     "tr": "6eda7b3849"
+  },
+  "burn|hi|missions/earth/apollo-1.json :: payload": {
+    "why": "combustion on the pad (burned = जल गया)",
+    "tr": "0638757b07"
   },
   "burn|hi|programs/vostok.json :: lessons.0.md": {
     "why": "figurative: sprint burns the runway, not an engine firing",
@@ -1071,6 +1179,10 @@
     "why": "combustion: bruciava liquidi immagazzinabili",
     "tr": "b0a92c6647"
   },
+  "burn|it|missions/earth/apollo-1.json :: payload": {
+    "why": "bruciato = burned in a fire, not an engine firing",
+    "tr": "009bbc0aaf"
+  },
   "burn|it|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion",
     "tr": "ebcd308f40"
@@ -1187,6 +1299,14 @@
     "why": "burned storable liquids = combustion",
     "tr": "1191e2d33a"
   },
+  "burn|ja|missions/earth/apollo-1.json :: payload": {
+    "why": "burned on pad = fire, not engine firing",
+    "tr": "ef99e816ec"
+  },
+  "burn|ja|missions/mars/starship-mars-crew.json :: events.6.note": {
+    "why": "liftoff/ascent from Mars; engine firing implied by 再上昇",
+    "tr": "bbf9427edc"
+  },
   "burn|ja|programs/vostok.json :: lessons.0.md": {
     "why": "metaphor: burns the runway, not an engine firing",
     "tr": "e935e77256"
@@ -1242,6 +1362,10 @@
   "burn|ko|fleet/launcher/titan-ii-glv.json :: dispatch": {
     "why": "combustion: 태워",
     "tr": "9128681784"
+  },
+  "burn|ko|missions/earth/apollo-1.json :: payload": {
+    "why": "burned on pad = fire, not engine firing",
+    "tr": "9c55979ffd"
   },
   "burn|ko|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "combustion / fire, not an engine firing",
@@ -1306,6 +1430,10 @@
   "burn|nl|fleet/launcher/starship.json :: description": {
     "why": "methane-burning = propellant type (methaangestookte)",
     "tr": "9c91ea7cec"
+  },
+  "burn|nl|missions/earth/apollo-1.json :: payload": {
+    "why": "burned = destroyed by fire (uitgebrand), not an engine firing",
+    "tr": "dc63960176"
   },
   "burn|nl|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "combustion / fire, not an engine firing",
@@ -1495,6 +1623,10 @@
     "why": "burned storable liquids = combustion",
     "tr": "359d9ac5d8"
   },
+  "burn|ru|missions/earth/apollo-1.json :: payload": {
+    "why": "burned on pad = fire, not an engine firing",
+    "tr": "6f497ab45a"
+  },
   "burn|ru|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion",
     "tr": "cb421173cd"
@@ -1647,6 +1779,14 @@
     "why": "burned storable liquids = combustion",
     "tr": "7a0047eccb"
   },
+  "burn|sr-Cyrl|missions/earth/apollo-1.json :: payload": {
+    "why": "burned on pad = fire, not an engine firing",
+    "tr": "73f4f3e05d"
+  },
+  "burn|sr-Cyrl|missions/mars/hope-probe.json :: events.2.note": {
+    "why": "variant: Потисници су радили (thrusters ran; рад мотора)",
+    "tr": "361b4126de"
+  },
   "burn|sr-Cyrl|programs/vostok.json :: lessons.0.md": {
     "why": "other sense: figurative \"burns the runway\", not an engine firing",
     "tr": "0ad5c10b12"
@@ -1791,6 +1931,10 @@
     "why": "burned storable liquids = combustion: 燃烧",
     "tr": "8a0da68961"
   },
+  "burn|zh-CN|missions/earth/apollo-1.json :: payload": {
+    "why": "burned = fire/combustion, not an engine firing",
+    "tr": "81383e97e7"
+  },
   "burn|zh-CN|programs/vostok.json :: lessons.0.md": {
     "why": "metaphor: burns the runway, not an engine firing",
     "tr": "c5306b4ac5"
@@ -1903,6 +2047,22 @@
     "why": "variant: Landekapsel (Soyuz descent module)",
     "tr": "4acdd46c60"
   },
+  "descent|de|missions/comet/rosetta.json :: payload": {
+    "why": "variant: Landeeinheit Philae (descent lander)",
+    "tr": "ef650f3a67"
+  },
+  "descent|de|missions/earth/voskhod-2.json :: description": {
+    "why": "variant: Landemodul (descent module)",
+    "tr": "776b475e14"
+  },
+  "descent|de|missions/earth/vostok-1.json :: payload": {
+    "why": "variant: Landekapsel (descent module)",
+    "tr": "e0ec263d4f"
+  },
+  "descent|de|missions/psyche/psyche-mission.json :: description": {
+    "why": "variant: Bahnabsenkung (orbit-lowering phases)",
+    "tr": "3d1a96abd3"
+  },
   "descent|de|programs/shenzhou.json :: the_land.1.md": {
     "why": "variant: Rückkehrkapsel",
     "tr": "ef688dc44d"
@@ -1923,6 +2083,10 @@
     "why": "proper name / Prinzip, not a descent phase",
     "tr": "0fd61cad2a"
   },
+  "descent|hi|missions/mars/schiaparelli.json :: type": {
+    "why": "field left untranslated English (listed)",
+    "tr": "1733e4cec8"
+  },
   "descent|hi|programs/vostok.json :: legacy.1.md": {
     "why": "English means lineage (direct descent), not descent to a surface",
     "tr": "8b657c1ab5"
@@ -1930,6 +2094,10 @@
   "descent|ja|programs/vostok.json :: legacy.1.md": {
     "why": "lineage sense (direct descent), not a surface descent",
     "tr": "3ec20ba924"
+  },
+  "descent|ko|missions/psyche/psyche-mission.json :: description": {
+    "why": "paraphrase 고도를 낮추며 for the descent phases",
+    "tr": "fb2f8ba8b9"
   },
   "descent|ko|programs/vostok.json :: legacy.1.md": {
     "why": "lineage sense, not surface descent",
@@ -1967,6 +2135,14 @@
     "why": "variant: 返回舱 (standard name of the Soyuz descent module)",
     "tr": "577015a5bf"
   },
+  "descent|zh-CN|missions/earth/vostok-1.json :: description": {
+    "why": "variant: 返回舱 (descent module)",
+    "tr": "232bd04c67"
+  },
+  "descent|zh-CN|missions/earth/vostok-1.json :: payload": {
+    "why": "variant: 返回舱 (descent module)",
+    "tr": "9aac4085d9"
+  },
   "descent|zh-CN|programs/shenzhou.json :: outcome.1.caption": {
     "why": "variant: 返回舱 (standard descent module)",
     "tr": "2109de1c1c"
@@ -1990,6 +2166,58 @@
   "entry|ar|essays/reusable-launchers.json :: body.9.md": {
     "why": "variant: العودة = reentry (the atmospheric reentry of a returning stage)",
     "tr": "4420e75154"
+  },
+  "entry|ar|missions/asteroid/hayabusa2.json :: payload": {
+    "why": "variant: عودة بالمظلة (reentry by parachute)",
+    "tr": "a11bd011c2"
+  },
+  "entry|ar|missions/earth/faith-7.json :: dispatch": {
+    "why": "variant: عملية العودة",
+    "tr": "603c11b467"
+  },
+  "entry|ar|missions/earth/freedom-7.json :: description": {
+    "why": "variant: أثناء العودة",
+    "tr": "9dbab0258f"
+  },
+  "entry|ar|missions/earth/gemini8.json :: description": {
+    "why": "variant: نظام التحكم في العودة",
+    "tr": "9ac754725a"
+  },
+  "entry|ar|missions/earth/gemini8.json :: dispatch": {
+    "why": "variant: نظام التحكم في العودة",
+    "tr": "0a1e27a3b2"
+  },
+  "entry|ar|missions/earth/otv-1.json :: description": {
+    "why": "variant: تعود من المدار بهبوط على مدرج",
+    "tr": "631f50a056"
+  },
+  "entry|ar|missions/earth/soyuz-1.json :: events.2.note": {
+    "why": "variant: عند العودة",
+    "tr": "f56bf120d0"
+  },
+  "entry|ar|missions/earth/soyuz-11.json :: dispatch": {
+    "why": "variant: أثناء العودة",
+    "tr": "03b3741657"
+  },
+  "entry|ar|missions/earth/soyuz-11.json :: first": {
+    "why": "variant: أثناء العودة",
+    "tr": "1312682a8d"
+  },
+  "entry|ar|missions/earth/voskhod-1.json :: description": {
+    "why": "variant: العودة",
+    "tr": "b68e7bc09e"
+  },
+  "entry|ar|missions/earth/voskhod-1.json :: dispatch": {
+    "why": "variant: العودة",
+    "tr": "68759069ed"
+  },
+  "entry|ar|missions/earth/voskhod-2.json :: description": {
+    "why": "variant: العودة",
+    "tr": "a64343b1a2"
+  },
+  "entry|ar|missions/earth/voskhod-2.json :: dispatch": {
+    "why": "variant: العودة الآلية",
+    "tr": "650d204f01"
   },
   "entry|ar|programs/buran.json :: the_land.1.md": {
     "why": "variant: العودة إلى الغلاف الجوي (reentry)",
@@ -2047,6 +2275,14 @@
     "why": "\"re-entry into 1 g\" is not atmospheric entry",
     "tr": "84f0be49f2"
   },
+  "entry|it|missions/mars/curiosity.json :: events.4.note": {
+    "why": "variant: entrata in atmosfera",
+    "tr": "2cca31366f"
+  },
+  "entry|it|missions/mars/mars-pathfinder.json :: events.2.note": {
+    "why": "variant: entrata diretta in atmosfera",
+    "tr": "8049268363"
+  },
   "entry|ko|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
     "why": "re-entry into 1 g is not atmospheric entry",
     "tr": "2636baa0df"
@@ -2054,6 +2290,18 @@
   "entry|ru|fleet/orbiter/viking1-orbiter.json :: description": {
     "why": "orbit entry/decay of Mars orbiter, not atmospheric entry; 'сошёл с орбиты' natural",
     "tr": "9378d3f7eb"
+  },
+  "entry|ru|missions/asteroid/hayabusa2.json :: description": {
+    "why": "variant: вошла в атмосферу (verb)",
+    "tr": "d45d83ac37"
+  },
+  "entry|ru|missions/earth/apollo9.json :: events.2.note": {
+    "why": "variant: аппарат возвращения (re-entry vehicle as a type name)",
+    "tr": "be73744d0b"
+  },
+  "entry|ru|missions/mars/mmx.json :: events.4.note": {
+    "why": "re-entry is an adjective of the capsule; omitted naturally",
+    "tr": "1315b0fe09"
   },
   "entry|ru|programs/soyuz.json :: narrative.0.md": {
     "why": "variant: спуск (reentry of a crewed capsule)",
@@ -2098,6 +2346,10 @@
   "entry|sr-Cyrl|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
     "why": "'re-entry into 1 g' is vestibular, not atmospheric entry",
     "tr": "059067f142"
+  },
+  "entry|zh-CN|missions/mars/mmx.json :: events.4.note": {
+    "why": "variant: 返回舱 for re-entry capsule",
+    "tr": "6a58dd864f"
   },
   "entry|zh-CN|science/orbits/cislunar-orbits.json :: body_paragraphs.4": {
     "why": "re-entry rendered 返回地球; natural",
@@ -2155,9 +2407,21 @@
     "why": "variant: 高傾斜",
     "tr": "1c1472efba"
   },
+  "inclination|ja|missions/earth/otv-5.json :: description": {
+    "why": "variant: 高傾斜軌道 (standard adjectival compound)",
+    "tr": "beb3aa091f"
+  },
+  "inclination|ja|missions/sun/ulysses.json :: first": {
+    "why": "variant: 高傾斜 (standard adjectival compound)",
+    "tr": "57d863a91b"
+  },
   "inclination|ja|science/_landing.json :: chapters.0.paragraphs.1": {
     "why": "English says tilt; 傾き matches source",
     "tr": "ae4994a3f7"
+  },
+  "inclination|ko|missions/sun/ulysses.json :: first": {
+    "why": "variant: 경사가 큰 (= high inclination)",
+    "tr": "cec3ec1b4f"
   },
   "inclination|ko|science/_landing.json :: chapters.0.paragraphs.1": {
     "why": "English says tilt; 기울기 matches source",
@@ -2191,9 +2455,61 @@
     "why": "variant: 进入水星轨道",
     "tr": "2db9ce4198"
   },
+  "orbit insertion|zh-CN|missions/comet/rosetta.json :: events.5.note": {
+    "why": "stem gap: 进入…彗星的轨道",
+    "tr": "2076cfd1bb"
+  },
   "orbit insertion|zh-CN|programs/jaxa-robotic.json :: outcome.0.md": {
     "why": "stem gap: 进入金星轨道",
     "tr": "2eeedb6514"
+  },
+  "orbit|ar|missions/earth/aurora-7.json :: description": {
+    "why": "variant: بثلاث دورات (laps)",
+    "tr": "2ec13a69cd"
+  },
+  "orbit|ar|missions/earth/aurora-7.json :: dispatch": {
+    "why": "variant: الدورات (laps)",
+    "tr": "952a126636"
+  },
+  "orbit|ar|missions/earth/aurora-7.json :: first": {
+    "why": "variant: دورات (laps)",
+    "tr": "b0de65ab4f"
+  },
+  "orbit|ar|missions/earth/faith-7.json :: description": {
+    "why": "variant: 22 دورة",
+    "tr": "98f75ab2bd"
+  },
+  "orbit|ar|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: 22 دورة",
+    "tr": "fdf2c2bee9"
+  },
+  "orbit|ar|missions/earth/faith-7.json :: first": {
+    "why": "variant: دورة (lap count)",
+    "tr": "d4e24050f2"
+  },
+  "orbit|ar|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: 3 دورات",
+    "tr": "5455299dc9"
+  },
+  "orbit|ar|missions/earth/gemini4.json :: description": {
+    "why": "variant: 62 دورة حول الأرض",
+    "tr": "ab1fd1d85d"
+  },
+  "orbit|ar|missions/earth/gemini4.json :: events.2.note": {
+    "why": "variant: 62 دورة حول الأرض",
+    "tr": "c383979480"
+  },
+  "orbit|ar|missions/earth/gemini4.json :: type": {
+    "why": "variant: رحلة حول الأرض",
+    "tr": "c4f2fde0ea"
+  },
+  "orbit|ar|missions/earth/sputnik1.json :: events.2.note": {
+    "why": "variant: 315 دورة",
+    "tr": "b2658df950"
+  },
+  "orbit|ar|missions/earth/sputnik1.json :: events.3.note": {
+    "why": "variant: 1440 دورة",
+    "tr": "7f74257c48"
   },
   "orbit|ar|programs/chandrayaan.json :: goals.2.md": {
     "why": "variant: دوران (verb sense of orbit)",
@@ -2443,6 +2759,18 @@
     "why": "natural omission: lanzamientos polares y heliosincrónicos",
     "tr": "f2663687da"
   },
+  "orbit|fr|missions/earth/vostok-1.json :: dispatch": {
+    "why": "variant: en faire le tour (circled the Earth)",
+    "tr": "b41eca8bf4"
+  },
+  "orbit|hi|missions/earth/gemini8.json :: type": {
+    "why": "field left untranslated English; term not rendered (garble listed)",
+    "tr": "e27e7ac488"
+  },
+  "orbit|hi|missions/earth/vostok-3.json :: type": {
+    "why": "field left untranslated English; term not rendered (garble listed)",
+    "tr": "e27e7ac488"
+  },
   "orbit|hi|science/_landing.json :: chapters.0.diagram": {
     "why": "file name",
     "tr": "72874f8e10"
@@ -2463,6 +2791,14 @@
     "why": "variant: 回る / その周囲の (orbiting rendered naturally)",
     "tr": "5ee6441d3b"
   },
+  "orbit|ja|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: 周 (revolution counter)",
+    "tr": "afacbb06d9"
+  },
+  "orbit|ja|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: 周 (revolution counter)",
+    "tr": "08c0dd2469"
+  },
   "orbit|ja|science/_landing.json :: chapters.0.diagram": {
     "why": "filename",
     "tr": "72874f8e10"
@@ -2474,6 +2810,30 @@
   "orbit|ko|fleet/orbiter/dawn.json :: best_known_for": {
     "why": "variant: 돈 (verb to orbit)",
     "tr": "d972ee6daa"
+  },
+  "orbit|ko|missions/earth/apollo7.json :: events.3.note": {
+    "why": "variant: 바퀴 (revolution counter)",
+    "tr": "958a1dec80"
+  },
+  "orbit|ko|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: 바퀴 (revolution counter)",
+    "tr": "09e30e222f"
+  },
+  "orbit|ko|missions/earth/friendship-7.json :: dispatch": {
+    "why": "variant: 돈 (verb to orbit)",
+    "tr": "707063ff50"
+  },
+  "orbit|ko|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: 바퀴 (revolution counter)",
+    "tr": "3b8465974d"
+  },
+  "orbit|ko|missions/earth/vostok-6.json :: dispatch": {
+    "why": "variant: 돈 / 바퀴 (verb to orbit)",
+    "tr": "ac06db95d9"
+  },
+  "orbit|ko|missions/moon/luna10.json :: first": {
+    "why": "variant: 돈 (verb to orbit)",
+    "tr": "38cad3487e"
   },
   "orbit|ko|science/_landing.json :: chapters.0.diagram": {
     "why": "orbit verb rendered 돌다 (natural); or filename",
@@ -2550,6 +2910,70 @@
   "orbit|nl|fleet/orbiter/rosetta.json :: tagline": {
     "why": "variant: draait om (verb to orbit)",
     "tr": "d7c763443b"
+  },
+  "orbit|nl|missions/asteroid/near-shoemaker.json :: first": {
+    "why": "variant: draaide (verb to orbit)",
+    "tr": "ea924d7b1c"
+  },
+  "orbit|nl|missions/asteroid/near-shoemaker.json :: payload": {
+    "why": "variant: draaide (verb to orbit)",
+    "tr": "462adc5fb4"
+  },
+  "orbit|nl|missions/ceres/dawn.json :: first": {
+    "why": "variant: draaide (verb to orbit)",
+    "tr": "6f465e9a9c"
+  },
+  "orbit|nl|missions/comet/rosetta.json :: description": {
+    "why": "variant: draaide er omheen (verb to orbit)",
+    "tr": "e337495396"
+  },
+  "orbit|nl|missions/earth/aurora-7.json :: dispatch": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "73b69542ff"
+  },
+  "orbit|nl|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: omlopen (counted revolutions)",
+    "tr": "52b7243ded"
+  },
+  "orbit|nl|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: omlopen (counted revolutions)",
+    "tr": "222f9e85e4"
+  },
+  "orbit|nl|missions/earth/gemini12.json :: description": {
+    "why": "variant: omlopen (counted revolutions)",
+    "tr": "51827e149f"
+  },
+  "orbit|nl|missions/earth/gemini12.json :: events.2.note": {
+    "why": "variant: omlopen (counted revolutions)",
+    "tr": "b4bd28d2a9"
+  },
+  "orbit|nl|missions/earth/gemini3.json :: events.2.note": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "f0fe7d20fc"
+  },
+  "orbit|nl|missions/earth/gemini7.json :: description": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "f41d2bf51d"
+  },
+  "orbit|nl|missions/earth/gemini7.json :: events.2.note": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "50080ad897"
+  },
+  "orbit|nl|missions/earth/sputnik1.json :: events.2.note": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "c4bce3121a"
+  },
+  "orbit|nl|missions/earth/vostok-2.json :: first": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "f4952d2167"
+  },
+  "orbit|nl|missions/earth/vostok-3.json :: events.2.note": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "f904872819"
+  },
+  "orbit|nl|missions/earth/vostok-5.json :: first": {
+    "why": "variant: aardomloopvlucht / omwentelingen",
+    "tr": "d01065d502"
   },
   "orbit|nl|programs/cassini.json :: narrative.0.md": {
     "why": "variant: omloop (orbit as revolution)",
@@ -2699,6 +3123,150 @@
     "why": "variant: околоземных (Earth-orbit)",
     "tr": "22bb733097"
   },
+  "orbit|ru|missions/earth/apollo7.json :: events.3.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "43f66fa979"
+  },
+  "orbit|ru|missions/earth/apollo7.json :: type": {
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)",
+    "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/earth/apollo9.json :: events.6.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "b307bd0579"
+  },
+  "orbit|ru|missions/earth/aurora-7.json :: description": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "e0ba70e3c3"
+  },
+  "orbit|ru|missions/earth/aurora-7.json :: dispatch": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "07753fd186"
+  },
+  "orbit|ru|missions/earth/aurora-7.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "850d674f7e"
+  },
+  "orbit|ru|missions/earth/faith-7.json :: description": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "dad05cbcf9"
+  },
+  "orbit|ru|missions/earth/faith-7.json :: dispatch": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "1172e8f9ab"
+  },
+  "orbit|ru|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "0c147fd7e1"
+  },
+  "orbit|ru|missions/earth/faith-7.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "bd71af8a99"
+  },
+  "orbit|ru|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "f9049b77f8"
+  },
+  "orbit|ru|missions/earth/gemini12.json :: description": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "04f151fa3e"
+  },
+  "orbit|ru|missions/earth/gemini12.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "707232bd19"
+  },
+  "orbit|ru|missions/earth/gemini12.json :: type": {
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)",
+    "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/earth/gemini3.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "56ac9e7a36"
+  },
+  "orbit|ru|missions/earth/gemini6a.json :: description": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "e462efad16"
+  },
+  "orbit|ru|missions/earth/gemini6a.json :: events.3.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "9d35c38211"
+  },
+  "orbit|ru|missions/earth/gemini6a.json :: type": {
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)",
+    "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/earth/gemini7.json :: description": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "8c95e91251"
+  },
+  "orbit|ru|missions/earth/gemini7.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "46049cb661"
+  },
+  "orbit|ru|missions/earth/gemini7.json :: type": {
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)",
+    "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/earth/sigma-7.json :: dispatch": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "a09d23c2a0"
+  },
+  "orbit|ru|missions/earth/sigma-7.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "736ffbf05e"
+  },
+  "orbit|ru|missions/earth/sigma-7.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "c3cf5ed569"
+  },
+  "orbit|ru|missions/earth/sputnik1.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "de52ff2240"
+  },
+  "orbit|ru|missions/earth/sputnik1.json :: first": {
+    "why": "verb orbit carried by the noun спутник Земли; omitted naturally",
+    "tr": "a79f9ac9f1"
+  },
+  "orbit|ru|missions/earth/vostok-1.json :: dispatch": {
+    "why": "variant: облетевшим (verb orbit)",
+    "tr": "abfb5188e4"
+  },
+  "orbit|ru|missions/earth/vostok-2.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "92943f8567"
+  },
+  "orbit|ru|missions/earth/vostok-3.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "961ddde8e2"
+  },
+  "orbit|ru|missions/earth/vostok-5.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "214219c89a"
+  },
+  "orbit|ru|missions/earth/vostok-5.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "1052b0dae5"
+  },
+  "orbit|ru|missions/earth/vostok-6.json :: dispatch": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "113b2e8b54"
+  },
+  "orbit|ru|missions/earth/vostok-6.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "b270cc0982"
+  },
+  "orbit|ru|missions/earth/vostok-6.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "b9355ddee0"
+  },
+  "orbit|ru|missions/earth/vostok-6.json :: type": {
+    "why": "ОКОЛОЗЕМНЫЙ (near-Earth, orbit implied) for EARTH-ORBIT in a type label",
+    "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/moon/beresheet.json :: events.2.note": {
+    "why": "variant: многооборотном (multi-orbit)",
+    "tr": "bad5112a64"
+  },
   "orbit|ru|programs/cassini.json :: narrative.0.md": {
     "why": "variant: виток (orbit as revolution)",
     "tr": "206c1e57aa"
@@ -2826,6 +3394,14 @@
   "orbit|ru|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
     "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
     "tr": "4d3ce88ffe"
+  },
+  "orbit|sr-Cyrl|missions/earth/vostok-3.json :: type": {
+    "why": "variant: летови око Земље (orbital flight)",
+    "tr": "1e15f6448d"
+  },
+  "orbit|sr-Cyrl|missions/moon/apollo8.json :: events.3.note": {
+    "why": "variant: обилазак (orbit count)",
+    "tr": "a852cc3816"
   },
   "orbit|sr-Cyrl|science/_landing.json :: chapters.0.diagram": {
     "why": "'кружи/обилази око' is the correct verb for orbiting",
@@ -2963,6 +3539,54 @@
     "why": "variant: 绕…运行",
     "tr": "fd8715d45b"
   },
+  "orbit|zh-CN|missions/ceres/dawn.json :: description": {
+    "why": "variant: 同轨运行 (matched orbits)",
+    "tr": "07cce2bb1b"
+  },
+  "orbit|zh-CN|missions/earth/aurora-7.json :: description": {
+    "why": "variant: 圈 (laps)",
+    "tr": "98c6a5e720"
+  },
+  "orbit|zh-CN|missions/earth/aurora-7.json :: first": {
+    "why": "variant: 圈 (laps)",
+    "tr": "bc6c240d01"
+  },
+  "orbit|zh-CN|missions/earth/faith-7.json :: description": {
+    "why": "variant: 圈 (laps)",
+    "tr": "be2848d538"
+  },
+  "orbit|zh-CN|missions/earth/faith-7.json :: dispatch": {
+    "why": "variant: 圈 (laps)",
+    "tr": "683040f310"
+  },
+  "orbit|zh-CN|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: 圈 (laps)",
+    "tr": "1e2a645352"
+  },
+  "orbit|zh-CN|missions/earth/faith-7.json :: first": {
+    "why": "variant: 圈 (laps)",
+    "tr": "78c58f3e62"
+  },
+  "orbit|zh-CN|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: 圈 (laps)",
+    "tr": "007fbf6c09"
+  },
+  "orbit|zh-CN|missions/earth/vostok-1.json :: events.2.note": {
+    "why": "variant: 降轨 (de-orbit)",
+    "tr": "ad0d7a1167"
+  },
+  "orbit|zh-CN|missions/earth/vostok-2.json :: events.3.note": {
+    "why": "variant: 降轨 (de-orbit)",
+    "tr": "cceab04f7b"
+  },
+  "orbit|zh-CN|missions/earth/vostok-2.json :: first": {
+    "why": "variant: 圈 (laps)",
+    "tr": "afababca36"
+  },
+  "orbit|zh-CN|missions/earth/vostok-6.json :: dispatch": {
+    "why": "variant: 圈 (laps)",
+    "tr": "b309b7884e"
+  },
   "orbit|zh-CN|programs/chandrayaan.json :: goals.2.md": {
     "why": "variant: 绕月飞行",
     "tr": "adbbe63cfa"
@@ -3083,6 +3707,10 @@
     "why": "part of proper name Vega Secondary Payload Adapter",
     "tr": "5d89faaf14"
   },
+  "payload|es|missions/venus/magellan.json :: description": {
+    "why": "variant: bodega de carga (standard Shuttle payload bay)",
+    "tr": "118f93ee55"
+  },
   "payload|es|programs/mercury.json :: narrative.1.md": {
     "why": "figurative: astronaut as cargo/passenger",
     "tr": "c1709e2177"
@@ -3094,6 +3722,10 @@
   "payload|fr|fleet/launcher/falcon-heavy.json :: description": {
     "why": "variant: capacité d'emport",
     "tr": "8b13563fa9"
+  },
+  "payload|fr|missions/venus/magellan.json :: description": {
+    "why": "variant: soute (payload bay)",
+    "tr": "3d33d9f223"
   },
   "payload|fr|programs/space-shuttle.json :: goals.1.md": {
     "why": "variant: soute cargo",
@@ -3115,6 +3747,10 @@
     "why": "variant: capacità di carico",
     "tr": "494b4a422e"
   },
+  "payload|it|missions/venus/magellan.json :: description": {
+    "why": "variant: stiva (payload bay)",
+    "tr": "9361283cac"
+  },
   "payload|it|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
     "tr": "714623570e"
@@ -3122,6 +3758,14 @@
   "payload|ja|essays/going-to-the-moon.json :: body.9.md": {
     "why": "variant: 打ち上げ能力 (capacity to LEO)",
     "tr": "c5c2c6ee50"
+  },
+  "payload|ja|missions/moon/change1.json :: payload": {
+    "why": "variant: 科学観測機器 (science instruments = science payload)",
+    "tr": "b0b133b2ce"
+  },
+  "payload|ja|missions/moon/smart-1.json :: vehicle": {
+    "why": "shared ride 相乗り; payload omitted naturally",
+    "tr": "11e010dc9a"
   },
   "payload|ja|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
@@ -3147,6 +3791,26 @@
     "why": "natural omission: 기기 7개를 탑재한",
     "tr": "efb1bb26d9"
   },
+  "payload|ko|missions/mars/starship-demo.json :: description": {
+    "why": "variant: 탑재량 (payload capacity)",
+    "tr": "1460ce720e"
+  },
+  "payload|ko|missions/moon/apollo8.json :: description": {
+    "why": "payload of the mission paraphrased as 임무",
+    "tr": "ca13e538f0"
+  },
+  "payload|ko|missions/moon/luna16.json :: description": {
+    "why": "variant: 탑재량 (payload mass)",
+    "tr": "0cf988f91f"
+  },
+  "payload|ko|missions/moon/smart-1.json :: events.0.note": {
+    "why": "variant: 공동 탑재 (shared ride)",
+    "tr": "56ad75dcc0"
+  },
+  "payload|ko|missions/moon/smart-1.json :: vehicle": {
+    "why": "variant: 공동 탑재 (shared ride)",
+    "tr": "38b30e7286"
+  },
   "payload|ko|programs/space-shuttle.json :: goals.1.md": {
     "why": "variant: 화물칸 (standard payload bay)",
     "tr": "d7bf76dada"
@@ -3158,6 +3822,14 @@
   "payload|nl|fleet/launcher/falcon-heavy.json :: description": {
     "why": "variant: laadvermogen (payload capacity)",
     "tr": "37b188a275"
+  },
+  "payload|nl|missions/venus/magellan.json :: description": {
+    "why": "variant: laadruim (payload bay, standard word)",
+    "tr": "a7a24a25a8"
+  },
+  "payload|pt-BR|missions/venus/magellan.json :: description": {
+    "why": "variant: baía de carga (payload bay)",
+    "tr": "4e8c4f4fa6"
   },
   "payload|pt-BR|programs/mercury.json :: narrative.1.md": {
     "why": "figurative: astronaut as cargo/passenger",
@@ -3198,6 +3870,10 @@
   "payload|ru|fleet/orbiter/lro.json :: description": {
     "why": "'7 приборов LRO' instrument suite; omitted naturally",
     "tr": "166997390e"
+  },
+  "payload|ru|missions/venus/magellan.json :: description": {
+    "why": "variant: грузовой отсек (Shuttle payload bay, standard compound)",
+    "tr": "83f569f5fa"
   },
   "payload|ru|programs/mercury.json :: narrative.1.md": {
     "why": "variant: грузом (cargo, figurative; contrast with passenger)",
@@ -3243,6 +3919,14 @@
     "why": "recast: 搭乘 (rideshare)",
     "tr": "db0db2ccfb"
   },
+  "payload|zh-CN|missions/moon/apollo8.json :: description": {
+    "why": "payload (which craft flies) rendered by 任务; natural omission",
+    "tr": "998003955b"
+  },
+  "payload|zh-CN|missions/venus/magellan.json :: description": {
+    "why": "variant: 货舱 (shuttle payload bay)",
+    "tr": "5e538fe0df"
+  },
   "payload|zh-CN|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
     "tr": "8ca1f489b3"
@@ -3259,6 +3943,10 @@
     "why": "variant: propulsión líquida",
     "tr": "a195b6c42a"
   },
+  "propellant|es|missions/mercury/mariner10.json :: description": {
+    "why": "propellant omitted ('nitrógeno de control de actitud')",
+    "tr": "c1300c4419"
+  },
   "propellant|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "RP-1 name; combustible stem present in text",
     "tr": "e3d4fe202c"
@@ -3266,6 +3954,10 @@
   "propellant|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "RP-1 name in English; text uses kérosène/carburant for fuel, no propellant sense",
     "tr": "640326ff91"
+  },
+  "propellant|hi|missions/mars/starship-mars-crew.json :: events.5.note": {
+    "why": "natural omission",
+    "tr": "18c423f6d7"
   },
   "propellant|hi|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "\"Rocket Propellant 1\" is the grade name RP-1",
@@ -3283,6 +3975,14 @@
     "why": "Rocket Propellant 1 is a proper name left in English",
     "tr": "78b07cc18b"
   },
+  "propellant|nl|missions/mercury/mariner10.json :: description": {
+    "why": "propellant omitted naturally: \"het stikstof voor standregeling\" is the propellant",
+    "tr": "5d976fa4ad"
+  },
+  "propellant|pt-BR|missions/mercury/mariner10.json :: description": {
+    "why": "nitrogen itself is the propellant; omission is natural",
+    "tr": "f610ab5367"
+  },
   "propellant|pt-BR|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "RP-1 \"Rocket Propellant 1\" is a name",
     "tr": "85ef10ce88"
@@ -3294,6 +3994,14 @@
   "propellant|ru|fleet/orbiter/lucy.json :: description": {
     "why": "propellant omitted naturally; hydrazine named",
     "tr": "cb6707424d"
+  },
+  "propellant|ru|missions/mars/starship-mars-crew.json :: events.5.note": {
+    "why": "propellant named by its components (метан, ЖКС)",
+    "tr": "071ebba279"
+  },
+  "propellant|ru|missions/mercury/mariner10.json :: description": {
+    "why": "nitrogen named as the supply (запас азота)",
+    "tr": "6b92d913e5"
   },
   "propellant|sr-Cyrl|fleet/launcher/soyuz.json :: description": {
     "why": "variant: течни погон (liquid-propellant rocket)",
@@ -3359,9 +4067,21 @@
     "why": "\"دفعه النوعي\" is the binding form with pronoun",
     "tr": "59e147f936"
   },
+  "stage|ar|missions/venus/magellan.json :: vehicle": {
+    "why": "proper name Inertial Upper Stage left in English",
+    "tr": "7eaa95e254"
+  },
+  "stage|de|missions/venus/magellan.json :: vehicle": {
+    "why": "vehicle name: Inertial Upper Stage",
+    "tr": "7eaa95e254"
+  },
   "stage|de|science/orbits/special-orbits.json :: body_paragraphs.4": {
     "why": "different sense (single-stage-to-orbit, staging orbit)",
     "tr": "dd21477194"
+  },
+  "stage|es|missions/venus/magellan.json :: vehicle": {
+    "why": "proper name 'Inertial Upper Stage', untranslated",
+    "tr": "7eaa95e254"
   },
   "stage|fr|fleet/lander/blue-moon-mk1.json :: description": {
     "why": "variant: monostage",
@@ -3370,6 +4090,10 @@
   "stage|fr|fleet/lander/blue-moon-mk1.json :: tagline": {
     "why": "variant: monostage",
     "tr": "556b45b069"
+  },
+  "stage|fr|missions/venus/magellan.json :: vehicle": {
+    "why": "proper name 'Inertial Upper Stage' left in English as a vehicle name",
+    "tr": "7eaa95e254"
   },
   "stage|fr|programs/mars-rovers.json :: outcome.1.md": {
     "why": "English \"stage\" = phase of a campaign; étape",
@@ -3383,6 +4107,14 @@
     "why": "single-stage-to-orbit kept as English acronym phrase; no rocket stage meant separately",
     "tr": "16403179d7"
   },
+  "stage|hi|missions/venus/magellan.json :: vehicle": {
+    "why": "vehicle name: Inertial Upper Stage",
+    "tr": "7eaa95e254"
+  },
+  "stage|it|missions/venus/magellan.json :: vehicle": {
+    "why": "proper name 'Inertial Upper Stage' left in English",
+    "tr": "7eaa95e254"
+  },
   "stage|it|programs/mars-rovers.json :: outcome.1.md": {
     "why": "English \"stage\" = phase; fase",
     "tr": "a51d5baae5"
@@ -3395,6 +4127,14 @@
     "why": "variant: コアステージ",
     "tr": "48477f844e"
   },
+  "stage|ja|missions/moon/lunar-prospector.json :: vehicle_stage": {
+    "why": "variant: キックステージ (standard name for a kick stage)",
+    "tr": "67f5ab2ff5"
+  },
+  "stage|ja|missions/venus/magellan.json :: vehicle": {
+    "why": "vehicle name (Inertial Upper Stage) kept in Latin",
+    "tr": "7eaa95e254"
+  },
   "stage|ko|fleet/engine/yf-100.json :: description": {
     "why": "variant: 코어 스테이지",
     "tr": "db53d1d4d6"
@@ -3403,9 +4143,21 @@
     "why": "variant: 코어 스테이지",
     "tr": "f5e97b37dc"
   },
+  "stage|ko|missions/moon/lunar-prospector.json :: vehicle_stage": {
+    "why": "variant: 킥 스테이지 (standard name for a kick stage)",
+    "tr": "daf0f4a1ce"
+  },
+  "stage|ko|missions/venus/magellan.json :: vehicle": {
+    "why": "vehicle name (Inertial Upper Stage) kept in Latin",
+    "tr": "7eaa95e254"
+  },
   "stage|ko|programs/mars-rovers.json :: outcome.1.md": {
     "why": "phase of a campaign, not a rocket stage",
     "tr": "bd8b640132"
+  },
+  "stage|nl|missions/venus/magellan.json :: vehicle": {
+    "why": "proper vehicle name kept in English (Inertial Upper Stage)",
+    "tr": "7eaa95e254"
   },
   "stage|nl|programs/mars-rovers.json :: outcome.1.md": {
     "why": "English \"stage\" = phase; fase",
@@ -3419,9 +4171,33 @@
     "why": "different sense (single-stage-to-orbit)",
     "tr": "cf5515bb94"
   },
+  "stage|pt-BR|missions/venus/magellan.json :: vehicle": {
+    "why": "proper name 'Inertial Upper Stage' left in English",
+    "tr": "7eaa95e254"
+  },
   "stage|pt-BR|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.2": {
     "why": "single-stage-to-orbit kept as English phrase",
     "tr": "c70bb875fc"
+  },
+  "stage|ru|missions/mars/mars3.json :: events.0.note": {
+    "why": "variant: разгонный блок (upper stage)",
+    "tr": "922929836c"
+  },
+  "stage|ru|missions/mars/schiaparelli.json :: vehicle_stage": {
+    "why": "variant: разгонный блок (upper stage)",
+    "tr": "66b22bc69f"
+  },
+  "stage|ru|missions/moon/change3.json :: vehicle_stage": {
+    "why": "variant: разгонный блок (upper stage)",
+    "tr": "5a799968a8"
+  },
+  "stage|ru|missions/sun/ulysses.json :: vehicle_stage": {
+    "why": "variant: разгонный блок (upper stage)",
+    "tr": "39700ea4a1"
+  },
+  "stage|ru|missions/venus/magellan.json :: vehicle": {
+    "why": "Inertial Upper Stage is a proper name left in English",
+    "tr": "7eaa95e254"
   },
   "stage|ru|programs/mars-rovers.json :: outcome.1.md": {
     "why": "other sense: first phase of a campaign",
@@ -3451,21 +4227,57 @@
     "why": "'staging orbit', not a rocket stage",
     "tr": "21867bc815"
   },
+  "stage|sr-Cyrl|missions/venus/magellan.json :: vehicle": {
+    "why": "Inertial Upper Stage is a proper name left in English",
+    "tr": "7eaa95e254"
+  },
   "stage|sr-Cyrl|programs/mars-rovers.json :: outcome.1.md": {
     "why": "other sense: first phase of a campaign (етапа)",
     "tr": "fe5c3b2427"
+  },
+  "stage|zh-CN|missions/venus/magellan.json :: vehicle": {
+    "why": "vehicle line left in English as a name (Inertial Upper Stage)",
+    "tr": "7eaa95e254"
   },
   "stage|zh-CN|programs/mars-rovers.json :: outcome.1.md": {
     "why": "phase of a campaign, not a rocket stage",
     "tr": "9575bb09bc"
   },
+  "thrust|ar|missions/psyche/psyche-mission.json :: events.3.note": {
+    "why": "variant: محرك أيوني (ion engine)",
+    "tr": "7840ad83bd"
+  },
   "thrust|de|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
     "why": "\"chemical thrust\" = propulsion, Antrieb natural",
     "tr": "5e0b3709eb"
   },
+  "thrust|fr|missions/psyche/psyche-mission.json :: events.3.note": {
+    "why": "variant: propulsion ionique (ion propulsion)",
+    "tr": "91c9f3e46f"
+  },
+  "thrust|ja|missions/mercury/bepicolombo.json :: description": {
+    "why": "variant: 推進 (electric propulsion, not a force value)",
+    "tr": "711bf1a3bf"
+  },
+  "thrust|ja|missions/psyche/psyche-mission.json :: description": {
+    "why": "variant: イオン推進 (propulsion)",
+    "tr": "a59cbda3a8"
+  },
+  "thrust|ja|missions/psyche/psyche-mission.json :: events.3.note": {
+    "why": "variant: イオン推進 (propulsion)",
+    "tr": "0a0e69b38f"
+  },
   "thrust|ja|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
     "why": "化学推進 = chemical propulsion as a method; natural",
     "tr": "1e1ef038f0"
+  },
+  "thrust|ko|missions/psyche/psyche-mission.json :: description": {
+    "why": "variant: 이온 추진 (propulsion)",
+    "tr": "fb2f8ba8b9"
+  },
+  "thrust|ko|missions/psyche/psyche-mission.json :: events.3.note": {
+    "why": "variant: 이온 추진 (propulsion)",
+    "tr": "fdacfd5251"
   },
   "thrust|ko|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
     "why": "화학 추진 = chemical propulsion method; natural for \"chemical thrust\" as means",
@@ -3483,6 +4295,10 @@
     "why": "thrust time rendered by 工作 (natural omission)",
     "tr": "104d14cfb6"
   },
+  "thrust|zh-CN|missions/mercury/bepicolombo.json :: description": {
+    "why": "variant: 电推进 (electric propulsion compound)",
+    "tr": "722c2c8367"
+  },
   "thrust|zh-CN|science/mission-phases/ascent-guidance.json :: body_paragraphs.2": {
     "why": "推重比 is the standard term for thrust-to-weight ratio",
     "tr": "c554918e29"
@@ -3499,9 +4315,17 @@
     "why": "figurative scale/outlook, not a flight path",
     "tr": "a798cdb6e9"
   },
+  "trajectory|de|missions/mars/mangalyaan.json :: events.2.note": {
+    "why": "variant: Marskurs",
+    "tr": "f557273072"
+  },
   "trajectory|de|programs/gaganyaan.json :: outcome.2.md": {
     "why": "figurative \"Richtung\"; not a flight path",
     "tr": "ab038ee189"
+  },
+  "trajectory|es|missions/neptune/voyager-2.json :: events.0.note": {
+    "why": "omitted naturally ('hacia el Grand Tour')",
+    "tr": "6df09f2dd3"
   },
   "trajectory|hi|essays/generational-starships.json :: body.0.md": {
     "why": "variant: पलायन-पथ (escape trajectory)",
@@ -3510,6 +4334,10 @@
   "trajectory|hi|essays/new-propulsion.json :: body.29.md": {
     "why": "figurative direction of progress, not a flight path",
     "tr": "4d6db4245f"
+  },
+  "trajectory|hi|missions/jupiter/juno.json :: description": {
+    "why": "orbit sense; कक्षा is correct",
+    "tr": "b78e3d1d82"
   },
   "trajectory|hi|programs/gaganyaan.json :: outcome.2.md": {
     "why": "figurative: direction/course, not a flight path",
@@ -3534,6 +4362,22 @@
   "trajectory|ko|essays/space-comm-arrays.json :: body.23.md": {
     "why": "figurative sense (direction of progress / distance scale), not a flight path",
     "tr": "923ecc37fe"
+  },
+  "trajectory|ko|missions/earth/otv-7.json :: description": {
+    "why": "variant: 궤도 (HEO is a closed orbit)",
+    "tr": "ff67897c9a"
+  },
+  "trajectory|ko|missions/earth/sputnik1.json :: description": {
+    "why": "variant: 궤도 (closed orbit of Sputnik)",
+    "tr": "8f32223174"
+  },
+  "trajectory|ko|missions/jupiter/juno.json :: description": {
+    "why": "variant: 극궤도 (polar orbit around Jupiter)",
+    "tr": "8d853e5278"
+  },
+  "trajectory|ko|missions/mercury/messenger.json :: events.1.note": {
+    "why": "trajectory omitted by paraphrase (속도를 낮추기 위한)",
+    "tr": "b7b61ec77c"
   },
   "trajectory|ko|programs/apollo.json :: link_labels./science/transfers/free-return": {
     "why": "variant: 자유 귀환 궤도 (standard compound)",

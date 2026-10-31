@@ -17,13 +17,13 @@
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Brûlage de mise en route translunaireΗ — première évasion habitée de la gravité terrestre. S-IVB ∆v ~3,05 km/s.",
+      "note": "Allumage d'injection translunaire — première évasion habitée de la gravité terrestre. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 2.79,
       "label": "LOI",
-      "note": "Insertion en orbite lunaire derrière la Lune, hors contact radio. Brûlage SPS ~0,91 km/s. Premiers humains à orbiter autour d'un autre corps céleste.",
+      "note": "Insertion en orbite lunaire derrière la Lune, hors contact radio. Allumage SPS ~0,91 km/s. Premiers humains à orbiter autour d'un autre corps céleste.",
       "type": "nominal"
     },
     {

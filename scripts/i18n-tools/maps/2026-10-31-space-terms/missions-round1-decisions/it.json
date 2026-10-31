@@ -1,0 +1,664 @@
+[
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "Appuntamento con petroliera",
+    "replace": "Rendezvous con petroliera",
+    "why": "appuntamento alone is not the binding"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "Appuntamento con la flotta",
+    "replace": "Rendezvous con la flotta",
+    "why": "appuntamento alone is not the binding"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "si aggancia a Charlie Brown",
+    "replace": "effettua il rendezvous con Charlie Brown",
+    "why": "rendezvous rendered as docking"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.4.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "appuntamento con l'orbiter",
+    "replace": "rendezvous con l'orbiter",
+    "why": "appuntamento alone"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Aiuto gravitazionale",
+    "replace": "Fionda gravitazionale",
+    "why": "aiuto is not the term"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Tre assistenze di gravità terrestre",
+    "replace": "Tre fionde gravitazionali terrestri",
+    "why": "assistenza di gravità is a calque"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Primo assistenza di gravità terrestre",
+    "replace": "Prima fionda gravitazionale terrestre",
+    "why": "calque and gender slip"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "9 gravity assist",
+    "replace": "9 fionde gravitazionali",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "multi-flyby",
+    "replace": "a sorvoli multipli",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "sei flyby di Mercurio",
+    "replace": "sei sorvoli di Mercurio",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Un singolo gravity assist",
+    "replace": "Una singola fionda gravitazionale",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "catena di gravity assist",
+    "replace": "catena di fionde gravitazionali",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Primo gravity assist",
+    "replace": "Prima fionda gravitazionale",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.3.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Secondo gravity assist",
+    "replace": "Seconda fionda gravitazionale",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.4.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Primo dei sei gravity assist",
+    "replace": "Prima delle sei fionde gravitazionali",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "molteplici aiuti gravitazionali",
+    "replace": "molteplici fionde gravitazionali",
+    "why": "aiuto is not the term"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "l'effettivo supporto gravitazionale",
+    "replace": "l'effettiva fionda gravitazionale",
+    "why": "supporto is not the term"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "un percorso assistito dalla gravità di Giove",
+    "replace": "un percorso con fionda gravitazionale di Giove",
+    "why": "paraphrase of the term"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "first",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "la manovra gravitazionale",
+    "replace": "la fionda gravitazionale",
+    "why": "manovra gravitazionale is not the term"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.0.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "a manovra gravitazionale",
+    "replace": "a fionda gravitazionale",
+    "why": "manovra gravitazionale is not the term"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "cinque bruciature di abbassamento orbitale",
+    "replace": "cinque accensioni di abbassamento orbitale",
+    "why": "bruciature is skin-burn word"
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "term": "burn",
+    "decision": "keep",
+    "why": "bruciato = burned in a fire, not an engine firing"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "una correzione orbitale",
+    "replace": "un'accensione di correzione orbitale",
+    "why": "orbit-correction burn, burn dropped"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "BRUCIATURA TMI",
+    "replace": "ACCENSIONE TMI",
+    "why": "bruciatura is skin-burn word"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "BRUCIATURA TMI",
+    "replace": "ACCENSIONE TMI",
+    "why": "bruciatura is skin-burn word"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "TEI BRUCIA",
+    "replace": "ACCENSIONE TEI",
+    "why": "garbled burn"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "e brucia per",
+    "replace": "e accende i motori per",
+    "why": "engine firing, not burning"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Ustione da iniezione translunare",
+    "replace": "Accensione per iniezione translunare",
+    "why": "ustione is a skin burn"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "SPS burn",
+    "replace": "accensione SPS",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Inserzione in orbita",
+    "replace": "Inserimento in orbita",
+    "why": "inserzione is not the term"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "bruciatura da",
+    "replace": "accensione di",
+    "why": "bruciatura is skin-burn word"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "inserzione nell'orbita lunare",
+    "replace": "inserimento in orbita lunare",
+    "why": "inserzione is not the term"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "esegue l'iniezione translunare",
+    "replace": "esegue l'accensione di iniezione translunare",
+    "why": "TLI burn, burn dropped"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "correzioni di orbita",
+    "replace": "accensioni di innalzamento dell'orbita",
+    "why": "orbit-raising burns"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.0.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "ritorni della prima fase per",
+    "replace": "il primo stadio ritorna per",
+    "why": "fase is not stage; garbled verb"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "vedere le fasi di discesa",
+    "replace": "vedere gli stadi di discesa",
+    "why": "descent stages, not phases"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "term": "stage",
+    "decision": "keep",
+    "why": "proper name 'Inertial Upper Stage' left in English"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "serbatoi del carburante",
+    "replace": "serbatoi del propellente",
+    "why": "propellant tanks, not fuel"
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.1.note",
+    "term": "payload",
+    "decision": "change",
+    "find": "operazioni di carico",
+    "replace": "operazioni del carico utile",
+    "why": "payload"
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.1.note",
+    "term": "payload",
+    "decision": "change",
+    "find": "carico pagante",
+    "replace": "carico utile",
+    "why": "payload binding"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "vehicle",
+    "term": "payload",
+    "decision": "change",
+    "find": "carico condiviso",
+    "replace": "carico utile condiviso",
+    "why": "payload"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: stiva (payload bay)"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: vettore (whole Proton-K launcher)"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "MULTI-FLYBY",
+    "replace": "MULTI-SORVOLO",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "MULTI-FLYBY",
+    "replace": "MULTI-SORVOLO",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "49 fly-by",
+    "replace": "49 sorvoli",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "49 fly-by",
+    "replace": "49 sorvoli",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "FLYBY · EFFETTUATA",
+    "replace": "SORVOLO · EFFETTUATO",
+    "why": "English left; participle follows masculine noun"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.2.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "MARTE FLYBY",
+    "replace": "SORVOLO DI MARTE",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "FLYBY PLANETARIO",
+    "replace": "SORVOLO PLANETARIO",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "first",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Primo flyby di Mercurio",
+    "replace": "Primo sorvolo di Mercurio",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "first",
+    "term": "flyby",
+    "decision": "change",
+    "find": "primo flyby a doppio pianeta",
+    "replace": "primo sorvolo a doppio pianeta",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "FLYBY CON",
+    "replace": "SORVOLO CON",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VIAGGIO LUNARE",
+    "replace": "SORVOLO LUNARE",
+    "why": "viaggio is not flyby"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "FLYBY · EFFETTUATA",
+    "replace": "SORVOLO · EFFETTUATO",
+    "why": "English left; participle follows masculine noun"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "FLYBY · VOLATO",
+    "replace": "SORVOLO · VOLATO",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "dispatch",
+    "term": "flyby",
+    "decision": "change",
+    "find": "il flyby",
+    "replace": "il sorvolo",
+    "why": "English left"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "PLUTONE IN VOLO",
+    "replace": "SORVOLO DI PLUTONE",
+    "why": "'in volo' is not flyby"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "proprio avvicinamento a Halley",
+    "replace": "proprio sorvolo di Halley",
+    "why": "flyby rendered as approach"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INSERIMENTO MARTE ORBITA",
+    "replace": "INSERIMENTO IN ORBITA DI MARTE",
+    "why": "scrambled word order"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "INSERIMENTO MARTE ORBITA",
+    "replace": "INSERIMENTO IN ORBITA DI MARTE",
+    "why": "scrambled word order"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.3.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: nell'orbita (inserimento nell'orbita is correct Italian)"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.4.note",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: entrata in atmosfera"
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "events.2.note",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: entrata diretta in atmosfera"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "term": "descent",
+    "decision": "change",
+    "find": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "replace": "DIMOSTRATORE DI INGRESSO/DISCESA/ATTERRAGGIO · SCHIANTATO",
+    "why": "label left in English"
+  }
+]

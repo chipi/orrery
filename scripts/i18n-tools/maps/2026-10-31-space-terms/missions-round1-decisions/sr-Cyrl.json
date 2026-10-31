@@ -1,0 +1,459 @@
+[
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: летови око Земље (orbital flight)"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: обилазак (orbit count)"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "dispatch",
+    "term": "docking",
+    "decision": "keep",
+    "why": "stem gap: спојио (спајање)"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "гравитационог потиска од Земље",
+    "replace": "гравитационог маневра код Земље",
+    "why": "потисак is thrust"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Гравитациони потисак од Земље",
+    "replace": "Гравитациони маневар код Земље",
+    "why": "потисак is thrust"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "ГРАВИТАЦИОНО УБРЗАЊЕ ПРИ ПРЕЛЕТУ ЗЕМЉЕ",
+    "replace": "ГРАВИТАЦИОНИ МАНЕВАР КОД ЗЕМЉЕ",
+    "why": "убрзање/прелет is not the binding"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Гравитациона потпомогнутост од Земље",
+    "replace": "Гравитациони маневар код Земље",
+    "why": "non-word"
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "гравитационо појачање",
+    "replace": "гравитациони маневар",
+    "why": "појачање is not the binding"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "гравитациони потисак од Земље",
+    "replace": "гравитациони маневар код Земље",
+    "why": "потисак is thrust"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "ГРАВИТАЦИОНА ПОМОЋ ЗЕМЉЕ",
+    "replace": "ГРАВИТАЦИОНИ МАНЕВАР КОД ЗЕМЉЕ",
+    "why": "калк \"помоћ\" is not the binding"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "маневар гравитационе потпоре Месец–Земља",
+    "replace": "гравитациони маневар Месец–Земља",
+    "why": "потпора is not the binding"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Гравитациона потпора Венере",
+    "replace": "Гравитациони маневар код Венере",
+    "why": "потпора is not the binding"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "ГРАВИТАЦИОНА ПОМОЋ ЗЕМЉЕ",
+    "replace": "ГРАВИТАЦИОНИ МАНЕВАР КОД ЗЕМЉЕ",
+    "why": "калк \"помоћ\" is not the binding"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "гравитационом потпором Марса",
+    "replace": "гравитационим маневром код Марса",
+    "why": "потпора is not the binding"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "ГРАВИТАЦИОНА ПОМОЋ МАРСА",
+    "replace": "ГРАВИТАЦИОНИ МАНЕВАР КОД МАРСА",
+    "why": "калк \"помоћ\" is not the binding"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Седам гравитационих потпома Венере",
+    "replace": "Седам гравитационих маневара код Венере",
+    "why": "\"потпома\" non-word"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Прво гравитационо убрзање помоћу Венере",
+    "replace": "Први гравитациони маневар код Венере",
+    "why": "убрзање is not the binding"
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "Apogee 190 km",
+    "replace": "Апогеј 190 km",
+    "why": "left in English"
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned on pad = fire, not an engine firing"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "за кориговање орбите",
+    "replace": "за паљење мотора ради корекције орбите",
+    "why": "engine burn not named"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stem gap: Рад главног мотора (variant: рад мотора)"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "keep",
+    "why": "variant: Потисници су радили (thrusters ran; рад мотора)"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "ПАЛЕЊЕ У ПЕРИГЕЈУ (BURN 1)",
+    "replace": "ПАЉЕЊЕ У ПЕРИГЕЈУ 1",
+    "why": "English left in label"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stem gap: Рад главног мотора (variant: рад мотора)"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stem gap: Рад главног мотора (variant: рад мотора)"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "ПАЛЕЊЕ",
+    "replace": "ПАЉЕЊЕ",
+    "why": "typo: Л instead of Љ"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "ПАЛЕЊЕ",
+    "replace": "ПАЉЕЊЕ",
+    "why": "typo: Л instead of Љ"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "ПАЛЕЊЕ",
+    "replace": "ПАЉЕЊЕ",
+    "why": "typo: Л instead of Љ"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "term": "stage",
+    "decision": "keep",
+    "why": "Inertial Upper Stage is a proper name left in English"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: први степен (Falcon 9 first stage)"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета (whole launcher Proton-K)"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ПРОЛЕТ",
+    "replace": "ПРЕЛЕТ",
+    "why": "пролет is spring; flyby = прелет"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "МУЛТИ-ПРОЛЕТ",
+    "replace": "МУЛТИ-ПРЕЛЕТ",
+    "why": "пролет is spring; flyby = прелет"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "МУЛТИ-ПРОЛЕТ",
+    "replace": "МУЛТИ-ПРЕЛЕТ",
+    "why": "пролет is spring; flyby = прелет"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ФЛИБИ",
+    "replace": "ПРЕЛЕТ",
+    "why": "transliteration instead of прелет"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ПОСАДА ЛЕТА БЕЗ СЛЕТАЊА",
+    "replace": "ПРЕЛЕТ СА ПОСАДОМ",
+    "why": "garbled; flyby missing"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ФЛИБИ С ЦРЕВЕД",
+    "replace": "ПРЕЛЕТ СА ПОСАДОМ",
+    "why": "transliteration, \"crewed\" left in English"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ФЛИБИ",
+    "replace": "ПРЕЛЕТ",
+    "why": "transliteration instead of прелет"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ФЛИБИ",
+    "replace": "ПРЕЛЕТ",
+    "why": "transliteration instead of прелет"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ПРОЛЕТАЊЕ",
+    "replace": "ПРЕЛЕТ",
+    "why": "wrong noun"
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ЛЕТЕЊЕ",
+    "replace": "ПРЕЛЕТ",
+    "why": "ЛЕТЕЊЕ = flying, not flyby"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ПРОЛЕТ",
+    "replace": "ПРЕЛЕТ",
+    "why": "пролет is spring; flyby = прелет"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: уласка у лунарну орбиту"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: Улазак у лунарну орбиту"
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "keep",
+    "why": "stem gap: повратку кроз атмосферу"
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "лансирању или повратку",
+    "replace": "лансирању или повратку у атмосферу",
+    "why": "reentry lost"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "Повратак на Земљу",
+    "replace": "Повратак у атмосферу",
+    "why": "reentry rendered as return to Earth"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "payload",
+    "term": "entry",
+    "decision": "change",
+    "find": "атмосферска сонда",
+    "replace": "сонда за улазак у атмосферу",
+    "why": "entry probe"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "payload",
+    "term": "descent",
+    "decision": "keep",
+    "why": "stem gap: спуштајући (descent lander)"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.5.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "Силазни степен",
+    "replace": "Спусни степен",
+    "why": "\"силазни\" not the binding"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "payload",
+    "term": "descent",
+    "decision": "keep",
+    "why": "stem gap: спуштајући (descent module)"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "term": "descent",
+    "decision": "change",
+    "find": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "replace": "ДЕМОНСТРАТОР УЛАСКА У АТМОСФЕРУ, СПУШТАЊА И СЛЕТАЊА · СРУШЕН",
+    "why": "left untranslated"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "keep",
+    "why": "stem gap: спуштајући степени (descent stages)"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "payload",
+    "term": "descent",
+    "decision": "keep",
+    "why": "stem gap: спуштајућа сонда (descent probe)"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "payload",
+    "term": "descent",
+    "decision": "keep",
+    "why": "stem gap: спуштајући модул (descent module)"
+  }
+]

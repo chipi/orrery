@@ -43,7 +43,13 @@ for (const d of JSON.parse(fs.readFileSync(file, 'utf8'))) {
     matched++;
     continue;
   }
-  keeps[keepKey(d.term, loc, `${d.rel} :: ${d.at}`)] = { why: d.why ?? '', tr: textHash(tr) };
+  // a keep is a reviewed decision: without the reason it cannot be re-checked later
+  if (!d.why?.trim()) {
+    missing++;
+    console.error(`no reason: ${d.term} ${loc} ${d.rel} :: ${d.at}`);
+    continue;
+  }
+  keeps[keepKey(d.term, loc, `${d.rel} :: ${d.at}`)] = { why: d.why, tr: textHash(tr) };
   added++;
 }
 let pruned = 0;

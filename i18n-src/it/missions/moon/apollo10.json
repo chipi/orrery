@@ -6,7 +6,7 @@
   "dispatch": "Apollo 10 volò l'intero allunaggio — fino agli ultimi quindici chilometri — e poi, per progetto, invertì la rotta. Stafford e Cernan portarono il Lunar Module fino a un tiro di schioppo dalla superficie a Tranquility, eseguirono ogni fase della discesa e risalirono in orbita senza toccare il suolo. La NASA lasciò persino i serbatoi di risalita semivuoti, così che, per quanto allettante potesse diventare, tentare l'allunaggio non fu mai un'opzione. È il volo meno celebrato del programma e uno dei più disciplinati: una prova a velocità piena da parte di due uomini che volarono per un quarto di milione di miglia sapendo che l'allunaggio spettava a qualcun altro.",
   "type": "EQUIPAGGIATO ORBITA LUNARE · VOLATO",
   "first": "Prova generale completa dell'allunaggio — il LM è sceso a ~15,6 km di altitudine",
-  "description": "La prova generale completa per il primo allunaggio. Stafford e Cernan volarono con il LM Snoopy fino a un'altitudine di ~15,6 km sopra il sito di allunaggio pianificato dell'Apollo 11 nel Mare Tranquillitatis — ogni fase di un approccio di discesa, eccetto l'allunaggio vero e proprio. Confermarono il profilo di discesa, il radar di allunaggio, la traiettoria di salita e la procedura di rendezvous che l'Apollo 11 avrebbe utilizzato due mesi dopo. I serbatoi del carburante dello stadio di salita del LM furono deliberatamente riempiti sottodimensionati (~50 % rispetto ai valori nominali) per evitare qualsiasi tentazione di tentare un allunaggio. Lo stadio di salita di Snoopy fu l'unico a lasciare l'orbita lunare con ∆v positivo — espulso in un'orbita eliocentrica dove rimane ancora oggi, rilevato intermittentemente da astronomi dilettanti (confermato più di recente da Nick Howes / Faulkes Telescope, 2019).",
+  "description": "La prova generale completa per il primo allunaggio. Stafford e Cernan volarono con il LM Snoopy fino a un'altitudine di ~15,6 km sopra il sito di allunaggio pianificato dell'Apollo 11 nel Mare Tranquillitatis — ogni fase di un approccio di discesa, eccetto l'allunaggio vero e proprio. Confermarono il profilo di discesa, il radar di allunaggio, la traiettoria di salita e la procedura di rendezvous che l'Apollo 11 avrebbe utilizzato due mesi dopo. I serbatoi del propellente dello stadio di salita del LM furono deliberatamente riempiti sottodimensionati (~50 % rispetto ai valori nominali) per evitare qualsiasi tentazione di tentare un allunaggio. Lo stadio di salita di Snoopy fu l'unico a lasciare l'orbita lunare con ∆v positivo — espulso in un'orbita eliocentrica dove rimane ancora oggi, rilevato intermittentemente da astronomi dilettanti (confermato più di recente da Nick Howes / Faulkes Telescope, 2019).",
   "events": [
     {
       "met": 0,
@@ -41,7 +41,7 @@
     {
       "met": 4.76,
       "label": "RISALITA + RENDEZVOUS",
-      "note": "Stadio di ascesa di Snoopy si aggancia a Charlie Brown — primo aggancio completo da LM a CSM in orbita lunare.",
+      "note": "Stadio di ascesa di Snoopy effettua il rendezvous con Charlie Brown — primo aggancio completo da LM a CSM in orbita lunare.",
       "type": "nominal"
     },
     {

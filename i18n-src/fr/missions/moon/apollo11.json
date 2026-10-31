@@ -17,13 +17,13 @@
     {
       "met": 0.13,
       "label": "TLI",
-      "note": "Brûlure par injection trans-lunaire – Le stade S-IVB propulse le CSM/LM vers la Lune.",
+      "note": "Allumage d'injection trans-lunaire – Le stade S-IVB propulse le CSM/LM vers la Lune.",
       "type": "nominal"
     },
     {
       "met": 3.13,
       "label": "Moi",
-      "note": "Insertion de l'orbite lunaire.",
+      "note": "Insertion en orbite lunaire.",
       "type": "nominal"
     },
     {

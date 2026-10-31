@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 10",
   "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
-  "payload": "Voorbijvlucht-ruimtevaartuig voor het buitenste zonnestelsel; eerste met SNAP-19-RTG's; 25 W bij lancering (afnemend tot ~65 W bruikbaar vermogen; signaal verloren in 2003)",
+  "payload": "Voorbijvlucht-ruimtevaartuig voor het buitenste zonnestelsel; eerste met SNAP-19-RTG's; ~155 W bij lancering (afnemend tot ~65 W bruikbaar vermogen; signaal verloren in 2003)",
   "delta_v": "~14,4 km/s (heliocentrisch na Jupiter)",
   "type": "Scheervlucht · Voltooid",
   "first": "Eerste ruimtevaartuig door de planetoïdengordel en eerste Jupiter-passage (04-12-1973)",

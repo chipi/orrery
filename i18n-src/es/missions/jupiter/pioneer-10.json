@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 10",
   "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
-  "payload": "Nave de sobrevuelo del sistema exterior; primera con RTG SNAP-19; 25 W al lanzamiento (decayendo hasta ~65 W de potencia utilizable; señal perdida en 2003)",
+  "payload": "Nave de sobrevuelo del sistema exterior; primera con RTG SNAP-19; ~155 W al lanzamiento (decayendo hasta ~65 W de potencia utilizable; señal perdida en 2003)",
   "delta_v": "~14,4 km/s (heliocéntrica tras Júpiter)",
   "type": "Sobrevuelo · Realizado",
   "first": "Primera nave en cruzar el cinturón de asteroides y en sobrevolar Júpiter (04-12-1973)",

@@ -21,7 +21,7 @@
     },
     {
       "met": 2,
-      "label": "TMI-VERBRENNUNG",
+      "label": "TMI-ZÜNDUNG",
       "note": "Trans-Mars-Injektion aus vollgetanktem LEO-Zustand.",
       "type": "nominal"
     },
@@ -46,13 +46,13 @@
     {
       "met": 750,
       "label": "TEI-ZÜNDUNG",
-      "note": "Trans-Earth-Injektion – Starship hebt von der Marsoberfläche ab und brennt auf die Flugbahn zur Erde zurück.",
+      "note": "Trans-Earth-Injektion – Starship hebt von der Marsoberfläche ab und zündet für die Flugbahn zurück zur Erde.",
       "type": "nominal"
     },
     {
       "met": 950,
       "label": "ANKUNFT AUF DER ERDE",
-      "note": "Stimmungsvoller Auftritt. Mission abgeschlossen.",
+      "note": "Eintritt in die Atmosphäre. Mission abgeschlossen.",
       "type": "info"
     }
   ],

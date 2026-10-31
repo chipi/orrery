@@ -1,0 +1,500 @@
+[
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "old": "Einfügung in die Mondumlaufbahn; Orbitalkorrekturen der Sinkneigung.",
+    "new": "Einschwenken in die Mondumlaufbahn; Orbitalkorrekturen der Abstiegsinklination."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "old": "Akatsuki — »Morgenröte« — war Japans erste Venussonde. Gestartet 2010-05-20 von Tanegashima auf einer H-IIA 202, zusammen mit dem Sonnensegel-Demonstrator IKAROS. Das geplante Einschwenkmanöver in die Venusumlaufbahn 2010-12-07 scheiterte, als sich Salzkristalle in einem Oxidationsmittel-Rückschlagventil bildeten und das Haupttriebwerk 152 Sekunden nach Brennbeginn aus der Ausrichtung warfen. JAXA hielt die Sonde fünf Jahre lang im Sonnenorbit am Leben, führte zwölf Korrekturmanöver durch, bis zum nächsten Venusbegegnungsfenster. Am 2015-12-07 platzierte ein 1228-Sekunden-Brennvorgang mit vier Lageregelungstriebwerken — ursprünglich nicht für Orbitaleinschwenkung vorgesehen — Akatsuki in eine stark elliptische 400 × 440.000 km, 3°-Neigung-Umlaufbahn. Eine der dramatischsten Missionsrettungen in der Raumfahrtgeschichte. Der Kontakt ging 2024 verloren; JAXA erklärte den Betrieb am 2025-09-18 für beendet.",
+    "new": "Akatsuki — »Morgenröte« — war Japans erste Venussonde. Gestartet 2010-05-20 von Tanegashima auf einer H-IIA 202, zusammen mit dem Sonnensegel-Demonstrator IKAROS. Das geplante Einschwenkmanöver in die Venusumlaufbahn 2010-12-07 scheiterte, als sich Salzkristalle in einem Oxidationsmittel-Rückschlagventil bildeten und das Haupttriebwerk 152 Sekunden nach Brennbeginn aus der Ausrichtung warfen. JAXA hielt die Sonde fünf Jahre lang im Sonnenorbit am Leben, führte zwölf Korrekturmanöver durch, bis zum nächsten Venusbegegnungsfenster. Am 2015-12-07 platzierte ein 1228-Sekunden-Brennvorgang mit vier Lageregelungstriebwerken — ursprünglich nicht für Orbitaleinschwenkung vorgesehen — Akatsuki in eine stark elliptische 400 × 440.000-km-Umlaufbahn mit 3° Inklination. Eine der dramatischsten Missionsrettungen in der Raumfahrtgeschichte. Der Kontakt ging 2024 verloren; JAXA erklärte den Betrieb am 2025-09-18 für beendet."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.label",
+    "old": "ERDE GRAVITY ASSIST",
+    "new": "ERDE-SWING-BY"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.note",
+    "old": "Erde-Gravity-Assist richtet Giotto zum Kometen 26P/Grigg-Skjellerup aus.",
+    "new": "Erde-Swing-by richtet Giotto zum Kometen 26P/Grigg-Skjellerup aus."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "old": "Erster von drei Erde-Gravitationsassists zum Aufbau der Geschwindigkeit für das Komet-Rendezvous.",
+    "new": "Erster von drei Erde-Swing-bys zum Aufbau der Geschwindigkeit für das Komet-Rendezvous."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.note",
+    "old": "Einzelner Mars-Gravitationsassist + erste Nahaufnahmen von Phobos und Mars in 250 km Entfernung.",
+    "new": "Einzelner Mars-Swing-by + erste Nahaufnahmen von Phobos und Mars in 250 km Entfernung."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "old": "Erster Lunar-Earth Gravity-Assist-Manöver — Mond und Erde in einem Swing.",
+    "new": "Erster Lunar-Earth Swing-by-Manöver — Mond und Erde in einem Swing."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.note",
+    "old": "Venus-Gravity-Assist auf dem Weg zurück zu zwei weiteren Erdvorbeiflügen.",
+    "new": "Venus-Swing-by auf dem Weg zurück zu zwei weiteren Erdvorbeiflügen."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.label",
+    "old": "ERDSCHWUNG",
+    "new": "ERD-SWING-BY"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.1.note",
+    "old": "Geringste Annäherung 5768 km 1974-02-05; erste bewusst geplante Gravitationshilfe-Bahn in der Raumfahrtgeschichte.",
+    "new": "Geringste Annäherung 5768 km 1974-02-05; erste bewusst geplante Swing-by-Bahn in der Raumfahrtgeschichte."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "description",
+    "old": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) nutzte sechs Schwerkrafthilfen über sieben Jahre — Erde, Venus zweimal, Merkur dreimal — um am 2011-03-18 in die Merkurumlaufbahn zu verlangsamen. Mit Sonnenschutz ausgestattet, eine Seite bei 370 °C und die andere bei -45 °C. Entdeckungen umfassten Wassereis in permanent beschatteten Polkratern, zuvor unbekannte geologische Strukturen namens „Hollows\", und die Bestätigung, dass der Eisenkern des Merkur etwa 85 % des Planetenradius ausmacht (das größte Kern-zu-Radius-Verhältnis aller Planeten im Sonnensystem). Die Mission endete mit einem kontrollierten Einschlag auf die Merkuroberfläche am 2015-04-30, nachdem der Treibstoff aufgebraucht war.",
+    "new": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) nutzte sechs Swing-bys über sieben Jahre — Erde, Venus zweimal, Merkur dreimal — um am 2011-03-18 in die Merkurumlaufbahn zu verlangsamen. Mit Sonnenschutz ausgestattet, eine Seite bei 370 °C und die andere bei -45 °C. Entdeckungen umfassten Wassereis in permanent beschatteten Polkratern, zuvor unbekannte geologische Strukturen namens „Hollows\", und die Bestätigung, dass der Eisenkern des Merkur etwa 85 % des Planetenradius ausmacht (das größte Kern-zu-Radius-Verhältnis aller Planeten im Sonnensystem). Die Mission endete mit einem kontrollierten Einschlag auf die Merkuroberfläche am 2015-04-30, nachdem der Treibstoff aufgebraucht war."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.label",
+    "old": "SCHWERKRAFTHILFE ERDE",
+    "new": "SWING-BY ERDE"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "old": "Atlas V 551 verlässt die Erde auf einem von Jupiter unterstützten Weg zu Pluto.",
+    "new": "Atlas V 551 verlässt die Erde auf einem Jupiter-Swing-by-Weg zu Pluto."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "old": "Psyche zielt auf den freigelegten Nickel-Eisen-Kern eines differenzierten Protoplaneten — einen 226 km großen Metallkörper, der möglicherweise das erreichbare Gegenstück zum Erdkern darstellt. Gestartet am 2023-10-13 von einer Falcon Heavy vom Kennedy LC-39A. Vier SPT-140 Hall-Effekt-Ionentriebwerke treiben die Flugbahn spiralförmig nach außen; ein Mars-Gravitationsassist im Mai 2026 (nächste Annäherung 4.609 km) brachte die Energie, die die Ionentriebwerke allein nicht rechtzeitig liefern konnten. Ankunft geplant 2029-08, gefolgt von einer 26-monatigen vierphasigen Bahnabsenkung (A → B → C → D) zur Kartierung von Gravitation, Magnetismus, Topografie und Zusammensetzung des Asteroiden. Wenn die Metallkern-Hypothese richtig ist, wird Psyche anders aussehen als alles andere, das wir je besucht haben — bloße Metalloberfläche, Eisensulfid-Lagerstätten, nichts vom Trümmerhaufen-Chaos typischer Asteroiden.",
+    "new": "Psyche zielt auf den freigelegten Nickel-Eisen-Kern eines differenzierten Protoplaneten — einen 226 km großen Metallkörper, der möglicherweise das erreichbare Gegenstück zum Erdkern darstellt. Gestartet am 2023-10-13 von einer Falcon Heavy vom Kennedy LC-39A. Vier SPT-140 Hall-Effekt-Ionentriebwerke treiben die Flugbahn spiralförmig nach außen; ein Mars-Swing-by im Mai 2026 (nächste Annäherung 4.609 km) brachte die Energie, die der Ionenschub allein nicht rechtzeitig liefern konnte. Ankunft geplant 2029-08, gefolgt von einer 26-monatigen vierphasigen Bahnabsenkung (A → B → C → D) zur Kartierung von Gravitation, Magnetismus, Topografie und Zusammensetzung des Asteroiden. Wenn die Metallkern-Hypothese richtig ist, wird Psyche anders aussehen als alles andere, das wir je besucht haben — bloße Metalloberfläche, Eisensulfid-Lagerstätten, nichts vom Trümmerhaufen-Chaos typischer Asteroiden."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.1.note",
+    "old": "Erste Venusgravitationshilfe 2018-10-03.",
+    "new": "Erster Venus-Swing-by 2018-10-03."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.1.note",
+    "old": "Gravitationsassistenz lenkt Ulysses ~80° aus der Ekliptik in eine polare Sonnenumlaufbahn.",
+    "new": "Ein Swing-by lenkt Ulysses ~80° aus der Ekliptik in eine polare Sonnenumlaufbahn."
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "old": "Sowjetisch-ESA-Flaggschiff der Halley-Armada. Vega 1 startete am 1984-12-15 mit einem Lander der Venera-Baureihe plus einem innovativen, von ESA/CNES gebauten Heliumballon, der in der Wolkendecke der Venus in 54 km Höhe 46,5 Stunden lang trieb und Wind- und Temperaturdaten über ein globales 20-Stationen-Funknetz übertrug. Nach dem Aussetzen seines Abstiegsmoduls nutzte der Bus die Gravitationshilfe der Venus, um zum Kometen 1P/Halley umzuleiten und erreichte am 1986-03-06 die geringste Annäherung von 8890 km – die erste Begegnung mit einem Kometenkern und die Positionsbestimmung, die Giotto der ESA nutzte, um eine Woche später seinen eigenen viel näheren Halley-Vorbeiflug durchzuführen.",
+    "new": "Sowjetisch-ESA-Flaggschiff der Halley-Armada. Vega 1 startete am 1984-12-15 mit einem Lander der Venera-Baureihe plus einem innovativen, von ESA/CNES gebauten Heliumballon, der in der Wolkendecke der Venus in 54 km Höhe 46,5 Stunden lang trieb und Wind- und Temperaturdaten über ein globales 20-Stationen-Funknetz übertrug. Nach dem Aussetzen seines Abstiegsmoduls nutzte der Bus den Swing-by an der Venus, um zum Kometen 1P/Halley umzuleiten und erreichte am 1986-03-06 die geringste Annäherung von 8890 km – die erste Begegnung mit einem Kometenkern und die Positionsbestimmung, die Giotto der ESA nutzte, um eine Woche später seinen eigenen viel näheren Halley-Vorbeiflug durchzuführen."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.3.note",
+    "old": "Haupttriebwerk-Abbrand platziert JUICE in die Jupiter-Umlaufbahn für die Eis-Monde-Tour.",
+    "new": "Haupttriebwerk-Brennphase platziert JUICE in die Jupiter-Umlaufbahn für die Eis-Monde-Tour."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.label",
+    "old": "TMI-BURN",
+    "new": "TMI-ZÜNDUNG"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "old": "27-Minuten-Triebwerksbrand bringt Hope am 09.02.2021 in die Mars-Umlaufbahn.",
+    "new": "27-minütige Brennphase bringt Hope am 09.02.2021 in die Mars-Umlaufbahn."
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.label",
+    "old": "TMI-VERBRENNUNG",
+    "new": "TMI-ZÜNDUNG"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.label",
+    "old": "TMI-VERBRENNUNG",
+    "new": "TMI-ZÜNDUNG"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "old": "Trans-Earth-Injektion – Starship hebt von der Marsoberfläche ab und brennt auf die Flugbahn zur Erde zurück.",
+    "new": "Trans-Earth-Injektion – Starship hebt von der Marsoberfläche ab und zündet für die Flugbahn zurück zur Erde."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.note",
+    "old": "Haupttriebwerk-Abbrand platziert MESSENGER nach sieben Jahren Flugstrecke in die Merkurumlaufbahn.",
+    "new": "Haupttriebwerk-Brennphase platziert MESSENGER nach sieben Jahren Flugstrecke in die Merkurumlaufbahn."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "old": "Translunare Injektionsverbrennung – S-IVB-Stufe treibt CSM/LM in Richtung Mond.",
+    "new": "Translunare Injektionszündung – S-IVB-Stufe treibt CSM/LM in Richtung Mond."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "old": "Apollo 13 sollte die dritte bemannte Mondlandung sein, gezielt auf die Fra-Mauro-Hochebene. Nach 55 Stunden und 54 Minuten des Fluges platzte ein Sauerstofftank im Service Module, was die elektrischen und Lebenserhaltungssysteme des Command-Service Module außer Gefecht setzte. Mit abgesagter Landung schalteten die Besatzungsmitglieder – James Lovell, Jack Swigert und Fred Haise – das CSM ab, zogen sich ins Lunar Module Aquarius als Rettungsboot zurück und nutzten das Abstiegstriebwerk des LM für einen Brennvorgang zwei Stunden nach dem Pericynthion, der sie auf eine schnelle Free-Return-Bahn brachte. Sie flogen in 254 km Höhe am 1970-04-15 am Mond vorbei und wasserten sicher im Südpazifik am 1970-04-17. Die Mission wird heute als Vorbild der disziplinierten Echtzeitimprovisierung im Ingenieurwesen studiert.",
+    "new": "Apollo 13 sollte die dritte bemannte Mondlandung sein, gezielt auf die Fra-Mauro-Hochebene. Nach 55 Stunden und 54 Minuten des Fluges platzte ein Sauerstofftank im Service Module, was die elektrischen und Lebenserhaltungssysteme des Command-Service Module außer Gefecht setzte. Mit abgesagter Landung schalteten die Besatzungsmitglieder – James Lovell, Jack Swigert und Fred Haise – das CSM ab, zogen sich ins Lunar Module Aquarius als Rettungsboot zurück und nutzten das Abstiegstriebwerk des LM für eine Zündung zwei Stunden nach dem Pericynthion, der sie auf eine schnelle Free-Return-Bahn brachte. Sie flogen in 254 km Höhe am 1970-04-15 am Mond vorbei und wasserten sicher im Südpazifik am 1970-04-17. Die Mission wird heute als Vorbild der disziplinierten Echtzeitimprovisierung im Ingenieurwesen studiert."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "old": "Trans-Lunar-Injection-Abbrand durch S-IVB; CSM + LM verpflichten sich zu zislunar-Flugbahn.",
+    "new": "Trans-Lunar-Injection-Zündung durch S-IVB; CSM + LM verpflichten sich zu zislunar-Flugbahn."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.label",
+    "old": "FREIFLUGBAHN-ABBRAND",
+    "new": "FREIFLUGBAHN-ZÜNDUNG"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "old": "31-Sekunden-LM-Abstiegstriebwerks-Abbrand setzt das Raumschiff auf eine Freiflugbahn zurück.",
+    "new": "31-Sekunden-LM-Abstiegstriebwerks-Brennphase setzt das Raumschiff auf eine Freiflugbahn zurück."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.label",
+    "old": "PC+2-ABBRAND",
+    "new": "PC+2-ZÜNDUNG"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "old": "Perizynthion-Plus-2-Stunden-Abbrand verkürzt die Rückkehrzeit zur Erde um zehn Stunden.",
+    "new": "Perizynthion-Plus-2-Stunden-Zündung verkürzt die Rückkehrzeit zur Erde um zehn Stunden."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.1.note",
+    "old": "Trans-lunar injection burn — erste bemannte Flucht aus der Erdgravitation. S-IVB ∆v ~3,05 km/s.",
+    "new": "Translunare Injektionszündung — erste bemannte Flucht aus der Erdgravitation. S-IVB ∆v ~3,05 km/s."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "old": "Mondorbitale Einschwenkung hinter dem Mond, außerhalb des Funkkontakts. SPS-Abbrand ~0,91 km/s. Erste Menschen, die einen anderen Himmelskörper umkreisen.",
+    "new": "Mondorbitale Einschwenkung hinter dem Mond, außerhalb des Funkkontakts. SPS-Zündung ~0,91 km/s. Erste Menschen, die einen anderen Himmelskörper umkreisen."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "old": "Die zweite Stufe New Glenn führt eine translunare Injektionsverbrennung durch.",
+    "new": "Die zweite Stufe New Glenn führt eine translunare Injektionszündung durch."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "old": "2015-12-07. RCS-Triebwerk 1228s Brennvorgang in 400 × 440.000 km, 3° Umlaufbahn.",
+    "new": "2015-12-07. RCS-Triebwerk 1228s Brennphase in 400 × 440.000 km, 3° Umlaufbahn."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "old": "Feststoffmotor-Abbrand in eine 295 × 8543 km, 85,5°-Bahn mit polarer Neigung.",
+    "new": "Feststoffmotor-Zündung in eine 295 × 8543 km, 85,5°-Bahn mit polarer Neigung."
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "old": "Luna 16 war die erste erfolgreiche robotische Probenrückführungsmission der Sowjetunion und die erste unbemannte Rückkehr vom Mond überhaupt. Nachdem Apollo 11 1969 22 kg bemannte Proben zur Erde brachte, kehrte Luna 16 ein Jahr später 101 Gramm Regolith aus Mare Fecunditatis zurück – nur ein Bruchteil von Apollos Nutzlast, aber ein grundlegender Beweis des Konzepts für die alternative Architektur. Die Mission verwendete eine Proton-K-Trägerrakete und ein direktes Rückführungsprofil: Abstieg zur Oberfläche, Kernbohrung, Aufstieg des Aufstiegsstadiums, ballistische Rückkehrkapsel nach Kasachstan. Die Technik wurde für Luna 20 und Luna 24 sowie Jahrzehnte später von Chang'e 5 und Chang'e 6 wiederverwendet.",
+    "new": "Luna 16 war die erste erfolgreiche robotische Probenrückführungsmission der Sowjetunion und die erste unbemannte Rückkehr vom Mond überhaupt. Nachdem Apollo 11 1969 22 kg bemannte Proben zur Erde brachte, kehrte Luna 16 ein Jahr später 101 Gramm Regolith aus Mare Fecunditatis zurück – nur ein Bruchteil von Apollos Nutzlast, aber ein grundlegender Beweis des Konzepts für die alternative Architektur. Die Mission verwendete eine Proton-K-Trägerrakete und ein direktes Rückführungsprofil: Abstieg zur Oberfläche, Kernbohrung, Aufstieg der Aufstiegsstufe, ballistische Rückkehrkapsel nach Kasachstan. Die Technik wurde für Luna 20 und Luna 24 sowie Jahrzehnte später von Chang'e 5 und Chang'e 6 wiederverwendet."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.4.note",
+    "old": "Kontaktverlust 2022-04, nachdem Raumfahrzeugbrennstoff erschöpft war.",
+    "new": "Kontaktverlust 2022-04, nachdem Raumfahrzeug-Treibstoff erschöpft war."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "old": "JAXAs Nachfolgemission der ursprünglichen Hayabusa. Am 3. Dezember 2014 gestartet, erreichte Hayabusa2 den kohlenstoffhaltigen erdnahen Asteroiden (162173) Ryugu am 27. Juni 2018 nach einem 3,5-jährigen Flug mit schwachem Ionenantrieb und einem Erd-Swing-by. Oberflächenoperationen 2018–2019: zwei Touchdown-and-go-Probennahmemanöver mit einem dazwischenliegenden Small Carry-on Impactor-Experiment (5. April 2019), das einen 14-m-Krater für die zweite Probe ausbaggerte. Drei MINERVA-II-Rover lieferten die ersten Oberflächenaufnahmen von einem Asteroiden; der DLR/CNES MASCOT-Lander operierte 17 Stunden lang. Die Probenrückkehrkapsel landete am 5. Dezember 2020 (UTC; geborgen am 6. Dezember 2020 Ortszeit/JST) über Woomera und brachte 5,4 g unverfälschtes Ryugu-Material – die erste Asteroidenprobe mit Stratigraphie aus dem Untergrund. Erweiterte Mission: Vorbeiflug am Asteroiden 98943 Torifune (2001 CC21) im Juli 2026; Rendezvous mit dem schnell rotierenden Asteroiden (1998 KY26) geplant für Juli 2031.",
+    "new": "JAXAs Nachfolgemission der ursprünglichen Hayabusa. Am 3. Dezember 2014 gestartet, erreichte Hayabusa2 den kohlenstoffhaltigen erdnahen Asteroiden (162173) Ryugu am 27. Juni 2018 nach einem 3,5-jährigen Flug mit schubarmem Ionenantrieb und einem Erd-Swing-by. Oberflächenoperationen 2018–2019: zwei Touchdown-and-go-Probennahmemanöver mit einem dazwischenliegenden Small Carry-on Impactor-Experiment (5. April 2019), das einen 14-m-Krater für die zweite Probe ausbaggerte. Drei MINERVA-II-Rover lieferten die ersten Oberflächenaufnahmen von einem Asteroiden; der DLR/CNES MASCOT-Lander operierte 17 Stunden lang. Die Probenrückkehrkapsel landete am 5. Dezember 2020 (UTC; geborgen am 6. Dezember 2020 Ortszeit/JST) über Woomera und brachte 5,4 g unverfälschtes Ryugu-Material – die erste Asteroidenprobe mit Stratigraphie aus dem Untergrund. Erweiterte Mission: Vorbeiflug am Asteroiden 98943 Torifune (2001 CC21) im Juli 2026; Rendezvous mit dem schnell rotierenden Asteroiden (1998 KY26) geplant für Juli 2031."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "old": "Gemeinsame Mission der ESA und JAXA zum Merkur, gestartet am 2018-10-20 — benannt nach dem italienischen Mathematiker Giuseppe (Bepi) Colombo, der die Mehrfach-Vorbeiflug-Flugbahn von Mariner 10 entwarf. Die 8-jährige Anflugphase nutzt 9 Gravitationsunterstützungen (Erde 2020, Venus 2020, Venus 2021, dann sechs Merkur-Vorbeiflüge 2021–2025) sowie kontinuierlichen Ionenantrieb vom Mercury Transfer Module, um das enorme Gefälle des Sonnengravitationsfelds zwischen Erd- und Merkurorbit abzubauen. Merkurorbit-Eintritt am 2026-11-21; wissenschaftliche Operationen beginnen Anfang 2027 nach Trennung des MTM und der beiden Orbiter — ESAs MPO (Planetenoberfläche + Zusammensetzung) und JAXAs Mio (Magnetosphäre). Tests der Allgemeinen Relativitätstheorie durch Funksignallaufzeit-Tracking in Merkurs starkem Sonnengravitationsfeld sind ebenfalls geplant.",
+    "new": "Gemeinsame Mission der ESA und JAXA zum Merkur, gestartet am 2018-10-20 — benannt nach dem italienischen Mathematiker Giuseppe (Bepi) Colombo, der die Mehrfach-Vorbeiflug-Flugbahn von Mariner 10 entwarf. Die 8-jährige Anflugphase nutzt 9 Gravitationsunterstützungen (Erde 2020, Venus 2020, Venus 2021, dann sechs Merkur-Vorbeiflüge 2021–2025) sowie kontinuierlichen ionenelektrischen Schub vom Mercury Transfer Module, um das enorme Gefälle des Sonnengravitationsfelds zwischen Erd- und Merkurorbit abzubauen. Einschwenken in die Merkurumlaufbahn am 2026-11-21; wissenschaftliche Operationen beginnen Anfang 2027 nach Trennung des MTM und der beiden Orbiter — ESAs MPO (Planetenoberfläche + Zusammensetzung) und JAXAs Mio (Magnetosphäre). Tests der Allgemeinen Relativitätstheorie durch Funksignallaufzeit-Tracking in Merkurs starkem Sonnengravitationsfeld sind ebenfalls geplant."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "old": "Ionentriebwerk-Gravitationsfang in 700-km-Umlaufbahn. 26-monatige Mission, vier Bahnphasen.",
+    "new": "Ionenschub-Gravitationsfang in 700-km-Umlaufbahn. 26-monatige Mission, vier Bahnphasen."
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "first",
+    "old": "ESAs erste Tiefraummission; nächster Kometenflug, der je versucht wurde (Halley, 596 km, 1986); erste Nahaufnahmen eines Kometenkerns",
+    "new": "ESAs erste Tiefraummission; nächster Kometen-Vorbeiflug, der je versucht wurde (Halley, 596 km, 1986); erste Nahaufnahmen eines Kometenkerns"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "description",
+    "old": "ESAs Flaggschiffmission zum Kometen-Rendezvous. Nach einer 10-jährigen Reise mit drei Erd-Swing-bys, einem Mars-Swing-by, zwei Asteroiden-Vorbeflügen und 957 Tagen Tiefraum-Hibernation erreichte Rosetta im August 2014 den Kometen 67P/Tschurjumow-Gerassimenko und umkreiste ihn über zwei Jahre lang durch das Perihel und danach wieder hinaus. Der Lander Philae erreichte am 2014-11-12 die Oberfläche von 67P — die erste sanfte Landung auf einem Kometen — und lieferte ~64 Stunden Wissenschaftsdaten, nachdem das Versagen der Harpune ihn im Schatten einer Felswand zurückließ. Rosetta selbst beendete die Mission mit einem kontrollierten Abstieg zur Oberfläche von 67P am 2016-09-30. Wichtigste Ergebnisse: organische Moleküle und Glycin in der Koma; das anfänglich gemessene D/H-Verhältnis von 67P (≈3× terrestrisch) sprach gegen Kometen der Jupiterfamilie als Quelle des Erdwassers — ein Ergebnis, das eine Re-Analyse von 2024 nach Entdeckung eines Messfehlers in Frage gestellt hat; die ersten detaillierten Karten der Ausgasungsgeometrie eines Kometen.",
+    "new": "ESAs Flaggschiffmission zum Kometen-Rendezvous. Nach einer 10-jährigen Reise mit drei Erd-Swing-bys, einem Mars-Swing-by, zwei Asteroiden-Vorbeiflügen und 957 Tagen Tiefraum-Hibernation erreichte Rosetta im August 2014 den Kometen 67P/Tschurjumow-Gerassimenko und umkreiste ihn über zwei Jahre lang durch das Perihel und danach wieder hinaus. Der Lander Philae erreichte am 2014-11-12 die Oberfläche von 67P — die erste sanfte Landung auf einem Kometen — und lieferte ~64 Stunden Wissenschaftsdaten, nachdem das Versagen der Harpune ihn im Schatten einer Felswand zurückließ. Rosetta selbst beendete die Mission mit einem kontrollierten Abstieg zur Oberfläche von 67P am 2016-09-30. Wichtigste Ergebnisse: organische Moleküle und Glycin in der Koma; das anfänglich gemessene D/H-Verhältnis von 67P (≈3× terrestrisch) sprach gegen Kometen der Jupiterfamilie als Quelle des Erdwassers — ein Ergebnis, das eine Re-Analyse von 2024 nach Entdeckung eines Messfehlers in Frage gestellt hat; die ersten detaillierten Karten der Ausgasungsgeometrie eines Kometen."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.3.label",
+    "old": "EROS-ORBITALEINFÜHRUNG",
+    "new": "EINSCHWENKEN IN DIE EROS-UMLAUFBAHN"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.5.note",
+    "old": "Orbit-Einsatz um den Kometen 67P/Tschurjumow-Gerassimenko. Philae landet am 2014-11-12.",
+    "new": "Einschwenken in die Umlaufbahn um den Kometen 67P/Tschurjumow-Gerassimenko. Philae landet am 2014-11-12."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "description",
+    "old": "Europa Clipper fliegt zum Jupiter, um Europa zu untersuchen — einen 3121 km großen Eismond, der vermutlich unter einer 15–25 km dicken Eiskruste einen globalen Ozean aus flüssigem Wasser beherbergt, die am leichtesten zugängliche potenziell bewohnbare Umgebung im Sonnensystem. Gestartet 2024-10-14 an einer Falcon Heavy mit C3 41,7. Ein Mars-Swing-by im März 2025 lenkte die Flugbahn zur Erde; ein Erd-Swing-by 2026-12 liefert den letzten Schub nach außen; kommt 2030-04-11 bei Jupiter an zur Orbitaleinfügung. Die Orbitalrundfahrt führt 49 enge Europa-Vorbeiflüge über vier Jahre durch — mit Abständen von nur 25 km über Europas Oberfläche bei den engsten Passagen, entworfen, um den gesamten Mond abzubilden und gleichzeitig die Strahlungsdosis des Raumfahrzeugs in Jupiters brutalen Strahlungsgürteln zu begrenzen. Instrumente: REASON Eis-Durchdringungsradar, MASPEX Massenspektrometer (untersucht Fahnenmaterial, falls vorhanden), E-THEMIS Wärmekamera (findet aktive Geysire), Magnetometer + Plasmainstrumente bestätigen Ozeantiefe durch induzierte magnetische Reaktion.",
+    "new": "Europa Clipper fliegt zum Jupiter, um Europa zu untersuchen — einen 3121 km großen Eismond, der vermutlich unter einer 15–25 km dicken Eiskruste einen globalen Ozean aus flüssigem Wasser beherbergt, die am leichtesten zugängliche potenziell bewohnbare Umgebung im Sonnensystem. Gestartet 2024-10-14 an einer Falcon Heavy mit C3 41,7. Ein Mars-Swing-by im März 2025 lenkte die Flugbahn zur Erde; ein Erd-Swing-by 2026-12 liefert den letzten Schub nach außen; kommt 2030-04-11 bei Jupiter an zum Einschwenken in die Umlaufbahn. Die Orbitalrundfahrt führt 49 enge Europa-Vorbeiflüge über vier Jahre durch — mit Abständen von nur 25 km über Europas Oberfläche bei den engsten Passagen, entworfen, um den gesamten Mond abzubilden und gleichzeitig die Strahlungsdosis des Raumfahrzeugs in Jupiters brutalen Strahlungsgürteln zu begrenzen. Instrumente: REASON Eis-Durchdringungsradar, MASPEX Massenspektrometer (untersucht Fahnenmaterial, falls vorhanden), E-THEMIS Wärmekamera (findet aktive Geysire), Magnetometer + Plasmainstrumente bestätigen Ozeantiefe durch induzierte magnetische Reaktion."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.label",
+    "old": "JUPITER-ORBITALEINFÜGUNG",
+    "new": "EINSCHWENKEN IN DIE JUPITERUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.3.label",
+    "old": "JUPITER-BAHNEINFÜHRUNG",
+    "new": "EINSCHWENKEN IN DIE JUPITERUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.2.label",
+    "old": "JUPITER-ORBITEINFÜGUNG",
+    "new": "EINSCHWENKEN IN DIE JUPITERUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.label",
+    "old": "MARS-ORBIT-EINTRITT",
+    "new": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "description",
+    "old": "ISROs Mars Orbiter Mission kostete 74 Millionen Dollar — weniger als das Budget des Films Gravity (100 Millionen Dollar) und ein Bruchteil von NASAs MAVEN (671 Millionen Dollar), das zwei Tage früher ankam. In 18 Monaten als Technologie-Demonstrator entwickelt, erreichte Mangalyaan jedes Ziel: Trans-Mars-Injektion, Tiefraum-Navigation, Marsorbiteintritt und 8 Jahre wissenschaftliche Ausbeute. Indien wurde die vierte Weltraumagentur am Mars und die erste, die beim ersten Versuch Erfolg hatte.",
+    "new": "ISROs Mars Orbiter Mission kostete 74 Millionen Dollar — weniger als das Budget des Films Gravity (100 Millionen Dollar) und ein Bruchteil von NASAs MAVEN (671 Millionen Dollar), das zwei Tage früher ankam. In 18 Monaten als Technologie-Demonstrator entwickelt, erreichte Mangalyaan jedes Ziel: Trans-Mars-Injektion, Tiefraum-Navigation, Einschwenken in die Marsumlaufbahn und 8 Jahre wissenschaftliche Ausbeute. Indien wurde die vierte Weltraumagentur am Mars und die erste, die beim ersten Versuch Erfolg hatte."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.label",
+    "old": "MARSORBITEINTRITT",
+    "new": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.label",
+    "old": "MARS-ORBIT-EINFÜHRUNG",
+    "new": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.label",
+    "old": "MARS-ORBIT-EINFÜHRUNG",
+    "new": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.1.label",
+    "old": "MARS-ORBIT-EINFÜHRUNG",
+    "new": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "description",
+    "old": "Chinas erste Mars-Mission erreichte, was noch nie eine Agentur in einem einzigen Start versucht hatte: Orbitaleinführung, Eintritt in die Atmosphäre, sanfte Landung und Rover-Einsatz. Der Zhurong-Rover absolvierte 358 Sols bei Utopia Planitia und legte dabei 1,9 km zurück, bevor er im Mai 2022 in den geplanten Winterschlaf überging; seitdem ist er nicht mehr aufgewacht (wahrscheinlich aufgrund der Staubansammlung auf den Solarpaneelen). Der Orbiter bleibt aktiv, kartiert den Planeten mit hoher Auflösung und dient als Relais für Fahrzeuge am Boden.",
+    "new": "Chinas erste Mars-Mission erreichte, was noch nie eine Agentur in einem einzigen Start versucht hatte: Einschwenken in die Umlaufbahn, Eintritt in die Atmosphäre, sanfte Landung und Rover-Einsatz. Der Zhurong-Rover absolvierte 358 Sols bei Utopia Planitia und legte dabei 1,9 km zurück, bevor er im Mai 2022 in den geplanten Winterschlaf überging; seitdem ist er nicht mehr aufgewacht (wahrscheinlich aufgrund der Staubansammlung auf den Solarpaneelen). Der Orbiter bleibt aktiv, kartiert den Planeten mit hoher Auflösung und dient als Relais für Fahrzeuge am Boden."
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.label",
+    "old": "MARS-ORBIT-EINFÜHRUNG",
+    "new": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.5.label",
+    "old": "MERKURORBIT-EINTRITT",
+    "new": "EINSCHWENKEN IN DIE MERKURUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.label",
+    "old": "MERKURORBIT-EINTRITT",
+    "new": "EINSCHWENKEN IN DIE MERKURUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.2.note",
+    "old": "Lunar-Orbit-Insertion. SPS ∆v ~0,91 km/s.",
+    "new": "Einschwenken in die Mondumlaufbahn. SPS ∆v ~0,91 km/s."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.2.note",
+    "old": "Einfügung in die Mondumlaufbahn.",
+    "new": "Einschwenken in die Mondumlaufbahn."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.2.note",
+    "old": "Mondorbiteintritt. SPS ∆v ~0,89 km/s.",
+    "new": "Einschwenken in die Mondumlaufbahn. SPS ∆v ~0,89 km/s."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.2.note",
+    "old": "Mondumlaufbahn-Eintritt. SPS ∆v ~0,91 km/s.",
+    "new": "Einschwenken in die Mondumlaufbahn. SPS ∆v ~0,91 km/s."
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.2.note",
+    "old": "Mondorbitalisierung. SPS ∆v ~0,91 km/s.",
+    "new": "Einschwenken in die Mondumlaufbahn. SPS ∆v ~0,91 km/s."
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.2.note",
+    "old": "Einfügung in die Mondumlaufbahn.",
+    "new": "Einschwenken in die Mondumlaufbahn."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.note",
+    "old": "Nächste Annäherung über die andere Seite, ca. 6.500 km Höhe, und die weiteste Entfernung, die Menschen je zurückgelegt haben: 406.771 km von der Erde. Kein Einsetzen in die Umlaufbahn – die freie Rückkehrgeometrie schleudert Orion zurück zur Erde.",
+    "new": "Nächste Annäherung über die andere Seite, ca. 6.500 km Höhe, und die weiteste Entfernung, die Menschen je zurückgelegt haben: 406.771 km von der Erde. Kein Einschwenken in die Umlaufbahn – die freie Rückkehrgeometrie schleudert Orion zurück zur Erde."
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "old": "Beresheet von SpaceIL (Hebräisch: „Am Anfang\") startete im Februar 2019 als Mitfluggast auf einer Falcon 9. Anstelle einer direkten trans-lunaren Bahneinschießung führte der kleine Lander mehrere Wochen lang Perigäums-Erhöhungsmanöver durch, um aus einer Wartebahn bis zum Mond zu klettern – eine treibstoffsparende Flugbahn, die für kostengünstige Missionen entwickelt wurde. Nach erfolgreicher Mondumlaufbahneinschießung am 4. April 2019 führte ein Reset der Trägheitsmesseinheit während des Abstiegs zum Abschalten des Haupttriebwerks. Beresheet stürzte in Mare Serenitatis ab. SpaceIL kündigte bereits Tage später einen Nachfolger an (Beresheet 2).",
+    "new": "Beresheet von SpaceIL (Hebräisch: „Am Anfang\") startete im Februar 2019 als Mitfluggast auf einer Falcon 9. Anstelle einer direkten trans-lunaren Bahneinschießung führte der kleine Lander mehrere Wochen lang Perigäums-Erhöhungsmanöver durch, um aus einer Wartebahn bis zum Mond zu klettern – eine treibstoffsparende Flugbahn, die für kostengünstige Missionen entwickelt wurde. Nach erfolgreichem Einschwenken in die Mondumlaufbahn am 4. April 2019 führte ein Reset der Trägheitsmesseinheit während des Abstiegs zum Abschalten des Haupttriebwerks. Beresheet stürzte in Mare Serenitatis ab. SpaceIL kündigte bereits Tage später einen Nachfolger an (Beresheet 2)."
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.5.label",
+    "old": "EINTRITT IN DIE MONDUMLAUFBAHN",
+    "new": "EINSCHWENKEN IN DIE MONDUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.3.note",
+    "old": "Einsetzen in die Mondumlaufbahn mittels BE-7-Haupttriebwerk.",
+    "new": "Einschwenken in die Mondumlaufbahn mittels BE-7-Haupttriebwerk."
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "events.1.note",
+    "old": "Einfügung in die Mondumlaufbahn 08.11.2008.",
+    "new": "Einschwenken in die Mondumlaufbahn 08.11.2008."
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "description",
+    "old": "Chang'e 3 war die dritte Sonde im Chang'e-Programm der CNSA und die erste erfolgreiche Weichlandung auf dem Mond seit der sowjetischen Luna 24 im Jahr 1976 – eine 37-jährige Lücke. Die Long March 3B startete im Dezember 2013 auf direkter Mondtrajektorie mit einer einzigen Mittelkurskorrektur vor der Mondorbitinsertion. Die Sonde landete am 14. Dezember in Mare Imbrium und setzte den Mondrover Yutu (Jade Rabbit) aus, der 31 Monate lang betrieben wurde, obwohl ein Mobilitätsschaden sein Fahren am Mondtag 2 beendete. Der Lander von Chang'e 3 setzte die Bildaufnahmen Jahre lang danach fort.",
+    "new": "Chang'e 3 war die dritte Sonde im Chang'e-Programm der CNSA und die erste erfolgreiche Weichlandung auf dem Mond seit der sowjetischen Luna 24 im Jahr 1976 – eine 37-jährige Lücke. Die Long March 3B startete im Dezember 2013 auf direkter Mondtrajektorie mit einer einzigen Mittelkurskorrektur vor dem Einschwenken in die Mondumlaufbahn. Die Sonde landete am 14. Dezember in Mare Imbrium und setzte den Mondrover Yutu (Jade Rabbit) aus, der 31 Monate lang betrieben wurde, obwohl ein Mobilitätsschaden sein Fahren am Mondtag 2 beendete. Der Lander von Chang'e 3 setzte die Bildaufnahmen Jahre lang danach fort."
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "events.2.label",
+    "old": "EINTRITT IN DIE MONDUMLAUFBAHN",
+    "new": "EINSCHWENKEN IN DIE MONDUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "events.1.note",
+    "old": "Mondorbitale Zirkularisierung.",
+    "new": "Einschwenken in die Mondumlaufbahn."
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.1.note",
+    "old": "Einfügung in die Mondumlaufbahn.",
+    "new": "Einschwenken in die Mondumlaufbahn."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "old": "Einfügung in die Mondumlaufbahn.",
+    "new": "Einschwenken in die Mondumlaufbahn."
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.1.note",
+    "old": "Einfügung in die Mondumlaufbahn 19.02.1994.",
+    "new": "Einschwenken in die Mondumlaufbahn 19.02.1994."
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.1.note",
+    "old": "Einfügung in die Mondumlaufbahn 23.06.2009.",
+    "new": "Einschwenken in die Mondumlaufbahn 23.06.2009."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.2.note",
+    "old": "Einfügung in die Mondumlaufbahn.",
+    "new": "Einschwenken in die Mondumlaufbahn."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.2.label",
+    "old": "SATURN-ORBITEINFÜGUNG",
+    "new": "EINSCHWENKEN IN DIE SATURNUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.1.label",
+    "old": "SATURN-ORBITEINFÜGUNG",
+    "new": "EINSCHWENKEN IN DIE SATURNUMLAUFBAHN"
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "description",
+    "old": "Erstflug des von Boeing gebauten X-37B Orbital Test Vehicle-Programms. Gestartet 2010-04-22 23:52 UTC vom Cape Canaveral SLC-41 mit Atlas V 501 AV-012; das erste autonome Raumflugzeug mit Bahnrückkehr und Landung auf einer Landebahn seit dem sowjetischen Buran 1.01 im Jahr 1988. Gelandet auf Vandenberg Air Force Base am 2010-12-03 09:16 UTC nach 224 Tagen. Nutzlasten und Bahnparameter klassifiziert.",
+    "new": "Erstflug des von Boeing gebauten X-37B Orbital Test Vehicle-Programms. Gestartet 2010-04-22 23:52 UTC vom Cape Canaveral SLC-41 mit Atlas V 501 AV-012; das erste autonome Raumflugzeug mit Wiedereintritt und Landung auf einer Landebahn seit dem sowjetischen Buran 1.01 im Jahr 1988. Gelandet auf Vandenberg Air Force Base am 2010-12-03 09:16 UTC nach 224 Tagen. Nutzlasten und Bahnparameter klassifiziert."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.7.note",
+    "old": "Stimmungsvoller Auftritt. Mission abgeschlossen.",
+    "new": "Eintritt in die Atmosphäre. Mission abgeschlossen."
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "old": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "new": "DEMONSTRATOR FÜR EINTRITT, ABSTIEG UND LANDUNG · ABGESTÜRZT"
+  }
+]

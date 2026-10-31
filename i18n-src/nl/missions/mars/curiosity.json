@@ -16,7 +16,7 @@
     },
     {
       "met": 0.005,
-      "label": "TMI-BRANDING",
+      "label": "TMI-ONTSTEKING",
       "note": "Trans-Mars injectie (3.61 km/s ∆v) stuurt MSL op een heliocentrische Mars-gebonden baan.",
       "type": "nominal"
     },
@@ -35,7 +35,7 @@
     {
       "met": 254,
       "label": "EDL — ZEVEN MINUTEN VAN ANGST",
-      "note": "Atmosferische ingang, supersonische parachute, sky-crane retroraketten, rover neergelaten aan kabels.",
+      "note": "Atmosferische intrede, supersonische parachute, sky-crane retroraketten, rover neergelaten aan kabels.",
       "type": "nominal"
     },
     {

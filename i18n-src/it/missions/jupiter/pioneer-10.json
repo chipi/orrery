@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 10",
   "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
-  "payload": "Sonda di sorvolo del sistema solare esterno; prima a usare RTG SNAP-19; 25 W al lancio (in calo fino a ~65 W di potenza utilizzabile; segnale perso nel 2003)",
+  "payload": "Sonda di sorvolo del sistema solare esterno; prima a usare RTG SNAP-19; ~155 W al lancio (in calo fino a ~65 W di potenza utilizzabile; segnale perso nel 2003)",
   "delta_v": "~14,4 km/s (eliocentrica dopo Giove)",
   "type": "Sorvolo · Effettuato",
   "first": "Prima sonda a attraversare la fascia degli asteroidi e a sorvolare Giove (04-12-1973)",

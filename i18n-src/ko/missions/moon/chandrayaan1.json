@@ -8,7 +8,7 @@
   "description": "ISRO의 첫 행성 간 우주선입니다. 궤도선은 Moon Impact Probe를 달 표면에 투하했는데, 이는 다른 세계에 닿은 최초의 인도 물체였으며, 6개국의 장비 11기를 실었습니다. Chandrayaan-1에 탑재된 NASA의 Moon Mineralogy Mapper(M3)는 교과서를 다시 쓰게 한 발견을 했습니다. 물 분자가 극지방의 영구 음영 분화구에만 갇혀 있는 것이 아니라 달 표면 전역에 널리 존재한다는 것입니다. 이 임무는 2009년 8월 ISRO가 우주선과 교신이 끊기면서 갑자기 끝났습니다.",
   "events": [
     { "met": 0, "label": "발사", "note": "스리하리코타에서 PSLV-XL(C11).", "type": "nominal" },
-    { "met": 17, "label": "MOI", "note": "달 궤도 삽입 2008-11-08.", "type": "nominal" },
+    { "met": 17, "label": "MOI", "note": "달 궤도 진입 2008-11-08.", "type": "nominal" },
     { "met": 24, "label": "MIP 충격", "note": "달 충돌 탐사선이 남극 근처에 경착륙을 목표로 했습니다.", "type": "info" },
     { "met": 320, "label": "교신 두절", "note": "2009-08-29 교신 두절; 312일 운용.", "type": "warning" }
   ],

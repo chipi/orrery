@@ -15,14 +15,14 @@
     },
     {
       "met": 7,
-      "label": "PERIGEUM-BRAND 1",
-      "note": "Eerste van zes baan-verhogingsbranden rond Aarde voorafgaand aan trans-Mars-injectie.",
+      "label": "PERIGEUM-ONTSTEKING 1",
+      "note": "Eerste van zes baanverhogingsontstekingen rond Aarde voorafgaand aan trans-Mars-injectie.",
       "type": "nominal"
     },
     {
       "met": 30,
       "label": "TRANS-MARS-INJECTIE",
-      "note": "Laatste perigeum-brand plaatst het ruimtevaartuig op Mars-traject.",
+      "note": "Laatste perigeum-ontsteking plaatst het ruimtevaartuig op Mars-traject.",
       "type": "nominal"
     },
     {

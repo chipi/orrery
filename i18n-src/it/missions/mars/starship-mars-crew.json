@@ -16,12 +16,12 @@
     {
       "met": 1,
       "label": "RICARICA ORBITALE",
-      "note": "Appuntamento con la flotta di navi cisterna e trasferimento di propellente in LEO su più voli.",
+      "note": "Rendezvous con la flotta di navi cisterna e trasferimento di propellente in LEO su più voli.",
       "type": "nominal"
     },
     {
       "met": 2,
-      "label": "BRUCIATURA TMI",
+      "label": "ACCENSIONE TMI",
       "note": "Iniezione Trans-Mars dallo stato LEO a pieno carburante.",
       "type": "nominal"
     },
@@ -45,8 +45,8 @@
     },
     {
       "met": 750,
-      "label": "TEI BRUCIA",
-      "note": "Iniezione trans-terrestre: Starship si solleva dalla superficie di Marte e brucia per la traiettoria di ritorno alla Terra.",
+      "label": "ACCENSIONE TEI",
+      "note": "Iniezione trans-terrestre: Starship si solleva dalla superficie di Marte e accende i motori per la traiettoria di ritorno alla Terra.",
       "type": "nominal"
     },
     {

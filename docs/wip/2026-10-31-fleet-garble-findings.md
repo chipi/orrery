@@ -137,3 +137,31 @@ The rate suggests the rest of these locales' fleet text has the same problems.
 A garble pass on the fleet tree, nl first: grade every fleet field per locale with the
 `i18n-audit` graded sample (§3). Retranslate the BROKEN fields from the English by hand or
 with in-session subagents (free route), with `problems()` and the term gate as checks.
+
+## Missions (reported by the missions term round, not yet fixed)
+
+- **Untranslated or half-translated `type` labels:** "FLYBY · FLOWN" and similar.
+  - Fixed where the label carried a term (ja/ko/zh/sr/pt/it/nl Schiaparelli and the FLYBY labels).
+  - Still left: hi gemini8 and vostok-3; sr «ФЛОВН» (flown); sr voyager-1 «IZVRŠENO», Latin script inside Cyrillic, which the latinSerbian detector misses in `type`; mixed sr ЗАВРШЕН/ЛЕТЕЛО/ЛЕТЕНО.
+- **Names:**
+  - zh-CN Mathilde is 马蒂尔德 in one field and 梅西尔德星 in another.
+  - zh-CN 戈尔登·库勃 for Gordon Cooper.
+  - zh-CN «双卫一»/«小行星双生星» for Dimorphos/Didymos.
+  - ru Korolev spelled two ways in one field.
+- **Chinese characters in ja:** 溅着, 吨, and change4 note written entirely in Chinese (the term part fixed).
+- **Wrong word for the meaning:**
+  - ar «يُقبض المدار / تُقبض MAVEN» for "captures"; «محرقات» for thrusters.
+  - ko 월간 (monthly) for cislunar; 분류된 탑재체 for "classified payload".
+  - fr "pétroliers" for tankers (should be ravitailleurs).
+  - it "petroliera".
+  - pt "missão em solo" for "solo".
+  - es "quemados/quemadas" for burns (outside flagged fields).
+  - de "Zirkularisierungsmanöver" for orbit raising.
+  - nl "terugkeerraket" for retro-rocket.
+- **Grammar:**
+  - ru «Это была не конец», «внекосмическим аппаратом» (uncrewed), «Сам Rosetta».
+  - sr «безтежинског», vostok-6 description garbled.
+  - ar «هذا المناورة», «أدى إعادة ضبط».
+  - fr «cislunairedans», «s'est rendez-vous».
+  - it OSIRIS-REx and BepiColombo descriptions; de «Erster … Manöver».
+- **Mixed date formats** in pt-BR, it and ar event notes (08/11/2008 next to ISO).

@@ -5,7 +5,7 @@
   "delta_v": "~3,5 km/s",
   "type": "ORBITER · FLOWN",
   "first": "Erste asiatische Marsmission; erster Marserfolg beim ersten Versuch",
-  "description": "ISROs Mars Orbiter Mission kostete 74 Millionen Dollar — weniger als das Budget des Films Gravity (100 Millionen Dollar) und ein Bruchteil von NASAs MAVEN (671 Millionen Dollar), das zwei Tage früher ankam. In 18 Monaten als Technologie-Demonstrator entwickelt, erreichte Mangalyaan jedes Ziel: Trans-Mars-Injektion, Tiefraum-Navigation, Marsorbiteintritt und 8 Jahre wissenschaftliche Ausbeute. Indien wurde die vierte Weltraumagentur am Mars und die erste, die beim ersten Versuch Erfolg hatte.",
+  "description": "ISROs Mars Orbiter Mission kostete 74 Millionen Dollar — weniger als das Budget des Films Gravity (100 Millionen Dollar) und ein Bruchteil von NASAs MAVEN (671 Millionen Dollar), das zwei Tage früher ankam. In 18 Monaten als Technologie-Demonstrator entwickelt, erreichte Mangalyaan jedes Ziel: Trans-Mars-Injektion, Tiefraum-Navigation, Einschwenken in die Marsumlaufbahn und 8 Jahre wissenschaftliche Ausbeute. Indien wurde die vierte Weltraumagentur am Mars und die erste, die beim ersten Versuch Erfolg hatte.",
   "events": [
     {
       "met": 0,
@@ -27,14 +27,14 @@
     },
     {
       "met": 324,
-      "label": "MARSORBITEINTRITT",
+      "label": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
       "note": "Liquid Apogee Motor zündet nach ~10 Monaten Ruhezustand — 24 Minuten Brenndauer für Orbiteinfang.",
       "type": "nominal"
     },
     {
       "met": 3300,
       "label": "MISSIONENDE",
-      "note": "Kontaktverlust 2022-04, nachdem Raumfahrzeugbrennstoff erschöpft war.",
+      "note": "Kontaktverlust 2022-04, nachdem Raumfahrzeug-Treibstoff erschöpft war.",
       "type": "warning"
     }
   ],

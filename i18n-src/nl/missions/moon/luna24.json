@@ -16,7 +16,7 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Maanbaninvoering.",
+      "note": "Maanbaaninsertie.",
       "type": "nominal"
     },
     {
@@ -34,7 +34,7 @@
     {
       "met": 10,
       "label": "OPSTIJGING",
-      "note": "Opstijgingsmodule stijgt op; trans-aardse injectie.",
+      "note": "Opstijgtrap stijgt op; trans-aardse injectie.",
       "type": "nominal"
     },
     {

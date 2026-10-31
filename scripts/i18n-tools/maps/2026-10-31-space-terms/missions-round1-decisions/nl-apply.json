@@ -1,0 +1,794 @@
+[
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "type",
+    "old": "BEMANDE AARDEORBIET · UITGEVOERD",
+    "new": "BEMANDE AARDBAAN · UITGEVOERD"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.1.note",
+    "old": "Inbrenging in 161 × 283 km aardeorbiet.",
+    "new": "Inbrenging in 161 × 283 km aardbaan."
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.label",
+    "old": "MARSBANDINVOERING",
+    "new": "MARSBAANINSERTIE"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.2.label",
+    "old": "MARSBAANOPNAME",
+    "new": "MARSBAANINSERTIE"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.2.note",
+    "old": "Maanbaaninvoeging. SPS ∆v ~0,89 km/s.",
+    "new": "Maanbaaninsertie. SPS ∆v ~0,89 km/s."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "description",
+    "old": "De eerste \"J-missie\" — wetenschappelijke Apollo met een langer verblijf en de nieuwe Lunar Roving Vehicle. De LRV gaf Scott + Irwin een actieradius van 27,9 km (tegen de 3,5 km van Apollo 14, waar alleen te voet werd gelopen), en opende zo de dramatische landingsplaats Hadley-Apennijnen aan de voet van een 4,5 km hoge bergketen en de rand van de kronkelende Hadley-rille. Drie EVA's van in totaal 18 u 35 m, 77 kg monsters teruggebracht, waaronder de beroemde \"Genesis Rock\" (monster 15415) — een 4,1 miljard jaar oud anortosiet dat de magma-oceaan-oorsprong van de korst van de maanhooglanden bevestigt. Scotts live uitgezonden proef met hamer en veer verifieerde de zwaartekrachtswet van Galileo. Worden in maanomloop bediende een SIM-baai vol instrumenten voor teledetectie (karteringscamera's, gammastraling-, röntgen- en alfadeeltjesspectrometers) en voerde op de terugweg de eerste EVA in de diepe ruimte uit (~39 minuten op ~317 000 km van de aarde om filmcassettes op te halen). De terugkeer van Apollo 15 werd bemoeilijkt doordat een van de drie parachutes niet openging — de CM maakte een harde landing in zee, maar de bemanning was veilig.",
+    "new": "De eerste \"J-missie\" — wetenschappelijke Apollo met een langer verblijf en de nieuwe Lunar Roving Vehicle. De LRV gaf Scott + Irwin een actieradius van 27,9 km (tegen de 3,5 km van Apollo 14, waar alleen te voet werd gelopen), en opende zo de dramatische landingsplaats Hadley-Apennijnen aan de voet van een 4,5 km hoge bergketen en de rand van de kronkelende Hadley-rille. Drie EVA's van in totaal 18 u 35 m, 77 kg monsters teruggebracht, waaronder de beroemde \"Genesis Rock\" (monster 15415) — een 4,1 miljard jaar oud anortosiet dat de magma-oceaan-oorsprong van de korst van de maanhooglanden bevestigt. Scotts live uitgezonden proef met hamer en veer verifieerde de zwaartekrachtswet van Galileo. Worden in maanbaan bediende een SIM-baai vol instrumenten voor teledetectie (karteringscamera's, gammastraling-, röntgen- en alfadeeltjesspectrometers) en voerde op de terugweg de eerste EVA in de diepe ruimte uit (~39 minuten op ~317 000 km van de aarde om filmcassettes op te halen). De terugkeer van Apollo 15 werd bemoeilijkt doordat een van de drie parachutes niet openging — de CM maakte een harde landing in zee, maar de bemanning was veilig."
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "description",
+    "old": "Chang'e 3 was de derde lander in het Chang'e-programma van CNSA en de eerste geslaagde zachte landing op de maan sinds de Sovjet-Luna 24 in 1976 — een hiaat van 37 jaar. De Long March 3B lanceerde in december 2013 op een directe maantrajectorie, met slechts één koerscorrectie voorafgaand aan de maanbaaninvoering. De lander kwam neer in Mare Imbrium op 14 december en plaatste de Yutu (Jade Rabbit) rover, die 31 maanden operationeel bleef ondanks een mobiliteitsdefect dat zijn voortbeweging op de tweede lunaire dag beëindigde. De lander van Chang'e 3 bleef jarenlang daarna beelden maken.",
+    "new": "Chang'e 3 was de derde lander in het Chang'e-programma van CNSA en de eerste geslaagde zachte landing op de maan sinds de Sovjet-Luna 24 in 1976 — een hiaat van 37 jaar. De Long March 3B lanceerde in december 2013 op een directe maantrajectorie, met slechts één koerscorrectie voorafgaand aan de maanbaaninsertie. De lander kwam neer in Mare Imbrium op 14 december en plaatste de Yutu (Jade Rabbit) rover, die 31 maanden operationeel bleef ondanks een mobiliteitsdefect dat zijn voortbeweging op de tweede lunaire dag beëindigde. De lander van Chang'e 3 bleef jarenlang daarna beelden maken."
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.1.note",
+    "old": "Maanbaninvoering.",
+    "new": "Maanbaaninsertie."
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "dispatch",
+    "old": "Huygens werd niet gestuurd om te draaien, maar om te vallen. Zeven jaar lang aan Cassini vastgemaakt, scheidde het zich af op eerste kerstdag 2004 en gleed twintig dagen lang alleen naar Titan. Toen het Titans atmosfeer raakte met zes kilometer per seconde, kocht een hitteschild de benodigde tijd; daarna vertraagden drie valschermstadia het gedurende twee en een half uur door een oranje waas die nog nooit door een instrument was doorstoten. Het fotografeerde rivierdalen, mat windsnelheden, rook de atmosfeer — en landde op een vlakte van afgeronde water-ijskeien. Het was de eerste landing ooit in het buitenste zonnestelsel, en geen ruimtevaartuig is sindsdien daar geland.",
+    "new": "Huygens werd niet gestuurd om te cirkelen, maar om te vallen. Zeven jaar lang aan Cassini vastgemaakt, scheidde het zich af op eerste kerstdag 2004 en gleed twintig dagen lang alleen naar Titan. Toen het Titans atmosfeer raakte met zes kilometer per seconde, kocht een hitteschild de benodigde tijd; daarna vertraagden drie valschermstadia het gedurende twee en een half uur door een oranje waas die nog nooit door een instrument was doorstoten. Het fotografeerde rivierdalen, mat windsnelheden, rook de atmosfeer — en landde op een vlakte van afgeronde water-ijskeien. Het was de eerste landing ooit in het buitenste zonnestelsel, en geen ruimtevaartuig is sindsdien daar geland."
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "description",
+    "old": "Gelanceerd 1966-03-31 vanaf Bajkonoer, Luna 10 werd het eerste ruimtevaartuig dat de Maan omcirkelde — en de eerste kunstmatige satelliet van elk hemellichaam anders dan de Aarde — toen het op 1966-04-03 een baan van 350 × 1017 km rond de Maan inzweefde met een hellingshoek van 71,9°. Tweeënhalf jaar voordat Apollo 8 de Maan bereikte met mensen aan boord. Droeg een magnetometer, gammastralingsspectrometer, infraroodradiometer, micrometeoroïdendetectoren, plasmasensoren en een radioprobe voor het meten van het zwaartekrachtsveld van de Maan. De gammastralingdata was de eerste samenstellingsdetectie van de Maan op afstand, suggererend basaltachtige samenstelling van de maria. Zond beroemd de Internationale uit tijdens het 23e Congres van de Communistische Partij van de Sovjet-Unie op 1966-04-04 — meer een propagandastunt dan wetenschap. Was operationeel gedurende 56 dagen / 460 banen voordat zijn NiCd-accu's op 1966-05-30 leegraakten; blijft in de maanbaan.",
+    "new": "Gelanceerd 1966-03-31 vanaf Bajkonoer, Luna 10 werd het eerste ruimtevaartuig dat de Maan omcirkelde — en de eerste kunstmatige satelliet van elk hemellichaam anders dan de Aarde — toen het op 1966-04-03 een baan van 350 × 1017 km rond de Maan inzweefde met een inclinatie van 71,9°. Tweeënhalf jaar voordat Apollo 8 de Maan bereikte met mensen aan boord. Droeg een magnetometer, gammastralingsspectrometer, infraroodradiometer, micrometeoroïdendetectoren, plasmasensoren en een radioprobe voor het meten van het zwaartekrachtsveld van de Maan. De gammastralingdata was de eerste samenstellingsdetectie van de Maan op afstand, suggererend basaltachtige samenstelling van de maria. Zond beroemd de Internationale uit tijdens het 23e Congres van de Communistische Partij van de Sovjet-Unie op 1966-04-04 — meer een propagandastunt dan wetenschap. Was operationeel gedurende 56 dagen / 460 banen voordat zijn NiCd-accu's op 1966-05-30 leegraakten; blijft in de maanbaan."
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "old": "Maanbaan-insertie; orbitale correcties tot afdaalhellingshoek.",
+    "new": "Maanbaan-insertie; orbitale correcties tot afdalingsinclinatie."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "first",
+    "old": "Eerste internationale samenwerking in de bemande ruimtevaart; eerste koppeling tussen de VS en de USSR",
+    "new": "Eerste internationale samenwerking in de bemande ruimtevaart; eerste rendez-vous en koppeling tussen de VS en de USSR"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "old": "Vervolgmissie van JAXA op de oorspronkelijke Hayabusa. Hayabusa2 werd gelanceerd op 2014-12-03 en bereikte de koolstofrijke aardscheerder (162173) Ryugu op 2018-06-27, na een tocht van 3,5 jaar met een ionenmotor met lage stuwkracht en een zwaartekrachtsteun van de Aarde. Werkzaamheden aan het oppervlak in 2018–2019: twee touchdown-and-go-monsternames rond een experiment met de Small Carry-on Impactor (2019-04-05), die voor het tweede monster een krater van 14 m groef. Drie MINERVA-II-rovers maakten de eerste beelden van het oppervlak van een asteroïde; de MASCOT-lander van DLR/CNES werkte 17 uur. De monsterterugkeercapsule kwam op 2020-12-05 (UTC; geborgen op 2020-12-06 lokale tijd/JST) boven Woomera de atmosfeer in en leverde 5,4 g ongerept Ryugu-materiaal af — het eerste asteroïdemonster met ondergrondse gelaagdheid. Verlengde missie: scheervlucht langs 98943 Torifune (2001 CC21) in 2026-07; ontmoeting met de snel roterende (1998 KY26) gepland voor 2031-07.",
+    "new": "Vervolgmissie van JAXA op de oorspronkelijke Hayabusa. Hayabusa2 werd gelanceerd op 2014-12-03 en bereikte de koolstofrijke aardscheerder (162173) Ryugu op 2018-06-27, na een tocht van 3,5 jaar met een ionenmotor met lage stuwkracht en een zwaartekrachtassist van de Aarde. Werkzaamheden aan het oppervlak in 2018–2019: twee touchdown-and-go-monsternames rond een experiment met de Small Carry-on Impactor (2019-04-05), die voor het tweede monster een krater van 14 m groef. Drie MINERVA-II-rovers maakten de eerste beelden van het oppervlak van een asteroïde; de MASCOT-lander van DLR/CNES werkte 17 uur. De monsterterugkeercapsule kwam op 2020-12-05 (UTC; geborgen op 2020-12-06 lokale tijd/JST) boven Woomera de atmosfeer in en leverde 5,4 g ongerept Ryugu-materiaal af — het eerste asteroïdemonster met ondergrondse gelaagdheid. Verlengde missie: scheervlucht langs 98943 Torifune (2001 CC21) in 2026-07; ontmoeting met de snel roterende (1998 KY26) gepland voor 2031-07."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "old": "Missie in het Discovery-programma van NASA, geleid door het APL van Johns Hopkins University. NEAR Shoemaker werd gelanceerd op 17-02-1996 en vloog langs asteroïde 253 Mathilde (27-06-1997), voordat een zwaartekrachtsteun van de Aarde (23-01-1998) zijn baan afstemde op die van Eros. De baaninschieting rond 433 Eros op 14-02-2000 markeerde het begin van een onderzoek van 12 maanden dat 160.000 beelden opleverde, plus volledige spectrale kaarten, samenstellingskaarten en zwaartekrachtkaarten van het S-type lichaam van 34 × 11 × 11 km. Op 12-02-2001 brachten vijf banverlagende burns het ruimtevaartuig op 5 km hoogte; een gecontroleerde afdaling met ~1,7 m/s eindigde in een zachte landing bij het zadel Himeros (35°N, 280°W), waarbij beelden werden teruggestuurd tot op 125 m van het oppervlak. Het ruimtevaartuig overleefde en zond ~16 dagen vanaf het oppervlak uit.",
+    "new": "Missie in het Discovery-programma van NASA, geleid door het APL van Johns Hopkins University. NEAR Shoemaker werd gelanceerd op 17-02-1996 en vloog langs asteroïde 253 Mathilde (27-06-1997), voordat een zwaartekrachtassist van de Aarde (23-01-1998) zijn baan afstemde op die van Eros. De baaninschieting rond 433 Eros op 14-02-2000 markeerde het begin van een onderzoek van 12 maanden dat 160.000 beelden opleverde, plus volledige spectrale kaarten, samenstellingskaarten en zwaartekrachtkaarten van het S-type lichaam van 34 × 11 × 11 km. Op 12-02-2001 brachten vijf banverlagende ontstekingen het ruimtevaartuig op 5 km hoogte; een gecontroleerde afdaling met ~1,7 m/s eindigde in een zachte landing bij het zadel Himeros (35°N, 280°W), waarbij beelden werden teruggestuurd tot op 125 m van het oppervlak. Het ruimtevaartuig overleefde en zond ~16 dagen vanaf het oppervlak uit."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "old": "AARDSE ZWAARTEKRACHTSTEUN",
+    "new": "AARDSE ZWAARTEKRACHTASSIST"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "old": "OSIRIS-REx voerde een van de meest veeleisende operaties in de nabijheid van een asteroïde uit die ooit zijn geprobeerd. De sonde werd gelanceerd op 2016-09-08 vanaf Cape Canaveral met een Atlas V 411, gebruikte in 2017 een zwaartekrachtsteun van de Aarde om zijn baanvlak te draaien naar Bennu's baanhelling van 6°, en ontmoette de 492 m grote koolstofrijke aardscheerder op 2018-12-03. Na stationhouden op ~19 km kwam hij later in een recordbaan van ~1,4 km — de kleinste baan die een ruimtevaartuig ooit rond een hemellichaam heeft gehad. Twee jaar lang bracht hij Bennu's met rotsblokken bezaaide oppervlak in kaart en ontdekte hij actieve deeltjesuitstoot. Op 2020-10-20 daalde de monsterarm van Touch-and-Go af naar de locatie Nightingale, blies N₂-gas in het oppervlak en greep een pluim — en zakte daarbij 50 cm weg in een oppervlak dat zich gedroeg als een 'vloeistof van losse brokstukken'. De Sample Return Capsule leverde op 2023-09-24 121,6 g Bennu-materiaal af in Utah. Het ruimtevaartuig zelf werd direct omgedoopt tot OSIRIS-APEX, op weg naar een ontmoeting met Apophis in 2029.",
+    "new": "OSIRIS-REx voerde een van de meest veeleisende operaties in de nabijheid van een asteroïde uit die ooit zijn geprobeerd. De sonde werd gelanceerd op 2016-09-08 vanaf Cape Canaveral met een Atlas V 411, gebruikte in 2017 een zwaartekrachtassist van de Aarde om zijn baanvlak te draaien naar Bennu's baanhelling van 6°, en ontmoette de 492 m grote koolstofrijke aardscheerder op 2018-12-03. Na stationhouden op ~19 km kwam hij later in een recordbaan van ~1,4 km — de kleinste baan die een ruimtevaartuig ooit rond een hemellichaam heeft gehad. Twee jaar lang bracht hij Bennu's met rotsblokken bezaaide oppervlak in kaart en ontdekte hij actieve deeltjesuitstoot. Op 2020-10-20 daalde de monsterarm van Touch-and-Go af naar de locatie Nightingale, blies N₂-gas in het oppervlak en greep een pluim — en zakte daarbij 50 cm weg in een oppervlak dat zich gedroeg als een 'vloeistof van losse brokstukken'. De Sample Return Capsule leverde op 2023-09-24 121,6 g Bennu-materiaal af in Utah. Het ruimtevaartuig zelf werd direct omgedoopt tot OSIRIS-APEX, op weg naar een ontmoeting met Apophis in 2029."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.label",
+    "old": "AARDZWAARTEASSISTENTIE",
+    "new": "AARDSE ZWAARTEKRACHTASSIST"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "description",
+    "old": "Giotto was Europa's hoeksteen van de Halley-armada — een spingestabiliseerde 960 kg-sonde omwikkeld met een gelaagd Whipple-Kevlar stofschild. Gelanceerd 1985-07-02, vloog het door Halley's coma met een relatieve snelheid van 68 km/s op 1986-03-14 met een kleinste afstand van 596 km, en leverde de eerste close-upbeelden van een komeetkern (een onregelmatig 15 × 7,2 × 7,2 km langwerpig lichaam met geconcentreerde stofstralen). Een stofimpact ongeveer 7,6 seconden voor de dichtste nadering destabiliseerde de spinas en schakelde de camera uit, maar de andere instrumenten bleven door de coma zenden. Na sluimering in heliocentrische baan, werd Giotto in 1990 opnieuw geactiveerd en gebruikte een zwaartekrachtsvlucht langs de Aarde om opnieuw gericht te worden op komeet 26P/Grigg–Skjellerup, voorbijvliegend op 200 km op 1992-07-10 — de dichtstbijzijnste komeetvoorbijvlucht ooit uitgevoerd.",
+    "new": "Giotto was Europa's hoeksteen van de Halley-armada — een spingestabiliseerde 960 kg-sonde omwikkeld met een gelaagd Whipple-Kevlar stofschild. Gelanceerd 1985-07-02, vloog het door Halley's coma met een relatieve snelheid van 68 km/s op 1986-03-14 met een kleinste afstand van 596 km, en leverde de eerste close-upbeelden van een komeetkern (een onregelmatig 15 × 7,2 × 7,2 km langwerpig lichaam met geconcentreerde stofstralen). Een stofimpact ongeveer 7,6 seconden voor de dichtste nadering destabiliseerde de spinas en schakelde de camera uit, maar de andere instrumenten bleven door de coma zenden. Na sluimering in heliocentrische baan, werd Giotto in 1990 opnieuw geactiveerd en gebruikte een zwaartekrachtassist langs de Aarde om opnieuw gericht te worden op komeet 26P/Grigg–Skjellerup, voorbijvliegend op 200 km op 1992-07-10 — de dichtstbijzijnste komeetvoorbijvlucht ooit uitgevoerd."
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.note",
+    "old": "Aardse zwaartekrachtssteun richt Giotto opnieuw naar komeet 26P/Grigg–Skjellerup.",
+    "new": "Aardse zwaartekrachtassist richt Giotto opnieuw naar komeet 26P/Grigg–Skjellerup."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "payload",
+    "old": "Orbiter (~2900 kg droog, 11 instrumenten) + Philae-afdalingslander (~100 kg, 10 instrumenten). Hitteschild, twee aardse + één Mars-zwaartekrachtsteun, 957 dagen winterslaap in de diepe ruimte 2011–2014.",
+    "new": "Orbiter (~2900 kg droog, 11 instrumenten) + Philae-afdalingslander (~100 kg, 10 instrumenten). Hitteschild, twee aardse + één Mars-zwaartekrachtassist, 957 dagen winterslaap in de diepe ruimte 2011–2014."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "old": "Eerste van drie aardzwaartekrachtbijstanden om snelheid voor de kometenontmoeting op te bouwen.",
+    "new": "Eerste van drie aardse zwaartekrachtassists om snelheid voor de kometenontmoeting op te bouwen."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.note",
+    "old": "Enkele marszwaartekrachtbijstand + eerste close-up beelden van Phobos en Mars op 250 km.",
+    "new": "Enkele Mars-zwaartekrachtassist + eerste close-up beelden van Phobos en Mars op 250 km."
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "delta_v",
+    "old": "~1,1 km/s (manoeuvres in de diepe ruimte; zwaartekrachtsteun van Mars)",
+    "new": "~1,1 km/s (manoeuvres in de diepe ruimte; zwaartekrachtassist van Mars)"
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "description",
+    "old": "Hera is de bijdrage van de European Space Agency aan het eerste planetaire verdedigingsexperiment van de mensheid. In 2022 stortte NASA's DART-ruimtevaartuig opzettelijk neer op Dimorphos — de kleine maan van de asteroïde Didymos — en verkortte meetbaar zijn baan. Hera, gelanceerd in oktober 2024 op een Falcon 9, vliegt naar hetzelfde dubbele asteroïdesysteem (met een zwaartekrachtsvlucht langs Mars in 2025 onderweg) om het gedetailleerde post-impactonderzoek uit te voeren dat DART niet kon doen: de grootte van de krater, de massa en interne structuur van Dimorphos, en precies hoeveel momentum de inslag heeft overgedragen. Samen veranderen DART en Hera een eenmalige demonstratie in een herhaalbare, goed gekarakteriseerde afbuigtechniek. Hera draagt twee CubeSats mee, Juventas en Milani, voor radaronderzoek en mineralogie van dichtbij.",
+    "new": "Hera is de bijdrage van de European Space Agency aan het eerste planetaire verdedigingsexperiment van de mensheid. In 2022 stortte NASA's DART-ruimtevaartuig opzettelijk neer op Dimorphos — de kleine maan van de asteroïde Didymos — en verkortte meetbaar zijn baan. Hera, gelanceerd in oktober 2024 op een Falcon 9, vliegt naar hetzelfde dubbele asteroïdesysteem (met een zwaartekrachtassist langs Mars in 2025 onderweg) om het gedetailleerde post-impactonderzoek uit te voeren dat DART niet kon doen: de grootte van de krater, de massa en interne structuur van Dimorphos, en precies hoeveel momentum de inslag heeft overgedragen. Samen veranderen DART en Hera een eenmalige demonstratie in een herhaalbare, goed gekarakteriseerde afbuigtechniek. Hera draagt twee CubeSats mee, Juventas en Milani, voor radaronderzoek en mineralogie van dichtbij."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "delta_v",
+    "old": "~6 km/s (met 3 aardse zwaartekrachtsteunen)",
+    "new": "~6 km/s (met 3 aardse zwaartekrachtassists)"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "delta_v",
+    "old": "~3,5 km/s (met zwaartekrachtsteunen van Mars + Aarde)",
+    "new": "~3,5 km/s (met zwaartekrachtassists van Mars + Aarde)"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "description",
+    "old": "Europa Clipper gaat naar Jupiter om Europa te bestuderen — een 3.121-km ijzige maan waarvan wordt aangenomen dat deze een wereldwijd vloeibaar-waterocean onder een 15-25 km dikke ijslaag herbergt, de meest toegankelijke potentieel-bewoonbare omgeving in het zonnestelsel. Gelanceerd 2024-10-14 op een Falcon Heavy bij C3 41,7. Een Mars-zwaartekrachtmanoeuvre in maart 2025 boog de baan richting Aarde; een Aarde-zwaartekrachtmanoeuvre 2026-12 geeft de laatste duw naar buiten; aankomst Jupiter 2030-04-11 voor baaninsluiting. De baanronde voert 49 nauwe Europa-voorbijvluchten uit over vier jaar — passerend binnen 25 km van Europa's oppervlak bij de nauwste passages, ontworpen om de hele maan in kaart te brengen en tegelijkertijd de stralingsdosis van het ruimtevaartuig in Jupiters brute stralingsgordels te beperken. Instrumenten: REASON ijsdoordringende radar, MASPEX massaspectrometer (bemonstert pluimmateriaal indien aanwezig), E-THEMIS thermische beeldvormer (vindt actieve geysers), magnetometer + plasmainstrumenten bevestigen oceaandiepte uit geïnduceerde magnetische respons.",
+    "new": "Europa Clipper gaat naar Jupiter om Europa te bestuderen — een 3.121-km ijzige maan waarvan wordt aangenomen dat deze een wereldwijd vloeibaar-waterocean onder een 15-25 km dikke ijslaag herbergt, de meest toegankelijke potentieel-bewoonbare omgeving in het zonnestelsel. Gelanceerd 2024-10-14 op een Falcon Heavy bij C3 41,7. Een Mars-zwaartekrachtassist in maart 2025 boog de baan richting Aarde; een Aarde-zwaartekrachtassist 2026-12 geeft de laatste duw naar buiten; aankomst Jupiter 2030-04-11 voor baaninsertie. De baanronde voert 49 nauwe Europa-voorbijvluchten uit over vier jaar — passerend binnen 25 km van Europa's oppervlak bij de nauwste passages, ontworpen om de hele maan in kaart te brengen en tegelijkertijd de stralingsdosis van het ruimtevaartuig in Jupiters brute stralingsgordels te beperken. Instrumenten: REASON ijsdoordringende radar, MASPEX massaspectrometer (bemonstert pluimmateriaal indien aanwezig), E-THEMIS thermische beeldvormer (vindt actieve geysers), magnetometer + plasmainstrumenten bevestigen oceaandiepte uit geïnduceerde magnetische respons."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.label",
+    "old": "MARS-ZWAARTEKRACHTMANOEUVRE",
+    "new": "MARS-ZWAARTEKRACHTASSIST"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.label",
+    "old": "AARDE-ZWAARTEKRACHTMANOEUVRE",
+    "new": "AARDE-ZWAARTEKRACHTASSIST"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "delta_v",
+    "old": "~3,0 km/s (reeks zwaartekrachtsteunen + Jupiter-baaninsertie + Ganymedes-baaninsertie)",
+    "new": "~3,0 km/s (reeks zwaartekrachtassists + Jupiter-baaninsertie + Ganymedes-baaninsertie)"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.label",
+    "old": "AARDSLINGER",
+    "new": "AARDSE ZWAARTEKRACHTASSIST"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "delta_v",
+    "old": "~7,2 km/s (ionencruise + 9 zwaartekrachtsteunen + MOI)",
+    "new": "~7,2 km/s (ionencruise + 9 zwaartekrachtassists + MOI)"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "delta_v",
+    "old": "~13,7 km/s (baan met zwaartekrachtsteun van Venus)",
+    "new": "~13,7 km/s (baan met zwaartekrachtassist van Venus)"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.1.note",
+    "old": "5768 km dichtste benadering 1974-02-05; eerste opzettelijke gravity-assist trajectorie in de ruimtevaartgeschiedenis.",
+    "new": "5768 km dichtste benadering 1974-02-05; eerste opzettelijke zwaartekrachtassisttraject in de ruimtevaartgeschiedenis."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.label",
+    "old": "VENUS-SLINGER",
+    "new": "VENUS-ZWAARTEKRACHTASSIST"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "delta_v",
+    "old": "~16 km/s (incl. 7 zwaartekrachtsteunen van Venus)",
+    "new": "~16 km/s (incl. 7 zwaartekrachtassists van Venus)"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "old": "Parker Solar Probe voerde de lancering met de hoogste energie uit die ooit voor een wetenschappelijke missie werd gebruikt — C3 van 154 km²/s², waarvoor een aangepaste Star 48BV-derde trap op vaste brandstof bovenop een Delta IV Heavy nodig was om aan de aarde te ontsnappen in een baan die naar de Zon valt. Zeven Venus-zwaartekrachtmanoeuvres over zes jaar verlaagden het perihelium geleidelijk van 0,16 AE (P1, 2018-11-05) naar 0,046 AE (P22, 2024-12-24 — 9,86 zonnestralen, 6,1 miljoen km van het oppervlak). Bij P8 op 2021-04-28 dook Parker onder het kritieke Alfvén-oppervlak — het eerste ruimtevaartuig ooit dat de zonnekroon betrad. Bij P22 bereikte het ~191 km/s, waardoor het het snelste door mensen gemaakte object aller tijden werd. Het 11,43 cm dikke koolstof-koolstofhitteschild hield 1.377 °C vol terwijl de ruimtevaartuigbus 1 meter erachter op kamertemperatuur bleef.",
+    "new": "Parker Solar Probe voerde de lancering met de hoogste energie uit die ooit voor een wetenschappelijke missie werd gebruikt — C3 van 154 km²/s², waarvoor een aangepaste Star 48BV-derde trap op vaste brandstof bovenop een Delta IV Heavy nodig was om aan de aarde te ontsnappen in een baan die naar de Zon valt. Zeven Venus-zwaartekrachtassists over zes jaar verlaagden het perihelium geleidelijk van 0,16 AE (P1, 2018-11-05) naar 0,046 AE (P22, 2024-12-24 — 9,86 zonnestralen, 6,1 miljoen km van het oppervlak). Bij P8 op 2021-04-28 dook Parker onder het kritieke Alfvén-oppervlak — het eerste ruimtevaartuig ooit dat de zonnekroon betrad. Bij P22 bereikte het ~191 km/s, waardoor het het snelste door mensen gemaakte object aller tijden werd. Het 11,43 cm dikke koolstof-koolstofhitteschild hield 1.377 °C vol terwijl de ruimtevaartuigbus 1 meter erachter op kamertemperatuur bleef."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.1.note",
+    "old": "Eerste Venus-zwaartekrachtmanoeuvre 2018-10-03.",
+    "new": "Eerste Venus-zwaartekrachtassist 2018-10-03."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "delta_v",
+    "old": "~15,4 km/s (de zwaartekrachtsteun van Jupiter deed het zware werk)",
+    "new": "~15,4 km/s (de zwaartekrachtassist van Jupiter deed het zware werk)"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.1.note",
+    "old": "CSM scheidt zich af van S-IVB in een aardebaan van 232 × 285 km, inclinatie 31,6°. SPS-brandingsreeks (8 branden over 11 dagen) valideert de voortstuwing die LOI + TEI bij de Maan zal uitvoeren.",
+    "new": "CSM scheidt zich af van S-IVB in een aardebaan van 232 × 285 km, inclinatie 31,6°. SPS-ontstekingsreeks (8 ontstekingen over 11 dagen) valideert de voortstuwing die LOI + TEI bij de Maan zal uitvoeren."
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "old": "Valentina Teresjkova's vlucht van 48 banen en 2 dagen en 23 uur — de eerste vrouw in de ruimte, en nog altijd de enige vrouw die ooit een solo-ruimtemissie heeft uitgevoerd. Geselecteerd uit een groep van vijf vrouwelijke kosmonauten-kandidaten bijeengebracht in 1962, lanceerde Teresjkova op 1963-06-16 09:30 UTC, slechts 2 jaar na Gagarins eerste orbitale vlucht. Haar capsule was geprogrammeerd voor een correctiebrand omhoog in plaats van omlaag — zij identificeerde de fout handmatig en grondcontroleurs laadden de volgende dag gecorrigeerde attitudesoftware opnieuw in. Geland op 1963-06-19 08:20 UTC nabij Bayevo, Altai Krai. Teresjkova werd later een vooraanstaande figuur in de Sovjet-politiek en blijft de jongste vrouw ooit die naar een baan is gevlogen, op 26-jarige leeftijd.",
+    "new": "Valentina Teresjkova's vlucht van 48 banen en 2 dagen en 23 uur — de eerste vrouw in de ruimte, en nog altijd de enige vrouw die ooit een solo-ruimtemissie heeft uitgevoerd. Geselecteerd uit een groep van vijf vrouwelijke kosmonauten-kandidaten bijeengebracht in 1962, lanceerde Teresjkova op 1963-06-16 09:30 UTC, slechts 2 jaar na Gagarins eerste orbitale vlucht. Haar capsule was geprogrammeerd voor een correctie-ontsteking omhoog in plaats van omlaag — zij identificeerde de fout handmatig en grondcontroleurs laadden de volgende dag gecorrigeerde attitudesoftware opnieuw in. Geland op 1963-06-19 08:20 UTC nabij Bayevo, Altai Krai. Teresjkova werd later een vooraanstaande figuur in de Sovjet-politiek en blijft de jongste vrouw ooit die naar een baan is gevlogen, op 26-jarige leeftijd."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "old": "760 m/s-brand. 49 Europa-voorbijvluchten over 4 jaar volgen.",
+    "new": "760 m/s-ontsteking. 49 Europa-voorbijvluchten over 4 jaar volgen."
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.1.note",
+    "old": "Hoofdmotorinbranding brengt Galileo in een baan; een 8 jaar durende wetenschappelijke maantour begint.",
+    "new": "Hoofdmotorontsteking brengt Galileo in een baan; een 8 jaar durende wetenschappelijke maantour begint."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.3.note",
+    "old": "Motorbrand plaatst JUICE in een baan om Jupiter voor de ijzige-manentour.",
+    "new": "Motorontsteking plaatst JUICE in een baan om Jupiter voor de ijzige-manentour."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.2.note",
+    "old": "Hoofdmotor-burn van 35 minuten plaatst Juno in een polaire Jupiter-baan.",
+    "new": "Hoofdmotorontsteking van 35 minuten plaatst Juno in een polaire Jupiter-baan."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.label",
+    "old": "TMI-BRANDING",
+    "new": "TMI-ONTSTEKING"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "old": "27-minuten stuwerbrand brengt Hope in een Marsbaan op 2021-02-09.",
+    "new": "27-minuten stuwerontsteking brengt Hope in een Marsbaan op 2021-02-09."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.label",
+    "old": "PERIGEUM-BRAND 1",
+    "new": "PERIGEUM-ONTSTEKING 1"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.note",
+    "old": "Eerste van zes baan-verhogingsbranden rond Aarde voorafgaand aan trans-Mars-injectie.",
+    "new": "Eerste van zes baanverhogingsontstekingen rond Aarde voorafgaand aan trans-Mars-injectie."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "old": "Laatste perigeum-brand plaatst het ruimtevaartuig op Mars-traject.",
+    "new": "Laatste perigeum-ontsteking plaatst het ruimtevaartuig op Mars-traject."
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.note",
+    "old": "Hoofdmotorverbranding van 37 minuten vangt orbiter in Mars-baan op kerstdag 2003.",
+    "new": "Hoofdmotorontsteking van 37 minuten vangt orbiter in Mars-baan op kerstdag 2003."
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.note",
+    "old": "33-minuten hoofdmotorverbranding vangt MAVEN in een 35-uurs elliptische wetenschapsbaan.",
+    "new": "33-minuten hoofdmotorontsteking vangt MAVEN in een 35-uurs elliptische wetenschapsbaan."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.1.label",
+    "old": "TMI-BRANDING",
+    "new": "TMI-ONTSTEKING"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.label",
+    "old": "TMI-VERBRANDING",
+    "new": "TMI-ONTSTEKING"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.label",
+    "old": "TMI-VERBRANDING",
+    "new": "TMI-ONTSTEKING"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.label",
+    "old": "TEI-VERBRANDING",
+    "new": "TEI-ONTSTEKING"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.note",
+    "old": "Motorverbranding vangt ruimtevaartuig in Mars-baan.",
+    "new": "Motorontsteking vangt ruimtevaartuig in Mars-baan."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.note",
+    "old": "Hoofdmotor-brand brengt MESSENGER in een baan rond Mercurius na zeven jaar koers.",
+    "new": "Hoofdmotorontsteking brengt MESSENGER in een baan rond Mercurius na zeven jaar koers."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "old": "Trans-lunaire injectie verbranding — S-IVB-trap stuwt CSM/LM naar de Maan.",
+    "new": "Trans-lunaire injectie-ontsteking — S-IVB-trap stuwt CSM/LM naar de Maan."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "old": "Apollo 13 zou de derde bemande maanlanding zijn, gericht op de Fra Mauro-hooglanden. Op 55 uur en 54 minuten in de vlucht scheurde een zuurstoftank in de Service Module, wat de elektrische systemen en levensondersteuning van de Command-Service Module lamlegde. Met de landing afgelast schakelde de bemanning — James Lovell, Jack Swigert en Fred Haise — de CSM uit, verplaatste zich naar de Lunar Module Aquarius als reddingsboot en gebruikte de daalmotor van de LM voor een motorbrand 2 uur na pericynthion die hen op een snelle vrije-terugkeerbaan plaatste. Ze vlogen voorbij de Maan op 254 km hoogte op 15 april 1970 en plonsden veilig neer in de Stille Oceaan op 17 april 1970. De missie wordt vandaag bestudeerd als een model van gedisciplineerde technische improvisatie in real time.",
+    "new": "Apollo 13 zou de derde bemande maanlanding zijn, gericht op de Fra Mauro-hooglanden. Op 55 uur en 54 minuten in de vlucht scheurde een zuurstoftank in de Service Module, wat de elektrische systemen en levensondersteuning van de Command-Service Module lamlegde. Met de landing afgelast schakelde de bemanning — James Lovell, Jack Swigert en Fred Haise — de CSM uit, verplaatste zich naar de Lunar Module Aquarius als reddingsboot en gebruikte de daalmotor van de LM voor een motorontsteking 2 uur na pericynthion die hen op een snelle vrije-terugkeerbaan plaatste. Ze vlogen voorbij de Maan op 254 km hoogte op 15 april 1970 en plonsden veilig neer in de Stille Oceaan op 17 april 1970. De missie wordt vandaag bestudeerd als een model van gedisciplineerde technische improvisatie in real time."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.label",
+    "old": "VRIJE-TERUGKEERBRAND",
+    "new": "VRIJE-TERUGKEERONTSTEKING"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "old": "31-seconde LM afdalings-engine burn keert het ruimtevaartuig terug naar een vrije-terugkeer-baan.",
+    "new": "31-seconde LM afdalingsmotorontsteking keert het ruimtevaartuig terug naar een vrije-terugkeer-baan."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.label",
+    "old": "PC+2-BURN",
+    "new": "PC+2-ONTSTEKING"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "old": "Pericynthion-plus-2-uur-burn verkort de terugkeer-naar-Aarde-tijd met tien uur.",
+    "new": "Pericynthion-plus-2-uur-ontsteking verkort de terugkeer-naar-Aarde-tijd met tien uur."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "old": "Lunar orbit insertion achter de maan, zonder radiocommunicatie. SPS burn ~0,91 km/s. Eerste mensen in een baan om een ander hemellichaam.",
+    "new": "Lunar orbit insertion achter de maan, zonder radiocommunicatie. SPS-ontsteking ~0,91 km/s. Eerste mensen in een baan om een ander hemellichaam."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.1.note",
+    "old": "Trans-lunaire injectie verbranding door ICPS — Orion scheidt op cislunair traject.",
+    "new": "Trans-lunaire injectie-ontsteking door ICPS — Orion scheidt op cislunair traject."
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.1.label",
+    "old": "FASERINGSBRANDING",
+    "new": "FASERINGSONTSTEKING"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.4.note",
+    "old": "Finale transmaanverbranding — Beresheet op directe maantrajectorium.",
+    "new": "Finale transmaanontsteking — Beresheet op directe maantrajectorium."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "old": "New Glenn tweede trap voert trans-lunaire injectie verbranding uit.",
+    "new": "New Glenn tweede trap voert trans-lunaire injectie-ontsteking uit."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "vehicle_stage",
+    "old": "tweede trap van de New Glenn (TLI-branding)",
+    "new": "tweede trap van de New Glenn (TLI-ontsteking)"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.2.note",
+    "old": "Hoofdmotor-burn brengt Cassini in Saturnus-baan, start van de 13-jarige tour.",
+    "new": "Hoofdmotorontsteking brengt Cassini in Saturnus-baan, start van de 13-jarige tour."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "old": "2010-12-07. OME throttle-anomalie 152s in de brand; ruimtesonde zeilt voorbij in heliocentrische baan.",
+    "new": "2010-12-07. OME throttle-anomalie 152s in de ontsteking; ruimtesonde zeilt voorbij in heliocentrische baan."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "old": "2015-12-07. RCS-verbrandingsbrand van 1228s in baan 400 × 440.000 km, 3° inclinatie.",
+    "new": "2015-12-07. RCS-ontsteking van 1228s in baan 400 × 440.000 km, 3° inclinatie."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "old": "Stuwraketmotor-branding in een 295 × 8543 km, 85,5°-orbit dicht bij de pool.",
+    "new": "Stuwraketmotor-ontsteking in een 295 × 8543 km, 85,5°-orbit dicht bij de pool."
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.0.note",
+    "old": "STS-34 zet Galileo en een inertiaal booster uit vanuit Atlantis.",
+    "new": "STS-34 zet Galileo en een inertiale boventrap uit vanuit Atlantis."
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.0.note",
+    "old": "Proton-K met Blok-D boventrip van Baikonoer.",
+    "new": "Proton-K met Blok-D boventrap van Baikonoer."
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.1.note",
+    "old": "Trans-Marsinjectionop de Briz-M-boventrip.",
+    "new": "Trans-Marsinjectionop de Briz-M-boventrap."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "old": "De volledige generale repetitie voor de eerste maanlanding. Stafford en Cernan vlogen LM Snoopy naar ~15,6 km hoogte boven de geplande Apollo 11-landingsplaats in Mare Tranquillitatis — elke stap van een landingsbenadering behalve de werkelijke landing zelf. Ze bevestigden het daalprofiel, de landingsradar, het opstijgingstraject en de rendez-vousprocedure die Apollo 11 twee maanden later zou gebruiken. De brandstoftanks van het LM-opstijgingsstadium waren opzettelijk ondergevuld (~50 % van nominaal) om verleidingen tot een landingspoging te voorkomen. Het opstijgingsstadium van Snoopy was het enige dat de maanbaan verliet met positieve ∆v — weggeslingerd naar een heliocentrische baan waar het vandaag nog altijd verblijft, af en toe herontdekt door amateurastronomen (meest recent bevestigd door Nick Howes / Faulkes Telescope, 2019).",
+    "new": "De volledige generale repetitie voor de eerste maanlanding. Stafford en Cernan vlogen LM Snoopy naar ~15,6 km hoogte boven de geplande Apollo 11-landingsplaats in Mare Tranquillitatis — elke stap van een landingsbenadering behalve de werkelijke landing zelf. Ze bevestigden het daalprofiel, de landingsradar, het opstijgingstraject en de rendez-vousprocedure die Apollo 11 twee maanden later zou gebruiken. De brandstoftanks van de LM-opstijgtrap waren opzettelijk ondergevuld (~50 % van nominaal) om verleidingen tot een landingspoging te voorkomen. De opstijgtrap van Snoopy was de enige die de maanbaan verliet met positieve ∆v — weggeslingerd naar een heliocentrische baan waar het vandaag nog altijd verblijft, af en toe herontdekt door amateurastronomen (meest recent bevestigd door Nick Howes / Faulkes Telescope, 2019)."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "old": "Opstijgingsfase van Snoopy ontmoeting met Charlie Brown — eerste volledig LM-naar-CSM opnieuw koppelen in maanbaan.",
+    "new": "Opstijgtrap van Snoopy ontmoeting met Charlie Brown — eerste volledig LM-naar-CSM opnieuw koppelen in maanbaan."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.6.note",
+    "old": "Intrepid-opstijgfase opzettelijk op de maan laten neerstorten om ALSEP-seismometers te kalibreren — de eerste bemande-missie ruimtevaartuigfase die opzettelijk op de maan werd geïmpacteerd en geregistreerd door een oppervlakteseismometer.",
+    "new": "Intrepid-opstijgtrap opzettelijk op de maan laten neerstorten om ALSEP-seismometers te kalibreren — de eerste bemande-missie ruimtevaartuigtrap die opzettelijk op de maan werd geïmpacteerd en geregistreerd door een oppervlakteseismometer."
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.4.note",
+    "old": "Opstijgingsmodule stijgt op; trans-aardse injectie.",
+    "new": "Opstijgtrap stijgt op; trans-aardse injectie."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "description",
+    "old": "Gezamenlijke ESA- / NASA-missie. Gelanceerd op 1990-10-06 vanaf STS-41 Discovery + IUS + PAM-S bovenstadia; Ulysses maakte op 1992-02-08 gebruik van een zwaartekrachtassist van Jupiter om zichzelf ~80° uit de ecliptica te buigen — de enige manier om vanuit het bijna equatoriale baanvlak van de Aarde een bijna polaire baan ten opzichte van de Zon te bereiken. Drie volledige polaire banen rond de Zon over 18,5 jaar karteerden de zonnewind, het heliosferische magneetveld en energetische deeltjes op alle heliografische breedten — directe metingen die onthulden hoe de structuur van de zonnewind varieert tussen equatoriale gebieden met trage wind en snelle windstromen op hoge breedten uit coronale gaten. Missie beëindigd op 2009-06-30 toen het hydrazine van de thruster in de leidingen bevroor. Hardware blijft in een heliocentrische polaire baan.",
+    "new": "Gezamenlijke ESA- / NASA-missie. Gelanceerd op 1990-10-06 vanaf STS-41 Discovery + IUS + PAM-S boventrappen; Ulysses maakte op 1992-02-08 gebruik van een zwaartekrachtassist van Jupiter om zichzelf ~80° uit de ecliptica te buigen — de enige manier om vanuit het bijna equatoriale baanvlak van de Aarde een bijna polaire baan ten opzichte van de Zon te bereiken. Drie volledige polaire banen rond de Zon over 18,5 jaar karteerden de zonnewind, het heliosferische magneetveld en energetische deeltjes op alle heliografische breedten — directe metingen die onthulden hoe de structuur van de zonnewind varieert tussen equatoriale gebieden met trage wind en snelle windstromen op hoge breedten uit coronale gaten. Missie beëindigd op 2009-06-30 toen het hydrazine van de thruster in de leidingen bevroor. Hardware blijft in een heliocentrische polaire baan."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "payload",
+    "old": "1550 kg (incl. 1003 kg hydrazine — Lucy draagt veel meer drijfgas dan droge massa)",
+    "new": "1550 kg (incl. 1003 kg hydrazine — Lucy draagt veel meer drijfstof dan droge massa)"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "payload",
+    "old": "974 kg (incl. 449 kg drijfgas)",
+    "new": "974 kg (incl. 449 kg drijfstof)"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "old": "Tanker-rendezvous en drijfgasoverdracht in LEO over meerdere vluchten.",
+    "new": "Tanker-rendezvous en drijfstofoverdracht in LEO over meerdere vluchten."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "payload",
+    "old": "Bemanning van ~10 + ISRU-apparatuur + hardware voor de productie van retourdrijfgas",
+    "new": "Bemanning van ~10 + ISRU-apparatuur + hardware voor de productie van retourdrijfstof"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "description",
+    "old": "SpaceX's langetermijn bemande Mars-architectuur zoals geschetst in de IAC-presentaties van Elon Musk in 2016, 2017 en 2024. Een Starship stijgt van de Aarde op, wordt in lage Aardbaan volledig getankt via een vloot van tankervluchten, voert trans-Mars-injectie uit en landt een bemanning van ongeveer 10 met vracht en ISRU-uitrusting op het Marsoppervlak. Terugkeer-drijfgas (methaan + vloeibare zuurstof) wordt op Mars gemaakt uit atmosferische CO₂ en ondergronds waterijs via het Sabatier-proces, waardoor dezelfde Starship weer kan opstijgen, trans-Aarde-injectie kan uitvoeren en de bemanning kan terugbrengen. De duur van de retourreis hangt af van het lanceervenster en het oppervlakteverblijf; de geïllustreerde tijdlijn hier is ~2,5 jaar van deur tot deur (213 dagen heen, ~500-daags oppervlakteverblijf, terugkeer in het volgende gunstige venster). De architectuur is conceptueel — datum en parameters onderhevig aan substantiële herziening in afwachting van Starship-rijping en ISRU-validatie.",
+    "new": "SpaceX's langetermijn bemande Mars-architectuur zoals geschetst in de IAC-presentaties van Elon Musk in 2016, 2017 en 2024. Een Starship stijgt van de Aarde op, wordt in lage Aardbaan volledig getankt via een vloot van tankervluchten, voert trans-Mars-injectie uit en landt een bemanning van ongeveer 10 met vracht en ISRU-uitrusting op het Marsoppervlak. Terugkeer-drijfstof (methaan + vloeibare zuurstof) wordt op Mars gemaakt uit atmosferische CO₂ en ondergronds waterijs via het Sabatier-proces, waardoor dezelfde Starship weer kan opstijgen, trans-Aarde-injectie kan uitvoeren en de bemanning kan terugbrengen. De duur van de retourreis hangt af van het lanceervenster en het oppervlakteverblijf; de geïllustreerde tijdlijn hier is ~2,5 jaar van deur tot deur (213 dagen heen, ~500-daags oppervlakteverblijf, terugkeer in het volgende gunstige venster). De architectuur is conceptueel — datum en parameters onderhevig aan substantiële herziening in afwachting van Starship-rijping en ISRU-validatie."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "old": "Tankvloot rendezvous en drijfgasoverdracht in LEO over meerdere vluchten.",
+    "new": "Tankvloot rendezvous en drijfstofoverdracht in LEO over meerdere vluchten."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "old": "ISRU-installatie heeft voldoende methaan + LOX geproduceerd voor terugreis-drijfgas.",
+    "new": "ISRU-installatie heeft voldoende methaan + LOX geproduceerd voor terugreis-drijfstof."
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "payload",
+    "old": "424 kg droge massa; 1690 kg lanceermassa met drijfgas",
+    "new": "424 kg droge massa; 1690 kg lanceermassa met drijfstof"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "description",
+    "old": "Hoofdzakelijk ontworpen als een technologiedemonstrator voor het Strategic Defense Initiative, bracht Clementine 10 weken in maanbaan door en gaf de eerste systematische wereldwijde topografische en multispectrale kaart van de Maan terug. Bistatische radarmetingen aan de maanzuidpool produceerden de eerste verleidelijke hints van waterijs — jaren later bevestigd door Lunar Prospector en Chandrayaan-1. De vervolgmissie voor een scheervlucht langs de planetoïde Geographos mislukte toen een stuwraketstoring het drijfgas van het ruimtevaartuig uitputte.",
+    "new": "Hoofdzakelijk ontworpen als een technologiedemonstrator voor het Strategic Defense Initiative, bracht Clementine 10 weken in maanbaan door en gaf de eerste systematische wereldwijde topografische en multispectrale kaart van de Maan terug. Bistatische radarmetingen aan de maanzuidpool produceerden de eerste verleidelijke hints van waterijs — jaren later bevestigd door Lunar Prospector en Chandrayaan-1. De vervolgmissie voor een scheervlucht langs de planetoïde Geographos mislukte toen een stuwraketstoring de drijfstof van het ruimtevaartuig uitputte."
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.4.note",
+    "old": "Aan boord stuwraketstoring put drijfgas uit; planetoïde-ontmoeting geannuleerd.",
+    "new": "Aan boord stuwraketstoring put drijfstof uit; planetoïde-ontmoeting geannuleerd."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "old": "Tot SLIM hadden maanlandingen een nauwkeurigheid van kilometers bij het richten. JAXA's Smart Lander demonstreerde een nauwkeurigheid van 100 m — de precisie die nodig is voor bemande missies om te koppelen met voorgepositioneerde vracht, voor opstijgvoertuigen voor monsterterugkeer om hun partners in een baan te vinden en voor elke toekomstige architectuur die afhankelijk is van landing op specifieke wetenschappelijk waardevolle locaties. SLIM pioneerde ook lage-energie ballistische transfer naar de Maan, en arriveerde in 135 dagen, maar gebruikte minder drijfgas dan directe trajecten. Een demonstratie van het geduld dat interplanetaire missies zich kunnen veroorloven wanneer de tijdlijn niet de bindende beperking is.",
+    "new": "Tot SLIM hadden maanlandingen een nauwkeurigheid van kilometers bij het richten. JAXA's Smart Lander demonstreerde een nauwkeurigheid van 100 m — de precisie die nodig is voor bemande missies om te koppelen met voorgepositioneerde vracht, voor opstijgvoertuigen voor monsterterugkeer om hun partners in een baan te vinden en voor elke toekomstige architectuur die afhankelijk is van landing op specifieke wetenschappelijk waardevolle locaties. SLIM pioneerde ook lage-energie ballistische transfer naar de Maan, en arriveerde in 135 dagen, maar gebruikte minder drijfstof dan directe trajecten. Een demonstratie van het geduld dat interplanetaire missies zich kunnen veroorloven wanneer de tijdlijn niet de bindende beperking is."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "payload",
+    "old": "2747 kg lanceermassa (1648 kg droog; 1085 kg xenon-drijfgas)",
+    "new": "2747 kg lanceermassa (1648 kg droog; 1085 kg xenon-drijfstof)"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "payload",
+    "old": "517 kg (incl. 196 kg drijfgas)",
+    "new": "517 kg (incl. 196 kg drijfstof)"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "payload",
+    "old": "3460 kg (incl. 2414 kg drijfgas)",
+    "new": "3460 kg (incl. 2414 kg drijfstof)"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "description",
+    "old": "Een onbemande demonstratie van de Starship Mars-architectuur: lancering op Super Heavy, hervullen in LEO vanuit een tankvariant, dan trans-Mars-injectie van een volledig getankte Starship en aangedreven afdaling naar het Marsoppervlak. SpaceX's vermelde doel is een lanceervenster van 2026-2027; engineering-realiteit (Starship werkt nog aan orbitale vluchtbetrouwbaarheid en hervullen in baan is nog niet gedemonstreerd) maakt 2028 of later waarschijnlijker. Als het slaagt, keert het de Mars-laadeconomie om — van duizenden kg naar honderd ton per landing.",
+    "new": "Een onbemande demonstratie van de Starship Mars-architectuur: lancering op Super Heavy, hervullen in LEO vanuit een tankvariant, dan trans-Mars-injectie van een volledig getankte Starship en aangedreven afdaling naar het Marsoppervlak. SpaceX's vermelde doel is een lanceervenster van 2026-2027; engineering-realiteit (Starship werkt nog aan orbitale vluchtbetrouwbaarheid en hervullen in baan is nog niet gedemonstreerd) maakt 2028 of later waarschijnlijker. Als het slaagt, keert het de Mars-ladingeconomie om — van duizenden kg naar honderd ton per landing."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.label",
+    "old": "AARDEVLIEGBY",
+    "new": "AARDE-FLYBY"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.4.label",
+    "old": "TORIFUNE VLIEGBY",
+    "new": "TORIFUNE FLYBY"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.1.label",
+    "old": "253 MATHILDE VLIEGBY",
+    "new": "253 MATHILDE FLYBY"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.1.note",
+    "old": "27-06-1997: 1.212 km vliegby van koolstofhoudende asteroïde Mathilde; 500 afbeeldingen.",
+    "new": "27-06-1997: 1.212 km flyby van koolstofhoudende asteroïde Mathilde; 500 afbeeldingen."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.label",
+    "old": "AARDBIJSTAND #1",
+    "new": "AARDE-FLYBY #1"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.label",
+    "old": "MARSBIJSTAND",
+    "new": "MARS-FLYBY"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "type",
+    "old": "MEERVOUDIGE VLIEGBY · ACTIEF",
+    "new": "MEERVOUDIGE FLYBY · ACTIEF"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.2.note",
+    "old": "2023-11-01. Eerste asteroïde-vliegby — ~790 m lichaam uit de hoofdgordel; satelliet Selam (contact-binaire) ontdekt.",
+    "new": "2023-11-01. Eerste asteroïde-flyby — ~790 m lichaam uit de hoofdgordel; satelliet Selam (contact-binaire) ontdekt."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.3.note",
+    "old": "Bonus vliegby door hoofdgordel 2025-04. 4-km C-type asteroïde.",
+    "new": "Bonus-flyby door hoofdgordel 2025-04. 4-km C-type asteroïde."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "description",
+    "old": "JUpiter ICy moons Explorer — ESA's L-class vlaggenschip, gelanceerd 2023-04-14. De reis van 8 jaar maakt gebruik van een van de meest complexe zwaartekrachtassistentiereeksen ooit gevlogen: een eerste-van-zijn-soort Maan-Aarde-zwaartekrachtassistentie op 2024-08-19, Venus 2025-08-31, gevolgd door twee verdere Aarde-passages in 2026 en 2029. Jupiters baanintrede staat gepland voor 2031-07-21. Na 35 zeer dichte vluchten voorbij Europa, Ganymedes en Callisto over 3,5 jaar zal JUICE zich op 2034-12-31 in een speciale Ganymedes-baan manoeuvreren — het eerste ruimtevaartuig dat ooit een maan van een andere planeet omcirkelt. De missie eindigt in 2035 met inslag op Ganymedes. Primaire wetenschap: bestaan en eigenschappen van ondergrondse oceanen op alle ijzige Galileïsche manen, samenstelling van ijsschillen en getijdenverhitting, en structuur van de magnetosfeer van Jupiter.",
+    "new": "JUpiter ICy moons Explorer — ESA's L-class vlaggenschip, gelanceerd 2023-04-14. De reis van 8 jaar maakt gebruik van een van de meest complexe zwaartekrachtassistentiereeksen ooit gevlogen: een eerste-van-zijn-soort Maan-Aarde-zwaartekrachtassistentie op 2024-08-19, Venus 2025-08-31, gevolgd door twee verdere Aarde-passages in 2026 en 2029. Jupiters baaninsertie staat gepland voor 2031-07-21. Na 35 zeer dichte flybys van Europa, Ganymedes en Callisto over 3,5 jaar zal JUICE zich op 2034-12-31 in een speciale Ganymedes-baan manoeuvreren — het eerste ruimtevaartuig dat ooit een maan van een andere planeet omcirkelt. De missie eindigt in 2035 met inslag op Ganymedes. Primaire wetenschap: bestaan en eigenschappen van ondergrondse oceanen op alle ijzige Galileïsche manen, samenstelling van ijsschillen en getijdenverhitting, en structuur van de magnetosfeer van Jupiter."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.0.note",
+    "old": "Delta II 7925H zet MESSENGER op een baan met zes vliegby's.",
+    "new": "Delta II 7925H zet MESSENGER op een baan met zes flybys."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "description",
+    "old": "Gezamenlijke missie van NASA, ESA en ASI. Na zeven jaar reizen met zwaartekrachtsslingers bij Venus, Aarde en Jupiter ging Cassini op 01-07-2004 in een baan om Saturnus en werkte daar 13 jaar lang, met 294 omlopen en 162 nauwe maanpassages. Ze ontdekte de zuidpoolpluimen van Enceladus (actieve waterijs-geisers), bracht met radar de methaanmeren van Titan in kaart en bracht de zeshoekige poolstorm van Saturnus tot ontleding. De Grand Finale (april–september 2017) vlocht 22 omlopen door de opening tussen ringen en wolkentoppen, en eindigde met een gecontroleerde intrede in de atmosfeer om elke besmetting van Enceladus of Titan met aardse microben te voorkomen.",
+    "new": "Gezamenlijke missie van NASA, ESA en ASI. Na zeven jaar reizen met zwaartekrachtsslingers bij Venus, Aarde en Jupiter ging Cassini op 01-07-2004 in een baan om Saturnus en werkte daar 13 jaar lang, met 294 omlopen en 162 nauwe maanflybys. Ze ontdekte de zuidpoolpluimen van Enceladus (actieve waterijs-geisers), bracht met radar de methaanmeren van Titan in kaart en bracht de zeshoekige poolstorm van Saturnus tot ontleding. De Grand Finale (april–september 2017) vlocht 22 omlopen door de opening tussen ringen en wolkentoppen, en eindigde met een gecontroleerde intrede in de atmosfeer om elke besmetting van Enceladus of Titan met aardse microben te voorkomen."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.5.note",
+    "old": "Baanopstelling rond komeet 67P/Tsjoerjoemov-Gerasimenko. Philae landt op 2014-11-12.",
+    "new": "Baaninsertie rond komeet 67P/Tsjoerjoemov-Gerasimenko. Philae landt op 2014-11-12."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.label",
+    "old": "JUPITER-BAANINSLUITING",
+    "new": "JUPITER-BAANINSERTIE"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.1.label",
+    "old": "JUPITER-BAANOPNAME",
+    "new": "JUPITER-BAANINSERTIE"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.2.label",
+    "old": "JUPITER-BAANINSLUITING",
+    "new": "JUPITER-BAANINSERTIE"
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "events.2.note",
+    "old": "Directe atmosferische ingang — geen baanopstelling. Hitteescherm, parachute, terugkeerraket, daarna airbag-opblazing.",
+    "new": "Directe atmosferische ingang — geen baaninsertie. Hitteescherm, parachute, terugkeerraket, daarna airbag-opblazing."
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "description",
+    "old": "Schiaparelli was de demonstrator voor binnenkomst, afdaling en landing (EDL) die als meeliftlading werd meegevoerd met de ExoMars Trace Gas Orbiter (TGO). Genoemd naar de Italiaanse astronoom Giovanni Schiaparelli, was het voertuig ontworpen om de EDL-technologie aan te tonen die ESA van plan was op te schalen voor de Rosalind Franklin rover. Schiaparelli scheidde zich op 16 oktober 2016 van TGO af en drong drie dagen later de Martiaanse atmosfeer binnen. Het afdalingsprofiel liep mis: een verzadigde traagheidsmeeteenheid zorgde ervoor dat de navigatiesoftware dacht dat het voertuig al op hoogte was geland — de parachute werd voortijdig afgeworpen en de remthusters stopten na slechts 3 seconden afvuren. Schiaparelli raakte het oppervlak met ~150 m/s. TGO zelf voltooide de baanopname succesvol en blijft operationeel.",
+    "new": "Schiaparelli was de demonstrator voor binnenkomst, afdaling en landing (EDL) die als meeliftlading werd meegevoerd met de ExoMars Trace Gas Orbiter (TGO). Genoemd naar de Italiaanse astronoom Giovanni Schiaparelli, was het voertuig ontworpen om de EDL-technologie aan te tonen die ESA van plan was op te schalen voor de Rosalind Franklin rover. Schiaparelli scheidde zich op 16 oktober 2016 van TGO af en drong drie dagen later de Martiaanse atmosfeer binnen. Het afdalingsprofiel liep mis: een verzadigde traagheidsmeeteenheid zorgde ervoor dat de navigatiesoftware dacht dat het voertuig al op hoogte was geland — de parachute werd voortijdig afgeworpen en de remthusters stopten na slechts 3 seconden afvuren. Schiaparelli raakte het oppervlak met ~150 m/s. TGO zelf voltooide de baaninsertie succesvol en blijft operationeel."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.2.note",
+    "old": "Maanbaan-insluiting. SPS ∆v ~0,91 km/s.",
+    "new": "Maanbaaninsertie. SPS ∆v ~0,91 km/s."
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.5.label",
+    "old": "INTREDE IN MAANBAAN",
+    "new": "MAANBAANINSERTIE"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "events.2.label",
+    "old": "INTREDE IN MAANBAAN",
+    "new": "MAANBAANINSERTIE"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "events.1.note",
+    "old": "Maanbaan-inbranding.",
+    "new": "Maanbaaninsertie."
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.2.note",
+    "old": "Maanorbitinzweving 1966-04-03 — eerste kunstmatige satelliet van elk hemellichaam anders dan de Aarde.",
+    "new": "Maanbaaninsertie 1966-04-03 — eerste kunstmatige satelliet van elk hemellichaam anders dan de Aarde."
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.2.note",
+    "old": "Maanbaanopstelling 1998-01-11 — initiële 100 × 100 km polaire baan.",
+    "new": "Maanbaaninsertie 1998-01-11 — initiële 100 × 100 km polaire baan."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.2.label",
+    "old": "SATURNUS-BAANINSLUITING",
+    "new": "SATURNUS-BAANINSERTIE"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.1.label",
+    "old": "SATURNUS-BAANINSLUITING",
+    "new": "SATURNUS-BAANINSERTIE"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "payload",
+    "old": "Galileo-sonde en atmosferische ingangssonde; ~2,5 t droge massa",
+    "new": "Galileo-sonde en atmosferische intredesonde; ~2,5 t droge massa"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.4.note",
+    "old": "Atmosferische ingang, supersonische parachute, sky-crane retroraketten, rover neergelaten aan kabels.",
+    "new": "Atmosferische intrede, supersonische parachute, sky-crane retroraketten, rover neergelaten aan kabels."
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.2.note",
+    "old": "Lander scheidt zich af en begint atmosferische ingang.",
+    "new": "Lander scheidt zich af en begint atmosferische intrede."
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.4.note",
+    "old": "Monster-herbetredingscapsule arriveert bij de Aarde ~2031.",
+    "new": "Monsterterugkeercapsule arriveert bij de Aarde ~2031."
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.5.note",
+    "old": "Schiaparelli scheidde zich van TGO af op 16 oktober 2016, drie dagen vóór de atmosfeertoetrede.",
+    "new": "Schiaparelli scheidde zich van TGO af op 16 oktober 2016, drie dagen vóór de atmosferische intrede."
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.6.note",
+    "old": "Atmosfeertoetrede 19 oktober 2016.",
+    "new": "Atmosferische intrede 19 oktober 2016."
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "description",
+    "old": "Joeri Gagarins 108-minuten durende vlucht met één omloop — de eerste bemande ruimtevlucht in de geschiedenis en de eerste mens in een baan om de aarde. Gelanceerd op 12-04-1961 om 06:07 UTC vanaf Bajkonoer met een Vostok-K (8K72K); baan 169 × 327 km, inclinatie 65°. De bolvormige terugkeermodule wierp Gagarin op ongeveer 7 km hoogte uit (een feit dat de USSR jarenlang verzweeg om volgens de FAI-regels aanspraak te kunnen maken op een volledige bemande landing). Gagarin parachuteerde naar Smelovka, Saratov Oblast; de capsule landde apart en is te zien in het RKK Energia Museum in Korolyov, Rusland. De vlucht bekroonde Koroljovs tienjarige werk aan raketten en satellieten en leidde tot het Amerikaanse bemande ruimtevaartprogramma + Kennedy's maanlandingsbelofte zes weken later.",
+    "new": "Joeri Gagarins 108-minuten durende vlucht met één omloop — de eerste bemande ruimtevlucht in de geschiedenis en de eerste mens in een baan om de aarde. Gelanceerd op 12-04-1961 om 06:07 UTC vanaf Bajkonoer met een Vostok-K (8K72K); baan 169 × 327 km, inclinatie 65°. De bolvormige afdalingsmodule wierp Gagarin op ongeveer 7 km hoogte uit (een feit dat de USSR jarenlang verzweeg om volgens de FAI-regels aanspraak te kunnen maken op een volledige bemande landing). Gagarin parachuteerde naar Smelovka, Saratov Oblast; de capsule landde apart en is te zien in het RKK Energia Museum in Korolyov, Rusland. De vlucht bekroonde Koroljovs tienjarige werk aan raketten en satellieten en leidde tot het Amerikaanse bemande ruimtevaartprogramma + Kennedy's maanlandingsbelofte zes weken later."
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "old": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "new": "DEMONSTRATOR VOOR INTREDE, AFDALING EN LANDING · NEERGESTORT"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.3.note",
+    "old": "Pre-descent: een oscillatie van de backup SPS-gimbal dwong een 6-uur durende engineering review over landen versus abort in real time. Landing uiteindelijk goedgekeurd.",
+    "new": "Voor de afdaling: een oscillatie van de backup SPS-gimbal dwong een 6-uur durende engineering review over landen versus abort in real time. Landing uiteindelijk goedgekeurd."
+  }
+]

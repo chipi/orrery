@@ -6,7 +6,7 @@
   "type": "CREWED FLYBY · FLOWN (LANDING ABORTED)",
   "first": "Die Mission, die eine Beinahe-Katastrophe in NASAs gefeiertste Rettung verwandelte",
   "dispatch": "Apollo 13 landete nie, und es ist die Mission, die jeder in Erinnerung behält. Zwei Tage nach dem Start riss sich ein Sauerstofftank selbst auseinander und verwandelte einen Routineflug zu den Fra-Mauro-Hochländern in ein viertägiges Problem, drei Männer am Leben zu halten in einem sterbenden Raumschiff eine Viertelmillion Meilen von zu Hause entfernt. Was sie rettete, waren keine Heldentaten; es war Vorbereitung und ein Zimmer voller Menschen, die in Echtzeit an dem Problem arbeiteten und aus dem, was bereits am Fahrzeug befestigt war, eine Möglichkeit zum Atmen und einen Weg nach Hause improvisierten. Die NASA nannte es einen erfolgreichen Fehlschlag. Der Wahrheit näher kommt, dass es der Flug war, der bewies, dass die Behörde so gut war, wie sie behauptet hatte.",
-  "description": "Apollo 13 sollte die dritte bemannte Mondlandung sein, gezielt auf die Fra-Mauro-Hochebene. Nach 55 Stunden und 54 Minuten des Fluges platzte ein Sauerstofftank im Service Module, was die elektrischen und Lebenserhaltungssysteme des Command-Service Module außer Gefecht setzte. Mit abgesagter Landung schalteten die Besatzungsmitglieder – James Lovell, Jack Swigert und Fred Haise – das CSM ab, zogen sich ins Lunar Module Aquarius als Rettungsboot zurück und nutzten das Abstiegstriebwerk des LM für einen Brennvorgang zwei Stunden nach dem Pericynthion, der sie auf eine schnelle Free-Return-Bahn brachte. Sie flogen in 254 km Höhe am 1970-04-15 am Mond vorbei und wasserten sicher im Südpazifik am 1970-04-17. Die Mission wird heute als Vorbild der disziplinierten Echtzeitimprovisierung im Ingenieurwesen studiert.",
+  "description": "Apollo 13 sollte die dritte bemannte Mondlandung sein, gezielt auf die Fra-Mauro-Hochebene. Nach 55 Stunden und 54 Minuten des Fluges platzte ein Sauerstofftank im Service Module, was die elektrischen und Lebenserhaltungssysteme des Command-Service Module außer Gefecht setzte. Mit abgesagter Landung schalteten die Besatzungsmitglieder – James Lovell, Jack Swigert und Fred Haise – das CSM ab, zogen sich ins Lunar Module Aquarius als Rettungsboot zurück und nutzten das Abstiegstriebwerk des LM für eine Zündung zwei Stunden nach dem Pericynthion, der sie auf eine schnelle Free-Return-Bahn brachte. Sie flogen in 254 km Höhe am 1970-04-15 am Mond vorbei und wasserten sicher im Südpazifik am 1970-04-17. Die Mission wird heute als Vorbild der disziplinierten Echtzeitimprovisierung im Ingenieurwesen studiert.",
   "events": [
     {
       "met": 0,
@@ -17,7 +17,7 @@
     {
       "met": 0.117,
       "label": "TLI",
-      "note": "Trans-Lunar-Injection-Abbrand durch S-IVB; CSM + LM verpflichten sich zu zislunar-Flugbahn.",
+      "note": "Trans-Lunar-Injection-Zündung durch S-IVB; CSM + LM verpflichten sich zu zislunar-Flugbahn.",
       "type": "nominal"
     },
     {
@@ -34,8 +34,8 @@
     },
     {
       "met": 2.92,
-      "label": "FREIFLUGBAHN-ABBRAND",
-      "note": "31-Sekunden-LM-Abstiegstriebwerks-Abbrand setzt das Raumschiff auf eine Freiflugbahn zurück.",
+      "label": "FREIFLUGBAHN-ZÜNDUNG",
+      "note": "31-Sekunden-LM-Abstiegstriebwerks-Brennphase setzt das Raumschiff auf eine Freiflugbahn zurück.",
       "type": "info"
     },
     {
@@ -46,8 +46,8 @@
     },
     {
       "met": 3.96,
-      "label": "PC+2-ABBRAND",
-      "note": "Perizynthion-Plus-2-Stunden-Abbrand verkürzt die Rückkehrzeit zur Erde um zehn Stunden.",
+      "label": "PC+2-ZÜNDUNG",
+      "note": "Perizynthion-Plus-2-Stunden-Zündung verkürzt die Rückkehrzeit zur Erde um zehn Stunden.",
       "type": "nominal"
     },
     {

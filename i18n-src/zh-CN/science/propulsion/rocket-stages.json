@@ -7,5 +7,5 @@
     "三级架构是Apollo时代的标准,因为当时的发动机产生的Isp或推力不足以直接降到两级。Saturn V:S-IC煤油液氧助推器(5台F-1、~2.5分钟)、S-II液氢液氧维持级(5台J-2、~6分钟)、S-IVB液氢液氧上面级(1台J-2、两次点火 — 一次圆化、一次跨月喷射)。Soyuz至今仍以三级加四个一级捆绑助推器飞行,这套1957年架构比载人航天本身还古老。中国的长征三号B/E和长征五号是2.5级(芯级 + 捆绑助推 + 上面级),配独立末级用于GEO/逃逸。印度的PSLV独树一帜为四级,固体和液体交替 — 来自1970年代一个没有任何单一推进剂家族能完成全部工作的计划遗产。",
     "分级以三种方式之一发生。火工螺栓分离:爆炸螺栓起爆、弹簧推走耗尽的级、上面级在出现的间隙中点火。几乎所有人都使用(Soyuz、Atlas、Ariane、长征)。Fire-in-the-hole / 热分级:上面级在分离*之前*点火、用其尾流吹走助推器。苏联(Soyuz、Proton)以及现在的SpaceX(Starship) — 上面级喷向级间段损失1~2% Isp,但消除分离过程中重力阻力吞噬速度的死时间。推动分级:下面级在上面级点火前给一个小反向点火以后退 — Falcon 9在MECO到二级点火之间本质上就是这样,加上回收助推器时的返回机动。每种是机械风险、重力损失、运行简便性之间不同的权衡。"
   ],
-  "diagram_caption": "两级:现代最低标配(Falcon 9、Starship、Electron)。三级:Apollo时代 + Soyuz遗产(Saturn V、Soyuz、长征三号B)。2.5级:芯级 + 捆绑助推(长征五号、Ariane 5/6、Delta IV Heavy、SLS)。另加可选末级用于精密最终轨道(Star 48、Centaur、Fregat、Briz-M、YZ-1)。"
+  "diagram_caption": "两级:现代最低标配(Falcon 9、Starship、Electron)。三级:Apollo时代 + Soyuz遗产(Saturn V、Soyuz、长征三号B)。2.5级:芯级 + 捆绑式助推器(长征五号、Ariane 5/6、Delta IV Heavy、SLS)。另加可选末级用于精密最终轨道(Star 48、Centaur、Fregat、Briz-M、YZ-1)。"
 }

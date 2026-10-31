@@ -8,7 +8,7 @@
   ],
   "body_paragraphs": [
     "O eixo Y é a duração do trânsito. Para alvos classe-Marte o trânsito de Hohmann natural é ~250 dias, então a faixa Y do Orrery vai aproximadamente de 100 a 500 dias. Para Júpiter ou Saturno o trânsito de Hohmann é em anos, então o eixo é em anos.",
-    "Linhas diferentes no porkchop trocam tempo de trânsito por custo de ∆v. As células mais baratas (faixa de Hohmann) ficam no tempo de trânsito de Hohmann natural. Reduza o tempo de trânsito (viagem mais rápida) e o custo em ∆v sobe acentuadamente. Aumente (viagem mais lenta) e você obtém opções mais baratas porém mais lentas — às vezes vale a pena para carga ou cargas não sensíveis ao tempo.",
+    "Linhas diferentes no porkchop trocam tempo de trânsito por custo de ∆v. As células mais baratas (faixa de Hohmann) ficam no tempo de trânsito de Hohmann natural. Reduza o tempo de trânsito (viagem mais rápida) e o custo em ∆v sobe acentuadamente. Aumente (viagem mais lenta) e você obtém opções mais baratas porém mais lentas — às vezes vale a pena para carga ou cargas úteis não sensíveis ao tempo.",
     "A forma da zona barata revela os trade-offs. Uma faixa de Hohmann estreita significa que o ótimo é bem definido; uma zona barata larga significa que você tem flexibilidade. O porkchop de Marte tem um ótimo estreito. O de Júpiter é mais largo — o cenário de assistência gravitacional espalha opções de lançamento por mais datas."
   ]
 }

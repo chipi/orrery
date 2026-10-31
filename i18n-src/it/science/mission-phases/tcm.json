@@ -1,6 +1,6 @@
 {
   "title": "TCM — Manovra di correzione di traiettoria",
-  "intro_sentence": "Piccola accensione di metà crociera per correggere i minimi errori del lancio.",
+  "intro_sentence": "Piccola accensione di metà crociera per correggere i minimi errori della traiettoria di lancio.",
   "narrative_101": [
     "Nessun lancio di un razzo è perfetto. Dopo l'ascesa e l'iniezione trans-X, il tuo veicolo spaziale si trova su una traiettoria più o meno corretta — ma quel «più o meno» conta moltissimo quando la destinazione è un piccolo pianeta a 250 milioni di chilometri di distanza. Un errore di 5 cm/s all'inizio del viaggio si traduce in 100 km di mancato centramento su Marte. Quindi lo correggi.",
     "I TCM sono minuscole accensioni — di solito solo pochi metri al secondo di ∆v, talvolta meno — eseguite settimane o mesi dopo l'inizio della crociera, dopo che il tracciamento da terra ha avuto il tempo di misurare esattamente dove si trovi effettivamente il veicolo spaziale. Economici in termini di carburante, ma operativamente costosi: ogni accensione è un'occasione per il verificarsi di un guasto, perciò le missioni ne pianificano il minor numero possibile.",

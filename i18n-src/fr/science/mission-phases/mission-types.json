@@ -1,9 +1,9 @@
 {
-  "title": "Types de missions — Flyby, Orbiter, Lander, Rover, Sample Return",
+  "title": "Types de missions — Survol, Orbiter, Lander, Rover, Sample Return",
   "intro_sentence": "Cinq archétypes d'engagement d'un engin spatial avec sa destination — chacun avec un coût ∆v, un profil de risque et un rendement scientifique distincts.",
   "narrative_101": [
     "Chaque mission robotique vers un autre monde adopte l'une de cinq stratégies. Ce choix détermine presque tout le reste — la taille de la fusée nécessaire, la courbure de la trajectoire, ce que l'engin spatial embarque, la science qu'il effectue et s'il survit. La taxonomie s'aligne proprement sur une échelle ∆v : le survol est le moins cher, le retour d'échantillons le plus cher.",
-    "FLYBY : viser, photographier, partir. Aucune manœuvre de freinage. Voyager 1/2 passant par Jupiter, Saturne, Uranus, Neptune ; New Horizons passant par Pluton ; Pioneer 10/11. Un seul passage, des heures de science en rencontre rapprochée, l'engin spatial poursuit sa route éternellement. Le moins cher en ∆v mais on ne revient pas.",
+    "SURVOL : viser, photographier, partir. Aucune manœuvre de freinage. Voyager 1/2 passant par Jupiter, Saturne, Uranus, Neptune ; New Horizons passant par Pluton ; Pioneer 10/11. Un seul passage, des heures de science en rencontre rapprochée, l'engin spatial poursuit sa route éternellement. Le moins cher en ∆v mais on ne revient pas.",
     "ORBITER : freiner pour entrer en orbite capturée et rester pendant des années. MAVEN, MRO, Cassini, Galileo. La manœuvre d'insertion orbitale est coûteuse (1-2 km/s) mais on peut cartographier le corps entier. L'ATTERRISSEUR ajoute l'EDL — bouclier thermique, parachute, rétrofusées — par-dessus un orbiteur. Le ROVER ajoute des roues, un groupe motopropulseur et l'autonomie — chaque kilogramme du rover coûte une pile entière en dessous.",
     "Le SAMPLE RETURN est l'apogée : atterrisseur + étage d'ascension depuis la surface + croisière de retour + EDL sur la Terre. Hayabusa-2, OSIRIS-REx, Chang'e 5, les vols Apollo vers la Lune. Le rapport masse-départ-Terre est brutal — Mars Sample Return est en développement et compte parmi les missions robotiques les plus difficiles jamais tentées."
   ],

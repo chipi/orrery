@@ -1,6 +1,6 @@
 {
   "title": "Problème de Lambert",
-  "intro_sentence": "Données deux positions et un temps de transit, trouve l'orbite qui les connecte.",
+  "intro_sentence": "Données deux positions et un temps de transit, trouve l'orbite qui les connecte — le problème central de toute trajectoire interplanétaire.",
   "narrative_101": [
     "Le transfert de Hohmann est le chemin le moins cher d'une orbite à une autre, mais la plupart des missions ne volent pas réellement en Hohmann. Elles veulent partir à une date spécifique — par exemple, quand une fusée particulière est prête, ou quand un pas de tir particulier est disponible — et elles veulent arriver à une date spécifique — par exemple, avant qu'une tempête de poussière martienne ne s'apaise. Hohmann ne vous permet pas de choisir. Lambert le permet.",
     "La question de Lambert semble plus simple que ses mathématiques : je suis au point A, je veux être au point B, et je veux prendre exactement ce nombre de jours pour y arriver. Quelle orbite dois-je suivre ? Lambert a écrit la réponse en 1761 — il existe exactement une ellipse (ou parfois deux, selon la direction que vous prenez) qui relie deux points dans un temps donné.",

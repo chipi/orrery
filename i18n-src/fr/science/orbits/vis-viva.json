@@ -12,5 +12,5 @@
     "Dans Orrery, vis-viva est ce qui calcule les affichages de vélocité que vous voyez sur l'HUD de `/fly` tandis qu'un engin spatial passe près d'une planète — et les nombres d'énergie de départ et de vélocité d'arrivée alimentant la carte thermique de diagramme de lancement sur `/plan`."
   ],
   "formula_caption": "v depuis paramètre gravitationnel μ, rayon r, demi-grand axe a.",
-  "diagram_caption": "Vitesse varie : haute périhélie, basse aphélie."
+  "diagram_caption": "La vitesse varie le long de l'orbite : haute périhélie, basse aphélie."
 }

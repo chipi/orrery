@@ -11,5 +11,5 @@
     "Il détermine aussi LE LIEU dans la descente où l'action se produit. Un véhicule à faible coefficient balistique décélère haut, dans l'air ténue, laissant plus de temps et d'altitude pour les phases finales. Un coefficient élevé conserve la vitesse profondément dans l'atmosphère avant que la traînée reprenne l'avantage, comprimant toute la séquence dans les derniers kilomètres — exactement la compression qui rend l'atterrissage sur Mars une course contre le sol.",
     "Sur `/fly`, le contraste est visible sur les corps avec `?descent=1`. Un atterrisseur martien léger sous un grand parachute (faible coefficient balistique) se pose doucement ; un Starship de 100 tonnes (très élevé) doit freiner par propulsion ; une sonde Vénus dans l'air épais descend en traînée sur une petite plaque. Même physique, trois coefficients balistiques, trois descentes très différentes."
   ],
-  "diagram_caption": "Coefficient balistique = masse ÷ surface de traînée. Faible (grand parachute, charge légère) → descente lente, décélération à haute altitude ; élevé (lourd, compact) → entrée rapide, profonde, chaude."
+  "diagram_caption": "Coefficient balistique = masse ÷ surface de traînée. Faible (grand parachute, charge utile légère) → descente lente, décélération à haute altitude ; élevé (lourd, compact) → entrée rapide, profonde, chaude."
 }

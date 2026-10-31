@@ -9,6 +9,6 @@
   "body_paragraphs": [
     "L'axe des Y est la durée de transit. Pour les cibles de classe Mars, le transit Hohmann naturel est d'environ 250 jours, donc la plage Y d'Orrery s'étend sur environ 100 à 500 jours. Pour Jupiter ou Saturne, le transit Hohmann dure des années, donc l'axe est en années.",
     "Les différentes lignes du porkchop font le compromis entre le temps de transit et le coût en ∆v. Les cellules les moins chères (bande de Hohmann) se situent au temps de transit de Hohmann naturel. Abaissez le temps de transit (voyage plus rapide) et le coût en ∆v augmente fortement. Relevez-le (voyage plus lent) et vous obtenez des options moins chères mais plus lentes — parfois intéressantes pour les cargaisons ou les charges utiles non sensibles au temps.",
-    "La forme de la zone bon marché vous dit quelque chose sur les compromis. Une bande Hohmann étroite signifie que l'optimum est précis ; une zone bon marché large signifie que vous avez de la flexibilité. Le diagramme en cuillère de Mars a un optimum étroit. Celui de Jupiter est plus large — le paysage des manœuvres gravitationnelles étale les options de lancement sur plus de dates."
+    "La forme de la zone bon marché vous dit quelque chose sur les compromis. Une bande Hohmann étroite signifie que l'optimum est précis ; une zone bon marché large signifie que vous avez de la flexibilité. Le diagramme en cuillère de Mars a un optimum étroit. Celui de Jupiter est plus large — le paysage des assistances gravitationnelles étale les options de lancement sur plus de dates."
   ]
 }

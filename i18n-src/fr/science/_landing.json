@@ -1,7 +1,7 @@
 {
   "intro_heading": "Vous voulez donc lancer une fusée vers Mars.",
   "intro_paragraphs": [
-    "Bienvenue. Voici la partie d'Orrery où les boutons cessent d'être magiques. Chaque étiquette dans le HUD, chaque contour coloré dans le porkchop, chaque marqueur de combustion sur la trajectoire — cette section explique d'où cela vient. Lisez ceci comme une bande dessinée : les diagrammes font l'essentiel du travail, et chaque terme en italique est un lien que vous pouvez suivre aussi loin que vous le souhaitez.",
+    "Bienvenue. Voici la partie d'Orrery où les boutons cessent d'être magiques. Chaque étiquette dans le HUD, chaque contour coloré dans le porkchop, chaque marqueur d'allumage sur la trajectoire — cette section explique d'où cela vient. Lisez ceci comme une bande dessinée : les diagrammes font l'essentiel du travail, et chaque terme en italique est un lien que vous pouvez suivre aussi loin que vous le souhaitez.",
     "Nous allons construire une fusée ensemble. Pas une vraie — Orrery est un simulateur — mais la même chaîne de décisions qu'une véritable équipe de vol prend, dans l'ordre où elle les prendrait. À la fin, vous saurez pourquoi les fenêtres de lancement se produisent tous les 26 mois pour Mars et tous les mois pour la Lune, pourquoi une trajectoire de retour libre existe, et pourquoi la poussée est la partie la moins chère d'une mission et le carburant est tout le combat."
   ],
   "chapters": [
@@ -32,10 +32,10 @@
       "heading": "3 — Une fois en orbite, vous êtes à mi-chemin de n'importe où.",
       "diagram": "hohmann-transfer.svg",
       "diagram_alt": "Une ellipse tangente à l'orbite de la Terre et à l'orbite de Mars.",
-      "diagram_caption": "Deux combustions, une ellipse. La façon la moins chère de changer d'orbite.",
+      "diagram_caption": "Deux allumages, une ellipse. La façon la moins chère de changer d'orbite.",
       "paragraphs": [
         "Robert Heinlein l'a écrit : « Une fois en orbite, vous êtes à mi-chemin de n'importe où dans le système solaire. » Il ne plaisantait pas. Atteindre l'orbite terrestre basse coûte ~9,4 km/s de ∆v. Aller de là à Mars coûte encore ~3,6 km/s. La partie la plus difficile est déjà derrière vous.",
-        "La route interplanétaire la moins chère est un [transfert de Hohmann](transfers/hohmann-transfer) : une ellipse qui effleure à peine l'orbite de la Terre à une extrémité et l'orbite de la destination à l'autre. Deux combustions, pas de carburant gaspillé. Vers Mars, cela prend ~8,5 mois. Lent, mais optimal.",
+        "La route interplanétaire la moins chère est un [transfert de Hohmann](transfers/hohmann-transfer) : une ellipse qui effleure à peine l'orbite de la Terre à une extrémité et l'orbite de la destination à l'autre. Deux allumages, pas de carburant gaspillé. Vers Mars, cela prend ~8,5 mois. Lent, mais optimal.",
         "Vous voulez aller plus vite ? Résolvez un [problème de Lambert](transfers/lambert-problem) — choisissez votre date de départ et votre temps de transit, et Lambert vous indique l'[ellipse de transfert](transfers/transfer-ellipse) unique qui les relie. C'est exactement ce que fait l'écran [/plan](app:/plan) d'Orrery, dix mille fois en parallèle, pour dessiner un graphique porkchop.",
         "Besoin d'aller encore plus loin ? Volez de la vitesse à une planète. Une [assistance gravitationnelle](transfers/gravity-assist) utilise un survol pour changer votre trajectoire à coût de carburant zéro — Voyager 2 en a utilisé quatre pour atteindre Neptune. Tout le système solaire s'assemble en [coniques raccordées](transfers/patched-conics) : une série d'arcs de [sections coniques](transfers/conic-sections) passés entre des quartiers gravitationnels comme des témoins dans une course de relais."
       ]

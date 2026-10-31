@@ -1,9 +1,9 @@
 {
-  "title": "Tipos de Missão — Flyby, Orbiter, Lander, Rover, Sample Return",
+  "title": "Tipos de Missão — Sobrevoo, Orbiter, Lander, Rover, Sample Return",
   "intro_sentence": "Cinco arquétipos de como uma espaçonave interage com seu destino — cada um com um custo ∆v diferente, perfil de risco e retorno científico.",
   "narrative_101": [
     "Toda missão robótica para outro mundo escolhe uma de cinco estratégias. A escolha determina quase tudo mais — qual deve ser o tamanho do foguete, como a trajetória se curva, o que a espaçonave carrega, que ciência realiza e se sobrevive. A taxonomia se mapeia claramente em uma escada ∆v: o sobrevoo é o mais barato, o retorno de amostras é o mais caro.",
-    "FLYBY: apontar, fotografar, partir. Nenhuma queima de frenagem. Voyager 1/2 passando por Júpiter, Saturno, Urano, Netuno; New Horizons passando por Plutão; Pioneer 10/11. Uma única passagem, horas de ciência de encontro próximo, a espaçonave continua viagem para sempre. Mais barato em ∆v, mas você não volta.",
+    "SOBREVOO: apontar, fotografar, partir. Nenhuma queima de frenagem. Voyager 1/2 passando por Júpiter, Saturno, Urano, Netuno; New Horizons passando por Plutão; Pioneer 10/11. Uma única passagem, horas de ciência de encontro próximo, a espaçonave continua viagem para sempre. Mais barato em ∆v, mas você não volta.",
     "ORBITER: frear para uma órbita capturada e ficar por anos. MAVEN, MRO, Cassini, Galileo. A queima de inserção orbital é cara (1–2 km/s), mas você consegue mapear todo o corpo. LANDER adiciona EDL — escudo térmico, paraquedas, retro-motores — em cima de um orbitador. ROVER adiciona rodas, trem de força, autonomia — cada quilograma no rover custa uma pilha inteira debaixo dele.",
     "SAMPLE RETURN é o pico: pouso + estágio de ascensão da superfície + retorno para casa + EDL na Terra. Hayabusa-2, OSIRIS-REx, Chang'e 5, os voos Apollo à Lua. A razão de massa-até-partida-da-Terra é brutal — Mars Sample Return está em desenvolvimento agora e é uma das missões robóticas mais difíceis já tentadas."
   ],

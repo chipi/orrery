@@ -5,10 +5,13 @@
   manifests; this covers the App target's code and what the app sends:
   - UserDefaults (AppDelegate's one-time service-worker purge flag): CA92.1.
   - Crash reports to the self-hosted GlitchTip (no IP, no PII: sendDefaultPii false).
-  - Usage analytics (self-hosted Umami, cookieless, opt-out on /privacy).
+  - Usage analytics (self-hosted Umami, cookieless, opt-out on /privacy), including
+    the first 40 characters of search queries.
+  - Lab /ask questions (sent to the LLM gateway, not linked to the account).
   - The email of a Lab sign-in (Google), used only to check the allowlist.
-  No tracking, no tracking domains. Keep in step with App Store Connect's privacy
-  answers and the /privacy page.
+  Not collected: location (/earth and /moon use it on the device only).
+  No tracking, no tracking domains. App Store Connect's privacy answers come from
+  the same facts: ios/App/fastlane/app_privacy_details.json (see the Fastfile).
 -->
 <plist version="1.0">
 <dict>
@@ -51,6 +54,33 @@
 			<key>NSPrivacyCollectedDataTypePurposes</key>
 			<array>
 				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+			</array>
+		</dict>
+		<dict>
+			<!-- Umami `search` / `cmdk-search-hit` carry the typed query (first 40 chars). -->
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeSearchHistory</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+			</array>
+		</dict>
+		<dict>
+			<!-- Lab /ask questions go to the LLM gateway (and its Langfuse trace) with a random
+			     request id, no account identity. -->
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeOtherUserContent</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
 			</array>
 		</dict>
 		<dict>

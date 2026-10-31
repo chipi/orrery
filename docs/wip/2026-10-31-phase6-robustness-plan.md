@@ -162,3 +162,23 @@ Not changed: Umami `search` / `cmdk-search-hit` events still carry the typed que
 (truncated to 40 characters); the OTLP exporter has no sampler set (the default
 applies). The review's "not verified" items (Umami ingestion, source-map
 resolution, an outage drill on prod) are checks against live systems, not code.
+
+### 5a. App Store Connect privacy answers (2026-10-31)
+
+Apple has no API-key route for the App Privacy answers (fastlane:
+`upload_app_privacy_details_to_app_store` needs an Apple ID), and no App Store
+Connect key is on the workstation or the mini, so they could not be read or set
+from here. Instead `ios/App/fastlane/app_privacy_details.json` holds the answers
+and `APPLE_ID=… bundle exec fastlane privacy` (from `ios/App`) uploads them; a
+script check confirms they match `PrivacyInfo.xcprivacy` one for one.
+
+Re-derived from the code: crash data (not linked, app functionality); product
+interaction and search history (Umami keeps the first 40 characters of a query;
+not linked, analytics); other user content (Lab /ask questions go to the LLM
+gateway with a random request id; not linked, app functionality); email address
+(Lab sign-in; linked, app functionality). Location is not collected: /earth and
+/moon use it on the device only. No tracking.
+
+Open: the /privacy page says "You never need an account … no name, email
+address or password to give" and does not mention the Lab sign-in or that /ask
+questions go to an LLM; it needs a section in all 14 locales.

@@ -1,0 +1,55 @@
+[
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Luna 10, лансирана 1966-03-31 са Бајконура, постала је прва летелица у орбити око Месеца — и први вештачки сателит неког тела осим Земље — када је 1966-04-03 ушла у лунарну орбиту од 350 × 1017 км са инклинацијом од 71,9°. Две и по године пре него што је Apollo 8 стигао до Месеца са људима на броду. Носила је магнетометар, спектрометар гама-зрака, инфрацрвени радиометар, детекторе микрометеороида, сензоре плазме и радио-сондирање гравитационог поља Месеца. Подаци о гама-зрачењу били су прво даљинско испитивање састава Месеца и указивали су на састав лунарних мора сличан базалту. Чувена је по емитовању химне Интернационала током 23. конгреса Комунистичке партије Совјетског Савеза 1966-04-04 — више пропагандни гест него наука. Радила је 56 дана / 460 орбита, све док јој се NiCd батерије нису истрошиле 1966-05-30; и даље је у лунарној орбити.",
+    "note": "Non-word \"определјивање\", garbled radio-probe and anthem sentences."
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Facility kept as proper name."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Одскочио је 28 пута. Откотрљао се и зауставио на 14,57° јужне ширине и 175,47° источне дужине.",
+    "note": "Subject shift lost \"rolled\"; Latin S/E in Cyrillic text."
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  }
+]

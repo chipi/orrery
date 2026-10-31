@@ -1049,7 +1049,7 @@
   },
   "burn|hi|fleet/engine/ce-20.json :: description": {
     "why": "LOX/LH2 burned = combustion",
-    "tr": "d012a2eacb"
+    "tr": "0844021bf9"
   },
   "burn|hi|fleet/engine/yf-77.json :: description": {
     "why": "burning LOX/LH2 = combustion",
@@ -1061,7 +1061,11 @@
   },
   "burn|hi|fleet/launcher/saturn-v.json :: dispatch": {
     "why": "burning propellant = combustion",
-    "tr": "5f6eac91b7"
+    "tr": "5092ccf3b7"
+  },
+  "burn|hi|fleet/launcher/starship.json :: description": {
+    "why": "combustion sense (burning propellant / X-burning engine), not an engine firing",
+    "tr": "a0156dc430"
   },
   "burn|hi|fleet/launcher/titan-ii-glv.json :: dispatch": {
     "why": "burned storable liquids = combustion of propellant, not an engine firing",

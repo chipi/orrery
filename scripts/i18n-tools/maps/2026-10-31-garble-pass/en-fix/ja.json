@@ -1,0 +1,122 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "old": "Cygnus Standardは、Orbital ATKが製造したロボット貨物宇宙船です。与圧貨物のみを運ぶISS補給機で、2013年の初飛行を最後に退役しました。",
+    "new": "Cygnus Standardは、Orbital Sciencesが製造したロボット貨物宇宙船です。与圧貨物のみを運ぶISS補給機で、2013–2014年に飛行し、後継機はEnhanced Cygnusです。"
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "old": "Phoenixは、米国のLockheed Martinが造った惑星着陸機です。火星の土壌に水の氷があることを確認しました。2008年の初飛行を最後に退役しました。",
+    "new": "Phoenixは、米国のLockheed Martinが造った惑星着陸機です。火星の土壌に水の氷があることを確認しました。2008年にミッションを終了しました。"
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "old": "Surveyor 3は、米国のHughes Aircraftが製造した惑星着陸機です。Apollo 12が2.5年後に訪れました。1967年の初飛行を最後に退役しました。",
+    "new": "Surveyor 3は、米国のHughes Aircraftが製造した惑星着陸機です。Apollo 12が2.5年後に訪れました。1967年にミッションを終了しました。"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "old": "Venera 7-classはソビエト連邦のNPO Lavochkinが開発した惑星着陸機である。1970年に他惑星への初の軟着陸、および他惑星表面からのデータ初送信（金星）を達成した。初飛行後の1970年に運用を終了した。",
+    "new": "Venera 7-classはソビエト連邦のNPO Lavochkinが開発した惑星着陸機である。1970年に他惑星への初の軟着陸、および他惑星表面からのデータ初送信（金星）を達成した。1970年にミッションを終了した。"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "old": "Titan II GLVは、アメリカのMartin Mariettaが製造した軌道打ち上げロケットです。Project Geminiを支えた主力ロケットで、1964年の初飛行後に退役しました。",
+    "new": "Titan II GLVは、アメリカのMartin Mariettaが製造した軌道打ち上げロケットです。Project Geminiを支えた主力ロケットで、1964–1966年に12回飛行しました。"
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "old": "Magellanは、アメリカのMartin Mariettaが製造した深宇宙周回探査機です。金星表面の98%をレーダーで地図化しました。1989年の初飛行後に退役しました。",
+    "new": "Magellanは、アメリカのMartin Mariettaが製造した深宇宙周回探査機です。金星表面の98%をレーダーで地図化しました。1994年にミッションを終了しました。"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "old": "Lunokhod 2は、ソ連のNPO Lavochkinが製造した惑星探査ローバーです。月面を39 km走行し、2014年まで破られない記録を打ち立てました。1973年の初飛行後に運用を終了しました。",
+    "new": "Lunokhod 2は、ソ連のNPO Lavochkinが製造した惑星探査ローバーです。月面を39 km走行し、2014年まで破られない記録を打ち立てました。1973年にミッションを終了しました。"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "old": "Pragyanはインドの ISRO が製造した惑星探査ローバーです。月の南極初のローバーで、Chandrayaan-3に搭載されました。2023年の初飛行後に運用を終了しました。",
+    "new": "Pragyanはインドの ISRO が製造した惑星探査ローバーです。月の南極初のローバーで、Chandrayaan-3に搭載されました。2023年以降は休眠状態です。"
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "old": "Sojournerはアメリカ合衆国のNASA JPLによって製造された惑星ローバーです。火星上初のローバー。Pathfinderミッション。1997年の初飛行後に運用終了しました。",
+    "new": "Sojournerはアメリカ合衆国のNASA JPLによって製造された惑星ローバーです。火星上初のローバー。Pathfinderミッション。1997年にミッションを終了しました。"
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "old": "Spirit（MER-A）は、アメリカのNASA JPLが製作した惑星探査ローバーです。火星探査ローバーで、6年間運用されました。2004年の初飛行後に運用を終了しました。",
+    "new": "Spirit（MER-A）は、アメリカのNASA JPLが製作した惑星探査ローバーです。火星探査ローバーで、6年間運用されました。2010年に最後の交信がありました。"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "old": "Yutuは中国のCASTが製造した惑星探査ローバーです。中国初の月面ローバーで、Chang'e-3に搭載されました。2013年の初飛行後に運用を終了しました。",
+    "new": "Yutuは中国のCASTが製造した惑星探査ローバーです。中国初の月面ローバーで、Chang'e-3に搭載されました。2016年にミッションを終了しました。"
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "old": "Zhurongは中国のCASTが製造した惑星探査ローバーです。中国初の火星ローバーで、Tianwen-1に搭載されました。2021年の初飛行後に運用を終了しました。",
+    "new": "Zhurongは中国のCASTが製造した惑星探査ローバーです。中国初の火星ローバーで、Tianwen-1に搭載されました。2022年以降は休眠状態です。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "old": "ATV（Automated Transfer Vehicle）は、Astrium / Airbus（Multi、ヨーロッパ）が製造したロボット貨物宇宙船です。2008年から2015年にかけてISSへ5回のミッションを行ったESAの旗艦ISS貨物輸送機で、貨物、水、空気、推進剤を届けるとともに、自らのエンジンでステーションの軌道を押し上げました。",
+    "new": "ATV（Automated Transfer Vehicle）は、Astrium / Airbus（ヨーロッパ）が製造したロボット貨物宇宙船です。2008年から2015年にかけてISSへ5回のミッションを行ったESAの旗艦ISS貨物輸送機で、貨物、水、空気、推進剤を届けるとともに、自らのエンジンでステーションの軌道を押し上げました。"
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "old": "XMM-Newtonは、Airbus Defence and SpaceがMulti（ヨーロッパ）で建造した宇宙天文台です。ESAのフラッグシップX線天文台。1999年からの運用です。",
+    "new": "XMM-Newtonは、Airbus Defence and Spaceがヨーロッパで建造した宇宙天文台です。ESAのフラッグシップX線天文台。1999年からの運用です。"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "old": "Mars Express は EADS Astrium によってヨーロッパで建造された深宇宙周回機です。ESA の初で唯一の火星周回機；ヨーロッパ初の惑星探査機。2003年から運用中です。",
+    "new": "Mars Express は EADS Astrium によってヨーロッパで建造された深宇宙周回機です。ESA の初の火星周回機；ヨーロッパ初の惑星探査機。2003年から運用中です。"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "old": "インド初の月面着陸成功機（2023年8月）であり、月の南極付近に着陸した最初の宇宙機。同じ地域でVikram CY-2が墜落してから2年後のことで、インドとISROが必要としていた汚名返上となった。",
+    "new": "インド初の月面着陸成功機（2023年8月）であり、月の南極付近に着陸した最初の宇宙機。同じ地域でVikram CY-2が墜落してから4年後のことで、インドとISROが必要としていた汚名返上となった。"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "old": "インドの大型ロケット発射台 — GSLV Mk III / LVM3によるChandrayaan-3、Mangalyaan、および今後のGaganyaan有人宇宙飛行計画",
+    "new": "インドの大型ロケット発射台 — GSLV Mk III / LVM3によるChandrayaan-3、および今後のGaganyaan有人宇宙飛行計画"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "old": "インドの大型ロケット発射台 — GSLV Mk III / LVM3によるChandrayaan-3、Mangalyaan、および今後のGaganyaan有人宇宙飛行計画",
+    "new": "インドの大型ロケット発射台 — GSLV Mk III / LVM3によるChandrayaan-3、および今後のGaganyaan有人宇宙飛行計画"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "old": "ESAの初で唯一の火星周回機；ヨーロッパ初の惑星探査機",
+    "new": "ESAの初の火星周回機；ヨーロッパ初の惑星探査機"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "old": "ESAの初で唯一の火星周回機；ヨーロッパ初の惑星探査機",
+    "new": "ESAの初の火星周回機；ヨーロッパ初の惑星探査機"
+  }
+]

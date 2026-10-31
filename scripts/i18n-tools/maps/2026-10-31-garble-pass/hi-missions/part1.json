@@ -1,0 +1,1319 @@
+[
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "पृथ्वी की एकल गुरुत्व-सहायता आंतरिक सौरमंडल की गुरुत्व-सहायता श्रृंखला शुरू करती है।",
+    "note": "Binding hyphen missing; reworded."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "थ्रस्टर लाइनें जम जाती हैं; अंतिम कमांड 2009-06-30 को जारी।",
+    "note": "ISO date was changed to day-month format."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "तेज़ी से घूमने वाले क्षुद्रग्रह (1998 KY26) के साथ नियोजित मिलन।",
+    "note": "Odd word योजनित; fixed."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "चंद्र कक्षा-प्रवेश 1998-01-11 — प्रारंभिक 100 × 100 किमी ध्रुवीय कक्षा।",
+    "note": "Orbit-insertion binding applied."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2004-11-15 को चंद्र गुरुत्वाकर्षण की पकड़ में आया — चंद्रमा पर पहला यूरोपीय अंतरिक्ष यान।",
+    "note": "Clumsy passive 'कब्जा'."
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "बृहस्पति की परिक्रमा करने वाला पहला अंतरिक्ष यान; बृहस्पति के बादलों में वायुमंडलीय प्रोब",
+    "note": "'जांच' misreads probe."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2024-01-18 को 72वीं उड़ान में रोटर ब्लेड क्षतिग्रस्त हुआ; हेलीकॉप्टर को उड़ान से हटा दिया गया और स्थिर मौसम तथा डेटा स्टेशन के रूप में उपयोग किया गया, जो भविष्य में पुनर्प्राप्त करने के लिए रीडिंग संग्रहीत करता है।",
+    "note": "Clumsy calques: ग्राउंडेड, पुनः प्राप्ति."
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Gemini 6A के पहले मानवयुक्त मिलन के लिए लक्ष्य का काम करता है।",
+    "note": "'चालक दल' wrong for crewed."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "2023-09-24। SRC पैराशूट से यूटा टेस्ट एंड ट्रेनिंग रेंज में उतरता है; अंतरिक्ष यान OSIRIS-APEX बन जाता है।",
+    "note": "English place name and noun-verb 'पैराशूट करता'."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "SM का क्रायो-स्टिर कमांड शॉर्ट-सर्किट से आग और टैंक फटने की शुरुआत करता है। \"ह्यूस्टन, हमें एक समस्या हुई है।\" बिजली और पानी घटते जाते हैं; LM एक्वेरियस जीवनरक्षक नौका बन जाता है।",
+    "note": "'शक्ति' wrong for power; awkward verbs."
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "2005-09-12। 7-km गेट स्थिति पर स्थान बनाए रखना।",
+    "note": "Non-word 'स्टेशन-रख'."
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "दो सतह संपर्क 2005-11-20 + 25। नमूना-संग्रह प्रक्षेप्य कमांड पर दागे नहीं जा सके।",
+    "note": "'आग नहीं लगते' means catch fire."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "श्रीहरिकोटा से एलवीएम3 एम4 (पूर्व में जीएसएलवी एमके III)।",
+    "note": "Indian vehicle names to Devanagari."
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "सूर्य के किसी ध्रुव के ऊपर सौर पवन के पहले प्रत्यक्ष माप।",
+    "note": "Awkward 'किसी सूर्य ध्रुव'."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "2022-09-04। क्रांतिवृत्त तल से बाहर झुकाव बढ़ाने की शुरुआत।",
+    "note": "'ग्रहण तल' means eclipse plane; wrong."
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "14 दिन / 206 कक्षाओं के बाद अटलांटिक में स्प्लैशडाउन।",
+    "note": "Atlantic left in English."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Intrepid का आरोही चरण ALSEP सीस्मोमीटरों को अंशांकित करने के लिए जानबूझकर चंद्रमा पर गिराया गया — मानवयुक्त मिशन के अंतरिक्ष यान का पहला चरण, जिसे जानबूझकर चंद्रमा से टकराया गया और जिसकी टक्कर सतह पर लगे सीस्मोमीटर ने दर्ज की।",
+    "note": "'क्रूड' for crewed; garbled syntax."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "दो मानवयुक्त अंतरिक्ष यानों के बीच पहला ध्वनि-संचार।",
+    "note": "Gender mismatch; 'क्रू युक्त' wrong."
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "ट्रांस-लूनर इंजेक्शन — बिजली गिरने की घटनाओं से यान के उबरने की पुष्टि; चंद्रमा के लिए मिशन GO।",
+    "note": "'बिजली की चोटों' wrong sense of strikes."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "2026-12-03। बृहस्पति की ओर जाते हुए अंतिम त्वरण।",
+    "note": "'जुपिटर' instead of site's बृहस्पति."
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "4 दिन / 59 कक्षाओं के बाद अटलांटिक में स्प्लैशडाउन — अंतिम Gemini।",
+    "note": "Atlantic left in English."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "झंडा + उपहारों का आदान-प्रदान; संयुक्त प्रयोग; ~44 घंटे डॉक रहने के दौरान 2 डॉकिंग।",
+    "note": "Clumsy docked phrasing."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "वैश्विक धूल तूफान के दौरान ऑर्बिटर मंगल की कक्षा में कैप्चर होता है।",
+    "note": "Subject garbled; 'परिक्रमाकार' unusable."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.7.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "ट्रांस-अर्थ इंजेक्शन। SPS डेल्टा-वी ~1.0 किमी/सेकंड।",
+    "note": "Delta-v binding not used."
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "अवरोहण मॉड्यूल अलग होता है + उतरता है; गुब्बारा 54 किमी ऊँचाई पर 46.5 घंटे के लिए तैनात होता है।",
+    "note": "Descent binding अवरोहण."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "NiCd बैटरी खत्म हो गई; मिशन 1966-05-30 को समाप्त हुआ। यान चंद्र कक्षा में ही बना हुआ है।",
+    "note": "Subject missing; gender slip."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "TCM + NEXT-C आयन थ्रस्टर के प्रदर्शनात्मक परीक्षण-प्रज्वलन।",
+    "note": "'ion-thruster' left in English."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "लिओनोव 1965-03-18 11:34 UTC को Volga एयरलॉक से बाहर निकलते हैं; पहली मानव EVA। बाहर 12 मिनट; निर्वात में सूट फूल गया और दोबारा भीतर आने के लिए उन्होंने सूट का दबाव निकाल दिया।",
+    "note": "Last clause garbled ('दबाव हवा देते')."
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "चंद्र कक्षा-प्रवेश 1966-04-03 — पृथ्वी के अलावा किसी भी पिंड का पहला कृत्रिम उपग्रह।",
+    "note": "Orbit-insertion binding."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "20 किमी पर मँडराना — नमूना संग्रह सहित 1.5 वर्ष के निकटवर्ती संचालन की शुरुआत।",
+    "note": "Imperative verb instead of noun."
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "प्रवेश/अवरोहण/अवतरण प्रदर्शक · दुर्घटनाग्रस्त",
+    "note": "Entire label left in English."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "2022-10-12, 0.29 AU। बुध के उपसौर बिंदु के भीतर।",
+    "note": "Mercury and perihelion left in English."
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "आरोही चरण उड़ान भरता है; ट्रांस-अर्थ इंजेक्शन।",
+    "note": "'पृथ्वी-अभिमुख इंजेक्शन' is not the term."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "वायुमंडलीय प्रवेश, सुपरसोनिक पैराशूट, स्काई-क्रेन रेट्रो-रॉकेट, रोवर को केबलों से नीचे उतारा गया।",
+    "note": "'कम किया गया' wrong for lowered."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "ट्रांस-मंगल इंजेक्शन (3.61 किमी/सेकंड डेल्टा-वी) MSL को सूर्यकेंद्रीय, मंगल की ओर जाने वाले प्रक्षेपवक्र पर भेजता है।",
+    "note": "Delta-v binding not used."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "CM 1969-11-24 20:58 UTC को दक्षिण प्रशांत में उतरा। USS Hornet द्वारा पुनर्प्राप्ति।",
+    "note": "'वसूली' means debt recovery."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.10.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "CM 1971-08-07 20:46 UTC को उत्तरी प्रशांत में उतरा। तीन मुख्य पैराशूटों में से एक पूरी तरह नहीं खुला; कठोर लेकिन सुरक्षित अवतरण। USS Okinawa द्वारा पुनर्प्राप्ति।",
+    "note": "'वसूली' means debt recovery."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "2022-09-26। टक्कर से 4 घंटे पहले SMART Nav नियंत्रण संभाल लेता है।",
+    "note": "'प्रभाव' wrong for impact."
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "सतह पर 31 घंटे 31 मिनट रहने के बाद Intrepid उड़ान भरता है। 34 किग्रा नमूने लौटाए गए।",
+    "note": "'उड़ता है' wrong for lifts off."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "28 बार उछला। 14.57°S, 175.47°E पर लुढ़ककर रुक गया।",
+    "note": "Clumsy 'विश्राम के लिए रोल किया'."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "डेल्टा IV हेवी + स्टार 48BV — किसी भी विज्ञान मिशन के लिए अब तक का सर्वाधिक C3 (154 किमी²/सेकंड²)।",
+    "note": "'ever' dropped."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "ट्रांस-अर्थ इंजेक्शन। SPS डेल्टा-वी ~1.0 किमी/सेकंड।",
+    "note": "Wrong phrase for trans-Earth; delta-v binding."
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "6 कक्षाओं / 9 घंटे 13 मिनट के बाद मिडवे के लगभग 445 किमी उत्तर-पूर्व में प्रशांत महासागर में। Mercury कार्यक्रम की पहली प्रशांत पुनर्प्राप्ति।",
+    "note": "Garbled word order, gender slip, 'पुनरुद्धार'."
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "दो क्षतिग्रस्त इंजनों के बचे हुए हिस्सों को जोड़कर एक काम करने वाला इंजन बनाया गया।",
+    "note": "'लोगों' wrongly refers to engines."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.9.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "2033-03। मिशन का चरम: 113-km + 104-km बाइनरी ट्रोजन।",
+    "note": "'समापन' wrong for climax."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "शुक्र की गुरुत्व-सहायता; पृथ्वी के दो और फेरों की ओर वापसी के मार्ग में।",
+    "note": "Non-word 'गुजरवट'; binding missing."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "पृथ्वी की अंतिम गुरुत्व-सहायता 2030-12। L5 बादल की ओर जाता है।",
+    "note": "'पृथ्वी सहायक' wrong term."
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "दल -30°C के भेड़ियों वाले जंगल में 2 रातें जीवित रहा, फिर 1965-03-21 को बचाव हेलीकॉप्टर उन तक पहुँचे।",
+    "note": "Verb disagreement; 'पुनः प्राप्ति हेलीकॉप्टर' wrong."
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "पहले से लोड किया गया अभिविन्यास सॉफ़्टवेयर कक्षा को नीचे करने के बजाय ऊँचा उठा देता; अगले दिन सुधारा गया।",
+    "note": "'रवैया' for attitude; garbled clause."
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "शनि की ओर जाने वाले पथ पर मुड़ने के लिए बृहस्पति की गुरुत्व-सहायता का उपयोग किया।",
+    "note": "Garbled; assist binding missing."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2018-06-10। पूरे ग्रह को ढकने वाला धूल तूफान सौर ऊर्जा घटा देता है।",
+    "note": "'शक्ति' for power; wrong stop."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Vostok 4 24 घंटे बाद प्रक्षेपित हुआ; दिन 2 पर निकटतम दूरी ~6.5 किमी।",
+    "note": "'दृष्टिकोण' wrong for approach."
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "चंद्रमा पर पहली सॉफ्ट लैंडिंग; चंद्र सतह से पहली तस्वीरें",
+    "note": "'नरम लैंडिंग' inconsistent with site."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "PPS-1350-G हॉल-प्रभाव आयन थ्रस्टर 13 महीने का निम्न-प्रणोद सर्पिल पथ शुरू करता है।",
+    "note": "Thrust binding; 'स्पाइरल' English."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "पहली उच्च-रिज़ॉल्यूशन सतह छवियाँ पृथ्वी पर भेजी गईं।",
+    "note": "'रिटर्न की गई' English verb."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "गुलेल-प्रभाव बृहस्पति तक पहुँचने लायक सूर्यकेंद्रीय ऊर्जा बढ़ा देता है।",
+    "note": "'सौर-केंद्रित' wrong for heliocentric."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "अंतिम अनडॉकिंग 1975-07-19 16:26 UTC। सोयुज 19 1975-07-21 को कजाकिस्तान में उतरता है।",
+    "note": "'अडॉक' not the docking binding."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2021-05-10। पृथ्वी की ओर वापसी की 2.5-वर्ष की यात्रा।",
+    "note": "Awkward 'पृथ्वी पर ... क्रूज'."
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "अब तक निकट से देखे गए सबसे बड़े मुख्य-बेल्ट क्षुद्रग्रहों में से एक की ~120 किमी पर फ्लाईबाई।",
+    "note": "Flyby spelled फ्लाइबाई; distance reordered."
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "पहली पूर्ण सौर ध्रुवीय कक्षा का समापन।",
+    "note": "Gender: कक्षा is feminine."
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "ट्रिम मैन्यूवर Hope को उसकी 55-घंटे की विज्ञान कक्षा में स्थापित करते हैं।",
+    "note": "'युक्तियां' means tips, not manoeuvres."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "1972-10-27। अभिविन्यास-नियंत्रण गैस समाप्त।",
+    "note": "'रवैया' for attitude."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "26 बार उछला। संयोग से 22 मीटर के क्रेटर में लुढ़क गया, जिसके चारों ओर उजागर आधारशैल था।",
+    "note": "'आधारशिला' means foundation stone."
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "3 कक्षाओं / 4 घंटे 52 मिनट के बाद अटलांटिक में स्प्लैशडाउन।",
+    "note": "Atlantic and h/m left in English."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2024-12-24। 9.86 R☉ (सूर्य से 61 लाख किमी)। ~191 किमी/सेकंड। ऊष्मा ढाल 1,377 °C।",
+    "note": "English 'M' unit letter."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "पहला पूर्ण पास — 100 मी रिज़ॉल्यूशन पर 84% सतह का कवरेज।",
+    "note": "'संकल्प' means resolve, not resolution."
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "सौर पैनल तैनात होने में विफल; अभिविन्यास नियंत्रण बिगड़ता है — मिशन समय से पहले समाप्त करना पड़ा।",
+    "note": "'दृष्टिकोण' for attitude."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "टाइटन फ्लाईबाई ने प्रक्षेपवक्र को क्रांतिवृत्त तल से बाहर मोड़ दिया — आगे कोई ग्रहीय मुठभेड़ संभव नहीं।",
+    "note": "'ग्रहण तल' wrong; binding प्रक्षेपवक्र."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "सतह पर 21 घंटे 36 मिनट रहने के बाद ईगल उड़ान भरता है।",
+    "note": "'उठता है' and h/m left in Latin."
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "~1 दिन 1 घंटे / 16 कक्षाओं के बाद अटलांटिक में स्प्लैशडाउन।",
+    "note": "Atlantic and d/h left in English."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "हाइड्राज़ीन रिसाव, 2 रिएक्शन व्हील ख़राब, 7 सप्ताह तक संचार टूटा रहा।",
+    "note": "'मृत' literal for dead."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "धूमकेतु 1P/हैली के सबसे निकट 8890 किमी पर पहुँचा — किसी धूमकेतु के नाभिक का पहला अवलोकन।",
+    "note": "'निकटतम संपर्क' wrong for approach."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "E-प्रकार के क्षुद्रग्रह का अब तक का पहला निकट-दृश्य।",
+    "note": "Garbled 'पहली कभी निकट छवि'."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "D-CIXS एक्स-रे प्रतिदीप्ति चंद्रमा के पहले वैश्विक तात्विक मानचित्र प्रदान करता है।",
+    "note": "'X-ray फ्लोरेसेंस' left in English."
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "35-km D-प्रकार ट्रोजन, धीमा घूर्णक (446 घंटे)।",
+    "note": "'घुमावदार' means winding."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "भुजा ऊपरी मिट्टी को खुरचती है। चमकीली सफेद बर्फ 4 सोल में कैमरे के सामने उर्ध्वपातित हो जाती है।",
+    "note": "'आर्म' left in English."
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "पहली बार चंद्र-पृथ्वी गुरुत्व-सहायता मैन्यूवर — एक ही झूले में चंद्रमा + पृथ्वी।",
+    "note": "Assist binding; 'युक्तिकरण' odd."
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

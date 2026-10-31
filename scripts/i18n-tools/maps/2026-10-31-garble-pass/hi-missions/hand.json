@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.0.note",
+    "find": "एलवीएम3 एम4 (पूर्व में जीएसएलवी एमके III)",
+    "replace": "LVM3 M4 (पूर्व में GSLV Mk III)"
+  }
+]

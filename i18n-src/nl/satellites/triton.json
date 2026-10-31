@@ -7,19 +7,19 @@
   "library_labels": {
     "triton-wiki": "Wikipedia — Triton",
     "triton-nasa": "NASA Science — Triton overzicht",
-    "triton-voyager2": "NASA Voyager 2 — Neptunus-systeem ontmoeting (1989)",
-    "triton-trident": "Trident — voorgestelde Discovery-class Triton scheervlucht"
+    "triton-voyager2": "NASA Voyager 2 — ontmoeting met het Neptunussysteem (1989)",
+    "triton-trident": "Trident — voorgestelde Triton-flyby in de Discovery-klasse"
   },
   "science_sections": [
     {
       "tab": "orbits",
       "section": "inclination",
-      "why": "Tritons orbitale inclinatie van 156,8° — retrograde, steil gekanteld ten opzichte van Neptuns equator — is het sluitende bewijs voor invanging uit de Kuipergordel in plaats van vorming samen met Neptunus."
+      "why": "De baaninclinatie van Triton van 156,8° — retrograde, sterk gekanteld ten opzichte van de evenaar van Neptunus — is het doorslaggevende bewijs voor invangst uit de Kuipergordel in plaats van vorming samen met Neptunus."
     },
     {
       "tab": "orbits",
       "section": "semi-major-axis",
-      "why": "De getijdenweerstand van Triton verzwakt zijn baan — over 3,6 miljard jaar zal hij ofwel tegen Neptunus botsen ofwel fragmenteren binnen de Roche-limiet en een ringstelsel vormen."
+      "why": "De getijdenweerstand van Triton verkleint zijn baan — over 3,6 miljard jaar zal hij ofwel op Neptunus inslaan ofwel binnen de Roche-limiet uiteenvallen en een ringstelsel vormen."
     }
   ]
 }

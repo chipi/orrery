@@ -1,0 +1,1163 @@
+[
+  {
+    "rel": "satellites/ariel.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "De kleinere en buitenste van de twee manen van Mars, slechts 12 km in doorsnede — het kleinste bekende lichaam in het zonnestelsel dat vanaf een typische orbitercamera nog als een schijfje en niet als een punt te onderscheiden is. Zijn gladdere oppervlak (vergeleken met het door kraters en groeven getekende terrein van Phobos) en tragere baan (30 uur tegenover 8 uur voor Phobos) maken hem tot de rustigere van het manenpaar van Mars. Asaph Hall vernoemde beide manen naar de Griekse personificaties van Vrees (Phobos) en Schrik (Deimos) — de oorlogspaarden die de strijdwagen van Ares trekken in de Ilias, boek XV.",
+    "note": "Iliad left in English"
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "residents.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Mariner 9 (1971-1972 — eerste Marsorbiter)",
+    "note": "compound written apart"
+  },
+  {
+    "rel": "iss-modules/kibo.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Experimentracks binnen plus externe logistiek voor aardobservatie en technologiedemonstraties gericht op de diepe ruimte.",
+    "note": "clumsy compound 'Binnenexperiment-racks'"
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "De subpopulatie van de verstrooide schijf (bijv. Eris) bevindt zich bij grote inclinaties — door de uitwaartse migratie van Neptunus zwaartekrachtsmatig verstrooid; Sedna is daarentegen een losgekoppelde 'sednoïde' waarvan het verre perihelium buiten het bereik van Neptunus ligt en die de gordel momenteel verticaal uitspreidt.",
+    "note": "'scattered-disc' left in English"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.skylab",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-expo-noordwijk.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/danmarks-tekniske-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De cartografische band — doorgaans 150 tot 500 km boven het Marsoppervlak. De meeste Marsorbiters bevinden zich hier: hoog genoeg om de atmosferische weerstand van de bovenste thermosfeer te ontwijken, maar laag genoeg voor beeldvorming op meterschaal. De dunne atmosfeer is een geschenk — Mars Reconnaissance Orbiter en Mars Odyssey hebben aerobraking (herhaaldelijk erdoorheen duiken) gebruikt om hun banen gratis te circulariseren, wat jaren aan drijfstof bespaart. Zes naties laten momenteel ruimtevaartuigen hier vliegen.",
+    "note": "last sentence ungrammatical"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "flyby",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "rendezvous",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Twee ruimtevaartuigen op dezelfde plek met dezelfde snelheid brengen zodat ze samen vliegen — meestal de stap voor de koppeling.",
+    "note": "en dash instead of em dash"
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Hope — eerste missie van de VAE naar een andere planeet",
+    "note": "UAE not Dutch VAE"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.lrv-apollo",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "De baan van de Maan rond de Aarde is het schoolvoorbeeld van een keplersysteem met twee lichamen — elke andere berekening van manen rond planeten is hiervan afgeleid.",
+    "note": "clumsy hyphen compound"
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.1.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Dawn — eerste speciale asteroïdenorbiter (Vesta, USA)",
+    "note": "'toegewijde' odd for dedicated"
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "De enorme zwaai van Halley tussen perihelium en aphelium (35 tot 0,59 AE) laat de ijslagen aan het oppervlak dicht bij het perihelium hevig sublimeren, waardoor de coma en de staart ontstaan. Volgend perihelium: 2061.",
+    "note": "decimal point instead of comma"
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Vesta beweegt in een baan op 2,36 AE — binnenste gordel. De nabijheid ervan bepaalde Dawns keuze om Vesta eerst te bezoeken (2011), daarna naar Ceres te gaan (2015).",
+    "note": "decimal point instead of comma"
+  },
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Hemellichamen in sterk elliptische banen voorbij de Kuipergordel — 50 tot 1.000 AE. Ze werden waarschijnlijk lang geleden hierheen verstrooid door zwaartekrachtinteracties met Neptunus. Sedna is het prototype van de sednoïden: 76 AE bij perihelium, 937 AE bij aphelium, een baan van 11.400 jaar. Hun banen liggen te ver om door Neptunus in hun huidige positie geplaatst te zijn, wat wijst op invloeden van passerende sterren, een hypothetische Planeet Negen, of de verloren broers en zussen van de Zon uit haar geboortecluster. Geen enkel ruimtevaartuig heeft ze ooit bezocht.",
+    "note": "'prototype-Sednoid' wrong form"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "mission_visits.3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.resolution",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Het logo van het ruimteagentschap Roscosmos fungeert als het eerlijke herkenningsteken op elke getroffen programmakaart en -pagina.",
+    "note": "'kenmerk' wrong sense of mark"
+  },
+  {
+    "rel": "museums/aviation-museum-plovdiv-krumovo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.3.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Voyager 2 (flyby in 1989) blijft het enige ruimtevaartuig dat Neptunus heeft bezocht. Er is momenteel geen missie naar het systeem gefinancierd of onderweg.",
+    "note": "binding flyby not used"
+  },
+  {
+    "rel": "iss-modules/rassvet.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Verlenging van de koppelingspoort en kleine vrachtopslag naast de kern van het Russische segment.",
+    "note": "binding docking -> koppeling"
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "De grootste operationele draagraket van China: een cryogene kerntrap met twee YF-77-waterstofmotoren, vier keroloxboosters en een bovenste trap op waterstof. Lanceerde in juli 2020 de Tianwen-1-orbiter, -lander en -rover naar Mars en de Chang'e-missies voor het terugbrengen van maanmonsters.",
+    "note": "'kerntraap' nonword; boosters as 'versterkers'"
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "items.soyuz-tm",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Afdalingsmodule van Soyuz TM-19, waarmee Ulf Merbold naar de Aarde terugkeerde (1994)",
+    "note": "binding descent -> afdaling"
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/chinarm.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "De primaire manipulator van het station — een robotarm van 10 meter met zeven gewrichten die hand over hand over Tianhe en de laboratoriummodules loopt om vracht te vangen en externe lading te verplaatsen.",
+    "note": "describes a different arm; stale"
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Het zware werkpaard van India — eerste lancering naar de Maan (Chandrayaan-3, 2023)",
+    "note": "'zware lifter' odd; India's"
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "De excentriciteit van Halley van 0,967 is de schoolvoorbeeldbaan van een kortperiodieke komeet — bijna parabolisch, met een perihelium van 0,59 AE en een aphelium van 35 AE.",
+    "note": "'afhelium' typo"
+  },
+  {
+    "rel": "trajectories/ulysses.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "mission_visits.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Galileo-orbiter — USA, 1995–2003 (meerdere flybys; kandidaat voor een oceaan)",
+    "note": "'oceankadidat' nonword; flyby binding"
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/polymele.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Polymele is een L4-Trojaan — Lucy-flyby september 2027. De Trojanen zijn dynamisch vastgezet op de Lagrangepunten L4/L5 van Jupiter en kunnen ingevangen objecten uit de Kuipergordel zijn.",
+    "note": "'ingenomen' wrong; flyby binding"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De magnetosfeer van Jupiter is de grootste planetaire structuur in het zonnestelsel — aan de van de Zon afgekeerde kant reikt hij voorbij de baan van Saturnus.",
+    "note": "missing verb; 'nachtelijke' wrong"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Het rotsachtige binnenste zonnestelsel — 0,4 tot 1,5 AE van de Zon. Vier kleine werelden met metalen kernen, silicaatmantels en een dunne of geen atmosfeer. Ze zijn ontstaan binnen de vrieslijn, waar het te heet was voor vluchtige ijsstoffen om te condenseren, dus alleen vuurvaste materialen (silicaten, ijzer, nikkel) bleven vast. Drie van de vier zijn doelwit geweest van bemande verkenning (Aarde, Maan, op weg naar Mars).",
+    "note": "'metallische' not Dutch"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "stage",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.atlantis",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Itokawa is een Apollo-asteroïde die dicht bij de Aarde komt — halve grote as 1,32 AE. Het rendez-vous van Hayabusa in 2005 + de monsterterugkeer in 2010 vormden de eerste heen-en-terugreis naar zo'n asteroïde.",
+    "note": "'near-Earth' left in English; binding"
+  },
+  {
+    "rel": "small-bodies/oumuamua.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.4.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "Het eerste hemellichaam waarvan de baan opzettelijk door mensen werd veranderd. NASA's DART raakte Dimorphos op 2022-09-26 met 6,14 km/s en verkortte zijn baan van 11,9 uur rond Didymos met 33 minuten (4,2%) — waarmee de succesdrempel met ongeveer 25× werd overtroffen en bleek dat planetaire verdediging mogelijk is.",
+    "note": "stray soft hyphens in words"
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "library_labels.enceladus-habitability",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Astrobiologie — Enceladus als doelwit in de zoektocht naar leven",
+    "note": "'Astrobiology' left in English"
+  },
+  {
+    "rel": "observatories/salt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/canadarm2.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Hulp bij het aanmeren, EVA-ondersteuning en zware verplaatsingen voor de externe assemblage langs het Mobile Base System.",
+    "note": "'Aanlegplaats' wrong sense of berthing"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.rejected.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Geen hoogte, maar een vorm. Een langwerpige ellips met een laag perigeum (dicht bij de aarde) en een zeer hoog apogeum (soms hoger dan GEO). De satelliet brengt het grootste deel van zijn tijd door in de buurt van het apogeum en hangt langzaam boven hoge breedtegraden — de truc die Sovjet-ingenieurs gebruikten om continue communicatie te krijgen boven de poolgebieden van Rusland, waar een GEO-satelliet boven de evenaar te laag aan de horizon staat om zichtbaar te zijn. Tegenwoordig gebruikt voor raketwaarschuwing, het volgen van objecten in de diepe ruimte en breedband op hoge breedtegraden.",
+    "note": "'deep-space tracking' English; 'raketdetectie' off"
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Elliptische karteringsbanen en parkeertrajecten boven 100 km. Luna 10 werd hier in 1966 geplaatst — het eerste kunstmatige object dat in een baan om een ander hemellichaam dan de Aarde kwam. SMART-1 verbleef in zeer elliptische banen om het uithoudingsvermogen van ionenaandrijving te testen. De meeste moderne maanmissies doorkruisen de HLO voordat ze naar de LLO dalen; sommige eindigen hun leven door hierheen te worden opgetild om de 'werkruimte' van de LLO vrij te maken vóór de inslag waarmee ze worden afgevoerd.",
+    "note": "'inslagverwijdering' garbled; 'passeren door'"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "burn",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/sentinel-copernicus.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Het Europese vlaggenschipprogramma voor aardobservatie — Sentinel-1 (radarbeelden in C-band), Sentinel-2 (multispectraal optisch), Sentinel-3 (oceaan + land), Sentinel-5P (atmosferische chemie), Sentinel-6 (altimetrie). Allemaal zonnesynchroon op ongeveer 700 km. Gratis + open databeleid.",
+    "note": "dangling adjective, awkward possessive"
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/luna10.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/bepicolombo.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "0,48 AE · onderweg naar baaninsertie bij Mercurius 2026-12-05",
+    "note": "binding orbit insertion -> baaninsertie"
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "residents.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/gps.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "mission_visits.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Cassini — NASA/ESA/ASI, 2005–2015 (ontdekking van de pluim + vlucht erdoorheen)",
+    "note": "missing article"
+  },
+  {
+    "rel": "planets/pluto.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Oortwolk voorgesteld — Jan Oort (Nederland)",
+    "note": "'Netherlands' left in English"
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "De 13 jaar durende baancampagne van Cassini was gebouwd rond de wetten van Kepler — elke ringpassage en elke flyby van een maan was een keplerboog die jaren van tevoren was ontworpen.",
+    "note": "binding flyby not used"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "orbit insertion",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "film",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "Een netwerk van dertig draaibare schotels van 45 m die op metergolflengten (50 tot 1.500 MHz) waarnemen, beheerd door het National Centre for Radio Astrophysics van het Tata Institute of Fundamental Research.",
+    "note": "'meetergolflengten' typo"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "thrust",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Bemanningswissel van Tiangong, reddingsbootcapaciteit en autonoom rendez-vous en koppeling met handmatige overneming vanuit de bediening van de orbitale module.",
+    "note": "bindings rendez-vous, koppeling"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "New Horizons — USA, 2015 (eerste en enige flyby)",
+    "note": "binding flyby not used"
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Een faciliteit van de Amerikaanse NSF en het DOE op Cerro Pachón met de Simonyi Survey Telescope van 8,4 m en de LSST-camera van 3,2 gigapixel. Elke paar nachten brengt zij de hele zuidelijke hemel in beeld.",
+    "note": "'Hij' for a faciliteit"
+  },
+  {
+    "rel": "museums/cape-canaveral-space-force-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Het geologisch meest actieve hemellichaam van het zonnestelsel. Getijdenverwarming door de zwaartekracht van Jupiter plus baanresonantie met Europa en Ganymedes pompt ongeveer 100 terawatt aan warmte in het binnenste van Io — genoeg om ongeveer 400 actieve vulkanen aan te drijven en oppervlaktetemperaturen die variëren van -130 °C (bevroren zwaveldioxide) tot +1.600 °C (ultramafische lava). Het oppervlak wordt sneller opnieuw 'geschilderd' dan inslagkraters het kunnen markeren. Loki Patera, een lavameer van 200 km, is het krachtigste vulkanische verschijnsel van het zonnestelsel.",
+    "note": "'ultramaïsch' nonword; agreement slips"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Jupiter is het favoriete doelwit voor zwaartekrachtassists bij missies naar het buitenste zonnestelsel — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper en JUICE gebruikten of gebruiken allemaal een flyby van Jupiter voor snelheidswinst.",
+    "note": "'vliegbij' mistranslates flyby"
+  },
+  {
+    "rel": "small-bodies/eris.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "De excentriciteit van Pluto van 0,249 laat zijn baan gedurende 20 jaar van elke cyclus van 248 jaar binnen die van Neptunus duiken.",
+    "note": "English 'eccentricity' left in"
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Waterijskorst + binnenste van silicaat- / koolstofhoudend gesteente; het helderste oppervlak van de grote manen van Uranus, met relatief weinig kraters — geïnterpreteerd als bewijs voor cryovulkanische vernieuwing van het oppervlak in de afgelopen ~1 miljard jaar.",
+    "note": "word order, 'Gyr' left in"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "De inclinatie van de planeet is minder bepalend dan de kanteling van zijn rotatieas — Uranus heeft de meest extreme axiale inclinatie van het systeem, ook al is de baaninclinatie bescheiden (0,77°).",
+    "note": "binding inclination -> inclinatie"
+  },
+  {
+    "rel": "trajectories/voyager-1.json",
+    "at": "interstellar_since_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Stak de heliopauze over in augustus 2012 — eerste door mensen gemaakte object in de interstellaire ruimte",
+    "note": "missing article"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Een van de traagst roterende bekende hemellichamen van zijn grootte — een rotatieperiode van 446 uur (18,6 dagen), ongewoon lang voor een asteroïde van 35 km. De trage rotatie wijst op een complexe geschiedenis van botsingen of getijdenwerking met een ander lichaam, mogelijk een recente (in geologische termen) grote gebeurtenis.",
+    "note": "'traagst roterend' agreement"
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Bennu is een asteroïde die dicht bij de Aarde komt (halve lange as 1,13 AE) — dichtbij genoeg voor OSIRIS-REx om een rendez-vous aan te gaan, monsters te nemen en materiaal in 7 jaar naar de Aarde terug te brengen.",
+    "note": "'af te spreken' wrong sense of rendezvous"
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/tranquility.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "Het zware werk van de levensondersteuning en de beroemde astronautenloopband — waar bewoonbaarheidstechniek stilletjes de krantenkoppen domineert.",
+    "note": "garbled 'heavy lifting' clause"
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Ongeveer 40% waterijs + 60% silicaatgesteente; oppervlak is het zwaarst bekraterde in het zonnestelsel — bijna verzadigd, onaangeroerd door oppervlaktevernieuwing. Opvallend kenmerk: het meerringige inslagbekken Valhalla van 3.800 km.",
+    "note": "awkward 'multi-ring' compound"
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "new": "De hoofdgordel: ~1–2 miljoen lichamen tussen Mars en Jupiter, totale massa ≈ 4 % van de Maan. Resonanties van Jupiter hebben de gordel leeggeveegd — fragmentatie heeft sindsdien gewonnen van accretie.",
+    "note": "'sinds dien' typo"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.3.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/kuiper.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Het LEO-breedbandantwoord van Amazon op Starlink — 3.236 geplande satellieten op 590-630 km hoogte in 98 baanvlakken. De eerste prototypelancering is in 2023; productielanceringen begonnen in 2025; de FCC-licentie vereist 50% inzet tegen 2026, 100% tegen 2029.",
+    "note": "'broadband' dropped; Amazon's"
+  },
+  {
+    "rel": "tiangong-modules/wentian.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Het eerste laboratorium, aangemeerd in juli 2022 — twee grote zonnevleugels, een luchtsluis voor externe lading en een kleine experimentele robotarm die aan de romp is vastgeschroefd.",
+    "note": "describes different content than English"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.rejected.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/geo.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cradle-of-aviation.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "entry",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Het binnendringen van de atmosfeer van een planeet door een ruimtevaartuig, waarbij luchtweerstand en verhitting het afremmen.",
+    "note": "'doorgang' weak for entry"
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Een bolvormige koppelingsknoop — zes poorten om bezoekende voertuigen rond het Russische segment te groeperen.",
+    "note": "binding docking; 'sferische'"
+  },
+  {
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "ISS-bemanningsrotatie; reddingsbootcapaciteit voor het Russische Orbitale Segment; semi-autonoom Kurs-NA rendez-vous met handmatige TORU-back-up.",
+    "note": "binding rendez-vous"
+  },
+  {
+    "rel": "iss-modules/canadarm2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "De lange witte kraan van het station — hij loopt hand over hand langs het vakwerk om vrachtvoertuigen te vangen, zonder worstelpartijen met astronauten.",
+    "note": "wrong gender, clumsy participle"
+  },
+  {
+    "rel": "museums/baikonur-cosmodrome-museum.json",
+    "at": "items.buran",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/landsat.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "ULA Atlas V in de configuratie met een kap van 5 meter, vier vaste-brandstofboosters en een bovenste trap Centaur met één motor. Lanceerde Curiosity in november 2011 naar Mars. In 2024 uit dienst genomen ten gunste van de Vulcan Centaur.",
+    "note": "fairing as 'neuskegel'"
+  },
+  {
+    "rel": "iss-modules/unity.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

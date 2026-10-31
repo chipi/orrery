@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import path from 'node:path';
+import { keepKey, locPattern, normalize } from './term-match.mjs';
 
 // The `term` section of the glossary (technical space terms, 2026-10-31 pilot) feeds
 // term-drift.mjs: every entry needs a form, match stems that compile, and a confidence
@@ -43,9 +45,37 @@ describe('glossary · technical terms', () => {
         expect(['high', 'medium', 'low']).toContain(e._confidence[loc]);
         const stems = e._match[loc] ?? [];
         expect(stems.length, `${loc} stems`).toBeGreaterThan(0);
-        const re = new RegExp(stems.map((s) => `(?:${s})`).join('|'), 'iu');
+        for (const s of stems) expect(() => new RegExp(s, 'iu'), `${loc} stem ${s}`).not.toThrow();
+        const re = locPattern(e, loc)!;
         expect(re.test(form as string), `${loc}: "${form}" must match its own stems`).toBe(true);
       }
     });
   }
+
+  it('Arabic vowel marks do not decide a match', () => {
+    expect(normalize('ar', 'أشعِل')).toBe('أشعل');
+    expect(normalize('fr', 'é')).toBe('é');
+    const e = { _match: { ar: ['أشعل'] } };
+    expect(locPattern(e, 'ar')!.test('ثم أشعِلْ المحرك')).toBe(true);
+  });
+});
+
+describe('glossary · reviewed keeps', () => {
+  const keeps = JSON.parse(readFileSync('scripts/i18n-tools/term-keeps.json', 'utf8')) as Record<
+    string,
+    { why: string; tr: string }
+  >;
+  it('every keep names a glossary term, a locale, an existing overlay and a reason', () => {
+    const bad: string[] = [];
+    for (const [k, v] of Object.entries(keeps)) {
+      const [term, loc, where] = k.split('|');
+      const [rel] = where.split(' :: ');
+      if (k !== keepKey(term, loc, where)) bad.push(`${k}: malformed`);
+      if (!terms[term]) bad.push(`${k}: unknown term`);
+      if (!LOCALES.includes(loc)) bad.push(`${k}: unknown locale`);
+      if (!existsSync(path.join('i18n-src', loc, rel))) bad.push(`${k}: no such file`);
+      if (!v.why || !/^[0-9a-f]{10}$/.test(v.tr)) bad.push(`${k}: needs why + text hash`);
+    }
+    expect(bad, bad.slice(0, 20).join('\n')).toEqual([]);
+  });
 });

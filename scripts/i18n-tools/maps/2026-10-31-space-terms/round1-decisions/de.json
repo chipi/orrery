@@ -1,0 +1,680 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/hot-jupiters.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/life-in-space/long-duration-effects.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "Umlauf = one revolution/period, natural"
+  },
+  {
+    "rel": "science/mission-phases/met.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/mission-phases/met.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "MOI",
+    "replace": "Einschwenken in die Umlaufbahn",
+    "why": "acronym replaced by binding form"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/space-stations/expedition-cadence.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/period sense; umkreisen/Umlauf natural"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.1",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "correct as is"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "diagram_caption",
+    "term": "inclination",
+    "decision": "change",
+    "find": "Neigungen von 27°",
+    "replace": "Bahnneigungen von 27°",
+    "why": "Bahnneigung"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "change",
+    "find": "mit geringer Neigung",
+    "replace": "mit geringer Bahnneigung",
+    "why": "Bahnneigung"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "change",
+    "find": "exzentrische, stark geneigte äußere Erweiterung",
+    "replace": "exzentrische äußere Erweiterung mit großer Bahnneigung",
+    "why": "Bahnneigung"
+  },
+  {
+    "rel": "science/scales-time/j2000.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "change",
+    "find": "Neigungen oszillieren",
+    "replace": "Bahnneigungen oszillieren",
+    "why": "Bahnneigung"
+  },
+  {
+    "rel": "science/orbits/synodic-period.json",
+    "at": "narrative_101.2",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "generic meeting point (Treffpunkt), not a spacecraft rendezvous"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion sense (burning fuel)"
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "erstem Flug mit Flüssigtreibstoff",
+    "replace": "erster Zündung mit Flüssigtreibstoff",
+    "why": "engine firing = Zündung"
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "ersten Flug mit Flüssigtreibstoff",
+    "replace": "erste Zündung mit Flüssigtreibstoff",
+    "why": "engine firing = Zündung"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "den verbleibenden Brennvorgang als",
+    "replace": "die verbleibende Brennphase als",
+    "why": "Brennphase"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "Mit fortschreitendem Brennvorgang",
+    "replace": "Mit fortschreitender Brennphase",
+    "why": "Brennphase"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "bei der der Brennvorgang lang ist",
+    "replace": "bei der die Brennphase lang ist",
+    "why": "Brennphase"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning up on entry, not an engine firing"
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "mit direktem Raketenschub bis",
+    "replace": "mit einer direkten Triebwerkszündung bis",
+    "why": "Zündung"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "star glows, not engine"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn out of a star"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "Perigäum auf ~200 km absenken",
+    "replace": "Perigäum per Zündung auf ~200 km absenken",
+    "why": "Zündung"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "der Antriebsstoß beim Verlassen",
+    "replace": "die Zündung beim Verlassen",
+    "why": "Zündung"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "das Minimum des Antriebsstoßes beim Abflug",
+    "replace": "das Minimum der Zündung beim Abflug",
+    "why": "Zündung"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "brenne tief",
+    "replace": "zünde tief",
+    "why": "Zündung (imperative)"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Jeder Triebwerkseinsatz",
+    "replace": "Jede Triebwerkszündung",
+    "why": "Zündung"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "während eines 165-sekündigen Brennens der ersten Stufe",
+    "replace": "während einer 165-sekündigen Brennphase der ersten Stufe",
+    "why": "Brennphase"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion in chamber"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion in gas generator"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "Brenne tief",
+    "replace": "Zünde tief",
+    "why": "Zündung (imperative)"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "fuel-burned rate, combustion"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion (propellant consumed)"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / solid burn profile"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Die Trans-Mars-Injektion addiert",
+    "replace": "Die Zündung zur Trans-Mars-Injektion addiert",
+    "why": "Zündung"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "stage",
+    "decision": "keep",
+    "why": "different sense (single-stage-to-orbit, staging orbit)"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "payload",
+    "decision": "keep",
+    "why": "part of proper name Vega Secondary Payload Adapter"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "\"chemical thrust\" = propulsion, Antrieb natural"
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.3",
+    "term": "booster",
+    "decision": "change",
+    "find": "weshalb Super Heavy 33",
+    "replace": "weshalb der Super-Heavy-Booster 33",
+    "why": "Booster was omitted"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "intro_sentence",
+    "term": "specific impulse",
+    "decision": "change",
+    "find": "zwischen Isp, Dichte",
+    "replace": "zwischen spezifischem Impuls, Dichte",
+    "why": "spezifischer Impuls"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "intro_sentence",
+    "term": "specific impulse",
+    "decision": "change",
+    "find": "etwa doppelter Isp",
+    "replace": "etwa doppelter spezifischer Impuls",
+    "why": "spezifischer Impuls"
+  },
+  {
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "intro_sentence",
+    "term": "flyby",
+    "decision": "change",
+    "find": "sie legt die Ankunftsenergie fest",
+    "replace": "sie legt die Ankunftsenergie eines Vorbeiflugs fest",
+    "why": "Vorbeiflug was omitted"
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "keep",
+    "why": "re-entry into 1 g gravity, not atmospheric entry"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "entry",
+    "decision": "change",
+    "find": "die Rückkehr garantiert war",
+    "replace": "der Wiedereintritt garantiert war",
+    "why": "Wiedereintritt"
+  },
+  {
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "body_paragraphs.0",
+    "term": "descent",
+    "decision": "keep",
+    "why": "descent module = Landemodul, name of a module"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "diagram_caption",
+    "term": "descent",
+    "decision": "keep",
+    "why": "Sinkgeschwindigkeit, natural compound"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.1",
+    "term": "descent",
+    "decision": "keep",
+    "why": "proper name / Prinzip, not a descent phase"
+  }
+]

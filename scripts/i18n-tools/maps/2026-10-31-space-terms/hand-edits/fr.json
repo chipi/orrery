@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.3",
+    "old": "Réanalyse moderne : les résidus de Mars de Kepler sont infrarcseconde. Il a obtenu une ellipse avec une excentricité de 0,0934 à partir de données ayant une incertitude de mesure irréductible d'environ 1 minute d'arc. L'ajustement était réel.",
+    "new": "Réanalyse moderne : les résidus de Mars de Kepler sont inférieurs à la minute d'arc. Il a obtenu une ellipse avec une excentricité de 0,0934 à partir de données ayant une incertitude de mesure irréductible d'environ 1 minute d'arc. L'ajustement était réel."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "intro_sentence",
+    "old": "Chaque combinaison spatiale moderne descend de trois familles : les combinaisons dérivées d'Apollo (américaines), Sokol + Orlan (soviétiques/russes), et Feitian (chinoise, elle-même dérivée d'Orlan).",
+    "new": "Chaque combinaison spatiale moderne descend de l'une de trois familles : les combinaisons dérivées d'Apollo (américaines), Sokol + Orlan (soviétiques/russes), et Feitian (chinoise, elle-même dérivée d'Orlan). Six décennies, trois lignées, beaucoup de pollinisation croisée."
+  }
+]

@@ -97,6 +97,44 @@ held back (nl burn 44 %, ko gravity assist 60 %, ar flyby 55 %, nl orbit
 insertion 69 %), and stem gaps still to widen (ar re-entry "العودة", pt-BR
 gravity assist 53 %).
 
-Next: record reviewer "keep" decisions so the detector can serve as a gate; a
-second opinion on the low-confidence entries (Serbian with the operator); then
-essays, missions, fleet and programs (~3,450 misses).
+## Round 2 result — science closed (2026-10-31)
+
+- **Keeps are recorded.** `term-keeps.json` holds each reviewed miss with the hash of the
+  text judged, and `term-drift.mjs` counts it as covered while the text is unchanged.
+  An edit brings it back: this caught a Dutch field whose *orbit* keep went stale after
+  a *burn* fix.
+- **Keep reasons exposed stem gaps.** 149 of the 574 round-1 keeps meant "the
+  binding form, inflected", so the stems were too narrow, not the text. Cases: ru
+  перигее, ar indefinite and prefixed forms, ar vowel marks, ko particles, nl
+  compounds, hyphenated charge-utile. The stems were widened (matching now ignores
+  Arabic vowel marks). The fields that newly matched without a review were read: all
+  correct. 425 + 49 keeps recorded.
+- **Second opinion on the 11 low-confidence bindings:**
+  - **Bindings changed:**
+    - ar flyby → التحليق القريب: the site's majority form, used by ar.wikipedia and MBRSC.
+    - es and pt-BR booster → propulsor: "propulsor de apoyo/auxiliar" is unattested and
+      appears 0 times on the site.
+    - zh-CN orbit insertion → 制动捕获: CNSA's 近火/近月制动. 轨道插入 stays accepted, unsettled.
+    - es orbit insertion → inserción orbital, to agree with the style guide §4.
+  - **Variants accepted:** the rest.
+  - **One reviewer verdict overruled:** nl noun "brand"/"motorbrand" means a fire, so it
+    is not accepted for a burn. Only the verb ("de motor brandt") is accepted.
+- **Fixes:** 17 field edits: nl "brand" → ontsteking (9), ar الاقتراب/عبور → تحليق (5),
+  ko 스윙바이 used for a flyby → 플라이바이 (3). Also the hand fixes for the fr Oberth
+  intro (garbled, half missing) and "at real thrust" restored in ru/fr/pt-BR.
+
+- **Widen check** (`term-widen-check.mjs`): 607 fields across all trees passed only under
+  the widened stems and had never been reviewed. Grouped by matched word, almost all were
+  correct (ru case endings, ko particles, nl aardbaan/maanbaan, pt plurals). The open nl
+  compounds hid 9 real errors in missions, fleet and essays: "lanchbaan" for *launch pad*,
+  "ontbaan", "polaairbaan", "haloaanbaan", "afdaalingstrap … hertoetrad", "INBAAN", and
+  two fleet descriptions garbled throughout (Clementine, Lunar Prospector), retranslated
+  from the English. The nl compounds are now an explicit list.
+
+Science misses: **656 → 1 unreviewed**. That one is the Serbian «скокове уз помоћ
+гравитације» for *gravity-assist hops*, which waits for the operator.
+
+All trees: 2,689 unreviewed (essays 380, missions 1,473, fleet 578, programs 257).
+
+Next: a fix round per tree with the `term-consistency` skill, then the science gate,
+then the next batch of terms from `term-census.mjs`.

@@ -81,8 +81,8 @@
     "term:gravity assist:ru": "ru.wikipedia \"Гравитационный манёвр\"; Roscosmos/IKI usage; site uses it 91 of 93 fields",
     "term:gravity assist:ja": "JAXA/ISAS usage (はやぶさ2 地球スイングバイ); 重力アシスト is correct and more frequent on site (49 vs 20) - judgment call",
     "term:gravity assist:zh-CN": "Chinese deep-space-trajectory literature (BIT/BUAA/NPU papers) and CNSA usage; 3 variants on site",
-    "term:gravity assist:ko": "Korean Wikipedia / common usage; not verified against KARI (search found no KARI-specific page)",
-    "term:gravity assist:hi": "no CSTT/ISRO fixed term found; site-majority form (63 vs 37) kept",
+    "term:gravity assist:ko": "ko.wikipedia 스윙바이 (중력 도움); 중력 보조 also used (second opinion 2026-10-31; KARI not verified)",
+    "term:gravity assist:hi": "hi.wikipedia and PIB use गुरुत्वीय सहायता; no CSTT/ISRO fixed term; site forms all accepted (second opinion 2026-10-31)",
     "term:gravity assist:ar": "Arabic Wikipedia 'مساعدة الجاذبية'; site 31x vs 15x variant",
     "term:gravity assist:sr-Cyrl": "https://sr.wikipedia.org/sr-ec/Gravitacioni_manevar (title «Гравитациони маневар», also called праћка)",
     "term:gravity assist:de": "de.wikipedia \"Swing-by\"; DLR/ESA German pages use Swing-by",
@@ -133,7 +133,7 @@
     "term:burn:ru": "Roscosmos/mission-control usage (включение двигателя, импульс)",
     "term:burn:ja": "JAXA usage (はやぶさ2 RCS 噴射, 軌道制御噴射)",
     "term:burn:zh-CN": "CNSA/CMSA mission reports (发动机点火, 变轨点火, 近火制动)",
-    "term:burn:ko": "KARI usage (엔진 연소, 궤도진입기동); site split 연소 135 vs 분사 78; \"번\" hits are just the counter \"N times\"",
+    "term:burn:ko": "KARI Danuri (엔진 연소, 궤도진입기동); 소각 (incineration) wrong (second opinion 2026-10-31)",
     "term:burn:hi": "ISRO Hindi: 'इंजन दहन', 'दहन परीक्षण'; दहन must mean the engine firing, not combustion generally",
     "term:burn:ar": "MBRSC Hope probe reporting 'تشغيل محركات دفع المسبار'; site mixes إشعال 72x and حرق 84x (some حرق are true combustion)",
     "term:burn:sr-Cyrl": "Serbian university/astronautics usage (паљење мотора); site паљењ 132/229",
@@ -141,7 +141,7 @@
     "term:burn:fr": "CNES usage: allumage du moteur / durée d'allumage; poussée for the thrust phase",
     "term:burn:es": "ESA/NASA español: encendido del motor",
     "term:burn:it": "ASI/ESA Italia: accensione del motore",
-    "term:burn:nl": "ESA NL / Dutch usage (ontsteking, motorontsteking); \"burn\" also used by ESA NL",
+    "term:burn:nl": "ESA NL (ExoMars TGO: \"motoren … branden\"); nl.wikipedia Sojoez 29 (\"ontstak zijn motoren\"); noun \"brand\" = fire, not accepted (second opinion 2026-10-31)",
     "term:burn:pt-BR": "INPE/AEB, Brazilian usage: queima do motor",
     "term:stage:ru": "Roscosmos / GOST term",
     "term:stage:ja": "JAXA usage (第1段, 第2段)",
@@ -204,10 +204,10 @@
     "term:booster:sr-Cyrl": "Serbian rocketry usage (ракетни појачивач)",
     "term:booster:de": "DLR/ESA usage (Booster)",
     "term:booster:fr": "FranceTerme: propulseur d'appoint (booster); CNES texts also write booster",
-    "term:booster:es": "Spanish usage: propulsores laterales / aceleradores (Ariane 5, SLS); site mostly 'propulsor' (52)",
+    "term:booster:es": "ESA España (P120C \"propulsores\"); \"propulsor de apoyo\" unattested, 0 site uses (second opinion 2026-10-31)",
     "term:booster:it": "ASI/ESA Italia: booster (loan standard)",
     "term:booster:nl": "ESA NL / Dutch usage; site uniform (70/72)",
-    "term:booster:pt-BR": "Brazilian usage (VLS/AEB: propulsores; press: booster); site mostly 'propulsor' (48), 'booster' (13)",
+    "term:booster:pt-BR": "pt.wikipedia \"propulsores auxiliares/laterais\"; ESA Portugal \"impulsionador\"; \"propulsor auxiliar\" 0 site uses (second opinion 2026-10-31)",
     "term:specific impulse:ru": "GOST / textbook term",
     "term:specific impulse:ja": "JAXA/textbook term",
     "term:specific impulse:zh-CN": "standard term",
@@ -224,28 +224,28 @@
     "term:flyby:ru": "Roscosmos / IKI RAN usage (пролёт мимо планеты)",
     "term:flyby:ja": "JAXA usage (フライバイ観測)",
     "term:flyby:zh-CN": "CNSA mission reports (飞掠); 飞掠 114 of 165 on site",
-    "term:flyby:ko": "Korean usage; site uses 플라이바이 55, 근접 통과 37, bare 통과 61",
+    "term:flyby:ko": "ko.wikipedia 플라이바이 (우주 비행); KASI 근접비행 (second opinion 2026-10-31)",
     "term:flyby:hi": "ISRO Hindi Chandrayaan-3 Fly-by page: 'फ्लाईबाई'",
-    "term:flyby:ar": "no agency page found in search budget; site-majority 'المرور القريب' 33x vs تحليق قريب 4x",
+    "term:flyby:ar": "ar.wikipedia \"تحليق بالقرب من الكواكب\"; MBRSC Emirates Mars Mission pages; site تحليق 169 vs المرور القريب 33 (second opinion 2026-10-31)",
     "term:flyby:sr-Cyrl": "Serbian astronomy usage (прелет поред планете); site uniform (153/166)",
     "term:flyby:de": "DLR/ESA German usage (Vorbeiflug)",
     "term:flyby:fr": "CNES: survol",
     "term:flyby:es": "ESA/NASA español: sobrevuelo",
     "term:flyby:it": "ASI/INAF: sorvolo",
-    "term:flyby:nl": "ESA NL pages use \"flyby\" (https://www.esa.int/Space_in_Member_States/Belgium_-_Nederlands/ESA_s_meest_riskante_flyby); site prefers voorbijvlucht, which is also correct",
+    "term:flyby:nl": "ESA NL uses \"flyby\" (Juice maan-aarde flyby) and \"vliegt langs Venus\" (BepiColombo); voorbijvlucht also correct (second opinion 2026-10-31)",
     "term:flyby:pt-BR": "AEB/INPE: sobrevoo",
     "term:orbit insertion:ru": "Roscosmos / IKI usage (выход на орбиту Марса)",
     "term:orbit insertion:ja": "JAXA usage (金星周回軌道投入)",
-    "term:orbit insertion:zh-CN": "CNSA reports (火星捕获, 近火制动); 入轨 is the launch-to-orbit term",
+    "term:orbit insertion:zh-CN": "CNSA Tianwen-1 / Chang'e-6 coverage (近火制动, 进入环月轨道, 火星捕获); 轨道插入 unverified (second opinion 2026-10-31)",
     "term:orbit insertion:ko": "KARI usage (달 임무궤도 진입기동)",
     "term:orbit insertion:hi": "site-majority form; ISRO Hindi Mangalyaan pages use 'कक्षा में प्रवेश' wording",
     "term:orbit insertion:ar": "MBRSC Hope probe coverage 'الدخول في مدار المريخ'; site: الدخول إلى/في مدار 36x, الإدخال في المدار 14x; الحقن is used for TLI/TMI injection only",
     "term:orbit insertion:sr-Cyrl": "Serbian astronautics usage; site убацив 45, улазак у орбит 22",
     "term:orbit insertion:de": "DLR/ESA German usage (Einschwenken in die Umlaufbahn / Orbiteinschuss); site mixes Einschwenk 20, Einschuss 13, Insertion 3",
     "term:orbit insertion:fr": "CNES: insertion en orbite (mise en orbite = launch into orbit)",
-    "term:orbit insertion:es": "ESA/NASA español: inserción orbital / inserción en órbita",
+    "term:orbit insertion:es": "ESA Spanish (style guide §4: inserción orbital); site inserción orbital 28, inserción en órbita 27 — both accepted",
     "term:orbit insertion:it": "ASI/INAF: inserimento in orbita",
-    "term:orbit insertion:nl": "not confirmed by a Dutch agency source (ESA NL page uses English \"orbit insertion\"); site uses insertie 33",
+    "term:orbit insertion:nl": "baaninsertie not attested; ESA NL \"in een baan gebracht\" (second opinion 2026-10-31) — provisional",
     "term:orbit insertion:pt-BR": "INPE/AEB: inserção em órbita / inserção orbital",
     "term:entry:ru": "Roscosmos / textbook term (вход в атмосферу)",
     "term:entry:ja": "JAXA usage (突入・降下・着陸; 大気圏再突入)",
@@ -9592,7 +9592,15 @@
         "fr": ["orbit"],
         "es": ["órbit", "orbit"],
         "it": ["orbit"],
-        "nl": ["\\bbaan", "omloopbaan", "banen\\b", "\\borbit", "orbit", "omloopba\\p{L}*"],
+        "nl": [
+          "\\bbaan",
+          "omloopbaan",
+          "banen\\b",
+          "\\borbit",
+          "orbit",
+          "omloopba\\p{L}*",
+          "(?<!\\p{L})(?:aarde?|maan|mars|venus|zonne|zons|halo|doel|overdrachts|parkeer|transfer|kepler|kerkhof|wetenschaps|werk|eind|polaire|ellips)ba(?:an|nen)\\b"
+        ],
         "pt-BR": ["órbit", "orbit"]
       },
       "_confidence": {
@@ -9678,7 +9686,7 @@
         "zh-CN": ["倾角"],
         "ko": ["경사각", "궤도경사"],
         "hi": ["झुकाव", "कक्षीय झुकाव", "नति"],
-        "ar": ["ميل", "الميل"],
+        "ar": ["ميل", "الميل", "ميول"],
         "sr-Cyrl": ["инклинациј", "нагиб", "нагиб орбите", "нагиб путање"],
         "de": ["Inklination", "Bahnneigung", "Inklinati\\p{L}*", "Bahnneigu\\p{L}*"],
         "fr": ["inclinaison", "inclinais\\p{L}*"],
@@ -9797,7 +9805,7 @@
         "zh-CN": ["对接"],
         "ko": ["도킹"],
         "hi": ["डॉकिंग", "डॉक", "संयोजन"],
-        "ar": ["التحام", "الالتحام", "الإرساء"],
+        "ar": ["التحام", "الالتحام", "الإرساء", "إرساء"],
         "sr-Cyrl": [
           "спајањ",
           "спојит",
@@ -9805,7 +9813,8 @@
           "пристајањ",
           "пристаја",
           "пристајање",
-          "прикључн\\p{L}* прстен"
+          "прикључн\\p{L}* прстен",
+          "прикључн\\p{L}* адаптер"
         ],
         "de": [
           "[Aa]ndock",
@@ -9880,14 +9889,19 @@
         ],
         "ja": ["スイングバイ", "重力アシスト"],
         "zh-CN": ["引力辅助", "借力飞行", "行星借力", "引力弹弓"],
-        "ko": ["중력 ?도움", "스윙바이"],
+        "ko": ["중력 ?도움", "스윙바이", "중력 ?보조"],
         "hi": [
           "गुरुत्व[- ]सहायता",
           "गुरुत्वाकर्षण[- ]सहायता",
           "गुरुत्वाकर्षण सहायता",
           "गुरुत्वीय सहायता"
         ],
-        "ar": ["مساعدة (ال)?جاذبية", "المساعدة الجاذبية", "مناورة مساعدة الجاذبية"],
+        "ar": [
+          "مساعدة (ال)?جاذبية",
+          "المساعدة الجاذبية",
+          "مناورة مساعدة الجاذبية",
+          "مساعدات (ال)?جاذبية"
+        ],
         "sr-Cyrl": [
           "гравитацион\\p{L}* маневар",
           "гравитацион\\p{L}* праћк",
@@ -9941,14 +9955,15 @@
         "pt-BR": [
           "assist[êe]ncia gravitacional",
           "estilingue gravitacional",
-          "estiling\\p{L}* gravitacion\\p{L}*"
+          "estiling\\p{L}* gravitacion\\p{L}*",
+          "assist\\p{L}* gravitacion\\p{L}*"
         ]
       },
       "_confidence": {
         "ru": "high",
         "ja": "medium",
         "zh-CN": "medium",
-        "ko": "low",
+        "ko": "medium",
         "hi": "low",
         "ar": "medium",
         "sr-Cyrl": "high",
@@ -10076,7 +10091,7 @@
     "apogee": {
       "_sense": "highest point of an Earth orbit",
       "_match": {
-        "ru": ["апогей"],
+        "ru": ["апогей", "апоге", "апоцентр"],
         "ja": ["遠地点"],
         "zh-CN": ["远地点"],
         "ko": ["원지점"],
@@ -10122,7 +10137,7 @@
     "perigee": {
       "_sense": "lowest point of an Earth orbit",
       "_match": {
-        "ru": ["перигей", "перицентр"],
+        "ru": ["перигей", "перицентр", "периге"],
         "ja": ["近地点"],
         "zh-CN": ["近地点"],
         "ko": ["근지점"],
@@ -10178,14 +10193,27 @@
           "торможени",
           "тормозной импульс",
           "корректирующий импульс",
-          "работа двигателя"
+          "работа двигателя",
+          "работ\\p{L}* двигател",
+          "включа\\p{L}* двигател"
         ],
         "ja": ["噴射", "燃焼", "点火"],
         "zh-CN": ["点火", "变轨", "制动", "发动机工作"],
         "ko": ["연소", "분사", "점화", "기동"],
         "hi": ["दहन", "प्रज्वलन", "प्रज्वलित", "इंजन प्रज्वलन"],
-        "ar": ["إشعال", "أشعل", "اشتعال", "تشغيل المحرك"],
-        "sr-Cyrl": ["паљењ", "палит", "запал", "упал", "упали", "паљење", "маневар", "рад мотора"],
+        "ar": ["إشعال", "أشعل", "اشتعال", "تشغيل المحرك", "[أيت]شعل"],
+        "sr-Cyrl": [
+          "паљењ",
+          "палит",
+          "запал",
+          "упал",
+          "упали",
+          "паљење",
+          "маневар",
+          "рад мотора",
+          "пал\\p{L}* мотор",
+          "рад\\p{L}* мотор"
+        ],
         "de": [
           "Zündung",
           "zünd",
@@ -10247,7 +10275,10 @@
           "brandperio\\p{L}*",
           "brandti\\p{L}*",
           "motorontsteki\\p{L}*",
-          "manoeuv\\p{L}*"
+          "manoeuv\\p{L}*",
+          "brandt\\b",
+          "brandde\\p{L}*",
+          "(?<!\\p{L})(?:rem|motor|landings|vertrek|aankomst|correctie|stuw)?sto(?:ot|ten)\\b"
         ],
         "pt-BR": [
           "queima",
@@ -10266,7 +10297,7 @@
         "ru": "medium",
         "ja": "medium",
         "zh-CN": "medium",
-        "ko": "low",
+        "ko": "medium",
         "hi": "medium",
         "ar": "medium",
         "sr-Cyrl": "medium",
@@ -10298,7 +10329,11 @@
         "ru": ["ступен", "первая ступень", "верхняя ступень", "разгонный блок"],
         "ja": ["段", "第1段", "上段"],
         "zh-CN": ["级", "一级", "二级", "上面级"],
-        "ko": ["[0-9一二三]?단(?![가-힣])", "상단"],
+        "ko": [
+          "[0-9一二三]?단(?![가-힣])",
+          "상단",
+          "(?:^|[\\s0-9(])단(?:에서는|에서|에는|에|은|는|이|을|를|의|도|과|으로|만)?(?![가-힣])"
+        ],
         "hi": ["चरण"],
         "ar": ["مرحلة", "مراحل"],
         "sr-Cyrl": ["степен", "први степен", "горњи степен"],
@@ -10314,7 +10349,14 @@
         "fr": ["étage"],
         "es": ["etapa", "escalón", "escal\\p{L}*"],
         "it": ["stadio", "stadi", "stad\\p{L}*"],
-        "nl": ["\\btrap", "trappen", "raketfase", "trapp\\p{L}*", "raketfa\\p{L}*"],
+        "nl": [
+          "\\btrap",
+          "trappen",
+          "raketfase",
+          "trapp\\p{L}*",
+          "raketfa\\p{L}*",
+          "(?<!\\p{L})(?:afdalings|daal|boven|opstijg|kern|kick|onder|raket|vastestof|vastebrandstof|kruis)trap(?:pen)?\\b"
+        ],
         "pt-BR": ["estágio", "estág\\p{L}*"]
       },
       "_confidence": {
@@ -10349,12 +10391,12 @@
     "propellant": {
       "_sense": "rocket propellant (fuel + oxidizer)",
       "_match": {
-        "ru": ["топлив", "компонент", "ракетное топливо", "компоненты топлива"],
+        "ru": ["топлив", "компонент", "ракетное топливо", "компоненты топлива", "рабоч\\p{L}* тел"],
         "ja": ["推進剤", "推進薬"],
         "zh-CN": ["推进剂"],
         "ko": ["추진제"],
         "hi": ["प्रणोदक", "नोदक"],
-        "ar": ["وقود دافع", "الوقود الدافع", "مادة دافعة"],
+        "ar": ["وقود دافع", "الوقود الدافع", "مادة دافعة", "وقود\\p{L}* (ال)?دافع"],
         "sr-Cyrl": ["погонск", "гориво", "погонска компонента"],
         "de": [
           "Treibstoff",
@@ -10409,7 +10451,13 @@
     "payload": {
       "_sense": "the cargo a rocket carries",
       "_match": {
-        "ru": ["полезн\\p{L}* нагрузк", "грузоподъёмн", "полезный груз", "грузоподъёмность"],
+        "ru": [
+          "полезн\\p{L}* нагрузк",
+          "грузоподъёмн",
+          "полезный груз",
+          "грузоподъёмность",
+          "полезн\\p{L}* нагруз"
+        ],
         "ja": ["ペイロード", "搭載物"],
         "zh-CN": ["有效载荷", "载荷"],
         "ko": ["탑재체", "탑재물", "페이로드"],
@@ -10420,7 +10468,8 @@
         "fr": [
           "charge utile",
           "char\\p{L}* utile",
-          "carg\\p{L}* utiles|caric\\p{L}* utiles|charges? utiles"
+          "carg\\p{L}* utiles|caric\\p{L}* utiles|charges? utiles",
+          "charges?-utiles?"
         ],
         "es": ["carga útil", "carg\\p{L}* útiles|caric\\p{L}* útiles|charges? útiles"],
         "it": [
@@ -10435,7 +10484,11 @@
           "nutti\\p{L}* ladi\\p{L}*",
           "paylo\\p{L}*"
         ],
-        "pt-BR": ["carga útil", "carg\\p{L}* úteis|caric\\p{L}* úteis|charges? úteis"]
+        "pt-BR": [
+          "carga útil",
+          "carg\\p{L}* úteis|caric\\p{L}* úteis|charges? úteis",
+          "cargas?-úte?is"
+        ]
       },
       "_confidence": {
         "ru": "high",
@@ -10474,7 +10527,7 @@
         "zh-CN": ["推力"],
         "ko": ["추력"],
         "hi": ["प्रणोद(?!क|न)", "थ्रस्ट"],
-        "ar": ["قوة الدفع", "الدفع"],
+        "ar": ["قوة الدفع", "الدفع", "دفع"],
         "sr-Cyrl": ["потис", "сила потиска"],
         "de": ["\\bSchub", "schub", "Schubkraft", "Schubkra\\p{L}*"],
         "fr": ["poussée", "pouss\\p{L}*"],
@@ -10565,7 +10618,8 @@
           "acelerad\\p{L}*",
           "boost\\p{L}*",
           "propuls\\p{L}* later\\p{L}*",
-          "propuls\\p{L}* sóli\\p{L}*"
+          "propuls\\p{L}* sóli\\p{L}*",
+          "cohete acelerador"
         ],
         "it": [
           "booster",
@@ -10588,7 +10642,10 @@
           "boost\\p{L}*",
           "impuls\\p{L}*",
           "propuls\\p{L}* later\\p{L}*",
-          "propuls\\p{L}* sóli\\p{L}*"
+          "propuls\\p{L}* sóli\\p{L}*",
+          "impulsionador\\p{L}*",
+          "foguete lateral",
+          "acelerad\\p{L}*"
         ]
       },
       "_confidence": {
@@ -10601,10 +10658,10 @@
         "sr-Cyrl": "medium",
         "de": "high",
         "fr": "medium",
-        "es": "low",
+        "es": "medium",
         "it": "medium",
         "nl": "high",
-        "pt-BR": "low"
+        "pt-BR": "medium"
       },
       "ru": "ускоритель",
       "ja": "ブースター",
@@ -10615,10 +10672,10 @@
       "sr-Cyrl": "ракетни појачивач",
       "de": "Booster",
       "fr": "propulseur d'appoint",
-      "es": "propulsor de apoyo",
+      "es": "propulsor",
       "it": "booster",
       "nl": "booster",
-      "pt-BR": "propulsor auxiliar"
+      "pt-BR": "propulsor"
     },
     "specific impulse": {
       "_sense": "Isp, engine efficiency",
@@ -10628,7 +10685,7 @@
         "zh-CN": ["比冲"],
         "ko": ["비추력", "Isp"],
         "hi": ["विशिष्ट आवेग"],
-        "ar": ["الدفع النوعي", "النبضة النوعية"],
+        "ar": ["الدفع النوعي", "النبضة النوعية", "دفع\\p{L}* نوعي"],
         "sr-Cyrl": ["специфичн\\p{L}* импулс"],
         "de": ["[Ss]pezifisch\\w* Impuls"],
         "fr": ["impulsion spécifique", "Isp", "impulsi\\p{L}* spécifiq\\p{L}*"],
@@ -10673,9 +10730,17 @@
         "ru": ["пролёт", "пролет", "облёт", "облет", "пролёт мимо"],
         "ja": ["フライバイ", "接近通過"],
         "zh-CN": ["飞掠", "飞越"],
-        "ko": ["플라이바이", "근접 통과"],
+        "ko": ["플라이바이", "근접 통과", "근접 ?비행", "근접 ?통과"],
         "hi": ["फ़?्?लाईबाई", "फ़?्?लाइबाई", "फ्लाई-बाई"],
-        "ar": ["مرور (ال)?قريب", "تحليق قريب", "التحليق"],
+        "ar": [
+          "مرور (ال)?قريب",
+          "تحليق قريب",
+          "التحليق",
+          "تحليق",
+          "تحل(?:ي)?ق\\p{L}* قريب",
+          "مرور بال",
+          "مرور\\S*(?: \\S+){0,5} (?:قرب|بالقرب|بمحاذاة)"
+        ],
         "sr-Cyrl": ["прелет", "прелете", "пролаз"],
         "de": ["Vorbeiflug", "Vorbeiflüg", "Flyby", "Vorbeifl\\p{L}*"],
         "fr": ["survol", "surv\\p{L}*"],
@@ -10688,7 +10753,11 @@
           "scheervlucht",
           "fly-\\p{L}*",
           "voorbijvluc\\p{L}*",
-          "scheervluc\\p{L}*"
+          "scheervluc\\p{L}*",
+          "langs \\p{L}+(?: \\p{L}+)? (?:vlieg|vloog|vlogen)",
+          "(?:vlieg|vloog|vlogen)\\p{L}* langs",
+          "voorbij ?vlieg\\p{L}*",
+          "vloog \\p{L}+ voorbij"
         ],
         "pt-BR": ["sobrevoo", "sobrevoar", "sobrevôo", "sobrev\\p{L}*", "sobrevo\\p{L}*"]
       },
@@ -10696,15 +10765,15 @@
         "ru": "high",
         "ja": "high",
         "zh-CN": "medium",
-        "ko": "low",
+        "ko": "medium",
         "hi": "high",
-        "ar": "low",
+        "ar": "medium",
         "sr-Cyrl": "high",
         "de": "high",
         "fr": "high",
         "es": "high",
         "it": "high",
-        "nl": "low",
+        "nl": "medium",
         "pt-BR": "high"
       },
       "ru": "пролёт",
@@ -10712,7 +10781,7 @@
       "zh-CN": "飞掠",
       "ko": "플라이바이",
       "hi": "फ्लाईबाई",
-      "ar": "المرور القريب",
+      "ar": "التحليق القريب",
       "sr-Cyrl": "прелет",
       "de": "Vorbeiflug",
       "fr": "survol",
@@ -10731,16 +10800,18 @@
           "захват\\p{L}* орбит",
           "выведени\\p{L}* на орбит",
           "перевод на орбиту",
-          "торможение для выхода на орбиту"
+          "торможение для выхода на орбиту",
+          "выход\\p{L}* \\p{L}+ на орбит"
         ],
         "ja": ["軌道投入", "周回軌道投入"],
-        "zh-CN": ["捕获", "入轨", "轨道插入", "进入轨道"],
+        "zh-CN": ["捕获", "入轨", "轨道插入", "进入轨道", "制动", "进入环\\p{L}轨道"],
         "ko": ["궤도 ?진입", "임무궤도 진입기동"],
         "hi": ["कक्षा[- ]प्रवेश", "कक्षा में प्रवेश", "कक्षा-निवेशन", "कक्षा निवेशन"],
         "ar": [
           "الدخول (إلى|في) (ال)?مدار",
           "إدخال(ها)? (في|إلى) (ال)?مدار",
-          "الإدخال في (ال)?مدار"
+          "الإدخال في (ال)?مدار",
+          "بلوغ (ال)?مدار"
         ],
         "sr-Cyrl": [
           "убацив",
@@ -10788,7 +10859,10 @@
           "inbreng\\p{L}*",
           "orbit-insert\\p{L}*",
           "inbreng\\p{L}* in een baan",
-          "baaninbrengi\\p{L}*"
+          "baaninbrengi\\p{L}*",
+          "in een baan (?:om \\p{L}+ )?(?:te )?(?:brengen|gebracht)",
+          "ingaan van de \\p{L}*baan",
+          "in een baan (?:te )?komen"
         ],
         "pt-BR": [
           "inserção (em órbita|orbital)",
@@ -10813,14 +10887,14 @@
       },
       "ru": "выход на орбиту",
       "ja": "軌道投入",
-      "zh-CN": "轨道捕获",
+      "zh-CN": "制动捕获",
       "ko": "궤도 진입",
       "hi": "कक्षा-प्रवेश",
       "ar": "الدخول في المدار",
       "sr-Cyrl": "убацивање у орбиту",
       "de": "Einschwenken in die Umlaufbahn",
       "fr": "insertion en orbite",
-      "es": "inserción en órbita",
+      "es": "inserción orbital",
       "it": "inserimento in orbita",
       "nl": "baaninsertie",
       "pt-BR": "inserção orbital"
@@ -10840,7 +10914,7 @@
         "zh-CN": ["进入", "再入", "进入大气层"],
         "ko": ["진입", "재진입"],
         "hi": ["प्रवेश", "वायुमंडलीय प्रवेश"],
-        "ar": ["الدخول", "الدخول الجوي"],
+        "ar": ["الدخول", "الدخول الجوي", "العودة إلى الغلاف الجوي", "دخول"],
         "sr-Cyrl": [
           "улазак у атмосфер",
           "улаз\\p{L}* у атмосфер",
@@ -10910,11 +10984,11 @@
     "descent": {
       "_sense": "descent to a surface",
       "_match": {
-        "ru": ["спуск", "снижени", "снижение", "спускаемый аппарат"],
+        "ru": ["спуск", "снижени", "снижение", "спускаемый аппарат", "посадочн"],
         "ja": ["降下", "動力降下"],
         "zh-CN": ["下降", "动力下降"],
         "ko": ["하강", "동력하강", "강하"],
-        "hi": ["अवरोहण", "उतरना"],
+        "hi": ["अवरोहण", "उतरना", "उतर"],
         "ar": ["هبوط", "الهبوط", "النزول"],
         "sr-Cyrl": ["спуштањ", "спуст", "спусн", "слетање"],
         "de": [

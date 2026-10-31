@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.1",
+    "old": "O problema é um teto físico inamovível. A potência que você pode extrair depende de quanto calor as paredes podem transferir ao combustível, e isso aumenta com a *área de superfície* da câmara e bocal. Mas o empuxo — e portanto o fluxo de propelente que as bombas devem movimentar — aumenta com o *volume* da câmara. À medida que você faz o motor ficar maior, o volume cresce mais rápido que a área de superfície, então em algum ponto as paredes simplesmente não conseguem aquecer gás suficiente para impulsionar bombas grandes o bastante para o fluxo. Na prática, um expansor fechado não ultrapassa alguns milhares de quilonewtons de empuxo. Isso o torna perfeito para estágios superiores e impossível para um grande primeiro estágio.",
+    "new": "O problema é um teto físico inamovível. A potência que você pode extrair depende de quanto calor as paredes podem transferir ao combustível, e isso aumenta com a *área de superfície* da câmara e bocal. Mas o empuxo — e portanto o fluxo de propelente que as bombas devem movimentar — aumenta com o *volume* da câmara. À medida que você faz o motor ficar maior, o volume cresce mais rápido que a área de superfície, então em algum ponto as paredes simplesmente não conseguem aquecer gás suficiente para impulsionar bombas grandes o bastante para o fluxo. Na prática, um expansor fechado não ultrapassa algumas centenas de quilonewtons de empuxo. Isso o torna perfeito para estágios superiores e impossível para um grande primeiro estágio."
+  }
+]

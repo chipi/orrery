@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "intro_sentence",
+    "old": "On intègre les accéléromètres pour obtenir la vitesse, puis on intègre à nouveau pour obtenir la position : la méthode tient quelques heures, dérive nettement au bout de plusieurs jours, et c'est exactement pourquoi chaque croisière a besoin de recalages périodiques depuis le sol.",
+    "new": "Intégrer les accéléromètres donne la vitesse, intégrer encore donne la position : cela tient des heures, dérive nettement en quelques jours, d'où les recalages périodiques depuis le sol en croisière."
+  }
+]

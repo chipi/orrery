@@ -163,6 +163,10 @@ already in the text.
 - **Glossary** — `scripts/i18n-tools/native-terms.json`: native form per locale for
   each term or person, by class (`body` first; people, features, stars, abbreviations
   to follow). It is the single answer to "how is X written in language Y".
+  Its `term` class holds technical space terms (burn, flyby, orbit insertion …): one
+  binding form per locale with the accepted variants as regex stems, a confidence
+  and a source. `term-drift.mjs` lists every field that does not use them, and
+  reviewed exceptions sit in `term-keeps.json`. Runbook: the `term-consistency` skill.
 - **Checker** — `problems(locale, en, out)` in `scripts/lib/translate-quality.mjs`
   (also `NAME_POLICY`, appended to every model prompt). Every writer runs it on each
   new string; an edit that adds a failure is refused. `scripts/i18n-guard-replay.mjs`

@@ -3,11 +3,14 @@
 // that the same field in each locale uses the binding form or an accepted variant
 // (`_match[loc]`, regex stems that cover inflection). Read-only.
 //   node scripts/i18n-tools/term-drift.mjs [--terms=burn,orbit] [--locales=fr,ru]
-//        [--trees=science,essays,missions,fleet,programs] [--misses=<file.json>]
-// Prints a term × locale table of "fields using the binding form / aligned fields".
-// --misses writes every field that does not, for fixing (i18n-fix-run / hand edits).
+//        [--trees=science,essays,missions,fleet,programs] [--misses=<file.json>] [--gate]
+// Prints a term × locale table: share of aligned fields that use the binding form or are a
+// reviewed keep (term-keeps.json), and the count of unreviewed misses.
+// --misses writes every unreviewed miss (stale keeps included, marked), for fixing.
+// --gate exits 1 when any unreviewed miss is left.
 import fs from 'node:fs';
 import path from 'node:path';
+import { enPattern, keepKey, locPattern, textHash } from './term-match.mjs';
 
 const arg = (name, dflt) => {
   const a = process.argv.find((x) => x.startsWith(`--${name}=`));
@@ -36,6 +39,9 @@ const terms = arg('terms', Object.keys(TERMS).join(','))
 const locales = arg('locales', LOCALES.join(',')).split(',');
 const trees = arg('trees', 'science,essays,missions,fleet,programs').split(',');
 const missesOut = arg('misses', null);
+const gate = process.argv.includes('--gate');
+const KEEPS_FILE = 'scripts/i18n-tools/term-keeps.json';
+const KEEPS = fs.existsSync(KEEPS_FILE) ? JSON.parse(fs.readFileSync(KEEPS_FILE, 'utf8')) : {};
 
 const ROOT = 'i18n-src';
 const walk = (d) =>
@@ -73,17 +79,6 @@ function locLeaves(loc, rel) {
   return locCache.get(k);
 }
 
-export function enPattern(term, entry) {
-  if (entry._en) return new RegExp(entry._en, 'i');
-  const esc = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return new RegExp(`\\b${esc}(?:s|es|ed|ing)?\\b`, 'i');
-}
-export function locPattern(entry, loc) {
-  const stems = entry._match?.[loc] ?? (entry[loc] ? [entry[loc]] : []);
-  if (!stems.length) return null;
-  return new RegExp(stems.map((s) => `(?:${s})`).join('|'), 'iu');
-}
-
 const misses = [];
 const table = [];
 for (const term of terms) {
@@ -97,7 +92,8 @@ for (const term of terms) {
       continue;
     }
     let aligned = 0,
-      ok = 0;
+      ok = 0,
+      open = 0;
     for (const [rel, enLeaves] of EN) {
       const ll = locLeaves(loc, rel);
       if (!ll) continue;
@@ -105,16 +101,26 @@ for (const term of terms) {
         if (!enRe.test(en) || !ll.has(key)) continue;
         aligned++;
         const tr = ll.get(key);
-        if (re.test(tr)) ok++;
-        else misses.push({ term, loc, where: `${rel} :: ${key}`, en, tr });
+        const where = `${rel} :: ${key}`;
+        const keep = KEEPS[keepKey(term, loc, where)];
+        if (re.test(tr) || keep?.tr === textHash(tr)) ok++;
+        else {
+          open++;
+          misses.push({ term, loc, where, en, tr, ...(keep ? { staleKeep: keep.why } : {}) });
+        }
       }
     }
-    row[loc] = aligned ? `${Math.round((100 * ok) / aligned)}% (${ok}/${aligned})` : 'n/a';
+    row[loc] = aligned ? `${Math.round((100 * ok) / aligned)}%${open ? ` ·${open}` : ''}` : 'n/a';
   }
   table.push(row);
 }
 console.table(table);
 if (missesOut) {
   fs.writeFileSync(missesOut, JSON.stringify(misses, null, 1));
-  console.log(`${misses.length} fields without the binding form → ${missesOut}`);
+  console.log(`${misses.length} unreviewed misses → ${missesOut}`);
 }
+const stale = misses.filter((m) => m.staleKeep).length;
+console.log(
+  `unreviewed misses: ${misses.length}${stale ? ` (${stale} keeps went stale: the text changed)` : ''}`,
+);
+if (gate && misses.length) process.exit(1);

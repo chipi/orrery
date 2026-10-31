@@ -160,6 +160,8 @@ NASA, ESA, JAXA, ISRO, CNSA, ROSCOSMOS, UAESA, AEB, KARI, CSA, UKSA, ASI, DLR, C
 
 The English column is the source. The accepted-convention column for your target language is the **binding** translation. Cite source where given.
 
+For the technical terms in the glossary's `term` class (`scripts/i18n-tools/native-terms.json`: orbit, trajectory, apogee, perigee, burn, flyby, orbit insertion, entry, descent and the rest of the pilot's 20), the binding form for all 13 locales lives there. `term-drift.mjs` checks it. A row here that covers the same term must agree with it (checked for es on 2026-10-31: sobrevuelo, inserción orbital, apogeo, perigeo).
+
 | English | `es` (Spanish) | `fr` | `de` | `pt-BR` | `it` | `sr-Cyrl` | Source |
 |---------|----------------|------|------|---------|------|-----------|--------|
 | aphelion | afelio | — | — | — | — | — | RAE |

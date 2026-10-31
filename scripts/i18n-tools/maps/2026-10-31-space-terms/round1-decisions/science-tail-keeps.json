@@ -1,0 +1,58 @@
+[
+  {
+    "term": "orbit",
+    "loc": "ru",
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.1",
+    "why": "verb: обращался вокруг"
+  },
+  {
+    "term": "orbit",
+    "loc": "pt-BR",
+    "rel": "science/planets/_intro.json",
+    "at": "paragraphs.0",
+    "why": "\"from orbit\" as do espaço, natural"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.0",
+    "why": "Goddard's first liquid-fuel engine run, not a manoeuvre"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.1",
+    "why": "Goddard's first liquid-fuel engine run, not a manoeuvre"
+  },
+  {
+    "term": "burn",
+    "loc": "fr",
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.0",
+    "why": "rough burning = combustion"
+  },
+  {
+    "term": "payload",
+    "loc": "sr-Cyrl",
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.0",
+    "why": "носивост = payload capacity"
+  },
+  {
+    "term": "entry",
+    "loc": "sr-Cyrl",
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "intro_sentence",
+    "why": "повратак in a list of flight phases"
+  },
+  {
+    "term": "entry",
+    "loc": "sr-Cyrl",
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "body_paragraphs.3",
+    "why": "re-entry engine = мотор за повратак"
+  }
+]

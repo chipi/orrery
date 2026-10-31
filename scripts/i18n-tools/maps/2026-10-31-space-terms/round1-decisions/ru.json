@@ -1,0 +1,969 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.diagram",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "change",
+    "find": "совершивший облёт двух внеземных тел",
+    "replace": "обращавшийся вокруг двух внеземных тел",
+    "why": "облёт is flyby, not orbit"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "change",
+    "find": "без маневра торможения на Марсе",
+    "replace": "без маневра выхода на орбиту Марса",
+    "why": "orbit-insertion burn lost its orbit"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.1",
+    "term": "inclination",
+    "decision": "change",
+    "find": "[наклон]",
+    "replace": "[наклонение]",
+    "why": "binding наклонение"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "body_paragraphs.1",
+    "term": "inclination",
+    "decision": "change",
+    "find": "неизвестный наклон орбиты",
+    "replace": "неизвестное наклонение орбиты",
+    "why": "binding наклонение"
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.1",
+    "term": "inclination",
+    "decision": "change",
+    "find": "Наклон не важен",
+    "replace": "Наклонение не важно",
+    "why": "binding наклонение"
+  },
+  {
+    "rel": "science/orbits/synodic-period.json",
+    "at": "narrative_101.2",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "точку встречи",
+    "replace": "точку рандеву",
+    "why": "binding term for rendezvous point"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "docking",
+    "decision": "change",
+    "find": "магнитный захват",
+    "replace": "стыковку с магнитным захватом",
+    "why": "docking was dropped"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "payload",
+    "decision": "change",
+    "find": "вторичной нагрузки",
+    "replace": "вторичной полезной нагрузки",
+    "why": "полезная нагрузка"
+  },
+  {
+    "rel": "science/space-stations/node-module.json",
+    "at": "body_paragraphs.4",
+    "term": "docking",
+    "decision": "change",
+    "find": "китайский Docking Mechanism",
+    "replace": "китайский механизм стыковки",
+    "why": "untranslated Docking"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "в одном из самых изысканных гравитационных туров",
+    "replace": "в одной из самых изысканных серий гравитационных манёвров",
+    "why": "assist chain as гравитационный манёвр"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "apogee",
+    "decision": "keep",
+    "why": "'в апогее' is the binding word inflected"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "perigee",
+    "decision": "keep",
+    "why": "'в перигее' is the binding word inflected (stem check misses the case ending)"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "Сожгите его, когда движетесь БЫСТРО",
+    "replace": "Включите двигатель, когда движетесь БЫСТРО",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "такое же сжигание на малой скорости",
+    "replace": "такое же включение двигателя на малой скорости",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "Таким образом, разгон на 1 км/с",
+    "replace": "Таким образом, импульс на 1 км/с",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "тот же разгон на 1 км/с",
+    "replace": "тот же импульс на 1 км/с",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.3",
+    "term": "perigee",
+    "decision": "keep",
+    "why": "'в перигее' is the binding word inflected (stem check misses the case ending)"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.4.paragraphs.1",
+    "term": "perigee",
+    "decision": "keep",
+    "why": "'в перигее' is the binding word inflected (stem check misses the case ending)"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.1",
+    "term": "perigee",
+    "decision": "keep",
+    "why": "'в перигее' is the binding word inflected (stem check misses the case ending)"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "perigee",
+    "decision": "keep",
+    "why": "'в перигее' is the binding word inflected (stem check misses the case ending)"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.0",
+    "term": "perigee",
+    "decision": "keep",
+    "why": "'в перигее' is the binding word inflected (stem check misses the case ending)"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.2",
+    "term": "perigee",
+    "decision": "keep",
+    "why": "'в перигее' is the binding word inflected (stem check misses the case ending)"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "производит разгон",
+    "replace": "включает двигатель",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning fuel = combustion"
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "первый жидкостный двигатель Goddard",
+    "replace": "первое включение жидкостного двигателя Goddard",
+    "why": "liquid burn = first firing, not an engine"
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "первый полёт на жидком топливе Goddard",
+    "replace": "первое включение жидкостного двигателя Goddard",
+    "why": "liquid burn = first firing"
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "body_paragraphs.3",
+    "term": "burn",
+    "decision": "change",
+    "find": "взлётному включению",
+    "replace": "взлётному включению двигателя",
+    "why": "binding включение двигателя"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "оставшееся сжигание",
+    "replace": "оставшуюся работу двигателя",
+    "why": "burn = engine firing, not combustion"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "По мере развития сжигания",
+    "replace": "По мере работы двигателя",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "где сжигание длительное",
+    "replace": "где работа двигателя длительная",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Между ожогами",
+    "replace": "Между включениями двигателя",
+    "why": "ожог = skin burn"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn is 'burns the crew up', not an engine firing"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "каждое включение",
+    "replace": "каждое включение двигателя",
+    "why": "binding включение двигателя"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "Сжечь перигей до ~200 км",
+    "replace": "Включением двигателя снизить перигей до ~200 км",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "change",
+    "find": "атмосферный возврат",
+    "replace": "вход в атмосферу",
+    "why": "binding вход в атмосферу"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.3",
+    "term": "burn",
+    "decision": "change",
+    "find": "небольших коррекций удержания",
+    "replace": "небольших импульсов удержания",
+    "why": "station-keeping burns"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "во время горения первой ступени",
+    "replace": "во время работы двигателей первой ступени",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "solid motor burns at a controlled rate = combustion"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn-rate profile = combustion"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "Сжигайте топливо глубоко в гравитационном колодце, и оно совершит",
+    "replace": "Включайте двигатель глубоко в гравитационном колодце, и топливо совершит",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "за одно включение",
+    "replace": "за одно включение двигателя",
+    "why": "binding включение двигателя"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "финальное точное включение",
+    "replace": "финальное точное включение двигателя",
+    "why": "binding включение двигателя"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "два включения",
+    "replace": "два включения двигателя",
+    "why": "binding включение двигателя"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'коррекций курса' is the correct rendering of mid-course burns (TCMs)"
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "body_paragraphs.1",
+    "term": "stage",
+    "decision": "change",
+    "find": "второй закон навигации",
+    "replace": "закон наведения второй ступени",
+    "why": "second-stage guidance law; ступень lost"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.3",
+    "term": "stage",
+    "decision": "keep",
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "narrative_101.1",
+    "term": "stage",
+    "decision": "keep",
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "narrative_101.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "diagram_caption",
+    "term": "stage",
+    "decision": "keep",
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "stage",
+    "decision": "keep",
+    "why": "'staging orbit', not a rocket stage"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "рабочее тело is the correct term for electric-propulsion propellant"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "рабочее тело is the correct term for electric-propulsion propellant"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.3",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "рабочее тело is the correct term for electric-propulsion propellant"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.0",
+    "term": "payload",
+    "decision": "change",
+    "find": "пилотируемый груз",
+    "replace": "пилотируемую полезную нагрузку",
+    "why": "полезная нагрузка"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "diagram_caption",
+    "term": "payload",
+    "decision": "change",
+    "find": "лёгкая нагрузка",
+    "replace": "лёгкая полезная нагрузка",
+    "why": "полезная нагрузка"
+  },
+  {
+    "rel": "science/mission-phases/eva.json",
+    "at": "diagram_caption",
+    "term": "payload",
+    "decision": "keep",
+    "why": "EVA worksite payload, not rocket cargo"
+  },
+  {
+    "rel": "science/orbits/orbit-regimes.json",
+    "at": "narrative_101.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "доставить груз сюда",
+    "replace": "доставить полезную нагрузку сюда",
+    "why": "полезная нагрузка"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "или грузов, нечувствительных",
+    "replace": "или полезных нагрузок, нечувствительных",
+    "why": "payloads vs cargo"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "вывела груз",
+    "replace": "вывела полезную нагрузку",
+    "why": "полезная нагрузка"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "вспомогательной нагрузки",
+    "replace": "попутной полезной нагрузки",
+    "why": "secondary payload"
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "narrative_101.1",
+    "term": "thrust",
+    "decision": "change",
+    "find": "боковое тяжение",
+    "replace": "боковую тягу",
+    "why": "тяга"
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.3",
+    "term": "booster",
+    "decision": "change",
+    "find": "потому Super Heavy несёт",
+    "replace": "потому ускоритель Super Heavy несёт",
+    "why": "booster dropped"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "гравитационный манёвр у планеты добавляет",
+    "replace": "пролёт планеты добавляет",
+    "why": "flyby = пролёт"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "периапсиде гравитационного манёвра",
+    "replace": "периапсиде пролёта",
+    "why": "flyby = пролёт"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Если бы запуск торможения на лунной орбите не сработал",
+    "replace": "Если бы торможение для выхода на лунную орбиту не сработало",
+    "why": "orbit insertion = выход на орбиту"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Вставка на орбиту",
+    "replace": "Выход на орбиту",
+    "why": "binding выход на орбиту"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "захват на орбиту Луны",
+    "replace": "выход на орбиту Луны",
+    "why": "binding выход на орбиту"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "— захват на орбиту.",
+    "replace": "— выход на орбиту.",
+    "why": "binding выход на орбиту"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Cassini на орбиту Сатурна была",
+    "replace": "Выход Cassini на орбиту Сатурна был",
+    "why": "garbled; binding выход на орбиту"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Торможение при вхождении в марсианскую орбиту",
+    "replace": "Выход на марсианскую орбиту",
+    "why": "binding выход на орбиту"
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "без входа на орбиту",
+    "replace": "без выхода на орбиту",
+    "why": "binding выход на орбиту"
+  },
+  {
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "body_paragraphs.0",
+    "term": "entry",
+    "decision": "change",
+    "find": "нештатное баллистическое торможение «Союз»; штатное составляет",
+    "replace": "нештатный баллистический вход «Союза» в атмосферу; штатный составляет",
+    "why": "re-entry = вход в атмосферу"
+  },
+  {
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "body_paragraphs.3",
+    "term": "entry",
+    "decision": "change",
+    "find": "отказ одного двигателя",
+    "replace": "отказ одного двигателя при входе в атмосферу",
+    "why": "re-entry engine; entry dropped"
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "keep",
+    "why": "'re-entry into 1 g' is vestibular, not atmospheric entry"
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.0",
+    "term": "entry",
+    "decision": "change",
+    "find": "начинает торможение в атмосфере",
+    "replace": "начинает вход в атмосферу",
+    "why": "binding вход в атмосферу"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "entry",
+    "decision": "change",
+    "find": "возвращение было гарантировано",
+    "replace": "вход в атмосферу при возвращении был гарантирован",
+    "why": "re-entry = вход в атмосферу"
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "narrative_101.2",
+    "term": "descent",
+    "decision": "keep",
+    "why": "'посадочный/посадочная' is the standard rendering of LM/skycrane descent engine/stage; other uses are not descent to a surface"
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "keep",
+    "why": "'посадочный/посадочная' is the standard rendering of LM/skycrane descent engine/stage; other uses are not descent to a surface"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.3",
+    "term": "descent",
+    "decision": "keep",
+    "why": "'посадочный двигатель' is the correct rendering of LM descent engine"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.1",
+    "term": "descent",
+    "decision": "keep",
+    "why": "'посадочной ступени' / lineage sense, not descent to a surface"
+  }
+]

@@ -1,0 +1,1053 @@
+[
+  {
+    "rel": "science/orbits/vis-viva.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Vitesse varie",
+    "replace": "La vitesse varie le long de l'orbite",
+    "why": "restores omitted \"along the orbit\""
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "change",
+    "find": "resté sur Terre",
+    "replace": "resté sur Terre ou en orbite",
+    "why": "restores omitted \"or in orbit\""
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "intro_sentence",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "qui les connecte.",
+    "replace": "qui les connecte — le problème central de toute trajectoire interplanétaire.",
+    "why": "restores omitted clause"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "rendered as adjectives inclinées/inclinée"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistances gravitationnelles is binding"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistances gravitationnelles is binding"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "sans carburant",
+    "replace": "sans propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "une approche planétaire",
+    "replace": "un survol planétaire",
+    "why": "binding survol"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "des manœuvres gravitationnelles",
+    "replace": "des assistances gravitationnelles",
+    "why": "binding"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistances gravitationnelles is binding"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural assistances gravitationnelles is binding"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "apogee",
+    "decision": "change",
+    "find": "à l'apastre",
+    "replace": "à l'apogée",
+    "why": "Earth orbit: apogée"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "perigee",
+    "decision": "change",
+    "find": "au périastre",
+    "replace": "au périgée",
+    "why": "Earth orbit: périgée"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "Effectuez le freinage quand",
+    "replace": "Effectuez la manœuvre quand",
+    "why": "engine firing, not braking (manœuvre accepted)"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "que le même freinage quand",
+    "replace": "que la même manœuvre quand",
+    "why": "engine firing, not braking"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "Donc un freinage de 1 km/s",
+    "replace": "Donc une manœuvre de 1 km/s",
+    "why": "engine firing, not braking"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "que le même freinage de 1 km/s",
+    "replace": "que la même manœuvre de 1 km/s",
+    "why": "engine firing, not braking"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "intro_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "marqueur de combustion",
+    "replace": "marqueur d'allumage",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning fuel = combustion sense"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "Deux combustions",
+    "replace": "Deux allumages",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "Deux combustions",
+    "replace": "Deux allumages",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "fire burning, not engine"
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "body_paragraphs.3",
+    "term": "burn",
+    "decision": "change",
+    "find": "dans le brûlage d'ascension",
+    "replace": "dans l'allumage d'ascension",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Entre les brûlures",
+    "replace": "Entre les allumages",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burns up = incinerates, not engine"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Une courte impulsion rétrograde",
+    "replace": "Une courte manœuvre rétrograde",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "avec une impulsion de seulement",
+    "replace": "avec une manœuvre de seulement",
+    "why": "engine burn of ~100 m/s"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "une impulsion rétrograde de désorbitation",
+    "replace": "un allumage rétrograde de désorbitation",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "une combustion de fusée directe",
+    "replace": "un allumage de fusée direct",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "Le freinage qui capture",
+    "replace": "La manœuvre de freinage qui capture",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Ce freinage —",
+    "replace": "Cette manœuvre de freinage —",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "long et puissant freinage du moteur",
+    "replace": "long et puissant allumage du moteur",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "a brûlé pendant 27 minutes",
+    "replace": "a fait fonctionner son moteur pendant 27 minutes",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "le freinage le plus long que",
+    "replace": "l'allumage le plus long que",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "Si le freinage échoue",
+    "replace": "Si l'allumage échoue",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "son freinage d'insertion",
+    "replace": "son allumage d'insertion",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Ce freinage est",
+    "replace": "Cette manœuvre de freinage est",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "Le freinage se produit",
+    "replace": "L'allumage se produit",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "rend le freinage le plus",
+    "replace": "rend l'allumage le plus",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "un freinage d'~96",
+    "replace": "un allumage d'~96",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "Si le freinage échoue",
+    "replace": "Si l'allumage échoue",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "son freinage MOI",
+    "replace": "son allumage MOI",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "une longue décélération",
+    "replace": "un long allumage de freinage",
+    "why": "braking burn"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "une décélération, puis",
+    "replace": "un allumage de freinage, puis",
+    "why": "braking burn"
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "entre les brûlures",
+    "replace": "entre les allumages",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "Petite combustion mi-croisière",
+    "replace": "Petit allumage mi-croisière",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stars glow red, not engine"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn out = exhaust fuel, not engine"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "nécessitent une désorbitation explicite",
+    "replace": "nécessitent des allumages de désorbitation explicites",
+    "why": "restores deorbit burns"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "Brûler le périgée à ~200 km",
+    "replace": "Abaisser le périgée à ~200 km par allumage",
+    "why": "engine firing, not combustion"
+  },
+  {
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "petites corrections de station-keeping",
+    "replace": "petits allumages de station-keeping",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "avec une impulsion d'insertion",
+    "replace": "avec un allumage d'insertion",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.3",
+    "term": "burn",
+    "decision": "change",
+    "find": "des tirs de station-keeping mineurs",
+    "replace": "des allumages de station-keeping mineurs",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "multi-brûlage",
+    "replace": "multi-allumage",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "le coup de départ depuis",
+    "replace": "l'allumage de départ depuis",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "le coup de départ minimum",
+    "replace": "l'allumage de départ minimum",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "brûler profondément dans",
+    "replace": "allumer le moteur profondément dans",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "cumulé sur chaque impulsion",
+    "replace": "cumulé sur chaque allumage",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Chaque impulsion de votre fusée",
+    "replace": "Chaque allumage de votre fusée",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Chaque impulsion moteur",
+    "replace": "Chaque allumage moteur",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion in main chamber"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "kerosene burns dirty = combustion"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "RP-1 name in English; text uses kérosène/carburant for fuel, no propellant sense"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "hydrogen burns to water = combustion"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "un carburant d'*étage supérieur*",
+    "replace": "un propergol d'*étage supérieur*",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "booster",
+    "decision": "change",
+    "find": "à l'échelle des propulseurs",
+    "replace": "à l'échelle des propulseurs d'appoint",
+    "why": "binding propulseur d'appoint"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion of propellant sliver"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion in gas generator"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "brûle au passage",
+    "replace": "allume son moteur au passage",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "les freinage en puits profond",
+    "replace": "les allumages en puits profond",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion of drive gas"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion in chamber"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "le burn rugueux",
+    "replace": "la combustion irrégulière",
+    "why": "untranslated \"burn\", combustion sense"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "injection noun denotes the burn"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "aucune correction de trajectoire en route requise",
+    "replace": "aucun allumage en cours de route requis",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "à deux impulsions",
+    "replace": "à deux allumages",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "une beaucoup plus grosse impulsion de freinage",
+    "replace": "un allumage de freinage beaucoup plus gros",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Deux impulsions moteur vous y amènent. Une au périhélie",
+    "replace": "Deux allumages du moteur vous y amènent. Un au périhélie",
+    "why": "engine firing + agreement"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Une à l'aphélie",
+    "replace": "Un à l'aphélie",
+    "why": "agreement with allumage"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "Brûlez plus fort",
+    "replace": "Poussez plus fort",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "l'impulsion d'entrée",
+    "replace": "l'allumage d'entrée",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "avez brûlé votre carburant pour sortir",
+    "replace": "avez effectué un allumage pour sortir",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "stage",
+    "decision": "keep",
+    "why": "\"staging orbit\", not a rocket stage"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "single-stage-to-orbit kept as English acronym phrase; no rocket stage meant separately"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "échange le carburant contre",
+    "replace": "échange du propergol contre",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "narrative_101.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "en brûlant du carburant",
+    "replace": "en brûlant du propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "narrative_101.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "gaspille du carburant",
+    "replace": "gaspille du propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/mission-phases/launch.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "que le carburant qui aurait",
+    "replace": "que le propergol qui aurait",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "un dépôt de carburant",
+    "replace": "un dépôt de propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "est à 90 % du carburant de propulsion",
+    "replace": "est à 90 % de propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "meilleur propulseur chimique",
+    "replace": "meilleur propergol chimique",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.0",
+    "term": "specific impulse",
+    "decision": "keep",
+    "why": "impulsions spécifiques plural present"
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "diagram_caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "propulseur chimique (kérosène/LOX)",
+    "replace": "propergol chimique (kérosène/LOX)",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "la fraction de carburant",
+    "replace": "la fraction de propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "presque entièrement du carburant",
+    "replace": "presque entièrement du propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "aucun propulsif",
+    "replace": "aucun propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "intro_sentence",
+    "term": "propellant",
+    "decision": "change",
+    "find": "n'emporte aucun carburant",
+    "replace": "n'emporte aucun propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ne nécessite aucun carburant",
+    "replace": "ne nécessite aucun propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "n'emporte pas de carburant",
+    "replace": "n'emporte pas de propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "pas de débit de carburant",
+    "replace": "pas de débit de propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "diagram_caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "indépendant du carburant",
+    "replace": "indépendant du propergol",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "Doubler le carburant ne",
+    "replace": "Doubler le propergol ne",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "diagram_caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "Doubler le carburant n'",
+    "replace": "Doubler le propergol n'",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "intro_sentence",
+    "term": "propellant",
+    "decision": "change",
+    "find": "le carburant est limité",
+    "replace": "le propergol est limité",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "coûte du carburant que",
+    "replace": "coûte du propergol que",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "où le carburant te",
+    "replace": "où le propergol te",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "diagram_caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "coûte un carburant prohibitif",
+    "replace": "coûte un propergol prohibitif",
+    "why": "binding propergol"
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "une charge de 1 tonne",
+    "replace": "une charge utile de 1 tonne",
+    "why": "binding charge utile"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "diagram_caption",
+    "term": "payload",
+    "decision": "change",
+    "find": "charge légère",
+    "replace": "charge utile légère",
+    "why": "binding charge utile"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "payload",
+    "decision": "keep",
+    "why": "\"Vega Secondary Payload Adapter\" is a proper name left in English"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "keep",
+    "why": "charges utiles plural present"
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "narrative_101.2",
+    "term": "payload",
+    "decision": "keep",
+    "why": "charge-utile hyphenated compound present"
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "keep",
+    "why": "charge-utile hyphenated compound present"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "livré sa charge.",
+    "replace": "livré sa charge utile.",
+    "why": "binding charge utile"
+  },
+  {
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "narrative_101.2",
+    "term": "payload",
+    "decision": "keep",
+    "why": "charges utiles plural present"
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "body_paragraphs.0",
+    "term": "booster",
+    "decision": "change",
+    "find": "Cinq propulseurs de premier étage",
+    "replace": "Cinq propulseurs d'appoint de premier étage",
+    "why": "binding propulseur d'appoint"
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "body_paragraphs.2",
+    "term": "booster",
+    "decision": "change",
+    "find": "pour les propulseurs R-7",
+    "replace": "pour les propulseurs d'appoint R-7",
+    "why": "binding propulseur d'appoint"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.2",
+    "term": "booster",
+    "decision": "change",
+    "find": "propulseurs de la Space Shuttle",
+    "replace": "propulseurs d'appoint de la Space Shuttle",
+    "why": "binding propulseur d'appoint"
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.3",
+    "term": "booster",
+    "decision": "change",
+    "find": "donc Super Heavy porte",
+    "replace": "donc le propulseur d'appoint Super Heavy porte",
+    "why": "restores omitted \"booster\""
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "specific impulse",
+    "decision": "keep",
+    "why": "impulsions spécifiques plural present"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "title",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Flyby, Orbiter",
+    "replace": "Survol, Orbiter",
+    "why": "binding survol"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "FLYBY : viser",
+    "replace": "SURVOL : viser",
+    "why": "binding survol"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "entry",
+    "decision": "change",
+    "find": "le retour était garanti",
+    "replace": "la rentrée était garantie",
+    "why": "atmospheric re-entry"
+  }
+]

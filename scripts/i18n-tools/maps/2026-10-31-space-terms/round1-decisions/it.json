@@ -1,0 +1,507 @@
+[
+  {
+    "rel": "science/orbits/vis-viva.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Velocità variabile",
+    "replace": "La velocità varia lungo l'orbita",
+    "why": "restores omitted \"along the orbit\""
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "intro_sentence",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "errori del lancio",
+    "replace": "errori della traiettoria di lancio",
+    "why": "binding traiettoria"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural fionde/assist gravitazionali is binding"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural fionde/assist gravitazionali is binding"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural fionde/assist gravitazionali is binding"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural fionde/assist gravitazionali is binding"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural fionde/assist gravitazionali is binding"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural fionde/assist gravitazionali is binding"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural fionde/assist gravitazionali is binding"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural fionde/assist gravitazionali is binding"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning fuel = combustion"
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "fire burning, not engine"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burns up = incinerates"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "prima che la bruciata avvenga",
+    "replace": "prima che l'accensione avvenga",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "della bruciata di deorbitamento",
+    "replace": "dell'accensione di deorbitamento",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "una bruciata retrograda di deorbitamento",
+    "replace": "un'accensione retrograda di deorbitamento",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "La frenata che cattura",
+    "replace": "L'accensione di frenata che cattura",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Quella frenata —",
+    "replace": "Quell'accensione di frenata —",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Quella frenata è",
+    "replace": "Quell'accensione di frenata è",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stars glow red"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn out = exhaust fuel"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "keep",
+    "why": "manovre di deorbita is accepted (manovra stem, plural)"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "Abbassamento del perigeo a ~200 km",
+    "replace": "Accensione per abbassare il perigeo a ~200 km",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "piccole correzioni di mantenimento",
+    "replace": "piccole accensioni di mantenimento",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"manovre di evitamento\" = manovra accepted"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "payload",
+    "decision": "keep",
+    "why": "Vega Secondary Payload Adapter is a proper name"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion of propellant"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion in chamber"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "kerosene burns dirty = combustion"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "RP-1 name; no separate propellant sense"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "hydrogen burns to water = combustion"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn-rate = combustion rate of solid grain"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion of propellant sliver"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion in gas generator"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning gas = combustion"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "specific impulse",
+    "decision": "keep",
+    "why": "plural impulsi specifici present"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "how hot propellants burn = combustion"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "imperative Accendi = firing the engine"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "fuel burned per second = combustion"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion mass flow"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion of drive gas"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion of propellant"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion of exhaust"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "rough burning / burn profile = combustion of solid grain"
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "manovre di arrivo, manovra accepted"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "injection noun denotes the burn"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Una volta che sei uscito dall'orbita terrestre",
+    "replace": "Una volta che hai effettuato l'accensione per uscire dall'orbita terrestre",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "stage",
+    "decision": "keep",
+    "why": "\"staging orbit\", not a rocket stage"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "narrative_101.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "Più il carico è grande",
+    "replace": "Più il carico utile è grande",
+    "why": "binding carico utile"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "diagram_caption",
+    "term": "payload",
+    "decision": "change",
+    "find": "carico leggero",
+    "replace": "carico utile leggero",
+    "why": "binding carico utile"
+  },
+  {
+    "rel": "science/orbits/orbit-regimes.json",
+    "at": "narrative_101.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "può portarvi un carico)",
+    "replace": "può portarvi un carico utile)",
+    "why": "binding carico utile"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "keep",
+    "why": "carichi utili plural present"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.0",
+    "term": "payload",
+    "decision": "change",
+    "find": "massa di carico.",
+    "replace": "massa di carico utile.",
+    "why": "binding carico utile"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "il carico o la pianificazione",
+    "replace": "il carico utile o la pianificazione",
+    "why": "binding carico utile"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "masse di carico,",
+    "replace": "masse di carico utile,",
+    "why": "binding carico utile"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "come carico secondario",
+    "replace": "come carico utile secondario",
+    "why": "binding carico utile"
+  },
+  {
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "narrative_101.2",
+    "term": "payload",
+    "decision": "keep",
+    "why": "carichi utili plural present"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "title",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Flyby, Orbiter",
+    "replace": "Sorvolo, Orbiter",
+    "why": "binding sorvolo"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.0",
+    "term": "flyby",
+    "decision": "change",
+    "find": "il flyby è il più economico",
+    "replace": "il sorvolo è il più economico",
+    "why": "binding sorvolo"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "FLYBY: mirare",
+    "replace": "SORVOLO: mirare",
+    "why": "binding sorvolo"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.0",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Le missioni flyby",
+    "replace": "Le missioni di sorvolo",
+    "why": "binding sorvolo"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "diagram_caption",
+    "term": "flyby",
+    "decision": "change",
+    "find": "flyby → orbiter",
+    "replace": "sorvolo → orbiter",
+    "why": "binding sorvolo"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "un passaggio ravvicinato",
+    "replace": "un sorvolo ravvicinato",
+    "why": "binding sorvolo"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "L'inserimento di Cassini nell'orbita di Saturno",
+    "replace": "L'inserimento in orbita di Cassini attorno a Saturno",
+    "why": "binding inserimento in orbita"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.2",
+    "term": "descent",
+    "decision": "keep",
+    "why": "tre discese plural present"
+  }
+]

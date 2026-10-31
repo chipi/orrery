@@ -1,6 +1,6 @@
 {
   "title": "Effet Oberth",
-  "intro_sentence": "Brûle profond dans un puits gravitationnel et ton carburant fait plus de travail.",
+  "intro_sentence": "Allume ton moteur au fond d'un puits gravitationnel et ton carburant travaille davantage : le même moteur produit physiquement plus d'énergie orbitale quand il va vite.",
   "narrative_101": [
     "Voici un tour de magie gratuit tiré de la physique. Imaginez que vous disposez d'une quantité précise de carburant à brûler. Vous pouvez l'enflammer quand vous le souhaitez. Où devriez-vous le faire ? Le bon sens suggère que cela n'a pas d'importance — même carburant, même moteur, même poussée. Le bon sens se trompe.",
     "Effectuez la manœuvre quand vous allez VITE et le même carburant vous donne beaucoup plus d'énergie utile que la même manœuvre quand vous allez lentement. La raison se cache dans le fait que l'énergie cinétique varie en v² — quand vous êtes déjà en mouvement, un petit ∆v ajouté génère proportionnellement plus d'énergie que quand vous êtes immobile. Donc une manœuvre de 1 km/s au périgée (allant à 11 km/s) vous donne plus d'augmentation orbitale que la même manœuvre de 1 km/s à l'apogée (allant à 1 km/s).",

@@ -8,7 +8,7 @@
   ],
   "body_paragraphs": [
     "Stel je een asymptoot voor, oneindig ver van de planeet. De snelheid waarmee je op die asymptoot zou bewegen is V∞ — uitgesproken als 'V-oneindig'. Het is de snelheid ten opzichte van de Zon min de bijdrage van de planeet aan je beweging. Bij een hyperbolische voorbijvlucht is V∞ constant langs beide takken van de hyperbool.",
-    "V∞ bepaalt hoe groot de aankomstbrand moet zijn. Om in een baan te worden gevangen moet je genoeg energie afvoeren om onder de ontsnappingssnelheid te komen — hoe dieper de put, hoe meer `∆v` het kost om je af te remmen. Mars Reconnaissance Orbiter kwam bij Mars aan met V∞ ≈ 2,6 km/s en gebruikte vervolgens ~1 km/s aan `∆v` voor de baaninsertie. Voyager 2 bereikte Neptunus met V∞ ≈ 8 km/s en probeerde zich niet eens in een baan te brengen — de sonde vloog gewoon voorbij.",
+    "V∞ bepaalt hoe groot de ontsteking bij aankomst moet zijn. Om in een baan te worden gevangen moet je genoeg energie afvoeren om onder de ontsnappingssnelheid te komen — hoe dieper de put, hoe meer `∆v` het kost om je af te remmen. Mars Reconnaissance Orbiter kwam bij Mars aan met V∞ ≈ 2,6 km/s en gebruikte vervolgens ~1 km/s aan `∆v` voor de baaninsertie. Voyager 2 bereikte Neptunus met V∞ ≈ 8 km/s en probeerde zich niet eens in een baan te brengen — de sonde vloog gewoon voorbij.",
     "Op de HUD van `/fly` zie je V∞ verschijnen zodra het ruimtevaartuig de invloedssfeer van de bestemming binnenkomt. Dat is het moment van de waarheid: hoeveel snelheid moet je wegremmen, en kan je raket zich dat veroorloven?"
   ],
   "diagram_caption": "Hyperbolische voorbijvlucht: V∞ is de constante snelheid op de asymptoten, ver van de planeet."

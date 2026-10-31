@@ -1,7 +1,7 @@
 {
   "intro_heading": "Dus je wilt met een raket naar Mars vliegen.",
   "intro_paragraphs": [
-    "Welkom. Dit is het deel van Orrery waar de knoppen geen magie meer zijn. Elk label in de HUD, elke gekleurde contourlijn in de porkchop, elke brandmarkering op de baan — dit onderdeel legt uit waar het vandaan komt. Lees het als een stripverhaal: de diagrammen doen het meeste werk, en elke term in cursief is een link die je zo diep kunt volgen als je wilt.",
+    "Welkom. Dit is het deel van Orrery waar de knoppen geen magie meer zijn. Elk label in de HUD, elke gekleurde contourlijn in de porkchop, elke ontstekingsmarkering op de baan — dit onderdeel legt uit waar het vandaan komt. Lees het als een stripverhaal: de diagrammen doen het meeste werk, en elke term in cursief is een link die je zo diep kunt volgen als je wilt.",
     "We gaan samen een raket bouwen. Geen echte — Orrery is een simulator — maar wel dezelfde keten van beslissingen die een echt vluchtteam neemt, in de volgorde waarin zij ze nemen. Aan het eind weet je waarom lanceervensters voor Mars om de 26 maanden voorkomen en voor de Maan elke maand, waarom een free-return-baan bestaat, en waarom stuwkracht het goedkoopste onderdeel van een missie is en brandstof het hele gevecht."
   ],
   "chapters": [
@@ -25,17 +25,17 @@
         "Nu: hoe verander je van baan? Je verbrandt brandstof. [∆v](propulsion/dv-budget) (\"delta-v\") is de universele munteenheid van de ruimtevaart — de totale snelheidsverandering die een missie nodig heeft. Elke beweging die je maakt op een baan heeft een prijskaartje in km/s.",
         "En die prijs is brutaal. De [Tsiolkovski-raketvergelijking](propulsion/tsiolkovsky) zegt dat ∆v meegroeit met de logaritme van het aandeel van je raket dat brandstof is. Wil je twee keer de ∆v? Dan neem je niet twee keer zoveel brandstof mee — maar exponentieel meer. Daarom bestond een Saturn V voor 90% uit stuwstof. Het grootste deel van de raket is de brandstof die de brandstof optilt die de brandstof optilt die het ruimtevaartuig optilt.",
         "Twee getallen bepalen de strijd tegen deze zwaartekrachtbelasting. Stuwkracht vertelt je hoe hard de motor duwt — het getal waar na de lancering niemand echt meer om geeft. [Specifieke impuls](propulsion/specific-impulse) vertelt je hoe efficiënt de motor duwt — en dat is het getal dat ertoe doet. Een chemische raket haalt ~450 seconden. Een ionenmotor haalt 4.000+ — hij gebruikt maandenlang nauwelijks brandstof en doet het bij tochten door de diepe ruimte beter dan alles wat chemisch is.",
-        "Het beste goocheltruukje van allemaal: het [Oberth-effect](propulsion/oberth-effect). Je motor aansteken terwijl je al hard beweegt (laag en dicht bij een planeet) levert veel meer op voor dezelfde brandstof. Daarom doet elke interplanetaire missie haar grote vertrekbrand bij perigeum, dicht tegen de Aarde aan, zo snel als de natuurkunde toestaat. Gratis energie uit geometrie."
+        "Het beste goocheltruukje van allemaal: het [Oberth-effect](propulsion/oberth-effect). Je motor aansteken terwijl je al hard beweegt (laag en dicht bij een planeet) levert veel meer op voor dezelfde brandstof. Daarom doet elke interplanetaire missie haar grote vertrekontsteking bij perigeum, dicht tegen de Aarde aan, zo snel als de natuurkunde toestaat. Gratis energie uit geometrie."
       ]
     },
     {
       "heading": "3 — Zodra je in een baan bent, ben je halverwege naar overal.",
       "diagram": "hohmann-transfer.svg",
       "diagram_alt": "Een ellips die raakt aan de baan van de Aarde en de baan van Mars.",
-      "diagram_caption": "Twee branden, één ellips. De goedkoopste manier om van baan te veranderen.",
+      "diagram_caption": "Twee ontstekingen, één ellips. De goedkoopste manier om van baan te veranderen.",
       "paragraphs": [
         "Robert Heinlein schreef het: \"Zodra je in een baan bent, ben je halverwege naar overal in het zonnestelsel.\" Hij grapte niet. Het bereiken van een lage aardbaan kost ~9,4 km/s aan ∆v. Van daaruit naar Mars gaan kost nog eens ~3,6 km/s. Het moeilijkste deel ligt al achter je.",
-        "De goedkoopste interplanetaire route is een [Hohmann-overdracht](transfers/hohmann-transfer): een ellips die de baan van de Aarde aan het ene uiteinde net raakt en die van de bestemming aan het andere. Twee branden, geen verspilde brandstof. Naar Mars duurt het ~8,5 maanden. Langzaam, maar optimaal.",
+        "De goedkoopste interplanetaire route is een [Hohmann-overdracht](transfers/hohmann-transfer): een ellips die de baan van de Aarde aan het ene uiteinde net raakt en die van de bestemming aan het andere. Twee ontstekingen, geen verspilde brandstof. Naar Mars duurt het ~8,5 maanden. Langzaam, maar optimaal.",
         "Wil je sneller gaan? Los een [Lambert-probleem](transfers/lambert-problem) op — kies je vertrekdatum en je reistijd, en Lambert vertelt je de unieke [transferellips](transfers/transfer-ellipse) die ze verbindt. Dat is precies wat Orrery's [/plan](app:/plan)-scherm doet, tienduizend keer parallel, om een porkchop-grafiek te tekenen.",
         "Moet je nog verder? Steel snelheid van een planeet. Een [zwaartekrachtassistentie](transfers/gravity-assist) gebruikt een voorbijvlucht om je baan te veranderen zonder brandstofkosten — Voyager 2 gebruikte er vier om Neptunus te bereiken. Het hele zonnestelsel wordt aan elkaar gestikt als [patched conics](transfers/patched-conics): een reeks bogen van [kegelsneden](transfers/conic-sections), doorgegeven tussen zwaartekrachtgebieden als estafettestokjes in een estafetteloop."
       ]

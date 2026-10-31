@@ -69,13 +69,30 @@ Names glossary (celestial names and people), in order:
 | `glossary-keys.mjs` | Per-key context report: where each glossary key occurs in the English source, to decide guards and overrides. |
 | `person-case.test.ts` | Tests for the person declension in `ru-case.mjs` / `sr-case.mjs`. |
 
+Technical terms (the `term` class: burn, flyby, orbit insertion …). Runbook: the
+`term-consistency` skill (`.claude/skills/term-consistency/SKILL.md`).
+
+| Tool | What it does |
+|---|---|
+| `term-census.mjs [--json]` | How often each candidate term occurs in the English trees; ✓ marks the ones already in `term`. Picks the next batch. |
+| `term-contexts.mjs <term> <loc> [max] [trees]` | How the site writes one term in one locale now: aligned field count and sample English/translation pairs. |
+| `term-match.mjs` | Shared matching rules: Arabic vowel marks ignored, keep keys, text hashes. |
+| `term-drift.mjs [--terms] [--locales] [--trees] [--misses=f] [--gate]` | Term × locale table of fields using the binding form (or a reviewed keep), and the unreviewed misses. `--gate` exits 1 if any are left. |
+| `term-widen-check.mjs <old-glossary.json> [--trees] [--out=f]` | After widening stems: fields that pass only under the new stems with no reviewed keep, grouped by the matched word, so a too-wide stem cannot hide misses. |
+| `term-workfile.mjs <misses.json> <outdir> [--max=150]` | Misses → per-locale review files (field, English, current text, each term's sense, binding form and stems) for a fix round. |
+| `term-apply.mjs <loc> <edits.json> [--dry]` | Applies the round's `change` decisions (exact find, once) through `apply-edits.mjs`. |
+| `term-keep.mjs <decisions.json> [loc]` | Records `keep` decisions in `term-keeps.json` with the hash of the field's text; a later edit to the field brings the miss back. |
+| `term-glossary.test.ts` | Every term entry complete for 13 locales, stems compile, the binding form matches its own stems; keeps well-formed. |
+| `link-targets.test.ts` | Translated overlays keep the English markdown link targets. |
+
 ## maps/
 
 The hand-written inputs and analysis results, one folder per arc
 (`maps/2026-10-17-translation-cleanup/`): per-locale title tables, ru name and
 grammar fix maps, paragraph-list rewrites, hotspot overlays, label vocabularies,
 the English proper-noun inventory, the English story extraction. Reuse them; add
-new arcs as new folders.
+new arcs as new folders. `maps/2026-10-31-space-terms/` holds the technical-term
+pilot: reviewer decisions per locale, hand edits, and the glossary widening steps.
 
 Lesson recorded with them: a mechanical name swap in an inflected language
 leaves every name in the nominative ("с Байконур", "после Гагарин" — fixed in

@@ -1,0 +1,1898 @@
+{
+  "booster|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "booster scale = escala de primera etapa",
+    "tr": "6ba450961c"
+  },
+  "booster|ja|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
+    "why": "Super Heavy is the booster by name; word omitted naturally",
+    "tr": "973ca8693f"
+  },
+  "booster|pt-BR|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
+    "why": "Super Heavy named, word omitted naturally",
+    "tr": "f1f185c3c6"
+  },
+  "booster|sr-Cyrl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "booster scale = first-stage level",
+    "tr": "b59f4c5e3a"
+  },
+  "booster|sr-Cyrl|science/propulsion/rocket-stages.json :: body_paragraphs.0": {
+    "why": "booster = first stage / vehicle as in Falcon 9 booster; 'први степен' is standard",
+    "tr": "911b2ec4b1"
+  },
+  "booster|sr-Cyrl|science/propulsion/rocket-stages.json :: body_paragraphs.1": {
+    "why": "booster = first stage / vehicle as in Falcon 9 booster; 'први степен' is standard",
+    "tr": "47301d91b4"
+  },
+  "booster|sr-Cyrl|science/propulsion/rocket-stages.json :: body_paragraphs.3": {
+    "why": "booster = first stage / vehicle as in Falcon 9 booster; 'први степен' is standard",
+    "tr": "45b9554ac1"
+  },
+  "booster|sr-Cyrl|science/propulsion/specific-impulse.json :: narrative_101.2": {
+    "why": "'потисници' is an accepted stem (потисник)",
+    "tr": "e1d960a05f"
+  },
+  "booster|sr-Cyrl|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
+    "why": "booster = first stage 'први степен' is standard",
+    "tr": "c4eeacfa99"
+  },
+  "booster|zh-CN|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
+    "why": "Super Heavy is the booster by name; word omitted naturally",
+    "tr": "61ccb84385"
+  },
+  "burn|ar|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "\"burning fuel\" = combustion",
+    "tr": "0461623058"
+  },
+  "burn|ar|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "fire burning = combustion",
+    "tr": "49037b1f52"
+  },
+  "burn|ar|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "\"burns the crew up\" = incineration",
+    "tr": "c159c17614"
+  },
+  "burn|ar|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars \"burn red\" = glow",
+    "tr": "96e7d6c0f9"
+  },
+  "burn|ar|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "\"burn out\" = exhaust fuel",
+    "tr": "0b41ed94e9"
+  },
+  "burn|ar|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "\"avoidance burns\" rendered as مناورات (avoidance manoeuvres), a correct generic term",
+    "tr": "f28d74b7e1"
+  },
+  "burn|ar|science/orbits/special-orbits.json :: body_paragraphs.3": {
+    "why": "station-keeping burns rendered as مناورات, a correct generic term",
+    "tr": "7d8f95d942"
+  },
+  "burn|ar|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion / consumption sense",
+    "tr": "ed87d8a101"
+  },
+  "burn|ar|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "combustion / consumption sense",
+    "tr": "4f1dff5a5e"
+  },
+  "burn|ar|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "combustion / consumption sense",
+    "tr": "0fbaf46811"
+  },
+  "burn|ar|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.4": {
+    "why": "combustion / consumption sense",
+    "tr": "7ebcd98b52"
+  },
+  "burn|ar|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion / consumption sense",
+    "tr": "beee19e8b3"
+  },
+  "burn|ar|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion / consumption sense",
+    "tr": "023ee04acb"
+  },
+  "burn|ar|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion / consumption sense",
+    "tr": "3cd0f8aa7a"
+  },
+  "burn|ar|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "combustion sense",
+    "tr": "7ca9d86ed1"
+  },
+  "burn|ar|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion / consumption sense",
+    "tr": "ed51987a81"
+  },
+  "burn|ar|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "combustion / consumption sense",
+    "tr": "5c6933096c"
+  },
+  "burn|ar|science/propulsion/staged-combustion.json :: body_paragraphs.0": {
+    "why": "combustion / consumption sense",
+    "tr": "1ba2633e7e"
+  },
+  "burn|ar|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion / consumption sense",
+    "tr": "c019ab20f8"
+  },
+  "burn|ar|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion / consumption sense",
+    "tr": "a25b6bb74c"
+  },
+  "burn|ar|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "combustion / consumption sense",
+    "tr": "7187a990d1"
+  },
+  "burn|de|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "combustion sense (burning fuel)",
+    "tr": "167bb80175"
+  },
+  "burn|de|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burning up on entry, not an engine firing",
+    "tr": "146c6c52d5"
+  },
+  "burn|de|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "star glows, not engine",
+    "tr": "d23b60c80f"
+  },
+  "burn|de|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn out of a star",
+    "tr": "91a17b4339"
+  },
+  "burn|de|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion in chamber",
+    "tr": "fd806ec894"
+  },
+  "burn|de|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "combustion",
+    "tr": "20e0d8055c"
+  },
+  "burn|de|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "combustion",
+    "tr": "279f23b680"
+  },
+  "burn|de|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion",
+    "tr": "8e4524f318"
+  },
+  "burn|de|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion in gas generator",
+    "tr": "3071ef79ce"
+  },
+  "burn|de|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion",
+    "tr": "43421c2563"
+  },
+  "burn|de|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "combustion",
+    "tr": "88125bb468"
+  },
+  "burn|de|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion (propellant consumed)",
+    "tr": "257d843b86"
+  },
+  "burn|de|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "fuel-burned rate, combustion",
+    "tr": "d762e7ba07"
+  },
+  "burn|de|science/propulsion/staged-combustion.json :: body_paragraphs.0": {
+    "why": "combustion",
+    "tr": "2ef1439f27"
+  },
+  "burn|de|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion",
+    "tr": "bc75374a6e"
+  },
+  "burn|de|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion",
+    "tr": "1cc330502b"
+  },
+  "burn|de|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "combustion / solid burn profile",
+    "tr": "b6fdfcbff9"
+  },
+  "burn|es|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "fire burning, not engine",
+    "tr": "4fe357c7bf"
+  },
+  "burn|es|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burns up = incinerates, not engine",
+    "tr": "8a3aec6311"
+  },
+  "burn|es|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars glow red, not engine",
+    "tr": "b464dd88d8"
+  },
+  "burn|es|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn out = exhaust fuel, not engine",
+    "tr": "516d6a2883"
+  },
+  "burn|es|science/orbits/disposal-end-of-life.json :: diagram_caption": {
+    "why": "imperative verb phrase, no noun rendered",
+    "tr": "dee1984bea"
+  },
+  "burn|es|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "combustion of propellant in chamber",
+    "tr": "7fb7f62024"
+  },
+  "burn|es|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion in chamber",
+    "tr": "c8c01060a1"
+  },
+  "burn|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "combustion/soot sense (arde)",
+    "tr": "e3d4fe202c"
+  },
+  "burn|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "hydrogen burns to water, combustion",
+    "tr": "6ba450961c"
+  },
+  "burn|es|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "combustion temperature",
+    "tr": "842ba944fb"
+  },
+  "burn|fr|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burning fuel = combustion sense",
+    "tr": "6de150f1e9"
+  },
+  "burn|fr|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burns up = incinerates, not engine",
+    "tr": "eb49c4ce81"
+  },
+  "burn|fr|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars glow red, not engine",
+    "tr": "4ad20e2ff4"
+  },
+  "burn|fr|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn out = exhaust fuel, not engine",
+    "tr": "8ea07e268d"
+  },
+  "burn|fr|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "combustion in main chamber",
+    "tr": "beba81a1d0"
+  },
+  "burn|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "kerosene burns dirty = combustion",
+    "tr": "640326ff91"
+  },
+  "burn|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "hydrogen burns to water = combustion",
+    "tr": "f50b6a8635"
+  },
+  "burn|fr|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion in gas generator",
+    "tr": "c1dee14a5e"
+  },
+  "burn|fr|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion of propellant sliver",
+    "tr": "436edde195"
+  },
+  "burn|fr|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion in chamber",
+    "tr": "8add1e43e7"
+  },
+  "burn|fr|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion of drive gas",
+    "tr": "4b036b1ee3"
+  },
+  "burn|fr|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "rough burning = combustion",
+    "tr": "5e8b0ae4c6"
+  },
+  "burn|fr|science/transfers/_intro.json :: paragraphs.0": {
+    "why": "injection noun denotes the burn",
+    "tr": "2f647ce368"
+  },
+  "burn|hi|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burning fuel = combustion",
+    "tr": "49a55d8e05"
+  },
+  "burn|hi|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "fire burning = combustion",
+    "tr": "ff42cf46c9"
+  },
+  "burn|hi|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "\"burns the crew up\" = incineration",
+    "tr": "d43e86905d"
+  },
+  "burn|hi|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars \"burn red\" = glow",
+    "tr": "1497529ab8"
+  },
+  "burn|hi|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "\"burn out\" = exhaust fuel",
+    "tr": "b5d86a465d"
+  },
+  "burn|hi|science/propulsion/_intro.json :: paragraphs.2": {
+    "why": "\"इंजन चलाएँ\" correctly renders firing the engine",
+    "tr": "496576305f"
+  },
+  "burn|hi|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "6fabd16538"
+  },
+  "burn|hi|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "4e2800b539"
+  },
+  "burn|hi|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "9eda13f79f"
+  },
+  "burn|hi|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "1ab33f4b69"
+  },
+  "burn|hi|science/propulsion/oberth-effect.json :: intro_sentence": {
+    "why": "\"इंजन चलाएँ\" correctly renders firing the engine",
+    "tr": "b75157213e"
+  },
+  "burn|hi|science/propulsion/oberth-effect.json :: narrative_101.0": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "785e5d42e6"
+  },
+  "burn|hi|science/propulsion/oberth-effect.json :: narrative_101.2": {
+    "why": "\"इंजन जलाता है\" correctly renders firing the engine",
+    "tr": "28b45097ca"
+  },
+  "burn|hi|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "61238177cd"
+  },
+  "burn|hi|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "4655142d76"
+  },
+  "burn|hi|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "b334a60299"
+  },
+  "burn|hi|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "27ef76c527"
+  },
+  "burn|hi|science/transfers/transfer-ellipse.json :: body_paragraphs.0": {
+    "why": "\"burned out of orbit\" rendered idiomatically without the term",
+    "tr": "fbba9fe4d2"
+  },
+  "burn|it|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burning fuel = combustion",
+    "tr": "ebcd308f40"
+  },
+  "burn|it|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "fire burning, not engine",
+    "tr": "ef10a93f9c"
+  },
+  "burn|it|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burns up = incinerates",
+    "tr": "537b35d992"
+  },
+  "burn|it|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars glow red",
+    "tr": "099708fa8f"
+  },
+  "burn|it|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn out = exhaust fuel",
+    "tr": "821e33699d"
+  },
+  "burn|it|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "combustion of propellant",
+    "tr": "106ada9f1b"
+  },
+  "burn|it|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion in chamber",
+    "tr": "ca9edec2fc"
+  },
+  "burn|it|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "kerosene burns dirty = combustion",
+    "tr": "73a1c194a7"
+  },
+  "burn|it|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "hydrogen burns to water = combustion",
+    "tr": "a79eca780b"
+  },
+  "burn|it|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion in gas generator",
+    "tr": "ae88af800c"
+  },
+  "burn|it|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion of propellant sliver",
+    "tr": "bc658a2dd3"
+  },
+  "burn|it|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "how hot propellants burn = combustion",
+    "tr": "32daa8860a"
+  },
+  "burn|it|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion mass flow",
+    "tr": "6b7b883276"
+  },
+  "burn|it|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "fuel burned per second = combustion",
+    "tr": "ce8bf005a4"
+  },
+  "burn|it|science/propulsion/staged-combustion.json :: body_paragraphs.0": {
+    "why": "combustion of propellant",
+    "tr": "33897baef4"
+  },
+  "burn|it|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion of exhaust",
+    "tr": "00c30db604"
+  },
+  "burn|it|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion of drive gas",
+    "tr": "fd345a17c2"
+  },
+  "burn|it|science/transfers/_intro.json :: paragraphs.0": {
+    "why": "injection noun denotes the burn",
+    "tr": "e74815f278"
+  },
+  "burn|ja|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "\"burns the crew up\" is combustion, not an engine firing",
+    "tr": "6b9e11a62d"
+  },
+  "burn|ja|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars \"burn red\" is figurative glow",
+    "tr": "59bf0e0591"
+  },
+  "burn|ja|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "\"burn out\" is stellar fusion exhaustion",
+    "tr": "d6b84bf789"
+  },
+  "burn|ja|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "fuel-burned-per-second is combustion; 燃料消費量 correct",
+    "tr": "bddeef7cee"
+  },
+  "burn|ja|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "\"burn it\" = combustion; 燃やす correct",
+    "tr": "a5296688d6"
+  },
+  "burn|ko|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "b51f5b8f0c"
+  },
+  "burn|ko|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "86b461dbbb"
+  },
+  "burn|ko|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "d9e2adf042"
+  },
+  "burn|ko|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "8a7ae2a92e"
+  },
+  "burn|ko|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "cdc0aa4384"
+  },
+  "burn|ko|science/orbits/disposal-end-of-life.json :: diagram_caption": {
+    "why": "burn perigee down = 근지점을 낮춤, natural",
+    "tr": "69159c9f5b"
+  },
+  "burn|ko|science/propulsion/dv-budget.json :: body_paragraphs.0": {
+    "why": "every engine burn = 엔진을 켤 때마다, natural",
+    "tr": "1ec7f0ea18"
+  },
+  "burn|ko|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "2cd3f46750"
+  },
+  "burn|nl|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "996b697ca8"
+  },
+  "burn|nl|science/history/_intro.json :: paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "082a253951"
+  },
+  "burn|nl|science/history/_intro.json :: paragraphs.1": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "9c111e9e94"
+  },
+  "burn|nl|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "d8c06abf38"
+  },
+  "burn|nl|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "b7749c6279"
+  },
+  "burn|nl|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "a8a42b45a5"
+  },
+  "burn|nl|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "ae7630ede2"
+  },
+  "burn|nl|science/orbits/disposal-end-of-life.json :: diagram_caption": {
+    "why": "burn perigee down = laat het perigeum zakken, natural",
+    "tr": "72a80c32f9"
+  },
+  "burn|nl|science/orbits/hill-sphere.json :: narrative_101.1": {
+    "why": "station-keeping burns = baancorrecties",
+    "tr": "a7e4975982"
+  },
+  "burn|nl|science/orbits/lagrange-points.json :: body_paragraphs.1": {
+    "why": "station-keeping burns = koerscorrecties",
+    "tr": "97e63d0944"
+  },
+  "burn|nl|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "5ec4730f29"
+  },
+  "burn|nl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.4": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "e514aea03d"
+  },
+  "burn|nl|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "592bcbeddd"
+  },
+  "burn|nl|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "754b15dca5"
+  },
+  "burn|nl|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "6a1c052af2"
+  },
+  "burn|nl|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "576258e6bc"
+  },
+  "burn|nl|science/propulsion/oberth-effect.json :: narrative_101.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "08c45862ff"
+  },
+  "burn|nl|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "e4e1001e00"
+  },
+  "burn|nl|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "86ff04e13b"
+  },
+  "burn|nl|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "9e19dabb59"
+  },
+  "burn|nl|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "551e8c05cf"
+  },
+  "burn|nl|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "149490c2df"
+  },
+  "burn|nl|science/transfers/free-return.json :: body_paragraphs.1": {
+    "why": "return burn = de terugkeermotor, natural",
+    "tr": "8bef7ddb78"
+  },
+  "burn|nl|science/transfers/free-return.json :: intro_sentence": {
+    "why": "verb: de motor hoeft te branden (ESA NL usage)",
+    "tr": "f1d20aead1"
+  },
+  "burn|nl|science/transfers/free-return.json :: narrative_101.2": {
+    "why": "mid-course burns = koerscorrecties",
+    "tr": "790b633bbf"
+  },
+  "burn|nl|science/transfers/hohmann-transfer.json :: narrative_101.2": {
+    "why": "braking burn = remming",
+    "tr": "4abcab56b3"
+  },
+  "burn|pt-BR|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burns up = incinera, not engine",
+    "tr": "f3e59a7f45"
+  },
+  "burn|pt-BR|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars glow, not engine",
+    "tr": "2ce2cc6638"
+  },
+  "burn|pt-BR|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn out = esgotam, not engine",
+    "tr": "890589dd71"
+  },
+  "burn|ru|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burning fuel = combustion",
+    "tr": "cb421173cd"
+  },
+  "burn|ru|science/history/_intro.json :: paragraphs.0": {
+    "why": "Goddard's first liquid-fuel engine run, not a manoeuvre",
+    "tr": "9167783923"
+  },
+  "burn|ru|science/history/_intro.json :: paragraphs.1": {
+    "why": "Goddard's first liquid-fuel engine run, not a manoeuvre",
+    "tr": "2d82e65a50"
+  },
+  "burn|ru|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "d95395142a"
+  },
+  "burn|ru|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burn is 'burns the crew up', not an engine firing",
+    "tr": "2ef996c0b1"
+  },
+  "burn|ru|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "6fe2edf31f"
+  },
+  "burn|ru|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "f8f643914e"
+  },
+  "burn|ru|science/propulsion/engine-types.json :: body_paragraphs.0": {
+    "why": "solid motor burns at a controlled rate = combustion",
+    "tr": "89e9ac54c1"
+  },
+  "burn|ru|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "48ff284124"
+  },
+  "burn|ru|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "c76fa6efea"
+  },
+  "burn|ru|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "560775bfe2"
+  },
+  "burn|ru|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.4": {
+    "why": "burn-rate profile = combustion",
+    "tr": "3ea0a30ff3"
+  },
+  "burn|ru|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "1511686407"
+  },
+  "burn|ru|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "5003a86737"
+  },
+  "burn|ru|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "2a3df91060"
+  },
+  "burn|ru|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "f6fff0ee2f"
+  },
+  "burn|ru|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "a857be45b5"
+  },
+  "burn|ru|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "e074936567"
+  },
+  "burn|ru|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "4cf1da995b"
+  },
+  "burn|ru|science/transfers/free-return.json :: narrative_101.2": {
+    "why": "'коррекций курса' is the correct rendering of mid-course burns (TCMs)",
+    "tr": "3c3ea193bf"
+  },
+  "burn|sr-Cyrl|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "f6ea3b457b"
+  },
+  "burn|sr-Cyrl|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "8e78a2c4b5"
+  },
+  "burn|sr-Cyrl|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "d0f003ece9"
+  },
+  "burn|sr-Cyrl|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "5dcf626eb3"
+  },
+  "burn|sr-Cyrl|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "905e55de7b"
+  },
+  "burn|sr-Cyrl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "ba8dd07b29"
+  },
+  "burn|sr-Cyrl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "b59f4c5e3a"
+  },
+  "burn|sr-Cyrl|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "afd868aad3"
+  },
+  "burn|sr-Cyrl|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "8c9e347b9d"
+  },
+  "burn|sr-Cyrl|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "171d6285bd"
+  },
+  "burn|sr-Cyrl|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "0e810d80c2"
+  },
+  "burn|sr-Cyrl|science/propulsion/oberth-effect.json :: narrative_101.2": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "2dcf0ddc6a"
+  },
+  "burn|sr-Cyrl|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "123071c327"
+  },
+  "burn|sr-Cyrl|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "a80ee86609"
+  },
+  "burn|sr-Cyrl|science/propulsion/staged-combustion.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "5528033b15"
+  },
+  "burn|sr-Cyrl|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "22caebc05d"
+  },
+  "burn|sr-Cyrl|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "4cae6a699e"
+  },
+  "burn|sr-Cyrl|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "burn profile of solid = combustion",
+    "tr": "e1096a8e29"
+  },
+  "burn|sr-Cyrl|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "'маневре кочења' is the correct rendering of arrival burns",
+    "tr": "a783b54d91"
+  },
+  "burn|zh-CN|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burning fuel = combustion/consumption, not an engine firing",
+    "tr": "b73ea6bc56"
+  },
+  "burn|zh-CN|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "fire burning, not an engine firing",
+    "tr": "f6f58d9f32"
+  },
+  "burn|zh-CN|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "\"burns the crew up\" is combustion, not an engine firing",
+    "tr": "a8ba86f761"
+  },
+  "burn|zh-CN|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars \"burn\" red is figurative glow",
+    "tr": "a9404e84b0"
+  },
+  "burn|zh-CN|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "\"burn out\" is stellar fuel exhaustion",
+    "tr": "f4f846cfb1"
+  },
+  "burn|zh-CN|science/propulsion/engine-types.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "c31e997a19"
+  },
+  "burn|zh-CN|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "6ca42ef495"
+  },
+  "burn|zh-CN|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "4154bdfec6"
+  },
+  "burn|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "25dc1c0192"
+  },
+  "burn|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "49d2d05c01"
+  },
+  "burn|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.4": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "f36200d507"
+  },
+  "burn|zh-CN|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "bc95017084"
+  },
+  "burn|zh-CN|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "935692c57d"
+  },
+  "burn|zh-CN|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "3fa8af9011"
+  },
+  "burn|zh-CN|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "fff0966a82"
+  },
+  "burn|zh-CN|science/propulsion/oberth-effect.json :: narrative_101.0": {
+    "why": "\"fuel to burn\" = fuel to expend/combust, not a firing",
+    "tr": "ba8f449179"
+  },
+  "burn|zh-CN|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "9bc72404ce"
+  },
+  "burn|zh-CN|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "dac764817a"
+  },
+  "burn|zh-CN|science/propulsion/staged-combustion.json :: body_paragraphs.0": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "7a2d5a3c44"
+  },
+  "burn|zh-CN|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "901fe6247d"
+  },
+  "burn|zh-CN|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "c87d95dbd4"
+  },
+  "burn|zh-CN|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "6eea8fe05e"
+  },
+  "descent|de|science/life-in-space/iva-suits.json :: body_paragraphs.0": {
+    "why": "descent module = Landemodul, name of a module",
+    "tr": "86bd7e78b3"
+  },
+  "descent|de|science/mission-phases/propulsive-landing.json :: diagram_caption": {
+    "why": "Sinkgeschwindigkeit, natural compound",
+    "tr": "3238153c98"
+  },
+  "descent|de|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.1": {
+    "why": "proper name / Prinzip, not a descent phase",
+    "tr": "0fd61cad2a"
+  },
+  "descent|nl|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.1": {
+    "why": "proper name of the engine / pintle-injector principle, not a descent phase",
+    "tr": "dfa9cf107b"
+  },
+  "docking|hi|science/space-stations/node-module.json :: body_paragraphs.4": {
+    "why": "part of proper name Chinese Docking Mechanism",
+    "tr": "d444a738de"
+  },
+  "docking|ko|science/space-stations/node-module.json :: body_paragraphs.4": {
+    "why": "Chinese Docking Mechanism is a proper name left in English",
+    "tr": "7a82c63b61"
+  },
+  "entry|ar|science/life-in-space/pre-flight-training.json :: body_paragraphs.3": {
+    "why": "\"re-entry engine\" is not atmospheric entry itself; محرّكات العودة is correct",
+    "tr": "0aa7f80ae1"
+  },
+  "entry|ar|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "\"re-entry into 1 g\" is not atmospheric entry",
+    "tr": "5c450666f2"
+  },
+  "entry|ar|science/mission-phases/deorbit-corridor.json :: narrative_101.2": {
+    "why": "\"entry interface\" rendered as نقطة التماس مع الغلاف الجوي, correct",
+    "tr": "ca6fdcf210"
+  },
+  "entry|de|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "re-entry into 1 g gravity, not atmospheric entry",
+    "tr": "1d737586f9"
+  },
+  "entry|es|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "re-entry into 1 g gravity, not atmospheric",
+    "tr": "423ca0e2e9"
+  },
+  "entry|hi|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "\"re-entry into 1 g\" is not atmospheric entry",
+    "tr": "84f0be49f2"
+  },
+  "entry|ko|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "re-entry into 1 g is not atmospheric entry",
+    "tr": "2636baa0df"
+  },
+  "entry|ru|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "'re-entry into 1 g' is vestibular, not atmospheric entry",
+    "tr": "ccdfe0c658"
+  },
+  "entry|sr-Cyrl|science/life-in-space/iva-suits.json :: intro_sentence": {
+    "why": "повратак in a list of flight phases",
+    "tr": "4db6fe12c9"
+  },
+  "entry|sr-Cyrl|science/life-in-space/pre-flight-training.json :: body_paragraphs.3": {
+    "why": "re-entry engine = мотор за повратак",
+    "tr": "21f1144bc0"
+  },
+  "entry|sr-Cyrl|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "'re-entry into 1 g' is vestibular, not atmospheric entry",
+    "tr": "059067f142"
+  },
+  "entry|zh-CN|science/orbits/cislunar-orbits.json :: body_paragraphs.4": {
+    "why": "re-entry rendered 返回地球; natural",
+    "tr": "5a18d6b6d5"
+  },
+  "flyby|ar|science/transfers/conic-sections.json :: body_paragraphs.2": {
+    "why": "verb: يمرّون قرب كوكب",
+    "tr": "4450805404"
+  },
+  "flyby|ko|science/propulsion/solar-sail.json :: body_paragraphs.1": {
+    "why": "verb: 태양을 가까이 스친 뒤",
+    "tr": "68fbcd56d8"
+  },
+  "flyby|ko|science/transfers/conic-sections.json :: body_paragraphs.2": {
+    "why": "verb: 스쳐 지나가고",
+    "tr": "6b20e9919c"
+  },
+  "flyby|ko|science/transfers/conic-sections.json :: narrative_101.2": {
+    "why": "verb: 스치고 지나가는 것",
+    "tr": "35a1da45b8"
+  },
+  "gravity assist|sr-Cyrl|science/mission-phases/trans-x-injection.json :: body_paragraphs.1": {
+    "why": "'гравитационим маневрима' is the binding word inflected",
+    "tr": "e9b7d57622"
+  },
+  "gravity assist|sr-Cyrl|science/transfers/_intro.json :: paragraphs.1": {
+    "why": "'гравитационим маневрима' is the binding word inflected (stem check misses the case ending)",
+    "tr": "5a3f03d319"
+  },
+  "inclination|de|science/_landing.json :: chapters.0.paragraphs.1": {
+    "why": "correct as is",
+    "tr": "e49a596fc2"
+  },
+  "inclination|fr|science/planets/kuiper-belt.json :: body_paragraphs.0": {
+    "why": "rendered as adjectives inclinées/inclinée",
+    "tr": "c15c757007"
+  },
+  "inclination|ja|science/_landing.json :: chapters.0.paragraphs.1": {
+    "why": "English says tilt; 傾き matches source",
+    "tr": "ae4994a3f7"
+  },
+  "inclination|ko|science/_landing.json :: chapters.0.paragraphs.1": {
+    "why": "English says tilt; 기울기 matches source",
+    "tr": "13aad2f738"
+  },
+  "orbit insertion|ar|science/mission-phases/orbit-insertion.json :: body_paragraphs.1": {
+    "why": "\"إدخال ... في مدار\" matches the accepted pattern with a name inserted",
+    "tr": "c7831c2799"
+  },
+  "orbit insertion|hi|science/mission-phases/orbit-insertion.json :: narrative_101.0": {
+    "why": "English manoeuvre names kept as proper names",
+    "tr": "38df64965f"
+  },
+  "orbit insertion|nl|science/mission-phases/gravity-turn.json :: diagram_caption": {
+    "why": "launch: tegen de tijd dat de baan bereikt is",
+    "tr": "5b916cd31d"
+  },
+  "orbit insertion|sr-Cyrl|science/history/apollo-11-1969.json :: body_paragraphs.1": {
+    "why": "'улазак у лунарну орбиту' is an accepted form with adjective inserted",
+    "tr": "9105e74355"
+  },
+  "orbit insertion|sr-Cyrl|science/mission-phases/gravity-turn.json :: diagram_caption": {
+    "why": "'до уласка у орбиту' is an accepted form (case ending)",
+    "tr": "8970dd7d1c"
+  },
+  "orbit insertion|sr-Cyrl|science/propulsion/laser-sail.json :: body_paragraphs.2": {
+    "why": "'без уласка у орбиту' is an accepted form (case ending)",
+    "tr": "b21f5244bd"
+  },
+  "orbit|ar|science/_landing.json :: chapters.0.diagram": {
+    "why": "file name",
+    "tr": "72874f8e10"
+  },
+  "orbit|ar|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "7c393a3e89"
+  },
+  "orbit|ar|science/exoplanets/habitable-zone.json :: narrative_101.1": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "ac0e3acdfc"
+  },
+  "orbit|ar|science/exoplanets/hot-jupiters.json :: intro_sentence": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "e540fe9799"
+  },
+  "orbit|ar|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "c07b5acf9a"
+  },
+  "orbit|ar|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "a1172d1a7b"
+  },
+  "orbit|ar|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "3b8e114e0a"
+  },
+  "orbit|ar|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "5b2921ab38"
+  },
+  "orbit|ar|science/orbits/apsides.json :: body_paragraphs.1": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "af98a8b85a"
+  },
+  "orbit|ar|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "173ad2a440"
+  },
+  "orbit|ar|science/planets/asteroid-belt.json :: body_paragraphs.1": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "084e7d7a2d"
+  },
+  "orbit|ar|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "5cf4360ac2"
+  },
+  "orbit|ar|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "476d1f3128"
+  },
+  "orbit|ar|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "verb \"تدور حولها\" is correct",
+    "tr": "b6f79223c2"
+  },
+  "orbit|ar|science/transfers/coplanar-trajectories.json :: body_paragraphs.2": {
+    "why": "verb تدور/دارت is correct",
+    "tr": "c8867fe562"
+  },
+  "orbit|ar|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "verb تدور/دارت is correct",
+    "tr": "be87a422d0"
+  },
+  "orbit|de|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "73c095cc0f"
+  },
+  "orbit|de|science/exoplanets/fifty-one-pegasi.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "b722d59a35"
+  },
+  "orbit|de|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "415da717e3"
+  },
+  "orbit|de|science/exoplanets/habitable-zone.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "f4887bb081"
+  },
+  "orbit|de|science/exoplanets/hot-jupiters.json :: intro_sentence": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "d404faea92"
+  },
+  "orbit|de|science/exoplanets/microlensing.json :: diagram_caption": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "8eda8ca73a"
+  },
+  "orbit|de|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "6a886b744d"
+  },
+  "orbit|de|science/exoplanets/proxima-system.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "1ed9660e3c"
+  },
+  "orbit|de|science/exoplanets/radial-velocity.json :: diagram_caption": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "bba0c9c2ad"
+  },
+  "orbit|de|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "a299d67b89"
+  },
+  "orbit|de|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "c386f71b91"
+  },
+  "orbit|de|science/exoplanets/tidal-locking.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "3192087fe6"
+  },
+  "orbit|de|science/exoplanets/tidal-locking.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "8326549e03"
+  },
+  "orbit|de|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "7d522b33fd"
+  },
+  "orbit|de|science/exoplanets/transit-timing.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "0a8bb5f095"
+  },
+  "orbit|de|science/life-in-space/long-duration-effects.json :: body_paragraphs.1": {
+    "why": "Umlauf = one revolution/period, natural",
+    "tr": "8726c4bcb4"
+  },
+  "orbit|de|science/mission-phases/mission-types.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "1d773a453d"
+  },
+  "orbit|de|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "d86e17f84b"
+  },
+  "orbit|de|science/observation/black-holes.json :: diagram_caption": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "01f629cf45"
+  },
+  "orbit|de|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "76a75f8066"
+  },
+  "orbit|de|science/orbits/apsides.json :: body_paragraphs.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "5f4b8e6f45"
+  },
+  "orbit|de|science/orbits/eccentricity.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "05fb137af3"
+  },
+  "orbit|de|science/orbits/keplers-laws.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "ae0e069854"
+  },
+  "orbit|de|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "67d9b9ea60"
+  },
+  "orbit|de|science/orbits/true-anomaly.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "6467404186"
+  },
+  "orbit|de|science/planets/asteroid-belt.json :: body_paragraphs.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "607e764990"
+  },
+  "orbit|de|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "6bfdeea024"
+  },
+  "orbit|de|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "36fec77c07"
+  },
+  "orbit|de|science/planets/moons-of-the-system.json :: narrative_101.2": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "2f95e757dc"
+  },
+  "orbit|de|science/planets/sub-solar-and-terminator.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "edc29dcc2a"
+  },
+  "orbit|de|science/scales-time/_intro.json :: paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "dd0d98eeda"
+  },
+  "orbit|de|science/scales-time/au.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "0cb68fca43"
+  },
+  "orbit|de|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "dc3267135e"
+  },
+  "orbit|de|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "e3ee5d0475"
+  },
+  "orbit|de|science/scales-time/sidereal-synodic.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "bf8c3bacf2"
+  },
+  "orbit|de|science/space-stations/expedition-cadence.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "1f992987e8"
+  },
+  "orbit|de|science/space-stations/solar-power-budget.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "577180dbb0"
+  },
+  "orbit|de|science/space-stations/solar-power-budget.json :: diagram_caption": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "521e865a3e"
+  },
+  "orbit|de|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "34dd944222"
+  },
+  "orbit|hi|science/_landing.json :: chapters.0.diagram": {
+    "why": "file name",
+    "tr": "72874f8e10"
+  },
+  "orbit|hi|science/life-in-space/long-duration-effects.json :: body_paragraphs.1": {
+    "why": "\"24 h orbit\" omitted naturally",
+    "tr": "fddbe8e6fb"
+  },
+  "orbit|ja|science/_landing.json :: chapters.0.diagram": {
+    "why": "filename",
+    "tr": "72874f8e10"
+  },
+  "orbit|ko|science/_landing.json :: chapters.0.diagram": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "72874f8e10"
+  },
+  "orbit|ko|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "c935f08a80"
+  },
+  "orbit|ko|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "f1f23e68c0"
+  },
+  "orbit|ko|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "871bc67870"
+  },
+  "orbit|ko|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "5423e700ac"
+  },
+  "orbit|ko|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "ee095feae0"
+  },
+  "orbit|ko|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "afbbc1576c"
+  },
+  "orbit|ko|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "45c506b1ea"
+  },
+  "orbit|ko|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "aff39cf884"
+  },
+  "orbit|ko|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "de770ad883"
+  },
+  "orbit|ko|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "75925f46eb"
+  },
+  "orbit|nl|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "a8c61268e9"
+  },
+  "orbit|nl|science/exoplanets/fifty-one-pegasi.json :: body_paragraphs.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "aba98b90f9"
+  },
+  "orbit|nl|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "e8949d91bb"
+  },
+  "orbit|nl|science/exoplanets/habitable-zone.json :: narrative_101.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "98820277dd"
+  },
+  "orbit|nl|science/exoplanets/hot-jupiters.json :: intro_sentence": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "012793eb24"
+  },
+  "orbit|nl|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "43465bbec6"
+  },
+  "orbit|nl|science/exoplanets/proxima-system.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "8f1d043fc0"
+  },
+  "orbit|nl|science/exoplanets/radial-velocity.json :: diagram_caption": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "0b8910e006"
+  },
+  "orbit|nl|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "7570b94580"
+  },
+  "orbit|nl|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "9977a82b06"
+  },
+  "orbit|nl|science/exoplanets/tidal-locking.json :: narrative_101.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "95ba1db0ef"
+  },
+  "orbit|nl|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "8abdea0186"
+  },
+  "orbit|nl|science/exoplanets/transit-timing.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "ad19e3a615"
+  },
+  "orbit|nl|science/life-in-space/crew-selection.json :: body_paragraphs.2": {
+    "why": "\"in de ruimte\" for on orbit, natural",
+    "tr": "996541827c"
+  },
+  "orbit|nl|science/life-in-space/long-duration-effects.json :: body_paragraphs.1": {
+    "why": "orbit omitted naturally in \"in 24 uur\"",
+    "tr": "963ecfb6ab"
+  },
+  "orbit|nl|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "c1db285b67"
+  },
+  "orbit|nl|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "18ce427871"
+  },
+  "orbit|nl|science/orbits/apsides.json :: body_paragraphs.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "3c69b94e10"
+  },
+  "orbit|nl|science/orbits/hill-sphere.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "79251d032f"
+  },
+  "orbit|nl|science/orbits/keplers-laws.json :: body_paragraphs.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "38c5d659c0"
+  },
+  "orbit|nl|science/orbits/true-anomaly.json :: body_paragraphs.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "b31324fcab"
+  },
+  "orbit|nl|science/orbits/true-anomaly.json :: narrative_101.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "b0746fb8d4"
+  },
+  "orbit|nl|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "cb97dc3acd"
+  },
+  "orbit|nl|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "ab321c748d"
+  },
+  "orbit|nl|science/planets/moons-of-the-system.json :: narrative_101.2": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "8908c36047"
+  },
+  "orbit|nl|science/planets/sub-solar-and-terminator.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "160f8b54bc"
+  },
+  "orbit|nl|science/planets/tides.json :: body_paragraphs.3": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "4f2d60f8e8"
+  },
+  "orbit|nl|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "04b1dd28d7"
+  },
+  "orbit|nl|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "verb: omheen draait (re-kept after the burn edit)",
+    "tr": "fc6fdafc48"
+  },
+  "orbit|nl|science/scales-time/sidereal-synodic.json :: body_paragraphs.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "0039543b52"
+  },
+  "orbit|nl|science/transfers/coplanar-trajectories.json :: body_paragraphs.2": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "d01b123c5e"
+  },
+  "orbit|nl|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "06e76d0781"
+  },
+  "orbit|pt-BR|science/planets/_intro.json :: paragraphs.0": {
+    "why": "\"from orbit\" as do espaço, natural",
+    "tr": "7b82d3f7b2"
+  },
+  "orbit|ru|science/_landing.json :: chapters.0.diagram": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "72874f8e10"
+  },
+  "orbit|ru|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "d5ba2be6fd"
+  },
+  "orbit|ru|science/exoplanets/fifty-one-pegasi.json :: body_paragraphs.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "c788fb9302"
+  },
+  "orbit|ru|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "def6f2c981"
+  },
+  "orbit|ru|science/exoplanets/habitable-zone.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "c70b14b54e"
+  },
+  "orbit|ru|science/exoplanets/microlensing.json :: diagram_caption": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "2b17581eef"
+  },
+  "orbit|ru|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "6fc48e20ee"
+  },
+  "orbit|ru|science/exoplanets/proxima-system.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "36ce965e86"
+  },
+  "orbit|ru|science/exoplanets/radial-velocity.json :: diagram_caption": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "b8639f793a"
+  },
+  "orbit|ru|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "78c54a394c"
+  },
+  "orbit|ru|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "f51a156f4f"
+  },
+  "orbit|ru|science/exoplanets/tidal-locking.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "71d044404d"
+  },
+  "orbit|ru|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "b695d56981"
+  },
+  "orbit|ru|science/exoplanets/transit-timing.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "d49bd904de"
+  },
+  "orbit|ru|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "6909dd01fe"
+  },
+  "orbit|ru|science/orbits/apsides.json :: body_paragraphs.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "8e7a1fb31f"
+  },
+  "orbit|ru|science/orbits/keplers-laws.json :: body_paragraphs.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "3078e19a26"
+  },
+  "orbit|ru|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "dd4774076f"
+  },
+  "orbit|ru|science/planets/asteroid-belt.json :: body_paragraphs.1": {
+    "why": "verb: обращался вокруг",
+    "tr": "4e730dcf18"
+  },
+  "orbit|ru|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "744c0a013b"
+  },
+  "orbit|ru|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "00ac7cd799"
+  },
+  "orbit|ru|science/planets/moons-of-the-system.json :: narrative_101.2": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "af77027d3e"
+  },
+  "orbit|ru|science/planets/sub-solar-and-terminator.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "01fb41a96f"
+  },
+  "orbit|ru|science/scales-time/_intro.json :: paragraphs.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "ca8ae15476"
+  },
+  "orbit|ru|science/scales-time/au.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "026e9ac3d7"
+  },
+  "orbit|ru|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "622c0e1682"
+  },
+  "orbit|ru|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "a1705a15ec"
+  },
+  "orbit|ru|science/scales-time/sidereal-synodic.json :: body_paragraphs.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "a3df6598fe"
+  },
+  "orbit|ru|science/transfers/coplanar-trajectories.json :: body_paragraphs.2": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "5c98c67140"
+  },
+  "orbit|ru|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "4d3ce88ffe"
+  },
+  "orbit|sr-Cyrl|science/_landing.json :: chapters.0.diagram": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "72874f8e10"
+  },
+  "orbit|sr-Cyrl|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "503e29a118"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/fifty-one-pegasi.json :: body_paragraphs.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "b01c904411"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "820e46daa2"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/habitable-zone.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "e0556fdf40"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/hot-jupiters.json :: intro_sentence": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "94a782c729"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/microlensing.json :: diagram_caption": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "3f3a832ee4"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "3f62aa3e5b"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/proxima-system.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "ea3c480546"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/radial-velocity.json :: diagram_caption": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "ec9880add8"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "2268da5997"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "8d0d8370e0"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/tidal-locking.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "817bb5008f"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "715bfd6011"
+  },
+  "orbit|sr-Cyrl|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "ab3997afa4"
+  },
+  "orbit|sr-Cyrl|science/observation/black-holes.json :: diagram_caption": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "15c49677e8"
+  },
+  "orbit|sr-Cyrl|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "125a376349"
+  },
+  "orbit|sr-Cyrl|science/orbits/apsides.json :: body_paragraphs.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "57e611fe19"
+  },
+  "orbit|sr-Cyrl|science/orbits/keplers-laws.json :: body_paragraphs.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "1791b75f76"
+  },
+  "orbit|sr-Cyrl|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "d464a7ca3c"
+  },
+  "orbit|sr-Cyrl|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "b5ebc4a2ff"
+  },
+  "orbit|sr-Cyrl|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "d17574d752"
+  },
+  "orbit|sr-Cyrl|science/planets/moons-of-the-system.json :: narrative_101.2": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "38ee8e3e45"
+  },
+  "orbit|sr-Cyrl|science/planets/sub-solar-and-terminator.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "cee8b7e410"
+  },
+  "orbit|sr-Cyrl|science/scales-time/_intro.json :: paragraphs.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "254f4a350a"
+  },
+  "orbit|sr-Cyrl|science/scales-time/au.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "cc19be7a2a"
+  },
+  "orbit|sr-Cyrl|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "114844e2ae"
+  },
+  "orbit|sr-Cyrl|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "a783b54d91"
+  },
+  "orbit|sr-Cyrl|science/transfers/coplanar-trajectories.json :: body_paragraphs.2": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "a037aa61fc"
+  },
+  "orbit|sr-Cyrl|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "e415c46837"
+  },
+  "orbit|zh-CN|science/_landing.json :: chapters.0.diagram": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "72874f8e10"
+  },
+  "orbit|zh-CN|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "13b3f3aab4"
+  },
+  "orbit|zh-CN|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "aa05049418"
+  },
+  "orbit|zh-CN|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "9a9567f69e"
+  },
+  "orbit|zh-CN|science/exoplanets/proxima-system.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "5089f75bc7"
+  },
+  "orbit|zh-CN|science/exoplanets/radial-velocity.json :: diagram_caption": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "59e3363fd5"
+  },
+  "orbit|zh-CN|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "0990e575f4"
+  },
+  "orbit|zh-CN|science/exoplanets/tidal-locking.json :: body_paragraphs.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "06ec984352"
+  },
+  "orbit|zh-CN|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "ef6b90f266"
+  },
+  "orbit|zh-CN|science/exoplanets/tidal-locking.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "deefce44b3"
+  },
+  "orbit|zh-CN|science/exoplanets/tidal-locking.json :: narrative_101.1": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "f3ae423495"
+  },
+  "orbit|zh-CN|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "01aa1d1cbf"
+  },
+  "orbit|zh-CN|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "aebb28eee3"
+  },
+  "orbit|zh-CN|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "a2bdc0e0d3"
+  },
+  "orbit|zh-CN|science/planets/axial-tilt-and-seasons.json :: body_paragraphs.1": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "27acf82b38"
+  },
+  "orbit|zh-CN|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "a64441b9dc"
+  },
+  "orbit|zh-CN|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "61fc2de878"
+  },
+  "orbit|zh-CN|science/planets/moons-of-the-system.json :: narrative_101.2": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "7fc48c0298"
+  },
+  "orbit|zh-CN|science/planets/sub-solar-and-terminator.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "e163759b51"
+  },
+  "orbit|zh-CN|science/planets/tides.json :: body_paragraphs.3": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "860982d115"
+  },
+  "orbit|zh-CN|science/scales-time/_intro.json :: paragraphs.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "73d17b5aa9"
+  },
+  "orbit|zh-CN|science/space-stations/expedition-cadence.json :: body_paragraphs.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "323fa4744b"
+  },
+  "orbit|zh-CN|science/space-stations/expedition-cadence.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "6a54030b6b"
+  },
+  "orbit|zh-CN|science/transfers/coplanar-trajectories.json :: body_paragraphs.2": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "9e64362cdf"
+  },
+  "orbit|zh-CN|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "1a1fe7044c"
+  },
+  "payload|de|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "part of proper name Vega Secondary Payload Adapter",
+    "tr": "5d89faaf14"
+  },
+  "payload|fr|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "\"Vega Secondary Payload Adapter\" is a proper name left in English",
+    "tr": "37d0ae9a2f"
+  },
+  "payload|hi|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "part of the product name Vega Secondary Payload Adapter",
+    "tr": "cde1c2f34c"
+  },
+  "payload|it|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "Vega Secondary Payload Adapter is a proper name",
+    "tr": "714623570e"
+  },
+  "payload|ja|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "Vega Secondary Payload Adapter is a proper name",
+    "tr": "c91fcc9d16"
+  },
+  "payload|ko|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "Vega Secondary Payload Adapter is a proper name left in English",
+    "tr": "4042bc064b"
+  },
+  "payload|pt-BR|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "Vega Secondary Payload Adapter is a proper name",
+    "tr": "4b3625c79c"
+  },
+  "payload|pt-BR|science/propulsion/c3.json :: body_paragraphs.1": {
+    "why": "carga-útil hyphenated compound present",
+    "tr": "0098bcdc2e"
+  },
+  "payload|pt-BR|science/propulsion/c3.json :: narrative_101.2": {
+    "why": "carga-útil hyphenated compound present",
+    "tr": "263eaa3bef"
+  },
+  "payload|ru|science/mission-phases/eva.json :: diagram_caption": {
+    "why": "EVA worksite payload, not rocket cargo",
+    "tr": "416ff96386"
+  },
+  "payload|sr-Cyrl|science/history/apollo-11-1969.json :: body_paragraphs.0": {
+    "why": "носивост = payload capacity",
+    "tr": "bd003d29c2"
+  },
+  "payload|sr-Cyrl|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "proper name 'Vega Secondary Payload Adapter'",
+    "tr": "6e7ea25f36"
+  },
+  "payload|zh-CN|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "Vega Secondary Payload Adapter is a proper name",
+    "tr": "8ca1f489b3"
+  },
+  "propellant|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "RP-1 name; combustible stem present in text",
+    "tr": "e3d4fe202c"
+  },
+  "propellant|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "RP-1 name in English; text uses kérosène/carburant for fuel, no propellant sense",
+    "tr": "640326ff91"
+  },
+  "propellant|hi|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "\"Rocket Propellant 1\" is the grade name RP-1",
+    "tr": "32cf172243"
+  },
+  "propellant|it|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "RP-1 name; no separate propellant sense",
+    "tr": "73a1c194a7"
+  },
+  "propellant|ja|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "Rocket Propellant 1 is a proper name",
+    "tr": "fec8b4d0e6"
+  },
+  "propellant|ko|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "Rocket Propellant 1 is a proper name left in English",
+    "tr": "78b07cc18b"
+  },
+  "propellant|pt-BR|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "RP-1 \"Rocket Propellant 1\" is a name",
+    "tr": "85ef10ce88"
+  },
+  "propellant|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "25dc1c0192"
+  },
+  "rendezvous|de|science/orbits/synodic-period.json :: narrative_101.2": {
+    "why": "generic meeting point (Treffpunkt), not a spacecraft rendezvous",
+    "tr": "647987ca07"
+  },
+  "specific impulse|ar|science/propulsion/antimatter-propulsion.json :: body_paragraphs.0": {
+    "why": "\"للدفع النوعي\" = ل + الدفع النوعي, binding form",
+    "tr": "dce97bc449"
+  },
+  "specific impulse|ar|science/propulsion/engine-types.json :: body_paragraphs.2": {
+    "why": "\"دفعه النوعي\" is the binding form with pronoun",
+    "tr": "59e147f936"
+  },
+  "stage|de|science/orbits/special-orbits.json :: body_paragraphs.4": {
+    "why": "different sense (single-stage-to-orbit, staging orbit)",
+    "tr": "dd21477194"
+  },
+  "stage|fr|science/orbits/special-orbits.json :: body_paragraphs.4": {
+    "why": "\"staging orbit\", not a rocket stage",
+    "tr": "68d6cb7fe1"
+  },
+  "stage|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.2": {
+    "why": "single-stage-to-orbit kept as English acronym phrase; no rocket stage meant separately",
+    "tr": "16403179d7"
+  },
+  "stage|it|science/orbits/special-orbits.json :: body_paragraphs.4": {
+    "why": "\"staging orbit\", not a rocket stage",
+    "tr": "1913b8d84b"
+  },
+  "stage|nl|science/orbits/special-orbits.json :: body_paragraphs.4": {
+    "why": "different sense (single-stage-to-orbit, staging orbit)",
+    "tr": "fa46f31466"
+  },
+  "stage|nl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.2": {
+    "why": "different sense (single-stage-to-orbit)",
+    "tr": "cf5515bb94"
+  },
+  "stage|pt-BR|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.2": {
+    "why": "single-stage-to-orbit kept as English phrase",
+    "tr": "c70bb875fc"
+  },
+  "stage|ru|science/mission-phases/mission-types.json :: body_paragraphs.3": {
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
+    "tr": "0fe04f788f"
+  },
+  "stage|ru|science/mission-phases/skycrane.json :: body_paragraphs.2": {
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
+    "tr": "99525749c6"
+  },
+  "stage|ru|science/mission-phases/skycrane.json :: diagram_caption": {
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
+    "tr": "7e3f65aa17"
+  },
+  "stage|ru|science/mission-phases/skycrane.json :: narrative_101.1": {
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
+    "tr": "a6a4e5a1cb"
+  },
+  "stage|ru|science/mission-phases/skycrane.json :: narrative_101.2": {
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
+    "tr": "9d6954b520"
+  },
+  "stage|ru|science/orbits/special-orbits.json :: body_paragraphs.4": {
+    "why": "'staging orbit', not a rocket stage",
+    "tr": "21867bc815"
+  },
+  "thrust|de|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
+    "why": "\"chemical thrust\" = propulsion, Antrieb natural",
+    "tr": "5e0b3709eb"
+  },
+  "thrust|ja|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
+    "why": "化学推進 = chemical propulsion as a method; natural",
+    "tr": "1e1ef038f0"
+  },
+  "thrust|ko|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
+    "why": "화학 추진 = chemical propulsion method; natural for \"chemical thrust\" as means",
+    "tr": "f6ba624598"
+  },
+  "thrust|zh-CN|science/mission-phases/ascent-guidance.json :: body_paragraphs.2": {
+    "why": "推重比 is the standard term for thrust-to-weight ratio",
+    "tr": "c554918e29"
+  },
+  "thrust|zh-CN|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
+    "why": "化学推进 = chemical propulsion as a method; natural",
+    "tr": "e9a011f2ba"
+  },
+  "trajectory|ko|science/planets/active-spacecraft-survey.json :: body_paragraphs.1": {
+    "why": "English uses trajectory loosely for an orbit around Jupiter; 궤도 correct",
+    "tr": "7032d40f21"
+  }
+}

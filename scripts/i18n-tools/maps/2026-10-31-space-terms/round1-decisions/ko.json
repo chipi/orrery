@@ -1,0 +1,548 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.diagram",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 돌다 (natural); or filename"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "term": "inclination",
+    "decision": "change",
+    "find": "~80°의 경사가",
+    "replace": "~80°의 궤도 경사각이",
+    "why": "binding 궤도 경사각"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "돌았습니다 = orbited, natural"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "궤도 수정 기동(Trajectory",
+    "replace": "궤적 수정 기동(Trajectory",
+    "why": "trajectory = 궤적 (matches site TCM term)"
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.1",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "궤도 보정 기동",
+    "replace": "궤적 수정 기동",
+    "why": "trajectory = 궤적; same term as TCM title"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "title",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "궤도 수정 기동",
+    "replace": "궤적 수정 기동",
+    "why": "trajectory = 궤적"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "intro_sentence",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "발사 궤도에",
+    "replace": "발사 궤적에",
+    "why": "trajectory = 궤적"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "narrative_101.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "올바른 궤도에",
+    "replace": "올바른 궤적에",
+    "why": "trajectory = 궤적"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "narrative_101.2",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "탈출 궤도로",
+    "replace": "탈출 궤적으로",
+    "why": "trajectory = 궤적"
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.1",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "English uses trajectory loosely for an orbit around Jupiter; 궤도 correct"
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "화성으로 가는 궤도를",
+    "replace": "화성으로 가는 궤적을",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "비용이 낮은 궤도는",
+    "replace": "비용이 낮은 궤적은",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "비싼 궤도는",
+    "replace": "비싼 궤적은",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.1",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "최적의 궤도만",
+    "replace": "최적의 궤적만",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.1",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "저렴한 궤도를",
+    "replace": "저렴한 궤적을",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "narrative_101.2",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "기발한 궤도를",
+    "replace": "기발한 궤적을",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.2",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "고에너지 궤도(",
+    "replace": "고에너지 궤적(",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.2",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "기발한 궤도를",
+    "replace": "기발한 궤적을",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.1",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "그 궤도는",
+    "replace": "그 궤적은",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.2",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "궤도 변형",
+    "replace": "궤적 변형",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "탑재 질량",
+    "replace": "탑재체 질량",
+    "why": "payload = 탑재체"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "궤도상의 모든",
+    "replace": "궤적상의 모든",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "narrative_101.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "궤도상에서 하는",
+    "replace": "궤적상에서 하는",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "title",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "자유 귀환 궤도",
+    "replace": "자유 귀환 궤적",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "intro_sentence",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "귀환 티켓으로 바꾸는 궤도",
+    "replace": "귀환 티켓으로 바꾸는 궤적",
+    "why": "궤적"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.1",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "English says tilt; 기울기 matches source"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "change",
+    "find": "경사가 작은",
+    "replace": "경사각이 작은",
+    "why": "binding 경사각"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "change",
+    "find": "경사가 모두 큰",
+    "replace": "경사각이 모두 큰",
+    "why": "binding 경사각"
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "body_paragraphs.1",
+    "term": "inclination",
+    "decision": "change",
+    "find": "궤도 경사를 재는",
+    "replace": "궤도 경사각을 재는",
+    "why": "경사각"
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "body_paragraphs.1",
+    "term": "inclination",
+    "decision": "change",
+    "find": "지구의 경사는",
+    "replace": "지구의 경사각은",
+    "why": "경사각"
+  },
+  {
+    "rel": "science/scales-time/j2000.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "change",
+    "find": "궤도 경사는",
+    "replace": "궤도 경사각은",
+    "why": "경사각"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "change",
+    "find": "궤적의 경사를",
+    "replace": "궤적의 경사각을",
+    "why": "경사각"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "화학 추진 = chemical propulsion method; natural for \"chemical thrust\" as means"
+  },
+  {
+    "rel": "science/orbits/synodic-period.json",
+    "at": "narrative_101.2",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "만남 지점",
+    "replace": "랑데부 지점",
+    "why": "binding 랑데부"
+  },
+  {
+    "rel": "science/space-stations/node-module.json",
+    "at": "body_paragraphs.4",
+    "term": "docking",
+    "decision": "keep",
+    "why": "Chinese Docking Mechanism is a proper name left in English"
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "하강 단 is correct; particle after 단 defeats the regex"
+  },
+  {
+    "rel": "science/mission-phases/launch.json",
+    "at": "narrative_101.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "단 / 2단 / 1단 correct; particle defeats regex"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.3",
+    "term": "stage",
+    "decision": "change",
+    "find": "상승 단계",
+    "replace": "상승 단",
+    "why": "ascent stage is hardware = 단"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.3",
+    "term": "stage",
+    "decision": "change",
+    "find": "강하 단계, 강하 단계를 실어 나르는 순항 단계, 순항 단계를 쏘아",
+    "replace": "강하 단, 강하 단을 실어 나르는 순항 단, 순항 단을 쏘아",
+    "why": "hardware stages = 단, not 단계 (phase)"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.3",
+    "term": "stage",
+    "decision": "change",
+    "find": "0.5톤의 순항 단계",
+    "replace": "0.5톤의 순항 단",
+    "why": "hardware stage = 단"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "change",
+    "find": "강하 단계의 줄이",
+    "replace": "강하 단의 줄이",
+    "why": "단"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "change",
+    "find": "강하 단계가 멀리",
+    "replace": "강하 단이 멀리",
+    "why": "단"
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "diagram_caption",
+    "term": "stage",
+    "decision": "change",
+    "find": "강하 단계가 호버링",
+    "replace": "강하 단이 호버링",
+    "why": "단"
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "화학 1단 correct; particle defeats regex"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.1",
+    "term": "stage",
+    "decision": "keep",
+    "why": "1단에서는 correct"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "intro_sentence",
+    "term": "stage",
+    "decision": "change",
+    "find": "단일 단계로의",
+    "replace": "단일 단으로의",
+    "why": "단"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "intro_sentence",
+    "term": "stage",
+    "decision": "change",
+    "find": "하나의 단계를 분리",
+    "replace": "하나의 단을 분리",
+    "why": "단"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "keep",
+    "why": "1단 correct; \"booster phase\" is a phase"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "Rocket Propellant 1 is a proper name left in English"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.0",
+    "term": "payload",
+    "decision": "change",
+    "find": "유인 탑재량",
+    "replace": "유인 탑재체 질량",
+    "why": "payload = 탑재체"
+  },
+  {
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "intro_sentence",
+    "term": "payload",
+    "decision": "change",
+    "find": "탑재 장비 하나가",
+    "replace": "탑재체 하나가",
+    "why": "payload = 탑재체"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "payload",
+    "decision": "keep",
+    "why": "Vega Secondary Payload Adapter is a proper name left in English"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.0",
+    "term": "payload",
+    "decision": "change",
+    "find": "탑재 질량",
+    "replace": "탑재체 질량",
+    "why": "payload = 탑재체"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.4.paragraphs.1",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "[궤도 삽입]",
+    "replace": "[궤도 진입]",
+    "why": "binding 궤도 진입"
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "keep",
+    "why": "re-entry into 1 g is not atmospheric entry"
+  },
+  {
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "body_paragraphs.0",
+    "term": "descent",
+    "decision": "change",
+    "find": "귀환 모듈",
+    "replace": "하강 모듈",
+    "why": "descent module = 하강 모듈"
+  }
+]

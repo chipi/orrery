@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "intro_sentence",
+    "old": "Integre os acelerômetros para obter a velocidade, integre de novo para obter a posição: funciona por horas, deriva de forma perceptível ao longo de dias e é exatamente por isso que todo cruzeiro precisa de correções periódicas feitas a partir do solo.",
+    "new": "Integre os acelerômetros para obter a velocidade e de novo para obter a posição: funciona por horas, deriva visivelmente ao longo de dias, e por isso todo cruzeiro precisa de correções periódicas a partir do solo."
+  }
+]

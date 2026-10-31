@@ -1,0 +1,32 @@
+[
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.0",
+    "find": "Viking-2-Orbiter",
+    "replace": "Orbiter von Viking 2"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.0",
+    "find": "Viking-1-Orbiter",
+    "replace": "Orbiter von Viking 1"
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "description",
+    "find": "Voyager-2-Aufnahmen zeigten",
+    "replace": "Aufnahmen von Voyager 2 zeigten"
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "description",
+    "find": "Voyager-2-Aufnahmen zeigen",
+    "replace": "Aufnahmen von Voyager 2 zeigen"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.3.l",
+    "find": "— Decadal Survey",
+    "replace": "— Dekadenstudie (Decadal Survey)"
+  }
+]

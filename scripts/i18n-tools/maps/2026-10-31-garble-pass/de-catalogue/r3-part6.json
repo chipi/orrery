@@ -1,0 +1,1116 @@
+[
+  {
+    "rel": "satellites/titan.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "items.buran-ok-gli",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.3.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/franklin-institute.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Die kreisförmigste Planetenumlaufbahn des Systems (e = 0,0068) — Venus bewegt sich wie ein nahezu perfekter Ring um die Sonne.",
+    "note": "Binding term Umlaufbahn not used"
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "residents.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Gaia befindet sich neben JWST am L2. Der Lagrange-Punkt ist eine begehrte Lage — gravitativ stabil, thermisch stabil und dauerhaft von der Sonne abgewandt.",
+    "note": "Real estate misread as object"
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Andocken und Ausgangspunkt für Außenbordeinsätze am russischen Segment bis zum Abbremsen aus der Umlaufbahn im Jahr 2021, um den Anschluss für Nauka freizumachen.",
+    "note": "Left orbit wrong; EVA staging English"
+  },
+  {
+    "rel": "earth-objects/beidou.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Die Architektur von BeiDou mit drei Umlaufbahntypen ist einzigartig — sie nutzt Satelliten in drei verschiedenen Höhen gleichzeitig.",
+    "note": "Binding term Umlaufbahn not used"
+  },
+  {
+    "rel": "trajectories/venera-13.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "0,74 AE · landete am 1982-03-01 auf der Venus (127 Minuten auf der Oberfläche überlebt)",
+    "note": "Date not ISO; awkward noun"
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.rejected.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/change2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Begann als hochauflösendere Neukartierung des Mondes im Anschluss an Chang'e 1 und wurde dann für eine erweiterte Tiefraummission umgewidmet. Nach Abschluss der Mondkartierung 2011 flog Chang'e 2 zum Sonne-Erde-Punkt L2 — Chinas erster Tiefraummission — und danach 2012 zu einem Vorbeiflug am Asteroiden 4179 Toutatis. Wird weiterhin auf einer heliozentrischen Umlaufbahn verfolgt.",
+    "note": "Orbit term, deep-space wording, dashes"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.rejected.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "items.hayabusa",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Die Umlaufbahn der Erde definiert die Ekliptikebene. Die Inklination aller anderen Planeten wird relativ zu dieser Referenz gemessen.",
+    "note": "Binding term Inklination not used"
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Im März 2025 erzeugte es sein erstes Bild mit etwa 1000 der geplanten 131.000 Antennen.",
+    "note": "Inconsistent thousands separator"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/donaldjohanson.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/wentian.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.4.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Drei Missionen spannen Merkurs Erforschung auf: Mariner 10 (1974), MESSENGER (2011–15) und BepiColombo (Einschwenken in die Umlaufbahn Ende 2026).",
+    "note": "Binding term for orbit insertion unused"
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/eris.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Die Inklination von Eris von 44° gehört zu den höchsten unter den katalogisierten großen Körpern — ihr Ursprung in der Streuscheibe bringt sie weit aus der Ekliptik heraus.",
+    "note": "Inklination unused; origin clause meaning shifted"
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/htv_x.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Der Kounotori-Nachfolger der nächsten Generation von JAXA — erstmals im Oktober 2025 auf einer H3 geflogen, mit erweiterter Kapazität für druckbeaufschlagte und externe Fracht.",
+    "note": "Ungrammatical noun phrase"
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.4.l",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Blassblauer Punkt — Carl Sagans Reflexion (Planetary Society)",
+    "note": "Wrong hyphenation, odd title translation"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.want",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Das Emblem des Programms China Manned Space (CMS) und die Besatzungsabzeichen von Shenzhou, die neben den NASA-Abzeichen auf den Seiten zu Tiangong und Shenzhou stehen sollen.",
+    "note": "Clumsy purpose clause"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/bledsoe-miller-steam-center-waco.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Voyager 2 — USA, 1986 (einziger Besuch einer Raumsonde; Vorbeiflug über der Südhalbkugel)",
+    "note": "Awkward compound repeated flyby"
+  },
+  {
+    "rel": "small-bodies/didymos.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/chandrayaan1.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/danmarks-tekniske-museum.json",
+    "at": "items.soyuz-tma",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-space-centre-leicester.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/htv_x.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Per Canadarm2 angekoppelt; druckbeaufschlagte und drucklose Nutzlast; Technologiedemonstrationsflüge für künftige zislunare Logistik.",
+    "note": "Berthing left in English"
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/iss.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/voyager-golden-record.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Die Besatzungsschleuse des US-Segments — hier treten Astronauten in Raumanzügen ins Vakuum, ohne einen Andockanschluss an einem Raumfahrzeug mit Besatzung zu öffnen.",
+    "note": "Suited rendered as geeignete (suitable)"
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/columbus.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Racks für Materialwissenschaft, Biologie und Fluidphysik mit von der Besatzung betreuten Nutzlasten und Erdbeobachtungsmöglichkeiten.",
+    "note": "Crew-tended misread as bemannt"
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "propellant",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.7.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Swing-by auf freier Rückkehrbahn abgeschlossen. Raumfahrzeug auf Flugbahn zur Erde.",
+    "note": "Free-return and gravity assist garbled"
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Russisches Andockmodul und EVA-Schleuse, die jahrelang im Einsatz waren, bis sie entfernt wurden — klein, aber stark ausgelastet am hinteren Teil des Komplexes.",
+    "note": "Real estate and removal misread"
+  },
+  {
+    "rel": "culture-doors/kepler16b-tatooine.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/jaxa-sagamihara-communication-hall.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Der Kuipergürtel ist der transneptunische Rest der protoplanetaren Scheibe — 30 bis 50 AE, von Eis dominiert. Hier liegen Pluto, Eris, Haumea und Makemake.",
+    "note": "Wrong capitalisation; live here literal"
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.f-1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/starlink.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Die Apoapsis von Hope bei 43.000 km entspricht etwa 1/9 der Entfernung von Phobos zum Erdmond. Die Umlaufbahn wurde bewusst so gewählt, dass sie in der Mars-Flotte EINZIGARTIG ist — kein anderes Raumfahrzeug betrachtet den Planeten aus diesem Winkel.",
+    "note": "Apoapsis gender, Orbit vs Umlaufbahn"
+  },
+  {
+    "rel": "small-bodies/67p.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Soyuz-FG (inzwischen ausgemustert) plus die Fregat-Oberstufe — die Standardpaarung von ESA und Roscosmos für mittlere interplanetare Missionen. Das Design ohne kryogene Treibstoffe nutzt Kerosin/LOX in den unteren Stufen und die wiederzündbaren hypergolen Treibstoffe der Fregat für einen präzisen Bahneinschuss. Startete die ESA-Mission Mars Express (2003), das magnetosphärische Quartett Cluster und die meisten ISS-Versorgungsflüge vor Soyuz-2.",
+    "note": "ESA's apostrophe; Einsetzung odd"
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Ein 4-km-Asteroid des C-Typs im Hauptgürtel, benannt nach dem Entdecker des Lucy-Hominiden-Fossils. Später in der Missionsplanung von Lucy als Bonus-Vorbeiflug hinzugefügt (2025-04-20, 960 km kleinster Abstand bei 13,4 km/s) — eine Gelegenheit, die Instrumente vor den schwierigeren Trojaner-Begegnungen zu testen.",
+    "note": "Troianer should be Trojaner"
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/science-museum-london.json",
+    "at": "items.soyuz-tma",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/mao-zedong-memorial-museum-shaoshan.json",
+    "at": "items.shenzhou",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/salt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/zvezda.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Wohnräume, Lebenserhaltung und der zentrale Antrieb ermöglichten dauerhaft besetzte Aufenthalte — praktisch das erste Langzeitzuhause der Station.",
+    "note": "Kernantrieb means nuclear propulsion"
+  },
+  {
+    "rel": "museums/china-science-and-technology-museum.json",
+    "at": "items.shenzhou",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Ungefähr die Höhe, in der die GPS-Satelliten der Erde kreisen — jedoch um einen Planeten, der nur etwas mehr als halb so groß wie die Erde ist. Der Blick des Orbiters auf den Mars an der Apoapsis ist die klassische ‚Vollscheiben‘-Aufnahme der frühen Missionsfotos aus den 1970er Jahren.",
+    "note": "Mismatched quote marks"
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "place",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Tidbinbilla, Australisches Hauptstadtterritorium",
+    "note": "Territory name left in English"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/kuiper.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Galileo-Orbiter — USA, 1995–2003 (Magnetfeldnachweis)",
+    "note": "Orbiter lowercase English, wrong dash"
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Dragonfly — USA, Start 2028 (Drehflügler-Lander)",
+    "note": "Rotorcraft left in English"
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "interstellar_since_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Signalverlust 1995 — treibt Richtung Sternbild Adler, wird um 2027 den interstellaren Raum erreichen",
+    "note": "Schwebt wrong for coasting"
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/planet-labs.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/musee-air-espace-le-bourget.json",
+    "at": "items.soyuz-t",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Kallisto umkreist Jupiter außerhalb der Laplace-Resonanz — seine große Halbachse von 1,88 Millionen km liegt jenseits der schlimmsten Strahlungsgürtel Jupiters und macht ihn zum raumfahrzeugfreundlichsten der Galileischen Monde.",
+    "note": "Galilean Mond ungrammatical"
+  },
+  {
+    "rel": "small-bodies/dimorphos.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "highlights.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Zwischen 1984 und 1996 unter Govind Swarup gebaut, gilt es als das größte und empfindlichste Radioteleskop-Array bei niedrigen Frequenzen.",
+    "note": "Wrong pronoun gender"
+  },
+  {
+    "rel": "iss-modules/columbus.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Europas Flaggschiff-Wissenschaftsmodul — das dauerhafte Innenlabor der ESA, entstanden innerhalb der Grenzen, die der Frachtraum des Shuttles vorgab.",
+    "note": "Von ESA, calqued carved out"
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/jaxa-sagamihara-communication-hall.json",
+    "at": "items.hayabusa-2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Erste Mondmission der NASA in der Discovery-Klasse, 1998–1999. Direkter Nachweis von Wasserstoff an beiden Mondpolen mit einem Neutronenspektrometer — starker Hinweis auf Wassereis in dauerhaft beschatteten Kraterböden. Am Ende der Mission absichtlich im Shoemaker-Krater aufgeschlagen, in der Hoffnung, der Auswurf des Einschlags würde Wasser bestätigen; Beobachter auf der Erde entdeckten nichts Eindeutiges.",
+    "note": "Erste NASA Mondmission ungrammatical"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Zweistufiges Fahrzeug aus Edelstahl mit einem Super-Heavy-Booster (33 Raptor-Triebwerke) und einer Starship-Oberstufe (6 Raptoren). Ausgelegt auf die Treibstoffübernahme in der Umlaufbahn: Eine Tankervariante füllt Starship in der LEO wieder auf und ermöglicht so ~100 t zur Marsoberfläche — um Größenordnungen mehr als jede frühere Trägerrakete. Das Programm der Orbitalflüge begann 2023.",
+    "note": "Mostly untranslated English"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "delta-v",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

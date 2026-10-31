@@ -1,0 +1,1156 @@
+[
+  {
+    "rel": "satellites/ariel.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Die hellste und (nach Miranda) am jüngsten wirkende Oberfläche im Uranus-System — Voyager-2-Aufnahmen zeigen breite Grabenbrüche und möglicherweise Fließstrukturen, die auf vergangene oder gegenwärtige kryovulkanische Aktivität hindeuten. Gezeitenheizung durch eine 2:1-Bahnresonanz mit Umbriel, die in der fernen Vergangenheit existierte, könnte das Innere geschmolzen haben; ob heute noch flüssiges Wasser vorhanden ist, ist unbekannt. Wie bei den anderen großen Uranus-Monden wurde nur die Südhalbkugel aus der Nähe abgebildet.",
+    "note": "Missing hyphenation in compound."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Der kleinere und äußere der beiden Marsmonde, nur 12 km groß — der kleinste bekannte Körper im Sonnensystem, der von einer typischen Orbitalkamera noch als Scheibe und nicht als Punkt aufgelöst wird. Seine glattere Oberfläche (im Vergleich zum kraterzerfurchten Terrain von Phobos) und seine langsamere Umlaufbahn (30 Stunden gegenüber 8 bei Phobos) machen ihn zum ruhigeren Vertreter des Mars-Mondpaares. Asaph Hall benannte beide Monde nach den griechischen Personifikationen von Furcht (Phobos) und Schrecken (Deimos) — den Kriegspferden, die in Ilias XV den Streitwagen des Ares ziehen.",
+    "note": "Iliad left in English."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Bis November 2024 hatte es über 1.000 Pulsare gefunden.",
+    "note": "Thousands separator missing."
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Gefrorener Stickstoff + Wassereis + Kohlendioxideis; Oberfläche bedeckt mit Cantaloupe-Gelände, das im Sonnensystem einzigartig ist, und aktiven Stickstoff-Kryogeysiren, die dunkle Fontänen 8 km hoch in eine dünne Stickstoffatmosphäre schleudern.",
+    "note": "Invented compound for cantaloupe terrain."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Ähnlich einem kohligen Chondriten; glattere Oberfläche als Phobos, da seine schwächere Schwerkraft es Auswurfmaterial aus Einschlägen erlaubt, in die Umlaufbahn um den Mars zu entweichen, anstatt sich wieder anzulagern. Zwei benannte Krater: Swift und Voltaire (beide ~3 km).",
+    "note": "Marsorbit violates binding term Umlaufbahn."
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "residents.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/kibo.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Experimentierregale im Innenraum sowie externe Logistik für Erdbeobachtung und Technologiedemonstrationen, die zum Weltraum ausgerichtet sind.",
+    "note": "Indoor left in English; deep space softened."
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.skylab",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-expo-noordwijk.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/danmarks-tekniske-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "highlights.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Seine Datenveröffentlichungen begannen im Juni 2013, und die offizielle Website nennt eine öffentliche Datenfreigabe DR11.",
+    "note": "Clumsy repetition of Veröffentlichung."
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "flyby",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "rendezvous",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.lrv-apollo",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Die Umlaufbahn des Mondes um die Erde ist das klassische Zweikörper-Keplersystem — jede andere Berechnung eines Mondes um einen Planeten lässt sich von hier aus verallgemeinern.",
+    "note": "Reflexive verallgemeinert sich von awkward."
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.1.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Dawn — erster speziell für Asteroiden gebauter Orbiter (Vesta, USA)",
+    "note": "Anglicism dedizierter."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Das Teleskop, das die Sicht der Menschheit auf das Universum verändert hat. 1990 mit einem defekten Spiegel gestartet — 1993 von Space-Shuttle-Astronauten korrigiert. Seitdem wurden 1,4 Millionen Himmelsobjekte beobachtet. Seit über 34 Jahren im Betrieb.",
+    "note": "Space Shuttle-Astronauten hyphenation."
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Himmelskörper auf stark elliptischen Bahnen jenseits des Kuipergürtels — 50 bis 1.000 AE. Sie wurden wahrscheinlich durch gravitative Wechselwirkungen mit Neptun vor langer Zeit hierher gestreut. Sedna ist der prototypische Sednoid: 76 AE im Perihel, 937 AE im Aphel, eine Umlaufzeit von 11.400 Jahren. Ihre Bahnen sind zu weit entfernt, als dass Neptun sie aktuell hätte platzieren können, was auf Einflüsse vorbeiziehender Sterne, eines hypothetischen Planeten Neun oder der verlorenen Geschwister der Sonne aus ihrem Geburtshaufen hindeutet. Noch nie hat ein Raumfahrzeug diese Region besucht.",
+    "note": "Genitive ending missing."
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "mission_visits.3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.resolution",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/aviation-museum-plovdiv-krumovo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/rassvet.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Erweiterung des Andockports und Stauraum für kleine Fracht neben dem Kern des russischen Segments.",
+    "note": "Kleinfrachtstauung awkward; port term."
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Chinas größter operationeller Träger: kryogene Hauptstufe mit zwei YF-77-Wasserstoffmotoren, vier Kerosin-Sauerstoff-Boostern und einer Wasserstoff-Oberstufe. Brachte den Orbiter/Lander/Rover Tianwen-1 im Juli 2020 zum Mars und die Chang'e-Missionen zur Probenrückführung vom Mond.",
+    "note": "Dative plural missing after mit."
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "items.soyuz-tm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/chinarm.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "Der Hauptmanipulator der Station — ein 10 Meter langer Arm mit sieben Gelenken, der sich Hand über Hand an Tianhe und den Labormodulen entlangbewegt, um Fracht einzufangen und externe Nutzlasten umzusetzen.",
+    "note": "Seven-joint dropped; sentence lacks subject."
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Indiens Schwerlast-Arbeitspferd — erster Start zum Mond (Chandrayaan-3, 2023)",
+    "note": "schwerlast lowercase; launch rendered as mission."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/ulysses.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "5,2 AE · Mission beendet 2009-06-30 (Triebwerksleitungen gefroren) — Hardware in polarer heliozentrischer Umlaufbahn",
+    "note": "Adjective ending wrong; Düsenleitungen odd."
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "mission_visits.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Galileo-Orbiter — USA, 1995–2003 (mehrfache Vorbeiflüge; Kandidat für einen Ozean)",
+    "note": "Galileo orbiter left in English form."
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Ein 45-Meter-Millimeterwellen-Radioteleskop in 1.350 m Höhe, Teil des National Astronomical Observatory of Japan. Es arbeitet im Bereich von 1 bis 80 GHz und erforscht Sternentstehung und die Entwicklung von Galaxien.",
+    "note": "Thousands separator missing."
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/polymele.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Das felsige innere Sonnensystem — 0,4 bis 1,5 AE von der Sonne entfernt. Vier kleine Welten mit metallischen Kernen, Silikatmänteln und dünnen oder fehlenden Atmosphären. Sie entstanden innerhalb der Frostgrenze, wo es zu heiß war, damit flüchtige Eise kondensieren konnten, sodass nur feuerfeste Materialien (Silikate, Eisen, Nickel) fest blieben. Drei der vier waren Ziele bemannter Erkundung (Erde, Mond, mit Kurs auf den Mars).",
+    "note": "Mars-gebunden is a calque."
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "stage",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.atlantis",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Itokawa ist ein erdnaher Apollo-Asteroid — große Halbachse 1,32 AE. Hayabusas Rendezvous 2005 + Probenrückführung 2010 war die erste Hin- und Rückreise zu einem erdnahen Asteroiden (NEA).",
+    "note": "NEA-Hin- und Rückfahrtmission awkward."
+  },
+  {
+    "rel": "small-bodies/oumuamua.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.4.l",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Der außer Kontrolle geratene Treibhauseffekt der Venus (Nature Astronomy 2020)",
+    "note": "Gewächshaus instead of Treibhauseffekt."
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Der erste Himmelskörper, dessen Umlaufbahn gezielt von Menschen verändert wurde. Die DART-Sonde der NASA traf Dimorphos am 2022-09-26 mit 6,14 km/s und verkürzte dadurch seine Umlaufzeit von 11,9 Stunden um Didymos um 33 Minuten (4,2 %) — damit wurde die Erfolgsschwelle um etwa das 25-Fache übertroffen und gezeigt, dass Planetenabwehr möglich ist.",
+    "note": "Soft hyphen in text; 11,9-Stunden-Umlaufbahn clumsy."
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Etwa 1/11 des Weges zum Mond. Ein TV-Signal braucht für Hin- und Rückweg über einen GEO-Satelliten ~240 ms — lang genug, um es bei einem Telefonat zu hören („Satellitenverzögerung“).",
+    "note": "Comsat anglicism; Hin- und Rücksignal unclear."
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "library_labels.enceladus-habitability",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Astrobiologie — Enceladus als Ziel der Lebenssuche",
+    "note": "Astrobiology left in English."
+  },
+  {
+    "rel": "observatories/salt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/canadarm2.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Anlegehilfe, EVA-Unterstützung und schwere Montagebewegungen an der Außenseite entlang des Mobile Base System.",
+    "note": "Massive rendered umfangreich; compound clumsy."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.rejected.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "cmse.gov.cn und Bildmaterial chinesischer Staatsmedien — urheberrechtlich geschützt, keine freie Lizenz",
+    "note": "Case/gender agreement error in noun phrase."
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Elliptische Kartierungsumlaufbahnen und Parkbahnen oberhalb von 100 km. Luna 10 wurde 1966 hier platziert — das erste Artefakt, das in eine Umlaufbahn um einen anderen Himmelskörper als die Erde eintrat. SMART-1 verweilte in hochelliptischen Umlaufbahnen, um die Ausdauer des Ionenantriebs zu testen. Die meisten modernen Mondmissionen passieren HLO, bevor sie in LLO absteigen; einige beenden ihr Leben, indem sie hierher angehoben werden, um den LLO-„Arbeitsbereich“ vor dem Entsorgungseinschlag freizugeben.",
+    "note": "Orbits violates binding term Umlaufbahn."
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "burn",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "highlights.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "2019 fand ein Team damit ballonartige Strukturen, Hunderte Lichtjahre hoch, über und unter dem galaktischen Zentrum.",
+    "note": "hunderte should be capitalised."
+  },
+  {
+    "rel": "earth-objects/sentinel-copernicus.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/luna10.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Mondumlaufbahn ~350 km Höhe. Der Mond ist 384.400 km entfernt – drei Größenordnungen weiter als die ISS – aber Luna 10 war das erste Objekt, das dort in die Umlaufbahn gebracht wurde.",
+    "note": "Article missing before ISS."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/bepicolombo.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "0,48 AE · auf dem Weg zum Einschwenken in die Merkur-Umlaufbahn 2026-12-05",
+    "note": "zur Merkur-Orbiteintritt ungrammatical; binding term ignored."
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "highlights.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Das 3,6-m-DOT hatte am 31. März 2016 sein erstes Licht.",
+    "note": "erreichte das erste Licht is calque."
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "residents.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Queqiao — Relaissatellit für Chang'e 4 auf der Mondrückseite (2018)",
+    "note": "Relais für Chang'e 4 Rückseite ungrammatical."
+  },
+  {
+    "rel": "earth-objects/gps.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "31 aktive Satelliten in 20.200 km Höhe. Jede Navigations-App, jede Drohne, jedes Schiff auf dem Meer ist auf diese Konstellation angewiesen. Ursprünglich militärisch, 1983 für Zivilisten freigegeben. Signalgenauigkeit: ~3 m für zivile Nutzung, ~1 m für militärische — Zentimeter-Präzision erfordert RTK-Augmentation.",
+    "note": "für militärisch lacks noun agreement."
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/pluto.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Cassinis 13-jährige Mission in der Saturn-Umlaufbahn war um Keplers Gesetze herum konzipiert — jede Ringquerung und jeder Mondvorbeiflug war ein Jahre im Voraus berechneter Keplerscher Bogen.",
+    "note": "Orbitmission violates binding term Umlaufbahn."
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "orbit insertion",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "film",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Ein Verbund aus dreißig beweglichen 45-m-Schüsseln, der bei Meterwellenlängen (50 bis 1.500 MHz) beobachtet und vom National Centre for Radio Astrophysics des Tata Institute of Fundamental Research betrieben wird.",
+    "note": "Thousands separator missing."
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "thrust",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "Besatzungswechsel der Tiangong, Rettungsfähigkeit und autonomes Rendezvous und Andocken mit manueller Übersteuerung über die Bedienelemente des Orbitalmoduls.",
+    "note": "Docking dropped; Lifeboat and Crewrotation English."
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cape-canaveral-space-force-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "highlights.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Es verfügt über fünf große Tiefenraumstationen und nutzt zusätzlich das Radioteleskop Parkes für mehr Empfangskapazität.",
+    "note": "Deep space stations lost the deep."
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Der geologisch aktivste Himmelskörper des Sonnensystems. Gezeitenheizung durch Jupiters Gravitation plus Bahnresonanz mit Europa und Ganymed pumpt etwa 100 Terawatt Wärme in Ios Inneres – genug, um ~400 aktive Vulkane und Oberflächentemperaturen anzutreiben, die von −130 °C (gefrorenes Schwefeldioxid) bis +1.600 °C (ultrabasische Lava) schwanken. Seine Oberfläche wird schneller umgestaltet, als Einschlagskrater sie markieren können. Loki Patera, ein Lavasee von 200 km Durchmesser, ist die mächtigste einzelne vulkanische Struktur des Sonnensystems.",
+    "note": "Ganymedes wrong; einzeln mächtigste Vulkanfeature awkward."
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Jupiter ist das bevorzugte Swing-by-Ziel für Missionen ins äußere System — Voyager 1, Voyager 2, Cassini, Galileo, New Horizons, Juno, Europa Clipper und JUICE nutzten oder nutzen einen Jupiter-Vorbeiflug für Geschwindigkeitszugewinn.",
+    "note": "Schwerkraft-Assist violates binding term Swing-by."
+  },
+  {
+    "rel": "small-bodies/eris.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Wassereiskruste + Inneres aus Silikat- und kohlenstoffhaltigem Gestein; Oberfläche die hellste der großen Uranusmonde, mit relativ wenigen Kratern — gedeutet als Hinweis auf kryovulkanische Oberflächenerneuerung innerhalb der letzten ~1 Mrd. Jahre.",
+    "note": "Gyr unit left in English; clumsy compound."
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Die Inklination des Planeten ist weniger entscheidend als die Neigung seiner Rotationsachse — Uranus hat die dramatischste Achsneigung im System, obwohl seine Bahninklination gering ist (0,77°).",
+    "note": "Bahnneigung ignores binding term Inklination."
+  },
+  {
+    "rel": "trajectories/voyager-1.json",
+    "at": "interstellar_since_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Einer der am langsamsten rotierenden bekannten Körper seiner Größe — eine Rotationsperiode von 446 Stunden (18,6 Tage), ungewöhnlich lang für einen 35-km-Asteroiden. Die langsame Rotation deutet auf eine komplexe Kollisions- oder Gezeitengeschichte mit einem anderen Körper hin, möglicherweise ein jüngeres (in geologischen Maßstäben) Großereignis.",
+    "note": "Known bodies became known universe."
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/tranquility.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Die Hauptlast der Lebenserhaltung und der Ruhm des Astronauten-Laufbands — hier bestimmt die Bewohnbarkeitstechnik leise die Schlagzeilen.",
+    "note": "Life-support heavy lifting misread as lifting heavy loads."
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.3.l",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Uranus Orbiter and Probe — Decadal Survey",
+    "note": "Dekadische Untersuchung is a wrong rendering of Decadal Survey."
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/kuiper.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Amazons LEO-Breitbandantwort auf Starlink — geplant sind 3.236 Satelliten in 590–630 km Höhe auf 98 Orbitalebenen. Die ersten Prototypen starteten 2023, die Serienstarts begannen 2025; die FCC-Lizenz verlangt eine Bereitstellung von 50 Prozent bis 2026 und 100 Prozent bis 2029.",
+    "note": "Tense mismatch; prototype singular; mixed percent style."
+  },
+  {
+    "rel": "tiangong-modules/wentian.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Das erste Labor, im Juli 2022 angedockt — zwei große Solarflügel, eine externe Nutzlast-Luftschleuse und ein kleiner experimenteller Roboterarm, der an der Hülle montiert ist.",
+    "note": "Bolted-to-hull detail weakened."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.rejected.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Moderne Fan-Nachbildungen (z. B. ein CC-BY-lizenziertes Buran-Emblem eines Spielegrafikers) — frei lizenziert, aber keine authentischen Abzeichen",
+    "note": "Spieleartisten is a calque; CC-BY dangling."
+  },
+  {
+    "rel": "earth-objects/geo.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Dass 35.786 km keine runde Zahl sind, hat System — es ist die exakte Höhe, bei der sich Schwerkraft und Umlaufgeschwindigkeit so ausgleichen, dass sich eine Umlaufzeit von 24 Stunden ergibt. Die Physik hat sie gewählt.",
+    "note": "konstruktionsbedingt misreads by design; Zeitraum for period."
+  },
+  {
+    "rel": "museums/cradle-of-aviation.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "entry",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/canadarm2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Der lange weiße Kran der Station — er wandert Hand über Hand am Fachwerk entlang, um Versorgungsfahrzeuge einzufangen, ohne dass Astronauten mit ihnen ringen müssen.",
+    "note": "sich damit auseinanderzusetzen brauchen is ungrammatical."
+  },
+  {
+    "rel": "museums/baikonur-cosmodrome-museum.json",
+    "at": "items.buran",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/landsat.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Atlas V von ULA, konfiguriert mit einer 5-Meter-Verkleidung, vier Feststoffraketen-Boostern und einer einmotorigen Centaur-Oberstufe. Brachte Curiosity im November 2011 zum Mars. 2024 zugunsten der Vulcan Centaur ausgemustert.",
+    "note": "single-engine rendered einstufig (single-stage)."
+  },
+  {
+    "rel": "iss-modules/unity.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

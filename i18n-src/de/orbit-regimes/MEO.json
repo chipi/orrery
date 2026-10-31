@@ -1,7 +1,7 @@
 {
   "name": "Mittlere Erdumlaufbahn",
   "short": "MEO",
-  "story": "Das Navigationsband — etwa 20.000 km hoch, wo eine Konstellation von 24+ Satelliten jeden Punkt auf der Erde mit mindestens vier gleichzeitig sichtbaren Raumfahrzeugen abdecken kann (das Minimum für eine 3D-Positionsbestimmung). Alle vier großen globalen Positionierungssysteme befinden sich hier, absichtlich über vier unabhängige Regime verteilt durch ihre Betreiberagenturen. Oberhalb des inneren Van-Allen-Gürtels, unterhalb des äußeren — eine ruhige, hohe Umlaufbahn.",
+  "story": "Das Navigationsband — etwa 20.000 km hoch, wo eine Konstellation von 24+ Satelliten jeden Punkt der Erde mit mindestens vier gleichzeitig sichtbaren Raumfahrzeugen abdecken kann (das Minimum für eine 3D-Positionsbestimmung). Alle vier großen globalen Positionierungssysteme befinden sich hier; ihre Betreiber haben sie absichtlich auf vier voneinander unabhängige Regime verteilt. Oberhalb des inneren Van-Allen-Gürtels, unterhalb des äußeren — eine ruhige, hohe Umlaufbahn.",
   "comparison": "Etwa 1/19 des Weges zum Mond. Ein Signal von GPS benötigt ~67 ms, um Ihr Telefon zu erreichen — etwa 10× länger als der LEO-Sprung.",
   "residents": [
     {

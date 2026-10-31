@@ -14,7 +14,7 @@
   "payload": "Das, was eine Rakete für die Mission transportiert: Satelliten, ein bemanntes Raumfahrzeug, Fracht oder Instrumente.",
   "thrust": "Die Kraft, die ein Raketentriebwerk erzeugt, um das Fahrzeug vorwärts zu schieben, gemessen in Newton.",
   "booster": "Eine Rakete, die beim Start Schub liefert: eine erste Stufe oder eine seitlich am Kern angebrachte Zusatzrakete.",
-  "specific impulse": "Wie effizient ein Triebwerk seinen Treibstoff nutzt, in Sekunden: Je höher er ist, desto mehr Δv liefert derselbe Treibstoff.",
+  "specific impulse": "Wie effizient ein Triebwerk seinen Treibstoff nutzt, in Sekunden angegeben: Je höher der Wert, desto mehr Δv liefert derselbe Treibstoff.",
   "flyby": "Ein naher Vorbeiflug an einem Planeten, Mond oder anderen Körper, ohne in eine Umlaufbahn um ihn einzuschwenken oder auf ihm zu landen.",
   "orbit insertion": "Die Zündung des Triebwerks, die ein Raumfahrzeug so weit abbremst, dass es in eine Umlaufbahn um sein Ziel eingefangen wird.",
   "entry": "Der Eintritt eines Raumfahrzeugs in die Atmosphäre eines Planeten, wo Luftwiderstand und Erhitzung es abbremsen.",

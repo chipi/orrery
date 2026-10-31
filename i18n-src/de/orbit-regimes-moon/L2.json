@@ -1,17 +1,17 @@
 {
   "name": "Earth-Moon L2",
   "short": "L2",
-  "story": "Der Lagrange-Punkt etwa 61.000 km hinter dem Mond aus irdischer Perspektive – der gravitationsdynamische Sattelpunkt, wo sich die Kräfte von Erde, Mond und Zentrifugalbeschleunigung ausgleichen. Der Mond sitzt immer zwischen dem Raumfahrzeug und der Erde, weshalb direkte Kommunikation unmöglich ist – doch ein Satellit, der sich hier in einer Halo-Umlaufbahn um L2 befindet, hat freie Sichtlinie sowohl zur Mondrückseite ALS AUCH zur Erde. Auf diese Weise landete China 2019 Chang'e 4 auf der Rückseite: Der Relais-Satellit Queqiao, positioniert in einer Halo-Umlaufbahn um den Erde-Mond-L2, überbrückt jede Kommando und jedes Bild.",
+  "story": "Der Lagrange-Punkt etwa 61.000 km hinter dem Mond, von der Erde aus gesehen — der Gravitationssattel, in dem sich die Kräfte von Erde und Mond sowie die Zentrifugalkraft ausgleichen. Der Mond steht immer zwischen dem Raumfahrzeug und der Erde, daher ist direkte Kommunikation unmöglich — doch ein Satellit, der hier in einer Halo-Umlaufbahn UM L2 geparkt ist, hat Sichtverbindung sowohl zur Mondrückseite ALS AUCH zur Erde. So landete China 2019 Chang'e 4 auf der Rückseite: Der Relaissatellit Queqiao, in einer Halo-Umlaufbahn um den Erde-Mond-Punkt L2 geparkt, überbrückt jeden Befehl und jedes Bild.",
   "comparison": "Etwa 1/6 der Entfernung von der Erde zum Mond. Ohne ein Relais bei L2 ist die gesamte Mondrückseite ein Kommunikations-Blackout — jedes Raumfahrzeug, das jemals dort gelandet ist, brauchte eines.",
   "residents": [
     {
       "id": "queqiao",
-      "label": "Queqiao — Relais für Chang'e 4 Rückseite (2018)",
+      "label": "Queqiao — Relaissatellit für Chang'e 4 auf der Mondrückseite (2018)",
       "agency": "CNSA"
     },
     {
       "id": "queqiao-2",
-      "label": "Queqiao-2 — Relais für Chang'e 6 Rückseite (2024)",
+      "label": "Queqiao-2 — Relais für Chang'e 6 auf der Mondrückseite (2024)",
       "agency": "CNSA"
     }
   ],

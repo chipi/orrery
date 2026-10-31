@@ -1,0 +1,1137 @@
+[
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Das 6 m große Azimutalteleskop (BTA-6) des Special Astrophysical Observatory der Russischen Akademie der Wissenschaften, 1966 errichtet, im Vorland des Kaukasus.",
+    "note": "Awkward '6-m-Große' compound; stiff foothills phrasing."
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Das Hale-Teleskop hatte am 26. Januar 1949 sein erstes Licht; Edwin Hubble richtete es auf NGC 2261.",
+    "note": "'erreichte das erste Licht' is a calque."
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Merkurs Exzentrizität von 0,206 ist die höchste der 8 Planeten — im Perihel erscheint die Sonne an seinem Himmel 1,5× größer als im Aphel.",
+    "note": "'bei Perihel/Aphel' should be 'im'."
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.falcon-heavy",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.lrv-apollo",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Keck I hatte am 24. November 1990 sein erstes Licht und Keck II am 27. April 1996; jedes besitzt einen Spiegel aus 36 sechseckigen Segmenten.",
+    "note": "'erreichte das erste Licht' is a calque."
+  },
+  {
+    "rel": "tiangong-modules/tianhe.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/esperance-museum.json",
+    "at": "items.skylab",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/haumea.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/pioneer-plaque.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/chandrayaan1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.saturn-ib",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/korolev-museum-zhytomyr.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/beidou.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cradle-of-aviation.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/esperance-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "trajectory",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.planet-labs",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/glonass.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/luna10.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.wall",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Viking-1-Orbiter — USA, 1977 (erste Nahaufnahmen)",
+    "note": "'orbiter' left in English; detail added."
+  },
+  {
+    "rel": "earth-objects/oneweb.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "OneWeb wählte 1.200 km — doppelt so hoch wie Starlink —, um Latenzeinbußen durch längere Signalwege zu verringern. Nachteil: Am Ende der Lebensdauer lassen sich die Satelliten schwerer aus der Umlaufbahn holen.",
+    "note": "Last sentence is clumsy elliptical German."
+  },
+  {
+    "rel": "museums/museum-of-science-and-industry-chicago.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/jwst.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Das JWST ist 3.676-mal weiter von der Erde entfernt als die ISS. Die Hubble-Wartungsmissionen dauerten 10 Tage. Das JWST kann überhaupt nicht gewartet werden — es wurde so konzipiert, dass es auf Anhieb perfekt ist.",
+    "note": "Missing article before ISS and JWST."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Die Exzentrizität des Mondes von 0,055 ist klein, aber relevant — im Perigäum wirkt die Scheibe 12 % größer und heller als im Apogäum („Supermond“).",
+    "note": "Single quotes instead of German quotation marks."
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/beam.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/armstrong-air-and-space-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-space-centre-leicester.json",
+    "at": "items.sokol-kv-2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/science-museum-london.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/tianhe.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Crew-Habitat, Kommando- und Datenverarbeitung, Triebwerke zur Bahnhaltung und der zentrale Andockknoten für ankommende Shenzhou-Crews und Tianzhou-Fracht.",
+    "note": "'Befehl und Datenverarbeitung' wrong term; 'der Dock' wrong gender."
+  },
+  {
+    "rel": "museums/stafford-air-and-space-museum.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/patroclus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "1999 entdeckt, benannt nach Polymele – der Mutter des Patroclus in der homerischen Überlieferung. Asteroiden vom Typ P weisen rötliche, strukturlose Reflexionsspektren auf, die als organikreich und dehydriert gedeutet werden; ihre dynamische Geschichte verortet sie eindeutig unter den ursprünglichen Planetesimalen der äußeren Scheibe, die Lucy beproben soll.",
+    "note": "'primordischen' unidiomatic; 'sollte' misreads Lucy's sampling role."
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "perigee",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/beam.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/inmarsat.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "14+ geostationäre Satelliten für Sprach- und Datenkommunikation auf See, in der Luftfahrt und in abgelegenen Gebieten. Rückgrat des GMDSS — des Globalen Seenot- und Sicherheitssystems (Global Maritime Distress and Safety System), auf das jedes hochseetaugliche Schiff angewiesen ist. 2023 von Viasat übernommen.",
+    "note": "'Fernbereichs-Sprach-' clumsy; GMDSS name left in English."
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Das 2,24-m-Teleskop der University of Hawaii hatte 1970 sein erstes Licht und ließ den Standort zu einem internationalen Observatorium heranwachsen.",
+    "note": "'erreichte das erste Licht' is a calque."
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Die Hälfte von Plutos Durchmesser — das größte Größenverhältnis von Mond zu Planet im Sonnensystem. Charon und Pluto sind gegenseitig gezeitengebunden und umkreisen einen gemeinsamen Massenschwerpunkt etwa 980 km über Plutos Oberfläche — praktisch ein Doppelplanetensystem. New Horizons offenbarte ein überraschend vielfältiges Gelände: die glatte Ebene Vulcan Planitia im Süden, eine alte, kraterübersäte Hemisphäre im Norden und eine dunkelrote Polkappe (Mordor Macula) aus Tholinen, die entstanden, als Methanmoleküle, die aus Plutos Atmosphäre entwichen, sich auf Charon sammelten und durch ultraviolettes Licht umgewandelt wurden. Die vier kleineren Pluto-Monde (Styx, Nix, Kerberos, Hydra) umkreisen das Pluto-Charon-Baryzentrum mit chaotischen Rotationen, angetrieben durch die wechselnde Gravitation des Doppelsystems.",
+    "note": "Wrong gender 'den Baryzentrum'; tense slip 'entweichen'."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "firsts.1.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Vostok 1 — Juri Gagarin, erster bemannter Orbitalflug (UdSSR)",
+    "note": "'USSR' should be 'UdSSR' in German."
+  },
+  {
+    "rel": "planets/pluto.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "library_labels.triton-voyager2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "NASA Voyager 2 — Begegnung mit dem Neptunsystem (1989)",
+    "note": "Compound 'Neptun-System Begegnung' lacks hyphen/preposition."
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cargo_dragon.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/zarya.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Der Functional Cargo Block wurde zuerst gestartet — Antrieb, Energieversorgung und Lageregelung, mit denen Unity Tage später andocken konnte. NASA finanzierte den russischen Bau in den schwierigsten Übergangsjahren des Programms.",
+    "note": "'Leistungsfunktionen' wrong for power."
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Exakt 35.786 km hoch — die Höhe, in der eine Umlaufbahn genau einen Sterntag dauert (23 h 56 min), sodass der Satellit regungslos über einem festen Längengrad am Äquator schwebt. Wettersatelliten starren für immer auf denselben Kontinent; Kommunikationssatelliten zeichnen eine Ausleuchtzone von der Größe einer Antennenschüssel und bewegen sich nie. Es gibt keine Parkflächen, nur Parkpositionen — jedem Betreiber weist die ITU ein Längengradband zu.",
+    "note": "'keine Parkplätze, nur Parkplätze' loses the spaces/slots contrast; 'vom ITU'."
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/giotto.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "specific impulse",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Wie effizient ein Triebwerk seinen Treibstoff nutzt, in Sekunden angegeben: Je höher der Wert, desto mehr Δv liefert derselbe Treibstoff.",
+    "note": "'Je höher er ist' has no antecedent."
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/dawn.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2,8 AE · seit Missionsende 2018-10-31 in stabiler Ceres-Umlaufbahn (~20 Jahre Bahnlebensdauer)",
+    "note": "ISO date turned into prose; 'Umlauflebensdauer' clumsy."
+  },
+  {
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Oberhalb des areostatischen Orbits, im elliptischen Band zwischen 20.000 und 43.000 km. Die Hope-Sonde der VAE ist das einzige Raumfahrzeug hier — ihr 55-Stunden-Orbit folgt einer weiten elliptischen Bahn, die für globale Atmosphärenforschung konzipiert ist: Das Verweilen nahe der Apoapsis erlaubt es ihr, ganze Wettersysteme zu beobachten, wie sie sich über den gesamten Tag-Nacht-Terminator des Planeten entwickeln und wieder vergehen. Deimos, der äußere Marsmond, umkreist den Mars ebenfalls innerhalb dieses Bands in 23.460 km Entfernung.",
+    "note": "'Apoapsisepunkt' malformed; 'nahe des' wrong case."
+  },
+  {
+    "rel": "iss-modules/poisk.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Andockschnittstelle für Soyuz- / Progress-Besatzungen und -Fracht, EVA-Vorbereitung für Weltraumausstiege im russischen Segment und externe wissenschaftliche Nutzlasthalterungen an der Hülle.",
+    "note": "'am Hülle' wrong gender; crew and cargo dropped."
+  },
+  {
+    "rel": "museums/adler-planetarium.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/mengtian.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Das zweite Labor — vollendete im Oktober 2022 die klassische T-Silhouette; dazu kamen zwei weitere Solarflügel und eine externe Nutzlastschleuse im Frachtstil, für deren Bedienung kein Raumspaziergänger nötig ist.",
+    "note": "'Cargo-style' left in English; list structure unclear."
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/iss.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Die ISS umkreist die Erde in 408 km Höhe. Mit Autobahngeschwindigkeit könnte man in 4 Stunden dorthin fahren. Es fühlt sich unglaublich weit an — es ist unglaublich nah.",
+    "note": "'Umlaufbahn beträgt 408 km' says orbit equals 408 km, not altitude."
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/vega-contact.json",
+    "at": "blurb",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "In Carl Sagans Contact trifft die erste Nachricht einer anderen Zivilisation bei der Menschheit von der Wega ein — ein Primzahlsignal, das sich als Bauplan für eine Maschine entpuppt, mit der man den Absendern begegnen soll. Sagan wählte die Wega wegen ihrer Bekanntheit und Nähe; in Wirklichkeit wurde von dort nie ein Signal empfangen.",
+    "note": "Wega gender ('seiner'); purpose clause misattached."
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Die Trägerrakete, die jede Mars-Express- und Cluster-Mission sowie jede gemeinsame Mission von ESA und Roscosmos auf den Weg brachte",
+    "note": "'jeden Mars Express, Cluster und ... Einsatz' ungrammatical coordination."
+  },
+  {
+    "rel": "small-bodies/oumuamua.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cargo_dragon.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.merlin-1d",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-huygens",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/leucus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/uss-hornet-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "orbit",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/vega-2.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "0,95 AE · Raumflugkörper in heliozentrischer Umlaufbahn seit Halley-Vorbeiflug 1986-03-09",
+    "note": "'helizentrischer' is a non-word."
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.wall",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Chinas bemanntes Programm verwendet durchaus Missionsabzeichen — jede Shenzhou-Besatzung hat eines —, aber das CMS-Emblem und die Shenzhou-Abzeichen sind urheberrechtlich geschützt (Rechteinhaber ist die China Manned Space Agency) und nicht unter einer freien Lizenz veröffentlicht. Wikimedia Commons enthält keines davon; die einzigen frei lizenzierten Bilder, die diese Suchen liefern, sind themenfremde NASA-Fotografien.",
+    "note": "'zurückgegeben' and 'nicht verwandte' are calques."
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Forschung hier trug zum Physik-Nobelpreis 2011 bei, der für die beschleunigte Expansion des Universums vergeben wurde.",
+    "note": "Doubled 'für' makes the Nobel clause clumsy."
+  },
+  {
+    "rel": "small-bodies/orus.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Orus ist ein C-Typ-L4-Trojaner — Lucy-Vorbeiflug im November 2028. Sein dunkles, kohlenstoffreiches Spektrum ähnelt eher Objekten des Kuipergürtels als Asteroiden des inneren Gürtels.",
+    "note": "'Kuiper-Gürtel' spelling inconsistent with 'Kuipergürtel'."
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Entdeckt 1999, benannt nach Orus – einem trojanischen Verbündeten, der in der Ilias von Ajax getötet wurde. Lucys Begegnung am 2028-11-11 wird Oberflächenzusammensetzung, Regolitheigenschaften und das mögliche Vorhandensein von Satelliten messen und damit die Vermessung des spektralen Bereichs der führenden Wolke (C → P → D) abschließen.",
+    "note": "Apposition after 'nach' in wrong case; 'Satellitenpräsenz' clumsy."
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-dragonfly",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.3.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Größtes Mitglied der L4-Familie der Eurybates-Trojaner — eine Kollisionsfamilie aus einem 64 km großen Mutterkörper und etwa 280 kleineren Fragmenten. Lucys Begegnung am 2027-08-12 mit 5,7 km/s wird die erste Nahaufnahme eines Jupiter-Trojaners überhaupt sein, begleitet vom 1 km großen Mond Queta von Eurybates (2018 von Hubble entdeckt).",
+    "note": "ISO date 2027-08-12 rewritten as 12.08.2027; 'Kollisionssystem' off."
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/harmony.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

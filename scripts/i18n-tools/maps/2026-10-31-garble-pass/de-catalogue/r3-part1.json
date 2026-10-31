@@ -1,0 +1,1145 @@
+[
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Der am weitesten entfernte Körper, den je eine Raumsonde besucht hat — 4,1 Milliarden km von der Sonne entfernt, als New Horizons am Neujahrstag 2019 in 3.500 km Abstand vorbeiflog. Seine beiden Lappen (Wenu und Weeyo) verschmolzen sanft bei der Entstehung des Sonnensystems und sind seit 4,5 Milliarden Jahren bei ~40 K vereint geblieben.",
+    "note": "clumsy verschmolzen/verschmolzen repetition"
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.2.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "film",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/smart-1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Erste Mondmission der ESA, 2003–2006. Sie nutzte einen solarelektrischen (Ionen-)Antrieb, um sich von einer geostationären Transferumlaufbahn spiralförmig bis zum Einfang durch den Mond hinauszuschrauben — ein 14-monatiger, treibstoffsparender Transfer, der Pionierarbeit für schubarme Flugbahnen der späteren interplanetaren ESA-Missionen leistete. Sie schlug 2006 absichtlich auf der Mondoberfläche ein.",
+    "note": "nonword Mondeinfangbahn, tense shift, missing article"
+  },
+  {
+    "rel": "museums/tsiolkovsky-museum-kaluga.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/change1.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Polare Mondumlaufbahn in ca. 200 km Höhe. Erste chinesische Mondmission; eröffnete das Chang'e-Programm, das die einzigen ausländischen Probenrückführungsmissionen des 21. Jahrhunderts durchführte.",
+    "note": "awkward compound, Probenrückgabe wrong term"
+  },
+  {
+    "rel": "iss-modules/unity.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Zentraler Anlegeknoten und Versorgungsleitung für Strom/Daten zwischen dem amerikanischen und dem russischen Segment.",
+    "note": "berthing hub rendered as Anlegeplatz"
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Zweistufiger Nachfolger der H-IIA von Mitsubishi Heavy Industries; erster erfolgreicher Flug 2024 (das Debüt 2023 scheiterte). Konfigurierbar mit 0, 2 oder 4 Feststoff-Boostern und wahlweise einer 5,2 m oder 4 m großen Nutzlastverkleidung. Das LE-9-Triebwerk der ersten Stufe ist das erste Einweg-Wasserstofftriebwerk der Welt mit Expander-Bleed-Zyklus. Soll 2026 JAXAs Mission MMX starten, die Proben vom Marsmond Phobos zur Erde bringt.",
+    "note": "garbled engine sentence, nonword Probeneinsatzrückholmission"
+  },
+  {
+    "rel": "museums/aviation-museum-plovdiv-krumovo.json",
+    "at": "items.soyuz-7k-ok",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Abstiegsmodul von Sojus 33 (1979), der Version 7K-T, die auf die 7K-OK folgte, geflogen von Nikolai Rukawischnikow und Georgi Iwanow",
+    "note": "descent module not bound term Abstieg"
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Kurzer X-Band-Signalausfall (8 s). DSN hat das Signal wieder erfasst. Ursache: Abschattung durch die Triebwerksfahne. Keine Daten verloren.",
+    "note": "plume occlusion rendered as Verstopfung; reacquired wrong"
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-military-museum-bucharest.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Der Sternenkartograf der ESA bei L2. Kartiert 1,8 Milliarden Sterne — Positionen werden auf 7 Mikrobogensekunden genau gemessen. Hat Entfernungen zu Sternen in 30.000 Lichtjahren Abstand mit der Präzision der Breite eines menschlichen Haares in 1.000 km Entfernung gemessen. Die detaillierteste Karte der Milchstraße, die je erstellt wurde.",
+    "note": "stellar cartographer mistranslated as herausragender Kartograf"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Primärkörper des größten bekannten Doppelsystems unter den Jupiter-Trojanern — der 113 km große Patroclus ist mit dem 104 km großen Menoetius in einem gegenseitigen Abstand von 680 km gepaart. Die Paarung aus der Ilias ist beabsichtigt: Patroclus und Menoetius sind Achilles' geliebter Gefährte und sein Vater, die beiden, die im Epos gemeinsam fallen.",
+    "note": "pairing rendered as Benennung; Epik; Entfernung"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.orion",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/juno.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "5,5 AE · seit 2016-07-05 in einer polaren Umlaufbahn um den Jupiter — erweiterte Mission bis 2025",
+    "note": "erweitertes Missionsende misstates extended mission"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/vega-1.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "0,98 AE · Raumfahrzeug in heliozentrischer Umlaufbahn seit dem Halley-Vorbeiflug 1986-03-06",
+    "note": "nonword heliozentricher"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Titan steht in einer 1:1-Spin-Bahn-Resonanz mit dem Saturn — er zeigt ihm immer dieselbe Seite. Mit einer großen Halbachse von 1,22 Millionen km liegt er nahe der äußeren Hill-Sphäre des Saturn.",
+    "note": "Spin-Orbit calque; clumsy semi-major axis clause"
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/armstrong-air-and-space-museum.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/rassvet.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.voskhod",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.4.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Der Mond ist für seinen Mutterplaneten ungewöhnlich groß — das Verhältnis (Durchmesser ≈ 0,27 der Erde) ist das höchste aller Planet-Satellit-Paare.",
+    "note": "calque 'in jedem Paar'"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.tundra-sirius",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/kibo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/mengtian.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Mikrogravitationsphysik, Strömungsmechanik und Verbrennungsexperimente; automatisches Ausbringen von Nutzlasten über seinen kleinen robotischen Transfermechanismus.",
+    "note": "Robotertransfer vague, mechanism dropped"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Europa ist das mittlere Glied der Laplace-Resonanz 4:2:1 von Io–Europa–Ganymed — ihre erzwungene Exzentrizität treibt die Gezeitenverformung an, die einen Ozean unter der Oberfläche flüssig hält.",
+    "note": "nonword Subsurfazean"
+  },
+  {
+    "rel": "earth-objects/goes.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "firsts.1.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Apollo 8 — erste bemannte Mondumlaufbahn (USA)",
+    "note": "Mondorbit instead of bound Umlaufbahn"
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cape-canaveral-space-force-museum.json",
+    "at": "items.titan-ii-glv",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Einschuss auf die Marstransferbahn: 3,61 km/s. Fluchtgeschwindigkeit erreicht.",
+    "note": "English term left untranslated"
+  },
+  {
+    "rel": "earth-objects/clementine.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.4",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "interstellar_since_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Die Röntgen-Multispiegelmission der ESA. 3 Teleskope in einem Raumfahrzeug. Wie Chandra nutzt sie eine stark elliptische Umlaufbahn, um der Strahlung der Erde zu entkommen. Über 1.000 begutachtete Fachartikel wurden auf Grundlage ihrer Daten veröffentlicht. Im selben Jahr wie Chandra gestartet — zwei Observatorien, zwei Kontinente, derselbe unsichtbare Himmel.",
+    "note": "von ESA, Experten begutachtete calque"
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/baikonur-cosmodrome-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "library_labels.phobos-mmx",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "interstellar_since_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Das 39,3-m-Segmentspiegelteleskop der ESO, das auf dem Cerro Armazones in 3.046 m Höhe, etwa 23 km vom Paranal entfernt, im Bau ist. Das Erste Licht wird für März 2029 erwartet.",
+    "note": "missing thousands dot in 3046"
+  },
+  {
+    "rel": "iss-modules/destiny.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/virginia-air-and-space-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Neptuns größter Mond und eine der geologisch aktivsten Welten des Sonnensystems. Triton umkreist Neptun rückläufig (retrograd) und mit extremer Neigung — ein Kennzeichen für ein eingefangenes Objekt des Kuipergürtels, das ihn wahrscheinlich eher zu einem Geschwister des Pluto als zu einem ursprünglichen Neptunmond macht. Voyager 2 entdeckte aktive Stickstoff-Geysire, die dunklen organischen Staub 8 km hoch in eine dünne Stickstoffatmosphäre ausstoßen; die Südhalbkugel zeigt „Melonenhaut-Gelände“ — ein Netz aus Dellen und Graten, das nirgendwo sonst im Sonnensystem zu sehen ist. Tritons rückläufige Umlaufbahn zerfällt durch Gezeitenkräfte; in etwa 3,6 Mrd. Jahren wird er entweder zu einem saturnähnlichen Ring zerrissen oder stürzt auf Neptun.",
+    "note": "native Neptunian mistranslated natürlicher; Kantalupen-Terrain"
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/oneweb.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "648 Satelliten in 1.200 km Höhe auf 12 polaren Bahnebenen — Breitband-LEO der ersten Generation. Betrieben von Eutelsat OneWeb seit der Fusion 2023. Polare Umlaufbahnen ermöglichen eine Abdeckung von Pol zu Pol, die Starlink-Schalen mit mittlerer Inklination nicht erreichen können.",
+    "note": "inclination bound term Inklination not used"
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Ein 50-m-Einzelschüssel-Millimeterwellenteleskop in 4.850 m Höhe auf der Sierra Negra, ein mexikanisch-amerikanisches Projekt des INAOE und der University of Massachusetts Amherst.",
+    "note": "missing thousands dot in 4850"
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "library_labels.ganymede-magfield",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/galileo.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Ein 500-Meter-Einzelschüssel-Radioteleskop in einer natürlichen Senke in Guizhou, mit einer aktiven Oberfläche aus 4.500 Metallpaneelen, die eine bewegliche Parabelform bildet. Es beobachtet Radiowellenlängen von 10 cm bis 4,3 m.",
+    "note": "missing thousands dot in 4500"
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Callistos Exzentrizität von 0,007 ist klein und nicht erzwungen — ohne resonante Anregung keine Gezeitenverformung und (wahrscheinlich) kein Ozean unter der Oberfläche.",
+    "note": "English Gezeitenflexing, Subsurface left in"
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.4.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Zweitgrößter Mond des Sonnensystems und der einzige Mond mit einer nennenswerten Atmosphäre — dichter als die der Erde. Unter dem orangefarbenen Tholin-Dunst liegt der einzige bekannte Himmelskörper außer der Erde mit stabiler Flüssigkeit an der Oberfläche: Kohlenwasserstoffseen und -meere aus Methan und Ethan in den Polarregionen, gespeist von einem aktiven hydrologischen Kreislauf des Methans mit Wolken, Regen und Flüssen, die sich in das Grundgestein aus Wassereis graben. Huygens (ESA) gelang 2005 die erste Landung auf einem anderen Mond als dem der Erde. NASAs Dragonfly wird 2034 als nuklear angetriebener Drehflügler eintreffen und zwischen Titans organikreichen Landschaften umherhüpfen.",
+    "note": "Methan-Wasserkreislauf and ausformen misread"
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.4.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "JUICE — ESA, Ankunft 2031 (Einschwenken in die Ganymed-Umlaufbahn 2034)",
+    "note": "missing article, wrong dash"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/musee-air-espace-le-bourget.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Mehr als die Hälfte der derzeit bekannten Pulsare wurde in Parkes entdeckt; der erste schnelle Radioblitz wurde in Archivdaten von Parkes aus dem Jahr 2001 identifiziert.",
+    "note": "Radioausbruch not the German term; 'in 2001' calque"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.resolution",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Unberührte Wassereiskruste über einem globalen Ozean unter der Oberfläche; südpolare „Tigerstreifen“-Brüche, aus denen Fontänen aus Wasserdampf, organischen Stoffen, Salzen, Siliziumdioxid-Nanokörnern und molekularem Wasserstoff austreten.",
+    "note": "case error Nanokörner; silica as Silizium"
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "docking",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Erstes vollständig wiederverwendbares orbitales Startsystem, entworfen für die Besiedlung des Mars",
+    "note": "English prose left in"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Der zweite Lagrange-Punkt — 1,5 Millionen km von der Erde entfernt, auf der Linie von der Sonne durch die Erde hindurch und darüber hinaus. Die Schwerkraft von Sonne + Erde wirkt so zusammen, dass eine Raumsonde mit minimalem Treibstoff ihre Position halten kann. Immer nächtlicher Himmel, immer warme erdzugewandte Seite, für immer derselbe Sonnenwinkel — der perfekte Parkplatz für Infrarotteleskope, die kalt bleiben und von der Sonne weg ausgerichtet sein müssen. JWST ist hier geparkt, in einer Halo-Umlaufbahn von ~800.000 km Breite.",
+    "note": "plural verb for Schwerkraft; Halo-Orbit vs bound term"
+  },
+  {
+    "rel": "earth-objects/geo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Zweistufige Trägerrakete in zwei Konfigurationen: Ariane 62 mit zwei Feststoff-Boostern und Ariane 64 mit vier. Die kryogene, mit Vinci angetriebene Oberstufe ist wiederzündbar und ermöglicht komplexe Aussetzungen in mehreren Umlaufbahnen sowie den direkten Einschuss auf interplanetare Bahnen. Jungfernflug im Juli 2024.",
+    "note": "zündbar is not restartable; Mehrorbital-Einsätze unclear"
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Der Mond ist 384.400 km entfernt — fast 1.000-mal weiter als die ISS. Auf dieser logarithmischen Karte wirkt er nah. In Wirklichkeit war seit 1972 kein Mensch mehr dort.",
+    "note": "wrong pronoun es for Mond"
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Viking-2-Orbiter — USA, 1977 (höchstaufgelöste Bilder vor 2000)",
+    "note": "orbiter English; hochauflösendste malformed superlative"
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Der äußerste der großen Monde des Uranus. Oberons Oberfläche ist stark verkratert und rötlich gefärbt — älter als die von Titania, ohne klare Anzeichen von Oberflächenerneuerung seit dem späten schweren Bombardement vor ~4 Mrd. Jahren. Mehrere große Krater haben auffallend dunkle Böden; die Spektren passen zu Kohlenwasserstoffrückständen, die von weltraumverwitterten organischen Stoffen hinterlassen wurden. Ein 6 km hoher Berg — möglicherweise der Zentralgipfel eines großen Einschlagbeckens — erhebt sich nahe dem Rand auf der besten Aufnahme von Voyager 2.",
+    "note": "English genitive apostrophe; calque 'konsistent mit'"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/menoetius.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/lro.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Umkreist den Mond seit 2009. Kartierung der Oberfläche mit einer Auflösung von 50 cm – gut genug, um die Apollo-Abstiegsstufen immer noch auf der Oberfläche sitzen zu sehen. An den Polen wurde Wassereis gefunden. Identifizierte über 200 potenzielle Artemis-Landeplätze. Ein Späher für die Rückkehr.",
+    "note": "English Scout left in"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Das öffentliche Verzeichnis der Inhalte, die Orrery nach seinem Lizenzmaßstab nicht beschaffen konnte (Creative Commons / gemeinfrei, kein Wasserzeichen, authentisch — keine Fan-Nachbildungen). Wir zeigen lieber eine ehrliche Lücke, als etwas zu veröffentlichen, wozu uns die Rechte fehlen. Neue Hürden werden hier ergänzt, sobald wir auf sie stoßen.",
+    "note": "nonword Lizenzschranke"
+  },
+  {
+    "rel": "museums/space-expo-noordwijk.json",
+    "at": "items.soyuz-tma",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Abstiegsmodul von Soyuz TMA-03M, geflogen von André Kuipers (2011–2012)",
+    "note": "descent module not bound term Abstieg"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Chinas Besatzungskapsel mit drei Sitzen — schnelles Rendezvous (3,5 Stunden seit Shenzhou 21) von Jiuquan aus und Fallschirmlandung auf dem Grasland der Inneren Mongolei.",
+    "note": "'since' rendered as 'nach'; Rendezvousoperation clumsy"
+  },
+  {
+    "rel": "earth-objects/galileo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "library_labels.enceladus-cassini",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/fernbank-science-center.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/iridium-next.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "66 betriebsbereite Satelliten (plus 9 Reserve in der Umlaufbahn) in 780 km Höhe auf 6 Polarebenen — Ersatz der zweiten Generation für die ursprüngliche Iridium-Flotte von 1998. Sprache, Daten, Maschine-zu-Maschine-Kommunikation. Rückgrat des GMDSS (Global Maritime Distress and Safety System, Globales Seenot- und Sicherheitssystem); Ihr Satellitentelefon auf einem entlegenen Ozean läuft über dieses Netz.",
+    "note": "Zweitgenerationen-Ersatz clumsy; Orbit vs bound term"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

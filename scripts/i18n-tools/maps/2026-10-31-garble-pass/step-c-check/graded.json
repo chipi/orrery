@@ -1,0 +1,602 @@
+[
+  {
+    "loc": "ru",
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/scales-time/j2000.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "body_paragraphs.0",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "Sokol KV-2 left in Latin; Soviet name should be Cyrillic."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "narrative_101.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/space-stations/node-module.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.1",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'обменивает ... угловое возвышение' is a calque; awkward."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/mission-phases/optical-comms.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/_landing.json",
+    "at": "closing",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/exoplanets/hot-jupiters.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "ru",
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.2",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Stray 'и' in 'Эрида ... и стала поводом'."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/space-stations/pressurized-volume.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/scales-time/frames.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "narrative_101.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.3",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/optical-comms.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/tcm.json",
+    "at": "narrative_101.0",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "'trans-X injection' rendered as specific 'interplanetary' transfer; X generalisation lost."
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/met.json",
+    "at": "narrative_101.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/observation/interferometry.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.4",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/orbits/hill-sphere.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.3",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/space-stations/pressurized-volume.json",
+    "at": "body_paragraphs.4",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/scales-time/frames.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/mission-phases/launch.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.3",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/mission-phases/tcm.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/mission-phases/met.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/observation/local-group.json",
+    "at": "title",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/planets/lunar-ice.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "body_paragraphs.2",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "Cyrillic 'Звезда' left in French text."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/orbits/hill-sphere.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "rel": "science/planets/tides.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

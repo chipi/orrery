@@ -461,8 +461,11 @@ Record: `maps/2026-10-31-garble-pass/step-d-check/`.
 
 **Not covered:**
 
-- Porkchop plot has two forms in ru (Latin «диаграмма porkchop» and «свиная отбивная») and in zh-CN
-  (猪排图 and porkchop), in both content and UI. Unifying them is a terminology decision for the
-  operator. fr uses one form only.
-- lunar-suits says twelve moonwalkers wore "eight suits"; not checked against a source.
-- No verification sample after C yet.
+- Low-cost follow-ups the operator approved (2026-10-31), all done:
+  - porkchop plot, one form per language: ru «диаграмма «свиная отбивная»» (canvas title «СВИНАЯ
+    ОТБИВНАЯ»), zh-CN 猪排图; 40 ru and 5 zh-CN fields, UI included. Record:
+    `maps/…/porkchop-term/`.
+  - lunar-suits said twelve moonwalkers wore "eight suits"; each suit was made to measure for one
+    astronaut, so it was twelve. Fixed in all 14 locales.
+  - Check after C: 25 fresh fields per locale, 75 in all, **0 BROKEN** (5 MINOR; ru Sokol KV-2
+    now «Сокол-КВ2»). That puts the 95 % upper bound at about 12 % per locale.

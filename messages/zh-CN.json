@@ -117,7 +117,7 @@
   "plan_gravity_assist_caveat": "显示直接轨迹。真实的外行星任务使用行星引力辅助——见任务库中的Voyager 2、Galileo、Cassini、New Horizons的实际飞行路径。",
   "plan_axis_tof_label_years": "飞行时间（年）",
   "plan_loading_title": "计算兰伯特解",
-  "plan_plot_title": "PORKCHOP · 地球 → {dest} · ∆v km/s",
+  "plan_plot_title": "猪排图 · 地球 → {dest} · ∆v km/s",
   "plan_axis_departure_window": "出发窗口 · 2026—2030年",
   "plan_axis_tof_label": "飞行时间（天）",
   "plan_empty_title": "选择一个发射窗口",

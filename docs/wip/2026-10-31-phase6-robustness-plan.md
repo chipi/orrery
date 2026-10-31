@@ -196,6 +196,15 @@ To reconsider at the end (operator, 2026-10-31): the Lab's internal name "plain"
 per-formula plain-words line (`plainKey`, `lab_f_*_plain`, `card__plain`; renamed from
 "glossary" in 889f810d7f4). Code-only, nothing on screen, so a rename is cheap.
 
+Also at the end (operator, 2026-10-31): a "language spirit" audit, beyond translation. The
+glossary's A–Z shows the kind of thing to look for: Arabic indexes ignore the article ال and
+treat أ/إ/آ/ا as one letter; CJK has no alphabet to jump through; the fade of a scroller sits at
+the end in reading direction. Search the site for other places that work only for English or
+Latin script, e.g. alphabetical lists and sorting (Intl.Collator vs. raw compare), search
+(normalising diacritics, kana/kanji, Arabic vowel marks), first-letter or initial UI, list
+separators and quotation marks, number, date and unit formatting, truncation of non-Latin
+text, RTL mirroring of icons and arrows, and keyboard and input assumptions.
+
 To reassess after the space-terms pilot
 ([2026-10-31-space-terms-glossary-pilot.md](2026-10-31-space-terms-glossary-pilot.md)).
 A low-profile `/glossary` page, like the glossary at the back of a technical book:

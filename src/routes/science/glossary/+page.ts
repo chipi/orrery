@@ -8,6 +8,8 @@ export type GlossaryLink = { href: string; title: string };
 export type GlossaryTerm = {
   id: string;
   name: string;
+  /** index letter in the reader's language (scripts/build-glossary.mjs initialOf) */
+  initial: string;
   definition: string;
   readMore: GlossaryLink | null;
   usedOn: GlossaryLink[];

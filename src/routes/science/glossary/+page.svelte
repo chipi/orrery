@@ -11,6 +11,13 @@
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
+
+  // A–Z bar: one link per index letter, to the first term filed under it.
+  const letters = $derived.by(() => {
+    const first = new Map<string, string>();
+    for (const t of data.terms) if (!first.has(t.initial)) first.set(t.initial, t.id);
+    return [...first];
+  });
 </script>
 
 <svelte:head>
@@ -23,6 +30,14 @@
     <h1>{m.glossary_h1()}</h1>
     <p class="lede">{m.glossary_intro()}</p>
   </header>
+
+  <nav class="az" aria-label={m.glossary_jump()}>
+    <div class="az-scroll">
+      {#each letters as [letter, id] (letter)}
+        <a href="#{id}">{letter}</a>
+      {/each}
+    </div>
+  </nav>
 
   <dl class="terms">
     {#each data.terms as t (t.id)}
@@ -79,13 +94,55 @@
       padding: 20px 16px 60px;
     }
   }
+  /* the /science layout scrolls in its own box below the site nav, so 0 is under the nav */
+  .az {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin: 20px -4px 0;
+    padding: 8px 4px;
+    background: var(--color-bg, #04040c);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .az-scroll {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* fade the trailing edge (the end in reading direction): more letters scroll into view */
+    mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+  :global([dir='rtl']) .az-scroll {
+    mask-image: linear-gradient(to left, #000 calc(100% - 28px), transparent);
+  }
+  .az a {
+    flex: none;
+    min-width: 32px;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 4px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 14px;
+    text-decoration: none;
+    color: #cfe3fb;
+  }
+  .az a:hover,
+  .az a:focus-visible {
+    border-color: #ffc850;
+    color: #ffc850;
+  }
   .terms {
-    margin: 30px 0 0;
+    margin: 12px 0 0;
   }
   .term {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 16px 0 14px;
-    scroll-margin-top: calc(var(--nav-height, 64px) + 12px);
+    /* clear the sticky A–Z bar */
+    scroll-margin-top: 60px;
   }
   dt {
     font-family: 'Bebas Neue', 'Space Mono', sans-serif;

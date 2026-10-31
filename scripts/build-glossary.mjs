@@ -29,6 +29,19 @@ const USED_ON = 5;
 const TREES = ['science', 'essays', 'programs', 'missions', 'fleet'];
 const OUT = 'static/data/glossary';
 
+/**
+ * The form a term is filed under in its language's index: Arabic dictionaries ignore the
+ * article ال (otherwise almost every term sits under ا).
+ */
+export const sortForm = (loc, name) => (loc === 'ar' ? name.replace(/^ال(?=\S{2})/u, '') : name);
+
+/** Index letter: the first letter of the sort form, upper-cased where the script has case. */
+export const initialOf = (loc, name) => {
+  const c = [...sortForm(loc, name)][0].toLocaleUpperCase(loc);
+  // the alif forms (أ إ آ ا) are one letter in an Arabic index
+  return loc === 'ar' ? c.replace(/[أإآ]/u, 'ا') : c;
+};
+
 export const slug = (term) => term.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
 /** Overlay path → site route, or null for files that are not a page of their own. */
@@ -118,13 +131,14 @@ export function build({ write = true } = {}) {
       return {
         id: slug(term),
         name,
+        initial: initialOf(loc, name),
         definition,
         readMore: e._read_more ? page(`science/${e._read_more}.json`) : null,
         usedOn: used[term].filter((rel) => rel !== `science/${e._read_more}.json`).map(page),
       };
     });
     const collator = new Intl.Collator(loc, { sensitivity: 'base' });
-    list.sort((a, b) => collator.compare(a.name, b.name));
+    list.sort((a, b) => collator.compare(sortForm(loc, a.name), sortForm(loc, b.name)));
     files[loc] = { terms: list };
   }
   if (write) {

@@ -38,3 +38,14 @@ describe('glossary page data', () => {
     expect(slug('gravity assist')).toBe('gravity-assist');
   });
 });
+
+describe('glossary index letters', () => {
+  it('files Arabic terms without the article and merges the alif forms', async () => {
+    const { initialOf, sortForm } = await import('./build-glossary.mjs');
+    expect(sortForm('ar', 'الالتحام')).toBe('التحام');
+    expect(initialOf('ar', 'الأوج')).toBe('ا');
+    expect(initialOf('ar', 'إشعال')).toBe('ا');
+    expect(initialOf('en-US', 'apogee')).toBe('A');
+    expect(initialOf('ru', 'апогей')).toBe('А');
+  });
+});

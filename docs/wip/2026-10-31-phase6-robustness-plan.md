@@ -187,7 +187,10 @@ questions go to an LLM; it needs a section in all 14 locales.
 
 Built as `/science/glossary`, a "see also" tab of /science. Order agreed for what follows
 (operator, 2026-10-31): the garble pass, then a plan for the next term batch, and **last of all
-the planned work**, terms linked from the article text to their glossary entries (PRD-038 §5).
+the planned work**, terms linked from the article text to their glossary entries (PRD-038 §5);
+after that, as the very end, a small visual per glossary term in the science-diagram style
+(Higgsfield pipeline, `docs/guides/diagram-art-style.md`; credits sized and approved first;
+PRD-038 §5b).
 
 To reassess after the space-terms pilot
 ([2026-10-31-space-terms-glossary-pilot.md](2026-10-31-space-terms-glossary-pilot.md)).

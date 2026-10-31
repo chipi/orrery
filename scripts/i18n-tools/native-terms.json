@@ -258,7 +258,7 @@
     "term:entry:fr": "CNES: entrée atmosphérique, descente et atterrissage (cnes.fr Mars 2020 article)",
     "term:entry:es": "ESA/NASA español: entrada, descenso y aterrizaje (EDL); reentrada for Earth return",
     "term:entry:it": "ASI/INAF: ingresso atmosferico (EDL); rientro for Earth return",
-    "term:entry:nl": "Dutch textbook/ESA NL usage (intrede); not agency-confirmed",
+    "term:entry:nl": "Dutch textbook/ESA NL usage (intrede); not agency-confirmed; re-entry: \"terugkeer (in de atmosfeer)\" (nl.wikipedia \"Terugkeer (ruimtevaart)\")",
     "term:entry:pt-BR": "AEB/INPE: entrada atmosférica (EDL: entrada, descida e pouso); reentrada for Earth return",
     "term:descent:ru": "Roscosmos usage (спуск, спускаемый аппарат, спуск и посадка)",
     "term:descent:ja": "JAXA usage (動力降下, 降下段)",
@@ -271,7 +271,7 @@
     "term:descent:fr": "CNES: descente (étage de descente)",
     "term:descent:es": "ESA/NASA español: descenso (EDL)",
     "term:descent:it": "ASI: discesa",
-    "term:descent:nl": "standard term (afdaling; afdalingstrap)",
+    "term:descent:nl": "standard term (afdaling; afdalingstrap); descent stage/engine: \"daaltrap\", \"daalmotor\" (nl.wikipedia, Apollo LM)",
     "term:descent:pt-BR": "AEB/INPE: descida"
   },
   "body": {
@@ -10537,7 +10537,7 @@
         "fr": ["entrée", "rentrée"],
         "es": ["entrada", "reentrada", "reingreso"],
         "it": ["ingresso", "rientro"],
-        "nl": ["intrede", "binnenkomst", "intrede in de atmosfeer"],
+        "nl": ["intrede", "binnenkomst", "intrede in de atmosfeer", "terugkeer"],
         "pt-BR": ["entrada", "reentrada"]
       },
       "_confidence": {
@@ -10583,7 +10583,7 @@
         "fr": ["descente"],
         "es": ["descenso"],
         "it": ["discesa"],
-        "nl": ["afdaling", "afdalings", "daling"],
+        "nl": ["afdaling", "afdalings", "daling", "daal"],
         "pt-BR": ["descida"]
       },
       "_confidence": {

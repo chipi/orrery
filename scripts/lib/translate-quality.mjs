@@ -12,6 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { nameRendered } from '../../src/lib/name-origins.js';
+import { enRegex } from '../i18n-tools/term-match.mjs';
 
 export const LANGUAGE_NAMES = {
   ar: 'Modern Standard Arabic',
@@ -361,6 +362,26 @@ function glossaryByClass() {
     ),
   );
   return GLOSSARY_RAW;
+}
+
+/**
+ * The technical-term bindings (native-terms.json `term`) for the terms an English source
+ * uses, as a prompt note: every writer uses the same word the glossary and the term gate
+ * expect. Empty when the source uses none.
+ */
+export function termNotes(locale, src) {
+  if (locale === 'en-US') return '';
+  const terms = glossaryByClass().term ?? {};
+  const text = typeof src === 'string' ? src : JSON.stringify(src);
+  const lines = [];
+  for (const [t, e] of Object.entries(terms)) {
+    if (!e[locale] || !enRegex(t, e).test(text)) continue;
+    const avoid = e._avoid?.[locale]?.length ? ` (never ${e._avoid[locale].join(', ')})` : '';
+    lines.push(`${t} → ${e[locale]}${avoid}`);
+  }
+  return lines.length
+    ? `\nTechnical terms — use exactly these words, inflected as the grammar needs: ${lines.join('; ')}.`
+    : '';
 }
 
 let GLOSSARY;

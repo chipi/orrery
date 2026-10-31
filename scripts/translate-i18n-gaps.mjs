@@ -27,7 +27,7 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
 import { TRANSLATED_LOCALES } from './lib/locales.mjs';
-import { LANGUAGE_NAMES } from './lib/translate-quality.mjs';
+import { LANGUAGE_NAMES, termNotes } from './lib/translate-quality.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 // i18n overlay source moved out of static/ (ADR-079 D2 / #377).
@@ -286,6 +286,7 @@ async function callModel(client, model, cfg, surface, locale, payload, correctio
         role: 'user',
         content:
           `Translate the following ${surface} overlay into ${NAMES[locale]} (${locale}). Output via the submit_translation tool.` +
+          termNotes(locale, payload) +
           (corrections
             ? `\n\nYour previous attempt was REJECTED. Fix exactly these problems and resubmit:\n${corrections}`
             : '') +
@@ -344,7 +345,7 @@ function summarizeErrors(errors) {
     .map((e) => {
       const field = e.instancePath || '(root)';
       if (e.keyword === 'maxLength')
-        return `• "${field}" is too long — it MUST be ${e.params.limit} characters or fewer. Produce a shorter translation: drop a clause or a non-essential detail rather than exceed the cap.`;
+        return `• "${field}" is too long — it MUST be ${e.params.limit} characters or fewer. Translate more concisely: same facts, same names and numbers, nothing left out.`;
       if (e.keyword === 'minLength') return `• "${field}" must not be empty.`;
       if (e.keyword === 'type' && e.params?.type === 'array')
         return `• "${field}" MUST be a JSON array of strings (one string per paragraph/item) — not a single joined string.`;
@@ -424,48 +425,18 @@ async function repairArrays(client, out, locale, payload) {
   return fixed;
 }
 
-// Rewrite an over-length string field to fit its cap — same language, keep the
-// key facts, drop a clause if needed.
-async function shortenString(client, text, locale, limit) {
-  const r = await client.messages.create({
-    model: translationModel(locale),
-    _locale: locale,
-    max_tokens: 1024,
-    system: SYSTEM_BASE,
-    tools: [
-      {
-        name: 'submit',
-        description: 'Return the shortened string.',
-        input_schema: {
-          type: 'object',
-          properties: { text: { type: 'string' } },
-          required: ['text'],
-        },
-      },
-    ],
-    tool_choice: { type: 'tool', name: 'submit' },
-    messages: [
-      {
-        role: 'user',
-        content: `Rewrite this ${NAMES[locale]} text so it is at most ${limit} characters (it is currently ${text.length}). Keep the essential meaning; drop a clause or a non-essential detail. Same language, no quotes added. Return via the submit tool.\n\n${JSON.stringify(text)}`,
-      },
-    ],
-  });
-  const b = r.content.find((x) => x.type === 'tool_use');
-  const out = b && b.input && typeof b.input.text === 'string' ? b.input.text : text;
-  return out.length <= limit ? out : out.slice(0, limit); // hard-cap as last resort
-}
-
-// Repair pass for maxLength violations on scalar string fields.
-async function repairLengths(client, out, locale, errors) {
-  const fixed = { ...out };
-  for (const e of errors) {
-    if (e.keyword !== 'maxLength' || !e.instancePath) continue;
-    const field = e.instancePath.replace(/^\//, '');
-    if (typeof fixed[field] !== 'string') continue;
-    fixed[field] = await shortenString(client, fixed[field], locale, e.params.limit);
-  }
-  return fixed;
+// maxLength violations are reported, not repaired. Never shorten by dropping content or
+// cutting the string: the 2026-07-14 retranslation did both ("drop a clause", then a hard cut
+// at the cap) and left cut-off sentences in 13 locales. A field still over its cap after the
+// ladder is refused, naming the field; the en-US source gets shortened instead (validate-data
+// rule), then the gap is translated again.
+function repairLengths(client, out, locale, errors) {
+  const over = errors.filter((e) => e.keyword === 'maxLength' && e.instancePath);
+  if (over.length)
+    throw new Error(
+      `over the length cap in ${locale}: ${over.map((e) => `${e.instancePath} (max ${e.params.limit})`).join(', ')} — shorten the en-US source and run again; translations are never cut`,
+    );
+  return out;
 }
 
 async function translate(client, surface, locale, payload) {
@@ -485,7 +456,7 @@ async function translate(client, surface, locale, payload) {
   // (common for verbose target languages), rewrite that field shorter.
   let repaired = await repairArrays(client, lastOut, locale, payload);
   if (validate && !validate(repaired)) {
-    repaired = await repairLengths(client, repaired, locale, validate.errors);
+    repaired = repairLengths(client, repaired, locale, validate.errors);
   }
   if (!validate || validate(repaired)) return repaired;
   throw new Error(`schema-invalid after ladder+repair: ${summarizeErrors(validate.errors)}`);

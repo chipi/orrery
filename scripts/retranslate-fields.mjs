@@ -29,6 +29,7 @@ import {
   fixHomoglyphs,
   LANGUAGE_NAMES,
   problems,
+  termNotes,
   uiPromptNotes,
 } from './lib/translate-quality.mjs';
 import { writeJsonEdits } from './lib/json-surgical.mjs';
@@ -183,7 +184,7 @@ async function main() {
           messages: [
             {
               role: 'user',
-              content: `Context: "${ctxTitle}" — field \`${u.at}\` (${u.file}).${uiNotes}${prior}${limitFor(u.at) ? `\nHard limit: at most ${limitFor(u.at)} characters (the UI and schema reject longer). Shorten the wording, never the names or numbers.` : ''}${feedback}\nTranslate into ${LANGUAGE_NAMES[u.loc]}:\n\n${JSON.stringify(u.src)}`,
+              content: `Context: "${ctxTitle}" — field \`${u.at}\` (${u.file}).${uiNotes}${termNotes(u.loc, u.src)}${prior}${limitFor(u.at) ? `\nHard limit: at most ${limitFor(u.at)} characters (the UI and schema reject longer). Shorten the wording, never the names or numbers.` : ''}${feedback}\nTranslate into ${LANGUAGE_NAMES[u.loc]}:\n\n${JSON.stringify(u.src)}`,
             },
           ],
         });
@@ -299,7 +300,7 @@ async function main() {
         messages: [
           {
             role: 'user',
-            content: `Context: "${ctxTitle}" (${u0.file}).${u0.file === 'messages' ? `\n\n${uiPromptNotes(part.map((u) => u.at))}\n\n` : ' '}Translate each of these ${part.length} fields into ${LANGUAGE_NAMES[u0.loc]}, keeping names and terms consistent across them. Return exactly ${part.length} translations, in order, one per field.\n\n${list}`,
+            content: `Context: "${ctxTitle}" (${u0.file}).${u0.file === 'messages' ? `\n\n${uiPromptNotes(part.map((u) => u.at))}\n\n` : ' '}Translate each of these ${part.length} fields into ${LANGUAGE_NAMES[u0.loc]}, keeping names and terms consistent across them.${termNotes(u0.loc, part.map((u) => u.src).join('\n'))} Return exactly ${part.length} translations, in order, one per field.\n\n${list}`,
           },
         ],
       });

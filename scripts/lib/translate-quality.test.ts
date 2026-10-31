@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { problems } from './translate-quality.mjs';
+import { problems, termNotes } from './translate-quality.mjs';
 
 const nameProblem = (loc: string, src: string, out: string) =>
   problems(loc, src, out).filter((p) => /^names (translated|changed) or missing/.test(p));
@@ -105,4 +105,29 @@ describe('problems — arrows in right-to-left text', () => {
   it('accepts "←"', () => expect(arrow('الأرض ← القمر')).toBe(false));
   it('accepts "→" between Latin symbols (e→1)', () =>
     expect(problems('ar', 'e→1', 'e→1').some((p) => /→/.test(p))).toBe(false));
+});
+
+// Garble pass 2026-10-31: every writer gets the technical-term bindings the term gate checks.
+describe('termNotes', () => {
+  it('lists the bindings for the terms an English source uses, with forms to avoid', () => {
+    const nl = termNotes('nl', 'A gravity assist from Mars, then a burn into orbit.');
+    expect(nl).toContain('gravity assist → zwaartekrachtassist');
+    expect(nl).toContain('burn → ontsteking');
+    expect(termNotes('zh-CN', 'The free-return trajectory.')).toContain('never 自由返回轨迹');
+  });
+  it('is empty when the source uses no glossary term, and for en-US', () => {
+    expect(termNotes('de', 'A history of Mars.')).toBe('');
+    expect(termNotes('en-US', 'orbit')).toBe('');
+  });
+});
+
+// The gap translator must never shorten by dropping content or cutting a string
+// (the 2026-07-14 retranslation did both and left cut-off sentences in 13 locales).
+describe('translate-i18n-gaps length caps', () => {
+  it('has no shortening or hard-cut path', async () => {
+    const src = (await import('node:fs')).readFileSync('scripts/translate-i18n-gaps.mjs', 'utf8');
+    expect(src).not.toMatch(/drop a clause or a non-essential detail/);
+    expect(src).not.toMatch(/\.slice\(0, limit\)/);
+    expect(src).toMatch(/translations are never cut/);
+  });
 });

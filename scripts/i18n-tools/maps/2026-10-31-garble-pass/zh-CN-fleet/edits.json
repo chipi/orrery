@@ -1,0 +1,247 @@
+[
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "best_known_for",
+    "en": "Heavy-lift backbone of the Chinese space program",
+    "old": "中国航天计划的举重骨干",
+    "new": "中国航天计划的重型运载骨干"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "tagline",
+    "en": "First Jupiter orbiter; 8 years of measurements",
+    "old": "第一个木星轨道器;8年的测量",
+    "new": "首个木星轨道器；开展了8年的测量"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "best_known_for",
+    "en": "Russian-German X-ray sky-mapping observatory",
+    "old": "俄德X射线天图观测站",
+    "new": "俄德X射线全天巡天观测站"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "tagline",
+    "en": "First multi-crew flight; first spacewalk",
+    "old": "第一次多机组飞行;第一次太空行走",
+    "new": "首次多人乘组飞行；首次太空行走"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "tagline",
+    "en": "First commercial suborbital crewed vehicle",
+    "old": "第一辆商用亚轨道乘务车",
+    "new": "首个商用亚轨道载人飞行器"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "en": "Only spacecraft to visit all four giant planets",
+    "old": "只有飞船可以访问所有四颗巨行星",
+    "new": "唯一造访过全部四颗巨行星的航天器"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "tagline",
+    "en": "Russian-German X-ray sky-mapping observatory",
+    "old": "俄德X射线天图观测站",
+    "new": "俄德X射线全天巡天观测站"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "best_known_for",
+    "en": "First long-duration multi-port Soviet station",
+    "old": "苏联第一个长期多港口车站",
+    "new": "苏联首个可长期驻留的多对接口空间站"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "tagline",
+    "en": "Reusable booster reshaped commercial launch",
+    "old": "重新设计的可再利用助推器",
+    "new": "可重复使用的助推器重塑了商业发射"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "tagline",
+    "en": "First wheeled vehicle to roam another world",
+    "old": "第一辆轮式汽车在另一个世界漫游",
+    "new": "首辆在另一个世界漫游的轮式车辆"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "tagline",
+    "en": "Russian 12-hour HEO comms — 63.4° critical inclination locks apogee over the north",
+    "old": "俄罗斯12小时HEO通信 — 63.4°临界倾角锁定远地点于北方上空",
+    "new": "俄罗斯12小时HEO通信——63.4°临界轨道倾角将远地点锁定在北方上空"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "best_known_for",
+    "en": "Largest infrared space telescope; L2 orbit",
+    "old": "最大红外空间望远镜;L2轨道",
+    "new": "最大的红外空间望远镜；L2轨道"
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "tagline",
+    "en": "Mars seismometer; 1300+ marsquakes detected",
+    "old": "火星地震仪;检测到1300+火星地震",
+    "new": "火星地震仪；已探测到1300多次火星地震"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "best_known_for",
+    "en": "Highest-resolution Mars imaging from orbit",
+    "old": "轨道最高分辨率火星成像",
+    "new": "从轨道获取的最高分辨率火星影像"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "best_known_for",
+    "en": "First commercial suborbital crewed vehicle",
+    "old": "第一辆商用亚轨道乘务车",
+    "new": "首个商用亚轨道载人飞行器"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "en": "Second Chinese lunar orbiter; first spacecraft flyby of asteroid 4179 Toutatis (Dec 13, 2012, ~770 m closest approach)",
+    "old": "中国第二个月球轨道器；首个对小行星 4179 Toutatis 进行飞越的航天器（2012 年 12 月 13 日，最近距离约 770 m）",
+    "new": "中国第二个月球轨道器；首个飞掠小行星 4179 Toutatis 的航天器（2012 年 12 月 13 日，最近距离约 770 m）"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "best_known_for",
+    "en": "First Jupiter orbiter; 8 years of measurements",
+    "old": "第一个木星轨道器;8年的测量",
+    "new": "首个木星轨道器；开展了8年的测量"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "tagline",
+    "en": "Polar Jupiter orbiter; magnetosphere studies",
+    "old": "极地木星轨道器;磁层研究",
+    "new": "木星极地轨道器；磁层研究"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "best_known_for",
+    "en": "Reusable booster reshaped commercial launch",
+    "old": "重新设计的可再利用助推器",
+    "new": "可重复使用的助推器重塑了商业发射"
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "best_known_for",
+    "en": "Mars Exploration Rover; 6-year operation",
+    "old": "火星探测漫游者;6年运作期",
+    "new": "火星探测漫游者；6年运作期"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "tagline",
+    "en": "Two-person crew; rendezvous and EVA practice",
+    "old": "双人乘员;交会对接与舱外活动训练",
+    "new": "双人乘组；交会与舱外活动训练"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "tagline",
+    "en": "Largest infrared space telescope; L2 orbit",
+    "old": "最大红外空间望远镜;L2轨道",
+    "new": "最大的红外空间望远镜；L2轨道"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "best_known_for",
+    "en": "Studying Mars atmospheric loss to solar wind; revealed Mars lost its atmosphere over billions of years",
+    "old": "研究火星大气流失至太阳风；揭示火星在数十亿年间失去大气层",
+    "new": "研究火星大气被太阳风剥离的过程；揭示火星在数十亿年间失去了大气层"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "best_known_for",
+    "en": "Polar Jupiter orbiter; magnetosphere studies",
+    "old": "极地木星轨道器;磁层研究",
+    "new": "木星极地轨道器；磁层研究"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "best_known_for",
+    "en": "12-hour HEO at 63.4° critical inclination — apogee parked over Russia",
+    "old": "12小时HEO，63.4°临界倾角 — 远地点停驻于俄罗斯上空",
+    "new": "12小时HEO，63.4°临界轨道倾角——远地点停驻于俄罗斯上空"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "tagline",
+    "en": "First long-duration multi-port Soviet station",
+    "old": "苏联第一个长期多港口车站",
+    "new": "苏联首个可长期驻留的多对接口空间站"
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "tagline",
+    "en": "Heavy-lift backbone of the Chinese space program",
+    "old": "中国航天计划的举重骨干",
+    "new": "中国航天计划的重型运载骨干"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "best_known_for",
+    "en": "Only spacecraft to visit all four giant planets",
+    "old": "只有飞船可以访问所有四颗巨行星",
+    "new": "唯一造访过全部四颗巨行星的航天器"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "description",
+    "en": "Russian highly-eccentric orbit constellation. The 12-hour Molniya orbit (~600 × 40,000 km) at the 63.4° critical inclination exploits Earth's J2 perturbation to lock the line of apsides — apogee stays parked over the Northern Hemisphere, giving high-latitude users elevation angles a geostationary satellite can never deliver. Molniya-1 launched in 1965; the line continued through Molniya-1/2/3, the Oko early-warning satellites, and the Meridian comms successor in service today.",
+    "old": "俄罗斯高椭圆轨道星座。12小时Molniya轨道（~600 × 40,000 km）采用63.4°临界倾角，利用地球J2摄动锁定拱线 — 远地点停驻于北半球上空，为高纬度用户提供地球静止卫星无法实现的仰角。Molniya-1于1965年发射；该系列延续至Molniya-1/2/3、Oko预警卫星，以及目前在役的Meridian通信后继星。",
+    "new": "俄罗斯高椭圆轨道星座。12小时Molniya轨道（~600 × 40,000 km）采用63.4°临界轨道倾角，利用地球J2摄动锁定拱线——远地点始终停驻于北半球上空，为高纬度用户提供地球静止卫星无法实现的仰角。Molniya-1于1965年发射；该系列延续至Molniya-1/2/3、Oko预警卫星，以及目前在役的Meridian通信后继星。"
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "best_known_for",
+    "en": "Mars seismometer; 1300+ marsquakes detected",
+    "old": "火星地震仪;检测到1300+火星地震",
+    "new": "火星地震仪；已探测到1300多次火星地震"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "best_known_for",
+    "en": "Two-person crew; rendezvous and EVA practice",
+    "old": "双人乘员;交会对接与舱外活动训练",
+    "new": "双人乘组；交会与舱外活动训练"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "best_known_for",
+    "en": "First multi-crew flight; first spacewalk",
+    "old": "第一次多机组飞行;第一次太空行走",
+    "new": "首次多人乘组飞行；首次太空行走"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "tagline",
+    "en": "Highest-resolution Mars imaging from orbit",
+    "old": "轨道最高分辨率火星成像",
+    "new": "从轨道获取的最高分辨率火星影像"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "description",
+    "en": "The only Soviet super-heavy launcher to fly successfully. Designed to carry the Buran orbiter or stand-alone payloads up to 100 t to LEO. Two flights: Polyus payload test (1987) and Buran orbiter (1988), both successful. Program shelved at the end of the Cold War.",
+    "old": "唯一成功飞行的苏联超重型运载火箭。设计用于将Buran轨道飞行器或独立载荷（最多100吨）送至LEO。两次飞行：Polyus载荷测试（1987年）和Buran轨道飞行器（1988年），均成功。冷战结束时项目被搁置。",
+    "new": "唯一成功飞行的苏联超重型运载火箭。设计用于将Buran轨道飞行器或独立有效载荷（最重100吨）送入LEO。两次飞行：Polyus有效载荷测试（1987年）和Buran轨道飞行器（1988年），均成功。冷战结束时项目被搁置。"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "best_known_for",
+    "en": "First wheeled vehicle to roam another world",
+    "old": "第一辆轮式汽车在另一个世界漫游",
+    "new": "首辆在另一个世界漫游的轮式车辆"
+  }
+]

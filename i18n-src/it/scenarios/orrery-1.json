@@ -6,13 +6,13 @@
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "Falcon Heavy decolla. Ritorno gratuito: nessun atterraggio.",
+      "note": "Falcon Heavy decolla. Ritorno libero — nessun atterraggio.",
       "type": "nominal"
     },
     {
       "met": 0.4,
       "label": "BRUCIATURA TMI",
-      "note": "Trans-Mars Injection: 3,61 km/s. Velocità di fuga raggiunta.",
+      "note": "Iniezione trans-marziana: 3,61 km/s. Velocità di fuga raggiunta.",
       "type": "nominal"
     },
     {
@@ -36,13 +36,13 @@
     {
       "met": 220,
       "label": "PROBLEMA DELLE COMUNICAZIONI",
-      "note": "Breve interruzione del segnale in banda X (8 s). DSN riacquistato. Causa: occlusione del pennacchio del propulsore. Nessun dato perso.",
+      "note": "Breve perdita del segnale in banda X (8 s). La DSN ha riagganciato il segnale. Causa: occlusione dovuta al pennacchio dei propulsori. Nessun dato perso.",
       "type": "warning"
     },
     {
       "met": 259,
       "label": "MARTE FLYBY",
-      "note": "Avvicinamento più vicino: ~300 km di altitudine. La fionda gravitazionale avvia il ritorno.",
+      "note": "Massimo avvicinamento: ~300 km di altitudine. La fionda gravitazionale avvia il ritorno.",
       "type": "nominal"
     },
     {
@@ -54,7 +54,7 @@
     {
       "met": 310,
       "label": "METÀ CORSO 3",
-      "note": "TCM-3: 22 m/s. Traiettoria di Ritorno corretta.",
+      "note": "TCM-3: 22 m/s. Traiettoria di ritorno corretta.",
       "type": "nominal"
     },
     {

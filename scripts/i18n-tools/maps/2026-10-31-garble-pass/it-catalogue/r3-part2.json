@@ -1,0 +1,1140 @@
+[
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/destiny.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Rack per la ricerca in microgravità, infrastrutture delle finestre scientifiche rivolte verso la Terra e il principale volume di laboratorio interno della NASA.",
+    "note": "'di NASA' article slip"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Lunetta di 160 m di 65803 Didymos, scoperta nel 2003. La superficie colpita da DART si rivelò un «fluido da cumulo di detriti»: la sonda affondò di ~50 cm nella superficie durante il mezzo secondo di contatto, e il fattore di amplificazione del trasferimento di quantità di moto β ≈ 3,6 indicò un contributo significativo del materiale superficiale espulso. Il CubeSat LICIACube ha ripreso il pennacchio in tempo reale; HST e JWST hanno osservato la coda di materiale espulso per settimane.",
+    "note": "'rubble-pile' left in English"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Scoperto nel 1997 e intitolato a Leuco (un compagno di Odisseo, ucciso a Troia). Classificazione spettrale di tipo D — il più scuro e rosso della famiglia dei Troiani. L'incontro di Lucy del 2028-04-18 ne definirà la forma, la composizione della superficie e l'evoluzione dello stato di rotazione all'origine della lenta rotazione.",
+    "note": "Non-word 'profileerà'"
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.wall",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "items.viking2-lander",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/o3b.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "library_labels.moon-artemis",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/barnard-rocheworld.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/tsiolkovsky-museum-kaluga.json",
+    "at": "items.mars-3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Fobos orbita attorno a Marte a soli 9.377 km — al di sotto dell'altitudine sincrona, quindi le maree lo accelerano VERSO L'INTERNO e si schianterà su Marte tra ~40 milioni di anni.",
+    "note": "Non-word 'tidalemente'"
+  },
+  {
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/korolev-museum-zhytomyr.json",
+    "at": "items.soyuz-7k-ok",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "L'unico satellite naturale della Terra e l'unico mondo, oltre alla Terra, su cui gli esseri umani abbiano camminato. Il blocco mareale 1:1 mantiene sempre lo stesso emisfero rivolto verso la Terra — il lato visibile è dominato da bacini di mare lunare allagati dalla lava, il lato nascosto è un antico terreno di altopiani costellato di crateri, coronato dal bacino Polo Sud–Aitken, la più grande struttura da impatto del sistema solare (~2.500 km di larghezza, ~13 km di profondità). Il lento allontanamento della Luna dalla Terra (~3,8 cm/anno) sta allungando gradualmente il giorno terrestre; in un lontano passato appariva nel cielo con una dimensione angolare quasi tre volte maggiore dell'attuale.",
+    "note": "Ungrammatical compound phrases 'crateri-costellato', 'bacini mare allagati'"
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "gravity assist",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "library_labels.phobos-hirise",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/o3b.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Sonda orbitale Galileo — USA, 1995–2003 (numerosi sorvoli ravvicinati)",
+    "note": "'multipli' awkward, orbiter left in English"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "A 30,07 au di distanza media, Nettuno è così lontano che un segnale luminoso impiega 4 ore per percorrere il tragitto in ciascuna direzione. Il Voyager 2 ha impiegato 12 anni per raggiungerlo.",
+    "note": "Decimal point and clumsy 'per percorso'"
+  },
+  {
+    "rel": "orbit-regimes/MEO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "L'eccentricità di Bennu pari a 0,204 gli conferisce una traiettoria con bassa probabilità di impatto con la Terra nel XXII secolo — una delle ragioni per cui è stato scelto per OSIRIS-REx (ricognizione per la difesa planetaria).",
+    "note": "'nei 2100' unidiomatic"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Nodo di aggancio radiale che amplia i posti di aggancio per Soyuz/Progress, indipendenti dalle porte assiali più vecchie.",
+    "note": "'parcheggio', 'porti' awkward"
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/sentinel-copernicus.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/vega-oumuamua.json",
+    "at": "blurb",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Il primo oggetto interstellare mai osservato in transito attraverso il Sistema Solare, ʻOumuamua (2017), è arrivato dalla direzione della costellazione della Lira, vicino a Vega — sebbene la sua vera origine si trovi molto più lontano. Un visitatore autentico da un altro sistema stellare, non un messaggio, ma un promemoria che la materia attraversa davvero lo spazio tra le stelle.",
+    "note": "Stray comma; Lyra not Italianised"
+  },
+  {
+    "rel": "museums/mao-zedong-memorial-museum-shaoshan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "apogee",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "residents.5.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Il cavallo di battaglia bistadio di Mitsubishi Heavy Industries, in servizio dal 2001 fino al ritiro nel 2025. Stadio principale criogenico con 2-4 booster a propellente solido. Missioni interplanetarie degne di nota: Hayabusa (2003) e Hayabusa2 (2014) verso gli asteroidi; Akatsuki (2010) verso Venere; Hope Probe degli Emirati Arabi Uniti (2020) verso Marte; SLIM (2023) verso la Luna. Sostituito dall'H3.",
+    "note": "'bireattore' (twin-jet) wrong for two-stage; booster binding"
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Luna 10 — primo orbitatore lunare artificiale (URSS)",
+    "note": "USSR vs URSS inconsistent"
+  },
+  {
+    "rel": "trajectories/hayabusa2.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "1,24 au · in rotta verso il sorvolo di (98943) 2001 CC21, luglio 2026 (missione estesa)",
+    "note": "'flyby' left in English"
+  },
+  {
+    "rel": "culture-doors/gargantua-interstellar.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/cupola.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Sette finestre rivolte verso la Terra: gli occhi collettivi della stazione per le operazioni robotiche e per le foto-cartolina degli astronauti.",
+    "note": "Wrong past tense for present English"
+  },
+  {
+    "rel": "iss-visitors/progress_ms.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Rifornimento di carico e propellente; accensioni di rialzo dell'orbita dalla porta di poppa di Zvezda per mantenere l'altitudine orbitale della ISS.",
+    "note": "'reboost', 'porto poppiero' awkward"
+  },
+  {
+    "rel": "iss-modules/harmony.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Il nodo di servizio di prua che collegava Destiny ai laboratori europeo e giapponese: un corridoio affollato trasformato in snodo internazionale.",
+    "note": "'forward utility' mistranslated; imperative misread"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Lanciatore pesante dell'era sovietica — ha lanciato ogni missione sovietica verso Marte e la Luna e i moduli russi della ISS",
+    "note": "Mixed English and Italian, untranslated prose"
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cradle-of-aviation.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Il cargo potenziato di Northrop Grumman — attraccato (non agganciato) dal Canadarm2, a ogni volo prende il nome di un astronauta scomparso.",
+    "note": "'docked' left in English; clumsy clause"
+  },
+  {
+    "rel": "tiangong-modules/chinarm.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Assistenza all'attracco per i cargo Tianzhou, supporto EVA per l'equipaggio e trasferimenti di carichi utili esterni; coopera con il piccolo braccio sperimentale di Wentian per i lavori di precisione.",
+    "note": "payload binding not used"
+  },
+  {
+    "rel": "museums/jaxa-sagamihara-communication-hall.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Molniya 1-01 — primo satellite per comunicazioni su orbita altamente ellittica (URSS)",
+    "note": "USSR vs URSS; wording"
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Voli di rotazione dell'equipaggio Commercial Crew verso il segmento orbitale statunitense; sistema di aborto SuperDraco; pannelli solari montati sul vano di servizio; capsula parzialmente riutilizzabile.",
+    "note": "'trunk' left in English"
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/eurybates.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.3.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Marte ha due piccole lune dall'aspetto di corpi catturati — Phobos (che orbita al di sotto dell'altitudine sincrona e si avvicina a spirale al pianeta) e Deimos (che si allontana lentamente).",
+    "note": "'captured-looking' lost; nonword 'spiralizzante'"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/bledsoe-miller-steam-center-waco.json",
+    "at": "items.cargo-dragon-v1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/starlink.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/cassini.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "library_labels.moon-apollo",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/virginia-air-and-space-science-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Modulo di comando Yankee Clipper, volato nella missione Apollo 12 (1969)",
+    "note": "'ha volato con' unidiomatic"
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/landsat.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Primo razzo cinese in grado di lanciare una missione verso Marte",
+    "note": "English left in, mixed sentence"
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Il punto di Lagrange a circa 61.000 km dietro la Luna, visto dalla Terra — la sella gravitazionale in cui si bilanciano le forze di Terra e Luna e la forza centrifuga. La Luna si trova sempre tra la sonda e la Terra, rendendo impossibili le comunicazioni dirette — ma un satellite parcheggiato qui, in un'orbita di halo ATTORNO a L2, ha la linea di vista SIA sul lato nascosto della Luna SIA sulla Terra. È così che la Cina ha fatto allunare Chang'e 4 sul lato nascosto nel 2019: il satellite relè Queqiao, parcheggiato in un halo attorno al punto L2 Terra-Luna, fa da ponte per ogni comando e immagine.",
+    "note": "Ungrammatical 'VERSO SIA ... CHE'; gravitational forces wording"
+  },
+  {
+    "rel": "earth-objects/clementine.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/glonass.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Modulo di comando CM-017, volato nella missione Apollo 4 senza equipaggio (1967)",
+    "note": "'ha volato con l'Apollo 4' unidiomatic"
+  },
+  {
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/goes.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/china-science-and-technology-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/science-museum-london.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/leonardo.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Stivaggio pressurizzato per rifornimenti e sacche di hardware, così che i laboratori restino liberi per i rack scientifici.",
+    "note": "Meaning inverted: labs 'far from' racks"
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Vettore ipergolico a tre stadi con quattro booster liquidi laterali, in servizio dal 1996. Configurazione standard per i lanci commerciali in orbita di trasferimento geostazionaria (GTO) e per la maggior parte delle missioni lunari: Chang'e 1 (2007), Chang'e 2 (2010), Chang'e 3 (2013) e Chang'e 4 (2018). Ritirato dal servizio lunare quando il più grande Long March 5 ha preso il suo posto per le missioni di recupero di campioni (Chang'e 5/6) e per Tianwen-1.",
+    "note": "'ricampionamento' wrongly means resampling, not sample return"
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Pressione superficiale 90 volte quella terrestre. Le sonde sovietiche Venera resistettero da 23 a 127 minuti prima di essere sopraffatte dal calore e dalla pressione.",
+    "note": "'lander' left in English; probes"
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "items.discovery",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/tranquility.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Principali apparecchiature ECLSS, volume per le attrezzature da esercizio fisico e smistamento delle utenze statunitensi verso la Cupola.",
+    "note": "'utilities' read as public services; garbled"
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Wikimedia Commons — ricerca in cirillico (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+    "note": "Cyrillic search terms transliterated, defeating point"
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-science-and-industry-chicago.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/inmarsat.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Juno — USA, 2023–2024 (i passaggi più ravvicinati di sempre)",
+    "note": "'mai raggiunti prima' misreads closest approaches"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Nel 1929 Edwin Hubble e Milton Humason dimostrarono che l’universo è in espansione.",
+    "note": "Edwin dropped from Hubble's name"
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.endeavour",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Space Shuttle Endeavour, in posizione verticale di lancio con un vero serbatoio esterno e due booster a propellente solido",
+    "note": "booster binding not used"
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

@@ -1,0 +1,920 @@
+[
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Il Grande Telescopio Altazimutale di 6 m (BTA-6) dell’Osservatorio astrofisico speciale dell’Accademia russa delle scienze, installato nel 1966, ai piedi del Caucaso.",
+    "note": "Institution name left in English"
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.falcon-heavy",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.lrv-apollo",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "tiangong-modules/tianhe.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Lanciato nell'aprile 2021 come colonna portante della stazione — propulsione, energia, supporto vitale e il nodo di aggancio attorno al quale Wentian e Mengtian furono orientati nella T perpendicolare nei diciotto mesi successivi.",
+    "note": "docking bound term is aggancio"
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/esperance-museum.json",
+    "at": "items.skylab",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/haumea.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "culture-doors/pioneer-plaque.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/chandrayaan1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "La prima missione lunare dell'India, 2008-2009. Ha trasportato il Moon Mineralogy Mapper (M³) della NASA, che nel 2009 ha restituito la prima conferma spettroscopica diretta dell'acqua (H₂O e OH) ampiamente distribuita sulla superficie lunare, non solo ai poli. La missione è terminata dopo 312 giorni, quando le comunicazioni sono andate perdute; i dati di M³ vengono ancora analizzati oggi.",
+    "note": "Communications lost ending mission mistranslated; stray capital"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.saturn-ib",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/korolev-museum-zhytomyr.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/beidou.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/cradle-of-aviation.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/esperance-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "trajectory",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.planet-labs",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/glonass.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/luna10.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Primo satellite artificiale di un corpo diverso dalla Terra. Raggiunse l'orbita lunare nell'aprile 1966 — tre mesi prima del Lunar Orbiter 1 della NASA — e trasmise L'Internazionale dall'orbita lunare durante un congresso del Partito Comunista. Funzionò per 56 giorni prima che le batterie si esaurissero.",
+    "note": "Hyphens for dashes, tense shift"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Rifornimento di propellente per Tianhe, forniture per l'equipaggio come carico secco e rimozione dei rifiuti in orbita tramite ingresso atmosferico distruttivo sul Pacifico meridionale.",
+    "note": "On-orbit dropped; entry term not used"
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.wall",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Due ostacoli insieme. Primo, la maggior parte non è mai esistita: l'URSS non adottò la tradizione degli stemmi di missione fino all'Apollo–Soyuz nel 1975, quindi Vostok, Voskhod e i primi voli Soyuz semplicemente non ebbero alcuno stemma. Secondo, ciò che esiste in seguito — gli stemmi delle spedizioni Soyuz TM/TMA, gli emblemi Roscosmos — è protetto da copyright o caricato solo come fair use, mai rilasciato con licenza libera.",
+    "note": "'patch' left in English"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/oneweb.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "OneWeb ha scelto 1.200 km — il doppio dell'altitudine di Starlink — per ridurre le penalità di latenza dovute a percorsi di segnale più lunghi. Compromesso: è più difficile farlo uscire dall'orbita a fine vita.",
+    "note": "'deorbiting' left in English"
+  },
+  {
+    "rel": "museums/museum-of-science-and-industry-chicago.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/jwst.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "JWST è 3.676 volte più lontano dalla Terra rispetto alla ISS. Le missioni di manutenzione di Hubble sono durate 10 giorni. JWST non può essere sottoposto a manutenzione: è stato progettato per essere perfetto la prima volta.",
+    "note": "'rispetto a SSI' lacks article"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "L'eccentricità della Luna, 0,055, è piccola ma conta — al perigeo il disco appare il 12 % più grande e luminoso che all'apogeo («superluna»).",
+    "note": "Decimal point instead of comma"
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Il centro del sistema solare — una stella di sequenza principale di tipo G2V, vecchia di 4,6 miliardi di anni, che fonde 600 milioni di tonnellate di idrogeno in elio ogni secondo. Contiene il 99,86% della massa totale del sistema; tutto il resto è polvere residua. Temperatura superficiale ~5.500 °C; nucleo ~15 milioni di °C. La fotosfera è ciò che vediamo; la corona si estende per milioni di chilometri oltre di essa e raggiunge ~1 milione di °C — uno dei misteri aperti della fisica (perché la corona è più calda della superficie?).",
+    "note": "'15 milioni°C' ungrammatical number phrasing"
+  },
+  {
+    "rel": "iss-modules/beam.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Un compartimento gonfiabile dimostrativo — il guscio morbido di Bigelow imbullonato a Tranquility per provare i volumi espandibili in orbita.",
+    "note": "Shell 'bolted a Tranquility' inverts meaning"
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/armstrong-air-and-space-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/national-space-centre-leicester.json",
+    "at": "items.sokol-kv-2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/science-museum-london.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "tiangong-modules/tianhe.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Habitat dell'equipaggio, gestione di comandi e dati, propulsori di mantenimento della posizione della stazione e porto centrale di aggancio per gli equipaggi Shenzhou e i cargo Tianzhou in arrivo.",
+    "note": "'dock' English; crew/cargo dropped"
+  },
+  {
+    "rel": "museums/stafford-air-and-space-museum.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/patroclus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "perigee",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/beam.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/inmarsat.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "La fascia occupa l'anello compreso tra 2,2 e 3,2 au. I vuoti di Kirkwood — zone orbitali vuote in corrispondenza delle risonanze di moto medio con Giove — caratterizzano la popolazione.",
+    "note": "'mean-motion' English; decimal points"
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Base di partenza per le passeggiate spaziali (EVA), manutenzione delle tute e uscita alternativa, separata dalle interfacce di aggancio di Soyuz o Dragon.",
+    "note": "'Stage' read as noun, nonsense"
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Metà del diametro di Plutone — il più grande rapporto di dimensioni tra una luna e il suo pianeta nel sistema solare. Caronte e Plutone sono reciprocamente bloccati dalle maree e orbitano attorno a un centro di massa comune, situato a circa 980 km sopra la superficie di Plutone — di fatto un sistema planetario binario. New Horizons ha rivelato un terreno sorprendentemente vario: la liscia pianura di Vulcan Planitia a sud, un antico emisfero craterizzato a nord e una calotta polare rosso scuro (Mordor Macula) di tolini, formatisi quando le molecole di metano sfuggite all'atmosfera di Plutone si sono depositate su Caronte e sono state trasformate dalla luce ultravioletta. I quattro satelliti minori di Plutone (Stige, Notte, Cerbero, Idra) orbitano attorno al baricentro Plutone-Caronte con rotazioni caotiche generate dalla gravità variabile del sistema binario.",
+    "note": "'ed sono' slip; clumsy ratio phrase"
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/pluto.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "library_labels.triton-voyager2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-visitors/cargo_dragon.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Commercial Resupply Services 2; capacità di riportare a Terra carichi per esperimenti urgenti e hardware guasto; capsula riutilizzabile con scudo termico PICA-X.",
+    "note": "'time-critical' left in English"
+  },
+  {
+    "rel": "iss-modules/zarya.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Esattamente 35.786 km di altitudine — la quota dove un'orbita richiede un giorno sidereo (23 h 56 min), così che il satellite rimane immobile su una longitudine fissa all'equatore. I satelliti meteorologici osservano lo stesso continente per sempre; i satelliti di comunicazione coprono un'impronta grande quanto un'antenna parabolica e non si muovono mai. Non ci sono parcheggi liberi, solo posti assegnati — a ogni operatore l'ITU assegna una banda di longitudine.",
+    "note": "Wrong tense 'tracciavano'; English 'slot'"
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/giotto.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "specific impulse",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Deimos è la luna esterna di Marte (23.460 km) — il suo periodo orbitale (1,26 d) è più lungo del giorno marziano, perciò le forze di marea la spingono lentamente verso l'esterno.",
+    "note": "Decimal point instead of comma"
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/dawn.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "2,8 au · in orbita stabile attorno a Cerere dalla fine della missione, 2018-10-31 (vita orbitale di ~20 anni)",
+    "note": "'dal fine di ottobre' garbled EOM"
+  },
+  {
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/poisk.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Interfaccia di aggancio per equipaggio e carico di Soyuz / Progress, base di partenza EVA per le passeggiate spaziali del segmento russo e supporti esterni per carichi utili scientifici sullo scafo.",
+    "note": "docking term; crew and cargo dropped"
+  },
+  {
+    "rel": "museums/adler-planetarium.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "tiangong-modules/mengtian.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/iss.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "culture-doors/vega-contact.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/oumuamua.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-visitors/cargo_dragon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "La variante cargo di Dragon 2 — carico utile pressurizzato e non pressurizzato, carico scientifico di ritorno a Terra, niente sedili.",
+    "note": "payload bound term not used"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.merlin-1d",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Parker Solar Probe — il sorvolo più ravvicinato del Sole mai effettuato (USA)",
+    "note": "Awkward; flyby bound term not used"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-huygens",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/leucus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/uss-hornet-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "orbit",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/vega-2.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.wall",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Il programma cinese con equipaggio utilizza stemmi di missione — ogni equipaggio Shenzhou ne ha uno — ma l'emblema CMS e gli stemmi Shenzhou sono detenuti sotto copyright dalla China Manned Space Agency, non rilasciati con licenza libera. Wikimedia Commons non ne contiene nessuno; le uniche immagini con licenza libera restituite per queste ricerche sono fotografie NASA non correlate.",
+    "note": "'patch' left in English"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/orus.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Oro è un Troiano L4 di tipo C — sorvolo di Lucy a novembre 2028. Il suo spettro scuro e ricco di carbonio è più simile a quello degli oggetti della fascia di Kuiper che a quello degli asteroidi della fascia interna.",
+    "note": "'flyby' left in English"
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Voyager 2 — USA, 1986 (sorvolo dell'emisfero meridionale)",
+    "note": "'flyby' left in English"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Il lanciatore satellitare polare a quattro stadi dell'ISRO (Polar Satellite Launch Vehicle) nella configurazione XL, con sei booster laterali a propellente solido. Progettato in origine per orbite terrestri eliosincrone; usato poi per missioni interplanetarie, tra cui il primo orbiter lunare e la prima sonda marziana dell'India. La notevole efficienza dei costi di lancio (~30 milioni di dollari a lancio) ha determinato il budget totale di 74 milioni di dollari della missione Mangalyaan.",
+    "note": "Agreement error 'sincroni'; 'solid' English"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-dragonfly",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "NASA Dragonfly — missione verso Titano con un velivolo a rotori nucleare",
+    "note": "'missione rotore nucleare' is nonsense"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.3.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Il membro più grande della famiglia collisionale dei Troiani L4 di Euribate — un ammasso formato da un corpo progenitore di 64 km e circa 280 frammenti più piccoli. L'incontro di Lucy del 2027-08-12 a 5,7 km/s sarà la prima osservazione ravvicinata di un Troiano di Giove, accompagnata da quella di Queta, la luna di 1 km di Euribate (scoperta da Hubble nel 2018).",
+    "note": "'primo primo piano' clumsy; moon phrase awkward"
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Primo razzo orbitale pesante riutilizzabile",
+    "note": "English words left, mixed word order"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Scoperto nel 1906, classificato di tipo P con bassa albedo e riflettanza rossastra. L'incontro di Lucy del 2033-03-02 a 8,4 km/s chiude la missione principale — il veicolo spaziale riprenderà entrambi i componenti del sistema binario in un unico avvicinamento, mappando il terreno superficiale, la composizione e la danza gravitazionale che li lega da 4,5 miliardi di anni.",
+    "note": "'basso albedo' gender; 'Gyr' left"
+  },
+  {
+    "rel": "iss-modules/harmony.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  }
+]

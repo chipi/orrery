@@ -1,0 +1,911 @@
+[
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "La fascia di spazio più vicina — da 160 a 2.000 km di altitudine. Latenza di comunicazione ridotta (~7 ms di sola andata), l'attrito atmosferico frena ancora i veicoli al bordo inferiore, e le fasce di radiazione non sono ancora entrate in gioco. Il volo spaziale con equipaggio vive qui per le stesse ragioni: è soccorribile, raggiungibile, e il corpo umano tollera un tragitto di qualche centinaio di chilometri. Ogni stazione spaziale mai esistita ha orbitato in LEO.",
+    "note": "awkward drag clause, one-way wording"
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/chandra.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/iridium-next.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.checked.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Falcon Heavy decolla. Ritorno libero — nessun atterraggio.",
+    "note": "free-return rendered as 'gratuito'"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "library_labels.triton-trident",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Trident — proposta missione di sorvolo di Tritone della classe Discovery",
+    "note": "English Discovery-class left"
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "library_labels.charon-new-horizons",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Derivato a tre nuclei del Falcon 9. I due booster laterali rientrano ai siti di lancio o su navi drone; il nucleo centrale atterra in mare oppure viene sacrificato per ottenere il massimo carico utile. Dimostrato nel 2018 con il lancio di una Tesla Roadster su una traiettoria eliocentrica che attraversa l'orbita di Marte.",
+    "note": "droneships left; 'consumato' wrong for expended"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Asteroide vicino alla Terra a forma di arachide, di 535 × 294 × 209 m, scoperto nel 1998. Il rendezvous con la sonda Hayabusa nel 2005 ha rivelato Itokawa come un ammasso di macerie legato gravitazionalmente piuttosto che un corpo solido — una collezione di frammenti tenuti insieme dalla reciproca attrazione gravitazionale, con la distribuzione dei massi e l'assenza di crateri da impatto che indicano eventi di rinnovamento del regolite su un corpo minore geologicamente attivo.",
+    "note": "rendez-vous vs bound rendezvous"
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "inclination",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-visitors/starliner.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.merlin-1d",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "residents.1.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/poisk.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Modulo russo di mini-ricerca 2 — un compartimento di aggancio a due porte e camera di equilibrio per attività extraveicolari (EVA), collegato dal 2009 alla porta zenit di Zvezda.",
+    "note": "nadir port contradicts zenith port"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/haumea.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/MEO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "film",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/zarya.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Alimentazione a batteria, stoccaggio del carburante e controllo d'assetto iniziale fino all'arrivo di Zvezda; fornisce ancora spazio libero e continuità strutturale lungo il segmento russo.",
+    "note": "'early' rendered as 'anticipato'"
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Sputnik 1 — primo satellite artificiale della Terra (URSS)",
+    "note": "USSR instead of URSS"
+  },
+  {
+    "rel": "museums/intrepid-museum.json",
+    "at": "items.enterprise",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "TCM-3: 22 m/s. Traiettoria di ritorno corretta.",
+    "note": "stray capital letter"
+  },
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items./science/history/apollo-11-1969",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/salt.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Primo lanciatore statunitense superpesante dal Saturn V",
+    "note": "superpeante is a non-word"
+  },
+  {
+    "rel": "iss-visitors/starliner.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/change2.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.cargo-dragon-v1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Troiano di tipo P di 21 km nello sciame di testa di Giove. Dopo che Lucy lo ha scelto come obiettivo, le osservazioni di approfondimento con Hubble hanno rivelato un satellite finora sconosciuto — una piccola luna di 5 km il cui nome non è ancora stato approvato.",
+    "note": "'nella sciame', 'in anticipo' wrong"
+  },
+  {
+    "rel": "earth-objects/smart-1.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Orbita polare a ~470 km di altitudine. Primo utilizzo operativo della propulsione ionica per una missione lunare: un modello per le successive missioni BepiColombo ed Hera dell'ESA nello spazio profondo.",
+    "note": "'di ESA' without article"
+  },
+  {
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Il collaudato taxi spaziale russo a 3 posti — rendezvous di 2,5 giorni da Bajkonur e atterraggio con paracadute sulla steppa kazaka.",
+    "note": "'sempreverde' calque of evergreen"
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/intrepid-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "firsts.2.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/cupola.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/stafford-air-and-space-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.rejected.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/fernbank-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "items.viking-1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/change1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Prima missione lunare della Cina, 2007-2009. Progettata e gestita come test precursore deliberato per il lander Chang'e 3: la fase orbitale è servita come prova di qualificazione al volo per le comunicazioni nello spazio profondo e la meccanica orbitale da cui sarebbe dipesa la missione del lander. Si è schiantata sulla Luna a fine vita come test di impatto controllato.",
+    "note": "gender mismatch missione/costruito"
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "culture-doors/arecibo-message.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/chandra.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/MEO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "1.200× più lontano della ISS. Un segnale radio Terra → Luna → Terra impiega ~2,6 secondi — abbastanza perché i controllori di volo a Houston parlino con frasi lente e deliberate.",
+    "note": "SSI instead of ISS"
+  },
+  {
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Massimo avvicinamento: ~300 km di altitudine. La fionda gravitazionale avvia il ritorno.",
+    "note": "'Avvicinamento più vicino' clumsy"
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Lanciatore a tre stadi dell'ISRO (in precedenza GSLV Mk III): due booster solidi S200, un nucleo liquido L110 e lo stadio superiore criogenico CE-20, di sviluppo nazionale. Ha portato Chandrayaan-2 (2019) e Chandrayaan-3 (2023) su traiettorie lunari. Certificato per voli con equipaggio per il prossimo programma con equipaggio Gaganyaan.",
+    "note": "English core, awkward crewed clause"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.sojourner",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.want",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/67p.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "La debole eccentricità di Nettuno, pari a 0,0086, produce un'orbita così circolare che l'oscillazione perielio-afelio è inferiore a 200 milioni di km su un semiasse maggiore di 30 au — una variazione dell'1,4 %.",
+    "note": "decimal points instead of commas"
+  },
+  {
+    "rel": "small-bodies/psyche.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "16 Psyche potrebbe essere il nucleo esposto di nichel-ferro di un protopianeta che ha perso il mantello durante la violenta giovinezza della fascia primordiale. NASA Psyche (lanciata nel 2023) arriverà nel 2029.",
+    "note": "protopianta is wrong word"
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Il razzo di punta della NASA per lo spazio profondo. Due booster a propellente solido a cinque segmenti e uno stadio centrale con quattro motori RS-25 (gli stessi che hanno volato sullo Space Shuttle), sormontati da uno stadio di propulsione criogenico provvisorio (Interim Cryogenic Propulsion Stage). Ha debuttato con Artemis I (novembre 2022), inviando una capsula Orion senza equipaggio attorno alla Luna.",
+    "note": "garbled 'spaziale profondo ammiraglia', untranslated stage"
+  },
+  {
+    "rel": "museums/museum-of-science-and-industry-chicago.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.want",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "highlights.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Costruito nel 1982, con errori di posizionamento inferiori a 0,1 mm.",
+    "note": "positioning rendered as pointing"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.4.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/national-military-museum-bucharest.json",
+    "at": "items.soyuz-7k-ok",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "booster",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.rejected.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/planet-labs.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/jwst.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Nel punto di Lagrange Sole-Terra L2, a 1,5 milioni di km dalla Terra. Non potrà mai essere riparato. Vede la luce di 13,4 miliardi di anni fa, dalle prime stelle e galassie dopo il Big Bang. 25 anni per costruirlo. Lo strumento scientifico più complesso mai messo in funzione. Funziona.",
+    "note": "'Mai da revisionare' wrong for serviced"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "library_labels.moon-lroc",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/uss-hornet-museum.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/tsiolkovsky-museum-kaluga.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/leonardo.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Un modulo logistico che è rimasto: trasformato da veicolo per il trasporto di carico dell'era dello Shuttle in deposito permanente, una sorta di soffitta.",
+    "note": "'nave cargo' wrong sense"
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "library_labels.miranda-voyager2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/intrepid-museum.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/zvezda.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Alloggi dell'equipaggio, supporto ECLSS, propulsione rifornibile e funzioni di comando iniziali per il segmento orbitale russo.",
+    "note": "'anticipate' for early"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "descent",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/salt.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Primo lanciatore a portare un rover a propulsione nucleare su un altro mondo",
+    "note": "English words garbled in Italian"
+  },
+  {
+    "rel": "iss-visitors/progress_ms.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/gps.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Il GPS orbita a un'altezza 50 volte maggiore della ISS. Non l'hai mai visto alzando lo sguardo, ma sa esattamente dove ti trovi.",
+    "note": "SSI instead of ISS"
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.delta-ii",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.resolution",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Queqiao — primo relay operativo Terra-Luna L2 (Cina)",
+    "note": "relais inconsistent with relay"
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  }
+]

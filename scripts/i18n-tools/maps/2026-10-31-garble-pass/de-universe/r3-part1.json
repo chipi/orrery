@@ -1,0 +1,782 @@
+[
+  {
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/pollux.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Akrux (Alpha Crucis) ist ein heißes blaues Mehrfachsystem in etwa 320 Lichtjahren Entfernung, der leuchtende Fuß des Kreuzes des Südens. Seine Komponenten sind jung und massereich und strahlen blauweiß.",
+    "note": "\"Fuß des Kreuz des Südens\" wrong case."
+  },
+  {
+    "rel": "universe/named-stars/alphard.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alnair.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Ein strahlend blauer Überriese — der leuchtende Fuß des Orion, Zehntausende Male heller als die Sonne.",
+    "note": "\"tens of thousands\" became exactly ten thousand."
+  },
+  {
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/proxima-centauri.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Der sonnennächste Stern — ein schwacher Roter Zwerg, nur 4,24 Lichtjahre entfernt, mit einem möglicherweise felsigen Planeten in seiner habitablen Zone.",
+    "note": "Planet called companion; star is host."
+  },
+  {
+    "rel": "universe/named-stars/sargas.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Ein heißer innerer Begleiter der Welt in der habitablen Zone von Luytens Stern.",
+    "note": "Companion of the world, not of the zone."
+  },
+  {
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-d.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Der erste erdgroße Planet in der habitablen Zone, den TESS fand — ein Meilenstein.",
+    "note": "Awkward \"TESSs\" genitive."
+  },
+  {
+    "rel": "universe/named-stars/menkalinan.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Der hellste Stern im Sternbild Bärenhüter am Nordhimmel — ein alternder oranger Riese, der auf einer ungewöhnlichen Umlaufbahn durch die Galaxie rast.",
+    "note": "\"Bahn\" instead of bound term Umlaufbahn."
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/menkalinan.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Der Schwanz des Schwans — einer der leuchtkräftigsten Sterne, die das Auge sehen kann, der quer durch die Galaxis hindurch strahlt.",
+    "note": "\"jenseits der Galaxis\" wrong; means across the galaxy."
+  },
+  {
+    "rel": "universe/named-stars/sargas.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/hd-62509-b.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/antares.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/wezen.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/proxima-cen-b.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/menkent.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/menkent.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Menkent (Theta Centauri) ist ein oranger Riese in etwa 61 Lichtjahren Entfernung, einer der helleren Sterne des Centaurus und der einzige unter den führenden Sternen des Sternbilds, der ein kühler Riese und kein heißer blauer Stern ist.",
+    "note": "Star name Menkent dropped from the opening."
+  },
+  {
+    "rel": "universe/exoplanets/barnard-b.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Barnards Pfeilstern, der sonnennächste Einzelstern in knapp sechs Lichtjahren Entfernung, ist ein Klassiker der Science-Fiction — das Ziel der Raumschiff-Studie „Project Daedalus“ der Britischen Interplanetaren Gesellschaft aus den 1970er Jahren und ein Zwischenziel in der Interstellar-Fiktion von Robert Forwards Rocheworld bis zu den späteren Rama-Romanen. Nach einem Jahrhundert angeblich entdeckter Planeten, die sich alle bei genauerer Prüfung in Luft auflösten, wurde Barnard b 2024 endlich bestätigt: eine Sub-Erde, viel zu heiß für Leben, aber endlich real.",
+    "note": "\"Interplanetary Society's\" left in English; odd \"zerfaserten\"."
+  },
+  {
+    "rel": "universe/named-stars/lalande-21185.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Prokyon (Alpha Canis Minoris) ist ein naher weißer Unterriese, nur 11,5 Lichtjahre entfernt, den ein lichtschwacher Weißer Zwerg umkreist. Seine Nähe macht ihn trotz seiner bescheidenen wahren Leuchtkraft zum achthellsten Stern am Himmel.",
+    "note": "Garbled \"Weiß-Untergiant-System ... orbitet\"; wrong structure."
+  },
+  {
+    "rel": "universe/named-stars/wezen.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/peacock.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Der hellste Stern des Pfaus — ein englischer Name, der aus der Navigation des 20. Jahrhunderts stammt.",
+    "note": "\"Peacock\" left in English."
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alnair.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Das Sternbild Kranich wurde von Seefahrern des späten 16. Jahrhunderts geschaffen, die die südlichen Sterne kartierten.",
+    "note": "Missing article before \"Kranich\"; \"geformt\" odd."
+  },
+  {
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-b.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/van-maanens-star.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/hadar.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/almach.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alioth.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Der hellste Stern des Großen Bären, der erste in der Deichsel des Großen Wagens.",
+    "note": "\"Griff\" instead of Deichsel used elsewhere."
+  },
+  {
+    "rel": "universe/named-stars/regulus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/polaris.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Der Name ist arabisch für ‚die Perlenschnur‘. Die drei Gürtelsterne gehören zu den weltweit bekanntesten am Himmel, dienen als Wegweiser zu Sirius und Aldebaran und sind in Sternsagen rund um den Globus verwoben.",
+    "note": "Missing \"und\" in the list; broken coordination."
+  },
+  {
+    "rel": "universe/named-stars/menkalinan.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/spica.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/van-maanens-star.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Ein vorgeschlagener massereicher Planet bei Aldebaran — dem feurigen Auge des Stiers und einem Wegpunkt der Science-Fiction.",
+    "note": "\"proposed\" dropped; planet stated as established."
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "In der hawaiianischen Tradition ist Arcturus Hōkūleʻa, der ‚Stern der Freude‘ — der Zenitstern von Hawaii und ein wichtiger Navigationsstern für polynesische Seefahrer, der später dem berühmten Reisekanu seinen Namen gab.",
+    "note": "\"Zenitsttern\" is a non-word."
+  },
+  {
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/hadar.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/atria.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/gacrux.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-h.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/castor.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/pollux.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/luytens-star.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-c.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/adhara.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-e.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-c.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/capella.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/proxima-centauri.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/elnath.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Die stoßende Hornspitze des Stiers, an der Grenze, die er einst mit dem Fuhrmann teilte.",
+    "note": "\"Bull\" and \"Charioteer\" left in English."
+  },
+  {
+    "rel": "universe/named-stars/sadr.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/spica.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/sadr.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/achernar.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/menkent.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-c.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-c.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-d.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/lalande-21185.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/kaus-australis.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/hd-62509-b.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Ein Riesenplanet, der Pollux umkreist — eine der ersten Welten, die um einen nahen Riesenstern gefunden wurden.",
+    "note": "\"einer der ersten Welten\" wrong gender."
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alhena.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Alhena (Gamma Geminorum) ist ein blauweißer Unterriese in etwa 109 Lichtjahren Entfernung, der dritthellste Stern im Sternbild Zwillinge, gelegen am Fuß der Zwillinge nahe dem Rand der Milchstraße.",
+    "note": "\"Twins\" left in English; clumsy \"in Zwillinge\"."
+  },
+  {
+    "rel": "universe/named-stars/vega.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/castor.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-e.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Fomalhaut (Alpha Piscis Austrini) ist ein heißer weißer Stern etwa 25 Lichtjahre entfernt, einer der hellsten am Himmel und auffallend abgesondert von anderen hellen Sternen. Er ist umgeben von einem eindrucksvollen staubigen Trümmerring, geformt durch unsichtbare Schwerkraft — einer der ersten solcher Ringe, die jemals im sichtbaren Licht abgebildet wurden.",
+    "note": "Latin genitive \"Piscis Austrini\" altered to \"Australis\"."
+  },
+  {
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/adhara.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/avior.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Ein Riese des Kiels und eine Ecke des »Falschen Kreuzes« — mit einem Namen, der im Zeitalter des Flugs geprägt wurde.",
+    "note": "\"Riese des Kiel\" wrong case."
+  },
+  {
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Mirfak (Alpha Persei) ist ein gelblich-weißer Überriese in etwa 510 Lichtjahren Entfernung, der hellste Stern in Perseus. Er ist der Leitstern des Alpha-Persei-Haufens, einer lockeren Gruppe heißer junger Sterne, die seine Bewegung durch den Raum teilen.",
+    "note": "\"das Leitstern\" wrong gender; cluster name half English."
+  },
+  {
+    "rel": "universe/named-stars/spica.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alioth.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Alioth (Epsilon Ursae Majoris) ist ein eigentümlicher weißer Stern etwa 81 Lichtjahre entfernt, der hellste im Großen Bären. Sein Spektrum zeigt merkwürdige, wechselnde chemische Signaturen, die mit einem starken Magnetfeld verbunden sind.",
+    "note": "Designation \"Maioris\" misspelled; should be Majoris."
+  },
+  {
+    "rel": "universe/exoplanets/gj-411-b.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-f.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/almach.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-e.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/denebola.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/lalande-21185.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/regulus.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/altair.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "universe/exoplanets/gj-411-b.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "GJ 411 b ist eine Super-Erde, die um Lalande 21185 rast, einen lichtschwachen Roten Zwerg etwa acht Lichtjahre entfernt im Großen Bären und einen der sonnennächsten Sterne. Erstmals 2017 entdeckt und 2020 anhand des winzigen Geschwindigkeitswackelns des Sterns bestätigt, umkreist sie ihren Stern viel zu nah, um bewohnbar zu sein, doch ihre Nähe macht das System zu einem wiederkehrenden Wegpunkt in der Literatur über interstellare Raumfahrt.",
+    "note": "Planet called \"er\"; Super-Erde is feminine."
+  }
+]

@@ -147,9 +147,11 @@ export function knownDigitNames() {
   KNOWN = new Set();
   const root = path.resolve(import.meta.dirname, '../../i18n-src/en-US');
   const walk = (d) => {
-    for (const n of fs.readdirSync(d)) {
+    // Dirent types: no separate stat between the listing and the read.
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      const n = e.name;
       const p = path.join(d, n);
-      if (fs.statSync(p).isDirectory()) walk(p);
+      if (e.isDirectory()) walk(p);
       else if (n.endsWith('.json')) {
         try {
           const j = JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -492,15 +494,16 @@ function ordinaryEnglish() {
     /* no bundle: lowercase words are still checked */
   }
   const walk = (d) => {
-    let names = [];
+    let entries = [];
     try {
-      names = fs.readdirSync(d);
+      entries = fs.readdirSync(d, { withFileTypes: true });
     } catch {
       /* no such directory */
     }
-    for (const n of names) {
+    for (const e of entries) {
+      const n = e.name;
       const p = path.join(d, n);
-      if (fs.statSync(p).isDirectory()) walk(p);
+      if (e.isDirectory()) walk(p);
       else if (n.endsWith('.json'))
         try {
           stringsIn(JSON.parse(fs.readFileSync(p, 'utf8'))).forEach(add);

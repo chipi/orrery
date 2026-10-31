@@ -360,3 +360,56 @@ ALMA, Mons Rümker), the Artemis Moon landing, and scale words right for their l
   locale.
 - "Rocket Lab Launch Complex 1" stays English in de: the facility-code check refuses a
   change.
+
+## 8 · Flagged cells read in full (close-out step B, 2026-10-31)
+
+The 12 non-science cells the sweep flagged (2 or more BROKEN in 60) were read in full, field by
+field, by Sonnet reviewers on `fix-brief.md`: 54 work files of about 135 fields, three waves.
+Each cell went through `garble-check.mjs`, hand fixes, a read of a random sample, and
+`garble-cell-commit.sh` (now takes a bucket, `<name>:<tree,…>`). Records:
+`maps/2026-10-31-garble-pass/<loc>-<bucket>/`.
+
+| Cell | Fields read | Retranslated | BROKEN found | MINOR found |
+| --- | ---: | ---: | ---: | ---: |
+| ru catalogue | 825 | 215 | 43 | 181 |
+| ar catalogue | 825 | 249 | 76 | 173 |
+| sr-Cyrl catalogue | 825 | 127 | 27 | 102 |
+| de catalogue | 825 | 236 | 38 | 198 |
+| fr catalogue | 825 | 174 | 32 | 142 |
+| it catalogue | 825 | 184 | 39 | 145 |
+| nl catalogue | 825 | 297 | 74 | 223 |
+| ar places | 402 | 94 | 20 | 76 |
+| it places | 402 | 97 | 5 | 92 |
+| ja universe | 236 | 82 | 19 | 63 |
+| de universe | 236 | 50 | 14 | 36 |
+| pt-BR universe | 236 | 43 | 4 | 39 |
+| **Total** | **7,287** | **1,848** | **391** | **1,470** |
+
+The catalogue bucket is 21 trees: observatories, museums, satellites, planets, rockets,
+earth-objects, small-bodies, belts, trajectories, scenarios, sourcing, culture-doors, glossary,
+ISS and Tiangong modules and visitors, and the four orbit-regime trees.
+
+**Hand fixes on top of the reviewers' output (25 patches, 2 dropped edits):**
+
+- Names the guard keeps that a reviewer had translated or dropped: Apollo, CubeSat(s),
+  Space Shuttle, Viking 1/2, Voyager 2, DeKalb, James Webb; and the Latin constellation names
+  Cygnus and Gemini in pt-BR, kept beside Cisne and Gêmeos.
+- ISO dates spelled out again (hayabusa2 in ru and it).
+- An added clause removed (ja Achernar "not the Milky Way").
+- BTA's real name (ru); a Latin "o" inside a Cyrillic word (sr).
+- Two sr `sourcing` edits dropped: they replaced Serbian forms with Russian letters.
+- nl's "Sojoez" kept to "Soyuz" in the new text. Separately, every Soyouz (fr, 7 fields) and
+  Sojus (de, 11 fields) was brought to the site form Soyuz.
+
+**Not covered:**
+
+- Science in ru, zh-CN and fr (step C), and the verification sample (step D): to be agreed.
+- `name` fields are not in the work file, so the reviewers never saw them. The orbit-regime
+  names (panel titles) were found left in English this way: 113 fixed in 13 locales
+  (`maps/…/regime-names/`). Not changed: zh-CN "Sun–Earth L2" (the name guard keeps it), and
+  sr "Готово праволинијска хало орбита" (correct as written).
+- The other 580 name/title cells that some locales keep in English are mostly proper names
+  kept on purpose (launch pads, Latin feature names); they were not read one by one.
+- 11 fields graded MINOR but kept by their reviewer were left as they are (no BROKEN field was
+  kept). 1,850 retranslations were decided; 1,848 applied after the 2 dropped sr edits.
+- Each field had one reviewer, plus my sample read of about 10 per cell.

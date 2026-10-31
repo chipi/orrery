@@ -1,0 +1,79 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "en": "Cygnus Standard is a robotic cargo spacecraft built by Orbital Sciences in USA. Pressurised-only ISS cargo carrier. Flew 2013–2014; succeeded by the Enhanced Cygnus.",
+    "old": "Cygnus Standard è un veicolo di carico robotico costruito da Orbital Sciences negli Stati Uniti. Porta carico SSI solo pressurizzato. Ha volato tra il 2013 e il 2014; sostituito dall'Enhanced Cygnus.",
+    "new": "Cygnus Standard è un veicolo cargo robotico costruito da Orbital Sciences negli Stati Uniti. Veicolo cargo per la SSI, limitato al solo carico pressurizzato. Ha volato tra il 2013 e il 2014; sostituito dall'Enhanced Cygnus."
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "en": "Magellan is a deep-space orbiter built by Martin Marietta in USA. Radar-mapped 98% of Venus's surface. Mission ended in 1994.",
+    "old": "Magellan è un orbiter profondo-spazio costruito da Martin Marietta negli Stati Uniti. Il 98% della superficie di Venere. Missione conclusa nel 1994.",
+    "new": "Magellan è un orbiter per lo spazio profondo costruito da Martin Marietta negli Stati Uniti. Ha mappato con il radar il 98% della superficie di Venere. Missione conclusa nel 1994."
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "en": "Lunokhod 2 is a planetary rover built by NPO Lavochkin in USSR. Roamed 39 km on the Moon — record till 2014. Mission ended in 1973.",
+    "old": "Lunokhod 2 è un rover planetario costruito da NPO Lavochkin in URSS. Roamed 39 km sulla Luna — record fino al 2014. Missione conclusa nel 1973.",
+    "new": "Lunokhod 2 è un rover planetario costruito da NPO Lavochkin in URSS. Ha percorso 39 km sulla Luna — record fino al 2014. Missione conclusa nel 1973."
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "en": "Pragyan is a planetary rover built by ISRO in India. First lunar south-pole rover; Chandrayaan-3. Dormant since 2023.",
+    "old": "Pragyan è un rover planetario costruito da ISRO in India. Primo rover lunare a sud-poli; Chandrayaan-3. Inattivo dal 2023.",
+    "new": "Pragyan è un rover planetario costruito da ISRO in India. Primo rover al polo sud lunare; Chandrayaan-3. Inattivo dal 2023."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "en": "Spirit (MER-A) is a planetary rover built by NASA JPL in USA. Mars Exploration Rover; 6-year operation. Last contact in 2010.",
+    "old": "Spirit (MER-A) è un rover planetario costruito dalla NASA JPL negli Stati Uniti. Mars Exploration Rover; operazione di 6 anni. Ultimo contatto nel 2010.",
+    "new": "Spirit (MER-A) è un rover planetario costruito dalla NASA JPL negli Stati Uniti. Mars Exploration Rover; sei anni di attività. Ultimo contatto nel 2010."
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "en": "Ariane 6 is an orbital launcher built by ArianeGroup in Europe. Successor to Ariane 5. In service since 2024.",
+    "old": "Ariane 6 è un lanciatore orbitale costruito da ArianeGroup in Europa. Successore ad Ariane 5. In servizio dal 2024.",
+    "new": "Ariane 6 è un lanciatore orbitale costruito da ArianeGroup in Europa. Successore di Ariane 5. In servizio dal 2024."
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "en": "XMM-Newton is a space observatory built by Airbus Defence and Space in Europe. ESA's flagship X-ray observatory. In service since 1999.",
+    "old": "XMM-Newton è un osservatorio spaziale costruito da Airbus Defence and Space in Europa. L'osservatorio radiografico dell'ESA. In servizio dal 1999.",
+    "new": "XMM-Newton è un osservatorio spaziale costruito da Airbus Defence and Space in Europa. Il principale osservatorio a raggi X dell'ESA. In servizio dal 1999."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "en": "India’s first successful lunar lander (August 2023), the first spacecraft to land near the lunar south pole. Four years after Vikram CY-2 crashed in the same region — the redemption arc India and ISRO needed.",
+    "old": "Il primo lander lunare dell'India con successo (agosto 2023), il primo veicolo spaziale ad allunare vicino al polo sud lunare. Quattro anni dopo che il Vikram CY-2 si schiantò nella stessa regione — l'arco di redenzione che l'India e l'ISRO attendevano.",
+    "new": "Il primo lander lunare indiano ad atterrare con successo (agosto 2023), il primo veicolo spaziale ad allunare vicino al polo sud lunare. Quattro anni dopo lo schianto del Vikram CY-2 nella stessa regione — il riscatto di cui l'India e l'ISRO avevano bisogno."
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3 and the upcoming Gaganyaan crew programme",
+    "old": "La rampa di lancio pesante dell'India — GSLV Mk III / LVM3 per Chandrayaan-3 e il programma equipaggio Gaganyaan in arrivo",
+    "new": "La rampa indiana per lanciatori pesanti — GSLV Mk III / LVM3 per Chandrayaan-3 e il futuro programma con equipaggio Gaganyaan"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3 and the upcoming Gaganyaan crew programme",
+    "old": "La rampa di lancio pesante dell'India — GSLV Mk III / LVM3 per Chandrayaan-3 e il programma equipaggio Gaganyaan in arrivo",
+    "new": "La rampa indiana per lanciatori pesanti — GSLV Mk III / LVM3 per Chandrayaan-3 e il futuro programma con equipaggio Gaganyaan"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "description",
+    "en": "The first soft landing on Mars (December 1971). Began transmitting what would have been a surface image, but contact was lost after ~20 seconds leaving only a featureless grey frame. The global dust storm raging across the planet may have contributed to the early transmission loss.",
+    "old": "Il primo allunaggio morbido su Marte (dicembre 1971). Iniziò a trasmettere quella che sarebbe stata un'immagine della superficie, ma il contatto fu perso dopo ~20 secondi lasciando solo un fotogramma grigio privo di dettagli. La tempesta di polvere globale che infuriava sul pianeta potrebbe aver contribuito alla perdita precoce della trasmissione.",
+    "new": "Il primo atterraggio morbido su Marte (dicembre 1971). Iniziò a trasmettere quella che sarebbe stata un'immagine della superficie, ma il contatto fu perso dopo ~20 secondi lasciando solo un fotogramma grigio privo di dettagli. La tempesta di polvere globale che infuriava sul pianeta potrebbe aver contribuito alla perdita precoce della trasmissione."
+  }
+]

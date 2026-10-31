@@ -1,0 +1,178 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy grammar",
+    "new": "Cygnus Standard è un veicolo cargo robotico costruito da Orbital Sciences negli Stati Uniti. Veicolo cargo per la SSI, limitato al solo carico pressurizzato. Ha volato tra il 2013 e il 2014; sostituito dall'Enhanced Cygnus.",
+    "note": "Porta carico SSI telegraphic, unclear"
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "missing verb",
+    "new": "Magellan è un orbiter per lo spazio profondo costruito da Martin Marietta negli Stati Uniti. Ha mappato con il radar il 98% della superficie di Venere. Missione conclusa nel 1994.",
+    "note": "no verb; cut clause"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "English left in",
+    "new": "Lunokhod 2 è un rover planetario costruito da NPO Lavochkin in URSS. Ha percorso 39 km sulla Luna — record fino al 2014. Missione conclusa nel 1973.",
+    "note": "Roamed left in English"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "Pragyan è un rover planetario costruito da ISRO in India. Primo rover al polo sud lunare; Chandrayaan-3. Inattivo dal 2023.",
+    "note": "a sud-poli is not Italian"
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy grammar",
+    "new": "Spirit (MER-A) è un rover planetario costruito dalla NASA JPL negli Stati Uniti. Mars Exploration Rover; sei anni di attività. Ultimo contatto nel 2010.",
+    "note": "operazione di 6 anni calque"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong preposition",
+    "new": "Ariane 6 è un lanciatore orbitale costruito da ArianeGroup in Europa. Successore di Ariane 5. In servizio dal 2024.",
+    "note": "Successore ad is wrong"
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong term",
+    "new": "XMM-Newton è un osservatorio spaziale costruito da Airbus Defence and Space in Europa. Il principale osservatorio a raggi X dell'ESA. In servizio dal 1999.",
+    "note": "radiografico is medical, not X-ray"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy grammar",
+    "new": "Il primo lander lunare indiano ad atterrare con successo (agosto 2023), il primo veicolo spaziale ad allunare vicino al polo sud lunare. Quattro anni dopo lo schianto del Vikram CY-2 nella stessa regione — il riscatto di cui l'India e l'ISRO avevano bisogno.",
+    "note": "awkward word order; Four years after misread"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "La rampa indiana per lanciatori pesanti — GSLV Mk III / LVM3 per Chandrayaan-3 e il futuro programma con equipaggio Gaganyaan",
+    "note": "rampa pesante: heavy-lift misread"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "La rampa indiana per lanciatori pesanti — GSLV Mk III / LVM3 per Chandrayaan-3 e il futuro programma con equipaggio Gaganyaan",
+    "note": "rampa pesante: heavy-lift misread"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong term",
+    "new": "Il primo atterraggio morbido su Marte (dicembre 1971). Iniziò a trasmettere quella che sarebbe stata un'immagine della superficie, ma il contatto fu perso dopo ~20 secondi lasciando solo un fotogramma grigio privo di dettagli. La tempesta di polvere globale che infuriava sul pianeta potrebbe aver contribuito alla perdita precoce della trasmissione.",
+    "note": "allunaggio is lunar, not Mars"
+  }
+]

@@ -1,0 +1,352 @@
+[
+  {
+    "rel": "fleet/station/tiangong-2.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"बस\" for spacecraft bus misleads"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"पहली मिशन\" gender error; \"नरम लैंडिंग\""
+  },
+  {
+    "rel": "fleet/orbiter/hope.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "best_known_for",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "note": "Ungrammatical fragment; reads \"for the first spacecraft\""
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"पहली मिशन\" gender error"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "note": "Ungrammatical; \"only spacecraft\" meaning garbled"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Mixed \"देर 1990s/शुरुआती 2000s\" awkward"
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "\"क्रूड\" (crude) for crewed; wrong word"
+  },
+  {
+    "rel": "fleet/launcher/atlas-slv-3d.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"कार्यबल\" (workforce) for workhorse"
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-3.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Telegraphic, \"प्रभाव\" for impact awkward"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "dispatch",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"वापस आया\" loses reentry meaning"
+  },
+  {
+    "rel": "fleet/space-suit/starliner-suit.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "\"वसूली\" (debt collection) for recovery"
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"दृष्टिकोण नियंत्रण\" for attitude control"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "events.1.note",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "\"रवैया सॉफ्टवेयर\" wrong term; conditional garbled"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.4.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.3.note",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"रबल-पाइल\" transliterated"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.6.note",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "\"घुमावदार\" means winding, not slow rotator"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "\"Atlantic\" left in English"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.5.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.6.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "Entire label left in English"
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"सहायताओं\" drops gravity; assists"
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"प्रेरित\" (induce) for propels"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"पुनः-मुठभेड़\" awkward"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.5.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.5.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.5.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.3.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"पहली कभी निकट छवि\" ungrammatical"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

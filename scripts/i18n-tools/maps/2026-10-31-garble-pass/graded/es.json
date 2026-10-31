@@ -1,0 +1,352 @@
+[
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "dispatch",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-3.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/jiuquan-slc-43.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-2.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/europa-clipper.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/space-suit/krechet-94.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/atlas-slv-3d.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/atlas-v.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'Retirada' gender mismatch with orbitador"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'jamás voladas' awkward"
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-3.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/planet-labs.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/space-suit/orlan-mks.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'Retirada' gender mismatch with aterrizador"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'bajarlo' should be 'bajarla' (órbita)"
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.5.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'activos de superficie' calque of ground assets"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.4.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "type",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "'LANDERS' left in English"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "dispatch",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.6.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

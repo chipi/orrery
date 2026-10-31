@@ -87,6 +87,13 @@ Technical terms (the `term` class: burn, flyby, orbit insertion …). Runbook: t
 | `../build-glossary.mjs [--check]` | Builds the `/glossary` page data (PRD-038) from the `term` section, the definitions in `i18n-src/<loc>/glossary/terms.json` and the "used on" counts. |
 | `link-targets.test.ts` | Translated overlays keep the English markdown link targets. |
 
+Garble pass (text from the 2026-05 / 2026-07-14 runs without quality checks). Method, results and
+fix rules: `docs/wip/2026-10-31-garble-pass.md`.
+
+| Tool | What it does |
+|---|---|
+| `garble-sample.mjs <outdir> [--trees] [--per=25\|all] [--before] [--locales] [--seed]` | Per locale × tree: fields whose text was last written on or before `--before` (git blame). `--per=25` is the graded sample (brief: `maps/2026-10-31-garble-pass/grade-brief.md`). `--per=all` is the fix round's work file, with each field's term bindings (brief: `fix-brief.md`), applied with `apply-edits.mjs`. |
+
 ## maps/
 
 The hand-written inputs and analysis results, one folder per arc

@@ -1,0 +1,352 @@
+[
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Number-noun agreement \"3,236 قمر صناعي\""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "\"human-rated\" rendered as private-sector"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/space-suit/feitian.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/station/salyut-7.json",
+    "at": "dispatch",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "\"سقطت صامتة\" suggests fell, not fell silent"
+  },
+  {
+    "rel": "fleet/space-suit/krechet-94.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Literal \"حمضاً نووياً\" for DNA, awkward"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "\"human-rated\" rendered as private-sector"
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"هابط سطح\" awkward for lander"
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Added \"تعمل بكفاءة\"; \"230+\" mixed"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/schiaparelli.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Awkward \"تدفقت الدروس إلى\""
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "dispatch",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"حققت أول طاقم\", clumsy passive phrasing"
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.4.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.5.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"يتم إعادتها\" wrong construction"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"مساعدات\" drops gravity-assist meaning"
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.2.note",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"التأثير\" for impact; use اصطدام"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.6.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Intransitive \"ينحني\" for transitive bends"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.4.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.6.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.6.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "\"انزلقت\" (slid) for splashed down"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.3.note",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "\"حيود\" (diffraction) for fluorescence"
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.5.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"الموقف\" for attitude; use الوضع"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.5.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

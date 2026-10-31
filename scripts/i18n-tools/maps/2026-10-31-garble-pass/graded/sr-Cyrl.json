@@ -1,0 +1,93 @@
+[
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Mars Exploration Rover left untranslated"
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Mars Exploration Rover left untranslated"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "dispatch",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"летела летелица\" awkward for flown orbiter"
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "type",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "note": "\"определјивање\", \"телеметријско\" wrong; garbled sentences, \"пропаганди више него наука\""
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.4.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

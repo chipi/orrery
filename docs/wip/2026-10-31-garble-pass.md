@@ -432,3 +432,37 @@ One MINOR was not taken: pt-BR writes Sirius 19 times and Sírio never.
   - The 6 BROKEN fields were fixed by hand. A full read of each cell is about 1,433 fields.
 
 Record: `maps/2026-10-31-garble-pass/step-d-check/`.
+
+**C, full reads (operator: both zh-CN and fr after the second samples):**
+
+| Cell | Fields read | Retranslated | BROKEN found | MINOR found |
+| --- | ---: | ---: | ---: | ---: |
+| ru science | 1,433 | 840 | 267 | 578 |
+| zh-CN science | 1,433 | 795 | 176 | 621 |
+| fr science | 1,433 | 778 | 228 | 551 |
+
+- The full reads found far more than the samples predicted: ru 19 % BROKEN (sample 10 %), zh-CN
+  12 % (samples 5 %), fr 16 % (samples 3 %). The samples under-read this tree, or the full-read
+  reviewers graded harder; the two cannot be told apart from here. Either way, sampling alone would
+  have left most of these errors in place.
+- The errors are mostly technical terms read in a wrong everyday sense, so the sentence is nonsense:
+  ru «Лунный марсоход», zh 坦克 for a propellant tank, fr «vortex» for a wormhole. There are also
+  dropped clauses and reversed facts.
+- Guard refusals fixed by a Sonnet fixer against `apply-edits.mjs --check` (new flag): ru 40, zh-CN
+  39, fr 10. Hubble the telescope keeps the Latin name. Terms named for the astronomer use the
+  native form plus the Latin once: «закон Хаббла (Hubble)», 哈勃（Hubble）定律.
+- The schema caps `intro_sentence` at 240 characters. 30 ru and 40 fr intros were shortened, and I
+  read every one against the English: 9 restored or reworded (a dropped "chemically", "several
+  billion", "at real thrust", a gender error).
+- Numbers: all fields where a number seemed to disappear were read. All were correct (万/亿
+  forms, centuries, unit conversions).
+- An error in the English source, fixed in all 14 locales: hill-sphere said Earth's mass is
+  "80× smaller" than the Sun's; it is ~333,000×.
+
+**Not covered:**
+
+- Porkchop plot has two forms in ru (Latin «диаграмма porkchop» and «свиная отбивная») and in zh-CN
+  (猪排图 and porkchop), in both content and UI. Unifying them is a terminology decision for the
+  operator. fr uses one form only.
+- lunar-suits says twelve moonwalkers wore "eight suits"; not checked against a source.
+- No verification sample after C yet.

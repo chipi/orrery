@@ -23,7 +23,7 @@ Not part of the app or CI; excluded from the coverage gate (`vite.config.ts`).
 |---|---|
 | `apply-literal.mjs <map.tsv>` | `file\tfrom\tto` rows; each `from` must occur exactly once. For grammar-aware hand fixes. |
 | `apply-keys.mjs <loc> <spec.json>` | `{ file: { key: value } }` — replace top-level keys, shape checked against en-US. |
-| `apply-edits.mjs <loc> <edits.json>` | `[{rel, at, old, new}]` — reviewed path edits; refuses any that add a `problems()` failure. `rel: "messages"` writes the UI bundle `messages/<loc>.json`. |
+| `apply-edits.mjs <loc> <edits.json> [--check]` | `[{rel, at, old, new}]` — reviewed path edits; refuses any that add a `problems()` failure. `rel: "messages"` writes the UI bundle `messages/<loc>.json`. `--check` writes nothing and lists every refusal (without it only the first 30 are printed), so a fixer can test patches against the guard. |
 | `showdiff.mjs <edits.json>` | One line per edit, only the changed window — for reviewing before applying. |
 | `bodies-apply.mjs <loc>` | Candidate edits: English planet/moon/small-body names → glossary form (CJK spacing, Korean particles), vehicle names protected. Writes `maps/…/bodies-edits-<loc>.json`. |
 | `bodies.mjs <loc> [out.tsv]` | Counts body names left in English outside vehicle names, with context. |

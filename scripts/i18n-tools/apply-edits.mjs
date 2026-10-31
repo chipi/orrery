@@ -1,10 +1,12 @@
 // Apply reviewed edits [{rel, at, old, new}] for one locale; every new string must pass problems().
+// --check writes nothing and lists every refusal (a dry run of the same guard).
 // rel "messages" is the UI bundle messages/<loc>.json (flat keys); any other rel is an
 // overlay under i18n-src/<loc>/.
 import fs from 'node:fs';
 import { writeJsonEdits } from '../lib/json-surgical.mjs';
 import { problems } from '../lib/translate-quality.mjs';
-const [loc, file] = process.argv.slice(2);
+const [loc, file] = process.argv.slice(2).filter((a) => a !== '--check');
+const CHECK = process.argv.includes('--check');
 const edits = JSON.parse(fs.readFileSync(file, 'utf8'));
 const isMessages = (rel) => rel === 'messages';
 const target = (rel, l) => (isMessages(rel) ? `messages/${l}.json` : `i18n-src/${l}/${rel}`);
@@ -31,7 +33,7 @@ for (const e of edits) {
 }
 let n = 0,
   skipped = 0;
-for (const [rel, es] of byFile) {
+for (const [rel, es] of CHECK ? [] : byFile) {
   const r = writeJsonEdits(target(rel, loc), es, { flat: isMessages(rel) });
   n += r.applied;
   skipped += r?.skipped?.length ?? 0;
@@ -39,4 +41,4 @@ for (const [rel, es] of byFile) {
 console.log(
   `${loc}: applied ${n} in ${byFile.size} files; skipped ${skipped}; refused ${bad.length}`,
 );
-if (bad.length) console.log(bad.slice(0, 30).join('\n'));
+if (bad.length) console.log((CHECK ? bad : bad.slice(0, 30)).join('\n'));

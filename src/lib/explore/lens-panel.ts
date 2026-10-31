@@ -131,7 +131,7 @@ export function computeLensPanel({
       // constellations/deep-sky store the preference and apply the moment
       // the user is back in the neighbourhood field. Solar-system body
       // scenes keep no lens surface.
-      if (!blackHoleActive && activeBodyHostId && exoplanetHostIds.has(activeBodyHostId)) {
+      if (activeBodyHostId && exoplanetHostIds.has(activeBodyHostId)) {
         return {
           title: m.explore_lens_story_nb_title(),
           body: m.explore_lens_story_nb_body(),

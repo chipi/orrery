@@ -492,7 +492,13 @@ function ordinaryEnglish() {
     /* no bundle: lowercase words are still checked */
   }
   const walk = (d) => {
-    for (const n of fs.existsSync(d) ? fs.readdirSync(d) : []) {
+    let names = [];
+    try {
+      names = fs.readdirSync(d);
+    } catch {
+      /* no such directory */
+    }
+    for (const n of names) {
       const p = path.join(d, n);
       if (fs.statSync(p).isDirectory()) walk(p);
       else if (n.endsWith('.json'))

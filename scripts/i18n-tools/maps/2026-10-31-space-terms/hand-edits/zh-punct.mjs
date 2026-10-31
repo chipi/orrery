@@ -2,10 +2,13 @@
 // link that a Chinese character follows) become full-width ，：；. Numbers, URLs and link
 // targets never match (they are preceded by ASCII). Writes an apply-edits file.
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
-const R = '/work/orrery/main/i18n-src/zh-CN';
+const R = 'i18n-src/zh-CN';
+// Output file: argv[2], else one in a fresh private temp dir (record script; it ran once on 2026-10-31).
 const OUT =
-  '/tmp/claude-1000/-work-orrery-main/d7d0bd49-90bf-49bb-93a1-b2db4e87e888/scratchpad/hand/zh-punct.json';
+  process.argv[2] ??
+  path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'orrery-hand-')), 'zh-punct.json');
 const FW = { ',': '，', ':': '：', ';': '；' };
 const walk = (d) =>
   fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => {

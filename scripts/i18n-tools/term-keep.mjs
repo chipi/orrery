@@ -15,13 +15,22 @@ if (!file) {
   process.exit(2);
 }
 const KEEPS = 'scripts/i18n-tools/term-keeps.json';
-const keeps = fs.existsSync(KEEPS) ? JSON.parse(fs.readFileSync(KEEPS, 'utf8')) : {};
+// Read and fall back on ENOENT (no exists-then-read race).
+const readJsonOr = (p, fallback) => {
+  try {
+    return JSON.parse(fs.readFileSync(p, 'utf8'));
+  } catch (e) {
+    if (e.code === 'ENOENT') return fallback;
+    throw e;
+  }
+};
+const keeps = readJsonOr(KEEPS, {});
 
 const get = (o, at) => at.split('.').reduce((v, k) => (v == null ? v : v[k]), o);
 const docs = new Map();
 function fieldText(loc, rel, at) {
   const f = path.join('i18n-src', loc, rel);
-  if (!docs.has(f)) docs.set(f, fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null);
+  if (!docs.has(f)) docs.set(f, readJsonOr(f, null));
   const v = docs.get(f) && get(docs.get(f), at);
   return typeof v === 'string' ? v : null;
 }

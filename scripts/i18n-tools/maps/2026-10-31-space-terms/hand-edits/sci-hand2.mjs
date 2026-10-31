@@ -1,9 +1,14 @@
 // Hand fixes for the last science term misses: the fr Oberth intro (garbled, half missing)
 // and "at real thrust" dropped from the nuclear-thermal intro in ru/fr/pt-BR.
 import fs from 'node:fs';
-const R = '/work/orrery/main/i18n-src/';
-const OUT =
-  '/tmp/claude-1000/-work-orrery-main/d7d0bd49-90bf-49bb-93a1-b2db4e87e888/scratchpad/hand/';
+import os from 'node:os';
+import path from 'node:path';
+const R = 'i18n-src/';
+// Output dir: argv[2], else a fresh private temp dir (record script; it ran once on 2026-10-31).
+const OUT = (process.argv[2] ?? fs.mkdtempSync(path.join(os.tmpdir(), 'orrery-hand-'))).replace(
+  /\/?$/,
+  '/',
+);
 const NT = 'science/propulsion/nuclear-thermal.json';
 const OB = 'science/propulsion/oberth-effect.json';
 const NEW = {

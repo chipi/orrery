@@ -49,10 +49,13 @@ for (const r of retried) {
   if (process.env.GITHUB_ACTIONS) console.log(`::warning file=${r.where.split(':')[0]}::${line}`);
 }
 
+// A markdown table cell: escape backslashes first, then the pipes that would split the cell.
+const mdCell = (s) => s.replace(/\\/g, '\\\\').replace(/\|/g, '\\|');
+
 if (process.env.GITHUB_STEP_SUMMARY) {
   const rows = retried.map(
     (r) =>
-      `| ${r.final} | ${r.attempts} | \`${r.where}\` | ${r.title.replace(/\|/g, '\\|')} | ${r.firstError.replace(/\|/g, '\\|')} |`,
+      `| ${r.final} | ${r.attempts} | \`${r.where}\` | ${mdCell(r.title)} | ${mdCell(r.firstError)} |`,
   );
   const md = [
     `### ${head}`,

@@ -3,16 +3,25 @@
 // must occur exactly once in it. An optional 4th column names the field, for a file where
 // two fields carry the same text. Unmatched rows are reported, so a correction never
 // silently stops applying when the generator changes.
-//   node scripts/i18n-tools/patch-edits.mjs <edits.json> <corrections.tsv>
+// Corrections may also be a .json file [{rel, at, find, replace}] (rel with or without .json),
+// the garble-pass checker's output (maps/2026-10-31-garble-pass/check-brief.md).
+//   node scripts/i18n-tools/patch-edits.mjs <edits.json> <corrections.tsv|.json>
 import fs from 'node:fs';
 
 const [editsFile, tsv] = process.argv.slice(2);
 const edits = JSON.parse(fs.readFileSync(editsFile, 'utf8'));
-const rows = fs
-  .readFileSync(tsv, 'utf8')
-  .split('\n')
-  .filter((l) => l.trim() && !l.startsWith('#'))
-  .map((l) => l.split('\t'));
+const rows = tsv.endsWith('.json')
+  ? JSON.parse(fs.readFileSync(tsv, 'utf8')).map((c) => [
+      c.rel.replace(/\.json$/, ''),
+      c.find,
+      c.replace,
+      c.at,
+    ])
+  : fs
+      .readFileSync(tsv, 'utf8')
+      .split('\n')
+      .filter((l) => l.trim() && !l.startsWith('#'))
+      .map((l) => l.split('\t'));
 let applied = 0;
 const missed = [];
 for (const [rel, from, to, at] of rows) {

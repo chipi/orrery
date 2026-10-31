@@ -1,21 +1,21 @@
 {
   "name": "금성",
-  "type": "유형 행성",
+  "type": "지구형 행성",
   "fact": "지표면 압력은 지구의 90배. 소비에트 Venera 탐사선들은 열과 압력에 압도되기 전에 23~127분 동안 견뎠다.",
   "bio": "역행한다 — 뒤로 돌며 너무 느려서 금성의 하루가 해(년)보다 길다. 자전축 경사 177.4° 때문인데, 금성은 사실상 거꾸로다.",
   "links": [
     {
-      "l": "Venus — Wikipedia",
+      "l": "금성 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Venus",
       "t": "intro"
     },
     {
-      "l": "Venus (NASA Solar System Exploration)",
+      "l": "금성 (NASA Solar System Exploration)",
       "u": "https://science.nasa.gov/venus/",
       "t": "intro"
     },
     {
-      "l": "Venera program — Wikipedia",
+      "l": "Venera 계획 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Venera_program",
       "t": "core"
     },

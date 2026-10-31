@@ -1,6 +1,6 @@
 {
   "name": "New Glenn",
   "tagline": "Lanzador orbital pesado de dos etapas reutilizable de Blue Origin",
-  "description": "Vehículo pesado de dos etapas construido en torno a siete motores BE-4 de metano en la primera etapa (el mismo motor que usa Vulcan) y dos motores BE-3U de hidrógeno en la segunda. Diseñado para recuperar la primera etapa mediante aterrizaje en una nave de recuperación. Coloca ~45 t en órbita baja y está certificado para despliegues NSSL Phase 3 + Project Kuiper. El vuelo inaugural NG-1 despegó de Cabo Cañaveral LC-36 el 16-01-2025 y entregó con éxito al Blue Ring pathfinder en órbita — se perdió el intento de aterrizaje de la primera etapa pero la inyección orbital fue limpia.",
+  "description": "Vehículo pesado de dos etapas construido en torno a siete motores BE-4 de metano en la primera etapa (el mismo motor que usa Vulcan) y dos motores BE-3U que queman hidrógeno en la segunda. Diseñado para recuperar la primera etapa mediante un aterrizaje en un barco situado a lo largo de la ruta de vuelo. Coloca ~45 t en órbita baja y está certificado para NSSL Fase 3 y para los despliegues del Project Kuiper. El vuelo inaugural NG-1 despegó de Cabo Cañaveral LC-36 el 2025-01-16 y entregó con éxito en órbita el demostrador Blue Ring; se perdió el intento de aterrizaje de la primera etapa, pero la inserción orbital fue limpia.",
   "best_known_for": "Lanzador orbital pesado de dos etapas reutilizable de Blue Origin — primera etapa BE-4 + segunda criogénica"
 }

@@ -1,7 +1,7 @@
 {
   "name": "Polymèle",
-  "type": "Asteroid · Jupiter Trojan · L4 · P-type",
-  "fact": "Un astéroïde de type P, troyen de 21 km dans l'essaim précédent de Jupiter. Après que Lucy l'ait sélectionné comme cible, des observations de suivi effectuées par Hubble ont révélé un satellite jusque-là inconnu — une petite lune de 5 km pour laquelle un nom n'a pas encore été approuvé.",
+  "type": "Astéroïde · Troyen de Jupiter · L4 · Type P",
+  "fact": "Un troyen de type P de 21 km dans l'essaim de tête de Jupiter. Après que Lucy l'a sélectionné comme cible, des observations de suivi de Hubble ont révélé un satellite jusque-là inconnu — une petite lune de 5 km dont le nom n'a pas encore été approuvé.",
   "bio": "Découverte en 1999, nommée d'après Polymèle — mère de Patrocle dans la tradition homérique. Les astéroïdes de type P présentent des spectres de réflectance rougeâtres et sans trait particulier interprétés comme riches en matière organique et déshydratés ; leur histoire dynamique les place fermement parmi les planétésimaux du disque externe primordial que Lucy a été conçue pour échantillonner.",
   "links": [
     {
@@ -10,7 +10,7 @@
       "t": "intro"
     },
     {
-      "l": "Lucy mission (NASA)",
+      "l": "Mission Lucy (NASA)",
       "u": "https://science.nasa.gov/mission/lucy/",
       "t": "core"
     }

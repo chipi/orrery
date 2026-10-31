@@ -20,7 +20,7 @@
       anchored).
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
 
   interface Props {
@@ -55,13 +55,13 @@
          means its absence doesn't leave a gap between the first
          chip and whatever follows. -->
     {#if fleetEntryId}
-      <a class="chip" href={`${base}/missions?id=${fleetEntryId}`}>
+      <a class="chip" href={localHref(`/missions?id=${fleetEntryId}`)}>
         <span class="hint mono">↗</span>
         <span>{m.panorama_crosslink_mission()}</span>
       </a>
     {/if}
     {#if audioEpisodeId}
-      <a class="chip" href={`${base}/?audio=${audioEpisodeId}`}>
+      <a class="chip" href={localHref(`/?audio=${audioEpisodeId}`)}>
         <span class="hint mono">♪</span>
         <span>{m.panorama_crosslink_audio()}</span>
       </a>
@@ -69,7 +69,7 @@
     {#if traverseStopLink && missionId}
       <a
         class="chip"
-        href={`${base}${routeBase}?site=${missionId}&traverse_stop=${traverseStopLink}`}
+        href={localHref(`${routeBase}?site=${missionId}&traverse_stop=${traverseStopLink}`)}
       >
         <span class="hint mono">↗</span>
         <span>{m.panorama_crosslink_traverse_stop()}</span>

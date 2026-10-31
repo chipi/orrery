@@ -11,7 +11,7 @@
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Saturn V (AS-512) vanuit KSC LC-39A 1972-12-07 — enige Apollo nachtlancering.",
+      "note": "Saturn V (AS-512) vanuit KSC LC-39A 1972-12-07 — de enige nachtlancering van Apollo.",
       "type": "nominal"
     },
     {
@@ -50,5 +50,6 @@
       "note": "CM America brengt bemanning terug naar de Stille Oceaan 1972-12-19.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Saturn V S-IVB (derde trap)"
 }

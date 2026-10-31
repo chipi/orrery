@@ -315,3 +315,51 @@ describe('ask', () => {
     expect(received[0].messages?.some((m) => m.content === 'earlier question')).toBe(true);
   });
 });
+
+describe('ask — whole-request deadline and per-round limits', () => {
+  const toolTurn = (n: number) => ({
+    role: 'assistant',
+    content: null,
+    tool_calls: Array.from({ length: n }, (_, i) => ({
+      id: `call-${i}`,
+      function: { name: 'interplanetary-transfer', arguments: '{}' },
+    })),
+  });
+
+  it('with no time left makes no LLM call and returns the budget message', async () => {
+    script = [];
+    received = [];
+    const out = await ask('How long to Mars?', 'en-US', { ...deps, deadlineMs: 0 });
+    expect(received).toHaveLength(0);
+    expect(out.toolCalls).toEqual([]);
+    expect(out.answer.length).toBeGreaterThan(0);
+  });
+
+  it('stops tool rounds once only the synthesis reserve is left, then answers', async () => {
+    // Fake clock: each LLM call costs 20 s; the deadline is 40 s.
+    let t = 0;
+    script = [toolTurn(1), { role: 'assistant', content: 'Answer from the results.' }];
+    received = [];
+    const out = await ask('How long to Mars?', 'en-US', {
+      ...deps,
+      deadlineMs: 40_000,
+      now: () => (t += 10_000) - 10_000,
+    });
+    expect(out.answer).toBe('Answer from the results.');
+    expect(received).toHaveLength(2);
+    // The second call is the forced synthesis pass: no tools offered.
+    expect(received[1].toolNames).toBeUndefined();
+  });
+
+  it('runs at most 8 tool calls in one round; the rest get an error result', async () => {
+    script = [toolTurn(10), { role: 'assistant', content: 'done' }];
+    received = [];
+    const out = await ask('Compare ten transfers', 'en-US', deps);
+    expect(out.toolCalls).toHaveLength(8);
+    const toolMsgs = (received[1].messages ?? []).filter((m) => m.role === 'tool');
+    expect(toolMsgs).toHaveLength(10);
+    expect(toolMsgs.slice(8).every((m) => (m.content ?? '').includes('at most 8 tool calls'))).toBe(
+      true,
+    );
+  });
+});

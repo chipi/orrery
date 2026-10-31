@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "A segunda lição está em como a Gemini lidou com seus primeiros desastres de caminhada espacial — não como constrangimentos a enterrar, mas como informação. A técnica estava falhando, então eles disseram isso, descobriram por quê e a reconstruíram: apoios para as mãos, restrições, prática subaquática, até funcionar. Uma equipe que pode admitir que algo não está funcionando, a tempo de consertar antes que importe, vale muito mais do que uma que nunca parece falhar."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — órbitas, encontros e bases de lançamento",
+    "/science/mission-phases/edl": "Entrada, descida e pouso"
+  }
 }

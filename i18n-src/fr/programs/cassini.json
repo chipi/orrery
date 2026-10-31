@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "La leçon plus profonde est que la portée implique la responsabilité. Cassini s'est terminé en se faisant plonger dans Saturne pour protéger les lunes océaniques qu'il avait découvertes — une reconnaissance que le pouvoir de visiter un monde potentiellement vivant s'accompagne du devoir de ne pas l'empoisonner. La capacité sans cette retenue n'est pas de l'exploration ; c'est une intrusion."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Saturne dans l'explorateur 3D",
+    "/programs/voyager": "Voyager — les survols qui sont venus en premier"
+  }
 }

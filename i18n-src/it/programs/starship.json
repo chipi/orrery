@@ -36,7 +36,7 @@
   "outcome": [
     {
       "type": "prose",
-      "md": "Alla metà degli anni 2020, Starship è un programma nel mezzo della sua storia, non alla fine. Ha volato: un articolo di test a singolo motore ha saltellato e atterrato nel 2019, uno stadio superiore ha volato in alto ed è atterrato intatto nel 2021, lo stack completo ha lanciato ripetutamente dal 2023, e nel 2024 il booster Super Heavy è stato catturato in volo dalle braccia della torre di lancio — un risultato genuinamente nuovo. Ma non ha ancora volato persone, raggiunto l'orbita con un carico di routine, o dimostrato il rifornimento orbitale. Le tappe più difficili sono ancora davanti."
+      "md": "Alla metà degli anni 2020, Starship è un programma nel mezzo della sua storia, non alla fine. Ha volato: un articolo di test a singolo motore ha saltellato e atterrato nel 2019, uno stadio superiore ha volato in alto ed è atterrato intatto nel 2021, lo stack completo ha lanciato ripetutamente dal 2023, e nel 2024 il booster Super Heavy è stato catturato in volo dalle braccia della torre di lancio — un risultato genuinamente nuovo. Ma non ha ancora volato persone, raggiunto l'orbita con un carico utile di routine, o dimostrato il rifornimento orbitale. Le tappe più difficili sono ancora davanti."
     },
     {
       "type": "figure",
@@ -88,5 +88,10 @@
       "type": "prose",
       "md": "La lezione più profonda riguarda il progettare a ritroso da un obiettivo. Starship non ha senso come miglioramento incrementale ai razzi esistenti; ha senso solo se l'obiettivo reale è colonizzare un altro pianeta, e ogni scelta strana — le dimensioni, il riutilizzo completo, il rifornimento orbitale — segue da quello. Che Marte sia raggiunto o meno, il veicolo è una lezione su come appare progettare per uno stato finale che la maggior parte dell'industria considera una fantasia."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starship": "Flotta — il sistema di lancio Starship",
+    "/programs/spacex": "SpaceX — la riutilizzabilità su cui si basa Starship",
+    "/mars": "Marte — la destinazione"
+  }
 }

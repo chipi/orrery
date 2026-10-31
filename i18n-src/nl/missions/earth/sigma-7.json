@@ -3,8 +3,8 @@
   "vehicle": "Atlas LV-3B (MA-8)",
   "payload": "Mercury-capsule nr. 16 (1962 kg); Wally Schirra",
   "delta_v": "~9,4 km/s (LEO)",
-  "type": "BEMANDE AARDEORBIET · UITGEVOERD",
-  "first": "Eerste modelmatige Mercury-vlucht — 6 banen; dubbele duur van Glenn / Carpenter",
+  "type": "BEMANDE AARDBAAN · UITGEVOERD",
+  "first": "Eerste Mercury-vlucht volgens het boekje — 6 banen; tweemaal de duur van Glenn / Carpenter",
   "dispatch": "Na twee vluchten die in schrikmomenten eindigden, was Sigma 7 de vlucht die opzettelijk saai was — en dat was de prestatie. Wally Schirra noemde het een schoolvoorbeeld van een technische test en vloog het als zodanig: minimale experimenten, zorgvuldig sparen van elke kilogram brandstof en elke ampère stroom, zes banen besteed aan het bewijzen dat het ruimtevaartuig met discipline kon worden bediend in plaats van bevochten te worden. Hij kwam vrijwel boven op het bergingsvaartuig in zee terecht. In een programma dat onder druk had geïmproviseerd, toonde Sigma 7 aan dat de Amerikanen hadden geleerd het ding kalm te vliegen — de voorwaarde voor de veel langere missies die zouden volgen.",
   "description": "Wally Schirra's vlucht van 6 banen — het dubbele van de missieduur van Glenn en Carpenter. Schirra noemde zijn vlucht een 'schoolvoorbeeld van een technische test' — minimale experimentele belasting, gericht op het sparen van voorraden en het valideren van het voertuig voor langere duur. Vluchtduur 9 u 13 min; baanparameters 161 × 283 km. Landde ongeveer 445 km NO van Midway in de Stille Oceaan — eerste Mercury-vlucht die in de Stille Oceaan landde. Aurora 7 had 38 kg stuurgas gebruikt; Schirra gebruikte slechts 32 kg met de dubbele vluchttijd. De capsule Sigma 7 is te zien in het Astronaut Memorial Planetarium and Observatory, Cocoa FL.",
   "events": [
@@ -17,13 +17,13 @@
     {
       "met": 0.0001,
       "label": "BAAN-INBRENGING",
-      "note": "Inbrenging in 161 × 283 km aardeorbiet.",
+      "note": "Inbrenging in 161 × 283 km aardbaan.",
       "type": "nominal"
     },
     {
       "met": 0.385,
       "label": "WATERLANDING",
-      "note": "Stille Oceaan ~445 km NNO van Midway na 6 banen / 9 h 13 min. Eerste Mercury-bergingsoperatie in de Stille Oceaan.",
+      "note": "Stille Oceaan ~445 km NO van Midway na 6 banen / 9 u 13 min. Eerste Mercury-berging in de Stille Oceaan.",
       "type": "nominal"
     }
   ]

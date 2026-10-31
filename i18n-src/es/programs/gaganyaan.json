@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La lección más profunda es que en el vuelo espacial humano, llegar el último puede ser una forma de sabiduría. India llega al vuelo tripulado con los accidentes de todos sus predecesores para estudiar, y la oportunidad de eliminar por adelantado los fallos que otros descubrieron fatalmente. Llegar décadas tarde le cuesta un prestigio que no parece querer; lo que compra, si el método se sostiene, son astronautas que regresan a casa."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=gaganyaan": "Flota — la nave Gaganyaan",
+    "/programs/chandrayaan": "Chandrayaan: el programa lunar de la India",
+    "/programs/mangalyaan": "Mangalyaan: la misión a Marte de la India, lograda al primer intento"
+  }
 }

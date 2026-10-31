@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.3.note",
+    "old": "Lunar orbit insertion. SPS ∆v ~0,88 km/s.",
+    "new": "Maanbaaninsertie. SPS ∆v ~0,88 km/s."
+  }
+]

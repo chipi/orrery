@@ -1,0 +1,200 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Cygnus Standard is a robotic cargo spacecraft built by Orbital Sciences in USA. Pressurised-only ISS cargo carrier. Flew 2013–2014; succeeded by the Enhanced Cygnus.",
+    "tr": "Cygnus Standardは、Orbital Sciencesが製造したロボット貨物宇宙船です。与圧貨物のみを運ぶISS補給機で、2013–2014年に飛行し、後継機はEnhanced Cygnusです。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Phoenix is a planetary lander built by Lockheed Martin in USA. Confirmed water ice in Martian soil. Mission ended in 2008.",
+    "tr": "Phoenixは、米国のLockheed Martinが造った惑星着陸機です。火星の土壌に水の氷があることを確認しました。2008年にミッションを終了しました。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Surveyor 3 is a planetary lander built by Hughes Aircraft in USA. Apollo 12 visited it 2.5 years later. Mission ended in 1967.",
+    "tr": "Surveyor 3は、米国のHughes Aircraftが製造した惑星着陸機です。Apollo 12が2.5年後に訪れました。1967年にミッションを終了しました。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Venera 7-class is a planetary lander built by NPO Lavochkin in USSR. First soft landing on another planet and first to transmit data from another planet's surface (Venus, 1970). Mission ended in 1970.",
+    "tr": "Venera 7-classはソビエト連邦のNPO Lavochkinが開発した惑星着陸機である。1970年に他惑星への初の軟着陸、および他惑星表面からのデータ初送信（金星）を達成した。1970年にミッションを終了した。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Titan II GLV is an orbital launcher built by Martin Marietta in USA. Workhorse for Project Gemini. Flew 12 times, 1964–1966.",
+    "tr": "Titan II GLVは、アメリカのMartin Mariettaが製造した軌道打ち上げロケットです。Project Geminiを支えた主力ロケットで、1964–1966年に12回飛行しました。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Magellan is a deep-space orbiter built by Martin Marietta in USA. Radar-mapped 98% of Venus's surface. Mission ended in 1994.",
+    "tr": "Magellanは、アメリカのMartin Mariettaが製造した深宇宙周回探査機です。金星表面の98%をレーダーで地図化しました。1994年にミッションを終了しました。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Lunokhod 2 is a planetary rover built by NPO Lavochkin in USSR. Roamed 39 km on the Moon — record till 2014. Mission ended in 1973.",
+    "tr": "Lunokhod 2は、ソ連のNPO Lavochkinが製造した惑星探査ローバーです。月面を39 km走行し、2014年まで破られない記録を打ち立てました。1973年にミッションを終了しました。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Pragyan is a planetary rover built by ISRO in India. First lunar south-pole rover; Chandrayaan-3. Dormant since 2023.",
+    "tr": "Pragyanはインドの ISRO が製造した惑星探査ローバーです。月の南極初のローバーで、Chandrayaan-3に搭載されました。2023年以降は休眠状態です。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Sojourner is a planetary rover built by NASA JPL in USA. First Mars rover; Pathfinder mission. Mission ended in 1997.",
+    "tr": "Sojournerはアメリカ合衆国のNASA JPLによって製造された惑星ローバーです。火星上初のローバー。Pathfinderミッション。1997年にミッションを終了しました。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Spirit (MER-A) is a planetary rover built by NASA JPL in USA. Mars Exploration Rover; 6-year operation. Last contact in 2010.",
+    "tr": "Spirit（MER-A）は、アメリカのNASA JPLが製作した惑星探査ローバーです。火星探査ローバーで、6年間運用されました。2010年に最後の交信がありました。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Yutu is a planetary rover built by CAST in China. First Chinese lunar rover; Chang'e-3. Mission ended in 2016.",
+    "tr": "Yutuは中国のCASTが製造した惑星探査ローバーです。中国初の月面ローバーで、Chang'e-3に搭載されました。2016年にミッションを終了しました。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Zhurong is a planetary rover built by CAST in China. First Chinese Mars rover; Tianwen-1. Dormant since 2022.",
+    "tr": "Zhurongは中国のCASTが製造した惑星探査ローバーです。中国初の火星ローバーで、Tianwen-1に搭載されました。2022年以降は休眠状態です。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "ATV (Automated Transfer Vehicle) is a robotic cargo spacecraft built by Astrium / Airbus in Europe. ESA's flagship ISS cargo carrier that flew five missions to the ISS from 2008 to 2015, delivering cargo, water, air and propellant while using its engines to reboost the Station.",
+    "tr": "ATV（Automated Transfer Vehicle）は、Astrium / Airbus（ヨーロッパ）が製造したロボット貨物宇宙船です。2008年から2015年にかけてISSへ5回のミッションを行ったESAの旗艦ISS貨物輸送機で、貨物、水、空気、推進剤を届けるとともに、自らのエンジンでステーションの軌道を押し上げました。",
+    "terms": "Technical terms — use exactly these words, inflected as the grammar needs: propellant → 推進剤."
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Ariane 6 is an orbital launcher built by ArianeGroup in Europe. Successor to Ariane 5. In service since 2024.",
+    "tr": "Ariane 6は、ArianeGroupが欧州で製造した軌道打ち上げロケットです。Ariane 5の後継機で、2024年から運用されています。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "XMM-Newton is a space observatory built by Airbus Defence and Space in Europe. ESA's flagship X-ray observatory. In service since 1999.",
+    "tr": "XMM-Newtonは、Airbus Defence and Spaceがヨーロッパで建造した宇宙天文台です。ESAのフラッグシップX線天文台。1999年からの運用です。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "Mars Express is a deep-space orbiter built by EADS Astrium in Europe. ESA's first Mars orbiter; Europe's first planetary mission. In service since 2003.",
+    "tr": "Mars Express は EADS Astrium によってヨーロッパで建造された深宇宙周回機です。ESA の初の火星周回機；ヨーロッパ初の惑星探査機。2003年から運用中です。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "India’s first successful lunar lander (August 2023), the first spacecraft to land near the lunar south pole. Four years after Vikram CY-2 crashed in the same region — the redemption arc India and ISRO needed.",
+    "tr": "インド初の月面着陸成功機（2023年8月）であり、月の南極付近に着陸した最初の宇宙機。同じ地域でVikram CY-2が墜落してから4年後のことで、インドとISROが必要としていた汚名返上となった。",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3 and the upcoming Gaganyaan crew programme",
+    "tr": "インドの大型ロケット発射台 — GSLV Mk III / LVM3によるChandrayaan-3、および今後のGaganyaan有人宇宙飛行計画",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3 and the upcoming Gaganyaan crew programme",
+    "tr": "インドの大型ロケット発射台 — GSLV Mk III / LVM3によるChandrayaan-3、および今後のGaganyaan有人宇宙飛行計画",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "ESA's first Mars orbiter; Europe's first planetary mission",
+    "tr": "ESAの初の火星周回機；ヨーロッパ初の惑星探査機",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "ESA's first Mars orbiter; Europe's first planetary mission",
+    "tr": "ESAの初の火星周回機；ヨーロッパ初の惑星探査機",
+    "terms": ""
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "description",
+    "tree": "fleet",
+    "written": "2026-10-31",
+    "en": "The first soft landing on Mars (December 1971). Began transmitting what would have been a surface image, but contact was lost after ~20 seconds leaving only a featureless grey frame. The global dust storm raging across the planet may have contributed to the early transmission loss.",
+    "tr": "火星初の軟着陸（1971年12月）。表面画像となるはずの送信を開始しましたが、約20秒後に通信が途絶え、特徴のないグレーフレームのみが残りました。惑星全体を覆う世界規模の塵嵐が、早期の送信途絶の原因となった可能性があります。",
+    "terms": ""
+  }
+]

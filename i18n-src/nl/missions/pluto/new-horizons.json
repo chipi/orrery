@@ -11,14 +11,15 @@
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Atlas V 551 verlaat de Aarde op een Jupiter-zwaartekrachtassist-pad naar Pluto.",
+      "note": "Atlas V 551 verlaat de Aarde op weg naar Pluto via een zwaartekrachtassist bij Jupiter.",
       "type": "nominal"
     },
     {
       "met": 3463,
       "label": "PLUTO-FLYBY",
-      "note": "Dichtste benadering van Pluto; hoge-snelheid beeldvorming en plasma-gegevens overspoelen de Aarde.",
+      "note": "Dichtste nadering tot Pluto; beeldvorming en plasmagegevens met hoge datasnelheid overspoelen de Aarde.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "STAR 48B (derde trap)"
 }

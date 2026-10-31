@@ -1,7 +1,7 @@
 {
   "name": "Magellan",
   "vehicle": "Space Shuttle Atlantis (STS-30) + Inertial Upper Stage",
-  "payload": "3460 kg (incl. 2414 kg drijfgas)",
+  "payload": "3460 kg (incl. 2414 kg drijfstof)",
   "delta_v": "~3,7 km/s",
   "type": "ORBITER · VOLTOOID",
   "first": "Meest complete radarkaart van Venus — 98% van het oppervlak op ~120-m resolutie; eerste planetaire ruimtevaartuig gelanceerd vanaf de Space Shuttle",
@@ -10,7 +10,7 @@
     {
       "met": 0,
       "label": "START",
-      "note": "STS-30 / Atlantis vanuit Kennedy LC-39B; IUS uitgeplaatst vanuit Shuttle-laadruimte.",
+      "note": "STS-30 / Atlantis vanuit Kennedy LC-39B; IUS ontplooid vanuit het laadruim van de Shuttle.",
       "type": "nominal"
     },
     {
@@ -28,7 +28,7 @@
     {
       "met": 463,
       "label": "VOI",
-      "note": "Stuwraketmotor-branding in een 295 × 8543 km, 85,5°-orbit dicht bij de pool.",
+      "note": "Stuwraketmotor-ontsteking in een 295 × 8543 km, 85,5°-orbit dicht bij de pool.",
       "type": "info"
     },
     {
@@ -40,8 +40,9 @@
     {
       "met": 1988,
       "label": "AFSLUITEND EXPERIMENT",
-      "note": "1994-10-13. Periapsis verlaagd in atmosfeer — eerste geplande planetaire ruimtevaartuiggang.",
+      "note": "1994-10-13. Periapsis verlaagd tot in de atmosfeer — eerste geplande atmosferische intrede van een planetair ruimtevaartuig.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "Inertial Upper Stage (IUS, bovenste trap)"
 }

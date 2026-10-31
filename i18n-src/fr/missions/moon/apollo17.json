@@ -11,7 +11,7 @@
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Saturn V (AS-512) de KSC LC-39A 1972-12-07 - uniquement lancement nocturne d'Apollo.",
+      "note": "Saturn V (AS-512) depuis le LC-39A du KSC, 1972-12-07 — seul lancement nocturne d'Apollo.",
       "type": "nominal"
     },
     {
@@ -23,7 +23,7 @@
     {
       "met": 3.4,
       "label": "Moi",
-      "note": "Insertion de l'orbite lunaire.",
+      "note": "Insertion en orbite lunaire.",
       "type": "nominal"
     },
     {
@@ -50,5 +50,6 @@
       "note": "CM America ramène l'équipage dans l'océan Pacifique 1972-12-19.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Saturn V S-IVB (troisième étage)"
 }

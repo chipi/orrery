@@ -11,5 +11,6 @@
     { "met": 25, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
     { "met": 205, "label": "MARS ORBIT INSERTION", "note": "27-minute thruster burn captures Hope into Mars orbit 2021-02-09.", "type": "nominal" },
     { "met": 250, "label": "SCIENCE ORBIT", "note": "Trim manoeuvres place Hope into its 55-hour science orbit.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "H-IIA 2nd stage"
 }

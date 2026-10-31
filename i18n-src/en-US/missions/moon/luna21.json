@@ -12,5 +12,6 @@
     { "met": 4, "label": "TCM", "note": "Mid-course correction during cruise.", "type": "info" },
     { "met": 4.5, "label": "LANDING", "note": "Soft landing in Le Monnier crater 1973-01-15. Lunokhod 2 rolled off ramps a few hours later.", "type": "nominal" },
     { "met": 7, "label": "ROVER ACTIVE", "note": "Five-person ground crew in Crimea began driving operations. Total traverse: ~39 km.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Blok-D upper stage"
 }

@@ -1,0 +1,939 @@
+[
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "यूरोप का नागरिक GNSS — 34 उपग्रह प्रक्षेपित हो चुके हैं (4 IOV + 30 FOC); मई 2026 तक 27 संचालन में और 1 कमीशनिंग में; उपग्रह-समूह का लक्ष्य 56° झुकाव वाले 3 कक्षीय तलों में 23,222 किमी की MEO पर 30 उपग्रह है। पहली परिचालन सेवा 2016 में; पूर्ण परिचालन क्षमता की घोषणा ESA/EUSPA की आधिकारिक घोषणा की प्रतीक्षा में है। GPS (सैन्य संचालक) और GLONASS (सैन्य संचालक) के विपरीत, Galileo का प्रबंधन EUSPA करती है, जो EU की नागरिक एजेंसी है। इसे खुली, व्यावसायिक और सार्वजनिक रूप से विनियमित सेवा स्तरों के साथ मीटर से भी कम सटीकता वाली स्थिति-निर्धारण के लिए डिज़ाइन किया गया है। आपातकालीन बीकन की पहचान के लिए खोज और बचाव पेलोड भी शामिल है।",
+    "note": "wrong word constellation, broken syntax"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut content",
+    "new": "चौथा अमेरिकी चंद्र ऑर्बिटर (1967-05-08)। पहली ध्रुवीय चंद्र कक्षा; निकट पक्ष का 99% 60 मी/पिक्सेल पर और सुदूर पक्ष के क्षेत्र मानचित्रित किए",
+    "note": "dropped near side and far-side clause"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-101.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong preposition",
+    "new": "चीन का भारी-भार पैड — Tianhe, Chang'e 5/6, Tianwen-1 के लिए Long March 5, और चंद्र वापसी कार्यक्रम",
+    "note": "से wrongly means from"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-3.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "calque",
+    "new": "Ariane 5 का मुख्य प्रक्षेपण पैड — एक दशक में JWST + Galileo + भू-स्थिर वाणिज्यिक उपग्रहों का एक चौथाई",
+    "note": "home pad calque"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut content",
+    "new": "कक्षा से मंगल की उच्चतम-रिज़ॉल्यूशन इमेजिंग",
+    "note": "dropped highest-resolution Mars"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/lander/im-1-odysseus.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "gender",
+    "new": "Apollo के बाद अमेरिका की पहली चंद्र लैंडिंग; बग़ल के बल",
+    "note": "gender slip पहला लैंडिंग"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "अब तक बनी सबसे बड़ी इन्फ्रारेड अंतरिक्ष दूरबीन। जनवरी 2022 से सूर्य-पृथ्वी L2 पर तैनात; टेनिस कोर्ट के आकार की सनशील्ड के पीछे सोने की परत वाला 6.5 मीटर का खंडित बेरिलियम प्राथमिक दर्पण है। यह बिग बैंग के बाद बनी पहली आकाशगंगाओं तक पीछे देख सकती है।",
+    "note": "broken grammar, gender"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "दूसरी दुनिया पर विचरण करने वाला पहला पहिएदार वाहन",
+    "note": "broken case grammar"
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Salyut 3 Almaz था — मानव-चालित सैन्य टोही स्टेशन, जिसके असली उद्देश्य को नागरिक नाम के नीचे छिपा दिया गया था। इसके एकमात्र दल, Soyuz 14, ने लगभग दो सप्ताह स्टेशन पर रहकर नीचे के लक्ष्यों की तस्वीरें लेने के लिए दीर्घ-फोकस कैमरे चलाए — उस दौर में, जब तक स्वचालित जासूसी उपग्रहों ने मानवीय आँखों को अनावश्यक नहीं बना दिया था। सबसे प्रसिद्ध बात यह है कि कक्षा से हटाए जाने से पहले Salyut 3 ने कक्षा में एक तीव्र-गति तोप का परीक्षण-दहन किया — यह मानव-चालित अंतरिक्ष यान से हथियार दागे जाने का एकमात्र ज्ञात उदाहरण है।",
+    "note": "clumsy era clause, rapid-fire weak"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-3.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "calque",
+    "new": "Ariane 5 का मुख्य प्रक्षेपण पैड — एक दशक में JWST + Galileo + भू-स्थिर वाणिज्यिक उपग्रहों का एक चौथाई",
+    "note": "home pad calque"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut content",
+    "new": "पुन: प्रयोज्य बूस्टर ने वाणिज्यिक प्रक्षेपण का स्वरूप बदल दिया",
+    "note": "dropped reshaped verb"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong meaning",
+    "new": "NASA Discovery ध्रुवीय ऑर्बिटर — 1998 में न्यूट्रॉन-स्पेक्ट्रोमीटर से दोनों ध्रुवों पर हाइड्रोजन की खोज; 1999 में Shackleton पर जानबूझकर टकराव से मिशन समाप्त",
+    "note": "deliberate impact lost; odd term"
+  },
+  {
+    "rel": "fleet/orbiter/hope.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left in",
+    "new": "रूसी-जर्मन एक्स-रे आकाश-मानचित्रण वेधशाला",
+    "note": "English sky mapping left in"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "gender",
+    "new": "पहला लंबी अवधि वाला बहु-पोर्ट सोवियत स्टेशन",
+    "note": "gender and number mismatch"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "पहला बृहस्पति ऑर्बिटर; 8 वर्षों तक मापन",
+    "note": "clumsy 8 साल की माप"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut content",
+    "new": "पुन: प्रयोज्य बूस्टर ने वाणिज्यिक प्रक्षेपण का स्वरूप बदल दिया",
+    "note": "dropped reshaped verb"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "दूसरे ग्रह की कक्षा में पहुँचने वाला पहला अंतरिक्ष यान",
+    "note": "non-word कक्षाबद्ध, wrong case"
+  },
+  {
+    "rel": "fleet/lander/beresheet.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut content",
+    "new": "इज़रायल की गैर-लाभकारी संस्था SpaceIL का पहला निजी चंद्र लैंडिंग प्रयास। अप्रैल 2019 में यह यान दुर्घटनाग्रस्त हो गया, जब एक IMU जाइरोस्कोप की विफलता से कंप्यूटर बार-बार रीबूट हुआ और हर बार इंजन बंद हो गया; नियंत्रण वापस मिलने तक लैंडर इतना नीचे और इतनी तेज़ गति से था कि बच नहीं सका। इसने दिखाया कि चंद्रमा पर उतरना वहाँ पहुँचने से कहीं अधिक कठिन है।",
+    "note": "sentence lacked main clause; crash missing"
+  },
+  {
+    "rel": "fleet/constellation/planet-labs.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "दूसरा Shuttle; 1986-01-28 को STS-51-L पर प्रक्षेपण के 73 सेकंड बाद 7 चालक दल सदस्यों के साथ खो गया",
+    "note": "7 चालक दल unnatural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "garbled",
+    "new": "OK-GLI, Buran का वायुमंडलीय परीक्षण ऑर्बिटर था — NASA के Enterprise के समकक्ष, जिसे यह सिद्ध करने के लिए बनाया गया था कि कक्षा तक किसी के भी उड़ने से पहले यह स्पेसप्लेन ग्लाइड करके उतर सकता है। चार जेट इंजनों से लैस इसने वायुमंडल में अपने रनवे के पास पहुँचने और उतरने के अभ्यास स्वयं किए, जिससे Buran का वायुगतिकी और उसकी स्वचालित लैंडिंग प्रणालियाँ परखी गईं। यह कभी अंतरिक्ष में नहीं गया और इसका उद्देश्य भी यह नहीं था, फिर भी यह उस ऑर्बिटर से अधिक समय तक बचा रहा जो वास्तव में अंतरिक्ष में गया: उड़ान भरने वाला Buran 2002 में नष्ट हो गया, जबकि OK-GLI जर्मनी में संग्रहालय प्रदर्शनी के रूप में मौजूद है, सोवियत संघ के अब तक के सबसे बड़े अंतरिक्ष कार्यक्रम के कुछ ठोस अवशेषों में से एक।",
+    "note": "validating calque, garbled before-orbit clause"
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "पहला बृहस्पति ऑर्बिटर; 8 वर्षों तक मापन",
+    "note": "clumsy 8 साल की माप"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "gender",
+    "new": "मंगल पर पहली सॉफ़्ट लैंडिंग; सतह से ~20 सेकंड का प्रसारण",
+    "note": "gender slip, literal नरम"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "ISS युग का Soyuz (2002–2012), जिसमें डिजिटल उड़ान कंप्यूटर था और अंतरराष्ट्रीय साझेदार देशों के अंतरिक्ष यात्री दल को समायोजित करने के लिए चालक दल की ऊँचाई की सीमा अधिक चौड़ी थी। इसने पेशेवर दलों के साथ पहले अंतरिक्ष पर्यटकों को भी उड़ाया।",
+    "note": "carried mistranslated as took care of"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Atlantis, OV-104, ने Shuttle की सबसे महान साझेदारियों के आरंभ और अंत की उड़ानें भरीं। इसने रूसी स्टेशन Mir के साथ सबसे अधिक डॉकिंग कीं, जिनसे अमेरिका-रूस सहयोग का युग शुरू हुआ, और इसने STS-125 उड़ाया, वह अंतिम, साहसिक सर्विसिंग मिशन जिसने Hubble Space Telescope को एक और दशक के लिए चालू हालत में छोड़ा। जुलाई 2011 में Atlantis ने STS-135 उड़ाया, 135वाँ और अंतिम Shuttle मिशन — वह उड़ान जिसने तीस वर्षों की पुन: प्रयोज्य अमेरिकी अंतरिक्ष उड़ान को समाप्त किया और अपने बनाने में मदद किए गए अंतरिक्ष स्टेशन को ऊपर कक्षा में छोड़ दिया।",
+    "note": "bookends awkward, Space Station English"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut content",
+    "new": "चंद्रमा (या पृथ्वी के अलावा किसी पिंड) की कक्षा में पहुँचा पहला यान — 1966-04-03 को चंद्र कक्षा में प्रवेश, Apollo 8 से तीन वर्ष पहले",
+    "note": "dropped or any other body"
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "GEO मोबाइल संचार — समुद्री, विमानन, GMDSS की रीढ़",
+    "note": "missing genitive का"
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "जापान का पहला शुक्र ऑर्बिटर; 2010 में कक्षा-प्रवेश विफल होने के बाद उबरकर बादल-शीर्ष की गतिकी का अध्ययन किया",
+    "note": "non-word, fragment, wrong sense recovered"
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut content",
+    "new": "चीनी अंतरिक्ष कार्यक्रम की भारी-भार रीढ़",
+    "note": "dropped heavy-lift backbone"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "अमेरिका का पहला अंतरिक्ष स्टेशन, जो Saturn V के S-IVB ऊपरी चरण से बनाया गया। 1973 और 1974 के बीच तीन-तीन सदस्यों वाले तीन दल इसमें रहे और सौर अवलोकन तथा शून्य-गुरुत्व प्रयोग करते रहे। 1979 में ऑस्ट्रेलिया के ऊपर इसका अनियंत्रित पुनः प्रवेश हुआ।",
+    "note": "Saturn translated as planet; garbled crews"
+  },
+  {
+    "rel": "fleet/launcher/atlas-slv-3d.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "विस्तारित Atlas SLV-3D पहला चरण और दुनिया का पहला हाइड्रोजन-ईंधन वाला ऊपरी चरण (Centaur D-1A, LOX/LH₂) — यही संयोजन 1970 के दशक के हर अमेरिकी बृहस्पति, शनि, Mariner और Helios मिशन को संभव बनाता था। बहुत उच्च-ऊर्जा प्रक्षेपवक्रों (Pioneer 11 बृहस्पति से होकर शनि तक) के लिए ऊपर एक Star-37E या Star-48 ठोस किक चरण जोड़ा जाता था। 1973-1983 तक सेवा में रहा; उसकी जगह Atlas G/H/I परिवार ने ली, जो आगे चलकर 1990 के दशक के Atlas II तक पहुँचा।",
+    "note": "1990 के missing दशक, clumsy succession"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-fg.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong word",
+    "new": "Soyuz-FG रूस में Progress Rocket Space Centre द्वारा निर्मित एक कक्षीय प्रक्षेपक है। 2001-2019 में मानवयुक्त Soyuz प्रक्षेपण।",
+    "note": "क्रूड is wrong for crewed"
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-3.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "non-word",
+    "new": "CZ-3 की पहली परिचालन सफलताएँ — DFH-2 की पहली GTO सफलता, Apstar / Asiasat / Sinosat का दौर",
+    "note": "non-word परिचालनिक"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/space-suit/feitian.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/space-suit/sokol-kv-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "Soyuz पर पहना जाने वाला एकमात्र सूट — 1971 में Soyuz 11 में दबाव-ह्रास से हुई मौतों के बाद बनाया गया",
+    "note": "decompression deaths garbled"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-u.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/space-suit/orlan-mks.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "पीछे से प्रवेश वाले रूसी EVA सूटों की 50 वर्ष पुरानी शृंखला का नवीनतम सूट",
+    "note": "garbled rear-entry, double superlative"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "SpaceX का मानव-प्रमाणित अंतरिक्ष यान, मनुष्यों को कक्षा में ले जाने वाला पहला निजी रूप से विकसित और संचालित यान (Demo-2, 2020-05-30)। ट्रंक में दो सौर ऐरे पैनल हैं, जो कक्षीय संचालन के दौरान बिजली देने के लिए फ़ेयरिंग अलग होने के बाद खुलते हैं।",
+    "note": "शक्ति for power, calques"
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "J-मिशन सूट (Apollo 15, 16, 17) — कमर पर लचीला घुमावदार जोड़ लगाया गया, जिससे अंतरिक्ष यात्री चंद्र रोविंग वाहन में बैठ सकते थे",
+    "note": "संवलन is convolution in maths"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left in",
+    "new": "USSF का पुन: प्रयोज्य रोबोटिक स्पेसप्लेन — गोपनीय बहुवर्षीय कक्षीय मिशन, शटल-उपरांत का अमेरिकी स्पेसप्लेन",
+    "note": "पोस्ट-शटल English prefix"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "सभी चार विशाल ग्रहों की यात्रा करने वाला एकमात्र अंतरिक्ष यान",
+    "note": "broken syntax and case"
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left in",
+    "new": "इन्फ्रारेड महान वेधशाला; 16 वर्षों का डेटा",
+    "note": "Great left in English"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "पहला Almaz सैन्य स्टेशन — किसी भी दल के पहुँचने से पहले कक्षा में दबाव खो बैठा; 54 दिन बाद 1973-05-28 को वायुमंडल में पुनः प्रवेश किया",
+    "note": "वापस आया vague, sentence loose"
+  },
+  {
+    "rel": "fleet/space-suit/starliner-suit.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong sense",
+    "new": "JAXA की एक्स-रे वेधशाला, जो फरवरी 2016 में प्रक्षेपण के 37 दिन बाद खो गई। रिएक्शन-व्हील संतृप्ति से मुद्रा-नियंत्रण की त्रुटियों का एक सिलसिला शुरू हुआ, जिससे यान इतनी तेज़ी से घूमा कि टूटकर बिखर गया। इस घटना के सबक ने XRISM (2023 में प्रक्षेपित) के विकास को प्रेरित किया।",
+    "note": "lessons rendered as पाठ readings"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left in",
+    "new": "सोवियत संघ का एकमात्र अति-भारी प्रक्षेपण यान जो सफलतापूर्वक उड़ा। इसे Buran ऑर्बिटर या 100 t तक के स्वतंत्र पेलोड को LEO तक ले जाने के लिए बनाया गया था। दो उड़ानें: Polyus पेलोड परीक्षण (1987) और Buran ऑर्बिटर (1988), दोनों सफल। शीत युद्ध के अंत में कार्यक्रम स्थगित कर दिया गया।",
+    "note": "सुपर-हेवी लॉन्चर English left in"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "दूसरा चीनी चंद्र ऑर्बिटर; क्षुद्रग्रह 4179 तुतातिस का पहला अंतरिक्ष यान फ्लाईबाई (13 दिसंबर 2012, ~770 मीटर की निकटतम दूरी)",
+    "note": "निकटतम संपर्क means contact; non-word orbiter"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "पहला बुध ऑर्बिटर — 4 वर्ष ग्रह का मानचित्रण, 2015-04-30 को नियंत्रित टक्कर के साथ समाप्त",
+    "note": "fragment; ISO date format changed"
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "Skylab अमेरिका का पहला अंतरिक्ष स्टेशन था, और इतिहास के तात्कालिक जुगाड़ के महान कारनामों में से एक — पूरी कक्षीय कार्यशाला, जो एक इस्तेमाल हो चुके Saturn V ऊपरी चरण के खाली हाइड्रोजन टैंक के भीतर बनाई गई। शुरू से स्टेशन डिज़ाइन करने के बजाय, NASA ने रद्द हुए चंद्र लैंडिंग अभियानों से बचे हार्डवेयर को घर जितनी बड़ी प्रयोगशाला में बदल दिया, जिसमें चालक दल के आवास, एक शावर और एक मानवयुक्त सौर वेधशाला थी। प्रक्षेपण के समय इसकी सूर्य-ढाल उखड़ जाने से यह लगभग नष्ट हो गया था, पर पहले दल की तात्कालिक मरम्मतों ने इसे बचा लिया, और आगे चलकर इसने वह बात सिद्ध की जिसे बाद के हर स्टेशन ने मान लिया: कि लोग कक्षा में महीनों रह और काम कर सकते हैं, और अपना अंतरिक्ष यान ख़राब होने पर उसे ठीक भी कर सकते हैं।",
+    "note": "सुधारवादी means reformist; क्रू युक्त; run-on"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "पहला Almaz सैन्य स्टेशन — किसी भी दल के पहुँचने से पहले कक्षा में दबाव खो बैठा; 54 दिन बाद 1973-05-28 को वायुमंडल में पुनः प्रवेश किया",
+    "note": "वापस आया vague, sentence loose"
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/constellation/sentinel-copernicus.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "NOAA की भू-स्थिर मौसम उपग्रह जोड़ी — अमेरिकी महाद्वीपों का निरंतर कवरेज",
+    "note": "non-word महाद्वेशीय, loose syntax"
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "gender",
+    "new": "Blue Origin का पहली पीढ़ी का चंद्र कार्गो लैंडर — एकल-चरण हाइड्रोजन / ऑक्सीजन वाहन, सतह पर ~3 t",
+    "note": "का/की gender mismatch"
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "GEO मोबाइल संचार — समुद्री, विमानन, GMDSS की रीढ़",
+    "note": "missing genitive का"
+  },
+  {
+    "rel": "fleet/constellation/sentinel-copernicus.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong word",
+    "new": "पहला वाणिज्यिक उप-कक्षीय मानवयुक्त वाहन",
+    "note": "चालक दलित is garbled crewed"
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left in",
+    "new": "इन्फ्रारेड महान वेधशाला; 16 वर्षों का डेटा",
+    "note": "Great left in English"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "गोपनीय Tundra-कक्षा प्लेटफ़ॉर्मों पर लगे अमेरिकी पूर्व-चेतावनी IR सेंसर",
+    "note": "वर्गीकृत wrong sense; होस्ट English"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/station/salyut-1.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Salyut 1 इतिहास का पहला अंतरिक्ष स्टेशन था — अप्रैल 1971 में प्रक्षेपित, अमेरिका के Skylab से दो साल पहले, और वह क्षण जब सोवियत संघ ने सहनशक्ति में अपनी बढ़त को कक्षा में स्थायी उपस्थिति में बदल दिया। इसकी सफलता ही इसकी त्रासदी भी बनी: इसमें रहने वाला पहला दल, Soyuz 11, वापसी के दौरान मारा गया, जब एक वाल्व से उनका केबिन निर्वात में खाली हो गया, और स्टेशन में फिर कभी कोई नहीं रहा। इसने सिद्ध किया कि स्टेशन बनाया और उस तक पहुँचा जा सकता है — और सबसे बड़ी कीमत चुकाकर वह सबक सिखाया, जिसने उसके बाद के हर मानवयुक्त अंतरिक्ष यान को नया रूप दिया।",
+    "note": "occupied rendered as seized; क्रू spacecraft"
+  },
+  {
+    "rel": "fleet/launcher/ariane-5.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "garbled",
+    "new": "ESA का लंबे समय तक सेवा देने वाला भारी प्रक्षेपण यान, जो 117 प्रक्षेपणों के बाद 2023 में सेवानिवृत्त हुआ। इसने Rosetta को धूमकेतु 67P तक, JWST को L2 तक पहुँचाया, और दो दशकों तक एक ही प्रक्षेपण में दो-दो भू-स्थिर वाणिज्यिक पेलोड ले गया।",
+    "note": "द्वि-प्रकट is a non-word"
+  },
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "odd term",
+    "new": "पहला अमेरिकी मानव-प्रमाणित प्रक्षेपक — सेना के Redstone IRBM का रूपांतर; Freedom 7 (1961-05-05) और Liberty Bell 7 (1961-07-21) इसी से उड़े",
+    "note": "मानव-मूल्यांकित is a calque"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/constellation/sentinel-copernicus.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "पैड 39B से Apollo 10 (चंद्र अभियान का ड्रेस रिहर्सल), Skylab 2/3/4 के चालक दल के प्रक्षेपण और तिरपन Space Shuttle उड़ानें हुईं — जिनमें पहली जनवरी 1986 की दुर्भाग्यपूर्ण STS-51-L Challenger थी। 2000 के दशक के उत्तरार्ध में इसे साफ़ पैड के रूप में फिर से बनाया गया — कोई स्थायी सर्विस टावर नहीं, हर मिशन के लिए चल प्रक्षेपण मंच — ताकि अगली पीढ़ी के वाहनों की मेज़बानी हो सके। Artemis I ने नवंबर 2022 में 39B से उड़ान भरी; Artemis II और III इसके बाद आएँगे।",
+    "note": "wrong subjects, misspelt तिपन, carried mistranslated"
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left in",
+    "new": "रूस का GNSS — 19,130 km की MEO में 3 कक्षीय तलों में 24 सक्रिय उपग्रह, 64.8° झुकाव (GPS की तुलना में उच्च अक्षांशों पर बेहतर कवरेज के लिए ऊँचा झुकाव जानबूझकर रखा गया है)। पहला प्रक्षेपण 1982 में; 1995 में पूरा उपग्रह-समूह तैनात हुआ, फिर सोवियत वित्तपोषण बंद होने के बाद 1990 के दशक के अंत और 2000 के दशक की शुरुआत में यह ढह गया; वित्तपोषण बहाल होने पर लगभग 2010-2011 में 24 उपग्रहों की पूर्ण परिचालन स्थिति फिर बहाल हुई। 2026 में भी परिचालन जारी है। इसका संचालन Roscosmos रूसी रक्षा मंत्रालय के समन्वय से करती है।",
+    "note": "1990s/2000s English forms, clumsy"
+  },
+  {
+    "rel": "fleet/lander/im-1-odysseus.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "gender",
+    "new": "1972 के Apollo 17 के बाद अमेरिका की पहली चंद्र लैंडिंग। यह 2024-02-22 को चंद्र दक्षिणी ध्रुव के पास बग़ल के बल उतरा (प्राथमिक लेज़र रेंजफ़ाइंडर निष्क्रिय छूट गया था — प्रक्षेपण से पहले सुरक्षा स्विच सक्रिय नहीं किया गया था); सूर्यास्त से पहले थोड़े समय तक संचालित हुआ।",
+    "note": "gender slip, garbled 1972 clause, armed wrong"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "calque",
+    "new": "Long March 2D / 4B / 4C — ध्रुवीय कक्षा के मुख्य वाहक — Yaogan, Gaofen, मौसम उपग्रह",
+    "note": "कार्यघोड़ा is a literal calque"
+  },
+  {
+    "rel": "fleet/orbiter/hope.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left in",
+    "new": "चीन का GNSS, वर्तमान स्वरूप में औपचारिक रूप से BeiDou-3। अनूठी मिश्रित संरचना, जिसमें MEO (21,500 km पर 24 उपग्रह, 55°), झुकी हुई भू-समकालिक कक्षा (IGSO, 3 उपग्रह) और GEO (3 उपग्रह) शामिल हैं। जुलाई 2020 में पूर्ण वैश्विक कवरेज घोषित किया गया। यह एकमात्र GNSS है जिसके सिग्नल में लघु-संदेश उपग्रह संचार की क्षमता निहित है — उपयोगकर्ता उपग्रह-समूह के माध्यम से सीधे छोटे पाठ संदेश भेज सकते हैं, जो दूरदराज़ क्षेत्रों में आपातकालीन संचार के लिए उपयोगी है।",
+    "note": "inclined geosynchronous, built-in, constellation in English"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "garbled",
+    "new": "Buran सोवियत संघ का Space Shuttle को जवाब था — बाहर से लगभग हूबहू वैसा ही, पर दो फ़ैसलों के साथ जिन्होंने मूल से इसे शायद बेहतर बना दिया: इसमें कोई मुख्य इंजन नहीं था (उठान का सारा बल अलग Energia रॉकेट से आता था), और यह बिना किसी के सवार हुए भी उड़ सकता था। 15 नवंबर 1988 को इसने दूसरी बात सिद्ध कर दी: इसने पूरा मानवरहित कक्षीय मिशन उड़ाया और बग़ल से चलती हवा में रनवे पर अपने आप उतरा, जो किसी भी पंखों वाले अंतरिक्ष यान ने पहले कभी नहीं किया था। वह एक निर्दोष उड़ान थी, और इसकी इकलौती उड़ान भी। सोवियत संघ बिखर गया, पैसा और मिशन दोनों ग़ायब हो गए, और Buran रद्द कर दिया गया — उड़ान भरने वाला ऑर्बिटर बाद में 2002 में अपने हैंगर की छत गिरने से कुचल गया। अंतरिक्ष उड़ान की सबसे प्रभावशाली और सबसे निरर्थक उपलब्धियों में से एक।",
+    "note": "ungrammatical opening, odd lift/crosswind wording"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Tiangong अंतरिक्ष स्टेशन के लिए चीन का कार्गो अंतरिक्ष यान, जिसकी यान-बस की विरासत Tiangong-1 के साथ साझा है। यह Tiangong के प्रणोदक टैंकों को दोबारा भरता है और प्रयोग रैक पहुँचाता है; पहली उड़ान 2017 में।",
+    "note": "bus heritage unclear, refuel wording"
+  },
+  {
+    "rel": "fleet/constellation/gps-gnss.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/space-suit/sokol-kv-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "Soyuz का प्रक्षेपण-प्रवेश सूट, जो 1971 में Soyuz 11 के दबाव-ह्रास से हुई मौतों के बाद से अनिवार्य है",
+    "note": "decompression deaths garbled"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "gender",
+    "new": "किसी अन्य ग्रह पर पहली सॉफ़्ट लैंडिंग और किसी अन्य ग्रह की सतह से डेटा भेजने वाला पहला मिशन (शुक्र, 1970)",
+    "note": "gender slip पहली मिशन"
+  },
+  {
+    "rel": "fleet/lander/change-5.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "1976 के Luna 24 के बाद पहला चंद्र नमूना-वापसी अभियान। Apollo और Luna नमूनों वाले क्षेत्रों से 1.2 अरब वर्ष नए क्षेत्र से 1.731 kg बेसाल्ट लौटाया गया — जिससे हाल के चंद्र ज्वालामुखीवाद की समय-रेखा आगे बढ़ती है।",
+    "note": "younger rendered as older"
+  },
+  {
+    "rel": "fleet/observatory/kepler.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "NASA का एक्सोप्लैनेट-खोजी यान (2009–2018)। यह आकाश के एक ही हिस्से पर टिका रहा और ट्रांजिट फोटोमेट्री से एक्सोप्लैनेट खोजता रहा — जब कोई ग्रह अपने तारे के सामने से गुज़रता है, तब तारे के प्रकाश में आने वाली क्षणिक कमी। इसने 2,700 से अधिक पुष्ट एक्सोप्लैनेट खोजे और दिखाया कि पृथ्वी के आकार की दुनियाएँ आम हैं।",
+    "note": "plural verbs for singular, loose syntax"
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "calque",
+    "new": "मंगल ग्रह की सतह पर पहुंचने वाली पहली मानव निर्मित वस्तु; लैंडर टकराते ही क्रैश हो गया (1971)",
+    "note": "प्रभाव पर calque"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "दूसरी दुनिया पर विचरण करने वाला पहला पहिएदार वाहन",
+    "note": "broken case grammar"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "English left in",
+    "new": "बहु-सदस्यीय चालक दल वाली पहली उड़ान; पहला स्पेसवॉक",
+    "note": "gender slip, मल्टी-क्रू English"
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut content",
+    "new": "चीनी अंतरिक्ष कार्यक्रम की भारी-भार रीढ़",
+    "note": "dropped heavy-lift backbone"
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  },
+  {
+    "rel": "fleet/launch-site/starbase-orbital-a.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "gender",
+    "new": "Starship का पहला कक्षीय उड़ान परीक्षण; पूरी तरह पुन: प्रयोज्य, मंगल-गामी स्टैक के लिए डिज़ाइन किया गया",
+    "note": "gender slip, मंगल-बाध्य wrong"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "सोवियत शटल; एक मानवरहित उड़ान, कभी मानवयुक्त नहीं",
+    "note": "कभी चालक नहीं garbled"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "क्षुद्रग्रह बेल्ट को पार करने वाला पहला अंतरिक्ष यान",
+    "note": "broken syntax and case"
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct"
+  }
+]

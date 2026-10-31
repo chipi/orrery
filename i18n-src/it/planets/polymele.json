@@ -1,7 +1,7 @@
 {
   "name": "Polimele",
-  "type": "Asteroid · Jupiter Trojan · L4 · P-type",
-  "fact": "Un asteroide di tipo P di 21 km nella sciame troiana in anticipo di Giove. Dopo che Lucy lo ha selezionato come bersaglio, osservazioni di follow-up con Hubble hanno rivelato un satellite precedentemente sconosciuto — un piccolo satellite di 5 km per il quale un nome deve ancora essere approvato.",
+  "type": "Asteroide · Troiano di Giove · L4 · Tipo P",
+  "fact": "Troiano di tipo P di 21 km nello sciame di testa di Giove. Dopo che Lucy lo ha scelto come obiettivo, le osservazioni di approfondimento con Hubble hanno rivelato un satellite finora sconosciuto — una piccola luna di 5 km il cui nome non è ancora stato approvato.",
   "bio": "Scoperto nel 1999, preso il nome da Polimele — madre di Patroclo nella tradizione omerica. Gli asteroidi di tipo P presentano spettri di riflettanza rossastri e uniformi interpretati come ricchi di materiali organici e disidratati; la loro storia dinamica li colloca fermamente tra i planetesimi del disco esterno primordiale che Lucy è stata progettata per campionare.",
   "links": [
     {
@@ -10,7 +10,7 @@
       "t": "intro"
     },
     {
-      "l": "Lucy mission (NASA)",
+      "l": "Missione Lucy (NASA)",
       "u": "https://science.nasa.gov/mission/lucy/",
       "t": "core"
     }

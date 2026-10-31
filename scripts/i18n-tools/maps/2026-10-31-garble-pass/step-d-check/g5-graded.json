@@ -1,0 +1,542 @@
+[
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.1",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"exquises tournées\" and \"frappé Jupiter\" are literal and awkward"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "intro_sentence",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "\"lifetime of\" data dropped"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "body_paragraphs.3",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.7.diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/orbits/vis-viva.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/max-q.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.4.diagram_alt",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "title",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.2",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"ferme ceci\" is a calque of \"closes this\""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.3",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/met.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "narrative_101.2",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "body_paragraphs.1",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"librent\" is not proper French for librate; \"intra-radial\" odd"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.1",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "Switches to tu \"imagine\"; relative clause misplaced"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.3",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "\"a d'abord roulé une fusée chimique\" mistranslates \"rode\"; \"avortement\" wrong for abort"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.2",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Many untranslated anglicisms (booster, burns, strap-on); \"quadriétage\" odd"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/eva-suits.json",
+    "at": "intro_sentence",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "note": "English \"vacuum\" left in; \"survive\" added"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.3",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "diagram_caption",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "\"behaviour\" and \"roughly\" dropped; \"expédition\" alone unclear"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/microgravity-physiology.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/conic-sections.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/free-return.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.0",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "Half-English \"C3-vs-masse-charge-utile\"; porkchop gender inconsistent"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "narrative_101.0",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "\"rester mis\" nonsensical; \"les a préparés\" wrong for worked out"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "body_paragraphs.1",
+    "grade": "MINOR",
+    "kind": "name",
+    "note": "\"l'étoile Barnard\" should be étoile de Barnard"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.1",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"diagramme en cuillère\" mistranslates porkchop"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.2",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"quel conique\" wrong gender; imperative/vous mix awkward"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "narrative_101.2",
+    "grade": "MINOR",
+    "kind": "fact",
+    "note": "\"plus d'une heure\" vs \"better part of an hour\""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/_landing.json",
+    "at": "chapters.3.paragraphs.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.2",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"AU\" vs \"au\" inconsistent; \"lumière-minutes\" should be minutes-lumière"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "title",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.2",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "Anglicisms (boost-back), literal \"mangent\", \"poussée crête rapide\""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.0",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "intro_sentence",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "diagram_caption",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.0",
+    "grade": "MINOR",
+    "kind": "nonword",
+    "note": "\"héliocentriqueexcédentaire\" missing space"
+  },
+  {
+    "loc": "fr",
+    "tree": "science",
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.1",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "Pork chop \"bone\" metaphor lost in \"diagramme\""
+  }
+]

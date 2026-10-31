@@ -1,0 +1,395 @@
+[
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural asistencias gravitatorias is the binding form"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural asistencias gravitatorias is the binding form"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural asistencias gravitatorias is the binding form"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural asistencias gravitatorias is the binding form"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural asistencias gravitatorias is the binding form"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural asistencias gravitatorias is the binding form"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural asistencias gravitatorias is the binding form"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural asistencias gravitatorias is the binding form"
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "la primera combustión líquida",
+    "replace": "el primer encendido con propelente líquido",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "la primera combustión líquida",
+    "replace": "el primer encendido con propelente líquido",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "fire burning, not engine"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "pequeño impulso de captura",
+    "replace": "pequeño encendido de captura",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burns up = incinerates, not engine"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "un impulso retrógrado",
+    "replace": "un encendido retrógrado",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stars glow red, not engine"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn out = exhaust fuel, not engine"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "imperative verb phrase, no noun rendered"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "sumado en cada impulso",
+    "replace": "sumado en cada encendido",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "165 segundos de funcionamiento de la primera etapa",
+    "replace": "165 segundos de encendido de la primera etapa",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion of propellant in chamber"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion in chamber"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/soot sense (arde)"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "RP-1 name; combustible stem present in text"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "hydrogen burns to water, combustion"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion temperature"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "sin impulsos a mitad de camino",
+    "replace": "sin encendidos a mitad de camino",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "del impulso de regreso",
+    "replace": "del encendido de regreso",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "sin impulso de inserción orbital",
+    "replace": "sin encendido de inserción orbital",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "de dos impulsos",
+    "replace": "de dos encendidos",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "un impulso de frenado",
+    "replace": "un encendido de frenado",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "Dos impulsos del motor",
+    "replace": "Dos encendidos del motor",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "el impulso de entrada",
+    "replace": "el encendido de entrada",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"Burn harder\" rendered as verb Impulsa con más fuerza; acceptable verb"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "dos impulsos grandes",
+    "replace": "dos encendidos grandes",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "con un impulso, estás",
+    "replace": "con un encendido, estás",
+    "why": "engine firing"
+  },
+  {
+    "rel": "science/life-in-space/isru-resource-utilization.json",
+    "at": "intro_sentence",
+    "term": "propellant",
+    "decision": "change",
+    "find": "oxígeno y propergol",
+    "replace": "oxígeno y propelente",
+    "why": "binding propelente"
+  },
+  {
+    "rel": "science/life-in-space/isru-resource-utilization.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "propergol LH₂/LOX",
+    "replace": "propelente LH₂/LOX",
+    "why": "binding propelente"
+  },
+  {
+    "rel": "science/life-in-space/isru-resource-utilization.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "propergol CH₄/LOX",
+    "replace": "propelente CH₄/LOX",
+    "why": "binding propelente"
+  },
+  {
+    "rel": "science/life-in-space/isru-resource-utilization.json",
+    "at": "body_paragraphs.3",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ISRU de propergol",
+    "replace": "ISRU de propelente",
+    "why": "binding propelente"
+  },
+  {
+    "rel": "science/life-in-space/isru-resource-utilization.json",
+    "at": "body_paragraphs.3",
+    "term": "propellant",
+    "decision": "change",
+    "find": "coste en propergol",
+    "replace": "coste en propelente",
+    "why": "binding propelente"
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "diagram_caption",
+    "term": "payload",
+    "decision": "change",
+    "find": "carga ligera",
+    "replace": "carga útil ligera",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/orbits/orbit-regimes.json",
+    "at": "narrative_101.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "lanzar una carga aquí",
+    "replace": "lanzar una carga útil aquí",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "keep",
+    "why": "cargas útiles plural present"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.1",
+    "term": "payload",
+    "decision": "change",
+    "find": "puso la carga en órbita",
+    "replace": "puso la carga útil en órbita",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "como carga secundaria",
+    "replace": "como carga útil secundaria",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "science/space-stations/solar-power-budget.json",
+    "at": "narrative_101.2",
+    "term": "payload",
+    "decision": "keep",
+    "why": "cargas útiles plural present"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "specific impulse",
+    "decision": "keep",
+    "why": "impulsos específicos plural present"
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "keep",
+    "why": "re-entry into 1 g gravity, not atmospheric"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "entry",
+    "decision": "change",
+    "find": "y el regreso estaba garantizado",
+    "replace": "y la reentrada estaba garantizada",
+    "why": "atmospheric re-entry"
+  }
+]

@@ -63,13 +63,16 @@ test.describe('mobile stream-heavy contract', () => {
     // Streamed off-device (ADR-078) — must NOT be in the local bundle.
     expect((await request.get('/images/app-landing-hero.webp')).status()).toBe(404);
     expect((await request.get('/data/i18n/de.json')).status()).toBe(404); // non-default locale
+    expect((await request.get('/data/i18n/de.core.json')).status()).toBe(404); // …and its chunks
     expect((await request.get('/data/image-alt-text/de.json')).status()).toBe(404); // streamed alt text
     // 4K LOD textures pruned + gated off (ADR-079 D3).
     expect((await request.get('/textures/4k_moon.jpg')).status()).toBe(404);
     expect((await request.get('/textures/4k_sun.jpg')).status()).toBe(404);
 
     // Kept on-device so the app is fully usable offline from install.
-    expect((await request.get('/data/i18n/en-US.json')).status()).toBe(200); // default locale
+    expect((await request.get('/data/i18n/en-US.core.json')).status()).toBe(200); // default locale chunks
+    expect((await request.get('/data/i18n/en-US.science.json')).status()).toBe(200);
+    expect((await request.get('/data/i18n/en-US.json')).status()).toBe(404); // whole bundle: unused on device
     expect((await request.get('/textures/2k_moon.jpg')).status()).toBe(200); // 2K sibling
     expect((await request.get('/textures/4k_io.jpg')).status()).toBe(404); // 4K pruned (#596)
     expect((await request.get('/textures/2k_io.jpg')).status()).toBe(200); // its 2K base
@@ -183,8 +186,10 @@ test.describe('mobile stream-heavy contract', () => {
 
   test('service-worker precache manifest is en-US only', async ({ request }) => {
     const sw = await (await request.get('/sw.js')).text();
-    expect(sw).toContain('data/i18n/en-US.json');
+    expect(sw).toContain('data/i18n/en-US.core.json');
+    expect(sw).not.toContain('data/i18n/en-US.json');
     expect(sw).not.toContain('data/i18n/de.json');
+    expect(sw).not.toContain('data/i18n/de.core.json');
     expect(sw).not.toContain('data/i18n/fr.json');
   });
 

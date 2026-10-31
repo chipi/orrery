@@ -1,0 +1,224 @@
+[
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "events.0.note",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "omitted naturally ('hacia el Grand Tour')"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "dispatch",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "La cita —dos",
+    "replace": "El encuentro —dos",
+    "why": "binding encuentro; 'cita' alone not accepted"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "dispatch",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "la cita en órbita lunar",
+    "replace": "el encuentro en órbita lunar",
+    "why": "binding encuentro"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "Primera cita tripulada",
+    "replace": "Primer encuentro tripulado",
+    "why": "binding encuentro"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "en cita con",
+    "replace": "en encuentro con",
+    "why": "binding encuentro"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "un asistencia de gravedad terrestre",
+    "replace": "una asistencia gravitatoria terrestre",
+    "why": "binding asistencia gravitatoria; gender fix un->una forced"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "ASISTENCIA DE GRAVEDAD TERRESTRE",
+    "replace": "ASISTENCIA GRAVITATORIA TERRESTRE",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn omitted naturally ('corrección de órbita')"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "term": "stage",
+    "decision": "keep",
+    "why": "proper name 'Inertial Upper Stage', untranslated"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "propellant omitted ('nitrógeno de control de actitud')"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.5.label",
+    "term": "propellant",
+    "decision": "change",
+    "find": "PROPULSANTE",
+    "replace": "PROPELENTE",
+    "why": "binding propelente"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "tanques de propulsante",
+    "replace": "tanques de propelente",
+    "why": "binding propelente"
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.1.note",
+    "term": "payload",
+    "decision": "change",
+    "find": "carga clasificada",
+    "replace": "carga útil clasificada",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "term": "payload",
+    "decision": "change",
+    "find": "carga clasificadas",
+    "replace": "carga útil clasificadas",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "la carga de Apollo",
+    "replace": "la carga útil de Apollo",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "change",
+    "find": "un impulsor Proton-K",
+    "replace": "un lanzador Proton-K",
+    "why": "'impulsor' wrong; Proton-K is a whole launcher (lanzador per lessons)"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "vehicle",
+    "term": "payload",
+    "decision": "change",
+    "find": "carga compartida",
+    "replace": "carga útil compartida",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "como carga compartida",
+    "replace": "como carga útil compartida",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.0.note",
+    "term": "payload",
+    "decision": "change",
+    "find": "carga compartida",
+    "replace": "carga útil compartida",
+    "why": "binding carga útil"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: bodega de carga (standard Shuttle payload bay)"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "events.0.note",
+    "term": "thrust",
+    "decision": "change",
+    "find": "con baja aceleración continua",
+    "replace": "con bajo empuje continuo",
+    "why": "binding empuje"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "el impulso iónico solo",
+    "replace": "el empuje iónico solo",
+    "why": "binding empuje"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "term": "thrust",
+    "decision": "change",
+    "find": "por propulsión iónica",
+    "replace": "por empuje iónico",
+    "why": "binding empuje"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.0.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "seis encuentros",
+    "replace": "seis sobrevuelos",
+    "why": "binding sobrevuelo"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "VUELO TRIPULADO LUNAR",
+    "replace": "SOBREVUELO LUNAR TRIPULADO",
+    "why": "binding sobrevuelo"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: inserción exitosa en órbita lunar"
+  }
+]

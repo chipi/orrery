@@ -1,0 +1,9 @@
+[
+  {
+    "rel": "fleet/station/salyut-7.json",
+    "at": "dispatch",
+    "find": "死んだように電力を失った",
+    "replace": "機能を停止し電力も失った",
+    "why": "'dead and unpowered' rendered awkwardly as 'dead-like'"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "orbit": "O caminho fechado que um corpo segue ao redor de outro sob a ação da gravidade — uma elipse no caso mais simples.",
+  "trajectory": "O caminho que uma espaçonave segue pelo espaço, aberto ou fechado — por exemplo, o arco da Terra a Marte.",
+  "inclination": "A inclinação do plano de uma órbita em relação a um plano de referência, como o equador da Terra ou a eclíptica, em graus.",
+  "rendezvous": "Levar duas espaçonaves ao mesmo lugar com a mesma velocidade para que voem juntas — geralmente a etapa anterior ao acoplamento.",
+  "docking": "Unir mecanicamente duas espaçonaves para que a tripulação ou a carga possam passar de uma para a outra.",
+  "gravity assist": "Usar uma passagem próxima a um planeta para mudar a velocidade e a direção de uma espaçonave sem gastar propelente.",
+  "delta-v": "Variação de velocidade, escrita Δv: quanto uma espaçonave pode mudar seu movimento, a moeda de todo plano de missão, em km/s.",
+  "apogee": "O ponto de uma órbita ao redor da Terra mais distante da Terra.",
+  "perigee": "O ponto de uma órbita ao redor da Terra mais próximo da Terra.",
+  "burn": "A queima de um motor de foguete durante certo tempo para mudar a velocidade de uma espaçonave.",
+  "stage": "Uma seção de um foguete com motores e propelente próprios, descartada quando o propelente acaba.",
+  "propellant": "O que um motor de foguete consome para produzir empuxo: geralmente um combustível e um oxidante juntos.",
+  "payload": "O que um foguete leva para a missão: satélites, uma espaçonave tripulada, carga ou instrumentos.",
+  "thrust": "A força que um motor de foguete produz para empurrar o veículo para a frente, medida em newtons.",
+  "booster": "Um foguete que fornece empuxo no lançamento: um primeiro estágio ou um foguete lateral acoplado ao lado do núcleo.",
+  "specific impulse": "A eficiência com que um motor usa seu propelente, em segundos: quanto maior, mais Δv se obtém do mesmo propelente.",
+  "flyby": "Uma passagem próxima por um planeta, lua ou outro corpo, sem inserção orbital ao redor dele nem pouso.",
+  "orbit insertion": "A queima do motor que desacelera uma espaçonave o bastante para que seja capturada em órbita ao redor do destino.",
+  "entry": "A passagem de uma espaçonave para a atmosfera de um planeta, onde o arrasto e o aquecimento a desaceleram.",
+  "descent": "O caminho para baixo até uma superfície, a partir da órbita ou da atmosfera até o toque."
+}

@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "A lição mais profunda é que no voo espacial humano, chegar por último pode ser uma forma de sabedoria. A Índia chega ao voo tripulado com os acidentes de todos os predecessores para estudar, e a chance de eliminar antecipadamente as falhas que outros descobriram fatalmente. Chegar décadas atrasada custa-lhe prestígio que ela não parece querer; o que isso compra, se o método se mantiver, são astronautas que voltam para casa."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=gaganyaan": "Frota — a nave Gaganyaan",
+    "/programs/chandrayaan": "Chandrayaan — o programa lunar da Índia",
+    "/programs/mangalyaan": "Mangalyaan — a missão a Marte da Índia, bem-sucedida na primeira tentativa"
+  }
 }

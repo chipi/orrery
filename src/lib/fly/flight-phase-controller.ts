@@ -12,7 +12,7 @@
  * event) → act`, plus the derived scene flags the page + scene layer read. The
  * continuous playback clock (launchT / coastMetDays / descentT / simDay) stays
  * in the page; the controller owns only which ACT is active. See the A0
- * transition table in docs/wip/2026-08-05-fly-restructure-plan.md.
+ * transition table in docs/wip/_archive/2026-08-05-fly-restructure-plan.md.
  */
 
 /** The active flight act. `cruise` is the interplanetary/cislunar transfer scene

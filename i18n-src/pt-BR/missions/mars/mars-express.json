@@ -27,7 +27,7 @@
     },
     {
       "met": 206,
-      "label": "INSERÇÃO DA ÓRBITA DE MARTE",
+      "label": "INSERÇÃO EM ÓRBITA DE MARTE",
       "note": "A queima do motor principal de 37 minutos captura o orbitador na órbita de Marte no dia de Natal de 2003.",
       "type": "nominal"
     },
@@ -37,5 +37,6 @@
       "note": "Primeiro sinal esperado não recebido; lander declarado perdido.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "estágio superior Fregat"
 }

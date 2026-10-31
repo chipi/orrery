@@ -1,20 +1,20 @@
 {
-  "description": "Neptuns größter Mond und eine der geologisch aktivsten Welten des Sonnensystems. Triton umkreist Neptun rückläufig (retrograd) und mit extremer Neigung – charakteristisch für ein eingefangenes Objekt des Kuiper-Gürtels, was darauf hindeutet, dass es eher ein Geschwister des Pluto als ein natürlicher Neptun-Mond ist. Voyager 2 entdeckte aktive Stickstoff-Geysire, die dunklen organischen Staub 8 km in eine dünne Stickstoff-Atmosphäre ausstoßen; die südliche Hemisphäre zeigt „Kantalupen-Terrain\" – ein Netzwerk von Dellen und Graten, das nirgendwo sonst im Sonnensystem zu sehen ist. Tritons rückläufige Umlaufbahn zerfällt gezeitenbedingt; in etwa 3,6 Mrd. Jahren wird er entweder in einen Saturn-ähnlichen Ring zerrissen oder in Neptun stürzen.",
-  "surface_composition": "Gefrorener Stickstoff + Wassereis + Kohlendioxideis; Oberfläche bedeckt mit kantalupenstrukturiertem Gelände, das im Sonnensystem einzigartig ist, und aktiven Stickstoff-Kryogeysiren, die dunkle Fontänen 8 km hoch in eine dünne Stickstoffatmosphäre schleudern.",
+  "description": "Neptuns größter Mond und eine der geologisch aktivsten Welten des Sonnensystems. Triton umkreist Neptun rückläufig (retrograd) und mit extremer Neigung — ein Kennzeichen für ein eingefangenes Objekt des Kuipergürtels, das ihn wahrscheinlich eher zu einem Geschwister des Pluto als zu einem ursprünglichen Neptunmond macht. Voyager 2 entdeckte aktive Stickstoff-Geysire, die dunklen organischen Staub 8 km hoch in eine dünne Stickstoffatmosphäre ausstoßen; die Südhalbkugel zeigt „Melonenhaut-Gelände“ — ein Netz aus Dellen und Graten, das nirgendwo sonst im Sonnensystem zu sehen ist. Tritons rückläufige Umlaufbahn zerfällt durch Gezeitenkräfte; in etwa 3,6 Mrd. Jahren wird er entweder zu einem saturnähnlichen Ring zerrissen oder stürzt auf Neptun.",
+  "surface_composition": "Gefrorener Stickstoff + Wassereis + Kohlendioxideis; Oberfläche bedeckt mit Cantaloupe-Gelände, das im Sonnensystem einzigartig ist, und aktiven Stickstoff-Kryogeysiren, die dunkle Fontänen 8 km hoch in eine dünne Stickstoffatmosphäre schleudern.",
   "mission_visits": [
     "Voyager 2 — USA, 1989 (größte Annäherung ~40.000 km)"
   ],
   "library_labels": {
     "triton-wiki": "Wikipedia — Triton",
     "triton-nasa": "NASA Science — Triton Übersicht",
-    "triton-voyager2": "NASA Voyager 2 — Neptun-System Begegnung (1989)",
-    "triton-trident": "Trident — vorgeschlagener Discovery-class Triton Vorbeiflug"
+    "triton-voyager2": "NASA Voyager 2 — Begegnung mit dem Neptunsystem (1989)",
+    "triton-trident": "Trident — vorgeschlagener Triton-Vorbeiflug der Discovery-Klasse"
   },
   "science_sections": [
     {
       "tab": "orbits",
       "section": "inclination",
-      "why": "Tritons Bahnneigung von 156,8° — retrograd und steil zur Äquatorebene Neptuns geneigt — ist der Beweis für eine Einfangung aus dem Kuipergürtel statt einer Bildung mit Neptun."
+      "why": "Tritons Bahninklination von 156,8° — retrograd und stark gegen den Äquator Neptuns geneigt — ist der entscheidende Beleg dafür, dass er aus dem Kuipergürtel eingefangen wurde und nicht zusammen mit Neptun entstand."
     },
     {
       "tab": "orbits",

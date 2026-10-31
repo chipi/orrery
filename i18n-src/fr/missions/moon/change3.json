@@ -11,5 +11,6 @@
     { "met": 0.01, "label": "TLI", "note": "Injection trans-lunaire directe sur l'étage supérieur du LM-3B.", "type": "nominal" },
     { "met": 5, "label": "INSERTION EN ORBITE LUNAIRE", "note": "Capture en orbite lunaire circulaire de 100 km le 2013-12-06.", "type": "nominal" },
     { "met": 13, "label": "ATTERRISSAGE", "note": "Alunissage en douceur dans Mer des Pluies le 2013-12-14. Premier alunissage en douceur depuis Luna 24 (1976). Le rover Yutu a été déployé quelques heures plus tard.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Long March 3B/E avec étage supérieur YZ-1"
 }

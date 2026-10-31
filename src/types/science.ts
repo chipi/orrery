@@ -24,6 +24,7 @@ export type ScienceTabId =
   // pages (no sections); the rail's tab card links straight to
   // /science/reading-list and /science/watch-list. Layout's
   // right-rail gracefully hides when tabSections is empty.
+  | 'glossary'
   | 'reading-list'
   | 'watch-list';
 

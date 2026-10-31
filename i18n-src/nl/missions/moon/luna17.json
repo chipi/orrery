@@ -16,7 +16,7 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Maanbaan-insertie; orbitale correcties tot afdaalhellingshoek.",
+      "note": "Maanbaan-insertie; orbitale correcties tot afdalingsinclinatie.",
       "type": "nominal"
     },
     {
@@ -37,5 +37,6 @@
       "note": "Laatste commando-sessie 1971-09-14; rover bewaard in de koude maannacht.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "bovenste trap Blok-D"
 }

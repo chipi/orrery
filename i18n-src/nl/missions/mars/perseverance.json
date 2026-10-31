@@ -16,7 +16,7 @@
     },
     {
       "met": 0.005,
-      "label": "TMI-BRANDING",
+      "label": "TMI-ONTSTEKING",
       "note": "Trans-Marsjectie.",
       "type": "nominal"
     },
@@ -41,7 +41,7 @@
     {
       "met": 271,
       "label": "INGENUITY EERSTE VLUCHT",
-      "note": "Eerste gemotoriseerde controleerde vlucht op een ander planet — 39,1 seconden op tot 5 m hoogte.",
+      "note": "Eerste gemotoriseerde, gecontroleerde vlucht op een andere planeet — 39,1 seconden op tot 5 m hoogte.",
       "type": "info"
     },
     {
@@ -50,5 +50,6 @@
       "note": "Rotorblad beschadigd op 72e vlucht 2024-01-18; helikopter gegrond, omgevormd tot vast weerstation en datastation dat aflezingen opslaat voor toekomstige ophaling.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur-bovenste trap (Atlas V 541)"
 }

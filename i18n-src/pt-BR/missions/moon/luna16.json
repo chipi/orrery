@@ -12,5 +12,6 @@
     { "met": 5, "label": "TCM", "note": "Correção de trajetória durante a jornada de 4,5 dias.", "type": "info" },
     { "met": 5.1, "label": "POUSO", "note": "Pouso suave em Mare Fecunditatis 1970-09-20. Operações na superfície + núcleo perfurado (101 g).", "type": "nominal" },
     { "met": 8, "label": "RETORNO DE AMOSTRAS", "note": "Cápsula recuperada no Cazaquistão 1970-09-24. Primeiro retorno de amostra lunar não-tripulado.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "estágio superior Blok-D"
 }

@@ -1,7 +1,7 @@
 {
   "name": "Dawn",
   "vehicle": "Delta II 7925H",
-  "payload": "Orbitador de propulsión iónica; cámara de imagen, VIR, GRaND, etc.",
+  "payload": "Orbitador de propulsión iónica; cámara de encuadre, VIR, GRaND, etc.",
   "delta_v": "~11 km/s (aprox.)",
   "type": "ORBITADOR · COMPLETADO",
   "first": "Primera misión en orbitar dos cuerpos distintos: Vesta y luego Ceres",
@@ -10,7 +10,7 @@
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Delta II lanza Dawn hacia Vesta y Ceres con baja aceleración continua.",
+      "note": "Delta II lanza Dawn hacia Vesta y Ceres por una autopista espiral de bajo empuje.",
       "type": "nominal"
     },
     {
@@ -19,5 +19,6 @@
       "note": "Los motores iónicos frenan a Dawn en órbita alrededor de Ceres; comienza el mapeo.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Delta II Star-48B (tercera etapa)"
 }

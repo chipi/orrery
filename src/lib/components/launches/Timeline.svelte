@@ -20,12 +20,12 @@
 
 <section class="timeline" aria-label={m.launches_timeline_aria()}>
   {#if months.length === 0}
-    <p class="empty">No launches in this view. Try widening the filter.</p>
+    <p class="empty">{m.launches_timeline_empty()}</p>
   {/if}
   {#each months as bucket (bucket.key)}
     <header class="month-header" id="month-{bucket.key}">
       <h2 class="month-title">{bucket.label}</h2>
-      <span class="month-count">{bucket.entries.length} launches</span>
+      <span class="month-count">{m.launches_month_count({ count: bucket.entries.length })}</span>
     </header>
     {#each bucket.entries as entry (entry.id)}
       <LaunchRow {entry} {mode} />

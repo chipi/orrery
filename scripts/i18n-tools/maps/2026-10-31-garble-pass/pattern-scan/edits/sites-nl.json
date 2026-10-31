@@ -1,0 +1,56 @@
+[
+  {
+    "rel": "fleet/launch-site/alcantara.json",
+    "at": "name",
+    "old": "Alcântara Space Center",
+    "new": "Ruimtecentrum Alcântara"
+  },
+  {
+    "rel": "fleet/launch-site/naro-space-center.json",
+    "at": "name",
+    "old": "Naro Space Center",
+    "new": "Ruimtecentrum Naro"
+  },
+  {
+    "rel": "fleet/launch-site/naro-space-center.json",
+    "at": "description",
+    "old": "Het Naro Space Center ligt aan de zuidkust van Zuid-Korea, in het district Goheung, ongeveer 485 km ten zuiden van Seoul, en wordt beheerd door KARI. Het heeft twee platformen. De Naro-1-raket, met een Russische eerste trap, vloog drie keer vanaf LC-1: de vluchten van 25 augustus 2009 en 10 juni 2010 bereikten geen baan, en op 30 januari 2013 bracht de derde de satelliet STSAT-2C in een lage baan. Op 28 november 2018 maakte een Nuri-testvoertuig een suborbitale sprong van 10 minuten om zijn KRE-075-motor te kwalificeren. Nuri, de eerste orbitale raket die volledig in Zuid-Korea is ontworpen en gebouwd, steeg op 21 oktober 2021 op van LC-2 en mislukte in de derde trap. De tweede vlucht, op 21 juni 2022, bereikte een baan van 700 km, en verdere vluchten volgden op 25 mei 2023, 26 november 2025 en 7 oktober 2026, allemaal vanaf LC-2.",
+    "new": "Het Ruimtecentrum Naro ligt aan de zuidkust van Zuid-Korea, in het district Goheung, ongeveer 485 km ten zuiden van Seoul, en wordt beheerd door KARI. Het heeft twee platformen. De Naro-1-raket, met een Russische eerste trap, vloog drie keer vanaf LC-1: de vluchten van 25 augustus 2009 en 10 juni 2010 bereikten geen baan, en op 30 januari 2013 bracht de derde de satelliet STSAT-2C in een lage baan. Op 28 november 2018 maakte een Nuri-testvoertuig een suborbitale sprong van 10 minuten om zijn KRE-075-motor te kwalificeren. Nuri, de eerste orbitale raket die volledig in Zuid-Korea is ontworpen en gebouwd, steeg op 21 oktober 2021 op van LC-2 en mislukte in de derde trap. De tweede vlucht, op 21 juni 2022, bereikte een baan van 700 km, en verdere vluchten volgden op 25 mei 2023, 26 november 2025 en 7 oktober 2026, allemaal vanaf LC-2."
+  },
+  {
+    "rel": "fleet/launch-site/uchinoura.json",
+    "at": "name",
+    "old": "Uchinoura Space Center",
+    "new": "Ruimtecentrum Uchinoura"
+  },
+  {
+    "rel": "fleet/launch-site/uchinoura.json",
+    "at": "description",
+    "old": "Het Uchinoura Space Center ligt aan de Pacifische kust van de prefectuur Kagoshima, op Kyushu, in heuvelachtig terrein op 31 graden noorderbreedte. Het opende in februari 1962 als Kagoshima Space Center en kreeg zijn huidige naam toen JAXA in 2003 werd opgericht. Na vier mislukte lanceringen bracht een Lambda 4S-5 op 11 februari 1970 Ohsumi in een baan, Japans eerste satelliet. Tot de vastebrandstof-M-V-raketten in 2006 met pensioen gingen, vloog elke Japanse wetenschappelijke satelliet vanaf hier: HALCA in 1997, de Marssonde Nozomi in juli 1998, Hayabusa naar asteroïde Itokawa op 9 mei 2003, ASTRO-E2 in 2005 en Hinode op 22 september 2006. De kleinere Epsilon-raket vloog voor het eerst vanaf Uchinoura op 14 september 2013 met de satelliet SPRINT-A. Grote antennes op het terrein communiceren ook met ruimtesondes in de diepe ruimte.",
+    "new": "Het Ruimtecentrum Uchinoura ligt aan de Pacifische kust van de prefectuur Kagoshima, op Kyushu, in heuvelachtig terrein op 31 graden noorderbreedte. Het opende in februari 1962 als Kagoshima Space Center en kreeg zijn huidige naam toen JAXA in 2003 werd opgericht. Na vier mislukte lanceringen bracht een Lambda 4S-5 op 11 februari 1970 Ohsumi in een baan, Japans eerste satelliet. Tot de vastebrandstof-M-V-raketten in 2006 met pensioen gingen, vloog elke Japanse wetenschappelijke satelliet vanaf hier: HALCA in 1997, de Marssonde Nozomi in juli 1998, Hayabusa naar asteroïde Itokawa op 9 mei 2003, ASTRO-E2 in 2005 en Hinode op 22 september 2006. De kleinere Epsilon-raket vloog voor het eerst vanaf Uchinoura op 14 september 2013 met de satelliet SPRINT-A. Grote antennes op het terrein communiceren ook met ruimtesondes in de diepe ruimte."
+  },
+  {
+    "rel": "fleet/launch-site/sohae.json",
+    "at": "name",
+    "old": "Sohae Satellite Launching Station",
+    "new": "Satellietlanceerstation Sohae"
+  },
+  {
+    "rel": "fleet/launch-site/semnan-imam-khomeini.json",
+    "at": "name",
+    "old": "Semnan Space Center",
+    "new": "Ruimtecentrum Semnan"
+  },
+  {
+    "rel": "fleet/launch-site/semnan-imam-khomeini.json",
+    "at": "description",
+    "old": "Het Semnan Space Center ligt ongeveer 50 km ten zuidoosten van de stad Semnan, in de noordelijke Dasht-e Kavir-woestijn; het Iraanse ruimteagentschap beheert het. Het oudste platform is een cirkelvormig platform van 65 m met een servicetoren, gebruikt door de Safir-raket. Een Safir vloog op 17 augustus 2008 vanaf Semnan met een nepsatelliet, en op 2 februari 2009 bracht hij de kubus Omid van 40 cm in een baan, waarmee Iran het negende land werd dat een eigen satelliet lanceerde. Een groter complex in het oosten, de Imam Khomeini Space Launch Terminal, heeft een servicetoren op rails voor de grotere Simorgh, die voor het eerst vloog op 19 april 2016. Luchtaanvallen van 24 tot 26 maart 2026 beschadigden of vernietigden vier constructies rond het Simorgh-complex, volgens een IISS-analyse van satellietbeelden; sindsdien is er geen lancering vanaf Semnan geweest.",
+    "new": "Het Ruimtecentrum Semnan ligt ongeveer 50 km ten zuidoosten van de stad Semnan, in de noordelijke Dasht-e Kavir-woestijn; het Iraanse ruimteagentschap beheert het. Het oudste platform is een cirkelvormig platform van 65 m met een servicetoren, gebruikt door de Safir-raket. Een Safir vloog op 17 augustus 2008 vanaf Semnan met een nepsatelliet, en op 2 februari 2009 bracht hij de kubus Omid van 40 cm in een baan, waarmee Iran het negende land werd dat een eigen satelliet lanceerde. Een groter complex in het oosten, de Imam Khomeini Space Launch Terminal, heeft een servicetoren op rails voor de grotere Simorgh, die voor het eerst vloog op 19 april 2016. Luchtaanvallen van 24 tot 26 maart 2026 beschadigden of vernietigden vier constructies rond het Simorgh-complex, volgens een IISS-analyse van satellietbeelden; sindsdien is er geen lancering vanaf Semnan geweest."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.0.note",
+    "old": "M-V-5 van Uchinoura Space Center.",
+    "new": "M-V-5 van Ruimtecentrum Uchinoura."
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.1.l",
+    "old": "Arrokoth flyby (NASA New Horizons)",
+    "new": "Sorvolo di Arrokoth (NASA New Horizons)"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.1.l",
+    "old": "DART final results (NASA)",
+    "new": "Risultati finali di DART (NASA)"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "links.1.l",
+    "old": "Hayabusa mission archive (JAXA / ISAS)",
+    "new": "Archivio della missione Hayabusa (JAXA / ISAS)"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.0.l",
+    "old": "Patroclus-Menoetius binary — Wikipedia",
+    "new": "Sistema binario Patroclo-Menezio — Wikipedia"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.2.l",
+    "old": "Cassini mission archive (NASA)",
+    "new": "Archivio della missione Cassini (NASA)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.4.l",
+    "old": "Saturn's rings are young (Science 2019)",
+    "new": "Gli anelli di Saturno sono giovani (Science 2019)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_hayabusa2",
+    "old": "Hayabusa2 — Ryugu touch-and-go (JAXA)",
+    "new": "Hayabusa2 — tocco e involo su Ryugu (JAXA)"
+  }
+]

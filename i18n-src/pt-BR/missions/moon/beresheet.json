@@ -5,7 +5,7 @@
   "delta_v": "~6 km/s (órbitas de fase altamente elípticas, não TLI direta)",
   "type": "PRIVATE LANDER · CRASHED",
   "first": "Primeira missão financiada pela iniciativa privada a alcançar a Lua; primeira missão lunar israelita",
-  "description": "O Beresheet da SpaceIL (hebraico: \"In the beginning\") lançou como passageiro de compartilhamento de carona em um Falcon 9 em fevereiro de 2019. Em vez de uma injeção trans-lunar direta, o pequeno módulo lunar realizou semanas de queimadas de elevação do perigeu para sair de uma órbita estacionária até a Lua — uma trajetória economizadora de combustível pioneira em missões com orçamento reduzido. Após a bem-sucedida inserção em órbita lunar em 4 de abril de 2019, uma reinicialização da unidade de medição inercial durante a descida causou o desligamento do motor principal. O Beresheet caiu em Mare Serenitatis. A SpaceIL comprometeu-se com um sucessor (Beresheet 2) em questão de dias.",
+  "description": "O Beresheet da SpaceIL (hebraico: \"In the beginning\") lançou como passageiro de compartilhamento de carona em um Falcon 9 em fevereiro de 2019. Em vez de uma injeção trans-lunar direta, o pequeno módulo lunar realizou semanas de queimas de elevação do perigeu para sair de uma órbita estacionária até a Lua — uma trajetória economizadora de combustível pioneira em missões com orçamento reduzido. Após a bem-sucedida inserção em órbita lunar em 4 de abril de 2019, uma reinicialização da unidade de medição inercial durante a descida causou o desligamento do motor principal. O Beresheet caiu em Mare Serenitatis. A SpaceIL comprometeu-se com um sucessor (Beresheet 2) em questão de dias.",
   "events": [
     { "met": 0, "label": "LANÇAMENTO", "note": "Voo compartilhado do Falcon 9 a partir de Cabo Canaveral 2019-02-22.", "type": "nominal" },
     { "met": 0.01, "label": "QUEIMA DE FASEAMENTO", "note": "Primeira de sete elevações de perigeu para sair de uma órbita terrestre baixa e alcançar a aproximação lunar.", "type": "info" },
@@ -14,5 +14,6 @@
     { "met": 41, "label": "APROXIMAÇÃO LUNAR", "note": "Queima translunar final — Beresheet em trajetória lunar direta.", "type": "nominal" },
     { "met": 48, "label": "INSERÇÃO EM ÓRBITA LUNAR", "note": "Captura em órbita lunar elíptica 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "ANOMALIA NA DESCIDA", "note": "Reinicialização do IMU durante descida com potência → desligamento do motor → colisão em Mare Serenitatis 2019-04-11.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "segundo estágio do Falcon 9 para GTO (lançamento compartilhado)"
 }

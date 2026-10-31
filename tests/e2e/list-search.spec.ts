@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { waitForHydration } from './_helpers/hydration';
+import { MISSION_COUNT } from './_helpers/mission-index';
 
 /**
  * RFC-027 — list-route search on /missions + /fleet.
@@ -62,7 +63,7 @@ test.describe('/missions search (RFC-027)', () => {
     const input = page.locator('[data-testid="missions-search"]');
     await input.fill('');
     await expect(page).not.toHaveURL(/[?&]q=/);
-    await expect(cards).toHaveCount(126, { timeout: 5_000 });
+    await expect(cards).toHaveCount(MISSION_COUNT, { timeout: 5_000 });
   });
 
   test('AND semantics: ?q=mars&dest=MARS keeps both filters', async ({ page }) => {

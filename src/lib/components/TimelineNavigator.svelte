@@ -277,9 +277,9 @@
         class="now-marker"
         style:left="{yearToFrac(new Date().getFullYear()) * 100}%"
         aria-label={m.timeline_current_year_aria()}
-        title="Now · {new Date().getFullYear()}"
+        title={m.timeline_now_title({ year: new Date().getFullYear() })}
       >
-        <span class="now-label">NOW</span>
+        <span class="now-label">{m.timeline_now_label()}</span>
       </div>
 
       {#each packedMissions as p (p.mission.id)}

@@ -51,7 +51,7 @@ function listJsonFiles(dir: string): string[] {
 /** One index per locale: the locale's science overlays (falling back to en-US per
  *  field), so search shows and matches the reader's language. A non-English
  *  haystack also carries the English title, so English terms still find a section. */
-function buildIndex(locale = 'en-US'): IndexEntry[] {
+export function buildIndex(locale = 'en-US'): IndexEntry[] {
   const entries: IndexEntry[] = [];
   for (const file of listJsonFiles(SCIENCE_ROOT)) {
     const rel = file.slice(SCIENCE_ROOT.length + 1); // tab/section.json or _landing.json
@@ -97,4 +97,4 @@ function main(): void {
   console.log('✓ per-locale science indexes written');
 }
 
-main();
+if (process.argv[1]?.endsWith('build-science-index.ts')) main();

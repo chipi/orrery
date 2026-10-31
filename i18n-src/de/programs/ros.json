@@ -76,5 +76,10 @@
       "type": "prose",
       "md": "Die tiefere Lehre liegt in der Distanz zwischen der Ankündigung einer Station und ihrem tatsächlichen Flug. Die ROS besitzt Tradition, Absicht und eine klare strategische Begründung – und muss dennoch unter Sanktionen und mit einem geschrumpften Budget gebaut werden. Ehrgeiz ist billig, Stationen sind teuer; das Programm erinnert daran, dass in der Raumfahrt der Plan der leichte Teil ist und der schwere Teil darin besteht, ihn zu bezahlen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/mir": "Mir — die modulare Station, von der das ROS abstammt",
+    "/programs/salyut": "Salyut — Russlands erste Stationen",
+    "/programs/iss": "ISS — die Partnerschaft, die Russland verlässt"
+  }
 }

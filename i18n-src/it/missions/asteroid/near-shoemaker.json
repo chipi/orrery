@@ -4,39 +4,40 @@
   "payload": "805 kg al lancio (487 kg a secco) — spettrometro a raggi X/gamma, spettrografo nel vicino infrarosso, camera multispettrale, telemetro laser (LIDAR), magnetometro. Prima sonda a entrare in orbita e ad atterrare su un asteroide.",
   "delta_v": "~1 km/s (manovre totali della missione)",
   "type": "ORBITALE + LANDER · VOLATO",
-  "first": "Primo veicolo spaziale ad orbitare un asteroide (433 Eros, 2000) e primo allunaggio dolce su qualsiasi corpo piccolo (12-02-2001)",
-  "dispatch": "NEAR Shoemaker è andato a Eros perché nessuno sapeva davvero come fosse un asteroide da vicino. Arrivò per trovare un mondo disseminato di crateri, allungato in forma di sella dalla sua lenta rotazione, coperto di regolite fine che non aveva dove andare in microgravità quasi zero. Per un anno lo ha cartografato ogni cresta e roccia dall'orbita, quindi nel febbraio 2001 i controllori hanno tentato la sorte: hanno abbassato l'orbita del veicolo cinque volte in due settimane, l'hanno rallentato a velocità di marcia e l'hanno posato sulla superficie. È sopravvissuto. Per sedici giorni ancora ha trasmesso da Eros — il primo emissario della Terra a riposare su un corpo piccolo.",
-  "description": "Missione del programma Discovery della NASA, guidata dall'APL dell'Università Johns Hopkins. Lanciata il 17-02-1996, NEAR Shoemaker ha volato vicino all'asteroide 253 Mathilde (27-06-1997) prima di una fionda gravitazionale terrestre (23-01-1998) che ha messo in fase la sua orbita per corrispondere a Eros. L'inserimento orbitale attorno a 433 Eros il 14-02-2000 ha iniziato un sondaggio di 12 mesi che ha restituito 160.000 immagini e mappe complete spettrali, composizionali e gravitazionali del corpo di tipo S di 34 × 11 × 11 km. Il 12-02-2001, cinque bruciature di abbassamento orbitale hanno portato il veicolo a 5 km di altitudine; la discesa controllata a ~1,7 m/s si è conclusa con un allunaggio dolce vicino alla sella di Himeros (35°N, 280°O), restituendo immagini fino a 125 m dalla superficie. Il veicolo spaziale è sopravvissuto e ha trasmesso dalla superficie per ~16 giorni.",
+  "first": "Primo veicolo spaziale a entrare in orbita attorno a un asteroide (433 Eros, 2000) e primo atterraggio morbido su un qualsiasi corpo minore (2001-02-12)",
+  "dispatch": "NEAR Shoemaker è andato su Eros perché nessuno sapeva davvero che aspetto avesse un asteroide da vicino. Giunto a destinazione, ha trovato un mondo butterato di crateri, allungato in una forma a sella dalla sua lenta rotazione, coperto di regolite fine che non aveva dove andare in una gravità quasi nulla. Per un anno ha cartografato ogni cresta e ogni masso dall'orbita; poi, nel febbraio 2001, i controllori hanno tentato la sorte: hanno abbassato l'orbita della sonda cinque volte in due settimane, l'hanno rallentata fino a una velocità da passeggio e l'hanno fatta posare sulla superficie. È sopravvissuta. Per altri sedici giorni ha trasmesso da Eros — il primo emissario della Terra a posarsi su un corpo minore.",
+  "description": "Missione del programma Discovery della NASA, guidata dall'APL della Johns Hopkins University. Lanciata il 1996-02-17, NEAR Shoemaker sorvolò l'asteroide 253 Mathilde (1997-06-27) prima di una fionda gravitazionale terrestre (1998-01-23) che adattò la sua orbita a quella di Eros. L'inserimento in orbita attorno a 433 Eros il 2000-02-14 diede il via a un rilevamento di 12 mesi che restituì 160.000 immagini e mappe spettrali, composizionali e gravitazionali complete del corpo di tipo S di 34 × 11 × 11 km. Il 2001-02-12 cinque accensioni di abbassamento dell'orbita portarono il veicolo a 5 km di quota; la discesa controllata a ~1,7 m/s si concluse con un atterraggio morbido vicino alla sella di Himeros (35°N, 280°O), restituendo immagini fino a 125 m dalla superficie. Il veicolo sopravvisse e trasmise dalla superficie per ~16 giorni.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO — DELTA II",
-      "note": "Capo Canaveral, 17-02-1996. Prima missione planetaria del programma Discovery.",
+      "note": "Capo Canaveral, 1996-02-17. Prima missione planetaria del programma Discovery.",
       "type": "nominal"
     },
     {
       "met": 496,
       "label": "SORVOLO DI 253 MATHILDE",
-      "note": "27-06-1997: sorvolo a 1.212 km dell'asteroide carbonaceo Mathilde; 500 immagini.",
+      "note": "1997-06-27: sorvolo a 1.212 km dell'asteroide carbonaceo Mathilde; 500 immagini.",
       "type": "nominal"
     },
     {
       "met": 706,
       "label": "FIONDA GRAVITAZIONALE TERRESTRE",
-      "note": "23-01-1998: sorvolo a 540 km mette in fase l'orbita per corrispondere a Eros.",
+      "note": "1998-01-23: il sorvolo a 540 km adatta l'orbita a quella di Eros.",
       "type": "nominal"
     },
     {
       "met": 1458,
       "label": "INSERIMENTO IN ORBITA DI EROS",
-      "note": "14-02-2000: primo veicolo spaziale ad orbitare un asteroide; 12 mesi di scienza orbitale.",
+      "note": "2000-02-14: primo veicolo spaziale in orbita attorno a un asteroide; 12 mesi di scienza in orbita.",
       "type": "nominal"
     },
     {
       "met": 1822,
-      "label": "ALLUNAGGIO SU EROS — EDL",
-      "note": "12-02-2001: discesa controllata a 1,7 m/s — primo allunaggio dolce su qualsiasi corpo piccolo.",
+      "label": "ATTERRAGGIO SU EROS — EDL",
+      "note": "2001-02-12: discesa controllata a 1,7 m/s — primo atterraggio morbido su un corpo minore.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "terzo stadio del Delta II 7925-8"
 }

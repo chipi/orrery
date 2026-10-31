@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "La lección más profunda es sobre ingeniería sin una segunda oportunidad. JWST no podía probarse como volaría ni repararse una vez volado, y aun así tuvo éxito, porque cada modo de fallo fue rastreado y eliminado de antemano, en tierra, durante años. Es el caso definitivo de rigor sobre iteración: cuando realmente no puedes arreglarlo después, la única opción es hacerlo bien a la primera, y Webb demostró que eso es alcanzable, incluso con una complejidad asombrosa."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=jwst": "Flota — el telescopio espacial James Webb",
+    "/programs/great-observatories": "Los Grandes Observatorios: el linaje que continúa el JWST",
+    "/programs/ariane": "Ariane: el cohete que lo lanzó",
+    "/earth?site=jwst": "Telescopio espacial James Webb"
+  }
 }

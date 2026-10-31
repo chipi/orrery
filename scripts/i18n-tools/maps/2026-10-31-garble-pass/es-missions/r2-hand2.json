@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "find": "Transbordador espacial Atlantis (STS-30) + etapa superior inercial (IUS)",
+    "replace": "Space Shuttle Atlantis (STS-30) + Inertial Upper Stage"
+  }
+]

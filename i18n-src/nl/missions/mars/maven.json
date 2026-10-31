@@ -22,14 +22,15 @@
     {
       "met": 308,
       "label": "MARS-BAAN INSERTIE",
-      "note": "33-minuten hoofdmotorverbranding vangt MAVEN in een 35-uurs elliptische wetenschapsbaan.",
+      "note": "33-minuten hoofdmotorontsteking vangt MAVEN in een 35-uurs elliptische wetenschapsbaan.",
       "type": "nominal"
     },
     {
       "met": 350,
       "label": "EERSTE WETENSCHAP",
-      "note": "Begint atmosfeer-bemonsterende 'deep dip'-campagnes naar periapsis-hoogten ~125 km.",
+      "note": "Begint met 'diepe duik'-campagnes om de atmosfeer te bemonsteren, tot periapsishoogten van ~125 km.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur-bovenste trap (Atlas V 401)"
 }

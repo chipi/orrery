@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "更深层的启示是，对一个中等规模的航天力量而言，专注胜过广度。ESA无法做NASA所做的一切，于是它去做几件无人做过的事——在彗星上着陆、绘制银河系地图、勘测暗宇宙——并以深度而非规模成为领跑者。选对那个难题并彻底解决它，正是一个联盟以有限预算做出超额成就的方式。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "探索 — 彗星与 ESA 测绘的深空",
+    "/fleet?focus=rosetta": "航天器 — Rosetta、Gaia 与 Euclid",
+    "/programs/ariane": "Ariane — 发射 ESA 科学任务的火箭",
+    "/earth?site=gaia": "位于 L2 的 Gaia",
+    "/earth?site=xmm": "XMM-Newton"
+  }
 }

@@ -1,0 +1,164 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "Mars Express是EADS Astrium在欧洲制造的深空轨道器。ESA首个火星轨道器；欧洲首次行星探测任务。自2003年起在役。",
+    "note": "行星际 means interplanetary, not planetary."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy calque",
+    "new": "印度首个成功的月球着陆器（2023年8月），也是首个在月球南极附近着陆的航天器。在Vikram CY-2于同一地区坠毁四年之后，它为印度和ISRO带来了急需的“救赎”。",
+    "note": "救赎弧 literal calque; 此前四年 ambiguous."
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "ESA首个火星轨道器；欧洲首次行星探测任务",
+    "note": "行星际 means interplanetary."
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "ESA首个火星轨道器；欧洲首次行星探测任务",
+    "note": "行星际 means interplanetary."
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Faithful and natural."
+  }
+]

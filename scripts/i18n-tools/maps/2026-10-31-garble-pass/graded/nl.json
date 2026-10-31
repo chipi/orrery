@@ -1,0 +1,352 @@
+[
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "note": "\"mesochaotische schaal\" for mesoscale; garbled storm-tracking phrases"
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"verdedigingsbotslichaam\" clumsy compound"
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "note": "verb missing: \"Radar met 98%...\" (mapped by radar lost)"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "best_known_for",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"vastgebonden\" odd for strap-on"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "tagline",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "note": "\"Sample-returned\" dropped; reads as just \"Bennu (2023)\""
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-3.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-5.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"Beeldde\", missing subject in crash clause"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "dispatch",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "clumsy \"terug naar de vlucht\", \"meest belangrijk\""
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+    "at": "best_known_for",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "\"plein\" (square) for launch pad"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "cut",
+    "note": "dropped \"opened the commercial era\""
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "\"Carryed the Pioneer geplaqueerd\" garbled English left in"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "anglicisms \"triggerde\", \"life-sciences\", odd \"schuimstuk-aanvaring\""
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"Gepensioneerd na eerste vlucht\" stiff, capitalised \"Mars Rover\""
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "description",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "note": "\"gamma-stralen barsten\", broken word order"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "best_known_for",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"Alleen ruimtevaartuig om\" awkward"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "best_known_for",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "note": "\"Eerste wiel voertuig te zwerven\" ungrammatical"
+  },
+  {
+    "rel": "fleet/launcher/long-march-3b.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"zijmonteerbare strap-on boosters\" mixed English; \"doodde\" fine"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "tagline",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"multi-crew\", \"spacewalk\" left English"
+  },
+  {
+    "rel": "fleet/lander/schiaparelli.json",
+    "at": "tagline",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "fleet/lander/schiaparelli.json",
+    "at": "description",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "first",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"voor het eerst zonne-energie\" elliptical, loses solar-powered orbiter"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.6.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.3.note",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"maneuvers\" English; \"terugkeer-traject\" wrong for re-encounter"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.6.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"gedropt\", \"live verifiërend\" clumsy participle"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.4.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"Vooringeladen attitudesoftware\" odd"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.3.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "dispatch",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"onder een falende situatie\" unnatural"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"lage-stuwing-versnelling\" awkward compounds"
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"Aarde-tegenontmoeting\" awkward"
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "events.1.note",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "\"Touchdown\" left English"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.0.note",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "\"tilt op\" for lifts off/launches"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.3.note",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "\"55-uur wetenschappelijke baan\" ungrammatical"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "first",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.5.note",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "\"maandag\" (Monday) for lunar day"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "description",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "\"hollows\" left English"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.2.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.0.note",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

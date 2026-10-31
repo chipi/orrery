@@ -82,5 +82,9 @@
       "type": "prose",
       "md": "The second lesson is what secrecy buys, and what it costs. Hiding the failures and managing the truth let the program look invincible, which had real Cold War value. But it also meant the program could never be seen to fail — which made it cautious in the wrong places, unable to take the visible risks that learning hard things requires. An organization that can't afford to fail in public eventually can't afford to *learn* in public either."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Earth — orbits & launch sites",
+    "/science/mission-phases/edl": "Entry, descent & landing"
+  }
 }

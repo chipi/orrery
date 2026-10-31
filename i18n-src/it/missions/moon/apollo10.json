@@ -3,21 +3,21 @@
   "vehicle": "Saturn V (AS-505)",
   "payload": "42775 kg lanciati (CSM Charlie Brown (CSM-106) + LM Snoopy (LM-4))",
   "delta_v": "~6 km/s (andata e ritorno)",
-  "dispatch": "Apollo 10 volò l'intero allunaggio — fino agli ultimi quindici chilometri — e poi, per progetto, invertì la rotta. Stafford e Cernan portarono il Lunar Module fino a un tiro di schioppo dalla superficie a Tranquility, eseguirono ogni fase della discesa e risalirono in orbita senza toccare il suolo. La NASA lasciò persino i serbatoi di risalita semivuoti, così che, per quanto allettante potesse diventare, tentare l'allunaggio non fu mai un'opzione. È il volo meno celebrato del programma e uno dei più disciplinati: una prova a velocità piena da parte di due uomini che volarono per un quarto di milione di miglia sapendo che l'allunaggio spettava a qualcun altro.",
+  "dispatch": "Apollo 10 volò l'intero allunaggio — fino agli ultimi quindici chilometri — e poi, per progetto, invertì la rotta. Stafford e Cernan portarono il Modulo Lunare fino a un tiro di schioppo dalla superficie a Tranquility, eseguirono ogni fase della discesa e risalirono in orbita senza toccare il suolo. La NASA lasciò persino i serbatoi di risalita semivuoti, così che, per quanto allettante potesse diventare, tentare l'allunaggio non fu mai un'opzione. È il volo meno celebrato del programma e uno dei più disciplinati: una prova a piena velocità da parte di due uomini che volarono per un quarto di milione di miglia sapendo che l'allunaggio spettava a qualcun altro.",
   "type": "EQUIPAGGIATO ORBITA LUNARE · VOLATO",
   "first": "Prova generale completa dell'allunaggio — il LM è sceso a ~15,6 km di altitudine",
-  "description": "La prova generale completa per il primo allunaggio. Stafford e Cernan volarono con il LM Snoopy fino a un'altitudine di ~15,6 km sopra il sito di allunaggio pianificato dell'Apollo 11 nel Mare Tranquillitatis — ogni fase di un approccio di discesa, eccetto l'allunaggio vero e proprio. Confermarono il profilo di discesa, il radar di allunaggio, la traiettoria di salita e la procedura di rendezvous che l'Apollo 11 avrebbe utilizzato due mesi dopo. I serbatoi del carburante dello stadio di salita del LM furono deliberatamente riempiti sottodimensionati (~50 % rispetto ai valori nominali) per evitare qualsiasi tentazione di tentare un allunaggio. Lo stadio di salita di Snoopy fu l'unico a lasciare l'orbita lunare con ∆v positivo — espulso in un'orbita eliocentrica dove rimane ancora oggi, rilevato intermittentemente da astronomi dilettanti (confermato più di recente da Nick Howes / Faulkes Telescope, 2019).",
+  "description": "La prova generale completa del primo allunaggio. Stafford e Cernan portarono il LM Snoopy fino a una quota di ~15,6 km sul sito di allunaggio previsto per l'Apollo 11 nel Mare Tranquillitatis — ogni fase dell'avvicinamento all'allunaggio tranne l'allunaggio vero e proprio. Confermarono il profilo di discesa, il radar di allunaggio, la traiettoria di salita e la procedura di rendezvous che l'Apollo 11 avrebbe usato due mesi dopo. I serbatoi di propellente dello stadio di salita del LM furono volutamente caricati solo a metà (~50 % del nominale) per evitare qualsiasi tentazione di tentare un allunaggio. Lo stadio di salita di Snoopy fu l'unico a lasciare l'orbita lunare con ∆v positivo — gettato in un'orbita eliocentrica dove si trova ancora oggi, rilevato a intermittenza da astronomi dilettanti (confermato da ultimo da Nick Howes / Faulkes Telescope, 2019).",
   "events": [
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "Saturn V (AS-505) dal Kennedy Space Center LC-39B 18 maggio 1969 ore 16:49 UTC — primo lancio con equipaggio da LC-39B.",
+      "note": "Saturn V (AS-505) dal Kennedy Space Center LC-39B 1969-05-18 16:49 UTC — primo lancio con equipaggio da LC-39B.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Iniezione translunar. S-IVB ∆v ~3,05 km/s.",
+      "note": "Iniezione translunare. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
@@ -41,7 +41,7 @@
     {
       "met": 4.76,
       "label": "RISALITA + RENDEZVOUS",
-      "note": "Stadio di ascesa di Snoopy si aggancia a Charlie Brown — primo aggancio completo da LM a CSM in orbita lunare.",
+      "note": "Lo stadio di risalita di Snoopy esegue il rendezvous con Charlie Brown — primo riaggancio completo LM-CSM in orbita lunare.",
       "type": "nominal"
     },
     {
@@ -53,7 +53,7 @@
     {
       "met": 8.05,
       "label": "AMMARAGGIO",
-      "note": "CM ammarato nell'Oceano Pacifico meridionale 26 maggio 1969 ore 16:52 UTC. Recupero effettuato da USS Princeton.",
+      "note": "Il CM ammara nel Pacifico meridionale il 1969-05-26 alle 16:52 UTC. Recupero a cura della USS Princeton.",
       "type": "nominal"
     }
   ]

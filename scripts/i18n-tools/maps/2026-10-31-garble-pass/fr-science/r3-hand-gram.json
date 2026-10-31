@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "find": "pour voir les planètes qui tournent autour de lui.",
+    "replace": "pour voir les planètes qui tournent autour d'elle."
+  }
+]

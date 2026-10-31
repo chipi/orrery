@@ -35,7 +35,7 @@
     {
       "met": 208.01,
       "label": "LANDING",
-      "note": "Sprong 28 keer. Rolde tot rust op 14,57°Z, 175,47°O.",
+      "note": "Stuiterde 28 keer. Rolde uit tot stilstand op 14,57°Z, 175,47°O.",
       "type": "info"
     },
     {
@@ -50,5 +50,6 @@
       "note": "2010-03-22. Missie beëindigd verklaard 2011-05-25.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "vastestofbovenste trap Star 48B PAM-D"
 }

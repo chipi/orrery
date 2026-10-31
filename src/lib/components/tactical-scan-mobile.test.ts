@@ -10,8 +10,9 @@ import { fileURLToPath } from 'node:url';
 // mobile drawer tab. These two invariants keep that reachable.
 
 const scan = readFileSync(fileURLToPath(new URL('./TacticalScan.svelte', import.meta.url)), 'utf8');
+// The /explore mobile drawers (and their Scan tab) live in HudControls.
 const explore = readFileSync(
-  fileURLToPath(new URL('../../routes/explore/+page.svelte', import.meta.url)),
+  fileURLToPath(new URL('../../routes/explore/HudControls.svelte', import.meta.url)),
   'utf8',
 );
 

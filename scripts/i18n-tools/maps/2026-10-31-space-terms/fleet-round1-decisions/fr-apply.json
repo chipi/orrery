@@ -1,0 +1,164 @@
+[
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "tagline",
+    "old": "Constellation historique Tundra géostationnaire — désaffectée en 2016",
+    "new": "Constellation historique en orbite Tundra — désaffectée en 2016"
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "best_known_for",
+    "old": "Constellation historique Tundra de 24 heures (2000-2016)",
+    "new": "Constellation historique en orbite Tundra de 24 heures (2000-2016)"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "tagline",
+    "old": "Pas de tir polaire Longue Marche 2D/4B/4C — Yaogan, Gaofen, météorologiques",
+    "new": "Pas de tir pour orbite polaire Longue Marche 2D/4B/4C — Yaogan, Gaofen, météorologiques"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "best_known_for",
+    "old": "Pas polaire Yaogan/Gaofen/Fengyun",
+    "new": "Pas de tir pour orbite polaire Yaogan/Gaofen/Fengyun"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "old": "Hayabusa2 est un orbiteur spatial lointain construit par NEC au Japon. Il a ramené avec succès environ 5,4 grammes d'échantillons de l'astéroïde 162173 Ryugu le 6 décembre 2020. Après la livraison des échantillons, l'engin spatial a poursuivi une mission étendue SHARP (Small Hazardous Asteroid Reconnaissance Probe) vers d'autres astéroïdes. Il a survolé l'astéroïde Torifune le 5 juillet 2026, et est prévu de se rapprocher de l'astéroïde 1998 KY26 en 2031.",
+    "new": "Hayabusa2 est un orbiteur spatial lointain construit par NEC au Japon. Il a ramené avec succès environ 5,4 grammes d'échantillons de l'astéroïde 162173 Ryugu le 6 décembre 2020. Après la livraison des échantillons, l'engin spatial a poursuivi une mission étendue SHARP (Small Hazardous Asteroid Reconnaissance Probe) vers d'autres astéroïdes. Il a survolé l'astéroïde Torifune le 5 juillet 2026, et doit effectuer un rendez-vous avec l'astéroïde 1998 KY26 en 2031."
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "description",
+    "old": "La deuxième station soviétique militaire Almaz — officiellement aussi appelée Salyut 3 pour masquer son rôle de surveillance. Lancée 1974-06-25 sur un Proton-K, Salyut 3 a accueilli une seule mission d'équipage (Soyuz 14, Popovitch + Artioukhine, 15 jours, 1974-07-03 à 1974-07-19) qui a testé la caméra Agat de 6,4 m de la station et sa capsule de retour de film. Une deuxième tentative d'équipage (Soyuz 15, Sarafanov + Demine, 1974-08-26) a échoué l'amarrage automatique Igla et est revenue le même jour. Juste avant le désorbitage le 1975-01-24, Salyut 3 a apparemment tiré son canon Nudelman embarqué (les sources citent un calibre de 23 mm ou 30 mm) — le seul cas connu d'une arme tirant dans l'espace (le recul a été absorbé par les propulseurs de contrôle d'attitude de la station ; le projectile s'est désintégré dans l'atmosphère). Rentrée atmosphérique 1975-01-24.",
+    "new": "La deuxième station soviétique militaire Almaz — officiellement aussi appelée Salyut 3 pour masquer son rôle de surveillance. Lancée 1974-06-25 sur un Proton-K, Salyut 3 a accueilli une seule mission d'équipage (Soyuz 14, Popovitch + Artioukhine, 15 jours, 1974-07-03 à 1974-07-19) qui a testé la caméra Agat de 6,4 m de la station et sa capsule de retour de film. Une deuxième tentative d'équipage (Soyuz 15, Sarafanov + Demine, 1974-08-26) a échoué au rendez-vous automatique Igla et est revenue le même jour. Juste avant le désorbitage le 1975-01-24, Salyut 3 a apparemment tiré son canon Nudelman embarqué (les sources citent un calibre de 23 mm ou 30 mm) — le seul cas connu d'une arme tirant dans l'espace (le recul a été absorbé par les propulseurs de contrôle d'attitude de la station ; le projectile s'est désintégré dans l'atmosphère). Rentrée atmosphérique 1975-01-24."
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "description",
+    "old": "Le J-2 brûlait l'hydrogène et l'oxygène, et il pouvait redémarrer dans le vide de l'espace — une capacité qui a rendu possible la brûlure de trans-injection lunaire de Saturn V. Le design à générateur de gaz de Rocketdyne a volé sur les deuxième et troisième étages de Saturn V et sur Saturn IB, combinant les performances avec les redémarrages en orbite qui ont transformé un lanceur en véritable étage de départ. Il a effectué son premier vol en février 1966 et son dernier vol sur l'Apollo-Soyuz Test Project en juillet 1975.",
+    "new": "Le J-2 brûlait l'hydrogène et l'oxygène, et il pouvait redémarrer dans le vide de l'espace — une capacité qui a rendu possible l'allumage de trans-injection lunaire de Saturn V. Le design à générateur de gaz de Rocketdyne a volé sur les deuxième et troisième étages de Saturn V et sur Saturn IB, combinant les performances avec les redémarrages en orbite qui ont transformé un lanceur en véritable étage de départ. Il a effectué son premier vol en février 1966 et son dernier vol sur l'Apollo-Soyuz Test Project en juillet 1975."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "old": "Le seul atterrisseur lunaire en équipage jamais construit. Six atterrissages réussis entre 1969 et 1972 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — plus Aquarius, qui servait de bateau de sauvetage Apollo 13. Le stade descendant reste sur la Lune; le stade ascendant rejoint le CSM en orbite lunaire.",
+    "new": "Le seul atterrisseur lunaire en équipage jamais construit. Six atterrissages réussis entre 1969 et 1972 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — plus Aquarius, qui servait de bateau de sauvetage Apollo 13. L'étage de descente reste sur la Lune; l'étage de remontée rejoint le CSM en orbite lunaire."
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "description",
+    "old": "Le Lunar Roving Vehicle — le premier rover habité. Trois missions Apollo (15, 16, 17) l'ont utilisé pour étendre leurs explorations de surface, couvrant jusqu'à 35,9 km par mission (record Apollo 17). Construit par Boeing et Delco ; replié dans le stage de descente du LM.",
+    "new": "Le Lunar Roving Vehicle — le premier rover habité. Trois missions Apollo (15, 16, 17) l'ont utilisé pour étendre leurs explorations de surface, couvrant jusqu'à 35,9 km par mission (record Apollo 17). Construit par Boeing et Delco ; replié dans l'étage de descente du LM."
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "description",
+    "old": "La première station spatiale américaine, construite à partir d'une étape supérieure Saturne V S-IVB. Trois équipages de trois personnes ont vécu chacun à bord entre 1973 et 1974, effectuant des observations solaires et des expériences de zéro g. Rentrée incontrôlée sur l'Australie en 1979.",
+    "new": "La première station spatiale américaine, construite à partir d'un étage supérieur Saturne V S-IVB. Trois équipages de trois personnes ont vécu chacun à bord entre 1973 et 1974, effectuant des observations solaires et des expériences de zéro g. Rentrée incontrôlée sur l'Australie en 1979."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "dispatch",
+    "old": "L'Automated Transfer Vehicle était le ravitailleur orbital européen de l'ISS et l'engin de cargo le plus sophistiqué de son époque — un vaisseau spatial de vingt tonnes qui se guidait lui-même jusqu'à un amarrage entièrement automatique avec la Station, livrait du fret, de l'eau, de l'air et du carburant, et utilisait ses propres moteurs pour rehausser l'orbite de la totalité de l'ISS. Cinq ont volé entre 2008 et 2015, chacun nommé d'après un penseur européen, de Jules Verne à Georges Lemaître. Bien au-delà d'un simple camion-citerne, l'ATV était la façon pour l'Europe de conquérir sa place de partenaire à part entière de l'ISS — et la technologie qu'il a validée survit dans le Module de Service Européen qui propulse maintenant l'Orion de la NASA vers la Lune.",
+    "new": "L'Automated Transfer Vehicle était le ravitailleur orbital européen de l'ISS et l'engin de cargo le plus sophistiqué de son époque — un vaisseau spatial de vingt tonnes qui se guidait lui-même jusqu'à un amarrage entièrement automatique avec la Station, livrait du fret, de l'eau, de l'air et du propergol, et utilisait ses propres moteurs pour rehausser l'orbite de la totalité de l'ISS. Cinq ont volé entre 2008 et 2015, chacun nommé d'après un penseur européen, de Jules Verne à Georges Lemaître. Bien au-delà d'un simple camion-citerne, l'ATV était la façon pour l'Europe de conquérir sa place de partenaire à part entière de l'ISS — et la technologie qu'il a validée survit dans le Module de Service Européen qui propulse maintenant l'Orion de la NASA vers la Lune."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "old": "L'ATV (Automated Transfer Vehicle) est un vaisseau spatial de cargo robotisé construit par Astrium / Airbus en Europe. Principal vecteur de fret ESA pour l'ISS qui a effectué cinq missions vers la Station de 2008 à 2015, livrant du fret, de l'eau, de l'air et du carburant tout en utilisant ses moteurs pour rehausser l'orbite de la Station.",
+    "new": "L'ATV (Automated Transfer Vehicle) est un vaisseau spatial de cargo robotisé construit par Astrium / Airbus en Europe. Principal vecteur de fret ESA pour l'ISS qui a effectué cinq missions vers la Station de 2008 à 2015, livrant du fret, de l'eau, de l'air et du propergol tout en utilisant ses moteurs pour rehausser l'orbite de la Station."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "old": "Vaisseau cargo chinois pour la station spatiale Tiangong, partageant l'héritage de la plate-forme de vaisseau avec Tiangong-1. Ravitaille les réservoirs de carburant de Tiangong et livre des baies d'expériences; premier vol en 2017.",
+    "new": "Vaisseau cargo chinois pour la station spatiale Tiangong, partageant l'héritage de la plate-forme de vaisseau avec Tiangong-1. Ravitaille les réservoirs de propergol de Tiangong et livre des baies d'expériences; premier vol en 2017."
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "old": "Saturn V existe pour résoudre un brutal calcul arithmétique : mettre un équipage sur la Lune signifie projeter environ 45 tonnes sur une trajectoire hors de la gravité terrestre, et en 1961 rien sur la Terre ne pouvait projeter une fraction de cela. L'équipe de Marshall de von Braun construisit donc la plus grande machine qui ait jamais volé — cinq moteurs F-1 à sa base, chacun étant le plus puissant moteur-fusée à chambre unique jamais allumé à l'époque, consumant ensemble environ treize tonnes de carburant chaque seconde. Tout chez elle était dimensionné par la destination, pas par ce qui semblait raisonnable. Le fait qu'elle ait volé treize fois et n'ait jamais une seule fois échoué à atteindre l'espace est la partie qui semble encore à peine possible.",
+    "new": "Saturn V existe pour résoudre un brutal calcul arithmétique : mettre un équipage sur la Lune signifie projeter environ 45 tonnes sur une trajectoire hors de la gravité terrestre, et en 1961 rien sur la Terre ne pouvait projeter une fraction de cela. L'équipe de Marshall de von Braun construisit donc la plus grande machine qui ait jamais volé — cinq moteurs F-1 à sa base, chacun étant le plus puissant moteur-fusée à chambre unique jamais allumé à l'époque, consumant ensemble environ treize tonnes de propergol chaque seconde. Tout chez elle était dimensionné par la destination, pas par ce qui semblait raisonnable. Le fait qu'elle ait volé treize fois et n'ait jamais une seule fois échoué à atteindre l'espace est la partie qui semble encore à peine possible."
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "description",
+    "old": "Orbiteur lunaire principal actif de la NASA — en fonctionnement continu depuis 2009-06-23. Lancé le 2009-06-18 avec LCROSS sur un Atlas V depuis Cap Canaveral, la charge utile de LRO comprenant 7 instruments a refait la cartographie de tous les aspects de la Lune à une résolution sans précédent. La Lunar Reconnaissance Orbiter Camera (LROC) NAC (Narrow-Angle Camera, 0,5 m/pixel à 50 km d'altitude) a imagé chaque site d'alunissage Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet et Hakuto — chaque image « tier-2 LROC » dans les points chauds /moon de cette application provient de LROC NAC. LOLA (Laser Altimeter) a fourni la topographie la plus détaillée de tous les corps du système solaire. Diviner a cartographié la température de surface avec une précision de 10 K ; LAMP a détecté une H₂O de surface généralisée jusqu'à l'aube lunaire ; LEND a cartographié le flux de neutrons à une résolution <10 km. En 2026, toujours opérationnel en mission prolongée, sans fin de vie prévue — le carburant soutient les opérations jusqu'à environ 2030+.",
+    "new": "Orbiteur lunaire principal actif de la NASA — en fonctionnement continu depuis 2009-06-23. Lancé le 2009-06-18 avec LCROSS sur un Atlas V depuis Cap Canaveral, la charge utile de LRO comprenant 7 instruments a refait la cartographie de tous les aspects de la Lune à une résolution sans précédent. La Lunar Reconnaissance Orbiter Camera (LROC) NAC (Narrow-Angle Camera, 0,5 m/pixel à 50 km d'altitude) a imagé chaque site d'alunissage Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet et Hakuto — chaque image « tier-2 LROC » dans les points chauds /moon de cette application provient de LROC NAC. LOLA (Laser Altimeter) a fourni la topographie la plus détaillée de tous les corps du système solaire. Diviner a cartographié la température de surface avec une précision de 10 K ; LAMP a détecté une H₂O de surface généralisée jusqu'à l'aube lunaire ; LEND a cartographié le flux de neutrons à une résolution <10 km. En 2026, toujours opérationnel en mission prolongée, sans fin de vie prévue — le propergol soutient les opérations jusqu'à environ 2030+."
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "old": "Mission NASA de 12 ans de multiples survols de 6 systèmes d'astéroïdes troyens de Jupiter et 2 astéroïdes de la ceinture principale (11 rencontres au total, y compris des satellites). Trois assistances gravitationnelles terrestres façonnent une seule trajectoire visitant à la fois les nuages Troyens L4 et L5. Transporte 1003 kg d'hydrazine — plus de carburant que la masse sèche. Nommée d'après le fossile Australopithecus afarensis de 1974, lui-même nommé d'après la chanson des Beatles — l'implication étant que les Troyens préservent le matériel du début du système solaire de la même manière que le fossile préserve l'histoire des débuts de l'humanité.",
+    "new": "Mission NASA de 12 ans de multiples survols de 6 systèmes d'astéroïdes troyens de Jupiter et 2 astéroïdes de la ceinture principale (11 rencontres au total, y compris des satellites). Trois assistances gravitationnelles terrestres façonnent une seule trajectoire visitant à la fois les nuages Troyens L4 et L5. Transporte 1003 kg d'hydrazine — plus de propergol que la masse sèche. Nommée d'après le fossile Australopithecus afarensis de 1974, lui-même nommé d'après la chanson des Beatles — l'implication étant que les Troyens préservent le matériel du début du système solaire de la même manière que le fossile préserve l'histoire des débuts de l'humanité."
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "description",
+    "old": "Le HM7B est le moteur d'étage supérieur fonctionnant à l'hydrogène qui donnait aux fusées Ariane une impulsion énergétique élevée après l'arrêt de l'étage principal. Fonctionnant selon un cycle à générateur de gaz avec LOX et LH2, il a effectué son premier vol sur Ariane 2 en mai 1986 et a continué jusqu'à la fin de la vie opérationnelle d'Ariane 5 en juillet 2023. Sa petite taille cache un impulse spécifique élevé qui en faisait le moteur de référence pour les injections en orbite de transfert géostationnaire, transportant des satellites commerciaux et des charges scientifiques — dont Rosetta, Mars Express et Venus Express — vers leurs trajectoires de départ pendant plus de trois décennies.",
+    "new": "Le HM7B est le moteur d'étage supérieur fonctionnant à l'hydrogène qui donnait aux fusées Ariane une impulsion énergétique élevée après l'arrêt de l'étage principal. Fonctionnant selon un cycle à générateur de gaz avec LOX et LH2, il a effectué son premier vol sur Ariane 2 en mai 1986 et a continué jusqu'à la fin de la vie opérationnelle d'Ariane 5 en juillet 2023. Sa petite taille cache une impulsion spécifique élevée qui en faisait le moteur de référence pour les injections en orbite de transfert géostationnaire, transportant des satellites commerciaux et des charges utiles scientifiques — dont Rosetta, Mars Express et Venus Express — vers leurs trajectoires de départ pendant plus de trois décennies."
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "old": "Moteur de propulseur à huit grappes Saturn I/IB — la répétition générale du F-1",
+    "new": "Moteur de premier étage à huit grappes Saturn I/IB — la répétition générale du F-1"
+  },
+  {
+    "rel": "fleet/launcher/atlas-lv-3b.json",
+    "at": "description",
+    "old": "L'Atlas LV-3B était le lanceur orbital de Convair qui a propulsé les astronautes Mercury en orbite lors de quatre vols (Mercury-Atlas 6 à 9) entre février 1962 et mai 1963. Le moteur à peau mince — si léger qu'il nécessitait une pressurisation pour tenir debout — a prouvé qu'un missile balistique pouvait être certifié pour le vol habité. Retiré du service après le programme Mercury.",
+    "new": "L'Atlas LV-3B était le lanceur orbital de Convair qui a propulsé les astronautes Mercury en orbite lors de quatre vols (Mercury-Atlas 6 à 9) entre février 1962 et mai 1963. Le lanceur à peau mince — si léger qu'il nécessitait une pressurisation pour tenir debout — a prouvé qu'un missile balistique pouvait être certifié pour le vol habité. Retiré du service après le programme Mercury."
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "description",
+    "old": "Rehausseur Block 5 de SpaceX, conçu pour dix vols sans rénovation. La première fusée de classe orbitale à atterrir et à voler à nouveau, remodelant fondamentalement le marché du lancement commercial et réduisant le coût d'orbite d'environ un ordre de grandeur.",
+    "new": "Premier étage Block 5 de SpaceX, conçu pour dix vols sans rénovation. La première fusée de classe orbitale à atterrir et à voler à nouveau, remodelant fondamentalement le marché du lancement commercial et réduisant le coût d'orbite d'environ un ordre de grandeur."
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "description",
+    "old": "Lanceur polaire satellite quatre étages dans sa configuration étendue (XL) : six accélérateurs solides PS0M-XL avec environ 50 % plus de propergol que le PSLV standard. Capable de placer ~3,8 t en LEO / ~1,8 t en SSO / ~1,4 t en GTO et a transporté les missions interplanétaires les plus importantes de l'Inde — Chandrayaan-1 (2008) et Mangalyaan / Mars Orbiter Mission (2013) — depuis la First Launch Pad de Sriharikota. Toujours actif pour les déploiements d'observation terrestre hyperspectrale et radar.",
+    "new": "Lanceur polaire satellite quatre étages dans sa configuration étendue (XL) : six propulseurs d'appoint à poudre PS0M-XL avec environ 50 % plus de propergol que le PSLV standard. Capable de placer ~3,8 t en LEO / ~1,8 t en SSO / ~1,4 t en GTO et a transporté les missions interplanétaires les plus importantes de l'Inde — Chandrayaan-1 (2008) et Mangalyaan / Mars Orbiter Mission (2013) — depuis la First Launch Pad de Sriharikota. Toujours actif pour les déploiements d'observation terrestre hyperspectrale et radar."
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "description",
+    "old": "L'orbiteur réutilisable, le tank externe et les amplificateurs de fusées à double solide qui ont effectué 135 missions entre 1981 et 2011. Construit l'ISS, déployé et entretenu Hubble, et a démontré les compromis techniques d'un lanceur en équipage partiellement réutilisable.",
+    "new": "L'orbiteur réutilisable, le tank externe et les propulseurs d'appoint à poudre jumeaux qui ont effectué 135 missions entre 1981 et 2011. Construit l'ISS, déployé et entretenu Hubble, et a démontré les compromis techniques d'un lanceur en équipage partiellement réutilisable."
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "description",
+    "old": "Fusée à trois étages développée par le CNES à la demande de l'ESA après l'annulation du programme Europe — premier et deuxième étages hypergoliques UH-25 / N2O4 surmontés du troisième étage cryogénique HM7 (LH₂ / LOX). 11 lancements depuis Kourou entre le 24/12/1979 et le 22/02/1986 ont emporté 27 satellites européens de télécommunications et de science, dont ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B et la sonde Giotto de l'ESA vers la comète de Halley. Retirée au profit des Ariane 2/3/4 plus puissants ; la technologie cryogénique HM7 s'est poursuivie via Ariane 4 jusqu'à l'étage ESC-A d'Ariane 5.",
+    "new": "Fusée à trois étages développée par le CNES à la demande de l'ESA après l'annulation du programme Europe — premier et deuxième étages hypergoliques UH-25 / N2O4 surmontés du troisième étage cryogénique HM7 (LH₂ / LOX). 11 lancements depuis Kourou entre le 24/12/1979 et le 22/02/1986 ont emporté 27 satellites européens de télécommunications et de science, dont ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B et la sonde Giotto de l'ESA pour le survol de la comète de Halley. Retirée au profit des Ariane 2/3/4 plus puissants ; la technologie cryogénique HM7 s'est poursuivie via Ariane 4 jusqu'à l'étage ESC-A d'Ariane 5."
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "old": "Mission conjointe ESA + JAXA. Lancée le 2018-10-20 sur une Ariane 5 ECA. Le module de transfert vers Mercure transporte la pile sur un vol d'assistance gravitationnelle de 7 ans (1 Terre + 2 Vénus + 6 assistances gravitationnelles de Mercure) avant l'insertion en orbite de Mercure le 2026-11-21. À l'arrivée, les deux sondes scientifiques se séparent : l'orbiteur planétaire de Mercure de l'ESA (MPO) suit une orbite polaire de 480 × 1500 km avec 11 instruments pour la composition de la surface, la topographie, la gravité et l'exosphère ; Mio de la JAXA (orbiteur de la magnétosphère de Mercure) suit une orbite polaire de 590 × 11 640 km avec 5 instruments pour la magnétosphère et le plasma. Ensemble, ce sont les premiers engins spatiaux européens + japonais jamais en orbite autour de Mercure.",
+    "new": "Mission conjointe ESA + JAXA. Lancée le 2018-10-20 sur une Ariane 5 ECA. Le module de transfert vers Mercure transporte la pile sur une croisière de survols de 7 ans (1 Terre + 2 Vénus + 6 assistances gravitationnelles de Mercure) avant l'insertion en orbite de Mercure le 2026-11-21. À l'arrivée, les deux sondes scientifiques se séparent : l'orbiteur planétaire de Mercure de l'ESA (MPO) suit une orbite polaire de 480 × 1500 km avec 11 instruments pour la composition de la surface, la topographie, la gravité et l'exosphère ; Mio de la JAXA (orbiteur de la magnétosphère de Mercure) suit une orbite polaire de 590 × 11 640 km avec 5 instruments pour la magnétosphère et le plasma. Ensemble, ce sont les premiers engins spatiaux européens + japonais jamais en orbite autour de Mercure."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "description",
+    "old": "Le premier vol réussi de Mars — juillet 1965. Les 22 photos en noir et blanc qui sont revenues se sont terminées sur un siècle de spéculations sur les canaux martiens et la vie en montrant une surface cratère ressemblant à la Lune.",
+    "new": "Le premier survol réussi de Mars — juillet 1965. Les 22 photos en noir et blanc qui sont revenues se sont terminées sur un siècle de spéculations sur les canaux martiens et la vie en montrant une surface cratère ressemblant à la Lune."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "old": "Premier vol réussi sur Mars",
+    "new": "Premier survol réussi de Mars"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "old": "NASA, mission d'échantillonnage-retour d'astéroïdes. L'astéroïde Bénou s'est approché en 2018, a capturé un échantillon avec son bras TAGSAM en 2020 et a retourné la capsule à l'Utah en septembre 2023. Maintenant redessiné OSIRIS-APEX, en route vers l'astéroïde Apophis pour son vol terrestre de 2029.",
+    "new": "NASA, mission d'échantillonnage-retour d'astéroïdes. L'astéroïde Bénou s'est approché en 2018, a capturé un échantillon avec son bras TAGSAM en 2020 et a retourné la capsule à l'Utah en septembre 2023. Maintenant redessiné OSIRIS-APEX, en route vers l'astéroïde Apophis pour son survol rapproché de la Terre en 2029."
+  }
+]

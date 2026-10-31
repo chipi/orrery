@@ -13,5 +13,6 @@
     { "met": 334.87, "label": "LANDER SEPARATION", "note": "Lander detaches for descent to Chryse Planitia.", "type": "nominal" },
     { "met": 335, "label": "TOUCHDOWN", "note": "Lander touches down 1976-07-20, exactly 7 years after Apollo 11.", "type": "nominal" },
     { "met": 335.1, "label": "FIRST PANORAMA", "note": "First high-resolution surface images returned.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Centaur D-1T upper stage"
 }

@@ -39,6 +39,7 @@ export const SCIENCE_TABS: readonly ScienceTabId[] = [
   // v0.6.3 — curated companion lists, anchored at the bottom of the rail
   // so the encyclopedia tabs read as a coherent block above them and
   // these read as "see also" affordances. (Issues #128 + #129.)
+  'glossary', // PRD-038 — the section's technical vocabulary, one sentence per term
   'reading-list',
   'watch-list',
 ] as const;
@@ -87,7 +88,16 @@ export async function getProgram(
         ? null
         : await get<ProgramOverlay>(`i18n/en-US/programs/${id}.json`, fetchFn).catch(() => null));
     if (!fallback) return null;
-    return { ...baseRecord, ...fallback };
+    const labels = fallback.link_labels ?? {};
+    return {
+      ...baseRecord,
+      ...fallback,
+      see_also: baseRecord.see_also?.map((s) => ({ ...s, label: labels[s.href] ?? s.label })),
+      surface_sites: baseRecord.surface_sites?.map((s) => ({
+        ...s,
+        label: labels[`/${s.surface}?site=${s.site}`] ?? s.label,
+      })),
+    };
   } catch {
     return null;
   }

@@ -1,0 +1,9 @@
+[
+  {
+    "term": "propellant",
+    "loc": "ar",
+    "rel": "missions/mercury/mariner10.json",
+    "at": "description",
+    "why": "binding split by its noun (وقود النيتروجين الدافع = nitrogen propellant)"
+  }
+]

@@ -19,11 +19,20 @@
          Geolocation API places the Sun/Moon/planets + your-location pin. Mirrors
          iOS Info.plist NSLocationWhenInUseUsageDescription. COARSE is enough —
          getObserverLocation() requests enableHighAccuracy:false and city-level
-         precision is fine (~1° only matters for the Moon's parallax). -->
+         precision is fine (~1° only matters for the Moon's parallax).
+         FINE is declared up to API 30 only: Capacitor's BridgeWebChromeClient
+         requests COARSE+FINE together and falls back to COARSE alone only on
+         Android 12+ (API 31), so without FINE the WebView denies geolocation
+         on API 24-30. -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:maxSdkVersion="30" />
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:dataExtractionRules="@xml/data_extraction_rules"
         android:icon="@mipmap/ic_launcher"
         android:banner="@drawable/tv_banner"
         android:label="@string/app_name"

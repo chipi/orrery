@@ -1,0 +1,1256 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.diagram",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "file name"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/exoplanets/hot-jupiters.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)"
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "لمناورات الوصول والعمليات",
+    "replace": "لإشعالات الوصول والعمليات",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb \"تدور حولها\" is correct"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb تدور/دارت is correct"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb تدور/دارت is correct"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.3",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "plural الميول of الميل, correct"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "diagram_caption",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "plural الميول of الميل, correct"
+  },
+  {
+    "rel": "science/scales-time/j2000.json",
+    "at": "body_paragraphs.0",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "plural الميول of الميل, correct"
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "body_paragraphs.2",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "الخاصة بالتقارب والالتحام",
+    "replace": "الخاصة بالالتقاء والالتحام",
+    "why": "binding rendezvous الالتقاء"
+  },
+  {
+    "rel": "science/orbits/synodic-period.json",
+    "at": "narrative_101.2",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "نقطة اللقاء",
+    "replace": "نقطة الالتقاء",
+    "why": "binding rendezvous الالتقاء"
+  },
+  {
+    "rel": "science/space-stations/node-module.json",
+    "at": "intro_sentence",
+    "term": "docking",
+    "decision": "keep",
+    "why": "منفذ/منافذ إرساء uses the accepted إرساء rendering"
+  },
+  {
+    "rel": "science/space-stations/node-module.json",
+    "at": "narrative_101.0",
+    "term": "docking",
+    "decision": "keep",
+    "why": "منفذ/منافذ إرساء uses the accepted إرساء rendering"
+  },
+  {
+    "rel": "science/space-stations/node-module.json",
+    "at": "narrative_101.2",
+    "term": "docking",
+    "decision": "keep",
+    "why": "منفذ/منافذ إرساء uses the accepted إرساء rendering"
+  },
+  {
+    "rel": "science/space-stations/node-module.json",
+    "at": "diagram_caption",
+    "term": "docking",
+    "decision": "keep",
+    "why": "منفذ/منافذ إرساء uses the accepted إرساء rendering"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "plural مساعدات الجاذبية is the binding form inflected"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "أذرع المساعدة الجذبية",
+    "replace": "أذرع مساعدة الجاذبية",
+    "why": "binding gravity assist"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "على المساعدات الجاذبية",
+    "replace": "على مساعدات الجاذبية",
+    "why": "binding gravity assist"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "وعلى المساعدة التثاقلية",
+    "replace": "وعلى مساعدة الجاذبية",
+    "why": "binding gravity assist"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "مشهد المساعدة التثاقلية",
+    "replace": "مشهد مساعدة الجاذبية",
+    "why": "binding gravity assist"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "والمساعدات الجاذبية تخضع",
+    "replace": "ومساعدات الجاذبية تخضع",
+    "why": "binding gravity assist"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "من دون المساعدات الجاذبية",
+    "replace": "من دون مساعدات الجاذبية",
+    "why": "binding gravity assist"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "من دون المساعدات الجاذبية",
+    "replace": "من دون مساعدات الجاذبية",
+    "why": "binding gravity assist"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "أما المساعدات الجاذبية فتنقل",
+    "replace": "أما مساعدات الجاذبية فتنقل",
+    "why": "binding gravity assist"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burning fuel\" = combustion"
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "أول احتراق لوقود سائل",
+    "replace": "أول إشعال لوقود سائل",
+    "why": "burn -> إشعال (engine firing)"
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "أول احتراق لوقود سائل",
+    "replace": "أول إشعال لوقود سائل",
+    "why": "burn -> إشعال (engine firing)"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "احتراق الدخول في المدار القمري",
+    "replace": "إشعال الدخول في المدار القمري",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "fire burning = combustion"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "الاحتراق الواحد الكبير",
+    "replace": "الإشعال الواحد الكبير",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "احتراق الكبح",
+    "replace": "إشعال الكبح",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "يُشعل محركاته في دفعة التقاط",
+    "replace": "يُجري إشعال الالتقاط",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "بثمن دفعة الالتقاط الصغيرة",
+    "replace": "بثمن إشعال الالتقاط الصغير",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "لا بثمن الدفعة الهائلة",
+    "replace": "لا بثمن الإشعال الهائل",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "دون أي دفعة التقاط على الإطلاق",
+    "replace": "دون أي إشعال للالتقاط على الإطلاق",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "ما تبقّى من الاحتراق",
+    "replace": "ما تبقّى من الإشعال",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "حتى نهاية الاحتراق",
+    "replace": "حتى نهاية الإشعال",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "ومع تقدّم الاحتراق",
+    "replace": "ومع تقدّم الإشعال",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "يطول فيها الاحتراق",
+    "replace": "يطول فيها الإشعال",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burns the crew up\" = incineration"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "قبل أن يقع الحرق أصلًا",
+    "replace": "قبل أن يقع الإشعال أصلًا",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "مقدار حرق الخروج من المدار",
+    "replace": "مقدار إشعال الخروج من المدار",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.2",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"entry interface\" rendered as نقطة التماس مع الغلاف الجوي, correct"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "بحرقٍ لا يتجاوز",
+    "replace": "بإشعالٍ لا يتجاوز",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "حرقٌ تراجعي للخروج",
+    "replace": "إشعالٌ تراجعي للخروج",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"re-entry\" correctly rendered العودة إلى الغلاف الجوي"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stars \"burn red\" = glow"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burn out\" = exhaust fuel"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "حرقة مدار المقابر",
+    "replace": "إشعال مدار المقابر",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "قبل أن يُستنفد وقود الحفاظ",
+    "replace": "قبل أن يُستنفد الوقود الدافع للحفاظ",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "5 و10 kg من الوقود",
+    "replace": "5 و10 kg من الوقود الدافع",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "حروق صريحة",
+    "replace": "إشعالات صريحة",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "يُحرَق الحضيض خفضًا",
+    "replace": "يُخفَض الحضيض بإشعال المحرك",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "حرق TLI",
+    "replace": "إشعال TLI",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"avoidance burns\" rendered as مناورات (avoidance manoeuvres), a correct generic term"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.3",
+    "term": "burn",
+    "decision": "keep",
+    "why": "station-keeping burns rendered as مناورات, a correct generic term"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "وهي دفعة الانطلاق",
+    "replace": "وهو إشعال الانطلاق",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "لدفعة الانطلاق",
+    "replace": "لإشعال الانطلاق",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.2",
+    "term": "burn",
+    "decision": "keep",
+    "why": "أشعِل المحرك is the binding verb with diacritics"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "خلال احتراق المرحلة الأولى",
+    "replace": "خلال إشعال المرحلة الأولى",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "\"دفعًا\" is indefinite form of الدفع"
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "solid motor burning at a controlled rate = combustion"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / consumption sense"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "booster",
+    "decision": "change",
+    "find": "على مستوى المراحل الدافعة الأولى",
+    "replace": "على مستوى المعزّزات",
+    "why": "binding booster"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "\"قوة دفع\" is the binding form"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "تبلغها وقودها الدافعة",
+    "replace": "يبلغها الوقود الدافع",
+    "why": "binding propellant, fixes agreement"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion sense"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "أشعِل المحرك is the binding verb"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "ما تمنحه الحرقة ذاتها",
+    "replace": "ما يمنحه الإشعال ذاته",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "فإن حرقة مقدارها",
+    "replace": "فإن إشعالًا مقداره",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "من الحرقة نفسها البالغة",
+    "replace": "من الإشعال نفسه البالغ",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "keep",
+    "why": "تشعل محركها correctly renders firing the engine"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "على حرقة الصاروخ",
+    "replace": "على إشعال الصاروخ",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "أجرِ الحرقة",
+    "replace": "أجرِ الإشعال",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "تجدول حرقات ∆v",
+    "replace": "تجدول إشعالات ∆v",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "الحرقات في أعماق",
+    "replace": "الإشعالات في أعماق",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "لإنجاز احتراق المرحلة العليا",
+    "replace": "لإنجاز إشعال المرحلة العليا",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "احتراقًا نهائيًا دقيقًا",
+    "replace": "إشعالًا نهائيًا دقيقًا",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "term": "specific impulse",
+    "decision": "keep",
+    "why": "\"دفعًا نوعيًا\" is indefinite form of الدفع النوعي"
+  },
+  {
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "مقدار احتراق الوصول",
+    "replace": "مقدار إشعال الوصول",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "وأحرق نحو 1 كم/ث",
+    "replace": "وأجرى إشعالًا بنحو 1 كم/ث",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/propulsion/v-infinity.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "حجم احتراق الوصول",
+    "replace": "حجم إشعال الوصول",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "دفعتين كبيرتين — إحداهما للدخول في القطع الناقص، والأخرى",
+    "replace": "إشعالين كبيرين — أحدهما للدخول في القطع الناقص، والآخر",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "تُنهي دفعتك",
+    "replace": "تُنهي إشعالك",
+    "why": "burn -> إشعال"
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "وقودًا دافعًا is the binding form"
+  },
+  {
+    "rel": "science/life-in-space/mars-human-architecture.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "وقود الميثان والأكسجين",
+    "replace": "وقود دافع من الميثان والأكسجين",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "narrative_101.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "هدر الوقود في مقاومة",
+    "replace": "هدر الوقود الدافع في مقاومة",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.0",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "للوقود الدافع is the binding form"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.1",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "وقودًا دافعًا is the binding form"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "زهيدة من حيث الوقود",
+    "replace": "زهيدة من حيث الوقود الدافع",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "للوقود الدافع is the binding form"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.4",
+    "term": "propellant",
+    "decision": "change",
+    "find": "اليوم وقود التخلص بوصفه",
+    "replace": "اليوم الوقود الدافع للتخلص بوصفه",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "وقودها الدافع is the binding form"
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.3",
+    "term": "propellant",
+    "decision": "change",
+    "find": "وقود صاروخي كيميائي",
+    "replace": "وقود دافع كيميائي للصواريخ",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "يكون وقود الدفع 90%",
+    "replace": "يكون الوقود الدافع 90%",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "أفضل وقود دفع كيميائي",
+    "replace": "أفضل وقود دافع كيميائي",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.0",
+    "term": "specific impulse",
+    "decision": "keep",
+    "why": "\"للدفع النوعي\" = ل + الدفع النوعي, binding form"
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "diagram_caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "وقود الدفع الكيميائي",
+    "replace": "الوقود الدافع الكيميائي",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.3",
+    "term": "propellant",
+    "decision": "change",
+    "find": "والوقود والتجميع",
+    "replace": "والوقود الدافع والتجميع",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "تدفّق وقود الدفع",
+    "replace": "تدفّق الوقود الدافع",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "change",
+    "find": "أفضل وقود كيميائي",
+    "replace": "أفضل وقود دافع كيميائي",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.0",
+    "term": "specific impulse",
+    "decision": "change",
+    "find": "إلى نبضة نوعية",
+    "replace": "إلى الدفع النوعي",
+    "why": "binding specific impulse"
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "وجُلّها وقود",
+    "replace": "وجُلّها وقود دافع",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "الوقودان الدافعان is the binding form (dual)"
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "هي وقود محترق",
+    "replace": "هي وقود دافع محترق",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.2",
+    "term": "propellant",
+    "decision": "change",
+    "find": "من الوقود لاحتراقَي",
+    "replace": "من الوقود الدافع لإشعالَي",
+    "why": "binding propellant (and landing burns -> إشعال)"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.1",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "وقودًا دافعًا is the binding form"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "diagram_caption",
+    "term": "propellant",
+    "decision": "change",
+    "find": "يكلّف وقودًا باهظًا",
+    "replace": "يكلّف وقودًا دافعًا باهظًا",
+    "why": "binding propellant"
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "narrative_101.1",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "\"دفع جانبي\" is thrust, correct"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "intro_sentence",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "\"دفع\" is thrust, correct"
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "diagram_caption",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "\"قوة دفع\" is the binding form"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.2",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "\"قوة دفعه\" is the binding form"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "diagram_caption",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "\"قوة دفع\" is the binding form"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "intro_sentence",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "\"دفعًا\" is indefinite form of الدفع"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.2",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "\"قوة دفع\" is the binding form"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "diagram_caption",
+    "term": "booster",
+    "decision": "keep",
+    "why": "معززات is correct (undiacritised معزّزات)"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.3",
+    "term": "booster",
+    "decision": "change",
+    "find": "حول أجسام الداعمات",
+    "replace": "حول أجسام المعزّزات",
+    "why": "binding booster"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.3",
+    "term": "booster",
+    "decision": "change",
+    "find": "في أعلى الداعم أو",
+    "replace": "في أعلى المعزّز أو",
+    "why": "binding booster"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.3",
+    "term": "booster",
+    "decision": "change",
+    "find": "بين إطفاء الداعم",
+    "replace": "بين إطفاء المعزّز",
+    "why": "binding booster"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "diagram_caption",
+    "term": "booster",
+    "decision": "change",
+    "find": "أما الداعمات الصلبة",
+    "replace": "أما المعزّزات الصلبة",
+    "why": "binding booster"
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "body_paragraphs.1",
+    "term": "specific impulse",
+    "decision": "keep",
+    "why": "\"دفعًا نوعيًا\" is indefinite form of الدفع النوعي"
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.2",
+    "term": "specific impulse",
+    "decision": "keep",
+    "why": "\"دفعه النوعي\" is the binding form with pronoun"
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "narrative_101.2",
+    "term": "specific impulse",
+    "decision": "keep",
+    "why": "\"دفع نوعي\" is indefinite form of الدفع النوعي"
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "diagram_caption",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "\"عند بلوغ المدار\" is a correct rendering"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "\"إدخال ... في مدار\" matches the accepted pattern with a name inserted"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "الحقن في مدار المريخ",
+    "replace": "الدخول في مدار المريخ",
+    "why": "binding orbit insertion (الحقن is used for trans-X injection)"
+  },
+  {
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "body_paragraphs.3",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"re-entry engine\" is not atmospheric entry itself; محرّكات العودة is correct"
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"re-entry into 1 g\" is not atmospheric entry"
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "intro_sentence",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"re-entry\" correctly rendered العودة إلى الغلاف الجوي"
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "body_paragraphs.2",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"re-entry\" correctly rendered العودة إلى الغلاف الجوي"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "title",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"re-entry\" correctly rendered العودة إلى الغلاف الجوي"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.1",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"re-entry\" correctly rendered العودة إلى الغلاف الجوي"
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.0",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"re-entry\" correctly rendered العودة إلى الغلاف الجوي"
+  },
+  {
+    "rel": "science/mission-phases/lifting-entry.json",
+    "at": "intro_sentence",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"دخولًا\" is indefinite form of الدخول"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "entry",
+    "decision": "keep",
+    "why": "\"re-entry\" in the Apollo sense = return, correct"
+  }
+]

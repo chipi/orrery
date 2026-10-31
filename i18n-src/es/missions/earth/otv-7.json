@@ -5,7 +5,7 @@
   "delta_v": "~9,4 km/s (LEO)",
   "type": "VEHÍCULO ESPACIAL NO TRIPULADO · COMPLETADO",
   "first": "USA-358 / USSF-52 — 434 días en órbita, Base de la Fuerza Espacial Vandenberg",
-  "description": "Séptimo vuelo X-37B — primero hacia una órbita altamente elíptica (HEO) y primero lanzado en Falcon Heavy. Lanzado el 2023-12-29 01:07 UTC desde KSC LC-39A; ambos propulsores laterales recuperados en LZ-1 / LZ-2, núcleo central consumido para la energía de inserción en HEO. La trayectoria HEO llevó el OTV a aproximadamente la altitud de la cinta GEO en apogeo. Realizó una secuencia de desorbitación controlada de tipo aerofrenado (USSF lanzó una actualización pública sobre la maniobra, un alejamiento deliberado de la transparencia respecto a vuelos anteriores clasificados). Aterrizó en la Base Espacial Vandenberg el 2025-03-07 09:22 UTC.",
+  "description": "Séptimo vuelo del X-37B — primero a una órbita altamente elíptica (HEO) y primero lanzado en un Falcon Heavy. Lanzado el 2023-12-29 a las 01:07 UTC desde KSC LC-39A; los dos propulsores laterales fueron recuperados en LZ-1 / LZ-2, y el núcleo central se consumió para aportar la energía de inserción en HEO. La trayectoria HEO llevó al OTV a aproximadamente la altitud del cinturón GEO en el apogeo. Realizó una secuencia controlada de desorbitación de tipo aerofrenado (la USSF publicó una actualización sobre la maniobra, un giro deliberado hacia la transparencia respecto a los vuelos clasificados anteriores). Aterrizó en la Base Espacial Vandenberg el 2025-03-07 a las 09:22 UTC.",
   "events": [
     {
       "met": 0,
@@ -16,7 +16,7 @@
     {
       "met": 217,
       "label": "OPERACIONES EN ÓRBITA",
-      "note": "Apogeo HEO ~38 800 km × ~320 km (primer vuelo OTV en órbita altamente elíptica); operaciones de carga clasificadas.",
+      "note": "Apogeo HEO ~38 800 km × ~320 km (primer vuelo OTV en órbita altamente elíptica); operaciones de carga útil clasificadas.",
       "type": "info"
     },
     {

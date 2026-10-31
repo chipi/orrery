@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "더 깊은 교훈은 독립이 무엇의 가치가 있는가에 관한 것이다. 빌린 좌석은 빼앗길 수 있다; 스스로 구축한 역량은 그럴 수 없다. Shenzhou는 중국이 결코 요청할 필요가 없다는 것을 보장하는 우주선이다 — 그리고 그 보장이, 어떤 단일 비행보다, 프로그램이 실제로 전달하기 위해 구축된 것이다."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=shenzhou": "함대 — Shenzhou 우주선",
+    "/programs/tiangong": "Tiangong — Shenzhou 승무원이 건설하고 오가는 정거장",
+    "/programs/soyuz": "Soyuz — Shenzhou 구성의 원형이 된 우주선"
+  }
 }

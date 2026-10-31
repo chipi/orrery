@@ -19,6 +19,7 @@ This dir derives the WebP responsive display ladder, 1×1 thumbnails, and vision
 | `build-display-ladder.mjs` | `masters/**` | NN.webp + NN-1280/2048/3072.webp + image-ladder.json | after cap or on refresh | RFC-030 D1; ADR-080 |
 | `rekey-provenance-webp.mjs` | image-provenance.json | image-provenance.json (.jpg→.webp paths for bases) | after ladder complete | RFC-030 D1 |
 | `build-manifest.ts` | vision cache + variant cache | image-vision.json (focal point, category, score) | on `images:score` final | PRD-018 · RFC-022 §2.1 |
+| `eval.ts` | a stratified fixture + vision cache | a precision / recall / false-flag report (stdout) | when changing the off-subject detector; **paid** on cache misses (Anthropic vision, needs `.env`) | PRD-018 |
 
 ## File-naming conventions
 

@@ -1,7 +1,7 @@
 {
   "name": "Psyche",
   "vehicle": "Falcon Heavy",
-  "payload": "2747 kg lanceermassa (1648 kg droog; 1085 kg xenon-drijfgas)",
+  "payload": "2747 kg lanceermassa (1648 kg droog; 1085 kg xenon-drijfstof)",
   "delta_v": "~6,6 km/s",
   "type": "ORBITER · ACTIEF",
   "first": "Eerste missie naar een metaalrijke asteroïde van klasse M; eerste gebruik van Hall-effect-ionenmotoren als primaire voortstuwing tijdens de cruisefase",
@@ -16,13 +16,13 @@
     {
       "met": 30,
       "label": "IONENCRUISE BEGINT",
-      "note": "Vier Hall-effect ionenthrusters nemen over. Continue lage-stuwing-versnelling gedurende 4+ jaar.",
+      "note": "Vier Hall-effectionenmotoren nemen het over. Continue versnelling met lage stuwkracht gedurende meer dan 4 jaar.",
       "type": "info"
     },
     {
       "met": 945,
       "label": "MARS-ZWAARTEKRACHTASSIST",
-      "note": "2026-05-15. Kleinste nadering 4.609 km — Mars-voorbijvlucht voltooid.",
+      "note": "2026-05-15. Dichtste nadering 4.609 km — flyby van Mars voltooid.",
       "type": "info"
     },
     {
@@ -31,5 +31,6 @@
       "note": "Invangen door zwaartekracht met ionenstuwing in een baan van 700 km. Missie van 26 maanden, vier baanfasen.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "tweede trap van de Falcon Heavy"
 }

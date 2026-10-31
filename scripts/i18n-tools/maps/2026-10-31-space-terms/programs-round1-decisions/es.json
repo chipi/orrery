@@ -1,0 +1,66 @@
+[
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "outcome.2.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "variant: ignición"
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "outcome.1.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "su propulsante",
+    "replace": "su propelente",
+    "why": "propelente binding"
+  },
+  {
+    "rel": "programs/mangalyaan.json",
+    "at": "narrative.0.md",
+    "term": "propellant",
+    "decision": "change",
+    "find": "tiempo por propulsante",
+    "replace": "tiempo por propelente",
+    "why": "propelente binding"
+  },
+  {
+    "rel": "programs/mercury.json",
+    "at": "narrative.1.md",
+    "term": "payload",
+    "decision": "keep",
+    "why": "figurative: astronaut as cargo/passenger"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "the_land.1.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "transportar cargas pesadas",
+    "replace": "transportar cargas útiles pesadas",
+    "why": "carga útil binding"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.1.md",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: bodega de carga (standard payload bay)"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "term": "payload",
+    "decision": "change",
+    "find": "una carga grande",
+    "replace": "una carga útil grande",
+    "why": "carga útil binding"
+  },
+  {
+    "rel": "programs/sputnik.json",
+    "at": "goals.0.md",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: cohete (launch vehicle)"
+  }
+]

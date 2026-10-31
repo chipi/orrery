@@ -11,5 +11,6 @@
     { "met": 202, "label": "MARS ORBIT INSERTION", "note": "Engine burn captures spacecraft into Mars orbit.", "type": "nominal" },
     { "met": 295, "label": "ZHURONG LANDING", "note": "Lander/rover descends to Utopia Planitia 2021-05-14; Zhurong rolls off ramp 2021-05-22.", "type": "nominal" },
     { "met": 651, "label": "ZHURONG HIBERNATION", "note": "Rover enters planned dormancy 2022-05; orbiter continues operations.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Long March 5 YZ-1 upper stage"
 }

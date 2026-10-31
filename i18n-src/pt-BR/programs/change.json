@@ -84,5 +84,13 @@
       "type": "prose",
       "md": "A lição mais profunda é que a competência silenciosa remodela o campo. Chang'e não fez grandes proclamações e não venceu nenhuma corrida pelas manchetes, mas seu sucesso constante fez mais para reiniciar a ambição lunar humana em todo o mundo do que qualquer discurso — porque um programa que simplesmente continua tendo sucesso, missão após missão, torna-se um fato estratégico que todos os outros precisam responder. Consistência, no fim, é seu próprio tipo de poder."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Lua — os locais de pouso das Chang'e",
+    "/fleet?focus=yutu-2": "Frota — os rovers Yutu e os módulos Chang'e",
+    "/programs/artemis": "Artemis — a corrida paralela de volta à Lua",
+    "/moon?site=change3": "Chang’e 3 — rover Yutu",
+    "/moon?site=change4": "Chang’e 4 — o lado oculto",
+    "/moon?site=change2": "Chang’e 2"
+  }
 }

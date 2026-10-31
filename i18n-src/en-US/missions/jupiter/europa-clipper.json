@@ -12,5 +12,6 @@
     { "met": 1530, "label": "EARTH GRAVITY ASSIST", "note": "2026-12-03. Final acceleration outbound to Jupiter.", "type": "info" },
     { "met": 2005, "label": "JUPITER APPROACH", "note": "2030-04-11. Final approach to JOI.", "type": "info" },
     { "met": 2005.005, "label": "JUPITER ORBIT INSERTION", "note": "760 m/s burn. 49 Europa flybys over 4 years follow.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Falcon Heavy second stage"
 }

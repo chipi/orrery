@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La deuxième leçon concerne ce que le secret rapporte, et ce qu'il coûte. Cacher les échecs et gérer la vérité ont permis au programme de paraître invincible, ce qui avait une vraie valeur dans la Guerre froide. Mais cela signifiait aussi que le programme ne pouvait jamais être vu en train d'échouer — ce qui le rendait prudent aux mauvais endroits, incapable de prendre les risques visibles qu'exige l'apprentissage des choses difficiles. Une organisation qui ne peut pas se permettre d'échouer en public finit par ne plus pouvoir se permettre *d'apprendre* en public non plus."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terre — orbites et sites de lancement",
+    "/science/mission-phases/edl": "Entrée, descente et atterrissage"
+  }
 }

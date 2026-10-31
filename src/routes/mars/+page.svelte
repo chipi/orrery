@@ -200,9 +200,7 @@
   }
 
   function onResidentClick(id: string) {
-    (
-      window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-    ).__surfaceSceneSelectSite?.(id);
+    window.__surfaceSceneSelectSite?.(id);
   }
 
   onMount(async () => {

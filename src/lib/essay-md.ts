@@ -1,4 +1,4 @@
-import { base } from '$app/paths';
+import { localHref } from '$lib/locale';
 
 // Minimal inline-markdown renderer for essay prose. No markdown dependency
 // (Orrery ships none) and the same spirit as /science's parseInline. Supports
@@ -23,7 +23,7 @@ export function essayInlineHtml(md: string): string {
   // Links first, so emphasis markers inside link text still resolve after.
   s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, text: string, url: string) => {
     const external = /^https?:\/\//.test(url);
-    const href = external ? url : `${base}${url}`;
+    const href = external ? url : localHref(url);
     const attrs = external ? ' target="_blank" rel="noopener noreferrer external"' : '';
     return `<a href="${href}"${attrs}>${text}</a>`;
   });

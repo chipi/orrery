@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La segunda lección es que el reabastecimiento es lo que hace real una estación. Skylab, brillante y efímera, nunca fue reabastecida ni reimpulsada, y se degradó una vez que fue abandonada. La insistencia de Salyut en resolver el repostaje y el reabastecimiento —el segundo puerto de acoplamiento, el carguero Progress— es exactamente lo que permitió que sus estaciones posteriores fueran ocupadas durante años en lugar de semanas. Una presencia permanente en el espacio no es cuestión de construir una nave espacial más grande; es cuestión de construir la cadena logística poco glamurosa que mantiene viva continuamente una modesta."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Tierra: órbitas, encuentros y bases de lanzamiento",
+    "/fleet?focus=salyut-6": "Flota — las estaciones Salyut"
+  }
 }

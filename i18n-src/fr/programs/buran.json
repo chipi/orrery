@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La deuxième leçon est que l'excellence de l'ingénierie ne peut sauver un programme de la perte de son objectif et de son budget. Buran était, de manière réelle, une meilleure conception que le véhicule auquel il répondait — et il vola une fois. La navette américaine, malgré tous ses défauts, vola pendant trente ans parce qu'elle avait des missions à accomplir et de l'argent pour les accomplir. Un engin spatial n'est durable que dans la mesure de la volonté institutionnelle et du financement qui le soutiennent ; sans ceux-ci, même un vol sans défaut est une fin plutôt qu'un début."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/space-shuttle": "Space Shuttle — le véhicule auquel il répondait",
+    "/fleet?focus=buran": "Flotte — l'orbiteur Buran et Energia"
+  }
 }

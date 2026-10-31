@@ -7,7 +7,6 @@
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
-  import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import { getFleet, getFleetGallery, getFleetIndex, getBadges } from '$lib/data';
   import type {
@@ -24,6 +23,8 @@
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
+  import { countryLabel } from '$lib/country-label';
+  import { fleetStatusLabel } from '$lib/status-label';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import { cue } from '$lib/sensory/feedback';
   import {
@@ -35,6 +36,7 @@
     isSuccess,
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
 
   // ─── State ───────────────────────────────────────────────────────
@@ -170,20 +172,24 @@
     'engine',
   ];
 
-  const CATEGORY_LABEL: Record<FleetCategory, string> = {
-    launcher: 'Launcher',
-    'crewed-spacecraft': 'Crewed',
-    'cargo-spacecraft': 'Cargo',
-    station: 'Station',
-    rover: 'Rover',
-    lander: 'Lander',
-    orbiter: 'Orbiter',
-    observatory: 'Observatory',
-    'space-suit': 'Suit',
-    constellation: 'Constellation',
-    'launch-site': 'Launch site',
-    engine: 'Engine',
+  const CATEGORY_MSG: Record<FleetCategory, () => string> = {
+    launcher: m.fleet_cat_launcher,
+    'crewed-spacecraft': m.fleet_cat_crewed,
+    'cargo-spacecraft': m.fleet_cat_cargo,
+    station: m.fleet_cat_station,
+    rover: m.fleet_cat_rover,
+    lander: m.fleet_cat_lander,
+    orbiter: m.fleet_cat_orbiter,
+    observatory: m.fleet_cat_observatory,
+    'space-suit': m.fleet_cat_suit,
+    constellation: m.fleet_cat_constellation,
+    'launch-site': m.fleet_cat_launch_site,
+    engine: m.fleet_cat_engine,
   };
+  const categoryLabel = (c: FleetCategory): string => CATEGORY_MSG[c]?.() ?? c;
+  // first_flight is a date, or "planned" for hardware that has not flown.
+  const firstFlightLabel = (f: string): string =>
+    f === 'planned' ? m.fleet_value_planned() : f.slice(0, 4);
 
   const CATEGORY_COLOR: Record<FleetCategory, string> = {
     launcher: '#ffc850', // gold — boosters
@@ -306,7 +312,7 @@
       panelLoadingId = null;
       return;
     }
-    const full = await getFleet(id, summary.category);
+    const full = await getFleet(id, summary.category, localeFromPage(page));
     if (panelLoadingId !== id) return; // a newer load superseded us
     selectedEntry = full;
     panelOpen = true;
@@ -352,7 +358,7 @@
   function seedProgramBack(url: URL): void {
     const from = url.searchParams.get('from');
     if (from?.startsWith('program:')) {
-      seedBackTarget(`${base}/programs/${from.slice('program:'.length)}`, url);
+      seedBackTarget(localHref(`/programs/${from.slice('program:'.length)}`), url);
     }
   }
   afterNavigate((nav) => {
@@ -402,18 +408,15 @@
 </script>
 
 <svelte:head>
-  <title>Fleet — Spaceflight hardware</title>
-  <meta
-    name="description"
-    content="Curated inventory of the machines used in spaceflight: launchers, crewed and cargo spacecraft, stations, rovers, landers, orbiters, observatories."
-  />
+  <title>{m.fleet_page_title()}</title>
+  <meta name="description" content={m.fleet_meta_description()} />
 </svelte:head>
 
 <div class="fleet entity-browse-page">
   {#if !isSuccess(entriesRequest) && !isError(entriesRequest)}
-    <p class="status">Loading fleet…</p>
+    <p class="status">{m.fleet_loading()}</p>
   {:else if isError(entriesRequest)}
-    <p class="status error">Failed to load fleet data.</p>
+    <p class="status error">{m.fleet_load_failed()}</p>
   {:else}
     <!-- RFC-027 — free-text search across name + agency + category +
          tagline + country. Sits above the FILTERS toggle so it's visible
@@ -471,7 +474,7 @@
             class:active={categoryFilter === 'ALL'}
             role="radio"
             aria-checked={categoryFilter === 'ALL'}
-            onclick={() => setCategory('ALL')}>ALL</button
+            onclick={() => setCategory('ALL')}>{m.lib_filter_status_all()}</button
           >
           {#each CATEGORIES as cat (cat)}
             <button
@@ -480,7 +483,7 @@
               class:active={categoryFilter === cat}
               role="radio"
               aria-checked={categoryFilter === cat}
-              onclick={() => setCategory(cat)}>{CATEGORY_LABEL[cat]}</button
+              onclick={() => setCategory(cat)}>{categoryLabel(cat)}</button
             >
           {/each}
         </div>
@@ -493,7 +496,7 @@
             class:active={statusFilter === 'ALL'}
             role="radio"
             aria-checked={statusFilter === 'ALL'}
-            onclick={() => setStatus('ALL')}>ALL</button
+            onclick={() => setStatus('ALL')}>{m.lib_filter_status_all()}</button
           >
           {#each STATUSES as st (st)}
             <button
@@ -502,7 +505,7 @@
               class:active={statusFilter === st}
               role="radio"
               aria-checked={statusFilter === st}
-              onclick={() => setStatus(st)}>{st}</button
+              onclick={() => setStatus(st)}>{fleetStatusLabel(st)}</button
             >
           {/each}
         </div>
@@ -516,7 +519,7 @@
               class:active={agencyFilter === 'ALL'}
               role="radio"
               aria-checked={agencyFilter === 'ALL'}
-              onclick={() => setAgency('ALL')}>ALL</button
+              onclick={() => setAgency('ALL')}>{m.lib_filter_status_all()}</button
             >
             {#each agencies as agency (agency)}
               {@const logo = logoFor(agency)}
@@ -565,7 +568,7 @@
           >
             <option value="chrono-desc">{m.fleet_sort_newest()}</option>
             <option value="chrono-asc">{m.fleet_sort_oldest()}</option>
-            <option value="alpha">Alphabetical</option>
+            <option value="alpha">{m.fleet_sort_alpha()}</option>
             <option value="category">{m.fleet_sort_category()}</option>
           </select>
         </div>
@@ -573,17 +576,19 @@
     {/if}
 
     {#if filtered.length === 0}
-      <p class="status">No entries match the current filters.</p>
+      <p class="status">{m.fleet_empty()}</p>
     {:else if listView}
       <ul class="fleet-list">
         {#each filtered as entry (entry.id)}
           <li>
             <button type="button" class="list-row" onclick={() => openEntry(entry)}>
               <span class="list-name">{entry.name}</span>
-              <span class="list-cat">{CATEGORY_LABEL[entry.category]}</span>
+              <span class="list-cat">{categoryLabel(entry.category)}</span>
               <span class="list-agency">{entry.agency}</span>
-              <span class="list-year">{entry.first_flight.slice(0, 4)}</span>
-              <span class="list-status status-{entry.status.toLowerCase()}">{entry.status}</span>
+              <span class="list-year">{firstFlightLabel(entry.first_flight)}</span>
+              <span class="list-status status-{entry.status.toLowerCase()}"
+                >{fleetStatusLabel(entry.status)}</span
+              >
             </button>
           </li>
         {/each}
@@ -609,7 +614,7 @@
               data-audio-stage="fleet-select-{entry.id}"
               onclick={() => openEntry(entry)}
               onkeydown={(e) => handleGridKeydown(e, closePanel)}
-              aria-label="{entry.name} ({entry.agency}, {entry.first_flight.slice(0, 4)})"
+              aria-label="{entry.name} ({entry.agency}, {firstFlightLabel(entry.first_flight)})"
             >
               <div class="card-accent" aria-hidden="true"></div>
               <figure class="card-photo">
@@ -649,7 +654,7 @@
                     {primaryAgency}
                   </span>
                   <span class="card-status status-{entry.status.toLowerCase()}">
-                    {entry.status}
+                    {fleetStatusLabel(entry.status)}
                   </span>
                 </header>
                 <div class="card-name-row">
@@ -664,10 +669,10 @@
                     />
                   {/if}
                 </div>
-                <p class="card-type">{CATEGORY_LABEL[entry.category]}</p>
+                <p class="card-type">{categoryLabel(entry.category)}</p>
                 <div class="card-meta">
-                  <span class="card-year">{entry.first_flight.slice(0, 4)}</span>
-                  <span class="card-country">{entry.country}</span>
+                  <span class="card-year">{firstFlightLabel(entry.first_flight)}</span>
+                  <span class="card-country">{countryLabel(entry.country)}</span>
                 </div>
                 <p class="card-first">{entry.tagline}</p>
               </div>

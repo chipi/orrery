@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "universe/named-stars/alhena.json",
+    "at": "bio",
+    "find": "a terceira estrela mais brilhante de Gêmeos,",
+    "replace": "a terceira estrela mais brilhante da constelação de Gêmeos (Gemini),"
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "cultural",
+    "find": "marcando a cauda do Cisne.",
+    "replace": "marcando a cauda de Cygnus, o Cisne."
+  }
+]

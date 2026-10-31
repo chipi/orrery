@@ -1,0 +1,655 @@
+[
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "كوكبة Tundra",
+    "replace": "كوكبة مدار Tundra",
+    "why": "orbit dropped"
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "change",
+    "find": "كوكبة Tundra",
+    "replace": "كوكبة مدار Tundra",
+    "why": "orbit dropped"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "لم يصل إلى الفضاء",
+    "replace": "لم يصل إلى المدار",
+    "why": "never to orbit, not never to space"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "change",
+    "find": "منصة قطبية",
+    "replace": "منصة المدار القطبي",
+    "why": "orbit dropped"
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-43.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "عالية الانحراف",
+    "replace": "عالية الميل",
+    "why": "الانحراف is deviation; binding الميل"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "لقاء محطة الفضاء الدولية",
+    "replace": "الالتقاء بمحطة الفضاء الدولية",
+    "why": "binding الالتقاء"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "description",
+    "term": "docking",
+    "decision": "change",
+    "find": "7 من 9 مهام Shuttle-Mir",
+    "replace": "7 من 9 مهام التحام Shuttle-Mir",
+    "why": "docking dropped"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "stem gap: والتقت"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "keep",
+    "why": "stem gap: تلتقي"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "موعد اللقاء مع Psyche",
+    "replace": "موعد الالتقاء مع Psyche",
+    "why": "binding الالتقاء"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "وتستفيد من جاذبية المريخ",
+    "replace": "وتعتمد على مساعدة جاذبية المريخ",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/rosetta.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "مهمة موعد ESA مع المذنب",
+    "replace": "مهمة ESA للالتقاء بالمذنب",
+    "why": "موعد is appointment; binding الالتقاء"
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "الالتحام التلقائي",
+    "replace": "الالتقاء التلقائي",
+    "why": "rendezvous, not docking"
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "نظام الملاقاة",
+    "replace": "نظام الالتقاء",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "best_known_for",
+    "term": "docking",
+    "decision": "change",
+    "find": "فشل Soyuz 15",
+    "replace": "فشل Soyuz 15 في الالتحام الآلي",
+    "why": "docking dropped"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "عبر الأرض-الزهرة-الأرض-الأرض",
+    "replace": "عبر مساعدات الجاذبية: الأرض-الزهرة-الأرض-الأرض",
+    "why": "gravity assists omitted"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "دلتا-v",
+    "replace": "دلتا-في",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "بعد استنزاف الوقود",
+    "replace": "بعد استنزاف الوقود الدافع",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "الإدراج المباشر في المدار",
+    "replace": "الدخول في المدار مباشرة",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "إدراج مدار عطارد",
+    "replace": "الدخول في مدار عطارد",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning LOX/LH2 = combustion (تحترق)"
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned LOX/RP-1 = combustion (احترقت)"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "عمليات الدخول والهبوط",
+    "replace": "عمليات إشعال الدخول والهبوط",
+    "why": "entry and landing burns = engine firings; burn dropped"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning excess oxidiser = combustion (احتراق)"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "hydrogen-burning engines = combustion (يعملان بالهيدروجين)"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "الإدخال المداري",
+    "replace": "الدخول في المدار",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning propellant = combustion (تحرق)"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "term": "propellant",
+    "decision": "change",
+    "find": "طناً من الوقود",
+    "replace": "طناً من الوقود الدافع",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "methane-burning = combustion"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned storable liquids = combustion (أحرق)"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "dispatch",
+    "term": "propellant",
+    "decision": "change",
+    "find": "والهواء والوقود",
+    "replace": "والهواء والوقود الدافع",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "والهواء والوقود",
+    "replace": "والهواء والوقود الدافع",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "خزانات الوقود",
+    "replace": "خزانات الوقود الدافع",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "من دافع الهيدروجين",
+    "replace": "من الوقود الدافع الهيدروجيني",
+    "why": "bare دافع is not the binding"
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "لاختيار الوقود",
+    "replace": "لاختيار الوقود الدافع",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "كلا الدافعين",
+    "replace": "كلا الوقودين الدافعين",
+    "why": "bare دافع is not the binding"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "أي دافع غير محترق",
+    "replace": "أي وقود دافع غير محترق",
+    "why": "bare دافع is not the binding"
+  },
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "اختيار الوقود",
+    "replace": "اختيار الوقود الدافع",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/rl10.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "يتدفق الدافع",
+    "replace": "يتدفق الوقود الدافع",
+    "why": "bare دافع is not the binding"
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "زوج الوقود",
+    "replace": "زوج الوقود الدافع",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/viking.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "مزيج وقود ذاتي",
+    "replace": "مزيج وقود دافع ذاتي",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "من وقود الكيروسين",
+    "replace": "من الوقود الدافع الكيروسيني",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "على الوقود القابل",
+    "replace": "على الوقود الدافع القابل",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "بنظام وقود محسّن",
+    "replace": "بنظام وقود دافع محسّن",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launcher/h-iia.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "يعمل بالوقود السائل",
+    "replace": "يعمل بالوقود الدافع السائل",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "بدفع سائل",
+    "replace": "بوقود دافع سائل",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "change",
+    "find": "لمرحلة الدفع وحدها",
+    "replace": "للمعزِّز وحده",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "من الوقود الإضافي",
+    "replace": "من الوقود الدافع الإضافي",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "بوقود سائل",
+    "replace": "بوقود دافع سائل",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "صاروخ سائل متعدد المراحل الثلاث",
+    "replace": "صاروخ ثلاثي المراحل بوقود دافع سائل",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "كمية وقود أكبر",
+    "replace": "كمية وقود دافع أكبر",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "dispatch",
+    "term": "propellant",
+    "decision": "change",
+    "find": "الوقود والهواء",
+    "replace": "الوقود الدافع والهواء",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "change",
+    "find": "فشل محرك",
+    "replace": "فشل معزِّز",
+    "why": "booster rendered as engine"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "لرصد هالي",
+    "replace": "للتحليق القريب من هالي",
+    "why": "flyby dropped"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "tagline",
+    "term": "flyby",
+    "decision": "change",
+    "find": "أول مريخ ناجح يطير",
+    "replace": "أول تحليق قريب ناجح من المريخ",
+    "why": "garbled; binding"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "أول مريخ ناجح يطير",
+    "replace": "أول تحليق قريب ناجح من المريخ",
+    "why": "garbled; binding"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "dispatch",
+    "term": "flyby",
+    "decision": "change",
+    "find": "بدلاً من الطيران بسرعة",
+    "replace": "بدلاً من التحليق بجانبه",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "dispatch",
+    "term": "flyby",
+    "decision": "change",
+    "find": "الرحلات السريعة كلياً",
+    "replace": "عمليات التحليق القريب كلياً",
+    "why": "flybys rendered as fast trips"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "dispatch",
+    "term": "flyby",
+    "decision": "change",
+    "find": "أي رحلة سريعة أن ترى",
+    "replace": "أي تحليق قريب أن يرى",
+    "why": "flyby rendered as fast trip"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "طيران قريب",
+    "replace": "تحليق قريب",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "انحرفت المركبة عند اقترابها من المشتري",
+    "replace": "انحرفت المركبة عند تحليقها القريب من المشتري",
+    "why": "الاقتراب (approach) is wrong; binding"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "لإدراج مباشر حول سيريس وعطارد",
+    "replace": "للدخول في مدار سيريس وعطارد مباشرة",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "إدراج المدار",
+    "replace": "الدخول في المدار",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "عند العودة",
+    "replace": "عند العودة إلى الغلاف الجوي",
+    "why": "atmosphere dropped"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "يفشل عند العودة",
+    "replace": "يفشل عند العودة إلى الغلاف الجوي",
+    "why": "atmosphere dropped"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "والعودة من القمر",
+    "replace": "والعودة إلى الغلاف الجوي من القمر",
+    "why": "atmosphere dropped"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "tagline",
+    "term": "entry",
+    "decision": "change",
+    "find": "فقد عند العودة",
+    "replace": "فقد عند العودة إلى الغلاف الجوي",
+    "why": "atmosphere dropped"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "حرارة العودة",
+    "replace": "حرارة الدخول في الغلاف الجوي",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "فُقد عند العودة",
+    "replace": "فُقد عند العودة إلى الغلاف الجوي",
+    "why": "atmosphere dropped"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "best_known_for",
+    "term": "entry",
+    "decision": "change",
+    "find": "عند عودة STS-107",
+    "replace": "عند عودة STS-107 إلى الغلاف الجوي",
+    "why": "atmosphere dropped"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "keep",
+    "why": "stem gap: العودة عبر الغلاف الجوي"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "للإطلاق والعودة",
+    "replace": "للإطلاق والدخول في الغلاف الجوي",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "والعودة إلى الأرض",
+    "replace": "والدخول في الغلاف الجوي",
+    "why": "'return to Earth' is not atmospheric entry"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "أثناء الانحدار",
+    "replace": "أثناء الهبوط",
+    "why": "الانحدار is slope; binding"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "keep",
+    "why": "stem gap: نزول (same word as accepted النزول, no article)"
+  }
+]

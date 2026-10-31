@@ -1,0 +1,1226 @@
+[
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Voskhod 1 fu il primo volo a portare nello spazio più di una persona, e ci riuscì per sottrazione. Nella Vostok monoposto non c'era spazio per un equipaggio di tre persone, quindi gli ingegneri tolsero delle cose — i seggiolini eiettabili che avevano salvato ogni cosmonauta precedente e, poiché anche così era troppo stretto, le tute pressurizzate. Komarov, Feoktistov e Egorov volarono per un giorno in maniche di camicia, senza alcun modo di sfuggire a un'emergenza al lancio o all'ingresso atmosferico e senza protezione se la cabina avesse perso aria. Nulla andò storto, quindi sembrò un trionfo. In realtà era una scommessa — che i compromessi accettati per ottenere un primato non sarebbero stati quelli decisivi — e la scommessa, per puro caso, fu vinta.",
+    "note": "reentry not rendered as bound ingresso atmosferico"
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "tense",
+    "new": "InSight ha regalato a Marte il suo primo stetoscopio. Il suo sismometro, posato da un braccio robotico sulla regolite, ha registrato oltre 1.300 martemoti, incluso uno di magnitudo 5 nel 2022, il più forte mai rilevato su un altro pianeta. I dati hanno rivelato la struttura interna di Marte: un nucleo fuso con un raggio di 1.800 km, una crosta spessa e una sorprendente stratificazione del mantello. L'esperimento della talpa per il flusso di calore è fallito perché la regolite si è rivelata troppo coesa per il suo meccanismo ad auto-martellamento. La missione è terminata quando l'accumulo di polvere sui pannelli solari ha ridotto la potenza sotto la soglia operativa.",
+    "note": "mixed tenses, English design, clumsy compound"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "delta_v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Il volo di 22 orbite di Gordon Cooper — ultima missione Mercury e ultimo volo spaziale americano in solitaria di sempre (tutti i programmi statunitensi successivi inviarono equipaggi di più persone). Durata 34 h 19 min — più di tutti i precedenti voli Mercury messi insieme. Cooper condusse osservazioni della Terra, scattò fotografie e mangiò il primo pasto nello spazio. A missione avanzata un guasto all'alimentazione costrinse al controllo manuale di tutto l'assetto e dell'accensione dei retrorazzi — Cooper usò i segni di allineamento dipinti sul finestrino contro l'orizzonte terrestre per orientarsi, ottenendo l'ammaraggio più preciso di qualsiasi volo Mercury (~7 km dal bersaglio). La capsula Faith 7 è esposta allo Space Center Houston, TX.",
+    "note": "truncated retro-fire, clumsy multi-crew phrase"
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "La prima fase del Programma cinese di esplorazione lunare (CLEP) e la prima missione della CNSA oltre la Terra. Lanciata il 2007-10-24 dal Centro di lancio satellitare di Xichang su un razzo Long March 3A, Chang'e 1 (dal nome della dea lunare del folclore cinese) è entrata in un'orbita lunare polare circolare a 200 km il 2007-11-07. Portava 8 strumenti — una camera stereo CCD, un altimetro laser, uno spettrometro per immagini, spettrometri a raggi gamma e a raggi X, un radiometro a microonde, un rivelatore del vento solare e un rivelatore di particelle ad alta energia. Ha prodotto la prima mappa topografica globale della Luna della Cina, con risoluzione di 120–200 m, e mappe dell'abbondanza degli elementi Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. La missione è stata conclusa deliberatamente il 2009-03-01 con un impatto controllato a 1,50° S, 52,36° E nel Mare Fecunditatis — il primo oggetto cinese sulla superficie lunare, che ha aperto la strada a Chang'e 3 (atterraggio sulla superficie nel 2013) e Chang'e 5 (ritorno di campioni nel 2020). Ha operato per 16 mesi — 4 oltre il previsto.",
+    "note": "\"Operato per\", calques, Long March gender"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Primo veicolo spaziale in orbita attorno a un altro pianeta",
+    "note": "\"orbitare\" used transitively"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Se Apollo 11 aveva dimostrato che si poteva raggiungere la Luna, Apollo 12 dimostrò che si poteva raggiungere un punto preciso su di essa. Trentasei secondi dopo il lancio un fulmine colpì il razzo e mise fuori uso gli strumenti della navicella; un controllore di ventiquattro anni, John Aaron, ripescò dalla memoria una correzione poco nota — «SCE to AUX» — e il volo proseguì. Poi Conrad e Bean posarono il loro Modulo Lunare sull'Oceano delle Tempeste a poche centinaia di piedi da una sonda che si trovava lì da due anni, la raggiunsero a piedi e ne riportarono a casa dei pezzi. Quella precisione fu il vero risultato: la Luna aveva smesso di essere una destinazione ed era diventata un indirizzo.",
+    "note": "English left in, calques \"oscura\", \"mise offline\""
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Gemini 7 rispose alla domanda meno affascinante ma più fondamentale: un equipaggio poteva sopravvivere quanto dura un viaggio verso la Luna e ritorno? Frank Borman e Jim Lovell trascorsero quattordici giorni chiusi in una cabina grande quanto il sedile anteriore di un'auto piccola — senza spazio per stare in piedi, stiracchiarsi o sfuggirsi a vicenda — per dimostrare che il corpo e la mente umani potevano reggere. Fu noioso e fisicamente penoso, e funzionò: tornarono in salute, mettendo a tacere il timore che i voli spaziali lunghi fossero impossibili. Per giunta fecero da bersaglio per il rendezvous di Gemini 6A, così quell'unico volo dimostrò in sordina due dei prerequisiti di Apollo in una volta sola — che gli esseri umani potevano reggere la distanza, e che due veicoli potevano incontrarsi.",
+    "note": "calques \"miserabile\", \"silenziosamente\", tense mix"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "date",
+    "new": "Allunaggio morbido a Oceanus Procellarum 1966-02-03 18:45 UTC. Primo allunaggio morbido su un altro mondo.",
+    "note": "date not ISO as in English"
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "Prima comunicazione vocale tra due veicoli spaziali con equipaggio.",
+    "note": "\"abitati\" for crewed"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Primo sorvolo di Plutone e delle sue lune; le immagini più nitide di un mondo della fascia di Kuiper",
+    "note": "definite article for \"a Kuiper belt world\""
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Faith 7 chiuse Mercury, e lo fece nel modo più difficile. Gordon Cooper volò ventidue orbite nell'arco di un giorno e mezzo — più a lungo di tutti i precedenti voli Mercury messi insieme — e poi, nelle ore finali, il suo sistema di controllo automatico si guastò. Così pilotò a mano l'ingresso atmosferico, allineando la capsula rispetto all'orizzonte e alle stelle e accendendo i retrorazzi su un conto scandito a voce, e la fece ammarare più vicino alla nave di qualsiasi volo precedente. Fu l'ultima volta che un americano volò da solo nello spazio, e un'ultima parola degna di un programma costruito da piloti collaudatori: quando l'automazione cedette, il pilota la riportò a casa.",
+    "note": "reentry not bound ingresso atmosferico; clumsy count phrase"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Isaacman + Gillis sono usciti dal portello della cabina nel vuoto — prima passeggiata spaziale commerciale.",
+    "note": "\"vacuum\" rendered as space"
+  },
+  {
+    "rel": "missions/earth/freedom-7.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "2 membri dell'equipaggio passano sul lander; discesa propulsa verso il polo sud lunare.",
+    "note": "\"motorizzata\" for powered descent"
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "english",
+    "new": "Proton-M da Bajkonur 2016-03-14. Complesso TGO + Schiaparelli.",
+    "note": "\"Stack\" left in"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong term",
+    "new": "Apollo-Soyuz è il punto in cui la corsa allo spazio finisce — non su un traguardo, ma con una stretta di mano. Nel luglio 1975 un Apollo americano e un Soyuz sovietico, i veicoli spaziali rivali delle superpotenze rivali, si incontrarono e si agganciarono in orbita, e Tom Stafford e Aleksej Leonov si strinsero la mano attraverso il portello aperto tra i due veicoli. Servirono un adattatore di aggancio costruito congiuntamente, due equipaggi che imparavano la lingua l'uno dell'altro e un disgelo della Guerra Fredda abbastanza profondo da permettere ai più agguerriti concorrenti dell'epoca di cooperare sotto gli occhi del mondo. Nulla di tutto ciò era strettamente necessario; era proprio questo il punto. Dopo diciotto anni di corsa per arrivare primi, i due programmi scelsero, per un volo, di limitarsi a incontrarsi — e fissarono il modello della cooperazione internazionale che un giorno avrebbe costruito la Stazione Spaziale.",
+    "note": "\"si aggiunsero\" for docked; attracco not aggancio"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "date",
+    "new": "L'apice del programma sovietico Venera. Venera 13 fu lanciata il 1981-10-30 e atterrò il 1982-03-01 a 7,5°S 303°E negli altopiani di Phoebe Regio. Condizioni in superficie all'atterraggio: 457 °C, 89 bar, foschia di acido solforico. Il lander sopravvisse 127 minuti — quasi un'ora oltre il suo obiettivo di progetto — restituendo le prime panoramiche a colori della superficie di un altro pianeta, registrando l'audio del vento con un microfono e usando il suo trapano e uno spettrometro a fluorescenza X di bordo per determinare che il basalto del sito di atterraggio aveva una composizione alcalina a leucite, debolmente differenziata. La sonda gemella Venera 14 eseguì operazioni identiche in un altro sito cinque giorni dopo. La serie Venera (1967–1983) resta a oggi l'unico programma di superficie riuscito su Venere.",
+    "note": "non-ISO dates, touchdown left in"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "delta_v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Iniezione trans-lunare diretta con lo stadio superiore dell'LM-3B.",
+    "note": "\"nello stadio\" means into the stage, not via it"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Arriva a Bennu; mantiene la posizione a ~19 km e poi stringe progressivamente l'orbita fino a un record di ~1,4 km — la più vicina orbita di un veicolo spaziale attorno a qualsiasi corpo celeste.",
+    "note": "tightening orbit rendered as approaching"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Scambio di bandiere e doni; esperimenti congiunti; 2 agganci nell'arco di ~44 ore agganciati.",
+    "note": "attracco instead of bound aggancio"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "Il retrorazzo TDU-1 si accende per l'uscita dall'orbita. Il sistema di separazione del modulo di servizio si guasta in parte — le cinghie si sganciano in ritardo e la capsula rotola su sé stessa per ~10 min.",
+    "note": "truncated \"retrorazz\", non-words cinghioni/tumula"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Spirit fu costruito per novanta giorni e funzionò per sei anni. Uno di una coppia di geologi grandi quanto un carrello da golf, atterrato nel 2004, fu inviato a leggere le rocce in cerca di prove di un passato marziano più umido — e le trovò, scoprendo minerali che si formano solo in presenza di acqua e, in un punto, depositi di silice simili a quelli lasciati dalle sorgenti termali sulla Terra. Scalò colline che nessuno aveva previsto che raggiungesse e sopravvisse a inverni che non era mai stato progettato per vedere, finché una ruota cedette e il rover rimase impantanato nella sabbia soffice. Continuò a trasmettere dal punto in cui era bloccato, finché il freddo marziano non lo fermò definitivamente.",
+    "note": "\"ha sopravvissuto\", mixed auxiliaries and tenses"
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.8.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "vehicle_stage",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Gemini 4 è ricordata per una sola fotografia: Ed White, collegato alla navicella da un cordone ombelicale dorato, che fluttua sopra una Terra blu con una pistola di manovra in mano — il primo americano a camminare nello spazio. Il momento fu così esaltante che, quando dopo venti minuti il Controllo Missione gli ordinò di rientrare, White lo definì il momento più triste della sua vita. La passeggiata spaziale sembrò senza sforzo e in gran parte lo fu, perché White andava alla deriva libero invece di lavorare — la dura verità che l'EVA è un lavoro estenuante sarebbe emersa solo nei voli successivi. Ma per un paese che era rimasto indietro rispetto ai sovietici, che avevano compiuto la prima passeggiata spaziale undici settimane prima, era la prova che anche l'America poteva farcela, e l'immagine divenne una delle fotografie simbolo dell'epoca.",
+    "note": "\"stretto i denti agli inseguimenti\" nonsense; maneuvering gun wrong"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "delta_v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong term",
+    "new": "Primo e unico atterraggio morbido nel sistema solare esterno — discesa con il paracadute attraverso l'atmosfera di Titano il 2005-01-14",
+    "note": "allunaggio used for Titan; date not ISO"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "punctuation",
+    "new": "Il primo volo con equipaggio del programma Artemis e la scintilla da cui nacque Orrery. Il 1° aprile 2026 l'SLS Block 1 della NASA ha lanciato una navicella Orion con quattro astronauti — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) e Jeremy Hansen (MS) della CSA — su una traiettoria di ritorno libero che li ha fatti girare attorno al lato nascosto della Luna a circa 6.500 km dalla superficie e li ha riportati a casa senza alcuna accensione di inserimento in orbita lunare. A 406.771 km dalla Terra hanno viaggiato più lontano di qualsiasi essere umano prima di loro, battendo il record dell'Apollo 13 del 1970. Dopo un volo di 9 giorni, Orion è ammarato nel Pacifico al largo di San Diego il 10 aprile. Il volo ha qualificato supporto vitale, navigazione e scudo termico di Orion per le missioni con equipaggio in vista del primo allunaggio, ora previsto con Artemis IV.",
+    "note": "hyphen separators instead of em dash; \"oscillare\""
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) usò sei fionde gravitazionali nell'arco di sette anni — Terra, Venere due volte, Mercurio tre volte — per rallentare e inserirsi in orbita attorno a Mercurio il 2011-03-18. Protetta da un parasole, con un lato a 370 °C e l'altro a -45 °C. Tra le scoperte: ghiaccio d'acqua nei crateri polari in ombra permanente, le «cavità» (hollows), formazioni geologiche fino ad allora sconosciute, e la conferma che il nucleo di ferro di Mercurio occupa circa l'85 % del raggio del pianeta (il più alto rapporto nucleo-raggio tra i pianeti del sistema solare). La missione terminò con un impatto controllato sulla superficie di Mercurio il 2015-04-30, dopo l'esaurimento del carburante.",
+    "note": "sunshade rendered as heat shield; \"il 85 %\""
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "date",
+    "new": "Il modulo lunare Challenger atterra nella valle Taurus-Littrow 1972-12-11 19:54 UTC.",
+    "note": "English Lunar Module, non-ISO date"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "non-word",
+    "new": "Conrad + Bean raggiungono a piedi Surveyor 3 (~163 m di distanza), ne rimuovono la telecamera TV + campioni da riportare sulla Terra — prima volta che un equipaggio visitava una sonda robotica già atterrata.",
+    "note": "\"allunata\" non-word"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Neil Armstrong e David Scott realizzarono il primo aggancio di due veicoli spaziali — con un veicolo bersaglio Agena — il 16 marzo 1966. Un propulsore di assetto rimasto bloccato provocò poi una violenta rotazione incontrollata; Armstrong si sganciò e usò il sistema di controllo dell'ingresso atmosferico per riprendere il controllo, costringendo a un atterraggio d'emergenza dopo 10 h 41 m. Fu il primo volo spaziale di Armstrong.",
+    "note": "entry-control system not bound; English \"target\""
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Iniezione trans-lunare tramite orbita terrestre di parcheggio + orbite di fasatura.",
+    "note": "\"orbita parcheggio\", \"orbite di fase\""
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "2000-02-14: primo veicolo spaziale in orbita attorno a un asteroide; 12 mesi di scienza in orbita.",
+    "note": "non-ISO date; \"orbitare\" transitive"
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Il primo volo con equipaggio della navicella Soyuz, lanciato il 23 aprile 1967 con Vladimir Komarov a bordo. Il veicolo, costruito in fretta, subì guasti a cascata in orbita — un pannello solare non dispiegato, problemi al controllo d'assetto — e la missione fu interrotta in anticipo. All'ingresso atmosferico il paracadute stabilizzatore si aprì, ma il paracadute principale non si aprì correttamente; il modulo di discesa toccò il suolo a una velocità prossima a quella terminale e Komarov morì — la prima vittima in volo nella storia dei voli spaziali.",
+    "note": "reentry not bound; \"fu ucciso\""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "vehicle",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "english",
+    "new": "Il volo di 3 orbite di John Glenn — primo americano in orbita attorno alla Terra, 10 mesi dopo Gagarin e 4 mesi dopo Titov. Orbita: 159 × 265 km, inclinazione 32,5°. Un indicatore di allarme sullo scudo termico nel controllo missione suggerì che lo scudo potesse essere allentato — per sicurezza il pacco dei retrorazzi fu lasciato attaccato durante l'ingresso atmosferico, e questo diede origine alla celebre osservazione di Glenn sulle «lucciole» mentre frammenti del pacco dei retrorazzi si consumavano davanti al finestrino. Ammaraggio a 1287 km a sud-est di Cape Canaveral, 4 h 55 min dopo il lancio. Glenn tornò nello spazio 36 anni più tardi con la STS-95 (1998), a 77 anni. Friendship 7 è esposta al National Air and Space Museum, Washington DC.",
+    "note": "English \"fireflies\", \"retropack\"; reentry not bound"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong term",
+    "new": "2005-01-14: scudo termico, tre stadi di paracadute, discesa di 2,5 ore, atterraggio in superficie — primo atterraggio morbido nel sistema solare esterno.",
+    "note": "allunaggio used for Titan; date not ISO"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "non-word",
+    "new": "Il seguito di DART firmato ESA — rilievo dell'asteroide Didymos deviato",
+    "note": "\"deflesso\" non-word, awkward \"seguito a\""
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "english",
+    "new": "Atterraggio morbido al cratere Shioli 2024-01-19 15:20 UTC. Entro la precisione prevista: ~55 m fuori centro.",
+    "note": "\"target\" left in"
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Il terzo allunaggio con equipaggio e il secondo volo di Alan Shepard — che ne fece sia il primo americano nello spazio (Freedom 7, 1961) sia il quinto uomo sulla Luna, e a 47 anni il più anziano tra chi ha camminato sulla Luna. Apollo 14 fu la missione di recupero dopo l'allunaggio annullato dell'Apollo 13, e ne rilevò l'obiettivo previsto, gli altopiani di Fra Mauro. Shepard e Mitchell installarono l'ALSEP, completarono due EVA per un totale di 9 h 23 m e trainarono il trasportatore modulare di attrezzature (MET, un carrello in stile risciò — il LRV era ancora a una missione di distanza) verso il cratere Cone, anche se si fermarono a circa 30 m dal bordo a causa dell'incertezza di navigazione nel terreno butterato di crateri. Negli ultimi minuti dell'EVA-2 Shepard improvvisò la testa di una mazza da golf, un ferro 6, su un manico per la raccolta di campioni e colpì due palline da golf «per miglia e miglia e miglia» (una fu analizzata in seguito dalle immagini: circa 24 m e circa 37 m). Stuart Roosa portò semi di alberi nel Kitty Hawk, da cui nacquero i «Moon Trees» piantati in tutti gli Stati Uniti. Riportati 42 kg di campioni.",
+    "note": "miles rendered as kilometres; English left in; grammar slips"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "english",
+    "new": "2027-08. Primo incontro con un troiano. Asteroide di tipo C di 64 km + luna di 1 km.",
+    "note": "English \"C-type\", capitalised Troiano"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "tense",
+    "new": "Leonov esce dall'eclusa Volga 1965-03-18 11:34 UTC; prima EVA umana. 12 min all'esterno; la tuta si gonfiò nel vuoto ed egli ne sfiatò la pressione per rientrare.",
+    "note": "tense shift, \"ridotto la pressione\""
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "english",
+    "new": "Prima missione planetaria congiunta Europa + Giappone; secondo veicolo spaziale in orbita attorno a Mercurio (dopo Messenger)",
+    "note": "\"spacecraft\" left in"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "english",
+    "new": "Toccata a terra con retrorazzo di atterraggio morbido vicino a Marevka il 1964-10-13 07:47 UTC.",
+    "note": "left entirely in English"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong term",
+    "new": "Lo stadio di discesa di Spider è stato fatto uscire dall'orbita (rientrato nel marzo 1969, Oceano Indiano); lo stadio di ascesa è stato acceso fino all'esaurimento e spinto in un'orbita alta — è decaduto nel 1981.",
+    "note": "deorbited as \"disattivato\"; \"si è decaduto\""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Il primo dei gemelli Mars Exploration Rover; il rover più longevo finché non fu superato da Curiosity",
+    "note": "\"rover Mars Exploration Rover\" repetition"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Prima delle tre fionde gravitazionali con la Terra per acquisire velocità in vista del rendezvous con la cometa.",
+    "note": "\"Primo dei tre fionde\" gender; rendez-vous"
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Bean, Garriott e Lousma — il secondo equipaggio a vivere a bordo di Skylab, per 59 giorni e 11 ore. Lanciati il 1973-07-28 alle 11:11 UTC su un Saturn IB (SA-207). A poche ore dall'aggancio, il modulo di servizio del CSM subì una perdita a un propulsore di controllo d'assetto — il CSM-119 di riserva fu preparato a Cape Canaveral per una possibile missione di salvataggio, ma l'equipaggio portò a termine la missione senza problemi. Garriott guidò 305 ore di osservazioni solari con gli strumenti dell'Apollo Telescope Mount. Con tre EVA l'equipaggio dispiegò uno scudo solare a doppia asta sopra il parasole originale, riparò il pacco di giroscopi di velocità e recuperò dall'ATM i caricatori di pellicola. Ammararono il 1973-09-25 alle 22:19 UTC; il CSM-117 è esposto al Glenn Visitor Center, Cleveland.",
+    "note": "subject agreement slips, added CSM-117"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "english",
+    "new": "Decolla da Cape Canaveral LC-36; il primo stadio rientra per il recupero lungo la rotta di volo.",
+    "note": "\"downrange\" left in"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "L'architettura a lungo termine di SpaceX per portare equipaggi su Marte, come delineata nelle presentazioni di Elon Musk allo IAC del 2016, 2017 e 2024. Una Starship decolla dalla Terra, viene rifornita di propellente in orbita terrestre bassa da una flotta di voli cisterna, esegue l'iniezione transmarziana e fa atterrare sulla superficie marziana un equipaggio di circa 10 persone con carico e attrezzature ISRU. Il propellente per il viaggio di ritorno (metano + ossigeno liquido) viene prodotto su Marte a partire dalla CO₂ atmosferica e dal ghiaccio d'acqua del sottosuolo con il processo Sabatier, permettendo alla stessa Starship di decollare di nuovo, eseguire l'iniezione trans-terrestre e riportare l'equipaggio. La durata del viaggio di andata e ritorno dipende dalla finestra di lancio e dalla permanenza in superficie; la sequenza temporale illustrativa qui mostrata è di ~2,5 anni porta a porta (213 giorni di andata, ~500 giorni di permanenza in superficie, ritorno nella successiva finestra favorevole). L'architettura è concettuale: data e parametri sono soggetti a revisione sostanziale in attesa della maturazione di Starship e della convalida ISRU.",
+    "note": "Starship name rendered as \"astronave\"; \"gamba di ritorno\""
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Ingresso atmosferico, paracadute supersonico, retrorazzi della sky crane, rover calato su cavi.",
+    "note": "\"razzi retroattivi\"; entry not bound"
+  },
+  {
+    "rel": "missions/earth/skylab-2.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "date",
+    "new": "Cassini (con Huygens ancora attaccata) catturata in orbita attorno a Saturno il 2004-07-01.",
+    "note": "date not ISO"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "delta_v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/artemis3.json",
+    "at": "payload",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Orion + equipaggio di 4 persone; rendezvous e aggancio con la Starship apripista e i lander Blue Moon in orbita terrestre bassa",
+    "note": "rendez-vous hyphenated; English \"pathfinder\""
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "english",
+    "new": "Troiano di tipo P di 21 km con un satellite senza nome.",
+    "note": "English \"P-type\", capitalised Troiano"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "english",
+    "new": "2020-10-20. Il braccio Touch-and-Go affonda per 50 cm nella superficie a «cumulo di detriti»; raccoglie 121,6 g.",
+    "note": "\"rubble-pile\" left in English"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "vehicle",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Settimo volo dell'X-37B — il primo verso un'orbita altamente ellittica (HEO) e il primo lanciato con Falcon Heavy. Lanciato il 2023-12-29 01:07 UTC da KSC LC-39A; entrambi i booster laterali recuperati a LZ-1 / LZ-2, mentre il nucleo centrale è stato sacrificato per fornire l'energia di inserimento in HEO. La traiettoria HEO ha portato l'OTV, all'apogeo, circa all'altitudine della fascia GEO. Ha eseguito una sequenza controllata di uscita dall'orbita in stile aerobraking (l'USSF ha pubblicato un aggiornamento sulla manovra, uno scostamento deliberato, in nome della trasparenza, rispetto ai voli precedenti, che erano classificati). Atterrato a Vandenberg Space Force Base il 2025-03-07 09:22 UTC.",
+    "note": "\"transparency departure\" garbled; expended core lost"
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "23:14 UTC. ~6,6 km/s. Variazione del periodo orbitale di 33 min — prima deviazione di un asteroide da parte dell'uomo.",
+    "note": "\"allontanamento\" for deflection"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Seconda metà del primo volo doppio — prime comunicazioni tra due veicoli spaziali con equipaggio",
+    "note": "\"Secondo di primo volo\" ungrammatical; \"abitati\""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.7.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "Sgancio del MTM + separazione dell'orbiter; le operazioni scientifiche iniziano a inizio 2027.",
+    "note": "\"Scarico\" for jettison"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "Atlas V 541 decolla da Cape Canaveral SLC-41.",
+    "note": "\"si lancia\" for lifts off"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "vehicle_stage",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Proton-M con stadio superiore Briz-M; ExoMars 2016 lanciata con TGO e Schiaparelli insieme",
+    "note": "wrong subject: ExoMars launched, not launching"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.10.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Manovra di assestamento in avvicinamento che mira con precisione al periapside della MOI.",
+    "note": "garbled \"pin-targets\""
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "date",
+    "new": "Il modulo lunare Eagle atterra al Mare Tranquillitatis 1969-07-20 20:17:40 UTC.",
+    "note": "date not ISO"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "correct and natural"
+  }
+]

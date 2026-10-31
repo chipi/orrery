@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "A segunda lição é que o ressuprimento é o que torna uma estação real. Skylab, brilhante e efêmera, nunca foi ressuprimida ou reimpulsionada, e decaiu assim que foi deixada sozinha. A insistência da Salyut em resolver o reabastecimento e o ressuprimento — a segunda porta de acoplagem, o cargueiro Progress — é exatamente o que permitiu que suas estações posteriores fossem ocupadas por anos em vez de semanas. Uma presença permanente no espaço não é uma questão de construir uma espaçonave maior; é uma questão de construir a cadeia logística sem glamour que mantém uma modesta continuamente viva."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — órbitas, encontros e bases de lançamento",
+    "/fleet?focus=salyut-6": "Frota — as estações Salyut"
+  }
 }

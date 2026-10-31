@@ -78,5 +78,9 @@
       "type": "prose",
       "md": "The second lesson is what a stopgap is for, and what it isn't. Voskhod did exactly one thing well — it bought time and two more firsts while the real next-generation spacecraft was being built. That's a legitimate use of improvised hardware. The mistake would have been to keep flying it, chasing headlines past the point where the margin ran out — and to Korolev's credit, he read the near-disaster correctly and stopped. Knowing when a stopgap has done its job is as important as building one."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Earth — orbits & launch sites",
+    "/science/mission-phases/edl": "Entry, descent & landing"
+  }
 }

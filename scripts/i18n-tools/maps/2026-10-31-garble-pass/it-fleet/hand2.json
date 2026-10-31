@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "tagline",
+    "find": "50000 immagini di superficie a",
+    "replace": "50000 immagini a"
+  }
+]

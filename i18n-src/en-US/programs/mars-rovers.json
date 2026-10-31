@@ -28,5 +28,14 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of the Mars rovers is that mobility changes everything. A lander studies where it falls; a rover studies where it chooses to go. By making the instrument move, the program turned a single landing site into an entire planet's worth of geology — a reminder that on any frontier, the ability to go and look for yourself is worth more than any amount of fixed observation." },
     { "type": "prose", "md": "The deeper lesson is that great capability is built in steps, not leaps. Perseverance's sample-caching sophistication was unimaginable in Sojourner's day; it became possible only because each rover earned the next. Ambitious ends are usually reached not by a single decisive mission but by a patient lineage, each member proving enough to justify the one that follows — progress as a relay, not a sprint." }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — the rovers' world",
+    "/programs/viking": "Viking — the landers that came before the wheels",
+    "/mars?site=mars-pathfinder": "Sojourner — Ares Vallis",
+    "/mars?site=spirit": "Spirit — Gusev Crater",
+    "/mars?site=opportunity": "Opportunity — Meridiani Planum",
+    "/mars?site=curiosity": "Curiosity — Gale Crater",
+    "/mars?site=perseverance": "Perseverance — Jezero Crater"
+  }
 }

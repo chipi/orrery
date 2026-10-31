@@ -28,5 +28,10 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Sputnik is that firsts are won by whoever is ready, not by whoever is best. The Soviets had the better satellite waiting on the ground; they launched the lesser one because it could go now, and being first turned out to matter more than any instrument Object D could have carried. When the prize is a first, readiness beats perfection." },
     { "type": "prose", "md": "The deeper lesson is that the most powerful thing a machine can do is be witnessed. Sputnik changed the world not through what it measured but through what it demonstrated — visibly, audibly, to everyone at once. Some achievements matter because of the data they return; this one mattered because the whole planet could hear that it was there." }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Earth — the world it first circled",
+    "/programs/vostok": "Vostok — the first humans follow",
+    "/posters": "The Sputnik poster"
+  }
 }

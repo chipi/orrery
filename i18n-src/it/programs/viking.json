@@ -80,5 +80,12 @@
       "type": "prose",
       "md": "La lezione più profonda è il valore di provare l'intera catena. Il dono duraturo di Viking non fu una singola misurazione ma la dimostrazione che raggiungere Marte e atterrare intatti era possibile e ripetibile. Una volta che una cosa difficile è stata fatta — e fatta due volte — smette di essere una scommessa e diventa una fondazione su cui altri possono costruire. A volte il risultato più grande che una missione restituisce è semplicemente che si può fare."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Marte — dove atterrò Viking",
+    "/programs/mariner": "Mariner — i sorvoli e gli orbiter che esplorarono Marte per primi",
+    "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
+    "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
+    "/mars?site=viking1-orbiter": "orbiter Viking 1"
+  }
 }

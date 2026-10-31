@@ -1,0 +1,4498 @@
+{
+  "apogee|de|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "engine name: Liquid Apogee Motor",
+    "tr": "31b9b9beda"
+  },
+  "apogee|hi|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "engine proper name: Liquid Apogee Motor",
+    "tr": "7e4545da7c"
+  },
+  "apogee|ja|missions/earth/liberty-bell-7.json :: events.1.note": {
+    "why": "variant: 最高点 (suborbital ballistic arc, not an orbit apogee)",
+    "tr": "b7ddea8866"
+  },
+  "apogee|ja|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "Liquid Apogee Motor is a proper engine name kept in Latin",
+    "tr": "eb7c0e663b"
+  },
+  "apogee|ko|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "Liquid Apogee Motor is a proper engine name kept in Latin",
+    "tr": "7d10028216"
+  },
+  "apogee|ru|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "Liquid Apogee Motor is a proper name left in English",
+    "tr": "08bcd9be03"
+  },
+  "apogee|zh-CN|missions/mars/mangalyaan.json :: events.3.note": {
+    "why": "engine name left in English (Liquid Apogee Motor)",
+    "tr": "4924c9f2e3"
+  },
+  "booster|ar|missions/moon/luna16.json :: description": {
+    "why": "variant: صاروخ Proton-K (launch vehicle, not a strap-on)",
+    "tr": "e017e7ce97"
+  },
+  "booster|ar|programs/spacex.json :: outcome.0.md": {
+    "why": "variant: first stage (مرحلة)",
+    "tr": "e76abaeae4"
+  },
+  "booster|de|fleet/engine/h-1.json :: best_known_for": {
+    "why": "variant: first stage (Saturn I/IB first-stage engine), word omitted naturally",
+    "tr": "1f1b030829"
+  },
+  "booster|de|fleet/launch-site/lc-34.json :: dispatch": {
+    "why": "variant: Träger (Saturn rockets in general)",
+    "tr": "e9d1a9ba0e"
+  },
+  "booster|de|fleet/launcher/atlas-lv-3b.json :: description": {
+    "why": "variant: Antriebsstufe (Atlas first-stage booster)",
+    "tr": "baa55a1398"
+  },
+  "booster|de|fleet/launcher/mercury-redstone.json :: description": {
+    "why": "variant: die Rakete allein (single-stage vehicle without capsule)",
+    "tr": "d008b9ac4c"
+  },
+  "booster|de|fleet/station/salyut-4.json :: description": {
+    "why": "variant: Trägerrakete (launch vehicle failure)",
+    "tr": "a11aced073"
+  },
+  "booster|de|missions/earth/otv-5.json :: description": {
+    "why": "variant: first stage (Falcon 9 booster recovered)",
+    "tr": "1f7b407ac4"
+  },
+  "booster|de|missions/moon/luna16.json :: description": {
+    "why": "variant: launcher (Proton-K booster)",
+    "tr": "b723c8f12f"
+  },
+  "booster|de|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: Träger (launch vehicle)",
+    "tr": "5c3f1500ec"
+  },
+  "booster|es|fleet/engine/h-1.json :: best_known_for": {
+    "why": "variant: first stage (Saturn I/IB booster = primera etapa)",
+    "tr": "4cb169f97e"
+  },
+  "booster|es|fleet/launcher/falcon-heavy.json :: best_known_for": {
+    "why": "variant: lanzador (whole vehicle)",
+    "tr": "512f104a6b"
+  },
+  "booster|es|fleet/launcher/falcon-heavy.json :: tagline": {
+    "why": "variant: lanzador (whole vehicle)",
+    "tr": "c9d1ab12f4"
+  },
+  "booster|es|fleet/launcher/soyuz-2.json :: description": {
+    "why": "variant: impulsores",
+    "tr": "afef068d08"
+  },
+  "booster|es|fleet/station/salyut-4.json :: description": {
+    "why": "variant: cohete (launch vehicle failure)",
+    "tr": "6484983e9c"
+  },
+  "booster|es|missions/moon/luna16.json :: description": {
+    "why": "variant: launcher (Proton-K booster = lanzador)",
+    "tr": "0b4d84a676"
+  },
+  "booster|es|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: cohete (launch vehicle)",
+    "tr": "69eca8ede3"
+  },
+  "booster|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "booster scale = escala de primera etapa",
+    "tr": "6ba450961c"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.0.md": {
+    "why": "variant: étage / premier étage (returned first stage)",
+    "tr": "efc7def037"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.10.md": {
+    "why": "variant: étage",
+    "tr": "d801243ab6"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.14.md": {
+    "why": "variant: étage Super Heavy",
+    "tr": "0f800a5fbb"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.16.caption": {
+    "why": "variant: étage",
+    "tr": "2f64527806"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.20.md": {
+    "why": "variant: premier étage",
+    "tr": "47fff2702d"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.21.caption": {
+    "why": "variant: étage",
+    "tr": "680f2f5786"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.23.md": {
+    "why": "variant: étage du Falcon 9",
+    "tr": "db4218f669"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.29.md": {
+    "why": "variant: étage du Falcon 9",
+    "tr": "95559ecda7"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.30.md": {
+    "why": "variant: étage",
+    "tr": "da9545f4a5"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.32.caption": {
+    "why": "variant: étage",
+    "tr": "872044e6fe"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.8.md": {
+    "why": "variant: premier étage (a Falcon 9 first-stage booster is correctly an étage; propulseur d'appoint = strap-on)",
+    "tr": "fbf3a166e9"
+  },
+  "booster|fr|essays/reusable-launchers.json :: body.9.md": {
+    "why": "variant: étage",
+    "tr": "329e6b077d"
+  },
+  "booster|fr|fleet/crewed-spacecraft/challenger.json :: dispatch": {
+    "why": "variant: propulseurs à poudre",
+    "tr": "4863ef8ee9"
+  },
+  "booster|fr|fleet/crewed-spacecraft/new-shepard.json :: description": {
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md",
+    "tr": "46b588914f"
+  },
+  "booster|fr|fleet/engine/h-1.json :: best_known_for": {
+    "why": "variant: first stage (Saturn I/IB booster = premier étage)",
+    "tr": "8a525d0429"
+  },
+  "booster|fr|fleet/engine/merlin-1d.json :: tagline": {
+    "why": "variant: first stage (étage)",
+    "tr": "b5101b8989"
+  },
+  "booster|fr|fleet/launch-site/lc-34.json :: dispatch": {
+    "why": "variant: propulseurs (rockets in general sense)",
+    "tr": "c349ec1eeb"
+  },
+  "booster|fr|fleet/launch-site/starbase-orbital-a.json :: description": {
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md",
+    "tr": "8d33a98044"
+  },
+  "booster|fr|fleet/launch-site/vandenberg-slc-4e.json :: description": {
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md",
+    "tr": "f8d8928646"
+  },
+  "booster|fr|fleet/launcher/atlas-lv-3b.json :: description": {
+    "why": "variant: launcher (Atlas booster = whole vehicle)",
+    "tr": "703e4508d0"
+  },
+  "booster|fr|fleet/launcher/falcon-9.json :: best_known_for": {
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md",
+    "tr": "9423a6ead2"
+  },
+  "booster|fr|fleet/launcher/falcon-9.json :: description": {
+    "why": "variant: first stage (Falcon 9 Block 5 booster)",
+    "tr": "6c9468045f"
+  },
+  "booster|fr|fleet/launcher/falcon-9.json :: tagline": {
+    "why": "variant: premier étage (the booster is the whole first stage), per lessons.md",
+    "tr": "a592dc63bd"
+  },
+  "booster|fr|fleet/launcher/falcon-heavy.json :: best_known_for": {
+    "why": "variant: lanceur (whole vehicle)",
+    "tr": "ab6761925a"
+  },
+  "booster|fr|fleet/launcher/falcon-heavy.json :: tagline": {
+    "why": "variant: lanceur (whole vehicle)",
+    "tr": "ab6761925a"
+  },
+  "booster|fr|fleet/launcher/long-march-3b.json :: description": {
+    "why": "variant: propulseurs auxiliaires latéraux",
+    "tr": "56e3dde10d"
+  },
+  "booster|fr|fleet/launcher/mercury-redstone.json :: description": {
+    "why": "variant: propulseur (rocket body, Redstone single stage)",
+    "tr": "58ab91a0b8"
+  },
+  "booster|fr|fleet/launcher/mercury-redstone.json :: dispatch": {
+    "why": "variant: lanceur (rocket in general sense)",
+    "tr": "d19a1141e0"
+  },
+  "booster|fr|fleet/launcher/soyuz-2.json :: description": {
+    "why": "variant: propulseurs auxiliaires",
+    "tr": "3ffc8baff7"
+  },
+  "booster|fr|fleet/station/salyut-4.json :: description": {
+    "why": "variant: lanceur (launch vehicle failure)",
+    "tr": "1900cfc189"
+  },
+  "booster|fr|missions/earth/otv-5.json :: description": {
+    "why": "variant: premier étage (first-stage booster)",
+    "tr": "3c12afd40a"
+  },
+  "booster|fr|missions/moon/luna16.json :: description": {
+    "why": "variant: lanceur (whole Proton-K launcher)",
+    "tr": "494d405325"
+  },
+  "booster|fr|programs/spacex.json :: goals.1.caption": {
+    "why": "variant: first stage booster (propulseurs)",
+    "tr": "0a2fbb58f7"
+  },
+  "booster|fr|programs/spacex.json :: narrative.0.md": {
+    "why": "variant: first stage booster (propulseurs)",
+    "tr": "3d77736b3c"
+  },
+  "booster|fr|programs/spacex.json :: outcome.0.md": {
+    "why": "variant: first stage booster (propulseur)",
+    "tr": "51e762fb70"
+  },
+  "booster|fr|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: lanceur",
+    "tr": "44f1edc1a1"
+  },
+  "booster|fr|programs/starship.json :: goals.0.md": {
+    "why": "variant: first stage (Super Heavy booster)",
+    "tr": "df6817a7a4"
+  },
+  "booster|fr|programs/starship.json :: goals.1.caption": {
+    "why": "variant: first stage (Super Heavy booster)",
+    "tr": "ca8d5ea92d"
+  },
+  "booster|fr|programs/starship.json :: narrative.0.md": {
+    "why": "variant: first stage booster",
+    "tr": "1e630145af"
+  },
+  "booster|fr|programs/starship.json :: outcome.0.md": {
+    "why": "variant: first stage (Super Heavy booster)",
+    "tr": "9d49ce6aea"
+  },
+  "booster|it|fleet/launcher/falcon-heavy.json :: best_known_for": {
+    "why": "variant: lanciatore (whole vehicle)",
+    "tr": "b95bd3b8c3"
+  },
+  "booster|it|fleet/launcher/falcon-heavy.json :: tagline": {
+    "why": "variant: lanciatore (whole vehicle)",
+    "tr": "b95bd3b8c3"
+  },
+  "booster|it|fleet/station/salyut-4.json :: description": {
+    "why": "variant: lanciatore (launcher failure)",
+    "tr": "1fd0d5558b"
+  },
+  "booster|it|missions/moon/luna16.json :: description": {
+    "why": "variant: vettore (whole Proton-K launcher)",
+    "tr": "c5ff566521"
+  },
+  "booster|it|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: vettore (launch vehicle)",
+    "tr": "ef43fdd9cd"
+  },
+  "booster|ja|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
+    "why": "Super Heavy is the booster by name; word omitted naturally",
+    "tr": "973ca8693f"
+  },
+  "booster|nl|fleet/station/salyut-4.json :: description": {
+    "why": "variant: raket (launch vehicle failure)",
+    "tr": "346c3f0e03"
+  },
+  "booster|nl|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: draagraket",
+    "tr": "faa5326f5e"
+  },
+  "booster|pt-BR|fleet/engine/h-1.json :: best_known_for": {
+    "why": "variant: primeiro estágio (Saturn I/IB first-stage engine)",
+    "tr": "60254f9ba1"
+  },
+  "booster|pt-BR|fleet/launch-site/lc-34.json :: dispatch": {
+    "why": "variant: megafoguetes (Saturn rockets in general)",
+    "tr": "8f5291e410"
+  },
+  "booster|pt-BR|missions/moon/luna16.json :: description": {
+    "why": "variant: foguete (whole Proton-K launcher)",
+    "tr": "ba60d291d1"
+  },
+  "booster|pt-BR|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
+    "why": "Super Heavy named, word omitted naturally",
+    "tr": "f1f185c3c6"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.0.md": {
+    "why": "variant: ступень (first-stage booster = stage)",
+    "tr": "e856f0f8f0"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.10.md": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "25533173eb"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.11.caption": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "b162c1c76f"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.16.caption": {
+    "why": "variant: ступень (first-stage booster = stage)",
+    "tr": "4eb1193ef5"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.21.caption": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "89f1473376"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.23.md": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "52a4f3a94f"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.29.md": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "4f07c8e9f3"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.30.md": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "31e598e36f"
+  },
+  "booster|ru|essays/reusable-launchers.json :: body.9.md": {
+    "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
+    "tr": "fd41f279cd"
+  },
+  "booster|ru|fleet/launcher/atlas-lv-3b.json :: description": {
+    "why": "variant: ракета (whole single-stack vehicle, not strap-on)",
+    "tr": "7de6c500d0"
+  },
+  "booster|ru|fleet/launcher/mercury-redstone.json :: description": {
+    "why": "variant: ракета (whole single-stage vehicle)",
+    "tr": "a13188816b"
+  },
+  "booster|ru|fleet/launcher/mercury-redstone.json :: dispatch": {
+    "why": "variant: ракета-носитель (whole launch vehicle)",
+    "tr": "ed9d633112"
+  },
+  "booster|ru|fleet/station/salyut-4.json :: description": {
+    "why": "variant: ракета-носитель (launch vehicle failure)",
+    "tr": "1ea2d95d98"
+  },
+  "booster|ru|missions/earth/otv-5.json :: description": {
+    "why": "variant: first stage (Falcon 9 first-stage booster, первая ступень)",
+    "tr": "6cf86da617"
+  },
+  "booster|ru|missions/moon/luna16.json :: description": {
+    "why": "variant: launcher (Proton-K booster = ракета-носитель)",
+    "tr": "7b98500854"
+  },
+  "booster|ru|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: ракета-носитель (launch vehicle)",
+    "tr": "bf4248c9f0"
+  },
+  "booster|sr-Cyrl|essays/reusable-launchers.json :: body.0.md": {
+    "why": "variant: први степен (first-stage booster = stage)",
+    "tr": "0d6a6a578b"
+  },
+  "booster|sr-Cyrl|essays/reusable-launchers.json :: body.8.md": {
+    "why": "variant: први степен ракете (first-stage booster = stage)",
+    "tr": "1baaaa4f08"
+  },
+  "booster|sr-Cyrl|essays/reusable-launchers.json :: body.9.md": {
+    "why": "variant: први степен / степен (first-stage booster = stage)",
+    "tr": "de1065f449"
+  },
+  "booster|sr-Cyrl|fleet/engine/h-1.json :: best_known_for": {
+    "why": "variant: први степен (first-stage engine cluster)",
+    "tr": "3223e48540"
+  },
+  "booster|sr-Cyrl|fleet/launch-site/lc-34.json :: dispatch": {
+    "why": "variant: ракете (whole Saturn rockets)",
+    "tr": "1e0577bc1b"
+  },
+  "booster|sr-Cyrl|fleet/launch-site/starbase-orbital-a.json :: description": {
+    "why": "variant: први степен (Super Heavy first-stage booster)",
+    "tr": "00d418525a"
+  },
+  "booster|sr-Cyrl|fleet/launch-site/vandenberg-slc-4e.json :: description": {
+    "why": "variant: први степен (first-stage recovery)",
+    "tr": "2ccf1889f9"
+  },
+  "booster|sr-Cyrl|fleet/launcher/atlas-lv-3b.json :: description": {
+    "why": "variant: ракета (whole vehicle)",
+    "tr": "d602e4277c"
+  },
+  "booster|sr-Cyrl|fleet/launcher/falcon-9.json :: best_known_for": {
+    "why": "variant: први степен",
+    "tr": "270ab4dcf2"
+  },
+  "booster|sr-Cyrl|fleet/launcher/falcon-9.json :: description": {
+    "why": "variant: први степен",
+    "tr": "a530b1af5a"
+  },
+  "booster|sr-Cyrl|fleet/launcher/falcon-9.json :: tagline": {
+    "why": "variant: први степен",
+    "tr": "270ab4dcf2"
+  },
+  "booster|sr-Cyrl|fleet/launcher/falcon-heavy.json :: best_known_for": {
+    "why": "variant: ракета-носач (whole three-core vehicle)",
+    "tr": "ad97f2d4c0"
+  },
+  "booster|sr-Cyrl|fleet/launcher/falcon-heavy.json :: tagline": {
+    "why": "variant: ракета-носач (whole three-core vehicle)",
+    "tr": "ad97f2d4c0"
+  },
+  "booster|sr-Cyrl|fleet/launcher/mercury-redstone.json :: description": {
+    "why": "variant: ракета (whole single-stage vehicle)",
+    "tr": "ccf3fec231"
+  },
+  "booster|sr-Cyrl|fleet/launcher/mercury-redstone.json :: dispatch": {
+    "why": "variant: ракета-носач (whole launch vehicle)",
+    "tr": "88f606dc60"
+  },
+  "booster|sr-Cyrl|fleet/station/salyut-4.json :: description": {
+    "why": "variant: ракета-носач (launch vehicle failure)",
+    "tr": "15ce998b0e"
+  },
+  "booster|sr-Cyrl|missions/earth/otv-5.json :: description": {
+    "why": "variant: први степен (Falcon 9 first stage)",
+    "tr": "2a9fe9cb8b"
+  },
+  "booster|sr-Cyrl|missions/moon/luna16.json :: description": {
+    "why": "variant: ракета (whole launcher Proton-K)",
+    "tr": "a3ce0d8b06"
+  },
+  "booster|sr-Cyrl|programs/spacex.json :: goals.1.caption": {
+    "why": "variant: first stage (Falcon 9 booster)",
+    "tr": "30764b73e3"
+  },
+  "booster|sr-Cyrl|programs/spacex.json :: outcome.0.md": {
+    "why": "variant: first stage (Falcon 9 booster)",
+    "tr": "41bbfea076"
+  },
+  "booster|sr-Cyrl|programs/sputnik.json :: goals.0.md": {
+    "why": "variant: ракета-носач (launch vehicle)",
+    "tr": "995ac152d7"
+  },
+  "booster|sr-Cyrl|programs/starship.json :: goals.0.md": {
+    "why": "variant: first stage (Super Heavy booster)",
+    "tr": "512617e503"
+  },
+  "booster|sr-Cyrl|programs/starship.json :: narrative.0.md": {
+    "why": "variant: first stage (Falcon 9 booster)",
+    "tr": "9bcbc54aa4"
+  },
+  "booster|sr-Cyrl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "booster scale = first-stage level",
+    "tr": "b59f4c5e3a"
+  },
+  "booster|sr-Cyrl|science/propulsion/rocket-stages.json :: body_paragraphs.0": {
+    "why": "booster = first stage / vehicle as in Falcon 9 booster; 'први степен' is standard",
+    "tr": "911b2ec4b1"
+  },
+  "booster|sr-Cyrl|science/propulsion/rocket-stages.json :: body_paragraphs.1": {
+    "why": "booster = first stage / vehicle as in Falcon 9 booster; 'први степен' is standard",
+    "tr": "47301d91b4"
+  },
+  "booster|sr-Cyrl|science/propulsion/rocket-stages.json :: body_paragraphs.3": {
+    "why": "booster = first stage / vehicle as in Falcon 9 booster; 'први степен' is standard",
+    "tr": "45b9554ac1"
+  },
+  "booster|sr-Cyrl|science/propulsion/specific-impulse.json :: narrative_101.2": {
+    "why": "'потисници' is an accepted stem (потисник)",
+    "tr": "e1d960a05f"
+  },
+  "booster|sr-Cyrl|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
+    "why": "booster = first stage 'први степен' is standard",
+    "tr": "c4eeacfa99"
+  },
+  "booster|zh-CN|essays/reusable-launchers.json :: body.0.md": {
+    "why": "pronoun 它 / 第一级火箭 in this sentence",
+    "tr": "452422ccc9"
+  },
+  "booster|zh-CN|fleet/launch-site/lc-34.json :: dispatch": {
+    "why": "not strap-on sense: 超大型火箭 = launch vehicles",
+    "tr": "6f7160676c"
+  },
+  "booster|zh-CN|fleet/launcher/falcon-heavy.json :: best_known_for": {
+    "why": "whole vehicle: variant 运载火箭",
+    "tr": "4d7f284b02"
+  },
+  "booster|zh-CN|fleet/launcher/falcon-heavy.json :: tagline": {
+    "why": "whole vehicle: variant 运载火箭",
+    "tr": "4d7f284b02"
+  },
+  "booster|zh-CN|missions/moon/luna16.json :: description": {
+    "why": "variant: 运载火箭 (Proton-K is the whole launcher)",
+    "tr": "fc6ac1d602"
+  },
+  "booster|zh-CN|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
+    "why": "Super Heavy is the booster by name; word omitted naturally",
+    "tr": "61ccb84385"
+  },
+  "burn|ar|essays/comms.json :: body.8.md": {
+    "why": "burned manuscript, not an engine",
+    "tr": "82a40f5210"
+  },
+  "burn|ar|essays/delta-v.json :: body.26.md": {
+    "why": "combustion sense: burn the machine on the way up (احرقها)",
+    "tr": "6e8f6840c3"
+  },
+  "burn|ar|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "combustion sense: تحرق وقودًا دافعًا",
+    "tr": "d1d6b7f641"
+  },
+  "burn|ar|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "combustion sense: تحرق وقودًا دافعًا",
+    "tr": "6e4b02f37e"
+  },
+  "burn|ar|essays/new-propulsion.json :: body.0.md": {
+    "why": "combustion: المحرّك يحرق وقودًا",
+    "tr": "7ad8d12357"
+  },
+  "burn|ar|essays/new-propulsion.json :: body.4.md": {
+    "why": "combustion/consumption sense: يحرقه / burned through",
+    "tr": "08378bd32f"
+  },
+  "burn|ar|essays/new-propulsion.json :: body.5.md": {
+    "why": "chemical burn = combustion here (reviewer change dropped)",
+    "tr": "ff83449604"
+  },
+  "burn|ar|essays/reusable-launchers.json :: body.14.md": {
+    "why": "combustion: محرك Raptor تحرق الميثان",
+    "tr": "de6debe2fa"
+  },
+  "burn|ar|essays/reusable-launchers.json :: body.4.md": {
+    "why": "combustion: تحرق ... الوقود الدافع",
+    "tr": "6c8a2c8608"
+  },
+  "burn|ar|essays/reusable-launchers.json :: body.8.md": {
+    "why": "combustion sense: فتحرق أكبر كمية من الوقود",
+    "tr": "15f7ce2d53"
+  },
+  "burn|ar|essays/seven-minutes.json :: body.4.md": {
+    "why": "combustion/heating of air; engine ran twelve minutes: يعمل",
+    "tr": "7becf49c9a"
+  },
+  "burn|ar|fleet/engine/ce-20.json :: description": {
+    "why": "burning LOX/LH2 = combustion (تحترق)",
+    "tr": "da508efb5d"
+  },
+  "burn|ar|fleet/engine/f-1.json :: description": {
+    "why": "burned LOX/RP-1 = combustion (احترقت)",
+    "tr": "7558ea7f3f"
+  },
+  "burn|ar|fleet/engine/rd-180.json :: description": {
+    "why": "burning excess oxidiser = combustion (احتراق)",
+    "tr": "14e0e95c82"
+  },
+  "burn|ar|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning engines = combustion (يعملان بالهيدروجين)",
+    "tr": "2cf5deac46"
+  },
+  "burn|ar|fleet/launcher/saturn-v.json :: dispatch": {
+    "why": "burning propellant = combustion (تحرق)",
+    "tr": "2112fc5608"
+  },
+  "burn|ar|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning = combustion",
+    "tr": "9e530c7c89"
+  },
+  "burn|ar|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion (أحرق)",
+    "tr": "9f3e89f548"
+  },
+  "burn|ar|missions/earth/apollo-1.json :: payload": {
+    "why": "combustion (burned on pad)",
+    "tr": "6c00b156a2"
+  },
+  "burn|ar|programs/vostok.json :: lessons.0.md": {
+    "why": "figurative: sprint burns the runway, not an engine firing",
+    "tr": "4637fd0fe7"
+  },
+  "burn|ar|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "\"burning fuel\" = combustion",
+    "tr": "0461623058"
+  },
+  "burn|ar|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "fire burning = combustion",
+    "tr": "49037b1f52"
+  },
+  "burn|ar|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "\"burns the crew up\" = incineration",
+    "tr": "c159c17614"
+  },
+  "burn|ar|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars \"burn red\" = glow",
+    "tr": "96e7d6c0f9"
+  },
+  "burn|ar|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "\"burn out\" = exhaust fuel",
+    "tr": "0b41ed94e9"
+  },
+  "burn|ar|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "\"avoidance burns\" rendered as مناورات (avoidance manoeuvres), a correct generic term",
+    "tr": "f28d74b7e1"
+  },
+  "burn|ar|science/orbits/special-orbits.json :: body_paragraphs.3": {
+    "why": "station-keeping burns rendered as مناورات, a correct generic term",
+    "tr": "7d8f95d942"
+  },
+  "burn|ar|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion / consumption sense",
+    "tr": "ed87d8a101"
+  },
+  "burn|ar|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "combustion / consumption sense",
+    "tr": "4f1dff5a5e"
+  },
+  "burn|ar|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "combustion / consumption sense",
+    "tr": "0fbaf46811"
+  },
+  "burn|ar|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.4": {
+    "why": "combustion / consumption sense",
+    "tr": "7ebcd98b52"
+  },
+  "burn|ar|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion / consumption sense",
+    "tr": "beee19e8b3"
+  },
+  "burn|ar|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion / consumption sense",
+    "tr": "023ee04acb"
+  },
+  "burn|ar|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion / consumption sense",
+    "tr": "3cd0f8aa7a"
+  },
+  "burn|ar|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "combustion sense",
+    "tr": "7ca9d86ed1"
+  },
+  "burn|ar|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion / consumption sense",
+    "tr": "ed51987a81"
+  },
+  "burn|ar|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "combustion / consumption sense",
+    "tr": "5c6933096c"
+  },
+  "burn|ar|science/propulsion/staged-combustion.json :: body_paragraphs.0": {
+    "why": "combustion / consumption sense",
+    "tr": "1ba2633e7e"
+  },
+  "burn|ar|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion / consumption sense",
+    "tr": "c019ab20f8"
+  },
+  "burn|ar|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion / consumption sense",
+    "tr": "a25b6bb74c"
+  },
+  "burn|ar|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "combustion / consumption sense",
+    "tr": "7187a990d1"
+  },
+  "burn|de|essays/comms.json :: body.8.md": {
+    "why": "'burned manuscript' - fire damage, not an engine burn",
+    "tr": "46d09ca618"
+  },
+  "burn|de|essays/delta-v.json :: body.26.md": {
+    "why": "'burn it on the way up' = consume the machine, not an engine firing",
+    "tr": "defecc6ab1"
+  },
+  "burn|de|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "'propellant-burning' = combustion sense",
+    "tr": "3714b605fd"
+  },
+  "burn|de|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "'propellant-burning architecture' = combustion sense",
+    "tr": "65ef0fb0a5"
+  },
+  "burn|de|essays/new-propulsion.json :: body.0.md": {
+    "why": "'engine burns a fuel' = combustion sense",
+    "tr": "965a9fc7b9"
+  },
+  "burn|de|essays/new-propulsion.json :: body.4.md": {
+    "why": "'instead of burning it' / 'burned through propellant' = combustion/consumption",
+    "tr": "915ef0ae27"
+  },
+  "burn|de|essays/new-propulsion.json :: body.5.md": {
+    "why": "chemical burn = combustion here (reviewer change dropped)",
+    "tr": "5863da0fb4"
+  },
+  "burn|de|essays/reusable-launchers.json :: body.4.md": {
+    "why": "'burned propellant per second' = consumption, verbrannte fine",
+    "tr": "08c2a3716d"
+  },
+  "burn|de|essays/reusable-launchers.json :: body.8.md": {
+    "why": "'burning the most propellant' = consumption",
+    "tr": "f6b2df62ca"
+  },
+  "burn|de|essays/seven-minutes.json :: body.4.md": {
+    "why": "'air burns off energy' = dissipation; 'Triebwerk ... brannte' is the correct engine verb",
+    "tr": "f7cb8f5de8"
+  },
+  "burn|de|fleet/engine/ce-20.json :: description": {
+    "why": "burning LOX/LH2 = combustion (verbrennt)",
+    "tr": "4452842ee3"
+  },
+  "burn|de|fleet/engine/f-1.json :: description": {
+    "why": "burned LOX/RP-1 = combustion (verbrannte)",
+    "tr": "cad5611c98"
+  },
+  "burn|de|fleet/engine/rd-180.json :: description": {
+    "why": "burning excess oxidiser = combustion",
+    "tr": "de1e4bff13"
+  },
+  "burn|de|fleet/engine/yf-77.json :: description": {
+    "why": "burning LOX/LH2 = combustion",
+    "tr": "2dc5f84e7e"
+  },
+  "burn|de|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning = fuel type, combustion",
+    "tr": "d8d8b7cf91"
+  },
+  "burn|de|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning = fuel type, combustion",
+    "tr": "165539d156"
+  },
+  "burn|de|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion",
+    "tr": "0bad85d962"
+  },
+  "burn|de|missions/earth/apollo-1.json :: payload": {
+    "why": "fire: burned on the pad",
+    "tr": "f60a6cd7cd"
+  },
+  "burn|de|missions/venus/akatsuki.json :: events.2.note": {
+    "why": "variant: Brennbeginn (\"into the burn\")",
+    "tr": "26054b7512"
+  },
+  "burn|de|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "combustion sense (burning fuel)",
+    "tr": "167bb80175"
+  },
+  "burn|de|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burning up on entry, not an engine firing",
+    "tr": "146c6c52d5"
+  },
+  "burn|de|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "star glows, not engine",
+    "tr": "d23b60c80f"
+  },
+  "burn|de|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn out of a star",
+    "tr": "91a17b4339"
+  },
+  "burn|de|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion in chamber",
+    "tr": "fd806ec894"
+  },
+  "burn|de|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "combustion",
+    "tr": "20e0d8055c"
+  },
+  "burn|de|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "combustion",
+    "tr": "279f23b680"
+  },
+  "burn|de|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion",
+    "tr": "8e4524f318"
+  },
+  "burn|de|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion in gas generator",
+    "tr": "3071ef79ce"
+  },
+  "burn|de|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion",
+    "tr": "43421c2563"
+  },
+  "burn|de|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "combustion",
+    "tr": "88125bb468"
+  },
+  "burn|de|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion (propellant consumed)",
+    "tr": "257d843b86"
+  },
+  "burn|de|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "fuel-burned rate, combustion",
+    "tr": "d762e7ba07"
+  },
+  "burn|de|science/propulsion/staged-combustion.json :: body_paragraphs.0": {
+    "why": "combustion",
+    "tr": "2ef1439f27"
+  },
+  "burn|de|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion",
+    "tr": "bc75374a6e"
+  },
+  "burn|de|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion",
+    "tr": "1cc330502b"
+  },
+  "burn|de|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "combustion / solid burn profile",
+    "tr": "b6fdfcbff9"
+  },
+  "burn|es|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "'propellant-burning architecture' = combustion sense",
+    "tr": "19a1a3a739"
+  },
+  "burn|es|essays/new-propulsion.json :: body.5.md": {
+    "why": "chemical burn = combustion here (reviewer change dropped)",
+    "tr": "515cd24d36"
+  },
+  "burn|es|fleet/launcher/new-glenn.json :: description": {
+    "why": "combustion: hydrogen-burning rendered de hidrógeno",
+    "tr": "e14b56addf"
+  },
+  "burn|es|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "the Titan burned storable liquids = propellant consumption, not an engine firing",
+    "tr": "ff29dce41c"
+  },
+  "burn|es|missions/earth/vostok-6.json :: description": {
+    "why": "burn omitted naturally ('corrección de órbita')",
+    "tr": "b5565f38e2"
+  },
+  "burn|es|programs/mangalyaan.json :: outcome.2.md": {
+    "why": "variant: ignición",
+    "tr": "cdcf317fad"
+  },
+  "burn|es|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "fire burning, not engine",
+    "tr": "4fe357c7bf"
+  },
+  "burn|es|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burns up = incinerates, not engine",
+    "tr": "8a3aec6311"
+  },
+  "burn|es|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars glow red, not engine",
+    "tr": "b464dd88d8"
+  },
+  "burn|es|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn out = exhaust fuel, not engine",
+    "tr": "516d6a2883"
+  },
+  "burn|es|science/orbits/disposal-end-of-life.json :: diagram_caption": {
+    "why": "imperative verb phrase, no noun rendered",
+    "tr": "dee1984bea"
+  },
+  "burn|es|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "combustion of propellant in chamber",
+    "tr": "7fb7f62024"
+  },
+  "burn|es|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion in chamber",
+    "tr": "c8c01060a1"
+  },
+  "burn|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "combustion/soot sense (arde)",
+    "tr": "e3d4fe202c"
+  },
+  "burn|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "hydrogen burns to water, combustion",
+    "tr": "6ba450961c"
+  },
+  "burn|es|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "combustion temperature",
+    "tr": "842ba944fb"
+  },
+  "burn|fr|essays/comms.json :: body.8.md": {
+    "why": "'burned manuscript' - fire damage",
+    "tr": "99263d4731"
+  },
+  "burn|fr|essays/delta-v.json :: body.26.md": {
+    "why": "'burn it on the way up' = consume the machine",
+    "tr": "f73a1cc725"
+  },
+  "burn|fr|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "'propellant-burning vehicle' = combustion sense (consommant des ergols)",
+    "tr": "3913595e76"
+  },
+  "burn|fr|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "'propellant-burning architecture' = combustion sense",
+    "tr": "4cc99f584c"
+  },
+  "burn|fr|essays/new-propulsion.json :: body.0.md": {
+    "why": "'engine burns a fuel' = combustion sense",
+    "tr": "581c46e08d"
+  },
+  "burn|fr|essays/reusable-launchers.json :: body.4.md": {
+    "why": "'burned propellant per second' = consumption",
+    "tr": "ace3a1f3b9"
+  },
+  "burn|fr|essays/reusable-launchers.json :: body.8.md": {
+    "why": "'burning the most propellant' = consumption",
+    "tr": "fbf3a166e9"
+  },
+  "burn|fr|essays/seven-minutes.json :: body.4.md": {
+    "why": "'air burns off energy' = dissipation; 'moteur ... brûlait' is the correct engine verb",
+    "tr": "274dfb2e86"
+  },
+  "burn|fr|fleet/engine/ce-20.json :: description": {
+    "why": "combustion: burning LOX and LH2 (brûlant)",
+    "tr": "d189ab72e7"
+  },
+  "burn|fr|fleet/engine/lr87.json :: description": {
+    "why": "combustion: burning Aerozine",
+    "tr": "162f8292cf"
+  },
+  "burn|fr|fleet/engine/yf-77.json :: description": {
+    "why": "combustion: burning LOX and LH2",
+    "tr": "f836f11ec5"
+  },
+  "burn|fr|fleet/launcher/new-glenn.json :: description": {
+    "why": "combustion: hydrogen-burning engines",
+    "tr": "c8cd617d91"
+  },
+  "burn|fr|fleet/launcher/starship.json :: description": {
+    "why": "combustion: methane-burning engine",
+    "tr": "66dd80c541"
+  },
+  "burn|fr|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "combustion: burned storable liquids",
+    "tr": "e22c860782"
+  },
+  "burn|fr|missions/earth/apollo-1.json :: payload": {
+    "why": "burned on pad = destroyed by fire, not an engine firing",
+    "tr": "2515e24719"
+  },
+  "burn|fr|missions/jupiter/galileo.json :: events.1.note": {
+    "why": "variant: mise à feu",
+    "tr": "baa64d0e2b"
+  },
+  "burn|fr|programs/mangalyaan.json :: goals.0.md": {
+    "why": "variant: mise à feu",
+    "tr": "7ee570c533"
+  },
+  "burn|fr|programs/mangalyaan.json :: outcome.2.md": {
+    "why": "variant: mise à feu",
+    "tr": "ae650047a0"
+  },
+  "burn|fr|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burning fuel = combustion sense",
+    "tr": "6de150f1e9"
+  },
+  "burn|fr|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burns up = incinerates, not engine",
+    "tr": "eb49c4ce81"
+  },
+  "burn|fr|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars glow red, not engine",
+    "tr": "4ad20e2ff4"
+  },
+  "burn|fr|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn out = exhaust fuel, not engine",
+    "tr": "b06eab8c38"
+  },
+  "burn|fr|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "combustion in main chamber",
+    "tr": "b784051650"
+  },
+  "burn|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "kerosene burns dirty = combustion",
+    "tr": "87372ab221"
+  },
+  "burn|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "hydrogen burns to water = combustion",
+    "tr": "128223253f"
+  },
+  "burn|fr|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion in gas generator",
+    "tr": "531cd57bfb"
+  },
+  "burn|fr|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion of propellant sliver",
+    "tr": "e76b31b2e2"
+  },
+  "burn|fr|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion in chamber",
+    "tr": "00c2ade2ec"
+  },
+  "burn|fr|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion of drive gas",
+    "tr": "27719a2e56"
+  },
+  "burn|fr|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "rough burning = combustion",
+    "tr": "5e8b0ae4c6"
+  },
+  "burn|fr|science/transfers/_intro.json :: paragraphs.0": {
+    "why": "injection noun denotes the burn",
+    "tr": "2f647ce368"
+  },
+  "burn|hi|essays/comms.json :: body.8.md": {
+    "why": "burned manuscript, not an engine",
+    "tr": "5c19db254a"
+  },
+  "burn|hi|essays/delta-v.json :: body.26.md": {
+    "why": "combustion sense (burn the stage on the way up): जला दो",
+    "tr": "99a8131751"
+  },
+  "burn|hi|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "combustion sense (propellant-burning vehicle): प्रणोदक जलाने वाले",
+    "tr": "5b478e433d"
+  },
+  "burn|hi|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "combustion sense: प्रणोदक जलाने वाली",
+    "tr": "08297a60c3"
+  },
+  "burn|hi|essays/new-propulsion.json :: body.0.md": {
+    "why": "combustion: burns a fuel and an oxidizer",
+    "tr": "a234cd06d1"
+  },
+  "burn|hi|essays/new-propulsion.json :: body.4.md": {
+    "why": "combustion/consumption: जलाने, burned through",
+    "tr": "5f1f74130b"
+  },
+  "burn|hi|essays/reusable-launchers.json :: body.14.md": {
+    "why": "combustion: engines burning methane and oxygen",
+    "tr": "076caaa48c"
+  },
+  "burn|hi|essays/reusable-launchers.json :: body.4.md": {
+    "why": "combustion: propellant burned per second",
+    "tr": "f208b62855"
+  },
+  "burn|hi|essays/reusable-launchers.json :: body.8.md": {
+    "why": "combustion: first stage burns propellant",
+    "tr": "c838d2b30e"
+  },
+  "burn|hi|essays/seven-minutes.json :: body.4.md": {
+    "why": "combustion/heating of air; engine ran for twelve minutes: variant जलता रहा",
+    "tr": "c0176da97e"
+  },
+  "burn|hi|fleet/engine/ce-20.json :: description": {
+    "why": "LOX/LH2 burned = combustion",
+    "tr": "0844021bf9"
+  },
+  "burn|hi|fleet/engine/yf-77.json :: description": {
+    "why": "burning LOX/LH2 = combustion",
+    "tr": "764766cb05"
+  },
+  "burn|hi|fleet/launcher/new-glenn.json :: description": {
+    "why": "methane/hydrogen-burning = combustion",
+    "tr": "fb3563c596"
+  },
+  "burn|hi|fleet/launcher/saturn-v.json :: dispatch": {
+    "why": "burning propellant = combustion",
+    "tr": "5092ccf3b7"
+  },
+  "burn|hi|fleet/launcher/starship.json :: description": {
+    "why": "combustion sense (burning propellant / X-burning engine), not an engine firing",
+    "tr": "a0156dc430"
+  },
+  "burn|hi|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion of propellant, not an engine firing",
+    "tr": "6eda7b3849"
+  },
+  "burn|hi|missions/earth/apollo-1.json :: payload": {
+    "why": "combustion on the pad (burned = जल गया)",
+    "tr": "0638757b07"
+  },
+  "burn|hi|programs/vostok.json :: lessons.0.md": {
+    "why": "figurative: sprint burns the runway, not an engine firing",
+    "tr": "0c2cc36029"
+  },
+  "burn|hi|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burning fuel = combustion",
+    "tr": "49a55d8e05"
+  },
+  "burn|hi|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "fire burning = combustion",
+    "tr": "ff42cf46c9"
+  },
+  "burn|hi|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "\"burns the crew up\" = incineration",
+    "tr": "d43e86905d"
+  },
+  "burn|hi|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars \"burn red\" = glow",
+    "tr": "1497529ab8"
+  },
+  "burn|hi|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "\"burn out\" = exhaust fuel",
+    "tr": "b5d86a465d"
+  },
+  "burn|hi|science/propulsion/_intro.json :: paragraphs.2": {
+    "why": "\"इंजन चलाएँ\" correctly renders firing the engine",
+    "tr": "496576305f"
+  },
+  "burn|hi|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "6fabd16538"
+  },
+  "burn|hi|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "4e2800b539"
+  },
+  "burn|hi|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "9eda13f79f"
+  },
+  "burn|hi|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "1ab33f4b69"
+  },
+  "burn|hi|science/propulsion/oberth-effect.json :: intro_sentence": {
+    "why": "\"इंजन चलाएँ\" correctly renders firing the engine",
+    "tr": "b75157213e"
+  },
+  "burn|hi|science/propulsion/oberth-effect.json :: narrative_101.0": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "785e5d42e6"
+  },
+  "burn|hi|science/propulsion/oberth-effect.json :: narrative_101.2": {
+    "why": "\"इंजन जलाता है\" correctly renders firing the engine",
+    "tr": "28b45097ca"
+  },
+  "burn|hi|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "61238177cd"
+  },
+  "burn|hi|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "4655142d76"
+  },
+  "burn|hi|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "b334a60299"
+  },
+  "burn|hi|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion/consumption sense, not an engine firing",
+    "tr": "27ef76c527"
+  },
+  "burn|hi|science/transfers/transfer-ellipse.json :: body_paragraphs.0": {
+    "why": "\"burned out of orbit\" rendered idiomatically without the term",
+    "tr": "fbba9fe4d2"
+  },
+  "burn|it|essays/comms.json :: body.8.md": {
+    "why": "'burned manuscript' - fire damage",
+    "tr": "a7f2a47821"
+  },
+  "burn|it|essays/delta-v.json :: body.26.md": {
+    "why": "'burn it on the way up' = consume the machine",
+    "tr": "7f30514194"
+  },
+  "burn|it|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "'propellant-burning architecture' = combustion sense (a combustione)",
+    "tr": "d3203a1a32"
+  },
+  "burn|it|essays/new-propulsion.json :: body.0.md": {
+    "why": "'engine burns a fuel' = combustion sense",
+    "tr": "e86e604388"
+  },
+  "burn|it|essays/reusable-launchers.json :: body.4.md": {
+    "why": "'burned propellant per second' = consumption",
+    "tr": "fc36dd71c1"
+  },
+  "burn|it|essays/reusable-launchers.json :: body.8.md": {
+    "why": "'burning the most propellant' = consumption",
+    "tr": "c6dc4218de"
+  },
+  "burn|it|essays/seven-minutes.json :: body.4.md": {
+    "why": "'air burns off energy' = dissipation; 'motore ... bruciò' is the correct engine verb",
+    "tr": "ed9101587b"
+  },
+  "burn|it|fleet/engine/ce-20.json :: description": {
+    "why": "combustion: brucia LOX e LH2",
+    "tr": "c543588fe4"
+  },
+  "burn|it|fleet/engine/f-1.json :: description": {
+    "why": "combustion: bruciava LOX e RP-1, camera di combustione",
+    "tr": "58f34a8c55"
+  },
+  "burn|it|fleet/engine/rd-180.json :: description": {
+    "why": "combustion: bruciare l'ossidante in eccesso",
+    "tr": "fba44808e2"
+  },
+  "burn|it|fleet/engine/yf-77.json :: description": {
+    "why": "combustion: brucia LOX e LH2",
+    "tr": "92792d010d"
+  },
+  "burn|it|fleet/launcher/new-glenn.json :: description": {
+    "why": "combustion: hydrogen-burning engines, rendered a idrogeno; not an engine firing",
+    "tr": "5cbc090323"
+  },
+  "burn|it|fleet/launcher/starship.json :: description": {
+    "why": "combustion: methane-burning Raptor, rendered alimentato a metano; not an engine firing",
+    "tr": "7d4bb0c859"
+  },
+  "burn|it|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "combustion: bruciava liquidi immagazzinabili",
+    "tr": "b0a92c6647"
+  },
+  "burn|it|missions/earth/apollo-1.json :: payload": {
+    "why": "bruciato = burned in a fire, not an engine firing",
+    "tr": "009bbc0aaf"
+  },
+  "burn|it|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burning fuel = combustion",
+    "tr": "ebcd308f40"
+  },
+  "burn|it|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "fire burning, not engine",
+    "tr": "ef10a93f9c"
+  },
+  "burn|it|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burns up = incinerates",
+    "tr": "537b35d992"
+  },
+  "burn|it|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars glow red",
+    "tr": "099708fa8f"
+  },
+  "burn|it|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn out = exhaust fuel",
+    "tr": "821e33699d"
+  },
+  "burn|it|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "combustion of propellant",
+    "tr": "106ada9f1b"
+  },
+  "burn|it|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion in chamber",
+    "tr": "ca9edec2fc"
+  },
+  "burn|it|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "kerosene burns dirty = combustion",
+    "tr": "73a1c194a7"
+  },
+  "burn|it|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "hydrogen burns to water = combustion",
+    "tr": "a79eca780b"
+  },
+  "burn|it|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion in gas generator",
+    "tr": "ae88af800c"
+  },
+  "burn|it|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion of propellant sliver",
+    "tr": "bc658a2dd3"
+  },
+  "burn|it|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "how hot propellants burn = combustion",
+    "tr": "32daa8860a"
+  },
+  "burn|it|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion mass flow",
+    "tr": "6b7b883276"
+  },
+  "burn|it|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "fuel burned per second = combustion",
+    "tr": "ce8bf005a4"
+  },
+  "burn|it|science/propulsion/staged-combustion.json :: body_paragraphs.0": {
+    "why": "combustion of propellant",
+    "tr": "33897baef4"
+  },
+  "burn|it|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion of exhaust",
+    "tr": "00c30db604"
+  },
+  "burn|it|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion of drive gas",
+    "tr": "fd345a17c2"
+  },
+  "burn|it|science/transfers/_intro.json :: paragraphs.0": {
+    "why": "injection noun denotes the burn",
+    "tr": "e74815f278"
+  },
+  "burn|ja|essays/comms.json :: body.8.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "1ae505beaf"
+  },
+  "burn|ja|essays/delta-v.json :: body.26.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "7e2267454d"
+  },
+  "burn|ja|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "35141eafa9"
+  },
+  "burn|ja|essays/new-propulsion.json :: body.0.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "be951b4488"
+  },
+  "burn|ja|essays/new-propulsion.json :: body.4.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "3205e0cc81"
+  },
+  "burn|ja|essays/reusable-launchers.json :: body.14.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "bac41be841"
+  },
+  "burn|ja|essays/reusable-launchers.json :: body.4.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "814420bf2b"
+  },
+  "burn|ja|essays/reusable-launchers.json :: body.8.md": {
+    "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "08b6e8f43e"
+  },
+  "burn|ja|fleet/engine/ce-20.json :: description": {
+    "why": "combustion: 燃やす",
+    "tr": "fa151b9666"
+  },
+  "burn|ja|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning = fuel: 燃料とする",
+    "tr": "f08c5dcb12"
+  },
+  "burn|ja|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion",
+    "tr": "1191e2d33a"
+  },
+  "burn|ja|missions/earth/apollo-1.json :: payload": {
+    "why": "burned on pad = fire, not engine firing",
+    "tr": "ef99e816ec"
+  },
+  "burn|ja|missions/mars/starship-mars-crew.json :: events.6.note": {
+    "why": "liftoff/ascent from Mars; engine firing implied by 再上昇",
+    "tr": "bbf9427edc"
+  },
+  "burn|ja|programs/vostok.json :: lessons.0.md": {
+    "why": "metaphor: burns the runway, not an engine firing",
+    "tr": "e935e77256"
+  },
+  "burn|ja|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "\"burns the crew up\" is combustion, not an engine firing",
+    "tr": "6b9e11a62d"
+  },
+  "burn|ja|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars \"burn red\" is figurative glow",
+    "tr": "59bf0e0591"
+  },
+  "burn|ja|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "\"burn out\" is stellar fusion exhaustion",
+    "tr": "d6b84bf789"
+  },
+  "burn|ja|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "fuel-burned-per-second is combustion; 燃料消費量 correct",
+    "tr": "bddeef7cee"
+  },
+  "burn|ja|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "\"burn it\" = combustion; 燃やす correct",
+    "tr": "a5296688d6"
+  },
+  "burn|ko|essays/comms.json :: body.8.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "e35159a5f7"
+  },
+  "burn|ko|essays/delta-v.json :: body.26.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "7e164d4ab6"
+  },
+  "burn|ko|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "136d7b1185"
+  },
+  "burn|ko|essays/new-propulsion.json :: body.0.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "c5615868f8"
+  },
+  "burn|ko|essays/new-propulsion.json :: body.4.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "aa70e37416"
+  },
+  "burn|ko|essays/reusable-launchers.json :: body.4.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "1130886e3f"
+  },
+  "burn|ko|essays/reusable-launchers.json :: body.8.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "060d222e7f"
+  },
+  "burn|ko|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "combustion: 태워",
+    "tr": "9128681784"
+  },
+  "burn|ko|missions/earth/apollo-1.json :: payload": {
+    "why": "burned on pad = fire, not engine firing",
+    "tr": "9c55979ffd"
+  },
+  "burn|ko|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "b51f5b8f0c"
+  },
+  "burn|ko|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "86b461dbbb"
+  },
+  "burn|ko|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "d9e2adf042"
+  },
+  "burn|ko|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "8a7ae2a92e"
+  },
+  "burn|ko|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "cdc0aa4384"
+  },
+  "burn|ko|science/orbits/disposal-end-of-life.json :: diagram_caption": {
+    "why": "burn perigee down = 근지점을 낮춤, natural",
+    "tr": "69159c9f5b"
+  },
+  "burn|ko|science/propulsion/dv-budget.json :: body_paragraphs.0": {
+    "why": "every engine burn = 엔진을 켤 때마다, natural",
+    "tr": "1ec7f0ea18"
+  },
+  "burn|ko|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "2cd3f46750"
+  },
+  "burn|nl|essays/comms.json :: body.8.md": {
+    "why": "'burned manuscript' - fire damage",
+    "tr": "827639ecae"
+  },
+  "burn|nl|essays/delta-v.json :: body.26.md": {
+    "why": "'burn it on the way up' = consume the machine",
+    "tr": "8b665d07af"
+  },
+  "burn|nl|essays/new-propulsion.json :: body.5.md": {
+    "why": "chemical burn = combustion here (reviewer change dropped)",
+    "tr": "940d737455"
+  },
+  "burn|nl|essays/reusable-launchers.json :: body.8.md": {
+    "why": "'burning the most propellant' = consumption (verbruikt)",
+    "tr": "cbb0e0bae0"
+  },
+  "burn|nl|fleet/engine/rd-180.json :: description": {
+    "why": "burning excess oxidiser = combustion (verbrand)",
+    "tr": "eec8fcc48c"
+  },
+  "burn|nl|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning = propellant type (op waterstof werkende), not an engine firing",
+    "tr": "0d9b7a413e"
+  },
+  "burn|nl|fleet/launcher/saturn-v.json :: dispatch": {
+    "why": "burning propellant every second = consumption (verbrande drijfstof), not an engine firing",
+    "tr": "2090c33253"
+  },
+  "burn|nl|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning = propellant type (methaanverbrandende), not an engine firing",
+    "tr": "7b3a0086bf"
+  },
+  "burn|nl|missions/earth/apollo-1.json :: payload": {
+    "why": "burned = destroyed by fire (uitgebrand), not an engine firing",
+    "tr": "dc63960176"
+  },
+  "burn|nl|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "996b697ca8"
+  },
+  "burn|nl|science/history/_intro.json :: paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "082a253951"
+  },
+  "burn|nl|science/history/_intro.json :: paragraphs.1": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "9c111e9e94"
+  },
+  "burn|nl|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "d8c06abf38"
+  },
+  "burn|nl|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "b7749c6279"
+  },
+  "burn|nl|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "a8a42b45a5"
+  },
+  "burn|nl|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "ae7630ede2"
+  },
+  "burn|nl|science/orbits/disposal-end-of-life.json :: diagram_caption": {
+    "why": "burn perigee down = laat het perigeum zakken, natural",
+    "tr": "72a80c32f9"
+  },
+  "burn|nl|science/orbits/hill-sphere.json :: narrative_101.1": {
+    "why": "station-keeping burns = baancorrecties",
+    "tr": "a7e4975982"
+  },
+  "burn|nl|science/orbits/lagrange-points.json :: body_paragraphs.1": {
+    "why": "station-keeping burns = koerscorrecties",
+    "tr": "97e63d0944"
+  },
+  "burn|nl|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "5ec4730f29"
+  },
+  "burn|nl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.4": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "e514aea03d"
+  },
+  "burn|nl|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "592bcbeddd"
+  },
+  "burn|nl|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "754b15dca5"
+  },
+  "burn|nl|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "6a1c052af2"
+  },
+  "burn|nl|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "576258e6bc"
+  },
+  "burn|nl|science/propulsion/oberth-effect.json :: narrative_101.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "08c45862ff"
+  },
+  "burn|nl|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "e4e1001e00"
+  },
+  "burn|nl|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "86ff04e13b"
+  },
+  "burn|nl|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "9e19dabb59"
+  },
+  "burn|nl|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "551e8c05cf"
+  },
+  "burn|nl|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "combustion / fire, not an engine firing",
+    "tr": "149490c2df"
+  },
+  "burn|nl|science/transfers/free-return.json :: body_paragraphs.1": {
+    "why": "return burn = de terugkeermotor, natural",
+    "tr": "8bef7ddb78"
+  },
+  "burn|nl|science/transfers/free-return.json :: intro_sentence": {
+    "why": "verb: de motor hoeft te branden (ESA NL usage)",
+    "tr": "f1d20aead1"
+  },
+  "burn|nl|science/transfers/free-return.json :: narrative_101.2": {
+    "why": "mid-course burns = koerscorrecties",
+    "tr": "790b633bbf"
+  },
+  "burn|nl|science/transfers/hohmann-transfer.json :: narrative_101.2": {
+    "why": "braking burn = remming",
+    "tr": "4abcab56b3"
+  },
+  "burn|pt-BR|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning = propellant type, combustion (motores a hidrogênio)",
+    "tr": "f8ea3ad693"
+  },
+  "burn|pt-BR|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning = propellant type, combustion (movido a metano)",
+    "tr": "031e6a926c"
+  },
+  "burn|pt-BR|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burns up = incinera, not engine",
+    "tr": "f3e59a7f45"
+  },
+  "burn|pt-BR|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars glow, not engine",
+    "tr": "2ce2cc6638"
+  },
+  "burn|pt-BR|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn out = esgotam, not engine",
+    "tr": "890589dd71"
+  },
+  "burn|ru|essays/comms.json :: body.8.md": {
+    "why": "other sense: burned manuscript, not engine firing",
+    "tr": "5681a838ca"
+  },
+  "burn|ru|essays/delta-v.json :: body.26.md": {
+    "why": "other sense: expend/consume the stage, not engine firing",
+    "tr": "ace21d9c92"
+  },
+  "burn|ru|essays/new-propulsion.json :: body.0.md": {
+    "why": "other sense: combustion of fuel",
+    "tr": "77606b01bc"
+  },
+  "burn|ru|essays/new-propulsion.json :: body.4.md": {
+    "why": "other sense: combustion (not ionizing)",
+    "tr": "9baeac4f28"
+  },
+  "burn|ru|essays/reusable-launchers.json :: body.4.md": {
+    "why": "other sense: fuel consumption / combustion of F-1 propellant",
+    "tr": "03d49502ef"
+  },
+  "burn|ru|essays/reusable-launchers.json :: body.8.md": {
+    "why": "other sense: consuming propellant",
+    "tr": "69e4f79e95"
+  },
+  "burn|ru|fleet/engine/ce-20.json :: description": {
+    "why": "burning LOX and LH2 = combustion",
+    "tr": "b345015149"
+  },
+  "burn|ru|fleet/engine/f-1.json :: description": {
+    "why": "burned LOX and RP-1 = combustion",
+    "tr": "1ff5bbfd69"
+  },
+  "burn|ru|fleet/engine/lr87.json :: description": {
+    "why": "burning propellants = combustion",
+    "tr": "2ad4591367"
+  },
+  "burn|ru|fleet/engine/rd-180.json :: description": {
+    "why": "staged combustion, burning oxidiser = combustion",
+    "tr": "b7324ddb61"
+  },
+  "burn|ru|fleet/engine/viking.json :: description": {
+    "why": "burns propellants = combustion",
+    "tr": "f7aa9b4bb2"
+  },
+  "burn|ru|fleet/engine/yf-77.json :: description": {
+    "why": "engine burning LOX/LH2 = combustion",
+    "tr": "f7cc9c312b"
+  },
+  "burn|ru|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning engines = combustion",
+    "tr": "8fba44e78a"
+  },
+  "burn|ru|fleet/launcher/saturn-v.json :: dispatch": {
+    "why": "burning propellant per second = combustion",
+    "tr": "c69a276fda"
+  },
+  "burn|ru|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning engine = combustion",
+    "tr": "13ced310c1"
+  },
+  "burn|ru|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion",
+    "tr": "359d9ac5d8"
+  },
+  "burn|ru|missions/earth/apollo-1.json :: payload": {
+    "why": "burned on pad = fire, not an engine firing",
+    "tr": "6f497ab45a"
+  },
+  "burn|ru|missions/venus/akatsuki.json :: events.2.note": {
+    "why": "binding inflected and split: двигателя OME на 152-й секунде включения",
+    "tr": "8385de784e"
+  },
+  "burn|ru|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burning fuel = combustion",
+    "tr": "dcdc3ea001"
+  },
+  "burn|ru|science/history/_intro.json :: paragraphs.0": {
+    "why": "Goddard's first liquid-fuel engine run, not a manoeuvre",
+    "tr": "9167783923"
+  },
+  "burn|ru|science/history/_intro.json :: paragraphs.1": {
+    "why": "Goddard's first liquid-fuel engine run, not a manoeuvre",
+    "tr": "2d82e65a50"
+  },
+  "burn|ru|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "9256f0835f"
+  },
+  "burn|ru|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burn is 'burns the crew up', not an engine firing",
+    "tr": "2ef996c0b1"
+  },
+  "burn|ru|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "a3f179b916"
+  },
+  "burn|ru|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "f8f643914e"
+  },
+  "burn|ru|science/propulsion/engine-types.json :: body_paragraphs.0": {
+    "why": "solid motor burns at a controlled rate = combustion",
+    "tr": "bcd2efc820"
+  },
+  "burn|ru|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "73c8a23ff9"
+  },
+  "burn|ru|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "c76fa6efea"
+  },
+  "burn|ru|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "a4b0002ac7"
+  },
+  "burn|ru|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.4": {
+    "why": "burn-rate profile = combustion",
+    "tr": "3ea0a30ff3"
+  },
+  "burn|ru|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "1511686407"
+  },
+  "burn|ru|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "6cd94caea5"
+  },
+  "burn|ru|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "22147a5472"
+  },
+  "burn|ru|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "749121c258"
+  },
+  "burn|ru|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "e9a664db4f"
+  },
+  "burn|ru|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "444619d351"
+  },
+  "burn|ru|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing",
+    "tr": "4cf1da995b"
+  },
+  "burn|ru|science/transfers/free-return.json :: narrative_101.2": {
+    "why": "'коррекций курса' is the correct rendering of mid-course burns (TCMs)",
+    "tr": "3c3ea193bf"
+  },
+  "burn|sr-Cyrl|essays/comms.json :: body.8.md": {
+    "why": "other sense: burned manuscript, not engine firing",
+    "tr": "65d721d930"
+  },
+  "burn|sr-Cyrl|essays/delta-v.json :: body.26.md": {
+    "why": "other sense: expend/consume the stage, not engine firing",
+    "tr": "e49adbe998"
+  },
+  "burn|sr-Cyrl|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "other sense: propellant-burning vehicle (combustion)",
+    "tr": "61c29533a6"
+  },
+  "burn|sr-Cyrl|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "other sense: propellant combustion (propellant-burning architecture)",
+    "tr": "327c056526"
+  },
+  "burn|sr-Cyrl|essays/new-propulsion.json :: body.0.md": {
+    "why": "other sense: combustion of fuel",
+    "tr": "3431d590b0"
+  },
+  "burn|sr-Cyrl|essays/new-propulsion.json :: body.4.md": {
+    "why": "other sense: combustion / consuming propellant",
+    "tr": "187125124b"
+  },
+  "burn|sr-Cyrl|essays/new-propulsion.json :: body.5.md": {
+    "why": "chemical burn = combustion here (reviewer change dropped)",
+    "tr": "0780279cb5"
+  },
+  "burn|sr-Cyrl|essays/reusable-launchers.json :: body.4.md": {
+    "why": "other sense: propellant consumption rate",
+    "tr": "c91a8d4176"
+  },
+  "burn|sr-Cyrl|essays/reusable-launchers.json :: body.8.md": {
+    "why": "other sense: consuming propellant",
+    "tr": "1baaaa4f08"
+  },
+  "burn|sr-Cyrl|essays/seven-minutes.json :: body.4.md": {
+    "why": "stem gap: радио (descent engine \"радио дванаест минута\" = engine firing); \"burns it off\" is the energy-dissipation sense",
+    "tr": "2a0ba36320"
+  },
+  "burn|sr-Cyrl|fleet/engine/ce-20.json :: description": {
+    "why": "сагорева LOX и LH2 = combustion",
+    "tr": "1cbef6bd81"
+  },
+  "burn|sr-Cyrl|fleet/engine/f-1.json :: description": {
+    "why": "сагоревао LOX и RP-1 = combustion",
+    "tr": "1387fbdd0e"
+  },
+  "burn|sr-Cyrl|fleet/engine/rd-180.json :: description": {
+    "why": "burning oxidiser = combustion",
+    "tr": "7bfc4bd171"
+  },
+  "burn|sr-Cyrl|fleet/engine/yf-77.json :: description": {
+    "why": "engine burning LOX/LH2 = combustion",
+    "tr": "2806614b21"
+  },
+  "burn|sr-Cyrl|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning engines = combustion",
+    "tr": "1f74b79065"
+  },
+  "burn|sr-Cyrl|fleet/launcher/saturn-v.json :: dispatch": {
+    "why": "сагоревали тона погонског горива = combustion",
+    "tr": "b987ab13ab"
+  },
+  "burn|sr-Cyrl|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning engine = combustion",
+    "tr": "d0c745ac74"
+  },
+  "burn|sr-Cyrl|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion",
+    "tr": "7a0047eccb"
+  },
+  "burn|sr-Cyrl|missions/earth/apollo-1.json :: payload": {
+    "why": "burned on pad = fire, not an engine firing",
+    "tr": "73f4f3e05d"
+  },
+  "burn|sr-Cyrl|missions/mars/hope-probe.json :: events.2.note": {
+    "why": "variant: Потисници су радили (thrusters ran; рад мотора)",
+    "tr": "361b4126de"
+  },
+  "burn|sr-Cyrl|programs/vostok.json :: lessons.0.md": {
+    "why": "other sense: figurative \"burns the runway\", not an engine firing",
+    "tr": "0ad5c10b12"
+  },
+  "burn|sr-Cyrl|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "f6ea3b457b"
+  },
+  "burn|sr-Cyrl|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "8e78a2c4b5"
+  },
+  "burn|sr-Cyrl|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "d0f003ece9"
+  },
+  "burn|sr-Cyrl|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "5dcf626eb3"
+  },
+  "burn|sr-Cyrl|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "905e55de7b"
+  },
+  "burn|sr-Cyrl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "ba8dd07b29"
+  },
+  "burn|sr-Cyrl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "b59f4c5e3a"
+  },
+  "burn|sr-Cyrl|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "afd868aad3"
+  },
+  "burn|sr-Cyrl|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "8c9e347b9d"
+  },
+  "burn|sr-Cyrl|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "171d6285bd"
+  },
+  "burn|sr-Cyrl|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "0e810d80c2"
+  },
+  "burn|sr-Cyrl|science/propulsion/oberth-effect.json :: narrative_101.2": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "2dcf0ddc6a"
+  },
+  "burn|sr-Cyrl|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "123071c327"
+  },
+  "burn|sr-Cyrl|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "a80ee86609"
+  },
+  "burn|sr-Cyrl|science/propulsion/staged-combustion.json :: body_paragraphs.0": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "5528033b15"
+  },
+  "burn|sr-Cyrl|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "22caebc05d"
+  },
+  "burn|sr-Cyrl|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing",
+    "tr": "4cae6a699e"
+  },
+  "burn|sr-Cyrl|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "burn profile of solid = combustion",
+    "tr": "e1096a8e29"
+  },
+  "burn|sr-Cyrl|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "'маневре кочења' is the correct rendering of arrival burns",
+    "tr": "a783b54d91"
+  },
+  "burn|zh-CN|essays/comms.json :: body.8.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "ae14b2f045"
+  },
+  "burn|zh-CN|essays/delta-v.json :: body.26.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "4dc90204e4"
+  },
+  "burn|zh-CN|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "3d82916ae1"
+  },
+  "burn|zh-CN|essays/interstellar-exploration.json :: body.11.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "27ba8d22b7"
+  },
+  "burn|zh-CN|essays/new-propulsion.json :: body.0.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "5a1987e607"
+  },
+  "burn|zh-CN|essays/new-propulsion.json :: body.4.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "4d131c354e"
+  },
+  "burn|zh-CN|essays/reusable-launchers.json :: body.14.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "68cf7ac1a4"
+  },
+  "burn|zh-CN|essays/reusable-launchers.json :: body.4.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "730448f9b3"
+  },
+  "burn|zh-CN|essays/reusable-launchers.json :: body.8.md": {
+    "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
+    "tr": "3754f4d43d"
+  },
+  "burn|zh-CN|fleet/engine/ce-20.json :: description": {
+    "why": "combustion: 燃烧",
+    "tr": "ff01dd1683"
+  },
+  "burn|zh-CN|fleet/engine/f-1.json :: description": {
+    "why": "combustion: 燃烧",
+    "tr": "41b75dc3df"
+  },
+  "burn|zh-CN|fleet/engine/lr87.json :: description": {
+    "why": "combustion: 燃烧",
+    "tr": "3e1e3b1667"
+  },
+  "burn|zh-CN|fleet/engine/rd-180.json :: description": {
+    "why": "combustion: 燃烧",
+    "tr": "eef0362793"
+  },
+  "burn|zh-CN|fleet/engine/yf-77.json :: description": {
+    "why": "combustion: 燃烧",
+    "tr": "316548cd61"
+  },
+  "burn|zh-CN|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning = combustion: 烧氢",
+    "tr": "7f8da2299e"
+  },
+  "burn|zh-CN|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion: 燃烧",
+    "tr": "8a0da68961"
+  },
+  "burn|zh-CN|missions/earth/apollo-1.json :: payload": {
+    "why": "burned = fire/combustion, not an engine firing",
+    "tr": "81383e97e7"
+  },
+  "burn|zh-CN|programs/vostok.json :: lessons.0.md": {
+    "why": "metaphor: burns the runway, not an engine firing",
+    "tr": "c5306b4ac5"
+  },
+  "burn|zh-CN|science/_landing.json :: chapters.1.diagram_caption": {
+    "why": "burning fuel = combustion/consumption, not an engine firing",
+    "tr": "b73ea6bc56"
+  },
+  "burn|zh-CN|science/life-in-space/crew-dynamics-psychology.json :: body_paragraphs.1": {
+    "why": "fire burning, not an engine firing",
+    "tr": "f6f58d9f32"
+  },
+  "burn|zh-CN|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
+    "why": "\"burns the crew up\" is combustion, not an engine firing",
+    "tr": "a8ba86f761"
+  },
+  "burn|zh-CN|science/observation/hertzsprung-russell.json :: body_paragraphs.0": {
+    "why": "stars \"burn\" red is figurative glow",
+    "tr": "24087ec4f9"
+  },
+  "burn|zh-CN|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
+    "why": "\"burn out\" is stellar fuel exhaustion",
+    "tr": "f4f846cfb1"
+  },
+  "burn|zh-CN|science/propulsion/engine-types.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "626f6ad993"
+  },
+  "burn|zh-CN|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "6ca42ef495"
+  },
+  "burn|zh-CN|science/propulsion/expander-cycle.json :: diagram_caption": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "4154bdfec6"
+  },
+  "burn|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "080f3933a3"
+  },
+  "burn|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.1": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "92730a41aa"
+  },
+  "burn|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.4": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "8daa973c6e"
+  },
+  "burn|zh-CN|science/propulsion/gas-generator.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "bc95017084"
+  },
+  "burn|zh-CN|science/propulsion/gas-generator.json :: intro_sentence": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "935692c57d"
+  },
+  "burn|zh-CN|science/propulsion/ion-drive.json :: intro_sentence": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "5f2123fd6c"
+  },
+  "burn|zh-CN|science/propulsion/nuclear-thermal.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "09627eb252"
+  },
+  "burn|zh-CN|science/propulsion/oberth-effect.json :: narrative_101.0": {
+    "why": "\"fuel to burn\" = fuel to expend/combust, not a firing",
+    "tr": "ba8f449179"
+  },
+  "burn|zh-CN|science/propulsion/specific-impulse.json :: body_paragraphs.0": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "9bc72404ce"
+  },
+  "burn|zh-CN|science/propulsion/specific-impulse.json :: narrative_101.1": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "dac764817a"
+  },
+  "burn|zh-CN|science/propulsion/staged-combustion.json :: body_paragraphs.0": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "7a2d5a3c44"
+  },
+  "burn|zh-CN|science/propulsion/staged-combustion.json :: diagram_caption": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "e2062c8f9c"
+  },
+  "burn|zh-CN|science/propulsion/staged-combustion.json :: intro_sentence": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "50682ab04b"
+  },
+  "burn|zh-CN|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.0": {
+    "why": "combustion / fuel consumption, not an engine firing",
+    "tr": "b6564d9d47"
+  },
+  "delta-v|hi|essays/interstellar-exploration.json :: body.10.md": {
+    "why": "term not in this sentence of the English",
+    "tr": "5b478e433d"
+  },
+  "delta-v|hi|fleet/orbiter/messenger.json :: description": {
+    "why": "the sentence containing delta-v is omitted from the translation; no rendering to fix (content gap, flagged)",
+    "tr": "2c502196ba"
+  },
+  "descent|ar|programs/vostok.json :: legacy.1.md": {
+    "why": "English means lineage (direct descent), not descent to a surface",
+    "tr": "69653bf139"
+  },
+  "descent|de|fleet/launcher/soyuz.json :: dispatch": {
+    "why": "variant: Landekapsel (Soyuz descent module, standard German)",
+    "tr": "20b71dbab5"
+  },
+  "descent|de|fleet/space-suit/sokol-kv-2.json :: description": {
+    "why": "variant: Landekapsel (Soyuz descent module)",
+    "tr": "4acdd46c60"
+  },
+  "descent|de|missions/comet/rosetta.json :: payload": {
+    "why": "variant: Landeeinheit Philae (descent lander)",
+    "tr": "ef650f3a67"
+  },
+  "descent|de|missions/earth/voskhod-2.json :: description": {
+    "why": "variant: Landemodul (descent module)",
+    "tr": "776b475e14"
+  },
+  "descent|de|missions/earth/vostok-1.json :: payload": {
+    "why": "variant: Landekapsel (descent module)",
+    "tr": "e0ec263d4f"
+  },
+  "descent|de|missions/psyche/psyche-mission.json :: description": {
+    "why": "variant: Bahnabsenkung (orbit-lowering phases)",
+    "tr": "3d1a96abd3"
+  },
+  "descent|de|programs/shenzhou.json :: the_land.1.md": {
+    "why": "variant: Rückkehrkapsel",
+    "tr": "ef688dc44d"
+  },
+  "descent|de|programs/vostok.json :: legacy.1.md": {
+    "why": "English uses descent = lineage",
+    "tr": "98c91f757c"
+  },
+  "descent|de|science/life-in-space/iva-suits.json :: body_paragraphs.0": {
+    "why": "descent module = Landemodul, name of a module",
+    "tr": "86bd7e78b3"
+  },
+  "descent|de|science/mission-phases/propulsive-landing.json :: diagram_caption": {
+    "why": "Sinkgeschwindigkeit, natural compound",
+    "tr": "3238153c98"
+  },
+  "descent|de|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.1": {
+    "why": "proper name / Prinzip, not a descent phase",
+    "tr": "0fd61cad2a"
+  },
+  "descent|hi|missions/mars/schiaparelli.json :: type": {
+    "why": "field left untranslated English (listed)",
+    "tr": "1733e4cec8"
+  },
+  "descent|hi|programs/vostok.json :: legacy.1.md": {
+    "why": "English means lineage (direct descent), not descent to a surface",
+    "tr": "8b657c1ab5"
+  },
+  "descent|ja|programs/vostok.json :: legacy.1.md": {
+    "why": "lineage sense (direct descent), not a surface descent",
+    "tr": "3ec20ba924"
+  },
+  "descent|ko|missions/psyche/psyche-mission.json :: description": {
+    "why": "paraphrase 고도를 낮추며 for the descent phases",
+    "tr": "fb2f8ba8b9"
+  },
+  "descent|ko|programs/vostok.json :: legacy.1.md": {
+    "why": "lineage sense, not surface descent",
+    "tr": "329b9e4433"
+  },
+  "descent|nl|fleet/launcher/soyuz.json :: dispatch": {
+    "why": "variant: landingscapsule (Soyuz descent module)",
+    "tr": "414eba87a3"
+  },
+  "descent|nl|programs/vostok.json :: legacy.1.md": {
+    "why": "English descent = lineage",
+    "tr": "69fb5c5f9a"
+  },
+  "descent|nl|science/propulsion/throttling-and-gimbaling.json :: body_paragraphs.1": {
+    "why": "proper name of the engine / pintle-injector principle, not a descent phase",
+    "tr": "dfa9cf107b"
+  },
+  "descent|pt-BR|programs/vostok.json :: legacy.1.md": {
+    "why": "English descent = lineage",
+    "tr": "3e34e6924a"
+  },
+  "descent|ru|programs/vostok.json :: legacy.1.md": {
+    "why": "other sense: lineage",
+    "tr": "24747fba5d"
+  },
+  "descent|sr-Cyrl|programs/vostok.json :: legacy.1.md": {
+    "why": "other sense: lineage (директни предак)",
+    "tr": "f7b0d117c3"
+  },
+  "descent|zh-CN|fleet/launcher/soyuz.json :: dispatch": {
+    "why": "variant: 返回舱 (standard name of the Soyuz descent module)",
+    "tr": "10cf9774be"
+  },
+  "descent|zh-CN|fleet/space-suit/sokol-kv-2.json :: description": {
+    "why": "variant: 返回舱 (standard name of the Soyuz descent module)",
+    "tr": "577015a5bf"
+  },
+  "descent|zh-CN|missions/earth/vostok-1.json :: description": {
+    "why": "variant: 返回舱 (descent module)",
+    "tr": "232bd04c67"
+  },
+  "descent|zh-CN|missions/earth/vostok-1.json :: payload": {
+    "why": "variant: 返回舱 (descent module)",
+    "tr": "9aac4085d9"
+  },
+  "descent|zh-CN|programs/shenzhou.json :: outcome.1.caption": {
+    "why": "variant: 返回舱 (standard descent module)",
+    "tr": "2109de1c1c"
+  },
+  "descent|zh-CN|programs/shenzhou.json :: the_land.1.md": {
+    "why": "variant: 返回舱 (standard Soyuz descent module)",
+    "tr": "5f047d8364"
+  },
+  "descent|zh-CN|programs/vostok.json :: legacy.1.md": {
+    "why": "lineage sense, not surface descent",
+    "tr": "b71c1572f0"
+  },
+  "docking|hi|science/space-stations/node-module.json :: body_paragraphs.4": {
+    "why": "part of proper name Chinese Docking Mechanism",
+    "tr": "d444a738de"
+  },
+  "docking|ko|science/space-stations/node-module.json :: body_paragraphs.4": {
+    "why": "Chinese Docking Mechanism is a proper name left in English",
+    "tr": "7a82c63b61"
+  },
+  "entry|ar|essays/reusable-launchers.json :: body.9.md": {
+    "why": "variant: العودة = reentry (the atmospheric reentry of a returning stage)",
+    "tr": "4420e75154"
+  },
+  "entry|ar|missions/asteroid/hayabusa2.json :: payload": {
+    "why": "variant: عودة بالمظلة (reentry by parachute)",
+    "tr": "a11bd011c2"
+  },
+  "entry|ar|missions/earth/faith-7.json :: dispatch": {
+    "why": "variant: عملية العودة",
+    "tr": "603c11b467"
+  },
+  "entry|ar|missions/earth/freedom-7.json :: description": {
+    "why": "variant: أثناء العودة",
+    "tr": "9dbab0258f"
+  },
+  "entry|ar|missions/earth/gemini8.json :: description": {
+    "why": "variant: نظام التحكم في العودة",
+    "tr": "9ac754725a"
+  },
+  "entry|ar|missions/earth/gemini8.json :: dispatch": {
+    "why": "variant: نظام التحكم في العودة",
+    "tr": "0a1e27a3b2"
+  },
+  "entry|ar|missions/earth/otv-1.json :: description": {
+    "why": "variant: تعود من المدار بهبوط على مدرج",
+    "tr": "631f50a056"
+  },
+  "entry|ar|missions/earth/soyuz-1.json :: events.2.note": {
+    "why": "variant: عند العودة",
+    "tr": "f56bf120d0"
+  },
+  "entry|ar|missions/earth/soyuz-11.json :: dispatch": {
+    "why": "variant: أثناء العودة",
+    "tr": "03b3741657"
+  },
+  "entry|ar|missions/earth/soyuz-11.json :: first": {
+    "why": "variant: أثناء العودة",
+    "tr": "1312682a8d"
+  },
+  "entry|ar|missions/earth/voskhod-1.json :: description": {
+    "why": "variant: العودة",
+    "tr": "b68e7bc09e"
+  },
+  "entry|ar|missions/earth/voskhod-1.json :: dispatch": {
+    "why": "variant: العودة",
+    "tr": "68759069ed"
+  },
+  "entry|ar|missions/earth/voskhod-2.json :: description": {
+    "why": "variant: العودة",
+    "tr": "a64343b1a2"
+  },
+  "entry|ar|missions/earth/voskhod-2.json :: dispatch": {
+    "why": "variant: العودة الآلية",
+    "tr": "650d204f01"
+  },
+  "entry|ar|programs/buran.json :: the_land.1.md": {
+    "why": "variant: العودة إلى الغلاف الجوي (reentry)",
+    "tr": "68264e3f1c"
+  },
+  "entry|ar|programs/hayabusa.json :: goals.2.md": {
+    "why": "variant: كبسولة عودة (reentry capsule)",
+    "tr": "ba3f4dea08"
+  },
+  "entry|ar|programs/hayabusa.json :: narrative.0.md": {
+    "why": "variant: كبسولة العودة (reentry capsule)",
+    "tr": "f395136ce0"
+  },
+  "entry|ar|programs/mercury.json :: link_labels./earth": {
+    "why": "variant: العودة (reentry, short label)",
+    "tr": "15a2b794f8"
+  },
+  "entry|ar|programs/mir.json :: outcome.2.md": {
+    "why": "variant: عودة مُتحكَّم بها إلى الغلاف الجوي (reentry)",
+    "tr": "e54b96e337"
+  },
+  "entry|ar|programs/sputnik.json :: outcome.0.md": {
+    "why": "variant: عودتها إلى الغلاف الجوي (reentry)",
+    "tr": "33e7739afc"
+  },
+  "entry|ar|programs/voskhod.json :: outcome.1.md": {
+    "why": "variant: العودة الآلي إلى الغلاف الجوي (reentry)",
+    "tr": "55432ee81c"
+  },
+  "entry|ar|science/life-in-space/pre-flight-training.json :: body_paragraphs.3": {
+    "why": "\"re-entry engine\" is not atmospheric entry itself; محرّكات العودة is correct",
+    "tr": "0aa7f80ae1"
+  },
+  "entry|ar|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "\"re-entry into 1 g\" is not atmospheric entry",
+    "tr": "5c450666f2"
+  },
+  "entry|ar|science/mission-phases/deorbit-corridor.json :: narrative_101.2": {
+    "why": "\"entry interface\" rendered as نقطة التماس مع الغلاف الجوي, correct",
+    "tr": "ca6fdcf210"
+  },
+  "entry|de|programs/hayabusa.json :: goals.2.md": {
+    "why": "variant: Rückkehrkapsel",
+    "tr": "4dcf20721f"
+  },
+  "entry|de|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "re-entry into 1 g gravity, not atmospheric entry",
+    "tr": "1d737586f9"
+  },
+  "entry|es|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "re-entry into 1 g gravity, not atmospheric",
+    "tr": "423ca0e2e9"
+  },
+  "entry|fr|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "re-entry into 1 g is vestibular, not atmospheric entry",
+    "tr": "71626c57e9"
+  },
+  "entry|hi|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "\"re-entry into 1 g\" is not atmospheric entry",
+    "tr": "84f0be49f2"
+  },
+  "entry|it|missions/mars/curiosity.json :: events.4.note": {
+    "why": "variant: entrata in atmosfera",
+    "tr": "2cca31366f"
+  },
+  "entry|it|missions/mars/mars-pathfinder.json :: events.2.note": {
+    "why": "variant: entrata diretta in atmosfera",
+    "tr": "8049268363"
+  },
+  "entry|ko|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "re-entry into 1 g is not atmospheric entry",
+    "tr": "2636baa0df"
+  },
+  "entry|ru|fleet/orbiter/viking1-orbiter.json :: description": {
+    "why": "orbit entry/decay of Mars orbiter, not atmospheric entry; 'сошёл с орбиты' natural",
+    "tr": "9378d3f7eb"
+  },
+  "entry|ru|missions/asteroid/hayabusa2.json :: description": {
+    "why": "variant: вошла в атмосферу (verb)",
+    "tr": "d45d83ac37"
+  },
+  "entry|ru|missions/earth/apollo9.json :: events.2.note": {
+    "why": "variant: аппарат возвращения (re-entry vehicle as a type name)",
+    "tr": "be73744d0b"
+  },
+  "entry|ru|missions/mars/mmx.json :: events.4.note": {
+    "why": "re-entry is an adjective of the capsule; omitted naturally",
+    "tr": "1315b0fe09"
+  },
+  "entry|ru|programs/soyuz.json :: narrative.0.md": {
+    "why": "variant: спуск (reentry of a crewed capsule)",
+    "tr": "cd9a430a26"
+  },
+  "entry|ru|programs/spacex.json :: goals.0.md": {
+    "why": "variant: возвращение в атмосферу",
+    "tr": "1ad4d7bba8"
+  },
+  "entry|ru|programs/voskhod.json :: outcome.1.md": {
+    "why": "variant: система возвращения",
+    "tr": "7831b3659b"
+  },
+  "entry|ru|science/life-in-space/pre-flight-training.json :: body_paragraphs.3": {
+    "why": "re-entry engine = the braking (deorbit) engine, not atmospheric entry",
+    "tr": "0bc5924b0b"
+  },
+  "entry|ru|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "'re-entry into 1 g' is vestibular, not atmospheric entry",
+    "tr": "e4151b4db4"
+  },
+  "entry|sr-Cyrl|programs/hayabusa.json :: goals.2.md": {
+    "why": "variant: повратна капсула (re-entry capsule)",
+    "tr": "b81e99cdf5"
+  },
+  "entry|sr-Cyrl|programs/hayabusa.json :: narrative.0.md": {
+    "why": "variant: повратна капсула (re-entry capsule)",
+    "tr": "5913826380"
+  },
+  "entry|sr-Cyrl|programs/soyuz.json :: narrative.0.md": {
+    "why": "variant: повратак (reentry)",
+    "tr": "5bcb6d3371"
+  },
+  "entry|sr-Cyrl|programs/voskhod.json :: outcome.1.md": {
+    "why": "variant: систем за повратак (reentry)",
+    "tr": "c9c3d2df2e"
+  },
+  "entry|sr-Cyrl|science/life-in-space/iva-suits.json :: intro_sentence": {
+    "why": "повратак in a list of flight phases",
+    "tr": "4db6fe12c9"
+  },
+  "entry|sr-Cyrl|science/life-in-space/pre-flight-training.json :: body_paragraphs.3": {
+    "why": "re-entry engine = мотор за повратак",
+    "tr": "21f1144bc0"
+  },
+  "entry|sr-Cyrl|science/life-in-space/vestibular-adaptation.json :: diagram_caption": {
+    "why": "'re-entry into 1 g' is vestibular, not atmospheric entry",
+    "tr": "059067f142"
+  },
+  "entry|zh-CN|missions/mars/mmx.json :: events.4.note": {
+    "why": "variant: 返回舱 for re-entry capsule",
+    "tr": "6a58dd864f"
+  },
+  "entry|zh-CN|science/orbits/cislunar-orbits.json :: body_paragraphs.4": {
+    "why": "re-entry rendered 返回地球; natural",
+    "tr": "5a18d6b6d5"
+  },
+  "flyby|ar|programs/pioneer.json :: outcome.1.md": {
+    "why": "variant: مرور قريب",
+    "tr": "624b839251"
+  },
+  "flyby|ar|science/transfers/conic-sections.json :: body_paragraphs.2": {
+    "why": "verb: يمرّون قرب كوكب",
+    "tr": "4450805404"
+  },
+  "flyby|hi|fleet/orbiter/osiris-rex.json :: description": {
+    "why": "variant: करीब से गुजरेगा (passes close by) for 'close flyby'",
+    "tr": "eb497d80a7"
+  },
+  "flyby|ko|science/propulsion/solar-sail.json :: body_paragraphs.1": {
+    "why": "verb: 태양을 가까이 스친 뒤",
+    "tr": "68fbcd56d8"
+  },
+  "flyby|ko|science/transfers/conic-sections.json :: body_paragraphs.2": {
+    "why": "verb: 스쳐 지나가고",
+    "tr": "6b20e9919c"
+  },
+  "flyby|ko|science/transfers/conic-sections.json :: narrative_101.2": {
+    "why": "verb: 스치고 지나가는 것",
+    "tr": "35a1da45b8"
+  },
+  "gravity assist|sr-Cyrl|science/mission-phases/trans-x-injection.json :: body_paragraphs.1": {
+    "why": "'гравитационим маневрима' is the binding word inflected",
+    "tr": "e9b7d57622"
+  },
+  "gravity assist|sr-Cyrl|science/transfers/_intro.json :: paragraphs.1": {
+    "why": "'гравитационим маневрима' is the binding word inflected (stem check misses the case ending)",
+    "tr": "5a3f03d319"
+  },
+  "inclination|de|programs/ros.json :: goals.0.md": {
+    "why": "stem gap: hochgeneigte",
+    "tr": "22ae2fc42e"
+  },
+  "inclination|de|science/_landing.json :: chapters.0.paragraphs.1": {
+    "why": "correct as is",
+    "tr": "e49a596fc2"
+  },
+  "inclination|fr|fleet/orbiter/luna10.json :: description": {
+    "why": "variant: orbite inclinée à 71,9° (participle of the binding)",
+    "tr": "394d3898f5"
+  },
+  "inclination|fr|science/planets/kuiper-belt.json :: body_paragraphs.0": {
+    "why": "rendered as adjectives inclinées/inclinée",
+    "tr": "c15c757007"
+  },
+  "inclination|ja|fleet/launch-site/plesetsk-43.json :: description": {
+    "why": "variant: 高傾斜軌道",
+    "tr": "30f619bbe4"
+  },
+  "inclination|ja|fleet/orbiter/lunar-orbiter-4.json :: description": {
+    "why": "variant: 高傾斜",
+    "tr": "1c1472efba"
+  },
+  "inclination|ja|missions/earth/otv-5.json :: description": {
+    "why": "variant: 高傾斜軌道 (standard adjectival compound)",
+    "tr": "beb3aa091f"
+  },
+  "inclination|ja|missions/sun/ulysses.json :: first": {
+    "why": "variant: 高傾斜 (standard adjectival compound)",
+    "tr": "57d863a91b"
+  },
+  "inclination|ja|science/_landing.json :: chapters.0.paragraphs.1": {
+    "why": "English says tilt; 傾き matches source",
+    "tr": "ae4994a3f7"
+  },
+  "inclination|ko|missions/sun/ulysses.json :: first": {
+    "why": "variant: 경사가 큰 (= high inclination)",
+    "tr": "cec3ec1b4f"
+  },
+  "inclination|ko|science/_landing.json :: chapters.0.paragraphs.1": {
+    "why": "English says tilt; 기울기 matches source",
+    "tr": "13aad2f738"
+  },
+  "orbit insertion|ar|science/mission-phases/orbit-insertion.json :: body_paragraphs.1": {
+    "why": "\"إدخال ... في مدار\" matches the accepted pattern with a name inserted",
+    "tr": "c7831c2799"
+  },
+  "orbit insertion|hi|science/mission-phases/orbit-insertion.json :: narrative_101.0": {
+    "why": "English manoeuvre names kept as proper names",
+    "tr": "38df64965f"
+  },
+  "orbit insertion|nl|science/mission-phases/gravity-turn.json :: diagram_caption": {
+    "why": "launch: tegen de tijd dat de baan bereikt is",
+    "tr": "5b916cd31d"
+  },
+  "orbit insertion|sr-Cyrl|science/history/apollo-11-1969.json :: body_paragraphs.1": {
+    "why": "'улазак у лунарну орбиту' is an accepted form with adjective inserted",
+    "tr": "9105e74355"
+  },
+  "orbit insertion|sr-Cyrl|science/mission-phases/gravity-turn.json :: diagram_caption": {
+    "why": "'до уласка у орбиту' is an accepted form (case ending)",
+    "tr": "8970dd7d1c"
+  },
+  "orbit insertion|sr-Cyrl|science/propulsion/laser-sail.json :: body_paragraphs.2": {
+    "why": "'без уласка у орбиту' is an accepted form (case ending)",
+    "tr": "b21f5244bd"
+  },
+  "orbit insertion|zh-CN|fleet/launcher/delta-ii.json :: description": {
+    "why": "variant: 进入水星轨道",
+    "tr": "2db9ce4198"
+  },
+  "orbit insertion|zh-CN|missions/comet/rosetta.json :: events.5.note": {
+    "why": "stem gap: 进入…彗星的轨道",
+    "tr": "2076cfd1bb"
+  },
+  "orbit insertion|zh-CN|programs/jaxa-robotic.json :: outcome.0.md": {
+    "why": "stem gap: 进入金星轨道",
+    "tr": "2eeedb6514"
+  },
+  "orbit insertion|zh-CN|science/mission-phases/launch.json :: body_paragraphs.0": {
+    "why": "ascent to orbit; the binding 制动捕获 is for capture braking at a destination",
+    "tr": "65db741d35"
+  },
+  "orbit|ar|missions/earth/aurora-7.json :: description": {
+    "why": "variant: بثلاث دورات (laps)",
+    "tr": "2ec13a69cd"
+  },
+  "orbit|ar|missions/earth/aurora-7.json :: dispatch": {
+    "why": "variant: الدورات (laps)",
+    "tr": "952a126636"
+  },
+  "orbit|ar|missions/earth/aurora-7.json :: first": {
+    "why": "variant: دورات (laps)",
+    "tr": "b0de65ab4f"
+  },
+  "orbit|ar|missions/earth/faith-7.json :: description": {
+    "why": "variant: 22 دورة",
+    "tr": "98f75ab2bd"
+  },
+  "orbit|ar|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: 22 دورة",
+    "tr": "fdf2c2bee9"
+  },
+  "orbit|ar|missions/earth/faith-7.json :: first": {
+    "why": "variant: دورة (lap count)",
+    "tr": "d4e24050f2"
+  },
+  "orbit|ar|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: 3 دورات",
+    "tr": "5455299dc9"
+  },
+  "orbit|ar|missions/earth/gemini4.json :: description": {
+    "why": "variant: 62 دورة حول الأرض",
+    "tr": "ab1fd1d85d"
+  },
+  "orbit|ar|missions/earth/gemini4.json :: events.2.note": {
+    "why": "variant: 62 دورة حول الأرض",
+    "tr": "c383979480"
+  },
+  "orbit|ar|missions/earth/gemini4.json :: type": {
+    "why": "variant: رحلة حول الأرض",
+    "tr": "c4f2fde0ea"
+  },
+  "orbit|ar|missions/earth/sputnik1.json :: events.2.note": {
+    "why": "variant: 315 دورة",
+    "tr": "b2658df950"
+  },
+  "orbit|ar|missions/earth/sputnik1.json :: events.3.note": {
+    "why": "variant: 1440 دورة",
+    "tr": "7f74257c48"
+  },
+  "orbit|ar|programs/chandrayaan.json :: goals.2.md": {
+    "why": "variant: دوران (verb sense of orbit)",
+    "tr": "7d3247c47a"
+  },
+  "orbit|ar|programs/change.json :: the_land.0.md": {
+    "why": "variant: دوران (verb sense of orbit)",
+    "tr": "f94d3cb4a0"
+  },
+  "orbit|ar|programs/mercury.json :: outcome.2.md": {
+    "why": "variant: دوران (verb sense of orbit)",
+    "tr": "dfd6ebfcf8"
+  },
+  "orbit|ar|science/_landing.json :: chapters.0.diagram": {
+    "why": "file name",
+    "tr": "72874f8e10"
+  },
+  "orbit|ar|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "7c393a3e89"
+  },
+  "orbit|ar|science/exoplanets/habitable-zone.json :: narrative_101.1": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "ac0e3acdfc"
+  },
+  "orbit|ar|science/exoplanets/hot-jupiters.json :: intro_sentence": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "e540fe9799"
+  },
+  "orbit|ar|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "c07b5acf9a"
+  },
+  "orbit|ar|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "a1172d1a7b"
+  },
+  "orbit|ar|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "3b8e114e0a"
+  },
+  "orbit|ar|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "5b2921ab38"
+  },
+  "orbit|ar|science/orbits/apsides.json :: body_paragraphs.1": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "af98a8b85a"
+  },
+  "orbit|ar|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "173ad2a440"
+  },
+  "orbit|ar|science/planets/asteroid-belt.json :: body_paragraphs.1": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "084e7d7a2d"
+  },
+  "orbit|ar|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "5cf4360ac2"
+  },
+  "orbit|ar|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "verb/noun rendered correctly (تدور / مدار / دورة)",
+    "tr": "476d1f3128"
+  },
+  "orbit|ar|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "verb \"تدور حولها\" is correct",
+    "tr": "b6f79223c2"
+  },
+  "orbit|ar|science/transfers/coplanar-trajectories.json :: body_paragraphs.2": {
+    "why": "verb تدور/دارت is correct",
+    "tr": "c8867fe562"
+  },
+  "orbit|ar|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "verb تدور/دارت is correct",
+    "tr": "be87a422d0"
+  },
+  "orbit|de|fleet/launch-site/taiyuan-lc-9.json :: description": {
+    "why": "orbit adjective omitted naturally (sonnensynchronen Starts)",
+    "tr": "99de0880a6"
+  },
+  "orbit|de|programs/great-observatories.json :: outcome.0.md": {
+    "why": "variant: zum Absturz gebracht (controlled de-orbit)",
+    "tr": "5b2f36616d"
+  },
+  "orbit|de|programs/mercury.json :: legacy.0.caption": {
+    "why": "variant: Umläufe (orbits as revolutions); stem gap: Umläufe",
+    "tr": "9966927a12"
+  },
+  "orbit|de|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "73c095cc0f"
+  },
+  "orbit|de|science/exoplanets/fifty-one-pegasi.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "b722d59a35"
+  },
+  "orbit|de|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "415da717e3"
+  },
+  "orbit|de|science/exoplanets/habitable-zone.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "f4887bb081"
+  },
+  "orbit|de|science/exoplanets/hot-jupiters.json :: intro_sentence": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "d404faea92"
+  },
+  "orbit|de|science/exoplanets/microlensing.json :: diagram_caption": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "8eda8ca73a"
+  },
+  "orbit|de|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "6a886b744d"
+  },
+  "orbit|de|science/exoplanets/proxima-system.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "1ed9660e3c"
+  },
+  "orbit|de|science/exoplanets/radial-velocity.json :: diagram_caption": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "bba0c9c2ad"
+  },
+  "orbit|de|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "a299d67b89"
+  },
+  "orbit|de|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "c386f71b91"
+  },
+  "orbit|de|science/exoplanets/tidal-locking.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "3192087fe6"
+  },
+  "orbit|de|science/exoplanets/tidal-locking.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "8326549e03"
+  },
+  "orbit|de|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "7d522b33fd"
+  },
+  "orbit|de|science/exoplanets/transit-timing.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "0a8bb5f095"
+  },
+  "orbit|de|science/life-in-space/long-duration-effects.json :: body_paragraphs.1": {
+    "why": "Umlauf = one revolution/period, natural",
+    "tr": "8726c4bcb4"
+  },
+  "orbit|de|science/mission-phases/mission-types.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "1d773a453d"
+  },
+  "orbit|de|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "d86e17f84b"
+  },
+  "orbit|de|science/observation/black-holes.json :: diagram_caption": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "01f629cf45"
+  },
+  "orbit|de|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "76a75f8066"
+  },
+  "orbit|de|science/orbits/apsides.json :: body_paragraphs.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "5f4b8e6f45"
+  },
+  "orbit|de|science/orbits/eccentricity.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "05fb137af3"
+  },
+  "orbit|de|science/orbits/keplers-laws.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "ae0e069854"
+  },
+  "orbit|de|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "67d9b9ea60"
+  },
+  "orbit|de|science/orbits/true-anomaly.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "6467404186"
+  },
+  "orbit|de|science/planets/asteroid-belt.json :: body_paragraphs.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "607e764990"
+  },
+  "orbit|de|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "6bfdeea024"
+  },
+  "orbit|de|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "36fec77c07"
+  },
+  "orbit|de|science/planets/moons-of-the-system.json :: narrative_101.2": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "2f95e757dc"
+  },
+  "orbit|de|science/planets/sub-solar-and-terminator.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "edc29dcc2a"
+  },
+  "orbit|de|science/scales-time/_intro.json :: paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "dd0d98eeda"
+  },
+  "orbit|de|science/scales-time/au.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "0cb68fca43"
+  },
+  "orbit|de|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "dc3267135e"
+  },
+  "orbit|de|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "e3ee5d0475"
+  },
+  "orbit|de|science/scales-time/sidereal-synodic.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "bf8c3bacf2"
+  },
+  "orbit|de|science/space-stations/expedition-cadence.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "1f992987e8"
+  },
+  "orbit|de|science/space-stations/solar-power-budget.json :: body_paragraphs.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "577180dbb0"
+  },
+  "orbit|de|science/space-stations/solar-power-budget.json :: diagram_caption": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "521e865a3e"
+  },
+  "orbit|de|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "verb/period sense; umkreisen/Umlauf natural",
+    "tr": "34dd944222"
+  },
+  "orbit|es|fleet/launch-site/taiyuan-lc-9.json :: description": {
+    "why": "natural omission: lanzamientos polares y heliosincrónicos",
+    "tr": "f2663687da"
+  },
+  "orbit|fr|missions/earth/vostok-1.json :: dispatch": {
+    "why": "variant: en faire le tour (circled the Earth)",
+    "tr": "b41eca8bf4"
+  },
+  "orbit|fr|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "orbit as verb (tourner autour), not the orbit noun",
+    "tr": "ee840f324c"
+  },
+  "orbit|fr|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "orbit as verb (tourner autour), not the orbit noun",
+    "tr": "1821763e7e"
+  },
+  "orbit|hi|missions/earth/gemini8.json :: type": {
+    "why": "field left untranslated English; term not rendered (garble listed)",
+    "tr": "e27e7ac488"
+  },
+  "orbit|hi|missions/earth/vostok-3.json :: type": {
+    "why": "field left untranslated English; term not rendered (garble listed)",
+    "tr": "e27e7ac488"
+  },
+  "orbit|hi|science/_landing.json :: chapters.0.diagram": {
+    "why": "file name",
+    "tr": "72874f8e10"
+  },
+  "orbit|hi|science/life-in-space/long-duration-effects.json :: body_paragraphs.1": {
+    "why": "\"24 h orbit\" omitted naturally",
+    "tr": "fddbe8e6fb"
+  },
+  "orbit|it|fleet/launch-site/taiyuan-lc-9.json :: description": {
+    "why": "natural omission: lanci polari ed eliosincroni",
+    "tr": "e3f53a1559"
+  },
+  "orbit|ja|essays/asteroid-mining.json :: body.0.md": {
+    "why": "variant: 回る / その周囲の (orbiting rendered naturally)",
+    "tr": "0d0c060831"
+  },
+  "orbit|ja|essays/interstellar-exploration.json :: body.15.md": {
+    "why": "variant: 回る / その周囲の (orbiting rendered naturally)",
+    "tr": "5ee6441d3b"
+  },
+  "orbit|ja|missions/earth/aurora-7.json :: description": {
+    "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun",
+    "tr": "e3b3e45110"
+  },
+  "orbit|ja|missions/earth/aurora-7.json :: dispatch": {
+    "why": "variant: revolution count (周 / витков / revolutions), not the orbit noun",
+    "tr": "39dfbc3810"
+  },
+  "orbit|ja|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: 周 (revolution counter)",
+    "tr": "afacbb06d9"
+  },
+  "orbit|ja|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: 周 (revolution counter)",
+    "tr": "08c0dd2469"
+  },
+  "orbit|ja|science/_landing.json :: chapters.0.diagram": {
+    "why": "filename",
+    "tr": "72874f8e10"
+  },
+  "orbit|ko|essays/interstellar-exploration.json :: body.15.md": {
+    "why": "omitted naturally: 그 둘레의 행성들",
+    "tr": "db09aeaa15"
+  },
+  "orbit|ko|fleet/orbiter/dawn.json :: best_known_for": {
+    "why": "variant: 돈 (verb to orbit)",
+    "tr": "d972ee6daa"
+  },
+  "orbit|ko|missions/earth/apollo7.json :: events.3.note": {
+    "why": "variant: 바퀴 (revolution counter)",
+    "tr": "958a1dec80"
+  },
+  "orbit|ko|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: 바퀴 (revolution counter)",
+    "tr": "09e30e222f"
+  },
+  "orbit|ko|missions/earth/friendship-7.json :: dispatch": {
+    "why": "variant: 돈 (verb to orbit)",
+    "tr": "707063ff50"
+  },
+  "orbit|ko|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: 바퀴 (revolution counter)",
+    "tr": "3b8465974d"
+  },
+  "orbit|ko|missions/earth/vostok-6.json :: dispatch": {
+    "why": "variant: 돈 / 바퀴 (verb to orbit)",
+    "tr": "ac06db95d9"
+  },
+  "orbit|ko|missions/moon/luna10.json :: first": {
+    "why": "variant: 돈 (verb to orbit)",
+    "tr": "38cad3487e"
+  },
+  "orbit|ko|science/_landing.json :: chapters.0.diagram": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "72874f8e10"
+  },
+  "orbit|ko|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "c935f08a80"
+  },
+  "orbit|ko|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "f1f23e68c0"
+  },
+  "orbit|ko|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "871bc67870"
+  },
+  "orbit|ko|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "5423e700ac"
+  },
+  "orbit|ko|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "ee095feae0"
+  },
+  "orbit|ko|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "afbbc1576c"
+  },
+  "orbit|ko|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "45c506b1ea"
+  },
+  "orbit|ko|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "aff39cf884"
+  },
+  "orbit|ko|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "de770ad883"
+  },
+  "orbit|ko|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
+    "why": "orbit verb rendered 돌다 (natural); or filename",
+    "tr": "75925f46eb"
+  },
+  "orbit|nl|essays/asteroid-mining.json :: body.0.md": {
+    "why": "verb omitted naturally (hemellichaam in de asteroidengordel)",
+    "tr": "248101e479"
+  },
+  "orbit|nl|essays/interstellar-exploration.json :: body.15.md": {
+    "why": "'planeten eromheen' - natural rendering of 'planets orbiting it'",
+    "tr": "1846cedaa9"
+  },
+  "orbit|nl|fleet/launch-site/taiyuan-lc-9.json :: description": {
+    "why": "orbit adjective omitted naturally (polaire en zonsynchrone lanceringen)",
+    "tr": "55148fd954"
+  },
+  "orbit|nl|fleet/orbiter/dawn.json :: tagline": {
+    "why": "variant: omcirkeld (verb to orbit)",
+    "tr": "27a41289df"
+  },
+  "orbit|nl|fleet/orbiter/mariner-9.json :: best_known_for": {
+    "why": "variant: draait om (verb to orbit)",
+    "tr": "4a268342e7"
+  },
+  "orbit|nl|fleet/orbiter/mariner-9.json :: tagline": {
+    "why": "variant: draait om (verb to orbit)",
+    "tr": "4a268342e7"
+  },
+  "orbit|nl|fleet/orbiter/rosetta.json :: best_known_for": {
+    "why": "variant: draait om (verb to orbit)",
+    "tr": "d7c763443b"
+  },
+  "orbit|nl|fleet/orbiter/rosetta.json :: tagline": {
+    "why": "variant: draait om (verb to orbit)",
+    "tr": "d7c763443b"
+  },
+  "orbit|nl|missions/asteroid/near-shoemaker.json :: first": {
+    "why": "variant: draaide (verb to orbit)",
+    "tr": "ea924d7b1c"
+  },
+  "orbit|nl|missions/asteroid/near-shoemaker.json :: payload": {
+    "why": "variant: draaide (verb to orbit)",
+    "tr": "462adc5fb4"
+  },
+  "orbit|nl|missions/ceres/dawn.json :: first": {
+    "why": "variant: draaide (verb to orbit)",
+    "tr": "6f465e9a9c"
+  },
+  "orbit|nl|missions/comet/rosetta.json :: description": {
+    "why": "variant: draaide er omheen (verb to orbit)",
+    "tr": "e337495396"
+  },
+  "orbit|nl|missions/earth/aurora-7.json :: dispatch": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "73b69542ff"
+  },
+  "orbit|nl|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: omlopen (counted revolutions)",
+    "tr": "52b7243ded"
+  },
+  "orbit|nl|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: omlopen (counted revolutions)",
+    "tr": "222f9e85e4"
+  },
+  "orbit|nl|missions/earth/gemini12.json :: description": {
+    "why": "variant: omlopen (counted revolutions)",
+    "tr": "51827e149f"
+  },
+  "orbit|nl|missions/earth/gemini12.json :: events.2.note": {
+    "why": "variant: omlopen (counted revolutions)",
+    "tr": "b4bd28d2a9"
+  },
+  "orbit|nl|missions/earth/gemini3.json :: events.2.note": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "f0fe7d20fc"
+  },
+  "orbit|nl|missions/earth/gemini7.json :: description": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "f41d2bf51d"
+  },
+  "orbit|nl|missions/earth/gemini7.json :: events.2.note": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "50080ad897"
+  },
+  "orbit|nl|missions/earth/sputnik1.json :: events.2.note": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "c4bce3121a"
+  },
+  "orbit|nl|missions/earth/vostok-2.json :: first": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "f4952d2167"
+  },
+  "orbit|nl|missions/earth/vostok-3.json :: events.2.note": {
+    "why": "variant: omwentelingen (counted revolutions)",
+    "tr": "f904872819"
+  },
+  "orbit|nl|missions/earth/vostok-5.json :: first": {
+    "why": "variant: aardomloopvlucht / omwentelingen",
+    "tr": "d01065d502"
+  },
+  "orbit|nl|programs/cassini.json :: narrative.0.md": {
+    "why": "variant: omloop (orbit as revolution)",
+    "tr": "2e26007964"
+  },
+  "orbit|nl|programs/change.json :: the_land.0.md": {
+    "why": "variant: eromheen draaien (verb)",
+    "tr": "3d9e3d4e65"
+  },
+  "orbit|nl|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "a8c61268e9"
+  },
+  "orbit|nl|science/exoplanets/fifty-one-pegasi.json :: body_paragraphs.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "aba98b90f9"
+  },
+  "orbit|nl|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "e8949d91bb"
+  },
+  "orbit|nl|science/exoplanets/habitable-zone.json :: narrative_101.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "98820277dd"
+  },
+  "orbit|nl|science/exoplanets/hot-jupiters.json :: intro_sentence": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "012793eb24"
+  },
+  "orbit|nl|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "43465bbec6"
+  },
+  "orbit|nl|science/exoplanets/proxima-system.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "8f1d043fc0"
+  },
+  "orbit|nl|science/exoplanets/radial-velocity.json :: diagram_caption": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "0b8910e006"
+  },
+  "orbit|nl|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "7570b94580"
+  },
+  "orbit|nl|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "9977a82b06"
+  },
+  "orbit|nl|science/exoplanets/tidal-locking.json :: narrative_101.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "95ba1db0ef"
+  },
+  "orbit|nl|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "8abdea0186"
+  },
+  "orbit|nl|science/exoplanets/transit-timing.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "ad19e3a615"
+  },
+  "orbit|nl|science/life-in-space/crew-selection.json :: body_paragraphs.2": {
+    "why": "\"in de ruimte\" for on orbit, natural",
+    "tr": "996541827c"
+  },
+  "orbit|nl|science/life-in-space/long-duration-effects.json :: body_paragraphs.1": {
+    "why": "orbit omitted naturally in \"in 24 uur\"",
+    "tr": "963ecfb6ab"
+  },
+  "orbit|nl|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "c1db285b67"
+  },
+  "orbit|nl|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "18ce427871"
+  },
+  "orbit|nl|science/orbits/apsides.json :: body_paragraphs.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "3c69b94e10"
+  },
+  "orbit|nl|science/orbits/hill-sphere.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "e4317560b6"
+  },
+  "orbit|nl|science/orbits/keplers-laws.json :: body_paragraphs.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "38c5d659c0"
+  },
+  "orbit|nl|science/orbits/true-anomaly.json :: body_paragraphs.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "b31324fcab"
+  },
+  "orbit|nl|science/orbits/true-anomaly.json :: narrative_101.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "b0746fb8d4"
+  },
+  "orbit|nl|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "cb97dc3acd"
+  },
+  "orbit|nl|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "ab321c748d"
+  },
+  "orbit|nl|science/planets/moons-of-the-system.json :: narrative_101.2": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "8908c36047"
+  },
+  "orbit|nl|science/planets/sub-solar-and-terminator.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "160f8b54bc"
+  },
+  "orbit|nl|science/planets/tides.json :: body_paragraphs.3": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "4f2d60f8e8"
+  },
+  "orbit|nl|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "04b1dd28d7"
+  },
+  "orbit|nl|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "verb: omheen draait (re-kept after the burn edit)",
+    "tr": "fc6fdafc48"
+  },
+  "orbit|nl|science/scales-time/sidereal-synodic.json :: body_paragraphs.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "0039543b52"
+  },
+  "orbit|nl|science/transfers/coplanar-trajectories.json :: body_paragraphs.2": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "d01b123c5e"
+  },
+  "orbit|nl|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "draaien/omloop verb or period sense, natural",
+    "tr": "06e76d0781"
+  },
+  "orbit|pt-BR|science/planets/_intro.json :: paragraphs.0": {
+    "why": "\"from orbit\" as do espaço, natural",
+    "tr": "7b82d3f7b2"
+  },
+  "orbit|ru|essays/interstellar-exploration.json :: body.15.md": {
+    "why": "omitted naturally (\"её возможные планеты\")",
+    "tr": "4bce9a096e"
+  },
+  "orbit|ru|fleet/crewed-spacecraft/apollo-csm-block-i.json :: dispatch": {
+    "why": "variant: околоземных (Earth-orbit)",
+    "tr": "22bb733097"
+  },
+  "orbit|ru|missions/earth/apollo7.json :: events.3.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "43f66fa979"
+  },
+  "orbit|ru|missions/earth/apollo7.json :: type": {
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)",
+    "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/earth/apollo9.json :: events.6.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "78f9e9ce18"
+  },
+  "orbit|ru|missions/earth/aurora-7.json :: description": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "e0ba70e3c3"
+  },
+  "orbit|ru|missions/earth/aurora-7.json :: dispatch": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "07753fd186"
+  },
+  "orbit|ru|missions/earth/aurora-7.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "850d674f7e"
+  },
+  "orbit|ru|missions/earth/faith-7.json :: description": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "dad05cbcf9"
+  },
+  "orbit|ru|missions/earth/faith-7.json :: dispatch": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "1172e8f9ab"
+  },
+  "orbit|ru|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "0c147fd7e1"
+  },
+  "orbit|ru|missions/earth/faith-7.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "bd71af8a99"
+  },
+  "orbit|ru|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "f9049b77f8"
+  },
+  "orbit|ru|missions/earth/gemini12.json :: description": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "04f151fa3e"
+  },
+  "orbit|ru|missions/earth/gemini12.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "707232bd19"
+  },
+  "orbit|ru|missions/earth/gemini12.json :: type": {
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)",
+    "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/earth/gemini3.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "e6d16dfbf2"
+  },
+  "orbit|ru|missions/earth/gemini6a.json :: description": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "e462efad16"
+  },
+  "orbit|ru|missions/earth/gemini6a.json :: events.3.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "9d35c38211"
+  },
+  "orbit|ru|missions/earth/gemini6a.json :: type": {
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)",
+    "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/earth/gemini7.json :: description": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "8c95e91251"
+  },
+  "orbit|ru|missions/earth/gemini7.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "46049cb661"
+  },
+  "orbit|ru|missions/earth/gemini7.json :: type": {
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)",
+    "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/earth/sigma-7.json :: dispatch": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "a09d23c2a0"
+  },
+  "orbit|ru|missions/earth/sigma-7.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "736ffbf05e"
+  },
+  "orbit|ru|missions/earth/sigma-7.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "c3cf5ed569"
+  },
+  "orbit|ru|missions/earth/sputnik1.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "8ad9c1d4b9"
+  },
+  "orbit|ru|missions/earth/sputnik1.json :: first": {
+    "why": "verb orbit carried by the noun спутник Земли; omitted naturally",
+    "tr": "a79f9ac9f1"
+  },
+  "orbit|ru|missions/earth/vostok-1.json :: dispatch": {
+    "why": "variant: облетевшим (verb orbit)",
+    "tr": "abfb5188e4"
+  },
+  "orbit|ru|missions/earth/vostok-2.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "92943f8567"
+  },
+  "orbit|ru|missions/earth/vostok-3.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "961ddde8e2"
+  },
+  "orbit|ru|missions/earth/vostok-5.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "214219c89a"
+  },
+  "orbit|ru|missions/earth/vostok-5.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "1052b0dae5"
+  },
+  "orbit|ru|missions/earth/vostok-6.json :: dispatch": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "113b2e8b54"
+  },
+  "orbit|ru|missions/earth/vostok-6.json :: events.2.note": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "b270cc0982"
+  },
+  "orbit|ru|missions/earth/vostok-6.json :: first": {
+    "why": "variant: виток (count of revolutions)",
+    "tr": "b9355ddee0"
+  },
+  "orbit|ru|missions/earth/vostok-6.json :: type": {
+    "why": "ОКОЛОЗЕМНЫЙ (near-Earth, orbit implied) for EARTH-ORBIT in a type label",
+    "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/moon/beresheet.json :: events.2.note": {
+    "why": "variant: многооборотном (multi-orbit)",
+    "tr": "bad5112a64"
+  },
+  "orbit|ru|programs/cassini.json :: narrative.0.md": {
+    "why": "variant: виток (orbit as revolution)",
+    "tr": "206c1e57aa"
+  },
+  "orbit|ru|programs/mercury.json :: legacy.0.caption": {
+    "why": "variant: витка (orbit as revolution)",
+    "tr": "833d2c6f88"
+  },
+  "orbit|ru|science/_landing.json :: chapters.0.diagram": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "72874f8e10"
+  },
+  "orbit|ru|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "d5ba2be6fd"
+  },
+  "orbit|ru|science/exoplanets/fifty-one-pegasi.json :: body_paragraphs.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "c788fb9302"
+  },
+  "orbit|ru|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "def6f2c981"
+  },
+  "orbit|ru|science/exoplanets/habitable-zone.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "c70b14b54e"
+  },
+  "orbit|ru|science/exoplanets/microlensing.json :: diagram_caption": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "2b17581eef"
+  },
+  "orbit|ru|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "6fc48e20ee"
+  },
+  "orbit|ru|science/exoplanets/proxima-system.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "36ce965e86"
+  },
+  "orbit|ru|science/exoplanets/radial-velocity.json :: diagram_caption": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "b8639f793a"
+  },
+  "orbit|ru|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "78c54a394c"
+  },
+  "orbit|ru|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "f51a156f4f"
+  },
+  "orbit|ru|science/exoplanets/tidal-locking.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "71d044404d"
+  },
+  "orbit|ru|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "b695d56981"
+  },
+  "orbit|ru|science/exoplanets/transit-timing.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "4831824eb6"
+  },
+  "orbit|ru|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "6909dd01fe"
+  },
+  "orbit|ru|science/orbits/apsides.json :: body_paragraphs.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "8e7a1fb31f"
+  },
+  "orbit|ru|science/orbits/keplers-laws.json :: body_paragraphs.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "3078e19a26"
+  },
+  "orbit|ru|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "dd4774076f"
+  },
+  "orbit|ru|science/planets/asteroid-belt.json :: body_paragraphs.1": {
+    "why": "verb: обращался вокруг",
+    "tr": "4e730dcf18"
+  },
+  "orbit|ru|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "744c0a013b"
+  },
+  "orbit|ru|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "00ac7cd799"
+  },
+  "orbit|ru|science/planets/moons-of-the-system.json :: narrative_101.2": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "af77027d3e"
+  },
+  "orbit|ru|science/planets/sub-solar-and-terminator.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "01fb41a96f"
+  },
+  "orbit|ru|science/scales-time/_intro.json :: paragraphs.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "ca8ae15476"
+  },
+  "orbit|ru|science/scales-time/au.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "026e9ac3d7"
+  },
+  "orbit|ru|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "622c0e1682"
+  },
+  "orbit|ru|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "a1705a15ec"
+  },
+  "orbit|ru|science/scales-time/sidereal-synodic.json :: body_paragraphs.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "a3df6598fe"
+  },
+  "orbit|ru|science/transfers/coplanar-trajectories.json :: body_paragraphs.2": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "5c98c67140"
+  },
+  "orbit|ru|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "verb 'обращаться/вращаться вокруг' is correct for orbiting; noun sense covered (оборот = one revolution)",
+    "tr": "4d3ce88ffe"
+  },
+  "orbit|sr-Cyrl|missions/earth/vostok-3.json :: type": {
+    "why": "variant: летови око Земље (orbital flight)",
+    "tr": "1e15f6448d"
+  },
+  "orbit|sr-Cyrl|missions/moon/apollo8.json :: events.3.note": {
+    "why": "variant: обилазак (orbit count)",
+    "tr": "a852cc3816"
+  },
+  "orbit|sr-Cyrl|science/_landing.json :: chapters.0.diagram": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "72874f8e10"
+  },
+  "orbit|sr-Cyrl|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "503e29a118"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/fifty-one-pegasi.json :: body_paragraphs.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "b01c904411"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "820e46daa2"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/habitable-zone.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "e0556fdf40"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/hot-jupiters.json :: intro_sentence": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "94a782c729"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/microlensing.json :: diagram_caption": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "3f3a832ee4"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "3f62aa3e5b"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/proxima-system.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "ea3c480546"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/radial-velocity.json :: diagram_caption": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "ec9880add8"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "2268da5997"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "8d0d8370e0"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/tidal-locking.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "817bb5008f"
+  },
+  "orbit|sr-Cyrl|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "715bfd6011"
+  },
+  "orbit|sr-Cyrl|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "ab3997afa4"
+  },
+  "orbit|sr-Cyrl|science/observation/black-holes.json :: diagram_caption": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "15c49677e8"
+  },
+  "orbit|sr-Cyrl|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "125a376349"
+  },
+  "orbit|sr-Cyrl|science/orbits/apsides.json :: body_paragraphs.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "57e611fe19"
+  },
+  "orbit|sr-Cyrl|science/orbits/keplers-laws.json :: body_paragraphs.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "1791b75f76"
+  },
+  "orbit|sr-Cyrl|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "d464a7ca3c"
+  },
+  "orbit|sr-Cyrl|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "b5ebc4a2ff"
+  },
+  "orbit|sr-Cyrl|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "d17574d752"
+  },
+  "orbit|sr-Cyrl|science/planets/moons-of-the-system.json :: narrative_101.2": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "38ee8e3e45"
+  },
+  "orbit|sr-Cyrl|science/planets/sub-solar-and-terminator.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "cee8b7e410"
+  },
+  "orbit|sr-Cyrl|science/scales-time/_intro.json :: paragraphs.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "254f4a350a"
+  },
+  "orbit|sr-Cyrl|science/scales-time/au.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "cc19be7a2a"
+  },
+  "orbit|sr-Cyrl|science/scales-time/ecliptic-plane.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "114844e2ae"
+  },
+  "orbit|sr-Cyrl|science/scales-time/frames.json :: narrative_101.1": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "a783b54d91"
+  },
+  "orbit|sr-Cyrl|science/transfers/coplanar-trajectories.json :: body_paragraphs.2": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "a037aa61fc"
+  },
+  "orbit|sr-Cyrl|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "'кружи/обилази око' is the correct verb for orbiting",
+    "tr": "e415c46837"
+  },
+  "orbit|zh-CN|essays/asteroid-mining.json :: body.0.md": {
+    "why": "variant: 运行在 (orbiting in the belt)",
+    "tr": "8fc72a18f0"
+  },
+  "orbit|zh-CN|essays/interstellar-exploration.json :: body.15.md": {
+    "why": "omitted naturally: 及其行星",
+    "tr": "9d4b9e82f8"
+  },
+  "orbit|zh-CN|fleet/orbiter/mariner-9.json :: best_known_for": {
+    "why": "variant: 绕…运行",
+    "tr": "fd8715d45b"
+  },
+  "orbit|zh-CN|fleet/orbiter/mariner-9.json :: tagline": {
+    "why": "variant: 绕…运行",
+    "tr": "fd8715d45b"
+  },
+  "orbit|zh-CN|missions/ceres/dawn.json :: description": {
+    "why": "variant: 同轨运行 (matched orbits)",
+    "tr": "07cce2bb1b"
+  },
+  "orbit|zh-CN|missions/earth/aurora-7.json :: description": {
+    "why": "variant: 圈 (laps)",
+    "tr": "98c6a5e720"
+  },
+  "orbit|zh-CN|missions/earth/aurora-7.json :: first": {
+    "why": "variant: 圈 (laps)",
+    "tr": "bc6c240d01"
+  },
+  "orbit|zh-CN|missions/earth/faith-7.json :: description": {
+    "why": "variant: 圈 (laps)",
+    "tr": "be2848d538"
+  },
+  "orbit|zh-CN|missions/earth/faith-7.json :: dispatch": {
+    "why": "variant: 圈 (laps)",
+    "tr": "683040f310"
+  },
+  "orbit|zh-CN|missions/earth/faith-7.json :: events.3.note": {
+    "why": "variant: 圈 (laps)",
+    "tr": "1e2a645352"
+  },
+  "orbit|zh-CN|missions/earth/faith-7.json :: first": {
+    "why": "variant: 圈 (laps)",
+    "tr": "78c58f3e62"
+  },
+  "orbit|zh-CN|missions/earth/friendship-7.json :: events.3.note": {
+    "why": "variant: 圈 (laps)",
+    "tr": "007fbf6c09"
+  },
+  "orbit|zh-CN|missions/earth/vostok-1.json :: events.2.note": {
+    "why": "variant: 降轨 (de-orbit)",
+    "tr": "ad0d7a1167"
+  },
+  "orbit|zh-CN|missions/earth/vostok-2.json :: events.3.note": {
+    "why": "variant: 降轨 (de-orbit)",
+    "tr": "cceab04f7b"
+  },
+  "orbit|zh-CN|missions/earth/vostok-2.json :: first": {
+    "why": "variant: 圈 (laps)",
+    "tr": "afababca36"
+  },
+  "orbit|zh-CN|missions/earth/vostok-6.json :: dispatch": {
+    "why": "variant: 圈 (laps)",
+    "tr": "b309b7884e"
+  },
+  "orbit|zh-CN|programs/chandrayaan.json :: goals.2.md": {
+    "why": "variant: 绕月飞行",
+    "tr": "adbbe63cfa"
+  },
+  "orbit|zh-CN|programs/change.json :: the_land.0.md": {
+    "why": "variant: 绕它飞行",
+    "tr": "e138d2c0aa"
+  },
+  "orbit|zh-CN|programs/great-observatories.json :: outcome.0.md": {
+    "why": "variant: 离轨 (standard deorbit)",
+    "tr": "7e5b3bca08"
+  },
+  "orbit|zh-CN|programs/mercury.json :: outcome.0.caption": {
+    "why": "variant: 绕地球飞行",
+    "tr": "5adcf87421"
+  },
+  "orbit|zh-CN|science/_landing.json :: chapters.0.diagram": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "72874f8e10"
+  },
+  "orbit|zh-CN|science/_landing.json :: chapters.7.paragraphs.1": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "13b3f3aab4"
+  },
+  "orbit|zh-CN|science/exoplanets/fifty-one-pegasi.json :: narrative_101.1": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "aa05049418"
+  },
+  "orbit|zh-CN|science/exoplanets/proxima-system.json :: intro_sentence": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "9a9567f69e"
+  },
+  "orbit|zh-CN|science/exoplanets/proxima-system.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "c9ffd099dd"
+  },
+  "orbit|zh-CN|science/exoplanets/radial-velocity.json :: diagram_caption": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "59e3363fd5"
+  },
+  "orbit|zh-CN|science/exoplanets/radial-velocity.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "0990e575f4"
+  },
+  "orbit|zh-CN|science/exoplanets/tidal-locking.json :: body_paragraphs.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "06ec984352"
+  },
+  "orbit|zh-CN|science/exoplanets/tidal-locking.json :: intro_sentence": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "ef6b90f266"
+  },
+  "orbit|zh-CN|science/exoplanets/tidal-locking.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "deefce44b3"
+  },
+  "orbit|zh-CN|science/exoplanets/tidal-locking.json :: narrative_101.1": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "f3ae423495"
+  },
+  "orbit|zh-CN|science/exoplanets/transit-timing.json :: body_paragraphs.2": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "01aa1d1cbf"
+  },
+  "orbit|zh-CN|science/observation/black-holes.json :: body_paragraphs.2": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "aebb28eee3"
+  },
+  "orbit|zh-CN|science/observation/our-galaxy.json :: body_paragraphs.1": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "a2bdc0e0d3"
+  },
+  "orbit|zh-CN|science/orbits/disposal-end-of-life.json :: body_paragraphs.0": {
+    "why": "orbit as verb / orbiting body (绕转、在轨), not the orbit noun",
+    "tr": "18e2dc995a"
+  },
+  "orbit|zh-CN|science/orbits/semi-major-axis.json :: body_paragraphs.0": {
+    "why": "orbit as verb / orbiting body (绕转、在轨), not the orbit noun",
+    "tr": "6f0665a3d1"
+  },
+  "orbit|zh-CN|science/planets/axial-tilt-and-seasons.json :: body_paragraphs.1": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "27acf82b38"
+  },
+  "orbit|zh-CN|science/planets/kuiper-belt.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "a64441b9dc"
+  },
+  "orbit|zh-CN|science/planets/moons-of-the-system.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "61fc2de878"
+  },
+  "orbit|zh-CN|science/planets/moons-of-the-system.json :: narrative_101.2": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "7fc48c0298"
+  },
+  "orbit|zh-CN|science/planets/sub-solar-and-terminator.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "e163759b51"
+  },
+  "orbit|zh-CN|science/planets/tides.json :: body_paragraphs.3": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "860982d115"
+  },
+  "orbit|zh-CN|science/propulsion/laser-sail.json :: body_paragraphs.2": {
+    "why": "orbit as verb / orbiting body (绕转、在轨), not the orbit noun",
+    "tr": "c4130ff477"
+  },
+  "orbit|zh-CN|science/scales-time/_intro.json :: paragraphs.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "73d17b5aa9"
+  },
+  "orbit|zh-CN|science/space-stations/expedition-cadence.json :: body_paragraphs.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "323fa4744b"
+  },
+  "orbit|zh-CN|science/space-stations/expedition-cadence.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "6a54030b6b"
+  },
+  "orbit|zh-CN|science/transfers/coplanar-trajectories.json :: body_paragraphs.2": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "9e64362cdf"
+  },
+  "orbit|zh-CN|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename",
+    "tr": "1a1fe7044c"
+  },
+  "payload|de|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "part of proper name Vega Secondary Payload Adapter",
+    "tr": "5d89faaf14"
+  },
+  "payload|es|missions/venus/magellan.json :: description": {
+    "why": "variant: bodega de carga (standard Shuttle payload bay)",
+    "tr": "118f93ee55"
+  },
+  "payload|es|programs/mercury.json :: narrative.1.md": {
+    "why": "figurative: astronaut as cargo/passenger",
+    "tr": "c1709e2177"
+  },
+  "payload|es|programs/space-shuttle.json :: goals.1.md": {
+    "why": "variant: bodega de carga (standard payload bay)",
+    "tr": "a9dd9db94a"
+  },
+  "payload|fr|fleet/launcher/falcon-heavy.json :: description": {
+    "why": "variant: capacité d'emport",
+    "tr": "9f63e040e3"
+  },
+  "payload|fr|missions/venus/magellan.json :: description": {
+    "why": "variant: soute (payload bay)",
+    "tr": "3d33d9f223"
+  },
+  "payload|fr|programs/space-shuttle.json :: goals.1.md": {
+    "why": "variant: soute cargo",
+    "tr": "f46035b8d2"
+  },
+  "payload|fr|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "\"Vega Secondary Payload Adapter\" is a proper name left in English",
+    "tr": "ff8d16d8e2"
+  },
+  "payload|hi|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "part of the product name Vega Secondary Payload Adapter",
+    "tr": "cde1c2f34c"
+  },
+  "payload|it|fleet/launch-site/starbase-orbital-a.json :: description": {
+    "why": "variant: capacità di carico",
+    "tr": "e9293368aa"
+  },
+  "payload|it|fleet/launcher/falcon-heavy.json :: description": {
+    "why": "variant: capacità di carico",
+    "tr": "494b4a422e"
+  },
+  "payload|it|missions/venus/magellan.json :: description": {
+    "why": "variant: stiva (payload bay)",
+    "tr": "9361283cac"
+  },
+  "payload|it|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "Vega Secondary Payload Adapter is a proper name",
+    "tr": "714623570e"
+  },
+  "payload|ja|essays/going-to-the-moon.json :: body.9.md": {
+    "why": "variant: 打ち上げ能力 (capacity to LEO)",
+    "tr": "c5c2c6ee50"
+  },
+  "payload|ja|missions/moon/change1.json :: payload": {
+    "why": "variant: 科学観測機器 (science instruments = science payload)",
+    "tr": "b0b133b2ce"
+  },
+  "payload|ja|missions/moon/smart-1.json :: vehicle": {
+    "why": "shared ride 相乗り; payload omitted naturally",
+    "tr": "11e010dc9a"
+  },
+  "payload|ja|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "Vega Secondary Payload Adapter is a proper name",
+    "tr": "c91fcc9d16"
+  },
+  "payload|ko|essays/going-to-the-moon.json :: body.9.md": {
+    "why": "variant: 탑재량 (payload capacity to LEO)",
+    "tr": "1796d93fab"
+  },
+  "payload|ko|fleet/launch-site/palmachim.json :: description": {
+    "why": "variant: 탑재량 (payload mass)",
+    "tr": "3e98811301"
+  },
+  "payload|ko|fleet/launch-site/starbase-orbital-a.json :: description": {
+    "why": "variant: 탑재량급",
+    "tr": "c1e299ba63"
+  },
+  "payload|ko|fleet/launcher/falcon-heavy.json :: description": {
+    "why": "variant: 탑재 능력",
+    "tr": "9c4b1237d6"
+  },
+  "payload|ko|fleet/orbiter/lro.json :: description": {
+    "why": "natural omission: 기기 7개를 탑재한",
+    "tr": "efb1bb26d9"
+  },
+  "payload|ko|missions/mars/starship-demo.json :: description": {
+    "why": "variant: 탑재량 (payload capacity)",
+    "tr": "1460ce720e"
+  },
+  "payload|ko|missions/moon/apollo8.json :: description": {
+    "why": "payload of the mission paraphrased as 임무",
+    "tr": "ca13e538f0"
+  },
+  "payload|ko|missions/moon/luna16.json :: description": {
+    "why": "variant: 탑재량 (payload mass)",
+    "tr": "0cf988f91f"
+  },
+  "payload|ko|missions/moon/smart-1.json :: events.0.note": {
+    "why": "variant: 공동 탑재 (shared ride)",
+    "tr": "56ad75dcc0"
+  },
+  "payload|ko|missions/moon/smart-1.json :: vehicle": {
+    "why": "variant: 공동 탑재 (shared ride)",
+    "tr": "38b30e7286"
+  },
+  "payload|ko|programs/space-shuttle.json :: goals.1.md": {
+    "why": "variant: 화물칸 (standard payload bay)",
+    "tr": "d7bf76dada"
+  },
+  "payload|ko|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "Vega Secondary Payload Adapter is a proper name left in English",
+    "tr": "4042bc064b"
+  },
+  "payload|nl|fleet/constellation/sbirs-heo.json :: description": {
+    "why": "hosted payload = gastlading, the compound carries the binding lading",
+    "tr": "c34982443d"
+  },
+  "payload|nl|fleet/launcher/falcon-heavy.json :: description": {
+    "why": "variant: laadvermogen (payload capacity)",
+    "tr": "37b188a275"
+  },
+  "payload|nl|missions/venus/magellan.json :: description": {
+    "why": "variant: laadruim (payload bay, standard word)",
+    "tr": "a7a24a25a8"
+  },
+  "payload|pt-BR|missions/venus/magellan.json :: description": {
+    "why": "variant: baía de carga (payload bay)",
+    "tr": "4e8c4f4fa6"
+  },
+  "payload|pt-BR|programs/mercury.json :: narrative.1.md": {
+    "why": "figurative: astronaut as cargo/passenger",
+    "tr": "3804ee3244"
+  },
+  "payload|pt-BR|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "Vega Secondary Payload Adapter is a proper name",
+    "tr": "4b3625c79c"
+  },
+  "payload|pt-BR|science/propulsion/c3.json :: body_paragraphs.1": {
+    "why": "carga-útil hyphenated compound present",
+    "tr": "0098bcdc2e"
+  },
+  "payload|pt-BR|science/propulsion/c3.json :: narrative_101.2": {
+    "why": "carga-útil hyphenated compound present",
+    "tr": "263eaa3bef"
+  },
+  "payload|ru|fleet/engine/hm7b.json :: description": {
+    "why": "variant: научные аппараты (spacecraft carried)",
+    "tr": "e7fc7a7ff4"
+  },
+  "payload|ru|fleet/lander/beagle2.json :: description": {
+    "why": "instrument suite described, omitted naturally (нёс ... приборы)",
+    "tr": "ab2ad42b96"
+  },
+  "payload|ru|fleet/lander/change6.json :: description": {
+    "why": "variant: научная аппаратура (instrument suite, not cargo)",
+    "tr": "fa9e486991"
+  },
+  "payload|ru|fleet/launcher/ariane-5.json :: description": {
+    "why": "variant: спутники (the payloads are satellites)",
+    "tr": "23c551a34d"
+  },
+  "payload|ru|fleet/orbiter/juice.json :: description": {
+    "why": "instrument suite rendered as 'на борту 10 приборов'; omitted naturally",
+    "tr": "6d983fc621"
+  },
+  "payload|ru|fleet/orbiter/lro.json :: description": {
+    "why": "'7 приборов LRO' instrument suite; omitted naturally",
+    "tr": "166997390e"
+  },
+  "payload|ru|missions/venus/magellan.json :: description": {
+    "why": "variant: грузовой отсек (Shuttle payload bay, standard compound)",
+    "tr": "83f569f5fa"
+  },
+  "payload|ru|programs/mercury.json :: narrative.1.md": {
+    "why": "variant: грузом (cargo, figurative; contrast with passenger)",
+    "tr": "7294520177"
+  },
+  "payload|ru|programs/space-shuttle.json :: goals.1.md": {
+    "why": "variant: грузовой отсек (standard Shuttle term for payload bay); груз = cargo",
+    "tr": "a197980603"
+  },
+  "payload|ru|science/mission-phases/eva.json :: diagram_caption": {
+    "why": "EVA worksite payload, not rocket cargo",
+    "tr": "416ff96386"
+  },
+  "payload|sr-Cyrl|fleet/cargo-spacecraft/htv-x.json :: best_known_for": {
+    "why": "variant: корисна носивост (payload capacity)",
+    "tr": "e981cbbae6"
+  },
+  "payload|sr-Cyrl|fleet/cargo-spacecraft/htv-x.json :: tagline": {
+    "why": "variant: корисна носивост (payload capacity)",
+    "tr": "e981cbbae6"
+  },
+  "payload|sr-Cyrl|fleet/launcher/ariane-5.json :: description": {
+    "why": "variant: сателита (the payloads are satellites)",
+    "tr": "c62951c682"
+  },
+  "payload|sr-Cyrl|science/history/apollo-11-1969.json :: body_paragraphs.0": {
+    "why": "носивост = payload capacity",
+    "tr": "bd003d29c2"
+  },
+  "payload|sr-Cyrl|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "proper name 'Vega Secondary Payload Adapter'",
+    "tr": "6e7ea25f36"
+  },
+  "payload|zh-CN|essays/going-to-the-moon.json :: body.9.md": {
+    "why": "variant: 运载能力 (capacity to LEO)",
+    "tr": "1c7dfd6d6c"
+  },
+  "payload|zh-CN|fleet/orbiter/lro.json :: description": {
+    "why": "natural omission: 搭载的7台仪器",
+    "tr": "e8e949e553"
+  },
+  "payload|zh-CN|fleet/orbiter/smart-1.json :: description": {
+    "why": "recast: 搭乘 (rideshare)",
+    "tr": "db0db2ccfb"
+  },
+  "payload|zh-CN|missions/moon/apollo8.json :: description": {
+    "why": "payload (which craft flies) rendered by 任务; natural omission",
+    "tr": "998003955b"
+  },
+  "payload|zh-CN|missions/venus/magellan.json :: description": {
+    "why": "variant: 货舱 (shuttle payload bay)",
+    "tr": "5e538fe0df"
+  },
+  "payload|zh-CN|science/orbits/space-debris.json :: body_paragraphs.4": {
+    "why": "Vega Secondary Payload Adapter is a proper name",
+    "tr": "8ca1f489b3"
+  },
+  "propellant|ar|essays/asteroid-mining.json :: body.15.caption": {
+    "why": "variant: وقود الصواريخ (rocket propellant)",
+    "tr": "a83d4cdee0"
+  },
+  "propellant|ar|essays/going-to-the-moon.json :: body.14.md": {
+    "why": "variant: وقود صاروخي (rocket propellant)",
+    "tr": "9d006c7891"
+  },
+  "propellant|ar|missions/mercury/mariner10.json :: description": {
+    "why": "binding split by its noun (وقود النيتروجين الدافع = nitrogen propellant)",
+    "tr": "172107151d"
+  },
+  "propellant|es|fleet/launcher/h-iia.json :: description": {
+    "why": "variant: propulsión líquida",
+    "tr": "a195b6c42a"
+  },
+  "propellant|es|missions/mercury/mariner10.json :: description": {
+    "why": "propellant omitted ('nitrógeno de control de actitud')",
+    "tr": "c1300c4419"
+  },
+  "propellant|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "RP-1 name; combustible stem present in text",
+    "tr": "e3d4fe202c"
+  },
+  "propellant|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "RP-1 name in English; text uses kérosène/carburant for fuel, no propellant sense",
+    "tr": "87372ab221"
+  },
+  "propellant|hi|missions/mars/starship-mars-crew.json :: events.5.note": {
+    "why": "natural omission",
+    "tr": "18c423f6d7"
+  },
+  "propellant|hi|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "\"Rocket Propellant 1\" is the grade name RP-1",
+    "tr": "32cf172243"
+  },
+  "propellant|it|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "RP-1 name; no separate propellant sense",
+    "tr": "73a1c194a7"
+  },
+  "propellant|ja|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "Rocket Propellant 1 is a proper name",
+    "tr": "fec8b4d0e6"
+  },
+  "propellant|ko|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "Rocket Propellant 1 is a proper name left in English",
+    "tr": "78b07cc18b"
+  },
+  "propellant|nl|missions/mercury/mariner10.json :: description": {
+    "why": "propellant omitted naturally: \"het stikstof voor standregeling\" is the propellant",
+    "tr": "5d976fa4ad"
+  },
+  "propellant|pt-BR|missions/mercury/mariner10.json :: description": {
+    "why": "nitrogen itself is the propellant; omission is natural",
+    "tr": "f610ab5367"
+  },
+  "propellant|pt-BR|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "RP-1 \"Rocket Propellant 1\" is a name",
+    "tr": "85ef10ce88"
+  },
+  "propellant|ru|fleet/launcher/soyuz.json :: description": {
+    "why": "variant: жидкостная (liquid-propellant rocket, standard term)",
+    "tr": "cd834f7af9"
+  },
+  "propellant|ru|fleet/orbiter/lucy.json :: description": {
+    "why": "propellant omitted naturally; hydrazine named",
+    "tr": "cb6707424d"
+  },
+  "propellant|ru|missions/mars/starship-mars-crew.json :: events.5.note": {
+    "why": "propellant named by its components (метан, ЖКС)",
+    "tr": "071ebba279"
+  },
+  "propellant|ru|missions/mercury/mariner10.json :: description": {
+    "why": "nitrogen named as the supply (запас азота)",
+    "tr": "6b92d913e5"
+  },
+  "propellant|sr-Cyrl|fleet/launcher/soyuz.json :: description": {
+    "why": "variant: течни погон (liquid-propellant rocket)",
+    "tr": "fd80d997e7"
+  },
+  "propellant|sr-Cyrl|fleet/launcher/vostok-k.json :: description": {
+    "why": "variant: течни погон (liquid-propellant rocket)",
+    "tr": "3828d2f57a"
+  },
+  "propellant|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
+    "why": "combustion/burning of propellant or fuel (not an engine firing)",
+    "tr": "080f3933a3"
+  },
+  "rendezvous|ar|programs/gemini.json :: goals.1.md": {
+    "why": "variant: اللقاء المداري",
+    "tr": "8ede5d816d"
+  },
+  "rendezvous|ar|programs/gemini.json :: legacy.2.md": {
+    "why": "variant: اللقاء المداري",
+    "tr": "fe8b31267d"
+  },
+  "rendezvous|ar|programs/gemini.json :: narrative.2.md": {
+    "why": "variant: اللقاء المداري",
+    "tr": "4bfaf9d81a"
+  },
+  "rendezvous|ar|programs/gemini.json :: outcome.1.md": {
+    "why": "variant: لقاء مداري",
+    "tr": "709b4225db"
+  },
+  "rendezvous|ar|programs/starship.json :: goals.3.md": {
+    "why": "verb sense: تلتقي بها",
+    "tr": "fd665c4e38"
+  },
+  "rendezvous|ar|programs/voskhod.json :: legacy.2.md": {
+    "why": "variant: اللقاء المداري",
+    "tr": "cd0b2e7569"
+  },
+  "rendezvous|de|science/orbits/synodic-period.json :: narrative_101.2": {
+    "why": "generic meeting point (Treffpunkt), not a spacecraft rendezvous",
+    "tr": "647987ca07"
+  },
+  "rendezvous|ru|essays/going-to-mars.json :: body.12.md": {
+    "why": "variant: встретиться (verb, with \"на орбите\")",
+    "tr": "d31913e23b"
+  },
+  "rendezvous|ru|essays/navigation.json :: body.25.md": {
+    "why": "variant: точке встречи",
+    "tr": "d79e42fde6"
+  },
+  "rendezvous|ru|programs/starship.json :: goals.3.md": {
+    "why": "variant: встречающихся ... на орбите (accepted встреча на орбите)",
+    "tr": "eb27d62f6b"
+  },
+  "rendezvous|sr-Cyrl|programs/soyuz.json :: the_land.0.md": {
+    "why": "variant: састане у орбити (accepted сусрет у орбити)",
+    "tr": "e1790d38fe"
+  },
+  "specific impulse|ar|science/propulsion/antimatter-propulsion.json :: body_paragraphs.0": {
+    "why": "\"للدفع النوعي\" = ل + الدفع النوعي, binding form",
+    "tr": "dce97bc449"
+  },
+  "specific impulse|ar|science/propulsion/engine-types.json :: body_paragraphs.2": {
+    "why": "\"دفعه النوعي\" is the binding form with pronoun",
+    "tr": "59e147f936"
+  },
+  "stage|ar|missions/venus/magellan.json :: vehicle": {
+    "why": "proper name Inertial Upper Stage left in English",
+    "tr": "7eaa95e254"
+  },
+  "stage|de|missions/venus/magellan.json :: vehicle": {
+    "why": "vehicle name: Inertial Upper Stage",
+    "tr": "7eaa95e254"
+  },
+  "stage|de|science/orbits/special-orbits.json :: body_paragraphs.4": {
+    "why": "different sense (single-stage-to-orbit, staging orbit)",
+    "tr": "dd21477194"
+  },
+  "stage|es|missions/venus/magellan.json :: vehicle": {
+    "why": "proper name 'Inertial Upper Stage', untranslated",
+    "tr": "7eaa95e254"
+  },
+  "stage|fr|fleet/lander/blue-moon-mk1.json :: description": {
+    "why": "variant: monostage",
+    "tr": "b74ce3b109"
+  },
+  "stage|fr|fleet/lander/blue-moon-mk1.json :: tagline": {
+    "why": "variant: monostage",
+    "tr": "556b45b069"
+  },
+  "stage|fr|missions/venus/magellan.json :: vehicle": {
+    "why": "proper name 'Inertial Upper Stage' left in English as a vehicle name",
+    "tr": "7eaa95e254"
+  },
+  "stage|fr|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "English \"stage\" = phase of a campaign; étape",
+    "tr": "ec4448ba9c"
+  },
+  "stage|fr|science/orbits/special-orbits.json :: body_paragraphs.4": {
+    "why": "\"staging orbit\", not a rocket stage",
+    "tr": "9d6303e39e"
+  },
+  "stage|fr|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.2": {
+    "why": "single-stage-to-orbit kept as English acronym phrase; no rocket stage meant separately",
+    "tr": "16403179d7"
+  },
+  "stage|hi|missions/venus/magellan.json :: vehicle": {
+    "why": "vehicle name: Inertial Upper Stage",
+    "tr": "7eaa95e254"
+  },
+  "stage|it|missions/venus/magellan.json :: vehicle": {
+    "why": "proper name 'Inertial Upper Stage' left in English",
+    "tr": "7eaa95e254"
+  },
+  "stage|it|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "English \"stage\" = phase; fase",
+    "tr": "a51d5baae5"
+  },
+  "stage|it|science/orbits/special-orbits.json :: body_paragraphs.4": {
+    "why": "\"staging orbit\", not a rocket stage",
+    "tr": "1913b8d84b"
+  },
+  "stage|ja|fleet/engine/yf-77.json :: description": {
+    "why": "variant: コアステージ",
+    "tr": "48477f844e"
+  },
+  "stage|ja|missions/moon/lunar-prospector.json :: vehicle_stage": {
+    "why": "variant: キックステージ (standard name for a kick stage)",
+    "tr": "67f5ab2ff5"
+  },
+  "stage|ja|missions/venus/magellan.json :: vehicle": {
+    "why": "vehicle name (Inertial Upper Stage) kept in Latin",
+    "tr": "1ae85aceb2"
+  },
+  "stage|ko|fleet/engine/yf-100.json :: description": {
+    "why": "variant: 코어 스테이지",
+    "tr": "db53d1d4d6"
+  },
+  "stage|ko|fleet/engine/yf-77.json :: description": {
+    "why": "variant: 코어 스테이지",
+    "tr": "f5e97b37dc"
+  },
+  "stage|ko|missions/moon/lunar-prospector.json :: vehicle_stage": {
+    "why": "variant: 킥 스테이지 (standard name for a kick stage)",
+    "tr": "daf0f4a1ce"
+  },
+  "stage|ko|missions/venus/magellan.json :: vehicle": {
+    "why": "vehicle name (Inertial Upper Stage) kept in Latin",
+    "tr": "7eaa95e254"
+  },
+  "stage|ko|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "phase of a campaign, not a rocket stage",
+    "tr": "bd8b640132"
+  },
+  "stage|nl|missions/venus/magellan.json :: vehicle": {
+    "why": "proper vehicle name kept in English (Inertial Upper Stage)",
+    "tr": "7eaa95e254"
+  },
+  "stage|nl|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "English \"stage\" = phase; fase",
+    "tr": "699713d22b"
+  },
+  "stage|nl|science/orbits/special-orbits.json :: body_paragraphs.4": {
+    "why": "different sense (single-stage-to-orbit, staging orbit)",
+    "tr": "fa46f31466"
+  },
+  "stage|nl|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.2": {
+    "why": "different sense (single-stage-to-orbit)",
+    "tr": "cf5515bb94"
+  },
+  "stage|pt-BR|missions/venus/magellan.json :: vehicle": {
+    "why": "proper name 'Inertial Upper Stage' left in English",
+    "tr": "7eaa95e254"
+  },
+  "stage|pt-BR|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.2": {
+    "why": "single-stage-to-orbit kept as English phrase",
+    "tr": "c70bb875fc"
+  },
+  "stage|ru|missions/mars/mars3.json :: events.0.note": {
+    "why": "variant: разгонный блок (upper stage)",
+    "tr": "922929836c"
+  },
+  "stage|ru|missions/mars/schiaparelli.json :: vehicle_stage": {
+    "why": "variant: разгонный блок (upper stage)",
+    "tr": "66b22bc69f"
+  },
+  "stage|ru|missions/moon/change3.json :: vehicle_stage": {
+    "why": "variant: разгонный блок (upper stage)",
+    "tr": "5a799968a8"
+  },
+  "stage|ru|missions/sun/ulysses.json :: vehicle_stage": {
+    "why": "variant: разгонный блок (upper stage)",
+    "tr": "39700ea4a1"
+  },
+  "stage|ru|missions/venus/magellan.json :: vehicle": {
+    "why": "Inertial Upper Stage is a proper name left in English",
+    "tr": "7eaa95e254"
+  },
+  "stage|ru|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "other sense: first phase of a campaign",
+    "tr": "9edf363954"
+  },
+  "stage|ru|science/mission-phases/mission-types.json :: body_paragraphs.3": {
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
+    "tr": "0fe04f788f"
+  },
+  "stage|ru|science/mission-phases/skycrane.json :: body_paragraphs.2": {
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
+    "tr": "99525749c6"
+  },
+  "stage|ru|science/mission-phases/skycrane.json :: diagram_caption": {
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
+    "tr": "7e3f65aa17"
+  },
+  "stage|ru|science/mission-phases/skycrane.json :: narrative_101.1": {
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
+    "tr": "a6a4e5a1cb"
+  },
+  "stage|ru|science/mission-phases/skycrane.json :: narrative_101.2": {
+    "why": "descent/cruise stage rendered as модуль/посадочная ступень; standard Russian for these spacecraft parts",
+    "tr": "9d6954b520"
+  },
+  "stage|ru|science/orbits/special-orbits.json :: body_paragraphs.4": {
+    "why": "'staging orbit', not a rocket stage",
+    "tr": "21867bc815"
+  },
+  "stage|sr-Cyrl|missions/venus/magellan.json :: vehicle": {
+    "why": "Inertial Upper Stage is a proper name left in English",
+    "tr": "7eaa95e254"
+  },
+  "stage|sr-Cyrl|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "other sense: first phase of a campaign (етапа)",
+    "tr": "fe5c3b2427"
+  },
+  "stage|zh-CN|missions/venus/magellan.json :: vehicle": {
+    "why": "vehicle line left in English as a name (Inertial Upper Stage)",
+    "tr": "7eaa95e254"
+  },
+  "stage|zh-CN|programs/mars-rovers.json :: outcome.1.md": {
+    "why": "phase of a campaign, not a rocket stage",
+    "tr": "9575bb09bc"
+  },
+  "thrust|ar|missions/psyche/psyche-mission.json :: events.3.note": {
+    "why": "variant: محرك أيوني (ion engine)",
+    "tr": "7840ad83bd"
+  },
+  "thrust|de|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
+    "why": "\"chemical thrust\" = propulsion, Antrieb natural",
+    "tr": "5e0b3709eb"
+  },
+  "thrust|fr|missions/psyche/psyche-mission.json :: events.3.note": {
+    "why": "variant: propulsion ionique (ion propulsion)",
+    "tr": "91c9f3e46f"
+  },
+  "thrust|ja|missions/mercury/bepicolombo.json :: description": {
+    "why": "variant: 推進 (electric propulsion, not a force value)",
+    "tr": "711bf1a3bf"
+  },
+  "thrust|ja|missions/psyche/psyche-mission.json :: description": {
+    "why": "variant: イオン推進 (propulsion)",
+    "tr": "a59cbda3a8"
+  },
+  "thrust|ja|missions/psyche/psyche-mission.json :: events.3.note": {
+    "why": "variant: イオン推進 (propulsion)",
+    "tr": "0a0e69b38f"
+  },
+  "thrust|ja|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
+    "why": "化学推進 = chemical propulsion as a method; natural",
+    "tr": "1e1ef038f0"
+  },
+  "thrust|ko|missions/psyche/psyche-mission.json :: description": {
+    "why": "variant: 이온 추진 (propulsion)",
+    "tr": "fb2f8ba8b9"
+  },
+  "thrust|ko|missions/psyche/psyche-mission.json :: events.3.note": {
+    "why": "variant: 이온 추진 (propulsion)",
+    "tr": "fdacfd5251"
+  },
+  "thrust|ko|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
+    "why": "화학 추진 = chemical propulsion method; natural for \"chemical thrust\" as means",
+    "tr": "f6ba624598"
+  },
+  "thrust|ru|essays/new-propulsion.json :: body.6.md": {
+    "why": "omitted naturally (\"проработав суммарно более пяти с половиной лет\")",
+    "tr": "7abd0ee404"
+  },
+  "thrust|zh-CN|essays/new-propulsion.json :: body.33.caption": {
+    "why": "figurative brute thrust = 蛮力",
+    "tr": "78e68901dd"
+  },
+  "thrust|zh-CN|essays/new-propulsion.json :: body.6.md": {
+    "why": "thrust time rendered by 工作 (natural omission)",
+    "tr": "104d14cfb6"
+  },
+  "thrust|zh-CN|missions/mercury/bepicolombo.json :: description": {
+    "why": "variant: 电推进 (electric propulsion compound)",
+    "tr": "722c2c8367"
+  },
+  "thrust|zh-CN|science/mission-phases/ascent-guidance.json :: body_paragraphs.2": {
+    "why": "推重比 is the standard term for thrust-to-weight ratio",
+    "tr": "09fb3e660c"
+  },
+  "thrust|zh-CN|science/transfers/coplanar-trajectories.json :: body_paragraphs.0": {
+    "why": "化学推进 = chemical propulsion as a method; natural",
+    "tr": "e9a011f2ba"
+  },
+  "trajectory|de|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative 'the direction/trend is clear', not a flight path",
+    "tr": "c25913ec2b"
+  },
+  "trajectory|de|essays/space-comm-arrays.json :: body.23.md": {
+    "why": "figurative scale/outlook, not a flight path",
+    "tr": "a798cdb6e9"
+  },
+  "trajectory|de|missions/mars/mangalyaan.json :: events.2.note": {
+    "why": "variant: Marskurs",
+    "tr": "f557273072"
+  },
+  "trajectory|de|programs/gaganyaan.json :: outcome.2.md": {
+    "why": "figurative \"Richtung\"; not a flight path",
+    "tr": "ab038ee189"
+  },
+  "trajectory|es|missions/neptune/voyager-2.json :: events.0.note": {
+    "why": "omitted naturally ('hacia el Grand Tour')",
+    "tr": "6df09f2dd3"
+  },
+  "trajectory|hi|essays/generational-starships.json :: body.0.md": {
+    "why": "variant: पलायन-पथ (escape trajectory)",
+    "tr": "dc81a26485"
+  },
+  "trajectory|hi|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative direction of progress, not a flight path",
+    "tr": "4d6db4245f"
+  },
+  "trajectory|hi|missions/jupiter/juno.json :: description": {
+    "why": "orbit sense; कक्षा is correct",
+    "tr": "b78e3d1d82"
+  },
+  "trajectory|hi|programs/gaganyaan.json :: outcome.2.md": {
+    "why": "figurative: direction/course, not a flight path",
+    "tr": "e20c1533cf"
+  },
+  "trajectory|hi|programs/soviet-lunar.json :: outcome.1.md": {
+    "why": "variant: पथ",
+    "tr": "57a7aac5f6"
+  },
+  "trajectory|ja|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative sense (course of events / path ahead), not a flight path",
+    "tr": "fd515e983f"
+  },
+  "trajectory|ja|essays/space-comm-arrays.json :: body.23.md": {
+    "why": "figurative sense (course of events / path ahead), not a flight path",
+    "tr": "91ea40daa0"
+  },
+  "trajectory|ko|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative sense (direction of progress / distance scale), not a flight path",
+    "tr": "493b55afe6"
+  },
+  "trajectory|ko|essays/space-comm-arrays.json :: body.23.md": {
+    "why": "figurative sense (direction of progress / distance scale), not a flight path",
+    "tr": "923ecc37fe"
+  },
+  "trajectory|ko|missions/earth/otv-7.json :: description": {
+    "why": "variant: 궤도 (HEO is a closed orbit)",
+    "tr": "ff67897c9a"
+  },
+  "trajectory|ko|missions/earth/sputnik1.json :: description": {
+    "why": "variant: 궤도 (closed orbit of Sputnik)",
+    "tr": "8f32223174"
+  },
+  "trajectory|ko|missions/jupiter/juno.json :: description": {
+    "why": "variant: 극궤도 (polar orbit around Jupiter)",
+    "tr": "8d853e5278"
+  },
+  "trajectory|ko|missions/mercury/messenger.json :: events.1.note": {
+    "why": "trajectory omitted by paraphrase (속도를 낮추기 위한)",
+    "tr": "b7b61ec77c"
+  },
+  "trajectory|ko|programs/apollo.json :: link_labels./science/transfers/free-return": {
+    "why": "variant: 자유 귀환 궤도 (standard compound)",
+    "tr": "508b9c214f"
+  },
+  "trajectory|ko|science/planets/active-spacecraft-survey.json :: body_paragraphs.1": {
+    "why": "English uses trajectory loosely for an orbit around Jupiter; 궤도 correct",
+    "tr": "7032d40f21"
+  },
+  "trajectory|nl|essays/interstellar-exploration.json :: body.5.md": {
+    "why": "variant: banen (hyperbolic trajectories / trajectory design)",
+    "tr": "7ae2e9d0ae"
+  },
+  "trajectory|nl|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative 'the course/direction is clear'",
+    "tr": "8dd15f16dd"
+  },
+  "trajectory|zh-CN|essays/new-propulsion.json :: body.29.md": {
+    "why": "figurative sense (the way things are heading / scale), not a flight path",
+    "tr": "7aff581353"
+  },
+  "trajectory|zh-CN|essays/space-comm-arrays.json :: body.23.md": {
+    "why": "figurative sense (the way things are heading / scale), not a flight path",
+    "tr": "ab5947dc18"
+  },
+  "trajectory|zh-CN|missions/saturn/voyager-1.json :: description": {
+    "why": "path rendered as 最直接路径, natural",
+    "tr": "854e2098eb"
+  },
+  "trajectory|zh-CN|science/mission-phases/entry-heating.json :: body_paragraphs.1": {
+    "why": "the flight path is described (飞过最炽热的一段), no trajectory noun in the sentence",
+    "tr": "60ece7da1c"
+  }
+}

@@ -6,12 +6,12 @@
   "dispatch": "Apollo 17 fu la fine, anche se quasi nessuno di coloro che guardavano nel dicembre 1972 credeva che lo sarebbe stata. Fu anche, tardivamente, il volo che portò un vero scienziato sulla Luna — il geologo Harrison Schmitt, il cui occhio catturò il vetro vulcanico arancione al cratere Shorty che riscrisse di cosa è fatta la Luna. Cernan e Schmitt rimasero tre giorni, percorsero ventidue miglia, e poi Cernan salì la scaletta per l'ultima volta che qualcuno l'ha fatto, dicendo che partivano \"come siamo venuti, e se Dio vuole, torneremo\". Più di mezzo secolo dopo nessuno è tornato — e ogni argomento serio per tornare indietro inizia ancora con il fatto che una volta potevamo.",
   "type": "LANDER CON EQUIPAGGIO · ROVER · VOLATO",
   "first": "Ultima missione con equipaggio sulla Luna (e l'unica Apollo con un geologo addestrato)",
-  "description": "L'ultima volta che gli umani visitarono un altro mondo — più di mezzo secolo fa. Cernan e Schmitt trascorsero 75 ore sulla superficie, percorsero 35,7 km con l'LRV e riportarono 110,5 kg di campioni. Schmitt fu l'unico scienziato addestrato (geologo) mai a camminare sulla Luna, e le sue scoperte — in particolare il vetro vulcanico arancione presso il cratere Shorty — rivoluzionarono la geologia lunare. Le ultime parole di Cernan prima di salire sulla scala per l'ultima volta: «Partiamo come siamo venuti, e con l'aiuto di Dio, torneremo». Ora tocca ad Artemis IV mantenere quella promessa.",
+  "description": "L'ultima volta che gli umani visitarono un altro mondo — più di mezzo secolo fa. Cernan e Schmitt trascorsero 75 ore sulla superficie, percorsero 35,7 km con l'LRV e riportarono 110,5 kg di campioni. Schmitt fu l'unico scienziato addestrato (geologo) mai a camminare sulla Luna, e le sue scoperte — in particolare il vetro vulcanico arancione presso il cratere Shorty — rivoluzionarono la geologia lunare. Le ultime parole di Cernan prima di salire sulla scala per l'ultima volta: «Partiamo come siamo venuti e, a Dio piacendo, torneremo». Ora tocca ad Artemis IV mantenere quella promessa.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "Saturn V (AS-512) da KSC LC-39A 1972-12-07 - solo lancio notturno Apollo.",
+      "note": "Saturn V (AS-512) da KSC LC-39A, 1972-12-07 — unico lancio notturno dell'Apollo.",
       "type": "nominal"
     },
     {
@@ -29,7 +29,7 @@
     {
       "met": 4.6,
       "label": "TOCCO",
-      "note": "Il Lunar Module Challenger atterra nella valle Taurus-Littrow l'11/12/1972 alle 19:54 UTC.",
+      "note": "Il modulo lunare Challenger atterra nella valle Taurus-Littrow 1972-12-11 19:54 UTC.",
       "type": "nominal"
     },
     {
@@ -47,8 +47,9 @@
     {
       "met": 12.6,
       "label": "AMMARAGGIO",
-      "note": "CM America riporta l'equipaggio nell'Oceano Pacifico 19-12-1972.",
+      "note": "Il CM America riporta l'equipaggio nell'Oceano Pacifico il 1972-12-19.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Saturn V S-IVB (terzo stadio)"
 }

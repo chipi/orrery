@@ -84,5 +84,11 @@
       "type": "prose",
       "md": "更深层的教训在于，建设速度超过治理能力的基础设施，会同时带来真实的益处和真实的风险。Starlink确实把未联网的人连接了起来——同时也将关键能力集中到私人手中，挤占了共享轨道，并在天文学家的天空中划出道道光痕。它留下的任务不是撤销它，而是追上它：为如此强大的技术建立起本应在其升空之前就具备的治理体系。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starlink": "航天器 — Starlink 卫星星座",
+    "/programs/spacex": "SpaceX — 发射它的 Falcon",
+    "/earth": "地球 — 轨道与日益拥挤的近地轨道",
+    "/earth?site=starlink": "Starlink 卫星星座"
+  }
 }

@@ -1,7 +1,7 @@
 {
   "name": "Erde",
-  "type": "Startseite · Referenzorbit",
-  "fact": "Jeder Mensch, der jemals gelebt hat, hat dies hier getan. Die Referenzbahn, an der alle anderen gemessen werden.",
+  "type": "Heimat · Referenzorbit",
+  "fact": "Jeder Mensch, der je gelebt hat, hat hier gelebt. Die Referenzumlaufbahn, an der alle anderen gemessen werden.",
   "bio": "Die axiale Neigung von 23,44° erzeugt die Jahreszeiten – nicht die Entfernung von der Sonne. Tatsächlich ist die Erde im Januar näher an der Sonne als im Juli.",
   "links": [
     {
@@ -25,7 +25,7 @@
       "t": "core"
     },
     {
-      "l": "Hellblauer Punkt – Carl Sagan-Reflexion (Planetary Society)",
+      "l": "Blassblauer Punkt — Carl Sagans Reflexion (Planetary Society)",
       "u": "https://www.planetary.org/worlds/pale-blue-dot",
       "t": "deep"
     }
@@ -39,7 +39,7 @@
     {
       "tab": "scales-time",
       "section": "ecliptic-plane",
-      "why": "Die Erdumlaufbahn definiert die Ekliptik-Ebene. Die Neigung aller anderen Planeten wird relativ zu dieser Referenz gemessen."
+      "why": "Die Umlaufbahn der Erde definiert die Ekliptikebene. Die Inklination aller anderen Planeten wird relativ zu dieser Referenz gemessen."
     },
     {
       "tab": "planets",
@@ -54,7 +54,7 @@
     {
       "tab": "planets",
       "section": "moons-of-the-system",
-      "why": "Der Mond ist ungewöhnlich groß für seinen Primärkörper — das Verhältnis (Durchmesser ≈ 0,27 der Erde) ist das höchste in jedem Planeten-Satelliten-Paar."
+      "why": "Der Mond ist für seinen Mutterplaneten ungewöhnlich groß — das Verhältnis (Durchmesser ≈ 0,27 der Erde) ist das höchste aller Planet-Satellit-Paare."
     }
   ]
 }

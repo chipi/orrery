@@ -5,9 +5,7 @@
    * RouteCardGrid of the group's destinations. The nav links straight here
    * instead of opening a dropdown (2026-07 IA: dropdown → hub).
    */
-  import { page } from '$app/state';
-  import { base } from '$app/paths';
-  import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
+  import { localHref } from '$lib/locale';
   import RouteCardGrid from '$lib/components/RouteCardGrid.svelte';
 
   interface HubCard {
@@ -31,15 +29,6 @@
     gridTestId: string;
     gridAudioStage: string;
   } = $props();
-
-  const activeLocale = $derived(localeFromPage(page));
-
-  function withLang(path: string): string {
-    if (activeLocale === DEFAULT_LOCALE) return path;
-    // Merge with any existing query (e.g. `?context=…` on a scale-shell shortcut).
-    const sep = path.includes('?') ? '&' : '?';
-    return `${path}${sep}lang=${encodeURIComponent(activeLocale)}`;
-  }
 </script>
 
 <article class="section-hub">
@@ -48,12 +37,7 @@
     <p class="hub-intro">{intro}</p>
   </header>
 
-  <RouteCardGrid
-    {cards}
-    hrefFor={(route) => withLang(`${base}${route}`)}
-    {gridTestId}
-    {gridAudioStage}
-  />
+  <RouteCardGrid {cards} hrefFor={(route) => localHref(route)} {gridTestId} {gridAudioStage} />
 </article>
 
 <style>

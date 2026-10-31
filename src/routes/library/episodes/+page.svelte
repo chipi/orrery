@@ -15,6 +15,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import {
     getAudioProvenanceManifest,
     getEpisodeSourcesManifest,
@@ -154,7 +155,7 @@
             <span class="persona-name">{ep.persona}</span>
             {#if ep.route}<span class="ep-meta-sep">·</span><a
                 class="ep-route"
-                href="{base}{ep.route}">{ep.route}</a
+                href={localHref(ep.route)}>{ep.route}</a
               >{/if}
             {#if ep.duration_target_sec}<span class="ep-meta-sep">·</span><span class="ep-dur"
                 >{fmtTime(ep.duration_target_sec)}</span
@@ -206,9 +207,9 @@
   {/if}
 
   <footer class="ep-index-foot">
-    <a href="{base}/library">{m.library_episodes_back()}</a>
+    <a href={localHref(`/library`)}>{m.library_episodes_back()}</a>
     <span class="ep-foot-sep">·</span>
-    <a href="{base}/credits">{m.library_episodes_credits_link()}</a>
+    <a href={localHref(`/credits`)}>{m.library_episodes_credits_link()}</a>
   </footer>
 </section>
 
@@ -235,7 +236,7 @@
   }
   .ep-index-meta {
     margin: 0;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
   }
@@ -333,7 +334,7 @@
     font-variant-numeric: tabular-nums;
   }
   .ep-author {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .ep-read {
@@ -399,7 +400,7 @@
     outline: none;
   }
   .ep-sources-pending {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
     font-style: italic;
   }
 

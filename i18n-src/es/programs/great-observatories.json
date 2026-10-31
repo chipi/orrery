@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "La lección más profunda es el valor de una tradición sostenida por encima de un único triunfo. El poder real del programa no son los cuatro telescopios originales sino la continuidad de la ambición que iniciaron: un compromiso de décadas de seguir construyendo ojos más grandes. Las misiones individuales envejecen y mueren; la tradición de siempre construir el siguiente observatorio mejor es lo que mantiene la vista en expansión."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=hubble": "Flota — Hubble, Chandra, Spitzer y JWST",
+    "/programs/space-shuttle": "Space Shuttle: el vehículo que lanzó y reparó Hubble",
+    "/explore": "Explorar: los objetos de cielo profundo que revelaron estos telescopios",
+    "/earth?site=hubble": "Hubble en órbita terrestre baja",
+    "/earth?site=chandra": "Observatorio de rayos X Chandra"
+  }
 }

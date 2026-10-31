@@ -87,9 +87,7 @@
   // share z-index 30, so the satellite panel paints over the regime
   // panel; closing the satellite reveals the regime underneath.
   function onResidentClick(id: string) {
-    (
-      window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-    ).__surfaceSceneSelectSite?.(id);
+    window.__surfaceSceneSelectSite?.(id);
   }
 
   function openRegime(id: string) {

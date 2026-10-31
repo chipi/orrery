@@ -1,0 +1,1147 @@
+[
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Большой азимутальный телескоп (БТА-6) диаметром 6 м Специальной астрофизической обсерватории Российской академии наук, основанной в 1966 году, в предгорьях Кавказа.",
+    "note": "Established name is Большой азимутальный телескоп; word order odd."
+  },
+  {
+    "rel": "iss-modules/nauka.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Телескоп Хейла получил первый свет 26 января 1949 года: Эдвин Хаббл навёл его на NGC 2261.",
+    "note": "Stray English (Hubble) in parentheses."
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Эксцентриситет Меркурия 0,206 — самый высокий среди 8 планет; в перигелии Солнце выглядит на его небе в 1,5 раза больше, чем в афелии.",
+    "note": "'в 1,5× больше' ungrammatical; use 'в 1,5 раза'."
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.falcon-heavy",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.lrv-apollo",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/tianhe.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Запущена в апреле 2021 года как основа станции — двигательная установка, энергоснабжение, система жизнеобеспечения и стыковочный узел, где Wentian и Mengtian были развёрнуты в перпендикулярную Т-образную конфигурацию в течение следующих восемнадцати месяцев.",
+    "note": "Gender/case clash: 'Т-образное конфигурация'."
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/esperance-museum.json",
+    "at": "items.skylab",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/haumea.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Хаумеа входит в небольшое столкновительное семейство в поясе Койпера — тела со сходными орбитами и спектрами, имеющие общее древнее родительское тело.",
+    "note": "'унаследовавшие общего предка' distorts meaning; 'ancient' dropped."
+  },
+  {
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "NRHO совершает один оборот примерно за 6,5 суток — около четверти собственного орбитального периода Луны. Космический аппарат всегда находится близко к южнополярному региону, но никогда не оказывается прямо над ним.",
+    "note": "'за 6,5 дней' wrong; 'примерно' repeated."
+  },
+  {
+    "rel": "culture-doors/pioneer-plaque.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/chandrayaan1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Первая лунная миссия Индии, 2008–2009 годы. На борту находился Moon Mineralogy Mapper (M³) NASA — прибор, который в 2009 году получил первое прямое спектроскопическое подтверждение наличия воды (H₂O и OH), широко распространённой по лунной поверхности, а не только на полюсах. Миссия завершилась через 312 дней, когда была потеряна связь; данные M³ анализируются до сих пор.",
+    "note": "Reverses cause: ended 312 days after launch, not after comms loss."
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.saturn-ib",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Saturn IB SA-209 — ни разу не летавшая ракета, запасная для спасательной миссии к Skylab и для полёта Apollo–«Союз»",
+    "note": "Clumsy word order; Apollo–Soyuz form inconsistent."
+  },
+  {
+    "rel": "museums/korolev-museum-zhytomyr.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/beidou.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cradle-of-aviation.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/esperance-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "trajectory",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.planet-labs",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/glonass.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/luna10.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Дозаправка топливом модуля Tianhe, доставка сухих грузов и припасов для экипажа и удаление отходов с орбиты путём разрушительного входа в атмосферу над южной частью Тихого океана.",
+    "note": "'On-orbit' dropped; 'сухие припасы' vague."
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.wall",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/oneweb.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "OneWeb выбрал высоту 1 200 км — вдвое больше, чем у Starlink, — чтобы снизить задержки от более длинных путей сигнала. Компромисс: сложнее свести с орбиты в конце срока службы.",
+    "note": "Thousands separator missing in 1200."
+  },
+  {
+    "rel": "museums/museum-of-science-and-industry-chicago.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/jwst.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "JWST в 3 676 раз дальше от Земли, чем МКС. Миссии обслуживания Hubble длились по 10 дней. JWST обслужить нельзя — его спроектировали безошибочным с первого раза.",
+    "note": "Thousands separator missing in 3676."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Эксцентриситет Луны 0,055 невелик, но значим — в перигее диск выглядит на 12 % больше и ярче, чем в апогее («суперлуние»).",
+    "note": "Decimal point instead of comma; mismatched quotes."
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/beam.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Приливное торможение сокращает орбиту Тритона — через 3,6 млрд лет он либо упадёт на Нептун, либо разрушится внутри предела Роша и образует кольцевую систему.",
+    "note": "'Замедляет орбиту' wrong: orbit is shrinking, not slowing."
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/armstrong-air-and-space-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/national-space-centre-leicester.json",
+    "at": "items.sokol-kv-2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/science-museum-london.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/tianhe.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Жилой отсек для экипажа, системы управления и обработки данных, двигатели для поддержания положения станции и центральный стыковочный узел для прибывающих пилотируемых кораблей Shenzhou и грузовых Tianzhou.",
+    "note": "'Командный центр' misrenders command and data handling."
+  },
+  {
+    "rel": "museums/stafford-air-and-space-museum.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/patroclus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Открыт в 1999 году, назван в честь Полимелы — матери Патрокла в гомеровской традиции. У астероидов типа P красноватые спектры отражения без выраженных деталей, которые интерпретируют как признак богатства органикой и обезвоженности; их динамическая история прочно относит их к первичным планетезималям внешнего диска, для изучения которых и создавалась Lucy.",
+    "note": "Garbled 'примордиальным внешних-дисковым планетезималям'; broken agreement."
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "perigee",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/beam.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/inmarsat.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Более 14 геостационарных спутников, обеспечивающих голосовую связь и передачу данных для морского флота, авиации и отдалённых регионов. Основа GMDSS, то есть Глобальной морской системы связи при бедствии и для обеспечения безопасности, от которой зависит каждое океанское судно. Приобретена компанией Viasat в 2023 году.",
+    "note": "Case mismatch after 'Основа GMDSS —'."
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Примерно 1/3 800 пути обратно к Земле. С LLO лунный горизонт резко искривлён — можно видеть на 30–40 км в любом направлении, прежде чем поверхность скроется.",
+    "note": "Thousands separator missing; hyphen for range."
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "486958 Аррокот (посещён New Horizons в 2019 году) — самый удалённый из когда-либо исследованных объектов Солнечной системы; первичная контактная двойная система пояса Койпера, которую, вероятно, никогда не прогревало Солнце.",
+    "note": "'Контактный двойник' is a calque; unclear term."
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Пояс занимает кольцо от 2,2 до 3,2 а. е. Люки Кирквуда — пустые орбитальные зоны на резонансах среднего движения с Юпитером — задают структуру популяции.",
+    "note": "'Синодического' wrong for mean-motion resonance; 'население' calque."
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Диаметр вдвое меньше плутоновского — наибольшее отношение размера спутника к размеру планеты в Солнечной системе. Харон и Плутон находятся в приливном захвате друг относительно друга и обращаются вокруг общего центра масс, расположенного примерно в 980 км над поверхностью Плутона, — фактически это двойная планетная система. Зонд New Horizons обнаружил поразительно разнообразный рельеф: гладкую равнину Вулкан (Vulcan Planitia) на юге, древнее кратерированное полушарие на севере и тёмную красноватую полярную шапку (Mordor Macula) из толинов, образовавшихся, когда молекулы метана, уходящие из атмосферы Плутона, оседали на Хароне и подвергались действию ультрафиолетового излучения. Четыре меньших спутника Плутона (Стикс, Никта, Кербер, Гидра) обращаются вокруг барицентра системы Плутон — Харон с хаотическим вращением, обусловленным меняющейся гравитацией двойной системы.",
+    "note": "'Древний кратеризованный полушарие' gender error; awkward phrasing."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "firsts.1.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Восток-1 — Юрий Гагарин, первый пилотируемый орбитальный полёт (СССР)",
+    "note": "'USSR' left in Latin."
+  },
+  {
+    "rel": "planets/pluto.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Крупнейшее известное тело пояса Койпера и первый открытый объект за орбитой Нептуна (1930). Переведён из планет в карликовые планеты Международным астрономическим союзом (МАС) в 2006 году.",
+    "note": "IAU left in Latin; case of agent missing."
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "library_labels.triton-voyager2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cargo_dragon.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/zarya.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Функционально-грузовой блок был выведен на орбиту первым — двигательная установка, электропитание и управление ориентацией, позволившие Unity состыковаться через несколько дней. NASA финансировала российское строительство в самые тяжёлые переходные годы программы.",
+    "note": "Russian module name left in English; 'движение' for propulsion."
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Ровно 35 786 км над поверхностью — на такой высоте период обращения по орбите равен одним звёздным суткам (23 ч 56 мин), поэтому спутник неподвижно висит над фиксированной долготой на экваторе. Метеорологические спутники вечно смотрят на один и тот же континент; спутники связи создают отпечаток размером с антенну и никогда не сдвигаются. Парковочных мест здесь нет, только слоты — каждому оператору МСЭ выделяет свой участок по долготе.",
+    "note": "'Оператору ITU назначается' reads as ITU's operator; reversed agent."
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/giotto.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "1,04 а. е. · на гелиоцентрической орбите с момента пролёта мимо кометы Григга — Скьеллерупа 1992-07-10",
+    "note": "Wrong preposition 'в ... орбите'."
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "specific impulse",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "5,4 а. е. · сведена с орбиты в атмосферу Юпитера 2003-09-21 (защита Европы)",
+    "note": "'Утилизирована в Юпитер' odd; ISO date changed."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Деймос — внешний спутник Марса (23 460 км); его орбитальный период (1,26 сут) больше марсианских суток, поэтому приливные силы медленно выталкивают его наружу.",
+    "note": "Decimal point; 'д' unit unclear."
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/dawn.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "2,8 а. е. · стабильная орбита вокруг Цереры с окончания миссии 2018-10-31 (орбитальное время жизни ~20 лет)",
+    "note": "ISO date lost; 'lifetime' rendered oddly."
+  },
+  {
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/poisk.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/adler-planetarium.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/mengtian.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Вторая лаборатория — в октябре 2022 года она завершила каноническую Т-образную конфигурацию станции, добавила ещё два солнечных крыла и грузовой внешний шлюз для полезной нагрузки, для работы с которым не нужен выход человека в открытый космос.",
+    "note": "Broken enumeration; 'автоматизированный' not in source."
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/iss.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/vega-contact.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "РН, отправившая в путь все аппараты Mars Express и Cluster и все совместные миссии ESA–Роскосмос",
+    "note": "'Every' dropped; 'вывела на траекторию' imprecise."
+  },
+  {
+    "rel": "small-bodies/oumuamua.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Траектория Оумуамуа была хрестоматийным гиперболическим коническим сечением, которое определяется превышением скорости убегания в каждой точке. К моменту открытия объект уже покидал систему.",
+    "note": "'Коника' is an odd calque."
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Макемаке — четвёртый по величине известный объект пояса Койпера и единственный из признанных МАС карликовых планет без подтверждённого спутника, пока в 2016 году телескоп Hubble не обнаружил MK2.",
+    "note": "'КОП' is a non-standard abbreviation."
+  },
+  {
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Чуть ниже орбиты Деймоса, внешнего спутника Марса (23 460 км). Три ареостационарных спутника, расположенных с интервалом 120°, покрыли бы весь марсианский диск — тот же приём, который спутники связи на GEO используют для телевещания на Землю.",
+    "note": "Missing genitive after 'Деймос'; redundant 'на Земле'."
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cargo_dragon.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.merlin-1d",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Parker Solar Probe — самый близкий пролёт у Солнца за всю историю (США)",
+    "note": "'USA' left Latin; 'closest-ever' weakened."
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-huygens",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/leucus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/uss-hornet-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "orbit",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/vega-2.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "0,95 а. е. · космический аппарат на гелиоцентрической орбите с момента пролёта мимо кометы Галлея 1986-03-09",
+    "note": "ISO date reformatted against rule."
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.wall",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/orus.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Ор — троянец L4 типа C; пролёт Lucy в ноябре 2028 года. Его тёмный, богатый углеродом спектр ближе к спектрам объектов пояса Койпера, чем к спектрам астероидов внутреннего пояса.",
+    "note": "'Kuiper' left in Latin; 'троян' inconsistent."
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Открыт в 1999 году, назван в честь Ора — троянского союзника, убитого Аяксом в «Илиаде». Встреча Lucy 2028-11-11 позволит измерить состав поверхности и свойства реголита и выяснить, есть ли у астероида спутники, завершив обзор спектрального диапазона ведущего облака (C → P → D).",
+    "note": "'Ajax' left Latin; 'композицию' calque."
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "У Миранды самое большое наклонение орбиты (4,3°) среди крупных спутников Урана — вместе с разрушительным событием на раннем этапе существования системы это объясняет знаменитые уступы, снятые Voyager 2 в 1986 году.",
+    "note": "Bound term 'наклонение' not used; 'событие нарушения' vague."
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Четырёхступенчатая ракета-носитель ISRO Polar Satellite Launch Vehicle (PSLV) в конфигурации XL с шестью твердотопливными навесными ускорителями. Первоначально создана для солнечно-синхронных околоземных орбит; позднее применялась для межпланетных миссий, включая первый лунный орбитальный аппарат Индии и первый марсианский зонд. Высокая экономичность запусков (~$30M за запуск) позволила уложить общий бюджет миссии Mangalyaan в $74M.",
+    "note": "Nonword 'солнесинхронных'."
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-dragonfly",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.3.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Нептун — 30,07 а. е., самые быстрые ветры в системе",
+    "note": "'AU' left Latin."
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Крупнейший член семейства троянцев Эврибата в облаке L4 — скопления, образованного при столкновении: родительское тело диаметром 64 км и около 280 более мелких фрагментов. Встреча Lucy с ним 2027-08-12 на скорости 5,7 км/с станет первым в истории снимком троянца Юпитера крупным планом; вместе с астероидом будет снят и его спутник Queta диаметром 1 км (открыт телескопом Hubble в 2018 году).",
+    "note": "'Семейства трояна L4 Эврибат' garbled and unclear."
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/harmony.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

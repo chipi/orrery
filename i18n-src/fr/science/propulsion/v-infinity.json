@@ -8,8 +8,8 @@
   ],
   "body_paragraphs": [
     "Imaginez une asymptote, infiniment loin de la planète. La vitesse à laquelle vous vous déplaceriez sur cette asymptote est V∞ — prononcé « V-infini ». C'est la vitesse relative au Soleil moins la contribution de la planète à votre mouvement. Sur un survol hyperbolique, V∞ est constant le long des deux branches de l'hyperbole.",
-    "V∞ détermine l'importance de la manœuvre d'arrivée. Pour vous capturer en orbite, vous devez dissiper assez d'énergie pour passer sous la vitesse de libération — plus profond est le puits, plus `∆v` il faut pour vous ralentir. Mars Reconnaissance Orbiter est arrivée à Mars avec V∞ ≈ 2,6 km/s, puis a consommé ~1 km/s de `∆v` pour l'insertion en orbite. Voyager 2 a atteint Neptune avec V∞ ≈ 8 km/s et n'a même pas tenté de s'insérer — elle a simplement survolé.",
-    "Sur le HUD de `/fly`, vous verrez V∞ s'afficher quand le vaisseau entre dans la sphère d'influence de la destination. C'est le moment de vérité : à quelle vitesse devez-vous réduire, et votre fusée peut-elle se le permettre ?"
+    "V∞ détermine l'ampleur de l'allumage d'arrivée. Pour vous capturer en orbite, vous devez dissiper assez d'énergie pour passer sous la vitesse de libération — plus le puits est profond, plus il faut de `∆v` pour vous freiner. Mars Reconnaissance Orbiter est arrivée à Mars avec V∞ ≈ 2,6 km/s, puis a consommé ~1 km/s de `∆v` pour l'insertion en orbite. Voyager 2 a atteint Neptune avec V∞ ≈ 8 km/s et n'a même pas tenté de s'insérer — elle a simplement survolé.",
+    "Sur le HUD de `/fly`, vous verrez V∞ apparaître quand l'engin entre dans la sphère d'influence de la destination. C'est le moment de vérité : quelle vitesse devez-vous annuler, et votre fusée peut-elle se permettre de l'annuler ?"
   ],
-  "diagram_caption": "Survol hyperbolique : V∞ constante sur asymptotes, loin du planète."
+  "diagram_caption": "Survol hyperbolique : V∞ est la vitesse constante sur les asymptotes, loin de la planète."
 }

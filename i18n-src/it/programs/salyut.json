@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La seconda lezione è che il rifornimento è ciò che rende reale una stazione. Skylab, brillante e di breve durata, non fu mai rifornita o riportata in quota, e decadde una volta abbandonata. L'insistenza di Salyut nel risolvere il rifornimento di carburante e gli approvvigionamenti — il secondo portello di attracco, il cargo Progress — è esattamente ciò che permise alle sue stazioni successive di essere occupate per anni invece che per settimane. Una presenza permanente nello spazio non è questione di costruire un veicolo spaziale più grande; è questione di costruire la catena logistica senza glamour che mantiene vivo continuamente uno modesto."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — orbite, rendezvous e siti di lancio",
+    "/fleet?focus=salyut-6": "Flotta — le stazioni Salyut"
+  }
 }

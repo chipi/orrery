@@ -5,11 +5,12 @@
  * exercises.
  */
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
-import { createServer, type Server } from 'node:http';
+import type { Server } from 'node:http';
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { buildLabApi, assertProductionConfig, type LabApiConfig } from './index';
+import { listenOnFreePort } from './test-listen';
 
 let dir: string;
 let server: Server;
@@ -26,14 +27,10 @@ beforeAll(async () => {
     statePath: join(dir, 'state.json'),
     allowlistPath: join(dir, 'allowlist.json'),
   };
-  const probe = createServer();
-  await new Promise<void>((r) => probe.listen(0, '127.0.0.1', r));
-  const port = (probe.address() as { port: number }).port;
-  await new Promise<void>((r) => probe.close(() => r()));
-  const built = await buildLabApi({ ...cfg, issuer: `http://127.0.0.1:${port}` });
-  await new Promise<void>((r) => built.server.listen(port, '127.0.0.1', r));
-  server = built.server;
-  base = `http://127.0.0.1:${port}`;
+  server = await listenOnFreePort(async (port) => {
+    base = `http://127.0.0.1:${port}`;
+    return (await buildLabApi({ ...cfg, issuer: base })).server;
+  });
 });
 
 afterAll(() => {
@@ -120,6 +117,7 @@ describe('assertProductionConfig', () => {
     gid: process.env.LAB_GOOGLE_CLIENT_ID,
     gsec: process.env.LAB_GOOGLE_CLIENT_SECRET,
     csec: process.env.LAB_CLAUDE_CLIENT_SECRET,
+    llm: process.env.LITELLM_BASE_URL,
   });
 
   it('throws in production when client config is missing, naming the vars', () => {
@@ -129,8 +127,9 @@ describe('assertProductionConfig', () => {
       delete process.env.LAB_GOOGLE_CLIENT_ID;
       delete process.env.LAB_GOOGLE_CLIENT_SECRET;
       process.env.LAB_CLAUDE_CLIENT_SECRET = 'x';
+      process.env.LITELLM_BASE_URL = 'http://gw:4001';
       expect(() => assertProductionConfig()).toThrow(
-        /LAB_GOOGLE_CLIENT_ID, LAB_GOOGLE_CLIENT_SECRET/,
+        /LAB_GOOGLE_CLIENT_ID, LAB_GOOGLE_CLIENT_SECRET$/,
       );
     } finally {
       Object.assign(process.env, {
@@ -138,6 +137,7 @@ describe('assertProductionConfig', () => {
         LAB_GOOGLE_CLIENT_ID: s.gid,
         LAB_GOOGLE_CLIENT_SECRET: s.gsec,
         LAB_CLAUDE_CLIENT_SECRET: s.csec,
+        LITELLM_BASE_URL: s.llm,
       });
     }
   });
@@ -149,7 +149,11 @@ describe('assertProductionConfig', () => {
       process.env.LAB_GOOGLE_CLIENT_ID = 'id';
       process.env.LAB_GOOGLE_CLIENT_SECRET = 'sec';
       process.env.LAB_CLAUDE_CLIENT_SECRET = 'csec';
+      process.env.LITELLM_BASE_URL = 'http://gw:4001';
       expect(() => assertProductionConfig()).not.toThrow();
+      delete process.env.LITELLM_BASE_URL;
+      expect(() => assertProductionConfig()).toThrow(/LITELLM_BASE_URL/);
+      process.env.LITELLM_BASE_URL = 'http://gw:4001';
       process.env.NODE_ENV = 'test';
       delete process.env.LAB_GOOGLE_CLIENT_ID;
       expect(() => assertProductionConfig()).not.toThrow();
@@ -159,6 +163,7 @@ describe('assertProductionConfig', () => {
         LAB_GOOGLE_CLIENT_ID: s.gid,
         LAB_GOOGLE_CLIENT_SECRET: s.gsec,
         LAB_CLAUDE_CLIENT_SECRET: s.csec,
+        LITELLM_BASE_URL: s.llm,
       });
     }
   });

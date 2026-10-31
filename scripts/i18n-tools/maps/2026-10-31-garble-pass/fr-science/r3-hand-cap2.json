@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "intro_sentence",
+    "find": "près du double de l'Isp des meilleurs moteurs chimiques, à vraie poussée.",
+    "replace": "près du double de la meilleure Isp chimique, à vraie poussée."
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "old": "Cygnus Standard ist ein robotisches Frachtraumfahrzeug von Orbital ATK in den USA. ISS-Frachter nur für Druckfracht. Nach dem ersten Flug im Jahr 2013 ausgemustert.",
+    "new": "Cygnus Standard ist ein robotisches Frachtraumfahrzeug von Orbital Sciences in den USA. ISS-Frachter nur für Druckfracht. Flog 2013–2014; Nachfolger ist das Enhanced Cygnus."
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "old": "Phoenix ist ein planetarer Lander, gebaut von Lockheed Martin in den USA. Wassereis im Marsboden bestätigt. Nach dem ersten Flug 2008 ausgemustert.",
+    "new": "Phoenix ist ein planetarer Lander, gebaut von Lockheed Martin in den USA. Wassereis im Marsboden bestätigt. Mission 2008 beendet."
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "old": "Surveyor 3 ist ein planetarer Lander, gebaut von Hughes Aircraft in den USA. Apollo 12 besuchte den Lander 2,5 Jahre später. Nach dem ersten Flug 1967 ausgemustert.",
+    "new": "Surveyor 3 ist ein planetarer Lander, gebaut von Hughes Aircraft in den USA. Apollo 12 besuchte den Lander 2,5 Jahre später. Mission 1967 beendet."
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "old": "Venera 7-class ist ein Planetenlander, der von NPO Lavochkin in der UdSSR gebaut wurde. Erste weiche Landung auf einem anderen Planeten und erste Datenübertragung von der Oberfläche eines anderen Planeten (Venus, 1970). Nach dem ersten Flug 1970 außer Betrieb genommen.",
+    "new": "Venera 7-class ist ein Planetenlander, der von NPO Lavochkin in der UdSSR gebaut wurde. Erste weiche Landung auf einem anderen Planeten und erste Datenübertragung von der Oberfläche eines anderen Planeten (Venus, 1970). Mission 1970 beendet."
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "old": "Titan II GLV ist eine Orbitalrakete, gebaut von Martin Marietta in den USA. Arbeitspferd für Project Gemini. Nach dem ersten Flug 1964 ausgemustert.",
+    "new": "Titan II GLV ist eine Orbitalrakete, gebaut von Martin Marietta in den USA. Arbeitspferd für Project Gemini. Flog zwölfmal, 1964–1966."
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "old": "Magellan ist ein Tiefraum-Orbiter, gebaut von Martin Marietta in den USA. Hat 98 % der Venusoberfläche per Radar kartiert. Nach dem ersten Flug 1989 ausgemustert.",
+    "new": "Magellan ist ein Tiefraum-Orbiter, gebaut von Martin Marietta in den USA. Hat 98 % der Venusoberfläche per Radar kartiert. Mission 1994 beendet."
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "old": "Lunokhod 2 ist ein Planetenrover, den NPO Lavochkin in der UdSSR gebaut hat. Legte 39 km auf dem Mond zurück — Rekord bis 2014. Nach dem ersten Flug 1973 außer Dienst gestellt.",
+    "new": "Lunokhod 2 ist ein Planetenrover, den NPO Lavochkin in der UdSSR gebaut hat. Legte 39 km auf dem Mond zurück — Rekord bis 2014. Mission 1973 beendet."
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "old": "Pragyan ist ein Planetenrover der ISRO, gebaut in Indien. Erster Rover am Südpol des Mondes; Chandrayaan-3. Nach dem ersten Flug 2023 außer Dienst gestellt.",
+    "new": "Pragyan ist ein Planetenrover der ISRO, gebaut in Indien. Erster Rover am Südpol des Mondes; Chandrayaan-3. Seit 2023 inaktiv."
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "old": "Sojourner ist ein Planetenrover, den die NASA JPL in den USA gebaut hat. Erster Mars-Rover; Pathfinder-Mission. Nach dem ersten Flug 1997 außer Dienst gestellt.",
+    "new": "Sojourner ist ein Planetenrover, den die NASA JPL in den USA gebaut hat. Erster Mars-Rover; Pathfinder-Mission. Mission 1997 beendet."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "old": "Spirit (MER-A) ist ein Planetenrover, den die NASA JPL in den USA gebaut hat. Mars Exploration Rover; sechs Jahre im Betrieb. Nach dem ersten Flug 2004 außer Dienst gestellt.",
+    "new": "Spirit (MER-A) ist ein Planetenrover, den die NASA JPL in den USA gebaut hat. Mars Exploration Rover; sechs Jahre im Betrieb. Letzter Kontakt 2010."
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "old": "Yutu ist ein Planetenrover, den CAST in China gebaut hat. Erster chinesischer Mond-Rover; Chang'e-3. Nach dem ersten Flug 2013 außer Dienst gestellt.",
+    "new": "Yutu ist ein Planetenrover, den CAST in China gebaut hat. Erster chinesischer Mond-Rover; Chang'e-3. Mission 2016 beendet."
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "old": "Zhurong ist ein Planetenrover, den CAST in China gebaut hat. Erster chinesischer Mars-Rover; Tianwen-1. Nach dem ersten Flug 2021 außer Dienst gestellt.",
+    "new": "Zhurong ist ein Planetenrover, den CAST in China gebaut hat. Erster chinesischer Mars-Rover; Tianwen-1. Seit 2022 inaktiv."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "old": "Das ATV (Automated Transfer Vehicle) ist ein robotisches Frachtraumfahrzeug, das von Astrium / Airbus in Multi (Europa) gebaut wurde. ESAs Flaggschiff unter den ISS-Frachtern: Es flog von 2008 bis 2015 fünf Missionen zur ISS, lieferte Fracht, Wasser, Luft und Treibstoff und hob mit seinen Triebwerken die Station an.",
+    "new": "Das ATV (Automated Transfer Vehicle) ist ein robotisches Frachtraumfahrzeug, das von Astrium / Airbus in Europa gebaut wurde. ESAs Flaggschiff unter den ISS-Frachtern: Es flog von 2008 bis 2015 fünf Missionen zur ISS, lieferte Fracht, Wasser, Luft und Treibstoff und hob mit seinen Triebwerken die Station an."
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "old": "Ariane 6 ist eine Orbital-Trägerrakete, gebaut von ArianeGroup in Multi (Europa). Nachfolger von Ariane 5. Seit 2024 im Dienst.",
+    "new": "Ariane 6 ist eine Orbital-Trägerrakete, gebaut von ArianeGroup in Europa. Nachfolger von Ariane 5. Seit 2024 im Dienst."
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "old": "XMM-Newton ist ein Weltraumobservatorium von Airbus Defence and Space in Multi (Europa). Das Flaggschiff-Röntgenobservatorium der ESA. Seit 1999 im Dienst.",
+    "new": "XMM-Newton ist ein Weltraumobservatorium von Airbus Defence and Space in Europa. Das Flaggschiff-Röntgenobservatorium der ESA. Seit 1999 im Dienst."
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "old": "Mars Express ist ein Tiefraum-Orbiter, gebaut von EADS Astrium in Multi (Europa). Erster und einziger Marsorbiter der ESA; Europas erste Planetenmission. Seit 2003 im Einsatz.",
+    "new": "Mars Express ist ein Tiefraum-Orbiter, gebaut von EADS Astrium in Europa. Erster Marsorbiter der ESA; Europas erste Planetenmission. Seit 2003 im Einsatz."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "old": "Indiens erster erfolgreicher Mondlander (August 2023), das erste Raumfahrzeug, das in der Nähe des Mondsüdpols landete. Zwei Jahre nachdem Vikram CY-2 in derselben Region abgestürzt war — der Erlösungsbogen, den Indien und ISRO brauchten.",
+    "new": "Indiens erster erfolgreicher Mondlander (August 2023), das erste Raumfahrzeug, das in der Nähe des Mondsüdpols landete. Vier Jahre nachdem Vikram CY-2 in derselben Region abgestürzt war — der Erlösungsbogen, den Indien und ISRO brauchten."
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "old": "Indiens Schwerlastrampe — GSLV Mk III / LVM3 für Chandrayaan-3, Mangalyaan und das geplante Gaganyaan-Astronautenprogramm",
+    "new": "Indiens Schwerlastrampe — GSLV Mk III / LVM3 für Chandrayaan-3 und das geplante Gaganyaan-Astronautenprogramm"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "old": "Indiens Schwerlastrampe — GSLV Mk III / LVM3 für Chandrayaan-3, Mangalyaan und das geplante Gaganyaan-Astronautenprogramm",
+    "new": "Indiens Schwerlastrampe — GSLV Mk III / LVM3 für Chandrayaan-3 und das geplante Gaganyaan-Astronautenprogramm"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "old": "Erster und einziger Marsorbiter der ESA; Europas erste Planetenmission",
+    "new": "Erster Marsorbiter der ESA; Europas erste Planetenmission"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "old": "Erster und einziger Marsorbiter der ESA; Europas erste Planetenmission",
+    "new": "Erster Marsorbiter der ESA; Europas erste Planetenmission"
+  }
+]

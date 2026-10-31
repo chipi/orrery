@@ -1,0 +1,553 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.diagram",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/hot-jupiters.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "'маневре кочења' is the correct rendering of arrival burns"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "'кружи/обилази око' is the correct verb for orbiting"
+  },
+  {
+    "rel": "science/space-stations/node-module.json",
+    "at": "body_paragraphs.4",
+    "term": "docking",
+    "decision": "change",
+    "find": "Chinese Docking Mechanism",
+    "replace": "кинески механизам за спајање",
+    "why": "untranslated Docking"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "'гравитационим маневрима' is the binding word inflected"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.1",
+    "term": "gravity assist",
+    "decision": "keep",
+    "why": "'гравитационим маневрима' is the binding word inflected (stem check misses the case ending)"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.0",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "гравитациона помоћ",
+    "replace": "гравитациони маневар",
+    "why": "binding гравитациони маневар"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "гравитационих помоћи",
+    "replace": "гравитационих маневара",
+    "why": "binding гравитациони маневар"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "четири помоћи",
+    "replace": "четири маневра",
+    "why": "binding гравитациони маневар"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "укључује мотор",
+    "replace": "пали мотор",
+    "why": "binding паљење мотора"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "палења мотора",
+    "replace": "паљења мотора",
+    "why": "spelling: паљење"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "палење мотора",
+    "replace": "паљење мотора",
+    "why": "spelling: паљење"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "165 секунди рада првог степена",
+    "replace": "165 секунди рада мотора првог степена",
+    "why": "burn = engine firing"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "booster",
+    "decision": "keep",
+    "why": "booster scale = first-stage level"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn means combustion / stars burning / burn profile, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burn profile of solid = combustion"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.0",
+    "term": "booster",
+    "decision": "change",
+    "find": "Помоћни ракетни мотори на чврсто гориво",
+    "replace": "Ракетни појачивачи на чврсто гориво",
+    "why": "binding ракетни појачивач"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "payload",
+    "decision": "keep",
+    "why": "proper name 'Vega Secondary Payload Adapter'"
+  },
+  {
+    "rel": "science/history/sputnik-1957.json",
+    "at": "body_paragraphs.2",
+    "term": "booster",
+    "decision": "change",
+    "find": "за помоћне ракете R-7",
+    "replace": "за појачиваче ракете R-7",
+    "why": "binding појачивач"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "diagram_caption",
+    "term": "booster",
+    "decision": "change",
+    "find": "јефтини једноставни потисници",
+    "replace": "јефтини једноставни ракетни појачивачи",
+    "why": "binding ракетни појачивач"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.0",
+    "term": "booster",
+    "decision": "keep",
+    "why": "booster = first stage / vehicle as in Falcon 9 booster; 'први степен' is standard"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.1",
+    "term": "booster",
+    "decision": "keep",
+    "why": "booster = first stage / vehicle as in Falcon 9 booster; 'први степен' is standard"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.3",
+    "term": "booster",
+    "decision": "keep",
+    "why": "booster = first stage / vehicle as in Falcon 9 booster; 'први степен' is standard"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.2",
+    "term": "booster",
+    "decision": "keep",
+    "why": "'потисници' is an accepted stem (потисник)"
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.3",
+    "term": "booster",
+    "decision": "keep",
+    "why": "booster = first stage 'први степен' is standard"
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "'улазак у лунарну орбиту' is an accepted form with adjective inserted"
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "diagram_caption",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "'до уласка у орбиту' is an accepted form (case ending)"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.0",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Lunar Orbit Insertion, Mars Orbit Insertion",
+    "replace": "убацивање у орбиту Месеца, убацивање у орбиту Марса",
+    "why": "untranslated; binding убацивање у орбиту"
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "'без уласка у орбиту' is an accepted form (case ending)"
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "keep",
+    "why": "'re-entry into 1 g' is vestibular, not atmospheric entry"
+  },
+  {
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "body_paragraphs.0",
+    "term": "descent",
+    "decision": "change",
+    "find": "спуштајућег модула",
+    "replace": "спусног модула",
+    "why": "descent module = спусни модул"
+  }
+]

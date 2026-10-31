@@ -16,7 +16,7 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn 23.06.2009.",
+      "note": "Einschwenken in die Mondumlaufbahn 23.06.2009.",
       "type": "nominal"
     },
     {
@@ -31,5 +31,6 @@
       "note": "Die Mission wurde unter NASA SMD auf eine mehrjährige Wissenschaftsphase ausgeweitet.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur-Oberstufe (Atlas V 401)"
 }

@@ -37,7 +37,7 @@
       <div class="tcc-footer">
         <span class="tcc-license">{layer.licenseShort}</span>
         {#if layer.uncertaintyM != null}
-          <span class="tcc-uncertainty">±{layer.uncertaintyM} m</span>
+          <span class="tcc-uncertainty">±{m.unit_m_value({ value: layer.uncertaintyM })}</span>
         {:else if i === tierContext.layers.length - 1 && tierContext.uncertaintyM != null}
           <span class="tcc-uncertainty">±{tierContext.uncertaintyM} m</span>
         {/if}
@@ -47,7 +47,7 @@
             href={layer.sourceUrl}
             target="_blank"
             rel="noopener noreferrer external"
-            title={m.source_open_new_tab_title()}>source ↗</a
+            title={m.source_open_new_tab_title()}>{m.link_source()}</a
           >
         {/if}
       </div>

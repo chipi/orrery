@@ -11,5 +11,6 @@
     { "met": 17, "label": "MOI", "note": "Lunar orbit insertion 2008-11-08.", "type": "nominal" },
     { "met": 24, "label": "MIP IMPACT", "note": "Moon Impact Probe targeted hard-landing near south pole.", "type": "info" },
     { "met": 320, "label": "CONTACT LOST", "note": "Communication lost 2009-08-29; 312 days of operations.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "PSLV PS4 fourth stage"
 }

@@ -16,7 +16,7 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Maanbaan-inbranding.",
+      "note": "Maanbaaninsertie.",
       "type": "nominal"
     },
     {
@@ -31,5 +31,6 @@
       "note": "Rover rijdt de oprit af.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "derde trap van de Long March 3B"
 }

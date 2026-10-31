@@ -1,7 +1,7 @@
 {
   "name": "Pioneer 10",
   "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
-  "payload": "Outer-system flyby spacecraft; first to use SNAP-19 RTGs; 25 W at launch (decaying to ~65 W of usable power; signal lost 2003)",
+  "payload": "Outer-system flyby spacecraft; first to use SNAP-19 RTGs; ~155 W at launch (decaying to ~65 W of usable power; signal lost 2003)",
   "delta_v": "~14.4 km/s (post-Jupiter heliocentric)",
   "type": "FLYBY · FLOWN",
   "first": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
@@ -20,5 +20,6 @@
       "note": "Flyby at ~132,000 km — first close-range photographs of the planet.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "TE-364-4 (Star-37E) third stage"
 }

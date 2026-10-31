@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelTabRow from './PanelTabRow.svelte';
+  import PanelHeroImage from './PanelHeroImage.svelte';
+  import PanelLightbox from './PanelLightbox.svelte';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
-  import { base } from '$app/paths';
   import { page } from '$app/state';
   import { assetUrl } from '$lib/asset-url';
   import {
@@ -13,7 +14,7 @@
     getMissionGallery,
     getMissionIndex,
   } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import {
     cardForFleet,
     cardForMission,
@@ -30,6 +31,9 @@
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { MissionOrbitIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages';
+  import { countryLabel } from '$lib/country-label';
+  import { epochLabel } from '$lib/epoch-label';
+  import { fleetStatusLabel } from '$lib/status-label';
   import MediaPlayer from './MediaPlayer.svelte';
   import MuseumsForObject from './MuseumsForObject.svelte';
   import VideoThumb from './VideoThumb.svelte';
@@ -217,7 +221,7 @@
   // Render the spec grid in a stable order — only fields actually
   // present in the entry render, so skeleton entries with empty
   // specs simply show fewer rows.
-  type SpecRow = { label: string; value: string };
+  type SpecRow = { key: string; label: string; value: string };
   let specRows = $derived.by(() => {
     if (!entry) return [] as SpecRow[];
     const rows: SpecRow[] = [];
@@ -227,34 +231,50 @@
       if (typeof v === 'number') return v.toLocaleString();
       return String(v);
     };
-    const push = (label: string, key: string, suffix = '') => {
+    type Unit = (inputs: { value: string }) => string;
+    // Engine spec values that are words (cycle names, the two non-symbol propellants);
+    // chemical designations (LOX, LH2, RP-1, N2O4, UDMH …) stay as written.
+    const CYCLE: Record<string, () => string> = {
+      'gas-generator': m.engine_cycle_gas_generator,
+      'staged-combustion': m.engine_cycle_staged,
+      'staged-combustion (ox-rich)': m.engine_cycle_staged_ox_rich,
+      'staged-combustion (full-flow)': m.engine_cycle_staged_full_flow,
+      expander: m.engine_cycle_expander,
+      'expander-bleed': m.engine_cycle_expander_bleed,
+    };
+    const cycle: Unit = ({ value }) => CYCLE[value]?.() ?? value;
+    const propellant: Unit = ({ value }) =>
+      value
+        .replace('liquid methane', m.engine_prop_liquid_methane())
+        .replace('ethyl alcohol', m.engine_prop_ethyl_alcohol());
+    const push = (label: string, key: string, unit?: Unit) => {
       const v = fmt(s[key]);
-      if (v !== null) rows.push({ label, value: v + suffix });
+      if (v !== null) rows.push({ key, label, value: unit ? unit({ value: v }) : v });
     };
     // Common
-    push('Height', 'height_m', ' m');
-    push('Length', 'length_m', ' m');
-    push('Diameter', 'diameter_m', ' m');
-    push('Mass', 'mass_kg', ' kg');
-    push('Thrust', 'thrust_n', ' N');
-    push('Stages', 'stages');
-    push('Payload to LEO', 'payload_to_leo_kg', ' kg');
-    push('Payload to Mars', 'payload_to_mars_kg', ' kg');
-    push('Crew capacity', 'crew_capacity');
-    push('Mission duration', 'mission_duration_days', ' d');
-    push('Pressurised volume', 'pressurized_volume_m3', ' m³');
-    push('Power source', 'power_source');
-    push('Primary mirror', 'primary_mirror_m', ' m');
-    push('Wavelength', 'wavelengths');
-    push('Mission target', 'mission_target');
-    push('Instruments', 'instruments_count');
+    push(m.fleet_spec_height(), 'height_m', m.unit_m_value);
+    push(m.fleet_spec_length(), 'length_m', m.unit_m_value);
+    push(m.fleet_spec_diameter(), 'diameter_m', m.unit_m_value);
+    push(m.fleet_spec_mass(), 'mass_kg', m.mp_flight_unit_kg);
+    push(m.fleet_spec_thrust(), 'thrust_n', m.unit_n_value);
+    push(m.fleet_spec_stages(), 'stages');
+    push(m.fleet_spec_payload_leo(), 'payload_to_leo_kg', m.mp_flight_unit_kg);
+    push(m.fleet_spec_payload_mars(), 'payload_to_mars_kg', m.mp_flight_unit_kg);
+    push(m.fleet_spec_crew(), 'crew_capacity');
+    push(m.fleet_spec_duration(), 'mission_duration_days', m.plan_sandbox_days);
+    push(m.fleet_spec_volume(), 'pressurized_volume_m3', m.unit_m3_value);
+    push(m.fleet_spec_power(), 'power_source');
+    push(m.fleet_spec_mirror(), 'primary_mirror_m', m.unit_m_value);
+    push(m.fleet_spec_wavelength(), 'wavelengths');
+    push(m.fleet_spec_target(), 'mission_target');
+    push(m.fleet_spec_instruments(), 'instruments_count');
     // Engine (PRD-032) — one of thrust_kn_sl/vac is present per engine.
-    push('Cycle', 'cycle');
-    push('Propellant', 'propellant');
-    push('Thrust', 'thrust_kn_sl', ' kN (sea level)');
-    push('Thrust', 'thrust_kn_vac', ' kN (vacuum)');
-    push('Specific impulse', 'isp_vac_s', ' s (vac)');
-    push('Specific impulse', 'isp_sl_s', ' s (sea level)');
+    push(m.fleet_spec_cycle(), 'cycle', cycle);
+    push(m.fleet_spec_propellant(), 'propellant', propellant);
+    push(m.fleet_spec_thrust(), 'thrust_kn_sl', m.fleet_value_kn_sl);
+    push(m.fleet_spec_thrust(), 'thrust_kn_vac', m.fleet_value_kn_vac);
+    push(m.fleet_spec_isp(), 'isp_vac_s', m.fleet_value_isp_vac);
+    push(m.fleet_spec_isp(), 'isp_sl_s', m.fleet_value_isp_sl);
     return rows;
   });
 
@@ -268,15 +288,15 @@
   // slugs (from the registry, PRD-032) append the specific topics that engine
   // demonstrates — e.g. staged-combustion cycle, the rocket equation. Deduped;
   // primers first. Labels here mirror the science-card titles.
-  const SCIENCE_LABELS: Record<string, string> = {
-    'propulsion/engine-types': 'How rocket engines work',
-    'propulsion/thrust-and-twr': 'Thrust & thrust-to-weight',
-    'propulsion/specific-impulse': 'Specific impulse',
-    'propulsion/tsiolkovsky': 'The rocket equation',
-    'propulsion/fuels-and-oxidizers': 'Fuels & oxidizers',
-    'propulsion/gas-generator': 'Gas-generator cycle',
-    'propulsion/staged-combustion': 'Staged combustion',
-    'propulsion/expander-cycle': 'Expander cycle',
+  const SCIENCE_LABELS: Record<string, () => string> = {
+    'propulsion/engine-types': m.fleet_sci_engine_types,
+    'propulsion/thrust-and-twr': m.fleet_sci_twr,
+    'propulsion/specific-impulse': m.fleet_spec_isp,
+    'propulsion/tsiolkovsky': m.chip_label_tsiolkovsky,
+    'propulsion/fuels-and-oxidizers': m.fleet_sci_fuels,
+    'propulsion/gas-generator': m.fleet_sci_gas_generator,
+    'propulsion/staged-combustion': m.fleet_sci_staged,
+    'propulsion/expander-cycle': m.fleet_sci_expander,
   };
   const ENGINE_SCIENCE_PRIMERS = ['propulsion/engine-types', 'propulsion/thrust-and-twr'];
   const engineScience = $derived.by(() => {
@@ -290,15 +310,15 @@
     for (const slug of [...ENGINE_SCIENCE_PRIMERS, cycleSlug, ...(entry?.science ?? [])]) {
       if (!slug || seen.has(slug)) continue;
       seen.add(slug);
-      out.push({ slug, label: SCIENCE_LABELS[slug] ?? slug.split('/').pop()! });
+      out.push({ slug, label: SCIENCE_LABELS[slug]?.() ?? slug.split('/').pop()! });
     }
     return out;
   });
 
   function siteRoute(ls: FleetSiteLink): string {
-    if (ls.type === 'moon') return `${base}/moon?site=${encodeURIComponent(ls.site_id)}`;
-    if (ls.type === 'mars') return `${base}/mars?site=${encodeURIComponent(ls.site_id)}`;
-    return `${base}/earth?id=${encodeURIComponent(ls.site_id)}`;
+    if (ls.type === 'moon') return localHref(`/moon?site=${encodeURIComponent(ls.site_id)}`);
+    if (ls.type === 'mars') return localHref(`/mars?site=${encodeURIComponent(ls.site_id)}`);
+    return localHref(`/earth?id=${encodeURIComponent(ls.site_id)}`);
   }
 
   // Per-category label: landers/rovers say "Landing site"; orbiters
@@ -315,36 +335,25 @@
   }
 
   function bodyLabel(type: string): string {
-    if (type === 'moon') return 'Moon';
-    if (type === 'mars') return 'Mars';
-    return 'Earth';
+    if (type === 'moon') return m.lab_body_moon();
+    if (type === 'mars') return m.lab_body_mars();
+    return m.lab_body_earth();
   }
 
   function siteLabel(ls: FleetSiteLink): string {
     const role = categoryRole(entry?.category);
     const body = bodyLabel(ls.type);
-    if (role === 'surface') return `Landing site · ${body} · ${ls.site_id}`;
-    if (role === 'orbital')
-      return ls.type === 'earth-object'
-        ? `In Earth orbit · ${ls.site_id}`
-        : `In ${body} orbit · ${ls.site_id}`;
+    if (role === 'surface') return `${m.surface_landing_site()} · ${body} · ${ls.site_id}`;
+    if (role === 'orbital') return `${m.fleet_in_orbit({ body })} · ${ls.site_id}`;
     return `${body} · ${ls.site_id}`;
   }
 
   function siteSectionHeading(): string {
     const role = categoryRole(entry?.category);
-    if (role === 'surface') return 'Landing site';
-    if (role === 'orbital') return 'Operating orbit';
-    return 'Operating sites';
+    if (role === 'surface') return m.surface_landing_site();
+    if (role === 'orbital') return m.fleet_operating_orbit();
+    return m.fleet_operating_sites();
   }
-
-  const STATUS_LABEL: Record<string, string> = {
-    ACTIVE: 'Active',
-    FLOWN: 'Flown',
-    RETIRED: 'Retired',
-    FAILED: 'Failed',
-    PLANNED: 'Planned',
-  };
 </script>
 
 <!-- grabFocus={false}: keep focus on the triggering fleet card so the
@@ -354,7 +363,7 @@
     <div class="head">
       <AgencyRow agency={entry.agency}>
         <span class="status status-{entry.status.toLowerCase()}">
-          {STATUS_LABEL[entry.status] ?? entry.status}
+          {fleetStatusLabel(entry.status)}
         </span>
         <span class="category-chip">{entry.category}</span>
       </AgencyRow>
@@ -375,24 +384,16 @@
     </div>
 
     {#if hasGallery}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => {
-            lightboxSrc = gallery[0]!;
-            trackGalleryImageOpen('fleet', entry.id, 0);
-          }}
-          aria-label={m.fleet_view_hero_aria({ name: entry.name })}
-        >
-          <img
-            {...responsive(gallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage
+        src={gallery[0]}
+        name={entry.name}
+        ariaLabel={m.fleet_view_hero_aria({ name: entry.name })}
+        heroClass="fleet-hero"
+        onOpen={() => {
+          lightboxSrc = gallery[0]!;
+          trackGalleryImageOpen('fleet', entry.id, 0);
+        }}
+      />
     {/if}
 
     <!-- Tab order: OVERVIEW · MISSIONS (cond) · GALLERY · ANATOMY · CREW
@@ -401,50 +402,28 @@
          the user's first follow-on after the overview (2026-06-17 user
          direction: "on fly details, can we get missions tab to be
          second when available"). -->
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        data-audio-stage="fleet-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}>OVERVIEW</button
-      >
-      {#if hasMissions || hasFlights}
-        <!-- MISSIONS + CREW merged (user direction): crewed vehicles show
-             their flights + crew rosters under "CREW"; everything else shows
-             the linked-mission list under "MISSIONS". Hidden when neither. -->
-        <button
-          type="button"
-          data-audio-stage="fleet-tab-missions"
-          class:active={tab === 'missions'}
-          onclick={() => (tab = 'missions')}
-          role="tab"
-          aria-selected={tab === 'missions'}>{hasFlights ? 'CREW' : 'MISSIONS'}</button
-        >
-      {/if}
-      {#if hasGallery || hasVideos}
-        <button
-          type="button"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}>GALLERY</button
-        >
-      {/if}
-      {#if hasDiagram || cutawayPath || hasLinks}
-        <!-- ANATOMY + LEARN merged (user direction) to keep the tab row from
-             overflowing. Shows the diagram (if any) then the tiered links. -->
-        <button
-          type="button"
-          data-audio-stage="fleet-tab-anatomy"
-          class:active={tab === 'anatomy'}
-          onclick={() => (tab = 'anatomy')}
-          role="tab"
-          aria-selected={tab === 'anatomy'}>DETAIL</button
-        >
-      {/if}
-    </div>
+    <!-- MISSIONS + CREW merged (user direction): crewed vehicles show their flights + crew rosters under "CREW"; everything else shows the linked-mission list under "MISSIONS". Hidden when neither. -->
+    <!-- ANATOMY + LEARN merged (user direction) to keep the tab row from overflowing. Shows the diagram (if any) then the tiered links. -->
+    <PanelTabRow
+      rowClass="tabs fleet-tabs"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview(), audioStage: 'fleet-tab-overview' },
+        {
+          id: 'missions',
+          label: hasFlights ? m.panel_tab_crew() : m.panel_tab_missions(),
+          visible: hasMissions || hasFlights,
+          audioStage: 'fleet-tab-missions',
+        },
+        { id: 'gallery', label: m.panel_tab_gallery(), visible: hasGallery || hasVideos },
+        {
+          id: 'anatomy',
+          label: m.panel_tab_detail(),
+          visible: hasDiagram || !!cutawayPath || hasLinks,
+          audioStage: 'fleet-tab-anatomy',
+        },
+      ]}
+      bind:active={tab}
+    />
 
     <div class="tab-body">
       {#if tab === 'overview'}
@@ -454,10 +433,10 @@
         {#if entry.explorer_route}
           <a
             class="explorer-cta"
-            href="{base}{entry.explorer_route}?id={entry.id}"
+            href={localHref(`${entry.explorer_route}?id=${entry.id}`)}
             data-sveltekit-preload-data="hover"
           >
-            Open {entry.name} Explorer →
+            {m.fleet_open_explorer({ name: entry.name })}
           </a>
         {/if}
 
@@ -478,7 +457,7 @@
             <div class="mission-cta-bar">
               <a
                 class="spec-cta spec-cta--mission"
-                href="{base}/missions?id={missionIds[0]}"
+                href={localHref(`/missions?id=${missionIds[0]}`)}
                 data-testid="fleet-mission-cta-single"
                 data-sveltekit-preload-data="hover"
               >
@@ -486,7 +465,7 @@
                   <MissionOrbitIcon />
                 </span>
                 <span class="spec-text">
-                  <span class="spec-label">MISSION</span>
+                  <span class="spec-label">{m.fleet_mission_cta_label()}</span>
                   <span class="spec-value">{missionIds[0]}</span>
                 </span>
               </a>
@@ -503,8 +482,10 @@
                   <MissionOrbitIcon />
                 </span>
                 <span class="spec-text">
-                  <span class="spec-label">MISSIONS</span>
-                  <span class="spec-value">{missionIds.length} missions →</span>
+                  <span class="spec-label">{m.panel_tab_missions()}</span>
+                  <span class="spec-value"
+                    >{m.fleet_missions_count({ count: missionIds.length })}</span
+                  >
                 </span>
               </button>
             </div>
@@ -517,16 +498,18 @@
 
         <dl class="spec-grid">
           <div class="spec">
-            <dt>Builder</dt>
+            <dt>{m.card_stat_builder()}</dt>
             <dd>{entry.manufacturer}</dd>
           </div>
           <div class="spec">
-            <dt>Country</dt>
-            <dd>{entry.country}</dd>
+            <dt>{m.card_stat_country()}</dt>
+            <dd>{countryLabel(entry.country)}</dd>
           </div>
           <div class="spec">
             <dt>{m.fleet_first_flight()}</dt>
-            <dd>{entry.first_flight === 'planned' ? 'Planned' : entry.first_flight}</dd>
+            <dd>
+              {entry.first_flight === 'planned' ? m.fleet_value_planned() : entry.first_flight}
+            </dd>
           </div>
           {#if entry.last_flight}
             <div class="spec">
@@ -535,14 +518,18 @@
             </div>
           {/if}
           <div class="spec">
-            <dt>Era</dt>
-            <dd>{entry.era}</dd>
+            <dt>{m.card_stat_era()}</dt>
+            <dd>
+              {entry.era === 'planned'
+                ? m.fleet_value_planned()
+                : entry.era.replace('now', m.programs_meta_now())}
+            </dd>
           </div>
           <div class="spec">
-            <dt>Epoch</dt>
-            <dd>{entry.epoch.replace(/-/g, ' ')}</dd>
+            <dt>{m.fleet_label_epoch()}</dt>
+            <dd>{epochLabel(entry.epoch)}</dd>
           </div>
-          {#each specRows as row (row.label)}
+          {#each specRows as row (row.key)}
             <div class="spec">
               <dt>{row.label}</dt>
               <dd>{row.value}</dd>
@@ -552,7 +539,7 @@
 
         <!-- PRD-032 — engine ↔ launcher cross-reference (the workhorse graph). -->
         {#if isEngine && engineLaunchers.length > 0}
-          <h3 class="section-h">Flies on</h3>
+          <h3 class="section-h">{m.fleet_used_on()}</h3>
           <ul class="xref-list">
             {#each engineLaunchers as v (v.launcherId)}
               <li>
@@ -577,7 +564,7 @@
               <li>
                 <a
                   class="xref-link"
-                  href="{base}/science/{s.slug}"
+                  href={localHref(`/science/${s.slug}`)}
                   data-sveltekit-preload-data="hover">{s.label} →</a
                 >
               </li>
@@ -586,7 +573,7 @@
         {/if}
 
         {#if entry.category === 'launcher' && launcherEngines.length > 0}
-          <h3 class="section-h">Engines</h3>
+          <h3 class="section-h">{m.fleet_engines_heading()}</h3>
           <ul class="xref-list">
             {#each launcherEngines as e (e.id)}
               <li>
@@ -627,48 +614,43 @@
         <p class="credit">{entry.credit}</p>
       {:else if tab === 'gallery'}
         {#if hasGallery || hasVideos}
-          <div class="gallery-grid">
-            {#each videos as v (v.id)}
-              <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
-            {/each}
-            {#each gallery.slice(1) as src (src)}
-              <button
-                type="button"
-                class="thumb"
-                onclick={() => {
-                  lightboxSrc = src;
-                  trackGalleryImageOpen('fleet', entry.id);
-                }}
-                aria-label={m.fleet_view_photo_aria()}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-            {#key entry.id}
-              <button
-                type="button"
-                class="thumb badge-thumb"
-                onclick={() => (lightboxSrc = assetUrl(`/images/badges/fleet/${entry.id}.webp`))}
-                aria-label="{entry.name} insignia"
-              >
-                <img
-                  src={assetUrl(`/images/badges/fleet/${entry.id}.webp`)}
-                  alt=""
-                  decoding="async"
-                  onerror={(e) => {
-                    const b = (e.currentTarget as HTMLElement).closest('button');
-                    if (b) b.remove();
-                  }}
-                />
-                <span class="badge-tag">Insignia</span>
-              </button>
-            {/key}
-          </div>
+          <PanelGalleryGrid
+            images={gallery.slice(1)}
+            thumbLabel={m.fleet_view_photo_aria()}
+            gridClass="fleet-gallery"
+            thumbClass="thumb fleet-photo"
+            onOpen={(src) => {
+              lightboxSrc = src;
+              trackGalleryImageOpen('fleet', entry.id);
+            }}
+          >
+            {#snippet leading()}
+              {#each videos as v (v.id)}
+                <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
+              {/each}
+            {/snippet}
+            {#snippet trailing()}
+              {#key entry.id}
+                <button
+                  type="button"
+                  class="thumb badge-thumb"
+                  onclick={() => (lightboxSrc = assetUrl(`/images/badges/fleet/${entry.id}.webp`))}
+                  aria-label={m.fleet_insignia_aria({ name: entry.name })}
+                >
+                  <img
+                    src={assetUrl(`/images/badges/fleet/${entry.id}.webp`)}
+                    alt=""
+                    decoding="async"
+                    onerror={(e) => {
+                      const b = (e.currentTarget as HTMLElement).closest('button');
+                      if (b) b.remove();
+                    }}
+                  />
+                  <span class="badge-tag">{m.fleet_insignia_tag()}</span>
+                </button>
+              {/key}
+            {/snippet}
+          </PanelGalleryGrid>
         {/if}
       {:else if tab === 'anatomy' && (diagramPath || cutawayPath || hasLinks)}
         {#if diagramPath}
@@ -677,21 +659,21 @@
               type="button"
               class="anatomy-open"
               onclick={() => (lightboxSrc = diagramPath)}
-              aria-label="Open {entry.name} anatomy full-size"
+              aria-label={m.fleet_anatomy_open_aria({ name: entry.name })}
             >
               {#if diagramLadder}
                 <img
                   src={diagramLadder.src}
                   srcset={diagramLadder.srcset}
                   sizes="(max-width: 640px) 100vw, 640px"
-                  alt="Anatomy diagram for {entry.name}"
+                  alt={m.fleet_anatomy_alt({ name: entry.name })}
                   loading="lazy"
                   decoding="async"
                 />
               {:else}
                 <img
                   src={diagramPath}
-                  alt="Anatomy diagram for {entry.name}"
+                  alt={m.fleet_anatomy_alt({ name: entry.name })}
                   loading="lazy"
                   decoding="async"
                 />
@@ -706,21 +688,21 @@
               type="button"
               class="anatomy-open"
               onclick={() => (lightboxSrc = cutawayPath)}
-              aria-label="Open {entry.name} exploded cutaway full-size"
+              aria-label={m.fleet_cutaway_open_aria({ name: entry.name })}
             >
               {#if cutawayLadder}
                 <img
                   src={cutawayLadder.src}
                   srcset={cutawayLadder.srcset}
                   sizes="(max-width: 640px) 100vw, 640px"
-                  alt="Exploded-stage cutaway for {entry.name}"
+                  alt={m.fleet_cutaway_alt({ name: entry.name })}
                   loading="lazy"
                   decoding="async"
                 />
               {:else}
                 <img
                   src={cutawayPath}
-                  alt="Exploded-stage cutaway for {entry.name}"
+                  alt={m.fleet_cutaway_alt({ name: entry.name })}
                   loading="lazy"
                   decoding="async"
                 />
@@ -733,7 +715,7 @@
           <ul class="links">
             {#if linksByTier.intro.length > 0}
               <li class="tier">
-                <h4>Intro</h4>
+                <h4>{m.panel_links_intro()}</h4>
                 <ul>
                   {#each linksByTier.intro as link (link.u)}
                     <li>
@@ -747,7 +729,7 @@
             {/if}
             {#if linksByTier.core.length > 0}
               <li class="tier">
-                <h4>Core</h4>
+                <h4>{m.panel_links_core()}</h4>
                 <ul>
                   {#each linksByTier.core as link (link.u)}
                     <li>
@@ -761,7 +743,7 @@
             {/if}
             {#if linksByTier.deep.length > 0}
               <li class="tier">
-                <h4>Deep</h4>
+                <h4>{m.panel_links_deep()}</h4>
                 <ul>
                   {#each linksByTier.deep as link (link.u)}
                     <li>
@@ -784,10 +766,10 @@
                   <span class="flight-designation">{flight.flight_designation}</span>
                   <a
                     class="mission-link"
-                    href="{base}/missions?id={flight.mission_id}"
+                    href={localHref(`/missions?id=${flight.mission_id}`)}
                     data-sveltekit-preload-data="hover"
                   >
-                    Mission →
+                    {m.fleet_flight_mission_link()}
                   </a>
                 </header>
                 {#if flight.patch_path}
@@ -823,7 +805,7 @@
               <li>
                 <a
                   class="mission-link"
-                  href="{base}/missions?id={mid}"
+                  href={localHref(`/missions?id=${mid}`)}
                   data-sveltekit-preload-data="hover"
                 >
                   {mid}
@@ -857,16 +839,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-{#if lightboxSrc}
-  <button
-    type="button"
-    class="lightbox"
-    onclick={() => (lightboxSrc = null)}
-    aria-label={m.fleet_close_photo_aria()}
-  >
-    <img {...responsive(lightboxSrc, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
-  </button>
-{/if}
+<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
 
 <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
@@ -958,13 +931,13 @@
     line-height: 1.4;
   }
 
-  .panel-hero {
+  :global(.panel-hero.fleet-hero) {
     margin: 4px 0 8px;
     aspect-ratio: 16 / 9;
     background: rgba(255, 255, 255, 0.02);
     overflow: hidden;
   }
-  .panel-hero-btn {
+  :global(.fleet-hero .panel-hero-btn) {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -972,7 +945,7 @@
     padding: 0;
     cursor: pointer;
   }
-  .panel-hero-btn img {
+  :global(.fleet-hero .panel-hero-btn img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -982,7 +955,7 @@
   /* Tab base styles inherited from src/lib/styles/panel-tabs.css —
      matches the rest of the detail-panel family. Fleet keeps its
      teal accent on the active-tab indicator as a category cue. */
-  .tabs button.active {
+  :global(.tabs.fleet-tabs button.active) {
     color: #4ecdc4;
     border-bottom-color: #4ecdc4;
   }
@@ -1235,12 +1208,13 @@
     line-height: 1.5;
   }
 
-  .gallery-grid {
+  :global(.gallery-grid.fleet-gallery) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 6px;
   }
-  .thumb {
+  .thumb,
+  :global(.fleet-gallery .fleet-photo) {
     background: transparent;
     border: 0;
     padding: 0;
@@ -1248,7 +1222,8 @@
     aspect-ratio: 4 / 3;
     overflow: hidden;
   }
-  .thumb img {
+  .thumb img,
+  :global(.fleet-gallery .fleet-photo img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1403,23 +1378,5 @@
   }
   .tier ul a:hover {
     text-decoration: underline;
-  }
-
-  .lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background: rgba(0, 0, 0, 0.92);
-    border: 0;
-    padding: 0;
-    cursor: zoom-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .lightbox img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
   }
 </style>

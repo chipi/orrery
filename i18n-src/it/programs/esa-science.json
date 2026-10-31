@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "La lezione più profonda è che la focalizzazione batte l'ampiezza per una potenza di medie dimensioni. L'ESA non può fare tutto ciò che fa la NASA, quindi fa alcune cose che nessun altro ha fatto — atterrare su una cometa, mappare la galassia, rilevare l'universo oscuro — e diventa un leader attraverso la profondità piuttosto che la scala. Scegliere il problema difficile giusto e risolverlo in modo definitivo è il modo in cui una coalizione supera il proprio budget."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Esplora — le comete e il cielo profondo mappato dall'ESA",
+    "/fleet?focus=rosetta": "Flotta — Rosetta, Gaia ed Euclid",
+    "/programs/ariane": "Ariane — il razzo che lancia la scienza dell'ESA",
+    "/earth?site=gaia": "Gaia in L2",
+    "/earth?site=xmm": "XMM-Newton"
+  }
 }

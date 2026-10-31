@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "museums/china-science-and-technology-museum.json",
+    "at": "name",
+    "old": "China Science and Technology Museum",
+    "new": "중국과학기술관"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.1.l",
+    "old": "Arrokoth flyby (NASA New Horizons)",
+    "new": "아로코트 근접 통과 (NASA New Horizons)"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "links.1.l",
+    "old": "Hayabusa mission archive (JAXA / ISAS)",
+    "new": "Hayabusa 임무 기록 보관소 (JAXA / ISAS)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.3.l",
+    "old": "Galilean moons — Wikipedia",
+    "new": "갈릴레이 위성 — Wikipedia"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.4.l",
+    "old": "Jupiter's deep interior (Nature 2018)",
+    "new": "목성의 깊은 내부 (Nature 2018)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.3.l",
+    "old": "Earth-Mars launch windows — Wikipedia",
+    "new": "지구-화성 발사 가능 시기 — Wikipedia"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.2.l",
+    "old": "MESSENGER mission overview (NASA)",
+    "new": "MESSENGER 임무 개요 (NASA)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.4.l",
+    "old": "Neptune's interior model (Icarus 2021)",
+    "new": "해왕성 내부 모형 (Icarus 2021)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.2.l",
+    "old": "Cassini mission archive (NASA)",
+    "new": "Cassini 임무 기록 보관소 (NASA)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.4.l",
+    "old": "Saturn's rings are young (Science 2019)",
+    "new": "토성의 고리는 젊다 (Science 2019)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.2.l",
+    "old": "Venera program — Wikipedia",
+    "new": "Venera 계획 — Wikipedia"
+  }
+]

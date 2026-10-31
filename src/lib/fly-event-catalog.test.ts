@@ -56,13 +56,14 @@ describe('#107 finding 8 — fly_event_* i18n catalog coverage', () => {
 
   it('fly_event_* values use the aerospace shorthand convention (EN-baseline cross-locale)', () => {
     // For these specific shorthand keys, the value should be identical
-    // across all locales (uppercase aerospace acronyms — TCM, EDL,
-    // ANOMALY, etc.). If a locale genuinely should translate one,
-    // remove it from this strict-match list with a justification.
+    // across all locales (uppercase aerospace acronyms — TCM, EDL, LOI,
+    // TEI). If a locale genuinely should translate one, remove it from
+    // this strict-match list with a justification. fly_event_anomaly was
+    // removed: ANOMALY is a word, not an acronym, and each locale already
+    // translates it as mp_flight_event_anomaly.
     const STRICT_MATCH_KEYS = [
       'fly_event_tcm',
       'fly_event_edl_or_oi',
-      'fly_event_anomaly',
       'fly_event_loi',
       'fly_event_tei',
     ];

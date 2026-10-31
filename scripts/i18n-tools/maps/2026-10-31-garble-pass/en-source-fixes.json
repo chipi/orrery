@@ -1,0 +1,140 @@
+[
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "find": "Retired after first flight in 2013.",
+    "replace": "Flew 2013–2014; succeeded by the Enhanced Cygnus."
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "find": "Retired after first flight in 2008.",
+    "replace": "Mission ended in 2008."
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "find": "Retired after first flight in 1967.",
+    "replace": "Mission ended in 1967."
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "find": "Retired after first flight in 1970.",
+    "replace": "Mission ended in 1970."
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "find": "Retired after first flight in 1964.",
+    "replace": "Flew 12 times, 1964–1966."
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "find": "Retired after first flight in 1989.",
+    "replace": "Mission ended in 1994."
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "find": "Retired after first flight in 1973.",
+    "replace": "Mission ended in 1973."
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "find": "Retired after first flight in 2023.",
+    "replace": "Dormant since 2023."
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "find": "Retired after first flight in 1997.",
+    "replace": "Mission ended in 1997."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "find": "Retired after first flight in 2004.",
+    "replace": "Last contact in 2010."
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "find": "Retired after first flight in 2013.",
+    "replace": "Mission ended in 2016."
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "find": "Retired after first flight in 2021.",
+    "replace": "Dormant since 2022."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "find": "in Multi (Europe)",
+    "replace": "in Europe"
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "find": "in Multi (Europe)",
+    "replace": "in Europe"
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "find": "in Multi (Europe)",
+    "replace": "in Europe"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "find": "in Multi (Europe)",
+    "replace": "in Europe"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "find": "Two years after Vikram CY-2 crashed",
+    "replace": "Four years after Vikram CY-2 crashed"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "tagline",
+    "find": "to Chandrayaan-3, Mangalyaan, and the upcoming",
+    "replace": "to Chandrayaan-3 and the upcoming"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "best_known_for",
+    "find": "to Chandrayaan-3, Mangalyaan, and the upcoming",
+    "replace": "to Chandrayaan-3 and the upcoming"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "find": "built by Orbital ATK in USA",
+    "replace": "built by Orbital Sciences in USA"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "find": "ESA's first and only Mars orbiter",
+    "replace": "ESA's first Mars orbiter"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "find": "ESA's first and only Mars orbiter",
+    "replace": "ESA's first Mars orbiter"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "find": "ESA's first and only Mars orbiter",
+    "replace": "ESA's first Mars orbiter"
+  }
+]

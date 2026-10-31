@@ -1,0 +1,1154 @@
+[
+  {
+    "rel": "satellites/ariel.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "القمر الأصغر والأبعد من بين قمرَي المريخ، ولا يتجاوز قطره 12 كم — وهو أصغر جرم معروف في المجموعة الشمسية لا يزال يظهر كقرص لا كنقطة من خلال كاميرا مدارية نمطية. سطحه الأكثر نعومة (مقارنةً بتضاريس فوبوس المحفورة بالفوهات والأخاديد) ومداره الأبطأ (30 ساعة مقابل 8 ساعات لفوبوس) يجعلانه الأكثر هدوءاً بين قمرَي المريخ. أطلق أساف هول على القمرين اسمَي التجسيدَين اليونانيَّين للخوف (فوبوس) والرعب (ديموس) — وهما الجوادان الحربيان اللذان يجرّان عربة آريس في الإلياذة، النشيد الخامس عشر.",
+    "note": "Ares left in Latin script"
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "مركبة Mars Reconnaissance Orbiter المدارية — الولايات المتحدة الأمريكية، 2009 (اقتراب HiRISE)",
+    "note": "Orbiter rendered as \"مدار\" (orbit)"
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "شبيه بالكوندريت الكربوني؛ سطحه أكثر نعومة من سطح فوبوس لأن جاذبيته الأضعف تسمح لمقذوفات الارتطامات بالإفلات إلى مدار حول المريخ بدلاً من إعادة تراكمها. توجد فوهتان مُسمّاتان: سويفت وفولتير (كلتاهما بقطر يقارب 3 كم).",
+    "note": "Swift left in Latin, Voltaire Arabised"
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "residents.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/kibo.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "يقع قرص التشتت الفرعي (مثل إيريس) في ميول مدارية عالية — بعثرته جاذبية نبتون أثناء هجرته نحو الخارج؛ أما سيدنا، على النقيض من ذلك، فهي جسم منعزل من نوع «السيدنويدات» يقع حضيضها البعيد خارج متناول نبتون، وهي تُوسّع الحزام حاليًا في الاتجاه العمودي.",
+    "note": "Clumsy opening, awkward agreement"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.skylab",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-expo-noordwijk.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/danmarks-tekniske-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "نطاق رسم الخرائط — يتراوح عادةً بين 150 و500 كم فوق سطح المريخ. تعيش معظم مركبات المريخ المدارية هنا: فهو مرتفع بما يكفي لتفادي السحب الجوي من الغلاف الحراري العلوي، ومنخفض بما يكفي للتصوير بمقياس المتر. الغلاف الجوي الرقيق هبة — فقد استخدم كلٌّ من Mars Reconnaissance Orbiter وMars Odyssey الكبح الهوائي (الغوص المتكرر عبره) لجعل مداريهما دائريين مجانًا، مما وفّر سنوات من الوقود الدافع. ست دول تشغّل مركبات فضائية هنا الآن.",
+    "note": "Propellant not the bound term"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "flyby",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "rendezvous",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.lrv-apollo",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "مدار القمر حول الأرض هو النظام النموذجي الكبلري ثنائي الجسم — وكل حسابات الأقمار حول الكواكب الأخرى تعميمات تنطلق من هنا.",
+    "note": "Keplerian left in English"
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "التلسكوب الذي غيّر نظرة البشرية إلى الكون. أُطلق عام 1990 بمرآة معيبة صحّحها رواد Space Shuttle عام 1993. رصد منذ ذلك الحين 1.4 مليون جرم سماوي. يعمل منذ أكثر من 34 سنة.",
+    "note": "Non-standard \"منذها\", clipped date phrases"
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "mission_visits.3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.resolution",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/aviation-museum-plovdiv-krumovo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.3.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "لا يزال Voyager 2 (التحليق القريب عام 1989) المركبة الفضائية الوحيدة التي زارت نبتون. لا توجد حاليًا أي مهمة إلى هذا النظام ممولة أو قيد الطيران.",
+    "note": "Flyby not the bound term"
+  },
+  {
+    "rel": "iss-modules/rassvet.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "امتداد لمنفذ الالتحام وتخزين شحن صغير مجاور لنواة الجزء الروسي.",
+    "note": "\"تحام\" is not the bound term"
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "أكبر صاروخ إطلاق تشغيلي في الصين: مرحلة مركزية كريوجينية بمحركي YF-77 يعملان بالهيدروجين، وأربعة معزِّزات تعمل بالكيروسين، ومرحلة عليا تعمل بالهيدروجين. أطلق مسبار Tianwen-1 المكوَّن من مركبة مدارية وهابطة وعربة جوالة إلى المريخ في يوليو 2020، وكذلك مهام Chang'e لإعادة عينات من القمر.",
+    "note": "Clumsy \"cryogenic core stage\" phrasing"
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "items.soyuz-tm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-modules/chinarm.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "ذراع المناولة الرئيسية للمحطة — ذراع بطول 10 أمتار وسبعة مفاصل تتنقل يدًا بيد عبر Tianhe ووحدات المختبر لالتقاط الشحنات وإعادة تموضع الحمولات الخارجية.",
+    "note": "\"المناور\" means maneuverer, not manipulator"
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "الصاروخ الهندي الرئيسي للأحمال الثقيلة — أول إطلاق قمري (Chandrayaan-3، 2023)",
+    "note": "Calque \"horse of heavy lift\""
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "الانحراف المركزي لهالي البالغ 0.967 هو مدار المذنبات قصيرة الدورة النموذجي — يكاد يكون مكافئيًا، بحضيض عند 0.59 AU وأوج عند 35 AU.",
+    "note": "\"شبه قطعي\" wrongly used for near-parabolic"
+  },
+  {
+    "rel": "trajectories/ulysses.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/polymele.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "بوليميلي كويكب طروادي عند L4 — التحليق القريب لمركبة Lucy في سبتمبر 2027. الكويكبات الطروادية مقفلة ديناميكيًا عند نقطتي لاغرانج L4/L5 للمشتري، وقد تكون أجرامًا مُلتقَطة من حزام كايبر.",
+    "note": "\"أجسامًا التقطت\" ungrammatical; flyby term"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "stage",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "highlights.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "نُشرت أولى صوره في 3 أكتوبر 2011 وبلغ حالة التشغيل الكامل في مارس 2013.",
+    "note": "\"أُطلقت\" (launched) used for released images"
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.atlantis",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "إيتوكاوا كويكب من فئة أبولو قريب من الأرض — المحور شبه الرئيسي 1.32 AU. كان الالتقاء بـ Hayabusa في 2005 وعودة العينة في 2010 أول رحلة ذهاب وإياب إلى كويكب قريب من الأرض.",
+    "note": "Apollo class left Latin; semi-major axis phrasing"
+  },
+  {
+    "rel": "small-bodies/oumuamua.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "أوبيرون هو أبعد الأقمار الخمسة الرئيسية لأورانوس (مداره 583,500 كم) — وسطحه هو الأكثر امتلاءً بالفوهات، مما يشير إلى أنه يملك أقدم سطح مكشوف في نظام أورانوس.",
+    "note": "Odd wording for cratered and exposed surface"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.4.l",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "الاحتباس الحراري الجامح على الزهرة (Nature Astronomy 2020)",
+    "note": "\"انهداري\" wrong word for runaway"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "library_labels.enceladus-habitability",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "علم الأحياء الفلكي — إنسيلادوس كهدف للبحث عن الحياة",
+    "note": "Label starts with untranslated English word"
+  },
+  {
+    "rel": "observatories/salt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "تتأرجح درجات حرارة السطح بمقدار 610°م في يوم واحد. لا غلاف جوي — تعرّض مباشر للفضاء.",
+    "note": "\"لا غلافًا جويًا\" ungrammatical"
+  },
+  {
+    "rel": "iss-modules/canadarm2.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "المساعدة في الإرساء، ودعم النشاط خارج المحطة، ونقل عمليات التجميع الخارجية الضخمة على طول نظام القاعدة المتحركة.",
+    "note": "Berthing rendered as docking"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.rejected.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "مدارات رسم خرائط إهليلجية ومسارات وقوف فوق 100 كم. وُضع Luna 10 عام 1966 هنا — أول قطعة صناعية تدخل مدارًا حول أي جرم سوى الأرض. مكث SMART-1 في مدارات إهليلجية عالية لاختبار قدرة الدفع الأيوني على التحمل. تعبر معظم المهام القمرية الحديثة عبر HLO قبل الهبوط إلى LLO؛ وينتهي بعضها بالارتفاع إلى هنا لإخلاء «مساحة العمل» في LLO قبل الاصطدام بغرض التخلص منها.",
+    "note": "\"الاصطدام التصفوي\" is a wrong term for disposal impact"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "burn",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/sentinel-copernicus.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "البرنامج الأوروبي الرائد لرصد الأرض — Sentinel-1 (تصوير راداري بالنطاق C)، Sentinel-2 (تصوير بصري متعدد الأطياف)، Sentinel-3 (المحيطات + اليابسة)، Sentinel-5P (كيمياء الغلاف الجوي)، Sentinel-6 (قياس الارتفاعات). جميعها متزامنة مع الشمس عند نحو 700 كم. سياسة بيانات مجانية ومفتوحة.",
+    "note": "Latin \"km\" unit left in Arabic text"
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/luna10.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "مدار قمري ~350 كم. القمر على بعد 384400 كم — أبعد بثلاث رتب قدرية عن محطة الفضاء الدولية — لكن Luna 10 كان أول جسم يوضع في مدار هناك.",
+    "note": "\"ثلاثة أضعاف رتبة\" garbled orders of magnitude"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/bepicolombo.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "0.48 AU · في الطريق إلى الدخول في مدار عطارد 2026-12-05",
+    "note": "\"إدراج مدار\" wrong; should be orbit insertion term"
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "residents.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/gps.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "31 قمراً صناعياً نشطاً على ارتفاع 20,200 كم. كل تطبيق ملاحة، وكل درون، وكل سفينة في البحر تعتمد على هذه الكوكبة. كانت في الأصل عسكرية وفُتحت للمدنيين عام 1983. دقة الإشارة: ~3 م للاستخدام المدني، ~1 م للاستخدام العسكري — والدقة بالسنتيمتر تتطلب تصحيح RTK.",
+    "note": "\"هذا الكوكبة\" gender disagreement"
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "mission_visits.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Cassini — NASA/ESA/ASI، 2005–2015 (اكتشاف الأعمدة + التحليق عبرها)",
+    "note": "\"الرشح\" means seepage, not plume"
+  },
+  {
+    "rel": "planets/pluto.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "اقتُرحت سحابة أورت — يان أورت (هولندا)",
+    "note": "\"Netherlands\" left in English; Oort spelled two ways"
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "بُنيت حملة Cassini المدارية التي استمرت 13 سنة حول قوانين كبلر — فكل عبور للحلقات وكل تحليق قريب بقمر كان قوسًا كبلريًا صُمّم قبل سنوات.",
+    "note": "Garbled \"حلقة تحوم\" and broken agreement"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "الحدود التي تخسر عندها الرياح الشمسية معركتها ضد الوسط بين النجمي — على بُعد حوالي 120 AU. في الداخل يقع الغلاف الشمسي، فقاعة من الجسيمات الشمسية المشحونة تتدفق إلى الخارج بمئات الكيلومترات في الثانية. وفي الخارج: الغاز البارد الكثيف والأشعة الكونية للمجرة ذاتها. ومسبارا Voyager هما الجسمان الوحيدان من صنع البشر اللذان عبرا هذا الحد — عبر Voyager 1 في 2012، وVoyager 2 في 2018. وكلاهما لا يزال ينقل بيانات، بشكل خافت، من الفضاء بين النجمي.",
+    "note": "Latin \"km/s\" and \"الصنعتان\" awkward"
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.mercury-capsule",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "orbit insertion",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "film",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "thrust",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "تناوب طاقم Tiangong، وقدرة قارب النجاة، والالتقاء والالتحام الذاتيان مع إمكانية التجاوز اليدوي من أدوات تحكم الوحدة المدارية.",
+    "note": "Misspelt \"وإلتحام\"; terms not as bound"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "mission_visits.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "New Horizons — الولايات المتحدة، 2015 (التحليق القريب الأول والوحيد)",
+    "note": "\"أول وحيد حول شارون\" garbled flyby phrase"
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cape-canaveral-space-force-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "الجسم الأكثر نشاطًا جيولوجيًا في المجموعة الشمسية. يضخ التسخين المدّي الناتج عن جاذبية المشتري والرنين المداري مع أوروبا وغانيميد نحو 100 تيراواط من الحرارة إلى داخل آيو — وهو ما يكفي لتشغيل نحو 400 بركان نشط ودرجات حرارة سطحية تتراوح من −130 °C (ثاني أكسيد الكبريت المتجمد) إلى +1٬600 °C (حمم فوق مافية). يتجدد سطحه أسرع مما تستطيع الارتطامات أن تترك عليه فوهات. وفوهة لوكي، وهي بحيرة حمم بعرض 200 كم، أقوى ظاهرة بركانية منفردة في المجموعة الشمسية.",
+    "note": "\"فوق الماتية\" and clumsy repaint/Patera sentences"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "المشتري هو الهدف المفضل لمساعدة الجاذبية في مهام المجموعة الشمسية الخارجية — فقد استخدمت مسابير Voyager 1+2 وCassini وGalileo وNew Horizons وJuno وEuropa Clipper وJUICE أو تستخدم التحليق القريب حول المشتري لكسب السرعة.",
+    "note": "\"خارج النظام\" ambiguous for outer system"
+  },
+  {
+    "rel": "small-bodies/eris.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "الانحراف المركزي لبلوتو البالغ 0.249 يجعل مداره ينخفض داخل مدار نبتون لمدة 20 سنة في كل دورة مدتها 248 سنة.",
+    "note": "\"يُغطس\" odd; eccentricity rendered orbital deviation"
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "قشرة من جليد الماء + صخور سيليكاتية / كربونية في الداخل؛ السطح هو الأكثر سطوعًا بين الأقمار الرئيسية لأورانوس، مع فوهات قليلة نسبيًا — يُفسَّر ذلك كدليل على إعادة تشكيل السطح بفعل البراكين الجليدية خلال آخر ~1 مليار سنة.",
+    "note": "\"Gyr\" left; craters rendered as pits"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "ميل الكوكب عن مستوى مداره أقل أهمية من ميل محور دورانه — فلأورانوس أشد ميل محوري إثارةً في المنظومة، مع أن ميله المداري متواضع (0.77°).",
+    "note": "\"ميل مداره المداري\" redundant and garbled"
+  },
+  {
+    "rel": "trajectories/voyager-1.json",
+    "at": "interstellar_since_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "عبرت الهيليوبوز في أغسطس 2012 — أول جسم من صنع الإنسان في الفضاء بين النجمي",
+    "note": "\"النجمي\" should be \"بين النجمي\" for interstellar"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/tranquility.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "الإنجاز الثقيل لدعم الحياة، وشهرة جهاز المشي لرواد الفضاء — حيث تطغى هندسة القابلية للسكن بهدوء على العناوين.",
+    "note": "\"مشاة الفضاء\" nonsense; wrong verb agreement"
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "surface_composition",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "يتكوّن تقريبًا من 40% جليد مائي + 60% صخور سيليكاتية؛ ويُعدّ سطحه الأكثر تعرّضًا للحُفر الاصطدامية في المجموعة الشمسية — مُشبَع تقريبًا، ولم يطرأ عليه أي تجديد سطحي. ميزة بارزة: حوض الارتطام متعدد الحلقات Valhalla الذي يبلغ قُطره 3,800 كم.",
+    "note": "Latin \"km\" and \"Valhalla\" in Arabic text"
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.3.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "معادلة فيس-فيفا (Vis-viva) هي ما توضح تسارع عطارد الحاد عند الحضيض وتباطؤه عند الأوج — بفارق في السرعة يبلغ 12 كم/ث.",
+    "note": "\"الحية الحية\" is a nonsensical rendering of Vis-viva"
+  },
+  {
+    "rel": "earth-objects/kuiper.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "إجابة Amazon على Starlink في الإنترنت عريض النطاق من المدار الأرضي المنخفض — يُخطط لـ 3,236 قمراً صناعياً على ارتفاع 590-630 كم في 98 مستوى مداري. أُطلق النموذج الأول في عام 2023؛ وبدأت الإطلاقات الإنتاجية في عام 2025؛ ويشترط ترخيص FCC نشر 50% بحلول عام 2026، و100% بحلول عام 2029.",
+    "note": "Past launches written as future; license as \"تفويض\""
+  },
+  {
+    "rel": "tiangong-modules/wentian.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "أول مختبر، رسا بالمحطة في يوليو 2022 — جناحان شمسيان كبيران، وقفل هوائي خارجي للحمولات، وذراع روبوتية تجريبية صغيرة مثبتة على هيكله.",
+    "note": "\"مخرج حمولة\" is not an airlock"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.rejected.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/geo.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "الرقم 35786 كم ليس رقمًا مستديرًا بالتصميم — إنه الارتفاع الدقيق الذي تتوازن عنده الجاذبية والسرعة المدارية لتعطيا دورة مدتها 24 ساعة. الفيزياء هي التي اختارته.",
+    "note": "\"يتوازن فيه الجاذبية\" gender disagreement"
+  },
+  {
+    "rel": "museums/cradle-of-aviation.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "entry",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "عقدة التحام كروية — ستة منافذ لتجميع المركبات الزائرة حول الجزء الروسي.",
+    "note": "\"تحام\" is not the bound term"
+  },
+  {
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "تناوب طاقم محطة الفضاء الدولية؛ قدرة قارب النجاة للقطاع المداري الروسي؛ التقاء شبه ذاتي بنظام Kurs-NA مع نظام احتياطي يدوي TORU.",
+    "note": "Backup rendered as \"copy\""
+  },
+  {
+    "rel": "iss-modules/canadarm2.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/baikonur-cosmodrome-museum.json",
+    "at": "items.buran",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "OK-ML1، مركبة Buran المدارية بالحجم الكامل، بُنيت للاختبارات الأرضية، وتقع في العراء في الموقع 2",
+    "note": "Orbiter rendered as \"مدار\" (orbit)"
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "firsts.1.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Apollo 8 — أول مدار قمري مأهول (الولايات المتحدة)",
+    "note": "\"USA\" left in Latin letters"
+  },
+  {
+    "rel": "earth-objects/landsat.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/unity.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

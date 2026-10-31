@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "culture-doors/arecibo-message.json",
+    "at": "blurb",
+    "old": "Em 1974, o radiotelescópio de Arecibo transmitiu um pictograma de 3 minutos — nossos números, DNA, uma figura humana e o próprio telescópio — em direção ao aglomerado globular M13, a 25,000 anos-luz de distância. Foi mais uma demonstração do que uma conversa: qualquer resposta levaria 50,000 anos.",
+    "new": "Em 1974, o radiotelescópio de Arecibo transmitiu um pictograma de 3 minutos — nossos números, DNA, uma figura humana e o próprio telescópio — em direção ao aglomerado globular M13, a 25.000 anos-luz de distância. Foi mais uma demonstração do que uma conversa: qualquer resposta levaria 50.000 anos."
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "science_sections.0.why",
+    "old": "Oberon é a mais externa das cinco luas uranianas maiores (órbita de 583,500 km) — sua superfície é a mais cratarizada, sugerindo que possui a superfície exposta mais antiga do sistema de Urano.",
+    "new": "Oberon é a mais externa das cinco luas uranianas maiores (órbita de 583.500 km) — sua superfície é a mais cratarizada, sugerindo que possui a superfície exposta mais antiga do sistema de Urano."
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "science_sections.0.why",
+    "old": "Umbriel orbita Urano a 266,000 km — seu plano orbital é inclinado com o planeta, portanto suas estações refletem a geometria axial extrema do corpo primário.",
+    "new": "Umbriel orbita Urano a 266.000 km — seu plano orbital é inclinado com o planeta, portanto suas estações refletem a geometria axial extrema do corpo primário."
+  }
+]

@@ -1,27 +1,27 @@
 {
   "name": "Planètes telluriques internes",
   "short": "TERRA",
-  "story": "Le système solaire interne rocheux — de 0,4 à 1,5 UA du Soleil. Quatre petits mondes avec des noyaux métalliques, des manteaux de silicate et des atmosphères minces ou inexistantes. Ils se sont formés à l'intérieur de la ligne de gel, là où il faisait trop chaud pour que les glaces volatiles se condensent, de sorte que seuls les matériaux réfractaires (silicates, fer, nickel) sont restés solides. Trois des quatre ont été des cibles d'exploration habitée (Terre, Lune, Mars).",
+  "story": "Le système solaire interne rocheux — de 0,4 à 1,5 au du Soleil. Quatre petits mondes avec des noyaux métalliques, des manteaux de silicate et des atmosphères minces ou inexistantes. Ils se sont formés à l'intérieur de la ligne de gel, là où il faisait trop chaud pour que les glaces volatiles se condensent, de sorte que seuls les matériaux réfractaires (silicates, fer, nickel) sont restés solides. Trois des quatre ont été des cibles d'exploration habitée (Terre, Lune, Mars).",
   "comparison": "Les quatre planètes telluriques tiendraient toutes à l'intérieur de la Grande Tache Rouge de Jupiter. Les quatre ensemble représentent moins de 0,5 % de la masse planétaire du système.",
   "residents": [
     {
       "id": "mercury",
-      "label": "Mercure — 0,39 UA",
+      "label": "Mercure — 0,39 au",
       "agency": "NATURAL"
     },
     {
       "id": "venus",
-      "label": "Vénus — 0,72 UA",
+      "label": "Vénus — 0,72 au",
       "agency": "NATURAL"
     },
     {
       "id": "earth",
-      "label": "Terre — 1,00 UA",
+      "label": "Terre — 1,00 au",
       "agency": "NATURAL"
     },
     {
       "id": "mars",
-      "label": "Mars — 1,52 UA",
+      "label": "Mars — 1,52 au",
       "agency": "NATURAL"
     }
   ],

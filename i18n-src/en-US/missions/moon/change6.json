@@ -13,5 +13,6 @@
     { "met": 30.6, "label": "SAMPLING", "note": "1.935 kg collected from far-side regolith.", "type": "info" },
     { "met": 32, "label": "ASCENT", "note": "Ascent vehicle lifts off; rendezvous with orbiter.", "type": "nominal" },
     { "met": 53, "label": "EARTH RETURN", "note": "Capsule lands in Inner Mongolia 2024-06-25 with the first far-side samples ever recovered.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Long March 5 YZ-1 upper stage"
 }

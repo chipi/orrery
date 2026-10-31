@@ -82,5 +82,9 @@
       "type": "prose",
       "md": "The second lesson is in how Gemini handled its early spacewalking disasters — not as embarrassments to bury, but as information. The technique was failing, so they said so, worked out why, and rebuilt it: handholds, restraints, underwater practice, until it worked. A team that can admit a thing isn't working, in time to fix it before it matters, is worth far more than one that never appears to fail."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Earth — orbits, rendezvous & launch sites",
+    "/science/mission-phases/edl": "Entry, descent & landing"
+  }
 }

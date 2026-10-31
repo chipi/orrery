@@ -21,7 +21,7 @@
 -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { onScienceLensChange } from '$lib/science-lens';
   import * as m from '$lib/paraglide/messages.js';
   import type { ScienceTabId } from '$types/science';
@@ -182,7 +182,7 @@
       type="button"
       class="collapse-btn"
       aria-expanded={expanded}
-      aria-label={expanded ? 'Collapse Flight Director' : 'Expand Flight Director'}
+      aria-label={expanded ? m.fd_collapse_aria() : m.fd_expand_aria()}
       onclick={() => (expanded = !expanded)}
     >
       <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>
@@ -191,7 +191,7 @@
       {m.fly_fd_eyebrow()} · {m.fly_fd_phase_label({ phase: phase.displayName })}
     </div>
     {#if expanded}
-      <a class="banner-body-link" href="{base}/science/{phase.tab}/{phase.section}">
+      <a class="banner-body-link" href={localHref(`/science/${phase.tab}/${phase.section}`)}>
         <div class="banner-title">{phase.title}</div>
         <div class="banner-body">{phase.body}</div>
         <div class="banner-link">{m.fly_fd_read_more()}</div>

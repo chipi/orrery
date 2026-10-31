@@ -1,6 +1,6 @@
 {
-  "description": "Winzig — nur 504 km Durchmesser — aber der reflektierendste Körper im Sonnensystem und einer der stärksten Kandidaten für gegenwärtige Bewohnbarkeit jenseits der Erde. Cassini flog direkt durch Fontänen, die aus vier 130 km langen Brüchen am Südpol ausbrechen; das Spektrometer detektierte molekularen Wasserstoff, Organika einschließlich Methan, Salze und Silizium-Nanokörner, die auf aktive hydrothermale Chemie am Ozeanboden hinweisen. Der Ozean steht in direktem Kontakt mit dem felsigen Meeresboden — dieselben Energie- und Chemiebedingungen, die an den Tiefsee-Hydrothermalquellen der Erde selbst zur Entstehung von Leben führten.",
-  "surface_composition": "Unberührte Wassereiskruste über einem globalen unterirdischen Ozean; südpolare „Tigerstreifen\"-Brüche, die Fontänen aus Wasserdampf, Organika, Salzen, Silizium-Nanokörner und molekularem Wasserstoff ausstoßen.",
+  "description": "Winzig — nur 504 km Durchmesser — aber der reflektierendste Körper im Sonnensystem und einer der stärksten Kandidaten für gegenwärtige Bewohnbarkeit jenseits der Erde. Cassini flog direkt durch Fontänen, die aus vier 130 km langen Brüchen am Südpol ausbrechen; das Spektrometer detektierte molekularen Wasserstoff, Organika einschließlich Methan, Salze und Siliziumdioxid-Nanokörner, die auf aktive hydrothermale Chemie am Ozeanboden hinweisen. Der Ozean steht in direktem Kontakt mit dem felsigen Meeresboden — dieselben Energie- und Chemiebedingungen, die an den Tiefsee-Hydrothermalquellen der Erde selbst zur Entstehung von Leben führten.",
+  "surface_composition": "Unberührte Wassereiskruste über einem globalen Ozean unter der Oberfläche; südpolare „Tigerstreifen“-Brüche, aus denen Fontänen aus Wasserdampf, organischen Stoffen, Salzen, Siliziumdioxid-Nanokörnern und molekularem Wasserstoff austreten.",
   "mission_visits": [
     "Voyager 2 — USA, 1981 (vorläufige Kartierung)",
     "Cassini — NASA/ESA/ASI, 2005–2015 (Entdeckung der Eruptionsfontänen + Durchflug)"
@@ -9,7 +9,7 @@
     "enceladus-wiki": "Wikipedia — Enceladus",
     "enceladus-nasa": "NASA Science — Enceladus-Überblick",
     "enceladus-cassini": "NASA Cassini — Fontänen-Vorbeiflug-Archiv",
-    "enceladus-habitability": "Astrobiology — Enceladus als Ziel der Lebenssuche"
+    "enceladus-habitability": "Astrobiologie — Enceladus als Ziel der Lebenssuche"
   },
   "science_sections": [
     {

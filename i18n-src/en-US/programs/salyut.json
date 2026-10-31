@@ -82,5 +82,9 @@
       "type": "prose",
       "md": "The second lesson is that resupply is what makes a station real. Skylab, brilliant and short-lived, was never resupplied or reboosted, and decayed once it was left alone. Salyut's insistence on solving refuelling and resupply — the second docking port, the Progress freighter — is exactly what let its later stations be occupied for years instead of weeks. A permanent presence in space is not a matter of building a bigger spacecraft; it is a matter of building the unglamorous logistics chain that keeps a modest one continuously alive."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Earth — orbits, rendezvous & launch sites",
+    "/fleet?focus=salyut-6": "Fleet — Salyut stations"
+  }
 }

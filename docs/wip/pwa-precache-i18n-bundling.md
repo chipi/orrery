@@ -2,7 +2,7 @@
 
 **Status:** implemented, harness-green locally, not yet deployed. No push without approval.
 
-Supersedes the diagnosis half of `pwa-upgrade-path-handover.md`.
+Supersedes the diagnosis half of `_archive/pwa-upgrade-path-handover.md`.
 
 ## Symptom
 

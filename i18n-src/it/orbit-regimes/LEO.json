@@ -1,7 +1,7 @@
 {
   "name": "Orbita Terrestre Bassa",
   "short": "LEO",
-  "story": "La fascia di spazio più vicina — da 160 a 2.000 km di altitudine. Latenza di comunicazione ridotta (~7 ms andata), l'attrito atmosferico trascina ancora al bordo inferiore, e le fasce di radiazione non sono ancora entrate in gioco. Il volo spaziale con equipaggio vive qui per le stesse ragioni: soccorribile, raggiungibile, e il corpo umano tollera un tragitto di qualche centinaio di chilometri. Ogni stazione spaziale mai esistita ha orbitato in LEO.",
+  "story": "La fascia di spazio più vicina — da 160 a 2.000 km di altitudine. Latenza di comunicazione ridotta (~7 ms di sola andata), l'attrito atmosferico frena ancora i veicoli al bordo inferiore, e le fasce di radiazione non sono ancora entrate in gioco. Il volo spaziale con equipaggio vive qui per le stesse ragioni: è soccorribile, raggiungibile, e il corpo umano tollera un tragitto di qualche centinaio di chilometri. Ogni stazione spaziale mai esistita ha orbitato in LEO.",
   "comparison": "Circa 1/600 della distanza verso la Luna. La SSI a 408 km orbita alla stessa altitudine della distanza tra Londra e Ginevra — disposta lateralmente.",
   "residents": [
     {
@@ -28,7 +28,7 @@
   "firsts": [
     {
       "year": 1957,
-      "label": "Sputnik 1 — primo satellite artificiale terrestre (USSR)",
+      "label": "Sputnik 1 — primo satellite artificiale della Terra (URSS)",
       "mission_id": "sputnik1"
     },
     {

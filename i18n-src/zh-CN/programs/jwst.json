@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "更深一层的教训，关乎没有第二次机会的工程。JWST无法按实际飞行状态测试，升空后也无法修理，但它仍然成功了——因为每一种故障模式都在地面上历经数年被一一追查、预先设计排除。这是严谨胜过迭代的终极案例：当你确实无法事后修复时，唯一的办法就是第一次就做对，而Webb证明了，即使复杂到惊人的程度，这也是做得到的。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=jwst": "航天器 — James Webb 空间望远镜",
+    "/programs/great-observatories": "大型轨道天文台计划 — JWST 延续的谱系",
+    "/programs/ariane": "Ariane — 发射它的火箭",
+    "/earth?site=jwst": "James Webb 空间望远镜"
+  }
 }

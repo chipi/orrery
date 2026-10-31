@@ -1,6 +1,6 @@
 {
   "name": "SLS Block 1",
-  "type": "Super-heavy, expendable",
+  "type": "Lanceur super-lourd, non réutilisable",
   "first": "Premier lanceur super-lourd américain depuis Saturn V",
-  "description": "Le lanceur de exploration spatiale lointaine phare de la NASA. Deux propulseurs à ergols solides de cinq segments et un étage central équipé de quatre moteurs RS-25 (les mêmes moteurs qui ont volé sur Space Shuttle), surmonté d'un Interim Cryogenic Propulsion Stage. A fait ses débuts lors d'Artemis I (nov 2022), envoyant une capsule Orion sans équipage autour de la Lune."
+  "description": "Le lanceur phare de la NASA pour l'espace lointain. Deux propulseurs d'appoint à propergol solide de cinq segments et un étage central équipé de quatre moteurs RS-25 (les mêmes que ceux du Space Shuttle), surmonté d'un étage de propulsion cryogénique intermédiaire (Interim Cryogenic Propulsion Stage). A fait ses débuts avec Artemis I (nov. 2022), envoyant une capsule Orion sans équipage autour de la Lune."
 }

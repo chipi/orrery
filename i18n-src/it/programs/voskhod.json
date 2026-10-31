@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La seconda lezione è a cosa serve un espediente, e a cosa non serve. Voskhod fece esattamente una cosa bene — guadagnò tempo e altri due primati mentre la vera capsula di nuova generazione veniva costruita. Questo è un uso legittimo di hardware improvvisato. L'errore sarebbe stato continuare a farla volare, inseguendo titoli oltre il punto in cui il margine si esaurì — e a credito di Korolëv, lesse correttamente la quasi-catastrofe e si fermò. Sapere quando un espediente ha fatto il suo lavoro è tanto importante quanto costruirne uno."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — orbite e siti di lancio",
+    "/science/mission-phases/edl": "Ingresso, discesa e atterraggio"
+  }
 }

@@ -1,0 +1,802 @@
+[
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "intro",
+    "en": "Chandrayaan-3 landed near the lunar south pole on August 23, 2023 — India's first soft landing on the Moon and the closest landing to the south pole by any nation. The Vikram lander deployed the Pragyan rover, which drove ~100 m across 14 days searching for water ice in permanently shadowed terrain. India became the fourth nation to soft-land on the Moon, after USSR, USA, and China.",
+    "tr": "Chandrayaan-3 è atterrato vicino al polo sud lunare il 23 agosto 2023: il primo allunaggio morbido dell'India e l'atterraggio più vicino al polo sud mai compiuto da una nazione. Il lander Vikram ha dispiegato il rover Pragyan, che nell'arco di 14 giorni ha percorso circa 100 m alla ricerca di ghiaccio d'acqua in un terreno perennemente in ombra. L'India è diventata così la quarta nazione ad allunare in modo morbido, dopo URSS, USA e Cina."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.0.images.1.caption",
+    "en": "The drill mechanism — went 2 m deep, three times farther than Luna 16's 35 cm. Returned the deepest samples ever brought from another world.",
+    "tr": "Il meccanismo di perforazione: scese a 2 m di profondità, tre volte più di Luna 16, che si era fermata a 35 cm. Riportò i campioni più profondi mai portati sulla Terra da un altro mondo."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/change3.json",
+    "at": "chapters.1.images.0.caption",
+    "en": "Long March 3B lifts off with Chang'e 3 — 5-day transit to the Moon, soft landing on December 14.",
+    "tr": "Il Long March 3B decolla con Chang'e 3: 5 giorni di transito verso la Luna, allunaggio morbido il 14 dicembre."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Luna 9 capsule mockup — 99 kg, spherical, with airbag-protected camera and four petal antennas.",
+    "tr": "Modello della capsula di Luna 9: 99 kg, forma sferica, con fotocamera protetta da airbag e quattro antenne a petalo."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "capability",
+    "en": "Will reach 2 m subsurface depth; the first directly-targeted astrobiology mission since Viking.",
+    "tr": "Raggiungerà 2 m di profondità nel sottosuolo; la prima missione astrobiologica con bersaglio diretto dai tempi di Viking."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.images.1.caption",
+    "en": "Despite the unintended orientation, SLIM operated three times — at lunar sunrise it caught angled sun on its inverted-facing panels and woke up briefly.",
+    "tr": "Nonostante l'orientamento non previsto, SLIM ha operato tre volte: all'alba lunare ha intercettato la luce solare radente sui pannelli rimasti rivolti al contrario e si è risvegliato per breve tempo."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.1.caption",
+    "en": "Aldrin's bootprint at Tranquility Base — preserved unchanged in the vacuum for over half a century.",
+    "tr": "L'impronta di stivale di Aldrin alla Base della Tranquillità, rimasta intatta nel vuoto per oltre mezzo secolo."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.1.subtitle",
+    "en": "February 22, 2019 — Falcon 9 from Cape Canaveral (rideshare)",
+    "tr": "22 febbraio 2019 — Falcon 9 da Cape Canaveral (lancio condiviso)"
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "moon-sites/luna10.json",
+    "at": "fact",
+    "en": "First artificial satellite of any body other than Earth. Reached lunar orbit in April 1966 — about four months before NASA's Lunar Orbiter 1 — and broadcast \"The Internationale\" from lunar orbit during a Communist Party Congress. Ran for 56 days before its batteries died.",
+    "tr": "Primo satellite artificiale di un corpo celeste diverso dalla Terra. Raggiunse l'orbita lunare nell'aprile 1966 — circa quattro mesi prima del Lunar Orbiter 1 della NASA — e trasmise «L'Internazionale» dall'orbita lunare durante un Congresso del Partito Comunista. Funzionò per 56 giorni prima che le batterie si esaurissero."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Viking 1 lander undergoing pre-flight testing — RTG visible at rear, surface sampler arm extended.",
+    "tr": "Il lander Viking 1 durante i test pre-volo: l'RTG è visibile sul retro, il braccio di campionamento della superficie è esteso."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.subtitle",
+    "en": "Lander + ascender + orbiter + reentry capsule",
+    "tr": "Lander + veicolo di risalita + orbiter + capsula di rientro"
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.3.subtitle",
+    "en": "21.5 kg of basalt samples, retroreflector array, seismometer",
+    "tr": "21,5 kg di campioni di basalto, matrice di retroriflettori, sismometro"
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "mars-sites/tgo.json",
+    "at": "capability",
+    "en": "Highest-sensitivity atmospheric trace-gas mapping at any planet.",
+    "tr": "Mappatura dei gas traccia atmosferici a più alta sensibilità su qualsiasi pianeta."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.1.caption",
+    "en": "Perseverance + its traverse, photographed from orbit by Mars Reconnaissance Orbiter's HiRISE camera at 25 cm/pixel.",
+    "tr": "Perseverance e il suo percorso, fotografati dall'orbita dalla fotocamera HiRISE del Mars Reconnaissance Orbiter a 25 cm/pixel."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/change4.json",
+    "at": "intro",
+    "en": "Chang'e 4 landed in Von Kármán Crater on January 3, 2019 — the first soft landing on the far side of the Moon, where Earth is never visible. Communication was relayed via the Queqiao satellite parked at L2. Deployed Yutu-2 rover, which has driven 1.5+ km and is still operating in 2026, the longest-active lunar surface mission of all time. Found pristine mantle material in South Pole-Aitken basin.",
+    "tr": "Chang'e 4 è atterrata nel cratere Von Kármán il 3 gennaio 2019: il primo atterraggio morbido sul lato nascosto della Luna, dove la Terra non è mai visibile. Le comunicazioni sono state inoltrate tramite il satellite Queqiao, posizionato in L2. Ha schierato il rover Yutu-2, che ha percorso oltre 1,5 km ed è ancora operativo nel 2026: la missione sulla superficie lunare rimasta attiva più a lungo di sempre. Ha individuato materiale incontaminato del mantello nel bacino del Polo Sud-Aitken."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "en": "From Eagle Crater to Endeavour — 14 years of evidence",
+    "tr": "Dal cratere Eagle a Endeavour: 14 anni di prove"
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "moon-sites/luna17.json",
+    "at": "fact",
+    "en": "The first remote-controlled rover to operate on another world. Drove 10.5 km over 322 days, photographing over 20,000 images. Lost to history until 2010, when the Lunar Reconnaissance Orbiter spotted it from orbit — still sitting exactly where it stopped.",
+    "tr": "Il primo rover telecomandato a operare su un altro mondo. Ha percorso 10,5 km in 322 giorni, fotografando oltre 20.000 immagini. Perso nella storia fino al 2010, quando il Lunar Reconnaissance Orbiter l'ha individuato dall'orbita — ancora seduto esattamente dove si era fermato."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna24.json",
+    "at": "chapters.1.images.0.caption",
+    "en": "Mare Crisium landing site — Luna 24 touched down ~2 km from Luna 23's failed 1974 landing in the same region.",
+    "tr": "Il sito di atterraggio nel Mare Crisium: Luna 24 si posò a circa 2 km dal punto in cui, nel 1974, era fallito l'atterraggio di Luna 23 nella stessa regione."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.0.subtitle",
+    "en": "Soviet E-8-5 lander — first robotic sample-return rig",
+    "tr": "Lander sovietico E-8-5 — il primo sistema robotico per il ritorno di campioni"
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.images.0.caption",
+    "en": "Chang'e 6 lander on the far side — the rover-less stationary sample return, captured by a deployed minirover.",
+    "tr": "Il lander di Chang'e 6 sul lato nascosto: la restituzione di campioni da una postazione fissa, senza rover, ripresa da un minirover dispiegato."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.2.images.0.caption",
+    "en": "Beagle 2 found! MRO HiRISE image (January 2015) — partial solar-panel deployment visible, antenna blocked, hardware intact. 12-year mystery solved.",
+    "tr": "Beagle 2 ritrovato! Immagine HiRISE di MRO (gennaio 2015) — visibile il dispiegamento parziale dei pannelli solari, antenna bloccata, hardware integro. Risolto un mistero lungo 12 anni."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna17.json",
+    "at": "intro",
+    "en": "Luna 17 landed in Mare Imbrium on November 17, 1970 — and deployed Lunokhod 1, the first wheeled vehicle to operate on another world, beating NASA's LRV by seven months. Lunokhod 1 drove 10.5 km over 11 lunar days, controlled by a five-person team in Crimea. Returned 25,000 photographs and 211 panoramas before going silent in September 1971.",
+    "tr": "Luna 17 allunò nel Mare Imbrium il 17 novembre 1970 e mise in opera Lunokhod 1, il primo veicolo a ruote a operare su un altro mondo, anticipando di sette mesi l'LRV della NASA. Lunokhod 1 percorse 10,5 km nell'arco di 11 giorni lunari, guidato da una squadra di cinque persone in Crimea. Inviò 25.000 fotografie e 211 panorami prima di tacere nel settembre 1971."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.0.subtitle",
+    "en": "Lunokhod 2 — driving the lunar terra record (42 km)",
+    "tr": "Lunokhod 2 — il record di distanza percorsa sul suolo lunare (42 km)"
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "moon-sites/change3.json",
+    "at": "capability",
+    "en": "Re-established robotic landing capability after a decades-long pause — the foundation for the sample-return missions (Chang'e 5, 6) that informed Mars Sample Return architecture.",
+    "tr": "Capacità di atterraggio robotico ristabilita dopo una pausa di decenni: la base per le missioni di restituzione di campioni (Chang'e 5 e 6) che hanno influenzato l'architettura di Mars Sample Return."
+  },
+  {
+    "loc": "it",
+    "tree": "places",
+    "rel": "mars-sites/beagle2.json",
+    "at": "fact",
+    "en": "UK-led astrobiology lander aboard ESA's Mars Express. Touched down on Christmas Day 2003 but never made contact. The lander was located in 2015 by NASA's MRO HiRISE camera — it had reached the surface intact, but at least one of its four solar panels failed to deploy, blocking its radio antenna. A 12-year mystery solved by orbital imagery.",
+    "tr": "Lander di astrobiologia guidato dal Regno Unito a bordo di Mars Express dell'ESA. Atterrato il giorno di Natale 2003 ma non ha mai stabilito contatti. Il lander è stato localizzato nel 2015 dalla fotocamera HiRISE del MRO della NASA — aveva raggiunto la superficie intatto, ma almeno uno dei suoi quattro pannelli solari non si è dispiegato, bloccando l'antenna radio. Un mistero di 12 anni risolto dall'osservazione orbitale."
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "cultural",
+    "en": "The name derives from the Arabic for 'the navel of the mare', from a time when the star was counted as part of Pegasus. It bridges the myth of the chained princess Andromeda and the winged horse beside her.",
+    "tr": "この名はアラビア語の「雌馬のへそ」に由来し、かつてこの星がペガスス座の一部に数えられていた時代にさかのぼる。鎖につながれた王女アンドロメダと、その傍らの翼ある馬の神話を結ぶ星である。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "fact",
+    "en": "The eastern star of Orion's Belt — a blue supergiant beside the glowing Flame.",
+    "tr": "オリオン座の三つ星の東端の星 — 輝く燃える木星雲のそばにある青色超巨星。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/hd-62509-b.json",
+    "at": "fact",
+    "en": "A giant planet circling Pollux — one of the first worlds found around a nearby giant star.",
+    "tr": "ポルックスの周りを公転する巨大惑星——近傍の巨星の周りで最初に発見された惑星の一つ。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/barnard-e.json",
+    "at": "bio",
+    "en": "Barnard e is the smallest planet found around Barnard's Star, only about a fifth of Earth's mass. Teasing such a feeble signal out of the star's motion pushed the ESPRESSO instrument to its limits, extending the roster of the nearest single star known to host planets.",
+    "tr": "Barnard eは、バーナード星の周りで発見された最小の惑星で、地球質量のわずか5分の1程度しかない。このような微弱なシグナルを恒星の運動から引き出すことは、ESPRESSOの観測限界に挑むものであり、惑星を持つことが知られている最も近い単独星のリストを拡張した。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/sirius.json",
+    "at": "cultural",
+    "en": "The 'Dog Star' has guided calendars for millennia: its heliacal rising once heralded the annual flooding of the Nile in ancient Egypt, and it anchors the 'Dog Days' of summer in the Greco-Roman tradition.",
+    "tr": "「犬の星」は何千年にもわたって暦の指標となってきた。古代エジプトでは、その偕日出がナイル川の毎年の氾濫を告げ、ギリシア・ローマの伝統では夏の「犬の日々」の基準となっている。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/castor.json",
+    "at": "fact",
+    "en": "The mortal Twin — a single point to the eye that is really six stars bound together.",
+    "tr": "死すべき双子——肉眼では一つの点だが、実際には六つの恒星が結びついている。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/trappist-1-f.json",
+    "at": "fact",
+    "en": "A habitable-zone world that could, in principle, hold oceans.",
+    "tr": "原理的には海を保持できる、ハビタブルゾーンの世界。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "cultural",
+    "en": "The Latin name means 'female warrior' or 'Amazon star'. It has long been one of the recognisable corners of the Orion figure used to find the way around the northern winter sky.",
+    "tr": "ラテン語名は「女戦士」または「アマゾネスの星」を意味する。古くから、北天の冬空で進路を見いだすのに使われてきた、オリオン座の姿を形づくる見分けやすい角の一つである。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/altair.json",
+    "at": "fact",
+    "en": "The swift-spinning eye of the Eagle — rotating so fast it bulges into a flattened, egg-like shape.",
+    "tr": "鷲の高速で回転する瞳 — あまりにも速く自転するため、扁平な卵のような形に膨らんでいる。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "bio",
+    "en": "Barnard d is one of the diminutive worlds detected around Barnard's Star, a red dwarf just six light-years away. Weighing well under an Earth mass and orbiting close to its cool star, it helps make our second-nearest stellar neighbour a genuine planetary system rather than the empty sky once assumed.",
+    "tr": "バーナードdは、わずか6光年の距離にある赤色矮星バーナード星の周りで検出された小さな世界の一つである。地球質量を大きく下回り、冷たい恒星の近くを軌道を描いて回るこの惑星は、太陽に2番目に近い恒星を、かつて想定されていた惑星のない空ではなく、本物の惑星系にしている。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/saiph.json",
+    "at": "cultural",
+    "en": "The name comes from the Arabic for 'sword'. Saiph marks the Hunter's knee and Rigel his foot, framing the base of one of the most recognisable figures in the sky.",
+    "tr": "この名前はアラビア語の「剣」に由来する。サイフは狩人(オリオン)の膝を、リゲルは足を示し、夜空で最も見分けやすい星座の一つの下辺を縁取っている。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/avior.json",
+    "at": "bio",
+    "en": "Avior (Epsilon Carinae) is a system about 600 light-years away pairing an orange giant with a hot blue companion. It sits in Carina, forming one corner of the False Cross that is often mistaken for the true Southern Cross.",
+    "tr": "アヴィオール(りゅうこつ座イプシロン星)は約600光年彼方にある連星系で、オレンジ色の巨星と高温の青い伴星が組み合わさっている。竜骨座に位置し、本物の南十字星とよく間違えられる偽十字の一角を形成している。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "fact",
+    "en": "The fiery orange 'eye of the bull' in Taurus — a giant star that only appears to sit among the Hyades cluster.",
+    "tr": "おうし座の燃えるようなオレンジ色の「雄牛の目」——ヒアデス星団の中にあるように見えるだけの巨星。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "bio",
+    "en": "Miaplacidus (Beta Carinae) is a white star about 113 light-years away, the second-brightest in the southern constellation Carina, the Keel of the ancient ship Argo.",
+    "tr": "ミアプラキドゥス (りゅうこつ座ベータ星) は約113光年彼方にある白色星で、古代の船アルゴー船の竜骨にあたる南天のりゅうこつ座で2番目に明るい星である。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/gj-411-b.json",
+    "at": "fact",
+    "en": "A hot super-Earth at Lalande 21185 — one of the nearest planet-hosting stars.",
+    "tr": "ラランド21185にある高温のスーパーアース——惑星を持つ最も近い恒星の一つ。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/algol.json",
+    "at": "bio",
+    "en": "Algol (Beta Persei) is a multiple system about 90 light-years away and the prototype of the eclipsing binary stars. Every 2.87 days a dimmer companion passes in front of the bright star, dropping its light noticeably for a few hours before it recovers.",
+    "tr": "アルゴル(ペルセウス座β星)は約90光年離れた多重星系で、食変光星の原型である。2.87日ごとに暗い伴星が明るい恒星の前を通過し、数時間にわたって明るさが顕著に低下した後、元に戻る。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "fact",
+    "en": "The central pearl of Orion's Belt — a blazing blue supergiant seen across vast distance.",
+    "tr": "オリオン座の三つ星の中央の真珠——遥か彼方から輝く青い超巨星。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/luytens-star.json",
+    "at": "cultural",
+    "en": "It is named for Willem Jacob Luyten, the astronomer who catalogued the motions of thousands of faint high-velocity stars in the 20th century. Its planet's proximity has made it a focus of both exoplanet study and speculation about contact.",
+    "tr": "この星は、20世紀に数千個の暗い高速度星の運動を目録化した天文学者ウィレム・ヤコブ・ルイテンにちなんで名付けられた。その惑星の近接性により、この星は系外惑星研究とコンタクトに関する推測の両方の焦点となっている。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/trappist-1-d.json",
+    "at": "bio",
+    "en": "TRAPPIST-1 d is among the smaller of the seven planets and sits just inside the zone where temperatures might allow liquid water. Like all its siblings it is thought to be tidally locked, keeping one face forever toward the dim red star and the other in perpetual night.",
+    "tr": "TRAPPIST-1 dは7つの惑星の中でも小さい部類に属し、液体の水が存在できる温度帯のすぐ内側に位置する。すべての兄弟惑星と同様に潮汐ロックされていると考えられ、一方の面は暗い赤色星に永遠に向けられ、もう一方の面は永遠の夜に包まれている。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "fact",
+    "en": "The westernmost star of Orion's Belt — poised almost exactly on the celestial equator.",
+    "tr": "オリオン座のベルトの最も西に位置する星 — 天の赤道上にほぼ正確に位置している。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "fact",
+    "en": "The brightest star of the northern sky's Boötes — an ageing orange giant racing through the galaxy on an unusual orbit.",
+    "tr": "北の空のうしかい座で最も明るい星で、珍しい軌道で銀河を疾駆する老齢のオレンジ色巨星である。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/altair.json",
+    "at": "cultural",
+    "en": "The name comes from the Arabic 'al-nasr al-ta'ir', the 'flying eagle'. Altair marks one corner of the Summer Triangle with Vega and Deneb, and in Chinese lore it is the cowherd Niulang, separated from the weaver Zhinu (Vega) by the Silver River of the Milky Way.",
+    "tr": "この名はアラビア語の「al-nasr al-ta'ir(飛翔する鷲)」に由来する。アルタイルはベガ、デネブとともに夏の大三角の一角を成し、中国の伝承では、天の川という銀の河を隔てて機織りの織女(ベガ)と引き離された牛飼いの牛郎である。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "bio",
+    "en": "A second planet around Lalande 21185, larger and farther out than GJ 411 b, was reported in the early 2020s from continued monitoring of the star. Together the planets make one of the Sun's nearest multi-planet systems — around a star already famous for its swift motion across our sky.",
+    "tr": "ラランド21185を周回する2番目の惑星。GJ 411 bよりも大きく、より遠方に位置するこの惑星は、2020年代初頭に恒星の継続的な観測から報告された。これらの惑星は共に、太陽系に最も近い複数惑星系の一つを形成している――その恒星は、私たちの空を横切る速い固有運動ですでに有名である。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "cultural",
+    "en": "Its name comes from the Arabic for 'mouth of the [southern] fish'. One of the four ancient Persian 'Royal Stars', Fomalhaut was a marker of the season and a waypoint for navigators of the southern horizon.",
+    "tr": "その名はアラビア語で「(南の)魚の口」を意味する言葉に由来する。古代ペルシャの四つの「王の星」の一つであるフォーマルハウトは、季節の目印であり、南の地平線を航海する者たちにとっての道標であった。"
+  },
+  {
+    "loc": "ja",
+    "tree": "universe",
+    "rel": "universe/named-stars/regulus.json",
+    "at": "bio",
+    "en": "Regulus (Alpha Leonis) is a hot blue-white star about 79 light-years away, the brightest in Leo. It whirls so rapidly that it is visibly flattened, and it heads a multiple system with fainter companions. Lying almost exactly on the ecliptic, it is regularly passed — and occasionally occulted — by the Moon and planets.",
+    "tr": "レグルス(しし座α星)は、約79光年彼方にある高温の青白い星で、獅子座で最も明るい。非常に高速で自転しているため目に見えて扁平化しており、より暗い伴星を持つ多重星系の主星である。黄道上にほぼ正確に位置するため、月や惑星によって定期的に接近され、時には掩蔽されることもある。"
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "bio",
+    "en": "Alphecca (Alpha Coronae Borealis), also called Gemma, is a white star about 75 light-years away, the brightest in Corona Borealis, the Northern Crown. It is a faint eclipsing binary and, like Vega and Fomalhaut, is girdled by a disk of dust.",
+    "tr": "Alphecca (Alpha Coronae Borealis), auch Gemma genannt, ist ein weißer Stern etwa 75 Lichtjahre entfernt, der hellste in der Nördlichen Krone. Er ist ein schwacher bedeckungsveränderlicher Doppelstern und wird, ähnlich wie Wega und Fomalhaut, von einer Staubscheibe umgeben."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "fact",
+    "en": "The central pearl of Orion's Belt — a blazing blue supergiant seen across vast distance.",
+    "tr": "Die zentrale Perle des Oriongürtels – ein gleißender blauer Überriese, sichtbar über gewaltige Entfernungen hinweg."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/proxima-cen-b.json",
+    "at": "bio",
+    "en": "Proxima Centauri b orbits the Sun's nearest neighbour just 4.24 light-years away, circling its cool red dwarf every 11 days within the zone where liquid water could exist. Its proximity made it the headline target of the Breakthrough Starshot project, which imagines gram-scale light-sail probes reaching it within a human lifetime — though the star's violent flares are a serious hazard to any atmosphere or life.",
+    "tr": "Proxima Centauri b umkreist den nächsten Nachbarn der Sonne in nur 4,24 Lichtjahren Entfernung und umrundet seinen kühlen Roten Zwerg alle 11 Tage innerhalb der Zone, in der flüssiges Wasser existieren könnte. Seine Nähe machte ihn zum Hauptziel des Projekts Breakthrough Starshot, das Lichtsegel-Sonden von wenigen Gramm Gewicht vorsieht, die ihn innerhalb einer menschlichen Lebensspanne erreichen könnten — obwohl die heftigen Flares des Sterns eine ernsthafte Gefahr für jede Atmosphäre oder Leben darstellen."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "fact",
+    "en": "A hot inner companion to Luyten's habitable-zone world.",
+    "tr": "Ein heißer innerer Begleiter der Welt in der habitablen Zone von Luytens Stern."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/spica.json",
+    "at": "bio",
+    "en": "Spica (Alpha Virginis) is a hot blue pair of stars about 250 light-years away, so close together that they orbit in just four days and are distorted into egg shapes by mutual gravity. Their combined light makes Spica the brightest star in Virgo.",
+    "tr": "Spica (Alpha Virginis) ist ein heißes blaues Sternenpaar etwa 250 Lichtjahre entfernt, so eng beieinander, dass sie einander in nur vier Tagen umkreisen und durch die gegenseitige Schwerkraft zu Eiformen verzerrt werden. Ihr gemeinsames Licht macht Spica zum hellsten Stern im Sternbild Jungfrau."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/canopus.json",
+    "at": "bio",
+    "en": "Canopus (Alpha Carinae) is a rare yellow-white bright giant roughly 310 light-years away, intrinsically thousands of times more luminous than the Sun. Its brilliance and position far from the ecliptic make it an ideal fixed reference — Mariner and later probes carried 'Canopus star trackers' to hold their bearings in deep space.",
+    "tr": "Canopus (Alpha Carinae) ist ein seltener gelblich-weißer heller Riese in etwa 310 Lichtjahren Entfernung und von Natur aus mehrere tausend Mal leuchtkräftiger als die Sonne. Seine Helligkeit und seine Lage weit abseits der Ekliptik machen ihn zu einem idealen festen Bezugspunkt — Mariner und spätere Sonden trugen „Canopus-Sternsensoren“, um im tiefen Weltraum ihre Lage zu halten."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/trappist-1-d.json",
+    "at": "fact",
+    "en": "A small world at the warm inner edge of TRAPPIST-1's habitable zone.",
+    "tr": "Eine kleine Welt am warmen inneren Rand der habitablen Zone von TRAPPIST-1."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "fact",
+    "en": "A dim red dwarf just 6 light-years away — famous for sweeping across our sky faster than any other star.",
+    "tr": "Ein lichtschwacher Roter Zwerg nur 6 Lichtjahre entfernt — berühmt dafür, dass er schneller über unseren Himmel zieht als jeder andere Stern."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "cultural",
+    "en": "'Alphecca' comes from the Arabic for 'the broken one' — the broken ring of stars forming the crown — while the alternative 'Gemma' is Latin for 'jewel'. The small arc of Corona Borealis has been seen as a crown or a broken dish across many cultures.",
+    "tr": "‚Alphecca' stammt aus dem Arabischen und bedeutet ‚der Gebrochene' — der unterbrochene Ring von Sternen, der die Krone bildet — während die alternative Bezeichnung ‚Gemma' lateinisch für ‚Juwel' ist. Der kleine Bogen der Nördlichen Krone wurde in vielen Kulturen als Krone oder zerbrochene Schale gedeutet."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/gj-273-b.json",
+    "at": "fact",
+    "en": "A habitable-zone super-Earth at Luyten's Star — and the target of a deliberate message from Earth.",
+    "tr": "Eine Super-Erde in der habitablen Zone von Luytens Stern — und das Ziel einer gezielten Botschaft von der Erde."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/sargas.json",
+    "at": "cultural",
+    "en": "The name appears to be of Sumerian or Babylonian origin, a rare survival from Mesopotamian star-lore. In the sky it lies along the Scorpion's tail as it sweeps through the bright clouds of the southern Milky Way.",
+    "tr": "Der Name scheint sumerischen oder babylonischen Ursprungs zu sein, ein seltenes Überbleibsel aus der mesopotamischen Sternenkunde. Am Himmel liegt er entlang des Skorpionschwanzes, während dieser sich durch die hellen Wolken der südlichen Milchstraße zieht."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/atria.json",
+    "at": "fact",
+    "en": "The apex of the Southern Triangle — an orange giant marking the deep south.",
+    "tr": "Die Spitze des Südlichen Dreiecks — ein orangefarbener Riese, der den tiefen Süden markiert."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/adhara.json",
+    "at": "bio",
+    "en": "Adhara (Epsilon Canis Majoris) is a hot blue-white pair about 430 light-years away, the second-brightest star in Canis Major after Sirius. A few million years ago it passed much closer to the Sun and was then the brightest star in Earth's entire sky.",
+    "tr": "Adhara (Epsilon Canis Majoris) ist ein heißes blauweiß leuchtendes Doppelsternsystem in etwa 430 Lichtjahren Entfernung und nach Sirius der zweithellste Stern im Großen Hund. Vor einigen Millionen Jahren zog er deutlich näher an der Sonne vorüber und war damals der hellste Stern am gesamten Himmel der Erde."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/menkalinan.json",
+    "at": "bio",
+    "en": "Menkalinan (Beta Aurigae) is a system about 81 light-years away, the second-brightest star in Auriga. Its two nearly identical white stars orbit so closely that they periodically pass in front of one another, dimming the star slightly in a four-day rhythm.",
+    "tr": "Menkalinan (Beta Aurigae) ist ein System etwa 81 Lichtjahre entfernt, der zweithellste Stern im Fuhrmann. Seine zwei nahezu identischen weißen Sterne umkreisen einander so eng, dass sie regelmäßig voreinander vorbeiziehen und den Stern dabei leicht in einem viertägigen Rhythmus verdunkeln."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "bio",
+    "en": "A second planet around Lalande 21185, larger and farther out than GJ 411 b, was reported in the early 2020s from continued monitoring of the star. Together the planets make one of the Sun's nearest multi-planet systems — around a star already famous for its swift motion across our sky.",
+    "tr": "Ein zweiter Planet um Lalande 21185, größer und weiter außen als GJ 411 b, wurde in den frühen 2020er Jahren durch fortgesetzte Beobachtung des Sterns bekannt gegeben. Gemeinsam bilden die Planeten eines der sonnennächsten Mehrplanetensysteme — um einen Stern, der bereits für seine rasche Bewegung über unseren Himmel berühmt ist."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/algol.json",
+    "at": "fact",
+    "en": "The 'Demon Star' — it winks every few days as an unseen companion eclipses it.",
+    "tr": "Der ‚Dämonenstern' — er blinzelt alle paar Tage, wenn ein unsichtbarer Begleiter ihn verfinstert."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/alnair.json",
+    "at": "fact",
+    "en": "The bright eye of the Crane, a hot blue star of the deep south.",
+    "tr": "Das helle Auge des Kranichs, ein heißer blauer Stern des tiefen Südens."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/lalande-21185.json",
+    "at": "bio",
+    "en": "Lalande 21185 is a red dwarf about 8.3 light-years away in Ursa Major, among the nearest star systems to the Sun. Despite its nearness it is far too faint to see without a telescope, and it drifts across the sky with a large proper motion. Careful measurements point to a family of planets orbiting it.",
+    "tr": "Lalande 21185 ist ein Roter Zwerg etwa 8,3 Lichtjahre entfernt im Großen Bären, eines der nächstgelegenen Sternsysteme zur Sonne. Trotz seiner Nähe ist er viel zu lichtschwach, um ihn ohne Teleskop zu sehen, und er zieht mit großer Eigenbewegung über den Himmel. Sorgfältige Messungen deuten auf eine Familie von Planeten hin, die ihn umkreisen."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/trappist-1-c.json",
+    "at": "fact",
+    "en": "The second of the seven — a Venus-sized world where Webb ruled out a thick CO₂ atmosphere.",
+    "tr": "Der zweite der sieben — eine venusgroße Welt, bei der Webb eine dichte CO₂-Atmosphäre ausschloss."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/menkent.json",
+    "at": "bio",
+    "en": "Menkent (Theta Centauri) is an orange giant about 61 light-years away, one of the brighter stars of Centaurus and the only one of the constellation's leading lights that is a cool giant rather than a hot blue star.",
+    "tr": "Menkent (Theta Centauri) ist ein oranger Riese in etwa 61 Lichtjahren Entfernung, einer der helleren Sterne des Centaurus und der einzige unter den führenden Sternen des Sternbilds, der ein kühler Riese und kein heißer blauer Stern ist."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/antares.json",
+    "at": "fact",
+    "en": "The red heart of the Scorpion — a vast red supergiant whose ruddy colour earned it the name 'rival of Mars'.",
+    "tr": "Das rote Herz des Skorpions — ein riesiger roter Überriese, dessen rötliche Farbe ihm den Namen ‚Rivale des Mars' einbrachte."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "bio",
+    "en": "Alpheratz (Alpha Andromedae) is a blue-white star about 97 light-years away with an unusual mercury-manganese chemical peculiarity. It marks the head of Andromeda while also serving as the north-eastern corner of the Great Square of Pegasus.",
+    "tr": "Sirrah (Alpha Andromedae) ist ein bläulich-weißer Stern etwa 97 Lichtjahre entfernt mit einer ungewöhnlichen Quecksilber-Mangan-Besonderheit in seiner chemischen Zusammensetzung. Er markiert den Kopf der Andromeda und bildet zugleich die nordöstliche Ecke des Großen Quadrats von Pegasus."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/exoplanets/toi-700-b.json",
+    "at": "fact",
+    "en": "The innermost world of TOI-700 — a rocky planet just smaller than Earth.",
+    "tr": "Die innerste Welt von TOI-700 — ein Gesteinsplanet etwas kleiner als die Erde."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "bio",
+    "en": "Dubhe (Alpha Ursae Majoris) is an orange giant about 123 light-years away, one of the two 'Pointers' at the front of the bowl of the Big Dipper. A line drawn through Dubhe and its neighbour Merak points almost exactly at Polaris.",
+    "tr": "Dubhe (Alpha Ursae Majoris) ist ein orangefarbener Riese in etwa 123 Lichtjahren Entfernung und einer der beiden „Zeigersterne“ am vorderen Rand des Kastens des Großen Wagens. Eine Linie durch Dubhe und seinen Nachbarn Merak weist fast genau auf den Polarstern."
+  },
+  {
+    "loc": "de",
+    "tree": "universe",
+    "rel": "universe/named-stars/rigel.json",
+    "at": "fact",
+    "en": "A brilliant blue supergiant — the luminous foot of Orion, tens of thousands of times brighter than the Sun.",
+    "tr": "Ein strahlend blauer Überriese — der leuchtende Fuß des Orion, Zehntausende Male heller als die Sonne."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/alphard.json",
+    "at": "cultural",
+    "en": "The Arabic name means 'the solitary one', chosen precisely because it has no bright neighbours. That isolation made it a clear and reliable marker in an otherwise faint part of the sky.",
+    "tr": "O nome árabe significa 'a solitária', escolhido justamente porque ela não tem vizinhas brilhantes. Esse isolamento a tornou um marcador claro e confiável numa região do céu que, fora isso, é pouco luminosa."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/alnair.json",
+    "at": "fact",
+    "en": "The bright eye of the Crane, a hot blue star of the deep south.",
+    "tr": "O olho brilhante do Grou, uma estrela azul quente do extremo sul."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/gj-411-b.json",
+    "at": "bio",
+    "en": "GJ 411 b is a super-Earth whipping around Lalande 21185, a dim red dwarf about eight light-years away in the Great Bear and one of the closest stars to the Sun. First detected in 2017 and confirmed in 2020 from the star's tiny velocity wobble, it orbits far too close to be habitable, but its nearness makes the system a recurring waypoint in interstellar-travel fiction.",
+    "tr": "GJ 411 b é uma super-Terra que gira velozmente ao redor de Lalande 21185, uma anã vermelha tênue a cerca de oito anos-luz de distância, na Ursa Maior, e uma das estrelas mais próximas do Sol. Detectada pela primeira vez em 2017 e confirmada em 2020 a partir da minúscula oscilação na velocidade da estrela, orbita perto demais para ser habitável, mas sua proximidade faz do sistema um ponto de referência recorrente na ficção de viagens interestelares."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/barnard-e.json",
+    "at": "bio",
+    "en": "Barnard e is the smallest planet found around Barnard's Star, only about a fifth of Earth's mass. Teasing such a feeble signal out of the star's motion pushed the ESPRESSO instrument to its limits, extending the roster of the nearest single star known to host planets.",
+    "tr": "Barnard e é o menor planeta encontrado ao redor da Estrela de Barnard, com apenas cerca de um quinto da massa da Terra. Extrair tal sinal débil do movimento da estrela levou o instrumento ESPRESSO aos seus limites, ampliando o catálogo da estrela única mais próxima conhecida que abriga planetas."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/spica.json",
+    "at": "bio",
+    "en": "Spica (Alpha Virginis) is a hot blue pair of stars about 250 light-years away, so close together that they orbit in just four days and are distorted into egg shapes by mutual gravity. Their combined light makes Spica the brightest star in Virgo.",
+    "tr": "Espiga (Alpha Virginis) é um par quente de estrelas azuis a cerca de 250 anos-luz de distância, tão próximas uma da outra que orbitam em apenas quatro dias e são distorcidas em formas ovais pela gravidade mútua. Sua luz combinada faz de Espiga a estrela mais brilhante em Virgo."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/canopus.json",
+    "at": "fact",
+    "en": "The sky's second-brightest star — a distant beacon so steady that spacecraft steer by it.",
+    "tr": "A segunda estrela mais brilhante do céu — um farol distante tão estável que sondas espaciais se orientam por ela."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/trappist-1-b.json",
+    "at": "fact",
+    "en": "The innermost of TRAPPIST-1's seven Earth-sized worlds — scorched and, JWST found, likely airless.",
+    "tr": "O mais interno dos sete mundos do tamanho da Terra de TRAPPIST-1 — escaldante e, segundo descobriu o JWST, provavelmente sem atmosfera."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/avior.json",
+    "at": "cultural",
+    "en": "Avior is one of the few star names with no ancient roots — it was assigned in the 1930s for a British air-navigation almanac, when unnamed but bright southern stars needed labels for aviators and sailors.",
+    "tr": "Avior é um dos poucos nomes de estrelas sem raízes antigas — foi atribuído na década de 1930 para um almanaque britânico de navegação aérea, quando estrelas brilhantes do sul sem nome precisavam de designações para aviadores e navegantes."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "fact",
+    "en": "The jewel of the Northern Crown — a bright star set in a delicate arc.",
+    "tr": "A joia da Coroa do Norte — uma estrela brilhante engastada em um arco delicado."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "bio",
+    "en": "Barnard d is one of the diminutive worlds detected around Barnard's Star, a red dwarf just six light-years away. Weighing well under an Earth mass and orbiting close to its cool star, it helps make our second-nearest stellar neighbour a genuine planetary system rather than the empty sky once assumed.",
+    "tr": "Barnard d é um dos mundos diminutos detectados ao redor da Estrela de Barnard, uma anã vermelha a apenas seis anos-luz de distância. Pesando bem menos que uma massa terrestre e orbitando próximo à sua estrela fria, ele ajuda a fazer de nossa segunda vizinha estelar mais próxima um genuíno sistema planetário, em vez do céu vazio que se supunha antes."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/sargas.json",
+    "at": "fact",
+    "en": "A bright giant in the Scorpion's raised tail, carrying an ancient Mesopotamian name.",
+    "tr": "Uma gigante brilhante na cauda erguida do Escorpião, carregando um antigo nome mesopotâmico."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "bio",
+    "en": "Arcturus (Alpha Boötis) is an orange giant just 37 light-years away. It belongs to an older population of stars moving steeply relative to the galactic disc, giving it a large proper motion.",
+    "tr": "Arcturus (Alpha Boötis) é uma gigante laranja a apenas 37 anos-luz de distância. Pertence a uma população mais antiga de estrelas que se movem acentuadamente em relação ao disco galáctico, conferindo-lhe um grande movimento próprio."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/adhara.json",
+    "at": "bio",
+    "en": "Adhara (Epsilon Canis Majoris) is a hot blue-white pair about 430 light-years away, the second-brightest star in Canis Major after Sirius. A few million years ago it passed much closer to the Sun and was then the brightest star in Earth's entire sky.",
+    "tr": "Adhara (Epsilon Canis Majoris) é um par azul-branco quente a cerca de 430 anos-luz de distância, a segunda estrela mais brilhante no Cão Maior depois de Sirius. Há alguns milhões de anos, ela passou muito mais perto do Sol e foi então a estrela mais brilhante em todo o céu da Terra."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "cultural",
+    "en": "The name is Arabic for 'the belt'. As one of the three Belt stars, it shares in the near-universal recognition of Orion, and its place on the equator made it a natural marker of east and west.",
+    "tr": "O nome é árabe e significa 'o cinturão'. Como uma das três estrelas do Cinturão, ela participa do reconhecimento quase universal de Órion, e sua posição sobre o equador fez dela um marco natural de leste e oeste."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "bio",
+    "en": "GJ 273 c is a small, hot planet orbiting Luyten's Star close in, interior to its more famous sibling GJ 273 b. Together they make Luyten's Star — a dim red dwarf near bright Procyon — one of the nearest multi-planet systems to the Sun.",
+    "tr": "GJ 273 c é um planeta pequeno e quente orbitando a Estrela de Luyten bem próximo, interior ao seu irmão mais famoso GJ 273 b. Juntos, eles fazem da Estrela de Luyten — uma anã vermelha tênue perto do brilhante Prócion — um dos sistemas multiplanetários mais próximos do Sol."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "cultural",
+    "en": "Aldebaran is one of the four 'Royal Stars' of ancient Persian astronomy. Its name means 'the follower', for the way it trails the Pleiades across the sky.",
+    "tr": "Aldebarã é uma das quatro 'Estrelas Reais' da astronomia persa antiga. Seu nome significa 'a seguidora', pela maneira como ela acompanha as Plêiades através do céu."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "bio",
+    "en": "Alkaid (Eta Ursae Majoris) is a hot blue main-sequence star about 104 light-years away, the last star in the handle of the Big Dipper. Unlike the five central Dipper stars, it does not share their common motion through space — it only happens to lie along the same line.",
+    "tr": "Alkaid (Eta Ursae Majoris) é uma estrela quente e azul da sequência principal, a cerca de 104 anos-luz de distância, a última do cabo da Grande Concha. Diferentemente das cinco estrelas centrais da Concha, ela não compartilha o movimento comum delas pelo espaço — apenas acontece de estar alinhada na mesma direção."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "bio",
+    "en": "Miaplacidus (Beta Carinae) is a white star about 113 light-years away, the second-brightest in the southern constellation Carina, the Keel of the ancient ship Argo.",
+    "tr": "Miaplacidus (Beta Carinae) é uma estrela branca a cerca de 113 anos-luz de distância, a segunda mais brilhante da constelação austral Carina, a Quilha do antigo navio Argo."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/toi-700-e.json",
+    "at": "fact",
+    "en": "A second Earth-sized world in TOI-700's habitable zone, found three years after the first.",
+    "tr": "Um segundo mundo do tamanho da Terra na zona habitável de TOI-700, descoberto três anos após o primeiro."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "cultural",
+    "en": "The name comes from the Arabic for 'the elbow'. In the classical figure Perseus holds the head of Medusa — near the winking demon-star Algol — and Mirfak marks the hero's side.",
+    "tr": "O nome vem do árabe para 'o cotovelo'. Na figura clássica, Perseu segura a cabeça de Medusa — perto da piscante estrela-demônio Algol — e Mirfak marca o flanco do herói."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/altair.json",
+    "at": "bio",
+    "en": "Altair (Alpha Aquilae) is a hot white star about 17 light-years away, one of the closest naked-eye stars. It spins near its break-up speed — a full rotation in under eight hours — which flattens it markedly and makes its poles hotter and brighter than its equator. Interferometry has directly imaged this distorted, gravity-darkened surface.",
+    "tr": "Altair (Alpha Aquilae) é uma estrela branca quente a cerca de 17 anos-luz de distância, uma das estrelas mais próximas visíveis a olho nu. Ela gira próxima à sua velocidade de desintegração — uma rotação completa em menos de oito horas — o que a achata marcadamente e torna seus polos mais quentes e brilhantes que seu equador. A interferometria imageou diretamente essa superfície distorcida e escurecida pela gravidade."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "bio",
+    "en": "Alpheratz (Alpha Andromedae) is a blue-white star about 97 light-years away with an unusual mercury-manganese chemical peculiarity. It marks the head of Andromeda while also serving as the north-eastern corner of the Great Square of Pegasus.",
+    "tr": "Alpheratz (Alpha Andromedae) é uma estrela branco-azulada a cerca de 97 anos-luz de distância, com uma peculiaridade química incomum de mercúrio-manganês. Ela marca a cabeça de Andrômeda e, ao mesmo tempo, o canto nordeste do Grande Quadrado de Pégaso."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "bio",
+    "en": "A second planet around Lalande 21185, larger and farther out than GJ 411 b, was reported in the early 2020s from continued monitoring of the star. Together the planets make one of the Sun's nearest multi-planet systems — around a star already famous for its swift motion across our sky.",
+    "tr": "Um segundo planeta ao redor de Lalande 21185, maior e mais distante que GJ 411 b, foi reportado no início da década de 2020 a partir do monitoramento contínuo da estrela. Juntos, os planetas formam um dos sistemas multiplanetários mais próximos do Sol — ao redor de uma estrela já famosa por seu rápido movimento através do nosso céu."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/hadar.json",
+    "at": "cultural",
+    "en": "Its traditional name derives from Arabic. As a brilliant southern beacon it has long served navigators below the equator, and it appears alongside the Cross in the sky-lore of many southern cultures.",
+    "tr": "Seu nome tradicional deriva do árabe. Como um farol brilhante do sul, há muito tempo serve aos navegadores abaixo do equador, e aparece ao lado do Cruzeiro na tradição celeste de muitas culturas do sul."
+  },
+  {
+    "loc": "pt-BR",
+    "tree": "universe",
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "bio",
+    "en": "Rigil Kentaurus (Alpha Centauri A) is the brightest member of the closest stellar system to the Sun, just 4.3 light-years away. A near-twin of the Sun in colour and mass, it forms a bright binary with the cooler Alpha Centauri B, while the faint red dwarf Proxima Centauri orbits far out as the actual nearest star.",
+    "tr": "Rigil Kentaurus (Alpha Centauri A) é o membro mais brilhante do sistema estelar mais próximo do Sol, a apenas 4,3 anos-luz de distância. Quase gêmea do Sol em cor e massa, forma um sistema binário brilhante com a mais fria Alpha Centauri B, enquanto a tênue anã vermelha Proxima Centauri orbita bem mais longe como a estrela de fato mais próxima."
+  }
+]

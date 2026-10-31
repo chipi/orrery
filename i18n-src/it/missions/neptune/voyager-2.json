@@ -3,10 +3,10 @@
   "vehicle": "Titan IIIE / Centaur",
   "payload": "Sonda di sorvolo planetario; energia elettrica da RTG",
   "delta_v": "~18 km/s (circa)",
-  "type": "FLYBY · EFFETTUATA",
+  "type": "SORVOLO · EFFETTUATO",
   "first": "L'unica navicella spaziale a visitare Urano e Nettuno; Grand Tour di quattro pianeti giganti",
-  "dispatch": "Voyager 2 ha compiuto il tour che forse non verrà mai più ripetuto. Lanciata sedici giorni prima della sua gemella su un'orbita più lenta e più lunga, è l'unica sonda spaziale ad aver mai visitato Urano e Nettuno — due mondi che rimangono, decenni dopo, conosciuti quasi interamente dalle poche ore che ha trascorso sfrecciando accanto a ciascuno di essi. Ha trovato un pianeta inclinato su un fianco, i venti più veloci del sistema solare e una luna ghiacciata che eruttava geyser nello spazio, e poi anch'essa ha attraversato lo spazio interstellare, nel 2018. Ogni serio piano di ritorno ai giganti di ghiaccio si basa ancora su ciò che questa singola sonda spaziale ha visto durante la sua uscita.",
-  "description": "La gemella che continuò ad andare avanti anche quando i budget si ridussero, la Voyager 2 portò il Grand Tour da Giove e Saturno fino a Urano e Nettuno – ancora oggi le uniche immagini ravvicinate che abbiamo dei giganti di ghiaccio. Il suo incontro con Nettuno nel 1989 rivelò la Grande Macchia Oscura e i geyser di Tritone. Oggi entrambe le Voyager navigano nello spazio interstellare con un disco d'oro come biglietto da visita dell'umanità. Orrery elenca Nettuno come destinazione del catalogo; il percorso reale si basava su molteplici aiuti gravitazionali.",
+  "dispatch": "Voyager 2 ha compiuto il viaggio che forse non verrà mai più ripetuto. Lanciata sedici giorni prima della sua gemella, su un arco più lento e più lungo, è l'unica sonda ad aver mai visitato Urano e Nettuno — due mondi che, a distanza di decenni, conosciamo ancora quasi solo grazie alle poche ore che ha impiegato a sfrecciare accanto a ciascuno. Ha scoperto un pianeta inclinato su un fianco, i venti più veloci del sistema solare e una luna ghiacciata che sprigiona geyser nello spazio; poi, nel 2018, anch'essa è entrata nello spazio interstellare. Ogni piano serio di ritorno ai giganti di ghiaccio poggia ancora su ciò che questa singola sonda ha visto mentre si allontanava.",
+  "description": "La gemella che non si fermò quando i budget si ridussero, la Voyager 2 portò il Grand Tour da Giove e Saturno fino a Urano e Nettuno — ancora oggi le uniche immagini ravvicinate che abbiamo dei giganti di ghiaccio. Il suo incontro con Nettuno nel 1989 rivelò la Grande Macchia Oscura e i geyser di Tritone. Oggi entrambe le Voyager navigano nello spazio interstellare con un disco d'oro come biglietto da visita dell'umanità. Orrery elenca Nettuno come destinazione del catalogo; il percorso reale si basava su molteplici fionde gravitazionali.",
   "events": [
     {
       "met": 0,
@@ -20,5 +20,6 @@
       "note": "Sorvolo di Nettuno e della grande luna Tritone; ultimo incontro planetario del Grand Tour.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur + TE-364-4 (Star-37E)"
 }

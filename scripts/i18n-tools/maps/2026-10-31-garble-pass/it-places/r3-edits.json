@@ -1,0 +1,681 @@
+[
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.3.images.1.caption",
+    "en": "Organic molecules detected in the Wildcat Ridge mudstone by the SHERLOC instrument — a chemical fingerprint of ancient Martian biology candidates.",
+    "old": "Molecole organiche rilevate dallo strumento SHERLOC nel mudstone di Wildcat Ridge: un'impronta chimica di possibili candidati alla biologia marziana antica.",
+    "new": "Molecole organiche rilevate dallo strumento SHERLOC nella roccia fangosa di Wildcat Ridge: un'impronta chimica di possibili indizi di antica biologia marziana."
+  },
+  {
+    "rel": "site-stories/schiaparelli.json",
+    "at": "chapters.2.images.0.caption",
+    "en": "MRO HiRISE images the Schiaparelli impact site — main crater visible at top; parachute + backshell at lower right.",
+    "old": "HiRISE di MRO riprende il sito d'impatto di Schiaparelli — il cratere principale è visibile in alto; paracadute + backshell in basso a destra.",
+    "new": "HiRISE di MRO riprende il sito d'impatto di Schiaparelli — il cratere principale è visibile in alto; paracadute + guscio posteriore in basso a destra."
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "capability",
+    "en": "First Mars sample-caching for future return; first powered flight in another atmosphere (Ingenuity).",
+    "old": "Primo campionamento su Marte con conservazione per futuro ritorno; primo volo alimentato in un'altra atmosfera (Ingenuity).",
+    "new": "Primo deposito di campioni su Marte in vista di un futuro ritorno; primo volo a motore in un'altra atmosfera (Ingenuity)."
+  },
+  {
+    "rel": "site-stories/spirit.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Mars Exploration Rover during integration — 185 kg, 6 wheels, Pancam mast camera, RAT rock-abrasion tool.",
+    "old": "Mars Exploration Rover durante l'integrazione: 185 kg, 6 ruote, la telecamera su mast Pancam e lo strumento di abrasione delle rocce RAT.",
+    "new": "Mars Exploration Rover durante l'integrazione: 185 kg, 6 ruote, la telecamera Pancam sull'albero e lo strumento di abrasione delle rocce RAT."
+  },
+  {
+    "rel": "mars-sites/zhurong.json",
+    "at": "fact",
+    "en": "China's first Mars rover. Operated 358 sols, traversed 1.92 km. Returned ground-penetrating radar evidence for buried subsurface layers consistent with ancient catastrophic flooding events. Lost contact during the 2022 Martian winter; CNSA confirmed no further communications.",
+    "old": "Il primo rover marziano della Cina. Ha operato per 358 sol, percorrendo 1,92 km. Ha restituito evidenze di radar a penetrazione di terra di strati subsuperficiali sepolti coerenti con antichi eventi di inondazione catastrofica. Ha perso il contatto durante l'inverno marziano del 2022; l'agenzia CNSA ha confermato l'assenza di ulteriori comunicazioni.",
+    "new": "Il primo rover marziano della Cina. Ha operato per 358 sol, percorrendo 1,92 km. Il suo radar a penetrazione del suolo ha fornito indizi di strati sepolti nel sottosuolo coerenti con antichi eventi di inondazione catastrofica. Ha perso il contatto durante l'inverno marziano del 2022; la CNSA ha confermato l'assenza di ulteriori comunicazioni."
+  },
+  {
+    "rel": "mars-sites/viking1-orbiter.json",
+    "at": "fact",
+    "en": "Returned over 50,000 images of Mars's surface and moons over four years. Mapped potential landing sites in advance for both Viking landers. Ended operations in August 1980 when its attitude-control gas was depleted.",
+    "old": "Restituito oltre 50.000 immagini della superficie di Marte e delle lune in quattro anni. Mappato in anticipo i potenziali siti di atterraggio per entrambi i lander Viking. Terminate le operazioni nell'agosto 1980 quando il gas per il controllo dell'assetto era esaurito.",
+    "new": "Ha restituito oltre 50.000 immagini della superficie di Marte e delle sue lune nell'arco di quattro anni. Ha mappato in anticipo i potenziali siti di atterraggio di entrambi i lander Viking. Ha terminato le operazioni nell'agosto 1980, quando il gas per il controllo dell'assetto si è esaurito."
+  },
+  {
+    "rel": "site-stories/curiosity.json",
+    "at": "chapters.3.images.1.caption",
+    "en": "Sedimentary rocks at Vera Rubin Ridge — banded iron formations + clay minerals indicate ancient liquid water and a habitable chemical environment.",
+    "old": "Rocce sedimentarie a cresta Vera Rubin: formazioni di ferro a bande e minerali argillosi indicano la presenza di acqua liquida antica e di un ambiente chimico abitabile.",
+    "new": "Rocce sedimentarie sulla cresta Vera Rubin: formazioni ferrifere a bande e minerali argillosi indicano la presenza di acqua liquida antica e di un ambiente chimico abitabile."
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "fact",
+    "en": "First mission with the Lunar Roving Vehicle — drove 27.9 km. Scott left a small aluminium figurine, 'Fallen Astronaut', and a plaque listing all astronauts and cosmonauts who died in the space race. It is the only artwork on the Moon, left without public announcement at the time.",
+    "old": "Primo volo con il Lunar Roving Vehicle — ha percorso 27,9 km. Scott ha lasciato una piccola figurina in alluminio, \"Fallen Astronaut\", e una targa che elenca tutti gli astronauti e i cosmonauti morti nella corsa allo spazio. È l'unica opera d'arte sulla Luna, lasciata senza annuncio pubblico all'epoca.",
+    "new": "Prima missione con il Lunar Roving Vehicle: ha percorso 27,9 km. Scott ha lasciato una piccola figurina in alluminio, «Fallen Astronaut», e una targa che elenca tutti gli astronauti e i cosmonauti morti nella corsa allo spazio. È l'unica opera d'arte sulla Luna, lasciata senza annuncio pubblico all'epoca."
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.2.images.0.caption",
+    "en": "Vikram lander on the south-polar surface — touchdown 69.37°S, the highest-latitude lunar landing ever performed.",
+    "old": "Il lander Vikram sulla superficie del polo sud: touchdown a 69,37° S, l'allunaggio alla latitudine più alta mai realizzato.",
+    "new": "Il lander Vikram sulla superficie del polo sud: allunaggio a 69,37° S, quello alla latitudine più alta mai realizzato."
+  },
+  {
+    "rel": "moon-sites/lro.json",
+    "at": "site_name",
+    "en": "Lunar polar orbit (~50 km science phase; elliptical since 2011)",
+    "old": "Orbita polare lunare (~50 km fase scientifica; ellittica dal 2011)",
+    "new": "Orbita polare lunare (fase scientifica a ~50 km; ellittica dal 2011)"
+  },
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "fact",
+    "en": "First dedicated planetary seismograph on Mars. Detected over 1,300 marsquakes including a record magnitude-4.7 quake (S1222a) in May 2022. Heat-flow probe (HP³) failed to penetrate the unexpectedly cohesive regolith. Mission ended December 2022 when dust accumulation on solar panels dropped power below operating threshold.",
+    "old": "Primo sismografo planetario dedicato su Marte. Ha rilevato oltre 1.300 marsquake, incluso un terremoto record di magnitudo 4,7 (S1222a) nel maggio 2022. La sonda di flusso termico (HP³) non è riuscita a penetrare il regolite inaspettatamente coesivo. La missione è terminata a dicembre 2022 quando l'accumulo di polvere sui pannelli solari ha ridotto l'energia al di sotto della soglia operativa.",
+    "new": "Primo sismografo planetario dedicato su Marte. Ha rilevato oltre 1.300 terremoti marziani, tra cui un evento record di magnitudo 4,7 (S1222a) nel maggio 2022. La sonda di flusso termico (HP³) non è riuscita a penetrare il regolite, inaspettatamente coesivo. La missione è terminata a dicembre 2022, quando l'accumulo di polvere sui pannelli solari ha ridotto l'energia al di sotto della soglia operativa."
+  },
+  {
+    "rel": "mars-sites/mariner9.json",
+    "at": "fact",
+    "en": "First spacecraft to orbit another planet. Arrived at Mars during a planet-wide dust storm and waited until the atmosphere cleared. Returned 7,329 images covering 85% of the Martian surface — the first global mosaic of any planet besides Earth. Discovered Olympus Mons, Valles Marineris, and the polar layered terrain.",
+    "old": "Primo veicolo spaziale a orbitare un altro pianeta. Arrivò su Marte durante una tempesta di polvere globale e attese fino al dissolvimento dell'atmosfera. Restituì 7.329 immagini coprendo l'85% della superficie marziana — il primo mosaico globale di qualsiasi pianeta al di là della Terra. Scoprì l'Olympus Mons, le Valles Marineris e il terreno stratificato polare.",
+    "new": "Primo veicolo spaziale a entrare in orbita attorno a un altro pianeta. Arrivò su Marte durante una tempesta di polvere globale e attese che l'atmosfera si schiarisse. Restituì 7.329 immagini che coprivano l'85% della superficie marziana — il primo mosaico globale di un pianeta diverso dalla Terra. Scoprì l'Olympus Mons, le Valles Marineris e il terreno stratificato polare."
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.1.images.1.caption",
+    "en": "Phoenix lander, parachute and backshell — all imaged by MRO HiRISE after the landing.",
+    "old": "Il lander Phoenix, il paracadute e il backshell: tutti ripresi da HiRISE su MRO dopo l'atterraggio.",
+    "new": "Il lander Phoenix, il paracadute e il guscio posteriore: tutti ripresi da HiRISE su MRO dopo l'atterraggio."
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "fact",
+    "en": "Mars Science Laboratory. RTG-powered (no solar reliance), car-sized (899 kg), still operational over a decade after landing. Confirmed Gale Crater hosted a habitable lake environment in the deep past. Climbing Mt. Sharp's stratigraphic sequence — billion-year-by-billion-year readings of Mars's environmental history.",
+    "old": "Mars Science Laboratory. Alimentato da RTG (senza dipendenza dal solare), delle dimensioni di un'auto (899 kg), ancora operativo più di un decennio dopo l'atterraggio. Ha confermato che il cratere Gale ospitava un ambiente lacustre abitabile nel passato remoto. Scalando la sequenza stratigrafica del Monte Sharp — letture della storia ambientale di Marte secondo intervalli di miliardi di anni.",
+    "new": "Mars Science Laboratory. Alimentato da RTG (senza dipendere dall'energia solare), grande come un'auto (899 kg), ancora operativo oltre un decennio dopo l'atterraggio. Ha confermato che il cratere Gale ospitava un ambiente lacustre abitabile nel passato remoto. Sta risalendo la sequenza stratigrafica del Monte Sharp, con letture della storia ambientale di Marte, un miliardo di anni dopo l'altro."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.subtitle",
+    "en": "Jezero Crater — landed February 18, 2021",
+    "old": "cratere Jezero — atterraggio il 18 febbraio 2021",
+    "new": "Cratere Jezero — atterraggio il 18 febbraio 2021"
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "chapters.0.images.1.caption",
+    "en": "Tianwen-1 launch stack — orbiter + lander + rover combined, the most ambitious first-attempt Mars mission ever flown.",
+    "old": "Lo stack di lancio di Tianwen-1: orbiter, lander e rover combinati, la missione marziana al primo tentativo più ambiziosa mai realizzata.",
+    "new": "Il complesso di lancio di Tianwen-1: orbiter, lander e rover combinati, la missione marziana al primo tentativo più ambiziosa mai realizzata."
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.2.images.1.caption",
+    "en": "Yutu's ground-penetrating radar profile of the Mare Imbrium subsurface — multi-layer basalt flows down to ~330 m.",
+    "old": "Il profilo radar di Yutu, penetrante nel suolo, del sottosuolo di Mare Imbrium: colate di basalto multistrato fino a circa 330 m di profondità.",
+    "new": "Profilo del radar a penetrazione del suolo di Yutu nel sottosuolo di Mare Imbrium: colate di basalto a più strati fino a circa 330 m di profondità."
+  },
+  {
+    "rel": "moon-sites/luna17.json",
+    "at": "capability",
+    "en": "First teleoperated rover — established the architecture every Mars rover from Sojourner to Perseverance has built on.",
+    "old": "Primo rover teleopesato — ha stabilito l'architettura su cui si sono basati tutti i rover marziani da Sojourner a Perseverance.",
+    "new": "Primo rover teleoperato — ha stabilito l'architettura su cui si sono basati tutti i rover marziani, da Sojourner a Perseverance."
+  },
+  {
+    "rel": "mars-sites/mars-express.json",
+    "at": "fact",
+    "en": "ESA's first interplanetary mission. Carried Beagle 2 to its lost landing. The HRSC stereo camera continues to map Mars at 10 m/pixel; MARSIS subsurface radar discovered evidence of liquid water beneath the south polar cap in 2018.",
+    "old": "La prima missione interplanetaria di ESA. Trasportò Beagle 2 al suo atterraggio perduto. La telecamera stereo HRSC continua a mappare Marte a 10 m/pixel; Il radar sotterraneo MARSIS ha scoperto prove di acqua liquida sotto la calotta polare sud nel 2018.",
+    "new": "La prima missione interplanetaria dell'ESA. Portò Beagle 2 al suo atterraggio perduto. La telecamera stereo HRSC continua a mappare Marte a 10 m/pixel; il radar per il sottosuolo MARSIS nel 2018 ha scoperto prove di acqua liquida sotto la calotta polare sud."
+  },
+  {
+    "rel": "site-stories/mars-pathfinder.json",
+    "at": "intro",
+    "en": "Mars Pathfinder landed in Ares Vallis on July 4, 1997 — the first US mission to Mars since the Vikings 21 years earlier. The lander deployed Sojourner, the first wheels on Mars, demonstrating airbag-landing + roving in a $265M low-cost \"faster-better-cheaper\" mission that returned ~16,500 images. Sojourner's 100-meter traverse mapped twelve rocks named after cartoon characters (Yogi, Barnacle Bill, Scooby Doo) before the lander died.",
+    "old": "Mars Pathfinder atterrò in Ares Vallis il 4 luglio 1997, la prima missione statunitense su Marte dopo le Viking, 21 anni prima. Il lander dispiegò Sojourner, le prime ruote su Marte, dimostrando che l'atterraggio con airbag e l'esplorazione su ruote erano possibili in una missione low-cost «faster-better-cheaper» da 265 milioni di dollari, che restituì circa 16.500 immagini. Il percorso di 100 metri di Sojourner mappò dodici rocce battezzate con nomi di personaggi dei cartoni animati (Yogi, Barnacle Bill, Scooby Doo) prima che il lander cessasse di funzionare.",
+    "new": "Mars Pathfinder atterrò in Ares Vallis il 4 luglio 1997, la prima missione statunitense su Marte a 21 anni dalle Viking. Il lander dispiegò Sojourner, le prime ruote su Marte, dimostrando che l'atterraggio con airbag e l'esplorazione su ruote erano possibili in una missione a basso costo da 265 milioni di dollari, secondo la filosofia «più veloce, migliore, più economica», che restituì circa 16.500 immagini. Il percorso di 100 metri di Sojourner mappò dodici rocce battezzate con nomi di personaggi dei cartoni animati (Yogi, Barnacle Bill, Scooby Doo) prima che il lander cessasse di funzionare."
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Saturn V SA-506 with Apollo 11 on Pad 39A — 110.6 m tall, the most powerful launch vehicle ever flown to operational mission.",
+    "old": "Il Saturn V SA-506 con Apollo 11 sulla Pad 39A: 110,6 m di altezza, il lanciatore più potente mai volato in una missione operativa.",
+    "new": "Il Saturn V SA-506 con Apollo 11 sulla rampa 39A: 110,6 m di altezza, il lanciatore più potente mai volato in una missione operativa."
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "chapters.0.images.1.caption",
+    "en": "Time capsule payload — Israeli memorabilia + 30 million pages of human knowledge etched onto nickel plates + (controversially) tardigrades, the world's most resilient micro-animals.",
+    "old": "Il carico della capsula del tempo — cimeli israeliani, 30 milioni di pagine di conoscenza umana incise su lastre di nichel e (non senza polemiche) i tardigradi, i micro-animali più resistenti del mondo.",
+    "new": "Il carico utile della capsula del tempo — cimeli israeliani, 30 milioni di pagine di conoscenza umana incise su lastre di nichel e (non senza polemiche) i tardigradi, i microanimali più resistenti del mondo."
+  },
+  {
+    "rel": "site-stories/perseverance.json",
+    "at": "chapters.2.images.2.caption",
+    "en": "First Ingenuity flight, April 19 2021 — a 3-second hover at 3 m altitude. The Wright Brothers' Flyer carried a swatch of fabric on the helicopter for this exact moment.",
+    "old": "Il primo volo di Ingenuity, 19 aprile 2021: un hovering di 3 secondi a 3 m di quota. Sull'elicottero, per questo preciso momento, viaggiava un frammento di tessuto del Flyer dei fratelli Wright.",
+    "new": "Il primo volo di Ingenuity, 19 aprile 2021: un volo stazionario di 3 secondi a 3 m di quota. Sull'elicottero, per questo preciso momento, viaggiava un frammento di tessuto del Flyer dei fratelli Wright."
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "capability",
+    "en": "Demonstrated highland landing — opened scientifically valuable terrain types previously considered too hazardous, a blueprint for non-mare Mars sites.",
+    "old": "Ha dimostrato l'allunaggio in regioni montuose — ha aperto tipi di terreno scientificamente preziosi precedentemente considerati troppo pericolosi, un modello per i siti di Marte non-maria.",
+    "new": "Ha dimostrato l'allunaggio negli altopiani — ha aperto tipi di terreno scientificamente preziosi, prima considerati troppo pericolosi, un modello per i siti di Marte non di tipo mare."
+  },
+  {
+    "rel": "mars-sites/mangalyaan.json",
+    "at": "capability",
+    "en": "Demonstrated low-cost interplanetary missions; first Asian Mars mission.",
+    "old": "Missioni interplanetarie a basso costo dimostrate; prima missione asiatica su Marte.",
+    "new": "Ha dimostrato la fattibilità di missioni interplanetarie a basso costo; prima missione asiatica su Marte."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "en": "From Eagle Crater to Endeavour — 14 years of evidence",
+    "old": "Da cratere Eagle a Endeavour: 14 anni di prove",
+    "new": "Dal cratere Eagle a Endeavour: 14 anni di prove"
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "fact",
+    "en": "Alan Shepard, the first American in space (1961), became the only person to play golf on the Moon. He smuggled a club head and two balls aboard. He claimed one 'went miles and miles' — LRO images suggest about 37 m (40 yards). Still: the furthest sporting achievement in history.",
+    "old": "Alan Shepard, il primo americano nello spazio (1961), divenne l'unica persona a giocare a golf sulla Luna. Contrabbandò una testa di bastone e due palline a bordo. Ha affermato che una «è andata per miglia e miglia» — le immagini LRO suggeriscono circa 37 m (40 yards). Comunque: il più lontano successo sportivo della storia.",
+    "new": "Alan Shepard, il primo americano nello spazio (1961), divenne l'unica persona a giocare a golf sulla Luna. Portò di nascosto a bordo la testa di una mazza e due palline. Affermò che una era «andata per miglia e miglia» — le immagini LRO suggeriscono circa 37 m (40 yard). Eppure: il traguardo sportivo più lontano della storia."
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "fact",
+    "en": "First sample return from the lunar far side — possibly the most scientifically significant lunar mission since Apollo. Far-side material (thicker crust, older surface, different composition) was completely unstudied. These samples may finally explain why the Moon's two hemispheres are so fundamentally different.",
+    "old": "Primo campione restituito dal lato nascosto della Luna: forse la missione lunare più scientificamente significativa dai tempi dell'Apollo. Il materiale del lato lontano (crosta più spessa, superficie più vecchia, composizione diversa) non era completamente studiato. Questi campioni potrebbero finalmente spiegare perché i due emisferi della Luna sono così fondamentalmente diversi.",
+    "new": "Primo ritorno di campioni dal lato nascosto della Luna: forse la missione lunare scientificamente più significativa dai tempi dell'Apollo. Il materiale del lato nascosto (crosta più spessa, superficie più antica, composizione diversa) non era mai stato studiato. Questi campioni potrebbero finalmente spiegare perché i due emisferi della Luna sono così profondamente diversi."
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "capability",
+    "en": "Sample return from a relay-only site — combines the architectures of Chang'e 4 (far-side comms) and Chang'e 5 (sample return). The full set of capabilities for Mars Sample Return at any latitude.",
+    "old": "Restituzione campione da un sito di solo inoltro: combina le architetture di Chang'e 4 (comunicazioni remote) e Chang'e 5 (restituzione campione). Il set completo di funzionalità per Mars Sample Return a qualsiasi latitudine.",
+    "new": "Ritorno di campioni da un sito che comunica solo tramite relè: combina le architetture di Chang'e 4 (comunicazioni dal lato nascosto) e di Chang'e 5 (ritorno di campioni). L'insieme completo di capacità per Mars Sample Return a qualsiasi latitudine."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.1.images.0.caption",
+    "en": "Legacy Pan, sols 5084-5111 (May-June 2018) — Opportunity's final 360° panorama before the dust storm. Perseverance Valley descends into Endeavour Crater.",
+    "old": "Legacy Pan, sol 5084-5111 (maggio-giugno 2018): l'ultimo panorama a 360° di Opportunity prima della tempesta di polvere. Perseverance Valley scende verso cratere Endeavour.",
+    "new": "Legacy Pan, sol 5084-5111 (maggio-giugno 2018): l'ultimo panorama a 360° di Opportunity prima della tempesta di polvere. Perseverance Valley scende verso il cratere Endeavour."
+  },
+  {
+    "rel": "site-stories/zhurong.json",
+    "at": "intro",
+    "en": "Zhurong landed in Utopia Planitia on May 14, 2021 — China's first successful Mars landing and the first Mars mission by any nation to combine orbiter, lander, and rover in a single launch (Tianwen-1). Named after the Chinese god of fire, Zhurong drove 1.92 km across the southern Utopia plains before being put into hibernation in May 2022 during dust season. CNSA has not confirmed wake-up.",
+    "old": "Zhurong è atterrato su Utopia Planitia il 14 maggio 2021: il primo atterraggio riuscito della Cina su Marte e la prima missione marziana di una qualsiasi nazione a combinare orbiter, lander e rover in un unico lancio (Tianwen-1). Preso il nome dal dio cinese del fuoco, Zhurong ha percorso 1,92 km sulle pianure meridionali di Utopia prima di essere messo in ibernazione nel maggio 2022, durante la stagione delle polveri. La CNSA non ha confermato il risveglio.",
+    "new": "Zhurong è atterrato su Utopia Planitia il 14 maggio 2021: il primo atterraggio riuscito della Cina su Marte e la prima missione marziana di una qualsiasi nazione a combinare orbiter, lander e rover in un unico lancio (Tianwen-1). Il suo nome deriva dal dio cinese del fuoco; Zhurong ha percorso 1,92 km sulle pianure meridionali di Utopia prima di essere messo in ibernazione nel maggio 2022, durante la stagione delle polveri. La CNSA non ha confermato il risveglio."
+  },
+  {
+    "rel": "moon-sites/lro.json",
+    "at": "fact",
+    "en": "The longest-running active lunar orbital mission. LROC's narrow-angle camera resolves objects ≥50 cm — sharp enough to image every Apollo descent stage, both Lunokhod rover tracks, and every recent landed asset. Built the topographic and imagery base maps used by every recent Moon-landing mission. Currently mapping permanently-shadowed craters for Artemis south-pole site selection.",
+    "old": "La missione orbitale lunare attiva più longeva. La fotocamera a campo stretto LROC risolve oggetti ≥50 cm — abbastanza nitida per fotografare ogni stadio di discesa Apollo, entrambe le tracce del rover Lunokhod e ogni asset atterrato di recente. Ha costruito le mappe topografiche e di immagini utilizzate da ogni missione di atterraggio lunare recente. Attualmente mappando i crateri permanentemente in ombra per la selezione del sito del polo sud Artemis.",
+    "new": "La missione orbitale lunare attiva più longeva. La fotocamera a campo stretto LROC risolve oggetti di ≥50 cm — abbastanza nitida da fotografare ogni stadio di discesa dell'Apollo, le tracce di entrambi i rover Lunokhod e ogni mezzo atterrato di recente. Ha realizzato le mappe di base topografiche e fotografiche usate da ogni recente missione di allunaggio. Attualmente sta mappando i crateri in ombra permanente per la scelta del sito Artemis al polo sud."
+  },
+  {
+    "rel": "mars-sites/mars-odyssey.json",
+    "at": "fact",
+    "en": "The longest continuously-active spacecraft in orbit around any planet other than Earth. Detected vast subsurface water-ice deposits in 2002 (a discovery that drove the Phoenix and Curiosity targeting). Still active in 2026 as a relay node for surface assets.",
+    "old": "La più lunga navicella spaziale continuamente attiva in orbita attorno a qualsiasi pianeta diverso dalla Terra. Rilevati vasti depositi di ghiaccio d'acqua nel sottosuolo nel 2002 (una scoperta che ha guidato il targeting di Phoenix e Curiosity). Ancora attivo nel 2026 come nodo relè per gli assetti di superficie.",
+    "new": "La navicella più longeva in attività continua in orbita attorno a un pianeta diverso dalla Terra. Nel 2002 ha rilevato vasti depositi di ghiaccio d'acqua nel sottosuolo (una scoperta che ha orientato la scelta dei siti di Phoenix e Curiosity). Ancora attiva nel 2026 come nodo relè per i mezzi in superficie."
+  },
+  {
+    "rel": "site-stories/luna16.json",
+    "at": "chapters.2.subtitle",
+    "en": "Mare Fecunditatis — landed September 20, 1970",
+    "old": "Mare Fecunditatis — atterraggio il 20 settembre 1970",
+    "new": "Mare Fecunditatis — allunaggio il 20 settembre 1970"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "capability",
+    "en": "Pinpoint landing accuracy — bridges the gap between 'we can land somewhere on this body' and 'we can land at the specific scientifically valuable rock', the precondition for surface-asset rendezvous on Mars.",
+    "old": "Accuratezza di atterraggio di precisione — colma il divario tra \"possiamo atterrare da qualche parte su questo corpo celeste\" e \"possiamo atterrare sulla roccia scientificamente preziosa specifica\", il prerequisito per il rendez-vous di asset in superficie su Marte.",
+    "new": "Precisione di atterraggio mirato — colma il divario tra «sappiamo atterrare da qualche parte su questo corpo celeste» e «sappiamo atterrare sulla specifica roccia di valore scientifico», presupposto del rendezvous con i mezzi già presenti in superficie su Marte."
+  },
+  {
+    "rel": "site-stories/luna17.json",
+    "at": "intro",
+    "en": "Luna 17 landed in Mare Imbrium on November 17, 1970 — and deployed Lunokhod 1, the first wheeled vehicle to operate on another world, beating NASA's LRV by seven months. Lunokhod 1 drove 10.5 km over 11 lunar days, controlled by a five-person team in Crimea. Returned 25,000 photographs and 211 panoramas before going silent in September 1971.",
+    "old": "Luna 17 atterrò nel Mare Imbrium il 17 novembre 1970 e mise in opera Lunokhod 1, il primo veicolo a ruote a operare su un altro mondo, anticipando di sette mesi l'LRV della NASA. Lunokhod 1 percorse 10,5 km nell'arco di 11 giorni lunari, guidato da una squadra di cinque persone in Crimea. Inviò 25.000 fotografie e 211 panorami prima di tacere nel settembre 1971.",
+    "new": "Luna 17 allunò nel Mare Imbrium il 17 novembre 1970 e mise in opera Lunokhod 1, il primo veicolo a ruote a operare su un altro mondo, anticipando di sette mesi l'LRV della NASA. Lunokhod 1 percorse 10,5 km nell'arco di 11 giorni lunari, guidato da una squadra di cinque persone in Crimea. Inviò 25.000 fotografie e 211 panorami prima di tacere nel settembre 1971."
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "fact",
+    "en": "The first spacecraft to land on the Moon's far side — technically and operationally the hardest lunar landing ever attempted. Required a relay satellite (Queqiao) at L2 since the far side has no direct radio contact with Earth. Yutu-2 rover drove over 1.6 km before becoming stationary in March 2024; telemetry continued through at least September 2024. The far side had never been visited.",
+    "old": "Il primo veicolo spaziale ad allunare sul lato nascosto della Luna — tecnicamente e operativamente l'allunaggio lunare più difficile mai tentato. Ha richiesto un satellite relè (Queqiao) presso L2 poiché il lato nascosto non ha contatto radio diretto con la Terra. Il rover Yutu-2 ha percorso oltre 1,6 km prima di fermarsi a marzo 2024; la telemetria è continuata almeno fino a settembre 2024. Il lato nascosto non era mai stato visitato.",
+    "new": "Il primo veicolo spaziale ad allunare sul lato nascosto della Luna — tecnicamente e operativamente l'allunaggio più difficile mai tentato. Ha richiesto un satellite relè (Queqiao) presso L2 poiché il lato nascosto non ha contatto radio diretto con la Terra. Il rover Yutu-2 ha percorso oltre 1,6 km prima di fermarsi a marzo 2024; la telemetria è continuata almeno fino a settembre 2024. Il lato nascosto non era mai stato visitato."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.1.caption",
+    "en": "David Scott at the rim of Hadley Rille — first time astronauts stood at the edge of an ancient lava channel on another world.",
+    "old": "David Scott sul bordo del solco Hadley: per la prima volta degli astronauti si trovarono sull'orlo di un antico canale di lava su un altro mondo.",
+    "new": "David Scott sul bordo della Rima Hadley: per la prima volta degli astronauti si trovarono sull'orlo di un antico canale di lava su un altro mondo."
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "SLIM lander pre-launch — 200 kg, pencil-shaped, designed for low-mass precision landing demos.",
+    "old": "Il lander SLIM prima del lancio: 200 kg, a forma di matita, progettato per dimostrare l'atterraggio di precisione a bassa massa.",
+    "new": "Il lander SLIM prima del lancio: 200 kg, a forma di matita, progettato per dimostrare l'allunaggio di precisione a bassa massa."
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "capability",
+    "en": "First UK-led planetary lander; demonstrated that orbital reconnaissance can locate failed surface assets at metre-scale.",
+    "old": "Primo lander planetario guidato dal Regno Unito; ha dimostrato che la ricognizione orbitale può localizzare gli asset di superficie falliti a scala metrica.",
+    "new": "Primo lander planetario a guida britannica; ha dimostrato che la ricognizione orbitale può localizzare con precisione metrica mezzi di superficie andati perduti."
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "chapters.2.images.0.caption",
+    "en": "SLIM photographed by Sora-Q on the lunar surface — landed nose-down, solar panels facing the wrong way.",
+    "old": "SLIM fotografato da Sora-Q sulla superficie lunare: è atterrato con il muso in giù, con i pannelli solari rivolti nella direzione sbagliata.",
+    "new": "SLIM fotografato da Sora-Q sulla superficie lunare: è allunato con il muso in giù, con i pannelli solari rivolti nella direzione sbagliata."
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.images.0.caption",
+    "en": "First images of the lunar surface — coarse, low-bit-rate panoramas showing rocky regolith. The Manchester Jodrell Bank radio telescope intercepted the broadcast and published before the Soviets did.",
+    "old": "Le prime immagini della superficie lunare: panorami grezzi, a bassa velocità di trasmissione, che mostrano un regolite roccioso. Il radiotelescopio di Jodrell Bank, a Manchester, intercettò la trasmissione e la pubblicò prima dei sovietici.",
+    "new": "Le prime immagini della superficie lunare: panorami grezzi, a bassa velocità di trasmissione, che mostrano una regolite rocciosa. Il radiotelescopio di Jodrell Bank, a Manchester, intercettò la trasmissione e la pubblicò prima dei sovietici."
+  },
+  {
+    "rel": "mars-sites/mangalyaan.json",
+    "at": "fact",
+    "en": "ISRO's first interplanetary mission, on a budget of ~$74M — less than the Hollywood film *Gravity*. India became the first Asian nation to reach Mars, and the first country to do so on a maiden interplanetary attempt. Operated 8 years (designed for 6 months) before contact was lost in April 2022.",
+    "old": "La prima missione interplanetaria di ISRO, con un budget di ~74 milioni di dollari, meno del film di Hollywood *Gravity*. India è diventata la prima nazione asiatica a raggiungere Marte e il primo paese a farlo nel primo tentativo interplanetario. Operato per 8 anni (progettato per 6 mesi) prima che il contatto venisse perso nell'aprile 2022.",
+    "new": "La prima missione interplanetaria di ISRO, con un budget di ~74 milioni di dollari, meno del film di Hollywood *Gravity*. India è diventata la prima nazione asiatica a raggiungere Marte e il primo paese a farlo al primo tentativo interplanetario. La missione ha operato per 8 anni (progettata per 6 mesi) prima che il contatto andasse perso nell'aprile 2022."
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "fact",
+    "en": "Japan's Smart Lander demonstrated pinpoint precision landing — targeting within 100 m accuracy vs the km-scale standard of all previous missions. Landed nose-down at roughly 90° from the intended attitude, leaving its solar panels initially pointing away from the Sun; operations resumed nine days later once the Sun angle shifted. Japan became the fifth nation to achieve a lunar soft landing.",
+    "old": "Lo Smart Lander del Giappone ha dimostrato una precisione di atterraggio straordinaria — con un'accuratezza di 100 m rispetto allo standard di scala chilometrica di tutte le missioni precedenti. Atterrato con il muso rivolto verso il basso a circa 90° dall'assetto previsto, lasciando i suoi pannelli solari inizialmente rivolti lontano dal Sole; le operazioni sono riprese nove giorni dopo quando l'angolo del Sole si è spostato. Il Giappone è diventato la quinta nazione a raggiungere un atterraggio dolce sulla Luna.",
+    "new": "Lo Smart Lander del Giappone ha dimostrato l'allunaggio di precisione, con un obiettivo centrato entro 100 m di accuratezza contro lo standard su scala chilometrica di tutte le missioni precedenti. È allunato con il muso rivolto verso il basso, a circa 90° dall'assetto previsto, lasciando i pannelli solari inizialmente rivolti lontano dal Sole; le operazioni sono riprese nove giorni dopo, quando l'angolo del Sole è cambiato. Il Giappone è diventato la quinta nazione a effettuare un allunaggio morbido."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.images.2.caption",
+    "en": "Descartes Highlands panorama — Orion descent stage + LRV + Stone Mountain backdrop.",
+    "old": "Panorama degli Altopiani di Descartes (Altopiano Descartes): lo stadio di discesa di Orion + il LRV, con sullo sfondo Stone Mountain.",
+    "new": "Panorama degli Altopiani di Descartes: lo stadio di discesa di Orion + il LRV, con sullo sfondo Stone Mountain."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Apollo 16 crew portrait — John Young (CDR), Ken Mattingly (CMP — bumped from Apollo 13), Charlie Duke (LMP).",
+    "old": "Ritratto dell'equipaggio di Apollo 16: John Young (CDR), Ken Mattingly (CMP, sostituito rispetto ad Apollo 13) e Charlie Duke (LMP).",
+    "new": "Ritratto dell'equipaggio di Apollo 16: John Young (CDR), Ken Mattingly (CMP — escluso da Apollo 13) e Charlie Duke (LMP)."
+  },
+  {
+    "rel": "mars-sites/mars3-orbiter.json",
+    "at": "fact",
+    "en": "Orbital component of the Mars 3 mission. Returned the first surface temperature and atmospheric measurements of Mars from orbit. Made eight months of observations before contact was lost in August 1972.",
+    "old": "Componente orbitale della missione Mars 3. Restituite le prime misurazioni della temperatura superficiale e dell'atmosfera di Marte dall'orbita. Effettuate otto mesi di osservazioni prima che il contatto venisse perso nell'agosto 1972.",
+    "new": "Componente orbitale della missione Mars 3. Ha restituito le prime misurazioni della temperatura superficiale e dell'atmosfera di Marte dall'orbita. Ha osservato per otto mesi prima che il contatto andasse perso nell'agosto 1972."
+  },
+  {
+    "rel": "site-stories/slim.json",
+    "at": "intro",
+    "en": "SLIM (Smart Lander for Investigating Moon) landed in Shioli Crater on January 20, 2024 — Japan's first soft landing on the Moon and a precision-landing technology demonstrator. SLIM touched down within 100 m of its target (the previous best was 1+ km), but flipped onto its side and operated upside-down on its remaining solar cells until power ran out. Two surface micro-rovers, LEV-1 and LEV-2 (Sora-Q), deployed before the awkward final orientation.",
+    "old": "SLIM (Smart Lander for Investigating Moon) è atterrato nel cratere Shioli il 20 gennaio 2024: il primo atterraggio morbido del Giappone sulla Luna e un dimostratore di tecnologia per l'atterraggio di precisione. SLIM si è posato a meno di 100 m dal bersaglio (il miglior risultato precedente era di oltre 1 km), ma si è rovesciato su un fianco e ha operato capovolto, con le celle solari rimaste attive, finché l'energia non si è esaurita. Due micro-rover di superficie, LEV-1 e LEV-2 (Sora-Q), sono stati rilasciati prima di quell'infelice orientamento finale.",
+    "new": "SLIM (Smart Lander for Investigating Moon) è allunato nel cratere Shioli il 20 gennaio 2024: il primo allunaggio morbido del Giappone sulla Luna e un dimostratore di tecnologia per l'allunaggio di precisione. SLIM si è posato a meno di 100 m dal bersaglio (il miglior risultato precedente era di oltre 1 km), ma si è rovesciato su un fianco e ha operato capovolto, con le celle solari rimaste attive, finché l'energia non si è esaurita. Due micro-rover di superficie, LEV-1 e LEV-2 (Sora-Q), sono stati rilasciati prima di quell'infelice orientamento finale."
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.2.subtitle",
+    "en": "Apollo Crater (within South Pole-Aitken) — landed June 1, 2024",
+    "old": "cratere Apollo (all'interno del Polo Sud-Aitken): atterraggio il 1° giugno 2024",
+    "new": "cratere Apollo (all'interno del Polo Sud-Aitken) — allunaggio il 1° giugno 2024"
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.3.images.0.caption",
+    "en": "Lunar samples 10072 — vesicular mare basalt, 3.7 billion years old. The first rock from another world studied on Earth.",
+    "old": "Campione lunare 10072: basalto di mare vescicolare, vecchio di 3,7 miliardi di anni. La prima roccia proveniente da un altro mondo studiata sulla Terra.",
+    "new": "Campione lunare 10072: basalto vescicolare dei mari lunari, vecchio di 3,7 miliardi di anni. La prima roccia proveniente da un altro mondo studiata sulla Terra."
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "fact",
+    "en": "Designed to cache promising rock cores for a future Mars Sample Return mission. Already drilled and sealed 26+ samples by mid-2024. The Ingenuity helicopter — originally a 30-day technology demo — flew 72 times before damaging a rotor in January 2024. First powered, controlled flight on another world.",
+    "old": "Progettato per conservare in cache campioni di roccia promettenti per una futura missione Mars Sample Return. Ha già perforato e sigillato oltre 26 campioni entro la metà del 2024. L'elicottero Ingenuity — originariamente una dimostrazione tecnologica di 30 giorni — ha volato 72 volte prima di danneggiare un rotore nel gennaio 2024. Primo volo alimentato e controllato su un altro mondo.",
+    "new": "Progettato per mettere in deposito carote di roccia promettenti per una futura missione Mars Sample Return. Entro la metà del 2024 aveva già perforato e sigillato oltre 26 campioni. L'elicottero Ingenuity — originariamente una dimostrazione tecnologica di 30 giorni — ha volato 72 volte prima di danneggiare un rotore nel gennaio 2024. Primo volo motorizzato e controllato su un altro mondo."
+  },
+  {
+    "rel": "moon-sites/chandrayaan1.json",
+    "at": "capability",
+    "en": "First direct global confirmation of lunar surface water; transformed every subsequent lunar resource-utilisation roadmap.",
+    "old": "Prima conferma globale diretta dell'acqua sulla superficie lunare; ha trasformato ogni successiva mappa stradale di utilizzo delle risorse lunari.",
+    "new": "Prima conferma globale diretta dell'acqua sulla superficie lunare; ha trasformato ogni successiva tabella di marcia per lo sfruttamento delle risorse lunari."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "intro",
+    "en": "Apollo 16 landed in the Descartes Highlands on April 21, 1972 — the only Apollo mission to a highland (not mare) site, chosen to sample what was believed to be volcanic terrain. Young and Duke found NO volcanic rocks — only impact breccias and anorthosite — overturning the geological model and demonstrating the Moon's highlands are an ancient impact-shattered crust, not later volcanism. Three EVAs, 27 km of LRV traverse, 95 kg of samples returned.",
+    "old": "Apollo 16 allunò negli Altopiani di Descartes (Altopiano Descartes) il 21 aprile 1972: l'unica missione Apollo verso un sito di altopiano (e non di mare lunare), scelto per campionare quello che si credeva fosse un terreno vulcanico. Young e Duke NON trovarono rocce vulcaniche, ma solo brecce da impatto e anortosite, ribaltando il modello geologico e dimostrando che gli altopiani lunari sono una crosta antica frantumata dagli impatti, e non il prodotto di un vulcanismo successivo. Tre EVA, 27 km di percorso con il LRV, 95 kg di campioni riportati a Terra.",
+    "new": "Apollo 16 allunò negli Altopiani di Descartes il 21 aprile 1972: l'unica missione Apollo verso un sito di altopiano (e non di mare lunare), scelto per campionare quello che si credeva fosse un terreno vulcanico. Young e Duke NON trovarono rocce vulcaniche, ma solo brecce da impatto e anortosite, ribaltando il modello geologico e dimostrando che gli altopiani lunari sono una crosta antica frantumata dagli impatti, e non il prodotto di un vulcanismo successivo. Tre EVA, 27 km di percorso con il LRV, 95 kg di campioni riportati a Terra."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.2.images.1.caption",
+    "en": "Schmitt at Shorty Crater discovers the Orange Soil — volcanic glass spherules from a 3.5 Ga fire-fountain eruption.",
+    "old": "Schmitt al cratere Shorty scopre l'Orange Soil: sferule di vetro vulcanico generate da un'eruzione a fontana di fuoco di 3,5 Ga.",
+    "new": "Schmitt al cratere Shorty scopre il suolo arancione: sferule di vetro vulcanico generate da un'eruzione a fontana di fuoco di 3,5 Ga."
+  },
+  {
+    "rel": "site-stories/change5.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Chang'e 5 stack — four-element vehicle: lander/ascender (surface), orbiter (lunar rendezvous), reentry capsule (Earth return).",
+    "old": "Il complesso di Chang'e 5 — veicolo a quattro elementi: lander/veicolo di risalita (superficie), orbiter (rendez-vous lunare), capsula di rientro (ritorno sulla Terra).",
+    "new": "Il complesso di Chang'e 5 — veicolo a quattro elementi: lander/veicolo di risalita (superficie), orbiter (rendezvous lunare), capsula di rientro (ritorno sulla Terra)."
+  },
+  {
+    "rel": "site-stories/beresheet.json",
+    "at": "intro",
+    "en": "Beresheet — Hebrew for \"In the beginning\" — was Israel's first lunar landing attempt, built privately by SpaceIL on a $100M shoestring budget. It launched February 22, 2019, captured into lunar orbit April 4, then crashed in Mare Serenitatis on April 11, 2019 after the IMU and onboard computer reset during descent. The wreckage carried a tardigrade-laden time capsule. Israel became the seventh nation to reach the Moon, even if only kinetically.",
+    "old": "Beresheet — in ebraico «In principio» — fu il primo tentativo di allunaggio di Israele, costruito da privati da SpaceIL con un budget risicatissimo di 100 milioni di dollari. Lanciata il 22 febbraio 2019 e inserita in orbita lunare il 4 aprile, il 11 aprile 2019 la sonda si schiantò nel Mare Serenitatis, dopo che l'IMU e il computer di bordo si erano riavviati durante la discesa. Tra i rottami c'era una capsula del tempo piena di tardigradi. Israele divenne così la settima nazione a raggiungere la Luna, anche se solo in modo cinetico.",
+    "new": "Beresheet — in ebraico «In principio» — fu il primo tentativo di allunaggio di Israele, costruito privatamente da SpaceIL con un budget risicatissimo di 100 milioni di dollari. Lanciata il 22 febbraio 2019 e inserita in orbita lunare il 4 aprile, l'11 aprile 2019 la sonda si schiantò nel Mare Serenitatis, dopo che l'IMU e il computer di bordo si erano riavviati durante la discesa. Tra i rottami c'era una capsula del tempo piena di tardigradi. Israele divenne così la settima nazione a raggiungere la Luna, anche se solo in modo cinetico."
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "fact",
+    "en": "First spacecraft to return atmospheric data during Mars descent. Communications were lost at touchdown, but the descent telemetry — pressure, temperature, and a partial atmospheric composition profile — fed the engineering models that Viking would rely on three years later.",
+    "old": "Prima sonda spaziale a restituire dati atmosferici durante la discesa su Marte. Le comunicazioni furono perse al momento dell'atterraggio, ma la telemetria di discesa - pressione, temperatura e un profilo parziale della composizione atmosferica - alimentarono i modelli ingegneristici su cui Viking avrebbe fatto affidamento tre anni dopo.",
+    "new": "Prima sonda spaziale a restituire dati atmosferici durante la discesa su Marte. Le comunicazioni furono perse al momento dell'atterraggio, ma la telemetria di discesa — pressione, temperatura e un profilo parziale della composizione atmosferica — alimentò i modelli ingegneristici su cui Viking avrebbe fatto affidamento tre anni dopo."
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.1.subtitle",
+    "en": "Le Monnier Crater — landed January 15, 1973",
+    "old": "cratere Le Monnier — atterraggio il 15 gennaio 1973",
+    "new": "cratere Le Monnier — allunaggio il 15 gennaio 1973"
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "intro",
+    "en": "Luna 21 landed in Le Monnier Crater on January 15, 1973 — and deployed Lunokhod 2, the successor to the world's first lunar rover. Lunokhod 2 drove 42.1 km over 4 months — a record that stood until NASA's Opportunity surpassed it on Mars in July 2014, 41 years later. Returned 80,000 TV images and 86 panoramic sweeps before a regolith pile fell onto the radiator and overheated the rover.",
+    "old": "Luna 21 atterrò nel cratere Le Monnier il 15 gennaio 1973 — e dispiegò il Lunokhod 2, il successore del primo rover lunare al mondo. Il Lunokhod 2 percorse 42,1 km in 4 mesi — un record che resistette fino a quando l'Opportunity della NASA lo superò su Marte nel luglio 2014, 41 anni dopo. Trasmise 80.000 immagini televisive e 86 panoramiche a scansione, prima che un cumulo di regolite cadesse sul radiatore e facesse surriscaldare il rover.",
+    "new": "Luna 21 allunò nel cratere Le Monnier il 15 gennaio 1973 — e dispiegò il Lunokhod 2, il successore del primo rover lunare al mondo. Il Lunokhod 2 percorse 42,1 km in 4 mesi — un record che resistette fino a quando l'Opportunity della NASA lo superò su Marte nel luglio 2014, 41 anni dopo. Trasmise 80.000 immagini televisive e 86 panoramiche a scansione, prima che un cumulo di regolite cadesse sul radiatore e facesse surriscaldare il rover."
+  },
+  {
+    "rel": "site-stories/beagle2.json",
+    "at": "chapters.1.subtitle",
+    "en": "June 2, 2003 — Soyuz/Fregat from Baikonur, piggyback on Mars Express",
+    "old": "2 giugno 2003 — Soyuz/Fregat da Bajkonur, in condivisione con Mars Express",
+    "new": "2 giugno 2003 — Soyuz/Fregat da Bajkonur, trasportato a bordo di Mars Express"
+  },
+  {
+    "rel": "site-stories/apollo14.json",
+    "at": "intro",
+    "en": "Apollo 14 landed in the Fra Mauro highlands on February 5, 1971 — the original Apollo 13 target, completed after the 13 explosion. Shepard and Mitchell hauled the Modular Equipment Transporter (a rickshaw) up Cone Crater's flanks and brought back 43 kg of breccia — fragments of the giant impact that formed Mare Imbrium 3.9 billion years ago. Shepard famously hit two golf balls before liftoff.",
+    "old": "Apollo 14 atterrò sugli altopiani di Fra Mauro il 5 febbraio 1971: era l'obiettivo originale di Apollo 13, raggiunto dopo l'esplosione che colpì quella missione. Shepard e Mitchell trascinarono il Modular Equipment Transporter (un risciò) su per i fianchi del cratere Cone e riportarono a Terra 43 kg di brecce, frammenti del gigantesco impatto che 3,9 miliardi di anni fa formò il Mare Imbrium. Shepard, com'è noto, colpì due palline da golf prima del decollo.",
+    "new": "Apollo 14 allunò sugli altopiani di Fra Mauro il 5 febbraio 1971: era l'obiettivo originale di Apollo 13, raggiunto dopo l'esplosione che colpì quella missione. Shepard e Mitchell trascinarono il Modular Equipment Transporter (un risciò) su per i fianchi del cratere Cone e riportarono a Terra 43 kg di brecce, frammenti del gigantesco impatto che 3,9 miliardi di anni fa formò il Mare Imbrium. Shepard, com'è noto, colpì due palline da golf prima del decollo."
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "fact",
+    "en": "ExoMars 2016 Entry, Descent, Landing Demonstrator. A control software fault caused the inertial measurement unit to saturate, leading the lander to compute a negative altitude and triggering premature parachute and backshell jettison. The thrusters fired briefly as if already on the ground, then shut off. It free-fell ~3.7 km to the surface. The flight data informed the ExoMars 2028 EDL redesign.",
+    "old": "Dimostratore di Entrata, Discesa e Atterraggio di ExoMars 2016. Un errore nel software di controllo ha causato la saturazione dell'unità di misura inerziale, portando il lander a calcolare un'altitudine negativa e attivando l'espulsione prematura del paracadute e del guscio posteriore. I propulsori si sono accesi brevemente come se fossero già al suolo, poi si sono spenti. Ha fatto una caduta libera di ~3,7 km fino alla superficie. I dati di volo hanno informato la riprogettazione dell'EDL di ExoMars 2028.",
+    "new": "Dimostratore di ingresso atmosferico, discesa e atterraggio di ExoMars 2016. Un errore nel software di controllo ha causato la saturazione dell'unità di misura inerziale, portando il lander a calcolare un'altitudine negativa e attivando l'espulsione prematura del paracadute e del guscio posteriore. I propulsori si sono accesi brevemente come se fossero già al suolo, poi si sono spenti. Ha fatto una caduta libera di ~3,7 km fino alla superficie. I dati di volo hanno orientato la riprogettazione dell'EDL di ExoMars 2028."
+  },
+  {
+    "rel": "site-stories/change4.json",
+    "at": "chapters.1.subtitle",
+    "en": "Von Kármán Crater, far side — landed January 3, 2019",
+    "old": "cratere Von Kármán, lato nascosto — atterraggio il 3 gennaio 2019",
+    "new": "cratere Von Kármán, lato nascosto — allunaggio il 3 gennaio 2019"
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "fact",
+    "en": "China's first lunar landing — the first soft landing anywhere on the Moon in 37 years. The Chang'e 3 lander is still alive, making it the longest-surviving lunar lander ever. Yutu drove 114 m before its drive mechanism failed, but its instruments continued returning science data.",
+    "old": "Il primo atterraggio lunare della Cina: il primo atterraggio morbido sulla Luna in 37 anni. Il lander Chang'e 3 è ancora vivo, il che lo rende il lander lunare più longevo di sempre. Yutu ha percorso 114 metri prima che il suo meccanismo di guida si guastasse, ma i suoi strumenti continuavano a restituire dati scientifici.",
+    "new": "Il primo allunaggio della Cina: il primo atterraggio morbido sulla Luna in 37 anni. Il lander Chang'e 3 è ancora vivo, il che lo rende il lander lunare più longevo di sempre. Yutu ha percorso 114 metri prima che il suo meccanismo di trazione si guastasse, ma i suoi strumenti hanno continuato a restituire dati scientifici."
+  },
+  {
+    "rel": "moon-sites/change1.json",
+    "at": "fact",
+    "en": "China's first lunar mission. Built and operated as a deliberate precursor test for the Chang'e 3 lander — the orbital phase served as a flight-qualification rehearsal for the deep-space communications and orbital mechanics that the lander mission would depend on. Crashed into the Moon at end of life as a controlled impact-test.",
+    "old": "La prima missione lunare della Cina. Costruito e utilizzato come test precursore deliberato per il lander Chang'e 3: la fase orbitale è servita come prova di qualificazione al volo per le comunicazioni nello spazio profondo e la meccanica orbitale da cui sarebbe dipesa la missione del lander. Si è schiantato sulla Luna alla fine della sua vita come prova di impatto controllato.",
+    "new": "La prima missione lunare della Cina. Costruita e gestita come test precursore deliberato per il lander Chang'e 3: la fase orbitale è servita da prova di qualificazione in volo per le comunicazioni nello spazio profondo e la meccanica orbitale da cui sarebbe dipesa la missione del lander. A fine vita si è schiantata sulla Luna, come prova di impatto controllato."
+  },
+  {
+    "rel": "site-stories/luna24.json",
+    "at": "intro",
+    "en": "Luna 24 landed in Mare Crisium on August 18, 1976 — the last Soviet (and last robotic) lunar sample-return mission of the 20th century, and the last lunar lander of any kind until China's Chang'e 3 in 2013. Drilled 2 m into the regolith, returned 170.1 g of samples to Earth, including evidence of lunar water ice (re-confirmed decades later by SOFIA + LCROSS). The Soviet lunar program ended here.",
+    "old": "Luna 24 atterrò nel Mare Crisium il 18 agosto 1976: fu l'ultima missione sovietica (e l'ultima missione robotica) di recupero di campioni lunari del XX secolo, nonché l'ultimo lander lunare di qualsiasi tipo fino al Chang'e 3 cinese nel 2013. Perforò il regolite per 2 m e riportò sulla Terra 170,1 g di campioni, tra cui indizi di ghiaccio d'acqua lunare (riconfermati decenni dopo da SOFIA + LCROSS). Il programma lunare sovietico si concluse qui.",
+    "new": "Luna 24 allunò nel Mare Crisium il 18 agosto 1976: fu l'ultima missione sovietica (e l'ultima missione robotica) di recupero di campioni lunari del XX secolo, nonché l'ultimo lander lunare di qualsiasi tipo fino al Chang'e 3 cinese nel 2013. Perforò il regolite per 2 m e riportò sulla Terra 170,1 g di campioni, tra cui indizi di ghiaccio d'acqua lunare (riconfermati decenni dopo da SOFIA + LCROSS). Il programma lunare sovietico si concluse qui."
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "fact",
+    "en": "The first spacecraft to achieve a soft landing on the Moon and transmit photographs from the surface. Nine panoramic images ended the debate about whether landers would sink into deep lunar dust. A defining moment — the Moon could be reached.",
+    "old": "La prima navicella spaziale a realizzare un atterraggio morbido sulla Luna e a trasmettere fotografie dalla superficie. Nove immagini panoramiche hanno posto fine al dibattito sulla possibilità che i lander affondino nella profonda polvere lunare. Un momento decisivo: la Luna potrebbe essere raggiunta.",
+    "new": "La prima navicella spaziale a realizzare un allunaggio morbido e a trasmettere fotografie dalla superficie. Nove immagini panoramiche hanno posto fine al dibattito sulla possibilità che i lander affondino nella profonda polvere lunare. Un momento decisivo: la Luna era raggiungibile."
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "capability",
+    "en": "Re-established robotic landing capability after a decades-long pause — the foundation for the sample-return missions (Chang'e 5, 6) that informed Mars Sample Return architecture.",
+    "old": "Capacità di atterraggio robotico ristabilita dopo una pausa lunga decenni: la base per le missioni di ritorno dei campioni (Chang'e 5, 6) che hanno informato l'architettura Mars Sample Return.",
+    "new": "Capacità di atterraggio robotico ristabilita dopo una pausa di decenni: la base per le missioni di restituzione di campioni (Chang'e 5 e 6) che hanno influenzato l'architettura di Mars Sample Return."
+  },
+  {
+    "rel": "site-stories/luna21.json",
+    "at": "chapters.0.subtitle",
+    "en": "Lunokhod 2 — driving the lunar terra record (42 km)",
+    "old": "Lunokhod 2 — il record di percorrenza sulla terra lunare (42 km)",
+    "new": "Lunokhod 2 — il record di distanza percorsa sul suolo lunare (42 km)"
+  },
+  {
+    "rel": "site-stories/change6.json",
+    "at": "chapters.0.images.0.caption",
+    "en": "Chang'e 6 stack — added Queqiao-2 relay for far-side comms, otherwise inheriting Chang'e 5 architecture.",
+    "old": "Lo stack di Chang'e 6: aggiunto il relè Queqiao-2 per le comunicazioni con il lato nascosto, per il resto eredita l'architettura di Chang'e 5.",
+    "new": "Il complesso di Chang'e 6: aggiunto il satellite relè Queqiao-2 per le comunicazioni con il lato nascosto, per il resto eredita l'architettura di Chang'e 5."
+  },
+  {
+    "rel": "site-stories/change3.json",
+    "at": "chapters.1.subtitle",
+    "en": "December 1, 2013 — Long March 3B from Xichang",
+    "old": "1 dicembre 2013 — Long March 3B da Xichang",
+    "new": "1° dicembre 2013 — Long March 3B da Xichang"
+  },
+  {
+    "rel": "moon-sites/lunar-prospector.json",
+    "at": "capability",
+    "en": "Confirmed Clementine's polar-ice hypothesis; established neutron-spectroscopy as the primary tool for lunar volatiles.",
+    "old": "Confermata l'ipotesi del ghiaccio polare di Clementine; stabilì la spettroscopia neutronica come strumento principale per i volatili lunari.",
+    "new": "Ha confermato l'ipotesi del ghiaccio polare di Clementine e ha fatto della spettroscopia neutronica lo strumento principale per i volatili lunari."
+  },
+  {
+    "rel": "site-stories/apollo16.json",
+    "at": "chapters.1.subtitle",
+    "en": "Descartes Highlands — landed April 21, 1972",
+    "old": "Altopiani di Descartes (Altopiano Descartes): allunaggio il 21 aprile 1972",
+    "new": "Altopiani di Descartes — allunaggio il 21 aprile 1972"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "capability",
+    "en": "First nuclear-powered Mars rover; first to confirm a past habitable environment on Mars.",
+    "old": "Primo rover su Marte a propulsione nucleare; primo a confermare un passato ambiente abitabile su Marte.",
+    "new": "Primo rover su Marte alimentato a energia nucleare; primo a confermare che in passato Marte ebbe un ambiente abitabile."
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "capability",
+    "en": "Highland geological sampling — diversified the lunar sample inventory beyond mare basalts and reshaped models of planetary crust formation, methods reused for Mars.",
+    "old": "Campionamento geologico delle Highland: diversificato l'inventario dei campioni lunari oltre i basalti marini e modelli rimodellati della formazione della crosta planetaria, metodi riutilizzati per Marte.",
+    "new": "Campionamento geologico degli altopiani lunari: ha diversificato l'inventario dei campioni lunari oltre i basalti dei mari e ha rimodellato i modelli di formazione della crosta planetaria; metodi riutilizzati per Marte."
+  },
+  {
+    "rel": "mars-sites/opportunity.json",
+    "at": "fact",
+    "en": "Mars Exploration Rover B — the marathon rover. 5,111 sols of active operation (over 14 years), 45.16 km traversed (the most by any vehicle on another world until Curiosity broke the cumulative record). Confirmed past liquid water at Endurance, Victoria, and Endeavour craters. During the final 2018 dust storm, the rover's last telemetry showed depleted power — a moment poetically paraphrased as \"my battery is low and it's getting dark.\"",
+    "old": "Mars Exploration Rover B — il rover maratona. 5.111 sol di operazione attiva (oltre 14 anni), 45,16 km percorsi (il massimo raggiunto da qualsiasi veicolo su un altro mondo fino a quando Curiosity ha infranto il record cumulativo). Confermata la presenza di acqua liquida passata ai crateri Endurance, Victoria ed Endeavour. Durante la tempesta di polvere finale del 2018, l'ultima telemetria del rover ha mostrato un'energia esaurita — un momento poeticamente parafrasato come \"la mia batteria è scarica e si sta facendo buio.\"",
+    "new": "Mars Exploration Rover B — il rover maratoneta. 5.111 sol di attività (oltre 14 anni), 45,16 km percorsi (più di qualsiasi altro veicolo su un altro mondo, finché Curiosity non ha battuto il record cumulativo). Ha confermato la presenza passata di acqua liquida ai crateri Endurance, Victoria ed Endeavour. Durante la tempesta di polvere finale del 2018, l'ultima telemetria del rover ha mostrato la carica quasi esaurita — un momento parafrasato poeticamente come «la mia batteria è scarica e sta facendo buio»."
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "capability",
+    "en": "Proved low-cost, faster-cheaper Mars missions could deliver primary science. Inaugurated mobile robotic exploration of Mars.",
+    "old": "È stato dimostrato che missioni su Marte a basso costo, più veloci ed economiche potrebbero fornire scienza primaria. Inaugurata l'esplorazione robotica mobile di Marte.",
+    "new": "Ha dimostrato che missioni su Marte a basso costo, più rapide ed economiche, potevano fornire risultati scientifici di primo piano. Ha inaugurato l'esplorazione robotica mobile di Marte."
+  },
+  {
+    "rel": "site-stories/phoenix.json",
+    "at": "chapters.1.images.0.caption",
+    "en": "Phoenix landing site 360° panorama, sol 14 — workspace + footpad + thrust-cleared ice exposure visible at lower right.",
+    "old": "Panorama a 360° del sito di atterraggio di Phoenix, sol 14: in basso a destra sono visibili l'area di lavoro, il piede del lander e il ghiaccio messo a nudo dai retrorazzi.",
+    "new": "Panorama a 360° del sito di atterraggio di Phoenix, sol 14: in basso a destra sono visibili l'area di lavoro, il piede del lander e il ghiaccio messo a nudo dalla spinta dei retrorazzi."
+  },
+  {
+    "rel": "mars-sites/mars-express.json",
+    "at": "capability",
+    "en": "First European interplanetary mission; first orbital subsurface radar at Mars.",
+    "old": "Prima missione interplanetaria europea; primo radar orbitale sotterraneo su Marte.",
+    "new": "Prima missione interplanetaria europea; primo radar in orbita a sondare il sottosuolo di Marte."
+  },
+  {
+    "rel": "moon-sites/change5.json",
+    "at": "fact",
+    "en": "First lunar sample return in 44 years — ending a gap since Luna 24 (1976). Returned 1.731 kg from a geologically young region (2 billion years old vs 3–4 billion for Apollo samples). Rewrote our model of lunar volcanism: the Moon was geologically active much more recently than thought.",
+    "old": "Primo ritorno di un campione lunare in 44 anni, che pone fine a un divario da Luna 24 (1976). Restituiti 1.731 kg da una regione geologicamente giovane (2 miliardi di anni contro 3-4 miliardi per i campioni Apollo). Abbiamo riscritto il nostro modello di vulcanismo lunare: la Luna è stata geologicamente attiva molto più recentemente di quanto si pensasse.",
+    "new": "Primo ritorno di campioni lunari in 44 anni, dopo l'interruzione seguita a Luna 24 (1976). Riportati 1.731 kg da una regione geologicamente giovane (2 miliardi di anni contro 3-4 miliardi per i campioni Apollo). Ha riscritto il modello del vulcanismo lunare: la Luna è stata geologicamente attiva molto più di recente di quanto si pensasse."
+  },
+  {
+    "rel": "mars-sites/phoenix.json",
+    "at": "capability",
+    "en": "Validated water-ice-driven Mars exploration strategy; baselined polar-region surface operations.",
+    "old": "Strategia di esplorazione di Marte basata sul ghiaccio d'acqua convalidata; operazioni superficiali di base nella regione polare.",
+    "new": "Ha convalidato la strategia di esplorazione di Marte guidata dal ghiaccio d'acqua; ha fissato come riferimento le operazioni di superficie nelle regioni polari."
+  },
+  {
+    "rel": "mars-sites/mro.json",
+    "at": "fact",
+    "en": "MRO's HiRISE camera has a pixel scale of 25 cm — sharp enough to find Beagle 2's wreckage in 2015 and to image Curiosity and Perseverance from orbit. Acts as the primary high-bandwidth relay for surface assets.",
+    "old": "La fotocamera HiRISE di MRO ha una scala di pixel di 25 cm — abbastanza nitida da trovare i relitti di Beagle 2 nel 2015 e per immagini di Curiosity e Perseverance da orbita. Agisce come relè primario ad alta larghezza di banda per le risorse di superficie.",
+    "new": "La fotocamera HiRISE di MRO ha una scala di 25 cm per pixel — abbastanza nitida da trovare i resti di Beagle 2 nel 2015 e da riprendere Curiosity e Perseverance dall'orbita. Fa da relè primario ad alta larghezza di banda per i mezzi in superficie."
+  },
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "intro",
+    "en": "Apollo 17 landed in the Taurus-Littrow Valley on December 11, 1972 — the last crewed lunar mission, and the only one with a professional geologist (Harrison Schmitt) on the surface. Cernan and Schmitt spent 22h outside across three EVAs, drove 35 km, and returned 110 kg of samples including the famous Orange Soil (volcanic glass beads from a 3.5 Ga fire fountain). Cernan's footprint is the most recent human mark on another world.",
+    "old": "Apollo 17 allunò nella valle Taurus-Littrow l'11 dicembre 1972: fu l'ultima missione lunare con equipaggio e l'unica ad avere sulla superficie un geologo di professione (Harrison Schmitt). Cernan e Schmitt trascorsero 22 ore all'esterno nel corso di tre EVA, percorsero 35 km in rover e riportarono a Terra 110 kg di campioni, tra cui il celebre Orange Soil (sferule di vetro vulcanico generate da una fontana di fuoco di 3,5 Ga). L'impronta di Cernan è il più recente segno umano lasciato su un altro mondo.",
+    "new": "Apollo 17 allunò nella valle Taurus-Littrow l'11 dicembre 1972: fu l'ultima missione lunare con equipaggio e l'unica ad avere sulla superficie un geologo di professione (Harrison Schmitt). Cernan e Schmitt trascorsero 22 ore all'esterno nel corso di tre EVA, percorsero 35 km in rover e riportarono a Terra 110 kg di campioni, tra cui il celebre suolo arancione (sferule di vetro vulcanico generate da una fontana di fuoco di 3,5 Ga). L'impronta di Cernan è il più recente segno umano lasciato su un altro mondo."
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "fact",
+    "en": "The precision landing — Conrad touched down within ~163 m of the uncrewed Surveyor 3 probe (1967). They retrieved pieces of it for return to Earth, showing spacecraft survive years on the Moon undamaged by radiation or micrometeorites. A proof-of-concept for future rendezvous missions.",
+    "old": "L'allunaggio di precisione — Conrad toccò il suolo a circa 163 m dal probe automatico Surveyor 3 (1967). Recuperarono componenti di esso per il ritorno sulla Terra, dimostrando che i veicoli spaziali sopravvivono per anni sulla Luna senza danni causati dalle radiazioni o dai micrometeoriti. Una prova di fattibilità per future missioni di rendezvous.",
+    "new": "L'allunaggio di precisione — Conrad toccò il suolo a circa 163 m dalla sonda automatica Surveyor 3 (1967). Ne recuperarono alcuni pezzi da riportare sulla Terra, dimostrando che i veicoli spaziali sopravvivono per anni sulla Luna senza danni da radiazioni o micrometeoriti. Una prova di fattibilità per future missioni con rendezvous."
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.1.images.0.caption",
+    "en": "Molniya-M rocket prepared at Baikonur — Luna 9 launched in a coast-coast Soviet/American race to the first soft landing.",
+    "old": "Razzo Molniya-M preparato a Bajkonur: Luna 9 fu lanciata nella corsa sovietico-americana, da un capo all'altro del mondo, verso il primo atterraggio morbido.",
+    "new": "Razzo Molniya-M preparato a Bajkonur: Luna 9 fu lanciata nella corsa tra Unione Sovietica e Stati Uniti verso il primo atterraggio morbido."
+  },
+  {
+    "rel": "moon-sites/luna16.json",
+    "at": "capability",
+    "en": "Proved end-to-end robotic sample return is feasible — the capability that underwrites Mars Sample Return today.",
+    "old": "Ha provato che il ritorno di campioni robotico end-to-end è fattibile — la capacità che sottende il Mars Sample Return oggi.",
+    "new": "Ha dimostrato la fattibilità del ritorno robotico di campioni completo, dall'inizio alla fine — la capacità su cui si fonda oggi Mars Sample Return."
+  },
+  {
+    "rel": "moon-sites/smart-1.json",
+    "at": "fact",
+    "en": "ESA's first lunar mission. Used solar-electric (ion) propulsion to spiral out from a geostationary transfer orbit to lunar capture — a 14-month, fuel-efficient transit that pioneered low-thrust trajectories for ESA's later interplanetary missions. Deliberately impacted the lunar surface in 2006 for an observed end-of-life experiment.",
+    "old": "La prima missione lunare di ESA. Ha utilizzato la propulsione solare-elettrica (ionica) per uscire a spirale da un'orbita di trasferimento geostazionaria alla cattura lunare: un transito di 14 mesi a basso consumo di carburante che ha aperto la strada alle traiettorie a bassa spinta per le successive missioni interplanetarie di ESA. Ha avuto un impatto deliberato sulla superficie lunare nel 2006 per un esperimento di osservazione sulla fine della vita.",
+    "new": "Prima missione lunare dell'ESA. Ha usato la propulsione solare-elettrica (ionica) per uscire a spirale da un'orbita di trasferimento geostazionaria fino alla cattura lunare: un transito di 14 mesi, efficiente nei consumi di propellente, che ha aperto la strada alle traiettorie a bassa spinta per le successive missioni interplanetarie dell'ESA. Nel 2006 si è schiantata di proposito sulla superficie lunare, in un esperimento osservato di fine missione."
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "fact",
+    "en": "First privately-funded lunar landing attempt — Israeli non-profit SpaceIL, 585 kg lander. Reached lunar orbit but a gyroscope failure during descent led to engine shutdown and a crash at ~950 m/s (nearly 1 km/s). Carrying a 'lunar library' of human knowledge etched on nickel discs, plus a sample of tardigrades — extremophiles capable of cryptobiosis — that may or may not have survived the impact. Inspired Beresheet 2 (planned).",
+    "old": "Primo tentativo di allunaggio con finanziamento privato — lander da 585 kg della non-profit israeliana SpaceIL. Raggiunse l'orbita lunare ma un malfunzionamento del giroscopio durante la discesa portò allo spegnimento del motore e a un impatto a ~950 m/s (quasi 1 km/s). Trasportava una \"biblioteca lunare\" di conoscenze umane incisa su dischi di nichel, oltre a un campione di tardigradi — organismi estremofili capaci di criptobiosi — che potrebbero o meno aver sopravvissuto all'impatto. Ispirò Beresheet 2 (pianificato).",
+    "new": "Primo tentativo di allunaggio finanziato con fondi privati — lander da 585 kg dell'organizzazione israeliana senza scopo di lucro SpaceIL. Raggiunse l'orbita lunare, ma un guasto al giroscopio durante la discesa portò allo spegnimento del motore e a uno schianto a ~950 m/s (quasi 1 km/s). Trasportava una «biblioteca lunare» del sapere umano incisa su dischi di nichel, oltre a un campione di tardigradi — estremofili capaci di criptobiosi — che potrebbero essere sopravvissuti all'impatto, o no. Ha ispirato Beresheet 2 (in programma)."
+  },
+  {
+    "rel": "mars-sites/viking1-lander.json",
+    "at": "fact",
+    "en": "First fully successful Mars surface mission. Viking 1 operated for over six years on the surface — the longest-duration surface mission until Opportunity (a rover) broke the record in 2010. It returned the first colour images from the Martian surface, conducted the first life-detection experiments (results famously inconclusive), and characterised the regolith and weather.",
+    "old": "Prima missione di superficie su Marte completamente riuscita. Viking 1 operò sulla superficie per oltre sei anni — la missione di superficie a lunga durata più lunga fino a quando Opportunity (un rover) stabilì il nuovo record nel 2010. Restituì le prime immagini a colori dalla superficie marziana, condusse i primi esperimenti di rilevamento della vita (risultati notoriamente inconclusivi) e caratterizzò il regolite e le condizioni meteorologiche.",
+    "new": "Prima missione di superficie su Marte pienamente riuscita. Viking 1 operò sulla superficie per oltre sei anni: la missione di superficie più longeva fino a quando Opportunity (un rover) non stabilì un nuovo record nel 2010. Restituì le prime immagini a colori della superficie marziana, condusse i primi esperimenti di rilevamento della vita (con risultati notoriamente inconcludenti) e caratterizzò il regolite e il meteo."
+  },
+  {
+    "rel": "moon-sites/change2.json",
+    "at": "fact",
+    "en": "Began as a higher-resolution remap of the Moon following Chang'e 1, then repurposed for an extended deep-space mission. After completing lunar mapping in 2011, Chang'e 2 departed for Sun-Earth L2 — China's first deep-space mission — and then on to a 2012 flyby of asteroid 4179 Toutatis. Still tracked in heliocentric orbit.",
+    "old": "Ha iniziato come rimappatura ad alta risoluzione della Luna in seguito a Chang'e 1, poi è stato riproposto per una missione estesa nello spazio profondo. Dopo aver completato la mappatura lunare nel 2011, Chang'e 2 si è diretto verso il punto L2 Sole-Terra — la prima missione cinese nello spazio profondo — e successivamente ha effettuato un sorvolo dell'asteroide 4179 Toutatis nel 2012. Ancora tracciato in orbita eliocentrica.",
+    "new": "È nata come rimappatura della Luna a risoluzione più alta dopo Chang'e 1, per essere poi riassegnata a una missione estesa nello spazio profondo. Completata la mappatura lunare nel 2011, Chang'e 2 è partita verso il punto L2 Sole-Terra — la prima missione cinese nello spazio profondo — e poi, nel 2012, ha effettuato un sorvolo dell'asteroide 4179 Toutatis. È ancora tracciata in orbita eliocentrica."
+  },
+  {
+    "rel": "mars-sites/mro.json",
+    "at": "capability",
+    "en": "Highest-resolution orbital imaging of any planet; the eyes-in-the-sky for every recent Mars surface mission.",
+    "old": "Imaging orbitale a massima risoluzione di qualsiasi pianeta; gli occhi nel cielo per ogni recente missione di superficie marziana.",
+    "new": "Immagini orbitali alla massima risoluzione di qualsiasi pianeta; gli occhi nel cielo di ogni recente missione sulla superficie di Marte."
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "capability",
+    "en": "Demonstrated robotic sample return — the architecture Mars Sample Return is now attempting at interplanetary scale.",
+    "old": "Dimostrazione del ritorno robotico del campione: l'architettura Mars Sample Return sta ora tentando di raggiungere una scala interplanetaria.",
+    "new": "Ha dimostrato il ritorno robotico di campioni — l'architettura che Mars Sample Return sta ora tentando su scala interplanetaria."
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "fact",
+    "en": "Mars Exploration Rover A. Designed for a 90-sol primary mission; lasted 2,208 sols. Discovered evidence that Gusev Crater had once held volcanic-water interaction. Got stuck in soft soil at \"Troy\" in 2009; the team kept Spirit running as a stationary platform until the last contact in March 2010.",
+    "old": "Mars Exploration Rover A. Progettato per una missione primaria di 90 sol; ha operato per 2.208 sol. Ha scoperto prove che il cratere Gusev aveva una volta ospitato un'interazione vulcanica con acqua. Si è bloccato nel terreno soffice a \"Troy\" nel 2009; il team ha mantenuto Spirit in funzione come piattaforma stazionaria fino all'ultimo contatto nel marzo 2010.",
+    "new": "Mars Exploration Rover A. Progettato per una missione primaria di 90 sol, ne è durato 2.208. Ha scoperto prove che il cratere Gusev aveva conosciuto in passato un'interazione tra vulcanismo e acqua. Nel 2009 è rimasto bloccato nel terreno soffice a «Troy»; il team ha tenuto Spirit in funzione come piattaforma stazionaria fino all'ultimo contatto, nel marzo 2010."
+  },
+  {
+    "rel": "moon-sites/lunar-prospector.json",
+    "at": "fact",
+    "en": "Direct neutron-spectrometer detection of hydrogen at both lunar poles — strong evidence for water ice in permanently-shadowed crater floors. Deliberately impacted into Shoemaker crater at end of mission, hoping the impact ejecta would confirm water; Earth-based observers detected nothing definitive (a follow-up only delivered by LCROSS in 2009).",
+    "old": "Rilevamento diretto dello spettrometro di neutroni dell'idrogeno su entrambi i poli lunari: prova evidente della presenza di ghiaccio d'acqua nei fondi dei crateri permanentemente in ombra. Ha avuto un impatto deliberato sul cratere Shoemaker alla fine della missione, sperando che i materiali espulsi dall'impatto confermassero la presenza di acqua; Gli osservatori dalla Terra non hanno rilevato nulla di definitivo (un follow-up fornito solo da LCROSS nel 2009).",
+    "new": "Rilevamento diretto di idrogeno ai due poli lunari con lo spettrometro di neutroni: prova solida della presenza di ghiaccio d'acqua sui fondi dei crateri in ombra permanente. A fine missione la sonda è stata fatta schiantare di proposito nel cratere Shoemaker, nella speranza che il materiale espulso dall'impatto confermasse la presenza d'acqua; gli osservatori da Terra non rilevarono nulla di definitivo (una verifica successiva arrivò solo con LCROSS nel 2009)."
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "fact",
+    "en": "The last time humans visited the Moon. Gene Cernan was the last person to walk on its surface. Before climbing the ladder, he said: 'We leave as we came, and God willing, we shall return.' Harrison Schmitt, the only trained geologist on the Moon, collected samples that reshaped our understanding of lunar geology.",
+    "old": "L'ultima volta che gli esseri umani hanno visitato la Luna. Gene Cernan è stata l'ultima persona a camminare sulla sua superficie. Prima di salire la scala, disse: \"Partiremo come siamo venuti e, a Dio piacendo, torneremo\". Harrison Schmitt, l'unico geologo esperto sulla Luna, raccolse campioni che rimodellarono la nostra comprensione della geologia lunare.",
+    "new": "L'ultima volta che esseri umani hanno visitato la Luna. Gene Cernan è stato l'ultimo uomo a camminare sulla sua superficie. Prima di salire la scaletta disse: «Ce ne andiamo come siamo venuti e, a Dio piacendo, torneremo». Harrison Schmitt, l'unico geologo di formazione sulla Luna, raccolse campioni che hanno cambiato la nostra comprensione della geologia lunare."
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "capability",
+    "en": "First precision landing at a designated point — the prerequisite for any sample-return rendezvous architecture, including Mars.",
+    "old": "Primo allunaggio di precisione in un punto designato — prerequisito indispensabile per qualsiasi architettura di ritorno di campioni, incluso Marte.",
+    "new": "Primo allunaggio di precisione in un punto prestabilito — presupposto di qualsiasi architettura di ritorno di campioni basata sul rendezvous, anche per Marte."
+  },
+  {
+    "rel": "mars-sites/tianwen1-orbiter.json",
+    "at": "fact",
+    "en": "Orbital component of China's first Mars mission. Acted as relay for the Zhurong rover; conducts global imaging, subsurface radar, and magnetic-field mapping. Continues to operate after Zhurong's 2022 communications loss.",
+    "old": "Componente orbitale della prima missione cinese su Marte. Fungeva da staffetta per il rover Zhurong; conduce imaging globale, radar del sottosuolo e mappatura del campo magnetico. Continua a funzionare dopo la perdita delle comunicazioni di Zhurong nel 2022.",
+    "new": "Componente orbitale della prima missione cinese su Marte. Ha fatto da relè per il rover Zhurong; realizza immagini globali, radar del sottosuolo e mappatura del campo magnetico. Continua a funzionare dopo la perdita delle comunicazioni con Zhurong nel 2022."
+  }
+]

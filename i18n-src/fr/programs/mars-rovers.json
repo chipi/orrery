@@ -80,5 +80,14 @@
       "type": "prose",
       "md": "La leçon plus profonde est que les grandes capacités se construisent par étapes, pas par bonds. La sophistication de la collecte d'échantillons de Perseverance était inimaginable à l'époque de Sojourner ; elle n'est devenue possible que parce que chaque rover a mérité le suivant. Les fins ambitieuses sont généralement atteintes non par une seule mission décisive mais par une lignée patiente, chaque membre prouvant suffisamment pour justifier celui qui suit — le progrès comme un relais, pas un sprint."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — le monde des rovers",
+    "/programs/viking": "Viking — les atterrisseurs d'avant les roues",
+    "/mars?site=mars-pathfinder": "Sojourner — Ares Vallis",
+    "/mars?site=spirit": "Spirit — cratère Goussev",
+    "/mars?site=opportunity": "Opportunity — Meridiani Planum",
+    "/mars?site=curiosity": "Curiosity — cratère Gale",
+    "/mars?site=perseverance": "Perseverance — cratère Jezero"
+  }
 }

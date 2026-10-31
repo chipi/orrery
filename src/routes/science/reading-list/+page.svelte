@@ -212,11 +212,8 @@
 </script>
 
 <svelte:head>
-  <title>{m.reading_list_title()} · Orrery Science</title>
-  <meta
-    name="description"
-    content="Curated beginner-to-intermediate space books + blogs to accompany the Orrery science encyclopedia."
-  />
+  <title>{m.reading_list_title()} · {m.story_chapter_science()} · Orrery</title>
+  <meta name="description" content={m.reading_list_meta_description()} />
 </svelte:head>
 
 <article class="resources">

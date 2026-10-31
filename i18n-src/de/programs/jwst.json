@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "Die tiefere Lehre betrifft das Engineering ohne zweite Chance. JWST ließ sich weder so testen, wie es fliegen würde, noch nach dem Start reparieren – und dennoch gelang es, weil jede denkbare Fehlerquelle über Jahre hinweg am Boden aufgespürt und im Voraus herausgeplant wurde. Es ist das ultimative Plädoyer für Gründlichkeit statt Iteration: Wenn sich etwas später wirklich nicht mehr beheben lässt, bleibt nur, gleich beim ersten Mal richtig zu liegen – und Webb hat bewiesen, dass das möglich ist, selbst bei atemberaubender Komplexität."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=jwst": "Flotte — das James-Webb-Weltraumteleskop",
+    "/programs/great-observatories": "Die Great Observatories — die Linie, die JWST fortsetzt",
+    "/programs/ariane": "Ariane — die Rakete, die es startete",
+    "/earth?site=jwst": "James-Webb-Weltraumteleskop"
+  }
 }

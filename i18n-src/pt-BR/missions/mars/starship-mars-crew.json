@@ -40,7 +40,7 @@
     {
       "met": 700,
       "label": "PROPÓSITO DE RETORNO COMPLETO",
-      "note": "A planta ISRU produziu metano + LOX suficiente para propulsor de viagem de retorno.",
+      "note": "A planta ISRU produziu metano + LOX suficiente para propelente de viagem de retorno.",
       "type": "info"
     },
     {
@@ -55,5 +55,6 @@
       "note": "Entrada atmosférica. Missão concluída.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "estágio superior Starship"
 }

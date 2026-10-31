@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "La lección más profunda es que el alcance conlleva responsabilidad. Cassini terminó volando hacia Saturno para proteger las lunas oceánicas que había descubierto — un reconocimiento de que el poder de visitar un mundo posiblemente vivo viene con el deber de no envenenarlo. La capacidad sin esa restricción no es exploración; es intrusión."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Saturno en el explorador 3D",
+    "/programs/voyager": "Voyager: los sobrevuelos que llegaron primero"
+  }
 }

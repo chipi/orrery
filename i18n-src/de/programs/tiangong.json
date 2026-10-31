@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "Die tiefere Lehre betrifft das Tempo. Tiangong zeigt: In der Raumfahrt ist das Programm, das am schnellsten wirkt, selten das stärkste. China kam bei jedem Meilenstein zu spät und kümmerte sich um keinen davon; stattdessen optimierte es auf eine Station, die fertig, zuverlässig und dauerhaft sein würde. Wenn das Ziel lautet, auch 2035 noch zu fliegen, ist Geduld keine Vorsicht – sie ist die Strategie."
     }
-  ]
+  ],
+  "link_labels": {
+    "/tiangong": "Tiangong — die Station in 3D",
+    "/fleet?focus=tiangong": "Flotte — Shenzhou, Tianzhou & die Long-March-Familie",
+    "/programs/iss": "ISS — die Station, von der Tiangong ausgeschlossen war",
+    "/earth?site=tiangong": "Tiangong über uns"
+  }
 }

@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Geduld verwandelt Hinweise in Wissen. Der Ozean des Europa war in keinem einzelnen Vorbeiflug zu erkennen; er trat erst aus dem angesammelten Gewicht vieler Vorbeiflüge hervor, die über Jahre im Orbit zusammengetragen wurden. Die wichtigsten Entdeckungen werden oft nicht gesehen, sondern gebaut – Messung für Messung zusammengefügt, bis eine Hypothese das Einzige ist, was zu den Daten passt."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Jupiter im 3D-Explorer",
+    "/programs/cassini": "Cassini — dieselbe Idee, am Saturn"
+  }
 }

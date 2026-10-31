@@ -17,7 +17,7 @@
     {
       "met": 0.13,
       "label": "TLI",
-      "note": "Trans-lunaire injectie verbranding — S-IVB-trap stuwt CSM/LM naar de Maan.",
+      "note": "Trans-lunaire injectie-ontsteking — S-IVB-trap stuwt CSM/LM naar de Maan.",
       "type": "nominal"
     },
     {
@@ -41,7 +41,7 @@
     {
       "met": 5.18,
       "label": "ASCENSIE",
-      "note": "Eagle heft af na 21u 36m op het oppervlak.",
+      "note": "Eagle stijgt op na 21u 36m op het oppervlak.",
       "type": "nominal"
     },
     {
@@ -50,5 +50,6 @@
       "note": "Columbia brengt bemanning terug naar de Stille Oceaan 1969-07-24.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Saturn V S-IVB (derde trap)"
 }

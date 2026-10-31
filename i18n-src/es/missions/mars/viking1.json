@@ -5,7 +5,7 @@
   "delta_v": "~4,5 km/s",
   "type": "ORBITADOR · MÓDULO DE DESCENSO · COMPLETADA",
   "first": "Primer aterrizaje en Marte completamente exitoso; primera ciencia de superficie de larga duración",
-  "description": "La misión que nos ofreció nuestro primer análisis sostenido de la superficie marciana. El módulo de descenso de Viking 1 operó durante 6 años 4 meses en Chryse Planitia —ejecutando experimentos biológicos diseñados para detectar vida (resultados ambiguos; un experimento produjo una señal positiva todavía debatida décadas después), midiendo condiciones meteorológicas, retornando imágenes panorámicas y analizando la composición del suelo. Los orbitadores de Viking en conjunto cartografiaron el 97% de Marte con una resolución de ~300 m y ayudaron a prospeccionar lugares de aterrizaje para misiones aún décadas en el futuro.",
+  "description": "La misión que nos dio la primera mirada prolongada a la superficie marciana. El módulo de aterrizaje de Viking 1 funcionó durante 6 años y 4 meses en Chryse Planitia — hizo experimentos biológicos para detectar vida (resultados ambiguos; uno produjo una señal positiva aún debatida décadas después), midió el tiempo atmosférico, envió imágenes panorámicas y analizó la composición del suelo. Los orbitadores Viking, en conjunto, cartografiaron el 97 % de Marte con una resolución de ~300 m y ayudaron a explorar lugares de aterrizaje para misiones que aún tardarían décadas.",
   "events": [
     {
       "met": 0,
@@ -40,8 +40,9 @@
     {
       "met": 335.1,
       "label": "PRIMER PANORAMA",
-      "note": "Primeras imágenes de alta resolución de la superficie retornadas.",
+      "note": "Se reciben las primeras imágenes de alta resolución de la superficie.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Centaur D-1T"
 }

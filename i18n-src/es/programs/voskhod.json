@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "La segunda lección es para qué sirve una solución provisional, y para qué no. Voskhod hizo exactamente una cosa bien —compró tiempo y dos primeros puestos más mientras se construía la verdadera nave espacial de próxima generación. Eso es un uso legítimo del hardware improvisado. El error habría sido seguir volándolo, persiguiendo titulares más allá del punto en que el margen se acabó —y en honor a Koroliov, él leyó correctamente la casi catástrofe y se detuvo. Saber cuándo una solución provisional ha cumplido su trabajo es tan importante como construir una."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Tierra: órbitas y bases de lanzamiento",
+    "/science/mission-phases/edl": "Entrada, descenso y aterrizaje"
+  }
 }

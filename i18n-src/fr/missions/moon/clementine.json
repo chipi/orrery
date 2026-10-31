@@ -5,7 +5,7 @@
   "delta_v": "~3,5 km/s",
   "type": "ORBITEUR · VOLÉ",
   "first": "Mission lunaire conjointe NASA-DoD ; premiers indices de glace d'eau aux pôles lunaires",
-  "description": "Conçu principalement comme un démonstrateur technologique de l'Initiative de Défense Stratégique, Clementine a passé 10 semaines en orbite lunaire et a renvoyé la première carte topographique et multispectrale mondiale systématique de la Lune. Les mesures radar bistatiques au pôle sud lunaire ont produit les premiers indices alléchants de glace d'eau – confirmés des années plus tard par Lunar Prospector et Chandrayaan-1. La mission de suivi visant à survoler l'astéroïde Géographos a échoué lorsqu'un dysfonctionnement du propulseur a épuisé le propulseur du vaisseau spatial.",
+  "description": "Conçu principalement comme un démonstrateur technologique de l'Initiative de Défense Stratégique, Clementine a passé 10 semaines en orbite lunaire et a renvoyé la première carte topographique et multispectrale mondiale systématique de la Lune. Les mesures radar bistatiques au pôle sud lunaire ont produit les premiers indices alléchants de glace d'eau – confirmés des années plus tard par Lunar Prospector et Chandrayaan-1. La mission de suivi visant à survoler l'astéroïde Géographos a échoué lorsqu'un dysfonctionnement du propulseur a épuisé le propergol du vaisseau spatial.",
   "events": [
     {
       "met": 0,
@@ -16,7 +16,7 @@
     {
       "met": 25,
       "label": "Moi",
-      "note": "Insertion de l'orbite lunaire 1994-02-19.",
+      "note": "Insertion en orbite lunaire 1994-02-19.",
       "type": "nominal"
     },
     {
@@ -34,8 +34,9 @@
     {
       "met": 100,
       "label": "PANNE DU PROPULSEUR",
-      "note": "Un dysfonctionnement du propulseur embarqué épuise le propulseur ; rencontre avec un astéroïde annulée.",
+      "note": "Un dysfonctionnement du propulseur embarqué épuise le propergol ; rencontre avec un astéroïde annulée.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "étage supérieur Star-37 du Titan II"
 }

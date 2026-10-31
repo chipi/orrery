@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "La leçon plus profonde est que l'ambition et le budget sont séparables. La JAXA fait de la science de pointe avec une fraction du financement d'une superpuissance en choisissant des objectifs étroits et difficiles et en volant sobre — preuve que le leadership dans l'exploration est accessible à quiconque est prêt à se spécialiser profondément et à bien improviser, plutôt qu'uniquement à ceux qui peuvent s'offrir des vaisseaux amiraux."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Lune — le site d'atterrissage de SLIM",
+    "/explore": "Explorer — Vénus et les planètes intérieures",
+    "/programs/hayabusa": "Hayabusa — la campagne de retour d'échantillons d'astéroïdes de la JAXA"
+  }
 }

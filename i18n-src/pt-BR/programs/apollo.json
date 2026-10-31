@@ -96,5 +96,14 @@
       "type": "prose",
       "md": "E a nota humana que vale manter: eles fizeram isso em oito anos, nunca tendo feito antes, com computadores de bordo mais fracos que uma campainha moderna. Apollo é um argumento permanente de que uma missão clara, as pessoas certas e um prazo honesto ainda podem superar as probabilidades — uma coisa útil de se lembrar na próxima vez que um objetivo parecer impossível."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "A Lua — mapa da superfície e locais de pouso das Apollo",
+    "/science/transfers/free-return": "Trajetória de retorno livre",
+    "/science/mission-phases/trans-x-injection": "Injeção translunar",
+    "/science/mission-phases/edl": "Entrada, descida e pouso",
+    "/science/propulsion/tsiolkovsky": "A equação do foguete",
+    "/moon?site=apollo15": "Apollo 15 — Hadley–Apennine",
+    "/moon?site=apollo16": "Apollo 16 — Terras Altas de Descartes"
+  }
 }

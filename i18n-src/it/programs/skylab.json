@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La seconda lezione è che una stazione è sicura solo quanto la sua linea di rifornimento. Skylab fu condannato nel momento in cui il divario tra il suo ultimo equipaggio e la sua successiva possibile visita si allungò oltre la vita della sua orbita. Hardware impressionante nello spazio è inutile se non puoi raggiungerlo in modo affidabile; il lavoro continuo, noioso e costoso di mantenere un sistema di trasporto funzionante non è una nota a piè di pagina di un programma di stazione ma la sua precondizione. Skylab cadde perché quella linea fu lasciata decadere."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — orbite e siti di lancio",
+    "/fleet?focus=skylab": "Flotta — il laboratorio orbitale Skylab"
+  }
 }

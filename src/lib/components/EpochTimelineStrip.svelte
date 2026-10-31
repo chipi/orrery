@@ -15,6 +15,7 @@
   import type { FleetEpoch } from '$types/fleet';
   import { EPOCH_BANDS, AXIS_MIN, AXIS_MAX } from '$lib/epoch-bands';
   import * as m from '$lib/paraglide/messages';
+  import { epochLabel } from '$lib/epoch-label';
 
   const AXIS_RANGE = AXIS_MAX - AXIS_MIN;
 
@@ -67,20 +68,28 @@
           style:--band-color={ep.color}
           onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
           onkeydown={(e) => handleKey(e, ep.id)}
-          title="{ep.label} ({ep.yearStart}–{ep.id === 'mars-era'
+          title="{epochLabel(ep.id)} ({ep.yearStart}–{ep.id === 'mars-era'
             ? '∞'
             : ep.yearEnd}) · {countByEpoch.get(ep.id) ?? 0}"
-          aria-label="{ep.label} ({ep.yearStart}–{ep.yearEnd}, {countByEpoch.get(ep.id) ??
-            0} entries)"
+          aria-label={m.epoch_band_aria({
+            label: epochLabel(ep.id),
+            start: ep.yearStart,
+            end: ep.yearEnd,
+            count: countByEpoch.get(ep.id) ?? 0,
+          })}
         >
-          <span class="band-label">{ep.label}</span>
+          <span class="band-label">{epochLabel(ep.id)}</span>
           <span class="band-meta"
             >{ep.yearStart}–{ep.id === 'mars-era' ? '∞' : ep.yearEnd} · {countByEpoch.get(ep.id) ??
               0}</span
           >
         </button>
       {/each}
-      <div class="today" style:left="{todayPct}%" title="Today ({todayYear})"></div>
+      <div
+        class="today"
+        style:left="{todayPct}%"
+        title={m.epoch_today_title({ year: todayYear })}
+      ></div>
     </div>
     <div class="axis-ticks">
       <span class="tick" style:left="0%">1957</span>
@@ -114,7 +123,7 @@
           aria-checked={selected === ep.id}
           onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
         >
-          {ep.label}
+          {epochLabel(ep.id)}
           <span class="chip-count">{countByEpoch.get(ep.id) ?? 0}</span>
         </button>
       </li>

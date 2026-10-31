@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "description",
+    "find": "船外活動ユニット（EMU）— ",
+    "replace": "船外活動ユニット — "
+  },
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "description",
+    "find": "一次生命維持装置（PLSS）のバックパック",
+    "replace": "一次生命維持装置のバックパック"
+  }
+]

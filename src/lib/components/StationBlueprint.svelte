@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import * as m from '$lib/paraglide/messages';
   import {
     projectModules,
     drawBlueprint,
@@ -22,7 +23,7 @@
     view,
     selectedId,
     onModuleClick,
-    ariaLabel = 'Station blueprint',
+    ariaLabel = m.station_blueprint_default(),
   }: Props = $props();
 
   let canvas: HTMLCanvasElement | undefined = $state();

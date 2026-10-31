@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "La leçon plus profonde est qu'un succès dès la première tentative à Mars relève autant de l'humilité que de l'ambition. Le cimetière des missions martiennes échouées est rempli de programmes bien financés qui ont visé trop loin ; l'ISRO a visé exactement aussi loin qu'elle pouvait gérer de manière fiable, l'a prouvé, et a laissé la mission dépasser ses propres objectifs modestes. Viser avec précision, plutôt que viser haut, est parfois la manière dont les premières les plus difficiles sont remportées."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — la destination",
+    "/fleet?focus=mangalyaan": "Flotte — la Mars Orbiter Mission",
+    "/programs/chandrayaan": "Chandrayaan — le programme lunaire de l'Inde",
+    "/mars?site=mangalyaan": "Mangalyaan en orbite martienne"
+  }
 }

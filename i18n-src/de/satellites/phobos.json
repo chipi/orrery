@@ -2,7 +2,7 @@
   "description": "Der größere und innere der beiden Marsmonde — ein unregelmäßig kartoffelförmiger Körper von gerade einmal 22 km an seiner breitesten Stelle. Phobos umkreist den Mars alle 7 Stunden 39 Minuten, schneller als der Mars selbst rotiert, sodass er von der Marsoberfläche aus gesehen zweimal pro Marstag im Westen aufgeht und im Osten untergeht. Seine Umlaufbahn zerfällt um ~2 cm pro Jahr; in 30–50 Millionen Jahren werden Gezeitenkräfte ihn entweder in einen vorübergehenden Ring zerreißen oder auf den Planeten stürzen lassen. Japans MMX-Mission (Start ~2026) wird Oberflächenproben zurückbringen.",
   "surface_composition": "Stark verkraterter Körper ähnlich einem kohligen Chondriten, möglicherweise ein eingefangener Asteroid oder ein Akkretionsrest; die Oberfläche wird vom 9 km großen Stickney-Krater und parallelen Rillen dominiert, die wahrscheinlich mit Auswurfmaterial dieses Einschlags zusammenhängen.",
   "mission_visits": [
-    "Viking 1 orbiter — USA, 1977 (erste hochauflösende Nahaufnahmen)",
+    "Orbiter von Viking 1 — USA, 1977 (erste Nahaufnahmen)",
     "Mars Global Surveyor — USA, 1998 (hochauflösende Kartografie)",
     "Mars Express — ESA, 2010 (Vorbeiflug in Höhen unter 100 m)"
   ],
@@ -10,7 +10,7 @@
     "phobos-wiki": "Wikipedia — Phobos",
     "phobos-nasa": "NASA Science — Phobos im Überblick",
     "phobos-mmx": "JAXA MMX — Probenrückführungsmission zu Phobos",
-    "phobos-hirise": "HiRISE — Phobos mit 0,25 m/px aus dem Marsorbit"
+    "phobos-hirise": "HiRISE — Phobos mit 0,25 m/px aus der Marsumlaufbahn"
   },
   "science_sections": [
     {
@@ -21,7 +21,7 @@
     {
       "tab": "orbits",
       "section": "apsides",
-      "why": "Phobos' Perihelion-Aphelion-Schwankung ist gering, doch er umkreist den Mars dreimal pro Marstag — der Mond mit den meisten Umläufen pro Elterntag im System."
+      "why": "Die Schwankung zwischen Perihel und Aphel ist bei Phobos winzig, doch er umkreist den Mars dreimal pro Marstag — kein anderer Mond im System legt pro Tag seines Mutterkörpers mehr Umläufe zurück."
     }
   ]
 }

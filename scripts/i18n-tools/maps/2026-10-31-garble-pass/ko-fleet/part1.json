@@ -1,0 +1,759 @@
+[
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "다른 세계를 누빈 최초의 바퀴 달린 탐사차",
+    "note": "Says it flew; should be wheeled vehicle roaming"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Vostok 우주선은 인간을 우주로 데려가 무사히 귀환시킨 최초의 기계였으며, 그 설계는 작동하는 최소한만 갖춘다는 것이 무엇인지 보여주는 본보기였다. 대기권 진입은 귀환에서 가장 어려운 부분이므로, Vostok는 어느 각도에서든 견뎌내는 단 하나의 형태인 구체를 택했다. 덕분에 자동 시스템은 우주선을 정밀하게 겨냥할 필요가 전혀 없었고, 우주선은 마구 회전하며 진입하더라도 열 차폐막 쪽이 무거워 아래를 향한 채 내려올 수 있었다. 문제는 구체가 사람이 견디기에는 너무 거칠게 착륙한다는 점이었고, 그래서 우주비행사는 지면 가까이에서 사출되어 따로 낙하산으로 내려왔다. 이 사실은 기록을 지키기 위해 수년간 감춰졌다. 조잡하고 은밀했지만 완벽하게 효과적이었던 이 우주선은 여섯 명을 궤도로 보내고 한 명도 잃지 않았으며, 캡슐에 서비스 모듈을 붙인 그 구성은 오늘날에도 비행하는 Soyuz의 원형이 되었다.",
+    "note": "Entry binding missing; clumsy phrasing"
+  },
+  {
+    "rel": "fleet/space-suit/feitian.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "중국의 EVA 우주복 — Orlan에서 파생되어 2008년 Shenzhou 7에서 처음 비행",
+    "note": "Added word Soviet not in English"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "유럽의 민간용 GNSS — ~30개 위성, 1m 이하 정밀 측위",
+    "note": "Odd positioning term"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "최초의 장기 체류형 다중 포트 소련 우주 정거장",
+    "note": "Long-distance used for long-duration"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "다른 세계를 누빈 최초의 바퀴 달린 탐사차",
+    "note": "Says it flew; should be wheeled vehicle roaming"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "역사상 가장 긴 지구 관측 연속 기록 — Landsat 1은 1972년 발사되었고(원래 이름은 ERTS-1) Landsat 9(2021)까지 이어지고 있다. 현재 운용 중인 Landsat 8(2013)과 Landsat 9(2021) 한 쌍은 고도 705 km 태양동기궤도, 궤도 경사각 98.2°에 있다. 해상도는 30 m 다중분광이다. NASA가 제작하고 발사하며, USGS가 운영하고 데이터를 배포한다. 2008년부터 시작된 무료 공개 접근 덕분에 Landsat은 기후 변화, 산림 벌채, 도시 성장을 다루는 전 세계 기준 데이터셋이 되었다.",
+    "note": "Inclination binding missing; stiff phrasing"
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "중국 우주 프로그램을 떠받치는 대형 발사체",
+    "note": "Medium-class backbone mistranslates heavy-lift"
+  },
+  {
+    "rel": "fleet/constellation/sentinel-copernicus.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/gps-gnss.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "최초의 장기 체류형 다중 포트 소련 우주 정거장",
+    "note": "Long-distance used for long-duration"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Apollo 10 + Skylab + 셔틀 53회 비행; 현재 NASA의 SLS / Artemis 발사대",
+    "note": "Wrong counter for flights"
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "중국 최초의 화성 탐사 임무; 궤도선이 2021년 5월 Zhurong 로버를 화성에 전달",
+    "note": "Landing success misattributes delivery by orbiter"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Blue Origin의 2단식 재사용 가능 대형 궤도 발사체 — BE-4 1단 + 극저온 2단",
+    "note": "Invented methane not in English"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "중국 우주 프로그램을 떠받치는 대형 발사체",
+    "note": "Medium-class backbone mistranslates heavy-lift"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Apollo 10 + Skylab + 셔틀 53회 비행; 현재 NASA의 SLS / Artemis 발사대",
+    "note": "Wrong counter for flights"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/sentinel-copernicus.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "다른 행성의 궤도를 돈 최초의 우주선",
+    "note": "Ungrammatical, verb missing"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/long-march-3b.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "우주왕복선 시절부터 ISS까지 미국의 모든 우주유영에 사용된 흰색 미국 우주복",
+    "note": "Suit flew every EVA misread as flying the spacewalks"
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "다른 행성의 궤도를 돈 최초의 우주선",
+    "note": "Ungrammatical, verb missing"
+  },
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/schiaparelli.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/schiaparelli.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-3.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "최초의 상업용 준궤도 유인 비행체",
+    "note": "Submarine used for suborbital"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/sentinel-copernicus.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/salyut-7.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "중국의 GNSS로, 현재 형태는 공식적으로 BeiDou-3입니다. MEO(고도 21,500 km의 위성 24개, 55°), 경사 지구동기궤도(IGSO, 위성 3개), GEO(위성 3개)를 섞은 독특한 하이브리드 구조입니다. 2020년 7월 전 지구 커버리지가 완성되었음을 선언했습니다. 신호 자체에 단문 위성 통신 기능이 내장된 유일한 GNSS로, 사용자는 위성군을 통해 직접 짧은 문자 메시지를 보낼 수 있어 외딴 지역의 긴급 통신에 유용합니다.",
+    "note": "IGSO rendered as geostationary, wrong term"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "소련의 셔틀로, 외관은 미국의 궤도선(오비터)과 비슷하지만 주 엔진이 없었다(Energia 로켓이 실어 날랐다). 1988년에 단 한 번, 완전 자율 무인으로 비행했다 — 계획이 끝나기 전에 궤도에 도달한 유일한 소련 셔틀이다.",
+    "note": "Garbled fragments; meaning lost"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-v1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "유럽의 민간용 GNSS — ~30개 위성, 1m 이하 정밀 측위",
+    "note": "Odd positioning term"
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "소련 셔틀; 무인 비행 1회, 유인 비행은 한 번도 없음",
+    "note": "Fragment, never crewed unintelligible"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "최초의 상업용 준궤도 유인 비행체",
+    "note": "Submarine used for suborbital"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "cut",
+    "new": "소련 셔틀; 무인 비행 1회, 유인 비행은 한 번도 없음",
+    "note": "Fragment, never crewed unintelligible"
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-3.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "중국 최초의 화성 탐사 임무; Zhurong 로버를 화성에 전달",
+    "note": "Landing misattributes orbiter delivering rover"
+  },
+  {
+    "rel": "fleet/station/salyut-1.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": "Correct and natural"
+  }
+]

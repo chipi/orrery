@@ -16,13 +16,13 @@
     {
       "met": 150,
       "label": "منتصف الرحلة",
-      "note": "TCM + عروض توضيحية لمحركات NEXT-C الأيونية.",
+      "note": "TCM + تشغيلات تجريبية للمحرك الأيوني NEXT-C.",
       "type": "nominal"
     },
     {
       "met": 306,
       "label": "الاقتراب",
-      "note": "2022-09-26. يتولى SMART Nav السيطرة قبل 4 ساعات من التأثير.",
+      "note": "2022-09-26. يتولى SMART Nav القيادة قبل 4 ساعات من الاصطدام.",
       "type": "info"
     },
     {
@@ -34,8 +34,9 @@
     {
       "met": 306.002,
       "label": "فقدان الإشارة",
-      "note": "يراقب LICIACube و HST و JWST دخان الحطام.",
+      "note": "يرصد LICIACube وHST وJWST عمود المقذوفات.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "المرحلة الثانية من Falcon 9 Block 5"
 }

@@ -9,7 +9,7 @@
   "body_paragraphs": [
     "Se misuri un'ellisse kepleriana lungo la sua dimensione maggiore, il segmento che hai tracciato è l'asse maggiore. Dividilo a metà e otterrai il semiasse maggiore — scritto `a`. È la distanza media dal corpo orbitante al fuoco, in un certo senso: la media aritmetica tra il perielio (il punto più vicino) e l'afelio (il punto più lontano).",
     "Perché importa? Per la terza legge di Keplero: `T² ∝ a³`. Il periodo orbitale dipende solo dal semiasse maggiore. La forma non importa. L'inclinazione non importa. Stira un'orbita fino a farne un sigaro e un'altra fino a farne un cerchio: se hanno lo stesso `a`, entrambe impiegano esattamente lo stesso tempo per tornare al punto di partenza.",
-    "Nei pannelli di `/explore` di Orrery vedrai questo numero in unità astronomiche. Terra: a ≈ 1,0 UA. Marte: 1,52 UA. Giove: 5,2 UA. Inseriscilo nella formula del periodo e avrai riprodotto l'orologio dell'orrery: 1 anno, 687 giorni, 11,86 anni."
+    "Nei pannelli di `/explore` di Orrery vedrai questo numero in unità astronomiche. Terra: a ≈ 1,0 au. Marte: 1,52 au. Giove: 5,2 au. Inseriscilo nella formula del periodo e avrai riprodotto l'orologio dell'orrery: 1 anno, 687 giorni, 11,86 anni."
   ],
   "formula_caption": "Semiasse maggiore come media dei raggi del perielio e dell'afelio.",
   "diagram_caption": "Asse maggiore da perielio ad afelio. Semiasse a è la metà."

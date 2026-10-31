@@ -4,8 +4,8 @@
   "payload": "Orbiteur de Mercure ; protégé par un pare-soleil (face avant 370 °C, face arrière -45 °C) ; sept instruments dont imagerie, spectromètres, magnétomètre, altimètre laser",
   "delta_v": "~2,3 km/s (insertion en orbite de Mercure)",
   "type": "ORBITEUR · RÉALISÉ",
-  "first": "Premier engin spatial à orbiter Mercure ; première carte de surface complète de la planète la plus intérieure",
-  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) a utilisé six assists gravitationnels sur sept ans — la Terre, Vénus deux fois, Mercure trois fois — pour ralentir et entrer en orbite autour de Mercure le 2011-03-18. Protégé par un écran thermique avec un côté à 370 °C et l'autre à -45 °C. Les découvertes incluaient de la glace d'eau dans les cratères polaires permanemment ombragés, des formations géologiques « creux » jusqu'alors inconnues, et la confirmation que le noyau de fer de Mercure occupe environ 85 % du rayon de la planète (le plus grand rapport noyau-rayon de toute planète du système solaire). La mission s'est terminée par un impact contrôlé sur la surface de Mercure le 2015-04-30 après l'épuisement du carburant.",
+  "first": "Premier engin spatial à se placer en orbite autour de Mercure ; première carte complète de la surface de la planète la plus intérieure",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) a utilisé six assistances gravitationnelles sur sept ans — la Terre, Vénus deux fois, Mercure trois fois — pour ralentir et entrer en orbite autour de Mercure le 2011-03-18. Protégé par un écran thermique avec un côté à 370 °C et l'autre à -45 °C. Les découvertes incluaient de la glace d'eau dans les cratères polaires permanemment ombragés, des formations géologiques « creux » jusqu'alors inconnues, et la confirmation que le noyau de fer de Mercure occupe environ 85 % du rayon de la planète (le plus grand rapport noyau-rayon de toute planète du système solaire). La mission s'est terminée par un impact contrôlé sur la surface de Mercure le 2015-04-30 après l'épuisement du carburant.",
   "events": [
     {
       "met": 0,
@@ -15,14 +15,14 @@
     },
     {
       "met": 365,
-      "label": "ASSIST GRAVITATIONNEL DE LA TERRE",
-      "note": "Premier des six assists pour ralentir la trajectoire afin d'entrer en orbite autour de Mercure.",
+      "label": "ASSISTANCE GRAVITATIONNELLE DE LA TERRE",
+      "note": "Première des six assistances gravitationnelles qui ralentissent la trajectoire pour permettre l'entrée en orbite autour de Mercure.",
       "type": "nominal"
     },
     {
       "met": 2419,
       "label": "INSERTION EN ORBITE DE MERCURE",
-      "note": "Une manœuvre du moteur principal place MESSENGER en orbite autour de Mercure après sept ans de croisière.",
+      "note": "L'allumage du moteur principal place MESSENGER en orbite autour de Mercure après sept ans de croisière.",
       "type": "nominal"
     }
   ]

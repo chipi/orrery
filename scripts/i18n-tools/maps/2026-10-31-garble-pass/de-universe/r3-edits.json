@@ -1,0 +1,352 @@
+[
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "bio",
+    "en": "Acrux (Alpha Crucis) is a hot blue multiple system about 320 light-years away, the luminous foot of the Southern Cross. Its component stars are young and massive, blazing in blue-white light.",
+    "old": "Akrux (Alpha Crucis) ist ein heißes blaues Mehrfachsystem etwa 320 Lichtjahre entfernt, der leuchtende Fuß des Kreuz des Südens. Seine Komponenten sind jung und massereich, blau-weiß strahlend.",
+    "new": "Akrux (Alpha Crucis) ist ein heißes blaues Mehrfachsystem in etwa 320 Lichtjahren Entfernung, der leuchtende Fuß des Kreuzes des Südens. Seine Komponenten sind jung und massereich und strahlen blauweiß."
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "fact",
+    "en": "A brilliant blue supergiant — the luminous foot of Orion, tens of thousands of times brighter than the Sun.",
+    "old": "Ein strahlend blauer Überriese — der leuchtende Fuß des Orion, zehntausendmal heller als die Sonne.",
+    "new": "Ein strahlend blauer Überriese — der leuchtende Fuß des Orion, Zehntausende Male heller als die Sonne."
+  },
+  {
+    "rel": "universe/named-stars/proxima-centauri.json",
+    "at": "fact",
+    "en": "The closest star to the Sun — a dim red dwarf just 4.24 light-years away, host to a potentially rocky planet in its habitable zone.",
+    "old": "Der sonnennächste Stern — ein schwacher Roter Zwerg nur 4,24 Lichtjahre entfernt, Begleiter eines möglicherweise felsigen Planeten in seiner habitablen Zone.",
+    "new": "Der sonnennächste Stern — ein schwacher Roter Zwerg, nur 4,24 Lichtjahre entfernt, mit einem möglicherweise felsigen Planeten in seiner habitablen Zone."
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "fact",
+    "en": "A hot inner companion to Luyten's habitable-zone world.",
+    "old": "Ein heißer innerer Begleiter zur bewohnbaren Zone von Luyten.",
+    "new": "Ein heißer innerer Begleiter der Welt in der habitablen Zone von Luytens Stern."
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-d.json",
+    "at": "fact",
+    "en": "TESS's first Earth-sized planet in the habitable zone — a landmark find.",
+    "old": "TESSs erster erdgroßer Planet in der habitablen Zone — ein Meilensteinfund.",
+    "new": "Der erste erdgroße Planet in der habitablen Zone, den TESS fand — ein Meilenstein."
+  },
+  {
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "fact",
+    "en": "The brightest star of the northern sky's Boötes — an ageing orange giant racing through the galaxy on an unusual orbit.",
+    "old": "Der hellste Stern des nördlichen Himmels im Sternbild Bärenhüter — ein alternder oranger Riese, der auf einer ungewöhnlichen Bahn durch die Galaxie rast.",
+    "new": "Der hellste Stern im Sternbild Bärenhüter am Nordhimmel — ein alternder oranger Riese, der auf einer ungewöhnlichen Umlaufbahn durch die Galaxie rast."
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "fact",
+    "en": "The Swan's tail — one of the most luminous stars the eye can see, shining from far across the galaxy.",
+    "old": "Der Schwanz des Schwans — einer der leuchtkräftigsten Sterne, die das Auge sehen kann, strahlend von weit jenseits der Galaxis.",
+    "new": "Der Schwanz des Schwans — einer der leuchtkräftigsten Sterne, die das Auge sehen kann, der quer durch die Galaxis hindurch strahlt."
+  },
+  {
+    "rel": "universe/named-stars/menkent.json",
+    "at": "bio",
+    "en": "Menkent (Theta Centauri) is an orange giant about 61 light-years away, one of the brighter stars of Centaurus and the only one of the constellation's leading lights that is a cool giant rather than a hot blue star.",
+    "old": "Theta Centauri ist ein oranger Riese in etwa 61 Lichtjahren Entfernung, einer der helleren Sterne des Centaurus und der einzige unter den führenden Sternen des Sternbilds, der ein kühler Riese und kein heißer blauer Stern ist.",
+    "new": "Menkent (Theta Centauri) ist ein oranger Riese in etwa 61 Lichtjahren Entfernung, einer der helleren Sterne des Centaurus und der einzige unter den führenden Sternen des Sternbilds, der ein kühler Riese und kein heißer blauer Stern ist."
+  },
+  {
+    "rel": "universe/exoplanets/barnard-b.json",
+    "at": "bio",
+    "en": "Barnard's Star, the nearest single star to the Sun at just under six light-years, is a fixture of science fiction — the destination of the British Interplanetary Society's 1970s 'Project Daedalus' starship study and a waypoint in interstellar fiction from Robert Forward’s Rocheworld to the later Rama novels. After a century of claimed planets that all evaporated under scrutiny, Barnard b was finally confirmed in 2024: a sub-Earth far too hot for life, but real at last.",
+    "old": "Barnards Pfeilstern, der nächste Einzelstern der Sonne in knapp sechs Lichtjahren Entfernung, ist ein Klassiker der Science-Fiction — das Ziel der britischen Interplanetary Society's Raumschiff-Studie „Project Daedalus\" aus den 1970er Jahren und ein Zwischenziel in der Interstellar-Fiktion von Robert Forwards Rocheworld bis zu den späteren Rama-Romanen. Nach einem Jahrhundert behaupteter Planeten, die alle bei genauerem Hinsehen zu Wasserdampf zerfaserten, wurde Barnard b endlich 2024 bestätigt: eine Suberde, viel zu heiß für Leben, aber endlich real.",
+    "new": "Barnards Pfeilstern, der sonnennächste Einzelstern in knapp sechs Lichtjahren Entfernung, ist ein Klassiker der Science-Fiction — das Ziel der Raumschiff-Studie „Project Daedalus“ der Britischen Interplanetaren Gesellschaft aus den 1970er Jahren und ein Zwischenziel in der Interstellar-Fiktion von Robert Forwards Rocheworld bis zu den späteren Rama-Romanen. Nach einem Jahrhundert angeblich entdeckter Planeten, die sich alle bei genauerer Prüfung in Luft auflösten, wurde Barnard b 2024 endlich bestätigt: eine Sub-Erde, viel zu heiß für Leben, aber endlich real."
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "bio",
+    "en": "Procyon (Alpha Canis Minoris) is a nearby white subgiant star only 11.5 light-years away, orbited by a faint white-dwarf companion. Its closeness makes it the eighth-brightest star in the sky despite its modest true luminosity.",
+    "old": "Prokyon (Alpha Canis Minoris) ist ein nahes Weiß-Untergiant-System, das sich nur 11,5 Lichtjahre entfernt befindet und um einen lichtschwachen Weißen Zwerg orbitet. Seine Nähe macht ihn trotz seiner bescheidenen wahren Leuchtkraft zum achthellsten Stern am Himmel.",
+    "new": "Prokyon (Alpha Canis Minoris) ist ein naher weißer Unterriese, nur 11,5 Lichtjahre entfernt, den ein lichtschwacher Weißer Zwerg umkreist. Seine Nähe macht ihn trotz seiner bescheidenen wahren Leuchtkraft zum achthellsten Stern am Himmel."
+  },
+  {
+    "rel": "universe/named-stars/peacock.json",
+    "at": "fact",
+    "en": "The brightest star of the Peacock — an English name born of 20th-century navigation.",
+    "old": "Der hellste Stern des Peacock — ein englischer Name, der aus der Navigation des 20. Jahrhunderts stammt.",
+    "new": "Der hellste Stern des Pfaus — ein englischer Name, der aus der Navigation des 20. Jahrhunderts stammt."
+  },
+  {
+    "rel": "universe/named-stars/alnair.json",
+    "at": "cultural",
+    "en": "Its name comes from an Arabic phrase, 'the bright one', inherited from an older constellation figure. Grus was formed by late-16th-century navigators charting the southern stars.",
+    "old": "Sein Name stammt aus einer arabischen Wendung, ‚der Helle', geerbt von einer älteren Sternbildfigur. Kranich wurde von Seefahrern des späten 16. Jahrhunderts geformt, die die südlichen Sterne kartierten.",
+    "new": "Das Sternbild Kranich wurde von Seefahrern des späten 16. Jahrhunderts geschaffen, die die südlichen Sterne kartierten."
+  },
+  {
+    "rel": "universe/named-stars/alioth.json",
+    "at": "fact",
+    "en": "The brightest star of the Great Bear, first in the handle of the Big Dipper.",
+    "old": "Der hellste Stern des Großen Bären, der erste im Griff des Großen Wagens.",
+    "new": "Der hellste Stern des Großen Bären, der erste in der Deichsel des Großen Wagens."
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "cultural",
+    "en": "The name is Arabic for 'the string of pearls'. The three Belt stars are among the most universally recognised in the sky, used as a pointer to Sirius and Aldebaran and woven into star-lore worldwide.",
+    "old": "Der Name ist arabisch für ‚die Perlenschnur'. Die drei Gürtelsterne gehören zu den weltweit bekanntesten am Himmel, dienen als Wegweiser zu Sirius, Aldebaran und sind in Sternsagen rund um den Globus verwoben.",
+    "new": "Der Name ist arabisch für ‚die Perlenschnur‘. Die drei Gürtelsterne gehören zu den weltweit bekanntesten am Himmel, dienen als Wegweiser zu Sirius und Aldebaran und sind in Sternsagen rund um den Globus verwoben."
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "fact",
+    "en": "A massive planet proposed at Aldebaran — the fiery eye of the Bull and a sci-fi waypoint.",
+    "old": "Ein massereicher Planet bei Aldebaran — dem feurigen Auge des Stiers und einem Science-Fiction-Wegpunkt.",
+    "new": "Ein vorgeschlagener massereicher Planet bei Aldebaran — dem feurigen Auge des Stiers und einem Wegpunkt der Science-Fiction."
+  },
+  {
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "cultural",
+    "en": "In Hawaiian tradition Arcturus is Hōkūleʻa, the 'Star of Gladness' — the zenith star of Hawaii and a key wayfinding star for Polynesian voyagers, later lending its name to the famous voyaging canoe.",
+    "old": "In der hawaiianischen Tradition ist Arcturus Hōkūleʻa, der ‚Stern der Freude' — der Zenitsttern von Hawaii und ein wichtiger Navigationsstern für polynesische Seefahrer, der später dem berühmten Reisekanu seinen Namen gab.",
+    "new": "In der hawaiianischen Tradition ist Arcturus Hōkūleʻa, der ‚Stern der Freude‘ — der Zenitstern von Hawaii und ein wichtiger Navigationsstern für polynesische Seefahrer, der später dem berühmten Reisekanu seinen Namen gab."
+  },
+  {
+    "rel": "universe/named-stars/elnath.json",
+    "at": "fact",
+    "en": "The butting horn-tip of the Bull, on the border it once shared with the Charioteer.",
+    "old": "Die stoßende Hornspitze des Bull, an der Grenze, die er einst mit dem Charioteer teilte.",
+    "new": "Die stoßende Hornspitze des Stiers, an der Grenze, die er einst mit dem Fuhrmann teilte."
+  },
+  {
+    "rel": "universe/exoplanets/hd-62509-b.json",
+    "at": "fact",
+    "en": "A giant planet circling Pollux — one of the first worlds found around a nearby giant star.",
+    "old": "Ein Riesenplanet, der Pollux umkreist — einer der ersten Welten, die um einen nahegelegenen Riesenstern entdeckt wurden.",
+    "new": "Ein Riesenplanet, der Pollux umkreist — eine der ersten Welten, die um einen nahen Riesenstern gefunden wurden."
+  },
+  {
+    "rel": "universe/named-stars/alhena.json",
+    "at": "bio",
+    "en": "Alhena (Gamma Geminorum) is a blue-white subgiant about 109 light-years away, the third-brightest star in Gemini and set at the foot of the Twins near the edge of the Milky Way.",
+    "old": "Alhena (Gamma Geminorum) ist ein blauweißer Unterriese etwa 109 Lichtjahre entfernt, der dritthellste Stern in Zwillinge und liegt am Fuß der Twins nahe dem Rand der Milchstraße.",
+    "new": "Alhena (Gamma Geminorum) ist ein blauweißer Unterriese in etwa 109 Lichtjahren Entfernung, der dritthellste Stern im Sternbild Zwillinge, gelegen am Fuß der Zwillinge nahe dem Rand der Milchstraße."
+  },
+  {
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "bio",
+    "en": "Fomalhaut (Alpha Piscis Austrini) is a hot white star about 25 light-years away, one of the brightest in the sky and conspicuously isolated from other bright stars. It is encircled by a striking dusty debris ring, sculpted by unseen gravity — one of the first such rings ever imaged in visible light.",
+    "old": "Fomalhaut (Alpha Piscis Australis) ist ein heißer weißer Stern etwa 25 Lichtjahre entfernt, einer der hellsten am Himmel und auffallend abgesondert von anderen hellen Sternen. Er ist umgeben von einem eindrucksvollen staubigen Trümmerring, geformt durch unsichtbare Schwerkraft — einer der ersten solcher Ringe, die jemals im sichtbaren Licht abgebildet wurden.",
+    "new": "Fomalhaut (Alpha Piscis Austrini) ist ein heißer weißer Stern etwa 25 Lichtjahre entfernt, einer der hellsten am Himmel und auffallend abgesondert von anderen hellen Sternen. Er ist umgeben von einem eindrucksvollen staubigen Trümmerring, geformt durch unsichtbare Schwerkraft — einer der ersten solcher Ringe, die jemals im sichtbaren Licht abgebildet wurden."
+  },
+  {
+    "rel": "universe/named-stars/avior.json",
+    "at": "fact",
+    "en": "A giant of the Keel and a corner of the 'False Cross' — with a name coined in the age of flight.",
+    "old": "Ein Riese des Kiel und eine Ecke des »Falschen Kreuzes« — mit einem Namen geprägt im Zeitalter des Flugs.",
+    "new": "Ein Riese des Kiels und eine Ecke des »Falschen Kreuzes« — mit einem Namen, der im Zeitalter des Flugs geprägt wurde."
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "bio",
+    "en": "Mirfak (Alpha Persei) is a yellow-white supergiant roughly 510 light-years away, the brightest star in Perseus. It is the leading light of the Alpha Persei Cluster, a loose group of hot young stars sharing its motion through space.",
+    "old": "Mirfak (Alpha Persei) ist ein gelblich-weißer Überriese in etwa 510 Lichtjahren Entfernung, der hellste Stern in Perseus. Er ist das Leitstern des Alpha Persei Cluster, einer lockeren Gruppe heißer junger Sterne, die seine Bewegung durch den Raum teilen.",
+    "new": "Mirfak (Alpha Persei) ist ein gelblich-weißer Überriese in etwa 510 Lichtjahren Entfernung, der hellste Stern in Perseus. Er ist der Leitstern des Alpha-Persei-Haufens, einer lockeren Gruppe heißer junger Sterne, die seine Bewegung durch den Raum teilen."
+  },
+  {
+    "rel": "universe/named-stars/alioth.json",
+    "at": "bio",
+    "en": "Alioth (Epsilon Ursae Majoris) is a peculiar white star about 81 light-years away, the brightest in Ursa Major. Its spectrum shows odd, shifting chemical signatures tied to a strong magnetic field.",
+    "old": "Alioth (Epsilon Ursae Maioris) ist ein eigentümlicher weißer Stern etwa 81 Lichtjahre entfernt, der hellste im Großen Bären. Sein Spektrum zeigt merkwürdige, wechselnde chemische Signaturen, die mit einem starken Magnetfeld verbunden sind.",
+    "new": "Alioth (Epsilon Ursae Majoris) ist ein eigentümlicher weißer Stern etwa 81 Lichtjahre entfernt, der hellste im Großen Bären. Sein Spektrum zeigt merkwürdige, wechselnde chemische Signaturen, die mit einem starken Magnetfeld verbunden sind."
+  },
+  {
+    "rel": "universe/exoplanets/gj-411-b.json",
+    "at": "bio",
+    "en": "GJ 411 b is a super-Earth whipping around Lalande 21185, a dim red dwarf about eight light-years away in the Great Bear and one of the closest stars to the Sun. First detected in 2017 and confirmed in 2020 from the star's tiny velocity wobble, it orbits far too close to be habitable, but its nearness makes the system a recurring waypoint in interstellar-travel fiction.",
+    "old": "GJ 411 b ist eine Super-Erde, die um Lalande 21185 rast, einen lichtschwachen Roten Zwerg etwa acht Lichtjahre entfernt im Großen Bären und einer der sonnennächsten Sterne. Erstmals 2017 entdeckt und 2020 anhand des winzigen Geschwindigkeitswackelns des Sterns bestätigt, umkreist er seinen Stern viel zu nah, um bewohnbar zu sein, doch seine Nähe macht das System zu einem wiederkehrenden Wegpunkt in der Literatur über interstellare Raumfahrt.",
+    "new": "GJ 411 b ist eine Super-Erde, die um Lalande 21185 rast, einen lichtschwachen Roten Zwerg etwa acht Lichtjahre entfernt im Großen Bären und einen der sonnennächsten Sterne. Erstmals 2017 entdeckt und 2020 anhand des winzigen Geschwindigkeitswackelns des Sterns bestätigt, umkreist sie ihren Stern viel zu nah, um bewohnbar zu sein, doch ihre Nähe macht das System zu einem wiederkehrenden Wegpunkt in der Literatur über interstellare Raumfahrt."
+  },
+  {
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "bio",
+    "en": "Dubhe (Alpha Ursae Majoris) is an orange giant about 123 light-years away, one of the two 'Pointers' at the front of the bowl of the Big Dipper. A line drawn through Dubhe and its neighbour Merak points almost exactly at Polaris.",
+    "old": "Dubhe (Alpha Ursae Majoris) ist ein oranger Riese in etwa 123 Lichtjahren Entfernung, einer der beiden „Zeiger\" an der Vorderseite der Schüssel des Großen Wagens. Eine Linie, die durch Dubhe und seinen Nachbarn Merak gezogen wird, zeigt fast genau auf den Polarstern.",
+    "new": "Dubhe (Alpha Ursae Majoris) ist ein orangefarbener Riese in etwa 123 Lichtjahren Entfernung und einer der beiden „Zeigersterne“ am vorderen Rand des Kastens des Großen Wagens. Eine Linie durch Dubhe und seinen Nachbarn Merak weist fast genau auf den Polarstern."
+  },
+  {
+    "rel": "universe/named-stars/canopus.json",
+    "at": "cultural",
+    "en": "Often linked to a helmsman of the Greek fleet at Troy, Canopus is 'Agastya' in Indian tradition — a revered sage of the southern sky. Too far south for much of Europe, it was a prized season- and latitude-marker for navigators of the southern seas.",
+    "old": "Canopus wird oft mit einem Steuermann der griechischen Flotte vor Troy in Verbindung gebracht und ist in der indischen Tradition ‚Agastya' — ein verehrter Weiser des Südhimmels. Für weite Teile Europas zu weit südlich gelegen, war er für die Seefahrer der südlichen Meere ein geschätzter Jahreszeiten- und Breitenmarkierer.",
+    "new": "Canopus wird oft mit einem Steuermann der griechischen Flotte vor Troja in Verbindung gebracht; in der indischen Überlieferung heißt er „Agastya“ — ein verehrter Weiser des Südhimmels. Für große Teile Europas liegt er zu weit südlich; für Seefahrer der südlichen Meere war er ein geschätzter Anhaltspunkt für Jahreszeit und Breite."
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-b.json",
+    "at": "bio",
+    "en": "TRAPPIST-1 b is the closest planet to the ultracool dwarf star, baked far too hot for water. In 2023 it became one of the first rocky exoplanets probed for an atmosphere by the James Webb Space Telescope, which found little sign of a thick one — an early verdict in the long effort to learn whether any of these seven worlds can hold onto air.",
+    "old": "TRAPPIST-1 b ist der sonnennächste Planet des ultrakalten Zwergsterns, viel zu heiß für Wasser. 2023 wurde er einer der ersten Gesteinsplaneten, deren Atmosphäre das James Webb Space Telescope untersuchte, das kaum Anzeichen für eine dichte Lufthülle fand — ein erstes Urteil in der langen Suche nach der Frage, ob eine dieser sieben Welten überhaupt eine Atmosphäre halten kann.",
+    "new": "TRAPPIST-1 b ist der dem ultrakalten Zwergstern am nächsten gelegene Planet, viel zu heiß für Wasser. 2023 war er einer der ersten Gesteinsplaneten, deren Atmosphäre das James Webb Space Telescope untersuchte; es fand kaum Hinweise auf eine dichte Lufthülle — ein frühes Urteil in den langen Bemühungen herauszufinden, ob eine dieser sieben Welten ihre Lufthülle halten kann."
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "bio",
+    "en": "Aldebaran, the orange-giant eye of Taurus, is one of science fiction's most name-dropped stars, from pulp adventures to film. A planet several times Jupiter's mass was once proposed from decades of subtle velocity signals, but later analysis attributes those signals to the giant star's own pulsations — the planet is now considered unconfirmed — a reminder of how hard planets are to pin down around restless old suns.",
+    "old": "Aldebaran, das orangefarbene Riesenauge des Stier, ist einer der am häufigsten zitierten Sterne der Science-Fiction, von Pulp-Abenteuern bis zum Film. Ein Planet mehrfacher Jupitermasse wurde einst aus Jahrzehnten subtiler Radialgeschwindigkeitssignale postuliert, doch spätere Analysen führen diese Signale auf die eigenen Pulsationen des Riesensterns zurück — der Planet gilt nun als nicht bestätigt — eine Mahnung dafür, wie schwierig es ist, Planeten um rastlose alte Sonnen aufzuspüren.",
+    "new": "Aldebaran, das orangefarbene Riesenauge des Stiers, gehört zu den am häufigsten erwähnten Sternen der Science-Fiction, von Pulp-Abenteuern bis zum Film. Aus Jahrzehnten feiner Radialgeschwindigkeitssignale wurde einst ein Planet von mehrfacher Jupitermasse vermutet, doch spätere Analysen führen diese Signale auf die eigenen Pulsationen des Riesensterns zurück — der Planet gilt heute als unbestätigt —, eine Mahnung, wie schwer sich Planeten um unruhige alte Sonnen dingfest machen lassen."
+  },
+  {
+    "rel": "universe/named-stars/sadr.json",
+    "at": "bio",
+    "en": "Sadr (Gamma Cygni) is a yellow-white supergiant roughly 1,800 light-years away, sitting at the intersection of the Northern Cross where the wings of Cygnus meet the body. It is embedded against a vast complex of glowing hydrogen known as the Sadr region.",
+    "old": "Sadr (Gamma Cygni) ist ein gelbweißer Überriese in etwa 1.800 Lichtjahren Entfernung, der am Schnittpunkt des Nordkreuzes liegt, wo die Flügel des Schwan auf den Körper treffen. Er ist eingebettet in einen ausgedehnten Komplex aus leuchtendem Wasserstoff, bekannt als die Sadr-Region.",
+    "new": "Sadr (Gamma Cygni) ist ein gelbweißer Überriese in etwa 1.800 Lichtjahren Entfernung. Er sitzt am Schnittpunkt des Nordkreuzes, wo die Flügel des Schwans auf den Körper treffen, vor einem riesigen Komplex aus leuchtendem Wasserstoff, der als Sadr-Region bekannt ist."
+  },
+  {
+    "rel": "universe/exoplanets/proxima-cen-d.json",
+    "at": "bio",
+    "en": "Proxima Centauri d is a tiny world, only about a quarter of Earth's mass, whirling around Proxima Centauri every five days far too close to be habitable. Confirmed in the 2020s, it sits near the very limit of what our instruments can detect, a testament to how precisely we can now weigh unseen planets by the wobble they induce in their star.",
+    "old": "Proxima Centauri d ist eine winzige Welt mit nur etwa einem Viertel der Erdmasse, die alle fünf Tage um Proxima Centauri kreist – viel zu nah, um bewohnbar zu sein. In den 2020er Jahren bestätigt, liegt er nahe an der Grenze dessen, was unsere Instrumente erfassen können – ein Beweis dafür, wie präzise wir heute unsichtbare Planeten anhand des Taumelns wiegen können, das sie in ihrem Stern hervorrufen.",
+    "new": "Proxima Centauri d ist eine winzige Welt mit nur etwa einem Viertel der Erdmasse, die alle fünf Tage um Proxima Centauri kreist – viel zu nah, um bewohnbar zu sein. In den 2020er-Jahren bestätigt, liegt sie nahe an der Grenze dessen, was unsere Instrumente erfassen können – ein Beweis dafür, wie präzise wir heute unsichtbare Planeten anhand des Taumelns wiegen können, das sie in ihrem Stern hervorrufen."
+  },
+  {
+    "rel": "universe/named-stars/rasalhague.json",
+    "at": "cultural",
+    "en": "The name is Arabic for 'the head of the serpent-collector'. Ophiuchus — often identified with the healer Asclepius grasping a great snake — straddles the ecliptic, the thirteenth figure the Sun passes through.",
+    "old": "Der Name stammt aus dem Arabischen und bedeutet ‚das Haupt des Schlangenfängers'. Schlangenträger — oft mit dem Heiler Asclepius identifiziert, der eine große Schlange hält — überspannt die Ekliptik, das dreizehnte Sternbild, durch das die Sonne zieht.",
+    "new": "Der Name stammt aus dem Arabischen und bedeutet „das Haupt des Schlangenfängers“. Der Schlangenträger — oft mit dem Heiler Asklepios gleichgesetzt, der eine große Schlange packt — liegt rittlings auf der Ekliptik und ist das dreizehnte Sternbild, durch das die Sonne zieht."
+  },
+  {
+    "rel": "universe/named-stars/altair.json",
+    "at": "bio",
+    "en": "Altair (Alpha Aquilae) is a hot white star about 17 light-years away, one of the closest naked-eye stars. It spins near its break-up speed — a full rotation in under eight hours — which flattens it markedly and makes its poles hotter and brighter than its equator. Interferometry has directly imaged this distorted, gravity-darkened surface.",
+    "old": "Altair (Alpha Aquilae) ist ein heißer weißer Stern etwa 17 Lichtjahre entfernt, einer der hellsten mit bloßem Auge sichtbaren Sterne. Er rotiert nahe seiner Grenzgeschwindigkeit – eine vollständige Rotation in weniger als acht Stunden – was ihn erheblich abplattet und seine Pole heißer und heller als seinen Äquator macht. Interferometrie hat diese verzerrte, gravitativ dunkler werdende Oberfläche direkt abgebildet.",
+    "new": "Altair (Alpha Aquilae) ist ein heißer weißer Stern in etwa 17 Lichtjahren Entfernung und einer der nächsten mit bloßem Auge sichtbaren Sterne. Er rotiert nahe an seiner Zerreißgeschwindigkeit — eine volle Umdrehung in weniger als acht Stunden —, was ihn deutlich abplattet und seine Pole heißer und heller macht als seinen Äquator. Die Interferometrie hat diese verzerrte, gravitationsverdunkelte Oberfläche direkt abgebildet."
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "cultural",
+    "en": "The name is Arabic for 'the girdle' or 'belt'. As one of the three Belt stars it shares in the near-universal recognition of Orion across human cultures.",
+    "old": "Der Name stammt aus dem Arabischen und bedeutet ‚der Gürtel'. Als einer der drei Gürtelsterne ist er in nahezu allen menschlichen Kulturen Teil der universellen Wiedererkennung des Orion.",
+    "new": "Der Name stammt aus dem Arabischen und bedeutet „der Gürtel“. Als einer der drei Gürtelsterne hat er Anteil daran, dass Orion in fast allen menschlichen Kulturen erkannt wird."
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "bio",
+    "en": "Mimosa (Beta Crucis), also known as Becrux, is a hot blue giant roughly 280 light-years away and one of the hottest bright stars visible to the eye. It pulsates subtly and lies within the striking figure of the Southern Cross.",
+    "old": "Mimosa (Beta Crucis), auch als Becrux bekannt, ist ein heißer blauer Riese in etwa 280 Lichtjahren Entfernung und einer der heißesten hellen Sterne, die für das menschliche Auge sichtbar sind. Sie pulsiert subtil und liegt innerhalb der beeindruckenden Figur des Südlichen Kreuzes.",
+    "new": "Mimosa (Beta Crucis), auch Becrux genannt, ist ein heißer blauer Riese in etwa 280 Lichtjahren Entfernung und einer der heißesten hellen Sterne, die mit bloßem Auge sichtbar sind. Er pulsiert leicht und liegt innerhalb der markanten Figur des Kreuzes des Südens."
+  },
+  {
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "fact",
+    "en": "The fiery orange 'eye of the bull' in Taurus — a giant star that only appears to sit among the Hyades cluster.",
+    "old": "Das feurig-orangefarbene ‚Auge des Stiers' im Taurus — ein Riesenstern, der nur scheinbar inmitten des Hyades-Sternhaufens steht.",
+    "new": "Das feurig-orangefarbene „Auge des Stiers“ im Sternbild Stier — ein Riesenstern, der nur scheinbar mitten im Sternhaufen der Hyaden steht."
+  },
+  {
+    "rel": "universe/named-stars/hamal.json",
+    "at": "cultural",
+    "en": "The name is Arabic for 'the lamb' or 'ram'. Around two thousand years ago the Sun crossed the vernal equinox near Hamal, so the 'First Point of Aries' — still the zero of celestial longitude — carries the Ram's name even though precession has since moved the crossing into Pisces.",
+    "old": "Der Name ist arabisch und bedeutet ‚das Lamm' oder ‚Widder'. Vor rund zweitausend Jahren überquerte die Sonne die Frühlings-Tagundnachtgleiche nahe Hamal, sodass der ‚Frühlingspunkt' — noch immer der Nullpunkt der himmlischen Länge — den Namen des Widders trägt, obwohl die Präzession den Übergang inzwischen in die Fische verschoben hat.",
+    "new": "Der Name ist arabisch für „das Lamm“ oder „der Widder“. Vor rund zweitausend Jahren überquerte die Sonne die Frühlings-Tagundnachtgleiche nahe Hamal, sodass der „Widderpunkt“ — noch immer der Nullpunkt der himmlischen Länge — den Namen des Widders trägt, obwohl die Präzession den Durchgang inzwischen in die Fische verschoben hat."
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "bio",
+    "en": "Alnitak (Zeta Orionis) is a hot blue supergiant system about 1,260 light-years away, the easternmost of the three Belt stars. Its fierce ultraviolet light illuminates the nearby Flame Nebula, and the famous Horsehead is silhouetted close by.",
+    "old": "Alnitak (Zeta Orionis) ist ein heißes blaues Überriesensystem etwa 1.260 Lichtjahre entfernt, der östlichste der drei Gürtelsterne. Sein intensives ultraviolettes Licht beleuchtet den nahegelegenen Flammennebel, und der berühmte Horsehead zeichnet sich in der Nähe als Silhouette ab.",
+    "new": "Alnitak (Zeta Orionis) ist ein heißes blaues Überriesensystem in etwa 1.260 Lichtjahren Entfernung und der östlichste der drei Gürtelsterne. Sein intensives ultraviolettes Licht lässt den nahen Flammennebel leuchten, und der berühmte Pferdekopfnebel zeichnet sich dicht daneben als Silhouette ab."
+  },
+  {
+    "rel": "universe/named-stars/antares.json",
+    "at": "bio",
+    "en": "Antares (Alpha Scorpii) is a red supergiant roughly 550 light-years away, hundreds of times the Sun's diameter. Like Betelgeuse it is destined to end as a supernova.",
+    "old": "Antares (Alpha Scorpii) ist ein roter Überriese in etwa 550 Lichtjahren Entfernung, hundertfach größer als der Durchmesser der Sonne. Wie Beteigeuze ist er dazu bestimmt, als Supernova zu enden.",
+    "new": "Antares (Alpha Scorpii) ist ein roter Überriese in etwa 550 Lichtjahren Entfernung, dessen Durchmesser mehrere hundert Mal so groß ist wie der der Sonne. Wie Beteigeuze ist er dazu bestimmt, als Supernova zu enden."
+  },
+  {
+    "rel": "universe/named-stars/achernar.json",
+    "at": "fact",
+    "en": "The 'end of the river' — spinning so fast it is squashed into the sky's most flattened star.",
+    "old": "Das ‚Ende des Flusses' – rotiert so schnell, dass er zum flachsten Stern am Himmel zusammengedrückt wird.",
+    "new": "Das „Ende des Flusses“ — er rotiert so schnell, dass er zum abgeplattetsten Stern am Himmel zusammengedrückt wird."
+  },
+  {
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "bio",
+    "en": "Rigil Kentaurus (Alpha Centauri A) is the brightest member of the closest stellar system to the Sun, just 4.3 light-years away. A near-twin of the Sun in colour and mass, it forms a bright binary with the cooler Alpha Centauri B, while the faint red dwarf Proxima Centauri orbits far out as the actual nearest star.",
+    "old": "Rigil Kentaurus (Alpha Centauri A) ist das hellste Mitglied des sonnennächsten Sternsystems, nur 4,3 Lichtjahre entfernt. Als nahezu identischer Zwilling der Sonne in Farbe und Masse bildet er ein helles Doppelsternsystem mit dem kühleren Alpha Centauri B, während der lichtschwache rote Zwerg Proxima Centauri in großem Abstand als tatsächlich nächster Stern umläuft.",
+    "new": "Rigil Kentaurus (Alpha Centauri A) ist das hellste Mitglied des sonnennächsten Sternsystems, nur 4,3 Lichtjahre entfernt. Als beinahe Zwilling der Sonne in Farbe und Masse bildet er mit dem kühleren Alpha Centauri B ein helles Doppelsternsystem, während der lichtschwache Rote Zwerg Proxima Centauri auf einer weit außen liegenden Umlaufbahn kreist und der eigentlich nächste Stern ist."
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "bio",
+    "en": "Betelgeuse (Alpha Orionis) is a semiregular variable near the end of its life. Estimates place it several hundred light-years away with large uncertainty. It will one day end as a supernova — briefly rivalling the Moon in our sky.",
+    "old": "Beteigeuze (Alpha Orionis) ist ein halbregelmäßiger Veränderlicher nahe dem Ende seines Lebens. Schätzungen platzieren ihn mehrere hundert Lichtjahre entfernt mit großer Unsicherheit. Er wird eines Tages als Supernova enden — kurzzeitig fast so hell wie der Mond an unserem Himmel.",
+    "new": "Beteigeuze (Alpha Orionis) ist ein halbregelmäßig Veränderlicher kurz vor dem Ende seines Lebens. Nach Schätzungen steht er mehrere hundert Lichtjahre entfernt, bei großer Unsicherheit. Er wird eines Tages als Supernova enden — kurzzeitig fast so hell wie der Mond an unserem Himmel."
+  },
+  {
+    "rel": "universe/named-stars/canopus.json",
+    "at": "bio",
+    "en": "Canopus (Alpha Carinae) is a rare yellow-white bright giant roughly 310 light-years away, intrinsically thousands of times more luminous than the Sun. Its brilliance and position far from the ecliptic make it an ideal fixed reference — Mariner and later probes carried 'Canopus star trackers' to hold their bearings in deep space.",
+    "old": "Canopus (Alpha Carinae) ist ein seltener gelblich-weißer heller Riese in etwa 310 Lichtjahren Entfernung, von Natur aus tausendfach leuchtfähiger als die Sonne. Seine Helligkeit und seine Lage weit abseits der Ekliptik machen ihn zu einem idealen festen Bezugspunkt — Mariner und spätere Sonden führten ‚Canopus-Sternsensoren' mit sich, um ihre Ausrichtung im Weltraum zu halten.",
+    "new": "Canopus (Alpha Carinae) ist ein seltener gelblich-weißer heller Riese in etwa 310 Lichtjahren Entfernung und von Natur aus mehrere tausend Mal leuchtkräftiger als die Sonne. Seine Helligkeit und seine Lage weit abseits der Ekliptik machen ihn zu einem idealen festen Bezugspunkt — Mariner und spätere Sonden trugen „Canopus-Sternsensoren“, um im tiefen Weltraum ihre Lage zu halten."
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-e.json",
+    "at": "bio",
+    "en": "TOI-700 e, confirmed in 2023, is a rocky, roughly Earth-sized planet orbiting within the habitable zone just inside its sibling TOI-700 d. Finding two temperate Earth-sized worlds in one nearby system made TOI-700 an especially rich target for future studies of small-planet atmospheres.",
+    "old": "TOI-700 e, 2023 bestätigt, ist ein felsiger, ungefähr erdgroßer Planet, der innerhalb der habitablen Zone knapp innerhalb seines Geschwisterplaneten TOI-700 d kreist. Die Entdeckung zweier gemäßigter erdgroßer Welten in einem nahegelegenen System machte TOI-700 zu einem besonders vielversprechenden Ziel für künftige Studien von Atmosphären kleiner Planeten.",
+    "new": "TOI-700 e, 2023 bestätigt, ist ein felsiger, ungefähr erdgroßer Planet, der auf einer Umlaufbahn in der habitablen Zone knapp innerhalb der Bahn seines Geschwisterplaneten TOI-700 d kreist. Die Entdeckung zweier gemäßigter erdgroßer Welten in einem nahegelegenen System machte TOI-700 zu einem besonders vielversprechenden Ziel für künftige Studien von Atmosphären kleiner Planeten."
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-b.json",
+    "at": "bio",
+    "en": "GJ 273 b, also called Luyten b, is a super-Earth in the temperate zone of Luyten's Star, only about 12 light-years away. In 2017–2018 the 'Sónar Calling GJ 273b' project beamed a coded radio message toward it from a radar in Norway — one of the few deliberate attempts to contact a specific nearby world, with any reply not due until the 2040s.",
+    "old": "GJ 273 b, auch Luyten b genannt, ist ein Super-Erde in der gemäßigten Zone um Luytens Stern, nur etwa 12 Lichtjahre entfernt. 2017–2018 strahlte das Projekt »Sónar Calling GJ 273b« eine codierte Radiobotschaft von einem Radar in Norwegen zu ihm aus – einer der wenigen gezielten Versuche, eine bestimmte Nachbarwelt zu kontaktieren, wobei eine Antwort frühestens in den 2040er Jahren erwartet wird.",
+    "new": "GJ 273 b, auch Luyten b genannt, ist eine Super-Erde in der gemäßigten Zone von Luytens Stern, nur etwa 12 Lichtjahre entfernt. 2017–2018 strahlte das Projekt „Sónar Calling GJ 273b“ von einer Radaranlage in Norwegen eine codierte Radiobotschaft in ihre Richtung ab — einer der wenigen gezielten Versuche, eine bestimmte nahe Welt zu kontaktieren; eine Antwort wäre frühestens in den 2040er-Jahren zu erwarten."
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "cultural",
+    "en": "The name comes from the Arabic for 'tail', marking the tail of Cygnus the Swan. Deneb anchors the Summer Triangle with Vega and Altair and rides the length of the Milky Way's northern stream.",
+    "old": "Der Name stammt aus dem Arabischen und bedeutet ‚Schwanz', er bezeichnet den Schwanz von Schwan, dem Schwan. Deneb bildet zusammen mit Wega und Altair das Sommerdreieck und zieht sich entlang des nördlichen Stroms der Milchstraße.",
+    "new": "Der Name stammt aus dem Arabischen und bedeutet „Schwanz“; er bezeichnet den Schwanz des Schwans. Deneb bildet zusammen mit Wega und Altair das Sommerdreieck und gleitet am nördlichen Strom der Milchstraße entlang."
+  },
+  {
+    "rel": "universe/named-stars/hadar.json",
+    "at": "bio",
+    "en": "Hadar (Beta Centauri), also called Agena, is a hot blue system of massive stars around 390 light-years away, the eleventh-brightest in the sky. Together with nearby Rigil Kentaurus it forms the Southern Pointers that lead the eye to the Southern Cross.",
+    "old": "Hadar (Beta Centauri), auch Agena genannt, ist ein heißes blaues System aus massereichen Sternen in etwa 390 Lichtjahren Entfernung und der elfthellste Stern am Himmel. Zusammen mit dem nahen Rigil Kentaurus bildet er die Southern Pointers, die das Auge zum Kreuz des Südens führen.",
+    "new": "Hadar (Beta Centauri), auch Agena genannt, ist ein heißes blaues System aus massereichen Sternen in etwa 390 Lichtjahren Entfernung und der elfthellste Stern am Himmel. Zusammen mit dem nahen Rigil Kentaurus bildet er die „Zeiger des Südens“, die das Auge zum Kreuz des Südens führen."
+  },
+  {
+    "rel": "universe/named-stars/avior.json",
+    "at": "bio",
+    "en": "Avior (Epsilon Carinae) is a system about 600 light-years away pairing an orange giant with a hot blue companion. It sits in Carina, forming one corner of the False Cross that is often mistaken for the true Southern Cross.",
+    "old": "Avior (Epsilon Carinae) ist ein System in etwa 600 Lichtjahren Entfernung, das einen orangefarbenen Riesen mit einem heißen blauen Begleiter verbindet. Es liegt im Sternbild Carina und bildet eine Ecke des False Cross, das oft mit dem echten Kreuz des Südens verwechselt wird.",
+    "new": "Avior (Epsilon Carinae) ist ein System in etwa 600 Lichtjahren Entfernung, das einen orangefarbenen Riesen mit einem heißen blauen Begleiter verbindet. Es liegt im Sternbild Carina und bildet eine Ecke des Falschen Kreuzes, das oft mit dem echten Kreuz des Südens verwechselt wird."
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-b.json",
+    "at": "fact",
+    "en": "A habitable-zone super-Earth at Luyten's Star — and the target of a deliberate message from Earth.",
+    "old": "Ein Super-Erde in der habitablen Zone um Luytens Stern – und das Ziel einer gezielten Botschaft von der Erde.",
+    "new": "Eine Super-Erde in der habitablen Zone von Luytens Stern — und das Ziel einer gezielten Botschaft von der Erde."
+  },
+  {
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "cultural",
+    "en": "Its name comes from an Arabic phrase, 'the leader of the mourners' — in that tradition the Dipper's bowl was a bier and the handle stars a procession of mourning daughters following behind.",
+    "old": "Sein Name stammt von einer arabischen Wendung, ‚die Anführerin der Trauernden' — in jener Tradition war die Schüssel des Wagens eine Bahre und die Sterne der Deichsel ein Zug trauernder Töchter, die hinterher folgten.",
+    "new": "Sein Name geht auf eine arabische Wendung zurück, „die Anführerin der Trauernden“ — in dieser Überlieferung war der Kasten des Wagens eine Bahre und die Sterne der Deichsel ein Zug trauernder Töchter, die hinterherzogen."
+  },
+  {
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "bio",
+    "en": "Aldebaran (Alpha Tauri) is an orange giant about 65 light-years away. It lies in the foreground of the more distant Hyades cluster, a line-of-sight coincidence rather than true membership.",
+    "old": "Aldebaran (Alpha Tauri) ist ein orangefarbener Riese in etwa 65 Lichtjahren Entfernung. Er steht im Vordergrund des weiter entfernten Hyades-Sternhaufens – eine Sichtlinien-Koinzidenz und keine echte Zugehörigkeit.",
+    "new": "Aldebaran (Alpha Tauri) ist ein orangefarbener Riese in etwa 65 Lichtjahren Entfernung. Er steht vor dem weiter entfernten Sternhaufen der Hyaden — eine reine Sichtlinien-Überlagerung und keine echte Zugehörigkeit."
+  }
+]

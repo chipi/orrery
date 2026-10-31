@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "tagline",
+    "find": "Six hypergolic engines built every Proton mission",
+    "replace": "Six hypergolic engines powered every Proton first stage"
+  }
+]

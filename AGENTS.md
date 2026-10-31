@@ -63,7 +63,7 @@ The eleven primary nav destinations:
 | `/plan` | Mission Configurator (Earth → 9 destinations, LANDING/FLYBY) | `src/routes/plan/+page.svelte` |
 | `/fly` | Mission Arc (heliocentric + cislunar Earth-centered scenes) | `src/routes/fly/+page.svelte` |
 | `/missions` | Mission Catalog | `src/routes/missions/+page.svelte` |
-| `/earth` | Hybrid scene — default orbital mode (ISS, Tiangong, satellites, LEO/MEO/GEO regime rings, atmosphere shell, ozone overlay) + surface mode (`?mode=surface`) with 14 launchpad markers via shared `SurfaceScene` per ADR-072. Mode toggle top-center. | `src/routes/earth/+page.svelte` (router) + `src/routes/earth/EarthOrbitalScene.svelte` (bespoke orbital scene) |
+| `/earth` | One unified `SurfaceScene` (#290, ADR-072): launchpads, museums and observatories as surface layers plus the orbital stack (ISS, Tiangong, satellites, LEO/MEO/GEO regime rings, atmosphere, ozone, moon ghost) as layer chips. `?mode=surface` is kept for old links and no longer changes rendering. | `src/routes/earth/+page.svelte` + `src/routes/earth/earth-launch-sites-config.ts` (the `SurfaceSceneConfig` preset) |
 | `/moon` | Lunar surface map — rectangular hotspot regions (ADR-061), per-mission lander glyphs, lunar orbiters, tidal-lock overlay, sphere → flat-patch view at deep zoom (ADR-062) | `src/routes/moon/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
 | `/mars` | Martian surface map — rectangular hotspot regions, per-mission lander glyphs, rover traverses with curated stops, atmosphere shell, 25.19° axial tilt, sphere → flat-patch view at deep zoom | `src/routes/mars/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
 | `/iss` | ISS Explorer (18 pickable modules + visiting spacecraft) | `src/routes/iss/+page.svelte` |
@@ -108,7 +108,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | `/science` diagrams | Hand-coded SVG sources committed under `static/diagrams/science/`; fail-closed `validate-diagrams.ts` integrity check chained into `validate-data` | ADR-035 |
 | `/science` cross-screen `?` chips | Click navigates to `/science/[tab]/[section]`; desktop hover shows section intro_sentence as `title` tooltip; min 24×24px hit area | ADR-036 |
 | Service worker / PWA | `@vite-pwa/sveltekit`; offline shell after first paint; `data-high-contrast` attribute on `<html>` is the pattern Science Lens copies | ADR-029 |
-| Translation workflow | LLM via `scripts/translate-*.mjs` + `scripts/retranslate-fields.mjs`, model per locale from `translationModel()` (Haiku; Sonnet for problem locales, today sr-Cyrl), shared rules + output checks in `scripts/lib/translate-quality.mjs`; names never translated (i18n style guide §2) | ADR-033 |
+| Translation workflow | Hand edits first (`scripts/i18n-tools/`, glossary first); paid LLM runs via `scripts/translate-*.mjs` + `scripts/retranslate-fields.mjs` only with the operator's go, model per locale from `translationModel()` (Haiku; Sonnet for problem locales, today sr-Cyrl), shared rules + output checks in `scripts/lib/translate-quality.mjs`; names by the origin rule (i18n style guide §2) | ADR-033 |
 | Fonts + script strategy | Wave 1 (Latin+Cyrillic) bundled Inter + Crimson Pro; Wave 2 CJK Noto Sans/Serif CJK; RTL Arabic via `dir="rtl"`; sr-Cyrl Cyrillic gate | ADR-032, ADR-043, ADR-044, ADR-045 |
 | `/fly` trajectory math | Pure-function isolation + per-mission validation harness; committed expected values catch regressions | ADR-030 |
 | `/fly` cislunar view | Earth-centered second camera + per-mission `flight.cislunar_profile` block on Moon missions; auto-switches when destination is MOON | ADR-058 |
@@ -363,8 +363,8 @@ Cues + DOM actions in `src/lib/audio-tour.ts` are the interaction layer that run
 
 **Translation model tier (cost policy).** Every `scripts/translate-*.mjs` LLM
 call takes its model from `translationModel(locale)` in
-`scripts/lib/translate-model.mjs`: **Haiku** (`claude-haiku-4-5`) by default,
-**Sonnet** only for locales on that file's problem list, each with the evidence
+`scripts/lib/translate-model.mjs`: the latest **Haiku** (`DEFAULT_TRANSLATION_MODEL`)
+by default, the latest **Sonnet** only for locales on that file's problem list, each with the evidence
 that put it there (operator rulings 2026-09-09 and 2026-10-17; today: `sr-Cyrl`).
 No `--model` flag, no override input, never Opus. Adding a locale to the list
 needs evidence (detector counts or a graded sample) and the operator's yes; if
@@ -451,7 +451,7 @@ The image sourcing + dedup + attribution pipeline has four parts that have to st
 | `tiangong-modules/` | (none — `buildTiangongEntries` walks disk + uses `WIKIMEDIA_TIANGONG_*` constants) |
 | `rockets/`, `science/` | (none — credits-grouping path prefixes only; not gallery-loaded) |
 
-**Routing a file to the wrong sidecar produces a duplicate manifest entry** because two code paths in `scripts/build-image-provenance.ts` cover the same file. June 2026 example: `scripts/backfill-sidecar-from-report.ts` routed `iss-modules/unity/0X.jpg` to `panel-image-sources.json` AND `buildIssEntries` walked it from disk → two entries → `validate-data` failed with `duplicate manifest entry`. Backfill now refuses to route iss-modules/tiangong-modules.
+**Routing a file to the wrong sidecar produces a duplicate manifest entry** because two code paths in `scripts/build-image-provenance.ts` cover the same file. June 2026 example: `scripts/backfill-sidecar-from-report.ts` (deleted 2026-06-29) routed `iss-modules/unity/0X.jpg` to `panel-image-sources.json` AND `buildIssEntries` walked it from disk → two entries → `validate-data` failed with `duplicate manifest entry`. Backfill now refuses to route iss-modules/tiangong-modules.
 
 **Cache-staleness after slot rename.** `static/data/image-phashes.json` is the on-disk pHash cache, keyed by URL path. Renaming `unity/03.jpg → unity/02.jpg` does NOT update the cache key — the cache still says `/images/iss-modules/unity/03.jpg → <old hash>`. Any subsequent fill-script run loads that stale cache into its localCache for the entity and lets near-duplicate candidates through the source-time pHash guard. **Always run `npx tsx scripts/compute-phash.ts --force` between `delete-intra-entity-dupes` and any fill script.** Round 1 of D shipped 26 residual dupes because this step was missed.
 
@@ -599,7 +599,7 @@ Before the specific checklists below (flyby body, mission, science overlay, flee
 
 For every new card, in the same PR, you ship:
 
-1. **i18n translations across all 14 locales.** English-only is not "shipped". The catalog of locales lives in `messages/*.json` (the bundle) and `i18n-src/<locale>/<surface>/<id>.json` (per-entity overlay). Use the per-surface translation scripts (`scripts/translate-*.mjs`) or the `wave23/` toolchain pattern (catalog → maps → apply-translations) — never hand-translate. Validation: `npm run validate-data` fails closed on missing locale rows for tracked entities (per ADR-069 / [overlay-completeness](docs/adr/ADR-069.md)).
+1. **i18n translations across all 14 locales.** English-only is not "shipped". The catalog of locales lives in `messages/*.json` (the bundle) and `i18n-src/<locale>/<surface>/<id>.json` (per-entity overlay). Translate by hand first, following the [i18n style guide](docs/guides/i18n-style-guide.md) and the glossary (`scripts/i18n-tools/native-terms.json`, glossary first); the `scripts/i18n-tools/` kit applies and checks hand edits. The per-surface scripts (`scripts/translate-*.mjs`) call a paid API: size the run (fields + cost) and get the operator's go before starting one. Validation: `npm run validate-data` fails closed on missing locale rows for tracked entities (per ADR-069 / [overlay-completeness](docs/adr/ADR-069.md)).
 
 2. **Image sourcing with provenance + credits — agency archives first, Commons last.** No card ships with a placeholder hero or zero-slot gallery. Source via the **agency-first** pipeline: NASA images-api → JPL Photojournal → JAXA → ESA → JHU APL → CNSA/Roscosmos/ISRO/SpaceIL → **Wikimedia Commons only as failover**. Full source-order table + rationale in [`scripts/IMAGE-PIPELINE.md` §"Source-resolution order"](scripts/IMAGE-PIPELINE.md#source-resolution-order--agency-archives-first-commons-last). Every disk file gets a TASL row in `image-provenance.json` (ADR-047), every sidecar entry gets `credit` / `license` / `fetched_at`, every count manifest gets bumped. If imagery genuinely doesn't exist for the entity, ship an honest caption (memory `feedback_ship_all_with_honest_captions` — single-frame / descent-frame with text beats graceful-absent button) — never a silent gap.
 
@@ -631,7 +631,7 @@ Issue [#341](https://github.com/chipi/orrery/issues/341) (13 missions) is closed
 Per-body steps (numbered to match TA.md §body-wiring):
 
 1. **Orbital data** → `static/data/small-bodies.json` entry
-2. **`DestinationId`** widening → `src/lib/lambert-grid.constants.ts`
+2. **`DestinationId`** widening → `src/lib/physics/transfer/lambert-grid.constants.ts`
 3. **`PLANET_SIZES`** → `src/lib/orbital/find-flyby-planet.ts`
 4. **Label parser** (`findFlybyPlanetFromLabel` + `findClosestPlanetToShip`) → same file. Add a synonym branch for ambiguous data labels (e.g. "Churyumov" → '67p')
 5. **`PlanetId` union + `PLANET_COMPOSITION`** → `src/lib/orbital/flyby-camera-plan.ts`
@@ -641,7 +641,7 @@ Per-body steps (numbered to match TA.md §body-wiring):
 9. **Debug-panel `planetIdGuess`** loop → same file
 10. **`DESTINATION_LABEL_COLORS`** → `src/lib/fly-scene-constants.ts`
 11. **`/plan` label switch case** → `src/routes/plan/+page.svelte`
-12. **14-locale messages** → `messages/en-US.json` + 13 other locales (use the Python pattern from the Arrokoth commit for the non-English transliterations)
+12. **14-locale messages** → `messages/en-US.json` + 13 other locales. Body names are science names: add the body's native form per locale to the glossary (`scripts/i18n-tools/native-terms.json`, class `body`, the form each language's Wikipedia uses) first, then use it in the messages
 13. **i18n overlay** (optional) → `i18n-src/en-US/planets/{id}.json`
 14. **Tests** → `find-flyby-planet.test.ts` — move new body out of "returns null" + add positive case
 15. **Browser-verify** → load a mission that flies past the body at its iconic MET, confirm composition
@@ -674,7 +674,7 @@ return window.__flyCislunarDebug();
 
 ## Testing rules
 
-**Unit tests** (Vitest, colocated): every function in `src/lib/orbital.ts` must have tests. Physics functions are the highest-priority testing surface.
+**Unit tests** (Vitest, colocated): every exported function under `src/lib/orbital/` and `src/lib/physics/` must have tests. Physics functions are the highest-priority testing surface.
 
 ```typescript
 // src/lib/orbital.test.ts

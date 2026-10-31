@@ -1,6 +1,6 @@
 {
   "name": "ディディモス",
-  "type": "Asteroid · Near-Earth · S-type · Binary primary",
+  "type": "小惑星 · 地球近傍 · S型 · 連星の主天体",
   "fact": "160メートルの小さな月ディモルフォスの親天体。2022年9月26日にNASAのDARTが衝突させた——運動量衝突体による惑星防御の初めての実証。ディディモス自体は780メートルのS型小惑星として無傷のままで、連星周期の変化を観測している。",
   "bio": "1996年に発見されたS型近地球連星。160メートルの小さな月ディモルフォスが1.2km離れた11.9時間周期の軌道を公転している。球粒隕石質天体に分類され、LL級珪酸塩組成を持ち、内側の小惑星帯で一般的である。ESAのHera計画（2024年打ち上げ）は2026年に到着し、衝突後のシステムを詳細に調査する予定である。",
   "links": [
@@ -10,12 +10,12 @@
       "t": "intro"
     },
     {
-      "l": "DART mission (NASA)",
+      "l": "DART ミッション（NASA）",
       "u": "https://science.nasa.gov/mission/dart/",
       "t": "core"
     },
     {
-      "l": "Hera mission (ESA)",
+      "l": "Hera ミッション（ESA）",
       "u": "https://www.esa.int/Space_Safety/Hera",
       "t": "deep"
     }

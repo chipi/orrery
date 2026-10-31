@@ -12,6 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { nameRendered } from '../../src/lib/name-origins.js';
+import { enRegex } from '../i18n-tools/term-match.mjs';
 
 export const LANGUAGE_NAMES = {
   ar: 'Modern Standard Arabic',
@@ -54,22 +55,55 @@ Spaceflight terms (2026-10-17 graded samples got these wrong in many languages):
   "lander" = a landing spacecraft; "probe" = a spacecraft (never an investigation).
 - "sensible atmosphere" = the part of the atmosphere dense enough to matter.
 - "re-entry" / "entry" = entering an atmosphere; "acknowledgement" (radio) = confirmation.
-- "knife-edge" = just barely; "plume" (Europa, Enceladus) = a jet of material.`;
+- "knife-edge" = just barely; "plume" (Europa, Enceladus) = a jet of material.
+- "launch" = a rocket launch — never a product release or a program start.
+- "Orrery" is this site's name: keep it exactly, in Latin script, in every language.`;
+
+/**
+ * Rules for short UI strings (messages/<loc>.json), from the 2026-10-30 audit of
+ * ar/hi/ja (docs/guides/i18n-style-guide.md §4a). Sent by the UI translators with
+ * uiPromptNotes().
+ */
+export const UI_LABEL_RULES = `UI labels (buttons, tabs, chips, headings, aria-labels):
+- Use the term this language's own space and astronomy sources use (Japanese 遠日点, not アピリオン). Never write an English word phonetically in the target script.
+- ALL-CAPS labels are ordinary words in capitals (STATUS, PERIOD, ARRIVAL, DOCKED): translate them. Keep only real acronyms (TLI, LOI, EDL, TCM, C3, ISS).
+- Commands use this language's own word order and command form (Korean 패널 닫기, Japanese パネルを閉じる, Chinese 关闭面板) — never the English verb-first order.
+- One English label gets one translation across the whole UI.
+- Page titles keep the separator and the site name: "<page> · Orrery".`;
+
+let SENSES;
+/** The meaning note for an ambiguous UI key (scripts/i18n-tools/ui-senses.json), or ''. */
+export function uiMeaning(key) {
+  if (!SENSES) {
+    const p = path.resolve(import.meta.dirname, '../i18n-tools/ui-senses.json');
+    SENSES = fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : {};
+  }
+  return key.startsWith('_') ? '' : (SENSES[key] ?? '');
+}
+
+/** UI rules plus the meaning of each ambiguous key, for a translation prompt. */
+export function uiPromptNotes(keys) {
+  const meanings = keys
+    .map((k) => [k, uiMeaning(k)])
+    .filter(([, m]) => m)
+    .map(([k, m]) => `- ${k}: ${m}`);
+  return `${UI_LABEL_RULES}${meanings.length ? `\n\nWhat these keys mean here:\n${meanings.join('\n')}` : ''}`;
+}
 
 export const LOCALE_RULES = {
   'sr-Cyrl': `Serbian rules (strict):
 - Standard Serbian, EKAVIAN only (време, место, цео, уместо — never вријеме, мјесто, цијел, умјесто).
 - Serbian Cyrillic only for Serbian words. Never Latin letters inside a Cyrillic word, never Russian/Ukrainian/Bulgarian letters or words (я ю ё й щ ы э ъ ь і, это, один, ничего, держи, първи), never a Latin-script Serbian sentence.
 - Moon = Месец (not Луна); Sun = Сунце; Solar System = Сунчев систем; Earth = Земља.
-- Names follow the NAMES rule: things people built and agencies in Latin, exactly as the English writes them (Apollo 12, Voyager 2, NASA, Northrop Grumman); planets, places, surface features, stars, constellations and people in Serbian Cyrillic, in the glossary form (Лабуд, Кеплер); the International Space Station is МСС. Never transliterate the name of a built thing into Cyrillic and never spell English phonetically in Cyrillic ("тхе", "витх", "Рецоннаиссанце" are wrong). Never inflect a Latin name, with or without a hyphen (no NASA-ин, Voyager-а): a common noun before it takes the case ending (агенције NASA, летелице Voyager 2), or reword.
+- Names follow the NAMES rule: things people built and agencies in Latin, exactly as the English writes them (Apollo 12, Voyager 2, NASA, Northrop Grumman); planets, places, surface features, stars, constellations and people in Serbian Cyrillic, in the glossary form (Лабуд, Кеплер); the International Space Station is МСС. Museums and observatories are institutions, not built things: their names and cities in Cyrillic, the Serbian form where one exists (Технички музеј Шпајер), otherwise transliterated phonetically (Космосфера). Never transliterate the name of a built thing into Cyrillic and never spell English phonetically in Cyrillic ("тхе", "витх", "Рецоннаиссанце" are wrong). Never inflect a Latin name, with or without a hyphen (no NASA-ин, Voyager-а): a common noun before it takes the case ending (агенције NASA, летелице Voyager 2), or reword.
 - Decimal comma (0,967), thousands with a dot (35.786).
 - Glossary: International Space Station spelled out = Међународна свемирска станица (acronym ISS); Deep Space Network spelled out = Мрежа за далеки свемир (acronym DSN); lunar mare as a common noun = маре (never кобила).
 - Terms: atmospheric entry = улазак у атмосферу; skip entry = улазак са одскоком; coast phase = лет по инерцији; flyby = прелет; rendezvous = сусрет у орбити; hatch = отвор; periapsis = перицентар; stage (of a rocket) = степен (masculine: први степен, првих степена); launch vehicle = ракета-носач; trace gases = гасови у траговима; plane (geometry) = раван.`,
   ru: `Russian rules: Cyrillic only for Russian words; never Latin letters inside a Cyrillic word; names follow the NAMES rule (built things and agencies in Latin as in English, except Russian and Soviet ones in Cyrillic; people, places and science terms in Russian).`,
   hi: `Hindi rules: Devanagari for Hindi words; never Chinese/Japanese characters (e.g. 着陸, 弹道 are wrong); names follow the NAMES rule.`,
   ko: `Korean rules: Hangul for Korean words; never Chinese characters/hanja (e.g. 西昌衛星發射中心, 衛星群 are wrong); names follow the NAMES rule.`,
-  ar: `Arabic rules: Arabic script for Arabic words; never Cyrillic or other letters inside an Arabic word; names follow the NAMES rule.`,
-  he: `Hebrew rules: Modern Hebrew in Hebrew script, without niqqud (vowel points); never Arabic or other letters inside a Hebrew word; names follow the NAMES rule (built things and agencies in Latin as in English, except Israeli ones in Hebrew; people, places and science terms in Hebrew).`,
+  ar: `Arabic rules: Arabic script for Arabic words; never Cyrillic or other letters inside an Arabic word; names follow the NAMES rule. Write "←" wherever the English has "→" next to words (a link arrow, "Earth → Moon"): arrows are not mirrored in right-to-left text, so "→" would point backwards.`,
+  he: `Hebrew rules: Modern Hebrew in Hebrew script, without niqqud (vowel points); never Arabic or other letters inside a Hebrew word; names follow the NAMES rule (built things and agencies in Latin as in English, except Israeli ones in Hebrew; people, places and science terms in Hebrew). Write "←" wherever the English has "→" next to words: arrows are not mirrored in right-to-left text.`,
 };
 
 export function systemAddendum(locale) {
@@ -82,7 +116,7 @@ const CHECKS = {
     [/[яюёйщыэъьі]/i, 'contains Russian/Ukrainian letters'],
     [CYR_LATIN_MIX, 'Latin letters inside a Cyrillic word'],
     [
-      /(умјест|вријем|мјест|цијел|цјел|свијет|рјеш|лијеп|пјесм|бијел|ријеч|сјевер|мјесец|тијел|дијел|вјек|снијег|ријек|свјетл)/i,
+      /(умјест|вријем|мјест|цијел|цјел|свијет|рјеш|лијеп|пјесм|бијел|ријеч|сјевер|мјесец|тијел|дијел|вјек|снијег|ријек|свјетл|дјев|дјел|мјер|цјен|вјер)/i,
       'ijekavian form',
     ],
     [
@@ -226,6 +260,13 @@ const GAZETTEER_SKIP = new Set([
   'Cygnus Standard',
   'Cygnus Enhanced',
   'Hope',
+  // launch sites named for their place: the place is geography (Алкантара), the rest
+  // a description (Raumfahrtzentrum Alcântara, Centre spatial d'Alcântara)
+  'Alcântara Space Center',
+  'Naro Space Center',
+  'Uchinoura Space Center',
+  'Semnan Space Center',
+  'Sohae Satellite Launching', // "Station" is stripped as a generic tail
 ]);
 let GAZETTEER = null;
 /** Every entity name the data knows: en-US `name` fields of missions, spacecraft,
@@ -316,6 +357,40 @@ export function knownNamesIn(src) {
   return hits;
 }
 
+let GLOSSARY_RAW;
+/** The native-terms glossary by class: {body: {english: {locale: native}}, …}. */
+function glossaryByClass() {
+  if (GLOSSARY_RAW) return GLOSSARY_RAW;
+  const p = path.resolve(import.meta.dirname, '../i18n-tools/native-terms.json');
+  const g = fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : {};
+  GLOSSARY_RAW = Object.fromEntries(
+    Object.entries(g).filter(
+      ([k, v]) => !k.startsWith('_') && k !== 'sources' && v && typeof v === 'object',
+    ),
+  );
+  return GLOSSARY_RAW;
+}
+
+/**
+ * The technical-term bindings (native-terms.json `term`) for the terms an English source
+ * uses, as a prompt note: every writer uses the same word the glossary and the term gate
+ * expect. Empty when the source uses none.
+ */
+export function termNotes(locale, src) {
+  if (locale === 'en-US') return '';
+  const terms = glossaryByClass().term ?? {};
+  const text = typeof src === 'string' ? src : JSON.stringify(src);
+  const lines = [];
+  for (const [t, e] of Object.entries(terms)) {
+    if (!e[locale] || !enRegex(t, e).test(text)) continue;
+    const avoid = e._avoid?.[locale]?.length ? ` (never ${e._avoid[locale].join(', ')})` : '';
+    lines.push(`${t} → ${e[locale]}${avoid}`);
+  }
+  return lines.length
+    ? `\nTechnical terms — use exactly these words, inflected as the grammar needs: ${lines.join('; ')}.`
+    : '';
+}
+
 let GLOSSARY;
 /** [english, {locale: native}] for every term in the native-terms glossary. */
 function glossary() {
@@ -348,12 +423,151 @@ export function glossaryRendered(locale, src, out) {
     .map(([en]) => en);
 }
 
+// Unit symbols and kept abbreviations that stay Latin inside non-Latin text.
+const LATIN_KEEP =
+  /^(?:k?m|cm|mm|kg|t|ms|min|K|N|kN|MN|M?J|MJ|Pa|kPa|hPa|bar|au|AU|ly|pc|kpc|Mpc|Gyr|Myr|Hz|k?W|Isp|dB|lat|lon|Orrery|Esc|Enter|Shift|Ctrl|Alt|Tab)$/;
+// Names of outside products the UI cites; they keep English like built things.
+const KEPT_NAMES = ['Launch Library', 'Wikipedia', 'Google', 'YouTube', 'GitHub', 'Shuttle'];
+/**
+ * English words copied from `src` into a non-Latin `out` that are not names: the
+ * shipped UI had "Vendor", "Nation", "Hover", "STARBOARD", "Physics Lab" in ko/zh
+ * (2026-10-30 audit). The older check accepts any word copied exactly from the
+ * English, so these passed as "names". A copied word is flagged when it is not
+ * part of a name the source contains (designation, data name list, mid-sentence
+ * capital), not a unit or a short acronym, has no digit attached (Hayabusa2), and
+ * — if capitalised — the English corpus uses it in lowercase too ("vendor",
+ * "starboard"), so "Meeus" or "Wolf-Lundmark" stay names. Placeholders, URLs and
+ * route paths are not text.
+ */
+export function untranslatedEnglish(src, out) {
+  const strip = (s) =>
+    s
+      .replace(/\{[^}]*\}/g, ' ')
+      .replace(/\$?\b(?:https?:\/\/|www\.)\S+/g, ' ')
+      .replace(/(^|\s|\()\/[\w/-]+/g, ' ')
+      .replace(/\$schema/g, ' ');
+  src = strip(src);
+  out = strip(out);
+  const nameWords = new Set(
+    [
+      ...designations(src),
+      ...knownNamesIn(src),
+      ...nameCandidates(src),
+      ...KEPT_NAMES.filter((n) => src.includes(n)),
+      // Wolf-Lundmark-Melotte, Churyumov-Gerasimenko: hyphenated proper names
+      ...(src.match(/\b[A-Z][a-z]+(?:-[A-Z][a-z]+)+\b/g) || []),
+    ].flatMap((n) => n.split(/[\s-]+/)),
+  );
+  const upperNames = new Set([...gazetteer()].map((n) => n.toUpperCase()));
+  const srcWords = new Set(src.match(/[A-Za-z][A-Za-z'’]*/g) || []);
+  const ordinary = ordinaryEnglish();
+  return [...new Set(out.match(/[A-Za-z][A-Za-z'’]*(?![A-Za-z'’]*\d)/g) || [])].filter(
+    (w) =>
+      w.length > 1 &&
+      srcWords.has(w) &&
+      !nameWords.has(w) &&
+      !nameWords.has(w.replace(/['’]s$/, '')) &&
+      !upperNames.has(w) &&
+      !/^[A-Z]{2,5}s?$/.test(w) &&
+      !/^[IVXLCDM]+$/.test(w) &&
+      !LATIN_KEEP.test(w) &&
+      (/^[a-z]/.test(w) || ordinary.has(w.toLowerCase())),
+  );
+}
+
+let ORDINARY_EN = null;
+/** Lowercase words the English corpus (messages + i18n-src/en-US) actually uses. */
+function ordinaryEnglish() {
+  if (ORDINARY_EN) return ORDINARY_EN;
+  ORDINARY_EN = new Set();
+  const add = (s) => {
+    for (const m of String(s).matchAll(/(?<![A-Za-z'’])[a-z][a-z'’]{2,}/g)) ORDINARY_EN.add(m[0]);
+  };
+  const root = path.resolve(import.meta.dirname, '../..');
+  try {
+    Object.values(
+      JSON.parse(fs.readFileSync(path.join(root, 'messages/en-US.json'), 'utf8')),
+    ).forEach(add);
+  } catch {
+    /* no bundle: lowercase words are still checked */
+  }
+  const walk = (d) => {
+    let names = [];
+    try {
+      names = fs.readdirSync(d);
+    } catch {
+      /* no such directory */
+    }
+    for (const n of names) {
+      const p = path.join(d, n);
+      if (fs.statSync(p).isDirectory()) walk(p);
+      else if (n.endsWith('.json'))
+        try {
+          stringsIn(JSON.parse(fs.readFileSync(p, 'utf8'))).forEach(add);
+        } catch {
+          /* skip */
+        }
+    }
+  };
+  walk(path.join(root, 'i18n-src/en-US'));
+  return ORDINARY_EN;
+}
+
+/**
+ * Glossary terms (bodies, features, places, stars, people) the source contains and
+ * the output kept in English although the glossary has this locale's form: ko
+ * "Andromeda 위성" for 안드로메다 (2026-10-30 audit). A term that is part of a
+ * built thing's name in the source ("Kepler" in "Kepler space telescope") is skipped.
+ */
+export function glossaryLeftInLatin(locale, src, out) {
+  const built = knownNamesIn(src);
+  return Object.entries(glossaryByClass())
+    .filter(([cls]) => ['body', 'feature', 'place', 'star', 'person'].includes(cls))
+    .flatMap(([, terms]) => Object.entries(terms))
+    .filter(([en, forms]) => {
+      const nat = forms?.[locale];
+      // Galileo, Gemini, Mercury, Cygnus are also spacecraft or programmes, which keep
+      // English: ambiguous in a label, so not checked.
+      if (!nat || nat === en || !/^[A-Z]/.test(en) || gazetteer().has(en)) return false;
+      const re = new RegExp(
+        `(^|[^A-Za-z])${en.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![A-Za-z])`,
+      );
+      return re.test(src) && re.test(out) && !built.some((b) => b !== en && b.includes(en));
+    })
+    .map(([en, forms]) => [en, forms[locale]]);
+}
+
+/** A short UI label (up to four words), not prose and not a lowercase id. */
+export function isUiLabel(src) {
+  const s = String(src).trim();
+  return !/^[a-z0-9_-]+$/.test(s) && s.split(/\s+/).filter((w) => /[A-Za-z]/.test(w)).length <= 4;
+}
+
+const RTL = new Set(['ar', 'he']);
+/** A "→" next to right-to-left text, or at either end of it, shows pointing backwards. */
+export function rtlArrowWrong(locale, out) {
+  const native = NATIVE[locale];
+  if (!native || !out.includes('→')) return false;
+  const s = out;
+  for (const m of s.matchAll(/→/g)) {
+    const left = s.slice(0, m.index).replace(/\s+$/, '');
+    const right = s.slice(m.index + 1).replace(/^\s+/, '');
+    const l = left.at(-1);
+    const r = right[0];
+    if (!l || !r) return native.test(s);
+    if (native.test(l) || native.test(r)) return true;
+  }
+  return false;
+}
+
 /**
  * Problems with a translation `out` of English `src` into `locale` (empty list
  * = acceptable). `src` may be '' when the caller doesn't have it (the client
- * wrapper); the source-dependent checks are then skipped.
+ * wrapper); the source-dependent checks are then skipped. `ui: true` marks a
+ * messages/<loc>.json string and turns on the short-label checks (English words
+ * left in, science names left in English).
  */
-export function problems(locale, src, out) {
+export function problems(locale, src, out, { ui = false } = {}) {
   const p = [];
   if (typeof out !== 'string' || !out.trim()) return ['empty'];
   src = src || '';
@@ -450,7 +664,28 @@ export function problems(locale, src, out) {
       p.push(
         `Latin-script words that are not names from the source: ${altered.slice(0, 5).join(', ')} — write every word of the target language in its own script; only names copied exactly from the English stay in Latin (add a case ending after a hyphen, never glued on)`,
       );
+    // Short UI labels only: in prose a sentence-initial name ("Galileo", the EU
+    // system) looks like an ordinary word, and the 2026-10-30 replay rejected ~20%
+    // of every non-Latin locale that way. Lowercase ids ("planets") aren't shown.
+    const label = ui && isUiLabel(src);
+    const common = label ? untranslatedEnglish(src, out) : [];
+    if (common.length)
+      p.push(
+        `English words left untranslated: ${common.slice(0, 5).join(', ')} — only names stay in Latin; translate ordinary words`,
+      );
+    const science = label ? glossaryLeftInLatin(locale, src, out) : [];
+    if (science.length)
+      p.push(
+        `science or place names left in English: ${science
+          .slice(0, 4)
+          .map(([en, nat]) => `${en} → ${nat}`)
+          .join(', ')} (use the glossary form)`,
+      );
   }
+  if (/\bOrrery\b/.test(src) && !out.includes('Orrery'))
+    p.push('the site name "Orrery" changed or missing — keep it exactly, in Latin script');
+  if (RTL.has(locale) && rtlArrowWrong(locale, out))
+    p.push('"→" in right-to-left text points backwards — use "←" (bidi does not mirror arrows)');
   for (const [re, why] of CHECKS[locale] || []) if (re.test(out)) p.push(why);
   const foreign = (out.match(FOREIGN) || []).filter(
     (ch) => !(NATIVE[locale] && NATIVE[locale].test(ch)) && !src.includes(ch),

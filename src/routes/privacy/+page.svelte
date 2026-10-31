@@ -15,7 +15,7 @@
     state where `initAnalytics()` never injects the script.
   */
   import { onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import { readOptOutCookie, writeOptOutCookie, browserPrivacySignal } from '$lib/analytics-optout';
 
@@ -117,7 +117,7 @@
     <h2 id="privacy-cookies-title">{m.privacy_cookies_heading()}</h2>
     <p>{m.privacy_cookies_body()}</p>
     <p class="fine">
-      <a href="{base}/credits">{m.layout_footer_credits()}</a>
+      <a href={localHref(`/credits`)}>{m.layout_footer_credits()}</a>
     </p>
   </article>
 

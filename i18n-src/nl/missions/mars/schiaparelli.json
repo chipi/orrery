@@ -3,17 +3,18 @@
   "vehicle": "Proton-M / Briz-M",
   "payload": "577 kg (EDM-lander van de ExoMars 2016-missie met de Trace Gas Orbiter)",
   "delta_v": "~5,5 km/s",
-  "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+  "type": "DEMONSTRATOR VOOR INTREDE, AFDALING EN LANDING · NEERGESTORT",
   "first": "Eerste poging van ESA om op het oppervlak van Mars te landen; bedoeld om binnenkomst, afdaling en landing (EDL) aan te tonen ter voorbereiding op ExoMars Rosalind Franklin",
-  "description": "Schiaparelli was de demonstrator voor binnenkomst, afdaling en landing (EDL) die als meeliftlading werd meegevoerd met de ExoMars Trace Gas Orbiter (TGO). Genoemd naar de Italiaanse astronoom Giovanni Schiaparelli, was het voertuig ontworpen om de EDL-technologie aan te tonen die ESA van plan was op te schalen voor de Rosalind Franklin rover. Schiaparelli scheidde zich op 16 oktober 2016 van TGO af en drong drie dagen later de Martiaanse atmosfeer binnen. Het afdalingsprofiel liep mis: een verzadigde traagheidsmeeteenheid zorgde ervoor dat de navigatiesoftware dacht dat het voertuig al op hoogte was geland — de parachute werd voortijdig afgeworpen en de remthusters stopten na slechts 3 seconden afvuren. Schiaparelli raakte het oppervlak met ~150 m/s. TGO zelf voltooide de baanopname succesvol en blijft operationeel.",
+  "description": "Schiaparelli was de demonstrator voor binnenkomst, afdaling en landing (EDL) die als meeliftlading werd meegevoerd met de ExoMars Trace Gas Orbiter (TGO). Genoemd naar de Italiaanse astronoom Giovanni Schiaparelli, was het voertuig ontworpen om de EDL-technologie aan te tonen die ESA van plan was op te schalen voor de Rosalind Franklin rover. Schiaparelli scheidde zich op 16 oktober 2016 van TGO af en drong drie dagen later de Martiaanse atmosfeer binnen. Het afdalingsprofiel liep mis: een verzadigde traagheidsmeeteenheid zorgde ervoor dat de navigatiesoftware dacht dat het voertuig al op hoogte was geland — de parachute werd voortijdig afgeworpen en de remthusters stopten na slechts 3 seconden afvuren. Schiaparelli raakte het oppervlak met ~150 m/s. TGO zelf voltooide de baaninsertie succesvol en blijft operationeel.",
   "events": [
     { "met": 0, "label": "LANCERING", "note": "Proton-M vanuit Bajkonoer 14 maart 2016. TGO + Schiaparelli-stack.", "type": "nominal" },
-    { "met": 0.01, "label": "TMI", "note": "Trans-Marsinjectionop de Briz-M-boventrip.", "type": "nominal" },
+    { "met": 0.01, "label": "TMI", "note": "Trans-Marsinjectionop de Briz-M-boventrap.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "Eerste midcourseCorrectie tijdens 7-maandse cruise.", "type": "info" },
     { "met": 120, "label": "TCM 2", "note": "Koerscorrectie halverwege de reis.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "Laatste benaderingscorrectie vóór TGO/Schiaparelli-scheiding.", "type": "info" },
-    { "met": 216.5, "label": "SCHEIDING", "note": "Schiaparelli scheidde zich van TGO af op 16 oktober 2016, drie dagen vóór de atmosfeertoetrede.", "type": "nominal" },
-    { "met": 219, "label": "INTREDE", "note": "Atmosfeertoetrede 19 oktober 2016.", "type": "nominal" },
+    { "met": 216.5, "label": "SCHEIDING", "note": "Schiaparelli scheidde zich van TGO af op 16 oktober 2016, drie dagen vóór de atmosferische intrede.", "type": "nominal" },
+    { "met": 219, "label": "INTREDE", "note": "Atmosferische intrede 19 oktober 2016.", "type": "nominal" },
     { "met": 219.01, "label": "AFWIJKING TIJDENS AFDALING", "note": "IMU-verzadiging → voortijdig parachutebevrijding + stuwerstopping op hoogte → inslag ~150 m/s in Meridiani Planum.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Proton-M met bovenste trap Briz-M; ExoMars 2016 lanceerde TGO en Schiaparelli samen"
 }

@@ -6,22 +6,22 @@
   "missionable": true,
   "links": [
     {
-      "l": "Mars — Wikipedia",
+      "l": "화성 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Mars",
       "t": "intro"
     },
     {
-      "l": "Mars (NASA Solar System Exploration)",
+      "l": "화성 (NASA Solar System Exploration)",
       "u": "https://science.nasa.gov/mars/",
       "t": "intro"
     },
     {
-      "l": "Mars Exploration Program (NASA)",
+      "l": "화성 탐사 프로그램 (NASA)",
       "u": "https://mars.nasa.gov/",
       "t": "core"
     },
     {
-      "l": "Earth-Mars launch windows — Wikipedia",
+      "l": "지구-화성 발사 가능 시기 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Mars_landing",
       "t": "core"
     }

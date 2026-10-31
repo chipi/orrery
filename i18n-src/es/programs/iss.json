@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "La segunda lección es que nada en el vuelo espacial empieza desde cero. La EEI es la suma de todos los programas que la precedieron —el reabastecimiento de Salyut, la modularidad de Mir, la ciencia de Skylab, el ensamblaje del Shuttle, la fiabilidad de Soyuz, los laboratorios de Europa y Japón— nada de ello inventado de nuevo, todo ello heredado y combinado. La verdad más profunda de la era espacial es que sus logros son acumulativos: cada programa se apoya en los anteriores, y la Estación se apoya en todos ellos. El progreso en el espacio no es una serie de nuevos comienzos sino un acto único y continuo de construcción, llevado adelante de mano en mano a través de generaciones y a través de fronteras."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Tierra: órbitas, encuentros y bases de lanzamiento",
+    "/fleet?focus=iss": "Flota — la Estación Espacial Internacional",
+    "/programs/mir": "Mir: la estación de la que heredó la EEI",
+    "/earth?site=iss": "La EEI sobre nosotros"
+  }
 }

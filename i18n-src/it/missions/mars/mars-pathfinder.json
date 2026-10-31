@@ -6,7 +6,7 @@
   "type": "LANDER · ROVER · FLOWN",
   "first": "Prime ruote su Marte; ha dimostrato l'atterraggio con airbag",
   "dispatch": "Mars Pathfinder fu la dimostrazione della NASA che atterrare su Marte non doveva costare una fortuna. Invece del volo stazionario con retrorazzi usato dai Viking, entrò nell'atmosfera protetto da uno scudo termico, aprì un paracadute, gonfiò un bozzolo di airbag e rimbalzò decine di volte sulla superficie prima di fermarsi e aprirsi come un fiore. Ne uscì Sojourner — un rover grande quanto un forno a microonde, le prime ruote a girare su un altro pianeta. La scienza fu modesta; il punto era il metodo. L'atterraggio con airbag e l'approccio «più veloce, più economico, migliore» che dimostrò divennero il modello per i rover molto più ambiziosi — Spirit, Opportunity, Curiosity — che seguirono.",
-  "description": "La missione che ha provato che le missioni interplanetarie economiche potevano funzionare. Pathfinder ha utilizzato un innovativo sistema di atterraggio con airbag — rimbalzando dozzine di volte sulla superficie prima di venire a riposo — e ha consegnato Sojourner, il primo rover a operare su un altro pianeta. Sojourner ha percorso 100 m, ha esaminato una dozzina di rocce e ha funzionato ben oltre la sua vita utile di 8 sol. Pathfinder ha operato per 2 mesi e 27 giorni; il successo della missione ha rivitalizzato il programma interplanetario della NASA dopo i fallimenti degli anni '90.",
+  "description": "La missione che dimostrò che le missioni interplanetarie a basso costo potevano funzionare. Pathfinder usò un innovativo sistema di atterraggio con airbag — rimbalzando decine di volte sulla superficie prima di fermarsi — e consegnò Sojourner, il primo rover a operare su un altro pianeta. Sojourner percorse 100 m, esaminò una dozzina di rocce e funzionò ben oltre la sua vita utile di progetto di 8 sol. Pathfinder operò per 2 mesi e 27 giorni; il successo della missione rilanciò il programma interplanetario della NASA dopo i fallimenti degli anni '90.",
   "events": [
     {
       "met": 0,
@@ -23,7 +23,7 @@
     {
       "met": 212,
       "label": "EDL",
-      "note": "Entrata diretta in atmosfera — nessun inserimento orbitale. Scudo termico, paracadute, retrorazzi, quindi gonfiaggio degli airbag.",
+      "note": "Ingresso atmosferico diretto — nessun inserimento in orbita. Scudo termico, paracadute, retrorazzi, quindi gonfiaggio degli airbag.",
       "type": "nominal"
     },
     {
@@ -38,5 +38,6 @@
       "note": "Prime ruote su un altro pianeta.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "stadio superiore a propellente solido PAM-D"
 }

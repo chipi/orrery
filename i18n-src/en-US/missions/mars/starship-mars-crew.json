@@ -15,5 +15,6 @@
     { "met": 700, "label": "RETURN PROP COMPLETE", "note": "ISRU plant has produced sufficient methane + LOX for return-trip propellant.", "type": "info" },
     { "met": 750, "label": "TEI BURN", "note": "Trans-Earth injection — Starship lifts off Mars surface and burns for Earth-return trajectory.", "type": "nominal" },
     { "met": 950, "label": "EARTH ARRIVAL", "note": "Atmospheric entry. Mission complete.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Starship upper stage"
 }

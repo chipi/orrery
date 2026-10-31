@@ -1,0 +1,16 @@
+[
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "ru",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "why": "burn here means combustion / burning up / burn rate, not an engine firing"
+  }
+]

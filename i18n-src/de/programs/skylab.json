@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "Die zweite Lehre lautet: Eine Station ist nur so sicher wie ihre Versorgungslinie. Skylab war in dem Moment verloren, als die Lücke zwischen seiner letzten Besatzung und dem nächstmöglichen Besuch länger wurde als die Lebensdauer seiner Umlaufbahn. Beeindruckende Hardware im All ist wertlos, wenn man sie nicht verlässlich erreichen kann; die stetige, langweilige, teure Arbeit, ein Transportsystem am Laufen zu halten, ist keine Fußnote eines Stationsprogramms, sondern dessen Voraussetzung. Skylab stürzte ab, weil man diese Linie hatte abreißen lassen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — Umlaufbahnen & Startplätze",
+    "/fleet?focus=skylab": "Flotte — Raumstation Skylab"
+  }
 }

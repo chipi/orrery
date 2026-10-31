@@ -11,7 +11,7 @@
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Atlas V 541 desde Cabo Cañaveral SLC-41 —mismo tipo de vehículo que Curiosity.",
+      "note": "Atlas V 541 desde Cabo Cañaveral SLC-41 — de la misma clase de vehículo que el de Curiosity.",
       "type": "nominal"
     },
     {
@@ -29,7 +29,7 @@
     {
       "met": 203,
       "label": "EDL",
-      "note": "La grúa del cielo entrega el rover al cráter Jezero el 2021-02-18 —sitio de un antiguo delta fluvial.",
+      "note": "La grúa celeste entrega el rover al cráter Jezero el 2021-02-18 —emplazamiento de un antiguo delta fluvial.",
       "type": "nominal"
     },
     {
@@ -41,14 +41,15 @@
     {
       "met": 271,
       "label": "PRIMER VUELO DE INGENUITY",
-      "note": "Primer vuelo propulsado controlado en otro planeta —39,1 segundos a una altitud de hasta 5 m.",
+      "note": "Primer vuelo propulsado y controlado en otro planeta — 39,1 segundos a una altitud de hasta 5 m.",
       "type": "info"
     },
     {
       "met": 1278,
       "label": "INGENUITY RETIRADO",
-      "note": "Aspa del rotor dañada en el vuelo 72 el 2024-01-18; helicóptero inmovilizado, repurposado como estación meteorológica y de datos estacionaria almacenando lecturas para recuperación futura.",
+      "note": "Aspa del rotor dañada en el vuelo 72 el 2024-01-18; helicóptero inmovilizado en tierra y reconvertido en una estación meteorológica y de datos fija que almacena lecturas para recuperarlas en el futuro.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "etapa superior Centaur (Atlas V 541)"
 }

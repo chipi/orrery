@@ -28,5 +28,12 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Viking is that the most important questions rarely resolve in a single experiment. Viking asked whether Mars held life with the best instrument its era could build, and got back an answer that was neither yes nor no — and the honest response was to report the ambiguity, not to manufacture certainty. Hard questions are usually answered by the slow weight of evidence, not one clean result, and mistaking a clever test for a final one is how you fool yourself." },
     { "type": "prose", "md": "The deeper lesson is the value of proving the whole chain. Viking's lasting gift was not any single measurement but the demonstration that reaching Mars and landing intact was possible and repeatable. Once a hard thing has been done — and done twice — it stops being a gamble and becomes a foundation others can build on. Sometimes the greatest result a mission returns is simply that it can be done." }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — where Viking landed",
+    "/programs/mariner": "Mariner — the flybys and orbiters that scouted Mars first",
+    "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
+    "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
+    "/mars?site=viking1-orbiter": "Viking 1 orbiter"
+  }
 }

@@ -26,7 +26,7 @@
     },
     {
       "type": "prose",
-      "md": "Em 1980, a Europa criou a Arianespace, a primeira empresa comercial de lançamentos do mundo, e transformou um ativo estratégico em negócio. A ideia era que se Ariane lançasse não apenas cargas europeias, mas satélites de qualquer um disposto a pagar, a receita comercial ajudaria a sustentar a lançadora e reduzir seu custo. Era um modelo genuinamente novo — tratar o acesso ao espaço como um serviço a ser vendido em vez de uma capacidade que cada nação construía apenas para si — e por duas décadas funcionou espetacularmente bem."
+      "md": "Em 1980, a Europa criou a Arianespace, a primeira empresa comercial de lançamentos do mundo, e transformou um ativo estratégico em negócio. A ideia era que se Ariane lançasse não apenas cargas úteis europeias, mas satélites de qualquer um disposto a pagar, a receita comercial ajudaria a sustentar a lançadora e reduzir seu custo. Era um modelo genuinamente novo — tratar o acesso ao espaço como um serviço a ser vendido em vez de uma capacidade que cada nação construía apenas para si — e por duas décadas funcionou espetacularmente bem."
     }
   ],
   "outcome": [
@@ -44,7 +44,7 @@
     },
     {
       "type": "prose",
-      "md": "O manifesto de Ariane 5 é uma lista de honra da ciência e infraestrutura da era: a missão ao cometa Rosetta, a constelação de navegação Galileo, BepiColombo a Mercúrio, os cargueiros ATV que reabasteceram a Estação Espacial Internacional, e — a mais celebrada de suas cargas finais — o James Webb Space Telescope (dezembro de 2021), lançado com tal precisão que economizou anos de combustível do telescópio. O verdadeiro voo final de Ariane 5 ocorreu em julho de 2023, transportando os satélites de telecomunicações Heinrich Hertz e Syracuse 4B no VA261. Então o terreno mudou. Os foguetes reutilizáveis da SpaceX reduziram os preços de Ariane e terminaram seu domínio comercial, e Ariane 6, voando a partir de 2024, é a resposta da Europa: uma lançadora mais barata e flexível construída para manter o acesso independente do continente vivo em um mercado transformado."
+      "md": "O manifesto de Ariane 5 é uma lista de honra da ciência e infraestrutura da era: a missão ao cometa Rosetta, a constelação de navegação Galileo, BepiColombo a Mercúrio, os cargueiros ATV que reabasteceram a Estação Espacial Internacional, e — a mais celebrada de suas cargas úteis finais — o James Webb Space Telescope (dezembro de 2021), lançado com tal precisão que economizou anos de combustível do telescópio. O verdadeiro voo final de Ariane 5 ocorreu em julho de 2023, transportando os satélites de telecomunicações Heinrich Hertz e Syracuse 4B no VA261. Então o terreno mudou. Os foguetes reutilizáveis da SpaceX reduziram os preços de Ariane e terminaram seu domínio comercial, e Ariane 6, voando a partir de 2024, é a resposta da Europa: uma lançadora mais barata e flexível construída para manter o acesso independente do continente vivo em um mercado transformado."
     }
   ],
   "narrative": [
@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "A segunda lição está escrita no Voo 501: software reutilizado não é automaticamente software seguro. Ariane 5 foi destruída porque código de orientação comprovado em Ariane 4 foi transferido sem testes para um foguete que voava mais rápido, onde uma premissa embutida no código antigo não mais se sustentava. Os componentes eram sólidos; a falha foi assumir que o que funcionava em um contexto funcionaria inalterado em outro. Todo sistema reutilizado deve ser revalidado contra as novas condições que realmente enfrentará — uma lição que vai muito além de foguetes."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/esa-human": "A ESA no voo espacial tripulado — Spacelab, Columbus, ATV",
+    "/fleet?focus=ariane-5": "Frota — lançadores Ariane"
+  }
 }

@@ -76,5 +76,9 @@
       "type": "prose",
       "md": "De diepere les, die zich nog vormt, gaat over het gevaar van het met pensioen sturen van een capaciteit voordat de vervanging ervan zeker is. Het ISS heeft een vaste einddatum; zijn commerciële opvolgers vliegen nog niet. Gokken dat een markt op schema zal verschijnen, met een harde deadline en een rivaal die al in een baan is, is een gok waarvan de inzet niets minder is dan de voortdurende menselijke aanwezigheid in een lage aardbaan zelf."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "ISS — het station waarvan ze de opvolgers moeten worden",
+    "/programs/spacex": "SpaceX — het bemannings- en vrachtvervoer waarop ze zullen rekenen"
+  }
 }

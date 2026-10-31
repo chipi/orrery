@@ -10,6 +10,7 @@
  * check + dispose + fallback path that needs richer integration.
  */
 import * as THREE from 'three';
+import * as m from '$lib/paraglide/messages';
 
 /** Thrown when the browser can't create a WebGL context (WebGL disabled, a weak
  *  GPU, or too many live contexts). Callers catch it to bail their scene init
@@ -32,8 +33,7 @@ function showWebglFallback(container: HTMLElement): void {
     'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;' +
     'padding:24px;text-align:center;color:rgba(255,255,255,0.7);' +
     "font:14px/1.6 var(--font-mono,'Space Mono',monospace);background:#04040c;";
-  el.textContent =
-    "This view needs 3D graphics (WebGL), which this device or browser can't start right now. Try another browser, or enable hardware acceleration.";
+  el.textContent = m.webgl_unavailable();
   container.appendChild(el);
 }
 

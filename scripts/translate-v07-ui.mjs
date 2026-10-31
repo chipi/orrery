@@ -2,9 +2,10 @@
  * UI-string i18n translator (un-archived #354 follow-up).
  *
  * Translates message-bundle keys into the 13 non-en-US locales via the
- * Claude API, writing both messages/<loc>.json and
- * scripts/paraglide-key-overrides.json (so paraglide-add-keys re-applies
- * them on future runs). Two modes:
+ * Claude API into messages/<loc>.json. Each answer must pass problems() with
+ * the UI-label checks; a key that fails is reported and left as it was.
+ * messages/<loc>.json is the only copy of the translations.
+ * Two modes:
  *
  *   --keys=k1,k2,...   translate this explicit key set
  *   --auto             translate every key whose value is still identical
@@ -20,42 +21,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
+import { LANGUAGE_NAMES, problems, uiPromptNotes } from './lib/translate-quality.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const MESSAGES_DIR = path.join(ROOT, 'messages');
-const OVERRIDES_PATH = path.join(ROOT, 'scripts/paraglide-key-overrides.json');
 const en = JSON.parse(fs.readFileSync(path.join(MESSAGES_DIR, 'en-US.json'), 'utf8'));
 
-const ALL = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
-const NAMES = {
-  ar: 'Modern Standard Arabic',
-  de: 'German',
-  es: 'European Spanish',
-  fr: 'French',
-  hi: 'Hindi',
-  it: 'Italian',
-  ja: 'Japanese',
-  ko: 'Korean',
-  nl: 'Dutch',
-  'pt-BR': 'Brazilian Portuguese',
-  ru: 'Russian',
-  'sr-Cyrl': 'Serbian (Cyrillic)',
-  'zh-CN': 'Simplified Chinese',
-};
+const ALL = TRANSLATED_LOCALES;
+const NAMES = LANGUAGE_NAMES;
 
 const args = Object.fromEntries(
   process.argv.slice(2).map((a) => {
@@ -73,11 +47,20 @@ const phset = (s) => new Set(String(s).match(/\{[^}]+\}/g) || []);
 const sameSet = (a, b) => a.size === b.size && [...a].every((x) => b.has(x));
 
 // Values we never machine-translate: too-short, aerospace acronyms, and
-// template/symbol-only strings (the LLM would mangle them).
+// template/symbol-only strings (the LLM would mangle them). Short ALL-CAPS words
+// are labels, not acronyms: skipping every /^[A-Z]{2,7}$/ value left STATUS,
+// AGENCY, PERIOD, ARRIVAL in English, later spelled phonetically (ja スタタス,
+// ペリド, アーリバル — 2026-10-30 audit). Only codes with a digit and the
+// acronyms below stay as they are.
+const ACRONYMS = new Set(
+  'TLI TMI LOI TEI EDL OI TCM C3 ISS JWST MET ETA MECO SECO EVA LEO MEO GEO HEO GTO SSO NRHO DLA RTT AU UTC HST'.split(
+    ' ',
+  ),
+);
 function trivial(v) {
   const s = String(v).trim();
   if (s.length <= 2) return true;
-  if (/^[A-Z0-9/.-]{2,7}$/.test(s)) return true;
+  if (ACRONYMS.has(s) || (/^[A-Z0-9/.-]{2,7}$/.test(s) && /\d/.test(s))) return true;
   if (s.includes('{') && !/[a-z]{4}/.test(s)) return true;
   if (!/[a-zA-Z]/.test(s)) return true;
   return false;
@@ -101,7 +84,7 @@ async function tx(client, locale, payload) {
     messages: [
       {
         role: 'user',
-        content: `Translate into ${NAMES[locale]}:\n\n${JSON.stringify(payload, null, 2)}`,
+        content: `${uiPromptNotes(Object.keys(payload))}\n\nTranslate into ${NAMES[locale]}:\n\n${JSON.stringify(payload, null, 2)}`,
       },
     ],
   });
@@ -124,7 +107,6 @@ const chunk = (arr, n) => {
 };
 
 const client = translationClient(new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }));
-const overrides = JSON.parse(fs.readFileSync(OVERRIDES_PATH, 'utf8'));
 
 for (const loc of locales) {
   const mpath = path.join(MESSAGES_DIR, `${loc}.json`);
@@ -153,8 +135,8 @@ for (const loc of locales) {
     continue;
   }
   process.stdout.write(`${loc}: ${keys.length} keys `);
-  overrides[loc] = overrides[loc] ?? {};
   let done = 0;
+  const refused = [];
   for (const batch of chunk(keys, 20)) {
     const payload = {};
     for (const k of batch) payload[k] = en[k];
@@ -162,8 +144,12 @@ for (const loc of locales) {
       const tr = await tx(client, loc, payload);
       for (const k of batch)
         if (typeof tr[k] === 'string' && tr[k].trim()) {
+          const why = problems(loc, en[k], tr[k], { ui: true });
+          if (why.length) {
+            refused.push(`${k}: ${why.join('; ').slice(0, 140)}`);
+            continue;
+          }
           messages[k] = tr[k];
-          overrides[loc][k] = tr[k];
           done++;
         }
       process.stdout.write('.');
@@ -172,7 +158,7 @@ for (const loc of locales) {
     }
   }
   fs.writeFileSync(mpath, JSON.stringify(messages, null, 2) + '\n', 'utf8');
-  console.log(` → ${done} written`);
+  console.log(` → ${done} written, ${refused.length} refused`);
+  for (const r of refused) console.log(`  refused ${r}`);
 }
-fs.writeFileSync(OVERRIDES_PATH, JSON.stringify(overrides, null, 2) + '\n', 'utf8');
 console.log('Done');

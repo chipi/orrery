@@ -1,0 +1,1451 @@
+[
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "dispatch",
+    "en": "Faith 7 closed Mercury, and did it the hard way. Gordon Cooper flew twenty-two orbits over a day and a half — longer than every previous Mercury flight combined — and then, in the final hours, his automatic control system failed. So he flew the reentry by hand, lining the capsule up against the horizon and the stars and firing his retros on a spoken count, and put it down closer to the ship than any flight before. It was the last time an American flew in space alone, and a fitting last word for a program built by test pilots: when the automation quit, the pilot brought it home.",
+    "old": "Faith 7 sloot Mercury af, en deed dat op de harde manier. Gordon Cooper vloog tweeëntwintig banen over anderhalve dag — langer dan alle voorgaande Mercury-vluchten samen — en toen, in de laatste uren, viel zijn automatische besturingssysteem uit. Dus vloog hij de terugkeer handmatig, richtte de capsule op de horizon en de sterren en vuurde zijn retro's af op een gesproken telling, en zette hem dichter bij het schip neer dan welke vlucht ook daarvoor. Het was de laatste keer dat een Amerikaan alleen in de ruimte vloog, en een passend slotwoord voor een programma gebouwd door testpiloten: toen de automatisering het begaf, bracht de piloot hem thuis.",
+    "new": "Faith 7 sloot Mercury af, en deed dat op de harde manier. Gordon Cooper vloog tweeëntwintig banen in anderhalve dag — langer dan alle eerdere Mercury-vluchten samen — en toen, in de laatste uren, viel zijn automatische besturingssysteem uit. Dus vloog hij de atmosferische intrede met de hand, richtte de capsule uit op de horizon en de sterren en vuurde zijn retroraketten af op een hardop uitgesproken aftelling, en zette haar dichter bij het schip neer dan welke vlucht ook daarvoor. Het was de laatste keer dat een Amerikaan alleen in de ruimte vloog, en een passend slotwoord voor een programma dat door testpiloten was gebouwd: toen de automatisering het begaf, bracht de piloot de capsule thuis."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.4.note",
+    "en": "Powered descent to Mars surface — no parachutes, no airbags, no sky-crane.",
+    "old": "Aangedreven afdaling naar Mars-oppervlak — geen parachutes, geen airbags, geen sky-crane.",
+    "new": "Aangedreven afdaling naar het Marsoppervlak — geen parachutes, geen airbags, geen sky-crane."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.2.note",
+    "en": "Approach trim pin-targets the MOI periapsis.",
+    "old": "Aanvlieging verfijning richt zich op periapsis van MOI.",
+    "new": "De correctie tijdens de nadering richt zich nauwkeurig op het periapsis van de MOI."
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "first",
+    "en": "China's first Shenzhou orbital test — opened the path to crewed PRC spaceflight",
+    "old": "Chinas eerste Shenzhou-orbitaltest — opende het pad naar bemande ruimtevaartuigen van de VRC",
+    "new": "Chinas eerste Shenzhou-test in een baan om de aarde — opende de weg naar bemande ruimtevaart van de VRC"
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.5.note",
+    "en": "Heliographic latitude exceeds 17° — first close-up polar magnetic field images.",
+    "old": "Heliografische breedtegraad overschrijdt 17° — eerste close-up beelden van magnetische velden bij de polen.",
+    "new": "Heliografische breedte overschrijdt 17° — eerste opnamen van dichtbij van het magnetische veld bij de polen."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.2.note",
+    "en": "Vikram lander separates from propulsion module.",
+    "old": "Vikram-lander scheidt van voortstuwingsmodule.",
+    "new": "De Vikram-lander scheidt zich los van de voortstuwingsmodule."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.3.note",
+    "en": "2020-10-20. Touch-and-Go arm sinks 50 cm into the rubble-pile surface; grabs 121.6 g.",
+    "old": "2020-10-20. Touch-and-Go-arm zakt 50 cm in het puin-pile-oppervlak; verzamelt 121,6 g.",
+    "new": "2020-10-20. De Touch-and-Go-arm zakt 50 cm weg in het oppervlak van de puinhoop; grijpt 121,6 g."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.3.note",
+    "en": "1.935 kg collected from far-side regolith.",
+    "old": "1,935 kg verzameld uit achterzijde-regoliet.",
+    "new": "1,935 kg verzameld uit regoliet van de achterkant van de Maan."
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "events.1.note",
+    "en": "14-orbit flight at 195 × 315 km, 42.6° inclination.",
+    "old": "14-baansvlucht op 195 × 315 km, 42,6° inclinatie.",
+    "new": "Vlucht van 14 banen op 195 × 315 km, inclinatie 42,6°."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "first",
+    "en": "First mission designed to image the Sun's polar regions in detail; complements Parker Solar Probe's in-corona measurements with high-latitude remote sensing",
+    "old": "Eerste missie ontworpen om de poolgebieden van de zon in detail te fotograferen; vormt een aanvulling op de in-corona metingen van Parker Solar Probe met remote sensing op hoge breedtegraden",
+    "new": "Eerste missie die is ontworpen om de poolgebieden van de zon in detail af te beelden; vult de metingen van Parker Solar Probe in de corona aan met waarnemingen op afstand op hoge breedtegraden."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.3.note",
+    "en": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+    "old": "Definitieve undocking 1975-07-19 16:26 UTC. Soyuz 19 landt 1975-07-21 in Kazachstan.",
+    "new": "Definitieve ontkoppeling 1975-07-19 16:26 UTC. Soyuz 19 landt 1975-07-21 in Kazachstan."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.5.note",
+    "en": "1994-10-13. Periapsis lowered into atmosphere — first planned planetary spacecraft entry.",
+    "old": "1994-10-13. Periapsis verlaagd in atmosfeer — eerste geplande planetaire ruimtevaartuiggang.",
+    "new": "1994-10-13. Periapsis verlaagd tot in de atmosfeer — eerste geplande atmosferische intrede van een planetair ruimtevaartuig."
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "description",
+    "en": "Neil Armstrong and David Scott achieved the first docking of two spacecraft — with an Agena target — on 16 March 1966. A stuck attitude thruster then caused a violent tumble; Armstrong undocked and used the reentry-control system to recover, forcing an emergency landing after 10 h 41 m. It was Armstrong's first spaceflight.",
+    "old": "Neil Armstrong en David Scott bereikten de eerste koppeling van twee ruimtevaartuigen — met een Agena-doelwit — op 16 maart 1966. Een vastgelopen houdingsstuwraket veroorzaakte vervolgens een heftige tuimeling; Armstrong ontkoppelde en gebruikte het terugkeer-controlesysteem om te herstellen, wat een noodlanding afdwong na 10 u 41 m. Het was Armstrongs eerste ruimtevlucht.",
+    "new": "Neil Armstrong en David Scott voltooiden op 16 maart 1966 de eerste koppeling van twee ruimtevaartuigen — met een Agena-doelvoertuig. Een vastzittende standregelraket veroorzaakte daarna een heftige tuimeling; Armstrong ontkoppelde en gebruikte het controlesysteem voor de atmosferische intrede om de controle te herstellen, wat na 10 u 41 min een noodlanding afdwong. Het was Armstrongs eerste ruimtevlucht."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.4.note",
+    "en": "Ascent vehicle lifts off; rendezvous with orbiter.",
+    "old": "Opstijgvoertuig heft af; rendezvous met orbiter.",
+    "new": "Het opstijgvoertuig stijgt op; rendez-vous met de orbiter."
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.5.note",
+    "en": "First high-resolution surface images returned.",
+    "old": "Eerste hoogresolutie oppervlakteafbeeldingen teruggezonden.",
+    "new": "Eerste oppervlaktebeelden met hoge resolutie teruggezonden."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.4.note",
+    "en": "2021-05-10. 2.5-year cruise back to Earth.",
+    "old": "2021-05-10. 2,5-jarige cruise terug naar aarde.",
+    "new": "2021-05-10. Terugreis naar de Aarde van 2,5 jaar."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.1.note",
+    "en": "Gravity assist deflects Ulysses ~80° out of the ecliptic into a polar Sun-relative orbit.",
+    "old": "Zwaartekrachtassistentie buigt Ulysses ~80° uit de ecliptica naar een polaire Zonbetrokken baan.",
+    "new": "De zwaartekrachtassist buigt Ulysses ~80° uit de ecliptica naar een polaire baan ten opzichte van de zon."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.0.note",
+    "en": "Atlas-Centaur from Cape Canaveral on a Jupiter-Saturn gravity-assist trajectory.",
+    "old": "Atlas-Centaur vanaf Cape Canaveral op een Jupiter-Saturnus zwaartekrachtassistentie-traject.",
+    "new": "Atlas-Centaur vanaf Cape Canaveral op een traject met zwaartekrachtassists langs Jupiter en Saturnus."
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "description",
+    "en": "Jared Isaacman, Sian Proctor, Hayley Arceneaux and Chris Sembroski — the first orbital flight crewed entirely by people who were not professional government astronauts. Launched 2021-09-15 00:02 UTC from LC-39A on Falcon 9 B1062 (third flight), atop Crew Dragon Resilience (C207, previously flown on Crew-1). Reached a 585 km circular orbit at 51.6° inclination — the highest crewed orbit since the Hubble servicing missions. No docking with any station; three days of free flight including the first onboard cupola (replacing the docking adapter). Splashed down off the Florida coast 2021-09-18 23:06 UTC. The mission raised over $243M for St. Jude Children's Research Hospital — Arceneaux is a former St. Jude patient and the first cancer survivor in orbit.",
+    "old": "Jared Isaacman, Sian Proctor, Hayley Arceneaux en Chris Sembroski — de eerste orbitale vlucht volledig bemand door mensen die geen professionele overheidsastronauten waren. Gelanceerd op 2021-09-15 om 00:02 UTC vanaf LC-39A op Falcon 9 B1062 (derde vlucht), boven op Crew Dragon Resilience (C207, eerder gevlogen op Crew-1). Bereikten een circulaire baan van 585 km bij 51,6° inclinatie — de hoogste bemande baan sinds de Hubble-servicemissies. Geen koppeling met enig station; drie dagen vrije vlucht inclusief de eerste onboard-koepel (ter vervanging van de dockingadapter). Plonsten voor de kust van Florida neer op 2021-09-18 om 23:06 UTC. De missie haalde meer dan $243 mln op voor het St. Jude Children's Research Hospital — Arceneaux is een voormalig St. Jude-patiënt en de eerste kankeroverlever in een baan om de Aarde.",
+    "new": "Jared Isaacman, Sian Proctor, Hayley Arceneaux en Chris Sembroski — de eerste orbitale vlucht die volledig werd bemand door mensen die geen professionele overheidsastronauten waren. Gelanceerd op 2021-09-15 om 00:02 UTC vanaf LC-39A op een Falcon 9 B1062 (derde vlucht), boven op de Crew Dragon Resilience (C207, eerder gevlogen tijdens Crew-1). Bereikte een circulaire baan van 585 km bij 51,6° inclinatie — de hoogste bemande baan sinds de Hubble-servicemissies. Geen koppeling met enig station; drie dagen vrije vlucht, met de eerste koepel aan boord (ter vervanging van de koppelingsadapter). Plonsde op 2021-09-18 om 23:06 UTC voor de kust van Florida neer. De missie haalde meer dan $243 mln op voor het St. Jude Children's Research Hospital — Arceneaux is een voormalig St. Jude-patiënt en de eerste kankeroverlever in een baan om de Aarde."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.3.note",
+    "en": "2022-09-04. Begins inclination climb out of the ecliptic.",
+    "old": "2022-09-04. Begin van inclinatieklimming uit de ecliptica.",
+    "new": "2022-09-04. De inclinatie ten opzichte van de ecliptica begint op te lopen."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.note",
+    "en": "First of four assists building the energy for Saturn arrival.",
+    "old": "Eerste van vier slingers die energie opbouwen voor de Saturnus-aankomst.",
+    "new": "Eerste van vier zwaartekrachtassists die de energie opbouwen voor de aankomst bij Saturnus."
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "first",
+    "en": "Longest solo Earth-orbital flight — 4 days 23 hours, 81 orbits",
+    "old": "Langste solo aardomloopvlucht — 4 dagen 23 uur, 81 omwentelingen",
+    "new": "Langste solovlucht in een baan om de Aarde — 4 dagen 23 uur, 81 banen"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.0.note",
+    "en": "Atlas V 551 lifts Juno from Cape Canaveral.",
+    "old": "Atlas V 551 tilt Juno op vanaf Cape Canaveral.",
+    "new": "Een Atlas V 551 lanceert Juno vanaf Cape Canaveral."
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "dispatch",
+    "en": "Voyager 2 flew the tour that may never be flown again. Launched sixteen days before its twin on a slower, longer arc, it is the only spacecraft ever to visit Uranus and Neptune — two worlds that remain, decades later, known to us almost entirely from the few hours it spent racing past each one. It found a planet tipped on its side, the fastest winds in the solar system, and a frozen moon venting geysers into space, and then it too crossed into interstellar space, in 2018. Every serious plan to return to the ice giants still rests on what this single spacecraft saw on its way out.",
+    "old": "Voyager 2 vloog de tour die misschien nooit meer gevlogen zal worden. Gelanceerd zestien dagen vóór zijn tweelingbroer op een langzamere, langere boog, is het het enige ruimtevaartuig ooit dat Uranus en Neptunus heeft bezocht — twee werelden die decennia later nog steeds bijna volledig bij ons bekend zijn uit de paar uur die het voorbij elk van beide racete. Het vond een planeet die op zijn kant lag, de snelste winden in het zonnestelsel, en een bevroren maan die geisers de ruimte in spuwde, en daarna stak ook dit ruimtevaartuig over naar de interstellaire ruimte, in 2018. Elk serieus plan om terug te keren naar de ijsreuzen steunt nog steeds op wat dit enkele ruimtevaartuig zag tijdens zijn reis naar buiten.",
+    "new": "Voyager 2 vloog de tour die misschien nooit meer gevlogen zal worden. Gelanceerd zestien dagen vóór zijn tweelingbroer op een langzamere, langere boog, is het het enige ruimtevaartuig ooit dat Uranus en Neptunus heeft bezocht — twee werelden die tientallen jaren later nog steeds bijna volledig bekend zijn uit de paar uur waarin het langs elk van beide raasde. Het vond een planeet die op zijn kant lag, de snelste winden van het zonnestelsel en een bevroren maan die geisers de ruimte in spoot, en daarna stak ook Voyager 2 de grens over naar de interstellaire ruimte, in 2018. Elk serieus plan om terug te keren naar de ijsreuzen steunt nog steeds op wat dit ene ruimtevaartuig zag op zijn weg naar buiten."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.7.note",
+    "en": "CSM re-entry and South Pacific splashdown, recovered by USS Iwo Jima.",
+    "old": "CSM herintrede en splash-down in de Zuid-Stille Oceaan, gered door USS Iwo Jima.",
+    "new": "Atmosferische intrede van de CSM en landing in zee in de zuidelijke Stille Oceaan, opgepikt door de USS Iwo Jima."
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "events.0.note",
+    "en": "Delta II lifts Dawn toward Vesta and Ceres on a low-thrust spiral highway.",
+    "old": "Delta II tilt Dawn op naar Vesta en Ceres op een laagstuwingsspiraal-snelweg.",
+    "new": "Een Delta II lanceert Dawn richting Vesta en Ceres, op een spiraalvormige snelweg met lage stuwkracht."
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.1.note",
+    "en": "TCM + NEXT-C ion-thruster demonstration firings.",
+    "old": "TCM + NEXT-C ion-thruster demonstratiebrandingen.",
+    "new": "TCM + demonstratie-ontstekingen van de NEXT-C-ionenstuwer."
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.2.note",
+    "en": "Pacific Ocean ~445 km NE of Midway after 6 orbits / 9 h 13 min. First Mercury Pacific recovery.",
+    "old": "Stille Oceaan ~445 km NNO van Midway na 6 banen / 9 h 13 min. Eerste Mercury-bergingsoperatie in de Stille Oceaan.",
+    "new": "Stille Oceaan ~445 km NO van Midway na 6 banen / 9 u 13 min. Eerste Mercury-berging in de Stille Oceaan."
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.1.note",
+    "en": "Flyby at ~132,000 km — first close-range photographs of the planet.",
+    "old": "Scheervlucht op ~132.000 km — eerste opnamen van dichtbij van de planeet.",
+    "new": "Flyby op ~132.000 km — eerste opnamen van de planeet van dichtbij."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.0.note",
+    "en": "Titan IIIE / Centaur lifts Voyager 1 from Cape Canaveral.",
+    "old": "Titan IIIE / Centaur tilt Voyager 1 op vanaf Cape Canaveral.",
+    "new": "Titan IIIE / Centaur lanceert Voyager 1 vanaf Cape Canaveral."
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "first",
+    "en": "Europe's first interplanetary mission; longest-running non-NASA Mars orbiter",
+    "old": "Europa's eerste interplanetaire missie; langst lopende niet-NASA Mars-orbiter",
+    "new": "Europa's eerste interplanetaire missie; langstlopende Marsorbiter buiten NASA"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.5.note",
+    "en": "2018-06-10. Planet-wide dust storm cuts solar power.",
+    "old": "2018-06-10. Planeetbrede stofstorm blokkeert zonnekracht.",
+    "new": "2018-06-10. Een stofstorm over de hele planeet beperkt de zonnestroom."
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.3.note",
+    "en": "Trim manoeuvres place Hope into its 55-hour science orbit.",
+    "old": "Trimmanoeuvers plaatsen Hope in haar 55-uur wetenschappelijke baan.",
+    "new": "Correctiemanoeuvres brengen Hope in haar wetenschappelijke baan van 55 uur."
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "dispatch",
+    "en": "Gemini 7 answered the least glamorous but most fundamental question: could a crew survive as long as a trip to the Moon and back? Frank Borman and Jim Lovell spent fourteen days sealed in a cabin the size of the front seat of a small car — no room to stand, stretch, or escape each other — to prove the human body and mind could take it. It was tedious and physically miserable, and it worked: they came back healthy, retiring the fear that long spaceflight might be impossible. Along the way they doubled as the target for Gemini 6A's rendezvous, so the single flight quietly proved two of Apollo's prerequisites at once — that people could last the distance, and that two ships could meet.",
+    "old": "Gemini 7 beantwoordde de minst glamoureuze maar meest fundamentele vraag: kon een bemanning overleven gedurende een reis naar de Maan en terug? Frank Borman en Jim Lovell brachten veertien dagen door opgesloten in een cabine ter grootte van de voorbank van een kleine auto — geen ruimte om te staan, zich uit te rekken, of aan elkaar te ontsnappen — om te bewijzen dat het menselijk lichaam en de geest het aankonden. Het was saai en fysiek ellendig, en het werkte: ze kwamen gezond terug, waarmee de angst verdween dat lange ruimtevluchten onmogelijk zouden zijn. Onderweg dienden ze ook als doelwit voor de rendezvous van Gemini 6A, zodat de enkele vlucht stilletjes twee van Apollo's vereisten tegelijk bewees — dat mensen de afstand konden volhouden, en dat twee schepen elkaar konden ontmoeten.",
+    "new": "Gemini 7 beantwoordde de minst glamoureuze maar meest fundamentele vraag: kon een bemanning even lang overleven als een reis naar de Maan en terug? Frank Borman en Jim Lovell brachten veertien dagen door opgesloten in een cabine ter grootte van de voorbank van een kleine auto — geen ruimte om te staan, zich uit te rekken of aan elkaar te ontsnappen — om te bewijzen dat het menselijk lichaam en de geest het aankonden. Het was saai en lichamelijk ellendig, en het werkte: ze kwamen gezond terug, waarmee de angst verdween dat lange ruimtevluchten onmogelijk zouden zijn. Onderweg dienden ze ook als doelwit voor het rendez-vous van Gemini 6A, zodat die ene vlucht stilletjes twee van Apollo's vereisten tegelijk bewees — dat mensen de afstand konden volhouden en dat twee ruimtevaartuigen elkaar konden ontmoeten."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.2.note",
+    "en": "2005-09-12. Station-keep at 7-km gate position.",
+    "old": "2005-09-12. Stationair houden op 7-km-poort positie.",
+    "new": "2005-09-12. Houdt positie aan op de poortpositie op 7 km."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "first",
+    "en": "The mission that turned a near-disaster into NASA's most celebrated rescue",
+    "old": "De missie die bijna-ramp transformeerde in NASAs meest gevierde redding",
+    "new": "De missie die een bijna-ramp veranderde in de meest gevierde reddingsoperatie van NASA"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "first",
+    "en": "Joint NASA-DoD lunar mission; first hints of water ice at lunar poles",
+    "old": "Gezamenlijke NASA-DoD maanmissie; eerste hints van waterijs aan de maanpolen",
+    "new": "Gezamenlijke maanmissie van NASA en het DoD; eerste aanwijzingen voor waterijs aan de maanpolen"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "first",
+    "en": "Only spacecraft ever to enter a high-inclination heliocentric orbit; only direct measurements of the solar wind at all heliographic latitudes",
+    "old": "Enig ruimtevaartuig ooit in een hoog-inclinatie heliocentrische baan; enige directe metingen van de zonnewind op alle heliografische breedten",
+    "new": "Enige ruimtevaartuig ooit dat een heliocentrische baan met hoge inclinatie bereikte; enige directe metingen van de zonnewind op alle heliografische breedten"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.5.note",
+    "en": "Planned rendezvous with fast-rotating asteroid (1998 KY26).",
+    "old": "Geplande rendezvous met snelroterende asteroïde (1998 KY26).",
+    "new": "Gepland rendez-vous met een snel roterende asteroïde (1998 KY26)."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "description",
+    "en": "ISRO's Mars Orbiter Mission cost $74 million — less than the budget of the film Gravity ($100M), and a fraction of NASA's MAVEN ($671M) which arrived two days earlier. Built in 18 months as a technology demonstrator, Mangalyaan succeeded at every objective: trans-Mars injection, deep-space navigation, Mars orbit insertion, and 8 years of science return. India became the fourth space agency at Mars and the first to succeed on its first try.",
+    "old": "ISRO's Mars Orbiter Mission kostte $74 miljoen — minder dan het budget van de film Gravity ($100M), en een fractie van NASA's MAVEN ($671M) die twee dagen eerder arriveerde. Gebouwd in 18 maanden als technologiedemonstrator, Mangalyaan slaagde in elk objectief: trans-Mars-injectie, navigatie in diepe ruimte, Mars-baaninsertie en 8 jaar wetenschappelijke opbrengst. India werd het vierde ruimtevaartagentschap op Mars en het eerste dat op de eerste poging slaagde.",
+    "new": "De Mars Orbiter Mission van ISRO kostte $74 miljoen — minder dan het budget van de film Gravity ($100 mln) en een fractie van NASA's MAVEN ($671 mln), die twee dagen eerder arriveerde. Gebouwd in 18 maanden als technologiedemonstrator, slaagde Mangalyaan in elk doel: trans-Mars-injectie, navigatie in de diepe ruimte, baaninsertie bij Mars en 8 jaar wetenschappelijke opbrengst. India werd het vierde ruimtevaartagentschap bij Mars en het eerste dat in één keer slaagde."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.3.note",
+    "en": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+    "old": "Falcon landt op Hadley-Apennine 1971-07-30 22:16 UTC — eerste landing op een niet-marijn hooglande gebied.",
+    "new": "Falcon landt op 1971-07-30 22:16 UTC bij Hadley-Apennine — eerste landing op een hooglandlocatie die geen mare is."
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "first",
+    "en": "Second half of first dual flight — first communications between two crewed spacecraft",
+    "old": "Tweede helft van eerste dubbelvlucht — eerste communicatie tussen twee bemande ruimtevaartuigen",
+    "new": "Tweede helft van de eerste dubbelvlucht — eerste communicatie tussen twee bemande ruimtevaartuigen"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.5.note",
+    "en": "MTM jettison + orbiter separation; science operations begin early 2027.",
+    "old": "MTM-uitstoting + orbitalerscheiding; wetenschappelijke operaties beginnen begin 2027.",
+    "new": "Afstoting van de MTM + scheiding van de orbiter; wetenschappelijke operaties beginnen begin 2027."
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.4.note",
+    "en": "NiCd batteries depleted; mission ended 1966-05-30. Remains in lunar orbit.",
+    "old": "NiCd-accu's leeg; missie geëindigd 1966-05-30. Blijft in maanorbits.",
+    "new": "NiCd-accu's leeg; missie geëindigd 1966-05-30. Blijft in een baan om de Maan."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.0.note",
+    "en": "Lifts off from Cape Canaveral LC-36; first stage returns for downrange recovery.",
+    "old": "Heft af van Cape Canaveral LC-36; eerste trap keert terug voor downrange-recovery.",
+    "new": "Stijgt op van Cape Canaveral LC-36; de eerste trap keert terug voor berging verderop langs het vluchtpad."
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "first",
+    "en": "Last solo American crewed spaceflight; 22 orbits / 34 hours",
+    "old": "Laatste Amerikaanse solo-bemande ruimtevlucht; 22 banen / 34 uur",
+    "new": "Laatste Amerikaanse bemande ruimtevlucht met één astronaut; 22 banen / 34 uur"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.3.note",
+    "en": "Lunar orbit insertion via BE-7 main engine.",
+    "old": "Maanbaan-insertie via BE-7-hoofdmotor.",
+    "new": "Maanbaaninsertie met de BE-7-hoofdmotor."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "first",
+    "en": "First crewed LM flight — Earth-orbit LM separation + rendezvous tests",
+    "old": "Eerste bemande vlucht van de LM — test van LM-scheiding en rendezvous in aardbaan",
+    "new": "Eerste bemande vlucht van de LM — tests van LM-scheiding en rendez-vous in een baan om de Aarde"
+  },
+  {
+    "rel": "missions/earth/aurora-7.json",
+    "at": "first",
+    "en": "Repeated Glenn's 3-orbit profile; overshot landing target by 400 km",
+    "old": "Herhaalde Glenns 3-baan-profiel; schoot landingsdoel 400 km voorbij",
+    "new": "Herhaalde Glenns profiel van drie banen; schoot het landingsdoel 400 km voorbij"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.0.note",
+    "en": "Atlas V 541 lifts off from Cape Canaveral SLC-41.",
+    "old": "Atlas V 541 liftoff van Cape Canaveral SLC-41.",
+    "new": "Een Atlas V 541 stijgt op vanaf Cape Canaveral SLC-41."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.1.note",
+    "en": "Apollo + Soyuz 19 dock 1975-07-17 16:09 UTC. First US-USSR rendezvous + dock. Hatch opens 19:17 UTC; Stafford–Leonov handshake ~3 hours later (~22:19 UTC).",
+    "old": "Apollo + Soyuz 19 docken 1975-07-17 16:09 UTC. Eerste US-USSR rendezvous + dock. Luik opent 19:17 UTC; Stafford–Leonov handdruk ~3 uur later (~22:19 UTC).",
+    "new": "Apollo + Soyuz 19 koppelen 1975-07-17 16:09 UTC. Eerste rendez-vous + koppeling tussen de VS en de USSR. Luik gaat open 19:17 UTC; handdruk Stafford–Leonov ~3 uur later (~22:19 UTC)."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.2.note",
+    "en": "McDivitt + Schweickart undock Spider, fly up to 183 km from Gumdrop over six hours. First crewed flight where the spacecraft + crew aren't both attached to a re-entry vehicle.",
+    "old": "McDivitt en Schweickart ontkoppelen Spider, vliegen tot 183 km weg van Gumdrop in zes uur. Eerste bemande vlucht waarbij het ruimtevaartuig en bemanning niet beide aan een re-intreeveelheid zijn bevestigd.",
+    "new": "McDivitt + Schweickart ontkoppelen Spider en vliegen in zes uur tot 183 km van Gumdrop. Eerste bemande vlucht waarbij het ruimtevaartuig + de bemanning niet beide vastzitten aan een voertuig voor de atmosferische intrede."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.note",
+    "en": "Venus gravity assist en route back to two more Earth passes.",
+    "old": "Venus zwaartekrachtassistentie onderweg terug naar twee verdere Aardepaskeringen.",
+    "new": "Zwaartekrachtassist bij Venus op de terugweg naar nog twee passages langs de Aarde."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.4.note",
+    "en": "2027-08. First Trojan encounter. 64-km C-type + 1-km moon.",
+    "old": "2027-08. Eerste Trojaanse ontmoeting. 64-km C-type + 1-km maan.",
+    "new": "2027-08. Eerste ontmoeting met een Trojaan. C-type van 64 km + maan van 1 km."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.5.note",
+    "en": "UV/IR cloud-feature tracking; super-rotation studies; bow-shaped gravity waves above Aphrodite Terra. Contact lost 2024; operations declared complete 2025-09-18.",
+    "old": "UV/IR wolkenkenmerk-tracking; super-rotatieonderzoeken; boogvormige zwaartekrachtgolven boven Aphrodite Terra. Contact verloren 2024; operaties op 2025-09-18 voltooid.",
+    "new": "UV/IR-volgen van wolkenstructuren; onderzoek naar superrotatie; boogvormige zwaartekrachtgolven boven Aphrodite Terra. Contact verloren in 2024; operaties op 2025-09-18 voltooid verklaard."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.note",
+    "en": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+    "old": "De zwaartekrachtsslinger verhoogt de heliocentrische energie genoeg om Jupiter te bereiken.",
+    "new": "De zwaartekrachtassist verhoogt de heliocentrische energie genoeg om Jupiter te bereiken."
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "description",
+    "en": "Frank Borman and Jim Lovell flew a 14-day, 206-orbit endurance mission from 4 December 1965 — the longest crewed spaceflight to that date — and served as the rendezvous target for Gemini 6A. It demonstrated that a crew could withstand spaceflight of full lunar-mission duration.",
+    "old": "Frank Borman en Jim Lovell voerden een 14-daagse, 206-omwentelingen durende uithoudingsmissie uit vanaf 4 december 1965 — de langste bemande ruimtevlucht tot op dat moment — en dienden als rendezvous-doelwit voor Gemini 6A. Het toonde aan dat een bemanning een ruimtevlucht van volledige maanmissie-duur kon doorstaan.",
+    "new": "Frank Borman en Jim Lovell voerden vanaf 4 december 1965 een uithoudingsmissie van 14 dagen en 206 banen uit — de langste bemande ruimtevlucht tot dan toe — en dienden als doelwit voor het rendez-vous van Gemini 6A. Het toonde aan dat een bemanning een ruimtevlucht kon doorstaan die even lang duurde als een volledige maanmissie."
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.3.note",
+    "en": "Begins atmosphere-sampling 'deep dip' campaigns to periapsis altitudes ~125 km.",
+    "old": "Begint atmosfeer-bemonsterende 'deep dip'-campagnes naar periapsis-hoogten ~125 km.",
+    "new": "Begint met 'diepe duik'-campagnes om de atmosfeer te bemonsteren, tot periapsishoogten van ~125 km."
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.2.note",
+    "en": "Lander separates from orbiter for independent descent.",
+    "old": "Lander scheidt van orbiter voor onafhankelijke afdaling.",
+    "new": "De lander scheidt zich los van de orbiter voor een onafhankelijke afdaling."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "dispatch",
+    "en": "Apollo 13 never landed, and it is the mission everyone remembers. Two days out, an oxygen tank tore itself apart and turned a routine flight to the Fra Mauro highlands into a four-day problem of keeping three men alive in a dying spacecraft a quarter-million miles from home. What saved them was not heroics; it was preparation and a roomful of people working the problem in real time, improvising a way to breathe and a way home out of whatever was already bolted to the vehicle. NASA called it a successful failure. It is closer to the truth to say it is the flight that proved the agency was as good as it claimed to be.",
+    "old": "Apollo 13 is nooit geland, en het is de missie die iedereen zich herinnert. Twee dagen onderweg scheurde een zuurstoftank zichzelf uit elkaar en veranderde een routinevlucht naar de Fra Mauro-hooglanden in vier dagen van het redden van drie mannen in een stervend ruimtevaartuig een kwart miljoen mijlen van huis. Wat hen redde was niet heldendom; het was voorbereiding en een vol kantoor van mensen die het probleem in real time aanpakten, steeds opnieuw iets verzinnend om te ademen en een weg naar huis uit wat al aan het voertuig vastgeboord was. NASA noemde het een succesvolle mislukking. Het komt dichter bij de waarheid te zeggen dat het de vlucht is die aantoonde dat het agentschap zo goed was als het zei.",
+    "new": "Apollo 13 is nooit geland, en toch is het de missie die iedereen zich herinnert. Twee dagen onderweg scheurde een zuurstoftank zichzelf uit elkaar en veranderde een routinevlucht naar de Fra Mauro-hooglanden in een probleem van vier dagen: drie mannen in leven houden in een stervend ruimtevaartuig, een kwart miljoen mijl van huis. Wat hen redde was geen heldendom; het was voorbereiding en een zaal vol mensen die het probleem in realtime aanpakten en uit alles wat al aan het voertuig vastgeschroefd zat een manier om te ademen en een weg naar huis improviseerden. NASA noemde het een succesvolle mislukking. Het is dichter bij de waarheid te zeggen dat het de vlucht was die bewees dat het agentschap net zo goed was als het beweerde."
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "events.1.note",
+    "en": "Touchdown in Phoebe Regio at 7.5°S 303°E; 127 minutes of surface operations under 457 °C / 89 bar.",
+    "old": "Touchdown in Phoebe Regio op 7,5°Z 303°O; 127 minuten oppervlakteoperaties bij 457 °C / 89 bar.",
+    "new": "Landing in Phoebe Regio op 7,5°Z 303°O; 127 minuten oppervlakteoperaties bij 457 °C / 89 bar."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.1.note",
+    "en": "Closest approach to Pluto; high-rate imaging and plasma data flood Earth.",
+    "old": "Dichtste benadering van Pluto; hoge-snelheid beeldvorming en plasma-gegevens overspoelen de Aarde.",
+    "new": "Dichtste nadering tot Pluto; beeldvorming en plasmagegevens met hoge datasnelheid overspoelen de Aarde."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.0.note",
+    "en": "H-IIA 202 from Tanegashima begins the 3.5-year cruise to asteroid Ryugu.",
+    "old": "H-IIA 202 van Tanegashima begint de 3,5-jarige cruise naar asteroïde Ryugu.",
+    "new": "H-IIA 202 vanaf Tanegashima begint de reis van 3,5 jaar naar asteroïde Ryugu."
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "first",
+    "en": "First lunar sample return in 44 years (since Luna 24, 1976)",
+    "old": "Eerste maanmonster-terugkeer in 44 jaar (sinds Luna 24, 1976)",
+    "new": "Eerste terugkeer van maanmonsters in 44 jaar (sinds Luna 24, 1976)"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.0.note",
+    "en": "Atlas V 401 from Cape Canaveral SLC-41 (carried LCROSS impactor as secondary).",
+    "old": "Atlas V 401 vanuit Cape Canaveral SLC-41 (vervoerde LCROSS-impactor als secundair).",
+    "new": "Atlas V 401 vanaf Cape Canaveral SLC-41 (met LCROSS-impactor als secundaire lading)."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.4.note",
+    "en": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+    "old": "Spider voert rendezvous uit en koppelt opnieuw aan bij Gumdrop, waarmee de maanprocedure-oefening in aardbaan wordt voltooid.",
+    "new": "Spider voert een rendez-vous uit en koppelt opnieuw aan Gumdrop, waarmee de generale repetitie van de maanprocedure in een aardbaan wordt voltooid."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.2.note",
+    "en": "Titan flyby bent trajectory out of the ecliptic plane — no further planetary encounter possible.",
+    "old": "Titan-voorbijvlucht boog baan uit het eclipticavlak — geen verdere planetaire ontmoeting mogelijk.",
+    "new": "De Titan-flyby boog het traject uit het eclipticavlak — geen verdere ontmoeting met een planeet mogelijk."
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.1.note",
+    "en": "596 km closest approach to comet 1P/Halley; first close-up imagery of a cometary nucleus.",
+    "old": "596 km dichtstbijzijnde benadering tot komeet 1P/Halley; eerste close-up beeldvorming van een komeetkern.",
+    "new": "Dichtste nadering van 596 km tot komeet 1P/Halley; eerste close-upbeelden van een komeetkern."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "first",
+    "en": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
+    "old": "Eerste ruimtesonde die voorbij Saturnus vloog (1979-09-01); demonstreerde de zwaartekrachtassistentie die Voyager 2 verder stuurde",
+    "new": "Eerste ruimtesonde die voorbij Saturnus vloog (1979-09-01); demonstreerde de zwaartekrachtassist die Voyager 2 verder stuurde"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.2.note",
+    "en": "Mid-course correction shifts the spacecraft off the free-return trajectory onto a Fra Mauro approach.",
+    "old": "Midcourse-correctie verplaatst het ruimtevaartuig van de vrije-terugkeer-baan naar een Fra Mauro-benadering.",
+    "new": "Koerscorrectie halverwege verplaatst het ruimtevaartuig van het vrije-terugkeertraject naar een Fra Mauro-benadering."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "en": "First-ever Lunar-Earth Gravity Assist manoeuvre — Moon + Earth in one swing.",
+    "old": "Eerste-ooit Maan-Aarde Zwaartekrachtassistentiemanoeuvre — Maan + Aarde in één swing.",
+    "new": "Allereerste manoeuvre met een zwaartekrachtassist van Maan en Aarde — Maan + Aarde in één zwaai."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.3.note",
+    "en": "Completion of the first full solar polar orbit.",
+    "old": "Voltooiing van de eerste volledige polaire zonsbaan.",
+    "new": "Voltooiing van de eerste volledige polaire baan om de Zon."
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.3.note",
+    "en": "First close-up images of another planet ever returned to Earth.",
+    "old": "Eerste close-up beelden van een andere planeet ooit teruggekeerd naar de Aarde.",
+    "new": "Eerste close-upbeelden van een andere planeet die ooit naar de Aarde zijn teruggestuurd."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.1.note",
+    "en": "Used Jupiter assist to bend onto a Saturn-bound path.",
+    "old": "Gebruikte Jupiter-assistentie om af te buigen naar een Saturnus-gericht traject.",
+    "new": "Gebruikte een zwaartekrachtassist van Jupiter om af te buigen naar een traject richting Saturnus."
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "first",
+    "en": "First day in space — 17 orbits over 25 hours",
+    "old": "Eerste dag in de ruimte — 17 omwentelingen in 25 uur",
+    "new": "Eerste dag in de ruimte — 17 banen in 25 uur"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.2.note",
+    "en": "Lander/rover descends to Utopia Planitia 2021-05-14; Zhurong rolls off ramp 2021-05-22.",
+    "old": "Lander/rover daalt af naar Utopia Planitia 2021-05-14; Zhurong rolt van helling 2021-05-22.",
+    "new": "Lander/rover daalt neer op Utopia Planitia 2021-05-14; Zhurong rolt 2021-05-22 van de oprijplaat."
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.1.note",
+    "en": "Descent module separates + lands; balloon deploys at 54 km altitude for 46.5 hours.",
+    "old": "De afdalingsmodule scheidt + landt; ballon ontvouwt op 54 km hoogte voor 46,5 uur.",
+    "new": "De afdalingsmodule scheidt + landt; de ballon wordt ontplooid op 54 km hoogte en vliegt 46,5 uur."
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "dispatch",
+    "en": "Gemini 8 made the first docking of two spacecraft in orbit — and then nearly killed its crew. Minutes after Neil Armstrong eased his Gemini into a locked joint with an Agena target, the linked pair began to roll, faster and faster, until it was tumbling roughly once a second and the astronauts' vision was starting to gray toward blackout. Armstrong undocked — which only made it worse, since the fault was in his own spacecraft — then shut down the main thrusters and stopped the spin with the reentry-control system, a decision that saved their lives but, by the rules, forced an immediate emergency return. It was the program's most dangerous moment, and it was Armstrong's first spaceflight. The calm, fast diagnosis under a failing situation is exactly the temperament NASA would remember when it chose who would land on the Moon.",
+    "old": "Gemini 8 maakte de eerste koppeling van twee ruimtevaartuigen in een baan — en bracht vervolgens bijna zijn bemanning om het leven. Minuten nadat Neil Armstrong zijn Gemini in een vergrendelde verbinding met een Agena-doelwit had gemanoeuvreerd, begon het gekoppelde paar te rollen, steeds sneller, tot het ongeveer eenmaal per seconde tuimelde en het zicht van de astronauten begon te verduisteren richting bewusteloosheid. Armstrong ontkoppelde — wat het alleen maar erger maakte, omdat de fout in zijn eigen ruimtevaartuig zat — schakelde vervolgens de hoofdstuwraketten uit en stopte de draaiing met het terugkeer-controlesysteem, een beslissing die hun leven redde maar volgens de regels een onmiddellijke noodterugkeer afdwong. Het was het gevaarlijkste moment van het programma, en het was Armstrongs eerste ruimtevlucht. De kalme, snelle diagnose onder een falende situatie is precies het temperament dat NASA zich zou herinneren toen het koos wie op de Maan zou landen.",
+    "new": "Gemini 8 voerde de eerste koppeling van twee ruimtevaartuigen in een baan uit — en bracht daarna bijna zijn bemanning om het leven. Minuten nadat Neil Armstrong zijn Gemini voorzichtig in een vergrendelde koppeling met een Agena-doelwit had gemanoeuvreerd, begon het gekoppelde paar te rollen, steeds sneller, tot het ongeveer eens per seconde tolde en het zicht van de astronauten grijs begon te worden, richting bewusteloosheid. Armstrong koppelde los — wat het alleen maar erger maakte, omdat de fout in zijn eigen ruimtevaartuig zat — schakelde daarna de hoofdstuwraketten uit en stopte de draaiing met het besturingssysteem voor de atmosferische intrede, een beslissing die hun leven redde maar volgens de regels een onmiddellijke noodterugkeer afdwong. Het was het gevaarlijkste moment van het programma, en het was Armstrongs eerste ruimtevlucht. De kalme, snelle diagnose in een situatie die uit de hand liep, is precies het temperament dat NASA zich zou herinneren toen het koos wie op de Maan zou landen."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "description",
+    "en": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) used six gravity assists across seven years — Earth, Venus twice, Mercury three times — to slow into Mercury orbit on 2011-03-18. Sunshade-protected with one side at 370 °C and the other at -45 °C. Discoveries included water ice in permanently shadowed polar craters, previously unknown “hollows” geological features, and confirmation that Mercury's iron core occupies ~85 % of the planet's radius (the largest core-to-radius ratio of any planet in the solar system). Mission ended with a controlled impact onto Mercury’s surface 2015-04-30 after fuel ran out.",
+    "old": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) gebruikte zes zwaartekrachtassists gedurende zeven jaar — Aarde, Venus twee keer, Mercurius drie keer — om af te remmen en in een baan rond Mercurius te komen op 2011-03-18. Beschermd met een zonnescherm waarbij één zijde op 370 °C en de andere op -45 °C. Ontdekkingen omvatten waterijs in permanent in schaduw liggende polaire kraters, tot dan toe onbekende \"hollows\" geologische kenmerken, en bevestiging dat Mercurius' ijzeren kern ongeveer 85 % van de straal van de planeet inneemt (de grootste kern-tot-straal verhouding van enige planeet in het zonnestelsel). De missie eindigde met een gecontroleerde inslag op Mercurius' oppervlak op 2015-04-30 nadat de brandstof op was.",
+    "new": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) gebruikte zes zwaartekrachtassists gedurende zeven jaar — Aarde, Venus twee keer, Mercurius drie keer — om af te remmen en op 2011-03-18 in een baan om Mercurius te komen. Door een zonnescherm beschermd, met één zijde op 370 °C en de andere op -45 °C. Tot de ontdekkingen behoorden waterijs in permanent in schaduw liggende poolkraters, voorheen onbekende geologische structuren die “hollows” worden genoemd, en de bevestiging dat de ijzeren kern van Mercurius ongeveer 85 % van de straal van de planeet beslaat (de grootste verhouding tussen kern en straal van alle planeten in het zonnestelsel). De missie eindigde op 2015-04-30 met een gecontroleerde inslag op het oppervlak van Mercurius, nadat de brandstof op was."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "description",
+    "en": "The first crewed flight of the Lunar Module. In Earth orbit, McDivitt and Schweickart undocked LM Spider from CSM Gumdrop, flew up to 183 km away over six hours, then rendezvous and re-docked — every step of the lunar-rendezvous procedure tested without the option of bringing the crew home in the CSM if anything went wrong. Schweickart did a 38-minute EVA on the LM porch, demonstrating the Apollo EVA spacesuit + PLSS backpack design that the Moonwalking crews would use. Scott did a stand-up EVA from the CSM hatch. With LM hardware and rendezvous procedures verified, NASA was clear to send Apollo 10 to the Moon two months later.",
+    "old": "De eerste bemande vlucht van de Lunar Module. In aardbaan ontkoppelden McDivitt en Schweickart de LM Spider van CSM Gumdrop, vlogen tot 183 km weg in zes uur, en voerden vervolgens rendezvous en opnieuw aankoppen uit — elke stap van de maanrendezvous-procedure werd getest zonder de mogelijkheid om de bemanning naar huis te brengen in de CSM als iets mis zou gaan. Schweickart voerde een 38 minuten durende EVA uit op de LM-veranda, waarbij hij het Apollo EVA-pak en PLSS-rugzakontwerp demonstreerde dat de maanwandelaars zouden gebruiken. Scott voerde een stand-up EVA uit vanuit de CSM-luik. Met de LM-hardware en rendezvous-procedures geverifieerd, was NASA klaar om Apollo 10 twee maanden later naar de maan te sturen.",
+    "new": "De eerste bemande vlucht van de Lunar Module. In een aardbaan koppelden McDivitt en Schweickart de LM Spider los van CSM Gumdrop, vlogen tot 183 km weg in zes uur, en voerden daarna een rendez-vous uit en koppelden opnieuw aan — elke stap van de maanrendez-vousprocedure werd getest zonder de mogelijkheid om de bemanning bij problemen met de CSM naar huis te brengen. Schweickart maakte een EVA van 38 minuten op de LM-veranda, waarmee hij het ontwerp van het Apollo-EVA-pak met PLSS-rugzak demonstreerde dat de maanwandelaars zouden gebruiken. Scott maakte een stand-up-EVA vanuit het CSM-luik. Nu de LM-hardware en de rendez-vousprocedures waren geverifieerd, kon NASA twee maanden later Apollo 10 naar de Maan sturen."
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.1.note",
+    "en": "Serves as the target for Gemini 6A’s first crewed rendezvous.",
+    "old": "Dient als doelwit voor de eerste bemande rendezvous van Gemini 6A.",
+    "new": "Dient als doelwit voor het eerste bemande rendez-vous van Gemini 6A."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.5.note",
+    "en": "First powered controlled flight on another planet — 39.1 seconds at up to 5 m altitude.",
+    "old": "Eerste gemotoriseerde controleerde vlucht op een ander planet — 39,1 seconden op tot 5 m hoogte.",
+    "new": "Eerste gemotoriseerde, gecontroleerde vlucht op een andere planeet — 39,1 seconden op tot 5 m hoogte."
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "dispatch",
+    "en": "Skylab 3 took the endurance question and nearly doubled the answer. Where the first crew had stayed 28 days, Alan Bean's crew stayed 59 — pushing the human body further into long-duration weightlessness than anyone had gone, and returning healthier than the pessimists had feared. They logged a huge haul of solar observations from the Apollo Telescope Mount and rode out a scare when thruster leaks on their Apollo ferry briefly raised the prospect of a rescue flight. Skylab 3 is where long stays in space started to look not just survivable but routine — the quiet groundwork for every months-long station tour since.",
+    "old": "Skylab 3 nam de uithoudingsvraag en verdubbelde bijna het antwoord. Waar de eerste bemanning 28 dagen was gebleven, bleef de bemanning van Alan Bean 59 dagen — waarmee het menselijk lichaam verder werd geduwd in langdurige gewichtloosheid dan wie ook was gegaan, en ze keerden gezonder terug dan de pessimisten hadden gevreesd. Ze registreerden een enorme oogst aan zonne-observaties vanaf de Apollo Telescope Mount en overleefden een schriksituatie toen lekken in de stuurraketten van hun Apollo-veerboot kort de mogelijkheid van een reddingsvlucht opriepen. Skylab 3 is waar lange verblijven in de ruimte niet alleen overleefbaar maar ook routine begonnen te lijken — het stille grondwerk voor elke maandenlange stationtour sindsdien.",
+    "new": "Skylab 3 nam de vraag naar het uithoudingsvermogen en verdubbelde het antwoord bijna. De eerste bemanning was 28 dagen gebleven, de bemanning van Alan Bean bleef er 59 — en bracht het menselijk lichaam verder in langdurige gewichtloosheid dan iemand ooit was gegaan, om gezonder terug te keren dan de pessimisten hadden gevreesd. Ze verzamelden een enorme hoeveelheid zonnewaarnemingen met de Apollo Telescope Mount en doorstonden een schrikmoment toen lekken in de stuurraketten van hun Apollo-pendelschip even de mogelijkheid van een reddingsvlucht opriepen. Bij Skylab 3 begonnen lange verblijven in de ruimte niet alleen overleefbaar maar ook routine te lijken — het stille voorwerk voor elke maandenlange stationsmissie sindsdien."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.5.note",
+    "en": "1972-10-27. Attitude-control gas exhausted.",
+    "old": "1972-10-27. Houdings­regelingsgas verbruikt.",
+    "new": "1972-10-27. Gas voor standregeling uitgeput."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.8.note",
+    "en": "Final Earth assist 2030-12. Heads to L5 cloud.",
+    "old": "Laatste assistentie vanuit de Aarde 2030-12. Koers naar L5-wolk.",
+    "new": "Laatste zwaartekrachtassist langs de Aarde 2030-12. Koers naar de L5-wolk."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.1.note",
+    "en": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+    "old": "Trans-lunaire injectie — herstel van blikseminslagen geverifieerd; missie GO voor maan.",
+    "new": "Trans-lunaire injectie — herstel van blikseminslagen geverifieerd; missie GO voor de Maan."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.4.note",
+    "en": "BE-7 throttled descent to lunar surface — first Blue Origin lunar touchdown.",
+    "old": "BE-7 throttled afdaling naar maanoppervlak — eerste Blue Origin maanlanding.",
+    "new": "BE-7 afdaling met regelbare stuwkracht naar het maanoppervlak — eerste maanlanding van Blue Origin."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "first",
+    "en": "First polar orbiter of Jupiter; solar-powered beyond the asteroid belt for the first time",
+    "old": "Eerste polaire orbiter van Jupiter; voor het eerst zonne-energie voorbij de planetoïdengordel",
+    "new": "Eerste polaire orbiter van Jupiter; voor het eerst op zonne-energie voorbij de planetoïdengordel"
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "events.3.note",
+    "en": "Capsule descended to Dorbod Banner, Inner Mongolia, 1999-11-20 19:41 UTC.",
+    "old": "Capsule afdaling naar Dorbod Banner, Binnenmongolie, op 1999-11-20 19:41 UTC.",
+    "new": "Capsule daalde neer in Dorbod Banner, Binnen-Mongolië, op 1999-11-20 19:41 UTC."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "en": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+    "old": "CM kwam neer in Stille Zuidzee 1969-11-24 20:58 UTC. Berging door USS Hornet.",
+    "new": "CM maakte een waterlanding in de zuidelijke Stille Oceaan 1969-11-24 20:58 UTC. Berging door USS Hornet."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.1.note",
+    "en": "Low-energy ballistic capture trajectory in progress.",
+    "old": "Lage-energie ballistische vangsttraject in uitvoering.",
+    "new": "Ballistisch vangsttraject met lage energie in uitvoering."
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "events.0.note",
+    "en": "Titan IIIE lifts Voyager 2 from Cape Canaveral on a Grand-Tour trajectory.",
+    "old": "Titan IIIE tilt Voyager 2 op vanaf Cape Canaveral op een Grand-Tour-traject.",
+    "new": "Titan IIIE lanceert Voyager 2 vanaf Cape Canaveral op een Grand Tour-traject."
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.0.note",
+    "en": "Atlas LV-3 Agena-D lifts off from Cape Canaveral LC-12.",
+    "old": "Atlas LV-3 Agena-D heft af van Cape Canaveral LC-12.",
+    "new": "Atlas LV-3 Agena-D stijgt op vanaf Cape Canaveral LC-12."
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.2.note",
+    "en": "Closest approach 9,846 km. 22 images returned over 8 hours during data playback.",
+    "old": "Dichtste benadering 9.846 km. 22 beelden teruggegeven over 8 uur tijdens gegevensafspeling.",
+    "new": "Dichtste nadering 9.846 km. 22 beelden teruggestuurd in 8 uur tijdens het afspelen van de gegevens."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "type",
+    "en": "SAMPLE RETURN + LANDERS · ACTIVE (extended)",
+    "old": "MONSTERMONSTERRUGKEER + LANDERS · ACTIEF (uitgebreid)",
+    "new": "MONSTERTERUGKEER + LANDERS · ACTIEF (uitgebreid)"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "first",
+    "en": "First mission dedicated to characterising the habitability of an icy moon; largest planetary mission spacecraft ever launched (6065 kg, 100-m² solar arrays)",
+    "old": "Eerste missie gewijd aan het karakteriseren van de bewoonbaarheid van een ijzige maan; grootste planetaire missie-ruimtevaartuig ooit gelanceerd (6065 kg, 100-m² zonnepanelen)",
+    "new": "Eerste missie gewijd aan het karakteriseren van de bewoonbaarheid van een ijzige maan; grootste ruimtevaartuig voor een planetaire missie ooit gelanceerd (6065 kg, 100-m² zonnepanelen)"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "first",
+    "en": "13 years in orbit around Saturn — Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
+    "old": "13 jaar in baan om Saturnus — Huygens landde op 14-01-2005 op Titan (eerste zachte landing in het buitenste zonnestelsel)",
+    "new": "13 jaar in baan om Saturnus — Huygens landde op 2005-01-14 op Titan (eerste zachte landing in het buitenste zonnestelsel)"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "first",
+    "en": "14-day endurance flight; rendezvous target for Gemini 6A",
+    "old": "14-daagse uithoudingsvlucht; rendezvous-doelwit voor Gemini 6A",
+    "new": "14-daagse uithoudingsvlucht; rendez-vousdoelwit voor Gemini 6A"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "en": "First crewed rendezvous — station-keeps within ~30 cm of Gemini 7.",
+    "old": "Eerste bemande rendezvous — houdt positie binnen ~30 cm van Gemini 7.",
+    "new": "Eerste bemande rendez-vous — houdt positie binnen ~30 cm van Gemini 7."
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "dispatch",
+    "en": "Gemini 3 was the shakedown — the first flight of the new two-seat spacecraft, and the first time an American crew changed their own orbit rather than just riding the one the rocket gave them. Gus Grissom commanded it, four years after his Mercury capsule sank on splashdown, and named this one \"Molly Brown\" after the unsinkable heroine — a piece of gallows humor NASA's public-affairs office did not love. The flight itself was short and deliberately modest, three orbits to prove the machine flew as designed. But that small act of nudging the orbit with onboard thrusters was the first step of everything Gemini existed to do.",
+    "old": "Gemini 3 was de proefvlucht — de eerste vlucht van het nieuwe tweezitsruimtevaartuig, en de eerste keer dat een Amerikaanse bemanning hun eigen baan veranderde in plaats van alleen maar mee te rijden op de baan die de raket hen gaf. Gus Grissom voerde het bevel, vier jaar nadat zijn Mercury-capsule bij de landing in zee zonk, en hij noemde deze \"Molly Brown\" naar de onzinkbare heldin — een stukje galgenhumor waar NASA's voorlichtingsdienst niet van hield. De vlucht zelf was kort en bewust bescheiden, drie omwentelingen om te bewijzen dat de machine vloog zoals ontworpen. Maar die kleine daad van het bijsturen van de baan met de motoren aan boord was de eerste stap van alles waarvoor Gemini bestond.",
+    "new": "Gemini 3 was de proefvlucht — de eerste vlucht van het nieuwe tweezitsruimtevaartuig, en de eerste keer dat een Amerikaanse bemanning haar eigen baan veranderde in plaats van alleen mee te rijden op de baan die de raket haar gaf. Gus Grissom voerde het commando, vier jaar nadat zijn Mercury-capsule bij de landing in zee was gezonken, en noemde dit ruimtevaartuig „Molly Brown” naar de onzinkbare heldin — een stukje galgenhumor waar de voorlichtingsdienst van NASA niet blij mee was. De vlucht zelf was kort en bewust bescheiden: drie banen om te bewijzen dat de machine vloog zoals ontworpen. Maar dat kleine bijsturen van de baan met boordmotoren was de eerste stap van alles waarvoor Gemini bestond."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.4.note",
+    "en": "~120 km flyby of one of the largest main-belt asteroids ever observed close-up.",
+    "old": "~120 km voorbijvlucht van een van de grootste hoofdgordel-asteröïden ooit van dichtbij waargenomen.",
+    "new": "Flyby van ~120 km langs een van de grootste asteroïden in de hoofdgordel die ooit van dichtbij zijn waargenomen."
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.3.note",
+    "en": "Neutron-spectrometer detects sharp neutron-flux deficits over both lunar poles — strong hydrogen signal, consistent with polar water ice.",
+    "old": "Neutronenspectrometer detecteert scherpe neutronfluxdeficits over beide maanpolen — sterk waterstofsignaal, consistent met polaire waterjijs.",
+    "new": "Neutronenspectrometer detecteert scherpe tekorten in de neutronenflux boven beide maanpolen — sterk waterstofsignaal, passend bij polair waterijs."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "en": "Apogee HEO ~38,800 km × ~320 km (first highly-elliptical OTV flight); classified payload operations.",
+    "old": "Apogeë HEO ~38.800 km × ~320 km (eerste zeer elliptische OTV-vlucht); geclassificeerde ladingoperaties.",
+    "new": "Apogeum in HEO ~38.800 km × ~320 km (eerste zeer elliptische OTV-vlucht); operaties met geclassificeerde lading."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.3.note",
+    "en": "First-ever close-up of an E-type asteroid.",
+    "old": "Allereerste close-up van een E-type asteröïde.",
+    "new": "Allereerste close-up van een asteroïde van type E."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "en": "2025-03-01. Bends trajectory toward Earth re-encounter.",
+    "old": "2025-03-01. Buigt baan richting Aarde-tegenontmoeting.",
+    "new": "2025-03-01. Buigt het traject af richting een nieuwe ontmoeting met de Aarde."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.4.note",
+    "en": "Lost contact 2022-04 after spacecraft propellant exhausted.",
+    "old": "Contactverlies in 2022-04 nadat de brandstof van het ruimtevaartuig was uitgeput.",
+    "new": "Contactverlies in 2022-04 nadat de drijfstof van het ruimtevaartuig was uitgeput."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.2.note",
+    "en": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+    "old": "Maanorbitale inbrengings. SPS ∆v ~0,91 km/s.",
+    "new": "Maanbaaninsertie. SPS ∆v ~0,91 km/s."
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "description",
+    "en": "The Soviet Union's audacious double-mission to Mars in 1971 — Mars 2 and Mars 3 launched 9 days apart. Mars 2's lander crashed; Mars 3's lander achieved the first soft-landing on Mars but went silent ~110 seconds after touchdown — the actual transmission lasted only ~14.5 seconds — possibly due to the global dust storm raging at the time. The orbiter operated for 8 months, returning dozens of images and atmospheric measurements. Despite the brief surface mission, Mars 3 demonstrated that the descent and landing problem on Mars was solvable.",
+    "old": "De ambitieuze dubbelmissie van de Sovjet-Unie naar Mars in 1971 — Mars 2 en Mars 3 werden met een interval van 9 dagen gelanceerd. De lander van Mars 2 stortte neer; de lander van Mars 3 haalde de eerste zachte landing op Mars maar verloor het signaal ~110 seconden na landing — de werkelijke transmissie duurde slechts ~14,5 seconden — waarschijnlijk door de wereldwijde stofstorm die op dat moment woedde. De orbiter werkte 8 maanden lang en leverde tientallen afbeeldingen en atmosferische metingen op. Ondanks de korte oppervlaktemissie toonde Mars 3 aan dat het afdaal- en landingsprobleem op Mars oplosbaar was.",
+    "new": "De ambitieuze dubbelmissie van de Sovjet-Unie naar Mars in 1971 — Mars 2 en Mars 3 werden met 9 dagen tussentijd gelanceerd. De lander van Mars 2 stortte neer; de lander van Mars 3 maakte de eerste zachte landing op Mars, maar zweeg ~110 seconden na de landing — de eigenlijke transmissie duurde slechts ~14,5 seconden — mogelijk door de wereldwijde stofstorm die toen woedde. De orbiter werkte 8 maanden en leverde tientallen beelden en atmosferische metingen op. Ondanks de korte oppervlaktemissie toonde Mars 3 aan dat het probleem van afdaling en landing op Mars oplosbaar was."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.6.note",
+    "en": "EVA-3 / pre-ascent: Scott televises a hammer + feather dropped together; both hit the regolith simultaneously, verifying Galileo's 1589 prediction live.",
+    "old": "EVA-3 / pre-opstijging: Scott zendt televisie uit van een hamer + veertje samen gedropt; beide raken het regoliet tegelijk, Galileo's 1589 voorspelling live verifiërend.",
+    "new": "EVA-3 / vóór de opstijging: Scott laat voor de tv-camera een hamer + veer tegelijk vallen; beide raken tegelijk het regoliet, waarmee de voorspelling van Galileo uit 1589 live wordt bevestigd."
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.0.note",
+    "en": "Ariane 1 lifts Giotto from Kourou — ESA's first deep-space mission.",
+    "old": "Ariane 1 lanceert Giotto van Kourou — ESA's eerste deep-space missie.",
+    "new": "Ariane 1 lanceert Giotto vanaf Kourou — de eerste missie van ESA in de diepe ruimte."
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "first",
+    "en": "First textbook Mercury flight — 6 orbits; double Glenn / Carpenter duration",
+    "old": "Eerste modelmatige Mercury-vlucht — 6 banen; dubbele duur van Glenn / Carpenter",
+    "new": "Eerste Mercury-vlucht volgens het boekje — 6 banen; tweemaal de duur van Glenn / Carpenter"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.1.note",
+    "en": "CSM Gumdrop turns around + docks with LM Spider in the SLA adapter — first crewed transposition + docking. All Apollo lunar missions repeat this maneuver.",
+    "old": "CSM Gumdrop draait om en dockt aan bij LM Spider in de SLA-adapter — eerste bemande transposities en aankoppen. Alle Apollo-maanmissies herhalen deze manoeuvre.",
+    "new": "CSM Gumdrop draait om + koppelt aan LM Spider in de SLA-adapter — eerste bemande transpositie + koppeling. Alle Apollo-maanmissies herhalen deze manoeuvre."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.4.note",
+    "en": "Apollo splashed down in Pacific 1975-07-24 21:18 UTC — last Apollo splashdown ever, and the last US crewed water landing until SpaceX Crew Dragon in 2020. CSM-111 displayed at California Science Center LA.",
+    "old": "Apollo kwam neer in Stille Oceaan 1975-07-24 21:18 UTC — laatste Apollo-neerkoming ooit, en de laatste bemande waterlanding van de VS tot SpaceX Crew Dragon in 2020. CSM-111 tentoongesteld in California Science Center LA.",
+    "new": "Apollo maakte een waterlanding in de Stille Oceaan 1975-07-24 21:18 UTC — laatste Apollo-waterlanding ooit, en de laatste bemande Amerikaanse waterlanding tot SpaceX Crew Dragon in 2020. CSM-111 tentoongesteld in het California Science Center in LA."
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "dispatch",
+    "en": "Mars Pathfinder was NASA’s proof that landing on Mars did not have to cost a fortune. Instead of the retrorocket hover the Vikings used, it hit the atmosphere behind a heat shield, popped a parachute, inflated a cocoon of airbags, and bounced dozens of times across the surface before rolling to a stop and opening like a flower. Out drove Sojourner — a rover the size of a microwave, the first wheels ever to turn on another planet. The science was modest; the point was the method. The airbag landing and the faster-cheaper-better approach it proved became the template for the far more ambitious rovers — Spirit, Opportunity, Curiosity — that followed.",
+    "old": "Mars Pathfinder was NASA's bewijs dat het landen op Mars niet duur hoefde te zijn. In plaats van de terugkeerraket waarmee de Vikings zweefden, vloog het door de atmosfeer achter een hitteescherm, ontplooide een parachute, vulde een cocon van airbags op en stuiterde tientallen keren over het oppervlak voordat het tot stilstand kwam en zich als een bloem opende. Daaruit reed Sojourner — een rover ter grootte van een magnetron, de eerste wielen ooit op een ander hemellichaam. De wetenschap was bescheiden; het ging om de methode. De airbag-landing en de sneller-goedkoper-beter aanpak die het bewees, werden het sjabloon voor de veel ambitieuzere rovers — Spirit, Opportunity, Curiosity — die volgden.",
+    "new": "Mars Pathfinder was het bewijs van NASA dat landen op Mars geen fortuin hoefde te kosten. In plaats van de zweefvlucht op remraketten van de Vikings kwam het achter een hitteschild de atmosfeer in, opende een parachute, blies een cocon van airbags op en stuiterde tientallen keren over het oppervlak voordat het tot stilstand kwam en zich opende als een bloem. Eruit reed Sojourner — een rover ter grootte van een magnetron, de eerste wielen ooit die op een andere planeet draaiden. De wetenschap was bescheiden; het ging om de methode. De airbaglanding en de sneller-goedkoper-beter-aanpak die daarmee werd bewezen, werden het voorbeeld voor de veel ambitieuzere rovers — Spirit, Opportunity, Curiosity — die volgden."
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "first",
+    "en": "First crew to a space station (Salyut 1); all 3 died of decompression on reentry",
+    "old": "Eerste bemanning van een ruimtestation (Salyut 1); alle 3 stierven door decompressie bij terugkeer",
+    "new": "Eerste bemanning naar een ruimtestation (Salyut 1); alle 3 stierven door decompressie bij de atmosferische intrede"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.5.note",
+    "en": "Eagle lifts off after 21h 36m on surface.",
+    "old": "Eagle heft af na 21u 36m op het oppervlak.",
+    "new": "Eagle stijgt op na 21u 36m op het oppervlak."
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 3 orbits / 4 h 52 m.",
+    "old": "Landing in de Atlantische Oceaan na 3 omwentelingen / 4 u 52 m.",
+    "new": "Waterlanding in de Atlantische Oceaan na 3 banen / 4 u 52 m."
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "description",
+    "en": "The mission that ended dreams of a habitable Mars. Mariner 4's 22 grainy images, taken during a 25-minute closest approach at 9,846 km altitude, showed a cratered surface resembling the Moon — no canals, no vegetation, no obvious life. The atmosphere was 100× thinner than expected. The discovery reshaped Mars in the public imagination from sister-Earth to dead world. Tracking the spacecraft also produced the first measurement of the solar wind's structure between planets.",
+    "old": "De missie die de dromen van een leefbare Mars beëindigde. Mariner 4's 22 korrelige beelden, genomen tijdens een 25-minuten dichtste benadering op 9.846 km hoogte, toonden een gekraterde oppervlakte die op de Maan leek — geen kanalen, geen vegetatie, geen duidelijk leven. De atmosfeer was 100× dunner dan verwacht. De ontdekking hervormde Mars in de publieke verbeelding van zuster-Aarde tot dode wereld. Het volgen van het ruimtevaartuig produceerde ook de eerste meting van de structuur van de zonnewind tussen planeten.",
+    "new": "De missie die de dromen van een leefbare Mars beëindigde. De 22 korrelige beelden van Mariner 4, genomen tijdens een 25 minuten durende dichtste nadering op 9.846 km hoogte, toonden een gekraterd oppervlak dat op de Maan leek — geen kanalen, geen vegetatie, geen duidelijk leven. De atmosfeer was 100× dunner dan verwacht. De ontdekking veranderde Mars in de publieke verbeelding van zusterplaneet van de Aarde in een dode wereld. Het volgen van het ruimtevaartuig leverde ook de eerste meting op van de structuur van de zonnewind tussen de planeten."
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.3.note",
+    "en": "MMX touches down on Phobos; ~10 g of regolith collected.",
+    "old": "MMX zet neer op Phobos; ~10 g regoliet verzameld.",
+    "new": "MMX landt op Phobos; ~10 g regoliet verzameld."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "en": "Atlas V 551 leaves Earth on a Jupiter-gravity-assist path to Pluto.",
+    "old": "Atlas V 551 verlaat de Aarde op een Jupiter-zwaartekrachtassist-pad naar Pluto.",
+    "new": "Atlas V 551 verlaat de Aarde op weg naar Pluto via een zwaartekrachtassist bij Jupiter."
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.3.note",
+    "en": "200 km closest approach — the closest cometary flyby on record.",
+    "old": "200 km dichtstbijzijnde benadering — de dichtstbijzijnste komeetvoorbijvlucht ooit.",
+    "new": "200 km dichtste nadering — de dichtste flyby van een komeet ooit."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.3.note",
+    "en": "15-min solid-motor burn places Mariner 9 into a 1398 × 17,917 km, 64.4° orbit — first ever orbit of another planet.",
+    "old": "15 min. ontsteking van vaste motor plaatst Mariner 9 in een 1398 × 17.917 km-baan met hellingshoek 64,4° — de eerste omloop om een ander hemellichaam ooit.",
+    "new": "15 min. ontsteking van de vastebrandstofmotor plaatst Mariner 9 in een baan van 1398 × 17.917 km met een inclinatie van 64,4° — de eerste baan om een andere planeet ooit."
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "first",
+    "en": "Fatal pre-launch pad fire 1967-01-27 killed Grissom + White + Chaffee",
+    "old": "Dodelijke pre-launch lanceerplatformbrand op 27-01-1967 doodde Grissom + White + Chaffee",
+    "new": "Dodelijke brand op het lanceerplatform vóór de lancering op 1967-01-27 doodde Grissom + White + Chaffee"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.2.note",
+    "en": "First images of the planet at close range; discovered the F ring and a small inner moon (later resolved into the co-orbital pair Janus/Epimetheus).",
+    "old": "Eerste beelden van de planeet van dichtbij; ontdekte de F-ring en een kleine binnenmaan (later opgelost als het co-orbitale paar Janus/Epimetheus).",
+    "new": "Eerste beelden van de planeet van dichtbij; ontdekte de F-ring en een kleine binnenmaan (later onderscheiden als het co-orbitale paar Janus/Epimetheus)."
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "description",
+    "en": "ISRO's first interplanetary spacecraft. The orbiter delivered the Moon Impact Probe to the lunar surface — the first Indian object on another world — and carried 11 instruments from 6 countries. NASA's Moon Mineralogy Mapper (M3) instrument, hosted on Chandrayaan-1, made the discovery that rewrote textbooks: water molecules are widespread across the lunar surface, not just locked in polar shadowed craters. The mission ended abruptly in August 2009 when ISRO lost communication with the spacecraft.",
+    "old": "ISRO's eerste interplanetaire ruimtevaartuig. De orbiter leverde de Moon Impact Probe aan het maanoppervlak — het eerste Indiase object op een andere wereld — en droeg 11 instrumenten van 6 landen. NASA's Moon Mineralogy Mapper (M3)-instrument, gehost op Chandrayaan-1, deed de ontdekking die de leerboeken herschreef: watermoleculen zijn wijdverspreid over het maanoppervlak, niet alleen opgesloten in polair geschaduwde kraters. De missie eindigde abrupt in augustus 2009 toen ISRO de communicatie met het ruimtevaartuig verloor.",
+    "new": "ISRO’s eerste interplanetaire ruimtevaartuig. De orbiter bracht de Moon Impact Probe naar het maanoppervlak — het eerste Indiase object op een andere wereld — en had 11 instrumenten uit 6 landen aan boord. Het instrument Moon Mineralogy Mapper (M3) van NASA, dat aan boord van Chandrayaan-1 meevloog, deed de ontdekking die de leerboeken herschreef: watermoleculen zijn wijdverspreid over het maanoppervlak, niet alleen opgesloten in kraters die permanent in de schaduw liggen bij de polen. De missie eindigde abrupt in augustus 2009 toen ISRO de communicatie met het ruimtevaartuig verloor."
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.1.note",
+    "en": "Apogee ~400 km; classified payload operations.",
+    "old": "Apogeïm ~400 km; geclassificeerde payloadoperaties.",
+    "new": "Apogeum ~400 km; operaties met geclassificeerde lading."
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.1.note",
+    "en": "Aldrin's EVAs (5 h 30 m total) with handholds + underwater training prove spacewalking can be routine.",
+    "old": "Aldrin's EVA's (5 h 30 m totaal) met handvatten + onderwatertraining bewijzen dat ruimtewandelen routine kan zijn.",
+    "new": "Aldrins EVA’s (5 u 30 m in totaal) met handgrepen + onderwatertraining bewijzen dat ruimtewandelen routine kan zijn."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.0.note",
+    "en": "Titan IVB / Centaur lifts the combined Cassini-Huygens stack.",
+    "old": "Titan IVB / Centaur tilt het Cassini-Huygens-geheel op.",
+    "new": "Titan IVB / Centaur lanceert het gecombineerde Cassini-Huygens-geheel."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.note",
+    "en": "2026-05-15. Closest approach 4,609 km — Mars flyby completed.",
+    "old": "2026-05-15. Kleinste nadering 4.609 km — Mars-voorbijvlucht voltooid.",
+    "new": "2026-05-15. Dichtste nadering 4.609 km — flyby van Mars voltooid."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "first",
+    "en": "First spacecraft to orbit another planet",
+    "old": "Eerste ruimtevaartuig dat een ander hemellichaam omcirkelde",
+    "new": "Eerste ruimtevaartuig in een baan om een andere planeet"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 4 days / 59 orbits — the last Gemini.",
+    "old": "Waterlanding in de Atlantische Oceaan na 4 dagen / 59 omlopen — de laatste Gemini.",
+    "new": "Waterlanding in de Atlantische Oceaan na 4 dagen / 59 banen — de laatste Gemini."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.0.note",
+    "en": "Orion lifts off from KSC LC-39B with four crew aboard.",
+    "old": "Orion heft af van KSC LC-39B met vier bemanningsleden aan boord.",
+    "new": "Orion stijgt op van KSC LC-39B met vier bemanningsleden aan boord."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.5.note",
+    "en": "Capsule lands in Inner Mongolia 2024-06-25 with the first far-side samples ever recovered.",
+    "old": "Capsule landt in Binnen-Mongolië 2024-06-25 met de eerste achterzijde-monsters die ooit zijn opgehaald.",
+    "new": "Capsule landt in Binnen-Mongolië 2024-06-25 met de eerste monsters van de achterkant van de Maan die ooit zijn teruggebracht."
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 4 days / 62 orbits.",
+    "old": "Splashdown in de Atlantische Oceaan na 4 dagen / 62 banen.",
+    "new": "Waterlanding in de Atlantische Oceaan na 4 dagen / 62 banen."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.0.note",
+    "en": "STS-30 / Atlantis from Kennedy LC-39B; IUS deployed from Shuttle bay.",
+    "old": "STS-30 / Atlantis vanuit Kennedy LC-39B; IUS uitgeplaatst vanuit Shuttle-laadruimte.",
+    "new": "STS-30 / Atlantis vanuit Kennedy LC-39B; IUS ontplooid vanuit het laadruim van de Shuttle."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.note",
+    "en": "2026-12-03. Final acceleration outbound to Jupiter.",
+    "old": "2026-12-03. Finale versnelling naar buiten richting Jupiter.",
+    "new": "2026-12-03. Laatste versnelling op de uitgaande route naar Jupiter."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "en": "Single Earth gravity assist begins the inner-system gravity-assist chain.",
+    "old": "Enkele zwaartekrachtassist rond Aarde start de keten van gravitatieassists in het binnenste stelsel.",
+    "new": "Enkele zwaartekrachtassist langs de Aarde start de keten van zwaartekrachtassists in het binnenste zonnestelsel."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.4.note",
+    "en": "Extended-mission flyby of 98943 Torifune (2001 CC21).",
+    "old": "Uitgebreide-missie fly-by van 98943 Torifune (2001 CC21).",
+    "new": "Flyby van 98943 Torifune (2001 CC21) in de verlengde missie."
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.0.note",
+    "en": "Atlas-Centaur lifts Pioneer 10 on a direct ascent to Jupiter.",
+    "old": "Atlas-Centaur tilt Pioneer 10 op in directe klim naar Jupiter.",
+    "new": "Atlas-Centaur lanceert Pioneer 10 op een directe route naar Jupiter."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.0.note",
+    "en": "PSLV-XL (C25) from Sriharikota — a relatively small launcher requiring orbit-raising loop.",
+    "old": "PSLV-XL (C25) vanaf Sriharikota — een relatief kleine draagraket die een baan-verhogingslus vereiste.",
+    "new": "PSLV-XL (C25) vanaf Sriharikota — een relatief kleine draagraket die een lus voor baanverhoging vereiste."
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "dispatch",
+    "en": "Friendship 7 is the flight where the United States finally caught its breath. John Glenn was the first American to orbit — three times around the planet, ten months after Gagarin — and for a country that had spent four years watching the Soviets go first, that was enough to make him the most famous man in the nation overnight. The drama came near the end: a faulty sensor suggested his heat shield might be loose, and controllers had him keep his spent retro-pack strapped on through reentry as a long shot to hold it in place. It held. Glenn came home, and the anxiety that had hung over the whole program lifted with him.",
+    "old": "Friendship 7 is de vlucht waarbij de Verenigde Staten eindelijk even op adem kwamen. John Glenn was de eerste Amerikaan die in een baan om de aarde cirkelde — drie keer rond de planeet, tien maanden na Gagarin — en voor een land dat vier jaar lang had moeten toezien hoe de Sovjets steeds als eerste gingen, was dat genoeg om hem van de ene op de andere dag de beroemdste man van het land te maken. Het drama kwam tegen het einde: een defecte sensor gaf aan dat zijn hitteschild mogelijk los zat, en de vluchtleiding liet hem zijn verbruikte retro-pack tijdens de terugkeer in de atmosfeer vastgegespt houden als een wanhopige poging om het schild op zijn plaats te houden. Het hield stand. Glenn kwam thuis, en de spanning die over het hele programma had gehangen, verdween met hem.",
+    "new": "Friendship 7 is de vlucht waarmee de Verenigde Staten eindelijk even op adem kwamen. John Glenn was de eerste Amerikaan in een baan om de aarde — drie keer rond de planeet, tien maanden na Gagarin — en voor een land dat vier jaar lang had toegekeken hoe de Sovjets steeds de eerste waren, was dat genoeg om hem van de ene dag op de andere de beroemdste man van het land te maken. Het drama kwam tegen het einde: een defecte sensor wekte de indruk dat zijn hitteschild los kon zitten, en de vluchtleiding liet hem zijn gebruikte remraketpakket tijdens de atmosferische intrede omgegespt houden, als een gok met weinig kans op succes om het schild op zijn plaats te houden. Het hield. Glenn kwam thuis, en de spanning die boven het hele programma had gehangen, verdween met hem."
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "events.3.note",
+    "en": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last Skylab splashdown.",
+    "old": "CSM-118 waterlandde in Stille Oceaan 1974-02-08 15:17 UTC — laatste Skylab-waterlanding.",
+    "new": "CSM-118 maakte een waterlanding in de Stille Oceaan 1974-02-08 15:17 UTC — laatste Skylab-waterlanding."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.1.note",
+    "en": "Four Hall-effect ion thrusters take over. Continuous low-thrust acceleration over 4+ years.",
+    "old": "Vier Hall-effect ionenthrusters nemen over. Continue lage-stuwing-versnelling gedurende 4+ jaar.",
+    "new": "Vier Hall-effectionenmotoren nemen het over. Continue versnelling met lage stuwkracht gedurende meer dan 4 jaar."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.2.note",
+    "en": "Flag + gift exchange; joint experiments; 2 dockings across ~44 hours docked.",
+    "old": "Vlag- en geschenkuitwisseling; gezamenlijke experimenten; 2 dockings over ~44 uur gedockt.",
+    "new": "Vlag- en geschenkuitwisseling; gezamenlijke experimenten; 2 koppelingen, ~44 uur aan elkaar gekoppeld."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.3.note",
+    "en": "Two surface contacts 2005-11-20 + 25. Sample-collection projectiles fail to fire on command.",
+    "old": "Twee oppervlaktecontacten 2005-11-20 + 25. Steekproefverzamelingsprojectielen weigeren te vuren.",
+    "new": "Twee oppervlaktecontacten 2005-11-20 + 25. De monsternameprojectielen vuren niet af op commando."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.3.note",
+    "en": "Aeroshell, supersonic parachute, twelve hydrazine retro-rockets — Viking-style propulsive descent.",
+    "old": "Aeroshell, supersonische parachute, twaalf hydrazine retro-raketten — Viking-stijl voortstuwingsdaling.",
+    "new": "Aeroshell, supersonische parachute, twaalf hydrazine-retroraketten — aangedreven afdaling in Viking-stijl."
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.3.note",
+    "en": "Powered descent to Mars surface — no parachutes, no airbags, no sky-crane.",
+    "old": "Aangedreven afdaling naar Mars-oppervlak — geen parachutes, geen airbags, geen sky-crane.",
+    "new": "Aangedreven afdaling naar het Marsoppervlak — geen parachutes, geen airbags, geen sky-crane."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.2.note",
+    "en": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+    "old": "Leonov verlaat de Volga-sluis 1965-03-18 11:34 UTC; eerste menselijke EVA. 12 min buiten; pak zwol op in vacuüm en hij ventileerde druk om terug te gaan.",
+    "new": "Leonov verlaat de Volga-sluis 1965-03-18 11:34 UTC; eerste menselijke EVA. 12 min buiten; zijn pak zwol op in het vacuüm en hij liet druk ontsnappen om weer naar binnen te kunnen."
+  },
+  {
+    "rel": "missions/earth/freedom-7.json",
+    "at": "dispatch",
+    "en": "Freedom 7 is where American human spaceflight begins. Three weeks after Gagarin had already orbited the Earth, Alan Shepard's flight was shorter, lower, and slower — fifteen minutes, straight up and straight back down, never even reaching orbit — and the country celebrated anyway, because for the first time an American had left the planet. What set it apart from Gagarin's flight was the man: Shepard hand-flew his capsule's attitude in space, where Gagarin had ridden a fully automated one, and to a program built around test pilots that difference was everything. Twenty days later, its success gave Kennedy the nerve to stand before Congress and bet the nation on the Moon. A small flight that started something very large.",
+    "old": "Freedom 7 is waar de Amerikaanse bemande ruimtevaart begint. Drie weken nadat Gagarin al om de aarde was gevlogen, was Alan Shepard's vlucht korter, lager en langzamer — vijftien minuten, recht omhoog en recht terug naar beneden, zonder ooit een baan te bereiken — en het land vierde het toch, omdat voor het eerst een Amerikaan de planeet had verlaten. Wat het onderscheidde van Gagarin's vlucht was de man: Shepard vloog handmatig de oriëntatie van zijn capsule in de ruimte, terwijl Gagarin in een volledig geautomatiseerde had gevlogen, en voor een programma gebouwd rondom testpiloten was dat verschil alles. Twintig dagen later gaf het succes ervan Kennedy de moed om voor het Congres te staan en de natie in te zetten op de Maan. Een kleine vlucht die iets heel groots begon.",
+    "new": "Freedom 7 is waar de Amerikaanse bemande ruimtevaart begint. Drie weken nadat Gagarin al in een baan om de Aarde was geweest, was de vlucht van Alan Shepard korter, lager en langzamer — vijftien minuten, recht omhoog en recht terug naar beneden, zonder ooit een baan te bereiken — en toch vierde het land feest, want voor het eerst had een Amerikaan de planeet verlaten. Wat haar onderscheidde van Gagarins vlucht was de man: Shepard bepaalde in de ruimte met de hand de oriëntatie van zijn capsule, terwijl Gagarin in een volledig geautomatiseerde capsule had gezeten, en voor een programma dat rond testpiloten was gebouwd, maakte dat verschil alles uit. Twintig dagen later gaf het succes Kennedy de moed om voor het Congres te staan en de natie in te zetten op de Maan. Een kleine vlucht die iets heel groots in gang zette."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.1.note",
+    "en": "PPS-1350-G Hall-effect ion thruster begins 13-month low-thrust spiral.",
+    "old": "PPS-1350-G Hall-effect ionenstuwer begint 13 maanden durende lage-stuwkracht spiraal.",
+    "new": "PPS-1350-G Hall-effect-ionenstuwer begint een spiraal van 13 maanden met lage stuwkracht."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.6.note",
+    "en": "2008-11-02. Mars winter; solar power below operations threshold.",
+    "old": "02-11-2008. Marswinter; zonne-energie onder operationele drempel.",
+    "new": "2008-11-02. Marswinter; zonne-energie onder de operationele drempel."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.4.note",
+    "en": "Lander resting nose-down due to engine anomaly during final descent. Solar panels initially in shadow.",
+    "old": "Lander rust met neus naar beneden vanwege motor-anomalie tijdens eindafdaling. Zonnepanelen aanvankelijk in schaduw.",
+    "new": "De lander ligt met de neus omlaag door een motoranomalie tijdens de laatste afdaling. Zonnepanelen aanvankelijk in de schaduw."
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "first",
+    "en": "Third lunar landing — Apollo 13's lost target reached; Shepard's golf shots",
+    "old": "Derde maanlanding — Apollo 13's verloren doel bereikt; Shepard's golfschoten",
+    "new": "Derde maanlanding — het verloren doel van Apollo 13 bereikt; Shepards golfslagen"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "first",
+    "en": "First mission to orbit two extraterrestrial bodies — Vesta, then Ceres",
+    "old": "Eerste missie die rond twee buitenaardse lichamen draaide — Vesta, dan Ceres",
+    "new": "Eerste missie die in een baan om twee buitenaardse lichamen draaide — Vesta, daarna Ceres"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "description",
+    "en": "ESA's first lunar mission and the first European spacecraft to reach the Moon. SMART = Small Missions for Advanced Research in Technology — and the key technology was a Hall-effect solar-electric ion thruster (PPS-1350-G), at the time the largest such thruster ever flown. Launched 2003-09-27 as a shared payload on an Ariane 5 from Kourou, the 367-kg spacecraft used its 1.2-kW xenon ion drive over 13 months to slowly raise its Earth orbit, eventually captured by lunar gravity on 2004-11-15 — a 13-month low-thrust spiral rather than the days-long chemical transfer of every prior lunar mission. Operated for 16 months in a polar lunar orbit returning AMIE camera imagery, the first X-ray fluorescence elemental maps of the Moon (D-CIXS), and infrared mineral spectroscopy (SIR). Deliberately impacted Lacus Excellentiae (34.4° S, 46.2° W) on 2006-09-03 05:42 UTC — the impact flash was observed live from the Canada-France-Hawaii Telescope.",
+    "old": "ESA's eerste maanmissie en het eerste Europese ruimtevaartuig dat de Maan bereikt. SMART = Small Missions for Advanced Research in Technology — en de sleuteltechnologie was een Hall-effect zonne-elektrische ionenstuwer (PPS-1350-G), destijds de grootste ooit gevlogen stuwer van dit type. Gelanceerd 2003-09-27 als een gedeelde lading op een Ariane 5 vanaf Kourou, het 367 kg zware ruimtevaartuig gebruikte zijn 1,2 kW xenonionenstuwer gedurende 13 maanden om zijn aardbaan langzaam te verhogen, uiteindelijk door de maanzwaartekracht ingevangen op 2004-11-15 — een 13 maanden durende lage-stuwkracht spiraal in plaats van de enkele dagen durende chemische overdracht van elke vorige maanmissie. Operationeel gedurende 16 maanden in een polaire maanbaan waarbij AMIE-camerabeelden, de eerste röntgenfluorescentie-elementenkaarten van de Maan (D-CIXS) en infrarode mineralenspectroscopie (SIR) werden opgeleverd. Opzettelijk neergestort in Lacus Excellentiae (34,4° Z, 46,2° W) op 2006-09-03 05:42 UTC — de inslagflits werd live waargenomen vanaf de Canada-France-Hawaii Telescope.",
+    "new": "ESA's eerste maanmissie en het eerste Europese ruimtevaartuig dat de Maan bereikte. SMART staat voor Small Missions for Advanced Research in Technology — en de sleuteltechnologie was een zonne-elektrische Hall-effect-ionenstuwer (PPS-1350-G), destijds de grootste ionenstuwer van dit type die ooit gevlogen had. Het 367 kg zware ruimtevaartuig werd op 2003-09-27 vanaf Kourou gelanceerd als gedeelde lading op een Ariane 5 en gebruikte zijn xenon-ionenaandrijving van 1,2 kW gedurende 13 maanden om zijn baan om de Aarde langzaam te verhogen, tot het op 2004-11-15 door de maanzwaartekracht werd ingevangen — een spiraal van 13 maanden met lage stuwkracht, in plaats van de chemische overgang van enkele dagen van elke eerdere maanmissie. Het was 16 maanden actief in een polaire maanbaan en leverde AMIE-camerabeelden, de eerste röntgenfluorescentiekaarten van de elementen op de Maan (D-CIXS) en infrarode mineraalspectroscopie (SIR). Het stortte op 2006-09-03 om 05:42 UTC opzettelijk neer op Lacus Excellentiae (34,4° Z, 46,2° W) — de inslagflits werd live waargenomen vanaf de Canada-France-Hawaii Telescope."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.2.note",
+    "en": "Final pre-EDL trim 21 hours before entry.",
+    "old": "Finale pre-EDL bijstelling 21 uur voor binnenkomst.",
+    "new": "Laatste koerscorrectie vóór de EDL, 21 uur vóór de atmosferische intrede."
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "events.1.note",
+    "en": "Apogee ~360 km; classified payload operations.",
+    "old": "Apogeum ~360 km; geclassificeerde payload-operaties.",
+    "new": "Apogeum ~360 km; operaties met een geheime lading."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "description",
+    "en": "Phoenix was salvaged from the cancelled Mars Surveyor 2001 program — flight hardware in storage for six years, reassembled and retargeted to the Martian north polar plains. The name was chosen literally. Landed 2008-05-25 at 68.22°N, 234.25°E on Vastitas Borealis, further north than any prior surface mission. Within days the robotic arm scraped through topsoil and exposed bright white ice that visibly sublimated on camera over four sols — direct confirmation of subsurface water ice in the Martian arctic. Detected perchlorates in the regolith and observed snow falling from clouds. Mission ended 2008-11-02 as solar power fell below operational threshold at the onset of Mars winter; the lander was never expected to survive the polar night.",
+    "old": "Phoenix werd gered uit het geannuleerde Mars Surveyor 2001-programma — vluchthardware die zes jaar in opslag was geweest, opnieuw gemonteerd en gericht op de noordelijke poolvlakten van Mars. De naam werd letterlijk gekozen. Landde op 25-05-2008 op 68,22°N, 234,25°O op Vastitas Borealis, verder naar het noorden dan enige eerdere oppervlaktemissie. Binnen enkele dagen schraapte de robotarm door de toplaag en legde helder wit ijs bloot dat zichtbaar sublimeerde voor de camera gedurende vier sols — directe bevestiging van ondergronds waterijs in het Martiaanse poolgebied. Detecteerde perchloraten in het regoliet en observeerde sneeuw die uit wolken viel. Missie eindigde op 02-11-2008 toen de zonne-energie onder de operationele drempel viel bij het begin van de Marswinter; de lander werd nooit verwacht de poolnacht te overleven.",
+    "new": "Phoenix werd gered uit het geannuleerde Mars Surveyor 2001-programma — vluchthardware die zes jaar in opslag had gelegen, opnieuw gemonteerd en herbestemd voor de noordelijke poolvlakten van Mars. De naam werd letterlijk gekozen. De lander landde op 2008-05-25 op 68,22°N, 234,25°O in Vastitas Borealis, verder noordelijk dan enige eerdere oppervlaktemissie. Binnen enkele dagen schraapte de robotarm door de toplaag en legde helder wit ijs bloot dat gedurende vier sols zichtbaar sublimeerde voor de camera — directe bevestiging van waterijs onder de oppervlakte in het Martiaanse poolgebied. De lander detecteerde perchloraten in het regoliet en zag sneeuw uit wolken vallen. De missie eindigde op 2008-11-02 toen de zonne-energie onder de operationele drempel zakte bij het begin van de Marswinter; niemand verwachtte dat de lander de poolnacht zou overleven."
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "first",
+    "en": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
+    "old": "Eerste ruimtevaartuig door de planetoïdengordel en eerste Jupiter-passage (04-12-1973)",
+    "new": "Eerste ruimtevaartuig door de planetoïdengordel en eerste dat langs Jupiter vloog (1973-12-04)"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.3.note",
+    "en": "Atlantic splashdown after ~1 d 1 h / 16 orbits.",
+    "old": "Atlantische splashdown na ~1 d 1 h / 16 banen.",
+    "new": "Waterlanding in de Atlantische Oceaan na ~1 d 1 h / 16 banen."
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "events.1.note",
+    "en": "Ion engines brake Dawn into orbit around Ceres; mapping campaign begins.",
+    "old": "Ionmotoren remmen Dawn af in een baan rond Ceres; karteringscampagne begint.",
+    "new": "Ionenmotoren remmen Dawn af tot een baan om Ceres; de karteringscampagne begint."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "dispatch",
+    "en": "Cassini did what no spacecraft had done at any giant planet: it stopped. For thirteen years it lived at Saturn, and the discoveries that mattered most came from staying — the geysers of Enceladus, caught because the orbiter flew close enough, often enough, to see a tiny moon venting its hidden ocean into space. It dropped Europe’s Huygens probe onto Titan, the only landing ever made in the outer solar system, and charted a world of methane rivers and lakes. At the end, out of fuel, it was flown deliberately into Saturn so it could never fall onto the ocean moons it had found and contaminate them — a mission that closed by protecting the places it discovered.",
+    "old": "Cassini deed wat geen enkel ruimtevaartuig bij welke reuzenplaneet dan ook had gedaan: het stopte. Dertien jaar lang verbleef het bij Saturnus, en de ontdekkingen die het meest ertoe deden kwamen voort uit dat blijven — de geisers van Enceladus, waargenomen doordat de orbiter dichtbij genoeg, vaak genoeg vloog om een kleine maan zijn verborgen oceaan de ruimte in te zien spuiten. Het zette Europa's Huygens-sonde af op Titan, de enige landing ooit in het buitenste zonnestelsel, en bracht een wereld van methaanrivieren en -meren in kaart. Aan het eind, zonder brandstof, werd het opzettelijk Saturnus in gevlogen zodat het nooit op de oceaanmanen die het had gevonden zou kunnen vallen en die verontreinigen — een missie die eindigde met het beschermen van de plaatsen die ze ontdekte.",
+    "new": "Cassini deed wat geen enkel ruimtevaartuig bij welke reuzenplaneet dan ook had gedaan: het stopte. Dertien jaar lang verbleef het bij Saturnus, en de ontdekkingen die het meest ertoe deden kwamen voort uit dat blijven — de geisers van Enceladus, waargenomen doordat de orbiter dichtbij genoeg en vaak genoeg vloog om een kleine maan zijn verborgen oceaan de ruimte in te zien spuiten. Het zette de Europese Huygens-sonde af op Titan, de enige landing ooit in het buitenste zonnestelsel, en bracht een wereld van methaanrivieren en -meren in kaart. Aan het eind, zonder brandstof, werd het opzettelijk Saturnus in gevlogen, zodat het nooit op de oceaanmanen zou kunnen vallen die het had gevonden en ze zou kunnen verontreinigen — een missie die eindigde met het beschermen van de plaatsen die het had ontdekt."
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.2.note",
+    "en": "DLR/CNES rover (~25 kg) released onto Phobos surface for in-situ studies.",
+    "old": "DLR/CNES rover (~25 kg) vrijgegeven op Phobos-oppervlak voor in-situ studies.",
+    "new": "DLR/CNES-rover (~25 kg) op het oppervlak van Phobos afgezet voor in-situonderzoek."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.10.note",
+    "en": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+    "old": "CM splash-down in Noord-Stille Oceaan 1971-08-07 20:46 UTC. Een van drie grote parachutes falen volledig uit te vouwen; landing hard maar veilig. Bergingsdienst USS Okinawa.",
+    "new": "De CM maakt een waterlanding in de noordelijke Stille Oceaan 1971-08-07 20:46 UTC. Een van de drie hoofdparachutes gaat niet volledig open; harde maar veilige landing. Berging door de USS Okinawa."
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.note",
+    "en": "Trans-Mars injection from fully-fuelled LEO state.",
+    "old": "Trans-Mars-injectie vanuit volledig getankte LEO-toestand.",
+    "new": "Trans-Mars-injectie vanuit een lage aardbaan (LEO) met volle tanks."
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.2.note",
+    "en": "Atlantic Ocean 480 km downrange. Hatch fired prematurely — capsule flooded and sank. Grissom escaped; recovered by USS Randolph.",
+    "old": "Atlantische Oceaan 480 km downrange. Luik sprong voortijdig open — capsule liep vol water en zonk. Grissom ontsnapte; geborgen door USS Randolph.",
+    "new": "Atlantische Oceaan, 480 km van de lanceerplaats. Het luik werd voortijdig afgeschoten — capsule liep vol water en zonk. Grissom ontsnapte; geborgen door de USS Randolph."
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "first",
+    "en": "First spacecraft to reach Mars and return close-up images of another planet",
+    "old": "Eerste ruimtevaartuig dat Mars bereikte en close-up beelden van een andere planeet teruggaf",
+    "new": "Eerste ruimtevaartuig dat Mars bereikte en close-upbeelden van een andere planeet terugzond"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.0.note",
+    "en": "1965-12-12: engines ignite then shut down on the pad; Schirra does not eject.",
+    "old": "1965-12-12: motoren ontbranden en stoppen vervolgens op het platform; Schirra werpt niet uit.",
+    "new": "1965-12-12: motoren ontbranden en worden op het lanceerplatform uitgeschakeld; Schirra katapulteert zich niet uit."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.4.note",
+    "en": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-21.",
+    "old": "Bemanning overleefde 2 nachten in -30°C wolfbewoond bos voordat reddingshelikopters hen op 1965-03-21 bereikten.",
+    "new": "De bemanning overleefde 2 nachten in een met wolven bevolkt bos bij -30°C voordat reddingshelikopters hen op 1965-03-21 bereikten."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.3.note",
+    "en": "12 maneuvers over 5 years to maintain a Venus re-encounter trajectory.",
+    "old": "12 maneuvers gedurende 5 jaar om een Venus-terugkeer-traject te behouden.",
+    "new": "12 manoeuvres gedurende 5 jaar om een traject voor een nieuwe ontmoeting met Venus te behouden."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "en": "Lunar orbit insertion (multiple Earth and lunar orbit-raising burns used).",
+    "old": "Maanbaan-inbrenging (meerdere burn-manoeuvres in aard- en maanbaan gebruikt).",
+    "new": "Maanbaaninsertie (met meerdere ontstekingen voor baanverhoging rond de Aarde en de Maan)."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.6.note",
+    "en": "Hazcam returns first low-resolution image of the surface.",
+    "old": "Hazcam retourneert eerste lage-resolutiebild van het oppervlak.",
+    "new": "Hazcam zendt het eerste beeld met lage resolutie van het oppervlak terug."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.4.note",
+    "en": "Soft landing at 68.22°N, 234.25°E — northernmost Mars surface mission.",
+    "old": "Zachte landing op 68,22°N, 234,25°O — noordelijkste Mars oppervlaktemissie.",
+    "new": "Zachte landing op 68,22°N, 234,25°O — de noordelijkste oppervlaktemissie op Mars."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.6.note",
+    "en": "NASA declares end-of-mission 2019-02-13. 45.16 km traversed.",
+    "old": "NASA verklaart einde-van-missie op 2019-02-13. 45,16 km afgelegd.",
+    "new": "NASA verklaart de missie op 2019-02-13 voor beëindigd. 45,16 km afgelegd."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "first",
+    "en": "First flight of Blue Origin's Blue Moon lunar lander architecture",
+    "old": "Eerste vlucht van Blue Origin's Blue Moon maanlander-architectuur",
+    "new": "Eerste vlucht van de maanlanderarchitectuur Blue Moon van Blue Origin"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.1.note",
+    "en": "Capture into Mars orbit; transfer to Phobos quasi-orbit over following months.",
+    "old": "Vangst in Mars-baan; transfer naar Phobos quasi-baan over volgende maanden.",
+    "new": "Invangen in een baan om Mars; in de maanden daarna overgang naar een quasi-baan om Phobos."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "first",
+    "en": "Full lunar-landing dress rehearsal — LM descended to ~15.6 km altitude",
+    "old": "Volledige maanlandings-generale repetitie — LM daalde tot ~15,6 km hoogte",
+    "new": "Volledige generale repetitie voor de maanlanding — LM daalde tot ~15,6 km hoogte"
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.2.note",
+    "en": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+    "old": "Autonome landingsbaanlandingsmaan op KSC Shuttle Landing Facility 2022-11-12.",
+    "new": "Autonome landing op de landingsbaan van de KSC Shuttle Landing Facility 2022-11-12."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.4.note",
+    "en": "Thruster lines freeze; final command issued 2009-06-30.",
+    "old": "Stuwraketleidingen bevriezen; laatste commando uitgegeven op 30-6-2009.",
+    "new": "Leidingen van de stuurraketten bevriezen; laatste commando uitgegeven op 2009-06-30."
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.5.note",
+    "en": "First robotic lunar rendezvous; sample container transferred to orbiter.",
+    "old": "Eerste robotische maan-rendezvous; monstercontainer overgedragen aan orbiter.",
+    "new": "Eerste robotische rendez-vous bij de Maan; monstercontainer overgedragen aan de orbiter."
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "description",
+    "en": "The first crewed flight of the Soyuz spacecraft, launched 23 April 1967 with Vladimir Komarov aboard. The rushed vehicle suffered cascading failures in orbit — an undeployed solar panel, attitude-control problems — and the mission was cut short. On reentry the drogue chute deployed but the main parachute failed to open properly; the descent module struck the ground near-terminal velocity and Komarov was killed — the first in-flight fatality in spaceflight history.",
+    "old": "De eerste bemande vlucht van het Soyuz-ruimtevaartuig, gelanceerd op 23 april 1967 met Vladimir Komarov aan boord. Het overhaast gebouwde voertuig leed aan cascaderende storingen in een baan om de aarde — een niet-uitgeklapt zonnepaneel, attituderegelingsproblemen — en de missie werd vroegtijdig afgebroken. Bij terugkeer opende de remparachute wel, maar de hoofdparachute opende niet goed; de afdaalmodule raakte de grond met bijna-eindsnelheid en Komarov kwam om het leven — de eerste dodelijke slachtoffer tijdens een vlucht in de ruimtevaartgeschiedenis.",
+    "new": "De eerste bemande vlucht van het Soyuz-ruimtevaartuig, gelanceerd op 23 april 1967 met Vladimir Komarov aan boord. Het overhaast gebouwde voertuig kreeg in een baan om de Aarde te maken met opeenvolgende storingen — een zonnepaneel dat niet uitklapte, problemen met de standregeling — en de missie werd vroegtijdig afgebroken. Bij de terugkeer ging de remparachute wel open, maar de hoofdparachute opende niet goed; de afdaalmodule raakte de grond met bijna de eindsnelheid en Komarov kwam om het leven — het eerste dodelijke slachtoffer tijdens een vlucht in de geschiedenis van de ruimtevaart."
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.0.note",
+    "en": "Saturn V (AS-512) from KSC LC-39A 1972-12-07 — only Apollo night launch.",
+    "old": "Saturn V (AS-512) vanuit KSC LC-39A 1972-12-07 — enige Apollo nachtlancering.",
+    "new": "Saturn V (AS-512) vanuit KSC LC-39A 1972-12-07 — de enige nachtlancering van Apollo."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.note",
+    "en": "Trans-Mars injection (3.61 km/s ∆v) sends MSL onto a heliocentric Mars-bound trajectory.",
+    "old": "Trans-Mars injectie (3.61 km/s ∆v) stuurt MSL op een heliocentrische Mars-gebonden baan.",
+    "new": "Trans-Mars-injectie (3,61 km/s delta-v) stuurt MSL op een heliocentrisch traject naar Mars."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.2.note",
+    "en": "Hover at 20 km — start of 1.5-year proximity operations including sample collection.",
+    "old": "Hoveren op 20 km — begin van 1,5-jarige proximity operations inclusief monsterophaling.",
+    "new": "Zweven op 20 km — begin van 1,5 jaar operaties in de nabijheid van de asteroïde, inclusief monsterverzameling."
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "description",
+    "en": "James Lovell and Buzz Aldrin flew the final Gemini, 11-15 November 1966. Aldrin's three EVAs totalling 5 h 30 m — supported by underwater training, handholds, and foot restraints — finally showed that useful work could be done in space, solving the EVA difficulties of earlier flights. 59 orbits.",
+    "old": "James Lovell en Buzz Aldrin vlogen de laatste Gemini, 11-15 november 1966. Aldrin's drie EVA's in totaal 5 h 30 m — ondersteund door onderwatertraining, handvatten en voetbeugels — toonden eindelijk aan dat nuttig werk in de ruimte gedaan kon worden, en losten de EVA-moeilijkheden van eerdere vluchten op. 59 omlopen.",
+    "new": "James Lovell en Buzz Aldrin vlogen de laatste Gemini, 11-15 november 1966. Aldrins drie EVA's, samen 5 h 30 m — ondersteund door training onder water, handgrepen en voetsteunen — toonden eindelijk aan dat in de ruimte nuttig werk gedaan kon worden en losten de EVA-problemen van eerdere vluchten op. 59 banen."
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.4.note",
+    "en": "Deliberate impact near Shackleton crater 1999-07-31 09:52 UTC. No water-vapour plume detected from Earth.",
+    "old": "Opzettelijke inslag nabij Shackleton-krater 1999-07-31 09:52 UTC. Geen waterdampluim gedetecteerd vanaf Aarde.",
+    "new": "Opzettelijke inslag nabij de krater Shackleton 1999-07-31 09:52 UTC. Geen waterdampwolk waargenomen vanaf de Aarde."
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "description",
+    "en": "Wally Schirra and Tom Stafford achieved the first crewed space rendezvous on 15 December 1965, station-keeping within ~30 cm of Gemini 7 for over five hours. It followed a launch-pad engine shutdown three days earlier that Schirra chose not to abort. Duration ~1 d 1 h; 16 orbits.",
+    "old": "Wally Schirra en Tom Stafford bereikten de eerste bemande ruimterendezvous op 15 december 1965, positie houdend binnen ~30 cm van Gemini 7 gedurende meer dan vijf uur. Het volgde op een motorstilstand op het lanceerplatform drie dagen eerder die Schirra ervoor koos niet af te breken. Duur ~1 d 1 h; 16 banen.",
+    "new": "Wally Schirra en Tom Stafford voerden op 15 december 1965 het eerste bemande rendez-vous in de ruimte uit en hielden meer dan vijf uur lang positie binnen ~30 cm van Gemini 7. Het volgde op een motorstop op het lanceerplatform drie dagen eerder, waarbij Schirra besloot de vlucht niet af te breken. Duur ~1 d 1 h; 16 banen."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.0.note",
+    "en": "Ariane 5G+ lifts Rosetta from Kourou for the 10-year cruise to comet 67P.",
+    "old": "Ariane 5G+ brengt Rosetta vanaf Kourou naar de tienjarige tocht naar komeet 67P.",
+    "new": "Ariane 5G+ lanceert Rosetta vanaf Kourou voor de tienjarige reis naar komeet 67P."
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.2.note",
+    "en": "Stuck thruster sends the stack tumbling ~1 rev/s; Armstrong recovers with the reentry-control system.",
+    "old": "Vastgelopen stuwraket laat de stapel tuimelen ~1 omw/s; Armstrong herstelt met het terugkeer-controlesysteem.",
+    "new": "Een vastzittende stuurraket laat de gekoppelde voertuigen met ~1 omw/s tuimelen; Armstrong herstelt de controle met het terugkeerbesturingssysteem."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.4.note",
+    "en": "Bounced 28 times. Rolled to rest at 14.57°S, 175.47°E.",
+    "old": "Sprong 28 keer. Rolde tot rust op 14,57°Z, 175,47°O.",
+    "new": "Stuiterde 28 keer. Rolde uit tot stilstand op 14,57°Z, 175,47°O."
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "description",
+    "en": "China's first Mars mission accomplished what no agency had ever attempted in one launch: orbital insertion, atmospheric entry, soft landing, and rover deployment. The Zhurong rover operated 358 sols at Utopia Planitia, traversing 1.9 km, before entering planned hibernation in May 2022; it has not woken since (likely due to dust accumulation on solar panels). The orbiter remains active, mapping the planet at high resolution and serving as relay for ground assets.",
+    "old": "China's eerste Mars-missie volbracht wat geen agentschap ooit in één lancering had geprobeerd: orbitale insertie, atmosferische intrede, zachte landing en rover-inzet. De Zhurong-rover werkte 358 sols bij Utopia Planitia, doorkruiste 1,9 km, voordat hij in mei 2022 in geplande hibernatie ging; hij is sindsdien niet wakker geworden (waarschijnlijk vanwege stofophoping op zonnepanelen). De orbiter blijft actief, brengt de planeet in hoge resolutie in kaart en dient als relais voor grondactieven.",
+    "new": "China's eerste Marsmissie volbracht wat geen ruimtevaartorganisatie ooit in één lancering had geprobeerd: baaninsertie, atmosferische intrede, zachte landing en het uitzetten van een rover. De rover Zhurong werkte 358 sols op Utopia Planitia, legde 1,9 km af en ging in mei 2022 in geplande hibernatie; sindsdien is hij niet meer wakker geworden (waarschijnlijk door stofophoping op de zonnepanelen). De orbiter blijft actief, brengt de planeet met hoge resolutie in kaart en dient als relais voor de toestellen op de grond."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.5.note",
+    "en": "2023-09-24. SRC parachutes into Utah Test and Training Range; spacecraft becomes OSIRIS-APEX.",
+    "old": "2023-09-24. SRC parachute landde in Utah Test and Training Range; ruimtevaartuig wordt OSIRIS-APEX.",
+    "new": "2023-09-24. De SRC daalt met parachute neer op de Utah Test and Training Range; het ruimtevaartuig wordt OSIRIS-APEX."
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.note",
+    "en": "First of six assists to slow the trajectory enough to enter Mercury orbit.",
+    "old": "Eerste van zes assists om de baan zo af te remmen dat ingang in een baan rond Mercurius mogelijk wordt.",
+    "new": "Eerste van zes zwaartekrachtassists om het traject genoeg af te remmen om in een baan om Mercurius te komen."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.note",
+    "en": "Earth gravity assist phases the rendezvous orbit.",
+    "old": "Earth gravity assist fasen de rendezvous-baan.",
+    "new": "Een zwaartekrachtassist bij de Aarde stemt de fasering van de rendez-vous-baan af."
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "events.2.note",
+    "en": "Atmospheric entry, parachute, terminal-descent rocket landing at Elysium Planitia.",
+    "old": "Atmosferische intrede, parachute, eindafdaling-raketlanding bij Elysium Planitia.",
+    "new": "Atmosferische intrede, parachute en landing met raketten tijdens de eindafdaling op Elysium Planitia."
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "first",
+    "en": "ESA's first deep-space mission; closest comet flyby ever attempted (Halley, 596 km, 1986); first close-up imaging of a cometary nucleus",
+    "old": "ESA's eerste deep-space missie; dichtstbijzijnde kometvoorbijvlucht ooit ondernomen (Halley, 596 km, 1986); eerste close-up beeldvorming van een komeetkern",
+    "new": "ESA's eerste missie in de diepe ruimte; dichtste komeet-flyby ooit (Halley, 596 km, 1986); eerste close-upbeelden van een komeetkern"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.7.note",
+    "en": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
+    "old": "Falcon stijgt op na 66 u 55 m op oppervlak. 77 kg monsters + eerste opstijging televisie-uitgezonden vanaf LRV-gemonteerde camera (op afstand bediend door Houston).",
+    "new": "Falcon stijgt op na 66 u 55 m op het oppervlak. 77 kg monsters + eerste opstijging die op televisie werd uitgezonden via de op de LRV gemonteerde camera (op afstand bediend door Houston)."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.3.note",
+    "en": "Sample capsule lands in Woomera, Australia with 5.4 g of Ryugu material.",
+    "old": "Monstercapsule landen in Woomera, Australië met 5,4 g Ryugu materiaal.",
+    "new": "Monstercapsule landt in Woomera, Australië, met 5,4 g Ryugu-materiaal."
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "first",
+    "en": "Second asteroid sample return (Ryugu, 2020); first artificial impact crater on an asteroid; first subsurface asteroid material returned to Earth",
+    "old": "Tweede terugkeer van asteroïdemonster (Ryugu, 2020); eerste kunstmatige impactkrater op een asteroïde; eerste ondergrondse asteroïdemateriaal naar Aarde teruggebracht",
+    "new": "Tweede asteroïdemonster naar de Aarde (Ryugu, 2020); eerste kunstmatige inslagkrater op een asteroïde; eerste ondergronds asteroïdemateriaal naar de Aarde"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "first",
+    "en": "Closest spacecraft to the Sun ever flown (6.1 M km, 9.86 R☉); first spacecraft to enter the solar corona (2021-04-28); fastest human-made object (~191 km/s)",
+    "old": "Dichtstbij de Zon gevlogen ruimtevaartuig ooit (6,1 M km, 9,86 R☉); eerste ruimtevaartuig dat de zonnekroon binnenging (2021-04-28); snelste door mensen gemaakt object (~191 km/s)",
+    "new": "Dichtst bij de Zon gekomen ruimtevaartuig (6,1 M km, 9,86 R☉); eerste ruimtevaartuig in de zonnekroon (2021-04-28); snelste door mensen gemaakte object (~191 km/s)"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "first",
+    "en": "Solved EVA — Aldrin's spacewalks; final Gemini",
+    "old": "EVA opgelost — Aldrin's ruimtewandelingen; laatste Gemini",
+    "new": "EVA-probleem opgelost — Aldrins ruimtewandelingen; laatste Gemini"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.6.note",
+    "en": "2010-06-13. ~1,500 grains of Itokawa dust (sub-milligram total) recovered at Woomera. First asteroid sample ever returned.",
+    "old": "2010-06-13. ~1.500 korrels Itokawa-stof (submilligram totaal) teruggevonden te Woomera. Eerste asteroïde-steekproef ooit teruggekeerd.",
+    "new": "2010-06-13. ~1.500 korrels Itokawa-stof (in totaal minder dan een milligram) teruggevonden bij Woomera. Eerste asteroïdemonster ooit naar de Aarde teruggebracht."
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "first",
+    "en": "First Soyuz flight — parachute failure killed Vladimir Komarov (first in-flight spaceflight death)",
+    "old": "Eerste Soyuz-vlucht — parachutefalen doodde Vladimir Komarov (eerste ruimtevaartdode tijdens vlucht)",
+    "new": "Eerste Soyuz-vlucht — een parachutestoring kostte Vladimir Komarov het leven (eerste dode tijdens een ruimtevlucht)"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.5.note",
+    "en": "Sun angle changes; solar panels generate power; operations resumed for one lunar day.",
+    "old": "Zonnehoek verandert; zonnepanelen genereren stroom; operaties hervat voor één maandag.",
+    "new": "Zonnehoek verandert; zonnepanelen leveren stroom; de operaties worden hervat voor één lunaire dag."
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "events.5.note",
+    "en": "Final low-power transmission 2022-12-15. Solar panels too dust-covered to recharge.",
+    "old": "Laatste lage-vermogen transmissie 2022-12-15. Zonnepanelen te bedekt met stof om op te laden.",
+    "new": "Laatste transmissie met laag vermogen op 2022-12-15. Zonnepanelen te zeer met stof bedekt om op te laden."
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 14 days / 206 orbits.",
+    "old": "Atlantic splashdown na 14 dagen / 206 omwentelingen.",
+    "new": "Waterlanding in de Atlantische Oceaan na 14 dagen / 206 banen."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.1.note",
+    "en": "Flyby at ~349,000 km; discovered Io volcanism, mapped Europa’s surface.",
+    "old": "Voorbijvlucht op ongeveer 349.000 km; ontdekte vulkanisme op Io, in kaart gebracht oppervlak van Europa.",
+    "new": "Flyby op ongeveer 349.000 km; ontdekte het vulkanisme op Io en bracht het oppervlak van Europa in kaart."
+  }
+]

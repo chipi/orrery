@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "更深层的启示是，在载人航天领域，后发可以是一种智慧。印度进入载人飞行时，可以研究所有前辈的事故，并有机会提前在工程上消除其他国家以生命为代价发现的故障。晚到几十年损失的是它似乎并不渴求的声望；而如果方法得当，它换来的是能够回家的航天员。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=gaganyaan": "航天器 — Gaganyaan 飞船",
+    "/programs/chandrayaan": "Chandrayaan — 印度的探月计划",
+    "/programs/mangalyaan": "Mangalyaan — 印度首次尝试即成功的火星任务"
+  }
 }

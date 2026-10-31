@@ -11,13 +11,13 @@
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Atlas V 541 liftoff van Cape Canaveral SLC-41.",
+      "note": "Een Atlas V 541 stijgt op vanaf Cape Canaveral SLC-41.",
       "type": "nominal"
     },
     {
       "met": 0.005,
-      "label": "TMI-BRANDING",
-      "note": "Trans-Mars injectie (3.61 km/s ∆v) stuurt MSL op een heliocentrische Mars-gebonden baan.",
+      "label": "TMI-ONTSTEKING",
+      "note": "Trans-Mars-injectie (3,61 km/s delta-v) stuurt MSL op een heliocentrisch traject naar Mars.",
       "type": "nominal"
     },
     {
@@ -35,7 +35,7 @@
     {
       "met": 254,
       "label": "EDL — ZEVEN MINUTEN VAN ANGST",
-      "note": "Atmosferische ingang, supersonische parachute, sky-crane retroraketten, rover neergelaten aan kabels.",
+      "note": "Atmosferische intrede, supersonische parachute, sky-crane retroraketten, rover neergelaten aan kabels.",
       "type": "nominal"
     },
     {
@@ -47,8 +47,9 @@
     {
       "met": 254.01,
       "label": "EERSTE BEELDEN",
-      "note": "Hazcam retourneert eerste lage-resolutiebild van het oppervlak.",
+      "note": "Hazcam zendt het eerste beeld met lage resolutie van het oppervlak terug.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur-bovenste trap (Atlas V 541)"
 }

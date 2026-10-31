@@ -23,7 +23,7 @@
     {
       "met": 3.4,
       "label": "MOI",
-      "note": "달 궤도 삽입.",
+      "note": "달 궤도 진입.",
       "type": "nominal"
     },
     {
@@ -50,5 +50,6 @@
       "note": "CM America가 우주비행사들을 태평양으로 귀환시키다 1972-12-19.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Saturn V S-IVB (3단)"
 }

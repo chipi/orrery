@@ -1,0 +1,1471 @@
+[
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.diagram",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "diagram_caption",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "intro_sentence",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/observation/black-holes.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "body_paragraphs.1",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.3",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/space-stations/expedition-cadence.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/space-stations/expedition-cadence.json",
+    "at": "body_paragraphs.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "intro_paragraphs.1",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "自由返回轨道",
+    "replace": "自由返回轨迹",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "轨道修正机动",
+    "replace": "轨迹修正机动",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.1",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "[轨道修正机动]",
+    "replace": "[轨迹修正机动]",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "title",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "轨道修正机动",
+    "replace": "轨迹修正机动",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "intro_sentence",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "发射轨道中",
+    "replace": "发射轨迹中",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "巡航中途燃烧",
+    "replace": "巡航中途点火",
+    "why": "burn = 点火 (engine firing)"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "narrative_101.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "正确的轨道上",
+    "replace": "正确的轨迹上",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "body_paragraphs.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "实际产生的轨道与计划轨道相差",
+    "replace": "实际产生的轨迹与计划轨迹相差",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "intro_sentence",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "目的地轨道的",
+    "replace": "目的地轨迹的",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/observation/andromeda-galaxy.json",
+    "at": "body_paragraphs.1",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "表明轨道几乎",
+    "replace": "表明轨迹几乎",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "narrative_101.2",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "设计任务轨道时",
+    "replace": "设计任务轨迹时",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "TLI燃烧将",
+    "replace": "TLI点火将",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "narrative_101.2",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "逃逸轨道",
+    "replace": "逃逸轨迹",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推",
+    "replace": "引力辅助",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.1",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "这个轨道用该火箭",
+    "replace": "这条轨迹用该火箭",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.2",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "轨道变体",
+    "replace": "轨迹变体",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.0",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "轨道上的每次移动",
+    "replace": "轨迹上的每次移动",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "每次燃烧都会消耗",
+    "replace": "每次点火都会消耗",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "intro_sentence",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "Keplerian轨道",
+    "replace": "Keplerian轨迹",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "title",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "自由返回轨道",
+    "replace": "自由返回轨迹",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "intro_sentence",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "返程票的轨道",
+    "replace": "返程票的轨迹",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "intro_sentence",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "每一条行星际轨道",
+    "replace": "每一条行星际轨迹",
+    "why": "binding 轨迹"
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "body_paragraphs.2",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "交汇与对接",
+    "replace": "交会与对接",
+    "why": "binding 交会"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.paragraphs.3",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "[引力助推]",
+    "replace": "[引力辅助]",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.paragraphs.3",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "四次引力助推",
+    "replace": "四次引力辅助",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.1",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力辅助弹弓",
+    "replace": "引力辅助",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推臂",
+    "replace": "引力辅助臂",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推的原因",
+    "replace": "引力辅助的原因",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推景观",
+    "replace": "引力辅助景观",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.1",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力辅助让你",
+    "replace": "引力辅助让你",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "两次燃烧",
+    "replace": "两次点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "title",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推",
+    "replace": "引力辅助",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.0",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力助推",
+    "replace": "引力辅助",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "没有重力助推",
+    "replace": "没有引力辅助",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "四次助推",
+    "replace": "四次引力辅助",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.1",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力助推巡游",
+    "replace": "引力辅助巡游",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "没有重力助推",
+    "replace": "没有引力辅助",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力助推将",
+    "replace": "引力辅助将",
+    "why": "binding 引力辅助"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.1",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "不需要进行变轨修正",
+    "replace": "不需要用于轨道保持的速度增量",
+    "why": "ΔV rendered as 变轨修正; binding 速度增量"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "intro_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "每一个燃烧标记",
+    "replace": "每一个点火标记",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning fuel = combustion/consumption, not an engine firing"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.3",
+    "term": "burn",
+    "decision": "change",
+    "find": "燃烧发动机",
+    "replace": "让发动机点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.3",
+    "term": "burn",
+    "decision": "change",
+    "find": "大的离开燃烧",
+    "replace": "大的出发点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "两次燃烧",
+    "replace": "两次点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "首次液体燃料燃烧",
+    "replace": "首次液体燃料火箭点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "首次液体燃料燃烧",
+    "replace": "首次液体燃料火箭点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "fire burning, not an engine firing"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "捕获燃烧",
+    "replace": "捕获点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "小规模捕获燃烧",
+    "replace": "小规模捕获点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "剩余的推进过程",
+    "replace": "剩余的发动机工作过程",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "随着推进过程进行",
+    "replace": "随着发动机工作过程的进行",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "燃烧时间很长",
+    "replace": "发动机工作时间很长",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.2",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "推重比 is the standard term for thrust-to-weight ratio"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burns the crew up\" is combustion, not an engine firing"
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "直接火箭燃烧至地面",
+    "replace": "直接以火箭点火降至地面",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.2",
+    "term": "stage",
+    "decision": "change",
+    "find": "下降平台飞离",
+    "replace": "下降级飞离",
+    "why": "stage = 级 (hardware stage)"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "轨道插入燃烧",
+    "replace": "轨道插入点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "body_paragraphs.0",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Flyby 任务",
+    "replace": "飞掠任务",
+    "why": "binding 飞掠"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "这次减速烧",
+    "replace": "这次制动点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "一次长时间、高精度的引擎烧制",
+    "replace": "一次长时间、高精度的发动机点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "的烧制持续了27分钟",
+    "replace": "的点火持续了27分钟",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "最长的一次烧制",
+    "replace": "最长的一次点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "如果烧制失败",
+    "replace": "如果点火失败",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "插入烧制力度不足",
+    "replace": "插入点火力度不足",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "燃烧发生在",
+    "replace": "点火发生在",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "使燃烧最节省",
+    "replace": "使点火最节省",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "96分钟的燃烧",
+    "replace": "96分钟的点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "如果烧制失败",
+    "replace": "如果点火失败",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "MOI烧制力度",
+    "replace": "MOI点火力度",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "然后动力着陆至表面",
+    "replace": "然后进行着陆点火降至表面",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/propulsive-landing.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "大规模燃烧",
+    "replace": "大规模点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "执行燃烧",
+    "replace": "执行点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "微小的燃烧",
+    "replace": "微小的点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "每次燃烧都是",
+    "replace": "每次点火都是",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "每次燃烧都是出问题",
+    "replace": "每次点火都是出问题",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/mission-phases/tcm.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "燃料成本低",
+    "replace": "推进剂成本低",
+    "why": "binding 推进剂"
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "你需要第二次加速",
+    "replace": "你需要第二次点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stars \"burn\" red is figurative glow"
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"burn out\" is stellar fuel exhaustion"
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "重要的轨道变换",
+    "replace": "重要的点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "将近地点烧到~200 km",
+    "replace": "点火将近地点降至~200 km",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "燃烧1~5米/秒的光圈轨道插入器",
+    "replace": "进行一次1~5米/秒的晕轨道插入点火",
+    "why": "garbled; burn = 点火"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "change",
+    "find": "每年只需进行几次规避机动",
+    "replace": "每年只需进行几次规避点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "change",
+    "find": "超过355000次机动",
+    "replace": "超过355000次规避点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/orbits/space-debris.json",
+    "at": "body_paragraphs.4",
+    "term": "payload",
+    "decision": "keep",
+    "why": "Vega Secondary Payload Adapter is a proper name"
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.3",
+    "term": "burn",
+    "decision": "change",
+    "find": "小的驻留保持燃烧",
+    "replace": "小的轨道保持点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "的离轨燃烧",
+    "replace": "的出发点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "的离轨燃烧最低值",
+    "replace": "的出发点火最低值",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "在引力井深处燃烧",
+    "replace": "在引力井深处点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "累加每次加速",
+    "replace": "累加每次点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "一级燃烧期间",
+    "replace": "一级发动机工作期间",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.4",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "change",
+    "find": "在引力井深处燃烧",
+    "replace": "在引力井深处点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "\"fuel to burn\" = fuel to expend/combust, not a firing"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "高速运动时燃烧",
+    "replace": "高速运动时点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "时的同样燃烧",
+    "replace": "时的同样点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "进行1 km/s的燃烧",
+    "replace": "进行1 km/s的点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "进行同样1 km/s的燃烧",
+    "replace": "进行同样1 km/s的点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "最近距离时燃烧",
+    "replace": "最近距离时点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "火箭燃烧:",
+    "replace": "火箭点火:",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "进行燃烧",
+    "replace": "进行点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "深井燃烧",
+    "replace": "深井点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / fuel consumption, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/specific-impulse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / fuel consumption, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / fuel consumption, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / fuel consumption, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / fuel consumption, not an engine firing"
+  },
+  {
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion / fuel consumption, not an engine firing"
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "到达燃烧",
+    "replace": "到达点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/transfers/_intro.json",
+    "at": "paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "注入燃烧",
+    "replace": "注入点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "中途修正燃烧",
+    "replace": "中途修正点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "火星掠过",
+    "replace": "火星飞掠",
+    "why": "binding 飞掠"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "term": "burn",
+    "decision": "change",
+    "find": "返回燃烧的工作",
+    "replace": "返回点火的工作",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "入轨燃烧",
+    "replace": "入轨点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "term": "burn",
+    "decision": "change",
+    "find": "两次大的燃烧",
+    "replace": "两次大的点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "term": "burn",
+    "decision": "change",
+    "find": "完成燃烧",
+    "replace": "完成点火",
+    "why": "burn = 点火"
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.1",
+    "term": "propellant",
+    "decision": "change",
+    "find": "就是燃料烧掉",
+    "replace": "就是推进剂烧掉",
+    "why": "binding 推进剂"
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "1 吨负载",
+    "replace": "1 吨有效载荷",
+    "why": "binding 有效载荷"
+  },
+  {
+    "rel": "science/mission-phases/eva.json",
+    "at": "diagram_caption",
+    "term": "payload",
+    "decision": "change",
+    "find": "有效负荷",
+    "replace": "有效载荷",
+    "why": "binding 有效载荷"
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.2",
+    "term": "payload",
+    "decision": "change",
+    "find": "搭载负荷",
+    "replace": "次级有效载荷",
+    "why": "secondary payload; binding 有效载荷"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "化学推进 = chemical propulsion as a method; natural"
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "diagram_caption",
+    "term": "booster",
+    "decision": "change",
+    "find": "捆绑助推(",
+    "replace": "捆绑式助推器(",
+    "why": "binding 助推器"
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.3",
+    "term": "booster",
+    "decision": "keep",
+    "why": "Super Heavy is the booster by name; word omitted naturally"
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "intro_sentence",
+    "term": "specific impulse",
+    "decision": "change",
+    "find": "具体脉冲",
+    "replace": "比冲",
+    "why": "binding 比冲"
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "海王星掠过期间",
+    "replace": "海王星飞掠期间",
+    "why": "binding 飞掠"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.0",
+    "term": "flyby",
+    "decision": "change",
+    "find": "掠飞成本最低",
+    "replace": "飞掠成本最低",
+    "why": "binding 飞掠"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "narrative_101.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "掠飞：瞄准",
+    "replace": "飞掠：瞄准",
+    "why": "binding 飞掠"
+  },
+  {
+    "rel": "science/mission-phases/mission-types.json",
+    "at": "diagram_caption",
+    "term": "flyby",
+    "decision": "change",
+    "find": "掠飞 →",
+    "replace": "飞掠 →",
+    "why": "binding 飞掠"
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "2015年的掠过",
+    "replace": "2015年的飞掠",
+    "why": "binding 飞掠"
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "掠过任务",
+    "replace": "飞掠任务",
+    "why": "binding 飞掠"
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "narrative_101.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "经过木星飞向土星的借力是",
+    "replace": "飞向土星途中的木星飞掠是",
+    "why": "flyby was rendered as gravity assist"
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.1",
+    "term": "flyby",
+    "decision": "change",
+    "find": "借力、逃逸",
+    "replace": "飞掠、逃逸",
+    "why": "flyby was rendered as gravity assist"
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.2",
+    "term": "flyby",
+    "decision": "change",
+    "find": "借力经过行星",
+    "replace": "飞掠行星",
+    "why": "binding 飞掠"
+  },
+  {
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "intro_sentence",
+    "term": "entry",
+    "decision": "change",
+    "find": "重返大气层",
+    "replace": "再入大气层",
+    "why": "binding 再入"
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "intro_sentence",
+    "term": "entry",
+    "decision": "change",
+    "find": "重返大气层",
+    "replace": "再入大气层",
+    "why": "binding 再入"
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "body_paragraphs.2",
+    "term": "entry",
+    "decision": "change",
+    "find": "重返大气层 HUD",
+    "replace": "再入大气层 HUD",
+    "why": "binding 再入"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "title",
+    "term": "entry",
+    "decision": "change",
+    "find": "重返大气层",
+    "replace": "再入大气层",
+    "why": "binding 再入"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.1",
+    "term": "entry",
+    "decision": "change",
+    "find": "重返大气层走廊",
+    "replace": "再入大气层走廊",
+    "why": "binding 再入"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "diagram_caption",
+    "term": "entry",
+    "decision": "change",
+    "find": "重返大气层走廊",
+    "replace": "再入大气层走廊",
+    "why": "binding 再入"
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.4",
+    "term": "entry",
+    "decision": "keep",
+    "why": "re-entry rendered 返回地球; natural"
+  }
+]

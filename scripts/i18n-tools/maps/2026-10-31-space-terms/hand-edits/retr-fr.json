@@ -1,0 +1,128 @@
+[
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "title",
+    "old": "Nombre de morts",
+    "new": "Navigation à l'estime"
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "intro_sentence",
+    "old": "Intégrer les accéléromètres pour obtenir la vitesse, s'intégrer à nouveau pour obtenir la position — fonctionne pendant des heures, dérive sensiblement sur des jours, et c'est exactement pourquoi chaque croisière a besoin de corrections…",
+    "new": "On intègre les accéléromètres pour obtenir la vitesse, puis on intègre à nouveau pour obtenir la position : la méthode tient quelques heures, dérive nettement au bout de plusieurs jours, et c'est exactement pourquoi chaque croisière a besoin de recalages périodiques depuis le sol."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.0",
+    "old": "Entre les allumages et en dehors de la gamme des repères célestes utiles, un vaisseau spatial suit son propre état en intégrant la sortie de son unité de mesure inertielle (IMU): trois accéléromètres mesurant l'accélération linéaire, trois gyroscopes mesurant le taux de rotation. Intégrer l'accélération une fois → vitesse. Intégrer à nouveau → position. Combiné avec l'orientation de [suiveurs étoiles] (phases de mission/suiveurs étoiles), l'engin spatial peut propager son vecteur plein état vers l'avant dans le temps sans aucune aide externe.",
+    "new": "Entre deux allumages, et hors de portée de repères célestes exploitables, un engin spatial suit son propre état en intégrant les sorties de sa centrale inertielle (IMU) : trois accéléromètres qui mesurent l'accélération linéaire, trois gyroscopes qui mesurent la vitesse de rotation. On intègre l'accélération une fois → la vitesse. On intègre à nouveau → la position. Combinée à l'orientation fournie par les [senseurs stellaires](mission-phases/star-trackers), cette intégration permet à l'engin de propager tout son vecteur d'état dans le temps sans aucune aide extérieure."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.1",
+    "old": "Le problème fondamental est la **dérive**. Chaque accéléromètre possède un petit biais (~10⁻⁵ m/s² sur une CIN de qualité navigation) ; sur 1 jour, ce biais intégré deux fois contribue à environ 3,7 km d'erreur de position. Sur une croisière de 6 mois vers Mars, l'erreur d'estime s'accumule jusqu'à atteindre des milliers de kilomètres, même avec les meilleures CIN qualifiées pour l'espace (qui sont bien supérieures à celles grand public dans votre téléphone). C'est pourquoi chaque mission interplanétaire inclut dans son budget des [manœuvres de correction de trajectoire](mission-phases/tcm) : la dispersion de croisière doit être mesurée par le suivi terrestre et l'engin spatial doit physiquement ajuster sa trajectoire.",
+    "new": "Le problème fondamental est la **dérive**. Tout accéléromètre présente un petit biais (~10⁻⁵ m/s² sur une centrale de qualité navigation) ; en 1 jour, ce biais intégré deux fois produit une erreur de position d'environ 3,7 km. Sur une croisière de 6 mois vers Mars, l'erreur d'estime atteint des milliers de km, même avec les meilleures centrales inertielles qualifiées pour l'espace (bien supérieures à celles de votre téléphone). C'est pourquoi toute mission interplanétaire inscrit à son budget des [manœuvres de correction de trajectoire](mission-phases/tcm) : la dispersion en croisière doit être mesurée par rapport au suivi depuis le sol, et l'engin doit corriger physiquement sa route."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.2",
+    "old": "Les meilleures pratiques modernes combinent l'effacement à mort et la gamme périodique de Deep Space Network (voir [DSN] (mission-phases/dsn)) : le sol mesure la position à ~1 km de précision via le temps lumineux aller-retour et Doppler, renverse un état corrigé, et l'engin redémarre sa propagation d'une bonne fixation connue. Le système combiné est beaucoup plus précis que les deux seuls composants. Les traqueurs d'étoiles disent à l'engin spatial de quelle façon il pointe ; l'IMU lui dit ce qui se passe entre les corrections ; le DSN lui dit où il est réellement.",
+    "new": "La meilleure pratique actuelle associe la navigation à l'estime à une mesure de distance périodique par le Deep Space Network (voir [DSN](mission-phases/dsn)) : le sol mesure la position à ~1 km près grâce au temps de trajet aller-retour de la lumière et à l'effet Doppler, envoie en liaison montante un état corrigé, et l'engin repart de ce point connu pour propager son état. Le système combiné est bien plus précis que chacun de ses éléments pris seul. Les senseurs stellaires indiquent à l'engin dans quelle direction il pointe ; la centrale inertielle lui dit ce qui se passe entre deux recalages ; le DSN lui dit où il se trouve réellement."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.3",
+    "old": "L'absence de DSN — lors d'une panne de communication Mars-EDL, pendant le délai de lumière à sens unique d'environ 22 minutes jusqu'à Jupiter et au-delà, ou lors d'une crise de contrôle de l'attitude – est d'une grande importance. Chaque système d'autonomie des engins spatiaux est essentiellement un propagateur d'état-vecteur qui fonctionne à l'arrêt alors que les opérations au sol travaillent à la récupération.",
+    "new": "La navigation à l'estime compte surtout quand le DSN n'est pas disponible : pendant le black-out des communications lors de l'EDL martienne, avec le retard de lumière d'environ 22 minutes à sens unique vers Jupiter et au-delà, ou lors d'une crise de contrôle d'attitude. Tout système d'autonomie d'un engin spatial est, pour l'essentiel, un propagateur de vecteur d'état qui tourne à l'estime pendant que les opérations au sol préparent le rétablissement."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "diagram_caption",
+    "old": "Accéléromètre + gyroscope → intégration → vecteur d'état → dérive sur plusieurs jours sans correction externe → raison d'être des TCM. La mesure de distance DSN + effet Doppler réinitialisent la dérive.",
+    "new": "Accéléromètre + gyroscope → intégration → vecteur d'état → dérive en quelques jours sans recalage externe → raison d'être des TCM. La mesure de distance et le Doppler du DSN remettent la dérive à zéro."
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "title",
+    "old": "Trackers des étoiles",
+    "new": "Senseurs stellaires"
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "intro_sentence",
+    "old": "Une petite caméra pointait vers le ciel, identifiant les étoiles par une correspondance avec un catalogue embarqué, la façon la plus précise pour un vaisseau spatial de savoir de quelle façon il pointe.",
+    "new": "Une petite caméra pointée vers le ciel, qui identifie les étoiles par reconnaissance de motifs face à un catalogue embarqué : le moyen le plus précis pour un engin spatial de savoir dans quelle direction il pointe."
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.0",
+    "old": "Un vaisseau spatial ne peut pas demander au GPS où est le « haut » — il n'y a pas de haut dans l'espace profond, et le GPS ne porte de toute façon pas au-delà de l'orbite basse (LEO). Pour exécuter une poussée, déployer un panneau solaire ou pointer une antenne à gain élevé vers la Terre, l'engin spatial doit connaître son orientation dans l'espace inertiel. L'instrument qui la fournit est le viseur d'étoiles : une petite caméra CCD pointée sur une portion de ciel, qui prend une courte pose et identifie les étoiles de l'image par comparaison de motifs avec un catalogue embarqué (en général Hipparcos ou Tycho-2, ~10⁴–10⁵ étoiles).",
+    "new": "Un engin spatial ne peut pas demander au GPS où est le « haut » : il n'y a pas de haut dans l'espace lointain, et le GPS ne porte de toute façon pas au-delà de l'orbite basse. Pour exécuter un allumage, déployer un panneau solaire ou pointer une antenne à grand gain vers la Terre, l'engin doit connaître son orientation dans l'espace inertiel. L'instrument qui la fournit est le senseur stellaire : une petite caméra CCD pointée vers une portion du ciel, qui prend une courte pose et identifie les étoiles de l'image par reconnaissance de motifs face à un catalogue embarqué (en général Hipparcos ou Tycho-2, ~10⁴–10⁵ étoiles)."
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.1",
+    "old": "Une fois qu'il a identifié trois étoiles ou plus, la géométrie détermine uniquement l'orientation de la caméra. Combiné avec la connaissance de la façon dont la caméra est montée sur le corps de l'engin spatial, le résultat est un quaternion décrivant l'attitude de l'engin spatial à 1-10 secondes d'arc de précision — mieux que tout autre capteur embarqué. Les missions interplanétaires modernes portent deux ou trois traceurs dans des orientations indépendantes, donc au moins une a toujours une vue propre (pas d'éblouissement du Soleil, pas de planète dans le champ de vision).",
+    "new": "Dès qu'il a identifié trois étoiles ou plus, la géométrie détermine de façon unique l'orientation de la caméra. En y ajoutant la connaissance de la façon dont la caméra est montée sur le corps de l'engin, on obtient un quaternion décrivant l'attitude de l'engin avec une précision de 1 à 10 secondes d'arc, meilleure que celle de tout autre capteur embarqué. Les missions interplanétaires modernes emportent deux ou trois senseurs d'orientations indépendantes, afin qu'au moins un ait toujours une vue dégagée (ni éblouissement solaire, ni planète dans le champ de vue)."
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.2",
+    "old": "Les trackers d'étoiles travaillent en continu entre les allumages et fournissent la référence absolue que l'intégration des mesures IMU (voir [compte des morts] (phases de la mission/décalage)) doit rester étalonnée. Sans traceurs d'étoiles les IMU dérivent et le vaisseau spatial perd la connaissance de l'attitude en quelques heures. Avec eux, l'attitude est bonne pour arcsecondes pendant des années à la fin — assez longtemps pour pointer JWST à une galaxie à 13 milliards d'années-lumière et maintenir la position à dans les milliarcsecondes pour une intégration de 100 000 secondes.",
+    "new": "Les senseurs stellaires fonctionnent en continu entre les allumages et fournissent la référence absolue dont l'intégration des mesures de la centrale inertielle (voir [navigation à l'estime](mission-phases/dead-reckoning)) a besoin pour rester calibrée. Sans eux, la centrale dérive et l'engin perd la connaissance de son attitude en quelques heures. Avec eux, l'attitude reste juste à la seconde d'arc pendant des années, assez longtemps pour pointer JWST vers une galaxie à 13 milliards d'années-lumière et tenir la position à quelques millisecondes d'arc près pendant une intégration de 100 000 secondes."
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "diagram_caption",
+    "old": "Caméra prend exposition → identifier les étoiles par triangle-appariement pour cataloguer → quaternion attitude solution → arcseconde-préciser \"de quelle façon suis-je pointé?\" — toutes les quelques secondes, pour toujours.",
+    "new": "La caméra prend une pose → identification des étoiles par appariement de triangles avec le catalogue → solution d'attitude sous forme de quaternion → réponse, précise à la seconde d'arc, à « dans quelle direction est-ce que je pointe ? » — toutes les quelques secondes, pour toujours."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "intro_sentence",
+    "old": "Chaque célèbre «image téléscopique» est une pile de longues expositions à travers des filtres à bande étroite, calibrés, enregistrés, cartographiés fausse couleur — l'image est ce que les humains font du compte.",
+    "new": "Chaque célèbre « photo de télescope » est un empilement de longues poses à travers des filtres à bande étroite, calibrées, recalées et colorées en fausses couleurs : l'image est ce que les humains font du comptage."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "narrative_101.0",
+    "old": "Hubble n'a pas pris de photo des Piliers de la Création. Hubble a pris quelques dizaines de photos — chacune à travers un filtre différent, toutes les minutes — et une équipe de spécialistes de l'imagerie les a empilées, les a alignées sous-pixel, étalonné les mauvais pixels et les coups de rayons cosmiques, puis attribué des couleurs par la physique que le filtre a capturé. La chose que vous voyez sur l'affiche est des données réelles et une interprétation réelle, en parties égales. L'imagerie par télescope n'est pas malhonnête — ce n'est pas ce que fait votre appareil photo.",
+    "new": "Hubble n'a pas pris une photo des Piliers de la Création. Hubble a pris quelques dizaines de photos, chacune à travers un filtre différent, chacune de plusieurs minutes, et une équipe de spécialistes de l'imagerie les a empilées, alignées à une fraction de pixel près, débarrassées des pixels défectueux et des impacts de rayons cosmiques, puis colorées selon la physique que chaque filtre captait. Ce que vous voyez sur l'affiche, ce sont des données réelles et une interprétation réelle, à parts égales. L'imagerie des télescopes n'est pas malhonnête : elle n'est simplement pas ce que fait l'appareil photo de votre téléphone."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "narrative_101.1",
+    "old": "En dessous de cette section, la bande d'observation de l'Observatoire tire une image signature de chacun des douze observatoires de la flotte d'Orrery — Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO et Hitomi. Cliquez sur n'importe lequel d'entre eux pour tomber dans la galerie complète de cet observatoire + panneau technique.",
+    "new": "Sous cette section, la bande Observatory Showcase présente une image emblématique de chacun des douze observatoires de la flotte d'Orrery : Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO et Hitomi. Cliquez sur l'un d'eux pour accéder à sa galerie complète et à son panneau technique."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.0",
+    "old": "Le capteur d'image d'un télescope spatial est une puce CCD ou CMOS, une grille de compteurs de photons. Chaque pixel est assis sur le plan focal pour une exposition (de millisecondes à plusieurs heures), accumulant des nombres d'électrons. La sortie est un nombre par pixel: combien de photons de quel filtre à bande étroite a frappé là. Les expositions multiples sont empilées pour réduire le bruit de lecture, enregistrées en alignement sous-pixel et combinées médianement pour rejeter les coups de rayons cosmiques.",
+    "new": "Le capteur d'image d'un télescope spatial est une puce CCD ou CMOS, une grille de compteurs de photons. Chaque pixel reste sur le plan focal pendant une pose (de quelques millisecondes à plusieurs heures) et accumule des électrons. La sortie est un nombre par pixel : combien de photons, dans quel filtre à bande étroite, sont arrivés là. Plusieurs poses sont empilées pour réduire le bruit de lecture, recalées à une fraction de pixel près et combinées par la médiane pour éliminer les impacts de rayons cosmiques."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.1",
+    "old": "La couleur est l'élément le plus mal compris. Les filtres de télescope sont à bande étroite — ils laissent passer une tranche spécifique de 10–100 nm du spectre : l'hydrogène-alpha à 656,3 nm, l'oxygène doublement ionisé à 500,7 nm, les bandes infrarouges à 2 µm ou 12 µm. La palette Hubble assigne ces filtres aux canaux RVB de façons non physiques (S-II rouge, H-α vert, O-III bleu) pour maximiser le contraste entre les processus physiques. Les images infrarouge moyen de JWST projettent 21 µm, 11 µm et 7 µm sur le RVB — des couleurs que votre œil ne pourrait pas percevoir si vous y étiez.",
+    "new": "La couleur est la partie la plus mal comprise. Les filtres des télescopes sont à bande étroite : ils laissent passer une tranche précise de 10 à 100 nm du spectre : hydrogène alpha à 656,3 nm, oxygène doublement ionisé à 500,7 nm, bandes infrarouges à 2 µm ou 12 µm. La palette Hubble attribue ces filtres aux canaux RVB de façon non physique (S-II en rouge, H-α en vert, O-III en bleu) pour maximiser le contraste entre processus physiques. Les images de JWST dans l'infrarouge moyen associent 21 µm, 11 µm et 7 µm au RVB : des couleurs que votre œil ne verrait pas si vous y étiez."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.2",
+    "old": "Le pipeline de traitement est open-source pour la plupart des observatoires NASA/ESA. Les expositions brutes atterrissent dans MAST (Mikulski Archive for Space Telescopes) ou ESA Datalabs dès qu'ils atteignent le sol; les tutoriels image-pipeline montrent exactement comment un composite final est assemblé. Les photos ne sont pas fabriquées — elles sont documentées à l'octet.",
+    "new": "La chaîne de traitement est ouverte pour la plupart des observatoires de la NASA et de l'ESA. Les poses brutes arrivent dans MAST (Mikulski Archive for Space Telescopes) ou ESA Datalabs dès qu'elles touchent le sol ; des tutoriels de traitement d'image montrent exactement comment un composite final est assemblé. Les images ne sont pas fabriquées : elles sont documentées jusqu'à l'octet."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.3",
+    "old": "Pour l'imagerie au sol, le défi supplémentaire est l'atmosphère. [L'optique adaptative] (observation/optique adaptative) la corrige en temps réel en sentant la turbulence avec une étoile guide laser et en contre-tendant un miroir déformable. JWST et Hubble sont dans l'espace en partie pour sauter entièrement ce problème; l'atmosphère est également opaque à la plupart des bandes infrarouges et UV, ce qui est l'autre raison.",
+    "new": "Pour l'imagerie au sol, la difficulté supplémentaire est l'atmosphère. L'[optique adaptative](observation/adaptive-optics) la corrige en temps réel en mesurant la turbulence grâce à une étoile laser de guidage et en déformant en sens inverse un miroir déformable. JWST et Hubble sont dans l'espace en partie pour éviter complètement ce problème ; l'atmosphère est aussi opaque dans la plupart des bandes infrarouges et ultraviolettes, ce qui est l'autre raison."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "diagram_caption",
+    "old": "Filtre → CCD → empiler → enregistrer → calibrer → composite → color-map. Six étapes, des heures de calcul, des données réelles tout au long.",
+    "new": "Filtre → CCD → empilement → recalage → calibration → composite → palette de couleurs. Six étapes, des heures de calcul, des données réelles de bout en bout."
+  }
+]

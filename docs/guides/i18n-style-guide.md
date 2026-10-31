@@ -1,7 +1,12 @@
 # Orrery i18n Style Guide
-*Translator brief — applies to every language. v0.1 · May 2026*
+*The rules for every language, UI and content. v1 · 2026-10-30*
 
-> Required reading before translating any locale. Authority for terminology decisions; updates here trigger re-translation of affected files (per ADR-033 §implementation-notes).
+> Required reading before translating any locale, by hand or by model. This is the
+> one rules document: the [translation strategy](i18n-translation-strategy.md) keeps
+> the reasoning, dates and history behind each rule (§3 there is the full text of the
+> name rulings summarised in §2 here); code copies of the rules (`NAME_POLICY`,
+> `BASE_RULES`, `LOCALE_RULES` in `scripts/lib/translate-quality.mjs`) must agree with
+> this file. Updates here trigger re-translation of affected files (ADR-033).
 
 ---
 
@@ -16,9 +21,9 @@ You are translating Orrery into a new language. Before you start:
 5. **Citation column** points at the source authority for the term (ESA glossary, NASA Spanish-language style guide, JAXA glossary, etc.). Cite where possible; defer to authoritative sources over LLM judgement.
 
 Files you will be touching:
-- `messages/<code>.json` — Paraglide UI strings (~276 keys; informal register where the en-US source uses a friendly tone).
-- `static/data/i18n/<code>/missions/{mars,moon,ceres,jupiter,neptune,pluto}/*.json` — 42 mission overlay files (21 Moon, 17 Mars, 4 outer-system). Translate `name` (display name), `description`, `first` (claim-to-fame), `type` (e.g. `LANDER · FLOWN`), `events[].label`, `events[].note`. Keep mission `id` and proper nouns intact.
-- `static/data/i18n/<code>/{planets,rockets,sun,scenarios,earth-objects,moon-sites}/*.json` — same overlay pattern, smaller files.
+- `messages/<code>.json` — Paraglide UI strings (informal register where the en-US source uses a friendly tone; UI labels follow §4a).
+- `i18n-src/<code>/<surface>/…json` — per-entity content overlays mirroring `i18n-src/en-US/` (missions, fleet, programs, science, sites, …), bundled at build into `static/data/i18n/<code>.json`. Keep every `id`; names follow §2.
+- `scripts/i18n-tools/native-terms.json` — the glossary: native forms of names and terms per locale. A name goes there before it goes into any text (strategy §3.5).
 
 Per ADR-017's fallback chain, any key you omit will fall back to en-US — broken translation is bounded, not user-blocking.
 
@@ -33,10 +38,49 @@ These render as the symbol in every language. A native-language gloss is allowed
 | `Δv` (delta-v) | Change in velocity, the standard mission-energy budget | Universal across every space agency's literature |
 | `Isp` | Specific impulse (rocket engine efficiency) | Universal abbreviation; spelled out as needed in editorial prose |
 | `C₃` | Characteristic energy (escape-trajectory energy) | Universal symbol |
-| `AU` | Astronomical Unit | English / Japanese / Mandarin use `AU`; Spanish / French / Portuguese / Italian use `UA`; document per-language column below |
 | `g` | Earth surface gravity (9.81 m/s²) | Universal |
 
-Numeric units (km, s, kg, N, K, etc.) are **never translated** — they are SI. Number *formatting* (1,000.5 vs 1.000,5) is handled by `Intl.NumberFormat` and is automatic per locale; translators never format numbers in strings.
+SI unit symbols (km, s, kg, N, K, km/s …) stay in Latin script in every locale
+except where the language writes them in its own script (ru км/с, км; ar كم/ث).
+Number *formatting* (1,000.5 vs 1.000,5) is handled by `Intl.NumberFormat` and is
+automatic per locale; translators never format numbers in strings.
+
+### §1a Astronomy units per locale
+
+Astronomy units are **not** universal symbols: each language writes the
+abbreviation its own sources use (checked against each language's Wikipedia
+article, 2026-10-30). Where that language has no settled short form, write the
+word (light-year → Lichtjahr, 光年). The IAU symbol since 2012 is `au`; several
+languages kept a national abbreviation.
+
+| Locale | astronomical unit | light-year (short) | parsec | km/s | Evidence (that language's Wikipedia) |
+|---|---|---|---|---|---|
+| en-US | AU | ly | pc | km/s | — |
+| es | au | the word (año luz) | pc | km/s | "abreviada au, ua, AU o UA"; ly / al split evenly |
+| fr | au | al | pc | km/s | au 40× vs ua 6×; "année-lumière (symbole al)" |
+| de | AE | the word (Lichtjahr) | pc | km/s | "abgekürzt AE, international au"; no Lj in the article |
+| pt-BR | au | the word (ano-luz) | pc | km/s | "símbolo: au" |
+| it | au | the word (anno luce) | pc | km/s | "simbolo ufficiale: au"; "ly o al" |
+| nl | AE | the word (lichtjaar) | pc | km/s | "astronomische eenheid (AE, internationaal au of ua)" |
+| zh-CN | AU | 光年 | pc | km/s | "缩写的标准符号为AU" |
+| ja | au | 光年 | pc | km/s | "記号: au" |
+| ko | AU | 광년 | pc | km/s | AU used in the parsec article |
+| hi | AU | the word (प्रकाश-वर्ष) | pc | km/s | "AU या au …" |
+| ar | و.ف | the word (سنة ضوئية) | pc | كم/ث | "يرمز لها «و.ف»"; the m/s article writes م\ث (slash form normalised here) |
+| ru | а. е. | св. год | пк | км/с | "русское обозначение: а. е.", "св. год", "пк", "м/с" |
+| sr-Cyrl | АЈ | the word (светлосна година); next to a variable number св. год. (the word cannot agree with every number) | pc | km/s | "Астрономска јединица (АЈ)"; SI symbols in Latin |
+
+The symbol column is for the unit next to a quantity: "1,5 au", "(au)", "en au",
+"des dizaines d'au". Where a sentence names the unit as a noun with an article
+(fr "l'UA", es "la UA", it "l'UA"), the abbreviation stays as written; fr, es, it
+and pt-BR were switched from `UA` to `au` on 2026-10-31 on that basis (operator
+decision, option 1: only these four locales). Not the University of Arizona in
+"NASA/UA HiRISE".
+
+Light-time shorthand (`l-min`, light-minutes) follows the light-year column: the
+language's own short form where it has one (zh-CN/ja 光分, ko 광분 — the forms
+already shipping, not separately sourced), otherwise the word. Code that prints a unit next to a number takes the form from a
+message, never a hard-coded English abbreviation.
 
 ---
 
@@ -67,6 +111,22 @@ and use the form native pages use. The per-locale forms are in
 **One thing, one name per language.** The form on the thing's own page (fleet, program,
 mission, body, site) is canonical; every mention in articles and editorials uses it.
 
+**Exceptions and edge cases** (each stated once, here):
+
+- **Publications and sources** (journals, websites, reports, societies cited as a
+  source — Nature, Icarus, NASA Solar System Exploration) stay exactly as in
+  English (`NAME_POLICY` point 2).
+- **The International Space Station is a term, not a name**: each language's own
+  abbreviation (ru МКС, sr-Cyrl МСС, es/pt-BR EEI, it SSI; ISS where its sources
+  write ISS). Strategy §3.2 has the full list.
+- **Museums and observatories are institutions, not built things**: native form
+  in every locale, like the facility glossary (`translate-quality.mjs` surface
+  list). sr-Cyrl goes further (operator decision 2026-10-22): a museum or
+  observatory with no Serbian form is transliterated phonetically into Cyrillic
+  ("Космосфера"), cities likewise; the Serbian form wins where one exists
+  ("Технички музеј Шпајер"). Vehicle designations inside them stay as §2.
+- **Russian running text** puts vehicle names in «» quotes; headings don't.
+
 This supersedes the 2026-10-17-morning ruling that kept every name in Latin script. The
 rules ship in code as `NAME_POLICY` and `problems()` (`scripts/lib/translate-quality.mjs`).
 
@@ -74,7 +134,10 @@ rules ship in code as `NAME_POLICY` and `problems()` (`scripts/lib/translate-qua
 Rationale: missions are real-world objects with single canonical names. A user searching for "Curiosity" in Spanish documentation should still find "Curiosity", not "Curiosidad".
 (The origin language uses the original name instead — §2 above: ru «Луна-9», zh-CN 嫦娥四号.)
 
-| Mission | Original |
+The form below is the one used **outside the origin language**; "keep" means keep
+it as written here, not translate it.
+
+| Mission | Form outside the origin language |
 |---------|----------|
 | All NASA Mars rovers | Curiosity, Perseverance, Sojourner, Spirit, Opportunity (English; keep) |
 | Apollo programme | Apollo 11, Apollo 17, Artemis II, Artemis III (keep numerals + name) |
@@ -97,6 +160,8 @@ NASA, ESA, JAXA, ISRO, CNSA, ROSCOSMOS, UAESA, AEB, KARI, CSA, UKSA, ASI, DLR, C
 
 The English column is the source. The accepted-convention column for your target language is the **binding** translation. Cite source where given.
 
+For the technical terms in the glossary's `term` class (`scripts/i18n-tools/native-terms.json`: orbit, trajectory, apogee, perigee, burn, flyby, orbit insertion, entry, descent and the rest of the pilot's 20), the binding form for all 13 locales lives there. `term-drift.mjs` checks it. A row here that covers the same term must agree with it (checked for es on 2026-10-31: sobrevuelo, inserción orbital, apogeo, perigeo).
+
 | English | `es` (Spanish) | `fr` | `de` | `pt-BR` | `it` | `sr-Cyrl` | Source |
 |---------|----------------|------|------|---------|------|-----------|--------|
 | aphelion | afelio | — | — | — | — | — | RAE |
@@ -109,7 +174,7 @@ The English column is the source. The accepted-convention column for your target
 | free-return (trajectory) | trayectoria de retorno libre | — | — | — | — | — | NASA-MSFC Spanish |
 | sphere of influence (SOI) | esfera de influencia | — | — | — | — | — | ESA Spanish glossary |
 | porkchop plot | diagrama porkchop *(no Spanish equivalent in wide use)* | — | — | — | — | — | ESA Spanish glossary uses English |
-| Astronomical Unit (AU / UA) | UA (unidad astronómica) | UA | AE (Astronomische Einheit) | UA | UA | — | IAU |
+| Astronomical Unit | unidad astronómica (au) | unité astronomique (au) | Astronomische Einheit (AE) | unidade astronômica (au) | unità astronomica (au) | астрономска јединица (АЈ) | §1a |
 
 Empty cells are populated by the translator for that language ticket.
 
@@ -136,6 +201,105 @@ Empty cells are populated by the translator for that language ticket.
 
 ---
 
+## §4a UI labels (buttons, tabs, chips, status words, aria-labels)
+
+Short UI strings fail differently from prose: there is no sentence to carry the
+meaning, so a literal or transliterated word slips through (shipped examples
+found 2026-10-30: ja "クローズパネル" and ar "حلقة مغلقة" "closed loop" for
+"Close panel"; ru "Играть" "play a game" for media Play; ko "닫기 패널" in the
+wrong order).
+
+- **Translate the action in context.** Read the key name and where it is used
+  (`grep` the key in `src/`) before writing it. Play = start playback; Close =
+  close this panel; Reset = return to the default.
+- **Never transliterate an English word** into the script (no katakana
+  "クローズ", no Cyrillic "ресетуј" where the language has its own verb —
+  except where that language's own UI convention uses the loan word).
+- **Command form**, taken from the correct shipped strings (the ja / ko / hi / ar
+  "Close panel" examples are corrections of the defects above, not shipped yet):
+
+  | Locale | Form | Example (Close panel / Reset view) |
+  |---|---|---|
+  | es, fr, de, pt-BR, nl, ru | infinitive | Cerrar panel · Fermer le panneau · Panel schließen · Fechar painel · Paneel sluiten · Закрыть панель |
+  | it, sr-Cyrl | imperative | Chiudi pannello · Затвори панел |
+  | zh-CN | verb + object | 关闭面板 · 重置视图 |
+  | ja | object を + verb (dictionary form) | パネルを閉じる · ビューをリセット |
+  | ko | object + verbal noun | 패널 닫기 · 보기 초기화 |
+  | hi | object + polite imperative (-ें) | पैनल बंद करें · व्यू रीसेट करें |
+  | ar | verbal noun (maṣdar) | إغلاق اللوحة · إعادة تعيين العرض |
+
+- **Case.** When the English label is UPPERCASE, Latin and Cyrillic locales
+  write it uppercase too; caseless scripts (zh-CN, ja, ko, hi, ar) write it
+  normally.
+- **Agreement.** A label that qualifies different nouns gets one key per noun
+  (`mission_status_active` ACTIVA vs `fleet_status_active` ACTIVO), never one
+  shared key.
+- **Same as English** is allowed only for symbols (§1), units as §1a gives them,
+  the "Orrery" brand, acronyms the language's own sources use, and the /fly
+  event shorthand keys `fly-event-catalog.test.ts` pins to English
+  (`fly_event_tcm`, `_edl_or_oi`, `_anomaly`, `_loi`, `_tei`).
+- **Units next to numbers** come from a message per §1a, never a hard-coded
+  English abbreviation in a component.
+- **Read the meaning, not the dictionary word.** The commonest UI defect in the
+  2026-10-30 audit (the same keys wrong in up to 11 of 13 locales: coast_scrub_aria) was a word taken
+  in its everyday sense: constellation (a satellite fleet, not stars), coast
+  (unpowered flight, not a shore), scrub (drag the slider, not clean), hold (a
+  countdown hold), pinned (a UI action, not a nail), legend (a map key, not a folk
+  tale), launch (a rocket, not a product release), small body (an asteroid, not a
+  person). `scripts/i18n-tools/ui-senses.json` gives the meaning of every key found
+  this way, and the UI translators send it with the key; add a key when an audit
+  finds a new one.
+- **ALL-CAPS labels are words.** STATUS, PERIOD, ARRIVAL, DOCKED are translated like
+  any word (ja shipped スタタス, ペリド, アーリバル). Only real acronyms stay (TLI,
+  LOI, EDL, TCM, C3, ISS).
+- **Page titles keep the brand**: "<page> · Orrery", with "Orrery" in Latin script in
+  every locale (shipped: ja オーラリー, hi ऑररेरी, ar أرّيلي, ru Оррери, zh 奥雷里).
+- **Right-to-left arrows.** In ar (and he), "→" next to words points backwards,
+  because bidi does not mirror arrows: write "←" ("الأرض ← القمر", a CTA "… ←").
+  Arrows between Latin symbols in a formula (e→1) stay.
+- **One English label, one translation**, unless the meaning really differs (ja 退役
+  for a retired rocket, 運用終了 for a rover that stopped).
+- **Checked automatically.** `problems(…, { ui: true })` in
+  `scripts/lib/translate-quality.mjs` rejects ordinary English words left in a
+  non-Latin label, glossary bodies and places left in English, a changed "Orrery" and
+  backwards RTL arrows; `scripts/i18n-tools/ui-label-audit.test.ts` runs it over every
+  `messages/<loc>.json` and also fails on a label with a second translation, and on a
+  label whose whole English is a glossary term (a planet, moon, star, place) but whose
+  value lacks the glossary form. Known
+  defects of locales not audited yet are listed in
+  `scripts/i18n-tools/ui-label-baseline.json`, which only shrinks.
+
+### §4b Kept in English on purpose — never translate these
+
+Operator decision (2026-10-30). These stay exactly as written in every locale. A
+"fix" that translates one of them is a regression:
+
+- **Developer panels and debug readouts**: `DebugPanel`, `FlybyDebugViewer`,
+  `AscentCameraDebug`, `TargetEnvSwitcher`, the `label` of `DebugPanelRegistrar` /
+  `RenderingDebugRegistrar`, anything inside `{#if …debug…}` or a `{#snippet …Debug…}`
+  (the /fly Tier-1 and cislunar debug readouts, the coast-camera readout, the
+  surface-scene debug box), and everything under `src/routes/dev/`.
+- **Acronyms and codes**: flight-dynamics acronyms (MECO, SECO, MAX-Q, MAX-G, SRB,
+  TLI, TMI, LOI, MOI, EDL, TCM, TEI, Δv, Isp, C3), the /fly toggle row codes (FD, LYR,
+  CON, HUD, CAP — each button's tooltip is translated), catalogue prefixes (HIP),
+  keyboard key caps (Esc, Enter, ↑ ↓), file extensions.
+- **Physics Lab canvases**: text drawn on the Lab hero canvases and flight maps
+  (`src/lib/lab/*Canvas.svelte`, `flight-maps.ts`), their aria-labels included —
+  ADR-090 "Canvas copy is English". DOM text around them is translated.
+- **Audio narration and captions** (`src/lib/audio-tour.ts`): English-only by
+  decision.
+- **Names that are not words**: cited source and dataset names (GCAT's author, Launch
+  Library 2 — The Space Devs, Copernicus Sentinel-2, HiRISE, USGS NAIP …), the contact
+  e-mail, in-world signage on 3D models (ISS module plaques, rocket livery).
+- **Audio-tour anchors**: the hidden `select …` buttons (aria-hidden, tabindex −1)
+  the tour script clicks.
+
+The scan in `scripts/i18n-tools/hardcoded-english.mjs` skips the developer blocks by
+structure and lists the rest in `hardcoded-english-allowlist.json` with the reason;
+`hardcoded-english.test.ts` fails on any other English string in Svelte markup.
+
+---
+
 ## §5 Tone + register guidance
 
 - **Educational, friendly, precise.** Orrery is for the curious learner first; physics accuracy second. Translations should match that register.
@@ -149,12 +313,17 @@ Empty cells are populated by the translator for that language ticket.
 
 ## §6 Source authorities
 
-When a term is contested, defer in this order:
+**Names** (people, places, bodies, features, stars, agencies' local names): the form
+that language's own Wikipedia uses, recorded in the glossary first (operator rulings
+2026-10-17/18, strategy §3.5). **The site's existing form wins** when the site
+already uses one consistently.
+
+**Terms and units**, when contested, defer in this order:
 
 1. **The space agency's own glossary** in the target language (ESA Spanish, NASA-JPL Spanish, JAXA Japanese, CNSA Mandarin, etc.).
 2. **The country's national language academy** for general scientific vocabulary (RAE for Spanish, Académie française for French, Duden for German, Crusca for Italian, Academia Brasileira de Letras for pt-BR).
-3. **Wikipedia in the target language** as a tertiary tie-breaker — useful for confirming widespread usage but not authoritative.
-4. **LLM judgement** as final fallback when no authority exists. Document the choice in a comment and surface for review.
+3. **Wikipedia in the target language** — what the language's own sources write (§1a was settled this way).
+4. **Model judgement** only when none of these has the term: record the choice and the reason next to it (glossary entry or a note here).
 
 Cited source links (populate per language as glossaries are consulted):
 - ESA Spanish glossary: `https://www.esa.int/Space_in_Member_States/Spain` (general portal; search for "glosario")

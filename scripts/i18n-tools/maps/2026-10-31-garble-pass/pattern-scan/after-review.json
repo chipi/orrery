@@ -1,0 +1,812 @@
+[
+  {
+    "cls": "scale",
+    "loc": "ru",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "Заголовок утверждает, что в астероидах — квадриллионы долларов золота и платины. Заголовок ошибается — не насчёт металла, а насчёт денег. Настоящий довод в пользу астероидных ресурсов направлен как раз в обратную сторону.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ru",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+    "tr": "Каждые несколько лет кто-нибудь проводит расчёты по астероиду 16 Psyche и в захлёбывающемся от восторга пресс-релизе объявляет, что это богатое металлом тело, обращающееся в [поясе астероидов](/science/planets/asteroid-belt), содержит железо, никель и драгоценные металлы примерно на десять квинтиллионов долларов. Цифра всякий раз поражает. Но с точки зрения экономики она ничего не значит — а разобравшись, почему, мы выходим прямо на подлинный довод в пользу астероидных ресурсов, который почти противоположен версии из заголовков.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ru",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+    "tr": "Начнём с самой цифры. Мировой рынок платины оценивается примерно в 5 миллиардов долларов в год. Если бы вы смогли доставить на Землю металлы платиновой группы даже из скромного металлического астероида и продать их завтра же, вы бы не нажили состояния. Вы бы обрушили рынок. Цена платины целиком держится на её дефиците; уберите дефицит — и цена исчезнет. Стоимость товара определяется на границе — последней проданной единицей, а не всем существующим объёмом. Астероид на 10 квинтиллионов долларов, успешно добытый и доставленный на земную поверхность, стоил бы примерно как железная руда: немного за килограмм. Но довод об обвале рынка почти не важен, ведь он предполагает доставку на Землю, а арифметика ломается именно на доставке, и задолго до того, как на сцену выходит рынок. Здесь последнее слово остаётся за [уравнением Циолковского](/science/propulsion/tsiolkovsky).",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ru",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+    "tr": "Когда шумиху развеяли, а заблуждение об обвале рынка устранили, остаётся нечто более прочное и куда менее подходящее для пресс-релиза: структурный довод о том, что в долгосрочной перспективе экономика присутствия человека за пределами Земли не сойдётся без ресурсов, которые уже находятся выше гравитационного колодца. В Солнечной системе больше воды, углерода и конструкционных материалов, чем вся человеческая цивилизация когда-либо потребила; они рассеяны по миллионам тел, силу тяжести которых почти ничего не стоит преодолеть, и лежат выше того единственного, что делает космические полёты дорогими. Речь не о квинтиллионах долларов. Речь об [уравнении Циолковского](/science/propulsion/tsiolkovsky) и о том, куда оно указывает.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ru",
+    "rel": "mars-sites/curiosity.json",
+    "at": "fact",
+    "en": "Mars Science Laboratory. RTG-powered (no solar reliance), car-sized (899 kg), still operational over a decade after landing. Confirmed Gale Crater hosted a habitable lake environment in the deep past. Climbing Mt. Sharp's stratigraphic sequence — billion-year-by-billion-year readings of Mars's environmental history.",
+    "tr": "Mars Science Laboratory. Питание от RTG (без зависимости от Солнца), размером с автомобиль (899 кг), работает более десятилетия после посадки. Подтвердил, что в кратере Гейл в глубоком прошлом было обитаемое озеро. Подъём по стратиграфии Sharp — чтение истории среды Марса по эпохам.",
+    "why": "billion without /млрд|миллиард/"
+  },
+  {
+    "cls": "sametext",
+    "loc": "ru",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "ja",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "見出しは、小惑星に数千兆ドル分の金とプラチナが含まれていると謳う。だが、この見出しは誤っている。誤りは金属ではなく、金額にある。小惑星資源をめぐる本当の論拠は、まったく逆の方向に向かっている。",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ja",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+    "tr": "数年おきに、誰かが小惑星16 Psycheの試算をやり直し、鼻息の荒い報道発表で、[小惑星帯](/science/planets/asteroid-belt)を回る金属に富んだこの天体には、鉄、ニッケル、貴金属がおよそ1,000京ドル分含まれると発表する。その数字はいつも圧倒的だ。だが経済の観点からは、どう考えても意味をなさない。そして、なぜ意味をなさないのかを理解すれば、小惑星資源をめぐる本当の論拠が見えてくる。それは見出しの主張とほぼ正反対のものである。",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ja",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+    "tr": "まず数字そのものから考えよう。世界のプラチナ市場は、ある年でおよそ50億ドル規模である。ささやかな金属質小惑星であっても、その白金族金属を地球に届けて翌日に売り払えば、財産を築けるわけではない。市場を崩壊させるだけだ。プラチナの価格は、希少性だけに支えられている。希少性を取り除けば、価格も消える。商品の価値は限界で決まる。存在する総量ではなく、最後に売られた1単位が値を決めるのだ。1,000京ドルの小惑星を首尾よく採掘して地表に届けたところで、その価値は鉄鉱石並み、つまり1キログラムあたりたいした額にはならない。だが、この市場崩壊の議論はほとんど本題ではない。地球への輸送を前提にしているからで、その輸送こそ、市場が話に登場するはるか前に、計算が破綻する箇所だからだ。ここで[ロケット方程式](/science/propulsion/tsiolkovsky)が議論に決着をつける。",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ja",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+    "tr": "誇大な宣伝がしぼみ、市場崩壊の誤謬が片づいたあとに残るのは、もっと持続的で、報道発表向きには地味なものだ。重力井戸の上にすでにある資源を利用しなければ、地球を離れた人類の存在を長期的な経済として成り立たせることはできない、という構造的な論拠である。太陽系には、人類文明全体がこれまでに消費してきたすべてを上回る量の水、炭素、構造材料があり、それは何百万もの天体に散らばっている。そうした天体は、表面重力が克服にほとんど費用を要さず、宇宙飛行を高くつくものにしている唯一のもの、すなわち重力井戸の上に位置している。論拠は、数百京ドルという金額にはない。[ロケット方程式](/science/propulsion/tsiolkovsky)と、それが指し示す方向にある。",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "ja",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "ja",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "zh-CN",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "标题说小行星含有价值数千万亿美元的黄金和铂。标题是错的——错的不是金属，而是金钱。小行星资源真正的立论方向，完全相反。",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "zh-CN",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+    "tr": "每隔几年，就会有人替小行星16 Psyche算一笔账，再用一份夸张的新闻稿宣布：这颗运行在[小行星带](/science/planets/asteroid-belt)中的富金属天体，所含的铁、镍和贵金属价值约一千亿亿美元。这个数字总是惊人，但从任何有意义的经济学角度看，它又毫无意义——而弄清它为何毫无意义，会直接引出小行星资源真正的论证所在，那几乎与新闻标题里的版本相反。",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "zh-CN",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+    "tr": "先从这个数字本身说起。全球铂族金属市场每年的规模约为50亿美元。假如你能把一颗中等大小的金属小行星所含的铂族金属运到地球并立刻出售，你发不了财，反而会让市场崩盘。铂的价格完全来自稀缺；稀缺没了，价格也就没了。对大宗商品而言，价值取决于边际——由最后售出的那一单位决定，而不是现存的总量。这颗价值一千亿亿美元的小行星，即便成功开采并运抵地球表面，身价也大致与铁矿石相当：每公斤不值多少钱。不过，市场崩盘这一论点几乎无关紧要，因为它预设了把东西运回地球——而在市场登场之前很久，运回地球这一步的账就已经算不下去了。这正是[火箭方程](/science/propulsion/tsiolkovsky)给出结论的地方。",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "zh-CN",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+    "tr": "炒作被戳破、市场崩盘的谬误也被清除之后，剩下的是更持久、却不那么适合写进新闻稿的东西：一个结构性论证——人类要在地球之外长期立足，其经济账若不借助已经位于重力井之上的资源，就算不过来。太阳系里的水、碳和结构材料，比整个人类文明迄今消耗的总和还多，分布在数以百万计的天体上；这些天体的表面重力几乎不费什么力气就能克服，而它们就悬在使航天变得昂贵的那样东西之上。这个论证的重点不是几个百亿亿美元，而是[火箭方程](/science/propulsion/tsiolkovsky)，以及方程所指的方向。",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "zh-CN",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "zh-CN",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "ko",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "헤드라인은 소행성에 수천조 달러어치의 금과 백금이 들어 있다고 말한다. 헤드라인은 틀렸다. 금속 이야기가 틀린 것이 아니라 돈 이야기가 틀렸다. 소행성 자원을 둘러싼 진짜 논거는 정반대 방향으로 흐른다.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ko",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+    "tr": "몇 년에 한 번씩 누군가는 소행성 16 Psyche를 두고 계산기를 두드린 뒤, 들뜬 보도자료로 발표한다. [소행성대](/science/planets/asteroid-belt)를 도는 이 금속질 천체에 철과 니켈, 귀금속이 대략 1천경 달러어치 들어 있다고. 그 숫자는 언제나 입이 벌어질 만큼 크다. 그러나 경제적으로 의미 있는 어떤 기준에서도 그 숫자는 의미가 없다. 그리고 왜 의미가 없는지를 이해하면 소행성 자원에 대한 진짜 논거가 무엇인지로 곧장 이어지는데, 그 논거는 헤드라인과 거의 정반대다.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ko",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+    "tr": "숫자 자체부터 따져 보자. 세계 백금 시장의 규모는 한 해에 대략 50억 달러다. 비교적 작은 금속질 소행성 하나에서 백금족 금속만 지구로 가져와 당장 내일 팔 수 있다 해도 큰돈을 벌지는 못한다. 시장을 무너뜨릴 뿐이다. 백금의 가격은 전적으로 희소성에서 나온다. 희소성이 사라지면 가격도 사라진다. 상품의 가치는 한계에서, 곧 마지막으로 팔린 한 단위에서 정해지지, 존재하는 총량에서 정해지지 않는다. 성공적으로 채굴해 지구 표면까지 가져온 1천경 달러짜리 소행성의 값은 철광석과 비슷한 수준, 곧 킬로그램당 얼마 되지 않을 것이다. 그렇지만 시장 붕괴 논리는 사실 핵심에서 벗어나 있다. 지구로 가져온다는 전제가 이미 문제이고, 시장이 등장하기 훨씬 전에 계산이 어긋나는 곳이 바로 그 지구 운송이기 때문이다. 여기서 [로켓 방정식](/science/propulsion/tsiolkovsky)이 논의에 마침표를 찍는다.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ko",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+    "tr": "과장이 가라앉고 시장 붕괴의 오류가 정리된 뒤에 남는 것은 보도자료로 쓰기에는 덜 짜릿하지만 더 오래가는 것이다. 지구 너머에서 인간이 존재하는 일의 장기적 경제성은 이미 중력 우물 위에 있는 자원을 끌어 쓰지 않고서는 성립하지 않는다는 구조적 논거다. 태양계에는 인류 문명이 지금까지 소비한 전체보다 많은 물과 탄소, 구조 재료가 있다. 그것은 표면 중력을 이겨 내는 데 거의 비용이 들지 않는 수백만 개의 천체에 흩어져 있고, 우주비행을 비싸게 만드는 유일한 요인의 위쪽에 놓여 있다. 이 논거는 수백경 달러에 관한 것이 아니다. [로켓 방정식](/science/propulsion/tsiolkovsky)과, 그것이 가리키는 방향에 관한 것이다.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "ko",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "ko",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "hi",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "समाचार-शीर्षक कहते हैं कि क्षुद्रग्रहों में क्वाड्रिलियन डॉलर का सोना और प्लैटिनम भरा है। शीर्षक ग़लत है — धातु के बारे में नहीं, पैसे के बारे में। क्षुद्रग्रह संसाधनों के पक्ष में असली तर्क पूरी तरह उलटी दिशा में चलता है।",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "hi",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+    "tr": "हर कुछ साल में कोई न कोई क्षुद्रग्रह 16 Psyche का हिसाब लगाता है और उत्तेजना से हाँफती किसी प्रेस विज्ञप्ति में घोषणा करता है कि [क्षुद्रग्रह घेरा](/science/planets/asteroid-belt) में परिक्रमा करते इस धातु-समृद्ध पिंड के लोहे, निकल और कीमती धातुओं की क़ीमत लगभग दस क्विंटिलियन डॉलर है। यह आँकड़ा हर बार स्तब्ध करता है। फिर भी किसी भी सार्थक आर्थिक अर्थ में यह निरर्थक है — और यह समझना कि यह निरर्थक क्यों है, हमें सीधे इस बात तक ले जाता है कि क्षुद्रग्रह संसाधनों के पक्ष में असली तर्क क्या है, जो शीर्षक वाले संस्करण का लगभग उलटा है।",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "hi",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+    "tr": "आँकड़े से ही शुरू करें। वैश्विक प्लैटिनम बाज़ार किसी एक साल में लगभग 5 अरब डॉलर का होता है। किसी मामूली धातु-क्षुद्रग्रह की प्लैटिनम-समूह धातुएँ भी अगर आप पृथ्वी पर पहुँचा दें और कल ही बेच दें, तो आप दौलत नहीं कमाएँगे; आप बाज़ार को ध्वस्त कर देंगे। प्लैटिनम की क़ीमत पूरी तरह उसकी दुर्लभता से आती है; दुर्लभता हटा दें तो क़ीमत भी हट जाती है। किसी जिंस का मूल्य सीमांत पर तय होता है — बिकी हुई आख़िरी इकाई से, मौजूद कुल मात्रा से नहीं। 10 क्विंटिलियन डॉलर वाला क्षुद्रग्रह, सफलतापूर्वक खोदकर पृथ्वी की सतह पर पहुँचा भी दिया जाए, तो लगभग उतने का होगा जितना लौह अयस्क होता है: प्रति किलोग्राम बहुत कम। पर बाज़ार-ध्वंस वाला यह तर्क लगभग गौण है, क्योंकि यह मान लेता है कि माल पृथ्वी तक पहुँचाया जाएगा — और पृथ्वी तक पहुँचाने की बात पर हिसाब बाज़ार के परिदृश्य में आने से बहुत पहले ही गड़बड़ा जाता है। यहीं [रॉकेट समीकरण](/science/propulsion/tsiolkovsky) चर्चा पर विराम लगा देता है।",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "hi",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+    "tr": "प्रचार की हवा निकल जाने और बाज़ार-ध्वंस की भ्रांति निपट जाने के बाद जो बचता है, वह अधिक टिकाऊ है और प्रेस विज्ञप्ति के लिए कम रोमांचक: एक संरचनात्मक तर्क कि पृथ्वी से परे मानव उपस्थिति की दीर्घकालिक अर्थव्यवस्था उन संसाधनों के बिना नहीं चल सकती जो पहले से गुरुत्व-कूप के ऊपर मौजूद हैं। सौर मंडल में मानव सभ्यता ने आज तक जितना उपभोग किया है, उससे कहीं अधिक जल, कार्बन और संरचनात्मक सामग्री है, जो लाखों पिंडों में बिखरी है, जिनकी सतह के गुरुत्व को पार करने में लगभग कुछ नहीं लगता, और जो उस एक चीज़ के ऊपर बैठे हैं जो अंतरिक्ष उड़ान को महँगा बनाती है। तर्क क्विंटिलियन डॉलर का नहीं है। तर्क [रॉकेट समीकरण](/science/propulsion/tsiolkovsky) का है और उस दिशा का जिधर वह इशारा कर रहा है।",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "hi",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "hi",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "ar",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "يقول العنوان الرئيسي إن الكويكبات تحتوي على كوادريليونات الدولارات من الذهب والبلاتين. والعنوان مخطئ، لا في شأن المعدن، بل في شأن المال. أمّا الحجة الحقيقية لموارد الكويكبات فتسير في الاتجاه المعاكس تمامًا.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ar",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+    "tr": "كل بضع سنوات، يجري أحدهم حسابًا لكويكب 16 Psyche، ثم يعلن في بيان صحفي لاهث أن هذا الجرم الغني بالمعادن، الذي يدور في [حزام الكويكبات](/science/planets/asteroid-belt)، يحتوي على حديد ونيكل ومعادن ثمينة تُقدَّر قيمتها بنحو عشرة كوينتيليونات دولار. والرقم مذهل دائمًا. لكنه أيضًا، بأي معنى اقتصادي حقيقي، رقم بلا دلالة، وفهم سبب انعدام دلالته يقودنا مباشرةً إلى الحجة الحقيقية لموارد الكويكبات، وهي تكاد تكون عكس ما يقوله العنوان الرئيسي.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ar",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+    "tr": "لنبدأ بالرقم نفسه. تبلغ قيمة سوق البلاتين العالمي في السنة الواحدة نحو 5 مليارات دولار تقريبًا. فلو استطعتَ أن تُوصل إلى الأرض محتوى معادن مجموعة البلاتين من كويكب معدني متواضع الحجم، وأن تبيعه غدًا، فلن تجني ثروة، بل ستُسقط السوق. فسعر البلاتين مستمد كليًا من ندرته؛ وإذا أزلتَ الندرة أزلتَ السعر. إن قيمة السلعة تتحدد عند الهامش، أي بآخر وحدة تُباع، لا بإجمالي الكمية الموجودة. وكويكب الـ10 كوينتيليونات دولار، لو جرى تعدينه ونقله بنجاح إلى سطح الأرض، لكانت قيمته قريبة من قيمة خام الحديد: ليست كبيرة للكيلوغرام الواحد. غير أن حجة انهيار السوق هذه تكاد تكون هامشية، لأنها تفترض التسليم إلى الأرض، والتسليم إلى الأرض هو الموضع الذي يختل فيه الحساب قبل أن تدخل السوق في الصورة بزمن طويل. وهنا تُنهي [معادلة الصاروخ](/science/propulsion/tsiolkovsky) النقاش.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "ar",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+    "tr": "ما يبقى بعد أن يزول الانتفاخ الدعائي وتُطرَح مغالطة انهيار السوق جانبًا هو أمر أمتن عودًا وأقل إغراءً بالبيانات الصحفية: حجة بنيوية مفادها أن الاقتصاد الطويل الأمد للوجود البشري خارج الأرض لا يمكن أن يستقيم من دون الاعتماد على موارد تقع أصلًا فوق بئر الجاذبية. فالمجموعة الشمسية تحوي من الماء والكربون والمواد الإنشائية ما يفوق كل ما استهلكته الحضارة البشرية عبر تاريخها، موزّعًا على ملايين الأجرام التي لا تكاد تكلّف جاذبية سطوحها شيئًا للتغلّب عليها، وهي رابضة فوق العقبة الوحيدة التي تجعل السفر الفضائي باهظ الكلفة. وليست الحجة متعلقة بكوينتيليونات الدولارات، بل بـ[معادلة الصاروخ](/science/propulsion/tsiolkovsky) والاتجاه الذي تشير إليه.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "ar",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "ar",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "sr-Cyrl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "Наслов тврди да астероиди садрже билијарде долара у злату и платини. Наслов греши — не када је реч о металу, већ о новцу. Прави аргумент за астероидне ресурсе иде потпуно у супротном смеру.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "sr-Cyrl",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "sr-Cyrl",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "de",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "Die Schlagzeile behauptet, Asteroiden enthielten Billiarden von Dollar an Gold und Platin. Die Schlagzeile irrt – nicht beim Metall, sondern beim Geld. Das eigentliche Argument für Asteroidenressourcen verläuft in genau die entgegengesetzte Richtung.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "de",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "de",
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "en": "Mons Rümker (Oceanus Procellarum)",
+    "tr": "Mons Rümker (Oceanus Procellarum)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "de",
+    "rel": "observatories/alma.json",
+    "at": "name",
+    "en": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "tr": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "de",
+    "rel": "observatories/fast.json",
+    "at": "name",
+    "en": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "tr": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "de",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "de",
+    "rel": "trajectories/rosetta.json",
+    "at": "waypoints.5.label",
+    "en": "Asteroid Šteins",
+    "tr": "Asteroid Šteins",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "fr",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "Le gros titre affirme que les astéroïdes recèlent des millions de milliards de dollars d'or et de platine. Il se trompe — non sur le métal, mais sur l'argent. Le véritable argument en faveur des ressources astéroïdales va tout à fait dans le sens inverse.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "fr",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "moonword",
+    "loc": "fr",
+    "rel": "fleet/space-suit/axemu.json",
+    "at": "best_known_for",
+    "en": "Next-generation US EVA suit, to be worn on the first Artemis landing (Artemis IV)",
+    "tr": "Scaphandre d'EVA américain de nouvelle génération, destiné au premier alunissage d'Artemis (Artemis IV)",
+    "why": "Moon-landing word for a non-Moon landing"
+  },
+  {
+    "cls": "sametext",
+    "loc": "fr",
+    "rel": "observatories/alma.json",
+    "at": "name",
+    "en": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "tr": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "fr",
+    "rel": "observatories/fast.json",
+    "at": "name",
+    "en": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "tr": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "fr",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "fr",
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.1",
+    "en": "Two problems make this theoretical perfection effectively unreachable with foreseeable technology. The first is production. Antimatter does not exist in useful quantities anywhere accessible — the observable universe appears overwhelmingly matter-dominated, and the reason for that asymmetry is one of the open questions in physics. Antimatter must be manufactured, atom by atom, in particle accelerators. CERN's Antiproton Decelerator produces roughly 10 to 15 nanograms of antiprotons per year at full operation. Scaling current production to the milligrams a probe would need, at current energy costs, yields estimates in the range of tens to hundreds of trillions of dollars per gram — and that assumes the energy is available, not that it is affordable.",
+    "tr": "Deux problèmes rendent cette perfection théorique effectivement hors de portée avec la technologie prévisible. Le premier est la production. L'antimatière n'existe pas en quantités utiles dans des lieux accessibles — l'univers observable semble massivement dominé par la matière, et la raison de cette asymétrie est l'une des questions ouvertes en physique. L'antimatière doit être fabriquée, atome par atome, dans des accélérateurs de particules. Le Antiproton Decelerator de CERN produit environ 10 à 15 nanogrammes d'antiprotons par an en fonctionnement plein. Extrapoler la production actuelle aux milligrammes dont une sonde aurait besoin, aux coûts énergétiques actuels, donne des estimations de l'ordre de dizaines à centaines de milliers de milliards de dollars par gramme — et cela suppose que l'énergie est disponible, non qu'elle soit abordable.",
+    "why": "trillion without /billion|mille milliards/"
+  },
+  {
+    "cls": "scale",
+    "loc": "es",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "El titular dice que los asteroides contienen mil billones de dólares en oro y platino. El titular se equivoca —no en lo que respecta al metal, sino al dinero—. El verdadero argumento a favor de los recursos de los asteroides va justo en la dirección contraria.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "es",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "es",
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "en": "Mons Rümker (Oceanus Procellarum)",
+    "tr": "Mons Rümker (Oceanus Procellarum)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "es",
+    "rel": "observatories/alma.json",
+    "at": "name",
+    "en": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "tr": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "es",
+    "rel": "observatories/fast.json",
+    "at": "name",
+    "en": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "tr": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "es",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "it",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "Il titolo dice che gli asteroidi contengono milioni di miliardi di dollari in oro e platino. Il titolo è sbagliato — non riguardo al metallo, ma riguardo al denaro. L'argomento vero a favore delle risorse degli asteroidi va invece nella direzione del tutto opposta.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "it",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+    "tr": "Ogni pochi anni, qualcuno fa i conti sull'asteroide 16 Psyche e annuncia, in un comunicato stampa trafelato, che il corpo ricco di metalli in orbita nella [fascia di asteroidi](/science/planets/asteroid-belt) contiene ferro, nichel e metalli preziosi per un valore dell'ordine di dieci miliardi di miliardi di dollari. La cifra è sempre sbalorditiva. È anche, in qualsiasi senso economico rilevante, priva di significato — e capire perché lo sia porta dritto a quale sia il vero argomento a favore delle risorse degli asteroidi, che è quasi l'opposto della versione da titolo di giornale.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "it",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+    "tr": "Ciò che resta, una volta sgonfiato il clamore e smontata la fallacia del crollo del mercato, è qualcosa di più durevole e meno adatto a un comunicato stampa: un argomento strutturale secondo cui l'economia di lungo periodo della presenza umana oltre la Terra non può reggersi senza attingere a risorse che si trovano già al di sopra del pozzo gravitazionale. Il Sistema solare contiene più acqua, più carbonio, più materiale strutturale di quanto l'intera civiltà umana abbia mai consumato, distribuiti su milioni di corpi la cui gravità superficiale è quasi nulla da vincere, posti al di sopra dell'unica cosa che rende costoso il volo spaziale. L'argomento non riguarda miliardi di miliardi di dollari. Riguarda l'[equazione del razzo](/science/propulsion/tsiolkovsky) e la direzione verso cui punta.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "it",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "moonword",
+    "loc": "it",
+    "rel": "fleet/space-suit/axemu.json",
+    "at": "best_known_for",
+    "en": "Next-generation US EVA suit, to be worn on the first Artemis landing (Artemis IV)",
+    "tr": "Tuta EVA statunitense di nuova generazione, da indossare sul primo allunaggio di Artemis (Artemis IV)",
+    "why": "Moon-landing word for a non-Moon landing"
+  },
+  {
+    "cls": "sametext",
+    "loc": "it",
+    "rel": "missions/mars/viking1.json",
+    "at": "payload",
+    "en": "3527 kg (orbiter + lander)",
+    "tr": "3527 kg (orbiter + lander)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "it",
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "en": "Mons Rümker (Oceanus Procellarum)",
+    "tr": "Mons Rümker (Oceanus Procellarum)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "it",
+    "rel": "observatories/alma.json",
+    "at": "name",
+    "en": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "tr": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "it",
+    "rel": "observatories/fast.json",
+    "at": "name",
+    "en": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "tr": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "it",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "it",
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.1",
+    "en": "Elliptical galaxies are dispersion-supported balls of mostly old stars with little gas, little dust, and almost no ongoing star formation. They range from small (M32, the compact dwarf elliptical companion to Andromeda) to enormous (M87 at the heart of the Virgo Cluster, the host of the first imaged supermassive black hole; cD-class brightest cluster galaxies like NGC 4889 in Coma which contain trillions of stars). Most ellipticals are the products of past major mergers — when two spirals collide, the disc structure is disrupted, gas is consumed in a starburst, and the merged remnant settles into an elliptical. The Milky Way is destined to become an elliptical once it merges with Andromeda. There are essentially no ellipticals in the Local Group except M32, M110, NGC 147, and NGC 185 — small companions to M31. The big ellipticals all live in dense cluster environments.",
+    "tr": "Le galassie ellittiche sono sfere sostenute dalla dispersione delle velocità, fatte per lo più di stelle vecchie, con poco gas, poca polvere e quasi nessuna formazione stellare in corso. Vanno da piccole (M32, la compagna ellittica nana compatta di Andromeda) a enormi (M87, nel cuore dell'Ammasso della Vergine, che ospita il primo buco nero supermassiccio mai ripreso in immagine; le galassie cD più luminose degli ammassi, come NGC 4889 nella Chioma, che contengono migliaia di miliardi di stelle). La maggior parte delle ellittiche è il prodotto di antiche fusioni maggiori — quando due spirali collidono, la struttura dei dischi viene sconvolta, il gas viene consumato in un episodio di formazione stellare esplosiva (starburst) e il residuo si assesta in un'ellittica. La Via Lattea è destinata a diventare un'ellittica quando si fonderà con Andromeda. Nel Gruppo Locale praticamente non ci sono ellittiche, tranne M32, M110, NGC 147 e NGC 185 — piccole compagne di M31. Le grandi ellittiche vivono tutte in ambienti di ammasso densi.",
+    "why": "trillion without /bilion|mille miliardi/"
+  },
+  {
+    "cls": "scale",
+    "loc": "it",
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.1",
+    "en": "Two problems make this theoretical perfection effectively unreachable with foreseeable technology. The first is production. Antimatter does not exist in useful quantities anywhere accessible — the observable universe appears overwhelmingly matter-dominated, and the reason for that asymmetry is one of the open questions in physics. Antimatter must be manufactured, atom by atom, in particle accelerators. CERN's Antiproton Decelerator produces roughly 10 to 15 nanograms of antiprotons per year at full operation. Scaling current production to the milligrams a probe would need, at current energy costs, yields estimates in the range of tens to hundreds of trillions of dollars per gram — and that assumes the energy is available, not that it is affordable.",
+    "tr": "Due problemi rendono questa perfezione teorica praticamente irraggiungibile con la tecnologia prevedibile. Il primo è la produzione. L'antimateria non esiste in quantità utili in nessun luogo accessibile — l'universo osservabile appare schiacciantemente dominato dalla materia, e la ragione di questa asimmetria è una delle domande aperte della fisica. L'antimateria deve essere prodotta, atomo per atomo, negli acceleratori di particelle. Il Deceleratore di Antiprotoni del CERN produce circa 10-15 nanogrammi di antiprotoni all'anno a piena operatività. Scalare la produzione attuale ai milligrammi di cui avrebbe bisogno una sonda, ai costi energetici attuali, porta a stime nell'ordine di decine o centinaia di migliaia di miliardi di dollari per grammo — e questo supponendo che l'energia sia disponibile, non che sia economicamente sostenibile.",
+    "why": "trillion without /bilion|mille miliardi/"
+  },
+  {
+    "cls": "scale",
+    "loc": "it",
+    "rel": "science/scales-time/light-minute.json",
+    "at": "body_paragraphs.0",
+    "en": "Light moves at about 300,000 km/s. A light-second is 300,000 km. A light-minute is 18 million km. A light-year is 9.46 trillion km. They're distances, not times — confusingly named, but useful: 1 AU ≈ 8.3 light-minutes, so 'Mars is 4–22 light-minutes away depending on orbit' tells you the round-trip command latency at any moment.",
+    "tr": "La luce si muove a circa 300.000 km/s. Un secondo luce è 300.000 km. Un minuto luce è 18 milioni di km. Un anno luce è 9,46 mila miliardi di km. Sono distanze, non tempi — nomi fuorvianti, ma utili: 1 au ≈ 8,3 minuti luce, quindi «Marte è a 4–22 minuti luce di distanza a seconda dell'orbita» ti dice la latenza di un comando, in andata e ritorno, in qualsiasi momento.",
+    "why": "trillion without /bilion|mille miliardi/"
+  },
+  {
+    "cls": "scale",
+    "loc": "nl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "De kop zegt dat asteroïden biljarden dollars aan goud en platina bevatten. De kop klopt niet — niet over het metaal, maar over het geld. Het echte argument voor het benutten van asteroïden loopt juist de andere kant op.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "nl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+    "tr": "Om de paar jaar rekent iemand het door voor asteroïde 16 Psyche en kondigt in een opgewonden persbericht aan dat het metaalrijke hemellichaam in de [asteroïdengordel](/science/planets/asteroid-belt) ijzer, nikkel en edelmetalen bevat ter waarde van ongeveer tien triljoen dollar. Dat getal is altijd duizelingwekkend. Het is ook, in elke economisch zinvolle betekenis, zinloos — en begrijpen waarom het zinloos is, leidt rechtstreeks naar wat het echte argument voor asteroïdegrondstoffen is, en dat is bijna het tegenovergestelde van de kopversie.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "nl",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+    "tr": "Wat overblijft, nadat de hype is weggeprikt en de denkfout van de instortende markt is afgedaan, is iets duurzamers en minder spectaculairs voor een persbericht: een structureel argument dat de economie van menselijke aanwezigheid buiten de Aarde op de lange termijn niet kan werken zonder gebruik te maken van grondstoffen die al boven de zwaartekrachtput liggen. Het zonnestelsel bevat meer water, meer koolstof en meer constructiemateriaal dan de hele menselijke beschaving ooit heeft verbruikt, verspreid over miljoenen hemellichamen waarvan de oppervlaktezwaartekracht bijna niets kost om te overwinnen, en die boven het ene liggen dat ruimtevaart duur maakt. Het argument gaat niet over triljoenen dollars. Het gaat over de [raketvergelijking](/science/propulsion/tsiolkovsky) en de richting waarin die wijst.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "nl",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "nl",
+    "rel": "missions/mars/viking1.json",
+    "at": "payload",
+    "en": "3527 kg (orbiter + lander)",
+    "tr": "3527 kg (orbiter + lander)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "nl",
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "en": "Mons Rümker (Oceanus Procellarum)",
+    "tr": "Mons Rümker (Oceanus Procellarum)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "nl",
+    "rel": "observatories/alma.json",
+    "at": "name",
+    "en": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "tr": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "nl",
+    "rel": "observatories/fast.json",
+    "at": "name",
+    "en": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "tr": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "nl",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "scale",
+    "loc": "pt-BR",
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "tr": "A manchete diz que asteroides contêm quatrilhões de dólares em ouro e platina. A manchete está errada — não sobre o metal, mas sobre o dinheiro. O argumento real para recursos de asteroides segue na direção exatamente oposta.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "pt-BR",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+    "tr": "A cada alguns anos, alguém faz a aritmética do asteroide 16 Psyche e anuncia, em um comunicado de imprensa empolgado, que o corpo rico em metais orbitando no [cinturão de asteroides](/science/planets/asteroid-belt) contém ferro, níquel e metais preciosos no valor de algo em torno de dez quintilhões de dólares. A cifra é sempre impressionante. É também, em qualquer sentido econômico significativo, sem significado — e entender por que não tem significado nos leva diretamente ao verdadeiro argumento a favor dos recursos de asteroides, que é quase o oposto da versão da manchete.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "pt-BR",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+    "tr": "Comece com o próprio número. O mercado global de platina vale, em um determinado ano, aproximadamente 5 bilhões de dólares. Se você conseguisse entregar o conteúdo de metais do grupo da platina até mesmo de um asteroide metálico modesto à Terra e vendê-lo amanhã, você não faria uma fortuna. Você derrubaria o mercado. O preço da platina deriva inteiramente de sua escassez; remova a escassez e você remove o preço. O valor, para uma mercadoria, é definido na margem — pela última unidade vendida, não pelo volume total em existência. O asteroide de 10 quintilhões de dólares, minado com sucesso e entregue na superfície da Terra, valeria aproximadamente o que o minério de ferro vale: não muito por quilograma. Mas este argumento de colapso de mercado é quase irrelevante, porque assume entrega à Terra — e a entrega à Terra é aí que a aritmética deixa de fechar, muito antes de o mercado entrar em cena. É aqui que a [equação do foguete](/science/propulsion/tsiolkovsky) encerra a discussão.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "scale",
+    "loc": "pt-BR",
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+    "tr": "O que permanece, depois que o exagero foi desinflado e a falácia do colapso de mercado descartada, é algo mais durável e menos empolgante para um comunicado de imprensa: um argumento estrutural de que a economia de longo prazo da presença humana além da Terra não pode funcionar sem recorrer a recursos que já estão acima do poço gravitacional. O sistema solar contém mais água, mais carbono, mais material estrutural do que toda a civilização humana jamais consumiu, distribuído entre milhões de corpos cuja gravidade superficial custa quase nada para superar, situados acima da única coisa que torna a viagem espacial cara. O argumento não é sobre quintilhões de dólares. É sobre a [equação do foguete](/science/propulsion/tsiolkovsky) e a direção para a qual ela está apontando.",
+    "why": "check rare scale word"
+  },
+  {
+    "cls": "sametext",
+    "loc": "pt-BR",
+    "rel": "fleet/lander/venera-7.json",
+    "at": "name",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "pt-BR",
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "en": "Mons Rümker (Oceanus Procellarum)",
+    "tr": "Mons Rümker (Oceanus Procellarum)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "pt-BR",
+    "rel": "observatories/alma.json",
+    "at": "name",
+    "en": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "tr": "Atacama Large Millimeter/submillimeter Array (ALMA)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "pt-BR",
+    "rel": "observatories/fast.json",
+    "at": "name",
+    "en": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "tr": "FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    "why": "identical to the English"
+  },
+  {
+    "cls": "sametext",
+    "loc": "pt-BR",
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/venera-7_webp.title",
+    "en": "Venera 7-class",
+    "tr": "Venera 7-class",
+    "why": "identical to the English"
+  }
+]

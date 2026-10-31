@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "La deuxième leçon est que rien dans le vol spatial ne part de zéro. L'ISS est la somme de tous les programmes qui l'ont précédée — le ravitaillement de Salyut, la modularité de Mir, la science de Skylab, l'assemblage de la navette, la fiabilité de Soyuz, les laboratoires de l'Europe et du Japon — rien n'a été inventé de nouveau, tout a été hérité et combiné. La vérité la plus profonde de l'ère spatiale est que ses réalisations sont cumulatives : chaque programme se tient sur ceux qui l'ont précédé, et la Station se tient sur eux tous. Le progrès dans l'espace n'est pas une série de nouveaux départs mais un acte unique et continu de construction, transmis de main en main à travers les générations et à travers les frontières."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terre — orbites, rendez-vous et sites de lancement",
+    "/fleet?focus=iss": "Flotte — la Station spatiale internationale",
+    "/programs/mir": "Mir — la station dont l'ISS a hérité",
+    "/earth?site=iss": "L'ISS au-dessus de nous"
+  }
 }

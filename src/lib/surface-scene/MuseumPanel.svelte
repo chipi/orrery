@@ -4,12 +4,11 @@
   shows, each linking to that object's page.
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
   import { page } from '$app/state';
   import Panel from '$lib/components/Panel.svelte';
   import PlaceHero from '$lib/components/PlaceHero.svelte';
   import { getFleet, getFleetIndex, getScienceSection, holdingNotYetOpen } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import type { Museum } from '$types/museum';
   import type { ScienceTabId } from '$types/science';
@@ -29,12 +28,12 @@
     if (ref.startsWith('/science/')) {
       const [, , tab, slug] = ref.split('/');
       const s = await getScienceSection(tab as ScienceTabId, slug, loc).catch(() => null);
-      return { name: s?.title ?? slug, href: `${base}${ref}` };
+      return { name: s?.title ?? slug, href: localHref(ref) };
     }
     const idx = await getFleetIndex();
     const entry = idx.find((e) => e.id === ref);
     const full = entry ? await getFleet(ref, entry.category, loc).catch(() => null) : null;
-    return { name: full?.name ?? entry?.name ?? ref, href: `${base}/fleet?id=${ref}` };
+    return { name: full?.name ?? entry?.name ?? ref, href: localHref(`/fleet?id=${ref}`) };
   }
 
   $effect(() => {

@@ -76,5 +76,9 @@
       "type": "prose",
       "md": "La lección más profunda, aún en formación, trata sobre el peligro de retirar una capacidad antes de que su reemplazo esté asegurado. La EEI tiene una fecha de finalización fija; sus sucesoras comerciales todavía no vuelan. Apostar a que un mercado se materializará según lo programado, con una fecha límite firme y un rival ya en órbita, es una apuesta cuyas apuestas no son menos que la presencia humana continua en la órbita terrestre baja misma."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "EEI: la estación a la que están pensadas para suceder",
+    "/programs/spacex": "SpaceX: el transporte de tripulación y carga del que dependerán"
+  }
 }

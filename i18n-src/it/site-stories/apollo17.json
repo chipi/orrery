@@ -1,5 +1,5 @@
 {
-  "intro": "Apollo 17 allunò nella valle Taurus-Littrow l'11 dicembre 1972: fu l'ultima missione lunare con equipaggio e l'unica ad avere sulla superficie un geologo di professione (Harrison Schmitt). Cernan e Schmitt trascorsero 22 ore all'esterno nel corso di tre EVA, percorsero 35 km in rover e riportarono a Terra 110 kg di campioni, tra cui il celebre Orange Soil (sferule di vetro vulcanico generate da una fontana di fuoco di 3,5 Ga). L'impronta di Cernan è il più recente segno umano lasciato su un altro mondo.",
+  "intro": "Apollo 17 allunò nella valle Taurus-Littrow l'11 dicembre 1972: fu l'ultima missione lunare con equipaggio e l'unica ad avere sulla superficie un geologo di professione (Harrison Schmitt). Cernan e Schmitt trascorsero 22 ore all'esterno nel corso di tre EVA, percorsero 35 km in rover e riportarono a Terra 110 kg di campioni, tra cui il celebre suolo arancione (sferule di vetro vulcanico generate da una fontana di fuoco di 3,5 Ga). L'impronta di Cernan è il più recente segno umano lasciato su un altro mondo.",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
         },
         {
           "src": "/images/missions/apollo17/04.webp",
-          "caption": "Schmitt al cratere Shorty scopre l'Orange Soil: sferule di vetro vulcanico generate da un'eruzione a fontana di fuoco di 3,5 Ga."
+          "caption": "Schmitt al cratere Shorty scopre il suolo arancione: sferule di vetro vulcanico generate da un'eruzione a fontana di fuoco di 3,5 Ga."
         },
         {
           "src": "/images/hotspots/moon/apollo17/tier3-pan.jpg",

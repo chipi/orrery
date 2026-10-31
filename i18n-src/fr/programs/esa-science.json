@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "La leçon plus profonde est que la concentration bat l'ampleur pour une puissance de taille moyenne. L'ESA ne peut pas faire tout ce que fait la NASA, donc elle fait quelques choses que personne d'autre n'a faites — atterrir sur une comète, cartographier la galaxie, relever l'univers sombre — et devient un leader par la profondeur plutôt que par l'échelle. Choisir le bon problème difficile et le résoudre de manière définitive, c'est ainsi qu'une coalition frappe au-dessus de son budget."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Explorer — les comètes et le ciel profond que cartographie l'ESA",
+    "/fleet?focus=rosetta": "Flotte — Rosetta, Gaia et Euclid",
+    "/programs/ariane": "Ariane — la fusée qui lance la science de l'ESA",
+    "/earth?site=gaia": "Gaia au point L2",
+    "/earth?site=xmm": "XMM-Newton"
+  }
 }

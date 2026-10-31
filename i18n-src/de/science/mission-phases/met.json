@@ -7,7 +7,7 @@
     "Öffne den /fly-Bildschirm und beobachte, wie MET in Tagen hochzählt, während die Simulation fortschreitet. Das HUD zeigt MET 173d, wenn das Raumfahrzeug am Mars vorbeifliegt. Bedeutung: Es sind 173 Tage seit dem Start aus der Perspektive des Raumfahrzeugs vergangen. Welches Datum ist es auf der Erde? Spielt keine Rolle. Mission Control spricht MET."
   ],
   "body_paragraphs": [
-    "MET: Zeit seit dem Start, Tag null ist das Abheben. Jedes Ereignis – Stufentrennung, Trans-X, TCM, MOI, Oberflächenbetrieb – bekommt einen MET-Zeitstempel. Apollo 11, Mondlandung: MET 4 d 6 h 45 min. Voyager 1 an der Heliopause: MET 35 Jahre.",
+    "MET: Zeit seit dem Start, Tag null ist das Abheben. Jedes Ereignis – Stufentrennung, Trans-X, TCM, Einschwenken in die Umlaufbahn, Oberflächenbetrieb – bekommt einen MET-Zeitstempel. Apollo 11, Mondlandung: MET 4 d 6 h 45 min. Voyager 1 an der Heliopause: MET 35 Jahre.",
     "Warum MET statt UTC? Weil die Uhr auf der Erde nicht ganz mit der Uhr im Raumfahrzeug übereinstimmt, wenn sich das Raumfahrzeug schnell oder weit bewegt. Lichtlaufzeiten wachsen (der Mars ist je nach Bahngeometrie 4–22 Lichtminuten entfernt). Relativistische Zeitdilatation spielt bei schnellen Sonden eine Rolle. MET ist die eigene verstrichene Zeit des Raumfahrzeugs, der natürliche Ankerpunkt zur Sequenzierung von Ereignissen an Bord.",
     "Auf dem HUD von `/fly` siehst du MET in Tagen hochzählen, während die Simulation fortschreitet. Es ist die Perspektive des Raumfahrzeugs darauf, wie lange die Reise gedauert hat – unabhängig vom Datum auf der Erde."
   ]

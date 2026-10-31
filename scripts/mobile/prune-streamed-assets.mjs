@@ -18,7 +18,9 @@
  *                                    assetUrl() like /images
  *   - build/diagrams/**\/*-<w>.webp   diagram width rungs; on-device srcsetFor
  *                                    skips /diagrams and uses the base file
- *   - build/data/i18n/<non-en>.json  13 non-default collapsed locale bundles
+ *   - build/data/i18n/<non-en>*.json 13 non-default locale bundles + their chunks
+ *   - build/data/i18n/en-US.json     the whole-locale en-US bundle: the app loads
+ *                                    only the en-US.<chunk>.json files (kept)
  *   - build/data/image-alt-text/<non-en>.json  13 alt-text overlays, streamed the same way
  *   - build/data/i18n/<locale>/      raw per-topic overlay trees — build-time
  *                                    source only; runtime loads the collapsed
@@ -165,15 +167,19 @@ async function targets() {
         // Raw per-locale overlay tree — never fetched at runtime.
         list.push(full);
       } else if (entry.isFile() && entry.name.endsWith('.json')) {
-        // Collapsed locale bundle — keep the default locale, stream the rest.
-        if (entry.name !== `${DEFAULT_LOCALE}.json`) list.push(full);
+        // Locale bundles: keep the default locale's chunks (<locale>.<chunk>.json,
+        // what the runtime loads), stream every other locale. The whole-locale
+        // file is for released app versions, which stream it from the web.
+        const isDefaultChunk =
+          entry.name.startsWith(`${DEFAULT_LOCALE}.`) && entry.name !== `${DEFAULT_LOCALE}.json`;
+        if (!isDefaultChunk) list.push(full);
       }
     }
   }
 
   // Non-default image alt-text overlays (~1 MB each since every alt text is translated,
-  // 2026-10-21): streamed like the locale bundles (+layout loads them from
-  // localeBundleOrigin). en-US is imported into the JS bundle and never fetched.
+  // 2026-10-21): streamed like the locale bundles ($lib/image-alt fetches them from
+  // localeBundleOrigin). en-US stays on device: it is the fallback for every locale.
   const alt = path.join(BUILD, 'data', 'image-alt-text');
   if (existsSync(alt)) {
     for (const name of await readdir(alt))

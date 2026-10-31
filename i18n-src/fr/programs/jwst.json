@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "La leçon plus profonde concerne l'ingénierie sans seconde chance. JWST ne pouvait pas être testé tel qu'en vol ni réparé une fois en vol, et il a quand même réussi — parce que chaque mode de défaillance a été traqué et éliminé à la conception, au sol, pendant des années. C'est le cas ultime de rigueur plutôt que d'itération : quand on ne peut vraiment pas réparer plus tard, la seule option est d'avoir raison du premier coup, et Webb a prouvé que c'est possible, même à une complexité vertigineuse."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=jwst": "Flotte — le télescope spatial James Webb",
+    "/programs/great-observatories": "Les Grands Observatoires — la lignée que prolonge le JWST",
+    "/programs/ariane": "Ariane — la fusée qui l'a lancé",
+    "/earth?site=jwst": "Télescope spatial James Webb"
+  }
 }

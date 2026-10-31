@@ -1,0 +1,947 @@
+[
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong sense",
+    "new": "ピンポイントでの月面着陸；転倒したが稼働を継続",
+    "note": "Pinpoint read as precision noun; rewritten"
+  },
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy wording",
+    "new": "BMDOとNASAの共同月周回機 — 世界初の月全球マルチスペクトル地図と、極域の水氷を示す初のバイスタティックレーダー証拠",
+    "note": "Awkward compounds; reworded fully"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "再利用可能なブースターが商業打ち上げを一変させた",
+    "note": "Non-sentence nonsense words; booster binding kept"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "english left in",
+    "new": "月面を39 km走行 — 2014年まで最長記録",
+    "note": "English roam transliterated, grammar broken"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "4つの巨大惑星すべてを訪れた唯一の探査機",
+    "note": "Meaning reversed to nonsense; only-one lost"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "date format",
+    "new": "初の水星周回機 — 4年間にわたり水星を地図化し、2015-04-30に制御された衝突で終了",
+    "note": "ISO date had been converted"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy wording",
+    "new": "軌道からの火星撮像で最高の解像度",
+    "note": "Awkward calque; reworded"
+  },
+  {
+    "rel": "fleet/observatory/kepler.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "dropped content",
+    "new": "NASAの系外惑星ハンター（2009–2018年）。天球上の一つの領域を見つめ続け、トランジット測光法——惑星が恒星の前を横切る際に起こる、恒星光の短時間の減光——によって系外惑星を検出した。確認された系外惑星は2,700個以上にのぼり、地球サイズの惑星が珍しくないことを示した。",
+    "note": "Dropped confirmed; register unified"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "dropped clause",
+    "new": "初の水星周回機 — 2011年の軌道投入前に、6.6年かけて惑星スイングバイを6回行い、エネルギーを減らした",
+    "note": "Energy-bleeding clause was missing"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "小惑星帯を横断した最初の探査機",
+    "note": "Non-word アスタノイド"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "日本初の金星周回機。2010年の軌道投入失敗から復帰し、雲頂の動力学を研究",
+    "note": "軌道衛星 wrong for orbiter"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "他の惑星の軌道を周回した最初の宇宙機",
+    "note": "Ungrammatical 軌道にする; rewritten"
+  },
+  {
+    "rel": "fleet/orbiter/hope.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "punctuation",
+    "new": "アラブ初の惑星間ミッション；火星の1年間を通じて、火星大気を初めて全球的かつ総合的に観測",
+    "note": "ASCII semicolon instead of Japanese"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "added content",
+    "new": "Blue Originの二段式再利用可能な大型軌道打ち上げロケット — BE-4の一段目 + 極低温の二段目",
+    "note": "Added メタン and 液水 not in English"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "ロシアとドイツのX線全天マッピング観測衛星",
+    "note": "Garbled possessive chain; Russia and Germany"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "ロシアの12時間周期HEO通信 — 臨界軌道傾斜角63.4°が遠地点を北半球上空に固定",
+    "note": "Inclination binding 軌道傾斜角 missing"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "臨界軌道傾斜角63.4°の12時間周期HEO — 遠地点をロシア上空に固定",
+    "note": "Inclination binding 軌道傾斜角 missing"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "他の惑星の軌道を周回した最初の宇宙機",
+    "note": "Ungrammatical 軌道にする; rewritten"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "separator",
+    "new": "Apollo 10 + Skylab + スペースシャトル53回の打ち上げ；現在はNASAのSLS / Artemis用発射台",
+    "note": "English plus separators replaced with commas"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "separator",
+    "new": "Apollo 10 + Skylab + スペースシャトル53回の打ち上げ；現在はNASAのSLS / Artemis用発射台",
+    "note": "English plus separators replaced with commas"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy wording",
+    "new": "米国4番目の月周回機（1967-05-08）。初の月極軌道；表側の99 %を60 m/ピクセルで地図化 + 裏側の一部領域",
+    "note": "月初の極軌道 and added 重要; plus altered"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy wording",
+    "new": "軌道からの火星撮像で最高の解像度",
+    "note": "Awkward calque; reworded"
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy wording",
+    "new": "世界初の月全球マルチスペクトル地図と、極域の水氷の初の手がかり — 1994",
+    "note": "Awkward 月の世界初; reworded"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "再利用可能なブースターが商業打ち上げを一変させた",
+    "note": "Non-sentence nonsense words; booster binding kept"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/salyut-7.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy grammar",
+    "new": "Salyut 7は最後のSalyutであり、Mirへの架け橋となったステーションである。同時に、軌道上で試みられた中で最も困難な修理作業の舞台でもあった。1985年、放棄されたステーションが交信を絶ち、凍りつき、ゆっくりと回転し始めたのち、2人の宇宙飛行士が宇宙へ向かい、死んだように電力を失ったその船体に手動でドッキングし、解凍とシステムの再起動を一つずつ手作業で進めて、ステーションを蘇らせた。Salyut 7は、2ポート構成とProgress補給船による補給という構想を完全な成熟に導き、ほぼ完成した形で、後継となるモジュール式ステーションに引き渡した。",
+    "note": "Clunky clause chain; reflowed same facts"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "date format",
+    "new": "2番目のスペースシャトル。1986-01-28のSTS-51-Lで打ち上げ73秒後に喪失、搭乗員7名",
+    "note": "ISO date had been converted"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong sense",
+    "new": "インド初の月探査ミッション。月面に広く水が存在することを発見（M3 + MIP、2009年）。2009-08-29にわずか312日で通信途絶",
+    "note": "初月面探査機 wrong; only dropped; ISO date"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy wording",
+    "new": "インド初の惑星間ミッションであり、アジアの宇宙機関として初めて成功した火星ミッション。最初の挑戦で火星に周回機を送り届けた — これは他のどの国の宇宙機関も成し遂げていない快挙である（多国間組織であるESAは、2003年のMars Expressで最初の火星挑戦に成功している）。ほぼ8年間運用されたのち、2022年に通信が途絶えた。",
+    "note": "軌道器を到達させた is ungrammatical"
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong sense",
+    "new": "ピンポイントでの月面着陸；転倒したが稼働を継続",
+    "note": "Pinpoint read as precision noun; rewritten"
+  },
+  {
+    "rel": "fleet/orbiter/phobos-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy wording",
+    "new": "ソ連最後の惑星探査ミッション。1989年1月に火星軌道に到達したが、衛星フォボスとの接近遭遇を予定していた直前の1989年3月27日に、地球との通信を失った。Phobos 2は通信途絶までにフォボスの画像37枚を送信した。喪失の原因は、搭載コンピュータの故障により姿勢制御と電力を失ったことと考えられているが、一連の経緯は完全には解明されていない。",
+    "note": "Redundant 決して完全には; clumsy phrasing"
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "english left in",
+    "new": "月面を39 km走行 — 2014年まで最長記録",
+    "note": "English roam transliterated, grammar broken"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "日本初の金星周回機。雲頂付近の風と大気力学を研究。2010年の軌道投入失敗から復帰",
+    "note": "軌道衛星 wrong for orbiter"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "dropped content",
+    "new": "軌道上で回転して分裂；その喪失がXRISM開発を推進した",
+    "note": "Spinning dropped from spun apart"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "4つの巨大惑星すべてを訪れた唯一の探査機",
+    "note": "Meaning reversed to nonsense; only-one lost"
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "SpaceXが設計した、打ち上げ・大気圏突入用の与圧服。ワンピース型の前面開口式で、Crew Dragonのタブレット式コンソールを操作できるタッチスクリーン対応グローブを備え、ヘルメットは乗組員一人ひとりに合わせてカスタム3Dプリントされている。Crew Dragonでの上昇時と大気圏突入時に着用する。白と黒のミニマルなデザインが特徴。",
+    "note": "Entry binding 大気圏突入 not used"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/observatory/tess.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "ESA主導のSolar Orbiterは、太陽の極域を間近から詳細に撮影するよう設計された初の宇宙機で、10年かけて金星でのスイングバイを繰り返し、黄道面から離れて日面基準で約33°の軌道傾斜角を目指す。リモートセンシング（PHI磁力計、EUI極端紫外線撮像装置、SPICE分光計、STIX X線撮像装置、METISコロナグラフ、SoloHI太陽圏撮像装置）と、その場計測（磁力計、高エネルギー粒子、太陽風プラズマ、電波+プラズマ波）を組み合わせた10の観測機器を搭載する。2020-02-10にケープカナベラルからNASAのAtlas V 411で打ち上げられた。初の近日点通過は2020-06-15、0.51 AU。運用上の近日点は0.28 AU（約62 R☉）で、水星の近日点距離より内側にある。",
+    "note": "Used 重力アシスト not スイングバイ; dates not ISO"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "小惑星帯を横断した最初の探査機",
+    "note": "Non-word アスタノイド"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "第1世代のLEOブロードバンド・コンステレーション。高度1,200 kmの12の極軌道面に648基の衛星を配置している。極軌道により、軌道傾斜角が中程度のStarlinkのシェルが届かない、極から極までの全域を覆える。2023年にEutelsatが買収してEutelsat OneWebとなり、商用サービスは現在EutelsatのGEO資産と一体で提供されている。Starlinkより高度が高いため、レイテンシはわずかに大きくなるが、必要な衛星数は少なくて済む。",
+    "note": "Inclination binding 軌道傾斜角 missing"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong sense",
+    "new": "インド初の月探査ミッション。月面に広く水が存在することを発見（M3 + MIP、2009年）。2009-08-29にわずか312日で通信途絶",
+    "note": "初月面探査機 wrong; only dropped; ISO date"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "ESA + JAXA共同の水星周回機2機ミッション — 水星のMPO + Mio、2026年到着",
+    "note": "双衛星 is not a natural word"
+  },
+  {
+    "rel": "fleet/space-suit/a7l.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "ロシアとドイツのX線全天マッピング観測衛星",
+    "note": "Garbled possessive chain; Russia and Germany"
+  },
+  {
+    "rel": "fleet/station/salyut-1.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "punctuation",
+    "new": "火星大気の太陽風による散逸を研究；火星が数十億年かけて大気を失ったことを解明",
+    "note": "ASCII semicolon instead of Japanese"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "punctuation",
+    "new": "Atlas V + Delta IVの後継機；NSSL Phase 3の認証対象 + Dream Chaser向けに計画",
+    "note": "ASCII semicolon instead of Japanese"
+  },
+  {
+    "rel": "fleet/constellation/beidou.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "dropped content",
+    "new": "軌道上で回転して分裂；その喪失がXRISM開発を推進した",
+    "note": "Spinning dropped from spun apart"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "english left in",
+    "new": "地球以外の天体を走行した初の車輪式車両",
+    "note": "English roam transliterated, grammar broken"
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-u.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy wording",
+    "new": "米国4番目の月周回機（1967-05-08）。初の月極軌道；表側の99 %を60 m/ピクセルで地図化 + 裏側の一部領域",
+    "note": "月初の極軌道 and added 重要; plus altered"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "best_known_for",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "tagline",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "ESA + JAXA共同の水星周回機2機ミッション — 2026年の水星到着時にMPOとMioに分離",
+    "note": "双衛星 is not a natural word"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "best_known_for",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "english left in",
+    "new": "地球以外の天体を走行した初の車輪式車両",
+    "note": "English roam transliterated, grammar broken"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "tagline",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": "Correct and natural"
+  },
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term binding",
+    "new": "船外活動ユニット（EMU）— 硬質の上半身、軟質の布製の腕と脚、一次生命維持装置（PLSS）のバックパックを備えたモジュール式EVA宇宙服。純O₂の4.3 psiで動作する。初のEVAは1983年4月のSTS-6で行われ、40年以上たった今もISSで現役。1994年には、テザー喪失時の救助用にSAFER小型スラスターパックが追加された（N₂ 1.4 kg、デルタV約3 m/s）。",
+    "note": "Used Δv, binding is デルタV"
+  }
+]

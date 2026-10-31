@@ -12,5 +12,6 @@
     { "met": 4, "label": "TCM", "note": "Midcourse-correctie tijdens de kruisfase.", "type": "info" },
     { "met": 4.5, "label": "LANDING", "note": "Zachte landing in de krater Le Monnier op 15 januari 1973. Lunokhod 2 rolde enkele uren later van de landingshellingen af.", "type": "nominal" },
     { "met": 7, "label": "ROVER ACTIEF", "note": "Grondpersoneel van vijf personen op de Krim begon met rij­operations. Totaal traject: ~39 km.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "bovenste trap Blok-D"
 }

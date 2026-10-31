@@ -1,0 +1,872 @@
+[
+  {
+    "rel": "satellites/titan.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/technik-museum-speyer.json",
+    "at": "items.buran-ok-gli",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.3.l",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/franklin-institute.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "residents.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Спајање и припрема за излазак у свемир на руском сегменту до силаска из орбите 2021. године, како би се ослободио прикључак за Nauka.",
+    "note": "docking not bound term"
+  },
+  {
+    "rel": "earth-objects/beidou.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/venera-13.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.rejected.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "current_distance_label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "89 AU · ~12,3 светлосних сати од Сунца (сигнал изгубљен 1995-09-30)",
+    "note": "date should stay ISO"
+  },
+  {
+    "rel": "earth-objects/change2.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.rejected.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "items.hayabusa",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Земљина орбита одређује раван еклиптике. Инклинација сваке друге планете мери се у односу на ову референтну раван.",
+    "note": "inclination not bound term"
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/donaldjohanson.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "tiangong-modules/wentian.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.4.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Истраживање Меркура обележавају три мисије: Mariner 10 (1974), MESSENGER (2011–15) и BepiColombo (убацивање у орбиту крајем 2026).",
+    "note": "orbit insertion not bound term"
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/eris.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Инклинација орбите Ериде од 44° међу највећима је код свих каталогизованих великих тела — њено порекло у расејаном диску смешта је далеко од еклиптике.",
+    "note": "inclination not bound term"
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-visitors/htv_x.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.4.l",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Бледоплава тачка — размишљање Карла Сагана (Planetary Society)",
+    "note": "reflection rendered as optical reflection"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Европски наследник ракете Ariane 5, са горњим степеном који се може поново паљити за директно убацивање у орбиту",
+    "note": "clumsy word order"
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.want",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/bledsoe-miller-steam-center-waco.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "mission_visits.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/didymos.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/chandrayaan1.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/danmarks-tekniske-museum.json",
+    "at": "items.soyuz-tma",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.1.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Solar Orbiter — прво снимање Сунца изблиза (ESA)",
+    "note": "accusative object with no verb"
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "name",
+    "new": "Друга локација Националног музеја авијације и астронаутике, пар огромних хангара поред вашингтонског аеродрома Далс, изграђених за највеће авионе и свемирске летелице.",
+    "note": "Dulles rendered as Dallas"
+  },
+  {
+    "rel": "earth-objects/xmm.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/national-space-centre-leicester.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Пола светлосне године даље. Сунчев гравитациони домет допире отприлике до унутрашње ивице Ортовог облака — иза ње почињу да преовладавају галактичке плиме. Летелицама Voyager биће потребно 30.000 година само да стигну до унутрашње границе.",
+    "note": "English plural Voyagers"
+  },
+  {
+    "rel": "iss-visitors/htv_x.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Привезује се помоћу Canadarm2; корисни терет под притиском и без притиска; летови за демонстрацију технологије за будућу цислунарну логистику.",
+    "note": "payload not bound term"
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Око 1/6 растојања од Земље до Месеца. Без релеја у тачки L2 цела далека страна Месеца остаје без везе — релеј је био потребан свакој летелици која је икада тамо слетела.",
+    "note": "clumsy comms blackout phrasing"
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/iss.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "culture-doors/voyager-golden-record.json",
+    "at": "blurb",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "На обе летелице Voyager причвршћен је позлаћени диск са поздравима на 55 језика, музиком од Баха до Чака Берија и сликама Земље — порука у боци која сада плута изван Сунчевог система ка звездама, намењена ономе ко је једног дана пронађе — било да је то неко или нешто.",
+    "note": "wrong gender agreement, odd whoever/whatever"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/quest.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Ваздушна комора за посаду америчког сегмента — место где астронаути у скафандерима излазе у вакуум, а да не морају да отварају прикључак за спајање на летелици са посадом.",
+    "note": "docking not bound term"
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/columbus.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Ормари за науку о материјалима, биологију и физику флуида са корисним теретом о коме брине посада, као и могућност посматрања Земље.",
+    "note": "payload not bound term"
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "propellant",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.7.note",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Руски одељак за спајање и ваздушна комора за излазак у свемир, коришћен годинама пре уклањања — мали, али прометан простор на крменом делу комплекса.",
+    "note": "airlock rendered as non-word преседаник"
+  },
+  {
+    "rel": "culture-doors/kepler16b-tatooine.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/jaxa-sagamihara-communication-hall.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.f-1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/starlink.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-mars/DMO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/67p.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Soyuz-FG (сада повучена) уз горњи степен Fregat — стандардан пар агенција ESA и Roscosmos за средње међупланетарне мисије. Конструкција без криогених горива користи керозин и течни кисеоник у доњим степенима, а хиперголична погонска горива степена Fregat, која се могу поново палити, омогућавају прецизно убацивање у путању. Њоме су лансирани Mars Express агенције ESA (2003), магнетосферски квартет Cluster и већина летова за снабдевање МСС пре појаве ракете Soyuz-2.",
+    "note": "adjective-noun number mismatch"
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Астероид C-типа из главног астероидног појаса, пречника 4 km, назван по човеку који је открио фосил хоминида Lucy. Додат је касно, током пројектовања мисије Lucy, као бонус прелет на путу ка главним метама (2025-04-20, најмање растојање 960 km, при брзини од 13,4 km/s) — прилика да се инструменти испробају пре захтевнијих сусрета са тројанцима.",
+    "note": "date should stay ISO"
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/science-museum-london.json",
+    "at": "items.soyuz-tma",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.3",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/rubin.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/mao-zedong-memorial-museum-shaoshan.json",
+    "at": "items.shenzhou",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Прстен каменитих остатака између Марса и Јупитера — од 2,2 до 3,2 AU. Каталогизовано је стотине хиљада тела, а процењена укупна маса износи мање од 4% масе Месеца. То није густо збијено астероидно поље из научне фантастике: типично растојање између објеката износи око милион километара. Појас се никада није сабио у планету јер је Јупитерова гравитација непрестано мешала орбите и спречавала да се тела након судара споје. Три Кирквудове празнине обележавају резонанције са Јупитером у којима се астероиди чисте из појаса.",
+    "note": "non-word мешкала; accreted mistranslated"
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/salt.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/zvezda.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/china-science-and-technology-museum.json",
+    "at": "items.shenzhou",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/palomar.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/kuiper.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.3",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "interstellar_since_label",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/planet-labs.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/musee-air-espace-le-bourget.json",
+    "at": "items.soyuz-t",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "small-bodies/dimorphos.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "iss-modules/columbus.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/mauna-kea.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/us-space-and-rocket-center.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/jaxa-sagamihara-communication-hall.json",
+    "at": "items.hayabusa-2",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "orbit-regimes-moon/NRHO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "earth-objects/lunar-prospector.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Двостепено возило од нерђајућег челика са ракетним појачивачем Super Heavy (33 мотора Raptor) и горњим степеном Starship (6 мотора Raptor). Конципирано је око претакања погонског горива у орбити: варијанта цистерне допуњава Starship у LEO, што омогућава пренос ~100 t на површину Марса — за редове величине више него било која претходна ракета-носач. Програм орбиталних летова почео је 2023. године.",
+    "note": "non-word преточа for propellant transfer"
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "delta-v",
+    "decision": "keep",
+    "grade": "OK"
+  }
+]

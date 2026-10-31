@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "La lezione più profonda riguarda quanto valga l'indipendenza. Un posto preso in prestito può essere portato via; una capacità che hai costruito tu stesso no. Shenzhou è il veicolo che garantisce che la Cina non debba mai chiedere — e quella garanzia, più di qualsiasi singolo volo, è la cosa che il programma è stato davvero costruito per fornire."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=shenzhou": "Flotta — la navicella Shenzhou",
+    "/programs/tiangong": "Tiangong — la stazione costruita e raggiunta dagli equipaggi Shenzhou",
+    "/programs/soyuz": "Soyuz — il veicolo da cui deriva lo schema di Shenzhou"
+  }
 }

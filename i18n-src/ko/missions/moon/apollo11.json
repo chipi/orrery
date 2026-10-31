@@ -23,7 +23,7 @@
     {
       "met": 3.13,
       "label": "MOI",
-      "note": "달 궤도 삽입.",
+      "note": "달 궤도 진입.",
       "type": "nominal"
     },
     {
@@ -50,5 +50,6 @@
       "note": "지휘선 Columbia가 승무원을 태평양으로 귀환 1969-07-24.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Saturn V S-IVB (3단)"
 }

@@ -11,5 +11,5 @@
     "También determina DÓNDE del descenso ocurre la acción. Un vehículo con coeficiente balístico bajo decelera en lo alto, en aire tenue, y gana tiempo y altitud para las fases terminales. Uno con coeficiente alto conserva su velocidad hasta muy adentro de la atmósfera antes de que la resistencia lo alcance, y comprime toda la secuencia en los últimos kilómetros: exactamente el aprieto que convierte un aterrizaje pesado en Marte en una carrera contra el suelo.",
     "En `/fly`, el contraste es visible entre cuerpos en `?descent=1`. Un módulo de aterrizaje ligero en Marte bajo un paracaídas grande (coeficiente balístico bajo) desciende con suavidad; una Starship de 100 toneladas (muy alto) debe frenar con propulsión; una sonda de Venus en aire denso desciende flotando sobre una pequeña placa de resistencia. La misma física, tres coeficientes balísticos, tres descensos muy distintos."
   ],
-  "diagram_caption": "Coeficiente balístico = masa ÷ área de resistencia. Bajo (paracaídas grande, carga ligera) → deceleración lenta y a gran altitud; alto (pesado, compacto) → entrada rápida, profunda y caliente."
+  "diagram_caption": "Coeficiente balístico = masa ÷ área de resistencia. Bajo (paracaídas grande, carga útil ligera) → deceleración lenta y a gran altitud; alto (pesado, compacto) → entrada rápida, profunda y caliente."
 }

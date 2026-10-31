@@ -174,10 +174,7 @@ jobs:
 
       - name: Setup Node 22 (build static bundle for deploy)
         if: steps.preflight.outputs.skip != 'true'
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v6
-        with:
-          node-version: 22
-          cache: npm
+        uses: ./.github/actions/setup-node
 
       - run: npm ci
         if: steps.preflight.outputs.skip != 'true'
@@ -237,7 +234,7 @@ jobs:
         # The name must be sourcemaps-<the exact release the web SDK sends>, i.e.
         # PUBLIC_SENTRY_RELEASE above. No GlitchTip token lives in GitHub.
         if: steps.preflight.outputs.skip != 'true'
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: sourcemaps-gha-${{ steps.sha.outputs.short }}
           path: sourcemaps-out/
@@ -246,7 +243,7 @@ jobs:
 
       - name: Join the tailnet
         if: steps.preflight.outputs.skip != 'true'
-        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
         with:
           # OAuth client (shared chipi deployer identity, same as podcast_scraper) — does not
           # expire like an auth key did (2026-08-02: the old TS_AUTHKEY lapsed and blocked prod
@@ -472,6 +469,10 @@ jobs:
         # VPS keeps fetching from the upstream sources every 6h — no redeploy, no
         # GitHub. Non-fatal: a failure here doesn't fail the deploy (the site is
         # already up); the log shows what happened.
+        # 01:17, 07:17, 13:17, 19:17 UTC, not on the hour: Launch Library answered
+        # 504 to five of six failed runs at 00:00 UTC (2026-10-23..29), the top of
+        # the hour being when scheduled jobs everywhere hit it. The stale-data alert
+        # counts successes over 7h, so the shift never trips it.
         if: steps.preflight.outputs.skip != 'true'
         continue-on-error: true
         env:
@@ -481,7 +482,7 @@ jobs:
             -o StrictHostKeyChecking=yes -o BatchMode=yes "$SSH_TARGET" \
             'set -euo pipefail; cd /srv/orrery; \
              bash ops/refresh-prod-data.sh; \
-             CRON="0 */6 * * * /usr/bin/env bash /srv/orrery/ops/refresh-prod-data.sh >> /srv/orrery/data-refresh.log 2>&1"; \
+             CRON="17 1-23/6 * * * /usr/bin/env bash /srv/orrery/ops/refresh-prod-data.sh >> /srv/orrery/data-refresh.log 2>&1"; \
              ( crontab -l 2>/dev/null | grep -vF refresh-prod-data.sh || true; echo "$CRON" ) | crontab -; \
              if crontab -l | grep -qF refresh-prod-data.sh; then echo "cron installed:"; crontab -l | grep -F refresh-prod-data.sh; else echo "WARN: cron not installed"; fi'
 
@@ -562,10 +563,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
         with:
           fetch-depth: 1
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v6
-        with:
-          node-version: 22
-          cache: npm
+      - uses: ./.github/actions/setup-node
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - name: Validate the live public deployment

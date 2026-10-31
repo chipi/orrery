@@ -7,9 +7,9 @@
 // correct re-basing math (the RFC §8 "precision at the boundary" risk), and the
 // boundary-crossing state machine. The WebGL scene wiring lives elsewhere.
 //
-// Slice 0 registers two contexts: SolarSystem (context-0, units AU, the untouched
-// v1 scene) and Neighborhood (units pc, the real HYG star field). Later slices
-// add Milky Way, Local Group, … outward as parents.
+// Eight contexts, innermost first: SolarSystem (context-0, units AU, the v1
+// scene), Neighborhood (units pc, the real HYG star field), Milky Way, Local
+// Group, Local Sheet, Virgo, Laniakea, Cosmic Web — each outer one the parent.
 
 export type ContextUnits = 'AU' | 'pc';
 

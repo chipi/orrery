@@ -85,22 +85,21 @@
       view: mock,
       location: { latDeg: lat, lonDeg: lon, source: 'default' },
       onDebug: (d) => {
-        (window as unknown as { __skyDebug?: unknown }).__skyDebug = d;
+        window.__skyDebug = d;
       },
     });
     await handle.start();
     // Debug affordances: ?below=1 reveals sub-horizon bodies (so every planet is
     // findable); the handle is exposed for a screenshot driver to aim/inspect.
     if (p.get('below') === '1') handle.setBelowHorizonVisible(true);
-    (window as unknown as { __skyHandle?: unknown }).__skyHandle = handle;
+    window.__skyHandle = handle;
     // Each body's current az/el (deg), so a driver can aim the preview at it.
-    (window as unknown as { __planetAzEl?: Record<string, [number, number]> }).__planetAzEl =
-      Object.fromEntries(
-        skyPositions(new Date(), lat, lon).map((s) => [
-          s.body,
-          [(s.azRad * 180) / Math.PI, (s.altRad * 180) / Math.PI],
-        ]),
-      );
+    window.__planetAzEl = Object.fromEntries(
+      skyPositions(new Date(), lat, lon).map((s) => [
+        s.body,
+        [(s.azRad * 180) / Math.PI, (s.altRad * 180) / Math.PI],
+      ]),
+    );
     // Station look-angles too, once their TLEs resolve (so a driver can aim at
     // the ISS/Tiangong glyphs). Below-horizon stations report a negative alt.
     void Promise.all(
@@ -111,11 +110,10 @@
         return [id, [(la.azRad * 180) / Math.PI, (la.altRad * 180) / Math.PI]] as const;
       }),
     ).then((rows) => {
-      (window as unknown as { __stationAzEl?: Record<string, unknown> }).__stationAzEl =
-        Object.fromEntries(rows);
+      window.__stationAzEl = Object.fromEntries(rows);
     });
     // Signal for a screenshot driver to wait on.
-    (window as unknown as { __skyPreviewReady?: boolean }).__skyPreviewReady = true;
+    window.__skyPreviewReady = true;
   });
 
   onDestroy(() => handle?.stop());

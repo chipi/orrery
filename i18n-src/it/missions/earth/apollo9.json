@@ -4,8 +4,8 @@
   "payload": "42400 kg lanciati (CSM Gumdrop (CSM-104) + LM Spider (LM-3))",
   "delta_v": "~9,5 km/s (fino alla LEO)",
   "type": "MISSIONE ORBITALE TERRESTRE CON EQUIPAGGIO · COMPLETATA",
-  "first": "Primo volo del Modulo Lunare con equipaggio — Test di separazione del LM in orbita terrestre e rendezvous",
-  "description": "Il primo volo del Modulo Lunare con equipaggio. In orbita terrestre, McDivitt e Schweickart sganciano il LM Spider dal CSM Gumdrop, si allontanano fino a 183 km nel corso di sei ore, quindi eseguono il rendezvous e si agganciano di nuovo — ogni fase della procedura di rendezvous lunare è stata testata senza la possibilità di rientrare con il CSM se qualcosa fosse andato storto. Schweickart ha condotto un EVA di 38 minuti sul portello del LM, dimostrando il design della tuta spaziale Apollo EVA e del pacco PLSS che gli astronauti sulla Luna avrebbero utilizzato. Scott ha eseguito un EVA in posizione seduta dal portello del CSM. Con l'hardware del LM e le procedure di rendezvous verificati, la NASA era pronta a inviare Apollo 10 sulla Luna due mesi dopo.",
+  "first": "Primo volo con equipaggio del LM — test di separazione del LM e di rendezvous in orbita terrestre",
+  "description": "Il primo volo con equipaggio del Modulo Lunare. In orbita terrestre, McDivitt e Schweickart sganciarono il LM Spider dal CSM Gumdrop, si allontanarono fino a 183 km nell'arco di sei ore, poi eseguirono il rendezvous e si agganciarono di nuovo — ogni passo della procedura di rendezvous lunare fu collaudato senza la possibilità di riportare a casa l'equipaggio nel CSM in caso di problemi. Schweickart effettuò una EVA di 38 minuti sulla piattaforma del LM, dimostrando la tuta EVA dell'Apollo e lo zaino PLSS che gli equipaggi destinati a camminare sulla Luna avrebbero usato. Scott effettuò una EVA in piedi dal portello del CSM. Con l'hardware del LM e le procedure di rendezvous verificati, la NASA aveva via libera per inviare l'Apollo 10 sulla Luna due mesi dopo.",
   "events": [
     {
       "met": 0,
@@ -16,19 +16,19 @@
     {
       "met": 0.13,
       "label": "ESTRAZIONE CSM-LM",
-      "note": "CSM Gumdrop si gira e si aggancia al LM Spider nell'adattatore SLA — primo trasferimento e aggancio con equipaggio. Tutte le missioni Apollo lunari ripetono questa manovra.",
+      "note": "Il CSM Gumdrop si gira e si aggancia al LM Spider nell'adattatore SLA — prima trasposizione e primo aggancio con equipaggio. Tutte le missioni lunari Apollo ripetono questa manovra.",
       "type": "nominal"
     },
     {
       "met": 4.2,
       "label": "SEPARAZIONE LM",
-      "note": "McDivitt e Schweickart sganciato Spider, si allontanano fino a 183 km da Gumdrop nel corso di sei ore. Primo volo con equipaggio dove il veicolo spaziale e l'equipaggio non sono entrambi agganciati a un veicolo di rientro.",
+      "note": "McDivitt e Schweickart sganciano lo Spider e si allontanano fino a 183 km dal Gumdrop nel corso di sei ore. Primo volo con equipaggio in cui veicolo spaziale ed equipaggio non sono entrambi collegati a un veicolo di rientro.",
       "type": "info"
     },
     {
       "met": 4.5,
       "label": "EVA",
-      "note": "Schweickart esegue EVA di 38 min sul portello del LM. EVA in posizione seduta di Scott dal portello del CSM. Primo test del pacco PLSS Apollo.",
+      "note": "Schweickart esegue una EVA di 38 min sulla piattaforma del LM. EVA in piedi di Scott dal portello del CSM. Prima convalida dello zaino PLSS dell'Apollo.",
       "type": "info"
     },
     {
@@ -40,7 +40,7 @@
     {
       "met": 5,
       "label": "RILASCIO LM",
-      "note": "Lo stadio di discesa di Spider è stato disattivato (rientrato nel marzo 1969, Oceano Indiano); lo stadio di ascesa è stato acceso fino all'esaurimento e spinto in un'orbita elevata — si è decaduto nel 1981.",
+      "note": "Lo stadio di discesa di Spider è stato fatto uscire dall'orbita (rientrato nel marzo 1969, Oceano Indiano); lo stadio di ascesa è stato acceso fino all'esaurimento e spinto in un'orbita alta — è decaduto nel 1981.",
       "type": "nominal"
     },
     {

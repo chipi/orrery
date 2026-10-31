@@ -22,7 +22,7 @@
     {
       "met": 1827,
       "label": "地球飞掠",
-      "note": "地球引力助推将Giotto重新锁定目标为葛里格-斯杰勒鲁普彗星。",
+      "note": "地球引力辅助将Giotto重新锁定目标为葛里格-斯杰勒鲁普彗星。",
       "type": "nominal"
     },
     {
@@ -31,5 +31,6 @@
       "note": "最近距离200 km——有史以来最近的彗星飞掠。",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Ariane 1 第三级"
 }

@@ -17,13 +17,13 @@
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection burn — erste bemannte Flucht aus der Erdgravitation. S-IVB ∆v ~3,05 km/s.",
+      "note": "Translunare Injektionszündung — erste bemannte Flucht aus der Erdgravitation. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 2.79,
       "label": "LOI",
-      "note": "Mondorbitale Einschwenkung hinter dem Mond, außerhalb des Funkkontakts. SPS-Abbrand ~0,91 km/s. Erste Menschen, die einen anderen Himmelskörper umkreisen.",
+      "note": "Mondorbitale Einschwenkung hinter dem Mond, außerhalb des Funkkontakts. SPS-Zündung ~0,91 km/s. Erste Menschen, die einen anderen Himmelskörper umkreisen.",
       "type": "nominal"
     },
     {

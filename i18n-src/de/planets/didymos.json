@@ -1,6 +1,6 @@
 {
   "name": "Didymos",
-  "type": "Asteroid · Near-Earth · S-type · Binary primary",
+  "type": "Asteroid · Erdnah · S-Typ · Primärkörper im Doppelsystem",
   "fact": "Elternkörper des 160 m großen Mondes Dimorphos, der am 26.09.2022 von NASAs DART getroffen wurde – die erste Demonstration einer kinetischen Impaktor-Planetenverteidigung. Didymos selbst blieb als 780-m-Asteroid vom Typ S intakt und zeigte die Veränderung der Umlaufperiode.",
   "bio": "Erdnaher S-Typ-Asteroid und Doppelsystem, entdeckt 1996, mit dem 160 m großen Mond Dimorphos in einer 11,9-Stunden-Umlaufbahn bei 1,2 km Abstand. Klassifiziert als chondritischer Körper – Silikatzusammensetzung der LL-Klasse, häufig im inneren Hauptgürtel. ESAs Hera-Mission (gestartet 2024) wird 2026 eintreffen, um das System nach dem Einschlag im Detail zu untersuchen.",
   "links": [
@@ -10,12 +10,12 @@
       "t": "intro"
     },
     {
-      "l": "DART mission (NASA)",
+      "l": "DART-Mission (NASA)",
       "u": "https://science.nasa.gov/mission/dart/",
       "t": "core"
     },
     {
-      "l": "Hera mission (ESA)",
+      "l": "Hera-Mission (ESA)",
       "u": "https://www.esa.int/Space_Safety/Hera",
       "t": "deep"
     }

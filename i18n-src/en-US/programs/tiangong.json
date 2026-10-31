@@ -28,5 +28,11 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Tiangong is that exclusion can manufacture exactly the rival it was meant to prevent. Denied a seat on the ISS, China did not fall behind; it built the capability itself and now holds a card the excluders cannot take back. Shutting a competitor out of a shared project is a bet that they cannot build their own — and it is a bet that, against a patient and well-funded state, tends to lose." },
     { "type": "prose", "md": "The deeper lesson is about tempo. Tiangong shows that in spaceflight the fastest-looking program is rarely the strongest one. China arrived late to every first and cared about none of them, optimizing instead for a station that would be finished, reliable, and permanent. When the goal is to still be flying in 2035, patience is not caution — it is the strategy." }
-  ]
+  ],
+  "link_labels": {
+    "/tiangong": "Tiangong — the station in 3D",
+    "/fleet?focus=tiangong": "Fleet — Shenzhou, Tianzhou & the Long March family",
+    "/programs/iss": "ISS — the station Tiangong was locked out of",
+    "/earth?site=tiangong": "Tiangong overhead"
+  }
 }

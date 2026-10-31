@@ -1,15 +1,10 @@
 /**
  * Locale-aware image alt-text accessor (PRD-007 piece V minimum / GH #257).
  *
- * Today: returns English alt-text for every image. Loaded from
- * `static/data/image-alt-text/en-US.json` which is auto-generated
- * from `image-provenance.json`'s caption fields (see
- * `scripts/build-image-alt-baseline.ts`).
- *
- * Future (#257 v0.9): when a translator drops in
- * `static/data/image-alt-text/<locale>.json` for any locale,
- * screen readers in that locale immediately pick up the localized
- * text — no code change in components.
+ * Maps are served from `static/data/image-alt-text/<locale>.json`; en-US is
+ * auto-generated from `image-provenance.json`'s caption fields (see
+ * `scripts/build-image-alt-baseline.ts`), the other locales are partial (only
+ * real captions; filenames stay en-US).
  *
  * Fallback chain (per image path):
  *   1. Lookup in the requested locale's alt-text file
@@ -17,25 +12,34 @@
  *   3. Fallback to empty string (so the <img> still validates but
  *      assistive tech announces it as decorative)
  *
- * SSR-safe: works during build-time pre-rendering. Module-level
- * cache keyed by locale so each locale loads at most once.
+ * The maps are fetched on the first lookup, not imported: the en-US map is
+ * ~700 KB and a static import put it in the root layout's chunk on every page
+ * (Phase 5, 2026-10-30). The callers (PlaceHero, SiteStoryPanel) render on the
+ * client only, and the store is a SvelteMap, so an alt that was '' while its
+ * map loaded re-renders once the map arrives.
  */
 
-import enUsAltText from '$data/image-alt-text/en-US.json';
+import { SvelteMap } from 'svelte/reactivity';
+import { localeBundleOrigin } from '$lib/asset-url';
 
 export type AltTextMap = Record<string, string>;
 
-const LOADED_LOCALES = new Map<string, AltTextMap>();
-LOADED_LOCALES.set('en-US', enUsAltText as AltTextMap);
+const LOADED_LOCALES = new SvelteMap<string, AltTextMap>();
+const requested = new Set<string>();
 
 /**
  * Synchronous accessor — returns the image's alt-text for the active
- * locale, falling back to en-US, then to empty string.
+ * locale, falling back to en-US, then to empty string. Starts loading the
+ * maps it needs; returns what is loaded so far.
  *
  * @param imagePath  /images/... path (matches image-provenance.json keys)
  * @param locale    Active locale tag (e.g. 'en-US', 'ja', 'ar')
  */
 export function getImageAlt(imagePath: string, locale: string = 'en-US'): string {
+  if (typeof window !== 'undefined') {
+    void loadLocaleAltText('en-US', localeBundleOrigin('en-US'));
+    if (locale !== 'en-US') void loadLocaleAltText(locale, localeBundleOrigin(locale));
+  }
   const localised = LOADED_LOCALES.get(locale);
   if (localised && localised[imagePath]) return localised[imagePath];
   const enFallback = LOADED_LOCALES.get('en-US');
@@ -43,26 +47,23 @@ export function getImageAlt(imagePath: string, locale: string = 'en-US'): string
   return '';
 }
 
-/**
- * Register a non-English alt-text file. Called by the layout's
- * lang-load hook when a locale switches in. Idempotent.
- */
+/** Register an alt-text map for a locale. Idempotent. */
 export function registerLocaleAltText(locale: string, map: AltTextMap): void {
+  requested.add(locale);
   LOADED_LOCALES.set(locale, map);
 }
 
 /**
- * Load + register the alt-text overlay for a locale (client-side, idempotent,
- * best-effort). Fetches the served `static/data/image-alt-text/<locale>.json`
- * (partial — only real captions; filenames stay en-US). A missing file or en-US
- * is a no-op — `getImageAlt` falls back to en-US. Called from the root layout on
- * mount + locale change, so a panel opened afterwards renders localized alt-text.
+ * Load + register the alt-text map for a locale (client-side, idempotent,
+ * best-effort). Fetches `<base>/data/image-alt-text/<locale>.json`; a missing
+ * file registers nothing and `getImageAlt` falls back to en-US.
  */
 export async function loadLocaleAltText(locale: string, base = ''): Promise<void> {
-  if (locale === 'en-US' || LOADED_LOCALES.has(locale)) return;
+  if (requested.has(locale)) return;
+  requested.add(locale);
   try {
     const res = await fetch(`${base}/data/image-alt-text/${locale}.json`);
-    if (res.ok) registerLocaleAltText(locale, (await res.json()) as AltTextMap);
+    if (res.ok) LOADED_LOCALES.set(locale, (await res.json()) as AltTextMap);
   } catch {
     /* no locale file yet — en-US fallback stands */
   }

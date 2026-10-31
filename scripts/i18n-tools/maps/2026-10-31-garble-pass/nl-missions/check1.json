@@ -1,0 +1,23 @@
+[
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "dispatch",
+    "find": "zette de capsule uit tegen",
+    "replace": "richtte de capsule uit op",
+    "why": "wrong sense: lining up, not setting out"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "dispatch",
+    "find": "aan de grond",
+    "replace": "neer",
+    "why": "splashdown at sea, not on ground"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.3.note",
+    "find": "puinoppervlak",
+    "replace": "oppervlak van de puinhoop",
+    "why": "rubble-pile dropped"
+  }
+]

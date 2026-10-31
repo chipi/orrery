@@ -17,11 +17,10 @@
 <script lang="ts">
   import { dataLoadFailed } from '$lib/data/core';
   import { onMount } from 'svelte';
-  import { base } from '$app/paths';
   import { page } from '$app/state';
   import * as m from '$lib/paraglide/messages';
   import { getScienceSection } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import type { ScienceSection, ScienceTabId } from '$types/science';
 
   type Props = {
@@ -57,7 +56,7 @@
   const previewParagraph = $derived(sectionData?.narrative_101?.[0] ?? null);
 </script>
 
-<a class="card" href="{base}/science/{tab}/{section}" data-science-card>
+<a class="card" href={localHref(`/science/${tab}/${section}`)} data-science-card>
   {#if why}
     <p class="why">{why}</p>
   {/if}

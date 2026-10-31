@@ -16,7 +16,7 @@
     },
     {
       "met": 2451,
-      "label": "SATURN-ORBITEINFÜGUNG",
+      "label": "EINSCHWENKEN IN DIE SATURNUMLAUFBAHN",
       "note": "Cassini (mit angebrachtem Huygens) wird am 01.07.2004 in die Saturn-Umlaufbahn eingefangen.",
       "type": "nominal"
     },
@@ -32,5 +32,6 @@
       "note": "14.01.2005: Wärmeschild, drei Fallschirmstadien, 2,5-stündiger Abstieg, Oberflächenlandung — erste sanfte Landung im äußeren Sonnensystem.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur-Oberstufe"
 }

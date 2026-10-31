@@ -1,0 +1,1226 @@
+[
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "delta_v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Ed White — prima passeggiata spaziale americana, ~23 min, vincolato da un cavo, con un'unità di manovra portatile.",
+    "note": "English 'tether' left in; unit name awkward."
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2008-11-02. Inverno marziano; energia solare sotto la soglia operativa.",
+    "note": "Date converted away from ISO format."
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Il volo suborbitale di 15 minuti di Gus Grissom — secondo americano nello spazio, primo volo con un portello di fuga esplosivo. Dopo l'ammaraggio il portello si è azionato prematuramente, la capsula si è allagata e la Liberty Bell 7 è affondata in 4900 m d'acqua; Grissom è riuscito a mettersi in salvo, ma la sua tuta ha imbarcato acqua e per poco non è annegato mentre l'elicottero lo recuperava. La causa dell'azionamento del portello rimase controversa per decenni; Grissom sostenne di non aver urtato il percussore. Recuperata il 1999-07-20 da una spedizione di Oceaneering e Discovery Channel, restaurata e oggi esposta al Kansas Cosmosphere & Space Center di Hutchinson (Kansas). Il libro di Tom Wolfe e il film del 1983 The Right Stuff hanno drammatizzato questo volo e la controversia sul portello.",
+    "note": "Helicopter pickup mistranslated; dates and phrasing clumsy."
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Soyuz 1 è il volo che uccise un cosmonauta, e non avrebbe mai dovuto volare. La nuova navicella Soyuz fu messa in servizio di fretta sotto pressione politica, con centinaia di difetti noti e irrisolti — a quanto si riferisce, gli ingegneri implorarono di rimandare — e in orbita cominciò a guastarsi: un pannello solare non si aprì, il controllo d'assetto lottava contro il pilota. Vladimir Komarov la riportò giù comunque, e all'ingresso atmosferico i paracadute si aggrovigliarono e non funzionarono. Toccò il suolo a piena velocità. Fu la prima morte nella storia dei voli spaziali umani, e la sua causa fu meno la sfortuna che un programma incapace di ammettere che la sua macchina non era pronta — esattamente il fallimento verso cui andava costruendosi la cultura delle imprese inedite, tenute nascoste e condannate a riuscire.",
+    "note": "Last clause garbled ('primati nascosti... stava costruendo')."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Iniezione transmarziana da LEO con i serbatoi pieni.",
+    "note": "'Stato LEO' and capitalised 'Trans-Mars' unnatural."
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Il quinto allunaggio con equipaggio e il primo in una zona di altopiani, non in un mare lunare. I geologi si aspettavano che Descartes fosse vulcanico; l'Apollo 16 smentì questa ipotesi — ogni roccia riportata era breccia (detriti frantumati dagli impatti), cambiando la comprensione degli altopiani lunari come prodotti di impatti catastrofici anziché di un antico vulcanismo. Young e Duke completarono tre EVA con il LRV per un totale di 20 h 14 m, percorsero 26,7 km e riportarono 95,7 kg di campioni (il carico più pesante dell'Apollo fino a quella data). Il «Gran Premio lunare» di Young — un test di velocità del LRV trasmesso in televisione — raggiunse un picco di ~17 km/h. Il tentativo di balzo di Duke, durato 11 secondi, durante un tentativo di record di salto in lungo rischiava di danneggiare il suo zaino PLSS e fu interrotto. La foto di famiglia di Charlie Duke e la «Camera/Spettrografo per l'ultravioletto lontano» — il primo osservatorio astronomico gestito dalla superficie di un altro mondo — rimasero entrambe nel sito di allunaggio. Mattingly, inizialmente assegnato all'Apollo 13 (sostituito prima del lancio per il timore della rosolia), riuscì finalmente a volare verso la Luna.",
+    "note": "German measles rendered as 'morbillo tedesco'; hop attempt garbled; English left."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Il veicolo di risalita decolla; rendezvous con l'orbiter.",
+    "note": "'Si solleva' is an odd verb for liftoff."
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Hera è il contributo dell'Agenzia Spaziale Europea al primo esperimento di difesa planetaria dell'umanità. Nel 2022 la sonda DART della NASA si è schiantata deliberatamente su Dimorphos — la piccola luna dell'asteroide Didymos — accorciandone in modo misurabile l'orbita. Hera, lanciata nell'ottobre 2024 su un Falcon 9, sta volando verso lo stesso asteroide binario (con una fionda gravitazionale su Marte nel 2025 lungo il tragitto) per condurre la dettagliata indagine post-impatto che DART non poteva fare: le dimensioni del cratere, la massa e la struttura interna di Dimorphos e l'esatta quantità di moto trasferita dall'impatto. Insieme, DART e Hera trasformano una dimostrazione isolata in una tecnica di deviazione ripetibile e ben caratterizzata. Hera trasporta due CubeSat, Juventas e Milani, per il sondaggio radar ravvicinato e la mineralogia.",
+    "note": "'Momento' wrong for momentum; 'CubeSats' plural form."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Saturn V (AS-506) dal Kennedy Space Center LC-39A 1969-07-16 13:32 UTC.",
+    "note": "Date converted away from ISO format."
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Allunaggio dolce nel cratere Le Monnier il 1973-01-15. Il Lunokhod 2 scese dalle rampe poche ore dopo.",
+    "note": "Date converted away from ISO format."
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Ammiraglia sovietico-ESA dell'armata di Halley. Il Vega 1 fu lanciato il 1984-12-15 con un lander della linea Venera e un pallone di elio, primo del suo genere, costruito da ESA/CNES, che andò alla deriva nella coltre nuvolosa di Venere a 54 km di quota per 46,5 ore, trasmettendo dati di vento e temperatura tramite una rete radio globale di 20 stazioni. Dopo aver sganciato il modulo di discesa, la sonda usò la fionda gravitazionale di Venere per dirigersi verso la cometa 1P/Halley, raggiungendo una distanza minima di 8890 km il 1986-03-06 — il primo incontro con un nucleo cometario e la determinazione di posizione che la Giotto dell'ESA usò per guidare il proprio sorvolo di Halley, molto più ravvicinato, una settimana dopo.",
+    "note": "'Fix di posizione' and 'bus' left as English jargon."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Glenn riferisce di «lucciole» luminose fuori dal finestrino — frammenti del retropacco che si disgregano per ablazione durante l'ingresso atmosferico.",
+    "note": "'Retro-pacco' odd; 'bruciano' loses ablation."
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "vehicle",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "delta_v",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "~16 km/s (incluse 7 fionde gravitazionali di Venere)",
+    "note": "English abbreviation 'incl.' left in."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Il braccio raschia il terreno superficiale. Il ghiaccio bianco brillante sublima davanti alla telecamera nell'arco di 4 sol.",
+    "note": "'Raschia attraverso il suolo' unnatural."
+  },
+  {
+    "rel": "missions/earth/aurora-7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "vehicle",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/skylab-3.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Perdita da un gruppo di propulsori RCS (quad) del modulo di servizio; il CSM-119 di soccorso preparato a Cape Canaveral ma non lanciato.",
+    "note": "English 'rescue' left in; 'quad' not rendered."
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Opportunity ha percorso una maratona su un altro pianeta. Gemello di Spirit, atterrato nel 2004 per una missione di novanta giorni, ha funzionato per quattordici anni e ha percorso più di quarantacinque chilometri — la distanza maggiore mai coperta da un veicolo su qualsiasi mondo. È arrivato, per fortuna, in un piccolo cratere le cui pareti mostravano esattamente la roccia depositata dall'acqua che era stato inviato a cercare, e poi ha semplicemente continuato, da cratere a cratere, leggendo l'antica storia dell'acqua su Marte chilometro dopo chilometro. Una tempesta di polvere su scala planetaria lo ha infine ridotto al silenzio nel 2018.",
+    "note": "'Water-laid' rendered as 'altered by water'; wording stiff."
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Primo volo del programma di veicoli spaziali con equipaggio Shenzhou. Lanciato il 1999-11-19 alle 22:30 UTC da Jiuquan nel volo inaugurale del Long March 2F (CZ-2F) abilitato al trasporto umano. La capsula ha completato 14 orbite a 195 × 315 km, con inclinazione di 42,6°, ed è rientrata atterrando nella steppa della Mongolia Interna il 1999-11-20 alle 19:41 UTC. Trasportava hardware simulato per il supporto vitale, pacchetti di telemetria e una bandiera cinese, oltre a semi per un carico di ritorno di genetica in microgravità. Ha segnato l'impegno della Cina a seguire URSS e USA verso il volo spaziale umano indipendente; ha portato direttamente allo Shenzhou 5 (2003) con Yang Liwei.",
+    "note": "'Navetta' means shuttle; 'condotto' and 'effettuato' phrasing stiff."
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/aurora-7.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Orion atterra negli altopiani di Descartes 1972-04-21 02:23 UTC — primo allunaggio in un altopiano (non in un mare lunare).",
+    "note": "'Highlands', 'non-mare' left in; 'a Altopiano' ungrammatical."
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "vehicle",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Wally Schirra e Tom Stafford realizzarono il primo rendezvous spaziale con equipaggio il 15 dicembre 1965, mantenendo la posizione a ~30 cm da Gemini 7 per oltre cinque ore. Era stato preceduto, tre giorni prima, da uno spegnimento dei motori sulla rampa di lancio in cui Schirra scelse di non abortire. Durata ~1 g 1 h; 16 orbite.",
+    "note": "'Tre giorni prima che Schirra scelse' ungrammatical."
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.9.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Il CM Columbia riporta l'equipaggio nell'Oceano Pacifico il 1969-07-24.",
+    "note": "Date converted away from ISO format."
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Phoenix fu recuperata dal programma annullato Mars Surveyor 2001 — hardware di volo rimasto in deposito per sei anni, riassemblato e riorientato verso le pianure polari settentrionali di Marte. Il nome fu scelto in senso letterale. Atterrò il 2008-05-25 a 68,22°N, 234,25°E su Vastitas Borealis, più a nord di qualsiasi missione di superficie precedente. Nel giro di pochi giorni il braccio robotico raschiò il terreno superficiale ed espose ghiaccio bianco brillante che sublimò visibilmente davanti alla telecamera nell'arco di quattro sol — conferma diretta di ghiaccio d'acqua nel sottosuolo dell'Artico marziano. Rilevò perclorati nella regolite e osservò neve cadere dalle nuvole. La missione terminò il 2008-11-02, quando l'energia solare scese sotto la soglia operativa all'inizio dell'inverno marziano; non ci si aspettava che il lander sopravvivesse alla notte polare.",
+    "note": "Dates converted from ISO; 'ridiretto' and 'raschiò attraverso' unnatural."
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Lancio condiviso su Falcon 9 da Cape Canaveral 2019-02-22.",
+    "note": "English 'rideshare' left in."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "1997-06-27: sorvolo a 1.212 km dell'asteroide carbonaceo Mathilde; 500 immagini.",
+    "note": "Date converted away from ISO format."
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Il volo di 1 giorno di Pavel Beljaev + Aleksej Leonov — prima EVA della storia. Leonov trascorse 12 min fuori dalla Voskhod 2 (1965-03-18 11:34 UTC), uscendo attraverso un'eclusa gonfiabile Volga pressurizzata, che gli ingegneri sovietici aggiunsero perché lo scafo della Voskhod non aveva spazio per una depressurizzazione completa. La tuta di Leonov si gonfiò nel vuoto, bloccandolo fuori dall'eclusa; dovette sfiatare la pressione della tuta per rientrare, aumentando il rischio di malattia da decompressione. Altrettanto drammatico fu l'ingresso atmosferico — il sistema di atterraggio automatico fallì e Beljaev pilotò manualmente il modulo di discesa fino a un atterraggio duro nella neve profonda degli Urali, a ~390 km dal bersaglio; l'equipaggio sopravvisse due notti nella foresta tra i lupi prima che gli elicotteri di soccorso arrivassero il 1965-03-21. Anche l'atmosfera della cabina divenne ricca di O₂ in orbita, dopo che il portello dell'EVA non si richiuse correttamente, con un breve rischio di combustione spontanea.",
+    "note": "'In pressurizzazione' mangled; 'autoaccensione spontanea' redundant."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Discesa a spinta regolata del BE-7 verso la superficie lunare — primo allunaggio di Blue Origin.",
+    "note": "'Touchdown' left in; 'throttled' misrendered as slowed."
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Schweickart esegue una EVA di 38 min sulla piattaforma del LM. EVA in piedi di Scott dal portello del CSM. Prima convalida dello zaino PLSS dell'Apollo.",
+    "note": "'Stand-up' EVA rendered 'seduta' (seated); 'porch' as hatch."
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Vostok 1 è il punto in cui l'era spaziale comincia con una persona a bordo. Per 108 minuti, il 12 aprile 1961, Jurij Gagarin — pilota da caccia ventisettenne — fu il primo essere umano a lasciare il pianeta e a compiere un'orbita attorno a esso, e il mondo si svegliò scoprendo che l'Unione Sovietica aveva fatto la cosa che tutti credevano avrebbe fatto per prima l'America. Non aveva quasi alcun controllo della navicella; il volo era gestito da terra ed egli era tanto passeggero quanto pilota, sigillato in una sfera costruita per riportarlo a casa che fosse cosciente o no. Non importava. Un essere umano aveva compiuto il giro della Terra ed era tornato, e nulla di come le persone vedevano il proprio posto nell'universo fu più lo stesso dopo.",
+    "note": "Calque 'orbitarlo/orbitato la Terra'; clumsy relative clause."
+  },
+  {
+    "rel": "missions/earth/freedom-7.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "La Resilience è ammarata al largo della Florida il 2024-09-15 alle 07:36 UTC.",
+    "note": "Capsule is feminine; participle 'ammarato' disagrees."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "La fionda gravitazionale terrestre sincronizza l'orbita per il rendezvous.",
+    "note": "'Fase' used as a verb; not Italian."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.9.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2033-03. Culmine della missione: troiano binario di 113 km + 104 km.",
+    "note": "'Climax' and 'binario Troiano' awkward."
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "La Liberty Bell 7 volò alla perfezione ed è ricordata per i trenta secondi dopo che aveva smesso di volare. Il balzo suborbitale di Gus Grissom ripeté quello di Shepard — la prova che il primo volo non era stato un caso fortunato — ma sull'acqua il nuovo portello esplosivo scattò da solo, la capsula si allagò e affondò sul fondo dell'Atlantico mentre Grissom rischiava di annegare nella tuta che si riempiva d'acqua. Se avesse urtato l'innesco o se questo fosse scattato da solo fu oggetto di discussione per il resto della sua vita e non fu mai chiarito. La vera lezione del volo era più discreta e più utile: la parte più pericolosa di un volo spaziale non è sempre il volo spaziale.",
+    "note": "'Nel suo tuta' gender error; 'rischiava quasi' redundant."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "delta_v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Oceano Atlantico, a 480 km dalla rampa di lancio nella direzione del volo. Il portello si è azionato prematuramente — la capsula si è allagata ed è affondata. Grissom è riuscito a mettersi in salvo; recuperato dalla USS Randolph.",
+    "note": "'Downrange' misrendered as 'a valle della traiettoria'."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Accensione da 760 m/s. Seguono 49 sorvoli di Europa in 4 anni.",
+    "note": "Burn not rendered with required term 'accensione'."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "new": "Spirit (MER-A) ha rimbalzato 28 volte sul fondo del cratere Gusev il 2004-01-04 e si è fermato rotolando a 250 m dal primo impatto. Progettato per una missione primaria di 90 sol, sarebbe sopravvissuto per 2.208 sol. Ha percorso 7,7 km nelle pianure di Gusev, è salito sulle Columbia Hills e ha scoperto rocce contenenti ematite che indicavano la presenza persistente di acqua antica. Nel 2009-04 una ruota ha sfondato una crosta di solfati a «Troy» e Spirit si è bloccato nel terreno soffice; il team lo ha trasformato in una piattaforma stazionaria. Ultima trasmissione 2010-03-22; missione dichiarata conclusa 2011-05-25. Gemello di Opportunity, atterrato tre settimane dopo sul lato opposto di Marte.",
+    "note": "Dropped 'persistent' and 'rolled to a stop'."
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Le prime ruote sulla Luna — guidate da una sala di controllo in Crimea. Il Lunokhod 1 era una vasca pressurizzata da 322 kg montata su otto ruote a trazione indipendente, controllata in tempo reale da una squadra di cinque persone nonostante il ritardo di 2,5 secondi dovuto alla velocità della luce. Ha percorso 10,5 km in 11 giorni lunari (322 giorni terrestri), ha fotografato oltre 20.000 scene e ha funzionato ben oltre i 90 giorni previsti dal progetto. Dimenticato dalla storia negli anni '70, è stato ritrovato nel 2010, quando il Lunar Reconnaissance Orbiter della NASA lo ha individuato fermo dove si era arrestato.",
+    "note": "'Di NASA', 'seduto' and delay phrasing unnatural."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Curiosity è un laboratorio alimentato a energia nucleare, grande quanto una piccola automobile, e farlo scendere è stata la parte difficile. Troppo pesante per gli airbag, nel 2012 fu calato su Marte da una gru volante a razzo in una sequenza così rischiosa che i suoi progettisti la chiamarono sette minuti di terrore — e funzionò al primo tentativo. Da allora ha trivellato la propria strada attraverso il cratere Gale e ha risposto alla domanda per cui era stato inviato: il cratere un tempo ospitava un lago, con la chimica che un essere vivente avrebbe potuto sfruttare. Marte era stato abitabile. Curiosity è ancora in marcia, e sale su una montagna di roccia stratificata che si legge come il libro di storia del pianeta stesso.",
+    "note": "'A propulsione nucleare' wrong: it is nuclear-powered, not propelled."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "La prova generale completa del primo allunaggio. Stafford e Cernan portarono il LM Snoopy fino a una quota di ~15,6 km sul sito di allunaggio previsto per l'Apollo 11 nel Mare Tranquillitatis — ogni fase dell'avvicinamento all'allunaggio tranne l'allunaggio vero e proprio. Confermarono il profilo di discesa, il radar di allunaggio, la traiettoria di salita e la procedura di rendezvous che l'Apollo 11 avrebbe usato due mesi dopo. I serbatoi di propellente dello stadio di salita del LM furono volutamente caricati solo a metà (~50 % del nominale) per evitare qualsiasi tentazione di tentare un allunaggio. Lo stadio di salita di Snoopy fu l'unico a lasciare l'orbita lunare con ∆v positivo — gettato in un'orbita eliocentrica dove si trova ancora oggi, rilevato a intermittenza da astronomi dilettanti (confermato da ultimo da Nick Howes / Faulkes Telescope, 2019).",
+    "note": "'Riempiti sottodimensionati' is nonsense; other phrasing clumsy."
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "La capsula dei campioni atterra nella Mongolia Interna il 2020-12-16.",
+    "note": "Date converted away from ISO format."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "type",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "RITORNO DI CAMPIONI + LANDER · ATTIVA (estesa)",
+    "note": "Label mostly left in English."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "EVA-2: al cratere Spur, Scott + Irwin recuperano il campione 15415 — un'anortosite di 4,1 miliardi di anni proveniente dalla crosta lunare originaria.",
+    "note": "'Al Spur Crater' left English; spelling of anorthosite."
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Shepard + Mitchell dispiegano l'ALSEP + primo percorso di geologia lunare di questa missione.",
+    "note": "English 'traverse' left in."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Due contatti con la superficie 2005-11-20 e 25. I proiettili per la raccolta di campioni non partono al comando.",
+    "note": "'Non si sparano su comando' ungrammatical."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Accensione per l'iniezione translunare dell'S-IVB; CSM + LM vengono lanciati su una traiettoria cislunare.",
+    "note": "'Cislunar' English; 'si impegnano' calque."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.7.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "2020-06-15, 0,51 au. Inizia la fase scientifica iniziale.",
+    "note": "'Inizia la scienza iniziale' unnatural."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Il primo volo con equipaggio del Modulo Lunare. In orbita terrestre, McDivitt e Schweickart sganciarono il LM Spider dal CSM Gumdrop, si allontanarono fino a 183 km nell'arco di sei ore, poi eseguirono il rendezvous e si agganciarono di nuovo — ogni passo della procedura di rendezvous lunare fu collaudato senza la possibilità di riportare a casa l'equipaggio nel CSM in caso di problemi. Schweickart effettuò una EVA di 38 minuti sulla piattaforma del LM, dimostrando la tuta EVA dell'Apollo e lo zaino PLSS che gli equipaggi destinati a camminare sulla Luna avrebbero usato. Scott effettuò una EVA in piedi dal portello del CSM. Con l'hardware del LM e le procedure di rendezvous verificati, la NASA aveva via libera per inviare l'Apollo 10 sulla Luna due mesi dopo.",
+    "note": "'Stand-up' EVA rendered seated; 'porch' as hatch; mixed tenses."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Saturn V (AS-507) dal Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Due fulmini hanno colpito il razzo completo (T+36 s, T+52 s) e hanno messo fuori servizio le celle a combustibile; ripristino tramite la chiamata «SCE to AUX».",
+    "note": "'Stack' rendered as 'torre' (tower)."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.9.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Worden esegue la prima EVA di sempre nello spazio cislunare (~39 min a ~317 000 km dalla Terra) per recuperare i contenitori di pellicola del vano SIM.",
+    "note": "'Cislunar' left English; 'primo-assoluto EVA' calque."
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Apollo 11 fu la missione che l'intero programma era stato concepito per realizzare — quella che doveva funzionare. Per otto anni e 25 miliardi di dollari, tutto ciò che la NASA fece si ridusse, alla fine, a portare due persone su questo particolare lembo di polvere grigia e riportarle indietro vive. Quando Armstrong annunciò «l'Aquila è atterrata», la corsa della Guerra Fredda iniziata con una sfera che emetteva segnali acustici sopra le città americane era di fatto conclusa. Ciò che è facile dimenticare oggi è quanto fosse ridotto il margine: l'equipaggio atterrò con pochi secondi di carburante residuo, superando un campo di massi che le mappe non avevano rilevato, a bordo di un computer di guida che lanciava allarmi per tutto il tragitto. Funzionò comunque — e per una notte, un quinto della specie osservò la stessa cosa nello stesso momento.",
+    "note": "Famous quote 'Eagle has landed' left in English."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Apollo 10 volò l'intero allunaggio — fino agli ultimi quindici chilometri — e poi, per progetto, invertì la rotta. Stafford e Cernan portarono il Modulo Lunare fino a un tiro di schioppo dalla superficie a Tranquility, eseguirono ogni fase della discesa e risalirono in orbita senza toccare il suolo. La NASA lasciò persino i serbatoi di risalita semivuoti, così che, per quanto allettante potesse diventare, tentare l'allunaggio non fu mai un'opzione. È il volo meno celebrato del programma e uno dei più disciplinati: una prova a piena velocità da parte di due uomini che volarono per un quarto di milione di miglia sapendo che l'allunaggio spettava a qualcun altro.",
+    "note": "'Lunar Module' left in English."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "dispatch",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Pioneer 11 fu la seconda sonda esploratrice, e andò più lontano del suo gemello. Dopo il proprio passaggio presso Giove usò la gravità del pianeta per attraversare il sistema solare e raggiungere Saturno nel 1979 — il primo veicolo spaziale a riuscirci — attraversando deliberatamente il piano degli anelli per verificare se la regione fosse sicura. Trovò il varco che i Voyager avrebbero percorso un anno dopo. Gran parte di ciò che rese possibile il Grand Tour fu questo: una sonda piccola ed economica inviata avanti a correre i rischi e a mappare i pericoli, affinché le navi ammiraglie che la seguivano potessero volare con fiducia anziché con paura.",
+    "note": "'Sorvolando' the ring plane wrong; twin plural; tense mixing."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "L'angolo del Sole cambia; i pannelli solari generano energia; le operazioni riprendono per un giorno lunare.",
+    "note": "Noun phrase and past tense mixed with present."
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Avvicinamento minimo alla cometa 1P/Halley a 8030 km — rilevamento di posizione abbinato per Giotto.",
+    "note": "'Accoppiata' misused; 'massimo avvicinamento' inconsistent with Vega 1."
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Apollo 1 era il primo volo con equipaggio pianificato del CSM Apollo Block I, originariamente designato AS-204 e programmato per il lancio il 1967-02-21 dal LC-34. Durante un test di routine «plugs-out» il 1967-01-27 alle 17:31 EST, con l'equipaggio sigillato all'interno della cabina pressurizzata a ossigeno puro, un incendio improvviso si sviluppò nel vano apparecchiature inferiore — probabilmente un arco elettrico da un filo isolato in Teflon attraverso rame placcato in argento, danneggiato durante l'installazione. La pressione in cabina salì a 29 psi in 15 secondi; il portello con apertura verso l'interno non poté essere sbloccato contro il differenziale di pressione. Gus Grissom, Ed White e Roger Chaffee morirono per asfissia nel giro di pochi secondi. L'inchiesta portò a una completa riprogettazione da Block I a Block II + il più sicuro portello unificato con apertura verso l'esterno + materiali di cabina non infiammabili + atmosfera di cabina ricca di azoto prima del lancio. La designazione ufficiale Apollo 1 fu assegnata postuma in onore dell'equipaggio. Le missioni Apollo successive (da CSM-101 a CSM-114) volarono con l'hardware Block II prodotto da questa riprogettazione.",
+    "note": "Dates converted from ISO; electrical-arc sentence garbled."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Atlas V 401 da Cape Canaveral SLC-41 (con l'impattore LCROSS come carico secondario).",
+    "note": "LCROSS impactor rendered 'simulation device'."
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "La capsula esce dall'orbita; Titov si eietta a ~7 km e atterra con il paracadute a Krasny Kut.",
+    "note": "'Disorbita' and 'ha fatto paracadute' not proper Italian."
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Jared Isaacman, Sian Proctor, Hayley Arceneaux e Chris Sembroski — il primo volo orbitale con equipaggio composto interamente da persone che non erano astronauti governativi professionisti. Lanciati il 2021-09-15 alle 00:02 UTC dal LC-39A sul Falcon 9 B1062 (terzo volo), a bordo del Crew Dragon Resilience (C207, già volato in Crew-1). Raggiunsero un'orbita circolare a 585 km e 51,6° di inclinazione — l'orbita con equipaggio più alta dalle missioni di servizio di Hubble. Nessun aggancio a stazioni; tre giorni di volo libero, inclusa la prima cupola a bordo (in sostituzione dell'adattatore di aggancio). Ammararono al largo della Florida il 2021-09-18 alle 23:06 UTC. La missione raccolse oltre 243 milioni di dollari per il St. Jude Children's Research Hospital — Arceneaux è una ex paziente di St. Jude e la prima sopravvissuta al cancro in orbita.",
+    "note": "'Adattatore di docking' ignores binding; '243 M$' unnatural."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.7.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "vehicle_stage",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "L'impianto ISRU ha prodotto metano + LOX sufficienti come propellente per il viaggio di ritorno.",
+    "note": "'Di andata e ritorno' wrong: return-trip only."
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "payload",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "delta_v",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/artemis3.json",
+    "at": "vehicle",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Test «plugs-out» 1967-01-27 17:31 EST. Incendio improvviso nella cabina pressurizzata a O₂ puro; la pressione della cabina salì fino a 29 psi in 15 s.",
+    "note": "'Accessi rimossi' mistranslates plugs-out; inconsistent with description."
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Rendezvous con la Starship cisterna e trasferimento di propellente in LEO nell'arco di più voli.",
+    "note": "'Petroliera' means oil tanker, not propellant tanker."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "dispatch",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  }
+]

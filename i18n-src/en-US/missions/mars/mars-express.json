@@ -12,5 +12,6 @@
     { "met": 200, "label": "BEAGLE 2 RELEASE", "note": "Lander separates from orbiter for independent descent.", "type": "nominal" },
     { "met": 206, "label": "MARS ORBIT INSERTION", "note": "37-minute main engine burn captures orbiter into Mars orbit on Christmas Day 2003.", "type": "nominal" },
     { "met": 212, "label": "BEAGLE 2 SILENT", "note": "Expected first signal not received; lander declared lost.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Fregat upper stage"
 }

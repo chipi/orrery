@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "La lección más profunda es que la paciencia convierte indicios en conocimiento. El océano de Europa era invisible en cualquier pasada individual; emergió solo del peso acumulado de muchas, reunidas durante años en órbita. Los descubrimientos más importantes frecuentemente no se ven sino que se construyen —ensamblados medición por medición, hasta que una hipótesis se convierte en lo único que encaja con los datos."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Júpiter en el explorador 3D",
+    "/programs/cassini": "Cassini: la misma idea, en Saturno"
+  }
 }

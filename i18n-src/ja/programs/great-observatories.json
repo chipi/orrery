@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "より深い教訓は、単一の勝利よりも持続的な伝統の価値である。この計画の真の力は元の四つの望遠鏡ではなく、それらが始めた野心の連続性である — より優れた眼を構築し続ける数十年にわたるコミットメント。個々のミッションは老朽化し終わる。常に次の、より良い天文台を構築するという伝統こそが、視界を拡大し続けるものである。"
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=hubble": "フリート — Hubble、Chandra、Spitzer、JWST",
+    "/programs/space-shuttle": "Space Shuttle — Hubble を打ち上げ、整備した機体",
+    "/explore": "探索 — これらの望遠鏡が明らかにしたディープスカイ天体",
+    "/earth?site=hubble": "地球低軌道の Hubble",
+    "/earth?site=chandra": "Chandra X 線観測衛星"
+  }
 }

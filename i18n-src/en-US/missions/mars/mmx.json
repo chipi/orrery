@@ -12,5 +12,6 @@
     { "met": 600, "label": "ROVER DEPLOY", "note": "DLR/CNES rover (~25 kg) released onto Phobos surface for in-situ studies.", "type": "info" },
     { "met": 1100, "label": "PHOBOS SAMPLE", "note": "MMX touches down on Phobos; ~10 g of regolith collected.", "type": "info" },
     { "met": 1500, "label": "EARTH RETURN", "note": "Sample re-entry capsule arrives at Earth ~2031.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "H3-24L second stage"
 }

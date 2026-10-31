@@ -1,15 +1,15 @@
 {
-  "description": "De enige natuurlijke satelliet van de Aarde en de enige wereld anders dan de Aarde waar menselijk leven ter voet is geweest. De 1:1-getijdenslot houdt dezelfde hemisfeer steeds naar de Aarde gericht — de voor- of nabijzijde gedomineerd door lavagevulde mariabekkens, de achterzijde een oud berghoog landschap met inslagkraters onder leiding van het Zuidpool-Aitken-bekken, de grootste inslagstructuur in het zonnestelsel (~2500 km breed, ~13 km diep). De langzame terugtrekking van de Maan van de Aarde (~3,8 cm/jaar) verlengt geleidelijk de dag van de Aarde; in het verre verleden verscheen deze bijna drie keer zo groot in de hemel in hoekgrootte als nu.",
+  "description": "De enige natuurlijke satelliet van de Aarde en de enige wereld buiten de Aarde waarop mensen hebben gelopen. Door het getijdenslot van 1:1 blijft steeds dezelfde kant naar de Aarde gericht — de voorzijde wordt gedomineerd door met lava gevulde maria-bekkens, de achterzijde is een oud hooglandterrein vol inslagkraters, met als kroon het Zuidpool-Aitken-bekken, de grootste inslagstructuur in het zonnestelsel (~2.500 km breed, ~13 km diep). De Maan verwijdert zich langzaam van de Aarde (~3,8 cm/jaar), waardoor de dag op Aarde geleidelijk langer wordt; in het verre verleden leek ze aan de hemel bijna drie keer zo groot als nu.",
   "science_sections": [
     {
       "tab": "orbits",
       "section": "keplerian-orbit",
-      "why": "De baan van de Maan rond de Aarde is het leerboekvoorbeeld van een twee-lichamen Kepleriaans systeem — alle andere berekeningen van manen rond planeten generaliseren hiervan."
+      "why": "De baan van de Maan rond de Aarde is het schoolvoorbeeld van een keplersysteem met twee lichamen — elke andere berekening van manen rond planeten is hiervan afgeleid."
     },
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "De excentriciteit van de Maan van 0.055 is klein maar relevant — bij perigeum ziet de schijf er 12 % groter en helderder uit dan bij apogeum ('supermaan')."
+      "why": "De excentriciteit van de Maan (0,055) is klein maar relevant — bij perigeum lijkt de schijf 12 % groter en helderder dan bij apogeum ('supermaan')."
     },
     {
       "tab": "orbits",

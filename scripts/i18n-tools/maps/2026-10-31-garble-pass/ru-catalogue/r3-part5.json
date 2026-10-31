@@ -1,0 +1,1144 @@
+[
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Если пояс астероидов — это тонкое кольцо вокруг внутренней части Солнечной системы, то пояс Койпера в 1000 раз шире и содержит в десятки раз большую массу (~50× и более). Солнечный свет на Плутоне составляет 1/1600 от его интенсивности на Земле.",
+    "note": "Last sentence clumsy and repetitive."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Ближайшая к Земле область космоса — от 160 до 2000 км над поверхностью. Задержка связи мала (~7 мс в одну сторону), атмосферное сопротивление ещё сказывается на нижней границе, а радиационные пояса пока не начинаются. Пилотируемые полёты тоже проходят здесь по тем же причинам: экипаж можно спасти, до него можно добраться, а человеческое тело переносит дорогу в несколько сотен километров. Каждая космическая станция, когда-либо летавшая, находилась на LEO.",
+    "note": "Several awkward literal phrases (drag tugs, radiation belts not in force)."
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Внешняя планетная область — от 5 до 30 а. е. Два газовых гиганта (Юпитер, Сатурн) с водородно-гелиевыми оболочками толщиной в тысячи километров над небольшими скалистыми ядрами; два ледяных гиганта (Уран, Нептун) с водно-аммиачно-метановыми мантиями под более тонкой газовой оболочкой. Вместе они содержат 99% всей планетной массы в Солнечной системе. У каждого из них своя система спутников, напоминающая миниатюрную Солнечную систему, — только у Юпитера известно 95 спутников, из которых четыре больше Плутона.",
+    "note": "AU left in Latin; lowercase solar system; stiff phrasing."
+  },
+  {
+    "rel": "earth-objects/chandra.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Chandra была слишком велика для прямого вывода на ГСО. Инженеры нашли нестандартное решение — сильно эллиптическую орбиту, — превратив ограничение в преимущество для науки.",
+    "note": "Dropped \"creative\"; \"выход на ГСО\" imprecise."
+  },
+  {
+    "rel": "earth-objects/iridium-next.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Спутник Iridium 33 столкнулся с неработающим «Космосом-2251» на высоте 776 км в 2009 году — это было первое известное столкновение спутников в истории.",
+    "note": "Soviet satellite name should be in Cyrillic in ru."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.checked.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "104-километровый вторичный компонент двойной системы Патрокл–Менетий в рое троянцев L5 — партнёр Патрокла с почти равной массой, находящийся от него на расстоянии 680 км. Встреча Lucy в 2033-03 станет первым детальным изучением двойной системы троянцев и позволит картографировать обоих партнёров одновременно.",
+    "note": "Gender/number agreement errors; awkward binary phrasing."
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "library_labels.triton-trident",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "library_labels.charon-new-horizons",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "NASA New Horizons — пролёт у Плутона и Харона (2015)",
+    "note": "\"Плутона-Харона\" awkward genitive compound."
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Трёхблочный вариант Falcon 9. Два боковых ускорителя возвращаются на площадки или дрон-корабли; центральный блок садится в море или расходуется ради максимальной полезной нагрузки. В 2018 году продемонстрирован запуском Tesla Roadster на гелиоцентрическую траекторию, пересекающую орбиту Марса.",
+    "note": "\"на трёх первых ступенях\" misstates three-core design."
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Околоземный астероид арахисообразной формы размером 535 × 294 × 209 м, открытый в 1998 году. Сближение с космическим аппаратом Hayabusa в 2005 году показало, что Итокава — гравитационно связанная груда обломков, а не монолитное тело: совокупность фрагментов, удерживаемых вместе взаимным притяжением. Распределение валунов и отсутствие ударных кратеров указывают на события переработки реголита на геологически активном малом теле.",
+    "note": "\"Земного пересечения\" wrong for near-Earth; \"сближение\" binding unused."
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "inclination",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/starliner.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cosmosphere-hutchinson.json",
+    "at": "items.merlin-1d",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "residents.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/poisk.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Открытие Плутона — первый опознанный ОПК (Томбо, США)",
+    "note": "USA and Tombaugh left in Latin."
+  },
+  {
+    "rel": "small-bodies/haumea.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Вытянутая форма Хаумеа (вращение с периодом 3,9 часа деформирует его в трёхосный эллипсоид) указывает на мощное столкновение, создавшее его семейство ледяных фрагментов.",
+    "note": "Decimal point instead of comma."
+  },
+  {
+    "rel": "orbit-regimes/MEO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "film",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/zarya.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Питание от батарей, хранение топлива и управление ориентацией на раннем этапе, до прибытия модуля «Звезда»; по-прежнему обеспечивает зазор и структурную преемственность вдоль российского сегмента.",
+    "note": "Wrong term for attitude control; missing \"модуля\" before Zvezda."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Спутник-1 — первый искусственный спутник Земли (СССР)",
+    "note": "USSR left in Latin."
+  },
+  {
+    "rel": "museums/intrepid-museum.json",
+    "at": "items.enterprise",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.8.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items./science/history/apollo-11-1969",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/salt.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Самый крупный спутник Солнечной системы — больше Меркурия, на 8% больше Луны. Ганимед — единственный спутник с собственным магнитным полем, что свидетельствует о частично расплавленном железном ядре. Под слоем льда толщиной примерно 150 км находится солёный океан, превосходящий по объёму все океаны Земли вместе взятые; некоторые модели предполагают слоистую структуру с несколькими океанами, разделёнными ледяными фазами разной плотности. Аппарат JUICE миссии ESA станет первым искусственным спутником небесного тела, отличного от Луны Земли, когда в декабре 2034 года выйдет на орбиту Ганимеда.",
+    "note": "\"Самогенерирующимся\", missing ё, awkward JUICE sentence."
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/starliner.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/change2.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Полярная окололунная орбита высотой 100 км на лунном этапе. Первый китайский полёт в дальний космос после продлённой эксплуатации; первая миссия не от NASA и не от ESA в точку L2.",
+    "note": "Missing \"altitude\"; clumsy phrasing."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.cargo-dragon-v1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Троян типа P размером 21 км в ведущем рое юпитерианских троянов. После того как Lucy выбрала его целью, наблюдения Hubble выявили ранее неизвестный спутник — малый спутник размером 5 км, название которому ещё не утверждено.",
+    "note": "\"Лунула\" is a wrong word for moonlet; bad gender agreement."
+  },
+  {
+    "rel": "earth-objects/smart-1.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Полярная орбита на высоте ~470 км. Первое практическое применение ионной тяги в лунной миссии — образец для более поздних миссий ESA в дальний космос, BepiColombo и Hera.",
+    "note": "\"Оперативное применение\" literal; Hera not interplanetary."
+  },
+  {
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Неувядающее российское 3-местное пилотируемое такси — сближение за 2,5 суток после старта с Байконура и парашютная посадка в казахстанской степи.",
+    "note": "\"Вечнозелёное\" is a literal rendering of \"evergreen\"."
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/intrepid-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "firsts.2.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "New Horizons у Аррокота — самое далёкое тело, когда-либо посещённое (США)",
+    "note": "USA left in Latin."
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/cupola.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/stafford-air-and-space-museum.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "fact",
+    "new": "Музей в Уэзерфорде, штат Оклахома, родном городе астронавта Томаса П. Стаффорда.",
+    "note": "Middle initial P. dropped."
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.rejected.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/fernbank-science-center.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Научный центр в Атланте, которым управляет школьный округ графства ДеКалб.",
+    "note": "\"Школьный округ округа\" clumsy repetition."
+  },
+  {
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.1.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Voyager 2 — единственный пролёт мимо Урана за всё время (США)",
+    "note": "USA left in Latin."
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "items.viking-1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/change1.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Первая лунная миссия Китая, 2007–2009 годы. Задумана и осуществлена как предварительное испытание перед посадочным аппаратом Chang'e 3: орбитальный этап стал лётной репетицией дальней космической связи и орбитальной механики, от которых зависела миссия посадочного аппарата. По завершении работы аппарат намеренно врезался в Луну как испытание контролируемого удара.",
+    "note": "\"Преднамеренный прототип\", \"испытание в натуру\" awkward."
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/arecibo-message.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/chandra.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Рентгеновский «глаз» NASA. Предельно вытянутая орбита простирается от 9942 до 133 600 км — на треть пути до Луны. Это выводит аппарат из радиационных поясов Земли для длинных чистых наблюдений. Видит чёрные дыры, нейтронные звёзды, сверхновые — бурную высокоэнергетическую Вселенную, невидимую оптическим телескопам.",
+    "note": "\"Насильственную\" is wrong sense of \"violent\"."
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/MEO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Примерно 1/19 расстояния до Луны. Сигнал от GPS доходит до вашего телефона за ~67 мс — примерно в 10 раз дольше, чем с LEO.",
+    "note": "\"В 10× дольше\" awkward mix of × and Russian."
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/MOON.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Наименее плотная планета — она плавала бы на воде. Кольца тянутся на 282 000 км при толщине в метры. Наклон 26,73° означает, что с Земли кольца видны под разными углами за 29-летний оборот Сатурна.",
+    "note": "\"Рыхлая\" is wrong for \"least dense\"."
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Трёхступенчатая РН ISRO (бывш. GSLV Mk III): два твёрдотопливных ускорителя S200, жидкостная центральная ступень L110 и самостоятельно разработанная индийская криогенная верхняя ступень CE-20. Вывела Chandrayaan-2 (2019) и Chandrayaan-3 (2023) на лунные траектории. Сертифицирована для пилотируемой, пока предстоящей программы Gaganyaan.",
+    "note": "\"Отечественная\" reads as Russian; \"upcoming\" dropped."
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "science_sections.1.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Малый эксцентриситет Европы, равный 0,009, поддерживается возмущениями со стороны Ио — без них подповерхностный океан замёрз бы. К её изучению отправляется Europa Clipper (NASA, 2024–).",
+    "note": "Gender errors, \"без неё\" refers to nothing; unclear meaning."
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.sojourner",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/L2.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/gmrt.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.want",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/67p.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "У кометы 67P/Чурюмова — Герасименко e = 0,64: это комета семейства Юпитера, орбита которой изменилась из-за тесного сближения с Юпитером в 1959 году.",
+    "note": "Decimal point; awkward sentence start."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.2.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Малый эксцентриситет Нептуна, 0,0086, делает орбиту столь круговой, что размах между перигелием и афелием составляет менее 200 млн км при большой полуоси 30 а. е. — вариация всего 1,4 %.",
+    "note": "Decimal points, AU in Latin, \"мягкий\" odd."
+  },
+  {
+    "rel": "small-bodies/psyche.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "16 Psyche может быть обнажённым никель-железным ядром протопланеты, потерявшей мантию в бурную раннюю эпоху пояса. Аппарат NASA Psyche (запущен в 2023 году) прибудет в 2029 году.",
+    "note": "\"Открытым\" wrong for exposed; missing \"году\"."
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-science-and-industry-chicago.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.want",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.4.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Juno (NASA) находится на полярной орбите; Europa Clipper (NASA) и JUICE (ESA) в пути — выход на орбиту у Ганимеда в 2034 году.",
+    "note": "\"В полярной орбите\" wrong preposition; years lack \"году\"."
+  },
+  {
+    "rel": "museums/national-military-museum-bucharest.json",
+    "at": "items.soyuz-7k-ok",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "booster",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/madrid-dsn.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.rejected.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "изображения с jaxa.jp / isro.gov.in — защищены авторским правом, свободной лицензии нет",
+    "note": "Awkward word order of \"изображения\"."
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/planet-labs.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/jwst.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "library_labels.moon-lroc",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "scenarios/orrery-1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/uss-hornet-museum.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/tsiolkovsky-museum-kaluga.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Первый образец астероида, когда-либо возвращённый на Землю — аппарат JAXA Hayabusa пережил утечку гидразина, отказ трёх маховиков, отказ ионного двигателя и семинедельный перерыв в связи, чтобы доставить 1500 микрограммов материала Итокавы в Вумеру (Австралия) 2010-06-13.",
+    "note": "\"AUS\" left in; Woomera case form awkward."
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/leonardo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "library_labels.miranda-voyager2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lamost.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/intrepid-museum.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/zvezda.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "descent",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Большая полуось орбиты Макемаке, 45,7 а. е., помещает её в классический пояс Койпера — на таком расстоянии поверхностный метан сохраняется в виде доминирующего льда.",
+    "note": "AU left in Latin; \"полуось\" imprecise."
+  },
+  {
+    "rel": "observatories/vla.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Веста — второе по массе тело пояса астероидов; её поверхность — единственный подтверждённый источник HED-метеоритов, найденных на Земле, среди тел главного пояса.",
+    "note": "Word order suggests meteorites are in the main belt."
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "science_sections.3.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Каждое окно запуска на Марс — каждые 26 месяцев — это переход Гомана с орбиты Земли. Лестница стартует отсюда.",
+    "note": "\"Ladder\" mistranslated as \"трамплин\"."
+  },
+  {
+    "rel": "observatories/salt.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Первая РН, доставившая на другой мир марсоход с ядерным источником энергии",
+    "note": "\"Ядерный марсоход\" suggests a nuclear rover."
+  },
+  {
+    "rel": "iss-visitors/progress_ms.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/gps.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/kennedy-space-center-visitor-complex.json",
+    "at": "items.delta-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.resolution",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/miranda.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

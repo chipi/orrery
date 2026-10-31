@@ -11,5 +11,6 @@
     { "met": 0.01, "label": "TLI", "note": "LM-3B 상단부에서의 직접 달 궤도 투입.", "type": "nominal" },
     { "met": 5, "label": "달 궤도 진입", "note": "2013년 12월 6일 100km 원형 달 궤도로 포획.", "type": "nominal" },
     { "met": 13, "label": "착륙", "note": "비의 바다에서 2013년 12월 14일 연착륙. Luna 24(1976) 이후 처음으로 연착륙. 수 시간 후 Yutu 탐사로봇 배치.", "type": "nominal" }
-  ]
+  ],
+  "vehicle_stage": "Long March 3B/E와 YZ-1 상단"
 }

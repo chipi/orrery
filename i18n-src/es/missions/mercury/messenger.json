@@ -1,7 +1,7 @@
 {
   "name": "MESSENGER",
   "vehicle": "Delta II 7925H-9.5",
-  "payload": "Orbitador de Mercurio; protegido por parasol (cara frontal 370 °C, cara posterior -45 °C); siete instrumentos, entre ellos imagen, espectrómetros, magnetómetro, altímetro láser",
+  "payload": "Orbitador de Mercurio; protegido por un parasol (cara frontal 370 °C, cara posterior -45 °C); siete instrumentos, entre ellos un sistema de imágenes, espectrómetros, magnetómetro y altímetro láser",
   "delta_v": "~2,3 km/s (inserción en órbita de Mercurio)",
   "type": "SATÉLITE · COMPLETADO",
   "first": "Primera sonda en orbitar Mercurio; primer mapa de superficie completo del planeta más interno",
@@ -10,7 +10,7 @@
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Un cohete Delta II 7925H lanza MESSENGER en una trayectoria de seis encuentros.",
+      "note": "Un cohete Delta II 7925H lanza MESSENGER en una trayectoria de seis sobrevuelos.",
       "type": "nominal"
     },
     {
@@ -22,7 +22,7 @@
     {
       "met": 2419,
       "label": "INSERCIÓN EN ÓRBITA DE MERCURIO",
-      "note": "Quemado del motor principal coloca a MESSENGER en órbita de Mercurio después de siete años de crucero.",
+      "note": "El encendido del motor principal coloca a MESSENGER en órbita de Mercurio tras siete años de crucero.",
       "type": "nominal"
     }
   ]

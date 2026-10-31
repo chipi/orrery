@@ -1,0 +1,38 @@
+[
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "description",
+    "find": "после завершения программы Space Shuttle",
+    "replace": "после завершения полётов шаттлов"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "description",
+    "find": "Polar Satellite Launch Vehicle (PSLV) в",
+    "replace": "Polar Satellite Launch Vehicle в"
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "find": "группы Аполлона",
+    "replace": "группы Apollo"
+  },
+  {
+    "rel": "museums/fernbank-science-center.json",
+    "at": "description",
+    "find": "школьный округ графства ДеКалб",
+    "replace": "школьное управление округа DeKalb"
+  },
+  {
+    "rel": "earth-objects/planet-labs.json",
+    "at": "description",
+    "find": "~150 кубсатов PlanetScope 3U и ~21 спутник SkySat",
+    "replace": "~150 спутников PlanetScope формата 3U CubeSats и ~21 спутник SkySats"
+  },
+  {
+    "rel": "trajectories/hayabusa2.json",
+    "at": "current_distance_label",
+    "find": "в июле 2026 г.",
+    "replace": "2026-07"
+  }
+]

@@ -76,5 +76,9 @@
       "type": "prose",
       "md": "Die tiefere Lektion, die sich erst noch herausbildet, betrifft die Gefahr, eine Fähigkeit auszumustern, bevor ihr Ersatz gesichert ist. Die ISS hat ein festes Enddatum; ihre kommerziellen Nachfolger fliegen noch nicht. Darauf zu wetten, dass sich ein Markt pünktlich herausbildet – mit einer harten Frist und einem Rivalen, der bereits im Orbit ist –, ist ein Glücksspiel, bei dem es um nichts Geringeres geht als um die ununterbrochene menschliche Präsenz im niedrigen Erdorbit selbst."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "ISS — die Station, deren Nachfolger sie werden sollen",
+    "/programs/spacex": "SpaceX — der Crew- und Frachttransport, auf den sie angewiesen sein werden"
+  }
 }

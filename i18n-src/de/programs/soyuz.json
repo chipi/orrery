@@ -4,7 +4,7 @@
   "the_land": [
     {
       "type": "prose",
-      "md": "Mitte der 1960er Jahre war die Ära der Vostok-Erweiterungen vorbei, und beide Supermächte benötigten ein echtes Raumschiff der zweiten Generation — eines, das manövrieren, sich treffen und andocken konnte, die Fähigkeiten, die der Mond verlangen würde. Die sowjetische Antwort war Soyuz: Sergei Koroljows Entwurf für ein modulares Schiff in drei Teilen — ein kugelförmiges Orbitalmodul zum Wohnen, ein Abstiegsmodul für die Rückkehr und ein Servicemodul für Energie und Antrieb. Es war ein echter Sprung nach vorn. Aber Koroljow starb 1966 auf dem Operationstisch, bevor es flog, und das Programm verlor den einen Mann mit der Autorität zu sagen, dass eine Maschine noch nicht bereit war."
+      "md": "Mitte der 1960er Jahre war die Ära der Vostok-Erweiterungen vorbei, und beide Supermächte benötigten ein echtes Raumschiff der zweiten Generation — eines, das manövrieren, ein Rendezvous durchführen und andocken konnte, die Fähigkeiten, die der Mond verlangen würde. Die sowjetische Antwort war Soyuz: Sergei Koroljows Entwurf für ein modulares Schiff in drei Teilen — ein kugelförmiges Orbitalmodul zum Wohnen, ein Abstiegsmodul für die Rückkehr und ein Servicemodul für Energie und Antrieb. Es war ein echter Sprung nach vorn. Aber Koroljow starb 1966 auf dem Operationstisch, bevor es flog, und das Programm verlor den einen Mann mit der Autorität zu sagen, dass eine Maschine noch nicht bereit war."
     },
     {
       "type": "prose",
@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "Die zweite Lektion handelt von der Gefahr, einen Termin schwerer wiegen zu lassen als eine Warnung. Die Soyuz 1 flog mit Mängeln, auf die die eigenen Ingenieure hingewiesen hatten, weil es in jenem Monat wichtiger war, auf Apollo zu antworten, als einzugestehen, dass das Raumschiff noch nicht bereit war – und ein Kosmonaut bezahlte dafür mit seinem Leben. Es ist dasselbe Versagen, das die Kultur des Erfolgszwangs und der Geheimhaltung bei Vostok bereits eingeübt hatte, und am Ende wurde es mit einem Menschenleben beglichen. Wenn die Menschen, die der Maschine am nächsten sind, sagen, sie sei nicht bereit, dann ist es der Zeitplan, der weichen sollte."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze",
+    "/science/mission-phases/edl": "Eintritt, Abstieg & Landung"
+  }
 }

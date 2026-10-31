@@ -3,17 +3,18 @@
   "vehicle": "Proton-M / Briz-M",
   "payload": "577 kg（ExoMars 2016ミッションのEDMランダー部分、Trace Gas Orbiterと同時打上げ）",
   "delta_v": "~5.5 km/s",
-  "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
-  "first": "ESAの火星表面への初の着陸試行。ExoMars Rosalind Franklinに先立ち、着陸・下降・着地(EDL)技術の実証を目的とした。",
-  "description": "Schiaparelliは、ExoMars Trace Gas Orbiter(TGO)に相乗りで運ばれた着陸・下降・着地の実証機でした。イタリアの天文学者ジョヴァンニ・スキアパレッリにちなんで命名されたこの機体は、ESAがRosalind Franklinローバー向けにスケールアップする予定だった着陸・下降・着地スタックの実証を目的として製造されました。Schiaparelliは2016年10月16日にTGOから分離し、3日後に火星の大気圏に突入しました。下降プロファイルは失敗しました。飽和した慣性測定装置により、ナビゲーション・ソフトウェアは機体が既に高度で着陸したと判断してしまい、その結果パラシュートが早期に放出され、ブレーキ・スラスターはわずか3秒間の噴射後に遮断されました。Schiaparelliは秒速約150 m/sで表面に衝突しました。TGO自身は軌道投入に成功し、今も運用を継続しています。",
+  "type": "突入・降下・着陸実証機 · 墜落",
+  "first": "ESA初の火星表面到達の試み。ExoMars Rosalind Franklinに先立ち、EDL（大気圏突入・降下・着陸）技術の実証を目的とした。",
+  "description": "Schiaparelliは、ExoMars Trace Gas Orbiter（TGO）に相乗りして運ばれた、大気圏突入・降下・着陸の実証機だった。イタリアの天文学者ジョヴァンニ・スキアパレッリにちなんで名づけられたこの機体は、ESAがRosalind Franklinローバー向けに拡大する予定だったEDLの一連の技術を実証するために造られた。Schiaparelliは2016年10月16日にTGOから分離し、3日後に火星の大気圏に突入した。降下の経過は破綻した。飽和した慣性計測装置のせいで、航法ソフトウェアは機体が高空にいるのにすでに着陸したと判断してしまい、パラシュートは早く切り離され、制動用スラスターはわずか3秒の噴射で停止した。Schiaparelliは約150 m/sで地表に衝突した。TGO自体は軌道投入に成功し、現在も運用を続けている。",
   "events": [
     { "met": 0, "label": "打ち上げ", "note": "2016年3月14日、バイコヌールから打ち上げたProton-M。TGO + Schiaparelliのスタック。", "type": "nominal" },
-    { "met": 0.01, "label": "TMI", "note": "Briz-M上段によるTrans-Mars injection(火星遷移軌道投入)。", "type": "nominal" },
+    { "met": 0.01, "label": "TMI", "note": "Briz-M上段による火星遷移軌道への投入。", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "7ヶ月間の巡航中の最初の軌道修正。", "type": "info" },
     { "met": 120, "label": "TCM 2", "note": "巡航中盤の軌道修正。", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "TGO/Schiaparelli分離前の最終接近軌道修正。", "type": "info" },
-    { "met": 216.5, "label": "分離", "note": "Schiaparelliは2016年10月16日にTGOから分離し、大気圏突入の3日前でした。", "type": "nominal" },
+    { "met": 216.5, "label": "分離", "note": "Schiaparelliは2016-10-16、大気圏突入の3日前にTGOから分離した。", "type": "nominal" },
     { "met": 219, "label": "大気圏突入", "note": "大気圏突入2016年10月19日。", "type": "nominal" },
     { "met": 219.01, "label": "降下中の異常", "note": "IMU飽和 → パラシュート早期放出 + 高度での推進器停止 → メリディアニ平原内でのおよそ150 m/sの衝突。", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Proton-M と Briz-M 上段。ExoMars 2016 は TGO と Schiaparelli を一緒に打ち上げた"
 }

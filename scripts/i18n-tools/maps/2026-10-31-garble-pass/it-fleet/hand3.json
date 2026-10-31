@@ -1,0 +1,26 @@
+[
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "tagline",
+    "find": "Ultima missione lunare sovietica riuscita — riportò 170 g di regolite dal Mare Crisium 1976-08-22; ultimo ritorno di campioni lunari fino a Chang'e 5",
+    "replace": "Ultima missione lunare sovietica riuscita — 170 g di regolite del Mare Crisium, 1976-08-22; ultimi campioni lunari fino a Chang'e 5"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "tagline",
+    "find": "Il veicolo marziano più longevo di sempre — in orbita dal 2001-10-24. Mappe del ghiaccio d'acqua a raggi gamma + neutroni; ponte radio UHF per i mezzi a terra",
+    "replace": "Il veicolo marziano più longevo — in orbita dal 2001-10-24. Mappe del ghiaccio d'acqua (gamma + neutroni); ponte radio UHF per i rover"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "tagline",
+    "find": "volò entrambe le missioni di ritorno al volo. 39 missioni — il record fra gli orbiter",
+    "replace": "volò entrambi i ritorni al volo. 39 missioni — record fra gli orbiter"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "tagline",
+    "find": "Primo rientro di campioni dal lato nascosto lunare. Atterraggio nel bacino Apollo 2024-06-01 (UTC); 1935 g riportati in Mongolia Interna 2024-06-25",
+    "replace": "Primi campioni dal lato nascosto della Luna. Atterraggio nel bacino Apollo 2024-06-01 (UTC); 1935 g riportati in Mongolia Interna 2024-06-25"
+  }
+]

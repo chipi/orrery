@@ -1,0 +1,1118 @@
+[
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "gravity turn rendered as 'courbe gravitationnelle'",
+    "new": "Le guidage en montée se fait en deux phases. Dans la première phase, atmosphérique, le véhicule vole en boucle ouverte : un léger basculement en tangage juste après le dégagement de la tour déclenche un virage gravitationnel, puis il suit un programme de tangage précalculé qui maintient l'angle d'attaque proche de zéro, de sorte que les charges aérodynamiques et structurelles restent limitées jusqu'au passage du Q max. La marge de manœuvre est faible ici — c'est l'air qui dicte la trajectoire."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "Great Attractor, Norma cluster and obscuration awkward",
+    "new": "Ce point focal est le Grand Attracteur, une concentration de masse autour de l'amas de la Règle (Abell 3627), à environ 65 mégaparsecs. Il est difficile à étudier parce qu'il se trouve derrière les nuages denses d'étoiles et la poussière du disque de notre propre Voie lactée — la « zone d'évitement » —, si bien qu'une grande partie de ce que nous savons provient de relevés radio et infrarouges qui voient à travers l'obscurcissement, ainsi que des mouvements des galaxies elles-mêmes."
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "specific impulse left as 'Isp' against binding",
+    "new": "Cinq combinaisons de propergols couvrent presque tous les vols orbitaux jamais effectués. Chacune est un compromis entre impulsion spécifique, densité, possibilité de stockage, facilité de manipulation et ce qu'on peut fabriquer sur Mars."
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "calculus rendered 'le calcul'; clumsy last sentence",
+    "new": "Kepler n'avait pas le calcul infinitésimal. Il n'avait pas la gravitation de Newton. Il n'avait pas d'ordinateur. Il avait vingt ans d'observations de Mars, relevées minutieusement à l'œil avec un quadrant par son patron Tycho Brahe, et il avait de la patience. Il en a tiré trois règles qui sont aujourd'hui encore parfaitement exactes, quatre cents ans plus tard."
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "title",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/biosignatures.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "booster, burn, hot-staging, TWR, Isp, rover left in English",
+    "new": "L'architecture à deux étages est le minimum moderne. Falcon 9 (propulseur d'appoint + deuxième étage), Falcon Heavy (propulseur d'appoint à trois cœurs + deuxième étage), Starship (Super Heavy + Starship), Electron (premier étage au kérolox + deuxième étage au kérolox + parfois un étage d'injection Curie), Neutron (prévu), Terran R (prévu). Le propulseur d'appoint fait le gros du travail dans la basse atmosphère dense, où une forte poussée compte plus que l'impulsion spécifique ; l'étage supérieur fonctionne à un rapport poussée/poids plus faible dans le vide, où une forte impulsion spécifique est rentable. Pourquoi pas trois étages ? Parce que chaque séparation est un mode de défaillance à part entière (pyrotechnie de séparation, gestion du panache lors d'une séparation à chaud, débris d'interétage) et que les moteurs modernes sont assez bons pour assurer l'allumage de l'étage supérieur en une seule fois. Les exceptions sont le plus souvent des missions en GTO ou interplanétaires, où un étage d'injection (Star 48, Briz-M, Fregat, YZ-1/2, Centaur en troisième étage) fournit un dernier allumage précis — Voyager, New Horizons, Solar Orbiter, JUICE, tous les rovers martiens."
+  },
+  {
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "note": "'different answer' dropped; question reworded",
+    "new": "Deux manières de demander « à quelle fréquence cela revient-il ? » — même corps, repère de référence différent, réponse différente."
+  },
+  {
+    "rel": "science/orbits/inclination.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "English word 'home' left in the sentence",
+    "new": "Le résultat est Laniakea — « ciel immense » en hawaïen — d'environ 160 mégaparsecs (500 millions d'années-lumière) de diamètre, qui abrite quelque 100 000 galaxies. Notre superamas de la Vierge, longtemps tenu pour tout notre voisinage, n'en est en fait qu'un lobe périphérique. Tout ce qui se trouve dans Laniakea s'écoule lentement vers un unique point bas gravitationnel."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/eclss-life-support.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'celui lunaire', clumsy 'au niveau ingénierie', perchlorate phrasing",
+    "new": "L'héritage des rovers martiens est purement robotique jusqu'à présent — Sojourner (1997), Spirit + Opportunity (2004-2010 et 2004-2018), Curiosity (2012-présent), Perseverance (2021-présent), Zhurong (2021-2022), Pragyan (2023). Tous ont quatre ou six roues, tous sont non pressurisés, tous sont autonomes sous supervision depuis la Terre. Les architectures martiennes habitées s'appuient largement sur cet héritage : le logiciel de navigation autonome de Perseverance (AutoNav 2.0, capable de parcourir plus de 200 m par sol sans intervention) est en cours de maturation pour devenir la pile de navigation des rovers pressurisés habités. Le rover pressurisé pour Mars est, qualitativement, la même machine que celui de la Lune, mais avec deux exigences supplémentaires : il doit résister aux tempêtes de poussière (scénarios de classe typhon pouvant durer des semaines) et il doit gérer le problème de contamination par les perchlorates et la poussière à chaque cycle de sas. Ni l'un ni l'autre n'est résolu aujourd'hui sur le plan technique ; ce sont tous deux le genre de problème que résolvent 5 à 10 ans d'essais sur le terrain avec des rovers pressurisés lunaires avant Mars."
+  },
+  {
+    "rel": "science/exoplanets/direct-imaging.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'air ténue' gender; 'heavy' landing dropped",
+    "new": "Il détermine aussi À QUEL ENDROIT de la descente l'action se produit. Un véhicule à faible coefficient balistique décélère tôt, en altitude, dans un air ténu, ce qui laisse plus de temps et d'altitude pour les phases terminales. Un véhicule à coefficient élevé garde sa vitesse très avant dans l'atmosphère avant que la traînée ne prenne le dessus, ce qui comprime toute la séquence dans les derniers kilomètres — exactement l'étau qui fait d'un atterrissage lourd sur Mars une course contre le sol."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.4.diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "entry should be 'entrée atmosphérique' per binding",
+    "new": "Entrée atmosphérique, descente, atterrissage. Six minutes de terreur pure."
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "title",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "title",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "'boom' left in English; clumsy sail phrasing",
+    "new": "Le premier engin spatial à voler grâce à la propulsion par voile solaire dans l'espace interplanétaire fut IKAROS, de la JAXA, lancé en mai 2010 comme charge utile secondaire de la mission Akatsuki vers Vénus. IKAROS a déployé une voile en polyimide de 196 m², épaisse de seulement 7,5 micromètres — plus fine qu'un cheveu humain — et a démontré une accélération mesurable ainsi qu'un contrôle d'attitude par des panneaux à cristaux liquides intégrés aux bords de la voile. LightSail 2 de la Planetary Society (2019) est devenu le premier engin à élever son orbite en utilisant uniquement la poussée d'une voile solaire, démontrant une propulsion soutenue en orbite terrestre basse. Le CubeSat NEA Scout de la NASA (lancé en 2022 avec Artemis I) fut la première mission américaine de voile solaire interplanétaire, bien que le contact n'ait pas pu être établi après le déploiement. La mission ACS3 de la NASA (2024) a démontré une structure de mâts en composite plus grande, en vue d'un passage à l'échelle futur."
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'Les chères', 'crête chère' awkward",
+    "new": "Les planificateurs de mission ne calculent pas une seule trajectoire vers Mars — ils en calculent des millions, sur une immense grille, et en tirent une carte thermique. Les trajectoires bon marché apparaissent en lobes bleu froid. Les coûteuses virent au rouge. Le résultat ressemble, curieusement, à une côtelette de porc. La zone bon marché est la chair de la côtelette ; la crête coûteuse en est l'os."
+  },
+  {
+    "rel": "science/life-in-space/muscle-atrophy.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "station-keeping, J2-vs-J3, 'congélation', fragmentary sentences",
+    "new": "Orbites gelées. Orbites dans lesquelles l'altitude du périgée ne dérive pas au fil du temps malgré les diverses forces perturbatrices (J2, J3, traînée atmosphérique, gravité de la Lune et du Soleil). La recette classique de l'orbite gelée : argument du périgée = 90° (le périgée se trouve donc au sommet sud de l'orbite), excentricité ajustée à l'inclinaison et à l'altitude selon une équation d'équilibre entre J2 et J3. Elles sont utilisées par les missions d'observation de la Terre qui ont besoin que leur altitude d'imagerie reste exactement fixe pendant des années (altimétrie des glaces d'ICESat-2, champ de gravité de GRACE-FO). Le gel est approximatif — la traînée et les perturbations d'un troisième corps finissent par dévier l'orbite, ce qui exige de petits allumages de maintien à poste tous les quelques mois — mais la dérive due à J2, qui dominerait sinon, est annulée."
+  },
+  {
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'motorisé' used for powered landing/descent",
+    "new": "Sur `/fly`, c'est la raison pour laquelle les trois corps paraissent si différents dans `?descent=1`. Une descente martienne perd l'essentiel de sa vitesse sous parachute, puis passe le relais à un atterrissage propulsé ou à coussins gonflables ; une descente vénusienne est une longue dérive lente sous la seule traînée ; une descente lunaire est propulsée du début à la fin, faute d'air pour aider."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "porkchop plot rendered as 'diagrammes en forme de côtelette'",
+    "new": "C'est le voyage le moins coûteux possible — mais aussi le plus lent. L'attente de 8,5 mois est incompressible ; c'est la physique qui règle le chronomètre. Vous voulez aller plus vite ? C'est possible, mais il faut le payer : une ellipse plus tendue, une traversée plus rapide, un allumage de freinage bien plus important à l'autre bout. C'est le compromis que vous verrez à l'œuvre dans chaque diagramme porkchop de /plan."
+  },
+  {
+    "rel": "science/mission-phases/optical-comms.json",
+    "at": "diagram_caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "body_paragraphs.3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "kick stage mistranslated 'étage d'appoint'; strap-on boosters left in English",
+    "new": "Deux étages : le minimum moderne (Falcon 9, Starship, Electron). Trois étages : héritage de l'ère Apollo + Soyuz (Saturn V, Soyuz, Long March 3B). 2,5 étages : étage central + propulseurs d'appoint latéraux (Long March 5, Ariane 5/6, Delta IV Heavy, SLS). Plus, en option, un étage d'injection pour des orbites finales précises (Star 48, Centaur, Fregat, Briz-M, YZ-1)."
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/lunar-surface-ops.json",
+    "at": "body_paragraphs.4",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "note": "ungrammatical, calques ('définissant', 'activateurs', 'ombragés permanents')",
+    "new": "L'ISRU — utilisation des ressources in situ — est le problème qui définit l'architecture de tout séjour lunaire de plus d'une semaine environ. Apollo apportait tout depuis la Terre ; le LM disposait d'environ 12 heures de marge de consommables au-delà des sorties extravéhiculaires prévues. Artemis IV prévoit une architecture similaire, entièrement fournie par la Terre, pour la première mission de surface, mais Artemis V et tout futur projet de présence permanente sur la Lune devront utiliser les ressources lunaires. Les deux principales sont la glace d'eau (dans les cratères en ombre permanente du pôle sud — Chang'e 5 a échantillonné un régolithe contenant de l'eau détectable ; le rover VIPER de la NASA, qui était prévu, aurait prospecté directement ; des missions commerciales de type Polaris Dawn pourraient emporter leurs propres prospecteurs) et le régolithe lunaire pour le blindage (contre le rayonnement et les variations thermiques — le même régolithe, dangereux pour les voies respiratoires à l'intérieur, devient un blindage utile à l'extérieur). Les plans lunaires chinois dérivés de Tiangong, le concept de Moon Village de l'ESA et l'Artemis Base Camp de la NASA supposent tous de l'eau d'ISRU et un blindage d'ISRU comme facteurs habilitants — sans eux, une présence lunaire permanente est inabordable."
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'dumped overboard' rendered 'rejeté à bord' (onboard); stiff phrasing",
+    "new": "Tout moteur alimenté par pompes pose le même problème : pour injecter le propergol dans une chambre de combustion à plusieurs centaines d'atmosphères, il faut des turbopompes, et pour les faire tourner, il faut une source d'énergie. Le cycle à générateur de gaz le résout de façon brutale. Quelques pour cent du carburant et de l'oxydant sont prélevés et brûlés dans une petite chambre distincte — le générateur de gaz —, qui produit un flux de gaz chaud entraînant une turbine sur l'arbre des pompes. Comme ce gaz a rempli son rôle avant même d'atteindre la chambre principale, il est simplement évacué à l'extérieur, le plus souvent par un conduit d'échappement séparé ou injecté dans la jupe de la tuyère, là où la pression est déjà faible. C'est ce qui en fait un cycle *ouvert* : une partie du propergol quitte le moteur sans être passée par la chambre de combustion principale."
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/inclination.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'L'hypothèse de aller-retour' ungrammatical; 'échoue catégoriquement' odd",
+    "new": "L'internet ordinaire suppose qu'on peut envoyer un paquet, attendre une fraction de seconde un accusé de réception, et le renvoyer s'il n'arrive pas. Ce modèle s'effondre complètement dans l'espace lointain. Un signal radio met 4–24 minutes pour aller de la Terre à Mars, selon la géométrie orbitale ; pendant la conjonction planétaire, la liaison est totalement coupée pendant des semaines. L'hypothèse d'un aller-retour rapide, propre à TCP/IP, fait qu'une session expire et échoue bien avant qu'un seul échange soit terminé."
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "'vole de travers' wrong idiom; 'haut vers le haut' clumsy",
+    "new": "Une fusée ne monte pas en ligne droite jusqu'en orbite. Elle décolle à la verticale pour dégager le pas de tir et traverser l'air le plus dense, puis s'incline lentement vers l'horizon. Quand le moteur s'éteint, elle vole presque à l'horizontale — car une orbite, c'est aller assez vite latéralement, pas assez haut."
+  },
+  {
+    "rel": "science/life-in-space/crewed-station-design.json",
+    "at": "body_paragraphs.4",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'Earth's orbit' (around the Sun) rendered as orbit around the Earth",
+    "new": "Vous êtes sur l'orbite de la Terre. Vous voulez être sur celle de Mars. Les deux orbites sont à peu près des cercles autour du Soleil. Comment passer de l'une à l'autre avec le moins de carburant possible ?"
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "diagram_caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/mars-habitat-design.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "telegraphic calques ('ISRU fait O₂', 'Arrivée équipage ~6-9 mois transit')",
+    "new": "Architecture martienne : habitat + usine ISRU + véhicule d'ascension prépositionnés 26 mois avant l'équipage ; l'ISRU produit de l'O₂ à partir du CO₂ atmosphérique (dérivé de MOXIE), du méthane à partir du CO₂ atmosphérique et de l'H₂O électrolysée tirée de la glace du sous-sol. Arrivée de l'équipage : transit d'environ 6 à 9 mois. Séjour en surface de plus de 500 jours, dicté par la prochaine fenêtre de Hohmann Mars-Terre. Rayonnement : enfouissement sous le régolithe. Poussière : filtration HEPA contre les perchlorates."
+  },
+  {
+    "rel": "science/orbits/inclination.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'restent dans quelques degrés' non-idiomatic",
+    "new": "La plupart des planètes gravitent près de l'écliptique — la Terre la définit (`i = 0°` par construction), et les autres ne s'en écartent que de quelques degrés. Mercure, à 7°, fait figure d'exception. Les 17° d'inclinaison de Pluton, très marqués, sont l'une des raisons de sa rétrogradation : les vraies planètes restent presque coplanaires."
+  },
+  {
+    "rel": "science/mission-phases/lifting-entry.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'rentrée' instead of 'entrée atmosphérique'; 'survivable', 'faible-g' calques",
+    "new": "Pilotage par angle de gîte : en faisant rouler la capsule, on oriente son faible vecteur de portance vers le haut (pour prolonger le vol plané, avec un faible facteur de charge) ou vers le bas (pour raidir la trajectoire), ce qui élargit le couloir d'entrée atmosphérique praticable."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'otoconia' left in Latin form instead of French 'otoconies'",
+    "new": "Le système vestibulaire de votre oreille interne repose sur trois canaux semi-circulaires (rotation) et deux organes otolithiques (accélération linéaire + gravité). Sur Terre, ces otolithes évoluent dans un champ de 1 g ; leurs cellules ciliées sont en permanence courbées par les cristaux de carbonate de calcium (otoconies) qui appuient vers le bas. Le cerveau interprète cette courbure comme « le bas ». En microgravité, les otoconies flottent librement. Le signal devient ambigu."
+  },
+  {
+    "rel": "science/observation/interferometry.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'Earth-twin' as 'double Terre'; path matching mistranslated; 'plus courts' agreement",
+    "new": "L'interférométrie optique/IR existe, mais elle est bien plus difficile, car les longueurs d'onde optiques sont plus courtes de plus de 6 ordres de grandeur que les ondes radio, ce qui exige d'accorder les chemins optiques avec une précision nanométrique grâce à une stabilisation par laser. CHARA, NPOI et le VLTI sont les survivants. Les interféromètres spatiaux comme LISA (détection d'ondes gravitationnelles grâce à des bras laser entre trois engins spatiaux en vol libre) sont l'architecture de l'avenir, à la fois pour l'astronomie des ondes gravitationnelles et pour l'objectif à long terme d'imager à fort contraste des exoplanètes jumelles de la Terre."
+  },
+  {
+    "rel": "science/exoplanets/detecting-extraterrestrial-life.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'bien plus haut' for eccentricity; 'show-stopping' flattened",
+    "new": "Les vraies planètes se regroupent à faible excentricité. Terre : 0,0167 — presque circulaire. Mars : 0,093 — visiblement allongée. Mercure : 0,205 — la plus excentrique des huit planètes. Pluton et les comètes ont des excentricités bien plus élevées, ce qui explique pourquoi leurs passages au périhélie sont les événements spectaculaires du Système solaire externe."
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "'chunk' left in English",
+    "new": "Courbe du ∆v en fonction du rapport de masse : logarithmique. Doubler le propergol n'ajoute qu'un incrément constant de ∆v."
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "Isp, 'core' left in English; 'devient isolant' wrong",
+    "new": "L'hydrolox (hydrogène liquide + oxygène liquide) est le couple chimique à plus forte impulsion spécifique que l'humanité fasse voler (~450 s dans le vide sur le RS-25). L'hydrogène brûle en donnant de l'eau, sans suie. La contrepartie est la densité : l'H₂ liquide pèse environ 70 kg/m³ contre 800 kg/m³ pour le kérosène, de sorte que le réservoir de carburant est énorme et que la majeure partie de la fusée devient de l'isolation. L'hydrolox est donc un propergol d'*étage supérieur* pour presque tous les lanceurs (Centaur, DCSS, ICPS, étages supérieurs d'Ariane 5/6, de Long March 5 et de H-IIA) et n'est utilisé à l'échelle des propulseurs d'appoint que lorsqu'une impulsion spécifique extrême se paie en taille de véhicule — S-II + S-IVB de Saturn V, réservoir externe de la navette spatiale + RS-25, étage central du SLS, étage central d'Ariane 5 avec son Vulcain. L'évaporation est le casse-tête opérationnel : l'H₂ liquide, à 20 K, ne peut pas rester longtemps sur le pas de tir."
+  },
+  {
+    "rel": "science/exoplanets/detecting-extraterrestrial-life.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/transit.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "diagram_caption",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "'basic', 'sims finals', 'total' and calqued word order",
+    "new": "Formation de base de 18 à 24 mois (Houston / Star City / Cologne / Tsukuba) → formation spécifique à la mission de 2,5 à 5 ans (NBL ou Hydrolab + simulateurs de modules + simulateurs de véhicules) → 6 mois de simulations finales + visites médicales → quarantaine de 14 jours → lancement. Environ 12 000 heures au total pour une expédition ISS."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.6.diagram_caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'keplerienne' misspelt (képlérienne)",
+    "new": "Si vous aplatissez une ellipse képlérienne selon sa plus grande dimension, la ligne que vous avez tracée est le grand axe. Coupez-le en deux et vous obtenez le demi-grand axe — noté `a`. C'est en quelque sorte la distance moyenne entre le corps en orbite et le foyer : la moyenne arithmétique du périhélie (le plus proche) et de l'aphélie (le plus lointain)."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'not so much ... as' rendered 'ne dirige pas ... tant que'",
+    "new": "C'est exactement la raison pour laquelle Apollo pouvait amerrir près de son navire de récupération et pour laquelle Perseverance a pu viser sur Mars, depuis des millions de kilomètres, une ellipse d'atterrissage de moins de 8 kilomètres de large (environ 7,7 sur 6,6 km). L'ordinateur ne pilote pas tant vers un point précis qu'il ne choisit un point à l'intérieur de l'empreinte, puis ne manie la portance pour l'atteindre."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.5.paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "double 'entre', '(presque)' misplaced, 'vs.' kept",
+    "new": "L'[époque J2000](scales-time/j2000) est le zéro de calendrier que tous les astrodynamiciens utilisent. Les [périodes sidérales et synodiques](scales-time/sidereal-synodic) expliquent pourquoi les fenêtres vers Mars reviennent tous les 26 mois et non tous les 23. Le [plan de l'écliptique](scales-time/ecliptic-plane) est le disque plat sur lequel se trouvent (pour l'essentiel) toutes les planètes. Les [référentiels](scales-time/frames) sont les systèmes de coordonnées entre lesquels le contrôle de mission jongle : vues centrées sur la Terre, sur le Soleil ou sur le corps considéré."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/spectroscopy.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'kit de consommation frappe R~1000', 'grille', 'alimentent le spectre en CCD' garbled",
+    "new": "Les spectrographes modernes dispersent la lumière avec un réseau de diffraction (une surface réfléchissante finement gravée, souvent de plusieurs milliers de traits par millimètre) et envoient le spectre dispersé sur un capteur CCD. La résolution se mesure par R = λ/Δλ ; le matériel grand public atteint R~1000, NIRSpec de JWST atteint R~2700, le spectrographe ESPRESSO du VLT atteint R~140 000 — de quoi détecter la vitesse réflexe d'une planète de seulement quelques centimètres par seconde."
+  },
+  {
+    "rel": "science/exoplanets/orbital-resonance.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/terminal-velocity.json",
+    "at": "diagram_caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.heading",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/skycrane.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'système d'atterrissage' for landing gear",
+    "new": "Après que le bouclier thermique et le parachute ont fait leur travail, un étage de descente propulsé par fusée prend le relais, allumant huit moteurs pour ralentir jusqu'à un quasi-vol stationnaire à quelques mètres d'altitude. Ensuite, au lieu d'atterrir lui-même, il abaisse le rover sous lui au bout de câbles — comme un hélicoptère qui dépose une charge — jusqu'à ce que les roues du rover touchent le sol. Le rover est son propre train d'atterrissage."
+  },
+  {
+    "rel": "science/observation/wormholes.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "note": "wormhole rendered 'vortex'; 'la détermination *pourquoi*' ungrammatical",
+    "new": "Alors pourquoi les faire figurer dans une encyclopédie scientifique ? Parce qu'ils illustrent à merveille les limites de la relativité générale : les équations admettent des solutions que l'univers ne semble pas utiliser, et comprendre *pourquoi* est l'une des frontières vivantes de la physique théorique. La gravité quantique, la correspondance AdS/CFT, la conjecture ER=EPR — tout cela touche à la géométrie des trous de ver. Ce sont de vraies mathématiques. Ce ne sont pas de vrais vaisseaux spatiaux."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "note": "'Couche technique avancée sur le dessus', 'timing', 'côte', 'atterrissage-ellipse'",
+    "new": "Des techniques avancées viennent s'y superposer. Le **Delta-DOR** (Delta-Differential One-way Range) utilise deux antennes qui observent simultanément le même engin spatial + un quasar voisin ; la différence de temps d'arrivée donne la position angulaire à quelques nanoradians près. La navigation EDL vers Mars atteint désormais couramment une précision d'environ 100 m sur l'ellipse d'atterrissage, au terme de ce qui est pour l'essentiel une croisière inertielle de plusieurs mois à 30 000 km/h. C'est au DSN qu'on le doit."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/dwarf-spheroidals.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "constellation names in English, gender slip ('écartée comme retardataire ennuyeux'), calques",
+    "new": "Les galaxies sphéroïdales naines (souvent abrégées dSph) sont de petites galaxies satellites de galaxies plus grandes, faibles, pauvres en gaz et de forme à peu près elliptique. Autour de la Voie lactée, les plus brillantes sont celles du Sagittaire, du Sculpteur, du Fourneau, du Dragon, de la Petite Ourse, du Lion I, du Lion II, du Sextant, de la Carène et des Chiens de chasse I, auxquelles s'ajoute une longue traîne de naines ultra-faibles découvertes par le SDSS, DES, Pan-STARRS et, désormais, le LSST de l'observatoire Vera C. Rubin. On connaît aujourd'hui plus de 60 satellites dSph de la Voie lactée, et leur nombre augmente. Chacune ne compte en général que de quelques millions à quelques dizaines de millions d'étoiles — contre des centaines de milliards pour la Voie lactée — et pendant des décennies on les a tenues pour de simples traînardes sans intérêt. Le tableau a changé dans les années 1980, quand les mesures de dispersion des vitesses stellaires ont montré qu'elles étaient tout sauf ennuyeuses."
+  },
+  {
+    "rel": "science/observation/coronagraphs.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/scales-time/ecliptic-plane.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "'Magellanic' left in English, 'referent' misspelt, name form",
+    "new": "Les nuages de Magellan dominent le ciel de l'hémisphère sud depuis n'importe quel site raisonnablement sombre situé sous environ +20° de latitude. Ils ressemblent exactement à ce que leur nom laisse penser — deux plages floues détachées dans le ciel nocturne, le Grand Nuage (GNM) d'environ 5° de diamètre et le Petit Nuage (PNM) d'environ 3°. Ils sont catalogués sous plusieurs noms, mais le nom de Magellan vient de la circumnavigation de Fernand de Magellan en 1519-1522, au cours de laquelle les nuages furent le repère de navigation le plus fiable de son équipage dans l'Atlantique Sud. Les nuages sont observés sans interruption par l'humanité depuis qu'elle vit dans l'hémisphère sud ; l'art rupestre et les traditions orales de l'Australie aborigène, des Khoisan et des cultures andines y font référence par leur nom, d'une manière qui précède de très loin le contact avec les Européens."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "cut",
+    "note": "'just like every other orbit' dropped; 'Keplerian' English spelling",
+    "new": "L'arc képlérien qui conduit un engin spatial d'une orbite à une autre — avec le Soleil à un foyer, comme pour toute autre orbite."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/coronagraphs.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/skip-entry.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "'coasting' left in English",
+    "new": "Plutôt que de dissiper la vitesse de retour lunaire en une seule plongée, la capsule ressort de l'atmosphère, poursuit sa course en vol balistique puis y rentre à nouveau — deux pics de chaleur et d'accélération plus modérés au lieu d'un seul."
+  },
+  {
+    "rel": "science/orbits/sun-synchronous.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'précèdent' (precede) used for 'precess'; 'vs', 'non-central' calques",
+    "new": "Le mécanisme est gravitationnel. La Terre n'est pas une sphère parfaite — le renflement équatorial (environ 21 km de rayon supplémentaire à l'équateur par rapport aux pôles) crée un champ de gravité non central. Pour un satellite sur une orbite non équatoriale, cette asymétrie exerce un couple qui fait progressivement précesser le plan orbital. La vitesse de précession dépend de l'altitude et de l'inclinaison : plus l'altitude est basse, plus la précession est rapide ; les inclinaisons comprises entre 90° et 180° (orbites rétrogrades) font précesser le plan vers l'est. Pour chaque altitude donnée, il n'existe qu'une seule inclinaison qui donne une précession de 0,9856°/jour — ce sont les orbites héliosynchrones. À 800 km d'altitude, l'inclinaison d'une orbite héliosynchrone (SSO) est de 98,6° (8,6° au-delà du polaire, rétrograde). À 600 km, elle est de 97,8°. À 400 km, de 97,0°."
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/vis-viva.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/_intro.json",
+    "at": "paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'position horloge' calque; 'tout ce autour duquel'",
+    "new": "Toutes les orbites sont des ellipses, sans exception. Le Soleil (ou la Terre, ou tout astre autour duquel vous orbitez) occupe l'un des foyers de l'ellipse, jamais le centre. Six nombres — taille, forme, trois angles et une position sur l'horloge — décrivent parfaitement n'importe quelle orbite. Les huit sections de cet onglet détaillent chacun de ces nombres, ainsi que l'équation maîtresse (vis-viva) qui les relie tous."
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "calques ('exactement pourquoi', 'tombe de l'arithmétique'), numbers without space separator",
+    "new": "De combien de poussée par kilogramme a-t-on réellement besoin pour décoller ? Avec un TWR de 1,3 et une gravité terrestre de 9,81 m/s², les moteurs doivent fournir environ 12,8 N par kilogramme de masse du véhicule. Pour un véhicule de 3 000 tonnes (la masse humide de Saturn V), il faut 38 MN de poussée — ce qui explique précisément pourquoi Saturn V utilisait cinq moteurs F-1 totalisant 33,9 MN au niveau de la mer, et dépassant 40 MN à mesure que la pression ambiante chutait. Pour Starship (5 000 tonnes à l'état humide), il faut ~64 MN, d'où les 33 Raptors du propulseur d'appoint Super Heavy. Le nombre de moteurs d'un lanceur n'est pas un choix de style — il découle directement de l'arithmétique entre TWR et masse au lancement, et de la poussée du plus gros moteur que le programme a pu développer."
+  },
+  {
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.4",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "FCC rule, 'licensing', Zero Debris Charter, UN guidelines left in English; 'élimination',",
+    "new": "La mise au rebut n'est plus optionnelle. Jusqu'en 2015 environ, l'évacuation en fin de vie était techniquement obligatoire mais appliquée avec laxisme. Plusieurs évolutions réglementaires depuis lors ont changé la donne : la règle des 5 ans en orbite terrestre basse de la FCC (2022) impose à tous les satellites sous licence américaine de se désorbiter dans les 5 ans suivant la fin de mission ; la Charte Zéro Débris de l'ESA (2023) engage ses signataires à ne laisser aucun débris en orbite ; les Lignes directrices relatives à la viabilité à long terme des activités spatiales de l'ONU (2019) font de la mise au rebut un préalable à l'octroi de licences. Les satellites modernes sont désormais conçus en prévoyant le propergol de mise au rebut comme un poste ferme du bilan de masse, avec une réserve de marge imposée par les revues de conception de mission. L'article sur les débris orbitaux explique ce qui se passe quand la mise au rebut échoue."
+  },
+  {
+    "rel": "science/life-in-space/crew-dynamics-psychology.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "'adversarial' left in English; several clumsy calques",
+    "new": "Salyut 6 (URSS, 1977-82) fut la première station accueillant volontairement des équipages pour de longues durées, et la première à rencontrer le problème psychologique que toute station de longue mission a connu depuis : environ 4 à 6 semaines après le début d'une mission, même des équipages très rigoureusement sélectionnés entrent dans une phase que les psychologues soviétiques appelaient *asthénie* — fatigue, irritabilité, repli sur soi vis-à-vis des communications avec le sol, baisse de motivation. On l'attribua d'abord au déconditionnement physique, mais il devint clair avec Salyut 7 et Mir qu'elle est avant tout psychologique — la nouveauté de l'orbite s'émousse, le travail devient routinier, l'équipage sait très bien qu'il ne peut pas partir avant 5 mois, et la relation avec le contrôle au sol devient conflictuelle. Les contrôleurs soviétiques planifiaient délibérément du temps personnel non structuré, des appels vidéo en famille et, de temps à autre, des cadeaux surprises dans les ravitaillements (chocolat, fruits frais) comme contre-mesures ; cette pratique est aujourd'hui courante sur l'ISS, sur Tiangong et dans toutes les stations analogues."
+  },
+  {
+    "rel": "science/mission-phases/launch.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'C3-vs-charge utile' calque",
+    "new": "Sur `/missions`, le champ launch_vehicle indique quel lanceur a réalisé la mission. Saturn V pour Apollo. Atlas V pour Curiosity. Falcon 9 pour Crew Dragon. SLS pour Artemis I. Chaque lanceur a une courbe fixe de C3 en fonction de la charge utile — c'est le lanceur qui fixe le plafond de ce qui est possible."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'dates du calendrier littérales', 'survolez' without object",
+    "new": "Sur `/plan`, l'étiquette de l'axe X est `DEPARTURE WINDOW · 2026 — 2030`. Les dates exactes du calendrier apparaissent dans l'infobulle au survol."
+  },
+  {
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "burn should be 'allumage'; 'vaisseau spatial' / 'forever' phrasing",
+    "new": "L'allumage de freinage qui capture votre engin spatial en orbite au lieu de le laisser filer à jamais."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'orbitent l'un autour de l'autre autour', 'soufflés vers là', 'similairement capturé'",
+    "new": "Pluton et Charon sont uniques : avec un rayon de 606 km contre 1 188 km pour Pluton, Charon fait la moitié du diamètre de Pluton — le plus grand rapport lune-planète du système. Les deux corps orbitent autour d'un centre de masse commun situé à l'extérieur de la surface de Pluton, si bien qu'aucun des deux n'orbite vraiment autour de l'autre ; ils tournent l'un autour de l'autre autour d'un barycentre partagé. Le survol de New Horizons en 2015 les a photographiés tous les deux pour la première fois, révélant des dépôts rouges équatoriaux sur Charon (des tholins issus de l'atmosphère de Pluton, emportés jusque-là) et une plaine de glace d'azote en forme de cœur sur Pluton. Triton, la lune de Neptune, est elle aussi une capture (orbite rétrograde, géologiquement jeune — peut-être capturée dans la ceinture de Kuiper) — et, comme Charon, abrite presque certainement un océan souterrain."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/transit.json",
+    "at": "narrative_101.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "body_paragraphs.3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/history/tsiolkovsky-equation-1903.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'vitesse d'échappement des gaz', 'La plupart de toute fusée' clumsy",
+    "new": "L'équation de Tsiolkovski : ∆v = vₑ × ln(m₀/m₁). La variation de vitesse qu'une fusée peut produire est égale à sa vitesse d'éjection des gaz multipliée par le logarithme népérien de son rapport de masse. Ce terme logarithmique est impitoyable — obtenir plus de ∆v exige exponentiellement plus de carburant. L'essentiel de toute fusée, c'est du carburant. La Saturn V était constituée à 85 % de propergol en masse."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "note": "'cislunarires' non-word, 'pour l'héliocentriquement', porkchop term",
+    "new": "C'est inexact, mais utile. Les erreurs aux frontières sont faibles — quelques pour cent de ∆v au plus pour le travail cislunaire, moins pour l'héliocentrique — et les calculs deviennent assez maniables pour tenir dans un Web Worker. Les diagrammes porkchop de `/plan` dans Orrery sont calculés ainsi ; les trajectoires de `/fly` aussi. La planification de vol réelle à la NASA utilise la même approximation en première ébauche, puis l'affine numériquement avant le lancement."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "intro_sentence",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "'dit où un corps est ... maintenant' clumsy",
+    "new": "L'angle qui indique où se trouve un corps sur son orbite à l'instant présent, mesuré depuis le périhélie."
+  },
+  {
+    "rel": "science/orbits/orbit-regimes.json",
+    "at": "narrative_101.0",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "note": "'discretely' rendered 'discrètement' (discreetly)",
+    "new": "Prenez un satellite. L'essentiel à son sujet n'est pas ce qu'il fait — c'est l'altitude à laquelle il évolue. L'altitude détermine à quelle fréquence il peut revoir la même zone au sol, le temps que met un signal radio pour l'atteindre, la quantité de carburant dont il a besoin pour maintenir son orbite et sa durée de vie utile. Les ingénieurs spatiaux regroupent les orbites en quatre bandes — LEO, MEO, GEO, HEO — parce que les compromis changent par paliers à mesure qu'on monte."
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'Keplerian' left in English, 'quel conique' wrong gender",
+    "new": "Toute orbite képlérienne est l'une de ces quatre. Les orbites liées — planètes, lunes, satellites, tout ce qui revient — sont des cercles ou des ellipses. Les trajectoires non liées — survols, échappements, captures hyperboliques — sont des paraboles ou des hyperboles. La frontière est exacte : à `e = 1`, vous vous déplacez exactement à la vitesse de libération locale."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "'flown' left in English",
+    "new": "L'aérocapture est la cousine plus audacieuse : freiner suffisamment lors d'UN SEUL passage profond pour passer directement de l'arrivée à une orbite de capture, sans aucun allumage de capture. Elle économiserait encore plus de carburant, mais elle exige un bouclier thermique et un guidage à la fraction de seconde, et aucune mission ne l'a encore réalisée — la version patiente et peu risquée qu'est l'aérofreinage reste la bête de somme."
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/cislunar-orbits.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "'station-keeping' left in English three times; stiff calques",
+    "new": "Orbites lunaires gelées. Le champ de gravité de la Lune est fortement non sphérique parce que sa croûte est irrégulière (mascons — concentrations de masse sous les mers lunaires) et que la Lune n'a pas d'atmosphère pour amortir les perturbations orbitales. Un satellite sur une orbite lunaire basse circulaire, pour la plupart des inclinaisons, verra son orbite devenir progressivement plus excentrique en quelques mois, jusqu'à s'écraser sur la surface. Lunar Prospector (1999) a été délibérément désorbité en fin de mission parce que les concepteurs de la mission ne parvenaient pas à le maintenir stable. Les inclinaisons lunaires « gelées » — 27°, 50°, 76° et 86° — sont celles où les diverses perturbations s'annulent et où un satellite peut rester sur une orbite à peu près circulaire pendant des années sans manœuvres de maintien à poste. Le Lunar Reconnaissance Orbiter (LRO, 2009-) utilise une orbite polaire quasi gelée à ~50 km d'altitude, qui n'exige que des manœuvres de maintien à poste modestes. Le satellite relais chinois Queqiao-2 (2024) utilise une orbite elliptique gelée en L2."
+  },
+  {
+    "rel": "science/life-in-space/radiation-exposure.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "spallation rendered 'éparpillement'; 'hab' English; 'Le blindage est dur'",
+    "new": "Le blindage est difficile. L'aluminium (le matériau naturel de la coque) est en réalité pire que rien contre les GCR dans certains régimes — les particules secondaires de numéro atomique élevé issues de la spallation peuvent être biologiquement plus dommageables que les particules primaires. Les matériaux riches en hydrogène (polyéthylène, eau) sont meilleurs ; certains concepts d'habitat utilisent des réservoirs d'eau comme bouclier passif faisant écran. Le blindage magnétique actif n'existe qu'en théorie. Le « blindage » le plus rentable est un temps de trajet plus court, ce qui explique pourquoi les concepts martiens à transit rapide, chimiques + nucléaires thermiques, retiennent sérieusement l'attention."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "note": "'a fameux recours' ungrammatical; 'retour gratuit' wrong term for free-return",
+    "new": "Apollo 8 fut la première trajectoire de retour libre habitée. Apollo 13 a eu recours, comme on sait, à cette technique lorsque son module de service a été mis hors d'état — rentrant sur la trajectoire de retour libre, ne mettant à feu que le moteur du module lunaire pour les corrections de trajectoire, jamais le moteur principal endommagé. Pour Mars, la géométrie est plus difficile — il faut une boucle de 500 jours à deux passages — mais le concept est le même : c'est la géométrie du survol qui fait le travail de l'allumage de retour."
+  },
+  {
+    "rel": "science/mission-phases/eva.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "note": "'le cartouche' gender, 'amine-swing' English, 'sublimation par eau de refroidissement' garbled",
+    "new": "Consommables de la combinaison : l'EMU (Extravehicular Mobility Unit) de l'ISS emporte environ 8 heures d'oxygène + batterie + sublimation de l'eau de refroidissement. L'épuration du CO₂ est en général le facteur limitant — quand la cartouche de LiOH ou d'amines à régénération cyclique est saturée, l'EVA prend fin."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "diagram_caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.2",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "note": "'quel conique' wrong gender; clumsy imperatives",
+    "new": "Les concepteurs de missions exploitent les quatre. On croise sur une ellipse, on survole une planète sur une hyperbole (par rapport à cette planète), puis on s'insère de nouveau en orbite sur une ellipse. La route `/fly` du simulateur le fait naturellement — la même équation de trajectoire traite tous les cas, et l'excentricité indique quelle conique on parcourt."
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/mission-phases/nrho.json",
+    "at": "body_paragraphs.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "telegraphic calques ('entretien ∆v faible', 'Accès ∆v'); perilune as 'périapsis'",
+    "new": "Pourquoi cette orbite ? Une stabilité avec un entretien en ∆v très faible — environ 5 m/s par an de maintien à poste. Une ligne de vue continue vers la Terre (un engin spatial qui s'y trouve ne passe jamais longtemps derrière la Lune). Un accès depuis la Terre à faible coût en ∆v (environ 4 km/s pour le transfert et l'insertion, comparable à une orbite lunaire basse, mais avec une bien meilleure stabilité thermique). Un accès à la surface lunaire par de petits atterrisseurs depuis le périlune."
+  },
+  {
+    "rel": "science/mission-phases/eva.json",
+    "at": "narrative_101.1",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'primary airlock' rendered 'amarrage primaire' (docking)",
+    "new": "Les EVA commencent dans le sas — un petit compartiment à deux portes où l'équipage respire de l'oxygène pur à 100 % pendant 60 à 90 minutes (pour chasser l'azote du sang et éviter les accidents de décompression), puis dépressurise le sas et sort en flottant. L'ISS utilise Quest comme pôle EVA américain ; le segment russe utilise Pirs (devenu Poisk après la désorbitation de Pirs en 2021). Le sas principal de Tiangong se trouve sur le module Wentian."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "body_paragraphs.3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.2",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "note": "'héliocentriques' twice for body-centred; 'année zéro' for calendar zero",
+    "new": "Six sections ici. L'unité astronomique et la minute-lumière vous donnent les règles de mesure. J2000 est le zéro de calendrier universel sur lequel tous les astronomes s'accordent. Sidéral et synodique explique pourquoi les fenêtres vers Mars reviennent tous les 26 mois, et non tous les 23. Le plan de l'écliptique est le disque plat sur lequel se trouvent (pour l'essentiel) toutes les planètes. Les référentiels sont la comptabilité qui permet de passer d'une vue centrée sur le Soleil, sur la Terre ou sur un corps à une autre — ce avec quoi le contrôle de mission jongle constamment."
+  },
+  {
+    "rel": "science/cosmology/cosmic-distance-ladder.json",
+    "at": "body_paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/observation/dwarf-spheroidals.json",
+    "at": "intro_sentence",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "narrative_101.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/food-production-off-world.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "note": "percent without space, 'le H₂ électrolysé ISRU' awkward",
+    "new": "Mars ajoute un problème de régolithe. La plantation directe dans le sol martien est exclue pour la même raison que la respiration directe — les perchlorates. Le régolithe martien est imprégné de 0,5 à 1 % de ClO₄⁻, toxique pour la thyroïde et vraisemblablement inhibiteur du système racinaire. Atténuations à l'étude : des bactéries réductrices de perchlorate (certaines espèces terrestres consomment naturellement le perchlorate comme accepteur d'électrons), un prétraitement par réduction électrochimique (avec du H₂ obtenu par électrolyse via l'ISRU), ou tout simplement une hydroponie qui ne touche pas du tout au régolithe. La voie la plus simple est la troisième — garder la production alimentaire découplée du régolithe et ne l'utiliser que pour le blindage + la construction de l'habitat. Le régolithe lunaire n'a pas le problème des perchlorates mais il est métaboliquement inerte et physiquement abrasif — la plupart des espèces végétales ne prospèrent pas dans le simulant lunaire à moins d'être fortement amendées avec des matières organiques compostées."
+  },
+  {
+    "rel": "science/life-in-space/radiation-exposure.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "narrative_101.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/eva-operations.json",
+    "at": "body_paragraphs.4",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "formula_caption",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'drivers' rendered 'moteurs'; 'démontrer l'énergie nette' stiff",
+    "new": "Les deux grandes approches du confinement ont chacune leurs difficultés. Le confinement magnétique (tokamaks, stellarators) exige des aimants supraconducteurs et un contrôle soutenu du plasma ; ITER, le tokamak international en construction en France, est conçu pour démontrer un gain net d'énergie, mais ne produira pas d'électricité. Le confinement inertiel exige des systèmes de compression — lasers ou faisceaux de particules — assez puissants pour porter le combustible à des conditions stellaires ; l'allumage obtenu au NIF a nécessité une capsule d'une conception très précise, et on est loin de la cadence de répétition dont a besoin un système de propulsion. Aucune des deux approches n'a de voie d'ingénierie claire vers une application à la propulsion."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "body_paragraphs.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "title",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "note": "'décollage' for launch; 'pré-vol' calque",
+    "new": "Entraînement avant le vol — les années précédant le lancement"
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.0",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "note": "'Hohmann-like' left in English; 'coûts incontrôlables' loose",
+    "new": "Le bleu-vert froid correspond à un ∆v faible (~3 km/s) — le minimum de l'allumage de départ pour un transfert de type Hohmann vers Mars (c'est le ∆v d'injection trans-martienne depuis la LEO, et non le ∆v total de la mission). Bleu à ~5 km/s. Jaune autour de 7 km/s — le seuil du coûteux. Orange et rouge au-dessus de 9 km/s — des cellules au coût qui s'envole, où il faudrait un lanceur de classe SLS rien que pour que les calculs bouclent."
+  }
+]

@@ -10,7 +10,7 @@
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "M-V-5 van Uchinoura Space Center.",
+      "note": "M-V-5 van Ruimtecentrum Uchinoura.",
       "type": "nominal"
     },
     {
@@ -22,13 +22,13 @@
     {
       "met": 857,
       "label": "ITOKAWA-AANKOMST",
-      "note": "2005-09-12. Stationair houden op 7-km-poort positie.",
+      "note": "2005-09-12. Houdt positie aan op de poortpositie op 7 km.",
       "type": "info"
     },
     {
       "met": 857.01,
       "label": "LANDINGEN",
-      "note": "Twee oppervlaktecontacten 2005-11-20 + 25. Steekproefverzamelingsprojectielen weigeren te vuren.",
+      "note": "Twee oppervlaktecontacten 2005-11-20 + 25. De monsternameprojectielen vuren niet af op commando.",
       "type": "warning"
     },
     {
@@ -46,8 +46,9 @@
     {
       "met": 2592,
       "label": "STEEKPROEFRETOUR",
-      "note": "2010-06-13. ~1.500 korrels Itokawa-stof (submilligram totaal) teruggevonden te Woomera. Eerste asteroïde-steekproef ooit teruggekeerd.",
+      "note": "2010-06-13. ~1.500 korrels Itokawa-stof (in totaal minder dan een milligram) teruggevonden bij Woomera. Eerste asteroïdemonster ooit naar de Aarde teruggebracht.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "vierde trap van de M-V-5 (KM-V2)"
 }

@@ -1,0 +1,1133 @@
+[
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/destiny.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Baies de recherche en microgravité, infrastructure de fenêtres scientifiques tournées vers la Terre et principal volume de laboratoire intérieur de la NASA.",
+    "note": "racks as supports; NASA article missing"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Petite lune de 160 m de 65803 Didymos, découverte en 2003. La surface visée par DART s'est révélée être un « fluide de tas de débris » — l'engin spatial s'est enfoncé d'environ 50 cm dans la surface pendant la demi-seconde du contact, et le facteur d'amplification du transfert de quantité de mouvement β ≈ 3,6 indiquait un apport important du matériau de surface éjecté. Le CubeSat LICIACube a imagé le panache en temps réel ; HST et JWST ont observé la queue d'éjectas pendant des semaines.",
+    "note": "truncated word 'imag'; rubble-pile mistranslated"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Découvert en 1997, nommé d'après Leucus (un compagnon d'Ulysse, tué à Troie). Classification spectrale de type D — le plus sombre et le plus rouge de la famille des Troyens. La rencontre de Lucy le 2028-04-18 permettra de déterminer la forme, la composition de surface et l'évolution de l'état de rotation à l'origine de la rotation lente.",
+    "note": "awkward 'derrière la rotation'; capitalised Troyenne"
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.3",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "ru.wikipedia — images d'articles pour Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран",
+    "note": "Cyrillic search titles transliterated away"
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/paranal.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.2.wall",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Les deux agences produisent bien des logos et des emblèmes de mission — Hayabusa2, SLIM, Chandrayaan-3 et tous les autres en ont — mais ils relèvent du droit d'auteur des agences elles-mêmes et ne sont pas publiés sous licence libre. Wikimedia Commons n'en contient aucun ; les seuls résultats sous licence libre pour ces recherches sont des photographies de la NASA sans rapport.",
+    "note": "awkward copyright phrasing"
+  },
+  {
+    "rel": "museums/museum-of-flight-seattle.json",
+    "at": "items.viking2-lander",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/o3b.json",
+    "at": "scale_fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "Les orbites MEO constituent un compromis sous-exploité — assez rapides pour des appels à faible latence, avec moins de satellites nécessaires qu'en LEO. O3b est le seul opérateur à les utiliser commercialement.",
+    "note": "compares satellites to LEO itself"
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "library_labels.moon-artemis",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/barnard-rocheworld.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/parkes.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/tsiolkovsky-museum-kaluga.json",
+    "at": "items.mars-3",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/AREOSTATIONARY.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/korolev-museum-zhytomyr.json",
+    "at": "items.soyuz-7k-ok",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Le seul satellite naturel de la Terre et le seul monde autre que la Terre où des humains ont marché. Son verrouillage de marée 1:1 maintient en permanence le même hémisphère face à la Terre — la face visible dominée par des bassins de mers inondés de lave, la face cachée un ancien terrain de hautes terres cratérisées couronné par le bassin du Pôle Sud–Aitken, la plus grande structure d'impact du système solaire (~2 500 km de large, ~13 km de profondeur). L'éloignement progressif de la Lune par rapport à la Terre (~3,8 cm/an) allonge peu à peu le jour terrestre ; dans un passé lointain, elle apparaissait presque trois fois plus grande qu'aujourd'hui dans le ciel.",
+    "note": "'highlands' left; 'bassins de mares'"
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Cérès concentre ~25 % de la masse totale de la ceinture principale dans un seul corps — et est le seul objet de la ceinture principale classé comme planète naine.",
+    "note": "percent spacing"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "gravity assist",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "library_labels.phobos-hirise",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/fast.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/haute-provence.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/enceladus.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/o3b.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "À une distance moyenne de 30,07 au, Neptune est si lointaine qu'un signal lumineux met 4 heures pour faire le trajet dans un seul sens. Voyager 2 a nécessité 12 ans pour l'atteindre.",
+    "note": "round-trip stated as 4 hours; one-way is 4"
+  },
+  {
+    "rel": "orbit-regimes/MEO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "comparison",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Hub d'amarrage radial qui élargit la capacité de stationnement des Soyouz/Progress, indépendamment des anciens ports axiaux.",
+    "note": "Soyuz vs Soyouz inconsistency"
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/sentinel-copernicus.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/vega-oumuamua.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/mao-zedong-memorial-museum-shaoshan.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "glossary/terms.json",
+    "at": "apogee",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/LMO.json",
+    "at": "residents.5.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "term",
+    "new": "Le fidèle lanceur à deux étages de Mitsubishi Heavy Industries, en service de 2001 à son retrait en 2025. Étage central cryogénique avec 2 à 4 propulseurs d'appoint à poudre. Missions interplanétaires notables : Hayabusa (2003) et Hayabusa2 (2014) vers des astéroïdes ; Akatsuki (2010) vers Vénus ; Hope Probe (2020) des Émirats arabes unis vers Mars ; SLIM (2023) vers la Lune. Remplacé par le H3.",
+    "note": "'bivalent' wrong; booster term not used"
+  },
+  {
+    "rel": "orbit-regimes-moon/LLO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/hayabusa2.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "culture-doors/gargantua-interstellar.json",
+    "at": "blurb",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/big-ear.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/cupola.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Sept fenêtres tournées vers la Terre — les yeux collectifs de la station pour les opérations robotiques et le cliché-carte postale de l'astronaute.",
+    "note": "past tense where English is present"
+  },
+  {
+    "rel": "iss-visitors/progress_ms.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/harmony.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Le nœud utilitaire avant qui reliait Destiny aux laboratoires européen et japonais — un couloir encombré devenu échangeur international.",
+    "note": "'services publics', 'échange' wrong senses"
+  },
+  {
+    "rel": "observatories/ska-mid.json",
+    "at": "highlights.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "firsts.0.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Lanceur lourd de l'ère soviétique — a assuré tous les vols soviétiques vers Mars et la Lune, ainsi que les modules russes de l'ISS",
+    "note": "'de la ISS' article error"
+  },
+  {
+    "rel": "satellites/callisto.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Callisto se situe en dehors de la résonance de Laplace qui entraîne le chauffage de marée d'Io, d'Europe et de Ganymède — son intérieur n'a donc jamais assez fondu pour se différencier complètement ni pour renouveler sa croûte. Il en résulte le témoignage le mieux préservé du bombardement d'impacts dans le système galiléen interne, y compris le spectaculaire bassin de Valhalla, dont le système d'environ 10 anneaux couvre à peu près un quart de la circonférence de la lune. Malgré l'absence de chauffage de marée, le magnétomètre de Galileo a détecté un champ magnétique induit compatible avec un océan salé profond, à ~100 km sous la surface. Son faible environnement de rayonnement (comparé à Europe ou Ganymède) et son eau de longue durée en font un point de départ probable pour de futures missions habitées vers le système jovien.",
+    "note": "'le plus pristine... d'une bombardement' garbled"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/cradle-of-aviation.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "comparison",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "L'apogée peut atteindre 1/8 du chemin vers la Lune ; le périgée peut frôler le sommet de l'orbite basse. Le satellite sprinte près de la Terre et rampe au sommet.",
+    "note": "1/8ème form"
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Cargo amélioré de Northrop Grumman — amarré (et non arrimé) par Canadarm2, baptisé à chaque vol du nom d'un astronaute disparu.",
+    "note": "'docké' anglicism"
+  },
+  {
+    "rel": "tiangong-modules/chinarm.json",
+    "at": "function_detail",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/jaxa-sagamihara-communication-hall.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/HEO.json",
+    "at": "firsts.0.label",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Molniya 1-01 — premier satellite de communication en orbite fortement elliptique (URSS)",
+    "note": "USSR left in English"
+  },
+  {
+    "rel": "iss-visitors/crew_dragon.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Vols de rotation Commercial Crew vers le segment orbital américain ; système d'abandon de lancement SuperDraco ; panneaux solaires montés sur le tronc ; capsule partiellement réutilisable.",
+    "note": "abort system rendered as ejection"
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/canberra-dsn.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "surface_composition",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "small-bodies/eurybates.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/meerkat.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "science_sections.3.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/arecibo.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/alma.json",
+    "at": "name",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/bledsoe-miller-steam-center-waco.json",
+    "at": "items.cargo-dragon-v1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/la-palma.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/starlink.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "trajectories/cassini.json",
+    "at": "current_distance_label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "library_labels.moon-apollo",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/virginia-air-and-space-science-center.json",
+    "at": "items.apollo-csm-block-ii",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/devasthal.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "items.space-shuttle-orbiter",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/landsat.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Première fusée chinoise capable d'envoyer une mission vers Mars",
+    "note": "'délivrer' calque"
+  },
+  {
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "story",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Le point de Lagrange situé à environ 61 000 km derrière la Lune vue de la Terre — le col gravitationnel où les forces de la Terre, de la Lune et centrifuge s'équilibrent. La Lune se trouve toujours entre le vaisseau spatial et la Terre, ce qui rend les communications directes impossibles — mais un satellite stationné ici sur une orbite halo AUTOUR de L2 a une ligne de visée à la fois vers la face cachée de la Lune ET vers la Terre. C'est ainsi que la Chine a fait atterrir Chang'e 4 sur la face cachée en 2019 : le satellite relais Queqiao, stationné sur une orbite halo autour du point L2 Terre-Lune, assure la transmission de chaque commande et de chaque image.",
+    "note": "English phrase left in"
+  },
+  {
+    "rel": "earth-objects/clementine.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/glonass.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/infinity-science-center.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/goes.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "orbit-regimes/GEO.json",
+    "at": "firsts.1.label",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/lmt.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/china-science-and-technology-museum.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ratan-600.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/science-museum-london.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/leonardo.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Rangement sous pression pour les fournitures et les sacs de matériel, afin que les laboratoires restent libres pour les baies scientifiques.",
+    "note": "'stay clear for' read as 'stay away from'"
+  },
+  {
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Lanceur hypergolique à trois étages avec quatre propulseurs d'appoint à propergols liquides, en service depuis 1996. Configuration standard pour les lancements commerciaux vers l'orbite de transfert géostationnaire et la plupart des missions lunaires : Chang'e 1 (2007), Chang'e 2 (2010), Chang'e 3 (2013) et Chang'e 4 (2018). Retiré du service lunaire lorsque le plus grand Long March 5 a pris le relais pour les missions de retour d'échantillons (Chang'e 5/6) et Tianwen-1.",
+    "note": "'accélérateurs' not booster term"
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "story",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.0.why",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Charon et Pluton orbitent autour d'un barycentre situé EN DEHORS de Pluton — ce qui en fait le seul véritable système binaire connu du système solaire, plutôt qu'une planète accompagnée d'une lune.",
+    "note": "verb disagreement; awkward 'binaire vrai'"
+  },
+  {
+    "rel": "observatories/allen-telescope-array.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/nasm-washington.json",
+    "at": "items.gemini",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/udvar-hazy.json",
+    "at": "items.discovery",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/green-bank.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/bta-6.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.checked.0",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "iss-modules/tranquility.json",
+    "at": "function_detail",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Équipement majeur du système ECLSS, volume d'équipement d'exercice et acheminement des servitudes américaines vers la Cupola.",
+    "note": "'utilités' calque"
+  },
+  {
+    "rel": "observatories/effelsberg.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.checked.1",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "untranslated",
+    "new": "Wikimedia Commons — recherche en cyrillique (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+    "note": "Cyrillic search terms transliterated away"
+  },
+  {
+    "rel": "observatories/la-silla.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.2.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "science_sections.1.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/museum-of-science-and-industry-chicago.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/ska-low.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "earth-objects/inmarsat.json",
+    "at": "scale_fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "science_sections.0.why",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/elt.json",
+    "at": "highlights.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.apollo-lm",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/strategic-air-space-museum.json",
+    "at": "items.apollo-csm-block-i",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/space-center-houston.json",
+    "at": "items.saturn-v",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.2",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/mount-wilson.json",
+    "at": "highlights.1",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "observatories/nobeyama.json",
+    "at": "place",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "museums/california-science-center.json",
+    "at": "items.endeavour",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Space Shuttle Endeavour, dressé à la verticale en position de lancement avec un vrai réservoir externe et deux propulseurs d'appoint à poudre",
+    "note": "booster term"
+  },
+  {
+    "rel": "observatories/lofar.json",
+    "at": "description",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.2.l",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

@@ -1,16 +1,16 @@
 {
-  "description": "Seconda luna più grande del sistema solare e l'unica luna con un'atmosfera sostanziale — più densa di quella terrestre. Sotto la foschia arancione di toline si trova l'unico corpo conosciuto oltre alla Terra con liquidi stabili sulla sua superficie: laghi e mari di idrocarburi di metano ed etano nelle regioni polari, alimentati da un ciclo idrologico attivo del metano che include nuvole, pioggia e fiumi che scavano il substrato roccioso di ghiaccio d'acqua. Huygens (ESA) ha effettuato il primo atterraggio su una luna diversa da quella terrestre nel 2005. Il Dragonfly della NASA arriverà nel 2034 come rotore a propulsione nucleare, saltellando tra i paesaggi ricchi di composti organici di Titano.",
+  "description": "Seconda luna più grande del sistema solare e unica luna con un'atmosfera consistente, più densa di quella terrestre. Sotto la foschia arancione di toline si trova l'unico altro corpo noto, oltre alla Terra, con liquidi stabili in superficie: laghi e mari di idrocarburi, metano ed etano, nelle regioni polari, alimentati da un ciclo idrologico attivo del metano che comprende nuvole, pioggia e fiumi che incidono un substrato di ghiaccio d'acqua. Huygens (ESA) ha compiuto nel 2005 il primo atterraggio su una luna diversa da quella terrestre. Il Dragonfly della NASA arriverà nel 2034 come velivolo a rotori a propulsione nucleare, saltellando tra i paesaggi ricchi di composti organici di Titano.",
   "surface_composition": "Substrato roccioso di ghiaccio d'acqua sotto dune organiche + laghi di idrocarburi (metano / etano) + un'atmosfera di azoto-metano 1,45× la pressione al livello del mare terrestre. La foschia di toline tinge il cielo di arancione.",
   "mission_visits": [
     "Pioneer 11 — USA, 1979 (prime immagini ravvicinate)",
     "Voyager 1 — USA, 1980 (profilo atmosferico)",
-    "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (mappatura orbitale + allunaggio in superficie)",
+    "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (mappatura orbitale + atterraggio in superficie)",
     "Dragonfly — USA, lancio 2028 (lander con rotori)"
   ],
   "library_labels": {
     "titan-wiki": "Wikipedia — Titano",
     "titan-nasa": "NASA Science — panoramica di Titano",
-    "titan-dragonfly": "NASA Dragonfly — missione rotore nucleare verso Titano",
+    "titan-dragonfly": "NASA Dragonfly — missione verso Titano con un velivolo a rotori nucleare",
     "titan-huygens": "ESA Huygens — primo atterraggio su una luna diversa dalla nostra"
   },
   "science_sections": [
@@ -22,7 +22,7 @@
     {
       "tab": "planets",
       "section": "sub-solar-and-terminator",
-      "why": "Titano ha un'atmosfera densa di N₂-CH₄ — l'unico satellite con un'atmosfera. Le temperature superficiali si aggirano a 94 K, dove metano ed etano esistono come laghi liquidi."
+      "why": "Titano ha un'atmosfera densa di N₂-CH₄ — l'unico satellite ad averne una. Le temperature superficiali si aggirano intorno ai 94 K, dove metano ed etano esistono sotto forma di laghi liquidi."
     }
   ]
 }

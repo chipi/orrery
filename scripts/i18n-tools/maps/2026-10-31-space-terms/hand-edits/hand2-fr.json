@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "old": "Brûle profond dans un puits gravitationnel et ton carburant fait plus de travail.",
+    "new": "Allume ton moteur au fond d'un puits gravitationnel et ton carburant travaille davantage : le même moteur produit physiquement plus d'énergie orbitale quand il va vite."
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "intro_sentence",
+    "old": "Une fusée nucléo-thermique remplace la chambre de combustion par un réacteur à fission : l'hydrogène chauffe dans le cœur au-delà de toute flamme chimique et se détend par une tuyère — environ deux fois l'Isp des moteurs chimiques.",
+    "new": "Une fusée nucléo-thermique remplace la chambre de combustion par un réacteur à fission : l'hydrogène, chauffé au-delà de toute flamme chimique, se détend dans une tuyère — deux fois l'Isp des moteurs chimiques, avec une forte poussée."
+  }
+]

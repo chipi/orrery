@@ -1,0 +1,541 @@
+[
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "en": "Single Earth gravity assist begins the inner-system gravity-assist chain.",
+    "old": "एकल पृथ्वी गुरुत्व सहायता आंतरिक-प्रणाली गुरुत्व-सहायता श्रृंखला शुरू करती है।",
+    "new": "पृथ्वी की एकल गुरुत्व-सहायता आंतरिक सौरमंडल की गुरुत्व-सहायता श्रृंखला शुरू करती है।"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.4.note",
+    "en": "Thruster lines freeze; final command issued 2009-06-30.",
+    "old": "थ्रस्टर लाइनें जम गईं; अंतिम कमांड 30-6-2009 को जारी।",
+    "new": "थ्रस्टर लाइनें जम जाती हैं; अंतिम कमांड 2009-06-30 को जारी।"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.5.note",
+    "en": "Planned rendezvous with fast-rotating asteroid (1998 KY26).",
+    "old": "तेजी से घूमने वाले क्षुद्रग्रह (1998 KY26) के साथ योजनित मिलन।",
+    "new": "तेज़ी से घूमने वाले क्षुद्रग्रह (1998 KY26) के साथ नियोजित मिलन।"
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.2.note",
+    "en": "Lunar orbit insertion 1998-01-11 — initial 100 × 100 km polar orbit.",
+    "old": "चंद्र कक्षा प्रवेश 1998-01-11 — प्रारंभिक 100 × 100 किमी ध्रुवीय कक्षा।",
+    "new": "चंद्र कक्षा-प्रवेश 1998-01-11 — प्रारंभिक 100 × 100 किमी ध्रुवीय कक्षा।"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.2.note",
+    "en": "Captured by lunar gravity 2004-11-15 — first European spacecraft at the Moon.",
+    "old": "2004-11-15 को चंद्र गुरुत्वाकर्षण द्वारा कब्जा — चंद्रमा पर पहला यूरोपीय अंतरिक्ष यान।",
+    "new": "2004-11-15 को चंद्र गुरुत्वाकर्षण की पकड़ में आया — चंद्रमा पर पहला यूरोपीय अंतरिक्ष यान।"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "first",
+    "en": "First spacecraft to orbit Jupiter; atmospheric probe into Jupiter clouds",
+    "old": "बृहस्पति की परिक्रमा करने वाला पहला अंतरिक्ष यान; बृहस्पति के बादलों में वायुमंडलीय जांच",
+    "new": "बृहस्पति की परिक्रमा करने वाला पहला अंतरिक्ष यान; बृहस्पति के बादलों में वायुमंडलीय प्रोब"
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.6.note",
+    "en": "Rotor blade damaged on 72nd flight 2024-01-18; helicopter grounded, repurposed as a stationary weather and data station storing readings for future retrieval.",
+    "old": "2024-01-18 पर 72वीं उड़ान में रोटर ब्लेड क्षतिग्रस्त; हेलीकॉप्टर ग्राउंडेड, एक स्थिर मौसम और डेटा स्टेशन के रूप में पुनः उपयोग किया गया जो भविष्य की पुनः प्राप्ति के लिए रीडिंग संग्रहीत करता है।",
+    "new": "2024-01-18 को 72वीं उड़ान में रोटर ब्लेड क्षतिग्रस्त हुआ; हेलीकॉप्टर को उड़ान से हटा दिया गया और स्थिर मौसम तथा डेटा स्टेशन के रूप में उपयोग किया गया, जो भविष्य में पुनर्प्राप्त करने के लिए रीडिंग संग्रहीत करता है।"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.1.note",
+    "en": "Serves as the target for Gemini 6A’s first crewed rendezvous.",
+    "old": "Gemini 6A के पहले चालक दल मिलन के लिए लक्ष्य के रूप में कार्य करता है।",
+    "new": "Gemini 6A के पहले मानवयुक्त मिलन के लिए लक्ष्य का काम करता है।"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.5.note",
+    "en": "2023-09-24. SRC parachutes into Utah Test and Training Range; spacecraft becomes OSIRIS-APEX.",
+    "old": "2023-09-24। SRC Utah Test and Training Range में पैराशूट करता है; अंतरिक्ष यान OSIRIS-APEX बन जाता है।",
+    "new": "2023-09-24। SRC पैराशूट से यूटा टेस्ट एंड ट्रेनिंग रेंज में उतरता है; अंतरिक्ष यान OSIRIS-APEX बन जाता है।"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.3.note",
+    "en": "SM cryo-stir command initiates a short-circuit fire and tank rupture. \"Houston, we've had a problem.\" Power and water dwindle; LM Aquarius becomes the lifeboat.",
+    "old": "SM क्रायो-स्टिर कमांड एक शॉर्ट-सर्किट आग और टैंक टूटने को शुरू करता है। \"ह्यूस्टन, हमें एक समस्या हुई है।\" शक्ति और पानी कम हो जाता है; LM एक्वेरियस लाइफबोट बन जाता है।",
+    "new": "SM का क्रायो-स्टिर कमांड शॉर्ट-सर्किट से आग और टैंक फटने की शुरुआत करता है। \"ह्यूस्टन, हमें एक समस्या हुई है।\" बिजली और पानी घटते जाते हैं; LM एक्वेरियस जीवनरक्षक नौका बन जाता है।"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.2.note",
+    "en": "2005-09-12. Station-keep at 7-km gate position.",
+    "old": "2005-09-12। 7-km गेट स्थिति पर स्टेशन-रख।",
+    "new": "2005-09-12। 7-km गेट स्थिति पर स्थान बनाए रखना।"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.3.note",
+    "en": "Two surface contacts 2005-11-20 + 25. Sample-collection projectiles fail to fire on command.",
+    "old": "दो सतह संपर्क 2005-11-20 + 25। नमूना-संग्रह प्रक्षेप्य कमांड पर आग नहीं लगते।",
+    "new": "दो सतह संपर्क 2005-11-20 + 25। नमूना-संग्रह प्रक्षेप्य कमांड पर दागे नहीं जा सके।"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.0.note",
+    "en": "LVM3 M4 (formerly GSLV Mk III) from Sriharikota.",
+    "old": "श्रीहरिकोटा से LVM3 M4 (पूर्व में GSLV Mk III)।",
+    "new": "श्रीहरिकोटा से LVM3 M4 (पूर्व में GSLV Mk III)।"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.2.note",
+    "en": "First-ever direct measurements of solar wind over a Sun pole.",
+    "old": "किसी सूर्य ध्रुव के ऊपर सौर पवन के पहले प्रत्यक्ष माप।",
+    "new": "सूर्य के किसी ध्रुव के ऊपर सौर पवन के पहले प्रत्यक्ष माप।"
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.3.note",
+    "en": "2022-09-04. Begins inclination climb out of the ecliptic.",
+    "old": "2022-09-04। ग्रहण तल से बाहर झुकाव चढ़ाई शुरू होती है।",
+    "new": "2022-09-04। क्रांतिवृत्त तल से बाहर झुकाव बढ़ाने की शुरुआत।"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 14 days / 206 orbits.",
+    "old": "14 दिन / 206 कक्षाओं के बाद Atlantic में समुद्र में उतरना।",
+    "new": "14 दिन / 206 कक्षाओं के बाद अटलांटिक में स्प्लैशडाउन।"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.6.note",
+    "en": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers — the first crewed-mission spacecraft stage deliberately impacted the Moon and recorded by a surface seismometer.",
+    "old": "Intrepid आरोही चरण जानबूझकर चंद्रमा पर दुर्घटनाग्रस्त हुआ ALSEP सीस्मोमीटर को कैलिब्रेट करने के लिए — पहला क्रूड-मिशन अंतरिक्ष यान चरण जानबूझकर चंद्रमा पर प्रभावित हुआ और एक सतह सीस्मोमीटर द्वारा रिकॉर्ड किया गया।",
+    "new": "Intrepid का आरोही चरण ALSEP सीस्मोमीटरों को अंशांकित करने के लिए जानबूझकर चंद्रमा पर गिराया गया — मानवयुक्त मिशन के अंतरिक्ष यान का पहला चरण, जिसे जानबूझकर चंद्रमा से टकराया गया और जिसकी टक्कर सतह पर लगे सीस्मोमीटर ने दर्ज की।"
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.1.note",
+    "en": "First voice communication between two crewed spacecraft.",
+    "old": "दो क्रू युक्त अंतरिक्ष यानों के बीच पहली आवाज़ संचार।",
+    "new": "दो मानवयुक्त अंतरिक्ष यानों के बीच पहला ध्वनि-संचार।"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.1.note",
+    "en": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+    "old": "ट्रांस-लूनर इंजेक्शन — बिजली की चोटों से पुनः प्राप्ति सत्यापित; चंद्रमा के लिए मिशन GO।",
+    "new": "ट्रांस-लूनर इंजेक्शन — बिजली गिरने की घटनाओं से यान के उबरने की पुष्टि; चंद्रमा के लिए मिशन GO।"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.note",
+    "en": "2026-12-03. Final acceleration outbound to Jupiter.",
+    "old": "2026-12-03। जुपिटर के लिए अंतिम त्वरण।",
+    "new": "2026-12-03। बृहस्पति की ओर जाते हुए अंतिम त्वरण।"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 4 days / 59 orbits — the last Gemini.",
+    "old": "Atlantic में जल-अवतरण 4 दिन / 59 कक्षाओं के बाद — अंतिम Gemini।",
+    "new": "4 दिन / 59 कक्षाओं के बाद अटलांटिक में स्प्लैशडाउन — अंतिम Gemini।"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.2.note",
+    "en": "Flag + gift exchange; joint experiments; 2 dockings across ~44 hours docked.",
+    "old": "झंडा + उपहार विनिमय; संयुक्त प्रयोग; 2 डॉकिंग ~44 घंटे डॉक किए हुए।",
+    "new": "झंडा + उपहारों का आदान-प्रदान; संयुक्त प्रयोग; ~44 घंटे डॉक रहने के दौरान 2 डॉकिंग।"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.1.note",
+    "en": "Orbiter captures into Mars orbit during global dust storm.",
+    "old": "परिक्रमाकार वैश्विक धूल तूफान के दौरान मंगल की कक्षा में कब्जा करता है।",
+    "new": "वैश्विक धूल तूफान के दौरान ऑर्बिटर मंगल की कक्षा में कैप्चर होता है।"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.7.note",
+    "en": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+    "old": "ट्रांस-अर्थ इंजेक्शन। SPS ∆v ≈1.0 किमी/s।",
+    "new": "ट्रांस-अर्थ इंजेक्शन। SPS डेल्टा-वी ~1.0 किमी/सेकंड।"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.1.note",
+    "en": "Descent module separates + lands; balloon deploys at 54 km altitude for 46.5 hours.",
+    "old": "डिसेंट मॉड्यूल अलग होता है + उतरता है; बैलून 54 किमी ऊंचाई पर 46.5 घंटे के लिए तैनात।",
+    "new": "अवरोहण मॉड्यूल अलग होता है + उतरता है; गुब्बारा 54 किमी ऊँचाई पर 46.5 घंटे के लिए तैनात होता है।"
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.4.note",
+    "en": "NiCd batteries depleted; mission ended 1966-05-30. Remains in lunar orbit.",
+    "old": "NiCd बैटरी खत्म हो गई; मिशन 1966-05-30 को समाप्त हुआ। चंद्र कक्षा में बनी रहती है।",
+    "new": "NiCd बैटरी खत्म हो गई; मिशन 1966-05-30 को समाप्त हुआ। यान चंद्र कक्षा में ही बना हुआ है।"
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.1.note",
+    "en": "TCM + NEXT-C ion-thruster demonstration firings.",
+    "old": "TCM + NEXT-C ion-thruster प्रदर्शन फायरिंग।",
+    "new": "TCM + NEXT-C आयन थ्रस्टर के प्रदर्शनात्मक परीक्षण-प्रज्वलन।"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.2.note",
+    "en": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+    "old": "लिओनोव Volga एयरलॉक से 1965-03-18 11:34 UTC को निकलते हैं; पहली मानव EVA। बाहर 12 मिनट; सूट निर्वात में फूल गया और वह फिर से प्रवेश करने के लिए दबाव हवा देते हैं।",
+    "new": "लिओनोव 1965-03-18 11:34 UTC को Volga एयरलॉक से बाहर निकलते हैं; पहली मानव EVA। बाहर 12 मिनट; निर्वात में सूट फूल गया और दोबारा भीतर आने के लिए उन्होंने सूट का दबाव निकाल दिया।"
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.2.note",
+    "en": "Lunar orbit insertion 1966-04-03 — first artificial satellite of any body other than Earth.",
+    "old": "चंद्र कक्षा में प्रवेश 1966-04-03 — पृथ्वी को छोड़कर किसी अन्य खगोलीय पिंड का पहला कृत्रिम उपग्रह।",
+    "new": "चंद्र कक्षा-प्रवेश 1966-04-03 — पृथ्वी के अलावा किसी भी पिंड का पहला कृत्रिम उपग्रह।"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.2.note",
+    "en": "Hover at 20 km — start of 1.5-year proximity operations including sample collection.",
+    "old": "20 km पर मंडराएं — नमूना संग्रह सहित 1.5 वर्ष की निकटता संचालन की शुरुआत।",
+    "new": "20 किमी पर मँडराना — नमूना संग्रह सहित 1.5 वर्ष के निकटवर्ती संचालन की शुरुआत।"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "en": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "old": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "new": "प्रवेश/अवरोहण/अवतरण प्रदर्शक · दुर्घटनाग्रस्त"
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.4.note",
+    "en": "2022-10-12, 0.29 AU. Inside Mercury's perihelion.",
+    "old": "2022-10-12, 0.29 AU। Mercury के पेरिहेलियन के अंदर।",
+    "new": "2022-10-12, 0.29 AU। बुध के उपसौर बिंदु के भीतर।"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.4.note",
+    "en": "Ascent stage lifts off; trans-Earth injection.",
+    "old": "आरोहण चरण उड़ान भरता है; पृथ्वी-अभिमुख इंजेक्शन।",
+    "new": "आरोही चरण उड़ान भरता है; ट्रांस-अर्थ इंजेक्शन।"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.4.note",
+    "en": "Atmospheric entry, supersonic parachute, sky-crane retro-rockets, rover lowered on cables.",
+    "old": "वायुमंडलीय प्रवेश, सुपरसोनिक पैराशूट, स्काई-क्रेन रेट्रो-रॉकेट, रोवर केबलों पर कम किया गया।",
+    "new": "वायुमंडलीय प्रवेश, सुपरसोनिक पैराशूट, स्काई-क्रेन रेट्रो-रॉकेट, रोवर को केबलों से नीचे उतारा गया।"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.note",
+    "en": "Trans-Mars injection (3.61 km/s ∆v) sends MSL onto a heliocentric Mars-bound trajectory.",
+    "old": "ट्रांस-मंगल इंजेक्शन (3.61 किमी/सेकंड ∆v) MSL को एक सूर्यकेंद्रीय मंगल-बाध्य प्रक्षेपवक्र पर भेजता है।",
+    "new": "ट्रांस-मंगल इंजेक्शन (3.61 किमी/सेकंड डेल्टा-वी) MSL को सूर्यकेंद्रीय, मंगल की ओर जाने वाले प्रक्षेपवक्र पर भेजता है।"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "en": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+    "old": "CM दक्षिण प्रशांत में 1969-11-24 20:58 UTC को उतरा। USS Hornet द्वारा वसूली।",
+    "new": "CM 1969-11-24 20:58 UTC को दक्षिण प्रशांत में उतरा। USS Hornet द्वारा पुनर्प्राप्ति।"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.10.note",
+    "en": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+    "old": "CM 1971-08-07 20:46 UTC पर उत्तरी प्रशांत में स्प्लैश डाउन हुआ। तीन मुख्य पैराशूटों में से एक पूरी तरह से तैनात नहीं हुआ; कड़ी लैंडिंग लेकिन सुरक्षित। USS Okinawa द्वारा वसूली।",
+    "new": "CM 1971-08-07 20:46 UTC को उत्तरी प्रशांत में उतरा। तीन मुख्य पैराशूटों में से एक पूरी तरह नहीं खुला; कठोर लेकिन सुरक्षित अवतरण। USS Okinawa द्वारा पुनर्प्राप्ति।"
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.2.note",
+    "en": "2022-09-26. SMART Nav takes over 4h pre-impact.",
+    "old": "2022-09-26। SMART Nav प्रभाव से 4 घंटे पहले नियंत्रण लेता है।",
+    "new": "2022-09-26। टक्कर से 4 घंटे पहले SMART Nav नियंत्रण संभाल लेता है।"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.5.note",
+    "en": "Intrepid lifts off after 31 h 31 m on surface. 34 kg of samples returned.",
+    "old": "Intrepid सतह पर 31 घंटे 31 मिनट के बाद उड़ता है। 34 किग्रा नमूने लौटाए गए।",
+    "new": "सतह पर 31 घंटे 31 मिनट रहने के बाद Intrepid उड़ान भरता है। 34 किग्रा नमूने लौटाए गए।"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.4.note",
+    "en": "Bounced 28 times. Rolled to rest at 14.57°S, 175.47°E.",
+    "old": "28 बार उछला। 14.57°S, 175.47°E पर विश्राम के लिए रोल किया।",
+    "new": "28 बार उछला। 14.57°S, 175.47°E पर लुढ़ककर रुक गया।"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.0.note",
+    "en": "Delta IV Heavy + Star 48BV — highest C3 ever for a science mission (154 km²/s²).",
+    "old": "डेल्टा IV हेवी + स्टार 48BV — विज्ञान मिशन के लिए सर्वोच्च C3 (154 किमी²/सेकंड²)।",
+    "new": "डेल्टा IV हेवी + स्टार 48BV — किसी भी विज्ञान मिशन के लिए अब तक का सर्वाधिक C3 (154 किमी²/सेकंड²)।"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.8.note",
+    "en": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+    "old": "अंतर-पृथ्वी इंजेक्शन। SPS ∆v ~1.0 km/s।",
+    "new": "ट्रांस-अर्थ इंजेक्शन। SPS डेल्टा-वी ~1.0 किमी/सेकंड।"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.2.note",
+    "en": "Pacific Ocean ~445 km NE of Midway after 6 orbits / 9 h 13 min. First Mercury Pacific recovery.",
+    "old": "मिडवे के उत्तर-पूर्व में प्रशांत महासागर में ~445 किमी 6 कक्षाओं / 9 घंटे 13 मिनट के बाद। पहली Mercury प्रशांत महासागर पुनरुद्धार।",
+    "new": "6 कक्षाओं / 9 घंटे 13 मिनट के बाद मिडवे के लगभग 445 किमी उत्तर-पूर्व में प्रशांत महासागर में। Mercury कार्यक्रम की पहली प्रशांत पुनर्प्राप्ति।"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.5.note",
+    "en": "One working engine assembled from surviving halves of two damaged ones.",
+    "old": "एक काम करने वाला इंजन दो क्षतिग्रस्त लोगों के बचे हुए हिस्सों से इकट्ठा किया गया।",
+    "new": "दो क्षतिग्रस्त इंजनों के बचे हुए हिस्सों को जोड़कर एक काम करने वाला इंजन बनाया गया।"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.9.note",
+    "en": "2033-03. Mission climax: 113-km + 104-km binary Trojan.",
+    "old": "2033-03। मिशन समापन: 113-km + 104-km बाइनरी ट्रोजन।",
+    "new": "2033-03। मिशन का चरम: 113-km + 104-km बाइनरी ट्रोजन।"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.note",
+    "en": "Venus gravity assist en route back to two more Earth passes.",
+    "old": "दो और पृथ्वी गुजरवट के लिए रास्ते में शुक्र गुरुत्वाकर्षण सहायता।",
+    "new": "शुक्र की गुरुत्व-सहायता; पृथ्वी के दो और फेरों की ओर वापसी के मार्ग में।"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.8.note",
+    "en": "Final Earth assist 2030-12. Heads to L5 cloud.",
+    "old": "अंतिम पृथ्वी सहायक 2030-12। L5 बादल की ओर जाता है।",
+    "new": "पृथ्वी की अंतिम गुरुत्व-सहायता 2030-12। L5 बादल की ओर जाता है।"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.4.note",
+    "en": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-21.",
+    "old": "दल ने -30°C भेड़िये-निवासित जंगल में 2 रातें जीवित रहे जब तक 1965-03-21 को पुनः प्राप्ति हेलीकॉप्टर उन तक नहीं पहुंचे।",
+    "new": "दल -30°C के भेड़ियों वाले जंगल में 2 रातें जीवित रहा, फिर 1965-03-21 को बचाव हेलीकॉप्टर उन तक पहुँचे।"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "events.1.note",
+    "en": "Pre-loaded attitude software would have raised orbit instead of lowering it; corrected next day.",
+    "old": "पूर्व-लोड किया गया रवैया सॉफ्टवेयर इसे कम करने के बजाय कक्षा को बढ़ाता; अगले दिन सुधारा गया।",
+    "new": "पहले से लोड किया गया अभिविन्यास सॉफ़्टवेयर कक्षा को नीचे करने के बजाय ऊँचा उठा देता; अगले दिन सुधारा गया।"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.1.note",
+    "en": "Used Jupiter assist to bend onto a Saturn-bound path.",
+    "old": "शनि की ओर की गई गति को मोड़ने के लिए बृहस्पति सहायता का उपयोग।",
+    "new": "शनि की ओर जाने वाले पथ पर मुड़ने के लिए बृहस्पति की गुरुत्व-सहायता का उपयोग किया।"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.5.note",
+    "en": "2018-06-10. Planet-wide dust storm cuts solar power.",
+    "old": "2018-06-10. ग्रह-व्यापी धूल तूफान सौर शक्ति को काट देता है।",
+    "new": "2018-06-10। पूरे ग्रह को ढकने वाला धूल तूफान सौर ऊर्जा घटा देता है।"
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "events.1.note",
+    "en": "Vostok 4 launched 24h later; closest approach ~6.5 km on day 2.",
+    "old": "Vostok 4 को 24h बाद लॉन्च किया गया; दिन 2 पर निकटतम दृष्टिकोण ~6.5 km।",
+    "new": "Vostok 4 24 घंटे बाद प्रक्षेपित हुआ; दिन 2 पर निकटतम दूरी ~6.5 किमी।"
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "first",
+    "en": "First soft-landing on the Moon; first photographs from the lunar surface",
+    "old": "चंद्रमा पर पहली नरम लैंडिंग; चंद्र सतह से पहली तस्वीरें",
+    "new": "चंद्रमा पर पहली सॉफ्ट लैंडिंग; चंद्र सतह से पहली तस्वीरें"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.1.note",
+    "en": "PPS-1350-G Hall-effect ion thruster begins 13-month low-thrust spiral.",
+    "old": "PPS-1350-G हॉल-इफेक्ट आयन थ्रस्टर 13 महीने की निम्न-थ्रस्ट स्पाइरल शुरू करता है।",
+    "new": "PPS-1350-G हॉल-प्रभाव आयन थ्रस्टर 13 महीने का निम्न-प्रणोद सर्पिल पथ शुरू करता है।"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.5.note",
+    "en": "First high-resolution surface images returned.",
+    "old": "पहली उच्च-रेजोल्यूशन सतह छवियां रिटर्न की गई।",
+    "new": "पहली उच्च-रिज़ॉल्यूशन सतह छवियाँ पृथ्वी पर भेजी गईं।"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.note",
+    "en": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+    "old": "गुलेल बृहस्पति तक पहुँचने के लिए सौर-केंद्रित ऊर्जा को पर्याप्त रूप से बढ़ाती है।",
+    "new": "गुलेल-प्रभाव बृहस्पति तक पहुँचने लायक सूर्यकेंद्रीय ऊर्जा बढ़ा देता है।"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.3.note",
+    "en": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+    "old": "अंतिम अडॉक 1975-07-19 16:26 UTC। सोयुज 19 1975-07-21 को कजाकिस्तान में उतरता है।",
+    "new": "अंतिम अनडॉकिंग 1975-07-19 16:26 UTC। सोयुज 19 1975-07-21 को कजाकिस्तान में उतरता है।"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.4.note",
+    "en": "2021-05-10. 2.5-year cruise back to Earth.",
+    "old": "2021-05-10। पृथ्वी पर 2.5-वर्ष की क्रूज।",
+    "new": "2021-05-10। पृथ्वी की ओर वापसी की 2.5-वर्ष की यात्रा।"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.4.note",
+    "en": "~120 km flyby of one of the largest main-belt asteroids ever observed close-up.",
+    "old": "कभी निकट से देखे गए सबसे बड़े मुख्य-बेल्ट क्षुद्रग्रहों में से एक की ~120 किमी फ्लाइबाई।",
+    "new": "अब तक निकट से देखे गए सबसे बड़े मुख्य-बेल्ट क्षुद्रग्रहों में से एक की ~120 किमी पर फ्लाईबाई।"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.3.note",
+    "en": "Completion of the first full solar polar orbit.",
+    "old": "पहले पूर्ण सौर ध्रुवीय कक्षा का समापन।",
+    "new": "पहली पूर्ण सौर ध्रुवीय कक्षा का समापन।"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.3.note",
+    "en": "Trim manoeuvres place Hope into its 55-hour science orbit.",
+    "old": "ट्रिम युक्तियां Hope को इसकी 55-घंटे की विज्ञान कक्षा में रखती हैं।",
+    "new": "ट्रिम मैन्यूवर Hope को उसकी 55-घंटे की विज्ञान कक्षा में स्थापित करते हैं।"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.5.note",
+    "en": "1972-10-27. Attitude-control gas exhausted.",
+    "old": "1972-10-27। रवैया-नियंत्रण गैस समाप्त।",
+    "new": "1972-10-27। अभिविन्यास-नियंत्रण गैस समाप्त।"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.4.note",
+    "en": "Bounced 26 times. Rolled into a 22-m crater by chance, surrounded by exposed bedrock.",
+    "old": "26 बार उछला। संयोग से 22 मीटर के क्रेटर में लुढ़का, उजागर आधारशिला से घिरा हुआ।",
+    "new": "26 बार उछला। संयोग से 22 मीटर के क्रेटर में लुढ़क गया, जिसके चारों ओर उजागर आधारशैल था।"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "en": "Atlantic splashdown after 3 orbits / 4 h 52 m.",
+    "old": "Atlantic स्पलैशडाउन 3 कक्षाओं / 4 h 52 m के बाद।",
+    "new": "3 कक्षाओं / 4 घंटे 52 मिनट के बाद अटलांटिक में स्प्लैशडाउन।"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.5.note",
+    "en": "2024-12-24. 9.86 R☉ (6.1 M km from the Sun). ~191 km/s. Heat shield 1,377 °C.",
+    "old": "2024-12-24। 9.86 R☉ (सूर्य से 6.1 M किमी)। ~191 किमी/सेकंड। हीट शील्ड 1,377 °C।",
+    "new": "2024-12-24। 9.86 R☉ (सूर्य से 61 लाख किमी)। ~191 किमी/सेकंड। ऊष्मा ढाल 1,377 °C।"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.4.note",
+    "en": "First full pass — 84% surface coverage at 100 m resolution.",
+    "old": "पहला पूर्ण पास — 100 मी संकल्प पर 84% सतह कवरेज।",
+    "new": "पहला पूर्ण पास — 100 मी रिज़ॉल्यूशन पर 84% सतह का कवरेज।"
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "events.1.note",
+    "en": "Solar panel fails to deploy; attitude control degrades — mission cut short.",
+    "old": "सौर पैनल तैनात होने में विफल; दृष्टिकोण नियंत्रण घटता है — मिशन छोटा किया गया।",
+    "new": "सौर पैनल तैनात होने में विफल; अभिविन्यास नियंत्रण बिगड़ता है — मिशन समय से पहले समाप्त करना पड़ा।"
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.2.note",
+    "en": "Titan flyby bent trajectory out of the ecliptic plane — no further planetary encounter possible.",
+    "old": "टाइटन फ्लाईबाई ने प्रक्षेप पथ को ग्रहण तल से बाहर की ओर मोड़ दिया — आगे कोई ग्रहीय मुठभेड़ संभव नहीं।",
+    "new": "टाइटन फ्लाईबाई ने प्रक्षेपवक्र को क्रांतिवृत्त तल से बाहर मोड़ दिया — आगे कोई ग्रहीय मुठभेड़ संभव नहीं।"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.5.note",
+    "en": "Eagle lifts off after 21h 36m on surface.",
+    "old": "ईगल सतह पर 21h 36m के बाद उठता है।",
+    "new": "सतह पर 21 घंटे 36 मिनट रहने के बाद ईगल उड़ान भरता है।"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.3.note",
+    "en": "Atlantic splashdown after ~1 d 1 h / 16 orbits.",
+    "old": "Atlantic स्प्लैशडाउन ~1 d 1 h / 16 कक्षाओं के बाद।",
+    "new": "~1 दिन 1 घंटे / 16 कक्षाओं के बाद अटलांटिक में स्प्लैशडाउन।"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.4.note",
+    "en": "Hydrazine leak, 2 reaction wheels dead, comms lost 7 weeks.",
+    "old": "हाइड्राज़िन रिसाव, 2 प्रतिक्रिया पहिये मृत, 7 सप्ताह के लिए संचार खो गया।",
+    "new": "हाइड्राज़ीन रिसाव, 2 रिएक्शन व्हील ख़राब, 7 सप्ताह तक संचार टूटा रहा।"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.2.note",
+    "en": "Closest approach to comet 1P/Halley at 8890 km — first cometary nucleus observation.",
+    "old": "8890 किमी पर धूमकेतु 1P/हैली का निकटतम संपर्क — किसी धूमकेतु नाभिक का पहला अवलोकन।",
+    "new": "धूमकेतु 1P/हैली के सबसे निकट 8890 किमी पर पहुँचा — किसी धूमकेतु के नाभिक का पहला अवलोकन।"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.3.note",
+    "en": "First-ever close-up of an E-type asteroid.",
+    "old": "एक E-प्रकार क्षुद्रग्रह की पहली कभी निकट छवि।",
+    "new": "E-प्रकार के क्षुद्रग्रह का अब तक का पहला निकट-दृश्य।"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.3.note",
+    "en": "D-CIXS X-ray fluorescence delivers first global elemental maps of the Moon.",
+    "old": "D-CIXS X-ray फ्लोरेसेंस चंद्रमा के पहले वैश्विक तत्व मानचित्र प्रदान करता है।",
+    "new": "D-CIXS एक्स-रे प्रतिदीप्ति चंद्रमा के पहले वैश्विक तात्विक मानचित्र प्रदान करता है।"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.6.note",
+    "en": "35-km D-type Trojan, slow rotator (446 h).",
+    "old": "35-km D-प्रकार ट्रोजन, धीमा घुमावदार (446 h)।",
+    "new": "35-km D-प्रकार ट्रोजन, धीमा घूर्णक (446 घंटे)।"
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.5.note",
+    "en": "Arm scrapes through topsoil. Bright white ice sublimates on camera over 4 sols.",
+    "old": "आर्म ऊपरी मिट्टी को खुरचता है। चमकीली सफेद बर्फ 4 सोल में कैमरे पर उर्ध्वपातित होती है।",
+    "new": "भुजा ऊपरी मिट्टी को खुरचती है। चमकीली सफेद बर्फ 4 सोल में कैमरे के सामने उर्ध्वपातित हो जाती है।"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "en": "First-ever Lunar-Earth Gravity Assist manoeuvre — Moon + Earth in one swing.",
+    "old": "पहली बार चंद्र-पृथ्वी गुरुत्वाकर्षण सहायता युक्तिकरण — एक झूले में चंद्रमा + पृथ्वी।",
+    "new": "पहली बार चंद्र-पृथ्वी गुरुत्व-सहायता मैन्यूवर — एक ही झूले में चंद्रमा + पृथ्वी।"
+  }
+]

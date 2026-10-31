@@ -1,9 +1,9 @@
 {
-  "description": "Callisto bevindt zich buiten de Laplace-resonantie die de getijdenverwarming in Io, Europa en Ganymedes aandrijft — dus het binnenste smolt nooit voldoende om volledig te differentiëren of de korst opnieuw te vormen. Het resultaat is de meest ongerepte registratie van impactbombardement in het interne Galilese stelsel, inclusief het spectaculaire Valhalla-bekken met zijn ~10-ringenstelsel dat zich uitstrekt over ongeveer een kwart van de maanomtrek. Ondanks het gebrek aan getijdenverwarming detecteerde Galileo's magnetometer een geïnduceerd magnetisch veld consistent met een diepe zilte oceaan ~100 km onder het oppervlak. De lage stralingomgeving (vergeleken met Europa of Ganymedes) en het langlevend water maken het een waarschijnlijke uitvalbasis voor toekomstige bemande missies naar het Jupiterstelsel.",
-  "surface_composition": "Ongeveer 40% waterijs + 60% silicaatgesteente; oppervlak is het zwaarst bekraterde in het zonnestelsel — bijna verzadigd, onaangeroerd door oppervlaktevernieuwing. Opvallend kenmerk: het 3.800 km grote Valhalla multi-ring inslagbekken.",
+  "description": "Callisto ligt buiten de Laplace-resonantie die de getijdenverwarming van Io, Europa en Ganymedes aandrijft — daardoor smolt het binnenste nooit genoeg om volledig te differentiëren of de korst te vernieuwen. Het resultaat is het meest ongerepte archief van inslagbombardement in het binnenste Galileïsche stelsel, met onder meer het spectaculaire Valhalla-bekken, een systeem van ~10 ringen dat ruwweg een kwart van de omtrek van de maan beslaat. Ondanks het ontbreken van getijdenverwarming detecteerde de magnetometer van Galileo een geïnduceerd magnetisch veld, passend bij een diepe zoute oceaan ~100 km onder het oppervlak. De lage stralingsomgeving (vergeleken met Europa of Ganymedes) en het langlevende water maken Callisto een waarschijnlijke uitvalsbasis voor toekomstige bemande missies naar het Jupiterstelsel.",
+  "surface_composition": "Ongeveer 40% waterijs + 60% silicaatgesteente; oppervlak is het zwaarst bekraterde in het zonnestelsel — bijna verzadigd, onaangeroerd door oppervlaktevernieuwing. Opvallend kenmerk: het meerringige inslagbekken Valhalla van 3.800 km.",
   "mission_visits": [
     "Voyager 1 + 2 — VS, 1979 (kartering)",
-    "Galileo orbiter — USA, 1995–2003 (meerdere voorbijvluchten; oceankadidat)"
+    "Galileo-orbiter — USA, 1995–2003 (meerdere flybys; kandidaat voor een oceaan)"
   ],
   "library_labels": {
     "callisto-wiki": "Wikipedia — Callisto",
@@ -14,12 +14,12 @@
     {
       "tab": "orbits",
       "section": "semi-major-axis",
-      "why": "Callisto beweegt in een baan buiten de Laplace-resonantie — zijn semi-grote as van 1,88 miljoen km plaatst het buiten de ergste stralingsgordels van Jupiter, wat het de meest ruimtevaartuig-vriendelijke Galileaanse maan maakt."
+      "why": "Callisto beweegt in een baan buiten de Laplace-resonantie — zijn halve lange as van 1,88 miljoen km plaatst het voorbij het ergste van de stralingsgordels van Jupiter, waardoor het de meest ruimtevaartuigvriendelijke Galileïsche maan is."
     },
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "Callisto's excentriciteit van 0,007 is klein en niet afgedwongen — zonder resonante pompwerking, geen getijdenvervorming, geen onderzeese oceaan (waarschijnlijk niet)."
+      "why": "De excentriciteit van Callisto van 0,007 is klein en niet afgedwongen — zonder resonante pompwerking geen getijdenvervorming, geen ondergrondse oceaan (waarschijnlijk)."
     }
   ]
 }

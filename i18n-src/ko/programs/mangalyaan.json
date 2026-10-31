@@ -80,5 +80,11 @@
       "type": "prose",
       "md": "더 깊은 교훈은 화성에서의 첫 시도 성공이 야망만큼이나 겸손에 관한 것이라는 점이다. 실패한 화성 임무들의 묘지는 너무 멀리 손을 뻗은 자금이 풍부한 프로그램들로 가득하다. ISRO는 확실히 관리할 수 있는 만큼만 정확히 손을 뻗었고, 그것을 증명했으며, 임무가 자신의 겸손한 목표를 초과하도록 했다. 높게 겨냥하기보다 정밀하게 겨냥하는 것이 때로는 가장 어려운 최초를 달성하는 방법이다."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "화성 — 목적지",
+    "/fleet?focus=mangalyaan": "함대 — Mars Orbiter Mission",
+    "/programs/chandrayaan": "Chandrayaan — 인도의 달 탐사 계획",
+    "/mars?site=mangalyaan": "화성 궤도의 Mangalyaan"
+  }
 }

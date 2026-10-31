@@ -80,5 +80,12 @@
       "type": "prose",
       "md": "De diepere les is de waarde van het bewijzen van de hele keten. Vikings blijvende geschenk was niet een enkele meting maar de demonstratie dat Mars bereiken en intact landen mogelijk en herhaalbaar was. Zodra iets moeilijks is gedaan — en twee keer gedaan — houdt het op een gok te zijn en wordt het een fundament waarop anderen kunnen bouwen. Soms is het grootste resultaat dat een missie terugbrengt simpelweg dat het kan worden gedaan."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — waar Viking landde",
+    "/programs/mariner": "Mariner — de scheervluchten en orbiters die Mars als eerste verkenden",
+    "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
+    "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
+    "/mars?site=viking1-orbiter": "Viking 1-orbiter"
+  }
 }

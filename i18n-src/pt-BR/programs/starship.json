@@ -88,5 +88,10 @@
       "type": "prose",
       "md": "A lição mais profunda é sobre projetar de trás para frente a partir de um objetivo. A Starship não faz sentido como uma melhoria incremental aos foguetes existentes; só faz sentido se o objetivo real é colonizar outro planeta, e cada escolha estranha — o tamanho, a reutilização completa, o reabastecimento orbital — segue disso. Alcançando Marte ou não, o veículo é uma lição sobre como é projetar para um estado final que a maior parte da indústria considera uma fantasia."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starship": "Frota — o sistema de lançamento Starship",
+    "/programs/spacex": "SpaceX — a reutilização sobre a qual a Starship é construída",
+    "/mars": "Marte — o destino"
+  }
 }

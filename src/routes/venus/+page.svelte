@@ -9,6 +9,7 @@
   // texture under a heavy amber tint — honest for what is visible of Venus.
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
   import { base } from '$app/paths';
+  import * as m from '$lib/paraglide/messages';
   import type { SurfaceSceneConfig, LanderModelBuilder } from '$lib/surface-scene/types';
   import { buildVenusLanderModel } from '$lib/venus-lander-models';
   import { registerVenusHotspotBuilders } from '$lib/surface-scene/register-venus-hotspot-builders';
@@ -40,8 +41,8 @@
     ambientColor: 0xaa7744,
     bodyTintCss: '#e0a84c',
     lensPanel: {
-      title: 'Venus',
-      body: 'A cloud-shrouded furnace — 92 bar of CO₂, ~465 °C at the surface, sulphuric-acid haze. Only the Soviet Venera and Vega landers ever returned data from the ground, for minutes each, before the heat and pressure killed them.',
+      title: m.lab_body_venus(),
+      body: m.venus_lens_body(),
       tab: 'mission-phases',
       section: 'edl',
       available: ['gravity', 'velocity'],

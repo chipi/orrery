@@ -1,5 +1,5 @@
 {
-  "intro": "Zhurong è atterrato su Utopia Planitia il 14 maggio 2021: il primo atterraggio riuscito della Cina su Marte e la prima missione marziana di una qualsiasi nazione a combinare orbiter, lander e rover in un unico lancio (Tianwen-1). Preso il nome dal dio cinese del fuoco, Zhurong ha percorso 1,92 km sulle pianure meridionali di Utopia prima di essere messo in ibernazione nel maggio 2022, durante la stagione delle polveri. La CNSA non ha confermato il risveglio.",
+  "intro": "Zhurong è atterrato su Utopia Planitia il 14 maggio 2021: il primo atterraggio riuscito della Cina su Marte e la prima missione marziana di una qualsiasi nazione a combinare orbiter, lander e rover in un unico lancio (Tianwen-1). Il suo nome deriva dal dio cinese del fuoco; Zhurong ha percorso 1,92 km sulle pianure meridionali di Utopia prima di essere messo in ibernazione nel maggio 2022, durante la stagione delle polveri. La CNSA non ha confermato il risveglio.",
   "chapters": [
     {
       "id": "hardware",
@@ -12,7 +12,7 @@
         },
         {
           "src": "/images/missions/tianwen1/02.webp",
-          "caption": "Lo stack di lancio di Tianwen-1: orbiter, lander e rover combinati, la missione marziana al primo tentativo più ambiziosa mai realizzata."
+          "caption": "Il complesso di lancio di Tianwen-1: orbiter, lander e rover combinati, la missione marziana al primo tentativo più ambiziosa mai realizzata."
         }
       ]
     },

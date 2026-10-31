@@ -1,0 +1,802 @@
+[
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "observatories/ratan-600.json",
+    "at": "description",
+    "en": "A ring of 895 rectangular radio reflectors, each 2 m x 7.4 m, in a 576 m diameter circle at 970 m altitude, run by the Special Astrophysical Observatory. With its central receiver it has the resolving power of a nearly 600-metre dish.",
+    "tr": "Ein Ring aus 895 rechteckigen Radioreflektoren, je 2 m x 7,4 m, in einem Kreis von 576 m Durchmesser in 970 m Höhe, betrieben vom Special Astrophysical Observatory. Mit seinem zentralen Empfänger hat er das Auflösungsvermögen einer fast 600 Meter großen Schüssel."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.0.label",
+    "en": "Ceres — first asteroid discovered (Piazzi, Italy)",
+    "tr": "Ceres — erster entdeckter Asteroid (Piazzi, Italien)"
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "satellites/io.json",
+    "at": "mission_visits.1",
+    "en": "Galileo orbiter — USA, 1995–2003 (multiple close flybys)",
+    "tr": "Galileo-Orbiter — USA, 1995–2003 (mehrere nahe Vorbeiflüge)"
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "earth-objects/gps.json",
+    "at": "description",
+    "en": "31 active satellites at 20,200 km. Every navigation app, every drone, every ship at sea depends on this constellation. Originally military, opened to civilians in 1983. Signal accuracy: ~3 m for civilian use, ~1 m for military — centimetre precision needs RTK augmentation.",
+    "tr": "31 aktive Satelliten in 20.200 km Höhe. Jede Navigations-App, jede Drohne, jedes Schiff auf dem Meer ist auf diese Konstellation angewiesen. Ursprünglich militärisch, 1983 für Zivilisten freigegeben. Signalgenauigkeit: ~3 m für zivile Nutzung, ~1 m für militärische — Zentimeter-Präzision erfordert RTK-Augmentation."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "satellites/titan.json",
+    "at": "science_sections.0.why",
+    "en": "Titan is in 1:1 spin-orbit resonance with Saturn — always shows the same face. Its 1.22-million-km semi-major axis places it near Saturn's outer Hill sphere.",
+    "tr": "Titan steht in einer 1:1-Spin-Bahn-Resonanz mit dem Saturn — er zeigt ihm immer dieselbe Seite. Mit einer großen Halbachse von 1,22 Millionen km liegt er nahe der äußeren Hill-Sphäre des Saturn."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "description",
+    "en": "Japan's national museum of nature and science, in Ueno Park, Tokyo.",
+    "tr": "Japans nationales Museum für Natur und Wissenschaft im Ueno-Park in Tokio."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "satellites/phobos.json",
+    "at": "science_sections.0.why",
+    "en": "Phobos orbits Mars at just 9,377 km — below the synchronous altitude, so it is tidally accelerated INWARD and will impact Mars in ~40 million years.",
+    "tr": "Phobos umkreist den Mars in nur 9.377 km Entfernung — unterhalb der synchronen Umlaufbahn, daher wird er gezeitenbeschleunigt nach INNEN und wird in ~40 Millionen Jahren auf dem Mars einschlagen."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "function_detail",
+    "en": "ISS crew rotation; lifeboat capability for the Russian Orbital Segment; semi-autonomous Kurs-NA rendezvous with manual TORU backup.",
+    "tr": "ISS-Mannschaftsrotation; Rettungsbootkapazität für das russische Orbitalsegment; halbautonomes Kurs-NA-Rendezvous mit manuellem TORU-Backup."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "small-bodies/menoetius.json",
+    "at": "science_sections.0.why",
+    "en": "Menoetius is Patroclus's binary companion at L5. Their tight binary geometry has kept them dynamically stable for 4.5 billion years.",
+    "tr": "Menoetius ist der binäre Begleiter von Patroclus bei L5. Ihre enge Binärgeometrie hat sie 4,5 Milliarden Jahre lang dynamisch stabil gehalten."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "earth-objects/tiangong.json",
+    "at": "scale_fact",
+    "en": "39 metres long. 180 tonnes. China built this with no international partners after being excluded from ISS agreements.",
+    "tr": "39 Meter lang. 180 Tonnen. China baute dies ohne internationale Partner auf, nachdem es von den ISS-Abkommen ausgeschlossen wurde."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "description",
+    "en": "The innermost and smallest of Uranus's five major moons — and visually the most extreme. Voyager 2's flyby imagery revealed a surface that looks like it was assembled from mismatched pieces: enormous cliffs, fractured plateaus, and concentric coronae jutting from heavily-cratered older terrain. The leading hypothesis is that Miranda was disrupted by an impact at least once, with the fragments reassembling under their own gravity. Verona Rupes drops ~20 km — under Miranda's low gravity, a falling object would take roughly 12 minutes to reach the bottom.",
+    "tr": "Der innerste und kleinste der fünf großen Monde des Uranus — und optisch der extremste. Die Vorbeiflugbilder von Voyager 2 zeigten eine Oberfläche, die aussieht, als wäre sie aus nicht zusammenpassenden Teilen zusammengesetzt: gewaltige Klippen, zerklüftete Hochebenen und konzentrische Coronae, die aus stark verkratertem älterem Gelände hervorragen. Die führende Hypothese lautet, dass Miranda mindestens einmal durch einen Einschlag zerstört wurde, wobei sich die Fragmente unter ihrer eigenen Schwerkraft wieder zusammenfügten. Verona Rupes fällt ~20 km ab — bei Mirandas geringer Schwerkraft würde ein fallendes Objekt ungefähr 12 Minuten brauchen, um den Boden zu erreichen."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.2",
+    "en": "When not tracking spacecraft its antennas also map quasars and do planetary radar.",
+    "tr": "Wenn sie keine Raumfahrzeuge verfolgen, kartieren seine Antennen auch Quasare und betreiben Planetenradar."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "story",
+    "en": "The Lagrange point about 61,000 km behind the Moon as seen from Earth — the gravitational saddle where Earth, Moon, and centrifugal forces balance. The Moon always sits between the spacecraft and Earth, so direct comms are impossible — but a satellite parked here in a halo orbit AROUND L2 has line-of-sight to BOTH the lunar farside AND Earth. That's how China landed Chang'e 4 on the farside in 2019: the Queqiao relay satellite, parked in a halo around Earth-Moon L2, bridges every command and image.",
+    "tr": "Der Lagrange-Punkt etwa 61.000 km hinter dem Mond, von der Erde aus gesehen — der Gravitationssattel, in dem sich die Kräfte von Erde und Mond sowie die Zentrifugalkraft ausgleichen. Der Mond steht immer zwischen dem Raumfahrzeug und der Erde, daher ist direkte Kommunikation unmöglich — doch ein Satellit, der hier in einer Halo-Umlaufbahn UM L2 geparkt ist, hat Sichtverbindung sowohl zur Mondrückseite ALS AUCH zur Erde. So landete China 2019 Chang'e 4 auf der Rückseite: Der Relaissatellit Queqiao, in einer Halo-Umlaufbahn um den Erde-Mond-Punkt L2 geparkt, überbrückt jeden Befehl und jedes Bild."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "satellites/io.json",
+    "at": "description",
+    "en": "The most geologically active body in the solar system. Tidal heating from Jupiter's gravity plus orbital resonance with Europa and Ganymede pumps roughly 100 terawatts of heat into Io's interior — enough to drive ~400 active volcanoes and surface temperatures that swing from -130 °C (frozen sulfur dioxide) to +1,600 °C (ultra-mafic lava). Its surface is repainted faster than impact cratering can mark it. Loki Patera, a 200 km lava lake, is the single most powerful volcanic feature in the solar system.",
+    "tr": "Der geologisch aktivste Himmelskörper des Sonnensystems. Gezeitenheizung durch Jupiters Gravitation plus Bahnresonanz mit Europa und Ganymed pumpt etwa 100 Terawatt Wärme in Ios Inneres – genug, um ~400 aktive Vulkane und Oberflächentemperaturen anzutreiben, die von −130 °C (gefrorenes Schwefeldioxid) bis +1.600 °C (ultrabasische Lava) schwanken. Seine Oberfläche wird schneller umgestaltet, als Einschlagskrater sie markieren können. Loki Patera, ein Lavasee von 200 km Durchmesser, ist die mächtigste einzelne vulkanische Struktur des Sonnensystems."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "satellites/umbriel.json",
+    "at": "science_sections.0.why",
+    "en": "Umbriel orbits Uranus at 266,000 km — its orbital plane is tilted with the planet, so its seasons mirror the parent's extreme axial geometry.",
+    "tr": "Umbriel umkreist den Uranus in 266.000 km Entfernung — seine Umlaufbahn ist mit dem Planeten geneigt, sodass seine Jahreszeiten die extreme Achsengeometrie des Mutterplaneten widerspiegeln."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "satellites/ariel.json",
+    "at": "science_sections.0.why",
+    "en": "Ariel orbits at 190,900 km from Uranus — second-innermost of the major moons. Like all Uranian moons, its orbit shares the planet's 97° axial tilt.",
+    "tr": "Ariel umkreist Uranus in 190.900 km Entfernung — der zweitinnerste der großen Monde. Wie alle Uranusmonde teilt seine Umlaufbahn die 97°-Achsenneigung des Planeten."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "comparison",
+    "en": "Sedna at aphelion sits 1/53rd of the way to the Sun's nearest stellar neighbour, Proxima Centauri. The light reaching Sedna from the Sun is 1/350,000th of what hits Earth.",
+    "tr": "Sedna befindet sich im Aphel 1/53 des Weges zum sonnennächsten Stern, Proxima Centauri. Das Licht, das Sedna von der Sonne erreicht, beträgt 1/350.000 dessen, was die Erde trifft."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.rejected.1",
+    "en": "Modern fan reproductions (e.g. a CC-BY Buran emblem by a game artist) — freely licensed but not authentic insignia",
+    "tr": "Moderne Fan-Nachbildungen (z. B. ein CC-BY-lizenziertes Buran-Emblem eines Spielegrafikers) — frei lizenziert, aber keine authentischen Abzeichen"
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "inclination",
+    "en": "The tilt of an orbit's plane against a reference plane, such as Earth's equator or the ecliptic, in degrees.",
+    "tr": "Die Neigung der Ebene einer Umlaufbahn gegen eine Bezugsebene, etwa den Erdäquator oder die Ekliptik, in Grad."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "docking",
+    "en": "Joining two spacecraft mechanically so that crew or cargo can pass between them.",
+    "tr": "Das mechanische Verbinden zweier Raumfahrzeuge, damit Besatzung oder Fracht zwischen ihnen wechseln kann."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "satellites/moon.json",
+    "at": "library_labels.moon-artemis",
+    "en": "NASA Artemis — return-to-Moon crewed program",
+    "tr": "NASA Artemis — bemanntes Programm zur Rückkehr zum Mond"
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "firsts.0.label",
+    "en": "Syncom 2 — first geosynchronous satellite (USA)",
+    "tr": "Syncom 2 — erster geosynchroner Satellit (USA)"
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.2",
+    "en": "It was influential in early detections of quasars, astrophysical masers and Einstein rings.",
+    "tr": "Es spielte eine wichtige Rolle bei frühen Entdeckungen von Quasaren, astrophysikalischen Masern und Einstein-Ringen."
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "satellites/io.json",
+    "at": "mission_visits.2",
+    "en": "Juno — USA, 2023–2024 (closest-ever approaches)",
+    "tr": "Juno — USA, 2023–2024 (bisher nächste Annäherungen)"
+  },
+  {
+    "loc": "de",
+    "tree": "catalogue",
+    "rel": "iss-visitors/htv_x.json",
+    "at": "description",
+    "en": "JAXA's next-generation Kounotori successor—first flew October 2025 atop H3, with expanded pressurised + exposed-cargo capacity.",
+    "tr": "Der Kounotori-Nachfolger der nächsten Generation von JAXA — erstmals im Oktober 2025 auf einer H3 geflogen, mit erweiterter Kapazität für druckbeaufschlagte und externe Fracht."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "observatories/salt.json",
+    "at": "description",
+    "en": "A 9.2 m optical telescope near Sutherland in the Karoo at 1,798 m, designed mainly for spectroscopy, with 91 hexagonal mirror segments. It is operated by the South African Astronomical Observatory.",
+    "tr": "Un télescope optique de 9,2 m près de Sutherland, dans le Karoo, à 1 798 m d’altitude, conçu principalement pour la spectroscopie, avec 91 segments de miroir hexagonaux. Il est exploité par le South African Astronomical Observatory."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.1.label",
+    "en": "Voyager 2 — only Uranus flyby ever (USA)",
+    "tr": "Voyager 2 — seul survol d'Uranus jamais effectué (USA)"
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "satellites/io.json",
+    "at": "science_sections.1.why",
+    "en": "Io's tidal heating (which makes it the most volcanically active world in the solar system) comes from forced eccentricity — pumped by Europa and Ganymede through the Laplace resonance.",
+    "tr": "Le chauffage par marée d'Io (qui en fait le monde le plus volcaniquement actif du système solaire) provient d'une excentricité forcée — entretenue par Europe et Ganymède via la résonance de Laplace."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "earth-objects/inmarsat.json",
+    "at": "description",
+    "en": "14+ geostationary satellites providing maritime, aviation, and remote-area voice + data comms. Backbone of GMDSS — the Global Maritime Distress and Safety System every ocean-going vessel depends on. Acquired by Viasat in 2023.",
+    "tr": "Plus de 14 satellites géostationnaires assurant des communications vocales et de données pour le maritime, l'aviation et les zones isolées. Colonne vertébrale du SMDSM — le Système mondial de détresse et de sécurité en mer dont dépend tout navire hauturier. Acquis par Viasat en 2023."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "satellites/titania.json",
+    "at": "surface_composition",
+    "en": "Water-ice + silicate rock; ancient cratered terrain cut by vast canyon systems hundreds of kilometres long — Messina Chasma stretches ~1,500 km across the moon.",
+    "tr": "Glace d'eau + roche silicatée ; terrain ancien criblé de cratères traversé par de vastes systèmes de canyons longs de centaines de kilomètres — Messina Chasma s'étend sur ~1 500 km à travers la lune."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "museums/science-museum-london.json",
+    "at": "items.soyuz-tma",
+    "en": "Soyuz TMA-19M descent module, flown by Tim Peake (2015–2016)",
+    "tr": "Module de descente de Soyuz TMA-19M, piloté par Tim Peake (2015–2016)"
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "satellites/titan.json",
+    "at": "surface_composition",
+    "en": "Water-ice bedrock under organic dunes + hydrocarbon lakes (methane / ethane) + a nitrogen-methane atmosphere 1.45× Earth's sea-level pressure. Tholin haze tints the sky orange.",
+    "tr": "Substrat rocheux de glace d'eau sous des dunes organiques + lacs d'hydrocarbures (méthane / éthane) + atmosphère d'azote et de méthane à 1,45× la pression au niveau de la mer terrestre. La brume de tholins teinte le ciel en orange."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "firsts.0.label",
+    "en": "Ceres — first asteroid discovered (Piazzi, Italy)",
+    "tr": "Cérès — premier astéroïde découvert (Piazzi, Italie)"
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "small-bodies/oumuamua.json",
+    "at": "science_sections.0.why",
+    "en": "ʻOumuamua had e > 1 — a hyperbolic, unbound orbit. The first confirmed interstellar object to pass through the solar system (2017).",
+    "tr": "ʻOumuamua avait e > 1 — une orbite hyperbolique, non liée. Le premier objet interstellaire confirmé à traverser le système solaire (2017)."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "earth-objects/xmm.json",
+    "at": "description",
+    "en": "ESA's X-ray multi-mirror mission. 3 telescopes in one spacecraft. Like Chandra, uses a highly elliptical orbit to escape Earth's radiation. Over 1,000 peer-reviewed papers published from its data. Launched the same year as Chandra — two observatories, two continents, the same invisible sky.",
+    "tr": "Mission à rayons X multi-miroirs de l'ESA. 3 télescopes dans un seul vaisseau spatial. Comme Chandra, utilise une orbite très elliptique pour échapper au rayonnement terrestre. Plus de 1 000 articles évalués par des pairs ont été publiés à partir de ses données. Lancé la même année que Chandra : deux observatoires, deux continents, le même ciel invisible."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "library_labels.miranda-voyager2",
+    "en": "NASA Voyager 2 — only Uranian-system flyby (1986)",
+    "tr": "NASA Voyager 2 — seul survol du système uranien (1986)"
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.2",
+    "en": "When not tracking spacecraft its antennas also map quasars and do planetary radar.",
+    "tr": "Lorsqu’elles ne suivent pas d’engins spatiaux, ses antennes cartographient aussi des quasars et font du radar planétaire."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-moon/HLO.json",
+    "at": "firsts.0.label",
+    "en": "Luna 10 — first artificial lunar orbiter (USSR)",
+    "tr": "Luna 10 — premier orbiteur lunaire artificiel (URSS)"
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "satellites/io.json",
+    "at": "mission_visits.1",
+    "en": "Galileo orbiter — USA, 1995–2003 (multiple close flybys)",
+    "tr": "Galileo orbiter — États-Unis, 1995–2003 (multiples survols rapprochés)"
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "planets/arrokoth.json",
+    "at": "bio",
+    "en": "Discovered in 2014 by Hubble and originally catalogued as 2014 MU69. Renamed Arrokoth (Powhatan for 'sky') in 2019 after the New Horizons flyby — a pristine remnant of the planetesimal disk preserved unmodified since formation. Its red, gently-accreted contact-binary shape is a direct fingerprint of how planet-building started in the outer solar system.",
+    "tr": "Découvert en 2014 par Hubble et catalogué à l'origine comme 2014 MU69. Renommé Arrokoth (« ciel » en powhatan) en 2019 après le survol par New Horizons — un vestige intact du disque planétésimal préservé sans modification depuis sa formation. Sa forme rouge de binaire de contact à accrétion douce est une empreinte directe de la manière dont la formation des planètes a commencé dans le système solaire externe."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "satellites/callisto.json",
+    "at": "mission_visits.1",
+    "en": "Galileo orbiter — USA, 1995–2003 (multiple flybys; ocean candidate)",
+    "tr": "Orbiteur Galileo — États-Unis, 1995–2003 (survols multiples ; présence d'un océan envisagée)"
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "museums/armstrong-air-and-space-museum.json",
+    "at": "description",
+    "en": "A museum in Neil Armstrong's hometown, Wapakoneta, Ohio.",
+    "tr": "Un musée dans la ville natale de Neil Armstrong, Wapakoneta, dans l'Ohio."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.rejected.0",
+    "en": "roscosmos.ru / astronaut.ru and similar — copyrighted or license-unclear; astronaut.ru is a privately-run encyclopedia, not a rights holder",
+    "tr": "roscosmos.ru / astronaut.ru et similaires — protégés par des droits d'auteur ou licence peu claire ; astronaut.ru est une encyclopédie gérée de manière privée, pas un détenteur de droits"
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "orbit",
+    "en": "The closed path a body follows around another under gravity — an ellipse in the simplest case.",
+    "tr": "Le chemin fermé qu'un corps suit autour d'un autre sous l'effet de la gravité — une ellipse dans le cas le plus simple."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "rendezvous",
+    "en": "Bringing two spacecraft to the same place at the same speed so that they fly together — usually the step before docking.",
+    "tr": "Amener deux engins spatiaux au même endroit à la même vitesse pour qu'ils volent ensemble — généralement l'étape qui précède l'amarrage."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "satellites/moon.json",
+    "at": "mission_visits.1",
+    "en": "Apollo 11 — USA, 1969 (first crewed landing)",
+    "tr": "Apollo 11 — États-Unis, 1969 (premier alunissage habité)"
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "function_detail",
+    "en": "Tianhe propellant top-up, dry-cargo crew supplies, and on-orbit waste removal via destructive reentry over the South Pacific.",
+    "tr": "Réapprovisionnement en propergol de Tianhe, fournitures sèches pour l'équipage et évacuation en orbite des déchets par entrée atmosphérique destructive au-dessus du Pacifique Sud."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.2",
+    "en": "It was influential in early detections of quasars, astrophysical masers and Einstein rings.",
+    "tr": "Il a joué un rôle important dans les premières détections de quasars, de masers astrophysiques et d’anneaux d’Einstein."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "description",
+    "en": "The innermost and smallest of Uranus's five major moons — and visually the most extreme. Voyager 2's flyby imagery revealed a surface that looks like it was assembled from mismatched pieces: enormous cliffs, fractured plateaus, and concentric coronae jutting from heavily-cratered older terrain. The leading hypothesis is that Miranda was disrupted by an impact at least once, with the fragments reassembling under their own gravity. Verona Rupes drops ~20 km — under Miranda's low gravity, a falling object would take roughly 12 minutes to reach the bottom.",
+    "tr": "La plus intérieure et la plus petite des cinq lunes principales d'Uranus — et visuellement la plus extrême. Les images du survol de Voyager 2 ont révélé une surface qui semble avoir été assemblée à partir de morceaux disparates : d'énormes falaises, des plateaux fracturés et des coronae concentriques émergeant d'un terrain ancien fortement cratérisé. L'hypothèse principale est que Miranda a été disloquée par un impact au moins une fois, les fragments se réassemblant sous l'effet de leur propre gravité. Verona Rupes plonge de ~20 km — sous la faible gravité de Miranda, un objet en chute libre mettrait environ 12 minutes pour atteindre le fond."
+  },
+  {
+    "loc": "fr",
+    "tree": "catalogue",
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "function_detail",
+    "en": "ISS crew rotation; lifeboat capability for the Russian Orbital Segment; semi-autonomous Kurs-NA rendezvous with manual TORU backup.",
+    "tr": "Rotation d'équipage ISS ; capacité de canot de sauvetage pour le Segment Orbital Russe ; rendez-vous semi-autonome Kurs-NA avec secours manuel TORU."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "observatories/ratan-600.json",
+    "at": "place",
+    "en": "Zelenchukskaya, Karachay-Cherkess Republic",
+    "tr": "Zelenčukskaja, Repubblica del Karačaj-Circassia"
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "story",
+    "en": "The outer planetary realm — 5 to 30 AU. Two gas giants (Jupiter, Saturn) with hydrogen-helium envelopes thousands of kilometres deep above small rocky cores; two ice giants (Uranus, Neptune) with water/ammonia/methane mantles under thinner gas. Together they hold 99% of all planetary mass in the solar system. Each has its own moon system that reads as a miniature solar system in itself — Jupiter alone has 95 known moons, including four bigger than Pluto.",
+    "tr": "Il regno planetario esterno — da 5 a 30 au. Due giganti gassosi (Giove, Saturno) con involucri di idrogeno-elio profondi migliaia di chilometri sopra piccoli nuclei rocciosi; due giganti ghiacciati (Urano, Nettuno) con mantelli di acqua/ammoniaca/metano sotto strati di gas più sottili. Insieme racchiudono il 99% di tutta la massa planetaria del sistema solare. Ciascuno ha un proprio sistema di lune che si presenta come un sistema solare in miniatura — solo Giove ha 95 lune note, di cui quattro più grandi di Plutone."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "library_labels.miranda-voyager2",
+    "en": "NASA Voyager 2 — only Uranian-system flyby (1986)",
+    "tr": "NASA Voyager 2 — unico sorvolo del sistema uraniano (1986)"
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "earth-objects/inmarsat.json",
+    "at": "description",
+    "en": "14+ geostationary satellites providing maritime, aviation, and remote-area voice + data comms. Backbone of GMDSS — the Global Maritime Distress and Safety System every ocean-going vessel depends on. Acquired by Viasat in 2023.",
+    "tr": "Oltre 14 satelliti geostazionari che forniscono comunicazioni vocali e dati per settore marittimo, aviazione e aree remote. Spina dorsale del GMDSS — il Global Maritime Distress and Safety System su cui fa affidamento ogni imbarcazione oceanica. Acquisita da Viasat nel 2023."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "satellites/triton.json",
+    "at": "description",
+    "en": "Neptune's largest moon and one of the most geologically active worlds in the solar system. Triton orbits Neptune backwards (retrograde) and at an extreme tilt — diagnostic of a captured Kuiper Belt object, making it likely a sibling of Pluto rather than a native Neptunian moon. Voyager 2 detected active nitrogen geysers venting dark organic dust 8 km into a tenuous nitrogen atmosphere; the southern hemisphere features 'cantaloupe terrain' — a network of dimples and ridges seen nowhere else in the solar system. Triton's retrograde orbit is decaying tidally; in roughly 3.6 Gyr it will either be torn into a Saturn-like ring or crash into Neptune.",
+    "tr": "La più grande luna di Nettuno e uno dei mondi geologicamente più attivi del sistema solare. Tritone orbita attorno a Nettuno all'indietro (retrogrado) e con un'inclinazione estrema: un indizio tipico di un oggetto catturato dalla fascia di Kuiper, il che lo rende probabilmente un parente di Plutone piuttosto che una luna nativa di Nettuno. La Voyager 2 ha rilevato geyser attivi di azoto che spingono polvere organica scura fino a 8 km di altezza in una tenue atmosfera di azoto; l'emisfero meridionale presenta il «terreno a melone», una rete di fossette e creste che non si vede in nessun altro luogo del sistema solare. L'orbita retrograda di Tritone sta decadendo per effetto delle maree: tra circa 3,6 miliardi di anni verrà o dilaniato in un anello simile a quello di Saturno o si schianterà su Nettuno."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "museums/national-space-centre-leicester.json",
+    "at": "description",
+    "en": "The UK's largest attraction devoted to space, in Leicester.",
+    "tr": "La più grande attrazione del Regno Unito dedicata allo spazio, a Leicester."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "satellites/titan.json",
+    "at": "mission_visits.2",
+    "en": "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (orbital mapping + surface landing)",
+    "tr": "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (mappatura orbitale + atterraggio in superficie)"
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "iss-visitors/starliner.json",
+    "at": "description",
+    "en": "Boeing's CST-100 — Atlas V launch, parachute landing on US soil instead of ocean splashdown.",
+    "tr": "Il CST-100 di Boeing — lancio con Atlas V, atterraggio con paracadute su suolo statunitense invece dell'ammaraggio oceanico."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "small-bodies/pluto.json",
+    "at": "science_sections.0.why",
+    "en": "Pluto's 0.249 eccentricity dips its orbit inside Neptune's for 20 years per 248-year cycle.",
+    "tr": "L'eccentricità di 0,249 di Plutone fa sì che la sua orbita penetri dentro quella di Nettuno per 20 anni ogni ciclo di 248 anni."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "satellites/ariel.json",
+    "at": "description",
+    "en": "The brightest and (after Miranda) youngest-looking surface in the Uranian system — Voyager 2 imagery shows broad rift valleys and what may be flow features hinting at past or present cryovolcanic activity. Tidal heating from a 2:1 orbital resonance with Umbriel that existed in the deep past could have melted the interior; whether any liquid water remains today is unknown. Like the other Uranian major moons, only its southern hemisphere has been imaged at close range.",
+    "tr": "La superficie più brillante e (dopo Miranda) dall'aspetto più giovane del sistema di Urano — le immagini di Voyager 2 mostrano ampie valli di rift e quelle che potrebbero essere strutture di flusso che suggeriscono un'attività criovulcanica passata o presente. Il riscaldamento mareale derivante da una risonanza orbitale 2:1 con Umbriel esistita nel remoto passato potrebbe aver fuso l'interno; se rimanga ancora acqua liquida oggi è sconosciuto. Come le altre lune maggiori di Urano, solo il suo emisfero meridionale è stato fotografato da distanza ravvicinata."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "satellites/moon.json",
+    "at": "science_sections.1.why",
+    "en": "The Moon's 0.055 eccentricity is small but matters — at perigee the disc looks 12 % larger and brighter than at apogee ('supermoon').",
+    "tr": "L'eccentricità della Luna, 0,055, è piccola ma conta — al perigeo il disco appare il 12 % più grande e luminoso che all'apogeo («superluna»)."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.1",
+    "en": "The original 26 m Pioneer station (DSS-11) became a National Historic Landmark in 1985.",
+    "tr": "La stazione Pioneer originale da 26 m (DSS-11) è diventata National Historic Landmark nel 1985."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "story",
+    "en": "The Lagrange point about 61,000 km behind the Moon as seen from Earth — the gravitational saddle where Earth, Moon, and centrifugal forces balance. The Moon always sits between the spacecraft and Earth, so direct comms are impossible — but a satellite parked here in a halo orbit AROUND L2 has line-of-sight to BOTH the lunar farside AND Earth. That's how China landed Chang'e 4 on the farside in 2019: the Queqiao relay satellite, parked in a halo around Earth-Moon L2, bridges every command and image.",
+    "tr": "Il punto di Lagrange a circa 61.000 km dietro la Luna, visto dalla Terra — la sella gravitazionale in cui si bilanciano le forze di Terra e Luna e la forza centrifuga. La Luna si trova sempre tra la sonda e la Terra, rendendo impossibili le comunicazioni dirette — ma un satellite parcheggiato qui, in un'orbita di halo ATTORNO a L2, ha la linea di vista SIA sul lato nascosto della Luna SIA sulla Terra. È così che la Cina ha fatto allunare Chang'e 4 sul lato nascosto nel 2019: il satellite relè Queqiao, parcheggiato in un halo attorno al punto L2 Terra-Luna, fa da ponte per ogni comando e immagine."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "description",
+    "en": "The innermost and smallest of Uranus's five major moons — and visually the most extreme. Voyager 2's flyby imagery revealed a surface that looks like it was assembled from mismatched pieces: enormous cliffs, fractured plateaus, and concentric coronae jutting from heavily-cratered older terrain. The leading hypothesis is that Miranda was disrupted by an impact at least once, with the fragments reassembling under their own gravity. Verona Rupes drops ~20 km — under Miranda's low gravity, a falling object would take roughly 12 minutes to reach the bottom.",
+    "tr": "La più interna e piccola delle cinque lune maggiori di Urano — e visivamente la più estrema. Le immagini del sorvolo di Voyager 2 hanno rivelato una superficie che sembra assemblata da pezzi incompatibili: scogliere enormi, altipiani fratturati e corone concentriche che sporgono da un terreno più antico fortemente craterizzato. L'ipotesi principale è che Miranda sia stata disgregata da un impatto almeno una volta, con i frammenti che si sono riassemblati sotto la propria gravità. Verona Rupes scende per ~20 km — sotto la bassa gravità di Miranda, un oggetto in caduta impiegherebbe circa 12 minuti per raggiungere il fondo."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "en": "Asteroid · Near-Earth · S-type · Binary primary",
+    "tr": "Asteroide · Vicino alla Terra · Tipo S · Primario del sistema binario"
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "satellites/callisto.json",
+    "at": "science_sections.1.why",
+    "en": "Callisto's 0.007 eccentricity is small and unforced — without resonant pumping, no tidal flexing, no subsurface ocean (probably).",
+    "tr": "L'eccentricità di Callisto di 0,007 è piccola e non forzata — senza pompaggio risonante, nessuna flessione mareale, nessun oceano subsuperficiale (probabilmente)."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.1.label",
+    "en": "Solar Orbiter — first close-Sun imaging (ESA)",
+    "tr": "Solar Orbiter — prima acquisizione di immagini ravvicinate del Sole (ESA)"
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.want",
+    "en": "The China Manned Space (CMS) programme emblem and Shenzhou crew patches, to sit beside the NASA insignia on the Tiangong and Shenzhou pages.",
+    "tr": "L'emblema del programma China Manned Space (CMS) e le patch degli equipaggi Shenzhou, da affiancare agli stemmi NASA sulle pagine Tiangong e Shenzhou."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "orbit-regimes/MOON.json",
+    "at": "firsts.1.label",
+    "en": "Apollo 8 — first crewed lunar orbit (USA)",
+    "tr": "Apollo 8 — prima orbita lunare con equipaggio (USA)"
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "trajectory",
+    "en": "The path a spacecraft follows through space, open or closed — for example the arc from Earth to Mars.",
+    "tr": "Il percorso che un veicolo spaziale segue nello spazio, aperto o chiuso, per esempio l'arco dalla Terra a Marte."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "satellites/moon.json",
+    "at": "surface_composition",
+    "en": "Anorthosite highlands (calcium-aluminium silicates) + basaltic mare flooded by ancient lava; regolith depth 4–15 m; trace water ice in permanently-shadowed polar craters.",
+    "tr": "Altopiani di anortosite (silicati di calcio e alluminio) + mari basaltici invasi da antiche colate laviche; regolite profonda 4–15 m; tracce di ghiaccio d'acqua nei crateri polari in ombra perenne."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "orbit-regimes/GEO.json",
+    "at": "story",
+    "en": "Exactly 35,786 km up — the altitude where an orbit takes one sidereal day (23 h 56 min), so the satellite hangs motionless over a fixed longitude on the equator. Weather satellites stare at the same continent forever; communications satellites paint a dish-sized footprint and never move. There are no parking spaces, only parking slots — each operator gets a longitude band assigned by the ITU.",
+    "tr": "Esattamente 35.786 km di altitudine — la quota dove un'orbita richiede un giorno sidereo (23 h 56 min), così che il satellite rimane immobile su una longitudine fissa all'equatore. I satelliti meteorologici osservano lo stesso continente per sempre; i satelliti di comunicazione coprono un'impronta grande quanto un'antenna parabolica e non si muovono mai. Non ci sono parcheggi liberi, solo posti assegnati — a ogni operatore l'ITU assegna una banda di longitudine."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.1",
+    "en": "It tracked Soviet and US space probes in the Space Race, receiving lunar imagery from Luna 9 in 1966.",
+    "tr": "Seguì sonde spaziali sovietiche e statunitensi durante la corsa allo spazio, ricevendo nel 1966 immagini lunari da Luna 9."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "science_sections.0.why",
+    "en": "Miranda has the highest orbital inclination (4.3°) of the major Uranian moons — combined with an early-system disruption event, it explains the famous cliff faces Voyager 2 imaged in 1986.",
+    "tr": "Miranda ha l'inclinazione orbitale più elevata (4,3°) tra i principali satelliti uraniani — combinata con un evento di perturbazione del sistema primordiale, spiega le celebri scarpate riprese da Voyager 2 nel 1986."
+  },
+  {
+    "loc": "it",
+    "tree": "catalogue",
+    "rel": "iss-visitors/htv_x.json",
+    "at": "function_detail",
+    "en": "Berthed via Canadarm2; pressurised + unpressurised payload; technology demonstration flights for future cislunar logistics.",
+    "tr": "Agganciato tramite Canadarm2; carico pressurizzato e non pressurizzato; voli di dimostrazione tecnologica per la futura logistica cislunare."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "observatories/rubin.json",
+    "at": "highlights.0",
+    "en": "The LSST Camera is described as the largest digital camera ever built.",
+    "tr": "De LSST-camera wordt beschreven als de grootste digitale camera die ooit is gebouwd."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.3.label",
+    "en": "Neptune — 30.07 AU, fastest winds in system",
+    "tr": "Neptunus — 30,07 AE, snelste winden in het systeem"
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "description",
+    "en": "The innermost and smallest of Uranus's five major moons — and visually the most extreme. Voyager 2's flyby imagery revealed a surface that looks like it was assembled from mismatched pieces: enormous cliffs, fractured plateaus, and concentric coronae jutting from heavily-cratered older terrain. The leading hypothesis is that Miranda was disrupted by an impact at least once, with the fragments reassembling under their own gravity. Verona Rupes drops ~20 km — under Miranda's low gravity, a falling object would take roughly 12 minutes to reach the bottom.",
+    "tr": "De binnenste en kleinste van de vijf grote manen van Uranus — en visueel de meest extreme. De beelden van de flyby van Voyager 2 lieten een oppervlak zien dat eruitziet alsof het uit niet bij elkaar passende stukken is samengesteld: enorme kliffen, gebroken plateaus en concentrische coronae die uitsteken boven zwaar gekraterd, ouder terrein. De belangrijkste hypothese is dat Miranda minstens één keer door een inslag uiteen is gevallen, waarna de brokstukken onder hun eigen zwaartekracht weer samenkwamen. Veronarots daalt ~20 km — onder Miranda's lage zwaartekracht zou een vallend voorwerp ongeveer 12 minuten nodig hebben om de bodem te bereiken."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "earth-objects/hubble.json",
+    "at": "description",
+    "en": "The telescope that changed how humanity sees the universe. Launched 1990 with a flawed mirror — corrected by Space Shuttle astronauts in 1993. Has since observed 1.4 million celestial objects. Operating 34+ years.",
+    "tr": "De telescoop die veranderde hoe de mensheid het universum ziet. Gelanceerd in 1990 met een gebrekkige spiegel — gecorrigeerd door Space Shuttle-astronauten in 1993. Heeft sindsdien 1,4 miljoen hemellichamen waargenomen. 34+ jaar in werking."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "satellites/triton.json",
+    "at": "mission_visits.0",
+    "en": "Voyager 2 — USA, 1989 (closest approach ~40,000 km)",
+    "tr": "Voyager 2 — USA, 1989 (dichtste benadering ~40.000 km)"
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "museums/national-museum-of-nature-and-science-tokyo.json",
+    "at": "items.hayabusa",
+    "en": "Hayabusa's return capsule, which brought samples of asteroid Itokawa to Earth (2010)",
+    "tr": "Terugkeercapsule van Hayabusa, die monsters van de planetoïde Itokawa naar de aarde bracht (2010)"
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-dragonfly",
+    "en": "NASA Dragonfly — nuclear rotorcraft mission to Titan",
+    "tr": "NASA Dragonfly — missie met een nucleair aangedreven rotorvaartuig naar Titan"
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "comparison",
+    "en": "If you stood on Ceres (the largest body) you'd struggle to see another asteroid without a telescope. The belt's total mass is roughly the mass of Pluto.",
+    "tr": "Als je op Ceres (het grootste object) zou staan, zou je moeite hebben om zonder telescoop een andere asteroïde te zien. De totale massa van de gordel is ongeveer gelijk aan de massa van Pluto."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "small-bodies/orus.json",
+    "at": "science_sections.0.why",
+    "en": "Orus is a C-type L4 Trojan — Lucy flyby November 2028. Its dark, carbon-rich spectrum is closer to Kuiper-belt objects than to inner-belt asteroids.",
+    "tr": "Orus is een C-type L4-Trojaan — Lucy-flyby in november 2028. Het donkere, koolstofrijke spectrum lijkt meer op dat van objecten in de Kuipergordel dan op dat van asteroïden in de binnenste gordel."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "earth-objects/tundra-molniya.json",
+    "at": "description",
+    "en": "High-eccentricity orbits at 63.4° critical inclination. Molniya (12-hour, 600 × 40,000 km) — Russian high-latitude comms + Oko/Meridian early warning since 1965. Tundra (24-hour, ~25,000 × ~47,000 km) — Sirius XM Satellite Radio + US SBIRS-HEO sensors.",
+    "tr": "Zeer excentrische banen op 63,4° kritieke inclinatie. Molniya (12-uur, 600 × 40.000 km) — Russische communicatiesatellieten voor hoge breedten + Oko/Meridian vroegwaarschuwingssysteem sinds 1965. Tundra (24-uur, ~25.000 × ~47.000 km) — Sirius XM Satellite Radio + Amerikaanse SBIRS-HEO sensoren."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "science_sections.0.why",
+    "en": "Miranda has the highest orbital inclination (4.3°) of the major Uranian moons — combined with an early-system disruption event, it explains the famous cliff faces Voyager 2 imaged in 1986.",
+    "tr": "Miranda heeft de hoogste baaninclinatie (4,3°) van de grote manen van Uranus — in combinatie met een verstoring in het vroege stelsel verklaart dit de beroemde klifwanden die Voyager 2 in 1986 in beeld bracht."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "observatories/goldstone.json",
+    "at": "highlights.2",
+    "en": "When not tracking spacecraft its antennas also map quasars and do planetary radar.",
+    "tr": "Wanneer de antennes geen ruimtevaartuigen volgen, brengen ze ook quasars in kaart en verrichten ze planetair radaronderzoek."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-moon/L2.json",
+    "at": "story",
+    "en": "The Lagrange point about 61,000 km behind the Moon as seen from Earth — the gravitational saddle where Earth, Moon, and centrifugal forces balance. The Moon always sits between the spacecraft and Earth, so direct comms are impossible — but a satellite parked here in a halo orbit AROUND L2 has line-of-sight to BOTH the lunar farside AND Earth. That's how China landed Chang'e 4 on the farside in 2019: the Queqiao relay satellite, parked in a halo around Earth-Moon L2, bridges every command and image.",
+    "tr": "Het Lagrangepunt op ongeveer 61.000 km achter de Maan, gezien vanaf de Aarde — het zwaartekrachtszadelpunt waar de zwaartekracht van Aarde en Maan en de middelpuntvliedende krachten elkaar in evenwicht houden. De Maan staat altijd tussen het ruimtevaartuig en de Aarde, dus directe communicatie is onmogelijk — maar een satelliet die hier in een haloobaan ROND L2 is geparkeerd, heeft zichtlijn naar ZOWEL de achterzijde van de Maan ALS de Aarde. Zo liet China in 2019 Chang'e 4 op de achterzijde landen: de relaissatelliet Queqiao, geparkeerd in een haloobaan rond het Aarde-Maan-punt L2, overbrugt elk commando en elk beeld."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "satellites/io.json",
+    "at": "mission_visits.1",
+    "en": "Galileo orbiter — USA, 1995–2003 (multiple close flybys)",
+    "tr": "Galileo-ruimtesonde — VS, 1995–2003 (meerdere flybys van dichtbij)"
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "planets/didymos.json",
+    "at": "bio",
+    "en": "S-type near-Earth binary discovered 1996, with the 160-m moonlet Dimorphos in an 11.9-hour orbit at 1.2-km separation. Classified as a chondritic body — LL-class silicate composition, common in the inner main belt. ESA's Hera mission (launched 2024) will arrive 2026 to survey the post-impact system in detail.",
+    "tr": "Aardscheerder van het S-type, een dubbelasteroïde, ontdekt in 1996, met het maantje Dimorphos van 160 m in een baan van 11,9 uur op 1,2 km afstand. Ingedeeld als een chondritisch lichaam — silicaatsamenstelling van de LL-klasse, gebruikelijk in de binnenste hoofdgordel. De Hera-missie van ESA (gelanceerd in 2024) komt in 2026 aan om het systeem na de inslag in detail in kaart te brengen."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "satellites/callisto.json",
+    "at": "description",
+    "en": "Callisto sits outside the Laplace resonance that drives the tidal heating in Io, Europa, and Ganymede — so its interior never melted enough to differentiate fully or resurface its crust. The result is the most pristine record of impact bombardment in the inner Galilean system, including the spectacular Valhalla basin's ~10-ring system spanning roughly a quarter of the moon's circumference. Despite the lack of tidal heating, Galileo's magnetometer detected an induced magnetic field consistent with a deep salty ocean ~100 km below the surface. Its low radiation environment (compared to Europa or Ganymede) and long-lived water make it a likely staging point for future crewed missions to the Jupiter system.",
+    "tr": "Callisto ligt buiten de Laplace-resonantie die de getijdenverwarming van Io, Europa en Ganymedes aandrijft — daardoor smolt het binnenste nooit genoeg om volledig te differentiëren of de korst te vernieuwen. Het resultaat is het meest ongerepte archief van inslagbombardement in het binnenste Galileïsche stelsel, met onder meer het spectaculaire Valhalla-bekken, een systeem van ~10 ringen dat ruwweg een kwart van de omtrek van de maan beslaat. Ondanks het ontbreken van getijdenverwarming detecteerde de magnetometer van Galileo een geïnduceerd magnetisch veld, passend bij een diepe zoute oceaan ~100 km onder het oppervlak. De lage stralingsomgeving (vergeleken met Europa of Ganymedes) en het langlevende water maken Callisto een waarschijnlijke uitvalsbasis voor toekomstige bemande missies naar het Jupiterstelsel."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "orbit-regimes-explore/SUN.json",
+    "at": "firsts.1.label",
+    "en": "Solar Orbiter — first close-Sun imaging (ESA)",
+    "tr": "Solar Orbiter — eerste beeldvorming dicht bij de Zon (ESA)"
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.0.rejected.1",
+    "en": "Modern fan reproductions (e.g. a CC-BY Buran emblem by a game artist) — freely licensed but not authentic insignia",
+    "tr": "Moderne fanreproducties (bijv. een CC-BY Buran-embleem door een game-artiest) — vrij gelicenseerd maar geen authentieke insignes"
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "rendezvous",
+    "en": "Bringing two spacecraft to the same place at the same speed so that they fly together — usually the step before docking.",
+    "tr": "Twee ruimtevaartuigen op dezelfde plek met dezelfde snelheid brengen zodat ze samen vliegen — meestal de stap voor de koppeling."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "glossary/terms.json",
+    "at": "gravity assist",
+    "en": "Using a close pass of a planet to change a spacecraft's speed and direction without spending propellant.",
+    "tr": "Een nabije passage van een planeet gebruiken om de snelheid en richting van een ruimtevaartuig te veranderen zonder drijfstof te verbruiken."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "satellites/moon.json",
+    "at": "surface_composition",
+    "en": "Anorthosite highlands (calcium-aluminium silicates) + basaltic mare flooded by ancient lava; regolith depth 4–15 m; trace water ice in permanently-shadowed polar craters.",
+    "tr": "Hooglanden van anorthosiet (calcium-aluminiumsilicaten) + basaltische maria, overstroomd door oeroude lava; regoliet 4–15 m diep; sporen van waterijs in permanent beschaduwde poolkraters."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "orbit-regimes/HEO.json",
+    "at": "story",
+    "en": "Not an altitude, a shape. A long ellipse with a low perigee (close to Earth) and a very high apogee (sometimes higher than GEO). The orbiter spends most of its time near apogee, hanging slowly over high latitudes — the trick Soviet engineers used to get continuous comms over Russia's polar regions where a GEO satellite over the equator is too low on the horizon to see. Used today for missile-warning, deep-space tracking, and high-latitude broadband.",
+    "tr": "Geen hoogte, maar een vorm. Een langwerpige ellips met een laag perigeum (dicht bij de aarde) en een zeer hoog apogeum (soms hoger dan GEO). De satelliet brengt het grootste deel van zijn tijd door in de buurt van het apogeum en hangt langzaam boven hoge breedtegraden — de truc die Sovjet-ingenieurs gebruikten om continue communicatie te krijgen boven de poolgebieden van Rusland, waar een GEO-satelliet boven de evenaar te laag aan de horizon staat om zichtbaar te zijn. Tegenwoordig gebruikt voor raketwaarschuwing, het volgen van objecten in de diepe ruimte en breedband op hoge breedtegraden."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "observatories/jodrell-bank.json",
+    "at": "highlights.2",
+    "en": "It was influential in early detections of quasars, astrophysical masers and Einstein rings.",
+    "tr": "Hij was van invloed bij de eerste waarnemingen van quasars, astrofysische masers en Einsteinringen."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "satellites/miranda.json",
+    "at": "surface_composition",
+    "en": "Water-ice + silicate rock; surface a patchwork of ancient cratered terrain crossed by huge coronae — concentric ridges and grooves that include Verona Rupes, the tallest known cliff in the solar system (~20 km vertical drop).",
+    "tr": "Waterijs + silicaatgesteente; oppervlak een lappendeken van oud gekraterd terrein doorkruist door enorme coronae — concentrische richels en groeven die Veronarots omvatten, de hoogste bekende klif in het zonnestelsel (~20 km verticale val)."
+  },
+  {
+    "loc": "nl",
+    "tree": "catalogue",
+    "rel": "iss-visitors/soyuz_ms.json",
+    "at": "description",
+    "en": "Russia's evergreen 3-seat crew taxi—2.5-day rendezvous from Baikonur and a parachute landing on the Kazakh steppe.",
+    "tr": "Ruslands bewezen bemanningstaxi met drie zitplaatsen — 2,5 dag rendez-vous vanaf Bajkonoer en een parachutelanding op de Kazachse steppe."
+  }
+]

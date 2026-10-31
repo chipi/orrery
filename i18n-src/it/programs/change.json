@@ -84,5 +84,13 @@
       "type": "prose",
       "md": "La lezione più profonda è che la competenza silenziosa rimodella il campo. Chang'e non ha fatto proclami grandiosi e non ha vinto alcuna corsa ai titoli, eppure il suo successo costante ha fatto di più per riavviare l'ambizione lunare umana in tutto il mondo di qualsiasi discorso — perché un programma che semplicemente continua ad avere successo, missione dopo missione, diventa un fatto strategico a cui tutti gli altri devono rispondere. La coerenza, alla fine, è una forma di potere a sé stante."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Luna — i siti di allunaggio Chang'e",
+    "/fleet?focus=yutu-2": "Flotta — i rover Yutu e i lander Chang'e",
+    "/programs/artemis": "Artemis — la corsa parallela di ritorno alla Luna",
+    "/moon?site=change3": "Chang’e 3 — rover Yutu",
+    "/moon?site=change4": "Chang’e 4 — la faccia nascosta",
+    "/moon?site=change2": "Chang’e 2"
+  }
 }

@@ -30,6 +30,7 @@ import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
 import { MOBILE_INTERNAL, targetConfig } from '../target-env';
 import { isGuardReloading } from './preload-guard';
+import { scrubBreadcrumb } from './scrub-breadcrumb';
 
 // Git branch, injected by vite.config's `define`. Tags dev events by worktree.
 declare const __DEV_WORKTREE__: string;
@@ -172,21 +173,9 @@ export function initSentry(): void {
       return event;
     },
 
-    beforeBreadcrumb(crumb: Sentry.Breadcrumb) {
-      // ui.input crumbs carry the typed value — drop entirely.
-      if (crumb.category === 'ui.input') return null;
-      // Navigation crumbs carry full URLs; strip query.
-      if (crumb.category === 'navigation' && typeof crumb.data?.to === 'string') {
-        const to = crumb.data.to;
-        try {
-          const u = new URL(to, location.origin);
-          crumb.data = { ...crumb.data, to: u.pathname };
-        } catch {
-          // Leave as-is if not a parseable URL.
-        }
-      }
-      return crumb;
-    },
+    // Typed input dropped; query + hash stripped from every URL a crumb carries
+    // (navigation and http/fetch/xhr alike); emails masked in console crumbs.
+    beforeBreadcrumb: scrubBreadcrumb,
   };
 
   // Init must never throw: this runs at module-eval of hooks.client.ts, so a throw

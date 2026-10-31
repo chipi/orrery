@@ -16,13 +16,13 @@
     {
       "met": 22.2,
       "label": "MOI",
-      "note": "Maanbaan-inbrenging (meerdere burn-manoeuvres in aard- en maanbaan gebruikt).",
+      "note": "Maanbaaninsertie (met meerdere ontstekingen voor baanverhoging rond de Aarde en de Maan).",
       "type": "nominal"
     },
     {
       "met": 34,
       "label": "LANDER SCHEIDING",
-      "note": "Vikram-lander scheidt van voortstuwingsmodule.",
+      "note": "De Vikram-lander scheidt zich los van de voortstuwingsmodule.",
       "type": "nominal"
     },
     {
@@ -43,5 +43,6 @@
       "note": "Lander/rover in winterslaap gezet als de maannacht begint.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "cryogene bovenste trap C25 van de LVM3"
 }

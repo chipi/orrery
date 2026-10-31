@@ -28,5 +28,9 @@
   "lessons": [
     { "type": "prose", "md": "The lesson the commercial stations are testing is whether a capability pioneered by governments can be handed to a market that does not yet demonstrably exist. Launch had obvious customers; a permanently-crewed station's business case is far less proven. The effort is a real-time experiment in whether commercialization has limits, and where they lie." },
     { "type": "prose", "md": "The deeper lesson, still forming, is about the danger of retiring a capability before its replacement is secure. The ISS has a fixed end date; its commercial successors do not yet fly. Betting that a market will materialize on schedule, with a hard deadline and a rival already in orbit, is a gamble whose stakes are nothing less than continuous human presence in low Earth orbit itself." }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "ISS — the station these are built to succeed",
+    "/programs/spacex": "SpaceX — the crew and cargo transport they will rely on"
+  }
 }

@@ -11,5 +11,6 @@
     { "met": 1, "label": "ORBITAL REFILLING", "note": "Tanker rendezvous and propellant transfer in LEO over multiple flights.", "type": "nominal" },
     { "met": 2, "label": "TMI BURN", "note": "Trans-Mars injection from fully-fuelled LEO state.", "type": "nominal" },
     { "met": 274, "label": "MARS LANDING", "note": "Powered descent to Mars surface — no parachutes, no airbags, no sky-crane.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "Starship upper stage"
 }

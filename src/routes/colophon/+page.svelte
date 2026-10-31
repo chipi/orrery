@@ -1,5 +1,6 @@
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   /*
     /colophon — bill-of-materials for Orrery's ORIGINAL content: every
@@ -99,7 +100,7 @@
     <p class="intro">{m.colophon_intro()}</p>
     <p class="attribution">{m.colophon_attribution()}</p>
     <p class="reused">
-      <a href="{base}/credits">{m.colophon_reused_link()} →</a>
+      <a href={localHref(`/credits`)}>{m.colophon_reused_link()} →</a>
     </p>
   </header>
 
@@ -221,9 +222,11 @@
         {m.colophon_gallery_posters()}<span class="count">{data.posters.length}</span>
       </h2>
       <p class="block-note">
-        The <a href="{base}/posters">/posters</a> gallery is {data.posters.length} ORRERY-original art
-        prints, AI-generated, then captioned and wordmarked in-house. They are not works of any space
-        agency and carry no agency logos.
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + local path, no user input -->
+        {@html m.colophon_posters_note({
+          link: `<a href="${localHref('/posters')}">/posters</a>`,
+          count: data.posters.length,
+        })}
       </p>
       <ul class="thumb-grid">
         {#each data.posters as p (p.file)}
@@ -249,10 +252,10 @@
           {m.colophon_lab_illustrations()}<span class="count">{data.lab_illustrations.length}</span>
         </h2>
         <p class="block-note">
-          The <a href="{base}/lab">Physics Lab</a>'s goal illustrations are ORRERY-original art,
-          AI-generated to a house brief, then reviewed image-by-image in-house before shipping. They
-          are honest illustration — labelled as such beside the kernel's computed figures, never
-          presented as a computed result.
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + local path, no user input -->
+          {@html m.colophon_lab_note({
+            link: `<a href="${localHref('/lab')}">${m.lab_ui_title()}</a>`,
+          })}
         </p>
         <ul class="thumb-grid">
           {#each data.lab_illustrations as d (d.file)}
@@ -322,7 +325,7 @@
               {/if}
               <p class="it-title">{it.title}</p>
               <p class="it-what">{it.what}</p>
-              <a class="it-where" href="{base}{it.route}">{m.colophon_seen_on()} {it.where} →</a>
+              <a class="it-where" href={localHref(it.route)}>{m.colophon_seen_on()} {it.where} →</a>
             </li>
           {/each}
         </ul>
@@ -349,7 +352,9 @@
             </div>
             <p class="it-title">{icon.label}</p>
             <p class="it-what">{icon.what}</p>
-            <a class="it-where" href="{base}{icon.route}">{m.colophon_seen_on()} {icon.where} →</a>
+            <a class="it-where" href={localHref(icon.route)}
+              >{m.colophon_seen_on()} {icon.where} →</a
+            >
           </li>
         {/each}
       </ul>
@@ -364,7 +369,7 @@
           <li class="item">
             <p class="it-title">{it.title}</p>
             <p class="it-what">{it.what}</p>
-            <a class="it-where" href="{base}{it.route}">{m.colophon_seen_on()} {it.where} →</a>
+            <a class="it-where" href={localHref(it.route)}>{m.colophon_seen_on()} {it.where} →</a>
           </li>
         {/each}
       </ul>
@@ -420,7 +425,7 @@
       <img src={lightbox.src} alt={lightbox.title} />
       <figcaption>
         <span class="lb-title">{lightbox.title}</span>
-        <a class="lb-route" href="{base}{lightbox.route}"
+        <a class="lb-route" href={localHref(lightbox.route)}
           >{m.colophon_seen_on()} {lightbox.route} →</a
         >
       </figcaption>
@@ -534,7 +539,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .block-note {
@@ -544,11 +549,11 @@
     max-width: 720px;
     margin: 0 0 16px;
   }
-  .block-note a {
+  .block-note :global(a) {
     color: #4ecdc4;
-    text-decoration: none;
+    text-decoration: underline;
   }
-  .block-note a:hover {
+  .block-note :global(a:hover) {
     text-decoration: underline;
   }
 

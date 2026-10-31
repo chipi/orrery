@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Fähigkeiten summieren sich. Mariner war nicht angetreten, das Swing-by-Manöver oder den Planetenorbiter um ihrer selbst willen zu erfinden – die Mission löste das Problem, das vor ihr lag, und jede Lösung wurde zu einem dauerhaften Werkzeug, das die nächste Mission voraussetzen konnte. Fortschritt an schwierigen Grenzen hängt oft weniger von einzelnen Triumphen ab als vom Aufbau einer Grammatik von Manövern, die alle, die nach uns kommen, umsonst nutzen dürfen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — die Welt, die Mariner als Erster fotografierte",
+    "/programs/viking": "Viking — die Lander, denen Mariner den Weg bahnte",
+    "/mars?site=mariner9": "Mariner 9 in der Marsumlaufbahn"
+  }
 }

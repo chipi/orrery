@@ -5,9 +5,8 @@
   nothing when no museum holds the object.
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
   import { page } from '$app/state';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { getMuseums, museumsForObject, holdingNotYetOpen } from '$lib/data';
   import type { MuseumForObject } from '$types/museum';
   import * as m from '$lib/paraglide/messages';
@@ -68,7 +67,7 @@
             >
             <a
               class="map"
-              href="{base}/earth?museum={r.museum.id}"
+              href={localHref(`/earth?museum=${r.museum.id}`)}
               data-testid="museum-on-map"
               data-sveltekit-preload-data="hover">{m.museum_on_map()}</a
             >

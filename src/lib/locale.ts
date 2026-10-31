@@ -12,7 +12,8 @@
  * and the document-attribute sync helper.
  */
 import { browser } from '$app/environment';
-import { getLocale, locales } from '$lib/paraglide/runtime';
+import { base } from '$app/paths';
+import { getLocale, localizeHref, locales } from '$lib/paraglide/runtime';
 
 /**
  * Locale code as used by Paraglide-js + the data-overlay path.
@@ -113,6 +114,16 @@ export function activeLocale(): LocaleCode {
 export function localeFromPage(page: { url: URL }): LocaleCode {
   void page.url.pathname;
   return activeLocale();
+}
+
+/**
+ * Internal link for the current locale: `base` + Paraglide's locale prefix
+ * (`/fleet?id=x` -> `/de/fleet?id=x` on a German page, unchanged in en-US).
+ * Every in-app href and goto target goes through this; a bare `${base}/x`
+ * sends a non-English reader to the English page.
+ */
+export function localHref(path: string): string {
+  return `${base}${localizeHref(path, { locale: getLocale() })}`;
 }
 
 /**

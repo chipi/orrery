@@ -1,0 +1,58 @@
+[
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "tagline",
+    "find": "fallimento dell'inserimento in orbita 2010",
+    "replace": "fallimento dell'inserimento in orbita del 2010",
+    "why": "grammar: missing article/preposition",
+    "kind": "grammar"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "tagline",
+    "find": "Il più longevo asset marziano",
+    "replace": "Il veicolo marziano più longevo di sempre",
+    "why": "unnatural calque of 'asset'",
+    "kind": "phrasing"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "tagline",
+    "find": "relay UHF",
+    "replace": "ponte radio UHF",
+    "why": "English left; relay rendered elsewhere as ponte radio",
+    "kind": "english"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "tagline",
+    "find": "volò entrambi i ritorni al volo",
+    "replace": "volò entrambe le missioni di ritorno al volo",
+    "why": "missions, not returns; wrong sense",
+    "kind": "phrasing"
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "best_known_for",
+    "find": "primo lancio con equipaggio con l'Apollo 7",
+    "replace": "primo lancio con equipaggio: Apollo 7",
+    "why": "double 'con', clumsy",
+    "kind": "phrasing"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "tagline",
+    "find": "1935 g in Mongolia Interna",
+    "replace": "1935 g riportati in Mongolia Interna",
+    "why": "'returned' omitted",
+    "kind": "omission"
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "description",
+    "find": "l'impatto di una polvere di 100 mg",
+    "replace": "l'impatto di un granello di polvere da 100 mg",
+    "why": "unnatural: dust strike is a particle",
+    "kind": "phrasing"
+  }
+]

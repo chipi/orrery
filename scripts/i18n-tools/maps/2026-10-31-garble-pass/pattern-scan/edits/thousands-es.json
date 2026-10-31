@@ -1,0 +1,62 @@
+[
+  {
+    "rel": "culture-doors/arecibo-message.json",
+    "at": "blurb",
+    "old": "En 1974 el radiotelescopio de Arecibo transmitió un pictograma de 3 minutos —nuestros números, el ADN, una figura humana y el propio telescopio— hacia el cúmulo globular M13, a 25,000 años luz de distancia. Fue más una demostración que una conversación: cualquier respuesta tardaría 50,000 años.",
+    "new": "En 1974 el radiotelescopio de Arecibo transmitió un pictograma de 3 minutos —nuestros números, el ADN, una figura humana y el propio telescopio— hacia el cúmulo globular M13, a 25 000 años luz de distancia. Fue más una demostración que una conversación: cualquier respuesta tardaría 50 000 años."
+  },
+  {
+    "rel": "satellites/ariel.json",
+    "at": "science_sections.0.why",
+    "old": "Ariel orbita a 190,900 km de Urano — segunda luna más interna de las lunas principales. Como todas las lunas de Urano, su órbita comparte la inclinación axial de 97° del planeta.",
+    "new": "Ariel orbita a 190 900 km de Urano — segunda luna más interna de las lunas principales. Como todas las lunas de Urano, su órbita comparte la inclinación axial de 97° del planeta."
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "science_sections.1.why",
+    "old": "La distancia media de 19,591 km de Caronte a Plutón, combinada con el bloqueo de marea mutuo, significa que ambos cuerpos se muestran la misma cara el uno al otro para siempre.",
+    "new": "La distancia media de 19 591 km de Caronte a Plutón, combinada con el bloqueo de marea mutuo, significa que ambos cuerpos se muestran la misma cara el uno al otro para siempre."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "science_sections.0.why",
+    "old": "Deimos es la luna marciana exterior (23,460 km) — su período orbital (1.26 d) es más largo que el día marciano, por lo que las fuerzas de marea la empujan lentamente hacia el exterior.",
+    "new": "Deimos es la luna marciana exterior (23 460 km) — su período orbital (1.26 d) es más largo que el día marciano, por lo que las fuerzas de marea la empujan lentamente hacia el exterior."
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "description",
+    "old": "El cuerpo geológicamente más activo del sistema solar. El calentamiento por mareas gravitatorio de Júpiter, combinado con la resonancia orbital con Europa y Ganímedes, bombea aproximadamente 100 teravatios de calor hacia el interior de Ío, energía suficiente para alimentar ~400 volcanes activos y temperaturas superficiales que oscilan entre -130 °C (dióxido de azufre congelado) y +1,600 °C (lava ultramáfica). Su superficie se repinta más rápidamente de lo que el impacto de cráteres puede marcarla. Loki Patera, un lago de lava de 200 km, es el fenómeno volcánico más poderoso del sistema solar.",
+    "new": "El cuerpo geológicamente más activo del sistema solar. El calentamiento por mareas gravitatorio de Júpiter, combinado con la resonancia orbital con Europa y Ganímedes, bombea aproximadamente 100 teravatios de calor hacia el interior de Ío, energía suficiente para alimentar ~400 volcanes activos y temperaturas superficiales que oscilan entre -130 °C (dióxido de azufre congelado) y +1600 °C (lava ultramáfica). Su superficie se repinta más rápidamente de lo que el impacto de cráteres puede marcarla. Loki Patera, un lago de lava de 200 km, es el fenómeno volcánico más poderoso del sistema solar."
+  },
+  {
+    "rel": "satellites/moon.json",
+    "at": "science_sections.2.why",
+    "old": "El perigeo (~363,000 km) y apogeo (~405,000 km) impulsan el tamaño aparente de la Luna y la fase de bulto de marea que tira la mayor cantidad de agua en la Tierra.",
+    "new": "El perigeo (~363 000 km) y apogeo (~405 000 km) impulsan el tamaño aparente de la Luna y la fase de bulto de marea que tira la mayor cantidad de agua en la Tierra."
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "science_sections.0.why",
+    "old": "Oberón es la más externa de las cinco lunas uranianas principales (órbita de 583,500 km) — su superficie es la más cratizada, lo que sugiere que tiene la superficie expuesta más antigua del sistema de Urano.",
+    "new": "Oberón es la más externa de las cinco lunas uranianas principales (órbita de 583 500 km) — su superficie es la más cratizada, lo que sugiere que tiene la superficie expuesta más antigua del sistema de Urano."
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "science_sections.0.why",
+    "old": "Titania es la luna más grande de Urano (1,578 km de diámetro) — comparable en tamaño a Plutón. Solo Voyager 2 la ha fotografiado (1986).",
+    "new": "Titania es la luna más grande de Urano (1578 km de diámetro) — comparable en tamaño a Plutón. Solo Voyager 2 la ha fotografiado (1986)."
+  },
+  {
+    "rel": "satellites/umbriel.json",
+    "at": "science_sections.0.why",
+    "old": "Umbriel orbita Urano a 266,000 km — su plano orbital está inclinado con el planeta, por lo que sus estaciones reflejan la geometría axial extrema del primario.",
+    "new": "Umbriel orbita Urano a 266 000 km — su plano orbital está inclinado con el planeta, por lo que sus estaciones reflejan la geometría axial extrema del primario."
+  },
+  {
+    "rel": "science/observation/spectroscopy.json",
+    "at": "body_paragraphs.2",
+    "old": "Los espectrógrafos modernos dividen la luz con una red de difracción (una superficie reflectante finamente rayada, a menudo con miles de líneas por milímetro) y proyectan el espectro disperso sobre un CCD. La resolución se mide mediante R = λ/Δλ; el equipo de consumo alcanza R~1000, el NIRSpec del JWST alcanza R~2700 y el espectrógrafo ESPRESSO del VLT alcanza R~140,000, lo bastante para detectar la velocidad reflejo que un planeta induce en su estrella, de solo centímetros por segundo.",
+    "new": "Los espectrógrafos modernos dividen la luz con una red de difracción (una superficie reflectante finamente rayada, a menudo con miles de líneas por milímetro) y proyectan el espectro disperso sobre un CCD. La resolución se mide mediante R = λ/Δλ; el equipo de consumo alcanza R~1000, el NIRSpec del JWST alcanza R~2700 y el espectrógrafo ESPRESSO del VLT alcanza R~140 000, lo bastante para detectar la velocidad reflejo que un planeta induce en su estrella, de solo centímetros por segundo."
+  }
+]

@@ -75,7 +75,7 @@ for (const loc of locs) {
   for (const [rel, at, e, s] of pairs) {
     if (s.length < 4) continue;
     total++;
-    const why = problems(loc, e, s);
+    const why = problems(loc, e, s, { ui: rel === 'messages' });
     if (!why.length) continue;
     rejected++;
     for (const r of why) {

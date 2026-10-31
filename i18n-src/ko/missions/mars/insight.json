@@ -13,5 +13,6 @@
     { "met": 205.01, "label": "착지", "note": "착륙선 도착 2018-11-26 19:54 UTC.", "type": "nominal" },
     { "met": 213, "label": "지진계 배치", "note": "로봇 팔이 SEIS를 표면에 놓고 바람으로부터 차폐.", "type": "info" },
     { "met": 1683, "label": "임무 종료", "note": "2022-12-15 최종 저전력 전송. 태양전 패널 먼지로 재충전 불가.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Centaur 상단 (Atlas V 401)"
 }

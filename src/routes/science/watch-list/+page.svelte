@@ -220,11 +220,8 @@
 </script>
 
 <svelte:head>
-  <title>{m.watch_list_title()} · Orrery Science</title>
-  <meta
-    name="description"
-    content="Curated sci-fi films, space documentaries, podcasts, and YouTube channels to accompany the Orrery science encyclopedia."
-  />
+  <title>{m.watch_list_title()} · {m.story_chapter_science()} · Orrery</title>
+  <meta name="description" content={m.watch_list_meta_description()} />
 </svelte:head>
 
 <article class="resources">

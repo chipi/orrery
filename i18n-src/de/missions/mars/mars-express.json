@@ -27,7 +27,7 @@
     },
     {
       "met": 206,
-      "label": "MARS-ORBIT-EINFÜHRUNG",
+      "label": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
       "note": "Eine 37-minütige Zündung des Haupttriebwerks bringt den Orbiter am Weihnachtstag 2003 in die Marsumlaufbahn.",
       "type": "nominal"
     },
@@ -37,5 +37,6 @@
       "note": "Erwartetes erstes Signal nicht empfangen; Lander für verloren erklärt.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "Oberstufe Fregat"
 }

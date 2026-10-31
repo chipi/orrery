@@ -78,5 +78,9 @@
       "type": "prose",
       "md": "The second lesson is that partnership multiplies a limited budget. By combining the resources of many nations through a single agency and investing them in capabilities that earned a permanent role, Europe achieved far more in human spaceflight than its spending alone would predict — and turned mastery of one niche, automated cargo, into a share of the return to the Moon. For a power that cannot outspend the giants, being indispensable is a better strategy than being independent, and Europe has made it work for forty years."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "ISS — the station Europe helped build",
+    "/programs/ariane": "Ariane — the launcher that carried ATV"
+  }
 }

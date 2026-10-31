@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "De diepere les is dat het krachtigste wat een machine kan doen is getuige worden. Sputnik veranderde de wereld niet door wat het mat maar door wat het demonstreerde — zichtbaar, hoorbaar, voor iedereen tegelijk. Sommige prestaties zijn belangrijk vanwege de gegevens die ze opleveren; deze was belangrijk omdat de hele planeet kon horen dat het er was."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Aarde — de wereld waar hij als eerste omheen cirkelde",
+    "/programs/vostok": "Vostok — de eerste mensen volgen",
+    "/posters": "De Sputnik-poster"
+  }
 }

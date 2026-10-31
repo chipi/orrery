@@ -1,0 +1,303 @@
+[
+  {
+    "rel": "universe/named-stars/alphard.json",
+    "at": "cultural",
+    "en": "The Arabic name means 'the solitary one', chosen precisely because it has no bright neighbours. That isolation made it a clear and reliable marker in an otherwise faint part of the sky.",
+    "old": "O nome árabe significa 'a solitária', escolhido precisamente porque ela não tem vizinhas brilhantes. Esse isolamento a tornou um marcador claro e confiável em uma parte, de outra forma, apagada do céu.",
+    "new": "O nome árabe significa 'a solitária', escolhido justamente porque ela não tem vizinhas brilhantes. Esse isolamento a tornou um marcador claro e confiável numa região do céu que, fora isso, é pouco luminosa."
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "cultural",
+    "en": "As the leading star of Crux, Acrux shares in the Southern Cross that appears on the national flags of Australia, New Zealand, Brazil, Papua New Guinea and Samoa. For cultures across the southern hemisphere the Cross is a central navigational and seasonal marker.",
+    "old": "Como a estrela principal do Cruzeiro do Sul, Acrux compartilha do Cruzeiro do Sul que aparece nas bandeiras nacionais da Austrália, Nova Zelândia, Brasil, Papua-Nova Guiné e Samoa. Para culturas em todo o hemisfério sul, o Cruzeiro é um marcador central de navegação e de estações.",
+    "new": "Como estrela principal do Cruzeiro do Sul, Acrux integra a cruz que aparece nas bandeiras nacionais da Austrália, da Nova Zelândia, do Brasil, de Papua-Nova Guiné e de Samoa. Para culturas de todo o hemisfério sul, o Cruzeiro é um marcador central de navegação e das estações do ano."
+  },
+  {
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "cultural",
+    "en": "The name is Arabic for 'the bear'. The Pointers have guided travellers to the North Star for millennia, making Dubhe one of the most practically useful stars in the northern sky.",
+    "old": "O nome vem do árabe e significa 'o urso'. As Ponteiras têm guiado viajantes até a Estrela do Norte por milênios, fazendo de Dubhe uma das estrelas mais praticamente úteis do céu setentrional.",
+    "new": "O nome é árabe e significa 'o urso'. As Indicadoras guiam viajantes até a Estrela do Norte há milênios, o que faz de Dubhe uma das estrelas de maior utilidade prática no céu setentrional."
+  },
+  {
+    "rel": "universe/exoplanets/proxima-cen-b.json",
+    "at": "bio",
+    "en": "Proxima Centauri b orbits the Sun's nearest neighbour just 4.24 light-years away, circling its cool red dwarf every 11 days within the zone where liquid water could exist. Its proximity made it the headline target of the Breakthrough Starshot project, which imagines gram-scale light-sail probes reaching it within a human lifetime — though the star's violent flares are a serious hazard to any atmosphere or life.",
+    "old": "Proxima Centauri b orbita a vizinha mais próxima do Sol a apenas 4,24 anos-luz de distância, circundando sua fria anã vermelha a cada 11 dias dentro da zona onde água líquida poderia existir. Sua proximidade o tornou o alvo principal do projeto Breakthrough Starshot, que imagina sondas de vela-solar em escala de gramas alcançando-o durante uma vida humana — embora as erupções violentas da estrela sejam um perigo sério para qualquer atmosfera ou vida.",
+    "new": "Proxima Centauri b orbita a vizinha mais próxima do Sol, a apenas 4,24 anos-luz de distância, circundando sua fria anã vermelha a cada 11 dias dentro da zona onde água líquida poderia existir. Sua proximidade o tornou o alvo principal do projeto Breakthrough Starshot, que imagina sondas com velas de luz, na escala de gramas, chegando até ele durante uma vida humana — embora as erupções violentas da estrela sejam um perigo sério para qualquer atmosfera ou vida."
+  },
+  {
+    "rel": "universe/exoplanets/barnard-b.json",
+    "at": "bio",
+    "en": "Barnard's Star, the nearest single star to the Sun at just under six light-years, is a fixture of science fiction — the destination of the British Interplanetary Society's 1970s 'Project Daedalus' starship study and a waypoint in interstellar fiction from Robert Forward’s Rocheworld to the later Rama novels. After a century of claimed planets that all evaporated under scrutiny, Barnard b was finally confirmed in 2024: a sub-Earth far too hot for life, but real at last.",
+    "old": "A Estrela de Barnard, a estrela isolada mais próxima do Sol a pouco menos de seis anos-luz, é uma figura fixa da ficção científica — o destino do estudo de nave estelar 'Project Daedalus' da British Interplanetary Society nos anos 1970 e um ponto de passagem na ficção interestelar que vai de Rocheworld de Robert Forward aos posteriores romances de Rama. Após um século de planetas reclamados que todos se dissiparam sob escrutínio, Barnard b foi finalmente confirmada em 2024: uma subestranha demasiado quente para vida, mas real afinal.",
+    "new": "A Estrela de Barnard, a estrela isolada mais próxima do Sol, a pouco menos de seis anos-luz, é presença constante na ficção científica — destino do estudo de nave estelar 'Project Daedalus' da British Interplanetary Society nos anos 1970 e ponto de passagem na ficção interestelar, de Rocheworld, de Robert Forward, aos romances posteriores de Rama. Após um século de planetas alegados que se desfizeram sob escrutínio, Barnard b foi enfim confirmado em 2024: uma sub-Terra quente demais para a vida, mas real, por fim."
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "bio",
+    "en": "Procyon (Alpha Canis Minoris) is a nearby white subgiant star only 11.5 light-years away, orbited by a faint white-dwarf companion. Its closeness makes it the eighth-brightest star in the sky despite its modest true luminosity.",
+    "old": "Prócion (Alfa Canis Minoris) é uma estrela subanã branca próxima a apenas 11,5 anos-luz de distância, orbitada por uma fraca companheira anã branca. Sua proximidade a torna a oitava estrela mais brilhante do céu, apesar de sua luminosidade verdadeira modesta.",
+    "new": "Prócion (Alfa Canis Minoris) é uma estrela subgigante branca próxima, a apenas 11,5 anos-luz de distância, orbitada por uma fraca companheira anã branca. Sua proximidade a torna a oitava estrela mais brilhante do céu, apesar de sua luminosidade real modesta."
+  },
+  {
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "fact",
+    "en": "A second, cooler world orbiting nearby Lalande 21185.",
+    "old": "Um segundo mundo, mais frio, orbitando a próxima Lalande 21185.",
+    "new": "Um segundo mundo, mais frio, em órbita da vizinha Lalande 21185."
+  },
+  {
+    "rel": "universe/named-stars/peacock.json",
+    "at": "fact",
+    "en": "The brightest star of the Peacock — an English name born of 20th-century navigation.",
+    "old": "A estrela mais brilhante do Peacock — um nome inglês nascido da navegação do século XX.",
+    "new": "A estrela mais brilhante do Pavão — um nome inglês nascido da navegação do século XX."
+  },
+  {
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "bio",
+    "en": "Alkaid (Eta Ursae Majoris) is a hot blue main-sequence star about 104 light-years away, the last star in the handle of the Big Dipper. Unlike the five central Dipper stars, it does not share their common motion through space — it only happens to lie along the same line.",
+    "old": "Alkaid (Eta Ursae Majoris) é uma estrela quente e azul da sequência principal a cerca de 104 anos-luz de distância, a última estrela no cabo da Ursa Maior. Diferentemente das cinco estrelas centrais da constelação, ela não compartilha o movimento comum delas pelo espaço — apenas acontece de estar alinhada na mesma direção.",
+    "new": "Alkaid (Eta Ursae Majoris) é uma estrela quente e azul da sequência principal, a cerca de 104 anos-luz de distância, a última do cabo da Grande Concha. Diferentemente das cinco estrelas centrais da Concha, ela não compartilha o movimento comum delas pelo espaço — apenas acontece de estar alinhada na mesma direção."
+  },
+  {
+    "rel": "universe/named-stars/van-maanens-star.json",
+    "at": "bio",
+    "en": "Van Maanen's Star is a white dwarf about 14 light-years away in Pisces, the closest solitary white dwarf to the Sun. Once a Sun-like star, it has exhausted its fuel and collapsed to roughly the size of Earth, now slowly cooling as a dense stellar cinder.",
+    "old": "A Estrela de Van Maanen é uma anã branca a cerca de 14 anos-luz de distância em Pisces, a anã branca solitária mais próxima do Sol. Outrora uma estrela semelhante ao Sol, ela esgotou seu combustível e colapsou até aproximadamente o tamanho da Terra, agora esfriando lentamente como uma cinza estelar densa.",
+    "new": "A Estrela de Van Maanen é uma anã branca a cerca de 14 anos-luz de distância, na constelação de Peixes, a anã branca solitária mais próxima do Sol. Outrora uma estrela semelhante ao Sol, esgotou seu combustível e colapsou até aproximadamente o tamanho da Terra, e agora esfria lentamente como uma cinza estelar densa."
+  },
+  {
+    "rel": "universe/named-stars/almach.json",
+    "at": "bio",
+    "en": "Almach (Gamma Andromedae) is a multiple system about 350 light-years away, celebrated for the vivid colour contrast between its bright golden-orange giant and a bluish companion — itself a triple — making it a favourite target for small telescopes.",
+    "old": "Almach (Gamma Andromedae) é um sistema múltiplo a cerca de 350 anos-luz de distância, célebre pelo vívido contraste de cores entre sua brilhante gigante alaranjada-dourada e uma companheira azulada — ela própria tripla — tornando-a um alvo favorito para pequenos telescópios.",
+    "new": "Almach (Gamma Andromedae) é um sistema múltiplo a cerca de 350 anos-luz de distância, célebre pelo vívido contraste de cores entre sua brilhante gigante laranja-dourada e uma companheira azulada — ela própria tripla —, o que a torna um alvo favorito para pequenos telescópios."
+  },
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "bio",
+    "en": "Alpheratz (Alpha Andromedae) is a blue-white star about 97 light-years away with an unusual mercury-manganese chemical peculiarity. It marks the head of Andromeda while also serving as the north-eastern corner of the Great Square of Pegasus.",
+    "old": "Alpheratz (Alpha Andromedae) é uma estrela branco-azulada a cerca de 97 anos-luz de distância com uma peculiaridade química incomum de mercúrio-manganês. Ela marca a cabeça de Andromeda enquanto também serve como o canto nordeste do Grande Quadrado de Pegasus.",
+    "new": "Alpheratz (Alpha Andromedae) é uma estrela branco-azulada a cerca de 97 anos-luz de distância, com uma peculiaridade química incomum de mercúrio-manganês. Ela marca a cabeça de Andrômeda e, ao mesmo tempo, o canto nordeste do Grande Quadrado de Pégaso."
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "cultural",
+    "en": "The 'Dog Star' has guided calendars for millennia: its heliacal rising once heralded the annual flooding of the Nile in ancient Egypt, and it anchors the 'Dog Days' of summer in the Greco-Roman tradition.",
+    "old": "A 'Estrela do Cão' tem orientado calendários por milênios: seu nascimento helíaco outrora anunciava a inundação anual do Nilo no antigo Egito, e ela ancora os 'Dias de Cão' do verão na tradição greco-romana.",
+    "new": "A 'Estrela do Cão' orienta calendários há milênios: seu nascer helíaco anunciava outrora a cheia anual do Nilo no antigo Egito, e ela ancora os 'Dias de Cão' do verão na tradição greco-romana."
+  },
+  {
+    "rel": "universe/exoplanets/hd-62509-b.json",
+    "at": "fact",
+    "en": "A giant planet circling Pollux — one of the first worlds found around a nearby giant star.",
+    "old": "Um gigantesco planeta orbitando Pollux — um dos primeiros mundos descobertos ao redor de uma estrela gigante próxima.",
+    "new": "Um planeta gigante que orbita Pollux — um dos primeiros mundos descobertos ao redor de uma estrela gigante próxima."
+  },
+  {
+    "rel": "universe/named-stars/alhena.json",
+    "at": "bio",
+    "en": "Alhena (Gamma Geminorum) is a blue-white subgiant about 109 light-years away, the third-brightest star in Gemini and set at the foot of the Twins near the edge of the Milky Way.",
+    "old": "Alhena (Gamma Geminorum) é uma subgigante branco-azulada a cerca de 109 anos-luz de distância, a terceira estrela mais brilhante de Gemini e localizada no pé dos Gêmeos perto da borda da Via Láctea.",
+    "new": "Alhena (Gamma Geminorum) é uma subgigante branco-azulada a cerca de 109 anos-luz de distância, a terceira estrela mais brilhante da constelação de Gêmeos (Gemini), situada no pé dos Gêmeos, perto da borda da Via Láctea."
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "cultural",
+    "en": "The name comes from the Arabic for 'the elbow'. In the classical figure Perseus holds the head of Medusa — near the winking demon-star Algol — and Mirfak marks the hero's side.",
+    "old": "O nome vem do árabe para 'o cotovelo'. Na figura clássica, Perseus segura a cabeça de Medusa — próxima à piscante estrela-demônio Algol — e Mirfak marca o flanco do herói.",
+    "new": "O nome vem do árabe para 'o cotovelo'. Na figura clássica, Perseu segura a cabeça de Medusa — perto da piscante estrela-demônio Algol — e Mirfak marca o flanco do herói."
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "bio",
+    "en": "Mirfak (Alpha Persei) is a yellow-white supergiant roughly 510 light-years away, the brightest star in Perseus. It is the leading light of the Alpha Persei Cluster, a loose group of hot young stars sharing its motion through space.",
+    "old": "Mirfak (Alpha Persei) é uma supergigante branco-amarelada a aproximadamente 510 anos-luz de distância, a estrela mais brilhante de Perseus. É a luz principal do Aglomerado Alpha Persei, um grupo disperso de estrelas jovens e quentes que compartilham seu movimento pelo espaço.",
+    "new": "Mirfak (Alpha Persei) é uma supergigante branco-amarelada a aproximadamente 510 anos-luz de distância, a estrela mais brilhante de Perseu. É a luz principal do Aglomerado Alpha Persei, um grupo disperso de estrelas jovens e quentes que compartilham seu movimento pelo espaço."
+  },
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "cultural",
+    "en": "The name derives from the Arabic for 'the navel of the mare', from a time when the star was counted as part of Pegasus. It bridges the myth of the chained princess Andromeda and the winged horse beside her.",
+    "old": "O nome deriva do árabe para 'o umbigo da égua', de uma época em que a estrela era considerada parte de Pegasus. Ela conecta o mito da princesa acorrentada Andromeda e o cavalo alado ao seu lado.",
+    "new": "O nome deriva do árabe para 'o umbigo da égua', de uma época em que a estrela era considerada parte de Pégaso. Ela liga o mito da princesa acorrentada Andrômeda ao do cavalo alado ao seu lado."
+  },
+  {
+    "rel": "universe/named-stars/alpheratz.json",
+    "at": "fact",
+    "en": "The shared corner of two figures — the head of Andromeda and a corner of Pegasus's Great Square.",
+    "old": "O canto compartilhado de duas figuras — a cabeça de Andromeda e um canto do Grande Quadrado de Pegasus.",
+    "new": "O canto compartilhado de duas figuras — a cabeça de Andrômeda e um canto do Grande Quadrado de Pégaso."
+  },
+  {
+    "rel": "universe/exoplanets/gj-411-b.json",
+    "at": "bio",
+    "en": "GJ 411 b is a super-Earth whipping around Lalande 21185, a dim red dwarf about eight light-years away in the Great Bear and one of the closest stars to the Sun. First detected in 2017 and confirmed in 2020 from the star's tiny velocity wobble, it orbits far too close to be habitable, but its nearness makes the system a recurring waypoint in interstellar-travel fiction.",
+    "old": "GJ 411 b é uma super-Terra que orbita rapidamente ao redor de Lalande 21185, uma anã vermelha tênue a cerca de oito anos-luz de distância na Ursa Maior e uma das estrelas mais próximas do Sol. Detectado pela primeira vez em 2017 e confirmado em 2020 a partir do minúsculo deslocamento da velocidade da estrela, orbita próximo demais para ser habitável, mas sua proximidade torna o sistema um ponto de referência recorrente na ficção de viagens interestelares.",
+    "new": "GJ 411 b é uma super-Terra que gira velozmente ao redor de Lalande 21185, uma anã vermelha tênue a cerca de oito anos-luz de distância, na Ursa Maior, e uma das estrelas mais próximas do Sol. Detectada pela primeira vez em 2017 e confirmada em 2020 a partir da minúscula oscilação na velocidade da estrela, orbita perto demais para ser habitável, mas sua proximidade faz do sistema um ponto de referência recorrente na ficção de viagens interestelares."
+  },
+  {
+    "rel": "universe/named-stars/canopus.json",
+    "at": "cultural",
+    "en": "Often linked to a helmsman of the Greek fleet at Troy, Canopus is 'Agastya' in Indian tradition — a revered sage of the southern sky. Too far south for much of Europe, it was a prized season- and latitude-marker for navigators of the southern seas.",
+    "old": "Frequentemente associada a um timoneiro da frota grega em Troy, Canopus é 'Agastya' na tradição indiana — um venerado sábio do céu meridional. Situada longe demais ao sul para grande parte da Europa, era uma preciosa referência de estação e latitude para os navegadores dos mares austrais.",
+    "new": "Frequentemente associada a um timoneiro da frota grega em Troia, Canopus é 'Agastya' na tradição indiana — um venerado sábio do céu meridional. Situada longe demais ao sul para grande parte da Europa, era uma preciosa referência de estação e latitude para os navegadores dos mares austrais."
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-b.json",
+    "at": "bio",
+    "en": "TRAPPIST-1 b is the closest planet to the ultracool dwarf star, baked far too hot for water. In 2023 it became one of the first rocky exoplanets probed for an atmosphere by the James Webb Space Telescope, which found little sign of a thick one — an early verdict in the long effort to learn whether any of these seven worlds can hold onto air.",
+    "old": "TRAPPIST-1 b é o planeta mais próximo da estrela anã ultragelada, assado em temperaturas extremas demais para água. Em 2023, tornou-se um dos primeiros exoplanetas rochosos sondados em busca de atmosfera pelo James Webb Space Telescope, que encontrou pouco sinal de uma atmosfera espessa — um veredito inicial no longo esforço para descobrir se algum desses sete mundos consegue manter ar.",
+    "new": "TRAPPIST-1 b é o planeta mais próximo da estrela anã ultrafria, tão escaldante que a água não resiste. Em 2023, tornou-se um dos primeiros exoplanetas rochosos sondados em busca de atmosfera pelo James Webb Space Telescope, que encontrou pouco sinal de uma atmosfera espessa — um veredito inicial no longo esforço para descobrir se algum desses sete mundos consegue manter ar."
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "bio",
+    "en": "Aldebaran, the orange-giant eye of Taurus, is one of science fiction's most name-dropped stars, from pulp adventures to film. A planet several times Jupiter's mass was once proposed from decades of subtle velocity signals, but later analysis attributes those signals to the giant star's own pulsations — the planet is now considered unconfirmed — a reminder of how hard planets are to pin down around restless old suns.",
+    "old": "Aldebarã, o olho gigante laranja do Touro, é uma das estrelas mais citadas pela ficção científica, desde aventuras pulp até o cinema. Um planeta com massa várias vezes superior à de Júpiter foi uma vez proposto a partir de décadas de sinais de velocidade sutis, mas análises posteriores atribuem esses sinais às próprias pulsações da estrela gigante — o planeta agora é considerado não confirmado — um lembrete de quão difícil é identificar planetas ao redor de sóis antigos e inquietos.",
+    "new": "Aldebarã, o olho laranja de gigante do Touro, é uma das estrelas mais citadas pela ficção científica, das aventuras pulp ao cinema. Um planeta com massa várias vezes superior à de Júpiter chegou a ser proposto a partir de décadas de sinais sutis de velocidade, mas análises posteriores atribuem esses sinais às próprias pulsações da estrela gigante — o planeta agora é considerado não confirmado — um lembrete de quão difícil é identificar planetas ao redor de sóis antigos e inquietos."
+  },
+  {
+    "rel": "universe/named-stars/nunki.json",
+    "at": "fact",
+    "en": "A hot blue star of the Archer — and one of the very few surviving Babylonian star names.",
+    "old": "Uma estrela azul e quente do Arqueiro — e um dos pouquíssimos nomes estelares Babylonian que sobreviveram.",
+    "new": "Uma estrela azul e quente do Arqueiro — e um dos pouquíssimos nomes estelares babilônicos que sobreviveram."
+  },
+  {
+    "rel": "universe/named-stars/elnath.json",
+    "at": "cultural",
+    "en": "The name comes from the Arabic for 'the butting' — the point of the Bull's horn. Its position on the edge of the Milky Way made it a useful signpost between Taurus and Auriga.",
+    "old": "O nome vem do árabe para 'o golpe' — a ponta do chifre do Touro. Sua posição na borda da Via Láctea a tornou um marco útil entre Taurus e Auriga.",
+    "new": "O nome vem do árabe para 'o que chifra' — a ponta do chifre do Touro. Sua posição na borda da Via Láctea a tornou um marco útil entre Touro e Auriga."
+  },
+  {
+    "rel": "universe/named-stars/van-maanens-star.json",
+    "at": "fact",
+    "en": "The nearest lone white dwarf — the burnt-out, Earth-sized ember of a dead star.",
+    "old": "A anã branca solitária mais próxima — a brasa densa do tamanho da Terra, resquício de uma estrela morta.",
+    "new": "A anã branca solitária mais próxima — a brasa extinta, do tamanho da Terra, de uma estrela morta."
+  },
+  {
+    "rel": "universe/named-stars/rasalhague.json",
+    "at": "cultural",
+    "en": "The name is Arabic for 'the head of the serpent-collector'. Ophiuchus — often identified with the healer Asclepius grasping a great snake — straddles the ecliptic, the thirteenth figure the Sun passes through.",
+    "old": "O nome vem do árabe para 'a cabeça do coletor de serpentes'. O Serpentário — frequentemente identificado com o curador Asclepius segurando uma grande serpente — atravessa a eclíptica, a décima terceira figura pela qual o Sol passa.",
+    "new": "O nome vem do árabe para 'a cabeça do coletor de serpentes'. O Serpentário — frequentemente identificado com o curador Asclépio segurando uma grande serpente — atravessa a eclíptica, a décima terceira figura pela qual o Sol passa."
+  },
+  {
+    "rel": "universe/named-stars/vega.json",
+    "at": "fact",
+    "en": "The brightest star of Lyra, and once — and future — Pole Star as Earth's axis slowly precesses.",
+    "old": "A estrela mais brilhante de Lyra, e outrora — e futura — Pole Star, conforme o eixo da Terra precessa lentamente.",
+    "new": "A estrela mais brilhante de Lira, e outrora — e futura — Estrela Polar, conforme o eixo da Terra precessa lentamente."
+  },
+  {
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "fact",
+    "en": "The fiery orange 'eye of the bull' in Taurus — a giant star that only appears to sit among the Hyades cluster.",
+    "old": "O olho laranja ardente do 'touro' em Taurus — uma estrela gigante que apenas aparenta estar situada entre o aglomerado das Hyades.",
+    "new": "O ardente 'olho do touro' laranja em Touro — uma estrela gigante que apenas aparenta estar situada entre o aglomerado das Híades."
+  },
+  {
+    "rel": "universe/named-stars/hamal.json",
+    "at": "bio",
+    "en": "Hamal (Alpha Arietis) is an orange giant about 66 light-years away, the brightest star in Aries the Ram, and it hosts a giant planet detected from its motion.",
+    "old": "Hamal (Alpha Arietis) é uma gigante laranja a cerca de 66 anos-luz de distância, a estrela mais brilhante de Aries, o Carneiro, e abriga um planeta gigante detectado através do seu movimento.",
+    "new": "Hamal (Alpha Arietis) é uma gigante laranja a cerca de 66 anos-luz de distância, a estrela mais brilhante de Áries, o Carneiro, e abriga um planeta gigante detectado a partir do seu movimento."
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "bio",
+    "en": "Alnitak (Zeta Orionis) is a hot blue supergiant system about 1,260 light-years away, the easternmost of the three Belt stars. Its fierce ultraviolet light illuminates the nearby Flame Nebula, and the famous Horsehead is silhouetted close by.",
+    "old": "Alnitak (Zeta Orionis) é um sistema de supergigante azul quente a cerca de 1.260 anos-luz de distância, a mais oriental das três estrelas do Cinturão. Sua intensa luz ultravioleta ilumina a próxima Nebulosa da Chama, e a famosa Horsehead aparece em silhueta nas proximidades.",
+    "new": "Alnitak (Zeta Orionis) é um sistema de supergigante azul quente a cerca de 1.260 anos-luz de distância, a mais oriental das três estrelas do Cinturão. Sua intensa luz ultravioleta ilumina a próxima Nebulosa da Chama, e a famosa Nebulosa Cabeça de Cavalo aparece em silhueta nas proximidades."
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "fact",
+    "en": "The luminous heart of Perseus, leading a scattered cluster of young stars.",
+    "old": "O coração luminoso de Perseus, liderando um aglomerado disperso de estrelas jovens.",
+    "new": "O coração luminoso de Perseu, liderando um aglomerado disperso de estrelas jovens."
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "bio",
+    "en": "Betelgeuse (Alpha Orionis) is a semiregular variable near the end of its life. Estimates place it several hundred light-years away with large uncertainty. It will one day end as a supernova — briefly rivalling the Moon in our sky.",
+    "old": "Betelgeuse (Alpha Orionis) é uma variável semirregular próxima do fim de sua vida. Estimativas a colocam a várias centenas de anos-luz de distância com grande incerteza. Um dia ela terminará como uma supernova — rivalzando brevemente com a Lua em nosso céu.",
+    "new": "Betelgeuse (Alpha Orionis) é uma variável semirregular próxima do fim de sua vida. Estimativas a colocam a várias centenas de anos-luz de distância, com grande incerteza. Um dia ela terminará como uma supernova — rivalizando brevemente com a Lua em nosso céu."
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-e.json",
+    "at": "bio",
+    "en": "TOI-700 e, confirmed in 2023, is a rocky, roughly Earth-sized planet orbiting within the habitable zone just inside its sibling TOI-700 d. Finding two temperate Earth-sized worlds in one nearby system made TOI-700 an especially rich target for future studies of small-planet atmospheres.",
+    "old": "TOI-700 e, confirmado em 2023, é um planeta rochoso de aproximadamente o tamanho da Terra orbitando dentro da zona habitável logo internamente ao seu irmão TOI-700 d. A descoberta de dois mundos temperados do tamanho da Terra em um único sistema próximo tornou TOI-700 um alvo especialmente rico para estudos futuros de atmosferas de planetas pequenos.",
+    "new": "TOI-700 e, confirmado em 2023, é um planeta rochoso de aproximadamente o tamanho da Terra, em órbita dentro da zona habitável, logo no interior da órbita de seu irmão TOI-700 d. A descoberta de dois mundos temperados do tamanho da Terra em um único sistema próximo tornou TOI-700 um alvo especialmente rico para estudos futuros de atmosferas de planetas pequenos."
+  },
+  {
+    "rel": "universe/named-stars/algol.json",
+    "at": "cultural",
+    "en": "The name is Arabic for 'the ghoul', and Algol marks the severed head of Medusa held by Perseus. Cultures from the Arab world to ancient Egypt seem to have marked this star's strange, regular 'winking' with unease long before its cause was understood.",
+    "old": "O nome vem do árabe para 'o carniçal', e Algol marca a cabeça decepada de Medusa segurada por Perseus. Culturas do mundo árabe ao antigo Egito parecem ter notado esse estranho 'piscar' regular da estrela com desconforto muito antes de sua causa ser compreendida.",
+    "new": "O nome vem do árabe para 'o carniçal', e Algol marca a cabeça decepada de Medusa segurada por Perseu. Culturas do mundo árabe ao antigo Egito parecem ter notado esse estranho 'piscar' regular da estrela com desconforto muito antes de sua causa ser compreendida."
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "cultural",
+    "en": "The name comes from the Arabic for 'tail', marking the tail of Cygnus the Swan. Deneb anchors the Summer Triangle with Vega and Altair and rides the length of the Milky Way's northern stream.",
+    "old": "O nome vem do árabe para 'cauda', marcando a cauda do Cygnus, a Cisne. Deneb ancora o Triângulo de Verão com Vega e Altair e percorre a extensão do braço norte da Via Láctea.",
+    "new": "O nome vem do árabe para 'cauda', marcando a cauda de Cygnus, o Cisne. Deneb ancora o Triângulo de Verão com Vega e Altair e percorre a extensão do braço norte da Via Láctea."
+  },
+  {
+    "rel": "universe/named-stars/castor.json",
+    "at": "bio",
+    "en": "Castor (Alpha Geminorum) lies about 51 light-years away and is one of the most remarkable multiple systems in the sky: three pairs of stars — two bright white A-type stars, each with a red-dwarf companion, plus a distant red-dwarf pair — all gravitationally bound, six suns in one 'star'.",
+    "old": "Castor (Alpha Geminorum) fica a aproximadamente 51 anos-luz de distância e é um dos sistemas múltiplos mais notáveis do céu: três pares de estrelas — dois brilhantes astros branco-azulados de tipo A, cada um com um acompanhante anã vermelha, mais um par distante de anãs vermelhas — todos gravitacionalmente ligados, seis sóis em uma única \"estrela\".",
+    "new": "Castor (Alpha Geminorum) fica a aproximadamente 51 anos-luz de distância e é um dos sistemas múltiplos mais notáveis do céu: três pares de estrelas — duas brilhantes estrelas brancas de tipo A, cada uma com uma companheira anã vermelha, mais um par distante de anãs vermelhas — todas gravitacionalmente ligadas, seis sóis em uma única 'estrela'."
+  },
+  {
+    "rel": "universe/named-stars/adhara.json",
+    "at": "fact",
+    "en": "The second star of the Great Dog — and once the brightest ultraviolet beacon in our sky.",
+    "old": "A segunda estrela do Great Dog — e outrora o farol ultravioleta mais brilhante em nosso céu.",
+    "new": "A segunda estrela do Cão Maior — e outrora o farol ultravioleta mais brilhante em nosso céu."
+  },
+  {
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "fact",
+    "en": "The 'lonely star' of the southern autumn sky — a young star girdled by a sharp-edged ring of debris.",
+    "old": "A 'estrela solitária' do céu austral de outono — uma estrela jovem circundada por um anel afiado de detritos.",
+    "new": "A 'estrela solitária' do céu austral de outono — uma estrela jovem circundada por um anel de bordas nítidas, feito de detritos."
+  },
+  {
+    "rel": "universe/named-stars/avior.json",
+    "at": "bio",
+    "en": "Avior (Epsilon Carinae) is a system about 600 light-years away pairing an orange giant with a hot blue companion. It sits in Carina, forming one corner of the False Cross that is often mistaken for the true Southern Cross.",
+    "old": "Avior (Epsilon Carinae) é um sistema a cerca de 600 anos-luz de distância que une uma gigante laranja a uma companheira azul quente. Ela está localizada em Carina, formando um dos vértices da False Cross que é frequentemente confundida com o verdadeiro Cruzeiro do Sul.",
+    "new": "Avior (Epsilon Carinae) é um sistema a cerca de 600 anos-luz de distância que une uma gigante laranja a uma companheira azul quente. Ela está localizada em Carina, formando um dos vértices da Falsa Cruz, frequentemente confundida com o verdadeiro Cruzeiro do Sul."
+  },
+  {
+    "rel": "universe/exoplanets/barnard-c.json",
+    "at": "bio",
+    "en": "Barnard c is part of a tightly packed system of small, low-mass worlds confirmed around Barnard's Star in 2024–2025 with the ESPRESSO spectrograph. Each planet is a fraction of Earth's mass and orbits in just days, far too hot for life — but their discovery finally delivered real planets at a star that had frustrated hunters for a hundred years.",
+    "old": "Barnard c integra um sistema compacto de mundos pequenos e de baixa massa confirmados ao redor da Estrela de Barnard em 2024–2025 com o espectrógrafo ESPRESSO. Cada planeta tem uma fração da massa terrestre e orbita em apenas dias, muito quente demais para abrigar vida — mas sua descoberta finalmente entregou planetas reais em torno de uma estrela que havia frustrado caçadores durante cem anos.",
+    "new": "Barnard c integra um sistema compacto de mundos pequenos e de baixa massa confirmados ao redor da Estrela de Barnard em 2024–2025 com o espectrógrafo ESPRESSO. Cada planeta tem uma fração da massa terrestre e orbita em apenas dias, quente demais para abrigar vida — mas sua descoberta finalmente entregou planetas reais em torno de uma estrela que havia frustrado caçadores durante cem anos."
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-b.json",
+    "at": "fact",
+    "en": "A habitable-zone super-Earth at Luyten's Star — and the target of a deliberate message from Earth.",
+    "old": "Uma super-Terra na zona habitável da Estrela Luyten — e alvo de uma mensagem deliberada da Terra.",
+    "new": "Uma super-Terra na zona habitável da Estrela de Luyten — e alvo de uma mensagem deliberada da Terra."
+  },
+  {
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "bio",
+    "en": "Aldebaran (Alpha Tauri) is an orange giant about 65 light-years away. It lies in the foreground of the more distant Hyades cluster, a line-of-sight coincidence rather than true membership.",
+    "old": "Aldebarã (Alpha Tauri) é uma gigante alaranjada a cerca de 65 anos-luz de distância. Ela está em primeiro plano em relação ao aglomerado mais distante das Hyades, uma coincidência de linha de visada e não uma associação verdadeira.",
+    "new": "Aldebarã (Alpha Tauri) é uma gigante alaranjada a cerca de 65 anos-luz de distância. Ela está em primeiro plano em relação ao aglomerado mais distante das Híades, uma coincidência de linha de visada e não uma associação verdadeira."
+  }
+]

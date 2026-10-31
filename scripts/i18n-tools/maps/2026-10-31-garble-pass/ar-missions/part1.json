@@ -1,0 +1,1302 @@
+[
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "number agreement",
+    "new": "أولى مساعدات الجاذبية الأرضية الثلاث لبناء السرعة اللازمة للالتقاء بالمذنب.",
+    "note": "\"first of three\" rendered as \"first three\""
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "يدخل المسبار المداري في مدار المريخ أثناء عاصفة الغبار العالمية.",
+    "note": "orbiter rendered as \"the orbit\""
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "التحليق القريب على بعد ~120 كم من أحد أكبر كويكبات الحزام الرئيسي التي رُصدت عن قرب.",
+    "note": "flyby binding missing"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "description",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "مهمة مزدوجة جريئة من الاتحاد السوفياتي إلى المريخ في عام 1971 — أُطلقت Mars 2 وMars 3 بفاصل 9 أيام. تحطم هابط Mars 2؛ أما هابط Mars 3 فحقق أول هبوط ناعم على المريخ لكنه توقف عن الإرسال بعد ~110 ثوانٍ من ملامسة السطح — ولم يستمر الإرسال الفعلي سوى ~14.5 ثانية — ربما بسبب العاصفة الغبارية العالمية التي كانت مستعرة آنذاك. وعمل المسبار المداري 8 أشهر، وأعاد عشرات الصور وقياسات الغلاف الجوي. ورغم قصر المهمة على السطح، أثبتت Mars 3 أن مشكلة الهبوط وإنزال المركبة على المريخ قابلة للحل.",
+    "note": "orbiter rendered as \"the orbit\"; landing wording"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "تتدحرج المركبة الجوالة على المنحدر نزولاً؛ وتبدأ العلوم السطحية.",
+    "note": "\"الماربة\" is not a word"
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "هبوط مائي طارئ في المحيط الهادئ بعد 10 ساعات و41 دقيقة.",
+    "note": "splashdown as plain landing"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "تسرب الهيدرازين، وتعطل عجلتَي رد الفعل، وانقطاع الاتصال 7 أسابيع.",
+    "note": "broken construct \"dead reaction wheels\""
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "التخلص من وحدة النقل MTM وفصل المركبتين المداريتين؛ تبدأ العمليات العلمية في أوائل 2027.",
+    "note": "\"science\" noun misused, jettison wording"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "آخر رحلة فضاء أمريكية مأهولة منفردة؛ 22 مدارًا / 34 ساعة",
+    "note": "orbits as \"دورة\", binding missing"
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "dropped content",
+    "new": "2025-03-01. يحني المسار نحو لقاء الأرض مجددًا.",
+    "note": "\"re-\" dropped, intransitive verb"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong word",
+    "new": "يشتعل محرك الأوج السائل بعد نحو 10 أشهر من الخمول — اشتعل 24 دقيقة ليُؤسَر المسبار في المدار.",
+    "note": "\"capture\" rendered as \"التقاط\""
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "dropped content",
+    "new": "أرمسترونج يخطو على سطح القمر؛ «خطوة صغيرة لإنسان».",
+    "note": "\"lunar\" dropped"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong meaning",
+    "new": "2027-08. أول لقاء مع كويكب طروادي. كويكب من النوع C بقطر 64 كم + قمر بقطر 1 كم.",
+    "note": "diameter rendered as length"
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong verb",
+    "new": "تسع صور، بينها خمس بانوراميات، أُرسلت في ثلاث جلسات إرسال على مدى ثلاثة أيام.",
+    "note": "images \"returned\" as \"عادت\""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning, English left",
+    "new": "الحقن نحو القمر — تم التحقق من التعافي من صواعق البرق؛ أُعطيت المهمة الضوء الأخضر للتوجه إلى القمر.",
+    "note": "\"GO\" left, injection and recovery garbled"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "dropped content",
+    "new": "يرفع المقلاع الجاذبي طاقة المركبة بالنسبة إلى الشمس بما يكفي للوصول إلى المشتري.",
+    "note": "slingshot dropped"
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "يستهدف تصحيح الاقتراب بدقة نقطة الحضيض لإدخال المدار (MOI).",
+    "note": "trim rendered as \"دقة\""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong word",
+    "new": "الإدخال في مدار أرضي 161 × 283 كم.",
+    "note": "\"إدراج\" unnatural for orbit insertion"
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "binding missing",
+    "new": "نفدت بطاريات الفضة والزنك في 1957-10-26؛ وسكتت الإشارات الحاملة بعد نحو 315 مدارًا.",
+    "note": "orbits as \"دورة\", carriers misworded"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "dropped content",
+    "new": "ارتدت 26 مرة. دخلت فوهة قطرها 22 مترًا مصادفةً، محاطة بصخر أساسي مكشوف.",
+    "note": "\"bedrock\" lost"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong meaning",
+    "new": "كويكب طروادي من النوع P بقطر 21 كم له قمر تابع غير مسمى.",
+    "note": "diameter rendered as length"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "garbled phrase",
+    "new": "هبوط ذاتي القيادة على المدرج في مرفق هبوط المكوك بمركز KSC بتاريخ 2022-11-12.",
+    "note": "\"هبوط مدرج\" garbled"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "أولى مساعدات الجاذبية الأربع التي تبني الطاقة اللازمة للوصول إلى زحل.",
+    "note": "\"gravity\" missing from assists"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "أُرسلت أول صور عالية الدقة للسطح.",
+    "note": "clumsy passive \"يتم إعادتها\""
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong meaning",
+    "new": "أول مسح كامل — تغطية 84% من السطح بدقة 100 متر.",
+    "note": "pass rendered as \"path\""
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/shenzhou-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "رحلة من 14 مدارًا على ارتفاع 195 × 315 كم، بالميل المداري 42.6°.",
+    "note": "inclination binding missing"
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong meaning",
+    "new": "TCM + تشغيلات تجريبية للمحرك الأيوني NEXT-C.",
+    "note": "\"demonstration firings\" misrendered"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "clumsy",
+    "new": "أقرب اقتراب من بلوتو؛ فيض من الصور عالية المعدل وبيانات البلازما يتدفق إلى الأرض.",
+    "note": "\"تفيض إلى الأرض\" clumsy"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "binding missing",
+    "new": "هبوط مائي في الأطلسي بعد 4 أيام / 59 مدارًا — آخر مركبة Gemini.",
+    "note": "orbits as \"دورة مدارية\""
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "binding missing",
+    "new": "تحلل مداره في 1958-01-04 بعد نحو 1440 مدارًا؛ واحترق فوق المحيط الأطلسي.",
+    "note": "orbits as \"دورة\""
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong word",
+    "new": "2022-09-26. يتولى SMART Nav القيادة قبل 4 ساعات من الاصطدام.",
+    "note": "impact rendered as \"تأثير\""
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "يرصد LICIACube وHST وJWST عمود المقذوفات.",
+    "note": "\"ejecta plume\" as \"debris smoke\""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "binding missing",
+    "new": "أسر جاذبي بقوة الدفع الأيونية في مدار 700 كم. مهمة مدتها 26 شهرًا، وأربع مراحل مدارية.",
+    "note": "thrust binding missing"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong word",
+    "new": "آخر مساعدة جاذبية أرضية 2030-12. تتجه نحو سحابة L5.",
+    "note": "\"cloud\" as plural \"سحب\""
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "gender agreement",
+    "new": "أربعة محركات أيونية بتأثير هول تتولى المهمة. تسارع مستمر بقوة دفع منخفضة على مدى أكثر من 4 سنوات.",
+    "note": "\"أربع محركات\" gender, thrust binding"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong word",
+    "new": "نفدت البطارية؛ آخر إرسال 1966-02-06.",
+    "note": "\"استنزاف\" is a process"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "اخترقت عجلة قشرة الكبريتات؛ وغاصت المركبة الجوالة في التربة الرخوة. 2009-04.",
+    "note": "\"انغرقت\" is not a word"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "يهبط الهابط في فوهة Von Kármán في 2019-01-03 — أول مركبة فضائية على الجانب البعيد. تمر جميع الاتصالات عبر ساتل الترحيل Queqiao عند النقطة L2 للأرض-القمر.",
+    "note": "relay rendered as \"موصل\""
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled name",
+    "new": "تقلع إنتريبد بعد 31 س 31 د على السطح. أُعيد 34 كغ من العينات.",
+    "note": "Latin letter inside Arabic name, bad passive"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "تضررت شفرة الدوار في الرحلة الـ72 في 2024-01-18؛ أُوقفت المروحية عن الطيران وأُعيد توظيفها كمحطة ثابتة للطقس والبيانات تخزن القياسات لاسترجاعها مستقبلاً.",
+    "note": "helicopter as \"الطائرة\", clumsy wording"
+  },
+  {
+    "rel": "missions/dimorphos/dart.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "gender agreement",
+    "new": "مساعدة الجاذبية الثانية من الزهرة تبدأ مرحلة الاقتراب من عطارد.",
+    "note": "\"ثاني\" with feminine noun"
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong meaning",
+    "new": "أول طيران مُحرَّك ومُتحكَّم به على كوكب آخر — 39.1 ثانية على ارتفاع يصل إلى 5 أمتار.",
+    "note": "\"powered controlled flight\" garbled"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "first",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "أول تحليق قريب بعطارد؛ أول تحليق قريب بكوكبين؛ أول مهمة بمساعدة الجاذبية",
+    "note": "flyby binding missing"
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "non-word",
+    "new": "يُدخَل الهابط والمركبة الجوالة في السبات مع بدء الليل القمري.",
+    "note": "\"الماربة\" is not a word"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.10.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "agreement and splashdown",
+    "new": "هبطت وحدة القيادة هبوطًا مائيًا في شمال المحيط الهادئ في 1971-08-07 20:46 UTC. فشلت إحدى المظلات الرئيسية الثلاث في الانتشار بالكامل؛ هبوط قاسٍ لكنه آمن. جرى الانتشال بواسطة USS Okinawa.",
+    "note": "\"أحد المظلات\" gender; splashdown plain landing"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled name",
+    "new": "تحطمت مرحلة صعود إنتريبد عمدًا على القمر لمعايرة مقاييس الزلازل ALSEP — وهي أول مرحلة مركبة فضائية من مهمة مأهولة تصطدم بالقمر عمدًا ويسجّل ارتطامها مقياس زلازل على السطح.",
+    "note": "Latin letter in Arabic name, clumsy clause"
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "ملامستان للسطح في 2005-11-20 و25. لم تنطلق مقذوفات جمع العينات عند إعطاء الأمر.",
+    "note": "\"contacts\" read as communications"
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.6.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong meaning",
+    "new": "كويكب طروادي من النوع D بقطر 35 كم، بطيء الدوران (446 ساعة).",
+    "note": "diameter rendered as length"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.0.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "ينطلق صاروخ Delta II 7925H حاملاً MESSENGER في مسار يتضمن ستة تحليقات قريبة.",
+    "note": "flyby binding missing"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "unclear",
+    "new": "آخر تصحيح للمسار قبل مرحلة EDL، قبل 21 ساعة من الدخول.",
+    "note": "garbled time reference"
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "awkward terms",
+    "new": "درع حراري، مظلة، صواريخ رجعية، وسائد هوائية.",
+    "note": "\"retro-rockets\" as \"descent reverse rockets\""
+  },
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong verb",
+    "new": "هبطت وحدة القيادة هبوطًا مائيًا في جنوب المحيط الهادئ في 1969-11-24 20:58 بالتوقيت العالمي. جرى الانتشال بواسطة USS Hornet.",
+    "note": "\"انزلقت\" (slid) for splashed down"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "missing verb",
+    "new": "تقلع إيجل بعد 21 س 36 د على السطح.",
+    "note": "\"lifts off\" verb missing"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "التحليق القريب على بعد نحو 132,000 كم — أول صور للكوكب من مسافة قريبة.",
+    "note": "flyby binding missing"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "binding missing",
+    "new": "هبوط مائي في المحيط الأطلسي بعد 3 مدارات / 4 ساعات و52 دقيقة.",
+    "note": "orbits as \"دورات مدارية\""
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/skylab-4.json",
+    "at": "events.0.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "أول التقاء مأهول — تحافظ المركبة على موضعها ضمن ~30 سم من Gemini 7.",
+    "note": "\"station-keeps\" read as the station"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "agreement and date",
+    "new": "تتجمد خطوط وقود الدوافع؛ صدر الأمر الأخير في 2009-06-30.",
+    "note": "verb agreement, date format changed"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left",
+    "new": "الأوج ~400 كم؛ عمليات الحمولة المصنفة.",
+    "note": "\"km\" left in Latin"
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "English left",
+    "new": "ارتدت 28 مرة. استقرت عند 14.57° جنوباً، 175.47° شرقاً.",
+    "note": "Latin S/E in coordinates"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.5.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/phoenix.json",
+    "at": "events.5.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong word",
+    "new": "تكشط الذراع التربة السطحية. جليد أبيض لامع يتسامى أمام الكاميرا على مدى 4 أيام مريخية.",
+    "note": "sublimates rendered as \"rises\""
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong word",
+    "new": "أول مناورة مدارية يجريها طاقم — تغيّر الدوافع شكل المدار.",
+    "note": "\"الدفاعات\" means defences, not thrusters"
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "ينفصل الهابط ويبدأ الدخول في الغلاف الجوي.",
+    "note": "entry binding missing"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.8.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "binding and English left",
+    "new": "الحقن نحو الأرض. دلتا-في لمحرك SPS نحو 1.0 كم/ث.",
+    "note": "\"km/s\" and delta-v binding"
+  },
+  {
+    "rel": "missions/earth/gemini4.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "binding missing",
+    "new": "هبوط مائي في المحيط الأطلسي بعد 4 أيام / 62 مدارًا.",
+    "note": "orbits as \"دورة\", splashdown plain"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "awkward",
+    "new": "2026-12-03. التسارع الأخير في رحلة الذهاب نحو المشتري.",
+    "note": "\"للخارج\" awkward"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong word",
+    "new": "2021-05-10. رحلة عودة إلى الأرض مدتها 2.5 سنة.",
+    "note": "\"استرجاع\" means retrieval"
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "2022-09-04. يبدأ رفع الميل المداري خارج مستوى دائرة البروج.",
+    "note": "inclination binding missing"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "gender agreement",
+    "new": "الحقن نحو المريخ (دلتا-في 3.61 كم/ث) يرسل MSL على مسار شمسي المركز متجه نحو المريخ.",
+    "note": "verb gender, delta-v binding missing"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "الأولى من ست مساعدات جاذبية لإبطاء المسار بما يكفي للدخول في مدار عطارد.",
+    "note": "\"gravity\" missing, misspelt verb"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.1.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "type",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "garbled",
+    "new": "استخدمت مساعدة جاذبية المشتري لحرف المسار نحو مسار متجه إلى زحل.",
+    "note": "\"طريق تحت سيطرة زحل\" is garbled"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.9.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong meaning",
+    "new": "2033-03. ذروة المهمة: كويكب طروادي ثنائي بقطري 113 كم + 104 كم.",
+    "note": "diameter rendered as length"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "الإدخال في مدار أرضي 167 × 475 كم، بالميل المداري 64.8°.",
+    "note": "inclination binding missing"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/vostok-4.json",
+    "at": "first",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.3.note",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "wrong meaning",
+    "new": "يقدم D-CIXS، بالتألق الفلوري للأشعة السينية، أول خرائط عنصرية شاملة للقمر.",
+    "note": "\"حيود\" (diffraction) for fluorescence"
+  },
+  {
+    "rel": "missions/earth/soyuz-1.json",
+    "at": "events.1.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong term",
+    "new": "اللوح الشمسي لا ينفتح؛ ويتدهور التحكم بالاتجاه — تُقطع المهمة قبل أوانها.",
+    "note": "attitude as \"الموقف\""
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.4.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "wrong word",
+    "new": "فُقدت الإشارة بعد ~110 ثوانٍ من الهبوط (استمر الإرسال ~14.5 ثانية). السبب غير مؤكد؛ والعاصفة الغبارية هي الاحتمال الأبرز.",
+    "note": "\"leading suspect\" as \"المشبوهة الأولى\""
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.2.note",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term missing",
+    "new": "2026-05-15. أقرب اقتراب 4,609 كم — اكتمل التحليق القريب بالمريخ.",
+    "note": "flyby binding missing"
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.6.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.3.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.4.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.2.note",
+    "decision": "keep",
+    "grade": "OK",
+    "note": ""
+  }
+]

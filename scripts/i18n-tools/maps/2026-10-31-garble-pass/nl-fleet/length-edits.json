@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "tagline",
+    "old": "Eerste onafhankelijke orbitale draagraket van Europa — opende voor ESA het tijdperk van commerciële communicatiesatellieten, bracht Giotto naar Halley",
+    "new": "Europa's eerste eigen orbitale draagraket — opende voor ESA het tijdperk van commerciële communicatiesatellieten; bracht Giotto naar Halley"
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "tagline",
+    "old": "Tweede militaire Almaz-station — Soyuz 14-bemanning jul 1974; Soyuz 15 mislukte automatische koppeling; testte naar verluidt kanon 1975-01-24",
+    "new": "Tweede militaire Almaz-station — Soyuz 14-bemanning jul 1974; automatische koppeling Soyuz 15 mislukt; testte naar verluidt kanon 1975-01-24"
+  }
+]

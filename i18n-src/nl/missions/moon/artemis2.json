@@ -10,13 +10,13 @@
     {
       "met": 0,
       "label": "SLS-LANCERING",
-      "note": "Orion heft af van KSC LC-39B met vier bemanningsleden aan boord.",
+      "note": "Orion stijgt op van KSC LC-39B met vier bemanningsleden aan boord.",
       "type": "nominal"
     },
     {
       "met": 0.13,
       "label": "TLI",
-      "note": "Trans-lunaire injectie verbranding door ICPS — Orion scheidt op cislunair traject.",
+      "note": "Trans-lunaire injectie-ontsteking door ICPS — Orion scheidt op cislunair traject.",
       "type": "nominal"
     },
     {
@@ -43,5 +43,6 @@
       "note": "Orion-terugkeer en neerplons in de Stille Oceaan.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "SLS ICPS (tijdelijke cryogene voortstuwingstrap)"
 }

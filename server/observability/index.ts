@@ -26,6 +26,7 @@ import { BatchSpanProcessor, TracerProvider } from '@opentelemetry/sdk-trace';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 import { resourceFromAttributes } from '@opentelemetry/resources';
 import { Counter, Histogram, Registry } from 'prom-client';
+import { scrubBreadcrumb } from '$lib/observability/scrub-breadcrumb';
 import { createLogPusher, teeConsole, type LogPusher } from './log-push';
 
 export type ServiceName = 'orrery-lab-api' | 'orrery-mcp';
@@ -203,6 +204,9 @@ export function initObservability(
         delete event.user;
         return event;
       },
+      // Outbound http crumbs (Google, LiteLLM, the JWKS) and console lines: no query
+      // strings, no email addresses (same scrubber as the web).
+      beforeBreadcrumb: scrubBreadcrumb,
     });
     Sentry.setTag('service', cfg.service);
     state.sentry = true;

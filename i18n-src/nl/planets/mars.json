@@ -2,7 +2,7 @@
   "name": "Mars",
   "type": "Missiedoel",
   "fact": "Aarde-Mars-lanceervensters openen elke 26 maanden — gedreven door baanresonantie. Mis het venster en wacht twee jaar.",
-  "bio": "De hoogste excentriciteit van de binnenplaneten (e=0,093) — Mars schommelt bij apohelium ongeveer 20% verder van de Zon af dan bij perihelium, wat grote seizoens- en stofstormschommelingen veroorzaakt. Lanceervensters worden daarentegen bepaald door de synodische periode van ongeveer 26 maanden tussen Aarde en Mars.",
+  "bio": "De hoogste excentriciteit van de binnenplaneten (e=0,093) — Mars staat in het aphelium ongeveer 20% verder van de Zon dan in het perihelium, wat grote seizoens- en stofstormschommelingen veroorzaakt. Lanceervensters worden daarentegen bepaald door de synodische periode van ongeveer 26 maanden tussen Aarde en Mars.",
   "missionable": true,
   "links": [
     {
@@ -16,12 +16,12 @@
       "t": "intro"
     },
     {
-      "l": "Mars Exploration Program (NASA)",
+      "l": "Marsverkenningsprogramma (NASA)",
       "u": "https://mars.nasa.gov/",
       "t": "core"
     },
     {
-      "l": "Earth-Mars launch windows — Wikipedia",
+      "l": "Lanceervensters Aarde-Mars — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Mars_landing",
       "t": "core"
     }
@@ -30,7 +30,7 @@
     {
       "tab": "planets",
       "section": "axial-tilt-and-seasons",
-      "why": "Mars's axiale kantelhoek van 25,2° lijkt opmerkelijk veel op die van Aarde — maar gecombineerd met zijn excentriciteit zijn zuidelijke zomers intens heet en kort terwijl noordelijke zomers lang en mild zijn."
+      "why": "De axiale helling van Mars van 25,2° lijkt opmerkelijk veel op die van de Aarde — maar in combinatie met zijn excentriciteit zijn de zuidelijke zomers extreem heet en kort, terwijl de noordelijke zomers lang en mild zijn."
     },
     {
       "tab": "orbits",
@@ -40,17 +40,17 @@
     {
       "tab": "transfers",
       "section": "hohmann-transfer",
-      "why": "Mars-lanceervensters openen elke 26 maanden — de synodische periode tussen Mars en Aarde — en Hohmann-overdracht is waarom elke Mars-missie in een van die vensters vertrekt."
+      "why": "De Marslanceervensters openen elke 26 maanden — de synodische periode tussen Mars en Aarde — en de Hohmann-overgangsbaan is de reden dat elke Marsmissie in een van die vensters vertrekt."
     },
     {
       "tab": "planets",
       "section": "moons-of-the-system",
-      "why": "Mars heeft twee kleine manen die er uit gesleept uitzien — Phobos (orbitaal onder synchrone hoogte, naar binnen spiraliserend) en Deimos (langzaam wegdriftend)."
+      "why": "Mars heeft twee kleine manen die ingevangen lijken — Phobos (draait in een baan onder de synchrone hoogte en spiraalt naar binnen) en Deimos (verwijdert zich langzaam)."
     },
     {
       "tab": "planets",
       "section": "active-spacecraft-survey",
-      "why": "Mars herbergt de dichtstbevolkte actieve ruimtevaartuigpopulatie buiten Aarde — orbiters van vijf agentschappen en rovers / landers op het oppervlak van drie."
+      "why": "Mars heeft buiten de Aarde de grootste concentratie actieve ruimtevaartuigen — orbiters van vijf ruimtevaartorganisaties en rovers of landers op het oppervlak van drie."
     }
   ]
 }

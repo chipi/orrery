@@ -13,5 +13,6 @@
     { "met": 205.01, "label": "触地", "note": "着陆器于2018-11-26 19:54 UTC到达。", "type": "nominal" },
     { "met": 213, "label": "部署地震仪", "note": "机械臂将SEIS仪器放置在表面并用防风罩保护它。", "type": "info" },
     { "met": 1683, "label": "任务结束", "note": "最后的低功率传输于2022-12-15进行。太阳能电池板上的尘埃过多，无法充电。", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Centaur 上面级（Atlas V 401）"
 }

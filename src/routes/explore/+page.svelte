@@ -1,14 +1,12 @@
 <script lang="ts">
   import { dataLoadFailed } from '$lib/data/core';
-  import { onMount, onDestroy, untrack } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import { exploreContext } from '$lib/explore-context';
   import { page } from '$app/state';
-  import { afterNavigate, goto } from '$app/navigation';
-  import { safeReplaceState } from '$lib/safe-replace-state';
-  import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
+  import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { createLayeredStarField } from '$lib/three/star-field';
+  import { createExploreRenderStack } from '$lib/three/explore-render-stack';
   import { PLANETS } from '$lib/explore-scene';
   import {
     trackItemClick,
@@ -16,16 +14,11 @@
     trackLayerToggle,
     trackExploreDepth,
   } from '$lib/analytics';
-  import { createSceneRenderer, WebGLUnavailableError } from '$lib/three/scene-renderer';
   import {
-    resolveQualitySync,
-    kickOffBackgroundDetect,
     resolveQualitySource,
     type QualityConfig,
     type QualityTier,
   } from '$lib/quality/quality-tier';
-  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
   import QualitySettingsModal from '$lib/components/QualitySettingsModal.svelte';
@@ -35,10 +28,14 @@
   // /explore v2 "The Known Universe" (PRD-030 / RFC-032). The neighborhood scene
   // is dynamically imported at the boundary so v1's bundle + first paint stay
   // untouched (RFC C-F).
-  import { resolveSolarBodyTarget, type ShellId } from '$lib/explore/scale-shell-controller';
+  import type { ShellId } from '$lib/explore/scale-shell-controller';
   import { createExploreSolarScene } from '$lib/three/explore-solar-scene';
-  import { createExploreSceneHost } from '$lib/three/explore-scene-host';
-  import { RUNG_LADDER, type ScaleReadout, type ScaleRung } from '$lib/universe/scale-readout';
+  import {
+    createExploreSceneHost,
+    type ExploreContextId,
+    type ExploreHoverData,
+  } from '$lib/three/explore-scene-host';
+  import type { ScaleReadout } from '$lib/universe/scale-readout';
   import { type IconicTrajectoryHandle } from '$lib/three/iconic-trajectory';
   import {
     getPlanets,
@@ -78,22 +75,24 @@
   import CultureDoorCard from '$lib/components/CultureDoorCard.svelte';
   import StarIndex from '$lib/components/StarIndex.svelte';
   import type { AnonymousStar } from '$lib/universe/anonymous-star';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { createIconicSelectionService } from './iconic-selection.svelte';
   import { auToPx } from '$lib/scale';
   import { cue } from '$lib/sensory/feedback';
   import { sensory } from '$lib/sensory/state.svelte';
   import { keplerChord } from '$lib/sensory/sonify/kepler-chord';
-  import EnterArButton from '$lib/components/EnterArButton.svelte';
-  import EnterSkyButton from '$lib/components/EnterSkyButton.svelte';
-  import { launchArScene, launchSkyScene } from '$lib/ar/launch-ar';
   import { earthPos, outboundArc, type Vec2 } from '$lib/physics/transfer/mission-arc';
   import { PLANET_STATS, auLightTime } from '$lib/physics/util/planet-stats';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
   import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';
   import { dateToSimDay } from '$lib/sim-day';
   import { DESTINATIONS, type DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
-  import smallBodiesData from '$data/small-bodies.json';
+  import {
+    SMALL_BODIES,
+    smallBodyById,
+    sampleOrbitPoints,
+    smallBodyPosition,
+  } from '$lib/explore/small-bodies';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import type { LocalizedPlanet } from '$types/planet';
   import type { LocalizedSun } from '$types/sun';
@@ -101,10 +100,19 @@
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
   import SunPanel from '$lib/components/SunPanel.svelte';
   import ExploreBodyIndex from '$lib/components/ExploreBodyIndex.svelte';
-  import ExploreScalePicker from '$lib/components/ExploreScalePicker.svelte';
   import MessagePanel from '$lib/components/MessagePanel.svelte';
   import { getInterstellarCraft, type InterstellarCraft } from '$lib/data/interstellar';
-  import SizesCanvas from '$lib/components/SizesCanvas.svelte';
+  import SizesOverlay from './SizesOverlay.svelte';
+  import HoverTooltip from './HoverTooltip.svelte';
+  import BlackHoleNotes from './BlackHoleNotes.svelte';
+  import AnonStarTag from './AnonStarTag.svelte';
+  import DeepSkyImmersion from './DeepSkyImmersion.svelte';
+  import WarpOverlays from './WarpOverlays.svelte';
+  import ScaleNav from './ScaleNav.svelte';
+  import SunCompass from './SunCompass.svelte';
+  import ScaleStrip from './ScaleStrip.svelte';
+  import TimeDock from './TimeDock.svelte';
+  import HudControls from './HudControls.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
   import BeltPanel from '$lib/components/BeltPanel.svelte';
@@ -113,151 +121,21 @@
   import RegimePanel from '$lib/components/RegimePanel.svelte';
   import { getOrbitRegimesExplore } from '$lib/data';
   import type { OrbitRegime } from '$types/orbit-regime';
-  import { agencyToLogoPaths } from '$lib/agency-logo';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { audio } from '$lib/audio-state.svelte';
-  import { onLayerChange, setLayer, type LayerKey } from '$lib/science-layers';
+  import { onLayerChange, setLayer } from '$lib/science-layers';
   import { onScienceLensChange } from '$lib/science-lens';
-  import type { ScienceTabId } from '$types/science';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
-  import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
-
-  // Localised label for an anonymous star's catalogue colour (enum → message).
-  const anonColorLabel = (c: string): string => {
-    switch (c) {
-      case 'blue-white':
-        return m.star_color_blue_white();
-      case 'white':
-        return m.star_color_white();
-      case 'yellow-white':
-        return m.star_color_yellow_white();
-      case 'yellow':
-        return m.star_color_yellow();
-      case 'orange':
-        return m.star_color_orange();
-      case 'red':
-        return m.star_color_red();
-      default:
-        return c;
-    }
-  };
+  import { PATHS_LEGEND } from '$lib/explore/paths-legend';
+  import { computeLensPanel, scaleNavBackTarget, type ScaleNavExit } from '$lib/explore/lens-panel';
+  import { watchExploreLayers } from '$lib/explore/layer-watchers';
+  import { createUrlGuards, setupExploreUrlSync } from '$lib/explore/explore-url-sync.svelte';
+  import { fmtScale, SATELLITE_STATS } from '$lib/explore/format';
 
   // Planet visual config (PlanetVisual / SatelliteDef / PLANETS) now lives in
   // $lib/explore-scene as the single source of truth, shared with the AR
   // renderer — imported at the top of this <script>.
-
-  // Small bodies: dwarf planets, comets, the one known interstellar
-  // visitor. Clickable on the 2D view since v0.x.x — same data drives
-  // the SmallBodyPanel's overview/technical/learn tabs.
-  type SmallBody = {
-    id: string;
-    name: string;
-    type: 'dwarf' | 'comet' | 'interstellar' | 'asteroid' | 'kbo';
-    a: number;
-    e: number;
-    T: number;
-    L0: number;
-    incl: number;
-    color: string;
-    radius_km?: number;
-    discovered?: string;
-    mission_visited?: string | null;
-    next_perihelion?: string;
-    description?: string;
-    wiki?: string;
-    note?: string;
-  };
-  const SMALL_BODIES: SmallBody[] = smallBodiesData.bodies as SmallBody[];
-  const smallBodyById = new Map(SMALL_BODIES.map((b) => [b.id, b]));
-
-  /**
-   * Sample points along a body's trajectory in heliocentric AU-pixel
-   * coordinates. Closed elliptic orbits return a full ring; hyperbolic
-   * (interstellar) trajectories return an open curve over the valid
-   * true-anomaly interval (where 1 + e·cos ν > 0).
-   *
-   * Used by both 2D and 3D rendering. Pure function — `auToPx` is the
-   * only side-input.
-   */
-  function sampleOrbitPoints(b: SmallBody, steps: number): { x: number; y: number; z: number }[] {
-    // Build the orbit in two stages so inclination renders correctly
-    // in 3D: (1) generate points in the orbit's local plane (xL, 0, zL)
-    // — closed ellipse for dwarfs/comets, open hyperbola for
-    // interstellar visitors. (2) tilt out of the ecliptic by `incl`
-    // around the local X-axis (line of nodes is arbitrary without Ω,
-    // which we don't carry — visually this still gives Pluto its
-    // 17° lift, ʻOumuamua its 122° plunge, etc.). (3) rotate the
-    // tilted plane about Y by L0 so the perihelion direction sits
-    // where the data wants it. The 2D top-down view consumes only
-    // {x, z} and ignores y, so a flat ecliptic projection still
-    // works for 2D mode.
-    const pts: { x: number; y: number; z: number }[] = [];
-    const cosL = Math.cos(b.L0);
-    const sinL = Math.sin(b.L0);
-    const incRad = ((b.incl ?? 0) * Math.PI) / 180;
-    const cosI = Math.cos(incRad);
-    const sinI = Math.sin(incRad);
-    function pushTilted(xL: number, zL: number) {
-      // Tilt around local X: (xL, 0, zL) → (xL, -zL·sinI, zL·cosI)
-      const yT = -zL * sinI;
-      const zT = zL * cosI;
-      // Rotate about world Y by L0.
-      pts.push({ x: xL * cosL - zT * sinL, y: yT, z: xL * sinL + zT * cosL });
-    }
-    if (b.type === 'interstellar') {
-      const absA = Math.abs(b.a);
-      const semiLatus = absA * (b.e * b.e - 1);
-      const nuMax = Math.acos(-1 / b.e) * 0.985;
-      for (let i = 0; i <= steps; i++) {
-        const nu = -nuMax + (2 * nuMax * i) / steps;
-        const rAu = semiLatus / (1 + b.e * Math.cos(nu));
-        pushTilted(Math.cos(nu) * auToPx(rAu), Math.sin(nu) * auToPx(rAu));
-      }
-    } else {
-      const semiMajor = auToPx(b.a);
-      const semiMinor = semiMajor * Math.sqrt(1 - b.e * b.e);
-      for (let i = 0; i <= steps; i++) {
-        const a = (i / steps) * Math.PI * 2;
-        pushTilted(Math.cos(a) * semiMajor - semiMajor * b.e, Math.sin(a) * semiMinor);
-      }
-    }
-    return pts;
-  }
-
-  /**
-   * Body position for a given simT (years from epoch). Interstellar
-   * bodies pin to perihelion (no time evolution — they passed through
-   * once in 2017 and are gone). Closed orbits advance with simT.
-   */
-  function smallBodyPosition(b: SmallBody, simT: number): { x: number; y: number; z: number } {
-    // Mirrors the same tilt-then-rotate transform as sampleOrbitPoints
-    // so the body sits exactly on the rendered orbit ring in 3D. 2D
-    // callers ignore y (top-down ecliptic projection).
-    const cosL = Math.cos(b.L0);
-    const sinL = Math.sin(b.L0);
-    const incRad = ((b.incl ?? 0) * Math.PI) / 180;
-    const cosI = Math.cos(incRad);
-    const sinI = Math.sin(incRad);
-    if (b.type === 'interstellar') {
-      // Pin at perihelion (ν=0). zL=0 at perihelion under our
-      // line-of-nodes-along-X convention, so y=0 here too.
-      const absA = Math.abs(b.a);
-      const semiLatus = absA * (b.e * b.e - 1);
-      const rAu = semiLatus / (1 + b.e);
-      const xL = auToPx(rAu);
-      return { x: xL * cosL, y: 0, z: xL * sinL };
-    }
-    const semiMajor = auToPx(b.a);
-    const semiMinor = semiMajor * Math.sqrt(1 - b.e * b.e);
-    const Tyr = b.T / 365.25;
-    const ang = b.L0 + simT * ((2 * Math.PI) / Tyr);
-    const xL = Math.cos(ang) * semiMajor - semiMajor * b.e;
-    const zL = Math.sin(ang) * semiMinor;
-    const yT = -zL * sinI;
-    const zT = zL * cosI;
-    return { x: xL * cosL - zT * sinL, y: yT, z: xL * sinL + zT * cosL };
-  }
 
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
@@ -418,16 +296,6 @@
   // Voyager/Pioneer/New Horizons path opens this (the message it carries)
   // instead of the MissionPanel; the panel's "Full mission details" hands
   // off to iconic.openMission. Seq-guarded so the latest click wins.
-  // The interstellar-bound craft whose legend row / trajectory opens the
-  // MessagePanel rather than the MissionPanel (mirrors the host's category
-  // detection for the canvas Today-marker click).
-  const INTERSTELLAR_CRAFT = new Set([
-    'voyager-1',
-    'voyager-2',
-    'pioneer-10',
-    'pioneer-11',
-    'new-horizons',
-  ]);
   let activeCraft = $state<InterstellarCraft | null>(null);
   let craftPanelOpen = $state(false);
   let craftOpenSeq = 0;
@@ -586,12 +454,9 @@
   // governs the EXISTING synthetic clock only — real-calendar anchoring
   // (date readout, "Today") is Layer 2. prefers-reduced-motion still
   // wins as the hard freeze (ADR-025), independent of `simPaused`.
-  const SIM_SPEEDS = [1, 10, 100] as const; // days per second
   const DAYS_PER_YEAR = 365.25; // simT is in years; pills are days/sec
   let simSpeed = $state(10);
   let simPaused = $state(false);
-  // Mobile speed popover state — collapses 3 pills into one tap-to-reveal slot.
-  let speedPopoverOpen = $state(false);
   // #351 Layer 2-B — give the clock a real calendar meaning WITHOUT
   // touching the (artistic) a0 start angles. Convention: simT=0 ≡ the
   // page-load day. The chip shows the running simulated date; clicking it
@@ -611,28 +476,7 @@
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   });
-  let hoverData: {
-    name: string;
-    velocity: string;
-    distance: string;
-    extras: string;
-    /** Live numeric values used by the lens-mode expanded card. */
-    velocityKms: number;
-    distanceAU: number;
-    eccentricity: number;
-    inclinationDeg: number;
-    /** Discriminator: planets + small bodies use vis-viva tooltip; the
-     *  Lagrange-points layer uses a different schema (no orbital speed
-     *  of its own — it co-orbits with the planet). When set, the
-     *  template renders the lagrange-specific layout. */
-    kind?: 'planet' | 'small-body' | 'lagrange';
-    /** Lagrange-only — short physics blurb + notable occupants. */
-    lagrangeTitle?: string;
-    lagrangeBlurb?: string;
-    lagrangeNotable?: string;
-    x: number;
-    y: number;
-  } | null = $state(null);
+  let hoverData: ExploreHoverData | null = $state(null);
   // Hover-card lens state: when both the master lens AND the 'hover'
   // layer are on, the tooltip expands with click-through chips into
   // /science. When the lens is off, the tooltip behaves as it always
@@ -665,187 +509,6 @@
   // fetch round-trip just for the legend swatches. The orbiter-tour
   // variants (cassini-tour, galileo-tour, juno-tour) share colors +
   // mission with the main entry, so they don't get separate rows.
-  // Sorted oldest → newest by launch date. Entries are paired with the
-  // mission's primary agency so the legend renders the same logo
-  // affordance as /missions cards (via agencyToLogoPaths). Voyager 2
-  // (Aug 1977) shipped ~2 weeks before Voyager 1 (Sep 1977) — same
-  // year, ordered by actual launch date so the chronology reads
-  // cleanly top-to-bottom.
-  const PATHS_LEGEND = [
-    {
-      mission_id: 'pioneer-10',
-      color: '#f97583',
-      name: 'Pioneer 10',
-      launch_year: 1972,
-      agency: 'NASA',
-    },
-    {
-      mission_id: 'pioneer-11',
-      color: '#ff7b72',
-      name: 'Pioneer 11',
-      launch_year: 1973,
-      agency: 'NASA',
-    },
-    {
-      mission_id: 'voyager-2',
-      color: '#4ecdc4',
-      name: 'Voyager 2',
-      launch_year: 1977,
-      agency: 'NASA',
-    },
-    {
-      mission_id: 'voyager-1',
-      color: '#ffa657',
-      name: 'Voyager 1',
-      launch_year: 1977,
-      agency: 'NASA',
-    },
-    {
-      mission_id: 'venera-13',
-      color: '#da4453',
-      name: 'Venera 13',
-      launch_year: 1981,
-      agency: 'Roscosmos',
-    },
-    {
-      mission_id: 'vega-1',
-      color: '#ed5565',
-      name: 'Vega 1',
-      launch_year: 1984,
-      agency: 'Roscosmos / ESA',
-    },
-    {
-      mission_id: 'vega-2',
-      color: '#ec87c0',
-      name: 'Vega 2',
-      launch_year: 1984,
-      agency: 'Roscosmos / ESA',
-    },
-    {
-      mission_id: 'giotto',
-      color: '#5d9cec',
-      name: 'Giotto',
-      launch_year: 1985,
-      agency: 'ESA',
-    },
-    {
-      mission_id: 'galileo',
-      color: '#a5d6a7',
-      name: 'Galileo',
-      launch_year: 1989,
-      agency: 'NASA',
-    },
-    {
-      mission_id: 'ulysses',
-      color: '#aab2bd',
-      name: 'Ulysses',
-      launch_year: 1990,
-      agency: 'ESA / NASA',
-    },
-    {
-      mission_id: 'cassini',
-      color: '#d2a8ff',
-      name: 'Cassini-Huygens',
-      launch_year: 1997,
-      agency: 'NASA / ESA',
-    },
-    {
-      mission_id: 'rosetta',
-      color: '#fc6e51',
-      name: 'Rosetta',
-      launch_year: 2004,
-      agency: 'ESA',
-    },
-    {
-      mission_id: 'new-horizons',
-      color: '#ffd33d',
-      name: 'New Horizons',
-      launch_year: 2006,
-      agency: 'NASA',
-    },
-    {
-      mission_id: 'dawn',
-      color: '#b392f0',
-      name: 'Dawn',
-      launch_year: 2007,
-      agency: 'NASA',
-    },
-    {
-      mission_id: 'juno',
-      color: '#79c0ff',
-      name: 'Juno',
-      launch_year: 2011,
-      agency: 'NASA',
-    },
-    {
-      mission_id: 'hayabusa2',
-      color: '#b2e066',
-      name: 'Hayabusa2',
-      launch_year: 2014,
-      agency: 'JAXA',
-    },
-    {
-      mission_id: 'bepicolombo',
-      color: '#fcbb6d',
-      name: 'BepiColombo',
-      launch_year: 2018,
-      agency: 'ESA / JAXA',
-    },
-    {
-      mission_id: 'juice',
-      color: '#967bdc',
-      name: 'JUICE',
-      launch_year: 2023,
-      agency: 'ESA',
-    },
-  ];
-  // Iconic-mission tagline lookup — one-line "why it's iconic" copy
-  // surfaced as an italic subtitle under each legend row. Keys are in
-  // messages/*.json under `explore_iconic_tagline_<mission_id>`. The
-  // mapping is hand-rolled because Paraglide's tree-shake only sees
-  // statically-referenced message functions.
-  function iconicTagline(missionId: string): string {
-    switch (missionId) {
-      case 'pioneer-10':
-        return m.explore_iconic_tagline_pioneer_10();
-      case 'pioneer-11':
-        return m.explore_iconic_tagline_pioneer_11();
-      case 'voyager-2':
-        return m.explore_iconic_tagline_voyager_2();
-      case 'voyager-1':
-        return m.explore_iconic_tagline_voyager_1();
-      case 'venera-13':
-        return m.explore_iconic_tagline_venera_13();
-      case 'vega-1':
-        return m.explore_iconic_tagline_vega_1();
-      case 'vega-2':
-        return m.explore_iconic_tagline_vega_2();
-      case 'giotto':
-        return m.explore_iconic_tagline_giotto();
-      case 'galileo':
-        return m.explore_iconic_tagline_galileo();
-      case 'ulysses':
-        return m.explore_iconic_tagline_ulysses();
-      case 'cassini':
-        return m.explore_iconic_tagline_cassini();
-      case 'rosetta':
-        return m.explore_iconic_tagline_rosetta();
-      case 'new-horizons':
-        return m.explore_iconic_tagline_new_horizons();
-      case 'dawn':
-        return m.explore_iconic_tagline_dawn();
-      case 'juno':
-        return m.explore_iconic_tagline_juno();
-      case 'hayabusa2':
-        return m.explore_iconic_tagline_hayabusa2();
-      case 'bepicolombo':
-        return m.explore_iconic_tagline_bepicolombo();
-      case 'juice':
-        return m.explore_iconic_tagline_juice();
-      default:
-        return '';
-    }
-  }
 
   // Arc-highlight effect — pushes the live "highlighted trajectory" id
   // into each iconic-trajectory handle's setHighlight. The id is the
@@ -919,17 +582,7 @@
   let scaleReadout = $state<ScaleReadout | null>(null);
   let scaleBarPx = $state(0);
   let scaleBarLabel = $state('');
-  let contextId = $state<
-    | 'solar-system'
-    | 'neighborhood'
-    | 'milky-way'
-    | 'local-group'
-    | 'local-sheet'
-    | 'virgo'
-    | 'laniakea'
-    | 'cosmic-web'
-    | 'body-scene'
-  >('solar-system');
+  let contextId = $state<ExploreContextId>('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
   // active scale-shell menu item (the URL ?context is cleared after the jump, so
   // it can't drive the highlight). Reset on leave.
@@ -942,138 +595,14 @@
   });
   onDestroy(() => exploreContext.set(null));
 
-  // WS-3 (RFC-039 Contract D) — the science lens is now uniform across every scale
-  // shell. One ScienceLayersPanel, its props derived from the active shell: each
-  // shell gets a lens-story (title + body + a → science learn link) and the set of
-  // teaching layers that make sense at that scale. Solar-system keeps its Kepler/
-  // Newton historical foundations; the outer shells surface their overlays or, where
-  // the per-tier lens is still to come (WS-5), just the story + learn link.
-  type LensPanelProps = {
-    title?: string;
-    body?: string;
-    tab?: ScienceTabId;
-    section?: string;
-    available: LayerKey[];
-    historicalFoundations?: Array<{ tab: ScienceTabId; section: string; label: string }>;
-  };
-  let lensPanel = $derived.by((): LensPanelProps => {
-    // Black-hole takeover overrides whatever shell it was entered from
-    // (2026-09-11 consistency audit): its two physics lenses (curvature
-    // grid + time dilation) are standard layers now, not bespoke chips.
-    if (activeBlackHole) {
-      return {
-        title: m.explore_lens_story_bh_title(),
-        body: m.explore_lens_story_bh_body(),
-        tab: 'observation',
-        section: 'black-holes',
-        available: ['bh-curvature', 'bh-time-dilation'],
-      };
-    }
-    switch (contextId) {
-      case 'neighborhood':
-        return {
-          title: m.explore_lens_story_nb_title(),
-          body: m.explore_lens_story_nb_body(),
-          tab: 'observation',
-          section: 'hertzsprung-russell',
-          // One region, one lens (2026-09-11): the same five layers inside
-          // an exoplanet system — mass–period is item 5 here too.
-          available: ['constellations', 'deep-sky', 'hr-diagram', 'light-cones', 'mass-period'],
-        };
-      case 'milky-way':
-        return {
-          title: m.explore_lens_story_mw_title(),
-          body: m.explore_lens_story_mw_body(),
-          tab: 'observation',
-          section: 'our-galaxy',
-          available: ['rotation-curve', 'dark-matter-halo', 'stellar-populations'],
-        };
-      case 'local-group':
-        return {
-          title: m.explore_lens_story_lg_title(),
-          body: m.explore_lens_story_lg_body(),
-          tab: 'observation',
-          section: 'local-group',
-          available: [],
-        };
-      case 'local-sheet':
-        return {
-          title: m.explore_lens_story_ls_title(),
-          body: m.explore_lens_story_ls_body(),
-          tab: 'observation',
-          section: 'galaxy-types',
-          available: [],
-        };
-      case 'virgo':
-        return {
-          title: m.explore_lens_story_virgo_title(),
-          body: m.explore_lens_story_virgo_body(),
-          tab: 'cosmology',
-          section: 'large-scale-structure',
-          available: [],
-        };
-      case 'laniakea':
-        return {
-          title: m.explore_lens_story_laniakea_title(),
-          body: m.explore_lens_story_laniakea_body(),
-          tab: 'cosmology',
-          section: 'laniakea-and-the-great-attractor',
-          available: [],
-        };
-      case 'cosmic-web':
-        return {
-          title: m.explore_lens_story_cosmic_web_title(),
-          body: m.explore_lens_story_cosmic_web_body(),
-          tab: 'cosmology',
-          section: 'large-scale-structure',
-          available: [],
-        };
-      case 'solar-system':
-        return {
-          title: m.explore_2d_view_title(),
-          body: `Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them.`,
-          tab: 'orbits',
-          section: 'keplerian-orbit',
-          available: [
-            'hover',
-            'gravity',
-            'velocity',
-            'centripetal',
-            'galaxies',
-            'hill-sphere',
-            'lagrange-points',
-            'magnetosphere',
-            'sub-solar',
-            'planet-stats',
-          ],
-          historicalFoundations: [
-            { tab: 'history', section: 'keplers-laws-1609', label: "Kepler's three laws, 1609" },
-            { tab: 'history', section: 'newton-principia-1687', label: 'Newton · Principia, 1687' },
-          ],
-        };
-      case 'body-scene':
-        // One region, one lens (2026-09-11 operator direction): inside an
-        // exoplanet system the lens is IDENTICAL to the stellar
-        // neighbourhood's — same story, same five layers, mass–period as
-        // item 5. The three charts open here too (screen-space overlays);
-        // constellations/deep-sky store the preference and apply the moment
-        // the user is back in the neighbourhood field. Solar-system body
-        // scenes keep no lens surface.
-        if (!activeBlackHole && activeBodyHostId && exoplanetHostIds.has(activeBodyHostId)) {
-          return {
-            title: m.explore_lens_story_nb_title(),
-            body: m.explore_lens_story_nb_body(),
-            tab: 'observation',
-            section: 'hertzsprung-russell',
-            available: ['constellations', 'deep-sky', 'hr-diagram', 'light-cones', 'mass-period'],
-          };
-        }
-        return { available: [] };
-      default:
-        // black-hole takeovers own the viewport; no lens surface.
-        return { available: [] };
-    }
-  });
+  let lensPanel = $derived.by(() =>
+    computeLensPanel({
+      blackHoleActive: !!activeBlackHole,
+      contextId,
+      activeBodyHostId,
+      exoplanetHostIds,
+    }),
+  );
   // Slice 2: the exoplanet host whose BodyScene is active (breadcrumb crumb) + the
   // set of host ids that have a system to descend into (drives "Enter system").
   let bodyHostName = $state('');
@@ -1157,37 +686,6 @@
     else if (contextId === 'milky-way') resetMilkyWayFn?.();
     else if (contextId === 'local-group') resetLocalGroupFn?.();
   }
-  const rungLadder: ScaleRung[] = RUNG_LADDER;
-  const fmtScale = (value: number): string =>
-    value >= 1000 || value < 0.01
-      ? value.toLocaleString(undefined, { maximumSignificantDigits: 3 })
-      : String(value);
-  // Localize the light-travel unit words emitted by scale-readout (the km/AU/ly/pc
-  // symbols stay universal).
-  const lightUnitLabel = (unit: string): string => {
-    switch (unit) {
-      case 'light-seconds':
-        return m.explore_light_seconds();
-      case 'light-minutes':
-        return m.explore_light_minutes();
-      case 'light-hours':
-        return m.explore_light_hours();
-      case 'light-days':
-        return m.explore_light_days();
-      default:
-        return m.explore_light_years();
-    }
-  };
-  const contextLabel = (): string =>
-    contextId === 'body-scene'
-      ? bodyHostName
-      : contextId === 'neighborhood'
-        ? m.explore_ctx_stellar_neighborhood()
-        : contextId === 'milky-way'
-          ? m.explore_ctx_milky_way()
-          : contextId === 'local-group'
-            ? m.explore_ctx_local_group()
-            : m.explore_ctx_solar_system();
 
   // PRD-023 Slice E.2/E.4 — script-level state for the close-zoom HUD
   // overlays. `cameraState.focusedOnPlanet` is set true when the camera
@@ -1203,29 +701,6 @@
   // ghost (E.2), which is /explore-only.
   let focusedStats = $derived(selectedId ? (PLANET_STATS[selectedId] ?? null) : null);
 
-  // Satellite stats for the Earth-for-scale widget when a moon is
-  // selected. Real diameters in km. Keyed by satellite id (without
-  // the parent-planet prefix used in selectedSatelliteKey). Only
-  // diameter info is needed today — the tactical-scan overlay still
-  // gates on `cameraState.focusedOnPlanet` so the gravity / atmo / temp rows
-  // stay planet-only. Earth = 12 742 km.
-  const SATELLITE_STATS: Record<string, { diameterKm: number; diameterRatioEarth: number }> = {
-    moon: { diameterKm: 3474, diameterRatioEarth: 0.273 },
-    phobos: { diameterKm: 22.4, diameterRatioEarth: 0.00176 },
-    deimos: { diameterKm: 12.4, diameterRatioEarth: 0.00097 },
-    io: { diameterKm: 3643, diameterRatioEarth: 0.286 },
-    europa: { diameterKm: 3122, diameterRatioEarth: 0.245 },
-    ganymede: { diameterKm: 5268, diameterRatioEarth: 0.413 },
-    callisto: { diameterKm: 4821, diameterRatioEarth: 0.378 },
-    titan: { diameterKm: 5150, diameterRatioEarth: 0.404 },
-    enceladus: { diameterKm: 504, diameterRatioEarth: 0.04 },
-    miranda: { diameterKm: 471, diameterRatioEarth: 0.037 },
-    ariel: { diameterKm: 1158, diameterRatioEarth: 0.091 },
-    umbriel: { diameterKm: 1169, diameterRatioEarth: 0.092 },
-    titania: { diameterKm: 1577, diameterRatioEarth: 0.124 },
-    oberon: { diameterKm: 1523, diameterRatioEarth: 0.12 },
-    triton: { diameterKm: 2706, diameterRatioEarth: 0.212 },
-  };
   let focusedSatelliteStats = $derived.by(() => {
     if (!selectedSatelliteKey) return null;
     const satId = selectedSatelliteKey.split(':')[1] ?? '';
@@ -1323,13 +798,15 @@
   let setBhCurvatureFn: ((on: boolean) => void) | null = null;
   let bhCultureDoors = $state<LocalizedCultureDoor[]>([]);
   let bhLearnHref = $derived(
-    activeBlackHole ? `${base}/science/observation/${activeBlackHole.science_section}` : base,
+    activeBlackHole
+      ? localHref(`/science/observation/${activeBlackHole.science_section}`)
+      : localHref('/'),
   );
-  // Time-dilation readout: √(1 − rₛ/r) at r = k·rₛ, as a percentage of a far clock.
-  const dilationPct = (k: number): string => `${Math.round(Math.sqrt(1 - 1 / k) * 100)}%`;
   let selectedMwObject = $derived(mwObjects.find((o) => o.id === selectedMwId) ?? null);
   let mwLearnHref = $derived(
-    selectedMwObject ? `${base}/science/observation/${selectedMwObject.science_section}` : base,
+    selectedMwObject
+      ? localHref(`/science/observation/${selectedMwObject.science_section}`)
+      : localHref('/'),
   );
   // Set in onMount; lets the star index / ?goto= resolver select a named star.
   let closeStarFn: (() => void) | null = null;
@@ -1344,30 +821,21 @@
   // returned closure reads the exit-fn pointer at click-time, so the plain `let`
   // pointers above don't need to be reactive; only contextId + the takeover flags
   // (all $state) drive which branch is chosen.
+  const SCALE_EXITS: Record<ScaleNavExit, () => (() => void) | null> = {
+    'black-hole': () => exitBlackHoleFn,
+    'body-scene': () => exitBodySceneFn,
+    'deep-sky': () => exitDeepSkyFn,
+    neighborhood: () => exitNeighborhoodFn,
+    'milky-way': () => exitMilkyWayFn,
+    'local-group': () => exitLocalGroupFn,
+    'local-sheet': () => exitLocalSheetFn,
+    virgo: () => exitVirgoFn,
+    laniakea: () => exitLaniakeaFn,
+    'cosmic-web': () => exitCosmicWebFn,
+  };
   let scaleNavBack: { run: () => void; label: string } | null = $derived.by(() => {
-    if (activeBlackHole) return { run: () => exitBlackHoleFn?.(), label: m.explore_ctx_back() };
-    if (contextId === 'body-scene')
-      return { run: () => exitBodySceneFn?.(), label: m.explore_ctx_stellar_neighborhood() };
-    if (activeDeepSky)
-      return { run: () => exitDeepSkyFn?.(), label: m.explore_ctx_stellar_neighborhood() };
-    switch (contextId) {
-      case 'neighborhood':
-        return { run: () => exitNeighborhoodFn?.(), label: m.explore_ctx_solar_system() };
-      case 'milky-way':
-        return { run: () => exitMilkyWayFn?.(), label: m.explore_ctx_stellar_neighborhood() };
-      case 'local-group':
-        return { run: () => exitLocalGroupFn?.(), label: m.explore_ctx_milky_way() };
-      case 'local-sheet':
-        return { run: () => exitLocalSheetFn?.(), label: m.explore_ctx_local_group() };
-      case 'virgo':
-        return { run: () => exitVirgoFn?.(), label: m.explore_ctx_local_sheet() };
-      case 'laniakea':
-        return { run: () => exitLaniakeaFn?.(), label: m.explore_ctx_virgo() };
-      case 'cosmic-web':
-        return { run: () => exitCosmicWebFn?.(), label: m.explore_ctx_laniakea() };
-      default:
-        return null;
-    }
+    const target = scaleNavBackTarget(contextId, !!activeBlackHole, !!activeDeepSky);
+    return target && { run: () => SCALE_EXITS[target.exit]()?.(), label: target.label };
   });
 
   // Panel mutex: each select* below opens its own panel and explicitly
@@ -1448,54 +916,9 @@
     trackItemClick('belt', id, '/explore');
   }
 
-  // ?id=<planetId|sun|smallBodyId> deep-link → opens the matching panel
-  // directly, mirroring the /mars?site= and /fly?mission= patterns.
-  // Bookmarkable + share-friendly; also lets e2e tests open a planet
-  // panel without depending on canvas-pixel pick math (which is fragile
-  // under mobile-chromium DPR + animation timing).
-  $effect(() => {
-    // Force re-run when planetById / smallBodyById populate async —
-    // both are $derived from localizedPlanets / SMALL_BODIES which
-    // load after mount. Without these explicit reads, the effect's
-    // dep tree is shaped only by the FIRST branch the if-ladder took,
-    // and mars (which lives in planetById only) wouldn't re-trigger
-    // when planetById updates from empty Map → 9 entries.
-    void planetById;
-    void smallBodyById;
-    const id = page.url.searchParams.get('id');
-    // The ?id= routing ladder — incl. the Pluto-in-two-catalogues nuance (it lives in
-    // both planets.json + small-bodies.json; the small-body surface's curated
-    // science_sections win for deep-link landings) — lives in scale-shell-controller,
-    // pure + unit-tested (RFC-036 WS-C/C1). Unknown id → null → no-op, never crash.
-    const target = resolveSolarBodyTarget(id, {
-      isPlanet: (x) => planetById.has(x),
-      isSmallBody: (x) => smallBodyById.has(x),
-    });
-    if (!target) return;
-    switch (target.kind) {
-      case 'sun':
-        selectSun();
-        break;
-      case 'planet':
-        selectPlanet(target.id);
-        break;
-      case 'smallBody':
-        selectSmallBody(target.id);
-        break;
-      case 'belt':
-        selectBelt(target.belt);
-        break;
-      case 'satellite':
-        selectSatellite(target.parentId, target.satelliteId);
-        break;
-    }
-  });
-
-  // #29 back-chain — mirror the open body panel into ?id= so mission
-  // cross-links can chain back here (the resolver above reopens it on
-  // back-nav). Shallow replaceState keeps canvas picks a fresh grid-style
-  // selection (no history entry / no chain step); only real navigations to
-  // other cards get chained by trackCardNavigation.
+  // Deep-link resolvers + shallow URL mirrors (?id ?goto ?system/?planet ?deepsky
+  // ?galaxy ?bh ?context ?paths/?focus) live in explore-url-sync; these deriveds
+  // are what the mirrors write.
   let openBodyUrlId = $derived.by(() => {
     if (panelState.planet && selectedId) return selectedId;
     if (panelState.sun) return 'sun';
@@ -1509,205 +932,37 @@
           : selectedBeltId;
     return null;
   });
-  let everOpenedBody = false;
-  $effect(() => {
-    const id = openBodyUrlId;
-    if (id) everOpenedBody = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const cur = url.searchParams.get('id') ?? null;
-      if (cur !== id && (id || everOpenedBody)) {
-        // Never clobber a fresh ?id= deep-link before the resolver opens it —
-        // only clear once a body has actually been open (a real user close).
-        if (id) url.searchParams.set('id', id);
-        else url.searchParams.delete('id');
-        safeReplaceState(url, page.state);
-      }
-      // Record which card is on screen for the back-chain (the shallow
-      // replaceState above doesn't reach SvelteKit's nav.from).
-      if (everOpenedBody) setCurrentCard(id ? url : null);
-    });
-  });
-  afterNavigate((nav) => {
-    if (nav.to?.url) trackCardNavigation(nav.to.url, nav.type);
-  });
-
-  // v2 ?goto=<starId> — deep-link into the neighborhood + select + frame a named
-  // star. Resolves each distinct value once (the URL-sync below re-writes the same
-  // value, which must not re-fire the resolver).
-  let lastGoto: string | null = null;
-  $effect(() => {
-    const g = page.url.searchParams.get('goto');
-    // gotoStarFn is set in onMount and isn't reactive, so a cold-load ?goto= is
-    // resolved directly in onMount; this handles later in-session URL changes.
-    if (g && g !== lastGoto && gotoStarFn) {
-      lastGoto = g;
-      gotoStarFn(g);
-    }
-  });
-  // Mirror the open star panel into ?goto= (shallow, no history), like ?id= above.
   let openStarUrlId = $derived(panelState.star && selectedStarId ? selectedStarId : null);
-  let everOpenedStar = false;
-  $effect(() => {
-    const id = openStarUrlId;
-    if (id) everOpenedStar = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const cur = url.searchParams.get('goto') ?? null;
-      if (cur !== id && (id || everOpenedStar)) {
-        if (id) url.searchParams.set('goto', id);
-        else url.searchParams.delete('goto');
-        lastGoto = id; // keep the resolver from re-firing on our own write
-        safeReplaceState(url, page.state);
-      }
-    });
-  });
-
-  // v2 Slice 2 — ?system=<hostId>[&planet=<planetId>] deep-links into a BodyScene.
-  let lastSystem: string | null = null;
-  $effect(() => {
-    const s = page.url.searchParams.get('system');
-    const pl = page.url.searchParams.get('planet');
-    if (s && s !== lastSystem && enterSystemFn) {
-      lastSystem = s;
-      untrack(() => enterSystemFn?.(s, pl ?? undefined));
-    }
-  });
-  // Mirror the active BodyScene + selected planet into ?system / ?planet (shallow).
   let bodySysUrl = $derived(contextId === 'body-scene' ? activeBodyHostId : null);
-  let everEnteredSystem = false;
-  $effect(() => {
-    const host = bodySysUrl;
-    const planet = panelState.exoplanet && selectedExoplanet ? selectedExoplanet.planet.id : null;
-    if (host) everEnteredSystem = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const curSys = url.searchParams.get('system') ?? null;
-      const curPl = url.searchParams.get('planet') ?? null;
-      if (curSys !== host || curPl !== planet) {
-        if (host) url.searchParams.set('system', host);
-        else url.searchParams.delete('system');
-        if (host && planet) url.searchParams.set('planet', planet);
-        else url.searchParams.delete('planet');
-        lastSystem = host; // don't re-fire the resolver on our own write
-        if (host || everEnteredSystem) safeReplaceState(url, page.state);
-      }
-    });
-  });
-
-  // v2 Slice 4 — ?deepsky=<designation> deep-links into the immersive view.
-  let lastDeepSky: string | null = null;
-  $effect(() => {
-    const d = page.url.searchParams.get('deepsky');
-    if (d && d !== lastDeepSky && deepSkyDeepLinkFn) {
-      lastDeepSky = d;
-      untrack(() => deepSkyDeepLinkFn?.(d));
-    }
-  });
-  // Mirror the active deep-sky immersion into ?deepsky (shallow, no history).
   let deepSkyUrlDesignation = $derived(activeDeepSky ? activeDeepSky.designation : null);
-  let everImmersedDeepSky = false;
-  $effect(() => {
-    const d = deepSkyUrlDesignation;
-    if (d) everImmersedDeepSky = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const cur = url.searchParams.get('deepsky') ?? null;
-      if (cur !== d && (d || everImmersedDeepSky)) {
-        if (d) url.searchParams.set('deepsky', d);
-        else url.searchParams.delete('deepsky');
-        // Only advance the resolver guard on entry; never reset it to null on
-        // clear, or a transient URL write (e.g. the gateway's ?system write
-        // racing our ?deepsky removal) would re-fire the resolver + re-immerse.
-        if (d) lastDeepSky = d;
-        safeReplaceState(url, page.state);
-      }
-    });
-  });
-
-  // v2 Slice 5 — ?galaxy=<pinId> deep-links into the Milky Way + selects a pin.
-  let lastGalaxy: string | null = null;
-  $effect(() => {
-    const g = page.url.searchParams.get('galaxy');
-    if (g && g !== lastGalaxy && mwDeepLinkFn) {
-      lastGalaxy = g;
-      untrack(() => mwDeepLinkFn?.(g));
-    }
-  });
-  // Mirror the selected Milky Way pin into ?galaxy (shallow, no history).
   let galaxyUrlId = $derived(contextId === 'milky-way' && selectedMwId ? selectedMwId : null);
-  let everEnteredGalaxy = false;
-  $effect(() => {
-    const g = galaxyUrlId;
-    if (g) everEnteredGalaxy = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const cur = url.searchParams.get('galaxy') ?? null;
-      if (cur !== g && (g || everEnteredGalaxy)) {
-        if (g) url.searchParams.set('galaxy', g);
-        else url.searchParams.delete('galaxy');
-        if (g) lastGalaxy = g; // don't re-fire the resolver on our own write
-        safeReplaceState(url, page.state);
-      }
-    });
-  });
-
-  // v2 Slice 6 — ?bh=<id> deep-links into a black hole's lensing render.
-  let lastBh: string | null = null;
-  $effect(() => {
-    const v = page.url.searchParams.get('bh');
-    if (v && v !== lastBh && bhDeepLinkFn) {
-      lastBh = v;
-      untrack(() => bhDeepLinkFn?.(v));
-    }
-  });
-  // Mirror the active black hole into ?bh (shallow, no history).
   let bhUrlId = $derived(activeBlackHole ? activeBlackHole.id : null);
-  let everEnteredBh = false;
-  $effect(() => {
-    const v = bhUrlId;
-    if (v) everEnteredBh = true;
-    untrack(() => {
-      const url = new URL(page.url);
-      const cur = url.searchParams.get('bh') ?? null;
-      if (cur !== v && (v || everEnteredBh)) {
-        if (v) url.searchParams.set('bh', v);
-        else url.searchParams.delete('bh');
-        if (v) lastBh = v;
-        safeReplaceState(url, page.state);
-      }
-    });
-  });
-
-  // Nav shortcut — ?context=<solar-system|neighborhood|milky-way|local-group>
-  // jumps straight to that scale-shell, then clears the param (pure trigger, no
-  // staleness once you zoom onward).
-  let lastContextJump: string | null = null;
-  $effect(() => {
-    const c = page.url.searchParams.get('context');
-    if (c && c !== lastContextJump && contextDeepLinkFn) {
-      lastContextJump = c;
-      untrack(() => {
-        void contextDeepLinkFn?.(c).then(() => {
-          const url = new URL(page.url);
-          if (url.searchParams.get('context') === c) {
-            url.searchParams.delete('context');
-            safeReplaceState(url, page.state);
-          }
-        });
-      });
-    }
-  });
-
-  // #306 deep-link from MissionPanel "See path on /explore" — `?paths=1`
-  // auto-activates the PATHS layer so users land with the iconic
-  // trajectories already visible. `?focus=saturn` additionally selects
-  // Saturn so the Cassini orbital tour is in view at panel zoom.
-  $effect(() => {
-    const paths = page.url.searchParams.get('paths');
-    const focus = page.url.searchParams.get('focus');
-    if (paths === '1') layers.paths = true;
-    if (focus && planetById.has(focus)) selectPlanet(focus);
+  const urlGuards = createUrlGuards();
+  setupExploreUrlSync({
+    guards: urlGuards,
+    planetById: () => planetById,
+    smallBodyById: () => smallBodyById,
+    selectSun,
+    selectPlanet,
+    selectSmallBody,
+    selectBelt,
+    selectSatellite,
+    openBodyUrlId: () => openBodyUrlId,
+    openStarUrlId: () => openStarUrlId,
+    bodySystemUrl: () => ({
+      host: bodySysUrl,
+      planet: panelState.exoplanet && selectedExoplanet ? selectedExoplanet.planet.id : null,
+    }),
+    deepSkyUrlDesignation: () => deepSkyUrlDesignation,
+    galaxyUrlId: () => galaxyUrlId,
+    bhUrlId: () => bhUrlId,
+    gotoStar: () => gotoStarFn,
+    enterSystem: () => enterSystemFn,
+    deepSkyDeepLink: () => deepSkyDeepLinkFn,
+    mwDeepLink: () => mwDeepLinkFn,
+    bhDeepLink: () => bhDeepLinkFn,
+    contextDeepLink: () => contextDeepLinkFn,
+    showPaths: () => (layers.paths = true),
   });
 
   function closePanel() {
@@ -1720,7 +975,7 @@
 
   function onPlanMission() {
     if (selectedPlanet?.missionable) {
-      goto(`${base}/plan`);
+      goto(localHref(`/plan`));
     }
   }
 
@@ -1742,63 +997,30 @@
       layerState.hover = on;
     });
 
-    // WS-3 (RFC-039 Contract D) — the /explore teaching layers are now standard
-    // science-layer keys, driven uniformly through the ScienceLayersPanel lens.
-    // Each subscription mirrors the effective (lens-coupled) layer state onto the
-    // existing scene wiring. Constellations + deep-sky feed page state that the
-    // neighborhood scene reads at build time (host §nbScene sync); HR + light-cones
-    // drive their overlays; the three Milky Way overlays reach the scene directly.
-    const addLayerWatch = (stop: (() => void) | undefined) => {
-      if (stop) lifecycle.add(stop);
-    };
-    addLayerWatch(
-      onLayerChange('constellations', (on) => {
-        showConstellations = on;
-        setConstellationsFn?.(on);
-      }),
-    );
-    addLayerWatch(
-      onLayerChange('deep-sky', (on) => {
-        showDeepSky = on;
-        setDeepSkyFn?.(on);
-      }),
-    );
-    addLayerWatch(
-      onLayerChange('hr-diagram', (on) => {
-        if (on !== hrLensOpen) toggleHrFn?.();
-      }),
-    );
-    addLayerWatch(
-      onLayerChange('light-cones', (on) => {
-        if (on !== causalityOpen) {
-          causalityOpen = on;
-          if (on) openCausalityFn?.();
-        }
-      }),
-    );
-    for (const key of ['rotation-curve', 'dark-matter-halo', 'stellar-populations'] as const) {
-      addLayerWatch(onLayerChange(key, (on) => setMwLensFn?.(key, on)));
-    }
-    // Mass–period plot (body-scene) — lens-layer driven since 2026-09-11
-    // (was a bespoke chip). The chart's own close button writes the layer
-    // off via setLayer so panel toggle + chart stay in sync.
-    addLayerWatch(
-      onLayerChange('mass-period', (on) => {
-        massPeriodOpen = on;
-      }),
-    );
-    // Black-hole physics lenses — layer-driven since the same audit
-    // (were bespoke chips gated only on the takeover, not on the lens).
-    addLayerWatch(
-      onLayerChange('bh-curvature', (on) => {
-        bhCurvatureLens = on;
-        setBhCurvatureFn?.(on);
-      }),
-    );
-    addLayerWatch(
-      onLayerChange('bh-time-dilation', (on) => {
-        bhTimeLens = on;
-      }),
+    watchExploreLayers(
+      {
+        setConstellations: (on) => {
+          showConstellations = on;
+          setConstellationsFn?.(on);
+        },
+        setDeepSky: (on) => {
+          showDeepSky = on;
+          setDeepSkyFn?.(on);
+        },
+        hrOpen: () => hrLensOpen,
+        toggleHr: () => toggleHrFn?.(),
+        causalityOpen: () => causalityOpen,
+        setCausalityOpen: (on) => (causalityOpen = on),
+        openCausality: () => openCausalityFn?.(),
+        setMwLens: (key, on) => setMwLensFn?.(key, on),
+        setMassPeriodOpen: (on) => (massPeriodOpen = on),
+        setBhCurvature: (on) => {
+          bhCurvatureLens = on;
+          setBhCurvatureFn?.(on);
+        },
+        setBhTimeLens: (on) => (bhTimeLens = on),
+      },
+      (stop) => lifecycle.add(stop),
     );
 
     // Async-load localised planet + sun data; safe to run alongside scene setup.
@@ -1824,218 +1046,27 @@
     // 3D — Three.js scene
     // ──────────────────────────────────────────────────────────────
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      55,
-      container.clientWidth / container.clientHeight,
-      0.5,
-      8000,
-    );
-    // Quality tier (URL ?quality=… > user choice > cached detect-gpu >
-    // medium fallback). Sync resolver so the scene builds without
-    // awaiting the GPU benchmark; the background detect updates the
-    // cache for the next visit. See lib/quality/quality-tier.ts.
-    // Resolved BEFORE createSceneRenderer so the pixel-ratio cap is
-    // threaded in at construction (single set, no post-hoc override).
-    const url = new URL(window.location.href);
-    const quality = resolveQualitySync(url);
-    void kickOffBackgroundDetect();
-    // Gate the per-planet 4K texture LOD on tier — on minimal/low (mobile,
-    // weak GPU) the 4K fetch + GPU upload cost outweighs the visual win, so
-    // those tiers stay at 2K throughout. Mirrors SurfaceScene's tex4kAllowed.
-    // __MOBILE__: the Capacitor build ships 2K only (4K planet textures are
-    // pruned off-device, ADR-079 D3) — force 2K regardless of resolved tier.
-    const tex4kAllowed = quality.tier !== 'minimal' && quality.tier !== 'low' && !__MOBILE__;
-    let renderer: THREE.WebGLRenderer;
-    try {
-      renderer = createSceneRenderer(container, {
-        pixelRatioCap: quality.pixelRatioCap,
-        // Pure black surrounding space (matches /earth /moon /mars) rather than the
-        // default dark-indigo clear (0x04040c).
-        clearColor: 0x000000,
-      });
-    } catch (e) {
-      // WebGL unavailable (#474/#470/#430) — the fallback notice is shown in the
-      // container; bail the scene init instead of an uncaught crash.
-      if (e instanceof WebGLUnavailableError) return;
-      throw e;
-    }
-
-    // Per-frame scratch vectors for the velocity-arrow overlay — reused
-    // each frame instead of allocating `new THREE.Vector3()` per visible
-    // planet (the animate loop runs these every frame). Safe to share:
-    // each is written then consumed within a single loop iteration.
-    const _orbitUp = new THREE.Vector3(0, 1, 0);
-    const _velTangent = new THREE.Vector3();
-    // ACES filmic tone mapping — HDR Sun → SDR roll-off so bright
-    // highlights (bloomed Sun + lit planet sides) don't clip to flat
-    // white. Matches the /fly helio scene's stack (#322).
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.0;
-    // PRD-023 Slice A — enable shadow maps for Saturn's ring-shadow
-    // effect. PCFSoftShadowMap is the cheap default; we scope the
-    // perf cost by setting castShadow only on the ring mesh and
-    // receiveShadow only on Saturn's planet mesh. Other planets +
-    // moons + small bodies don't participate so the 6 cube-map
-    // passes the PointLight shadow pipeline does each frame render
-    // ~2 objects total. The sun's PointLight is the shadow caster
-    // since its position is the physical Sun in the scene.
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-
-    // Uniform sunlight from origin (distance=0 + decay=0). The r0.185 upgrade's
-    // physically-correct lighting made the prior (…, 2500, 1.2) point light fall
-    // off to near-zero across the planets' 50–430u orbits, so every planet
-    // rendered black ("lost textures"). Match /fly's helio fix: treat the Sun as
-    // a uniform source — still a point light at origin so Saturn's ring shadow
-    // casts correctly.
-    const sunLight = new THREE.PointLight(0xfff4d0, 3.5, 0, 0);
-    sunLight.castShadow = true;
-    sunLight.shadow.mapSize.width = 1024;
-    sunLight.shadow.mapSize.height = 1024;
-    sunLight.shadow.camera.near = 0.1;
-    sunLight.shadow.bias = -0.001;
-    scene.add(sunLight);
-    // HemisphereLight replaces the prior AmbientLight(0x111133, 0.8) —
-    // ambient at 0.8 was flattening shadow contrast (the #1 amateur-CG
-    // tell per the shot-language guide). Hemisphere at 0.08 keeps the
-    // shadow side legible without erasing the single-Sun direction.
-    // Sky-side faint deep-space tint; ground-side near-black so the
-    // underside doesn't pick up an unphysical glow.
-    scene.add(new THREE.HemisphereLight(0x08101a, 0x000000, 0.08));
-    const fill = new THREE.DirectionalLight(0x223366, 0.3);
-    fill.position.set(-200, 100, -200);
-    scene.add(fill);
-
-    const textureLoader = new THREE.TextureLoader();
-    // PBR migration (2026-06-15): MeshStandardMaterial expects albedo
-    // textures to be tagged with `colorSpace = SRGBColorSpace` so the
-    // engine de-gammas the sRGB-encoded JPGs into linear before
-    // lighting math, then the renderer re-gammas at output. Without
-    // this tag the texture is treated as already-linear, lighting
-    // operates on the wrong values, and the output gamma pass produces
-    // washed-out / desaturated colors. Applies to every albedo + every
-    // emissive map; normal/roughness maps (which we don't have yet)
-    // would stay Linear.
-    const loadTexture = (file: string): THREE.Texture => {
-      const tex = textureLoader.load(`${base}/textures/${file}`);
-      // r128 API — colorSpace property was added in r152. The earlier
-      // `tex.colorSpace = THREE.SRGBColorSpace` lines were silent no-ops
-      // here (typeof THREE.SRGBColorSpace === 'undefined' in r128).
-      tex.colorSpace = THREE.SRGBColorSpace;
-      return tex;
-    };
-
-    // Per-planet texture LOD swap (#287). 2K base loads eagerly so
-    // the first paint of /explore stays cheap. 4K lazy-loads when the
-    // camera approaches a planet (per-body distance threshold). Sun
-    // gets the same treatment via its own pair below. Uranus +
-    // Neptune skip LOD because SSS doesn't publish a 4K source for
-    // either; they stay 2K eagerly.
-    const SUN_RADIUS = 18;
-    const PLANET_LOD_IN_RATIO = 15; // distance / planet_size ≤ this → swap to 4K + reveal moons
-    const PLANET_LOD_OUT_RATIO = 20; // distance / planet_size ≥ this → swap back to 2K + hide moons
-
-    const sunMap2k = loadTexture('2k_sun.jpg');
-    let sunMap4k: THREE.Texture | null = null;
-    let sun4kLoadStarted = false;
-    let sunLodLevel: '2k' | '4k' = '2k';
-    const sunMaterial = new THREE.MeshBasicMaterial({ map: sunMap2k, color: 0xfff0a0 });
-    const sunMesh = new THREE.Mesh(new THREE.SphereGeometry(SUN_RADIUS, 32, 32), sunMaterial);
-    sunMesh.userData = { planetId: '__sun__' };
-    scene.add(sunMesh);
-    function ensureSun4kLoaded(): void {
-      // __MOBILE__: 4k_sun.jpg is pruned off-device (ADR-079 D3) — stay at 2K.
-      if (sun4kLoadStarted || __MOBILE__) return;
-      sun4kLoadStarted = true;
-      textureLoader.load(
-        `${base}/textures/4k_sun.jpg`,
-        (tex) => {
-          // Sun map is rendered via MeshBasicMaterial (unlit) but
-          // still benefits from sRGB tagging so the texture's
-          // mid-tones don't shift when output gamma is applied.
-          tex.colorSpace = THREE.SRGBColorSpace;
-          sunMap4k = tex;
-        },
-        undefined,
-        () => {
-          sun4kLoadStarted = false; // allow retry next threshold cross
-        },
-      );
-    }
-    function updateSunLod(distanceToSun: number): void {
-      const ratio = distanceToSun / SUN_RADIUS;
-      if (ratio <= PLANET_LOD_IN_RATIO) {
-        ensureSun4kLoaded();
-        if (sunMap4k && sunLodLevel !== '4k') {
-          sunMaterial.map = sunMap4k;
-          sunMaterial.needsUpdate = true;
-          sunLodLevel = '4k';
-        }
-      } else if (ratio >= PLANET_LOD_OUT_RATIO && sunLodLevel !== '2k') {
-        sunMaterial.map = sunMap2k;
-        sunMaterial.needsUpdate = true;
-        sunLodLevel = '2k';
-      }
-    }
-    const glowConfigs: Array<{ r: number; color: number; opacity: number }> = [
-      { r: 22, color: 0xffdd66, opacity: 0.18 },
-      { r: 40, color: 0xff9922, opacity: 0.08 },
-      { r: 58, color: 0xff6600, opacity: 0.04 },
-      { r: 76, color: 0xff4400, opacity: 0.02 },
-    ];
-    for (const g of glowConfigs) {
-      scene.add(
-        new THREE.Mesh(
-          new THREE.SphereGeometry(g.r, 16, 16),
-          new THREE.MeshBasicMaterial({
-            color: g.color,
-            transparent: true,
-            opacity: g.opacity,
-            side: THREE.BackSide,
-            blending: THREE.AdditiveBlending,
-            depthWrite: false,
-          }),
-        ),
-      );
-    }
-
-    // Layered cinematic star field — dim background + bright sparkle +
-    // Milky Way band, counts gated by quality tier so low-end devices
-    // render fewer points. Shared with /fly + /iss + /tiangong; shell
-    // radius matches /explore's wide stellar outer shell.
-    scene.add(
-      createLayeredStarField({
-        counts: {
-          dim: quality.starsDim,
-          bright: quality.starsBright,
-          milkyWay: quality.starsMilkyWay,
-        },
-        shellRadius: 3000,
-      }),
-    );
-
-    // Post-processing — EffectComposer + RenderPass + (optional)
-    // UnrealBloomPass. Bloom is tier-gated (medium+) so minimal/low
-    // skips the extra blit on weaker GPUs. Sun glow is the marquee
-    // beneficiary (already textured emissive — bloom amplifies it
-    // without changing the underlying material). Selection halo +
-    // material-based outline still work because the composer just
-    // wraps the same scene.render call.
-    const composer = new EffectComposer(renderer);
-    composer.setSize(container.clientWidth, container.clientHeight);
-    composer.setPixelRatio(Math.min(window.devicePixelRatio, quality.pixelRatioCap));
-    composer.addPass(new RenderPass(scene, camera));
-    let bloomPass: UnrealBloomPass | null = null;
-    if (quality.bloomEnabled) {
-      bloomPass = new UnrealBloomPass(
-        new THREE.Vector2(container.clientWidth, container.clientHeight),
-        quality.bloomStrength,
-        quality.bloomRadius,
-        quality.bloomThreshold,
-      );
-      composer.addPass(bloomPass);
-    }
+    const stack = createExploreRenderStack(container, base);
+    if (!stack) return;
+    const {
+      scene,
+      camera,
+      url,
+      quality,
+      tex4kAllowed,
+      renderer,
+      _orbitUp,
+      _velTangent,
+      textureLoader,
+      loadTexture,
+      PLANET_LOD_IN_RATIO,
+      PLANET_LOD_OUT_RATIO,
+      getSunMap4k,
+      sunMesh,
+      updateSunLod,
+      composer,
+      bloomPass,
+    } = stack;
 
     // Expose to the DebugPanel "Rendering" tab (#334) — the template-
     // mounted <RenderingDebugRegistrar> picks these up reactively.
@@ -2472,40 +1503,40 @@
         hoverData = v;
       },
       get lastGoto() {
-        return lastGoto;
+        return urlGuards.lastGoto;
       },
       set lastGoto(v) {
-        lastGoto = v;
+        urlGuards.lastGoto = v;
       },
       get lastSystem() {
-        return lastSystem;
+        return urlGuards.lastSystem;
       },
       set lastSystem(v) {
-        lastSystem = v;
+        urlGuards.lastSystem = v;
       },
       get lastDeepSky() {
-        return lastDeepSky;
+        return urlGuards.lastDeepSky;
       },
       set lastDeepSky(v) {
-        lastDeepSky = v;
+        urlGuards.lastDeepSky = v;
       },
       get lastGalaxy() {
-        return lastGalaxy;
+        return urlGuards.lastGalaxy;
       },
       set lastGalaxy(v) {
-        lastGalaxy = v;
+        urlGuards.lastGalaxy = v;
       },
       get lastBh() {
-        return lastBh;
+        return urlGuards.lastBh;
       },
       set lastBh(v) {
-        lastBh = v;
+        urlGuards.lastBh = v;
       },
       get lastContextJump() {
-        return lastContextJump;
+        return urlGuards.lastContextJump;
       },
       set lastContextJump(v) {
-        lastContextJump = v;
+        urlGuards.lastContextJump = v;
       },
       get container() {
         return container;
@@ -2567,7 +1598,7 @@
       _orbitUp,
       _velTangent,
       bloomPass,
-      getSunMap4k: () => sunMap4k,
+      getSunMap4k,
       sunMesh,
       updateSunLod,
       PLANET_LOD_IN_RATIO,
@@ -2703,50 +1734,16 @@
        breadcrumb is gone. In a full-screen takeover (black-hole / body-scene /
        deep-sky) only the back arrow shows — the ladder isn't meaningful there. -->
   {#if view === '3d'}
-    <nav
-      class="scale-nav"
-      class:at-solar={contextId === 'solar-system' && !activeBlackHole}
-      aria-label={m.explore_location_aria()}
-    >
-      {#if scaleNavBack}
-        <button
-          type="button"
-          class="scale-back"
-          onclick={() => {
-            cue('select');
-            scaleNavBack.run();
-          }}
-          aria-label={scaleNavBack.label}
-          title={scaleNavBack.label}
-          data-testid="explore-scale-back"
-        >
-          ‹
-        </button>
-      {/if}
-
-      {#if !activeBlackHole && !activeDeepSky && contextId !== 'body-scene'}
-        <ExploreScalePicker
-          activeShell={contextId as ShellId}
-          disabled={!contextDeepLinkFn}
-          onJump={(shell) => {
-            cue('select');
-            void contextDeepLinkFn?.(shell);
-          }}
-        />
-        {#if scaleResetVisible}
-          <button
-            type="button"
-            class="scale-reset"
-            onclick={resetCurrentScale}
-            aria-label={m.ui_reset_view()}
-            title={m.ui_reset_view()}
-            data-testid="explore-scale-reset"
-          >
-            ⟲
-          </button>
-        {/if}
-      {/if}
-    </nav>
+    <ScaleNav
+      atSolar={contextId === 'solar-system' && !activeBlackHole}
+      back={scaleNavBack}
+      showPicker={!activeBlackHole && !activeDeepSky && contextId !== 'body-scene'}
+      activeShell={contextId as ShellId}
+      pickerDisabled={!contextDeepLinkFn}
+      onJump={(shell) => void contextDeepLinkFn?.(shell)}
+      showReset={scaleResetVisible}
+      onReset={resetCurrentScale}
+    />
   {/if}
 
   <!-- Slice 5/8 honesty badges (Milky Way … Cosmic Web are labelled schematics,
@@ -2755,26 +1752,7 @@
 
   <!-- Slice 6: the black-hole render is a geodesic GR ray-trace — label it. -->
   {#if view === '3d' && activeBlackHole}
-    <div class="mw-badge" role="note">{m.explore_bh_lensing_badge()}</div>
-
-    <!-- The curvature/time toggles moved into the science-lens panel
-         (2026-09-11 audit) — bh-curvature / bh-time-dilation layers; the
-         note + table below are the layers' rendered content. -->
-    {#if bhCurvatureLens}
-      <div class="lens-note" role="note">{m.explore_lens_curvature_note()}</div>
-    {/if}
-
-    {#if bhTimeLens}
-      <div class="time-lens" role="note">
-        <div class="tl-title">{m.explore_lens_time_title()}</div>
-        <div class="tl-row">
-          <span>{m.explore_lens_time_photon()}</span><b>{dilationPct(1.5)}</b>
-        </div>
-        <div class="tl-row"><span>{m.explore_lens_time_isco()}</span><b>{dilationPct(3)}</b></div>
-        <div class="tl-row"><span>{m.explore_lens_time_ten()}</span><b>{dilationPct(10)}</b></div>
-        <div class="tl-foot">{m.explore_lens_time_note()}</div>
-      </div>
-    {/if}
+    <BlackHoleNotes curvature={bhCurvatureLens} time={bhTimeLens} />
   {/if}
 
   <!-- Slice 7's mass–period plot moved from a bespoke chip here into the
@@ -2786,16 +1764,7 @@
        are the reference; showing a needle then just reads as pointing at a Sun
        that's plainly centred). The needle points toward the off-screen Sun. -->
   {#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole && sunCompass && !sunCompass.on}
-    <div class="sun-compass" title={m.explore_hr_sun()}>
-      <div class="sc-dial">
-        <span
-          class="sc-needle"
-          style:transform="translate(-50%, -100%) rotate({90 - sunCompass.ang}deg)"
-        ></span>
-        <span class="sc-core">☉</span>
-      </div>
-      <span class="sc-ly">{sunCompass.ly.toFixed(sunCompass.ly < 10 ? 1 : 0)} ly · SOL</span>
-    </div>
+    <SunCompass ang={sunCompass.ang} ly={sunCompass.ly} />
   {/if}
 
   <!-- Neighborhood star index — the left INDEX rail. WS-3 (RFC-039 Contract D)
@@ -2831,94 +1800,21 @@
        old bottom-right `.scale-hud` and the scattered `.mw-badge` / `.mw-scale`
        floats collapsed into this single box, so it never fights the picker (now
        up top) and reads the same on every zoom. -->
-  {#if view === '3d' && scaleReadout && (contextId === 'solar-system' || contextId === 'neighborhood')}
-    <div class="scale-strip" class:neighborhood={contextId === 'neighborhood'} aria-hidden="true">
-      <div class="scale-ladder">
-        {#each rungLadder as rung (rung)}
-          <span
-            class="rung"
-            class:active={scaleReadout.rung === rung ||
-              (scaleReadout.rung === 'ly' && rung === 'pc')}
-          >
-            {rung === 'au' ? 'AU' : rung}
-          </span>
-        {/each}
-      </div>
-      <!-- Numeric distance + light-time only where the Orbit Ruler (solar
-           system) isn't already showing them — keeps the two rulers complementary,
-           not redundant. -->
-      {#if contextId === 'neighborhood'}
-        <div class="scale-readout">
-          <span class="primary"
-            >{fmtScale(scaleReadout.primary.value)} {scaleReadout.primary.unit}</span
-          >
-          {#if scaleReadout.companion}
-            <span class="companion"
-              >≈ {fmtScale(scaleReadout.companion.value)} {scaleReadout.companion.unit}</span
-            >
-          {/if}
-        </div>
-        <div class="scale-light">
-          {m.explore_scale_light_prefix()}: {fmtScale(scaleReadout.lightTravel.value)}
-          {lightUnitLabel(scaleReadout.lightTravel.unit)}
-        </div>
-      {/if}
-      {#if scaleBarPx > 0}
-        <div class="scale-bar-wrap">
-          <span class="scale-bar" style="width:{Math.round(Math.min(scaleBarPx, 220))}px"></span>
-          <span class="scale-bar-label">{scaleBarLabel}</span>
-        </div>
-      {/if}
-      <div class="scale-context">{contextLabel()}</div>
-    </div>
-  {:else if view === '3d' && !activeBlackHole && (contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'virgo' || contextId === 'laniakea' || contextId === 'cosmic-web')}
-    <div class="scale-strip schematic" role="note">
-      {#if contextId === 'milky-way'}
-        <div class="scale-schematic-size">{m.explore_mw_scale_note()}</div>
-        <div class="scale-schematic-note">
-          <span>{m.explore_mw_schematic_badge()}</span>
-          <a class="mw-badge-link" href="{base}/science/observation/our-galaxy"
-            >{m.science_learn_more()} →</a
-          >
-        </div>
-      {:else if contextId === 'local-group'}
-        <div class="scale-schematic-note">
-          <span>{m.explore_lg_schematic_badge()}</span>
-          <a class="mw-badge-link" href="{base}/science/observation/local-group"
-            >{m.science_learn_more()} →</a
-          >
-        </div>
-      {:else if contextId === 'local-sheet'}
-        <div class="scale-schematic-note"><span>{m.explore_ls_schematic_badge()}</span></div>
-      {:else if contextId === 'virgo'}
-        <div class="scale-schematic-note"><span>{m.explore_virgo_schematic_badge()}</span></div>
-      {:else if contextId === 'laniakea'}
-        <div class="scale-schematic-note"><span>{m.explore_laniakea_schematic_badge()}</span></div>
-      {:else if contextId === 'cosmic-web'}
-        <div class="scale-schematic-note">
-          <span>{m.explore_cosmic_web_schematic_badge()}</span>
-        </div>
-      {/if}
-    </div>
+  {#if view === '3d'}
+    <ScaleStrip
+      readout={scaleReadout}
+      {contextId}
+      blackHole={!!activeBlackHole}
+      barPx={scaleBarPx}
+      barLabel={scaleBarLabel}
+      {bodyHostName}
+    />
   {/if}
 
   <!-- v2 anonymous-star tag (Slice 1 Hybrid): tapping a background star shows the
        honest facts from the catalogue — no Panel, no invented name. -->
   {#if view === '3d' && contextId === 'neighborhood' && anonStar}
-    <div class="anon-star" role="status">
-      <span class="anon-title">{m.explore_anon_unnamed()}</span>
-      <span class="anon-facts">
-        {anonStar.distLy.toLocaleString(undefined, { maximumFractionDigits: 1 })} ly · mag {anonStar.mag.toFixed(
-          1,
-        )} · {anonColorLabel(anonStar.colorName)} (~{anonStar.kelvin.toLocaleString()} K)
-      </span>
-      <button
-        type="button"
-        class="anon-close"
-        aria-label={m.explore_anon_dismiss()}
-        onclick={() => (anonStar = null)}>×</button
-      >
-    </div>
+    <AnonStarTag star={anonStar} onDismiss={() => (anonStar = null)} />
   {/if}
 
   <!-- v2 Slice 4: full-frame deep-sky immersion. The curated photo fills the
@@ -2926,10 +1822,11 @@
        into from a glint. Sits above the canvas; the warp flash + panel render on
        top. -->
   {#if view === '3d' && activeDeepSky && deepSkyPhotoUrl}
-    <div class="deep-sky-immersion" class:visible={deepSkyImmersed} aria-hidden={!deepSkyImmersed}>
-      <img src={deepSkyPhotoUrl} alt={activeDeepSkyImage?.caption ?? activeDeepSky.name} />
-      <div class="ds-vignette"></div>
-    </div>
+    <DeepSkyImmersion
+      url={deepSkyPhotoUrl}
+      alt={activeDeepSkyImage?.caption ?? activeDeepSky.name}
+      visible={deepSkyImmersed}
+    />
   {/if}
 
   <!-- Slice 7: the HR-diagram (property-space) lens overlay — the real star field
@@ -2971,182 +1868,22 @@
 
   <!-- Warp flash — masks the scene cut at a boundary crossing. Replays whenever
        crossingFlashId changes (skipped under reduced motion, which never bumps it). -->
-  {#if view === '3d' && crossingFlashId > 0}
-    {#key crossingFlashId}
-      <div class="cross-flash" aria-hidden="true"></div>
-    {/key}
+  {#if view === '3d'}
+    <WarpOverlays flashId={crossingFlashId} caption={warpCaption} />
   {/if}
 
-  <!-- v2 Slice 2: distance caption shown during a Navigator warp into a system,
-       teaching the distance it just crossed (UXS-014 §4 signature moment). -->
-  {#if view === '3d' && warpCaption}
-    {#key warpCaption}
-      <div class="warp-caption" role="status">{warpCaption}</div>
-    {/key}
-  {/if}
-
-  <!-- PRD-023 Slice E.2 — Earth-comparison ghost, doubling as the
-       REFERENCES launcher (2026-06-06 user direction: move the
-       REFERENCES chip from the top HUD to the Earth-for-scale slot;
-       click → open the planet-scales overlay). Always visible at the
-       bottom-left so it's a stable affordance; the ratio line only
-       shows when focused on a non-Earth planet. -->
-  <button
-    type="button"
-    class="earth-compare"
-    class:context-hidden={contextId !== 'solar-system' || !!activeBlackHole}
-    aria-label={m.explore_sizes_toggle()}
-    onclick={() => (panelState.sizes = !panelState.sizes)}
-    data-testid="sizes-toggle"
-  >
-    <img src="{base}/textures/2k_earth_daymap.1x1.jpg" alt="" loading="lazy" decoding="async" />
-    <span class="earth-compare-label">
-      {#if cameraState.focusedOnPlanet && selectedId && selectedId !== 'earth' && focusedStats}
-        EARTH FOR SCALE<br />
-        <span class="ratio">{focusedStats.diameterRatioEarth.toFixed(2)}× diameter</span>
-      {:else if focusedSatelliteStats}
-        EARTH FOR SCALE<br />
-        <span class="ratio"
-          >{focusedSatelliteStats.diameterRatioEarth < 0.01
-            ? focusedSatelliteStats.diameterRatioEarth.toFixed(4)
-            : focusedSatelliteStats.diameterRatioEarth.toFixed(2)}× diameter</span
-        >
-      {:else}
-        {m.explore_sizes_toggle()}<br />
-        <span class="ratio">{m.explore_planet_scales()}</span>
-      {/if}
-    </span>
-  </button>
-
-  <!-- Time playback (#351 Layer 1) — pause + days-per-second speed over
-       the live orbital clock. Pinned bottom-left beside the PLANET SCALES
-       button (user direction 2026-06-21). Pills mirror the guide-explore
-       narration ("one day per second, ten days, a hundred"). -->
-  <div
-    class="time-controls"
-    class:context-hidden={contextId !== 'solar-system' || !!activeBlackHole}
-    data-audio-stage="explore-time"
-  >
-    <!-- Mobile-only compact REFERENCES button — the standalone .earth-compare
-         is hidden on mobile (z-20 behind footer); this keeps the affordance
-         accessible in the scrubber row (z-40). -->
-    <button
-      type="button"
-      class="earth-compact"
-      onclick={() => (panelState.sizes = !panelState.sizes)}
-      aria-label={m.explore_sizes_toggle()}
-      title={m.explore_sizes_toggle()}
-      data-testid="sizes-toggle-compact"
-    >
-      <img src="{base}/textures/2k_earth_daymap.1x1.jpg" alt="" loading="lazy" decoding="async" />
-      <span class="earth-compact-label">
-        {#if cameraState.focusedOnPlanet && selectedId && selectedId !== 'earth' && focusedStats}
-          {focusedStats.diameterRatioEarth.toFixed(2)}×
-        {:else if focusedSatelliteStats}
-          {focusedSatelliteStats.diameterRatioEarth < 0.01
-            ? focusedSatelliteStats.diameterRatioEarth.toFixed(4)
-            : focusedSatelliteStats.diameterRatioEarth.toFixed(2)}×
-        {:else}
-          SCALE
-        {/if}
-      </span>
-    </button>
-    <button
-      type="button"
-      class="toggle play-btn"
-      onclick={() => (simPaused = !simPaused)}
-      aria-pressed={simPaused}
-      aria-label={simPaused ? m.fly_play() : m.fly_pause()}
-      title={simPaused ? m.fly_play() : m.fly_pause()}
-      data-testid="explore-time-play"
-      data-audio-stage="explore-time-pause"
-    >
-      {simPaused ? '▶' : '⏸'}
-    </button>
-    <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
-      <!-- Mobile: single active-speed slot; tap to reveal all 3 above. -->
-      <div class="speed-slot">
-        <button
-          type="button"
-          class="speed-pill"
-          class:active={!simPaused}
-          aria-expanded={speedPopoverOpen}
-          aria-haspopup="listbox"
-          aria-label="{simSpeed}× — {m.fly_speed_label()}"
-          onclick={() => (speedPopoverOpen = !speedPopoverOpen)}>{simSpeed}×</button
-        >
-        {#if speedPopoverOpen}
-          <div class="speed-popover" role="listbox" aria-label={m.fly_speed_label()}>
-            {#each SIM_SPEEDS as sp (sp)}
-              {@const speedTip =
-                sp === 1
-                  ? m.explore_speed_tip_1()
-                  : sp === 100
-                    ? m.explore_speed_tip_100()
-                    : m.explore_speed_tip_10()}
-              <button
-                type="button"
-                class="speed-pill"
-                class:active={!simPaused && simSpeed === sp}
-                role="option"
-                aria-selected={!simPaused && simSpeed === sp}
-                aria-label={speedTip}
-                title={speedTip}
-                onclick={() => {
-                  simSpeed = sp;
-                  simPaused = false;
-                  speedPopoverOpen = false;
-                }}
-                data-testid="explore-speed-{sp}"
-                data-audio-stage="explore-speed-{sp}">{sp}×</button
-              >
-            {/each}
-          </div>
-        {/if}
-      </div>
-      <!-- Desktop: all 3 pills visible. -->
-      {#each SIM_SPEEDS as sp (sp)}
-        {@const speedTip =
-          sp === 1
-            ? m.explore_speed_tip_1()
-            : sp === 100
-              ? m.explore_speed_tip_100()
-              : m.explore_speed_tip_10()}
-        <button
-          type="button"
-          class="speed-pill speed-desktop-pill"
-          class:active={!simPaused && simSpeed === sp}
-          aria-pressed={!simPaused && simSpeed === sp}
-          aria-label={speedTip}
-          title={speedTip}
-          onclick={() => {
-            simSpeed = sp;
-            simPaused = false;
-          }}
-          data-testid="explore-speed-{sp}"
-          data-audio-stage="explore-speed-{sp}"
-        >
-          {sp}×
-        </button>
-      {/each}
-    </div>
-    <!-- Date readout + reset (#351 Layer 2-B) — the running simulated date,
-         with a dedicated reset-to-today button sized like play/pause. -->
-    <span class="time-date" data-testid="explore-sim-date" data-audio-stage="explore-sim-date"
-      >{simDateLabel}</span
-    >
-    <button
-      type="button"
-      class="play-btn reset-btn"
-      onclick={() => resetSimToToday?.()}
-      title={m.explore_time_today()}
-      aria-label={m.explore_time_today()}
-      data-testid="explore-time-today"
-      data-audio-stage="explore-time-today"
-    >
-      ⟲
-    </button>
-  </div>
+  <TimeDock
+    hidden={contextId !== 'solar-system' || !!activeBlackHole}
+    onToggleSizes={() => (panelState.sizes = !panelState.sizes)}
+    planetRatio={cameraState.focusedOnPlanet && selectedId && selectedId !== 'earth' && focusedStats
+      ? focusedStats.diameterRatioEarth
+      : null}
+    satelliteRatio={focusedSatelliteStats ? focusedSatelliteStats.diameterRatioEarth : null}
+    bind:simSpeed
+    bind:simPaused
+    {simDateLabel}
+    onResetToday={() => resetSimToToday?.()}
+  />
 
   <!-- PRD-023 Slice E.4 — Tactical Scan overlay (shared component,
        #382). Self-gates on the 'planet-stats' lens layer; `focusGate`
@@ -3159,484 +1896,49 @@
     focusGate={cameraState.focusedOnPlanet}
   />
 
-  <!-- Secondary HUD controls: 2D/3D toggle + layer chips + paths-legend.
-       Defined once as a snippet; rendered inline on desktop, inside
-       MobileDrawerGroup accordion on mobile (≤767 px). -->
-  {#snippet exploreControls()}
-    <div class="ctrl-row">
-      <button
-        class="toggle"
-        type="button"
-        onclick={toggleView}
-        aria-pressed={view === '2d'}
-        data-testid="explore-view-toggle"
-      >
-        {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
-      </button>
-      {#if selectedId || selectedSmallBodyId || selectedSatelliteKey || selectedBeltId || panelState.sun}
-        <button
-          class="toggle"
-          type="button"
-          onclick={() => {
-            selectedId = null;
-            selectedSmallBodyId = null;
-            selectedSatelliteKey = null;
-            selectedBeltId = null;
-            resetExplorePanelState();
-            exitNeighborhoodFn?.();
-            flyToBodyFn?.(null);
-          }}
-          data-testid="explore-reset-view"
-          data-audio-stage="explore-reset-view"
-        >
-          {m.ui_reset_view()}
-        </button>
-      {/if}
-      <EnterArButton onEnter={() => void launchArScene('explore')} />
-      <EnterSkyButton onEnter={() => void launchSkyScene()} />
-    </div>
-    <!-- Inline chips rather than LayerChipRow: the PATHS chip carries
-         data-audio-stage which LayerChipRow's interface doesn't expose. -->
-    <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-      <button
-        type="button"
-        class="chip"
-        class:active={layers.planets}
-        aria-pressed={layers.planets}
-        onclick={() => (layers.planets = !layers.planets)}
-        data-testid="layer-planets"
-        title={m.explore_layer_tip_planets()}
-      >
-        {m.ui_layer_planets()}
-      </button>
-      <button
-        type="button"
-        class="chip"
-        class:active={layers.dwarfs}
-        aria-pressed={layers.dwarfs}
-        onclick={() => (layers.dwarfs = !layers.dwarfs)}
-        data-testid="layer-dwarfs"
-        title={m.explore_layer_tip_dwarfs()}
-      >
-        {m.ui_layer_dwarfs()}
-      </button>
-      <button
-        type="button"
-        class="chip"
-        class:active={layers.comets}
-        aria-pressed={layers.comets}
-        onclick={() => (layers.comets = !layers.comets)}
-        data-testid="layer-comets"
-        title={m.explore_layer_tip_comets()}
-      >
-        {m.ui_layer_comets()}
-      </button>
-      <button
-        type="button"
-        class="chip"
-        class:active={layers.interstellar}
-        aria-pressed={layers.interstellar}
-        onclick={() => (layers.interstellar = !layers.interstellar)}
-        data-testid="layer-interstellar"
-        title={m.explore_layer_tip_interstellar()}
-      >
-        {m.ui_layer_interstellar_short()}
-      </button>
-      <button
-        type="button"
-        class="chip"
-        class:active={layers.paths}
-        aria-pressed={layers.paths}
-        onclick={() => (layers.paths = !layers.paths)}
-        data-audio-stage="explore-layer-paths"
-        data-testid="layer-paths"
-        title={m.explore_layer_tip_paths()}
-      >
-        {m.ui_layer_paths()}
-      </button>
-    </div>
-    {#if layers.paths}
-      <div
-        class="paths-legend"
-        bind:this={pathsLegendEl}
-        role="group"
-        aria-label={m.explore_trajectory_legend_aria()}
-      >
-        <a
-          class="paths-legend-why"
-          href="{base}/science/transfers/coplanar-trajectories"
-          data-testid="paths-legend-why"
-        >
-          ⓘ Why are they all in one plane?
-        </a>
-        <!-- Hover brightens the arc + swaps the tagline but does NOT open
-             the panel — click commits. Intentional after the 2026-06-19
-             render-storm from async getMission() on every mouseenter. -->
-        <div class="paths-legend-tagline" aria-live="polite">
-          {#if iconic.state.hoveredId}
-            {iconicTagline(iconic.state.hoveredId)}
-          {:else if iconic.state.selectedId}
-            {iconicTagline(iconic.state.selectedId)}
-          {:else}
-            {m.explore_iconic_tagline_placeholder()}
-          {/if}
-        </div>
-        {#each PATHS_LEGEND as entry, i (entry.mission_id)}
-          <button
-            type="button"
-            class="paths-legend-row"
-            bind:this={legendRowEls[i]}
-            class:is-selected={iconic.state.selectedId === entry.mission_id}
-            class:is-hovered={iconic.state.hoveredId === entry.mission_id}
-            aria-pressed={iconic.state.selectedId === entry.mission_id}
-            onclick={() =>
-              INTERSTELLAR_CRAFT.has(entry.mission_id)
-                ? openMessageCraft(entry.mission_id, localeFromPage(page))
-                : iconic.selectMission(entry.mission_id, localeFromPage(page))}
-            onkeydown={(e) => onLegendKeydown(e, i)}
-            onmouseenter={() => {
-              iconic.state.hoveredId = entry.mission_id;
-            }}
-            onfocus={() => {
-              iconic.state.hoveredId = entry.mission_id;
-            }}
-            onblur={() => {
-              if (iconic.state.hoveredId === entry.mission_id) {
-                iconic.state.hoveredId = null;
-              }
-            }}
-            onmouseleave={() => {
-              iconic.state.hoveredId = null;
-            }}
-            data-testid="paths-legend-row-{entry.mission_id}"
-            data-audio-stage="iconic-mission-{entry.mission_id}"
-          >
-            <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
-            <span class="name">{entry.name}</span>
-            <span class="logos" aria-hidden="true">
-              {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
-                <img src={logoPath} alt="" loading="lazy" />
-              {/each}
-            </span>
-            <span class="year">{entry.launch_year}</span>
-          </button>
-        {/each}
-      </div>
-    {/if}
-  {/snippet}
-  <!-- Desktop cluster — hidden on mobile (≤767 px) via CSS. -->
-  <div
-    class="hud-controls"
-    class:context-hidden={contextId !== 'solar-system' || !!activeBlackHole}
-    data-audio-stage="explore-hud"
-    role="group"
-    aria-label={m.ui_view_controls()}
-  >
-    {@render exploreControls()}
-  </div>
-  <!-- Mobile-only: 2D/3D toggle + Reset View fixed at top-left (mirrors
-       desktop .hud-controls corner; .hud-controls itself is desktop-only). -->
-  <div
-    class="hud-top-mobile"
-    class:context-hidden={contextId !== 'solar-system' || !!activeBlackHole}
-    role="group"
-    aria-label={m.ui_view_controls()}
-  >
-    <button
-      class="toggle"
-      type="button"
-      onclick={toggleView}
-      aria-pressed={view === '2d'}
-      data-testid="explore-view-toggle-mobile"
-    >
-      {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
-    </button>
-    {#if selectedId || selectedSmallBodyId || selectedSatelliteKey || selectedBeltId || panelState.sun}
-      <button
-        class="toggle"
-        type="button"
-        onclick={() => {
-          selectedId = null;
-          selectedSmallBodyId = null;
-          selectedSatelliteKey = null;
-          selectedBeltId = null;
-          resetExplorePanelState();
-          exitNeighborhoodFn?.();
-          flyToBodyFn?.(null);
-        }}
-        data-testid="explore-reset-view-mobile"
-        data-audio-stage="explore-reset-view"
-      >
-        {m.ui_reset_view()}
-      </button>
-    {/if}
-    <EnterArButton onEnter={() => void launchArScene('explore')} />
-    <EnterSkyButton onEnter={() => void launchSkyScene()} />
-  </div>
-  <!-- Mobile-only: 3-tab accordion — Orbit Ruler | Controls | Iconic Missions.
-       Desktop uses .hud-controls (above) + .ruler-desktop-only (below). -->
-  {#snippet mobileRulerContent(close: () => void)}
-    {#if exploreRegimes.length > 0 && contextId === 'solar-system' && !activeBlackHole}
-      <OrbitRuler
-        regimes={exploreRegimes}
-        highlightRegime={null}
-        onSelect={(id) => {
-          openExploreRegime(id);
-          close();
-        }}
-        surfaceAnchor={null}
-      />
-    {/if}
-  {/snippet}
-  {#snippet mobileControlsContent(close: () => void)}
-    <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-      <button
-        type="button"
-        class="chip"
-        class:active={layers.planets}
-        aria-pressed={layers.planets}
-        onclick={() => {
-          layers.planets = !layers.planets;
-          close();
-        }}
-        data-testid="layer-planets"
-        title={m.explore_layer_tip_planets()}
-      >
-        {m.ui_layer_planets()}
-      </button>
-      <button
-        type="button"
-        class="chip"
-        class:active={layers.dwarfs}
-        aria-pressed={layers.dwarfs}
-        onclick={() => {
-          layers.dwarfs = !layers.dwarfs;
-          close();
-        }}
-        data-testid="layer-dwarfs"
-        title={m.explore_layer_tip_dwarfs()}
-      >
-        {m.ui_layer_dwarfs()}
-      </button>
-      <button
-        type="button"
-        class="chip"
-        class:active={layers.comets}
-        aria-pressed={layers.comets}
-        onclick={() => {
-          layers.comets = !layers.comets;
-          close();
-        }}
-        data-testid="layer-comets"
-        title={m.explore_layer_tip_comets()}
-      >
-        {m.ui_layer_comets()}
-      </button>
-      <button
-        type="button"
-        class="chip"
-        class:active={layers.interstellar}
-        aria-pressed={layers.interstellar}
-        onclick={() => {
-          layers.interstellar = !layers.interstellar;
-          close();
-        }}
-        data-testid="layer-interstellar"
-        title={m.explore_layer_tip_interstellar()}
-      >
-        {m.ui_layer_interstellar_short()}
-      </button>
-    </div>
-  {/snippet}
-  {#snippet mobileIconicContent(close: () => void)}
-    <!-- Compact trajectory on/off — a much smaller stand-in for the desktop
-         chip. onOpen enables the layer when the drawer opens; this toggle lets
-         you switch the arcs off without closing the drawer. -->
-    <button
-      type="button"
-      class="iconic-toggle"
-      class:active={layers.paths}
-      aria-pressed={layers.paths}
-      onclick={() => (layers.paths = !layers.paths)}
-      data-testid="layer-paths"
-      title={m.explore_layer_tip_paths()}
-    >
-      <span class="iconic-toggle-dot" class:on={layers.paths} aria-hidden="true"></span>
-      {m.ui_layer_paths()}
-    </button>
-    <div class="paths-legend" role="group" aria-label={m.explore_trajectory_legend_aria()}>
-      <a
-        class="paths-legend-why"
-        href="{base}/science/transfers/coplanar-trajectories"
-        data-testid="paths-legend-why"
-      >
-        ⓘ Why are they all in one plane?
-      </a>
-      <div class="paths-legend-tagline" aria-live="polite">
-        {#if iconic.state.hoveredId}
-          {iconicTagline(iconic.state.hoveredId)}
-        {:else if iconic.state.selectedId}
-          {iconicTagline(iconic.state.selectedId)}
-        {:else}
-          {m.explore_iconic_tagline_placeholder()}
-        {/if}
-      </div>
-      {#each PATHS_LEGEND as entry, i (entry.mission_id)}
-        <button
-          type="button"
-          class="paths-legend-row"
-          class:is-selected={iconic.state.selectedId === entry.mission_id}
-          class:is-hovered={iconic.state.hoveredId === entry.mission_id}
-          aria-pressed={iconic.state.selectedId === entry.mission_id}
-          onclick={() => {
-            if (INTERSTELLAR_CRAFT.has(entry.mission_id)) {
-              void openMessageCraft(entry.mission_id, localeFromPage(page));
-            } else {
-              iconic.selectMission(entry.mission_id, localeFromPage(page));
-            }
-            close();
-          }}
-          onkeydown={(e) => onLegendKeydown(e, i)}
-          onmouseenter={() => {
-            iconic.state.hoveredId = entry.mission_id;
-          }}
-          onfocus={() => {
-            iconic.state.hoveredId = entry.mission_id;
-          }}
-          onblur={() => {
-            if (iconic.state.hoveredId === entry.mission_id) {
-              iconic.state.hoveredId = null;
-            }
-          }}
-          onmouseleave={() => {
-            iconic.state.hoveredId = null;
-          }}
-          data-testid="paths-legend-row-{entry.mission_id}"
-          data-audio-stage="iconic-mission-{entry.mission_id}"
-        >
-          <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
-          <span class="name">{entry.name}</span>
-          <span class="logos" aria-hidden="true">
-            {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
-              <img src={logoPath} alt="" loading="lazy" />
-            {/each}
-          </span>
-          <span class="year">{entry.launch_year}</span>
-        </button>
-      {/each}
-    </div>
-  {/snippet}
-  <!-- Mobile "Scan" tab (#49) — the planet-stats tactical scan folded into the
-       drawer, mirroring the surface route's Scan tab (#386). The floating overlay
-       is desktop-only (too tall for a phone); on mobile this inline copy is the
-       readout. Only present when the camera has settled on a planet with stats. -->
-  {#snippet mobileScanContent(_close: () => void)}
-    <div class="mobile-scan">
-      <TacticalScan
-        stats={focusedStats}
-        bodyLabel={selectedId?.toUpperCase() ?? ''}
-        rotationHours={focusedRotationHours}
-        lightTime={focusedLightTime}
-        inline
-      />
-    </div>
-  {/snippet}
-  <!-- Mobile solar-system drawers (ruler/controls/missions/index) — solar-system
-       only; the neighborhood + BodyScenes have their own chrome. -->
-  {#if contextId === 'solar-system' && !activeBlackHole}
-    <MobileDrawerGroup
-      tabs={[
-        // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene];
-        // empty slots (no Overlays in solar-system) are simply omitted.
-        { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
-        { id: 'missions', label: 'Missions', icon: '➤', content: mobileIconicContent },
-        { id: 'controls', label: 'Controls', icon: '▤', content: mobileControlsContent },
-        // Scan appears only when a focused planet has a tactical readout (#49).
-        ...(cameraState.focusedOnPlanet && focusedStats
-          ? [{ id: 'scan', label: 'Scan', icon: '◈', content: mobileScanContent }]
-          : []),
-      ]}
-      onOpen={(id) => {
-        if (id === 'missions') layers.paths = true;
-      }}
-      bottomInline
-      --mcd-bottom="calc(56px + env(safe-area-inset-bottom, 0px))"
-    />
-  {/if}
+  <HudControls
+    hidden={contextId !== 'solar-system' || !!activeBlackHole}
+    {view}
+    {toggleView}
+    hasSelection={!!(
+      selectedId ||
+      selectedSmallBodyId ||
+      selectedSatelliteKey ||
+      selectedBeltId ||
+      panelState.sun
+    )}
+    onResetView={() => {
+      selectedId = null;
+      selectedSmallBodyId = null;
+      selectedSatelliteKey = null;
+      selectedBeltId = null;
+      resetExplorePanelState();
+      exitNeighborhoodFn?.();
+      flyToBodyFn?.(null);
+    }}
+    {layers}
+    onToggleLayer={(key) => (layers[key] = !layers[key])}
+    onShowPaths={() => (layers.paths = true)}
+    bind:pathsLegendEl
+    {legendRowEls}
+    {iconic}
+    {openMessageCraft}
+    {onLegendKeydown}
+    {exploreRegimes}
+    {openExploreRegime}
+    {focusedStats}
+    scanLabel={selectedId?.toUpperCase() ?? ''}
+    {focusedRotationHours}
+    {focusedLightTime}
+    focusedOnPlanet={cameraState.focusedOnPlanet}
+  />
 
   {#if panelState.sizes}
-    <!-- Size comparison overlay — modal-style, mirrors selected planet
-         (if any) so the user keeps context. ESC + backdrop click close. -->
-    <button
-      type="button"
-      class="sizes-backdrop"
-      aria-label={m.explore_sizes_close()}
-      onclick={() => (panelState.sizes = false)}
-    ></button>
-    <div class="sizes-card" role="dialog" aria-modal="true" aria-label={m.explore_sizes_toggle()}>
-      <button
-        type="button"
-        class="sizes-close"
-        aria-label={m.explore_sizes_close()}
-        onclick={() => (panelState.sizes = false)}>×</button
-      >
-      <div class="sizes-canvas-wrap">
-        <SizesCanvas highlightId={selectedId} />
-      </div>
-    </div>
+    <SizesOverlay highlightId={selectedId} onClose={() => (panelState.sizes = false)} />
   {/if}
 
   {#if hoverData && view === '3d' && tooltipVisible}
-    <div
-      class="tooltip"
-      class:expanded={tooltipExpanded}
-      role="status"
-      aria-live="polite"
-      aria-label="{hoverData.name} — {hoverData.velocity}, {hoverData.distance}, {hoverData.extras}"
-      style:left="{Math.min(hoverData.x + 14, (container?.clientWidth ?? 0) - 220)}px"
-      style:top="{Math.max(hoverData.y - 60, 60)}px"
-    >
-      {#if hoverData.kind === 'lagrange'}
-        <!-- Lagrange-point tooltip — co-orbits with the parent planet,
-             so no orbital velocity. Title + physics blurb + (for the
-             Sun–Earth points) notable spacecraft hosting that point. -->
-        <div class="tt-eyebrow">{hoverData.lagrangeTitle}</div>
-        <div class="tt-line dim">{hoverData.lagrangeBlurb}</div>
-        {#if hoverData.lagrangeNotable}
-          <div class="tt-line dim">{hoverData.lagrangeNotable}</div>
-        {/if}
-      {:else if tooltipExpanded}
-        <!-- Lens-on expanded card. The cursor-tracking tooltip can't be
-             clicked-through (mouse leaves the planet immediately on
-             entry into the card area), so we drop the ScienceChip info
-             icons and surface only the live numbers. Users navigate to
-             /science via the lens banner instead. -->
-        <div class="tt-eyebrow">{hoverData.name.toUpperCase()}</div>
-        <div class="tt-row">
-          <span class="tt-key">{m.explore_tt_speed()}</span>
-          <span class="tt-val">{hoverData.velocityKms.toFixed(2)} km/s</span>
-        </div>
-        <div class="tt-row">
-          <span class="tt-key">{m.explore_tt_dist()}</span>
-          <span class="tt-val">
-            {hoverData.distanceAU.toFixed(3)} AU ·
-            {(hoverData.distanceAU * 8.317).toFixed(1)} l-min
-          </span>
-        </div>
-        <div class="tt-row">
-          <span class="tt-key">{m.explore_tt_ecc()}</span>
-          <span class="tt-val">{hoverData.eccentricity.toFixed(3)}</span>
-        </div>
-        <div class="tt-row">
-          <span class="tt-key">{m.explore_tt_incl()}</span>
-          <span class="tt-val">{hoverData.inclinationDeg.toFixed(1)}°</span>
-        </div>
-      {:else}
-        <div class="tt-line">{hoverData.velocity}</div>
-        <div class="tt-line dim">{hoverData.distance}</div>
-        <div class="tt-line dim">{hoverData.extras}</div>
-      {/if}
-    </div>
+    <HoverTooltip {hoverData} expanded={tooltipExpanded} {container} />
   {/if}
 </div>
 
@@ -3672,7 +1974,7 @@
 <DeepSkyPanel
   object={activeDeepSky}
   image={activeDeepSkyImage}
-  galleryHref="{base}/gallery/deep-sky"
+  galleryHref={localHref(`/gallery/deep-sky`)}
   open={deepSkyPanelOpen}
   onClose={() => exitDeepSkyFn?.()}
   onGateway={(hostId) => deepSkyGatewayFn?.(hostId)}
@@ -3746,7 +2048,7 @@
   mission={iconic.state.mission}
   open={iconic.state.panelOpen}
   onClose={() => iconic.reset()}
-  onFly={(id) => goto(`${base}/fly?mission=${id}`)}
+  onFly={(id) => goto(localHref(`/fly?mission=${id}`))}
 />
 
 <!-- Heliocentric scale ruler + zone panel (#357). Lower-left, always
@@ -3886,172 +2188,6 @@
     display: none;
   }
 
-  /* v2 scale ruler HUD (PRD-030 / RFC-032). Bottom-left, unobtrusive. */
-  /* #45 unified scale strip — one bottom-right box on every shell. Same slot the
-     old .scale-hud used (proven not to overlap the bottom control stack); the
-     picker no longer shares this corner, so nothing collides here now. */
-  .scale-strip {
-    position: absolute;
-    right: 12px;
-    bottom: 46px;
-    z-index: 6;
-    padding: 9px 11px;
-    background: rgba(6, 10, 22, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    backdrop-filter: blur(5px);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    color: #dde4ff;
-    pointer-events: none;
-    max-width: 260px;
-  }
-  .scale-strip.neighborhood {
-    border-color: rgba(78, 205, 196, 0.35);
-  }
-  /* Schematic shells (Milky Way … Cosmic Web): the honesty note + optional
-     Learn-more link, in the same box. Slate-accented to read as "not to scale". */
-  .scale-strip.schematic {
-    border-color: rgba(255, 255, 255, 0.18);
-    color: #cdd4e6;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-size: 11px;
-    line-height: 1.5;
-    pointer-events: auto; /* the Learn-more link is focusable */
-  }
-  .scale-schematic-size {
-    color: #9fb2cf;
-    font-size: 10px;
-    margin-bottom: 4px;
-  }
-  .scale-schematic-note {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 2px;
-  }
-  .scale-ladder {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 6px;
-  }
-  .scale-ladder .rung {
-    font-size: 9px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 1px 5px;
-    border-radius: 3px;
-    color: rgba(255, 255, 255, 0.35);
-    background: rgba(255, 255, 255, 0.04);
-  }
-  .scale-ladder .rung.active {
-    color: #04121a;
-    background: #4ecdc4;
-    font-weight: 700;
-  }
-  .scale-readout {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .scale-readout .primary {
-    font-size: 15px;
-    color: #fff;
-  }
-  .scale-readout .companion {
-    font-size: 11px;
-    color: #9fe8e2;
-  }
-  .scale-light {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.5);
-    margin-top: 2px;
-  }
-  .scale-bar-wrap {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    margin-top: 7px;
-  }
-  .scale-bar {
-    display: inline-block;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.8);
-    border-left: 1px solid rgba(255, 255, 255, 0.8);
-    border-right: 1px solid rgba(255, 255, 255, 0.8);
-    box-sizing: border-box;
-    min-width: 12px;
-  }
-  .scale-bar-label {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.7);
-  }
-  .scale-context {
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
-    margin-top: 6px;
-  }
-
-  /* Solar-system chrome hidden out in the stellar neighborhood. */
-  .context-hidden {
-    display: none !important;
-  }
-
-  /* v2 neighborhood layer toggles — bottom-left (solar chrome is hidden here). */
-  .sun-compass {
-    position: absolute;
-    bottom: 62px;
-    left: 14px;
-    z-index: 6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    pointer-events: none;
-    user-select: none;
-  }
-  .sc-dial {
-    position: relative;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 207, 143, 0.35);
-    background: radial-gradient(circle, rgba(10, 14, 26, 0.5), rgba(6, 10, 22, 0.3));
-    backdrop-filter: blur(4px);
-  }
-  .sc-needle {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 0;
-    height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-bottom: 19px solid #ffcf8f;
-    transform-origin: 50% 100%;
-    filter: drop-shadow(0 0 3px rgba(255, 207, 143, 0.6));
-    transition: transform 0.18s linear;
-  }
-  .sc-core {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    color: #ffcf8f;
-    text-shadow: 0 0 6px rgba(255, 207, 143, 0.7);
-  }
-  .sc-ly {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    letter-spacing: 1px;
-    color: rgba(255, 224, 190, 0.82);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  }
   /* .nb-hud chip-row styles removed 2026-09-11 — the last bespoke chip
      (mass–period) moved into the science-lens layer panel; WS-3 had
      already retired the rest. */
@@ -4089,1030 +2225,11 @@
   /* .nb-controls/.nb-chip removed 2026-09-11 — the black-hole curvature/time
      chips (their last consumer) moved into the science-lens layer panel. */
 
-  /* Slice 5 — Milky Way honesty badge (bottom-centre pill). */
-  .mw-badge {
-    position: absolute;
-    bottom: 26px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
-    padding: 6px 14px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #cdd4e6;
-    background: rgba(10, 14, 26, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    pointer-events: none;
-  }
-
-  /* Milky Way schematic → the /science overview article (S5 · our-galaxy). */
-  .mw-badge-link {
-    margin-left: 10px;
-    padding-left: 10px;
-    border-left: 1px solid rgba(255, 255, 255, 0.22);
-    color: #4ecdc4;
-    text-decoration: none;
-    pointer-events: auto;
-    white-space: nowrap;
-  }
-
-  .mw-badge-link:hover,
-  .mw-badge-link:focus-visible {
-    text-decoration: underline;
-  }
-
-  /* Slice 6 — physics-lens overlays (curvature note + time-dilation readout). */
-  .lens-note {
-    position: absolute;
-    bottom: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
-    max-width: 380px;
-    padding: 7px 14px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    line-height: 1.4;
-    text-align: center;
-    color: #cdd4e6;
-    background: rgba(10, 14, 26, 0.6);
-    border: 1px solid rgba(78, 205, 196, 0.3);
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    pointer-events: none;
-  }
-  .time-lens {
-    position: absolute;
-    top: 84px;
-    left: 12px;
-    z-index: 6;
-    width: 240px;
-    padding: 12px 14px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    background: rgba(8, 11, 20, 0.82);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    backdrop-filter: blur(8px);
-    pointer-events: none;
-  }
-  .time-lens .tl-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: #e9eefc;
-    margin-bottom: 8px;
-  }
-  .time-lens .tl-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-    font-size: 11px;
-    color: #9aa4bf;
-    margin-bottom: 4px;
-  }
-  .time-lens .tl-row b {
-    color: #4ecdc4;
-  }
-  .time-lens .tl-foot {
-    margin-top: 8px;
-    font-size: 10px;
-    line-height: 1.4;
-    color: #7a8299;
-  }
-
-  /* #45 top scale-navigator — one row under the nav: back · scale chip · reset.
-     Flush LEFT by default (neighborhood+ hide the solar-system control cluster, so
-     the top-left is free and the row sits exactly where the old breadcrumb did).
-     `top: 8px` lines it up with the mobile control row (.hud-top-mobile, top nav+8)
-     so they share a baseline. At the SOLAR SYSTEM scale the top-left is taken by
-     that cluster (2D / AR / SKY + layer chips), so the nav flips to flush RIGHT
-     (.at-solar) to clear it — no overlap with the SKY button. */
-  .scale-nav {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    z-index: 8;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    max-width: calc(100vw - 16px);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-  }
-  .scale-nav.at-solar {
-    left: auto;
-    right: 8px;
-  }
-  /* Shared square affordances flanking the chip (back ‹ / reset ⟲). Slate glass
-     to match the chip; generous tap target. */
-  .scale-back,
-  .scale-reset {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 34px;
-    min-height: 34px;
-    padding: 0 8px;
-    background: rgba(10, 14, 24, 0.62);
-    border: 1px solid rgba(154, 166, 189, 0.34);
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-    color: #c8d2e6;
-    font-family: inherit;
-    font-size: 16px;
-    line-height: 1;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .scale-back:hover,
-  .scale-back:focus-visible,
-  .scale-reset:hover,
-  .scale-reset:focus-visible {
-    background: rgba(154, 166, 189, 0.22);
-    border-color: rgba(154, 166, 189, 0.6);
-    color: #eaf1ff;
-    outline: none;
-  }
-
-  /* Compact the scale strip on phones and lift it ABOVE the two stacked bottom
-     bars (the Ruler/Controls/Missions drawer + the Scale/time controls, which
-     together occupy ~96px from the bottom edge) so it no longer overlaps them. */
-  @media (max-width: 767px) {
-    .scale-strip {
-      bottom: 104px;
-      padding: 7px 9px;
-      max-width: 190px;
-    }
-    .scale-readout .primary {
-      font-size: 13px;
-    }
-    .scale-back,
-    .scale-reset {
-      min-width: 44px;
-      min-height: 44px;
-    }
-  }
-
-  /* v2 anonymous-star tag — top-centre, dismissible. */
-  .anon-star {
-    position: absolute;
-    top: 64px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 6;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    max-width: min(92vw, 420px);
-    padding: 8px 10px 8px 12px;
-    background: rgba(6, 10, 22, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 6px;
-    backdrop-filter: blur(5px);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    color: #dde4ff;
-  }
-  .anon-title {
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
-    flex: 0 0 auto;
-  }
-  .anon-facts {
-    font-size: 12px;
-    color: #eaf6ff;
-    min-width: 0;
-  }
-  .anon-close {
-    flex: 0 0 auto;
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    padding: 2px 4px;
-    min-height: 28px;
-  }
-  .anon-close:hover {
-    color: #fff;
-  }
-
-  /* Warp flash overlay — a soft radial bloom that masks the boundary cut. */
-  .cross-flash {
-    position: absolute;
-    inset: 0;
-    z-index: 7;
-    pointer-events: none;
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(220, 235, 255, 0.55),
-      rgba(120, 180, 255, 0.12) 45%,
-      transparent 70%
-    );
-    animation: crossFlash 720ms ease-out forwards;
-  }
-  @keyframes crossFlash {
-    0% {
-      opacity: 0;
-    }
-    22% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  /* v2 Slice 4 — full-frame deep-sky immersion. Sits above the canvas (z 6),
-     below the warp flash (7) + HUD + panel. Fades in as the approach completes. */
-  .deep-sky-immersion {
-    position: absolute;
-    inset: 0;
-    z-index: 6;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 900ms ease-out;
-    background: #05070f;
-  }
-  .deep-sky-immersion.visible {
-    opacity: 1;
-  }
-  .deep-sky-immersion img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .ds-vignette {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse at 50% 45%,
-      transparent 42%,
-      rgba(3, 4, 12, 0.55) 82%,
-      rgba(3, 4, 12, 0.9) 100%
-    );
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .deep-sky-immersion {
-      transition: none;
-    }
-  }
-  .warp-caption {
-    position: absolute;
-    top: 38%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 8;
-    pointer-events: none;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(230, 240, 255, 0.92);
-    text-shadow: 0 0 12px rgba(120, 180, 255, 0.7);
-    white-space: nowrap;
-    animation: warpCaption 1800ms ease-out forwards;
-  }
-  @keyframes warpCaption {
-    0% {
-      opacity: 0;
-      transform: translate(-50%, calc(-50% + 8px));
-    }
-    18% {
-      opacity: 1;
-      transform: translate(-50%, -50%);
-    }
-    80% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
   :global(.explore canvas) {
     display: block;
   }
-  /* PRD-023 Slice E.2 — Earth comparison ghost. Bottom-right corner.
-     #342 Phase 30 — mobile-first: phone values are the defaults below;
-     desktop values get layered back at @min-width: 601. */
-  .earth-compare {
-    position: fixed;
-    bottom: 8px;
-    left: 8px;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 4px 8px 4px 4px;
-    background: rgba(8, 10, 22, 0.6);
-    border: 1px solid rgba(75, 156, 211, 0.25);
-    border-radius: 6px;
-    backdrop-filter: blur(4px);
-    pointer-events: auto;
-    cursor: pointer;
-    color: inherit;
-    text-align: left;
-    transition:
-      border-color 120ms,
-      background 120ms;
-    /* Width-aligned to the orbit ruler that sits directly above
-       (#357 — 2026-06-22 user direction "expand that reference panel
-       to match width of this one"). 188 px is the ruler's default
-       desktop width; box-sizing ensures padding stays inside. */
-    box-sizing: border-box;
-    min-width: 188px;
-  }
-  .earth-compare:hover,
-  .earth-compare:focus-visible {
-    border-color: rgba(75, 156, 211, 0.7);
-    background: rgba(12, 16, 32, 0.78);
-    outline: none;
-  }
-  .earth-compare img {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: block;
-  }
-  .earth-compare-label {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    letter-spacing: 1.4px;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 1.4;
-  }
-  .earth-compare-label .ratio {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 10px;
-    letter-spacing: 1.2px;
-  }
   /* Tactical Scan overlay styles now live in TacticalScan.svelte
      (shared with the surface routes, #382). */
-  /* Mobile "Scan" drawer tab body (#49) — stacks the inline tactical scan;
-     mirrors the surface route's .mobile-scan. */
-  .mobile-scan {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  /* HUD controls cluster — top-left, opposite the detail panel.
-     Two rows (mode toggles + visibility chips). Stays under the nav
-     but always above the canvas. Pinned to the left so it never
-     collides with the right-drawer detail panel on desktop.
-     Phone (≤767 px): hidden — MobileDrawerGroup replaces it.
-     @min-width: 501 + @min-width: 769 layer desktop spacing + chip
-     stretch column back. */
-  .hud-controls {
-    position: fixed;
-    /* Mobile: tucked at left:8 / top:nav+8 / gap:6 to fit a 375 px
-       viewport. Relaxed at @min-width: 501. */
-    top: calc(var(--nav-height) + 8px);
-    left: 8px;
-    /* Above .time-controls (z-index 40) so the iconic-mission legend that
-       hangs off this cluster sits over the time scrubber, not under it.
-       Stays below the sizes modal / backdrop (60/61). */
-    z-index: 45;
-    display: none;
-    flex-direction: column;
-    /* Mobile: flex-start so each row takes its natural width (the chip
-       row wraps; the toggle row hugs left). align-items: stretch is
-       restored at @min-width: 769 so the chip column inherits the
-       top-row's computed width — 2026-06-06 user direction: "resize
-       those 4 filter chips to fit new width of remaining 2 buttons
-       on top". */
-    align-items: flex-start;
-    gap: 6px;
-    pointer-events: none; /* children re-enable */
-  }
-  .ctrl-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    pointer-events: auto;
-  }
-  .ctrl-row.chips {
-    /* Mobile: chip row is a single horizontally-scrollable line (A3) so it
-       never wraps to a second row and crowds the top edge — even when the
-       science lens adds its HR/Light-cone chips. At @min-width: 769 the rail
-       returns to a vertical column matching the toggle row's stretch width. */
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    max-width: calc(100vw - 24px);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .ctrl-row.chips::-webkit-scrollbar {
-    display: none;
-  }
-  .toggle {
-    min-width: 44px;
-    min-height: 44px;
-    /* Mobile: 12 px font, 0/10 padding. Desktop bumps to 13 / 0 14. */
-    padding: 0 10px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
-    color: #dde4ff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms;
-  }
-  .toggle:hover,
-  .toggle:focus-visible {
-    border-color: #4466ff;
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
-  }
-
-  /* Layer chips — always-visible visibility toggles. Inactive chips
-     are dim outlines; active chips are filled with the teal accent
-     so the on-state is obvious. 44 px tall preserves the ADR-018
-     touch-target floor.
-     #342 Phase 30 — mobile-first: phone values default; desktop
-     bumps padding/font/letter-spacing at @min-width: 501 and
-     width:100% + chip-stretch column at @min-width: 769. */
-  .chip {
-    min-height: 44px;
-    /* Mobile: chips flow side-by-side, natural width. width: 100%
-       (chip-stretch column) reinstated at @min-width: 769. */
-    width: auto;
-    min-width: 110px;
-    padding: 0 8px;
-    background: rgba(8, 10, 22, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.55);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    letter-spacing: 1.2px;
-    text-align: center;
-    border-radius: 999px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .chip:hover,
-  .chip:focus-visible {
-    color: #fff;
-    border-color: rgba(78, 205, 196, 0.6);
-    outline: none;
-  }
-  .chip.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: rgba(78, 205, 196, 0.7);
-    color: #4ecdc4;
-  }
-  .chip.active:hover,
-  .chip.active:focus-visible {
-    color: #fff;
-    background: rgba(78, 205, 196, 0.32);
-    border-color: #4ecdc4;
-  }
-
-  /* Time playback mini-panel (#351 Layer 1) — pinned bottom-left, styled
-     to match the PLANET SCALES button (.earth-compare): same translucent
-     navy card, blue hairline border, blur, and matching height. Holds a
-     play toggle + a segmented 1×/10×/100× day-per-second speed control.
-     Mobile-first: STACKED directly above the scales card (no room to sit
-     beside it on a 375 px viewport). At @min-width: 601 it moves to sit
-     side-by-side, right of the (larger) scales card. */
-  .time-controls {
-    position: fixed;
-    /* Stacked above .earth-compare (bottom:8 + its ~36px height + gap). */
-    bottom: 50px;
-    left: 8px;
-    /* Above the global .site-footer (z-index 35): on narrow mobile the
-       footer's wide link strip (Gallery|Credits|…|ABOUT) overlaps this
-       bottom-left control and intercepts taps on the reset / play
-       buttons. The interactive control must out-stack the footer. */
-    z-index: 40;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px 6px;
-    background: rgba(8, 10, 22, 0.6);
-    border: 1px solid rgba(75, 156, 211, 0.25);
-    border-radius: 6px;
-    backdrop-filter: blur(4px);
-    pointer-events: auto;
-  }
-  /* Touch: the two things this 50px clears — the footer and .earth-compare —
-     are both hidden on touch, so the scale strip drops to the bottom edge and
-     the drawer (--mcd-bottom) sits just above it, closing the gap the removed
-     footer used to fill. Desktop keeps the 50px stack. */
-  :global(html[data-touch]) .time-controls {
-    bottom: max(8px, env(safe-area-inset-bottom, 0px));
-  }
-  /* Play toggle — overrides .toggle's 44px floor to match the panel's
-     footprint (consistent with .earth-compare, which also runs a sub-44
-     affordance in this bottom-left zone). */
-  .time-controls .play-btn {
-    min-width: 32px;
-    min-height: 32px;
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    line-height: 1;
-    border-radius: 5px;
-    background: rgba(15, 18, 35, 0.55);
-    border: 1px solid rgba(75, 156, 211, 0.3);
-    color: #cfe0ff;
-  }
-  .time-controls .play-btn:hover,
-  .time-controls .play-btn:focus-visible {
-    border-color: #4ecdc4;
-    background: rgba(20, 26, 50, 0.85);
-    color: #fff;
-  }
-  .time-controls .play-btn[aria-pressed='true'] {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
-  }
-  /* Segmented speed control — one rounded track, hairline dividers, the
-     active step glows teal. */
-  .speed-group {
-    display: flex;
-    align-items: stretch;
-    pointer-events: auto;
-    border: 1px solid rgba(75, 156, 211, 0.3);
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  .speed-pill {
-    min-width: 32px;
-    min-height: 32px;
-    padding: 0 10px;
-    border: none;
-    border-right: 1px solid rgba(75, 156, 211, 0.18);
-    background: rgba(15, 18, 35, 0.4);
-    color: rgba(207, 224, 255, 0.55);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      color 120ms;
-  }
-  .speed-pill:last-child {
-    border-right: none;
-  }
-  .speed-pill:hover,
-  .speed-pill:focus-visible {
-    color: #fff;
-    background: rgba(20, 26, 50, 0.7);
-    outline: none;
-  }
-  .speed-pill.active {
-    background: rgba(78, 205, 196, 0.22);
-    color: #4ecdc4;
-    box-shadow: inset 0 0 8px rgba(78, 205, 196, 0.18);
-  }
-  /* Date readout (#351 Layer 2-B) — non-interactive chip showing the
-     running simulated date, in the panel's mono/teal language. */
-  .time-date {
-    display: inline-flex;
-    align-items: center;
-    /* Right-align the date in a fixed-width box so the chip (and the
-       reset button beside it) never shift as the date ticks (#351
-       Layer 2-B). Sized for the widest double-digit string. */
-    justify-content: flex-end;
-    text-align: right;
-    min-width: 108px;
-    min-height: 32px;
-    padding: 0 9px;
-    border: 1px solid rgba(75, 156, 211, 0.25);
-    border-radius: 5px;
-    background: rgba(15, 18, 35, 0.35);
-    color: rgba(207, 224, 255, 0.82);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-  }
-  /* Reset-to-today — same icon-button footprint as play/pause (inherits
-     .time-controls .play-btn), teal tint, slightly larger glyph so the ⟲
-     reads clearly. Defined after .play-btn so it wins the font-size. */
-  .time-controls .reset-btn {
-    font-size: 20px;
-    color: #4ecdc4;
-  }
-
-  /* Compact trajectory on/off inside the Iconic Missions drawer (mobile). */
-  .iconic-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 8px;
-    padding: 4px 10px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    color: rgba(207, 224, 255, 0.6);
-    background: rgba(15, 18, 35, 0.55);
-    border: 1px solid rgba(75, 156, 211, 0.3);
-    border-radius: 12px;
-    cursor: pointer;
-  }
-  .iconic-toggle.active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
-  }
-  .iconic-toggle-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(207, 224, 255, 0.25);
-    flex-shrink: 0;
-  }
-  .iconic-toggle-dot.on {
-    background: #4ecdc4;
-    box-shadow: 0 0 6px rgba(78, 205, 196, 0.7);
-  }
-  .paths-legend {
-    pointer-events: auto;
-    /* Hidden by default on phones; shown at @min-width: 769 (desktop
-       always-on) and inside the MobileDrawerGroup via :global below. */
-    display: none;
-    flex-direction: column;
-    gap: 2px;
-    padding: 8px 10px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
-    border-radius: 4px;
-    /* Cap height so the 18-row roster doesn't spill off the bottom on
-       short viewports (laptop 13" landscape ≈ 720 px; chips row above
-       eats ~140 px). Scroll inside the panel when it exceeds the
-       available chrome-budget instead of clipping invisibly past the
-       footer. The viewport units leave room for nav + the chips
-       cluster + a 24 px breathing tail at the bottom. */
-    max-height: calc(100vh - var(--nav-height, 60px) - 180px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-  }
-  /* Inside the mobile drawer the legend flows naturally; no fixed
-     positioning needed — the drawer handles its own scroll. */
-  :global(.mdg-body) .paths-legend {
-    display: flex;
-  }
-  .paths-legend::-webkit-scrollbar {
-    width: 6px;
-  }
-  .paths-legend::-webkit-scrollbar-thumb {
-    background: rgba(68, 102, 255, 0.5);
-    border-radius: 3px;
-  }
-  /* Single-line row — name + logos + year. Slightly more compact
-     than the pre-tagline original (44 px → 36 px min-height) per
-     2026-06-17 user feedback; the "why it's iconic" copy lives in
-     the .paths-legend-tagline strip above so individual rows stay
-     stable-width regardless of tagline length. */
-  .paths-legend-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: none;
-    border: none;
-    color: #dde4ff;
-    padding: 5px 6px;
-    border-radius: 3px;
-    cursor: pointer;
-    text-align: left;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    min-height: 36px;
-    width: 100%;
-  }
-  /* Hovered-mission tagline strip. Always rendered (with a placeholder
-     when no row is hovered) so the legend's vertical footprint is
-     stable; only the strip's text changes. Italic + dim by default,
-     full-opacity when a row is hovered. Sized generously (2026-06-17
-     user note: "text is so small for description I cannot read, be
-     generous and use few rows if needed there somehow") — 13.5 px
-     italic Crimson Pro with 1.45 line-height, min-height reserves
-     ~3 lines so short and long taglines both render without a
-     vertical layout shift. */
-  .paths-legend-tagline {
-    margin: 4px 0 8px;
-    padding: 8px 8px 10px;
-    font-family: 'Crimson Pro', 'Space Mono', serif;
-    font-style: italic;
-    font-size: 13.5px;
-    line-height: 1.45;
-    color: rgba(221, 228, 255, 0.78);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    min-height: 76px;
-    background: rgba(8, 10, 22, 0.4);
-    border-radius: 3px;
-  }
-  .paths-legend-row:hover,
-  .paths-legend-row:focus-visible,
-  /* is-hovered mirrors :hover but is driven by iconic.state.hoveredId, so
-     hovering a trajectory in the 3D scene highlights its legend row too
-     (reverse of row-hover → arc highlight). #306 follow-up. */
-  .paths-legend-row.is-hovered {
-    background: rgba(68, 102, 255, 0.15);
-    color: #fff;
-    outline: none;
-  }
-  .paths-legend-row.is-selected {
-    background: rgba(68, 102, 255, 0.28);
-    color: #fff;
-    box-shadow: inset 2px 0 0 rgba(140, 170, 255, 0.95);
-  }
-  .paths-legend-row.is-selected .logos img {
-    opacity: 1;
-    filter: none;
-  }
-  .paths-legend-row.is-selected .year {
-    color: rgba(255, 255, 255, 0.95);
-  }
-  .paths-legend-why {
-    display: block;
-    padding: 4px 6px 6px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(221, 228, 255, 0.65);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-  }
-  .paths-legend-why:hover,
-  .paths-legend-why:focus-visible {
-    color: #fff;
-    background: rgba(68, 102, 255, 0.12);
-    outline: none;
-  }
-  .paths-legend-row .swatch {
-    display: inline-block;
-    width: 18px;
-    height: 3px;
-    border-radius: 2px;
-    flex-shrink: 0;
-  }
-  .paths-legend-row .name {
-    flex: 1;
-  }
-  .paths-legend-row .logos {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    flex-shrink: 0;
-    margin-left: 6px;
-  }
-  .paths-legend-row .logos img {
-    height: 14px;
-    width: auto;
-    max-width: 24px;
-    opacity: 0.7;
-    filter: grayscale(0.4);
-    object-fit: contain;
-  }
-  .paths-legend-row:hover .logos img,
-  .paths-legend-row:focus-visible .logos img,
-  .paths-legend-row.is-hovered .logos img {
-    opacity: 1;
-    filter: none;
-  }
-  .paths-legend-row .year {
-    color: rgba(221, 228, 255, 0.55);
-    font-size: 11px;
-    letter-spacing: 0.02em;
-    margin-left: 8px;
-  }
-  .paths-legend-row:hover .year,
-  .paths-legend-row:focus-visible .year,
-  .paths-legend-row.is-hovered .year {
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  /* ─── ≥ 501 px — relax phone-tight cluster spacing ─────────────── */
-  @media (min-width: 501px) {
-    .hud-controls {
-      left: 16px;
-      top: calc(var(--nav-height) + 12px);
-      gap: 8px;
-    }
-    .toggle {
-      padding: 0 14px;
-      font-size: 13px;
-    }
-    .chip {
-      padding: 0 10px;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-    }
-  }
-
-  /* ─── ≥ 601 px — overlays + earth-compare desktop sizing ───────── */
-  @media (min-width: 601px) {
-    .earth-compare {
-      bottom: 16px;
-      left: 16px;
-      padding: 6px 10px 6px 6px;
-    }
-    .earth-compare img {
-      width: 32px;
-      height: 32px;
-    }
-    /* Desktop: unstack — sit side-by-side, right of the reference card
-       (left:16 + width:188 → right edge 204). Add a 5px gap (matching the
-       scrubber's internal button `gap`) so the two boxes don't kiss edges
-       (2026-06-28 user direction "put some minimal spacing in between, like
-       spacing between buttons inside time scrubber"). */
-    .time-controls {
-      bottom: 16px;
-      left: 209px;
-    }
-  }
-
-  /* ─── ≥ 769 px — chip-stretch column + always-on paths legend ──── */
-  @media (hover: hover) and (pointer: fine) {
-    .paths-legend {
-      display: flex;
-      /* position: absolute, anchored to the fixed-positioned
-         .hud-controls parent. Removed from the flex-column flow so
-         its intrinsic content width can no longer drive the chip
-         column wider via the parent's align-items: stretch.
-         top:100% places it just below the in-flow children (toggle
-         row + chip column). (2026-06-17 iteration 2: align-self
-         + width was insufficient — the legend still expanded the
-         flex container's natural width because flex items
-         participate in max-content sizing. Absolute positioning
-         fully decouples.) */
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: auto;
-      bottom: auto;
-      margin-top: 8px;
-      width: 280px;
-      box-sizing: border-box;
-      max-height: calc(100vh - var(--nav-height, 60px) - 220px);
-      z-index: 36;
-    }
-    .ctrl-row.chips {
-      /* Layer chips stack vertically so their on/off state reads as a
-         compact left-edge column rather than a wide horizontal strip.
-         Individual chips set width: 100% so they stretch to match the
-         top toggle row via .hud-controls align-items: stretch. */
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-items: stretch;
-      max-width: none;
-    }
-    .hud-controls {
-      display: flex;
-      align-items: stretch;
-    }
-    .chip {
-      width: 100%;
-    }
-  }
-
-  .sizes-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(2, 4, 12, 0.78);
-    backdrop-filter: blur(4px);
-    z-index: 60;
-    border: 0;
-    cursor: pointer;
-    /* Reset button defaults so it behaves as a click target only. */
-    padding: 0;
-    margin: 0;
-  }
-  .sizes-card {
-    position: fixed;
-    z-index: 61;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(8, 10, 22, 0.96);
-    border: 1px solid rgba(68, 102, 255, 0.4);
-    border-radius: 8px;
-    padding: 18px 18px 14px;
-    width: min(640px, calc(100vw - 48px));
-    max-height: calc(100vh - 48px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
-  }
-  .sizes-close {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    background: transparent;
-    border: 0;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
-  }
-  .sizes-close:hover,
-  .sizes-close:focus-visible {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.06);
-    outline: none;
-  }
-  .sizes-canvas-wrap {
-    width: 100%;
-    /* The diorama renders Jupiter at maxVR ≈ 70 px tall; total
-       content fills ~320 px (header + bodies + 2 label rows + source).
-       A rectangular 16:9-ish frame avoids the bottom-half emptiness
-       that came with the previous 540 px container. */
-    aspect-ratio: 16 / 7;
-    max-height: calc(100vh - 110px);
-  }
-  .sizes-canvas-wrap :global(canvas) {
-    width: 100%;
-    height: 100%;
-  }
-
-  .tooltip {
-    position: absolute;
-    z-index: 24;
-    min-width: 170px;
-    pointer-events: none;
-    background: rgba(8, 10, 22, 0.92);
-    border: 1px solid rgba(68, 102, 255, 0.5);
-    border-radius: 4px;
-    padding: 8px 12px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    backdrop-filter: blur(6px);
-  }
-  /* Lens-on expanded card: gold border (matches the lens family) +
-     pointer-events enabled so users can click the science chips
-     into /science. */
-  .tooltip.expanded {
-    pointer-events: auto;
-    min-width: 220px;
-    border-color: rgba(255, 200, 80, 0.6);
-    padding: 10px 12px 8px;
-  }
-  .tt-line {
-    font-size: 9px;
-    line-height: 1.5;
-    color: rgba(230, 235, 255, 0.85);
-  }
-  .tt-line.dim {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 8px;
-  }
-  .tt-eyebrow {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 2px;
-    color: rgba(255, 200, 80, 0.92);
-    margin-bottom: 6px;
-    border-bottom: 1px solid rgba(255, 200, 80, 0.18);
-    padding-bottom: 4px;
-  }
-  .tt-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
-    font-size: 9px;
-    line-height: 1.55;
-  }
-  .tt-row + .tt-row {
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
-    padding-top: 2px;
-  }
-  .tt-key {
-    color: rgba(255, 255, 255, 0.55);
-    letter-spacing: 1px;
-    font-size: 8px;
-    display: inline-flex;
-    align-items: baseline;
-  }
-  .tt-val {
-    color: rgba(255, 255, 255, 0.92);
-  }
 
   /* Hidden tour-anchor buttons (PRD-016 §S11 / RFC-019 §12). Visually
      offscreen but click()-able so the audio executor can drive planet
@@ -5167,21 +2284,6 @@
   .tour-anchors button {
     pointer-events: auto;
   }
-  /* FB5 — controls drawer: chips wrap two-per-row inside the full-width
-     accordion panel. flex-grow lets a lone chip (the Iconic-Missions PATHS
-     toggle, which lives in its own drawer) stretch to full width, while the
-     four Controls chips settle into a tidy 2x2 grid. Scoped to .mdg-body. */
-  @media (hover: none), (pointer: coarse) {
-    :global(.mdg-body) .ctrl-row.chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    :global(.mdg-body) .ctrl-row.chips .chip {
-      flex: 1 1 calc(50% - 3px);
-      text-align: center;
-    }
-  }
 
   /* Desktop ruler wrapper — hidden on mobile (drawer replaces it). */
   .ruler-desktop-only {
@@ -5213,105 +2315,6 @@
     /* FB4 — the drawer tab already reads ORBIT RULER; drop the inner title. */
     :global(.mdg-body .ruler-title) {
       display: none;
-    }
-  }
-
-  /* FB2 — mobile-only top cluster: 2D/3D toggle + Reset View, mirroring the
-     desktop .hud-controls top-left corner (.hud-controls itself is desktop-only). */
-  .hud-top-mobile {
-    display: none;
-  }
-  @media (hover: none), (pointer: coarse) {
-    .hud-top-mobile {
-      display: flex;
-      position: fixed;
-      top: calc(var(--nav-height) + 8px);
-      left: 8px;
-      gap: 6px;
-      z-index: 45;
-    }
-  }
-
-  /* Compact REFERENCES button inside .time-controls — mobile only. */
-  .earth-compact {
-    display: none;
-    height: 32px;
-    padding: 2px 9px 2px 2px;
-    background: rgba(15, 18, 35, 0.55);
-    border: 1px solid rgba(75, 156, 211, 0.3);
-    border-radius: 16px;
-    cursor: pointer;
-    align-items: center;
-    gap: 5px;
-    flex-shrink: 0;
-    color: inherit;
-  }
-  .earth-compact-label {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 0.5px;
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.82);
-    white-space: nowrap;
-  }
-  .earth-compact img {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: block;
-  }
-  .earth-compact:hover,
-  .earth-compact:focus-visible {
-    border-color: rgba(75, 156, 211, 0.7);
-    outline: none;
-  }
-  @media (hover: none), (pointer: coarse) {
-    .earth-compact {
-      display: flex;
-    }
-    /* Hide standalone .earth-compare on mobile — affordance lives inside
-       .time-controls as .earth-compact. */
-    .earth-compare {
-      display: none;
-    }
-  }
-
-  /* Mobile speed slot — single pill showing current speed, reveals a
-     stacked popover above on tap. */
-  .speed-slot {
-    display: none;
-    position: relative;
-  }
-  .speed-popover {
-    position: absolute;
-    bottom: calc(100% + 4px);
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    background: rgba(8, 10, 22, 0.95);
-    border: 1px solid rgba(75, 156, 211, 0.35);
-    border-radius: 5px;
-    padding: 3px;
-    min-width: 48px;
-    z-index: 50;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  }
-  .speed-popover .speed-pill {
-    border-right: none;
-    border-radius: 3px;
-  }
-  @media (hover: none), (pointer: coarse) {
-    .speed-slot {
-      display: block;
-    }
-    .speed-desktop-pill {
-      display: none;
-    }
-    /* Let the tap-to-reveal popover escape the desktop pill-group's
-       overflow:hidden clip (that clip only exists for the segmented look). */
-    .speed-group {
-      overflow: visible;
     }
   }
 </style>

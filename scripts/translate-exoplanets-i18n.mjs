@@ -1,53 +1,27 @@
 /**
  * Exoplanet overlay translator (/explore v2 "Known Universe", Slice 2).
  *
- * Each en-US overlay in `i18n-src/en-US/universe/named-stars/<id>.json` has the
- * shape { fact, bio, cultural, links:[{l,u,t}], photo?:{src,kind} }. Only the
- * three prose fields are translatable; `links`, `photo`, and every url/tier are
- * preserved verbatim. Structure is reassembled in code so nothing else drifts.
+ * Each en-US overlay in `i18n-src/en-US/universe/exoplanets/<id>.json` has the
+ * shape { fact, bio, links:[{l,u,t}] }. `fact` and `bio` are translated; `links`
+ * and every url/tier are preserved verbatim. Structure is reassembled in code so
+ * nothing else drifts.
  *
  * Re-runs are safe: existing non-empty locale files are skipped.
  *
- * Run: set -a; source .env; set +a; node scripts/translate-named-stars-i18n.mjs [--only=<id>] [--locales=de,fr]
+ * Run: set -a; source .env; set +a; node scripts/translate-exoplanets-i18n.mjs [--only=<id>] [--locales=de,fr]
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
+import { TRANSLATED_LOCALES } from './lib/locales.mjs';
+import { LANGUAGE_NAMES } from './lib/translate-quality.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const EN = path.join(ROOT, 'i18n-src', 'en-US', 'universe', 'exoplanets');
 
-const ALL_LOCALES = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
-const NAMES = {
-  ar: 'Modern Standard Arabic',
-  de: 'German',
-  es: 'European Spanish',
-  fr: 'French',
-  hi: 'Hindi',
-  it: 'Italian',
-  ja: 'Japanese',
-  ko: 'Korean',
-  nl: 'Dutch',
-  'pt-BR': 'Brazilian Portuguese',
-  ru: 'Russian',
-  'sr-Cyrl': 'Serbian (Cyrillic)',
-  'zh-CN': 'Simplified Chinese',
-};
+const ALL_LOCALES = TRANSLATED_LOCALES;
+const NAMES = LANGUAGE_NAMES;
 
 const argOnly = (process.argv.find((a) => a.startsWith('--only=')) || '').split('=')[1];
 const argLoc = (process.argv.find((a) => a.startsWith('--locales=')) || '').split('=')[1];

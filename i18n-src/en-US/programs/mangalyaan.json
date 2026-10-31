@@ -28,5 +28,11 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of Mangalyaan is that constraint, embraced as discipline, can produce results that money alone does not. India reached Mars on the first try not despite its small budget but partly because of the simplicity that budget forced — a focused spacecraft, proven hardware, and a refusal to over-complicate. Frugality made the mission both affordable and, in its very leanness, robust." },
     { "type": "prose", "md": "The deeper lesson is that a first-try success at Mars is as much about humility as ambition. The graveyard of failed Mars missions is full of well-funded programs that reached too far; ISRO reached exactly as far as it could reliably manage, proved that, and let the mission exceed its own modest goals. Aiming precisely, rather than aiming high, is sometimes how the hardest firsts are won." }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — the destination",
+    "/fleet?focus=mangalyaan": "Fleet — the Mars Orbiter Mission",
+    "/programs/chandrayaan": "Chandrayaan — India's Moon program",
+    "/mars?site=mangalyaan": "Mangalyaan in Mars orbit"
+  }
 }

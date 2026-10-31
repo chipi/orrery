@@ -27,5 +27,9 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of New Horizons is that some chances come once, and readiness is everything. There was no do-over at Pluto: a single flyby, executed by a machine too far away to help, after nearly a decade of travel. Missions built around one irreversible moment succeed or fail on the discipline of preparing for it — and New Horizons is proof that a small, focused, well-drilled effort can nail the one shot it gets." },
     { "type": "prose", "md": "The deeper lesson is to distrust the assumption that distant and old means dead. Everything about Pluto was expected to be frozen and finished; almost nothing was. Again and again the outer solar system has punished the intuition that cold, small, and far from the Sun add up to lifeless — a reminder that the surest way to be surprised is to decide in advance that a place has nothing to show you." }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Pluto in the 3D explorer",
+    "/gallery/deep-sky": "Pluto, in the Deep-Sky gallery"
+  }
 }

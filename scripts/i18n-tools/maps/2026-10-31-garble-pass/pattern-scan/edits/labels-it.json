@@ -1,0 +1,236 @@
+[
+  {
+    "rel": "planets/didymos.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Binary primary",
+    "new": "Asteroide · Vicino alla Terra · Tipo S · Primario del sistema binario"
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "type",
+    "old": "Asteroid · Moonlet · Kinetic-impact target",
+    "new": "Asteroide · Satellite minore · Bersaglio di impatto cinetico"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "type",
+    "old": "Asteroid · Main-belt · C-type",
+    "new": "Asteroide · Fascia principale · Tipo C"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · C-type",
+    "new": "Asteroide · Troiano di Giove · L4 · Tipo C"
+  },
+  {
+    "rel": "planets/itokawa.json",
+    "at": "type",
+    "old": "Asteroid · Near-Earth · S-type · Rubble pile",
+    "new": "Asteroide · Vicino alla Terra · Tipo S · Cumulo di detriti"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type · Slow rotator",
+    "new": "Asteroide · Troiano di Giove · L4 · Tipo D · Rotatore lento"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · Binary secondary",
+    "new": "Asteroide · Troiano di Giove · L5 · Secondario del sistema binario"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · D-type",
+    "new": "Asteroide · Troiano di Giove · L4 · Tipo D"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L5 · P-type · Binary primary",
+    "new": "Asteroide · Troiano di Giove · L5 · Tipo P · Primario del sistema binario"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "type",
+    "old": "Asteroid · Jupiter Trojan · L4 · P-type",
+    "new": "Asteroide · Troiano di Giove · L4 · Tipo P"
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Vettore pesante, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/atlas-v-541.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Vettore medio, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/falcon-heavy.json",
+    "at": "type",
+    "old": "Heavy-lift, partially reusable",
+    "new": "Vettore pesante, parzialmente riutilizzabile"
+  },
+  {
+    "rel": "rockets/h-iia.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Vettore medio, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/h3.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Vettore pesante, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/long-march-3b.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Vettore medio, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/long-march-5.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Vettore pesante, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/lvm3.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Vettore pesante, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/proton-m.json",
+    "at": "type",
+    "old": "Heavy-lift, expendable",
+    "new": "Vettore pesante, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/pslv-xl.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Vettore medio, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/sls-block-1.json",
+    "at": "type",
+    "old": "Super-heavy, expendable",
+    "new": "Vettore superpesante, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "type",
+    "old": "Medium-lift, expendable",
+    "new": "Vettore medio, non riutilizzabile"
+  },
+  {
+    "rel": "rockets/starship.json",
+    "at": "type",
+    "old": "Super-heavy, fully reusable",
+    "new": "Vettore superpesante, interamente riutilizzabile"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "type",
+    "old": "Home · Orbita di riferimento",
+    "new": "Casa · Orbita di riferimento"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "type",
+    "old": "Gas giant · Rings",
+    "new": "Gigante gassoso · Anelli"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.1.l",
+    "old": "DART mission (NASA)",
+    "new": "Missione DART (NASA)"
+  },
+  {
+    "rel": "planets/didymos.json",
+    "at": "links.2.l",
+    "old": "Hera mission (ESA)",
+    "new": "Missione Hera (ESA)"
+  },
+  {
+    "rel": "planets/donaldjohanson.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missione Lucy (NASA)"
+  },
+  {
+    "rel": "planets/eurybates.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missione Lucy (NASA)"
+  },
+  {
+    "rel": "planets/leucus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missione Lucy (NASA)"
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missione Lucy (NASA)"
+  },
+  {
+    "rel": "planets/orus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missione Lucy (NASA)"
+  },
+  {
+    "rel": "planets/patroclus.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missione Lucy (NASA)"
+  },
+  {
+    "rel": "planets/polymele.json",
+    "at": "links.1.l",
+    "old": "Lucy mission (NASA)",
+    "new": "Missione Lucy (NASA)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "Saturn (NASA Solar System Exploration)",
+    "new": "Saturno (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.3.l",
+    "old": "Rings of Saturn — Wikipedia",
+    "new": "Anelli di Saturno – Wikipedia"
+  },
+  {
+    "rel": "planets/arrokoth.json",
+    "at": "links.3.l",
+    "old": "Renaming 2014 MU69 → Arrokoth (NASA, 2019-11-12)",
+    "new": "Ridenominazione di 2014 MU69 in Arrokoth (NASA, 2019-11-12)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.3.l",
+    "old": "DAVINCI + VERITÀ (NASA)",
+    "new": "DAVINCI + VERITAS (NASA)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.2.l",
+    "old": "Programma Venere - Wikipedia",
+    "new": "Programma Venera – Wikipedia"
+  }
+]

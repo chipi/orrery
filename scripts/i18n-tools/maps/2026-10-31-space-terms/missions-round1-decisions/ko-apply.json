@@ -1,0 +1,428 @@
+[
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.1.note",
+    "old": "2025-03-01. 궤도를 지구 재만남 방향으로 구부린다.",
+    "new": "2025-03-01. 궤적을 지구 재만남 방향으로 구부린다."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.note",
+    "old": "화성 전이(3.61 km/s ∆v)가 MSL을 태양중심 화성 방향 궤도로 보낸다.",
+    "new": "화성 전이(3.61 km/s ∆v)가 MSL을 태양중심 화성 방향 궤적으로 보낸다."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.3.note",
+    "old": "최종 EDL 전 수정; 궤도는 게일 분화구 착륙 타원을 목표로 한다.",
+    "new": "최종 EDL 전 수정; 궤적은 게일 분화구 착륙 타원을 목표로 한다."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "old": "지구 이행 주입 — Starship이 화성 표면에서 이륙해 지구 귀환 궤도로 연소.",
+    "new": "지구 이행 주입 — Starship이 화성 표면에서 이륙해 지구 귀환 궤적으로 연소."
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "delta_v",
+    "old": "~13.7 km/s (금성 중력 보조 궤도)",
+    "new": "~13.7 km/s (금성 중력 보조 궤적)"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "events.1.note",
+    "old": "1974년 2월 5일에 최단 거리 5768km; 우주 역사상 처음으로 의도적인 중력 보조 궤도를 사용한 비행.",
+    "new": "1974년 2월 5일에 최단 거리 5768km; 우주 역사상 처음으로 의도적인 중력 보조 궤적을 사용한 비행."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "old": "Apollo 13은 프라 마우로 고지를 목표로 한 세 번째 유인 달 착륙 임무였다. 비행 55시간 54분째에 Service Module의 산소 탱크가 파열되어 Command-Service Module의 전력 및 생명 유지 시스템이 큰 손상을 입었다. 착륙이 취소되자 승무원 — 제임스 러벨, Jack Swigert, Fred Haise — 은 CSM의 전원을 끄고 Lunar Module Aquarius를 구명정 삼아 옮겨 탔으며, LM의 하강 엔진으로 근월점 통과 2시간 뒤 연소를 실시해 빠른 자유 귀환 궤도에 올랐다. 1970-04-15에 고도 254 km로 달을 스쳐 지나갔고, 1970-04-17에 남태평양에 무사히 착수했다. 이 임무는 지금도 규율 잡힌 실시간 엔지니어링 임기응변의 본보기로 연구된다.",
+    "new": "Apollo 13은 프라 마우로 고지를 목표로 한 세 번째 유인 달 착륙 임무였다. 비행 55시간 54분째에 Service Module의 산소 탱크가 파열되어 Command-Service Module의 전력 및 생명 유지 시스템이 큰 손상을 입었다. 착륙이 취소되자 승무원 — 제임스 러벨, Jack Swigert, Fred Haise — 은 CSM의 전원을 끄고 Lunar Module Aquarius를 구명정 삼아 옮겨 탔으며, LM의 하강 엔진으로 근월점 통과 2시간 뒤 연소를 실시해 빠른 자유 귀환 궤적에 올랐다. 1970-04-15에 고도 254 km로 달을 스쳐 지나갔고, 1970-04-17에 남태평양에 무사히 착수했다. 이 임무는 지금도 규율 잡힌 실시간 엔지니어링 임기응변의 본보기로 연구된다."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "old": "S-IVB의 월간 이동 주입(Trans-lunar injection) 번; CSM + LM이 월간 궤도로 진입 확정.",
+    "new": "S-IVB의 월간 이동 주입(Trans-lunar injection) 연소; CSM + LM이 월간 궤적으로 진입 확정."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "old": "31초 LM 강하 엔진 번으로 우주선을 자유복귀 궤도에 복귀.",
+    "new": "31초 LM 강하 엔진 연소로 우주선을 자유복귀 궤도에 복귀."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "old": "Artemis 프로그램 첫 유인 비행이자 Orrery의 불씨가 된 임무다. 2026년 4월 1일 NASA의 SLS Block 1이 우주비행사 네 명 — 리드 와이즈먼(CDR), 빅터 글로버(PLT), 크리스티나 코크(MS), CSA의 제러미 핸슨(MS) — 을 태운 Orion 우주선을 자유 귀환 궤도에 올렸고, 우주선은 표면에서 약 6,500 km 상공으로 달 뒷면을 돌아 달 궤도 진입 연소 없이 지구로 돌아왔다. 지구에서 406,771 km 떨어진 지점까지 가서 이전의 어떤 인간보다 더 멀리 여행했고, 1970년 Apollo 13의 기록을 깼다. 9일간의 비행 끝에 Orion은 4월 10일 샌디에이고 앞바다 태평양에 착수했다. 이 비행으로 첫 착륙에 앞서 Orion의 생명 유지·항법·열 차폐 시스템이 유인 비행에 쓸 수 있음을 검증했으며, 착륙은 이제 Artemis IV에서 계획되어 있다.",
+    "new": "Artemis 프로그램 첫 유인 비행이자 Orrery의 불씨가 된 임무다. 2026년 4월 1일 NASA의 SLS Block 1이 우주비행사 네 명 — 리드 와이즈먼(CDR), 빅터 글로버(PLT), 크리스티나 코크(MS), CSA의 제러미 핸슨(MS) — 을 태운 Orion 우주선을 자유 귀환 궤적에 올렸고, 우주선은 표면에서 약 6,500 km 상공으로 달 뒷면을 돌아 달 궤도 진입 연소 없이 지구로 돌아왔다. 지구에서 406,771 km 떨어진 지점까지 가서 이전의 어떤 인간보다 더 멀리 여행했고, 1970년 Apollo 13의 기록을 깼다. 9일간의 비행 끝에 Orion은 4월 10일 샌디에이고 앞바다 태평양에 착수했다. 이 비행으로 첫 착륙에 앞서 Orion의 생명 유지·항법·열 차폐 시스템이 유인 비행에 쓸 수 있음을 검증했으며, 착륙은 이제 Artemis IV에서 계획되어 있다."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.1.note",
+    "old": "ICPS가 달 이행 주입 연소 — Orion이 달권 궤도로 분리.",
+    "new": "ICPS가 달 이행 주입 연소 — Orion이 달권 궤적으로 분리."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.1.note",
+    "old": "저에너지 탄도 포획 궤도 진행 중.",
+    "new": "저에너지 탄도 포획 궤적 진행 중."
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "events.0.note",
+    "old": "Titan IIIE가 케이프 커내버럴에서 Grand-Tour 궤도로 Voyager 2를 올린다.",
+    "new": "Titan IIIE가 케이프 커내버럴에서 Grand-Tour 궤적으로 Voyager 2를 올린다."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.0.note",
+    "old": "케이프 커내버럴에서 발사된 Atlas-Centaur 로켓이 목성-토성 중력 보조 궤도를 따라 비행했습니다.",
+    "new": "케이프 커내버럴에서 발사된 Atlas-Centaur 로켓이 목성-토성 중력 보조 궤적을 따라 비행했습니다."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.3.note",
+    "old": "5년에 걸쳐 12번의 기동으로 금성 재접근 궤도 유지.",
+    "new": "5년에 걸쳐 12번의 기동으로 금성 재접근 궤적 유지."
+  },
+  {
+    "rel": "missions/earth/inspiration4.json",
+    "at": "events.1.note",
+    "old": "고도 585km 원형, 기울기 51.6° — Hubble 정비 이후 가장 높은 유인 궤도.",
+    "new": "고도 585km 원형, 궤도 경사각 51.6° — Hubble 정비 이후 가장 높은 유인 궤도."
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "events.1.note",
+    "old": "원지점 약 360 km, 54.5° 궤도 기울기; 기밀 탑재체 운용.",
+    "new": "원지점 약 360 km, 54.5° 궤도 경사각; 기밀 탑재체 운용."
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "old": "달 궤도 삽입; 하강 경사 수정.",
+    "new": "달 궤도 진입; 하강 경사각 수정."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.2.label",
+    "old": "베누 근접",
+    "new": "베누 랑데부"
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "first",
+    "old": "최초의 2기 동시 비행 근접 — Vostok 4와 약 6.5 km 이내에서 비행",
+    "new": "최초의 2기 동시 비행 랑데부 — Vostok 4와 약 6.5 km 이내에서 비행"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "old": "LEO에서 탱커 접근 및 여러 번 비행에 걸친 추진제 이송.",
+    "new": "LEO에서 탱커 랑데부 및 여러 번 비행에 걸친 추진제 이송."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "old": "LEO에서 탱커 함대 접근 및 여러 비행에 걸친 추진제 이송.",
+    "new": "LEO에서 탱커 함대 랑데부 및 여러 비행에 걸친 추진제 이송."
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.5.note",
+    "old": "최초 무인 달 접합; 시료 용기를 궤도선으로 이관.",
+    "new": "최초 무인 달 랑데부; 시료 용기를 궤도선으로 이관."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.4.note",
+    "old": "상승체 이륙; 궤도선과 접합.",
+    "new": "상승체 이륙; 궤도선과 랑데부."
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "old": "지구 중력 지원",
+    "new": "지구 중력 도움"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.note",
+    "old": "지구 중력 지원이 Giotto를 26P/그리그-셸레루프 혜성으로 재조준했습니다.",
+    "new": "지구 중력 도움이 Giotto를 26P/그리그-셸레루프 혜성으로 재조준했습니다."
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.1.note",
+    "old": "근지점 약 400 km; 분류된 탑재체 운영.",
+    "new": "원지점 약 400 km; 분류된 탑재체 운영."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.label",
+    "old": "근지점 소각 1",
+    "new": "근지점 연소 1"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.note",
+    "old": "화성 궤도 전이 이전 6번의 지구 궤도 상승 소각 중 첫 번째.",
+    "new": "화성 궤도 전이 이전 6번의 지구 궤도 상승 연소 중 첫 번째."
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "old": "최종 근지점 소각으로 우주선을 화성행 궤적에 올림.",
+    "new": "최종 근지점 연소으로 우주선을 화성행 궤적에 올림."
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "events.1.label",
+    "old": "TMI 번",
+    "new": "TMI 연소"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.label",
+    "old": "자유복귀 번",
+    "new": "자유복귀 연소"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.label",
+    "old": "PC+2 번",
+    "new": "PC+2 연소"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "old": "Pericynthion+2시간 번으로 지구 귀환 시간을 10시간 단축.",
+    "new": "Pericynthion+2시간 연소로 지구 귀환 시간을 10시간 단축."
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.4.note",
+    "old": "최종 달 방향 번턴 — Beresheet이 달 직진 궤적 위에 있습니다.",
+    "new": "최종 달 전이 연소 — Beresheet이 달 직진 궤적 위에 있습니다."
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.5.note",
+    "old": "Spider 하강 단계는 궤도에서 제거되었고 (1969년 3월 인도양에 재진입), 상승 단계는 소진될 때까지 분사되었고 높은 궤도로 상승했으며 — 1981년에 감소했다.",
+    "new": "Spider 하강단는 궤도에서 제거되었고 (1969년 3월 인도양에 재진입), 상승단는 소진될 때까지 분사되었고 높은 궤도로 상승했으며 — 1981년에 감소했다."
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "old": "스누피 상승 단계가 찰리 브라운과의 랑데부 — 달 궤도에서의 첫 완전한 LM-CSM 재도킹.",
+    "new": "스누피 상승단이 찰리 브라운과의 랑데부 — 달 궤도에서의 첫 완전한 LM-CSM 재도킹."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.6.note",
+    "old": "Intrepid 상승 단계는 의도적으로 달에 추락하여 ALSEP 지진계를 보정 — 유인 미션 우주선 단계가 의도적으로 달에 충돌하고 표면 지진계에 의해 기록된 첫 사례.",
+    "new": "Intrepid 상승단은 의도적으로 달에 추락하여 ALSEP 지진계를 보정 — 유인 미션 우주선 단이 의도적으로 달에 충돌하고 표면 지진계에 의해 기록된 첫 사례."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.0.note",
+    "old": "KSC LC-39A에서 이륙. 2단계 S-II의 중앙 엔진이 2분 일찍 종료 — 외측 엔진들이 보정.",
+    "new": "KSC LC-39A에서 이륙. 2단 S-II의 중앙 엔진이 2분 일찍 종료 — 외측 엔진들이 보정."
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.4.note",
+    "old": "상승 단계 이탈; 지구 귀환 궤도 투입.",
+    "new": "상승단 이륙; 지구 귀환 궤도 투입."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "old": "ISRU 설비가 귀환용 메탄·LOX를 충분히 생산.",
+    "new": "ISRU 설비가 귀환 추진제용 메탄·LOX를 충분히 생산."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "old": "원지점 HEO ~38,800 km × ~320 km (첫 고타원궤도 OTV 비행); 기밀 임무 운영.",
+    "new": "원지점 HEO ~38,800 km × ~320 km (첫 고타원궤도 OTV 비행); 기밀 탑재체 운영."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "description",
+    "old": "현대 화성 탐사를 규정한 기함급 임무. Curiosity는 자동차만 한 크기에 플루토늄을 동력원으로 쓰며, 2012년 착륙 이후 게일 분화구에서 36 km 넘게 주행했다. 탑재 장비들은 화성에 한때 흐르는 물, 복잡한 유기물, 생명이 필요로 하는 화학 조건 같은 거주 가능한 환경이 있었음을 확인했다. 케이블로 로버를 내려놓는 스카이 크레인으로 끝나는 '공포의 7분' 진입·하강·착륙(EDL) 순서는 이제 대형 화물을 화성 표면에 보내는 NASA의 표준이 되었다.",
+    "new": "현대 화성 탐사를 규정한 기함급 임무. Curiosity는 자동차만 한 크기에 플루토늄을 동력원으로 쓰며, 2012년 착륙 이후 게일 분화구에서 36 km 넘게 주행했다. 탑재 장비들은 화성에 한때 흐르는 물, 복잡한 유기물, 생명이 필요로 하는 화학 조건 같은 거주 가능한 환경이 있었음을 확인했다. 케이블로 로버를 내려놓는 스카이 크레인으로 끝나는 '공포의 7분' 진입·하강·착륙(EDL) 순서는 이제 대형 탑재체를 화성 표면에 보내는 NASA의 표준이 되었다."
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "old": "수성 탐사를 위한 ESA/JAXA 공동 임무로, 2018년 10월 20일 발사 — Mariner 10의 다중 플라이바이 궤적을 설계한 이탈리아 수학자 Giuseppe (Bepi) Colombo의 이름을 따라 명명됨. 8년의 항행 기간 중 9번의 중력 보조 (2020년 지구, 2020년 금성, 2021년 금성, 2021-2025년 수성 6회 플라이바이)을 활용하며, 수성 전이 모듈의 지속적인 이온 전기 추진력으로 지구와 수성 궤도 사이의 거대한 태양 중력 경사도를 상쇄함. 수성 궤도 진입은 2026년 11월 21일; 수성 전이 모듈 분리 및 두 궤도선 분리 후 2027년 초 과학 임무 시작 — ESA의 MPO (행성 표면 + 구성)와 JAXA의 Mio (자기권). 수성의 강력한 태양 중력 환경에서의 전파 과학 추적을 통한 일반 상대성 이론 검증도 계획 중임.",
+    "new": "수성 탐사를 위한 ESA/JAXA 공동 임무로, 2018년 10월 20일 발사 — Mariner 10의 다중 플라이바이 궤적을 설계한 이탈리아 수학자 Giuseppe (Bepi) Colombo의 이름을 따라 명명됨. 8년의 항행 기간 중 9번의 중력 보조 (2020년 지구, 2020년 금성, 2021년 금성, 2021-2025년 수성 6회 플라이바이)을 활용하며, 수성 전이 모듈의 지속적인 이온 전기 추력으로 지구와 수성 궤도 사이의 거대한 태양 중력 경사도를 상쇄함. 수성 궤도 진입은 2026년 11월 21일; 수성 전이 모듈 분리 및 두 궤도선 분리 후 2027년 초 과학 임무 시작 — ESA의 MPO (행성 표면 + 구성)와 JAXA의 Mio (자기권). 수성의 강력한 태양 중력 환경에서의 전파 과학 추적을 통한 일반 상대성 이론 검증도 계획 중임."
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.label",
+    "old": "지구 접근 통과 #1",
+    "new": "지구 플라이바이 #1"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.label",
+    "old": "화성 접근 통과",
+    "new": "화성 플라이바이"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.4.note",
+    "old": "최대 규모의 주대 소행성 중 하나의 약 120 km 접근 통과 촬영.",
+    "new": "최대 규모의 주대 소행성 중 하나의 약 120 km 플라이바이 촬영."
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.label",
+    "old": "달-지구 비행",
+    "new": "달-지구 플라이바이"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.label",
+    "old": "금성 비행",
+    "new": "금성 플라이바이"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.0.note",
+    "old": "Delta II 7925H 로켓이 MESSENGER를 6회 스윙바이 궤적으로 발사한다.",
+    "new": "Delta II 7925H 로켓이 MESSENGER를 6회 플라이바이 궤적으로 발사한다."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.label",
+    "old": "목성 궤도 삽입",
+    "new": "목성 궤도 진입"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.label",
+    "old": "화성 궤도 삽입",
+    "new": "화성 궤도 진입"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.label",
+    "old": "화성 궤도 삽입",
+    "new": "화성 궤도 진입"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.1.label",
+    "old": "화성 궤도 삽입",
+    "new": "화성 궤도 진입"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.label",
+    "old": "화성 궤도 삽입",
+    "new": "화성 궤도 진입"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.2.note",
+    "old": "달 궤도 삽입.",
+    "new": "달 궤도 진입."
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.2.note",
+    "old": "달 궤도 삽입. SPS ∆v ~0.91 km/s.",
+    "new": "달 궤도 진입. SPS ∆v ~0.91 km/s."
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.2.note",
+    "old": "달 궤도 삽입.",
+    "new": "달 궤도 진입."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.note",
+    "old": "뒷면 최근접 고도 ~6,500 km이며, 인류가 가장 멀리 간 지점: 지구에서 406,771 km. 궤도 삽입 없음 — 자유 귀환 기하가 Orion을 지구로 슬링샷.",
+    "new": "뒷면 최근접 고도 ~6,500 km이며, 인류가 가장 멀리 간 지점: 지구에서 406,771 km. 궤도 진입 없음 — 자유 귀환 기하가 Orion을 지구로 슬링샷."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.3.note",
+    "old": "BE-7 주 엔진으로 달 궤도 삽입.",
+    "new": "BE-7 주 엔진으로 달 궤도 진입."
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "events.1.note",
+    "old": "달 궤도 삽입 2008-11-08.",
+    "new": "달 궤도 진입 2008-11-08."
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.1.note",
+    "old": "달 궤도 삽입.",
+    "new": "달 궤도 진입."
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "old": "달 궤도 삽입.",
+    "new": "달 궤도 진입."
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.1.note",
+    "old": "달 궤도 삽입 1994-02-19.",
+    "new": "달 궤도 진입 1994-02-19."
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.1.note",
+    "old": "달 궤도 삽입 2009-06-23.",
+    "new": "달 궤도 진입 2009-06-23."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.2.note",
+    "old": "달 궤도 삽입.",
+    "new": "달 궤도 진입."
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "first",
+    "old": "우주 정거장(Salyut 1)에 도착한 첫 번째 승무원; 귀환 시 감압으로 인해 3명 모두 사망",
+    "new": "우주 정거장(Salyut 1)에 도착한 첫 번째 승무원; 재진입 시 감압으로 인해 3명 모두 사망"
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "dispatch",
+    "old": "Soyuz 11은 비범한 업적을 이루고도 비행의 마지막 몇 분 동안 승무원을 잃었다. 게오르기 도브로볼스키, 블라디슬라프 볼코프, 빅토르 파차예프는 우주정거장에서 생활한 최초의 인류가 되어 Salyut 1에서 22일을 보냈다 — 그리고 귀환 중 모듈이 분리되는 순간 밸브가 튀어 열리며 선실 공기가 우주로 빠져나갔다. 그들은 압력복을 입고 있지 않았다. 좌석을 세 명용으로 설치하면서 압력복을 입을 공간이 없었기 때문이다. 우주의 가장자리에서 몇 초 만에 세 사람 모두 숨졌다. 캡슐은 스스로 착륙했고 목표 지점에 정확히 내렸다. 회수팀이 열어 보니 승무원들은 여전히 좌석에 묶여 있었다. 이들은 우주에서 사망한 유일한 인류로 남아 있으며 — 그 대가로 얻은 규칙은 지금까지 지켜지고 있다. 승무원은 발사와 귀환 내내 반드시 압력복을 입는다.",
+    "new": "Soyuz 11은 비범한 업적을 이루고도 비행의 마지막 몇 분 동안 승무원을 잃었다. 게오르기 도브로볼스키, 블라디슬라프 볼코프, 빅토르 파차예프는 우주정거장에서 생활한 최초의 인류가 되어 Salyut 1에서 22일을 보냈다 — 그리고 재진입 중 모듈이 분리되는 순간 밸브가 튀어 열리며 선실 공기가 우주로 빠져나갔다. 그들은 압력복을 입고 있지 않았다. 좌석을 세 명용으로 설치하면서 압력복을 입을 공간이 없었기 때문이다. 우주의 가장자리에서 몇 초 만에 세 사람 모두 숨졌다. 캡슐은 스스로 착륙했고 목표 지점에 정확히 내렸다. 회수팀이 열어 보니 승무원들은 여전히 좌석에 묶여 있었다. 이들은 우주에서 사망한 유일한 인류로 남아 있으며 — 그 대가로 얻은 규칙은 지금까지 지켜지고 있다. 승무원은 발사와 재진입 내내 반드시 압력복을 입는다."
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "description",
+    "old": "우주 정거장 Salyut 1로 향한 첫 유인 임무로, 1971년 6월 6일 게오르기 도브로볼스키, 블라디슬라프 볼코프, 빅토르 파차예프를 태우고 발사되었습니다. 승무원은 Salyut 1에서 22일을 보냈으며(임무 총 소요 시간 23일 18시간), 6월 30일 귀환 중 모듈 분리 지점(약 168 km)에서 기압 평형 밸브가 일찍 열렸습니다. 선실이 감압되어 우주복을 입지 않은 세 우주비행사는 몇 초 만에 사망했습니다. 캡슐은 정상적으로 착륙했습니다. 이들은 카르만선 위에서 사망한 유일한 인류입니다.",
+    "new": "우주 정거장 Salyut 1로 향한 첫 유인 임무로, 1971년 6월 6일 게오르기 도브로볼스키, 블라디슬라프 볼코프, 빅토르 파차예프를 태우고 발사되었습니다. 승무원은 Salyut 1에서 22일을 보냈으며(임무 총 소요 시간 23일 18시간), 6월 30일 재진입 중 모듈 분리 지점(약 168 km)에서 기압 평형 밸브가 일찍 열렸습니다. 선실이 감압되어 우주복을 입지 않은 세 우주비행사는 몇 초 만에 사망했습니다. 캡슐은 정상적으로 착륙했습니다. 이들은 카르만선 위에서 사망한 유일한 인류입니다."
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "payload",
+    "old": "발사 질량 4725 kg; 구형 귀환 모듈 + 서비스 모듈",
+    "new": "발사 질량 4725 kg; 구형 하강 모듈 + 서비스 모듈"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "old": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "new": "진입·하강·착륙 시연기 · 추락"
+  }
+]

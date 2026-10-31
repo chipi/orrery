@@ -1,0 +1,972 @@
+[
+  {
+    "rel": "universe/named-stars/altair.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Dubhe (Alpha Ursae Majoris) ist ein orangefarbener Riese in etwa 123 Lichtjahren Entfernung und einer der beiden „Zeigersterne“ am vorderen Rand des Kastens des Großen Wagens. Eine Linie durch Dubhe und seinen Nachbarn Merak weist fast genau auf den Polarstern.",
+    "note": "bowl rendered Schüssel; quote marks mismatched"
+  },
+  {
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/canopus.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Canopus wird oft mit einem Steuermann der griechischen Flotte vor Troja in Verbindung gebracht; in der indischen Überlieferung heißt er „Agastya“ — ein verehrter Weiser des Südhimmels. Für große Teile Europas liegt er zu weit südlich; für Seefahrer der südlichen Meere war er ein geschätzter Anhaltspunkt für Jahreszeit und Breite.",
+    "note": "Troy left English; clumsy Breitenmarkierer"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-h.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-b.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "meaning",
+    "new": "TRAPPIST-1 b ist der dem ultrakalten Zwergstern am nächsten gelegene Planet, viel zu heiß für Wasser. 2023 war er einer der ersten Gesteinsplaneten, deren Atmosphäre das James Webb Space Telescope untersuchte; es fand kaum Hinweise auf eine dichte Lufthülle — ein frühes Urteil in den langen Bemühungen herauszufinden, ob eine dieser sieben Welten ihre Lufthülle halten kann.",
+    "note": "sonnennächste wrong (star, not Sun); clumsy last clause"
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Aldebaran, das orangefarbene Riesenauge des Stiers, gehört zu den am häufigsten erwähnten Sternen der Science-Fiction, von Pulp-Abenteuern bis zum Film. Aus Jahrzehnten feiner Radialgeschwindigkeitssignale wurde einst ein Planet von mehrfacher Jupitermasse vermutet, doch spätere Analysen führen diese Signale auf die eigenen Pulsationen des Riesensterns zurück — der Planet gilt heute als unbestätigt —, eine Mahnung, wie schwer sich Planeten um unruhige alte Sonnen dingfest machen lassen.",
+    "note": "'des Stier' wrong case; clumsy ending"
+  },
+  {
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/nunki.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/sadr.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Sadr (Gamma Cygni) ist ein gelbweißer Überriese in etwa 1.800 Lichtjahren Entfernung. Er sitzt am Schnittpunkt des Nordkreuzes, wo die Flügel des Schwans auf den Körper treffen, vor einem riesigen Komplex aus leuchtendem Wasserstoff, der als Sadr-Region bekannt ist.",
+    "note": "'des Schwan' wrong genitive"
+  },
+  {
+    "rel": "universe/named-stars/nunki.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/elnath.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/miaplacidus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/proxima-cen-d.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Proxima Centauri d ist eine winzige Welt mit nur etwa einem Viertel der Erdmasse, die alle fünf Tage um Proxima Centauri kreist – viel zu nah, um bewohnbar zu sein. In den 2020er-Jahren bestätigt, liegt sie nahe an der Grenze dessen, was unsere Instrumente erfassen können – ein Beweis dafür, wie präzise wir heute unsichtbare Planeten anhand des Taumelns wiegen können, das sie in ihrem Stern hervorrufen.",
+    "note": "gender switch Welt/er"
+  },
+  {
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/van-maanens-star.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/gacrux.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rasalhague.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Der Name stammt aus dem Arabischen und bedeutet „das Haupt des Schlangenfängers“. Der Schlangenträger — oft mit dem Heiler Asklepios gleichgesetzt, der eine große Schlange packt — liegt rittlings auf der Ekliptik und ist das dreizehnte Sternbild, durch das die Sonne zieht.",
+    "note": "missing article; Asclepius non-German"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-g.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/altair.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Altair (Alpha Aquilae) ist ein heißer weißer Stern in etwa 17 Lichtjahren Entfernung und einer der nächsten mit bloßem Auge sichtbaren Sterne. Er rotiert nahe an seiner Zerreißgeschwindigkeit — eine volle Umdrehung in weniger als acht Stunden —, was ihn deutlich abplattet und seine Pole heißer und heller macht als seinen Äquator. Die Interferometrie hat diese verzerrte, gravitationsverdunkelte Oberfläche direkt abgebildet.",
+    "note": "closest became hellsten; gravity-darkened mistranslated"
+  },
+  {
+    "rel": "universe/named-stars/peacock.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/polaris.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-d.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Der Name stammt aus dem Arabischen und bedeutet „der Gürtel“. Als einer der drei Gürtelsterne hat er Anteil daran, dass Orion in fast allen menschlichen Kulturen erkannt wird.",
+    "note": "muddled 'universelle Wiedererkennung'"
+  },
+  {
+    "rel": "universe/named-stars/vega.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alhena.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/regulus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-g.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/kaus-australis.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/proxima-cen-b.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Mimosa (Beta Crucis), auch Becrux genannt, ist ein heißer blauer Riese in etwa 280 Lichtjahren Entfernung und einer der heißesten hellen Sterne, die mit bloßem Auge sichtbar sind. Er pulsiert leicht und liegt innerhalb der markanten Figur des Kreuzes des Südens.",
+    "note": "'Sie pulsiert' gender slip"
+  },
+  {
+    "rel": "universe/named-stars/alnair.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "name",
+    "new": "Das feurig-orangefarbene „Auge des Stiers“ im Sternbild Stier — ein Riesenstern, der nur scheinbar mitten im Sternhaufen der Hyaden steht.",
+    "note": "'im Taurus' Latin name in German prose"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-d.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/pollux.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/hamal.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/almach.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/hamal.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "meaning",
+    "new": "Der Name ist arabisch für „das Lamm“ oder „der Widder“. Vor rund zweitausend Jahren überquerte die Sonne die Frühlings-Tagundnachtgleiche nahe Hamal, sodass der „Widderpunkt“ — noch immer der Nullpunkt der himmlischen Länge — den Namen des Widders trägt, obwohl die Präzession den Durchgang inzwischen in die Fische verschoben hat.",
+    "note": "'Frühlingspunkt' loses the Ram name logic"
+  },
+  {
+    "rel": "universe/named-stars/capella.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Alnitak (Zeta Orionis) ist ein heißes blaues Überriesensystem in etwa 1.260 Lichtjahren Entfernung und der östlichste der drei Gürtelsterne. Sein intensives ultraviolettes Licht lässt den nahen Flammennebel leuchten, und der berühmte Pferdekopfnebel zeichnet sich dicht daneben als Silhouette ab.",
+    "note": "Horsehead left in English"
+  },
+  {
+    "rel": "universe/named-stars/algol.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/denebola.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/vega.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/mirfak.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/atria.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/proxima-centauri.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/antares.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "fact",
+    "new": "Antares (Alpha Scorpii) ist ein roter Überriese in etwa 550 Lichtjahren Entfernung, dessen Durchmesser mehrere hundert Mal so groß ist wie der der Sonne. Wie Beteigeuze ist er dazu bestimmt, als Supernova zu enden.",
+    "note": "'hundertfach' understates hundreds of times"
+  },
+  {
+    "rel": "universe/named-stars/achernar.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Das „Ende des Flusses“ — er rotiert so schnell, dass er zum abgeplattetsten Stern am Himmel zusammengedrückt wird.",
+    "note": "subject-verb mismatch after dash"
+  },
+  {
+    "rel": "universe/exoplanets/51-peg-b.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/luytens-star.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rasalhague.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/hamal.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/achernar.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alphard.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rigil-kentaurus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Rigil Kentaurus (Alpha Centauri A) ist das hellste Mitglied des sonnennächsten Sternsystems, nur 4,3 Lichtjahre entfernt. Als beinahe Zwilling der Sonne in Farbe und Masse bildet er mit dem kühleren Alpha Centauri B ein helles Doppelsternsystem, während der lichtschwache Rote Zwerg Proxima Centauri auf einer weit außen liegenden Umlaufbahn kreist und der eigentlich nächste Stern ist.",
+    "note": "'umläuft' lacks object; unclear sentence"
+  },
+  {
+    "rel": "universe/named-stars/dubhe.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/elnath.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Beteigeuze (Alpha Orionis) ist ein halbregelmäßig Veränderlicher kurz vor dem Ende seines Lebens. Nach Schätzungen steht er mehrere hundert Lichtjahre entfernt, bei großer Unsicherheit. Er wird eines Tages als Supernova enden — kurzzeitig fast so hell wie der Mond an unserem Himmel.",
+    "note": "'Schätzungen platzieren' anglicism"
+  },
+  {
+    "rel": "universe/named-stars/polaris.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/kaus-australis.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/nunki.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/canopus.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "nonword",
+    "new": "Canopus (Alpha Carinae) ist ein seltener gelblich-weißer heller Riese in etwa 310 Lichtjahren Entfernung und von Natur aus mehrere tausend Mal leuchtkräftiger als die Sonne. Seine Helligkeit und seine Lage weit abseits der Ekliptik machen ihn zu einem idealen festen Bezugspunkt — Mariner und spätere Sonden trugen „Canopus-Sternsensoren“, um im tiefen Weltraum ihre Lage zu halten.",
+    "note": "'leuchtfähiger' nonword; tausendfach understates"
+  },
+  {
+    "rel": "universe/exoplanets/proxima-cen-d.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/avior.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-e.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "TOI-700 e, 2023 bestätigt, ist ein felsiger, ungefähr erdgroßer Planet, der auf einer Umlaufbahn in der habitablen Zone knapp innerhalb der Bahn seines Geschwisterplaneten TOI-700 d kreist. Die Entdeckung zweier gemäßigter erdgroßer Welten in einem nahegelegenen System machte TOI-700 zu einem besonders vielversprechenden Ziel für künftige Studien von Atmosphären kleiner Planeten.",
+    "note": "innerhalb...innerhalb clumsy"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/algol.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/wezen.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-b.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "GJ 273 b, auch Luyten b genannt, ist eine Super-Erde in der gemäßigten Zone von Luytens Stern, nur etwa 12 Lichtjahre entfernt. 2017–2018 strahlte das Projekt „Sónar Calling GJ 273b“ von einer Radaranlage in Norwegen eine codierte Radiobotschaft in ihre Richtung ab — einer der wenigen gezielten Versuche, eine bestimmte nahe Welt zu kontaktieren; eine Antwort wäre frühestens in den 2040er-Jahren zu erwarten.",
+    "note": "'ein Super-Erde' wrong gender"
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-b.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "grammar",
+    "new": "Der Name stammt aus dem Arabischen und bedeutet „Schwanz“; er bezeichnet den Schwanz des Schwans. Deneb bildet zusammen mit Wega und Altair das Sommerdreieck und gleitet am nördlichen Strom der Milchstraße entlang.",
+    "note": "'von Schwan, dem Schwan' garbled"
+  },
+  {
+    "rel": "universe/named-stars/castor.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/denebola.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/adhara.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/hadar.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Hadar (Beta Centauri), auch Agena genannt, ist ein heißes blaues System aus massereichen Sternen in etwa 390 Lichtjahren Entfernung und der elfthellste Stern am Himmel. Zusammen mit dem nahen Rigil Kentaurus bildet er die „Zeiger des Südens“, die das Auge zum Kreuz des Südens führen.",
+    "note": "Southern Pointers left in English"
+  },
+  {
+    "rel": "universe/exoplanets/barnard-b.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/fomalhaut.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-c.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alphecca.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/avior.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "BROKEN",
+    "kind": "untranslated",
+    "new": "Avior (Epsilon Carinae) ist ein System in etwa 600 Lichtjahren Entfernung, das einen orangefarbenen Riesen mit einem heißen blauen Begleiter verbindet. Es liegt im Sternbild Carina und bildet eine Ecke des Falschen Kreuzes, das oft mit dem echten Kreuz des Südens verwechselt wird.",
+    "note": "False Cross left in English"
+  },
+  {
+    "rel": "universe/named-stars/algol.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/capella.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/alf-ari-b.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-e.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/antares.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/barnard-c.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alioth.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/atria.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/luytens-star.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/alf-ari-b.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-e.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/51-peg-b.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-b.json",
+    "at": "fact",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "grammar",
+    "new": "Eine Super-Erde in der habitablen Zone von Luytens Stern — und das Ziel einer gezielten Botschaft von der Erde.",
+    "note": "'Ein Super-Erde' wrong gender"
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-b.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alphard.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alhena.json",
+    "at": "cultural",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/gacrux.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/alkaid.json",
+    "at": "cultural",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "term",
+    "new": "Sein Name geht auf eine arabische Wendung zurück, „die Anführerin der Trauernden“ — in dieser Überlieferung war der Kasten des Wagens eine Bahre und die Sterne der Deichsel ein Zug trauernder Töchter, die hinterherzogen.",
+    "note": "bowl rendered Schüssel"
+  },
+  {
+    "rel": "universe/named-stars/rasalhague.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "bio",
+    "decision": "retranslate",
+    "grade": "MINOR",
+    "kind": "style",
+    "new": "Aldebaran (Alpha Tauri) ist ein orangefarbener Riese in etwa 65 Lichtjahren Entfernung. Er steht vor dem weiter entfernten Sternhaufen der Hyaden — eine reine Sichtlinien-Überlagerung und keine echte Zugehörigkeit.",
+    "note": "clumsy 'Sichtlinien-Koinzidenz'"
+  },
+  {
+    "rel": "universe/named-stars/canopus.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/arcturus.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-f.json",
+    "at": "fact",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/peacock.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  },
+  {
+    "rel": "universe/named-stars/sargas.json",
+    "at": "bio",
+    "decision": "keep",
+    "grade": "OK",
+    "kind": "",
+    "note": ""
+  }
+]

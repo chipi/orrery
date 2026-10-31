@@ -1,0 +1,913 @@
+[
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 周 (revolution counter)"
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 周 (revolution counter)"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "change",
+    "find": "逆行噴射を実行",
+    "replace": "軌道離脱噴射を実行",
+    "why": "de-orbit dropped; retro-rocket firing is a de-orbit burn"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "events.1.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "covered by orbit insertion edit"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "月球轨道插入",
+    "replace": "月周回軌道投入",
+    "why": "Chinese text left in ja; binding 周回軌道投入"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.1.note",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "航路",
+    "replace": "軌道",
+    "why": "航路 is a shipping route; binding 軌道"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "6°の傾斜に",
+    "replace": "6°の軌道傾斜角に",
+    "why": "binding 軌道傾斜角"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.1.note",
+    "term": "inclination",
+    "decision": "change",
+    "find": "6°軌道傾斜面に",
+    "replace": "6°の軌道傾斜角に",
+    "why": "binding 軌道傾斜角"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "variant: 高傾斜軌道 (standard adjectival compound)"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "first",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "variant: 高傾斜 (standard adjectival compound)"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "first",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "宇宙会合",
+    "replace": "ランデブー",
+    "why": "binding ランデブー"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "宇宙会合",
+    "replace": "ランデブー",
+    "why": "binding ランデブー"
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "events.1.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "宇宙会合",
+    "replace": "ランデブー",
+    "why": "binding ランデブー"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "交会手順",
+    "replace": "ランデブー手順",
+    "why": "交会 is a Chinese form; binding ランデブー"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降プロファイル",
+    "replace": "降下プロファイル",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "会合・ドッキング",
+    "replace": "ランデブー・ドッキング",
+    "why": "binding ランデブー"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "月面会合",
+    "replace": "月面ランデブー",
+    "why": "binding ランデブー"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.5.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "ランデブウ",
+    "replace": "ランデブー",
+    "why": "misspelt long vowel"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.4.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "ランデブウ",
+    "replace": "ランデブー",
+    "why": "misspelt long vowel"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力支援",
+    "replace": "スイングバイ",
+    "why": "binding スイングバイ"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降は",
+    "replace": "降下は",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.2.label",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力支援",
+    "replace": "スイングバイ",
+    "why": "binding スイングバイ"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力圏通過シーケンス",
+    "replace": "スイングバイシーケンス",
+    "why": "binding スイングバイ"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Lunar-Earth Gravity Assist",
+    "replace": "月－地球スイングバイ",
+    "why": "English left untranslated; binding スイングバイ"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力圏制御機動",
+    "replace": "スイングバイ機動",
+    "why": "binding スイングバイ"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力圏通過",
+    "replace": "スイングバイ",
+    "why": "binding スイングバイ"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力圏航法",
+    "replace": "スイングバイ",
+    "why": "binding スイングバイ"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "金星の重力援用",
+    "replace": "金星スイングバイ",
+    "why": "binding スイングバイ"
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "keep",
+    "why": "variant: 最高点 (suborbital ballistic arc, not an orbit apogee)"
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "近地点高度",
+    "replace": "遠地点高度",
+    "why": "perigee used for apogee"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.note",
+    "term": "apogee",
+    "decision": "keep",
+    "why": "Liquid Apogee Motor is a proper engine name kept in Latin"
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned on pad = fire, not engine firing"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "軌道上昇を行う",
+    "replace": "軌道上昇の噴射を行う",
+    "why": "burn omitted; engine firing 噴射"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "keep",
+    "why": "liftoff/ascent from Mars; engine firing implied by 再上昇"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降",
+    "replace": "降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "トランスルナー・インジェクション・バーン",
+    "replace": "月遷移投入噴射",
+    "why": "loanword burn; matches 月遷移投入 used elsewhere"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "軌道制御を実行",
+    "replace": "噴射を実行",
+    "why": "phasing burns rendered as generic orbit control"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降中",
+    "replace": "降下中",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "減速機動",
+    "replace": "噴射",
+    "why": "減速 (braking) wrong for a translunar burn"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "軌道投入時に152秒時点で",
+    "replace": "噴射開始152秒時点で",
+    "why": "burn omitted/misread as orbit insertion"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "軌道投入時間152秒時点での",
+    "replace": "噴射開始152秒時点での",
+    "why": "burn omitted/misread as orbit insertion time"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "バーン",
+    "replace": "噴射",
+    "why": "loanword バーン; binding 噴射"
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "vehicle_stage",
+    "term": "stage",
+    "decision": "keep",
+    "why": "variant: キックステージ (standard name for a kick stage)"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "term": "stage",
+    "decision": "keep",
+    "why": "vehicle name (Inertial Upper Stage) kept in Latin"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "プロペラント",
+    "replace": "推進剤",
+    "why": "binding 推進剤"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "プロペラント",
+    "replace": "推進剤",
+    "why": "binding 推進剤"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "帰還に十分な",
+    "replace": "帰還用推進剤に十分な",
+    "why": "propellant omitted"
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "payload",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: 科学観測機器 (science instruments = science payload)"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "vehicle",
+    "term": "payload",
+    "decision": "keep",
+    "why": "shared ride 相乗り; payload omitted naturally"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "variant: 推進 (electric propulsion, not a force value)"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "低スラスト",
+    "replace": "低推力",
+    "why": "binding 推力"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "events.1.note",
+    "term": "thrust",
+    "decision": "change",
+    "find": "低スラスト",
+    "replace": "低推力",
+    "why": "binding 推力"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "variant: イオン推進 (propulsion)"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.3.note",
+    "term": "thrust",
+    "decision": "keep",
+    "why": "variant: イオン推進 (propulsion)"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "スイングバイ",
+    "replace": "フライバイ",
+    "why": "source says flyby; スイングバイ is gravity assist"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "スイングバイ",
+    "replace": "フライバイ",
+    "why": "source says flyby; スイングバイ is gravity assist"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.2.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "スイングバイ",
+    "replace": "フライバイ",
+    "why": "source says flyby; スイングバイ is gravity assist"
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "events.1.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "での接近",
+    "replace": "でのフライバイ",
+    "why": "接近 alone is approach; binding フライバイ"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "events.1.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Flyby",
+    "replace": "フライバイ",
+    "why": "English left untranslated"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "接近を遂行",
+    "replace": "フライバイを遂行",
+    "why": "binding フライバイ"
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "events.1.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "での接近飛行",
+    "replace": "でのフライバイ",
+    "why": "binding フライバイ"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: 周回軌道への投入"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.4.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降",
+    "replace": "降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.5.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降段",
+    "replace": "降下段",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "payload",
+    "term": "descent",
+    "decision": "change",
+    "find": "帰還モジュール",
+    "replace": "降下モジュール",
+    "why": "descent module; binding 降下"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降モジュール",
+    "replace": "降下モジュール",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/mars/insight.json",
+    "at": "events.2.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "終端下降",
+    "replace": "終端降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.2.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "独立下降",
+    "replace": "独立降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "term": "descent",
+    "decision": "change",
+    "find": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "replace": "突入・降下・着陸実証機 · 墜落",
+    "why": "field left in English; other ja type fields are translated"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "着陸・下降・着地の実証機",
+    "replace": "突入・降下・着陸の実証機",
+    "why": "EDL = entry/descent/landing; entry mistranslated"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "着陸・下降・着地スタック",
+    "replace": "突入・降下・着陸スタック",
+    "why": "EDL = entry/descent/landing"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降プロファイル",
+    "replace": "降下プロファイル",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "動力下降",
+    "replace": "動力降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "動力下降",
+    "replace": "動力降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.4.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "動力下降",
+    "replace": "動力降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降エンジン",
+    "replace": "降下エンジン",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降前",
+    "replace": "降下前",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/artemis4.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "動力着陸",
+    "replace": "動力降下",
+    "why": "powered descent, not landing"
+  },
+  {
+    "rel": "missions/moon/artemis5.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "動力着陸",
+    "replace": "動力降下",
+    "why": "powered descent, not landing"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降機体",
+    "replace": "降下機体",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "動力下降",
+    "replace": "動力降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.4.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降",
+    "replace": "降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降段",
+    "replace": "降下段",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降傾斜角",
+    "replace": "降下傾斜角",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.4.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "最終下降",
+    "replace": "最終降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "27分の下降",
+    "replace": "27分の降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降中に",
+    "replace": "降下中に",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "の下降",
+    "replace": "の降下",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降モジュール",
+    "replace": "降下モジュール",
+    "why": "binding 降下"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "events.1.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "下降モジュール",
+    "replace": "降下モジュール",
+    "why": "binding 降下"
+  }
+]

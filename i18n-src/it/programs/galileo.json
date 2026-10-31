@@ -4,7 +4,7 @@
   "the_land": [
     {
       "type": "prose",
-      "md": "Le Pioneer e le Voyager erano passate vicino a Giove, ciascuna in poche ore, e ciascuna aveva lasciato più domande che risposte: indizi di un oceano sotto il ghiaccio di Europa, vulcani su Io, un campo magnetico più vasto di qualsiasi altro nel sistema solare. I passaggi ravvicinati non potevano risolverle. Per comprendere Giove e le sue quattro grandi lune — mondi tanto vari e interessanti quanto pianeti a pieno titolo — una sonda avrebbe dovuto entrare in orbita e rimanervi per anni."
+      "md": "Le Pioneer e le Voyager erano passate vicino a Giove, ciascuna in poche ore, e ciascuna aveva lasciato più domande che risposte: indizi di un oceano sotto il ghiaccio di Europa, vulcani su Io, un campo magnetico più vasto di qualsiasi altro nel sistema solare. I sorvoli non potevano risolverle. Per comprendere Giove e le sue quattro grandi lune — mondi tanto vari e interessanti quanto pianeti a pieno titolo — una sonda avrebbe dovuto entrare in orbita e rimanervi per anni."
     },
     {
       "type": "prose",
@@ -80,5 +80,9 @@
       "type": "prose",
       "md": "La lezione più profonda è che la pazienza trasforma indizi in conoscenza. L'oceano di Europa era invisibile in qualsiasi singolo passaggio; emerse solo dal peso accumulato di molti, raccolti nel corso di anni in orbita. Le scoperte più importanti spesso non vengono viste ma costruite — assemblate misurazione dopo misurazione, finché un'ipotesi diventa l'unica cosa che si adatta ai dati."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Giove nell'esploratore 3D",
+    "/programs/cassini": "Cassini — la stessa idea, a Saturno"
+  }
 }

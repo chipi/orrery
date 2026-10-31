@@ -80,5 +80,12 @@
       "type": "prose",
       "md": "La leçon plus profonde est la valeur de prouver toute la chaîne. Le don durable de Viking n'a été aucune mesure particulière mais la démonstration qu'atteindre Mars et atterrir intact était possible et reproductible. Une fois qu'une chose difficile a été accomplie — et accomplie deux fois — elle cesse d'être un pari et devient une fondation sur laquelle d'autres peuvent construire. Parfois, le plus grand résultat qu'une mission rapporte est simplement qu'elle peut être accomplie."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Mars — là où Viking s'est posé",
+    "/programs/mariner": "Mariner — les survols et orbiteurs qui ont reconnu Mars en premier",
+    "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
+    "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
+    "/mars?site=viking1-orbiter": "orbiteur Viking 1"
+  }
 }

@@ -4,7 +4,7 @@
   "payload": "517 kg (dont 196 kg d'ergols)",
   "delta_v": "~1,2 km/s",
   "type": "ORBITEUR · RÉALISÉ",
-  "first": "Récupérée d'une rétention orbitale de 5 ans autour du Soleil pour atteindre l'orbite vénusienne lors d'une tentative de secours ; le seul orbiteur vénusien en activité au cours de ses dernières années de fonctionnement",
+  "first": "Récupérée après une attente de 5 ans en orbite solaire, elle a réussi sa mise en orbite autour de Vénus à la seconde tentative ; seul orbiteur vénusien actif durant ses dernières années de fonctionnement",
   "description": "Akatsuki — « aube » — était la première mission vénusienne du Japon. Lancée le 2010-05-20 depuis Tanegashima sur un H-IIA 202, jumelée avec le démonstrateur de voile solaire IKAROS. L'insertion prévue en orbite vénusienne le 2010-12-07 a échoué lorsque l'accumulation de cristaux de sel dans un clapet de vérification d'oxydant a désaxé le moteur principal 152 secondes après le début de la manœuvre. La JAXA a maintenu le vaisseau vivant en orbite solaire pendant cinq ans, douze manœuvres de correction, jusqu'à la prochaine fenêtre de rencontre vénusienne. Le 2015-12-07, une manœuvre de 1228 secondes utilisant quatre propulseurs de contrôle d'attitude — jamais conçus pour une insertion orbitale — a placé Akatsuki dans une orbite fortement elliptique de 400 × 440 000 km, à 3° d'inclinaison. L'un des sauvetages de mission les plus spectaculaires de l'histoire de l'astronautique. Le contact a été perdu en 2024 ; la JAXA a déclaré les opérations terminées le 2025-09-18.",
   "events": [
     {
@@ -28,20 +28,21 @@
     {
       "met": 1000,
       "label": "RÉTENTION ORBITALE SOLAIRE",
-      "note": "12 manœuvres sur 5 ans pour maintenir une trajectoire de re-rencontre avec Vénus.",
+      "note": "12 manœuvres sur 5 ans pour maintenir une trajectoire permettant une nouvelle rencontre avec Vénus.",
       "type": "info"
     },
     {
       "met": 2027,
       "label": "VOI-R2 SUCCÈS",
-      "note": "2015-12-07. Manœuvre des propulseurs RCS de 1228s vers une orbite de 400 × 440 000 km, 3° d'inclinaison.",
+      "note": "2015-12-07. Allumage des propulseurs RCS de 1228 s vers une orbite de 400 × 440 000 km, inclinée de 3°.",
       "type": "info"
     },
     {
       "met": 2200,
       "label": "OPÉRATIONS SCIENTIFIQUES",
-      "note": "Suivi des caractéristiques des nuages UV/IR ; études de super-rotation ; ondes de gravité en forme d'arc au-dessus de Terra Aphrodite. Contact perdu en 2024 ; opérations déclarées terminées le 2025-09-18.",
+      "note": "Suivi des structures nuageuses en UV/IR ; études de la super-rotation ; ondes de gravité en forme d'arc au-dessus d'Aphrodite Terra. Contact perdu en 2024 ; opérations déclarées terminées le 2025-09-18.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "deuxième étage du H-IIA 202"
 }

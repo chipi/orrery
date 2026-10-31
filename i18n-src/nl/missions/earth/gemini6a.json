@@ -6,12 +6,12 @@
   "type": "BEMAND AARDBAAN · GEVLOGEN",
   "first": "Eerste bemande ruimterendezvous",
   "dispatch": "Rendezvous — twee ruimtevaartuigen die elkaar in een baan vinden en samenkomen — was de vaardigheid waar Apollo niet buiten kon, en Gemini 6A is waar het voor het eerst werd gedaan. Het vloog bijna niet: het oorspronkelijke doelwit explodeerde onderweg naar een baan, en vervolgens, vastgegespt voor de opnieuw geplande lancering, ontbrandden de motoren van de Titan en sloegen abrupt af op het lanceerplatform — een moment waarop de regels zeiden uitwerpen, en Wally Schirra, die geen beweging voelde, er kalm voor koos dat niet te doen. Drie dagen later vloog het en deed het wat nog nooit was gedaan: het haalde Gemini 7 in en hield positie op een voet afstand, de bemanningen dicht genoeg om elkaars gezichten te lezen. Het zag er gemakkelijk uit maar was allesbehalve dat — de baanmechanica van het inhalen van een ander vaartuig is diep contra-intuïtief — en het kraken ervan was het moment waarop het rendezvous in een maanbaan, en het hele Apollo-plan, werkelijkheid werd.",
-  "description": "Wally Schirra en Tom Stafford bereikten de eerste bemande ruimterendezvous op 15 december 1965, positie houdend binnen ~30 cm van Gemini 7 gedurende meer dan vijf uur. Het volgde op een motorstilstand op het lanceerplatform drie dagen eerder die Schirra ervoor koos niet af te breken. Duur ~1 d 1 h; 16 banen.",
+  "description": "Wally Schirra en Tom Stafford voerden op 15 december 1965 het eerste bemande rendez-vous in de ruimte uit en hielden meer dan vijf uur lang positie binnen ~30 cm van Gemini 7. Het volgde op een motorstop op het lanceerplatform drie dagen eerder, waarbij Schirra besloot de vlucht niet af te breken. Duur ~1 d 1 h; 16 banen.",
   "events": [
     {
       "met": 0,
       "label": "UITSCHAKELING OP HET PLATFORM",
-      "note": "1965-12-12: motoren ontbranden en stoppen vervolgens op het platform; Schirra werpt niet uit.",
+      "note": "1965-12-12: motoren ontbranden en worden op het lanceerplatform uitgeschakeld; Schirra katapulteert zich niet uit.",
       "type": "warning"
     },
     {
@@ -23,13 +23,13 @@
     {
       "met": 0.25,
       "label": "RENDEZVOUS",
-      "note": "Eerste bemande rendezvous — houdt positie binnen ~30 cm van Gemini 7.",
+      "note": "Eerste bemande rendez-vous — houdt positie binnen ~30 cm van Gemini 7.",
       "type": "info"
     },
     {
       "met": 1,
       "label": "WATERLANDING",
-      "note": "Atlantische splashdown na ~1 d 1 h / 16 banen.",
+      "note": "Waterlanding in de Atlantische Oceaan na ~1 d 1 h / 16 banen.",
       "type": "nominal"
     }
   ]

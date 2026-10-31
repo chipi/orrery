@@ -304,6 +304,16 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
   } else {
     const verdict = await verifyRequestToken(token);
     if (!verdict.ok) {
+      if (verdict.error === 'issuer_unavailable') {
+        res.writeHead(503, { 'retry-after': '30', 'content-type': 'application/json' });
+        res.end(
+          JSON.stringify({
+            error: 'temporarily_unavailable',
+            error_description: verdict.description,
+          }),
+        );
+        return;
+      }
       authFailure(res, verdict.error, verdict.description);
       return;
     }

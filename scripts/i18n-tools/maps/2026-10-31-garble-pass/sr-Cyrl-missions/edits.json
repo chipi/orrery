@@ -1,0 +1,16 @@
+[
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "description",
+    "en": "Launched 1966-03-31 from Baikonur, Luna 10 became the first spacecraft to orbit the Moon — and the first artificial satellite of any body other than Earth — when it inserted into a 350 × 1017 km lunar orbit at 71.9° inclination on 1966-04-03. Two and a half years before Apollo 8 reached the Moon with humans aboard. Carried a magnetometer, gamma-ray spectrometer, infrared radiometer, micrometeoroid detectors, plasma sensors, and a radio probe of the lunar gravity field. The gamma-ray data was the first compositional remote sensing of the Moon, suggesting basalt-like mare composition. Famously broadcast the Internationale anthem during the 23rd Congress of the Soviet Communist Party on 1966-04-04 — a propaganda flourish more than science. Operated 56 days / 460 orbits before its NiCd batteries depleted on 1966-05-30; remains in lunar orbit.",
+    "old": "Лансирана 1966-03-31 са Бајконура, Luna 10 је постала прва летелица која је орбитирала Месец — и први вештачки сателит било ког небеског тела осим Земље — када је ушла у лунарну орбиту од 350 × 1017 км под инклинацијом од 71,9° на 1966-04-03. Две и по године пре него што је Apollo 8 стигао на Месец са људима на борту. Носила је магнетометар, гама-зрачни спектрометар, инфрацрвени радиометар, детекторе микрометеороида, сензоре плазме и радиозонду лунарног гравитационог поља. Гама-зрачни подаци били су прво даљинско телеметријско определјивање композиције Месеца, сугеришући базалт-налик састав мареја. Позната је по томе што је емитовала химну Интернационала под време 23. Конгреса Совјетске комунистичке партије на 1966-04-04 — пропаганди више него наука. Радила је 56 дана / 460 орбита пре него што су јој NiCd батерије исцрпљене на 1966-05-30; остаје у лунарној орбити.",
+    "new": "Luna 10, лансирана 1966-03-31 са Бајконура, постала је прва летелица у орбити око Месеца — и први вештачки сателит неког тела осим Земље — када је 1966-04-03 ушла у лунарну орбиту од 350 × 1017 км са инклинацијом од 71,9°. Две и по године пре него што је Apollo 8 стигао до Месеца са људима на броду. Носила је магнетометар, спектрометар гама-зрака, инфрацрвени радиометар, детекторе микрометеороида, сензоре плазме и радио-сондирање гравитационог поља Месеца. Подаци о гама-зрачењу били су прво даљинско испитивање састава Месеца и указивали су на састав лунарних мора сличан базалту. Чувена је по емитовању химне Интернационала током 23. конгреса Комунистичке партије Совјетског Савеза 1966-04-04 — више пропагандни гест него наука. Радила је 56 дана / 460 орбита, све док јој се NiCd батерије нису истрошиле 1966-05-30; и даље је у лунарној орбити."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "events.4.note",
+    "en": "Bounced 28 times. Rolled to rest at 14.57°S, 175.47°E.",
+    "old": "Одскочио 28 пута. Заустављен је на 14,57°S, 175,47°E.",
+    "new": "Одскочио је 28 пута. Откотрљао се и зауставио на 14,57° јужне ширине и 175,47° источне дужине."
+  }
+]

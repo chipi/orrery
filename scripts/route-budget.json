@@ -1,0 +1,27 @@
+{
+  "$comment": "KB brotli. shell = root layout + client entry; each route = what it adds beyond the shell. Set 2026-10-30 at measured size +10% +5 KB (rounded up to 5). See scripts/check-route-budget.mjs.",
+  "shell": 200,
+  "defaultRoute": 30,
+  "routes": {
+    "/lab": 795,
+    "/lab/callback": 695,
+    "/explore": 555,
+    "/moon": 440,
+    "/mars": 435,
+    "/fly": 435,
+    "/earth": 435,
+    "/venus": 425,
+    "/iss": 320,
+    "/tiangong": 310,
+    "/missions": 130,
+    "/plan": 125,
+    "/fleet": 105,
+    "/science/[tab]/[section]": 100,
+    "/": 70,
+    "/credits": 55,
+    "/privacy": 45,
+    "/cards/[kind]/[id]": 45,
+    "/programs/[id]": 35,
+    "/library": 35
+  }
+}

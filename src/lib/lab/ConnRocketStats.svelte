@@ -6,12 +6,11 @@
   links into /plan with the rocket preselected, closing the lesson → configurator loop.
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
   import { page } from '$app/state';
   import { getRockets } from '$lib/data';
   import type { Rocket } from '$types/rocket';
   import { agencyToLogoEntries } from '$lib/agency-logo';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { dataLoadFailed } from '$lib/data/core';
 
   interface Props {
@@ -50,7 +49,7 @@
     <ul class="crs__list">
       {#each rows as r (r.id)}
         <li class="crs__row">
-          <a class="crs__link" href="{base}/plan?rocket={r.id}">
+          <a class="crs__link" href={localHref(`/plan?rocket=${r.id}`)}>
             {#each agencyToLogoEntries(r.agency) as logo (logo.path)}
               <img class="crs__logo" src={logo.path} alt={logo.full} title={logo.full} />
             {/each}

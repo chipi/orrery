@@ -6,10 +6,9 @@
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { setCurrentCard, trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
-  import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import { getMissionsForLibrary, getBadges } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import type { Destination, Mission, MissionStatus } from '$types/mission';
   import { isMissionDestination } from '$lib/mission-dest';
   import MissionPanel from '$lib/components/MissionPanel.svelte';
@@ -19,6 +18,7 @@
   import type { FleetEpoch } from '$types/fleet';
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { missionStatusLabel } from '$lib/status-label';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
@@ -211,7 +211,9 @@
     const agency = url.searchParams.get('agency');
     filterState.dest = dest && isMissionDestination(dest) ? dest : 'ALL';
     filterState.status =
-      status === 'ACTIVE' || status === 'FLOWN' || status === 'PLANNED' ? status : 'ALL';
+      status === 'ACTIVE' || status === 'FLOWN' || status === 'PLANNED' || status === 'CANCELLED'
+        ? status
+        : 'ALL';
     filterState.agency = agency ?? 'ALL';
     const crew = url.searchParams.get('crew')?.toUpperCase();
     filterState.crew = crew === 'CREWED' || crew === 'UNCREWED' ? crew : 'ALL';
@@ -244,7 +246,7 @@
     if (filterState.epoch !== 'ALL') params.set('epoch', filterState.epoch);
     if (filterState.q.trim() !== '') params.set('q', filterState.q.trim());
     const qs = params.toString();
-    const target = `${base}/missions${qs ? `?${qs}` : ''}`;
+    const target = localHref(`/missions${qs ? `?${qs}` : ''}`);
     if (target !== page.url.pathname + page.url.search) {
       // replaceState avoids littering the back-button history with
       // every filter toggle.
@@ -327,7 +329,7 @@
     setCurrentCard(null);
   }
   function flyMission(id: string) {
-    goto(`${base}/fly?mission=${id}`);
+    goto(localHref(`/fly?mission=${id}`));
   }
 
   // Detail-card back chain (#29) — track ?id= navigations into / out of cards.
@@ -336,7 +338,7 @@
   function seedProgramBack(url: URL): void {
     const from = url.searchParams.get('from');
     if (from?.startsWith('program:')) {
-      seedBackTarget(`${base}/programs/${from.slice('program:'.length)}`, url);
+      seedBackTarget(localHref(`/programs/${from.slice('program:'.length)}`), url);
     }
   }
   afterNavigate((nav) => {
@@ -434,7 +436,9 @@
 
   {#if filterState.expanded}
     {#if anyFilterActive}
-      <button type="button" class="clear-filters" onclick={clearAllFilters}> CLEAR FILTERS </button>
+      <button type="button" class="clear-filters" onclick={clearAllFilters}>
+        {m.missions_clear_filters()}
+      </button>
     {/if}
     <div data-audio-stage="missions-epoch-timeline">
       <EpochTimelineStrip
@@ -574,6 +578,14 @@
           role="radio"
           aria-checked={filterState.status === 'PLANNED'}
           onclick={() => setStatus('PLANNED')}>{m.lib_filter_status_planned()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={filterState.status === 'CANCELLED'}
+          role="radio"
+          aria-checked={filterState.status === 'CANCELLED'}
+          onclick={() => setStatus('CANCELLED')}>{m.lib_filter_status_cancelled()}</button
         >
       </div>
 
@@ -726,7 +738,7 @@
                   {mission.agency}
                 </span>
                 <span class="card-status status-{mission.status.toLowerCase()}">
-                  {mission.status}
+                  {missionStatusLabel(mission.status)}
                 </span>
                 {#if mission.flight_data_quality}
                   <span

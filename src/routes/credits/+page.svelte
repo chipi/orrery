@@ -13,6 +13,7 @@
 -->
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { dataLoadFailed, get } from '$lib/data/core';
@@ -351,9 +352,11 @@
                     <p class="ph-row sat">
                       <a
                         class="ph-sat"
-                        href="{base}/{photo.path.includes('/moon/')
-                          ? 'moon'
-                          : 'mars'}?site={photo.spacecraft_id}"
+                        href={localHref(
+                          `/${
+                            photo.path.includes('/moon/') ? 'moon' : 'mars'
+                          }?site=${photo.spacecraft_id}`,
+                        )}
                       >
                         <span aria-hidden="true">📡</span>
                         {photo.spacecraft_name}{photo.instrument ? ` · ${photo.instrument}` : ''}
@@ -626,12 +629,12 @@
       <h3 id="storage-title">{m.credits_storage_heading()}</h3>
     </header>
     <p class="storage-blurb">
-      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + a localHref path, no user input -->
       {@html m
         .credits_storage_intro({ privacy: PRIVACY_LINK_TOKEN })
         .replace(
           PRIVACY_LINK_TOKEN,
-          `<a href="${base}/privacy">${m.credits_storage_privacy_link()}</a>`,
+          `<a href="${localHref('/privacy')}">${m.credits_storage_privacy_link()}</a>`,
         )}
     </p>
     <ul class="storage-list">
@@ -639,26 +642,26 @@
            visually as <code> via a post-render replace so future locales
            pick up the typography for free. -->
       <li>
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output with a fixed literal wrapped in <code> -->
         {@html m
           .credits_storage_locale_item({ code: 'orrery_locale' })
           .replace('orrery_locale', '<code>orrery_locale</code>')}
       </li>
       <li>
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output with a fixed literal wrapped in <code> -->
         {@html m
           .credits_storage_tour_item({ code: 'orrery_tour' })
           .replace('orrery_tour', '<code>orrery_tour</code>')}
       </li>
       <li>
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output with a fixed literal wrapped in <code> -->
         {@html m
           .credits_storage_optout_item({ code: 'orrery_analytics_optout' })
           .replace('orrery_analytics_optout', '<code>orrery_analytics_optout</code>')}
       </li>
     </ul>
     <p class="storage-blurb storage-fine">
-      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output with fixed literals wrapped in <code> -->
       {@html m
         .credits_storage_fine({ localStorage: 'localStorage', sessionStorage: 'sessionStorage' })
         .replace('localStorage', '<code>localStorage</code>')
@@ -797,7 +800,7 @@
     align-items: baseline;
   }
   .d-row .lbl {
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.55);
   }
   .d-row a {
     color: #4ecdc4;
@@ -1005,7 +1008,7 @@
     gap: 8px;
   }
   .bom-count {
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.55);
     font-size: 10px;
   }
 
@@ -1069,7 +1072,7 @@
     align-items: baseline;
   }
   .ph-row .lbl {
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.55);
   }
   .ph-row a,
   .t-row a {
@@ -1084,10 +1087,10 @@
     background: rgba(0, 0, 0, 0.3);
     padding: 1px 4px;
     border-radius: 2px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
   .ph-row.mods {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
     font-style: italic;
   }
   /* Satellite attribution chip — links surface imagery to the spacecraft
@@ -1160,14 +1163,14 @@
   .t-loc {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 10px;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.55);
     margin: 0;
   }
   .t-loc code {
     background: rgba(0, 0, 0, 0.3);
     padding: 1px 4px;
     border-radius: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
   }
 
   @media (min-width: 768px) {

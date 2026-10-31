@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "Die tiefere Lehre betrifft den Preis eines einzelnen Fluges. Das Unternehmen überlebte allein dank des vierten Falcon-1-Starts und nichts weiter; wäre er gescheitert, gäbe es von allem Übrigen nichts. Große Fähigkeiten hängen oft am seidenen Faden eines einzigen, fragilen Moments ganz am Anfang – und der Unterschied zwischen den Unternehmen, die eine ganze Branche neu formen, und jenen, die verschwinden, besteht manchmal nur darin, ob dieser eine Flug abgehoben ist."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=falcon-9": "Flotte — Falcon 9, Falcon Heavy & Dragon",
+    "/programs/iss": "ISS — die Station, die Crew Dragon anfliegt",
+    "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze"
+  }
 }

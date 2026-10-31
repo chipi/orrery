@@ -6,7 +6,7 @@
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Falcon Heavy décolle. Retour gratuit – pas d’atterrissage.",
+      "note": "Falcon Heavy décolle. Retour libre — pas d'atterrissage.",
       "type": "nominal"
     },
     {
@@ -36,19 +36,19 @@
     {
       "met": 220,
       "label": "PANNE DE COMMUNICATION",
-      "note": "Brève interruption du signal en bande X (8 s). DSN racheté. Cause : occlusion du panache du propulseur. Aucune donnée perdue.",
+      "note": "Brève perte du signal en bande X (8 s). Le DSN a réacquis le signal. Cause : occultation par le panache des propulseurs. Aucune donnée perdue.",
       "type": "warning"
     },
     {
       "met": 259,
       "label": "SURVOL DE MARS",
-      "note": "Approche la plus proche : ~300 km d'altitude. L'assistance gravitationnelle initie le retour.",
+      "note": "Approche la plus proche : ~300 km d'altitude. L'assistance gravitationnelle amorce le retour.",
       "type": "nominal"
     },
     {
       "met": 260,
       "label": "TRAJECTOIRE DE RETOUR",
-      "note": "Assistance par gravité à retour libre complète. Trajectoire du vaisseau spatial sur Terre.",
+      "note": "Assistance gravitationnelle à retour libre terminée. Le vaisseau spatial est sur une trajectoire vers la Terre.",
       "type": "nominal"
     },
     {

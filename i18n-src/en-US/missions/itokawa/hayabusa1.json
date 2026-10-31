@@ -14,5 +14,6 @@
     { "met": 920, "label": "RECOVERY ATTEMPT", "note": "Hydrazine leak, 2 reaction wheels dead, comms lost 7 weeks.", "type": "warning" },
     { "met": 1900, "label": "ION ENGINE FRANKENSTEIN", "note": "One working engine assembled from surviving halves of two damaged ones.", "type": "info" },
     { "met": 2592, "label": "SAMPLE RETURN", "note": "2010-06-13. ~1,500 grains of Itokawa dust (sub-milligram total) recovered at Woomera. First asteroid sample ever returned.", "type": "info" }
-  ]
+  ],
+  "vehicle_stage": "M-V-5 fourth stage (KM-V2)"
 }

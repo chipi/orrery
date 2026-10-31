@@ -1,0 +1,128 @@
+[
+  {
+    "term": "orbit",
+    "loc": "zh-CN",
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "narrative_101.0",
+    "why": "orbit verb rendered 绕…运行/公转/在轨 (correct); or filename"
+  },
+  {
+    "term": "orbit",
+    "loc": "zh-CN",
+    "rel": "science/orbits/disposal-end-of-life.json",
+    "at": "body_paragraphs.0",
+    "why": "orbit as verb / orbiting body (绕转、在轨), not the orbit noun"
+  },
+  {
+    "term": "orbit",
+    "loc": "zh-CN",
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.0",
+    "why": "orbit as verb / orbiting body (绕转、在轨), not the orbit noun"
+  },
+  {
+    "term": "orbit",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "body_paragraphs.2",
+    "why": "orbit as verb / orbiting body (绕转、在轨), not the orbit noun"
+  },
+  {
+    "term": "trajectory",
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.1",
+    "why": "the flight path is described (飞过最炽热的一段), no trajectory noun in the sentence"
+  },
+  {
+    "term": "burn",
+    "loc": "zh-CN",
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "why": "stars \"burn\" red is figurative glow"
+  },
+  {
+    "term": "burn",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.0",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "term": "burn",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "term": "burn",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "term": "burn",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.4",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "term": "burn",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "term": "burn",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.0",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "term": "burn",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "why": "combustion / fuel consumption, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "diagram_caption",
+    "why": "combustion / fuel consumption, not an engine firing"
+  },
+  {
+    "term": "burn",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/throttling-and-gimbaling.json",
+    "at": "body_paragraphs.0",
+    "why": "combustion / fuel consumption, not an engine firing"
+  },
+  {
+    "term": "propellant",
+    "loc": "zh-CN",
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "why": "combustion/burning of propellant or fuel (not an engine firing)"
+  },
+  {
+    "term": "thrust",
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.2",
+    "why": "推重比 is the standard term for thrust-to-weight ratio"
+  },
+  {
+    "term": "orbit insertion",
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/launch.json",
+    "at": "body_paragraphs.0",
+    "why": "ascent to orbit; the binding 制动捕获 is for capture braking at a destination"
+  }
+]

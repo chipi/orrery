@@ -4,12 +4,11 @@
   illustrates, and the film line where there is one.
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
   import { page } from '$app/state';
   import Panel from '$lib/components/Panel.svelte';
   import PlaceHero from '$lib/components/PlaceHero.svelte';
   import { getScienceSection } from '$lib/data';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import type { Observatory } from '$types/observatory';
   import type { ScienceTabId } from '$types/science';
@@ -95,7 +94,7 @@
           {#each articles as a (a.path)}
             <li>
               <a
-                href="{base}{a.path}"
+                href={localHref(a.path)}
                 data-testid="observatory-article"
                 data-sveltekit-preload-data="hover">{a.title}</a
               >

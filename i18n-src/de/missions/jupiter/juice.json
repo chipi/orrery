@@ -16,19 +16,19 @@
     {
       "met": 493,
       "label": "MOND-ERDE-VORBEIFLUG",
-      "note": "Erster Lunar-Earth Gravity-Assist-Manöver — Mond und Erde in einem Swing.",
+      "note": "Erster Lunar-Earth Swing-by-Manöver — Mond und Erde in einem Swing.",
       "type": "nominal"
     },
     {
       "met": 871,
       "label": "VENUS VORBEIFLUG",
-      "note": "Venus-Gravity-Assist auf dem Weg zurück zu zwei weiteren Erdvorbeiflügen.",
+      "note": "Venus-Swing-by auf dem Weg zurück zu zwei weiteren Erdvorbeiflügen.",
       "type": "nominal"
     },
     {
       "met": 3020,
-      "label": "JUPITER-BAHNEINFÜHRUNG",
-      "note": "Haupttriebwerk-Abbrand platziert JUICE in die Jupiter-Umlaufbahn für die Eis-Monde-Tour.",
+      "label": "EINSCHWENKEN IN DIE JUPITERUMLAUFBAHN",
+      "note": "Haupttriebwerk-Brennphase platziert JUICE in die Jupiter-Umlaufbahn für die Eis-Monde-Tour.",
       "type": "info"
     }
   ]

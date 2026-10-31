@@ -76,5 +76,9 @@
       "type": "prose",
       "md": "A lição mais profunda, ainda se formando, é sobre o perigo de aposentar uma capacidade antes que sua substituição esteja segura. A EEI tem uma data final fixa; suas sucessoras comerciais ainda não voam. Apostar que um mercado se materializará no prazo, com um prazo rígido e um rival já em órbita, é uma aposta cujas apostas não são nada menos que a presença humana contínua na própria órbita terrestre baixa."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/iss": "EEI — a estação que elas foram feitas para suceder",
+    "/programs/spacex": "SpaceX — o transporte de tripulação e carga do qual dependerão"
+  }
 }

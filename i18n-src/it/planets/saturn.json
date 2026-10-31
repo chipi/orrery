@@ -1,7 +1,7 @@
 {
   "name": "Saturno",
-  "type": "Gas giant · Rings",
-  "fact": "La densità di Saturno è 0,687 g/cm³ — inferiore a quella dell'acqua. Il suo sistema di anelli si estende per 282.000 km ma ha uno spessore di soli decine di metri.",
+  "type": "Gigante gassoso · Anelli",
+  "fact": "La densità di Saturno è 0,687 g/cm³ — inferiore a quella dell'acqua. Il suo sistema di anelli si estende per 282.000 km ma ha uno spessore di sole decine di metri.",
   "bio": "Il pianeta meno denso — galleggerebbe sull'acqua. Il sistema di anelli si estende per 282.000 km ma è spesso solo pochi metri. L'inclinazione di 26,73° fa sì che la Terra veda gli anelli ad angoli diversi nel corso dell'orbita di Saturno, che dura 29 anni.",
   "links": [
     {
@@ -10,22 +10,22 @@
       "t": "intro"
     },
     {
-      "l": "Saturn (NASA Solar System Exploration)",
+      "l": "Saturno (NASA Solar System Exploration)",
       "u": "https://science.nasa.gov/saturn/",
       "t": "intro"
     },
     {
-      "l": "Cassini mission archive (NASA)",
+      "l": "Archivio della missione Cassini (NASA)",
       "u": "https://science.nasa.gov/mission/cassini/",
       "t": "core"
     },
     {
-      "l": "Rings of Saturn — Wikipedia",
+      "l": "Anelli di Saturno – Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn",
       "t": "core"
     },
     {
-      "l": "Saturn's rings are young (Science 2019)",
+      "l": "Gli anelli di Saturno sono giovani (Science 2019)",
       "u": "https://www.science.org/doi/10.1126/science.aat2965",
       "t": "deep"
     }
@@ -49,7 +49,7 @@
     {
       "tab": "orbits",
       "section": "apsides",
-      "why": "L'orbita di Saturno è dolce (eccentricità 0,054) ma la sua distanza media di 9,6 UA fa sì che perielio e afelio differiscano di 100 milioni di km — Cassini ha calcolato i tempi del suo arrivo per sfruttare la velocità in avvicinamento."
+      "why": "L'orbita di Saturno è regolare (eccentricità 0,054) ma la sua distanza media di 9,6 au fa sì che perielio e afelio differiscano di 100 milioni di km — Cassini ha calcolato i tempi del suo arrivo per sfruttare la velocità in avvicinamento."
     }
   ]
 }

@@ -23,7 +23,6 @@ import type { FleetEpoch } from '$types/fleet';
 
 export interface EpochBand {
   id: FleetEpoch;
-  label: string;
   yearStart: number;
   yearEnd: number;
   /**
@@ -41,37 +40,34 @@ export interface EpochBand {
 }
 
 export const EPOCH_BANDS: readonly EpochBand[] = [
-  { id: 'first-steps', label: 'First Steps', yearStart: 1957, yearEnd: 1961, color: '#ffd54f' },
-  { id: 'space-race', label: 'Space Race', yearStart: 1961, yearEnd: 1969, color: '#ff7d6e' },
-  { id: 'lunar-era', label: 'Lunar Era', yearStart: 1969, yearEnd: 1972, color: '#f0a830' },
+  { id: 'first-steps', yearStart: 1957, yearEnd: 1961, color: '#ffd54f' },
+  { id: 'space-race', yearStart: 1961, yearEnd: 1969, color: '#ff7d6e' },
+  { id: 'lunar-era', yearStart: 1969, yearEnd: 1972, color: '#f0a830' },
   {
     id: 'first-stations',
-    label: 'First Stations',
     yearStart: 1973,
     yearEnd: 1986,
     color: '#5fc4e0',
   },
   {
     id: 'shuttle-and-mir',
-    label: 'Shuttle & Mir',
     yearStart: 1981,
     yearEnd: 1998,
     color: '#b894d0',
   },
-  { id: 'iss-assembly', label: 'ISS Assembly', yearStart: 1998, yearEnd: 2011, color: '#a8c0d4' },
+  { id: 'iss-assembly', yearStart: 1998, yearEnd: 2011, color: '#a8c0d4' },
   {
     id: 'commercial-era',
-    label: 'Commercial Era',
     yearStart: 2011,
     yearEnd: 2024,
     color: '#4ecdc4',
   },
-  { id: 'lunar-return', label: 'Lunar Return', yearStart: 2024, yearEnd: 2030, color: '#ffb14e' },
+  { id: 'lunar-return', yearStart: 2024, yearEnd: 2030, color: '#ffb14e' },
   // Mars Era — starts at the first planned crewed-Mars / sample-return
   // window per missions/index.json (Starship Mars Crew NET 2031, MMX
   // 2026, etc.). Open-ended; the strip caps the rendered axis at 2040
   // but the band's semantic meaning is "this year and beyond".
-  { id: 'mars-era', label: 'Mars Era', yearStart: 2030, yearEnd: 2040, color: '#ff8050' },
+  { id: 'mars-era', yearStart: 2030, yearEnd: 2040, color: '#ff8050' },
 ];
 
 export const AXIS_MIN = 1957;

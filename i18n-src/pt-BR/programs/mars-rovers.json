@@ -80,5 +80,14 @@
       "type": "prose",
       "md": "A lição mais profunda é que grande capacidade é construída em passos, não em saltos. A sofisticação de armazenamento de amostras de Perseverance era inimaginável nos dias de Sojourner; tornou-se possível apenas porque cada rover conquistou o próximo. Fins ambiciosos são geralmente alcançados não por uma única missão decisiva, mas por uma linhagem paciente, cada membro provando o suficiente para justificar aquele que segue — progresso como um revezamento, não uma corrida."
     }
-  ]
+  ],
+  "link_labels": {
+    "/mars": "Marte — o mundo dos rovers",
+    "/programs/viking": "Viking — os módulos que vieram antes das rodas",
+    "/mars?site=mars-pathfinder": "Sojourner — Ares Vallis",
+    "/mars?site=spirit": "Spirit — cratera Gusev",
+    "/mars?site=opportunity": "Opportunity — Meridiani Planum",
+    "/mars?site=curiosity": "Curiosity — cratera Gale",
+    "/mars?site=perseverance": "Perseverance — cratera Jezero"
+  }
 }

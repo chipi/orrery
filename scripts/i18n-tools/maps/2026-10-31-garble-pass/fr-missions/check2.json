@@ -1,0 +1,50 @@
+[
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "dispatch",
+    "find": "d'entrée atmosphérique",
+    "replace": "de rentrée",
+    "why": "reentry is rentrée, not planetary entry",
+    "kind": "grammar/word-sense"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.2.note",
+    "find": "véhicule d'entrée atmosphérique",
+    "replace": "véhicule de rentrée",
+    "why": "re-entry vehicle is véhicule de rentrée",
+    "kind": "word-sense"
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "first",
+    "find": "lors de l'entrée atmosphérique",
+    "replace": "lors de la rentrée atmosphérique",
+    "why": "reentry is rentrée atmosphérique",
+    "kind": "word-sense"
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "dispatch",
+    "find": "On en débattit",
+    "replace": "On en a débattu",
+    "why": "tense consistency with passé composé",
+    "kind": "grammar"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "find": "aucun du chaos d'amas de débris",
+    "replace": "rien du chaos des amas de débris",
+    "why": "'aucun du' ungrammatical; 'none of the chaos'",
+    "kind": "grammar"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "description",
+    "find": "de ne pas déclencher l'abandon",
+    "replace": "de ne pas interrompre le lancement",
+    "why": "unnatural for 'chose not to abort'",
+    "kind": "phrasing"
+  }
+]

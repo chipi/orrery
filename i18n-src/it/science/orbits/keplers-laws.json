@@ -9,7 +9,7 @@
   "body_paragraphs": [
     "Prima legge: i pianeti orbitano su ellissi con il Sole in uno dei fuochi. Prima di Keplero, ogni modello utilizzava cerchi — a volte annidati, a volte sfalsati, ma sempre circolari. Keplero utilizzò venti anni di osservazioni di Marte di Tycho Brahe e si arrese: i dati non si adattavano ai cerchi, e nulla di ciò che tentò riuscì a farceli adattare. Le ellissi funzionarono al primo colpo.",
     "Seconda legge: la linea dal Sole al pianeta spazza aree uguali in tempi uguali. Questa è la conservazione del momento angolare travestita. Vicino al perielio il pianeta è vicino al Sole, la linea è corta — quindi deve muoversi velocemente per spazzare la stessa area di una linea lunga e lenta vicino all'afelio. È il motivo per cui la velocità orbitale non è costante.",
-    "Terza legge: `T² ∝ a³`. Il quadrato del periodo orbitale è proporzionale al cubo del semiasse maggiore. Con la Terra posta a T = 1 anno e a = 1 UA, puoi ricavare il periodo di qualsiasi pianeta dalla sua distanza — o la sua distanza dal suo periodo. Newton l'avrebbe poi derivata dalla gravità; Keplero ci arrivò riconoscendo puri schemi nei dati di Brahe."
+    "Terza legge: `T² ∝ a³`. Il quadrato del periodo orbitale è proporzionale al cubo del semiasse maggiore. Con la Terra posta a T = 1 anno e a = 1 au, puoi ricavare il periodo di qualsiasi pianeta dalla sua distanza — o la sua distanza dal suo periodo. Newton l'avrebbe poi derivata dalla gravità; Keplero ci arrivò riconoscendo puri schemi nei dati di Brahe."
   ],
   "formula_caption": "Terza legge di Keplero in forma moderna: T² dipende solo da a (e dal μ del corpo centrale).",
   "diagram_caption": "Aree uguali in tempi uguali."

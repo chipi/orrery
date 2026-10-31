@@ -12,5 +12,6 @@
     { "met": 30, "label": "MAPPING BEGIN", "note": "Systematic multispectral and topographic mapping starts.", "type": "info" },
     { "met": 95, "label": "DEPARTURE", "note": "Departs lunar orbit for Geographos asteroid flyby.", "type": "nominal" },
     { "met": 100, "label": "THRUSTER FAIL", "note": "Onboard thruster malfunction depletes propellant; asteroid encounter cancelled.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Titan II Star-37 upper stage"
 }

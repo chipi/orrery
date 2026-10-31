@@ -1,0 +1,11 @@
+[
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "حرقة RCS-thruster مدتها 1228 ثانية",
+    "replace": "إشعال دافعات RCS لمدة 1228 ثانية",
+    "why": "حرقة -> إشعال; مدتها agreed with حرقة; English left in"
+  }
+]

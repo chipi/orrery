@@ -1,0 +1,23 @@
+[
+  {
+    "term": "burn",
+    "loc": "hi",
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "why": "LOX/LH2 burned = combustion"
+  },
+  {
+    "term": "burn",
+    "loc": "hi",
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "why": "burning propellant = combustion"
+  },
+  {
+    "term": "burn",
+    "loc": "hi",
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "why": "combustion sense (burning propellant / X-burning engine), not an engine firing"
+  }
+]

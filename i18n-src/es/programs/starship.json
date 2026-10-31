@@ -88,5 +88,10 @@
       "type": "prose",
       "md": "La lección más profunda es sobre diseñar hacia atrás desde un objetivo. Starship no tiene sentido como una mejora incremental a los cohetes existentes; solo tiene sentido si el objetivo real es asentar otro planeta, y cada elección extraña — el tamaño, la reutilización completa, el reabastecimiento orbital — se sigue de eso. Se alcance o no Marte, el vehículo es una lección sobre cómo se ve ingeniar para un estado final que la mayor parte de la industria considera una fantasía."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=starship": "Flota — el sistema de lanzamiento Starship",
+    "/programs/spacex": "SpaceX: la reutilización sobre la que se construye Starship",
+    "/mars": "Marte: el destino"
+  }
 }

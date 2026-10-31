@@ -10,7 +10,7 @@
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "Atlas V 401 vanuit Cape Canaveral SLC-41 (vervoerde LCROSS-impactor als secundair).",
+      "note": "Atlas V 401 vanaf Cape Canaveral SLC-41 (met LCROSS-impactor als secundaire lading).",
       "type": "nominal"
     },
     {
@@ -31,5 +31,6 @@
       "note": "Missie verlengd naar meerjarige wetenschapsfase onder NASA SMD.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Centaur-bovenste trap (Atlas V 401)"
 }

@@ -84,5 +84,9 @@
       "type": "prose",
       "md": "A segunda lição é para que serve uma solução provisória, e para que não serve. A Voskhod fez exatamente uma coisa bem — comprou tempo e mais dois pioneirismos enquanto a espaçonave real de próxima geração estava sendo construída. Esse é um uso legítimo de equipamento improvisado. O erro teria sido continuar voando, perseguindo manchetes além do ponto em que a margem se esgotou — e, para crédito de Korolev, ele leu corretamente a quase catástrofe e parou. Saber quando uma solução provisória cumpriu seu papel é tão importante quanto construir uma."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terra — órbitas e bases de lançamento",
+    "/science/mission-phases/edl": "Entrada, descida e pouso"
+  }
 }

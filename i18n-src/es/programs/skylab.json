@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La segunda lección es que una estación es solo tan segura como su línea de suministro. Skylab estaba condenada en el momento en que la brecha entre su última tripulación y su próxima visita posible se extendió más allá de la vida de su órbita. El hardware impresionante en el espacio no vale nada si no puedes alcanzarlo de forma fiable; el trabajo continuo, aburrido y costoso de mantener un sistema de transporte funcionando no es una nota al pie de un programa de estaciones sino su condición previa. Skylab cayó porque se permitió que esa línea se interrumpiera."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Tierra: órbitas y bases de lanzamiento",
+    "/fleet?focus=skylab": "Flota — el taller orbital Skylab"
+  }
 }

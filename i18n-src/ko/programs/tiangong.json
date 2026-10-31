@@ -88,5 +88,11 @@
       "type": "prose",
       "md": "더 깊은 교훈은 템포에 관한 것이다. Tiangong은 우주비행에서 가장 빨라 보이는 프로그램이 거의 가장 강한 프로그램이 아님을 보여준다. 중국은 모든 최초에 늦게 도착했고 그 어느 것도 신경 쓰지 않았으며, 대신 완성되고, 신뢰할 수 있고, 영구적인 우주정거장을 최적화했다. 목표가 2035년에도 여전히 비행하는 것일 때, 인내는 신중함이 아니다 — 그것은 전략이다."
     }
-  ]
+  ],
+  "link_labels": {
+    "/tiangong": "Tiangong — 3D로 보는 정거장",
+    "/fleet?focus=tiangong": "함대 — Shenzhou, Tianzhou와 Long March 계열",
+    "/programs/iss": "ISS — Tiangong이 배제된 정거장",
+    "/earth?site=tiangong": "머리 위의 Tiangong"
+  }
 }

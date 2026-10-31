@@ -11,5 +11,6 @@
     { "met": 3, "label": "TOUCHDOWN", "note": "Soft-landing at Oceanus Procellarum 1966-02-03 18:45 UTC. First soft-landing on another world.", "type": "nominal" },
     { "met": 3.01, "label": "FIRST IMAGES", "note": "Nine images including five panoramas, returned in three transmission sessions over three days.", "type": "info" },
     { "met": 6, "label": "SIGNAL LOSS", "note": "Battery depleted; final transmission 1966-02-06.", "type": "warning" }
-  ]
+  ],
+  "vehicle_stage": "Molniya-M Block-L upper stage"
 }

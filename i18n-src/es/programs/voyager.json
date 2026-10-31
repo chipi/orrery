@@ -80,5 +80,10 @@
       "type": "prose",
       "md": "La lección más profunda es construir con mucho más margen del que requiere el plan. Las Voyager fueron diseñadas para una misión de una décima parte de la duración de la que han volado, y resistieron porque sus creadores las construyeron en exceso — sistemas redundantes, ordenadores reprogramables, energía de sobra. La ambición que planifica solo para la misión esperada termina con la misión esperada; las que siguen adelante son las que se construyeron para más de lo que se les pidió hacer."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Los planetas exteriores en el explorador 3D",
+    "/gallery/deep-sky": "El «punto azul pálido», en la galería Cielo profundo",
+    "/programs/pioneer": "Pioneer: las sondas que fueron primero"
+  }
 }

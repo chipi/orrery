@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "La seconde leçon est que le réapprovisionnement est ce qui rend une station réelle. Skylab, brillant et éphémère, ne fut jamais réapprovisionné ni rehaussé, et se désintégra une fois abandonné. L'insistance de Salyut à résoudre le ravitaillement en carburant et le réapprovisionnement — le second port d'amarrage, le cargo Progress — est exactement ce qui permit à ses stations ultérieures d'être occupées pendant des années au lieu de semaines. Une présence permanente dans l'espace n'est pas une question de construire un vaisseau spatial plus grand ; c'est une question de construire la chaîne logistique sans prestige qui maintient un vaisseau modeste continuellement en vie."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Terre — orbites, rendez-vous et sites de lancement",
+    "/fleet?focus=salyut-6": "Flotte — les stations Salyut"
+  }
 }

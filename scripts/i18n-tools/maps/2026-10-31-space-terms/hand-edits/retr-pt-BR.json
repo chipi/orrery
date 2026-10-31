@@ -1,0 +1,128 @@
+[
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "title",
+    "old": "Contagem morta",
+    "new": "Navegação por estima"
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "intro_sentence",
+    "old": "Integrar os acelerômetros para obter velocidade, integrar novamente para obter posição — funciona por horas, deriva visivelmente ao longo dos dias, e é exatamente por isso que cada cruzeiro precisa de correções periódicas baseadas no solo.",
+    "new": "Integre os acelerômetros para obter a velocidade, integre de novo para obter a posição: funciona por horas, deriva de forma perceptível ao longo de dias e é exatamente por isso que todo cruzeiro precisa de correções periódicas feitas a partir do solo."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.0",
+    "old": "Entre queimaduras e fora da gama de pontos de referência celestiais úteis, uma nave espacial rastreia seu próprio estado integrando a saída de sua unidade de medição inercial (IMU): três acelerômetros medindo aceleração linear, três giroscópios medindo taxa de rotação. Integrar aceleração uma vez → velocidade. Integre novamente → posição. Combinado com a orientação de [rastreadores de estrelas] (fases de emissão/rastreadores de estrelas), a nave espacial pode propagar seu vetor de estado completo para frente no tempo, sem qualquer ajuda externa.",
+    "new": "Entre queimas e fora do alcance de referências celestes úteis, uma espaçonave acompanha o próprio estado integrando a saída de sua unidade de medição inercial (IMU): três acelerômetros que medem a aceleração linear e três giroscópios que medem a taxa de rotação. Integre a aceleração uma vez → velocidade. Integre de novo → posição. Combinada com a orientação fornecida pelos [rastreadores estelares](mission-phases/star-trackers), a espaçonave consegue propagar todo o seu vetor de estado no tempo sem nenhuma ajuda externa."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.1",
+    "old": "O problema fundamental é a **deriva**. Todo acelerômetro tem um pequeno viés (~10⁻⁵ m/s² em uma IMU de grau de navegação); ao longo de 1 dia, esse viés integrado duas vezes contribui com ~3,7 km de erro de posição. Em um cruzeiro de 6 meses até Marte, o erro de navegação por estima se acumula até milhares de km, mesmo com as melhores IMUs de qualidade espacial (muito melhores do que as de nível comercial do seu telefone). É por isso que toda missão interplanetária reserva em seu orçamento [manobras de correção de trajetória](mission-phases/tcm): a dispersão do cruzeiro precisa ser medida contra o rastreamento em solo e a espaçonave precisa ajustar fisicamente seu curso.",
+    "new": "O problema fundamental é a **deriva**. Todo acelerômetro tem um pequeno viés (~10⁻⁵ m/s² numa IMU de classe de navegação); em 1 dia, esse viés integrado duas vezes contribui com ~3,7 km de erro de posição. Num cruzeiro de 6 meses até Marte, o erro da navegação por estima chega a milhares de km, mesmo com as melhores IMUs qualificadas para o espaço (muito melhores que as de nível comercial do seu celular). É por isso que toda missão interplanetária reserva em seu orçamento [manobras de correção de trajetória](mission-phases/tcm): a dispersão durante o cruzeiro precisa ser medida em relação ao rastreamento feito do solo, e a espaçonave precisa ajustar fisicamente seu curso."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.2",
+    "old": "A melhor prática moderna combina dead-reckoning com determinação de distância periódica da Deep Space Network (veja [DSN](mission-phases/dsn)): a estação terrestre mede a posição com precisão de ~1 km via tempo de trânsito de luz de ida e volta e Doppler, envia um estado corrigido para a nave, e a espaçonave reinicia sua propagação a partir de uma solução conhecida e confiável. O sistema combinado é muito mais preciso do que qualquer componente isolado. Os rastreadores estelares dizem à espaçonave para qual direção ela está apontando; a IMU diz o que está acontecendo entre as correções; o DSN diz onde ela realmente está.",
+    "new": "A prática moderna combina a navegação por estima com medições periódicas de distância pela Deep Space Network (veja [DSN](mission-phases/dsn)): o solo mede a posição com precisão de ~1 km por meio do tempo de ida e volta da luz e do efeito Doppler, envia por uplink um estado corrigido, e a espaçonave reinicia a propagação a partir de um ponto conhecido e confiável. O sistema combinado é muito mais preciso do que qualquer um dos componentes sozinho. Os rastreadores estelares dizem à espaçonave para onde ela está apontando; a IMU diz o que está acontecendo entre as correções; a DSN diz onde ela realmente está."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.3",
+    "old": "O dead-reckoning importa mais quando a DSN não está disponível – durante um apagão de comunicações Marte-EDL, durante o atraso de luz de ~22 minutos para Júpiter e além, ou durante uma crise de controle de atitude. Cada sistema de autonomia de espaçonaves é essencialmente um propagador de vetor de estado que está a funcionar em operações em terra.",
+    "new": "A navegação por estima importa mais quando a DSN não está disponível: durante o blecaute de comunicações da EDL em Marte, com o atraso de luz de cerca de 22 minutos em um sentido até Júpiter e além, ou durante uma crise de controle de atitude. Todo sistema de autonomia de espaçonave é, no fundo, um propagador de vetor de estado rodando por estima enquanto as operações em solo trabalham na recuperação."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "diagram_caption",
+    "old": "Accelerômetro + giro → integrar → vetor de estado → deriva ao longo de dias sem correção externa → por que TCMs existem. DSN variando + Doppler reinicia a deriva.",
+    "new": "Acelerômetro + giroscópio → integração → vetor de estado → deriva ao longo de dias sem correção externa → por que as TCMs existem. A medição de distância e o Doppler da DSN zeram a deriva."
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "title",
+    "old": "Rastreadores de estrelas",
+    "new": "Rastreadores estelares"
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "intro_sentence",
+    "old": "Uma pequena câmera apontou para o céu, identificando estrelas por correspondência padrão contra um catálogo a bordo — a maneira mais precisa para uma nave espacial saber para que lado ela está apontando.",
+    "new": "Uma pequena câmera apontada para o céu, que identifica estrelas por correspondência de padrões com um catálogo de bordo: a maneira mais precisa de uma espaçonave saber para onde está apontando."
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.0",
+    "old": "Uma espaçonave não pode perguntar ao GPS qual é o \"para cima\" — não existe \"para cima\" no espaço profundo, e o GPS nem alcança além da LEO. Para executar uma queima, desdobrar um painel solar ou apontar uma antena de alto ganho para a Terra, a espaçonave precisa conhecer sua orientação no espaço inercial. O instrumento que fornece isso é o rastreador de estrelas: uma pequena câmera CCD apontada para um trecho do céu, que faz uma exposição curta e identifica as estrelas da imagem por correspondência de padrões com um catálogo de bordo (geralmente o Hipparcos ou o Tycho-2, ~10⁴–10⁵ estrelas).",
+    "new": "Uma espaçonave não pode perguntar ao GPS qual é o “para cima”: não existe “para cima” no espaço profundo, e o GPS nem chega além da órbita baixa. Para executar uma queima, abrir um painel solar ou apontar uma antena de alto ganho para a Terra, a espaçonave precisa conhecer sua orientação no espaço inercial. O instrumento que fornece isso é o rastreador estelar: uma pequena câmera CCD apontada para uma região do céu, que faz uma exposição curta e identifica as estrelas da imagem por correspondência de padrões com um catálogo de bordo (em geral o Hipparcos ou o Tycho-2, ~10⁴–10⁵ estrelas)."
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.1",
+    "old": "Depois de ter identificado três ou mais estrelas, a geometria determina exclusivamente a orientação da câmera. Combinado com o conhecimento de como a câmera é montada no corpo da espaçonave, o resultado é um quaternião descrevendo a atitude da espaçonave para 1-10 segundos de precisão – melhor do que qualquer outro sensor a bordo. As missões interplanetárias modernas carregam dois ou três rastreadores em orientações independentes para que pelo menos uma sempre tenha uma visão limpa (sem brilho solar, sem planeta no campo de visão).",
+    "new": "Depois de identificar três ou mais estrelas, a geometria determina de forma única a orientação da câmera. Combinado com o conhecimento de como a câmera está montada no corpo da espaçonave, o resultado é um quatérnion que descreve a atitude da espaçonave com precisão de 1 a 10 segundos de arco, melhor que qualquer outro sensor de bordo. As missões interplanetárias modernas levam dois ou três rastreadores em orientações independentes, para que pelo menos um sempre tenha uma visão limpa (sem ofuscamento do Sol e sem planeta no campo de visão)."
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "body_paragraphs.2",
+    "old": "Os rastreadores de estrelas funcionam continuamente entre as queimaduras e fornecem a referência absoluta de que a integração das medições IMU (ver [dead accounting] (fases de emissão/dead-reckoning)) precisa permanecer calibrada. Sem rastreadores estelares, o IMU flutua e a espaçonave perde o conhecimento de atitude dentro de horas. Com eles, a atitude é boa para os segundos de arco durante anos a fio — tempo suficiente para apontar a JWST para uma galáxia a 13 bilhões de anos-luz de distância e manter a posição dentro de miliarcsegundos para uma integração de 100.000 segundos.",
+    "new": "Os rastreadores estelares funcionam continuamente entre as queimas e fornecem a referência absoluta de que a integração das medições da IMU (veja [navegação por estima](mission-phases/dead-reckoning)) precisa para se manter calibrada. Sem eles, a IMU deriva e a espaçonave perde o conhecimento de atitude em poucas horas. Com eles, a atitude se mantém boa a segundos de arco por anos a fio, tempo suficiente para apontar o JWST para uma galáxia a 13 bilhões de anos-luz e manter a posição com precisão de milissegundos de arco durante uma integração de 100.000 segundos."
+  },
+  {
+    "rel": "science/mission-phases/star-trackers.json",
+    "at": "diagram_caption",
+    "old": "Câmera leva exposição → identificar estrelas por triângulo-correspondência ao catálogo → solução de atitude de quaternião → arco-segundo-preciso \"para que lado estou apontando?\" — a cada poucos segundos, para sempre.",
+    "new": "A câmera faz a exposição → identifica estrelas por correspondência de triângulos com o catálogo → solução de atitude em quatérnion → resposta, com precisão de segundos de arco, para “para onde estou apontando?”, a cada poucos segundos, para sempre."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "intro_sentence",
+    "old": "Cada famosa \"imagem telescópica\" é uma pilha de exposições longas através de filtros de banda estreita, calibrados, registrados, mapeados de cor falsa — a imagem é o que os humanos fazem da contagem.",
+    "new": "Toda famosa “foto de telescópio” é uma pilha de longas exposições feitas por filtros de banda estreita, calibradas, alinhadas e coloridas em falsa cor: a imagem é o que os humanos fazem da contagem."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "narrative_101.0",
+    "old": "Hubble não tirou uma foto dos Pilares da Criação. Hubble tirou algumas dezenas de fotos — cada uma através de um filtro diferente, cada minuto de duração — e uma equipe de cientistas de imagem empilhou-as, alinhá-las sub-pixel, calibrando os pixels ruins e raios cósmicos, em seguida, atribuiu cores por que física o filtro capturado. O que você vê no cartaz são dados reais e interpretação real, em partes iguais. As imagens do telescópio não são desonestas — simplesmente não é o que a sua câmara telefônica faz.",
+    "new": "O Hubble não tirou uma foto dos Pilares da Criação. O Hubble tirou algumas dezenas de fotos, cada uma por um filtro diferente, cada uma com minutos de duração, e uma equipe de cientistas de imagem as empilhou, alinhou com precisão de subpixel, eliminou os pixels defeituosos e os impactos de raios cósmicos e depois atribuiu cores conforme a física que cada filtro captava. O que você vê no pôster são dados reais e interpretação real, em partes iguais. A imagem de telescópio não é desonesta: ela só não é o que a câmera do seu celular faz."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "narrative_101.1",
+    "old": "Abaixo desta seção, o Observatório Showcase tira uma imagem de assinatura de cada um dos doze observatórios da frota de Orrery — Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO e Hitomi. Clique em qualquer um deles para cair na galeria completa do observatório + painel técnico.",
+    "new": "Abaixo desta seção, a faixa Observatory Showcase traz uma imagem marcante de cada um dos doze observatórios da frota do Orrery: Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO e Hitomi. Clique em qualquer um deles para abrir a galeria completa e o painel técnico daquele observatório."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.0",
+    "old": "O sensor de imagem de um telescópio espacial é um chip CCD ou CMOS — uma grade de fotões. Cada pixel fica no plano focal para uma exposição (de milissegundos a várias horas), acumulando contagens de elétrons. A saída é um número por pixel: quantos fótons dos quais filtro de banda estreita atingiu lá. Múltiplas exposições são empilhadas para bater o ruído de leitura, registrado para alinhamento sub-pixel, e mediana-combinado para rejeitar hits de raios cósmicos.",
+    "new": "O sensor de imagem de um telescópio espacial é um chip CCD ou CMOS, uma grade de contadores de fótons. Cada pixel fica no plano focal durante uma exposição (de milissegundos a várias horas), acumulando elétrons. A saída é um número por pixel: quantos fótons, de qual filtro de banda estreita, chegaram ali. Várias exposições são empilhadas para reduzir o ruído de leitura, alinhadas com precisão de subpixel e combinadas pela mediana para rejeitar os impactos de raios cósmicos."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.1",
+    "old": "A cor é a parte mais mal compreendida. Os filtros de telescópio são de banda estreita – passam por uma fatia específica de 10–100 nm do espectro: hidrogénio-alfa a 656,3 nm, oxigénio duplamente ionizado a 500,7 nm, bandas de infravermelho a 2 μm ou 12 μm. A Paleta Hubble atribui esses filtros a canais RGB de formas não físicas (vermelho S-II, verde H-α, azul O-III) para maximizar o contraste entre processos físicos. As imagens de infravermelho médio da JWST mapeiam 21 μm, 11 μm e 7 μm para RGB — cores que seu olho não podia ver se você estava lá.",
+    "new": "A cor é a parte mais mal compreendida. Os filtros dos telescópios são de banda estreita: deixam passar uma fatia específica de 10 a 100 nm do espectro: hidrogênio-alfa em 656,3 nm, oxigênio duplamente ionizado em 500,7 nm, bandas infravermelhas em 2 µm ou 12 µm. A paleta Hubble atribui esses filtros aos canais RGB de modo não físico (S-II em vermelho, H-α em verde, O-III em azul) para maximizar o contraste entre processos físicos. As imagens de infravermelho médio do JWST mapeiam 21 µm, 11 µm e 7 µm em RGB: cores que seu olho não veria se você estivesse lá."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.2",
+    "old": "O gasoduto de processamento é de código aberto para a maioria dos observatórios da NASA / ESA. Exposições brutas de terra em MAST (Mikulski Archive for Space Telescopes) ou ESA Datalabs no momento em que eles atingem o solo; tutoriais imagem-pipeline mostram exatamente como um compósito final é montado. As imagens não são fabricadas — estão documentadas até ao byte.",
+    "new": "O pipeline de processamento é aberto para a maioria dos observatórios da NASA e da ESA. As exposições brutas chegam ao MAST (Mikulski Archive for Space Telescopes) ou ao ESA Datalabs assim que tocam o solo; tutoriais de pipeline de imagem mostram exatamente como um composto final é montado. As imagens não são fabricadas: são documentadas até o byte."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.3",
+    "old": "Para imagens terrestres, o desafio adicional é a atmosfera. [Optica adaptativa] (observação/adaptativa-óptica) corrige-a em tempo real, detectando a turbulência com uma estrela guia laser e contra-dobrando um espelho deformável. JWST e Hubble estão no espaço parcialmente para pular este problema completamente; a atmosfera também é opaca na maioria das bandas de infravermelho e UV, que é a outra razão.",
+    "new": "Na imagem feita do solo, o desafio adicional é a atmosfera. A [óptica adaptativa](observation/adaptive-optics) a corrige em tempo real, detectando a turbulência com uma estrela-guia a laser e curvando em sentido oposto um espelho deformável. O JWST e o Hubble estão no espaço em parte para evitar esse problema por completo; a atmosfera também é opaca na maior parte das bandas do infravermelho e do ultravioleta, que é a outra razão."
+  },
+  {
+    "rel": "science/observation/space-photography.json",
+    "at": "diagram_caption",
+    "old": "Filtro → CCD → pilha → registo → calibrar → compósito → mapa de cores. Seis passos, horas de computação, dados reais o tempo todo.",
+    "new": "Filtro → CCD → empilhamento → alinhamento → calibração → composto → mapeamento de cores. Seis etapas, horas de processamento, dados reais do começo ao fim."
+  }
+]

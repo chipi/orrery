@@ -45,6 +45,26 @@ re-translate segment; BROKEN 1–19% → fix flagged strings; else fine. (The pr
 worked is in the 2026-10-17 session: "professional <language> translation reviewer …
 grade EVERY item …".)
 
+## 3a. UI strings — read every short key (2026-10-30 method)
+
+The UI bundle (`messages/<loc>.json`, ~1,980 keys of ≤4 words) is read in full, by
+locale, against the English. The sample in §3 is too thin for it: ar, hi, ja each
+needed ~400 fixes.
+
+1. `node scripts/i18n-tools/ui-label-audit.mjs <loc>` — the checks' findings for the
+   locale (English left in, brand, RTL arrows, label variants). Fix those first.
+2. Fix the keys in `scripts/i18n-tools/ui-senses.json` next: they were wrong in most
+   locales for the same reason (a word read in its everyday sense).
+3. Read the rest in chunks of ~330 keys (key, English, current), hand-write fixes,
+   apply with `scripts/i18n-tools/apply-edits.mjs` (rel `messages`; it runs the UI
+   checks and refuses a fix that adds a problem).
+4. Variants: every short English label with two translations either becomes one, or
+   gets a reason in `ui-label-baseline.json` (the meaning differs).
+5. `node scripts/i18n-tools/ui-label-audit.mjs all --prune`, set the locale's
+   `audited` to the commit, then `npx vitest run scripts/i18n-tools/ui-label-audit.test.ts`.
+6. A word found read in the wrong sense goes into `ui-senses.json` (and §4a of the
+   style guide when it is a new kind of mistake).
+
 ## 4. Output → i18n-fix-run
 
 ```bash

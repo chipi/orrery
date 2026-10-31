@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "orbit-regimes.schema.json",
+  "title": "Orbit regime bands (Earth, Mars, Moon)",
+  "description": "Shared by orbit-regimes.json, orbit-regimes-mars.json and orbit-regimes-moon.json. altitude_km is either a single altitude or a [low, high] band.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "altitude_km",
+      "color"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[A-Z0-9_]+$"
+      },
+      "altitude_km": {
+        "oneOf": [
+          {
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number",
+              "minimum": 0
+            },
+            "description": "[low, high] band"
+          }
+        ]
+      },
+      "color": {
+        "type": "string",
+        "pattern": "^#[0-9a-fA-F]{6}$"
+      }
+    }
+  },
+  "uniqueItems": true
+}

@@ -17,13 +17,13 @@
     {
       "met": 0.13,
       "label": "TLI",
-      "note": "Translunare Injektionsverbrennung – S-IVB-Stufe treibt CSM/LM in Richtung Mond.",
+      "note": "Translunare Injektionszündung – S-IVB-Stufe treibt CSM/LM in Richtung Mond.",
       "type": "nominal"
     },
     {
       "met": 3.13,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn.",
+      "note": "Einschwenken in die Mondumlaufbahn.",
       "type": "nominal"
     },
     {
@@ -50,5 +50,6 @@
       "note": "CM Columbia bringt Besatzung am 24.07.1969 zum Pazifik zurück.",
       "type": "nominal"
     }
-  ]
+  ],
+  "vehicle_stage": "Saturn V S-IVB (dritte Stufe)"
 }

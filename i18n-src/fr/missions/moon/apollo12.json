@@ -41,13 +41,13 @@
     {
       "met": 6.74,
       "label": "DÉCOLLAGE",
-      "note": "Intrepid décolle après 31 h 31 m en surface. 34 kg d'échantillons ramené.",
+      "note": "Intrepid décolle après 31 h 31 m en surface. 34 kg d'échantillons ramenés.",
       "type": "nominal"
     },
     {
       "met": 6.93,
       "label": "IMPACT DU MODULE LUNAIRE",
-      "note": "L'étage d'ascension d'Intrepid s'écrase délibérément sur la Lune pour étalonner les sismomètres de l'ALSEP — le premier étage de vaisseau d'une mission habitée délibérément impacté sur la Lune et enregistré par un sismomètre en surface.",
+      "note": "L'étage d'ascension d'Intrepid est écrasé délibérément sur la Lune pour étalonner les sismomètres de l'ALSEP — premier étage de vaisseau d'une mission habitée à être volontairement précipité sur la Lune et enregistré par un sismomètre en surface.",
       "type": "info"
     },
     {
@@ -59,7 +59,7 @@
     {
       "met": 10.18,
       "label": "AMERRISSAGE",
-      "note": "Le module de commande s'est amerri dans le Pacifique Sud 1969-11-24 20:58 UTC. Récupération par l'USS Hornet.",
+      "note": "Le module de commande a amerri dans le Pacifique Sud 1969-11-24 20:58 UTC. Récupération par l'USS Hornet.",
       "type": "nominal"
     }
   ]

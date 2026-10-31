@@ -5,7 +5,7 @@
   "delta_v": "~5,7 km/s",
   "type": "LANDER · FLOWN",
   "first": "Prima conferma di ghiaccio d'acqua nella regolite artica marziana; primo atterraggio morbido propulsivo su Marte dai tempi di Viking 2",
-  "description": "Phoenix fu recuperata dal programma cancellato Mars Surveyor 2001 — hardware di volo conservato per sei anni, riassemblato e ridiretto verso le pianure polari nord di Marte. Il nome fu scelto letteralmente. Atterrò il 25-05-2008 a 68.22°N, 234.25°E su Vastitas Borealis, più a nord di qualsiasi missione di superficie precedente. Nel giro di pochi giorni il braccio robotico raschiò attraverso il suolo superficiale ed espose ghiaccio bianco brillante che visibilmente sublimò davanti alla telecamera nell'arco di quattro sol — conferma diretta di ghiaccio d'acqua subsuperficiale nell'artico marziano. Rilevò perclorati nella regolite e osservò neve che cadeva dalle nuvole. La missione terminò il 02-11-2008 quando l'energia solare scese sotto la soglia operativa all'inizio dell'inverno marziano; non ci si aspettava che il lander sopravvivesse alla notte polare.",
+  "description": "Phoenix fu recuperata dal programma annullato Mars Surveyor 2001 — hardware di volo rimasto in deposito per sei anni, riassemblato e riorientato verso le pianure polari settentrionali di Marte. Il nome fu scelto in senso letterale. Atterrò il 2008-05-25 a 68,22°N, 234,25°E su Vastitas Borealis, più a nord di qualsiasi missione di superficie precedente. Nel giro di pochi giorni il braccio robotico raschiò il terreno superficiale ed espose ghiaccio bianco brillante che sublimò visibilmente davanti alla telecamera nell'arco di quattro sol — conferma diretta di ghiaccio d'acqua nel sottosuolo dell'Artico marziano. Rilevò perclorati nella regolite e osservò neve cadere dalle nuvole. La missione terminò il 2008-11-02, quando l'energia solare scese sotto la soglia operativa all'inizio dell'inverno marziano; non ci si aspettava che il lander sopravvivesse alla notte polare.",
   "events": [
     {
       "met": 0,
@@ -28,26 +28,27 @@
     {
       "met": 295,
       "label": "EDL",
-      "note": "Aeroshell, paracadute supersonico, dodici retrorazzi a idrazina — discesa propulsiva stile Viking.",
+      "note": "Guscio aerodinamico, paracadute supersonico, dodici retrorazzi a idrazina — discesa propulsiva in stile Viking.",
       "type": "info"
     },
     {
       "met": 295.01,
       "label": "ATTERRAGGIO",
-      "note": "Atterraggio morbido a 68.22°N, 234.25°E — missione di superficie più a nord su Marte.",
+      "note": "Atterraggio morbido a 68,22°N, 234,25°E — la missione di superficie più settentrionale su Marte.",
       "type": "info"
     },
     {
       "met": 302,
       "label": "GHIACCIO ESPOSTO",
-      "note": "Il braccio raschia attraverso il suolo superficiale. Ghiaccio bianco brillante sublima davanti alla telecamera nell'arco di 4 sol.",
+      "note": "Il braccio raschia il terreno superficiale. Il ghiaccio bianco brillante sublima davanti alla telecamera nell'arco di 4 sol.",
       "type": "info"
     },
     {
       "met": 458,
       "label": "FINE MISSIONE",
-      "note": "02-11-2008. Inverno marziano; energia solare sotto la soglia operativa.",
+      "note": "2008-11-02. Inverno marziano; energia solare sotto la soglia operativa.",
       "type": "warning"
     }
-  ]
+  ],
+  "vehicle_stage": "stadio superiore a propellente solido Star 48B PAM-D"
 }

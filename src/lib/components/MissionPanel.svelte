@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
+  import PanelLinkTiers from './PanelLinkTiers.svelte';
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
+  import PanelTabRow from './PanelTabRow.svelte';
+  import PanelHeroImage from './PanelHeroImage.svelte';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/state';
-  import { base } from '$app/paths';
   import { assetOrigin, assetUrl } from '$lib/asset-url';
   import { trackMissionView, trackGalleryImageOpen } from '$lib/analytics';
   import { getMissionGallery, getMarsSites, getMoonSites, getBadges } from '$lib/data';
@@ -14,15 +16,14 @@
   import type { MissionIndex } from '$types/mission';
   import type { SurfaceSite } from '$types/surface-site';
   import { formatNumber } from '$lib/format';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
+  import { missionStatusLabel } from '$lib/status-label';
   import { missionGalleryCredit } from '$lib/image-credits';
-  import ImageCredit from './ImageCredit.svelte';
   import MediaPlayer from './MediaPlayer.svelte';
   import VideoThumb from './VideoThumb.svelte';
   import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
-  import LearnLink from './LearnLink.svelte';
   import ScienceChip from './ScienceChip.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
@@ -36,7 +37,7 @@
   type Tab = 'overview' | 'gallery' | 'flight' | 'science';
 
   // #306 panel ↔ /explore PATHS-layer backlink. Stays in sync with
-  // ICONIC_TRAJECTORY_IDS in src/routes/explore/+page.svelte —
+  // ICONIC_TRAJECTORY_IDS in src/lib/three/explore-scene-host.ts —
   // updating one without the other gives misleading "see on /explore"
   // chips. Validated by the explore-paths-layer e2e spec.
   const MISSIONS_WITH_ICONIC_PATH = new Set([
@@ -265,19 +266,6 @@
     }
   }
 
-  // Group links by tier for the LEARN tab. The mission JSON stores
-  // links in a flat array with a `t` (tier) discriminator.
-  let linksByTier = $derived.by(() => {
-    if (!mission?.links) return { intro: [], core: [], deep: [] };
-    const out = {
-      intro: [] as typeof mission.links,
-      core: [] as typeof mission.links,
-      deep: [] as typeof mission.links,
-    };
-    for (const link of mission.links) out[link.t].push(link);
-    return out;
-  });
-
   function flyMission() {
     if (mission && onFly) onFly(mission.id);
   }
@@ -289,7 +277,9 @@
   {#if mission}
     <div class="head">
       <AgencyRow agency={mission.agency} color={mission.color}>
-        <span class="status status-{mission.status.toLowerCase()}">{mission.status}</span>
+        <span class="status status-{mission.status.toLowerCase()}"
+          >{missionStatusLabel(mission.status)}</span
+        >
         {#if mission.data_quality === 'partial'}
           <span class="quality">{m.mp_data_quality_partial()}</span>
         {:else if mission.data_quality === 'reconstructed'}
@@ -313,24 +303,14 @@
     </div>
 
     {#if gallery.length > 0}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => {
-            lightboxSrc = gallery[0]!;
-            if (mission) trackGalleryImageOpen('mission', mission.id, 0);
-          }}
-          aria-label={m.panel_hero_aria({ name: mission.name ?? mission.id })}
-        >
-          <img
-            {...responsive(gallery[0], IMAGE_SIZES.panel)}
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
-        </button>
-      </div>
+      <PanelHeroImage
+        src={gallery[0]}
+        name={mission.name ?? mission.id}
+        onOpen={() => {
+          lightboxSrc = gallery[0]!;
+          if (mission) trackGalleryImageOpen('mission', mission.id, 0);
+        }}
+      />
     {/if}
 
     <!-- Tab order: OVERVIEW · FLIGHT (cond) · GALLERY (cond) · SCIENCE.
@@ -339,52 +319,26 @@
          after the overview (2026-06-17 user direction: "on mission
          details, can we get fly to be 2nd tab always for all missions
          in details template"). -->
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="mp-tab-overview"
-        data-audio-stage="mission-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="mp-tabpanel">{m.mp_tab_overview()}</button
-      >
-      {#if hasFlightData}
-        <button
-          type="button"
-          id="mp-tab-flight"
-          data-audio-stage="mission-tab-flight"
-          class:active={tab === 'flight'}
-          onclick={() => (tab = 'flight')}
-          role="tab"
-          aria-selected={tab === 'flight'}
-          aria-controls="mp-tabpanel">{m.mp_tab_flight()}</button
-        >
-      {/if}
-      {#if gallery.length > 0 || videos.length > 0}
-        <button
-          type="button"
-          id="mp-tab-gallery"
-          data-audio-stage="mission-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="mp-tabpanel">{m.mp_tab_gallery()}</button
-        >
-      {/if}
-      <button
-        type="button"
-        id="mp-tab-science"
-        data-audio-stage="mission-tab-science"
-        class:active={tab === 'science'}
-        onclick={() => (tab = 'science')}
-        role="tab"
-        aria-selected={tab === 'science'}
-        aria-controls="mp-tabpanel">SCIENCE</button
-      >
-    </div>
+    <PanelTabRow
+      idPrefix="mp"
+      tabs={[
+        { id: 'overview', label: m.mp_tab_overview(), audioStage: 'mission-tab-overview' },
+        {
+          id: 'flight',
+          label: m.mp_tab_flight(),
+          visible: hasFlightData,
+          audioStage: 'mission-tab-flight',
+        },
+        {
+          id: 'gallery',
+          label: m.mp_tab_gallery(),
+          visible: gallery.length > 0 || videos.length > 0,
+          audioStage: 'mission-tab-gallery',
+        },
+        { id: 'science', label: m.panel_tab_science(), audioStage: 'mission-tab-science' },
+      ]}
+      bind:active={tab}
+    />
 
     <div
       class="tab-content"
@@ -453,9 +407,9 @@
             {#if launcherRef}
               <a
                 class="spec-cta spec-cta--vehicle"
-                href="{base}/fleet?id={launcherRef}"
+                href={localHref(`/fleet?id=${launcherRef}`)}
                 data-testid="mission-vehicle-fleet-link"
-                title="Open {mission.vehicle} in /fleet"
+                title={m.mp_open_in_fleet_title({ vehicle: mission.vehicle ?? '' })}
               >
                 <span class="spec-icon" aria-hidden="true">
                   <VehicleIcon />
@@ -484,7 +438,7 @@
             {#if spacecraftRef}
               <a
                 class="spec-cta spec-cta--payload"
-                href="{base}/fleet?id={spacecraftRef}"
+                href={localHref(`/fleet?id=${spacecraftRef}`)}
                 data-testid="mission-payload-fleet-link"
                 title={m.mission_open_in_fleet_title()}
               >
@@ -530,7 +484,7 @@
                at Saturn-system scale on zoom-in (Slice D). -->
           <a
             class="explore-backlink"
-            href="{base}/explore?paths=1{mission.id === 'cassini' ? '&focus=saturn' : ''}"
+            href={localHref(`/explore?paths=1${mission.id === 'cassini' ? '&focus=saturn' : ''}`)}
             data-testid="explore-backlink"
           >
             {mission.id === 'cassini' ? m.mp_see_tour_on_explore() : m.mp_see_path_on_explore()}
@@ -803,8 +757,7 @@
       {:else if tab === 'science'}
         <div class="science-tab">
           <p class="science-blurb">
-            The orbital mechanics behind {mission.name ?? mission.id} — every formula and named phase
-            the FLIGHT tab references, with the option to read deeper.
+            {m.mp_science_blurb({ name: mission.name ?? mission.id, tab: m.mp_tab_flight() })}
           </p>
           {#each missionScienceSections as { tab: t, section } (t + section)}
             <ScienceCard tab={t} {section} />
@@ -812,42 +765,7 @@
           {#if mission.links && mission.links.length > 0}
             <div class="science-library">
               <h3 class="library-heading">{m.mp_tab_learn()}</h3>
-              {#if linksByTier.intro.length > 0}
-                <section class="link-tier tier-intro">
-                  <h3>{m.mp_links_intro()}</h3>
-                  <ul>
-                    {#each linksByTier.intro as link (link.u)}
-                      <li>
-                        <LearnLink entityId={mission.id} url={link.u} label={link.l} />
-                      </li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
-              {#if linksByTier.core.length > 0}
-                <section class="link-tier tier-core">
-                  <h3>{m.mp_links_core()}</h3>
-                  <ul>
-                    {#each linksByTier.core as link (link.u)}
-                      <li>
-                        <LearnLink entityId={mission.id} url={link.u} label={link.l} />
-                      </li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
-              {#if linksByTier.deep.length > 0}
-                <section class="link-tier tier-deep">
-                  <h3>{m.mp_links_deep()}</h3>
-                  <ul>
-                    {#each linksByTier.deep as link (link.u)}
-                      <li>
-                        <LearnLink entityId={mission.id} url={link.u} label={link.l} />
-                      </li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
+              <PanelLinkTiers links={mission.links} entityId={mission.id} />
             </div>
           {/if}
         </div>
@@ -855,40 +773,34 @@
         {#if gallery.length === 0 && videos.length === 0}
           <p class="empty-tab">{m.mp_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label={m.mp_gallery_aria()}>
-            {#each videos as v (v.id)}
-              <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
-            {/each}
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => {
-                  lightboxSrc = src;
-                  if (mission) trackGalleryImageOpen('mission', mission.id);
-                }}
-                aria-label={mission.name ?? mission.id}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-            {#if badges[`mission:${mission.id}`]}
-              <button
-                type="button"
-                class="gallery-thumb badge-thumb"
-                onclick={() => (lightboxSrc = assetUrl(badges[`mission:${mission.id}`]))}
-                aria-label="{mission.name ?? mission.id} insignia"
-              >
-                <img src={assetUrl(badges[`mission:${mission.id}`])} alt="" decoding="async" />
-                <span class="badge-tag">Insignia</span>
-              </button>
-            {/if}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.mp_gallery_aria()}
+            thumbLabel={mission.name ?? mission.id}
+            onOpen={(src) => {
+              lightboxSrc = src;
+              if (mission) trackGalleryImageOpen('mission', mission.id);
+            }}
+          >
+            {#snippet leading()}
+              {#each videos as v (v.id)}
+                <VideoThumb video={v} onOpen={(vv) => (playerVideo = vv)} />
+              {/each}
+            {/snippet}
+            {#snippet trailing()}
+              {#if mission && badges[`mission:${mission.id}`]}
+                <button
+                  type="button"
+                  class="gallery-thumb badge-thumb"
+                  onclick={() => (lightboxSrc = assetUrl(badges[`mission:${mission.id}`]))}
+                  aria-label={m.mp_insignia_aria({ name: mission.name ?? mission.id })}
+                >
+                  <img src={assetUrl(badges[`mission:${mission.id}`])} alt="" decoding="async" />
+                  <span class="badge-tag">{m.gallery_insignia_title()}</span>
+                </button>
+              {/if}
+            {/snippet}
+          </PanelGalleryGrid>
           <p class="gallery-credit">{missionGalleryCredit(mission.agency)}</p>
         {/if}
       {/if}
@@ -896,7 +808,7 @@
 
     <!-- Fly-mission CTA — only render when the mission has actual
          flight data backing the /fly sim (hasFlightData), is not still
-         in the PLANNED bucket, AND a host route wired the onFly
+         in the PLANNED or CANCELLED bucket (neither flew), AND a host route wired the onFly
          callback. (2026-06-17 user correction: "I didn't ask to add
          fly this mission to all cards, you added them where it makes
          no sense. I asked to make it visible on iconic mission on
@@ -917,8 +829,8 @@
           <span class="cta-text">{m.card_open_button()}</span>
         </button>
       {/if}
-      {#if (mission.status !== 'PLANNED' && hasFlightData && onFly) || crossSite}
-        {#if mission.status !== 'PLANNED' && hasFlightData && onFly}
+      {#if (mission.status !== 'PLANNED' && mission.status !== 'CANCELLED' && hasFlightData && onFly) || crossSite}
+        {#if mission.status !== 'PLANNED' && mission.status !== 'CANCELLED' && hasFlightData && onFly}
           <button type="button" class="cta" onclick={flyMission} data-testid="fly-mission-btn">
             <!-- Trajectory-arc glyph — curved path with arrowhead.
                  Replaces the prior "▶" play-character (2026-06-15
@@ -944,7 +856,7 @@
                 : 'ON THE LUNAR SURFACE ↗'}
           <a
             class="surface-link"
-            href={`${base}/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`}
+            href={localHref(`/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`)}
             data-testid="surface-link"
           >
             {surfaceLabel}
@@ -959,24 +871,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-{#if lightboxSrc}
-  <!-- Lightbox overlay: clickable backdrop dismisses; outer is a
-       <button> so role+keyboard are implicit, satisfying svelte's
-       a11y plugin. The image inside is non-interactive (alt="" since
-       the gallery context already labels it). -->
-  <button
-    type="button"
-    class="lightbox"
-    aria-label={m.panel_lightbox_close()}
-    onclick={() => (lightboxSrc = null)}
-  >
-    <img {...responsive(lightboxSrc, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
-    <span class="lightbox-close" aria-hidden="true">×</span>
-  </button>
-  <div class="lightbox-meta">
-    <ImageCredit src={lightboxSrc} />
-  </div>
-{/if}
+<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
 
 <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
@@ -1001,6 +896,11 @@
     color: var(--color-accent-text, #5070ff);
     border-color: rgba(68, 102, 255, 0.4);
     background: rgba(68, 102, 255, 0.08);
+  }
+  .status-cancelled {
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.15);
+    text-decoration: line-through;
   }
   .quality {
     color: #ffc850;

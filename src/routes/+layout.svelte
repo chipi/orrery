@@ -34,7 +34,7 @@
   import type { Snippet } from 'svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
-  import { localeFromPage, syncDocumentLocaleAttributes } from '$lib/locale';
+  import { localeFromPage, syncDocumentLocaleAttributes, localHref } from '$lib/locale';
   import {
     canonicalRoute,
     canonicalUrl,
@@ -42,8 +42,6 @@
     ogLocale,
     ogLocaleAlternates,
   } from '$lib/seo';
-  import { loadLocaleAltText } from '$lib/image-alt';
-  import { localeBundleOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import { initAnalytics, startEngagementHeartbeat, track, trackRouteEnter } from '$lib/analytics';
   import { migrateLegacyLocaleCookie } from '$lib/locale-cookie-migration';
@@ -137,11 +135,6 @@
   $effect(() => {
     if (!browser) return;
     syncDocumentLocaleAttributes(activeLocale);
-    // Load the locale's image alt-text overlay so panels opened afterwards
-    // render localized alt-text (falls back to en-US; #257). From the locale
-    // bundle origin: the mobile app streams non-default locale data from the CDN
-    // (prune-streamed-assets.mjs drops it from the bundle), the web serves it locally.
-    void loadLocaleAltText(activeLocale, localeBundleOrigin(activeLocale));
   });
 
   // PRD-016 M15 / RFC-019 §7.7 (S11) — ?audio={episode-id} deep-link.
@@ -544,11 +537,13 @@
     <nav class="footer-menu" aria-label={m.footer_links_aria()}>
       <a class="footer-link" href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href="{base}/credits">{m.layout_footer_credits()}</a>
+      <a class="footer-link" href={localHref(`/credits`)}>{m.layout_footer_credits()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href="{base}/colophon">{m.layout_footer_colophon()}</a>
+      <a class="footer-link" href={localHref(`/colophon`)}>{m.layout_footer_colophon()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
-      <a class="footer-link" href="{base}/library">{m.layout_footer_library()}</a>
+      <a class="footer-link" href={localHref(`/library`)}>{m.layout_footer_library()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link" href={localHref(`/science/glossary`)}>{m.layout_footer_glossary()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
       <!-- ABOUT is a hover-only group: not itself a link, just a label.
            The submenu (LICENSE + README) sits in a popover ABOVE the
@@ -564,7 +559,7 @@
         <span class="footer-about-label" aria-haspopup="menu">{m.layout_footer_about()}</span>
         <ul class="footer-about-menu" role="menu" aria-label={m.footer_about_aria()}>
           <li role="none">
-            <a class="footer-link footer-link-extra" href="{base}/privacy" role="menuitem"
+            <a class="footer-link footer-link-extra" href={localHref(`/privacy`)} role="menuitem"
               >{m.layout_footer_privacy()}</a
             >
           </li>
@@ -650,7 +645,7 @@
     align-items: center;
     gap: 8px;
     padding: 4px 10px;
-    background: rgba(4, 4, 12, 0.55);
+    background: rgba(4, 4, 12, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 4px;
     backdrop-filter: blur(6px);

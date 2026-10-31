@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onDestroy, onMount, untrack } from 'svelte';
+  import { localHref } from '$lib/locale';
   import { page } from '$app/state';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
@@ -393,11 +394,11 @@
       aria-disabled={!scienceLensAvailable}
       aria-label={scienceLensAvailable
         ? m.nav_science_lens_aria()
-        : `${m.nav_science_lens_aria()} (unavailable on this page)`}
+        : m.nav_unavailable_here({ label: m.nav_science_lens_aria() })}
       aria-pressed={scienceLens}
       title={scienceLensAvailable
         ? m.nav_science_lens_title()
-        : `${m.nav_science_lens_title()} (unavailable on this page)`}
+        : m.nav_unavailable_here({ label: m.nav_science_lens_title() })}
       onclick={onToggleLens}
     >
       <!-- Inline SVG, not a Unicode glyph: the ⊙/⊕ characters render
@@ -581,14 +582,19 @@
         href="{base}{localizeHref('/gallery')}"
         onclick={closeMobileMenu}>{m.layout_footer_gallery()}</a
       >
-      <a class="drawer-link drawer-link-sm" href="{base}/credits" onclick={closeMobileMenu}
+      <a class="drawer-link drawer-link-sm" href={localHref(`/credits`)} onclick={closeMobileMenu}
         >{m.layout_footer_credits()}</a
       >
-      <a class="drawer-link drawer-link-sm" href="{base}/colophon" onclick={closeMobileMenu}
+      <a class="drawer-link drawer-link-sm" href={localHref(`/colophon`)} onclick={closeMobileMenu}
         >{m.layout_footer_colophon()}</a
       >
-      <a class="drawer-link drawer-link-sm" href="{base}/library" onclick={closeMobileMenu}
+      <a class="drawer-link drawer-link-sm" href={localHref(`/library`)} onclick={closeMobileMenu}
         >{m.layout_footer_library()}</a
+      >
+      <a
+        class="drawer-link drawer-link-sm"
+        href={localHref(`/science/glossary`)}
+        onclick={closeMobileMenu}>{m.layout_footer_glossary()}</a
       >
       <!-- License + README fold under an "About" sub-heading, mirroring the
            desktop footer's ABOUT hover-group (+layout.svelte). Designed to
@@ -600,7 +606,7 @@
              on mobile, which would otherwise leave the opt-out URL-only. -->
         <a
           class="drawer-link drawer-link-sm drawer-about-item"
-          href="{base}/privacy"
+          href={localHref(`/privacy`)}
           onclick={closeMobileMenu}>{m.layout_footer_privacy()}</a
         >
         <a
@@ -632,8 +638,8 @@
     >
     <!-- Unified debug toggle (#54) — sits next to the prod/stage switcher; gates
          all debug overlays (DebugPanel + AR HUD). All builds; default off. -->
-    <aside class="debug-switcher" aria-label="Debug overlays">
-      <span class="label">Debug</span>
+    <aside class="debug-switcher" aria-label={m.nav_debug_group_aria()}>
+      <span class="label">{m.nav_debug_label()}</span>
       <button
         type="button"
         role="switch"

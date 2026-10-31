@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Das öffentliche Verzeichnis von Inhalten, die Orrery nicht unter seiner Lizenzschranke beschaffen konnte (Creative Commons / Public Domain, kein Wasserzeichen, authentisch — keine Fan-Reproduktionen). Wir zeigen lieber eine ehrliche Lücke, als etwas zu verwenden, für das wir keine Rechte haben. Neue Hindernisse werden hier angefügt, sobald wir auf sie stoßen.",
+  "note": "Das öffentliche Verzeichnis der Inhalte, die Orrery nach seinem Lizenzmaßstab nicht beschaffen konnte (Creative Commons / gemeinfrei, kein Wasserzeichen, authentisch — keine Fan-Nachbildungen). Wir zeigen lieber eine ehrliche Lücke, als etwas zu veröffentlichen, wozu uns die Rechte fehlen. Neue Hürden werden hier ergänzt, sobald wir auf sie stoßen.",
   "gaps": [
     {
       "id": "soviet-era-patches",
@@ -19,13 +19,13 @@
       "wall": "Zwei Hindernisse auf einmal. Erstens existierten die meisten nie: Die UdSSR übernahm die Missionsabzeichen-Tradition erst mit Apollo–Soyuz 1975, sodass Vostok, Voskhod und die ersten Soyuz-Flüge einfach kein Abzeichen hatten. Zweitens ist das, was später existiert — Soyuz TM/TMA-Expeditionsabzeichen, Roscosmos-Embleme — urheberrechtlich geschützt oder nur unter Fair-Use hochgeladen, nie unter einer freien Lizenz veröffentlicht.",
       "checked": [
         "Wikimedia Commons — englische Stichwortsuche",
-        "Wikimedia Commons — Kyrillische Suche (Soyuz / Salyut / Mir / Voskhod / Buran emblem patch)",
+        "Wikimedia Commons — Suche auf Kyrillisch (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
         "Wikimedia Commons — Kategorienbaum (sowjetisches Raumfahrtprogramm, Buran, Roscosmos)",
-        "ru.wikipedia — Bildmaterial für Artikel zu Vostok 1, Voskhod 2, Soyuz 1, Soyuz 11, Mir, Buran"
+        "ru.wikipedia — Artikelbilder zu Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
       ],
       "rejected": [
         "roscosmos.ru / astronaut.ru und ähnliche — urheberrechtlich geschützt oder Lizenz unklar; astronaut.ru ist eine privat betriebene Enzyklopädie, kein Rechteinhaber",
-        "Moderne Fan-Reproduktionen (z. B. ein CC-BY Buran-Emblem von einem Spieleartisten) — frei lizenziert, aber keine authentischen Abzeichen"
+        "Moderne Fan-Nachbildungen (z. B. ein CC-BY-lizenziertes Buran-Emblem eines Spielegrafikers) — frei lizenziert, aber keine authentischen Abzeichen"
       ],
       "resolution": "Das Roscosmos-Agenturlogo steht als ehrliche Kennzeichnung auf jeder betroffenen Programmkarte und -seite.",
       "status": "wall",
@@ -39,14 +39,14 @@
         "Shenzhou",
         "China Manned Space"
       ],
-      "want": "Das Emblem des China Manned Space (CMS)-Programms und Shenzhou-Besatzungsabzeichen, um neben den NASA-Abzeichen auf den Tiangong- und Shenzhou-Seiten zu stehen.",
-      "wall": "Chinas bemanntes Programm verwendet tatsächlich Missionsabzeichen — jede Shenzhou-Besatzung hat eines — aber das CMS-Emblem und die Shenzhou-Abzeichen sind urheberrechtlich geschützt durch die China Manned Space Agency, nicht unter einer freien Lizenz veröffentlicht. Wikimedia Commons enthält keines davon; die einzigen frei lizenzierten Bilder, die bei diesen Suchen zurückgegeben werden, sind nicht verwandte NASA-Fotografien.",
+      "want": "Das Emblem des Programms China Manned Space (CMS) und die Besatzungsabzeichen von Shenzhou, die neben den NASA-Abzeichen auf den Seiten zu Tiangong und Shenzhou stehen sollen.",
+      "wall": "Chinas bemanntes Programm verwendet durchaus Missionsabzeichen — jede Shenzhou-Besatzung hat eines —, aber das CMS-Emblem und die Shenzhou-Abzeichen sind urheberrechtlich geschützt (Rechteinhaber ist die China Manned Space Agency) und nicht unter einer freien Lizenz veröffentlicht. Wikimedia Commons enthält keines davon; die einzigen frei lizenzierten Bilder, die diese Suchen liefern, sind themenfremde NASA-Fotografien.",
       "checked": [
         "Wikimedia Commons — englische Stichwortsuche (China Manned Space / Shenzhou / Tiangong emblem, patch, insignia)",
         "Wikimedia Commons — China Manned Space Agency Logo"
       ],
       "rejected": [
-        "cmse.gov.cn und chinesische Staatsmedien-Bildmaterial — urheberrechtlich geschützt, keine freie Lizenz",
+        "cmse.gov.cn und Bildmaterial chinesischer Staatsmedien — urheberrechtlich geschützt, keine freie Lizenz",
         "Fan-Reproduktionen von Shenzhou-Abzeichen durch Dritte — nicht authentisch und nicht frei"
       ],
       "resolution": "Die Tiangong- und Shenzhou-Karten und -Seiten zeigen den Namen CMSA ohne Logo: Das CMSA-Emblem ist nicht frei lizenziert, und das CNSA-Abzeichen gehört einer anderen Behörde.",

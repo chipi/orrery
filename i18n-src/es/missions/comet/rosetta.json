@@ -4,8 +4,8 @@
   "payload": "Orbitador (~2900 kg en seco, 11 instrumentos) + módulo de descenso Philae (~100 kg, 10 instrumentos). Escudo térmico, dos asistencias gravitatorias terrestres + una marciana, 957 días de hibernación en el espacio profundo 2011–2014.",
   "delta_v": "~2,3 km/s (encuentro + operaciones en el cometa)",
   "type": "ORBITADOR + MÓDULO DE ATERRIZAJE · REALIZADA",
-  "first": "Primera nave espacial que orbita un cometa — y que aterrizó en uno (Philae, 2014-11-12)",
-  "description": "Misión insignia de la ESA de encuentro con cometas. Tras un viaje de 10 años que incluyó tres asistencias gravitatorias de la Tierra, una asistencia de Marte, dos sobrevuelos de asteroides y 957 días de hibernación en el espacio profundo, Rosetta alcanzó el cometa 67P/Churyumov–Gerasimenko en agosto de 2014 y lo orbitó durante más de dos años, atravesando el perihelio y más allá. El módulo de aterrizaje Philae alcanzó la superficie de 67P el 2014-11-12 — el primer aterrizaje suave en un cometa — y devolvió ~64 horas de ciencia tras el fallo de un arpón que lo dejó en la sombra de un acantilado. La propia Rosetta terminó la misión con un descenso controlado hacia la superficie de 67P el 2016-09-30. Resultados clave: moléculas orgánicas y glicina en la coma; la relación D/H medida inicialmente en 67P (≈3× la terrestre) cuestionaba el papel de los cometas de la familia de Júpiter como fuente del agua terrestre — un resultado que un reanálisis de 2024 ha puesto nuevamente en duda tras encontrar un error de medición; los primeros mapas detallados de la geometría del desgasificación cometaria.",
+  "first": "Primera nave espacial en orbitar un cometa — y en aterrizar en uno (Philae, 2014-11-12)",
+  "description": "Misión insignia de la ESA de encuentro con cometas. Tras un viaje de 10 años que incluyó tres asistencias gravitatorias de la Tierra, una de Marte, dos sobrevuelos de asteroides y 957 días de hibernación en el espacio profundo, Rosetta alcanzó el cometa 67P/Churyumov–Gerasimenko en agosto de 2014 y lo orbitó durante más de dos años, pasando por el perihelio y saliendo por el otro lado. El módulo de aterrizaje Philae llegó a la superficie de 67P el 2014-11-12 — el primer aterrizaje suave en un cometa — y devolvió datos científicos durante ~64 horas tras el fallo de un arpón que lo dejó a la sombra de un acantilado. La propia Rosetta terminó la misión con un descenso controlado hasta la superficie de 67P el 2016-09-30. Resultados clave: moléculas orgánicas y glicina en la coma; la relación D/H medida inicialmente en 67P (≈3× la terrestre) iba en contra de que los cometas de la familia de Júpiter fueran la fuente del agua de la Tierra — un resultado que un reanálisis de 2024 ha vuelto a poner en duda al encontrar un error de medición; los primeros mapas detallados de la geometría de la desgasificación cometaria.",
   "events": [
     {
       "met": 0,
@@ -40,7 +40,7 @@
     {
       "met": 3809,
       "label": "ENCUENTRO CON EL COMETA 67P",
-      "note": "Inserción en órbita alrededor del cometa 67P/Churyumov–Gerasimenko. Philae aterrizó el 2014-11-12.",
+      "note": "Inserción en órbita alrededor del cometa 67P/Churyumov-Gerasimenko. Philae aterrizó el 2014-11-12.",
       "type": "nominal"
     }
   ]

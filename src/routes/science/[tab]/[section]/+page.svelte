@@ -8,11 +8,13 @@
 -->
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
+  import { scienceTabLabel } from '$lib/science-tab-label';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
   import MuseumsForObject from '$lib/components/MuseumsForObject.svelte';
   import ObservatoriesForArticle from '$lib/components/ObservatoriesForArticle.svelte';
@@ -86,13 +88,7 @@
     section.tab === 'observation' && section.id === 'space-photography',
   );
 
-  function tabLabel(tab: string): string {
-    const key = `science_tab_${tab.replace(/-/g, '_')}` as keyof typeof m;
-    const fn = m[key] as (() => string) | undefined;
-    return typeof fn === 'function'
-      ? fn()
-      : tab.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-  }
+  const tabLabel = scienceTabLabel;
 </script>
 
 <svelte:head>
@@ -102,9 +98,9 @@
 
 <article class="reading">
   <nav class="crumb">
-    <a href="{base}/science">{m.science_heading()}</a>
+    <a href={localHref(`/science`)}>{m.science_heading()}</a>
     <span class="sep">›</span>
-    <a href="{base}/science/{section.tab}">{tabLabel(section.tab)}</a>
+    <a href={localHref(`/science/${section.tab}`)}>{tabLabel(section.tab)}</a>
     <span class="sep">›</span>
     <span>{section.title}</span>
   </nav>
@@ -130,7 +126,7 @@
 
   {#if section.narrative_101 && section.narrative_101.length > 0}
     <section class="narrative-101" aria-label={m.science_focused_101_aria()}>
-      <p class="badge">101 · zoom in</p>
+      <p class="badge">{m.science_101_badge()}</p>
       {#each section.narrative_101 as para (para)}
         <p>{para}</p>
       {/each}
@@ -179,7 +175,7 @@
                  content for an interactive tool. The other half of the loop
                  that `science-section-view.source` opens. -->
             <a
-              href="{base}{link.route}{link.query ?? ''}"
+              href={localHref(`${link.route}${link.query ?? ''}`)}
               onclick={() => trackScienceToApp(section.id, link.route)}>{link.route}</a
             >
             <span class="ctx">{link.context_key}</span>

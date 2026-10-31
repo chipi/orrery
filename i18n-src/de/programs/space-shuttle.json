@@ -22,7 +22,7 @@
     },
     {
       "type": "prose",
-      "md": "Das Ziel des Shuttle war es, das Arbeitspferd für alles zu sein: ein einziges Fahrzeug, das Satelliten starten, sie bergen und reparieren, Labore wie Spacelab tragen, Besatzungen befördern und Raumstationen bauen und warten konnte — alles wiederverwendbar, alles routinemäßig. Kein Raumfahrzeug vorher oder seitdem hat so viele Fähigkeiten in einer Flugzeugzelle kombiniert. Eine Besatzung von bis zu sieben Personen, eine Ladebucht von der Größe eines Busses, ein fünfzehn Meter langer Roboterarm und die Fähigkeit, nicht nur Fracht in den Orbit zu liefern, sondern Fracht auch *zurückzubringen* — diese Kombination war wirklich einzigartig, und sie ermöglichte Dinge, die nichts anderes tun konnte."
+      "md": "Das Ziel des Shuttle war es, das Arbeitspferd für alles zu sein: ein einziges Fahrzeug, das Satelliten starten, sie bergen und reparieren, Labore wie Spacelab tragen, Besatzungen befördern und Raumstationen bauen und warten konnte — alles wiederverwendbar, alles routinemäßig. Kein Raumfahrzeug vorher oder seitdem hat so viele Fähigkeiten in einer Flugzeugzelle kombiniert. Eine Besatzung von bis zu sieben Personen, eine Nutzlastbucht von der Größe eines Busses, ein fünfzehn Meter langer Roboterarm und die Fähigkeit, nicht nur Fracht in den Orbit zu liefern, sondern Fracht auch *zurückzubringen* — diese Kombination war wirklich einzigartig, und sie ermöglichte Dinge, die nichts anderes tun konnte."
     },
     {
       "type": "prose",
@@ -88,5 +88,9 @@
       "type": "prose",
       "md": "Die zweite Lehre steht in den beiden Unfällen geschrieben: Eine Organisation ist dann am gefährlichsten, wenn sie sich an ein Risiko gewöhnt, das sie schon einmal überstanden hat. Challenger und Columbia gingen beide an Gefahren verloren, die wiederholt aufgetreten und jedes Mal als akzeptabel neu eingestuft worden waren – die Normalisierung der Abweichung. Die technischen Korrekturen waren der leichte Teil; die schwere, bleibende Lehre lautet, dass eine wiederkehrende Warnung als Warnung behandelt werden muss, gleichgültig wie oft sie noch niemanden getötet hat. Vierzehn Menschen starben dafür, es gleich zweimal zu beweisen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/earth": "Erde — Umlaufbahnen & Startplätze",
+    "/fleet?focus=discovery": "Flotte — Space-Shuttle-Orbiter"
+  }
 }

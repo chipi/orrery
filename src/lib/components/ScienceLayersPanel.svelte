@@ -21,7 +21,7 @@
 -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { onScienceLensChange, markScienceLensAvailable } from '$lib/science-lens';
   import {
     LAYER_ORDER,
@@ -448,16 +448,18 @@
       data-audio-stage="science-lens-collapse"
       onclick={() => (expanded = !expanded)}
     >
-      <span class="eyebrow">SCIENCE LENS{!expanded && hasLensStory ? ` · ${title}` : ''}</span>
+      <span class="eyebrow"
+        >{m.science_lens_eyebrow()}{!expanded && hasLensStory ? ` · ${title}` : ''}</span
+      >
       <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>
     </button>
     {#if expanded}
       <div id="science-lens-body">
         {#if hasLensStory && tab && section}
-          <a class="lens-story" href="{base}/science/{tab}/{section}">
+          <a class="lens-story" href={localHref(`/science/${tab}/${section}`)}>
             <div class="lens-title">{title}</div>
             <div class="lens-body">{body}</div>
-            <div class="lens-link">→ Read in /science</div>
+            <div class="lens-link">{m.science_lens_read()}</div>
           </a>
         {/if}
         {#if hasLayers}
@@ -481,8 +483,10 @@
                 <span class="row-desc">
                   {meta.description}
                   {#if meta.learn}
-                    <a class="row-learn" href="{base}/science/{meta.learn.tab}/{meta.learn.section}"
-                      >→ science</a
+                    <a
+                      class="row-learn"
+                      href={localHref(`/science/${meta.learn.tab}/${meta.learn.section}`)}
+                      >{m.science_lens_row_learn()}</a
                     >
                   {/if}
                 </span>
@@ -495,11 +499,14 @@
             <div class="lens-divider" aria-hidden="true"></div>
           {/if}
           <div class="foundations">
-            <div class="foundations-eyebrow">FOUNDATIONS</div>
+            <div class="foundations-eyebrow">{m.science_layers_foundations()}</div>
             <ul class="foundations-list">
               {#each historicalFoundations as ref (ref.section)}
                 <li>
-                  <a class="foundations-link" href="{base}/science/{ref.tab}/{ref.section}">
+                  <a
+                    class="foundations-link"
+                    href={localHref(`/science/${ref.tab}/${ref.section}`)}
+                  >
                     {ref.label} →
                   </a>
                 </li>

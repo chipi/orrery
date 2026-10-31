@@ -13,7 +13,7 @@
 -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages.js';
 
@@ -36,7 +36,7 @@
 {#if layerOn}
   <a
     class="legend"
-    href="{base}/science/orbits/keplers-laws"
+    href={localHref(`/science/orbits/keplers-laws`)}
     data-testid="microgravity-axes-legend"
   >
     <div class="eyebrow">{m.microgravity_legend_eyebrow()}</div>

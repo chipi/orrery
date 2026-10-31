@@ -20,6 +20,7 @@
     type IndexItem,
   } from '$lib/surface-map/surface-index';
   import * as m from '$lib/paraglide/messages';
+  import { surfaceStatusLabel } from '$lib/status-label';
 
   interface Props {
     items: IndexItem[];
@@ -161,7 +162,7 @@
           type="button"
           class="sidx-chip"
           class:active={statusFilter === s}
-          onclick={() => (statusFilter = s)}>{s}</button
+          onclick={() => (statusFilter = s)}>{surfaceStatusLabel(s)}</button
         >
       {/each}
     </div>
@@ -190,7 +191,7 @@
           <span class="row-dot" style:background={domainColor(item)} aria-hidden="true"></span>
           <span class="row-name">{item.name}</span>
           <AgencyBadge agency={item.agencies.join(' / ')} />
-          <span class="row-meta">{item.year} · {item.status}</span>
+          <span class="row-meta">{item.year} · {surfaceStatusLabel(item.status)}</span>
         </button>
       </li>
     {/each}

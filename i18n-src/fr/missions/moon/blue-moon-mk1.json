@@ -16,7 +16,7 @@
     {
       "met": 0.2,
       "label": "TLI",
-      "note": "Le deuxième étage de New Glenn effectue une brûlure par injection trans-lunaire.",
+      "note": "Le deuxième étage de New Glenn effectue un allumage d'injection trans-lunaire.",
       "type": "nominal"
     },
     {
@@ -28,14 +28,15 @@
     {
       "met": 4,
       "label": "Lettre d'intention",
-      "note": "Insertion de l'orbite lunaire via le moteur principal BE-7.",
+      "note": "Insertion en orbite lunaire via le moteur principal BE-7.",
       "type": "nominal"
     },
     {
       "met": 4.1,
       "label": "DESCENTE PUISSÉE",
-      "note": "Descente accélérée du BE-7 vers la surface lunaire – premier atterrissage lunaire de Blue Origin.",
+      "note": "Descente à poussée modulée du BE-7 vers la surface lunaire — premier atterrissage lunaire de Blue Origin.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "deuxième étage du New Glenn (allumage TLI)"
 }

@@ -1,0 +1,56 @@
+[
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "description",
+    "find": "戦略防衛構想（SDI）",
+    "replace": "戦略防衛構想"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.3.note",
+    "find": "SHIOLIクレーター",
+    "replace": "Shioliクレーター"
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "description",
+    "find": "2回目のEVAの最後",
+    "replace": "EVA-2の最後"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "description",
+    "find": "スペースシャトルAtlantis",
+    "replace": "Space Shuttle Atlantis"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "find": "スペースシャトルAtlantis（STS-30）＋慣性上段ロケット（IUS）",
+    "replace": "Space Shuttle Atlantis（STS-30）＋Inertial Upper Stage"
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "description",
+    "find": "欧州宇宙機関（ESA）",
+    "replace": "欧州宇宙機関"
+  },
+  {
+    "rel": "missions/didymos/hera.json",
+    "at": "description",
+    "find": "2機の超小型衛星（CubeSat）JuventasとMilani",
+    "replace": "2機のCubeSats、JuventasとMilani"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "description",
+    "find": "アポロ月ミッション",
+    "replace": "Apollo月ミッション"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "find": "小型搭載型衝突装置（SCI）",
+    "replace": "小型搭載型衝突装置"
+  }
+]

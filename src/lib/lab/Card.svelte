@@ -22,7 +22,7 @@
   reason). Momentum (no figure) → FigureRenderer omitted. KaTeX is NOT imported here.
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { localHref } from '$lib/locale';
   import type { FormulaDef, FieldSpec, FormulaResult } from '$lib/physics/spec';
   import { bodyGravityMs2 } from '$lib/physics/mechanics/bodies';
   import FigureRenderer from './FigureRenderer.svelte';
@@ -153,7 +153,7 @@
 
   <!-- Equation — pre-rendered KaTeX HTML, never calls renderKatex at runtime -->
   {#if equationHtml}
-    <div class="card__equation" aria-label={t('lab.ui.aria-equation')}>
+    <div class="card__equation" role="group" aria-label={t('lab.ui.aria-equation')}>
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- KaTeX server-rendered HTML, ADR-034 -->
       {@html equationHtml}
     </div>
@@ -161,8 +161,8 @@
 
   <!-- Glossary (FB2): read the equation as meaning — each symbol, the physical law, the
        link to earlier rungs — before substituting numbers. -->
-  {#if formula.glossaryKey}
-    <p class="card__glossary">{t(formula.glossaryKey)}</p>
+  {#if formula.plainKey}
+    <p class="card__plain">{t(formula.plainKey)}</p>
   {/if}
 
   <!-- Parameter controls -->
@@ -322,7 +322,7 @@
     <footer class="card__learn">
       <span class="card__learn-label">{t('lab.ui.learn-more')}</span>
       {#if formula.citationKey}
-        <a class="card__learn-link" href="{base}/science/{formula.citationKey}"
+        <a class="card__learn-link" href={localHref(`/science/${formula.citationKey}`)}
           >{t('lab.ui.learn-more-science')}</a
         >
       {/if}
@@ -400,7 +400,7 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.62rem;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.42);
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .card__assumptions-label {
@@ -425,7 +425,7 @@
     font-size: 0.6rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .card__learn-link {
@@ -463,7 +463,7 @@
   }
 
   /* Glossary (FB2) — "read the equation" prose under the formula. */
-  .card__glossary {
+  .card__plain {
     margin: 0 0 0.9rem;
     font-size: 0.82rem;
     line-height: 1.55;
@@ -653,7 +653,7 @@
   .card__readout-unit {
     font-size: 0.62rem;
     margin-left: 0.2rem;
-    color: rgba(78, 205, 196, 0.6);
+    color: rgba(78, 205, 196, 0.8);
     font-weight: normal;
   }
 
@@ -661,7 +661,7 @@
   .card__readout-fail {
     font-family: 'Space Mono', monospace;
     font-size: 0.8rem;
-    color: #c1440e;
+    color: #e0622a;
     display: flex;
     align-items: center;
     gap: 0.4rem;

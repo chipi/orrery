@@ -16,7 +16,7 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn.",
+      "note": "Einschwenken in die Mondumlaufbahn.",
       "type": "nominal"
     },
     {
@@ -49,5 +49,6 @@
       "note": "Probenkapsel landet in der Inneren Mongolei 16.12.2020.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Oberstufe YZ-1 der Long March 5"
 }

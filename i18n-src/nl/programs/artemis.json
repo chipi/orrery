@@ -88,5 +88,10 @@
       "type": "prose",
       "md": "De diepere les gaat over veerkracht versus focus. Apollo's enkelvoudige nationale wil was zijn kracht en zijn kwetsbaarheid; Artemis ruilt focus in voor een coalitie die geen enkele begroting gemakkelijk kan doden. Het is langzamer, complexer en moeilijker te plannen — en het wedt dat uithoudingsvermogen, niet snelheid, is wat een terugkeer 'om te blijven' werkelijk vereist. Of die weddenschap uitbetaalt is het verhaal dat het volgende decennium zal vertellen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/moon": "Maan — de bestemming",
+    "/fleet?focus=orion": "Vloot — Orion, SLS & de maanhardware",
+    "/programs/apollo": "Apollo — het programma waarnaar Artemis is vernoemd en waarop het voortbouwt"
+  }
 }

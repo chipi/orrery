@@ -1,0 +1,519 @@
+[
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "change",
+    "find": "सूर्य-स्थैतिक प्रक्षेपण",
+    "replace": "सूर्य-तुल्यकालिक कक्षा के प्रक्षेपण",
+    "why": "orbit dropped; restore कक्षा"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "change",
+    "find": "ध्रुवीय",
+    "replace": "ध्रुवीय कक्षा",
+    "why": "orbit dropped; restore कक्षा"
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "change",
+    "find": "ऑर्बिट में",
+    "replace": "कक्षा में",
+    "why": "transliteration replaced by binding"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "description",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "चंद्रमा की परिक्रमा के पथ पर",
+    "replace": "चंद्रमा की ओर प्रक्षेपवक्र पर",
+    "why": "translunar trajectory, not an orbit path"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "tagline",
+    "term": "inclination",
+    "decision": "change",
+    "find": "इंक्लिनेशन",
+    "replace": "झुकाव",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "tagline",
+    "term": "apogee",
+    "decision": "change",
+    "find": "एपोजी",
+    "replace": "अपभू",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "इंक्लिनेशन",
+    "replace": "झुकाव",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "description",
+    "term": "apogee",
+    "decision": "change",
+    "find": "एपोजी",
+    "replace": "अपभू",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "best_known_for",
+    "term": "inclination",
+    "decision": "change",
+    "find": "इंक्लिनेशन",
+    "replace": "झुकाव",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "best_known_for",
+    "term": "apogee",
+    "decision": "change",
+    "find": "एपोजी",
+    "replace": "अपभू",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "इन्क्लिनेशन",
+    "replace": "झुकाव",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "description",
+    "term": "apogee",
+    "decision": "change",
+    "find": "एपोजी",
+    "replace": "अपभू",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "रेंडेज़्वस",
+    "replace": "मिलन",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "tagline",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "रेंडेज़्वस",
+    "replace": "मिलन",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "रेंडेज़्वस",
+    "replace": "मिलन",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "best_known_for",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "रेंडेज़्वस",
+    "replace": "मिलन",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "रेंडेज़्वस",
+    "replace": "मिलन",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "रॉन्देवू",
+    "replace": "मिलन",
+    "why": "garbled transliteration; binding"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned storable liquids = combustion of propellant, not an engine firing"
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "रेंडेज़्वस",
+    "replace": "मिलन",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "description",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "डेल्टा-v",
+    "replace": "डेल्टा-वी",
+    "why": "binding (mixed script)"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "term": "delta-v",
+    "decision": "keep",
+    "why": "the sentence containing delta-v is omitted from the translation; no rendering to fix (content gap, flagged)"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "LOX/LH2 burned = combustion"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "लैंडिंग बर्न",
+    "replace": "लैंडिंग दहन",
+    "why": "entry/landing burn = engine firing; transliteration replaced by binding"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning LOX/LH2 = combustion"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "methane/hydrogen-burning = combustion"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षीय इंजेक्शन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning propellant = combustion"
+  },
+  {
+    "rel": "fleet/engine/rl10.json",
+    "at": "tagline",
+    "term": "stage",
+    "decision": "change",
+    "find": "अपर स्टेज",
+    "replace": "ऊपरी चरण",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/rl10.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "Centaur अपर स्टेज",
+    "replace": "Centaur ऊपरी चरण",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/rl10.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "मिशन के अपर स्टेज",
+    "replace": "मिशन के ऊपरी चरण",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/rl10.json",
+    "at": "best_known_for",
+    "term": "stage",
+    "decision": "change",
+    "find": "अपर स्टेज",
+    "replace": "ऊपरी चरण",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "कोर स्टेज",
+    "replace": "कोर चरण",
+    "why": "binding; 'staged combustion' is a cycle name, left as is"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "पहली अवस्था के",
+    "replace": "पहले चरण के",
+    "why": "अवस्था means state/phase; binding चरण"
+  },
+  {
+    "rel": "fleet/launcher/voskhod-11a57.json",
+    "at": "dispatch",
+    "term": "stage",
+    "decision": "change",
+    "find": "अपर स्टेज",
+    "replace": "ऊपरी चरण",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "dispatch",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ईंधन",
+    "replace": "प्रणोदक",
+    "why": "English propellant; binding"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/orion.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "बुध की पहली उड़ान",
+    "replace": "बुध की पहली फ्लाईबाई",
+    "why": "flyby rendered as plain flight"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "शनि की पहली उड़ान",
+    "replace": "शनि की पहली फ्लाईबाई",
+    "why": "flyby rendered as plain flight"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "सामीप्य उड़ान",
+    "replace": "फ्लाईबाई",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "उड़ान भरी",
+    "replace": "फ्लाईबाई की",
+    "why": "flyby rendered as plain flight"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "tagline",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबी",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबी",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "keep",
+    "why": "variant: करीब से गुजरेगा (passes close by) for 'close flyby'"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षीय प्रविष्टि",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा प्रविष्टि",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण मॉड्यूल",
+    "replace": "अवरोहण मॉड्यूल",
+    "why": "descent module; अवतरण is landing"
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "tagline",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent telemetry"
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "माध्यम से अवतरण से",
+    "replace": "माध्यम से अवरोहण से",
+    "why": "descent through atmosphere"
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण मॉड्यूल",
+    "replace": "अवरोहण मॉड्यूल",
+    "why": "descent module; the later 'अवतरण से ठीक पहले' = before landing, correct"
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "best_known_for",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent telemetry"
+  },
+  {
+    "rel": "fleet/lander/schiaparelli.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "डिसेंट",
+    "replace": "अवरोहण",
+    "why": "transliteration replaced by binding"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "टाइटेनियम अवतरण कैप्सूल",
+    "replace": "टाइटेनियम अवरोहण कैप्सूल",
+    "why": "descent capsule"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "टर्मिनल अवतरण",
+    "replace": "टर्मिनल अवरोहण",
+    "why": "terminal descent"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "dispatch",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण मॉड्यूल",
+    "replace": "अवरोहण मॉड्यूल",
+    "why": "descent module"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण के दौरान",
+    "replace": "अवरोहण के दौरान",
+    "why": "during descent"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "वंश के दौरान",
+    "replace": "अवरोहण के दौरान",
+    "why": "वंश = lineage, wrong word for descent"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण का प्रयास",
+    "replace": "अवरोहण का प्रयास",
+    "why": "English says attempted descent"
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण चरण",
+    "replace": "अवरोहण चरण",
+    "why": "LM descent stage"
+  }
+]

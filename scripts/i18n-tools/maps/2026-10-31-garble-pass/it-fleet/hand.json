@@ -1,0 +1,8 @@
+[
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "tagline",
+    "find": "prima mappa globale. Attivo 1976-80",
+    "replace": "prima mappa globale di Marte. Attivo 1976-1980"
+  }
+]

@@ -84,5 +84,10 @@
       "type": "prose",
       "md": "La lezione più profonda riguarda il prezzo di un singolo volo. L'azienda sopravvisse al quarto lancio di Falcon 1 e nient'altro; se fosse fallito, niente del resto esisterebbe. Grandi capacità spesso dipendono da un singolo momento fragile all'inizio — e la differenza tra le aziende che ridefiniscono un'industria e quelle che svaniscono è a volte solo se quel singolo volo è decollato."
     }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=falcon-9": "Flotta — Falcon 9, Falcon Heavy e Dragon",
+    "/programs/iss": "SSI — la stazione raggiunta da Crew Dragon",
+    "/earth": "Terra — orbite, rendezvous e siti di lancio"
+  }
 }

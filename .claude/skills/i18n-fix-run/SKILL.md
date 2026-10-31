@@ -52,7 +52,14 @@ then re-translate the kept fields with step 2.
    hand-write a handful of stubborn fields (`problems()` must pass) rather than loop.
 2. `npm run validate-data` (length limits: shorten the en-US source, not the target).
 3. Graded sample (`i18n-audit` §3) for every locale touched.
-4. Commit with the numbers (fields, failures, sample verdicts) and what was NOT checked.
+4. UI strings touched: `npx vitest run scripts/i18n-tools/ui-label-audit.test.ts`. A
+   fixed baseline entry fails it too — prune with
+   `node scripts/i18n-tools/ui-label-audit.mjs all --prune`.
+5. Commit with the numbers (fields, failures, sample verdicts) and what was NOT checked.
+
+UI runs (`translate-v07-ui.mjs`, `retranslate-fields.mjs` on `messages`) send
+`UI_LABEL_RULES` and the meanings in `ui-senses.json` with each key, and refuse an
+answer that fails `problems(…, { ui: true })`.
 
 ## What the tooling already does (don't redo by hand)
 

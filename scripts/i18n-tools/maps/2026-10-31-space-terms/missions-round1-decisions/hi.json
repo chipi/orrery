@@ -1,0 +1,1451 @@
+[
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "field left untranslated English; term not rendered (garble listed)"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "change",
+    "find": "अपकक्ष्य के लिए",
+    "replace": "कक्षा छोड़ने के लिए",
+    "why": "de-orbit rendered with non-standard अपकक्ष्य"
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "field left untranslated English; term not rendered (garble listed)"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "change",
+    "find": "युक्त अंतरिक्ष यान",
+    "replace": "मानवयुक्त पृथ्वी-कक्षा",
+    "why": "Earth-orbit dropped, garbled"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "change",
+    "find": "ऑर्बिट",
+    "replace": "कक्षा",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "description",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "orbit sense; कक्षा is correct"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.1.note",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "पथ लॉक",
+    "replace": "प्रक्षेपवक्र लॉक",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.1.note",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "पथ सुधार",
+    "replace": "प्रक्षेपवक्र सुधार",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "पृथ्वी-वापसी पथ",
+    "replace": "पृथ्वी-वापसी प्रक्षेपवक्र",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "जलता है",
+    "replace": "प्रज्वलित होता है",
+    "why": "engine firing, not combustion"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "मुक्त-वापसी पथ",
+    "replace": "मुक्त-वापसी प्रक्षेपवक्र",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.1.note",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "सिसलूनर पथ",
+    "replace": "सिसलूनर प्रक्षेपवक्र",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.4.note",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "वापसी पथ",
+    "replace": "वापसी प्रक्षेपवक्र",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.1.note",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "ग्रहण पथ",
+    "replace": "ग्रहण प्रक्षेपवक्र",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "events.0.note",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "Grand Tour पथ",
+    "replace": "Grand Tour प्रक्षेपवक्र",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "description",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "अपने पथ को",
+    "replace": "अपने प्रक्षेपवक्र को",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "description",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "उसके पथ को",
+    "replace": "उसके प्रक्षेपवक्र को",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "टाइटन के पास से उसकी उड़ान",
+    "replace": "टाइटन की फ्लाईबाई",
+    "why": "paraphrase -> binding"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "गिरते पथ",
+    "replace": "गिरते प्रक्षेपवक्र",
+    "why": "पथ -> binding"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "संमेलन",
+    "replace": "मिलन",
+    "why": "संमेलन = gathering, wrong"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.5.label",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "संमेलन",
+    "replace": "मिलन",
+    "why": "संमेलन = gathering, wrong"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.4.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "रेनडेज़्वू",
+    "replace": "मिलन",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.2.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "रंडेवू",
+    "replace": "मिलन",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "रेंडेवू",
+    "replace": "मिलन",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "सहायक",
+    "replace": "सहायता",
+    "why": "adjective form, noun needed"
+  },
+  {
+    "rel": "missions/earth/freedom-7.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "शिखर",
+    "replace": "अपभू",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "शिखर",
+    "replace": "अपभू",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "अपोजी",
+    "replace": "अपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/earth/otv-2.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "अपोजी",
+    "replace": "अपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/earth/otv-4.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "अपोजी",
+    "replace": "अपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "अपोजी",
+    "replace": "अपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/earth/otv-6.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "अपोजी",
+    "replace": "अपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "अपोजी",
+    "replace": "अपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "delta_v",
+    "term": "apogee",
+    "decision": "change",
+    "find": "अपोजी",
+    "replace": "अपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "अपोजी",
+    "replace": "अपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/earth/otv-3.json",
+    "at": "events.1.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "अपसौर",
+    "replace": "अपभू",
+    "why": "अपसौर = aphelion, wrong"
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.1.label",
+    "term": "apogee",
+    "decision": "change",
+    "find": "शिखर-बिंदु",
+    "replace": "अपभू",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.note",
+    "term": "apogee",
+    "decision": "keep",
+    "why": "engine proper name: Liquid Apogee Motor"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.3.note",
+    "term": "apogee",
+    "decision": "change",
+    "find": "एपोजी",
+    "replace": "अपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.label",
+    "term": "perigee",
+    "decision": "change",
+    "find": "पेरिजी",
+    "replace": "उपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "term": "perigee",
+    "decision": "change",
+    "find": "पेरिजी",
+    "replace": "उपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "term": "perigee",
+    "decision": "change",
+    "find": "पेरिजी",
+    "replace": "उपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "फेज़िंग बर्न",
+    "replace": "फेज़िंग दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण के दौरान",
+    "replace": "अवरोहण के दौरान",
+    "why": "descent not landing"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.1.note",
+    "term": "perigee",
+    "decision": "change",
+    "find": "पेरिजी",
+    "replace": "उपभू",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion on the pad (burned = जल गया)"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.4.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/jupiter/galileo.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "vehicle_stage",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "जलन",
+    "replace": "दहन",
+    "why": "जलन = skin burn/irritation"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "x"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.2.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "x"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "x"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "डिसेंट",
+    "replace": "अवरोहण",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "घंटे की बर्न",
+    "replace": "घंटे का दहन",
+    "why": "burn transliteration, gender agrees"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "जलन का उपयोग",
+    "replace": "दहनों का उपयोग",
+    "why": "जलन = skin burn"
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सम्मिलन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "बर्न",
+    "replace": "दहन",
+    "why": "burn transliteration"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "events.4.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "की बर्न",
+    "replace": "के दहन",
+    "why": "burn transliteration, gender agrees"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.0.note",
+    "term": "stage",
+    "decision": "change",
+    "find": "अपर स्टेज",
+    "replace": "ऊपरी चरण",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "term": "stage",
+    "decision": "keep",
+    "why": "vehicle name: Inertial Upper Stage"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ईंधन",
+    "replace": "प्रणोदक",
+    "why": "fuel -> propellant"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ईंधन",
+    "replace": "प्रणोदक",
+    "why": "fuel -> propellant"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "natural omission"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.4.note",
+    "term": "propellant",
+    "decision": "change",
+    "find": "ईंधन",
+    "replace": "प्रणोदक",
+    "why": "fuel -> propellant"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "के पास से उड़ान",
+    "replace": "की फ्लाईबाई",
+    "why": "paraphrase -> binding"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "वायुमंडल में लौटा",
+    "replace": "वायुमंडल में पुनः प्रवेश किया",
+    "why": "entry binding"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "धूमकेतु उड़ान",
+    "replace": "धूमकेतु फ्लाईबाई",
+    "why": "paraphrase -> binding"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.2.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/comet/giotto.json",
+    "at": "events.3.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "क्षुद्रग्रहों के पास से उड़ान",
+    "replace": "क्षुद्रग्रह फ्लाईबाई",
+    "why": "paraphrase -> binding"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाई-बाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.2.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाई-बाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/eurybates/lucy.json",
+    "at": "events.3.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाई-बाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/mars/mariner4.json",
+    "at": "events.2.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.2.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.3.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.4.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाईबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "द्वारा परिक्रमा",
+    "replace": "सहित फ्लाईबाई",
+    "why": "परिक्रमा = orbiting, wrong"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.5.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "परिक्रमा",
+    "replace": "फ्लाईबाई",
+    "why": "परिक्रमा = orbiting, wrong"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "के पास से उड़ान भरने वाला",
+    "replace": "की फ्लाईबाई करने वाला",
+    "why": "paraphrase -> binding"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.3.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "events.1.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "type",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "फ्लाइबाय",
+    "replace": "फ्लाईबाई",
+    "why": "binding spelling"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "अपनी उड़ान के लिए",
+    "replace": "अपनी फ्लाईबाई के लिए",
+    "why": "paraphrase -> binding"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "keep",
+    "why": "stem gap: अवरोही"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "596 km की उड़ान",
+    "replace": "596 km की फ्लाईबाई",
+    "why": "paraphrase -> binding"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सम्मिलन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.5.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सन्निवेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "delta_v",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "बृहस्पति कक्षा सम्मिलन",
+    "replace": "बृहस्पति कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "delta_v",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "गैनिमीड कक्षा सम्मिलन",
+    "replace": "गैनिमीड कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "delta_v",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सम्मिलन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सम्मिलन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/mars/mars-express.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सम्मिलन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/mars/maven.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "delta_v",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सम्मिलन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा प्रविष्टि",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सम्मिलन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.3.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा प्रविष्टि",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा प्रविष्टि",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा प्रविष्टि",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा प्रविष्टि",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.3.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/chandrayaan1.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/clementine.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा समावेश",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/moon/change4.json",
+    "at": "events.1.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सम्मिलन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "delta_v",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सम्मिलन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "कक्षा सम्मिलन",
+    "replace": "कक्षा-प्रवेश",
+    "why": "binding"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.4.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "वंश",
+    "replace": "अवरोहण",
+    "why": "वंश = lineage, wrong"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.5.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण चरण",
+    "replace": "अवरोहण चरण",
+    "why": "descent stage, not landing"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "डीसेंट",
+    "replace": "अवरोहण",
+    "why": "transliteration"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "term": "descent",
+    "decision": "keep",
+    "why": "field left untranslated English (listed)"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "events.7.label",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent not landing"
+  },
+  {
+    "rel": "missions/mars/viking1.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent not landing"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण-पूर्व",
+    "replace": "अवरोहण-पूर्व",
+    "why": "pre-descent"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.6.label",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent not landing"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.6.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण",
+    "replace": "अवरोहण",
+    "why": "descent not landing"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "change",
+    "find": "Apollo के अवतरण चरण",
+    "replace": "Apollo के अवरोहण चरण",
+    "why": "descent stages"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.3.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "की वंश",
+    "replace": "का अवरोहण",
+    "why": "वंश = lineage, wrong"
+  }
+]

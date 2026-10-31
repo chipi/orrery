@@ -117,7 +117,7 @@
     },
     {
       "type": "prose",
-      "md": "Non puntate mai dritto sul bersaglio. Il carburante è la moneta del volo spaziale, e non ce n'è mai abbastanza, così seguite la traiettoria che costa meno: una lunga [orbita di trasferimento](/science/transfers/hohmann-transfer) che parte dalla Terra e procede per inerzia, senza motore, lungo un arco calcolato in modo che la sua estremità lontana e il pianeta bersaglio arrivino nello stesso punto di appuntamento nello stesso istante, mesi dopo. Calcolare quell'arco — *quale velocità, in quale direzione, mi porta da questo punto in movimento a quel punto in movimento in questo preciso intervallo di tempo?* — è un problema di meccanica orbitale abbastanza antico da avere un nome, il [problema di Lambert](/science/transfers/lambert-problem), e risolverlo è il cuore di ogni finestra di lancio interplanetaria."
+      "md": "Non puntate mai dritto sul bersaglio. Il carburante è la moneta del volo spaziale, e non ce n'è mai abbastanza, così seguite la traiettoria che costa meno: una lunga [orbita di trasferimento](/science/transfers/hohmann-transfer) che parte dalla Terra e procede per inerzia, senza motore, lungo un arco calcolato in modo che la sua estremità lontana e il pianeta bersaglio arrivino nello stesso punto di rendezvous nello stesso istante, mesi dopo. Calcolare quell'arco — *quale velocità, in quale direzione, mi porta da questo punto in movimento a quel punto in movimento in questo preciso intervallo di tempo?* — è un problema di meccanica orbitale abbastanza antico da avere un nome, il [problema di Lambert](/science/transfers/lambert-problem), e risolverlo è il cuore di ogni finestra di lancio interplanetaria."
     },
     {
       "type": "prose",
@@ -148,7 +148,7 @@
     },
     {
       "type": "prose",
-      "md": "Poi vennero i casi in cui da terra non si può davvero aiutare. L'atterraggio su Marte è l'esempio più netto — [entrata, discesa e atterraggio](/science/mission-phases/edl) durano circa sette minuti, e Marte dista minuti luce, così quando la Terra viene a sapere che il veicolo ha toccato l'atmosfera tutto è finito da un pezzo, in un modo o nell'altro. Nessuno sulla Terra fa atterrare un rover su Marte. Il rover atterra da solo. [Perseverance](/missions?id=perseverance) portava un sistema che fotografava il suolo in rapido avvicinamento, lo confrontava in tempo reale con una mappa di bordo, ne riconosceva il terreno e *sceglieva* un punto sicuro dove posarsi — una macchina che svolgeva insieme il lavoro di Lovell, quello della Deep Space Network e quello di un pilota delle terre selvagge, in sette minuti, da sola."
+      "md": "Poi vennero i casi in cui da terra non si può davvero aiutare. L'atterraggio su Marte è l'esempio più netto — [ingresso atmosferico, discesa e atterraggio](/science/mission-phases/edl) durano circa sette minuti, e Marte dista minuti luce, così quando la Terra viene a sapere che il veicolo ha toccato l'atmosfera tutto è finito da un pezzo, in un modo o nell'altro. Nessuno sulla Terra fa atterrare un rover su Marte. Il rover atterra da solo. [Perseverance](/missions?id=perseverance) portava un sistema che fotografava il suolo in rapido avvicinamento, lo confrontava in tempo reale con una mappa di bordo, ne riconosceva il terreno e *sceglieva* un punto sicuro dove posarsi — una macchina che svolgeva insieme il lavoro di Lovell, quello della Deep Space Network e quello di un pilota delle terre selvagge, in sette minuti, da sola."
     },
     {
       "type": "figure",

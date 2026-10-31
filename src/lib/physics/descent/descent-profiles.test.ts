@@ -17,7 +17,7 @@ import {
   DESCENT_MISSION_IDS,
   type RawDescentProfile,
 } from './descent-profile-registry';
-import { integrateDescent } from './descent-physics';
+import { integrateDescent, type DescentProfile, type DescentSummary } from './descent-physics';
 import { expectInRange } from '../../test-helpers/expect-close';
 
 // Every test in this file runs one or more full multi-phase entry integrations
@@ -36,6 +36,21 @@ const profilePath = (id: string): string =>
   resolve(ROOT, `static/data/descent-profiles/${id}.json`);
 const loadRaw = (id: string): RawDescentProfile =>
   JSON.parse(readFileSync(profilePath(id), 'utf-8')) as RawDescentProfile;
+
+// integrateDescent is a pure function of the expanded profile, so each
+// profile flies once per file and every describe below reads the same flight
+// (the lifting, skip and Mars groups re-flew profiles the first loop had
+// already flown; this file set the unit suite's wall time).
+const flights = new Map<string, { profile: DescentProfile; s: DescentSummary }>();
+function flight(id: string): { profile: DescentProfile; s: DescentSummary } {
+  let f = flights.get(id);
+  if (!f) {
+    const profile = expandDescentProfile(loadRaw(id));
+    f = { profile, s: integrateDescent(profile) };
+    flights.set(id, f);
+  }
+  return f;
+}
 
 /** The three missions whose EDL is an honest failure (impact, not touchdown). */
 const CRASHES = new Set(['beresheet', 'schiaparelli', 'mars3', 'soyuz-1']);
@@ -89,12 +104,11 @@ describe('every descent profile expands + flies to its honest outcome', () => {
       if (!existsSync(profilePath(id))) return; // gated by the coverage suite above
       const raw = loadRaw(id);
       expect(raw.missionId).toBe(id);
-      const profile = expandDescentProfile(raw);
+      const { profile, s } = flight(id);
       const noSurface = NO_SURFACE.has(id);
       // Landers end at the ground; an atmospheric probe ends on a pressure crush.
       expect(profile.phases.at(-1)!.endTrigger.type).toBe(noSurface ? 'pressure_pa' : 'ground');
 
-      const s = integrateDescent(profile);
       if (CRASHES.has(id)) {
         expect(s.touchdownSuccess).toBe(false);
       } else {
@@ -144,7 +158,7 @@ describe('lifting re-entries fly the calibrated lifting band (all capsules)', ()
   for (const id of liftingIds) {
     it(`${id} rides its lift vector, peak-g in the lifting band`, () => {
       const raw = loadRaw(id);
-      const s = integrateDescent(expandDescentProfile(raw));
+      const { s } = flight(id);
       expectInRange(s.peakDecel.g, 3.5, 6, `${id} lifting peak decel (g)`);
       if (raw.targetDownrangeKm != null) {
         expect(s.guidance?.targetReachable).toBe(true);
@@ -167,7 +181,7 @@ describe('lifting re-entries fly the calibrated lifting band (all capsules)', ()
  */
 describe('apollo8 lunar-return skip flight (shipped profile)', () => {
   it('skips out then re-enters and splashes down in the lunar-return g corridor', () => {
-    const s = integrateDescent(expandDescentProfile(loadRaw('apollo8')));
+    const { s } = flight('apollo8');
     expect(s.events.some((e) => e.type === 'skip_out')).toBe(true);
     expect(s.events.some((e) => e.type === 'second_entry')).toBe(true);
     expect(Math.max(...s.states.map((st) => st.altKm))).toBeGreaterThan(130); // lofts above the interface
@@ -176,7 +190,7 @@ describe('apollo8 lunar-return skip flight (shipped profile)', () => {
   });
 
   it('the LEO Apollo 7 return does NOT skip (same capsule, sub-circular speed)', () => {
-    const s = integrateDescent(expandDescentProfile(loadRaw('apollo7')));
+    const { s } = flight('apollo7');
     expect(s.events.some((e) => e.type === 'skip_out')).toBe(false);
   });
 });
@@ -194,7 +208,7 @@ describe('Mars guided-lifting entries (2-DOF, no skip)', () => {
     it(`${id} flies a lifting entry, lands soft, does not skip`, () => {
       const raw = loadRaw(id);
       expect(raw.liftToDragRatio).toBeGreaterThan(0); // guided lifting, not ballistic
-      const s = integrateDescent(expandDescentProfile(raw));
+      const { s } = flight(id);
       expect(s.touchdownSuccess).toBe(true);
       expect(s.events.some((e) => e.type === 'skip_out')).toBe(false); // steep enough not to loft
       // Tight corridor (not the generic Mars [4,18]): the model reads 6.7–8.5 g for these three;

@@ -110,7 +110,7 @@ A reference takes the form `[{ "tab": "mission-phases", "slug": "trans-x-injecti
 When adding a new event or phase type:
 1. Update the schema's `FlightEventType` / phase enums (`src/types/mission.ts` + `static/data/schemas/mission.schema.json`).
 2. Add a `phase_refs` or `event_refs` entry pointing at an existing `/science/<tab>/<slug>.json` page. Run `npx tsx scripts/cislunar/check-science-map-refs.ts` to verify it resolves.
-3. Add an i18n label in `messages/en-US.json` (`fly_event_<type>` for events). Mirror to all 14 locales (uppercase aerospace shorthand convention — same EN string across non-EN locales).
+3. Add an i18n label in `messages/en-US.json` (`fly_event_<type>` for events). Translate it in all 14 locales (uppercase, like the existing labels: es LANZAMIENTO, ru ЗАПУСК, ja 打ち上げ), except the shorthand keys `fly-event-catalog.test.ts` pins to the en-US string in every locale (`fly_event_tcm`, `fly_event_edl_or_oi`, `fly_event_anomaly`, `fly_event_loi`, `fly_event_tei`); a new key that should stay English goes on that list.
 4. Extend the `defaultEventLabel()` switch in `src/routes/fly/+page.svelte`.
 
 ---

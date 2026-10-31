@@ -1,0 +1,327 @@
+[
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.7.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "जाते पथ तक",
+    "replace": "जाते प्रक्षेपवक्र तक",
+    "why": "plain पथ for trajectory"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.4.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "Voyager 2 का पथ उसे",
+    "replace": "Voyager 2 का प्रक्षेपवक्र उसे",
+    "why": "plain पथ for trajectory"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.17.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "पथ-सुधार",
+    "replace": "प्रक्षेपवक्र-सुधार",
+    "why": "trajectory correction"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.12.md",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "पथ को अगले",
+    "replace": "प्रक्षेपवक्र को अगले",
+    "why": "plain पथ for trajectory"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.0.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "variant: पलायन-पथ (escape trajectory)"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.29.md",
+    "term": "trajectory",
+    "decision": "keep",
+    "why": "figurative direction of progress, not a flight path"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "title",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "Delta-V की व्याकरण",
+    "replace": "डेल्टा-वी का व्याकरण",
+    "why": "binding form; व्याकरण is masculine"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.30.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "डेल्टा-v",
+    "replace": "डेल्टा-वी",
+    "why": "Latin v after Devanagari"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.10.md",
+    "term": "delta-v",
+    "decision": "keep",
+    "why": "term not in this sentence of the English"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.10.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion sense (propellant-burning vehicle): प्रणोदक जलाने वाले"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.24.md",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "डेल्टा-v बजट",
+    "replace": "डेल्टा-वी बजट",
+    "why": "Latin v after Devanagari"
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned manuscript, not an engine"
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion sense (burn the stage on the way up): जला दो"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "ट्रांस-मंगल इंजेक्शन ज्वलन",
+    "replace": "ट्रांस-मंगल इंजेक्शन दहन",
+    "why": "engine firing rendered ज्वलन"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "ट्रांस-मंगल इंजेक्शन ज्वलन",
+    "replace": "ट्रांस-मंगल इंजेक्शन दहन",
+    "why": "engine firing rendered ज्वलन"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.9.caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "स्थानांतरण ज्वलन",
+    "replace": "स्थानांतरण दहन",
+    "why": "engine firing rendered ज्वलन"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "वापसी के लिए इंजन जलाने का",
+    "replace": "वापसी के दहन का",
+    "why": "engine firing described by verb"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "ज्वलन के समय",
+    "replace": "दहन के समय",
+    "why": "burn timing rendered ज्वलन"
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion sense: प्रणोदक जलाने वाली"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.0.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: burns a fuel and an oxidizer"
+  },
+  {
+    "rel": "essays/new-propulsion.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/consumption: जलाने, burned through"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: propellant burned per second"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.5.md",
+    "term": "burn",
+    "decision": "change",
+    "find": "वापसी के बर्न के लिए",
+    "replace": "वापसी के दहन के लिए",
+    "why": "English loanword बर्न for the burn"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.8.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: first stage burns propellant"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.11.caption",
+    "term": "burn",
+    "decision": "change",
+    "find": "तीन बार जलाइए",
+    "replace": "तीन बार दहन कीजिए",
+    "why": "engine firings (boostback, entry, landing)"
+  },
+  {
+    "rel": "essays/reusable-launchers.json",
+    "at": "body.14.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: engines burning methane and oxygen"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.4.md",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion/heating of air; engine ran for twelve minutes: variant जलता रहा"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.15.md",
+    "term": "flyby",
+    "decision": "change",
+    "find": "चंद्रमा के पास से गुज़रना",
+    "replace": "चंद्रमा की फ्लाईबाई",
+    "why": "flyby rendered by paraphrase"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.16.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "प्रवेश, अवतरण",
+    "replace": "प्रवेश, अवरोहण",
+    "why": "अवतरण -> binding अवरोहण"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.4.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "प्रवेश, अवतरण",
+    "replace": "प्रवेश, अवरोहण",
+    "why": "अवतरण -> binding अवरोहण"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.2.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "प्रवेश, अवतरण",
+    "replace": "प्रवेश, अवरोहण",
+    "why": "अवतरण -> binding अवरोहण"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.6.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "अंतिम अवतरण",
+    "replace": "अंतिम अवरोहण",
+    "why": "अवतरण -> binding अवरोहण"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.8.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण चरण — ",
+    "replace": "अवरोहण चरण — ",
+    "why": "अवतरण -> binding अवरोहण"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.8.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "और अवतरण चरण सुरक्षित",
+    "replace": "और अवरोहण चरण सुरक्षित",
+    "why": "अवतरण -> binding अवरोहण"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.14.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "से अवतरण,",
+    "replace": "से अवरोहण,",
+    "why": "अवतरण -> binding अवरोहण"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.17.caption",
+    "term": "descent",
+    "decision": "change",
+    "find": "अपने अवतरण चरण",
+    "replace": "अपने अवरोहण चरण",
+    "why": "अवतरण -> binding अवरोहण"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.26.caption",
+    "term": "descent",
+    "decision": "change",
+    "find": "पूरा अवतरण",
+    "replace": "पूरा अवरोहण",
+    "why": "अवतरण -> binding अवरोहण"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.28.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "अवतरण के हर मीटर",
+    "replace": "अवरोहण के हर मीटर",
+    "why": "अवतरण -> binding अवरोहण"
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.28.md",
+    "term": "descent",
+    "decision": "change",
+    "find": "ढाई घंटे के अवतरण",
+    "replace": "ढाई घंटे के अवरोहण",
+    "why": "अवतरण -> binding अवरोहण"
+  }
+]

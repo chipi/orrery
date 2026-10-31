@@ -1,13 +1,13 @@
 {
-  "description": "Half de diameter van Pluto — de grootste maan-tot-planeetverhouding in het zonnestelsel. Charon en Pluto zijn wederzijds getijdengebonden en omcirkelen een gemeenschappelijk massacentrum ongeveer 980 km boven Pluteaus oppervlak — effectief een binair planetenstelsel. New Horizons onthulde een verrassend gevarieerd terrein: de gladde Vulcan Planitia-vlakte in het zuiden, een oud gekratered halfrond in het noorden, en een donkerrode poolkap (Mordor Macula) van tholinen, gevormd toen methaan-moleculen die uit Pluteaus atmosfeer ontsnapten, zich op Charon verzamelden en werden verwerkt door ultraviolette straling. De vier kleinere Plutemanen (Styx, Nix, Kerberos, Hydra) omcirkelen het zwaartepunt van het Pluto-Charon-stelsel met chaotische rotaties, aangedreven door de verschuivende zwaartekracht van het binaire stelsel.",
-  "surface_composition": "Waterijskorst met ammoniahydraten en tholinen; de donkerrode poolkap (Mordor Macula) is methaangas dat ontsnapt uit Pluto en omgezet is in tholinen op het ijskoude oppervlak van Charon.",
+  "description": "Half de diameter van Pluto — de grootste verhouding tussen maan- en planeetgrootte in het zonnestelsel. Charon en Pluto zijn wederzijds getijdengebonden en volgen een baan om een gemeenschappelijk massamiddelpunt ongeveer 980 km boven het oppervlak van Pluto — in feite een dubbelplanetensysteem. New Horizons onthulde een verrassend gevarieerd terrein: de gladde vlakte Vulcan Planitia in het zuiden, een oud halfrond vol kraters in het noorden en een donkerrode poolkap (Mordor Macula) van tholinen, gevormd toen methaanmoleculen die uit de atmosfeer van Pluto ontsnapten zich op Charon verzamelden en door ultraviolet licht werden omgezet. De vier kleinere manen van Pluto (Styx, Nix, Kerberos, Hydra) volgen een baan om het zwaartepunt van Pluto en Charon, met chaotische rotaties aangedreven door de wisselende zwaartekracht van het dubbelsysteem.",
+  "surface_composition": "Waterijskorst met ammoniakhydraten en tholinen; de donkerrode poolkap (Mordor Macula) is methaangas dat uit Pluto is ontsnapt en op het ijskoude oppervlak van Charon tot tholinen is omgezet.",
   "mission_visits": [
-    "New Horizons — USA, 2015 (eerste en enige voorbijvlucht)"
+    "New Horizons — USA, 2015 (eerste en enige flyby)"
   ],
   "library_labels": {
     "charon-wiki": "Wikipedia — Charon",
     "charon-nasa": "NASA Science — overzicht Charon",
-    "charon-new-horizons": "NASA New Horizons — Pluto-Charon-scheervlucht (2015)"
+    "charon-new-horizons": "NASA New Horizons — flyby van Pluto en Charon (2015)"
   },
   "science_sections": [
     {

@@ -1,0 +1,1008 @@
+[
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.6.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/aurora-7.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/aurora-7.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/aurora-7.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "возвращение вручную",
+    "replace": "вход в атмосферу вручную",
+    "why": "reentry rendered as return"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/faith-7.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini12.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini3.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "events.3.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/gemini7.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/sigma-7.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "verb orbit carried by the noun спутник Земли; omitted naturally"
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: облетевшим (verb orbit)"
+  },
+  {
+    "rel": "missions/earth/vostok-2.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/vostok-5.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "type",
+    "term": "orbit",
+    "decision": "change",
+    "find": "ПИЛОТИРУЕМЫЙ ПОЛЁТ",
+    "replace": "ПИЛОТИРУЕМЫЙ ОКОЛОЗЕМНЫЙ",
+    "why": "EARTH-ORBIT dropped; match sibling pages"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "first",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: виток (count of revolutions)"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.2.note",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: многооборотном (multi-orbit)"
+  },
+  {
+    "rel": "missions/moon/lro.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "change",
+    "find": "С 2009 года на средней высоте 50 км над Луной",
+    "replace": "С 2009 года на орбите на средней высоте 50 км над Луной",
+    "why": "verb \"orbiting\" lost"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.1.note",
+    "term": "trajectory",
+    "decision": "change",
+    "find": "Идёт малозатратное баллистическое захватывание",
+    "replace": "Идёт полёт по малозатратной баллистической траектории захвата",
+    "why": "trajectory missing"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "events.1.note",
+    "term": "inclination",
+    "decision": "change",
+    "find": "наклона спуска",
+    "replace": "наклонения спуска",
+    "why": "наклон is not наклонение"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "орбиту встречи",
+    "replace": "орбиту сближения",
+    "why": "rendezvous -> сближение"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "встретилась с",
+    "replace": "сблизилась с",
+    "why": "rendezvous -> сближение"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "направляется на встречу с Апофисом",
+    "replace": "направляется к сближению с Апофисом",
+    "why": "rendezvous -> сближение"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.2.label",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "ВСТРЕЧА С БЕННУ",
+    "replace": "СБЛИЖЕНИЕ С БЕННУ",
+    "why": "rendezvous -> сближение"
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "по встречной орбите кометы",
+    "replace": "по сближению с кометой",
+    "why": "garbled \"встречная орбита\""
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.1.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "при встречной орбите кометы",
+    "replace": "при сближении с кометой",
+    "why": "garbled \"встречная орбита\""
+  },
+  {
+    "rel": "missions/comet/rosetta.json",
+    "at": "events.5.label",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "ВСТРЕЧА С КОМЕТОЙ 67P",
+    "replace": "СБЛИЖЕНИЕ С КОМЕТОЙ 67P",
+    "why": "rendezvous -> сближение"
+  },
+  {
+    "rel": "missions/earth/gemini6a.json",
+    "at": "first",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "Первая пилотируемая стыковка в космосе",
+    "replace": "Первое пилотируемое сближение в космосе",
+    "why": "rendezvous rendered as docking"
+  },
+  {
+    "rel": "missions/mars/starship-demo.json",
+    "at": "events.1.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "Стыковка с танкером",
+    "replace": "Сближение с танкером",
+    "why": "rendezvous rendered as docking"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.1.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "Стыковка с танкерами",
+    "replace": "Сближение с танкерами",
+    "why": "rendezvous rendered as docking"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "events.5.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "Встреча ступени подъёма",
+    "replace": "Сближение ступени подъёма",
+    "why": "rendezvous -> сближение"
+  },
+  {
+    "rel": "missions/moon/change5.json",
+    "at": "events.5.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "Первая роботическая лунная стыковка",
+    "replace": "Первое роботическое лунное сближение",
+    "why": "rendezvous rendered as docking"
+  },
+  {
+    "rel": "missions/moon/change6.json",
+    "at": "events.4.note",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "стыковка с орбитером",
+    "replace": "сближение с орбитером",
+    "why": "rendezvous rendered as docking"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.1.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "манёвр Лунно-земного гравитационного манипулирования",
+    "replace": "лунно-земный гравитационный манёвр",
+    "why": "\"манипулирование\" wrong"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.2.note",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "Гравитационный манипуляции Венеры",
+    "replace": "Гравитационный манёвр у Венеры",
+    "why": "\"манипуляции\" wrong"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.3.note",
+    "term": "apogee",
+    "decision": "keep",
+    "why": "Liquid Apogee Motor is a proper name left in English"
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "description",
+    "term": "perigee",
+    "decision": "change",
+    "find": "поднятия апогея",
+    "replace": "поднятия перигея",
+    "why": "perigee rendered as apogee"
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "payload",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned on pad = fire, not an engine firing"
+  },
+  {
+    "rel": "missions/earth/vostok-6.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "коррекцию орбиты",
+    "replace": "включение двигателя для коррекции орбиты",
+    "why": "engine burn rendered as bare коррекция"
+  },
+  {
+    "rel": "missions/jupiter/juice.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stem gap: Включение главного двигателя"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "КОРРЕКЦИЯ ПЕРИГЕЯ",
+    "replace": "ВКЛЮЧЕНИЕ ДВИГАТЕЛЯ В ПЕРИГЕЕ",
+    "why": "engine burn rendered as коррекция"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Первая из шести коррекций по поднятию орбиты",
+    "replace": "Первое из шести включений двигателя для поднятия орбиты",
+    "why": "engine burn rendered as коррекция"
+  },
+  {
+    "rel": "missions/mars/mangalyaan.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Финальная коррекция перигея",
+    "replace": "Финальное включение двигателя в перигее",
+    "why": "engine burn rendered as коррекция"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.6.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "и выходит на траекторию к Земле",
+    "replace": "и включает двигатель для выхода на траекторию к Земле",
+    "why": "burn verb dropped"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stem gap: Включение основного двигателя"
+  },
+  {
+    "rel": "missions/moon/apollo11.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Транслунная инъекция —",
+    "replace": "Включение двигателя для транслунной инъекции —",
+    "why": "TLI burn: engine firing not named"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.4.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "КОРРЕКЦИЯ",
+    "replace": "ВКЛЮЧЕНИЕ ДВИГАТЕЛЯ",
+    "why": "engine burn rendered as коррекция"
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.6.label",
+    "term": "burn",
+    "decision": "change",
+    "find": "КОРРЕКЦИЯ",
+    "replace": "ВКЛЮЧЕНИЕ ДВИГАТЕЛЯ",
+    "why": "engine burn rendered as коррекция"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Разгон на трансселенную траекторию",
+    "replace": "Включение двигателя для перехода на трансселенную траекторию",
+    "why": "TLI burn: engine firing not named"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Разгон двигателя SPS",
+    "replace": "Включение двигателя SPS",
+    "why": "\"разгон двигателя\" is not an engine firing"
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: Захват лунной орбиты"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "без выхода на окололунную орбиту",
+    "replace": "без включения двигателя для выхода на окололунную орбиту",
+    "why": "orbit-insertion burn not named"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Транслунная инъекция ICPS —",
+    "replace": "Включение двигателя ICPS для транслунной инъекции —",
+    "why": "TLI burn: engine firing not named"
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.1.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "выполняет транслунную инъекцию",
+    "replace": "включает двигатель для транслунной инъекции",
+    "why": "TLI burn: engine firing not named"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "events.2.note",
+    "term": "burn",
+    "decision": "change",
+    "find": "Маршевый двигатель выводит",
+    "replace": "Включение маршевого двигателя выводит",
+    "why": "burn noun dropped"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.3.note",
+    "term": "burn",
+    "decision": "keep",
+    "why": "stem gap: Включение твёрдотопливного двигателя"
+  },
+  {
+    "rel": "missions/mars/mars3.json",
+    "at": "events.0.note",
+    "term": "stage",
+    "decision": "keep",
+    "why": "variant: разгонный блок (upper stage)"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "vehicle_stage",
+    "term": "stage",
+    "decision": "keep",
+    "why": "variant: разгонный блок (upper stage)"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "Баки топлива отсека подъёма LM",
+    "replace": "Баки топлива ступени подъёма LM",
+    "why": "stage rendered as отсек"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "Отсек подъёма Snoopy стал единственным, покинувшим лунную орбиту с положительным ∆v — он был выброшен",
+    "replace": "Ступень подъёма Snoopy стала единственной, покинувшей лунную орбиту с положительным ∆v — она была выброшена",
+    "why": "stage rendered as отсек"
+  },
+  {
+    "rel": "missions/moon/apollo10.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "(последний раз подтверждён",
+    "replace": "(последний раз подтверждена",
+    "why": "agreement with ступень"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "vehicle_stage",
+    "term": "stage",
+    "decision": "keep",
+    "why": "variant: разгонный блок (upper stage)"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "vehicle_stage",
+    "term": "stage",
+    "decision": "keep",
+    "why": "variant: разгонный блок (upper stage)"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "vehicle",
+    "term": "stage",
+    "decision": "keep",
+    "why": "Inertial Upper Stage is a proper name left in English"
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.5.note",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "propellant named by its components (метан, ЖКС)"
+  },
+  {
+    "rel": "missions/mercury/mariner10.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "nitrogen named as the supply (запас азота)"
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "payload",
+    "term": "payload",
+    "decision": "change",
+    "find": "научная нагрузка",
+    "replace": "научная полезная нагрузка",
+    "why": "binding is полезная нагрузка"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "от груза Apollo",
+    "replace": "от полезной нагрузки Apollo",
+    "why": "payload rendered as груз"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "change",
+    "find": "разгонный блок «Протон-К»",
+    "replace": "ракету-носитель «Протон-К»",
+    "why": "Proton-K is a launcher, not an upper stage; whole launcher = ракета-носитель"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "vehicle",
+    "term": "payload",
+    "decision": "change",
+    "find": "с попутной нагрузкой",
+    "replace": "с попутной полезной нагрузкой",
+    "why": "binding is полезная нагрузка"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: грузовой отсек (Shuttle payload bay, standard compound)"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "на ионном двигателе",
+    "replace": "на ионном двигателе малой тяги",
+    "why": "low-thrust dropped"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: вошла в атмосферу (verb)"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "непрерывное ионно-электрическое торможение",
+    "replace": "непрерывную ионно-электрическую тягу",
+    "why": "thrust rendered as braking"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "term": "thrust",
+    "decision": "change",
+    "find": "ионный двигатель один не смог бы",
+    "replace": "ионная тяга одна не смогла бы",
+    "why": "thrust rendered as engine"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "events.1.note",
+    "term": "thrust",
+    "decision": "change",
+    "find": "Непрерывное разгоняющее ускорение",
+    "replace": "Непрерывный разгон малой тягой",
+    "why": "low-thrust dropped"
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (Falcon 9 first-stage booster, первая ступень)"
+  },
+  {
+    "rel": "missions/asteroid/hayabusa2.json",
+    "at": "events.1.label",
+    "term": "flyby",
+    "decision": "change",
+    "find": "ГРАВИТАЦИОННЫЙ МАНЁВР У ЗЕМЛИ",
+    "replace": "ПРОЛЁТ МИМО ЗЕМЛИ",
+    "why": "flyby rendered as gravity assist"
+  },
+  {
+    "rel": "missions/mercury/messenger.json",
+    "at": "events.0.note",
+    "term": "flyby",
+    "decision": "change",
+    "find": "с шестью гравитационными маневрами",
+    "replace": "с шестью пролётами",
+    "why": "flyby rendered as gravity assist"
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Его сближение с Титаном",
+    "replace": "Его пролёт мимо Титана",
+    "why": "flyby rendered as сближение"
+  },
+  {
+    "rel": "missions/asteroid/near-shoemaker.json",
+    "at": "events.3.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "ВХОЖДЕНИЕ",
+    "replace": "ВЫХОД",
+    "why": "wrong noun"
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "events.2.label",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: ЗАХВАТ НА ОРБИТУ"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "stem gap: вышел на орбиту"
+  },
+  {
+    "rel": "missions/mercury/bepicolombo.json",
+    "at": "events.5.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "ВХОД В ОРБИТУ",
+    "replace": "ВЫХОД НА ОРБИТУ",
+    "why": "wrong noun/preposition"
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Введение в лунную орбиту",
+    "replace": "Выход на лунную орбиту",
+    "why": "wrong noun/preposition"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Торможение для входа в лунную орбиту (Lunar orbit insertion)",
+    "replace": "Выход на лунную орбиту",
+    "why": "English left in text, wrong wording"
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.2.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Вход на орбиту",
+    "replace": "Выход на орбиту",
+    "why": "wrong noun"
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.3.note",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "Орбитальное торможение",
+    "replace": "Выход на орбиту",
+    "why": "wrong rendering"
+  },
+  {
+    "rel": "missions/moon/change3.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "входом в лунную орбиту",
+    "replace": "выходом на лунную орбиту",
+    "why": "wrong noun/preposition"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "events.1.label",
+    "term": "orbit insertion",
+    "decision": "change",
+    "find": "ВХОЖДЕНИЕ",
+    "replace": "ВЫХОД",
+    "why": "wrong noun"
+  },
+  {
+    "rel": "missions/earth/apollo7.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "при возвращении",
+    "replace": "при входе в атмосферу",
+    "why": "reentry rendered as return"
+  },
+  {
+    "rel": "missions/earth/apollo9.json",
+    "at": "events.2.note",
+    "term": "entry",
+    "decision": "keep",
+    "why": "variant: аппарат возвращения (re-entry vehicle as a type name)"
+  },
+  {
+    "rel": "missions/earth/gemini8.json",
+    "at": "events.2.note",
+    "term": "entry",
+    "decision": "change",
+    "find": "при спуске",
+    "replace": "при входе в атмосферу",
+    "why": "reentry rendered as descent"
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "первый автономный орбитальный космоплан с посадкой",
+    "replace": "первый автономный вход орбитального космоплана в атмосферу с посадкой",
+    "why": "re-entry lost"
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "first",
+    "term": "entry",
+    "decision": "change",
+    "find": "при возвращении",
+    "replace": "при входе в атмосферу",
+    "why": "reentry rendered as return"
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "при возвращении, клапан",
+    "replace": "при входе в атмосферу, клапан",
+    "why": "reentry rendered as return"
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "взлёте и возвращении",
+    "replace": "взлёте и входе в атмосферу",
+    "why": "reentry rendered as return"
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "При возвращении",
+    "replace": "При входе в атмосферу",
+    "why": "reentry rendered as return"
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "при старте и спуске",
+    "replace": "при старте и входе в атмосферу",
+    "why": "re-entry rendered as descent"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "автоматическая система посадки отказала",
+    "replace": "автоматический вход в атмосферу не удался",
+    "why": "reentry rendered as landing system"
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "Возвращение было",
+    "replace": "Вход в атмосферу был",
+    "why": "reentry rendered as return"
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.4.note",
+    "term": "entry",
+    "decision": "keep",
+    "why": "re-entry is an adjective of the capsule; omitted naturally"
+  },
+  {
+    "rel": "missions/mars/schiaparelli.json",
+    "at": "type",
+    "term": "descent",
+    "decision": "change",
+    "find": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
+    "replace": "ДЕМОНСТРАТОР ВХОДА В АТМОСФЕРУ, СПУСКА И ПОСАДКИ · РАЗБИЛСЯ",
+    "why": "left untranslated"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "events.4.note",
+    "term": "descent",
+    "decision": "change",
+    "find": "на финале",
+    "replace": "на финальном спуске",
+    "why": "descent dropped"
+  }
+]

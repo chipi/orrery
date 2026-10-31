@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   /**
    * BeltPanel — detail panel for the asteroid + Kuiper belts on
    * /explore (v0.7.x — user feedback 2026-06-06: "we have comet belt
@@ -16,14 +14,16 @@
    * in static/data/small-bodies.json (Ceres / Pluto / Eris / Haumea /
    * Makemake all resolve today).
    */
+  import PanelGalleryGrid from './PanelGalleryGrid.svelte';
+  import PanelTabRow from './PanelTabRow.svelte';
+  import PanelHeroImage from './PanelHeroImage.svelte';
+  import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
-  import ImageCredit from './ImageCredit.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import * as m from '$lib/paraglide/messages';
   import { page } from '$app/state';
-  import { base } from '$app/paths';
   import { goto } from '$app/navigation';
-  import { localeFromPage, DEFAULT_LOCALE } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import type { ScienceTabId } from '$types/science';
   import { getBelts, getBeltGallery, getBeltI18n, type BeltEntry, type BeltI18n } from '$lib/data';
@@ -137,8 +137,14 @@
     if (!firstWord) return null;
     const sbId = SMALL_BODY_IDS[firstWord];
     if (!sbId) return null;
-    const qs = loc === DEFAULT_LOCALE ? '' : `&lang=${encodeURIComponent(loc)}`;
-    return `${base}/explore?id=${sbId}${qs}`;
+    return localHref(`/explore?id=${sbId}`);
+  }
+  // Member strings come from the locale overlay ("Церера — …"); the link is
+  // keyed on the English name, so read it from the base list at the same
+  // index (every locale keeps the base order and length).
+  function baseMember(i: number): string | undefined {
+    const baseList = baseEntry?.largest_members;
+    return baseList && baseList.length === entry?.largest_members.length ? baseList[i] : undefined;
   }
   function openMember(href: string, event: Event) {
     event.preventDefault();
@@ -155,11 +161,7 @@
     kuiper: '/science/planets/kuiper-belt',
   };
   let scienceHref = $derived(
-    entry && SCIENCE_PATHS[entry.id]
-      ? `${base}${SCIENCE_PATHS[entry.id]}${
-          loc === DEFAULT_LOCALE ? '' : `?lang=${encodeURIComponent(loc)}`
-        }`
-      : null,
+    entry && SCIENCE_PATHS[entry.id] ? localHref(SCIENCE_PATHS[entry.id]!) : null,
   );
 </script>
 
@@ -172,88 +174,60 @@
       <div class="name">{entry.name}</div>
       <div class="stat-row">
         <div class="stat">
-          <div class="stat-label">LOCATION</div>
-          <div class="stat-value">{entry.inner_au}–{entry.outer_au} AU</div>
+          <div class="stat-label">{m.belt_label_location()}</div>
+          <div class="stat-value">
+            {m.unit_au_value({ value: `${entry.inner_au}–${entry.outer_au}` })}
+          </div>
         </div>
         <div class="stat">
-          <div class="stat-label">TOTAL MASS</div>
+          <div class="stat-label">{m.belt_label_total_mass()}</div>
           <div class="stat-value">{entry.total_mass_relative}</div>
         </div>
       </div>
     </div>
 
     {#if gallery.length > 0}
-      <div class="panel-hero">
-        <img
-          {...responsive(gallery[0], IMAGE_SIZES.panel)}
-          alt=""
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
+      <PanelHeroImage
+        src={gallery[0]}
+        name={entry.name}
+        onOpen={() => (lightboxSrc = gallery[0]!)}
+      />
     {/if}
 
-    <div class="tabs" role="tablist">
-      <button
-        type="button"
-        id="belt-tab-overview"
-        class:active={tab === 'overview'}
-        onclick={() => (tab = 'overview')}
-        role="tab"
-        aria-selected={tab === 'overview'}
-        aria-controls="belt-tabpanel">OVERVIEW</button
-      >
-      <button
-        type="button"
-        id="belt-tab-gallery"
-        class:active={tab === 'gallery'}
-        onclick={() => (tab = 'gallery')}
-        role="tab"
-        aria-selected={tab === 'gallery'}
-        aria-controls="belt-tabpanel">GALLERY</button
-      >
-      <button
-        type="button"
-        id="belt-tab-members"
-        class:active={tab === 'members'}
-        onclick={() => (tab = 'members')}
-        role="tab"
-        aria-selected={tab === 'members'}
-        aria-controls="belt-tabpanel">MEMBERS</button
-      >
-      <button
-        type="button"
-        id="belt-tab-missions"
-        class:active={tab === 'missions'}
-        onclick={() => (tab = 'missions')}
-        role="tab"
-        aria-selected={tab === 'missions'}
-        aria-controls="belt-tabpanel">MISSIONS</button
-      >
-    </div>
+    <PanelTabRow
+      rowClass="tabs belt-tabs"
+      idPrefix="belt"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview() },
+        { id: 'gallery', label: m.panel_tab_gallery() },
+        { id: 'members', label: m.panel_tab_members() },
+        { id: 'missions', label: m.panel_tab_missions() },
+      ]}
+      bind:active={tab}
+    />
 
     <div class="tab-content" role="tabpanel" id="belt-tabpanel" aria-labelledby="belt-tab-{tab}">
       {#if tab === 'overview'}
         <p class="editorial">{entry.description}</p>
         <div class="composition">
-          <div class="cell-label">LOCATION</div>
+          <div class="cell-label">{m.belt_label_location()}</div>
           <div class="cell-value">{entry.location}</div>
         </div>
         <div class="composition">
-          <div class="cell-label">POPULATION</div>
+          <div class="cell-label">{m.belt_label_population()}</div>
           <div class="cell-value">{entry.population_estimate}</div>
         </div>
         <div class="composition">
-          <div class="cell-label">DISCOVERED</div>
+          <div class="cell-label">{m.sbp_label_discovered()}</div>
           <div class="cell-value">{entry.discovered}</div>
         </div>
         <a class="science-link" href={scienceHref}>
-          <span class="science-cta">READ THE FULL ARTICLE</span>
+          <span class="science-cta">{m.belt_science_cta()}</span>
           <span class="science-label">/science/planets/{entry.id}-belt</span>
         </a>
         {#if (entry.science_sections ?? []).length > 0}
           <div class="science-section">
-            <h3 class="library-heading">SCIENCE</h3>
+            <h3 class="library-heading">{m.panel_tab_science()}</h3>
             {#each entry.science_sections ?? [] as sec (sec.tab + sec.section)}
               <ScienceCard tab={sec.tab as ScienceTabId} section={sec.section} why={sec.why} />
             {/each}
@@ -261,7 +235,7 @@
         {/if}
         {#if entry.library && entry.library.length > 0}
           <div class="science-library">
-            <h3 class="library-heading">LIBRARY</h3>
+            <h3 class="library-heading">{m.panel_tab_library()}</h3>
             <ul class="learn-list">
               {#each entry.library as link (link.id)}
                 <li>
@@ -276,34 +250,23 @@
         {#if galleryGrid.length === 0}
           <p class="empty-tab">{m.panel_belt_gallery_empty()}</p>
         {:else}
-          <div class="gallery-grid" aria-label="{entry.name} gallery">
-            {#each galleryGrid as src (src)}
-              <button
-                type="button"
-                class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
-                aria-label={entry.name}
-              >
-                <img
-                  {...responsive(src, IMAGE_SIZES.panelThumb)}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </button>
-            {/each}
-          </div>
+          <PanelGalleryGrid
+            images={galleryGrid}
+            gridLabel={m.panel_gallery_aria({ name: entry.name })}
+            thumbLabel={entry.name}
+            onOpen={(src) => (lightboxSrc = src)}
+          />
         {/if}
       {:else if tab === 'members'}
-        <p class="editorial">The largest catalogued members of the {entry.name}.</p>
+        <p class="editorial">{m.belt_members_intro({ name: entry.name })}</p>
         <ul class="member-list">
-          {#each entry.largest_members as member (member)}
-            {@const href = memberLink(member)}
+          {#each entry.largest_members as member, i (member)}
+            {@const href = memberLink(baseMember(i) ?? member)}
             <li>
               {#if href}
                 <a {href} onclick={(e) => openMember(href, e)} class="member-link">
                   {member}
-                  <span class="member-cta" aria-hidden="true">→ open panel</span>
+                  <span class="member-cta" aria-hidden="true">{m.belt_member_open()}</span>
                 </a>
               {:else}
                 {member}
@@ -331,25 +294,7 @@
       {/if}
     </div>
 
-    {#if lightboxSrc}
-      <button
-        type="button"
-        class="lightbox"
-        aria-label={m.ui_close()}
-        onclick={() => (lightboxSrc = null)}
-      >
-        <img
-          {...responsive(lightboxSrc, IMAGE_SIZES.full)}
-          alt=""
-          loading="lazy"
-          decoding="async"
-        />
-        <span class="lightbox-close" aria-hidden="true">×</span>
-      </button>
-      <div class="lightbox-meta">
-        <ImageCredit src={lightboxSrc} />
-      </div>
-    {/if}
+    <PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
   {/if}
 </Panel>
 
@@ -397,24 +342,13 @@
     font-size: 13px;
     color: var(--color-text);
   }
-  .panel-hero {
-    margin: 0 0 14px;
-    border-radius: 3px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.4);
-  }
-  .panel-hero img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  .tabs {
+  :global(.tabs.belt-tabs) {
     display: flex;
     gap: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     margin-bottom: 14px;
   }
-  .tabs button {
+  :global(.tabs.belt-tabs button) {
     flex: 1;
     background: transparent;
     border: none;
@@ -429,7 +363,7 @@
       color 120ms,
       border-color 120ms;
   }
-  .tabs button.active {
+  :global(.tabs.belt-tabs button.active) {
     color: rgba(184, 164, 112, 0.9);
     border-color: rgba(184, 164, 112, 0.7);
   }

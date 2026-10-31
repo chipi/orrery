@@ -28,5 +28,12 @@
   "lessons": [
     { "type": "prose", "md": "The lesson of the Great Observatories is that seeing whole requires seeing in every kind of light. No single telescope, however powerful, captures more than a slice of what an object is; the leap in understanding came from looking at the same universe across the entire spectrum at once. Completeness, not any one instrument, was the breakthrough." },
     { "type": "prose", "md": "The deeper lesson is the value of a sustained tradition over a single triumph. The program's real power is not the four original telescopes but the continuity of ambition they began — a decades-long commitment to keep building greater eyes. Individual missions age and die; the tradition of always building the next, better observatory is what keeps the view expanding." }
-  ]
+  ],
+  "link_labels": {
+    "/fleet?focus=hubble": "Fleet — Hubble, Chandra, Spitzer & JWST",
+    "/programs/space-shuttle": "Space Shuttle — the vehicle that launched and serviced Hubble",
+    "/explore": "Explore — the deep-sky objects these telescopes revealed",
+    "/earth?site=hubble": "Hubble in low Earth orbit",
+    "/earth?site=chandra": "Chandra X-ray Observatory"
+  }
 }

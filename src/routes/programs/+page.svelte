@@ -5,8 +5,8 @@
 -->
 <script lang="ts">
   import { responsive } from '$lib/responsive-image.svelte';
+  import { localHref } from '$lib/locale';
   import { IMAGE_SIZES } from '$lib/image-sizes';
-  import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -103,11 +103,8 @@
 </script>
 
 <svelte:head>
-  <title>Programs · Orrery</title>
-  <meta
-    name="description"
-    content="The campaigns that shaped spaceflight — Apollo, ISS, Artemis and more."
-  />
+  <title>{m.programs_index_title()} · Orrery</title>
+  <meta name="description" content={m.programs_meta_description()} />
 </svelte:head>
 
 <div class="programs-index">
@@ -145,7 +142,7 @@
       <h2>{g.heading}</h2>
       <div class="cards">
         {#each g.items as p (p.id)}
-          <a class="card" href="{base}/programs/{p.id}">
+          <a class="card" href={localHref(`/programs/${p.id}`)}>
             {#if heroSrc(p.hero)}
               <img
                 {...responsive(heroSrc(p.hero), IMAGE_SIZES.wideCard)}

@@ -8,6 +8,7 @@
 -->
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import { localHref } from '$lib/locale';
   import LearnLink from './LearnLink.svelte';
   import CultureDoorCard from './CultureDoorCard.svelte';
   import type { LocalizedCultureDoor } from '$lib/data';
@@ -15,7 +16,6 @@
   import ConstellationFinder from './ConstellationFinder.svelte';
   import ImageCredit from './ImageCredit.svelte';
   import WhyPopover from './WhyPopover.svelte';
-  import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import { constellationName } from '$lib/universe/iau-constellations';
   import { bvToRgb, bvToKelvin } from '$lib/universe/bv-to-rgb';
@@ -343,7 +343,7 @@
         </div>
 
         <!-- Every star panel links into the stellar-science article (S7 H–R lens). -->
-        <a class="hr-article-link" href="{base}/science/observation/hertzsprung-russell">
+        <a class="hr-article-link" href={localHref(`/science/observation/hertzsprung-russell`)}>
           {m.star_hr_article_link()} →
         </a>
 

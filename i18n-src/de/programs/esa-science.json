@@ -84,5 +84,12 @@
       "type": "prose",
       "md": "Die tiefere Lehre lautet: Für eine mittelgroße Raumfahrtmacht schlägt Fokus die Breite. Die ESA kann nicht alles leisten, was die NASA leistet – also tut sie einige wenige Dinge, die noch niemand zuvor getan hat: auf einem Kometen landen, die Galaxis kartieren, das dunkle Universum durchmustern. So wird sie zur führenden Kraft durch Tiefe statt durch Größe. Das richtige schwierige Problem zu wählen und es endgültig zu lösen – so schafft es ein Staatenbündnis, über die Möglichkeiten seines Budgets hinauszuwachsen."
     }
-  ]
+  ],
+  "link_labels": {
+    "/explore": "Erkunden — Kometen und der tiefe Himmel, den die ESA kartiert",
+    "/fleet?focus=rosetta": "Flotte — Rosetta, Gaia & Euclid",
+    "/programs/ariane": "Ariane — die Rakete, die die Wissenschaft der ESA startet",
+    "/earth?site=gaia": "Gaia am L2",
+    "/earth?site=xmm": "XMM-Newton"
+  }
 }

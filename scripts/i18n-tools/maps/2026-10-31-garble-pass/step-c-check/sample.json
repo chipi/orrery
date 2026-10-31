@@ -1,0 +1,527 @@
+[
+  {
+    "loc": "ru",
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "narrative_101.2",
+    "en": "If the burn fails or under-performs, you escape, and there is no second chance. Mars Climate Orbiter in 1999 had a unit-conversion bug — pounds-of-force confused with newtons — its insertion burn was too weak, it passed too close to Mars, and atmospheric drag destroyed it. The mission was lost in seconds. This is why orbit-insertion design is one of the most paranoid engineering activities humans do.",
+    "tr": "Если импульс не сработает или не обеспечит достаточное торможение, аппарат уходит в космос, и второго шанса нет. Mars Climate Orbiter в 1999 году имел ошибку в единицах — фунты-силы спутали с ньютонами — его импульс был недостаточен, он прошёл слишком близко к Марсу, и атмосферное торможение уничтожило его. Миссия была потеряна за секунды. Вот почему проектирование захвата на орбиту — одно из самых тщательных инженерных предприятий."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "narrative_101.0",
+    "en": "Take any two bodies orbiting each other — Sun and Earth, Earth and Moon, Sun and Jupiter — and there are exactly five spots in the orbit plane where a third, much smaller body can stay put relative to the two big ones. Joseph-Louis Lagrange worked them out in 1772. Two and a half centuries later they are the most valuable real estate in cislunar space.",
+    "tr": "Возьмите любые два тела, обращающиеся вокруг общего центра, — Солнце и Землю, Землю и Луну, Солнце и Юпитер — и в плоскости их орбиты найдутся ровно пять точек, где третье, намного меньшее тело может оставаться неподвижным относительно двух больших. Жозеф Луи Лагранж рассчитал их в 1772 году. Два с половиной века спустя это самая ценная недвижимость в околоземно-лунном пространстве."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/scales-time/j2000.json",
+    "at": "narrative_101.2",
+    "en": "Every orbit you see in this simulator is anchored to J2000. Earth's mean longitude at J2000. Mars's argument of periapsis at J2000. The planet positions you watch animate in /explore are extrapolated forward (or backward) from J2000 using simple linear math: \"start here, advance at this rate, here's where you are now.\" Pick any date in history and the orrery can tell you where the planets were.",
+    "tr": "Каждая орбита, которую вы видите в этом симуляторе, привязана к J2000. Средняя долгота Земли на эпоху J2000. Аргумент перицентра Марса на эпоху J2000. Положения планет, которые вы наблюдаете в анимации /explore, экстраполируются вперёд (или назад) от J2000, используя простую линейную математику: «начни отсюда, продвигайся с этой скоростью, вот где ты находишься сейчас». Выберите любую дату в истории, и orrery может сказать вам, где были планеты."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/life-in-space/iva-suits.json",
+    "at": "body_paragraphs.0",
+    "en": "IVA (intra-vehicular activity) suits exist because of one accident. On 30 June 1971, Soyuz 11 returned from the world's first space-station mission with its three cosmonauts dead in their seats — a depressurisation valve had opened at 168 km altitude during separation, and the crew were in shirtsleeves with no suits to save them. The Soviet response was the Sokol KV-2: a soft pressure suit donned inside the descent module and worn for every Soyuz launch and return since 1973. The US followed a similar path after the Challenger and Columbia losses: shirtsleeve ascents on the Shuttle became unacceptable, and the Advanced Crew Escape Suit (ACES) was made mandatory. Every crewed spacecraft flying today has its own IVA suit.",
+    "tr": "Костюмы IVA (для работы внутри аппарата) существуют из-за одной катастрофы. 30 июня 1971 года «Союз-11» вернулся с первой в мире космической станции, а три космонавта в нём сидели мёртвыми в своих креслах: при разделении на высоте 168 км открылся клапан разгерметизации, а экипаж был без скафандров, в одной лёгкой одежде, и спасти его было нечем. Ответом СССР стал Sokol KV-2: мягкий скафандр, который надевают в спускаемом аппарате и в котором экипаж «Союза» с 1973 года проходит каждый старт и возвращение. США пошли похожим путём после гибели Challenger и Columbia: подъём на Shuttle без скафандров стал недопустим, и костюм Advanced Crew Escape Suit (ACES) сделали обязательным. У каждого пилотируемого корабля, летающего сегодня, есть собственный скафандр IVA."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "narrative_101.1",
+    "en": "If you want to know how long Mars takes to make ONE LOOP around the Sun, the answer is 687 Earth days. That's the sidereal period — measured against the unmoving distant stars. It's the geometric truth of the orbit. Vis-viva and Kepler's third law both work in sidereal time.",
+    "tr": "Если вы хотите узнать, за какое время Марс совершает ОДИН ОБОРОТ вокруг Солнца, ответ — 687 земных суток. Это сидерический период, измеряемый относительно неподвижных далёких звёзд. Это геометрическая истина об орбите. Уравнение «вис-вива» и третий закон Кеплера оба работают в сидерическом времени."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "diagram_caption",
+    "en": "Energy density comparison: chemical propellant (kerosene/LOX) at roughly 10 MJ/kg, nuclear fission at ~80,000 MJ/kg, fusion at ~300,000 MJ/kg, and matter-antimatter annihilation at ~90,000,000 MJ/kg — each step up is not incremental but a change of kind.",
+    "tr": "Сравнение плотности энергии: химическое топливо (керосин/жидкий кислород) — примерно 10 МДж/кг, деление ядер — ~80 000 МДж/кг, термоядерный синтез — ~300 000 МДж/кг, аннигиляция вещества и антивещества — ~90 000 000 МДж/кг; каждая следующая ступень — не постепенный рост, а переход в иное качество."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.1",
+    "en": "The terminator has a long history as the scientifically richest place to observe surface detail. Shadows are longest there, exaggerating topography. Apollo-era lunar imagery for crater geology was almost always taken with the terminator nearby. Voyager 1 + 2's most striking outer-planet imagery (Saturn's ring structure, Neptune's Great Dark Spot) was taken near each body's terminator for the same reason: low Sun angle picks out features.",
+    "tr": "Терминатор имеет долгую историю как научно богатейшее место для наблюдения деталей поверхности. Тени там наиболее длинные, что усиливает выраженность рельефа. Снимки Луны эпохи Apollo для изучения геологии кратеров почти всегда делались при близком терминаторе. Самые впечатляющие снимки внешних планет Voyager 1 и Voyager 2 (структура колец Сатурна, Большое Тёмное Пятно Нептуна) также были получены вблизи терминатора каждого тела по той же причине: малый угол падения Солнца выявляет детали рельефа."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/space-stations/node-module.json",
+    "at": "narrative_101.0",
+    "en": "A node is a special kind of pressurized module: it doesn't host experiments or crew quarters, it just connects other modules together. Picture a hexagonal box where each face has a docking port. Bolt one node to a launching rocket, send it up, then dock five more modules to the five remaining ports and you've grown your station from one module into six.",
+    "tr": "Узел — это специальный тип герметизированного модуля: он не размещает научное оборудование и не служит жилыми кварталами, а только соединяет другие модули вместе. Представьте шестигранный контейнер, на каждой грани которого расположен стыковочный порт. Прикрепите один узел к ракете-носителю, отправьте его в космос, затем состыкуйте пять дополнительных модулей с оставшимися пятью портами — и вы превратили станцию из одного модуля в шесть."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "intro_sentence",
+    "en": "What's at each planet right now: from MRO at Mars to Juno at Jupiter to Akatsuki at Venus.",
+    "tr": "Что находится у каждой планеты сейчас: от MRO на Марсе до Juno у Юпитера и Akatsuki у Венеры."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/life-in-space/pre-flight-training.json",
+    "at": "body_paragraphs.2",
+    "en": "EVA training happens in the Neutral Buoyancy Laboratory (NBL) in Houston — a 40m × 25m × 12m pool with a full-scale ISS mockup at the bottom. The astronaut wears a pressurised suit (the EMU, modified for water) and is weighted to neutral buoyancy so they can practice the exact tasks they'll do on orbit. The training ratio is severe: roughly 10 hours of NBL training per 1 hour of planned flight EVA. The Russian counterpart is the Hydrolab at Star City, configured for Orlan suits + Russian-segment mockups. China runs an equivalent at the Astronaut Center of China outside Beijing. Apollo lunar EVAs trained at a 9.5° suspension rig (pictured) plus 1/6-g KC-135 parabolic profiles plus rock-collection field trips in lunar-analog terrain — Iceland for Apollo 17, the Grand Canyon for earlier missions.",
+    "tr": "Выходы в открытый космос отрабатывают в Лаборатории нейтральной плавучести (NBL) в Хьюстоне — бассейне 40 м × 25 м × 12 м с полномасштабным макетом МКС на дне. Астронавт надевает герметичный скафандр (EMU, доработанный для воды) и получает балласт для нейтральной плавучести, чтобы отрабатывать именно те задачи, которые ему предстоит выполнять на орбите. Соотношение подготовки суровое: примерно 10 часов тренировок в NBL на 1 час планируемого выхода в полёте. Российский аналог — Гидролаборатория в Звёздном городке, оснащённая под скафандры «Орлан» и макеты российского сегмента. Китай располагает аналогичным комплексом в Китайском центре подготовки астронавтов под Пекином. Лунные выходы Apollo отрабатывали на подвесной установке с наклоном 9,5° (на фото), на параболических профилях полёта KC-135 при 1/6 g и в полевых экспедициях по сбору образцов на лунноподобной местности — в Исландии для Apollo 17, в Большом Каньоне для более ранних миссий."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.2",
+    "en": "That focus is the Great Attractor, a mass concentration around the Norma Cluster (Abell 3627), roughly 65 megaparsecs away. It is awkward to study because it lies behind the dense star clouds and dust of the Milky Way's own disc — the 'Zone of Avoidance' — so much of what we know comes from radio and infrared surveys that see through the obscuration, and from the galaxy motions themselves.",
+    "tr": "Этот центр — Великий аттрактор, концентрация массы вокруг скопления в Наугольнике (Abell 3627), примерно в 65 мегапарсеках от нас. Изучать его трудно, потому что он лежит за плотными звёздными облаками и пылью самого диска Млечного Пути — в «зоне избегания», — поэтому большая часть наших знаний получена из радио- и инфракрасных обзоров, которые видят сквозь поглощающую среду, и из самих движений галактик."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/orbits/special-orbits.json",
+    "at": "body_paragraphs.1",
+    "en": "Tundra orbit. Same critical-inclination + 24-hour-period idea as Molniya but circular-leaning rather than highly eccentric (e ≈ 0.25). Apogee at GEO altitude (~35,786 km), perigee at ~25,000 km. Period exactly 24 hours so the ground track repeats once a day in a long figure-8 shape elongated over the chosen latitude band. Used by Sirius XM Satellite Radio for North American coverage (the figure-8 lets antennas in the continental US see a satellite continuously at high elevation), Russian Yamal-200 and other comsats, and US SBIRS-HEO early-warning sensors that mostly need long dwell over the Arctic. Tundra trades the higher peak elevation of Molniya for full 24-hour repeat (Molniya has two apogees per day, both over the northern hemisphere — one over Russia, one over North America, 180° apart in longitude).",
+    "tr": "Орбита Тундра. Та же идея критического наклонения + 24-часового периода, что и у «Молния», но близкая к круговой форме, а не высокоэллиптическая (e ≈ 0,25). Апогей на высоте GEO (~35 786 км), перигей на ~25 000 км. Период в точности 24 часа, поэтому трасса спутника над поверхностью повторяется один раз в день, формируя удлинённую восьмёрку над выбранной широтной полосой. Используется компанией Sirius XM Satellite Radio для покрытия Северной Америки (восьмёрка позволяет антеннам на территории континентальных США видеть спутник непрерывно под высоким углом возвышения), российским спутником «Ямал-200» и другими спутниками связи, а также американскими датчиками раннего предупреждения SBIRS-HEO, которым в основном требуется длительное наблюдение Арктики. Орбита Тундра обменивает более высокое максимальное угловое возвышение «Молния» на полное 24-часовое повторение трассы («Молния» имеет два апогея в сутки, оба над северным полушарием — один над Россией, один над Северной Америкой, в 180° по долготе друг от друга)."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "body_paragraphs.1",
+    "en": "The trade-off is that events are singular and unrepeatable, the host and planet are often too distant to study further, and the mass and separation come out somewhat degenerate. It is a statistical tool: it measures how common cold and free-floating planets are, more than it catalogues individual worlds.",
+    "tr": "Компромисс в том, что события единичны и неповторимы, звезда-хозяин и планета часто слишком далеки для дальнейшего изучения, а масса и расстояние получаются в некоторой степени вырожденными. Это статистический инструмент: он измеряет, насколько распространены холодные и свободно дрейфующие планеты, больше, чем каталогизирует отдельные миры."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.2",
+    "en": "Outside the cheap lobes: red. Far from any natural window, you'd need a custom high-energy trajectory (gravity assist, multi-burn) to make the math work. Real missions cluster in the cheap zones; design philosophy 'just wait for the right window' often beats 'invent a clever trajectory.'",
+    "tr": "За пределами дешёвых лепестков — красный цвет. Вдали от любого естественного окна для решения потребуется специально рассчитанная высокоэнергетическая траектория (гравитационный манёвр, несколько включений двигателя). Реальные миссии группируются в дешёвых зонах; философия проектирования «просто дождись подходящего окна» часто выигрывает у «придумай хитрую траекторию»."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/mission-phases/optical-comms.json",
+    "at": "body_paragraphs.0",
+    "en": "Every spacecraft talking to Earth uses radio — a well-understood technology that tolerates moderate pointing errors and passes through clouds. Its fundamental limit is bandwidth: radio frequencies are regulated and the physics of diffraction caps how tightly you can pack a beam. Optical communications replaces the radio carrier with a near-infrared laser. The same physics that makes the beam pencil-thin also concentrates the energy, so a given transmitted power delivers far more bits per second at the receiver.",
+    "tr": "Каждый космический аппарат, связывающийся с Землёй, использует радио — хорошо изученную технологию, которая допускает умеренные ошибки наведения и проходит сквозь облака. Её фундаментальное ограничение — полоса пропускания: радиочастоты регулируются, а физика дифракции ограничивает, насколько узким можно сделать луч. Оптическая связь заменяет радионесущую лазером ближнего инфракрасного диапазона. Та же физика, которая делает луч тонким, как карандаш, ещё и концентрирует энергию, поэтому при той же излучаемой мощности приёмник получает гораздо больше бит в секунду."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "en": "Ion drives achieve specific impulses 10–30 times higher than chemical rockets by accelerating ionised gas electrically rather than burning it — at the cost of very low thrust that is measured in millinewtons, not meganewtons.",
+    "tr": "Ионные двигатели достигают удельного импульса в 10–30 раз выше, чем химические ракеты, путём электрического ускорения ионизированного газа вместо его сжигания — ценой очень малой тяги, измеряемой в миллиньютонах, а не меганьютонах."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.1",
+    "en": "Most gas generators run deliberately fuel-rich, because a stoichiometric flame would melt the turbine blades; a few early Soviet engines, including the RD-107 and RD-108, instead spin their turbines on steam from catalytically decomposed hydrogen peroxide. Either way, turbine-inlet temperature is the limiting design number — it caps how hard you can drive the pumps, and therefore the chamber pressure the engine can reach. The overboard dump costs a few seconds of specific impulse versus a closed cycle, since that propellant produces little useful thrust. For a first stage, where raw thrust and low cost matter more than the last few seconds of Isp, that trade is almost always worth it.",
+    "tr": "Большинство газогенераторов намеренно работают с избытком горючего, потому что стехиометрическое пламя расплавило бы лопатки турбины; несколько ранних советских двигателей, включая РД-107 и РД-108, вместо этого вращают турбины паром от каталитически разложенной перекиси водорода. В любом случае температура на входе в турбину — главный ограничивающий параметр проекта: она задаёт предел того, насколько сильно можно разгонять насосы, а значит, и давления в камере, которого сможет достичь двигатель. Сброс за борт стоит нескольких секунд удельного импульса по сравнению с замкнутым циклом, поскольку это топливо даёт мало полезной тяги. Для первой ступени, где важнее чистая тяга и низкая стоимость, чем последние секунды Isp, такой компромисс почти всегда оправдан."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.2",
+    "en": "Tides are a two-way street. The bulge Earth raises sits slightly ahead of the Moon because Earth rotates faster than the Moon orbits; its gravity tugs the Moon forward, nudging it into a higher orbit (~3.8 cm/year), while the Moon drags back on the bulge and slowly lengthens Earth's day.",
+    "tr": "Приливы — это улица с двусторонним движением. Приливный горб, который поднимает Земля, находится немного впереди Луны, потому что Земля вращается быстрее, чем Луна обращается по орбите; его гравитация тянет Луну вперёд и толкает её на более высокую орбиту (~3,8 см/год), а Луна тянет горб назад и медленно удлиняет земные сутки."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "en": "The only thing that makes a transfer ellipse different from a planet's orbit is that the spacecraft only flies HALF of it. It hops on at one end, rides to the other, and gets off. That's why the ∆v budget always has two big burns — one to enter the ellipse, one to leave it. The middle bit, the eight-month coast, costs absolutely nothing.",
+    "tr": "Единственное, чем переходный эллипс отличается от орбиты планеты, — космический аппарат проходит только ПОЛОВИНУ его. Он запрыгивает в одном конце, едет до другого и сходит. Вот почему в бюджете ∆v всегда два больших включения двигателя — одно, чтобы выйти на эллипс, другое, чтобы покинуть его. Середина пути, восьмимесячный полёт по инерции, не стоит абсолютно ничего."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.1",
+    "en": "Launch vehicles are characterised by their C3-vs-payload curve. Falcon Heavy can throw ~16 tonnes to C3=10, but only ~5 tonnes to C3=80. Mars typically wants C3 around 8-12. Jupiter direct: C3 around 80. New Horizons launched with C3 = 158 km²/s² — the highest of any mission ever — to make the trip to Pluto in just 9.5 years.",
+    "tr": "Ракеты-носители характеризуются кривой зависимости C3 от массы полезной нагрузки. Falcon Heavy способна отправить ~16 тонн при C3 = 10, но лишь ~5 тонн при C3 = 80. Для Марса обычно нужно C3 около 8–12. К Юпитеру напрямую: C3 около 80. New Horizons стартовал с C3 = 158 км²/с² — самым высоким среди всех миссий в истории, — чтобы добраться до Плутона всего за 9,5 года."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/_landing.json",
+    "at": "closing",
+    "en": "Below this story, the encyclopedia proper: six tabs, forty entries, every formula and every diagram in one place. Bookmark it. We'll be here when you need it.",
+    "tr": "Под этой историей собственно энциклопедия: шесть вкладок, сорок статей, каждая формула и каждая диаграмма в одном месте. Добавьте в закладки. Мы будем здесь, когда вам понадобится."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "narrative_101.2",
+    "en": "We have gone from 'are there other worlds?' — settled, yes — to 'are any of them alive?', a question we can finally start to test rather than only argue about.",
+    "tr": "Мы перешли от вопроса «существуют ли другие миры?» — на который получен ответ: да — к вопросу «есть ли на них жизнь?», который мы наконец можем начать проверять, а не только обсуждать."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/exoplanets/hot-jupiters.json",
+    "at": "body_paragraphs.2",
+    "en": "51 Pegasi b, the first planet found around a Sun-like star, is the archetype — and the reason planet-formation theory had to grow a chapter on migration.",
+    "tr": "51 Pegasi b, первая планета, найденная у солнцеподобной звезды, — прототип, и причина того, что теория формирования планет обзавелась новой главой о миграции."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.2",
+    "en": "Pluto, demoted in 2006, turned out to be the largest known member of the belt rather than the runt of the planets. Eris, discovered in 2005 and slightly more massive than Pluto, is what triggered the IAU's reclassification: if Eris is a planet, then so are Haumea, Makemake, Quaoar, Sedna, and dozens of likely candidates further out. The IAU drew the line at 'dwarf planet' instead, and the Kuiper Belt is the dwarf-planet reservoir.",
+    "tr": "Плутон, лишённый статуса планеты в 2006 году, оказался крупнейшим из известных объектов пояса, а не самой мелкой из планет. Эрида, открытая в 2005 году и чуть массивнее Плутона, и стала поводом для пересмотра классификации МАС: если Эрида — планета, то планетами должны быть и Хаумеа, Макемаке, Квавар, Седна и десятки вероятных кандидатов подальше. МАС провела границу иначе, введя категорию «карликовых планет», и пояс Койпера стал их резервуаром."
+  },
+  {
+    "loc": "ru",
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "diagram_caption",
+    "en": "A foreground star lenses a background one; an orbiting planet adds a brief secondary spike to the light curve.",
+    "tr": "Звезда на переднем плане линзирует фоновую звезду; обращающаяся планета добавляет краткий вторичный всплеск к кривой блеска."
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/space-stations/pressurized-volume.json",
+    "at": "body_paragraphs.2",
+    "en": "Tiangong: ~122 m³ habitable across three modules (Tianhe core, Wentian and Mengtian labs). Total pressurized volume is ~340 m³.",
+    "tr": "天宫：三个舱室共约122 m³宜居体积（天和、问天、梦天）。总增压体积约340 m³。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/scales-time/frames.json",
+    "at": "body_paragraphs.2",
+    "en": "Body-centric (Mars-centric, Saturn-centric, Moon-centric, etc.): origin at the body you're orbiting or flying past. Used for orbit insertion, surface ops, flyby geometry — anything where the body's gravity dominates. Patched-conic mission design switches frames at sphere-of-influence boundaries: you describe an arc in whatever frame keeps the math local.",
+    "tr": "以天体为中心（以火星为中心、以土星为中心、以月球为中心等）：原点位于你正在环绕或飞掠的天体。用于制动捕获、表面作业和飞掠几何——凡是该天体引力占主导的场合都适用。圆锥曲线拼接法的任务设计会在影响球边界处切换参考系：你可以在任何能让数学计算保持局部化的参考系中描述一段弧。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "narrative_101.1",
+    "en": "But here's the catch — and this is where Kepler's second law sneaks in. The planet doesn't sweep this angle at a steady pace. Near the close pass it whips around fast. Out at the far end it lumbers. So if you ask 'how many degrees per day?', the answer changes constantly throughout the orbit.",
+    "tr": "但问题来了——开普勒第二定律正是在这里悄然登场。行星扫过这个角度的速度并不均匀。在近距离掠过时，它飞速绕行；到了远端，它则缓慢爬行。所以如果你问“每天转多少度？”，答案在整个轨道上不断变化。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.1",
+    "en": "The terminator has a long history as the scientifically richest place to observe surface detail. Shadows are longest there, exaggerating topography. Apollo-era lunar imagery for crater geology was almost always taken with the terminator nearby. Voyager 1 + 2's most striking outer-planet imagery (Saturn's ring structure, Neptune's Great Dark Spot) was taken near each body's terminator for the same reason: low Sun angle picks out features.",
+    "tr": "晨昏线在历史上一直是观测地表细节最为丰富的地带。阴影在那里最长，地形起伏得到最大程度的突显。Apollo时代几乎所有用于研究撞击坑地质的月面图像，都是在晨昏线附近拍摄的。Voyager 1和Voyager 2最引人注目的外行星图像（土星的环状结构、海王星的大暗斑）同样因同一原因在各天体晨昏线附近拍摄：低太阳角能够勾勒出更多地表特征。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/interplanetary-internet.json",
+    "at": "body_paragraphs.3",
+    "en": "DTN does not beat the speed of light. A bundle from a Mars rover still takes 4–24 minutes to reach Earth; DTN just guarantees it arrives eventually, without losing data during the inevitable gaps. What it adds is reliability and asynchrony: science data queued on a rover during a dust storm or an occultation is delivered intact when the link reopens, without requiring a human operator to manually schedule retransmissions.",
+    "tr": "DTN不能超越光速。火星漫游车发送的数据包仍需4–24分钟才能到达地球；DTN只是保证它最终会到达，不会在不可避免的间隙中丢失数据。它增加的是可靠性和异步性：漫游车在沙尘暴或掩蔽期间排队的科学数据会在链路重新打开时完整递送，无需人工操作员手动安排重传。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.0",
+    "en": "Here's a free magic trick from physics. Imagine you have one specific amount of fuel to burn. You can light it whenever you want. Where should you do it? Common sense says it shouldn't matter — same fuel, same engine, same push. Common sense is wrong.",
+    "tr": "这是物理学送给你的一个免费小魔术。设想你有一份固定数量的燃料要烧掉，什么时候点火都行。应该在哪里点火？常识会说这无所谓——同样的燃料、同样的发动机、同样的推力。常识是错的。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.0",
+    "en": "The Deep Space Network is what makes interplanetary spaceflight legible. Without it the spacecraft would still fly (dead-reckoning + autonomous nav can hold a mission together for weeks) but nobody on Earth would know where it was, what it was doing, or what it was learning. The DSN is the umbilical for every NASA mission past the Moon and a contracted partner for ESA, JAXA, and ISRO deep-space missions.",
+    "tr": "深空网络让行星际航行变得可知可见。没有它，航天器照样能飞行（航位推算加自主导航可以支撑任务数周），但地球上没有人知道它在哪里、在做什么，或是了解到了什么。DSN是NASA所有月球以远任务的生命线，也是ESA、JAXA和ISRO深空任务的签约合作伙伴。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/optical-comms.json",
+    "at": "diagram_caption",
+    "en": "Laser beam from spacecraft → narrow divergence angle → much higher received power per Hz → orders-of-magnitude more data per watt than radio, but pointing tolerance measured in microradians.",
+    "tr": "航天器发射的激光束 → 极小的发散角 → 接收功率每赫兹高得多 → 每瓦数据量比无线电多几个数量级，但指向容差以微弧度衡量。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "body_paragraphs.1",
+    "en": "Both are irregular galaxies rather than spirals — chaotic, dust-rich, actively forming stars. The LMC has about 10 billion solar masses (about 1% of the Milky Way), the SMC about a tenth of that. The LMC hosts the Tarantula Nebula (30 Doradus), one of the most prolific star-formation regions in the Local Group and the site of supernova 1987A — the brightest supernova since Kepler's in 1604 and the first visible to the naked eye since SN 1885A in Andromeda, and the first supernova whose neutrinos were detected (Kamiokande, IMB, Baksan detectors caught about 25 neutrinos within seconds of each other, hours before the optical light arrived). The Tarantula's central star cluster R136 contains some of the most massive known stars (R136a1 is around 200 solar masses).",
+    "tr": "两者都是不规则星系，而非旋涡星系——杂乱、富含尘埃、正在活跃地形成恒星。大麦哲伦云（LMC）约有 100 亿个太阳质量（约为银河系的 1%），小麦哲伦云（SMC）约为其十分之一。LMC 中有蜘蛛星云（剑鱼座30），它是本星系群中恒星形成最活跃的区域之一，也是超新星 1987A 的所在地——这是自 1604 年开普勒超新星以来最亮的超新星，是自仙女座 SN 1885A 以来第一颗肉眼可见的超新星，也是第一颗被探测到中微子的超新星（Kamiokande、IMB 和 Baksan 探测器在彼此相隔数秒之内捕获了约 25 个中微子，比光学信号到达早数小时）。蜘蛛星云中心的星团 R136 包含一些已知质量最大的恒星（R136a1 约为 200 太阳质量）。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "intro_sentence",
+    "en": "Instead of dumping the turbopump's drive gas overboard, feed it into the main chamber and burn it too. Nothing is wasted, so the engine runs hotter, at higher pressure, and with more performance — at the cost of fearsome plumbing.",
+    "tr": "不把涡轮泵的驱动燃气排到舱外，而是送入主燃烧室一并燃烧。没有任何浪费，因此发动机燃烧温度更高、压力更大、性能更强——代价是管路系统复杂得吓人。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/tcm.json",
+    "at": "narrative_101.0",
+    "en": "No rocket launch is perfect. After ascent and the trans-X injection, your spacecraft is on roughly the right trajectory — but \"roughly\" matters a lot when your destination is a small planet 250 million kilometres away. A 5 cm/s mistake at the start of the trip translates into 100 km of miss-distance at Mars. So you fix it.",
+    "tr": "没有哪次火箭发射是完美的。在上升段和跨行星转移入轨之后，你的航天器大致处在正确的轨道上——但当你的目的地是2.5亿公里外的一颗小小的行星时，“大致”就至关重要了。旅程开始时5厘米/秒的误差，到火星处就会变成100公里的脱靶距离。所以你要去修正它。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "intro_sentence",
+    "en": "The colour scale that turns ∆v numbers into a picture you can read at a glance.",
+    "tr": "把∆v数值变成一眼就能读懂的图像的那套色标。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/mission-phases/met.json",
+    "at": "narrative_101.1",
+    "en": "Why a stopwatch instead of a normal calendar? Two reasons. First, calendars on Earth have nothing to do with what the spacecraft is doing — Voyager doesn't care about Tuesdays. Second, the further out you go, the more clocks drift apart. Mars is light-minutes away; signals lag. Spacecraft doing relativistic speeds (some of them) measure time slightly differently than we do. MET sidesteps all that — it's the spacecraft's own private timeline.",
+    "tr": "为什么用秒表，而不用普通的日历？有两个原因。其一，地球上的日历与航天器正在做什么毫无关系——Voyager才不管星期几。其二，距离越远，各处的时钟越容易走散。火星离我们有数光分之遥，信号会有延迟。（其中一些）以相对论速度飞行的航天器，测量时间的方式与我们略有不同。MET绕开了这一切——它是航天器自己专属的时间线。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "en": "Stand at the centre of the solar system and look at the planets and you see a pancake, not a sphere. Mercury, Venus, Earth, Mars, Jupiter, Saturn — they all orbit within about 7° of the same flat plane (the ecliptic). The planets formed from a single rotating gas-and-dust cloud, and that rotation collapsed everything to a thin disk. Everything since has stayed in that disk.",
+    "tr": "站在太阳系中心看行星 — 你会看到一个煎饼，不是球体。水星、金星、地球、火星、木星、土星 — 所有行星都在同一个平面（黄道）的约7°范围内运行。行星是由单个旋转的气体和尘埃云形成的，那种旋转将一切坍缩成一个薄圆盘。从那以后一切都留在那个圆盘中。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/propulsion/tsiolkovsky.json",
+    "at": "intro_sentence",
+    "en": "How much velocity change you can buy from a given engine and a given propellant load — the equation that makes spaceflight a logarithmic problem.",
+    "tr": "给定发动机和推进剂负荷能获得多大的速度变化——这个方程使航天飞行成为对数问题。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/observation/interferometry.json",
+    "at": "body_paragraphs.0",
+    "en": "A single telescope's resolving power depends on its aperture (diameter / wavelength). A radio antenna 30 m across imaging at 1 mm wavelength has an angular resolution of about 7 arcseconds — too coarse to see most things. But two antennas 1000 km apart, observing the same source simultaneously and combining their signals, behave like a single telescope **1000 km across** at that resolution — milliarcseconds.",
+    "tr": "单台望远镜的分辨本领取决于它的口径（直径 / 波长）。一台口径30米的射电天线在1毫米波长上成像，角分辨率约为7角秒——太粗糙，看不清大多数东西。但把两台相距1000公里的天线对准同一个源同时观测，并把它们的信号合成起来，在这一分辨率上就相当于一台**口径1000公里**的望远镜——达到毫角秒量级。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.4",
+    "en": "Access is the hard part. The coldest, darkest terrain on the Moon is also the most difficult to reach and operate in. Rover solar panels generate little power in near-permanent shadow. Equipment must survive extreme thermal cycling between the illuminated crater rim (needed for power) and the shadowed floor (where the ice is). Drilling or mining in low-gravity regolith without contaminating the ice is an unsolved engineering problem. The science is settled enough to motivate a race; the engineering is not.",
+    "tr": "难点在于抵达。月球上最冷、最暗的地形，也是最难到达、最难开展作业的地方。巡视器的太阳能电池板在近乎永久的阴影中发不出多少电。设备必须经受极端的热循环，一边是受光照的撞击坑边缘（需要那里供电），一边是处于阴影的坑底（冰就在那里）。在低重力的月壤中钻探或采掘，同时又不污染冰，是一个尚未解决的工程难题。科学上已经足够确定，足以掀起一场竞赛；工程上却不然。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "intro_sentence",
+    "en": "Every space agency runs roughly the same selection funnel — physical, cognitive, psychological, operational — narrowing ~10,000 applicants to ~10 selectees. The bottleneck is crew dynamics under stress.",
+    "tr": "每个航天机构的选拔漏斗大致相同——身体、认知、心理、操作能力——把约10,000名申请者缩减为约10名入选者。瓶颈在于压力下的乘组团队协作。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.2",
+    "en": "The classic is the RL10, which first flew on Centaur in 1962 and is still in production — one of the longest careers of any engine. That thrust ceiling applies to the fully closed cycle; switching to the expander-bleed variant breaks it. Bleed taps off a portion of the heated gas to drive the turbine and then dumps it overboard rather than routing all of it to the chamber — giving up a little Isp in exchange for far more power. Japan's LE-9 shows how far it can go: an expander-bleed engine producing 1,471 kN, it powers the first stage of the H3, something a closed expander could never do. Its sibling the LE-5B and Europe's Vinci on Ariane 6 use the same bleed approach for upper stages. Where staged combustion chases raw performance, the expander cycle chases reliability and restartability for the quiet, precise work of putting a payload exactly where it belongs.",
+    "tr": "经典之作是 RL10，1962 年首次在 Centaur 上飞行，至今仍在生产——是所有发动机中服役时间最长的之一。这个推力上限适用于完全封闭的循环；改用膨胀放气型变体就能突破它。放气型从受热气体中分出一部分去驱动涡轮，然后将其直接排出舷外，而不是全部导入燃烧室——以损失一点比冲换取大得多的功率。日本的 LE-9 展示了它能走多远：这台膨胀放气发动机产生 1,471 kN 推力，驱动 H3 的一级，这是封闭膨胀循环永远做不到的。它的同系发动机 LE-5B 和 Ariane 6 上的欧洲 Vinci 都在上面级采用同样的放气方案。分级燃烧追求原始性能，而膨胀循环追求的是可靠性和可重启性，用于把有效载荷精确送到应在的位置这类安静而精细的工作。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.2",
+    "en": "Brahe's contribution wasn't just data: he was a meticulous instrumentalist who pushed naked-eye measurement to its physical limit. Telescope-grade precision arrived only after Galileo's 1609 telescope — too late to overlap with Brahe's career.",
+    "tr": "第谷的贡献不止是数据：他是一位一丝不苟的仪器大师，把肉眼测量推到了物理极限。望远镜级别的精度，直到伽利略 1609 年的望远镜出现之后才到来——对第谷的职业生涯来说已经太晚，没能与之重叠。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "body_paragraphs.0",
+    "en": "Radial velocity was the first method to deliver, confirming 51 Pegasi b in 1995 and dominating the early exoplanet count. It measures the line-of-sight speed of the star from Doppler shifts in its spectrum; the amplitude of that speed (K) scales with the planet's mass and shrinks with orbital distance, so it favours massive planets on short orbits — the reason the first finds were 'hot Jupiters'.",
+    "tr": "径向速度法是第一种取得成果的方法，于1995年确认了飞马座51 b，并在早期的系外行星统计中占据主导。它通过恒星光谱中的多普勒位移来测量恒星沿视线方向的速度；该速度的幅度（K）随行星质量增大而增大，随轨道距离增大而减小，所以它偏向于发现短周期轨道上的大质量行星——这就是最先发现的是“热木星”的原因。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/orbits/hill-sphere.json",
+    "at": "intro_sentence",
+    "en": "The volume of space where a planet's gravity wins out over the Sun's.",
+    "tr": "行星引力超过太阳引力的空间区域。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.3",
+    "en": "Seeing the whole thing from inside is hard: interstellar dust blocks visible light toward the centre, so the disc's structure is mapped in infrared and radio, which pass through. The band of light we call “the Milky Way” in a dark sky is simply the combined glow of the disc's billions of stars, viewed edge-on from our seat within it — the plane of our own galaxy, seen the long way.",
+    "tr": "从内部看清整个银河很难：星际尘埃挡住了朝向中心的可见光，所以盘的结构要靠能够穿透的红外线和射电来测绘。在黑暗的夜空中我们称为“银河”的那条光带，其实就是银盘上数十亿颗恒星的光芒合在一起，从我们身处其中的位置侧向看去的样子——我们自己星系的盘面，沿着盘面的长向看过去。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.0",
+    "en": "Colour comes first. A star radiates as a near-perfect blackbody, so its colour is set almost entirely by its surface temperature: hot stars glow blue-white (~30,000 K), the Sun is yellow-white (~5,800 K), and cool stars burn deep red (~3,000 K). Astronomers measure that colour as the B–V index — the difference between a star's brightness through a blue and a visual filter — and it maps cleanly onto temperature. Sort stars left-to-right by colour and you have the spectral sequence O, B, A, F, G, K, M, hottest to coolest (mnemonic: “Oh Be A Fine Girl/Guy, Kiss Me”).",
+    "tr": "首先是颜色。恒星辐射如同近乎完美的黑体，因此其颜色几乎完全由其表面温度决定：炽热的恒星发出蓝白光（约30,000 K），太阳是黄白色（约5,800 K），而冷的恒星发出深红光（约3,000 K）。天文学家用B–V指数来测量这种颜色——即恒星通过蓝色和视觉滤光片的亮度之差——它与温度有清晰的对应关系。按颜色从左到右排列恒星，你就得到光谱序列O、B、A、F、G、K、M，从最炽热到最冷（记忆法：“Oh Be A Fine Girl/Guy, Kiss Me”）。"
+  },
+  {
+    "loc": "zh-CN",
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.2",
+    "en": "Tides are a two-way street. The bulge Earth raises sits slightly ahead of the Moon because Earth rotates faster than the Moon orbits; its gravity tugs the Moon forward, nudging it into a higher orbit (~3.8 cm/year), while the Moon drags back on the bulge and slowly lengthens Earth's day.",
+    "tr": "潮汐是双向作用的。地球掀起的潮汐隆起略微位于月球前方，因为地球自转比月球公转快；隆起的引力向前拉动月球，把它推向更高的轨道（约每年3.8 cm），而月球则向后拖拽隆起，使地球的一天缓慢变长。"
+  },
+  {
+    "loc": "fr",
+    "rel": "science/space-stations/pressurized-volume.json",
+    "at": "body_paragraphs.4",
+    "en": "The net habitable volume guidance in NASA-STD-3001 Volume 2 is empirically derived from confined-environment psychology studies dating back to Skylab and the Soviet Salyut programme, and scales with mission duration rather than setting a single floor. Below the minimum guidance band, crew well-being and mission performance decline measurably.",
+    "tr": "La directive de volume habitable net dans la norme NASA-STD-3001 Volume 2 est dérivée empiriquement d'études de psychologie en environnement confiné remontant à Skylab et au programme soviétique Salyut, et varie avec la durée de la mission plutôt que de fixer un seuil unique. En deçà de la plage minimale recommandée, le bien-être de l'équipage et les performances de mission diminuent de manière mesurable."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/scales-time/frames.json",
+    "at": "body_paragraphs.2",
+    "en": "Body-centric (Mars-centric, Saturn-centric, Moon-centric, etc.): origin at the body you're orbiting or flying past. Used for orbit insertion, surface ops, flyby geometry — anything where the body's gravity dominates. Patched-conic mission design switches frames at sphere-of-influence boundaries: you describe an arc in whatever frame keeps the math local.",
+    "tr": "Référentiel centré sur un corps (centré sur Mars, sur Saturne, sur la Lune, etc.) : origine au corps que l'on orbite ou que l'on survole. Utilisé pour l'insertion en orbite, les opérations en surface, la géométrie de survol — partout où la gravité du corps domine. La conception de mission par coniques raccordées change de référentiel aux frontières de la sphère d'influence : on décrit chaque arc dans le référentiel qui garde les calculs locaux."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "body_paragraphs.1",
+    "en": "It runs from 0 at perihelion (closest approach) through 90° (a quarter of the way) to 180° at aphelion (farthest), and back. Unlike a clock, it doesn't tick uniformly — Kepler's second law tells you the body races near perihelion and crawls near aphelion. So true anomaly per second changes throughout the orbit.",
+    "tr": "Il va de 0 au périhélie (passage le plus proche) à 90° (un quart du trajet) puis à 180° à l'aphélie (le point le plus éloigné), et revient. Contrairement à une horloge, il n'avance pas uniformément — la deuxième loi de Kepler vous dit que le corps se précipite près du périhélie et rampe près de l'aphélie. L'anomalie vraie par seconde change donc tout au long de l'orbite."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "diagram_caption",
+    "en": "Sub-solar point (direct overhead) + terminator (90° great circle). On airless bodies the terminator is sharp; on Earth and Venus, scattered sunlight blurs it into twilight.",
+    "tr": "Point subsolaire (zénith direct) + terminateur (grand cercle à 90°). Sur les corps sans atmosphère, le terminateur est net ; sur Terre et Vénus, la lumière solaire diffusée l'estompe en un crépuscule progressif."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/mission-phases/launch.json",
+    "at": "body_paragraphs.0",
+    "en": "Launch ascent costs about 9.4 km/s of ∆v, but barely 7.9 km/s of that is actual orbital velocity. The rest is gravity loss (you spend energy holding the rocket up while it climbs) and drag loss (atmosphere fighting back). Pitch-program right and you minimise both — too vertical wastes thrust on altitude that doesn't help orbital insertion; too horizontal and the atmosphere has more time to slow you down.",
+    "tr": "L'ascension au lancement coûte environ 9,4 km/s de ∆v, mais à peine 7,9 km/s correspondent à la vitesse orbitale proprement dite. Le reste est constitué des pertes par gravité (on dépense de l'énergie pour maintenir la fusée en l'air pendant qu'elle monte) et des pertes par traînée (l'atmosphère qui résiste). Avec un bon programme de tangage, on minimise les deux : trop vertical, on gaspille de la poussée en altitude qui n'aide pas l'insertion en orbite ; trop horizontal, l'atmosphère a plus de temps pour vous ralentir."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "en": "Burn deep in a gravity well and your fuel does more work — physically the same engine produces more orbital energy when it's moving fast.",
+    "tr": "Faites votre allumage au fond d'un puits gravitationnel et votre carburant travaille davantage : à moteur identique, on obtient plus d'énergie orbitale quand on va vite."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.3",
+    "en": "Advanced techniques layer on top. **Delta-DOR** (Delta-Differential One-way Range) uses two antennas viewing the same spacecraft + a nearby quasar simultaneously; the differential timing gives angular position to nanoradians. Mars EDL navigation now routinely hits ~100 m landing-ellipse accuracy on what is essentially a multi-month coast at 30,000 km/h. The DSN is the reason.",
+    "tr": "Des techniques avancées viennent s'y superposer. Le **Delta-DOR** (Delta-Differential One-way Range) utilise deux antennes qui observent simultanément le même engin spatial + un quasar voisin ; la différence de temps d'arrivée donne la position angulaire à quelques nanoradians près. La navigation EDL vers Mars atteint désormais couramment une précision d'environ 100 m sur l'ellipse d'atterrissage, au terme de ce qui est pour l'essentiel une croisière inertielle de plusieurs mois à 30 000 km/h. C'est au DSN qu'on le doit."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/mission-phases/orbit-insertion.json",
+    "at": "body_paragraphs.1",
+    "en": "The burn happens at periapsis of the arrival hyperbola, where Oberth makes the burn cheapest. The size depends on V∞ — the leftover speed at infinity — and the desired orbital altitude. Mars MRO arrived with V∞ ≈ 2.6 km/s and spent ~1 km/s of `∆v` for capture. Cassini's Saturn orbit insertion was a ~96-minute burn, the longest in the spacecraft's life.",
+    "tr": "L'allumage se produit au périapside de l'hyperbole d'arrivée, où Oberth rend l'allumage le plus économique. L'ampleur de la manœuvre dépend de V∞ — la vitesse résiduelle à l'infini — et de l'altitude orbitale désirée. Mars MRO est arrivée avec V∞ ≈ 2,6 km/s et a dépensé ~1 km/s de `∆v` pour la capture. L'insertion en orbite de Cassini autour de Saturne a été un allumage d'~96 minutes, le plus long de la vie du vaisseau spatial."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.0",
+    "en": "The Milky Way is a flat, rotating disc about 100,000 light-years across but only ~1,000 light-years thick — a cosmic vinyl record. Its stars, gas, and dust are wound into spiral arms (Perseus, Sagittarius, Scutum-Centaurus, Norma, plus our own minor Orion Spur), trailing from a central bar of older stars. Wrapping all of it is a spherical halo of ancient globular clusters and the invisible dark-matter that dominates the galaxy's mass. Estimates of the star count run from 100 to 400 billion.",
+    "tr": "La Voie lactée est un disque plat en rotation d'environ 100 000 années-lumière de diamètre mais d'à peine ~1 000 années-lumière d'épaisseur — un disque vinyle cosmique. Ses étoiles, son gaz et ses poussières s'enroulent en bras spiraux (Persée, Sagittaire, Écu-Centaure, Règle, plus notre propre petit éperon d'Orion), qui partent d'une barre centrale d'étoiles plus anciennes. L'ensemble est enveloppé d'un halo sphérique d'amas globulaires anciens et de la matière noire invisible qui domine la masse de la galaxie. Les estimations du nombre d'étoiles vont de 100 à 400 milliards."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/propulsion/staged-combustion.json",
+    "at": "body_paragraphs.0",
+    "en": "Staged combustion takes the gas-generator idea and closes the loop. A preburner still burns propellant to drive the turbopumps, but its exhaust — thick with unburned fuel or oxidiser — is not dumped. It is routed into the main combustion chamber and burned a second time, so every gram of propellant ends up producing thrust. Closing the cycle buys two things at once: higher specific impulse, because nothing is thrown away, and much higher chamber pressure, because the pumps can be driven harder. Higher chamber pressure means a smaller, more powerful engine for the same thrust. The price is brutal operating conditions — the turbine now sits in the full propellant flow at extreme temperature and pressure.",
+    "tr": "La combustion étagée reprend l'idée du générateur de gaz et ferme la boucle. Un prébrûleur brûle toujours le propergol pour entraîner les turbopompes, mais son échappement — riche en carburant ou comburant non brûlé — n'est pas rejeté. Il est acheminé vers la chambre de combustion principale et brûlé une deuxième fois, de sorte que chaque gramme de propergol produit finalement une poussée. Fermer le cycle procure deux avantages à la fois : une impulsion spécifique plus élevée, car rien n'est perdu, et une pression de chambre beaucoup plus haute, car les pompes peuvent être entraînées plus fortement. Une pression de chambre plus élevée signifie un moteur plus petit et plus puissant pour la même poussée. Le prix à payer est brutal : la turbine baigne désormais dans le flux de propergol complet à une température et une pression extrêmes."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/mission-phases/tcm.json",
+    "at": "body_paragraphs.2",
+    "en": "The `tcm_count` field on `/missions` FLIGHT tabs reports how many TCMs each mission used. Curiosity used 4. Mars Reconnaissance Orbiter used 4. Apollo missions used 4-5 mid-course corrections on the way to and from the Moon.",
+    "tr": "Le champ `tcm_count` sur les onglets FLIGHT de `/missions` indique le nombre de TCM utilisées par chaque mission. Curiosity en a utilisé 4. Mars Reconnaissance Orbiter en a utilisé 4. Les missions Apollo ont utilisé 4 à 5 corrections de trajectoire en route vers la Lune et au retour."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.0",
+    "en": "The whole point of a porkchop plot is the colours. Numbers in a giant grid would tell you the same thing, but you couldn't see the patterns. So we paint each cell — cool teal for cheap trajectories, yellow for borderline, orange and red for hopelessly expensive. Pattern recognition takes over from arithmetic.",
+    "tr": "L'intérêt d'un diagramme porkchop, ce sont les couleurs. Des chiffres dans une immense grille diraient la même chose, mais on n'y verrait pas les motifs. Nous peignons donc chaque case — bleu-vert froid pour les trajectoires bon marché, jaune pour celles à la limite, orange et rouge pour celles désespérément coûteuses. La reconnaissance de formes prend le relais du calcul."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/mission-phases/met.json",
+    "at": "body_paragraphs.1",
+    "en": "Why MET instead of UTC? Because clock-on-Earth doesn't quite match clock-on-spacecraft when the spacecraft is moving fast or far. Light-time delays grow (Mars is 4-22 light-minutes away depending on the orbital geometry). Relativistic dilation creeps in for fast probes. MET is the spacecraft's own elapsed time, the natural anchor for sequencing onboard events.",
+    "tr": "Pourquoi MET au lieu de UTC ? Parce que l'horloge sur Terre ne correspond pas tout à fait à l'horloge de la sonde spatiale quand celle-ci se déplace rapidement ou loin. Les délais de temps de propagation augmentent (Mars est à 4-22 minutes-lumière selon la géométrie orbitale). La dilatation relativiste s'ajoute pour les sondes rapides. MET est le temps écoulé propre de la sonde spatiale, l'ancre naturelle pour séquencer les événements à bord."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.2",
+    "en": "So mission planners don't fight the disk. They wait for the orbital geometry to line up (that's what 'launch window' means), point the rocket along the ecliptic, and let the planets do the steering. The result, when you look at every spacecraft trajectory we have, is a pile of curves all hugging the same plane — like watching cars race on a flat track.",
+    "tr": "Donc les planificateurs de mission ne combattent pas le disque. Ils attendent que la géométrie orbitale s'aligne (c'est ce que signifie « fenêtre de lancement »), pointent la fusée le long de l'écliptique et laissent les planètes assurer le pilotage. Le résultat, quand on regarde chacune des trajectoires de vaisseaux spatiaux dont nous disposons, est un tas de courbes toutes épousant le même plan — comme regarder des voitures courir sur une piste plate."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "diagram_caption",
+    "en": "TWR = thrust / (mass × g). Below 1: stays on pad. 1.0-1.2: marginal, big gravity losses. 1.3-1.5: operational sweet spot. Above 1.5: crew acceleration and aerodynamic load become the limit. Engine count = required thrust / single-engine thrust.",
+    "tr": "TWR = poussée / (masse × g). Sous 1 : reste au sol. 1,0–1,2 : marginal, fortes pertes gravitationnelles. 1,3–1,5 : plage optimale en service. Au-dessus de 1,5 : accélération équipage + charge aérodynamique deviennent la limite. Nombre de moteurs = poussée requise / poussée mono-moteur."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/observation/local-group.json",
+    "at": "title",
+    "en": "The Local Group — our gravitationally bound neighbourhood",
+    "tr": "Le Groupe local — notre voisinage lié par la gravité"
+  },
+  {
+    "loc": "fr",
+    "rel": "science/planets/lunar-ice.json",
+    "at": "diagram_caption",
+    "en": "Cross-section of a lunar south-pole crater — sunlight skims the rim while the floor stays permanently shadowed, cold-trapping water ice delivered over geological time.",
+    "tr": "Coupe transversale d'un cratère du pôle sud lunaire — la lumière solaire effleure le rebord tandis que le sol reste en ombre permanente, piégeant par le froid la glace d'eau apportée au fil du temps géologique."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "body_paragraphs.2",
+    "en": "The medical phase is the single largest filter. Lovelace Clinic (Mercury, 1959) ran ~30 separate tests over a week, including the iconic ice-water-in-the-ear vestibular shock and the 'how long can you sit in a dark sensory-deprivation tank' isolation screen. Modern medicals still run isolation chambers (NASA uses a 12-hour confined-space evaluation; Roscosmos uses a longer 5-day Звезда isolation chamber session) but the medical workup is more sophisticated: comprehensive metabolic profile, full cardiology with stress echo, neurological imaging, dental clearance (a tooth abscess on orbit is a mission-loss event), and a psychiatric screen done by panel interview. Soyuz qualification adds centrifuge tolerance to 8g and 14-day quarantine to confirm the immune profile.",
+    "tr": "La phase médicale est le plus grand filtre. La Lovelace Clinic (Mercury, 1959) faisait passer ~30 examens différents en une semaine, dont le fameux choc vestibulaire à l'eau glacée dans l'oreille et le test d'isolement « combien de temps tiendrez-vous dans un caisson sombre de privation sensorielle ». Les examens actuels utilisent toujours des chambres d'isolement (la NASA, une évaluation de 12 heures en espace confiné ; Roscosmos, une session plus longue de 5 jours dans la chambre d'isolement Звезда), mais le bilan médical est plus poussé : profil métabolique complet, cardiologie complète avec échographie d'effort, imagerie neurologique, feu vert dentaire (un abcès dentaire en orbite peut faire perdre la mission) et évaluation psychiatrique par entretien devant un jury. La qualification Soyuz ajoute la tolérance à la centrifugeuse jusqu'à 8 g et une quarantaine de 14 jours pour confirmer le profil immunitaire."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.1",
+    "en": "The catch is a hard physical ceiling. The power you can extract depends on how much heat the walls can hand to the fuel, and that scales with the *surface area* of the chamber and nozzle. But the thrust — and therefore the propellant flow the pumps must move — scales with chamber *volume*. As you make the engine bigger, volume grows faster than surface area, so at some point the walls simply cannot heat enough gas to drive pumps large enough for the flow. In practice a closed expander tops out around a few hundred kilonewtons of thrust. That makes it perfect for upper stages and impossible for a big first stage.",
+    "tr": "Le problème est un plafond physique brutal. La puissance que vous pouvez extraire dépend de la quantité de chaleur que les parois peuvent transférer au carburant, et cela évolue avec la *surface* de la chambre et de la tuyère. Mais la poussée — et donc le débit de propergol que les pompes doivent déplacer — évolue avec le *volume* de la chambre. À mesure que vous agrandissez le moteur, le volume augmente plus vite que la surface, donc à un moment donné les parois ne peuvent tout simplement pas chauffer assez de gaz pour entraîner des pompes suffisamment grandes pour le débit. En pratique, un expanseur fermé plafonne autour de quelques centaines de kilonewtons de poussée. Cela le rend parfait pour les étages supérieurs et impossible pour un gros premier étage."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.1",
+    "en": "Kepler had no theoretical justification — the laws were empirical patterns extracted from data. Newton would supply the why 70 years later (gravity goes as 1/r²; bound orbits are conic sections; Law 3 falls out of energy conservation).",
+    "tr": "Kepler n'avait pas de justification théorique — les lois étaient des motifs empiriques extraits des données. Newton fournirait l'explication 70 ans plus tard (la gravité varie comme 1/r² ; les orbites liées sont des sections coniques ; la Loi 3 découle de la conservation de l'énergie)."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "narrative_101.2",
+    "en": "The wobble is minute: Jupiter tugs the Sun at about 12 metres per second, Earth at barely 9 centimetres per second. Reaching those speeds is a decades-long instrument story that is still unfolding.",
+    "tr": "L'oscillation est infime : Jupiter fait osciller le Soleil à environ 12 mètres par seconde, la Terre à peine 9 centimètres par seconde. Atteindre ces vitesses est une histoire d'instruments qui s'étend sur des décennies et qui se poursuit encore."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/orbits/hill-sphere.json",
+    "at": "body_paragraphs.1",
+    "en": "Real numbers for the solar system: Mercury 220,000 km (90 R_Mercury). Venus 1.0 M km (170 R_Venus). Earth 1.5 M km (236 R_Earth). Mars 1.1 M km (320 R_Mars — bigger than Earth's in radii because Mars is small and farther from the Sun). Jupiter 53 M km (740 R_Jupiter — by far the largest in the system). Saturn 65 M km (1100 R_Saturn). Uranus 70 M km. Neptune 116 M km. Pluto ~6.0 M km (~5000 R_Pluto — the largest Hill sphere measured in its own body radii in the solar system, because Pluto is far from the Sun and tiny).",
+    "tr": "Nombres réels pour le système solaire : Mercure 220 000 km (90 R_Mercure). Vénus 1,0 M km (170 R_Vénus). Terre 1,5 M km (236 R_Terre). Mars 1,1 M km (320 R_Mars — plus grande que celle de la Terre en rayons car Mars est petite et plus lointaine du Soleil). Jupiter 53 M km (740 R_Jupiter — de loin la plus grande du système). Saturne 65 M km (1100 R_Saturne). Uranus 70 M km. Neptune 116 M km. Pluton ~6,0 M km (~5000 R_Pluton — la plus grande sphère de Hill du système solaire mesurée en rayons de son propre corps, car Pluton est lointaine du Soleil et minuscule)."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/observation/space-photography.json",
+    "at": "body_paragraphs.0",
+    "en": "A space telescope's image sensor is a CCD or CMOS chip — a grid of photon-counters. Each pixel sits on the focal plane for an exposure (anywhere from milliseconds to multiple hours), accumulating electron counts. The output is a number per pixel: how many photons of which narrow-band filter hit there. Multiple exposures are stacked to beat down read noise, registered to sub-pixel alignment, and median-combined to reject cosmic-ray hits.",
+    "tr": "Le capteur d'image d'un télescope spatial est une puce CCD ou CMOS, une grille de compteurs de photons. Chaque pixel reste sur le plan focal pendant une pose (de quelques millisecondes à plusieurs heures) et accumule des électrons. La sortie est un nombre par pixel : combien de photons, dans quel filtre à bande étroite, sont arrivés là. Plusieurs poses sont empilées pour réduire le bruit de lecture, recalées à une fraction de pixel près et combinées par la médiane pour éliminer les impacts de rayons cosmiques."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "diagram_caption",
+    "en": "The Hertzsprung–Russell diagram: temperature (hot O-stars left, cool M-stars right) against luminosity (bright top, faint bottom). The main sequence runs corner to corner; red giants sit top-right, white dwarfs bottom-left. The Sun is a G-type main-sequence star, marked near the centre — the same axes the /explore HR-lens re-plots the real neighbourhood stars onto.",
+    "tr": "Le diagramme de Hertzsprung–Russell : température (étoiles O chaudes à gauche, étoiles M froides à droite) en fonction de la luminosité (brillantes en haut, faibles en bas). La séquence principale va d'un coin à l'autre ; les géantes rouges sont en haut à droite, les naines blanches en bas à gauche. Le Soleil, étoile de type G de la séquence principale, est marqué près du centre — ce sont les mêmes axes sur lesquels la lentille HR de /explore reporte les étoiles réelles du voisinage."
+  },
+  {
+    "loc": "fr",
+    "rel": "science/planets/tides.json",
+    "at": "diagram_caption",
+    "en": "Twin tidal bulges stretched along the Earth–Moon line — the near bulge under the Moon, the far bulge thrown outward.",
+    "tr": "Deux renflements de marée jumeaux étirés le long de la ligne Terre–Lune — le renflement proche sous la Lune, le renflement éloigné projeté vers l'extérieur."
+  }
+]

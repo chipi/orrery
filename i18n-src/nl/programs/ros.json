@@ -76,5 +76,10 @@
       "type": "prose",
       "md": "De diepere les is de afstand tussen het aankondigen van een station en het vliegen ervan. De ROS heeft erfgoed, intentie en een duidelijke strategische rationale — en het moet nog steeds worden gebouwd onder sancties op een gekrompen budget. Ambitie is goedkoop en stations zijn duur; het programma is een herinnering dat in de ruimtevaart het plan het gemakkelijke deel is, en het moeilijke deel het betalen ervoor is."
     }
-  ]
+  ],
+  "link_labels": {
+    "/programs/mir": "Mir — het modulaire station waarvan het Russische segment afstamt",
+    "/programs/salyut": "Salyut — de eerste stations van Rusland",
+    "/programs/iss": "ISS — het partnerschap dat Rusland verlaat"
+  }
 }

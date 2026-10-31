@@ -16,7 +16,7 @@
     {
       "met": 5,
       "label": "MOI",
-      "note": "Einfügung in die Mondumlaufbahn; Orbitalkorrekturen der Sinkneigung.",
+      "note": "Einschwenken in die Mondumlaufbahn; Orbitalkorrekturen der Abstiegsinklination.",
       "type": "nominal"
     },
     {
@@ -37,5 +37,6 @@
       "note": "Letzte Kommandositzung 14.09.1971; Rover in kalter Mondnacht konserviert.",
       "type": "info"
     }
-  ]
+  ],
+  "vehicle_stage": "Oberstufe Blok-D"
 }

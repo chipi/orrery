@@ -1,0 +1,350 @@
+[
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "dispatch",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: околоземных (Earth-orbit)"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Первый японский спутник Венеры",
+    "replace": "Первый японский орбитальный аппарат Венеры",
+    "why": "orbiter -> орбитальный аппарат"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "после сбоя 2010 года",
+    "replace": "после сбоя выхода на орбиту в 2010 году",
+    "why": "orbit-insertion failure had no orbit term"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "состыковалась с орбитальным модулем",
+    "replace": "сблизилась с орбитальным модулем",
+    "why": "rendezvous -> сближение, not docking"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: научная аппаратура (instrument suite, not cargo)"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "встретится с астероидом",
+    "replace": "сблизится с астероидом",
+    "why": "rendezvous -> сближение"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "на пути к встрече с астероидом Psyche",
+    "replace": "на пути к сближению с астероидом Psyche",
+    "why": "rendezvous -> сближение"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "description",
+    "term": "delta-v",
+    "decision": "change",
+    "find": "суммарного приращения скорости, необходимого",
+    "replace": "суммарной дельта-v, необходимой",
+    "why": "delta-v binding, agreement fixed"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning LOX and LH2 = combustion"
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned LOX and RP-1 = combustion"
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning propellants = combustion"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "staged combustion, burning oxidiser = combustion"
+  },
+  {
+    "rel": "fleet/engine/viking.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burns propellants = combustion"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "engine burning LOX/LH2 = combustion"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "hydrogen-burning engines = combustion"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning propellant per second = combustion"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "methane-burning engine = combustion"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned storable liquids = combustion"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-40.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "модернизированной системой заправки",
+    "replace": "модернизированной топливной системой",
+    "why": "propellant system -> топливн-"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "variant: жидкостная (liquid-propellant rocket, standard term)"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "keep",
+    "why": "propellant omitted naturally; hydrazine named"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: научные аппараты (spacecraft carried)"
+  },
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "instrument suite described, omitted naturally (нёс ... приборы)"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-4.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "институциональных нагрузок",
+    "replace": "институциональных полезных нагрузок",
+    "why": "payload binding"
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-43.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "российскими нагрузками",
+    "replace": "российскими полезными нагрузками",
+    "why": "payload binding"
+  },
+  {
+    "rel": "fleet/launcher/ariane-5.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: спутники (the payloads are satellites)"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "dispatch",
+    "term": "payload",
+    "decision": "change",
+    "find": "выведя нагрузку «Полюс»",
+    "replace": "выведя полезную нагрузку «Полюс»",
+    "why": "payload binding"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "dispatch",
+    "term": "payload",
+    "decision": "change",
+    "find": "другие тяжёлые нагрузки",
+    "replace": "другие тяжёлые полезные нагрузки",
+    "why": "payload binding"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "автономных нагрузок",
+    "replace": "автономных полезных нагрузок",
+    "why": "payload binding"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "с нагрузкой «Полюс»",
+    "replace": "с полезной нагрузкой «Полюс»",
+    "why": "payload binding"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "instrument suite rendered as 'на борту 10 приборов'; omitted naturally"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "'7 приборов LRO' instrument suite; omitted naturally"
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "как попутная нагрузка",
+    "replace": "как попутная полезная нагрузка",
+    "why": "payload binding"
+  },
+  {
+    "rel": "fleet/launcher/atlas-lv-3b.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета (whole single-stack vehicle, not strap-on)"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "dispatch",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета-носитель (whole launch vehicle)"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета (whole single-stage vehicle)"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: ракета-носитель (launch vehicle failure)"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "в 7-летнем перелёте с гравитационными манёврами (1",
+    "replace": "в 7-летнем перелёте с пролётами и гравитационными манёврами (1",
+    "why": "flyby cruise -> пролёты"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Сближение с Юпитером",
+    "replace": "Пролёт мимо Юпитера",
+    "why": "Jupiter flyby -> пролёт"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+    "at": "dispatch",
+    "term": "entry",
+    "decision": "change",
+    "find": "превратил возвращение из неминуемой гибели",
+    "replace": "превратил вход в атмосферу из неминуемой гибели",
+    "why": "reentry -> вход в атмосферу"
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "keep",
+    "why": "orbit entry/decay of Mars orbiter, not atmospheric entry; 'сошёл с орбиты' natural"
+  },
+  {
+    "rel": "fleet/space-suit/aces.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "для старта и посадки",
+    "replace": "для старта и входа в атмосферу",
+    "why": "launch-entry -> вход в атмосферу"
+  },
+  {
+    "rel": "fleet/space-suit/aces.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "при каждом старте и возвращении",
+    "replace": "при каждом старте и входе в атмосферу",
+    "why": "re-entry -> вход в атмосферу"
+  },
+  {
+    "rel": "fleet/space-suit/aces.json",
+    "at": "best_known_for",
+    "term": "entry",
+    "decision": "change",
+    "find": "при каждом старте и возвращении",
+    "replace": "при каждом старте и входе в атмосферу",
+    "why": "re-entry -> вход в атмосферу"
+  }
+]

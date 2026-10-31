@@ -181,7 +181,30 @@ Adjusted: nl uses zwaartekrachtassist (the site majority, accepted) instead of a
 spelling; fr arrimer is kept (stem widened); ar verb agreement. Arabic «اللقاء المداري» was
 aligned with the essays' «الالتقاء» (4 fields). 97 keeps. **Programs: 0 unreviewed, gated.**
 
-All trees after essays: 2,142 unreviewed (missions 1,378, fleet 538, programs 226).
+## Fleet round (2026-10-31)
 
-Next: programs, fleet, missions with the `term-consistency` skill, then the next batch of
+535 misses, five reviewers, every list read. 334 field edits in 13 locales, 0 refused, plus
+170 keeps.
+- nl: non-Dutch stage words (boventrip, kernfase, stadium …) → trap; zwaartekrachtsondersteuning
+  → zwaartekrachtassist.
+- it/es/pt: payload left in English, or as a bare carico / carga → carico utile / carga útil.
+- fr/es: carburant / propulsor → propergol / propelente; es estadio → etapa.
+- hi: transliterations (रेंडेज़्वस, एपोजी, इंक्लिनेशन, अपर स्टेज) → मिलन, अपभू, झुकाव, ऊपरी चरण.
+- ar: bare الوقود → الوقود الدافع (22); reentry as bare العودة → العودة إلى الغلاف الجوي.
+- ko/ja/zh: flyby as a generic pass → 플라이바이 / フライバイ / 飞掠; zh 引力助推 → 引力辅助 (the
+  site majority, 78 vs 16).
+
+Adjusted:
+- fr "propulseur d'appoint" for the Atlas (a whole launcher) → "lanceur".
+- hi सूर्य-स्थैतिक (sun-static) → सूर्य-तुल्यकालिक.
+- An ar stem that matched «التقاط» (capture) was narrowed.
+
+**Fleet: 0 unreviewed, gated.** The reviewers also reported a lot of garble outside the
+terms, worst in nl fleet. It is collected in `2026-10-31-fleet-garble-findings.md` for a
+separate pass.
+
+All trees after essays: 2,142 unreviewed (missions 1,378, fleet 538, programs 226).
+All trees after fleet: 1,350 unreviewed, all in missions.
+
+Next: missions with the `term-consistency` skill, then the next batch of
 terms from `term-census.mjs`.

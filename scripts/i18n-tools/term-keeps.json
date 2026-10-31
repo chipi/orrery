@@ -3,9 +3,49 @@
     "why": "variant: first stage (مرحلة)",
     "tr": "e76abaeae4"
   },
+  "booster|de|fleet/engine/h-1.json :: best_known_for": {
+    "why": "variant: first stage (Saturn I/IB first-stage engine), word omitted naturally",
+    "tr": "1f1b030829"
+  },
+  "booster|de|fleet/launch-site/lc-34.json :: dispatch": {
+    "why": "variant: Träger (Saturn rockets in general)",
+    "tr": "e9d1a9ba0e"
+  },
+  "booster|de|fleet/launcher/atlas-lv-3b.json :: description": {
+    "why": "variant: Antriebsstufe (Atlas first-stage booster)",
+    "tr": "baa55a1398"
+  },
+  "booster|de|fleet/launcher/mercury-redstone.json :: description": {
+    "why": "variant: die Rakete allein (single-stage vehicle without capsule)",
+    "tr": "d008b9ac4c"
+  },
+  "booster|de|fleet/station/salyut-4.json :: description": {
+    "why": "variant: Trägerrakete (launch vehicle failure)",
+    "tr": "a11aced073"
+  },
   "booster|de|programs/sputnik.json :: goals.0.md": {
     "why": "variant: Träger (launch vehicle)",
     "tr": "5c3f1500ec"
+  },
+  "booster|es|fleet/engine/h-1.json :: best_known_for": {
+    "why": "variant: first stage (Saturn I/IB booster = primera etapa)",
+    "tr": "4cb169f97e"
+  },
+  "booster|es|fleet/launcher/falcon-heavy.json :: best_known_for": {
+    "why": "variant: lanzador (whole vehicle)",
+    "tr": "512f104a6b"
+  },
+  "booster|es|fleet/launcher/falcon-heavy.json :: tagline": {
+    "why": "variant: lanzador (whole vehicle)",
+    "tr": "c9d1ab12f4"
+  },
+  "booster|es|fleet/launcher/soyuz-2.json :: description": {
+    "why": "variant: impulsores",
+    "tr": "afef068d08"
+  },
+  "booster|es|fleet/station/salyut-4.json :: description": {
+    "why": "variant: cohete (launch vehicle failure)",
+    "tr": "6484983e9c"
   },
   "booster|es|programs/sputnik.json :: goals.0.md": {
     "why": "variant: cohete (launch vehicle)",
@@ -63,6 +103,58 @@
     "why": "variant: étage",
     "tr": "329e6b077d"
   },
+  "booster|fr|fleet/crewed-spacecraft/challenger.json :: dispatch": {
+    "why": "variant: propulseurs à poudre",
+    "tr": "4863ef8ee9"
+  },
+  "booster|fr|fleet/engine/h-1.json :: best_known_for": {
+    "why": "variant: first stage (Saturn I/IB booster = premier étage)",
+    "tr": "7bf0bcdb5e"
+  },
+  "booster|fr|fleet/engine/merlin-1d.json :: tagline": {
+    "why": "variant: first stage (étage)",
+    "tr": "b5101b8989"
+  },
+  "booster|fr|fleet/launch-site/lc-34.json :: dispatch": {
+    "why": "variant: propulseurs (rockets in general sense)",
+    "tr": "2c2e620896"
+  },
+  "booster|fr|fleet/launcher/atlas-lv-3b.json :: description": {
+    "why": "variant: launcher (Atlas booster = whole vehicle)",
+    "tr": "703e4508d0"
+  },
+  "booster|fr|fleet/launcher/falcon-9.json :: description": {
+    "why": "variant: first stage (Falcon 9 Block 5 booster)",
+    "tr": "6c9468045f"
+  },
+  "booster|fr|fleet/launcher/falcon-heavy.json :: best_known_for": {
+    "why": "variant: lanceur (whole vehicle)",
+    "tr": "ab6761925a"
+  },
+  "booster|fr|fleet/launcher/falcon-heavy.json :: tagline": {
+    "why": "variant: lanceur (whole vehicle)",
+    "tr": "ab6761925a"
+  },
+  "booster|fr|fleet/launcher/long-march-3b.json :: description": {
+    "why": "variant: propulseurs auxiliaires latéraux",
+    "tr": "56e3dde10d"
+  },
+  "booster|fr|fleet/launcher/mercury-redstone.json :: description": {
+    "why": "variant: propulseur (rocket body, Redstone single stage)",
+    "tr": "83a15f4a63"
+  },
+  "booster|fr|fleet/launcher/mercury-redstone.json :: dispatch": {
+    "why": "variant: lanceur (rocket in general sense)",
+    "tr": "f8f9536e07"
+  },
+  "booster|fr|fleet/launcher/soyuz-2.json :: description": {
+    "why": "variant: propulseurs auxiliaires",
+    "tr": "3ffc8baff7"
+  },
+  "booster|fr|fleet/station/salyut-4.json :: description": {
+    "why": "variant: lanceur (launch vehicle failure)",
+    "tr": "1900cfc189"
+  },
   "booster|fr|programs/spacex.json :: goals.1.caption": {
     "why": "variant: first stage booster (propulseurs)",
     "tr": "0a2fbb58f7"
@@ -95,6 +187,18 @@
     "why": "variant: first stage (Super Heavy booster)",
     "tr": "9d49ce6aea"
   },
+  "booster|it|fleet/launcher/falcon-heavy.json :: best_known_for": {
+    "why": "variant: lanciatore (whole vehicle)",
+    "tr": "b95bd3b8c3"
+  },
+  "booster|it|fleet/launcher/falcon-heavy.json :: tagline": {
+    "why": "variant: lanciatore (whole vehicle)",
+    "tr": "b95bd3b8c3"
+  },
+  "booster|it|fleet/station/salyut-4.json :: description": {
+    "why": "variant: lanciatore (launcher failure)",
+    "tr": "1fd0d5558b"
+  },
   "booster|it|programs/sputnik.json :: goals.0.md": {
     "why": "variant: vettore (launch vehicle)",
     "tr": "ef43fdd9cd"
@@ -103,9 +207,21 @@
     "why": "Super Heavy is the booster by name; word omitted naturally",
     "tr": "973ca8693f"
   },
+  "booster|nl|fleet/station/salyut-4.json :: description": {
+    "why": "variant: raket (launch vehicle failure)",
+    "tr": "346c3f0e03"
+  },
   "booster|nl|programs/sputnik.json :: goals.0.md": {
     "why": "variant: draagraket",
     "tr": "faa5326f5e"
+  },
+  "booster|pt-BR|fleet/engine/h-1.json :: best_known_for": {
+    "why": "variant: primeiro estágio (Saturn I/IB first-stage engine)",
+    "tr": "60254f9ba1"
+  },
+  "booster|pt-BR|fleet/launch-site/lc-34.json :: dispatch": {
+    "why": "variant: megafoguetes (Saturn rockets in general)",
+    "tr": "8f5291e410"
   },
   "booster|pt-BR|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy named, word omitted naturally",
@@ -147,6 +263,22 @@
     "why": "variant: ступень (Falcon 9 first-stage booster = stage)",
     "tr": "fd41f279cd"
   },
+  "booster|ru|fleet/launcher/atlas-lv-3b.json :: description": {
+    "why": "variant: ракета (whole single-stack vehicle, not strap-on)",
+    "tr": "7de6c500d0"
+  },
+  "booster|ru|fleet/launcher/mercury-redstone.json :: description": {
+    "why": "variant: ракета (whole single-stage vehicle)",
+    "tr": "a13188816b"
+  },
+  "booster|ru|fleet/launcher/mercury-redstone.json :: dispatch": {
+    "why": "variant: ракета-носитель (whole launch vehicle)",
+    "tr": "ed9d633112"
+  },
+  "booster|ru|fleet/station/salyut-4.json :: description": {
+    "why": "variant: ракета-носитель (launch vehicle failure)",
+    "tr": "1ea2d95d98"
+  },
   "booster|ru|programs/sputnik.json :: goals.0.md": {
     "why": "variant: ракета-носитель (launch vehicle)",
     "tr": "bf4248c9f0"
@@ -162,6 +294,58 @@
   "booster|sr-Cyrl|essays/reusable-launchers.json :: body.9.md": {
     "why": "variant: први степен / степен (first-stage booster = stage)",
     "tr": "de1065f449"
+  },
+  "booster|sr-Cyrl|fleet/engine/h-1.json :: best_known_for": {
+    "why": "variant: први степен (first-stage engine cluster)",
+    "tr": "3223e48540"
+  },
+  "booster|sr-Cyrl|fleet/launch-site/lc-34.json :: dispatch": {
+    "why": "variant: ракете (whole Saturn rockets)",
+    "tr": "1e0577bc1b"
+  },
+  "booster|sr-Cyrl|fleet/launch-site/starbase-orbital-a.json :: description": {
+    "why": "variant: први степен (Super Heavy first-stage booster)",
+    "tr": "00d418525a"
+  },
+  "booster|sr-Cyrl|fleet/launch-site/vandenberg-slc-4e.json :: description": {
+    "why": "variant: први степен (first-stage recovery)",
+    "tr": "2ccf1889f9"
+  },
+  "booster|sr-Cyrl|fleet/launcher/atlas-lv-3b.json :: description": {
+    "why": "variant: ракета (whole vehicle)",
+    "tr": "d602e4277c"
+  },
+  "booster|sr-Cyrl|fleet/launcher/falcon-9.json :: best_known_for": {
+    "why": "variant: први степен",
+    "tr": "270ab4dcf2"
+  },
+  "booster|sr-Cyrl|fleet/launcher/falcon-9.json :: description": {
+    "why": "variant: први степен",
+    "tr": "a530b1af5a"
+  },
+  "booster|sr-Cyrl|fleet/launcher/falcon-9.json :: tagline": {
+    "why": "variant: први степен",
+    "tr": "270ab4dcf2"
+  },
+  "booster|sr-Cyrl|fleet/launcher/falcon-heavy.json :: best_known_for": {
+    "why": "variant: ракета-носач (whole three-core vehicle)",
+    "tr": "ad97f2d4c0"
+  },
+  "booster|sr-Cyrl|fleet/launcher/falcon-heavy.json :: tagline": {
+    "why": "variant: ракета-носач (whole three-core vehicle)",
+    "tr": "ad97f2d4c0"
+  },
+  "booster|sr-Cyrl|fleet/launcher/mercury-redstone.json :: description": {
+    "why": "variant: ракета (whole single-stage vehicle)",
+    "tr": "ccf3fec231"
+  },
+  "booster|sr-Cyrl|fleet/launcher/mercury-redstone.json :: dispatch": {
+    "why": "variant: ракета-носач (whole launch vehicle)",
+    "tr": "88f606dc60"
+  },
+  "booster|sr-Cyrl|fleet/station/salyut-4.json :: description": {
+    "why": "variant: ракета-носач (launch vehicle failure)",
+    "tr": "15ce998b0e"
   },
   "booster|sr-Cyrl|programs/spacex.json :: goals.1.caption": {
     "why": "variant: first stage (Falcon 9 booster)",
@@ -211,6 +395,18 @@
     "why": "pronoun 它 / 第一级火箭 in this sentence",
     "tr": "452422ccc9"
   },
+  "booster|zh-CN|fleet/launch-site/lc-34.json :: dispatch": {
+    "why": "not strap-on sense: 超大型火箭 = launch vehicles",
+    "tr": "6f7160676c"
+  },
+  "booster|zh-CN|fleet/launcher/falcon-heavy.json :: best_known_for": {
+    "why": "whole vehicle: variant 运载火箭",
+    "tr": "4d7f284b02"
+  },
+  "booster|zh-CN|fleet/launcher/falcon-heavy.json :: tagline": {
+    "why": "whole vehicle: variant 运载火箭",
+    "tr": "4d7f284b02"
+  },
   "booster|zh-CN|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy is the booster by name; word omitted naturally",
     "tr": "61ccb84385"
@@ -258,6 +454,34 @@
   "burn|ar|essays/seven-minutes.json :: body.4.md": {
     "why": "combustion/heating of air; engine ran twelve minutes: يعمل",
     "tr": "7becf49c9a"
+  },
+  "burn|ar|fleet/engine/ce-20.json :: description": {
+    "why": "burning LOX/LH2 = combustion (تحترق)",
+    "tr": "da508efb5d"
+  },
+  "burn|ar|fleet/engine/f-1.json :: description": {
+    "why": "burned LOX/RP-1 = combustion (احترقت)",
+    "tr": "7558ea7f3f"
+  },
+  "burn|ar|fleet/engine/rd-180.json :: description": {
+    "why": "burning excess oxidiser = combustion (احتراق)",
+    "tr": "14e0e95c82"
+  },
+  "burn|ar|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning engines = combustion (يعملان بالهيدروجين)",
+    "tr": "2cf5deac46"
+  },
+  "burn|ar|fleet/launcher/saturn-v.json :: dispatch": {
+    "why": "burning propellant = combustion (تحرق)",
+    "tr": "2112fc5608"
+  },
+  "burn|ar|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning = combustion",
+    "tr": "9e530c7c89"
+  },
+  "burn|ar|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion (أحرق)",
+    "tr": "9f3e89f548"
   },
   "burn|ar|programs/vostok.json :: lessons.0.md": {
     "why": "figurative: sprint burns the runway, not an engine firing",
@@ -387,6 +611,34 @@
     "why": "'air burns off energy' = dissipation; 'Triebwerk ... brannte' is the correct engine verb",
     "tr": "f7cb8f5de8"
   },
+  "burn|de|fleet/engine/ce-20.json :: description": {
+    "why": "burning LOX/LH2 = combustion (verbrennt)",
+    "tr": "4452842ee3"
+  },
+  "burn|de|fleet/engine/f-1.json :: description": {
+    "why": "burned LOX/RP-1 = combustion (verbrannte)",
+    "tr": "cad5611c98"
+  },
+  "burn|de|fleet/engine/rd-180.json :: description": {
+    "why": "burning excess oxidiser = combustion",
+    "tr": "de1e4bff13"
+  },
+  "burn|de|fleet/engine/yf-77.json :: description": {
+    "why": "burning LOX/LH2 = combustion",
+    "tr": "2dc5f84e7e"
+  },
+  "burn|de|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning = fuel type, combustion",
+    "tr": "d8d8b7cf91"
+  },
+  "burn|de|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning = fuel type, combustion",
+    "tr": "165539d156"
+  },
+  "burn|de|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion",
+    "tr": "0bad85d962"
+  },
   "burn|de|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "combustion sense (burning fuel)",
     "tr": "167bb80175"
@@ -463,6 +715,10 @@
     "why": "chemical burn = combustion here (reviewer change dropped)",
     "tr": "515cd24d36"
   },
+  "burn|es|fleet/launcher/new-glenn.json :: description": {
+    "why": "combustion: hydrogen-burning rendered de hidrógeno",
+    "tr": "e14b56addf"
+  },
   "burn|es|programs/mangalyaan.json :: outcome.2.md": {
     "why": "variant: ignición",
     "tr": "cdcf317fad"
@@ -538,6 +794,30 @@
   "burn|fr|essays/seven-minutes.json :: body.4.md": {
     "why": "'air burns off energy' = dissipation; 'moteur ... brûlait' is the correct engine verb",
     "tr": "274dfb2e86"
+  },
+  "burn|fr|fleet/engine/ce-20.json :: description": {
+    "why": "combustion: burning LOX and LH2 (brûlant)",
+    "tr": "d189ab72e7"
+  },
+  "burn|fr|fleet/engine/lr87.json :: description": {
+    "why": "combustion: burning Aerozine",
+    "tr": "3eac6d547b"
+  },
+  "burn|fr|fleet/engine/yf-77.json :: description": {
+    "why": "combustion: burning LOX and LH2",
+    "tr": "6ab9fcaa50"
+  },
+  "burn|fr|fleet/launcher/new-glenn.json :: description": {
+    "why": "combustion: hydrogen-burning engines",
+    "tr": "862fb0602c"
+  },
+  "burn|fr|fleet/launcher/starship.json :: description": {
+    "why": "combustion: methane-burning engine",
+    "tr": "66dd80c541"
+  },
+  "burn|fr|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "combustion: burned storable liquids",
+    "tr": "ee48a9a2d3"
   },
   "burn|fr|programs/mangalyaan.json :: goals.0.md": {
     "why": "variant: mise à feu",
@@ -638,6 +918,26 @@
   "burn|hi|essays/seven-minutes.json :: body.4.md": {
     "why": "combustion/heating of air; engine ran for twelve minutes: variant जलता रहा",
     "tr": "c0176da97e"
+  },
+  "burn|hi|fleet/engine/ce-20.json :: description": {
+    "why": "LOX/LH2 burned = combustion",
+    "tr": "d012a2eacb"
+  },
+  "burn|hi|fleet/engine/yf-77.json :: description": {
+    "why": "burning LOX/LH2 = combustion",
+    "tr": "764766cb05"
+  },
+  "burn|hi|fleet/launcher/new-glenn.json :: description": {
+    "why": "methane/hydrogen-burning = combustion",
+    "tr": "fb3563c596"
+  },
+  "burn|hi|fleet/launcher/saturn-v.json :: dispatch": {
+    "why": "burning propellant = combustion",
+    "tr": "5f6eac91b7"
+  },
+  "burn|hi|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion of propellant, not an engine firing",
+    "tr": "6eda7b3849"
   },
   "burn|hi|programs/vostok.json :: lessons.0.md": {
     "why": "figurative: sprint burns the runway, not an engine firing",
@@ -743,6 +1043,34 @@
     "why": "'air burns off energy' = dissipation; 'motore ... bruciò' is the correct engine verb",
     "tr": "ed9101587b"
   },
+  "burn|it|fleet/engine/ce-20.json :: description": {
+    "why": "combustion: brucia LOX e LH2",
+    "tr": "01acc8a2a8"
+  },
+  "burn|it|fleet/engine/f-1.json :: description": {
+    "why": "combustion: bruciava LOX e RP-1, camera di combustione",
+    "tr": "41d91fd3fb"
+  },
+  "burn|it|fleet/engine/rd-180.json :: description": {
+    "why": "combustion: bruciare l'ossidante in eccesso",
+    "tr": "567fae3b05"
+  },
+  "burn|it|fleet/engine/yf-77.json :: description": {
+    "why": "combustion: brucia LOX e LH2",
+    "tr": "92792d010d"
+  },
+  "burn|it|fleet/launcher/new-glenn.json :: description": {
+    "why": "combustion: hydrogen-burning engines, rendered a idrogeno",
+    "tr": "be2dc57dcf"
+  },
+  "burn|it|fleet/launcher/starship.json :: description": {
+    "why": "combustion: Raptor a combustione di metano",
+    "tr": "739d9c3541"
+  },
+  "burn|it|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "combustion: bruciava liquidi immagazzinabili",
+    "tr": "b0a92c6647"
+  },
   "burn|it|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion",
     "tr": "ebcd308f40"
@@ -847,6 +1175,18 @@
     "why": "burn here = combustion/consumption of propellant (or burned manuscript), not an engine firing",
     "tr": "08b6e8f43e"
   },
+  "burn|ja|fleet/engine/ce-20.json :: description": {
+    "why": "combustion: 燃やす",
+    "tr": "fa151b9666"
+  },
+  "burn|ja|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning = fuel: 燃料とする",
+    "tr": "f08c5dcb12"
+  },
+  "burn|ja|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion",
+    "tr": "1191e2d33a"
+  },
   "burn|ja|programs/vostok.json :: lessons.0.md": {
     "why": "metaphor: burns the runway, not an engine firing",
     "tr": "e935e77256"
@@ -899,6 +1239,10 @@
     "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
     "tr": "060d222e7f"
   },
+  "burn|ko|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "combustion: 태워",
+    "tr": "9128681784"
+  },
   "burn|ko|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "combustion / fire, not an engine firing",
     "tr": "b51f5b8f0c"
@@ -946,6 +1290,22 @@
   "burn|nl|essays/reusable-launchers.json :: body.8.md": {
     "why": "'burning the most propellant' = consumption (verbruikt)",
     "tr": "cbb0e0bae0"
+  },
+  "burn|nl|fleet/engine/rd-180.json :: description": {
+    "why": "burning excess oxidiser = combustion (verbrand)",
+    "tr": "eec8fcc48c"
+  },
+  "burn|nl|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning = propellant type (waterstof-BE-3U-motoren)",
+    "tr": "031744c1a3"
+  },
+  "burn|nl|fleet/launcher/saturn-v.json :: dispatch": {
+    "why": "together burning thirteen tonnes of propellant = combustion/consumption (verbruikend)",
+    "tr": "9e540a975a"
+  },
+  "burn|nl|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning = propellant type (methaangestookte)",
+    "tr": "9c91ea7cec"
   },
   "burn|nl|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "combustion / fire, not an engine firing",
@@ -1051,6 +1411,14 @@
     "why": "braking burn = remming",
     "tr": "4abcab56b3"
   },
+  "burn|pt-BR|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning = propellant type, combustion (motores a hidrogênio)",
+    "tr": "f8ea3ad693"
+  },
+  "burn|pt-BR|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning = propellant type, combustion (movido a metano)",
+    "tr": "031e6a926c"
+  },
   "burn|pt-BR|science/mission-phases/deorbit-corridor.json :: intro_sentence": {
     "why": "burns up = incinera, not engine",
     "tr": "f3e59a7f45"
@@ -1086,6 +1454,46 @@
   "burn|ru|essays/reusable-launchers.json :: body.8.md": {
     "why": "other sense: consuming propellant",
     "tr": "69e4f79e95"
+  },
+  "burn|ru|fleet/engine/ce-20.json :: description": {
+    "why": "burning LOX and LH2 = combustion",
+    "tr": "b345015149"
+  },
+  "burn|ru|fleet/engine/f-1.json :: description": {
+    "why": "burned LOX and RP-1 = combustion",
+    "tr": "1ff5bbfd69"
+  },
+  "burn|ru|fleet/engine/lr87.json :: description": {
+    "why": "burning propellants = combustion",
+    "tr": "2ad4591367"
+  },
+  "burn|ru|fleet/engine/rd-180.json :: description": {
+    "why": "staged combustion, burning oxidiser = combustion",
+    "tr": "b7324ddb61"
+  },
+  "burn|ru|fleet/engine/viking.json :: description": {
+    "why": "burns propellants = combustion",
+    "tr": "f7aa9b4bb2"
+  },
+  "burn|ru|fleet/engine/yf-77.json :: description": {
+    "why": "engine burning LOX/LH2 = combustion",
+    "tr": "f7cc9c312b"
+  },
+  "burn|ru|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning engines = combustion",
+    "tr": "8fba44e78a"
+  },
+  "burn|ru|fleet/launcher/saturn-v.json :: dispatch": {
+    "why": "burning propellant per second = combustion",
+    "tr": "c69a276fda"
+  },
+  "burn|ru|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning engine = combustion",
+    "tr": "13ced310c1"
+  },
+  "burn|ru|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion",
+    "tr": "359d9ac5d8"
   },
   "burn|ru|science/_landing.json :: chapters.1.diagram_caption": {
     "why": "burning fuel = combustion",
@@ -1207,6 +1615,38 @@
     "why": "stem gap: радио (descent engine \"радио дванаест минута\" = engine firing); \"burns it off\" is the energy-dissipation sense",
     "tr": "2a0ba36320"
   },
+  "burn|sr-Cyrl|fleet/engine/ce-20.json :: description": {
+    "why": "сагорева LOX и LH2 = combustion",
+    "tr": "1cbef6bd81"
+  },
+  "burn|sr-Cyrl|fleet/engine/f-1.json :: description": {
+    "why": "сагоревао LOX и RP-1 = combustion",
+    "tr": "1387fbdd0e"
+  },
+  "burn|sr-Cyrl|fleet/engine/rd-180.json :: description": {
+    "why": "burning oxidiser = combustion",
+    "tr": "7bfc4bd171"
+  },
+  "burn|sr-Cyrl|fleet/engine/yf-77.json :: description": {
+    "why": "engine burning LOX/LH2 = combustion",
+    "tr": "2806614b21"
+  },
+  "burn|sr-Cyrl|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning engines = combustion",
+    "tr": "1f74b79065"
+  },
+  "burn|sr-Cyrl|fleet/launcher/saturn-v.json :: dispatch": {
+    "why": "сагоревали тона погонског горива = combustion",
+    "tr": "b987ab13ab"
+  },
+  "burn|sr-Cyrl|fleet/launcher/starship.json :: description": {
+    "why": "methane-burning engine = combustion",
+    "tr": "d0c745ac74"
+  },
+  "burn|sr-Cyrl|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion",
+    "tr": "7a0047eccb"
+  },
   "burn|sr-Cyrl|programs/vostok.json :: lessons.0.md": {
     "why": "other sense: figurative \"burns the runway\", not an engine firing",
     "tr": "0ad5c10b12"
@@ -1323,6 +1763,34 @@
     "why": "burn here = combustion / consumption of propellant (or burned manuscript), not an engine firing",
     "tr": "3754f4d43d"
   },
+  "burn|zh-CN|fleet/engine/ce-20.json :: description": {
+    "why": "combustion: 燃烧",
+    "tr": "ff01dd1683"
+  },
+  "burn|zh-CN|fleet/engine/f-1.json :: description": {
+    "why": "combustion: 燃烧",
+    "tr": "41b75dc3df"
+  },
+  "burn|zh-CN|fleet/engine/lr87.json :: description": {
+    "why": "combustion: 燃烧",
+    "tr": "3e1e3b1667"
+  },
+  "burn|zh-CN|fleet/engine/rd-180.json :: description": {
+    "why": "combustion: 燃烧",
+    "tr": "eef0362793"
+  },
+  "burn|zh-CN|fleet/engine/yf-77.json :: description": {
+    "why": "combustion: 燃烧",
+    "tr": "316548cd61"
+  },
+  "burn|zh-CN|fleet/launcher/new-glenn.json :: description": {
+    "why": "hydrogen-burning = combustion: 烧氢",
+    "tr": "7f8da2299e"
+  },
+  "burn|zh-CN|fleet/launcher/titan-ii-glv.json :: dispatch": {
+    "why": "burned storable liquids = combustion: 燃烧",
+    "tr": "8a0da68961"
+  },
   "burn|zh-CN|programs/vostok.json :: lessons.0.md": {
     "why": "metaphor: burns the runway, not an engine firing",
     "tr": "c5306b4ac5"
@@ -1419,9 +1887,21 @@
     "why": "term not in this sentence of the English",
     "tr": "5b478e433d"
   },
+  "delta-v|hi|fleet/orbiter/messenger.json :: description": {
+    "why": "the sentence containing delta-v is omitted from the translation; no rendering to fix (content gap, flagged)",
+    "tr": "2c502196ba"
+  },
   "descent|ar|programs/vostok.json :: legacy.1.md": {
     "why": "English means lineage (direct descent), not descent to a surface",
     "tr": "69653bf139"
+  },
+  "descent|de|fleet/launcher/soyuz.json :: dispatch": {
+    "why": "variant: Landekapsel (Soyuz descent module, standard German)",
+    "tr": "20b71dbab5"
+  },
+  "descent|de|fleet/space-suit/sokol-kv-2.json :: description": {
+    "why": "variant: Landekapsel (Soyuz descent module)",
+    "tr": "4acdd46c60"
   },
   "descent|de|programs/shenzhou.json :: the_land.1.md": {
     "why": "variant: Rückkehrkapsel",
@@ -1455,6 +1935,10 @@
     "why": "lineage sense, not surface descent",
     "tr": "329b9e4433"
   },
+  "descent|nl|fleet/launcher/soyuz.json :: dispatch": {
+    "why": "variant: landingscapsule (Soyuz descent module)",
+    "tr": "414eba87a3"
+  },
   "descent|nl|programs/vostok.json :: legacy.1.md": {
     "why": "English descent = lineage",
     "tr": "69fb5c5f9a"
@@ -1474,6 +1958,14 @@
   "descent|sr-Cyrl|programs/vostok.json :: legacy.1.md": {
     "why": "other sense: lineage (директни предак)",
     "tr": "f7b0d117c3"
+  },
+  "descent|zh-CN|fleet/launcher/soyuz.json :: dispatch": {
+    "why": "variant: 返回舱 (standard name of the Soyuz descent module)",
+    "tr": "10cf9774be"
+  },
+  "descent|zh-CN|fleet/space-suit/sokol-kv-2.json :: description": {
+    "why": "variant: 返回舱 (standard name of the Soyuz descent module)",
+    "tr": "577015a5bf"
   },
   "descent|zh-CN|programs/shenzhou.json :: outcome.1.caption": {
     "why": "variant: 返回舱 (standard descent module)",
@@ -1559,6 +2051,10 @@
     "why": "re-entry into 1 g is not atmospheric entry",
     "tr": "2636baa0df"
   },
+  "entry|ru|fleet/orbiter/viking1-orbiter.json :: description": {
+    "why": "orbit entry/decay of Mars orbiter, not atmospheric entry; 'сошёл с орбиты' natural",
+    "tr": "9378d3f7eb"
+  },
   "entry|ru|programs/soyuz.json :: narrative.0.md": {
     "why": "variant: спуск (reentry of a crewed capsule)",
     "tr": "cd9a430a26"
@@ -1615,6 +2111,10 @@
     "why": "verb: يمرّون قرب كوكب",
     "tr": "4450805404"
   },
+  "flyby|hi|fleet/orbiter/osiris-rex.json :: description": {
+    "why": "variant: करीब से गुजरेगा (passes close by) for 'close flyby'",
+    "tr": "eb497d80a7"
+  },
   "flyby|ko|science/propulsion/solar-sail.json :: body_paragraphs.1": {
     "why": "verb: 태양을 가까이 스친 뒤",
     "tr": "68fbcd56d8"
@@ -1647,6 +2147,14 @@
     "why": "rendered as adjectives inclinées/inclinée",
     "tr": "c15c757007"
   },
+  "inclination|ja|fleet/launch-site/plesetsk-43.json :: description": {
+    "why": "variant: 高傾斜軌道",
+    "tr": "30f619bbe4"
+  },
+  "inclination|ja|fleet/orbiter/lunar-orbiter-4.json :: description": {
+    "why": "variant: 高傾斜",
+    "tr": "1c1472efba"
+  },
   "inclination|ja|science/_landing.json :: chapters.0.paragraphs.1": {
     "why": "English says tilt; 傾き matches source",
     "tr": "ae4994a3f7"
@@ -1678,6 +2186,10 @@
   "orbit insertion|sr-Cyrl|science/propulsion/laser-sail.json :: body_paragraphs.2": {
     "why": "'без уласка у орбиту' is an accepted form (case ending)",
     "tr": "b21f5244bd"
+  },
+  "orbit insertion|zh-CN|fleet/launcher/delta-ii.json :: description": {
+    "why": "variant: 进入水星轨道",
+    "tr": "2db9ce4198"
   },
   "orbit insertion|zh-CN|programs/jaxa-robotic.json :: outcome.0.md": {
     "why": "stem gap: 进入金星轨道",
@@ -1758,6 +2270,10 @@
   "orbit|ar|science/transfers/coplanar-trajectories.json :: narrative_101.0": {
     "why": "verb تدور/دارت is correct",
     "tr": "be87a422d0"
+  },
+  "orbit|de|fleet/launch-site/taiyuan-lc-9.json :: description": {
+    "why": "orbit adjective omitted naturally (sonnensynchronen Starts)",
+    "tr": "99de0880a6"
   },
   "orbit|de|programs/great-observatories.json :: outcome.0.md": {
     "why": "variant: zum Absturz gebracht (controlled de-orbit)",
@@ -1923,6 +2439,10 @@
     "why": "verb/period sense; umkreisen/Umlauf natural",
     "tr": "34dd944222"
   },
+  "orbit|es|fleet/launch-site/taiyuan-lc-9.json :: description": {
+    "why": "natural omission: lanzamientos polares y heliosincrónicos",
+    "tr": "f2663687da"
+  },
   "orbit|hi|science/_landing.json :: chapters.0.diagram": {
     "why": "file name",
     "tr": "72874f8e10"
@@ -1930,6 +2450,10 @@
   "orbit|hi|science/life-in-space/long-duration-effects.json :: body_paragraphs.1": {
     "why": "\"24 h orbit\" omitted naturally",
     "tr": "fddbe8e6fb"
+  },
+  "orbit|it|fleet/launch-site/taiyuan-lc-9.json :: description": {
+    "why": "natural omission: lanci polari ed eliosincroni",
+    "tr": "e3f53a1559"
   },
   "orbit|ja|essays/asteroid-mining.json :: body.0.md": {
     "why": "variant: 回る / その周囲の (orbiting rendered naturally)",
@@ -1946,6 +2470,10 @@
   "orbit|ko|essays/interstellar-exploration.json :: body.15.md": {
     "why": "omitted naturally: 그 둘레의 행성들",
     "tr": "db09aeaa15"
+  },
+  "orbit|ko|fleet/orbiter/dawn.json :: best_known_for": {
+    "why": "variant: 돈 (verb to orbit)",
+    "tr": "d972ee6daa"
   },
   "orbit|ko|science/_landing.json :: chapters.0.diagram": {
     "why": "orbit verb rendered 돌다 (natural); or filename",
@@ -1998,6 +2526,30 @@
   "orbit|nl|essays/interstellar-exploration.json :: body.15.md": {
     "why": "'planeten eromheen' - natural rendering of 'planets orbiting it'",
     "tr": "1846cedaa9"
+  },
+  "orbit|nl|fleet/launch-site/taiyuan-lc-9.json :: description": {
+    "why": "orbit adjective omitted naturally (polaire en zonsynchrone lanceringen)",
+    "tr": "55148fd954"
+  },
+  "orbit|nl|fleet/orbiter/dawn.json :: tagline": {
+    "why": "variant: omcirkeld (verb to orbit)",
+    "tr": "27a41289df"
+  },
+  "orbit|nl|fleet/orbiter/mariner-9.json :: best_known_for": {
+    "why": "variant: draait om (verb to orbit)",
+    "tr": "4a268342e7"
+  },
+  "orbit|nl|fleet/orbiter/mariner-9.json :: tagline": {
+    "why": "variant: draait om (verb to orbit)",
+    "tr": "4a268342e7"
+  },
+  "orbit|nl|fleet/orbiter/rosetta.json :: best_known_for": {
+    "why": "variant: draait om (verb to orbit)",
+    "tr": "d7c763443b"
+  },
+  "orbit|nl|fleet/orbiter/rosetta.json :: tagline": {
+    "why": "variant: draait om (verb to orbit)",
+    "tr": "d7c763443b"
   },
   "orbit|nl|programs/cassini.json :: narrative.0.md": {
     "why": "variant: omloop (orbit as revolution)",
@@ -2142,6 +2694,10 @@
   "orbit|ru|essays/interstellar-exploration.json :: body.15.md": {
     "why": "omitted naturally (\"её возможные планеты\")",
     "tr": "4bce9a096e"
+  },
+  "orbit|ru|fleet/crewed-spacecraft/apollo-csm-block-i.json :: dispatch": {
+    "why": "variant: околоземных (Earth-orbit)",
+    "tr": "22bb733097"
   },
   "orbit|ru|programs/cassini.json :: narrative.0.md": {
     "why": "variant: виток (orbit as revolution)",
@@ -2399,6 +2955,14 @@
     "why": "omitted naturally: 及其行星",
     "tr": "9d4b9e82f8"
   },
+  "orbit|zh-CN|fleet/orbiter/mariner-9.json :: best_known_for": {
+    "why": "variant: 绕…运行",
+    "tr": "fd8715d45b"
+  },
+  "orbit|zh-CN|fleet/orbiter/mariner-9.json :: tagline": {
+    "why": "variant: 绕…运行",
+    "tr": "fd8715d45b"
+  },
   "orbit|zh-CN|programs/chandrayaan.json :: goals.2.md": {
     "why": "variant: 绕月飞行",
     "tr": "adbbe63cfa"
@@ -2527,6 +3091,10 @@
     "why": "variant: bodega de carga (standard payload bay)",
     "tr": "a9dd9db94a"
   },
+  "payload|fr|fleet/launcher/falcon-heavy.json :: description": {
+    "why": "variant: capacité d'emport",
+    "tr": "8b13563fa9"
+  },
   "payload|fr|programs/space-shuttle.json :: goals.1.md": {
     "why": "variant: soute cargo",
     "tr": "f46035b8d2"
@@ -2538,6 +3106,14 @@
   "payload|hi|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "part of the product name Vega Secondary Payload Adapter",
     "tr": "cde1c2f34c"
+  },
+  "payload|it|fleet/launch-site/starbase-orbital-a.json :: description": {
+    "why": "variant: capacità di carico",
+    "tr": "e9293368aa"
+  },
+  "payload|it|fleet/launcher/falcon-heavy.json :: description": {
+    "why": "variant: capacità di carico",
+    "tr": "494b4a422e"
   },
   "payload|it|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
@@ -2555,6 +3131,22 @@
     "why": "variant: 탑재량 (payload capacity to LEO)",
     "tr": "1796d93fab"
   },
+  "payload|ko|fleet/launch-site/palmachim.json :: description": {
+    "why": "variant: 탑재량 (payload mass)",
+    "tr": "3e98811301"
+  },
+  "payload|ko|fleet/launch-site/starbase-orbital-a.json :: description": {
+    "why": "variant: 탑재량급",
+    "tr": "c1e299ba63"
+  },
+  "payload|ko|fleet/launcher/falcon-heavy.json :: description": {
+    "why": "variant: 탑재 능력",
+    "tr": "9c4b1237d6"
+  },
+  "payload|ko|fleet/orbiter/lro.json :: description": {
+    "why": "natural omission: 기기 7개를 탑재한",
+    "tr": "efb1bb26d9"
+  },
   "payload|ko|programs/space-shuttle.json :: goals.1.md": {
     "why": "variant: 화물칸 (standard payload bay)",
     "tr": "d7bf76dada"
@@ -2562,6 +3154,10 @@
   "payload|ko|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name left in English",
     "tr": "4042bc064b"
+  },
+  "payload|nl|fleet/launcher/falcon-heavy.json :: description": {
+    "why": "variant: laadvermogen (payload capacity)",
+    "tr": "37b188a275"
   },
   "payload|pt-BR|programs/mercury.json :: narrative.1.md": {
     "why": "figurative: astronaut as cargo/passenger",
@@ -2579,6 +3175,30 @@
     "why": "carga-útil hyphenated compound present",
     "tr": "263eaa3bef"
   },
+  "payload|ru|fleet/engine/hm7b.json :: description": {
+    "why": "variant: научные аппараты (spacecraft carried)",
+    "tr": "e7fc7a7ff4"
+  },
+  "payload|ru|fleet/lander/beagle2.json :: description": {
+    "why": "instrument suite described, omitted naturally (нёс ... приборы)",
+    "tr": "ab2ad42b96"
+  },
+  "payload|ru|fleet/lander/change6.json :: description": {
+    "why": "variant: научная аппаратура (instrument suite, not cargo)",
+    "tr": "fa9e486991"
+  },
+  "payload|ru|fleet/launcher/ariane-5.json :: description": {
+    "why": "variant: спутники (the payloads are satellites)",
+    "tr": "23c551a34d"
+  },
+  "payload|ru|fleet/orbiter/juice.json :: description": {
+    "why": "instrument suite rendered as 'на борту 10 приборов'; omitted naturally",
+    "tr": "6d983fc621"
+  },
+  "payload|ru|fleet/orbiter/lro.json :: description": {
+    "why": "'7 приборов LRO' instrument suite; omitted naturally",
+    "tr": "166997390e"
+  },
   "payload|ru|programs/mercury.json :: narrative.1.md": {
     "why": "variant: грузом (cargo, figurative; contrast with passenger)",
     "tr": "7294520177"
@@ -2590,6 +3210,18 @@
   "payload|ru|science/mission-phases/eva.json :: diagram_caption": {
     "why": "EVA worksite payload, not rocket cargo",
     "tr": "416ff96386"
+  },
+  "payload|sr-Cyrl|fleet/cargo-spacecraft/htv-x.json :: best_known_for": {
+    "why": "variant: корисна носивост (payload capacity)",
+    "tr": "e981cbbae6"
+  },
+  "payload|sr-Cyrl|fleet/cargo-spacecraft/htv-x.json :: tagline": {
+    "why": "variant: корисна носивост (payload capacity)",
+    "tr": "e981cbbae6"
+  },
+  "payload|sr-Cyrl|fleet/launcher/ariane-5.json :: description": {
+    "why": "variant: сателита (the payloads are satellites)",
+    "tr": "c62951c682"
   },
   "payload|sr-Cyrl|science/history/apollo-11-1969.json :: body_paragraphs.0": {
     "why": "носивост = payload capacity",
@@ -2603,6 +3235,14 @@
     "why": "variant: 运载能力 (capacity to LEO)",
     "tr": "1c7dfd6d6c"
   },
+  "payload|zh-CN|fleet/orbiter/lro.json :: description": {
+    "why": "natural omission: 搭载的7台仪器",
+    "tr": "e8e949e553"
+  },
+  "payload|zh-CN|fleet/orbiter/smart-1.json :: description": {
+    "why": "recast: 搭乘 (rideshare)",
+    "tr": "db0db2ccfb"
+  },
   "payload|zh-CN|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
     "tr": "8ca1f489b3"
@@ -2614,6 +3254,10 @@
   "propellant|ar|essays/going-to-the-moon.json :: body.14.md": {
     "why": "variant: وقود صاروخي (rocket propellant)",
     "tr": "9d006c7891"
+  },
+  "propellant|es|fleet/launcher/h-iia.json :: description": {
+    "why": "variant: propulsión líquida",
+    "tr": "a195b6c42a"
   },
   "propellant|es|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "RP-1 name; combustible stem present in text",
@@ -2642,6 +3286,22 @@
   "propellant|pt-BR|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "RP-1 \"Rocket Propellant 1\" is a name",
     "tr": "85ef10ce88"
+  },
+  "propellant|ru|fleet/launcher/soyuz.json :: description": {
+    "why": "variant: жидкостная (liquid-propellant rocket, standard term)",
+    "tr": "cd834f7af9"
+  },
+  "propellant|ru|fleet/orbiter/lucy.json :: description": {
+    "why": "propellant omitted naturally; hydrazine named",
+    "tr": "cb6707424d"
+  },
+  "propellant|sr-Cyrl|fleet/launcher/soyuz.json :: description": {
+    "why": "variant: течни погон (liquid-propellant rocket)",
+    "tr": "fd80d997e7"
+  },
+  "propellant|sr-Cyrl|fleet/launcher/vostok-k.json :: description": {
+    "why": "variant: течни погон (liquid-propellant rocket)",
+    "tr": "3828d2f57a"
   },
   "propellant|zh-CN|science/propulsion/fuels-and-oxidizers.json :: body_paragraphs.0": {
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
@@ -2703,6 +3363,14 @@
     "why": "different sense (single-stage-to-orbit, staging orbit)",
     "tr": "dd21477194"
   },
+  "stage|fr|fleet/lander/blue-moon-mk1.json :: description": {
+    "why": "variant: monostage",
+    "tr": "b74ce3b109"
+  },
+  "stage|fr|fleet/lander/blue-moon-mk1.json :: tagline": {
+    "why": "variant: monostage",
+    "tr": "556b45b069"
+  },
   "stage|fr|programs/mars-rovers.json :: outcome.1.md": {
     "why": "English \"stage\" = phase of a campaign; étape",
     "tr": "ec4448ba9c"
@@ -2722,6 +3390,18 @@
   "stage|it|science/orbits/special-orbits.json :: body_paragraphs.4": {
     "why": "\"staging orbit\", not a rocket stage",
     "tr": "1913b8d84b"
+  },
+  "stage|ja|fleet/engine/yf-77.json :: description": {
+    "why": "variant: コアステージ",
+    "tr": "48477f844e"
+  },
+  "stage|ko|fleet/engine/yf-100.json :: description": {
+    "why": "variant: 코어 스테이지",
+    "tr": "db53d1d4d6"
+  },
+  "stage|ko|fleet/engine/yf-77.json :: description": {
+    "why": "variant: 코어 스테이지",
+    "tr": "f5e97b37dc"
   },
   "stage|ko|programs/mars-rovers.json :: outcome.1.md": {
     "why": "phase of a campaign, not a rocket stage",

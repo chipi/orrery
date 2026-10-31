@@ -1,0 +1,220 @@
+[
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "orbit adjective omitted naturally (sonnensynchronen Starts)"
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "im All drucklos geworden",
+    "replace": "in der Umlaufbahn drucklos geworden",
+    "why": "on orbit -> Umlaufbahn"
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "change",
+    "find": "im All drucklos geworden",
+    "replace": "in der Umlaufbahn drucklos geworden",
+    "why": "on orbit -> Umlaufbahn"
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "mit 64,8° Neigung",
+    "replace": "mit 64,8° Inklination",
+    "why": "binding Inklination"
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "die hohe Neigung",
+    "replace": "die hohe Inklination",
+    "why": "binding Inklination"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "keep",
+    "why": "stem gap: hochinklinierten"
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "heliografische Neigung",
+    "replace": "heliografische Inklination",
+    "why": "binding Inklination"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "term": "inclination",
+    "decision": "change",
+    "find": "mit 80° Neigung",
+    "replace": "mit 80° Inklination",
+    "why": "binding Inklination"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "traf in der Mondumlaufbahn mit dem Orbiter zusammen",
+    "replace": "führte in der Mondumlaufbahn ein Rendezvous mit dem Orbiter durch",
+    "why": "rendezvous verb -> Rendezvous"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "mit dem Asteroiden 1998 KY26 zusammentreffen",
+    "replace": "ein Rendezvous mit dem Asteroiden 1998 KY26 durchführen",
+    "why": "rendezvous verb -> Rendezvous"
+  },
+  {
+    "rel": "fleet/orbiter/rosetta.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "Die Kometenmission der ESA",
+    "replace": "Die Kometen-Rendezvous-Mission der ESA",
+    "why": "comet rendezvous mission dropped the term"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning LOX/LH2 = combustion (verbrennt)"
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned LOX/RP-1 = combustion (verbrannte)"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning excess oxidiser = combustion"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burning LOX/LH2 = combustion"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "hydrogen-burning = fuel type, combustion"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "methane-burning = fuel type, combustion"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned storable liquids = combustion"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "Zehn Instrumente, darunter",
+    "replace": "Nutzlast aus zehn Instrumenten, darunter",
+    "why": "payload dropped; binding Nutzlast"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (Saturn I/IB first-stage engine), word omitted naturally"
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "dispatch",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: Träger (Saturn rockets in general)"
+  },
+  {
+    "rel": "fleet/launcher/atlas-lv-3b.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: Antriebsstufe (Atlas first-stage booster)"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: die Rakete allein (single-stage vehicle without capsule)"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: Trägerrakete (launch vehicle failure)"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "die ESA-Sonde Giotto zum Halleyschen Kometen",
+    "replace": "die ESA-Sonde Giotto für den Vorbeiflug am Halleyschen Kometen",
+    "why": "flyby probe -> Vorbeiflug"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "dispatch",
+    "term": "descent",
+    "decision": "keep",
+    "why": "variant: Landekapsel (Soyuz descent module, standard German)"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "keep",
+    "why": "stem gap: abzusteigen"
+  },
+  {
+    "rel": "fleet/space-suit/sokol-kv-2.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "keep",
+    "why": "variant: Landekapsel (Soyuz descent module)"
+  }
+]

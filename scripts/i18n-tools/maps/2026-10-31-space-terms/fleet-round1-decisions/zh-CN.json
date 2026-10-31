@@ -1,0 +1,346 @@
+[
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 绕…运行"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "keep",
+    "why": "variant: 绕…运行"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "会合",
+    "replace": "交会",
+    "why": "交会 binding"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "相遇",
+    "replace": "交会",
+    "why": "交会 binding"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "火星引力助推",
+    "replace": "火星引力辅助",
+    "why": "引力辅助 binding"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力助推",
+    "replace": "引力辅助",
+    "why": "引力辅助 binding"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推",
+    "replace": "引力辅助",
+    "why": "引力辅助 binding"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力辅助",
+    "replace": "引力辅助",
+    "why": "引力辅助 binding"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "多次掠过",
+    "replace": "多次飞掠",
+    "why": "飞掠 binding"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推",
+    "replace": "引力辅助",
+    "why": "引力辅助 binding"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力辅助",
+    "replace": "引力辅助",
+    "why": "引力辅助 binding"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "tagline",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推",
+    "replace": "引力辅助",
+    "why": "引力辅助 binding"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力辅助",
+    "replace": "引力辅助",
+    "why": "引力辅助 binding"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "近距离掠过木星",
+    "replace": "近距离飞掠木星",
+    "why": "飞掠 binding"
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "重力辅助",
+    "replace": "引力辅助",
+    "why": "引力辅助 binding"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "tagline",
+    "term": "gravity assist",
+    "decision": "change",
+    "find": "引力助推",
+    "replace": "引力辅助",
+    "why": "引力辅助 binding"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: 燃烧"
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: 燃烧"
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: 燃烧"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: 燃烧"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: 燃烧"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "hydrogen-burning = combustion: 烧氢"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "burned storable liquids = combustion: 燃烧"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "tagline",
+    "term": "payload",
+    "decision": "change",
+    "find": "扩大的运载能力",
+    "replace": "扩大的有效载荷",
+    "why": "payload binding"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "best_known_for",
+    "term": "payload",
+    "decision": "change",
+    "find": "扩大的运载能力",
+    "replace": "扩大的有效载荷",
+    "why": "payload binding"
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "搜救负载",
+    "replace": "搜救有效载荷",
+    "why": "负载 is not the term"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "natural omission: 搭载的7台仪器"
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "recast: 搭乘 (rideshare)"
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "dispatch",
+    "term": "booster",
+    "decision": "keep",
+    "why": "not strap-on sense: 超大型火箭 = launch vehicles"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "tagline",
+    "term": "booster",
+    "decision": "keep",
+    "why": "whole vehicle: variant 运载火箭"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "change",
+    "find": "侧推进器",
+    "replace": "侧助推器",
+    "why": "strap-on side booster; 推进器 means thruster"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "best_known_for",
+    "term": "booster",
+    "decision": "keep",
+    "why": "whole vehicle: variant 运载火箭"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "历史性的掠过",
+    "replace": "历史性的飞掠",
+    "why": "飞掠 binding"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "tagline",
+    "term": "flyby",
+    "decision": "change",
+    "find": "火星飞行",
+    "replace": "火星飞掠",
+    "why": "飞掠 binding"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "火星飞行",
+    "replace": "火星飞掠",
+    "why": "飞掠 binding"
+  },
+  {
+    "rel": "fleet/orbiter/vega-1.json",
+    "at": "tagline",
+    "term": "flyby",
+    "decision": "change",
+    "find": "哈雷彗星掠过",
+    "replace": "哈雷彗星飞掠",
+    "why": "飞掠 binding"
+  },
+  {
+    "rel": "fleet/orbiter/vega-1.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "哈雷彗星掠过",
+    "replace": "哈雷彗星飞掠",
+    "why": "飞掠 binding"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "description",
+    "term": "orbit insertion",
+    "decision": "keep",
+    "why": "variant: 进入水星轨道"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "发射-返回压力服",
+    "replace": "发射-再入压力服",
+    "why": "再入 binding"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "description",
+    "term": "entry",
+    "decision": "change",
+    "find": "上升和返回段",
+    "replace": "上升和再入段",
+    "why": "再入 binding"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "dispatch",
+    "term": "descent",
+    "decision": "keep",
+    "why": "variant: 返回舱 (standard name of the Soyuz descent module)"
+  },
+  {
+    "rel": "fleet/space-suit/sokol-kv-2.json",
+    "at": "description",
+    "term": "descent",
+    "decision": "keep",
+    "why": "variant: 返回舱 (standard name of the Soyuz descent module)"
+  }
+]

@@ -83,20 +83,21 @@ describe('glossary · reviewed keeps', () => {
 
 // Trees that reached zero unreviewed misses are gated: a new translation that drops a
 // binding form fails here until it is fixed or recorded as a keep (term-consistency skill).
-const GATED_TREES = ['science', 'essays', 'programs'];
+const GATED_TREES = ['science', 'essays', 'programs', 'fleet'];
 describe('glossary · term gate', () => {
   it(`no unreviewed term misses in ${GATED_TREES.join(', ')}`, () => {
-    let out = '';
-    try {
-      out = execFileSync(
-        'node',
-        ['scripts/i18n-tools/term-drift.mjs', `--trees=${GATED_TREES.join(',')}`, '--gate'],
-        { encoding: 'utf8' },
-      );
-    } catch (e) {
-      out = (e as { stdout?: string }).stdout ?? String(e);
-      expect.fail(`term-drift --gate failed:\n${out.split('\n').slice(-3).join('\n')}`);
-    }
-    expect(out).toContain('unreviewed misses: 0');
+    const run = () => {
+      try {
+        return execFileSync(
+          'node',
+          ['scripts/i18n-tools/term-drift.mjs', `--trees=${GATED_TREES.join(',')}`, '--gate'],
+          { encoding: 'utf8' },
+        );
+      } catch (e) {
+        const out = (e as { stdout?: string }).stdout ?? String(e);
+        return expect.fail(`term-drift --gate failed:\n${out.split('\n').slice(-3).join('\n')}`);
+      }
+    };
+    expect(run()).toContain('unreviewed misses: 0');
   }, 30_000);
 });

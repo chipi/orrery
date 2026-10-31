@@ -1,0 +1,30 @@
+[
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "why": "variant: first stage (Saturn I/IB booster = premier étage)"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/launcher/atlas-lv-3b.json",
+    "at": "description",
+    "why": "variant: launcher (Atlas booster = whole vehicle)"
+  },
+  {
+    "term": "booster",
+    "loc": "fr",
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "description",
+    "why": "variant: first stage (Falcon 9 Block 5 booster)"
+  },
+  {
+    "term": "booster",
+    "loc": "es",
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "why": "variant: first stage (Saturn I/IB booster = primera etapa)"
+  }
+]

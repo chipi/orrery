@@ -1,0 +1,396 @@
+[
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Tundra géostationnaire",
+    "replace": "en orbite Tundra",
+    "why": "orbit dropped; Tundra is not geostationary"
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "change",
+    "find": "historique Tundra",
+    "replace": "historique en orbite Tundra",
+    "why": "orbit dropped"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "tagline",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Pas de tir polaire",
+    "replace": "Pas de tir pour orbite polaire",
+    "why": "orbit dropped"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "best_known_for",
+    "term": "orbit",
+    "decision": "change",
+    "find": "Pas polaire",
+    "replace": "Pas de tir pour orbite polaire",
+    "why": "orbit dropped; truncated Pas de tir"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "est prévu de se rapprocher de l'astéroïde",
+    "replace": "doit effectuer un rendez-vous avec l'astéroïde",
+    "why": "rendezvous rendered as approach"
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "description",
+    "term": "rendezvous",
+    "decision": "change",
+    "find": "a échoué l'amarrage automatique Igla",
+    "replace": "a échoué au rendez-vous automatique Igla",
+    "why": "rendezvous rendered as docking"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: burning LOX and LH2 (brûlant)"
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "change",
+    "find": "la brûlure de trans-injection lunaire",
+    "replace": "l'allumage de trans-injection lunaire",
+    "why": "TLI burn = engine firing, not skin burn"
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: burning Aerozine"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: burning LOX and LH2"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: hydrogen-burning engines"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: methane-burning engine"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "term": "burn",
+    "decision": "keep",
+    "why": "combustion: burned storable liquids"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "Le stade descendant",
+    "replace": "L'étage de descente",
+    "why": "stade is not a rocket stage"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "le stade ascendant",
+    "replace": "l'étage de remontée",
+    "why": "stade is not a rocket stage"
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "tagline",
+    "term": "stage",
+    "decision": "keep",
+    "why": "variant: monostage"
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "keep",
+    "why": "variant: monostage"
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "le stage de descente",
+    "replace": "l'étage de descente",
+    "why": "English loanword stage"
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "description",
+    "term": "stage",
+    "decision": "change",
+    "find": "d'une étape supérieure",
+    "replace": "d'un étage supérieur",
+    "why": "étape is a phase, not a rocket stage"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "dispatch",
+    "term": "propellant",
+    "decision": "change",
+    "find": "de l'air et du carburant",
+    "replace": "de l'air et du propergol",
+    "why": "carburant is fuel; propellant = propergol"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "de l'air et du carburant",
+    "replace": "de l'air et du propergol",
+    "why": "carburant is fuel; propellant = propergol"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "réservoirs de carburant",
+    "replace": "réservoirs de propergol",
+    "why": "carburant is fuel"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "term": "propellant",
+    "decision": "change",
+    "find": "treize tonnes de carburant",
+    "replace": "treize tonnes de propergol",
+    "why": "carburant is fuel"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "le carburant soutient",
+    "replace": "le propergol soutient",
+    "why": "carburant is fuel"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "term": "propellant",
+    "decision": "change",
+    "find": "plus de carburant que",
+    "replace": "plus de propergol que",
+    "why": "carburant is fuel (hydrazine propellant)"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "change",
+    "find": "des charges scientifiques",
+    "replace": "des charges utiles scientifiques",
+    "why": "utiles dropped"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "description",
+    "term": "specific impulse",
+    "decision": "change",
+    "find": "un impulse spécifique élevé",
+    "replace": "une impulsion spécifique élevée",
+    "why": "anglicism impulse, wrong gender"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "term": "payload",
+    "decision": "keep",
+    "why": "variant: capacité d'emport"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "dispatch",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: propulseurs à poudre"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "term": "booster",
+    "decision": "change",
+    "find": "Moteur de propulseur",
+    "replace": "Moteur de premier étage",
+    "why": "H-1 powers the first stage of Saturn I/IB"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "tagline",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: first stage (étage)"
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "dispatch",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: propulseurs (rockets in general sense)"
+  },
+  {
+    "rel": "fleet/launcher/atlas-lv-3b.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "change",
+    "find": "Le moteur à peau mince",
+    "replace": "Le lanceur à peau mince",
+    "why": "booster = the whole launcher here (Atlas), not a strap-on"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "change",
+    "find": "Rehausseur Block 5",
+    "replace": "Premier étage Block 5",
+    "why": "Rehausseur = booster seat; first-stage booster = premier étage"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "tagline",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanceur (whole vehicle)"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "best_known_for",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanceur (whole vehicle)"
+  },
+  {
+    "rel": "fleet/launcher/long-march-3b.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: propulseurs auxiliaires latéraux"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "dispatch",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanceur (rocket in general sense)"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: propulseur (rocket body, Redstone single stage)"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "change",
+    "find": "accélérateurs solides",
+    "replace": "propulseurs d'appoint à poudre",
+    "why": "calque; accélérateur à poudre / propulseur d'appoint"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: propulseurs auxiliaires"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "change",
+    "find": "les amplificateurs de fusées à double solide",
+    "replace": "les propulseurs d'appoint à poudre jumeaux",
+    "why": "garbled rendering of twin solid rocket boosters"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "description",
+    "term": "booster",
+    "decision": "keep",
+    "why": "variant: lanceur (launch vehicle failure)"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "la sonde Giotto de l'ESA vers la comète de Halley",
+    "replace": "la sonde Giotto de l'ESA pour le survol de la comète de Halley",
+    "why": "flyby dropped"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "un vol d'assistance gravitationnelle de 7 ans",
+    "replace": "une croisière de survols de 7 ans",
+    "why": "flyby cruise rendered as gravity-assist flight"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "Le premier vol réussi de Mars",
+    "replace": "Le premier survol réussi de Mars",
+    "why": "flyby rendered as vol"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "term": "flyby",
+    "decision": "change",
+    "find": "vol réussi sur Mars",
+    "replace": "survol réussi de Mars",
+    "why": "flyby rendered as vol"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "term": "flyby",
+    "decision": "change",
+    "find": "son vol terrestre de 2029",
+    "replace": "son survol rapproché de la Terre en 2029",
+    "why": "flyby rendered as vol"
+  }
+]

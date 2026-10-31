@@ -26,6 +26,7 @@ question in two rounds. Every rule below comes from a mistake made in those roun
 | `scripts/i18n-tools/term-census.mjs` | which candidate terms the English uses most and which are covered (✓) |
 | `scripts/i18n-tools/term-glossary.test.ts` | every entry complete, stems compile, binding matches its own stems; keeps well-formed |
 | `research-brief.md`, `fix-brief.md` (this folder) | subagent briefs for the two kinds of round |
+| `lessons.md` (this folder) | per-language lessons from earlier rounds; give it to every fix reviewer with the brief, and extend it after each round |
 | `scripts/i18n-tools/maps/2026-10-31-space-terms/` | the pilot's decisions, hand edits and glossary steps |
 
 ## A. Add terms (the next batch)
@@ -95,7 +96,7 @@ node scripts/i18n-tools/term-drift.mjs --trees=essays                         # 
 
 When a tree reaches zero unreviewed misses, add it to `GATED_TREES` in
 `term-glossary.test.ts` (it runs `term-drift … --gate`), so a new translation that drifts
-fails CI. Gated since 2026-10-31: **science**, **essays**, **programs**. Mutation-checked: putting "branden" back in
+fails CI. Gated since 2026-10-31: **science**, **essays**, **programs**, **fleet**. Mutation-checked: putting "branden" back in
 one nl field fails the test with "unreviewed misses: 1".
 
 ## Detector rules worth knowing
@@ -113,6 +114,11 @@ one nl field fails the test with "unreviewed misses: 1".
   are reversed too. zh-CN trajectory 轨迹 → 轨道 reversed 29 of my own edits.
 - Prefer the site's majority form when it is an accepted variant and the binding is a
   minority (nl zwaartekrachtassist 42× vs slinger 8×): no third spelling.
+
+- Reviewers report garble outside the term (non-words, wrong gender, cut sentences). Collect
+  it in a wip findings file, not in the term edits: `docs/wip/2026-10-31-fleet-garble-findings.md`.
+- A stem must not swallow an unrelated word: ar `لتق` also matched «التقاط» (capture), so
+  rendezvous lists the verb forms one by one.
 
 ## Not covered
 

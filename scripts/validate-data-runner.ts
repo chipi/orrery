@@ -52,6 +52,7 @@ const TASKS: Task[] = [
   },
   { name: 'check-tech-bom', cmd: 'tsx', args: ['scripts/build-tech-bom.ts', '--check'] },
   { name: 'check-doc-counts', cmd: 'node', args: ['scripts/gen-doc-counts.mjs', '--check'] },
+  { name: 'check-version-sync', cmd: 'node', args: ['scripts/check-version-sync.mjs'] },
   // Translation defects that are never legitimate (2026-10-17 audit, plan 9b):
   // placeholder tokens, Russian in Serbian, Latin letters inside Cyrillic words,
   // another language's script, Latin-script Serbian, English spelled in Cyrillic.

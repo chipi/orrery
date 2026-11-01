@@ -8,7 +8,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
-## [Unreleased]
+## [0.9.3] — in progress
+
+Work in progress on branch `tech-debt/0.9.3`: the rest of the tech debt and further checks on
+translation quality. The date replaces "in progress" when the release is cut.
+
+### Fixed
+
+- **Files that carry the app version now match it.** The offline download manifest
+  (`data/offline-manifest.json`) still said 0.9.1 on the 0.9.2 site, and the tech bill of
+  materials said 0.9.1 and listed stale dependency versions. Both are regenerated, and a new
+  `check-version-sync` step in `validate-data` fails when the offline manifest, the tech BOM, the
+  iOS app version or this changelog's section differs from `package.json`.
 
 ## [0.9.2] — 2026-10-31
 

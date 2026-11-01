@@ -115,7 +115,7 @@ The switch is `src/lib/asset-url.ts` — `assetOrigin` / `assetUrl()` / `streame
 > Before asking Apple for App Store review, work through `ios/APP_STORE_TODO.md`
 > (blockers, privacy answers, store listing, review notes).
 
-CI compile-checks the native apps (`.github/workflows/native-build.yml`: Android debug APK, iOS simulator app) but does not sign or upload them; release builds are local. The version has one source, `package.json`: the PWA/footer read it, Android `versionName`/`versionCode` are computed from it in `android/app/build.gradle` (versionCode = major·10000 + minor·100 + patch), and `build:mobile` writes iOS `MARKETING_VERSION` (numeric x.y.z, as Apple requires) via `scripts/mobile/sync-native-version.mjs`. The iOS build number comes from fastlane per TestFlight upload.
+CI compile-checks the native apps (`.github/workflows/native-build.yml`: Android debug APK, iOS simulator app) but does not sign or upload them; release builds are local. The version has one source, `package.json`: the PWA/footer read it, Android `versionName`/`versionCode` are computed from it in `android/app/build.gradle` (versionCode = major·10000 + minor·100 + patch), and `build:mobile` writes iOS `MARKETING_VERSION` (numeric x.y.z, as Apple requires) via `scripts/mobile/sync-native-version.mjs`. The iOS build number comes from fastlane per TestFlight upload. A version bump also regenerates the committed files that copy the version (`node scripts/mobile/build-offline-manifest.mjs`, `npm run build-tech-bom`) and adds a `## [X.Y.Z]` CHANGELOG section; `scripts/check-version-sync.mjs`, part of `validate-data`, fails until they all match `package.json`.
 
 ### Telemetry tier — bake it before `sync:mobile` (ADR-082)
 

@@ -194,7 +194,7 @@
     "caption": "Voyager 1が60億キロメートル先から撮影した、1つのピクセルとして映る地球。",
     "subject": "太陽系",
     "type": "1つのピクセルとして映る地球",
-    "distance": "約40.5 AU（60億km）",
+    "distance": "約40.5 au（60億km）",
     "taken": "1990年2月14日"
   },
   "pluto-nh": {
@@ -202,7 +202,7 @@
     "caption": "New Horizonsが撮影した冥王星と窒素氷の心臓の初の真正色接近画像。",
     "subject": "太陽系",
     "type": "準惑星",
-    "distance": "～34 AU（50億 km）",
+    "distance": "～34 au（50億 km）",
     "taken": "2015年7月14日"
   },
   "sun-sdo": {
@@ -210,7 +210,7 @@
     "caption": "Solar Dynamics Observatoryが捉えた我が星の極紫外線像。",
     "subject": "太陽",
     "type": "太陽・極紫外線",
-    "distance": "1 AU",
+    "distance": "1 au",
     "taken": "2010年～現在"
   },
   "jwst-orion": {

@@ -6,22 +6,22 @@
   "residents": [
     {
       "id": "mercury",
-      "label": "水星 — 0.39 AU",
+      "label": "水星 — 0.39 au",
       "agency": "NATURAL"
     },
     {
       "id": "venus",
-      "label": "金星 — 0.72 AU",
+      "label": "金星 — 0.72 au",
       "agency": "NATURAL"
     },
     {
       "id": "earth",
-      "label": "地球 — 1.00 AU",
+      "label": "地球 — 1.00 au",
       "agency": "NATURAL"
     },
     {
       "id": "mars",
-      "label": "火星 — 1.52 AU",
+      "label": "火星 — 1.52 au",
       "agency": "NATURAL"
     }
   ],

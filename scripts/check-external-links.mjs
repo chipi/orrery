@@ -95,6 +95,7 @@ export function collect() {
     }
     if (
       OWN_HOSTS.test(host) ||
+      !host.includes('.') ||
       SKIP_HOSTS[host] ||
       (MEDIA.test(url) && !url.includes('/wiki/')) ||
       // A template string (`https://host/${id}`) stops at "{" and leaves "$";

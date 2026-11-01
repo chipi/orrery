@@ -1,0 +1,123 @@
+{
+  "https://www.annualreviews.org/doi/10.1146/annurev.earth.31.100901.141502": {
+    "new": "https://doi.org/10.1016/S0012-821X(02)01126-3",
+    "why": "the DOI never existed (doi.org 404); Stevenson's 'Planetary magnetic fields' is EPSL 208 (2003) (Crossref)",
+    "label": ["Stevenson · Planetary magnetic fields (Annual Reviews)", "Stevenson · Planetary magnetic fields (Earth and Planetary Science Letters, 2003)"]
+  },
+  "https://www.science.org/doi/10.1126/science.aap8637": {
+    "new": "https://doi.org/10.1073/pnas.1802345115",
+    "why": "the DOI never existed; the 2018 lunar polar water-ice result is Li et al., PNAS (Crossref)",
+    "label": ["Lunar south pole water ice (Science 2018)", "Lunar polar surface water ice (PNAS 2018)"]
+  },
+  "https://www.science.org/doi/10.1126/science.1059831": {
+    "new": "https://doi.org/10.1126/science.1058651",
+    "why": "wrong DOI (Crossref has none); Veverka et al. 2001 Science 292 is 10.1126/science.1058651"
+  },
+  "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029": {
+    "new": "https://doi.org/10.1007/s41116-020-00028-3",
+    "why": "the DOI never existed; Christensen-Dalsgaard 2021, 'Solar structure and evolution', Living Reviews in Solar Physics (labels per locale changed by hand)"
+  },
+  "https://www.sciencedirect.com/science/article/abs/pii/S0094576510002973": {
+    "new": "https://doi.org/10.1007/s11214-011-9848-y",
+    "why": "the PII is an unrelated paper (Crossref); Brophy 2011 'The Dawn Ion Propulsion System' is Space Science Reviews 163",
+    "label": ["Ion propulsion subsystem — Brophy 2011, Acta Astronautica 68", "Ion propulsion subsystem — Brophy 2011, Space Science Reviews 163"]
+  },
+  "https://www.sciencedirect.com/science/article/abs/pii/S0032063313000244": {
+    "new": "https://doi.org/10.1016/j.pss.2012.12.002",
+    "why": "PII not in Crossref; Grasset et al. 2013 PSS 78 by DOI"
+  },
+  "https://www.sciencedirect.com/science/article/abs/pii/S0094576518316758": {
+    "new": "https://doi.org/10.1016/j.actaastro.2018.03.024",
+    "why": "no Kawakatsu 2019 paper; MMX mission analysis is Campagnola et al., Acta Astronautica 2018 (Crossref)",
+    "label": ["Kawakatsu et al. — MMX trajectory design (Acta Astronautica 2019)", "Campagnola et al. — MMX mission analysis (Acta Astronautica 2018)"]
+  },
+  "https://www.sciencedirect.com/science/article/abs/pii/S0273117701004099": {
+    "new": "https://doi.org/10.1016/0273-1177(95)00588-6",
+    "why": "PII not in Crossref; the Ulysses high-latitude overview is Marsden, Adv. Space Res. 1996",
+    "label": ["Marsden + Smith (2001) — Ulysses overview after first solar minimum (Adv. Space Res.)", "Marsden (1996) — Ulysses at high latitudes, an overview (Adv. Space Res.)"]
+  },
+  "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981": {
+    "new": "https://doi.org/10.1098/rsta.2019.0474",
+    "why": "PII not in Crossref; no Icarus 2021 Neptune interior paper; Helled & Fortney 2020 review (labels per locale changed by hand)"
+  },
+  "https://www.sciencedirect.com/science/article/abs/pii/S0019103510000503": {
+    "new": "https://doi.org/10.1016/j.icarus.2009.07.043",
+    "why": "the PII is an unrelated paper; Mueller et al. 2010 Patroclus (Icarus 205) by DOI"
+  },
+  "https://www.orbitaldebris.jsc.nasa.gov/mitigate/disposal.html": {
+    "new": "https://orbitaldebris.jsc.nasa.gov/mitigation/",
+    "why": "www host's certificate does not match; page moved to /mitigation/"
+  },
+  "https://www.orbitaldebris.jsc.nasa.gov/": {
+    "new": "https://orbitaldebris.jsc.nasa.gov/",
+    "why": "www host's certificate does not match"
+  },
+  "https://thorne.caltech.edu/": {
+    "new": "https://www.its.caltech.edu/~kip/",
+    "why": "domain gone; Kip Thorne's Caltech page"
+  },
+  "https://www.spaceforcemuseum.org": {
+    "new": "https://ccspacemuseum.org/",
+    "why": "domain gone; the Cape Canaveral Space Force Museum's site"
+  },
+  "https://muzeulmilitar.ro": {
+    "new": "https://en.wikipedia.org/wiki/National_Military_Museum,_Romania",
+    "why": "domain gone; the museum's new domain fails its certificate check"
+  },
+  "https://www.naic.edu/": {
+    "new": "https://areciboc3.org/",
+    "why": "certificate invalid; Arecibo C3 now runs the site"
+  },
+  "https://scihub.copernicus.eu/": {
+    "new": "https://dataspace.copernicus.eu/",
+    "why": "Copernicus Open Access Hub closed; Copernicus Data Space Ecosystem"
+  },
+  "https://www.ciclops.org/": {
+    "new": "https://web.archive.org/web/20260830064356/https://ciclops.org/",
+    "why": "domain gone; Wayback snapshot"
+  },
+  "http://www.ciclops.org/": {
+    "new": "https://web.archive.org/web/20260830064356/https://ciclops.org/",
+    "why": "domain gone; Wayback snapshot"
+  },
+  "https://en.roscosmos.ru/204/": {
+    "new": "https://www.russianspaceweb.com/baikonur_r7_1.html",
+    "why": "expired certificate, never archived; RussianSpaceWeb Site 1 page",
+    "label": ["Site 1/5 — Roscosmos", "Site 1/5 — RussianSpaceWeb"]
+  },
+  "https://en.roscosmos.ru/205/": {
+    "new": "https://www.russianspaceweb.com/baikonur_r7_31.html",
+    "why": "expired certificate, never archived; RussianSpaceWeb Site 31 page",
+    "label": ["Site 31 — Roscosmos", "Site 31 — RussianSpaceWeb"]
+  },
+  "https://en.roscosmos.ru/206/": {
+    "new": "https://www.russianspaceweb.com/plesetsk.html",
+    "why": "expired certificate, never archived; RussianSpaceWeb Plesetsk page",
+    "label": ["Plesetsk Cosmodrome — Roscosmos", "Plesetsk Cosmodrome — RussianSpaceWeb"]
+  },
+  "https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service": {
+    "new": "https://doi.org/10.12686/a19",
+    "why": "page gone; the Marsquake Service catalogue by its DOI"
+  },
+  "https://www.cnsa.gov.cn/english/n6465652/n6465653/c6810553/content.html": {
+    "new": "https://en.wikipedia.org/wiki/Chang%27e_3",
+    "why": "CNSA page gone",
+    "label": ["Chang'e 3 launch (Long March 3B/E) — CNSA", "Chang'e 3 launch (Long March 3B/E) — Wikipedia"]
+  },
+  "https://californiasciencecenter.org/exhibits/air-space/endeavour-the-california-story": {
+    "new": "https://californiasciencecenter.org/exhibits/air-and-space/space-shuttle",
+    "why": "exhibit pages moved; Samuel Oschin Shuttle Gallery"
+  },
+  "https://californiasciencecenter.org/exhibits/air-space/mission-26-the-big-endeavour": {
+    "new": "https://californiasciencecenter.org/exhibits/air-and-space/space-shuttle",
+    "why": "exhibit pages moved; Samuel Oschin Shuttle Gallery"
+  },
+  "https://www.cnes-csg.fr/": {
+    "new": "https://web.archive.org/web/20150518222955/http://www.cnes-csg.fr:80/",
+    "why": "site retired (connection refused); Wayback snapshot"
+  },
+  "https://science.ksc.nasa.gov/shuttle/technology/sts-newsref/srb.html": {
+    "new": "https://web.archive.org/web/20220123042230/https://science.ksc.nasa.gov/shuttle/technology/sts-newsref/srb.html",
+    "why": "KSC science server gone; Wayback snapshot"
+  }
+}

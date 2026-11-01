@@ -413,11 +413,12 @@
     "kind": "mission",
     "id": "mmx",
     "name": "MMX",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/MMX_MISSION_MARK.png",
-    "source_url": "https://commons.wikimedia.org/wiki/File:MMX_MISSION_MARK.png",
+    "image_url": "https://www.mmx.jaxa.jp/gallery/img/pic_mission_mark.png",
+    "source_url": "https://www.mmx.jaxa.jp/en/gallery",
+    "source_type": "agency-site",
     "author": "JAXA",
-    "license_short": "CC BY 4.0",
-    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    "license_short": "JAXA-OPEN",
+    "license_url": "https://global.jaxa.jp/policy.html"
   },
   {
     "kind": "mission",

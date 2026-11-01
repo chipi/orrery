@@ -4,12 +4,40 @@ import svelte from 'eslint-plugin-svelte';
 import prettier from 'eslint-config-prettier';
 import globals from 'globals';
 
+// svelte/no-at-html-tags already fails a bare {@html}; this keeps every disable of it
+// carrying a reason after ` -- `, as all of them did by hand (e50eb1da7ca).
+const htmlDisableNeedsReason = {
+  meta: { type: 'problem', schema: [] },
+  create(context) {
+    const check = (c) => {
+      const text = c.value.trim();
+      if (!/^eslint-disable/.test(text) || !text.includes('svelte/no-at-html-tags')) return;
+      if (/\s--\s*\S/.test(text)) return;
+      context.report({
+        loc: c.loc,
+        message: 'Say why this {@html} is safe: add ` -- <reason>` to the eslint-disable comment.',
+      });
+    };
+    return {
+      // Script comments; template <!-- --> comments are SvelteHTMLComment nodes instead.
+      Program() {
+        for (const c of context.sourceCode.getAllComments()) check(c);
+      },
+      SvelteHTMLComment: check,
+    };
+  },
+};
+
 export default [
   js.configs.recommended,
   ...ts.configs.recommended,
   ...svelte.configs['flat/recommended'],
   prettier,
   ...svelte.configs['flat/prettier'],
+  {
+    plugins: { orrery: { rules: { 'html-disable-needs-reason': htmlDisableNeedsReason } } },
+    rules: { 'orrery/html-disable-needs-reason': 'error' },
+  },
   {
     languageOptions: {
       globals: {

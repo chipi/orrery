@@ -27,7 +27,7 @@ commit on the branch touches it).
 | Item | Status | What remains | Evidence |
 | --- | --- | --- | --- |
 | ~240 unused message keys | partly done | 175 keys removed from all 14 locales; the plan said ~240. The remaining ~65 were not identified in any doc. | `daa0cd6ff6d` |
-| Unjustified `{@html}` | partly done | Every `{@html}` site now carries a reason on its eslint-disable line. No guard fails a new bare `{@html}`; 21 sites exist in `src`. | `e50eb1da7ca` |
+| Unjustified `{@html}` | done on `tech-debt/0.9.3` | Every `{@html}` site carries a reason on its eslint-disable line (22 in `src`). A bare `{@html}` already failed lint (`svelte/no-at-html-tags` is `error` in the recommended config); the gap was a disable with no reason, which passed. `orrery/html-disable-needs-reason` in `eslint.config.js` now fails that, in templates and scripts (probe snippets checked both ways). | `e50eb1da7ca` |
 | Hard-coded English: TypeScript label maps | partly done | The scan guard reads `.svelte` markup only; `<script>` code and `.ts` label maps (era names, fleet categories, HUD labels) are "by review", not gated. Whether all of them were translated was not audited. | `scripts/i18n-tools/hardcoded-english.mjs` header; `cea21263071` |
 | Hard-coded English: allowlist | partly done | 60-line allowlist in place (developer panels, brand, symbols). Entries not re-audited. | `scripts/i18n-tools/hardcoded-english-allowlist.json` |
 | 14-locale render check | open | Phase plan step 3 asks for it as part of the guard. The spec `i18n-all-routes.spec.ts` exists but no commit on the branch runs or changes it; no result is recorded. | `docs/wip/_archive/2026-10-30-i18n-phase-plan.md` step 3 |

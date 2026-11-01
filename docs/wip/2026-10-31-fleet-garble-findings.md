@@ -36,7 +36,28 @@ reusable-launchers and seven-minutes grammar, hi Taiyuan सूर्य-स्�
 - Already gone before this round: the it items, most fr fleet items (lc-34 tremplin, la ISS, …),
   ar messenger/rd-180/…, pt «missão em solo», es «cajas polares».
 
-## Reported, not yet fixed (the sentence-level items below; word-level ones are above)
+## Sentence-level items — closed 2026-11-01
+
+Every item below was re-read against the English on 2026-11-01. Fixed by hand: nl rd-180 (getrapte),
+rs-25 (teruggeschakeld; "In de 135" for "Over 135"), salyut-5 (afdichting, verversten, Tengizmeer,
+uit zijn baan gebracht), mariner-4 (second sentence rewritten); ar rd-180 (المؤكسد), ariane-1
+(gender), messenger (رحلة العبور, heliocentric energy, "Discovery-class"), psyche + smart-1 (هول),
+ulysses (ثلاثة, مدار حول الشمس), salyut-4 (the 21-g sentence rewritten); es taiyuan (heliosíncronos),
+lr87 (el Aerozine-50); it change-3 (lander, not lavanda), shenzhou / iss / viking2 ("con / senza
+equipaggio", not "equipaggiato"); ja yf-77 (storable, last sentence rewritten), long-march-3b and
+yf-77 ハイパーゴリック (the site's form); zh-CN lc-34 (这段历程); ko 단단식 for single-stage
+(blue-moon ×3, mercury-redstone; 단단식 added to the glossary's ko "stage" match), otv-6 (기밀);
+sr-Cyrl vostok-6 (rewritten — operator to read); de juice (Erstes Mond-Erde-Swing-by-Manöver);
+ja change4 (Chinese note → ローバーがスロープを下った。); pt-BR 26 + it 1 dates back to the
+English's ISO form (style guide: dates are not translated) — three pt-BR dates had day and month
+swapped (apollo17 1972-12-11, change5 2020-12-01, slim 2023-09-06).
+Already fixed by the earlier garble rounds (read, nothing to change): nl saturn-v; hi saturn-v,
+giotto, messenger, r-7, molniya, salyut-5, soyuz-7k-ok, titan-ii; ru akatsuki, mars-rovers; it
+osiris-rex, juice, rosetta, apollo-lm, missions osiris-rex / bepicolombo; fr challenger,
+osiris-rex, lro; sr pioneer-11; ja mercury-redstone. Left to the plain-register run: ko starbase
+(~함/~됨 note style).
+
+## Original report (kept for the record)
 
 Only the fields the term reviewers happened to read are listed here (about 1 in 6 fleet fields).
 The rate suggests the rest of these locales' fleet text has the same problems.

@@ -493,7 +493,7 @@
   },
   "booster|zh-CN|fleet/launch-site/lc-34.json :: dispatch": {
     "why": "not strap-on sense: 超大型火箭 = launch vehicles",
-    "tr": "6f7160676c"
+    "tr": "0b4cf8a5d2"
   },
   "booster|zh-CN|fleet/launcher/falcon-heavy.json :: best_known_for": {
     "why": "whole vehicle: variant 运载火箭",
@@ -565,7 +565,7 @@
   },
   "burn|ar|fleet/engine/rd-180.json :: description": {
     "why": "burning excess oxidiser = combustion (احتراق)",
-    "tr": "14e0e95c82"
+    "tr": "a63d3a287a"
   },
   "burn|ar|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning engines = combustion (يعملان بالهيدروجين)",
@@ -1445,7 +1445,7 @@
   },
   "burn|nl|fleet/engine/rd-180.json :: description": {
     "why": "burning excess oxidiser = combustion (verbrand)",
-    "tr": "eec8fcc48c"
+    "tr": "c956e8be56"
   },
   "burn|nl|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning = propellant type (op waterstof werkende), not an engine firing",
@@ -2804,8 +2804,8 @@
     "tr": "34dd944222"
   },
   "orbit|es|fleet/launch-site/taiyuan-lc-9.json :: description": {
-    "why": "natural omission: lanzamientos polares y heliosincrónicos",
-    "tr": "f2663687da"
+    "why": "natural omission: lanzamientos polares y heliosíncronos",
+    "tr": "4a61a2889f"
   },
   "orbit|fr|missions/earth/vostok-1.json :: dispatch": {
     "why": "variant: en faire le tour (circled the Earth)",
@@ -4209,7 +4209,7 @@
   },
   "stage|ja|fleet/engine/yf-77.json :: description": {
     "why": "variant: コアステージ",
-    "tr": "48477f844e"
+    "tr": "18f99867c7"
   },
   "stage|ja|missions/moon/lunar-prospector.json :: vehicle_stage": {
     "why": "variant: キックステージ (standard name for a kick stage)",

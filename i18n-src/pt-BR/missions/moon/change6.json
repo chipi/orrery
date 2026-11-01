@@ -22,7 +22,7 @@
     {
       "met": 30,
       "label": "ATERRAGEM",
-      "note": "Lander desce na cratera Apollo (lado oposto) 02/06/2024. Todas as comunicações via relé Queqiao-2.",
+      "note": "Lander desce na cratera Apollo (lado oposto) 2024-06-02. Todas as comunicações via relé Queqiao-2.",
       "type": "nominal"
     },
     {
@@ -40,7 +40,7 @@
     {
       "met": 53,
       "label": "RETORNO DA TERRA",
-      "note": "A cápsula pousa na Mongólia Interior em 25/06/2024 com as primeiras amostras do outro lado já recuperadas.",
+      "note": "A cápsula pousa na Mongólia Interior em 2024-06-25 com as primeiras amostras do outro lado já recuperadas.",
       "type": "info"
     }
   ],

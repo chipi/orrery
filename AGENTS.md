@@ -815,7 +815,7 @@ The bot regenerates the four linux baselines (credits-head + science-tabs × des
 
 **Pre-tag dry run checklist:**
 
-1. `npm run preflight` — green
+1. `npm run preflight` — green (it now includes `npm run docs:build`, the VitePress site; a docs build error otherwise first shows up in Deploy preview / Deploy docs after the merge)
 2. `npm run test:e2e -- --workers=1` — both projects green (or known-broken specs explicitly skipped with a comment)
 3. `git push` — pre-push hook runs preflight again, must pass
 4. Push completes — wait for CI + e2e workflows on main, confirm both green

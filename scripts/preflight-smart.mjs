@@ -9,6 +9,9 @@
  * Routing matrix (mirrors the README's preflight doc):
  *
  *   docs/.md only           -> check-no-secrets
+ *   + any docs/** change    -> docs:build too (VitePress; it is otherwise first built by the
+ *                              deploy workflows after a merge — 2026-10-31 a bare <page> in a
+ *                              guide broke Deploy preview + Deploy docs on main)
  *   static/data/** only     -> validate-data + build
  *   messages/*.json only    -> i18n:compile + typecheck + build
  *   src/**.svelte/.ts only  -> typecheck + lint + vitest --changed + build
@@ -290,7 +293,10 @@ if (plan.mode === 'noop') {
   process.exit(0);
 }
 
-const steps = planSteps(plan.mode);
+const steps = [...planSteps(plan.mode)];
+if (files.some((f) => f.startsWith('docs/')) && !steps.some(([l]) => l.startsWith('Full'))) {
+  steps.push(['docs build (VitePress)', 'npm', ['run', 'docs:build']]);
+}
 for (const [label, cmd, args] of steps) {
   if (cmd === 'sh') runShell(label, args[0]);
   else run(label, cmd, args);

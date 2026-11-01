@@ -108,6 +108,11 @@ jobs:
       - run: npm run test:coverage
       - run: npm run validate-data
       - run: npm run build
+      # The docs site (VitePress) is otherwise built only by the deploy workflows after a merge:
+      # a bare <page> in a guide passed every PR check and broke Deploy preview + Deploy docs
+      # on main (2026-10-31). Building it here makes the required `ci` check catch it.
+      - name: Docs build (VitePress)
+        run: npm run docs:build
 
   # ════════════════════════════════════════════════════════════════════
   # mcp-image (S4 · #462) — builds the MCP server container cold and

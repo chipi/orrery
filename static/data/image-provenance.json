@@ -5,6 +5,153 @@
  "commit_sha": "b8a2836ff42fc59392773a1d8d6fe83520d284b8",
  "entries": [
   {
+   "id": "fa6ba9b7982ee459",
+   "path": "/images/belts/asteroid/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:The Altjira system (artist’s concept) (opo2507).jpg",
+   "author": "The Altjira system (artist’s concept)",
+   "agency": "The Altjira system (artist’s concept)",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AThe%20Altjira%20system%20(artist%E2%80%99s%20concept)%20(opo2507).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Altjira%20system%20(artist%E2%80%99s%20concept)%20(opo2507).jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "8cfd5d96ed10311c",
+   "path": "/images/belts/asteroid/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:14-281-KuiperBeltObject-ArtistsConcept-20141015.jpg",
+   "author": "http://www.nasa.gov/sites/default/files/14-281_0.jpg",
+   "agency": "http://www.nasa.gov/sites/default/files/14-281_0.jpg",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3A14-281-KuiperBeltObject-ArtistsConcept-20141015.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/14-281-KuiperBeltObject-ArtistsConcept-20141015.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "5012bd930c58e94f",
+   "path": "/images/belts/asteroid/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Artist's Concept of Comet 238P-Read (2023-123).jpg",
+   "author": "Artist's Concept of Comet 238P/Read",
+   "agency": "Artist's Concept of Comet 238P/Read",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AArtist's%20Concept%20of%20Comet%20238P-Read%20(2023-123).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Artist's%20Concept%20of%20Comet%20238P-Read%20(2023-123).jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "89d0d1b8ddcce87f",
+   "path": "/images/belts/asteroid/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Alien Asteroid Belt Compared to our Own.jpg",
+   "author": "http://planetquest.jpl.nasa.gov/image/30",
+   "agency": "http://planetquest.jpl.nasa.gov/image/30",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AAlien%20Asteroid%20Belt%20Compared%20to%20our%20Own.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alien%20Asteroid%20Belt%20Compared%20to%20our%20Own.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "7d199a38b3d05923",
+   "path": "/images/belts/asteroid/05.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:PIA22190-NewHorizonEncountersAsteroid-2014MU69-ArtistConcept-20180104.jpg",
+   "author": "https://photojournal.jpl.nasa.gov/jpeg/PIA22190.jpg",
+   "agency": "https://photojournal.jpl.nasa.gov/jpeg/PIA22190.jpg",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3APIA22190-NewHorizonEncountersAsteroid-2014MU69-ArtistConcept-20180104.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA22190-NewHorizonEncountersAsteroid-2014MU69-ArtistConcept-20180104.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "3c37bc45987ce76c",
+   "path": "/images/belts/kuiper/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Smallest Kuiper Belt Object.jpg",
+   "author": "NASA Image of the DaySee also: Hubble Finds Smallest Kuiper Belt Object Ever Seen (Hubblesite 2009-12-16)",
+   "agency": "NASA Image of the DaySee also: Hubble Finds Smallest Kuiper Belt Object Ever Seen (Hubblesite 2009-12-16)",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ASmallest%20Kuiper%20Belt%20Object.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Smallest%20Kuiper%20Belt%20Object.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "095a1af5640d0196",
+   "path": "/images/belts/kuiper/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:The Altjira system (artist’s concept) (opo2507).jpg",
+   "author": "The Altjira system (artist’s concept)",
+   "agency": "The Altjira system (artist’s concept)",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AThe%20Altjira%20system%20(artist%E2%80%99s%20concept)%20(opo2507).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Altjira%20system%20(artist%E2%80%99s%20concept)%20(opo2507).jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
    "id": "8f16ca65300757be",
    "path": "/images/deep-sky/chandra-crab.jpg",
    "source_type": "wikimedia-commons",
@@ -63305,6 +63452,27 @@
    "fetched_at": "2026-06-19T09:26:46.924Z"
   },
   {
+   "id": "a06ffd6fe823c766",
+   "path": "/images/planets/pluto/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:New Pluto Images from NASA’s New Horizons- It’s Complicated (20700948604).jpg",
+   "author": "New Pluto Images from NASA’s New Horizons: It’s Complicated",
+   "agency": "New Pluto Images from NASA’s New Horizons: It’s Complicated",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ANew%20Pluto%20Images%20from%20NASA%E2%80%99s%20New%20Horizons-%20It%E2%80%99s%20Complicated%20(20700948604).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/New%20Pluto%20Images%20from%20NASA%E2%80%99s%20New%20Horizons-%20It%E2%80%99s%20Complicated%20(20700948604).jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
    "id": "5745d6b2587b9718",
    "path": "/images/planets/saturn/01.1x1.jpg",
    "source_type": "wikimedia-commons",
@@ -64728,6 +64896,48 @@
    "fetched_at": "2026-10-21T08:56:15.150Z"
   },
   {
+   "id": "b53941749128ef57",
+   "path": "/images/satellites/ariel/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Ariel - January 24 1986 (22257264653).jpg",
+   "author": "Ariel - January 24 1986",
+   "agency": "Ariel - January 24 1986",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AAriel%20-%20January%2024%201986%20(22257264653).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ariel%20-%20January%2024%201986%20(22257264653).jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "77aadfe6f5b24d2d",
+   "path": "/images/satellites/ariel/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Ariel map JPL USGS.jpg",
+   "author": "https://maps.jpl.nasa.gov/tmaps/uranus.html, https://nasa3d.arc.nasa.gov/detail/ura1vuu2",
+   "agency": "https://maps.jpl.nasa.gov/tmaps/uranus.html, https://nasa3d.arc.nasa.gov/detail/ura1vuu2",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AAriel%20map%20JPL%20USGS.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ariel%20map%20JPL%20USGS.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
    "id": "ca22dc2e73099cf5",
    "path": "/images/satellites/callisto/01.webp",
    "source_type": "nasa-images-api",
@@ -64748,6 +64958,27 @@
    "fetched_at": "2026-10-21T08:56:15.150Z"
   },
   {
+   "id": "1b6d448d40e1bb82",
+   "path": "/images/satellites/callisto/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Callisto terrain.jpg",
+   "author": "http://photojournal.jpl.nasa.gov/catalog/PIA01629",
+   "agency": "http://photojournal.jpl.nasa.gov/catalog/PIA01629",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ACallisto%20terrain.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Callisto%20terrain.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
    "id": "191240c40f50bd32",
    "path": "/images/satellites/charon/01.webp",
    "source_type": "wikimedia-commons",
@@ -64766,6 +64997,48 @@
    "pageid": 71081812,
    "nasa_id": null,
    "fetched_at": "2026-10-21T10:43:46.503Z"
+  },
+  {
+   "id": "d5b8a5238f60f14a",
+   "path": "/images/satellites/charon/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Pluto Spray Paints its Moon Red (noaoann16017a).jpg",
+   "author": "Pluto Spray Paints its Moon Red",
+   "agency": "Pluto Spray Paints its Moon Red",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3APluto%20Spray%20Paints%20its%20Moon%20Red%20(noaoann16017a).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pluto%20Spray%20Paints%20its%20Moon%20Red%20(noaoann16017a).jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
+   "id": "52c0c950d39a999f",
+   "path": "/images/satellites/charon/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:NH-PlutoMoon--Charon-NeutralBrightRelease-20151001.jpg",
+   "author": "http://www.nasa.gov/sites/default/files/thumbnails/image/nh-charon-neutral-bright-release.jpg",
+   "agency": "http://www.nasa.gov/sites/default/files/thumbnails/image/nh-charon-neutral-bright-release.jpg",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ANH-PlutoMoon--Charon-NeutralBrightRelease-20151001.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NH-PlutoMoon--Charon-NeutralBrightRelease-20151001.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
   },
   {
    "id": "7be4fe208a6030bd",
@@ -64789,6 +65062,27 @@
    "fetched_at": "2026-06-19T09:26:46.963Z"
   },
   {
+   "id": "86af6c778784981d",
+   "path": "/images/satellites/deimos/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Deimos Surface.png",
+   "author": "Viking 2 Orbiter 423B63 http://nssdc.gsfc.nasa.gov/imgcat/html/object_page/vo2_423b63.html",
+   "agency": "Viking 2 Orbiter 423B63 http://nssdc.gsfc.nasa.gov/imgcat/html/object_page/vo2_423b63.html",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ADeimos%20Surface.png",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Deimos%20Surface.png",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.622Z"
+  },
+  {
    "id": "bfe3419e8456e4bf",
    "path": "/images/satellites/enceladus/01.webp",
    "source_type": "nasa-images-api",
@@ -64807,6 +65101,27 @@
    "pageid": null,
    "nasa_id": "JPL-2015_10_28-PIA17202",
    "fetched_at": "2026-10-21T08:56:15.150Z"
+  },
+  {
+   "id": "f5f3fdae00757010",
+   "path": "/images/satellites/enceladus/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:PIA23175-SaturnMoon-Enceladus-ArtistConcept-20200224.jpg",
+   "author": "https://photojournal.jpl.nasa.gov/jpeg/PIA23175.jpg",
+   "agency": "https://photojournal.jpl.nasa.gov/jpeg/PIA23175.jpg",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3APIA23175-SaturnMoon-Enceladus-ArtistConcept-20200224.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA23175-SaturnMoon-Enceladus-ArtistConcept-20200224.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
   },
   {
    "id": "6cd7cf08c081921a",
@@ -64829,6 +65144,27 @@
    "fetched_at": "2026-10-21T09:49:23.010Z"
   },
   {
+   "id": "467b94209d1f3455",
+   "path": "/images/satellites/europa/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:PIA19048 realistic color Europa mosaic (original).jpg",
+   "author": "http://photojournal.jpl.nasa.gov/catalog/PIA19048 Also described here: http://www.jpl.nasa.gov/news/news.php?release=2014-406",
+   "agency": "http://photojournal.jpl.nasa.gov/catalog/PIA19048 Also described here: http://www.jpl.nasa.gov/news/news.php?release=2014-406",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3APIA19048%20realistic%20color%20Europa%20mosaic%20(original).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA19048%20realistic%20color%20Europa%20mosaic%20(original).jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
    "id": "d2434a13cf354d91",
    "path": "/images/satellites/ganymede/01.webp",
    "source_type": "wikimedia-commons",
@@ -64847,6 +65183,69 @@
    "pageid": 45798191,
    "nasa_id": null,
    "fetched_at": "2026-10-21T10:43:46.503Z"
+  },
+  {
+   "id": "59423ae5c83b058c",
+   "path": "/images/satellites/ganymede/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Ganymede g1 true-edit.jpg",
+   "author": "http://photojournal.jpl.nasa.gov/catalog/PIA00716",
+   "agency": "http://photojournal.jpl.nasa.gov/catalog/PIA00716",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AGanymede%20g1%20true-edit.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ganymede%20g1%20true-edit.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
+   "id": "5e71b3aba6ef5335",
+   "path": "/images/satellites/ganymede/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:PIA00497 Nippur Sulcus.png",
+   "author": "https://science.nasa.gov/photojournal/ganymedes-nippur-sulcus/",
+   "agency": "https://science.nasa.gov/photojournal/ganymedes-nippur-sulcus/",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3APIA00497%20Nippur%20Sulcus.png",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA00497%20Nippur%20Sulcus.png",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
+   "id": "c1655e5d56133995",
+   "path": "/images/satellites/ganymede/05.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Ganymede terrain.jpg",
+   "author": "http://photojournal.jpl.nasa.gov/catalog/PIA02577",
+   "agency": "http://photojournal.jpl.nasa.gov/catalog/PIA02577",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AGanymede%20terrain.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ganymede%20terrain.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
   },
   {
    "id": "5f32c9d9a4fb5063",
@@ -64870,6 +65269,48 @@
    "fetched_at": "2026-06-19T09:26:46.963Z"
   },
   {
+   "id": "140e3aea4c95c836",
+   "path": "/images/satellites/io/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Volcano Erupts on Io (Galileo) (2020-38-4721-Image).png",
+   "author": "Volcano Erupts on Io (Galileo)",
+   "agency": "Volcano Erupts on Io (Galileo)",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AVolcano%20Erupts%20on%20Io%20(Galileo)%20(2020-38-4721-Image).png",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Volcano%20Erupts%20on%20Io%20(Galileo)%20(2020-38-4721-Image).png",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.622Z"
+  },
+  {
+   "id": "ce8996e1fe3b3579",
+   "path": "/images/satellites/io/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Gibbous Io - Galileo (32787060797).png",
+   "author": "Gibbous Io - Galileo",
+   "agency": "Gibbous Io - Galileo",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AGibbous%20Io%20-%20Galileo%20(32787060797).png",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gibbous%20Io%20-%20Galileo%20(32787060797).png",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.622Z"
+  },
+  {
    "id": "ac07f9e3d6dad478",
    "path": "/images/satellites/miranda/01.webp",
    "source_type": "nasa-images-api",
@@ -64890,6 +65331,69 @@
    "fetched_at": "2026-10-21T08:56:15.150Z"
   },
   {
+   "id": "8c6caf314f00ee23",
+   "path": "/images/satellites/miranda/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Miranda - January 24 1986 (30906319004).jpg",
+   "author": "Miranda - January 24 1986",
+   "agency": "Miranda - January 24 1986",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AMiranda%20-%20January%2024%201986%20(30906319004).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Miranda%20-%20January%2024%201986%20(30906319004).jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "6d985397850e34d9",
+   "path": "/images/satellites/miranda/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Miranda2.JPG",
+   "author": "https://photojournal.jpl.nasa.gov/catalog/PIA00141",
+   "agency": "https://photojournal.jpl.nasa.gov/catalog/PIA00141",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AMiranda2.JPG",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Miranda2.JPG",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "1b68f6f9a282ba35",
+   "path": "/images/satellites/miranda/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Miranda elsinorinverness.png",
+   "author": "https://www.jpl.nasa.gov/spaceimages/wallpaper.php?id=PIA00038",
+   "agency": "https://www.jpl.nasa.gov/spaceimages/wallpaper.php?id=PIA00038",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AMiranda%20elsinorinverness.png",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Miranda%20elsinorinverness.png",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
    "id": "5825cea3dc07f51b",
    "path": "/images/satellites/moon/01.webp",
    "source_type": "wikimedia-commons",
@@ -64908,6 +65412,90 @@
    "pageid": 11901243,
    "nasa_id": null,
    "fetched_at": "2026-10-21T08:56:15.150Z"
+  },
+  {
+   "id": "20af6734196daa1b",
+   "path": "/images/satellites/moon/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:AS11-41-6058 - Apollo 11 - Apollo 11 Mission image - View of Moon, Mare Fecunditatis and TO 67 - NARA - 16685621.jpg",
+   "author": "U.S. National Archives and Records Administration",
+   "agency": "U.S. National Archives and Records Administration",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AAS11-41-6058%20-%20Apollo%2011%20-%20Apollo%2011%20Mission%20image%20-%20View%20of%20Moon%2C%20Mare%20Fecunditatis%20and%20TO%2067%20-%20NARA%20-%2016685621.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/AS11-41-6058%20-%20Apollo%2011%20-%20Apollo%2011%20Mission%20image%20-%20View%20of%20Moon%2C%20Mare%20Fecunditatis%20and%20TO%2067%20-%20NARA%20-%2016685621.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.622Z"
+  },
+  {
+   "id": "3e3ec40b123befbe",
+   "path": "/images/satellites/moon/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:AS08-16-2615 - Apollo 8 - Apollo 8 Mission image, Moon, Langrenus - NARA - 16671101.jpg",
+   "author": "U.S. National Archives and Records Administration",
+   "agency": "U.S. National Archives and Records Administration",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AAS08-16-2615%20-%20Apollo%208%20-%20Apollo%208%20Mission%20image%2C%20Moon%2C%20Langrenus%20-%20NARA%20-%2016671101.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/AS08-16-2615%20-%20Apollo%208%20-%20Apollo%208%20Mission%20image%2C%20Moon%2C%20Langrenus%20-%20NARA%20-%2016671101.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.622Z"
+  },
+  {
+   "id": "e36045fafa6daeb4",
+   "path": "/images/satellites/moon/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Full disc of the moon was photographed by the Apollo 17 crewmen.jpg",
+   "author": "Flickr nasa2explore NASA Image and Video Library",
+   "agency": "Flickr nasa2explore NASA Image and Video Library",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AFull%20disc%20of%20the%20moon%20was%20photographed%20by%20the%20Apollo%2017%20crewmen.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Full%20disc%20of%20the%20moon%20was%20photographed%20by%20the%20Apollo%2017%20crewmen.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.622Z"
+  },
+  {
+   "id": "238f7db7d5e2b6d5",
+   "path": "/images/satellites/moon/05.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Earth from Space- Eyes on our Moon ESA519338.jpg",
+   "author": "Earth from Space: Eyes on our Moon",
+   "agency": "Earth from Space: Eyes on our Moon",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AEarth%20from%20Space-%20Eyes%20on%20our%20Moon%20ESA519338.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Earth%20from%20Space-%20Eyes%20on%20our%20Moon%20ESA519338.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.622Z"
   },
   {
    "id": "170e589f0a230151",
@@ -64931,6 +65519,27 @@
    "fetched_at": "2026-06-19T09:26:46.963Z"
   },
   {
+   "id": "b258707f7dcf1e91",
+   "path": "/images/satellites/oberon/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Oberon - Green-Violet - January 24 1986 - 4 (50906003243).jpg",
+   "author": "Oberon - Green-Violet - January 24 1986 - 4",
+   "agency": "Oberon - Green-Violet - January 24 1986 - 4",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AOberon%20-%20Green-Violet%20-%20January%2024%201986%20-%204%20(50906003243).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Oberon%20-%20Green-Violet%20-%20January%2024%201986%20-%204%20(50906003243).jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
    "id": "d889ee258884721a",
    "path": "/images/satellites/phobos/01.webp",
    "source_type": "wikimedia-commons",
@@ -64951,6 +65560,69 @@
    "fetched_at": "2026-10-21T10:43:46.503Z"
   },
   {
+   "id": "34217b59886e0e43",
+   "path": "/images/satellites/phobos/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Phobos edit 2.jpg",
+   "author": "Edited version of Image:221831main PIA10368.png.",
+   "agency": "Edited version of Image:221831main PIA10368.png.",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3APhobos%20edit%202.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Phobos%20edit%202.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.622Z"
+  },
+  {
+   "id": "208fadfd99226178",
+   "path": "/images/satellites/phobos/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Stickney mro.jpg",
+   "author": "English Wikipedia - Original image and description.",
+   "agency": "English Wikipedia - Original image and description.",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AStickney%20mro.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stickney%20mro.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.622Z"
+  },
+  {
+   "id": "d449c41b4fcc4492",
+   "path": "/images/satellites/phobos/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Phobos Viking Mosaic DLRcontrol 7200.jpg",
+   "author": "https://astrogeology.usgs.gov/search/map/Phobos/Viking/Phobos_Viking_Mosaic_40ppd_DLRcontrol",
+   "agency": "https://astrogeology.usgs.gov/search/map/Phobos/Viking/Phobos_Viking_Mosaic_40ppd_DLRcontrol",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3APhobos%20Viking%20Mosaic%20DLRcontrol%207200.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Phobos%20Viking%20Mosaic%20DLRcontrol%207200.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.622Z"
+  },
+  {
    "id": "6dec6049f8dfce12",
    "path": "/images/satellites/titan/01.webp",
    "source_type": "wikimedia-commons",
@@ -64969,6 +65641,69 @@
    "pageid": 43808,
    "nasa_id": null,
    "fetched_at": "2026-10-21T10:43:46.503Z"
+  },
+  {
+   "id": "704fa59e2f8a2372",
+   "path": "/images/satellites/titan/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Saturn & Titan - August 11 2013 (53823523697).png",
+   "author": "Saturn &amp; Titan - August 11 2013",
+   "agency": "Saturn &amp; Titan - August 11 2013",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ASaturn%20%26%20Titan%20-%20August%2011%202013%20(53823523697).png",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saturn%20%26%20Titan%20-%20August%2011%202013%20(53823523697).png",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
+   "id": "eba6c1cfd3c51266",
+   "path": "/images/satellites/titan/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Titan in true color.jpg",
+   "author": "http://photojournal.jpl.nasa.gov/catalog/PIA14602",
+   "agency": "http://photojournal.jpl.nasa.gov/catalog/PIA14602",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ATitan%20in%20true%20color.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Titan%20in%20true%20color.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
+   "id": "edc879d7e2bbad6c",
+   "path": "/images/satellites/titan/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Titan (Mond) (7448341).jpg",
+   "author": "Titan-Down-Below",
+   "agency": "Titan-Down-Below",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ATitan%20(Mond)%20(7448341).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Titan%20(Mond)%20(7448341).jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
   },
   {
    "id": "f5ecdf59dd80fe44",
@@ -64992,6 +65727,90 @@
    "fetched_at": "2026-06-19T09:26:46.963Z"
   },
   {
+   "id": "35cda50ce0eb91de",
+   "path": "/images/satellites/titania/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:PIA00039 Titania (cropped).jpg",
+   "author": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+   "agency": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3APIA00039%20Titania%20(cropped).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA00039%20Titania%20(cropped).jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "a9f06b3cc6662858",
+   "path": "/images/satellites/titania/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Titania - Jan 24 1986 (22689891350).jpg",
+   "author": "Titania - Jan 24 1986",
+   "agency": "Titania - Jan 24 1986",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ATitania%20-%20Jan%2024%201986%20(22689891350).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Titania%20-%20Jan%2024%201986%20(22689891350).jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "644485d1ef7be6a6",
+   "path": "/images/satellites/titania/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Titania.jpg",
+   "author": "Unknown",
+   "agency": "Unknown",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ATitania.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Titania.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
+   "id": "4193bff4fd93f8f1",
+   "path": "/images/satellites/titania/05.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:PIA00039 Titania.jpg",
+   "author": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+   "agency": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3APIA00039%20Titania.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA00039%20Titania.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.624Z"
+  },
+  {
    "id": "32059a613d10baed",
    "path": "/images/satellites/triton/01.webp",
    "source_type": "direct-other",
@@ -65011,6 +65830,69 @@
    "pageid": null,
    "nasa_id": null,
    "fetched_at": "2026-06-19T09:26:46.963Z"
+  },
+  {
+   "id": "62b5dc6468487d5d",
+   "path": "/images/satellites/triton/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Neptune’s Moon Triton Fosters Rare Icy Union (gemini1903a).jpg",
+   "author": "Neptune’s Moon Triton Fosters Rare Icy Union",
+   "agency": "Neptune’s Moon Triton Fosters Rare Icy Union",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ANeptune%E2%80%99s%20Moon%20Triton%20Fosters%20Rare%20Icy%20Union%20(gemini1903a).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Neptune%E2%80%99s%20Moon%20Triton%20Fosters%20Rare%20Icy%20Union%20(gemini1903a).jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
+   "id": "a900603127f7a534",
+   "path": "/images/satellites/triton/03.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Triton (moon).jpg",
+   "author": "http://nssdc.gsfc.nasa.gov/imgcat/html/object_page/vg2_p34764.html (image link)",
+   "agency": "http://nssdc.gsfc.nasa.gov/imgcat/html/object_page/vg2_p34764.html (image link)",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ATriton%20(moon).jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Triton%20(moon).jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
+   "id": "eb43aa5760c58bdf",
+   "path": "/images/satellites/triton/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Neptune’s Moon Triton Fosters Rare Icy Union (gemini1903a) square.jpg",
+   "author": "Crop of File:Neptune’s Moon Triton Fosters Rare Icy Union (gemini1903a).tiff",
+   "agency": "Crop of File:Neptune’s Moon Triton Fosters Rare Icy Union (gemini1903a).tiff",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ANeptune%E2%80%99s%20Moon%20Triton%20Fosters%20Rare%20Icy%20Union%20(gemini1903a)%20square.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Neptune%E2%80%99s%20Moon%20Triton%20Fosters%20Rare%20Icy%20Union%20(gemini1903a)%20square.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
   },
   {
    "id": "2ecc4877969cabc9",
@@ -66602,6 +67484,48 @@
    "pageid": 71790822,
    "nasa_id": null,
    "fetched_at": "2026-10-21T10:43:46.503Z"
+  },
+  {
+   "id": "05c2198aeffbe9e3",
+   "path": "/images/small-bodies/67p/04.webp",
+   "source_type": "nasa-images-api",
+   "title": "NASA Images search result — 67p / \"rosetta spacecraft comet 67p\"",
+   "author": "NASA",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/search?q=rosetta+spacecraft+comet+67p&media_type=image&keywords=67p",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-nasa-images-api",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.628Z"
+  },
+  {
+   "id": "69f41fec8903564f",
+   "path": "/images/small-bodies/67p/05.webp",
+   "source_type": "nasa-images-api",
+   "title": "NASA Images search result — 67p / \"rosetta spacecraft comet 67p\"",
+   "author": "NASA",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/search?q=rosetta+spacecraft+comet+67p&media_type=image&keywords=67p",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-nasa-images-api",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.628Z"
   },
   {
    "id": "06334811bd8ec0f3",
@@ -82668,6 +83592,48 @@
    "fetched_at": "2026-10-21T08:05:11.835Z"
   },
   {
+   "id": "ab5ed4764c5d27d8",
+   "path": "/images/small-bodies/halley/04.webp",
+   "source_type": "nasa-images-api",
+   "title": "NASA Images search result — halley / \"halley comet space telescope\"",
+   "author": "NASA",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/search?q=halley+comet+space+telescope&media_type=image&keywords=halley",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-nasa-images-api",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.627Z"
+  },
+  {
+   "id": "b6aea83b5aa89386",
+   "path": "/images/small-bodies/halley/05.webp",
+   "source_type": "nasa-images-api",
+   "title": "NASA Images search result — halley / \"halley comet space telescope\"",
+   "author": "NASA",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/search?q=halley+comet+space+telescope&media_type=image&keywords=halley",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-nasa-images-api",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.627Z"
+  },
+  {
    "id": "644b87630ccf7f8d",
    "path": "/images/tiangong-modules/chinarm/05.webp",
    "source_type": "wikimedia-commons",
@@ -84120,6 +85086,27 @@
    "fetched_at": "2026-10-21T08:07:45.597Z"
   },
   {
+   "id": "b4aed60f72a72728",
+   "path": "/images/satellites/enceladus/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:PIA17203-SaturnMoon-Enceladus-BeforeFlyby-20151028.jpg",
+   "author": "http://photojournal.jpl.nasa.gov/jpeg/PIA17203.jpg",
+   "agency": "http://photojournal.jpl.nasa.gov/jpeg/PIA17203.jpg",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3APIA17203-SaturnMoon-Enceladus-BeforeFlyby-20151028.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA17203-SaturnMoon-Enceladus-BeforeFlyby-20151028.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
    "id": "95b86177163aa2ab",
    "path": "/images/satellites/europa/03.webp",
    "source_type": "nasa-images-api",
@@ -84382,6 +85369,27 @@
    "pageid": null,
    "nasa_id": "PIA01478",
    "fetched_at": "2026-10-21T08:07:45.597Z"
+  },
+  {
+   "id": "f5d0ec961f3e6cfe",
+   "path": "/images/satellites/callisto/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Callisto, moon of Jupiter, NASA.jpg",
+   "author": "Unknown",
+   "agency": "Unknown",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3ACallisto%2C%20moon%20of%20Jupiter%2C%20NASA.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Callisto%2C%20moon%20of%20Jupiter%2C%20NASA.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Copyright term expired worldwide.",
+   "modifications": [
+    "downloaded-via-commons-search",
+    "reencoded-jpeg"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": null,
+   "fetched_at": "2026-07-06T17:33:35.623Z"
   },
   {
    "id": "a074a056399df1cd",

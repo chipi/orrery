@@ -4,12 +4,12 @@
 
 | Result | URLs |
 | --- | ---: |
-| OK | 5699 |
-| … of which redirected to another address | 325 |
-| Dead (404, 410, 5xx …) | 246 |
-| Inconclusive (403, timeout, network error) | 158 |
+| OK | 5828 |
+| … of which redirected to another address | 331 |
+| Dead (404, 410, 5xx …) | 60 |
+| Inconclusive (403, timeout, network error) | 151 |
 | Not checked yet | 0 |
-| **Total** | **6103** |
+| **Total** | **6039** |
 
 Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every 6 h); www.w3.org (XML namespaces, not links); example.com (placeholder); this site's own addresses; direct links to media files.
 
@@ -19,23 +19,8 @@ Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every
 | --- | --- | --- |
 | http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture | 404 | `static/data/image-provenance.json` |
 | http://planetquest.jpl.nasa.gov/image/30 | 404 | `static/data/image-provenance.json` |
-| http://www.astronautix.com/l/longmarch5.html | 404 | `static/data/fleet/launch-site/wenchang-lc-101.json`, `static/data/link-provenance.json` |
-| http://www.cnsa.gov.cn/english/n6465652/n6465653/c6840858/content.html | 404 | `static/data/fleet/launch-site/jiuquan-slc-43.json`, `static/data/link-provenance.json` |
-| https://airandspace.si.edu/explore/topics/apollo | 404 | `static/data/programs/apollo.json`, `build/ar/programs/apollo.html`, `build/de/programs/apollo.html` +12 |
-| https://airandspace.si.edu/explore/topics/space/spacesuits | 404 | `static/data/science/life-in-space/suit-lineage.json`, `build/ar/science/life-in-space/suit-lineage.html`, `build/de/science/life-in-space/suit-lineage.html` +12 |
-| https://airandspace.si.edu/stories/editorial/deep-space-navigation | 404 | `static/data/essays/navigation.json`, `build/ar/essays/navigation.html`, `build/de/essays/navigation.html` +12 |
-| https://airandspacehistory.com/$ | 404 | `src/routes/+page.svelte` |
-| https://apps.apple.com/app/orrery | 404 | `src/lib/components/EnterArButton.svelte` |
-| https://astrobiology.nasa.gov/news/enceladus-as-target/ | 404 | `static/data/satellites.json` |
-| https://celestrak.org/faq.php | 404 | `static/data/data-sources.json` |
-| https://centrespatialguyanais.cnes.fr/en | 502 | `static/data/fleet/launch-site/kourou-ela-3.json`, `static/data/link-provenance.json` |
-| https://chipi.github.io/orrery/… | 404 | `src/lib/native/deep-links.ts` |
-| https://chipi.github.io/orrery/images/ | 404 | `src/lib/data/provenance.ts` |
-| https://cnes.fr/ | 400 | `static/data/source-logos.json` |
-| https://commons.wikimedia.org/w/index.php?curid=139431680 | 404 | `static/data/deep-sky.json` |
 | https://commons.wikimedia.org/wiki/File:Altair_PR_image6_(white).jpg | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File:MMX_MISSION_MARK.png | 404 | `static/data/badge-provenance.json`, `build/ar/patches.html`, `build/de/patches.html` +12 |
-| https://commons.wikimedia.org/wiki/File%3A2001%20Mars%20Odyssey%20-%20PIA04816.jpg | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3A2001%3A%20A%20Space%20Odyssey%20(1968%20film) | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3A486958_Arrokoth_(crop_of_binary)_color_(cropped).jpg | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AA%20Brief%20History%20of%20Time%20(Stephen%20Hawking%2C%201988) | 404 | `static/data/image-provenance.json` |
@@ -55,7 +40,6 @@ Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every
 | https://commons.wikimedia.org/wiki/File%3AFor%20All%20Mankind%20(1989%20documentary) | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AFor%20All%20Mankind%20(Apple%20TV%2B%20series%2C%202019) | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AFundamentals%20of%20Astrodynamics%20(Bate%2C%20Mueller%20%26%20White%2C%201971) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AHohmann%20transfer%20orbit.svg.png | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AHow%20to%20Read%20the%20Solar%20System%20(Riley%20%26%20Campbell%2C%202014) | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AIn%20the%20Shadow%20of%20the%20Moon%20(2007%20documentary) | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AInterstellar%20(2014%20film) | 404 | `static/data/image-provenance.json` |
@@ -85,195 +69,22 @@ Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every
 | https://commons.wikimedia.org/wiki/File%3ARocket%20Propulsion%20Elements%20(Sutton%20%26%20Biblarz%2C%202016) | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3ASchiaparelli%20EDM%20lander%20testing.jpg | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AScott%20Manley%20(YouTube%20channel) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ASpirit_at_Husband_Hill_PIA01907_NASA.jpg | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3ASpirit%20Embedded.jpg | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AThe%20Martian%20(2015%20film) | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AThe%20Planetary%20Society%20(site%20logo) | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AThe%20Right%20Stuff%20(Tom%20Wolfe%2C%201979) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AThe%20Sounds%20of%20Earth%20Record%20-%20GPN-2000-001976.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ATrans-lunar%20injection.svg.png | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AVeritasium%20(YouTube%20channel) | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AViking%202%20Lander%20Image%20of%20Frost.jpg | 404 | `static/data/image-provenance.json` |
 | https://commons.wikimedia.org/wiki/File%3AWhen%20We%20Left%20Earth%3A%20The%20NASA%20Missions%20(Discovery%2C%202008) | 404 | `static/data/image-provenance.json` |
-| https://eclipse.gsfc.nasa.gov/SEhelp/spaSE.html | 404 | `static/data/science/planets/sub-solar-and-terminator.json`, `build/ar/science/planets/sub-solar-and-terminator.html`, `build/de/science/planets/sub-solar-and-terminator.html` +12 |
-| https://en.wikipedia.org/wiki/Antenna_array_(deep_space) | 404 | `static/data/science/mission-phases/antenna-arrays.json`, `build/ar/science/mission-phases/antenna-arrays.html`, `build/de/science/mission-phases/antenna-arrays.html` +12 |
-| https://en.wikipedia.org/wiki/Electrostatic_dust_shield | 404 | `static/data/science/life-in-space/surface-dust-mitigation.json`, `build/ar/science/life-in-space/surface-dust-mitigation.html`, `build/de/science/life-in-space/surface-dust-mitigation.html` +12 |
-| https://en.wikipedia.org/wiki/Environmental_control_and_life_support_system | 404 | `static/data/science/life-in-space/eclss-life-support.json`, `build/ar/science/life-in-space/eclss-life-support.html`, `build/de/science/life-in-space/eclss-life-support.html` +12 |
-| https://en.wikipedia.org/wiki/Liquid_methane_rocket | 404 | `static/data/science/propulsion/fuels-and-oxidizers.json`, `build/ar/science/propulsion/fuels-and-oxidizers.html`, `build/de/science/propulsion/fuels-and-oxidizers.html` +12 |
-| https://en.wikipedia.org/wiki/Mission_analysis | 404 | `static/data/science/porkchop/viability.json`, `build/ar/science/porkchop/viability.html`, `build/de/science/porkchop/viability.html` +12 |
-| https://en.wikipedia.org/wiki/Powered_explicit_guidance | 404 | `static/data/science/mission-phases/ascent-guidance.json`, `build/ar/science/mission-phases/ascent-guidance.html`, `build/de/science/mission-phases/ascent-guidance.html` +12 |
-| https://en.wikipedia.org/wiki/Project_Icarus_(spacecraft) | 404 | `static/data/science/propulsion/fusion-propulsion.json`, `build/ar/science/propulsion/fusion-propulsion.html`, `build/de/science/propulsion/fusion-propulsion.html` +12 |
-| https://en.wikipedia.org/wiki/Space-associated_neuro-ocular_syndrome | 404 | `static/data/science/life-in-space/long-duration-effects.json`, `build/ar/science/life-in-space/long-duration-effects.html`, `build/de/science/life-in-space/long-duration-effects.html` +12 |
-| https://en.wikipedia.org/wiki/Space-grown_food | 404 | `static/data/science/life-in-space/food-production-off-world.json`, `build/ar/science/life-in-space/food-production-off-world.html`, `build/de/science/life-in-space/food-production-off-world.html` +12 |
-| https://en.wikipedia.org/wiki/Stage_separation | 404 | `static/data/science/propulsion/rocket-stages.json`, `build/ar/science/propulsion/rocket-stages.html`, `build/de/science/propulsion/rocket-stages.html` +12 |
-| https://en.wikipedia.org/wiki/Trajectory_correction_maneuver | 404 | `static/data/science/mission-phases/tcm.json`, `build/ar/science/mission-phases/tcm.html`, `build/de/science/mission-phases/tcm.html` +12 |
-| https://en.wikipedia.org/wiki/Variable_thrust_rocket_engine | 404 | `static/data/science/propulsion/throttling-and-gimbaling.json`, `build/ar/science/propulsion/throttling-and-gimbaling.html`, `build/de/science/propulsion/throttling-and-gimbaling.html` +12 |
-| https://global.jaxa.jp/projects/sas/manned_lunar_rover/ | 404 | `static/data/science/life-in-space/surface-mobility-rovers.json`, `build/ar/science/life-in-space/surface-mobility-rovers.html`, `build/de/science/life-in-space/surface-mobility-rovers.html` +12 |
-| https://history.nasa.gov/afj/ap08fj/pdf/sa503-flightmanual.pdf | 404 | `static/data/launch-profiles/saturn-v.json` |
-| https://hubblesite.org/contents/news-releases/2016/news-2016-18 | 404 | `static/data/small-bodies.json` |
-| https://humanresearchroadmap.nasa.gov/Evidence/ | 500 | `static/data/science/life-in-space/muscle-atrophy.json`, `build/ar/science/life-in-space/muscle-atrophy.html`, `build/de/science/life-in-space/muscle-atrophy.html` +12 |
-| https://humanresearchroadmap.nasa.gov/Evidence/reports/Bone.pdf | 500 | `static/data/science/life-in-space/bone-density-loss.json`, `build/ar/science/life-in-space/bone-density-loss.html`, `build/de/science/life-in-space/bone-density-loss.html` +12 |
-| https://humanresearchroadmap.nasa.gov/Evidence/reports/CR.pdf | 500 | `static/data/science/life-in-space/radiation-exposure.json`, `build/ar/science/life-in-space/radiation-exposure.html`, `build/de/science/life-in-space/radiation-exposure.html` +12 |
-| https://humanresearchroadmap.nasa.gov/Evidence/reports/Sensorimotor.pdf | 500 | `static/data/science/life-in-space/vestibular-adaptation.json`, `build/ar/science/life-in-space/vestibular-adaptation.html`, `build/de/science/life-in-space/vestibular-adaptation.html` +12 |
-| https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105 | 500 | `static/data/science/life-in-space/long-duration-effects.json`, `build/ar/science/life-in-space/long-duration-effects.html`, `build/de/science/life-in-space/long-duration-effects.html` +12 |
-| https://i.ytimg.com/vi/$ | 404 | `src/lib/video-provenance.ts` |
-| https://ieeexplore.ieee.org/ | 418 | `static/data/source-logos.json` |
-| https://imagearchives.esac.esa.int/index.php?/category/63 | 503 | `static/data/link-provenance.json`, `static/data/missions/comet/rosetta.json` |
-| https://imagine.gsfc.nasa.gov/observatories/learning/swift/classroom/docs/Kepler.pdf | 404 | `static/data/science/orbits/keplers-laws.json`, `build/ar/science/orbits/keplers-laws.html`, `build/de/science/orbits/keplers-laws.html` +12 |
-| https://mars.nasa.gov/mars-exploration/missions/mars-polar-lander/ | 404 | `static/data/fleet/lander/mars-polar-lander.json`, `static/data/link-provenance.json` |
-| https://nssdc.gsfc.nasa.gov/planetary/galileo_probe.html | 404 | `static/data/link-provenance.json`, `static/data/missions/jupiter/galileo.json` |
-| https://nssdc.gsfc.nasa.gov/planetary/glossary.html | 404 | `static/data/science/orbits/apsides.json`, `build/ar/science/orbits/apsides.html`, `build/de/science/orbits/apsides.html` +12 |
-| https://nssdc.gsfc.nasa.gov/planetary/pioneer1011.html | 404 | `static/data/fleet/orbiter/pioneer-11.json`, `static/data/link-provenance.json` |
-| https://player.vimeo.com/video/$ | 404 | `src/lib/video-provenance.ts` |
-| https://sci.esa.int/web/jwst-nirspec/-/45727-jwst-orbit-around-the-second-lagrange-point | 404 | `static/data/science/orbits/lagrange-points.json`, `build/ar/science/orbits/lagrange-points.html`, `build/de/science/orbits/lagrange-points.html` +12 |
-| https://science.nasa.gov/exoplanet-catalog/kepler-16-b/ | 404 | `static/data/culture-doors.json` |
-| https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-distance-ladder/ | 404 | `static/data/science/cosmology/cosmic-distance-ladder.json`, `build/ar/science/cosmology/cosmic-distance-ladder.html`, `build/de/science/cosmology/cosmic-distance-ladder.html` +12 |
-| https://science.nasa.gov/mission/voyager/golden-record/ | 404 | `static/data/culture-doors.json` |
-| https://science.nasa.gov/resource/the-large-and-small-magellanic-clouds/ | 404 | `static/data/science/observation/magellanic-clouds.json`, `build/ar/science/observation/magellanic-clouds.html`, `build/de/science/observation/magellanic-clouds.html` +12 |
-| https://science.nasa.gov/solar-system/comets/oumuamua-the-first-interstellar-object/ | 404 | `static/data/small-bodies.json` |
-| https://science.nasa.gov/universe/galaxies/milky-way/ | 404 | `static/data/science/observation/our-galaxy.json`, `build/ar/science/observation/our-galaxy.html`, `build/de/science/observation/our-galaxy.html` +12 |
-| https://science.nasa.gov/universe/the-universe-at-large/ | 404 | `static/data/science/cosmology/large-scale-structure.json`, `build/ar/science/cosmology/large-scale-structure.html`, `build/de/science/cosmology/large-scale-structure.html` +12 |
-| https://science.nasa.gov/universe/wormholes-explained/ | 404 | `static/data/science/observation/wormholes.json`, `build/ar/science/observation/wormholes.html`, `build/de/science/observation/wormholes.html` +12 |
-| https://spaceflight101.com/spacerockets/ariane-5-eca/ | 404 | `static/data/launch-profiles/ariane-5.json` |
-| https://spaceflight101.com/spacerockets/atlas-v-541/ | 404 | `static/data/launch-profiles/atlas-v.json` |
-| https://spaceflight101.com/spacerockets/cz-2f/ | 404 | `static/data/launch-profiles/long-march-2f.json` |
-| https://spaceflight101.com/spacerockets/falcon-9-ft/ | 404 | `static/data/launch-profiles/falcon-9.json` |
-| https://spaceflight101.com/spacerockets/h-iia/ | 404 | `static/data/launch-profiles/h-iia.json` |
-| https://spaceflight101.com/spacerockets/proton-k/ | 404 | `static/data/launch-profiles/proton-k.json` |
-| https://spaceflight101.com/spacerockets/saturn-ib/ | 404 | `static/data/launch-profiles/saturn-ib.json` |
-| https://spaceflight101.com/spacerockets/saturn-v/ | 404 | `static/data/launch-profiles/saturn-v.json` |
-| https://spaceflight101.com/spacerockets/space-shuttle/ | 404 | `static/data/launch-profiles/space-shuttle-stack.json` |
-| https://spaceflight101.com/spacerockets/titan-ii/ | 404 | `static/data/launch-profiles/titan-ii-glv.json` |
-| https://spaceflight101.com/spacerockets/vostok/ | 404 | `static/data/launch-profiles/vostok-k.json` |
-| https://www.arianespace.com/vehicle/ariane-5/ | 404 | `static/data/launch-profiles/ariane-5.json` |
-| https://www.astro.umd.edu/~hamilton/research/preprints/HamKri97.pdf | 404 | `static/data/science/orbits/hill-sphere.json`, `build/ar/science/orbits/hill-sphere.html`, `build/de/science/orbits/hill-sphere.html` +12 |
-| https://www.bis-space.com/what-we-do/projects/project-daedalus | 404 | `static/data/science/propulsion/fusion-propulsion.json`, `build/ar/science/propulsion/fusion-propulsion.html`, `build/de/science/propulsion/fusion-propulsion.html` +12 |
-| https://www.cnsa.gov.cn/english/n6465645/n6465648/c6812114/content.html | 404 | `static/data/fleet/orbiter/tianwen-1.json`, `static/data/link-provenance.json` |
-| https://www.damninteresting.com/category/cosmos/ | 404 | `src/routes/science/reading-list/+page.svelte`, `build/ar/science/reading-list.html`, `build/de/science/reading-list.html` +12 |
-| https://www.energy.gov/ne/articles/history-nuclear-thermal-propulsion-nerva | 404 | `static/data/science/propulsion/nuclear-thermal.json`, `build/ar/science/propulsion/nuclear-thermal.html`, `build/de/science/propulsion/nuclear-thermal.html` +12 |
-| https://www.esa.int/About_Us/Ministerial_Council_2019/Moon_Village | 404 | `static/data/science/life-in-space/lunar-habitat-design.json`, `build/ar/science/life-in-space/lunar-habitat-design.html`, `build/de/science/life-in-space/lunar-habitat-design.html` +12 |
-| https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_overview | 404 | `static/data/programs/ariane.json`, `build/ar/programs/ariane.html`, `build/de/programs/ariane.html` +12 |
-| https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Artemis | 404 | `static/data/programs/artemis.json`, `build/ar/programs/artemis.html`, `build/de/programs/artemis.html` +12 |
-| https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/China_s_space_station | 404 | `static/data/programs/tiangong.json`, `build/ar/programs/tiangong.html`, `build/de/programs/tiangong.html` +12 |
-| https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station/Advanced_Closed_Loop_System | 404 | `static/data/science/life-in-space/eclss-life-support.json`, `build/ar/science/life-in-space/eclss-life-support.html`, `build/de/science/life-in-space/eclss-life-support.html` +12 |
-| https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/MELiSSA | 404 | `static/data/science/life-in-space/food-production-off-world.json`, `build/ar/science/life-in-space/food-production-off-world.html`, `build/de/science/life-in-space/food-production-off-world.html` +12 |
-| https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens/Huygens_facts_and_figures | 404 | `static/data/link-provenance.json`, `static/data/missions/saturn/huygens.json` |
-| https://www.esa.int/Science_Exploration/Space_Science/Exoplanet_Mission_Letter_of_Intent_Programme | 404 | `static/data/science/observation/spectroscopy.json`, `build/ar/science/observation/spectroscopy.html`, `build/de/science/observation/spectroscopy.html` +12 |
-| https://www.esa.int/Science_Exploration/Space_Science/Gaia/Gaia_data_release_3 | 404 | `static/data/science/observation/dwarf-spheroidals.json`, `build/ar/science/observation/dwarf-spheroidals.html`, `build/de/science/observation/dwarf-spheroidals.html` +12 |
-| https://www.esa.int/Science_Exploration/Space_Science/Gaia/The_colour_of_the_Milky_Way | 404 | `static/data/science/observation/hertzsprung-russell.json`, `build/ar/science/observation/hertzsprung-russell.html`, `build/de/science/observation/hertzsprung-russell.html` +12 |
-| https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Philae | 404 | `static/data/small-bodies.json` |
-| https://www.gctc.ru/main.php?id=85 | 404 | `static/data/science/life-in-space/pre-flight-training.json`, `build/ar/science/life-in-space/pre-flight-training.html`, `build/de/science/life-in-space/pre-flight-training.html` +12 |
-| https://www.grc.nasa.gov/www/k-12/airplane/fwrat.html | 500 | `static/data/link-provenance.json`, `src/lib/physics/registry/mechanics.ts`, `build/ar/lab.html` +13 |
-| https://www.grc.nasa.gov/www/k-12/airplane/kepler.html | 500 | `static/data/science/orbits/true-anomaly.json`, `build/ar/science/orbits/true-anomaly.html`, `build/de/science/orbits/true-anomaly.html` +12 |
-| https://www.grc.nasa.gov/www/k-12/airplane/orbit.html | 500 | `static/data/science/orbits/vis-viva.json`, `static/data/science/transfers/conic-sections.json`, `build/ar/science/orbits/vis-viva.html` +27 |
-| https://www.grc.nasa.gov/www/k-12/airplane/orbtrans.html | 500 | `static/data/science/transfers/hohmann-transfer.json`, `build/ar/science/transfers/hohmann-transfer.html`, `build/de/science/transfers/hohmann-transfer.html` +12 |
-| https://www.grc.nasa.gov/www/k-12/airplane/rktpow.html | 500 | `static/data/science/propulsion/engine-types.json`, `static/data/science/propulsion/gas-generator.json`, `build/ar/science/propulsion/engine-types.html` +27 |
-| https://www.grc.nasa.gov/www/k-12/airplane/specimp.html | 500 | `static/data/science/propulsion/specific-impulse.json`, `build/ar/science/propulsion/specific-impulse.html`, `build/de/science/propulsion/specific-impulse.html` +12 |
-| https://www.grc.nasa.gov/www/k-12/airplane/termv.html | 500 | `static/data/link-provenance.json`, `static/data/science/mission-phases/terminal-velocity.json`, `src/lib/physics/registry/descent.ts` +14 |
-| https://www.grc.nasa.gov/www/k-12/airplane/thrsteq.html | 500 | `static/data/science/propulsion/thrust-and-twr.json`, `build/ar/science/propulsion/thrust-and-twr.html`, `build/de/science/propulsion/thrust-and-twr.html` +12 |
-| https://www.grc.nasa.gov/www/k-12/rocket/bgmr.html | 500 | `src/routes/science/reading-list/+page.svelte`, `build/ar/science/reading-list.html`, `build/de/science/reading-list.html` +12 |
-| https://www.grc.nasa.gov/www/k-12/rocket/rktpow.html | 500 | `static/data/link-provenance.json`, `src/lib/physics/registry/mechanics.ts`, `build/ar/lab.html` +13 |
-| https://www.grc.nasa.gov/www/k-12/rocket/rktstage.html | 500 | `static/data/link-provenance.json`, `src/lib/physics/registry/rocket-sizing.ts` |
-| https://www.grc.nasa.gov/www/k-12/rocket/rktthsum.html | 500 | `static/data/link-provenance.json`, `src/lib/physics/registry/mechanics.ts`, `src/lib/physics/registry/rocket-sizing.ts` +14 |
-| https://www.grc.nasa.gov/www/k-12/rocket/specimp.html | 500 | `static/data/link-provenance.json`, `src/lib/physics/registry/descent.ts` |
-| https://www.humancopilot.eu/$ | 404 | `src/routes/+page.svelte` |
-| https://www.iau.org/news/pressreleases/detail/iau0603/ | 404 | `static/data/small-bodies.json` |
-| https://www.iau.org/public/themes/satellite-constellations/ | 404 | `static/data/programs/kuiper.json`, `static/data/programs/starlink.json`, `build/ar/programs/kuiper.html` +27 |
-| https://www.iau.org/static/resolutions/IAU2012_English.pdf | 404 | `static/data/science/scales-time/au.json`, `build/ar/science/scales-time/au.html`, `build/de/science/scales-time/au.html` +12 |
-| https://www.isro.gov.in/Chandrayaan_3.html | 404 | `static/data/text-sources.json` |
-| https://www.isro.gov.in/Chandrayaan1.html | 404 | `static/data/science/planets/lunar-ice.json`, `build/ar/science/planets/lunar-ice.html`, `build/de/science/planets/lunar-ice.html` +12 |
-| https://www.isro.gov.in/Chandrayaan3_New.html | 404 | `static/data/fleet/lander/vikram-cy3.json`, `static/data/fleet/rover/pragyan.json`, `static/data/link-provenance.json` +2 |
-| https://www.isro.gov.in/mars-orbiter-mission-spacecraft.html | 404 | `static/data/programs/mangalyaan.json`, `build/ar/programs/mangalyaan.html`, `build/de/programs/mangalyaan.html` +12 |
-| https://www.isro.gov.in/MarsOrbiter.html | 404 | `static/data/essays/delta-v.json`, `build/ar/essays/delta-v.html`, `build/de/essays/delta-v.html` +12 |
 | https://www.jaxa.jp/about/copyright_e.html | 404 | `static/data/image-provenance.json` |
-| https://www.keckobservatory.org/about/the-observatory/laser-guide-star/ | 404 | `static/data/science/observation/adaptive-optics.json`, `build/ar/science/observation/adaptive-optics.html`, `build/de/science/observation/adaptive-optics.html` +12 |
-| https://www.mbrsc.ae/our-projects/emirates-mars-mission/ | 404 | `static/data/text-sources.json` |
-| https://www.mhi.com/products/space/rocket_h2a.html | 404 | `static/data/launch-profiles/h-iia.json` |
-| https://www.msss.com/mars_images/moc/MENU.html | 404 | `src/lib/surface-scene/SurfaceScene.svelte` |
-| https://www.nasa.gov/artemisprogram/artemis-iv/ | 404 | `static/data/descent-profiles/artemis4.json` |
-| https://www.nasa.gov/audience/foreducators/spacefood/ | 404 | `static/data/science/life-in-space/sleep-nutrition-circadian.json`, `build/ar/science/life-in-space/sleep-nutrition-circadian.html`, `build/de/science/life-in-space/sleep-nutrition-circadian.html` +12 |
-| https://www.nasa.gov/centers-and-facilities/goddard/dr-robert-h-goddard-american-rocketry-pioneer/ | 404 | `static/data/science/history/goddard-liquid-rocket-1926.json`, `build/ar/science/history/goddard-liquid-rocket-1926.html`, `build/de/science/history/goddard-liquid-rocket-1926.html` +12 |
-| https://www.nasa.gov/centers-and-facilities/kennedy/growing-plants-in-space/ | 404 | `static/data/science/life-in-space/food-production-off-world.json`, `build/ar/science/life-in-space/food-production-off-world.html`, `build/de/science/life-in-space/food-production-off-world.html` +12 |
-| https://www.nasa.gov/centers-and-facilities/marshall/antimatter-propulsion/ | 404 | `static/data/science/propulsion/antimatter-propulsion.json`, `build/ar/science/propulsion/antimatter-propulsion.html`, `build/de/science/propulsion/antimatter-propulsion.html` +12 |
-| https://www.nasa.gov/centers-and-facilities/marshall/solid-rocket-boosters/ | 404 | `static/data/science/propulsion/fuels-and-oxidizers.json`, `build/ar/science/propulsion/fuels-and-oxidizers.html`, `build/de/science/propulsion/fuels-and-oxidizers.html` +12 |
-| https://www.nasa.gov/centers/johnson/pdf/383322main_018%20-%20Trajectory.pdf | 404 | `static/data/science/mission-phases/trans-x-injection.json`, `static/data/science/propulsion/dv-budget.json`, `static/data/science/propulsion/v-infinity.json` +57 |
-| https://www.nasa.gov/commercial-crew-program/ | 404 | `static/data/programs/spacex.json`, `build/ar/programs/spacex.html`, `build/de/programs/spacex.html` +12 |
-| https://www.nasa.gov/communicating-with-missions/dsoc/ | 404 | `static/data/science/mission-phases/optical-comms.json`, `build/ar/science/mission-phases/optical-comms.html`, `build/de/science/mission-phases/optical-comms.html` +12 |
-| https://www.nasa.gov/communicating-with-missions/dtn/ | 404 | `static/data/science/mission-phases/interplanetary-internet.json`, `build/ar/science/mission-phases/interplanetary-internet.html`, `build/de/science/mission-phases/interplanetary-internet.html` +12 |
-| https://www.nasa.gov/directorates/somd/space-communications-navigation-program/deep-space-network/ | 404 | `static/data/essays/space-comm-arrays.json`, `build/ar/essays/space-comm-arrays.html`, `build/de/essays/space-comm-arrays.html` +12 |
-| https://www.nasa.gov/directorates/stmd/game-changing-development/ion-propulsion/ | 404 | `static/data/science/propulsion/ion-drive.json`, `build/ar/science/propulsion/ion-drive.html`, `build/de/science/propulsion/ion-drive.html` +12 |
-| https://www.nasa.gov/feature/about-the-gateway/ | 404 | `static/data/science/mission-phases/nrho.json`, `build/ar/science/mission-phases/nrho.html`, `build/de/science/mission-phases/nrho.html` +12 |
-| https://www.nasa.gov/feature/jpl/how-nasa-s-perseverance-mars-team-adjusted-to-work-in-the-time-of-coronavirus | 404 | `static/data/science/transfers/transfer-ellipse.json`, `build/ar/science/transfers/transfer-ellipse.html`, `build/de/science/transfers/transfer-ellipse.html` +12 |
-| https://www.nasa.gov/feature/jpl/parker-solar-probe-completes-its-final-venus-flyby/ | 404 | `static/data/science/propulsion/oberth-effect.json`, `build/ar/science/propulsion/oberth-effect.html`, `build/de/science/propulsion/oberth-effect.html` +12 |
-| https://www.nasa.gov/general/spacesuits/ | 404 | `static/data/science/life-in-space/suit-lineage.json`, `build/ar/science/life-in-space/suit-lineage.html`, `build/de/science/life-in-space/suit-lineage.html` +12 |
-| https://www.nasa.gov/general/thermal-protection-systems/ | 404 | `static/data/science/mission-phases/entry-heating.json`, `build/ar/science/mission-phases/entry-heating.html`, `build/de/science/mission-phases/entry-heating.html` +12 |
-| https://www.nasa.gov/history/50-years-ago-skylab-1-launches/ | 404 | `static/data/programs/skylab.json`, `build/ar/programs/skylab.html`, `build/de/programs/skylab.html` +12 |
-| https://www.nasa.gov/history/apollo-soyuz/ | 404 | `static/data/programs/soyuz.json`, `build/ar/programs/soyuz.html`, `build/de/programs/soyuz.html` +12 |
-| https://www.nasa.gov/history/columbia-accident-investigation-board-caib/ | 404 | `static/data/programs/space-shuttle.json`, `build/ar/programs/space-shuttle.html`, `build/de/programs/space-shuttle.html` +12 |
-| https://www.nasa.gov/history/project-gemini/ | 404 | `static/data/link-provenance.json`, `static/data/missions/earth/gemini12.json`, `static/data/missions/earth/gemini3.json` +19 |
-| https://www.nasa.gov/history/project-mercury/ | 404 | `static/data/programs/mercury.json`, `build/ar/programs/mercury.html`, `build/de/programs/mercury.html` +12 |
-| https://www.nasa.gov/history/results-of-the-first-us-manned-orbital-space-flight/ | 404 | `static/data/descent-profiles/friendship-7.json` |
-| https://www.nasa.gov/history/shuttle-mir/ | 404 | `static/data/programs/mir.json`, `build/ar/programs/mir.html`, `build/de/programs/mir.html` +12 |
-| https://www.nasa.gov/hrp/elements/behavioral-health-and-performance/ | 404 | `static/data/science/life-in-space/crew-dynamics-psychology.json`, `build/ar/science/life-in-space/crew-dynamics-psychology.html`, `build/de/science/life-in-space/crew-dynamics-psychology.html` +12 |
-| https://www.nasa.gov/humans-in-space/astronauts/astronaut-selection/ | 404 | `static/data/science/life-in-space/crew-selection.json`, `build/ar/science/life-in-space/crew-selection.html`, `build/de/science/life-in-space/crew-selection.html` +12 |
-| https://www.nasa.gov/humans-in-space/astronauts/training/ | 404 | `static/data/science/life-in-space/pre-flight-training.json`, `build/ar/science/life-in-space/pre-flight-training.html`, `build/de/science/life-in-space/pre-flight-training.html` +12 |
-| https://www.nasa.gov/humans-in-space/human-research-program/ | 404 | `static/data/essays/the-body-in-the-dark.json`, `build/ar/essays/the-body-in-the-dark.html`, `build/de/essays/the-body-in-the-dark.html` +12 |
-| https://www.nasa.gov/humans-in-space/nasa-scientists-investigate-how-lunar-dust-could-affect-astronaut-health/ | 404 | `static/data/science/planets/regolith.json`, `build/ar/science/planets/regolith.html`, `build/de/science/planets/regolith.html` +12 |
-| https://www.nasa.gov/humans-in-space/nasas-twins-study/ | 404 | `static/data/science/life-in-space/long-duration-effects.json`, `build/ar/science/life-in-space/long-duration-effects.html`, `build/de/science/life-in-space/long-duration-effects.html` +12 |
-| https://www.nasa.gov/humans-in-space/sleep-in-space/ | 404 | `static/data/science/life-in-space/sleep-nutrition-circadian.json`, `build/ar/science/life-in-space/sleep-nutrition-circadian.html`, `build/de/science/life-in-space/sleep-nutrition-circadian.html` +12 |
-| https://www.nasa.gov/image-article/andromeda-galaxy-galex-image/ | 404 | `static/data/science/observation/andromeda-galaxy.json`, `build/ar/science/observation/andromeda-galaxy.html`, `build/de/science/observation/andromeda-galaxy.html` +12 |
-| https://www.nasa.gov/international-space-station/harmony/ | 404 | `static/data/science/space-stations/node-module.json`, `build/ar/science/space-stations/node-module.html`, `build/de/science/space-stations/node-module.html` +12 |
-| https://www.nasa.gov/international-space-station/space-station-elements/ | 404 | `static/data/text-sources.json` |
-| https://www.nasa.gov/international-space-station/the-international-space-station-electrical-power-system/ | 404 | `static/data/science/space-stations/solar-power-budget.json`, `build/ar/science/space-stations/solar-power-budget.html`, `build/de/science/space-stations/solar-power-budget.html` +12 |
-| https://www.nasa.gov/learn/space-tech/spacecraft-navigation/ | 404 | `static/data/science/mission-phases/dead-reckoning.json`, `build/ar/science/mission-phases/dead-reckoning.html`, `build/de/science/mission-phases/dead-reckoning.html` +12 |
-| https://www.nasa.gov/lunar-terrain-vehicle/ | 404 | `static/data/science/life-in-space/surface-mobility-rovers.json`, `build/ar/science/life-in-space/surface-mobility-rovers.html`, `build/de/science/life-in-space/surface-mobility-rovers.html` +12 |
-| https://www.nasa.gov/mission/apollo/ | 404 | `static/data/satellites.json` |
-| https://www.nasa.gov/mission/expeditions/ | 404 | `static/data/science/space-stations/expedition-cadence.json`, `build/ar/science/space-stations/expedition-cadence.html`, `build/de/science/space-stations/expedition-cadence.html` +12 |
-| https://www.nasa.gov/mission/laser-communications-relay-demonstration-lcrd/ | 404 | `static/data/essays/space-comm-arrays.json`, `static/data/science/mission-phases/optical-comms.json`, `build/ar/essays/space-comm-arrays.html` +27 |
-| https://www.nasa.gov/mission/mercury-atlas-6/ | 404 | `static/data/descent-profiles/friendship-7.json` |
-| https://www.nasa.gov/mission/mercury-redstone-3/ | 404 | `static/data/launch-profiles/mercury-redstone.json` |
-| https://www.nasa.gov/mission/new-horizons/ | 404 | `static/data/satellites.json` |
-| https://www.nasa.gov/mission/osiris-rex/ | 404 | `static/data/descent-profiles/osiris-rex.json` |
-| https://www.nasa.gov/missions/lro/nasa-research-confirms-water-exists-on-sunlit-surface-of-moon/ | 404 | `static/data/science/planets/lunar-ice.json`, `build/ar/science/planets/lunar-ice.html`, `build/de/science/planets/lunar-ice.html` +12 |
-| https://www.nasa.gov/missions/mars-2020-perseverance/perseverance-rover/nasa-s-mars-moxie/ | 404 | `static/data/science/life-in-space/mars-habitat-design.json`, `build/ar/science/life-in-space/mars-habitat-design.html`, `build/de/science/life-in-space/mars-habitat-design.html` +12 |
-| https://www.nasa.gov/missions/station/iss-research/spacewalking-the-hard-way/ | 404 | `static/data/science/life-in-space/eva-operations.json`, `build/ar/science/life-in-space/eva-operations.html`, `build/de/science/life-in-space/eva-operations.html` +12 |
-| https://www.nasa.gov/missions/station/iss-research/the-tyranny-of-the-rocket-equation/ | 404 | `static/data/essays/delta-v.json`, `build/ar/essays/delta-v.html`, `build/de/essays/delta-v.html` +12 |
-| https://www.nasa.gov/missions/tech-demonstration/advanced-composite-solar-sail-system/ | 404 | `static/data/science/propulsion/solar-sail.json`, `build/ar/science/propulsion/solar-sail.html`, `build/de/science/propulsion/solar-sail.html` +12 |
-| https://www.nasa.gov/news-release/nasas-oxygen-generating-experiment-moxie-completes-mars-mission/ | 404 | `static/data/science/life-in-space/isru-resource-utilization.json`, `build/ar/science/life-in-space/isru-resource-utilization.html`, `build/de/science/life-in-space/isru-resource-utilization.html` +12 |
-| https://www.nasa.gov/reference/extravehicular-activity-eva/ | 404 | `static/data/science/life-in-space/eva-operations.json`, `static/data/science/life-in-space/eva-physiology.json`, `static/data/science/life-in-space/eva-suits.json` +42 |
-| https://www.nasa.gov/reference/space-launch-system/rs-25-engine/ | 404 | `static/data/science/propulsion/staged-combustion.json`, `build/ar/science/propulsion/staged-combustion.html`, `build/de/science/propulsion/staged-combustion.html` +12 |
-| https://www.nasa.gov/sites/default/files/atoms/files/porkchop_plot_tutorial.pdf | 404 | `static/data/science/porkchop/what-is-a-porkchop.json`, `build/ar/science/porkchop/what-is-a-porkchop.html`, `build/de/science/porkchop/what-is-a-porkchop.html` +12 |
-| https://www.nasa.gov/smallsat-institute/sst-soa/star-trackers/ | 404 | `static/data/science/mission-phases/star-trackers.json`, `build/ar/science/mission-phases/star-trackers.html`, `build/de/science/mission-phases/star-trackers.html` +12 |
-| https://www.nasa.gov/solar-system/nasas-new-horizons-plans-july-4-return-to-normal-operations/ | 404 | `static/data/essays/navigation.json`, `build/ar/essays/navigation.html`, `build/de/essays/navigation.html` +12 |
-| https://www.nasa.gov/space-technology-mission-directorate/nuclear-thermal-propulsion-draco-program/ | 404 | `static/data/science/propulsion/engine-types.json`, `static/data/science/propulsion/nuclear-thermal.json`, `build/ar/science/propulsion/engine-types.html` +27 |
-| https://www.nasa.gov/spacewalks/ | 404 | `static/data/science/mission-phases/eva.json`, `build/ar/science/mission-phases/eva.html`, `build/de/science/mission-phases/eva.html` +12 |
-| https://www.nasa.gov/technology/communications/optical-communications/ | 404 | `static/data/science/mission-phases/optical-comms.json`, `build/ar/science/mission-phases/optical-comms.html`, `build/de/science/mission-phases/optical-comms.html` +12 |
-| https://www.nasa.gov/technology/moxie-oxygen-on-mars/ | 404 | `static/data/essays/going-to-mars.json`, `build/ar/essays/going-to-mars.html`, `build/de/essays/going-to-mars.html` +12 |
-| https://www.nasa.gov/wp-content/uploads/2008/10/64249main_ffs_factsheets_hbp_atrophy.pdf | 404 | `static/data/science/life-in-space/muscle-atrophy.json`, `build/ar/science/life-in-space/muscle-atrophy.html`, `build/de/science/life-in-space/muscle-atrophy.html` +12 |
-| https://www.nasa.gov/wp-content/uploads/2015/01/eclss_fact_sheet.pdf | 404 | `static/data/science/life-in-space/eclss-life-support.json`, `build/ar/science/life-in-space/eclss-life-support.html`, `build/de/science/life-in-space/eclss-life-support.html` +12 |
-| https://www.nasa.gov/wp-content/uploads/2015/02/373665main_nasa-sp-2009-566.pdf | 404 | `static/data/science/life-in-space/mars-human-architecture.json`, `build/ar/science/life-in-space/mars-human-architecture.html`, `build/de/science/life-in-space/mars-human-architecture.html` +12 |
-| https://www.nasa.gov/wp-content/uploads/2017/02/rocket-equation-2.pdf | 404 | `static/data/science/propulsion/tsiolkovsky.json`, `build/ar/science/propulsion/tsiolkovsky.html`, `build/de/science/propulsion/tsiolkovsky.html` +12 |
-| https://www.nasa.gov/wp-content/uploads/2017/08/space_launch_basics.pdf | 404 | `static/data/science/mission-phases/gravity-turn.json`, `static/data/science/mission-phases/launch.json`, `static/data/science/mission-phases/max-q.json` +42 |
-| https://www.nasa.gov/wp-content/uploads/2018/06/rs-25_fact_sheet.pdf | 404 | `static/data/science/propulsion/throttling-and-gimbaling.json`, `build/ar/science/propulsion/throttling-and-gimbaling.html`, `build/de/science/propulsion/throttling-and-gimbaling.html` +12 |
-| https://www.northropgrumman.com/space/space-based-infrared-system-sbirs | 404 | `static/data/fleet/constellation/sbirs-heo.json`, `static/data/link-provenance.json` |
-| https://www.planetary.org/space-missions/near-shoemaker | 404 | `static/data/link-provenance.json`, `static/data/missions/asteroid/near-shoemaker.json` |
-| https://www.russianspaceweb.com/rocket_vostok.html | 404 | `static/data/launch-profiles/vostok-k.json` |
-| https://www.russianspaceweb.com/vostok.html | 404 | `static/data/programs/vostok.json`, `build/ar/programs/vostok.html`, `build/de/programs/vostok.html` +12 |
-| https://www.uahirise.org/phobos/ | 404 | `static/data/satellites.json` |
-| https://www.wmfe.org/podcasts/are-we-there-yet | 404 | `src/routes/science/watch-list/+page.svelte`, `build/ar/science/watch-list.html`, `build/de/science/watch-list.html` +12 |
-| https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%95%8F%E4%B8%80%E8%99%9F | 404 | `static/data/link-provenance.json`, `static/data/mars-sites.json`, `static/data/missions/mars/tianwen1.json` |
-| https://zh.wikipedia.org/wiki/%E9%95%BF%E5%BE%81%E4%BA%94%E5%8F%B7%E7%B3%BB%E5%88%97%E8%BF%90%E8%BD%BD%E7%81%AB%E7%AE%AD | 404 | `static/data/fleet/launcher/long-march-5.json`, `static/data/link-provenance.json` |
 
 ## Inconclusive — recheck by hand
 
 | URL | Status | Where |
 | --- | --- | --- |
-| http://en.cmse.gov.cn/ | timeout | `static/data/earth-objects.json`, `static/data/fleet/cargo-spacecraft/tianzhou.json`, `static/data/fleet/crewed-spacecraft/shenzhou.json` +50 |
 | http://localhost:8093 | error ECONNREFUSED | `src/lib/lab/ask/config.ts` |
 | http://www.ciclops.org/ | error ENOTFOUND | `static/data/source-logos.json` |
-| http://www.cnsa.gov.cn/english/n6465652/n6465653/index.html | timeout | `static/data/fleet/launch-site/wenchang-lc-101.json`, `static/data/link-provenance.json` |
 | http://www.jpl.nasa.gov/news/news.php?release=2014-406 | 403 | `static/data/image-provenance.json` |
-| http://www.spacechina.com/n25/n2014789/n2014804/index.html | timeout | `static/data/fleet/launcher/long-march-3b.json`, `static/data/link-provenance.json` |
 | http://x | error EAI_AGAIN | `src/lib/surface-scene/SurfaceScene.svelte` |
 | https://agupubs.onlinelibrary.wiley.com/ | 403 | `static/data/source-logos.json` |
 | https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555 | 403 | `static/data/image-provenance.json` |
@@ -283,10 +94,10 @@ Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every
 | https://californiasciencecenter.org/ | 403 | `static/data/source-logos.json` |
 | https://californiasciencecenter.org/exhibits/air-space/endeavour-the-california-story | 403 | `static/data/fleet/crewed-spacecraft/endeavour.json`, `static/data/link-provenance.json` |
 | https://californiasciencecenter.org/exhibits/air-space/mission-26-the-big-endeavour | 403 | `static/data/link-provenance.json`, `static/data/missions/earth/apollo-soyuz.json` |
-| https://data.gov.in/Godl | error EHOSTUNREACH | `static/data/badge-provenance.json`, `static/data/image-provenance.json` |
-| https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf | error ECONNREFUSED | `static/data/image-provenance.json` |
+| https://centrespatialguyanais.cnes.fr/en | 502 | `static/data/fleet/launch-site/kourou-ela-3.json`, `static/data/link-provenance.json` |
+| https://data.gov.in/Godl | error ECONNREFUSED | `static/data/badge-provenance.json`, `static/data/image-provenance.json` |
+| https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf | error EHOSTUNREACH | `static/data/image-provenance.json` |
 | https://doi.org/10.1146/annurev-astro-081710-102521 | 403 | `static/data/fleet/orbiter/ulysses.json`, `static/data/link-provenance.json` |
-| https://en.cmse.gov.cn/ | timeout | `static/data/fleet/station/tiangong.json`, `static/data/link-provenance.json` |
 | https://en.roscosmos.ru/204/ | error CERT_HAS_EXPIRED | `static/data/fleet/launch-site/baikonur-1-5.json`, `static/data/link-provenance.json` |
 | https://en.roscosmos.ru/205/ | error CERT_HAS_EXPIRED | `static/data/fleet/launch-site/baikonur-31-6.json`, `static/data/link-provenance.json` |
 | https://en.roscosmos.ru/206/ | error CERT_HAS_EXPIRED | `static/data/fleet/launch-site/plesetsk-43.json`, `static/data/link-provenance.json` |
@@ -294,15 +105,14 @@ Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every
 | https://fernbank.edu | timeout | `static/data/museums.json` |
 | https://forum.nasaspaceflight.com/ | 403 | `src/routes/science/reading-list/+page.svelte`, `build/ar/science/reading-list.html`, `build/de/science/reading-list.html` +12 |
 | https://global.jaxa.jp/projects/sas/muses_c/ | 403 | `static/data/small-bodies.json` |
+| https://ieeexplore.ieee.org/ | 418 | `static/data/source-logos.json` |
+| https://imagearchives.esac.esa.int/index.php?/category/63 | 503 | `static/data/link-provenance.json`, `static/data/missions/comet/rosetta.json` |
 | https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-75.49071175275735,37.83170032339203,-75.48488824724264,37.83629967660798&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
 | https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.54731602811691,28.467100323392025,-80.5420839718831,28.471699676607976&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
 | https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.54791657311843,28.489100323392023,-80.54268342688157,28.493699676607974&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
 | https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.56401732473795,28.519400323392023,-80.55878267526207,28.523999676607975&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
 | https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.56871546641646,28.444400323392024,-80.56348453358355,28.448999676607976&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.57541524636814,28.435500323392024,-80.57018475363186,28.440099676607975&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.57981832124584,28.559500323392026,-80.57458167875417,28.564099676607977&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
 | https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.58561884890312,28.580700323392023,-80.58038115109687,28.585299676607974&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.60671947686173,28.605900323392024,-80.60148052313828,28.610499676607976&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
 | https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.62341995335284,28.625000323392026,-80.61818004664717,28.629599676607977&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
 | https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-97.1585585593205,25.994700323392024,-97.15344144067952,25.999299676607976&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
 | https://mentallandscape.com/ | error ECONNRESET | `static/data/source-logos.json` |
@@ -310,7 +120,6 @@ Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every
 | https://mentallandscape.com/V_Lavochkin2.htm | error ECONNRESET | `static/data/link-provenance.json`, `static/data/missions/venus/venera-13.json` |
 | https://murray-lab.caltech.edu/CTX/ | error UNABLE_TO_VERIFY_LEAF_SIGNATURE | `static/data/source-logos.json` |
 | https://muzeulmilitar.ro | error ENOTFOUND | `static/data/museums.json` |
-| https://ned.ipac.caltech.edu/level5/March02/Tully/Tully2.html | error ECONNRESET | `static/data/science/observation/local-group.json`, `build/ar/science/observation/local-group.html`, `build/de/science/observation/local-group.html` +12 |
 | https://oneweb.net/ | 403 | `static/data/fleet/constellation/oneweb.json`, `static/data/link-provenance.json`, `static/data/source-logos.json` |
 | https://science.ksc.nasa.gov/shuttle/technology/sts-newsref/srb.html | error ETIMEDOUT | `src/lib/physics/propulsion/launcher-engines.ts` |
 | https://scihub.copernicus.eu/ | error EHOSTUNREACH | `static/data/fleet/constellation/sentinel-copernicus.json`, `static/data/link-provenance.json` |
@@ -332,8 +141,6 @@ Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every
 | https://www.annualreviews.org/ | 403 | `static/data/source-logos.json` |
 | https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029 | 403 | `static/data/link-provenance.json`, `i18n-src/ar/sun.json`, `i18n-src/de/sun.json` +12 |
 | https://www.annualreviews.org/doi/10.1146/annurev.earth.31.100901.141502 | 403 | `static/data/science/planets/magnetic-fields.json`, `build/ar/science/planets/magnetic-fields.html`, `build/de/science/planets/magnetic-fields.html` +12 |
-| https://www.asc-csa.gc.ca/eng/satellites/jwst/Default.asp | error ECONNRESET | `static/data/earth-objects.json`, `static/data/link-provenance.json` |
-| https://www.bis-space.com/what-we-do/projects/project-daedalus/ | timeout | `static/data/essays/interstellar-exploration.json`, `build/ar/essays/interstellar-exploration.html`, `build/de/essays/interstellar-exploration.html` +12 |
 | https://www.blueorigin.com/ | 429 rate-limited | `static/data/source-logos.json` |
 | https://www.blueorigin.com/blue-moon | 429 rate-limited | `static/data/descent-profiles/blue-moon-mk1.json` |
 | https://www.blueorigin.com/news/new-glenn-launches-nasa-escapade-lands-fully-reusable-booster | 429 rate-limited | `static/data/essays/reusable-launchers.json`, `build/ar/essays/reusable-launchers.html`, `build/de/essays/reusable-launchers.html` +12 |
@@ -427,4 +234,4 @@ Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every
 | https://zvezda-npp.ru/en/products/space-suits-and-systems/orlan-mks-spacesuit/ | error DEPTH_ZERO_SELF_SIGNED_CERT | `static/data/fleet/space-suit/orlan-mks.json`, `static/data/link-provenance.json` |
 | https://zvezda-npp.ru/en/products/space-suits-and-systems/sokol-kv-2-rescue-spacesuit/ | error DEPTH_ZERO_SELF_SIGNED_CERT | `static/data/fleet/space-suit/sokol-kv-2.json`, `static/data/link-provenance.json` |
 
-Moved (working, but redirected elsewhere): 325 — listed in `.cache/external-links-moved.md`.
+Moved (working, but redirected elsewhere): 331 — listed in `.cache/external-links-moved.md`.

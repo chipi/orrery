@@ -13,7 +13,7 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 ## [0.9.2] — 2026-10-31
 
 A quality release: the translations were read field by field and corrected in every
-language, the remaining English UI text was translated, a site-wide **glossary** was added,
+language, hard-coded English in page and panel markup was translated, a site-wide **glossary** was added,
 and the code went through a tech-debt pass (shared panel parts, the `/explore` page split,
 robustness fixes on the Lab API and MCP server, size budgets, an accessibility gate). More of
 the tech debt and further translation checks follow in the next release.

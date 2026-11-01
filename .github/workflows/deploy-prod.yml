@@ -176,7 +176,8 @@ jobs:
         if: steps.preflight.outputs.skip != 'true'
         uses: ./.github/actions/setup-node
 
-      - run: npm ci
+      # --ignore-scripts: no dependency install script runs in a job that holds deploy / bot secrets.
+      - run: npm ci --ignore-scripts
         if: steps.preflight.outputs.skip != 'true'
 
       - name: Build static bundle (the deploy unit)
@@ -564,7 +565,8 @@ jobs:
         with:
           fetch-depth: 1
       - uses: ./.github/actions/setup-node
-      - run: npm ci
+      # --ignore-scripts: no dependency install script runs in a job that holds deploy / bot secrets.
+      - run: npm ci --ignore-scripts
       - run: npx playwright install --with-deps chromium
       - name: Validate the live public deployment
         env:

@@ -118,6 +118,13 @@ const TASKS: Task[] = [
     args: ['scripts/validate-credits-bundling.ts'],
     groups: ['image'],
   },
+  {
+    // Every gallery image has a credit row; placeholder credits do not grow.
+    name: 'validate-gallery-credits',
+    cmd: 'tsx',
+    args: ['scripts/validate-gallery-credits.ts'],
+    groups: ['image'],
+  },
 ];
 
 interface TaskResult {

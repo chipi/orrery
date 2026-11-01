@@ -254,6 +254,7 @@ Image-related scripts split by role. The WebP-ladder + vision scripts live in `s
 |---|---|---|
 | `rebuild-gallery-manifests.ts` | Enumerates disk per surface → writes `<id, slot-count>` to `mission-galleries.json` + `fleet-galleries.json`. | After every sourcing pass |
 | `validate-gallery-counts.ts` | Asserts manifest ↔ disk parity. Catches silent 404s + hidden images. | Preflight |
+| `validate-gallery-credits.ts` | Every gallery image has a credit row in `image-provenance.json` (the other provenance checks only go row → file); placeholder credits ("NASA Images search result", "uncurated panel image") may not grow past `PLACEHOLDER_CEILING`. Known gaps listed in `KNOWN_MISSING`. | Preflight |
 | `audit-gallery-counts.ts` | Reports the drift table without failing. | Diagnostic |
 
 ### 5. Editorial controls

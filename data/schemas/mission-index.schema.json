@@ -61,7 +61,8 @@
         "enum": [
           "ACTIVE",
           "FLOWN",
-          "PLANNED"
+          "PLANNED",
+          "CANCELLED"
         ]
       },
       "year": {

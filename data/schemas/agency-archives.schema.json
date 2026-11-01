@@ -1,0 +1,303 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "agency-archives.schema.json",
+  "title": "Agency image-archive registry (ADR-047, schema v2)",
+  "description": "Per-agency multi-primary image source registry. Loose on purpose: the sub-records are curated prose-heavy notes whose optional fields grow per agency; only the structural skeleton the resolver reads is pinned.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "description",
+    "license_compatibility",
+    "tier_1_agencies",
+    "honest_gaps",
+    "tier_2_institutional",
+    "tier_3_failover",
+    "resolver_chain",
+    "exclusions_global"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 2
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license_compatibility": {
+      "type": "object",
+      "required": [
+        "allowed",
+        "excluded",
+        "policy"
+      ],
+      "properties": {
+        "allowed": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "excluded": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "policy": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "tier_1_agencies": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "label",
+          "credit_default",
+          "license_default",
+          "primaries"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "credit_default": {
+            "type": "string",
+            "minLength": 1
+          },
+          "license_default": {
+            "type": "string",
+            "minLength": 1
+          },
+          "primaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/primary"
+            }
+          },
+          "known_dark_or_restricted": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/restricted"
+            }
+          },
+          "auto_fetch_disabled": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "honest_gaps": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "reason",
+          "verified_at"
+        ],
+        "properties": {
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verified_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "manual_permission_contact": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "tier_2_institutional": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "url",
+          "kind",
+          "license",
+          "verified",
+          "verified_at",
+          "coverage",
+          "notes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https?://\\S+$"
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "license": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verified": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "verified_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "coverage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notes": {
+            "type": "string",
+            "minLength": 1
+          },
+          "auto_fetch_disabled": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "tier_3_failover": {
+      "type": "object",
+      "required": [
+        "id",
+        "label",
+        "url",
+        "kind",
+        "license"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://\\S+$"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "resolver_chain": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "exclusions_global": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "license",
+          "reason"
+        ],
+        "properties": {
+          "license": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "primary": {
+      "type": "object",
+      "required": [
+        "url",
+        "kind",
+        "license",
+        "verified"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "restricted": {
+      "type": "object",
+      "required": [
+        "url",
+        "reason",
+        "excluded"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "excluded": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

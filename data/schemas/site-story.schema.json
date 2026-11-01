@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "site-story.schema.json",
+  "title": "Site story (hand-curated chaptered photo narrative)",
+  "description": "null is a deliberate stub: the file exists so the id is listed in site-stories/index.json, and the loader renders no STORY tab for it.",
+  "oneOf": [
+    {
+      "type": "null"
+    },
+    {
+      "type": "object",
+      "required": [
+        "site",
+        "intro",
+        "chapters"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "site": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "intro": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chapters": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "images"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9_-]*$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "subtitle": {
+                "type": "string",
+                "minLength": 1
+              },
+              "images": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "src",
+                    "caption"
+                  ],
+                  "additionalProperties": true,
+                  "properties": {
+                    "src": {
+                      "type": "string",
+                      "pattern": "^/images/.+"
+                    },
+                    "caption": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "chapter": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

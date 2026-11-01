@@ -1,1 +1,0 @@
-function e(e){if(!e)return`lander`;let t=e.toUpperCase();return/\bCREWED\b/.test(t)?`crewed`:t.includes(`SAMPLE RETURN`)?`sample-return`:t.includes(`ROVER`)?`rover`:t.includes(`ORBITER`)?`orbiter`:`lander`}function t(e,t){return t===`ROSCOSMOS`?`soviet-petal`:(e??``).toLowerCase().includes(`rover`)?`rover`:`lander`}export{e as n,t};

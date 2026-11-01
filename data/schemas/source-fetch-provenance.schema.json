@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "source-fetch-provenance.schema.json",
+  "title": "Source-fetch provenance (hand-fetched mission images)",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "path",
+      "source_url",
+      "image_url",
+      "title",
+      "author",
+      "license_short",
+      "license_url",
+      "source"
+    ],
+    "additionalProperties": true,
+    "properties": {
+      "path": {
+        "type": "string",
+        "pattern": "^/images/.+"
+      },
+      "source_url": {
+        "type": "string",
+        "pattern": "^https?://\\S+$"
+      },
+      "image_url": {
+        "type": "string",
+        "pattern": "^https?://\\S+$"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "author": {
+        "type": "string",
+        "minLength": 1
+      },
+      "license_short": {
+        "type": "string",
+        "minLength": 1
+      },
+      "license_url": {
+        "type": "string",
+        "pattern": "^https?://\\S+$"
+      },
+      "source": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      }
+    }
+  }
+}

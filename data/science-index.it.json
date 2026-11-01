@@ -291,7 +291,7 @@
     "section": "lunar-suits",
     "title": "Tute lunari",
     "intro": "Una tuta lunare deve fare tutto ciò che fa una tuta EVA orbitale, e in più camminare per 7 ore sul suolo polveroso di regolite, a temperature che oscillano da −170 °C all'ombra a +120 °C al Sole — e sopravvivere alla polvere.",
-    "haystack": "tute lunari una tuta lunare deve fare tutto ciò che fa una tuta eva orbitale, e in più camminare per 7 ore sul suolo polveroso di regolite, a temperature che oscillano da −170 °c all'ombra a +120 °c al sole — e sopravvivere alla polvere. dodici persone hanno camminato sulla luna, e lo hanno fatto con otto tute della stessa famiglia: l'**apollo a7l** (apollo 11, 12, 14) e il suo successore **a7lb** (apollo 15, 16, 17). l'a7l era un indumento pressurizzato monoblocco con busto superiore rigido (hard upper torso), braccia e gambe in tessuto morbido, sovrastivali lunari integrati, uno zaino plss portato a spalla e un oxygen purge system (ops) come riserva di emergenza montato sopra il plss. la pressione di esercizio era di 3,7 psi (0,26 atm) di ossigeno puro — la più bassa di qualsiasi tuta spaziale mai volata, sacrificata per ottenere la massima mobilità nel camminare. l'a7lb aggiunse all'articolazione della vita una convoluzione che permetteva agli astronauti di sedersi nel lunar roving vehicle senza combattere contro la tuta; senza quell'articolazione le eva delle missioni j non sarebbero state possibili. lunar surface suits"
+    "haystack": "tute lunari una tuta lunare deve fare tutto ciò che fa una tuta eva orbitale, e in più camminare per 7 ore sul suolo polveroso di regolite, a temperature che oscillano da −170 °c all'ombra a +120 °c al sole — e sopravvivere alla polvere. dodici persone hanno camminato sulla luna, e lo hanno fatto con dodici tute su misura della stessa famiglia: l'**apollo a7l** (apollo 11, 12, 14) e il suo successore **a7lb** (apollo 15, 16, 17). l'a7l era un indumento pressurizzato monoblocco con busto superiore rigido (hard upper torso), braccia e gambe in tessuto morbido, sovrastivali lunari integrati, uno zaino plss portato a spalla e un oxygen purge system (ops) come riserva di emergenza montato sopra il plss. la pressione di esercizio era di 3,7 psi (0,26 atm) di ossigeno puro — la più bassa di qualsiasi tuta spaziale mai volata, sacrificata per ottenere la massima mobilità nel camminare. l'a7lb aggiunse all'articolazione della vita una convoluzione che permetteva agli astronauti di sedersi nel lunar roving vehicle senza combattere contro la tuta; senza quell'articolazione le eva delle missioni j non sarebbero state possibili. lunar surface suits"
   },
   {
     "tab": "life-in-space",
@@ -506,9 +506,9 @@
   {
     "tab": "mission-phases",
     "section": "mission-types",
-    "title": "Tipi di missione — Flyby, Orbiter, Lander, Rover, Sample Return",
+    "title": "Tipi di missione — Sorvolo, Orbiter, Lander, Rover, Sample Return",
     "intro": "Cinque archetipi del modo in cui un veicolo spaziale affronta la propria destinazione — ciascuno con un diverso costo in ∆v, un diverso profilo di rischio e un diverso ritorno scientifico.",
-    "haystack": "tipi di missione — flyby, orbiter, lander, rover, sample return cinque archetipi del modo in cui un veicolo spaziale affronta la propria destinazione — ciascuno con un diverso costo in ∆v, un diverso profilo di rischio e un diverso ritorno scientifico. le missioni flyby saltano del tutto l'accensione di inserimento orbitale. sfrecciano via alla v∞ con cui arrivano — ~10 km/s per voyager a giove, ~14 km/s per new horizons a plutone. l'incontro dura da minuti a giorni. si scambia scienza rapida con una copertura superficiale e nessun seguito. mission types — flyby, orbiter, lander, rover, sample return"
+    "haystack": "tipi di missione — sorvolo, orbiter, lander, rover, sample return cinque archetipi del modo in cui un veicolo spaziale affronta la propria destinazione — ciascuno con un diverso costo in ∆v, un diverso profilo di rischio e un diverso ritorno scientifico. le missioni di sorvolo saltano del tutto l'accensione di inserimento orbitale. sfrecciano via alla v∞ con cui arrivano — ~10 km/s per voyager a giove, ~14 km/s per new horizons a plutone. l'incontro dura da minuti a giorni. si scambia scienza rapida con una copertura superficiale e nessun seguito. mission types — flyby, orbiter, lander, rover, sample return"
   },
   {
     "tab": "mission-phases",
@@ -528,8 +528,8 @@
     "tab": "mission-phases",
     "section": "orbit-insertion",
     "title": "Inserimento in orbita — LOI / MOI",
-    "intro": "La frenata che cattura il tuo veicolo spaziale in orbita invece di lasciarlo filare via per sempre.",
-    "haystack": "inserimento in orbita — loi / moi la frenata che cattura il tuo veicolo spaziale in orbita invece di lasciarlo filare via per sempre. quando il tuo veicolo spaziale arriva a destinazione, si muove veloce — abbastanza veloce da sfuggire se non fai nulla. per farsi catturare in orbita, devi smaltire abbastanza velocità da scendere sotto la velocità di fuga locale. quella frenata è l'inserimento in orbita. loi per la luna (apollo, lro), moi per marte (maven, mro, tianwen-1), e così via. orbit insertion — loi / moi"
+    "intro": "L'accensione di frenata che cattura il tuo veicolo spaziale in orbita invece di lasciarlo filare via per sempre.",
+    "haystack": "inserimento in orbita — loi / moi l'accensione di frenata che cattura il tuo veicolo spaziale in orbita invece di lasciarlo filare via per sempre. quando il tuo veicolo spaziale arriva a destinazione, si muove veloce — abbastanza veloce da sfuggire se non fai nulla. per farsi catturare in orbita, devi smaltire abbastanza velocità da scendere sotto la velocità di fuga locale. quell'accensione di frenata è l'inserimento in orbita. loi per la luna (apollo, lro), moi per marte (maven, mro, tianwen-1), e così via. orbit insertion — loi / moi"
   },
   {
     "tab": "mission-phases",
@@ -563,8 +563,8 @@
     "tab": "mission-phases",
     "section": "tcm",
     "title": "TCM — Manovra di correzione di traiettoria",
-    "intro": "Piccola accensione di metà crociera per correggere i minimi errori del lancio.",
-    "haystack": "tcm — manovra di correzione di traiettoria piccola accensione di metà crociera per correggere i minimi errori del lancio. nessun lancio è perfetto. la traiettoria effettiva all'uscita dal lanciatore differisce da quella pianificata di decine di metri al secondo — un'inezia in termini assoluti, catastrofica per la precisione di arrivo se lasciata com'è. un errore di 5 cm/s alla tli si traduce in 100 km di mancato centramento sulla luna. i tcm correggono questi errori prima che crescano. tcm — trajectory correction maneuver"
+    "intro": "Piccola accensione di metà crociera per correggere i minimi errori della traiettoria di lancio.",
+    "haystack": "tcm — manovra di correzione di traiettoria piccola accensione di metà crociera per correggere i minimi errori della traiettoria di lancio. nessun lancio è perfetto. la traiettoria effettiva all'uscita dal lanciatore differisce da quella pianificata di decine di metri al secondo — un'inezia in termini assoluti, catastrofica per la precisione di arrivo se lasciata com'è. un errore di 5 cm/s alla tli si traduce in 100 km di mancato centramento sulla luna. i tcm correggono questi errori prima che crescano. tcm — trajectory correction maneuver"
   },
   {
     "tab": "mission-phases",
@@ -816,7 +816,7 @@
     "section": "asteroid-belt",
     "title": "La Fascia principale",
     "intro": "Un pianeta che quasi fu — i resti rocciosi tra Marte e Giove che la gravità di Giove non lasciò coalescere.",
-    "haystack": "la fascia principale un pianeta che quasi fu — i resti rocciosi tra marte e giove che la gravità di giove non lasciò coalescere. la fascia ha una struttura interna. la spettroscopia la divide in tre zone approssimative: la fascia interna (2,1–2,5 ua) dominata da corpi rocciosi di tipo s; la fascia media (2,5–3,2 ua) dove prendono il sopravvento i corpi carboniosi di tipo c (qui si trovano cerere e hygiea); e la fascia esterna che si fonde con gli asteroidi troiani, che condividono l'orbita di giove nei punti di lagrange l4 e l5. popolazioni originarie diverse, temperature di formazione diverse, storie diverse — conservate nella stessa fascia perché le risonanze di giove le hanno intrappolate. the asteroid belt"
+    "haystack": "la fascia principale un pianeta che quasi fu — i resti rocciosi tra marte e giove che la gravità di giove non lasciò coalescere. la fascia ha una struttura interna. la spettroscopia la divide in tre zone approssimative: la fascia interna (2,1–2,5 au) dominata da corpi rocciosi di tipo s; la fascia media (2,5–3,2 au) dove prendono il sopravvento i corpi carboniosi di tipo c (qui si trovano cerere e hygiea); e la fascia esterna che si fonde con gli asteroidi troiani, che condividono l'orbita di giove nei punti di lagrange l4 e l5. popolazioni originarie diverse, temperature di formazione diverse, storie diverse — conservate nella stessa fascia perché le risonanze di giove le hanno intrappolate. the asteroid belt"
   },
   {
     "tab": "planets",
@@ -830,7 +830,7 @@
     "section": "kuiper-belt",
     "title": "La Fascia di Kuiper",
     "intro": "Un disco di corpi ghiacciati al di là di Nettuno — previsto nel 1951, confermato nel 1992, e fonte di ogni cometa a breve periodo che transita accanto alla Terra.",
-    "haystack": "la fascia di kuiper un disco di corpi ghiacciati al di là di nettuno — previsto nel 1951, confermato nel 1992, e fonte di ogni cometa a breve periodo che transita accanto alla terra. strutturalmente la fascia ha tre popolazioni. la fascia di kuiper classica a 42–48 ua contiene corpi in orbite quasi circolari e a bassa inclinazione — il residuo dinamicamente indisturbato del disco originario, qui vivono albion e quaoar. la popolazione risonante è mantenuta in risonanza di moto medio 2:3 con nettuno (plutone è l'archetipo — per ogni due orbite di plutone, nettuno ne compie tre); questi si chiamano plutini. infine il disco diffuso è il prolungamento esterno, eccentrico e molto inclinato, dove si aggirano eris e sedna, con perieli vicini a nettuno e afeli a centinaia di ua di distanza. ogni popolazione è un fossile di un capitolo diverso della storia gravitazionale primordiale del sistema solare. the kuiper belt"
+    "haystack": "la fascia di kuiper un disco di corpi ghiacciati al di là di nettuno — previsto nel 1951, confermato nel 1992, e fonte di ogni cometa a breve periodo che transita accanto alla terra. strutturalmente la fascia ha tre popolazioni. la fascia di kuiper classica a 42–48 au contiene corpi in orbite quasi circolari e a bassa inclinazione — il residuo dinamicamente indisturbato del disco originario, qui vivono albion e quaoar. la popolazione risonante è mantenuta in risonanza di moto medio 2:3 con nettuno (plutone è l'archetipo — per ogni due orbite di plutone, nettuno ne compie tre); questi si chiamano plutini. infine il disco diffuso è il prolungamento esterno, eccentrico e molto inclinato, dove si aggirano eris e sedna, con perieli vicini a nettuno e afeli a centinaia di au di distanza. ogni popolazione è un fossile di un capitolo diverso della storia gravitazionale primordiale del sistema solare. the kuiper belt"
   },
   {
     "tab": "planets",
@@ -1026,7 +1026,7 @@
     "section": "solar-sail",
     "title": "Vele solari — la spinta gratuita",
     "intro": "Una vela solare non trasporta propellente: la spingono i fotoni, quindi ha un impulso specifico di fatto illimitato — ed è l'unico sistema che costa meno quanto più a lungo vola.",
-    "haystack": "vele solari — la spinta gratuita una vela solare non trasporta propellente: la spingono i fotoni, quindi ha un impulso specifico di fatto illimitato — ed è l'unico sistema che costa meno quanto più a lungo vola. la luce trasporta quantità di moto. quando un fotone si riflette su uno specchio, trasferisce allo specchio il doppio della propria quantità di moto — una pressione detta pressione di radiazione. nella vita quotidiana questa forza è trascurabile, ma nello spazio, dove non c'è resistenza dell'aria, anche una piccola forza continua si accumula in una vera variazione di velocità. una vela perfettamente riflettente di 800 m² a 1 ua (la distanza della terra dal sole) riceve una forza di circa 5 millinewton — il peso di un piccolo chicco d'uva. è meno di quanto produca qualsiasi motore ionico, ma non richiede propellente, né un sistema di alimentazione oltre alle utenze di bordo essenziali, e non si ferma finché il sole brilla. solar sails — the only free push"
+    "haystack": "vele solari — la spinta gratuita una vela solare non trasporta propellente: la spingono i fotoni, quindi ha un impulso specifico di fatto illimitato — ed è l'unico sistema che costa meno quanto più a lungo vola. la luce trasporta quantità di moto. quando un fotone si riflette su uno specchio, trasferisce allo specchio il doppio della propria quantità di moto — una pressione detta pressione di radiazione. nella vita quotidiana questa forza è trascurabile, ma nello spazio, dove non c'è resistenza dell'aria, anche una piccola forza continua si accumula in una vera variazione di velocità. una vela perfettamente riflettente di 800 m² a 1 au (la distanza della terra dal sole) riceve una forza di circa 5 millinewton — il peso di un piccolo chicco d'uva. è meno di quanto produca qualsiasi motore ionico, ma non richiede propellente, né un sistema di alimentazione oltre alle utenze di bordo essenziali, e non si ferma finché il sole brilla. solar sails — the only free push"
   },
   {
     "tab": "propulsion",
@@ -1103,7 +1103,7 @@
     "section": "light-minute",
     "title": "Minuto luce e anno luce",
     "intro": "Distanza misurata dal tempo che la luce impiega ad attraversarla — l'unità più utile per pensare ai ritardi di comunicazione e alle distanze stellari.",
-    "haystack": "minuto luce e anno luce distanza misurata dal tempo che la luce impiega ad attraversarla — l'unità più utile per pensare ai ritardi di comunicazione e alle distanze stellari. la luce si muove a circa 300.000 km/s. un secondo luce è 300.000 km. un minuto luce è 18 milioni di km. un anno luce è 9,46 mila miliardi di km. sono distanze, non tempi — nomi fuorvianti, ma utili: 1 ua ≈ 8,3 minuti luce, quindi «marte è a 4–22 minuti luce di distanza a seconda dell'orbita» ti dice la latenza di un comando, in andata e ritorno, in qualsiasi momento. light-minute and light-year"
+    "haystack": "minuto luce e anno luce distanza misurata dal tempo che la luce impiega ad attraversarla — l'unità più utile per pensare ai ritardi di comunicazione e alle distanze stellari. la luce si muove a circa 300.000 km/s. un secondo luce è 300.000 km. un minuto luce è 18 milioni di km. un anno luce è 9,46 mila miliardi di km. sono distanze, non tempi — nomi fuorvianti, ma utili: 1 au ≈ 8,3 minuti luce, quindi «marte è a 4–22 minuti luce di distanza a seconda dell'orbita» ti dice la latenza di un comando, in andata e ritorno, in qualsiasi momento. light-minute and light-year"
   },
   {
     "tab": "scales-time",
@@ -1201,6 +1201,6 @@
     "section": "transfer-ellipse",
     "title": "Ellisse di trasferimento",
     "intro": "L'arco kepleriano che trasporta un'astronave da un'orbita all'altra — il Sole a uno dei fuochi, proprio come ogni altra orbita.",
-    "haystack": "ellisse di trasferimento l'arco kepleriano che trasporta un'astronave da un'orbita all'altra — il sole a uno dei fuochi, proprio come ogni altra orbita. una volta che sei uscito dall'orbita terrestre, sei su un'ellisse attorno al sole. questa ellisse è l'orbita di trasferimento e ha tutte le stesse proprietà di qualsiasi altra: semiasse maggiore, eccentricità, perielio, afelio. il fatto che tu stia andando da qualche parte non cambia la geometria — la gravità non si cura della tua destinazione. transfer ellipse"
+    "haystack": "ellisse di trasferimento l'arco kepleriano che trasporta un'astronave da un'orbita all'altra — il sole a uno dei fuochi, proprio come ogni altra orbita. una volta che hai effettuato l'accensione per uscire dall'orbita terrestre, sei su un'ellisse attorno al sole. questa ellisse è l'orbita di trasferimento e ha tutte le stesse proprietà di qualsiasi altra: semiasse maggiore, eccentricità, perielio, afelio. il fatto che tu stia andando da qualche parte non cambia la geometria — la gravità non si cura della tua destinazione. transfer ellipse"
   }
 ]

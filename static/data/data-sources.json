@@ -126,7 +126,7 @@
       "description": "Two-line element sets for the ISS (NORAD 25544) and Tiangong (48274), refreshed daily and cached, that drive the Physics Lab's satellite-pass prediction (when the station next flies over you, how high, from which bearing).",
       "source_url": "https://celestrak.org/",
       "license_short": "PD-USGov",
-      "license_url": "https://celestrak.org/faq.php",
+      "license_url": "https://celestrak.org/usage-policy.php",
       "license_rationale": "The underlying element sets originate from US Space Command (public domain); CelesTrak redistributes them and requests attribution as the source, which we give here.",
       "used_on": [
         "lab"

@@ -602,5 +602,121 @@
   "https://commons.wikimedia.org/w/index.php?curid=139431680": {
     "new": "https://commons.wikimedia.org/wiki/File:Globular_Clusters_and_Omega_Centauri_(gemini0802c).jpg",
     "why": "the file image-provenance names for this image (page id gone)"
+  },
+  "https://www.grc.nasa.gov/www/k-12/airplane/kepler.html": {
+    "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter3-1/",
+    "why": "GRC page gone; NASA Basics of Space Flight ch. 3",
+    "label": [
+      "NASA · Orbital Mechanics",
+      "NASA · Basics of Space Flight — Gravity & Mechanics"
+    ]
+  },
+  "https://www.grc.nasa.gov/www/k-12/airplane/orbit.html": {
+    "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter3-1/",
+    "why": "GRC page gone; NASA Basics of Space Flight ch. 3",
+    "label": [
+      "NASA · Vis-viva and orbital energy",
+      "NASA · Basics of Space Flight — Gravity & Mechanics"
+    ]
+  },
+  "https://www.grc.nasa.gov/www/k-12/airplane/orbtrans.html": {
+    "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/",
+    "why": "GRC page gone; NASA Basics of Space Flight ch. 4",
+    "label": [
+      "NASA · Hohmann Transfer",
+      "NASA · Basics of Space Flight — Trajectories"
+    ]
+  },
+  "https://imagine.gsfc.nasa.gov/observatories/learning/swift/classroom/docs/Kepler.pdf": {
+    "new": "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/",
+    "why": "NASA site search",
+    "label": [
+      "NASA · Kepler's Three Laws",
+      "NASA · Orbits and Kepler's laws"
+    ]
+  },
+  "https://nssdc.gsfc.nasa.gov/planetary/glossary.html": {
+    "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter5-1/",
+    "why": "NASA Basics of Space Flight ch. 5 (planetary orbits)",
+    "label": [
+      "NASA · Orbital Terminology",
+      "NASA · Basics of Space Flight — Planetary Orbits"
+    ]
+  },
+  "https://eclipse.gsfc.nasa.gov/SEhelp/spaSE.html": {
+    "new": "https://en.wikipedia.org/wiki/Subsolar_point",
+    "why": "no NASA page found",
+    "label": [
+      "NASA · Sub-solar Point",
+      "Wikipedia · Subsolar point"
+    ]
+  },
+  "https://celestrak.org/faq.php": {
+    "new": "https://celestrak.org/usage-policy.php",
+    "why": "CelesTrak's usage policy (the licence basis)"
+  },
+  "https://www.mbrsc.ae/our-projects/emirates-mars-mission/": {
+    "new": "https://www.mbrsc.ae/",
+    "why": "MBRSC project page gone; MBRSC site"
+  },
+  "https://www.damninteresting.com/category/cosmos/": {
+    "new": "https://www.damninteresting.com/archives/",
+    "why": "the Cosmos category no longer exists; the archive"
+  },
+  "http://www.cnsa.gov.cn/english/n6465652/n6465653/c6840858/content.html": {
+    "new": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+    "why": "CNSA page gone; CMSA site unreachable",
+    "label": [
+      "Tiangong programme — CNSA",
+      "Tiangong space station — Wikipedia"
+    ]
+  },
+  "https://www.northropgrumman.com/space/space-based-infrared-system-sbirs": {
+    "new": "https://web.archive.org/web/20250321031520/https://www.northropgrumman.com/space/space-based-infrared-system-sbirs",
+    "why": "page gone; Wayback Machine snapshot"
+  },
+  "https://www.arianespace.com/vehicle/ariane-5/": {
+    "new": "https://web.archive.org/web/20240814145416/https://www.arianespace.com/vehicle/ariane-5/",
+    "why": "page gone; Wayback Machine snapshot"
+  },
+  "https://spaceflight101.com/spacerockets/ariane-5-eca/": {
+    "new": "https://web.archive.org/web/20240730152559/https://spaceflight101.com/spacerockets/ariane-5-eca/",
+    "why": "page gone; Wayback Machine snapshot"
+  },
+  "https://spaceflight101.com/spacerockets/atlas-v-541/": {
+    "new": "https://web.archive.org/web/20240614182605/https://spaceflight101.com/spacerockets/atlas-v-541/",
+    "why": "page gone; Wayback Machine snapshot"
+  },
+  "https://spaceflight101.com/spacerockets/falcon-9-ft/": {
+    "new": "https://web.archive.org/web/20240726010028/https://spaceflight101.com/spacerockets/falcon-9-ft/",
+    "why": "page gone; Wayback Machine snapshot"
+  },
+  "https://history.nasa.gov/afj/ap08fj/pdf/sa503-flightmanual.pdf": {
+    "new": "https://web.archive.org/web/20230715220529/https://history.nasa.gov/afj/ap08fj/pdf/sa503-flightmanual.pdf",
+    "why": "page gone; Wayback Machine snapshot"
+  },
+  "https://www.iau.org/public/themes/satellite-constellations/": {
+    "new": "https://web.archive.org/web/20250224092619/https://www.iau.org/public/themes/satellite-constellations/",
+    "why": "page gone; Wayback Machine snapshot"
+  },
+  "https://www.iau.org/static/resolutions/IAU2012_English.pdf": {
+    "new": "https://web.archive.org/web/20250317125253/https://www.iau.org/static/resolutions/IAU2012_English.pdf",
+    "why": "page gone; Wayback Machine snapshot"
+  },
+  "https://www.iau.org/news/pressreleases/detail/iau0603/": {
+    "new": "https://web.archive.org/web/20250312064616/https://www.iau.org/news/pressreleases/detail/iau0603/",
+    "why": "page gone; Wayback Machine snapshot"
+  },
+  "https://spaceflight101.com/spacerockets/h-iia/": {
+    "new": "https://web.archive.org/web/20240623022842/https://spaceflight101.com/spacerockets/h-iia-202/",
+    "why": "Spaceflight101 is gone; its H-IIA page was h-iia-202 (Wayback)",
+    "label": [
+      "Spaceflight101 — H-IIA",
+      "Spaceflight101 — H-IIA 202"
+    ]
+  },
+  "https://spaceflight101.com/spacerockets/cz-2f/": {
+    "new": "https://web.archive.org/web/20240529123733/https://spaceflight101.com/spacerockets/long-march-2f/",
+    "why": "Spaceflight101 is gone; its page was long-march-2f (Wayback)"
   }
 }

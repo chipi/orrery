@@ -93,37 +93,37 @@
         <h4 class="chapter-title">{chapterTitle(chapter.id, chapter.title)}</h4>
         {#if chapter.subtitle}<p class="chapter-sub">{chapter.subtitle}</p>{/if}
       </header>
-      <div class="images">
-        {#each chapter.images as img (img.src)}
-          {@const meta = badgeFor(img.src)}
-          <figure class="figure">
-            <button
-              type="button"
-              class="thumb"
-              onclick={() => onLightbox(assetUrl(img.src))}
-              aria-label={m.site_story_image_open_aria({ caption: img.caption })}
-            >
-              <img
-                src={assetUrl(img.src)}
-                alt={getImageAlt(img.src, getLocale()) || img.caption}
-                loading="lazy"
-                decoding="async"
-              />
-              <span
-                class="agency-badge"
-                style:background={meta.accent}
-                style:color={readableTextOn(meta.accent)}
-                style:text-shadow={readableTextOn(meta.accent) === DARK_TEXT ? 'none' : null}
-                >{meta.label}</span
+      {#if chapter.images.length}<div class="images">
+          {#each chapter.images as img (img.src)}
+            {@const meta = badgeFor(img.src)}
+            <figure class="figure">
+              <button
+                type="button"
+                class="thumb"
+                onclick={() => onLightbox(assetUrl(img.src))}
+                aria-label={m.site_story_image_open_aria({ caption: img.caption })}
               >
-            </button>
-            <figcaption class="caption">
-              {img.caption}
-              {#if meta.credit}<span class="credit">— {meta.credit}</span>{/if}
-            </figcaption>
-          </figure>
-        {/each}
-      </div>
+                <img
+                  src={assetUrl(img.src)}
+                  alt={getImageAlt(img.src, getLocale()) || img.caption}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span
+                  class="agency-badge"
+                  style:background={meta.accent}
+                  style:color={readableTextOn(meta.accent)}
+                  style:text-shadow={readableTextOn(meta.accent) === DARK_TEXT ? 'none' : null}
+                  >{meta.label}</span
+                >
+              </button>
+              <figcaption class="caption">
+                {img.caption}
+                {#if meta.credit}<span class="credit">— {meta.credit}</span>{/if}
+              </figcaption>
+            </figure>
+          {/each}
+        </div>{/if}
     </section>
   {/each}
 </div>

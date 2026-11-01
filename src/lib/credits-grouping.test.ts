@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest';
+import { existsSync, readFileSync } from 'node:fs';
 import {
   bundlePhotos,
+  creditDisplayPath,
   groupBySource,
   pathToRouteKey,
   provenanceSourceId,
@@ -505,5 +507,26 @@ describe('bundlePhotos', () => {
     ]);
     expect(bundles).toHaveLength(1);
     expect(bundles[0].stems).toHaveLength(2);
+  });
+});
+
+describe('creditDisplayPath', () => {
+  it('shows the served 1:1 crop for a pruned texture crop, and leaves other paths alone', () => {
+    expect(creditDisplayPath('/textures/2k_mars.4x3.jpg')).toBe('/textures/2k_mars.1x1.jpg');
+    expect(creditDisplayPath('/textures/moon_near.16x9.jpg')).toBe('/textures/moon_near.1x1.jpg');
+    expect(creditDisplayPath('/textures/2k_mars.jpg')).toBe('/textures/2k_mars.jpg');
+    expect(creditDisplayPath('/images/missions/apollo11/01.4x3.jpg')).toBe(
+      '/images/missions/apollo11/01.4x3.jpg',
+    );
+  });
+
+  it('every credited image maps to a file that ships (not a crop the build prunes)', () => {
+    const manifest = JSON.parse(readFileSync('static/data/image-provenance.json', 'utf8'));
+    const rows: { path: string }[] = Array.isArray(manifest) ? manifest : manifest.entries;
+    const pruned = /^\/textures\/.+\.(4x3|16x9)\.jpg$/; // scripts/prune-build-staging.mjs
+    const bad = rows
+      .map((r) => creditDisplayPath(r.path))
+      .filter((p) => pruned.test(p) || (p.startsWith('/textures/') && !existsSync(`static${p}`)));
+    expect(bad).toEqual([]);
   });
 });

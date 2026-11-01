@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Aarde — banen & lanceerplaatsen",
-    "/fleet?focus=discovery": "Vloot — Space Shuttle-orbiters"
+    "/fleet?id=discovery": "Vloot — Space Shuttle-orbiters"
   }
 }

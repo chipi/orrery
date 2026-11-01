@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "月 — 目的地",
-    "/fleet?focus=orion": "フリート — Orion、SLS と月面機材",
+    "/fleet?id=orion": "フリート — Orion、SLS と月面機材",
     "/programs/apollo": "Apollo — Artemis の名の由来であり、その先を目指す計画"
   }
 }

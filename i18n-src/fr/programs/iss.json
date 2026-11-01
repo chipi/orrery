@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/earth": "Terre — orbites, rendez-vous et sites de lancement",
-    "/fleet?focus=iss": "Flotte — la Station spatiale internationale",
+    "/fleet?id=iss": "Flotte — la Station spatiale internationale",
     "/programs/mir": "Mir — la station dont l'ISS a hérité",
     "/earth?site=iss": "L'ISS au-dessus de nous"
   }

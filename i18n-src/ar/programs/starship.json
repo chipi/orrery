@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starship": "الأسطول — منظومة الإطلاق Starship",
+    "/fleet?id=starship": "الأسطول — منظومة الإطلاق Starship",
     "/programs/spacex": "SpaceX — إعادة الاستخدام التي بُني عليها Starship",
     "/mars": "المريخ — الوجهة"
   }

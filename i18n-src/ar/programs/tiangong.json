@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/tiangong": "Tiangong — المحطة بالأبعاد الثلاثية",
-    "/fleet?focus=tiangong": "الأسطول — Shenzhou وTianzhou وعائلة Long March",
+    "/fleet?id=tiangong": "الأسطول — Shenzhou وTianzhou وعائلة Long March",
     "/programs/iss": "محطة الفضاء الدولية — المحطة التي استُبعد منها Tiangong",
     "/earth?site=tiangong": "Tiangong فوق رؤوسنا"
   }

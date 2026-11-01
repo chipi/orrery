@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starship": "Флота — систем за лансирање Starship",
+    "/fleet?id=starship": "Флота — систем за лансирање Starship",
     "/programs/spacex": "SpaceX — вишекратна употреба на којој почива Starship",
     "/mars": "Марс — одредиште"
   }

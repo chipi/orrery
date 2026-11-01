@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "Frota — a nave Shenzhou",
+    "/fleet?id=shenzhou": "Frota — a nave Shenzhou",
     "/programs/tiangong": "Tiangong — a estação que as tripulações Shenzhou construíram e visitam",
     "/programs/soyuz": "Soyuz — a nave da qual descende o projeto da Shenzhou"
   }

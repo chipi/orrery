@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "Flotte — Falcon 9, Falcon Heavy & Dragon",
+    "/fleet?id=falcon-9": "Flotte — Falcon 9, Falcon Heavy & Dragon",
     "/programs/iss": "ISS — die Station, die Crew Dragon anfliegt",
     "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze"
   }

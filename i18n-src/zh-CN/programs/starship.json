@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starship": "航天器 — Starship 发射系统",
+    "/fleet?id=starship": "航天器 — Starship 发射系统",
     "/programs/spacex": "SpaceX — Starship 赖以建立的可重复使用技术",
     "/mars": "火星 — 目的地"
   }

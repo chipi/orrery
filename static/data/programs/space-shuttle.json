@@ -22,7 +22,7 @@
   "related_programs": ["apollo", "mir", "iss", "buran", "esa-human"],
   "see_also": [
     { "label": "Earth — orbits & launch sites", "href": "/earth", "kind": "body" },
-    { "label": "Fleet — Space Shuttle orbiters", "href": "/fleet?focus=discovery", "kind": "fleet" }
+    { "label": "Fleet — Space Shuttle orbiters", "href": "/fleet?id=discovery", "kind": "fleet" }
   ],
   "links": [
     { "l": "Space Shuttle — Wikipedia", "u": "https://en.wikipedia.org/wiki/Space_Shuttle", "t": "intro" },

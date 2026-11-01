@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "الأسطول — المركبة Shenzhou",
+    "/fleet?id=shenzhou": "الأسطول — المركبة Shenzhou",
     "/programs/tiangong": "Tiangong — المحطة التي بنتها أطقم Shenzhou وتسافر إليها",
     "/programs/soyuz": "Soyuz — المركبة التي ينحدر منها تصميم Shenzhou"
   }

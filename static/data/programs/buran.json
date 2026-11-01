@@ -19,7 +19,7 @@
   "related_programs": ["space-shuttle", "soviet-lunar", "mir"],
   "see_also": [
     { "label": "Space Shuttle — the vehicle it answered", "href": "/programs/space-shuttle", "kind": "program" },
-    { "label": "Fleet — Buran orbiter & Energia", "href": "/fleet?focus=buran", "kind": "fleet" }
+    { "label": "Fleet — Buran orbiter & Energia", "href": "/fleet?id=buran", "kind": "fleet" }
   ],
   "links": [
     { "l": "Buran (spacecraft) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Buran_(spacecraft)", "t": "intro" },

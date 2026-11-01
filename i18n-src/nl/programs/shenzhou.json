@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "Vloot — het ruimteschip Shenzhou",
+    "/fleet?id=shenzhou": "Vloot — het ruimteschip Shenzhou",
     "/programs/tiangong": "Tiangong — het station dat Shenzhou-bemanningen bouwden en bezoeken",
     "/programs/soyuz": "Soyuz — het ruimteschip waarvan de opbouw van Shenzhou afstamt"
   }

@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "함대 — Hubble, Chandra, Spitzer, JWST",
+    "/fleet?id=hubble": "함대 — Hubble, Chandra, Spitzer, JWST",
     "/programs/space-shuttle": "Space Shuttle — Hubble을 발사하고 정비한 기체",
     "/explore": "탐색 — 이 망원경들이 밝혀낸 심원천체",
     "/earth?site=hubble": "지구 저궤도의 Hubble",

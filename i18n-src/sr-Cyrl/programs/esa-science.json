@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/explore": "Истраживање — комете и дубоки свемир који ESA мапира",
-    "/fleet?focus=rosetta": "Флота — Rosetta, Gaia и Euclid",
+    "/fleet?id=rosetta": "Флота — Rosetta, Gaia и Euclid",
     "/programs/ariane": "Ariane — ракета која лансира научне мисије ESA",
     "/earth?site=gaia": "Gaia у тачки L2",
     "/earth?site=xmm": "XMM-Newton"

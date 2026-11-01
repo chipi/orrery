@@ -22,7 +22,7 @@
   "related_programs": ["soyuz", "skylab", "mir"],
   "see_also": [
     { "label": "Earth — orbits, rendezvous & launch sites", "href": "/earth", "kind": "body" },
-    { "label": "Fleet — Salyut stations", "href": "/fleet?focus=salyut-6", "kind": "fleet" }
+    { "label": "Fleet — Salyut stations", "href": "/fleet?id=salyut-6", "kind": "fleet" }
   ],
   "links": [
     { "l": "Salyut programme — Wikipedia", "u": "https://en.wikipedia.org/wiki/Salyut_programme", "t": "intro" },

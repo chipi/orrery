@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "함대 — Starlink 위성군",
+    "/fleet?id=starlink": "함대 — Starlink 위성군",
     "/programs/spacex": "SpaceX — 그것을 발사하는 Falcon",
     "/earth": "지구 — 궤도와 붐비는 저궤도",
     "/earth?site=starlink": "Starlink 위성군"

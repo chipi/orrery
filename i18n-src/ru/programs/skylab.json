@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Земля — орбиты и космодромы",
-    "/fleet?focus=skylab": "Флот — орбитальная станция Skylab"
+    "/fleet?id=skylab": "Флот — орбитальная станция Skylab"
   }
 }

@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hayabusa-2": "Флота — сонде Hayabusa",
+    "/fleet?id=hayabusa-2": "Флота — сонде Hayabusa",
     "/explore": "Истраживање — астероиди Итокава и Рјугу"
   }
 }

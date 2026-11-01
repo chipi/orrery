@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "지구 — 궤도, 랑데부, 발사장",
-    "/fleet?focus=mir": "함대 — Mir 우주정거장"
+    "/fleet?id=mir": "함대 — Mir 우주정거장"
   }
 }

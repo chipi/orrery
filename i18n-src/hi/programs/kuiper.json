@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=kuiper": "बेड़ा — Kuiper उपग्रह समूह",
+    "/fleet?id=kuiper": "बेड़ा — Kuiper उपग्रह समूह",
     "/programs/starlink": "Starlink — वह समूह जिसके पीछे यह है",
     "/earth": "पृथ्वी — कक्षाएँ और निचली कक्षा की भीड़",
     "/earth?site=kuiper": "Kuiper उपग्रह समूह"

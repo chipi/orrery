@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=gaganyaan": "Флот — корабль Gaganyaan",
+    "/fleet?id=gaganyaan": "Флот — корабль Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan — лунная программа Индии",
     "/programs/mangalyaan": "Mangalyaan — марсианская миссия Индии, удавшаяся с первой попытки"
   }

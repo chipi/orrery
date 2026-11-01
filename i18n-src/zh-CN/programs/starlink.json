@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "航天器 — Starlink 卫星星座",
+    "/fleet?id=starlink": "航天器 — Starlink 卫星星座",
     "/programs/spacex": "SpaceX — 发射它的 Falcon",
     "/earth": "地球 — 轨道与日益拥挤的近地轨道",
     "/earth?site=starlink": "Starlink 卫星星座"

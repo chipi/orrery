@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=gaganyaan": "Flotte — das Raumschiff Gaganyaan",
+    "/fleet?id=gaganyaan": "Flotte — das Raumschiff Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan — Indiens Mondprogramm",
     "/programs/mangalyaan": "Mangalyaan — Indiens Marsmission, die beim ersten Versuch gelang"
   }

@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=kuiper": "航天器 — Kuiper 卫星星座",
+    "/fleet?id=kuiper": "航天器 — Kuiper 卫星星座",
     "/programs/starlink": "Starlink — 它正在追赶的星座",
     "/earth": "地球 — 轨道与日益拥挤的近地轨道",
     "/earth?site=kuiper": "Kuiper 卫星星座"

@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=jwst": "함대 — James Webb 우주 망원경",
+    "/fleet?id=jwst": "함대 — James Webb 우주 망원경",
     "/programs/great-observatories": "그레이트 옵저버터리 계획 — JWST가 잇는 계보",
     "/programs/ariane": "Ariane — 그것을 발사한 로켓",
     "/earth?site=jwst": "James Webb 우주 망원경"

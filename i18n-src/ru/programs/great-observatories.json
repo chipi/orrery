@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "Флот — Hubble, Chandra, Spitzer и JWST",
+    "/fleet?id=hubble": "Флот — Hubble, Chandra, Spitzer и JWST",
     "/programs/space-shuttle": "Space Shuttle — корабль, который вывел Hubble и обслуживал его",
     "/explore": "Исследование — объекты дальнего космоса, открытые этими телескопами",
     "/earth?site=hubble": "Hubble на низкой околоземной орбите",

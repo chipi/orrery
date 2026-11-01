@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Terra — orbite e siti di lancio",
-    "/fleet?focus=skylab": "Flotta — il laboratorio orbitale Skylab"
+    "/fleet?id=skylab": "Flotta — il laboratorio orbitale Skylab"
   }
 }

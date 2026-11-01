@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Erde — Umlaufbahnen & Startplätze",
-    "/fleet?focus=discovery": "Flotte — Space-Shuttle-Orbiter"
+    "/fleet?id=discovery": "Flotte — Space-Shuttle-Orbiter"
   }
 }

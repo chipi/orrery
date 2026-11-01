@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starship": "Flotte — le système de lancement Starship",
+    "/fleet?id=starship": "Flotte — le système de lancement Starship",
     "/programs/spacex": "SpaceX — la réutilisabilité sur laquelle repose Starship",
     "/mars": "Mars — la destination"
   }

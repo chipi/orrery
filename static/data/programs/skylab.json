@@ -19,7 +19,7 @@
   "related_programs": ["apollo", "salyut", "iss"],
   "see_also": [
     { "label": "Earth — orbits & launch sites", "href": "/earth", "kind": "body" },
-    { "label": "Fleet — Skylab orbital workshop", "href": "/fleet?focus=skylab", "kind": "fleet" }
+    { "label": "Fleet — Skylab orbital workshop", "href": "/fleet?id=skylab", "kind": "fleet" }
   ],
   "links": [
     { "l": "Skylab — Wikipedia", "u": "https://en.wikipedia.org/wiki/Skylab", "t": "intro" },

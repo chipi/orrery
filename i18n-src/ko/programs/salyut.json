@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "지구 — 궤도, 랑데부, 발사장",
-    "/fleet?focus=salyut-6": "함대 — Salyut 정거장"
+    "/fleet?id=salyut-6": "함대 — Salyut 정거장"
   }
 }

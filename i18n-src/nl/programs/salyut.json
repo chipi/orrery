@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Aarde — banen, rendez-vous & lanceerplaatsen",
-    "/fleet?focus=salyut-6": "Vloot — Salyut-stations"
+    "/fleet?id=salyut-6": "Vloot — Salyut-stations"
   }
 }

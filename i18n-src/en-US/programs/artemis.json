@@ -32,7 +32,7 @@
   ],
   "link_labels": {
     "/moon": "Moon — the destination",
-    "/fleet?focus=orion": "Fleet — Orion, SLS & the lunar hardware",
+    "/fleet?id=orion": "Fleet — Orion, SLS & the lunar hardware",
     "/programs/apollo": "Apollo — the program Artemis is named after and built beyond"
   }
 }

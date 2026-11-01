@@ -83,7 +83,7 @@
   ],
   "link_labels": {
     "/mars": "المريخ — الوجهة",
-    "/fleet?focus=mangalyaan": "الأسطول — Mars Orbiter Mission",
+    "/fleet?id=mangalyaan": "الأسطول — Mars Orbiter Mission",
     "/programs/chandrayaan": "Chandrayaan — برنامج الهند القمري",
     "/mars?site=mangalyaan": "Mangalyaan في مدار المريخ"
   }

@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/moon": "月 — Chang'e の着陸地点",
-    "/fleet?focus=yutu-2": "フリート — Yutu ローバーと Chang'e 着陸機",
+    "/fleet?id=yutu-2": "フリート — Yutu ローバーと Chang'e 着陸機",
     "/programs/artemis": "Artemis — 並行する月への再挑戦",
     "/moon?site=change3": "Chang’e 3 — Yutu ローバー",
     "/moon?site=change4": "Chang’e 4 — 月の裏側",

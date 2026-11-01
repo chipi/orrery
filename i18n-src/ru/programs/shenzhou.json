@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "Флот — корабль Shenzhou",
+    "/fleet?id=shenzhou": "Флот — корабль Shenzhou",
     "/programs/tiangong": "Tiangong — станция, которую построили экипажи Shenzhou и куда они летают",
     "/programs/soyuz": "«Союз» — корабль, от которого происходит компоновка Shenzhou"
   }

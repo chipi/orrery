@@ -83,6 +83,6 @@
   ],
   "link_labels": {
     "/moon": "Maan — het landingsgebied bij de zuidpool",
-    "/fleet?focus=chandrayaan1": "Vloot — de Chandrayaan-ruimtesondes"
+    "/fleet?id=chandrayaan1": "Vloot — de Chandrayaan-ruimtesondes"
   }
 }

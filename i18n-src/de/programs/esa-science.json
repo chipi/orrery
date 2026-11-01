@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/explore": "Erkunden — Kometen und der tiefe Himmel, den die ESA kartiert",
-    "/fleet?focus=rosetta": "Flotte — Rosetta, Gaia & Euclid",
+    "/fleet?id=rosetta": "Flotte — Rosetta, Gaia & Euclid",
     "/programs/ariane": "Ariane — die Rakete, die die Wissenschaft der ESA startet",
     "/earth?site=gaia": "Gaia am L2",
     "/earth?site=xmm": "XMM-Newton"

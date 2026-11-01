@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hayabusa-2": "航天器 — Hayabusa 探测器",
+    "/fleet?id=hayabusa-2": "航天器 — Hayabusa 探测器",
     "/explore": "探索 — 小行星糸川与龙宫"
   }
 }

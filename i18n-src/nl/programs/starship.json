@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starship": "Vloot — het lanceersysteem Starship",
+    "/fleet?id=starship": "Vloot — het lanceersysteem Starship",
     "/programs/spacex": "SpaceX — de herbruikbaarheid waarop Starship voortbouwt",
     "/mars": "Mars — de bestemming"
   }

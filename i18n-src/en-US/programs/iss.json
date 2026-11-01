@@ -85,7 +85,7 @@
   ],
   "link_labels": {
     "/earth": "Earth — orbits, rendezvous & launch sites",
-    "/fleet?focus=iss": "Fleet — the International Space Station",
+    "/fleet?id=iss": "Fleet — the International Space Station",
     "/programs/mir": "Mir — the station the ISS inherited from",
     "/earth?site=iss": "The ISS overhead"
   }

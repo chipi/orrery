@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "地球 — 軌道と打ち上げ地点",
-    "/fleet?focus=skylab": "フリート — 軌道実験室 Skylab"
+    "/fleet?id=skylab": "フリート — 軌道実験室 Skylab"
   }
 }

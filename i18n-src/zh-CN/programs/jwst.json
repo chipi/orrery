@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=jwst": "航天器 — James Webb 空间望远镜",
+    "/fleet?id=jwst": "航天器 — James Webb 空间望远镜",
     "/programs/great-observatories": "大型轨道天文台计划 — JWST 延续的谱系",
     "/programs/ariane": "Ariane — 发射它的火箭",
     "/earth?site=jwst": "James Webb 空间望远镜"

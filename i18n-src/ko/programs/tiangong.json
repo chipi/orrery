@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/tiangong": "Tiangong — 3D로 보는 정거장",
-    "/fleet?focus=tiangong": "함대 — Shenzhou, Tianzhou와 Long March 계열",
+    "/fleet?id=tiangong": "함대 — Shenzhou, Tianzhou와 Long March 계열",
     "/programs/iss": "ISS — Tiangong이 배제된 정거장",
     "/earth?site=tiangong": "머리 위의 Tiangong"
   }

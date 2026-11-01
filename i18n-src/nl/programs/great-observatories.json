@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "Vloot — Hubble, Chandra, Spitzer & JWST",
+    "/fleet?id=hubble": "Vloot — Hubble, Chandra, Spitzer & JWST",
     "/programs/space-shuttle": "Space Shuttle — het voertuig dat Hubble lanceerde en onderhield",
     "/explore": "Verkennen — de deep-sky objecten die deze telescopen onthulden",
     "/earth?site=hubble": "Hubble in een lage baan om de Aarde",

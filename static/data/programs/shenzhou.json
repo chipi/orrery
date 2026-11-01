@@ -21,7 +21,7 @@
   ],
   "related_programs": ["tiangong", "soyuz", "iss"],
   "see_also": [
-    { "label": "Fleet — the Shenzhou spacecraft", "href": "/fleet?focus=shenzhou", "kind": "fleet" },
+    { "label": "Fleet — the Shenzhou spacecraft", "href": "/fleet?id=shenzhou", "kind": "fleet" },
     { "label": "Tiangong — the station Shenzhou crews built and fly to", "href": "/programs/tiangong", "kind": "program" },
     { "label": "Soyuz — the vehicle Shenzhou's layout descends from", "href": "/programs/soyuz", "kind": "program" }
   ],

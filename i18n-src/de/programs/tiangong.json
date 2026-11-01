@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/tiangong": "Tiangong — die Station in 3D",
-    "/fleet?focus=tiangong": "Flotte — Shenzhou, Tianzhou & die Long-March-Familie",
+    "/fleet?id=tiangong": "Flotte — Shenzhou, Tianzhou & die Long-March-Familie",
     "/programs/iss": "ISS — die Station, von der Tiangong ausgeschlossen war",
     "/earth?site=tiangong": "Tiangong über uns"
   }

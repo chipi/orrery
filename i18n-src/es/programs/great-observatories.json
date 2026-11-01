@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "Flota — Hubble, Chandra, Spitzer y JWST",
+    "/fleet?id=hubble": "Flota — Hubble, Chandra, Spitzer y JWST",
     "/programs/space-shuttle": "Space Shuttle: el vehículo que lanzó y reparó Hubble",
     "/explore": "Explorar: los objetos de cielo profundo que revelaron estos telescopios",
     "/earth?site=hubble": "Hubble en órbita terrestre baja",

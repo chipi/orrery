@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/explore": "Explorar: los cometas y el cielo profundo que cartografía la ESA",
-    "/fleet?focus=rosetta": "Flota — Rosetta, Gaia y Euclid",
+    "/fleet?id=rosetta": "Flota — Rosetta, Gaia y Euclid",
     "/programs/ariane": "Ariane: el cohete que lanza la ciencia de la ESA",
     "/earth?site=gaia": "Gaia en L2",
     "/earth?site=xmm": "XMM-Newton"

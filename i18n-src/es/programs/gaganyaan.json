@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=gaganyaan": "Flota — la nave Gaganyaan",
+    "/fleet?id=gaganyaan": "Flota — la nave Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan: el programa lunar de la India",
     "/programs/mangalyaan": "Mangalyaan: la misión a Marte de la India, lograda al primer intento"
   }

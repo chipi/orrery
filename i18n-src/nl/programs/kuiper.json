@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=kuiper": "Vloot — de Kuiper-constellatie",
+    "/fleet?id=kuiper": "Vloot — de Kuiper-constellatie",
     "/programs/starlink": "Starlink — de constellatie die het probeert in te halen",
     "/earth": "Aarde — banen en de drukte in de lage baan",
     "/earth?site=kuiper": "De Kuiper-constellatie"

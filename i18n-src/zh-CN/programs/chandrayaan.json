@@ -83,6 +83,6 @@
   ],
   "link_labels": {
     "/moon": "月球 — 南极着陆区",
-    "/fleet?focus=chandrayaan1": "航天器 — Chandrayaan 探测器"
+    "/fleet?id=chandrayaan1": "航天器 — Chandrayaan 探测器"
   }
 }

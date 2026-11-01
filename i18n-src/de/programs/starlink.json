@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "Flotte — die Starlink-Konstellation",
+    "/fleet?id=starlink": "Flotte — die Starlink-Konstellation",
     "/programs/spacex": "SpaceX — die Falcon, die sie startet",
     "/earth": "Erde — Umlaufbahnen und die enge niedrige Umlaufbahn",
     "/earth?site=starlink": "Die Starlink-Konstellation"

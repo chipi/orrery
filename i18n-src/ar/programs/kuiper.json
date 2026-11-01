@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=kuiper": "الأسطول — كوكبة Kuiper",
+    "/fleet?id=kuiper": "الأسطول — كوكبة Kuiper",
     "/programs/starlink": "Starlink — الكوكبة التي يلاحقها",
     "/earth": "الأرض — المدارات وازدحام المدار المنخفض",
     "/earth?site=kuiper": "كوكبة Kuiper"

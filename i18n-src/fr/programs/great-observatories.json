@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "Flotte — Hubble, Chandra, Spitzer et JWST",
+    "/fleet?id=hubble": "Flotte — Hubble, Chandra, Spitzer et JWST",
     "/programs/space-shuttle": "Space Shuttle — le véhicule qui a lancé et entretenu Hubble",
     "/explore": "Explorer — les objets du ciel profond révélés par ces télescopes",
     "/earth?site=hubble": "Hubble en orbite terrestre basse",

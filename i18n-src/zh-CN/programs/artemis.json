@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "月球 — 目的地",
-    "/fleet?focus=orion": "航天器 — Orion、SLS 与登月装备",
+    "/fleet?id=orion": "航天器 — Orion、SLS 与登月装备",
     "/programs/apollo": "Apollo — Artemis 得名于它、又超越了它的计划"
   }
 }

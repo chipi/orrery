@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "フリート — Hubble、Chandra、Spitzer、JWST",
+    "/fleet?id=hubble": "フリート — Hubble、Chandra、Spitzer、JWST",
     "/programs/space-shuttle": "Space Shuttle — Hubble を打ち上げ、整備した機体",
     "/explore": "探索 — これらの望遠鏡が明らかにしたディープスカイ天体",
     "/earth?site=hubble": "地球低軌道の Hubble",

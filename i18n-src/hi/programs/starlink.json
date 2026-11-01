@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "बेड़ा — Starlink उपग्रह समूह",
+    "/fleet?id=starlink": "बेड़ा — Starlink उपग्रह समूह",
     "/programs/spacex": "SpaceX — वह Falcon जो इसे प्रक्षेपित करता है",
     "/earth": "पृथ्वी — कक्षाएँ और निचली कक्षा की भीड़",
     "/earth?site=starlink": "Starlink उपग्रह समूह"

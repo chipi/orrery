@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=kuiper": "Frota — a constelação Kuiper",
+    "/fleet?id=kuiper": "Frota — a constelação Kuiper",
     "/programs/starlink": "Starlink — a constelação que ele persegue",
     "/earth": "Terra — órbitas e a superlotação da órbita baixa",
     "/earth?site=kuiper": "A constelação Kuiper"

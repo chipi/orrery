@@ -31,7 +31,7 @@
   ],
   "link_labels": {
     "/tiangong": "Tiangong — the station in 3D",
-    "/fleet?focus=tiangong": "Fleet — Shenzhou, Tianzhou & the Long March family",
+    "/fleet?id=tiangong": "Fleet — Shenzhou, Tianzhou & the Long March family",
     "/programs/iss": "ISS — the station Tiangong was locked out of",
     "/earth?site=tiangong": "Tiangong overhead"
   }

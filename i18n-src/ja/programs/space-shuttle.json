@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "地球 — 軌道と打ち上げ地点",
-    "/fleet?focus=discovery": "フリート — Space Shuttle オービター"
+    "/fleet?id=discovery": "フリート — Space Shuttle オービター"
   }
 }

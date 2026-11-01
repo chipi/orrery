@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=jwst": "フリート — James Webb 宇宙望遠鏡",
+    "/fleet?id=jwst": "フリート — James Webb 宇宙望遠鏡",
     "/programs/great-observatories": "グレートオブザバトリー計画 — JWST が受け継ぐ系譜",
     "/programs/ariane": "Ariane — それを打ち上げたロケット",
     "/earth?site=jwst": "James Webb 宇宙望遠鏡"

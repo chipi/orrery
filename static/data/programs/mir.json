@@ -19,7 +19,7 @@
   "related_programs": ["salyut", "soyuz", "space-shuttle", "iss"],
   "see_also": [
     { "label": "Earth — orbits, rendezvous & launch sites", "href": "/earth", "kind": "body" },
-    { "label": "Fleet — Mir space station", "href": "/fleet?focus=mir", "kind": "fleet" }
+    { "label": "Fleet — Mir space station", "href": "/fleet?id=mir", "kind": "fleet" }
   ],
   "links": [
     { "l": "Mir — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mir", "t": "intro" },

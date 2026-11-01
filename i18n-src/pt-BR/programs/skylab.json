@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Terra — órbitas e bases de lançamento",
-    "/fleet?focus=skylab": "Frota — a oficina orbital Skylab"
+    "/fleet?id=skylab": "Frota — a oficina orbital Skylab"
   }
 }

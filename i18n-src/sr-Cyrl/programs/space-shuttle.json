@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Земља — орбите и места лансирања",
-    "/fleet?focus=discovery": "Флота — орбитери Space Shuttle"
+    "/fleet?id=discovery": "Флота — орбитери Space Shuttle"
   }
 }

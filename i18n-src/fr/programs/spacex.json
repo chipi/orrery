@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "Flotte — Falcon 9, Falcon Heavy et Dragon",
+    "/fleet?id=falcon-9": "Flotte — Falcon 9, Falcon Heavy et Dragon",
     "/programs/iss": "ISS — la station que rejoint Crew Dragon",
     "/earth": "Terre — orbites, rendez-vous et sites de lancement"
   }

@@ -16,7 +16,7 @@
   ],
   "related_programs": ["chandrayaan", "mangalyaan"],
   "see_also": [
-    { "label": "Fleet — the Gaganyaan spacecraft", "href": "/fleet?focus=gaganyaan", "kind": "fleet" },
+    { "label": "Fleet — the Gaganyaan spacecraft", "href": "/fleet?id=gaganyaan", "kind": "fleet" },
     { "label": "Chandrayaan — India's Moon program", "href": "/programs/chandrayaan", "kind": "program" },
     { "label": "Mangalyaan — India's first-try Mars mission", "href": "/programs/mangalyaan", "kind": "program" }
   ],

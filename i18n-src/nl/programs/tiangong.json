@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/tiangong": "Tiangong — het station in 3D",
-    "/fleet?focus=tiangong": "Vloot — Shenzhou, Tianzhou & de Long March-familie",
+    "/fleet?id=tiangong": "Vloot — Shenzhou, Tianzhou & de Long March-familie",
     "/programs/iss": "ISS — het station waarvan Tiangong werd buitengesloten",
     "/earth?site=tiangong": "Tiangong boven ons"
   }

@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/earth": "지구 — 궤도, 랑데부, 발사장",
-    "/fleet?focus=iss": "함대 — 국제우주정거장",
+    "/fleet?id=iss": "함대 — 국제우주정거장",
     "/programs/mir": "Mir — ISS가 물려받은 정거장",
     "/earth?site=iss": "머리 위의 ISS"
   }

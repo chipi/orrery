@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/explore": "탐색 — 혜성, 그리고 ESA가 그려 내는 심우주",
-    "/fleet?focus=rosetta": "함대 — Rosetta, Gaia, Euclid",
+    "/fleet?id=rosetta": "함대 — Rosetta, Gaia, Euclid",
     "/programs/ariane": "Ariane — ESA의 과학 임무를 발사하는 로켓",
     "/earth?site=gaia": "L2의 Gaia",
     "/earth?site=xmm": "XMM-Newton"

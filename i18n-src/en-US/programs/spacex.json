@@ -30,7 +30,7 @@
     { "type": "prose", "md": "The deeper lesson is about the price of a single flight. The company survived on the fourth Falcon 1 launch and nothing more; had it failed, none of the rest would exist. Great capabilities often hang on one fragile moment early on — and the difference between the companies that reshape an industry and the ones that vanish is sometimes just whether that one flight went up." }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "Fleet — Falcon 9, Falcon Heavy & Dragon",
+    "/fleet?id=falcon-9": "Fleet — Falcon 9, Falcon Heavy & Dragon",
     "/programs/iss": "ISS — the station Crew Dragon flies to",
     "/earth": "Earth — orbits, rendezvous & launch sites"
   }

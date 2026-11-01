@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Tierra: órbitas y bases de lanzamiento",
-    "/fleet?focus=discovery": "Flota — los orbitadores del Space Shuttle"
+    "/fleet?id=discovery": "Flota — los orbitadores del Space Shuttle"
   }
 }

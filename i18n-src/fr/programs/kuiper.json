@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=kuiper": "Flotte — la constellation Kuiper",
+    "/fleet?id=kuiper": "Flotte — la constellation Kuiper",
     "/programs/starlink": "Starlink — la constellation qu'il cherche à rattraper",
     "/earth": "Terre — les orbites et l'encombrement de l'orbite basse",
     "/earth?site=kuiper": "La constellation Kuiper"

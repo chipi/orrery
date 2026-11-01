@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "Vloot — de Starlink-constellatie",
+    "/fleet?id=starlink": "Vloot — de Starlink-constellatie",
     "/programs/spacex": "SpaceX — de Falcon die haar lanceert",
     "/earth": "Aarde — banen en de drukte in de lage baan",
     "/earth?site=starlink": "De Starlink-constellatie"

@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/earth": "Aarde — banen, rendez-vous & lanceerplaatsen",
-    "/fleet?focus=iss": "Vloot — het Internationaal ruimtestation",
+    "/fleet?id=iss": "Vloot — het Internationaal ruimtestation",
     "/programs/mir": "Mir — het station waarvan het ISS de erfgenaam is",
     "/earth?site=iss": "Het ISS boven ons"
   }

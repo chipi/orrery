@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=gaganyaan": "Флота — летелица Gaganyaan",
+    "/fleet?id=gaganyaan": "Флота — летелица Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan — индијски програм за Месец",
     "/programs/mangalyaan": "Mangalyaan — индијска мисија на Марс успела из првог покушаја"
   }

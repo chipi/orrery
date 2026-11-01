@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "القمر — الوجهة",
-    "/fleet?focus=orion": "الأسطول — Orion وSLS والمعدات القمرية",
+    "/fleet?id=orion": "الأسطول — Orion وSLS والمعدات القمرية",
     "/programs/apollo": "Apollo — البرنامج الذي سُمّي Artemis باسمه وتجاوزه"
   }
 }

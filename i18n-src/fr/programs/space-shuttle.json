@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Terre — orbites et sites de lancement",
-    "/fleet?focus=discovery": "Flotte — les orbiteurs du Space Shuttle"
+    "/fleet?id=discovery": "Flotte — les orbiteurs du Space Shuttle"
   }
 }

@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=gaganyaan": "Flotta — la navicella Gaganyaan",
+    "/fleet?id=gaganyaan": "Flotta — la navicella Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan — il programma lunare dell'India",
     "/programs/mangalyaan": "Mangalyaan — la missione marziana dell'India riuscita al primo tentativo"
   }

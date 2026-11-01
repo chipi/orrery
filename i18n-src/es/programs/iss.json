@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/earth": "Tierra: órbitas, encuentros y bases de lanzamiento",
-    "/fleet?focus=iss": "Flota — la Estación Espacial Internacional",
+    "/fleet?id=iss": "Flota — la Estación Espacial Internacional",
     "/programs/mir": "Mir: la estación de la que heredó la EEI",
     "/earth?site=iss": "La EEI sobre nosotros"
   }

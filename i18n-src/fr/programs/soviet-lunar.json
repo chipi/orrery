@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "La Lune — surface, sites d'alunissage et exploration",
-    "/fleet?focus=n1": "Flotte — le lanceur super-lourd N1",
+    "/fleet?id=n1": "Flotte — le lanceur super-lourd N1",
     "/moon?site=luna16": "Luna 16 — premier retour d'échantillons robotisé",
     "/moon?site=luna17": "Luna 17 — Lunokhod 1",
     "/moon?site=luna21": "Luna 21 — Lunokhod 2"

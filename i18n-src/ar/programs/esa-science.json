@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/explore": "استكشف — المذنبات والسماء العميقة التي ترسم ESA خرائطها",
-    "/fleet?focus=rosetta": "الأسطول — Rosetta وGaia وEuclid",
+    "/fleet?id=rosetta": "الأسطول — Rosetta وGaia وEuclid",
     "/programs/ariane": "Ariane — الصاروخ الذي يطلق مهمات ESA العلمية",
     "/earth?site=gaia": "Gaia عند L2",
     "/earth?site=xmm": "XMM-Newton"

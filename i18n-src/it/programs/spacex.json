@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "Flotta — Falcon 9, Falcon Heavy e Dragon",
+    "/fleet?id=falcon-9": "Flotta — Falcon 9, Falcon Heavy e Dragon",
     "/programs/iss": "SSI — la stazione raggiunta da Crew Dragon",
     "/earth": "Terra — orbite, rendezvous e siti di lancio"
   }

@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=jwst": "Флот — космический телескоп James Webb",
+    "/fleet?id=jwst": "Флот — космический телескоп James Webb",
     "/programs/great-observatories": "Великие обсерватории — линия, которую продолжает JWST",
     "/programs/ariane": "Ariane — ракета, которая его вывела",
     "/earth?site=jwst": "Космический телескоп James Webb"

@@ -34,7 +34,7 @@ import { assetOrigin } from '$lib/asset-url';
 import { coalesceLatest } from '$lib/async-coalesce';
 import { trackItemClick } from '$lib/analytics';
 import { exhibit } from '$lib/exhibit.svelte';
-import { getTrajectory } from '$lib/data/interstellar';
+import { getTrajectory, TRAJECTORY_IDS } from '$lib/data/interstellar';
 import type { BodyScene } from '$lib/universe/body-scene';
 import type { NeighborhoodScene } from '$lib/universe/neighborhood-scene';
 import {
@@ -1918,30 +1918,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // default per layers.paths default. The $effect at component scope
   // binds visibility to the PATHS chip toggle. The Today marker on
   // each handle is the click target — opens the matching mission
-  // record on /missions when picked.
-  const ICONIC_TRAJECTORY_IDS = [
-    'voyager-1',
-    'voyager-2',
-    'pioneer-10',
-    'pioneer-11',
-    'new-horizons',
-    'galileo',
-    'juno',
-    'cassini',
-    'dawn',
-    // Global expansion 2026-06-07 (#306) — ESA / Roscosmos / JAXA
-    // iconic-mission roster across comet / asteroid / Sun + en-route
-    // Mercury / Jupiter destinations.
-    'rosetta',
-    'vega-1',
-    'vega-2',
-    'venera-13',
-    'giotto',
-    'hayabusa2',
-    'juice',
-    'bepicolombo',
-    'ulysses',
-  ] as const;
+  // record on /missions when picked. The roster is TRAJECTORY_IDS
+  // ($lib/data/interstellar), shared with /fly.
+  const ICONIC_TRAJECTORY_IDS = TRAJECTORY_IDS;
   // Trajectory build is the worst init long task on /explore — each
   // call creates ~5-20 sprites + CanvasTextures, and the 18-trajectory
   // roster (vetted via perf-explore-iconic-clicks.spec.ts on 2026-06-19,

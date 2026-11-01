@@ -210,6 +210,7 @@
   import defaultScenarioBase from '$data/scenarios/orrery-1.json';
   import defaultScenarioOverlay from '$i18nSrc/en-US/scenarios/orrery-1.json';
   import { dataLoadFailed } from '$lib/data/core';
+  import { hasTrajectory } from '$lib/data/interstellar';
 
   const DEFAULT_SCENARIO_ID = 'orrery-1';
   // Whitelist of synthesised teaching scenarios (live in
@@ -2191,20 +2192,22 @@
         // present, computeMissionApply uses a Catmull-Rom spline
         // through the waypoints instead of the single Keplerian
         // ellipse — the trajectory then actually passes through each
-        // flyby planet at the event MET. Missing → fall back.
+        // flyby planet at the event MET. Fetched only for missions in
+        // TRAJECTORY_IDS; the rest use the fallback without a request.
         let trajectoryOverride: TrajectoryOverride | undefined;
-        try {
-          const tres = await fetch(`${base}/data/trajectories/${id}.json`);
-          if (myLoadId !== currentLoadId) return;
-          if (tres.ok) {
-            const traj = (await tres.json()) as { waypoints?: TrajectoryWaypoint[] };
-            if (traj.waypoints && traj.waypoints.length >= 2) {
-              trajectoryOverride = { waypoints: traj.waypoints };
+        if (hasTrajectory(id)) {
+          try {
+            const tres = await fetch(`${base}/data/trajectories/${id}.json`);
+            if (myLoadId !== currentLoadId) return;
+            if (tres.ok) {
+              const traj = (await tres.json()) as { waypoints?: TrajectoryWaypoint[] };
+              if (traj.waypoints && traj.waypoints.length >= 2) {
+                trajectoryOverride = { waypoints: traj.waypoints };
+              }
             }
+          } catch {
+            // Silent — offline or a bad file; the fallback ellipse is used.
           }
-        } catch {
-          // Silent — most non-iconic missions don't ship a
-          // trajectory.json and the spline fallback is intentional.
         }
         if (myLoadId !== currentLoadId) return;
         applyMissionAsLoaded(m, trajectoryOverride);

@@ -565,3 +565,35 @@ jobs:
             echo "stock nginx:alpine + bind-mounted \`./build\` per ADR-063."
             echo "The static bundle is the deploy artefact, not an image."
           } >> "$GITHUB_STEP_SUMMARY"
+
+  # A green e2e run for a main push must end with the image on GHCR. When the
+  # publish jobs are skipped instead of failing (0.9.2: cron-gate made their
+  # implicit success() false), this run stayed green, nothing alerted, and
+  # deploy-prod refused the sha hours later (run 41292320853). Fail here so the
+  # skip shows up on main straight away. A red run also holds staging.yml, which
+  # deploys only after a successful run.
+  publish-check:
+    needs: [docker-e2e, publish-manifest]
+    if: |
+      !cancelled() && needs.docker-e2e.result == 'success'
+      && github.repository == 'chipi/orrery'
+      && (
+        (github.event_name == 'workflow_run'
+          && github.event.workflow_run.head_branch == 'main'
+          && github.event.workflow_run.event == 'push')
+        || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: The pipeline-runner image was published
+        env:
+          RESULT: ${{ needs.publish-manifest.result }}
+        run: |
+          set -euo pipefail
+          SHORT="${GITHUB_SHA:0:7}"
+          if [[ "$RESULT" != "success" ]]; then
+            echo "::error::e2e passed on a main push but publish-manifest is '${RESULT}': ghcr.io/chipi/orrery-pipeline-runner:sha-${SHORT} was not published, and deploy-prod refuses a sha without it."
+            exit 1
+          fi
+          echo "publish-manifest: success (sha-${SHORT})"

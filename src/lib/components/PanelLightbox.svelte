@@ -310,11 +310,13 @@
     max-height: 35vh;
     overflow-y: auto;
   }
-  /* Thumbnails on desktop only; phones step with the arrows and swipe. */
+  /* Thumbnails on desktop only; phones step with the arrows and swipe. Width
+     alone let a landscape phone (851 px wide) show them, so a fine pointer is
+     required too. */
   .lightbox-thumbs {
     display: none;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (hover: hover) and (pointer: fine) {
     .lightbox-thumbs {
       display: flex;
       gap: 6px;

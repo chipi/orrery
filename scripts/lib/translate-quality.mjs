@@ -656,10 +656,14 @@ export function problems(locale, src, out, { ui = false } = {}) {
         ...(/^[A-Z]/.test(w) ? [w.replace(/(ian|ic)$/, '')] : []),
       ]),
     );
+    // A unit symbol the source has in another case is the locale's own form of it
+    // (style guide 1a: ja writes "au" where the English has "AU").
+    const srcLower = new Set([...srcWords].map((w) => w.toLowerCase()));
     const altered = [...new Set(out.match(/[A-Za-z][A-Za-z'’]*/g) || [])].filter(
       (w) =>
         w.length > 1 &&
         !srcWords.has(w) &&
+        !(LATIN_KEEP.test(w) && srcLower.has(w.toLowerCase())) &&
         !srcWords.has(w.replace(/'/g, '’')) && // Chang'e == Chang’e
         !/^[IVXLCDM]+$/.test(w), // Roman numerals (centuries in ru: XXI)
     );

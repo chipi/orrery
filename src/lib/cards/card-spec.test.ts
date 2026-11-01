@@ -47,6 +47,7 @@ const APOLLO: Mission = {
   first: 'First humans on another celestial body',
   description:
     'The mission that fulfilled the promise. Two crew walked the surface for hours and returned safely with samples.',
+  flight: {},
 } as unknown as Mission;
 
 describe('cardForMission', () => {
@@ -80,7 +81,12 @@ describe('cardForMission', () => {
     expect(spec.slug).toBe('www.orrerylearn.com/c/mission/apollo11');
     expect(spec.imagePath).toBe('/images/cards/mission/apollo11.jpg');
     expect(spec.shareHref).toBe('/c/mission/apollo11');
-    expect(spec.figureUrl).toBe('/images/missions/thumbnails/apollo11.webp');
+    expect(spec.figureUrl).toBe('/images/missions/thumbnails/apollo11.png');
+  });
+
+  it('asks for no trajectory figure when the mission has no flight data (no thumbnail exists)', () => {
+    const noFlight = { ...APOLLO, flight: undefined } as unknown as Mission;
+    expect(cardForMission(noFlight, INDEX).figureUrl).toBeUndefined();
   });
 
   it('caps the story to the lead sentences', () => {

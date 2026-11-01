@@ -377,8 +377,13 @@ jobs:
     # `github.event.workflow_run.event` so a CI run that itself fired
     # on a `push` to main publishes the image, and manual `dispatch`
     # or `cron` runs still skip the registry push as intended.
+    # cron-gate is skipped on every non-schedule run and the implicit
+    # success() counts a skipped ancestor as not-success, so without the
+    # explicit result check this job was skipped on every main push
+    # (sha-d28002f / sha-95c792f never published; deploy-prod refused).
     if: |
-      github.repository == 'chipi/orrery'
+      !cancelled() && needs.docker-e2e.result == 'success'
+      && github.repository == 'chipi/orrery'
       && (
         (github.event_name == 'workflow_run'
           && github.event.workflow_run.head_branch == 'main'
@@ -480,6 +485,7 @@ jobs:
   # no build, just `buildx imagetools create`.
   publish-manifest:
     needs: publish-platforms
+    if: ${{ !cancelled() && needs.publish-platforms.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:

@@ -10,7 +10,33 @@ Fixed already, because the term edit touched them: nl Clementine and Lunar Prosp
 (retranslated), nl "lanchbaan", "polaairbaan", "ontbaan", "haloaanbaan", "INBAAN", sr
 reusable-launchers and seven-minutes grammar, hi Taiyuan सूर्य-स्थैतिक → सूर्य-तुल्यकालिक.
 
-## Reported, not yet fixed
+## Fixed 2026-11-01 (hand edits through `apply-edits.mjs`; gates pass)
+
+- **Mission type labels, all 13 locales:** the status part is now the panel's status-chip word
+  (`mission_status_*`); "FLOWN" had 5–36 forms per locale, including English, sr «ФЛОВН» and
+  IZVRŠENO, Chinese 完成 in sr. Type parts still in English were translated (120 labels: Beresheet,
+  Chang'e 3, Luna 16/21, Solar Orbiter in every locale; English words in zh-CN, sr-Cyrl, ar, hi, ja,
+  ko, ru; de CREWED FLYBY / CARGO LANDER / UNCREWED MARS DEMO; nl FLYBY; it SAMPLE-RETURN; pt-BR
+  LANDER / ORBITER). ORBITER, LANDER and ROVER stay in de, fr, it, nl, pt-BR (their own words).
+  CREWED EARTH-ORBIT has one form in sr-Cyrl, hi, ru, ar.
+- **nl fleet:** suborbitale, cabinematerialen, India's, verfijnde opvolger, groter mondstuk,
+  werkpaard met een hoge lanceerfrequentie, verbrandt, de lanceerbasis (×3), middelzware
+  lanceringen, vlaggenschipmissies, bemande vluchten (vostok-k ×2), de stuwstof, primaire
+  voortstuwing voor de kruisvlucht, de tweede Halley-ontmoeting, Saturn V; missions: remraket,
+  atmosferische intrede.
+- **fr:** osiris-rex «a rejoint», starship «ravitailleurs», apollo13 «cislunaire».
+- **es:** superpesado, turbobomba, puesta en servicio. **de:** einen Sprengkopf, Manöver zur
+  Bahnanhebung (chandrayaan3). **ru:** запечатлённый, Это был не конец, автоматическим
+  аппаратом (luna16), Сам аппарат Rosetta. **sr-Cyrl:** бестежинског. **ja:** 着水 (apollo-soyuz).
+  **zh-CN:** 飞掠253梅西尔德星 (the glossary form).
+- **Not defects** (checked against each language's Wikipedia, the glossary's source): zh-CN 双卫一
+  (Dimorphos), 双生星 (Didymos), 梅西尔德星 (Mathilde), 戈尔登·库勃 (Gordon Cooper); es Teutates
+  (Toutatis). ko 월간 was "N개월간" (for N months). fr «tremplin» left in programs/artemis
+  (stepping stone, correct there).
+- Already gone before this round: the it items, most fr fleet items (lc-34 tremplin, la ISS, …),
+  ar messenger/rd-180/…, pt «missão em solo», es «cajas polares».
+
+## Reported, not yet fixed (the sentence-level items below; word-level ones are above)
 
 Only the fields the term reviewers happened to read are listed here (about 1 in 6 fleet fields).
 The rate suggests the rest of these locales' fleet text has the same problems.

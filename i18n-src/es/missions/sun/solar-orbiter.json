@@ -3,7 +3,7 @@
   "vehicle": "Atlas V 411",
   "payload": "1800 kg (incl. 209 kg de instrumentos + escudo térmico)",
   "delta_v": "~3,5 km/s",
-  "type": "SOLAR-ORBITER · ACTIVA",
+  "type": "SONDA SOLAR · ACTIVA",
   "first": "Primera misión diseñada para obtener imágenes detalladas de las regiones polares del Sol; complementa las mediciones de Parker Solar Probe dentro de la corona con teledetección de alta latitud",
   "description": "Misión dirigida por la ESA, con lanzamiento de la NASA y la aportación de un instrumento. Mientras que Parker Solar Probe se acerca al Sol más que nadie, Solar Orbiter va más alto — mediante repetidas asistencias gravitatorias de Venus a lo largo de una década, asciende fuera de la eclíptica hasta una inclinación heliográfica de ~33°. Desde ese punto de observación, su conjunto de instrumentos (PHI, EUI, SPICE, STIX, METIS, SoloHI + cuatro paquetes in situ) obtiene imágenes de los campos magnéticos polares del Sol, sigue la aceleración del viento solar en tiempo real y vincula mediciones remotas e in situ de forma simultánea. Primer perihelio el 2020-06-15 a 0,51 au. Perihelio más cercano hasta la fecha el 2022-10-12 a 0,29 au (dentro del perihelio de Mercurio).",
   "events": [

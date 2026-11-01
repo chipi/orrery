@@ -53975,18 +53975,17 @@
   {
    "id": "b8b72aa57f1ed164",
    "path": "/images/missions/mmx/01.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:MMX spacecraft 2.jpg",
+   "source_type": "direct-other",
+   "title": "Uncurated panel image — MMX spacecraft (source not found)",
    "author": "JAXA",
    "agency": "JAXA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMMX%20spacecraft%202.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MMX%20spacecraft%202.jpg",
-   "license_short": "CC-BY-4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "license_rationale": "Reuse with attribution.",
+   "source_url": "https://www.mmx.jaxa.jp/en/",
+   "image_url": null,
+   "license_short": "JAXA-OPEN",
+   "license_url": "https://global.jaxa.jp/policy.html",
+   "license_rationale": "JAXA hardware photographed in a JAXA facility; the original page was not found (2026-11-02), so the licence is assumed from JAXA terms.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "curated-no-upstream-record"
    ],
    "revid": null,
    "pageid": null,
@@ -53996,18 +53995,17 @@
   {
    "id": "067ef4089bd84ecb",
    "path": "/images/missions/mmx/01.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:MMX spacecraft front view.png",
+   "source_type": "direct-other",
+   "title": "Uncurated panel image — MMX spacecraft (source not found)",
    "author": "JAXA",
    "agency": "JAXA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMMX%20spacecraft%20front%20view.png",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MMX%20spacecraft%20front%20view.png",
-   "license_short": "CC-BY-4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-   "license_rationale": "Reuse with attribution.",
+   "source_url": "https://www.mmx.jaxa.jp/en/",
+   "image_url": null,
+   "license_short": "JAXA-OPEN",
+   "license_url": "https://global.jaxa.jp/policy.html",
+   "license_rationale": "JAXA hardware photographed in a JAXA facility; the original page was not found (2026-11-02), so the licence is assumed from JAXA terms.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "curated-no-upstream-record"
    ],
    "revid": null,
    "pageid": null,

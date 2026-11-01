@@ -37,8 +37,8 @@ const KNOWN_MISSING = new Set([
   '/images/satellites/titan/05',
 ]);
 
-/** Placeholder credits in galleries on 2026-11-01. Ratchet: lower it as they are fixed. */
-const PLACEHOLDER_CEILING = 411;
+/** Placeholder credits in galleries on 2026-11-01 (+1 2026-11-02: MMX 01, its invented Commons credit replaced by an honest placeholder). Ratchet: lower it as they are fixed. */
+const PLACEHOLDER_CEILING = 412;
 
 interface Row {
   path: string;

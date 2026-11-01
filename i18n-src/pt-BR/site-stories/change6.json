@@ -9,10 +9,6 @@
         {
           "src": "/images/missions/change6/01.webp",
           "caption": "Conjunto da Chang'e 6 — com o acréscimo do retransmissor Queqiao-2 para comunicações com o lado oculto; no mais, herda a arquitetura da Chang'e 5."
-        },
-        {
-          "src": "/images/missions/change6/02.webp",
-          "caption": "Cargas úteis internacionais — detector NILS da ESA, detector de radônio francês DORN, retrorrefletor italiano INRRI e nanossatélite paquistanês ICUBE-Q."
         }
       ]
     },
@@ -42,7 +38,12 @@
       "id": "science",
       "title": "Ciência",
       "subtitle": "1.935 g de material da bacia Polo Sul-Aitken",
-      "images": []
+      "images": [
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Uma amostra do lado oculto trazida pela Chang'e 6, exposta no Congresso Astronáutico Internacional de 2024, em Milão."
+        }
+      ]
     }
   ]
 }

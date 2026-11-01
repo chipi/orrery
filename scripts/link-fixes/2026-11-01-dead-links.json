@@ -655,9 +655,9 @@
     "why": "BIS's Daedalus report page"
   },
   "https://www.cnsa.gov.cn/english/n6465645/n6465648/c6812114/content.html": {
-    "new": "https://en.wikipedia.org/wiki/Tianwen-1",
-    "why": "CNSA page gone",
-    "label": ["Tianwen-1 mission overview — CNSA", "Tianwen-1 — Wikipedia"]
+    "new": "https://www.planetary.org/space-missions/tianwen-1",
+    "why": "CNSA page gone; Wikipedia was already the intro link",
+    "label": ["Tianwen-1 mission overview — CNSA", "Tianwen-1 and Zhurong — The Planetary Society"]
   },
   "https://ned.ipac.caltech.edu/level5/March02/Tully/Tully2.html": {
     "new": "https://en.wikipedia.org/wiki/Local_Group",

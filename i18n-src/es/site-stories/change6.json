@@ -9,10 +9,6 @@
         {
           "src": "/images/missions/change6/01.webp",
           "caption": "Conjunto de Chang'e 6: se añadió el relé Queqiao-2 para las comunicaciones con la cara oculta; por lo demás, hereda la arquitectura de Chang'e 5."
-        },
-        {
-          "src": "/images/missions/change6/02.webp",
-          "caption": "Cargas útiles internacionales: detector NILS de la ESA, detector de radón francés DORN, retrorreflector italiano INRRI y nanosatélite paquistaní ICUBE-Q."
         }
       ]
     },
@@ -42,7 +38,12 @@
       "id": "science",
       "title": "Ciencia",
       "subtitle": "1935 g de material de la cuenca Polo Sur-Aitken",
-      "images": []
+      "images": [
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Una muestra de la cara oculta traída por Chang'e 6, expuesta en el Congreso Astronáutico Internacional de 2024 en Milán."
+        }
+      ]
     }
   ]
 }

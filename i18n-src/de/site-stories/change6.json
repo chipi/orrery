@@ -9,10 +9,6 @@
         {
           "src": "/images/missions/change6/01.webp",
           "caption": "Chang'e 6 Gespann – ergänzt um das Relais Queqiao-2 für die Kommunikation mit der Mondrückseite, ansonsten mit der Architektur von Chang'e 5."
-        },
-        {
-          "src": "/images/missions/change6/02.webp",
-          "caption": "Internationale Nutzlasten – der ESA-Detektor NILS, der französische Radondetektor DORN, der italienische Retroreflektor INRRI und der pakistanische Nanosatellit ICUBE-Q."
         }
       ]
     },
@@ -42,7 +38,12 @@
       "id": "science",
       "title": "Wissenschaft",
       "subtitle": "1.935 g Material aus dem Südpol-Aitken-Becken",
-      "images": []
+      "images": [
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Eine Probe von der Mondrückseite aus Chang'e 6, ausgestellt auf dem Internationalen Astronautischen Kongress 2024 in Mailand."
+        }
+      ]
     }
   ]
 }

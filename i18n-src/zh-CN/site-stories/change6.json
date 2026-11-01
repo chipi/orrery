@@ -9,10 +9,6 @@
         {
           "src": "/images/missions/change6/01.webp",
           "caption": "嫦娥六号组合体——新增鹊桥二号中继星以实现月背通信，其余基本沿用嫦娥五号的架构。"
-        },
-        {
-          "src": "/images/missions/change6/02.webp",
-          "caption": "国际合作载荷——ESA NILS探测仪、法国DORN氡探测仪、意大利INRRI后向反射器、巴基斯坦ICUBE-Q纳卫星。"
         }
       ]
     },
@@ -42,7 +38,12 @@
       "id": "science",
       "title": "科学",
       "subtitle": "1,935克南极—艾特肯盆地物质",
-      "images": []
+      "images": [
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "嫦娥六号从月球背面带回的样品，在2024年米兰国际宇航大会上展出。"
+        }
+      ]
     }
   ]
 }

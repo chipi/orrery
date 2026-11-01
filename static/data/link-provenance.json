@@ -3253,7 +3253,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "chandrayaan3__c8565ae1f409",
+      "id": "chandrayaan3__a8d359bc3ca7",
       "entity_id": "chandrayaan3",
       "category": "mission",
       "route": "/missions",
@@ -5913,7 +5913,7 @@
       "last_verified": "2026-07-07"
     },
     {
-      "id": "galileo__2dbfaa9d885b",
+      "id": "galileo__9707363d8f53",
       "entity_id": "galileo",
       "category": "mission",
       "route": "/missions",
@@ -6067,7 +6067,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini12__a91dadcc7f67",
+      "id": "gemini12__8781eac9da26",
       "entity_id": "gemini12",
       "category": "mission",
       "route": "/missions",
@@ -6095,7 +6095,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini3__bc062294c865",
+      "id": "gemini3__72b40e3e5a1a",
       "entity_id": "gemini3",
       "category": "mission",
       "route": "/missions",
@@ -6123,7 +6123,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini4__d2905419e05e",
+      "id": "gemini4__494d89d3469a",
       "entity_id": "gemini4",
       "category": "mission",
       "route": "/missions",
@@ -6151,7 +6151,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini6a__c10af0b0e2d4",
+      "id": "gemini6a__768e21fc6817",
       "entity_id": "gemini6a",
       "category": "mission",
       "route": "/missions",
@@ -6179,7 +6179,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini7__b8c1b5f91c91",
+      "id": "gemini7__47088d0b9a53",
       "entity_id": "gemini7",
       "category": "mission",
       "route": "/missions",
@@ -6207,7 +6207,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini8__53d5b0dc4bb5",
+      "id": "gemini8__4a331f33f824",
       "entity_id": "gemini8",
       "category": "mission",
       "route": "/missions",
@@ -7481,7 +7481,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "huygens__a48d5966d802",
+      "id": "huygens__bee08ee3224d",
       "entity_id": "huygens",
       "category": "mission",
       "route": "/missions",
@@ -7929,7 +7929,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "jiuquan-slc-43__d68573171d8c",
+      "id": "jiuquan-slc-43__94e7217c7076",
       "entity_id": "jiuquan-slc-43",
       "category": "fleet",
       "route": "/fleet",
@@ -9147,7 +9147,7 @@
       "last_verified": "2026-06-28"
     },
     {
-      "id": "long-march-5__ed80e787bd82",
+      "id": "long-march-5__b8bae35295d3",
       "entity_id": "long-march-5",
       "category": "fleet",
       "route": "/fleet",
@@ -10799,7 +10799,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "mars-polar-lander__c29d9609fcf6",
+      "id": "mars-polar-lander__fe4129516cc2",
       "entity_id": "mars-polar-lander",
       "category": "fleet",
       "route": "/fleet",
@@ -11947,7 +11947,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "near-shoemaker__34c7547c11dd",
+      "id": "near-shoemaker__c17683b79620",
       "entity_id": "near-shoemaker",
       "category": "mission",
       "route": "/missions",
@@ -13389,7 +13389,7 @@
       "last_verified": "2026-07-07"
     },
     {
-      "id": "pioneer-11__f1a6880f7492",
+      "id": "pioneer-11__4074b15b70bd",
       "entity_id": "pioneer-11",
       "category": "fleet",
       "route": "/fleet",
@@ -13809,7 +13809,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "pragyan__35ad1861ee53",
+      "id": "pragyan__ee36f0af8338",
       "entity_id": "pragyan",
       "category": "fleet",
       "route": "/fleet",
@@ -15377,7 +15377,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "sbirs-heo__db2b1b3e4cb2",
+      "id": "sbirs-heo__4727ff2b9550",
       "entity_id": "sbirs-heo",
       "category": "fleet",
       "route": "/fleet",
@@ -17827,16 +17827,16 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "tianwen-1__4852af2e1e8e",
+      "id": "tianwen-1__1f032365e737",
       "entity_id": "tianwen-1",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://en.wikipedia.org/wiki/Tianwen-1",
-      "label": "Tianwen-1 — Wikipedia",
+      "url": "https://www.planetary.org/space-missions/tianwen-1",
+      "label": "Tianwen-1 and Zhurong — The Planetary Society",
       "tier": "core",
-      "source_id": "cnsa",
+      "source_id": "planetary-society",
       "language": "*",
-      "kind": "agency-official",
+      "kind": "educational",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-06-28"
     },
@@ -17897,7 +17897,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "tianwen1__7bef37d17d8d",
+      "id": "tianwen1__e1ae3a706c01",
       "entity_id": "tianwen1",
       "category": "mission",
       "route": "/missions",
@@ -17939,7 +17939,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "tianwen1-orbiter__c87734d81e2e",
+      "id": "tianwen1-orbiter__2af1e757f307",
       "entity_id": "tianwen1-orbiter",
       "category": "mars-site",
       "route": "/mars",
@@ -19283,7 +19283,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "vikram-cy3__84fc763d6045",
+      "id": "vikram-cy3__f4364a52a7a1",
       "entity_id": "vikram-cy3",
       "category": "fleet",
       "route": "/fleet",
@@ -20151,7 +20151,7 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "wenchang-lc-101__4f592222cc1b",
+      "id": "wenchang-lc-101__a131a609b3fd",
       "entity_id": "wenchang-lc-101",
       "category": "fleet",
       "route": "/fleet",

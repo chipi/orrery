@@ -9,10 +9,6 @@
         {
           "src": "/images/missions/change6/01.webp",
           "caption": "Chang'e 6の機体構成。裏側との通信のためQueqiao-2中継衛星を追加した以外は、Chang'e 5のアーキテクチャを踏襲している。"
-        },
-        {
-          "src": "/images/missions/change6/02.webp",
-          "caption": "国際搭載機器。ESAのNILS検出器、フランスのDORNラドン検出器、イタリアのINRRI再帰反射器、パキスタンのICUBE-Qナノ衛星。"
         }
       ]
     },
@@ -42,7 +38,12 @@
       "id": "science",
       "title": "科学",
       "subtitle": "南極エイトケン盆地の物質1,935 g",
-      "images": []
+      "images": [
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Chang'e 6が月の裏側から持ち帰った試料。2024年にミラノで開かれた国際宇宙会議で展示された。"
+        }
+      ]
     }
   ]
 }

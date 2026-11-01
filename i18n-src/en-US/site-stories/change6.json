@@ -9,10 +9,6 @@
         {
           "src": "/images/missions/change6/01.webp",
           "caption": "Chang'e 6 stack — added Queqiao-2 relay for far-side comms, otherwise inheriting Chang'e 5 architecture."
-        },
-        {
-          "src": "/images/missions/change6/02.webp",
-          "caption": "International payloads — ESA NILS detector, French DORN radon detector, Italian INRRI retroreflector, Pakistan ICUBE-Q nanosatellite."
         }
       ]
     },
@@ -42,7 +38,12 @@
       "id": "science",
       "title": "Science",
       "subtitle": "1,935 g of South Pole-Aitken basin material",
-      "images": []
+      "images": [
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "A Chang'e 6 far-side sample on display at the 2024 International Astronautical Congress in Milan."
+        }
+      ]
     }
   ]
 }

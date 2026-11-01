@@ -9,10 +9,6 @@
         {
           "src": "/images/missions/change6/01.webp",
           "caption": "Chang'e 6 결합체 — 달 뒷면 통신을 위해 Queqiao-2 중계위성을 추가했을 뿐, 나머지는 Chang'e 5의 구조를 그대로 이어받았습니다."
-        },
-        {
-          "src": "/images/missions/change6/02.webp",
-          "caption": "국제 탑재체 — ESA의 NILS 검출기, 프랑스의 DORN 라돈 검출기, 이탈리아의 INRRI 역반사체, 파키스탄의 ICUBE-Q 초소형 위성."
         }
       ]
     },
@@ -42,7 +38,12 @@
       "id": "science",
       "title": "과학",
       "subtitle": "남극-에이트켄 분지 물질 1,935 g",
-      "images": []
+      "images": [
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Chang'e 6가 달 뒷면에서 가져온 시료. 2024년 밀라노 국제우주대회에서 전시되었다."
+        }
+      ]
     }
   ]
 }

@@ -9,10 +9,6 @@
         {
           "src": "/images/missions/change6/01.webp",
           "caption": "Il complesso di Chang'e 6: aggiunto il satellite relè Queqiao-2 per le comunicazioni con il lato nascosto, per il resto eredita l'architettura di Chang'e 5."
-        },
-        {
-          "src": "/images/missions/change6/02.webp",
-          "caption": "Carichi utili internazionali: il rivelatore NILS dell'ESA, il rivelatore di radon francese DORN, il retroriflettore italiano INRRI e il nanosatellite pakistano ICUBE-Q."
         }
       ]
     },
@@ -42,7 +38,12 @@
       "id": "science",
       "title": "Scienza",
       "subtitle": "1.935 g di materiale del bacino Polo Sud-Aitken",
-      "images": []
+      "images": [
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Un campione della faccia nascosta riportato da Chang'e 6, esposto al Congresso Astronautico Internazionale 2024 a Milano."
+        }
+      ]
     }
   ]
 }

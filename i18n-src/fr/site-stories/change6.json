@@ -9,10 +9,6 @@
         {
           "src": "/images/missions/change6/01.webp",
           "caption": "Ensemble Chang'e 6 — ajout du relais Queqiao-2 pour les communications avec la face cachée, mais architecture héritée pour l'essentiel de Chang'e 5."
-        },
-        {
-          "src": "/images/missions/change6/02.webp",
-          "caption": "Charges utiles internationales — détecteur NILS de l'ESA, détecteur de radon français DORN, rétroréflecteur italien INRRI, nanosatellite pakistanais ICUBE-Q."
         }
       ]
     },
@@ -42,7 +38,12 @@
       "id": "science",
       "title": "La science",
       "subtitle": "1 935 g de matériaux du bassin du pôle Sud-Aitken",
-      "images": []
+      "images": [
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Un échantillon de la face cachée rapporté par Chang'e 6, exposé au Congrès international d'astronautique 2024 à Milan."
+        }
+      ]
     }
   ]
 }

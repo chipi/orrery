@@ -9,10 +9,6 @@
         {
           "src": "/images/missions/change6/01.webp",
           "caption": "De Chang'e 6-stack — met als toevoeging het relaissatelliet Queqiao-2 voor communicatie met de achterkant, verder gebaseerd op de architectuur van Chang'e 5."
-        },
-        {
-          "src": "/images/missions/change6/02.webp",
-          "caption": "Internationale instrumenten — de ESA-detector NILS, de Franse radondetector DORN, de Italiaanse retroreflector INRRI en de Pakistaanse nanosatelliet ICUBE-Q."
         }
       ]
     },
@@ -42,7 +38,12 @@
       "id": "science",
       "title": "Wetenschap",
       "subtitle": "1.935 g materiaal uit het Zuidpool-Aitken-bekken",
-      "images": []
+      "images": [
+        {
+          "src": "/images/missions/change6/02.webp",
+          "caption": "Een monster van de achterkant van de Maan, meegebracht door Chang'e 6, tentoongesteld op het Internationaal Astronautisch Congres 2024 in Milaan."
+        }
+      ]
     }
   ]
 }

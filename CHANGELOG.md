@@ -20,6 +20,29 @@ translation quality. The date replaces "in progress" when the release is cut.
   materials said 0.9.1 and listed stale dependency versions. Both are regenerated, and a new
   `check-version-sync` step in `validate-data` fails when the offline manifest, the tech BOM, the
   iOS app version or this changelog's section differs from `package.json`.
+- **Broken links and 404s.** Program pages' fleet links (989, every locale) opened the fleet
+  page with nothing selected; several essays, stories and the Serbian Viking stories pointed at
+  missing ids or images; fleet panels, mission panels, mission cards and /credits asked for
+  images that do not exist. All fixed, and 150 dead outbound links were replaced (the same
+  publisher's moved page, else a Wayback copy, else Wikipedia) or removed where the source never
+  existed. Crawler-guessed image paths, `/about`, `/favicon.ico` and `/sitemap_index.xml` now
+  redirect; `/.well-known/traffic-advice` exists.
+- **No third-party tracking tags on outbound links.** Commons' `utm_` tags rode along on 664
+  image-credit links; stripped, and the build strips them. 47 credits that the tags had broken,
+  and two diagrams credited to NASA instead of their authors, now carry the right author and
+  licence.
+- **Image viewer.** Thumbnails no longer show on landscape phones, and 3D scenes pause behind the
+  open viewer (each step on /iss took ~800 ms).
+- **Translations.** A failed language bundle no longer fires a guaranteed-404 per-file request;
+  the failure is reported to analytics instead.
+
+### Added
+
+- **Link checks.** `check-data-links` (in `validate-data`) checks every in-app link, query
+  parameter, id and asset path held in data, overlays and messages for all 14 locales;
+  `check-external-links` checks the ~6,100 outbound links readers can click and writes
+  `docs/provenance/external-link-check.md`; `prod-404-report` lists what prod answered 404 to and
+  whether it still does. Runbook: the `orrery-link-health` skill.
 
 ## [0.9.2] — 2026-10-31
 

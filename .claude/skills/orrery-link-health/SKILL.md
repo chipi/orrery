@@ -51,6 +51,28 @@ app reads, overlays, messages, components). Report: docs/provenance/external-lin
 — Dead, Inconclusive (403, 429, timeouts: recheck by hand) and Moved. Never raise the
 per-host rate: Wikimedia answers 429 to bursts; wiki pages go through the API instead.
 
+## 4. Fixing dead outbound links
+
+1. `node scripts/check-external-links.mjs --recheck=dead,timeout` — confirm they are still dead
+   (HEAD-hostile hosts, 429s and gateway errors are not dead).
+2. `node scripts/link-fix-candidates.mjs` — Wayback snapshot + wiki search hits per URL.
+3. Pick each replacement by hand, in this order: the same publisher's live page (NASA:
+   `https://www.nasa.gov/wp-json/wp/v2/search?search=…`, same for science.nasa.gov; NTRS
+   `ntrs.nasa.gov/api/citations/search?q=…` for reports), then a Wayback snapshot of the
+   original (CDX: `web.archive.org/cdx/search/cdx?url=…&filter=statuscode:200&limit=-1`),
+   then a Wikipedia article with the label changed. A URL with no capture ever and no page
+   on the publisher's site may never have existed — remove the reference, don't paper over it.
+4. Write the picks to `scripts/link-fixes/<date>-dead-links.json` (`new`, `why`, optional
+   `label`), then `node scripts/apply-link-fixes.mjs <map>` — it refuses a replacement that
+   is not OK and is safe to re-run.
+5. Image-credit rows (image-provenance) are not link swaps: a Commons title with no
+   `pageid` never matched a file. Identify the real file (same NASA PIA/GPN id), then
+   `npx tsx scripts/backfill-provenance-commons.ts <map>`; the rest belong to the
+   gallery-credits job.
+
+First run (2026-11-01): 246 dead → 150 replaced or removed; 60 credit rows + the MMX
+insignia (Commons file deleted) left for the credits job.
+
 ## Fixed before — the same classes come back
 
 - Code asking for a file per entity when only some have one (fleet badges, mission

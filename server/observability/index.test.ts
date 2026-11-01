@@ -255,6 +255,19 @@ describe('traces (OTLP)', () => {
     await otlp.close();
   });
 
+  it('traces a request whose traceparent says not sampled (callers cannot hide spans)', async () => {
+    const otlp = await sink();
+    initObservability(base({ otlpTracesEndpoint: `${otlp.url}/v1/traces` }), () => {});
+    const a = await app(() => '/ask');
+    await a.get('/ask', { traceparent: '00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-00' });
+    await a.close();
+    await settle();
+    await shutdownObservability();
+    expect(otlp.hits.length).toBeGreaterThan(0);
+    expect(otlp.hits[0].body.toString('latin1')).toContain('GET /ask');
+    await otlp.close();
+  });
+
   it('gives LLM metadata the active trace id, and withSpan rethrows', async () => {
     const otlp = await sink();
     initObservability(base({ otlpTracesEndpoint: `${otlp.url}/v1/traces` }), () => {});

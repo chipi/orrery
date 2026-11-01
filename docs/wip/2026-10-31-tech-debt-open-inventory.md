@@ -1,15 +1,21 @@
 # Tech-debt arc — open items after v0.9.2
 
-The arc ran from 2026-10-29 to 2026-10-31 on branch `tech-debt/phases` (239 commits ahead of
-`origin/main` at the time of writing) and was released as 0.9.2. This inventory lists what is
-still open for the next arc. An item counts as done only when a commit on the branch or the code
-in the tree shows it. Anything else is "open" or "partly done", with what remains.
+The arc ran from 2026-10-29 to 2026-10-31 on branch `tech-debt/phases` and was released as
+0.9.2: squash-merged to main as `d28002f3639` (PR #624), tagged `v0.9.2`, deployed to prod on
+2026-11-01 at `a5d740bd2b8` (Deploy to prod VPS run 41298755798, deploy + validate green). The
+branch commits are not ancestors of main; look up a branch sha with `git show <sha>`, and check
+that its change is on main by content, not with `merge-base`. Start-here for the next session:
+[`NEXT_STEPS.md`](NEXT_STEPS.md).
 
-Sources: the arc plan (operator memory note), `2026-10-30-i18n-phase-plan.md`,
-`2026-10-30-phase5-bundle-size-plan.md`, `2026-10-31-phase6-robustness-plan.md`,
-`2026-10-31-garble-pass.md`, `2026-10-31-essays-science-spot-check.md`,
-`2026-10-31-space-terms-glossary-pilot.md`, and `git log origin/main..HEAD`.
-`docs/wip/NEXT_STEPS.md` does not exist.
+This inventory lists what is still open for the next arc. An item counts as done only when a
+commit or the code in the tree shows it. Anything else is "open" or "partly done", with what
+remains.
+
+Sources: the arc plan (operator memory note), the phase plans (now in `_archive/`:
+`2026-10-30-i18n-phase-plan.md`, `2026-10-30-phase5-bundle-size-plan.md` = "Phase 5 doc",
+`2026-10-31-phase6-robustness-plan.md` = "Phase 6 doc"), `2026-10-31-garble-pass.md`,
+`2026-10-31-essays-science-spot-check.md`, `2026-10-31-space-terms-glossary-pilot.md`, and the
+branch's `git log`.
 
 Not determined from the repo: the "23 missing site stories" count (`static/data/site-stories/`
 holds 55 files; no list of missing ones was found), and whether the 14-locale render sweep
@@ -24,7 +30,7 @@ commit on the branch touches it).
 | Unjustified `{@html}` | partly done | Every `{@html}` site now carries a reason on its eslint-disable line. No guard fails a new bare `{@html}`; 21 sites exist in `src`. | `e50eb1da7ca` |
 | Hard-coded English: TypeScript label maps | partly done | The scan guard reads `.svelte` markup only; `<script>` code and `.ts` label maps (era names, fleet categories, HUD labels) are "by review", not gated. Whether all of them were translated was not audited. | `scripts/i18n-tools/hardcoded-english.mjs` header; `cea21263071` |
 | Hard-coded English: allowlist | partly done | 60-line allowlist in place (developer panels, brand, symbols). Entries not re-audited. | `scripts/i18n-tools/hardcoded-english-allowlist.json` |
-| 14-locale render check | open | Phase plan step 3 asks for it as part of the guard. The spec `i18n-all-routes.spec.ts` exists but no commit on the branch runs or changes it; no result is recorded. | `docs/wip/2026-10-30-i18n-phase-plan.md` step 3 |
+| 14-locale render check | open | Phase plan step 3 asks for it as part of the guard. The spec `i18n-all-routes.spec.ts` exists but no commit on the branch runs or changes it; no result is recorded. | `docs/wip/_archive/2026-10-30-i18n-phase-plan.md` step 3 |
 | Unit symbols: sr-Cyrl and zh-CN | open | sr-Cyrl writes SI symbols in both scripts (km/s 39 uses, км/с 36) where style guide 1a says Latin; zh-CN writes 公里 where 1a says km. Deferred by the operator on 2026-10-30. | `2026-10-30-i18n-phase-plan.md` last section |
 | Per-locale unit forms for AU | partly done | `au` applied in fr, es, it, pt-BR (517 strings). Other locales keep their 1a forms; the style guide's unit table vs. shipped forms (e.g. de "(AU)" vs AE) not re-verified. | `db988ce0771` |
 | `i18n-src` en-US key parity | open | en-US has 1,137 keys, the other locales 1,143 (six `hotspot-metadata` files). The bundle builder warns. | Phase 5 doc, section 3 "Not covered" |
@@ -39,14 +45,14 @@ Other Phase 4 items are done; see "Done in this arc".
 | /lab still ships 2.35 MB chunk | partly done | The Lab's own 1,099 messages are compiled with all 14 locales inline. Paraglide 2.21 has no per-locale option for a prerendered site. Decision deferred to the per-locale bundle item. | Phase 5 doc section 1 |
 | Offline alt text before first online load | open | A web visitor who goes offline before any page needed alt text has none until one online load. | Phase 5 doc section 2 "Not covered" |
 | Route budget: dynamic imports and CSS | open | The budget counts static import closures only; lazy scenes, workers and CSS are not counted. | Phase 5 doc section 4 "Not counted" |
-| GlitchTip ORRERY-PROD-20 | partly done | Fix and guard are on the branch; the issue stays unresolved until the fix is deployed. | `d5260e2076c`, `1037e07190b` |
-| GitHub issue #616 | partly done | Fix is on main (`af5db703f75`), GlitchTip marks it resolved; the GitHub issue is still open and waits for the operator to close it. | Phase 5 doc section 5 |
+| GlitchTip ORRERY-PROD-20 | done | Fix deployed 2026-11-01 (`FleetEntryPanel.svelte:532` keys rows by `row.key` at `a5d740bd2b8`); issue 694 resolved via the agents' issue token, read back `resolved`. No new orrery / orrery-prod issue seen in the first minutes after the deploy. | `d5260e2076c`, `1037e07190b` |
+| GitHub issue #616 | done | Fix on main (`af5db703f75`); the issue is CLOSED (checked 2026-11-01). | Phase 5 doc section 5 |
 
 ## Phase 6 — robustness
 
 | Item | Status | What remains | Evidence |
 | --- | --- | --- | --- |
-| Launch-data retry and log trim | partly done | Code and cron change are on the branch; both reach prod only at the next deploy (the deploy installs the crontab). | `e4b0b99dcf2`, `32dd6371004` |
+| Launch-data retry and log trim | partly done | Deployed 2026-11-01; the deploy log shows the crontab line `17 1-23/6 * * * … refresh-prod-data.sh`. Not yet checked: that a refresh after the deploy ran, retried a 5xx, and the log trim works. | `e4b0b99dcf2`, `32dd6371004`; deploy run 41298755798 |
 | lab-api DCR consent page / redirect-host allowlist | open | Not done from #597. MCP tools are pure math today. | Phase 6 doc section 2 "Not done" |
 | axe: dynamic routes | open | `/missions?id=`, `/programs/[id]`, `/essays/[slug]`, science sections, cards and panel states opened by interaction are not gated. Minor and moderate findings are logged, not gated. | Phase 6 doc section 4 "Not covered"; `571828d0c91` |
 | iOS build and Swift changes | open | Not built locally (no Xcode on Linux); the CI `ios` job builds it. No device test of the iCloud exclusion flag. | Phase 6 doc section 5 "Not verified locally"; `0bcfa889ee2` |
@@ -61,7 +67,7 @@ Other Phase 4 items are done; see "Done in this arc".
 | Separate `/glossary` page idea | open | Low-profile page built from the glossary `term` section, optional reverse index; to be reassessed after the pilot. `/science/glossary` exists. | Phase 6 doc last paragraph |
 | Hand read of translated essays and science | partly done | Spot check done (208 items) and the science reads in ru/zh-CN/fr done; the rest is under "Translation quality". | `e522e5f4535` |
 | `/fly` probes `data/trajectories/<id>.json` for every mission | open | Found in the 0.9.2 local e2e: 233 404s in one run. The optional fetch (since `a1c43a0b181`) 404s for every mission without a trajectory file, in prod too. Ship a manifest of trajectory ids (or a field on the mission index) and fetch only when listed. | `src/routes/fly/+page.svelte` ~2197; e2e webServer log |
-| `data/offline-manifest.json` version is stale | open | The committed mobile offline manifest still says `"version":"0.9.1"` on the 0.9.2 staging deploy; the release bump did not regenerate it. Regenerate it in the release bump (or derive the version at build time) and add a check that it matches `package.json`. | staging `data/offline-manifest.json` after `95c792f2f60` |
+| `data/offline-manifest.json` version is stale | open | The committed mobile offline manifest still says `"version":"0.9.1"` on the 0.9.2 staging and prod deploys (prod checked 2026-11-01); the release bump did not regenerate it. Regenerate it in the release bump (or derive the version at build time) and add a check that it matches `package.json`. | staging `data/offline-manifest.json` after `95c792f2f60` |
 | docker-e2e publish skipped on main | done | `cron-gate` (`0569ca8bbf2`) made the implicit `success()` of `publish-platforms` / `publish-manifest` false on every non-schedule run; `sha-d28002f` / `sha-95c792f` were never published and deploy-prod run 41292320853 refused. Fixed in `a5d740bd2b8`. No check catches a skipped publish on main yet. | docker-e2e run 41289168121 |
 
 ## Phase 7 — content

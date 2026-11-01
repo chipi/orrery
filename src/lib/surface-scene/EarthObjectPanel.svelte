@@ -398,7 +398,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-<PanelLightbox src={panelLightbox} onClose={() => (panelLightbox = null)} />
+<PanelLightbox src={panelLightbox} images={panelGallery} onClose={() => (panelLightbox = null)} />
 
 <style>
   /* #547 — card CTA in the quiet register (mirrors the missions panel). */

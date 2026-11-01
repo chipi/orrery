@@ -855,7 +855,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
+<PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
 
 <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 

@@ -15,7 +15,7 @@ async function openAndCloseFromHero(page: Page) {
 
   const lightbox = page.locator('button.lightbox');
   await expect(lightbox).toBeVisible({ timeout: 3_000 });
-  await expect(lightbox.locator('img')).toHaveAttribute('src', /.+/);
+  await expect(page.locator('.lightbox-img')).toHaveAttribute('src', /.+/);
   await expect(page.locator('.lightbox-meta')).toBeVisible();
 
   await lightbox.click({ position: { x: 8, y: 8 } });
@@ -46,13 +46,13 @@ test.describe('panel lightbox', () => {
       await hero.click();
       await expect(lightbox).toBeVisible({ timeout: 1_000 });
     }).toPass({ timeout: 10_000 });
-    const close = lightbox.locator('.lightbox-close');
+    const close = page.locator('.lightbox-close');
     const box = await close.boundingBox();
     expect(box).not.toBeNull();
     const cx = box!.x + box!.width / 2;
     const cy = box!.y + box!.height / 2;
     const topmostInLightbox = await page.evaluate(
-      ([x, y]) => !!document.elementFromPoint(x!, y!)?.closest('button.lightbox'),
+      ([x, y]) => !!document.elementFromPoint(x!, y!)?.closest('.lightbox-root'),
       [cx, cy],
     );
     expect(topmostInLightbox).toBe(true);
@@ -71,6 +71,47 @@ test.describe('panel lightbox', () => {
     await thumb.click();
     await expect(page.locator('button.lightbox')).toBeVisible({ timeout: 3_000 });
     await expect(page.locator('.lightbox-meta')).toBeVisible();
+  });
+
+  // Opened from the hero, the viewer steps through the panel's whole gallery:
+  // arrows, keys, the counter and (desktop only) the thumbnail strip.
+  test('steps through the gallery with arrows, keys and thumbnails', async ({ page, isMobile }) => {
+    await page.goto('/missions?id=cassini');
+    const hero = page.locator('.panel-hero-btn').first();
+    await expect(hero).toBeVisible({ timeout: 10_000 });
+    await hero.click();
+    const counter = page.locator('.lightbox-count [aria-hidden]');
+    await expect(counter).toHaveText(/^1 \/ \d+$/, { timeout: 3_000 });
+    const total = Number((await counter.textContent())!.split('/')[1]);
+    expect(total).toBeGreaterThan(1);
+    const img = page.locator('.lightbox-img');
+    const first = await img.getAttribute('src');
+
+    await page.locator('.lightbox-next').click();
+    await expect(counter).toHaveText(`2 / ${total}`);
+    expect(await img.getAttribute('src')).not.toBe(first);
+    await page.keyboard.press('ArrowRight');
+    await expect(counter).toHaveText(`3 / ${total}`);
+    await page.locator('.lightbox-prev').click();
+    await expect(counter).toHaveText(`2 / ${total}`);
+
+    const thumbs = page.locator('.lightbox-thumbs');
+    if (isMobile) {
+      await expect(thumbs).toBeHidden();
+    } else {
+      await expect(thumbs).toBeVisible();
+      await page
+        .locator('.lightbox-thumb')
+        .nth(total - 1)
+        .click();
+      await expect(counter).toHaveText(`${total} / ${total}`);
+    }
+
+    // Clicking the image keeps the viewer open; Esc closes it.
+    await img.click();
+    await expect(page.locator('.lightbox-root')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('.lightbox-root')).toHaveCount(0);
   });
 
   test('asteroid belt hero opens the lightbox', async ({ page }) => {

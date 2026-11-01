@@ -272,7 +272,11 @@
   {/if}
 </Panel>
 
-<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
+<PanelLightbox
+  src={lightboxSrc}
+  images={gallery.map((u) => assetUrl(u))}
+  onClose={() => (lightboxSrc = null)}
+/>
 
 {#if cardSpec}
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />

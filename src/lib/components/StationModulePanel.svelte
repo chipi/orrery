@@ -289,7 +289,7 @@
   {/if}
 </Panel>
 
-<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
+<PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
 
 <style>
   .head {

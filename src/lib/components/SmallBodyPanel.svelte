@@ -366,7 +366,7 @@
       {/if}
     </div>
 
-    <PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
+    <PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
 
     <!-- #547 S5c — every small body carries its collectible card. -->
     {#if cardSpec}

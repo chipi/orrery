@@ -11,7 +11,7 @@ This inventory lists what is still open for the next arc. An item counts as done
 commit or the code in the tree shows it. Anything else is "open" or "partly done", with what
 remains.
 
-Sources: the arc plan (operator memory note), the phase plans (now in `_archive/`:
+Sources: the arc plan (operator memory note), the phase plans (deleted with `docs/wip/_archive/` in `2f710bdd67e`; read them with `git show 2f710bdd67e^:docs/wip/_archive/<file>`:
 `2026-10-30-i18n-phase-plan.md`, `2026-10-30-phase5-bundle-size-plan.md` = "Phase 5 doc",
 `2026-10-31-phase6-robustness-plan.md` = "Phase 6 doc"), `2026-10-31-garble-pass.md`,
 `2026-10-31-essays-science-spot-check.md`, `2026-10-31-space-terms-glossary-pilot.md`, and the
@@ -78,9 +78,9 @@ Other Phase 4 items are done; see "Done in this arc".
 | Review the Galileo gallery credits | partly done | Reviewed 2026-11-01: the 20 images in `missions/galileo`, `fleet-galleries/galileo`, `fleet-galleries/galileo-gnss`, `earth-objects/galileo`. Fixed: `earth-objects/galileo` 04 (DLR photo of a Galileo launch) and 05 (a user's ground-station photo) said agency NASA; now ESA, as other rows picturing ESA hardware. Open: `fleet-galleries/galileo` (the Jupiter orbiter) 01, 02, 04, 05 are still the "NASA Images search result" placeholder (no nasa_id), and `fleet-galleries/galileo-gnss` 02 is "uncurated" with an assumed ESA licence; each needs the real source found (image match, as in `e6fc1740a36`). Also: the 21 Oct credit fixes were made in `image-provenance.json` directly, so a full `build-image-provenance` rebuild would rewrite them. | `git log origin/main..HEAD`; `docs/wip/*.md` (only unrelated Galileo "eight years" fact fix) |
 | Gallery credits: placeholders and missing rows (planned for this week) | partly done | Audit 2026-11-01 over all 533 detail-panel galleries (2,526 images). **Done:** 48 rows dropped by the WebP move (`786116478dc`) restored from `786116478dc^` (same picture: 39 by dHash, 9 by side-by-side read); gate `validate-gallery-credits` (every gallery image has a row; placeholder count may not grow). **Open, step 2:** 411 placeholder credits — 220 "NASA Images search result" (a search page, licence assumed PD-NASA) and 188+ "Uncurated / Curated panel image" (licence guessed from the agency); by surface fleet 261, missions 73, mars-sites 20, planets 18, earth-objects 11, small-bodies 11, iss-modules 9, satellites 5, moon-sites 3. Method: rebuild the 21 Oct image match (`e6fc1740a36`, never committed) as a repo tool — search NASA Images, Commons, ESA / JAXA / agency Flickr for the subject, accept only dHash 64-bit ≤ 8 and 256-bit ≤ 48, aspect within 8 %, 20-point margin, then a side-by-side sample — and lower `PLACEHOLDER_CEILING` as rows are fixed. **Open, step 2:** 11 images with no credit and no old row (`KNOWN_MISSING`: kuiper 02, 04–06; callisto 05, charon 04, enceladus 05, europa 05, oberon 04, phobos 05, titan 05). **Open, step 3:** what still has no match — replace with a sourced image or drop from the gallery; never keep a guessed licence. | `scripts/validate-gallery-credits.ts`; audit script was a session script |
 
-## Carried over from the v1.0 notes (2026-10-16 … 10-21, archived 2026-11-01)
+## Carried over from the v1.0 notes (2026-10-16 … 10-21, deleted 2026-11-01)
 
-Open items of the four v1.0-era notes now in `_archive/` (`2026-10-16-next-pr-content-scope`,
+Open items of the four v1.0-era notes (deleted with `docs/wip/_archive/` in `2f710bdd67e`) (`2026-10-16-next-pr-content-scope`,
 `2026-10-17-post-v1-arc-plan`, `2026-10-20-v1.0-backlog`, `2026-10-21-v1.0-fix-arc-close`),
 checked against the tree and GitHub on 2026-11-01. Everything else in those notes was done or
 superseded (evidence per item in the review that moved them).

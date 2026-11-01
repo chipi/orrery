@@ -1,7 +1,9 @@
 # Next steps — start here
 
-State as of 2026-11-01. Update this file at the end of every arc; move finished notes to
-`_archive/` (rules in `_archive/README.md`).
+State as of 2026-11-01. Update this file at the end of every arc; delete finished notes once
+their open items are in the inventory (git keeps them). `docs/wip/_archive/` was deleted on
+2026-11-01 in `2f710bdd67e`; a reference to `docs/wip/_archive/<file>` reads from
+`git show 2f710bdd67e^:docs/wip/_archive/<file>`.
 
 ## Where things stand
 
@@ -69,7 +71,7 @@ nothing alerts when docker-e2e skips its image publish on main.
 Still live: `2026-10-31-fleet-garble-findings.md` (checked 2026-11-01: most listed defects are
 still in the text; the term-consistency skill links it; tracked in the inventory under
 "Translation quality"), and the undated topic notes (backlogs, guides, fact-check logs; not
-re-checked). Archived on 2026-11-01 because their open items are in the inventory: the i18n,
+re-checked). Deleted on 2026-11-01 (`2f710bdd67e`, with the rest of `_archive/`) because their open items are in the inventory: the i18n,
 Phase 5 and Phase 6 plans, the `/explore` split plan, the 2026-10-19 i18n handover, and the four
 v1.0 notes (`2026-10-16-next-pr-content-scope`, `2026-10-17-post-v1-arc-plan`,
 `2026-10-20-v1.0-backlog`, `2026-10-21-v1.0-fix-arc-close`; open items in the inventory section

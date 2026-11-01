@@ -2301,7 +2301,7 @@
   "satellites/titania/02": {
     "commons_file": "PIA00039 Titania (cropped).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:PIA00039%20Titania%20(cropped).jpg",
-    "credit": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+    "credit": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 https://web.archive.org/web/20180817095759/http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
     "license": "public domain",
     "fetched_at": "2026-06-20T22:01:38Z",
     "bodies_iteration": 1,
@@ -2327,7 +2327,7 @@
   "satellites/titania/05": {
     "commons_file": "PIA00039 Titania.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:PIA00039%20Titania.jpg",
-    "credit": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+    "credit": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 https://web.archive.org/web/20180817095759/http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
     "license": "public domain",
     "fetched_at": "2026-06-20T22:01:39Z",
     "bodies_iteration": 1,
@@ -2458,7 +2458,7 @@
   "belts/asteroid/04": {
     "commons_file": "Alien Asteroid Belt Compared to our Own.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Alien%20Asteroid%20Belt%20Compared%20to%20our%20Own.jpg",
-    "credit": "http://planetquest.jpl.nasa.gov/image/30",
+    "credit": "https://web.archive.org/web/20150825055011/http://planetquest.jpl.nasa.gov:80/image/30",
     "license": "public domain",
     "fetched_at": "2026-06-21T08:42:48Z",
     "bodies_iteration": "belts-structure-curate-2026-06-21",

@@ -181,7 +181,7 @@ export function buildKaguyaTcProvenanceEntry(input: {
     source_url: input.sourceUrl,
     image_url: input.sourceUrl,
     license_short: 'JAXA-OPEN',
-    license_url: 'https://www.jaxa.jp/about/copyright_e.html',
+    license_url: 'https://global.jaxa.jp/policy.html',
     license_rationale:
       'Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.',
     modifications: [

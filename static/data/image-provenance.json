@@ -72,8 +72,8 @@
    "path": "/images/belts/asteroid/04.webp",
    "source_type": "wikimedia-commons",
    "title": "File:Alien Asteroid Belt Compared to our Own.jpg",
-   "author": "http://planetquest.jpl.nasa.gov/image/30",
-   "agency": "http://planetquest.jpl.nasa.gov/image/30",
+   "author": "https://web.archive.org/web/20150825055011/http://planetquest.jpl.nasa.gov:80/image/30",
+   "agency": "https://web.archive.org/web/20150825055011/http://planetquest.jpl.nasa.gov:80/image/30",
    "source_url": "https://commons.wikimedia.org/wiki/File%3AAlien%20Asteroid%20Belt%20Compared%20to%20our%20Own.jpg",
    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alien%20Asteroid%20Belt%20Compared%20to%20our%20Own.jpg",
    "license_short": "PD-NASA",
@@ -33262,7 +33262,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_05507N332E0193/TC1S2B0_01_05507N332E0193.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_05507N332E0193/TC1S2B0_01_05507N332E0193.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -33328,7 +33328,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_03493S699E0322/TC1S2B0_01_03493S699E0322.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_03493S699E0322/TC1S2B0_01_03493S699E0322.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -33373,7 +33373,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -33397,7 +33397,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -33442,7 +33442,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_03042N437E3400/TC1S2B0_01_03042N437E3400.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_03042N437E3400/TC1S2B0_01_03042N437E3400.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -33487,7 +33487,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -33532,7 +33532,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_05527S459E1774/TC1S2B0_01_05527S459E1774.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_05527S459E1774/TC1S2B0_01_05527S459E1774.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -33577,7 +33577,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -33601,7 +33601,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -33625,7 +33625,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -33649,7 +33649,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -33673,7 +33673,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -33697,7 +33697,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -33742,7 +33742,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_03071N429E3084/TC1S2B0_01_03071N429E3084.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_03071N429E3084/TC1S2B0_01_03071N429E3084.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -33808,7 +33808,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_03332S420E2064/TC1S2B0_01_03332S420E2064.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_03332S420E2064/TC1S2B0_01_03332S420E2064.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -33874,7 +33874,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/stereoscopic/uncontrolled/TC2W2B0_01_02638S007E0560/TC2W2B0_01_02638S007E0560.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/stereoscopic/uncontrolled/TC2W2B0_01_02638S007E0560/TC2W2B0_01_02638S007E0560.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -33940,7 +33940,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/stereoscopic/uncontrolled/TC2W2B0_01_07124N385E3250/TC2W2B0_01_07124N385E3250.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/stereoscopic/uncontrolled/TC2W2B0_01_07124N385E3250/TC2W2B0_01_07124N385E3250.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -33985,7 +33985,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34009,7 +34009,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34033,7 +34033,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34057,7 +34057,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34081,7 +34081,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34105,7 +34105,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34150,7 +34150,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_05668N254E0303/TC1S2B0_01_05668N254E0303.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_05668N254E0303/TC1S2B0_01_05668N254E0303.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -34174,7 +34174,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34198,7 +34198,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34222,7 +34222,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34246,7 +34246,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34270,7 +34270,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34294,7 +34294,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-1024x1024-around-site-coords",
@@ -34339,7 +34339,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_05637N127E0619/TC1S2B0_01_05637N127E0619.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_05637N127E0619/TC1S2B0_01_05637N127E0619.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -34384,7 +34384,7 @@
    "source_url": "https://stac.astrogeology.usgs.gov/",
    "image_url": "https://stac.astrogeology.usgs.gov/",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -34408,7 +34408,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/stereoscopic/uncontrolled/TC1W2B0_01_02749N070E2961/TC1W2B0_01_02749N070E2961.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/stereoscopic/uncontrolled/TC1W2B0_01_02749N070E2961/TC1W2B0_01_02749N070E2961.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -34474,7 +34474,7 @@
    "source_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_05672S139E0253/TC1S2B0_01_05672S139E0253.tif",
    "image_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/moon/kaguya/terrain_camera/monoscopic/uncontrolled/TC1S2B0_01_05672S139E0253/TC1S2B0_01_05672S139E0253.tif",
    "license_short": "JAXA-OPEN",
-   "license_url": "https://www.jaxa.jp/about/copyright_e.html",
+   "license_url": "https://global.jaxa.jp/policy.html",
    "license_rationale": "Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.",
    "modifications": [
     "cropped-2560x2560-around-site-coords",
@@ -65716,8 +65716,8 @@
    "path": "/images/satellites/titania/02.webp",
    "source_type": "wikimedia-commons",
    "title": "File:PIA00039 Titania (cropped).jpg",
-   "author": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
-   "agency": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+   "author": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 https://web.archive.org/web/20180817095759/http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+   "agency": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 https://web.archive.org/web/20180817095759/http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
    "source_url": "https://commons.wikimedia.org/wiki/File%3APIA00039%20Titania%20(cropped).jpg",
    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA00039%20Titania%20(cropped).jpg",
    "license_short": "PD-NASA",
@@ -65779,8 +65779,8 @@
    "path": "/images/satellites/titania/05.webp",
    "source_type": "wikimedia-commons",
    "title": "File:PIA00039 Titania.jpg",
-   "author": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
-   "agency": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+   "author": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 https://web.archive.org/web/20180817095759/http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+   "agency": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 https://web.archive.org/web/20180817095759/http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
    "source_url": "https://commons.wikimedia.org/wiki/File%3APIA00039%20Titania.jpg",
    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA00039%20Titania.jpg",
    "license_short": "PD-NASA",

@@ -4,233 +4,52 @@
 
 | Result | URLs |
 | --- | ---: |
-| OK | 5828 |
-| … of which redirected to another address | 331 |
-| Dead (404, 410, 5xx …) | 60 |
-| Inconclusive (403, timeout, network error) | 150 |
+| OK | 5913 |
+| … of which redirected to another address | 360 |
+| Dead (404, 410, 5xx …) | 0 |
+| Inconclusive (403, timeout, network error) | 34 |
 | Not checked yet | 0 |
-| **Total** | **6038** |
+| **Total** | **5947** |
 
 Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every 6 h); www.w3.org (XML namespaces, not links); example.com (placeholder); this site's own addresses; direct links to media files.
-
-## Dead
-
-| URL | Status | Where |
-| --- | --- | --- |
-| http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture | 404 | `static/data/image-provenance.json` |
-| http://planetquest.jpl.nasa.gov/image/30 | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File:Altair_PR_image6_(white).jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File:MMX_MISSION_MARK.png | 404 | `static/data/badge-provenance.json`, `build/ar/patches.html`, `build/de/patches.html` +12 |
-| https://commons.wikimedia.org/wiki/File%3A2001%3A%20A%20Space%20Odyssey%20(1968%20film) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3A486958_Arrokoth_(crop_of_binary)_color_(cropped).jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AA%20Brief%20History%20of%20Time%20(Stephen%20Hawking%2C%201988) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AApollo%2013%20(1995%20film) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AAre%20We%20There%20Yet%3F%20(podcast) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AArs%20Technica%20(site%20logo) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ABeagle%202%20on%20Mars.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ACasey%20Handmer's%20Blog%20(site%20avatar) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ACeres_-_RC3_-_Haulani_Crater_-_21778369873.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AContact%20(1997%20film) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ACosmos%20(Carl%20Sagan%2C%201980) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ACosmos%3A%20A%20Personal%20Voyage%20(PBS%2C%201980) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ADamn%20Interesting%20(site%20logo) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AEveryday%20Astronaut%20(YouTube%20channel) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AExoMars%202016%20-%20Trace%20Gas%20Orbiter%20and%20Schiaparelli.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AExoMars%20rover%20panels%20(ESA378296).jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AFor%20All%20Mankind%20(1989%20documentary) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AFor%20All%20Mankind%20(Apple%20TV%2B%20series%2C%202019) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AFundamentals%20of%20Astrodynamics%20(Bate%2C%20Mueller%20%26%20White%2C%201971) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AHow%20to%20Read%20the%20Solar%20System%20(Riley%20%26%20Campbell%2C%202014) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AIn%20the%20Shadow%20of%20the%20Moon%20(2007%20documentary) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AInterstellar%20(2014%20film) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AIo_volcanism_from_Galileo.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMain%20Engine%20Cut%20Off%20(podcast) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMariner%209%20-%20GPN-2000-001787.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMars%20Odyssey%20illustration.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMercury%20topography%20MESSENGER.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMessenger.gif | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMESSENGER%20-%20launch%20-%20Delta%20II%207925H-9.5%20-%202004.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMESSENGER%20-%20spacecraft%20at%20Mercury%20-%20artist%20depiction.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMessenger%20spacecraft.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMMX%20spacecraft%202.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMMX%20spacecraft%20bottom%20view.png | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMMX%20spacecraft%20front%20view.png | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AMoon%20(2009%20film) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ANASA%20Spaceflight%20(site%20logo) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ANewHorizons_39_july14_2015.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AOff-Nominal%20(podcast) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AOlympus%20Mons%20aurora.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AOpportunity%20Rover%20at%20Endurance%20Crater.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3APacking%20for%20Mars%20(Mary%20Roach%2C%202010) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3APale%20Blue%20Dot%20(Carl%20Sagan%2C%201994) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3APBS%20Space%20Time%20(YouTube%20channel) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3APIA21496-MarsRoverOpportunity-SelfPortrait-20140101.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3APioneer%2010-11%20-%20p51.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ARocket%20Propulsion%20Elements%20(Sutton%20%26%20Biblarz%2C%202016) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ASchiaparelli%20EDM%20lander%20testing.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AScott%20Manley%20(YouTube%20channel) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3ASpirit%20Embedded.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AThe%20Martian%20(2015%20film) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AThe%20Planetary%20Society%20(site%20logo) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AThe%20Right%20Stuff%20(Tom%20Wolfe%2C%201979) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AVeritasium%20(YouTube%20channel) | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AViking%202%20Lander%20Image%20of%20Frost.jpg | 404 | `static/data/image-provenance.json` |
-| https://commons.wikimedia.org/wiki/File%3AWhen%20We%20Left%20Earth%3A%20The%20NASA%20Missions%20(Discovery%2C%202008) | 404 | `static/data/image-provenance.json` |
-| https://www.jaxa.jp/about/copyright_e.html | 404 | `static/data/image-provenance.json` |
 
 ## Inconclusive — recheck by hand
 
 | URL | Status | Where |
 | --- | --- | --- |
-| http://www.ciclops.org/ | error ENOTFOUND | `static/data/source-logos.json` |
-| http://www.jpl.nasa.gov/news/news.php?release=2014-406 | 403 | `static/data/image-provenance.json` |
-| http://x | error EAI_AGAIN | `src/lib/surface-scene/SurfaceScene.svelte` |
-| https://agupubs.onlinelibrary.wiley.com/ | 403 | `static/data/source-logos.json` |
-| https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA003555 | 403 | `static/data/image-provenance.json` |
-| https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JB088iS02p0A481 | 403 | `static/data/link-provenance.json`, `static/data/missions/venus/venera-13.json` |
-| https://arstechnica.com/author/ericberger/ | 403 | `src/routes/science/reading-list/+page.svelte`, `build/ar/science/reading-list.html`, `build/de/science/reading-list.html` +12 |
-| https://californiasciencecenter.org | 403 | `static/data/museums.json` |
-| https://californiasciencecenter.org/ | 403 | `static/data/source-logos.json` |
-| https://californiasciencecenter.org/exhibits/air-space/endeavour-the-california-story | 403 | `static/data/fleet/crewed-spacecraft/endeavour.json`, `static/data/link-provenance.json` |
-| https://californiasciencecenter.org/exhibits/air-space/mission-26-the-big-endeavour | 403 | `static/data/link-provenance.json`, `static/data/missions/earth/apollo-soyuz.json` |
-| https://centrespatialguyanais.cnes.fr/en | 502 | `static/data/fleet/launch-site/kourou-ela-3.json`, `static/data/link-provenance.json` |
-| https://data.gov.in/Godl | error ECONNREFUSED | `static/data/badge-provenance.json`, `static/data/image-provenance.json` |
-| https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf | error EHOSTUNREACH | `static/data/image-provenance.json` |
-| https://doi.org/10.1146/annurev-astro-081710-102521 | 403 | `static/data/fleet/orbiter/ulysses.json`, `static/data/link-provenance.json` |
-| https://en.roscosmos.ru/204/ | error CERT_HAS_EXPIRED | `static/data/fleet/launch-site/baikonur-1-5.json`, `static/data/link-provenance.json` |
-| https://en.roscosmos.ru/205/ | error CERT_HAS_EXPIRED | `static/data/fleet/launch-site/baikonur-31-6.json`, `static/data/link-provenance.json` |
-| https://en.roscosmos.ru/206/ | error CERT_HAS_EXPIRED | `static/data/fleet/launch-site/plesetsk-43.json`, `static/data/link-provenance.json` |
-| https://english.cas.cn/ | error ETIMEDOUT | `static/data/source-logos.json` |
-| https://fernbank.edu | timeout | `static/data/museums.json` |
-| https://forum.nasaspaceflight.com/ | 403 | `src/routes/science/reading-list/+page.svelte`, `build/ar/science/reading-list.html`, `build/de/science/reading-list.html` +12 |
-| https://global.jaxa.jp/projects/sas/muses_c/ | 403 | `static/data/small-bodies.json` |
-| https://ieeexplore.ieee.org/ | 418 | `static/data/source-logos.json` |
-| https://imagearchives.esac.esa.int/index.php?/category/63 | 503 | `static/data/link-provenance.json`, `static/data/missions/comet/rosetta.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-75.49071175275735,37.83170032339203,-75.48488824724264,37.83629967660798&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.54731602811691,28.467100323392025,-80.5420839718831,28.471699676607976&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.54791657311843,28.489100323392023,-80.54268342688157,28.493699676607974&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.56401732473795,28.519400323392023,-80.55878267526207,28.523999676607975&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.56871546641646,28.444400323392024,-80.56348453358355,28.448999676607976&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.58561884890312,28.580700323392023,-80.58038115109687,28.585299676607974&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-80.62341995335284,28.625000323392026,-80.61818004664717,28.629599676607977&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-97.1585585593205,25.994700323392024,-97.15344144067952,25.999299676607976&bboxSR=4326&size=2048,2048&format=jpg&f=image | timeout | `static/data/image-provenance.json` |
-| https://mentallandscape.com/ | error ECONNRESET | `static/data/source-logos.json` |
-| https://mentallandscape.com/V_DigitalImages.htm | error ECONNRESET | `static/data/fleet/lander/venera-13.json`, `static/data/link-provenance.json` |
-| https://mentallandscape.com/V_Lavochkin2.htm | error ECONNRESET | `static/data/link-provenance.json`, `static/data/missions/venus/venera-13.json` |
-| https://murray-lab.caltech.edu/CTX/ | error UNABLE_TO_VERIFY_LEAF_SIGNATURE | `static/data/source-logos.json` |
-| https://muzeulmilitar.ro | error ENOTFOUND | `static/data/museums.json` |
-| https://oneweb.net/ | 403 | `static/data/fleet/constellation/oneweb.json`, `static/data/link-provenance.json`, `static/data/source-logos.json` |
-| https://science.ksc.nasa.gov/shuttle/technology/sts-newsref/srb.html | error ETIMEDOUT | `src/lib/physics/propulsion/launcher-engines.ts` |
-| https://scihub.copernicus.eu/ | error EHOSTUNREACH | `static/data/fleet/constellation/sentinel-copernicus.json`, `static/data/link-provenance.json` |
-| https://space.gov.ae/ | 403 | `static/data/source-logos.json` |
-| https://spaceflight.nasa.gov/realdata/elements/ | 403 | `static/data/science/orbits/inclination.json`, `static/data/science/orbits/semi-major-axis.json`, `build/ar/science/orbits/inclination.html` +27 |
-| https://thorne.caltech.edu/ | error ENOTFOUND | `static/data/science/observation/wormholes.json`, `build/ar/science/observation/wormholes.html`, `build/de/science/observation/wormholes.html` +12 |
-| https://uss-hornet.org | 403 | `static/data/museums.json` |
-| https://uss-hornet.org/exhibits | 403 | `static/data/museums.json` |
-| https://voyager.jpl.nasa.gov/golden-record/ | 403 | `static/data/link-provenance.json`, `static/data/missions/saturn/voyager-1.json`, `static/data/programs/voyager.json` +14 |
-| https://voyager.jpl.nasa.gov/golden-record/whats-on-the-record/ | 403 | `static/data/link-provenance.json`, `static/data/missions/neptune/voyager-2.json` |
-| https://voyager.jpl.nasa.gov/mission/interstellar-mission/ | 403 | `static/data/link-provenance.json`, `static/data/missions/saturn/voyager-1.json` |
-| https://voyager.jpl.nasa.gov/mission/science/neptune/ | 403 | `static/data/satellites.json` |
-| https://voyager.jpl.nasa.gov/mission/science/planet-neptune/ | 403 | `static/data/link-provenance.json`, `i18n-src/ar/planets/neptune.json`, `i18n-src/de/planets/neptune.json` +12 |
-| https://voyager.jpl.nasa.gov/mission/science/planet-uranus/ | 403 | `static/data/link-provenance.json`, `i18n-src/ar/planets/uranus.json`, `i18n-src/de/planets/uranus.json` +12 |
-| https://voyager.jpl.nasa.gov/mission/science/uranus/ | 403 | `static/data/satellites.json` |
-| https://voyager.jpl.nasa.gov/mission/status/ | 403 | `static/data/fleet/orbiter/voyager-1.json`, `static/data/fleet/orbiter/voyager-2.json`, `static/data/link-provenance.json` +2 |
-| https://www.aanda.org/ | 403 | `static/data/source-logos.json` |
-| https://www.aanda.org/articles/aa/full_html/2020/10/aa38467-20/aa38467-20.html | 403 | `static/data/link-provenance.json`, `static/data/missions/sun/solar-orbiter.json` |
-| https://www.annualreviews.org/ | 403 | `static/data/source-logos.json` |
-| https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029 | 403 | `static/data/link-provenance.json`, `i18n-src/ar/sun.json`, `i18n-src/de/sun.json` +12 |
-| https://www.annualreviews.org/doi/10.1146/annurev.earth.31.100901.141502 | 403 | `static/data/science/planets/magnetic-fields.json`, `build/ar/science/planets/magnetic-fields.html`, `build/de/science/planets/magnetic-fields.html` +12 |
-| https://www.blueorigin.com/ | 429 rate-limited | `static/data/source-logos.json` |
-| https://www.blueorigin.com/blue-moon | 429 rate-limited | `static/data/descent-profiles/blue-moon-mk1.json` |
-| https://www.blueorigin.com/news/new-glenn-launches-nasa-escapade-lands-fully-reusable-booster | 429 rate-limited | `static/data/essays/reusable-launchers.json`, `build/ar/essays/reusable-launchers.html`, `build/de/essays/reusable-launchers.html` +12 |
-| https://www.cambridge.org/ | 403 | `static/data/source-logos.json` |
-| https://www.ciclops.org/ | error ENOTFOUND | `static/data/link-provenance.json`, `static/data/missions/saturn/cassini.json` |
-| https://www.cnes-csg.fr/ | error ECONNREFUSED | `static/data/fleet/launch-site/kourou-ela-2.json`, `static/data/link-provenance.json` |
-| https://www.cnsa.gov.cn/english/n6465652/n6465653/c6810553/content.html | timeout | `static/data/fleet/launcher/long-march-3b.json`, `static/data/link-provenance.json` |
-| https://www.csiro.au/en/about/facilities-collections/atnf | error ETIMEDOUT | `static/data/observatories.json` |
-| https://www.glonass-iac.ru/ | 403 | `static/data/earth-objects.json`, `static/data/link-provenance.json` |
-| https://www.glonass-iac.ru/en/ | 403 | `static/data/fleet/constellation/glonass.json`, `static/data/fleet/launch-site/plesetsk-43.json`, `static/data/link-provenance.json` |
-| https://www.gsi.go.jp/ENGLISH/page_e30286.html | error ERR_SSL_UNSAFE_LEGACY_RENEGOTIATION_DISABLED | `static/data/image-provenance.json` |
-| https://www.iac.es/en/observatories/roque-de-los-muchachos-observatory | timeout | `static/data/observatories.json` |
-| https://www.iadc-home.org/documents_public/file_down/id/4119 | 403 | `static/data/science/orbits/disposal-end-of-life.json`, `build/ar/science/orbits/disposal-end-of-life.html`, `build/de/science/orbits/disposal-end-of-life.html` +12 |
-| https://www.iflscience.com/on-november-13-2026-voyager-will-reach-one-full-light-day-away-from-earth-81432 | 403 | `static/data/essays/comms.json`, `build/ar/essays/comms.html`, `build/de/essays/comms.html` +12 |
-| https://www.iiss.org/online-analysis/military-balance/2026/10/irans-space-launch-capability-grounded/ | 403 | `static/data/fleet/launch-site/semnan-imam-khomeini.json`, `static/data/link-provenance.json` |
-| https://www.intuitivemachines.com/ | error Error: redirect count exceeded | `static/data/source-logos.json` |
-| https://www.iridium.com/ | 403 | `static/data/fleet/constellation/iridium-next.json`, `static/data/link-provenance.json`, `static/data/source-logos.json` |
-| https://www.jpl.nasa.gov/jpl-image-use-policy | 403 | `static/data/data-sources.json` |
-| https://www.jpl.nasa.gov/missions/dawn | 403 | `static/data/fleet/orbiter/dawn.json`, `static/data/link-provenance.json` |
-| https://www.jpl.nasa.gov/missions/dawn/ | 403 | `static/data/link-provenance.json`, `static/data/missions/ceres/dawn.json` |
-| https://www.jpl.nasa.gov/missions/galileo/ | 403 | `static/data/link-provenance.json`, `static/data/missions/jupiter/galileo.json` |
-| https://www.jpl.nasa.gov/missions/juice-jupiter-icy-moons-explorer/ | 403 | `static/data/fleet/orbiter/juice.json`, `static/data/link-provenance.json` |
-| https://www.jpl.nasa.gov/missions/mariner-10 | 403 | `static/data/link-provenance.json`, `static/data/missions/mercury/mariner10.json` |
-| https://www.jpl.nasa.gov/missions/mars-pathfinder-sojourner-rover/ | 403 | `static/data/essays/seven-minutes.json`, `static/data/fleet/rover/sojourner.json`, `static/data/link-provenance.json` +14 |
-| https://www.jpl.nasa.gov/missions/psyche/ | 403 | `static/data/fleet/orbiter/psyche-spacecraft.json`, `static/data/link-provenance.json`, `static/data/missions/psyche/psyche-mission.json` |
-| https://www.jpl.nasa.gov/missions/ulysses | 403 | `static/data/fleet/orbiter/ulysses.json`, `static/data/link-provenance.json` |
-| https://www.jpl.nasa.gov/missions/ulysses/ | 403 | `static/data/link-provenance.json`, `static/data/missions/sun/ulysses.json` |
-| https://www.jpl.nasa.gov/missions/voyager-2/ | 403 | `static/data/link-provenance.json`, `static/data/missions/neptune/voyager-2.json` |
-| https://www.jpl.nasa.gov/news/nasas-laser-comms-demo-makes-deep-space-record-completes-first-phase/ | 403 | `static/data/essays/comms.json`, `build/ar/essays/comms.html`, `build/de/essays/comms.html` +12 |
-| https://www.jpl.nasa.gov/news/nasas-spitzer-space-telescope-ends-mission-of-astronomical-discovery/ | 403 | `static/data/fleet/observatory/spitzer.json`, `static/data/link-provenance.json` |
-| https://www.jpl.nasa.gov/news/nasas-trident-mission-to-icy-titan-and-trojan-asteroids/ | 403 | `static/data/satellites.json` |
-| https://www.jpl.nasa.gov/news/press_kits/mars_2020/launch/ | 403 | `static/data/fleet/rover/perseverance.json`, `static/data/link-provenance.json` |
-| https://www.jpl.nasa.gov/news/the-apollo-experiment-that-keeps-on-giving/ | 403 | `static/data/link-provenance.json`, `static/data/missions/moon/apollo11.json`, `static/data/moon-sites.json` |
-| https://www.jpl.nasa.gov/spaceimages/wallpaper.php?id=PIA00038 | 403 | `static/data/image-provenance.json` |
-| https://www.loc.gov/resource/rbc0001.2008rosen0775/ | 403 | `static/data/science/planets/moons-of-the-system.json`, `build/ar/science/planets/moons-of-the-system.html`, `build/de/science/planets/moons-of-the-system.html` +12 |
-| https://www.naic.edu/ | error CERT_HAS_EXPIRED | `static/data/observatories.json` |
-| https://www.noaa.gov/ | 403 | `static/data/source-logos.json` |
-| https://www.orbitaldebris.jsc.nasa.gov/ | error ERR_TLS_CERT_ALTNAME_INVALID | `static/data/science/orbits/space-debris.json`, `build/ar/science/orbits/space-debris.html`, `build/de/science/orbits/space-debris.html` +12 |
-| https://www.orbitaldebris.jsc.nasa.gov/mitigate/disposal.html | error ERR_TLS_CERT_ALTNAME_INVALID | `static/data/science/orbits/disposal-end-of-life.json`, `build/ar/science/orbits/disposal-end-of-life.html`, `build/de/science/orbits/disposal-end-of-life.html` +12 |
-| https://www.researchgate.net/publication/348240240_Helmut_Horn_and_the_Origin_of_the_Saturn_V_Iterative_Guidance_Mode_IGM | 403 | `static/data/science/mission-phases/ascent-guidance.json`, `build/ar/science/mission-phases/ascent-guidance.html`, `build/de/science/mission-phases/ascent-guidance.html` +12 |
-| https://www.roscosmos.ru/ | 403 | `static/data/programs/ros.json`, `static/data/source-logos.json`, `build/ar/programs/ros.html` +13 |
-| https://www.roscosmos.ru/22336/ | 403 | `static/data/fleet/launcher/soyuz-2.json`, `static/data/link-provenance.json` |
-| https://www.roscosmos.ru/22364/ | 403 | `static/data/iss-visitors.json`, `static/data/link-provenance.json` |
-| https://www.roscosmos.ru/24171/ | 403 | `static/data/fleet/cargo-spacecraft/progress-7k-tg.json`, `static/data/fleet/cargo-spacecraft/progress-m.json`, `static/data/fleet/cargo-spacecraft/progress-ms.json` +2 |
-| https://www.roscosmos.ru/24178/ | 403 | `static/data/fleet/crewed-spacecraft/voskhod.json`, `static/data/fleet/station/salyut-6.json`, `static/data/fleet/station/salyut-7.json` +1 |
-| https://www.roscosmos.ru/24180/ | 403 | `static/data/fleet/crewed-spacecraft/soyuz-7k-ok.json`, `static/data/fleet/crewed-spacecraft/soyuz-t.json`, `static/data/fleet/launcher/r-7-vostok.json` +3 |
-| https://www.roscosmos.ru/24181/ | 403 | `static/data/fleet/crewed-spacecraft/soyuz-ms.json`, `static/data/fleet/crewed-spacecraft/soyuz-tm.json`, `static/data/fleet/crewed-spacecraft/soyuz-tma.json` +1 |
-| https://www.roscosmos.ru/24186/ | 403 | `static/data/fleet/lander/mars-2.json`, `static/data/fleet/lander/mars-3.json`, `static/data/link-provenance.json` |
-| https://www.roscosmos.ru/24187/ | 403 | `static/data/fleet/lander/luna-16.json`, `static/data/fleet/rover/lunokhod-2.json`, `static/data/link-provenance.json` |
-| https://www.roscosmos.ru/24189/ | 403 | `static/data/fleet/lander/venera-7.json`, `static/data/link-provenance.json` |
-| https://www.roscosmos.ru/24190/ | 403 | `static/data/fleet/orbiter/phobos-2.json`, `static/data/link-provenance.json` |
-| https://www.roscosmos.ru/24209/ | 403 | `static/data/fleet/observatory/spektr-rg.json`, `static/data/link-provenance.json` |
-| https://www.roscosmos.ru/30025/ | 403 | `static/data/fleet/crewed-spacecraft/buran.json`, `static/data/fleet/launcher/energia.json`, `static/data/link-provenance.json` |
-| https://www.sao.ru/ratan/ | 403 | `static/data/observatories.json` |
-| https://www.science.org/ | 403 | `static/data/source-logos.json` |
-| https://www.science.org/doi/10.1126/science.1059831 | 403 | `static/data/link-provenance.json`, `static/data/missions/asteroid/near-shoemaker.json` |
-| https://www.science.org/doi/10.1126/science.1073722 | 403 | `static/data/fleet/orbiter/mars-odyssey.json`, `static/data/link-provenance.json` |
-| https://www.science.org/doi/10.1126/science.1123013 | 403 | `static/data/link-provenance.json`, `static/data/missions/saturn/cassini.json` |
-| https://www.science.org/doi/10.1126/science.1126164 | 403 | `static/data/fleet/orbiter/hayabusa.json`, `static/data/link-provenance.json`, `static/data/missions/itokawa/hayabusa1.json` +14 |
-| https://www.science.org/doi/10.1126/science.1139415 | 403 | `static/data/small-bodies.json` |
-| https://www.science.org/doi/10.1126/science.1178658 | 403 | `static/data/fleet/orbiter/chandrayaan1.json`, `static/data/link-provenance.json`, `static/data/missions/moon/chandrayaan1.json` |
-| https://www.science.org/doi/10.1126/science.1219381 | 403 | `static/data/fleet/orbiter/dawn.json`, `static/data/link-provenance.json`, `static/data/missions/ceres/dawn.json` |
-| https://www.science.org/doi/10.1126/science.1236408 | 403 | `static/data/link-provenance.json`, `static/data/missions/saturn/voyager-1.json` |
-| https://www.science.org/doi/10.1126/science.1261952 | 403 | `static/data/link-provenance.json`, `static/data/missions/comet/rosetta.json` |
-| https://www.science.org/doi/10.1126/science.231.4744.1407 | 403 | `static/data/link-provenance.json`, `static/data/missions/venus/vega-1.json` |
-| https://www.science.org/doi/10.1126/science.233.4759.43 | 403 | `static/data/link-provenance.json`, `static/data/missions/neptune/voyager-2.json` |
-| https://www.science.org/doi/10.1126/science.246.4936.1422 | 403 | `static/data/link-provenance.json`, `static/data/missions/neptune/voyager-2.json` |
-| https://www.science.org/doi/10.1126/science.274.5292.1495 | 403 | `static/data/fleet/orbiter/clementine.json`, `static/data/link-provenance.json` |
-| https://www.science.org/doi/10.1126/science.281.5382.1496 | 403 | `static/data/fleet/orbiter/lunar-prospector.json`, `static/data/link-provenance.json`, `static/data/missions/moon/lunar-prospector.json` |
-| https://www.science.org/doi/10.1126/science.aad7055 | 403 | `static/data/link-provenance.json`, `static/data/missions/pluto/new-horizons.json` |
-| https://www.science.org/doi/10.1126/science.aal2108 | 403 | `static/data/link-provenance.json`, `static/data/missions/jupiter/juno.json` |
-| https://www.science.org/doi/10.1126/science.aap8637 | 403 | `static/data/link-provenance.json`, `static/data/missions/moon/artemis4.json`, `static/data/moon-sites.json` |
-| https://www.science.org/doi/10.1126/science.aat2965 | 403 | `static/data/link-provenance.json`, `i18n-src/ar/planets/saturn.json`, `i18n-src/de/planets/saturn.json` +12 |
-| https://www.science.org/doi/10.1126/science.aav8032 | 403 | `static/data/link-provenance.json`, `static/data/missions/asteroid/hayabusa2.json` |
-| https://www.science.org/doi/10.1126/science.aaw9771 | 403 | `static/data/link-provenance.json`, `static/data/missions/pluto/new-horizons.json` |
-| https://www.science.org/doi/10.1126/science.aay3999 | 403 | `static/data/link-provenance.json`, `i18n-src/ar/planets/arrokoth.json`, `i18n-src/de/planets/arrokoth.json` +12 |
-| https://www.science.org/doi/10.1126/science.aay6620 | 403 | `static/data/small-bodies.json` |
-| https://www.sciencedirect.com/ | 403 | `static/data/source-logos.json` |
-| https://www.sciencedirect.com/science/article/abs/pii/S0019103510000503 | 403 | `static/data/link-provenance.json`, `i18n-src/ar/planets/patroclus.json`, `i18n-src/de/planets/patroclus.json` +12 |
-| https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981 | 403 | `static/data/link-provenance.json`, `i18n-src/ar/planets/neptune.json`, `i18n-src/de/planets/neptune.json` +12 |
-| https://www.sciencedirect.com/science/article/abs/pii/S0032063313000244 | 403 | `static/data/link-provenance.json`, `static/data/missions/jupiter/juice.json` |
-| https://www.sciencedirect.com/science/article/abs/pii/S0094576510002973 | 403 | `static/data/link-provenance.json`, `static/data/missions/ceres/dawn.json` |
-| https://www.sciencedirect.com/science/article/abs/pii/S0094576518316758 | 403 | `static/data/link-provenance.json`, `static/data/missions/mars/mmx.json` |
-| https://www.sciencedirect.com/science/article/abs/pii/S0273117701004099 | 403 | `static/data/link-provenance.json`, `static/data/missions/sun/ulysses.json` |
-| https://www.seis-insight.eu/ | error UNABLE_TO_VERIFY_LEAF_SIGNATURE | `static/data/source-logos.json` |
-| https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service | error UNABLE_TO_VERIFY_LEAF_SIGNATURE | `static/data/link-provenance.json`, `static/data/missions/mars/insight.json` |
-| https://www.si.edu/ | 403 | `static/data/source-logos.json` |
-| https://www.spaceforcemuseum.org | error ENOTFOUND | `static/data/museums.json` |
-| https://zvezda-npp.ru/en/ | error DEPTH_ZERO_SELF_SIGNED_CERT | `static/data/source-logos.json` |
-| https://zvezda-npp.ru/en/news/ | error DEPTH_ZERO_SELF_SIGNED_CERT | `static/data/fleet/space-suit/sokol-m.json`, `static/data/link-provenance.json` |
-| https://zvezda-npp.ru/en/products/space-suits-and-systems/orlan-mks-spacesuit/ | error DEPTH_ZERO_SELF_SIGNED_CERT | `static/data/fleet/space-suit/orlan-mks.json`, `static/data/link-provenance.json` |
-| https://zvezda-npp.ru/en/products/space-suits-and-systems/sokol-kv-2-rescue-spacesuit/ | error DEPTH_ZERO_SELF_SIGNED_CERT | `static/data/fleet/space-suit/sokol-kv-2.json`, `static/data/link-provenance.json` |
+| http://www.jpl.nasa.gov/news/news.php?release=2014-406 | 403 browser: ERROR: The request could not be satisfied | `static/data/image-provenance.json` |
+| https://arstechnica.com/ | 403 | `static/data/image-provenance.json` |
+| https://fernbank.edu | timeout browser: timeout | `static/data/museums.json` |
+| https://global.jaxa.jp/projects/sas/muses_c/ | 403 browser: JAXA %7C System Error | `static/data/small-bodies.json` |
+| https://imagearchives.esac.esa.int/index.php?/category/63 | 503 browser: 503 Service Unavailable | `static/data/link-provenance.json`, `static/data/missions/comet/rosetta.json` |
+| https://oneweb.net/ | 403 browser: ERROR: The request could not be satisfied | `static/data/fleet/constellation/oneweb.json`, `static/data/link-provenance.json`, `static/data/source-logos.json` |
+| https://spaceflight.nasa.gov/realdata/elements/ | 403 browser:  | `static/data/science/orbits/inclination.json`, `static/data/science/orbits/semi-major-axis.json`, `build/ar/science/orbits/inclination.html` +27 |
+| https://voyager.jpl.nasa.gov/golden-record/ | 403 browser: 403 Forbidden | `static/data/link-provenance.json`, `static/data/missions/saturn/voyager-1.json`, `static/data/programs/voyager.json` +14 |
+| https://voyager.jpl.nasa.gov/golden-record/whats-on-the-record/ | 403 browser: 403 Forbidden | `static/data/link-provenance.json`, `static/data/missions/neptune/voyager-2.json` |
+| https://voyager.jpl.nasa.gov/mission/interstellar-mission/ | 403 browser: 403 Forbidden | `static/data/link-provenance.json`, `static/data/missions/saturn/voyager-1.json` |
+| https://voyager.jpl.nasa.gov/mission/science/neptune/ | 403 browser: 403 Forbidden | `static/data/satellites.json` |
+| https://voyager.jpl.nasa.gov/mission/science/planet-neptune/ | 403 browser: 403 Forbidden | `static/data/link-provenance.json`, `i18n-src/ar/planets/neptune.json`, `i18n-src/de/planets/neptune.json` +12 |
+| https://voyager.jpl.nasa.gov/mission/science/planet-uranus/ | 403 browser: 403 Forbidden | `static/data/link-provenance.json`, `i18n-src/ar/planets/uranus.json`, `i18n-src/de/planets/uranus.json` +12 |
+| https://voyager.jpl.nasa.gov/mission/science/uranus/ | 403 browser: 403 Forbidden | `static/data/satellites.json` |
+| https://voyager.jpl.nasa.gov/mission/status/ | 403 browser: 403 Forbidden | `static/data/fleet/orbiter/voyager-1.json`, `static/data/fleet/orbiter/voyager-2.json`, `static/data/link-provenance.json` +2 |
+| https://www.glonass-iac.ru/en/ | 403 browser:  | `static/data/fleet/constellation/glonass.json`, `static/data/fleet/launch-site/plesetsk-43.json`, `static/data/link-provenance.json` |
+| https://www.iadc-home.org/documents_public/file_down/id/4119 | 403 browser: 403 Forbidden | `static/data/science/orbits/disposal-end-of-life.json`, `build/ar/science/orbits/disposal-end-of-life.html`, `build/de/science/orbits/disposal-end-of-life.html` +12 |
+| https://www.jpl.nasa.gov/missions/juice-jupiter-icy-moons-explorer/ | 403 browser: ERROR: The request could not be satisfied | `static/data/fleet/orbiter/juice.json`, `static/data/link-provenance.json` |
+| https://www.jpl.nasa.gov/news/nasas-trident-mission-to-icy-titan-and-trojan-asteroids/ | 403 browser: ERROR: The request could not be satisfied | `static/data/satellites.json` |
+| https://www.jpl.nasa.gov/spaceimages/wallpaper.php?id=PIA00038 | 403 browser: ERROR: The request could not be satisfied | `static/data/image-provenance.json` |
+| https://www.loc.gov/resource/rbc0001.2008rosen0775/ | 403 browser: Just a moment... | `static/data/science/planets/moons-of-the-system.json`, `build/ar/science/planets/moons-of-the-system.html`, `build/de/science/planets/moons-of-the-system.html` +12 |
+| https://www.researchgate.net/publication/348240240_Helmut_Horn_and_the_Origin_of_the_Saturn_V_Iterative_Guidance_Mode_IGM | 403 browser: researchgate.net | `static/data/science/mission-phases/ascent-guidance.json`, `build/ar/science/mission-phases/ascent-guidance.html`, `build/de/science/mission-phases/ascent-guidance.html` +12 |
+| https://www.roscosmos.ru/22336/ | 403 browser: 403 Forbidden | `static/data/fleet/launcher/soyuz-2.json`, `static/data/link-provenance.json` |
+| https://www.roscosmos.ru/22364/ | 403 browser: 403 Forbidden | `static/data/iss-visitors.json`, `static/data/link-provenance.json` |
+| https://www.roscosmos.ru/24171/ | 403 browser: 403 Forbidden | `static/data/fleet/cargo-spacecraft/progress-7k-tg.json`, `static/data/fleet/cargo-spacecraft/progress-m.json`, `static/data/fleet/cargo-spacecraft/progress-ms.json` +2 |
+| https://www.roscosmos.ru/24178/ | 403 browser: 403 Forbidden | `static/data/fleet/crewed-spacecraft/voskhod.json`, `static/data/fleet/station/salyut-6.json`, `static/data/fleet/station/salyut-7.json` +1 |
+| https://www.roscosmos.ru/24180/ | 403 browser: 403 Forbidden | `static/data/fleet/crewed-spacecraft/soyuz-7k-ok.json`, `static/data/fleet/crewed-spacecraft/soyuz-t.json`, `static/data/fleet/launcher/r-7-vostok.json` +3 |
+| https://www.roscosmos.ru/24181/ | 403 browser: 403 Forbidden | `static/data/fleet/crewed-spacecraft/soyuz-ms.json`, `static/data/fleet/crewed-spacecraft/soyuz-tm.json`, `static/data/fleet/crewed-spacecraft/soyuz-tma.json` +1 |
+| https://www.roscosmos.ru/24186/ | 403 browser: 403 Forbidden | `static/data/fleet/lander/mars-2.json`, `static/data/fleet/lander/mars-3.json`, `static/data/link-provenance.json` |
+| https://www.roscosmos.ru/24187/ | 403 browser: 403 Forbidden | `static/data/fleet/lander/luna-16.json`, `static/data/fleet/rover/lunokhod-2.json`, `static/data/link-provenance.json` |
+| https://www.roscosmos.ru/24189/ | 403 browser: 403 Forbidden | `static/data/fleet/lander/venera-7.json`, `static/data/link-provenance.json` |
+| https://www.roscosmos.ru/24190/ | 403 browser: 403 Forbidden | `static/data/fleet/orbiter/phobos-2.json`, `static/data/link-provenance.json` |
+| https://www.roscosmos.ru/24209/ | 403 browser: 403 Forbidden | `static/data/fleet/observatory/spektr-rg.json`, `static/data/link-provenance.json` |
+| https://www.roscosmos.ru/30025/ | 403 browser: 403 Forbidden | `static/data/fleet/crewed-spacecraft/buran.json`, `static/data/fleet/launcher/energia.json`, `static/data/link-provenance.json` |
 
-Moved (working, but redirected elsewhere): 331 — listed in `.cache/external-links-moved.md`.
+Moved (working, but redirected elsewhere): 360 — listed in `.cache/external-links-moved.md`.

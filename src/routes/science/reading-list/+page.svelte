@@ -131,8 +131,8 @@
     },
     {
       title: 'How to Read the Solar System',
-      author: 'Christopher Riley & Dallas Campbell',
-      year: 2014,
+      author: 'Chris North & Paul Abel',
+      year: 2013,
       blurb:
         "A pop-science guide to every planet, moon, and significant body, organised by what's interesting about each. The companion read while you click through /explore.",
       audience: 'beginner',

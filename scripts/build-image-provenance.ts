@@ -191,8 +191,8 @@ async function fetchCommonsImageInfo(filename: string): Promise<CommonsImageInfo
           title: page.title,
           pageid: typeof page.pageid === 'number' ? page.pageid : null,
           revid: typeof page.lastrevid === 'number' ? page.lastrevid : null,
-          descriptionurl: ii.descriptionurl,
-          url: ii.url,
+          descriptionurl: stripTracking(ii.descriptionurl),
+          url: stripTracking(ii.url),
           artist: plainText(meta.Artist?.value),
           licenseShort: plainText(meta.LicenseShortName?.value),
           licenseUrl: plainText(meta.LicenseUrl?.value),
@@ -274,10 +274,29 @@ function gitHeadSha(): string | null {
 // fields are present rather than reading one fixed key.
 // ──────────────────────────────────────────────────────────────────────
 
-function deriveCommonsFilename(url: string | undefined | null): string | null {
+/**
+ * Drop utm_* tracking parameters. Commons' imageinfo API appends
+ * ?utm_source=commons.wikimedia.org&utm_campaign=imageinfo… to the URLs it
+ * returns; we neither pass someone else's tracking on to readers nor let it
+ * leak into a filename (a filename ending "?utm_…" fails the API lookup and
+ * the credit falls back to defaults).
+ */
+export function stripTracking<T extends string | undefined | null>(url: T): T {
+  if (!url) return url;
+  try {
+    const u = new URL(url);
+    for (const k of [...u.searchParams.keys()]) if (k.startsWith('utm_')) u.searchParams.delete(k);
+    return u.toString() as T;
+  } catch {
+    return url;
+  }
+}
+
+function deriveCommonsFilename(raw: string | undefined | null): string | null {
+  const url = stripTracking(raw);
   if (!url) return null;
   if (url.includes('upload.wikimedia.org')) {
-    const m = url.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/]+)/);
+    const m = url.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/?#]+)/);
     if (m) return decodeURIComponent(m[1]);
   }
   if (url.includes('commons.wikimedia.org/wiki/Special:FilePath/')) {
@@ -301,7 +320,7 @@ function extractNasaIdFromUrl(url: string | undefined | null): string | null {
 // Wikimedia → ProvenanceEntry
 // ──────────────────────────────────────────────────────────────────────
 
-async function buildWikimediaEntry(opts: {
+export async function buildWikimediaEntry(opts: {
   localPath: string;
   filename: string;
   fallbackAuthor: string;
@@ -2809,7 +2828,14 @@ async function main() {
     generated_at: new Date().toISOString(),
     script_version: SCRIPT_VERSION,
     commit_sha: gitHeadSha(),
-    entries: entries.sort((a, b) => a.path.localeCompare(b.path)),
+    // Readers follow source_url; no third-party tracking parameters ride along.
+    entries: entries
+      .map((e) => ({
+        ...e,
+        source_url: stripTracking(e.source_url),
+        image_url: stripTracking(e.image_url),
+      }))
+      .sort((a, b) => a.path.localeCompare(b.path)),
   };
   const prev = await loadPreviousManifest();
   // ── Backstop (before ANY write): refuse a rebuild that drops a large share

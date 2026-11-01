@@ -75,7 +75,7 @@ Other Phase 4 items are done; see "Done in this arc".
 | Item | Status | What remains | Evidence |
 | --- | --- | --- | --- |
 | Write the 23 missing site stories | open | No commit on the branch adds a site story. The list of 23 was not found in a doc; `static/data/site-stories/` has 55 files. Runbook: `docs/guides/site-story-addition-runbook.md`. | `git log origin/main..HEAD` (no site-story commit) |
-| Review the Galileo gallery credits | open | No commit or doc on the branch covers it. | `git log origin/main..HEAD`; `docs/wip/*.md` (only unrelated Galileo "eight years" fact fix) |
+| Review the Galileo gallery credits | partly done | Reviewed 2026-11-01: the 20 images in `missions/galileo`, `fleet-galleries/galileo`, `fleet-galleries/galileo-gnss`, `earth-objects/galileo`. Fixed: `earth-objects/galileo` 04 (DLR photo of a Galileo launch) and 05 (a user's ground-station photo) said agency NASA; now ESA, as other rows picturing ESA hardware. Open: `fleet-galleries/galileo` (the Jupiter orbiter) 01, 02, 04, 05 are still the "NASA Images search result" placeholder (no nasa_id), and `fleet-galleries/galileo-gnss` 02 is "uncurated" with an assumed ESA licence; each needs the real source found (image match, as in `e6fc1740a36`). Also: the 21 Oct credit fixes were made in `image-provenance.json` directly, so a full `build-image-provenance` rebuild would rewrite them. | `git log origin/main..HEAD`; `docs/wip/*.md` (only unrelated Galileo "eight years" fact fix) |
 
 ## Done in this arc
 

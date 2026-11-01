@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { stripTracking } from './build-image-provenance';
+import { stripTracking } from './strip-tracking';
 
 describe('stripTracking', () => {
   it('drops the utm_* parameters Commons imageinfo appends, keeps everything else', () => {

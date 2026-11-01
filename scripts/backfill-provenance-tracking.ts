@@ -9,14 +9,15 @@
  *   the clean filename; the row's current values stay as the fallbacks.
  * - Every other row only loses utm_* from source_url / image_url.
  *
- * build-image-provenance.ts strips tracking itself now (stripTracking), so a
+ * build-image-provenance.ts strips tracking itself now (lib/strip-tracking.ts), so a
  * future rebuild produces the same result. Edits in place (the builder's own
  * advice: edit surgically rather than rebuild the corpus).
  *
  * Usage: npx tsx scripts/backfill-provenance-tracking.ts [--dry-run]
  */
 import { readFileSync, writeFileSync } from 'node:fs';
-import { buildWikimediaEntry, stripTracking } from './build-image-provenance.ts';
+import { buildWikimediaEntry } from './build-image-provenance.ts';
+import { stripTracking } from './lib/strip-tracking.ts';
 
 const FILE = 'static/data/image-provenance.json';
 const dry = process.argv.includes('--dry-run');

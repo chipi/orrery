@@ -24,6 +24,7 @@
  * also as part of the Milestone D `/credits` page data layer.
  */
 
+import { stripTracking } from './lib/strip-tracking.ts';
 import { writeFile, mkdir, readdir, readFile, access } from 'node:fs/promises';
 import { constants as fsConstants } from 'node:fs';
 import { join, basename, extname, dirname, posix } from 'node:path';
@@ -273,24 +274,6 @@ function gitHeadSha(): string | null {
 // `commons_file` / `nasa_id`. Walkers must derive identity from whatever
 // fields are present rather than reading one fixed key.
 // ──────────────────────────────────────────────────────────────────────
-
-/**
- * Drop utm_* tracking parameters. Commons' imageinfo API appends
- * ?utm_source=commons.wikimedia.org&utm_campaign=imageinfo… to the URLs it
- * returns; we neither pass someone else's tracking on to readers nor let it
- * leak into a filename (a filename ending "?utm_…" fails the API lookup and
- * the credit falls back to defaults).
- */
-export function stripTracking<T extends string | undefined | null>(url: T): T {
-  if (!url) return url;
-  try {
-    const u = new URL(url);
-    for (const k of [...u.searchParams.keys()]) if (k.startsWith('utm_')) u.searchParams.delete(k);
-    return u.toString() as T;
-  } catch {
-    return url;
-  }
-}
 
 function deriveCommonsFilename(raw: string | undefined | null): string | null {
   const url = stripTracking(raw);

@@ -3,7 +3,7 @@
   "vehicle": "Falcon Heavy",
   "payload": "2747 kg di massa al lancio (1648 kg a secco; 1085 kg di propellente a xeno)",
   "delta_v": "~6,6 km/s",
-  "type": "ORBITER · ATTIVO",
+  "type": "ORBITER · ATTIVA",
   "first": "Prima missione verso un asteroide ricco di metalli di classe M; primo utilizzo di propulsori ionici a effetto Hall come propulsione primaria di trasferimento",
   "description": "Psyche punta al nucleo esposto di nichel e ferro di un protopianeta differenziato — un corpo metallico di 226 km che potrebbe essere l'analogo più vicino al nucleo della Terra tra quelli raggiungibili. Lanciata il 2023-10-13 con un Falcon Heavy da Kennedy LC-39A. Quattro propulsori ionici a effetto Hall SPT-140 allargano la traiettoria a spirale verso l'esterno; una fionda gravitazionale di Marte nel maggio 2026 (distanza minima 4.609 km) ha aggiunto l'energia che la sola spinta ionica non avrebbe potuto fornire in tempo. Arrivo previsto nel 2029-08, seguito da una discesa di 26 mesi in quattro fasi orbitali (A → B → C → D) che mapperà gravità, magnetismo, topografia e composizione dell'asteroide. Se l'ipotesi del nucleo metallico è giusta, Psyche non somiglierà a nulla di ciò che abbiamo visitato finora — superficie di metallo nudo, depositi di solfuro di ferro e nessuno del caos da cumulo di detriti tipico degli asteroidi.",
   "events": [

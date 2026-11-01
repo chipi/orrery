@@ -3,7 +3,7 @@
   "vehicle": "Falcon Heavy",
   "payload": "6065 kg (la sonda per missioni planetarie più grande mai lanciata; pannelli solari da 100 m² per l'energia nel sistema solare esterno)",
   "delta_v": "~3,5 km/s (con fionde gravitazionali di Marte + Terra)",
-  "type": "ORBITER + MULTI-SORVOLO · ATTIVO",
+  "type": "ORBITER + MULTI-SORVOLO · ATTIVA",
   "first": "Prima missione dedicata alla caratterizzazione dell'abitabilità di una luna ghiacciata; il più grande veicolo spaziale di missione planetaria mai lanciato (6065 kg, pannelli solari 100 m²)",
   "description": "Europa Clipper è diretta verso Giove per studiare Europa — una luna ghiacciata di 3.121 km ritenuta sede di un oceano globale di acqua liquida sotto un guscio di ghiaccio spesso 15-25 km, l'ambiente potenzialmente abitabile più accessibile del sistema solare. Lanciata il 2024-10-14 con un Falcon Heavy a C3 41,7. Una fionda gravitazionale attorno a Marte nel marzo 2025 ha piegato la traiettoria verso la Terra; una fionda gravitazionale attorno alla Terra nel 2026-12 darà la spinta finale verso l'esterno; arriva a Giove il 2030-04-11 per l'inserimento in orbita. Il tour orbitale compie 49 sorvoli ravvicinati di Europa in quattro anni — passando fino a 25 km dalla superficie di Europa nei passaggi più vicini — ed è pensato per mappare l'intera luna limitando la dose assorbita dalla sonda nelle brutali fasce di radiazione di Giove. Strumenti: il radar REASON, che penetra il ghiaccio; lo spettrometro di massa MASPEX (campiona il materiale dell'eventuale pennacchio); il generatore di immagini termiche E-THEMIS (individua i geyser attivi); magnetometro e strumenti al plasma, che confermano la profondità dell'oceano dalla risposta magnetica indotta.",
   "events": [

@@ -3,7 +3,7 @@
   "vehicle": "Falcon 9 Block 5",
   "payload": "611 kg (incl. ~60 kg de xenón para el demostrador de propulsor iónico NEXT-C + ~50 kg de hidracina)",
   "delta_v": "~3,7 km/s (crucero de la misión; ~6,6 km/s de velocidad de impacto)",
-  "type": "IMPACTOR CINÉTICO · COMPLETADA",
+  "type": "IMPACTOR CINÉTICO · REALIZADA",
   "first": "Primera demostración de defensa planetaria mediante impacto cinético; primera vez que los humanos movieron un asteroide",
   "description": "DART (Double Asteroid Redirection Test) fue la primera misión de defensa planetaria jamás enviada — una nave de 611 kg lanzada a chocar contra un asteroide de 160 m con la fuerza suficiente para cambiar su órbita. El objetivo era Dimorfos, una pequeña luna del asteroide Dídimo, de 780 m. Lanzada el 2021-11-24 en un Falcon 9; el sistema de navegación autónoma SMART Nav tomó el control 4 horas antes del impacto para distinguir Dimorfos de su cuerpo principal y apuntar al cuerpo más pequeño. Impacto el 2022-09-26 a las 23:14 UTC a ~6,6 km/s. Cambio medido del período orbital: 33 minutos (4,2 %), unas 25 veces por encima del umbral de éxito de 73 segundos. El factor de mejora de la transferencia de momento β ≈ 3,6 indicó un aporte considerable del material expulsado de la superficie. El CubeSat LICIACube observó la pluma; el HST y el JWST fotografiaron durante semanas la cola de eyecta resultante. Primera demostración de que los humanos pueden mover un asteroide.",
   "events": [

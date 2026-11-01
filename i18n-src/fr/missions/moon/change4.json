@@ -3,7 +3,7 @@
   "vehicle": "Long March 3B",
   "payload": "3780 kg de masse au lancement ; rover Yutu-2 de 140 kg",
   "delta_v": "~3 km/s",
-  "type": "ALUNISSEUR CÔTÉ LOINTAIN · ROVER · OPÉRATIONNEL",
+  "type": "ALUNISSEUR CÔTÉ LOINTAIN · ROVER · ACTIVE",
   "first": "Premier alunissage en douceur sur la face cachée de la Lune",
   "description": "La face cachée de la Lune n'a pas de ligne de visée radio directe avec la Terre. Pour y poser un engin spatial, la Chine a d'abord lancé le satellite relais Queqiao sur une orbite de halo autour du point de Lagrange L2 Terre-Lune — un point d'observation qui voit simultanément la face cachée et la Terre. Cette infrastructure en place, Chang'e 4 est devenu le premier engin spatial à se poser en douceur sur la face cachée. Le rover Yutu-2 fonctionne depuis janvier 2019 et a parcouru ~1,6 km en 2024, ce qui en fait le rover lunaire resté le plus longtemps en activité de l'histoire.",
   "events": [

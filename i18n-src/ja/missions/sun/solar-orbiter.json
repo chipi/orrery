@@ -3,7 +3,7 @@
   "vehicle": "Atlas V 411",
   "payload": "1800 kg（観測機器209 kgとヒートシールドを含む）",
   "delta_v": "~3.5 km/s",
-  "type": "SOLAR-ORBITER · ACTIVE",
+  "type": "SOLAR-ORBITER · 運用中",
   "first": "太陽の極域を詳細に撮影するために設計された初のミッション。Parker Solar Probeのコロナ内測定を高緯度リモートセンシングで補完",
   "description": "ESA主導のミッションで、NASAが打ち上げと観測機器1点を担当。Parker Solar Probeが人類史上最も太陽に近づくのに対し、Solar Orbiterはより高みを目指す。10年かけて金星スイングバイを繰り返し、黄道面から離れて、日面緯度で約33°の軌道傾斜角に達する。この視点から、搭載機器群（PHI、EUI、SPICE、STIX、METIS、SoloHI＋4つのその場計測装置）で太陽の極域磁場を撮像し、太陽風の加速をリアルタイムで追跡し、遠隔観測とその場計測を同時に結びつける。初の近日点通過は2020-06-15、0.51 au。現時点で最も近い近日点は2022-10-12の0.29 au（水星の近日点の内側）。",
   "events": [

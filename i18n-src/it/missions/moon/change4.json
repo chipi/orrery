@@ -3,7 +3,7 @@
   "vehicle": "Long March 3B",
   "payload": "3780 kg di massa al lancio; rover Yutu-2 da 140 kg",
   "delta_v": "~3 km/s",
-  "type": "LANDER EMISFERO LONTANO · ROVER · ATTIVO",
+  "type": "LANDER EMISFERO LONTANO · ROVER · ATTIVA",
   "first": "Primo allunaggio morbido sul lato lontano della Luna",
   "description": "Il lato nascosto della Luna non ha alcuna linea di vista radio diretta con la Terra. Per far allunare una sonda laggiù, la Cina ha prima lanciato il satellite relè Queqiao su un'orbita halo attorno al punto di Lagrange L2 Terra-Luna — un punto di osservazione da cui si vedono contemporaneamente il lato nascosto e la Terra. Con questa infrastruttura in posizione, Chang'e 4 è diventata la prima sonda ad allunare dolcemente sul lato nascosto. Il rover Yutu-2 è in funzione dal gennaio 2019 e nel 2024 aveva percorso circa 1,6 km, il che ne fa il rover lunare rimasto in attività più a lungo nella storia.",
   "events": [

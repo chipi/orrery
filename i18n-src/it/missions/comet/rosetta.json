@@ -3,7 +3,7 @@
   "vehicle": "Ariane 5G+",
   "payload": "Orbiter (~2900 kg a secco, 11 strumenti) + lander di discesa Philae (~100 kg, 10 strumenti). Scudo termico, due fionde gravitazionali terrestri + una marziana, 957 giorni di ibernazione nello spazio profondo 2011–2014.",
   "delta_v": "~2,3 km/s (incontro + operazioni sulla cometa)",
-  "type": "ORBITER + LANDER · MISSIONE CONCLUSA",
+  "type": "ORBITER + LANDER · COMPLETATA",
   "first": "Primo veicolo spaziale a entrare in orbita attorno a una cometa — e ad atterrare su una (Philae, 2014-11-12)",
   "description": "La missione di punta dell'ESA per il rendezvous con una cometa. Dopo una crociera di 10 anni fatta di tre fionde gravitazionali terrestri, una marziana, due sorvoli di asteroidi e 957 giorni di ibernazione nello spazio profondo, Rosetta raggiunse la cometa 67P/Churyumov–Gerasimenko nell'agosto 2014 e le orbitò attorno per oltre due anni, attraverso il perielio e fino al lato opposto. Il lander Philae raggiunse la superficie di 67P il 2014-11-12 — il primo atterraggio morbido su una cometa — e trasmise ~64 ore di dati scientifici dopo che il fallimento dell'arpione lo aveva lasciato all'ombra di una parete rocciosa. La stessa Rosetta concluse la missione con una discesa controllata sulla superficie di 67P il 2016-09-30. Risultati principali: molecole organiche e glicina nella chioma; il rapporto D/H di 67P misurato inizialmente (≈3 volte quello terrestre) era contrario all'ipotesi che le comete della famiglia di Giove fossero la fonte dell'acqua terrestre — risultato che una nuova analisi del 2024 ha messo in dubbio dopo aver trovato un errore di misura; le prime mappe dettagliate della geometria del degassamento cometario.",
   "events": [

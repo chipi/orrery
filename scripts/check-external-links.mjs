@@ -89,7 +89,7 @@ export function collect() {
     const url = clean(raw);
     let host;
     try {
-      host = new URL(url).host;
+      host = new URL(url).hostname;
     } catch {
       return;
     }

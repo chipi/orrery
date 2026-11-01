@@ -7,9 +7,9 @@
 | OK | 5828 |
 | … of which redirected to another address | 331 |
 | Dead (404, 410, 5xx …) | 60 |
-| Inconclusive (403, timeout, network error) | 151 |
+| Inconclusive (403, timeout, network error) | 150 |
 | Not checked yet | 0 |
-| **Total** | **6039** |
+| **Total** | **6038** |
 
 Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every 6 h); www.w3.org (XML namespaces, not links); example.com (placeholder); this site's own addresses; direct links to media files.
 
@@ -82,7 +82,6 @@ Not probed: ll.thespacedevs.com (rate-limited API; links refreshed from it every
 
 | URL | Status | Where |
 | --- | --- | --- |
-| http://localhost:8093 | error ECONNREFUSED | `src/lib/lab/ask/config.ts` |
 | http://www.ciclops.org/ | error ENOTFOUND | `static/data/source-logos.json` |
 | http://www.jpl.nasa.gov/news/news.php?release=2014-406 | 403 | `static/data/image-provenance.json` |
 | http://x | error EAI_AGAIN | `src/lib/surface-scene/SurfaceScene.svelte` |

@@ -19,8 +19,12 @@ export function classifyResponse(res) {
   if (res.ok) return 'ok';
   // Rate-limited says nothing about the link; report it as inconclusive.
   if (res.status === 429) return 'timeout';
+  // Gateway errors (502-504) are usually the host having a bad moment: recheck.
+  if (res.status >= 502 && res.status <= 504) return 'timeout';
   if (res.status >= 300 && res.status < 400) return 'redirect';
-  if (res.status === 401 || res.status === 403) return 'forbidden';
+  // 401/403 login walls, and the codes some sites give scripts instead of a page
+  // (418 ieeexplore, 999 LinkedIn): the link says nothing about the page.
+  if ([401, 403, 418, 999].includes(res.status)) return 'forbidden';
   return 'dead';
 }
 
@@ -69,7 +73,11 @@ export async function probeUrl(url) {
     await sleep(Math.min(30, Number(head.retry_after) || 5) * 1000);
     head = await request(url, 'HEAD');
   }
-  if (head.http_status === 405 || head.http_status === 404 || head.http_status === 403) {
+  // Some servers answer HEAD with a 4xx (403/404/405, cnes.fr 400) or a 5xx
+  // (www.grc.nasa.gov 500),
+  // while GET is 200.
+  const s = head.http_status ?? 0;
+  if (s >= 400 && s !== 410 && s !== 429) {
     const get = await request(url, 'GET');
     if (get.status !== 'error' && get.status !== 'timeout') return get;
   }

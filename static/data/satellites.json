@@ -30,7 +30,7 @@
       "library": [
         { "id": "moon-wiki", "label": "Wikipedia — Moon", "url": "https://en.wikipedia.org/wiki/Moon", "tier": "intro", "kind": "wikipedia" },
         { "id": "moon-nasa-overview", "label": "NASA Science — Earth's Moon overview", "url": "https://science.nasa.gov/moon/", "tier": "intro", "kind": "nasa" },
-        { "id": "moon-apollo", "label": "NASA Apollo program — landing-mission archive", "url": "https://www.nasa.gov/mission/apollo/", "tier": "core", "kind": "mission" },
+        { "id": "moon-apollo", "label": "NASA Apollo program — landing-mission archive", "url": "https://www.nasa.gov/the-apollo-program/", "tier": "core", "kind": "mission" },
         { "id": "moon-artemis", "label": "NASA Artemis — return-to-Moon crewed program", "url": "https://www.nasa.gov/humans-in-space/artemis/", "tier": "core", "kind": "mission" },
         { "id": "moon-lroc", "label": "LROC — Lunar Reconnaissance Orbiter Camera image archive", "url": "https://www.lroc.asu.edu/", "tier": "extra", "kind": "article" }
       ]
@@ -57,7 +57,7 @@
         { "id": "phobos-wiki", "label": "Wikipedia — Phobos", "url": "https://en.wikipedia.org/wiki/Phobos_(moon)", "tier": "intro", "kind": "wikipedia" },
         { "id": "phobos-nasa", "label": "NASA Science — Phobos overview", "url": "https://science.nasa.gov/mars/moons/phobos/", "tier": "intro", "kind": "nasa" },
         { "id": "phobos-mmx", "label": "JAXA MMX — sample-return mission to Phobos", "url": "https://www.mmx.jaxa.jp/en/", "tier": "core", "kind": "mission" },
-        { "id": "phobos-hirise", "label": "HiRISE — Phobos at 0.25 m/px from Mars orbit", "url": "https://www.uahirise.org/phobos/", "tier": "extra", "kind": "article" }
+        { "id": "phobos-hirise", "label": "HiRISE — Phobos at 0.25 m/px from Mars orbit", "url": "https://www.uahirise.org/releases/phobos/", "tier": "extra", "kind": "article" }
       ]
     },
     {
@@ -230,7 +230,7 @@
         { "id": "enceladus-wiki", "label": "Wikipedia — Enceladus", "url": "https://en.wikipedia.org/wiki/Enceladus", "tier": "intro", "kind": "wikipedia" },
         { "id": "enceladus-nasa", "label": "NASA Science — Enceladus overview", "url": "https://science.nasa.gov/saturn/moons/enceladus/", "tier": "intro", "kind": "nasa" },
         { "id": "enceladus-cassini", "label": "NASA Cassini — plume-flyby legacy archive", "url": "https://solarsystem.nasa.gov/missions/cassini/overview/", "tier": "core", "kind": "mission" },
-        { "id": "enceladus-habitability", "label": "Astrobiology — Enceladus as life-search target", "url": "https://astrobiology.nasa.gov/news/enceladus-as-target/", "tier": "extra", "kind": "article" }
+        { "id": "enceladus-habitability", "label": "Astrobiology — Enceladus as life-search target", "url": "https://science.nasa.gov/saturn/moons/enceladus/", "tier": "extra", "kind": "article" }
       ]
     },
     {
@@ -371,7 +371,7 @@
       "library": [
         { "id": "charon-wiki", "label": "Wikipedia — Charon", "url": "https://en.wikipedia.org/wiki/Charon_(moon)", "tier": "intro", "kind": "wikipedia" },
         { "id": "charon-nasa", "label": "NASA Science — Charon overview", "url": "https://science.nasa.gov/dwarf-planets/pluto/moons/charon/", "tier": "intro", "kind": "nasa" },
-        { "id": "charon-new-horizons", "label": "NASA New Horizons — Pluto-Charon flyby (2015)", "url": "https://www.nasa.gov/mission/new-horizons/", "tier": "core", "kind": "mission" }
+        { "id": "charon-new-horizons", "label": "NASA New Horizons — Pluto-Charon flyby (2015)", "url": "https://science.nasa.gov/mission/new-horizons/", "tier": "core", "kind": "mission" }
       ]
     }
   ]

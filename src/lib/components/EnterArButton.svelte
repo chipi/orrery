@@ -34,16 +34,17 @@
     state = (await isArSessionSupported()) ? 'enabled' : 'hidden';
   });
 
-  // Placeholder until the app is published (store-ship is #217). Operators/CI can
-  // swap this once the App Store listing exists.
-  const APP_STORE_URL = 'https://apps.apple.com/app/orrery';
+  // The App Store listing for the native app (store-ship is #217). Until it
+  // exists the iOS fallback stays hidden: a placeholder store URL was a 404 for
+  // every iOS Safari visitor who tapped AR.
+  const APP_STORE_URL: string | null = null;
 </script>
 
 {#if state === 'enabled'}
   <button type="button" class="enter-ar" aria-label={m.ar_enter_aria()} onclick={onEnter}>
     AR
   </button>
-{:else if state === 'ios-fallback'}
+{:else if state === 'ios-fallback' && APP_STORE_URL}
   <a
     class="enter-ar ios-fallback"
     href={APP_STORE_URL}

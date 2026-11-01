@@ -25,6 +25,7 @@
  *   node scripts/check-external-links.mjs --list           # only print the collected set
  *   node scripts/check-external-links.mjs --limit=50       # probe at most 50 (smoke)
  *   node scripts/check-external-links.mjs --strict         # exit 1 on any dead link
+ *   node scripts/check-external-links.mjs --recheck=dead,timeout   # re-probe those now
  */
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync, mkdirSync } from 'node:fs';
 import { join, relative, dirname } from 'node:path';
@@ -36,7 +37,7 @@ const REPORT = join(ROOT, 'docs/provenance/external-link-check.md');
 const MOVED = join(ROOT, '.cache/external-links-moved.md');
 
 const OWN_HOSTS =
-  /(^|\.)orrerylearn\.com$|^localhost$|^127\.0\.0\.1$|(^|\.)tail[0-9a-f]+\.ts\.net$/;
+  /(^|\.)orrerylearn\.com$|^chipi\.github\.io$|^localhost$|^127\.0\.0\.1$|(^|\.)tail[0-9a-f]+\.ts\.net$/;
 // Hosts not probed, each with the reason.
 const SKIP_HOSTS = {
   // Launch Library 2 API: rate-limited (free tier), and launches.json's links to
@@ -96,7 +97,10 @@ export function collect() {
       OWN_HOSTS.test(host) ||
       SKIP_HOSTS[host] ||
       (MEDIA.test(url) && !url.includes('/wiki/')) ||
-      url.includes('${')
+      // A template string (`https://host/${id}`) stops at "{" and leaves "$";
+      // "…" marks an elided example in a comment.
+      url.endsWith('$') ||
+      url.includes('…')
     )
       return;
     if (!found.has(url)) found.set(url, new Set());
@@ -230,7 +234,11 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const cache = loadCache();
   const now = Date.now();
   let due = [...found.keys()].filter(
-    (u) => !cache[u] || now - Date.parse(cache[u].checked_at) > maxAgeDays * 86_400_000,
+    (u) =>
+      !cache[u] ||
+      now - Date.parse(cache[u].checked_at) > maxAgeDays * 86_400_000 ||
+      // --recheck=dead,timeout re-probes those results whatever their age
+      (args.recheck && String(args.recheck).split(',').includes(cache[u].status)),
   );
   if (args.limit) due = due.slice(0, Number(args.limit));
   console.log(

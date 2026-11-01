@@ -60,10 +60,12 @@ const CREDITS_PRUNED_OK = 'static/data/image-provenance.json';
 // broken links.
 const PATH_LOOKUP = new Set(['static/data/image-vision.json', 'static/data/credit-thumbs.json']);
 
-// Outbound links never carry tracking parameters: readers should not pass on
-// someone else's campaign tags (operator, 2026-11-01). Our own utm tags live in
-// code (the landing page), not in data.
-const OUTBOUND_TRACKING = /"https?:\/\/[^"]*[?&](utm_[a-z]+)=[^"]*"/g;
+// Outbound links carry no tracking parameters unless the target is one of the
+// operator's own sites (operator, 2026-11-01): readers should not pass on
+// anyone else's campaign tags.
+const OUTBOUND_TRACKING = /"(https?:\/\/[^"]*[?&](utm_[a-z]+)=[^"]*)"/g;
+const OWN_SITES =
+  /(^|\.)(orrerylearn\.com|humancopilot\.eu|airandspacehistory\.com|devwhateverops\.com|markodragoljevic\.com|closelistening\.app)$/;
 
 // href="…" in HTML strings, ](…) in markdown, and link-valued JSON fields.
 const LINK_RE =
@@ -173,7 +175,14 @@ export function checkDataLinks() {
     }
     for (const m of text.matchAll(OUTBOUND_TRACKING)) {
       checked++;
-      broken.push({ file: rel, link: m[0].slice(1, 90), reason: `outbound link carries ${m[1]}` });
+      let host = '';
+      try {
+        host = new URL(m[1]).host;
+      } catch {
+        // unparseable → reported below
+      }
+      if (OWN_SITES.test(host)) continue;
+      broken.push({ file: rel, link: m[1].slice(0, 90), reason: `outbound link carries ${m[2]}` });
     }
     for (const m of text.matchAll(LINK_RE)) {
       const link = m[1].replace(/&amp;/g, '&');

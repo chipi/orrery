@@ -305,7 +305,7 @@
         {
           "id": "67p-philae",
           "label": "ESA Philae — first comet landing",
-          "url": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Philae",
+          "url": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Touchdown%21_Rosetta_s_Philae_probe_lands_on_comet",
           "tier": "core",
           "kind": "mission"
         },
@@ -891,7 +891,7 @@
         {
           "id": "oumuamua-nasa",
           "label": "NASA — interstellar visitor overview",
-          "url": "https://science.nasa.gov/solar-system/comets/oumuamua-the-first-interstellar-object/",
+          "url": "https://science.nasa.gov/solar-system/comets/oumuamua/",
           "tier": "intro",
           "kind": "nasa"
         },

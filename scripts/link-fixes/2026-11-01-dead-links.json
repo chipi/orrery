@@ -18,10 +18,7 @@
   "https://en.wikipedia.org/wiki/Space-grown_food": {
     "new": "https://en.wikipedia.org/wiki/Plants_in_space",
     "why": "no such article; Plants in space covers crop growth in orbit",
-    "label": [
-      "Wikipedia · Space-grown food",
-      "Wikipedia · Plants in space"
-    ]
+    "label": ["Wikipedia · Space-grown food", "Wikipedia · Plants in space"]
   },
   "https://en.wikipedia.org/wiki/Space-associated_neuro-ocular_syndrome": {
     "new": "https://en.wikipedia.org/wiki/Spaceflight_associated_neuro-ocular_syndrome",
@@ -174,10 +171,7 @@
   "https://www.nasa.gov/missions/station/iss-research/spacewalking-the-hard-way/": {
     "new": "https://www.nasa.gov/centers-and-facilities/johnson/spacewalk-spacesuit-basics/",
     "why": "no such article; NASA's spacewalk basics page",
-    "label": [
-      "NASA · Spacewalking the Hard Way (overview)",
-      "NASA · Spacewalk spacesuit basics"
-    ]
+    "label": ["NASA · Spacewalking the Hard Way (overview)", "NASA · Spacewalk spacesuit basics"]
   },
   "https://www.nasa.gov/centers-and-facilities/kennedy/growing-plants-in-space/": {
     "new": "https://www.nasa.gov/science-research/kennedy-engineers-designing-plant-habitat-for-space-station/",
@@ -262,10 +256,7 @@
   "https://science.nasa.gov/universe/wormholes-explained/": {
     "new": "https://science.nasa.gov/universe/black-holes/",
     "why": "no NASA wormhole page; black holes overview",
-    "label": [
-      "NASA · The Reality of Wormholes",
-      "NASA · Black holes"
-    ]
+    "label": ["NASA · The Reality of Wormholes", "NASA · Black holes"]
   },
   "https://science.nasa.gov/universe/the-universe-at-large/": {
     "new": "https://science.nasa.gov/mission/hubble/science/science-highlights/mapping-the-cosmic-web/",
@@ -322,18 +313,12 @@
   "https://www.nasa.gov/centers-and-facilities/goddard/dr-robert-h-goddard-american-rocketry-pioneer/": {
     "new": "https://www.nasa.gov/stem-content/robert-goddards-historic-firsts/",
     "why": "NASA site search",
-    "label": [
-      "NASA · Robert H. Goddard biography",
-      "NASA · Robert Goddard's historic firsts"
-    ]
+    "label": ["NASA · Robert H. Goddard biography", "NASA · Robert Goddard's historic firsts"]
   },
   "https://www.nasa.gov/sites/default/files/atoms/files/porkchop_plot_tutorial.pdf": {
     "new": "https://en.wikipedia.org/wiki/Porkchop_plot",
     "why": "no NASA tutorial exists",
-    "label": [
-      "NASA · Porkchop Plot Tutorial",
-      "Wikipedia · Porkchop plot"
-    ]
+    "label": ["NASA · Porkchop Plot Tutorial", "Wikipedia · Porkchop plot"]
   },
   "https://www.nasa.gov/centers-and-facilities/marshall/antimatter-propulsion/": {
     "new": "https://www.nasa.gov/general/radioisotope-positron-propulsion/",
@@ -346,50 +331,32 @@
   "https://www.nasa.gov/feature/jpl/parker-solar-probe-completes-its-final-venus-flyby/": {
     "new": "https://en.wikipedia.org/wiki/Oberth_effect",
     "why": "no NASA page on the Oberth effect",
-    "label": [
-      "NASA · The Oberth Effect",
-      "Wikipedia · Oberth effect"
-    ]
+    "label": ["NASA · The Oberth Effect", "Wikipedia · Oberth effect"]
   },
   "https://www.nasa.gov/wp-content/uploads/2018/06/rs-25_fact_sheet.pdf": {
     "new": "https://www.nasa.gov/space-shuttle-recordation/engines/",
     "why": "NASA site search (Shuttle main engines)",
-    "label": [
-      "NASA · RS-25 throttle envelope",
-      "NASA · Space Shuttle main engines (RS-25)"
-    ]
+    "label": ["NASA · RS-25 throttle envelope", "NASA · Space Shuttle main engines (RS-25)"]
   },
   "https://www.nasa.gov/wp-content/uploads/2017/02/rocket-equation-2.pdf": {
     "new": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
     "why": "no such NASA document",
-    "label": [
-      "NASA · The Rocket Equation",
-      "Wikipedia · Tsiolkovsky rocket equation"
-    ]
+    "label": ["NASA · The Rocket Equation", "Wikipedia · Tsiolkovsky rocket equation"]
   },
   "https://www.nasa.gov/wp-content/uploads/2017/08/space_launch_basics.pdf": {
     "new": "https://en.wikipedia.org/wiki/Gravity_turn",
     "why": "no such NASA document",
-    "label": [
-      "NASA · Space Launch Basics (ascent guidance)",
-      "Wikipedia · Gravity turn"
-    ]
+    "label": ["NASA · Space Launch Basics (ascent guidance)", "Wikipedia · Gravity turn"]
   },
   "https://www.nasa.gov/learn/space-tech/spacecraft-navigation/": {
     "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter13-1/",
     "why": "NASA Basics of Space Flight, ch. 13",
-    "label": [
-      "NASA · Navigation and Tracking",
-      "NASA · Basics of Space Flight — Navigation"
-    ]
+    "label": ["NASA · Navigation and Tracking", "NASA · Basics of Space Flight — Navigation"]
   },
   "https://www.nasa.gov/centers/johnson/pdf/383322main_018%20-%20Trajectory.pdf": {
     "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/",
     "why": "NASA Basics of Space Flight, ch. 4",
-    "label": [
-      "NASA · Trajectory Insertion",
-      "NASA · Basics of Space Flight — Trajectories"
-    ]
+    "label": ["NASA · Trajectory Insertion", "NASA · Basics of Space Flight — Trajectories"]
   },
   "https://www.nasa.gov/feature/jpl/how-nasa-s-perseverance-mars-team-adjusted-to-work-in-the-time-of-coronavirus": {
     "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/",
@@ -402,18 +369,12 @@
   "https://www.nasa.gov/international-space-station/the-international-space-station-electrical-power-system/": {
     "new": "https://en.wikipedia.org/wiki/Electrical_system_of_the_International_Space_Station",
     "why": "no NASA page found",
-    "label": [
-      "NASA · ISS power system",
-      "Wikipedia · Electrical system of the ISS"
-    ]
+    "label": ["NASA · ISS power system", "Wikipedia · Electrical system of the ISS"]
   },
   "https://science.nasa.gov/resource/the-large-and-small-magellanic-clouds/": {
     "new": "https://en.wikipedia.org/wiki/Magellanic_Clouds",
     "why": "no NASA page found",
-    "label": [
-      "NASA · LMC + SMC overview",
-      "Wikipedia · Magellanic Clouds"
-    ]
+    "label": ["NASA · LMC + SMC overview", "Wikipedia · Magellanic Clouds"]
   },
   "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-distance-ladder/": {
     "new": "https://science.nasa.gov/missions/hubble/nasas-webb-hubble-telescopes-affirm-universes-expansion-rate-puzzle-persists/",
@@ -434,10 +395,7 @@
   "https://airandspace.si.edu/explore/topics/apollo": {
     "new": "https://airandspace.si.edu/explore/topics/spaceflight/apollo-program",
     "why": "NASM topic page moved",
-    "label": [
-      "Smithsonian NASM — Apollo to the Moon",
-      "Smithsonian NASM — Apollo program"
-    ]
+    "label": ["Smithsonian NASM — Apollo to the Moon", "Smithsonian NASM — Apollo program"]
   },
   "https://airandspace.si.edu/explore/topics/space/spacesuits": {
     "new": "https://airandspace.si.edu/research/publications/spacesuits-smithsonian-national-air-and-space-museum-collection",
@@ -470,10 +428,7 @@
   "https://www.mhi.com/products/space/rocket_h2a.html": {
     "new": "https://www.mhi.com/business/products-services/space-defense/launch-service/past-missions",
     "why": "MHI launch service, past missions (H-IIA retired 2025)",
-    "label": [
-      "JAXA / MHI — H-IIA User's Manual",
-      "MHI — H-IIA launch service, past missions"
-    ]
+    "label": ["JAXA / MHI — H-IIA User's Manual", "MHI — H-IIA launch service, past missions"]
   },
   "https://www.astro.umd.edu/~hamilton/research/preprints/HamKri97.pdf": {
     "new": "https://www.astro.umd.edu/~hamilton/research/reprints/HamKriv97.pdf",
@@ -514,10 +469,7 @@
   "https://www.esa.int/Science_Exploration/Space_Science/Exoplanet_Mission_Letter_of_Intent_Programme": {
     "new": "https://en.wikipedia.org/wiki/Astronomical_spectroscopy",
     "why": "no ESA spectroscopy page found",
-    "label": [
-      "ESA · Spectroscopy in Astronomy",
-      "Wikipedia · Astronomical spectroscopy"
-    ]
+    "label": ["ESA · Spectroscopy in Astronomy", "Wikipedia · Astronomical spectroscopy"]
   },
   "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Philae": {
     "new": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Touchdown%21_Rosetta_s_Philae_probe_lands_on_comet",
@@ -606,10 +558,7 @@
   "https://www.grc.nasa.gov/www/k-12/airplane/kepler.html": {
     "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter3-1/",
     "why": "GRC page gone; NASA Basics of Space Flight ch. 3",
-    "label": [
-      "NASA · Orbital Mechanics",
-      "NASA · Basics of Space Flight — Gravity & Mechanics"
-    ]
+    "label": ["NASA · Orbital Mechanics", "NASA · Basics of Space Flight — Gravity & Mechanics"]
   },
   "https://www.grc.nasa.gov/www/k-12/airplane/orbit.html": {
     "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter3-1/",
@@ -622,34 +571,22 @@
   "https://www.grc.nasa.gov/www/k-12/airplane/orbtrans.html": {
     "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/",
     "why": "GRC page gone; NASA Basics of Space Flight ch. 4",
-    "label": [
-      "NASA · Hohmann Transfer",
-      "NASA · Basics of Space Flight — Trajectories"
-    ]
+    "label": ["NASA · Hohmann Transfer", "NASA · Basics of Space Flight — Trajectories"]
   },
   "https://imagine.gsfc.nasa.gov/observatories/learning/swift/classroom/docs/Kepler.pdf": {
     "new": "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/",
     "why": "NASA site search",
-    "label": [
-      "NASA · Kepler's Three Laws",
-      "NASA · Orbits and Kepler's laws"
-    ]
+    "label": ["NASA · Kepler's Three Laws", "NASA · Orbits and Kepler's laws"]
   },
   "https://nssdc.gsfc.nasa.gov/planetary/glossary.html": {
     "new": "https://science.nasa.gov/learn/basics-of-space-flight/chapter5-1/",
     "why": "NASA Basics of Space Flight ch. 5 (planetary orbits)",
-    "label": [
-      "NASA · Orbital Terminology",
-      "NASA · Basics of Space Flight — Planetary Orbits"
-    ]
+    "label": ["NASA · Orbital Terminology", "NASA · Basics of Space Flight — Planetary Orbits"]
   },
   "https://eclipse.gsfc.nasa.gov/SEhelp/spaSE.html": {
     "new": "https://en.wikipedia.org/wiki/Subsolar_point",
     "why": "no NASA page found",
-    "label": [
-      "NASA · Sub-solar Point",
-      "Wikipedia · Subsolar point"
-    ]
+    "label": ["NASA · Sub-solar Point", "Wikipedia · Subsolar point"]
   },
   "https://celestrak.org/faq.php": {
     "new": "https://celestrak.org/usage-policy.php",
@@ -666,10 +603,7 @@
   "http://www.cnsa.gov.cn/english/n6465652/n6465653/c6840858/content.html": {
     "new": "https://en.wikipedia.org/wiki/Tiangong_space_station",
     "why": "CNSA page gone; CMSA site unreachable",
-    "label": [
-      "Tiangong programme — CNSA",
-      "Tiangong space station — Wikipedia"
-    ]
+    "label": ["Tiangong programme — CNSA", "Tiangong space station — Wikipedia"]
   },
   "https://www.northropgrumman.com/space/space-based-infrared-system-sbirs": {
     "new": "https://web.archive.org/web/20250321031520/https://www.northropgrumman.com/space/space-based-infrared-system-sbirs",
@@ -710,13 +644,24 @@
   "https://spaceflight101.com/spacerockets/h-iia/": {
     "new": "https://web.archive.org/web/20240623022842/https://spaceflight101.com/spacerockets/h-iia-202/",
     "why": "Spaceflight101 is gone; its H-IIA page was h-iia-202 (Wayback)",
-    "label": [
-      "Spaceflight101 — H-IIA",
-      "Spaceflight101 — H-IIA 202"
-    ]
+    "label": ["Spaceflight101 — H-IIA", "Spaceflight101 — H-IIA 202"]
   },
   "https://spaceflight101.com/spacerockets/cz-2f/": {
     "new": "https://web.archive.org/web/20240529123733/https://spaceflight101.com/spacerockets/long-march-2f/",
     "why": "Spaceflight101 is gone; its page was long-march-2f (Wayback)"
+  },
+  "https://www.bis-space.com/what-we-do/projects/project-daedalus/": {
+    "new": "https://bis-space.com/shop/product/project-daedalus-demonstrating-the-engineering-feasibility-of-interstellar-travel/",
+    "why": "BIS's Daedalus report page"
+  },
+  "https://www.cnsa.gov.cn/english/n6465645/n6465648/c6812114/content.html": {
+    "new": "https://en.wikipedia.org/wiki/Tianwen-1",
+    "why": "CNSA page gone",
+    "label": ["Tianwen-1 mission overview — CNSA", "Tianwen-1 — Wikipedia"]
+  },
+  "https://ned.ipac.caltech.edu/level5/March02/Tully/Tully2.html": {
+    "new": "https://en.wikipedia.org/wiki/Local_Group",
+    "why": "no such NED page (never archived)",
+    "label": ["NASA NED · Local Group object catalogue", "Wikipedia · Local Group"]
   }
 }

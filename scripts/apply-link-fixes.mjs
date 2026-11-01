@@ -77,8 +77,11 @@ for (const f of files) {
     ]) {
       if (o === n && o !== old) continue;
       // Only whole URLs: the next character must end the URL.
+      // Whole URLs only: not preceded by a URL character (a Wayback replacement
+      // embeds the old URL — "…/web/2024…/https://old" — and a re-run must not
+      // match it there), and followed by a character that ends the URL.
       const re = new RegExp(
-        o.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?=["\'\\s)<\\]`|]|$)',
+        '(?<![\\w/:.%-])' + o.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?=["\'\\s)<\\]`|]|$)',
         'g',
       );
       const count = (text.match(re) ?? []).length;

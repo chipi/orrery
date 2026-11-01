@@ -16,6 +16,7 @@
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
+  import { holdSceneCover } from '$lib/three/animate-loop';
 
   interface Props {
     src: string | null;
@@ -45,6 +46,12 @@
       list = [src];
       index = 0;
     }
+  });
+
+  // The viewer covers the page; 3D scenes behind it stop rendering while open.
+  $effect(() => {
+    if (!src) return;
+    return holdSceneCover();
   });
 
   const current = $derived(src ? (list[index] ?? src) : null);

@@ -80,6 +80,22 @@ export interface AnimateLoop {
 
 const DEFAULT_MAX_DT_SEC = 0.05;
 
+// Full-screen overlays that hide the scene (the panel image viewer) hold the
+// scenes still while open. On /iss the station kept rendering behind the
+// viewer and each viewer click took ~800 ms on a software-GL runner.
+let coverHolds = 0;
+
+/** Pause every animate loop's frames until the returned release is called. */
+export function holdSceneCover(): () => void {
+  coverHolds++;
+  let released = false;
+  return () => {
+    if (released) return;
+    released = true;
+    coverHolds--;
+  };
+}
+
 function defaultReducedMotion(): boolean {
   if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return false;
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -119,6 +135,13 @@ export function createAnimateLoop(opts: AnimateLoopOptions): AnimateLoop {
     rafHandle = null;
     if (cleanedUp || !running) return;
     if (!ignoreVisibilityPause && browser && document.hidden) return;
+    if (coverHolds > 0) {
+      // Keep a bare raf ticking so the scene resumes on release; drop lastTime
+      // so the first frame after it is not handed the covered span as dt.
+      lastTime = null;
+      armRaf();
+      return;
+    }
 
     const nowSec = now / 1000;
     if (lastTime === null) {

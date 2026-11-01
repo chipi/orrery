@@ -66,10 +66,11 @@ nothing alerts when docker-e2e skips its image publish on main.
 
 ## Other notes in this folder
 
-Still live, older than this arc, **not re-checked against main this session**:
-`2026-10-16-next-pr-content-scope.md`, `2026-10-17-post-v1-arc-plan.md`,
-`2026-10-20-v1.0-backlog.md`, `2026-10-21-v1.0-fix-arc-close.md`,
-`2026-10-31-fleet-garble-findings.md` (linked from the term-consistency skill), and the undated
-topic notes (backlogs, guides, fact-check logs). Archived on 2026-11-01 because their open items
-are in the inventory: the i18n, Phase 5 and Phase 6 plans, the `/explore` split plan, and the
-2026-10-19 i18n handover.
+Still live: `2026-10-31-fleet-garble-findings.md` (checked 2026-11-01: most listed defects are
+still in the text; the term-consistency skill links it; tracked in the inventory under
+"Translation quality"), and the undated topic notes (backlogs, guides, fact-check logs; not
+re-checked). Archived on 2026-11-01 because their open items are in the inventory: the i18n,
+Phase 5 and Phase 6 plans, the `/explore` split plan, the 2026-10-19 i18n handover, and the four
+v1.0 notes (`2026-10-16-next-pr-content-scope`, `2026-10-17-post-v1-arc-plan`,
+`2026-10-20-v1.0-backlog`, `2026-10-21-v1.0-fix-arc-close`; open items in the inventory section
+"Carried over from the v1.0 notes").

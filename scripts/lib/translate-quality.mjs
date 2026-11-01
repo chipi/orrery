@@ -1,7 +1,7 @@
 /**
  * Shared translation rules and output checks for every translation script
  * (scripts/translate-*.mjs, scripts/retranslate-fields.mjs). Built from the
- * 2026-10-17 translation-quality audit (docs/wip/2026-10-17-post-v1-arc-plan.md
+ * 2026-10-17 translation-quality audit (docs/wip/_archive/2026-10-17-post-v1-arc-plan.md
  * item 9b): each check below rejects a defect found shipped in the corpus.
  *
  * translate-model.mjs's translationClient() applies BASE_RULES, NAME_POLICY and

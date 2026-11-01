@@ -134,7 +134,7 @@ Against the model hypothesis:
 
 ### 3.1 Latin-script versus non-Latin locales (graded sample, 2,990 strings)
 
-Groups: Latin = de fr es it nl pt-BR; non-Latin = ru ja zh-CN ko hi ar sr-Cyrl. Cells = locale x segment (11 segments); a cell fails when BROKEN >= 20% or BROKEN+MINOR >= 50% (the plan's re-translate threshold, `docs/wip/2026-10-17-post-v1-arc-plan.md:80`). Numbers from `graded-2026-10-18/<loc>.json`.
+Groups: Latin = de fr es it nl pt-BR; non-Latin = ru ja zh-CN ko hi ar sr-Cyrl. Cells = locale x segment (11 segments); a cell fails when BROKEN >= 20% or BROKEN+MINOR >= 50% (the plan's re-translate threshold, `docs/wip/_archive/2026-10-17-post-v1-arc-plan.md:80`). Numbers from `graded-2026-10-18/<loc>.json`.
 
 | | Latin (6) | Non-Latin (7) |
 |---|---|---|

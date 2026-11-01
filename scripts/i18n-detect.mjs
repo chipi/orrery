@@ -1,7 +1,7 @@
 /**
  * Translation defect detectors over every locale overlay (i18n-src/<loc>/**) and UI
  * bundle (messages/<loc>.json), compared with en-US at the same path. Built for the
- * 2026-10-17 translation audit (docs/wip/2026-10-17-post-v1-arc-plan.md, item 9b);
+ * 2026-10-17 translation audit (docs/wip/_archive/2026-10-17-post-v1-arc-plan.md, item 9b);
  * each kind is a defect found shipped.
  *
  *   node scripts/i18n-detect.mjs                      # table per locale

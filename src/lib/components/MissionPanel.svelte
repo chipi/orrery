@@ -30,27 +30,12 @@
   import { VehicleIcon, SpacecraftIcon, TrajectoryArrowIcon } from '$lib/components/icons';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
+  import { hasTrajectory } from '$lib/data/interstellar';
 
   // The former LEARN tab folds into SCIENCE (Phase 4 cleanup): ScienceCards
   // on top, the tiered learn-link list below — one tab destination, less
   // crowding in the strip.
   type Tab = 'overview' | 'gallery' | 'flight' | 'science';
-
-  // #306 panel ↔ /explore PATHS-layer backlink. Stays in sync with
-  // ICONIC_TRAJECTORY_IDS in src/lib/three/explore-scene-host.ts —
-  // updating one without the other gives misleading "see on /explore"
-  // chips. Validated by the explore-paths-layer e2e spec.
-  const MISSIONS_WITH_ICONIC_PATH = new Set([
-    'voyager-1',
-    'voyager-2',
-    'pioneer-10',
-    'pioneer-11',
-    'new-horizons',
-    'galileo',
-    'juno',
-    'cassini',
-    'dawn',
-  ]);
 
   type Props = {
     mission: Mission | null;
@@ -475,11 +460,10 @@
           <p class="editorial">{mission.description}</p>
         {/if}
 
-        {#if MISSIONS_WITH_ICONIC_PATH.has(mission.id)}
-          <!-- #306 panel ↔ /explore backlink. The 9 missions with
-               iconic trajectories on /explore (Voyager 1+2, Pioneer
-               10+11, New Horizons, Galileo, Juno, Cassini, Dawn) get
-               a small chip that deep-links to /explore with the
+        {#if hasTrajectory(mission.id)}
+          <!-- #306 panel ↔ /explore backlink. Every mission whose path
+               /explore draws (TRAJECTORY_IDS, the same list /explore
+               reads) gets a chip that deep-links to /explore with the
                PATHS layer active. Cassini also gets the orbital tour
                at Saturn-system scale on zoom-in (Slice D). -->
           <a

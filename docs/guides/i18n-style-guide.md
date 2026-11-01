@@ -252,7 +252,7 @@ wrong order).
 - **ALL-CAPS labels are words.** STATUS, PERIOD, ARRIVAL, DOCKED are translated like
   any word (ja shipped スタタス, ペリド, アーリバル). Only real acronyms stay (TLI,
   LOI, EDL, TCM, C3, ISS).
-- **Page titles keep the brand**: "<page> · Orrery", with "Orrery" in Latin script in
+- **Page titles keep the brand**: "`<page> · Orrery`", with "Orrery" in Latin script in
   every locale (shipped: ja オーラリー, hi ऑररेरी, ar أرّيلي, ru Оррери, zh 奥雷里).
 - **Right-to-left arrows.** In ar (and he), "→" next to words points backwards,
   because bidi does not mirror arrows: write "←" ("الأرض ← القمر", a CTA "… ←").

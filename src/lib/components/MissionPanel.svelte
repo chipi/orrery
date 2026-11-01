@@ -492,19 +492,22 @@
         <!-- Trajectory thumbnail at the top of the FLIGHT tab —
              pre-rendered at build time by scripts/fetch-assets.ts so
              the panel shows flight data + the path it produces in
-             one place. -->
-        <figure class="flight-thumbnail">
-          <img
-            src="{assetOrigin}/images/missions/thumbnails/{mission.id}.png"
-            alt=""
-            loading="lazy"
-            onerror={(e) => {
-              const fig = (e.currentTarget as HTMLImageElement).closest('figure');
-              if (fig) fig.style.display = 'none';
-            }}
-            decoding="async"
-          />
-        </figure>
+             one place. Only missions with flight data have one
+             (mission-thumbnails.test.ts); asking for the rest 404ed on prod. -->
+        {#if mission.flight}
+          <figure class="flight-thumbnail">
+            <img
+              src="{assetOrigin}/images/missions/thumbnails/{mission.id}.png"
+              alt=""
+              loading="lazy"
+              onerror={(e) => {
+                const fig = (e.currentTarget as HTMLImageElement).closest('figure');
+                if (fig) fig.style.display = 'none';
+              }}
+              decoding="async"
+            />
+          </figure>
+        {/if}
         {#if flightCaveat}
           <div class="flight-caveat" role="note">
             {flightCaveat}

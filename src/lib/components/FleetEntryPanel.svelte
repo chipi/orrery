@@ -641,25 +641,22 @@
               {/each}
             {/snippet}
             {#snippet trailing()}
-              {#key entry.id}
-                <button
-                  type="button"
-                  class="thumb badge-thumb"
-                  onclick={() => (lightboxSrc = assetUrl(`/images/badges/fleet/${entry.id}.webp`))}
-                  aria-label={m.fleet_insignia_aria({ name: entry.name })}
-                >
-                  <img
-                    src={assetUrl(`/images/badges/fleet/${entry.id}.webp`)}
-                    alt=""
-                    decoding="async"
-                    onerror={(e) => {
-                      const b = (e.currentTarget as HTMLElement).closest('button');
-                      if (b) b.remove();
-                    }}
-                  />
-                  <span class="badge-tag">{m.fleet_insignia_tag()}</span>
-                </button>
-              {/key}
+              <!-- Only entries badges.json lists have an insignia; requesting the file
+                   for every entry 404ed for most of them on prod. -->
+              {@const badgeSrc = badges[`fleet:${entry.id}`]}
+              {#if badgeSrc}
+                {#key entry.id}
+                  <button
+                    type="button"
+                    class="thumb badge-thumb"
+                    onclick={() => (lightboxSrc = assetUrl(badgeSrc))}
+                    aria-label={m.fleet_insignia_aria({ name: entry.name })}
+                  >
+                    <img src={assetUrl(badgeSrc)} alt="" decoding="async" />
+                    <span class="badge-tag">{m.fleet_insignia_tag()}</span>
+                  </button>
+                {/key}
+              {/if}
             {/snippet}
           </PanelGalleryGrid>
         {/if}

@@ -39524,23 +39524,22 @@
   {
    "id": "28310137542e75af",
    "path": "/images/mars-sites/beagle2/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Beagle 2 on Mars.jpg",
-   "author": "ESA",
-   "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3ABeagle%202%20on%20Mars.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beagle%202%20on%20Mars.jpg",
-   "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "source_type": "nasa-images-api",
+   "title": "Components of Beagle 2 Flight System on Mars (PIA19106)",
+   "author": "NASA/JPL-Caltech/Univ. of Arizona/University of Leicester",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA19106",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.920Z"
+   "nasa_id": "PIA19106",
+   "fetched_at": "2026-11-01T23:55:00.000Z"
   },
   {
    "id": "650a1958438565e9",
@@ -39892,44 +39891,42 @@
   {
    "id": "04b41326de20e754",
    "path": "/images/mars-sites/exomars-rosalind-franklin/01.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:ExoMars rover panels (ESA378296).jpg",
-   "author": "ESA",
+   "source_type": "nasa-images-api",
+   "title": "Landing in Oxia Palus (PIA23289)",
+   "author": "NASA/JPL-Caltech/University of Arizona",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AExoMars%20rover%20panels%20(ESA378296).jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ExoMars%20rover%20panels%20(ESA378296).jpg",
-   "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "source_url": "https://images.nasa.gov/details/PIA23289",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.920Z"
+   "nasa_id": "PIA23289",
+   "fetched_at": "2026-11-01T23:30:00.000Z"
   },
   {
    "id": "4b8ffb64755f8468",
    "path": "/images/mars-sites/exomars-rosalind-franklin/01.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:ExoMars rover panels (ESA378296).jpg",
-   "author": "ESA",
+   "source_type": "nasa-images-api",
+   "title": "Landing in Oxia Palus (PIA23289)",
+   "author": "NASA/JPL-Caltech/University of Arizona",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AExoMars%20rover%20panels%20(ESA378296).jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ExoMars%20rover%20panels%20(ESA378296).jpg",
-   "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "source_url": "https://images.nasa.gov/details/PIA23289",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.920Z"
+   "nasa_id": "PIA23289",
+   "fetched_at": "2026-11-01T23:30:00.000Z"
   },
   {
    "id": "901a6a046d377c3d",
@@ -40528,18 +40525,19 @@
   {
    "id": "d616f543580a8f71",
    "path": "/images/mars-sites/mariner9/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Olympus Mons aurora.jpg",
+   "source_type": "nasa-images-api",
+   "title": "NASA Images search result — mariner9 / \"mariner 9 mars orbiter\"",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AOlympus%20Mons%20aurora.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Olympus%20Mons%20aurora.jpg",
+   "source_url": "https://images.nasa.gov/search?q=mariner+9+mars+orbiter&media_type=image&keywords=mariner9",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "downloaded-via-nasa-images-api",
+    "reencoded-jpeg",
+    "cropped-1x1"
    ],
    "revid": null,
    "pageid": null,
@@ -40734,18 +40732,19 @@
   {
    "id": "626931f02f043476",
    "path": "/images/mars-sites/mars-odyssey/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Mars Odyssey illustration.jpg",
+   "source_type": "nasa-images-api",
+   "title": "NASA Images search result — mars-odyssey / \"2001 mars odyssey orbiter themis\"",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMars%20Odyssey%20illustration.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20Odyssey%20illustration.jpg",
+   "source_url": "https://images.nasa.gov/search?q=2001+mars+odyssey+orbiter+themis&media_type=image&keywords=mars-odyssey",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "downloaded-via-nasa-images-api",
+    "reencoded-jpeg",
+    "cropped-1x1"
    ],
    "revid": null,
    "pageid": null,
@@ -42080,44 +42079,42 @@
   {
    "id": "b65b63c24762f162",
    "path": "/images/mars-sites/opportunity/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Opportunity Rover at Endurance Crater.jpg",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "Orbital View of Opportunity Region (PIA13082)",
+   "author": "NASA/JPL-Caltech/Arizona State University",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AOpportunity%20Rover%20at%20Endurance%20Crater.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Opportunity%20Rover%20at%20Endurance%20Crater.jpg",
+   "source_url": "https://images.nasa.gov/details/PIA13082",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.920Z"
+   "nasa_id": "PIA13082",
+   "fetched_at": "2026-11-01T23:55:00.000Z"
   },
   {
    "id": "8ef51ca3980ecd72",
    "path": "/images/mars-sites/opportunity/02.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:PIA21496-MarsRoverOpportunity-SelfPortrait-20140101.jpg",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "Orbital View of Opportunity Region (PIA13082)",
+   "author": "NASA/JPL-Caltech/Arizona State University",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3APIA21496-MarsRoverOpportunity-SelfPortrait-20140101.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA21496-MarsRoverOpportunity-SelfPortrait-20140101.jpg",
+   "source_url": "https://images.nasa.gov/details/PIA13082",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.920Z"
+   "nasa_id": "PIA13082",
+   "fetched_at": "2026-11-01T23:55:00.000Z"
   },
   {
    "id": "7a45ee216abdff67",
@@ -42650,44 +42647,42 @@
   {
    "id": "c742c90f971006aa",
    "path": "/images/mars-sites/schiaparelli/01.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Schiaparelli EDM lander testing.jpg",
-   "author": "ESA",
+   "source_type": "nasa-images-api",
+   "title": "Schiaparelli Impact Site on Mars, Stereo (PIA21135)",
+   "author": "NASA/JPL-Caltech/Univ. of Arizona",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3ASchiaparelli%20EDM%20lander%20testing.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Schiaparelli%20EDM%20lander%20testing.jpg",
-   "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "source_url": "https://images.nasa.gov/details/PIA21135",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.921Z"
+   "nasa_id": "PIA21135",
+   "fetched_at": "2026-11-01T23:30:00.000Z"
   },
   {
    "id": "f6b57e2c5b99291a",
    "path": "/images/mars-sites/schiaparelli/01.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:Schiaparelli EDM lander testing.jpg",
-   "author": "ESA",
+   "source_type": "nasa-images-api",
+   "title": "Schiaparelli Impact Site on Mars, Stereo (PIA21135)",
+   "author": "NASA/JPL-Caltech/Univ. of Arizona",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3ASchiaparelli%20EDM%20lander%20testing.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Schiaparelli%20EDM%20lander%20testing.jpg",
-   "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "source_url": "https://images.nasa.gov/details/PIA21135",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.921Z"
+   "nasa_id": "PIA21135",
+   "fetched_at": "2026-11-01T23:30:00.000Z"
   },
   {
    "id": "0507976db21bf6b1",
@@ -42857,20 +42852,21 @@
    "id": "874b22c114e9fec2",
    "path": "/images/mars-sites/spirit/02.1x1.jpg",
    "source_type": "wikimedia-commons",
-   "title": "File:Spirit Embedded.jpg",
-   "author": "NASA",
+   "title": "File:PIA01907 fig1-MarsSpirit-200604c.jpg",
+   "author": "NASA/JPL/Cornell",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3ASpirit%20Embedded.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spirit%20Embedded.jpg",
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:PIA01907_fig1-MarsSpirit-200604c.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/PIA01907_fig1-MarsSpirit-200604c.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "reencoded-jpeg",
+    "cropped-1x1"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 22252145,
    "nasa_id": null,
    "fetched_at": "2026-06-19T09:26:46.920Z"
   },
@@ -42980,44 +42976,42 @@
   {
    "id": "f4d6b91c2ed536c1",
    "path": "/images/mars-sites/tgo/01.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:ExoMars 2016 - Trace Gas Orbiter and Schiaparelli.jpg",
-   "author": "ESA",
+   "source_type": "nasa-images-api",
+   "title": "Strengthening the Mars Telecommunications Network (PIA21139)",
+   "author": "NASA/JPL-Caltech/ESA",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AExoMars%202016%20-%20Trace%20Gas%20Orbiter%20and%20Schiaparelli.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ExoMars%202016%20-%20Trace%20Gas%20Orbiter%20and%20Schiaparelli.jpg",
-   "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "source_url": "https://images.nasa.gov/details/PIA21139",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.921Z"
+   "nasa_id": "PIA21139",
+   "fetched_at": "2026-11-01T23:30:00.000Z"
   },
   {
    "id": "3097354020b1f201",
    "path": "/images/mars-sites/tgo/01.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:ExoMars 2016 - Trace Gas Orbiter and Schiaparelli.jpg",
-   "author": "ESA",
+   "source_type": "nasa-images-api",
+   "title": "Strengthening the Mars Telecommunications Network (PIA21139)",
+   "author": "NASA/JPL-Caltech/ESA",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AExoMars%202016%20-%20Trace%20Gas%20Orbiter%20and%20Schiaparelli.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ExoMars%202016%20-%20Trace%20Gas%20Orbiter%20and%20Schiaparelli.jpg",
-   "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "source_url": "https://images.nasa.gov/details/PIA21139",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.921Z"
+   "nasa_id": "PIA21139",
+   "fetched_at": "2026-11-01T23:30:00.000Z"
   },
   {
    "id": "dc2d248f45f656df",
@@ -43852,12 +43846,12 @@
   {
    "id": "17705daf5224df4b",
    "path": "/images/mars-sites/viking2-lander/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Viking 2 Lander Image of Frost.jpg",
+   "source_type": "nasa-images-api",
+   "title": "NASA Images search result — viking2-lander / \"viking 2 lander utopia planitia\"",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AViking%202%20Lander%20Image%20of%20Frost.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viking%202%20Lander%20Image%20of%20Frost.jpg",
+   "source_url": "https://images.nasa.gov/search?q=viking+2+lander+utopia+planitia&media_type=image&keywords=viking2-lander",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
@@ -48927,11 +48921,11 @@
    "id": "99774c040aeb143e",
    "path": "/images/missions/galileo/02.1x1.jpg",
    "source_type": "wikimedia-commons",
-   "title": "File:Io_volcanism_from_Galileo.jpg",
+   "title": "File:Galileo_spacecraft_model.png",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AIo_volcanism_from_Galileo.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Io_volcanism_from_Galileo.jpg",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AGalileo_spacecraft_model.png",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Galileo_spacecraft_model.png",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
@@ -53779,17 +53773,18 @@
    "id": "91be5fe217b76afe",
    "path": "/images/missions/messenger/01.1x1.jpg",
    "source_type": "wikimedia-commons",
-   "title": "File:Messenger spacecraft.jpg",
+   "title": "File:Mercury in color - Prockter07-edit1.jpg",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMessenger%20spacecraft.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Messenger%20spacecraft.jpg",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AMercury%20in%20color%20-%20Prockter07-edit1.jpg",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury%20in%20color%20-%20Prockter07-edit1.jpg",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
     "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "reencoded-jpeg",
+    "cropped-1x1"
    ],
    "revid": null,
    "pageid": null,
@@ -53820,86 +53815,82 @@
   {
    "id": "456bf26e0b4e794f",
    "path": "/images/missions/messenger/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:Messenger.gif",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "MESSENGER on Launch Pad 17-B, Cape Canaveral (KSC-04pd1566)",
+   "author": "NASA/KSC",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMessenger.gif",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Messenger.gif",
+   "source_url": "https://images.nasa.gov/details/KSC-04pd1566",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.849Z"
+   "nasa_id": "KSC-04pd1566",
+   "fetched_at": "2026-11-01T23:55:00.000Z"
   },
   {
    "id": "7e2728d0c9f85207",
    "path": "/images/missions/messenger/02.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:MESSENGER - spacecraft at Mercury - artist depiction.jpg",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "MESSENGER on Launch Pad 17-B, Cape Canaveral (KSC-04pd1566)",
+   "author": "NASA/KSC",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMESSENGER%20-%20spacecraft%20at%20Mercury%20-%20artist%20depiction.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MESSENGER%20-%20spacecraft%20at%20Mercury%20-%20artist%20depiction.jpg",
+   "source_url": "https://images.nasa.gov/details/KSC-04pd1566",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.849Z"
+   "nasa_id": "KSC-04pd1566",
+   "fetched_at": "2026-11-01T23:55:00.000Z"
   },
   {
    "id": "8a3ff554c2674c53",
    "path": "/images/missions/messenger/03.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:MESSENGER - launch - Delta II 7925H-9.5 - 2004.jpg",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "MESSENGER on Launch Pad 17-B, Cape Canaveral (KSC-04pd1567)",
+   "author": "NASA/KSC",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMESSENGER%20-%20launch%20-%20Delta%20II%207925H-9.5%20-%202004.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MESSENGER%20-%20launch%20-%20Delta%20II%207925H-9.5%20-%202004.jpg",
+   "source_url": "https://images.nasa.gov/details/KSC-04pd1567",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.849Z"
+   "nasa_id": "KSC-04pd1567",
+   "fetched_at": "2026-11-01T23:55:00.000Z"
   },
   {
    "id": "1ce29b6eb645e62b",
    "path": "/images/missions/messenger/03.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:Mercury topography MESSENGER.jpg",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "MESSENGER on Launch Pad 17-B, Cape Canaveral (KSC-04pd1567)",
+   "author": "NASA/KSC",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMercury%20topography%20MESSENGER.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury%20topography%20MESSENGER.jpg",
+   "source_url": "https://images.nasa.gov/details/KSC-04pd1567",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.849Z"
+   "nasa_id": "KSC-04pd1567",
+   "fetched_at": "2026-11-01T23:55:00.000Z"
   },
   {
    "id": "159728bba85e535e",
@@ -54027,11 +54018,11 @@
    "id": "d7f888971a1d68ce",
    "path": "/images/missions/mmx/02.1x1.jpg",
    "source_type": "wikimedia-commons",
-   "title": "File:MMX spacecraft bottom view.png",
+   "title": "File:MMX-CG01.png",
    "author": "JAXA",
    "agency": "JAXA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3AMMX%20spacecraft%20bottom%20view.png",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MMX%20spacecraft%20bottom%20view.png",
+   "source_url": "https://commons.wikimedia.org/wiki/File%3AMMX-CG01.png",
+   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MMX-CG01.png",
    "license_short": "CC-BY-4.0",
    "license_url": "https://creativecommons.org/licenses/by/4.0/",
    "license_rationale": "Reuse with attribution.",
@@ -54256,44 +54247,42 @@
   {
    "id": "6dd44a2fa5a8c3a8",
    "path": "/images/missions/new-horizons/02.1x1.jpg",
-   "source_type": "wikimedia-commons",
-   "title": "File:486958_Arrokoth_(crop_of_binary)_color_(cropped).jpg",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "Pluto Big Heart in Color (PIA19708)",
+   "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3A486958_Arrokoth_(crop_of_binary)_color_(cropped).jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/486958_Arrokoth_(crop_of_binary)_color_(cropped).jpg",
+   "source_url": "https://images.nasa.gov/details/PIA19708",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.847Z"
+   "nasa_id": "PIA19708",
+   "fetched_at": "2026-11-01T23:55:00.000Z"
   },
   {
    "id": "2d3d5e28b65ce085",
    "path": "/images/missions/new-horizons/02.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:NewHorizons_39_july14_2015.jpg",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "Pluto Big Heart in Color (PIA19708)",
+   "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3ANewHorizons_39_july14_2015.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NewHorizons_39_july14_2015.jpg",
+   "source_url": "https://images.nasa.gov/details/PIA19708",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.847Z"
+   "nasa_id": "PIA19708",
+   "fetched_at": "2026-11-01T23:55:00.000Z"
   },
   {
    "id": "395db2e2063bb749",
@@ -55901,43 +55890,43 @@
    "id": "2092a141bd03f193",
    "path": "/images/missions/pioneer-11/01.1x1.jpg",
    "source_type": "wikimedia-commons",
-   "title": "File:Pioneer 10-11 - p51.jpg",
-   "author": "NASA",
+   "title": "File:Pioneer 10 - 11, reconstructed full-scale mock-up - DPLA - 0ee5410618161a495925d68f2fc5e1fb (page 1).jpg",
+   "author": "TRW, Inc",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3APioneer%2010-11%20-%20p51.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pioneer%2010-11%20-%20p51.jpg",
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Pioneer_10_-_11,_reconstructed_full-scale_mock-up_-_DPLA_-_0ee5410618161a495925d68f2fc5e1fb_(page_1).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Pioneer_10_-_11%2C_reconstructed_full-scale_mock-up_-_DPLA_-_0ee5410618161a495925d68f2fc5e1fb_%28page_1%29.jpg",
+   "license_short": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "license_rationale": "Creative Commons Zero, Public Domain Dedication",
    "modifications": [
     "downloaded-via-special-filepath",
     "reencoded-jpeg"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 136151083,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.848Z"
+   "fetched_at": "2026-11-01T22:51:20.309Z"
   },
   {
    "id": "419daf9623ffae6b",
    "path": "/images/missions/pioneer-11/01.webp",
    "source_type": "wikimedia-commons",
-   "title": "File:Pioneer 10-11 - p51.jpg",
-   "author": "NASA",
+   "title": "File:Pioneer 10 - 11, reconstructed full-scale mock-up - DPLA - 0ee5410618161a495925d68f2fc5e1fb (page 1).jpg",
+   "author": "TRW, Inc",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3APioneer%2010-11%20-%20p51.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pioneer%2010-11%20-%20p51.jpg",
-   "license_short": "PD-NASA",
-   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Pioneer_10_-_11,_reconstructed_full-scale_mock-up_-_DPLA_-_0ee5410618161a495925d68f2fc5e1fb_(page_1).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Pioneer_10_-_11%2C_reconstructed_full-scale_mock-up_-_DPLA_-_0ee5410618161a495925d68f2fc5e1fb_%28page_1%29.jpg",
+   "license_short": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "license_rationale": "Creative Commons Zero, Public Domain Dedication",
    "modifications": [
     "downloaded-via-special-filepath",
     "reencoded-jpeg"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 136151083,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.848Z"
+   "fetched_at": "2026-11-01T22:51:20.310Z"
   },
   {
    "id": "a0dd2a4d0faec47a",
@@ -67549,23 +67538,22 @@
   {
    "id": "e8cb6cb62f75b8fb",
    "path": "/images/small-bodies/ceres/01.webp",
-   "source_type": "wikimedia-commons",
-   "title": "File:Ceres_-_RC3_-_Haulani_Crater_-_21778369873.jpg",
-   "author": "NASA",
+   "source_type": "nasa-images-api",
+   "title": "High Resolution Ceres View (PIA21906)",
+   "author": "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA",
    "agency": "NASA",
-   "source_url": "https://commons.wikimedia.org/wiki/File%3ACeres_-_RC3_-_Haulani_Crater_-_21778369873.jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ceres_-_RC3_-_Haulani_Crater_-_21778369873.jpg",
+   "source_url": "https://images.nasa.gov/details/PIA21906",
+   "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-special-filepath",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.926Z"
+   "nasa_id": "PIA21906",
+   "fetched_at": "2026-11-01T23:55:00.000Z"
   },
   {
    "id": "dd7a3af19b2e54e1",
@@ -68401,20 +68389,23 @@
    "id": "star-altair-01",
    "path": "/images/stars/altair/01.webp",
    "source_type": "wikimedia-commons",
-   "title": "Altair imaged by the CHARA Array",
-   "author": "Ming Zhao et al. (CHARA Array)",
+   "title": "File:Altair PR image6 (orange).jpg",
+   "author": "Ming Zhao, John Monnier (CHARA Array); derivative work: Omnidom 999",
    "agency": "CHARA Array",
-   "source_url": "https://commons.wikimedia.org/wiki/File:Altair_PR_image6_(white).jpg",
-   "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Altair%20PR%20image6%20(white).jpg",
-   "license_short": "PD-self",
-   "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
-   "license_rationale": "Released into the public domain by the author; interferometric surface reconstruction from the CHARA Array (Zhao et al.).",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Altair_PR_image6_(orange).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Altair_PR_image6_%28orange%29.jpg",
+   "license_short": "PD-Old",
+   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_rationale": "Public domain",
    "modifications": [
     "downloaded-from-wikimedia-commons",
     "resized",
     "reencoded-webp"
    ],
-   "fetched_at": "2026-07-14T12:39:44.414Z"
+   "revid": null,
+   "pageid": 6026714,
+   "nasa_id": null,
+   "fetched_at": "2026-11-01T22:46:18.017Z"
   },
   {
    "id": "star-antares-01",

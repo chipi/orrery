@@ -32,7 +32,7 @@ const norm180 = (deg: number): number => ((((deg + 180) % 360) + 360) % 360) - 1
 export const planetElongation: FormulaDef<{ planet: string; dateIso: string }> = {
   id: 'planet-elongation',
   titleKey: 'lab.f.elong.title',
-  plainKey: 'lab.f.elong.plain',
+  inWordsKey: 'lab.f.elong.in-words',
   citationKey: 'orbits/synodic-period',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Elongation_(astronomy)', source: 'wikipedia' },
   domain: 'ephemeris',
@@ -106,7 +106,7 @@ export const planetElongation: FormulaDef<{ planet: string; dateIso: string }> =
 export const maxElongation: FormulaDef<{ planet: string }> = {
   id: 'max-elongation',
   titleKey: 'lab.f.maxelong.title',
-  plainKey: 'lab.f.maxelong.plain',
+  inWordsKey: 'lab.f.maxelong.in-words',
   citationKey: 'orbits/synodic-period',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Elongation_(astronomy)', source: 'wikipedia' },
   domain: 'ephemeris',
@@ -194,7 +194,7 @@ export const retrogradeMotion: FormulaDef<{ planet: string; dateIso: string }> =
   // Own key family — 'lab.f.retro.*' belongs to retro-descent; sharing it clobbered
   // the descent card's title across 14 locales (fixed in the same pass as FB2).
   titleKey: 'lab.f.retrograde.title',
-  plainKey: 'lab.f.retrograde.plain',
+  inWordsKey: 'lab.f.retrograde.in-words',
   citationKey: 'orbits/synodic-period',
   learnMore: {
     url: 'https://en.wikipedia.org/wiki/Apparent_retrograde_motion',
@@ -270,7 +270,7 @@ export const planetAltitude: FormulaDef<{ planet: string; dateIso: string; latit
   {
     id: 'planet-altitude',
     titleKey: 'lab.f.skyalt.title',
-    plainKey: 'lab.f.skyalt.plain',
+    inWordsKey: 'lab.f.skyalt.in-words',
     learnMore: {
       url: 'https://en.wikipedia.org/wiki/Horizontal_coordinate_system',
       source: 'wikipedia',

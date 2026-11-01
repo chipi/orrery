@@ -23,7 +23,7 @@ import { G0 } from '../util/constants';
 export const descentBurn: FormulaDef<{ vOrbitKms: number; twr: number }> = {
   id: 'descent-burn',
   titleKey: 'lab.f.descent-burn.title',
-  plainKey: 'lab.f.descent-burn.plain',
+  inWordsKey: 'lab.f.descent-burn.in-words',
   citationKey: 'mission-phases/propulsive-landing',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Powered_descent', source: 'wikipedia' },
   domain: 'descent',
@@ -110,7 +110,7 @@ export const poweredDescent: FormulaDef<{
 }> = {
   id: 'powered-descent',
   titleKey: 'lab.f.pdescent.title',
-  plainKey: 'lab.f.pdescent.plain',
+  inWordsKey: 'lab.f.pdescent.in-words',
   citationKey: 'mission-phases/propulsive-landing',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Powered_descent', source: 'wikipedia' },
   domain: 'descent',
@@ -242,7 +242,7 @@ export const entrySteering: FormulaDef<{
 }> = {
   id: 'entry-steering',
   titleKey: 'lab.f.esteer.title',
-  plainKey: 'lab.f.esteer.plain',
+  inWordsKey: 'lab.f.esteer.in-words',
   citationKey: 'mission-phases/lifting-entry',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Atmospheric_entry', source: 'wikipedia' },
   domain: 'descent',
@@ -376,7 +376,7 @@ export const entryRangeControl: FormulaDef<{
 }> = {
   id: 'entry-range-control',
   titleKey: 'lab.f.rangectl.title',
-  plainKey: 'lab.f.rangectl.plain',
+  inWordsKey: 'lab.f.rangectl.in-words',
   citationKey: 'mission-phases/entry-footprint',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Atmospheric_entry', source: 'wikipedia' },
   domain: 'descent',
@@ -499,7 +499,7 @@ export const terminalVelocity: FormulaDef<{
 }> = {
   id: 'terminal-velocity',
   titleKey: 'lab.f.terminal.title',
-  plainKey: 'lab.f.terminal.plain',
+  inWordsKey: 'lab.f.terminal.in-words',
   citationKey: 'mission-phases/terminal-velocity',
   learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/airplane/termv.html', source: 'nasa-glenn' },
   domain: 'descent',
@@ -602,7 +602,7 @@ export const terminalVelocity: FormulaDef<{
 export const softLandingCheck: FormulaDef<{ terminalMs: number; safeMs: number }> = {
   id: 'soft-landing-check',
   titleKey: 'lab.f.soft-land.title',
-  plainKey: 'lab.f.soft-land.plain',
+  inWordsKey: 'lab.f.soft-land.in-words',
   citationKey: 'mission-phases/propulsive-landing',
   learnMore: {
     url: 'https://en.wikipedia.org/wiki/Soft_landing_(aeronautics)',
@@ -681,7 +681,7 @@ export const softLandingCheck: FormulaDef<{ terminalMs: number; safeMs: number }
 export const airbagsCheck: FormulaDef<{ impactMs: number; airbagLimitMs: number }> = {
   id: 'airbags-check',
   titleKey: 'lab.f.airbags.title',
-  plainKey: 'lab.f.airbags.plain',
+  inWordsKey: 'lab.f.airbags.in-words',
   citationKey: 'mission-phases/edl',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Mars_Pathfinder', source: 'wikipedia' },
   domain: 'descent',
@@ -760,7 +760,7 @@ export const enginePerformance: FormulaDef<{ engine: string }> = {
   id: 'engine-performance',
   titleKey: 'lab.f.engine-perf.title',
   titleFromInput: 'engine', // "Engine Performance — F-1" (×3 identical headings otherwise)
-  plainKey: 'lab.f.engine-perf.plain',
+  inWordsKey: 'lab.f.engine-perf.in-words',
   citationKey: 'propulsion/specific-impulse',
   learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/rocket/specimp.html', source: 'nasa-glenn' },
   domain: 'propulsion',
@@ -836,7 +836,7 @@ function isMicrogBody(id: string): id is (typeof MICROG_BODY_IDS)[number] {
 export const microGSurface: FormulaDef<{ body: string }> = {
   id: 'micro-g-surface',
   titleKey: 'lab.f.microg.title',
-  plainKey: 'lab.f.microg.plain',
+  inWordsKey: 'lab.f.microg.in-words',
   citationKey: 'orbits/hill-sphere',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Surface_gravity', source: 'wikipedia' },
   domain: 'descent',
@@ -896,7 +896,7 @@ export const touchdownBounce: FormulaDef<{
 }> = {
   id: 'touchdown-bounce',
   titleKey: 'lab.f.bounce.title',
-  plainKey: 'lab.f.bounce.plain',
+  inWordsKey: 'lab.f.bounce.in-words',
   learnMore: {
     url: 'https://en.wikipedia.org/wiki/Coefficient_of_restitution',
     source: 'wikipedia',
@@ -1024,7 +1024,7 @@ export const touchdownBounce: FormulaDef<{
 export const retroDescent: FormulaDef<{ terminalMs: number; safeMs: number }> = {
   id: 'retro-descent',
   titleKey: 'lab.f.retro.title',
-  plainKey: 'lab.f.retro.plain',
+  inWordsKey: 'lab.f.retro.in-words',
   citationKey: 'mission-phases/propulsive-landing',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Retrorocket', source: 'wikipedia' },
   domain: 'descent',

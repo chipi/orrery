@@ -13,7 +13,7 @@ import { bodyGravityMs2 } from '../mechanics/bodies';
 export const tsiolkovsky: FormulaDef<{ ispS: number; m0Kg: number; mfKg: number }> = {
   id: 'tsiolkovsky',
   titleKey: 'lab.f.tsiolkovsky.title',
-  plainKey: 'lab.f.tsiolkovsky.plain',
+  inWordsKey: 'lab.f.tsiolkovsky.in-words',
   domain: 'ascent',
   tier: 4,
   prereqs: [],
@@ -88,7 +88,7 @@ export const tsiolkovsky: FormulaDef<{ ispS: number; m0Kg: number; mfKg: number 
 export const newtonSecondLaw: FormulaDef<{ forceN: number; massKg: number }> = {
   id: 'newton-second-law',
   titleKey: 'lab.f.newton-second-law.title',
-  plainKey: 'lab.f.newton-second-law.plain',
+  inWordsKey: 'lab.f.newton-second-law.in-words',
   learnMore: {
     url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/newt.html',
     source: 'hyperphysics',
@@ -141,7 +141,7 @@ const WEIGHT_BODY_IDS = ['earth', 'moon', 'mars', 'venus', 'mercury'] as const;
 export const weight: FormulaDef<{ massKg: number; body: string }> = {
   id: 'weight',
   titleKey: 'lab.f.weight.title',
-  plainKey: 'lab.f.weight.plain',
+  inWordsKey: 'lab.f.weight.in-words',
   learnMore: {
     url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/mass.html',
     source: 'hyperphysics',
@@ -193,7 +193,7 @@ export const weight: FormulaDef<{ massKg: number; body: string }> = {
 export const momentumFormula: FormulaDef<{ massKg: number; velMs: number }> = {
   id: 'momentum',
   titleKey: 'lab.f.momentum.title',
-  plainKey: 'lab.f.momentum.plain',
+  inWordsKey: 'lab.f.momentum.in-words',
   learnMore: { url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/mom.html', source: 'hyperphysics' },
   domain: 'mechanics',
   tier: 2,
@@ -239,7 +239,7 @@ export const momentumFormula: FormulaDef<{ massKg: number; velMs: number }> = {
 export const thrustFromFlowFormula: FormulaDef<{ massFlowKgS: number; exhaustVelMs: number }> = {
   id: 'thrust-from-flow',
   titleKey: 'lab.f.thrust-flow.title',
-  plainKey: 'lab.f.thrust-flow.plain',
+  inWordsKey: 'lab.f.thrust-flow.in-words',
   citationKey: 'propulsion/thrust-and-twr',
   learnMore: {
     url: 'https://www.grc.nasa.gov/www/k-12/rocket/rktthsum.html',
@@ -284,7 +284,7 @@ export const thrustFromFlowFormula: FormulaDef<{ massFlowKgS: number; exhaustVel
 export const twrFormula: FormulaDef<{ thrustN: number; massKg: number; body: string }> = {
   id: 'twr',
   titleKey: 'lab.f.twr.title',
-  plainKey: 'lab.f.twr.plain',
+  inWordsKey: 'lab.f.twr.in-words',
   citationKey: 'propulsion/thrust-and-twr',
   learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/airplane/fwrat.html', source: 'nasa-glenn' },
   domain: 'mechanics',
@@ -351,7 +351,7 @@ const FREE_FALL_BODY_IDS = ['earth', 'moon', 'mars', 'venus', 'mercury'] as cons
 export const freeFallFormula: FormulaDef<{ heightM: number; body: string }> = {
   id: 'free-fall',
   titleKey: 'lab.f.free-fall.title',
-  plainKey: 'lab.f.free-fall.plain',
+  inWordsKey: 'lab.f.free-fall.in-words',
   learnMore: {
     url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/traj.html',
     source: 'hyperphysics',
@@ -418,7 +418,7 @@ const PROJECTILE_BODY_IDS = ['earth', 'moon', 'mars', 'venus', 'mercury'] as con
 export const projectileFormula: FormulaDef<{ v0Ms: number; angleDeg: number; body: string }> = {
   id: 'projectile',
   titleKey: 'lab.f.projectile.title',
-  plainKey: 'lab.f.projectile.plain',
+  inWordsKey: 'lab.f.projectile.in-words',
   learnMore: {
     url: 'http://hyperphysics.phy-astr.gsu.edu/hbase/traj.html',
     source: 'hyperphysics',
@@ -501,7 +501,7 @@ export const projectileFormula: FormulaDef<{ v0Ms: number; angleDeg: number; bod
 export const deltaVMargin: FormulaDef<{ capacityKms: number; requiredKms: number }> = {
   id: 'delta-v-margin',
   titleKey: 'lab.f.delta-v-margin.title',
-  plainKey: 'lab.f.delta-v-margin.plain',
+  inWordsKey: 'lab.f.delta-v-margin.in-words',
   citationKey: 'propulsion/dv-budget',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Delta-v_budget', source: 'wikipedia' },
   domain: 'transfer',

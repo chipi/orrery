@@ -62,7 +62,7 @@ Other Phase 4 items are done; see "Done in this arc".
 | Glossary: term links from article text | open | PRD-038 section 5; ordered last of the planned work. | `docs/prd/PRD-038.md`, Phase 6 doc section 7 |
 | Glossary: visual per term | open | PRD-038 section 5b; Higgsfield pipeline, credits to be sized and approved first. | `588bf97962a` |
 | Glossary: next term batch (~130 terms) | open | Plan from `term-census.mjs`; the 20-term pilot is complete and gated. | `2026-10-31-space-terms-glossary-pilot.md` "Next" |
-| Lab "plain" internal name | open | Reconsider the rename (`plainKey`, `lab_f_*_plain`, `card__plain`). Code-only. | `e6ba857fc83` |
+| Lab "plain" internal name | done on `tech-debt/0.9.3` | Renamed to "in words" (operator, 2026-11-01): `inWordsKey` (65 registry entries + `spec.ts`), `lab_f_*_in_words` (65 keys × 14 locales, text unchanged), `card__in-words`; `lab-messages.ts` regenerated. Lab + physics unit tests 948/948. | `e6ba857fc83` |
 | "Language spirit" audit | open | Search the site for English- or Latin-only assumptions: sorting (Intl.Collator), search normalization, initial-letter UI, separators and quotes, number/date/unit formats, truncation, RTL icon mirroring, keyboard assumptions. | Phase 6 doc section 7 |
 | Separate `/glossary` page idea | open | Low-profile page built from the glossary `term` section, optional reverse index; to be reassessed after the pilot. `/science/glossary` exists. | Phase 6 doc last paragraph |
 | Hand read of translated essays and science | partly done | Spot check done (208 items) and the science reads in ru/zh-CN/fr done; the rest is under "Translation quality". | `e522e5f4535` |

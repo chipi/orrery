@@ -83,7 +83,7 @@ export interface FormulaDef<I = Record<string, number | string>> {
   // "How to read this equation": names each symbol, ties it to the physical law, and links
   // back to earlier rungs (FB2). Rendered under the symbolic equation, BEFORE the inputs, so
   // the learner meets the formula as meaning before substituting numbers. i18n-keyed, ×14.
-  plainKey?: string;
+  inWordsKey?: string;
   compute(inputs: I): FormulaResult;
 }
 

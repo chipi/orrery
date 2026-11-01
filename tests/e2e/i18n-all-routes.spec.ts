@@ -2,8 +2,8 @@ import { expect, test } from '@playwright/test';
 
 /**
  * Broad "every page works in every language" guard. For each top-level route
- * and a representative spread of locales — German (Latin), Japanese (CJK),
- * Arabic (RTL), Serbian (Cyrillic) — it visits /<locale>/<route> and asserts:
+ * and every non-base locale (13; script checks for the non-Latin ones: ja, zh-CN,
+ * ko, hi, ar (RTL), ru, sr-Cyrl) it visits /<locale>/<route> and asserts:
  *   - <html lang> matches the locale
  *   - Arabic flips <html dir> to rtl
  *   - the page actually renders (nav + a heading/main region)
@@ -32,10 +32,21 @@ const ROUTES = [
 // `script` (for the non-Latin locales) lets us assert the rendered content is
 // ACTUALLY in the language — not just that <html lang> is set. Even the
 // canvas-heavy routes carry plenty of script via the nav + HUD labels.
+// All 13 non-base locales. Latin-script ones (script: null) get the lang/dir/render
+// checks; their content language is checked by the science + body-text specs.
 const LOCALES = [
-  { code: 'de', rtl: false, script: null }, // Latin — content checked by science + body-text specs
+  { code: 'de', rtl: false, script: null },
+  { code: 'es', rtl: false, script: null },
+  { code: 'fr', rtl: false, script: null },
+  { code: 'it', rtl: false, script: null },
+  { code: 'nl', rtl: false, script: null },
+  { code: 'pt-BR', rtl: false, script: null },
   { code: 'ja', rtl: false, script: /[぀-ヿ一-鿿]/g },
+  { code: 'zh-CN', rtl: false, script: /[一-鿿]/g },
+  { code: 'ko', rtl: false, script: /[가-힣]/g },
+  { code: 'hi', rtl: false, script: /[ऀ-ॿ]/g },
   { code: 'ar', rtl: true, script: /[؀-ۿ]/g },
+  { code: 'ru', rtl: false, script: /[Ѐ-ӿ]/g },
   { code: 'sr-Cyrl', rtl: false, script: /[Ѐ-ӿ]/g },
 ];
 

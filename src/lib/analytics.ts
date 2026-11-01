@@ -198,9 +198,9 @@ export const EVENT_NAMES = [
   'locale-suggest-accepted',
   // Data-layer observability (#517). The per-locale i18n overlay bundle
   // (~1.75 MB) occasionally fails to load client-side; the loader retries
-  // transient failures and, when they survive, emits this ONCE per locale so
-  // the real failure rate is measurable instead of only inferable from nginx
-  // per-file 404 bursts. `status` = the HTTP status (or null for a network error).
+  // transient failures and, when they survive or the bundle answers 4xx for a
+  // supported locale, emits this ONCE per locale so the real failure rate is
+  // measurable. `status` = the HTTP status (or null for a network error).
   'i18n-bundle-load-failed',
   // Any other /data/ JSON that failed after get()'s retries (#554): once per URL per
   // session, `url` = the site-relative path. The section it fed stays empty.

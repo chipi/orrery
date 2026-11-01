@@ -2,12 +2,18 @@
   "https://www.annualreviews.org/doi/10.1146/annurev.earth.31.100901.141502": {
     "new": "https://doi.org/10.1016/S0012-821X(02)01126-3",
     "why": "the DOI never existed (doi.org 404); Stevenson's 'Planetary magnetic fields' is EPSL 208 (2003) (Crossref)",
-    "label": ["Stevenson · Planetary magnetic fields (Annual Reviews)", "Stevenson · Planetary magnetic fields (Earth and Planetary Science Letters, 2003)"]
+    "label": [
+      "Stevenson · Planetary magnetic fields (Annual Reviews)",
+      "Stevenson · Planetary magnetic fields (Earth and Planetary Science Letters, 2003)"
+    ]
   },
   "https://www.science.org/doi/10.1126/science.aap8637": {
     "new": "https://doi.org/10.1073/pnas.1802345115",
     "why": "the DOI never existed; the 2018 lunar polar water-ice result is Li et al., PNAS (Crossref)",
-    "label": ["Lunar south pole water ice (Science 2018)", "Lunar polar surface water ice (PNAS 2018)"]
+    "label": [
+      "Lunar south pole water ice (Science 2018)",
+      "Lunar polar surface water ice (PNAS 2018)"
+    ]
   },
   "https://www.science.org/doi/10.1126/science.1059831": {
     "new": "https://doi.org/10.1126/science.1058651",
@@ -20,7 +26,10 @@
   "https://www.sciencedirect.com/science/article/abs/pii/S0094576510002973": {
     "new": "https://doi.org/10.1007/s11214-011-9848-y",
     "why": "the PII is an unrelated paper (Crossref); Brophy 2011 'The Dawn Ion Propulsion System' is Space Science Reviews 163",
-    "label": ["Ion propulsion subsystem — Brophy 2011, Acta Astronautica 68", "Ion propulsion subsystem — Brophy 2011, Space Science Reviews 163"]
+    "label": [
+      "Ion propulsion subsystem — Brophy 2011, Acta Astronautica 68",
+      "Ion propulsion subsystem — Brophy 2011, Space Science Reviews 163"
+    ]
   },
   "https://www.sciencedirect.com/science/article/abs/pii/S0032063313000244": {
     "new": "https://doi.org/10.1016/j.pss.2012.12.002",
@@ -29,12 +38,18 @@
   "https://www.sciencedirect.com/science/article/abs/pii/S0094576518316758": {
     "new": "https://doi.org/10.1016/j.actaastro.2018.03.024",
     "why": "no Kawakatsu 2019 paper; MMX mission analysis is Campagnola et al., Acta Astronautica 2018 (Crossref)",
-    "label": ["Kawakatsu et al. — MMX trajectory design (Acta Astronautica 2019)", "Campagnola et al. — MMX mission analysis (Acta Astronautica 2018)"]
+    "label": [
+      "Kawakatsu et al. — MMX trajectory design (Acta Astronautica 2019)",
+      "Campagnola et al. — MMX mission analysis (Acta Astronautica 2018)"
+    ]
   },
   "https://www.sciencedirect.com/science/article/abs/pii/S0273117701004099": {
     "new": "https://doi.org/10.1016/0273-1177(95)00588-6",
     "why": "PII not in Crossref; the Ulysses high-latitude overview is Marsden, Adv. Space Res. 1996",
-    "label": ["Marsden + Smith (2001) — Ulysses overview after first solar minimum (Adv. Space Res.)", "Marsden (1996) — Ulysses at high latitudes, an overview (Adv. Space Res.)"]
+    "label": [
+      "Marsden + Smith (2001) — Ulysses overview after first solar minimum (Adv. Space Res.)",
+      "Marsden (1996) — Ulysses at high latitudes, an overview (Adv. Space Res.)"
+    ]
   },
   "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981": {
     "new": "https://doi.org/10.1098/rsta.2019.0474",
@@ -102,7 +117,10 @@
   "https://www.cnsa.gov.cn/english/n6465652/n6465653/c6810553/content.html": {
     "new": "https://en.wikipedia.org/wiki/Chang%27e_3",
     "why": "CNSA page gone",
-    "label": ["Chang'e 3 launch (Long March 3B/E) — CNSA", "Chang'e 3 launch (Long March 3B/E) — Wikipedia"]
+    "label": [
+      "Chang'e 3 launch (Long March 3B/E) — CNSA",
+      "Chang'e 3 launch (Long March 3B/E) — Wikipedia"
+    ]
   },
   "https://californiasciencecenter.org/exhibits/air-space/endeavour-the-california-story": {
     "new": "https://californiasciencecenter.org/exhibits/air-and-space/space-shuttle",

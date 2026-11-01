@@ -33,7 +33,7 @@ commit on the branch touches it).
 | 14-locale render check | open | Phase plan step 3 asks for it as part of the guard. The spec `i18n-all-routes.spec.ts` exists but no commit on the branch runs or changes it; no result is recorded. | `docs/wip/_archive/2026-10-30-i18n-phase-plan.md` step 3 |
 | Unit symbols: sr-Cyrl and zh-CN | open | sr-Cyrl writes SI symbols in both scripts (km/s 39 uses, км/с 36) where style guide 1a says Latin; zh-CN writes 公里 where 1a says km. Deferred by the operator on 2026-10-30. | `2026-10-30-i18n-phase-plan.md` last section |
 | Per-locale unit forms for AU | partly done | `au` applied in fr, es, it, pt-BR (517 strings). Other locales keep their 1a forms; the style guide's unit table vs. shipped forms (e.g. de "(AU)" vs AE) not re-verified. | `db988ce0771` |
-| `i18n-src` en-US key parity | open | en-US has 1,137 keys, the other locales 1,143 (six `hotspot-metadata` files). The bundle builder warns. | Phase 5 doc, section 3 "Not covered" |
+| `i18n-src` en-US key parity | done on `tech-debt/0.9.3` | The six launch-site `hotspot-metadata` files (Baikonur 1/5 and 31/6, Jiuquan SLC-43, Sriharikota SLP, Vandenberg SLC-4E, Wenchang LC-101) now have en-US stubs like the other 31 (`{"hotspot_annotations": []}`; the English stays in `surface-hotspots.json`). `build-i18n-bundles.mjs`: 1,144 keys in every locale, no WARN. | Phase 5 doc, section 3 "Not covered" |
 | iOS App Store privacy answers | partly done | Answers committed as `app_privacy_details.json` plus a `fastlane privacy` lane; not uploaded (no Apple ID or ASC key on the workstation). | `b5ec8da4ffd` |
 
 Other Phase 4 items are done; see "Done in this arc".

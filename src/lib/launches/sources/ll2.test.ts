@@ -2,7 +2,7 @@
  * Tests for `LL2Source` — uses constructor-injected downloader (no network).
  */
 
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { LL2Source, fetchLL2Page, ll2RawToRawEntry } from './ll2.js';
 
 const fakeRaw = {
@@ -226,6 +226,18 @@ describe('fetchLL2Page — transient upstream failures', () => {
     const r = run([() => status(504), ok]);
     expect(await r.call()).toEqual(page);
     expect(r.waits).toEqual([10_000]);
+  });
+
+  it('logs each retry, so a retry that then succeeds shows in the refresh log', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    try {
+      const r = run([() => status(504), ok]);
+      await r.call();
+      expect(warn).toHaveBeenCalledTimes(1);
+      expect(warn.mock.calls[0]![0]).toMatch(/ll2 retry 1\/2 in 10 s after 504.*https:\/\/ll2\/x/);
+    } finally {
+      warn.mockRestore();
+    }
   });
 
   it('gives up after two retries and throws with the status', async () => {

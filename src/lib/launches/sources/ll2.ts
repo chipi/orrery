@@ -223,12 +223,19 @@ export async function fetchLL2Page(
     retryDelaysMs = RETRY_DELAYS_MS,
   }: LL2PageDeps = {},
 ): Promise<{ results: LL2LaunchRaw[]; next: string | null }> {
+  // One line per retry, so a retry that then succeeds still shows in the
+  // refresh log (VictoriaLogs job orrery-data-refresh).
+  const noteRetry = (why: string, attempt: number) =>
+    console.warn(
+      `  ↻ ll2 retry ${attempt + 1}/${retryDelaysMs.length} in ${retryDelaysMs[attempt] / 1000} s after ${why}: ${endpoint}`,
+    );
   for (let attempt = 0; ; attempt++) {
     let res: Response;
     try {
       res = await fetchFn(endpoint);
     } catch (e) {
       if (attempt >= retryDelaysMs.length) throw e;
+      noteRetry(e instanceof Error ? e.message : String(e), attempt);
       await sleep(retryDelaysMs[attempt]);
       continue;
     }
@@ -238,6 +245,7 @@ export async function fetchLL2Page(
       continue;
     }
     if (res.status >= 500 && attempt < retryDelaysMs.length) {
+      noteRetry(`${res.status} ${res.statusText}`, attempt);
       await sleep(retryDelaysMs[attempt]);
       continue;
     }

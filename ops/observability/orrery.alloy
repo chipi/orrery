@@ -112,7 +112,9 @@ loki.process "orrery_std" {
 // LOG-STANDARD). Inlined, like orrery_std, so this drop-in deploys independently of base;
 // environment comes from base's sink. After the sources, never on their targets: the
 // docker/file sources key read positions by target labels, and a new target label
-// re-reads every log from the start.
+// re-reads every log from the start. Forwards to base's loki.process "redact" (rewrites
+// sk- API keys to sk-REDACTED), not straight to the sink, like every infra drop-in; so it
+// needs a base.alloy that has that block (chipi/infra 45bb6a5 or later).
 loki.relabel "orrery_naming" {
 	rule {
 		source_labels = ["app", "surface"]
@@ -120,7 +122,7 @@ loki.relabel "orrery_naming" {
 		regex         = "(.+-.+)"
 		target_label  = "service"
 	}
-	forward_to = [loki.write.logs_sink.receiver]
+	forward_to = [loki.process.redact.receiver]
 }
 
 // ---------- METRICS: lab-api + mcp /metrics (ADR-094) -> VictoriaMetrics ----------

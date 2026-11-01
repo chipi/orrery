@@ -100,6 +100,7 @@ superseded (evidence per item in the review that moved them).
 | 1.0.0 version, tag, GitHub Release | open | Only after the operator has tested (memory: release only after testing). | post-v1 plan item 21 |
 | Git-history PNG purge | open | Destructive (rewrites history); needs per-instance approval. Repo `.git` is 16 GB. | v1.0 backlog F |
 | Fact-check every essay in English | open | No fact-check commit found (the 10-31 spot check graded translation, not facts). | post-v1 plan item 10b |
+| Orrery logs through infra's key redaction | ready, not deployed | `ops/observability/orrery.alloy` forwards `orrery_naming` to base's `loki.process "redact"` (rewrites `sk-` keys to `sk-REDACTED`; LiteLLM keys had reached VictoriaLogs via URLs, homelab 2026-11-01). Validated with grafana/alloy v1.17.0 against a stand-in base: passes with the redact block, fails without it — so it may only reach the box AFTER chipi/infra 45bb6a5 is deployed there. Not yet validated against the real base.alloy (45bb6a5 is not on this workstation or the mini). After both are live: an orrery log line with a fake 16+ char `sk-` token must show `sk-REDACTED` in VictoriaLogs (instance prod-podcast). | homelab session request 2026-11-01 |
 | Smaller v1.0 leftovers | open | Launch webcasts, image-source adapters, a scheduled link-check workflow (none exists), LROC TODOs (#291), a 30-day GlitchTip export baseline. | v1.0 backlog D, F |
 
 ## Done in this arc

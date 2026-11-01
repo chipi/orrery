@@ -965,6 +965,8 @@
   "chip_label_eclss_life_support": "ECLSS — 대기 재생 + 물 재생 + 열 제어",
   "chip_label_sleep_nutrition_circadian": "수면 + 영양 + 일주기 — 하루 16회 일출, 90분 주기, ISS 조리실",
   "chip_label_suit_lineage": "우주복 계보 — Mercury부터 xEMU까지; 압력복 + EMU + Orlan + Feitian",
+  "chip_label_eva": "EVA — 선외활동",
+  "chip_label_eva_physiology": "EVA 생리학",
   "panel_tab_science": "과학",
   "panel_satellite_composition_label": "구성 성분",
   "panel_satellite_radius_label": "반지름",

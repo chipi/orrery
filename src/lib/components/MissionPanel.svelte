@@ -180,10 +180,20 @@
     }
     if (f?.cruise?.tcm_count != null && f.cruise.tcm_count > 0)
       list.push({ tab: 'mission-phases', section: 'tcm' });
-    if (f?.arrival?.v_infinity_km_s != null)
+    // Attitude during the cruise is held by star trackers.
+    if (f?.cruise != null) list.push({ tab: 'mission-phases', section: 'star-trackers' });
+    if (f?.arrival?.v_infinity_km_s != null) {
       list.push({ tab: 'propulsion', section: 'v-infinity' });
-    if (f?.arrival?.orbit_insertion_dv_km_s != null)
+      // An interplanetary arrival: its launch window repeats with the synodic period.
+      list.push({ tab: 'scales-time', section: 'sidereal-synodic' });
+    }
+    if (f?.arrival?.orbit_insertion_dv_km_s != null) {
       list.push({ tab: 'mission-phases', section: 'orbit-insertion' });
+      // Insertion burns are placed by true anomaly (periapsis = 0°).
+      list.push({ tab: 'orbits', section: 'true-anomaly' });
+    }
+    // Flight positions and dates are given in the J2000 frame.
+    if (f != null) list.push({ tab: 'scales-time', section: 'j2000' });
     if (f?.arrival?.entry_velocity_km_s != null) {
       list.push({ tab: 'mission-phases', section: 'edl' });
       // EDL phase pairs with throttling-and-gimbaling (powered descent).

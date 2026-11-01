@@ -28,6 +28,8 @@
   import { loadLadder, ladderSources } from '$lib/image-srcset';
   import { track, trackGalleryImageOpen } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
+  import type { ScienceTabId } from '$types/science';
+  import ScienceCard from './ScienceCard.svelte';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { MissionOrbitIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages';
@@ -609,6 +611,15 @@
              outside the SpaceX / Arianespace / Long March / H3 set)
              stay silent without UI noise. Cross-reference gap tracked
              separately — see commit message. -->
+        <!-- Science articles named in the entry's data (suits today); engines list
+             theirs, with the cycle primers, under DETAIL instead. -->
+        {#if entry.category !== 'engine' && entry.science?.length}
+          <h3 class="section-h">{m.fleet_entry_learn_science()}</h3>
+          {#each entry.science as slug (slug)}
+            <ScienceCard tab={slug.split('/')[0] as ScienceTabId} section={slug.split('/')[1]!} />
+          {/each}
+        {/if}
+
         <LauncherFlightsWidget launcherId={entry.id} />
 
         <p class="credit">{entry.credit}</p>

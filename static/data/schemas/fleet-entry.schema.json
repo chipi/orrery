@@ -159,7 +159,7 @@
       "items": {
         "type": "string"
       },
-      "description": "/science article slugs this engine illustrates (PRD-032 cross-ref)."
+      "description": "/science article slugs (tab/section) this entry illustrates: engines (PRD-032 cross-ref, listed with the cycle primers) and space suits (shown as science cards on the overview)."
     },
     "linked_missions": {
       "type": "array",

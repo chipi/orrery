@@ -131,6 +131,8 @@
   "chip_label_space_debris": "Space debris — Kessler cascade risk + collision-avoidance maneuvers",
   "chip_label_special_orbits": "Special orbits — Molniya, Tundra, frozen, GTO — beyond the LEO/MEO/GEO trio",
   "chip_label_suit_lineage": "Suit lineage — Mercury through xEMU; pressure suits + EMU + Orlan + Feitian",
+  "chip_label_eva": "EVA — Extravehicular Activity",
+  "chip_label_eva_physiology": "EVA physiology",
   "chip_label_sun_synchronous": "Sun-synchronous — same local solar time on every pass; mapping + weather sats",
   "chip_label_tcm": "TCMs — small mid-cruise corrections",
   "chip_label_tof_axis": "Time-of-flight axis — fast vs slow trips",

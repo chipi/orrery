@@ -282,6 +282,14 @@
                 >{m.chip_label_suit_lineage()}</a
               >
             </li>
+            <li>
+              <a href={localHref(`/science/mission-phases/eva`)}>{m.chip_label_eva()}</a>
+            </li>
+            <li>
+              <a href={localHref(`/science/life-in-space/eva-physiology`)}
+                >{m.chip_label_eva_physiology()}</a
+              >
+            </li>
           </ul>
         </section>
       {/if}

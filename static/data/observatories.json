@@ -330,7 +330,8 @@
     "since": "1970",
     "science": [
       "/science/observation/adaptive-optics",
-      "/science/observation/spectroscopy"
+      "/science/observation/spectroscopy",
+      "/science/observation/coronagraphs"
     ],
     "evidence": "https://en.wikipedia.org/wiki/Mauna_Kea_Observatories"
   },
@@ -409,7 +410,8 @@
       "/science/observation/interferometry",
       "/science/exoplanets/direct-imaging",
       "/science/observation/black-holes",
-      "/science/observation/adaptive-optics"
+      "/science/observation/adaptive-optics",
+      "/science/observation/coronagraphs"
     ],
     "evidence": "https://en.wikipedia.org/wiki/Very_Large_Telescope"
   },

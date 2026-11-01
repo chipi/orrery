@@ -40,13 +40,11 @@
  */
 
 import { writeFile, readFile } from 'node:fs/promises';
+import { probeUrl, USER_AGENT, TIMEOUT_MS } from './lib/link-probe.mjs';
 
 const MANIFEST_PATH = 'static/data/link-provenance.json';
 const REPORT_OUT = 'docs/provenance/last-link-check.md';
 
-const USER_AGENT =
-  'Orrery-LinkChecker/1.0 (+https://github.com/chipi/orrery; outbound-link health under ADR-051)';
-const TIMEOUT_MS = 8_000;
 const DEFAULT_CONCURRENCY = 8;
 
 interface ManifestEntry {
@@ -120,86 +118,11 @@ function parseArgs(argv: string[]): CliOptions {
 }
 
 // ──────────────────────────────────────────────────────────────────────
-// HTTP probe
+// HTTP probe — scripts/lib/link-probe.mjs, shared with check-external-links
 // ──────────────────────────────────────────────────────────────────────
 
-// Map a non-exceptional HTTP response to a health status. Shared by the
-// HEAD and GET probes so the classification ladder lives in one place.
-function classifyResponse(res: Response): CheckResult['status'] {
-  if (res.ok) return 'ok';
-  if (res.status >= 300 && res.status < 400) return 'redirect';
-  if (res.status === 401 || res.status === 403) return 'forbidden';
-  return 'dead';
-}
-
-async function probeOnce(
-  url: string,
-  method: 'HEAD' | 'GET',
-): Promise<CheckResult['status'] | null> {
-  // Returns null when caller should fall through (HEAD not supported);
-  // a HealthStatus otherwise. Does not throw.
-  const ctrl = new AbortController();
-  const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
-  try {
-    const res = await fetch(url, {
-      method,
-      redirect: 'follow',
-      headers: { 'user-agent': USER_AGENT, accept: '*/*' },
-      signal: ctrl.signal,
-    });
-    if (res.status === 405 && method === 'HEAD') return null; // caller retries GET
-    return classifyResponse(res);
-  } catch (err) {
-    const e = err as Error;
-    if (e.name === 'AbortError') return 'timeout';
-    return 'error';
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
 async function probe(entry: ManifestEntry): Promise<CheckResult> {
-  const url = entry.url;
-  const ctrl = new AbortController();
-  const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
-  try {
-    const res = await fetch(url, {
-      method: 'HEAD',
-      redirect: 'follow',
-      headers: { 'user-agent': USER_AGENT, accept: '*/*' },
-      signal: ctrl.signal,
-    });
-    // HEAD-hostile hosts: some reject HEAD with 405 (method not allowed),
-    // but others (Wikipedia ~12, Gunter's Space Page ~11) answer 403/404 to
-    // HEAD yet 200 to GET — over-reporting them as dead. Retry as GET before
-    // concluding; GET is authoritative when HEAD is unreliable. Only accept a
-    // conclusive GET verdict (ok/redirect/forbidden/dead) — on a transient
-    // GET error/timeout, fall through to HEAD's status below. (#369)
-    if (res.status === 405 || res.status === 404 || res.status === 403) {
-      const fallback = await probeOnce(url, 'GET');
-      if (fallback && fallback !== 'error' && fallback !== 'timeout')
-        return resultFromStatus(entry, url, fallback, null, res.url || url);
-    }
-    const finalUrl = res.url || url;
-    return resultFromStatus(entry, url, classifyResponse(res), res.status, finalUrl);
-  } catch (err) {
-    const e = err as Error;
-    if (e.name === 'AbortError') return resultFromStatus(entry, url, 'timeout', null, null);
-    return resultFromStatus(entry, url, 'error', null, null, e.message);
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
-function resultFromStatus(
-  entry: ManifestEntry,
-  _url: string,
-  status: HealthStatus,
-  http_status: number | null,
-  final_url: string | null,
-  detail: string | null = null,
-): CheckResult {
-  return { entry, status, http_status, final_url, detail };
+  return { entry, ...(await probeUrl(entry.url)) };
 }
 
 // ──────────────────────────────────────────────────────────────────────

@@ -1,0 +1,4 @@
+{
+  "prompt": ["\\b(404s?|dead links?|broken links?|link (tracker|check|health)|check the links)\\b"],
+  "bash": ["prod-404-report\\.mjs", "check-(data|external)-links\\.mjs"]
+}

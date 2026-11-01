@@ -36,12 +36,34 @@ const ID_SOURCES = {
 
 // Tooling records, not site content: image-sourcing dry runs and curation logs
 // list candidate paths that were never downloaded. Only /dev/slice-a-review
-// reads them.
+// reads them. (Top-level static/data entries no code in src/ names are skipped
+// too — see appReads below.)
 const TOOLING_RECORD =
   /^static\/data\/(slice-a-[^/]*|image-curation|source-fetch-provenance|bodies-salvage-result)\.json$/;
 
 // Static files linked from data are checked against static/; routes are not files.
 const FILE_PREFIX = /^\/(images|audio|data|logos|textures|fonts|models)\//;
+
+// Asset paths held as JSON values ("src": "/images/…"), whatever the field is
+// called. Keys are skipped: image-alt-text and image-ladder are keyed by path.
+const ASSET_VALUE_RE = /"(\/(?:images|audio|textures|logos|fonts|models)\/[^"\\]+)"(?!\s*:)/g;
+
+// Files in static/ the build removes (scripts/prune-build-staging.mjs): present
+// on disk, 404 on the site. image-provenance credits them on purpose; /credits
+// shows their served 1:1 sibling (creditDisplayPath, guarded by its test).
+const PRUNED = /^\/textures\/.+\.(4x3|16x9)\.jpg$/;
+const CREDITS_PRUNED_OK = 'static/data/image-provenance.json';
+
+// Lookup tables keyed by image path: an entry is read only when a page shows
+// that image, and never puts its path on screen by itself. Stale rows for
+// deleted images (image-vision) and thumbnail lists (credit-thumbs) are not
+// broken links.
+const PATH_LOOKUP = new Set(['static/data/image-vision.json', 'static/data/credit-thumbs.json']);
+
+// Outbound links never carry tracking parameters: readers should not pass on
+// someone else's campaign tags (operator, 2026-11-01). Our own utm tags live in
+// code (the landing page), not in data.
+const OUTBOUND_TRACKING = /"https?:\/\/[^"]*[?&](utm_[a-z]+)=[^"]*"/g;
 
 // href="…" in HTML strings, ](…) in markdown, and link-valued JSON fields.
 const LINK_RE =
@@ -54,6 +76,20 @@ function walkJson(dir, skip = () => false) {
     if (skip(p)) continue;
     if (statSync(p).isDirectory()) out.push(...walkJson(p, skip));
     else if (name.endsWith('.json')) out.push(p);
+  }
+  return out;
+}
+
+function walkSrc(dir) {
+  const out = [];
+  for (const name of readdirSync(dir)) {
+    const p = join(dir, name);
+    // /dev/* tooling pages never ship (src/routes/dev/+layout.ts); what only
+    // they read is not site data.
+    if (p === join(ROOT, 'src/routes/dev')) continue;
+    if (statSync(p).isDirectory()) out.push(...walkSrc(p));
+    else if (/\.(svelte|ts|js)$/.test(name) && !/\.test\.ts$/.test(name))
+      out.push(readFileSync(p, 'utf8'));
   }
   return out;
 }
@@ -100,8 +136,20 @@ export function checkDataLinks() {
     ]),
   );
 
+  // A top-level static/data file or folder counts as site data only when code in
+  // src/ names it; the rest are pipeline records the site never fetches.
+  const srcText = walkSrc(join(ROOT, 'src')).join('\n');
+  const appReads = (p) => {
+    const top = relative(join(ROOT, 'static/data'), p)
+      .split('/')[0]
+      .replace(/\.json$/, '');
+    return srcText.includes(top);
+  };
   const files = [
-    ...walkJson(join(ROOT, 'static/data'), (p) => p === join(ROOT, 'static/data/i18n')),
+    ...walkJson(
+      join(ROOT, 'static/data'),
+      (p) => p === join(ROOT, 'static/data/i18n') || !appReads(p),
+    ),
     ...walkJson(join(ROOT, 'i18n-src')),
     ...walkJson(join(ROOT, 'messages')),
   ];
@@ -111,13 +159,29 @@ export function checkDataLinks() {
   for (const file of files) {
     if (TOOLING_RECORD.test(relative(ROOT, file))) continue;
     const text = readFileSync(file, 'utf8');
+    const rel = relative(ROOT, file);
+    const seen = new Set();
+    for (const m of PATH_LOOKUP.has(rel) ? [] : text.matchAll(ASSET_VALUE_RE)) {
+      const asset = m[1].split(/[?#]/)[0];
+      if (seen.has(asset)) continue;
+      seen.add(asset);
+      checked++;
+      if (!existsSync(join(ROOT, 'static', decodeURIComponent(asset))))
+        broken.push({ file: rel, link: asset, reason: 'no such file' });
+      else if (PRUNED.test(asset) && rel !== CREDITS_PRUNED_OK)
+        broken.push({ file: rel, link: asset, reason: 'pruned from the build (404 on the site)' });
+    }
+    for (const m of text.matchAll(OUTBOUND_TRACKING)) {
+      checked++;
+      broken.push({ file: rel, link: m[0].slice(1, 90), reason: `outbound link carries ${m[1]}` });
+    }
     for (const m of text.matchAll(LINK_RE)) {
       const link = m[1].replace(/&amp;/g, '&');
       if (link.startsWith('//')) continue; // protocol-relative = external
-      checked++;
       const [beforeHash] = link.split('#');
       const [rawPath, query = ''] = beforeHash.split('?');
-      const rel = relative(ROOT, file);
+      if (seen.has(rawPath)) continue; // already checked as an asset value
+      checked++;
       const fail = (reason) => broken.push({ file: rel, link, reason });
 
       if (FILE_PREFIX.test(rawPath)) {

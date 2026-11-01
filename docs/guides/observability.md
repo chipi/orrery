@@ -152,6 +152,14 @@ The pipeline mirrors whatever the web + pipeline-runner containers print to stdo
 
 For most existing scripts this is fine — they print mission IDs, agency names, status codes. Use structured logging (`JSON.stringify({ at: 'fetch-launches', stage: 'merge', count })`) when you want sharper VictoriaLogs (LogsQL) querying; unstructured stdout still works.
 
+### 404s from the access log
+
+`node scripts/prod-404-report.mjs --days=7` reads the orrery-web access log and lists every
+path prod answered 404 to, classed by who asked (our own page as referrer, reader, crawler,
+our probes, old-build chunks) with what each returns now. The runbook is the
+`orrery-link-health` skill; the link checkers it pairs with are in
+[scripts/README.md](../../scripts/README.md) ("Links and 404s").
+
 ---
 
 ## Server-side observability — lab-api + mcp ([ADR-094](../adr/ADR-094.md))

@@ -3,94 +3,11 @@ import { SCIENCE_TABS, getScienceSection } from '$lib/data';
 import { renderKatex } from '$lib/katex';
 import { getLocale } from '$lib/paraglide/runtime';
 import type { ScienceTabId } from '$types/science';
-import type { PageLoad, EntryGenerator } from './$types';
+import type { PageLoad } from './$types';
 
+// Every section is a prerender entry through scripts/site-routes.mjs
+// (scienceRoutes reads each tab's _index.json), so no `entries` list here.
 export const prerender = true;
-
-/**
- * Hardcoded (tab, section) pairs that the prerender should generate. The
- * source of truth is `static/data/science/[tab]/_index.json`; we duplicate
- * the list here because `+page.ts` is a universal module — node:fs is
- * unavailable. When a new section lands, add its (tab, section) pair here
- * and to the matching _index.json simultaneously. validate-data.ts will
- * fail if the JSON files don't exist for a declared section.
- */
-const SECTION_ENTRIES: { tab: ScienceTabId; section: string }[] = [
-  { tab: 'orbits', section: 'keplerian-orbit' },
-  { tab: 'orbits', section: 'semi-major-axis' },
-  { tab: 'orbits', section: 'eccentricity' },
-  { tab: 'orbits', section: 'inclination' },
-  { tab: 'orbits', section: 'true-anomaly' },
-  { tab: 'orbits', section: 'vis-viva' },
-  { tab: 'orbits', section: 'keplers-laws' },
-  { tab: 'orbits', section: 'apsides' },
-  { tab: 'orbits', section: 'orbit-regimes' },
-  { tab: 'orbits', section: 'lagrange-points' },
-  { tab: 'orbits', section: 'hill-sphere' },
-  { tab: 'transfers', section: 'hohmann-transfer' },
-  { tab: 'transfers', section: 'lambert-problem' },
-  { tab: 'transfers', section: 'transfer-ellipse' },
-  { tab: 'transfers', section: 'conic-sections' },
-  { tab: 'transfers', section: 'free-return' },
-  { tab: 'transfers', section: 'gravity-assist' },
-  { tab: 'transfers', section: 'patched-conics' },
-  { tab: 'propulsion', section: 'dv-budget' },
-  { tab: 'propulsion', section: 'tsiolkovsky' },
-  { tab: 'propulsion', section: 'specific-impulse' },
-  { tab: 'propulsion', section: 'c3' },
-  { tab: 'propulsion', section: 'v-infinity' },
-  { tab: 'propulsion', section: 'oberth-effect' },
-  { tab: 'propulsion', section: 'gas-generator' },
-  { tab: 'propulsion', section: 'staged-combustion' },
-  { tab: 'propulsion', section: 'expander-cycle' },
-  { tab: 'mission-phases', section: 'launch' },
-  { tab: 'mission-phases', section: 'gravity-turn' },
-  { tab: 'mission-phases', section: 'max-q' },
-  { tab: 'mission-phases', section: 'trans-x-injection' },
-  { tab: 'mission-phases', section: 'tcm' },
-  { tab: 'mission-phases', section: 'orbit-insertion' },
-  { tab: 'mission-phases', section: 'deorbit-corridor' },
-  { tab: 'mission-phases', section: 'edl' },
-  { tab: 'mission-phases', section: 'comms-blackout' },
-  { tab: 'mission-phases', section: 'met' },
-  { tab: 'mission-phases', section: 'nrho' },
-  { tab: 'mission-phases', section: 'mission-types' },
-  { tab: 'mission-phases', section: 'eva' },
-  { tab: 'scales-time', section: 'au' },
-  { tab: 'scales-time', section: 'light-minute' },
-  { tab: 'scales-time', section: 'j2000' },
-  { tab: 'scales-time', section: 'sidereal-synodic' },
-  { tab: 'scales-time', section: 'ecliptic-plane' },
-  { tab: 'scales-time', section: 'frames' },
-  { tab: 'porkchop', section: 'what-is-a-porkchop' },
-  { tab: 'porkchop', section: 'departure-axis' },
-  { tab: 'porkchop', section: 'tof-axis' },
-  { tab: 'porkchop', section: 'dv-heatmap' },
-  { tab: 'porkchop', section: 'contour-reading' },
-  { tab: 'porkchop', section: 'viability' },
-  { tab: 'life-in-space', section: 'microgravity-physiology' },
-  { tab: 'life-in-space', section: 'bone-density-loss' },
-  { tab: 'life-in-space', section: 'muscle-atrophy' },
-  { tab: 'life-in-space', section: 'radiation-exposure' },
-  { tab: 'life-in-space', section: 'vestibular-adaptation' },
-  { tab: 'life-in-space', section: 'eva-physiology' },
-  { tab: 'life-in-space', section: 'iva-suits' },
-  { tab: 'life-in-space', section: 'eva-suits' },
-  { tab: 'life-in-space', section: 'lunar-suits' },
-  { tab: 'life-in-space', section: 'long-duration-effects' },
-  { tab: 'observation', section: 'space-photography' },
-  { tab: 'observation', section: 'adaptive-optics' },
-  { tab: 'observation', section: 'coronagraphs' },
-  { tab: 'observation', section: 'spectroscopy' },
-  { tab: 'observation', section: 'interferometry' },
-  { tab: 'observation', section: 'black-holes' },
-  { tab: 'observation', section: 'wormholes' },
-  { tab: 'mission-phases', section: 'star-trackers' },
-  { tab: 'mission-phases', section: 'dead-reckoning' },
-  { tab: 'mission-phases', section: 'dsn' },
-];
-
-export const entries: EntryGenerator = () => SECTION_ENTRIES;
 
 export const load: PageLoad = async ({ params, fetch }) => {
   const tab = params.tab as ScienceTabId;

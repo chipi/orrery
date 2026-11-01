@@ -229,8 +229,7 @@
       "library": [
         { "id": "enceladus-wiki", "label": "Wikipedia — Enceladus", "url": "https://en.wikipedia.org/wiki/Enceladus", "tier": "intro", "kind": "wikipedia" },
         { "id": "enceladus-nasa", "label": "NASA Science — Enceladus overview", "url": "https://science.nasa.gov/saturn/moons/enceladus/", "tier": "intro", "kind": "nasa" },
-        { "id": "enceladus-cassini", "label": "NASA Cassini — plume-flyby legacy archive", "url": "https://solarsystem.nasa.gov/missions/cassini/overview/", "tier": "core", "kind": "mission" },
-        { "id": "enceladus-habitability", "label": "Astrobiology — Enceladus as life-search target", "url": "https://science.nasa.gov/saturn/moons/enceladus/", "tier": "extra", "kind": "article" }
+        { "id": "enceladus-cassini", "label": "NASA Cassini — plume-flyby legacy archive", "url": "https://solarsystem.nasa.gov/missions/cassini/overview/", "tier": "core", "kind": "mission" }
       ]
     },
     {

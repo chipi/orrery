@@ -217,6 +217,37 @@ export function checkDataLinks() {
       }
     }
   }
+  // A list that holds the same link twice: pages render link lists in a keyed
+  // {#each … (link.u)}, and a duplicate key throws, so the page never renders
+  // (/science/propulsion/tsiolkovsky, 2026-11-01). The site data only — tooling
+  // records and generated manifests may repeat URLs on purpose.
+  const DUP_EXEMPT = /^static\/data\/(tech-bom|link-provenance|image-provenance)\.json$/;
+  for (const file of files) {
+    const rel = relative(ROOT, file);
+    if (TOOLING_RECORD.test(rel) || DUP_EXEMPT.test(rel)) continue;
+    let data;
+    try {
+      data = JSON.parse(readFileSync(file, 'utf8'));
+    } catch {
+      continue;
+    }
+    const visit = (v, at) => {
+      if (Array.isArray(v)) {
+        const seen = new Set();
+        for (const x of v) {
+          const u = x && typeof x === 'object' ? (x.u ?? x.url ?? x.href) : undefined;
+          if (typeof u !== 'string') continue;
+          if (seen.has(u))
+            broken.push({ file: rel, link: u, reason: `listed twice in ${at || '/'}` });
+          seen.add(u);
+        }
+        v.forEach((x, i) => visit(x, `${at}[${i}]`));
+      } else if (v && typeof v === 'object') {
+        for (const [k, x] of Object.entries(v)) visit(x, `${at}.${k}`);
+      }
+    };
+    visit(data, '');
+  }
   return { checked, files: files.length, broken };
 }
 

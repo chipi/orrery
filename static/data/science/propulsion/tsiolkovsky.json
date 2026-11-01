@@ -17,11 +17,6 @@
       "l": "Wikipedia · Tsiolkovsky rocket equation",
       "u": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
       "t": "intro"
-    },
-    {
-      "l": "Wikipedia · Tsiolkovsky rocket equation",
-      "u": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
-      "t": "core"
     }
   ],
   "formula_latex": "\\Delta v = I_{sp} \\cdot g_0 \\cdot \\ln\\!\\left(\\frac{m_0}{m_f}\\right)",

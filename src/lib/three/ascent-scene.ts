@@ -17,7 +17,12 @@
 import * as THREE from 'three';
 import { BoldArrow } from './bold-arrow';
 import { SeparationBurst } from './separation-burst';
-import { gravity, type AscentEvent, type AscentState } from '$lib/physics/ascent/ascent-physics';
+import {
+  bodyAngleFromVerticalRad,
+  gravity,
+  type AscentEvent,
+  type AscentState,
+} from '$lib/physics/ascent/ascent-physics';
 import {
   activeShotAt,
   composeShot,
@@ -634,6 +639,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const K_POS = 0.13; // camera-position ease (smooth dolly / pan)
   const K_TGT = 0.45; // look-at ease — fast, so the subject stays framed
   const K_FOV = 0.13; // fov ease (smooth zoom)
+  // The K_* factors are per 60 Hz frame; the last camera update's time scales them.
+  let lastCamMs: number | null = null;
 
   // Separation event METs (undefined ⇒ that beat never fires; the sep stays at rest).
   const metOf = (type: AscentEvent['type']): number | undefined =>
@@ -726,9 +733,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     skyMat.uniforms.uAlt.value = s.altKm;
     launchGround?.setAltitudeFade(s.altKm);
 
-    // Orient along the flight path (velocity angle from vertical).
-    const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
-    const fromVertical = Math.atan2(horiz, Math.max(1e-6, s.velUpKms));
+    // Orient along the commanded thrust direction (see bodyAngleFromVerticalRad).
+    const fromVertical = bodyAngleFromVerticalRad(s);
     vehicle.rotation.z = -fromVertical;
 
     // ── Separations — every offset is a pure function of the mission time vs
@@ -901,19 +907,42 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       opts.tuning?.[activeShot],
       capsuleFocus,
     );
+    // Ease in the VEHICLE's frame, not the world's. In orbit the stack moves ~7.8 km/s × the
+    // clock speed; easing world positions made the camera trail the 1.2 km craft by kilometres,
+    // by an amount that changed with every frame's length — the craft jerked while the far
+    // background stayed smooth. Relative to the vehicle the lag is only the shot's own motion,
+    // and the per-frame factors are scaled to real frame time.
+    const ax = s.downrangeKm;
+    const ay = s.altKm;
+    const now = performance.now();
+    const frames =
+      lastCamMs == null ? 1 : Math.min(6, Math.max(0, (now - lastCamMs) / (1000 / 60)));
+    lastCamMs = now;
+    const ease = (k: number): number => 1 - Math.pow(1 - k, frames);
+    const kPos = ease(K_POS);
+    const kTgt = ease(K_TGT);
+    const kFov = ease(K_FOV);
     if (!camS) {
-      camS = { px: p.px, py: p.py, pz: p.pz, tx: p.tx, ty: p.ty, tz: p.tz, fov: p.fov };
+      camS = {
+        px: p.px - ax,
+        py: p.py - ay,
+        pz: p.pz,
+        tx: p.tx - ax,
+        ty: p.ty - ay,
+        tz: p.tz,
+        fov: p.fov,
+      };
     } else {
-      camS.px += (p.px - camS.px) * K_POS;
-      camS.py += (p.py - camS.py) * K_POS;
-      camS.pz += (p.pz - camS.pz) * K_POS;
-      camS.tx += (p.tx - camS.tx) * K_TGT;
-      camS.ty += (p.ty - camS.ty) * K_TGT;
-      camS.tz += (p.tz - camS.tz) * K_TGT;
-      camS.fov += (p.fov - camS.fov) * K_FOV;
+      camS.px += (p.px - ax - camS.px) * kPos;
+      camS.py += (p.py - ay - camS.py) * kPos;
+      camS.pz += (p.pz - camS.pz) * kPos;
+      camS.tx += (p.tx - ax - camS.tx) * kTgt;
+      camS.ty += (p.ty - ay - camS.ty) * kTgt;
+      camS.tz += (p.tz - camS.tz) * kTgt;
+      camS.fov += (p.fov - camS.fov) * kFov;
     }
-    camera.position.set(camS.px, camS.py, camS.pz);
-    camera.lookAt(camS.tx, camS.ty, camS.tz);
+    camera.position.set(camS.px + ax, camS.py + ay, camS.pz);
+    camera.lookAt(camS.tx + ax, camS.ty + ay, camS.tz);
     camera.fov = camS.fov;
     camera.updateProjectionMatrix();
 

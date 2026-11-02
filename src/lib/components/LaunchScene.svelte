@@ -531,13 +531,28 @@
   .hud-scrim {
     position: absolute;
     inset: 0;
-    z-index: 2;
+    /* 0, not above: the HUD blocks have no z-index, so they paint over this in DOM order
+       (stage → scrim → HUD). At z-index 2 the scrim covered the text it was meant to back. */
+    z-index: 0;
     pointer-events: none;
-    background: radial-gradient(
-      ellipse 130% 90% at 50% 42%,
-      transparent 46%,
-      rgba(3, 6, 14, 0.62) 100%
-    );
+    /* Side bands behind the telemetry (left) and dossier (right) consoles plus a top band
+       behind the title + clock: the corner vignette alone left the panels on bare daylight sky,
+       where their dim mono labels could not be read. */
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 6, 14, 0.72) 0px,
+        rgba(3, 6, 14, 0.5) 290px,
+        transparent 440px
+      ),
+      linear-gradient(
+        270deg,
+        rgba(3, 6, 14, 0.72) 0px,
+        rgba(3, 6, 14, 0.5) 290px,
+        transparent 440px
+      ),
+      linear-gradient(180deg, rgba(3, 6, 14, 0.55) 0px, transparent 150px),
+      radial-gradient(ellipse 130% 90% at 50% 42%, transparent 46%, rgba(3, 6, 14, 0.62) 100%);
     transition: opacity 0.4s linear;
   }
   .launch.hud-hidden .hud-scrim {
@@ -593,6 +608,56 @@
   .launch.hud-hidden .injection {
     opacity: 0;
     pointer-events: none;
+  }
+  /* Phones start with the HUD collapsed; instead of nothing, keep a minimal set — mission,
+     clock + phase, speed + altitude — compact and on its own dark backing. */
+  @media (hover: none), (pointer: coarse) {
+    .launch.hud-hidden .header,
+    .launch.hud-hidden .clock,
+    .launch.hud-hidden .readouts {
+      opacity: 1;
+    }
+    .launch.hud-hidden .header,
+    .launch.hud-hidden .clock,
+    .launch.hud-hidden .readouts {
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: rgba(3, 8, 18, 0.62);
+    }
+    .launch.hud-hidden .header {
+      top: 12px;
+      left: 12px;
+    }
+    .launch.hud-hidden .mission {
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+    .launch.hud-hidden .sub {
+      display: none;
+    }
+    .launch.hud-hidden .clock {
+      top: 12px;
+      left: auto;
+      right: 12px;
+      transform: none;
+      align-items: flex-end;
+    }
+    .launch.hud-hidden .met {
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+    .launch.hud-hidden .readouts {
+      bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+      gap: 24px;
+    }
+    /* /fly hides these under its shared control bar (.external); with the panels collapsed
+       on a phone they are the only speed + altitude on screen, so bring them back. */
+    .launch.external.hud-hidden .readouts {
+      display: flex;
+    }
+    .launch.hud-hidden .rv {
+      font-size: 26px;
+    }
   }
   /* Post-SECO injection-burn callout — centered under the clock, amber theme
      matching the /fly TLI/TMI event markers; pulses while the stage fires. */

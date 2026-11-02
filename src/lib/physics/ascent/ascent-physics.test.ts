@@ -3,6 +3,7 @@ import {
   airDensity,
   ambientPressure,
   ascentToOrbit,
+  bodyAngleFromVerticalRad,
   circularSpeed,
   combinedBoosterStage,
   commandedPitchRad,
@@ -370,5 +371,26 @@ describe('stackIdealDv — parallel boosters not double-counted (M4)', () => {
       b.wetKg;
     const overcount = coreDv + tsiolkovskyDv(b.ispVacS, fullStack, fullStack - stagePropellant(b));
     expect(boostedDv).toBeLessThan(overcount);
+  });
+});
+
+describe('bodyAngleFromVerticalRad — the drawn rocket attitude', () => {
+  // The pad carries Earth's ~0.4 km/s eastward rotation, so the INERTIAL velocity is almost
+  // horizontal at liftoff; drawing the body along it laid the rocket flat right off the pad.
+  const { states } = integrateAscent(FALCON9);
+  it('stands within 5° of vertical for the first 10 s after liftoff', () => {
+    for (const t of [0, 1, 2, 5, 10]) {
+      const deg = (bodyAngleFromVerticalRad(sampleAscentAt(states, t)) * 180) / Math.PI;
+      expect(deg, `t=${t}s`).toBeLessThan(5);
+    }
+  });
+  it('never snaps: turns at most 3°/s, though the guidance steps at staging and PEG re-solves', () => {
+    const end = states[states.length - 1].t;
+    let prev = bodyAngleFromVerticalRad(sampleAscentAt(states, 0));
+    for (let t = 0.5; t <= end; t += 0.5) {
+      const now = bodyAngleFromVerticalRad(sampleAscentAt(states, t));
+      expect(Math.abs(now - prev) * (180 / Math.PI), `t=${t}s`).toBeLessThanOrEqual(1.5 + 1e-9);
+      prev = now;
+    }
   });
 });

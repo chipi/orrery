@@ -12,7 +12,11 @@
  * is at (downrangeKm, altKm, 0); the launch site is the origin.
  */
 
-import type { AscentEvent, AscentState } from '$lib/physics/ascent/ascent-physics';
+import {
+  bodyAngleFromVerticalRad,
+  type AscentEvent,
+  type AscentState,
+} from '$lib/physics/ascent/ascent-physics';
 
 export type AscentShotName =
   | 'pad'
@@ -347,8 +351,7 @@ export function composeShot(
       // Target the body-DOWN midpoint (where the spent booster drops) so the
       // separation reads regardless of the stack's attitude.
       const io = p < 0.6 ? ease(p / 0.6) : 1 - 0.25 * ease((p - 0.6) / 0.4);
-      const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
-      const fv = Math.atan2(horiz, s.velUpKms);
+      const fv = bodyAngleFromVerticalRad(s);
       const tx = dr - Math.sin(fv) * vehLen * 0.55;
       const ty = alt - Math.cos(fv) * vehLen * 0.55;
       const d = vehLen * (2.7 - 0.8 * io);
@@ -359,8 +362,7 @@ export function composeShot(
       // The clamshell fairing splitting off the top of the stack. The nose
       // sits ~1.3 units UP THE BODY axis — target that so the split reads
       // whatever the attitude; tight side framing with a gentle push-in.
-      const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
-      const fv = Math.atan2(horiz, s.velUpKms);
+      const fv = bodyAngleFromVerticalRad(s);
       const tx = dr + Math.sin(fv) * vehLen * 1.15;
       const ty = alt + Math.cos(fv) * vehLen * 1.15;
       const d = vehLen * (2.3 - 0.5 * e);

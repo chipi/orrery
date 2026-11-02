@@ -3352,6 +3352,32 @@
       {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
     </button>
   </div>
+  <!-- Phone mini-HUD: touch screens start with the full HUD collapsed, which left the
+       cruise view with no numbers at all. One strip keeps the essentials; tapping it
+       opens the full MISSION panel. Hidden on desktop by CSS. -->
+  {#if mission && hudHidden && !openingActive && !showLaunch && !showDescent}
+    <button
+      type="button"
+      class="fly-mini-hud"
+      data-testid="fly-mini-hud"
+      onclick={() => setMobilePanel('mission')}
+      aria-label={m.fly_panel_identity()}
+    >
+      <span class="mh-top">
+        <span class="mh-name">{mission.name}</span>
+        <span class="mh-phase phase-{phase}">{phaseLabel}</span>
+      </span>
+      <span class="mh-row">
+        <span>{m.fly_hud_met_value({ day: Math.round(met).toString() })}</span>
+        <span>{m.fly_hud_kms({ value: heliocentricKms.toFixed(2) })}</span>
+        <span
+          >{m.fly_hud_mkm({
+            value: distFromEarthMkm < 1 ? distFromEarthMkm.toFixed(2) : distFromEarthMkm.toFixed(0),
+          })}</span
+        >
+      </span>
+    </button>
+  {/if}
   <!-- Settings — wave 2/3 punch #3. Gear icon top-right; click opens
        the shared QualitySettingsModal (#339) with quality-tier radios.
        Choice persists to localStorage globally and applies on reload. -->
@@ -3590,6 +3616,9 @@
          separated by hairlines, instead of three floating dark blocks.
          The wrapper is always rendered while openingActive; individual
          sections fade in via their opacity vars. -->
+    <!-- Full-screen dim between the HUD (z 30–35) and the card (z 200): without it the
+         briefing text sat directly on the live scene and the HUD panels, and the two mixed. -->
+    <div class="opening-scrim" aria-hidden="true"></div>
     <div class="opening-stack" data-testid="fly-opening-stack">
       {#if openingTitleOpacity > 0}
         <div
@@ -4873,6 +4902,31 @@
      containing title section + body section. Sections separated by
      hairlines; single shared backdrop reads as a single "mission
      briefing" card instead of stacked dark blocks. */
+  .opening-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 38; /* above the HUD panels (30–35), under the site nav (39–40) */
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(3, 5, 12, 0.84) 0%,
+      rgba(3, 5, 12, 0.74) 55%,
+      rgba(3, 5, 12, 0.62) 100%
+    );
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    animation: opening-scrim-in 0.4s ease-out both;
+  }
+  @keyframes opening-scrim-in {
+    from {
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .opening-scrim {
+      animation: none;
+    }
+  }
   .opening-stack {
     position: fixed;
     top: 50%;
@@ -4891,7 +4945,7 @@
     align-items: center;
     gap: 14px;
     padding: 20px 28px;
-    background: rgba(8, 12, 24, 0.22);
+    background: rgba(8, 12, 24, 0.55);
     border-radius: 14px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -6224,7 +6278,8 @@
   /* New mobile-only chrome (tab accordion + top-left view toggle) — hidden
      on desktop; revealed at ≤767 below. */
   .fly-top-mobile,
-  .fly-mtabs {
+  .fly-mtabs,
+  .fly-mini-hud {
     display: none;
   }
 
@@ -6247,6 +6302,53 @@
       left: 8px;
       gap: 6px;
       z-index: 45;
+    }
+    .fly-mini-hud {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: fixed;
+      top: calc(var(--nav-height) + 8px);
+      left: 74px;
+      right: 8px;
+      z-index: 45;
+      padding: 7px 10px;
+      border: 1px solid rgba(127, 212, 255, 0.25);
+      border-radius: 8px;
+      background: rgba(8, 10, 22, 0.78);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      color: #eaf3ff;
+      font-family: var(--font-mono, 'Space Mono', monospace);
+      text-align: left;
+      cursor: pointer;
+    }
+    .fly-mini-hud .mh-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .fly-mini-hud .mh-name {
+      font-family: var(--font-display, 'Bebas Neue', sans-serif);
+      font-size: 16px;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .fly-mini-hud .mh-phase {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: #7fd4ff;
+      white-space: nowrap;
+    }
+    .fly-mini-hud .mh-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 11px;
+      color: rgba(234, 243, 255, 0.85);
     }
     /* Bottom tab bar — mirrors the MobileDrawerGroup look used on the other
        routes. Sits just above the scrubber. */

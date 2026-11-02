@@ -154,6 +154,8 @@ export interface AscentState {
   dragN: number;
   /** Commanded thrust direction — flight-path angle from horizontal (rad). */
   pitchRad: number;
+  /** Drawn body attitude from horizontal (rad): `pitchRad` rate-limited (see setDrawnAttitude). */
+  attitudeRad?: number;
   /** Propellant remaining in the active stage (kg); 0 while coasting. */
   propRemainingKg: number;
   /** Strap-on booster propellant remaining (kg); 0 when there are none or they're spent. */
@@ -931,6 +933,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
 
   const final = snapshot();
   states.push(final);
+  setDrawnAttitude(states);
 
   return {
     states,
@@ -948,6 +951,38 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     siteRotationCreditKms: siteSpeed / 1000,
     totalDurationS: final.t,
   };
+}
+
+/**
+ * The angle the drawn vehicle's body makes with local vertical (rad): the commanded thrust
+ * direction, which is where the engines point. Not the INERTIAL velocity: the pad already
+ * carries Earth's ~0.4 km/s eastward rotation, so that vector is nearly horizontal at liftoff
+ * and drawing the body along it laid the rocket flat right off the pad.
+ */
+export function bodyAngleFromVerticalRad(s: AscentState): number {
+  return Math.min(Math.PI, Math.max(0, Math.PI / 2 - (s.attitudeRad ?? s.pitchRad)));
+}
+
+/** Fastest the drawn body turns (rad/s) — about what a real vehicle's attitude control slews. */
+export const DRAWN_ATTITUDE_RATE_RAD_S = (3 * Math.PI) / 180;
+
+/**
+ * Fill `attitudeRad` on every sampled state: the commanded pitch, rate-limited. The guidance
+ * steps when a stage takes over or PEG re-solves (66° → 104° → 71° at a Falcon 9 staging);
+ * drawn literally the craft snaps. Computed once over the samples, so scrubbing stays exact.
+ */
+function setDrawnAttitude(states: AscentState[]): void {
+  let prev: AscentState | null = null;
+  for (const s of states) {
+    if (!prev || prev.attitudeRad == null) {
+      s.attitudeRad = s.pitchRad;
+    } else {
+      const max = DRAWN_ATTITUDE_RATE_RAD_S * Math.max(0, s.t - prev.t);
+      s.attitudeRad =
+        prev.attitudeRad + Math.max(-max, Math.min(max, s.pitchRad - prev.attitudeRad));
+    }
+    prev = s;
+  }
 }
 
 /**
@@ -993,6 +1028,9 @@ export function sampleAscentAt(states: AscentState[], t: number): AscentState {
     lossGravityKms: lerp(a.lossGravityKms, b.lossGravityKms),
     lossDragKms: lerp(a.lossDragKms, b.lossDragKms),
     lossSteeringKms: lerp(a.lossSteeringKms, b.lossSteeringKms),
+    ...(a.attitudeRad != null && b.attitudeRad != null
+      ? { attitudeRad: lerp(a.attitudeRad, b.attitudeRad) }
+      : {}),
   };
 }
 

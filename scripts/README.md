@@ -108,8 +108,12 @@ Runbook: the `orrery-link-health` skill. The two outbound checkers share
 
 - `mobile/build-offline-manifest.mjs` — regenerates the committed
   `static/data/offline-manifest.json` the native offline download reads
-  (RFC-040 Contract C). It lists images, posters, hotspot tiles and audio,
-  so it goes stale when any of those change.
+  (RFC-040 Contract C). It lists images, posters, hotspot tiles, audio and
+  the per-locale image alt text, so it goes stale when any of those change.
+- `glitchtip-baseline.py [days]` — every orrery GlitchTip issue seen in the
+  last N days per project, as Markdown; runs on the homelab mini through the
+  host-run skill. Baselines live in `docs/ops/glitchtip-baseline-<date>.md`;
+  compare a release against the newest one.
 - `score-staging.ts` — scores `static/images/_staging/` for /dev/staging;
   **paid** on vision-cache misses (Anthropic vision, needs `.env`).
 - `search-badge-candidates.mjs` → `search-badge-multisource.mjs` — find

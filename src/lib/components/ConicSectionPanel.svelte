@@ -91,7 +91,7 @@
     <dl class="vitals">
       <div class="vital">
         <dt>a</dt>
-        <dd>{fmtAU(a)}<span class="unit">AU</span></dd>
+        <dd>{fmtAU(a)}<span class="unit">{m.unit_au_value({ value: '' }).trim()}</span></dd>
       </div>
       <div class="vital">
         <dt>e</dt>

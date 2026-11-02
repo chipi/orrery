@@ -1,5 +1,11 @@
 <script lang="ts">
-  import { contextLabel, fmtScale, lightUnitLabel } from '$lib/explore/format';
+  import {
+    contextLabel,
+    distanceUnitLabel,
+    distanceWithUnit,
+    fmtScale,
+    lightUnitLabel,
+  } from '$lib/explore/format';
   import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import type { ExploreContextId } from '$lib/three/explore-scene-host';
@@ -30,7 +36,7 @@
           class="rung"
           class:active={readout.rung === rung || (readout.rung === 'ly' && rung === 'pc')}
         >
-          {rung === 'au' ? 'AU' : rung}
+          {distanceUnitLabel(rung === 'au' ? 'AU' : rung)}
         </span>
       {/each}
     </div>
@@ -39,10 +45,12 @@
          not redundant. -->
     {#if contextId === 'neighborhood'}
       <div class="scale-readout">
-        <span class="primary">{fmtScale(readout.primary.value)} {readout.primary.unit}</span>
+        <span class="primary"
+          >{distanceWithUnit(fmtScale(readout.primary.value), readout.primary.unit)}</span
+        >
         {#if readout.companion}
           <span class="companion"
-            >≈ {fmtScale(readout.companion.value)} {readout.companion.unit}</span
+            >≈ {distanceWithUnit(fmtScale(readout.companion.value), readout.companion.unit)}</span
           >
         {/if}
       </div>

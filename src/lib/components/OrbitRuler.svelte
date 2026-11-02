@@ -102,8 +102,8 @@
       if (x < 10000) return `${(x / 1000).toFixed(1)}k`;
       return `${(x / 1000).toFixed(0)}k`;
     };
-    if (typeof d === 'number') return `${fmt(d)} AU`;
-    return `${fmt(d[0])}-${fmt(d[1])} AU`;
+    if (typeof d === 'number') return m.unit_au_value({ value: fmt(d) });
+    return m.unit_au_value({ value: `${fmt(d[0])}-${fmt(d[1])}` });
   }
   function fmtBand(r: OrbitRegime): string {
     if (r.altitude_km != null) return fmtKm(r.altitude_km);

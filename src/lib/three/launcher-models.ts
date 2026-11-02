@@ -3285,6 +3285,171 @@ function buildAtlasUpper(vehLen: number, upper: 'centaur' | 'agena'): LauncherMo
   };
 }
 
+/**
+ * The Titan family on the 3.05 m Titan core — Titan II(23)G (Clementine): two core stages
+ * under a payload fairing; Titan IIIE-Centaur (Viking, Voyager): two 3.05 m five-segment
+ * UA1205 solids lift it off (the core lights at ~110 s), the interstage adapter, and the
+ * Centaur inside the 4.27 m Centaur Standard Shroud on a boat-tail; Titan IVB-Centaur
+ * (Cassini): 3.2 m, 34 m SRMUs and a 5.1 m, 20 m fairing that encloses the 4.3 m Centaur.
+ * Proportions from the Titan IIIE Systems Summary, TM X-71692, the Cassini press kit and ESA;
+ * colours (light-grey core, white solids and shrouds) not verified against photos.
+ */
+function buildTitan(vehLen: number, variant: 'ii-g' | 'iiie' | 'ivb'): LauncherModel {
+  const body = new THREE.MeshStandardMaterial({
+    map: livery({
+      base: '#e4e6e8',
+      wordmark: { text: 'U S A F', color: '#20242c', size: 0.04, y: 0.5 },
+      flag: 'usa',
+    }),
+    roughness: 0.5,
+    metalness: 0.16,
+    roughnessMap: stringerRoughness(50),
+  });
+  const plain = heroWhite(0xeef0f1);
+  const frame = heroMetal(0xbfc4ca, 0.3);
+  const dark = heroDark(0x1a1c20);
+  const eng = heroMetal(0x40454d, 0.5);
+  const heightM = variant === 'ii-g' ? 36 : variant === 'iiie' ? 48.8 : 55.9;
+  const r = vehLen * (1.525 / heightM); // the 3.05 m core
+  // Stage-1 top and stage-2 top, in vehicle lengths.
+  const [s1Top, s2Top] =
+    variant === 'ii-g' ? [0.65, 0.87] : variant === 'iiie' ? [0.42, 0.565] : [0.47, 0.6];
+  const root = new THREE.Group();
+
+  // ── Core stage 1 (LR87, two chambers).
+  const booster = new THREE.Group();
+  const s1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * (s1Top - 0.03), 48), body);
+  s1.position.y = vehLen * (0.03 + (s1Top - 0.03) / 2);
+  booster.add(s1);
+  booster.add(ringFrames(r, vehLen * 0.06, vehLen * s1Top, 6, frame));
+  booster.add(raceway(r, vehLen * 0.06, vehLen * s1Top, dark));
+  booster.add(engineCluster('pair', 2, r, vehLen * 0.045, vehLen * 0.03, frame, eng));
+  root.add(booster);
+
+  // ── Solids: two UA1205 (IIIE) or SRMU (IVB), on opposite sides.
+  let strapOnGroup: THREE.Group | undefined;
+  if (variant !== 'ii-g') {
+    strapOnGroup = new THREE.Group();
+    const rs = variant === 'iiie' ? r : vehLen * (1.6 / heightM);
+    const len = vehLen * (variant === 'iiie' ? 25.9 / heightM : 34.2 / heightM) - vehLen * 0.05;
+    for (const sx of [-1, 1]) {
+      const g = new THREE.Group();
+      const sBody = new THREE.Mesh(new THREE.CylinderGeometry(rs, rs, len, 32), plain);
+      sBody.position.y = vehLen * 0.03 + len / 2;
+      const nose = new THREE.Mesh(new THREE.ConeGeometry(rs, vehLen * 0.05, 32), plain);
+      nose.position.y = vehLen * 0.03 + len + vehLen * 0.025;
+      const noz = detailBell(rs * 0.6, vehLen * 0.04, frame, eng);
+      noz.position.y = vehLen * 0.03;
+      g.add(sBody, nose, noz);
+      if (variant === 'iiie') {
+        // The liquid-injection TVC tank riding alongside each motor.
+        const tvc = new THREE.Mesh(
+          new THREE.CylinderGeometry(rs * 0.35, rs * 0.35, len * 0.26, 16),
+          plain,
+        );
+        tvc.position.set(0, vehLen * 0.03 + len * 0.3, rs * 1.15);
+        g.add(tvc);
+      }
+      g.position.x = sx * (r + rs * 1.02);
+      strapOnGroup.add(g);
+    }
+    root.add(strapOnGroup);
+  }
+
+  // ── Core stage 2 (LR91), plus the Titan/Centaur interstage adapter on the IIIE.
+  const midStage = variant === 'ii-g' ? undefined : new THREE.Group();
+  const stage2Host = midStage ?? new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * (s2Top - s1Top), 48), plain);
+  s2.position.y = vehLen * (s1Top + (s2Top - s1Top) / 2);
+  stage2Host.add(s2);
+  stage2Host.add(engineCluster('single', 1, r, vehLen * 0.035, vehLen * s1Top, frame, eng));
+  let centaurBase = s2Top;
+  if (variant === 'iiie') {
+    const isa = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.06, 48), plain);
+    isa.position.y = vehLen * (s2Top + 0.03);
+    stage2Host.add(isa);
+    centaurBase = s2Top + 0.06;
+  }
+  root.add(stage2Host);
+
+  // ── Upper stage: the Centaur (IIIE / IVB, inside the shroud), or stage 2 itself (II G).
+  let upperStage: THREE.Group;
+  let upperBody: THREE.Mesh;
+  if (variant === 'ii-g') {
+    upperStage = stage2Host;
+    upperBody = s2;
+  } else {
+    upperStage = new THREE.Group();
+    const rc = variant === 'iiie' ? r : vehLen * (2.15 / heightM);
+    upperBody = new THREE.Mesh(
+      new THREE.CylinderGeometry(rc, rc, vehLen * (9.2 / heightM), 40),
+      plain,
+    );
+    upperBody.position.y = vehLen * (centaurBase + 4.6 / heightM + 0.02);
+    upperStage.add(upperBody);
+    upperStage.add(
+      engineCluster('pair', 2, rc, vehLen * 0.03, vehLen * (centaurBase + 0.02), frame, eng),
+    );
+    root.add(upperStage);
+  }
+
+  // ── Shroud: II G payload fairing; IIIE Centaur Standard Shroud (4.27 m, biconic nose) on a
+  //    boat-tail from the core; IVB 5.1 m fairing enclosing the Centaur.
+  const fR =
+    variant === 'ii-g'
+      ? r
+      : variant === 'iiie'
+        ? vehLen * (2.135 / heightM)
+        : vehLen * (2.55 / heightM);
+  const fairingBaseY =
+    vehLen * (variant === 'ii-g' ? s2Top : s2Top + (variant === 'iiie' ? 0.08 : 0.04));
+  const fH = vehLen - fairingBaseY;
+  const prof: THREE.Vector2[] = [
+    new THREE.Vector2(fR, 0),
+    new THREE.Vector2(fR, fH * 0.7),
+    new THREE.Vector2(fR * 0.62, fH * 0.88),
+    new THREE.Vector2(fR * 0.22, fH * 0.98),
+    new THREE.Vector2(0, fH),
+  ];
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(prof, 36, theta, Math.PI), plain);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  if (fR > r * 1.02) {
+    const tail = new THREE.Mesh(
+      new THREE.CylinderGeometry(fR, r, vehLen * 0.025, 40, 1, true),
+      plain,
+    );
+    tail.position.y = fairingBaseY - vehLen * 0.0125;
+    fairingGroup.add(tail);
+  }
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: s1,
+    upperStage,
+    upperPlumeAnchor: s2,
+    finalPlumeAnchor: variant === 'ii-g' ? undefined : upperBody,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: upperBody.position.y,
+    fairingBaseY,
+    payloadMountY:
+      variant === 'ii-g'
+        ? fairingBaseY + vehLen * 0.02
+        : upperBody.position.y + vehLen * (4.6 / heightM) + vehLen * 0.01,
+    midStage,
+    strapOns: strapOnGroup,
+  };
+}
+
 const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => LauncherModel> = {
   'falcon-9': buildFalcon9,
   starship: buildStarship,
@@ -3334,6 +3499,9 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   'delta-ii': buildDeltaII,
   'atlas-centaur': (v) => buildAtlasUpper(v, 'centaur'),
   'atlas-agena': (v) => buildAtlasUpper(v, 'agena'),
+  'titan-ii-g': (v) => buildTitan(v, 'ii-g'),
+  'titan-iiie-centaur': (v) => buildTitan(v, 'iiie'),
+  'titan-ivb-centaur': (v) => buildTitan(v, 'ivb'),
 };
 
 /** Launcher ids with a dedicated model (the rest draw the generic body). */

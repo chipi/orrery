@@ -1,0 +1,74 @@
+{
+  "id": "titan-iiie-centaur",
+  "name": "Titan IIIE-Centaur",
+  "source_tier": "flagship",
+  "payloadKg": 3527,
+  "liftoffThrustKN": 10676,
+  "fairingKg": 3000,
+  "fairingJettisonAltM": 120000,
+  "refAreaM2": 22,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.58, "lon": -80.58, "name": "LC-41 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [12, 88], [45, 74], [100, 52], [180, 32], [280, 14], [420, 0]],
+  "boosters": {
+    "name": "UA1205 SRM",
+    "count": 2,
+    "wetKg": 226800,
+    "dryKg": 33800,
+    "thrustSlKN": 4000,
+    "thrustVacKN": 4350,
+    "ispSlS": 245,
+    "ispVacS": 266,
+    "chamberTempK": 3300
+  },
+  "stages": [
+    {
+      "name": "Titan stage 1 (LR87-AJ-11)",
+      "ignitionS": 110.4,
+      "wetKg": 125645,
+      "dryKg": 6804,
+      "thrustSlKN": 2000,
+      "thrustVacKN": 2313,
+      "ispSlS": 260,
+      "ispVacS": 301.1,
+      "engines": 2,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "Titan stage 2 (LR91-AJ-11)",
+      "wetKg": 33100,
+      "dryKg": 2722,
+      "thrustVacKN": 449,
+      "ispVacS": 318.7,
+      "engines": 1,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "Centaur D-1T (2× RL10A-3-3)",
+      "wetKg": 15420,
+      "dryKg": 1996,
+      "thrustVacKN": 133.4,
+      "ispVacS": 444,
+      "engines": 2,
+      "chamberTempK": 3500
+    }
+  ],
+  "provenance": [
+    {
+      "l": "NASA TM X-73475 — Titan/Centaur TC-4 (Viking 1) flight data: SRMs alone at liftoff, stage 1 lit at 110.4 s, SRM jettison 121.7 s, stage 1 cutoff 259.4 s, shroud 270.3 s, stage 2 cutoff 467.7 s, Centaur MES-1 484.3 s",
+      "u": "https://ntrs.nasa.gov/api/citations/19760021170/downloads/19760021170.pdf"
+    },
+    {
+      "l": "Titan IIIE/Centaur D-1T Systems Summary (stage weights, thrusts, Isp; 1.2 Mlbf per SRM at ignition, 266 s)",
+      "u": "https://ntrs.nasa.gov/api/citations/19750004937/downloads/19750004937.pdf"
+    },
+    {
+      "l": "NASA TM X-71692 — Titan/Centaur T/C-1 (propellant loads, Centaur Standard Shroud 14 ft)",
+      "u": "https://ntrs.nasa.gov/api/citations/19750013258/downloads/19750013258.pdf"
+    },
+    {
+      "l": "NSSDCA — Viking 1 (3,527 kg). SRM inert mass and shroud mass are estimates (not published); SRM thrust is the burn average through tail-off to jettison at 121.7 s (2 × 1.2 Mlbf peak is the HUD's liftoff figure)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075A"
+    }
+  ]
+}

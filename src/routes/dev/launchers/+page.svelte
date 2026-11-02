@@ -42,6 +42,9 @@
     'delta-ii': 38.9,
     'atlas-centaur': 34.4,
     'atlas-agena': 36,
+    'titan-ii-g': 36,
+    'titan-iiie-centaur': 48.8,
+    'titan-ivb-centaur': 55.9,
   };
 
   let canvas: HTMLCanvasElement;

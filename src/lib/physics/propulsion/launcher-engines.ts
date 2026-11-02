@@ -191,6 +191,40 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Agena D', 'Bell 8096', 1, 1, 'single'),
     ],
   },
+  'titan-ii-g': {
+    name: 'Titan II(23)G',
+    agency: 'USAF',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Titan_II_GLV'],
+    stages: [
+      S('Stage 1', 'LR87-AJ-5 (2 chambers)', 2, 1, 'pair'),
+      S('Stage 2', 'LR91-AJ-5', 1, 1, 'single'),
+    ],
+  },
+  'titan-iiie-centaur': {
+    name: 'Titan IIIE-Centaur',
+    agency: 'NASA / USAF',
+    confidence: 'high',
+    sources: ['https://ntrs.nasa.gov/api/citations/19750004937/downloads/19750004937.pdf'],
+    stages: [
+      S('UA1205 SRM ×2', 'UA1205 (solid)', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Stage 1', 'LR87-AJ-11 (2 chambers)', 2, 1, 'pair'),
+      S('Stage 2', 'LR91-AJ-11', 1, 1, 'single'),
+      S('Centaur D-1T', 'RL10A-3-3', 2, 1, 'pair'),
+    ],
+  },
+  'titan-ivb-centaur': {
+    name: 'Titan IVB-Centaur',
+    agency: 'USAF / NASA',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Titan_IV'],
+    stages: [
+      S('SRMU ×2', 'SRMU (solid)', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Stage 1', 'LR87-AJ-11 (2 chambers)', 2, 1, 'pair'),
+      S('Stage 2', 'LR91-AJ-11', 1, 1, 'single'),
+      S('Centaur', 'RL10A-3-3A', 2, 1, 'pair'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

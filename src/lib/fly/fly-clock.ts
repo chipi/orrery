@@ -51,15 +51,22 @@ export function coastAscentFraction(earthCoast: boolean, coastDurationDays: numb
 }
 
 /**
- * Raw-scrubber times of the ascent separation beats (staging, fairing, SECO) —
- * already in the launch clock's base. The play-clock eases into slow-mo at each.
+ * Raw-scrubber times of the ascent separation beats (staging, fairing, spacecraft
+ * separation) — already in the launch clock's base. The play-clock eases into slow-mo at
+ * each. The spacecraft separates at SECO, or at `payloadSepT` (the injection burn's end)
+ * when it rides the upper stage through injection.
  */
-export function launchSeparationTimes(summary: AscentSummary | null): number[] {
-  return summary
-    ? summary.events
-        .filter((e) => e.type === 'staging' || e.type === 'fairing_jettison' || e.type === 'seco')
-        .map((e) => e.t)
-    : [];
+export function launchSeparationTimes(
+  summary: AscentSummary | null,
+  payloadSepT?: number,
+): number[] {
+  if (!summary) return [];
+  const times = summary.events
+    .filter((e) => e.type === 'staging' || e.type === 'fairing_jettison')
+    .map((e) => e.t);
+  const seco = summary.events.find((e) => e.type === 'seco')?.t;
+  const sep = payloadSepT ?? seco;
+  return sep != null ? [...times, sep] : times;
 }
 
 const DESCENT_SEP_BEATS = new Set([

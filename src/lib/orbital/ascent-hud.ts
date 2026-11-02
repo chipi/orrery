@@ -22,6 +22,18 @@ export const ORBIT_TARGET_KMS = 7.8;
  */
 export const INJECTION_COAST_S = 15;
 export const INJECTION_BURN_S = 12;
+/** The spacecraft rides the upper stage through the injection burn and separates after it,
+ *  as on a real flight (Orion off the ICPS, Apollo off the S-IVB, a probe off its Centaur):
+ *  this beat after the burn shows it. */
+export const INJECTION_SEP_S = 8;
+/** The whole post-SECO injection beat: parking coast, burn, spacecraft separation. */
+export const INJECTION_BEAT_S = INJECTION_COAST_S + INJECTION_BURN_S + INJECTION_SEP_S;
+
+/** Mission time (s) the spacecraft leaves the upper stage on a flight with an injection
+ *  burn: the burn's end. `ascentDurationS` is `summary.totalDurationS`. */
+export function injectionSepT(ascentDurationS: number): number {
+  return ascentDurationS + INJECTION_COAST_S + INJECTION_BURN_S;
+}
 
 /**
  * The status line during the post-SECO injection beat, or null when t is before
@@ -36,7 +48,8 @@ export function injectionPhaseStatus(
 ): string | null {
   if (t < ascentDurationS) return null;
   if (t < ascentDurationS + INJECTION_COAST_S) return 'PARKING ORBIT';
-  return burnLabel;
+  if (t < injectionSepT(ascentDurationS)) return burnLabel;
+  return 'SPACECRAFT SEP';
 }
 
 /** AscentEvent.type → the short HUD label shown on the timeline strip. */

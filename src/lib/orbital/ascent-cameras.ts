@@ -54,6 +54,12 @@ export interface ScheduleInputs {
   maxQt: number;
   /** Total trajectory duration (s). */
   duration: number;
+  /** When the spacecraft separates, if not at SECO: it rides the upper stage through the
+   *  injection burn and leaves at the burn's end. The stack coasts and burns in the orbit
+   *  shot until then. */
+  payloadSepT?: number;
+  /** End of the launch act (s) when it runs past the trajectory (the injection beat). */
+  endT?: number;
 }
 
 const TOWER_CLEAR_END = 12;
@@ -137,8 +143,11 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
 
   const seco = tOf('seco') ?? inp.duration;
   const maxQ = Math.max(TOWER_CLEAR_END + 1, inp.maxQt || inp.duration * 0.2);
-  // Payload separation holds briefly after SECO, then the serene orbit coast.
-  const sepEnd = seco + PAYLOAD_SEP_HOLD_S;
+  // Payload separation holds briefly after it happens (SECO, or the injection burn's end),
+  // then the serene orbit coast.
+  const sepT = inp.payloadSepT != null && inp.payloadSepT > seco ? inp.payloadSepT : seco;
+  const sepEnd = sepT + PAYLOAD_SEP_HOLD_S;
+  const end = Math.max(inp.duration, inp.endT ?? 0);
   const fairing = tOf('fairing_jettison');
 
   // A dedicated camera beat for EVERY separation, not just the first: each
@@ -178,8 +187,10 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
   if (seco > cursor) {
     windows.push({ name: firstGap ? 'onboard_down' : 'chase', tStart: cursor, tEnd: seco });
   }
-  windows.push({ name: 'separation', tStart: seco, tEnd: sepEnd });
-  windows.push({ name: 'orbit', tStart: sepEnd, tEnd: Math.max(sepEnd, inp.duration) });
+  // Riding through injection: the stack in orbit (parking coast + burn) until the sep.
+  if (sepT > seco) windows.push({ name: 'orbit', tStart: seco, tEnd: sepT });
+  windows.push({ name: 'separation', tStart: sepT, tEnd: sepEnd });
+  windows.push({ name: 'orbit', tStart: sepEnd, tEnd: Math.max(sepEnd, end) });
 
   // Drop inverted/empty windows (can happen when beats bunch up on a
   // short or underpowered flight) so the selector never sees a gap.

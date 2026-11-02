@@ -181,7 +181,7 @@
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
-  import { T_MINUS_S, INJECTION_COAST_S, INJECTION_BURN_S } from '$lib/orbital/ascent-hud';
+  import { T_MINUS_S, INJECTION_BEAT_S, injectionSepT } from '$lib/orbital/ascent-hud';
   import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
   import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
   import PhasePanel from '$lib/components/PhasePanel.svelte';
@@ -1536,11 +1536,11 @@
   let launchSummaryFly = $derived(launchProfile ? integrateAscent(launchProfile) : null);
   // The ascent slice of the unified scrubber spans pad → SECO → (injection beat).
   // When the mission has an injection burn, extend the ascent duration by the
-  // coast + burn window so the seam lands after injection, not at SECO.
+  // coast + burn + spacecraft-separation window so the seam lands after the
+  // spacecraft leaves the stage, not at SECO.
   let launchDurationS = $derived(
     launchSummaryFly
-      ? launchSummaryFly.totalDurationS +
-          (launchInjectionBurn ? INJECTION_COAST_S + INJECTION_BURN_S : 0)
+      ? launchSummaryFly.totalDurationS + (launchInjectionBurn ? INJECTION_BEAT_S : 0)
       : 540,
   );
   // ─── Orbit-insertion beat (RFC-034 §12) — the arrival mirror of the launch
@@ -1576,7 +1576,14 @@
   // the launch clock's base; descent times are in *trajectory* time, so they're
   // unwarped into raw-scrubber time to align with where the sep actually renders
   // (the descent scene warps its sample clock — descent-timewarp.ts).
-  let launchSepTimes = $derived(launchSeparationTimes(launchSummaryFly));
+  let launchSepTimes = $derived(
+    launchSeparationTimes(
+      launchSummaryFly,
+      launchSummaryFly && launchInjectionBurn
+        ? injectionSepT(launchSummaryFly.totalDurationS)
+        : undefined,
+    ),
+  );
   let descentSepTimes = $derived(descentSeparationTimes(descentSummaryFly));
   // Compressive coast-band width (RFC-034 §13): a 1-orbit hop and an 84-day
   // marathon shouldn't own the same slice of the scrubber (see fly-clock).

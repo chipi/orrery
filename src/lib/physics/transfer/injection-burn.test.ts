@@ -53,6 +53,13 @@ describe('resolveInjectionBurn', () => {
     expect(b?.burnType).toBe('INJECTION');
   });
 
+  it('returns null for an Earth-orbit flight even on an injection-capable launcher', () => {
+    expect(resolveInjectionBurn('saturn-ib', undefined, undefined, 'EARTH')).toBeNull();
+    expect(
+      resolveInjectionBurn('falcon-9', 'Falcon 9 second stage', undefined, 'EARTH'),
+    ).toBeNull();
+  });
+
   it('returns null when there is no launcher (no kick stage to show)', () => {
     expect(resolveInjectionBurn(undefined, undefined, undefined, 'MARS')).toBeNull();
   });

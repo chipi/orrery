@@ -33,6 +33,8 @@
     T_MINUS_S,
     INJECTION_COAST_S,
     INJECTION_BURN_S,
+    INJECTION_BEAT_S,
+    injectionSepT,
     buildAscentBeats,
     ascentStatus,
     countdownSeconds,
@@ -104,22 +106,35 @@
 
   const summary: AscentSummary = $derived(integrateAscent(profile));
   const duration = $derived(summary.totalDurationS);
-  const schedule = $derived(
-    buildShotSchedule({ events: summary.events, maxQt: summary.maxQ.t, duration }),
-  );
 
-  // Post-SECO injection beat (RFC-034 §3.1): a parking-orbit coast then the kick
-  // stage firing, appended to the ascent before the warp. Absent when the
-  // mission has no injection stage.
+  // Post-SECO injection beat (RFC-034 §3.1): a parking-orbit coast, the kick stage
+  // firing with the spacecraft still on it, then the spacecraft separating — appended
+  // to the ascent before the warp. Absent when the mission has no injection stage.
   const injection = $derived(mission.injectionBurn ?? null);
   const injectionBurnStart = $derived(duration + INJECTION_COAST_S);
-  const injectionEnd = $derived(duration + INJECTION_COAST_S + INJECTION_BURN_S);
-  /** End of the launch phase — SECO, or the injection-burn end when present. */
+  /** The burn's end — the spacecraft leaves the stage here. */
+  const injectionBurnEnd = $derived(injectionSepT(duration));
+  const injectionEnd = $derived(duration + INJECTION_BEAT_S);
+  /** End of the launch phase — SECO, or the end of the injection beat when present. */
   const ascentEnd = $derived(injection ? injectionEnd : duration);
+  /** When the spacecraft separates, if not at SECO. */
+  const payloadSepT = $derived(injection ? injectionBurnEnd : undefined);
+  const schedule = $derived(
+    buildShotSchedule({
+      events: summary.events,
+      maxQt: summary.maxQ.t,
+      duration,
+      payloadSepT,
+      endT: ascentEnd,
+    }),
+  );
   /** Kick stage actually firing (drives the plume). */
-  const injectionFiring = $derived(!!injection && t >= injectionBurnStart && t < injectionEnd);
-  /** The whole post-SECO injection window (coast + burn) — drives the HUD panel. */
+  const injectionFiring = $derived(!!injection && t >= injectionBurnStart && t < injectionBurnEnd);
+  /** The whole post-SECO injection window (coast, burn, separation) — the HUD stage line. */
   const injectionBeatActive = $derived(!!injection && t >= duration && t < injectionEnd);
+  /** The injection callout: parking coast and burn. Once the burn ends the status line
+   *  carries the separation; the callout's "stage armed" would be stale. */
+  const injectionCalloutActive = $derived(!!injection && t >= duration && t < injectionBurnEnd);
   /** Injection-burn completion (%): 0 through the parking coast, fills 0→100 as
    *  the kick stage fires. NOT stage fuel — the ascent telemetry already shows
    *  the (spent) ascent stages; per-kick-stage propellant masses aren't modelled. */
@@ -247,6 +262,7 @@
       spacecraftId: mission.spacecraftId,
       launcherId: dbg?.get('launcher') || profile.id,
       boosterCount: profile.boosters?.count ?? 0,
+      payloadSepT,
       groundSite: (() => {
         const g = resolveLaunchGround(launchSite);
         return g ? { ...g, textureUrl: streamedUrl(`${base}${g.textureUrl}`) } : undefined;
@@ -313,7 +329,10 @@
       // Past SECO, sampleAscentAt clamps to the final state — the vehicle coasts
       // in parking orbit through the injection beat; the MET keeps advancing off
       // the real clock `t`, and the kick-stage plume is driven by injectionFiring.
-      const s = t < 0 ? padState(summary, t) : sampleAscentAt(summary.states, t);
+      const sampled = t < 0 ? padState(summary, t) : sampleAscentAt(summary.states, t);
+      // Past the last state the physics holds, but the clock runs on: the scene times the
+      // injection-beat animations (spacecraft separation) off s.t.
+      const s = t > sampled.t ? { ...sampled, t } : sampled;
       sceneObj!.setState(s);
       sceneObj!.setInjectionBurn(injectionFiring);
       if (import.meta.env.DEV && debugMode) applyDebugCamera();
@@ -431,7 +450,7 @@
 
   <!-- Post-SECO injection-burn callout (RFC-034 §3.1): the kick/upper stage
        fires to leave parking orbit onto the transfer. -->
-  {#if injectionBeatActive && injection && !warping}
+  {#if injectionCalloutActive && injection && !warping}
     <div class="injection" class:firing={injectionFiring}>
       <div class="inj-type">
         {hudLabel(injectionBurnLabel(injection.burnType))}<ScienceChip

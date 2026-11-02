@@ -66,6 +66,8 @@ describe('separation times', () => {
     } as unknown as AscentSummary;
     expect(launchSeparationTimes(summary)).toEqual([150, 200, 500]);
     expect(launchSeparationTimes(null)).toEqual([]);
+    // Riding the stage through injection: the spacecraft beat moves to the burn's end.
+    expect(launchSeparationTimes(summary, 527)).toEqual([150, 200, 527]);
   });
   it('descent: null summary gives no beats; non-beat events are dropped', () => {
     expect(descentSeparationTimes(null)).toEqual([]);

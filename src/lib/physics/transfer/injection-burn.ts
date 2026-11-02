@@ -40,6 +40,7 @@ export interface InjectionBurnParams {
 const LAUNCHER_INJECTION_STAGE: Record<string, string> = {
   'saturn-v': 'Saturn V S-IVB (third stage)',
   'saturn-ib': 'Saturn IB S-IVB (second stage)',
+  'sls-block-1': 'SLS ICPS (Interim Cryogenic Propulsion Stage)',
   'atlas-v': 'Centaur upper stage',
   'falcon-9': 'Falcon 9 second stage',
   'falcon-heavy': 'Falcon Heavy second stage',
@@ -83,6 +84,9 @@ export function resolveInjectionBurn(
   tliOrTmiDvKms: number | undefined,
   dest: Destination | undefined,
 ): InjectionBurnParams | null {
+  // An Earth-orbit flight never leaves Earth orbit: its launch ends at SECO, whatever its
+  // launcher can do on other flights (Apollo 7's Saturn IB, Inspiration4's Falcon 9).
+  if (dest === 'EARTH') return null;
   // Authored stage wins; else the launcher's standard injection stage.
   const stageName = vehicleStage ?? (launcherId ? LAUNCHER_INJECTION_STAGE[launcherId] : undefined);
   if (!stageName) return null; // LEO-direct or unmodelled launcher → no beat

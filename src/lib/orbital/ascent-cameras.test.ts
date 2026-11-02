@@ -38,6 +38,27 @@ describe('buildShotSchedule', () => {
   it('includes a staging beat for a two-stage vehicle', () => {
     expect(schedule.map((w) => w.name)).toContain('staging');
   });
+
+  it('moves the separation shot to the injection burn end when the spacecraft rides it', () => {
+    const seco = summary.events.find((e) => e.type === 'seco')!.t;
+    const sepT = summary.totalDurationS + 27;
+    const endT = sepT + 8;
+    const ride = buildShotSchedule({
+      events: summary.events,
+      maxQt: summary.maxQ.t,
+      duration: summary.totalDurationS,
+      payloadSepT: sepT,
+      endT,
+    });
+    const sep = ride.find((w) => w.name === 'separation')!;
+    expect(sep.tStart).toBe(sepT);
+    // The stack is framed in orbit from SECO to the separation, and the act ends at endT.
+    expect(ride.find((w) => w.tStart === seco)!.name).toBe('orbit');
+    expect(ride.at(-1)!.tEnd).toBe(endT);
+    for (let i = 1; i < ride.length; i++) {
+      expect(ride[i].tStart).toBeCloseTo(ride[i - 1].tEnd, 5);
+    }
+  });
 });
 
 describe('selectShot', () => {

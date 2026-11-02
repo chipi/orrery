@@ -36,6 +36,10 @@ export interface LauncherModel {
   upperStage: THREE.Group;
   /** The mesh the plume attaches to while the upper stage fires. */
   upperPlumeAnchor: THREE.Object3D;
+  /** On a vehicle with a `midStage`, the LAST stage's own mesh: the upper anchor sits in the
+   *  mid stage and drops with it, so the third-stage burn and the injection burn (Saturn V's
+   *  S-IVB, Proton's Blok D) fire from here. Undefined when the upper anchor is the last stage. */
+  finalPlumeAnchor?: THREE.Object3D;
   /** Fairing clamshell halves (−X / +X) that split at jettison. */
   fairingL: THREE.Mesh;
   fairingR: THREE.Mesh;
@@ -378,6 +382,7 @@ function buildSaturnV(vehLen: number): LauncherModel {
     boosterPlumeAnchor: sic,
     upperStage,
     upperPlumeAnchor: sii,
+    finalPlumeAnchor: s4t,
     fairingL,
     fairingR,
     fairingGroup,
@@ -1616,6 +1621,7 @@ function buildProtonK(vehLen: number): LauncherModel {
     boosterPlumeAnchor: core1,
     upperStage,
     upperPlumeAnchor: stage2,
+    finalPlumeAnchor: stage3,
     fairingL,
     fairingR,
     fairingGroup,

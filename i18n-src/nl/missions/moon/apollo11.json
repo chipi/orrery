@@ -51,5 +51,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (derde trap)"
+  "vehicle_stage": "Saturn V S-IVB (derde trap)",
+  "flight_events": [
+    {
+      "met": 1.4,
+      "label": "MCC-2 — koerscorrectie",
+      "description": "Baanbijstelling halverwege de reis. De missieplanning voorzag in 4 koerscorrecties; alleen MCC-2 was nodig, omdat de injectie naar de maan zo nauwkeurig was dat de andere drie vervielen."
+    },
+    {
+      "met": 5.64,
+      "label": "Injectie richting de aarde",
+      "description": "1969-07-22. Brandstap van de SPS-motor om de baan om de maan te verlaten. Bracht Apollo 11 op een vrije-terugkeerbaan naar de aarde."
+    }
+  ]
 }

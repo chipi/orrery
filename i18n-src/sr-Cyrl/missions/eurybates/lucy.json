@@ -68,5 +68,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "горњи степен Centaur (Atlas V 401)"
+  "vehicle_stage": "горњи степен Centaur (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 1154,
+      "label": "Гравитациони маневар код Земље бр. 2",
+      "description": "2024-12-13 (по измењеном профилу мисије)."
+    }
+  ]
 }

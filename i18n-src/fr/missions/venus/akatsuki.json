@@ -44,5 +44,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "deuxième étage du H-IIA 202"
+  "vehicle_stage": "deuxième étage du H-IIA 202",
+  "flight_events": [
+    {
+      "met": 120,
+      "label": "TCM-2",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 195,
+      "label": "TCM-3 — dernière avant l'insertion en orbite vénusienne",
+      "description": "Dernière retouche avant l'arrivée."
+    }
+  ]
 }

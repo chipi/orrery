@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "المرحلة العليا Centaur D-1T"
+  "vehicle_stage": "المرحلة العليا Centaur D-1T",
+  "flight_events": [
+    {
+      "met": 69.92,
+      "label": "TCM-2",
+      "description": "تحسين في منتصف الرحلة."
+    },
+    {
+      "met": 124.64,
+      "label": "TCM-3",
+      "description": "تحسين في منتصف الرحلة."
+    },
+    {
+      "met": 200,
+      "label": "TCM-4 — الأخيرة قبل الدخول في مدار المريخ",
+      "description": "تحسين التصويب في مرحلة الاقتراب."
+    }
+  ]
 }

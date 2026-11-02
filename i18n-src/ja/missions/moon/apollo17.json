@@ -51,5 +51,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB（第3段）"
+  "vehicle_stage": "Saturn V S-IVB（第3段）",
+  "flight_events": [
+    {
+      "met": 1.27,
+      "label": "MCC-2",
+      "description": "最初の軌道修正。"
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-3",
+      "description": "月周回軌道投入前の接近フェーズの精密化。"
+    },
+    {
+      "met": 10.9,
+      "label": "地球帰還軌道投入",
+      "description": "1972-12-16。SPS 噴射が、月周回軌道での75時間と月面での3日間を終えた Apollo 17 を帰途に就かせる。"
+    }
+  ]
 }

@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Blok-D ऊपरी चरण"
+  "vehicle_stage": "Blok-D ऊपरी चरण",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "चंद्रमा की ओर प्रक्षेप",
+      "description": "Blok D ऊपरी चरण का दहन Luna 24 को चंद्रमा की ओर पथ पर डालता है।"
+    },
+    {
+      "met": 1.5,
+      "label": "मध्य-पथ सुधार 1",
+      "description": "पथ का पहला परिशोधन।"
+    },
+    {
+      "met": 4,
+      "label": "मध्य-पथ सुधार 2",
+      "description": "निकट पहुँचने के चरण में परिशोधन।"
+    }
+  ]
 }

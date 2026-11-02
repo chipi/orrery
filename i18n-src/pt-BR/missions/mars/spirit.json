@@ -51,5 +51,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "estágio superior sólido Star 48B PAM-D"
+  "vehicle_stage": "estágio superior sólido Star 48B PAM-D",
+  "flight_events": [
+    {
+      "met": 80,
+      "label": "TCM-2",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 165,
+      "label": "TCM-3",
+      "description": "Retoque da fase de aproximação rumo à elipse-alvo da cratera Gusev."
+    }
+  ]
 }

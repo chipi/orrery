@@ -51,5 +51,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (dritte Stufe)"
+  "vehicle_stage": "Saturn V S-IVB (dritte Stufe)",
+  "flight_events": [
+    {
+      "met": 1.4,
+      "label": "MCC-2 — Kurskorrektur",
+      "description": "Bahnkorrektur zur Flugmitte. Die Missionsplanung sah 4 Kurskorrekturen vor; nur MCC-2 war nötig, weil der Einschuss zum Mond so genau war, dass die anderen drei entfielen."
+    },
+    {
+      "met": 5.64,
+      "label": "Einschuss Richtung Erde",
+      "description": "1969-07-22. Zündung des SPS-Triebwerks zum Verlassen der Mondumlaufbahn. Sie brachte Apollo 11 auf eine Free-Return-Bahn zurück zur Erde."
+    }
+  ]
 }

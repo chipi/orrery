@@ -32,5 +32,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "secondo stadio del Falcon Heavy"
+  "vehicle_stage": "secondo stadio del Falcon Heavy",
+  "flight_events": [
+    {
+      "met": 1500,
+      "label": "Affinamento di crociera",
+      "description": "Affinamento della traiettoria a metà crociera. La spinta ionica continua."
+    }
+  ]
 }

@@ -7,12 +7,59 @@
   "first": "Primer sismómetro en Marte; primer lanzamiento interplanetario desde la costa oeste de EE. UU.",
   "description": "InSight le dio a Marte su primer estetoscopio. Su sismómetro, desplegado por un brazo robótico sobre el regolito, registró más de 1300 martemotos — incluido uno de magnitud 5 en 2022, el mayor jamás detectado en otro planeta. Los datos revelaron la estructura interior de Marte: un núcleo fundido de 1800 km de radio, una corteza gruesa y una sorprendente estratificación del manto. El experimento de flujo de calor con el «topo» fracasó cuando el regolito resultó demasiado cohesivo para su diseño de autopercusión. La misión terminó cuando la acumulación de polvo en los paneles solares redujo la energía por debajo del umbral operativo.",
   "events": [
-    { "met": 0, "label": "LANZAMIENTO", "note": "Atlas V 401 desde la Base de la Fuerza Aérea Vandenberg — primera misión interplanetaria lanzada desde la Costa Oeste de EE. UU.", "type": "nominal" },
-    { "met": 22, "label": "TCM-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
-    { "met": 205, "label": "EDA", "note": "Entrada atmosférica, paracaídas, aterrizaje con cohetes de descenso terminal en Elysium Planitia.", "type": "nominal" },
-    { "met": 205.01, "label": "ATERRIZAJE", "note": "El aterrizador llega 2018-11-26 19:54 UTC.", "type": "nominal" },
-    { "met": 213, "label": "SISMÓMETRO DESPLEGADO", "note": "El brazo robótico coloca el instrumento SEIS sobre la superficie y lo protege del viento.", "type": "info" },
-    { "met": 1683, "label": "FIN DE MISIÓN", "note": "Última transmisión de baja energía 2022-12-15. Paneles solares demasiado cubiertos de polvo para recargarse.", "type": "warning" }
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Atlas V 401 desde la Base de la Fuerza Aérea Vandenberg — primera misión interplanetaria lanzada desde la Costa Oeste de EE. UU.",
+      "type": "nominal"
+    },
+    {
+      "met": 22,
+      "label": "TCM-1",
+      "note": "Primera corrección de trayectoria.",
+      "type": "nominal"
+    },
+    {
+      "met": 205,
+      "label": "EDA",
+      "note": "Entrada atmosférica, paracaídas, aterrizaje con cohetes de descenso terminal en Elysium Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 205.01,
+      "label": "ATERRIZAJE",
+      "note": "El aterrizador llega 2018-11-26 19:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "SISMÓMETRO DESPLEGADO",
+      "note": "El brazo robótico coloca el instrumento SEIS sobre la superficie y lo protege del viento.",
+      "type": "info"
+    },
+    {
+      "met": 1683,
+      "label": "FIN DE MISIÓN",
+      "note": "Última transmisión de baja energía 2022-12-15. Paneles solares demasiado cubiertos de polvo para recargarse.",
+      "type": "warning"
+    }
   ],
-  "vehicle_stage": "etapa superior Centaur (Atlas V 401)"
+  "vehicle_stage": "etapa superior Centaur (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 47.15,
+      "label": "TCM-2",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 80,
+      "label": "TCM-3",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 200,
+      "label": "TCM-4 — último encendido antes del EDL",
+      "description": "Afina la puntería de aproximación hacia la zona de EDL de Elysium Planitia."
+    }
+  ]
 }

@@ -300,6 +300,17 @@ describe('getMission', () => {
     expect(en?.flight?.launch?.vehicle_stage).toBe('Saturn V S-IVB (third stage)');
   });
 
+  it('translates structural flight events from the overlay flight_events', async () => {
+    const fr = await getMission('dawn', 'ceres', 'fr');
+    const frMars = fr?.flight?.events?.find((e) => e.met_days === 508);
+    expect(frMars?.label).toBe('Mars — assistance gravitationnelle');
+    expect(frMars?.description).toMatch(/^Approche minimale de 549 km/);
+    const en = await getMission('dawn', 'ceres');
+    expect(en?.flight?.events?.find((e) => e.met_days === 508)?.label).toBe(
+      'Mars — gravity assist',
+    );
+  });
+
   it('returns null for unknown mission', async () => {
     const m = await getMission('does-not-exist', 'mars');
     expect(m).toBeNull();

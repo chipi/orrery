@@ -44,5 +44,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "zweite Stufe der H-IIA"
+  "vehicle_stage": "zweite Stufe der H-IIA",
+  "flight_events": [
+    {
+      "met": 25.34,
+      "label": "TCM-1",
+      "description": "Erste Nachkorrektur nach dem Einschuss."
+    },
+    {
+      "met": 30,
+      "label": "TCM-2",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 45.13,
+      "label": "TCM-3",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 64.92,
+      "label": "TCM-4 — letzte vor dem Einschwenken in die Mondumlaufbahn",
+      "description": "Letzte Anflugausrichtung vor dem Einschwenken in die Mondumlaufbahn."
+    }
+  ]
 }

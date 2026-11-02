@@ -33,5 +33,27 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "stadio superiore Centaur"
+  "vehicle_stage": "stadio superiore Centaur",
+  "flight_events": [
+    {
+      "met": 193,
+      "label": "Venere n. 1 — fionda gravitazionale",
+      "description": "Primo sorvolo di Venere (1998-04-26, 284 km di quota). La fionda gravitazionale alza l'afelio della sonda nella sequenza VVEJGA, che accumula energia."
+    },
+    {
+      "met": 617,
+      "label": "Venere n. 2 — fionda gravitazionale",
+      "description": "Secondo sorvolo di Venere (1999-06-24, 600 km). Insieme alla prima fionda, prepara il sorvolo della Terra 55 giorni dopo."
+    },
+    {
+      "met": 672,
+      "label": "Terra — fionda gravitazionale",
+      "description": "1.171 km sopra il Pacifico meridionale (1999-08-18). L'orbita è ora abbastanza energetica da incrociare quella di Giove."
+    },
+    {
+      "met": 1172,
+      "label": "Giove — fionda gravitazionale",
+      "description": "9,7 milioni di km da Giove (2000-12-30). La fionda finale fornisce la velocità restante per l'arrivo a Saturno."
+    }
+  ]
 }

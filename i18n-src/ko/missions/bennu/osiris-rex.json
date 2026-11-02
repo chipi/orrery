@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 상단 (Atlas V 411)"
+  "vehicle_stage": "Centaur 상단 (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "접근 기동",
+      "description": "접근 단계의 첫 분사. 랑데부를 위해 OSIRIS-REx를 감속시켜 베누의 태양 중심 속도에 맞춘다."
+    }
+  ]
 }

@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "estágio superior Fregat"
+  "vehicle_stage": "estágio superior Fregat",
+  "flight_events": [
+    {
+      "met": 47.38,
+      "label": "TCM-2",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 110,
+      "label": "TCM-3",
+      "description": "Refinamento no meio do cruzeiro."
+    }
+  ]
 }

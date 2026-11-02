@@ -32,5 +32,32 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur-bovenste trap (Atlas V 401)"
+  "vehicle_stage": "Centaur-bovenste trap (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 1,
+      "label": "MCC-1",
+      "description": "Eerste koerscorrectie na de injectie richting de maan."
+    },
+    {
+      "met": 1.04,
+      "label": "MCC-2",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-3",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-4",
+      "description": "Verfijning in de naderingsfase."
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5 — laatste voor de intrede in een baan om de maan",
+      "description": "Laatste naderingsrichting voor de intrede in een baan om de maan."
+    }
+  ]
 }

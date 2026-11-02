@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "разгонный блок Centaur (Atlas V 411)"
+  "vehicle_stage": "разгонный блок Centaur (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "Манёвр сближения",
+      "description": "Первое включение двигателя на этапе сближения. Замедляет OSIRIS-REx до гелиоцентрической скорости Бенну для встречи."
+    }
+  ]
 }

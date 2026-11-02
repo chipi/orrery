@@ -44,5 +44,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "المرحلة الثانية من H-IIA 202"
+  "vehicle_stage": "المرحلة الثانية من H-IIA 202",
+  "flight_events": [
+    {
+      "met": 120,
+      "label": "TCM-2",
+      "description": "تحسين في منتصف الرحلة."
+    },
+    {
+      "met": 195,
+      "label": "TCM-3 — الأخيرة قبل الدخول في مدار الزهرة",
+      "description": "آخر تعديل قبل الوصول."
+    }
+  ]
 }

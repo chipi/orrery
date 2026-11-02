@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "derde trap van de Long March 3B"
+  "vehicle_stage": "derde trap van de Long March 3B",
+  "flight_events": [
+    {
+      "met": 1.19,
+      "label": "MCC-1",
+      "description": "Eerste koerscorrectie."
+    },
+    {
+      "met": 2.08,
+      "label": "MCC-2",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 2.97,
+      "label": "MCC-3",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 4.9,
+      "label": "MCC-4 — laatste voor de intrede in een baan om de maan",
+      "description": "Laatste naderingsrichting voor de intrede in een baan om de maan."
+    }
+  ]
 }

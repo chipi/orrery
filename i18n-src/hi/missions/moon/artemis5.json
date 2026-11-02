@@ -50,5 +50,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "SLS ऊपरी चरण (पुष्टि बाकी)"
+  "vehicle_stage": "SLS ऊपरी चरण (पुष्टि बाकी)",
+  "flight_events": [
+    {
+      "met": 1.48,
+      "label": "MCC-1",
+      "description": "पहला पथ-सुधार।"
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-2",
+      "description": "निकट पहुँचने के चरण में परिशोधन।"
+    }
+  ]
 }

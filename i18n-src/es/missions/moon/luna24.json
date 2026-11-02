@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "etapa superior Blok-D"
+  "vehicle_stage": "etapa superior Blok-D",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "Inyección translunar",
+      "description": "El encendido de la etapa superior Blok D coloca a Luna 24 en una trayectoria translunar."
+    },
+    {
+      "met": 1.5,
+      "label": "Corrección de trayectoria n.º 1",
+      "description": "Primer ajuste de la trayectoria."
+    },
+    {
+      "met": 4,
+      "label": "Corrección de trayectoria n.º 2",
+      "description": "Ajuste de la fase de aproximación."
+    }
+  ]
 }

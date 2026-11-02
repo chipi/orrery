@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Long March 3B 第3段"
+  "vehicle_stage": "Long March 3B 第3段",
+  "flight_events": [
+    {
+      "met": 1.19,
+      "label": "MCC-1",
+      "description": "最初の軌道修正。"
+    },
+    {
+      "met": 2.08,
+      "label": "MCC-2",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 2.97,
+      "label": "MCC-3",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 4.9,
+      "label": "MCC-4——月周回軌道投入前の最後",
+      "description": "月周回軌道投入前の最終接近照準。"
+    }
+  ]
 }

@@ -38,5 +38,32 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "estágio superior Star-37 do Titan II"
+  "vehicle_stage": "estágio superior Star-37 do Titan II",
+  "flight_events": [
+    {
+      "met": 0.5,
+      "label": "Injeção translunar",
+      "description": "Queimas de faseamento levaram a Clementine da órbita terrestre baixa a uma trajetória translunar."
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "description": "Primeira limpeza após a injeção translunar."
+    },
+    {
+      "met": 7.24,
+      "label": "TCM-2",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 12.75,
+      "label": "TCM-3 — última antes da inserção em órbita lunar",
+      "description": "Mira final de aproximação antes da inserção em órbita lunar."
+    },
+    {
+      "met": 25.05,
+      "label": "Inserção em órbita lunar",
+      "description": "1994-02-19. Captura numa órbita polar de 415 × 2.940 km. Mapeou a superfície lunar em vários comprimentos de onda ao longo de 71 dias — o primeiro mapa lunar multiespectral global de alta resolução. Dados de um experimento de radar biestático foram depois interpretados (de forma controversa) como indício de gelo de água no polo sul lunar — a descoberta que deu origem ao LRO e a todas as missões seguintes de busca de gelo."
+    }
+  ]
 }

@@ -38,5 +38,27 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "PSLV PS4 चौथा चरण"
+  "vehicle_stage": "PSLV PS4 चौथा चरण",
+  "flight_events": [
+    {
+      "met": 50,
+      "label": "TCM-1",
+      "description": "मंगल की ओर प्रक्षेप के बाद यात्रा का पहला सुधार।"
+    },
+    {
+      "met": 97.62,
+      "label": "TCM-2",
+      "description": "यात्रा के बीच परिशोधन।"
+    },
+    {
+      "met": 150,
+      "label": "TCM-3",
+      "description": "यात्रा के बीच परिशोधन।"
+    },
+    {
+      "met": 250,
+      "label": "TCM-4 — मंगल कक्षा-प्रवेश से पहले अंतिम दहन",
+      "description": "मंगल कक्षा-प्रवेश से पहले निकट पहुँचने का अंतिम लक्ष्य-निर्धारण।"
+    }
+  ]
 }

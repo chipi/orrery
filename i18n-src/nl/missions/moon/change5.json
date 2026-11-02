@@ -50,5 +50,37 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "bovenste trap YZ-1 van de Long March 5"
+  "vehicle_stage": "bovenste trap YZ-1 van de Long March 5",
+  "flight_events": [
+    {
+      "met": 1.04,
+      "label": "MCC-1",
+      "description": "Eerste opruimcorrectie na de injectie richting de maan."
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-2",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-3",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 3,
+      "label": "MCC-4",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5 — laatste voor de intrede in een baan om de maan",
+      "description": "Laatste naderingsrichting."
+    },
+    {
+      "met": 19,
+      "label": "Injectie richting de aarde",
+      "description": "2020-12-12. De orbiter verliet de baan om de maan op een terugkeertraject."
+    }
+  ]
 }

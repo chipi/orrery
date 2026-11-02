@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "etapa superior Centaur (Atlas V 411)"
+  "vehicle_stage": "etapa superior Centaur (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "Maniobra de aproximación",
+      "description": "Primer encendido de la fase de aproximación. Frena a OSIRIS-REx hasta igualar la velocidad heliocéntrica de Bennu para el encuentro."
+    }
+  ]
 }

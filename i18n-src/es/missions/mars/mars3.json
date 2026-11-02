@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "etapa superior Blok-D"
+  "vehicle_stage": "etapa superior Blok-D",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "Primera corrección de trayectoria."
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "Ajuste de la fase de aproximación."
+    }
+  ]
 }

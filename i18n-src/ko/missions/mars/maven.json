@@ -7,10 +7,57 @@
   "first": "화성이 대기를 어떻게 잃었는지 연구하는 데 전념한 최초의 임무",
   "description": "MAVEN — Mars Atmosphere and Volatile Evolution — 은 '화성의 공기는 어디로 갔을까?'라는 질문에 답합니다. 타원 궤도가 상층 대기까지 내려가, 태양풍이 이온과 중성 입자를 벗겨 내는 동안 이를 채취합니다. 발견: 화성은 초당 약 100 g의 대기를 우주로 잃고 있으며, 수십억 년이면 사라진 기후를 설명하기에 충분한 양입니다. 이 탐사선은 Curiosity와 Perseverance를 비롯한 표면 탐사 장비를 위한 핵심 중계기 역할도 합니다.",
   "events": [
-    { "met": 0, "label": "발사", "note": "케이프 커내버럴 SLC-41에서 Atlas V 401.", "type": "nominal" },
-    { "met": 30, "label": "TCM-1", "note": "첫 궤도 수정.", "type": "nominal" },
-    { "met": 308, "label": "화성 궤도 진입", "note": "33분간 주 엔진 연소로 MAVEN을 35시간 타원 과학 궤도에 포획.", "type": "nominal" },
-    { "met": 350, "label": "첫 과학 관측", "note": "대기 샘플링 ‘딥 딥’ 캠페인 시작 — 근점 고도 ~125 km.", "type": "info" }
+    {
+      "met": 0,
+      "label": "발사",
+      "note": "케이프 커내버럴 SLC-41에서 Atlas V 401.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "첫 궤도 수정.",
+      "type": "nominal"
+    },
+    {
+      "met": 308,
+      "label": "화성 궤도 진입",
+      "note": "33분간 주 엔진 연소로 MAVEN을 35시간 타원 과학 궤도에 포획.",
+      "type": "nominal"
+    },
+    {
+      "met": 350,
+      "label": "첫 과학 관측",
+      "note": "대기 샘플링 ‘딥 딥’ 캠페인 시작 — 근점 고도 ~125 km.",
+      "type": "info"
+    }
   ],
-  "vehicle_stage": "Centaur 상단 (Atlas V 401)"
+  "vehicle_stage": "Centaur 상단 (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 55,
+      "label": "TCM-2",
+      "description": "순항 중간 정밀 조정."
+    },
+    {
+      "met": 94.6,
+      "label": "TCM-3",
+      "description": "순항 중간 조정."
+    },
+    {
+      "met": 100,
+      "label": "TCM-4",
+      "description": "순항 중간 정밀 조정."
+    },
+    {
+      "met": 134.2,
+      "label": "TCM-5",
+      "description": "접근 단계 조정."
+    },
+    {
+      "met": 200,
+      "label": "TCM-6 — 화성 궤도 진입 전 마지막 분사",
+      "description": "화성 궤도 진입을 위해 접근 조준을 좁힌다."
+    }
+  ]
 }

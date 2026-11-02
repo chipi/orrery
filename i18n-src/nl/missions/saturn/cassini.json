@@ -27,5 +27,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Centaur-bovenste trap"
+  "vehicle_stage": "Centaur-bovenste trap",
+  "flight_events": [
+    {
+      "met": 617,
+      "label": "Venus nr. 2 — zwaartekrachtassist",
+      "description": "Tweede ontmoeting met Venus (1999-06-24), op 600 km hoogte, na een manoeuvre in de diepe ruimte die de baan omvormde. Samen schuiven de twee Venus-assists het aphelium voorbij de aarde en bereiden ze de derde assist 55 dagen later voor."
+    },
+    {
+      "met": 672,
+      "label": "Aarde — zwaartekrachtassist",
+      "description": "1.171 km boven de zuidelijke Stille Oceaan (1999-08-18) — de dichtste planeetflyby tot dan toe van een naar buiten vliegende interplanetaire missie. De baan heeft nu genoeg energie om die van Jupiter te kruisen, waar de laatste assist naar Saturnus leidt."
+    },
+    {
+      "met": 1172,
+      "label": "Jupiter — zwaartekrachtassist",
+      "description": "9,7 miljoen km van Jupiter op 2000-12-30, met een gelijktijdige gezamenlijke waarneming met Galileo (in een baan om Jupiter). De zwaartekracht van Jupiter levert de laatste 2,5 km/s voor een Hohmann-achtige overdracht naar Saturnus, dat 3,6 jaar later wordt bereikt."
+    }
+  ]
 }

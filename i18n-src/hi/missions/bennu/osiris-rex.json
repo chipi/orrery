@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur ऊपरी चरण (Atlas V 411)"
+  "vehicle_stage": "Centaur ऊपरी चरण (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "निकट पहुँचने का मैनूवर",
+      "description": "निकट पहुँचने के चरण का पहला दहन। मिलन के लिए OSIRIS-REx को धीमा करके बेन्नू के सूर्यकेंद्री वेग के बराबर लाता है।"
+    }
+  ]
 }

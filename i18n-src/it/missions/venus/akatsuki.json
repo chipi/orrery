@@ -44,5 +44,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "secondo stadio dell'H-IIA 202"
+  "vehicle_stage": "secondo stadio dell'H-IIA 202",
+  "flight_events": [
+    {
+      "met": 120,
+      "label": "TCM-2",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 195,
+      "label": "TCM-3 — ultima prima dell'inserimento in orbita attorno a Venere",
+      "description": "Ultimo ritocco prima dell'arrivo."
+    }
+  ]
 }

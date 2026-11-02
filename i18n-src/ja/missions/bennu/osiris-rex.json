@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 上段（Atlas V 411）"
+  "vehicle_stage": "Centaur 上段（Atlas V 411）",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "接近マヌーバ",
+      "description": "接近フェーズ最初の噴射。OSIRIS-REx を減速させ、ランデブーのためにベンヌの日心速度に合わせる。"
+    }
+  ]
 }

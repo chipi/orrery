@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "stadio superiore Centaur D-1T"
+  "vehicle_stage": "stadio superiore Centaur D-1T",
+  "flight_events": [
+    {
+      "met": 69.92,
+      "label": "TCM-2",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 124.64,
+      "label": "TCM-3",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 200,
+      "label": "TCM-4 — ultima prima dell'inserimento in orbita marziana",
+      "description": "Affinamento del puntamento nella fase di avvicinamento."
+    }
+  ]
 }

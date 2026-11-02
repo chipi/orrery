@@ -51,5 +51,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur-bovenste trap (Atlas V 541)"
+  "vehicle_stage": "Centaur-bovenste trap (Atlas V 541)",
+  "flight_events": [
+    {
+      "met": 76,
+      "label": "TCM-2",
+      "description": "Verfijningsbrandstap halverwege de reis. Op dit punt is Curiosity uit de zwaartekrachtput van de aarde en volgt een stabiele heliocentrische baan."
+    },
+    {
+      "met": 211,
+      "label": "TCM-4 — laatste brandstap voor de EDL",
+      "description": "Laatste grote baanbijstelling voor de intrede in Mars. De EDL vereist een richtnauwkeurigheid beter dan 1 km aan de rand van de atmosfeer; TCM-4 levert die."
+    }
+  ]
 }

@@ -32,5 +32,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "zweite Stufe der Falcon Heavy"
+  "vehicle_stage": "zweite Stufe der Falcon Heavy",
+  "flight_events": [
+    {
+      "met": 1500,
+      "label": "Feinkorrektur im Flug",
+      "description": "Bahnfeinkorrektur zur Flugmitte. Der Ionenschub läuft weiter."
+    }
+  ]
 }

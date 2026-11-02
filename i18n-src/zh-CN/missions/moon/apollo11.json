@@ -51,5 +51,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB（第三级）"
+  "vehicle_stage": "Saturn V S-IVB（第三级）",
+  "flight_events": [
+    {
+      "met": 1.4,
+      "label": "MCC-2——中途修正",
+      "description": "巡航中途的轨道微调。任务计划安排了4次中途修正；只需要 MCC-2，因为地月转移入射非常精确，其余三次都取消了。"
+    },
+    {
+      "met": 5.64,
+      "label": "月地转移入射",
+      "description": "1969-07-22。SPS 发动机点火离开环月轨道，把 Apollo 11 送上返回地球的自由返回轨道。"
+    }
+  ]
 }

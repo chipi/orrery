@@ -38,5 +38,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "bovenste trap Blok-D"
+  "vehicle_stage": "bovenste trap Blok-D",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "Injectie richting de maan",
+      "description": "De brandstap van de bovenste trap Blok D zet Luna 17 op een traject richting de maan."
+    },
+    {
+      "met": 1.5,
+      "label": "Koerscorrectie nr. 1",
+      "description": "Eerste verfijning van het traject."
+    },
+    {
+      "met": 4,
+      "label": "Koerscorrectie nr. 2",
+      "description": "Verfijning in de naderingsfase."
+    }
+  ]
 }

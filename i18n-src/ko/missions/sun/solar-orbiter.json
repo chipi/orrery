@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 상단 (Atlas V 411)"
+  "vehicle_stage": "Centaur 상단 (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 1750,
+      "label": "금성 중력 보조 4차",
+      "description": "2025-02. 네 번째 금성 중력 보조가 태양면 위도를 약 17°로 계속 높인다 (연장 임무 목표는 약 33°)."
+    }
+  ]
 }

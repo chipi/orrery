@@ -43,5 +43,17 @@
       "note": "Inserimento in orbita intorno alla cometa 67P/Churyumov–Gerasimenko. Philae atterra il 2014-11-12.",
       "type": "nominal"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 1349,
+      "label": "Terra n. 2 — fionda gravitazionale",
+      "description": "Massimo avvicinamento di 5.295 km il 2007-11-13. Per breve tempo fu scambiata per un asteroide vicino alla Terra (designato 2007 VN84), finché gli osservatori capirono che era Rosetta in viaggio verso l'esterno."
+    },
+    {
+      "met": 2058,
+      "label": "Terra n. 3 — fionda gravitazionale",
+      "description": "Ultimo sorvolo della Terra il 2009-11-13, massimo avvicinamento di 2.481 km. La spinta porta Rosetta fino all'afelio necessario per raggiungere l'orbita di 67P, dopo di che la sonda è entrata in ibernazione nello spazio profondo."
+    }
   ]
 }

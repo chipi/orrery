@@ -50,5 +50,37 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "stadio superiore YZ-1 del Long March 5"
+  "vehicle_stage": "stadio superiore YZ-1 del Long March 5",
+  "flight_events": [
+    {
+      "met": 1.04,
+      "label": "MCC-1",
+      "description": "Prima pulizia dopo l'immissione translunare."
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-2",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-3",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 3,
+      "label": "MCC-4",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5 — ultima prima dell'inserimento in orbita lunare",
+      "description": "Puntamento finale di avvicinamento."
+    },
+    {
+      "met": 19,
+      "label": "Immissione transterrestre",
+      "description": "2020-12-12. L'orbiter ha lasciato l'orbita lunare su una traiettoria di ritorno."
+    }
+  ]
 }

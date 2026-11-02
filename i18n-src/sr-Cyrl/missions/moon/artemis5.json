@@ -50,5 +50,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "горњи степен SLS (није потврђено)"
+  "vehicle_stage": "горњи степен SLS (није потврђено)",
+  "flight_events": [
+    {
+      "met": 1.48,
+      "label": "MCC-1",
+      "description": "Прва корекција путање."
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-2",
+      "description": "Прецизирање у фази прилаза."
+    }
+  ]
 }

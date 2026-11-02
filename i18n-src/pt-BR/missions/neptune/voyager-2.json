@@ -21,5 +21,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Centaur + TE-364-4 (Star-37E)"
+  "vehicle_stage": "Centaur + TE-364-4 (Star-37E)",
+  "flight_events": [
+    {
+      "met": 688,
+      "label": "Júpiter — assistência gravitacional",
+      "description": "Máxima aproximação de 721.670 km em 1979-07-09. Descobre a superfície lisa de gelo de água de Europa e faz as primeiras imagens detalhadas dos terrenos claros e escuros de Ganimedes; confirma as observações vulcânicas de Io feitas pela Voyager 1. A gravidade de Júpiter curva a trajetória rumo a Saturno, alcançado 26 meses depois — a primeira das três assistências planetárias da missão."
+    },
+    {
+      "met": 1466,
+      "label": "Saturno — assistência gravitacional",
+      "description": "Máxima aproximação de 101.000 km em 1981-08-26. Envia as imagens mais detalhadas dos anéis de Saturno obtidas até então (raios, anel F entrançado) e revela a estrutura geral da rotação caótica de Hipérion. A geometria do encontro teve de passar pelo estreito corredor entre Urano e o extremo sul da eclíptica — o único caminho que mantinha ao alcance os dois gigantes de gelo."
+    },
+    {
+      "met": 3079,
+      "label": "Urano — assistência gravitacional",
+      "description": "Máxima aproximação de 81.500 km em 1986-01-24 — a única visita de uma nave a Urano até hoje. Revela a inclinação axial extrema do planeta, de 98°, 10 novas luas e um campo magnético inclinado. A Voyager 2 cruza o plano dos anéis a 14,5 km/s; o efeito estilingue então precisa curvar a trajetória cerca de 50° para chegar a Netuno três anos depois."
+    }
+  ]
 }

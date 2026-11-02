@@ -21,5 +21,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Centaur + TE-364-4 (Star-37E)"
+  "vehicle_stage": "Centaur + TE-364-4 (Star-37E)",
+  "flight_events": [
+    {
+      "met": 688,
+      "label": "Jupiter — Swing-by",
+      "description": "Größte Annäherung 721.670 km am 1979-07-09. Entdeckt Europas glatte Wassereisoberfläche und liefert die ersten detaillierten Bilder der hellen und dunklen Gebiete von Ganymed; bestätigt die Vulkanbeobachtungen von Voyager 1 auf Io. Jupiters Schwerkraft biegt die Bahn nach außen zum Saturn, den die Sonde 26 Monate später erreicht — der erste von drei planetaren Swing-bys der Mission."
+    },
+    {
+      "met": 1466,
+      "label": "Saturn — Swing-by",
+      "description": "Größte Annäherung 101.000 km am 1981-08-26. Liefert die bis dahin detailliertesten Bilder der Saturnringe (Speichen, geflochtener F-Ring) und zeigt die Grundzüge der chaotischen Rotation von Hyperion. Die Geometrie der Begegnung musste durch den schmalen Korridor zwischen Uranus und dem tiefen Süden der Ekliptik führen — der einzige Weg, auf dem beide Eisriesen erreichbar blieben."
+    },
+    {
+      "met": 3079,
+      "label": "Uranus — Swing-by",
+      "description": "Größte Annäherung 81.500 km am 1986-01-24 — bis heute der einzige Besuch einer Sonde bei Uranus. Zeigt die extreme Achsneigung des Planeten von 98°, 10 neue Monde und ein geneigtes Magnetfeld. Voyager 2 durchquert die Ringebene mit 14,5 km/s; der Swing-by muss die Bahn danach um etwa 50° biegen, um Neptun drei Jahre später zu erreichen."
+    }
+  ]
 }

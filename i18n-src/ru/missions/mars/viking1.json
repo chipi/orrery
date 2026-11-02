@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "разгонный блок Centaur D-1T"
+  "vehicle_stage": "разгонный блок Centaur D-1T",
+  "flight_events": [
+    {
+      "met": 69.92,
+      "label": "TCM-2",
+      "description": "Уточнение в середине перелёта."
+    },
+    {
+      "met": 124.64,
+      "label": "TCM-3",
+      "description": "Уточнение в середине перелёта."
+    },
+    {
+      "met": 200,
+      "label": "TCM-4 — последняя перед выходом на орбиту Марса",
+      "description": "Уточнение наведения на этапе сближения."
+    }
+  ]
 }

@@ -44,5 +44,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "慣性上段 Inertial Upper Stage（IUS）"
+  "vehicle_stage": "慣性上段 Inertial Upper Stage（IUS）",
+  "flight_events": [
+    {
+      "met": 175,
+      "label": "TCM-2",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 325,
+      "label": "TCM-3",
+      "description": "接近フェーズの微調整。"
+    }
+  ]
 }

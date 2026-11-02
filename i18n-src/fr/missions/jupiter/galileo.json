@@ -21,5 +21,37 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Inertial Upper Stage (IUS, étage supérieur)"
+  "vehicle_stage": "Inertial Upper Stage (IUS, étage supérieur)",
+  "flight_events": [
+    {
+      "met": 115,
+      "label": "Vénus — assistance gravitationnelle",
+      "description": "Approche minimale de 16 000 km de Vénus le 1990-02-10. Le profil VEEGA (assistances gravitationnelles Vénus-Terre-Terre) commence ici : Galileo prélève de l'énergie orbitale à Vénus pour repousser son aphélie. La charge thermique près de Vénus dépassait les spécifications initiales ; les ingénieurs ont ajouté une isolation sur le mât de l'antenne, ce qui a ensuite empêché l'antenne à grand gain de se déployer."
+    },
+    {
+      "met": 416,
+      "label": "Terre n° 1 — assistance gravitationnelle",
+      "description": "Approche minimale de 960 km le 1990-12-08. Premier des deux survols de la Terre ; ensemble, ils infléchissent assez la trajectoire pour atteindre Jupiter. Galileo a aussi renvoyé des observations spectrales de la Terre comme cas d'essai des méthodes de détection de la vie — analyser sa propre planète comme si on la voyait de loin."
+    },
+    {
+      "met": 741,
+      "label": "Gaspra — première rencontre avec un astéroïde",
+      "description": "Approche minimale de 1 600 km de l'astéroïde (951) Gaspra le 1991-10-29. Premières images rapprochées d'un astéroïde, toutes sondes confondues. La forme irrégulière de Gaspra, longue d'environ 20 km, suggérait un fragment de collision issu d'un corps parent plus grand — ce qui confirmait l'histoire des collisions aux débuts du Système solaire."
+    },
+    {
+      "met": 1147,
+      "label": "Terre n° 2 — assistance gravitationnelle",
+      "description": "Approche minimale de 304 km le 1992-12-08 — la dernière assistance nécessaire pour atteindre Jupiter. La rencontre a servi à tester une fois de plus le déploiement de l'antenne à grand gain (elle ne s'est jamais ouverte entièrement ; la mission a fonctionné toute sa vie sur l'antenne à faible gain, au prix de lourdes solutions de compression des données)."
+    },
+    {
+      "met": 1410,
+      "label": "Ida et Dactyle — deuxième rencontre avec un astéroïde",
+      "description": "Approche minimale de 2 400 km de l'astéroïde (243) Ida le 1993-08-28. Découverte de la minuscule lune d'Ida, Dactyle (1,4 km de diamètre) — premier système binaire d'astéroïdes confirmé. La preuve que des astéroïdes peuvent avoir des satellites stables a remodelé les modèles de leur dynamique."
+    },
+    {
+      "met": 2094,
+      "label": "Largage de la sonde",
+      "description": "La sonde atmosphérique de Galileo s'est séparée cinq mois avant l'arrivée à Jupiter, le 1995-07-13, sur une trajectoire balistique légèrement différente visant l'atmosphère de la planète géante. Elle n'avait aucune propulsion : sa géométrie d'arrivée a été entièrement fixée par la manœuvre de séparation."
+    }
+  ]
 }

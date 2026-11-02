@@ -51,5 +51,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (terceiro estágio)"
+  "vehicle_stage": "Saturn V S-IVB (terceiro estágio)",
+  "flight_events": [
+    {
+      "met": 1.27,
+      "label": "MCC-2",
+      "description": "Primeira correção de trajetória."
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-3",
+      "description": "Refinamento da fase de aproximação antes da inserção em órbita lunar."
+    },
+    {
+      "met": 10.9,
+      "label": "Injeção transterrestre",
+      "description": "1972-12-16. A queima do SPS manda a Apollo 17 para casa depois de 75 horas em órbita lunar e três dias na superfície."
+    }
+  ]
 }

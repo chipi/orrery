@@ -38,5 +38,27 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "quatrième étage PS4 du PSLV"
+  "vehicle_stage": "quatrième étage PS4 du PSLV",
+  "flight_events": [
+    {
+      "met": 50,
+      "label": "TCM-1",
+      "description": "Première correction de croisière après l'injection vers Mars."
+    },
+    {
+      "met": 97.62,
+      "label": "TCM-2",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 150,
+      "label": "TCM-3",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 250,
+      "label": "TCM-4 — dernier allumage avant l'insertion en orbite martienne",
+      "description": "Visée d'approche finale avant l'insertion en orbite martienne."
+    }
+  ]
 }

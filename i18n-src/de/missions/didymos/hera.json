@@ -6,5 +6,37 @@
   "type": "ASTEROIDENVERMESSUNG · AKTIV",
   "first": "ESAs Folgemission zu DART — Vermessung des abgelenkten Asteroiden Didymos",
   "description": "Hera ist der Beitrag der ESA zum ersten planetaren Verteidigungsexperiment der Menschheit. Im Jahr 2022 kollidierte NASAs DART-Raumsonde absichtlich mit Dimorphos — dem kleinen Mond des Asteroiden Didymos — und verkürzte messbar dessen Umlaufbahn. Hera, gestartet im Oktober 2024 auf einer Falcon 9, fliegt zum selben binären Asteroiden (mit einem Mars-Swing-by 2025 unterwegs), um die detaillierte Vermessung nach dem Einschlag durchzuführen, die DART nicht leisten konnte: die Größe des Kraters, die Masse und innere Struktur von Dimorphos und genau, wie viel Impuls der Einschlag übertragen hat. Zusammen verwandeln DART und Hera eine einmalige Demonstration in eine wiederholbare, gut charakterisierte Ablenkungstechnik. Hera trägt zwei CubeSats, Juventas und Milani, für hochauflösende Radarsondierung und Mineralogie.",
-  "vehicle_stage": "zweite Stufe der Falcon 9"
+  "vehicle_stage": "zweite Stufe der Falcon 9",
+  "flight_events": [
+    {
+      "met": 0,
+      "label": "Start — Falcon 9 Block 5",
+      "description": "Cape Canaveral SLC-40, 2024-10-07. Hera bricht auf einer Fluchtbahn aus dem Erdschwerefeld zum Doppelsystem Didymos auf."
+    },
+    {
+      "met": 0.01,
+      "label": "Einschuss Richtung Asteroid",
+      "description": "Die Oberstufe der Falcon 9 bringt Hera auf einen interplanetaren Transfer zu Didymos, über einen Swing-by am Mars im Jahr 2025."
+    },
+    {
+      "met": 20,
+      "label": "DSM-1",
+      "description": "Das erste Manöver im tiefen Raum verfeinert den interplanetaren Transfer zum Swing-by am Mars 2025."
+    },
+    {
+      "met": 150,
+      "label": "Swing-by am Mars",
+      "description": "Ein Vorbeiflug am Mars im März 2025 lenkt Heras Bahn zu Didymos und bringt als Zugabe einen Vorbeiflug am Marsmond Deimos."
+    },
+    {
+      "met": 300,
+      "label": "DSM-2",
+      "description": "Bahnkorrektur nach dem Mars-Vorbeiflug, ausgerichtet auf das Rendezvous mit Didymos."
+    },
+    {
+      "met": 812,
+      "label": "Rendezvous mit Didymos",
+      "description": "Hera erreicht das Doppelsystem Didymos und beginnt die genaue Untersuchung von Dimorphos und des DART-Einschlagkraters."
+    }
+  ]
 }

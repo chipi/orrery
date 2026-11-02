@@ -30,21 +30,39 @@ export async function getMission(
     // overlay-merge code. en-US is skipped to preserve the rich
     // base descriptions (the overlay is intentionally terser/curated
     // for the CAPCOM ticker; the tooltip wants the full prose).
+    //
+    // Structural events with no editorial event at their MET are translated in the overlay's
+    // own `flight_events[]` ({met, label, description}, 0.9.4); it wins over an editorial match.
+    const flightOverlay = (overlay as { flight_events?: unknown }).flight_events;
     if (
       locale !== 'en-US' &&
-      Array.isArray(overlay.events) &&
+      (Array.isArray(overlay.events) || Array.isArray(flightOverlay)) &&
       Array.isArray(baseRecord.flight?.events)
     ) {
       const TOL = 0.05; // days
-      const overlayEvents = overlay.events as Array<{
+      const atMet = <T extends { met?: number }>(list: T[], met: number): T | undefined =>
+        list.find((o) => o.met === met) ??
+        list.find((o) => Math.abs((o.met ?? -1) - met) <= TOL);
+      const overlayEvents = (overlay.events ?? []) as Array<{
         met?: number;
         label?: string;
         note?: string;
       }>;
+      const structural = (Array.isArray(flightOverlay) ? flightOverlay : []) as Array<{
+        met?: number;
+        label?: string;
+        description?: string;
+      }>;
       const mergedEvents = baseRecord.flight.events.map((evt) => {
         if (evt.met_days == null) return evt;
-        let ov = overlayEvents.find((o) => o.met === evt.met_days);
-        if (!ov) ov = overlayEvents.find((o) => Math.abs((o.met ?? -1) - evt.met_days!) <= TOL);
+        const own = atMet(structural, evt.met_days);
+        if (own)
+          return {
+            ...evt,
+            label: own.label ?? evt.label,
+            description: own.description ?? evt.description,
+          };
+        const ov = atMet(overlayEvents, evt.met_days);
         if (!ov) return evt;
         return {
           ...evt,

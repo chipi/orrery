@@ -38,5 +38,32 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Oberstufe Star-37 der Titan II"
+  "vehicle_stage": "Oberstufe Star-37 der Titan II",
+  "flight_events": [
+    {
+      "met": 0.5,
+      "label": "Einschuss Richtung Mond",
+      "description": "Phasengesteuerte Zündungen brachten Clementine von einer niedrigen Erdumlaufbahn auf eine Bahn zum Mond."
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "description": "Erste Nachkorrektur nach dem Einschuss zum Mond."
+    },
+    {
+      "met": 7.24,
+      "label": "TCM-2",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 12.75,
+      "label": "TCM-3 — letzte vor dem Einschwenken in die Mondumlaufbahn",
+      "description": "Letzte Anflugausrichtung vor dem Einschwenken in die Mondumlaufbahn."
+    },
+    {
+      "met": 25.05,
+      "label": "Einschwenken in die Mondumlaufbahn",
+      "description": "1994-02-19. Einfang in eine polare Bahn von 415 × 2.940 km. Kartierung der Mondoberfläche in mehreren Wellenlängen über 71 Tage — die erste globale hochauflösende multispektrale Mondkarte. Daten eines bistatischen Radarexperiments wurden später (umstritten) als Hinweis auf Wassereis am Mondsüdpol gedeutet — die Entdeckung, die LRO und alle späteren Missionen zur Eissuche auslöste."
+    }
+  ]
 }

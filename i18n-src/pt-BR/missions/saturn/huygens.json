@@ -33,5 +33,27 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "estágio superior Centaur"
+  "vehicle_stage": "estágio superior Centaur",
+  "flight_events": [
+    {
+      "met": 193,
+      "label": "Vênus nº 1 — assistência gravitacional",
+      "description": "Primeiro sobrevoo de Vênus (1998-04-26, 284 km de altitude). A assistência gravitacional eleva o afélio da sonda dentro da sequência VVEJGA, que acumula energia."
+    },
+    {
+      "met": 617,
+      "label": "Vênus nº 2 — assistência gravitacional",
+      "description": "Segundo sobrevoo de Vênus (1999-06-24, 600 km). Junto com a primeira assistência, prepara o sobrevoo da Terra 55 dias depois."
+    },
+    {
+      "met": 672,
+      "label": "Terra — assistência gravitacional",
+      "description": "1.171 km acima do Pacífico Sul (1999-08-18). A órbita já tem energia suficiente para cruzar a de Júpiter."
+    },
+    {
+      "met": 1172,
+      "label": "Júpiter — assistência gravitacional",
+      "description": "9,7 milhões de km de Júpiter (2000-12-30). A assistência final fornece a velocidade restante para a chegada a Saturno."
+    }
+  ]
 }

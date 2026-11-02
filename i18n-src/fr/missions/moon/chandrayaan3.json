@@ -44,5 +44,42 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "étage supérieur cryogénique C25 du LVM3"
+  "vehicle_stage": "étage supérieur cryogénique C25 du LVM3",
+  "flight_events": [
+    {
+      "met": 17.8,
+      "label": "Injection translunaire",
+      "description": "Dernier allumage au périgée après 18 jours de relèvement progressif de l'orbite terrestre — le même transfert lunaire peu coûteux que l'ISRO utilise depuis Chandrayaan-1."
+    },
+    {
+      "met": 23.35,
+      "label": "Réduction de l'orbite lunaire n° 1",
+      "description": "2023-08-06. Premier allumage après la capture lunaire : l'orbite descend à 170 × 4 313 km."
+    },
+    {
+      "met": 26.2,
+      "label": "Réduction de l'orbite lunaire n° 2",
+      "description": "2023-08-09. Deuxième allumage, qui abaisse l'orbite vers une orbite presque circulaire."
+    },
+    {
+      "met": 31.2,
+      "label": "Réduction de l'orbite lunaire n° 3",
+      "description": "2023-08-14. Troisième allumage de réduction."
+    },
+    {
+      "met": 33.1,
+      "label": "Réduction de l'orbite lunaire n° 4",
+      "description": "2023-08-16. Dernier allumage de réduction : une orbite presque circulaire de 153 × 163 km."
+    },
+    {
+      "met": 35,
+      "label": "Freinage de l'atterrisseur n° 1",
+      "description": "2023-08-18. Le premier freinage de Vikram abaisse son orbite à 113 × 157 km."
+    },
+    {
+      "met": 36.5,
+      "label": "Freinage de l'atterrisseur n° 2",
+      "description": "Le deuxième freinage place Vikram sur l'orbite basse de descente, prêt pour la tentative d'alunissage."
+    }
+  ]
 }

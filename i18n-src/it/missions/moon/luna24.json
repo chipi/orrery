@@ -45,5 +45,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "stadio superiore Blok-D"
+  "vehicle_stage": "stadio superiore Blok-D",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "Immissione translunare",
+      "description": "L'accensione dello stadio superiore Blok D mette Luna 24 su una traiettoria translunare."
+    },
+    {
+      "met": 1.5,
+      "label": "Correzione di traiettoria n. 1",
+      "description": "Primo affinamento della traiettoria."
+    },
+    {
+      "met": 4,
+      "label": "Correzione di traiettoria n. 2",
+      "description": "Affinamento della fase di avvicinamento."
+    }
+  ]
 }

@@ -44,5 +44,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Inertial Upper Stage (IUS) ऊपरी चरण"
+  "vehicle_stage": "Inertial Upper Stage (IUS) ऊपरी चरण",
+  "flight_events": [
+    {
+      "met": 175,
+      "label": "TCM-2",
+      "description": "यात्रा के बीच परिशोधन।"
+    },
+    {
+      "met": 325,
+      "label": "TCM-3",
+      "description": "निकट पहुँचने के चरण में सुधार।"
+    }
+  ]
 }

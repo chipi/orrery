@@ -20,5 +20,27 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Delta II Star-48B (dritte Stufe)"
+  "vehicle_stage": "Delta II Star-48B (dritte Stufe)",
+  "flight_events": [
+    {
+      "met": 508,
+      "label": "Mars — Swing-by",
+      "description": "Größte Annäherung 549 km am 2009-02-17. Der Swing-by am Mars brachte rund 2,6 km/s — genug, um nach zwei weiteren Jahren Ionenantrieb auf einer Spiralbahn den Asteroiden Vesta zu erreichen. Ohne ihn hätte Dawn doppelt so viel Treibstoff oder doppelt so viel Flugzeit gebraucht."
+    },
+    {
+      "met": 1388,
+      "label": "Einschwenken in die Vesta-Umlaufbahn",
+      "description": "Einfang in die Vesta-Umlaufbahn am 2011-07-16 durch kontinuierlichen Ionenschub — eine chemische Einschwenkzündung war nicht nötig, der Ionenantrieb übernahm den allmählichen Anflug. Dawn verbrachte 14 Monate in der Umlaufbahn, kartierte den differenzierten Protoplaneten mit 530 km Durchmesser und bestätigte das Rheasilvia-Einschlagbecken am Südpol als Quelle der HED-Meteoriten, die die Erde erreichen."
+    },
+    {
+      "met": 1805,
+      "label": "Abflug von Vesta — Ionenspirale zu Ceres",
+      "description": "Abflug von Vesta am 2012-09-05. Die Ionentriebwerke weiteten die Spirale 2,5 Jahre lang nach außen, Richtung Ceres — der erste interplanetare Transfer zwischen zwei Körpern mit kontinuierlichem schwachem Schub. Die Flugbahn verbrauchte rund 390 kg Xenon."
+    },
+    {
+      "met": 2718,
+      "label": "Einschwenken in die Ceres-Umlaufbahn",
+      "description": "Einfang in die Ceres-Umlaufbahn am 2015-03-06 — die erste Sonde im Orbit um einen Zwergplaneten und die erste, die zwei außerirdische Körper umkreiste. Bis 2018 sank sie spiralförmig auf eine niedrige Kartierungsbahn in 35 km Höhe. Am 2018-10-31 ging das Hydrazin für die Lageregelung aus; die Sonde bleibt auf einer stabilen Ceres-Umlaufbahn, nach den Regeln des Planetenschutzes ein dauerhaft geschütztes planetares Denkmal."
+    }
+  ]
 }

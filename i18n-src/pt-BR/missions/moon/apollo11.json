@@ -51,5 +51,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (terceiro estágio)"
+  "vehicle_stage": "Saturn V S-IVB (terceiro estágio)",
+  "flight_events": [
+    {
+      "met": 1.4,
+      "label": "MCC-2 — correção de trajetória",
+      "description": "Ajuste de trajetória no meio do cruzeiro. O plano da missão previa 4 correções; só a MCC-2 foi necessária, porque a injeção translunar foi tão precisa que as outras três foram dispensadas."
+    },
+    {
+      "met": 5.64,
+      "label": "Injeção transterrestre",
+      "description": "1969-07-22. Queima do motor SPS para deixar a órbita lunar. Colocou a Apollo 11 numa trajetória de retorno livre para a Terra."
+    }
+  ]
 }

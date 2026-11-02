@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "dritte Feststoffstufe Star 48BV (Delta IV Heavy: Zentralstufe + 2 Booster)"
+  "vehicle_stage": "dritte Feststoffstufe Star 48BV (Delta IV Heavy: Zentralstufe + 2 Booster)",
+  "flight_events": [
+    {
+      "met": 985,
+      "label": "Swing-by an der Venus Nr. 4",
+      "description": "2021-02-20. Der vierte Venus-Swing-by verringert das Perihel weiter in Richtung des Ziels von 9,86 R☉."
+    }
+  ]
 }

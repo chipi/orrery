@@ -51,5 +51,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur-Oberstufe (Atlas V 541)"
+  "vehicle_stage": "Centaur-Oberstufe (Atlas V 541)",
+  "flight_events": [
+    {
+      "met": 40.6,
+      "label": "TCM-2",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 60,
+      "label": "TCM-3",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 140,
+      "label": "TCM-4",
+      "description": "Anpassung in der Anflugphase."
+    },
+    {
+      "met": 180,
+      "label": "TCM-5 — letzte Zündung vor dem EDL",
+      "description": "Schärft die Anflugausrichtung auf die EDL-Ellipse im Krater Jezero."
+    }
+  ]
 }

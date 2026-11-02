@@ -32,5 +32,32 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur-bovenste trap (Atlas V 401)"
+  "vehicle_stage": "Centaur-bovenste trap (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 55,
+      "label": "TCM-2",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 94.6,
+      "label": "TCM-3",
+      "description": "Bijstelling halverwege de reis."
+    },
+    {
+      "met": 100,
+      "label": "TCM-4",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 134.2,
+      "label": "TCM-5",
+      "description": "Bijstelling in de naderingsfase."
+    },
+    {
+      "met": 200,
+      "label": "TCM-6 — laatste brandstap voor de intrede in een baan om Mars",
+      "description": "Scherpt de naderingsrichting aan voor de intrede in een baan om Mars."
+    }
+  ]
 }

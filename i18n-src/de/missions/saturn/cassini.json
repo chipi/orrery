@@ -27,5 +27,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Centaur-Oberstufe"
+  "vehicle_stage": "Centaur-Oberstufe",
+  "flight_events": [
+    {
+      "met": 617,
+      "label": "Venus Nr. 2 — Swing-by",
+      "description": "Zweite Begegnung mit der Venus (1999-06-24) in 600 km Höhe, nach einem Manöver im tiefen Raum, das die Bahn umformte. Die beiden Venus-Swing-bys schieben das Aphel zusammen über die Erdbahn hinaus und bereiten den dritten Swing-by 55 Tage später vor."
+    },
+    {
+      "met": 672,
+      "label": "Erde — Swing-by",
+      "description": "1.171 km über dem Südpazifik (1999-08-18) — der bis dahin engste Planetenvorbeiflug einer nach außen fliegenden interplanetaren Mission. Die Bahn ist nun energiereich genug, um die des Jupiter zu kreuzen, wo der letzte Swing-by zum Saturn führt."
+    },
+    {
+      "met": 1172,
+      "label": "Jupiter — Swing-by",
+      "description": "9,7 Millionen km von Jupiter am 2000-12-30, mit gleichzeitiger gemeinsamer Beobachtung mit Galileo (im Jupiterorbit). Jupiters Schwerkraft liefert die letzten 2,5 km/s für einen Hohmann-ähnlichen Transfer zum Saturn, den die Sonde 3,6 Jahre später erreicht."
+    }
+  ]
 }

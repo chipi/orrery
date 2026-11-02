@@ -38,5 +38,27 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "PSLV 第四级 PS4"
+  "vehicle_stage": "PSLV 第四级 PS4",
+  "flight_events": [
+    {
+      "met": 50,
+      "label": "TCM-1",
+      "description": "地火转移入射后的首次巡航修正。"
+    },
+    {
+      "met": 97.62,
+      "label": "TCM-2",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 150,
+      "label": "TCM-3",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 250,
+      "label": "TCM-4——进入火星轨道前最后一次点火",
+      "description": "进入火星轨道前的最终接近瞄准。"
+    }
+  ]
 }

@@ -50,5 +50,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "المرحلة العليا لـ SLS (لم تُؤكد بعد)"
+  "vehicle_stage": "المرحلة العليا لـ SLS (لم تُؤكد بعد)",
+  "flight_events": [
+    {
+      "met": 1.48,
+      "label": "MCC-1",
+      "description": "أول تصحيح للمسار."
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-2",
+      "description": "تحسين في مرحلة الاقتراب."
+    }
+  ]
 }

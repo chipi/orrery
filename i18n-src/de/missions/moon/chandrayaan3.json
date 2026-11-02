@@ -44,5 +44,42 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "kryogene Oberstufe C25 der LVM3"
+  "vehicle_stage": "kryogene Oberstufe C25 der LVM3",
+  "flight_events": [
+    {
+      "met": 17.8,
+      "label": "Einschuss Richtung Mond",
+      "description": "Letzte Zündung im Perigäum nach 18 Tagen schrittweisen Anhebens der Erdumlaufbahn — derselbe kostengünstige Transfer zum Mond, den die ISRO seit Chandrayaan-1 nutzt."
+    },
+    {
+      "met": 23.35,
+      "label": "Absenkung der Mondumlaufbahn Nr. 1",
+      "description": "2023-08-06. Erste Zündung nach dem Einfang am Mond: Die Bahn sinkt auf 170 × 4.313 km."
+    },
+    {
+      "met": 26.2,
+      "label": "Absenkung der Mondumlaufbahn Nr. 2",
+      "description": "2023-08-09. Zweite Zündung, die die Bahn einer fast kreisförmigen annähert."
+    },
+    {
+      "met": 31.2,
+      "label": "Absenkung der Mondumlaufbahn Nr. 3",
+      "description": "2023-08-14. Dritte Absenkungszündung."
+    },
+    {
+      "met": 33.1,
+      "label": "Absenkung der Mondumlaufbahn Nr. 4",
+      "description": "2023-08-16. Letzte Absenkungszündung: eine fast kreisförmige Bahn von 153 × 163 km."
+    },
+    {
+      "met": 35,
+      "label": "Abbremsung des Landers Nr. 1",
+      "description": "2023-08-18. Vikrams erste Abbremsung senkt seine Bahn auf 113 × 157 km."
+    },
+    {
+      "met": 36.5,
+      "label": "Abbremsung des Landers Nr. 2",
+      "description": "Die zweite Abbremsung bringt Vikram auf die niedrige Abstiegsbahn, bereit für den Landeversuch."
+    }
+  ]
 }

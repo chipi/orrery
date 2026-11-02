@@ -38,5 +38,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "tweede trap van de H3-24L"
+  "vehicle_stage": "tweede trap van de H3-24L",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "Eerste opruimbrandstap na de injectie richting Mars."
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 250,
+      "label": "TCM-3",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 320,
+      "label": "TCM-4 — laatste voor de intrede in een baan om Mars",
+      "description": "Laatste naderingsrichting."
+    }
+  ]
 }

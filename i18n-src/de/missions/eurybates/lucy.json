@@ -68,5 +68,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur-Oberstufe (Atlas V 401)"
+  "vehicle_stage": "Centaur-Oberstufe (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 1154,
+      "label": "Swing-by an der Erde Nr. 2",
+      "description": "2024-12-13 (nach dem überarbeiteten Missionsprofil)."
+    }
+  ]
 }

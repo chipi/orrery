@@ -51,5 +51,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (3단)"
+  "vehicle_stage": "Saturn V S-IVB (3단)",
+  "flight_events": [
+    {
+      "met": 1.4,
+      "label": "MCC-2 — 중간 궤도 수정",
+      "description": "순항 중간의 궤도 미세 조정. 임무 계획은 중간 궤도 수정을 4회로 잡았지만, 달 전이 궤도 진입이 충분히 정확해서 MCC-2만 필요했고 나머지 세 번은 취소되었다."
+    },
+    {
+      "met": 5.64,
+      "label": "지구 귀환 궤도 진입",
+      "description": "1969-07-22. 달 궤도를 떠나는 SPS 엔진 분사. Apollo 11을 지구로 돌아오는 자유 귀환 궤도에 올렸다."
+    }
+  ]
 }

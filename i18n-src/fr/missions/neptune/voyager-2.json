@@ -21,5 +21,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Centaur + TE-364-4 (Star-37E)"
+  "vehicle_stage": "Centaur + TE-364-4 (Star-37E)",
+  "flight_events": [
+    {
+      "met": 688,
+      "label": "Jupiter — assistance gravitationnelle",
+      "description": "Approche minimale de 721 670 km le 1979-07-09. Découvre la surface lisse de glace d'eau d'Europe et prend les premières images détaillées des terrains clairs et sombres de Ganymède ; confirme les observations volcaniques de Voyager 1 sur Io. La gravité de Jupiter infléchit la trajectoire vers Saturne, atteinte 26 mois plus tard — la première des trois assistances planétaires de la mission."
+    },
+    {
+      "met": 1466,
+      "label": "Saturne — assistance gravitationnelle",
+      "description": "Approche minimale de 101 000 km le 1981-08-26. Renvoie les images les plus détaillées des anneaux de Saturne jamais obtenues (rayons, anneau F tressé) et révèle la structure d'ensemble de la rotation chaotique d'Hypérion. La géométrie de la rencontre devait passer par l'étroit couloir entre Uranus et le grand sud de l'écliptique — la seule voie qui gardait les deux géantes de glace accessibles."
+    },
+    {
+      "met": 3079,
+      "label": "Uranus — assistance gravitationnelle",
+      "description": "Approche minimale de 81 500 km le 1986-01-24 — la seule visite d'Uranus par une sonde à ce jour. Révèle l'inclinaison axiale extrême de 98° de la planète, 10 nouvelles lunes et un champ magnétique incliné. La géométrie de Voyager 2 la fait traverser le plan des anneaux à 14,5 km/s ; l'effet de fronde doit ensuite infléchir la trajectoire d'environ 50° pour atteindre Neptune trois ans plus tard."
+    }
+  ]
 }

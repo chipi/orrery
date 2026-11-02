@@ -32,5 +32,37 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "quatrième étage PS4 du PSLV"
+  "vehicle_stage": "quatrième étage PS4 du PSLV",
+  "flight_events": [
+    {
+      "met": 8,
+      "label": "Injection translunaire",
+      "description": "Une série d'allumages de phasage au périgée fait passer Chandrayaan-1 de l'orbite terrestre au transfert lunaire — la même stratégie économe de relèvement d'orbite terrestre que l'ISRO réutilisera pour Mangalyaan."
+    },
+    {
+      "met": 9.8,
+      "label": "TCM-1",
+      "description": "Allumage de nettoyage après l'injection translunaire."
+    },
+    {
+      "met": 11.15,
+      "label": "TCM-2",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 12,
+      "label": "TCM-3",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 12.5,
+      "label": "TCM-4",
+      "description": "Affinage de la phase d'approche."
+    },
+    {
+      "met": 13.85,
+      "label": "TCM-5 — dernière avant l'insertion en orbite lunaire",
+      "description": "Visée d'approche finale."
+    }
+  ]
 }

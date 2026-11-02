@@ -32,5 +32,32 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "estágio superior Centaur (Atlas V 401)"
+  "vehicle_stage": "estágio superior Centaur (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 55,
+      "label": "TCM-2",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 94.6,
+      "label": "TCM-3",
+      "description": "Ajuste no meio do cruzeiro."
+    },
+    {
+      "met": 100,
+      "label": "TCM-4",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 134.2,
+      "label": "TCM-5",
+      "description": "Ajuste da fase de aproximação."
+    },
+    {
+      "met": 200,
+      "label": "TCM-6 — última queima antes da inserção em órbita de Marte",
+      "description": "Apura a mira de aproximação para a inserção em órbita de Marte."
+    }
+  ]
 }

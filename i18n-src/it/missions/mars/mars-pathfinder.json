@@ -39,5 +39,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "stadio superiore a propellente solido PAM-D"
+  "vehicle_stage": "stadio superiore a propellente solido PAM-D",
+  "flight_events": [
+    {
+      "met": 48.76,
+      "label": "TCM-2",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 86.92,
+      "label": "TCM-3",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 100,
+      "label": "TCM-4 — ultima prima dell'EDL",
+      "description": "Puntamento finale di avvicinamento verso la zona di EDL di Ares Vallis."
+    }
+  ]
 }

@@ -43,5 +43,32 @@
       "note": "Eyección del MTM + separación del orbitador; las operaciones científicas comienzan a principios de 2027.",
       "type": "info"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 1432,
+      "label": "Mercurio n.º 2 — asistencia gravitatoria",
+      "description": "Máximo acercamiento de 200 km el 2022-06-23. El ∆v acumulado de las asistencias gravitatorias supera los 6 km/s en este paso: un trabajo que el motor químico y los propulsores eléctricos no habrían podido hacer solos con el presupuesto de propelente."
+    },
+    {
+      "met": 1819,
+      "label": "Mercurio n.º 3 — asistencia gravitatoria",
+      "description": "Máximo acercamiento de 236 km el 2023-06-19. Punto de control a mitad del crucero: la puesta en servicio de los instrumentos continúa en los tramos de gran altitud."
+    },
+    {
+      "met": 2055,
+      "label": "Mercurio n.º 4 — asistencia gravitatoria",
+      "description": "Máximo acercamiento de 165 km el 2024-09-04. El sobrevuelo más cercano hasta la fecha de la serie de BepiColombo; la proximidad aporta un ∆v de frenado considerable."
+    },
+    {
+      "met": 2294,
+      "label": "Mercurio n.º 5 — asistencia gravitatoria",
+      "description": "Máximo acercamiento previsto para el 2024-12-01. Penúltimo sobrevuelo de Mercurio: las dos últimas asistencias reducen la órbita a la geometría necesaria para la captura."
+    },
+    {
+      "met": 2421,
+      "label": "Mercurio n.º 6 — asistencia gravitatoria",
+      "description": "Último sobrevuelo previsto para el 2025-01-08: el periodo orbital de la nave se parece lo bastante al de Mercurio para que la captura sea posible en la siguiente ventana de conjunción solar."
+    }
   ]
 }

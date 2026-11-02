@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "deuxième étage du H-IIA"
+  "vehicle_stage": "deuxième étage du H-IIA",
+  "flight_events": [
+    {
+      "met": 41,
+      "label": "TCM-2",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 71.75,
+      "label": "TCM-3",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 100,
+      "label": "TCM-4",
+      "description": "Ajustement de la phase d'approche."
+    },
+    {
+      "met": 102.5,
+      "label": "TCM-5 — dernière avant l'insertion en orbite martienne",
+      "description": "Resserre la visée d'approche pour l'insertion en orbite martienne."
+    }
+  ]
 }

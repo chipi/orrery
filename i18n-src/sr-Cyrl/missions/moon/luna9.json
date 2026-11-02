@@ -32,5 +32,12 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "горњи степен Block-L ракете Molniya-M"
+  "vehicle_stage": "горњи степен Block-L ракете Molniya-M",
+  "flight_events": [
+    {
+      "met": 1.5,
+      "label": "Корекција путање",
+      "description": "Корекција путање на средини крстарења."
+    }
+  ]
 }

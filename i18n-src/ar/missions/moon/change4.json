@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "المرحلة الثالثة من Long March 3B"
+  "vehicle_stage": "المرحلة الثالثة من Long March 3B",
+  "flight_events": [
+    {
+      "met": 1.19,
+      "label": "MCC-1",
+      "description": "أول تصحيح للمسار."
+    },
+    {
+      "met": 2.08,
+      "label": "MCC-2",
+      "description": "تحسين في منتصف الرحلة."
+    },
+    {
+      "met": 2.97,
+      "label": "MCC-3",
+      "description": "تحسين في منتصف الرحلة."
+    },
+    {
+      "met": 4.9,
+      "label": "MCC-4 — الأخيرة قبل الدخول في المدار القمري",
+      "description": "التصويب النهائي للاقتراب قبل الدخول في المدار القمري."
+    }
+  ]
 }

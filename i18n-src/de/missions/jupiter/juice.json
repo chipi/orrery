@@ -31,5 +31,17 @@
       "note": "Haupttriebwerk-Brennphase platziert JUICE in die Jupiter-Umlaufbahn für die Eis-Monde-Tour.",
       "type": "info"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 1265,
+      "label": "Erde Nr. 2 — Swing-by",
+      "description": "September 2026. Liefert Energie für den dritten Abschnitt des Flugs zum Jupiter."
+    },
+    {
+      "met": 2103,
+      "label": "Erde Nr. 3 — Swing-by",
+      "description": "Januar 2029. Letzter Swing-by vor der direkten Bahn zum Jupiter — er liefert die letzten ~5 km/s für den langen Flug bis zur Ankunft 2031."
+    }
   ]
 }

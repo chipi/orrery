@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Blok-D ऊपरी चरण"
+  "vehicle_stage": "Blok-D ऊपरी चरण",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "पहला पथ-सुधार।"
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "निकट पहुँचने के चरण में परिशोधन।"
+    }
+  ]
 }

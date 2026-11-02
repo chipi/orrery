@@ -32,5 +32,12 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Molniya-M Block-L 上面级"
+  "vehicle_stage": "Molniya-M Block-L 上面级",
+  "flight_events": [
+    {
+      "met": 1.5,
+      "label": "中途修正",
+      "description": "巡航中途的轨道微调。"
+    }
+  ]
 }

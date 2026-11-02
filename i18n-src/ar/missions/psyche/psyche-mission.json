@@ -32,5 +32,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "المرحلة الثانية من Falcon Heavy"
+  "vehicle_stage": "المرحلة الثانية من Falcon Heavy",
+  "flight_events": [
+    {
+      "met": 1500,
+      "label": "تحسين أثناء الرحلة",
+      "description": "تحسين للمسار في منتصف الرحلة. يستمر الدفع الأيوني."
+    }
+  ]
 }

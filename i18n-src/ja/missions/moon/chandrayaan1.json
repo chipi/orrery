@@ -7,10 +7,62 @@
   "first": "インド初の月ミッション；月面に広く水があることを確認",
   "description": "ISROにとって初の惑星間探査機。周回機はMoon Impact Probe（月衝突探査機）を月面に送り届けた。インドの物体が別の天体に到達した初の例であり、6か国の11機器を搭載していた。Chandrayaan-1に搭載されたNASAのMoon Mineralogy Mapper（M3）は、教科書を書き換える発見をした。水分子は、極域の影になったクレーターに閉じ込められているだけでなく、月面全体に広く存在していたのである。ミッションは2009年8月、ISROが探査機との交信を失って突然終わった。",
   "events": [
-    { "met": 0, "label": "打ち上げ", "note": "PSLV-XL (C11) からシュリーハリコータ。", "type": "nominal" },
-    { "met": 17, "label": "MOI", "note": "月軌道投入 2008-11-08。", "type": "nominal" },
-    { "met": 24, "label": "MIP 衝突", "note": "月のImpact Probeは、南極付近への硬着陸を目標とした。", "type": "info" },
-    { "met": 320, "label": "通信途絶", "note": "2009-08-29に通信途絶。運用は312日間。", "type": "warning" }
+    {
+      "met": 0,
+      "label": "打ち上げ",
+      "note": "PSLV-XL (C11) からシュリーハリコータ。",
+      "type": "nominal"
+    },
+    {
+      "met": 17,
+      "label": "MOI",
+      "note": "月軌道投入 2008-11-08。",
+      "type": "nominal"
+    },
+    {
+      "met": 24,
+      "label": "MIP 衝突",
+      "note": "月のImpact Probeは、南極付近への硬着陸を目標とした。",
+      "type": "info"
+    },
+    {
+      "met": 320,
+      "label": "通信途絶",
+      "note": "2009-08-29に通信途絶。運用は312日間。",
+      "type": "warning"
+    }
   ],
-  "vehicle_stage": "PSLV 第4段 PS4"
+  "vehicle_stage": "PSLV 第4段 PS4",
+  "flight_events": [
+    {
+      "met": 8,
+      "label": "月遷移軌道投入",
+      "description": "近地点での一連の位相調整噴射で Chandrayaan-1 は地球周回軌道から月への遷移に移った——ISRO がのちに Mangalyaan でも再利用する、エネルギーを節約する地球周回軌道の段階的上昇戦略である。"
+    },
+    {
+      "met": 9.8,
+      "label": "TCM-1",
+      "description": "月遷移軌道投入後の後始末噴射。"
+    },
+    {
+      "met": 11.15,
+      "label": "TCM-2",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 12,
+      "label": "TCM-3",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 12.5,
+      "label": "TCM-4",
+      "description": "接近フェーズの精密化。"
+    },
+    {
+      "met": 13.85,
+      "label": "TCM-5——月周回軌道投入前の最後",
+      "description": "最終接近照準。"
+    }
+  ]
 }

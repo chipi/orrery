@@ -68,5 +68,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 상단 (Atlas V 401)"
+  "vehicle_stage": "Centaur 상단 (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 1154,
+      "label": "지구 중력 보조 2차",
+      "description": "2024-12-13 (재설계된 임무 계획 기준)."
+    }
+  ]
 }

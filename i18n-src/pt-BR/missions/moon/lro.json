@@ -32,5 +32,32 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "estágio superior Centaur (Atlas V 401)"
+  "vehicle_stage": "estágio superior Centaur (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 1,
+      "label": "MCC-1",
+      "description": "Primeira correção de trajetória após a injeção translunar."
+    },
+    {
+      "met": 1.04,
+      "label": "MCC-2",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-3",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-4",
+      "description": "Refinamento da fase de aproximação."
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5 — última antes da inserção em órbita lunar",
+      "description": "Mira final de aproximação antes da inserção em órbita lunar."
+    }
+  ]
 }

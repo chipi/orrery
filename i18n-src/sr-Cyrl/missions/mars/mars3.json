@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "горњи степен Blok-D"
+  "vehicle_stage": "горњи степен Blok-D",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "Прва корекција путање."
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "Прецизирање у фази прилаза."
+    }
+  ]
 }

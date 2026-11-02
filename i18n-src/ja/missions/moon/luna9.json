@@ -32,5 +32,12 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Molniya-M の Block-L 上段"
+  "vehicle_stage": "Molniya-M の Block-L 上段",
+  "flight_events": [
+    {
+      "met": 1.5,
+      "label": "中間軌道修正",
+      "description": "巡航中間の軌道微調整。"
+    }
+  ]
 }

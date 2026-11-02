@@ -43,5 +43,32 @@
       "note": "Afstoting van de MTM + scheiding van de orbiter; wetenschappelijke operaties beginnen begin 2027.",
       "type": "info"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 1432,
+      "label": "Mercurius nr. 2 — zwaartekrachtassist",
+      "description": "Dichtste nadering 200 km op 2022-06-23. De opgetelde ∆v uit zwaartekrachtassists overschrijdt bij deze passage 6 km/s — werk dat de chemische motor en de elektrische stuwmotoren binnen het stuwstofbudget niet alleen hadden kunnen doen."
+    },
+    {
+      "met": 1819,
+      "label": "Mercurius nr. 3 — zwaartekrachtassist",
+      "description": "Dichtste nadering 236 km op 2023-06-19. Controlepunt halverwege de reis — het in bedrijf stellen van de instrumenten gaat door op de trajecten op grote hoogte."
+    },
+    {
+      "met": 2055,
+      "label": "Mercurius nr. 4 — zwaartekrachtassist",
+      "description": "Dichtste nadering 165 km op 2024-09-04. De dichtste flyby tot dan toe in de reeks van BepiColombo; de nabijheid levert een flinke remmende ∆v."
+    },
+    {
+      "met": 2294,
+      "label": "Mercurius nr. 5 — zwaartekrachtassist",
+      "description": "Dichtste nadering gepland op 2024-12-01. Voorlaatste flyby van Mercurius — de laatste twee assists verkleinen de baan tot de geometrie die voor de invangst nodig is."
+    },
+    {
+      "met": 2421,
+      "label": "Mercurius nr. 6 — zwaartekrachtassist",
+      "description": "Laatste flyby gepland op 2025-01-08 — de omlooptijd van de sonde ligt dan dicht genoeg bij die van Mercurius om bij het volgende venster van zonneconjunctie in een baan te worden ingevangen."
+    }
   ]
 }

@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Oberstufe Blok-D"
+  "vehicle_stage": "Oberstufe Blok-D",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "Erste Kurskorrektur."
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "Feinkorrektur in der Anflugphase."
+    }
+  ]
 }

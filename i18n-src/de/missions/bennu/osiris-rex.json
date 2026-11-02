@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur-Oberstufe (Atlas V 411)"
+  "vehicle_stage": "Centaur-Oberstufe (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "Anflugmanöver",
+      "description": "Erste Zündung der Anflugphase. Sie bremst OSIRIS-REx auf Bennus heliozentrische Geschwindigkeit ab, für das Rendezvous."
+    }
+  ]
 }

@@ -7,10 +7,52 @@
   "first": "Primera misión en entregar orbitador, aterrizador y róver a Marte en un solo lanzamiento",
   "description": "La primera misión china a Marte logró lo que ninguna agencia había intentado con un solo lanzamiento: inserción orbital, entrada atmosférica, aterrizaje suave y despliegue del róver. El róver Zhurong operó 358 soles en Utopia Planitia, recorriendo 1,9 km, antes de entrar en hibernación planificada en mayo de 2022; desde entonces no ha despertado (probablemente por la acumulación de polvo en los paneles solares). El orbitador sigue activo: cartografía el planeta en alta resolución y sirve de retransmisor para los equipos en superficie.",
   "events": [
-    { "met": 0, "label": "LANZAMIENTO", "note": "Long March 5 desde Wenchang — primer lanzamiento interplanetario superpesado de China.", "type": "nominal" },
-    { "met": 202, "label": "INSERCIÓN ORBITAL EN MARTE", "note": "El encendido del motor captura a la nave en órbita marciana.", "type": "nominal" },
-    { "met": 295, "label": "ATERRIZAJE DE ZHURONG", "note": "Aterrizador/róver desciende a Utopia Planitia el 2021-05-14; Zhurong baja de la rampa el 2021-05-22.", "type": "nominal" },
-    { "met": 651, "label": "HIBERNACIÓN DE ZHURONG", "note": "El róver entra en hibernación planificada en mayo de 2022; el orbitador continúa operaciones.", "type": "info" }
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Long March 5 desde Wenchang — primer lanzamiento interplanetario superpesado de China.",
+      "type": "nominal"
+    },
+    {
+      "met": 202,
+      "label": "INSERCIÓN ORBITAL EN MARTE",
+      "note": "El encendido del motor captura a la nave en órbita marciana.",
+      "type": "nominal"
+    },
+    {
+      "met": 295,
+      "label": "ATERRIZAJE DE ZHURONG",
+      "note": "Aterrizador/róver desciende a Utopia Planitia el 2021-05-14; Zhurong baja de la rampa el 2021-05-22.",
+      "type": "nominal"
+    },
+    {
+      "met": 651,
+      "label": "HIBERNACIÓN DE ZHURONG",
+      "note": "El róver entra en hibernación planificada en mayo de 2022; el orbitador continúa operaciones.",
+      "type": "info"
+    }
   ],
-  "vehicle_stage": "etapa superior YZ-1 del Long March 5"
+  "vehicle_stage": "etapa superior YZ-1 del Long March 5",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "Primer encendido de limpieza tras la inyección hacia Marte."
+    },
+    {
+      "met": 46.46,
+      "label": "TCM-2",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 100,
+      "label": "TCM-3",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 200,
+      "label": "TCM-4 — último encendido antes de la inserción en órbita de Marte",
+      "description": "Puntería final de aproximación para la inserción en órbita de Marte."
+    }
+  ]
 }

@@ -44,5 +44,42 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "estágio superior criogênico C25 do LVM3"
+  "vehicle_stage": "estágio superior criogênico C25 do LVM3",
+  "flight_events": [
+    {
+      "met": 17.8,
+      "label": "Injeção translunar",
+      "description": "Última queima no perigeu após 18 dias de elevação progressiva da órbita terrestre — a mesma transferência lunar de baixo custo que a ISRO usa desde a Chandrayaan-1."
+    },
+    {
+      "met": 23.35,
+      "label": "Redução da órbita lunar nº 1",
+      "description": "2023-08-06. Primeira queima após a captura lunar: a órbita desce para 170 × 4.313 km."
+    },
+    {
+      "met": 26.2,
+      "label": "Redução da órbita lunar nº 2",
+      "description": "2023-08-09. Segunda queima, aproximando a órbita de uma quase circular."
+    },
+    {
+      "met": 31.2,
+      "label": "Redução da órbita lunar nº 3",
+      "description": "2023-08-14. Terceira queima de redução."
+    },
+    {
+      "met": 33.1,
+      "label": "Redução da órbita lunar nº 4",
+      "description": "2023-08-16. Última queima de redução: uma órbita quase circular de 153 × 163 km."
+    },
+    {
+      "met": 35,
+      "label": "Frenagem do módulo de pouso nº 1",
+      "description": "2023-08-18. A primeira frenagem do Vikram baixa sua órbita para 113 × 157 km."
+    },
+    {
+      "met": 36.5,
+      "label": "Frenagem do módulo de pouso nº 2",
+      "description": "A segunda frenagem coloca o Vikram na órbita baixa de descida, pronto para a tentativa de pouso."
+    }
+  ]
 }

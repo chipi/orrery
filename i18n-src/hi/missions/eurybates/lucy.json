@@ -68,5 +68,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur ऊपरी चरण (Atlas V 401)"
+  "vehicle_stage": "Centaur ऊपरी चरण (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 1154,
+      "label": "पृथ्वी गुरुत्व सहायता 2",
+      "description": "2024-12-13 (संशोधित मिशन प्रोफ़ाइल के अनुसार)।"
+    }
+  ]
 }

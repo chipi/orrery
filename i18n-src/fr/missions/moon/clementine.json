@@ -38,5 +38,32 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "étage supérieur Star-37 du Titan II"
+  "vehicle_stage": "étage supérieur Star-37 du Titan II",
+  "flight_events": [
+    {
+      "met": 0.5,
+      "label": "Injection translunaire",
+      "description": "Des allumages de phasage font passer Clementine de l'orbite terrestre basse à une trajectoire translunaire."
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "description": "Premier nettoyage après l'injection translunaire."
+    },
+    {
+      "met": 7.24,
+      "label": "TCM-2",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 12.75,
+      "label": "TCM-3 — dernière avant l'insertion en orbite lunaire",
+      "description": "Visée d'approche finale avant l'insertion en orbite lunaire."
+    },
+    {
+      "met": 25.05,
+      "label": "Insertion en orbite lunaire",
+      "description": "1994-02-19. Capture sur une orbite polaire de 415 × 2 940 km. Cartographie de la surface lunaire à plusieurs longueurs d'onde pendant 71 jours — première carte multispectrale globale de la Lune à haute résolution. Les données d'une expérience radar bistatique ont ensuite été interprétées (de façon controversée) comme un indice de glace d'eau au pôle sud lunaire — la découverte qui a déclenché LRO et toutes les missions suivantes de recherche de glace."
+    }
+  ]
 }

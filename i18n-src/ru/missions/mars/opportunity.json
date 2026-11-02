@@ -51,5 +51,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "твердотопливный разгонный блок Star 48B PAM-D"
+  "vehicle_stage": "твердотопливный разгонный блок Star 48B PAM-D",
+  "flight_events": [
+    {
+      "met": 70,
+      "label": "TCM-2",
+      "description": "Уточнение в середине перелёта."
+    },
+    {
+      "met": 160,
+      "label": "TCM-3",
+      "description": "Подстройка на сближении к целевому эллипсу на плато Меридиани."
+    }
+  ]
 }

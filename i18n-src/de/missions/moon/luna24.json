@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Oberstufe Blok-D"
+  "vehicle_stage": "Oberstufe Blok-D",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "Einschuss Richtung Mond",
+      "description": "Die Zündung der Oberstufe Blok D bringt Luna 24 auf die Bahn zum Mond."
+    },
+    {
+      "met": 1.5,
+      "label": "Kurskorrektur Nr. 1",
+      "description": "Erste Feinkorrektur der Bahn."
+    },
+    {
+      "met": 4,
+      "label": "Kurskorrektur Nr. 2",
+      "description": "Feinkorrektur in der Anflugphase."
+    }
+  ]
 }

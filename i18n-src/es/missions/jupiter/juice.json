@@ -31,5 +31,17 @@
       "note": "El encendido del motor principal sitúa JUICE en órbita de Júpiter para el recorrido de las lunas heladas.",
       "type": "info"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 1265,
+      "label": "Tierra n.º 2 — asistencia gravitatoria",
+      "description": "Septiembre de 2026. Aporta energía para el tercer tramo del crucero hacia Júpiter."
+    },
+    {
+      "met": 2103,
+      "label": "Tierra n.º 3 — asistencia gravitatoria",
+      "description": "Enero de 2029. Última asistencia gravitatoria antes de la trayectoria directa a Júpiter: aporta los últimos ~5 km/s necesarios para el largo crucero hasta la llegada en 2031."
+    }
   ]
 }

@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "stadio superiore Centaur (Atlas V 411)"
+  "vehicle_stage": "stadio superiore Centaur (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "Manovra di avvicinamento",
+      "description": "Prima accensione della fase di avvicinamento. Rallenta OSIRIS-REx fino alla velocità eliocentrica di Bennu per il rendezvous."
+    }
+  ]
 }

@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "terceiro estágio sólido Star 48BV (Delta IV Heavy: núcleo + 2 propulsores)"
+  "vehicle_stage": "terceiro estágio sólido Star 48BV (Delta IV Heavy: núcleo + 2 propulsores)",
+  "flight_events": [
+    {
+      "met": 985,
+      "label": "Assistência gravitacional de Vênus nº 4",
+      "description": "2021-02-20. A quarta assistência de Vênus reduz ainda mais o periélio rumo à meta de 9,86 R☉."
+    }
+  ]
 }

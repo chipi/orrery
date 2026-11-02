@@ -21,5 +21,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "STAR 48B (tercera etapa)"
+  "vehicle_stage": "STAR 48B (tercera etapa)",
+  "flight_events": [
+    {
+      "met": 405,
+      "label": "Júpiter — asistencia gravitatoria",
+      "description": "Máximo acercamiento de 2,3 millones de km a Júpiter el 2007-02-28. El encuentro sirvió para probar los instrumentos y ganar unos 4 km/s de velocidad heliocéntrica, lo que acortó el crucero a Plutón de 14 a 9,5 años. Ciencia extra: cartografía atmosférica detallada, el vulcanismo de Ío y las primeras imágenes de la Pequeña Mancha Roja, nunca observada hasta entonces."
+    },
+    {
+      "met": 4730,
+      "label": "Arrokoth (2014 MU69) — sobrevuelo en el cinturón de Kuiper",
+      "description": "Máximo acercamiento de 3538 km a Arrokoth el 2019-01-01: el sobrevuelo más lejano intentado hasta entonces (44 au del Sol). Su estructura de binaria de contacto, dos lóbulos casi esféricos unidos por un cuello estrecho, respaldó los modelos de acreción suave en la formación de planetesimales del Sistema Solar primitivo. El objetivo lo encontró el telescopio espacial Hubble en 2014, precisamente para dar a New Horizons un destino después de Plutón."
+    }
+  ]
 }

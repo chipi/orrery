@@ -32,5 +32,12 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "bovenste trap Block-L van de Molniya-M"
+  "vehicle_stage": "bovenste trap Block-L van de Molniya-M",
+  "flight_events": [
+    {
+      "met": 1.5,
+      "label": "Koerscorrectie",
+      "description": "Baanbijstelling halverwege de reis."
+    }
+  ]
 }

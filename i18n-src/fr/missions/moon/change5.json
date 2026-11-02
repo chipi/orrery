@@ -50,5 +50,37 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "étage supérieur YZ-1 de Long March 5"
+  "vehicle_stage": "étage supérieur YZ-1 de Long March 5",
+  "flight_events": [
+    {
+      "met": 1.04,
+      "label": "MCC-1",
+      "description": "Premier nettoyage après l'injection translunaire."
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-2",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-3",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 3,
+      "label": "MCC-4",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5 — dernière avant l'insertion en orbite lunaire",
+      "description": "Visée d'approche finale."
+    },
+    {
+      "met": 19,
+      "label": "Injection transterrestre",
+      "description": "2020-12-12. L'orbiteur quitte l'orbite lunaire sur une trajectoire de retour."
+    }
+  ]
 }

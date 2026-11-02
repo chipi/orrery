@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 上面级（Atlas V 411）"
+  "vehicle_stage": "Centaur 上面级（Atlas V 411）",
+  "flight_events": [
+    {
+      "met": 1750,
+      "label": "金星引力辅助 第4次",
+      "description": "2025-02。第四次金星引力辅助继续把日面纬度提升到约17°（延伸任务目标约33°）。"
+    }
+  ]
 }

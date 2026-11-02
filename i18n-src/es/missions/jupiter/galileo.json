@@ -21,5 +21,37 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Inertial Upper Stage (IUS, etapa superior)"
+  "vehicle_stage": "Inertial Upper Stage (IUS, etapa superior)",
+  "flight_events": [
+    {
+      "met": 115,
+      "label": "Venus — asistencia gravitatoria",
+      "description": "Máximo acercamiento de 16 000 km a Venus el 1990-02-10. Aquí comienza el perfil VEEGA (asistencias gravitatorias Venus-Tierra-Tierra): Galileo toma energía orbital de Venus para alejar su afelio. La carga térmica cerca de Venus superó la especificación original; los ingenieros añadieron aislamiento en el mástil de la antena, lo que después mantuvo cerrada la antena de alta ganancia."
+    },
+    {
+      "met": 416,
+      "label": "Tierra n.º 1 — asistencia gravitatoria",
+      "description": "Máximo acercamiento de 960 km el 1990-12-08. El primero de dos sobrevuelos de la Tierra; juntos curvan la trayectoria lo suficiente para llegar a Júpiter. Galileo también envió observaciones espectrales de la Tierra como prueba de los métodos de detección de vida: analizar el propio planeta como si se viera desde lejos."
+    },
+    {
+      "met": 741,
+      "label": "Gaspra — primer encuentro con un asteroide",
+      "description": "Máximo acercamiento de 1600 km al asteroide (951) Gaspra el 1991-10-29. Las primeras imágenes cercanas de un asteroide tomadas por una nave. Su forma irregular, de unos 20 km de largo, sugería un fragmento de colisión de un cuerpo progenitor mayor, lo que confirmaba la historia de colisiones del Sistema Solar primitivo."
+    },
+    {
+      "met": 1147,
+      "label": "Tierra n.º 2 — asistencia gravitatoria",
+      "description": "Máximo acercamiento de 304 km el 1992-12-08: la última asistencia necesaria para llegar a Júpiter. Se aprovechó el encuentro para probar una vez más el despliegue de la antena de alta ganancia (nunca se abrió del todo; la misión funcionó toda su vida con la antena de baja ganancia, lo que exigió amplias soluciones de compresión de datos)."
+    },
+    {
+      "met": 1410,
+      "label": "Ida y Dáctilo — segundo encuentro con un asteroide",
+      "description": "Máximo acercamiento de 2400 km al asteroide (243) Ida el 1993-08-28. Descubrió la diminuta luna de Ida, Dáctilo (1,4 km de diámetro): el primer sistema binario de asteroides confirmado. Demostró que los asteroides pueden tener satélites estables, lo que cambió los modelos de su dinámica."
+    },
+    {
+      "met": 2094,
+      "label": "Separación de la sonda",
+      "description": "La sonda atmosférica de Galileo se separó cinco meses antes de llegar a Júpiter, el 1995-07-13, en una trayectoria balística ligeramente distinta dirigida a la atmósfera del gigante. No llevaba propulsión: su geometría de llegada quedó fijada por completo por la maniobra de separación."
+    }
+  ]
 }

@@ -32,5 +32,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "segundo estágio do Falcon Heavy"
+  "vehicle_stage": "segundo estágio do Falcon Heavy",
+  "flight_events": [
+    {
+      "met": 1500,
+      "label": "Refinamento de cruzeiro",
+      "description": "Refinamento de trajetória no meio do cruzeiro. O empuxo iônico continua."
+    }
+  ]
 }

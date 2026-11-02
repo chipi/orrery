@@ -39,5 +39,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "المرحلة العليا الصلبة PAM-D"
+  "vehicle_stage": "المرحلة العليا الصلبة PAM-D",
+  "flight_events": [
+    {
+      "met": 48.76,
+      "label": "TCM-2",
+      "description": "تحسين في منتصف الرحلة."
+    },
+    {
+      "met": 86.92,
+      "label": "TCM-3",
+      "description": "تحسين في منتصف الرحلة."
+    },
+    {
+      "met": 100,
+      "label": "TCM-4 — الأخيرة قبل EDL",
+      "description": "التصويب النهائي للاقتراب نحو موقع EDL في وادي آريس."
+    }
+  ]
 }

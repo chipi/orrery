@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "горњи степен Centaur (Atlas V 411)"
+  "vehicle_stage": "горњи степен Centaur (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "Маневар прилаза",
+      "description": "Прво паљење у фази прилаза. Успорава OSIRIS-REx на хелиоцентричну брзину Бенуа ради сусрета."
+    }
+  ]
 }

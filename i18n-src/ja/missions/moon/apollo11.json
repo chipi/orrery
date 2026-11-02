@@ -51,5 +51,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB（第3段）"
+  "vehicle_stage": "Saturn V S-IVB（第3段）",
+  "flight_events": [
+    {
+      "met": 1.4,
+      "label": "MCC-2——中間軌道修正",
+      "description": "巡航中間の軌道微調整。ミッション計画では4回の中間軌道修正を予定していたが、月遷移軌道投入が十分に正確だったため必要なのは MCC-2 だけで、残り3回は取りやめになった。"
+    },
+    {
+      "met": 5.64,
+      "label": "地球帰還軌道投入",
+      "description": "1969-07-22。月周回軌道を離れる SPS エンジン噴射。Apollo 11 を地球への自由帰還軌道に乗せた。"
+    }
+  ]
 }

@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "étage supérieur Centaur (Atlas V 411)"
+  "vehicle_stage": "étage supérieur Centaur (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "Manœuvre d'approche",
+      "description": "Premier allumage de la phase d'approche. Il ralentit OSIRIS-REx pour égaler la vitesse héliocentrique de Bennu en vue du rendez-vous."
+    }
+  ]
 }

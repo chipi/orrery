@@ -33,5 +33,27 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Centaur-Oberstufe"
+  "vehicle_stage": "Centaur-Oberstufe",
+  "flight_events": [
+    {
+      "met": 193,
+      "label": "Venus Nr. 1 — Swing-by",
+      "description": "Erster Venus-Vorbeiflug (1998-04-26, 284 km Höhe). Der Swing-by hebt das Aphel der Sonde im Rahmen der energieaufbauenden VVEJGA-Folge an."
+    },
+    {
+      "met": 617,
+      "label": "Venus Nr. 2 — Swing-by",
+      "description": "Zweiter Venus-Vorbeiflug (1999-06-24, 600 km). Zusammen mit dem ersten Swing-by bereitet er den Erd-Vorbeiflug 55 Tage später vor."
+    },
+    {
+      "met": 672,
+      "label": "Erde — Swing-by",
+      "description": "1.171 km über dem Südpazifik (1999-08-18). Die Bahn ist nun energiereich genug, um die des Jupiter zu kreuzen."
+    },
+    {
+      "met": 1172,
+      "label": "Jupiter — Swing-by",
+      "description": "9,7 Millionen km von Jupiter (2000-12-30). Der letzte Swing-by liefert die restliche Geschwindigkeit für die Ankunft am Saturn."
+    }
+  ]
 }

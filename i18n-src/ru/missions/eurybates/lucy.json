@@ -68,5 +68,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "разгонный блок Centaur (Atlas V 401)"
+  "vehicle_stage": "разгонный блок Centaur (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 1154,
+      "label": "Гравитационный манёвр у Земли, № 2",
+      "description": "2024-12-13 (по пересмотренному профилю)."
+    }
+  ]
 }

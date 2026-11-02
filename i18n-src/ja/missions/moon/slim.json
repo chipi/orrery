@@ -44,5 +44,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "H-IIA 第2段"
+  "vehicle_stage": "H-IIA 第2段",
+  "flight_events": [
+    {
+      "met": 25.34,
+      "label": "TCM-1",
+      "description": "遷移軌道投入後の最初の後始末。"
+    },
+    {
+      "met": 30,
+      "label": "TCM-2",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 45.13,
+      "label": "TCM-3",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 64.92,
+      "label": "TCM-4——月周回軌道投入前の最後",
+      "description": "月周回軌道投入前の最終接近照準。"
+    }
+  ]
 }

@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "stadio superiore Centaur (Atlas V 411)"
+  "vehicle_stage": "stadio superiore Centaur (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 1750,
+      "label": "Fionda gravitazionale di Venere n. 4",
+      "description": "2025-02. La quarta fionda di Venere continua ad alzare la latitudine eliografica verso ~17° (obiettivo della missione estesa: ~33°)."
+    }
+  ]
 }

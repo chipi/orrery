@@ -51,5 +51,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (3단)"
+  "vehicle_stage": "Saturn V S-IVB (3단)",
+  "flight_events": [
+    {
+      "met": 1.27,
+      "label": "MCC-2",
+      "description": "첫 궤도 수정."
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-3",
+      "description": "달 궤도 진입 전 접근 단계 정밀 조정."
+    },
+    {
+      "met": 10.9,
+      "label": "지구 귀환 궤도 진입",
+      "description": "1972-12-16. SPS 분사가 달 궤도 75시간과 표면 체류 3일을 마친 Apollo 17을 집으로 보낸다."
+    }
+  ]
 }

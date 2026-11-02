@@ -68,5 +68,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "estágio superior Centaur (Atlas V 401)"
+  "vehicle_stage": "estágio superior Centaur (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 1154,
+      "label": "Assistência gravitacional da Terra nº 2",
+      "description": "2024-12-13 (conforme o perfil de missão redesenhado)."
+    }
+  ]
 }

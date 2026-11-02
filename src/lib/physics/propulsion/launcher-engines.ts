@@ -225,6 +225,17 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Centaur', 'RL10A-3-3A', 2, 1, 'pair'),
     ],
   },
+  'falcon-heavy': {
+    name: 'Falcon Heavy',
+    agency: 'SpaceX',
+    confidence: 'high',
+    sources: ['https://en.wikipedia.org/wiki/Falcon_Heavy'],
+    stages: [
+      S('Side boosters ×2', 'Merlin 1D', 9, 1, 'per-booster', { boosterCount: 2 }),
+      S('Centre core', 'Merlin 1D', 9, 1, 'octaweb-9'),
+      S('Second stage', 'Merlin 1D Vacuum', 1, 1, 'single'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

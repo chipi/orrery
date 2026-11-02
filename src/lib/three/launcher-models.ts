@@ -3450,6 +3450,122 @@ function buildTitan(vehLen: number, variant: 'ii-g' | 'iiie' | 'ivb'): LauncherM
   };
 }
 
+/**
+ * Falcon Heavy — three Falcon 9 first-stage cores side by side (3.7 m, 9 Merlin 1D each):
+ * the side boosters capped by nose cones, with grid fins and landing legs (recovered on
+ * Psyche and USSF-52), the centre core without them (expended on all three of Orrery's
+ * flights) carrying the black interstage, the Merlin Vacuum second stage and the 5.2 m
+ * fairing. Proportions from the Falcon 9 / Falcon Heavy figures (70 m, 3.7 m cores, 13.2 m
+ * fairing); colours from memory of launch photos, not verified.
+ */
+function buildFalconHeavy(vehLen: number): LauncherModel {
+  const white = heroWhite(0xf2f4f6);
+  const black = heroDark(0x1a1c20);
+  const frame = heroMetal(0xbfc4ca, 0.3);
+  const eng = heroMetal(0x3a3f47, 0.5);
+  const r = vehLen * 0.0264; // 3.7 m of 70 m
+  const livMat = new THREE.MeshStandardMaterial({
+    map: livery({
+      base: '#f2f4f6',
+      wordmark: { text: 'S P A C E X', color: '#18191c', size: 0.05, y: 0.58 },
+      flag: 'usa',
+    }),
+    roughness: 0.5,
+    metalness: 0.12,
+    roughnessMap: stringerRoughness(60),
+  });
+  const coreLen = vehLen * 0.6;
+  const root = new THREE.Group();
+
+  // ── Centre core: F9 first stage + black interstage (no fins or legs — expended).
+  const booster = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, coreLen, 48), livMat);
+  core.position.y = vehLen * 0.03 + coreLen / 2;
+  booster.add(core);
+  booster.add(ringFrames(r, vehLen * 0.06, vehLen * 0.6, 6, frame));
+  booster.add(engineCluster('octaweb-9', 9, r, vehLen * 0.035, vehLen * 0.03, frame, eng));
+  const inter = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.04, 48), black);
+  inter.position.y = vehLen * 0.03 + coreLen + vehLen * 0.02;
+  booster.add(inter);
+  root.add(booster);
+
+  // ── Side boosters: F9 cores with nose cones, grid fins and landing legs.
+  const strapOnGroup = new THREE.Group();
+  for (const sx of [-1, 1]) {
+    const g = new THREE.Group();
+    const b = new THREE.Mesh(new THREE.CylinderGeometry(r, r, coreLen, 48), white);
+    b.position.y = vehLen * 0.03 + coreLen / 2;
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(r, vehLen * 0.07, 40), white);
+    nose.position.y = vehLen * 0.03 + coreLen + vehLen * 0.035;
+    g.add(b, nose, engineCluster('octaweb-9', 9, r, vehLen * 0.035, vehLen * 0.03, frame, eng));
+    for (let i = 0; i < 4; i++) {
+      const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+      const leg = new THREE.Mesh(new THREE.BoxGeometry(r * 0.12, vehLen * 0.13, r * 0.08), black);
+      leg.position.set(Math.cos(a) * r * 1.02, vehLen * 0.095, Math.sin(a) * r * 1.02);
+      leg.rotation.y = -a;
+      const fin = new THREE.Mesh(new THREE.BoxGeometry(r * 0.4, vehLen * 0.012, r * 0.12), frame);
+      fin.position.set(
+        Math.cos(a) * r * 1.12,
+        vehLen * 0.03 + coreLen - vehLen * 0.02,
+        Math.sin(a) * r * 1.12,
+      );
+      fin.rotation.y = -a;
+      g.add(leg, fin);
+    }
+    g.position.x = sx * r * 2.04;
+    strapOnGroup.add(g);
+  }
+  root.add(strapOnGroup);
+
+  // ── Second stage: single Merlin Vacuum.
+  const s2Bottom = vehLen * 0.03 + coreLen + vehLen * 0.04;
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.15, 48), white);
+  s2.position.y = s2Bottom + vehLen * 0.075;
+  upperStage.add(s2);
+  upperStage.add(engineCluster('single', 1, r, vehLen * 0.05, s2Bottom, frame, eng));
+  root.add(upperStage);
+
+  // ── 5.2 m ogive fairing (hammerhead over the 3.7 m body).
+  const fairingBaseY = s2Bottom + vehLen * 0.15;
+  const fR = r * 1.4;
+  const fH = vehLen - fairingBaseY;
+  const ogive: THREE.Vector2[] = [new THREE.Vector2(fR, 0), new THREE.Vector2(fR, fH * 0.42)];
+  for (let i = 1; i <= 10; i++) {
+    const t = i / 10;
+    ogive.push(
+      new THREE.Vector2(
+        Math.max(fR * Math.cos((t * Math.PI) / 2) ** 0.72, fR * 0.03),
+        fH * (0.42 + 0.58 * t),
+      ),
+    );
+  }
+  const mkFairing = (thetaStart: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(ogive, 28, thetaStart, Math.PI), white);
+  const fairingL = mkFairing(Math.PI / 2);
+  const fairingR = mkFairing(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: s2.position.y,
+    fairingBaseY,
+    payloadMountY: fairingBaseY + vehLen * 0.02,
+    strapOns: strapOnGroup,
+  };
+}
+
 const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => LauncherModel> = {
   'falcon-9': buildFalcon9,
   starship: buildStarship,
@@ -3502,6 +3618,7 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   'titan-ii-g': (v) => buildTitan(v, 'ii-g'),
   'titan-iiie-centaur': (v) => buildTitan(v, 'iiie'),
   'titan-ivb-centaur': (v) => buildTitan(v, 'ivb'),
+  'falcon-heavy': buildFalconHeavy,
 };
 
 /** Launcher ids with a dedicated model (the rest draw the generic body). */

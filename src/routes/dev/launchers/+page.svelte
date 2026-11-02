@@ -45,6 +45,7 @@
     'titan-ii-g': 36,
     'titan-iiie-centaur': 48.8,
     'titan-ivb-centaur': 55.9,
+    'falcon-heavy': 70,
   };
 
   let canvas: HTMLCanvasElement;

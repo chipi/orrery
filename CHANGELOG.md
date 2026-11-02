@@ -35,6 +35,13 @@ translation quality. The date replaces "in progress" when the release is cut.
   open viewer (each step on /iss took ~800 ms).
 - **Translations.** A failed language bundle no longer fires a guaranteed-404 per-file request;
   the failure is reported to analytics instead.
+- **Image credits that named Commons files which never existed.** 61 credit rows pointed at
+  invented Commons titles. 31 recommendation covers now credit their real source (the film's
+  Wikipedia poster, the book's Open Library page, the show or site). 28 mission, site, small-body
+  and star photos were matched to the real NASA, Commons or agency image by picture fingerprint
+  (dHash) and checked by eye. Four square thumbnails that showed a different, unsourced picture
+  are re-cropped from their credited image. One photo (MMX) has no source found and says so.
+  The outbound link report now shows 0 dead links (34 unreachable from the checking network).
 
 ### Added
 

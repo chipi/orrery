@@ -91,6 +91,10 @@ export interface LaunchProfile {
   stages: LaunchStage[];
   /** Strap-on boosters that fire in parallel with stage 0, then jettison. */
   boosters?: LaunchBoosters;
+  /** The published liftoff thrust (kN), for the HUD, when the integrated figure differs:
+   *  solid boosters are modelled at their burn-average thrust (so they burn out on time),
+   *  well under their peak at ignition (SLS: 39,100 kN at liftoff, 8.8 million lbf). */
+  liftoffThrustKN?: number;
   /** Payload mass carried all the way to orbit (kg). */
   payloadKg: number;
   /** Fairing mass (kg), jettisoned once out of the atmosphere. */

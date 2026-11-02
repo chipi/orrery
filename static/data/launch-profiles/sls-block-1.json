@@ -3,6 +3,7 @@
   "name": "SLS Block 1",
   "source_tier": "flagship",
   "payloadKg": 26500,
+  "liftoffThrustKN": 39144,
   "fairingKg": 8900,
   "fairingJettisonAltM": 125000,
   "refAreaM2": 75,
@@ -79,6 +80,10 @@
     {
       "l": "NASA — SLS fact sheet",
       "u": "https://www.nasa.gov/sites/default/files/atoms/files/sls_fact_sheet.pdf"
+    },
+    {
+      "l": "NASA — SLS fact sheet, Dec 2025 (322 ft, 5.75 million lb, 8.8 million lbf at liftoff)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2026/01/sls-5640-sls-fact-sheet-dec2025-508.pdf"
     }
   ]
 }

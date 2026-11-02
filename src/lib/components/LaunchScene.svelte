@@ -149,18 +149,19 @@
     [m.hud_stages(), String(profile.stages.length)],
     [
       m.hud_liftoff_thrust(),
-      // Core plus every strap-on: it read the core alone (SLS 7,440 kN of ~34,000; Shuttle
-      // 5,250 of ~30,000).
-      // Only what is lit on the pad: an air-lit core and air-lit strap-ons light later.
+      // The published figure when the profile carries one (solids are modelled at their
+      // burn average); else core plus every strap-on lit on the pad — an air-lit core and
+      // air-lit strap-ons light later. It once read the core alone (SLS 7,440 kN).
       m.unit_kn_value({
         value: (
+          profile.liftoffThrustKN ??
           (profile.stages[0].ignitionS
             ? 0
             : (profile.stages[0].thrustSlKN ?? profile.stages[0].thrustVacKN)) +
-          (profile.boosters
-            ? (profile.boosters.count - (profile.boosters.airLitCount ?? 0)) *
-              (profile.boosters.thrustSlKN ?? profile.boosters.thrustVacKN)
-            : 0)
+            (profile.boosters
+              ? (profile.boosters.count - (profile.boosters.airLitCount ?? 0)) *
+                (profile.boosters.thrustSlKN ?? profile.boosters.thrustVacKN)
+              : 0)
         ).toLocaleString(),
       }),
     ],

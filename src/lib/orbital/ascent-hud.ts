@@ -36,6 +36,22 @@ export function injectionSepT(ascentDurationS: number): number {
 }
 
 /**
+ * When the spacecraft leaves the launcher, if not at SECO (undefined = at SECO, or no
+ * injection beat). With a launcher injection it rides the stage through the burn and leaves
+ * at its end; with its own kick stage (Shuttle + IUS) it is deployed midway through the
+ * parking coast and the kick stage fires after.
+ */
+export function payloadSepTFor(
+  ascentDurationS: number,
+  injection: { kickStage?: boolean } | null | undefined,
+): number | undefined {
+  if (!injection) return undefined;
+  return injection.kickStage
+    ? ascentDurationS + INJECTION_COAST_S * 0.5
+    : injectionSepT(ascentDurationS);
+}
+
+/**
  * The status line during the post-SECO injection beat, or null when t is before
  * the beat (the caller falls back to `ascentStatus`). `ascentDurationS` is the
  * ascent's SECO/orbit time (`summary.totalDurationS`); `burnLabel` is the

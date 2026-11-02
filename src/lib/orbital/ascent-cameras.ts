@@ -275,7 +275,7 @@ export function composeShot(
   vehLen: number,
   p = 0.5,
   tune: ShotTune = NO_TUNE,
-  focus?: { x: number; y: number } | null,
+  focus?: { x: number; y: number; z?: number } | null,
 ): CameraPose {
   const dr = s.downrangeKm;
   const alt = s.altKm;
@@ -285,6 +285,8 @@ export function composeShot(
   // recedes and the shot goes empty. Falls back to the vehicle for satellites.
   const fx = focus?.x ?? dr;
   const fy = focus?.y ?? alt;
+  // Depth: a spacecraft deployed out of a bay (the Shuttle's) leaves the stack's plane.
+  const fz = focus?.z ?? 0;
   const e = ease(p);
   // Subtle handheld wobble — tiny, time-keyed, so a locked frame still breathes.
   const wob = vehLen * 0.04;
@@ -358,14 +360,15 @@ export function composeShot(
       break;
     }
     case 'staging': {
-      // Slow PUSH-IN on the booster separation (hero beat), then a slight pull.
-      // Target the body-DOWN midpoint (where the spent booster drops) so the
-      // separation reads regardless of the stack's attitude.
+      // Slow PUSH-IN on the separation (hero beat), then a slight pull. Target the
+      // separation plane, a little up the body axis from the base, so the spent stage
+      // falling away AND the stage flying on are both in frame whatever the attitude:
+      // aimed at the spent stage's drop point, the live rocket left the frame.
       const io = p < 0.6 ? ease(p / 0.6) : 1 - 0.25 * ease((p - 0.6) / 0.4);
       const fv = bodyAngleFromVerticalRad(s);
-      const tx = dr - Math.sin(fv) * vehLen * 0.55;
-      const ty = alt - Math.cos(fv) * vehLen * 0.55;
-      const d = vehLen * (2.7 - 0.8 * io);
+      const tx = dr + Math.sin(fv) * vehLen * 0.15;
+      const ty = alt + Math.cos(fv) * vehLen * 0.15;
+      const d = vehLen * (3.2 - 0.6 * io);
       out = pose(tx - d * 0.5, ty + vehLen * 0.75, d, tx, ty, 0, 38 - 3 * io);
       break;
     }
@@ -409,10 +412,10 @@ export function composeShot(
       out = pose(
         fx + Math.sin(ang) * d,
         fy + d * 0.3,
-        Math.cos(ang) * d,
+        fz + Math.cos(ang) * d,
         fx,
         fy + (focus ? 0 : vehLen * 0.15),
-        0,
+        fz,
         focus ? 42 : 40,
       );
       break;
@@ -427,10 +430,10 @@ export function composeShot(
       out = pose(
         fx + Math.sin(ang) * d,
         fy + d * 0.42,
-        Math.cos(ang) * d,
+        fz + Math.cos(ang) * d,
         fx,
         fy + (focus ? 0 : vehLen * 0.5),
-        0,
+        fz,
         40,
       );
       break;

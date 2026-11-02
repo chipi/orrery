@@ -16,7 +16,7 @@
  * `flight.totals.tli_or_tmi_dv_km_s`.
  */
 
-import type { Destination } from '$types/mission';
+import type { Destination, LaunchDeparture } from '$types/mission';
 
 /** The kind of injection — drives the HUD callout wording. */
 export type InjectionBurnType = 'TLI' | 'TMI' | 'INJECTION';
@@ -28,6 +28,9 @@ export interface InjectionBurnParams {
   dvKms: number | null;
   /** TLI (Moon) · TMI (Mars) · INJECTION (everything else). */
   burnType: InjectionBurnType;
+  /** The spacecraft is deployed first and its own attached kick stage fires (Shuttle +
+   *  IUS); otherwise the launcher's last stage fires with the spacecraft still on it. */
+  kickStage?: boolean;
 }
 
 /**
@@ -48,7 +51,8 @@ const LAUNCHER_INJECTION_STAGE: Record<string, string> = {
   'proton-m': 'Briz-M upper stage',
   'ariane-5': 'ESC-A upper stage',
   'h-iia': 'H-IIA second stage',
-  'delta-ii': 'Delta II second stage',
+  // Interplanetary Delta IIs (7925) left Earth on the Star 48B third stage, not the second.
+  'delta-ii': 'Delta II Star 48B third stage',
 };
 
 /** Burn type from the destination: Moon → TLI, Mars → TMI, else generic. */
@@ -77,16 +81,21 @@ export function injectionBurnLabel(burnType: InjectionBurnType): string {
  * @param vehicleStage  the mission's `flight.launch.vehicle_stage`, if authored
  * @param tliOrTmiDvKms  the mission's `flight.totals.tli_or_tmi_dv_km_s`, if authored
  * @param dest  the mission destination (for the burn type)
+ * @param departure  the mission's `flight.launch.departure` (absent = the launcher)
  */
 export function resolveInjectionBurn(
   launcherId: string | undefined,
   vehicleStage: string | undefined,
   tliOrTmiDvKms: number | undefined,
   dest: Destination | undefined,
+  departure?: LaunchDeparture,
 ): InjectionBurnParams | null {
   // An Earth-orbit flight never leaves Earth orbit: its launch ends at SECO, whatever its
   // launcher can do on other flights (Apollo 7's Saturn IB, Inspiration4's Falcon 9).
   if (dest === 'EARTH') return null;
+  // The launcher only reached Earth orbit; the spacecraft leaves on its own engines days or
+  // weeks later (Chandrayaan, Mangalyaan, SLIM), so the launch act ends at separation.
+  if (departure === 'spacecraft') return null;
   // Authored stage wins; else the launcher's standard injection stage.
   const stageName = vehicleStage ?? (launcherId ? LAUNCHER_INJECTION_STAGE[launcherId] : undefined);
   if (!stageName) return null; // LEO-direct or unmodelled launcher → no beat
@@ -94,5 +103,6 @@ export function resolveInjectionBurn(
     stageName,
     dvKms: tliOrTmiDvKms ?? null,
     burnType: injectionBurnType(dest),
+    ...(departure === 'kick-stage' ? { kickStage: true } : {}),
   };
 }

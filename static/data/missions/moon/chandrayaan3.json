@@ -60,7 +60,8 @@
     "launch": {
       "vehicle_stage": "LVM3 C25 cryogenic upper stage",
       "mass_at_tli_kg": 3900,
-      "source": "ISRO Chandrayaan-3 Mission Report (2023); used multi-burn Earth-orbit raising"
+      "source": "ISRO Chandrayaan-3 Mission Report (2023); used multi-burn Earth-orbit raising",
+      "departure": "spacecraft"
     },
     "cruise": {
       "tcm_count": 0,

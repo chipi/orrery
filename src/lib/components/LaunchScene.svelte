@@ -35,6 +35,7 @@
     INJECTION_BURN_S,
     INJECTION_BEAT_S,
     injectionSepT,
+    payloadSepTFor,
     buildAscentBeats,
     ascentStatus,
     countdownSeconds,
@@ -112,13 +113,13 @@
   // to the ascent before the warp. Absent when the mission has no injection stage.
   const injection = $derived(mission.injectionBurn ?? null);
   const injectionBurnStart = $derived(duration + INJECTION_COAST_S);
-  /** The burn's end — the spacecraft leaves the stage here. */
+  /** The burn's end. */
   const injectionBurnEnd = $derived(injectionSepT(duration));
   const injectionEnd = $derived(duration + INJECTION_BEAT_S);
   /** End of the launch phase — SECO, or the end of the injection beat when present. */
   const ascentEnd = $derived(injection ? injectionEnd : duration);
   /** When the spacecraft separates, if not at SECO. */
-  const payloadSepT = $derived(injection ? injectionBurnEnd : undefined);
+  const payloadSepT = $derived(payloadSepTFor(duration, injection));
   const schedule = $derived(
     buildShotSchedule({
       events: summary.events,
@@ -263,6 +264,7 @@
       launcherId: dbg?.get('launcher') || profile.id,
       boosterCount: profile.boosters?.count ?? 0,
       payloadSepT,
+      kickStage: injection?.kickStage === true,
       groundSite: (() => {
         const g = resolveLaunchGround(launchSite);
         return g ? { ...g, textureUrl: streamedUrl(`${base}${g.textureUrl}`) } : undefined;

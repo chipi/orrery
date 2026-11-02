@@ -40,6 +40,10 @@ export interface LauncherModel {
    *  mid stage and drops with it, so the third-stage burn and the injection burn (Saturn V's
    *  S-IVB, Proton's Blok D) fire from here. Undefined when the upper anchor is the last stage. */
   finalPlumeAnchor?: THREE.Object3D;
+  /** The payload rides inside a closed bay (the Shuttle's), not on top under a fairing: it
+   *  stays hidden there until it is deployed, then leaves along `deployDir` from `center`
+   *  (both in the vehicle frame) instead of springing off the nose. */
+  payloadBay?: { center: [number, number, number]; deployDir: [number, number, number] };
   /** Fairing clamshell halves (−X / +X) that split at jettison. */
   fairingL: THREE.Mesh;
   fairingR: THREE.Mesh;
@@ -87,6 +91,7 @@ function nozzle(r: number, len: number, mat: THREE.Material): THREE.Mesh {
 function bell(r: number, len: number, mat: THREE.Material, y: number): THREE.Mesh {
   const m = nozzle(r, len, mat);
   m.position.y = y;
+  m.userData.engine = true;
   return m;
 }
 
@@ -1260,7 +1265,9 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
   return {
     root,
     booster,
-    boosterPlumeAnchor: et, // liftoff plume blooms from the SRB + SSME cluster
+    // The SRBs carry their own flames (strap-ons); the core plume is the three SSMEs on the
+    // orbiter tail, not the tank.
+    boosterPlumeAnchor: ssme,
     upperStage: orbiter,
     upperPlumeAnchor: fus,
     fairingL,
@@ -1269,6 +1276,8 @@ function buildSpaceShuttle(vehLen: number): LauncherModel {
     upperStageBaseY: yA + bodyLen / 2,
     fairingBaseY: vehLen * 0.9,
     payloadMountY: vehLen * 0.5,
+    // Mid-bay on the orbiter; the doors open on the side away from the tank (+z).
+    payloadBay: { center: [0, (bayY0 + bayY1) / 2, oz], deployDir: [0, 0.3, 1] },
     strapOns: strapOnGroup,
   };
 }
@@ -2983,6 +2992,178 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   'ariane-1': buildAriane1,
 };
 
+/** Launcher ids with a dedicated model (the rest draw the generic body). */
+export const LAUNCHER_MODEL_IDS = Object.keys(BUILDERS);
+
+/** Radius of a mesh's outline at its lowest or highest point, in the root frame. */
+function endRadius(mesh: THREE.Mesh, end: 'top' | 'bottom', toRoot: THREE.Matrix4): number {
+  const pos = mesh.geometry.getAttribute('position');
+  if (!pos) return 0;
+  const m = toRoot.clone().multiply(mesh.matrixWorld);
+  const v = new THREE.Vector3();
+  let edge = end === 'top' ? -Infinity : Infinity;
+  const pts: THREE.Vector3[] = [];
+  for (let i = 0; i < pos.count; i++) {
+    v.fromBufferAttribute(pos, i).applyMatrix4(m);
+    pts.push(v.clone());
+    edge = end === 'top' ? Math.max(edge, v.y) : Math.min(edge, v.y);
+  }
+  const tol = 1e-4 + Math.abs(edge) * 1e-6;
+  return Math.max(
+    0,
+    ...pts.filter((p) => Math.abs(p.y - edge) < tol).map((p) => Math.hypot(p.x, p.z)),
+  );
+}
+
+/**
+ * A real rocket is one connected stack; a model whose parts were placed by hand can leave
+ * breaks along the body axis (a fairing floating over its stage, an escape-tower motor
+ * over its capsule). Bridge each break with a connector shaped from the real end radii of
+ * the part below and the part above: an adapter or interstage, or a thin dark truss when
+ * both ends are narrow (an escape tower's legs). The connector belongs to the lower part's
+ * group, so it leaves with that part at separation. launcher-models.test.ts guards it.
+ */
+/** Hot-staging rockets whose upper stage sits on an open lattice truss over the first stage
+ *  (its engine fires through it before separation): the joint is struts, not a shroud. */
+const LATTICE_INTERSTAGE = new Set(['proton-k', 'soyuz', 'vostok-k', 'voskhod-11a57']);
+
+/** A ring of slanted struts between y0 and y1 at radius r (a hot-staging lattice). */
+function latticeTruss(
+  r: number,
+  y0: number,
+  y1: number,
+  strutR: number,
+  mat: THREE.Material,
+): THREE.Group {
+  const g = new THREE.Group();
+  const n = 12;
+  for (let i = 0; i < n; i++) {
+    const a0 = (i / n) * Math.PI * 2;
+    const a1 = a0 + ((i % 2 ? -1 : 1) * Math.PI) / n;
+    const p0 = new THREE.Vector3(Math.cos(a0) * r, y0, Math.sin(a0) * r);
+    const p1 = new THREE.Vector3(Math.cos(a1) * r, y1, Math.sin(a1) * r);
+    const len = p0.distanceTo(p1);
+    const strut = new THREE.Mesh(new THREE.CylinderGeometry(strutR, strutR, len, 6), mat);
+    strut.position.copy(p0).add(p1).multiplyScalar(0.5);
+    strut.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), p1.clone().sub(p0).normalize());
+    g.add(strut);
+  }
+  for (const y of [y0, y1]) {
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(r, strutR * 1.4, 6, 40), mat);
+    ring.rotation.x = Math.PI / 2;
+    ring.position.y = y;
+    g.add(ring);
+  }
+  return g;
+}
+
+function closeAxisGaps(model: LauncherModel, vehLen: number, launcherId?: string): void {
+  const root = model.root;
+  root.updateMatrixWorld(true);
+  const toRoot = root.matrixWorld.clone().invert();
+  const owners: THREE.Object3D[] = [
+    model.fairingGroup,
+    model.upperStage,
+    ...(model.midStage ? [model.midStage] : []),
+    model.booster,
+  ];
+  const ownerOf = (o: THREE.Object3D): THREE.Object3D => {
+    for (let p: THREE.Object3D | null = o; p; p = p.parent) if (owners.includes(p)) return p;
+    return root;
+  };
+  // An upper stage's engines sit inside the interstage on a real stacked rocket; only the
+  // first stage's bells hang in the open. So they do not count as structure here, and the
+  // joint around them gets an interstage (or a lattice on a hot-staging rocket).
+  const isUpperEngine = (o: THREE.Object3D): boolean => {
+    let engine = false;
+    for (let p: THREE.Object3D | null = o; p; p = p.parent) if (p.userData?.engine) engine = true;
+    return engine && ownerOf(o) !== model.booster;
+  };
+  type Part = { mesh: THREE.Mesh; lo: number; hi: number };
+  const parts: Part[] = [];
+  const all: THREE.Box3[] = [];
+  root.traverse((o) => {
+    const mesh = o as THREE.Mesh;
+    if (!mesh.isMesh || !mesh.geometry) return;
+    for (let p: THREE.Object3D | null = mesh; p; p = p.parent) {
+      if (!p.visible || (model.strapOns && p === model.strapOns)) return;
+    }
+    const mat = mesh.material as THREE.Material & { opacity?: number };
+    if (mat.transparent && (mat.opacity ?? 1) < 0.05) return;
+    if (isUpperEngine(mesh)) return;
+    const box = new THREE.Box3().setFromObject(mesh).applyMatrix4(toRoot);
+    all.push(box);
+    parts.push({ mesh, lo: box.min.y, hi: box.max.y });
+  });
+  const straddles = (b: THREE.Box3): boolean =>
+    b.min.x <= 1e-6 && b.max.x >= -1e-6 && b.min.z <= 1e-6 && b.max.z >= -1e-6;
+  const coreR = Math.max(
+    0,
+    ...all.filter(straddles).map((b) => Math.min(b.max.x - b.min.x, b.max.z - b.min.z) / 2),
+  );
+  const stack = parts.filter((_, i) => {
+    const c = all[i].getCenter(new THREE.Vector3());
+    return straddles(all[i]) || Math.hypot(c.x, c.z) < coreR;
+  });
+  stack.sort((a, b) => a.lo - b.lo);
+  if (stack.length < 2) return;
+  let top = stack[0];
+  const truss = heroDark(0x2b2d33);
+  for (const next of stack.slice(1)) {
+    const gap = next.lo - top.hi;
+    if (gap > vehLen * 0.002) {
+      let rLo = endRadius(top.mesh, 'top', toRoot);
+      let rHi = endRadius(next.mesh, 'bottom', toRoot);
+      // Between two separable parts (stage → fairing, stage → stage) the joint is a
+      // full-width adapter even when both ends taper (a fairing boat-tail over a Centaur's
+      // forward cone); only inside one assembly (capsule → escape tower) is it a truss.
+      if (ownerOf(top.mesh) !== ownerOf(next.mesh)) {
+        const halfW = (b: Part): number => {
+          const bb = new THREE.Box3().setFromObject(b.mesh).applyMatrix4(toRoot);
+          return Math.min(bb.max.x - bb.min.x, bb.max.z - bb.min.z) / 2;
+        };
+        rLo = rHi = Math.max(rLo, rHi, Math.min(halfW(top), halfW(next)));
+      }
+      const narrow = Math.max(rLo, rHi) < coreR * 0.3;
+      const owner = ownerOf(top.mesh);
+      if (
+        launcherId &&
+        LATTICE_INTERSTAGE.has(launcherId) &&
+        owner === model.booster &&
+        ownerOf(next.mesh) !== owner
+      ) {
+        const lattice = latticeTruss(
+          Math.min(rLo, rHi) * 0.92,
+          top.hi,
+          next.lo,
+          coreR * 0.025,
+          truss,
+        );
+        lattice.applyMatrix4(owner.matrixWorld.clone().invert().multiply(root.matrixWorld));
+        lattice.userData.stackConnector = true;
+        owner.add(lattice);
+        if (next.hi > top.hi) top = next;
+        continue;
+      }
+      const connector = new THREE.Mesh(
+        new THREE.CylinderGeometry(
+          Math.max(rHi, narrow ? coreR * 0.06 : coreR * 0.2),
+          Math.max(rLo, narrow ? coreR * 0.06 : coreR * 0.2),
+          gap,
+          32,
+        ),
+        narrow ? truss : top.mesh.material,
+      );
+      const centre = new THREE.Vector3(0, top.hi + gap / 2, 0).applyMatrix4(root.matrixWorld);
+      owner.worldToLocal(centre);
+      connector.position.copy(centre);
+      connector.userData.stackConnector = true;
+      owner.add(connector);
+    }
+    if (next.hi > top.hi) top = next;
+  }
+}
+
 /**
  * The 3D model for a launcher id (its dedicated silhouette if one exists, else
  * the generic body). `vehLen` scales the whole rocket.
@@ -2998,5 +3179,7 @@ export function buildLauncherModel(
   // separable group and the scene jettisons them at strap-on burnout (Atlas V's
   // variable 1–5 AJ-60As; 0 = a boosterless variant). Builders that ignore the arg
   // model a fixed cluster (e.g. Soyuz's 4).
-  return build ? build(vehLen, boosterCount) : buildGeneric(vehLen, boosterCount);
+  const model = build ? build(vehLen, boosterCount) : buildGeneric(vehLen, boosterCount);
+  closeAxisGaps(model, vehLen, launcherId);
+  return model;
 }

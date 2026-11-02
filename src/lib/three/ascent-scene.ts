@@ -76,6 +76,9 @@ export interface AscentSceneOptions {
    *  injection burn it rides the stage through the burn and separates at its end, as on a
    *  real flight. The scene's clock (s.t) runs past the last physics state for this. */
   payloadSepT?: number;
+  /** The spacecraft carries its own kick stage (Shuttle + IUS): it is deployed before the
+   *  injection burn, and the burn fires from it, not from the launcher. */
+  kickStage?: boolean;
   /** Override the texture longitude offset (deg) for calibration; default −90. */
   lonTextureOffsetDeg?: number;
   /** Spin the globe about the pad-vertical so a green coastline faces downrange. */
@@ -520,9 +523,14 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const isFairedCapsule = payload.userData.fairedCapsule === true;
   // Rides in the open once the fairing (Orion: the abort tower + panels) is gone.
   const isExposedAfterFairing = payload.userData.exposedAfterFairing === true;
+  // A payload carried in a closed bay (the Shuttle): hidden there until it is deployed.
+  const bay = model.payloadBay;
+  const bayDir = bay ? new THREE.Vector3(...bay.deployDir).normalize() : new THREE.Vector3();
   payload.position.y = payloadBaseY;
   payload.visible = false;
   vehicle.add(payload);
+  // The kick stage's flame (Shuttle + IUS): at the deployed spacecraft's base, firing aft.
+  const kickPlume = new THREE.Group();
   const stowedPayload = buildStowedPayload(vehLen, upperStageRadius);
   stowedPayload.position.y = payloadBaseY;
   stowedPayload.visible = false;
@@ -561,9 +569,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   fairingBurst.position.y = fairingBaseY;
   vehicle.add(fairingBurst);
   // Small: a spacecraft leaves its stage on springs and small pyros, and the camera is close
-  // on it — at 0.34 the flash filled the screen.
-  const payloadBurst = new SeparationBurst({ scale: vehLen * 0.14 });
-  payloadBurst.position.y = payloadBaseY;
+  // on it — at 0.34 the flash filled the screen, and at 0.14 still most of it.
+  const payloadBurst = new SeparationBurst({ scale: vehLen * 0.1 });
+  if (bay) payloadBurst.position.set(...bay.center);
+  else payloadBurst.position.y = payloadBaseY;
   vehicle.add(payloadBurst);
 
   scene.add(vehicle);
@@ -571,20 +580,36 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Plume (R4): a LAYERED exhaust — hot blue-white throat, a yellow core, a
   // wide orange glow, a long diffuse trail, and Mach-diamond shock beads down
   // the axis. Built along +Y then rotated so it fires −Y; flickered per frame.
-  const plumeCone = (r: number, len: number, color: number, opacity: number): THREE.Mesh => {
+  const plumeCone = (
+    r: number,
+    len: number,
+    color: number,
+    opacity: number,
+    blending: THREE.Blending = THREE.AdditiveBlending,
+  ): THREE.Mesh => {
     const m = new THREE.Mesh(
       new THREE.ConeGeometry(r, len, 24, 1, true),
       new THREE.MeshBasicMaterial({
         color,
         transparent: true,
         opacity,
-        blending: THREE.AdditiveBlending,
+        blending,
         depthWrite: false,
       }),
     );
     // After the launch-ground patch (renderOrder 2): the flame writes no depth, so a patch
     // drawn later painted over it wherever the ground sat behind it on screen.
     m.renderOrder = 3;
+    return m;
+  };
+  // The white-hot core just under the bell, blended normally: the additive layers vanish
+  // against a sunlit desert or bright sky (Soyuz and Proton at Baikonur read flameless).
+  // Its wide end sits at the nozzle, where the outer cone's wide end is.
+  const PLUME_CORE_LEN = vehLen * 0.11;
+  const plumeCore = (r: number): THREE.Mesh => {
+    const m = plumeCone(r, PLUME_CORE_LEN, 0xfff1d0, 0.85, THREE.NormalBlending);
+    m.position.y = -(vehLen * 0.13 - PLUME_CORE_LEN / 2);
+    m.renderOrder = 4;
     return m;
   };
   // One exhaust per REAL engine nozzle (Falcon 9's 9-Merlin octaweb, Saturn V's
@@ -606,12 +631,42 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       : slot === 1
         ? model.upperPlumeAnchor
         : model.boosterPlumeAnchor;
+  // A plume anchor's nozzle exit (local y the flame starts at) and radius. A stage cylinder:
+  // its base, with the bells hanging ~vehLen × 0.04 below it. Any other anchor (the Shuttle's
+  // SSME cluster group) is measured — its own bells are inside its bounds. Measured in the
+  // anchor's frame, so it holds whatever attitude the vehicle has.
+  const anchorInfo = new Map<THREE.Object3D, { exitY: number; radius: number }>();
+  const anchorOf = (a: THREE.Object3D): { exitY: number; radius: number } => {
+    const hit = anchorInfo.get(a);
+    if (hit) return hit;
+    const cyl = (a as THREE.Mesh).geometry as THREE.CylinderGeometry | undefined;
+    let info: { exitY: number; radius: number };
+    if (cyl?.parameters?.height) {
+      info = {
+        exitY: -cyl.parameters.height / 2 - vehLen * 0.04,
+        radius: cyl.parameters.radiusTop,
+      };
+    } else {
+      a.updateWorldMatrix(true, true);
+      const inv = a.matrixWorld.clone().invert();
+      const box = new THREE.Box3();
+      a.traverse((o) => {
+        const g = (o as THREE.Mesh).geometry;
+        if (!g) return;
+        if (!g.boundingBox) g.computeBoundingBox();
+        box.union(g.boundingBox!.clone().applyMatrix4(inv.clone().multiply(o.matrixWorld)));
+      });
+      info = box.isEmpty()
+        ? { exitY: -vehLen * 0.14, radius: rBody }
+        : { exitY: box.min.y, radius: Math.max(box.max.x - box.min.x, box.max.z - box.min.z) / 2 };
+    }
+    anchorInfo.set(a, info);
+    return info;
+  };
   const stageNozzleLayout = (stageIdx: number): { offsets: [number, number][]; bellR: number } => {
     const st = coreRows?.[stageIdx];
     const offsets = clusterOffsets(st?.arrangement ?? 'single', st?.mainNozzles ?? 1);
-    const anchor = plumeAnchorFor(stageIdx) as THREE.Mesh;
-    const geo = anchor.geometry as THREE.CylinderGeometry | undefined;
-    const stageR = geo?.parameters?.radiusTop ?? rBody;
+    const stageR = anchorOf(plumeAnchorFor(stageIdx)).radius;
     const spread = Math.max(1, ...offsets.map(([x, z]) => Math.hypot(x, z)));
     const bellR = Math.min(stageR * 0.34, (stageR * 0.92) / (spread + 1));
     return { offsets, bellR };
@@ -626,6 +681,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     const nz = new THREE.Group();
     nz.add(plumeCone(refBellR * 1.35, vehLen * 0.26, 0xff8a3c, 0.15));
     nz.add(plumeCone(refBellR * 0.85, vehLen * 0.2, 0xffcf80, 0.38));
+    nz.add(plumeCore(refBellR * 0.6));
     plume.add(nz);
     nozzlePlumes.push(nz);
   }
@@ -641,14 +697,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   layoutPlumes(0);
   plume.rotation.z = Math.PI; // point down (−Y)
   booster.add(plume);
-  // Where a stage's nozzles end, in its anchor mesh's frame: the plume starts there. A fixed
-  // offset from the anchor's centre only fit cores of one height (SLS's long core hid it).
+  // The plume starts at the firing stage's nozzle exit (anchorOf). A fixed offset from the
+  // anchor's centre only fit cores of one height (SLS's long core hid it).
   const PLUME_HALF = vehLen * 0.13; // the outer cone's half-length at scale 1
-  const anchorBottom = (a: THREE.Object3D): number => {
-    const h = ((a as THREE.Mesh).geometry as THREE.CylinderGeometry | undefined)?.parameters
-      ?.height;
-    return h ? -h / 2 : -vehLen * 0.14;
-  };
 
   // One flame per strap-on booster at its base, lit while the boosters burn.
   const strapOnPlumes: THREE.Group[] = [];
@@ -660,9 +711,13 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       const base = strapOnGroup.worldToLocal(
         new THREE.Vector3((box.min.x + box.max.x) / 2, box.min.y, (box.min.z + box.max.z) / 2),
       );
+      // Sized from the booster itself: a solid's nozzle is about its own width, far wider
+      // than the core's bells (the Shuttle's SRB flames drew as threads beside the SSMEs).
+      const rS = Math.min(box.max.x - box.min.x, box.max.z - box.min.z) / 2;
       const p = new THREE.Group();
-      p.add(plumeCone(refBellR * 1.1, vehLen * 0.26, 0xff8a3c, 0.15));
-      p.add(plumeCone(refBellR * 0.7, vehLen * 0.2, 0xffcf80, 0.38));
+      p.add(plumeCone(rS * 1.0, vehLen * 0.26, 0xff8a3c, 0.18));
+      p.add(plumeCone(rS * 0.65, vehLen * 0.2, 0xffcf80, 0.42));
+      p.add(plumeCore(rS * 0.5));
       p.rotation.z = Math.PI;
       p.position.set(base.x, base.y - PLUME_HALF * 0.85, base.z);
       p.scale.setScalar(0.85);
@@ -670,6 +725,18 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       strapOnGroup.add(p);
       strapOnPlumes.push(p);
     }
+  }
+
+  if (opts.kickStage) {
+    const { exitY, radius } = anchorOf(payload);
+    kickPlume.add(plumeCone(radius * 0.5, vehLen * 0.26, 0xff8a3c, 0.15));
+    kickPlume.add(plumeCone(radius * 0.32, vehLen * 0.2, 0xffcf80, 0.38));
+    kickPlume.add(plumeCore(radius * 0.22));
+    kickPlume.rotation.z = Math.PI;
+    kickPlume.position.y = exitY - PLUME_HALF * 0.7;
+    kickPlume.scale.setScalar(0.7);
+    kickPlume.visible = false;
+    payload.add(kickPlume);
   }
 
   // ── Science-Lens force vectors (thrust / weight / drag / velocity),
@@ -751,8 +818,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const fairingT = metOf('fairing_jettison');
   const secoT = metOf('seco');
   // The spacecraft leaves the stage at SECO, or after the injection burn when it rides it.
-  const ridesInjection = opts.payloadSepT != null && (secoT == null || opts.payloadSepT > secoT);
-  const payloadSepT = ridesInjection ? opts.payloadSepT : secoT;
+  const sepAfterSeco = opts.payloadSepT != null && (secoT == null || opts.payloadSepT > secoT);
+  const payloadSepT = sepAfterSeco ? opts.payloadSepT : secoT;
+  // Riding the launcher's stage through its injection burn (not deployed before a kick stage).
+  const ridesInjection = sepAfterSeco && !opts.kickStage;
   // Intermediate serial stage (e.g. Saturn V's S-II) drops at the SECOND core
   // staging. Core stagings = the 'staging' events after the strap-on jettison
   // (the first one, only when strap-ons exist); [0] is the booster drop (== MECO),
@@ -930,10 +999,19 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
             : payloadSepT;
         setWingDeploy(payload, sepProgress(s.t, wingT, WING_DEPLOY_S));
       } else {
-        stowedPayload.visible = exposed && !separated;
-        payload.visible = separated || (payloadSepT == null && exposed);
+        stowedPayload.visible = exposed && !separated && !bay;
+        payload.visible = separated || (payloadSepT == null && exposed && !bay);
         payload.rotation.y = s.t * 0.12;
         deployPayload(payload, sepProgress(s.t, payloadSepT, PAYLOAD_DEPLOY_S));
+      }
+      if (bay) {
+        // Out through the open bay doors, not off the nose.
+        const k = pp * vehLen * 0.9;
+        payload.position.set(
+          bay.center[0] + bayDir.x * k,
+          bay.center[1] + bayDir.y * k,
+          bay.center[2] + bayDir.z * k,
+        );
       }
     }
     if (isCapsulePayload) {
@@ -959,7 +1037,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     const burning = s.stageIndex >= 0;
     // The stage re-lights for injection with the spacecraft still on it. A capsule that
     // separated at SECO (no ride-through) leaves a spent stage that must not re-light.
-    const injecting = injectionBurning && (ridesInjection || !isCapsulePayload);
+    const injecting = injectionBurning && !opts.kickStage && (ridesInjection || !isCapsulePayload);
+    // A kick stage fires from the deployed spacecraft itself.
+    kickPlume.visible = injectionBurning && opts.kickStage === true;
+    if (kickPlume.visible) kickPlume.scale.set(0.7, 0.7 * (1 + 0.09 * Math.sin(frame * 0.7)), 0.7);
     plume.visible = burning || injecting;
     if (burning) {
       const stageForPlume = Math.min(s.stageIndex, FINAL_SLOT);
@@ -977,7 +1058,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       const vac = s.stageIndex >= 1 ? 1.6 : 1;
       plume.scale.set(1, flick * vac, 1);
       // Start just below the firing stage's nozzles (bells hang ~vehLen × 0.04 under it).
-      plume.position.y = anchorBottom(firing) - vehLen * 0.04 - PLUME_HALF * flick * vac;
+      plume.position.y = anchorOf(firing).exitY - PLUME_HALF * flick * vac;
     } else if (injecting) {
       // Post-SECO injection: the kick/upper stage re-lights — a long, thin
       // vacuum plume from the last stage's bell (the payload is still attached).
@@ -992,7 +1073,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       }
       const flick = 1 + 0.09 * Math.sin(frame * 0.7);
       plume.scale.set(0.85, flick * 1.9, 0.85);
-      plume.position.y = anchorBottom(firing) - vehLen * 0.04 - PLUME_HALF * flick * 1.9;
+      plume.position.y = anchorOf(firing).exitY - PLUME_HALF * flick * 1.9;
     }
     // Strap-on flames: only while the boosters are still lit.
     const boostersLit = burning && s.boostersActive === true;
@@ -1028,6 +1109,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
         ? {
             x: s.downrangeKm - focusAxisY * Math.sin(vehicle.rotation.z),
             y: s.altKm + focusAxisY * Math.cos(vehicle.rotation.z),
+            z: separated ? payload.position.z : 0,
           }
         : null;
     const p = composeShot(

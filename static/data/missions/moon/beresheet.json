@@ -52,7 +52,8 @@
     "launch": {
       "vehicle_stage": "Falcon 9 second stage to GTO (rideshare)",
       "mass_at_tli_kg": 585,
-      "source": "SpaceIL mission archive; SpaceX manifest 2019-02-22"
+      "source": "SpaceIL mission archive; SpaceX manifest 2019-02-22",
+      "departure": "spacecraft"
     },
     "cruise": {
       "tcm_count": 2,

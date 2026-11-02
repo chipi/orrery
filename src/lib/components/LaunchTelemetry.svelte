@@ -74,12 +74,24 @@
 
   const duration = $derived(summary.totalDurationS);
 
-  // Propellant story (Tsiolkovsky) — ~88% of liftoff mass is fuel.
+  // Propellant story (Tsiolkovsky): ~90% of the liftoff mass is propellant, and the share
+  // falls as it burns while the payload's share climbs. Live, so it agrees with the tank
+  // bars (it read a fixed 92% at SECO with every tank empty), boosters included.
   const liftoffMass = $derived(summary.states[0].massKg);
   const stageProps = $derived(stages.map((s) => Math.max(1, s.wetKg - s.dryKg)));
-  const totalProp = $derived(stageProps.reduce((a, b) => a + b, 0));
-  const propPct = $derived(Math.round((totalProp / liftoffMass) * 100));
-  const payloadPct = $derived(((payloadKg / liftoffMass) * 100).toFixed(1));
+  const propOnBoardKg = $derived.by(() => {
+    if (t < 0) return stageProps.reduce((a, b) => a + b, 0) + boosterTotalProp;
+    let kg = Math.max(0, state.boosterPropRemainingKg);
+    if (state.stageIndex < 0) return kg; // after SECO: the tanks are spent
+    stageProps.forEach((p, i) => {
+      if (i > state.stageIndex) kg += p;
+      else if (i === state.stageIndex) kg += Math.max(0, state.propRemainingKg);
+    });
+    return kg;
+  });
+  const massNow = $derived(t < 0 ? liftoffMass : state.massKg);
+  const propPct = $derived(Math.round((propOnBoardKg / massNow) * 100));
+  const payloadPct = $derived(((payloadKg / massNow) * 100).toFixed(1));
   const maxQpeak = $derived(summary.maxQ.qPa / 1000);
 
   const stageFuelPct = (i: number): number => {

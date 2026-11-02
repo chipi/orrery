@@ -71,8 +71,13 @@ export type FlightEventType =
   | 'separation'
   | 'phasing';
 
+/** Who leaves Earth orbit — see mission.schema.json `flight.launch.departure`. */
+export type LaunchDeparture = 'launcher' | 'kick-stage' | 'spacecraft';
+
 export interface FlightLaunch {
   vehicle_stage?: string;
+  /** Who leaves Earth orbit; absent = 'launcher'. */
+  departure?: LaunchDeparture;
   c3_km2_s2?: number;
   declination_deg?: number;
   mass_at_tli_kg?: number;

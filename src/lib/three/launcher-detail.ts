@@ -151,6 +151,7 @@ export function detailBell(
   eng: THREE.Material,
 ): THREE.Group {
   const g = new THREE.Group();
+  g.userData.engine = true;
   const bell = new THREE.Mesh(
     new THREE.CylinderGeometry(bellR, bellR * 0.42, bellLen, 20, 1, true),
     eng,
@@ -253,6 +254,7 @@ export function engineCluster(
 ): THREE.Group {
   const g = new THREE.Group();
   g.position.y = y;
+  g.userData.engine = true; // an interstage covers it on a stacked stage (launcher-models closeAxisGaps)
   const offsets = clusterOffsets(arrangement, mainNozzles);
   // Bell radius scaled to the spread so bells don't overlap or leave the base.
   const spread = Math.max(1, ...offsets.map(([x, z]) => Math.hypot(x, z)));

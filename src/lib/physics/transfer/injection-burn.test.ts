@@ -49,7 +49,7 @@ describe('resolveInjectionBurn', () => {
 
   it('resolves from the launcher default even with no vehicle_stage (Dawn · Delta II)', () => {
     const b = resolveInjectionBurn('delta-ii', undefined, undefined, 'CERES');
-    expect(b?.stageName).toBe('Delta II second stage');
+    expect(b?.stageName).toBe('Delta II Star 48B third stage');
     expect(b?.burnType).toBe('INJECTION');
   });
 
@@ -58,6 +58,26 @@ describe('resolveInjectionBurn', () => {
     expect(
       resolveInjectionBurn('falcon-9', 'Falcon 9 second stage', undefined, 'EARTH'),
     ).toBeNull();
+  });
+
+  it('returns null when the spacecraft leaves Earth orbit on its own (PSLV + Chandrayaan-1)', () => {
+    expect(
+      resolveInjectionBurn('pslv', 'PSLV PS4 fourth stage', undefined, 'MOON', 'spacecraft'),
+    ).toBeNull();
+  });
+
+  it('flags a kick stage that fires after deployment (Shuttle + IUS · Galileo)', () => {
+    const b = resolveInjectionBurn(
+      'space-shuttle-stack',
+      'Inertial Upper Stage (IUS)',
+      undefined,
+      'JUPITER',
+      'kick-stage',
+    );
+    expect(b?.kickStage).toBe(true);
+    expect(
+      resolveInjectionBurn('atlas-v', undefined, undefined, 'MARS')?.kickStage,
+    ).toBeUndefined();
   });
 
   it('returns null when there is no launcher (no kick stage to show)', () => {

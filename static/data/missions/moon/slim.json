@@ -52,7 +52,8 @@
     "launch": {
       "vehicle_stage": "H-IIA 2nd stage",
       "mass_at_tli_kg": 730,
-      "source": "JAXA SLIM Project Brief (2023)"
+      "source": "JAXA SLIM Project Brief (2023)",
+      "departure": "spacecraft"
     },
     "cruise": {
       "tcm_count": 4,

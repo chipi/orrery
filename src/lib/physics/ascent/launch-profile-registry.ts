@@ -164,7 +164,12 @@ export function missionLauncherId(fleetRefs: FleetRef[] | undefined): string | u
  * a per-mission generic id with no dedicated mesh.
  */
 const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
+  [['falcon heavy', 'falcon-heavy'], 'falcon-heavy'],
   [['falcon 9', 'falcon-9'], 'falcon-9'],
+  // Agena and Centaur upper stages before the bare Atlas: Mariner 4 flew Atlas-Agena, not
+  // the Mercury-Atlas; Mariners 9/10 and the Pioneers flew Atlas-Centaur.
+  [['agena'], 'atlas-agena'],
+  [['atlas slv-3c', 'atlas slv-3d', 'atlas-centaur', 'atlas centaur'], 'atlas-centaur'],
   [['atlas lv-3b', 'atlas lv', 'mercury-atlas'], 'atlas-lv-3b'],
   [['atlas v', 'atlas-v'], 'atlas-v'],
   [['saturn v', 'saturn-v'], 'saturn-v'],
@@ -172,6 +177,14 @@ const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
   // Require "GLV" so "Titan IIIE" (Voyager/Viking) does NOT fall to the Gemini
   // Titan II GLV — a 2-stage LEO booster, wrong for those interplanetary flights.
   [['titan ii glv', 'titan 2 glv', 'titan-ii-glv'], 'titan-ii-glv'],
+  [['titan ii g', 'titan 23g', 'titan-ii-g'], 'titan-ii-g'],
+  [['titan iiie', 'titan 3e', 'titan-iiie'], 'titan-iiie-centaur'],
+  [['titan ivb', 'titan iv', 'titan-ivb'], 'titan-ivb-centaur'],
+  [['delta iv heavy', 'delta-iv-heavy'], 'delta-iv-heavy'],
+  [['delta ii', 'delta-ii'], 'delta-ii'],
+  [['molniya'], 'molniya-m'],
+  [['athena ii', 'athena-ii'], 'athena-ii'],
+  [['new glenn', 'new-glenn'], 'new-glenn'],
   [['proton'], 'proton-k'],
   [['vostok'], 'vostok-k'],
   [['ariane 5', 'ariane-5'], 'ariane-5'],
@@ -181,6 +194,8 @@ const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
   // ── Model-only ids (bespoke mesh, generic physics) — international fleet. ──
   [['long march 2f', 'cz-2f'], 'long-march-2f'],
   [['long march 5', 'cz-5'], 'long-march-5'],
+  // Long March 3A flies with no strap-ons (Chang'e 1); the 3B/3C family with them.
+  [['long march 3a', 'cz-3a'], 'long-march-3a'],
   [['long march 3', 'cz-3'], 'long-march-3b'],
   [['pslv'], 'pslv'],
   [['lvm3', 'gslv mk iii', 'gslv mk3', 'gslv mkiii'], 'lvm3'],
@@ -226,6 +241,8 @@ const LAUNCHER_ID_CANON: Record<string, string> = {
   'soyuz-fg': 'soyuz',
   'r-7-vostok': 'vostok-k',
   'proton-m': 'proton-k',
+  'atlas-slv-3d': 'atlas-centaur',
+  'atlas-slv-3c': 'atlas-centaur',
 };
 
 export function resolveLauncher(

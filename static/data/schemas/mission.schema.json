@@ -223,6 +223,11 @@
               "type": "string",
               "minLength": 1
             },
+            "departure": {
+              "type": "string",
+              "enum": ["launcher", "kick-stage", "spacecraft"],
+              "description": "Who leaves Earth orbit. 'launcher' (default): the launcher's last stage fires with the spacecraft on it, then it separates. 'kick-stage': the spacecraft is deployed first and its own attached kick stage fires (Shuttle + IUS). 'spacecraft': the launcher only reaches Earth orbit; the spacecraft departs on its own engines days or weeks later (PSLV + Chandrayaan, SLIM)."
+            },
             "c3_km2_s2": {
               "type": "number",
               "minimum": 0,

@@ -96,7 +96,8 @@
       }
     ],
     "launch": {
-      "vehicle_stage": "IUS + PAM-S upper stage"
+      "vehicle_stage": "IUS + PAM-S upper stage",
+      "departure": "kick-stage"
     }
   }
 }

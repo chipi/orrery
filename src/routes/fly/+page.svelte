@@ -181,7 +181,7 @@
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
-  import { T_MINUS_S, INJECTION_BEAT_S, injectionSepT } from '$lib/orbital/ascent-hud';
+  import { T_MINUS_S, INJECTION_BEAT_S, payloadSepTFor } from '$lib/orbital/ascent-hud';
   import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
   import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
   import PhasePanel from '$lib/components/PhasePanel.svelte';
@@ -317,6 +317,7 @@
           mission.flight?.launch?.vehicle_stage,
           mission.flight?.totals?.tli_or_tmi_dv_km_s,
           mission.dest,
+          mission.flight?.launch?.departure,
         )
       : null,
   );
@@ -1579,8 +1580,8 @@
   let launchSepTimes = $derived(
     launchSeparationTimes(
       launchSummaryFly,
-      launchSummaryFly && launchInjectionBurn
-        ? injectionSepT(launchSummaryFly.totalDurationS)
+      launchSummaryFly
+        ? payloadSepTFor(launchSummaryFly.totalDurationS, launchInjectionBurn)
         : undefined,
     ),
   );

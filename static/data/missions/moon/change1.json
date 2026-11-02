@@ -60,7 +60,8 @@
       }
     },
     "launch": {
-      "vehicle_stage": "Long March 3A third stage (H-18)"
+      "vehicle_stage": "Long March 3A third stage (H-18)",
+      "departure": "spacecraft"
     }
   }
 }

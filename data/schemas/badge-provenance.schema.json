@@ -26,7 +26,8 @@
       },
       "source_type": {
         "type": "string",
-        "const": "wikimedia-commons"
+        "description": "Where the badge was fetched: Wikimedia Commons, or the agency's own site when Commons has no (or no longer has a) copy (e.g. MMX, 2026-11-02).",
+        "enum": ["wikimedia-commons", "agency-site"]
       },
       "title": {
         "type": "string",

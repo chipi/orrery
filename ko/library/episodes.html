@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-hashes' 'sha256-7dQwUgLau1NFCCGjfn9FsYptB6ZtWxJin6VohGIu20I=' 'sha256-JwXS4zxC4CdFi1cGSz8cEbXjC+MmMBFq10q5YJpA3cA=' https://analytics.orrerylearn.com https://umami.tail6d0ed4.ts.net 'sha256-9txAVuJD9XovyH+e6jz0968+gO9AJ1MYVKB0Sox6VoU='">
+		<link href="/orrery/_app/immutable/entry/start.CPo3yPeu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BMRrHJpK.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/N-_9mZ6D.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.BTKqA6j-.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C4_tGZw-.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CJ6q54fc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Y7uZd2Gj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D42wy8c6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.rYC13Okc.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CfwG0UKF.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CqjwO9is2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ZuGqcIC22.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/If-D5UMW2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B7_FbPyT2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BJOQEvUF2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/mDgWCTR_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D3OBJMvU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C57SxNhU.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/oOKCk5uK2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/p_nMww2B2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C5HCpbcF2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/GNvQ1pRH2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bc8RdWza2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcIBRD-r2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ByiTmx1g2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/IRxpF1rP2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4CYD3Ch2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YCu_b1nA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/XJrAJJPr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dgaz27kZ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CJDZBAZp.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BTo9-PB4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D4qzz-s_2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DfZMWrX_2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BxClk_c92.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DN12nTsG2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DyGZnDbE2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BdjIkehP2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DMn2fKkg2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BWJDa5fa2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CJV7fDMQ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CVjMy3pQ2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CeQFUXtE2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/ClzOWxPW2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BXGr0epH2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/37.D0mbTDyJ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/gvDT_IsC2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dqi1z6Up2.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="canonical" href="https://www.orrerylearn.com/ko/library/episodes"/> <!--[--><link rel="alternate" hreflang="en-US" href="https://www.orrerylearn.com/library/episodes"/><link rel="alternate" hreflang="es" href="https://www.orrerylearn.com/es/library/episodes"/><link rel="alternate" hreflang="fr" href="https://www.orrerylearn.com/fr/library/episodes"/><link rel="alternate" hreflang="de" href="https://www.orrerylearn.com/de/library/episodes"/><link rel="alternate" hreflang="pt-BR" href="https://www.orrerylearn.com/pt-BR/library/episodes"/><link rel="alternate" hreflang="it" href="https://www.orrerylearn.com/it/library/episodes"/><link rel="alternate" hreflang="nl" href="https://www.orrerylearn.com/nl/library/episodes"/><link rel="alternate" hreflang="sr-Cyrl" href="https://www.orrerylearn.com/sr-Cyrl/library/episodes"/><link rel="alternate" hreflang="zh-CN" href="https://www.orrerylearn.com/zh-CN/library/episodes"/><link rel="alternate" hreflang="ja" href="https://www.orrerylearn.com/ja/library/episodes"/><link rel="alternate" hreflang="ko" href="https://www.orrerylearn.com/ko/library/episodes"/><link rel="alternate" hreflang="hi" href="https://www.orrerylearn.com/hi/library/episodes"/><link rel="alternate" hreflang="ar" href="https://www.orrerylearn.com/ar/library/episodes"/><link rel="alternate" hreflang="ru" href="https://www.orrerylearn.com/ru/library/episodes"/><link rel="alternate" hreflang="x-default" href="https://www.orrerylearn.com/library/episodes"/><!--]--> <meta property="og:locale" content="ko_KR"/> <!--[--><meta property="og:locale:alternate" content="en_US"/><meta property="og:locale:alternate" content="es_ES"/><meta property="og:locale:alternate" content="fr_FR"/><meta property="og:locale:alternate" content="de_DE"/><meta property="og:locale:alternate" content="pt_BR"/><meta property="og:locale:alternate" content="it_IT"/><meta property="og:locale:alternate" content="nl_NL"/><meta property="og:locale:alternate" content="sr_RS"/><meta property="og:locale:alternate" content="zh_CN"/><meta property="og:locale:alternate" content="ja_JP"/><meta property="og:locale:alternate" content="hi_IN"/><meta property="og:locale:alternate" content="ar_AR"/><meta property="og:locale:alternate" content="ru_RU"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--1uahafj--><meta name="description" content="투어를 재생하지 않고도 모든 Orrery 오디오 에피소드를 읽어보세요. 33개 에피소드 각각의 대본, 연결된 경로, 편집 출처를 제공합니다."/><!----><title>오디오 에피소드 — 라이브러리 — Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.B33ioNOn.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/37.Du3A1aCp.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><nav aria-label="주 내비게이션" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — 홈"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">홈</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">탐색<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">천체<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">비행</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">계획</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">카탈로그<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">학습<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="내비게이션 메뉴 열기" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="투어 시작" aria-pressed="false" title="투어 시작"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="언어" aria-haspopup="listbox" aria-expanded="false" title="언어 선택">KO</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="과학 렌즈 전환 (이 페이지에서는 사용할 수 없음)" aria-pressed="false" title="물리 레이어 표시 (궤도역학 오버레이) (이 페이지에서는 사용할 수 없음)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="고대비 모드 전환" aria-pressed="false" title="고대비 모드 전환">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="설정" aria-haspopup="dialog" aria-expanded="false" title="설정"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="이 화면 공유" title="이 화면 공유"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="디버그 오버레이 전환" aria-pressed="false" title="디버그 모드 — 개발자 오버레이"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main class="svelte-12qhfyh"><!--[-1--><!--[--><section class="ep-index svelte-1uahafj" aria-labelledby="ep-index-title" data-route-ready="true"><header class="ep-index-head svelte-1uahafj"><h1 id="ep-index-title" class="svelte-1uahafj">오디오 에피소드</h1> <p class="ep-index-blurb svelte-1uahafj">투어를 재생하지 않고도 모든 에피소드를 읽을 수 있습니다. 각 대본은 AudioOverlay에서 내레이션되는 것과 같은 문장으로 연결됩니다. 출처는 각 대본 뒤에 있는 주요 편집 참고 자료입니다.</p> <p class="ep-index-origin-disclosure">음성 · ElevenLabs · 스크립트 · AI 작성</p> <!--[-1--><!--]--></header> <!--[-1--><p class="ep-empty svelte-1uahafj">에피소드 불러오는 중…</p><!--]--> <footer class="ep-index-foot svelte-1uahafj"><a href="/orrery/library" class="svelte-1uahafj">← 라이브러리로 돌아가기</a> <span class="ep-foot-sep svelte-1uahafj">·</span> <a href="/orrery/credits" class="svelte-1uahafj">/credits에서 오디오 출처 확인</a></footer></section><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="사이트 바닥글"><nav class="footer-menu svelte-12qhfyh" aria-label="바닥글 링크"><a class="footer-link svelte-12qhfyh" href="/orrery/gallery">갤러리</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">크레딧</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">판권</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">라이브러리</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/science/glossary">용어집</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">소개</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="소개"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">개인정보 보호</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">라이선스</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="빌드 버전 + 배포 날짜 (GitHub의 CHANGELOG 열기): v0.9.3 · 2026-11-02" hreflang="en">v0.9.3</a></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1mpalw7 = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_1mpalw7.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.CPo3yPeu.js"),
+							import("/orrery/_app/immutable/entry/app.BTKqA6j-.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 37],
+									data: [null,null],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

@@ -9,6 +9,7 @@
   "status": "ACTIVE",
   "era": "1981-2011",
   "epoch": "shuttle-and-mir",
+  "science": ["life-in-space/eva-suits", "life-in-space/eva-physiology", "life-in-space/suit-lineage"],
   "best_known_for": "The white US spacewalk suit that has flown every American EVA from the Shuttle through the ISS",
   "credit": "Modular EVA suit with a hard upper torso, soft fabric arms and legs, and a backpack-mounted Primary Life Support System. Operates at 4.3 psi pure O₂. Originally fielded for Shuttle EVAs (1981), still in service on the ISS. SAFER mini-thruster pack added for tether-loss rescue.",
   "links": [

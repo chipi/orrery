@@ -69,7 +69,7 @@
       "category": "mission",
       "relationship": "paraphrased-from",
       "snippet": "Hope (Al-Amal) is the United Arab Emirates' first interplanetary mission, in orbit at Mars since February 2021. Paraphrased from MBRSC's mission page and the Wikipedia Emirates Mars Mission article.",
-      "source_url": "https://www.mbrsc.ae/our-projects/emirates-mars-mission/",
+      "source_url": "https://www.mbrsc.ae/",
       "source_publisher": "Mohammed bin Rashid Space Centre (MBRSC)",
       "license_short": "CC-BY-4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
@@ -84,7 +84,7 @@
       "category": "mission",
       "relationship": "paraphrased-from",
       "snippet": "Chandrayaan-3 is ISRO's third lunar exploration mission, the first to soft-land near the lunar south pole (August 2023). Paraphrased from ISRO's mission page and the Wikipedia article.",
-      "source_url": "https://www.isro.gov.in/Chandrayaan_3.html",
+      "source_url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
       "source_publisher": "Indian Space Research Organisation",
       "license_short": "PD-self",
       "license_rationale": "Government of India mission text reused under permissive editorial terms (GODL-India)."
@@ -164,7 +164,7 @@
       "category": "iss-module",
       "relationship": "paraphrased-from",
       "snippet": "ISS module descriptions paraphrased from NASA's ISS structural fact sheets, ESA Columbus material, JAXA Kibo material, and the corresponding Wikipedia articles.",
-      "source_url": "https://www.nasa.gov/international-space-station/space-station-elements/",
+      "source_url": "https://www.nasa.gov/international-space-station/international-space-station-assembly-elements/",
       "source_publisher": "NASA / ESA / JAXA / Roscosmos / CSA",
       "license_short": "PD-NASA",
       "license_rationale": "NASA ISS structural fact sheets are U.S. Government works in the public domain."

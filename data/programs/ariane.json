@@ -18,11 +18,11 @@
   "related_programs": ["esa-human", "iss", "space-shuttle"],
   "see_also": [
     { "label": "ESA in human spaceflight — Spacelab, Columbus, ATV", "href": "/programs/esa-human", "kind": "program" },
-    { "label": "Fleet — Ariane launchers", "href": "/fleet?focus=ariane-5", "kind": "fleet" }
+    { "label": "Fleet — Ariane launchers", "href": "/fleet?id=ariane-5", "kind": "fleet" }
   ],
   "links": [
     { "l": "Ariane (rocket family) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Ariane_(rocket_family)", "t": "intro" },
-    { "l": "Ariane — ESA", "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_overview", "t": "core" },
+    { "l": "Ariane — ESA", "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles", "t": "core" },
     { "l": "Ariane 501 failure report (the Lions report)", "u": "https://web.archive.org/web/20000815230639/http://www.ima.umn.edu/~arnold/disasters/ariane5rep.html", "t": "deep" }
   ]
 }

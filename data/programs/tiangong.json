@@ -109,7 +109,7 @@
     },
     {
       "label": "Fleet — Shenzhou, Tianzhou & the Long March family",
-      "href": "/fleet?focus=tiangong",
+      "href": "/fleet?id=tiangong",
       "kind": "fleet"
     },
     {
@@ -137,8 +137,8 @@
       "t": "core"
     },
     {
-      "l": "Chinese Space Station — ESA overview",
-      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/China_s_space_station",
+      "l": "ESA — ESA and Chinese astronauts train together",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Astronauts/ESA_and_Chinese_astronauts_train_together",
       "t": "deep"
     }
   ]

@@ -93,9 +93,18 @@ const ALL_FLAGSHIPS = [
   'sputnik-8k71ps',
   'soyuz-fg-fregat',
   'proton-m-briz-m',
+  'ariane-5g',
 ];
 // All of them reach a genuine orbit (#416).
 const GENUINE_ORBIT = ALL_FLAGSHIPS;
+
+/** Flights whose core stage really ends on an eccentric coast orbit before the upper stage's
+ *  departure burn, with the apogee band they must land in. */
+const ECCENTRIC_COAST: Record<string, { apoKm: [number, number] }> = {
+  // V158 (Rosetta): the EPC left the EPS and Rosetta on a 200 × 4,000 km coast orbit
+  // (spaceflightnow.com/ariane/v158/040224ascent.html); a light payload on Ariane 5G+.
+  'ariane-5g': { apoKm: [2000, 10000] },
+};
 
 describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {
   const p = load(id);
@@ -132,13 +141,20 @@ describe.each(GENUINE_ORBIT)('flagship profile %s — genuine orbit', (id) => {
     // elliptical — real Atlas V parking orbits do too — so the ecc bound is
     // loose; perigee is the load-bearing check.
     expect(o.periKm).toBeGreaterThan(130);
-    expect(o.ecc).toBeLessThan(0.05);
+    const coast = ECCENTRIC_COAST[id];
+    if (coast) {
+      expect(o.apoKm).toBeGreaterThan(coast.apoKm[0]);
+      expect(o.apoKm).toBeLessThan(coast.apoKm[1]);
+    } else {
+      expect(o.ecc).toBeLessThan(0.05);
+    }
   });
 
   it('is still up at ~circular speed after the post-SECO coast', () => {
     expect(s.finalAltKm).toBeGreaterThan(90);
     expect(s.finalSpeedKms).toBeGreaterThan(7.0);
-    expect(s.finalSpeedKms).toBeLessThan(8.5);
+    // At perigee of an eccentric coast orbit the speed is above circular.
+    expect(s.finalSpeedKms).toBeLessThan(ECCENTRIC_COAST[id] ? 9.5 : 8.5);
     const seco = s.events.find((e) => e.type === 'seco');
     expect(seco).toBeDefined();
     expect(seco!.t).toBeGreaterThan(120);

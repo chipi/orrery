@@ -50,8 +50,10 @@ const LAUNCHER_INJECTION_STAGE: Record<string, string> = {
   'falcon-9': 'Falcon 9 second stage',
   'falcon-heavy': 'Falcon Heavy second stage',
   'proton-k': 'Blok D upper stage',
-  'proton-m': 'Briz-M upper stage',
+  'proton-m-briz-m': 'Briz-M upper stage',
   'ariane-5': 'ESC-A upper stage',
+  // Rosetta's escape burn was the EPS relit after the ~2 h coast (V158).
+  'ariane-5g': 'EPS upper stage (Aestus)',
   'h-iia': 'H-IIA second stage',
   // Interplanetary Delta IIs (7925) left Earth on the Star 48B third stage, not the second.
   'delta-ii': 'Delta II Star 48B third stage',

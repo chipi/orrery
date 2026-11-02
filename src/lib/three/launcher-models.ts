@@ -4241,6 +4241,9 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
       boostHex: 'd8d2c4',
       flag: 'esa',
     }),
+  // Ariane 5G / G+ (Rosetta, SMART-1): the same EAP + EPC silhouette; its shorter EPS is not
+  // drawn separately.
+  'ariane-5g': (v) => BUILDERS['ariane-5'](v),
   'h-iia': (v) =>
     buildSideBooster(v, {
       boosterLen: 0.38,

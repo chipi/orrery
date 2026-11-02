@@ -3841,7 +3841,7 @@
   },
   "payload|ja|missions/moon/smart-1.json :: vehicle": {
     "why": "shared ride 相乗り; payload omitted naturally",
-    "tr": "11e010dc9a"
+    "tr": "a09b2a6f7b"
   },
   "payload|ja|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "Vega Secondary Payload Adapter is a proper name",
@@ -3885,7 +3885,7 @@
   },
   "payload|ko|missions/moon/smart-1.json :: vehicle": {
     "why": "variant: 공동 탑재 (shared ride)",
-    "tr": "38b30e7286"
+    "tr": "f501bdaf10"
   },
   "payload|ko|programs/space-shuttle.json :: goals.1.md": {
     "why": "variant: 화물칸 (standard payload bay)",

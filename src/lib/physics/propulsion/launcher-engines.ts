@@ -326,6 +326,17 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Briz-M', 'S5.98M', 1, 1, 'single'),
     ],
   },
+  'ariane-5g': {
+    name: 'Ariane 5G+',
+    agency: 'ESA',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Ariane_5'],
+    stages: [
+      S('Solid boosters ×2 (EAP)', 'P238', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('EPC core', 'Vulcain 1', 1, 1, 'single'),
+      S('EPS (upper)', 'Aestus', 1, 1, 'single'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

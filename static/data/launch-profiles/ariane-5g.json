@@ -1,0 +1,100 @@
+{
+  "id": "ariane-5g",
+  "name": "Ariane 5G+",
+  "source_tier": "flagship",
+  "payloadKg": 3000,
+  "fairingKg": 2025,
+  "fairingJettisonAltM": 106000,
+  "refAreaM2": 22,
+  "cd": 0.3,
+  "launchSite": {
+    "lat": 5.239,
+    "lon": -52.768,
+    "name": "ELA-3 · Kourou"
+  },
+  "pitchProgram": [
+    [
+      0,
+      90
+    ],
+    [
+      12,
+      89
+    ],
+    [
+      50,
+      70
+    ],
+    [
+      130,
+      45
+    ],
+    [
+      250,
+      25
+    ],
+    [
+      400,
+      12
+    ],
+    [
+      540,
+      4
+    ]
+  ],
+  "boosters": {
+    "name": "EAP (P238)",
+    "count": 2,
+    "wetKg": 270000,
+    "dryKg": 32000,
+    "thrustSlKN": 4490,
+    "thrustVacKN": 4920,
+    "ispSlS": 250,
+    "ispVacS": 274,
+    "chamberTempK": 3300
+  },
+  "stages": [
+    {
+      "name": "EPC H158 (Vulcain 1)",
+      "wetKg": 170500,
+      "dryKg": 12400,
+      "thrustSlKN": 885,
+      "thrustVacKN": 1140,
+      "ispSlS": 334,
+      "ispVacS": 431,
+      "engines": 1,
+      "chamberTempK": 3500
+    },
+    {
+      "name": "EPS L10 (Aestus)",
+      "wetKg": 11200,
+      "dryKg": 1200,
+      "thrustVacKN": 27,
+      "ispVacS": 324,
+      "engines": 1,
+      "chamberTempK": 3000
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Ariane 5 — Wikipedia (G/G+: P238 boosters 270 t, 130 s; EPC H158 170.5 t; EPS 11.2 t on G+, Aestus 27 kN)",
+      "u": "https://en.wikipedia.org/wiki/Ariane_5"
+    },
+    {
+      "l": "Vulcain — Wikipedia (Vulcain 1: 1,140 kN vacuum, 431 s; with H158 that burns out at ~9:50, as flown on V158 — the Ariane 5 article’s 1,015 kN / 440 s would not)",
+      "u": "https://en.wikipedia.org/wiki/Vulcain_(rocket_engine)"
+    },
+    {
+      "l": "Ariane 5G / G+ design table (third party: EPC 158.1 t propellant, Vulcain 1 885 kN at sea level, G/G+ fairing 2,025 kg)",
+      "u": "https://b14643.eu/Spacerockets_1/West_Europe/Ariane-5/Design/Ariane-5G.htm"
+    },
+    {
+      "l": "Derived: booster thrust is the average that burns the P238's 238 t in 130 s; dry masses are gross less the designation's propellant (P238, H158, L10); sea-level Isp from the SL/vacuum thrust ratio",
+      "u": "https://space.skyrocket.de/doc_lau/ariane-5.htm"
+    },
+    {
+      "l": "ESA — Rosetta launch (V158, 2 Mar 2004: boosters off 2:19, fairing 3:11, EPC cutoff 9:50; the EPS relit at 1:54:47 for the escape burn, Rosetta separated 2:13:30; 3,000 kg)",
+      "u": "https://sci.esa.int/web/rosetta/-/31486-launch-information"
+    }
+  ]
+}

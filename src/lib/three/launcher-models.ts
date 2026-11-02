@@ -3874,6 +3874,104 @@ function buildDeltaIVHeavy(vehLen: number): LauncherModel {
   };
 }
 
+/**
+ * New Glenn (Blue Moon MK1) — a single 7 m stick: GS1 (57.5 m, seven BE-4 — one centre, six
+ * around it — with landing legs and the aft strakes), GS2 (23.4 m, two BE-3U) and the 7 m
+ * ogive fairing. Proportions from Wikipedia (98 m; GS1 57.5 m; GS2 23.4 m; the fairing and
+ * interstage take the remaining 17.1 m); colours from memory (white/light-grey body, blue
+ * lettering), not verified against photos.
+ */
+function buildNewGlenn(vehLen: number): LauncherModel {
+  const body = new THREE.MeshStandardMaterial({
+    map: livery({
+      base: '#eceef0',
+      wordmark: { text: 'N E W   G L E N N', color: '#1d3f8f', size: 0.045, y: 0.55 },
+      flag: 'usa',
+    }),
+    roughness: 0.5,
+    metalness: 0.12,
+    roughnessMap: stringerRoughness(60),
+  });
+  const white = heroWhite(0xeef0f2);
+  const dark = heroDark(0x23262c);
+  const frame = heroMetal(0xbfc4ca, 0.3);
+  const eng = heroMetal(0x3a3f47, 0.5);
+  const r = vehLen * (3.5 / 98);
+  const base = vehLen * 0.025;
+  const s1Len = vehLen * (57.5 / 98) - base;
+  const root = new THREE.Group();
+
+  // ── GS1: seven BE-4, legs and the four aft strakes.
+  const booster = new THREE.Group();
+  const s1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, s1Len, 56), body);
+  s1.position.y = base + s1Len / 2;
+  booster.add(s1, ringFrames(r, base + vehLen * 0.04, base + s1Len, 6, frame));
+  booster.add(engineCluster('cross-5', 7, r, vehLen * 0.025, base, frame, eng));
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2;
+    const leg = new THREE.Mesh(new THREE.BoxGeometry(r * 0.1, vehLen * 0.07, r * 0.07), dark);
+    leg.position.set(Math.cos(a) * r * 1.02, base + vehLen * 0.035, Math.sin(a) * r * 1.02);
+    leg.rotation.y = -a;
+    booster.add(leg);
+  }
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+    const strake = new THREE.Mesh(new THREE.BoxGeometry(r * 0.32, vehLen * 0.05, r * 0.05), white);
+    strake.position.set(Math.cos(a) * r * 1.14, base + vehLen * 0.06, Math.sin(a) * r * 1.14);
+    strake.rotation.y = -a;
+    booster.add(strake);
+  }
+  root.add(booster);
+
+  // ── GS2: two BE-3U.
+  const s2Bottom = base + s1Len + vehLen * 0.005;
+  const s2Len = vehLen * (23.4 / 98);
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, s2Len, 56), white);
+  s2.position.y = s2Bottom + s2Len / 2;
+  upperStage.add(s2);
+  upperStage.add(engineCluster('pair', 2, r, vehLen * 0.03, s2Bottom, frame, eng));
+  root.add(upperStage);
+
+  // ── 7 m ogive fairing.
+  const fairingBaseY = s2Bottom + s2Len;
+  const fR = r;
+  const fH = vehLen - fairingBaseY;
+  const ogive: THREE.Vector2[] = [new THREE.Vector2(fR, 0), new THREE.Vector2(fR, fH * 0.3)];
+  for (let i = 1; i <= 10; i++) {
+    const t = i / 10;
+    ogive.push(
+      new THREE.Vector2(
+        Math.max(fR * Math.cos((t * Math.PI) / 2) ** 0.72, fR * 0.03),
+        fH * (0.3 + 0.7 * t),
+      ),
+    );
+  }
+  const mkFairing = (thetaStart: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(ogive, 32, thetaStart, Math.PI), white);
+  const fairingL = mkFairing(Math.PI / 2);
+  const fairingR = mkFairing(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: s1,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: s2.position.y,
+    fairingBaseY,
+    payloadMountY: fairingBaseY + vehLen * 0.01,
+  };
+}
+
 const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => LauncherModel> = {
   'falcon-9': buildFalcon9,
   starship: buildStarship,
@@ -3930,6 +4028,7 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   'falcon-heavy': buildFalconHeavy,
   'athena-ii': buildAthenaII,
   'delta-iv-heavy': buildDeltaIVHeavy,
+  'new-glenn': buildNewGlenn,
 };
 
 /** Launcher ids with a dedicated model (the rest draw the generic body). */

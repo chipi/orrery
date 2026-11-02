@@ -49,6 +49,7 @@
     'molniya-m': 43.4,
     'athena-ii': 28.2,
     'delta-iv-heavy': 71,
+    'new-glenn': 98,
   };
 
   let canvas: HTMLCanvasElement;

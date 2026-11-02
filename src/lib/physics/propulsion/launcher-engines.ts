@@ -279,6 +279,13 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Third stage', 'Star 48BV (solid)', 1, 1, 'single'),
     ],
   },
+  'new-glenn': {
+    name: 'New Glenn',
+    agency: 'Blue Origin',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/New_Glenn'],
+    stages: [S('GS1', 'BE-4', 7, 1, 'cross-5'), S('GS2', 'BE-3U', 2, 1, 'pair')],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

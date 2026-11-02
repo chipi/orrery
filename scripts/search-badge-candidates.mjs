@@ -87,10 +87,17 @@ async function commonsInfo(file) {
   if (!ii) return null;
   const meta = ii.extmetadata || {};
   const license = (meta.LicenseShortName?.value || meta.License?.value || '').trim();
+  // Commons serves Artist as HTML, sometimes entity-escaped; decode before stripping tags, and keep
+  // the whole name (a 50-char cut wrote "National Aeronautics and Space Administration (NAS" credits).
   const artist = (meta.Artist?.value || '')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&')
     .replace(/<[^>]+>/g, '')
-    .trim()
-    .slice(0, 50);
+    .replace(/\s+/g, ' ')
+    .trim();
   return {
     file,
     license: license || '(unknown)',

@@ -28,9 +28,11 @@ export interface InjectionBurnParams {
   dvKms: number | null;
   /** TLI (Moon) · TMI (Mars) · INJECTION (everything else). */
   burnType: InjectionBurnType;
-  /** The spacecraft is deployed first and its own attached kick stage fires (Shuttle +
-   *  IUS); otherwise the launcher's last stage fires with the spacecraft still on it. */
+  /** A kick stage carrying the spacecraft makes (part of) the burn: alone, after the
+   *  spacecraft is deployed (Shuttle + IUS), or after the launcher's last stage has fired and
+   *  separated (`stageFiresFirst`: Delta II's Star 48B). Absent = the last stage alone. */
   kickStage?: boolean;
+  stageFiresFirst?: boolean;
 }
 
 /**
@@ -104,5 +106,6 @@ export function resolveInjectionBurn(
     dvKms: tliOrTmiDvKms ?? null,
     burnType: injectionBurnType(dest),
     ...(departure === 'kick-stage' ? { kickStage: true } : {}),
+    ...(departure === 'stage-then-kick' ? { kickStage: true, stageFiresFirst: true } : {}),
   };
 }

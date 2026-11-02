@@ -2,6 +2,8 @@ import { describe, it, expect } from 'vitest';
 import {
   IGNITION_T_S,
   INJECTION_COAST_S,
+  INJECTION_BURN_S,
+  payloadSepTFor,
   buildAscentBeats,
   ascentStatus,
   countdownSeconds,
@@ -141,5 +143,23 @@ describe('padState', () => {
     expect(lit.stageIndex).toBe(0);
     expect(lit.thrustN).toBe(summary.states[0].thrustN);
     expect(lit.thrustN).toBeGreaterThan(0);
+  });
+});
+
+describe('payloadSepTFor', () => {
+  const d = 500;
+  it('is undefined with no injection beat (the spacecraft leaves at SECO)', () => {
+    expect(payloadSepTFor(d, null)).toBeUndefined();
+  });
+  it('rides the stage through the whole burn by default', () => {
+    expect(payloadSepTFor(d, {})).toBe(d + INJECTION_COAST_S + INJECTION_BURN_S);
+  });
+  it('deploys mid-coast before a kick-stage-only burn (Shuttle + IUS)', () => {
+    expect(payloadSepTFor(d, { kickStage: true })).toBe(d + INJECTION_COAST_S / 2);
+  });
+  it('parts halfway through the burn when the stage fires first (Delta II + Star 48B)', () => {
+    expect(payloadSepTFor(d, { kickStage: true, stageFiresFirst: true })).toBe(
+      d + INJECTION_COAST_S + INJECTION_BURN_S / 2,
+    );
   });
 });

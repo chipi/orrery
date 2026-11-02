@@ -200,6 +200,9 @@
           0
         ]
       ]
+    },
+    "launch": {
+      "departure": "stage-then-kick"
     }
   }
 }

@@ -48,7 +48,8 @@
       "vehicle_stage": "PAM-D solid upper stage",
       "c3_km2_s2": 8.5,
       "mass_at_tli_kg": 890,
-      "source": "NASA Mars Pathfinder Press Kit (1996-12); JPL Mission Plan"
+      "source": "NASA Mars Pathfinder Press Kit (1996-12); JPL Mission Plan",
+      "departure": "stage-then-kick"
     },
     "cruise": {
       "tcm_count": 4,

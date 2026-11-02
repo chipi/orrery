@@ -90,3 +90,11 @@ describe('resolveInjectionBurn', () => {
     expect(resolveInjectionBurn('vostok-k', undefined, undefined, 'EARTH')).toBeNull();
   });
 });
+
+describe('stage-then-kick departure', () => {
+  it('flags the stage firing first, then the kick stage (Delta II + Star 48B)', () => {
+    const b = resolveInjectionBurn('delta-ii', undefined, undefined, 'MARS', 'stage-then-kick');
+    expect(b?.kickStage).toBe(true);
+    expect(b?.stageFiresFirst).toBe(true);
+  });
+});

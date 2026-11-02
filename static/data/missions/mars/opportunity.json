@@ -48,7 +48,8 @@
       "vehicle_stage": "Star 48B PAM-D solid upper stage",
       "c3_km2_s2": 9.79,
       "mass_at_tli_kg": 1063,
-      "source": "NASA MER Press Kit (2003-06); JPL MER Mission Plan"
+      "source": "NASA MER Press Kit (2003-06); JPL MER Mission Plan",
+      "departure": "stage-then-kick"
     },
     "cruise": {
       "tcm_count": 4,

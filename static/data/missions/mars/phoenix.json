@@ -48,7 +48,8 @@
       "vehicle_stage": "Star 48B PAM-D solid upper stage",
       "c3_km2_s2": 10.6,
       "mass_at_tli_kg": 670,
-      "source": "NASA Phoenix Press Kit (2007-07); JPL Phoenix Mission Plan"
+      "source": "NASA Phoenix Press Kit (2007-07); JPL Phoenix Mission Plan",
+      "departure": "stage-then-kick"
     },
     "cruise": {
       "tcm_count": 6,

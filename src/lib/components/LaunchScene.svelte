@@ -271,6 +271,7 @@
       boosterAirLitCount: profile.boosters?.airLitCount ?? 0,
       payloadSepT,
       kickStage: injection?.kickStage === true,
+      injectionBurnEndT: injection ? injectionBurnEnd : undefined,
       groundSite: (() => {
         const g = resolveLaunchGround(launchSite);
         return g ? { ...g, textureUrl: streamedUrl(`${base}${g.textureUrl}`) } : undefined;

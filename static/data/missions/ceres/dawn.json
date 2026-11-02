@@ -717,7 +717,8 @@
       ]
     },
     "launch": {
-      "vehicle_stage": "Delta II Star-48B (third stage)"
+      "vehicle_stage": "Delta II Star-48B (third stage)",
+      "departure": "stage-then-kick"
     }
   }
 }

@@ -79,9 +79,12 @@ export interface AscentSceneOptions {
    *  injection burn it rides the stage through the burn and separates at its end, as on a
    *  real flight. The scene's clock (s.t) runs past the last physics state for this. */
   payloadSepT?: number;
-  /** The spacecraft carries its own kick stage (Shuttle + IUS): it is deployed before the
-   *  injection burn, and the burn fires from it, not from the launcher. */
+  /** A kick stage carrying the spacecraft fires once the spacecraft has left the launcher
+   *  (payloadSepT): for the whole burn when it is deployed first (Shuttle + IUS), for the
+   *  second part when the last stage fires first (Delta II + Star 48B). */
   kickStage?: boolean;
+  /** When the injection burn ends: the spent kick motor drops away from the spacecraft. */
+  injectionBurnEndT?: number;
   /** Override the texture longitude offset (deg) for calibration; default −90. */
   lonTextureOffsetDeg?: number;
   /** Spin the globe about the pad-vertical so a green coastline faces downrange. */
@@ -545,6 +548,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   vehicle.add(payload);
   // The kick stage's flame (Shuttle + IUS): at the deployed spacecraft's base, firing aft.
   const kickPlume = new THREE.Group();
+  const kickMotorParts: THREE.Object3D[] = [];
   const stowedPayload = buildStowedPayload(vehLen, upperStageRadius);
   stowedPayload.position.y = payloadBaseY;
   stowedPayload.visible = false;
@@ -742,12 +746,33 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   }
 
   if (opts.kickStage) {
+    // The kick motor itself, under the spacecraft (a Star 48B on a Delta II, the IUS on the
+    // Shuttle flights, Lunar Prospector's Star 37): body + nozzle, the flame from its exit.
     const { exitY, radius } = anchorOf(payload);
-    kickPlume.add(plumeCone(radius * 0.5, vehLen * 0.26, 0xff8a3c, 0.15));
-    kickPlume.add(plumeCone(radius * 0.32, vehLen * 0.2, 0xffcf80, 0.38));
-    kickPlume.add(plumeCore(radius * 0.22));
+    const rm = Math.min(radius * 0.35, vehLen * 0.035);
+    const motorMat = new THREE.MeshStandardMaterial({
+      color: 0x2a2c31,
+      roughness: 0.6,
+      metalness: 0.3,
+    });
+    const motor = new THREE.Mesh(new THREE.CylinderGeometry(rm, rm * 0.9, rm * 1.8, 24), motorMat);
+    motor.position.y = exitY - rm * 0.9;
+    const kickNozzle = new THREE.Mesh(
+      new THREE.CylinderGeometry(rm * 0.3, rm * 0.62, rm * 0.9, 20, 1, true),
+      motorMat,
+    );
+    kickNozzle.position.y = exitY - rm * 1.8 - rm * 0.45;
+    payload.add(motor, kickNozzle);
+    for (const part of [motor, kickNozzle]) {
+      part.userData.baseY = part.position.y;
+      kickMotorParts.push(part);
+    }
+    const nozzleExitY = exitY - rm * 2.7;
+    kickPlume.add(plumeCone(rm * 1.1, vehLen * 0.26, 0xff8a3c, 0.15));
+    kickPlume.add(plumeCone(rm * 0.75, vehLen * 0.2, 0xffcf80, 0.38));
+    kickPlume.add(plumeCore(rm * 0.5));
     kickPlume.rotation.z = Math.PI;
-    kickPlume.position.y = exitY - PLUME_HALF * 0.7;
+    kickPlume.position.y = nozzleExitY - PLUME_HALF * 0.7;
     kickPlume.scale.setScalar(0.7);
     kickPlume.visible = false;
     payload.add(kickPlume);
@@ -1065,9 +1090,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     const burning = s.stageIndex >= 0 && s.coreLit !== false;
     // The stage re-lights for injection with the spacecraft still on it. A capsule that
     // separated at SECO (no ride-through) leaves a spent stage that must not re-light.
-    const injecting = injectionBurning && !opts.kickStage && (ridesInjection || !isCapsulePayload);
-    // A kick stage fires from the deployed spacecraft itself.
-    kickPlume.visible = injectionBurning && opts.kickStage === true;
+    // The stage fires for injection only while the spacecraft is still on it; a kick stage
+    // fires from the spacecraft once it has left (the whole burn, or its second part).
+    const attachedNow = sepAfterSeco && payloadSepT != null && s.t < payloadSepT;
+    const injecting = injectionBurning && attachedNow;
+    kickPlume.visible = injectionBurning && opts.kickStage === true && !attachedNow;
+    // After the burn the spent kick motor falls away from the spacecraft.
+    const kp = sepProgress(s.t, opts.injectionBurnEndT, PAYLOAD_SEP_HOLD_S);
+    for (const part of kickMotorParts) {
+      part.visible = kp < 1;
+      part.position.y = (part.userData.baseY as number) - kp * vehLen * 0.9;
+    }
     if (kickPlume.visible) kickPlume.scale.set(0.7, 0.7 * (1 + 0.09 * Math.sin(frame * 0.7)), 0.7);
     plume.visible = burning || injecting;
     if (burning) {

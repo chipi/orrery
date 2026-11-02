@@ -147,7 +147,8 @@
       ]
     },
     "launch": {
-      "vehicle_stage": "Centaur + TE-364-4 (Star-37E)"
+      "vehicle_stage": "Centaur + TE-364-4 (Star-37E)",
+      "departure": "stage-then-kick"
     }
   }
 }

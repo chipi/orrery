@@ -91,7 +91,7 @@ tables); keep it.
 | --- | --- | --- |
 | does a prerendered page link to a page we don't build | `check-internal-links.mjs` | every `npm run build` |
 | does data / an overlay / a message link to a missing route, a query parameter the route ignores, an id that doesn't exist, or a missing / pruned file (all 14 locales) | `check-data-links.mjs` | `validate-data` |
-| are the outbound links readers can click still alive (pages, image-credit sources, references, components) | `check-external-links.mjs` → `docs/provenance/external-link-check.md` | by hand; cached 7 days in `.cache/`, Wikipedia/Commons via their API |
+| are the outbound links readers can click still alive (pages, image-credit sources, references, components) | `check-external-links.mjs` → `docs/provenance/external-link-check.md` | weekly `link-check.yml` (`--strict`, red on a dead link, report as artifact; no prerendered HTML) and by hand; cached 7 days in `.cache/`, Wikipedia/Commons via their API |
 | are the curated LEARN links alive (`link-provenance.json`) | `check-learn-links.ts` | `npm run fetch` |
 | what did prod answer 404 to, who asked, and does it still 404 | `prod-404-report.mjs [--days=7]` | by hand, on the tailnet (VictoriaLogs) |
 | a dead outbound link: what could replace it (Wayback snapshot, wiki search hits) | `link-fix-candidates.mjs` → `.cache/link-fix-candidates.json` | by hand, after the outbound check |

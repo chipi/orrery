@@ -1103,12 +1103,12 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       plume.scale.set(0.85, flick * 1.9, 0.85);
       plume.position.y = anchorOf(firing).exitY - PLUME_HALF * flick * 1.9;
     }
-    // Strap-on flames: only while the boosters are still lit.
-    // Each group flames only while it burns: the ground-lit ones first, then the air-lit.
+    // Strap-on flames: each group only while it burns (ground-lit, air-lit, or both at once).
     const boostersLit = s.stageIndex === 0 && s.boostersActive === true;
-    const airGroupLit = s.airLitBurning === true;
     strapOnPlumes.forEach((p, i) => {
-      p.visible = boostersLit && (airLitN === 0 || isAirLit(i) === airGroupLit);
+      p.visible =
+        boostersLit &&
+        (airLitN === 0 || (isAirLit(i) ? s.airLitBurning === true : s.groundLitBurning === true));
       if (p.visible) p.scale.set(0.85, 0.85 * (1 + 0.08 * Math.sin(frame * 0.9)), 0.85);
     });
 

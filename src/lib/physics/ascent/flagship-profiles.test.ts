@@ -74,6 +74,11 @@ const ALL_FLAGSHIPS = [
   'long-march-3a',
   'long-march-3b',
   'long-march-5',
+  'pslv',
+  'lvm3',
+  'h3',
+  'm-v',
+  'ariane-1',
 ];
 // All of them reach a genuine orbit (#416).
 const GENUINE_ORBIT = ALL_FLAGSHIPS;

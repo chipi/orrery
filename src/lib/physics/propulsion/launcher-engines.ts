@@ -323,6 +323,7 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('PSOM-XL strap-ons ×6', 'PSOM-XL (solid)', 6, 1, 'per-booster', { boosterCount: 6 }),
       S('PS1 (Stage 1)', 'S139 (solid)', 1, 1, 'single'),
       S('PS2 (Stage 2)', 'Vikas', 1, 1, 'single'),
+      S('PS3 (Stage 3)', 'HPS3 (solid)', 1, 1, 'single'),
       S('PS4 (Stage 4)', 'L-2-5', 2, 1, 'pair'),
     ],
   },

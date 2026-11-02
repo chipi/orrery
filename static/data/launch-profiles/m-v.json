@@ -1,0 +1,70 @@
+{
+  "id": "m-v",
+  "name": "M-V",
+  "source_tier": "flagship",
+  "payloadKg": 510,
+  "fairingKg": 800,
+  "fairingJettisonAltM": 110000,
+  "refAreaM2": 4.9,
+  "cd": 0.3,
+  "launchSite": { "lat": 31.2523, "lon": 131.0785, "name": "M-V launcher · Uchinoura" },
+  "pitchProgram": [[0, 90], [8, 86], [30, 72], [70, 52], [130, 32], [220, 14], [330, 0]],
+  "stages": [
+    {
+      "name": "M-14",
+      "wetKg": 83000,
+      "dryKg": 11000,
+      "thrustSlKN": 3300,
+      "thrustVacKN": 3760,
+      "ispSlS": 243,
+      "ispVacS": 274,
+      "engines": 1,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "M-25",
+      "wetKg": 37000,
+      "dryKg": 4000,
+      "thrustVacKN": 1520,
+      "ispVacS": 292,
+      "engines": 1,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "M-34b",
+      "wetKg": 12000,
+      "dryKg": 1000,
+      "thrustVacKN": 337,
+      "ispVacS": 301,
+      "engines": 1,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "KM-V2",
+      "wetKg": 2700,
+      "dryKg": 200,
+      "thrustVacKN": 82.8,
+      "ispVacS": 301.7,
+      "engines": 1,
+      "chamberTempK": 3300
+    }
+  ],
+  "provenance": [
+    {
+      "l": "JAXA/ISAS — M-V brochure (30.8 m, ~140 t; motor masses, propellant, Isp, average vacuum thrust and burn times; fire-in-the-hole 1/2 separation)",
+      "u": "https://www.jaxa.jp/projects/pr/brochure/pdf/01/rocket02.pdf"
+    },
+    {
+      "l": "M-V rocket — Japanese Wikipedia, citing JAXA SP-07-023 (M-V-5 flew M-14 / M-25 / M-34b / KM-V2; KM-V2 82.8 kN, 89.8 s, 301.7 s; Hayabusa 510 kg into a heliocentric orbit)",
+      "u": "https://ja.wikipedia.org/wiki/M-V%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88"
+    },
+    {
+      "l": "Hayabusa — Wikipedia (launch 2003-05-09 04:29:25 UTC, Uchinoura)",
+      "u": "https://en.wikipedia.org/wiki/Hayabusa"
+    },
+    {
+      "l": "Dry masses derived from motor mass less propellant; fairing mass estimated (not published)",
+      "u": "https://en.wikipedia.org/wiki/M-V"
+    }
+  ]
+}

@@ -29,56 +29,6 @@ const ATLAS_V_AJ60A: Omit<LaunchBoosters, 'count'> = {
 };
 
 /**
- * Strap-on packs for "model-only" launchers — vehicles that have a bespoke 3D
- * silhouette but no hand-authored flagship JSON, so they otherwise fall through
- * to the boosterless generic profile. Without a `boosters` block the ascent
- * physics never emits a strap-on staging event, so the (now-separable) strap-ons
- * jettison at CORE staging instead of the correct earlier time. Attaching a
- * booster pack fixes the timing; masses/thrust/Isp are approximate published
- * per-booster values (PRD-032: honest, not per-flight-exact). The `count` matches
- * what each 3D builder draws (launcher-models.ts) so telemetry, physics, and mesh
- * agree. Same mechanism as the Atlas V AJ-60A injection above.
- */
-const MODEL_ONLY_BOOSTERS: Record<string, LaunchBoosters> = {
-  // 6 PSOM-XL solids (PSLV-XL) — ground-lit; the air-lit pair is modelled together.
-  pslv: {
-    name: 'PSOM-XL',
-    count: 6,
-    wetKg: 15200,
-    dryKg: 2400,
-    thrustSlKN: 719,
-    thrustVacKN: 799,
-    ispSlS: 262,
-    ispVacS: 291,
-    chamberTempK: 3000,
-  },
-  // 2 S200 solids — among the largest solids flown; short, very high thrust.
-  lvm3: {
-    name: 'S200',
-    count: 2,
-    wetKg: 236000,
-    dryKg: 31000,
-    thrustSlKN: 5150,
-    thrustVacKN: 5300,
-    ispSlS: 227,
-    ispVacS: 274,
-    chamberTempK: 3300,
-  },
-  // 2 SRB-3 solids (H3-22 config, matching the mesh's default).
-  h3: {
-    name: 'SRB-3',
-    count: 2,
-    wetKg: 75000,
-    dryKg: 9000,
-    thrustSlKN: 2160,
-    thrustVacKN: 2300,
-    ispSlS: 274,
-    ispVacS: 284,
-    chamberTempK: 3200,
-  },
-};
-
-/**
  * Atlas V solid-booster count from a variant name — the MIDDLE digit of the
  * 3-digit config code ("Atlas V 551" → 5, "Atlas V 401" → 0, "Atlas V 541" → 4,
  * "Atlas V 501 (AV-034)" → 0). Returns 0 when the name carries no parseable
@@ -120,6 +70,11 @@ export const FLAGSHIP_IDS = new Set<string>([
   'long-march-3a',
   'long-march-3b',
   'long-march-5',
+  'pslv',
+  'lvm3',
+  'h3',
+  'm-v',
+  'ariane-1',
 ]);
 
 interface FleetRef {
@@ -135,11 +90,10 @@ export function missionLauncherId(fleetRefs: FleetRef[] | undefined): string | u
 /**
  * Free-text vehicle spellings → launcher id, ordered most-specific first so
  * "Atlas LV-3B" doesn't fall to "Atlas V" and "Saturn IB" doesn't fall to
- * "Saturn V". Entries above the divider have a hand-authored flagship JSON
- * (FLAGSHIP_IDS — real physics). Entries below map free-text variants onto a
- * consolidated id that has a BESPOKE 3D MODEL but GENERIC physics (no JSON) —
- * so e.g. every "PSLV-XL (C…)" shows the one PSLV model instead of slugging to
- * a per-mission generic id with no dedicated mesh.
+ * "Saturn V". Each maps the free-text variants onto the one id that keys the
+ * vehicle's model and profile, so e.g. every "PSLV-XL (C…)" flies the one PSLV
+ * instead of slugging to a per-mission generic id. An id with no flagship JSON
+ * (FLAGSHIP_IDS) flies the generic profile.
  */
 const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
   [['falcon heavy', 'falcon-heavy'], 'falcon-heavy'],
@@ -169,7 +123,7 @@ const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
   [['h-iia', 'h-2a', 'h2a', 'h iia'], 'h-iia'],
   [['space shuttle', 'shuttle'], 'space-shuttle-stack'],
   [['sls block 1', 'space launch system', 'sls-block-1'], 'sls-block-1'],
-  // ── Model-only ids (bespoke mesh, generic physics) — international fleet. ──
+  // ── International fleet. ──
   [['long march 2f', 'cz-2f'], 'long-march-2f'],
   [['long march 5', 'cz-5'], 'long-march-5'],
   // Long March 3A flies with no strap-ons (Chang'e 1); the 3B/3C family with them.
@@ -351,10 +305,5 @@ export async function loadLaunchProfile(
       // fall through to the generic fallback
     }
   }
-  const generic = buildGenericProfile(launcherId, displayName);
-  // Model-only strap-on vehicles (bespoke mesh, generic physics): attach their
-  // booster pack so the ascent physics emits a strap-on staging event at the
-  // right (earlier) time — otherwise the strap-ons jettison at core staging.
-  const boosters = MODEL_ONLY_BOOSTERS[launcherId];
-  return boosters ? { ...generic, boosters } : generic;
+  return buildGenericProfile(launcherId, displayName);
 }

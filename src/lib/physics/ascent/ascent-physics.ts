@@ -77,10 +77,13 @@ export interface LaunchBoosters {
   ispSlS: number;
   ispVacS?: number;
   chamberTempK?: number;
-  /** The last `airLitCount` of the `count` light only when the ground-lit ones burn out,
-   *  which then jettison; the air-lit ones jettison at their own burnout (Delta II: 6
-   *  ground-lit + 3 air-lit GEMs; PSLV-XL: 4 + 2 PSOM-XL). Absent = all light at liftoff. */
+  /** The last `airLitCount` of the `count` light in the air: when the ground-lit ones burn
+   *  out (Delta II's 3 of 9 GEMs), or at `airLitIgnitionS` while they still burn (PSLV-XL's
+   *  2 of 6 PSOM-XLs at T+25 s). Each group jettisons at its own burnout. Absent = all
+   *  light at liftoff. */
   airLitCount?: number;
+  /** Mission time (s) the air-lit group lights; absent = at the ground-lit group's burnout. */
+  airLitIgnitionS?: number;
 }
 
 /** A launch vehicle's ascent profile. See RFC-034 §6 for the shipped JSON schema. */
@@ -175,8 +178,10 @@ export interface AscentState {
   boostersActive: boolean;
   /** How many strap-ons are firing now (the air-lit group lights after the ground-lit). */
   boostersLit?: number;
-  /** The air-lit strap-on group is the one firing (its ground-lit group has gone). */
+  /** The air-lit strap-on group is firing. */
   airLitBurning?: boolean;
+  /** The ground-lit strap-on group is firing. */
+  groundLitBurning?: boolean;
   /** The active stage's engines are firing (false before an air-lit core lights and during
    *  a coast to apoapsis), so the scene draws its flame only then. */
   coreLit?: boolean;
@@ -538,25 +543,40 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   let fairingOn = (profile.fairingKg ?? 0) > 0;
   const fairingJettAlt = profile.fairingJettisonAltM ?? KARMAN_LINE_M;
 
-  // Strap-on boosters (Track 3): fire with the core, jettison when spent. With an air-lit
-  // group, the ground-lit ones fire first; at their burnout they jettison and the air-lit
-  // ones light (their full mass rode along until then).
+  // Strap-on boosters (Track 3): fire with the core, jettison when spent. They fly as up to
+  // two groups — ground-lit, then air-lit — each with its own propellant: the air-lit one
+  // lights at `airLitIgnitionS` (both burning together) or at the ground-lit burnout, and
+  // each jettisons at its own burnout. An unlit group rides along at full mass.
   const airLit = Math.min(
     Math.max(0, profile.boosters?.airLitCount ?? 0),
     Math.max(0, (profile.boosters?.count ?? 0) - 1),
   );
   const groundCount = (profile.boosters?.count ?? 0) - airLit;
-  const groundGroup = profile.boosters
-    ? combinedBoosterStage({ ...profile.boosters, count: groundCount })
-    : null;
-  const airGroup =
-    profile.boosters && airLit > 0
-      ? combinedBoosterStage({ ...profile.boosters, count: airLit })
-      : null;
-  let boosterStage = groundGroup;
-  let airPending = airGroup != null;
-  let boosterProp = boosterStage ? stagePropellant(boosterStage) : 0;
-  let boostersOn = boosterProp > 0;
+  type BoosterGroup = { stage: LaunchStage; prop: number; air: boolean; dropped: boolean };
+  const groups: BoosterGroup[] = profile.boosters
+    ? [
+        {
+          stage: combinedBoosterStage({ ...profile.boosters, count: groundCount }),
+          prop: 0,
+          air: false,
+          dropped: false,
+        },
+        ...(airLit > 0
+          ? [
+              {
+                stage: combinedBoosterStage({ ...profile.boosters, count: airLit }),
+                prop: 0,
+                air: true,
+                dropped: false,
+              },
+            ]
+          : []),
+      ]
+    : [];
+  for (const g of groups) g.prop = stagePropellant(g.stage);
+  const airLitAt = profile.boosters?.airLitIgnitionS;
+  const groupLit = (g: BoosterGroup): boolean =>
+    !g.dropped && g.prop > 0 && (!g.air || (airLitAt != null ? t >= airLitAt : groups[0].dropped));
   const coreIgnitionS = profile.stages[0].ignitionS ?? 0;
   let lastCoreLit = coreIgnitionS <= 0;
 
@@ -567,9 +587,10 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   };
   const currentMass = (): number => {
     // Boosters ride only while still attached (during the stage-0 boost phase).
-    const boosterMass =
-      (boostersOn && boosterStage ? boosterStage.dryKg + Math.max(0, boosterProp) : 0) +
-      (boostersOn && airPending && airGroup ? airGroup.wetKg : 0);
+    const boosterMass = groups.reduce(
+      (k, g) => k + (g.dropped ? 0 : g.stage.dryKg + Math.max(0, g.prop)),
+      0,
+    );
     if (stageIndex < 0)
       return profile.payloadKg + (fairingOn ? (profile.fairingKg ?? 0) : 0) + boosterMass;
     const s = profile.stages[stageIndex];
@@ -655,17 +676,14 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       dragN: q * cd * refArea,
       pitchRad: lastPitch,
       propRemainingKg: stageIndex >= 0 ? Math.max(0, remainingProp) : 0,
-      boosterPropRemainingKg: boostersOn
-        ? Math.max(0, boosterProp) + (airPending && airGroup ? stagePropellant(airGroup) : 0)
-        : 0,
-      boostersActive: boostersOn && stageIndex === 0 && boosterProp > 0,
+      boosterPropRemainingKg: groups.reduce((k, g) => k + (g.dropped ? 0 : Math.max(0, g.prop)), 0),
+      boostersActive: stageIndex === 0 && groups.some(groupLit),
       boostersLit:
-        boostersOn && stageIndex === 0 && boosterProp > 0
-          ? airPending
-            ? groundCount
-            : airLit || groundCount
+        stageIndex === 0
+          ? groups.reduce((k, g) => k + (groupLit(g) ? (g.air ? airLit : groundCount) : 0), 0)
           : 0,
-      airLitBurning: boostersOn && airGroup != null && !airPending && boosterProp > 0,
+      airLitBurning: stageIndex === 0 && groups.some((g) => g.air && groupLit(g)),
+      groundLitBurning: stageIndex === 0 && groups.some((g) => !g.air && groupLit(g)),
       coreLit: lastCoreLit,
       chamberTempK:
         stageIndex >= 0 && lastThrust > 0 ? (profile.stages[stageIndex].chamberTempK ?? 3500) : 0,
@@ -689,7 +707,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   // isn't engine-dark before the loop first updates lastThrust.
   lastThrust =
     (coreIgnitionS <= 0 ? stageThrustN(profile.stages[0], 0) : 0) +
-    (boostersOn && boosterStage ? stageThrustN(boosterStage, 0) : 0);
+    groups.reduce((k, g) => k + (groupLit(g) ? stageThrustN(g.stage, 0) : 0), 0);
   pushEvent('liftoff');
   states.push(snapshot());
   let nextSampleT = sampleDt;
@@ -730,8 +748,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     }
 
     // Strap-on boosters (fire in parallel with stage 0 along the body axis).
-    const boostThrust =
-      boostersOn && stageIndex === 0 && boosterProp > 0 ? stageThrustN(boosterStage!, alt) : 0;
+    const litGroups = stageIndex === 0 ? groups.filter(groupLit) : [];
+    const boostThrust = litGroups.reduce((k, g) => k + stageThrustN(g.stage, alt), 0);
     // Core thrust IF the engine is lit (propellant remaining on the active stage).
     const coreThrustLit =
       stageIndex >= 0 && remainingProp > 0 && !(stageIndex === 0 && t < coreIgnitionS)
@@ -901,20 +919,20 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     if (coreThrust > 0) {
       remainingProp -= (coreThrust / (stageIspS(profile.stages[stageIndex], alt) * G0)) * dt;
     }
-    if (boostThrust > 0) {
-      boosterProp -= (boostThrust / (stageIspS(boosterStage!, alt) * G0)) * dt;
+    // Each lit group burns its own propellant (shared Isp); a spent group jettisons while
+    // the core fires on.
+    for (const g of litGroups) {
+      g.prop -= (stageThrustN(g.stage, alt) / (stageIspS(g.stage, alt) * G0)) * dt;
     }
-    // Boosters jettison the moment their propellant is spent; the core fires on.
-    if (boostersOn && boosterProp <= 0) {
-      if (airPending && airGroup) {
-        // Ground-lit group spent: it jettisons, the air-lit group lights.
-        pushEvent('staging', `${boosterStage!.name} (ground-lit)`);
-        boosterStage = airGroup;
-        boosterProp = stagePropellant(airGroup);
-        airPending = false;
-      } else {
-        boostersOn = false;
-        pushEvent('staging', boosterStage!.name);
+    for (const g of groups) {
+      if (!g.dropped && g.prop <= 0) {
+        g.dropped = true;
+        pushEvent(
+          'staging',
+          groups.length > 1
+            ? `${g.stage.name} (${g.air ? 'air-lit' : 'ground-lit'})`
+            : g.stage.name,
+        );
       }
     }
     t += dt;

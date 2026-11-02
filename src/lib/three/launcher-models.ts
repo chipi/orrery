@@ -2645,7 +2645,7 @@ function buildMV(vehLen: number): LauncherModel {
  * H3 — Japanese cryogenic launcher. Slender core + two (or four) solid strap-on
  * boosters at the base, slim upper stage, bulbous fairing. Warm tan lower core.
  */
-function buildH3(vehLen: number): LauncherModel {
+function buildH3(vehLen: number, boosterCount = 2): LauncherModel {
   const spec = getLauncherEngines('h3')!;
   const core_orange = new THREE.MeshStandardMaterial({
     map: livery({ base: '#d98a4a', flag: 'jpn' }),
@@ -2678,17 +2678,20 @@ function buildH3(vehLen: number): LauncherModel {
       eng,
     ),
   );
-  // Two SRB-3 solid strap-ons flanking the base (standard H3-22 config).
+  // SRB-3 solid strap-ons evenly round the base: two on the H3-22, four on the H3-24
+  // (MMX); a caller that passes no count gets the common H3-22.
   const strapOnGroup = new THREE.Group();
   const srbLen = vehLen * 0.3;
-  for (const sx of [-1, 1]) {
+  const nSrb = boosterCount > 0 ? boosterCount : 2;
+  for (let i = 0; i < nSrb; i++) {
+    const a = (i / nSrb) * Math.PI * 2;
     const gr = new THREE.Group();
     const sbody = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.5, r * 0.5, srbLen, 28), white);
     sbody.position.y = srbLen / 2 + vehLen * 0.015;
     const snose = new THREE.Mesh(new THREE.ConeGeometry(r * 0.5, vehLen * 0.07, 28), white);
     snose.position.y = srbLen + vehLen * 0.05;
     gr.add(sbody, snose, detailBell(r * 0.32, vehLen * 0.045, frame, eng));
-    gr.position.set(sx * r * 1.52, 0, 0);
+    gr.position.set(Math.cos(a) * r * 1.52, 0, Math.sin(a) * r * 1.52);
     strapOnGroup.add(gr);
   }
   const interstage = new THREE.Mesh(

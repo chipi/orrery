@@ -451,6 +451,23 @@ describe('booster groups and an air-lit core', () => {
     expect(afterSecond.boostersActive).toBe(false);
   });
 
+  it('lights the air-lit group at its own time, burning alongside the ground-lit one', () => {
+    const s = integrateAscent({
+      ...base,
+      boosters: { ...base.boosters!, airLitCount: 2, airLitIgnitionS: 20 },
+    });
+    const both = s.states.find((x) => x.t > 25 && x.t < 30)!;
+    expect(both.groundLitBurning).toBe(true);
+    expect(both.airLitBurning).toBe(true);
+    expect(both.boostersLit).toBe(6);
+    const sep = s.events.filter((e) => e.type === 'staging');
+    // Ground-lit pair-group first, then the air-lit one 20 s later.
+    expect(sep[0].note).toMatch(/ground-lit/);
+    expect(sep[1].note).toMatch(/air-lit/);
+    expect(sep[1].t - sep[0].t).toBeGreaterThan(15);
+    expect(sep[1].t - sep[0].t).toBeLessThan(25);
+  });
+
   it('keeps an air-lit core dark until its ignition time', () => {
     const lift = integrateAscent({
       ...base,

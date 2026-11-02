@@ -3137,6 +3137,154 @@ function buildDeltaII(vehLen: number): LauncherModel {
   };
 }
 
+/**
+ * Atlas with an upper stage — Atlas SLV-3C/3D + Centaur (Mariner 9/10, Pioneer 10/11) and
+ * Atlas LV-3 + Agena D (Mariner 4). The Atlas is a stage and a half: the flared booster skirt
+ * with its two big chambers drops at BECO (a separable strap-on group here) while the
+ * stainless balloon tank flies on with the sustainer and two verniers. Centaur: 3.05 m, the
+ * Atlas's own width, its LH2 tank in insulation panels under a conical-cylindrical nose
+ * fairing. Agena: a slim 1.52 m stage on a tapered adapter under a small shroud. Proportions
+ * from NASA TM X-2278 / TM X-1826; colours (bare steel Atlas, white upper stages) from the
+ * reports' materials, not verified against photos.
+ */
+function buildAtlasUpper(vehLen: number, upper: 'centaur' | 'agena'): LauncherModel {
+  const steel = heroMetal(0xc9ccd0, 0.55);
+  const white = heroWhite(0xf0f1ef);
+  const frame = heroMetal(0xaeb3b8, 0.4);
+  const dark = heroDark(0x1d2024);
+  const eng = heroMetal(0x3d4249, 0.5);
+  const centaur = upper === 'centaur';
+  const r = vehLen * (centaur ? 0.0443 : 0.0424); // 3.05 m of 34.4 / 36 m
+  const root = new THREE.Group();
+
+  // ── Atlas tank + sustainer (stage 0, flies on after BECO).
+  const booster = new THREE.Group();
+  const tankTop = centaur ? 0.62 : 0.55;
+  const tank = new THREE.Mesh(
+    new THREE.CylinderGeometry(r, r, vehLen * (tankTop - 0.03), 48),
+    steel,
+  );
+  tank.position.y = vehLen * (0.03 + (tankTop - 0.03) / 2);
+  booster.add(tank);
+  booster.add(ringFrames(r, vehLen * 0.08, vehLen * tankTop, 6, frame));
+  booster.add(raceway(r, vehLen * 0.08, vehLen * tankTop, dark));
+  const sustainer = detailBell(r * 0.26, vehLen * 0.045, frame, eng);
+  sustainer.position.y = vehLen * 0.03;
+  booster.add(sustainer);
+  for (const sz of [-1, 1]) {
+    const vern = detailBell(r * 0.1, vehLen * 0.015, frame, eng);
+    vern.position.set(0, vehLen * 0.05, sz * r * 1.02);
+    booster.add(vern);
+  }
+  // Forward end: Centaur's interstage adapter at full width; Agena's tank taper + cone.
+  let stage1Top: number;
+  if (centaur) {
+    const adapter = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.045, 48), white);
+    adapter.position.y = vehLen * (tankTop + 0.0225);
+    booster.add(adapter);
+    stage1Top = tankTop + 0.045;
+  } else {
+    const rA = vehLen * 0.0211; // Agena 1.52 m
+    const taper = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.66, r, vehLen * 0.05, 48), steel);
+    taper.position.y = vehLen * (tankTop + 0.025);
+    const cone = new THREE.Mesh(new THREE.CylinderGeometry(rA, r * 0.66, vehLen * 0.04, 40), white);
+    cone.position.y = vehLen * (tankTop + 0.07);
+    booster.add(taper, cone);
+    stage1Top = tankTop + 0.09;
+  }
+  root.add(booster);
+
+  // ── Booster section: flared skirt + two big chambers, jettisoned at BECO.
+  // One child per chamber (the scene lights one flame per strap-on child), plus the skirt.
+  const strapOnGroup = new THREE.Group();
+  const skirt = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 1.02, r * 1.3, vehLen * 0.11, 48, 1, true),
+    steel,
+  );
+  skirt.position.y = vehLen * 0.085;
+  skirt.userData.noFlame = true;
+  for (const sx of [-1, 1]) {
+    const chamber = new THREE.Group();
+    const pod = new THREE.Mesh(
+      new THREE.CylinderGeometry(r * 0.32, r * 0.42, vehLen * 0.1, 20),
+      steel,
+    );
+    pod.position.y = vehLen * 0.08;
+    const b = detailBell(r * 0.36, vehLen * 0.05, frame, eng);
+    b.position.y = vehLen * 0.03;
+    chamber.add(pod, b);
+    chamber.position.x = sx * r * 1.25;
+    strapOnGroup.add(chamber);
+  }
+  strapOnGroup.add(skirt);
+  root.add(strapOnGroup);
+
+  // ── Upper stage.
+  const upperStage = new THREE.Group();
+  let upperBody: THREE.Mesh;
+  let fairingBaseY: number;
+  let fR: number;
+  let fH: number;
+  let payloadMountY: number;
+  if (centaur) {
+    upperBody = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.2, 48), white);
+    upperBody.position.y = vehLen * (stage1Top + 0.1);
+    upperStage.add(upperBody);
+    upperStage.add(
+      ringFrames(r, vehLen * (stage1Top + 0.02), vehLen * (stage1Top + 0.19), 4, frame),
+    );
+    upperStage.add(engineCluster('pair', 2, r, vehLen * 0.035, vehLen * stage1Top, frame, eng));
+    fairingBaseY = vehLen * (stage1Top + 0.2);
+    fR = r;
+    fH = vehLen * (1 - stage1Top - 0.2);
+    payloadMountY = fairingBaseY + vehLen * 0.02;
+  } else {
+    const rA = vehLen * 0.0211;
+    upperBody = new THREE.Mesh(new THREE.CylinderGeometry(rA, rA, vehLen * 0.175, 32), white);
+    upperBody.position.y = vehLen * (stage1Top + 0.0875);
+    upperStage.add(upperBody);
+    upperStage.add(bell(rA * 0.55, vehLen * 0.03, eng, vehLen * stage1Top));
+    fairingBaseY = vehLen * (stage1Top + 0.175);
+    fR = vehLen * 0.023; // 1.66 m shroud
+    fH = vehLen * 0.11;
+    payloadMountY = fairingBaseY + vehLen * 0.015;
+  }
+  root.add(upperStage);
+
+  // ── Nose fairing: cylinder, cone, rounded cap (conical-cylindrical).
+  const prof: THREE.Vector2[] = [
+    new THREE.Vector2(fR, 0),
+    new THREE.Vector2(fR, fH * 0.45),
+    new THREE.Vector2(fR * 0.55, fH * 0.85),
+    new THREE.Vector2(fR * 0.3, fH * 0.96),
+    new THREE.Vector2(0, fH),
+  ];
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(prof, 32, theta, Math.PI), white);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: tank,
+    upperStage,
+    upperPlumeAnchor: upperBody,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: upperBody.position.y,
+    fairingBaseY,
+    payloadMountY,
+    strapOns: strapOnGroup,
+  };
+}
+
 const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => LauncherModel> = {
   'falcon-9': buildFalcon9,
   starship: buildStarship,
@@ -3184,6 +3332,8 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   h3: buildH3,
   'ariane-1': buildAriane1,
   'delta-ii': buildDeltaII,
+  'atlas-centaur': (v) => buildAtlasUpper(v, 'centaur'),
+  'atlas-agena': (v) => buildAtlasUpper(v, 'agena'),
 };
 
 /** Launcher ids with a dedicated model (the rest draw the generic body). */

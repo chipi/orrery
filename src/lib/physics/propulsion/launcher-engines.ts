@@ -169,6 +169,28 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Stage 3 (PAM-D)', 'Star 48B (solid)', 1, 1, 'single'),
     ],
   },
+  'atlas-centaur': {
+    name: 'Atlas-Centaur (SLV-3C/3D)',
+    agency: 'NASA',
+    confidence: 'high',
+    sources: ['https://ntrs.nasa.gov/api/citations/19710023020/downloads/19710023020.pdf'],
+    stages: [
+      S('Booster section', 'MA-5 booster (2 chambers)', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Sustainer', 'LR105', 1, 1, 'single', { vernierNozzles: 2 }),
+      S('Centaur D', 'RL10A-3-3', 2, 1, 'pair'),
+    ],
+  },
+  'atlas-agena': {
+    name: 'Atlas-Agena D',
+    agency: 'NASA',
+    confidence: 'medium',
+    sources: ['https://ntrs.nasa.gov/api/citations/19690020216/downloads/19690020216.pdf'],
+    stages: [
+      S('Booster section', 'MA-5 booster (2 chambers)', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Sustainer', 'LR105', 1, 1, 'single', { vernierNozzles: 2 }),
+      S('Agena D', 'Bell 8096', 1, 1, 'single'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

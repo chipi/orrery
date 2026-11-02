@@ -494,8 +494,11 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const rBody = vehLen * 0.05; // plume scale reference
   const model = buildLauncherModel(opts.launcherId, vehLen, opts.boosterCount ?? 0);
   const strapOnGroup = model.strapOns;
-  // The strap-on bodies (before any flames are added to the group) and where they sit.
-  const strapOnBodies: THREE.Object3D[] = strapOnGroup ? [...strapOnGroup.children] : [];
+  // The strap-on bodies that flame (before any flames are added to the group; a part marked
+  // noFlame — the Atlas booster skirt — rides along unlit) and where they sit.
+  const strapOnBodies: THREE.Object3D[] = strapOnGroup
+    ? strapOnGroup.children.filter((c) => !c.userData.noFlame)
+    : [];
   const strapOnBase = strapOnBodies.map((b) => b.position.clone());
   // Air-lit strap-ons, spread evenly round the ring (Delta II: every third GEM).
   const airLitN = Math.min(
@@ -723,8 +726,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const strapOnPlumes: THREE.Group[] = [];
   if (strapOnGroup && engSpec?.stages.some((st) => st.arrangement === 'per-booster')) {
     model.root.updateMatrixWorld(true);
-    // A copy: the flames are added to this same group.
-    for (const sb of [...strapOnGroup.children]) {
+    // strapOnBodies is a copy taken before the flames are added to this same group.
+    for (const sb of strapOnBodies) {
       const box = new THREE.Box3().setFromObject(sb);
       const base = strapOnGroup.worldToLocal(
         new THREE.Vector3((box.min.x + box.max.x) / 2, box.min.y, (box.min.z + box.max.z) / 2),

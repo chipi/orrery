@@ -40,6 +40,8 @@
     h3: 63,
     'ariane-1': 47.4,
     'delta-ii': 38.9,
+    'atlas-centaur': 34.4,
+    'atlas-agena': 36,
   };
 
   let canvas: HTMLCanvasElement;

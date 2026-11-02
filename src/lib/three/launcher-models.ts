@@ -1801,23 +1801,40 @@ function buildProtonK(vehLen: number): LauncherModel {
     ),
   );
   root.add(midStage);
-  // ── Third stage: the final stage, carries the payload. Tapers above.
-  const upperStage = new THREE.Group();
+  // ── Third stage: drops when it shuts down at orbit. Tapers above.
+  const lastCoreStage = new THREE.Group();
   const stage3 = new THREE.Mesh(
     new THREE.CylinderGeometry(r * 0.42, r * 0.55, vehLen * 0.14, 32),
     p.body,
   );
   stage3.position.y = vehLen * 0.79;
-  upperStage.add(stage3, bell(r * 0.24, vehLen * 0.04, p.eng, vehLen * 0.72));
+  lastCoreStage.add(stage3, bell(r * 0.24, vehLen * 0.04, p.eng, vehLen * 0.72));
+  root.add(lastCoreStage);
+
+  // ── Blok D (RD-58): rides with the spacecraft into orbit and makes the departure burn.
+  const upperStage = new THREE.Group();
+  const blokD = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.36, r * 0.36, vehLen * 0.04, 32),
+    p.accent,
+  );
+  blokD.position.y = vehLen * 0.885;
+  const blokDBell = detailBell(r * 0.1, vehLen * 0.012, frame, eng);
+  blokDBell.position.y = vehLen * 0.865;
+  upperStage.add(blokD, blokDBell);
   root.add(upperStage);
 
-  // ── Small fairing atop the third stage.
-  const fairingBaseY = vehLen * 0.88;
+  // ── Fairing over Blok D and the spacecraft: barrel and cone from the third stage's top.
+  const fairingBaseY = vehLen * 0.86;
+  const fR = r * 0.44;
+  const fH = vehLen - fairingBaseY;
+  const prof: THREE.Vector2[] = [
+    new THREE.Vector2(fR, 0),
+    new THREE.Vector2(fR, fH * 0.45),
+    new THREE.Vector2(fR * 0.2, fH * 0.97),
+    new THREE.Vector2(0, fH),
+  ];
   const mkShell = (theta: number): THREE.Mesh =>
-    new THREE.Mesh(
-      new THREE.ConeGeometry(r * 0.44, vehLen * 0.15, 20, 1, true, theta, Math.PI),
-      p.body,
-    );
+    new THREE.Mesh(new THREE.LatheGeometry(prof, 32, theta, Math.PI), p.body);
   const fairingL = mkShell(Math.PI / 2);
   const fairingR = mkShell(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
@@ -1833,13 +1850,15 @@ function buildProtonK(vehLen: number): LauncherModel {
     upperStage,
     upperPlumeAnchor: stage2,
     finalPlumeAnchor: stage3,
+    injectionPlumeAnchor: blokD,
     fairingL,
     fairingR,
     fairingGroup,
     upperStageBaseY,
     fairingBaseY,
-    payloadMountY: vehLen * 0.82,
+    payloadMountY: vehLen * 0.91,
     midStage,
+    lastCoreStage,
   };
 }
 

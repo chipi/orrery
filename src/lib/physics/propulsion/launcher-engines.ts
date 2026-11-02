@@ -352,10 +352,14 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
     ],
   },
   'proton-k': {
-    name: 'Proton-K',
+    name: 'Proton-K / Blok D',
     agency: 'Roscosmos',
     confidence: 'high',
-    sources: ['https://en.wikipedia.org/wiki/RD-253', 'https://en.wikipedia.org/wiki/RD-0214'],
+    sources: [
+      'https://en.wikipedia.org/wiki/RD-253',
+      'https://en.wikipedia.org/wiki/RD-0214',
+      'https://en.wikipedia.org/wiki/RD-58',
+    ],
     stages: [
       S('Stage 1', 'RD-253', 6, 1, 'ring-6', { note: 'Six around the central oxidiser tank.' }),
       S('Stage 2', 'RD-0210/0211', 4, 1, 'quad'),
@@ -363,6 +367,7 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
         vernierNozzles: 4,
         note: '1 main (RD-0213) + a 4-nozzle vernier (RD-0214) → 5 visible.',
       }),
+      S('Blok D', 'RD-58', 1, 1, 'single'),
     ],
   },
   'titan-ii-glv': {

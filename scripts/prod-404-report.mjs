@@ -61,7 +61,7 @@ function classify(path, ref, ua) {
   if (path.startsWith('/_app/immutable/')) return 'old-build';
   const bot = BOT.test(ua);
   // Scanners send the URL they ask for as its own referrer; that is not a link.
-  const refPath = ref.replace(/^https?:\/\/(www\.)?orrerylearn\.com/, '');
+  const refPath = ref.replace(/^https?:\/\/(www\.)?orrerylearn\.com(?=[/?#]|$)/, '');
   const fromOurPage = refPath !== ref && refPath.replace(/\?.*$/, '') !== path;
   if (fromOurPage && !bot) return 'our-link';
   return bot ? 'crawler' : 'reader';

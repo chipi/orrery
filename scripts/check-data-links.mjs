@@ -84,12 +84,13 @@ function walkJson(dir, skip = () => false) {
 
 function walkSrc(dir) {
   const out = [];
-  for (const name of readdirSync(dir)) {
+  for (const ent of readdirSync(dir, { withFileTypes: true })) {
+    const name = ent.name;
     const p = join(dir, name);
     // /dev/* tooling pages never ship (src/routes/dev/+layout.ts); what only
     // they read is not site data.
     if (p === join(ROOT, 'src/routes/dev')) continue;
-    if (statSync(p).isDirectory()) out.push(...walkSrc(p));
+    if (ent.isDirectory()) out.push(...walkSrc(p));
     else if (/\.(svelte|ts|js)$/.test(name) && !/\.test\.ts$/.test(name))
       out.push(readFileSync(p, 'utf8'));
   }

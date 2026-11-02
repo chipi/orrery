@@ -153,11 +153,22 @@ const commonsCache = new Map<string, CommonsImageInfo | null>();
 
 function plainText(html: string | undefined | null): string | null {
   if (!html) return null;
-  const stripped = html
-    .replace(/<[^>]*>/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+  // Repeat until stable: one pass over "<scr<b>ipt>" leaves "<script>".
+  let text = html;
+  for (let prev = ''; prev !== text;) {
+    prev = text;
+    text = text.replace(/<[^>]*>/g, '');
+  }
+  const stripped = text.replace(/[<>]/g, '').replace(/\s+/g, ' ').trim();
   return stripped || null;
+}
+
+function hostOf(url: string): string {
+  try {
+    return new URL(url).hostname;
+  } catch {
+    return '';
+  }
 }
 
 async function fetchCommonsImageInfo(filename: string): Promise<CommonsImageInfo | null> {
@@ -278,7 +289,7 @@ function gitHeadSha(): string | null {
 function deriveCommonsFilename(raw: string | undefined | null): string | null {
   const url = stripTracking(raw);
   if (!url) return null;
-  if (url.includes('upload.wikimedia.org')) {
+  if (hostOf(url) === 'upload.wikimedia.org') {
     const m = url.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/?#]+)/);
     if (m) return decodeURIComponent(m[1]);
   }
@@ -1080,7 +1091,7 @@ async function buildFleetEntries(): Promise<ProvenanceEntry[]> {
     // upload.wikimedia.org thumb URLs encode the source filename in
     // the path: extract it.
     let commonsFilename: string | null = null;
-    if (url.includes('upload.wikimedia.org')) {
+    if (hostOf(url) === 'upload.wikimedia.org') {
       const match = url.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/]+)/);
       if (match) commonsFilename = decodeURIComponent(match[1]);
     } else if (url.includes('commons.wikimedia.org/wiki/Special:FilePath/')) {

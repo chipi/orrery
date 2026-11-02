@@ -10,7 +10,7 @@
  * (100) and respect Retry-After on 429.
  */
 
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { closeSync, fstatSync, mkdirSync, openSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { buildStableId } from '../id.js';
 import type { LaunchSource, LaunchSourceAttribution, LaunchSourceWindow } from './provider.js';
@@ -262,14 +262,26 @@ function cacheKey(input: LaunchSourceWindow): string {
   );
 }
 
+/** The cached page set, or null when there is none (or it is older than maxAgeMs). One open, so the age and the content are of the same file. */
+function readCache(cachePath: string, maxAgeMs?: number): LL2LaunchRaw[] | null {
+  let fd: number;
+  try {
+    fd = openSync(cachePath, 'r');
+  } catch {
+    return null;
+  }
+  try {
+    if (maxAgeMs !== undefined && Date.now() - fstatSync(fd).mtimeMs >= maxAgeMs) return null;
+    return JSON.parse(readFileSync(fd, 'utf8')) as LL2LaunchRaw[];
+  } finally {
+    closeSync(fd);
+  }
+}
+
 async function fetchLL2WithCache(input: LaunchSourceWindow): Promise<LL2LaunchRaw[]> {
   const cachePath = cacheKey(input);
-  if (existsSync(cachePath)) {
-    const age = Date.now() - statSync(cachePath).mtimeMs;
-    if (age < ONE_DAY_MS / 4) {
-      return JSON.parse(readFileSync(cachePath, 'utf8')) as LL2LaunchRaw[];
-    }
-  }
+  const fresh = readCache(cachePath, ONE_DAY_MS / 4);
+  if (fresh) return fresh;
   mkdirSync(dirname(cachePath), { recursive: true });
   // `include_suborbital=true` brings Blue Origin's New Shepard, Virgin
   // Galactic, and sounding-rocket suborbital flights into scope. LL2
@@ -296,9 +308,8 @@ async function fetchLL2WithCache(input: LaunchSourceWindow): Promise<LL2LaunchRa
     }
     writeFileSync(cachePath, JSON.stringify(all, null, 2), 'utf8');
   } catch (e) {
-    if (existsSync(cachePath)) {
-      return JSON.parse(readFileSync(cachePath, 'utf8')) as LL2LaunchRaw[];
-    }
+    const stale = readCache(cachePath);
+    if (stale) return stale;
     throw e;
   }
   return all;

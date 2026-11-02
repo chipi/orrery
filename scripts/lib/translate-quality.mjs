@@ -314,9 +314,10 @@ export function gazetteer() {
     'trajectories',
   ]);
   const walk = (d, top) => {
-    for (const n of fs.readdirSync(d)) {
+    for (const ent of fs.readdirSync(d, { withFileTypes: true })) {
+      const n = ent.name;
       const p = path.join(d, n);
-      if (fs.statSync(p).isDirectory()) {
+      if (ent.isDirectory()) {
         if (!(top && skipDirs.has(n))) walk(p, false);
       } else if (n.endsWith('.json') && !(top && n === 'sun.json')) {
         try {

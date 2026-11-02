@@ -23,5 +23,37 @@
     "/cards/[kind]/[id]": 45,
     "/programs/[id]": 35,
     "/library": 35
+  },
+  "css": {
+    "$comment": "KB brotli, stylesheets of the static closure. Set 2026-11-02 at measured +10% +5 KB (rounded up to 5).",
+    "defaultRoute": 10,
+    "routes": {
+      "/lab": 20,
+      "/explore": 30,
+      "/moon": 25,
+      "/mars": 25,
+      "/fly": 20,
+      "/earth": 25,
+      "/venus": 25,
+      "/iss": 15,
+      "/tiangong": 15,
+      "/missions": 15,
+      "/fleet": 15,
+      "layout /science": 15
+    },
+    "shell": 20
+  },
+  "lazy": {
+    "$comment": "KB brotli, what dynamic imports load beyond the shell and the route's static closure (JS + CSS). Set 2026-11-02, same rule.",
+    "defaultRoute": 10,
+    "routes": {
+      "/explore": 75,
+      "/moon": 50,
+      "/mars": 55,
+      "/earth": 55,
+      "/venus": 55,
+      "/iss": 45,
+      "/tiangong": 50
+    }
   }
 }

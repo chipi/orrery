@@ -2088,58 +2088,110 @@ function buildLongMarch2F(vehLen: number): LauncherModel {
 }
 
 /**
- * Long March 3B — Chinese GTO launcher (Chang'e). Central core + four liquid
- * strap-ons + standard payload fairing (bulbous ogive shroud, no escape tower).
+ * Long March 3A / 3B family (CZ-3A, CZ-3B/E): a 3.35 m core (4× YF-21C), a 3.35 m second
+ * stage (YF-24E) hot-staged over an open truss, and the 3.0 m H-18 cryogenic third stage
+ * (2× YF-75) that restarts for the lunar injection; the 3B adds four 2.25 m L-41 strap-ons
+ * and a 4.0 m fairing on a boat-tail over the third stage, the 3A a 3.35 m fairing.
+ * Proportions from the stage lengths (3B/E 56.3 m: 24.8 / 12.9 / 12.4 m; 3A 52.5 m).
  */
-function buildLongMarch3B(vehLen: number): LauncherModel {
-  const spec = getLauncherEngines('long-march-3b')!;
+function buildLongMarch3(
+  vehLen: number,
+  opts: { id: 'long-march-3a' | 'long-march-3b'; strapOnCount: number; fairingScale: number },
+): LauncherModel {
+  const spec = getLauncherEngines(opts.id)!;
+  const core = spec.stages.filter((st) => st.arrangement !== 'per-booster');
   const k = cnsaKit(false);
-  const r = vehLen * 0.032; // CZ-3B 3.35 m core ~17:1
+  const r = vehLen * 0.03; // 3.35 m of ~55 m
   const root = new THREE.Group();
 
+  // ── Stage 1 (core) ──
   const booster = new THREE.Group();
-  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.5, 48), k.body);
-  core.position.y = vehLen * 0.28;
-  booster.add(core);
-  booster.add(ringFrames(r, vehLen * 0.05, vehLen * 0.51, 6, k.frame));
-  booster.add(raceway(r, vehLen * 0.06, vehLen * 0.5, k.dark));
+  const s1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.44, 48), k.body);
+  s1.position.y = vehLen * 0.25;
+  booster.add(s1);
+  booster.add(ringFrames(r, vehLen * 0.05, vehLen * 0.46, 6, k.frame));
+  booster.add(raceway(r, vehLen * 0.06, vehLen * 0.45, k.dark));
   booster.add(
     engineCluster(
-      spec.stages[1].arrangement,
-      spec.stages[1].mainNozzles,
+      core[0].arrangement,
+      core[0].mainNozzles,
       r,
       vehLen * 0.05,
-      0,
+      vehLen * 0.03,
       k.frame,
       k.eng,
     ),
   );
-  const interstage = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.88, r, vehLen * 0.03, 48),
-    k.dark,
-  );
-  interstage.position.y = vehLen * 0.545;
-  booster.add(interstage);
   root.add(booster);
-  // Four liquid strap-ons in their OWN group — jettison at strap-on burnout.
-  const strapOnGroup = new THREE.Group();
-  strapOns(strapOnGroup, 4, r, vehLen * 0.3, vehLen, k.plain, k.eng);
-  root.add(strapOnGroup);
 
-  const upperStageBaseY = vehLen * 0.68;
-  const upperStage = new THREE.Group();
-  const s2 = new THREE.Mesh(
-    new THREE.CylinderGeometry(r * 0.88, r * 0.88, vehLen * 0.22, 48),
-    k.plain,
+  // Four L-41 strap-ons (3B), 2.25 m against the 3.35 m core, conical noses.
+  let strapOnGroup: THREE.Group | undefined;
+  if (opts.strapOnCount > 0) {
+    strapOnGroup = new THREE.Group();
+    const rb = r * 0.67;
+    const len = vehLen * 0.286;
+    for (let i = 0; i < opts.strapOnCount; i++) {
+      const a = (i / opts.strapOnCount) * Math.PI * 2 + Math.PI / 4;
+      const g = new THREE.Group();
+      const body = new THREE.Mesh(new THREE.CylinderGeometry(rb, rb, len, 32), k.plain);
+      body.position.y = vehLen * 0.03 + len / 2;
+      const nose = new THREE.Mesh(new THREE.ConeGeometry(rb, vehLen * 0.05, 32), k.plain);
+      nose.position.y = vehLen * 0.03 + len + vehLen * 0.025;
+      g.add(body, nose, detailBell(rb * 0.62, vehLen * 0.045, k.frame, k.eng));
+      g.children[2].position.y = vehLen * 0.03;
+      g.position.set(Math.cos(a) * (r + rb * 0.98), 0, Math.sin(a) * (r + rb * 0.98));
+      strapOnGroup.add(g);
+    }
+    root.add(strapOnGroup);
+  }
+
+  // ── Stage 2 — lit over the open hot-staging truss (closeAxisGaps builds it) ──
+  const midStage = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.22, 48), k.plain);
+  s2.position.y = vehLen * 0.6;
+  midStage.add(s2);
+  midStage.add(ringFrames(r, vehLen * 0.5, vehLen * 0.7, 3, k.frame));
+  midStage.add(
+    engineCluster(
+      core[1].arrangement,
+      core[1].mainNozzles,
+      r,
+      vehLen * 0.04,
+      vehLen * 0.49,
+      k.frame,
+      k.eng,
+    ),
   );
-  s2.position.y = upperStageBaseY;
-  upperStage.add(s2, bell(r * 0.34, vehLen * 0.05, k.eng, vehLen * 0.565));
+  // Conical interstage down to the narrower third stage, dropping with stage 2.
+  const r3 = r * 0.9;
+  const cone = new THREE.Mesh(new THREE.CylinderGeometry(r3, r, vehLen * 0.025, 48), k.dark);
+  cone.position.y = vehLen * 0.7225;
+  midStage.add(cone);
+  root.add(midStage);
+
+  // ── Stage 3 (H-18, 2× YF-75) — restarts for the lunar injection ──
+  const upperStage = new THREE.Group();
+  const s3 = new THREE.Mesh(new THREE.CylinderGeometry(r3, r3, vehLen * 0.125, 48), k.plain);
+  s3.position.y = vehLen * 0.7975;
+  upperStage.add(s3);
+  upperStage.add(
+    engineCluster(
+      core[2].arrangement,
+      core[2].mainNozzles,
+      r3,
+      vehLen * 0.035,
+      vehLen * 0.735,
+      k.frame,
+      k.eng,
+    ),
+  );
   root.add(upperStage);
 
-  // Bulbous ogive bullet shroud (lathe) + boat-tail — wider than core, LM-3B style.
-  const fairingBaseY = vehLen * 0.845;
-  const fR = r * 1.2;
-  const shH = vehLen * 0.19; // LM-3B fairing ~9.6 m of 55 m, not a quarter of the stack
+  // ── Fairing: bulbous ogive, on a boat-tail when wider than the third stage ──
+  const fR = r * opts.fairingScale;
+  const tail = vehLen * (fR > r3 * 1.02 ? 0.03 : 0.012);
+  const fairingBaseY = vehLen * 0.86;
+  const shH = vehLen * 0.14;
   const prof: THREE.Vector2[] = [
     new THREE.Vector2(fR, 0),
     new THREE.Vector2(fR, shH * 0.44),
@@ -2154,11 +2206,8 @@ function buildLongMarch3B(vehLen: number): LauncherModel {
   const fairingR = mkHalf(-Math.PI / 2);
   fairingL.position.y = fairingBaseY;
   fairingR.position.y = fairingBaseY;
-  const boatTail = new THREE.Mesh(
-    new THREE.CylinderGeometry(fR, r * 0.88, vehLen * 0.05, 40, 1, true),
-    k.plain,
-  );
-  boatTail.position.y = fairingBaseY - vehLen * 0.025;
+  const boatTail = new THREE.Mesh(new THREE.CylinderGeometry(fR, r3, tail, 40, 1, true), k.plain);
+  boatTail.position.y = fairingBaseY - tail / 2;
   const fairingGroup = new THREE.Group();
   fairingGroup.add(fairingL, fairingR, boatTail);
   root.add(fairingGroup);
@@ -2166,15 +2215,17 @@ function buildLongMarch3B(vehLen: number): LauncherModel {
   return {
     root,
     booster,
-    boosterPlumeAnchor: core,
+    boosterPlumeAnchor: s1,
     upperStage,
     upperPlumeAnchor: s2,
+    finalPlumeAnchor: s3,
     fairingL,
     fairingR,
     fairingGroup,
-    upperStageBaseY,
+    upperStageBaseY: vehLen * 0.7975,
     fairingBaseY,
-    payloadMountY: vehLen * 0.86,
+    payloadMountY: vehLen * 0.875,
+    midStage,
     strapOns: strapOnGroup,
   };
 }
@@ -2983,7 +3034,10 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   'space-shuttle-stack': buildSpaceShuttle,
   'sls-block-1': buildSLS,
   'long-march-2f': buildLongMarch2F,
-  'long-march-3b': buildLongMarch3B,
+  'long-march-3a': (v) =>
+    buildLongMarch3(v, { id: 'long-march-3a', strapOnCount: 0, fairingScale: 1.0 }),
+  'long-march-3b': (v) =>
+    buildLongMarch3(v, { id: 'long-march-3b', strapOnCount: 4, fairingScale: 1.2 }),
   'long-march-5': buildLongMarch5,
   pslv: buildPSLV,
   lvm3: buildLVM3,
@@ -3025,7 +3079,14 @@ function endRadius(mesh: THREE.Mesh, end: 'top' | 'bottom', toRoot: THREE.Matrix
  */
 /** Hot-staging rockets whose upper stage sits on an open lattice truss over the first stage
  *  (its engine fires through it before separation): the joint is struts, not a shroud. */
-const LATTICE_INTERSTAGE = new Set(['proton-k', 'soyuz', 'vostok-k', 'voskhod-11a57']);
+const LATTICE_INTERSTAGE = new Set([
+  'proton-k',
+  'soyuz',
+  'vostok-k',
+  'voskhod-11a57',
+  'long-march-3a',
+  'long-march-3b',
+]);
 
 /** A ring of slanted struts between y0 and y1 at radius r (a hot-staging lattice). */
 function latticeTruss(

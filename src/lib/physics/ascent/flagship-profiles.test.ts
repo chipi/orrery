@@ -71,8 +71,11 @@ const ALL_FLAGSHIPS = [
   'soyuz',
   'long-march-2f',
   'sls-block-1',
+  'long-march-3a',
+  'long-march-3b',
+  'long-march-5',
 ];
-// All 15 now reach a genuine orbit (#416).
+// All of them reach a genuine orbit (#416).
 const GENUINE_ORBIT = ALL_FLAGSHIPS;
 
 describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {

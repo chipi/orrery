@@ -31,6 +31,7 @@
     'space-shuttle-stack': 56.1,
     'sls-block-1': 98,
     'long-march-2f': 58.3,
+    'long-march-3a': 52.5,
     'long-march-3b': 56.3,
     'long-march-5': 57,
     pslv: 44,

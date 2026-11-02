@@ -177,7 +177,7 @@ describe('loadLaunchProfile — fail-closed loader', () => {
   it('returns a generic profile for a non-flagship id without fetching', async () => {
     let fetched = false;
     const p = await loadLaunchProfile(
-      'long-march-3b',
+      'unmodelled-rocket',
       asFetch(async () => {
         fetched = true;
         return { ok: true, json: async () => okJson };

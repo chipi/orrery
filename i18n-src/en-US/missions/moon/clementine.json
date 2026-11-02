@@ -13,5 +13,5 @@
     { "met": 95, "label": "DEPARTURE", "note": "Departs lunar orbit for Geographos asteroid flyby.", "type": "nominal" },
     { "met": 100, "label": "THRUSTER FAIL", "note": "Onboard thruster malfunction depletes propellant; asteroid encounter cancelled.", "type": "warning" }
   ],
-  "vehicle_stage": "Titan II Star-37 upper stage"
+  "vehicle_stage": "Star-37 kick stage carried by the spacecraft (Titan II G to low Earth orbit)"
 }

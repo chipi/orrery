@@ -40,32 +40,6 @@ const ATLAS_V_AJ60A: Omit<LaunchBoosters, 'count'> = {
  * agree. Same mechanism as the Atlas V AJ-60A injection above.
  */
 const MODEL_ONLY_BOOSTERS: Record<string, LaunchBoosters> = {
-  // 4 liquid (YF-25) strap-ons — UDMH/N2O4, ~2.6 min burn.
-  'long-march-3b': {
-    name: 'L-40 (YF-25)',
-    count: 4,
-    wetKg: 41000,
-    dryKg: 3200,
-    thrustSlKN: 740,
-    thrustVacKN: 814,
-    ispSlS: 261,
-    ispVacS: 289,
-    chamberTempK: 3200,
-  },
-  // 4 kerolox boosters (2× YF-100 each) — the "Fat Five" liquid strap-ons.
-  // Trimmed propellant + a touch more thrust so they burn out clearly before the
-  // (generic) core stage rather than a few seconds shy of it.
-  'long-march-5': {
-    name: 'K3 (2×YF-100)',
-    count: 4,
-    wetKg: 138000,
-    dryKg: 12500,
-    thrustSlKN: 2600,
-    thrustVacKN: 2800,
-    ispSlS: 300,
-    ispVacS: 335,
-    chamberTempK: 3500,
-  },
   // 6 PSOM-XL solids (PSLV-XL) — ground-lit; the air-lit pair is modelled together.
   pslv: {
     name: 'PSOM-XL',
@@ -142,6 +116,10 @@ export const FLAGSHIP_IDS = new Set<string>([
   // Every Artemis flight references it; without a JSON they flew the generic
   // 1-engine 2-stage stand-in (4,100 kN at liftoff vs SLS's ~39 MN). 2026-11.
   'sls-block-1',
+  // Sourced profiles for vehicles that only had a model and generic physics. 2026-11.
+  'long-march-3a',
+  'long-march-3b',
+  'long-march-5',
 ]);
 
 interface FleetRef {

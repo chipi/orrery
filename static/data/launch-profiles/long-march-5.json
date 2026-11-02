@@ -1,0 +1,63 @@
+{
+  "id": "long-march-5",
+  "name": "Long March 5",
+  "source_tier": "flagship",
+  "payloadKg": 8200,
+  "fairingKg": 3000,
+  "fairingJettisonAltM": 115000,
+  "refAreaM2": 35,
+  "cd": 0.3,
+  "launchSite": { "lat": 19.614, "lon": 110.951, "name": "LC-101 · Wenchang" },
+  "pitchProgram": [[0, 90], [12, 88], [50, 70], [120, 50], [200, 32], [320, 16], [440, 6], [520, 0]],
+  "boosters": {
+    "name": "K3 strap-on (2× YF-100)",
+    "count": 4,
+    "wetKg": 156600,
+    "dryKg": 13800,
+    "thrustSlKN": 2400,
+    "thrustVacKN": 2680,
+    "ispSlS": 300,
+    "ispVacS": 335,
+    "chamberTempK": 3600
+  },
+  "stages": [
+    {
+      "name": "Core stage (2× YF-77)",
+      "wetKg": 186900,
+      "dryKg": 21600,
+      "thrustSlKN": 1036,
+      "thrustVacKN": 1400,
+      "ispSlS": 317,
+      "ispVacS": 428,
+      "engines": 2,
+      "chamberTempK": 3500
+    },
+    {
+      "name": "Second stage (2× YF-75D)",
+      "wetKg": 36000,
+      "dryKg": 5100,
+      "thrustVacKN": 176.7,
+      "ispVacS": 442.6,
+      "engines": 2,
+      "chamberTempK": 3500
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Long March 5 — Wikipedia (boosters 156.6 t / 13.8 t, 2,400 kN, 173 s; core 186.9 t gross, 165.3 t propellant, 492 s; second stage 36 t / 5.1 t, 176.7 kN, 442.6 s)",
+      "u": "https://en.wikipedia.org/wiki/Long_March_5"
+    },
+    {
+      "l": "Everyday Astronaut — Chang'e 5 / Long March 5 (upper-stage cutoff T+12:32, TLI burn from T+27:45 for 6:55)",
+      "u": "https://everydayastronaut.com/change-5-long-march-5-2/"
+    },
+    {
+      "l": "China in Space — Chang'e 6 launch (boosters 2 min 53 s, YF-77 8 min 12 s, second stage relit for TLI)",
+      "u": "https://www.china-in-space.com/p/change-6-is-moon-bound-after-a-perfect"
+    },
+    {
+      "l": "Chang'e 5 — Wikipedia (8,200 kg); fairing mass estimated (not published)",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_5"
+    }
+  ]
+}

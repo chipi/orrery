@@ -274,6 +274,17 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       }),
     ],
   },
+  'long-march-3a': {
+    name: 'Long March 3A',
+    agency: 'CNSA',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Long_March_3A'],
+    stages: [
+      S('Stage 1', 'YF-21C (4× YF-20C)', 4, 1, 'quad'),
+      S('Stage 2', 'YF-24E', 1, 1, 'single', { vernierNozzles: 4 }),
+      S('Stage 3', 'YF-75', 2, 1, 'pair'),
+    ],
+  },
   'long-march-3b': {
     name: 'Long March 3B',
     agency: 'CNSA',

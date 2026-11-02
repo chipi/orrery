@@ -36,7 +36,8 @@
   ],
   "flight": {
     "launch": {
-      "vehicle_stage": "Titan II Star-37 upper stage",
+      "vehicle_stage": "Star-37 kick stage carried by the spacecraft (Titan II G to low Earth orbit)",
+      "departure": "spacecraft",
       "mass_at_tli_kg": 1690,
       "source": "NASA NSSDCA Clementine archive; NRL Clementine Mission Report (1994)"
     },

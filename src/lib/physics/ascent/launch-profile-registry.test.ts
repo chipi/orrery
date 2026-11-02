@@ -6,6 +6,7 @@ import {
   buildGenericProfile,
   loadLaunchProfile,
   atlasVSrbCount,
+  isDeltaIIHeavy,
   FLAGSHIP_IDS,
 } from './launch-profile-registry';
 import { integrateAscent } from './ascent-physics';
@@ -272,5 +273,18 @@ describe('FLAGSHIP_IDS ↔ launch-profiles/ files', () => {
     for (const f of files) expect(ids, `profile ${f}.json not in FLAGSHIP_IDS`).toContain(f);
     // An allowlist entry with no file → loadLaunchProfile 404s to generic.
     for (const id of ids) expect(files, `FLAGSHIP_IDS has ${id} but no profile file`).toContain(id);
+  });
+});
+
+describe('isDeltaIIHeavy — the 7925H flew GEM-46 strap-ons', () => {
+  it('recognises the H variants as flown', () => {
+    expect(isDeltaIIHeavy('Delta II 7925H')).toBe(true);
+    expect(isDeltaIIHeavy('Delta II 7925H-9.5')).toBe(true);
+    expect(isDeltaIIHeavy('Delta II 7925H Heavy')).toBe(true);
+  });
+  it('leaves the GEM-40 7925 variants alone', () => {
+    expect(isDeltaIIHeavy('Delta II 7925')).toBe(false);
+    expect(isDeltaIIHeavy('Delta II 7925-9.5')).toBe(false);
+    expect(isDeltaIIHeavy(undefined)).toBe(false);
   });
 });

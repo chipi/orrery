@@ -79,6 +79,7 @@ const ALL_FLAGSHIPS = [
   'h3',
   'm-v',
   'ariane-1',
+  'delta-ii',
 ];
 // All of them reach a genuine orbit (#416).
 const GENUINE_ORBIT = ALL_FLAGSHIPS;

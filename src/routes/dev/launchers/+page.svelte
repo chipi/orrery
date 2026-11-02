@@ -39,6 +39,7 @@
     'm-v': 30.8,
     h3: 63,
     'ariane-1': 47.4,
+    'delta-ii': 38.9,
   };
 
   let canvas: HTMLCanvasElement;

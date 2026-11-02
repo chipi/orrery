@@ -3001,6 +3001,142 @@ function buildAriane1(vehLen: number): LauncherModel {
 }
 
 /** Dispatch table — a dedicated silhouette per launcher; the rest fall back generic. */
+/**
+ * Delta II 7925 / 7925H — the turquoise Thor-derived first stage (RS-27A + two roll
+ * verniers) ringed by nine white GEM solids (the three air-lit ones on longer nozzles), the
+ * Delta-K second stage, and the 9.5 ft (2.9 m) fairing on a boat-tail over the 2.44 m body.
+ * Proportions from the Payload Planners Guide: 38.9 m, 2.44 m core, 1.02 m GEMs, 8.5 m
+ * fairing. The Star 48B third stage rides under the fairing with the spacecraft (the scene
+ * draws it as the kick stage). Colours are from memory of launch photos, not verified.
+ */
+function buildDeltaII(vehLen: number): LauncherModel {
+  const spec = getLauncherEngines('delta-ii')!;
+  const teal = new THREE.MeshStandardMaterial({
+    map: livery({
+      base: '#3f9aa3',
+      wordmark: { text: 'D E L T A', color: '#f4f6f7', size: 0.045, y: 0.55 },
+      flag: 'usa',
+    }),
+    roughness: 0.5,
+    metalness: 0.14,
+    roughnessMap: stringerRoughness(60),
+  });
+  const white = heroWhite(0xf1f2f0);
+  const frame = heroMetal(0xbfc4c9, 0.32);
+  const dark = heroDark(0x1d2024);
+  const eng = heroMetal(0x3d4249, 0.5);
+  const r = vehLen * 0.0314; // 2.44 m of 38.9 m
+  const root = new THREE.Group();
+
+  // ── Stage 1: isogrid LOX tank, centre body, fuel tank; RS-27A + 2 verniers.
+  const booster = new THREE.Group();
+  const s1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.59, 48), teal);
+  s1.position.y = vehLen * 0.325;
+  booster.add(s1);
+  booster.add(ringFrames(r, vehLen * 0.06, vehLen * 0.6, 7, frame));
+  booster.add(raceway(r, vehLen * 0.06, vehLen * 0.6, dark));
+  booster.add(
+    engineCluster(
+      spec.stages[1].arrangement,
+      spec.stages[1].mainNozzles,
+      r,
+      vehLen * 0.045,
+      vehLen * 0.03,
+      frame,
+      eng,
+    ),
+  );
+  for (const sx of [-1, 1]) {
+    const vern = detailBell(r * 0.12, vehLen * 0.018, frame, eng);
+    vern.position.set(sx * r * 0.82, vehLen * 0.03, 0);
+    booster.add(vern);
+  }
+  // Interstage (white) carrying the second stage + fairing loads.
+  const inter = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.05, 48), white);
+  inter.position.y = vehLen * 0.645;
+  booster.add(inter);
+  root.add(booster);
+
+  // ── Nine GEMs: 6 ground-lit, 3 air-lit (every third, longer nozzles), conical noses.
+  const strapOnGroup = new THREE.Group();
+  const rg = vehLen * 0.0131; // 1.02 m
+  const gLen = vehLen * 0.29;
+  for (let i = 0; i < 9; i++) {
+    const a = (i / 9) * Math.PI * 2;
+    const air = (i + 1) % 3 === 0;
+    const g = new THREE.Group();
+    const body = new THREE.Mesh(new THREE.CylinderGeometry(rg, rg, gLen, 20), white);
+    body.position.y = vehLen * 0.03 + gLen / 2;
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(rg, vehLen * 0.035, 20), white);
+    nose.position.y = vehLen * 0.03 + gLen + vehLen * 0.0175;
+    const noz = detailBell(rg * 0.7, vehLen * (air ? 0.035 : 0.022), frame, eng);
+    noz.position.y = vehLen * 0.03;
+    g.add(body, nose, noz);
+    g.position.set(Math.cos(a) * (r + rg * 0.95), 0, Math.sin(a) * (r + rg * 0.95));
+    strapOnGroup.add(g);
+  }
+  root.add(strapOnGroup);
+
+  // ── Stage 2 (Delta-K): short white body + guidance section, AJ10-118K.
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.11, 48), white);
+  s2.position.y = vehLen * 0.725;
+  upperStage.add(s2);
+  upperStage.add(
+    engineCluster(
+      spec.stages[2].arrangement,
+      spec.stages[2].mainNozzles,
+      r,
+      vehLen * 0.04,
+      vehLen * 0.67,
+      frame,
+      eng,
+    ),
+  );
+  root.add(upperStage);
+
+  // ── 9.5 ft fairing: boat-tail from 2.44 m to 2.9 m, cylinder + ogive nose (bisector).
+  const fairingBaseY = vehLen * 0.78;
+  const fR = r * 1.19;
+  const fH = vehLen * 0.2;
+  const prof: THREE.Vector2[] = [new THREE.Vector2(fR, 0), new THREE.Vector2(fR, fH * 0.5)];
+  for (let i = 1; i <= 10; i++) {
+    const t = i / 10;
+    prof.push(
+      new THREE.Vector2(
+        Math.max(fR * Math.cos((t * Math.PI) / 2) ** 0.8, fR * 0.04),
+        fH * (0.5 + 0.5 * t),
+      ),
+    );
+  }
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(prof, 32, theta, Math.PI), white);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const tail = new THREE.Mesh(new THREE.CylinderGeometry(fR, r, vehLen * 0.02, 40, 1, true), white);
+  tail.position.y = fairingBaseY - vehLen * 0.01;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR, tail);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: s1,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: vehLen * 0.725,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.8,
+    strapOns: strapOnGroup,
+  };
+}
+
 const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => LauncherModel> = {
   'falcon-9': buildFalcon9,
   starship: buildStarship,
@@ -3047,6 +3183,7 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   'm-v': buildMV,
   h3: buildH3,
   'ariane-1': buildAriane1,
+  'delta-ii': buildDeltaII,
 };
 
 /** Launcher ids with a dedicated model (the rest draw the generic body). */

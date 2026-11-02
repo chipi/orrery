@@ -29,6 +29,31 @@ const ATLAS_V_AJ60A: Omit<LaunchBoosters, 'count'> = {
 };
 
 /**
+ * The Delta II 7925H's nine GEM-46 strap-ons (6 ground-lit + 3 air-lit), PER booster:
+ * 19,040 kg / 2,035 kg, 608.1 kN ground-lit, 284 s air-lit Isp, ~76 s burn (Delta II —
+ * Wikipedia; Delta II Payload Planners Guide: ground-lit to T+77, air-lit T+79 to T+157).
+ * The two published ground-lit Isp figures disagree (224 vs 277.8 s); 265 s matches the
+ * published burn time.
+ */
+const DELTA_II_GEM46: LaunchBoosters = {
+  name: 'GEM-46',
+  count: 9,
+  airLitCount: 3,
+  wetKg: 19040,
+  dryKg: 2035,
+  thrustSlKN: 608.1,
+  thrustVacKN: 628.5,
+  ispSlS: 265,
+  ispVacS: 284,
+  chamberTempK: 3300,
+};
+
+/** A Delta II "H" (heavy, GEM-46) variant from its name ("Delta II 7925H-9.5"). */
+export function isDeltaIIHeavy(displayName: string | undefined): boolean {
+  return /\b79\d\dH\b|delta ii .*heavy/i.test(displayName ?? '');
+}
+
+/**
  * Atlas V solid-booster count from a variant name — the MIDDLE digit of the
  * 3-digit config code ("Atlas V 551" → 5, "Atlas V 401" → 0, "Atlas V 541" → 4,
  * "Atlas V 501 (AV-034)" → 0). Returns 0 when the name carries no parseable
@@ -75,6 +100,7 @@ export const FLAGSHIP_IDS = new Set<string>([
   'h3',
   'm-v',
   'ariane-1',
+  'delta-ii',
 ]);
 
 interface FleetRef {
@@ -297,6 +323,11 @@ export async function loadLaunchProfile(
             const srbs = atlasVSrbCount(displayName);
             profile =
               srbs > 0 ? { ...profile, boosters: { ...ATLAS_V_AJ60A, count: srbs } } : profile;
+          }
+          // The Delta II 7925H flew the larger GEM-46 strap-ons (Opportunity, MESSENGER,
+          // Dawn); the flagship JSON is the GEM-40 7925.
+          if (launcherId === 'delta-ii' && isDeltaIIHeavy(displayName)) {
+            profile = { ...profile, boosters: { ...DELTA_II_GEM46 } };
           }
           return profile;
         }

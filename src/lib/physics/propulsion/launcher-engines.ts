@@ -153,6 +153,22 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Blok-I (upper)', 'RD-0110', 1, 4, 'quad', { vernierNozzles: 4 }),
     ],
   },
+  'delta-ii': {
+    name: 'Delta II',
+    agency: 'NASA / ULA',
+    confidence: 'high',
+    sources: [
+      'https://www.ulalaunch.com/docs/default-source/rockets/deltaiipayloadplannersguide2007.pdf',
+    ],
+    stages: [
+      S('GEM-40 ×9 (6 ground-lit, 3 air-lit)', 'GEM-40 (solid)', 9, 1, 'per-booster', {
+        boosterCount: 9,
+      }),
+      S('Stage 1', 'RS-27A', 1, 1, 'single', { vernierNozzles: 2 }),
+      S('Stage 2 (Delta-K)', 'AJ10-118K', 1, 1, 'single'),
+      S('Stage 3 (PAM-D)', 'Star 48B (solid)', 1, 1, 'single'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

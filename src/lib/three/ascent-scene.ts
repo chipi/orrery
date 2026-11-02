@@ -852,8 +852,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // jettison — both push a 'staging' event, but `meco` fires only at the first
   // real stage burnout, so it's the correct drop time for boosted stacks
   // (Shuttle ET+SRBs at ~510 s, not the SRB sep at ~94 s). Falls back to the
-  // lone 'staging' for un-boosted two-stage vehicles.
-  const stagingT = metOf('meco') ?? metOf('staging');
+  // lone 'staging' for un-boosted two-stage vehicles. A boosted single-stage core (the
+  // stage-and-a-half Atlas) has no MECO: its lone 'staging' is the booster-section drop,
+  // and the core flies on to SECO.
+  const stagingT = metOf('meco') ?? (strapOnGroup ? metOf('seco') : metOf('staging'));
   // Strap-on solids jettison at the FIRST 'staging' (their burnout, ~94 s for
   // Atlas V AJ-60As) — earlier than the core drop at MECO above.
   const strapOnSepT = metOf('staging');

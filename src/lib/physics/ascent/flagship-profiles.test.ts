@@ -98,7 +98,9 @@ describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {
   const p = load(id);
   it('is a well-formed multi-stage flagship profile', () => {
     expect(p.source_tier).toBe('flagship');
-    expect(p.stages.length).toBeGreaterThanOrEqual(2);
+    // A stage-and-a-half Atlas stages by dropping its booster section: one core stage plus
+    // the jettisoned strap-on group.
+    expect(p.stages.length + (p.boosters ? 1 : 0)).toBeGreaterThanOrEqual(2);
     expect(Array.isArray(p.pitchProgram)).toBe(true);
     expect(p.payloadKg).toBeGreaterThan(0);
     for (const st of p.stages) {

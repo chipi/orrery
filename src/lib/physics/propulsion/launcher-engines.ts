@@ -330,10 +330,10 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
     confidence: 'high',
     sources: ['https://handwiki.org/wiki/Engineering:Atlas_LV-3B'],
     stages: [
-      S('Booster (jettisoned)', 'LR89-5', 2, 1, 'pair'),
-      S('Sustainer', 'LR105-5', 1, 1, 'single'),
-      S('Verniers', 'LR101', 2, 1, 'pair', {
-        note: 'Small attitude nozzles; 5 visible at liftoff.',
+      S('Booster section (jettisoned)', 'LR89-5', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Sustainer', 'LR105-5', 1, 1, 'single', {
+        vernierNozzles: 2,
+        note: 'Two LR101 verniers beside it; 5 nozzles visible at liftoff.',
       }),
     ],
   },

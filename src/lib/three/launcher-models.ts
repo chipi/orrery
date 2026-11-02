@@ -1855,10 +1855,10 @@ function buildTitanIIGLV(vehLen: number): LauncherModel {
 }
 
 /**
- * Atlas LV-3B (Mercury-Atlas) — "stage-and-a-half" balloon tank. Wider at
- * the base skirt, three engine bells in the booster skirt (two large outboard
- * boosters + one central sustainer), small Mercury capsule + escape tower on
- * top as the fairing.
+ * Atlas LV-3B (Mercury-Atlas) — "stage-and-a-half" balloon tank. The flared booster
+ * skirt with its two big chambers is a separable strap-on group that drops at BECO
+ * (~2 min 9 s); the tank flies on to orbit on the sustainer and two verniers. Small
+ * Mercury capsule + escape tower on top as the fairing.
  */
 function buildAtlasLV3B(vehLen: number): LauncherModel {
   const p = palette(0xf0f2ef, 0xc0bfba);
@@ -1875,37 +1875,48 @@ function buildAtlasLV3B(vehLen: number): LauncherModel {
   const rTop = vehLen * 0.052;
   const root = new THREE.Group();
 
-  // ── Booster skirt + balloon tank. No staging — the skirt drops at ~119 s
-  //    (booster-engine cutoff), the sustainer keeps burning. Model the whole
-  //    first-stage body as the `booster` group for drop choreography.
+  // ── Balloon tank + sustainer + two verniers (stage 0, flies on to orbit).
   const booster = new THREE.Group();
   const tank = new THREE.Mesh(new THREE.CylinderGeometry(rTop, rBase, vehLen * 0.72, 36), p.body);
   tank.position.y = vehLen * 0.4;
-  // Distinctive flared booster skirt at the very base — noticeably wider than
-  //    the balloon tank, the Atlas silhouette's signature.
-  const skirt = new THREE.Mesh(
-    new THREE.CylinderGeometry(rBase * 1.12, rBase * 1.5, vehLen * 0.09, 36),
-    p.dark,
-  );
-  skirt.position.y = vehLen * 0.045;
-  booster.add(tank, skirt);
+  booster.add(tank);
   booster.add(ringFrames(rTop, vehLen * 0.16, vehLen * 0.72, 6, frame));
   booster.add(raceway(rTop, vehLen * 0.16, vehLen * 0.7, p.dark));
-  // Two large outboard booster bells (spread to the skirt edge) + a central
-  //    sustainer + two small verniers → the 5-nozzle liftoff base (engine spec).
-  for (const bx of [-rBase * 1.0, rBase * 1.0]) {
-    const b = detailBell(rBase * 0.38, vehLen * 0.075, frame, p.eng);
-    b.position.set(bx, -vehLen * 0.005, 0);
-    booster.add(b);
-  }
   const sustainer = detailBell(rBase * 0.24, vehLen * 0.05, frame, p.eng);
+  sustainer.position.y = vehLen * 0.03;
   booster.add(sustainer);
   for (const vz of [-rBase * 0.9, rBase * 0.9]) {
     const v = nozzle(rBase * 0.1, vehLen * 0.03, p.eng);
-    v.position.set(0, vehLen * 0.01, vz);
+    v.position.set(0, vehLen * 0.05, vz);
     booster.add(v);
   }
   root.add(booster);
+
+  // ── Booster section: the flared skirt (the Atlas silhouette's signature) and the two
+  //    big chambers, jettisoned at BECO. One child per chamber (one flame each), plus the
+  //    skirt, which carries no flame.
+  const strapOnGroup = new THREE.Group();
+  const skirt = new THREE.Mesh(
+    new THREE.CylinderGeometry(rBase * 1.02, rBase * 1.4, vehLen * 0.1, 36, 1, true),
+    p.dark,
+  );
+  skirt.position.y = vehLen * 0.08;
+  skirt.userData.noFlame = true;
+  for (const bx of [-1, 1]) {
+    const chamber = new THREE.Group();
+    const pod = new THREE.Mesh(
+      new THREE.CylinderGeometry(rBase * 0.3, rBase * 0.4, vehLen * 0.09, 20),
+      p.dark,
+    );
+    pod.position.y = vehLen * 0.085;
+    const b = detailBell(rBase * 0.38, vehLen * 0.075, frame, p.eng);
+    b.position.y = vehLen * 0.03;
+    chamber.add(pod, b);
+    chamber.position.x = bx * rBase * 1.0;
+    strapOnGroup.add(chamber);
+  }
+  strapOnGroup.add(skirt);
+  root.add(strapOnGroup);
 
   // ── No true upper stage; sustainer keeps the tank group flying. Use a minimal
   //    invisible group so the LauncherModel shape stays complete.
@@ -1955,6 +1966,7 @@ function buildAtlasLV3B(vehLen: number): LauncherModel {
     upperStageBaseY,
     fairingBaseY,
     payloadMountY: vehLen * 0.83,
+    strapOns: strapOnGroup,
   };
 }
 

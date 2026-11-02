@@ -11,8 +11,20 @@ import type {
  * Spaceflight Fleet — index records (PRD-012 v0.2 / RFC-016 v0.2).
  * Lightweight summary records used by the /fleet card grid.
  */
-export async function getFleetIndex(): Promise<FleetIndexEntry[]> {
-  return get<FleetIndexEntry[]>('fleet/index.json');
+export async function getFleetIndex(locale = 'en-US'): Promise<FleetIndexEntry[]> {
+  const index = await get<FleetIndexEntry[]>('fleet/index.json');
+  if (locale === 'en-US') return index;
+  // The card grid shows name + tagline; take both from the entry's locale overlay.
+  return Promise.all(
+    index.map(async (entry) => {
+      const overlay = await get<Partial<FleetEntryOverlay>>(
+        `i18n/${locale}/fleet/${entry.category}/${entry.id}.json`,
+      ).catch(() => null);
+      return overlay
+        ? { ...entry, name: overlay.name ?? entry.name, tagline: overlay.tagline ?? entry.tagline }
+        : entry;
+    }),
+  );
 }
 
 /**

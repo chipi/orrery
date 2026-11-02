@@ -49,6 +49,8 @@
     type VideoProvenanceManifest,
   } from '$lib/video-provenance';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import { licenseLabel } from '$lib/license-label';
 
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<ImageProvenanceManifest | null>(null);
@@ -81,12 +83,12 @@
   // ORIGINAL content). /credits keeps only reused third-party material.
   $effect(() => {
     void Promise.all([
-      getSourceLogos(),
+      getSourceLogos(getLocale()),
       getImageProvenanceManifest(),
       getTextSources(),
       getAudioSourceProvenanceManifest(),
       getBadgeProvenance(),
-      getDataSources(),
+      getDataSources(getLocale()),
       getVideoManifest(),
     ])
       .then(([s, p, t, a, b, d, v]) => {
@@ -348,10 +350,10 @@
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {photo.license_short}
+                        {licenseLabel(photo.license_short)}
                       </a>
                     {:else}
-                      <span class="ph-license">{photo.license_short}</span>
+                      <span class="ph-license">{licenseLabel(photo.license_short)}</span>
                     {/if}
                   </p>
                   {#if photo.spacecraft_name && photo.spacecraft_id}
@@ -418,10 +420,10 @@
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {t.license_short}
+                      {licenseLabel(t.license_short)}
                     </a>
                   {:else}
-                    <span class="t-license">{t.license_short}</span>
+                    <span class="t-license">{licenseLabel(t.license_short)}</span>
                   {/if}
                   {#if t.source_url}
                     <span class="sep">·</span>
@@ -467,7 +469,7 @@
            each row below still links its own license. -->
       <p class="src-license">
         <span class="lbl">{m.credits_license_summary_label()}:</span>
-        {[...new Set(audioProv.entries.map((e) => e.license_short))].join(' · ')}
+        {[...new Set(audioProv.entries.map((e) => licenseLabel(e.license_short)))].join(' · ')}
       </p>
       <p class="storage-blurb">{m.credits_audio_intro()}</p>
       <ul class="audio-list">
@@ -479,7 +481,7 @@
               <span class="audio-meta">
                 {a.author ?? a.agency}{a.instrument ? ` · ${a.instrument}` : ''} ·
                 <a href={a.license_url ?? a.source_url} target="_blank" rel="noopener noreferrer"
-                  >{a.license_short}</a
+                  >{licenseLabel(a.license_short)}</a
                 >
                 ·
                 <a href={a.source_url} target="_blank" rel="noopener noreferrer"
@@ -559,7 +561,7 @@
       </header>
       <p class="src-license">
         <span class="lbl">{m.credits_license_summary_label()}:</span>
-        {[...new Set(badges.map((b) => b.license_short))].join(' · ')}
+        {[...new Set(badges.map((b) => licenseLabel(b.license_short)))].join(' · ')}
       </p>
       <ul class="insignia-list">
         {#each badges as bdg (bdg.path)}
@@ -578,7 +580,7 @@
                 <a
                   href={bdg.license_url ?? bdg.source_url}
                   target="_blank"
-                  rel="noopener noreferrer">{bdg.license_short}</a
+                  rel="noopener noreferrer">{licenseLabel(bdg.license_short)}</a
                 >
                 ·
                 <a href={bdg.source_url} target="_blank" rel="noopener noreferrer"
@@ -602,7 +604,7 @@
       </header>
       <p class="src-license">
         <span class="lbl">{m.credits_license_summary_label()}:</span>
-        {[...new Set(dataSources.entries.map((d) => d.license_short))].join(' · ')}
+        {[...new Set(dataSources.entries.map((d) => licenseLabel(d.license_short)))].join(' · ')}
       </p>
       <p class="storage-blurb">{m.credits_data_intro()}</p>
       <ul class="data-list">

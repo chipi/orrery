@@ -46,6 +46,16 @@
   // each have to guard against the loading / error variants.
   let entriesRequest = $state<RemoteData<Error, FleetIndexEntry[]>>(rdLoading());
   let entries = $derived(isSuccess(entriesRequest) ? entriesRequest.data : []);
+  // Card names + taglines come from the locale overlays; reload them when the locale changes.
+  let indexLocale = $state<string | null>(null);
+  $effect(() => {
+    const loc = localeFromPage(page);
+    if (indexLocale === null || loc === indexLocale) return;
+    indexLocale = loc;
+    getFleetIndex(loc)
+      .then((list) => (entriesRequest = rdSuccess(list)))
+      .catch(dataLoadFailed);
+  });
 
   // Insignia map (PRD-029) — gate card badges so unbadged vehicles fire no 404.
   let badges = $state<Record<string, string>>({});
@@ -377,7 +387,8 @@
       .then((b) => (badges = b))
       .catch(dataLoadFailed);
     try {
-      entriesRequest = rdSuccess(await getFleetIndex());
+      indexLocale = localeFromPage(page);
+      entriesRequest = rdSuccess(await getFleetIndex(indexLocale));
     } catch (err) {
       entriesRequest = rdError(err instanceof Error ? err : new Error(String(err)));
     }

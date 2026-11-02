@@ -34,6 +34,7 @@
     type LibrarySummary,
   } from '$lib/library-grouping';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
   import { dataLoadFailed } from '$lib/data/core';
 
   let logos = $state<SourceLogosManifest | null>(null);
@@ -41,7 +42,7 @@
   let loaded = $state(false);
 
   $effect(() => {
-    void Promise.all([getSourceLogos(), getLinkProvenanceManifest()])
+    void Promise.all([getSourceLogos(getLocale()), getLinkProvenanceManifest()])
       .then(([s, p]) => {
         logos = s;
         provenance = p;

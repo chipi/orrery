@@ -1917,5 +1917,90 @@
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
     }
+  },
+  "icons": {
+    "menu": {
+      "title": "Menuknop",
+      "what": "Hamburger van drie balkjes die tot een sluit-X vouwt als de lade open is.",
+      "where": "Navigatie (mobiel)",
+      "variants": {
+        "closed": "dicht",
+        "open": "open"
+      }
+    },
+    "audio-wave": {
+      "title": "Golf van de audiotour",
+      "what": "Het „〜”-teken dat de begeleide audiotour opent; het pulseert tijdens het afspelen.",
+      "where": "Navigatie · knop op de startpagina"
+    },
+    "science-lens": {
+      "title": "Wetenschapslens",
+      "what": "Buitenring met een stip in het midden (uit) of een vizierkruis (aan) — zet de lens aan of uit.",
+      "where": "Navigatie",
+      "variants": {
+        "off": "uit",
+        "on": "aan"
+      }
+    },
+    "settings-gear": {
+      "title": "Grafische instellingen",
+      "what": "Tandwiel met acht spaken voor het paneel met kwaliteit en grafische instellingen.",
+      "where": "Navigatie"
+    },
+    "fullscreen": {
+      "title": "Volledig scherm",
+      "what": "Hoekhaken naar buiten (openen) of naar binnen (sluiten) voor het volledige scherm van panorama's.",
+      "where": "Panorama's van de Maan · Mars",
+      "variants": {
+        "enter": "openen",
+        "exit": "sluiten"
+      }
+    },
+    "conic": {
+      "title": "Kegelsnede-iconen",
+      "what": "Glyphs voor cirkel / ellips / parabool / hyperbool voor de baanoverlay.",
+      "where": "Baanlens van Vliegen",
+      "variants": {
+        "circle": "cirkel",
+        "ellipse": "ellips",
+        "parabola": "parabool",
+        "hyperbola": "hyperbool"
+      }
+    },
+    "info-chip": {
+      "title": "Wetenschapschip",
+      "what": "Geometrische „i” die elke afbeelding koppelt aan haar uitleg in /science.",
+      "where": "Overal"
+    },
+    "vehicle": {
+      "title": "Draagraket",
+      "what": "Raket met neuskegel, landingspoten en patrijspoort.",
+      "where": "Missiepaneel"
+    },
+    "spacecraft": {
+      "title": "Ruimtevaartuig / lading",
+      "what": "Centrale bus met zonnepanelen, antennemast en oriëntatiemarkering.",
+      "where": "Missiepaneel"
+    },
+    "trajectory-arrow": {
+      "title": "Baanpijl",
+      "what": "Gebogen vliegbaan met een pijlpunt — de oproep „vlieg dit” / transfer.",
+      "where": "Missiepaneel · Plannen"
+    },
+    "mission-orbit": {
+      "title": "Missiesymbool",
+      "what": "Baanring met een gebogen baan en een markeerstip — links naar vlootmissies.",
+      "where": "Vlootpaneel"
+    },
+    "share": {
+      "title": "Delen",
+      "what": "Vierkant met pijl omhoog — deelt de huidige weergave (systeemmenu / link kopiëren).",
+      "where": "Navigatie"
+    },
+    "sensory": {
+      "title": "Zintuiglaag",
+      "what": "Kompasnaald gekruist door een golf — opent de zintuiglijke instellingen (geluid / trilling / kantelen).",
+      "where": "Navigatie"
+    }
   }
 }

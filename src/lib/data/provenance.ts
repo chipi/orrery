@@ -209,8 +209,23 @@ export interface TextSourcesManifest {
   entries: TextSourceEntry[];
 }
 
-export async function getSourceLogos(): Promise<SourceLogosManifest> {
-  return get<SourceLogosManifest>('source-logos.json');
+// Per-locale prose overlay for a manifest: i18n-src/<locale>/<name>.json maps entry id → text.
+async function proseOverlay(name: string, locale: string): Promise<Record<string, string>> {
+  if (locale === 'en-US') return {};
+  return get<Record<string, string>>(`i18n/${locale}/${name}`).catch(() => ({}));
+}
+
+export async function getSourceLogos(locale = 'en-US'): Promise<SourceLogosManifest> {
+  const [manifest, overlay] = await Promise.all([
+    get<SourceLogosManifest>('source-logos.json'),
+    proseOverlay('source-logos.json', locale),
+  ]);
+  return {
+    ...manifest,
+    sources: manifest.sources.map((s) =>
+      overlay[s.id] ? { ...s, license_summary: overlay[s.id] } : s,
+    ),
+  };
 }
 
 export async function getTextSources(): Promise<TextSourcesManifest> {
@@ -240,8 +255,17 @@ export interface DataSourcesManifest {
   entries: DataSourceEntry[];
 }
 
-export async function getDataSources(): Promise<DataSourcesManifest> {
-  return get<DataSourcesManifest>('data-sources.json');
+export async function getDataSources(locale = 'en-US'): Promise<DataSourcesManifest> {
+  const [manifest, overlay] = await Promise.all([
+    get<DataSourcesManifest>('data-sources.json'),
+    proseOverlay('data-sources.json', locale),
+  ]);
+  return {
+    ...manifest,
+    entries: manifest.entries.map((e) =>
+      overlay[e.id] ? { ...e, description: overlay[e.id] } : e,
+    ),
+  };
 }
 
 // ─── Audio provenance (PRD-016 §transparency / RFC-019 §5.4) ─────────────

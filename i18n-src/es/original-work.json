@@ -1917,5 +1917,90 @@
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
     }
+  },
+  "icons": {
+    "menu": {
+      "title": "Botón de menú",
+      "what": "Hamburguesa de tres barras que se pliega en una X de cierre cuando el cajón está abierto.",
+      "where": "Navegación (móvil)",
+      "variants": {
+        "closed": "cerrado",
+        "open": "abierto"
+      }
+    },
+    "audio-wave": {
+      "title": "Onda del tour de audio",
+      "what": "La marca «〜» que abre el tour de audio guiado; late mientras suena.",
+      "where": "Navegación · botón de inicio"
+    },
+    "science-lens": {
+      "title": "Lente científica",
+      "what": "Anillo exterior con un punto central (apagada) o una retícula (encendida): activa o desactiva la lente.",
+      "where": "Navegación",
+      "variants": {
+        "off": "apagada",
+        "on": "encendida"
+      }
+    },
+    "settings-gear": {
+      "title": "Ajustes gráficos",
+      "what": "Engranaje de ocho radios para el panel de calidad y ajustes gráficos.",
+      "where": "Navegación"
+    },
+    "fullscreen": {
+      "title": "Pantalla completa",
+      "what": "Esquinas hacia fuera (entrar) o hacia dentro (salir) para la pantalla completa de los panoramas.",
+      "where": "Panoramas de la Luna · Marte",
+      "variants": {
+        "enter": "entrar",
+        "exit": "salir"
+      }
+    },
+    "conic": {
+      "title": "Iconos de cónicas",
+      "what": "Glifos de circunferencia / elipse / parábola / hipérbola para la superposición de órbitas.",
+      "where": "Lente de órbita de Volar",
+      "variants": {
+        "circle": "circunferencia",
+        "ellipse": "elipse",
+        "parabola": "parábola",
+        "hyperbola": "hipérbola"
+      }
+    },
+    "info-chip": {
+      "title": "Distintivo de ciencia",
+      "what": "Glifo «i» geométrico que enlaza cualquier figura con su explicación en /science.",
+      "where": "En toda la app"
+    },
+    "vehicle": {
+      "title": "Lanzador",
+      "what": "Cohete con cofia, patas de aterrizaje y ojo de buey.",
+      "where": "Panel de misión"
+    },
+    "spacecraft": {
+      "title": "Nave espacial / carga útil",
+      "what": "Plataforma central con paneles solares, mástil de antena y marcador de orientación.",
+      "where": "Panel de misión"
+    },
+    "trajectory-arrow": {
+      "title": "Flecha de trayectoria",
+      "what": "Trayectoria en arco con punta de flecha: la llamada a «volar esto» / transferencia.",
+      "where": "Panel de misión · Planificar"
+    },
+    "mission-orbit": {
+      "title": "Glifo de misión",
+      "what": "Anillo de órbita con una trayectoria en arco y un punto marcador: enlaces a misiones de la flota.",
+      "where": "Panel de la flota"
+    },
+    "share": {
+      "title": "Compartir",
+      "what": "Cuadrado con flecha hacia arriba: comparte la vista actual (menú del sistema / copiar enlace).",
+      "where": "Navegación"
+    },
+    "sensory": {
+      "title": "Capa sensorial",
+      "what": "Aguja de brújula atravesada por una onda: abre los ajustes sensoriales (sonido / vibración / inclinación).",
+      "where": "Navegación"
+    }
   }
 }

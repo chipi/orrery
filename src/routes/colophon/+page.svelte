@@ -47,6 +47,12 @@
   const srcOf = (p: string): string => (p.startsWith('/images/') ? assetUrl(p) : `${base}${p}`);
 
   let data = $state<Manifest | null>(null);
+  // Interface-glyph texts per locale (original-work overlay → icons[id]); variants by English label.
+  type IconOverlay = Record<
+    string,
+    { title?: string; what?: string; where?: string; variants?: Record<string, string> }
+  >;
+  let iconOverlay = $state<IconOverlay>({});
   let episodes = $state<Episode[]>([]);
   let lightbox = $state<{ src: string; title: string; route: string } | null>(null);
 
@@ -55,13 +61,14 @@
       .then((r) => r.json())
       .then(async (j: Manifest) => {
         const loc = getLocale();
-        data =
+        const overlay =
           loc === 'en-US'
-            ? j
-            : localizeOriginalWork(
-                j,
-                await get<OriginalWorkOverlay>(`i18n/${loc}/original-work.json`).catch(() => null),
-              );
+            ? null
+            : await get<OriginalWorkOverlay & { icons?: IconOverlay }>(
+                `i18n/${loc}/original-work.json`,
+              ).catch(() => null);
+        iconOverlay = overlay?.icons ?? {};
+        data = overlay ? localizeOriginalWork(j, overlay) : j;
       })
       .catch(() => {
         data = null;
@@ -346,14 +353,16 @@
               {#each icon.variants ?? [{ props: {} }] as v (v.label ?? 'only')}
                 <span class="icon-variant">
                   <icon.component {...v.props} />
-                  {#if v.label}<span class="iv-label">{v.label}</span>{/if}
+                  {#if v.label}<span class="iv-label"
+                      >{iconOverlay[icon.id]?.variants?.[v.label] ?? v.label}</span
+                    >{/if}
                 </span>
               {/each}
             </div>
-            <p class="it-title">{icon.label}</p>
-            <p class="it-what">{icon.what}</p>
+            <p class="it-title">{iconOverlay[icon.id]?.title ?? icon.label}</p>
+            <p class="it-what">{iconOverlay[icon.id]?.what ?? icon.what}</p>
             <a class="it-where" href={localHref(icon.route)}
-              >{m.colophon_seen_on()} {icon.where} →</a
+              >{m.colophon_seen_on()} {iconOverlay[icon.id]?.where ?? icon.where} →</a
             >
           </li>
         {/each}

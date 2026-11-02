@@ -9,6 +9,8 @@
  */
 
 import { base } from '$app/paths';
+import * as msg from '$lib/paraglide/messages';
+import { getLocale } from '$lib/paraglide/runtime';
 
 export type Tier = 'T1' | 'T2' | 'T3' | 'T4';
 
@@ -109,66 +111,50 @@ export const ALL_DECADES = [
   '2020-2026',
 ] as const;
 
-/** Format ISO date → "MMM YYYY" or "MMM DD, YYYY" or T-0 countdown. */
+/** Format ISO date → "MMM YYYY" or "MMM DD, YYYY" (+ HH:MMZ), in the page's locale. */
 export function formatNet(iso: string, precision: string): string {
   const dt = new Date(iso);
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
+  const fmt = (o: Intl.DateTimeFormatOptions) =>
+    new Intl.DateTimeFormat(getLocale(), { timeZone: 'UTC', ...o }).format(dt);
   if (precision === 'year') return String(dt.getUTCFullYear());
-  if (precision === 'month') return `${months[dt.getUTCMonth()]} ${dt.getUTCFullYear()}`;
-  if (precision === 'day') {
-    return `${months[dt.getUTCMonth()]} ${dt.getUTCDate()}, ${dt.getUTCFullYear()}`;
-  }
+  if (precision === 'month') return fmt({ month: 'short', year: 'numeric' });
+  const day = fmt({ month: 'short', day: 'numeric', year: 'numeric' });
+  if (precision === 'day') return day;
   // minute / second / hour: show HH:MM UTC
   const h = String(dt.getUTCHours()).padStart(2, '0');
   const m = String(dt.getUTCMinutes()).padStart(2, '0');
-  return `${months[dt.getUTCMonth()]} ${dt.getUTCDate()}, ${dt.getUTCFullYear()} ${h}:${m}Z`;
+  return `${day} ${h}:${m}Z`;
 }
 
 /** Build a "T-0 in 2d 4h" countdown string for upcoming launches. */
 export function formatCountdown(iso: string, now = new Date()): string {
   const target = new Date(iso).getTime();
   const ms = target - now.getTime();
-  if (ms < 0) return 'in flight';
+  if (ms < 0) return msg.launch_countdown_in_flight();
   const sec = Math.floor(ms / 1000);
   const d = Math.floor(sec / 86400);
   const h = Math.floor((sec % 86400) / 3600);
   const m = Math.floor((sec % 3600) / 60);
-  if (d >= 1) return `T-0 in ${d}d ${h}h`;
-  if (h >= 1) return `T-0 in ${h}h ${m}m`;
-  return `T-0 in ${m}m`;
+  if (d >= 1) return msg.launch_countdown_dh({ d, h });
+  if (h >= 1) return msg.launch_countdown_hm({ h, m });
+  return msg.launch_countdown_m({ m });
+}
+
+// Month-strip label: "Mar '26" in English, the locale's short month + year elsewhere.
+function monthLabel(year: number, month: number): string {
+  const loc = getLocale();
+  const dt = new Date(Date.UTC(year, month - 1, 1));
+  const short = (o: Intl.DateTimeFormatOptions) =>
+    new Intl.DateTimeFormat(loc, { timeZone: 'UTC', ...o }).format(dt);
+  return loc === 'en-US'
+    ? `${short({ month: 'short' })} '${String(year).slice(2)}`
+    : short({ month: 'short', year: 'numeric' });
 }
 
 /** Group entries by YYYY-MM for the month strip / timeline rendering. */
 export function groupByMonth(
   entries: LaunchEntry[],
 ): Array<{ key: string; label: string; entries: LaunchEntry[] }> {
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
   const map = new Map<string, LaunchEntry[]>();
   for (const e of entries) {
     const dt = new Date(e.net);
@@ -182,9 +168,17 @@ export function groupByMonth(
     const [y, m] = key.split('-');
     out.push({
       key,
-      label: `${months[Number(m) - 1]} '${y.slice(2)}`,
+      label: monthLabel(Number(y), Number(m)),
       entries: list.sort((a, b) => a.net.localeCompare(b.net)),
     });
   }
   return out;
+}
+
+// The launch feed fills missing fields with English placeholders; show them in the page's language.
+export function feedText(value: string): string {
+  if (value === 'Unknown Payload') return msg.launch_unknown_payload();
+  if (value === 'Unknown Pad' || value === 'Unknown launch location')
+    return msg.launch_unknown_pad();
+  return value;
 }

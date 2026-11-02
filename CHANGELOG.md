@@ -8,6 +8,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
+## [0.9.4] — in progress
+
+Work in progress on branch `tech-debt/0.9.4`. The date replaces "in progress" when the release
+is cut.
+
 ## [0.9.3] — 2026-11-02
 
 A links and credits release: every 404 the site caused or answered is fixed or redirected,

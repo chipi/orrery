@@ -251,6 +251,20 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Blok-L', 'S1.5400', 1, 1, 'single'),
     ],
   },
+  'athena-ii': {
+    name: 'Athena II (LMLV-2)',
+    agency: 'Lockheed Martin',
+    confidence: 'medium',
+    sources: [
+      'https://pds.nasa.gov/data/lp-l-6-position-v1.0/lp_0014/DOCUMENT/SCHANDBK.PDF',
+      'https://en.wikipedia.org/wiki/Athena_II',
+    ],
+    stages: [
+      S('Stage 1', 'Castor 120 (solid)', 1, 1, 'single'),
+      S('Stage 2', 'Castor 120 (solid)', 1, 1, 'single'),
+      S('Stage 3', 'Orbus 21D (solid)', 1, 1, 'single'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

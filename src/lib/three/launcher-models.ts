@@ -3670,6 +3670,106 @@ function buildFalconHeavy(vehLen: number): LauncherModel {
   };
 }
 
+/**
+ * Athena II (Lunar Prospector) — an all-solid stack on the 2.36 m Castor 120: two Castor 120
+ * stages joined by an aluminium interstage, the Orbus 21D third stage, the hydrazine Orbit
+ * Adjust Module on top of it, and the 92-inch fairing with its 15° conical taper over the
+ * spacecraft and its Star 37 TLI stage. Proportions from the Lunar Prospector Mission
+ * Handbook and Wikipedia (28.2 m; Castor 120 8.8 m; Orbus 21D 3.15 m; OAM ~1 m); colours from
+ * memory (white fairing, light casings), not verified against photos.
+ */
+function buildAthenaII(vehLen: number): LauncherModel {
+  const body = new THREE.MeshStandardMaterial({
+    map: livery({
+      base: '#e8eaec',
+      wordmark: { text: 'A T H E N A', color: '#1c2a4a', size: 0.05, y: 0.55 },
+      flag: 'usa',
+    }),
+    roughness: 0.5,
+    metalness: 0.14,
+    roughnessMap: stringerRoughness(40),
+  });
+  const plain = heroWhite(0xeef0f1);
+  const frame = heroMetal(0xbfc4ca, 0.3);
+  const dark = heroDark(0x2a2d33);
+  const eng = heroMetal(0x40454d, 0.5);
+  const r = vehLen * (1.18 / 28.2);
+  const root = new THREE.Group();
+
+  // ── Stage 1 Castor 120.
+  const booster = new THREE.Group();
+  const s1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.31, 40), body);
+  s1.position.y = vehLen * (0.02 + 0.155);
+  booster.add(s1, ringFrames(r, vehLen * 0.04, vehLen * 0.31, 3, frame));
+  const n1 = detailBell(r * 0.55, vehLen * 0.035, frame, eng);
+  n1.position.y = vehLen * 0.02;
+  booster.add(n1);
+  root.add(booster);
+
+  // ── Stage 2 Castor 120 (the interstage below it is bridged as an adapter).
+  const midStage = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.31, 40), plain);
+  s2.position.y = vehLen * (0.37 + 0.155);
+  midStage.add(s2, ringFrames(r, vehLen * 0.39, vehLen * 0.66, 3, frame));
+  const n2 = detailBell(r * 0.6, vehLen * 0.04, frame, eng);
+  n2.position.y = vehLen * 0.37;
+  midStage.add(n2);
+  root.add(midStage);
+
+  // ── Stage 3 Orbus 21D, and the Orbit Adjust Module on top of it.
+  const upperStage = new THREE.Group();
+  const s3 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.99, r * 0.99, vehLen * 0.11, 40),
+    plain,
+  );
+  s3.position.y = vehLen * (0.7 + 0.055);
+  const n3 = detailBell(r * 0.42, vehLen * 0.03, frame, eng);
+  n3.position.y = vehLen * 0.7;
+  const oam = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.99, r * 0.99, vehLen * 0.035, 40),
+    dark,
+  );
+  oam.position.y = vehLen * (0.81 + 0.0175);
+  upperStage.add(s3, n3, oam);
+  root.add(upperStage);
+
+  // ── 92-inch fairing: barrel, 15° cone, rounded nose.
+  const fairingBaseY = vehLen * 0.845;
+  const fR = r * (1.17 / 1.18);
+  const fH = vehLen - fairingBaseY;
+  const prof: THREE.Vector2[] = [
+    new THREE.Vector2(fR, 0),
+    new THREE.Vector2(fR, fH * 0.45),
+    new THREE.Vector2(fR * 0.32, fH * 0.95),
+    new THREE.Vector2(0, fH),
+  ];
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(prof, 36, theta, Math.PI), plain);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: s1,
+    upperStage,
+    upperPlumeAnchor: s2,
+    finalPlumeAnchor: s3,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: s3.position.y,
+    fairingBaseY,
+    payloadMountY: fairingBaseY + vehLen * 0.01,
+    midStage,
+  };
+}
+
 const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => LauncherModel> = {
   'falcon-9': buildFalcon9,
   starship: buildStarship,
@@ -3724,6 +3824,7 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   'titan-iiie-centaur': (v) => buildTitan(v, 'iiie'),
   'titan-ivb-centaur': (v) => buildTitan(v, 'ivb'),
   'falcon-heavy': buildFalconHeavy,
+  'athena-ii': buildAthenaII,
 };
 
 /** Launcher ids with a dedicated model (the rest draw the generic body). */

@@ -108,6 +108,7 @@ export const FLAGSHIP_IDS = new Set<string>([
   'titan-ivb-centaur',
   'falcon-heavy',
   'molniya-m',
+  'athena-ii',
 ]);
 
 interface FleetRef {

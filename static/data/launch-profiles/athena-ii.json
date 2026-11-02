@@ -1,0 +1,57 @@
+{
+  "id": "athena-ii",
+  "name": "Athena II",
+  "source_tier": "flagship",
+  "payloadKg": 2059,
+  "fairingKg": 700,
+  "fairingJettisonAltM": 115000,
+  "refAreaM2": 4.4,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.4583, "lon": -80.5283, "name": "LC-46 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [8, 88], [30, 74], [89, 50], [180, 26], [240, 12], [330, 0]],
+  "stages": [
+    {
+      "name": "Stage 1 (Castor 120)",
+      "wetKg": 53070,
+      "dryKg": 4082,
+      "thrustSlKN": 1468,
+      "thrustVacKN": 1621,
+      "ispSlS": 253,
+      "ispVacS": 280,
+      "engines": 1,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "Stage 2 (Castor 120)",
+      "wetKg": 53070,
+      "dryKg": 4082,
+      "thrustVacKN": 1466,
+      "ispVacS": 280,
+      "engines": 1,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "Stage 3 (Orbus 21D)",
+      "wetKg": 10614,
+      "dryKg": 848,
+      "thrustVacKN": 182,
+      "ispVacS": 293,
+      "engines": 1,
+      "chamberTempK": 3300
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Lunar Prospector Mission Handbook (LMMS/P458481, 1998) — Castor 120 and Orbus 21D masses, the event table (stage 1 sep 89 s, fairing 232 s, Orbus burnout 392 s), spacecraft + TLI stage 1,523 kg",
+      "u": "https://pds.nasa.gov/data/lp-l-6-position-v1.0/lp_0014/DOCUMENT/SCHANDBK.PDF"
+    },
+    {
+      "l": "Athena II — Wikipedia (28.2 m, 2.36 m; Castor 120 1,900 kN, 280 s; Orbus 21D; the OAM with 236 kg hydrazine)",
+      "u": "https://en.wikipedia.org/wiki/Athena_II"
+    },
+    {
+      "l": "Payload = spacecraft + Star 37FM TLI stage (1,523 kg) + the OAM (236 kg hydrazine, dry mass estimated ~300 kg), which circularises the parking orbit; thrusts are averages that match the documented burns (Castor 120 83 s and 92 s, Orbus 21D 154 s), Castor 120 sea-level Isp derived from its SL/vacuum thrust ratio; fairing mass estimated",
+      "u": "https://nssdc.gsfc.nasa.gov/planetary/text/lp_pr_971022.txt"
+    }
+  ]
+}

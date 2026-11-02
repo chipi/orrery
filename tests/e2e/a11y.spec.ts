@@ -66,6 +66,15 @@ const GATED_ROUTES: { path: string; label: string; exclude?: string }[] = [
   { path: '/sourcing', label: 'sourcing' },
   { path: '/venus', label: 'venus' },
   { path: '/worlds', label: 'worlds' },
+  // Dynamic routes and panel states (0.9.4): one representative of each, since every page
+  // of a kind renders the same component.
+  { path: '/missions?id=apollo11', label: 'mission panel open' },
+  { path: '/fleet?id=saturn-v', label: 'fleet panel open' },
+  { path: '/programs/apollo', label: 'program page' },
+  { path: '/essays/delta-v', label: 'essay page' },
+  { path: '/science/orbits/keplerian-orbit', label: 'science section' },
+  { path: '/science/history/apollo-11-1969', label: 'science history page' },
+  { path: '/c/mission/apollo11', label: 'share card' },
 ];
 
 test.describe('a11y gate (ADR-025 — 0 critical or serious violations)', () => {

@@ -211,12 +211,12 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
     margin-bottom: 12px;
   }
   .crumb a {
     color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
+    text-decoration: underline;
   }
   .crumb a:hover {
     color: #4ecdc4;
@@ -365,7 +365,7 @@
   .see-in-app a,
   .learn-more a {
     color: #4ecdc4;
-    text-decoration: none;
+    text-decoration: underline;
   }
   .see-in-app a:hover,
   .learn-more a:hover {

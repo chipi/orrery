@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "बेड़ा — Shenzhou अंतरिक्ष यान",
+    "/fleet?id=shenzhou": "बेड़ा — Shenzhou अंतरिक्ष यान",
     "/programs/tiangong": "Tiangong — वह स्टेशन जिसे Shenzhou दलों ने बनाया और जहाँ वे जाते हैं",
     "/programs/soyuz": "Soyuz — वह यान जिससे Shenzhou की बनावट निकली"
   }

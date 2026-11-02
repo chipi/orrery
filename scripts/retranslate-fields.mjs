@@ -1,6 +1,6 @@
 /**
  * Re-translate exact fields named in a manifest, for the translation-quality
- * audit (docs/wip/2026-10-17-post-v1-arc-plan.md, item 9b).
+ * audit (docs/wip/_archive/2026-10-17-post-v1-arc-plan.md, item 9b).
  *
  *   set -a; . ./.env; set +a
  *   node scripts/retranslate-fields.mjs --manifest=<file.json> [--concurrency=6] [--limits=tagline:140,…] [--chunk=15] [--batch] [--dry-run]

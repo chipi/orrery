@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=jwst": "Флота — свемирски телескоп James Webb",
+    "/fleet?id=jwst": "Флота — свемирски телескоп James Webb",
     "/programs/great-observatories": "Велике опсерваторије — лоза коју JWST наставља",
     "/programs/ariane": "Ariane — ракета која га је лансирала",
     "/earth?site=jwst": "Свемирски телескоп James Webb"

@@ -20,7 +20,7 @@ import { ORBIT_BODY_IDS } from './shared';
 export const ascentToOrbit: FormulaDef<{ payloadKg: number; targetOrbitAltKm: number }> = {
   id: 'ascent-to-orbit',
   titleKey: 'lab.f.ascent.title',
-  plainKey: 'lab.f.ascent.plain',
+  inWordsKey: 'lab.f.ascent.in-words',
   citationKey: 'mission-phases/gravity-turn',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Gravity_turn', source: 'wikipedia' },
   domain: 'ascent',
@@ -147,7 +147,7 @@ export const ascentToOrbit: FormulaDef<{ payloadKg: number; targetOrbitAltKm: nu
 export const ascentGuidance: FormulaDef<{ upperThrustKN: number; targetOrbitAltKm: number }> = {
   id: 'ascent-guidance',
   titleKey: 'lab.f.guidance.title',
-  plainKey: 'lab.f.guidance.plain',
+  inWordsKey: 'lab.f.guidance.in-words',
   citationKey: 'mission-phases/ascent-guidance',
   learnMore: {
     url: 'https://en.wikipedia.org/wiki/Guidance,_navigation,_and_control',
@@ -263,7 +263,7 @@ export const ascentGuidance: FormulaDef<{ upperThrustKN: number; targetOrbitAltK
 export const dvToOrbit: FormulaDef<{ body: string; altitudeKm: number; lossesKms: number }> = {
   id: 'dv-to-orbit',
   titleKey: 'lab.f.dvorbit.title',
-  plainKey: 'lab.f.dvorbit.plain',
+  inWordsKey: 'lab.f.dvorbit.in-words',
   citationKey: 'propulsion/dv-budget',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Delta-v_budget', source: 'wikipedia' },
   domain: 'ascent',

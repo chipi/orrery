@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Terra — órbitas e bases de lançamento",
-    "/fleet?focus=discovery": "Frota — os orbitadores do Space Shuttle"
+    "/fleet?id=discovery": "Frota — os orbitadores do Space Shuttle"
   }
 }

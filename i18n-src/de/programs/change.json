@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/moon": "Mond — die Chang'e-Landeplätze",
-    "/fleet?focus=yutu-2": "Flotte — die Yutu-Rover und Chang'e-Lander",
+    "/fleet?id=yutu-2": "Flotte — die Yutu-Rover und Chang'e-Lander",
     "/programs/artemis": "Artemis — das parallele Rennen zurück zum Mond",
     "/moon?site=change3": "Chang’e 3 — Rover Yutu",
     "/moon?site=change4": "Chang’e 4 — die Rückseite",

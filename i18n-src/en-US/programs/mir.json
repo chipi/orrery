@@ -85,6 +85,6 @@
   ],
   "link_labels": {
     "/earth": "Earth — orbits, rendezvous & launch sites",
-    "/fleet?focus=mir": "Fleet — Mir space station"
+    "/fleet?id=mir": "Fleet — Mir space station"
   }
 }

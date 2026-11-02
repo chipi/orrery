@@ -181,7 +181,7 @@ export function buildKaguyaTcProvenanceEntry(input: {
     source_url: input.sourceUrl,
     image_url: input.sourceUrl,
     license_short: 'JAXA-OPEN',
-    license_url: 'https://www.jaxa.jp/about/copyright_e.html',
+    license_url: 'https://global.jaxa.jp/policy.html',
     license_rationale:
       'Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.',
     modifications: [
@@ -459,7 +459,13 @@ export function buildPanoramaProvenanceEntry(input: {
   // Map source URL → schema-valid source_type.
   // Wikimedia URLs → wikimedia-commons; PD-NASA → direct-agency;
   // anything else (e.g. CNSA direct from cnsa.gov.cn) → direct-other.
-  const sourceType = /wikimedia\.org|wikipedia\.org/.test(input.sourceUrl)
+  let sourceHost = '';
+  try {
+    sourceHost = new URL(input.sourceUrl).hostname;
+  } catch {
+    // not a URL: not Wikimedia
+  }
+  const sourceType = /(^|\.)(wikimedia|wikipedia)\.org$/.test(sourceHost)
     ? 'wikimedia-commons'
     : input.license === 'PD-NASA'
       ? 'direct-agency'

@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=gaganyaan": "フリート — Gaganyaan 宇宙船",
+    "/fleet?id=gaganyaan": "フリート — Gaganyaan 宇宙船",
     "/programs/chandrayaan": "Chandrayaan — インドの月探査計画",
     "/programs/mangalyaan": "Mangalyaan — 初挑戦で成功したインドの火星探査"
   }

@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=kuiper": "Флот — спутниковая группировка Kuiper",
+    "/fleet?id=kuiper": "Флот — спутниковая группировка Kuiper",
     "/programs/starlink": "Starlink — группировка, которую он догоняет",
     "/earth": "Земля — орбиты и теснота на низкой орбите",
     "/earth?site=kuiper": "Спутниковая группировка Kuiper"

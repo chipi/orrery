@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "Flotta — la navicella Shenzhou",
+    "/fleet?id=shenzhou": "Flotta — la navicella Shenzhou",
     "/programs/tiangong": "Tiangong — la stazione costruita e raggiunta dagli equipaggi Shenzhou",
     "/programs/soyuz": "Soyuz — il veicolo da cui deriva lo schema di Shenzhou"
   }

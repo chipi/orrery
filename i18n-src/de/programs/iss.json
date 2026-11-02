@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze",
-    "/fleet?focus=iss": "Flotte — die Internationale Raumstation",
+    "/fleet?id=iss": "Flotte — die Internationale Raumstation",
     "/programs/mir": "Mir — die Station, deren Erbe die ISS antrat",
     "/earth?site=iss": "Die ISS über uns"
   }

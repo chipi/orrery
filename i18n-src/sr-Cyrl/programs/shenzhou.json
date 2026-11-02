@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "Флота — летелица Shenzhou",
+    "/fleet?id=shenzhou": "Флота — летелица Shenzhou",
     "/programs/tiangong": "Tiangong — станица коју су изградиле посаде Shenzhou и до које лете",
     "/programs/soyuz": "Soyuz — летелица од које потиче распоред Shenzhou"
   }

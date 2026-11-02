@@ -161,8 +161,8 @@
 
   <!-- Glossary (FB2): read the equation as meaning — each symbol, the physical law, the
        link to earlier rungs — before substituting numbers. -->
-  {#if formula.plainKey}
-    <p class="card__plain">{t(formula.plainKey)}</p>
+  {#if formula.inWordsKey}
+    <p class="card__in-words">{t(formula.inWordsKey)}</p>
   {/if}
 
   <!-- Parameter controls -->
@@ -463,7 +463,7 @@
   }
 
   /* Glossary (FB2) — "read the equation" prose under the formula. */
-  .card__plain {
+  .card__in-words {
     margin: 0 0 0.9rem;
     font-size: 0.82rem;
     line-height: 1.55;

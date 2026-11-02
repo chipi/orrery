@@ -233,7 +233,9 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
     name: 'Space Shuttle',
     agency: 'NASA',
     confidence: 'medium',
-    sources: ['https://science.ksc.nasa.gov/shuttle/technology/sts-newsref/srb.html'],
+    sources: [
+      'https://web.archive.org/web/20220123042230/https://science.ksc.nasa.gov/shuttle/technology/sts-newsref/srb.html',
+    ],
     stages: [
       S('SRB ×2', 'RSRM', 2, 1, 'per-booster', { boosterCount: 2 }),
       S('Orbiter (SSME)', 'RS-25', 3, 1, 'triple', {

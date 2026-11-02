@@ -31,7 +31,7 @@
   ],
   "link_labels": {
     "/explore": "Explore — comets, and the deep sky ESA charts",
-    "/fleet?focus=rosetta": "Fleet — Rosetta, Gaia & Euclid",
+    "/fleet?id=rosetta": "Fleet — Rosetta, Gaia & Euclid",
     "/programs/ariane": "Ariane — the rocket that launches ESA's science",
     "/earth?site=gaia": "Gaia at L2",
     "/earth?site=xmm": "XMM-Newton"

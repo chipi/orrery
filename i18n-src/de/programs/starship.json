@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starship": "Flotte — das Startsystem Starship",
+    "/fleet?id=starship": "Flotte — das Startsystem Starship",
     "/programs/spacex": "SpaceX — die Wiederverwendbarkeit, auf der Starship aufbaut",
     "/mars": "Mars — das Ziel"
   }

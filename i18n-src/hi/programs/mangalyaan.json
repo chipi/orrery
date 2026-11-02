@@ -83,7 +83,7 @@
   ],
   "link_labels": {
     "/mars": "मंगल — गंतव्य",
-    "/fleet?focus=mangalyaan": "बेड़ा — मंगल ऑर्बिटर मिशन",
+    "/fleet?id=mangalyaan": "बेड़ा — मंगल ऑर्बिटर मिशन",
     "/programs/chandrayaan": "चंद्रयान — भारत का चंद्र कार्यक्रम",
     "/mars?site=mangalyaan": "मंगल की कक्षा में मंगलयान"
   }

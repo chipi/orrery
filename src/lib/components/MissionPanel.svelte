@@ -30,27 +30,12 @@
   import { VehicleIcon, SpacecraftIcon, TrajectoryArrowIcon } from '$lib/components/icons';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
+  import { hasTrajectory } from '$lib/data/interstellar';
 
   // The former LEARN tab folds into SCIENCE (Phase 4 cleanup): ScienceCards
   // on top, the tiered learn-link list below — one tab destination, less
   // crowding in the strip.
   type Tab = 'overview' | 'gallery' | 'flight' | 'science';
-
-  // #306 panel ↔ /explore PATHS-layer backlink. Stays in sync with
-  // ICONIC_TRAJECTORY_IDS in src/lib/three/explore-scene-host.ts —
-  // updating one without the other gives misleading "see on /explore"
-  // chips. Validated by the explore-paths-layer e2e spec.
-  const MISSIONS_WITH_ICONIC_PATH = new Set([
-    'voyager-1',
-    'voyager-2',
-    'pioneer-10',
-    'pioneer-11',
-    'new-horizons',
-    'galileo',
-    'juno',
-    'cassini',
-    'dawn',
-  ]);
 
   type Props = {
     mission: Mission | null;
@@ -195,10 +180,20 @@
     }
     if (f?.cruise?.tcm_count != null && f.cruise.tcm_count > 0)
       list.push({ tab: 'mission-phases', section: 'tcm' });
-    if (f?.arrival?.v_infinity_km_s != null)
+    // Attitude during the cruise is held by star trackers.
+    if (f?.cruise != null) list.push({ tab: 'mission-phases', section: 'star-trackers' });
+    if (f?.arrival?.v_infinity_km_s != null) {
       list.push({ tab: 'propulsion', section: 'v-infinity' });
-    if (f?.arrival?.orbit_insertion_dv_km_s != null)
+      // An interplanetary arrival: its launch window repeats with the synodic period.
+      list.push({ tab: 'scales-time', section: 'sidereal-synodic' });
+    }
+    if (f?.arrival?.orbit_insertion_dv_km_s != null) {
       list.push({ tab: 'mission-phases', section: 'orbit-insertion' });
+      // Insertion burns are placed by true anomaly (periapsis = 0°).
+      list.push({ tab: 'orbits', section: 'true-anomaly' });
+    }
+    // Flight positions and dates are given in the J2000 frame.
+    if (f != null) list.push({ tab: 'scales-time', section: 'j2000' });
     if (f?.arrival?.entry_velocity_km_s != null) {
       list.push({ tab: 'mission-phases', section: 'edl' });
       // EDL phase pairs with throttling-and-gimbaling (powered descent).
@@ -475,11 +470,10 @@
           <p class="editorial">{mission.description}</p>
         {/if}
 
-        {#if MISSIONS_WITH_ICONIC_PATH.has(mission.id)}
-          <!-- #306 panel ↔ /explore backlink. The 9 missions with
-               iconic trajectories on /explore (Voyager 1+2, Pioneer
-               10+11, New Horizons, Galileo, Juno, Cassini, Dawn) get
-               a small chip that deep-links to /explore with the
+        {#if hasTrajectory(mission.id)}
+          <!-- #306 panel ↔ /explore backlink. Every mission whose path
+               /explore draws (TRAJECTORY_IDS, the same list /explore
+               reads) gets a chip that deep-links to /explore with the
                PATHS layer active. Cassini also gets the orbital tour
                at Saturn-system scale on zoom-in (Slice D). -->
           <a
@@ -498,19 +492,22 @@
         <!-- Trajectory thumbnail at the top of the FLIGHT tab —
              pre-rendered at build time by scripts/fetch-assets.ts so
              the panel shows flight data + the path it produces in
-             one place. -->
-        <figure class="flight-thumbnail">
-          <img
-            src="{assetOrigin}/images/missions/thumbnails/{mission.id}.png"
-            alt=""
-            loading="lazy"
-            onerror={(e) => {
-              const fig = (e.currentTarget as HTMLImageElement).closest('figure');
-              if (fig) fig.style.display = 'none';
-            }}
-            decoding="async"
-          />
-        </figure>
+             one place. Only missions with flight data have one
+             (mission-thumbnails.test.ts); asking for the rest 404ed on prod. -->
+        {#if mission.flight}
+          <figure class="flight-thumbnail">
+            <img
+              src="{assetOrigin}/images/missions/thumbnails/{mission.id}.png"
+              alt=""
+              loading="lazy"
+              onerror={(e) => {
+                const fig = (e.currentTarget as HTMLImageElement).closest('figure');
+                if (fig) fig.style.display = 'none';
+              }}
+              decoding="async"
+            />
+          </figure>
+        {/if}
         {#if flightCaveat}
           <div class="flight-caveat" role="note">
             {flightCaveat}
@@ -871,7 +868,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
+<PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
 
 <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 

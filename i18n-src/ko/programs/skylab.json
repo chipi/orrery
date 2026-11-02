@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "지구 — 궤도와 발사장",
-    "/fleet?focus=skylab": "함대 — 궤도 작업실 Skylab"
+    "/fleet?id=skylab": "함대 — 궤도 작업실 Skylab"
   }
 }

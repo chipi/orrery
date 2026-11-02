@@ -24,6 +24,7 @@
  * also as part of the Milestone D `/credits` page data layer.
  */
 
+import { stripTracking } from './lib/strip-tracking.ts';
 import { writeFile, mkdir, readdir, readFile, access } from 'node:fs/promises';
 import { constants as fsConstants } from 'node:fs';
 import { join, basename, extname, dirname, posix } from 'node:path';
@@ -152,11 +153,22 @@ const commonsCache = new Map<string, CommonsImageInfo | null>();
 
 function plainText(html: string | undefined | null): string | null {
   if (!html) return null;
-  const stripped = html
-    .replace(/<[^>]*>/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+  // Repeat until stable: one pass over "<scr<b>ipt>" leaves "<script>".
+  let text = html;
+  for (let prev = ''; prev !== text;) {
+    prev = text;
+    text = text.replace(/<[^>]*>/g, '');
+  }
+  const stripped = text.replace(/[<>]/g, '').replace(/\s+/g, ' ').trim();
   return stripped || null;
+}
+
+function hostOf(url: string): string {
+  try {
+    return new URL(url).hostname;
+  } catch {
+    return '';
+  }
 }
 
 async function fetchCommonsImageInfo(filename: string): Promise<CommonsImageInfo | null> {
@@ -191,8 +203,8 @@ async function fetchCommonsImageInfo(filename: string): Promise<CommonsImageInfo
           title: page.title,
           pageid: typeof page.pageid === 'number' ? page.pageid : null,
           revid: typeof page.lastrevid === 'number' ? page.lastrevid : null,
-          descriptionurl: ii.descriptionurl,
-          url: ii.url,
+          descriptionurl: stripTracking(ii.descriptionurl),
+          url: stripTracking(ii.url),
           artist: plainText(meta.Artist?.value),
           licenseShort: plainText(meta.LicenseShortName?.value),
           licenseUrl: plainText(meta.LicenseUrl?.value),
@@ -274,10 +286,11 @@ function gitHeadSha(): string | null {
 // fields are present rather than reading one fixed key.
 // ──────────────────────────────────────────────────────────────────────
 
-function deriveCommonsFilename(url: string | undefined | null): string | null {
+function deriveCommonsFilename(raw: string | undefined | null): string | null {
+  const url = stripTracking(raw);
   if (!url) return null;
-  if (url.includes('upload.wikimedia.org')) {
-    const m = url.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/]+)/);
+  if (hostOf(url) === 'upload.wikimedia.org') {
+    const m = url.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/?#]+)/);
     if (m) return decodeURIComponent(m[1]);
   }
   if (url.includes('commons.wikimedia.org/wiki/Special:FilePath/')) {
@@ -301,7 +314,7 @@ function extractNasaIdFromUrl(url: string | undefined | null): string | null {
 // Wikimedia → ProvenanceEntry
 // ──────────────────────────────────────────────────────────────────────
 
-async function buildWikimediaEntry(opts: {
+export async function buildWikimediaEntry(opts: {
   localPath: string;
   filename: string;
   fallbackAuthor: string;
@@ -1078,7 +1091,7 @@ async function buildFleetEntries(): Promise<ProvenanceEntry[]> {
     // upload.wikimedia.org thumb URLs encode the source filename in
     // the path: extract it.
     let commonsFilename: string | null = null;
-    if (url.includes('upload.wikimedia.org')) {
+    if (hostOf(url) === 'upload.wikimedia.org') {
       const match = url.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/]+)/);
       if (match) commonsFilename = decodeURIComponent(match[1]);
     } else if (url.includes('commons.wikimedia.org/wiki/Special:FilePath/')) {
@@ -2809,7 +2822,14 @@ async function main() {
     generated_at: new Date().toISOString(),
     script_version: SCRIPT_VERSION,
     commit_sha: gitHeadSha(),
-    entries: entries.sort((a, b) => a.path.localeCompare(b.path)),
+    // Readers follow source_url; no third-party tracking parameters ride along.
+    entries: entries
+      .map((e) => ({
+        ...e,
+        source_url: stripTracking(e.source_url),
+        image_url: stripTracking(e.image_url),
+      }))
+      .sort((a, b) => a.path.localeCompare(b.path)),
   };
   const prev = await loadPreviousManifest();
   // ── Backstop (before ANY write): refuse a rebuild that drops a large share

@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/moon": "月球 — 嫦娥着陆点",
-    "/fleet?focus=yutu-2": "航天器 — 玉兔月球车与嫦娥着陆器",
+    "/fleet?id=yutu-2": "航天器 — 玉兔月球车与嫦娥着陆器",
     "/programs/artemis": "Artemis — 并行的重返月球竞赛",
     "/moon?site=change3": "嫦娥三号 — 玉兔月球车",
     "/moon?site=change4": "嫦娥四号 — 月球背面",

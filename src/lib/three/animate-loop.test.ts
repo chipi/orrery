@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { createAnimateLoop } from './animate-loop';
+import { createAnimateLoop, holdSceneCover } from './animate-loop';
 
 vi.mock('$app/environment', () => ({ browser: true }));
 
@@ -221,5 +221,50 @@ describe('createAnimateLoop — cleanup', () => {
     loop.start();
     expect(rafQueue.length).toBe(0);
     expect(loop.running).toBe(false);
+  });
+});
+
+describe('holdSceneCover', () => {
+  it('skips frames while held and resumes with a fresh dt after release', () => {
+    const onFrame = vi.fn();
+    const loop = createAnimateLoop({ onFrame });
+    loop.start();
+    pumpRaf(0);
+    pumpRaf(16);
+    expect(onFrame).toHaveBeenCalledTimes(1);
+
+    const release = holdSceneCover();
+    pumpRaf(32);
+    pumpRaf(5_000);
+    expect(onFrame).toHaveBeenCalledTimes(1);
+    expect(rafQueue.length).toBe(1);
+
+    release();
+    release(); // a second release must not unbalance other holders
+    pumpRaf(5_016);
+    expect(onFrame).toHaveBeenCalledTimes(1); // seeds lastTime
+    pumpRaf(5_032);
+    expect(onFrame).toHaveBeenCalledTimes(2);
+    expect(onFrame.mock.calls[1]![0].dt).toBeCloseTo(0.016);
+    loop.cleanup();
+  });
+
+  it('stays paused until every holder releases', () => {
+    const onFrame = vi.fn();
+    const loop = createAnimateLoop({ onFrame });
+    loop.start();
+    const a = holdSceneCover();
+    const b = holdSceneCover();
+    pumpRaf(0);
+    pumpRaf(16);
+    a();
+    pumpRaf(32);
+    pumpRaf(48);
+    expect(onFrame).not.toHaveBeenCalled();
+    b();
+    pumpRaf(64);
+    pumpRaf(80);
+    expect(onFrame).toHaveBeenCalledTimes(1);
+    loop.cleanup();
   });
 });

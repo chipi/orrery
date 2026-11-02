@@ -19,11 +19,11 @@
   "related_programs": ["apollo", "salyut", "iss"],
   "see_also": [
     { "label": "Earth — orbits & launch sites", "href": "/earth", "kind": "body" },
-    { "label": "Fleet — Skylab orbital workshop", "href": "/fleet?focus=skylab", "kind": "fleet" }
+    { "label": "Fleet — Skylab orbital workshop", "href": "/fleet?id=skylab", "kind": "fleet" }
   ],
   "links": [
     { "l": "Skylab — Wikipedia", "u": "https://en.wikipedia.org/wiki/Skylab", "t": "intro" },
     { "l": "Skylab — NASA history", "u": "https://www.nasa.gov/history/skylab/", "t": "core" },
-    { "l": "Saving Skylab — the 1973 repair (NASA)", "u": "https://www.nasa.gov/history/50-years-ago-skylab-1-launches/", "t": "deep" }
+    { "l": "Saving Skylab — the 1973 repair (NASA)", "u": "https://www.nasa.gov/history/50-years-ago-the-launch-of-skylab-americas-first-space-station/", "t": "deep" }
   ]
 }

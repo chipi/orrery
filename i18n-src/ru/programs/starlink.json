@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "Флот — спутниковая группировка Starlink",
+    "/fleet?id=starlink": "Флот — спутниковая группировка Starlink",
     "/programs/spacex": "SpaceX — Falcon, который её выводит",
     "/earth": "Земля — орбиты и теснота на низкой орбите",
     "/earth?site=starlink": "Спутниковая группировка Starlink"

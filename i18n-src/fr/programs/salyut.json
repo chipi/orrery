@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Terre — orbites, rendez-vous et sites de lancement",
-    "/fleet?focus=salyut-6": "Flotte — les stations Salyut"
+    "/fleet?id=salyut-6": "Flotte — les stations Salyut"
   }
 }

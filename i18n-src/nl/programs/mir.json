@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Aarde — banen, rendez-vous & lanceerplaatsen",
-    "/fleet?focus=mir": "Vloot — ruimtestation Mir"
+    "/fleet?id=mir": "Vloot — ruimtestation Mir"
   }
 }

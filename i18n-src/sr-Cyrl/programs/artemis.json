@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "Месец — одредиште",
-    "/fleet?focus=orion": "Флота — Orion, SLS и опрема за Месец",
+    "/fleet?id=orion": "Флота — Orion, SLS и опрема за Месец",
     "/programs/apollo": "Apollo — програм по коме је Artemis добио име и који надмашује"
   }
 }

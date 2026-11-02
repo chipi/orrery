@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=jwst": "Frota — o Telescópio Espacial James Webb",
+    "/fleet?id=jwst": "Frota — o Telescópio Espacial James Webb",
     "/programs/great-observatories": "Os Grandes Observatórios — a linhagem que o JWST continua",
     "/programs/ariane": "Ariane — o foguete que o lançou",
     "/earth?site=jwst": "Telescópio Espacial James Webb"

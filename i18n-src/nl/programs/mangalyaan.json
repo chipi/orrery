@@ -83,7 +83,7 @@
   ],
   "link_labels": {
     "/mars": "Mars — de bestemming",
-    "/fleet?focus=mangalyaan": "Vloot — de Mars Orbiter Mission",
+    "/fleet?id=mangalyaan": "Vloot — de Mars Orbiter Mission",
     "/programs/chandrayaan": "Chandrayaan — het maanprogramma van India",
     "/mars?site=mangalyaan": "Mangalyaan in een baan om Mars"
   }

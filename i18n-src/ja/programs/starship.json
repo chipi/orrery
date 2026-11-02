@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starship": "フリート — Starship 打ち上げシステム",
+    "/fleet?id=starship": "フリート — Starship 打ち上げシステム",
     "/programs/spacex": "SpaceX — Starship の土台となった再使用技術",
     "/mars": "火星 — 目的地"
   }

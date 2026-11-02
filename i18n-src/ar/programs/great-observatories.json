@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "الأسطول — Hubble وChandra وSpitzer وJWST",
+    "/fleet?id=hubble": "الأسطول — Hubble وChandra وSpitzer وJWST",
     "/programs/space-shuttle": "Space Shuttle — المركبة التي أطلقت Hubble وصانته",
     "/explore": "استكشف — أجرام السماء العميقة التي كشفتها هذه التلسكوبات",
     "/earth?site=hubble": "Hubble في المدار الأرضي المنخفض",

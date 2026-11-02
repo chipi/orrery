@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "الأسطول — كوكبة Starlink",
+    "/fleet?id=starlink": "الأسطول — كوكبة Starlink",
     "/programs/spacex": "SpaceX — صاروخ Falcon الذي يطلقها",
     "/earth": "الأرض — المدارات وازدحام المدار المنخفض",
     "/earth?site=starlink": "كوكبة Starlink"

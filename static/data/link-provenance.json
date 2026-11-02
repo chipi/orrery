@@ -691,11 +691,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "apollo-soyuz__64be6696a6a2",
+      "id": "apollo-soyuz__052992d3b9a1",
       "entity_id": "apollo-soyuz",
       "category": "mission",
       "route": "/missions",
-      "url": "https://californiasciencecenter.org/exhibits/air-space/mission-26-the-big-endeavour",
+      "url": "https://californiasciencecenter.org/exhibits/air-and-space/space-shuttle",
       "label": "CSM-111 at California Science Center",
       "tier": "deep",
       "source_id": "california-science-center",
@@ -1517,12 +1517,12 @@
       "last_verified": "2026-10-22"
     },
     {
-      "id": "artemis4__55afb43927e6",
+      "id": "artemis4__ac0e4f86c056",
       "entity_id": "artemis4",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.science.org/doi/10.1126/science.aap8637",
-      "label": "Lunar south pole water ice (Science 2018)",
+      "url": "https://doi.org/10.1073/pnas.1802345115",
+      "label": "Lunar polar surface water ice (PNAS 2018)",
       "tier": "deep",
       "source_id": "science-aaas",
       "language": "en",
@@ -1937,12 +1937,12 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "baikonur-1-5__6dfce36254b7",
+      "id": "baikonur-1-5__0fa7aec54ca0",
       "entity_id": "baikonur-1-5",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://en.roscosmos.ru/204/",
-      "label": "Site 1/5 — Roscosmos",
+      "url": "https://www.russianspaceweb.com/baikonur_r7_1.html",
+      "label": "Site 1/5 — RussianSpaceWeb",
       "tier": "intro",
       "source_id": "roscosmos",
       "language": "ru",
@@ -2007,12 +2007,12 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "baikonur-31-6__ac8e8e691352",
+      "id": "baikonur-31-6__36866f5134f6",
       "entity_id": "baikonur-31-6",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://en.roscosmos.ru/205/",
-      "label": "Site 31 — Roscosmos",
+      "url": "https://www.russianspaceweb.com/baikonur_r7_31.html",
+      "label": "Site 31 — RussianSpaceWeb",
       "tier": "intro",
       "source_id": "roscosmos",
       "language": "ru",
@@ -3015,11 +3015,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "cassini__c06601a1a7c7",
+      "id": "cassini__3fa432d46630",
       "entity_id": "cassini",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.ciclops.org/",
+      "url": "https://web.archive.org/web/20260830064356/https://ciclops.org/",
       "label": "Cassini Imaging Team (Space Science Institute) — full image archive",
       "tier": "deep",
       "source_id": "ciclops",
@@ -3253,11 +3253,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "chandrayaan3__c8565ae1f409",
+      "id": "chandrayaan3__a8d359bc3ca7",
       "entity_id": "chandrayaan3",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.isro.gov.in/Chandrayaan3_New.html",
+      "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
       "label": "Chandrayaan-3 — ISRO",
       "tier": "intro",
       "source_id": "isro",
@@ -4485,12 +4485,12 @@
       "last_verified": "2026-06-28"
     },
     {
-      "id": "dawn__fff8a800c57b",
+      "id": "dawn__efdc71a7425f",
       "entity_id": "dawn",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0094576510002973",
-      "label": "Ion propulsion subsystem — Brophy 2011, Acta Astronautica 68",
+      "url": "https://doi.org/10.1007/s11214-011-9848-y",
+      "label": "Ion propulsion subsystem — Brophy 2011, Space Science Reviews 163",
       "tier": "deep",
       "source_id": "elsevier",
       "language": "en",
@@ -5017,11 +5017,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "endeavour__210011ce22cf",
+      "id": "endeavour__1cf098a2e5bf",
       "entity_id": "endeavour",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://californiasciencecenter.org/exhibits/air-space/endeavour-the-california-story",
+      "url": "https://californiasciencecenter.org/exhibits/air-and-space/space-shuttle",
       "label": "Endeavour at the California Science Center",
       "tier": "core",
       "source_id": "california-science-center",
@@ -5913,11 +5913,11 @@
       "last_verified": "2026-07-07"
     },
     {
-      "id": "galileo__2dbfaa9d885b",
+      "id": "galileo__9707363d8f53",
       "entity_id": "galileo",
       "category": "mission",
       "route": "/missions",
-      "url": "https://nssdc.gsfc.nasa.gov/planetary/galileo_probe.html",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/galileo.html",
       "label": "Galileo Probe — atmospheric entry 1995-12-07 (NSSDCA)",
       "tier": "deep",
       "source_id": "nasa",
@@ -6067,11 +6067,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini12__a91dadcc7f67",
+      "id": "gemini12__8781eac9da26",
       "entity_id": "gemini12",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.nasa.gov/history/project-gemini/",
+      "url": "https://www.nasa.gov/gemini/",
       "label": "NASA — Project Gemini",
       "tier": "core",
       "source_id": "nasa",
@@ -6095,11 +6095,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini3__bc062294c865",
+      "id": "gemini3__72b40e3e5a1a",
       "entity_id": "gemini3",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.nasa.gov/history/project-gemini/",
+      "url": "https://www.nasa.gov/gemini/",
       "label": "NASA — Project Gemini",
       "tier": "core",
       "source_id": "nasa",
@@ -6123,11 +6123,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini4__d2905419e05e",
+      "id": "gemini4__494d89d3469a",
       "entity_id": "gemini4",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.nasa.gov/history/project-gemini/",
+      "url": "https://www.nasa.gov/gemini/",
       "label": "NASA — Project Gemini",
       "tier": "core",
       "source_id": "nasa",
@@ -6151,11 +6151,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini6a__c10af0b0e2d4",
+      "id": "gemini6a__768e21fc6817",
       "entity_id": "gemini6a",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.nasa.gov/history/project-gemini/",
+      "url": "https://www.nasa.gov/gemini/",
       "label": "NASA — Project Gemini",
       "tier": "core",
       "source_id": "nasa",
@@ -6179,11 +6179,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini7__b8c1b5f91c91",
+      "id": "gemini7__47088d0b9a53",
       "entity_id": "gemini7",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.nasa.gov/history/project-gemini/",
+      "url": "https://www.nasa.gov/gemini/",
       "label": "NASA — Project Gemini",
       "tier": "core",
       "source_id": "nasa",
@@ -6207,11 +6207,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "gemini8__53d5b0dc4bb5",
+      "id": "gemini8__4a331f33f824",
       "entity_id": "gemini8",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.nasa.gov/history/project-gemini/",
+      "url": "https://www.nasa.gov/gemini/",
       "label": "NASA — Project Gemini",
       "tier": "core",
       "source_id": "nasa",
@@ -7481,11 +7481,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "huygens__a48d5966d802",
+      "id": "huygens__bee08ee3224d",
       "entity_id": "huygens",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens/Huygens_facts_and_figures",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens_overview",
       "label": "ESA — Huygens probe science results and images",
       "tier": "intro",
       "source_id": "esa",
@@ -7677,11 +7677,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "insight__e1d5d8374a84",
+      "id": "insight__d5fdf816dcd7",
       "entity_id": "insight",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service",
+      "url": "https://doi.org/10.12686/a19",
       "label": "Marsquake catalogue (ETH Zurich)",
       "tier": "deep",
       "source_id": "ipgp",
@@ -7929,12 +7929,12 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "jiuquan-slc-43__d68573171d8c",
+      "id": "jiuquan-slc-43__94e7217c7076",
       "entity_id": "jiuquan-slc-43",
       "category": "fleet",
       "route": "/fleet",
-      "url": "http://www.cnsa.gov.cn/english/n6465652/n6465653/c6840858/content.html",
-      "label": "Tiangong programme — CNSA",
+      "url": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+      "label": "Tiangong space station — Wikipedia",
       "tier": "deep",
       "source_id": "cnsa",
       "language": "*",
@@ -8025,20 +8025,6 @@
       "kind": "science-publisher",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
-    },
-    {
-      "id": "juice__d52422243c9f",
-      "entity_id": "juice",
-      "category": "mission",
-      "route": "/missions",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0032063313000244",
-      "label": "Grasset et al. (2013) — JUICE mission science rationale (Planet. Space Sci.)",
-      "tier": "deep",
-      "source_id": "elsevier",
-      "language": "en",
-      "kind": "science-publisher",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-06-28"
     },
     {
       "id": "juno__5f50a9b0656b",
@@ -8419,11 +8405,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "kourou-ela-2__30bccc295882",
+      "id": "kourou-ela-2__91783801cef4",
       "entity_id": "kourou-ela-2",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.cnes-csg.fr/",
+      "url": "https://web.archive.org/web/20150518222955/http://www.cnes-csg.fr:80/",
       "label": "Centre Spatial Guyanais (CSG)",
       "tier": "core",
       "source_id": "cnes",
@@ -9133,12 +9119,12 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "long-march-3b__5eedc01d63fd",
+      "id": "long-march-3b__f7f97489c610",
       "entity_id": "long-march-3b",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.cnsa.gov.cn/english/n6465652/n6465653/c6810553/content.html",
-      "label": "Chang'e 3 launch (Long March 3B/E) — CNSA",
+      "url": "https://en.wikipedia.org/wiki/Chang%27e_3",
+      "label": "Chang'e 3 launch (Long March 3B/E) — Wikipedia",
       "tier": "deep",
       "source_id": "cnsa",
       "language": "*",
@@ -9147,11 +9133,11 @@
       "last_verified": "2026-06-28"
     },
     {
-      "id": "long-march-5__ed80e787bd82",
+      "id": "long-march-5__b8bae35295d3",
       "entity_id": "long-march-5",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://zh.wikipedia.org/wiki/%E9%95%BF%E5%BE%81%E4%BA%94%E5%8F%B7%E7%B3%BB%E5%88%97%E8%BF%90%E8%BD%BD%E7%81%AB%E7%AE%AD",
+      "url": "https://zh.wikipedia.org/wiki/%E9%95%BF%E5%BE%81%E4%BA%94%E5%8F%B7%E7%B3%BB%E5%88%97%E7%81%AB%E7%AE%AD",
       "label": "长征五号 — 中文维基百科",
       "tier": "intro",
       "source_id": "wikipedia",
@@ -10799,11 +10785,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "mars-polar-lander__c29d9609fcf6",
+      "id": "mars-polar-lander__fe4129516cc2",
       "entity_id": "mars-polar-lander",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://mars.nasa.gov/mars-exploration/missions/mars-polar-lander/",
+      "url": "https://science.nasa.gov/mission/mars-polar-lander-deep-space-2/",
       "label": "Mars Polar Lander — NASA",
       "tier": "core",
       "source_id": "nasa",
@@ -11583,12 +11569,12 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "mmx__23014a9072f3",
+      "id": "mmx__1e006f934274",
       "entity_id": "mmx",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0094576518316758",
-      "label": "Kawakatsu et al. — MMX trajectory design (Acta Astronautica 2019)",
+      "url": "https://doi.org/10.1016/j.actaastro.2018.03.024",
+      "label": "Campagnola et al. — MMX mission analysis (Acta Astronautica 2018)",
       "tier": "deep",
       "source_id": "elsevier",
       "language": "en",
@@ -11947,11 +11933,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "near-shoemaker__34c7547c11dd",
+      "id": "near-shoemaker__c17683b79620",
       "entity_id": "near-shoemaker",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.planetary.org/space-missions/near-shoemaker",
+      "url": "https://www.planetary.org/space-missions/every-small-worlds-mission",
       "label": "The Planetary Society — NEAR Shoemaker retrospective",
       "tier": "core",
       "source_id": "planetary-society",
@@ -11975,11 +11961,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "near-shoemaker__f2d1c4d3d072",
+      "id": "near-shoemaker__9f722302361e",
       "entity_id": "near-shoemaker",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.science.org/doi/10.1126/science.1059831",
+      "url": "https://doi.org/10.1126/science.1058651",
       "label": "Veverka et al. (2001) — Imaging of small-scale features on 433 Eros during NEAR's flyby (Science 292)",
       "tier": "deep",
       "source_id": "science-aaas",
@@ -12045,12 +12031,12 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "neptune__1717cc6c4973",
+      "id": "neptune__5f5d18627768",
       "entity_id": "neptune",
       "category": "planet",
       "route": "/explore",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981",
-      "label": "Neptune's interior model (Icarus 2021)",
+      "url": "https://doi.org/10.1098/rsta.2019.0474",
+      "label": "Neptune's interior model (Phil. Trans. R. Soc. A 2020)",
       "tier": "deep",
       "source_id": "elsevier",
       "language": "en",
@@ -12449,20 +12435,6 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
-    },
-    {
-      "id": "orlan-mks__402d8b4940a6",
-      "entity_id": "orlan-mks",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://zvezda-npp.ru/en/products/space-suits-and-systems/orlan-mks-spacesuit/",
-      "label": "NPP Zvezda · Orlan-MKS datasheet",
-      "tier": "core",
-      "source_id": "zvezda",
-      "language": "en",
-      "kind": "vendor-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-06-28"
     },
     {
       "id": "orlan-mks__d2a42354ad39",
@@ -13011,11 +12983,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "patroclus__bd85f6279cb3",
+      "id": "patroclus__33aaec678131",
       "entity_id": "patroclus",
       "category": "planet",
       "route": "/explore",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0019103510000503",
+      "url": "https://doi.org/10.1016/j.icarus.2009.07.043",
       "label": "Mueller et al. (2010) — Patroclus-Menoetius shape (Icarus)",
       "tier": "deep",
       "source_id": "elsevier",
@@ -13389,11 +13361,11 @@
       "last_verified": "2026-07-07"
     },
     {
-      "id": "pioneer-11__f1a6880f7492",
+      "id": "pioneer-11__4074b15b70bd",
       "entity_id": "pioneer-11",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://nssdc.gsfc.nasa.gov/planetary/pioneer1011.html",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/pioneer10-11.html",
       "label": "Pioneer Saturn encounter — NSSDCA archive",
       "tier": "core",
       "source_id": "nasa",
@@ -13571,12 +13543,12 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "plesetsk-43__76f667bbf0dd",
+      "id": "plesetsk-43__a750f41da0c5",
       "entity_id": "plesetsk-43",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://en.roscosmos.ru/206/",
-      "label": "Plesetsk Cosmodrome — Roscosmos",
+      "url": "https://www.russianspaceweb.com/plesetsk.html",
+      "label": "Plesetsk Cosmodrome — RussianSpaceWeb",
       "tier": "intro",
       "source_id": "roscosmos",
       "language": "ru",
@@ -13809,11 +13781,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "pragyan__35ad1861ee53",
+      "id": "pragyan__ee36f0af8338",
       "entity_id": "pragyan",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.isro.gov.in/Chandrayaan3_New.html",
+      "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
       "label": "Chandrayaan-3 surface results (ISRO)",
       "tier": "deep",
       "source_id": "isro",
@@ -15377,11 +15349,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "sbirs-heo__db2b1b3e4cb2",
+      "id": "sbirs-heo__4727ff2b9550",
       "entity_id": "sbirs-heo",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.northropgrumman.com/space/space-based-infrared-system-sbirs",
+      "url": "https://web.archive.org/web/20250321031520/https://www.northropgrumman.com/space/space-based-infrared-system-sbirs",
       "label": "SBIRS — Northrop Grumman product page",
       "tier": "core",
       "source_id": "northrop-grumman",
@@ -15559,11 +15531,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "sentinel-copernicus__4cba97940573",
+      "id": "sentinel-copernicus__42bbbefa31b7",
       "entity_id": "sentinel-copernicus",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://scihub.copernicus.eu/",
+      "url": "https://dataspace.copernicus.eu/",
       "label": "Copernicus Open Access Hub",
       "tier": "deep",
       "source_id": "copernicus",
@@ -16105,20 +16077,6 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "sokol-kv-2__397700b26454",
-      "entity_id": "sokol-kv-2",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://zvezda-npp.ru/en/products/space-suits-and-systems/sokol-kv-2-rescue-spacesuit/",
-      "label": "NPP Zvezda · Sokol KV-2 datasheet",
-      "tier": "core",
-      "source_id": "zvezda",
-      "language": "en",
-      "kind": "vendor-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-06-28"
-    },
-    {
       "id": "sokol-m__821465dad1ee",
       "entity_id": "sokol-m",
       "category": "fleet",
@@ -16131,20 +16089,6 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
-    },
-    {
-      "id": "sokol-m__aeb619a40f2e",
-      "entity_id": "sokol-m",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://zvezda-npp.ru/en/news/",
-      "label": "NPP Zvezda · Future space suit programs",
-      "tier": "core",
-      "source_id": "zvezda",
-      "language": "en",
-      "kind": "vendor-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-06-28"
     },
     {
       "id": "solar-escape-velocity__8c706e2ecf62",
@@ -17407,12 +17351,12 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "sun__b62df129aad0",
+      "id": "sun__fa130847b8ce",
       "entity_id": "sun",
       "category": "sun",
       "route": "/explore",
-      "url": "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029",
-      "label": "Standard Solar Model (Annual Review of Astronomy 2022)",
+      "url": "https://doi.org/10.1007/s41116-020-00028-3",
+      "label": "Standard Solar Model (Living Reviews in Solar Physics 2021)",
       "tier": "deep",
       "source_id": "annual-reviews",
       "language": "en",
@@ -17827,16 +17771,16 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "tianwen-1__4852af2e1e8e",
+      "id": "tianwen-1__1f032365e737",
       "entity_id": "tianwen-1",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.cnsa.gov.cn/english/n6465645/n6465648/c6812114/content.html",
-      "label": "Tianwen-1 mission overview — CNSA",
+      "url": "https://www.planetary.org/space-missions/tianwen-1",
+      "label": "Tianwen-1 and Zhurong — The Planetary Society",
       "tier": "core",
-      "source_id": "cnsa",
+      "source_id": "planetary-society",
       "language": "*",
-      "kind": "agency-official",
+      "kind": "educational",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-06-28"
     },
@@ -17897,11 +17841,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "tianwen1__7bef37d17d8d",
+      "id": "tianwen1__e1ae3a706c01",
       "entity_id": "tianwen1",
       "category": "mission",
       "route": "/missions",
-      "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%95%8F%E4%B8%80%E8%99%9F",
+      "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E9%97%AE%E4%B8%80%E5%8F%B7",
       "label": "天问一号 — 中文维基百科",
       "tier": "core",
       "source_id": "wikipedia",
@@ -17939,11 +17883,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "tianwen1-orbiter__c87734d81e2e",
+      "id": "tianwen1-orbiter__2af1e757f307",
       "entity_id": "tianwen1-orbiter",
       "category": "mars-site",
       "route": "/mars",
-      "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%95%8F%E4%B8%80%E8%99%9F",
+      "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E9%97%AE%E4%B8%80%E5%8F%B7",
       "label": "天问一号 — 中文维基百科",
       "tier": "core",
       "source_id": "wikipedia",
@@ -18359,12 +18303,12 @@
       "last_verified": "2026-06-28"
     },
     {
-      "id": "ulysses__0f0111f63af1",
+      "id": "ulysses__9b8cc1c8a7fa",
       "entity_id": "ulysses",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0273117701004099",
-      "label": "Marsden + Smith (2001) — Ulysses overview after first solar minimum (Adv. Space Res.)",
+      "url": "https://doi.org/10.1016/0273-1177(95)00588-6",
+      "label": "Marsden (1996) — Ulysses at high latitudes, an overview (Adv. Space Res.)",
       "tier": "deep",
       "source_id": "elsevier",
       "language": "en",
@@ -19283,11 +19227,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "vikram-cy3__84fc763d6045",
+      "id": "vikram-cy3__f4364a52a7a1",
       "entity_id": "vikram-cy3",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.isro.gov.in/Chandrayaan3_New.html",
+      "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
       "label": "Chandrayaan-3 mission summary (ISRO)",
       "tier": "deep",
       "source_id": "isro",
@@ -20151,11 +20095,11 @@
       "last_verified": "2026-09-11"
     },
     {
-      "id": "wenchang-lc-101__4f592222cc1b",
+      "id": "wenchang-lc-101__a131a609b3fd",
       "entity_id": "wenchang-lc-101",
       "category": "fleet",
       "route": "/fleet",
-      "url": "http://www.astronautix.com/l/longmarch5.html",
+      "url": "https://astronautix.com/c/cz-5.html",
       "label": "Long March 5 — Encyclopedia Astronautica",
       "tier": "core",
       "source_id": "astronautix",

@@ -21,7 +21,7 @@ export const rocketSizing: FormulaDef<{
 }> = {
   id: 'rocket-sizing',
   titleKey: 'lab.f.sizing.title',
-  plainKey: 'lab.f.sizing.plain',
+  inWordsKey: 'lab.f.sizing.in-words',
   citationKey: 'propulsion/rocket-stages',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Multistage_rocket', source: 'wikipedia' },
   domain: 'ascent',
@@ -139,7 +139,7 @@ export const rocketSizing: FormulaDef<{
 export const liftoffThrust: FormulaDef<{ grossMassKg: number; liftoffTwr: number }> = {
   id: 'liftoff-thrust',
   titleKey: 'lab.f.liftoff.title',
-  plainKey: 'lab.f.liftoff.plain',
+  inWordsKey: 'lab.f.liftoff.in-words',
   citationKey: 'propulsion/thrust-and-twr',
   learnMore: {
     url: 'https://www.grc.nasa.gov/www/k-12/rocket/rktthsum.html',
@@ -216,7 +216,7 @@ export const liftoffThrust: FormulaDef<{ grossMassKg: number; liftoffTwr: number
 export const engineCount: FormulaDef<{ thrustN: number; engineThrustN: number }> = {
   id: 'engine-count',
   titleKey: 'lab.f.engines.title',
-  plainKey: 'lab.f.engines.plain',
+  inWordsKey: 'lab.f.engines.in-words',
   citationKey: 'propulsion/engine-clustering',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Rocket_engine', source: 'wikipedia' },
   domain: 'ascent',
@@ -293,7 +293,7 @@ export const staging: FormulaDef<{ deltaVKms: number; ispS: number; structuralFr
   {
     id: 'staging',
     titleKey: 'lab.f.staging.title',
-    plainKey: 'lab.f.staging.plain',
+    inWordsKey: 'lab.f.staging.in-words',
     citationKey: 'propulsion/rocket-stages',
     learnMore: {
       url: 'https://www.grc.nasa.gov/www/k-12/rocket/rktstage.html',
@@ -396,7 +396,7 @@ export const boosterCount: FormulaDef<{
 }> = {
   id: 'booster-count',
   titleKey: 'lab.f.boosters.title',
-  plainKey: 'lab.f.boosters.plain',
+  inWordsKey: 'lab.f.boosters.in-words',
   citationKey: 'propulsion/engine-clustering',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Booster_(rocketry)', source: 'wikipedia' },
   domain: 'ascent',
@@ -501,7 +501,7 @@ export const clusterThrust: FormulaDef<{
 }> = {
   id: 'cluster-thrust',
   titleKey: 'lab.f.cluster.title',
-  plainKey: 'lab.f.cluster.plain',
+  inWordsKey: 'lab.f.cluster.in-words',
   citationKey: 'propulsion/engine-clustering',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Rocket_engine', source: 'wikipedia' },
   domain: 'ascent',

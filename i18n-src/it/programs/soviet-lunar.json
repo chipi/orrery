@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "La Luna — superficie, siti di allunaggio ed esplorazione",
-    "/fleet?focus=n1": "Flotta — il lanciatore superpesante N1",
+    "/fleet?id=n1": "Flotta — il lanciatore superpesante N1",
     "/moon?site=luna16": "Luna 16 — primo ritorno robotico di campioni",
     "/moon?site=luna17": "Luna 17 — Lunokhod 1",
     "/moon?site=luna21": "Luna 21 — Lunokhod 2"

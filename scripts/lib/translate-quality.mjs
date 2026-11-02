@@ -1,7 +1,7 @@
 /**
  * Shared translation rules and output checks for every translation script
  * (scripts/translate-*.mjs, scripts/retranslate-fields.mjs). Built from the
- * 2026-10-17 translation-quality audit (docs/wip/2026-10-17-post-v1-arc-plan.md
+ * 2026-10-17 translation-quality audit (docs/wip/_archive/2026-10-17-post-v1-arc-plan.md
  * item 9b): each check below rejects a defect found shipped in the corpus.
  *
  * translate-model.mjs's translationClient() applies BASE_RULES, NAME_POLICY and
@@ -314,9 +314,10 @@ export function gazetteer() {
     'trajectories',
   ]);
   const walk = (d, top) => {
-    for (const n of fs.readdirSync(d)) {
+    for (const ent of fs.readdirSync(d, { withFileTypes: true })) {
+      const n = ent.name;
       const p = path.join(d, n);
-      if (fs.statSync(p).isDirectory()) {
+      if (ent.isDirectory()) {
         if (!(top && skipDirs.has(n))) walk(p, false);
       } else if (n.endsWith('.json') && !(top && n === 'sun.json')) {
         try {
@@ -656,10 +657,14 @@ export function problems(locale, src, out, { ui = false } = {}) {
         ...(/^[A-Z]/.test(w) ? [w.replace(/(ian|ic)$/, '')] : []),
       ]),
     );
+    // A unit symbol the source has in another case is the locale's own form of it
+    // (style guide 1a: ja writes "au" where the English has "AU").
+    const srcLower = new Set([...srcWords].map((w) => w.toLowerCase()));
     const altered = [...new Set(out.match(/[A-Za-z][A-Za-z'’]*/g) || [])].filter(
       (w) =>
         w.length > 1 &&
         !srcWords.has(w) &&
+        !(LATIN_KEEP.test(w) && srcLower.has(w.toLowerCase())) &&
         !srcWords.has(w.replace(/'/g, '’')) && // Chang'e == Chang’e
         !/^[IVXLCDM]+$/.test(w), // Roman numerals (centuries in ru: XXI)
     );

@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "Luna: el destino",
-    "/fleet?focus=orion": "Flota — Orion, SLS y el equipo lunar",
+    "/fleet?id=orion": "Flota — Orion, SLS y el equipo lunar",
     "/programs/apollo": "Apollo: el programa que da nombre a Artemis y al que supera"
   }
 }

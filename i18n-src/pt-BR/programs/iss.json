@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/earth": "Terra — órbitas, encontros e bases de lançamento",
-    "/fleet?focus=iss": "Frota — a Estação Espacial Internacional",
+    "/fleet?id=iss": "Frota — a Estação Espacial Internacional",
     "/programs/mir": "Mir — a estação da qual a EEI herdou",
     "/earth?site=iss": "A EEI sobre nós"
   }

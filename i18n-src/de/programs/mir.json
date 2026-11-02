@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze",
-    "/fleet?focus=mir": "Flotte — Raumstation Mir"
+    "/fleet?id=mir": "Flotte — Raumstation Mir"
   }
 }

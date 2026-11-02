@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "Flotte — Hubble, Chandra, Spitzer & JWST",
+    "/fleet?id=hubble": "Flotte — Hubble, Chandra, Spitzer & JWST",
     "/programs/space-shuttle": "Space Shuttle — das Fahrzeug, das Hubble startete und wartete",
     "/explore": "Erkunden — die Deep-Sky-Objekte, die diese Teleskope enthüllten",
     "/earth?site=hubble": "Hubble in niedriger Erdumlaufbahn",

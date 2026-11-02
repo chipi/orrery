@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "航天器 — Falcon 9、Falcon Heavy 与 Dragon",
+    "/fleet?id=falcon-9": "航天器 — Falcon 9、Falcon Heavy 与 Dragon",
     "/programs/iss": "国际空间站 — Crew Dragon 飞往的空间站",
     "/earth": "地球 — 轨道、交会对接与发射场"
   }

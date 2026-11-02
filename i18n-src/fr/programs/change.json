@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/moon": "Lune — les sites d'alunissage Chang'e",
-    "/fleet?focus=yutu-2": "Flotte — les rovers Yutu et les atterrisseurs Chang'e",
+    "/fleet?id=yutu-2": "Flotte — les rovers Yutu et les atterrisseurs Chang'e",
     "/programs/artemis": "Artemis — la course parallèle vers la Lune",
     "/moon?site=change3": "Chang’e 3 — rover Yutu",
     "/moon?site=change4": "Chang’e 4 — la face cachée",

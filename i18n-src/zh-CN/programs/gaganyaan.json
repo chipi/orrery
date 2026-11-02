@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=gaganyaan": "航天器 — Gaganyaan 飞船",
+    "/fleet?id=gaganyaan": "航天器 — Gaganyaan 飞船",
     "/programs/chandrayaan": "Chandrayaan — 印度的探月计划",
     "/programs/mangalyaan": "Mangalyaan — 印度首次尝试即成功的火星任务"
   }

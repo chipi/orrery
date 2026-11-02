@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "地球 — 轨道与发射场",
-    "/fleet?focus=discovery": "航天器 — Space Shuttle 轨道器"
+    "/fleet?id=discovery": "航天器 — Space Shuttle 轨道器"
   }
 }

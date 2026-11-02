@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "Месец — површина, места слетања и истраживање",
-    "/fleet?focus=n1": "Флота — супертешка ракета-носач N1",
+    "/fleet?id=n1": "Флота — супертешка ракета-носач N1",
     "/moon?site=luna16": "Luna 16 — први роботски повратак узорака",
     "/moon?site=luna17": "Luna 17 — Lunokhod 1",
     "/moon?site=luna21": "Luna 21 — Lunokhod 2"

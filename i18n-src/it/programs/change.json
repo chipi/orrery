@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/moon": "Luna — i siti di allunaggio Chang'e",
-    "/fleet?focus=yutu-2": "Flotta — i rover Yutu e i lander Chang'e",
+    "/fleet?id=yutu-2": "Flotta — i rover Yutu e i lander Chang'e",
     "/programs/artemis": "Artemis — la corsa parallela di ritorno alla Luna",
     "/moon?site=change3": "Chang’e 3 — rover Yutu",
     "/moon?site=change4": "Chang’e 4 — la faccia nascosta",

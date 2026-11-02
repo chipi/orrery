@@ -45,6 +45,24 @@ const ESSAY_DIRS = ['i18n-src/en-US/essays', 'static/data/essays'];
 // Observatory cards on /earth (PRD-028) render each `science` path in
 // static/data/observatories.json as a real link to the article.
 const DATA_LINK_FILES = ['static/data/observatories.json'];
+// Orbit-regime overlays: RegimePanel renders `science_link: {tab, section}` as a ScienceCard.
+const REGIME_OVERLAY_DIRS = [
+  'i18n-src/en-US/orbit-regimes',
+  'i18n-src/en-US/orbit-regimes-explore',
+  'i18n-src/en-US/orbit-regimes-mars',
+  'i18n-src/en-US/orbit-regimes-moon',
+];
+// Fleet entries: FleetEntryPanel renders each `science: ['tab/section']` slug as a link or card.
+const FLEET_ROOT = 'static/data/fleet';
+
+function jsonFiles(dir: string): string[] {
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir).flatMap((f) => {
+    const p = join(dir, f);
+    if (statSync(p).isDirectory()) return jsonFiles(p);
+    return f.endsWith('.json') ? [p] : [];
+  });
+}
 
 interface AllowlistEntry {
   id: string;
@@ -249,6 +267,10 @@ function gatherInboundRefs(): Set<string> {
     // Pattern C — direct path literal `/science/X/Y`
     const pathRe = /\/science\/([a-z][a-z0-9-]*)\/([a-z][a-z0-9-]*)/g;
     while ((m = pathRe.exec(text)) !== null) refs.add(`${m[1]}/${m[2]}`);
+    // Pattern F — Lab formula `citationKey: 'X/Y'`; lab/Card.svelte renders it as a
+    // "Learn" link to /science/X/Y.
+    const citeRe = /citationKey:\s*['"]([a-z][a-z0-9-]*)\/([a-z][a-z0-9-]*)['"]/g;
+    while ((m = citeRe.exec(text)) !== null) refs.add(`${m[1]}/${m[2]}`);
   }
   // Pattern D — essay deep-links. The Long View essays carry inline
   // markdown links `[text](/science/tab/section)` in their body prose;
@@ -273,6 +295,22 @@ function gatherInboundRefs(): Set<string> {
     const pathRe = /\/science\/([a-z][a-z0-9-]*)\/([a-z][a-z0-9-]*)/g;
     let m: RegExpExecArray | null;
     while ((m = pathRe.exec(text)) !== null) refs.add(`${m[1]}/${m[2]}`);
+  }
+  // Pattern G — orbit-regime `science_link` (en-US overlays; other locales mirror them).
+  for (const dir of REGIME_OVERLAY_DIRS) {
+    for (const file of jsonFiles(dir)) {
+      const link = (
+        JSON.parse(readFileSync(file, 'utf8')) as {
+          science_link?: { tab: string; section: string };
+        }
+      ).science_link;
+      if (link) refs.add(`${link.tab}/${link.section}`);
+    }
+  }
+  // Pattern H — fleet entry `science` slugs.
+  for (const file of jsonFiles(FLEET_ROOT)) {
+    const sci = (JSON.parse(readFileSync(file, 'utf8')) as { science?: string[] }).science;
+    for (const slug of sci ?? []) refs.add(slug);
   }
   return refs;
 }
@@ -332,5 +370,43 @@ describe('PRD-024 audit — /science orphan detector', () => {
     // a fresh issue + their own tracking. (Started at 38; planets-tab
     // 3 closed via PlanetPanel science-sections list.)
     expect(count, `IN-PROGRESS allowlist size: ${count}`).toBeLessThanOrEqual(0);
+  });
+});
+
+// Data-driven links must name a real article in every locale. sr-Cyrl had translated the tab
+// id of all 24 orbit-regime science_link values ("orbits" → "орбите"), so each Serbian regime
+// panel linked to a page that does not exist (fixed 2026-11-01).
+describe('science links held in data resolve to real articles', () => {
+  const real = (tab: string, section: string) =>
+    existsSync(join(SCIENCE_ROOT, tab, `${section}.json`));
+
+  it('every orbit-regime science_link, in every locale', () => {
+    const broken: string[] = [];
+    for (const loc of readdirSync('i18n-src')) {
+      for (const dir of REGIME_OVERLAY_DIRS.map((d) => d.replace('/en-US/', `/${loc}/`))) {
+        for (const file of jsonFiles(dir)) {
+          const link = (
+            JSON.parse(readFileSync(file, 'utf8')) as {
+              science_link?: { tab: string; section: string };
+            }
+          ).science_link;
+          if (link && !real(link.tab, link.section))
+            broken.push(`${file}: ${link.tab}/${link.section}`);
+        }
+      }
+    }
+    expect(broken).toEqual([]);
+  });
+
+  it('every fleet entry science slug', () => {
+    const broken: string[] = [];
+    for (const file of jsonFiles(FLEET_ROOT)) {
+      const sci = (JSON.parse(readFileSync(file, 'utf8')) as { science?: string[] }).science;
+      for (const slug of sci ?? []) {
+        const [tab, section] = slug.split('/');
+        if (!tab || !section || !real(tab, section)) broken.push(`${file}: ${slug}`);
+      }
+    }
+    expect(broken).toEqual([]);
   });
 });

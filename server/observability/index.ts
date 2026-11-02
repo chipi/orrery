@@ -22,7 +22,7 @@ import {
 } from '@opentelemetry/api';
 import { W3CTraceContextPropagator } from '@opentelemetry/core';
 import { AsyncLocalStorageContextManager } from '@opentelemetry/context-async-hooks';
-import { BatchSpanProcessor, TracerProvider } from '@opentelemetry/sdk-trace';
+import { AlwaysOnSampler, BatchSpanProcessor, TracerProvider } from '@opentelemetry/sdk-trace';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 import { resourceFromAttributes } from '@opentelemetry/resources';
 import { Counter, Histogram, Registry } from 'prom-client';
@@ -221,6 +221,10 @@ export function initObservability(
         'deployment.environment': cfg.environment,
         ...(cfg.release ? { 'service.version': cfg.release } : {}),
       }),
+      // Every request is traced. The default (parent-based) would let any caller turn
+      // off the spans for its own requests with a traceparent whose flag is 00; the
+      // trace id is still continued. Traffic is low enough that no ratio is needed.
+      sampler: new AlwaysOnSampler(),
       spanProcessors: [
         new BatchSpanProcessor({
           exporter: new OTLPTraceExporter({ url: cfg.otlpTracesEndpoint }),

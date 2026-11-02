@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/explore": "探索 — 彗星与 ESA 测绘的深空",
-    "/fleet?focus=rosetta": "航天器 — Rosetta、Gaia 与 Euclid",
+    "/fleet?id=rosetta": "航天器 — Rosetta、Gaia 与 Euclid",
     "/programs/ariane": "Ariane — 发射 ESA 科学任务的火箭",
     "/earth?site=gaia": "位于 L2 的 Gaia",
     "/earth?site=xmm": "XMM-Newton"

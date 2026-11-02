@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=jwst": "Flotte — das James-Webb-Weltraumteleskop",
+    "/fleet?id=jwst": "Flotte — das James-Webb-Weltraumteleskop",
     "/programs/great-observatories": "Die Great Observatories — die Linie, die JWST fortsetzt",
     "/programs/ariane": "Ariane — die Rakete, die es startete",
     "/earth?site=jwst": "James-Webb-Weltraumteleskop"

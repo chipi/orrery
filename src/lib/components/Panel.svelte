@@ -4,6 +4,7 @@
   import * as m from '$lib/paraglide/messages';
   import { page } from '$app/state';
   import { cardChain, goBackCard, isCardUrl } from '$lib/card-chain.svelte';
+  import { audio } from '$lib/audio-state.svelte';
 
   type Props = {
     open: boolean;
@@ -49,6 +50,10 @@
   }: Props = $props();
 
   let panelEl: HTMLElement | undefined = $state();
+
+  // The compact Curator Tour bar docks over the panel's top 64px; reserve that
+  // space only while the bar is on screen (AudioOverlay's own condition), not always.
+  const tourDocked = $derived(audio.open && audio.compact && !!audio.currentEpisode);
 
   // Back affordance (#29): only when we arrived here by following an in-card
   // link (chain non-empty) AND this view is itself a ?id= detail card.
@@ -125,6 +130,7 @@
   <aside
     class="panel"
     class:partial-sheet={mobileSheet === 'partial'}
+    class:tour-docked={tourDocked}
     bind:this={panelEl}
     tabindex="-1"
     aria-label={title ?? m.panel_default_label()}
@@ -180,6 +186,10 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    --panel-dock-h: 0px;
+  }
+  .panel.tour-docked {
+    --panel-dock-h: 64px;
   }
 
   /* Right side drawer — pointer/desktop AND touch-landscape. A wide landscape
@@ -250,7 +260,7 @@
      mode. Border-bottom is intentionally absent so panel content
      reads as continuous below it. */
   .panel-dock {
-    height: 64px;
+    height: var(--panel-dock-h);
     flex-shrink: 0;
   }
   :global(html[data-touch][data-orientation='portrait']) .panel-dock {
@@ -259,7 +269,7 @@
 
   .panel-close {
     position: absolute;
-    top: calc(64px + 14px);
+    top: calc(var(--panel-dock-h) + 14px);
     right: 14px;
     width: 44px;
     height: 44px;
@@ -288,7 +298,7 @@
   /* Back affordance (#29) — mirrors .panel-close on the top-LEFT. */
   .panel-back {
     position: absolute;
-    top: calc(64px + 14px);
+    top: calc(var(--panel-dock-h) + 14px);
     left: 14px;
     width: 44px;
     height: 44px;

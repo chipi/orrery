@@ -14,6 +14,33 @@ import { getCultureDoors, type LocalizedCultureDoor } from './universe';
 import type { IconicTrajectoryData } from '$lib/three/iconic-trajectory';
 import { localizeTrajectory, type IconicTrajectoryOverlay } from '$lib/trajectory-overlay';
 
+/** Missions that ship `static/data/trajectories/<id>.json` (the orbiter `-tour`
+ *  files are extra layers of these and not listed). Callers check it before
+ *  fetching: /fly used to request the file for every mission and got a 404 for
+ *  each one without it. interstellar.test.ts keeps it equal to the files. */
+export const TRAJECTORY_IDS = [
+  'voyager-1',
+  'voyager-2',
+  'pioneer-10',
+  'pioneer-11',
+  'new-horizons',
+  'galileo',
+  'juno',
+  'cassini',
+  'dawn',
+  'rosetta',
+  'vega-1',
+  'vega-2',
+  'venera-13',
+  'giotto',
+  'hayabusa2',
+  'juice',
+  'bepicolombo',
+  'ulysses',
+] as const;
+const TRAJECTORY_ID_SET: ReadonlySet<string> = new Set(TRAJECTORY_IDS);
+export const hasTrajectory = (id: string): boolean => TRAJECTORY_ID_SET.has(id);
+
 /** A trajectory with its locale overlay applied (display text only; see
  *  localizeTrajectory). Null when the trajectory is missing. */
 export async function getTrajectory(

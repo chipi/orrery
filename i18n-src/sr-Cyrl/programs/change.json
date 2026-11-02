@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/moon": "Месец — места слетања Chang'e",
-    "/fleet?focus=yutu-2": "Флота — ровери Yutu и лендери Chang'e",
+    "/fleet?id=yutu-2": "Флота — ровери Yutu и лендери Chang'e",
     "/programs/artemis": "Artemis — паралелна трка назад на Месец",
     "/moon?site=change3": "Chang’e 3 — ровер Yutu",
     "/moon?site=change4": "Chang’e 4 — далека страна",

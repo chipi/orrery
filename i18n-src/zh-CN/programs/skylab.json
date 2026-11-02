@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "地球 — 轨道与发射场",
-    "/fleet?focus=skylab": "航天器 — Skylab 轨道工作站"
+    "/fleet?id=skylab": "航天器 — Skylab 轨道工作站"
   }
 }

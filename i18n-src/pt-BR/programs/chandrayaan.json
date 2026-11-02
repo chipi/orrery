@@ -83,6 +83,6 @@
   ],
   "link_labels": {
     "/moon": "Lua — a região de pouso no polo sul",
-    "/fleet?focus=chandrayaan1": "Frota — as sondas Chandrayaan"
+    "/fleet?id=chandrayaan1": "Frota — as sondas Chandrayaan"
   }
 }

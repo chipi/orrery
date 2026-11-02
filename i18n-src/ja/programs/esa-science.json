@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/explore": "探索 — 彗星と、ESA が観測する深宇宙",
-    "/fleet?focus=rosetta": "フリート — Rosetta、Gaia、Euclid",
+    "/fleet?id=rosetta": "フリート — Rosetta、Gaia、Euclid",
     "/programs/ariane": "Ariane — ESA の科学ミッションを打ち上げるロケット",
     "/earth?site=gaia": "L2 の Gaia",
     "/earth?site=xmm": "XMM-Newton"

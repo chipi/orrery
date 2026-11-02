@@ -341,7 +341,7 @@
       {/if}
     </div>
 
-    <PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
+    <PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
 
     {#if planet.missionable && onPlanMission}
       <div class="cta-bar">

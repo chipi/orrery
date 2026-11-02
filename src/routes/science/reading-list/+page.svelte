@@ -131,8 +131,8 @@
     },
     {
       title: 'How to Read the Solar System',
-      author: 'Christopher Riley & Dallas Campbell',
-      year: 2014,
+      author: 'Chris North & Paul Abel',
+      year: 2013,
       blurb:
         "A pop-science guide to every planet, moon, and significant body, organised by what's interesting about each. The companion read while you click through /explore.",
       audience: 'beginner',
@@ -175,11 +175,11 @@
       cover: '/images/recommendations/blogs/nasaspaceflight.webp',
     },
     {
-      title: 'Damn Interesting — Cosmos archive',
+      title: 'Damn Interesting — archive',
       publisher: 'damninteresting.com',
       blurb:
         'Long-form essays on lesser-known space history (Vela satellites, the Phobos missions, etc.). Reliable narrative-first writing.',
-      href: 'https://www.damninteresting.com/category/cosmos/',
+      href: 'https://www.damninteresting.com/archives/',
       cover: '/images/recommendations/blogs/damn-interesting.webp',
     },
   ];

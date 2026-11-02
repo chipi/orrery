@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "الأرض — المدارات ومواقع الإطلاق",
-    "/fleet?focus=skylab": "الأسطول — الورشة المدارية Skylab"
+    "/fleet?id=skylab": "الأسطول — الورشة المدارية Skylab"
   }
 }

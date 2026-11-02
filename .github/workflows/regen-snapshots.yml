@@ -56,7 +56,8 @@ jobs:
 
       - uses: ./.github/actions/setup-node
 
-      - run: npm ci
+      # --ignore-scripts: no dependency install script runs in a job that holds deploy / bot secrets.
+      - run: npm ci --ignore-scripts
 
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
@@ -74,8 +75,9 @@ jobs:
           if [[ -n "$(git status --porcelain tests/e2e/visual.spec.ts-snapshots/)" ]]; then
             git add tests/e2e/visual.spec.ts-snapshots/
             git commit -m "chore(visual): regenerate snapshot baselines"
-            # --no-verify: npm ci installs the husky pre-push hook on the runner,
-            # and a full preflight here re-validates what this workflow just built
+            # --no-verify: kept as a guard. `npm ci --ignore-scripts` no longer runs the
+            # prepare script that installs the husky pre-push hook, but if it ever did,
+            # a full preflight here would re-validate what this workflow just built
             # and blows the 20-min job timeout (runs get 'cancelled' mid-push).
             # The bot pushes only regenerated PNGs; CI validates the branch itself.
             git push --no-verify origin HEAD:${{ github.ref_name }}

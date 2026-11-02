@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "Флот — Falcon 9, Falcon Heavy и Dragon",
+    "/fleet?id=falcon-9": "Флот — Falcon 9, Falcon Heavy и Dragon",
     "/programs/iss": "МКС — станция, к которой летает Crew Dragon",
     "/earth": "Земля — орбиты, сближения и космодромы"
   }

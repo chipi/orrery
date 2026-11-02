@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/moon": "القمر — مواقع هبوط Chang'e",
-    "/fleet?focus=yutu-2": "الأسطول — مركبات Yutu الجوالة ومركبات هبوط Chang'e",
+    "/fleet?id=yutu-2": "الأسطول — مركبات Yutu الجوالة ومركبات هبوط Chang'e",
     "/programs/artemis": "Artemis — السباق الموازي للعودة إلى القمر",
     "/moon?site=change3": "Chang’e 3 — المركبة الجوالة Yutu",
     "/moon?site=change4": "Chang’e 4 — الجانب البعيد",

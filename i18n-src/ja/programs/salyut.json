@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "地球 — 軌道、ランデブー、打ち上げ地点",
-    "/fleet?focus=salyut-6": "フリート — Salyut 宇宙ステーション"
+    "/fleet?id=salyut-6": "フリート — Salyut 宇宙ステーション"
   }
 }

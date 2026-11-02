@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hayabusa-2": "Flotte — les sondes Hayabusa",
+    "/fleet?id=hayabusa-2": "Flotte — les sondes Hayabusa",
     "/explore": "Explorer — les astéroïdes Itokawa et Ryugu"
   }
 }

@@ -294,7 +294,7 @@
       {/if}
     </div>
 
-    <PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
+    <PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
   {/if}
 </Panel>
 

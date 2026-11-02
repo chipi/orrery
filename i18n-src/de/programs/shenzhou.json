@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "Flotte — das Raumschiff Shenzhou",
+    "/fleet?id=shenzhou": "Flotte — das Raumschiff Shenzhou",
     "/programs/tiangong": "Tiangong — die Station, die Shenzhou-Crews bauten und anfliegen",
     "/programs/soyuz": "Soyuz — das Raumschiff, von dem die Bauweise von Shenzhou abstammt"
   }

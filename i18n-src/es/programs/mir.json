@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Tierra: órbitas, encuentros y bases de lanzamiento",
-    "/fleet?focus=mir": "Flota — la estación espacial Mir"
+    "/fleet?id=mir": "Flota — la estación espacial Mir"
   }
 }

@@ -39,7 +39,7 @@
       "image": {
         "reuse": "fleet/crew-dragon/01"
       },
-      "caption": "Crew Dragon — de capsule die Amerikaanse bemanningstransport in 2020 terugbracht na negen jaar afhankelijkheid van Soyuz, en vervolgens de eerste volledig particuliere bemanningen naar een baan bracht.",
+      "caption": "Crew Dragon — de capsule die het Amerikaanse bemanningstransport in 2020 terugbracht na negen jaar afhankelijkheid van Soyuz, en vervolgens de eerste volledig particuliere bemanningen naar een baan bracht.",
       "align": "full"
     },
     {
@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "Vloot — Falcon 9, Falcon Heavy & Dragon",
+    "/fleet?id=falcon-9": "Vloot — Falcon 9, Falcon Heavy & Dragon",
     "/programs/iss": "ISS — het station waar Crew Dragon naartoe vliegt",
     "/earth": "Aarde — banen, rendez-vous & lanceerplaatsen"
   }

@@ -10,6 +10,7 @@
  */
 
 import { base } from '$app/paths';
+import { locales } from '$lib/paraglide/runtime';
 import { localeBundleOrigin } from '../asset-url';
 import { i18nChunkFile, i18nChunkOf } from './i18n-chunks.js';
 
@@ -132,40 +133,30 @@ export async function readJson<T>(res: Response, url: string): Promise<T> {
 }
 
 export async function get<T>(path: string, fetchFn: FetchLike = fetch): Promise<T> {
-  // i18n overlays resolve from the per-locale bundle. A genuine miss (key
-  // absent from a bundle that DID load) throws so callers en-US fallback
-  // fires; a missing bundle (dev without a build) falls through to the
-  // legacy per-file fetch below.
+  // i18n overlays resolve from the per-locale bundle only. A key missing from a
+  // bundle that loaded, or a bundle that did not load, throws so the caller's
+  // en-US fallback fires. There is no per-file path to fall back to: overlays
+  // live in i18n-src/ and are never served (ADR-079 D2 / #377), so that request
+  // could only 404 — prod logged 70 of them in two weeks (2026-11-01).
   const i18n = /^i18n\/([^/]+)\/(.+)$/.exec(path);
   if (i18n) {
     const [, locale, key] = i18n;
-    let bundle: Record<string, unknown> | undefined;
+    let bundle: Record<string, unknown>;
     try {
       bundle = await loadI18nBundle(locale, i18nChunkOf(key), fetchFn);
     } catch (err) {
+      // A supported locale's bundle failing (network, 5xx after retries, or a
+      // 4xx) means a reader gets English; report it so the rate is measured.
+      // An unsupported locale's 4xx is expected and not reported.
       const status = err instanceof BundleLoadError ? err.status : undefined;
-      if (status !== undefined && status >= 400 && status < 500) {
-        // Bundle genuinely absent (4xx) — an unsupported locale, or a bundle
-        // that was never built. Fall through to the legacy per-file fetch, which
-        // also 404s (per-file overlays haven't shipped since the bundle move,
-        // ADR-079 D2 / #377 — they live in i18n-src/, never served), so this is
-        // just one extra guaranteed 404 that drives the caller's en-US fallback.
-        // Harmless + rare (routing only emits supported locales); kept rather
-        // than special-cased so non-i18n paths still share the code below.
-        bundle = undefined;
-      } else {
-        // Transient network / 5xx failure that survived retries: do NOT drop to
-        // the dead per-file path (guaranteed 404 burst, #517). Report it so the
-        // real rate is measured, and rethrow — the caller's en-US fallback fires
-        // exactly as it does for a key-miss, with no 404 noise.
+      const absent = status !== undefined && status >= 400 && status < 500;
+      if (!absent || (locales as readonly string[]).includes(locale)) {
         reportI18nBundleFailure(locale, status);
-        throw err;
       }
+      throw err;
     }
-    if (bundle) {
-      if (!(key in bundle)) throw new Error(`i18n overlay not found: ${locale}/${key}`);
-      return bundle[key] as T;
-    }
+    if (!(key in bundle)) throw new Error(`i18n overlay not found: ${locale}/${key}`);
+    return bundle[key] as T;
   }
 
   const url = `${base}/data/${path}`;

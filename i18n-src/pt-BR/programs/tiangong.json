@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/tiangong": "Tiangong — a estação em 3D",
-    "/fleet?focus=tiangong": "Frota — Shenzhou, Tianzhou e a família Long March",
+    "/fleet?id=tiangong": "Frota — Shenzhou, Tianzhou e a família Long March",
     "/programs/iss": "EEI — a estação da qual o Tiangong ficou de fora",
     "/earth?site=tiangong": "Tiangong sobre nós"
   }

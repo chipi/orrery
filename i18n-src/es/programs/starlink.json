@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "Flota — la constelación Starlink",
+    "/fleet?id=starlink": "Flota — la constelación Starlink",
     "/programs/spacex": "SpaceX: el Falcon que la lanza",
     "/earth": "Tierra: órbitas y la saturación de la órbita baja",
     "/earth?site=starlink": "La constelación Starlink"

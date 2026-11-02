@@ -8,24 +8,24 @@ Companion to the [image bill of materials](../static/data/image-provenance.json)
 
 | | |
 |---|---|
-| **Project** | `orrery@0.9.1` |
-| **Generated** | 2026-10-23 |
-| **Total packages** | 916 (190 runtime · 726 development) |
+| **Project** | `orrery@0.9.3` |
+| **Generated** | 2026-11-01 |
+| **Total packages** | 898 (187 runtime · 711 development) |
 | **Top-level runtime deps** | 28 |
 | **Top-level dev deps** | 35 |
-| **Transitive deps** | 853 |
+| **Transitive deps** | 835 |
 | **Distinct licenses** | 16 |
 
 ## License summary
 
 | License | Count | Notes |
 |---|---|---|
-| `MIT` | 740 |  |
-| `Apache-2.0` | 67 |  |
-| `ISC` | 52 |  |
+| `MIT` | 727 |  |
+| `Apache-2.0` | 66 |  |
+| `ISC` | 51 |  |
 | `BSD-2-Clause` | 20 |  |
-| `BSD-3-Clause` | 12 |  |
-| `BlueOak-1.0.0` | 9 |  |
+| `BSD-3-Clause` | 10 |  |
+| `BlueOak-1.0.0` | 8 |  |
 | `Unlicense` | 3 |  |
 | `FSL-1.1-MIT` | 2 |  |
 | `MPL-2.0` | 2 |  |
@@ -53,16 +53,16 @@ _Bundled into the SPA and shipped to every visitor. Smallest possible surface ar
 | [`@capacitor/ios`](https://capacitorjs.com) | 8.5.3 | `MIT` | Capacitor: Cross-platform apps with JavaScript and the web |
 | [`@capacitor/network`](https://github.com/ionic-team/capacitor-plugins) | 8.0.1 | `MIT` | The Network API provides network and connectivity information. |
 | [`@capacitor/share`](https://github.com/ionic-team/capacitor-plugins) | 8.0.3 | `MIT` | The Share API provides methods for sharing content in any sharing-enabled apps the user may have installed. |
-| [`@capacitor/splash-screen`](https://github.com/ionic-team/capacitor-plugins) | 8.0.1 | `MIT` | The Splash Screen API provides methods for showing or hiding a Splash image. |
+| [`@capacitor/splash-screen`](https://github.com/ionic-team/capacitor-plugins) | 8.0.2 | `MIT` | The Splash Screen API provides methods for showing or hiding a Splash image. |
 | [`@modelcontextprotocol/node`](https://modelcontextprotocol.io) | 2.1.1 | `Apache-2.0` | Model Context Protocol implementation for TypeScript - Node.js middleware |
 | [`@modelcontextprotocol/server`](https://modelcontextprotocol.io) | 2.3.1 | `Apache-2.0` | Model Context Protocol implementation for TypeScript - Server package |
-| [`@opentelemetry/api`](https://github.com/open-telemetry/opentelemetry-js/tree/main/api) | 1.9.1 | `Apache-2.0` | Public API for OpenTelemetry |
-| [`@opentelemetry/context-async-hooks`](https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-context-async-hooks) | 2.12.0 | `Apache-2.0` | OpenTelemetry AsyncLocalStorage-based Context Manager |
-| [`@opentelemetry/core`](https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-core) | 2.12.0 | `Apache-2.0` | OpenTelemetry Core provides constants and utilities shared by all OpenTelemetry SDK packages. |
-| [`@opentelemetry/exporter-trace-otlp-proto`](https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/exporter-trace-otlp-proto) | 0.223.0 | `Apache-2.0` | OpenTelemetry Collector Exporter allows user to send collected traces to the OpenTelemetry Collector using pro |
-| [`@opentelemetry/resources`](https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-resources) | 2.12.0 | `Apache-2.0` | OpenTelemetry SDK resources |
-| [`@opentelemetry/sdk-trace`](https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/sdk-trace) | 2.12.0 | `Apache-2.0` | OpenTelemetry Tracing |
-| [`@sentry/capacitor`](https://github.com/getsentry/sentry-capacitor) | 4.4.0 | `MIT` | Official Sentry SDK for Capacitor |
+| [`@opentelemetry/api`](https://github.com/open-telemetry/opentelemetry-js/tree/main/api) | 1.10.0 | `Apache-2.0` | Public API for OpenTelemetry |
+| [`@opentelemetry/context-async-hooks`](https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-context-async-hooks) | 3.0.0 | `Apache-2.0` | OpenTelemetry AsyncLocalStorage-based Context Manager |
+| [`@opentelemetry/core`](https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-core) | 3.0.0 | `Apache-2.0` | OpenTelemetry Core provides constants and utilities shared by all OpenTelemetry SDK packages. |
+| [`@opentelemetry/exporter-trace-otlp-proto`](https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/exporter-trace-otlp-proto) | 0.300.0 | `Apache-2.0` | OpenTelemetry Collector Exporter allows user to send collected traces to the OpenTelemetry Collector using pro |
+| [`@opentelemetry/resources`](https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-resources) | 3.0.0 | `Apache-2.0` | OpenTelemetry SDK resources |
+| [`@opentelemetry/sdk-trace`](https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/sdk-trace) | 3.0.0 | `Apache-2.0` | OpenTelemetry Tracing |
+| [`@sentry/capacitor`](https://github.com/getsentry/sentry-capacitor) | 4.3.0 | `MIT` | Official Sentry SDK for Capacitor |
 | [`@sentry/node`](https://github.com/getsentry/sentry-javascript/tree/master/packages/node) | 10.69.0 | `MIT` | Sentry Node SDK using OpenTelemetry for performance instrumentation |
 | [`@sentry/sveltekit`](https://github.com/getsentry/sentry-javascript/tree/master/packages/sveltekit) | 10.69.0 | `MIT` | Official Sentry SDK for SvelteKit |
 | [`detect-gpu`](https://github.com/pmndrs/detect-gpu#readme) | 5.0.70 | `MIT` | Classify GPU's based on their benchmark score in order to provide an adaptive experience. |
@@ -78,12 +78,12 @@ _Build-time tools — not shipped to browsers._
 
 | Package | Version | License | Description |
 |---|---|---|---|
-| [`@anthropic-ai/sdk`](https://github.com/anthropics/anthropic-sdk-typescript) | 0.96.0 | `MIT` | The official TypeScript library for the Anthropic API |
+| [`@anthropic-ai/sdk`](https://github.com/anthropics/anthropic-sdk-typescript) | 1.3.0 | `Apache-2.0` | The official TypeScript library for the Anthropic API |
 | [`@axe-core/playwright`](https://github.com/dequelabs/axe-core-npm) | 4.12.1 | `MPL-2.0` | Provides a method to inject and analyze web pages using axe |
 | [`@capacitor/assets`](https://ionicframework.com) | 3.0.5 | `MIT` | Generate icon and splash screen images for Capacitor apps |
 | [`@capacitor/cli`](https://capacitorjs.com) | 8.4.1 | `MIT` | Capacitor: Cross-platform apps with JavaScript and the web |
 | [`@eslint/js`](https://eslint.org) | 10.0.1 | `MIT` | ESLint JavaScript language implementation |
-| [`@google-cloud/text-to-speech`](https://github.com/googleapis/google-cloud-node/tree/main/packages/google-cloud-texttospeech) | 6.4.1 | `Apache-2.0` | Cloud Text-to-Speech API client for Node.js |
+| [`@google-cloud/text-to-speech`](https://github.com/googleapis/google-cloud-node/tree/main/packages/google-cloud-texttospeech) | 7.2.0 | `Apache-2.0` | Cloud Text-to-Speech API client for Node.js |
 | [`@inlang/paraglide-js`](https://paraglidejs.com) | 2.21.0 | `MIT` |  |
 | [`@modelcontextprotocol/client`](https://modelcontextprotocol.io) | 2.3.1 | `Apache-2.0` | Model Context Protocol implementation for TypeScript - Client package |
 | [`@playwright/test`](https://playwright.dev) | 1.64.0 | `Apache-2.0` | A high-level API to automate web browsers |
@@ -93,30 +93,30 @@ _Build-time tools — not shipped to browsers._
 | [`@types/qrcode`](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/qrcode) | 1.5.6 | `MIT` | TypeScript definitions for qrcode |
 | [`@types/three`](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/three) | 0.185.1 | `MIT` | TypeScript definitions for three |
 | [`@vite-pwa/sveltekit`](https://github.com/vite-pwa/sveltekit#readme) | 1.1.0 | `MIT` | Zero-config PWA for SvelteKit |
-| [`@vitest/coverage-v8`](https://vitest.dev/guide/coverage) | 4.1.12 | `MIT` | V8 coverage provider for Vitest |
+| [`@vitest/coverage-v8`](https://vitest.dev/guide/coverage) | 5.0.5 | `MIT` | V8 coverage provider for Vitest |
 | [`ajv`](https://ajv.js.org) | 8.20.0 | `MIT` | Another JSON Schema Validator |
 | [`ajv-formats`](https://github.com/ajv-validator/ajv-formats#readme) | 3.0.1 | `MIT` | Format validation for Ajv v7+ |
 | [`canvas`](https://github.com/Automattic/node-canvas) | 3.2.3 | `MIT` | Canvas graphics API backed by Cairo |
-| [`eslint`](https://eslint.org) | 10.7.0 | `MIT` | An AST-based pattern checker for JavaScript. |
+| [`eslint`](https://eslint.org) | 10.13.0 | `MIT` | An AST-based pattern checker for JavaScript. |
 | [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier#readme) | 10.1.8 | `MIT` | Turns off all rules that are unnecessary or might conflict with Prettier. |
-| [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte) | 3.22.0 | `MIT` | ESLint plugin for Svelte using AST |
+| [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte) | 3.23.1 | `MIT` | ESLint plugin for Svelte using AST |
 | [`gdal-async`](https://github.com/mmomtchev/node-gdal-async) | 3.12.3 | `Apache-2.0` | Bindings to GDAL (Geospatial Data Abstraction Library) with full async support |
 | [`globals`](https://github.com/sindresorhus/globals) | 17.7.0 | `MIT` | Global identifiers from different JavaScript environments |
-| [`jsdom`](https://github.com/jsdom/jsdom) | 29.1.1 | `MIT` | A JavaScript implementation of many web standards |
+| [`jsdom`](https://github.com/jsdom/jsdom) | 30.1.3 | `MIT` | A JavaScript implementation of many web standards |
 | [`prettier`](https://prettier.io) | 3.9.10 | `MIT` | Prettier is an opinionated code formatter |
 | [`prettier-plugin-svelte`](https://github.com/sveltejs/prettier-plugin-svelte#readme) | 4.1.1 | `MIT` | Svelte plugin for prettier |
 | [`sharp`](https://sharp.pixelplumbing.com) | 0.35.5 | `Apache-2.0` | High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, GIF, AVIF and TIFF im |
-| [`svelte-check`](https://github.com/sveltejs/language-tools#readme) | 4.7.2 | `MIT` | Svelte Code Checker Terminal Interface |
-| [`tsx`](https://tsx.hirok.io) | 4.23.1 | `MIT` | TypeScript Execute (tsx): Node.js enhanced with esbuild to run TypeScript & ESM files |
+| [`svelte-check`](https://github.com/sveltejs/language-tools#readme) | 4.7.7 | `MIT` | Svelte Code Checker Terminal Interface |
+| [`tsx`](https://tsx.hirok.io) | 4.23.15 | `MIT` | TypeScript Execute (tsx): Node.js enhanced with esbuild to run TypeScript & ESM files |
 | [`typescript-eslint`](https://typescript-eslint.io/packages/typescript-eslint) | 8.63.0 | `MIT` | Tooling which enables you to use TypeScript with ESLint |
 | [`vite-plugin-compression2`](https://github.com/nonzzz/vite-plugin-compression#readme) | 2.5.3 | `MIT` | a fast vite compression plugin |
 | [`vitepress`](https://vitepress.dev/) | 1.6.4 | `MIT` | Vite & Vue powered static site generator |
 | [`vitepress-sidebar`](https://vitepress-sidebar.cdget.com) | 1.36.1 | `MIT` | A VitePress auto sidebar plugin that automatically creates a simple configuration. |
-| [`vitest`](https://vitest.dev) | 4.1.12 | `MIT` | Next generation testing framework powered by Vite |
+| [`vitest`](https://vitest.dev) | 5.0.5 | `MIT` | Next generation testing framework powered by Vite |
 
 ## Transitive dependencies
 
-<details><summary>Show all 853 transitive packages</summary>
+<details><summary>Show all 835 transitive packages</summary>
 
 | Package | Version | License | Scope |
 |---|---|---|---|
@@ -146,9 +146,8 @@ _Build-time tools — not shipped to browsers._
 | [`@jridgewell/trace-mapping`](https://github.com/jridgewell/sourcemaps/tree/main/packages/trace-mapping) | 0.3.31 | `MIT` | runtime |
 | [`@opentelemetry/api-logs`](https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/api-logs) | 0.220.0 | `Apache-2.0` | runtime |
 | [`@opentelemetry/instrumentation`](https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/opentelemetry-instrumentation) | 0.220.0 | `Apache-2.0` | runtime |
-| [`@opentelemetry/otlp-exporter-base`](https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/otlp-exporter-base) | 0.223.0 | `Apache-2.0` | runtime |
-| [`@opentelemetry/otlp-transformer`](https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/otlp-transformer) | 0.223.0 | `Apache-2.0` | runtime |
-| [`@opentelemetry/sdk-trace-base`](https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-sdk-trace-base) | 2.12.0 | `Apache-2.0` | runtime |
+| [`@opentelemetry/otlp-exporter-base`](https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/otlp-exporter-base) | 0.300.0 | `Apache-2.0` | runtime |
+| [`@opentelemetry/otlp-transformer`](https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/otlp-transformer) | 0.300.0 | `Apache-2.0` | runtime |
 | [`@opentelemetry/semantic-conventions`](https://github.com/open-telemetry/opentelemetry-js/tree/main/semantic-conventions) | 1.43.0 | `Apache-2.0` | runtime |
 | [`@polka/url`](https://github.com/lukeed/polka) | 1.0.0-next.29 | `MIT` | runtime |
 | [`@sentry/browser`](https://github.com/getsentry/sentry-javascript/tree/master/packages/browser) | 10.69.0 | `MIT` | runtime |
@@ -160,8 +159,6 @@ _Build-time tools — not shipped to browsers._
 | [`@sentry/conventions`](https://github.com/getsentry/sentry-conventions#readme) | 0.15.1 | `MIT` | runtime |
 | [`@sentry/core`](https://github.com/getsentry/sentry-javascript/tree/master/packages/core) | 10.65.0 | `MIT` | runtime |
 | [`@sentry/feedback`](https://github.com/getsentry/sentry-javascript/tree/master/packages/feedback) | 10.69.0 | `MIT` | runtime |
-| [`@sentry/node-core`](https://github.com/getsentry/sentry-javascript/tree/master/packages/node-core) | 10.69.0 | `MIT` | runtime |
-| [`@sentry/opentelemetry`](https://github.com/getsentry/sentry-javascript/tree/master/packages/opentelemetry) | 10.69.0 | `MIT` | runtime |
 | [`@sentry/replay`](https://docs.sentry.io/platforms/javascript/session-replay/) | 10.69.0 | `MIT` | runtime |
 | [`@sentry/replay-canvas`](https://docs.sentry.io/platforms/javascript/session-replay/) | 10.69.0 | `MIT` | runtime |
 | [`@sentry/server-utils`](https://github.com/getsentry/sentry-javascript/tree/master/packages/server-utils) | 10.69.0 | `MIT` | runtime |
@@ -203,7 +200,7 @@ _Build-time tools — not shipped to browsers._
 | [`dijkstrajs`](https://github.com/tcort/dijkstrajs) | 1.0.3 | `MIT` | runtime |
 | [`dotenv`](https://github.com/motdotla/dotenv#readme) | 17.4.2 | `BSD-2-Clause` | runtime |
 | [`electron-to-chromium`](https://github.com/Kilian/electron-to-chromium) | 1.5.419 | `ISC` | runtime |
-| [`es-module-lexer`](https://github.com/guybedford/es-module-lexer#readme) | 2.3.1 | `MIT` | runtime |
+| [`es-module-lexer`](https://github.com/guybedford/es-module-lexer#readme) | 2.3.2 | `MIT` | runtime |
 | [`escalade`](https://github.com/lukeed/escalade) | 3.2.0 | `MIT` | runtime |
 | [`esm-env`](https://github.com/benmccann/esm-env) | 1.2.2 | `MIT` | runtime |
 | [`esquery`](https://github.com/estools/esquery/) | 1.7.0 | `BSD-3-Clause` | runtime |
@@ -264,15 +261,15 @@ _Build-time tools — not shipped to browsers._
 | [`tdigest`](https://github.com/welch/tdigest) | 0.1.3 | `MIT` | runtime |
 | [`tiny-glob`](https://github.com/terkelg/tiny-glob) | 0.2.9 | `MIT` | runtime |
 | [`totalist`](https://github.com/lukeed/totalist) | 3.0.1 | `MIT` | runtime |
-| [`tr46`](https://github.com/jsdom/tr46) | 6.0.0 | `MIT` | runtime |
+| [`tr46`](https://github.com/jsdom/tr46) | 7.0.0 | `MIT` | runtime |
 | [`tslib`](https://www.typescriptlang.org/) | 2.8.1 | `0BSD` | runtime |
-| [`typescript`](https://www.typescriptlang.org/) | 5.9.3 | `Apache-2.0` | runtime |
+| [`typescript`](https://www.typescriptlang.org/) | 6.0.3 | `Apache-2.0` | runtime |
 | [`update-browserslist-db`](https://github.com/browserslist/update-db) | 1.3.2 | `MIT` | runtime |
 | [`vite`](https://vite.dev) | 8.1.6 | `MIT` | runtime |
 | [`vitefu`](https://github.com/svitejs/vitefu) | 1.1.3 | `MIT` | runtime |
 | `webgl-constants` | 1.1.1 | `MIT` | runtime |
 | [`webidl-conversions`](https://github.com/jsdom/webidl-conversions) | 8.0.1 | `BSD-2-Clause` | runtime |
-| [`whatwg-url`](https://github.com/jsdom/whatwg-url) | 16.0.1 | `MIT` | runtime |
+| [`whatwg-url`](https://github.com/jsdom/whatwg-url) | 17.3.0 | `MIT` | runtime |
 | [`which`](https://github.com/isaacs/node-which) | 2.0.2 | `ISC` | runtime |
 | [`which-module`](https://github.com/nexdrew/which-module#readme) | 2.0.1 | `ISC` | runtime |
 | [`wrap-ansi`](https://github.com/chalk/wrap-ansi) | 7.0.0 | `MIT` | runtime |
@@ -292,10 +289,8 @@ _Build-time tools — not shipped to browsers._
 | [`@algolia/requester-fetch`](https://github.com/algolia/algoliasearch-client-javascript#readme) | 5.55.2 | `MIT` | development |
 | [`@algolia/requester-node-http`](https://github.com/algolia/algoliasearch-client-javascript#readme) | 5.55.2 | `MIT` | development |
 | [`@apideck/better-ajv-errors`](https://github.com/apideck-libraries/better-ajv-errors) | 0.3.7 | `MIT` | development |
-| [`@asamuzakjp/css-color`](https://github.com/asamuzaK/cssColor#readme) | 5.1.11 | `MIT` | development |
-| [`@asamuzakjp/dom-selector`](https://github.com/asamuzaK/domSelector#readme) | 7.1.1 | `MIT` | development |
-| [`@asamuzakjp/generational-cache`](https://github.com/asamuzaK/generationalCache) | 1.0.1 | `MIT` | development |
-| [`@asamuzakjp/nwsapi`](http://javascript.nwbox.com/nwsapi/) | 2.3.9 | `MIT` | development |
+| [`@asamuzakjp/css-color`](https://github.com/asamuzaK/cssColor#readme) | 7.1.9 | `MIT` | development |
+| [`@asamuzakjp/dom-selector`](https://github.com/asamuzaK/domSelector#readme) | 10.0.5 | `MIT` | development |
 | [`@babel/helper-annotate-as-pure`](https://babel.dev/docs/en/next/babel-helper-annotate-as-pure) | 7.29.7 | `MIT` | development |
 | [`@babel/helper-create-class-features-plugin`](https://github.com/babel/babel) | 7.29.7 | `MIT` | development |
 | [`@babel/helper-create-regexp-features-plugin`](https://github.com/babel/babel) | 7.29.7 | `MIT` | development |
@@ -373,14 +368,14 @@ _Build-time tools — not shipped to browsers._
 | [`@babel/preset-modules`](https://github.com/babel/preset-modules) | 0.1.6-no-external-plugins | `MIT` | development |
 | [`@babel/runtime`](https://babel.dev/docs/en/next/babel-runtime) | 7.29.7 | `MIT` | development |
 | [`@bcoe/v8-coverage`](https://github.com/bcoe/v8-coverage) | 1.0.2 | `MIT` | development |
-| [`@bramus/specificity`](https://github.com/bramus/specificity#readme) | 2.4.2 | `MIT` | development |
+| [`@bramus/specificity`](https://github.com/bramus/specificity#readme) | 2.4.3 | `MIT` | development |
 | [`@cspotcode/source-map-support`](https://github.com/cspotcode/node-source-map-support) | 0.8.1 | `MIT` | development |
-| [`@csstools/color-helpers`](https://github.com/csstools/postcss-plugins/tree/main/packages/color-helpers#readme) | 6.1.0 | `MIT-0` | development |
-| [`@csstools/css-calc`](https://github.com/csstools/postcss-plugins/tree/main/packages/css-calc#readme) | 3.2.1 | `MIT` | development |
-| [`@csstools/css-color-parser`](https://github.com/csstools/postcss-plugins/tree/main/packages/css-color-parser#readme) | 4.1.9 | `MIT` | development |
-| [`@csstools/css-parser-algorithms`](https://github.com/csstools/postcss-plugins/tree/main/packages/css-parser-algorithms#readme) | 4.0.0 | `MIT` | development |
-| [`@csstools/css-syntax-patches-for-csstree`](https://github.com/csstools/postcss-plugins/tree/main/packages/css-syntax-patches-for-csstree#readme) | 1.1.6 | `MIT-0` | development |
-| [`@csstools/css-tokenizer`](https://github.com/csstools/postcss-plugins/tree/main/packages/css-tokenizer#readme) | 4.0.0 | `MIT` | development |
+| [`@csstools/color-helpers`](https://github.com/csstools/postcss-plugins/tree/main/packages/color-helpers#readme) | 6.1.2 | `MIT-0` | development |
+| [`@csstools/css-calc`](https://github.com/csstools/postcss-plugins/tree/main/packages/css-calc#readme) | 3.4.3 | `MIT` | development |
+| [`@csstools/css-color-parser`](https://github.com/csstools/postcss-plugins/tree/main/packages/css-color-parser#readme) | 4.2.6 | `MIT` | development |
+| [`@csstools/css-parser-algorithms`](https://github.com/csstools/postcss-plugins/tree/main/packages/css-parser-algorithms#readme) | 4.0.2 | `MIT` | development |
+| [`@csstools/css-syntax-patches-for-csstree`](https://github.com/csstools/postcss-plugins/tree/main/packages/css-syntax-patches-for-csstree#readme) | 1.1.15 | `MIT-0` | development |
+| [`@csstools/css-tokenizer`](https://github.com/csstools/postcss-plugins/tree/main/packages/css-tokenizer#readme) | 4.0.2 | `MIT` | development |
 | [`@dimforge/rapier3d-compat`](https://rapier.rs) | 0.12.0 | `Apache-2.0` | development |
 | [`@docsearch/css`](https://docsearch.algolia.com) | 3.8.2 | `MIT` | development |
 | [`@docsearch/js`](https://docsearch.algolia.com) | 3.8.2 | `MIT` | development |
@@ -388,7 +383,7 @@ _Build-time tools — not shipped to browsers._
 | [`@esbuild/linux-x64`](https://github.com/evanw/esbuild) | 0.28.1 | `MIT` | development |
 | [`@eslint-community/eslint-utils`](https://github.com/eslint-community/eslint-utils#readme) | 4.9.1 | `MIT` | development |
 | [`@eslint-community/regexpp`](https://github.com/eslint-community/regexpp#readme) | 4.12.2 | `MIT` | development |
-| [`@exodus/bytes`](https://github.com/ExodusOSS/bytes) | 1.15.1 | `MIT` | development |
+| [`@exodus/bytes`](https://github.com/ExodusOSS/bytes) | 1.16.0 | `MIT` | development |
 | [`@grpc/grpc-js`](https://grpc.io/) | 1.14.6 | `Apache-2.0` | development |
 | [`@grpc/proto-loader`](https://grpc.io/) | 0.8.1 | `Apache-2.0` | development |
 | [`@hutson/parse-repository-url`](https://gitlab.com/hyper-expanse/open-source/parse-repository-url#readme) | 3.0.2 | `Apache-2.0` | development |
@@ -410,7 +405,6 @@ _Build-time tools — not shipped to browsers._
 | [`@ionic/utils-stream`](https://ionicframework.com/) | 3.1.7 | `MIT` | development |
 | [`@ionic/utils-subprocess`](https://ionicframework.com/) | 3.0.1 | `MIT` | development |
 | [`@ionic/utils-terminal`](https://ionicframework.com/) | 2.3.5 | `MIT` | development |
-| [`@isaacs/cliui`](https://github.com/yargs/cliui) | 8.0.2 | `ISC` | development |
 | [`@isaacs/fs-minipass`](https://github.com/npm/fs-minipass) | 4.0.1 | `ISC` | development |
 | [`@jridgewell/resolve-uri`](https://github.com/jridgewell/resolve-uri) | 3.1.2 | `MIT` | development |
 | [`@js-sdsl/ordered-map`](https://js-sdsl.org) | 4.4.2 | `MIT` | development |
@@ -438,7 +432,7 @@ _Build-time tools — not shipped to browsers._
 | [`@shikijs/vscode-textmate`](https://github.com/shikijs/vscode-textmate) | 10.0.2 | `MIT` | development |
 | [`@sinclair/typebox`](https://github.com/sinclairzx81/sinclair-typebox) | 0.31.30 | `MIT` | development |
 | [`@stablelib/base64`](https://github.com/StableLib/stablelib/tree/master/packages/base64) | 1.0.1 | `MIT` | development |
-| [`@sveltejs/load-config`](https://github.com/sveltejs/language-tools) | 0.2.0 | `MIT` | development |
+| [`@sveltejs/load-config`](https://github.com/sveltejs/language-tools) | 0.2.3 | `MIT` | development |
 | `@trapezedev/gradle-parse` | 7.1.3 | `MIT` | development |
 | [`@trapezedev/project`](https://github.com/ionic-team/capacitor-configure) | 7.1.4 | `MIT` | development |
 | [`@trickfilm400/rollup-plugin-off-main-thread`](https://github.com/Trickfilm400/rollup-plugin-off-main-thread) | 3.0.0-pre1 | `Apache-2.0` | development |
@@ -467,8 +461,8 @@ _Build-time tools — not shipped to browsers._
 | [`@typescript-eslint/utils`](https://typescript-eslint.io/packages/utils) | 8.63.0 | `MIT` | development |
 | [`@typescript-eslint/visitor-keys`](https://typescript-eslint.io) | 8.63.0 | `MIT` | development |
 | [`@ungap/structured-clone`](https://github.com/ungap/structured-clone#readme) | 1.3.3 | `ISC` | development |
-| [`@vitest/pretty-format`](https://github.com/vitest-dev/vitest/tree/main/packages/pretty-format) | 4.1.12 | `MIT` | development |
-| [`@vitest/utils`](https://github.com/vitest-dev/vitest/tree/main/packages/utils) | 4.1.12 | `MIT` | development |
+| [`@vitest/istanbul-lib-coverage`](https://vitest.dev/) | 1.0.2 | `MIT` | development |
+| [`@vitest/istanbul-lib-report`](https://vitest.dev) | 1.0.2 | `MIT` | development |
 | [`@vue/devtools-api`](https://github.com/vuejs/devtools) | 7.7.10 | `MIT` | development |
 | [`@vue/devtools-kit`](https://github.com/vuejs/devtools) | 7.7.10 | `MIT` | development |
 | [`@vue/devtools-shared`](https://github.com/vuejs/devtools) | 7.7.10 | `MIT` | development |
@@ -491,7 +485,7 @@ _Build-time tools — not shipped to browsers._
 | [`array-timsort`](https://github.com/kaelzhang/node-array-timsort) | 1.0.3 | `MIT` | development |
 | [`arraybuffer.prototype.slice`](https://github.com/es-shims/ArrayBuffer.prototype.slice#readme) | 1.0.4 | `MIT` | development |
 | [`arrify`](https://github.com/sindresorhus/arrify) | 1.0.1 | `MIT` | development |
-| [`ast-v8-to-istanbul`](https://github.com/AriPerkkio/ast-v8-to-istanbul) | 1.0.4 | `MIT` | development |
+| [`ast-v8-to-istanbul`](https://github.com/AriPerkkio/ast-v8-to-istanbul) | 1.0.7 | `MIT` | development |
 | [`async`](https://caolan.github.io/async/) | 3.2.6 | `MIT` | development |
 | [`async-function`](https://github.com/ljharb/async-function#readme) | 1.0.0 | `MIT` | development |
 | [`at-least-node`](https://github.com/RyanZim/at-least-node#readme) | 1.0.0 | `ISC` | development |
@@ -507,13 +501,14 @@ _Build-time tools — not shipped to browsers._
 | [`bare-stream`](https://github.com/holepunchto/bare-stream#readme) | 2.13.3 | `Apache-2.0` | development |
 | [`bare-url`](https://github.com/holepunchto/bare-url) | 2.4.5 | `Apache-2.0` | development |
 | [`base64-js`](https://github.com/beatgammit/base64-js) | 1.5.1 | `MIT` | development |
-| [`bidi-js`](https://github.com/lojjic/bidi-js) | 1.0.3 | `MIT` | development |
+| [`bidi-js`](https://github.com/lojjic/bidi-js) | 1.1.0 | `MIT` | development |
 | [`big-integer`](https://github.com/peterolson/BigInteger.js) | 1.6.52 | `Unlicense` | development |
 | [`bignumber.js`](https://github.com/MikeMcl/bignumber.js) | 9.3.1 | `MIT` | development |
 | [`birpc`](https://github.com/antfu-collective/birpc#readme) | 2.9.0 | `MIT` | development |
 | [`boolbase`](https://github.com/fb55/boolbase) | 1.0.0 | `ISC` | development |
 | [`bplist-creator`](https://github.com/nearinfinity/node-bplist-creator) | 0.1.0 | `MIT` | development |
 | [`bplist-parser`](https://github.com/nearinfinity/node-bplist-parser) | 0.3.2 | `MIT` | development |
+| [`buffer-equal-constant-time`](https://github.com/goinstant/buffer-equal-constant-time) | 1.0.1 | `BSD-3-Clause` | development |
 | [`call-bind`](https://github.com/ljharb/call-bind#readme) | 1.0.9 | `MIT` | development |
 | [`call-bind-apply-helpers`](https://github.com/ljharb/call-bind-apply-helpers#readme) | 1.0.2 | `MIT` | development |
 | [`call-bound`](https://github.com/ljharb/call-bound#readme) | 1.0.4 | `MIT` | development |
@@ -560,7 +555,7 @@ _Build-time tools — not shipped to browsers._
 | [`cssesc`](https://mths.be/cssesc) | 3.0.0 | `MIT` | development |
 | [`dargs`](https://github.com/sindresorhus/dargs) | 7.0.0 | `MIT` | development |
 | [`data-uri-to-buffer`](https://github.com/TooTallNate/node-data-uri-to-buffer) | 4.0.1 | `MIT` | development |
-| [`data-urls`](https://github.com/jsdom/data-urls) | 7.0.0 | `MIT` | development |
+| [`data-urls`](https://github.com/jsdom/data-urls) | 8.0.0 | `MIT` | development |
 | [`data-view-buffer`](https://github.com/inspect-js/data-view-buffer#readme) | 1.0.2 | `MIT` | development |
 | [`data-view-byte-length`](https://github.com/inspect-js/data-view-byte-length#readme) | 1.0.2 | `MIT` | development |
 | [`data-view-byte-offset`](https://github.com/inspect-js/data-view-byte-offset#readme) | 1.0.1 | `MIT` | development |
@@ -628,8 +623,8 @@ _Build-time tools — not shipped to browsers._
 | [`function-bind`](https://github.com/Raynos/function-bind) | 1.1.2 | `MIT` | development |
 | [`function.prototype.name`](https://github.com/es-shims/Function.prototype.name) | 1.2.0 | `MIT` | development |
 | [`functions-have-names`](https://github.com/inspect-js/functions-have-names#readme) | 1.2.3 | `MIT` | development |
-| [`gaxios`](https://github.com/googleapis/google-cloud-node/tree/main/core/packages/gaxios) | 7.2.0 | `Apache-2.0` | development |
-| [`gcp-metadata`](https://github.com/googleapis/google-cloud-node-core/tree/main/packages/gcp-metadata) | 8.1.3 | `Apache-2.0` | development |
+| [`gaxios`](https://github.com/googleapis/google-cloud-node/tree/main/core/packages/gaxios) | 8.3.2 | `Apache-2.0` | development |
+| [`gcp-metadata`](https://github.com/googleapis/google-cloud-node/tree/main/core/packages/gcp-metadata) | 9.2.3 | `Apache-2.0` | development |
 | [`generator-function`](https://github.com/TimothyGu/generator-function#readme) | 2.0.1 | `MIT` | development |
 | [`get-intrinsic`](https://github.com/ljharb/get-intrinsic#readme) | 1.3.0 | `MIT` | development |
 | [`get-own-enumerable-property-symbols`](https://github.com/mightyiam/get-own-enumerable-property-symbols#readme) | 3.0.2 | `ISC` | development |
@@ -641,18 +636,16 @@ _Build-time tools — not shipped to browsers._
 | [`git-semver-tags`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/git-semver-tags#readme) | 4.1.1 | `MIT` | development |
 | [`gitconfiglocal`](https://github.com/soldair/node-gitconfiglocal) | 1.0.0 | `BSD` | development |
 | [`globalthis`](https://github.com/ljharb/System.global) | 1.0.4 | `MIT` | development |
-| [`google-auth-library`](https://github.com/googleapis/google-auth-library-nodejs) | 10.5.0 | `Apache-2.0` | development |
-| [`google-gax`](https://github.com/googleapis/google-cloud-node-core/tree/main/packages/gax) | 5.0.7 | `Apache-2.0` | development |
-| [`google-logging-utils`](https://github.com/googleapis/google-cloud-node-core/tree/main/dev-packages/logging-utils) | 1.1.3 | `Apache-2.0` | development |
+| [`google-auth-library`](https://github.com/googleapis/google-cloud-node/tree/main/core/packages/google-auth-library-nodejs) | 11.3.2 | `Apache-2.0` | development |
+| [`google-gax`](https://github.com/googleapis/google-cloud-node/tree/main/core/packages/gax) | 6.14.0 | `Apache-2.0` | development |
+| [`google-logging-utils`](https://github.com/googleapis/google-cloud-node/tree/main/core/packages/logging-utils) | 2.1.1 | `Apache-2.0` | development |
 | [`gopd`](https://github.com/ljharb/gopd#readme) | 1.2.0 | `MIT` | development |
 | [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) | 4.2.11 | `ISC` | development |
 | [`gradle-to-js`](https://github.com/ninetwozero/gradle-to-js#readme) | 2.0.1 | `Apache-2.0` | development |
 | [`gray-matter`](https://github.com/jonschlinkert/gray-matter) | 4.0.3 | `MIT` | development |
-| [`gtoken`](https://github.com/google/node-gtoken) | 8.0.0 | `MIT` | development |
 | [`handlebars`](https://handlebarsjs.com/) | 4.7.10 | `MIT` | development |
 | [`hard-rejection`](https://github.com/sindresorhus/hard-rejection) | 2.1.0 | `MIT` | development |
 | [`has-bigints`](https://github.com/ljharb/has-bigints#readme) | 1.1.0 | `MIT` | development |
-| [`has-flag`](https://github.com/sindresorhus/has-flag) | 4.0.0 | `MIT` | development |
 | [`has-property-descriptors`](https://github.com/inspect-js/has-property-descriptors#readme) | 1.0.2 | `MIT` | development |
 | [`has-proto`](https://github.com/inspect-js/has-proto#readme) | 1.2.0 | `MIT` | development |
 | [`has-symbols`](https://github.com/ljharb/has-symbols#readme) | 1.1.0 | `MIT` | development |
@@ -663,10 +656,8 @@ _Build-time tools — not shipped to browsers._
 | [`he`](https://mths.be/he) | 1.2.0 | `MIT` | development |
 | [`hookable`](https://github.com/unjs/hookable) | 5.5.3 | `MIT` | development |
 | [`hosted-git-info`](https://github.com/npm/hosted-git-info) | 4.1.0 | `ISC` | development |
-| [`html-encoding-sniffer`](https://github.com/jsdom/html-encoding-sniffer) | 6.0.0 | `MIT` | development |
-| [`html-escaper`](https://github.com/WebReflection/html-escaper) | 2.0.2 | `MIT` | development |
+| [`html-encoding-sniffer`](https://github.com/jsdom/html-encoding-sniffer) | 7.0.0 | `MIT` | development |
 | [`html-void-elements`](https://github.com/wooorm/html-void-elements) | 3.0.0 | `MIT` | development |
-| [`http-proxy-agent`](https://github.com/TooTallNate/proxy-agents) | 7.0.2 | `MIT` | development |
 | [`human-id`](https://github.com/RienNeVaPlus/human-id#readme) | 4.2.0 | `MIT` | development |
 | [`idb`](https://github.com/jakearchibald/idb) | 7.1.1 | `ISC` | development |
 | [`ignore`](https://github.com/kaelzhang/node-ignore) | 5.3.2 | `MIT` | development |
@@ -705,10 +696,6 @@ _Build-time tools — not shipped to browsers._
 | [`is-weakset`](https://github.com/inspect-js/is-weakset#readme) | 2.0.4 | `MIT` | development |
 | [`is-what`](https://github.com/mesqueeb/is-what#readme) | 5.5.0 | `MIT` | development |
 | [`isarray`](https://github.com/juliangruber/isarray) | 2.0.5 | `MIT` | development |
-| [`istanbul-lib-coverage`](https://istanbul.js.org/) | 3.2.2 | `BSD-3-Clause` | development |
-| [`istanbul-lib-report`](https://istanbul.js.org/) | 3.0.1 | `BSD-3-Clause` | development |
-| [`istanbul-reports`](https://istanbul.js.org/) | 3.2.0 | `BSD-3-Clause` | development |
-| [`jackspeak`](https://github.com/isaacs/jackspeak) | 3.4.3 | `BlueOak-1.0.0` | development |
 | [`jake`](https://github.com/jakejs/jake) | 10.9.4 | `Apache-2.0` | development |
 | [`js-sha256`](https://github.com/emn178/js-sha256) | 0.11.1 | `MIT` | development |
 | [`js-yaml`](https://github.com/nodeca/js-yaml) | 3.15.2 | `MIT` | development |
@@ -720,6 +707,7 @@ _Build-time tools — not shipped to browsers._
 | [`jsonparse`](http://github.com/creationix/jsonparse) | 1.3.1 | `MIT` | development |
 | [`jsonpointer`](https://github.com/janl/node-jsonpointer) | 5.0.1 | `MIT` | development |
 | [`JSONStream`](http://github.com/dominictarr/JSONStream) | 1.3.5 | `MIT` | development |
+| [`jwa`](https://github.com/brianloveswords/node-jwa) | 2.0.1 | `MIT` | development |
 | [`jws`](https://github.com/brianloveswords/node-jws) | 4.0.1 | `MIT` | development |
 | [`kind-of`](https://github.com/jonschlinkert/kind-of) | 6.0.3 | `MIT` | development |
 | [`known-css-properties`](https://github.com/known-css/known-css-properties#readme) | 0.37.0 | `MIT` | development |
@@ -733,8 +721,7 @@ _Build-time tools — not shipped to browsers._
 | [`lodash.ismatch`](https://lodash.com/) | 4.4.0 | `MIT` | development |
 | [`lodash.merge`](https://lodash.com/) | 4.6.2 | `MIT` | development |
 | [`lodash.sortby`](https://lodash.com/) | 4.7.0 | `MIT` | development |
-| [`magicast`](https://github.com/unjs/magicast) | 0.5.3 | `MIT` | development |
-| [`make-dir`](https://github.com/sindresorhus/make-dir) | 4.0.0 | `MIT` | development |
+| [`magicast`](https://github.com/unjs/magicast) | 0.5.5 | `MIT` | development |
 | [`make-error`](https://github.com/JsCommunity/make-error) | 1.3.6 | `ISC` | development |
 | [`map-obj`](https://github.com/sindresorhus/map-obj) | 4.3.0 | `MIT` | development |
 | [`mark.js`](https://markjs.io/) | 8.11.1 | `MIT` | development |
@@ -779,7 +766,7 @@ _Build-time tools — not shipped to browsers._
 | [`parse5`](https://parse5.js.org) | 8.0.1 | `MIT` | development |
 | [`path-is-absolute`](https://github.com/sindresorhus/path-is-absolute) | 1.0.1 | `MIT` | development |
 | [`perfect-debounce`](https://github.com/unjs/perfect-debounce) | 1.0.0 | `MIT` | development |
-| [`picomatch`](https://github.com/micromatch/picomatch) | 4.0.5 | `MIT` | development |
+| [`picomatch`](https://github.com/micromatch/picomatch) | 4.0.7 | `MIT` | development |
 | [`pify`](https://github.com/sindresorhus/pify) | 2.3.0 | `MIT` | development |
 | [`pkce-challenge`](https://github.com/crouchcd/pkce-challenge#readme) | 5.0.1 | `MIT` | development |
 | [`playwright`](https://playwright.dev) | 1.64.0 | `Apache-2.0` | development |
@@ -798,8 +785,8 @@ _Build-time tools — not shipped to browsers._
 | [`process-nextick-args`](https://github.com/calvinmetcalf/process-nextick-args) | 2.0.1 | `MIT` | development |
 | [`prompts`](https://github.com/terkelg/prompts) | 2.4.2 | `MIT` | development |
 | [`property-information`](https://github.com/wooorm/property-information) | 7.2.0 | `MIT` | development |
-| [`proto3-json-serializer`](https://github.com/googleapis/google-cloud-node-core) | 3.0.4 | `Apache-2.0` | development |
-| [`protobufjs`](https://protobufjs.github.io/protobuf.js/) | 7.6.5 | `BSD-3-Clause` | development |
+| [`proto3-json-serializer`](https://github.com/googleapis/google-cloud-node/tree/main/core/packages/proto3-json-serializer-nodejs) | 4.1.0 | `Apache-2.0` | development |
+| [`protobufjs`](https://protobufjs.github.io/protobuf.js/) | 7.6.6 | `BSD-3-Clause` | development |
 | [`pump`](https://github.com/mafintosh/pump) | 3.0.4 | `MIT` | development |
 | [`punycode`](https://mths.be/punycode) | 2.3.1 | `MIT` | development |
 | [`q`](https://github.com/kriskowal/q) | 1.5.1 | `MIT` | development |
@@ -824,7 +811,7 @@ _Build-time tools — not shipped to browsers._
 | [`replace`](https://github.com/ALMaclaine/replace) | 1.2.2 | `MIT` | development |
 | [`require-from-string`](https://github.com/floatdrop/require-from-string) | 2.0.2 | `MIT` | development |
 | [`resolve`](ssh://github.com/browserify/resolve) | 1.22.12 | `MIT` | development |
-| [`retry-request`](https://github.com/googleapis/google-cloud-node-core/tree/main/packages/retry-request) | 8.0.3 | `MIT` | development |
+| [`retry-request`](https://github.com/googleapis/google-cloud-node/tree/main/core/packages/retry-request) | 9.1.0 | `MIT` | development |
 | [`rfdc`](https://github.com/davidmarkclements/rfdc#readme) | 1.4.1 | `MIT` | development |
 | [`rimraf`](https://github.com/isaacs/rimraf) | 6.1.3 | `BlueOak-1.0.0` | development |
 | [`sade`](https://github.com/lukeed/sade) | 1.8.1 | `MIT` | development |
@@ -862,7 +849,6 @@ _Build-time tools — not shipped to browsers._
 | [`std-env`](https://github.com/unjs/std-env) | 4.3.0 | `MIT` | development |
 | [`stop-iteration-iterator`](https://github.com/ljharb/stop-iteration-iterator#readme) | 1.1.0 | `MIT` | development |
 | [`stream-buffers`](https://github.com/samcday/node-stream-buffer) | 2.2.0 | `Unlicense` | development |
-| [`stream-events`](https://github.com/stephenplusplus/stream-events) | 1.0.5 | `MIT` | development |
 | [`stream-shift`](https://github.com/mafintosh/stream-shift) | 1.0.3 | `MIT` | development |
 | [`streamx`](https://github.com/mafintosh/streamx) | 2.28.0 | `MIT` | development |
 | [`string_decoder`](https://github.com/nodejs/string_decoder) | 1.3.0 | `MIT` | development |
@@ -875,16 +861,12 @@ _Build-time tools — not shipped to browsers._
 | [`strip-bom-string`](https://github.com/jonschlinkert/strip-bom-string) | 1.0.0 | `MIT` | development |
 | [`strip-comments`](https://github.com/jonschlinkert/strip-comments) | 2.0.1 | `MIT` | development |
 | [`strip-indent`](https://github.com/sindresorhus/strip-indent) | 3.0.0 | `MIT` | development |
-| [`stubs`](https://github.com/stephenplusplus/stubs) | 3.0.0 | `MIT` | development |
 | [`superjson`](https://github.com/blitz-js/superjson) | 2.2.6 | `MIT` | development |
-| [`supports-color`](https://github.com/chalk/supports-color) | 7.2.0 | `MIT` | development |
 | [`svelte-eslint-parser`](https://github.com/sveltejs/svelte-eslint-parser#readme) | 1.8.0 | `MIT` | development |
-| [`symbol-tree`](https://github.com/jsdom/js-symbol-tree#symbol-tree) | 3.2.4 | `MIT` | development |
 | [`tar`](https://github.com/isaacs/node-tar) | 7.5.22 | `BlueOak-1.0.0` | development |
 | [`tar-fs`](https://github.com/mafintosh/tar-fs) | 2.1.5 | `MIT` | development |
 | [`tar-mini`](https://github.com/nonzzz/tar#readme) | 0.2.0 | `MIT` | development |
 | [`tar-stream`](https://github.com/mafintosh/tar-stream) | 2.2.0 | `MIT` | development |
-| [`teeny-request`](https://github.com/googleapis/google-cloud-node-core/tree/main/packages/teeny-request) | 10.1.3 | `Apache-2.0` | development |
 | [`teex`](https://github.com/mafintosh/teex) | 1.0.1 | `MIT` | development |
 | [`temp-dir`](https://github.com/sindresorhus/temp-dir) | 3.0.0 | `MIT` | development |
 | [`tempy`](https://github.com/sindresorhus/tempy) | 3.2.0 | `MIT` | development |
@@ -894,8 +876,8 @@ _Build-time tools — not shipped to browsers._
 | [`through2`](https://github.com/rvagg/through2) | 4.0.2 | `MIT` | development |
 | [`tinyglobby`](https://superchupu.dev/tinyglobby) | 0.2.17 | `MIT` | development |
 | [`tinyrainbow`](https://github.com/tinylibs/tinyrainbow#readme) | 3.2.0 | `MIT` | development |
-| [`tldts`](https://github.com/remusao/tldts#readme) | 7.4.8 | `MIT` | development |
-| [`tldts-core`](https://github.com/remusao/tldts#readme) | 7.4.8 | `MIT` | development |
+| [`tldts`](https://github.com/remusao/tldts#readme) | 7.4.19 | `MIT` | development |
+| [`tldts-core`](https://github.com/remusao/tldts#readme) | 7.4.20 | `MIT` | development |
 | [`tmp`](http://github.com/raszi/node-tmp) | 0.2.7 | `MIT` | development |
 | [`tough-cookie`](https://github.com/salesforce/tough-cookie) | 6.0.2 | `BSD-3-Clause` | development |
 | [`tree-kill`](https://github.com/pkrumins/node-tree-kill) | 1.2.2 | `MIT` | development |
@@ -912,7 +894,7 @@ _Build-time tools — not shipped to browsers._
 | [`typed-array-length`](https://github.com/inspect-js/typed-array-length#readme) | 1.0.8 | `MIT` | development |
 | [`uglify-js`](https://github.com/mishoo/UglifyJS) | 3.19.3 | `BSD-2-Clause` | development |
 | [`unbox-primitive`](https://github.com/ljharb/unbox-primitive#readme) | 1.1.0 | `MIT` | development |
-| [`undici`](https://undici.nodejs.org) | 7.30.1 | `MIT` | development |
+| [`undici`](https://undici.nodejs.org) | 8.12.3 | `MIT` | development |
 | [`unicode-canonical-property-names-ecmascript`](https://github.com/mathiasbynens/unicode-canonical-property-names-ecmascript) | 2.0.1 | `MIT` | development |
 | [`unicode-match-property-ecmascript`](https://github.com/mathiasbynens/unicode-match-property-ecmascript) | 2.0.0 | `MIT` | development |
 | [`unicode-match-property-value-ecmascript`](https://github.com/mathiasbynens/unicode-match-property-value-ecmascript) | 2.2.1 | `MIT` | development |
@@ -935,7 +917,7 @@ _Build-time tools — not shipped to browsers._
 | [`vfile-message`](https://github.com/vfile/vfile-message) | 4.0.3 | `MIT` | development |
 | [`vite-plugin-pwa`](https://github.com/vite-pwa/vite-plugin-pwa#readme) | 1.3.0 | `MIT` | development |
 | [`vue`](https://vuejs.org/) | 3.5.44 | `MIT` | development |
-| [`w3c-xmlserializer`](https://github.com/jsdom/w3c-xmlserializer) | 5.0.0 | `MIT` | development |
+| [`w3c-xmlserializer`](https://github.com/jsdom/w3c-xmlserializer) | 6.0.0 | `MIT` | development |
 | [`webpack-virtual-modules`](https://github.com/sysgears/webpack-virtual-modules#readme) | 0.6.2 | `MIT` | development |
 | [`whatwg-mimetype`](https://github.com/jsdom/whatwg-mimetype) | 5.0.0 | `MIT` | development |
 | [`which-boxed-primitive`](https://github.com/inspect-js/which-boxed-primitive#readme) | 1.1.1 | `MIT` | development |
@@ -971,7 +953,7 @@ _Build-time tools — not shipped to browsers._
 | [`xtend`](https://github.com/Raynos/xtend) | 4.0.2 | `MIT` | development |
 | [`yatag`](https://github.com/mmomtchev/yatag#readme) | 1.3.0 | `ISC` | development |
 | [`yn`](https://github.com/sindresorhus/yn) | 3.1.1 | `MIT` | development |
-| [`zod`](https://zod.dev) | 4.5.4 | `MIT` | development |
+| [`zod`](https://zod.dev) | 4.6.7 | `MIT` | development |
 | [`zwitch`](https://github.com/wooorm/zwitch) | 2.0.4 | `MIT` | development |
 
 </details>

@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=gaganyaan": "Flotte — le vaisseau Gaganyaan",
+    "/fleet?id=gaganyaan": "Flotte — le vaisseau Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan — le programme lunaire de l'Inde",
     "/programs/mangalyaan": "Mangalyaan — la mission martienne de l'Inde réussie du premier coup"
   }

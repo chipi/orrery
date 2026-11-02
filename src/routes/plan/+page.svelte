@@ -1062,7 +1062,7 @@
             tab="porkchop"
             section="dv-heatmap"
             label={m.chip_label_dv_heatmap()}
-          />
+          /><ScienceChip tab="porkchop" section="contour-reading" />
         </dt>
         <dd>
           {m.plan_explainer_color_desc()}
@@ -1079,7 +1079,9 @@
             >
           </div>
         </dd>
-        <dt>{m.plan_explainer_how_to()}</dt>
+        <dt>
+          {m.plan_explainer_how_to()}<ScienceChip tab="porkchop" section="viability" />
+        </dt>
         <dd>{m.plan_explainer_how_to_desc()}</dd>
       </dl>
     </details>

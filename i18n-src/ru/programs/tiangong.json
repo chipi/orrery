@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/tiangong": "Tiangong — станция в 3D",
-    "/fleet?focus=tiangong": "Флот — Shenzhou, Tianzhou и семейство Long March",
+    "/fleet?id=tiangong": "Флот — Shenzhou, Tianzhou и семейство Long March",
     "/programs/iss": "МКС — станция, к которой Tiangong не допустили",
     "/earth?site=tiangong": "Tiangong над головой"
   }

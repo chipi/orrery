@@ -1,59 +1,11 @@
 import { error } from '@sveltejs/kit';
 import { getProgram, getMissionIndex, getMission, getBadges } from '$lib/data';
 import { getLocale } from '$lib/paraglide/runtime';
-import type { PageLoad, EntryGenerator } from './$types';
+import type { PageLoad } from './$types';
 
+// Every program is a prerender entry through scripts/site-routes.mjs
+// (programsRoutes reads programs/index.json), so no `entries` list here.
 export const prerender = true;
-
-// Hardcoded program ids for the prerender (universal module — no node:fs).
-// Add a program's id here + its programs/{id}.json + overlay simultaneously;
-// validate-data.ts fails if a declared program's files are missing.
-const PROGRAM_IDS = [
-  'sputnik',
-  'mariner',
-  'pioneer',
-  'viking',
-  'voyager',
-  'galileo',
-  'cassini',
-  'new-horizons',
-  'mars-rovers',
-  'apollo',
-  'mercury',
-  'gemini',
-  'vostok',
-  'voskhod',
-  'soyuz',
-  'soviet-lunar',
-  'skylab',
-  'salyut',
-  'mir',
-  'space-shuttle',
-  'buran',
-  'ariane',
-  'esa-human',
-  'iss',
-  'tiangong',
-  'shenzhou',
-  'spacex',
-  'starlink',
-  'starship',
-  'kuiper',
-  'artemis',
-  'hayabusa',
-  'jaxa-robotic',
-  'chandrayaan',
-  'mangalyaan',
-  'great-observatories',
-  'jwst',
-  'gaganyaan',
-  'esa-science',
-  'change',
-  'commercial-stations',
-  'ros',
-];
-
-export const entries: EntryGenerator = () => PROGRAM_IDS.map((id) => ({ id }));
 
 export interface RosterMissionDetail {
   name: string;

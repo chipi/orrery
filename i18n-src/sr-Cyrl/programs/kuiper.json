@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=kuiper": "Флота — сателитска констелација Kuiper",
+    "/fleet?id=kuiper": "Флота — сателитска констелација Kuiper",
     "/programs/starlink": "Starlink — констелација коју стиже",
     "/earth": "Земља — орбите и гужва у ниској орбити",
     "/earth?site=kuiper": "Сателитска констелација Kuiper"

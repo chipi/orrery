@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "フリート — Starlink 衛星コンステレーション",
+    "/fleet?id=starlink": "フリート — Starlink 衛星コンステレーション",
     "/programs/spacex": "SpaceX — それを打ち上げる Falcon",
     "/earth": "地球 — 軌道と混み合う低軌道",
     "/earth?site=starlink": "Starlink 衛星コンステレーション"

@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Terre — orbites, rendez-vous et sites de lancement",
-    "/fleet?focus=mir": "Flotte — la station spatiale Mir"
+    "/fleet?id=mir": "Flotte — la station spatiale Mir"
   }
 }

@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "航天器 — Hubble、Chandra、Spitzer 与 JWST",
+    "/fleet?id=hubble": "航天器 — Hubble、Chandra、Spitzer 与 JWST",
     "/programs/space-shuttle": "Space Shuttle — 发射并维修 Hubble 的飞行器",
     "/explore": "探索 — 这些望远镜揭示的深空天体",
     "/earth?site=hubble": "近地轨道上的 Hubble",

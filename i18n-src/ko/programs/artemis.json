@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "달 — 목적지",
-    "/fleet?focus=orion": "함대 — Orion, SLS와 달 탐사 장비",
+    "/fleet?id=orion": "함대 — Orion, SLS와 달 탐사 장비",
     "/programs/apollo": "Apollo — Artemis의 이름이 유래했고 그것을 넘어서는 계획"
   }
 }

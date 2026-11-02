@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/explore": "Исследование — кометы и дальний космос, который картирует ESA",
-    "/fleet?focus=rosetta": "Флот — Rosetta, Gaia и Euclid",
+    "/fleet?id=rosetta": "Флот — Rosetta, Gaia и Euclid",
     "/programs/ariane": "Ariane — ракета, выводящая научные миссии ESA",
     "/earth?site=gaia": "Gaia в точке L2",
     "/earth?site=xmm": "XMM-Newton"

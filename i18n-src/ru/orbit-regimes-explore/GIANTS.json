@@ -6,17 +6,17 @@
   "residents": [
     {
       "id": "jupiter",
-      "label": "Юпитер — 5,20 AU",
+      "label": "Юпитер — 5,20 а. е.",
       "agency": "NATURAL"
     },
     {
       "id": "saturn",
-      "label": "Сатурн — 9,58 AU, система колец",
+      "label": "Сатурн — 9,58 а. е., система колец",
       "agency": "NATURAL"
     },
     {
       "id": "uranus",
-      "label": "Уран — 19,18 AU, наклонён на 97°",
+      "label": "Уран — 19,18 а. е., наклонён на 97°",
       "agency": "NATURAL"
     },
     {

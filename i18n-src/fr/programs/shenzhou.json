@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "Flotte — le vaisseau Shenzhou",
+    "/fleet?id=shenzhou": "Flotte — le vaisseau Shenzhou",
     "/programs/tiangong": "Tiangong — la station que les équipages Shenzhou ont construite et rejoignent",
     "/programs/soyuz": "Soyuz — le vaisseau dont descend l'architecture de Shenzhou"
   }

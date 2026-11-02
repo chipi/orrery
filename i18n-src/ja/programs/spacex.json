@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "フリート — Falcon 9、Falcon Heavy、Dragon",
+    "/fleet?id=falcon-9": "フリート — Falcon 9、Falcon Heavy、Dragon",
     "/programs/iss": "ISS — Crew Dragon が向かうステーション",
     "/earth": "地球 — 軌道、ランデブー、打ち上げ地点"
   }

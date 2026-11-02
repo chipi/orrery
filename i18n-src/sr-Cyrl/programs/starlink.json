@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "Флота — сателитска констелација Starlink",
+    "/fleet?id=starlink": "Флота — сателитска констелација Starlink",
     "/programs/spacex": "SpaceX — Falcon који је лансира",
     "/earth": "Земља — орбите и гужва у ниској орбити",
     "/earth?site=starlink": "Сателитска констелација Starlink"

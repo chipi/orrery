@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "지구 — 궤도와 발사장",
-    "/fleet?focus=discovery": "함대 — Space Shuttle 궤도선"
+    "/fleet?id=discovery": "함대 — Space Shuttle 궤도선"
   }
 }

@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/moon": "달 — Chang'e 착륙 지점",
-    "/fleet?focus=yutu-2": "함대 — Yutu 로버와 Chang'e 착륙선",
+    "/fleet?id=yutu-2": "함대 — Yutu 로버와 Chang'e 착륙선",
     "/programs/artemis": "Artemis — 달로 돌아가는 또 하나의 경쟁",
     "/moon?site=change3": "Chang’e 3 — Yutu 로버",
     "/moon?site=change4": "Chang’e 4 — 달의 뒷면",

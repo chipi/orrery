@@ -22,7 +22,7 @@ const SYNODIC_MONTH_DAYS = 29.530588;
 export const moonPhaseFormula: FormulaDef<{ dateIso: string }> = {
   id: 'moon-phase',
   titleKey: 'lab.f.moonphase.title',
-  plainKey: 'lab.f.moonphase.plain',
+  inWordsKey: 'lab.f.moonphase.in-words',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Lunar_phase', source: 'wikipedia' },
   domain: 'ephemeris',
   tier: 2,
@@ -79,7 +79,7 @@ const MOON_MEAN_DISTANCE_AU = MOON_ORBIT_RADIUS_KM / AU_TO_KM;
 export const moonDistance: FormulaDef<{ dateIso: string }> = {
   id: 'moon-distance',
   titleKey: 'lab.f.moondist.title',
-  plainKey: 'lab.f.moondist.plain',
+  inWordsKey: 'lab.f.moondist.in-words',
   learnMore: {
     url: 'https://en.wikipedia.org/wiki/Lunar_distance_(astronomy)',
     source: 'wikipedia',
@@ -143,7 +143,7 @@ export const moonDistance: FormulaDef<{ dateIso: string }> = {
 export const eclipseSeasons: FormulaDef<{ dateIso: string }> = {
   id: 'eclipse-seasons',
   titleKey: 'lab.f.eclipse.title',
-  plainKey: 'lab.f.eclipse.plain',
+  inWordsKey: 'lab.f.eclipse.in-words',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Eclipse_season', source: 'wikipedia' },
   domain: 'ephemeris',
   tier: 3,
@@ -209,7 +209,7 @@ export const eclipseSeasons: FormulaDef<{ dateIso: string }> = {
 export const moonAltitude: FormulaDef<{ dateIso: string; latitudeDeg: number }> = {
   id: 'moon-altitude',
   titleKey: 'lab.f.moonalt.title',
-  plainKey: 'lab.f.moonalt.plain',
+  inWordsKey: 'lab.f.moonalt.in-words',
   learnMore: {
     url: 'https://en.wikipedia.org/wiki/Horizontal_coordinate_system',
     source: 'wikipedia',

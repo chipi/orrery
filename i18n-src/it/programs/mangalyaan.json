@@ -83,7 +83,7 @@
   ],
   "link_labels": {
     "/mars": "Marte — la destinazione",
-    "/fleet?focus=mangalyaan": "Flotta — la Mars Orbiter Mission",
+    "/fleet?id=mangalyaan": "Flotta — la Mars Orbiter Mission",
     "/programs/chandrayaan": "Chandrayaan — il programma lunare dell'India",
     "/mars?site=mangalyaan": "Mangalyaan in orbita marziana"
   }

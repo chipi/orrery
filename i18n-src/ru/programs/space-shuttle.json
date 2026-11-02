@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Земля — орбиты и космодромы",
-    "/fleet?focus=discovery": "Флот — орбитальные корабли Space Shuttle"
+    "/fleet?id=discovery": "Флот — орбитальные корабли Space Shuttle"
   }
 }

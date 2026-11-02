@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "الأسطول — Falcon 9 وFalcon Heavy وDragon",
+    "/fleet?id=falcon-9": "الأسطول — Falcon 9 وFalcon Heavy وDragon",
     "/programs/iss": "محطة الفضاء الدولية — المحطة التي تطير إليها Crew Dragon",
     "/earth": "الأرض — المدارات والالتقاء ومواقع الإطلاق"
   }

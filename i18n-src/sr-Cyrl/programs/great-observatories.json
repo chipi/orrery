@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "Флота — Hubble, Chandra, Spitzer и JWST",
+    "/fleet?id=hubble": "Флота — Hubble, Chandra, Spitzer и JWST",
     "/programs/space-shuttle": "Space Shuttle — летелица која је лансирала и сервисирала Hubble",
     "/explore": "Истраживање — објекти дубоког свемира које су открили ови телескопи",
     "/earth?site=hubble": "Hubble у ниској орбити око Земље",

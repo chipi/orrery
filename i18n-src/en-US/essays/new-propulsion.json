@@ -32,7 +32,7 @@
     },
     {
       "type": "prose",
-      "md": "What launched in October 2023 toward the metal asteroid Psyche pushed the idea further. [Psyche](/missions?id=psyche) uses Hall-effect thrusters — a different architecture, in which the magnetic field traps electrons and creates a ring discharge that accelerates ions more efficiently at lower power. Hall thrusters are cheaper, simpler, and compact enough to fit four of them onto a Discovery-class spacecraft. Psyche's thrusters operate at about 1,750 seconds specific impulse, lower than Dawn's ion engines but more than four times the chemical ceiling, and they represent the first time Hall thrusters — common workhorses of Earth-orbit station-keeping — have been trusted for deep-space primary propulsion. The same technology that nudges geostationary satellites by centimetres per second is now flying an interplanetary mission."
+      "md": "What launched in October 2023 toward the metal asteroid Psyche pushed the idea further. [Psyche](/missions?id=psyche-mission) uses Hall-effect thrusters — a different architecture, in which the magnetic field traps electrons and creates a ring discharge that accelerates ions more efficiently at lower power. Hall thrusters are cheaper, simpler, and compact enough to fit four of them onto a Discovery-class spacecraft. Psyche's thrusters operate at about 1,750 seconds specific impulse, lower than Dawn's ion engines but more than four times the chemical ceiling, and they represent the first time Hall thrusters — common workhorses of Earth-orbit station-keeping — have been trusted for deep-space primary propulsion. The same technology that nudges geostationary satellites by centimetres per second is now flying an interplanetary mission."
     },
     {
       "type": "figure",
@@ -126,7 +126,7 @@
     },
     {
       "type": "prose",
-      "md": "What [Dawn](/missions?id=dawn) established is the practical benchmark: ion propulsion is not exotic. It is the correct choice for any mission that requires multiple destinations, large velocity changes, or flight times long enough for continuous thrust to accumulate. The missions that come after Psyche — robotic science probes to the ice giants, fast-transit cargo to lunar orbit, prospectors at the inner asteroid belt — are the natural clients. Hall thrusters at [Psyche's](/missions?id=psyche) scale will be routine within a decade because the economics already work."
+      "md": "What [Dawn](/missions?id=dawn) established is the practical benchmark: ion propulsion is not exotic. It is the correct choice for any mission that requires multiple destinations, large velocity changes, or flight times long enough for continuous thrust to accumulate. The missions that come after Psyche — robotic science probes to the ice giants, fast-transit cargo to lunar orbit, prospectors at the inner asteroid belt — are the natural clients. Hall thrusters at [Psyche's](/missions?id=psyche-mission) scale will be routine within a decade because the economics already work."
     },
     {
       "type": "prose",

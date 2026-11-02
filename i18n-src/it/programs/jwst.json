@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=jwst": "Flotta — il telescopio spaziale James Webb",
+    "/fleet?id=jwst": "Flotta — il telescopio spaziale James Webb",
     "/programs/great-observatories": "I Grandi Osservatori — la stirpe che il JWST prosegue",
     "/programs/ariane": "Ariane — il razzo che lo ha lanciato",
     "/earth?site=jwst": "Telescopio spaziale James Webb"

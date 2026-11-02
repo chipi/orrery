@@ -83,7 +83,7 @@
   ],
   "link_labels": {
     "/mars": "Марс — одредиште",
-    "/fleet?focus=mangalyaan": "Флота — Mars Orbiter Mission",
+    "/fleet?id=mangalyaan": "Флота — Mars Orbiter Mission",
     "/programs/chandrayaan": "Chandrayaan — индијски програм за Месец",
     "/mars?site=mangalyaan": "Mangalyaan у орбити Марса"
   }

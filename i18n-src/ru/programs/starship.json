@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starship": "Флот — ракетная система Starship",
+    "/fleet?id=starship": "Флот — ракетная система Starship",
     "/programs/spacex": "SpaceX — многоразовость, на которой построен Starship",
     "/mars": "Марс — цель"
   }

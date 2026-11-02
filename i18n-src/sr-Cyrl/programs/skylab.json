@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Земља — орбите и места лансирања",
-    "/fleet?focus=skylab": "Флота — орбитална радионица Skylab"
+    "/fleet?id=skylab": "Флота — орбитална радионица Skylab"
   }
 }

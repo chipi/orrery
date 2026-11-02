@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/explore": "Verkennen — kometen en de diepe hemel die ESA in kaart brengt",
-    "/fleet?focus=rosetta": "Vloot — Rosetta, Gaia & Euclid",
+    "/fleet?id=rosetta": "Vloot — Rosetta, Gaia & Euclid",
     "/programs/ariane": "Ariane — de raket die de wetenschap van ESA lanceert",
     "/earth?site=gaia": "Gaia bij L2",
     "/earth?site=xmm": "XMM-Newton"

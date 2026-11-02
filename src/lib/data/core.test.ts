@@ -75,17 +75,25 @@ describe('core get() — i18n bundle load (#517)', () => {
     expect(trackSpy).toHaveBeenCalledWith('i18n-bundle-load-failed', { locale: 'de', status: 503 });
   });
 
-  it('a 404 (bundle absent / unsupported locale) is NOT retried and DOES fall through to per-file (dev preserved)', async () => {
-    const { fn, urls } = makeFetch([
-      () => httpErr(404), // bundle 404 — not transient, no retry
-      () => httpErr(404), // per-file also 404 → get() throws → caller en-US fallback
-    ]);
+  it('an unsupported locale 404 is NOT retried, never requests a per-file path, and is not reported', async () => {
+    const { fn, urls } = makeFetch([() => httpErr(404)]);
     await expect(get('i18n/xx-TEST/planets/mars.json', fn)).rejects.toThrow();
-    // Exactly one bundle attempt (no retry on 4xx) + one per-file fallthrough.
-    expect(urls.filter(bundleUrl).length).toBe(1);
-    expect(urls.some(perFileUrl)).toBe(true);
-    // A genuine absence is expected, not a failure — nothing reported.
+    // One bundle attempt (no retry on 4xx); no per-file request, which could only 404.
+    expect(urls.length).toBe(1);
+    expect(urls.every(bundleUrl)).toBe(true);
+    // Long enough for the dynamic analytics import a report would go through.
+    await new Promise((r) => setTimeout(r, 50));
     expect(trackSpy).not.toHaveBeenCalled();
+  });
+
+  it('a supported locale 404 throws without a per-file request and is reported', async () => {
+    const { fn, urls } = makeFetch([() => httpErr(404)]);
+    await expect(get('i18n/hi/science/propulsion/c3.json', fn)).rejects.toThrow();
+    expect(urls.length).toBe(1);
+    expect(urls.some(perFileUrl)).toBe(false);
+    await vi.waitFor(() =>
+      expect(trackSpy).toHaveBeenCalledWith('i18n-bundle-load-failed', { locale: 'hi', status: 404 }),
+    );
   });
 
   it('opens a circuit after repeated failed cycles — stops re-fetching (L5)', async () => {

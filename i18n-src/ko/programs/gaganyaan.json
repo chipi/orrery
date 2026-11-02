@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=gaganyaan": "함대 — Gaganyaan 우주선",
+    "/fleet?id=gaganyaan": "함대 — Gaganyaan 우주선",
     "/programs/chandrayaan": "Chandrayaan — 인도의 달 탐사 계획",
     "/programs/mangalyaan": "Mangalyaan — 첫 시도에 성공한 인도의 화성 탐사"
   }

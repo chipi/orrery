@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starship": "Frota — o sistema de lançamento Starship",
+    "/fleet?id=starship": "Frota — o sistema de lançamento Starship",
     "/programs/spacex": "SpaceX — a reutilização sobre a qual a Starship é construída",
     "/mars": "Marte — o destino"
   }

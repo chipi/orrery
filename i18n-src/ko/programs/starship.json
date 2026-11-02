@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starship": "함대 — Starship 발사 시스템",
+    "/fleet?id=starship": "함대 — Starship 발사 시스템",
     "/programs/spacex": "SpaceX — Starship의 기반이 된 재사용 기술",
     "/mars": "화성 — 목적지"
   }

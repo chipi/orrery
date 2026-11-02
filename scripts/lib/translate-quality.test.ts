@@ -99,6 +99,17 @@ describe('problems — the site name', () => {
   });
 });
 
+describe('problems — a unit symbol in the locale’s own case', () => {
+  const latin = (src: string, out: string) =>
+    problems('ja', src, out).some((p) => /Latin-script words/.test(p));
+  it('accepts "au" where the English has "AU" (style guide 1a)', () =>
+    expect(latin('Earth sits at 1 AU from the Sun.', '地球は太陽から1 auの距離にある。')).toBe(
+      false,
+    ));
+  it('still flags a word that is not a unit symbol, whatever its case', () =>
+    expect(latin('The Vendor list.', 'vendor のリスト。')).toBe(true));
+});
+
 describe('problems — arrows in right-to-left text', () => {
   const arrow = (out: string) => problems('ar', 'Earth → Moon', out).some((p) => /→/.test(p));
   it('flags "→" next to Arabic words', () => expect(arrow('الأرض → القمر')).toBe(true));

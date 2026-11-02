@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/earth": "地球 — 軌道、ランデブー、打ち上げ地点",
-    "/fleet?focus=iss": "フリート — 国際宇宙ステーション",
+    "/fleet?id=iss": "フリート — 国際宇宙ステーション",
     "/programs/mir": "Mir — ISS が受け継いだステーション",
     "/earth?site=iss": "頭上の ISS"
   }

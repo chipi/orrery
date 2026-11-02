@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=jwst": "Flota — el telescopio espacial James Webb",
+    "/fleet?id=jwst": "Flota — el telescopio espacial James Webb",
     "/programs/great-observatories": "Los Grandes Observatorios: el linaje que continúa el JWST",
     "/programs/ariane": "Ariane: el cohete que lo lanzó",
     "/earth?site=jwst": "Telescopio espacial James Webb"

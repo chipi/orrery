@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "Flota — Falcon 9, Falcon Heavy y Dragon",
+    "/fleet?id=falcon-9": "Flota — Falcon 9, Falcon Heavy y Dragon",
     "/programs/iss": "EEI: la estación a la que vuela Crew Dragon",
     "/earth": "Tierra: órbitas, encuentros y bases de lanzamiento"
   }

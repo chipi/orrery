@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "Луна — цель",
-    "/fleet?focus=orion": "Флот — Orion, SLS и лунная техника",
+    "/fleet?id=orion": "Флот — Orion, SLS и лунная техника",
     "/programs/apollo": "Apollo — программа, в честь которой назван Artemis и которую он превосходит"
   }
 }

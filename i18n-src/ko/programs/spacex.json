@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=falcon-9": "함대 — Falcon 9, Falcon Heavy, Dragon",
+    "/fleet?id=falcon-9": "함대 — Falcon 9, Falcon Heavy, Dragon",
     "/programs/iss": "ISS — Crew Dragon이 향하는 정거장",
     "/earth": "지구 — 궤도, 랑데부, 발사장"
   }

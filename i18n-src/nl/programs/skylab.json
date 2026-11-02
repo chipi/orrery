@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Aarde — banen & lanceerplaatsen",
-    "/fleet?focus=skylab": "Vloot — orbitale werkplaats Skylab"
+    "/fleet?id=skylab": "Vloot — orbitale werkplaats Skylab"
   }
 }

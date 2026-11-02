@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=hubble": "बेड़ा — Hubble, Chandra, Spitzer और JWST",
+    "/fleet?id=hubble": "बेड़ा — Hubble, Chandra, Spitzer और JWST",
     "/programs/space-shuttle": "Space Shuttle — वह यान जिसने Hubble को प्रक्षेपित किया और उसकी मरम्मत की",
     "/explore": "अन्वेषण — इन दूरबीनों द्वारा उजागर गहन-आकाश पिंड",
     "/earth?site=hubble": "पृथ्वी की निचली कक्षा में Hubble",

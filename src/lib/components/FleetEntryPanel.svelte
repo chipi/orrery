@@ -28,6 +28,8 @@
   import { loadLadder, ladderSources } from '$lib/image-srcset';
   import { track, trackGalleryImageOpen } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
+  import type { ScienceTabId } from '$types/science';
+  import ScienceCard from './ScienceCard.svelte';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { MissionOrbitIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages';
@@ -609,6 +611,15 @@
              outside the SpaceX / Arianespace / Long March / H3 set)
              stay silent without UI noise. Cross-reference gap tracked
              separately — see commit message. -->
+        <!-- Science articles named in the entry's data (suits today); engines list
+             theirs, with the cycle primers, under DETAIL instead. -->
+        {#if entry.category !== 'engine' && entry.science?.length}
+          <h3 class="section-h">{m.fleet_entry_learn_science()}</h3>
+          {#each entry.science as slug (slug)}
+            <ScienceCard tab={slug.split('/')[0] as ScienceTabId} section={slug.split('/')[1]!} />
+          {/each}
+        {/if}
+
         <LauncherFlightsWidget launcherId={entry.id} />
 
         <p class="credit">{entry.credit}</p>
@@ -630,25 +641,22 @@
               {/each}
             {/snippet}
             {#snippet trailing()}
-              {#key entry.id}
-                <button
-                  type="button"
-                  class="thumb badge-thumb"
-                  onclick={() => (lightboxSrc = assetUrl(`/images/badges/fleet/${entry.id}.webp`))}
-                  aria-label={m.fleet_insignia_aria({ name: entry.name })}
-                >
-                  <img
-                    src={assetUrl(`/images/badges/fleet/${entry.id}.webp`)}
-                    alt=""
-                    decoding="async"
-                    onerror={(e) => {
-                      const b = (e.currentTarget as HTMLElement).closest('button');
-                      if (b) b.remove();
-                    }}
-                  />
-                  <span class="badge-tag">{m.fleet_insignia_tag()}</span>
-                </button>
-              {/key}
+              <!-- Only entries badges.json lists have an insignia; requesting the file
+                   for every entry 404ed for most of them on prod. -->
+              {@const badgeSrc = badges[`fleet:${entry.id}`]}
+              {#if badgeSrc}
+                {#key entry.id}
+                  <button
+                    type="button"
+                    class="thumb badge-thumb"
+                    onclick={() => (lightboxSrc = assetUrl(badgeSrc))}
+                    aria-label={m.fleet_insignia_aria({ name: entry.name })}
+                  >
+                    <img src={assetUrl(badgeSrc)} alt="" decoding="async" />
+                    <span class="badge-tag">{m.fleet_insignia_tag()}</span>
+                  </button>
+                {/key}
+              {/if}
             {/snippet}
           </PanelGalleryGrid>
         {/if}
@@ -839,7 +847,7 @@
   <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-<PanelLightbox src={lightboxSrc} onClose={() => (lightboxSrc = null)} />
+<PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
 
 <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 

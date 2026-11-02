@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/tiangong": "Tiangong — 3D में स्टेशन",
-    "/fleet?focus=tiangong": "बेड़ा — Shenzhou, Tianzhou और Long March परिवार",
+    "/fleet?id=tiangong": "बेड़ा — Shenzhou, Tianzhou और Long March परिवार",
     "/programs/iss": "आईएसएस — वह स्टेशन जिससे Tiangong को बाहर रखा गया",
     "/earth?site=tiangong": "ऊपर से गुज़रता Tiangong"
   }

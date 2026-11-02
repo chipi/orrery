@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "航天器 — 神舟飞船",
+    "/fleet?id=shenzhou": "航天器 — 神舟飞船",
     "/programs/tiangong": "天宫 — 神舟乘组建造并往返的空间站",
     "/programs/soyuz": "Soyuz — 神舟构型的源头"
   }

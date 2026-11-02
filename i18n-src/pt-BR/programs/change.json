@@ -87,7 +87,7 @@
   ],
   "link_labels": {
     "/moon": "Lua — os locais de pouso das Chang'e",
-    "/fleet?focus=yutu-2": "Frota — os rovers Yutu e os módulos Chang'e",
+    "/fleet?id=yutu-2": "Frota — os rovers Yutu e os módulos Chang'e",
     "/programs/artemis": "Artemis — a corrida paralela de volta à Lua",
     "/moon?site=change3": "Chang’e 3 — rover Yutu",
     "/moon?site=change4": "Chang’e 4 — o lado oculto",

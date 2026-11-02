@@ -26,7 +26,7 @@
     },
     {
       "type": "prose",
-      "md": "L'objectif non affiché est l'argent pour construire autre chose. Starlink est le moteur de revenus de SpaceX — un service grand public facturant des millions d'abonnés, finançant le travail bien plus coûteux et spéculatif de Starship et de Mars. La constellation est à la fois un produit en soi et la fondation financière de l'ambition plus profonde de l'entreprise ; l'activité Internet paie pour celle interplanétaire."
+      "md": "L'objectif non affiché est l'argent pour construire autre chose. Starlink est le moteur de revenus de SpaceX — un service grand public facturant des millions d'abonnés, finançant le travail bien plus coûteux et spéculatif de Starship et de Mars. La constellation est à la fois un produit en soi et la fondation financière de l'ambition plus profonde de l'entreprise ; l'activité Internet finance l'activité interplanétaire."
     }
   ],
   "outcome": [
@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=starlink": "Flotte — la constellation Starlink",
+    "/fleet?id=starlink": "Flotte — la constellation Starlink",
     "/programs/spacex": "SpaceX — le Falcon qui la lance",
     "/earth": "Terre — les orbites et l'encombrement de l'orbite basse",
     "/earth?site=starlink": "La constellation Starlink"

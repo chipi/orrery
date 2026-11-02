@@ -65,7 +65,7 @@
   },
   "booster|de|programs/sputnik.json :: goals.0.md": {
     "why": "variant: Träger (launch vehicle)",
-    "tr": "5c3f1500ec"
+    "tr": "1a3c92512f"
   },
   "booster|es|fleet/engine/h-1.json :: best_known_for": {
     "why": "variant: first stage (Saturn I/IB booster = primera etapa)",
@@ -77,7 +77,7 @@
   },
   "booster|es|fleet/launcher/falcon-heavy.json :: tagline": {
     "why": "variant: lanzador (whole vehicle)",
-    "tr": "c9d1ab12f4"
+    "tr": "512f104a6b"
   },
   "booster|es|fleet/launcher/soyuz-2.json :: description": {
     "why": "variant: impulsores",
@@ -365,7 +365,7 @@
   },
   "booster|ru|missions/moon/luna16.json :: description": {
     "why": "variant: launcher (Proton-K booster = ракета-носитель)",
-    "tr": "7b98500854"
+    "tr": "dae7284df5"
   },
   "booster|ru|programs/sputnik.json :: goals.0.md": {
     "why": "variant: ракета-носитель (launch vehicle)",
@@ -493,7 +493,7 @@
   },
   "booster|zh-CN|fleet/launch-site/lc-34.json :: dispatch": {
     "why": "not strap-on sense: 超大型火箭 = launch vehicles",
-    "tr": "6f7160676c"
+    "tr": "0b4cf8a5d2"
   },
   "booster|zh-CN|fleet/launcher/falcon-heavy.json :: best_known_for": {
     "why": "whole vehicle: variant 运载火箭",
@@ -565,7 +565,7 @@
   },
   "burn|ar|fleet/engine/rd-180.json :: description": {
     "why": "burning excess oxidiser = combustion (احتراق)",
-    "tr": "14e0e95c82"
+    "tr": "a63d3a287a"
   },
   "burn|ar|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning engines = combustion (يعملان بالهيدروجين)",
@@ -1445,7 +1445,7 @@
   },
   "burn|nl|fleet/engine/rd-180.json :: description": {
     "why": "burning excess oxidiser = combustion (verbrand)",
-    "tr": "eec8fcc48c"
+    "tr": "c956e8be56"
   },
   "burn|nl|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning = propellant type (op waterstof werkende), not an engine firing",
@@ -2149,7 +2149,7 @@
   },
   "descent|pt-BR|programs/vostok.json :: legacy.1.md": {
     "why": "English descent = lineage",
-    "tr": "3e34e6924a"
+    "tr": "07cf7e8051"
   },
   "descent|ru|programs/vostok.json :: legacy.1.md": {
     "why": "other sense: lineage",
@@ -2804,8 +2804,8 @@
     "tr": "34dd944222"
   },
   "orbit|es|fleet/launch-site/taiyuan-lc-9.json :: description": {
-    "why": "natural omission: lanzamientos polares y heliosincrónicos",
-    "tr": "f2663687da"
+    "why": "natural omission: lanzamientos polares y heliosíncronos",
+    "tr": "4a61a2889f"
   },
   "orbit|fr|missions/earth/vostok-1.json :: dispatch": {
     "why": "variant: en faire le tour (circled the Earth)",
@@ -2953,7 +2953,7 @@
   },
   "orbit|nl|fleet/launch-site/taiyuan-lc-9.json :: description": {
     "why": "orbit adjective omitted naturally (polaire en zonsynchrone lanceringen)",
-    "tr": "55148fd954"
+    "tr": "9638fd7c8a"
   },
   "orbit|nl|fleet/orbiter/dawn.json :: tagline": {
     "why": "variant: omcirkeld (verb to orbit)",
@@ -4209,7 +4209,7 @@
   },
   "stage|ja|fleet/engine/yf-77.json :: description": {
     "why": "variant: コアステージ",
-    "tr": "48477f844e"
+    "tr": "18f99867c7"
   },
   "stage|ja|missions/moon/lunar-prospector.json :: vehicle_stage": {
     "why": "variant: キックステージ (standard name for a kick stage)",

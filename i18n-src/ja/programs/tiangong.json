@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/tiangong": "Tiangong — 3D で見るステーション",
-    "/fleet?focus=tiangong": "フリート — Shenzhou、Tianzhou と Long March ファミリー",
+    "/fleet?id=tiangong": "フリート — Shenzhou、Tianzhou と Long March ファミリー",
     "/programs/iss": "ISS — Tiangong が締め出されたステーション",
     "/earth?site=tiangong": "頭上の Tiangong"
   }

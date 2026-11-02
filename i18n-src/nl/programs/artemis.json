@@ -91,7 +91,7 @@
   ],
   "link_labels": {
     "/moon": "Maan — de bestemming",
-    "/fleet?focus=orion": "Vloot — Orion, SLS & de maanhardware",
+    "/fleet?id=orion": "Vloot — Orion, SLS & de maanhardware",
     "/programs/apollo": "Apollo — het programma waarnaar Artemis is vernoemd en waarop het voortbouwt"
   }
 }

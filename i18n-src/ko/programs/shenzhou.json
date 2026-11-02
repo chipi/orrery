@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "함대 — Shenzhou 우주선",
+    "/fleet?id=shenzhou": "함대 — Shenzhou 우주선",
     "/programs/tiangong": "Tiangong — Shenzhou 승무원이 건설하고 오가는 정거장",
     "/programs/soyuz": "Soyuz — Shenzhou 구성의 원형이 된 우주선"
   }

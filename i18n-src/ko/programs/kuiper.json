@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=kuiper": "함대 — Kuiper 위성군",
+    "/fleet?id=kuiper": "함대 — Kuiper 위성군",
     "/programs/starlink": "Starlink — 뒤쫓고 있는 위성군",
     "/earth": "지구 — 궤도와 붐비는 저궤도",
     "/earth?site=kuiper": "Kuiper 위성군"

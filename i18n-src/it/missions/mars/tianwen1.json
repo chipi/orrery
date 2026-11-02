@@ -3,7 +3,7 @@
   "vehicle": "Long March 5",
   "payload": "5000 kg (orbiter + lander + rover Zhurong)",
   "delta_v": "~5 km/s",
-  "type": "ORBITER · LANDER · ROVER · ATTIVO",
+  "type": "ORBITER · LANDER · ROVER · ATTIVA",
   "first": "Prima missione che trasporta orbiter, lander e rover su Marte in un unico lancio",
   "description": "La prima missione cinese su Marte ha realizzato ciò che nessuna agenzia aveva mai tentato in un solo lancio: inserimento in orbita, ingresso atmosferico, atterraggio morbido e dispiegamento del rover. Il rover Zhurong ha operato per 358 sol a Utopia Planitia, percorrendo 1,9 km, prima di entrare in ibernazione programmata nel maggio 2022; da allora non si è più risvegliato (probabilmente a causa della polvere accumulata sui pannelli solari). L'orbiter resta attivo: mappa il pianeta ad alta risoluzione e fa da ripetitore per i mezzi a terra.",
   "events": [

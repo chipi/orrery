@@ -82,7 +82,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=kuiper": "Flotte — die Kuiper-Konstellation",
+    "/fleet?id=kuiper": "Flotte — die Kuiper-Konstellation",
     "/programs/starlink": "Starlink — die Konstellation, der es nacheifert",
     "/earth": "Erde — Umlaufbahnen und die enge niedrige Umlaufbahn",
     "/earth?site=kuiper": "Die Kuiper-Konstellation"

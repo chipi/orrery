@@ -10,7 +10,54 @@ Fixed already, because the term edit touched them: nl Clementine and Lunar Prosp
 (retranslated), nl "lanchbaan", "polaairbaan", "ontbaan", "haloaanbaan", "INBAAN", sr
 reusable-launchers and seven-minutes grammar, hi Taiyuan सूर्य-स्थैतिक → सूर्य-तुल्यकालिक.
 
-## Reported, not yet fixed
+## Fixed 2026-11-01 (hand edits through `apply-edits.mjs`; gates pass)
+
+- **Mission type labels, all 13 locales:** the status part is now the panel's status-chip word
+  (`mission_status_*`); "FLOWN" had 5–36 forms per locale, including English, sr «ФЛОВН» and
+  IZVRŠENO, Chinese 完成 in sr. Type parts still in English were translated (120 labels: Beresheet,
+  Chang'e 3, Luna 16/21, Solar Orbiter in every locale; English words in zh-CN, sr-Cyrl, ar, hi, ja,
+  ko, ru; de CREWED FLYBY / CARGO LANDER / UNCREWED MARS DEMO; nl FLYBY; it SAMPLE-RETURN; pt-BR
+  LANDER / ORBITER). ORBITER, LANDER and ROVER stay in de, fr, it, nl, pt-BR (their own words).
+  CREWED EARTH-ORBIT has one form in sr-Cyrl, hi, ru, ar.
+- **nl fleet:** suborbitale, cabinematerialen, India's, verfijnde opvolger, groter mondstuk,
+  werkpaard met een hoge lanceerfrequentie, verbrandt, de lanceerbasis (×3), middelzware
+  lanceringen, vlaggenschipmissies, bemande vluchten (vostok-k ×2), de stuwstof, primaire
+  voortstuwing voor de kruisvlucht, de tweede Halley-ontmoeting, Saturn V; missions: remraket,
+  atmosferische intrede.
+- **fr:** osiris-rex «a rejoint», starship «ravitailleurs», apollo13 «cislunaire».
+- **es:** superpesado, turbobomba, puesta en servicio. **de:** einen Sprengkopf, Manöver zur
+  Bahnanhebung (chandrayaan3). **ru:** запечатлённый, Это был не конец, автоматическим
+  аппаратом (luna16), Сам аппарат Rosetta. **sr-Cyrl:** бестежинског. **ja:** 着水 (apollo-soyuz).
+  **zh-CN:** 飞掠253梅西尔德星 (the glossary form).
+- **Not defects** (checked against each language's Wikipedia, the glossary's source): zh-CN 双卫一
+  (Dimorphos), 双生星 (Didymos), 梅西尔德星 (Mathilde), 戈尔登·库勃 (Gordon Cooper); es Teutates
+  (Toutatis). ko 월간 was "N개월간" (for N months). fr «tremplin» left in programs/artemis
+  (stepping stone, correct there).
+- Already gone before this round: the it items, most fr fleet items (lc-34 tremplin, la ISS, …),
+  ar messenger/rd-180/…, pt «missão em solo», es «cajas polares».
+
+## Sentence-level items — closed 2026-11-01
+
+Every item below was re-read against the English on 2026-11-01. Fixed by hand: nl rd-180 (getrapte),
+rs-25 (teruggeschakeld; "In de 135" for "Over 135"), salyut-5 (afdichting, verversten, Tengizmeer,
+uit zijn baan gebracht), mariner-4 (second sentence rewritten); ar rd-180 (المؤكسد), ariane-1
+(gender), messenger (رحلة العبور, heliocentric energy, "Discovery-class"), psyche + smart-1 (هول),
+ulysses (ثلاثة, مدار حول الشمس), salyut-4 (the 21-g sentence rewritten); es taiyuan (heliosíncronos),
+lr87 (el Aerozine-50); it change-3 (lander, not lavanda), shenzhou / iss / viking2 ("con / senza
+equipaggio", not "equipaggiato"); ja yf-77 (storable, last sentence rewritten), long-march-3b and
+yf-77 ハイパーゴリック (the site's form); zh-CN lc-34 (这段历程); ko 단단식 for single-stage
+(blue-moon ×3, mercury-redstone; 단단식 added to the glossary's ko "stage" match), otv-6 (기밀);
+sr-Cyrl vostok-6 (rewritten — operator to read); de juice (Erstes Mond-Erde-Swing-by-Manöver);
+ja change4 (Chinese note → ローバーがスロープを下った。); pt-BR 26 + it 1 dates back to the
+English's ISO form (style guide: dates are not translated) — three pt-BR dates had day and month
+swapped (apollo17 1972-12-11, change5 2020-12-01, slim 2023-09-06).
+Already fixed by the earlier garble rounds (read, nothing to change): nl saturn-v; hi saturn-v,
+giotto, messenger, r-7, molniya, salyut-5, soyuz-7k-ok, titan-ii; ru akatsuki, mars-rovers; it
+osiris-rex, juice, rosetta, apollo-lm, missions osiris-rex / bepicolombo; fr challenger,
+osiris-rex, lro; sr pioneer-11; ja mercury-redstone. Left to the plain-register run: ko starbase
+(~함/~됨 note style).
+
+## Original report (kept for the record)
 
 Only the fields the term reviewers happened to read are listed here (about 1 in 6 fleet fields).
 The rate suggests the rest of these locales' fleet text has the same problems.

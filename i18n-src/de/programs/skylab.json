@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Erde — Umlaufbahnen & Startplätze",
-    "/fleet?focus=skylab": "Flotte — Raumstation Skylab"
+    "/fleet?id=skylab": "Flotte — Raumstation Skylab"
   }
 }

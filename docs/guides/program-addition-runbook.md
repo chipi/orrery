@@ -57,9 +57,9 @@ Neither is a spec/fact rehash. **Launch-site assets propagate automatically** �
 
 `see_also[]` (`{ label, href, kind: "body" | "science" | "explore" }`) sends the reader into the rest of Orrery — `/moon`, `/science` articles, `/explore`. Every program should hand off to the surfaces that continue its story.
 
-### 8 · Prerender entry — `src/routes/programs/[id]/+page.ts`
+### 8 · Prerender — `src/routes/programs/[id]/+page.ts`
 
-Add the new `id` to the `entries()` array, or the page 404s at build (prerender enumerates explicitly). The universal `load` builds the roster's `missionDetails` map — it must thread `event.fetch` (not global `fetch`) through `getProgram` / `getMissionIndex` / `getMission`, or relative data URLs throw at build.
+No list to edit: `scripts/site-routes.mjs` (`programsRoutes`) makes every program in `static/data/programs/index.json` (step 9) a prerender entry, in every locale. The universal `load` builds the roster's `missionDetails` map — it must thread `event.fetch` (not global `fetch`) through `getProgram` / `getMissionIndex` / `getMission`, or relative data URLs throw at build.
 
 ### 9 · Index — `static/data/programs/index.json`
 

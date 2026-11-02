@@ -3,7 +3,7 @@
   "vehicle": "New Glenn (primo stadio riutilizzabile + secondo stadio a perdere)",
   "payload": "~3000 kg di carico sulla superficie lunare (carichi utili CLPS)",
   "delta_v": "~6 km/s",
-  "type": "LANDER CARGO · PIANIFICATO",
+  "type": "LANDER CARGO · PIANIFICATA",
   "first": "Primo volo dell'architettura del lander lunare Blue Moon di Blue Origin",
   "description": "Il primo lander cargo Blue Moon di Blue Origin, commissionato nell'ambito del programma CLPS (Commercial Lunar Payload Services) della NASA. Un veicolo di discesa a stadio singolo alimentato dal motore criogenico BE-7, progettato per portare fino a circa 3 tonnellate di carico utile sulla superficie lunare. Viene lanciato dal New Glenn di Blue Origin da Cape Canaveral, esegue l'iniezione translunare con il secondo stadio del New Glenn, poi l'inserimento in orbita lunare e la discesa propulsa. Il volo cargo Mark 1 precede il Mark 2, certificato per il trasporto di esseri umani, che la NASA ha commissionato per gli allunaggi con equipaggio di Artemis — ora uno dei due lander candidati per Artemis IV e le missioni successive.",
   "events": [

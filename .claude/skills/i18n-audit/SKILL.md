@@ -6,7 +6,7 @@ when_to_use: Use when asked to "check translation quality", "audit locale X", "a
 
 # i18n-audit
 
-Built from the 2026-10-17 audit (`docs/wip/2026-10-17-post-v1-arc-plan.md`, item 9b and
+Built from the 2026-10-17 audit (`docs/wip/_archive/2026-10-17-post-v1-arc-plan.md`, item 9b and
 § "Translation risk tiers"). Detectors find mechanical defects; a graded sample finds
 what they can't (the sr-Cyrl skip-entry article had zero detector hits and was unreadable).
 

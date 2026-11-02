@@ -91,6 +91,6 @@
   ],
   "link_labels": {
     "/earth": "Tierra: órbitas y bases de lanzamiento",
-    "/fleet?focus=skylab": "Flota — el taller orbital Skylab"
+    "/fleet?id=skylab": "Flota — el taller orbital Skylab"
   }
 }

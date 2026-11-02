@@ -36,7 +36,12 @@
     type BadgeProvenance,
     type DataSourcesManifest,
   } from '$lib/data';
-  import { groupBySource, pathToRouteKey, type CreditsGroup } from '$lib/credits-grouping';
+  import {
+    creditDisplayPath,
+    groupBySource,
+    pathToRouteKey,
+    type CreditsGroup,
+  } from '$lib/credits-grouping';
   import { assetOrigin, assetUrl } from '$lib/asset-url';
   import {
     getVideoManifest,
@@ -65,7 +70,8 @@
       .then((list) => (creditThumbs = new Set(list)))
       .catch(dataLoadFailed);
   });
-  function thumbAttrs(path: string): { src?: string; srcset?: string; sizes?: string } {
+  function thumbAttrs(rowPath: string): { src?: string; srcset?: string; sizes?: string } {
+    const path = creditDisplayPath(rowPath);
     if (creditThumbs.has(path))
       return { src: assetUrl(`/credit-thumbs${path.replace(/\.[^.]+$/, '.webp')}`) };
     return responsive(assetUrl(path), IMAGE_SIZES.creditThumb);

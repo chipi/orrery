@@ -178,7 +178,7 @@
       creator: 'WMFE / Brendan Byrne',
       blurb:
         'Florida-public-radio space coverage. Strong on Kennedy Space Center + commercial launch site operations. Short episodes, news-driven.',
-      href: 'https://www.wmfe.org/podcasts/are-we-there-yet',
+      href: 'https://www.cfpublic.org/podcast/are-we-there-yet',
       cover: '/images/recommendations/podcasts/are-we-there-yet.webp',
     },
   ];

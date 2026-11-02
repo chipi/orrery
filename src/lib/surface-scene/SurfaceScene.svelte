@@ -3961,7 +3961,7 @@
                       crop: '3072',
                       km: m.mp_flight_unit_km({ value: '15' }),
                     }),
-                    sourceUrl: 'https://www.msss.com/mars_images/moc/MENU.html',
+                    sourceUrl: 'https://www.msss.com/all_projects/mro-ctx.php',
                     licenseShort: 'PD-NASA',
                     // CTX absolute georeferencing — typically ~100 m on
                     // Mars (better in regions tied to HRSC / MOLA, worse
@@ -5442,7 +5442,7 @@ sample      ${debugInfo.projectedPxSample}`}
     <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
   {/if}
 
-  <PanelLightbox src={panelLightbox} onClose={() => (panelLightbox = null)} />
+  <PanelLightbox src={panelLightbox} images={panelGallery} onClose={() => (panelLightbox = null)} />
   <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
 
   <!-- #290 Slice 6b — Earth-satellite info panel. Mounted only when

@@ -85,6 +85,6 @@
   ],
   "link_labels": {
     "/earth": "Earth — orbits & launch sites",
-    "/fleet?focus=discovery": "Fleet — Space Shuttle orbiters"
+    "/fleet?id=discovery": "Fleet — Space Shuttle orbiters"
   }
 }

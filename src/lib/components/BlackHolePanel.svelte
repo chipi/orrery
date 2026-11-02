@@ -8,6 +8,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import Panel from './Panel.svelte';
+  import ScienceCard from './ScienceCard.svelte';
   import type { BlackHole, BlackHoleKind } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
 
@@ -87,6 +88,8 @@
     {@render children?.()}
 
     <a class="learn-link" href={learnHref}>{m.explore_bh_learn_more()} →</a>
+    <!-- Where black-hole geometry leads next in the encyclopedia. -->
+    <ScienceCard tab="observation" section="wormholes" />
   {/if}
 </Panel>
 

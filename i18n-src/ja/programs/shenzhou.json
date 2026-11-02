@@ -86,7 +86,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=shenzhou": "フリート — Shenzhou 宇宙船",
+    "/fleet?id=shenzhou": "フリート — Shenzhou 宇宙船",
     "/programs/tiangong": "Tiangong — Shenzhou の乗組員が建設し、通うステーション",
     "/programs/soyuz": "Soyuz — Shenzhou の構成の元になった宇宙船"
   }

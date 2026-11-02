@@ -90,7 +90,7 @@
     }
   ],
   "link_labels": {
-    "/fleet?focus=jwst": "الأسطول — تلسكوب James Webb الفضائي",
+    "/fleet?id=jwst": "الأسطول — تلسكوب James Webb الفضائي",
     "/programs/great-observatories": "المراصد العظمى — السلالة التي يواصلها JWST",
     "/programs/ariane": "Ariane — الصاروخ الذي أطلقه",
     "/earth?site=jwst": "تلسكوب James Webb الفضائي"

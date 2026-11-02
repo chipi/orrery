@@ -18,7 +18,7 @@ import { SIDEREAL_DAY_MIN } from './shared';
 export const groundTrackShift: FormulaDef<{ periodMin: number; inclinationDeg: number }> = {
   id: 'ground-track-shift',
   titleKey: 'lab.f.gtrack.title',
-  plainKey: 'lab.f.gtrack.plain',
+  inWordsKey: 'lab.f.gtrack.in-words',
   citationKey: 'orbits/orbit-regimes',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Ground_track', source: 'wikipedia' },
   domain: 'satellite',
@@ -99,7 +99,7 @@ export const groundTrackShift: FormulaDef<{ periodMin: number; inclinationDeg: n
 export const visibilityWindow: FormulaDef<{ altitudeKm: number }> = {
   id: 'visibility-window',
   titleKey: 'lab.f.viswin.title',
-  plainKey: 'lab.f.viswin.plain',
+  inWordsKey: 'lab.f.viswin.in-words',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Satellite_pass', source: 'wikipedia' },
   domain: 'satellite',
   tier: 4,
@@ -170,7 +170,7 @@ export const issPass: FormulaDef<{
 }> = {
   id: 'iss-pass',
   titleKey: 'lab.f.isspass.title',
-  plainKey: 'lab.f.isspass.plain',
+  inWordsKey: 'lab.f.isspass.in-words',
   learnMore: { url: 'https://en.wikipedia.org/wiki/Satellite_pass', source: 'wikipedia' },
   domain: 'satellite',
   tier: 5,

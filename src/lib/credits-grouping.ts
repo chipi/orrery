@@ -320,6 +320,17 @@ export function textSourceId(t: TextSourceEntry): string {
 }
 
 /**
+ * The image a credit row can display for `path`. The 4:3 and 16:9 planet-texture
+ * crops are credited but not deployed (scripts/prune-build-staging.mjs strips
+ * them; no scene loads them), so their row shows the served 1:1 crop of the
+ * same texture. Asking for the crop itself was a 404 on prod for every visitor
+ * of /credits.
+ */
+export function creditDisplayPath(path: string): string {
+  return path.replace(/^(\/textures\/.+)\.(4x3|16x9)\.jpg$/, '$1.1x1.jpg');
+}
+
+/**
  * Map an emitted image path to a localised app-route label. Paths
  * follow the on-disk convention enforced by fetch-assets.ts:
  *   /images/missions/<id>/<nn>.jpg          → /missions panel + card hero

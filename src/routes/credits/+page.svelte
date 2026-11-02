@@ -52,6 +52,25 @@
   import { getLocale } from '$lib/paraglide/runtime';
   import { licenseLabel } from '$lib/license-label';
 
+  // Counts in the locale's plural form (1 photo; sr 2–4 фотографије; ar dual …); the plain key is "other".
+  type CountMsg = (p: { n: number }) => string;
+  const plural =
+    (other: CountMsg, forms: Partial<Record<Intl.LDMLPluralRule, CountMsg>>) =>
+    (n: number): string =>
+      (forms[new Intl.PluralRules(getLocale()).select(n)] ?? other)({ n });
+  const photosLabel = plural(m.credits_count_photos, {
+    one: m.credits_count_photos_one,
+    two: m.credits_count_photos_two,
+    few: m.credits_count_photos_few,
+    many: m.credits_count_photos_many,
+  });
+  const textsLabel = plural(m.credits_count_text, {
+    one: m.credits_count_text_one,
+    two: m.credits_count_text_two,
+    few: m.credits_count_text_few,
+    many: m.credits_count_text_many,
+  });
+
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<ImageProvenanceManifest | null>(null);
   let textSources = $state<TextSourcesManifest | null>(null);
@@ -269,8 +288,8 @@
           <li>
             <a href="#src-{group.source.id}">{group.source.name}</a>
             <span class="counts">
-              · {m.credits_count_photos({ n: group.bundles.length })} ·
-              {m.credits_count_text({ n: group.texts.length })}
+              · {photosLabel(group.bundles.length)} ·
+              {textsLabel(group.texts.length)}
             </span>
           </li>
         {/each}
@@ -307,7 +326,7 @@
         {#if group.bundles.length > 0}
           <h3 class="bom-heading">
             {m.credits_section_photos()}
-            <span class="bom-count">{m.credits_count_photos({ n: group.bundles.length })}</span>
+            <span class="bom-count">{photosLabel(group.bundles.length)}</span>
           </h3>
           <ul class="photo-list">
             {#each group.bundles as bundle (bundle)}
@@ -403,7 +422,7 @@
         {#if group.texts.length > 0}
           <h3 class="bom-heading">
             {m.credits_section_text()}
-            <span class="bom-count">{m.credits_count_text({ n: group.texts.length })}</span>
+            <span class="bom-count">{textsLabel(group.texts.length)}</span>
           </h3>
           <ul class="text-list">
             {#each group.texts as t (t)}

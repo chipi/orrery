@@ -152,6 +152,86 @@
    "fetched_at": "2026-07-06T17:33:35.624Z"
   },
   {
+   "id": "72c95fb355c774cd",
+   "path": "/images/belts/kuiper/06.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:New Horizons Looking Back Towards Uranus (Artist's Concept) (2024-033).tiff",
+   "author": "Artwork NASA, ESA, Christian Nieves (STScI), Ralf Crawford (STScI), Greg Bacon (STScI)",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:New_Horizons_Looking_Back_Towards_Uranus_(Artist%27s_Concept)_(2024-033).tiff",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/New_Horizons_Looking_Back_Towards_Uranus_%28Artist%27s_Concept%29_%282024-033%29.tiff",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": 153737405,
+   "nasa_id": null,
+   "fetched_at": "2026-11-02T09:32:41.758Z"
+  },
+  {
+   "id": "c2276cfb7224afe0",
+   "path": "/images/belts/kuiper/02.webp",
+   "source_type": "nasa-images-api",
+   "title": "NASA’s Hubble Telescope Finds Potential Kuiper Belt Targets for New Horizons Pluto Mission (GSFC_20171208_Archive_e000946)",
+   "author": "NASA/GSFC",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000946",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "GSFC_20171208_Archive_e000946",
+   "fetched_at": "2026-11-02T09:30:24.609Z"
+  },
+  {
+   "id": "ae563c71aac29575",
+   "path": "/images/belts/kuiper/04.webp",
+   "source_type": "nasa-images-api",
+   "title": "Hubble Finds Tenth Planet is Slightly Larger than Pluto Artist Concept (PIA17801)",
+   "author": "NASA/ESA/STScI",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA17801",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA17801",
+   "fetched_at": "2026-11-02T09:30:24.609Z"
+  },
+  {
+   "id": "d32626fc7a00553d",
+   "path": "/images/belts/kuiper/05.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Artist's Concept of Comet 238P-Read (2023-123).tiff",
+   "author": "ILLUSTRATION: NASA, ESA",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Artist%27s_Concept_of_Comet_238P-Read_(2023-123).tiff",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Artist%27s_Concept_of_Comet_238P-Read_%282023-123%29.tiff",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": 131976296,
+   "nasa_id": null,
+   "fetched_at": "2026-11-02T09:32:48.734Z"
+  },
+  {
    "id": "8f16ca65300757be",
    "path": "/images/deep-sky/chandra-crab.jpg",
    "source_type": "wikimedia-commons",
@@ -5544,8 +5624,8 @@
    "agency": "NASA",
    "source_url": "https://commons.wikimedia.org/wiki/File:Mercury_profile.jpg",
    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Mercury_profile.jpg",
-   "license_short": "PD-Old",
-   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-commons-search",
@@ -5554,7 +5634,7 @@
    "revid": null,
    "pageid": 1020105,
    "nasa_id": null,
-   "fetched_at": "2026-11-01T19:23:43.212Z"
+   "fetched_at": "2026-11-02T09:25:22.102Z"
   },
   {
    "id": "27651109cefcb0cb",
@@ -10666,23 +10746,23 @@
   {
    "id": "8d66225ff035160b",
    "path": "/images/fleet-galleries/galileo-gnss/02.webp",
-   "source_type": "direct-other",
-   "title": "Uncurated panel image — fleet-galleries/galileo-gnss",
-   "author": "ESA",
+   "source_type": "wikimedia-commons",
+   "title": "File:Galileo in smartphones ESA385423 (leftmost smartphone GNSS View rotated cropped).jpg",
+   "author": "European Space Agency",
    "agency": "ESA",
-   "source_url": "https://commons.wikimedia.org/",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Galileo_in_smartphones_ESA385423_(leftmost_smartphone_GNSS_View_rotated_cropped).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Galileo_in_smartphones_ESA385423_%28leftmost_smartphone_GNSS_View_rotated_cropped%29.jpg",
    "license_short": "CC-BY-SA-3.0-IGO",
-   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-   "license_rationale": "Inter-governmental organisation port of CC BY-SA 3.0.",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+   "license_rationale": "Creative Commons Attribution-Share Alike 3.0 igo",
    "modifications": [
     "curated-no-upstream-record",
     "walker-fallback"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 184974140,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.959Z"
+   "fetched_at": "2026-11-02T09:25:05.296Z"
   },
   {
    "id": "8e33d453ec7c2cc9",
@@ -10728,23 +10808,23 @@
   {
    "id": "09af396f62556163",
    "path": "/images/fleet-galleries/galileo/02.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — galileo / \"fleet galileo\"",
+   "source_type": "wikimedia-commons",
+   "title": "File:Artwork Galileo-Io-Jupiter.JPG",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=fleet+galileo&media_type=image&keywords=galileo",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Artwork_Galileo-Io-Jupiter.JPG",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Artwork_Galileo-Io-Jupiter.JPG",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-nasa-images-api",
     "reencoded-jpeg"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 408298,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.880Z"
+   "fetched_at": "2026-11-02T09:25:06.407Z"
   },
   {
    "id": "a29bfe763892792f",
@@ -10769,44 +10849,43 @@
   {
    "id": "f7f46a66070989e8",
    "path": "/images/fleet-galleries/galileo/04.webp",
-   "source_type": "nasa-images-api",
-   "title": "NASA Images search result — galileo / \"fleet galileo\"",
+   "source_type": "wikimedia-commons",
+   "title": "File:Galileo spacecraft in the KSC SAEF-2 facility (KSC-89PC-0698).jpg",
    "author": "NASA",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=fleet+galileo&media_type=image&keywords=galileo",
-   "image_url": null,
+   "source_url": "https://commons.wikimedia.org/wiki/File:Galileo_spacecraft_in_the_KSC_SAEF-2_facility_(KSC-89PC-0698).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Galileo_spacecraft_in_the_KSC_SAEF-2_facility_%28KSC-89PC-0698%29.jpg",
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-nasa-images-api",
     "reencoded-jpeg"
    ],
    "revid": null,
-   "pageid": null,
+   "pageid": 130011272,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.880Z"
+   "fetched_at": "2026-11-02T09:25:07.514Z"
   },
   {
    "id": "afc48f81df03d0bc",
    "path": "/images/fleet-galleries/galileo/05.webp",
    "source_type": "nasa-images-api",
-   "title": "NASA Images search result — galileo / \"fleet galileo\"",
-   "author": "NASA",
+   "title": "STS-34 Galileo processing at KSC's SAEF-2 planetary spacecraft facility (S89-42091)",
+   "author": "NASA/JSC",
    "agency": "NASA",
-   "source_url": "https://images.nasa.gov/search?q=fleet+galileo&media_type=image&keywords=galileo",
+   "source_url": "https://images.nasa.gov/details/S89-42091",
    "image_url": null,
    "license_short": "PD-NASA",
    "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
    "modifications": [
-    "downloaded-via-nasa-images-api",
-    "reencoded-jpeg"
+    "identified-by-image-match"
    ],
    "revid": null,
    "pageid": null,
-   "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.881Z"
+   "nasa_id": "S89-42091",
+   "fetched_at": "2026-11-02T09:23:59.775Z"
   },
   {
    "id": "28beee1993e4878a",
@@ -25403,8 +25482,8 @@
    "agency": "NASA",
    "source_url": "https://commons.wikimedia.org/wiki/File:JPL_program_Surveyor_-_Workers_at_Hughes_testing_the_Soil_Mechanics_Surface_Sampler_211-1582b.gif",
    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/JPL_program_Surveyor_-_Workers_at_Hughes_testing_the_Soil_Mechanics_Surface_Sampler_211-1582b.gif",
-   "license_short": "PD-Old",
-   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-commons-search",
@@ -25413,7 +25492,7 @@
    "revid": null,
    "pageid": 75819381,
    "nasa_id": null,
-   "fetched_at": "2026-11-01T19:24:27.651Z"
+   "fetched_at": "2026-11-02T09:25:23.391Z"
   },
   {
    "id": "980680d471033d4c",
@@ -26961,8 +27040,8 @@
    "agency": "NASA",
    "source_url": "https://commons.wikimedia.org/wiki/File:Surface_Changes_in_Chryse_Planitia.jpg",
    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Surface_Changes_in_Chryse_Planitia.jpg",
-   "license_short": "PD-Old",
-   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-commons-search",
@@ -26971,7 +27050,7 @@
    "revid": null,
    "pageid": 24021613,
    "nasa_id": null,
-   "fetched_at": "2026-11-01T19:24:28.762Z"
+   "fetched_at": "2026-11-02T09:25:24.692Z"
   },
   {
    "id": "6e806fa5dd6962be",
@@ -40696,8 +40775,8 @@
    "agency": "NASA",
    "source_url": "https://commons.wikimedia.org/wiki/File:Mars_Odyssey_over_South_Pole_artist_concept_(PIA04816).jpg",
    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Mars_Odyssey_over_South_Pole_artist_concept_%28PIA04816%29.jpg",
-   "license_short": "PD-Old",
-   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-special-filepath",
@@ -40706,7 +40785,7 @@
    "revid": null,
    "pageid": 20423606,
    "nasa_id": null,
-   "fetched_at": "2026-11-01T20:26:14.515Z"
+   "fetched_at": "2026-11-02T09:25:25.976Z"
   },
   {
    "id": "af7705efa423a2b2",
@@ -40717,8 +40796,8 @@
    "agency": "NASA",
    "source_url": "https://commons.wikimedia.org/wiki/File:Mars_Odyssey_over_South_Pole_artist_concept_(PIA04816).jpg",
    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Mars_Odyssey_over_South_Pole_artist_concept_%28PIA04816%29.jpg",
-   "license_short": "PD-Old",
-   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-special-filepath",
@@ -40727,7 +40806,7 @@
    "revid": null,
    "pageid": 20423606,
    "nasa_id": null,
-   "fetched_at": "2026-11-01T20:26:14.516Z"
+   "fetched_at": "2026-11-02T09:25:25.976Z"
   },
   {
    "id": "626931f02f043476",
@@ -42857,8 +42936,8 @@
    "agency": "NASA",
    "source_url": "https://commons.wikimedia.org/wiki/File:PIA01907_fig1-MarsSpirit-200604c.jpg",
    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/PIA01907_fig1-MarsSpirit-200604c.jpg",
-   "license_short": "PD-Old",
-   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-special-filepath",
@@ -42868,7 +42947,7 @@
    "revid": null,
    "pageid": 22252145,
    "nasa_id": null,
-   "fetched_at": "2026-06-19T09:26:46.920Z"
+   "fetched_at": "2026-11-02T09:25:27.292Z"
   },
   {
    "id": "480ce04b2df6ee86",
@@ -42879,8 +42958,8 @@
    "agency": "NASA",
    "source_url": "https://commons.wikimedia.org/wiki/File:PIA01907_fig1-MarsSpirit-200604c.jpg",
    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/PIA01907_fig1-MarsSpirit-200604c.jpg",
-   "license_short": "PD-Old",
-   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-special-filepath",
@@ -42889,7 +42968,7 @@
    "revid": null,
    "pageid": 22252145,
    "nasa_id": null,
-   "fetched_at": "2026-11-01T20:26:15.624Z"
+   "fetched_at": "2026-11-02T09:25:27.292Z"
   },
   {
    "id": "06d251fdbb30935e",
@@ -61234,8 +61313,8 @@
    "agency": "NASA",
    "source_url": "https://commons.wikimedia.org/wiki/File:The_Sounds_of_Earth_-_GPN-2000-001976.jpg",
    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/The_Sounds_of_Earth_-_GPN-2000-001976.jpg",
-   "license_short": "PD-Old",
-   "license_url": "https://en.wikipedia.org/wiki/Public_domain",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
    "license_rationale": "Public domain",
    "modifications": [
     "downloaded-via-special-filepath",
@@ -61244,7 +61323,7 @@
    "revid": null,
    "pageid": 6455682,
    "nasa_id": null,
-   "fetched_at": "2026-11-01T20:26:16.733Z"
+   "fetched_at": "2026-11-02T09:25:28.603Z"
   },
   {
    "id": "3257f380d4c7c9e2",
@@ -65026,6 +65105,26 @@
    "fetched_at": "2026-07-06T17:33:35.624Z"
   },
   {
+   "id": "82f87d78836c5e01",
+   "path": "/images/satellites/charon/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Charon-9-10-15.jpg",
+   "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Charon-9-10-15.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Charon-9-10-15.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": 43289748,
+   "nasa_id": null,
+   "fetched_at": "2026-11-02T09:32:42.870Z"
+  },
+  {
    "id": "7be4fe208a6030bd",
    "path": "/images/satellites/deimos/01.webp",
    "source_type": "direct-other",
@@ -65608,6 +65707,26 @@
    "fetched_at": "2026-07-06T17:33:35.622Z"
   },
   {
+   "id": "b2a2df49feb2c9d8",
+   "path": "/images/satellites/phobos/05.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Phobos Full.png",
+   "author": "NASA / Viking 1 Orbiter",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Phobos_Full.png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Phobos_Full.png",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": 246922,
+   "nasa_id": null,
+   "fetched_at": "2026-11-02T09:32:43.980Z"
+  },
+  {
    "id": "6dec6049f8dfce12",
    "path": "/images/satellites/titan/01.webp",
    "source_type": "wikimedia-commons",
@@ -65689,6 +65808,26 @@
    "pageid": null,
    "nasa_id": null,
    "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
+   "id": "47a9c43a9edfcd81",
+   "path": "/images/satellites/titan/05.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Titan and Enceladus - May 18 2010 (39148769060).jpg",
+   "author": "Kevin Gill from Los Angeles, CA, United States",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Titan_and_Enceladus_-_May_18_2010_(39148769060).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Titan_and_Enceladus_-_May_18_2010_%2839148769060%29.jpg",
+   "license_short": "CC-BY-2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "license_rationale": "Creative Commons Attribution 2.0",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": 73037030,
+   "nasa_id": null,
+   "fetched_at": "2026-11-02T09:32:49.850Z"
   },
   {
    "id": "f5ecdf59dd80fe44",
@@ -85094,6 +85233,26 @@
    "fetched_at": "2026-07-06T17:33:35.623Z"
   },
   {
+   "id": "720cb00c3b94e21d",
+   "path": "/images/satellites/enceladus/05.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Enceladus - nIR+UV - October 19 2011 (54235008190).png",
+   "author": "Kevin M. Gill",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Enceladus_-_nIR%2BUV_-_October_19_2011_(54235008190).png",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Enceladus_-_nIR%2BUV_-_October_19_2011_%2854235008190%29.png",
+   "license_short": "CC-BY-2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "license_rationale": "Creative Commons Attribution 2.0",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": 157317865,
+   "nasa_id": null,
+   "fetched_at": "2026-11-02T09:32:45.090Z"
+  },
+  {
    "id": "95b86177163aa2ab",
    "path": "/images/satellites/europa/03.webp",
    "source_type": "nasa-images-api",
@@ -85136,6 +85295,26 @@
    "pageid": null,
    "nasa_id": "PIA03878",
    "fetched_at": "2026-10-21T08:07:45.597Z"
+  },
+  {
+   "id": "b3308c9854e7a8b2",
+   "path": "/images/satellites/europa/05.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Europa Domes.jpg",
+   "author": "NASA/JPL/Arizona State University",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Europa_Domes.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Europa_Domes.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": 566396,
+   "nasa_id": null,
+   "fetched_at": "2026-11-02T09:32:46.200Z"
   },
   {
    "id": "5142a3480c160787",
@@ -85270,6 +85449,26 @@
    "fetched_at": "2026-10-21T08:07:45.597Z"
   },
   {
+   "id": "3f95d06fd6c5bb58",
+   "path": "/images/satellites/oberon/04.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Which ringed planet !? (eso0237a).tiff",
+   "author": "ESO",
+   "agency": "ESO",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Which_ringed_planet_!%3F_(eso0237a).tiff",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Which_ringed_planet_%21%3F_%28eso0237a%29.tiff",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": 170407964,
+   "nasa_id": null,
+   "fetched_at": "2026-11-02T09:32:47.310Z"
+  },
+  {
    "id": "c1b156a67bcea81b",
    "path": "/images/satellites/miranda/05.webp",
    "source_type": "nasa-images-api",
@@ -85377,6 +85576,26 @@
    "pageid": null,
    "nasa_id": null,
    "fetched_at": "2026-07-06T17:33:35.623Z"
+  },
+  {
+   "id": "4a8cf0abd2c23641",
+   "path": "/images/satellites/callisto/05.webp",
+   "source_type": "nasa-images-api",
+   "title": "Asgard Scarp Mosaic (PIA00562)",
+   "author": "NASA/JPL/University of Arizona",
+   "agency": "NASA",
+   "source_url": "https://images.nasa.gov/details/PIA00562",
+   "image_url": null,
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+   "modifications": [
+    "identified-by-image-match"
+   ],
+   "revid": null,
+   "pageid": null,
+   "nasa_id": "PIA00562",
+   "fetched_at": "2026-11-02T09:30:24.610Z"
   },
   {
    "id": "a074a056399df1cd",

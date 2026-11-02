@@ -1,0 +1,27 @@
+{
+  "/images/belts/kuiper/02.webp": {
+    "source": "nasa",
+    "id": "GSFC_20171208_Archive_e000946",
+    "d": 2
+  },
+  "/images/belts/kuiper/04.webp": { "source": "nasa", "id": "PIA17801", "d": 4 },
+  "/images/belts/kuiper/06.webp": {
+    "source": "commons",
+    "id": "New Horizons Looking Back Towards Uranus (Artist's Concept) (2024-033).tiff",
+    "d": 4
+  },
+  "/images/satellites/callisto/05.webp": { "source": "nasa", "id": "PIA00562", "d": 3 },
+  "/images/satellites/charon/04.webp": { "source": "commons", "id": "Charon-9-10-15.jpg", "d": 3 },
+  "/images/satellites/enceladus/05.webp": {
+    "source": "commons",
+    "id": "Enceladus - nIR+UV - October 19 2011 (54235008190).png",
+    "d": 7
+  },
+  "/images/satellites/europa/05.webp": { "source": "commons", "id": "Europa Domes.jpg", "d": 7 },
+  "/images/satellites/oberon/04.webp": {
+    "source": "commons",
+    "id": "Which ringed planet !? (eso0237a).tiff",
+    "d": 8
+  },
+  "/images/satellites/phobos/05.webp": { "source": "commons", "id": "Phobos Full.png", "d": 3 }
+}

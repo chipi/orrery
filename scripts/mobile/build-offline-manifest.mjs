@@ -7,8 +7,8 @@
  * interaction":
  *   BASIC — browse every list + open every detail: the HERO image (mobile rung) +
  *           the HERO thumbnail of every item, across ALL buckets (planets, missions,
- *           fleet, sites, …), plus poster thumbnails. NO galleries, NO full posters,
- *           NO audio, NO surface tiles.
+ *           fleet, sites, …), plus poster thumbnails and the image alt text of every
+ *           locale. NO galleries, NO full posters, NO audio, NO surface tiles.
  *   FULL  — everything: all gallery images (02+) + their thumbs, full-size posters,
  *           surface hotspot tiles, and all audio.
  *
@@ -130,7 +130,16 @@ for (const f of thumbs) {
   if ((isPosterThumb || isHero(base)) && add('basic', rel, b)) tally.thumbs += b;
 }
 
-// 3 · audio → Full only (narration + tours)
+// 3 · image alt text, every locale → Basic + Full. Pages fetch it only when a card needs it
+// (Phase 5 took it off every page load), so a visitor who downloads for offline would otherwise
+// have no alt text offline until one online visit. ~13 MB for all 14 locales.
+for (const f of listFiles(`find static/data/image-alt-text -type f -name '*.json'`)) {
+  const url = '/' + f.replace(/^static\//, '');
+  add('basic', url, bytesOf(f));
+  add('full', url, bytesOf(f));
+}
+
+// 4 · audio → Full only (narration + tours)
 for (const f of listFiles(`find static/audio -type f`)) {
   if (add('full', '/' + f.replace(/^static\//, ''), bytesOf(f))) tally.audio += bytesOf(f);
 }

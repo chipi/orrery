@@ -566,8 +566,15 @@ function strapOns(
 /**
  * Soyuz / R-7 (vostok-k) — the iconic "Korolev cross": a central core with a
  * tapered nose, wrapped by four tapered conical strap-on boosters.
+ *
+ * 'molniya' is the four-stage Molniya-M (Luna 9 / Luna 10) at its real 43.4 m and 2.95 m
+ * core: Blok I on its lattice, then the Blok L escape stage and the probe under a cylinder-
+ * and-cone shroud. Blok I drops at SECO; Blok L rides into the parking orbit and makes the
+ * trans-lunar burn. Proportions from the Molniya-M and Soyuz-U figures (core 27.1 m,
+ * strap-ons 19.6 m, Blok I 6.7 m × 2.66 m); shroud shape from memory, not verified.
  */
-function buildSoyuz(vehLen: number): LauncherModel {
+function buildSoyuz(vehLen: number, variant: 'soyuz' | 'molniya' = 'soyuz'): LauncherModel {
+  const molniya = variant === 'molniya';
   // Roscosmos grey-white R-7 livery + Russian flag. Shared by soyuz / vostok-k /
   // voskhod-11a57 — the visible R-7 first stage is identical across them.
   const body = new THREE.MeshStandardMaterial({
@@ -579,7 +586,8 @@ function buildSoyuz(vehLen: number): LauncherModel {
   const plain = heroWhite(0xdfe4ea);
   const frame = heroMetal(0xaab0b8, 0.3);
   const eng = heroMetal(0x3a3f47, 0.5);
-  const r = vehLen * 0.05;
+  const r = molniya ? vehLen * (1.475 / 43.4) : vehLen * 0.05;
+  const coreTop = molniya ? 0.62 : 0.53;
   const root = new THREE.Group();
 
   // RD-108 core: 4 main chambers (quad) + 4 verniers at the base.
@@ -610,10 +618,13 @@ function buildSoyuz(vehLen: number): LauncherModel {
   };
 
   const booster = new THREE.Group();
-  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.5, 48), body);
-  core.position.y = vehLen * 0.28;
+  const core = new THREE.Mesh(
+    new THREE.CylinderGeometry(r, r, vehLen * (coreTop - 0.03), 48),
+    body,
+  );
+  core.position.y = vehLen * (0.03 + (coreTop - 0.03) / 2);
   booster.add(core);
-  booster.add(ringFrames(r, vehLen * 0.05, vehLen * 0.5, 5, frame));
+  booster.add(ringFrames(r, vehLen * 0.05, vehLen * (coreTop - 0.03), 5, frame));
   const coreEng = new THREE.Group();
   coreEng.position.y = vehLen * 0.03;
   rd(coreEng, r, r * 0.2, 4, 4); // RD-108
@@ -623,22 +634,35 @@ function buildSoyuz(vehLen: number): LauncherModel {
   // The four R-7 strap-ons (Blok B–D): tapered cones, each an RD-107 = 4 mains +
   // 2 verniers. Jettison at the "Korolev cross" (~118 s), before core burnout.
   const strapOnGroup = new THREE.Group();
-  const soLen = vehLen * 0.36;
+  const soLen = vehLen * (molniya ? 0.31 : 0.36);
+  // At true scale (molniya) the strap-on base is 2.68 m against the 2.95 m core.
+  const sk = molniya ? 1.6 : 1;
+  const off = r * (molniya ? 1.85 : 1.28);
   for (let i = 0; i < 4; i++) {
     const a = (i / 4) * Math.PI * 2;
     const gr = new THREE.Group();
-    const sb = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.42, r * 0.56, soLen, 32), plain);
+    const sb = new THREE.Mesh(
+      new THREE.CylinderGeometry(r * 0.42 * sk, r * 0.56 * sk, soLen, 32),
+      plain,
+    );
     sb.position.y = soLen / 2;
-    const sn = new THREE.Mesh(new THREE.ConeGeometry(r * 0.42, soLen * 0.42, 32), plain);
+    const sn = new THREE.Mesh(new THREE.ConeGeometry(r * 0.42 * sk, soLen * 0.42, 32), plain);
     sn.position.y = soLen + soLen * 0.2;
     gr.add(sb, sn);
     const se = new THREE.Group();
-    rd(se, r * 0.56, r * 0.15, 4, 2); // RD-107
+    rd(se, r * 0.56 * sk, r * 0.15 * sk, 4, 2); // RD-107
     gr.add(se);
-    gr.position.set(Math.cos(a) * r * 1.28, 0, Math.sin(a) * r * 1.28);
+    gr.position.set(Math.cos(a) * off, 0, Math.sin(a) * off);
     strapOnGroup.add(gr);
   }
   root.add(strapOnGroup);
+
+  if (molniya)
+    return buildMolniyaUpper(vehLen, r, root, booster, core, strapOnGroup, rd, {
+      plain,
+      frame,
+      eng,
+    });
 
   const upperStage = new THREE.Group();
   const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.9, r, vehLen * 0.2, 48), plain);
@@ -675,6 +699,86 @@ function buildSoyuz(vehLen: number): LauncherModel {
     upperStageBaseY: vehLen * 0.64,
     fairingBaseY,
     payloadMountY: vehLen * 0.74,
+    strapOns: strapOnGroup,
+  };
+}
+
+/** Molniya-M above the R-7 core: Blok I (mid stage), Blok L and the probe under the shroud. */
+function buildMolniyaUpper(
+  vehLen: number,
+  r: number,
+  root: THREE.Group,
+  booster: THREE.Group,
+  core: THREE.Mesh,
+  strapOnGroup: THREE.Group,
+  rd: (g: THREE.Group, stageR: number, bellR: number, mains: number, verniers: number) => void,
+  m: { plain: THREE.Material; frame: THREE.Material; eng: THREE.Material },
+): LauncherModel {
+  // Blok I on the hot-staging lattice: RD-0110, 4 chambers + 4 verniers.
+  const midStage = new THREE.Group();
+  const iBase = 0.635;
+  const iTop = 0.79;
+  const blokI = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.9, r * 0.9, vehLen * (iTop - iBase), 48),
+    m.plain,
+  );
+  blokI.position.y = vehLen * (iBase + (iTop - iBase) / 2);
+  midStage.add(blokI);
+  const iEng = new THREE.Group();
+  iEng.position.y = vehLen * iBase;
+  rd(iEng, r * 0.9, r * 0.16, 4, 4);
+  midStage.add(iEng);
+  root.add(midStage);
+
+  // Blok L (S1.5400, one chamber) with the probe on top, inside the shroud.
+  const upperStage = new THREE.Group();
+  const lBase = iTop + 0.015;
+  const lLen = 0.065;
+  const blokL = new THREE.Mesh(
+    new THREE.CylinderGeometry(r * 0.8, r * 0.8, vehLen * lLen, 40),
+    m.plain,
+  );
+  blokL.position.y = vehLen * (lBase + lLen / 2);
+  upperStage.add(blokL);
+  const lEng = detailBell(r * 0.22, vehLen * 0.025, m.frame, m.eng);
+  lEng.position.y = vehLen * lBase;
+  upperStage.add(lEng);
+  root.add(upperStage);
+
+  // Cylinder-and-cone shroud from the top of Blok I to the nose.
+  const fairingBaseY = vehLen * iTop;
+  const fR = r * 0.9;
+  const fH = vehLen - fairingBaseY;
+  const prof: THREE.Vector2[] = [
+    new THREE.Vector2(fR, 0),
+    new THREE.Vector2(fR, fH * 0.55),
+    new THREE.Vector2(fR * 0.3, fH * 0.96),
+    new THREE.Vector2(0, fH),
+  ];
+  const mkHalf = (theta: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(prof, 36, theta, Math.PI), m.plain);
+  const fairingL = mkHalf(Math.PI / 2);
+  const fairingR = mkHalf(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: blokI,
+    finalPlumeAnchor: blokL,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: blokL.position.y,
+    fairingBaseY,
+    payloadMountY: vehLen * (lBase + lLen + 0.01),
+    midStage,
     strapOns: strapOnGroup,
   };
 }
@@ -3571,9 +3675,10 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   starship: buildStarship,
   'saturn-v': buildSaturnV,
   'saturn-ib': buildSaturnIB,
-  'vostok-k': buildSoyuz,
-  'voskhod-11a57': buildSoyuz,
-  soyuz: buildSoyuz,
+  'vostok-k': (v) => buildSoyuz(v),
+  'voskhod-11a57': (v) => buildSoyuz(v),
+  soyuz: (v) => buildSoyuz(v),
+  'molniya-m': (v) => buildSoyuz(v, 'molniya'),
   'atlas-v': buildAtlasV,
   'proton-k': buildProtonK,
   'titan-ii-glv': buildTitanIIGLV,
@@ -3659,6 +3764,7 @@ const LATTICE_INTERSTAGE = new Set([
   'soyuz',
   'vostok-k',
   'voskhod-11a57',
+  'molniya-m',
   'long-march-3a',
   'long-march-3b',
 ]);

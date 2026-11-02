@@ -236,6 +236,21 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Second stage', 'Merlin 1D Vacuum', 1, 1, 'single'),
     ],
   },
+  'molniya-m': {
+    name: 'Molniya-M (8K78M)',
+    agency: 'Soviet Union',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Molniya-M', 'https://en.wikipedia.org/wiki/S1.5400'],
+    stages: [
+      S('Strap-ons ×4 (Blok B–D)', 'RD-107', 4, 4, 'per-booster', {
+        boosterCount: 4,
+        vernierNozzles: 8,
+      }),
+      S('Core (Blok-A)', 'RD-108', 1, 4, 'quad', { vernierNozzles: 4 }),
+      S('Blok-I', 'RD-0110', 1, 4, 'quad', { vernierNozzles: 4 }),
+      S('Blok-L', 'S1.5400', 1, 1, 'single'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

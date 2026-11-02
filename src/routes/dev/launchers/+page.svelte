@@ -46,6 +46,7 @@
     'titan-iiie-centaur': 48.8,
     'titan-ivb-centaur': 55.9,
     'falcon-heavy': 70,
+    'molniya-m': 43.4,
   };
 
   let canvas: HTMLCanvasElement;

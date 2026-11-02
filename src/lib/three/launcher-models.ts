@@ -62,6 +62,12 @@ export interface LauncherModel {
    *  2-stage vehicles. Any 3+ serial-stage builder can populate it and the scene
    *  drops it on the second core staging event, matching the physics. */
   midStage?: THREE.Group;
+  /** A fourth serial stage's predecessor on a four-stage stack (Proton-M's third stage under
+   *  Briz-M): it drops at the THIRD core staging, while `upperStage` completes the orbit and
+   *  makes the departure burn. */
+  lastCoreStage?: THREE.Group;
+  /** The fourth stage's own mesh (Briz-M): its orbit-completing and departure burns fire here. */
+  injectionPlumeAnchor?: THREE.Object3D;
 }
 
 interface Palette {
@@ -4076,6 +4082,139 @@ function buildNewGlenn(vehLen: number): LauncherModel {
   };
 }
 
+/**
+ * Proton-M / Briz-M (ExoMars 2016) at its real 58.2 m: the 4.1 m first stage with six
+ * outboard fuel tanks (7.4 m across), each over an RD-276; the 4.1 m second (3× RD-0210 +
+ * RD-0211) and third stages (RD-0213 + the RD-0214 vernier); and the 4.35 m, 15.255 m
+ * fairing over Briz-M (4.0 m, its drop tank wrapped around the core) and the probe. The
+ * third stage drops at SECO; Briz-M rides on and makes the departure burns. Dimensions from
+ * Wikipedia and the ILS Proton Mission Planner's Guide; colours (grey-green Proton, white
+ * fairing) from memory, not verified.
+ */
+function buildProtonMBriz(vehLen: number): LauncherModel {
+  const p = palette(0xdfe4dd, 0x9aaa9d);
+  p.body.map = livery({ base: '#e2e6df', flag: 'rus' });
+  p.body.roughnessMap = stringerRoughness(50);
+  p.body.needsUpdate = true;
+  const white = heroWhite(0xeef0f1);
+  const frame = heroMetal(0xacb2ab, 0.3);
+  const tankMat = heroMetal(0x9aaa9d, 0.34);
+  const eng = heroMetal(0x3a3f47, 0.5);
+  const H = 58.2;
+  const m = (x: number): number => vehLen * (x / H);
+  const r = m(2.05);
+  const s1Top = 0.375;
+  const s2Top = 0.668;
+  const s3Top = 0.738;
+  const root = new THREE.Group();
+
+  // ── Stage 1: central oxidizer tank + six outboard fuel tanks, each over an RD-276.
+  const booster = new THREE.Group();
+  const core1 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r, r, vehLen * (s1Top - 0.02), 48),
+    p.body,
+  );
+  core1.position.y = vehLen * (0.02 + (s1Top - 0.02) / 2);
+  booster.add(core1);
+  const tankR = m(0.8);
+  const tankLen = vehLen * (s1Top - 0.06);
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2;
+    const x = Math.cos(a) * m(2.9);
+    const z = Math.sin(a) * m(2.9);
+    const tank = new THREE.Mesh(new THREE.CylinderGeometry(tankR, tankR, tankLen, 24), tankMat);
+    tank.position.set(x, vehLen * 0.02 + tankLen / 2, z);
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(tankR, vehLen * 0.03, 24), tankMat);
+    nose.position.set(x, vehLen * 0.02 + tankLen + vehLen * 0.015, z);
+    const b = detailBell(tankR * 0.75, vehLen * 0.035, frame, eng);
+    b.position.set(x, vehLen * 0.02, z);
+    booster.add(tank, nose, b);
+  }
+  root.add(booster);
+
+  // ── Stage 2 (mid).
+  const midStage = new THREE.Group();
+  const stage2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r, r, vehLen * (s2Top - s1Top), 48),
+    p.body,
+  );
+  stage2.position.y = vehLen * (s1Top + (s2Top - s1Top) / 2);
+  midStage.add(stage2, engineCluster('quad', 4, r, vehLen * 0.03, vehLen * s1Top, frame, eng));
+  root.add(midStage);
+
+  // ── Stage 3: drops at the third staging, under Briz-M.
+  const lastCoreStage = new THREE.Group();
+  const stage3 = new THREE.Mesh(
+    new THREE.CylinderGeometry(r, r, vehLen * (s3Top - s2Top), 48),
+    p.body,
+  );
+  stage3.position.y = vehLen * (s2Top + (s3Top - s2Top) / 2);
+  lastCoreStage.add(
+    stage3,
+    engineCluster('single', 1, r, vehLen * 0.025, vehLen * s2Top, frame, eng),
+  );
+  root.add(lastCoreStage);
+
+  // ── Briz-M: the core with its toroidal drop tank (APT) around it, inside the fairing.
+  const upperStage = new THREE.Group();
+  const brizBase = s3Top + 0.004;
+  const brizLen = 2.61 / H;
+  const briz = new THREE.Mesh(
+    new THREE.CylinderGeometry(m(1.25), m(1.25), vehLen * brizLen, 32),
+    white,
+  );
+  briz.position.y = vehLen * (brizBase + brizLen / 2);
+  const apt = new THREE.Mesh(new THREE.TorusGeometry(m(1.55), m(0.45), 16, 40), white);
+  apt.rotation.x = Math.PI / 2;
+  apt.position.y = vehLen * (brizBase + brizLen * 0.4);
+  const brizBell = detailBell(m(0.4), vehLen * 0.015, frame, eng);
+  brizBell.position.y = vehLen * brizBase;
+  upperStage.add(briz, apt, brizBell);
+  root.add(upperStage);
+
+  // ── 4.35 m fairing: barrel and ogive nose, from the top of stage 3.
+  const fairingBaseY = vehLen * s3Top;
+  const fR = m(2.175);
+  const fH = vehLen - fairingBaseY;
+  const ogive: THREE.Vector2[] = [new THREE.Vector2(fR, 0), new THREE.Vector2(fR, fH * 0.55)];
+  for (let i = 1; i <= 10; i++) {
+    const t = i / 10;
+    ogive.push(
+      new THREE.Vector2(
+        Math.max(fR * Math.cos((t * Math.PI) / 2) ** 0.72, fR * 0.03),
+        fH * (0.55 + 0.45 * t),
+      ),
+    );
+  }
+  const mkFairing = (thetaStart: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(ogive, 32, thetaStart, Math.PI), white);
+  const fairingL = mkFairing(Math.PI / 2);
+  const fairingR = mkFairing(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core1,
+    upperStage,
+    upperPlumeAnchor: stage2,
+    finalPlumeAnchor: stage3,
+    injectionPlumeAnchor: briz,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: briz.position.y,
+    fairingBaseY,
+    payloadMountY: vehLen * (brizBase + brizLen + 0.005),
+    midStage,
+    lastCoreStage,
+  };
+}
+
 const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => LauncherModel> = {
   'falcon-9': buildFalcon9,
   starship: buildStarship,
@@ -4135,6 +4274,7 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   'athena-ii': buildAthenaII,
   'delta-iv-heavy': buildDeltaIVHeavy,
   'new-glenn': buildNewGlenn,
+  'proton-m-briz-m': buildProtonMBriz,
 };
 
 /** Launcher ids with a dedicated model (the rest draw the generic body). */
@@ -4218,6 +4358,7 @@ function closeAxisGaps(model: LauncherModel, vehLen: number, launcherId?: string
   const owners: THREE.Object3D[] = [
     model.fairingGroup,
     model.upperStage,
+    ...(model.lastCoreStage ? [model.lastCoreStage] : []),
     ...(model.midStage ? [model.midStage] : []),
     model.booster,
   ];

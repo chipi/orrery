@@ -314,6 +314,18 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Fregat', 'S5.92', 1, 1, 'single'),
     ],
   },
+  'proton-m-briz-m': {
+    name: 'Proton-M / Briz-M',
+    agency: 'Roscosmos',
+    confidence: 'high',
+    sources: ['https://www.ilslaunch.com/wp-content/uploads/pdf/PMPG%20Section%20A.pdf'],
+    stages: [
+      S('Stage 1', 'RD-276', 6, 1, 'ring-6'),
+      S('Stage 2', 'RD-0210 ×3 + RD-0211', 4, 1, 'quad'),
+      S('Stage 3', 'RD-0213 + RD-0214 vernier', 1, 1, 'single', { vernierNozzles: 4 }),
+      S('Briz-M', 'S5.98M', 1, 1, 'single'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

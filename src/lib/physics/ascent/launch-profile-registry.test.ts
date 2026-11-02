@@ -87,6 +87,9 @@ describe('matchFlagship — every flagship id reachable from free text (#6)', ()
     expect(
       resolveLauncher([{ id: 'r-7-vostok', role: 'launcher' }], 'Sputnik 8K71PS (R-7)')!.id,
     ).toBe('sputnik-8k71ps');
+    expect(resolveLauncher([{ id: 'proton-m', role: 'launcher' }], 'Proton-M / Briz-M')!.id).toBe(
+      'proton-m-briz-m',
+    );
     // Without a variant in the string the fleet ref still decides.
     expect(resolveLauncher([{ id: 'soyuz-fg', role: 'launcher' }], 'Soyuz-FG')!.id).toBe('soyuz');
   });

@@ -52,6 +52,7 @@
     'athena-ii': 28.2,
     'delta-iv-heavy': 71,
     'new-glenn': 98,
+    'proton-m-briz-m': 58.2,
   };
 
   let canvas: HTMLCanvasElement;

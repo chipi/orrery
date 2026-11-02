@@ -646,12 +646,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Plume slots: 0 booster, 1 upper, 2 the last stage when the model has its own anchor for
   // it (a three-stage stack whose upper anchor drops with the mid stage).
   const FINAL_SLOT = model.finalPlumeAnchor ? 2 : 1;
+  // Slot 3: a fourth serial stage that completes the orbit and makes the departure burn
+  // (Proton-M's Briz-M); otherwise the injection fires from FINAL_SLOT.
+  const INJECTION_SLOT = model.injectionPlumeAnchor ? 3 : FINAL_SLOT;
   const plumeAnchorFor = (slot: number): THREE.Object3D =>
-    slot >= 2
-      ? (model.finalPlumeAnchor ?? model.upperPlumeAnchor)
-      : slot === 1
-        ? model.upperPlumeAnchor
-        : model.boosterPlumeAnchor;
+    slot >= 3 && model.injectionPlumeAnchor
+      ? model.injectionPlumeAnchor
+      : slot >= 2
+        ? (model.finalPlumeAnchor ?? model.upperPlumeAnchor)
+        : slot === 1
+          ? model.upperPlumeAnchor
+          : model.boosterPlumeAnchor;
   // A plume anchor's nozzle exit (local y the flame starts at) and radius. A stage cylinder:
   // its base, with the bells hanging ~vehLen × 0.04 below it. Any other anchor (the Shuttle's
   // SSME cluster group) is measured — its own bells are inside its bounds. Measured in the
@@ -694,7 +699,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   };
   const refBellR = Math.max(stageNozzleLayout(0).bellR, rBody * 0.18);
   const nozzleCount = Math.max(
-    ...Array.from({ length: FINAL_SLOT + 1 }, (_, i) => stageNozzleLayout(i).offsets.length),
+    ...Array.from({ length: INJECTION_SLOT + 1 }, (_, i) => stageNozzleLayout(i).offsets.length),
   );
   const plume = new THREE.Group();
   const nozzlePlumes: THREE.Group[] = [];
@@ -880,6 +885,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // of leaving it floating.
   const coreStagingTimes = stagingTimes.slice(strapOnGroup ? (airLitN > 0 ? 2 : 1) : 0);
   const midStageSepT = coreStagingTimes[1] ?? secoT;
+  // A fourth serial part (Proton-M's third stage under Briz-M) drops at the third core staging.
+  const lastCoreStageSepT = coreStagingTimes[2] ?? secoT;
   const BOOSTER_SEP_S = 5;
   // Fairing clamshell drifts slowly (item 4) so the halves linger in frame while
   // the payload is revealed — a held beat, not a snap-away.
@@ -971,6 +978,14 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       midStageGroup.position.y = -mp * vehLen * 3;
       midStageGroup.rotation.set(mp * 2.4, 0, mp * 1.2);
       midStageGroup.scale.setScalar(1 - 0.18 * mp);
+    }
+    // A fourth serial part (Proton-M's third stage under Briz-M) drops the same way.
+    if (model.lastCoreStage && lastCoreStageSepT != null) {
+      const sp = sepProgress(s.t, lastCoreStageSepT, BOOSTER_SEP_S);
+      model.lastCoreStage.visible = sp < 1;
+      model.lastCoreStage.position.y = -sp * vehLen * 3;
+      model.lastCoreStage.rotation.set(sp * 2.4, 0, sp * 1.2);
+      model.lastCoreStage.scale.setScalar(1 - 0.18 * sp);
     }
 
     // Strap-on solids: at burnout they fall back + tumble away from the still-
@@ -1109,7 +1124,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     if (kickPlume.visible) kickPlume.scale.set(0.7, 0.7 * (1 + 0.09 * Math.sin(frame * 0.7)), 0.7);
     plume.visible = burning || injecting;
     if (burning) {
-      const stageForPlume = Math.min(s.stageIndex, FINAL_SLOT);
+      const stageForPlume = Math.min(s.stageIndex, INJECTION_SLOT);
       const firing = plumeAnchorFor(stageForPlume);
       if (plume.parent !== firing) {
         plume.parent?.remove(plume);
@@ -1128,14 +1143,14 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     } else if (injecting) {
       // Post-SECO injection: the kick/upper stage re-lights — a long, thin
       // vacuum plume from the last stage's bell (the payload is still attached).
-      const firing = plumeAnchorFor(FINAL_SLOT);
+      const firing = plumeAnchorFor(INJECTION_SLOT);
       if (plume.parent !== firing) {
         plume.parent?.remove(plume);
         firing.add(plume);
       }
-      if (plumeStage !== FINAL_SLOT) {
-        layoutPlumes(FINAL_SLOT);
-        plumeStage = FINAL_SLOT;
+      if (plumeStage !== INJECTION_SLOT) {
+        layoutPlumes(INJECTION_SLOT);
+        plumeStage = INJECTION_SLOT;
       }
       const flick = 1 + 0.09 * Math.sin(frame * 0.7);
       plume.scale.set(0.85, flick * 1.9, 0.85);

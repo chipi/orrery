@@ -113,6 +113,7 @@ export const FLAGSHIP_IDS = new Set<string>([
   'new-glenn',
   'sputnik-8k71ps',
   'soyuz-fg-fregat',
+  'proton-m-briz-m',
 ]);
 
 interface FleetRef {
@@ -182,6 +183,7 @@ const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
 const VEHICLE_VARIANTS: [needles: string[], id: string][] = [
   [['fregat'], 'soyuz-fg-fregat'],
   [['8k71ps'], 'sputnik-8k71ps'],
+  [['briz-m', 'briz m'], 'proton-m-briz-m'],
 ];
 
 /** Match a free-text vehicle string ("Atlas V 411") to a flagship id, if any. */

@@ -8,10 +8,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
-## [0.9.3] — in progress
+## [0.9.3] — 2026-11-02
 
-Work in progress on branch `tech-debt/0.9.3`: the rest of the tech debt and further checks on
-translation quality. The date replaces "in progress" when the release is cut.
+A links and credits release: every 404 the site caused or answered is fixed or redirected,
+every dead outbound link is replaced or removed (0 dead of 5,947), no third-party tracking tags
+ride on outbound links, and image credits that named Commons files which never existed now
+credit the real source. New checks keep it that way: in-app links in all 14 locales, the
+outbound link report, and the prod 404 report.
 
 ### Fixed
 

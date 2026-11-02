@@ -212,6 +212,13 @@
   import { dataLoadFailed } from '$lib/data/core';
   import { hasTrajectory } from '$lib/data/interstellar';
 
+  const FLEET_ROLE_LABEL: Record<string, () => string> = {
+    launcher: m.fly_opening_role_launcher,
+    spacecraft: m.fly_opening_role_spacecraft,
+    payload: m.fly_opening_role_payload,
+    'launch-site': m.fly_opening_role_launch_site,
+  };
+
   const DEFAULT_SCENARIO_ID = 'orrery-1';
   // Whitelist of synthesised teaching scenarios (live in
   // static/data/scenarios/). Used to gate the getScenario() probe
@@ -3701,7 +3708,9 @@
                       />
                     {/if}
                     <div class="opening-fleet-meta">
-                      <div class="opening-fleet-role">{asset.role.replace('-', ' ')}</div>
+                      <div class="opening-fleet-role">
+                        {FLEET_ROLE_LABEL[asset.role]?.() ?? asset.role.replace('-', ' ')}
+                      </div>
                       <div class="opening-fleet-name">{asset.name}</div>
                       {#if (asset.role === 'spacecraft' || asset.role === 'launcher') && asset.description}
                         <div class="opening-fleet-bio">{asset.description}</div>
@@ -4360,9 +4369,9 @@
     section="transfer-ellipse"
     available={availableLayers}
     historicalFoundations={[
-      { tab: 'history', section: 'keplers-laws-1609', label: "Kepler's three laws, 1609" },
-      { tab: 'history', section: 'newton-principia-1687', label: 'Newton · Principia, 1687' },
-      { tab: 'transfers', section: 'lambert-problem', label: 'Lambert · arc problem, 1761' },
+      { tab: 'history', section: 'keplers-laws-1609', label: m.fly_foundation_kepler() },
+      { tab: 'history', section: 'newton-principia-1687', label: m.fly_foundation_newton() },
+      { tab: 'transfers', section: 'lambert-problem', label: m.fly_foundation_lambert() },
     ]}
   />
 {/if}

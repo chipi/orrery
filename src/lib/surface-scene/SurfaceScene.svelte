@@ -755,8 +755,13 @@
   // current state at a glance. Function form (not a derived) so the
   // LayerChipRow consumer can call it each render — the reactivity
   // is automatic via the $state reads inside.
+  const HOTSPOT_MODE_LABEL: Record<HotspotMode, () => string> = {
+    auto: m.hotspots_mode_auto,
+    low: m.hotspots_mode_low,
+    high: m.hotspots_mode_high,
+  };
   const surfaceChipLabel = (): string =>
-    surfaceOff ? 'SURFACE · OFF' : `SURFACE · ${hotspotsParam.value.toUpperCase()}`;
+    `${m.earth_orbit_ruler_surface()} · ${surfaceOff ? m.hotspots_mode_off() : HOTSPOT_MODE_LABEL[hotspotsParam.value]()}`;
 
   // Capture the DebugPanel context at init — getContext MUST NOT run in
   // the deferred setup / lifecycle teardown below (#466). On unmount the
@@ -4678,10 +4683,15 @@
       <MobileDrawerGroup
         tabs={[
           // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene].
-          { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
-          { id: 'layers', label: 'Layers', icon: '▤', content: mobileLayersContent },
-          { id: 'nations', label: 'Nations', icon: '⚑', content: mobileNationsContent },
-          { id: 'scan', label: 'Scan', icon: '◈', content: mobileScanContent },
+          { id: 'ruler', label: m.drawer_tab_ruler(), icon: '◎', content: mobileRulerContent },
+          { id: 'layers', label: m.drawer_tab_layers(), icon: '▤', content: mobileLayersContent },
+          {
+            id: 'nations',
+            label: m.drawer_tab_nations(),
+            icon: '⚑',
+            content: mobileNationsContent,
+          },
+          { id: 'scan', label: m.drawer_tab_scan(), icon: '◈', content: mobileScanContent },
         ]}
         onOpen={(id) => (mobileDrawerOpen = id !== null)}
       />

@@ -442,12 +442,12 @@
     tabs={[
       // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene];
       // empty slots (no Overlays in solar-system) are simply omitted.
-      { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
-      { id: 'missions', label: 'Missions', icon: '➤', content: mobileIconicContent },
-      { id: 'controls', label: 'Controls', icon: '▤', content: mobileControlsContent },
+      { id: 'ruler', label: m.drawer_tab_ruler(), icon: '◎', content: mobileRulerContent },
+      { id: 'missions', label: m.drawer_tab_missions(), icon: '➤', content: mobileIconicContent },
+      { id: 'controls', label: m.drawer_tab_controls(), icon: '▤', content: mobileControlsContent },
       // Scan appears only when a focused planet has a tactical readout (#49).
       ...(focusedOnPlanet && focusedStats
-        ? [{ id: 'scan', label: 'Scan', icon: '◈', content: mobileScanContent }]
+        ? [{ id: 'scan', label: m.drawer_tab_scan(), icon: '◈', content: mobileScanContent }]
         : []),
     ]}
     onOpen={(id) => {

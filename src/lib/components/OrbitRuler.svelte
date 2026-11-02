@@ -27,6 +27,9 @@
 <script lang="ts">
   import type { OrbitRegime } from '$types/orbit-regime';
   import * as m from '$lib/paraglide/messages';
+  import { page } from '$app/state';
+  import { formatNumber } from '$lib/format';
+  import { localeFromPage } from '$lib/locale';
 
   interface Props {
     regimes: OrbitRegime[];
@@ -87,23 +90,29 @@
       : [...regimes].sort((a, b) => midDistance(b) - midDistance(a)),
   );
 
+  // zh/ja/ko write large numbers in 万/만 and hi in लाख, as the site's own text does
+  // ("150万公里", "97 लाख किमी"), not in digit groups.
+  const MYRIAD_LOCALES = new Set(['zh-CN', 'ja', 'ko', 'hi']);
+  function num(x: number, decimals = 0): string {
+    const loc = localeFromPage(page);
+    if (x >= 100_000 && MYRIAD_LOCALES.has(loc)) {
+      return new Intl.NumberFormat(loc, {
+        notation: 'compact',
+        maximumSignificantDigits: 3,
+      }).format(x);
+    }
+    return formatNumber(x, loc, decimals);
+  }
   function fmtKm(alt: number | [number, number]): string {
     if (typeof alt === 'number') {
-      return alt >= 1000 ? `${(alt / 1000).toFixed(0)},000 km` : `${alt} km`;
+      return m.mp_flight_unit_km({ value: num(alt >= 1000 ? Math.round(alt / 1000) * 1000 : alt) });
     }
-    const [lo, hi] = alt;
-    const fmt = (x: number) => (x >= 1000 ? `${(x / 1000).toFixed(0)}k` : `${x}`);
-    return `${fmt(lo)}-${fmt(hi)} km`;
+    return m.mp_flight_unit_km({ value: `${num(alt[0])}–${num(alt[1])}` });
   }
   function fmtAU(d: number | [number, number]): string {
-    const fmt = (x: number) => {
-      if (x < 10) return x.toFixed(1);
-      if (x < 1000) return x.toFixed(0);
-      if (x < 10000) return `${(x / 1000).toFixed(1)}k`;
-      return `${(x / 1000).toFixed(0)}k`;
-    };
+    const fmt = (x: number) => num(x, x < 10 ? 1 : 0);
     if (typeof d === 'number') return m.unit_au_value({ value: fmt(d) });
-    return m.unit_au_value({ value: `${fmt(d[0])}-${fmt(d[1])}` });
+    return m.unit_au_value({ value: `${fmt(d[0])}–${fmt(d[1])}` });
   }
   function fmtBand(r: OrbitRegime): string {
     if (r.altitude_km != null) return fmtKm(r.altitude_km);
@@ -140,7 +149,10 @@
       </li>
     {/each}
     {#if surfaceAnchor !== null}
-      {@const anchor = surfaceAnchor ?? { label: m.earth_orbit_ruler_surface(), value: '0 km' }}
+      {@const anchor = surfaceAnchor ?? {
+        label: m.earth_orbit_ruler_surface(),
+        value: m.mp_flight_unit_km({ value: '0' }),
+      }}
       <li class="surface-row" aria-hidden="true">
         <span class="surface-line"></span>
         <span class="surface-label">{anchor.label}</span>

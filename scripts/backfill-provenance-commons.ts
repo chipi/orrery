@@ -75,7 +75,8 @@ for (let i = 0; i < entries.length; i++) {
   }
   // a new row has no agency to fall back on: read it from the Commons author and title
   const agency =
-    next.agency || inferAgencyFromCuratedString(`${next.author} ${next.title}`, next.author);
+    next.agency ||
+    inferAgencyFromCuratedString(`${next.author ?? ''} ${next.title}`, next.author ?? '');
   entries[i] = { ...next, agency, id: e.id || next.id };
   rebuilt++;
   console.log(`  ${e.path} → ${next.title} · ${next.author} · ${next.license_short}`);

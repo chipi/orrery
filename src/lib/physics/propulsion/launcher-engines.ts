@@ -265,6 +265,20 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Stage 3', 'Orbus 21D (solid)', 1, 1, 'single'),
     ],
   },
+  'delta-iv-heavy': {
+    name: 'Delta IV Heavy',
+    agency: 'ULA',
+    confidence: 'high',
+    sources: [
+      'https://www.ulalaunch.com/docs/default-source/launch-booklets/divh_parkersolarprobe_mob.pdf',
+    ],
+    stages: [
+      S('Port + starboard CBC', 'RS-68A', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Centre CBC', 'RS-68A', 1, 1, 'single'),
+      S('DCSS 5 m', 'RL10B-2', 1, 1, 'single'),
+      S('Third stage', 'Star 48BV (solid)', 1, 1, 'single'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

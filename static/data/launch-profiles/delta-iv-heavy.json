@@ -1,0 +1,64 @@
+{
+  "id": "delta-iv-heavy",
+  "name": "Delta IV Heavy",
+  "source_tier": "flagship",
+  "payloadKg": 2950,
+  "liftoffThrustKN": 9368,
+  "fairingKg": 3000,
+  "fairingJettisonAltM": 170000,
+  "refAreaM2": 61,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.532, "lon": -80.5668, "name": "SLC-37B · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [12, 88], [50, 72], [120, 50], [220, 28], [340, 10], [450, 0]],
+  "boosters": {
+    "name": "Port and starboard CBC (RS-68A)",
+    "count": 2,
+    "wetKg": 226400,
+    "dryKg": 26760,
+    "thrustSlKN": 3137,
+    "thrustVacKN": 3560,
+    "ispSlS": 360,
+    "ispVacS": 412,
+    "chamberTempK": 3300
+  },
+  "stages": [
+    {
+      "name": "Centre CBC (RS-68A, throttled)",
+      "wetKg": 226400,
+      "dryKg": 26760,
+      "thrustSlKN": 2090,
+      "thrustVacKN": 2370,
+      "ispSlS": 360,
+      "ispVacS": 412,
+      "engines": 1,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "DCSS 5 m (RL10B-2)",
+      "wetKg": 30710,
+      "dryKg": 3490,
+      "thrustVacKN": 110,
+      "ispVacS": 462,
+      "engines": 1,
+      "chamberTempK": 3000
+    }
+  ],
+  "provenance": [
+    {
+      "l": "ULA — Parker Solar Probe mission booklet (233 ft with the 62.7 ft / 5 m fairing; RS-68A 702,000 lbf, 3 × = 9,368 kN at liftoff; strap-on CBCs off at 3:57.6, BECO 5:35.9, MECO-1 10:37.1; Star 48BV third stage)",
+      "u": "https://www.ulalaunch.com/docs/default-source/launch-booklets/divh_parkersolarprobe_mob.pdf"
+    },
+    {
+      "l": "Delta IV — Wikipedia (CBC 226,400 / 26,760 kg, 360/412 s; DCSS 5 m 30,710 / 3,490 kg, RL10B-2 110 kN, 462 s)",
+      "u": "https://en.wikipedia.org/wiki/Delta_IV"
+    },
+    {
+      "l": "RS-68 — Wikipedia (RS-68A 3,137 kN SL / 3,560 kN vac); the centre core's thrust is the average of its throttle-down, matching BECO 341 s after its ignition",
+      "u": "https://en.wikipedia.org/wiki/RS-68"
+    },
+    {
+      "l": "Payload = Parker Solar Probe (685 kg) + the Star 48BV stage (~2,140 kg, Star 48B-class, Gunter) + adapter, estimated; fairing mass estimated",
+      "u": "https://space.skyrocket.de/doc_eng/star-48.htm"
+    }
+  ]
+}

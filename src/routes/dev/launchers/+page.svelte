@@ -48,6 +48,7 @@
     'falcon-heavy': 70,
     'molniya-m': 43.4,
     'athena-ii': 28.2,
+    'delta-iv-heavy': 71,
   };
 
   let canvas: HTMLCanvasElement;

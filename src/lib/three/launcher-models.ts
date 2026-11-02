@@ -3770,6 +3770,110 @@ function buildAthenaII(vehLen: number): LauncherModel {
   };
 }
 
+/**
+ * Delta IV Heavy (Parker Solar Probe) — three 5.1 m Common Booster Cores side by side, each
+ * with one RS-68A: the port and starboard CBCs under nose caps, the centre CBC carrying the
+ * 5 m Delta Cryogenic Second Stage (RL10B-2) and the 19.1 m (62.7 ft) composite fairing.
+ * Proportions from the ULA Parker booklet and Wikipedia (71 m; CBC 40.8 m; DCSS 12 m);
+ * colours from memory (orange spray-on foam cores, white fairing), not verified.
+ */
+function buildDeltaIVHeavy(vehLen: number): LauncherModel {
+  const foam = new THREE.MeshStandardMaterial({
+    map: livery({
+      base: '#d9863c',
+      wordmark: { text: 'U L A', color: '#1c2333', size: 0.06, y: 0.55 },
+      flag: 'usa',
+    }),
+    roughness: 0.75,
+    metalness: 0.04,
+    roughnessMap: stringerRoughness(30),
+  });
+  const foamPlain = new THREE.MeshStandardMaterial({ color: 0xd9863c, roughness: 0.78 });
+  const white = heroWhite(0xf0f1f2);
+  const frame = heroMetal(0xbfc4ca, 0.3);
+  const eng = heroMetal(0x40454d, 0.5);
+  const r = vehLen * (2.55 / 71);
+  const cbcLen = vehLen * 0.575;
+  const base = vehLen * 0.015;
+  const root = new THREE.Group();
+
+  // ── Centre CBC.
+  const booster = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, cbcLen, 48), foam);
+  core.position.y = base + cbcLen / 2;
+  booster.add(core, ringFrames(r, base + vehLen * 0.03, base + cbcLen, 6, frame));
+  const coreBell = detailBell(r * 0.5, vehLen * 0.04, frame, eng);
+  coreBell.position.y = base;
+  booster.add(coreBell);
+  root.add(booster);
+
+  // ── Port and starboard CBCs with nose caps.
+  const strapOnGroup = new THREE.Group();
+  for (const sx of [-1, 1]) {
+    const g = new THREE.Group();
+    const b = new THREE.Mesh(new THREE.CylinderGeometry(r, r, cbcLen, 48), foamPlain);
+    b.position.y = base + cbcLen / 2;
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(r, vehLen * 0.06, 40), foamPlain);
+    nose.position.y = base + cbcLen + vehLen * 0.03;
+    const bellS = detailBell(r * 0.5, vehLen * 0.04, frame, eng);
+    bellS.position.y = base;
+    g.add(b, nose, bellS);
+    g.position.x = sx * r * 2.04;
+    strapOnGroup.add(g);
+  }
+  root.add(strapOnGroup);
+
+  // ── DCSS 5 m.
+  const s2Bottom = base + cbcLen + vehLen * 0.005;
+  const upperStage = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.13, 48), white);
+  s2.position.y = s2Bottom + vehLen * 0.065;
+  upperStage.add(s2);
+  const s2Bell = detailBell(r * 0.32, vehLen * 0.04, frame, eng);
+  s2Bell.position.y = s2Bottom;
+  upperStage.add(s2Bell);
+  root.add(upperStage);
+
+  // ── 5 m composite fairing (bisector): barrel and ogive nose.
+  const fairingBaseY = s2Bottom + vehLen * 0.13;
+  const fR = r * 0.98;
+  const fH = vehLen - fairingBaseY;
+  const ogive: THREE.Vector2[] = [new THREE.Vector2(fR, 0), new THREE.Vector2(fR, fH * 0.5)];
+  for (let i = 1; i <= 10; i++) {
+    const t = i / 10;
+    ogive.push(
+      new THREE.Vector2(
+        Math.max(fR * Math.cos((t * Math.PI) / 2) ** 0.72, fR * 0.03),
+        fH * (0.5 + 0.5 * t),
+      ),
+    );
+  }
+  const mkFairing = (thetaStart: number): THREE.Mesh =>
+    new THREE.Mesh(new THREE.LatheGeometry(ogive, 28, thetaStart, Math.PI), white);
+  const fairingL = mkFairing(Math.PI / 2);
+  const fairingR = mkFairing(-Math.PI / 2);
+  fairingL.position.y = fairingBaseY;
+  fairingR.position.y = fairingBaseY;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: s2.position.y,
+    fairingBaseY,
+    payloadMountY: fairingBaseY + vehLen * 0.02,
+    strapOns: strapOnGroup,
+  };
+}
+
 const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => LauncherModel> = {
   'falcon-9': buildFalcon9,
   starship: buildStarship,
@@ -3825,6 +3929,7 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
   'titan-ivb-centaur': (v) => buildTitan(v, 'ivb'),
   'falcon-heavy': buildFalconHeavy,
   'athena-ii': buildAthenaII,
+  'delta-iv-heavy': buildDeltaIVHeavy,
 };
 
 /** Launcher ids with a dedicated model (the rest draw the generic body). */

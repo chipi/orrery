@@ -101,8 +101,9 @@
     if (i > state.stageIndex) return 100;
     return Math.round((state.propRemainingKg / stageProps[i]) * 100);
   };
+  // Dark before an air-lit core lights and on a coast to apoapsis.
   const activeEngines = $derived(
-    state.stageIndex >= 0 ? (stages[state.stageIndex].engines ?? 1) : 0,
+    state.stageIndex >= 0 && state.coreLit !== false ? (stages[state.stageIndex].engines ?? 1) : 0,
   );
   const twrPct = $derived(Math.min(1, state.twr / 2.5) * 100);
 

@@ -72,6 +72,9 @@ export interface AscentSceneOptions {
   /** Strap-on booster count (Atlas V's variable AJ-60A count) — drawn on the
    *  generic body + jettisoned at strap-on burnout. 0 / omitted = none. */
   boosterCount?: number;
+  /** How many of the strap-ons are air-lit (LaunchBoosters.airLitCount): they light when the
+   *  ground-lit ones burn out and separate at their own burnout. */
+  boosterAirLitCount?: number;
   /** When the spacecraft leaves the upper stage, if not at SECO: on a flight with an
    *  injection burn it rides the stage through the burn and separates at its end, as on a
    *  real flight. The scene's clock (s.t) runs past the last physics state for this. */
@@ -488,6 +491,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const rBody = vehLen * 0.05; // plume scale reference
   const model = buildLauncherModel(opts.launcherId, vehLen, opts.boosterCount ?? 0);
   const strapOnGroup = model.strapOns;
+  // The strap-on bodies (before any flames are added to the group) and where they sit.
+  const strapOnBodies: THREE.Object3D[] = strapOnGroup ? [...strapOnGroup.children] : [];
+  const strapOnBase = strapOnBodies.map((b) => b.position.clone());
+  // Air-lit strap-ons, spread evenly round the ring (Delta II: every third GEM).
+  const airLitN = Math.min(
+    Math.max(0, opts.boosterAirLitCount ?? 0),
+    Math.max(0, strapOnBodies.length - 1),
+  );
+  const airStep = airLitN > 0 ? Math.max(1, Math.round(strapOnBodies.length / airLitN)) : 0;
+  const isAirLit = (i: number): boolean =>
+    airLitN > 0 && (i + 1) % airStep === 0 && (i + 1) / airStep <= airLitN;
   const midStageGroup = model.midStage;
   const booster = model.booster;
   const upperStage = model.upperStage;
@@ -815,6 +829,12 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Strap-on solids jettison at the FIRST 'staging' (their burnout, ~94 s for
   // Atlas V AJ-60As) — earlier than the core drop at MECO above.
   const strapOnSepT = metOf('staging');
+  const stagingTimes = (opts.events ?? [])
+    .filter((e) => e.type === 'staging')
+    .map((e) => e.t)
+    .sort((a, b) => a - b);
+  // With an air-lit group the strap-ons leave in two waves: the second staging event.
+  const airSepT = airLitN > 0 ? stagingTimes[1] : undefined;
   const fairingT = metOf('fairing_jettison');
   const secoT = metOf('seco');
   // The spacecraft leaves the stage at SECO, or after the injection burn when it rides it.
@@ -828,11 +848,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // [1] is the mid-stage. Falls back to SECO so a 2-stage vehicle mapped onto a
   // 3-part mesh (e.g. Saturn IB) drops its mid-part with the upper stage instead
   // of leaving it floating.
-  const coreStagingTimes = (opts.events ?? [])
-    .filter((e) => e.type === 'staging')
-    .map((e) => e.t)
-    .sort((a, b) => a - b)
-    .slice(strapOnGroup ? 1 : 0);
+  const coreStagingTimes = stagingTimes.slice(strapOnGroup ? (airLitN > 0 ? 2 : 1) : 0);
   const midStageSepT = coreStagingTimes[1] ?? secoT;
   const BOOSTER_SEP_S = 5;
   // Fairing clamshell drifts slowly (item 4) so the halves linger in frame while
@@ -929,7 +945,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
 
     // Strap-on solids: at burnout they fall back + tumble away from the still-
     // climbing core (earlier than the core drop above).
-    if (strapOnGroup) {
+    if (strapOnGroup && airLitN > 0) {
+      // Two groups leave at their own burnouts: each booster falls back and tumbles
+      // outward on its own.
+      strapOnBodies.forEach((body, i) => {
+        const sp = sepProgress(s.t, isAirLit(i) ? airSepT : strapOnSepT, BOOSTER_SEP_S);
+        const b = strapOnBase[i];
+        body.visible = sp < 1;
+        body.position.set(b.x * (1 + sp * 0.8), b.y - sp * vehLen * 2.6, b.z * (1 + sp * 0.8));
+        body.rotation.z = -Math.sign(b.x || 1) * sp * 1.2;
+      });
+    } else if (strapOnGroup) {
       const sp = sepProgress(s.t, strapOnSepT, BOOSTER_SEP_S);
       strapOnGroup.visible = sp < 1;
       strapOnGroup.position.y = -sp * vehLen * 2.6;
@@ -1034,7 +1060,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
 
     // Plume: only while a stage burns; re-parent to the firing stage,
     // flicker the length, taper in vacuum.
-    const burning = s.stageIndex >= 0;
+    // The active stage's engines are firing: not before an air-lit core lights (LVM3's S200s
+    // lift off alone) and not on a coast to apoapsis.
+    const burning = s.stageIndex >= 0 && s.coreLit !== false;
     // The stage re-lights for injection with the spacecraft still on it. A capsule that
     // separated at SECO (no ride-through) leaves a spent stage that must not re-light.
     const injecting = injectionBurning && !opts.kickStage && (ridesInjection || !isCapsulePayload);
@@ -1076,11 +1104,13 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       plume.position.y = anchorOf(firing).exitY - PLUME_HALF * flick * 1.9;
     }
     // Strap-on flames: only while the boosters are still lit.
-    const boostersLit = burning && s.boostersActive === true;
-    for (const p of strapOnPlumes) {
-      p.visible = boostersLit;
-      if (boostersLit) p.scale.set(0.85, 0.85 * (1 + 0.08 * Math.sin(frame * 0.9)), 0.85);
-    }
+    // Each group flames only while it burns: the ground-lit ones first, then the air-lit.
+    const boostersLit = s.stageIndex === 0 && s.boostersActive === true;
+    const airGroupLit = s.airLitBurning === true;
+    strapOnPlumes.forEach((p, i) => {
+      p.visible = boostersLit && (airLitN === 0 || isAirLit(i) === airGroupLit);
+      if (p.visible) p.scale.set(0.85, 0.85 * (1 + 0.08 * Math.sin(frame * 0.9)), 0.85);
+    });
 
     // Camera: pick the active shot, compose its target pose, then EASE the live
     // camera toward it (position + fov) while snapping the look-at fast — a

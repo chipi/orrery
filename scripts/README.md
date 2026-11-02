@@ -97,6 +97,7 @@ tables); keep it.
 | a dead outbound link: what could replace it (Wayback snapshot, wiki search hits) | `link-fix-candidates.mjs` → `.cache/link-fix-candidates.json` | by hand, after the outbound check |
 | replace reviewed dead links everywhere they are written (all locales, labels too) | `apply-link-fixes.mjs <map.json>` (probes every replacement first; maps under `link-fixes/`) | by hand |
 | where a shipped image really comes from (placeholder credit, invented title, no row): NASA Images + Commons search, 64-bit dHash per candidate, look at every match | `image-find-source.mjs --q "<subject>" [--cat "<category>"] --out <map.json> <image>…` (one candidate: `image-match.mjs`) | by hand |
+| the same for every placeholder credit in some surfaces at once (grouped by entity, crops follow their image when the re-crop matches, resumable) | `credit-placeholders-find.mjs --surface <a,b> --out <file.json>` | by hand; look at every match with d > 4 before applying |
 | credit rows to the real Commons file, once the match is known (creates a missing row) | `backfill-provenance-commons.ts <map.json>` | by hand |
 | credit rows to the real NASA Images item, once the match is known (creates a missing row) | `apply-provenance-nasa.mjs <map.json>` | by hand |
 

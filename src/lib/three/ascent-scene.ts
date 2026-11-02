@@ -949,10 +949,12 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       ? activeShotAt(schedule, s.t)
       : { name: 'ascent' as const, progress: 0.5 };
     activeShot = shot.name;
-    // Capsule world position — feeds the separation/orbit shots so the camera
+    // Spacecraft world position — feeds the separation/orbit shots so the camera
     // tracks the spacecraft (not the empty vehicle origin) once the spent stage
-    // recedes. Rotate the payload's body-axis offset by the live vehicle attitude.
-    const capsuleFocus = isCapsulePayload
+    // recedes. Any payload that has sprung free, not only capsules: Orion and the
+    // satellites drifted to a corner while the frame held the gap between them and
+    // the stage. Rotate the payload's body-axis offset by the live vehicle attitude.
+    const capsuleFocus = payload.visible
       ? {
           x: s.downrangeKm - payload.position.y * Math.sin(vehicle.rotation.z),
           y: s.altKm + payload.position.y * Math.cos(vehicle.rotation.z),

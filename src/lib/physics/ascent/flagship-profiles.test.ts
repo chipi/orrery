@@ -90,6 +90,8 @@ const ALL_FLAGSHIPS = [
   'athena-ii',
   'delta-iv-heavy',
   'new-glenn',
+  'sputnik-8k71ps',
+  'soyuz-fg-fregat',
 ];
 // All of them reach a genuine orbit (#416).
 const GENUINE_ORBIT = ALL_FLAGSHIPS;

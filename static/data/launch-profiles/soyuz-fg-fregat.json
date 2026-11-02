@@ -1,0 +1,63 @@
+{
+  "id": "soyuz-fg-fregat",
+  "name": "Soyuz-FG / Fregat",
+  "source_tier": "flagship",
+  "payloadKg": 7458,
+  "fairingKg": 1000,
+  "fairingJettisonAltM": 110000,
+  "refAreaM2": 30,
+  "cd": 0.3,
+  "launchSite": { "lat": 45.9961, "lon": 63.5642, "name": "Site 31/6 · Baikonur Cosmodrome" },
+  "pitchProgram": [[0, 90], [13, 88], [55, 66], [130, 42], [220, 22], [300, 8]],
+  "boosters": {
+    "name": "Blok B–D (RD-107A)",
+    "count": 4,
+    "wetKg": 43400,
+    "dryKg": 3800,
+    "thrustSlKN": 838.5,
+    "thrustVacKN": 1021.3,
+    "ispSlS": 263.3,
+    "ispVacS": 320.2,
+    "chamberTempK": 3200
+  },
+  "stages": [
+    {
+      "name": "Blok A core (RD-108A)",
+      "wetKg": 99500,
+      "dryKg": 6550,
+      "thrustSlKN": 792.4,
+      "thrustVacKN": 921.9,
+      "ispSlS": 257.7,
+      "ispVacS": 320.6,
+      "engines": 1,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "Blok I (RD-0110)",
+      "wetKg": 25300,
+      "dryKg": 2410,
+      "thrustVacKN": 297.9,
+      "ispVacS": 326,
+      "engines": 1,
+      "chamberTempK": 3100
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Soyuz-FG — Wikipedia (Blocks B–D, A and I: masses, thrust, Isp, burn times)",
+      "u": "https://en.wikipedia.org/wiki/Soyuz-FG"
+    },
+    {
+      "l": "Fregat — Wikipedia (6,235 kg fuelled; S5.92 19.85 kN, 333 s, up to 7 starts). Payload = Fregat + Mars Express (1,223 kg, ESA); Fregat makes the parking-orbit and departure burns",
+      "u": "https://en.wikipedia.org/wiki/Fregat"
+    },
+    {
+      "l": "ESA — Mars Express launch phase (1,223 kg; Fregat's second burn ~1 h 32 min after liftoff)",
+      "u": "https://sci.esa.int/web/mars-express/-/31035-launch-phase"
+    },
+    {
+      "l": "Mars Express — Wikipedia (Site 31/6, 2 June 2003). Fairing mass not found: estimated",
+      "u": "https://en.wikipedia.org/wiki/Mars_Express"
+    }
+  ]
+}

@@ -111,6 +111,8 @@ export const FLAGSHIP_IDS = new Set<string>([
   'athena-ii',
   'delta-iv-heavy',
   'new-glenn',
+  'sputnik-8k71ps',
+  'soyuz-fg-fregat',
 ]);
 
 interface FleetRef {
@@ -172,10 +174,23 @@ const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
   [['ariane 1', 'ariane-1'], 'ariane-1'],
 ];
 
+/**
+ * Variants named in the vehicle string that outrank the mission's family fleet ref: the
+ * fleet ref says "soyuz-fg" or "r-7-vostok", the vehicle string says which rocket flew
+ * (Mars Express on Soyuz-FG with Fregat, Sputnik 1 on the two-stage 8K71PS).
+ */
+const VEHICLE_VARIANTS: [needles: string[], id: string][] = [
+  [['fregat'], 'soyuz-fg-fregat'],
+  [['8k71ps'], 'sputnik-8k71ps'],
+];
+
 /** Match a free-text vehicle string ("Atlas V 411") to a flagship id, if any. */
-function matchFlagship(vehicle: string): string | null {
+function matchFlagship(
+  vehicle: string,
+  aliases: [string[], string][] = FLAGSHIP_ALIASES,
+): string | null {
   const v = vehicle.toLowerCase();
-  for (const [needles, id] of FLAGSHIP_ALIASES) {
+  for (const [needles, id] of aliases) {
     if (needles.some((n) => v.includes(n))) return id;
   }
   return null;
@@ -218,7 +233,9 @@ export function resolveLauncher(
   vehicle: string | undefined,
 ): { id: string; name: string } | null {
   const raw =
-    missionLauncherId(fleetRefs) ?? (vehicle ? (matchFlagship(vehicle) ?? slug(vehicle)) : null);
+    (vehicle ? matchFlagship(vehicle, VEHICLE_VARIANTS) : null) ??
+    missionLauncherId(fleetRefs) ??
+    (vehicle ? (matchFlagship(vehicle) ?? slug(vehicle)) : null);
   if (raw == null) return null;
   const id = LAUNCHER_ID_CANON[raw] ?? raw;
   return { id, name: vehicle ?? prettyName(id) };

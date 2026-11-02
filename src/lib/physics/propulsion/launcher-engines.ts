@@ -286,6 +286,34 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
     sources: ['https://en.wikipedia.org/wiki/New_Glenn'],
     stages: [S('GS1', 'BE-4', 7, 1, 'cross-5'), S('GS2', 'BE-3U', 2, 1, 'pair')],
   },
+  'sputnik-8k71ps': {
+    name: 'Sputnik (8K71PS)',
+    agency: 'Soviet Union',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Sputnik_(rocket)'],
+    stages: [
+      S('Strap-ons ×4 (Blok B–D)', 'RD-107', 4, 4, 'per-booster', {
+        boosterCount: 4,
+        vernierNozzles: 8,
+      }),
+      S('Core (Blok-A)', 'RD-108', 1, 4, 'quad', { vernierNozzles: 4 }),
+    ],
+  },
+  'soyuz-fg-fregat': {
+    name: 'Soyuz-FG / Fregat',
+    agency: 'Roscosmos',
+    confidence: 'high',
+    sources: ['https://en.wikipedia.org/wiki/Soyuz-FG', 'https://en.wikipedia.org/wiki/Fregat'],
+    stages: [
+      S('Strap-ons ×4 (Blok B–D)', 'RD-107A', 4, 4, 'per-booster', {
+        boosterCount: 4,
+        vernierNozzles: 8,
+      }),
+      S('Core (Blok-A)', 'RD-108A', 1, 4, 'quad', { vernierNozzles: 4 }),
+      S('Blok-I', 'RD-0110', 1, 4, 'quad', { vernierNozzles: 4 }),
+      S('Fregat', 'S5.92', 1, 1, 'single'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',

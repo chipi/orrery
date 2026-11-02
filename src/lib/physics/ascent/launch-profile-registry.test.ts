@@ -80,6 +80,17 @@ describe('matchFlagship — every flagship id reachable from free text (#6)', ()
     expect(resolveLauncher(undefined, 'Atlas LV-3B')!.id).toBe('atlas-lv-3b');
   });
 
+  it('a variant named in the vehicle string outranks the family fleet ref', () => {
+    expect(resolveLauncher([{ id: 'soyuz-fg', role: 'launcher' }], 'Soyuz-FG / Fregat')!.id).toBe(
+      'soyuz-fg-fregat',
+    );
+    expect(
+      resolveLauncher([{ id: 'r-7-vostok', role: 'launcher' }], 'Sputnik 8K71PS (R-7)')!.id,
+    ).toBe('sputnik-8k71ps');
+    // Without a variant in the string the fleet ref still decides.
+    expect(resolveLauncher([{ id: 'soyuz-fg', role: 'launcher' }], 'Soyuz-FG')!.id).toBe('soyuz');
+  });
+
   it('does not confuse Saturn V with Saturn IB', () => {
     expect(resolveLauncher(undefined, 'Saturn V')!.id).toBe('saturn-v');
     expect(resolveLauncher(undefined, 'Saturn IB')!.id).toBe('saturn-ib');

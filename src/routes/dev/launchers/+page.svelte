@@ -47,6 +47,8 @@
     'titan-ivb-centaur': 55.9,
     'falcon-heavy': 70,
     'molniya-m': 43.4,
+    'soyuz-fg-fregat': 46,
+    'sputnik-8k71ps': 29.2,
     'athena-ii': 28.2,
     'delta-iv-heavy': 71,
     'new-glenn': 98,

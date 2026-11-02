@@ -87,8 +87,23 @@ describe('ascentStatus', () => {
     expect(ascentStatus(-1, beats)).toBe('IGNITION SEQUENCE');
     expect(ascentStatus(5, beats)).toBe('LIFTOFF');
     expect(ascentStatus(30, beats)).toBe('ASCENT'); // past liftoff, before Max-Q
-    expect(ascentStatus(120, beats)).toBe('MAX-Q');
+    expect(ascentStatus(70, beats)).toBe('MAX-Q');
     expect(ascentStatus(305, beats)).toBe('SECO');
+  });
+
+  it('lets an event label go after its beat — no "FAIRING" minutes after the fairing fell', () => {
+    const ev: AscentBeat[] = [
+      { label: 'MAX-Q', t: 60 },
+      { label: 'STAGE SEP', t: 130 },
+      { label: 'FAIRING', t: 190 },
+      { label: 'SECO', t: 480 },
+    ];
+    expect(ascentStatus(120, ev)).toBe('ASCENT');
+    expect(ascentStatus(140, ev)).toBe('STAGE SEP');
+    expect(ascentStatus(195, ev)).toBe('FAIRING');
+    expect(ascentStatus(300, ev)).toBe('ASCENT');
+    // States hold: once in orbit / engines off it stays so.
+    expect(ascentStatus(900, ev)).toBe('SECO');
   });
 
   it('honours a custom ignition boundary', () => {

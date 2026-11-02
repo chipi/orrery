@@ -82,8 +82,17 @@ export function ascentStatus(t: number, beats: AscentBeat[], ignitionT = IGNITIO
   if (t < 0) return 'IGNITION SEQUENCE';
   if (t < 10) return 'LIFTOFF';
   const passed = beats.filter((b) => b.t <= t);
-  return passed.length ? passed[passed.length - 1].label : 'ASCENT';
+  const last = passed[passed.length - 1];
+  if (!last) return 'ASCENT';
+  // An event (Max-Q, a separation, the fairing) is a moment: show it for its beat, then the
+  // powered flight is ASCENT again. A state (MECO, SECO, ORBIT) stays true, so it holds.
+  return STATE_LABELS.has(last.label) || t - last.t <= EVENT_LABEL_HOLD_S ? last.label : 'ASCENT';
 }
+
+/** Seconds an event label stays up after its beat. */
+export const EVENT_LABEL_HOLD_S = 20;
+/** Beat labels that describe a lasting state rather than a moment. */
+const STATE_LABELS = new Set(['MECO', 'SECO', 'ORBIT']);
 
 /** Whole seconds remaining in the countdown, or null once t ≥ 0. */
 export function countdownSeconds(t: number): number | null {

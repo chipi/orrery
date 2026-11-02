@@ -34,6 +34,7 @@ import {
 } from '$lib/orbital/ascent-cameras';
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 import { buildCapsuleById } from '$lib/three/capsule-models';
+import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
 import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
 import { buildLauncherModel } from '$lib/three/launcher-models';
 import { clusterOffsets } from '$lib/three/launcher-detail';
@@ -164,11 +165,13 @@ export function buildGenericPayload(): THREE.Group {
  *  its adapter, the way it really rides under the fairing. One shape for every
  *  mission (operator decision 2026-07-29); the real deployed model appears +
  *  unfolds at separation. Normalised like buildPayload so it fits the fairing. */
-function buildStowedPayload(vehLen: number): THREE.Group {
+function buildStowedPayload(vehLen: number, maxRadius?: number): THREE.Group {
   const body = new THREE.MeshStandardMaterial({ color: 0xd7dde3, roughness: 0.5, metalness: 0.4 });
   const gold = new THREE.MeshStandardMaterial({ color: 0xb8912f, roughness: 0.45, metalness: 0.7 });
   const g = new THREE.Group();
-  const w = vehLen * 0.11;
+  // It rode inside the fairing, so it is never wider than the stage it sits on (the drum +
+  // its panels span ~1.24 w; an SLS ICPS is far narrower than vehLen × 0.11).
+  const w = Math.min(vehLen * 0.11, maxRadius ? (maxRadius * 2 * 0.95) / 1.24 : Infinity);
   // Compact drum body (the folded spacecraft) + tucked panels flat against it.
   const drum = new THREE.Mesh(new THREE.CylinderGeometry(w * 0.5, w * 0.5, w * 1.3, 20), body);
   drum.position.y = w * 0.75;
@@ -217,7 +220,14 @@ export function buildPayload(
   const probe = spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null;
   const capsuleId =
     !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId)?.capsuleId : undefined;
-  const model = probe ?? (capsuleId ? buildCapsuleById(capsuleId) : null) ?? buildGenericPayload();
+  // Artemis flights ride Orion (crew module + service module + wings): the cruise model, not
+  // the generic bus every SLS flight showed before.
+  const orion =
+    !probe && !capsuleId && spacecraftId && ORION_MISSIONS.test(spacecraftId)
+      ? buildLanderCruiseCraft('artemis4')
+      : null;
+  const model =
+    probe ?? (capsuleId ? buildCapsuleById(capsuleId) : null) ?? orion ?? buildGenericPayload();
   const box = new THREE.Box3().setFromObject(model);
   const size = new THREE.Vector3();
   box.getSize(size);
@@ -250,6 +260,9 @@ export function buildPayload(
   }
   return holder;
 }
+
+/** Missions whose payload is Orion. */
+const ORION_MISSIONS = /^artemis\d+$/;
 
 /** Capsules that ascended under a jettisonable nose fairing (not exposed). */
 export const FAIRED_CAPSULES = new Set(['vostok', 'voskhod', 'soyuz', 'shenzhou']);
@@ -477,7 +490,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   payload.position.y = payloadBaseY;
   payload.visible = false;
   vehicle.add(payload);
-  const stowedPayload = buildStowedPayload(vehLen);
+  const stowedPayload = buildStowedPayload(vehLen, upperStageRadius);
   stowedPayload.position.y = payloadBaseY;
   stowedPayload.visible = false;
   vehicle.add(stowedPayload);
@@ -523,8 +536,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Plume (R4): a LAYERED exhaust — hot blue-white throat, a yellow core, a
   // wide orange glow, a long diffuse trail, and Mach-diamond shock beads down
   // the axis. Built along +Y then rotated so it fires −Y; flickered per frame.
-  const plumeCone = (r: number, len: number, color: number, opacity: number): THREE.Mesh =>
-    new THREE.Mesh(
+  const plumeCone = (r: number, len: number, color: number, opacity: number): THREE.Mesh => {
+    const m = new THREE.Mesh(
       new THREE.ConeGeometry(r, len, 24, 1, true),
       new THREE.MeshBasicMaterial({
         color,
@@ -534,13 +547,23 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
         depthWrite: false,
       }),
     );
+    // After the launch-ground patch (renderOrder 2): the flame writes no depth, so a patch
+    // drawn later painted over it wherever the ground sat behind it on screen.
+    m.renderOrder = 3;
+    return m;
+  };
   // One exhaust per REAL engine nozzle (Falcon 9's 9-Merlin octaweb, Saturn V's
   // 5-F-1 quincunx, …) so multi-engine boosters light ALL bells, not just the
   // axis. Layout mirrors engineCluster's nozzle grid; re-laid-out on stage change
   // (the usually single-engine upper stage collapses to one central bell).
   const engSpec = opts.launcherId ? getLauncherEngines(opts.launcherId) : undefined;
+  // Strap-on rows ('per-booster') come first in a spec (Shuttle, R-7, Atlas V, SLS …) but
+  // are not a core stage: indexing the spec by core stage gave the core the boosters' row —
+  // one centred flame, SLS showing 1 of its 4 RS-25s. Core rows only here; strap-ons get
+  // their own flames below.
+  const coreRows = engSpec?.stages.filter((st) => st.arrangement !== 'per-booster');
   const stageNozzleLayout = (stageIdx: number): { offsets: [number, number][]; bellR: number } => {
-    const st = engSpec?.stages[stageIdx];
+    const st = coreRows?.[stageIdx];
     const offsets = clusterOffsets(st?.arrangement ?? 'single', st?.mainNozzles ?? 1);
     const anchor = (
       stageIdx >= 1 ? model.upperPlumeAnchor : model.boosterPlumeAnchor
@@ -577,6 +600,36 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   layoutPlumes(0);
   plume.rotation.z = Math.PI; // point down (−Y)
   booster.add(plume);
+  // Where a stage's nozzles end, in its anchor mesh's frame: the plume starts there. A fixed
+  // offset from the anchor's centre only fit cores of one height (SLS's long core hid it).
+  const PLUME_HALF = vehLen * 0.13; // the outer cone's half-length at scale 1
+  const anchorBottom = (a: THREE.Object3D): number => {
+    const h = ((a as THREE.Mesh).geometry as THREE.CylinderGeometry | undefined)?.parameters
+      ?.height;
+    return h ? -h / 2 : -vehLen * 0.14;
+  };
+
+  // One flame per strap-on booster at its base, lit while the boosters burn.
+  const strapOnPlumes: THREE.Group[] = [];
+  if (strapOnGroup && engSpec?.stages.some((st) => st.arrangement === 'per-booster')) {
+    model.root.updateMatrixWorld(true);
+    // A copy: the flames are added to this same group.
+    for (const sb of [...strapOnGroup.children]) {
+      const box = new THREE.Box3().setFromObject(sb);
+      const base = strapOnGroup.worldToLocal(
+        new THREE.Vector3((box.min.x + box.max.x) / 2, box.min.y, (box.min.z + box.max.z) / 2),
+      );
+      const p = new THREE.Group();
+      p.add(plumeCone(refBellR * 1.1, vehLen * 0.26, 0xff8a3c, 0.15));
+      p.add(plumeCone(refBellR * 0.7, vehLen * 0.2, 0xffcf80, 0.38));
+      p.rotation.z = Math.PI;
+      p.position.set(base.x, base.y - PLUME_HALF * 0.85, base.z);
+      p.scale.setScalar(0.85);
+      p.visible = false;
+      strapOnGroup.add(p);
+      strapOnPlumes.push(p);
+    }
+  }
 
   // ── Science-Lens force vectors (thrust / weight / drag / velocity),
   //    drawn in world space at the vehicle. Lengths are stylised so the
@@ -863,8 +916,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       // Upper-stage plume is longer + thinner in vacuum; wider in thick air.
       const vac = s.stageIndex >= 1 ? 1.6 : 1;
       plume.scale.set(1, flick * vac, 1);
-      // S1 plume emanates from the octaweb; S2 from its vacuum bell.
-      plume.position.y = -(s.stageIndex >= 1 ? vehLen * 0.14 : vehLen * 0.3);
+      // Start just below the firing stage's nozzles (bells hang ~vehLen × 0.04 under it).
+      plume.position.y = anchorBottom(firing) - vehLen * 0.04 - PLUME_HALF * flick * vac;
     } else if (injecting) {
       // Post-SECO injection: the kick/upper stage re-lights — a long, thin
       // vacuum plume from the upper bell (the payload is still attached).
@@ -879,7 +932,13 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       }
       const flick = 1 + 0.09 * Math.sin(frame * 0.7);
       plume.scale.set(0.85, flick * 1.9, 0.85);
-      plume.position.y = -(vehLen * 0.14);
+      plume.position.y = anchorBottom(firing) - vehLen * 0.04 - PLUME_HALF * flick * 1.9;
+    }
+    // Strap-on flames: only while the boosters are still lit.
+    const boostersLit = burning && s.boostersActive === true;
+    for (const p of strapOnPlumes) {
+      p.visible = boostersLit;
+      if (boostersLit) p.scale.set(0.85, 0.85 * (1 + 0.08 * Math.sin(frame * 0.9)), 0.85);
     }
 
     // Camera: pick the active shot, compose its target pose, then EASE the live

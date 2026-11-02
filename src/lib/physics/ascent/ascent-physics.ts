@@ -891,6 +891,16 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       }
     }
 
+    // Orbit already reached on an EARLIER stage (SLS: the core stage alone inserts Orion +
+    // ICPS): the final stage has no insertion left to fly. Hold it dark — its propellant is
+    // for the later injection burn (the scene's injection beat) — instead of letting it burn
+    // to depletion onto an escape path, which nothing else would ever cut off.
+    if (orbitSeen && secoT < 0 && stageIndex === profile.stages.length - 1) {
+      pushEvent('seco', `${profile.stages[stageIndex].name} — held for injection`);
+      stageIndex = -1;
+      secoT = t;
+    }
+
     // Soft-insertion floor (#416): a very-low-TWR final stage whose PEG solve
     // can't close the orbit from the energy state its boost phase delivered
     // still can't circularise. Rather than burn on into a re-entry / crater, cut

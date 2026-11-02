@@ -133,8 +133,15 @@
     [m.hud_stages(), String(profile.stages.length)],
     [
       m.hud_liftoff_thrust(),
+      // Core plus every strap-on: it read the core alone (SLS 7,440 kN of ~34,000; Shuttle
+      // 5,250 of ~30,000).
       m.unit_kn_value({
-        value: (profile.stages[0].thrustSlKN ?? profile.stages[0].thrustVacKN).toLocaleString(),
+        value: (
+          (profile.stages[0].thrustSlKN ?? profile.stages[0].thrustVacKN) +
+          (profile.boosters
+            ? profile.boosters.count * (profile.boosters.thrustSlKN ?? profile.boosters.thrustVacKN)
+            : 0)
+        ).toLocaleString(),
       }),
     ],
     [m.hud_ideal_dv(), m.mp_flight_unit_kms({ value: summary.idealDvKms.toFixed(2) })],
@@ -144,6 +151,32 @@
   const beats = $derived(buildAscentBeats(summary));
 
   let container: HTMLDivElement;
+
+  // The telemetry console fits the window instead of scrolling: scale it down to the room
+  // there is (its box is capped at 100vh − 210 px). Below TEL_MIN_SCALE it would be too
+  // small to read, so it scrolls instead.
+  const TEL_MIN_SCALE = 0.6;
+  let telBox = $state<HTMLDivElement>();
+  let telInner = $state<HTMLDivElement>();
+  let telScale = $state(1);
+  $effect(() => {
+    const box = telBox;
+    const inner = telInner;
+    if (!box || !inner) return;
+    const fit = () => {
+      const room = window.innerHeight - 210;
+      const need = inner.scrollHeight;
+      telScale = need > 0 ? Math.max(TEL_MIN_SCALE, Math.min(1, room / need)) : 1;
+    };
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(inner);
+    window.addEventListener('resize', fit);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', fit);
+    };
+  });
   let done = $state(false);
   let showLosses = $state(false); // ascent-losses lens layer → AscentLosses panel
 
@@ -355,8 +388,10 @@
 
   <!-- Left telemetry console -->
   {#if !warping}
-    <div class="telemetry">
-      <LaunchTelemetry {profile} {summary} {t} state={liveState} />
+    <div class="telemetry" bind:this={telBox} class:tel-scroll={telScale <= TEL_MIN_SCALE}>
+      <div class="tel-fit" bind:this={telInner} style:transform="scale({telScale})">
+        <LaunchTelemetry {profile} {summary} {t} state={liveState} />
+      </div>
     </div>
   {/if}
 
@@ -563,10 +598,17 @@
     top: 116px;
     left: 22px;
     max-height: calc(100vh - 210px);
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+  }
+  .tel-fit {
+    transform-origin: top left;
+  }
+  /* Only when even the smallest readable scale doesn't fit (very short windows). */
+  .telemetry.tel-scroll {
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(127, 223, 255, 0.35) transparent;
-    transition: opacity 0.3s ease;
   }
   .launch.hud-hidden .telemetry {
     opacity: 0;

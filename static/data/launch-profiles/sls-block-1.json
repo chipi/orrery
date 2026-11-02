@@ -1,0 +1,84 @@
+{
+  "id": "sls-block-1",
+  "name": "SLS Block 1",
+  "source_tier": "flagship",
+  "payloadKg": 26500,
+  "fairingKg": 8900,
+  "fairingJettisonAltM": 125000,
+  "refAreaM2": 75,
+  "cd": 0.45,
+  "launchSite": {
+    "lat": 28.627,
+    "lon": -80.621,
+    "name": "LC-39B · Kennedy Space Center"
+  },
+  "pitchProgram": [
+    [
+      0,
+      90
+    ],
+    [
+      15,
+      89
+    ],
+    [
+      60,
+      85
+    ],
+    [
+      140,
+      74
+    ],
+    [
+      300,
+      60
+    ],
+    [
+      480,
+      48
+    ]
+  ],
+  "boosters": {
+    "name": "Five-segment SRB",
+    "count": 2,
+    "wetKg": 726000,
+    "dryKg": 98000,
+    "thrustSlKN": 13500,
+    "thrustVacKN": 15000,
+    "ispSlS": 242,
+    "ispVacS": 269,
+    "chamberTempK": 3500
+  },
+  "stages": [
+    {
+      "name": "Core stage (4× RS-25)",
+      "wetKg": 1083000,
+      "dryKg": 99000,
+      "thrustSlKN": 7440,
+      "thrustVacKN": 9100,
+      "ispSlS": 366,
+      "ispVacS": 452,
+      "engines": 4,
+      "chamberTempK": 3600
+    },
+    {
+      "name": "ICPS (RL10B-2)",
+      "wetKg": 32000,
+      "dryKg": 3800,
+      "thrustVacKN": 110,
+      "ispVacS": 462,
+      "engines": 1,
+      "chamberTempK": 3300
+    }
+  ],
+  "provenance": [
+    {
+      "l": "NASA — Space Launch System Reference Guide (2022)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2022/03/sls-reference-guide-2022-v2-508-0.pdf"
+    },
+    {
+      "l": "NASA — SLS fact sheet",
+      "u": "https://www.nasa.gov/sites/default/files/atoms/files/sls_fact_sheet.pdf"
+    }
+  ]
+}

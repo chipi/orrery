@@ -139,6 +139,9 @@ export const FLAGSHIP_IDS = new Set<string>([
   'soyuz',
   'voskhod-11a57',
   'mercury-redstone',
+  // Every Artemis flight references it; without a JSON they flew the generic
+  // 1-engine 2-stage stand-in (4,100 kN at liftoff vs SLS's ~39 MN). 2026-11.
+  'sls-block-1',
 ]);
 
 interface FleetRef {
@@ -174,6 +177,7 @@ const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
   [['ariane 5', 'ariane-5'], 'ariane-5'],
   [['h-iia', 'h-2a', 'h2a', 'h iia'], 'h-iia'],
   [['space shuttle', 'shuttle'], 'space-shuttle-stack'],
+  [['sls block 1', 'space launch system', 'sls-block-1'], 'sls-block-1'],
   // ── Model-only ids (bespoke mesh, generic physics) — international fleet. ──
   [['long march 2f', 'cz-2f'], 'long-march-2f'],
   [['long march 5', 'cz-5'], 'long-march-5'],

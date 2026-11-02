@@ -776,6 +776,109 @@ function buildSideBooster(
 }
 
 /**
+ * SLS Block 1 (sls-block-1) — the Artemis stack: the orange foam core stage with 4 RS-25s,
+ * two white five-segment boosters flanking it (jettison at booster burnout), the tapered
+ * launch-vehicle stage adapter up to the narrower ICPS, and on top Orion under its
+ * spacecraft-adapter panels + the launch-abort-system tower — the jettisoned "fairing".
+ * Heights follow the real ~98 m stack: boosters ~54 m, core ~65 m, ICPS ~14 m.
+ */
+function buildSLS(vehLen: number): LauncherModel {
+  const foam = new THREE.MeshStandardMaterial({
+    color: 0xc96a26,
+    roughness: 0.95,
+    metalness: 0.02,
+    roughnessMap: stringerRoughness(60), // sprayed-on foam texture
+  });
+  const white = heroWhite(0xeef0f3);
+  const metal = heroMetal(0xc4c9cf, 0.32);
+  const eng = heroMetal(0x33373e, 0.5);
+  const dark = heroDark(0x1c1f24);
+  const r = vehLen * 0.043; // core: 8.4 m of a 98 m stack
+  const root = new THREE.Group();
+
+  // Core stage (booster group — drops at core staging).
+  const booster = new THREE.Group();
+  const coreLen = vehLen * 0.66;
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(r, r, coreLen, 48), foam);
+  core.position.y = vehLen * 0.02 + coreLen / 2;
+  booster.add(core);
+  booster.add(ringFrames(r, vehLen * 0.3, vehLen * 0.33, 2, dark)); // intertank band
+  booster.add(raceway(r, vehLen * 0.06, vehLen * 0.66, dark));
+  booster.add(engineCluster('quad', 4, r, vehLen * 0.05, vehLen * 0.02, metal, eng));
+  // Launch-vehicle stage adapter: core diameter tapering to the ICPS.
+  const lvsa = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.62, r, vehLen * 0.04, 48), white);
+  lvsa.position.y = vehLen * 0.68 + vehLen * 0.02;
+  booster.add(lvsa);
+  root.add(booster);
+
+  // Five-segment boosters — their own group so the scene drops them at burnout.
+  const strapOns = new THREE.Group();
+  const bR = r * 0.44;
+  const bLen = vehLen * 0.5;
+  for (const sx of [-1, 1]) {
+    const gr = new THREE.Group();
+    const b = new THREE.Mesh(new THREE.CylinderGeometry(bR, bR, bLen, 28), white);
+    b.position.y = vehLen * 0.02 + bLen / 2;
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(bR, vehLen * 0.06, 28), white);
+    nose.position.y = vehLen * 0.02 + bLen + vehLen * 0.03;
+    gr.add(b, nose, ringFrames(bR, vehLen * 0.08, vehLen * 0.48, 4, dark));
+    gr.add(detailBell(bR * 0.7, vehLen * 0.05, metal, eng));
+    gr.position.set(sx * (r + bR * 1.05), 0, 0);
+    strapOns.add(gr);
+  }
+  root.add(strapOns);
+
+  // ICPS — the narrow upper stage (5 m) with its single RL10B-2.
+  const upperStage = new THREE.Group();
+  const usR = r * 0.6;
+  const s2 = new THREE.Mesh(new THREE.CylinderGeometry(usR, usR, vehLen * 0.12, 40), white);
+  s2.position.y = vehLen * 0.76;
+  upperStage.add(s2, bell(usR * 0.45, vehLen * 0.04, eng, vehLen * 0.69));
+  root.add(upperStage);
+
+  // Orion's spacecraft-adapter panels (the clamshell halves) + the LAS tower on top.
+  const fairingBaseY = vehLen * 0.82;
+  const fR = usR * 1.02;
+  const mkPanel = (theta: number): THREE.Mesh => {
+    const panel = new THREE.Mesh(
+      new THREE.CylinderGeometry(fR * 0.82, fR, vehLen * 0.07, 40, 1, false, theta, Math.PI),
+      white,
+    );
+    panel.position.y = fairingBaseY + vehLen * 0.035;
+    return panel;
+  };
+  const fairingL = mkPanel(Math.PI / 2);
+  const fairingR = mkPanel(-Math.PI / 2);
+  const ogive = new THREE.Mesh(new THREE.ConeGeometry(fR * 0.82, vehLen * 0.06, 40), white);
+  ogive.position.y = fairingBaseY + vehLen * 0.1;
+  const tower = new THREE.Mesh(
+    new THREE.CylinderGeometry(usR * 0.12, usR * 0.16, vehLen * 0.08, 16),
+    white,
+  );
+  tower.position.y = fairingBaseY + vehLen * 0.17;
+  const towerTip = new THREE.Mesh(new THREE.ConeGeometry(usR * 0.16, vehLen * 0.025, 16), dark);
+  towerTip.position.y = fairingBaseY + vehLen * 0.22;
+  const fairingGroup = new THREE.Group();
+  fairingGroup.add(fairingL, fairingR, ogive, tower, towerTip);
+  root.add(fairingGroup);
+
+  return {
+    root,
+    booster,
+    boosterPlumeAnchor: core,
+    upperStage,
+    upperPlumeAnchor: s2,
+    fairingL,
+    fairingR,
+    fairingGroup,
+    upperStageBaseY: vehLen * 0.76,
+    fairingBaseY,
+    payloadMountY: vehLen * 0.82,
+    strapOns,
+  };
+}
+
+/**
  * Space Shuttle (space-shuttle-stack) — the unmistakable side-mount stack:
  * a rust-orange External Tank spine, two white Solid Rocket Boosters flanking
  * it, and the white delta-wing Orbiter riding its side with three SSME bells.
@@ -2863,6 +2966,7 @@ const BUILDERS: Record<string, (vehLen: number, boosterCount?: number) => Launch
       flag: 'jpn',
     }),
   'space-shuttle-stack': buildSpaceShuttle,
+  'sls-block-1': buildSLS,
   'long-march-2f': buildLongMarch2F,
   'long-march-3b': buildLongMarch3B,
   'long-march-5': buildLongMarch5,

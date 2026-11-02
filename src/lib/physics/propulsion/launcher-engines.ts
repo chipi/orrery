@@ -246,6 +246,20 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       }),
     ],
   },
+  'sls-block-1': {
+    name: 'SLS Block 1',
+    agency: 'NASA',
+    confidence: 'high',
+    sources: [
+      'https://www.nasa.gov/wp-content/uploads/2022/03/sls-reference-guide-2022-v2-508-0.pdf',
+      'https://en.wikipedia.org/wiki/Space_Launch_System',
+    ],
+    stages: [
+      S('SRB ×2', 'Five-segment RSRMV', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Core stage', 'RS-25', 4, 1, 'quad'),
+      S('ICPS', 'RL10B-2', 1, 1, 'single'),
+    ],
+  },
   'long-march-2f': {
     name: 'Long March 2F',
     agency: 'CNSA',

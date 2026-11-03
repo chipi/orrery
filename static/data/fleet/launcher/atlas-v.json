@@ -44,5 +44,9 @@
     "otv-6",
     "solar-orbiter",
     "lucy"
-  ]
+  ],
+  "specs": {
+    "height_m": 58.2,
+    "diameter_m": 3.81
+  }
 }

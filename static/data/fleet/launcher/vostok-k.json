@@ -31,5 +31,9 @@
     "vostok-5",
     "vostok-6"
   ],
-  "linked_sites": []
+  "linked_sites": [],
+  "specs": {
+    "height_m": 30.84,
+    "diameter_m": 2.99
+  }
 }

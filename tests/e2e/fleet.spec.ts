@@ -162,6 +162,27 @@ test.describe('/fleet', () => {
     expect(errors).toEqual([]);
   });
 
+  test('launcher line-up draws the launchers at true scale; a label opens the panel', async ({
+    page,
+  }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/fleet?category=launcher&view=lineup');
+    const lineup = page.locator('section.lineup');
+    await expect(lineup.locator('canvas')).toBeVisible({ timeout: 15_000 });
+    const labels = lineup.locator('.label');
+    await expect(labels.first()).toBeVisible({ timeout: 15_000 });
+    expect(await labels.count()).toBeGreaterThanOrEqual(25);
+    // Tallest first, with its sourced height.
+    await expect(labels.first()).toContainText('Starship');
+    await expect(labels.first()).toContainText('123.1 m');
+    // The capsule line-up waits for its showcase models.
+    await expect(page.getByRole('button', { name: /Capsules/ })).toHaveCount(0);
+    await lineup.locator('.label', { hasText: 'Saturn V' }).click();
+    await expect(page.locator('aside.panel')).toBeVisible({ timeout: 10_000 });
+    expect(page.url()).toContain('id=saturn-v');
+    expect(errors).toEqual([]);
+  });
+
   test('?id= deep-link opens the detail panel pre-selected', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/fleet?id=saturn-v');

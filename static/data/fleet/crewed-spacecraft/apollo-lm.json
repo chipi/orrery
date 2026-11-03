@@ -106,5 +106,9 @@
       "mission_id": "apollo17",
       "flight_designation": "Apollo 17 (1972-12-07) · LM Challenger · last Apollo Moonwalk; descent stage at Taurus-Littrow"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 7.04,
+    "diameter_m": 9.4
+  }
 }

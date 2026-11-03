@@ -27,5 +27,9 @@
       "u": "https://humans-in-space.jaxa.jp/en/htv-x/",
       "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 8,
+    "diameter_m": 4.4
+  }
 }

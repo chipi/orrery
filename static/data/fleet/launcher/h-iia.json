@@ -33,5 +33,9 @@
     "hayabusa2",
     "hope-probe",
     "slim"
-  ]
+  ],
+  "specs": {
+    "height_m": 53,
+    "diameter_m": 4
+  }
 }

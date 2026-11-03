@@ -61,5 +61,10 @@
     "aurora-7",
     "sigma-7",
     "faith-7"
-  ]
+  ],
+  "specs": {
+    "length_m": 3.3,
+    "diameter_m": 1.8,
+    "capsule_height_m": 3.3
+  }
 }

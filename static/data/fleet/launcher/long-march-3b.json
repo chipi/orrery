@@ -36,5 +36,9 @@
   "linked_missions": [
     "change3",
     "change4"
-  ]
+  ],
+  "specs": {
+    "height_m": 56.3,
+    "diameter_m": 3.35
+  }
 }

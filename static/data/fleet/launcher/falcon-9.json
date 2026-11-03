@@ -26,6 +26,11 @@
       "l": "Falcon User's Guide (SpaceX)",
       "u": "https://www.spacex.com/assets/media/falcon-users-guide-2025-05-09.pdf",
       "t": "deep"
+    },
+    {
+      "l": "NASA Commercial Crew Program Press Kit, SpaceX Falcon 9 technical overview — dimensions",
+      "u": "https://www.nasa.gov/commercial-crew-program-press-kit/",
+      "t": "deep"
     }
   ],
   "linked_missions": [
@@ -35,5 +40,9 @@
     "dart",
     "polaris-dawn",
     "hera"
-  ]
+  ],
+  "specs": {
+    "height_m": 70,
+    "diameter_m": 3.7
+  }
 }

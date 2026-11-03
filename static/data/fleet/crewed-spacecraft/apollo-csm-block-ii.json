@@ -26,6 +26,11 @@
       "l": "Chariots for Apollo (NASA SP-4205)",
       "u": "https://history.nasa.gov/SP-4205/cover.html",
       "t": "deep"
+    },
+    {
+      "l": "NASA NSSDCA Apollo 11 CSM: 'total length ... 11.0 meters, max dia 3.9 m'; 'CM ... max dia 3.9 m ... height of 3.65 m' — dimensions",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059A",
+      "t": "deep"
     }
   ],
   "linked_missions": [
@@ -116,5 +121,10 @@
       "mission_id": "apollo17",
       "flight_designation": "Apollo 17 (1972-12-07) · CSM America (CSM-114) · last crewed lunar mission · CM at Space Center Houston, TX"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 11,
+    "diameter_m": 3.9,
+    "capsule_height_m": 3.65
+  }
 }

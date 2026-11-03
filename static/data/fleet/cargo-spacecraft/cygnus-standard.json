@@ -27,5 +27,9 @@
       "u": "https://www.nasa.gov/commercial-resupply-services-overview/",
       "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 5.14,
+    "diameter_m": 3.07
+  }
 }

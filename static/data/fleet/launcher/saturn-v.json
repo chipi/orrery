@@ -26,6 +26,11 @@
       "l": "Apollo by the Numbers (NASA NTRS, Orloff 2000)",
       "u": "https://history.nasa.gov/SP-4029/SP-4029.htm",
       "t": "deep"
+    },
+    {
+      "l": "NASA 'What Was the Saturn V?' - 111 meters (363 feet) tall — dimensions",
+      "u": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-was-the-saturn-v-grades-5-8/",
+      "t": "deep"
     }
   ],
   "linked_missions": [
@@ -39,5 +44,9 @@
     "apollo15",
     "apollo17",
     "apollo16"
-  ]
+  ],
+  "specs": {
+    "height_m": 111,
+    "diameter_m": 10
+  }
 }

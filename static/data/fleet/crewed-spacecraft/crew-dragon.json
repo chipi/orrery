@@ -26,6 +26,11 @@
       "l": "Crew-1 Press Kit (NASA)",
       "u": "https://www.nasa.gov/commercial-crew-program-press-kit/",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia Dragon 2 infobox — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Dragon_2",
+      "t": "deep"
     }
   ],
   "flights": [
@@ -125,5 +130,10 @@
   "linked_missions": [
     "inspiration4",
     "polaris-dawn"
-  ]
+  ],
+  "specs": {
+    "length_m": 8.1,
+    "diameter_m": 4,
+    "capsule_height_m": 4.5
+  }
 }

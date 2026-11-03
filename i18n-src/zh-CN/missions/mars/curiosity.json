@@ -51,5 +51,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 上面级（Atlas V 541）"
+  "vehicle_stage": "Centaur 上面级（Atlas V 541）",
+  "flight_events": [
+    {
+      "met": 76,
+      "label": "TCM-2",
+      "description": "巡航中途的精修点火。此时 Curiosity 已脱离地球的引力阱，处于稳定的日心轨道上。"
+    },
+    {
+      "met": 211,
+      "label": "TCM-4——EDL 前最后一次点火",
+      "description": "进入火星大气前最后一次较大的轨道微调。EDL 要求在大气界面处的瞄准精度优于1公里；TCM-4 保证了这一点。"
+    }
+  ]
 }

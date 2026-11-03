@@ -38,5 +38,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "deuxième étage du H3-24L"
+  "vehicle_stage": "deuxième étage du H3-24L",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "Premier allumage de nettoyage après l'injection vers Mars."
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 250,
+      "label": "TCM-3",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 320,
+      "label": "TCM-4 — dernière avant l'insertion en orbite martienne",
+      "description": "Visée d'approche finale."
+    }
+  ]
 }

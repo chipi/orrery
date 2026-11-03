@@ -51,5 +51,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "разгонный блок Centaur (Atlas V 541)"
+  "vehicle_stage": "разгонный блок Centaur (Atlas V 541)",
+  "flight_events": [
+    {
+      "met": 40.6,
+      "label": "TCM-2",
+      "description": "Уточнение в середине перелёта."
+    },
+    {
+      "met": 60,
+      "label": "TCM-3",
+      "description": "Уточнение в середине перелёта."
+    },
+    {
+      "met": 140,
+      "label": "TCM-4",
+      "description": "Поправка на этапе сближения."
+    },
+    {
+      "met": 180,
+      "label": "TCM-5 — последнее включение перед EDL",
+      "description": "Уточняет наведение на сближении к эллипсу EDL в кратере Езеро."
+    }
+  ]
 }

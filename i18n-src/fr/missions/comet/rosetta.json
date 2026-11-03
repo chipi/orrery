@@ -43,5 +43,17 @@
       "note": "Insertion en orbite autour de la comète 67P/Tchourioumov-Guérassimenko. Philae atterrit le 2014-11-12.",
       "type": "nominal"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 1349,
+      "label": "Terre n° 2 — assistance gravitationnelle",
+      "description": "Approche minimale de 5 295 km le 2007-11-13. Brièvement pris pour un astéroïde géocroiseur (désigné 2007 VN84) avant que les observateurs ne comprennent qu'il s'agissait de Rosetta en route vers l'extérieur."
+    },
+    {
+      "met": 2058,
+      "label": "Terre n° 3 — assistance gravitationnelle",
+      "description": "Dernier survol de la Terre le 2009-11-13, approche minimale de 2 481 km. Le gain d'énergie emmène Rosetta jusqu'à l'aphélie nécessaire pour rejoindre l'orbite de 67P, après quoi la sonde est entrée en hibernation dans l'espace lointain."
+    }
   ]
 }

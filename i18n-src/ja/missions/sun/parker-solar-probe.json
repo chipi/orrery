@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "固体第3段 Star 48BV（Delta IV Heavy：コア + ブースター2基）"
+  "vehicle_stage": "固体第3段 Star 48BV（Delta IV Heavy：コア + ブースター2基）",
+  "flight_events": [
+    {
+      "met": 985,
+      "label": "金星スイングバイ4回目",
+      "description": "2021-02-20。4回目の金星スイングバイで近日点をさらに下げ、9.86 R☉ の目標に近づける。"
+    }
+  ]
 }

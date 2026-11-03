@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "المرحلة العليا Blok-D"
+  "vehicle_stage": "المرحلة العليا Blok-D",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "الحقن نحو القمر",
+      "description": "إشعال المرحلة العليا Blok D يضع Luna 24 على مسار نحو القمر."
+    },
+    {
+      "met": 1.5,
+      "label": "تصحيح منتصف المسار رقم 1",
+      "description": "أول تحسين للمسار."
+    },
+    {
+      "met": 4,
+      "label": "تصحيح منتصف المسار رقم 2",
+      "description": "تحسين في مرحلة الاقتراب."
+    }
+  ]
 }

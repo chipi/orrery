@@ -7,13 +7,80 @@
   "first": "Primer retorno de muestras lunares en 44 años (desde Luna 24, 1976)",
   "description": "Chang'e 5 fue el primer retorno de muestras de la Luna desde el Luna 24 de la Unión Soviética en 1976 — un hueco de 44 años. La arquitectura: orbitador + aterrizador + vehículo de ascenso + cápsula de retorno de muestras, todo en un solo lanzamiento. El aterrizador tomó tierra en Mons Rümker, perforó y recogió 1,731 kg de regolito, despegó, realizó el encuentro y el acoplamiento con el orbitador (el primer encuentro lunar robótico) y la cápsula regresó a la Tierra. Las muestras son de una región de solo 2000 millones de años — mucho más jóvenes que cualquier muestra Apollo o Luna, lo que reescribe los modelos de vulcanismo lunar.",
   "events": [
-    { "met": 0, "label": "LANZAMIENTO", "note": "Long March 5 desde Wenchang.", "type": "nominal" },
-    { "met": 5, "label": "ILO", "note": "Inserción en órbita lunar.", "type": "nominal" },
-    { "met": 8, "label": "ATERRIZAJE", "note": "El módulo de aterrizaje desciende a Mons Rümker (Oceanus Procellarum) 2020-12-01.", "type": "nominal" },
-    { "met": 8.5, "label": "MUESTREO", "note": "1,731 kg recogidos mediante cuchara y taladro.", "type": "info" },
-    { "met": 10, "label": "ASCENSO", "note": "El vehículo de ascenso despega de la superficie lunar.", "type": "nominal" },
-    { "met": 13, "label": "ENCUENTRO", "note": "Primer encuentro lunar robótico; contenedor de muestras transferido al orbitador.", "type": "info" },
-    { "met": 23, "label": "RETORNO A LA TIERRA", "note": "La cápsula de muestras aterriza en Mongolia Interior 2020-12-16.", "type": "info" }
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Long March 5 desde Wenchang.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "ILO",
+      "note": "Inserción en órbita lunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 8,
+      "label": "ATERRIZAJE",
+      "note": "El módulo de aterrizaje desciende a Mons Rümker (Oceanus Procellarum) 2020-12-01.",
+      "type": "nominal"
+    },
+    {
+      "met": 8.5,
+      "label": "MUESTREO",
+      "note": "1,731 kg recogidos mediante cuchara y taladro.",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "ASCENSO",
+      "note": "El vehículo de ascenso despega de la superficie lunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 13,
+      "label": "ENCUENTRO",
+      "note": "Primer encuentro lunar robótico; contenedor de muestras transferido al orbitador.",
+      "type": "info"
+    },
+    {
+      "met": 23,
+      "label": "RETORNO A LA TIERRA",
+      "note": "La cápsula de muestras aterriza en Mongolia Interior 2020-12-16.",
+      "type": "info"
+    }
   ],
-  "vehicle_stage": "etapa superior YZ-1 del Long March 5"
+  "vehicle_stage": "etapa superior YZ-1 del Long March 5",
+  "flight_events": [
+    {
+      "met": 1.04,
+      "label": "MCC-1",
+      "description": "Primera limpieza tras la inyección translunar."
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-2",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-3",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 3,
+      "label": "MCC-4",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5 — última antes de la inserción en órbita lunar",
+      "description": "Puntería final de aproximación."
+    },
+    {
+      "met": 19,
+      "label": "Inyección transterrestre",
+      "description": "2020-12-12. El orbitador salió de la órbita lunar en una trayectoria de regreso."
+    }
+  ]
 }

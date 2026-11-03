@@ -99,7 +99,8 @@
       ]
     },
     "launch": {
-      "vehicle_stage": "Delta II 7925-8 third stage"
+      "vehicle_stage": "Delta II 7925-8 third stage",
+      "departure": "stage-then-kick"
     }
   }
 }

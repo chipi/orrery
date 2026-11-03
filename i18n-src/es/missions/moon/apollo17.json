@@ -51,5 +51,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (tercera etapa)"
+  "vehicle_stage": "Saturn V S-IVB (tercera etapa)",
+  "flight_events": [
+    {
+      "met": 1.27,
+      "label": "MCC-2",
+      "description": "Primera corrección de trayectoria."
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-3",
+      "description": "Ajuste de la fase de aproximación antes de la inserción en órbita lunar."
+    },
+    {
+      "met": 10.9,
+      "label": "Inyección transterrestre",
+      "description": "1972-12-16. El encendido del SPS devuelve al Apollo 17 a casa tras 75 horas en órbita lunar y tres días en la superficie."
+    }
+  ]
 }

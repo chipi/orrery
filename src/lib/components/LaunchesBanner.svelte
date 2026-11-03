@@ -9,9 +9,19 @@
   import { onMount } from 'svelte';
   import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
-  import { loadUpcoming, formatCountdown, type LaunchEntry } from '$lib/launches/manifest.js';
+  import {
+    loadUpcoming,
+    formatCountdown,
+    feedText,
+    type LaunchEntry,
+  } from '$lib/launches/manifest.js';
   import { deriveLaunchFeedState } from '$lib/live-feeds';
   import { agencyLogo, agencyFullName } from '$lib/agencies';
+  import { nativeCompound } from '$lib/name-origins.js';
+  import { getLocale } from '$lib/paraglide/runtime';
+
+  // Origin-language rule, as in LaunchRow: native form in the origin locale, English elsewhere.
+  const native = (name: string): string => nativeCompound(getLocale(), name) ?? name;
 
   let entries: LaunchEntry[] = $state([]);
   let allEntries: LaunchEntry[] = $state([]);
@@ -70,12 +80,12 @@
               />
             {/if}
           </div>
-          <h3 class="card-title">{e.rocket_config_name}</h3>
-          <p class="mission">{e.mission_name ?? e.name}</p>
+          <h3 class="card-title">{native(e.rocket_config_name)}</h3>
+          <p class="mission">{feedText(native(e.mission_name ?? e.name))}</p>
           {#if e.editorial_note}
             <p class="editorial-note">{e.editorial_note}</p>
           {/if}
-          <p class="meta">{e.agency_name}{e.pad_name ? ` · ${e.pad_name}` : ''}</p>
+          <p class="meta">{e.agency_name}{e.pad_name ? ` · ${feedText(e.pad_name)}` : ''}</p>
         </a>
       {/each}
     </div>

@@ -917,7 +917,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
     margin: 0;
   }
 

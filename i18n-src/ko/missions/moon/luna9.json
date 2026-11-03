@@ -32,5 +32,12 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Molniya-M Block-L 상단"
+  "vehicle_stage": "Molniya-M Block-L 상단",
+  "flight_events": [
+    {
+      "met": 1.5,
+      "label": "중간 궤도 수정",
+      "description": "순항 중간의 궤도 미세 조정."
+    }
+  ]
 }

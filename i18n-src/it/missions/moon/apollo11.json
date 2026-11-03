@@ -22,7 +22,7 @@
     },
     {
       "met": 3.13,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Inserimento nell'orbita lunare.",
       "type": "nominal"
     },
@@ -51,5 +51,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (terzo stadio)"
+  "vehicle_stage": "Saturn V S-IVB (terzo stadio)",
+  "flight_events": [
+    {
+      "met": 1.4,
+      "label": "MCC-2 — correzione di traiettoria",
+      "description": "Ritocco della traiettoria a metà crociera. Il piano di missione prevedeva 4 correzioni; servì solo la MCC-2, perché l'immissione translunare fu così precisa che le altre tre furono annullate."
+    },
+    {
+      "met": 5.64,
+      "label": "Immissione transterrestre",
+      "description": "1969-07-22. Accensione del motore SPS per lasciare l'orbita lunare. Mise l'Apollo 11 su una traiettoria di ritorno libero verso la Terra."
+    }
+  ]
 }

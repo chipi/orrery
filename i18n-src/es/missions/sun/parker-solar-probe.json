@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "tercera etapa sólida Star 48BV (núcleo del Delta IV Heavy + 2 propulsores laterales)"
+  "vehicle_stage": "tercera etapa sólida Star 48BV (núcleo del Delta IV Heavy + 2 propulsores laterales)",
+  "flight_events": [
+    {
+      "met": 985,
+      "label": "Asistencia gravitatoria de Venus n.º 4",
+      "description": "2021-02-20. La cuarta asistencia de Venus reduce aún más el perihelio hacia el objetivo de 9,86 R☉."
+    }
+  ]
 }

@@ -1,0 +1,66 @@
+{
+  "id": "lvm3",
+  "name": "LVM3",
+  "source_tier": "flagship",
+  "payloadKg": 3895,
+  "liftoffThrustKN": 10300,
+  "loftBoost": true,
+  "fairingKg": 3500,
+  "fairingJettisonAltM": 114800,
+  "refAreaM2": 20,
+  "cd": 0.3,
+  "launchSite": { "lat": 13.7199, "lon": 80.2305, "name": "Second Launch Pad · Sriharikota" },
+  "pitchProgram": [[0, 90], [10, 89], [40, 78], [100, 56], [180, 34], [300, 14], [440, 0]],
+  "boosters": {
+    "name": "S200",
+    "count": 2,
+    "wetKg": 235500,
+    "dryKg": 31000,
+    "thrustSlKN": 3900,
+    "thrustVacKN": 4250,
+    "ispSlS": 240,
+    "ispVacS": 274.5,
+    "chamberTempK": 3300
+  },
+  "stages": [
+    {
+      "name": "L110 (2× Vikas)",
+      "ignitionS": 108.1,
+      "wetKg": 125000,
+      "dryKg": 9200,
+      "thrustSlKN": 1550,
+      "thrustVacKN": 1692,
+      "ispSlS": 268,
+      "ispVacS": 293,
+      "engines": 2,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "C25 (CE-20)",
+      "wetKg": 33000,
+      "dryKg": 4400,
+      "thrustVacKN": 186.4,
+      "ispVacS": 442,
+      "engines": 1,
+      "chamberTempK": 3500
+    }
+  ],
+  "provenance": [
+    {
+      "l": "ISRO — LVM3-M4 / Chandrayaan-3 brochure (nominal sequence: S200s alone at liftoff, L110 lit at 108.1 s, S200 separation 127 s, fairing 195 s at 114.8 km, C25 307.96–954.42 s; 642 t; propellant loads; 3,895 kg)",
+      "u": "https://new1.isro.gov.in/media_isro/pdf/Missions/LVM3/LVM3M4_Chandrayaan3_brochure.pdf"
+    },
+    {
+      "l": "LVM3 — Wikipedia (S200 dry ~31 t, 5,150 kN peak each, Isp 274.5 s; L110 gross ~125 t, 1,692 kN; C25 gross ~33 t; CE-20 186.36 kN, 442 s)",
+      "u": "https://en.wikipedia.org/wiki/LVM3"
+    },
+    {
+      "l": "Chandrayaan-3 — Wikipedia (left in 170 × 36,500 km; the Propulsion Module raised the orbit and did the lunar transfer)",
+      "u": "https://en.wikipedia.org/wiki/Chandrayaan-3"
+    },
+    {
+      "l": "S200 thrust is the burn average matching the 128 s burn (peak 5,150 kN is the HUD's liftoff figure); fairing mass derived from the 642 t liftoff mass",
+      "u": "https://en.wikipedia.org/wiki/S200_(rocket_motor)"
+    }
+  ]
+}

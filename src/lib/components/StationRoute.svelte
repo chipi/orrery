@@ -1652,10 +1652,10 @@
     {#if viewMode !== 'list'}
       <MobileDrawerGroup
         tabs={[
-          { id: 'list', label: 'List', icon: '▤', action: toggleViewMode },
+          { id: 'list', label: m.drawer_tab_list(), icon: '▤', action: toggleViewMode },
           {
             id: 'assembly',
-            label: 'Assembly',
+            label: m.drawer_tab_assembly(),
             icon: '◫',
             action: () => {
               assemblyOpen = !assemblyOpen;
@@ -1668,7 +1668,12 @@
             },
             active: assemblyOpen,
           },
-          { id: 'modules', label: 'Modules', icon: '⚑', content: mobileModulesContent },
+          {
+            id: 'modules',
+            label: m.drawer_tab_modules(),
+            icon: '⚑',
+            content: mobileModulesContent,
+          },
         ]}
         --mcd-bottom="calc(8px + env(safe-area-inset-bottom, 0px))"
       />

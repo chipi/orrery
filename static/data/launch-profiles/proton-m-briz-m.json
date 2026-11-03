@@ -1,0 +1,67 @@
+{
+  "id": "proton-m-briz-m",
+  "name": "Proton-M / Briz-M",
+  "source_tier": "flagship",
+  "payloadKg": 4332,
+  "loftBoost": true,
+  "fairingKg": 2000,
+  "fairingJettisonAltM": 120000,
+  "refAreaM2": 43,
+  "cd": 0.3,
+  "launchSite": { "lat": 46.0336, "lon": 63.0289, "name": "Site 200/39 · Baikonur Cosmodrome" },
+  "pitchProgram": [[0, 90], [12, 88], [50, 70], [120, 48], [220, 28], [340, 12], [480, 0]],
+  "stages": [
+    {
+      "name": "Stage 1 (6× RD-276)",
+      "wetKg": 458900,
+      "dryKg": 30600,
+      "thrustSlKN": 10000,
+      "thrustVacKN": 11000,
+      "ispSlS": 285,
+      "ispVacS": 313,
+      "engines": 6,
+      "chamberTempK": 3100
+    },
+    {
+      "name": "Stage 2 (3× RD-0210 + RD-0211)",
+      "wetKg": 168300,
+      "dryKg": 11000,
+      "thrustVacKN": 2400,
+      "ispVacS": 327,
+      "engines": 4,
+      "chamberTempK": 3100
+    },
+    {
+      "name": "Stage 3 (RD-0213 + RD-0214)",
+      "wetKg": 50062,
+      "dryKg": 3500,
+      "thrustVacKN": 614,
+      "ispVacS": 325,
+      "engines": 1,
+      "chamberTempK": 3100
+    },
+    {
+      "name": "Briz-M (S5.98M)",
+      "wetKg": 22300,
+      "dryKg": 2500,
+      "thrustVacKN": 19.62,
+      "ispVacS": 326,
+      "engines": 1,
+      "chamberTempK": 3000
+    }
+  ],
+  "provenance": [
+    {
+      "l": "ILS — Proton Mission Planner's Guide, Section A (stage dry / propellant masses; stage 1 ~10 MN SL / 11 MN vac; stage 2 2.4 MN; stage 3 RD-0213 583 kN + RD-0214 31 kN; Briz-M 2.5 t dry, 19.8 t propellant incl. the drop tank, 19.62 kN)",
+      "u": "https://www.ilslaunch.com/wp-content/uploads/pdf/PMPG%20Section%20A.pdf"
+    },
+    {
+      "l": "Proton-M — Wikipedia (58.2 m; 7.4 / 4.1 m; stage Isp 285 / 327 / 325 s); stage-1 vacuum Isp derived from the SL/vacuum thrust ratio",
+      "u": "https://en.wikipedia.org/wiki/Proton-M"
+    },
+    {
+      "l": "Spaceflight101 — ExoMars 2016 launch (14 Mar 2016; four Briz-M burns, separation 10 h 41 min after liftoff). Briz-M flies as stage 4 (its first burn completes the parking orbit); payload = TGO and Schiaparelli (4,332 kg); fairing mass estimated",
+      "u": "https://spaceflight101.com/exomars/?p=456"
+    }
+  ]
+}

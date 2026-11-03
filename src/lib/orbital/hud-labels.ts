@@ -17,6 +17,7 @@ const HUD_LABEL: Record<string, () => string> = {
   ASCENT: m.hud_ascent,
   'PARKING ORBIT': m.hud_parking_orbit,
   'STAGE SEP': m.hud_stage_sep,
+  'SPACECRAFT SEP': m.hud_spacecraft_sep,
   FAIRING: m.hud_fairing,
   ORBIT: m.card_stat_orbit,
   ENTRY: m.hud_entry,

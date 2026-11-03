@@ -15,7 +15,7 @@
     },
     {
       "met": 5,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Einschwenken in die Mondumlaufbahn 23.06.2009.",
       "type": "nominal"
     },
@@ -32,5 +32,32 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur-Oberstufe (Atlas V 401)"
+  "vehicle_stage": "Centaur-Oberstufe (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 1,
+      "label": "MCC-1",
+      "description": "Erste Kurskorrektur nach dem Einschuss zum Mond."
+    },
+    {
+      "met": 1.04,
+      "label": "MCC-2",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-3",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-4",
+      "description": "Feinkorrektur in der Anflugphase."
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5 — letzte vor dem Einschwenken in die Mondumlaufbahn",
+      "description": "Letzte Anflugausrichtung vor dem Einschwenken in die Mondumlaufbahn."
+    }
+  ]
 }

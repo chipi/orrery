@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 上段（Atlas V 411）"
+  "vehicle_stage": "Centaur 上段（Atlas V 411）",
+  "flight_events": [
+    {
+      "met": 1750,
+      "label": "金星スイングバイ4回目",
+      "description": "2025-02。4回目の金星スイングバイで日心緯度を約17°へとさらに上げ続ける（延長ミッションの目標は約33°）。"
+    }
+  ]
 }

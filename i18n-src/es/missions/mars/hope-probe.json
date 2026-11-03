@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "segunda etapa del H-IIA"
+  "vehicle_stage": "segunda etapa del H-IIA",
+  "flight_events": [
+    {
+      "met": 41,
+      "label": "TCM-2",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 71.75,
+      "label": "TCM-3",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 100,
+      "label": "TCM-4",
+      "description": "Corrección de la fase de aproximación."
+    },
+    {
+      "met": 102.5,
+      "label": "TCM-5 — última antes de la inserción en órbita de Marte",
+      "description": "Afina la puntería de aproximación para la inserción en órbita de Marte."
+    }
+  ]
 }

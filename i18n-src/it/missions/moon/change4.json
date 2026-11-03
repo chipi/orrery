@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "terzo stadio del Long March 3B"
+  "vehicle_stage": "terzo stadio del Long March 3B",
+  "flight_events": [
+    {
+      "met": 1.19,
+      "label": "MCC-1",
+      "description": "Prima correzione di traiettoria."
+    },
+    {
+      "met": 2.08,
+      "label": "MCC-2",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 2.97,
+      "label": "MCC-3",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 4.9,
+      "label": "MCC-4 — ultima prima dell'inserimento in orbita lunare",
+      "description": "Puntamento finale di avvicinamento prima dell'inserimento in orbita lunare."
+    }
+  ]
 }

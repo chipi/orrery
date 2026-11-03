@@ -44,5 +44,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "관성 상단 Inertial Upper Stage (IUS)"
+  "vehicle_stage": "관성 상단 Inertial Upper Stage (IUS)",
+  "flight_events": [
+    {
+      "met": 175,
+      "label": "TCM-2",
+      "description": "순항 중간 정밀 조정."
+    },
+    {
+      "met": 325,
+      "label": "TCM-3",
+      "description": "접근 단계 미세 조정."
+    }
+  ]
 }

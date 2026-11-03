@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "étage supérieur Blok-D"
+  "vehicle_stage": "étage supérieur Blok-D",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "Injection translunaire",
+      "description": "L'allumage de l'étage supérieur Blok D place Luna 24 sur une trajectoire translunaire."
+    },
+    {
+      "met": 1.5,
+      "label": "Correction de trajectoire n° 1",
+      "description": "Premier affinage de la trajectoire."
+    },
+    {
+      "met": 4,
+      "label": "Correction de trajectoire n° 2",
+      "description": "Affinage de la phase d'approche."
+    }
+  ]
 }

@@ -6,6 +6,7 @@ import {
   buildGenericProfile,
   loadLaunchProfile,
   atlasVSrbCount,
+  isDeltaIIHeavy,
   FLAGSHIP_IDS,
 } from './launch-profile-registry';
 import { integrateAscent } from './ascent-physics';
@@ -77,6 +78,26 @@ describe('matchFlagship — every flagship id reachable from free text (#6)', ()
   it('does not confuse Atlas V with Atlas LV-3B', () => {
     expect(resolveLauncher(undefined, 'Atlas V 401')!.id).toBe('atlas-v');
     expect(resolveLauncher(undefined, 'Atlas LV-3B')!.id).toBe('atlas-lv-3b');
+  });
+
+  it('a variant named in the vehicle string outranks the family fleet ref', () => {
+    expect(resolveLauncher([{ id: 'soyuz-fg', role: 'launcher' }], 'Soyuz-FG / Fregat')!.id).toBe(
+      'soyuz-fg-fregat',
+    );
+    expect(
+      resolveLauncher([{ id: 'r-7-vostok', role: 'launcher' }], 'Sputnik 8K71PS (R-7)')!.id,
+    ).toBe('sputnik-8k71ps');
+    expect(resolveLauncher([{ id: 'proton-m', role: 'launcher' }], 'Proton-M / Briz-M')!.id).toBe(
+      'proton-m-briz-m',
+    );
+    expect(resolveLauncher([{ id: 'ariane-5', role: 'launcher' }], 'Ariane 5G+')!.id).toBe(
+      'ariane-5g',
+    );
+    // Without a variant in the string the fleet ref still decides.
+    expect(resolveLauncher([{ id: 'soyuz-fg', role: 'launcher' }], 'Soyuz-FG')!.id).toBe('soyuz');
+    expect(resolveLauncher([{ id: 'ariane-5', role: 'launcher' }], 'Ariane 5 ECA')!.id).toBe(
+      'ariane-5',
+    );
   });
 
   it('does not confuse Saturn V with Saturn IB', () => {
@@ -177,7 +198,7 @@ describe('loadLaunchProfile — fail-closed loader', () => {
   it('returns a generic profile for a non-flagship id without fetching', async () => {
     let fetched = false;
     const p = await loadLaunchProfile(
-      'long-march-3b',
+      'unmodelled-rocket',
       asFetch(async () => {
         fetched = true;
         return { ok: true, json: async () => okJson };
@@ -272,5 +293,18 @@ describe('FLAGSHIP_IDS ↔ launch-profiles/ files', () => {
     for (const f of files) expect(ids, `profile ${f}.json not in FLAGSHIP_IDS`).toContain(f);
     // An allowlist entry with no file → loadLaunchProfile 404s to generic.
     for (const id of ids) expect(files, `FLAGSHIP_IDS has ${id} but no profile file`).toContain(id);
+  });
+});
+
+describe('isDeltaIIHeavy — the 7925H flew GEM-46 strap-ons', () => {
+  it('recognises the H variants as flown', () => {
+    expect(isDeltaIIHeavy('Delta II 7925H')).toBe(true);
+    expect(isDeltaIIHeavy('Delta II 7925H-9.5')).toBe(true);
+    expect(isDeltaIIHeavy('Delta II 7925H Heavy')).toBe(true);
+  });
+  it('leaves the GEM-40 7925 variants alone', () => {
+    expect(isDeltaIIHeavy('Delta II 7925')).toBe(false);
+    expect(isDeltaIIHeavy('Delta II 7925-9.5')).toBe(false);
+    expect(isDeltaIIHeavy(undefined)).toBe(false);
   });
 });

@@ -50,5 +50,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "SLS 上段（未確定）"
+  "vehicle_stage": "SLS 上段（未確定）",
+  "flight_events": [
+    {
+      "met": 1.48,
+      "label": "MCC-1",
+      "description": "最初の軌道修正。"
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-2",
+      "description": "接近フェーズの精密化。"
+    }
+  ]
 }

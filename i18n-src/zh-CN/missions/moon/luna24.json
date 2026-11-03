@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Blok-D 上面级"
+  "vehicle_stage": "Blok-D 上面级",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "地月转移入射",
+      "description": "Blok D 上面级点火，把 Luna 24 送上地月转移轨道。"
+    },
+    {
+      "met": 1.5,
+      "label": "中途修正 第1次",
+      "description": "首次轨道精修。"
+    },
+    {
+      "met": 4,
+      "label": "中途修正 第2次",
+      "description": "接近阶段精修。"
+    }
+  ]
 }

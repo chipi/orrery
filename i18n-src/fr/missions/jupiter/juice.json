@@ -31,5 +31,17 @@
       "note": "Allumage du moteur principal plaçant JUICE en orbite de Jupiter pour la tournée des lunes glacées.",
       "type": "info"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 1265,
+      "label": "Terre n° 2 — assistance gravitationnelle",
+      "description": "Septembre 2026. Apporte l'énergie de la troisième étape de la croisière vers Jupiter."
+    },
+    {
+      "met": 2103,
+      "label": "Terre n° 3 — assistance gravitationnelle",
+      "description": "Janvier 2029. Dernière assistance gravitationnelle avant la trajectoire directe vers Jupiter — elle apporte les derniers ~5 km/s nécessaires à la longue croisière jusqu'à l'arrivée en 2031."
+    }
   ]
 }

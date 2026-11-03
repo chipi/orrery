@@ -91,12 +91,15 @@ tables); keep it.
 | --- | --- | --- |
 | does a prerendered page link to a page we don't build | `check-internal-links.mjs` | every `npm run build` |
 | does data / an overlay / a message link to a missing route, a query parameter the route ignores, an id that doesn't exist, or a missing / pruned file (all 14 locales) | `check-data-links.mjs` | `validate-data` |
-| are the outbound links readers can click still alive (pages, image-credit sources, references, components) | `check-external-links.mjs` → `docs/provenance/external-link-check.md` | by hand; cached 7 days in `.cache/`, Wikipedia/Commons via their API |
+| are the outbound links readers can click still alive (pages, image-credit sources, references, components) | `check-external-links.mjs` → `docs/provenance/external-link-check.md` | weekly `link-check.yml` (`--strict`, red on a dead link, report as artifact; no prerendered HTML) and by hand; cached 7 days in `.cache/`, Wikipedia/Commons via their API |
 | are the curated LEARN links alive (`link-provenance.json`) | `check-learn-links.ts` | `npm run fetch` |
 | what did prod answer 404 to, who asked, and does it still 404 | `prod-404-report.mjs [--days=7]` | by hand, on the tailnet (VictoriaLogs) |
 | a dead outbound link: what could replace it (Wayback snapshot, wiki search hits) | `link-fix-candidates.mjs` → `.cache/link-fix-candidates.json` | by hand, after the outbound check |
 | replace reviewed dead links everywhere they are written (all locales, labels too) | `apply-link-fixes.mjs <map.json>` (probes every replacement first; maps under `link-fixes/`) | by hand |
-| an image credit whose Commons title never existed, once the real file is known | `backfill-provenance-commons.ts <map.json>` | by hand |
+| where a shipped image really comes from (placeholder credit, invented title, no row): NASA Images + Commons search, 64-bit dHash per candidate, look at every match | `image-find-source.mjs --q "<subject>" [--cat "<category>"] --out <map.json> <image>…` (one candidate: `image-match.mjs`) | by hand |
+| the same for every placeholder credit in some surfaces at once (grouped by entity, crops follow their image when the re-crop matches, resumable) | `credit-placeholders-find.mjs --surface <a,b> --out <file.json>` | by hand; look at every match with d > 4 before applying |
+| credit rows to the real Commons file, once the match is known (creates a missing row) | `backfill-provenance-commons.ts <map.json>` | by hand |
+| credit rows to the real NASA Images item, once the match is known (creates a missing row) | `apply-provenance-nasa.mjs <map.json>` | by hand |
 
 Runbook: the `orrery-link-health` skill. The two outbound checkers share
 `lib/link-probe.mjs` (polite User-Agent, 2 requests per host, HEAD then GET).
@@ -105,8 +108,12 @@ Runbook: the `orrery-link-health` skill. The two outbound checkers share
 
 - `mobile/build-offline-manifest.mjs` — regenerates the committed
   `static/data/offline-manifest.json` the native offline download reads
-  (RFC-040 Contract C). It lists images, posters, hotspot tiles and audio,
-  so it goes stale when any of those change.
+  (RFC-040 Contract C). It lists images, posters, hotspot tiles, audio and
+  the per-locale image alt text, so it goes stale when any of those change.
+- `glitchtip-baseline.py [days]` — every orrery GlitchTip issue seen in the
+  last N days per project, as Markdown; runs on the homelab mini through the
+  host-run skill. Baselines live in `docs/ops/glitchtip-baseline-<date>.md`;
+  compare a release against the newest one.
 - `score-staging.ts` — scores `static/images/_staging/` for /dev/staging;
   **paid** on vision-cache misses (Anthropic vision, needs `.env`).
 - `search-badge-candidates.mjs` → `search-badge-multisource.mjs` — find

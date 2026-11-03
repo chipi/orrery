@@ -9,7 +9,12 @@
    */
 
   import { localHref } from '$lib/locale';
-  import { formatCountdown, formatNet, type LaunchEntry } from '$lib/launches/manifest.js';
+  import {
+    formatCountdown,
+    formatNet,
+    feedText,
+    type LaunchEntry,
+  } from '$lib/launches/manifest.js';
   import * as m from '$lib/paraglide/messages';
   import ProvenanceChip from './ProvenanceChip.svelte';
   import { launchStatusLabel } from '$lib/launches/status-label';
@@ -60,7 +65,7 @@
     <h3 class="title">
       {nativeOr(entry.rocket_config_name)}
       <span class="separator">·</span>
-      <span class="mission">{nativeOr(entry.mission_name ?? entry.name)}</span>
+      <span class="mission">{feedText(nativeOr(entry.mission_name ?? entry.name))}</span>
     </h3>
     {#if entry.editorial_note}
       <p class="editorial-note">{entry.editorial_note}</p>
@@ -82,7 +87,7 @@
       {/if}
       {#if entry.pad_name}
         <span class="separator">·</span>
-        <span class="pad">{entry.pad_name}</span>
+        <span class="pad">{feedText(entry.pad_name)}</span>
       {/if}
     </p>
   </div>

@@ -52,7 +52,8 @@
     "launch": {
       "vehicle_stage": "H-IIA 2nd stage",
       "mass_at_tli_kg": 730,
-      "source": "JAXA SLIM Project Brief (2023)"
+      "source": "JAXA SLIM Project Brief (2023)",
+      "departure": "spacecraft"
     },
     "cruise": {
       "tcm_count": 4,
@@ -64,9 +65,9 @@
       "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.75,
       "source": "JAXA SLIM LOI Report (2023-12)",
-      "entry_velocity_km_s": 0.15,
+      "entry_velocity_km_s": 1.69,
       "edl_system": "powered",
-      "edl_duration_s": 100,
+      "edl_duration_s": 1016,
       "touchdown_velocity_ms": 1
     },
     "totals": {

@@ -49,7 +49,8 @@
       "vehicle_stage": "Star 48BV solid third stage (Delta IV Heavy core + 2 strap-ons)",
       "c3_km2_s2": 154,
       "mass_at_tli_kg": 685,
-      "source": "NASA Parker Solar Probe Press Kit (2018-08); Fox et al. (2016). Highest C3 ever achieved for a science payload."
+      "source": "NASA Parker Solar Probe Press Kit (2018-08); Fox et al. (2016). Highest C3 ever achieved for a science payload.",
+      "departure": "stage-then-kick"
     },
     "cruise": {
       "tcm_count": 0,

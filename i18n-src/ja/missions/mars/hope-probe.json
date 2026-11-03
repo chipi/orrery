@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "H-IIA 第2段"
+  "vehicle_stage": "H-IIA 第2段",
+  "flight_events": [
+    {
+      "met": 41,
+      "label": "TCM-2",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 71.75,
+      "label": "TCM-3",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 100,
+      "label": "TCM-4",
+      "description": "接近フェーズの調整。"
+    },
+    {
+      "met": 102.5,
+      "label": "TCM-5——火星周回軌道投入前の最後",
+      "description": "火星周回軌道投入に向けて接近照準を詰める。"
+    }
+  ]
 }

@@ -15,7 +15,7 @@
     },
     {
       "met": 5,
-      "label": "MOI",
+      "label": "LOI",
       "note": "달 궤도 진입.",
       "type": "nominal"
     },
@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Long March 3B 3단"
+  "vehicle_stage": "Long March 3B 3단",
+  "flight_events": [
+    {
+      "met": 1.19,
+      "label": "MCC-1",
+      "description": "첫 궤도 수정."
+    },
+    {
+      "met": 2.08,
+      "label": "MCC-2",
+      "description": "순항 중간 정밀 조정."
+    },
+    {
+      "met": 2.97,
+      "label": "MCC-3",
+      "description": "순항 중간 정밀 조정."
+    },
+    {
+      "met": 4.9,
+      "label": "MCC-4 — 달 궤도 진입 전 마지막",
+      "description": "달 궤도 진입 전 최종 접근 조준."
+    }
+  ]
 }

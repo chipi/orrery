@@ -49,6 +49,27 @@
     type VideoProvenanceManifest,
   } from '$lib/video-provenance';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import { licenseLabel } from '$lib/license-label';
+
+  // Counts in the locale's plural form (1 photo; sr 2–4 фотографије; ar dual …); the plain key is "other".
+  type CountMsg = (p: { n: number }) => string;
+  const plural =
+    (other: CountMsg, forms: Partial<Record<Intl.LDMLPluralRule, CountMsg>>) =>
+    (n: number): string =>
+      (forms[new Intl.PluralRules(getLocale()).select(n)] ?? other)({ n });
+  const photosLabel = plural(m.credits_count_photos, {
+    one: m.credits_count_photos_one,
+    two: m.credits_count_photos_two,
+    few: m.credits_count_photos_few,
+    many: m.credits_count_photos_many,
+  });
+  const textsLabel = plural(m.credits_count_text, {
+    one: m.credits_count_text_one,
+    two: m.credits_count_text_two,
+    few: m.credits_count_text_few,
+    many: m.credits_count_text_many,
+  });
 
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<ImageProvenanceManifest | null>(null);
@@ -81,12 +102,12 @@
   // ORIGINAL content). /credits keeps only reused third-party material.
   $effect(() => {
     void Promise.all([
-      getSourceLogos(),
+      getSourceLogos(getLocale()),
       getImageProvenanceManifest(),
       getTextSources(),
       getAudioSourceProvenanceManifest(),
       getBadgeProvenance(),
-      getDataSources(),
+      getDataSources(getLocale()),
       getVideoManifest(),
     ])
       .then(([s, p, t, a, b, d, v]) => {
@@ -267,8 +288,8 @@
           <li>
             <a href="#src-{group.source.id}">{group.source.name}</a>
             <span class="counts">
-              · {m.credits_count_photos({ n: group.bundles.length })} ·
-              {m.credits_count_text({ n: group.texts.length })}
+              · {photosLabel(group.bundles.length)} ·
+              {textsLabel(group.texts.length)}
             </span>
           </li>
         {/each}
@@ -305,7 +326,7 @@
         {#if group.bundles.length > 0}
           <h3 class="bom-heading">
             {m.credits_section_photos()}
-            <span class="bom-count">{m.credits_count_photos({ n: group.bundles.length })}</span>
+            <span class="bom-count">{photosLabel(group.bundles.length)}</span>
           </h3>
           <ul class="photo-list">
             {#each group.bundles as bundle (bundle)}
@@ -348,10 +369,10 @@
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {photo.license_short}
+                        {licenseLabel(photo.license_short)}
                       </a>
                     {:else}
-                      <span class="ph-license">{photo.license_short}</span>
+                      <span class="ph-license">{licenseLabel(photo.license_short)}</span>
                     {/if}
                   </p>
                   {#if photo.spacecraft_name && photo.spacecraft_id}
@@ -401,7 +422,7 @@
         {#if group.texts.length > 0}
           <h3 class="bom-heading">
             {m.credits_section_text()}
-            <span class="bom-count">{m.credits_count_text({ n: group.texts.length })}</span>
+            <span class="bom-count">{textsLabel(group.texts.length)}</span>
           </h3>
           <ul class="text-list">
             {#each group.texts as t (t)}
@@ -418,10 +439,10 @@
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {t.license_short}
+                      {licenseLabel(t.license_short)}
                     </a>
                   {:else}
-                    <span class="t-license">{t.license_short}</span>
+                    <span class="t-license">{licenseLabel(t.license_short)}</span>
                   {/if}
                   {#if t.source_url}
                     <span class="sep">·</span>
@@ -467,7 +488,7 @@
            each row below still links its own license. -->
       <p class="src-license">
         <span class="lbl">{m.credits_license_summary_label()}:</span>
-        {[...new Set(audioProv.entries.map((e) => e.license_short))].join(' · ')}
+        {[...new Set(audioProv.entries.map((e) => licenseLabel(e.license_short)))].join(' · ')}
       </p>
       <p class="storage-blurb">{m.credits_audio_intro()}</p>
       <ul class="audio-list">
@@ -479,7 +500,7 @@
               <span class="audio-meta">
                 {a.author ?? a.agency}{a.instrument ? ` · ${a.instrument}` : ''} ·
                 <a href={a.license_url ?? a.source_url} target="_blank" rel="noopener noreferrer"
-                  >{a.license_short}</a
+                  >{licenseLabel(a.license_short)}</a
                 >
                 ·
                 <a href={a.source_url} target="_blank" rel="noopener noreferrer"
@@ -559,7 +580,7 @@
       </header>
       <p class="src-license">
         <span class="lbl">{m.credits_license_summary_label()}:</span>
-        {[...new Set(badges.map((b) => b.license_short))].join(' · ')}
+        {[...new Set(badges.map((b) => licenseLabel(b.license_short)))].join(' · ')}
       </p>
       <ul class="insignia-list">
         {#each badges as bdg (bdg.path)}
@@ -578,7 +599,7 @@
                 <a
                   href={bdg.license_url ?? bdg.source_url}
                   target="_blank"
-                  rel="noopener noreferrer">{bdg.license_short}</a
+                  rel="noopener noreferrer">{licenseLabel(bdg.license_short)}</a
                 >
                 ·
                 <a href={bdg.source_url} target="_blank" rel="noopener noreferrer"
@@ -602,7 +623,7 @@
       </header>
       <p class="src-license">
         <span class="lbl">{m.credits_license_summary_label()}:</span>
-        {[...new Set(dataSources.entries.map((d) => d.license_short))].join(' · ')}
+        {[...new Set(dataSources.entries.map((d) => licenseLabel(d.license_short)))].join(' · ')}
       </p>
       <p class="storage-blurb">{m.credits_data_intro()}</p>
       <ul class="data-list">

@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Blok-D 상단"
+  "vehicle_stage": "Blok-D 상단",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "달 전이 궤도 진입",
+      "description": "Blok D 상단 분사가 Luna 24를 달 전이 궤도에 올린다."
+    },
+    {
+      "met": 1.5,
+      "label": "중간 궤도 수정 1차",
+      "description": "첫 궤도 정밀 조정."
+    },
+    {
+      "met": 4,
+      "label": "중간 궤도 수정 2차",
+      "description": "접근 단계 정밀 조정."
+    }
+  ]
 }

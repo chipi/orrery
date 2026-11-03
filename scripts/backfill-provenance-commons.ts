@@ -12,7 +12,7 @@
  * Usage: npx tsx scripts/backfill-provenance-commons.ts <map.json> [--dry-run]
  */
 import { readFileSync, writeFileSync } from 'node:fs';
-import { buildWikimediaEntry } from './build-image-provenance.ts';
+import { buildWikimediaEntry, inferAgencyFromCuratedString } from './build-image-provenance.ts';
 
 const FILE = 'static/data/image-provenance.json';
 const [mapPath] = process.argv.slice(2).filter((a) => !a.startsWith('--'));
@@ -21,9 +21,36 @@ if (!mapPath) {
   console.error('usage: npx tsx scripts/backfill-provenance-commons.ts <map.json> [--dry-run]');
   process.exit(2);
 }
-const fix: Record<string, string> = JSON.parse(readFileSync(mapPath, 'utf8'));
+// Values are a Commons filename, or image-find-source.mjs's {source, id} (only 'commons' ones).
+const raw: Record<string, string | { source: string; id: string }> = JSON.parse(
+  readFileSync(mapPath, 'utf8'),
+);
+const fix: Record<string, string> = Object.fromEntries(
+  Object.entries(raw).flatMap(([p, v]) =>
+    typeof v === 'string' ? [[p, v]] : v.source === 'commons' ? [[p, v.id]] : [],
+  ),
+);
 const manifest = JSON.parse(readFileSync(FILE, 'utf8'));
 const entries: Record<string, unknown>[] = manifest.entries;
+// A gallery image with no row at all (validate-gallery-credits KNOWN_MISSING) gets one here; its
+// id comes from buildWikimediaEntry like any built row.
+for (const path of Object.keys(fix)) {
+  if (entries.some((e) => e.path === path)) continue;
+  // next to its gallery's other rows (the file is not sorted; a sort would rewrite all of it)
+  const dir = path.slice(0, path.lastIndexOf('/') + 1);
+  const last = entries.findLastIndex((e) => String(e.path).startsWith(dir));
+  entries.splice(last === -1 ? entries.length : last + 1, 0, {
+    path,
+    id: '',
+    author: '',
+    agency: '',
+    license_short: '',
+    license_url: null,
+    license_rationale: '',
+    modifications: ['identified-by-image-match'],
+  });
+  console.log(`  new row: ${path}`);
+}
 
 let rebuilt = 0;
 const failed: string[] = [];
@@ -46,7 +73,11 @@ for (let i = 0; i < entries.length; i++) {
     failed.push(`${e.path} → File:${filename}`);
     continue;
   }
-  entries[i] = { ...next, id: e.id };
+  // a new row has no agency to fall back on: read it from the Commons author and title
+  const agency =
+    next.agency ||
+    inferAgencyFromCuratedString(`${next.author ?? ''} ${next.title}`, next.author ?? '');
+  entries[i] = { ...next, agency, id: e.id || next.id };
   rebuilt++;
   console.log(`  ${e.path} → ${next.title} · ${next.author} · ${next.license_short}`);
 }

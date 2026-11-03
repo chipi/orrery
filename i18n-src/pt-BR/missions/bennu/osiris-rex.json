@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "estágio superior Centaur (Atlas V 411)"
+  "vehicle_stage": "estágio superior Centaur (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "Manobra de aproximação",
+      "description": "Primeira queima da fase de aproximação. Desacelera a OSIRIS-REx até igualar a velocidade heliocêntrica de Bennu para o encontro."
+    }
+  ]
 }

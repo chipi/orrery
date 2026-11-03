@@ -67,4 +67,14 @@ describe('degenerate durations', () => {
     expect(warpDescentTime(5, 0, 0)).toBe(5);
     expect(unwarpDescentTime(5, 0, 0)).toBe(5);
   });
+  it('is the identity with no ballistic entry (a powered lunar descent), not frozen at t=0', () => {
+    // terminalStartT = 0 used to map the first 45% of the play onto t = 0.
+    expect(warpDescentTime(200, 757, 0)).toBe(200);
+    expect(unwarpDescentTime(200, 757, 0)).toBe(200);
+  });
+  it('is the identity when the entry is the short part (Venera 13: 28 s of entry, 3,776 s total)', () => {
+    // Warping would stretch the 28 s entry across 45% of the play — 60× slow motion.
+    expect(warpDescentTime(100, 3776, 28)).toBe(100);
+    expect(unwarpDescentTime(100, 3776, 28)).toBe(100);
+  });
 });

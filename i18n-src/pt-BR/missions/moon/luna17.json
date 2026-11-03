@@ -15,7 +15,7 @@
     },
     {
       "met": 5,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Inserção na órbita lunar; correções orbitais para inclinação de descida.",
       "type": "nominal"
     },
@@ -38,5 +38,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "estágio superior Blok-D"
+  "vehicle_stage": "estágio superior Blok-D",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "Injeção translunar",
+      "description": "A queima do estágio superior Blok D coloca a Luna 17 numa trajetória translunar."
+    },
+    {
+      "met": 1.5,
+      "label": "Correção de trajetória nº 1",
+      "description": "Primeiro refinamento da trajetória."
+    },
+    {
+      "met": 4,
+      "label": "Correção de trajetória nº 2",
+      "description": "Refinamento da fase de aproximação."
+    }
+  ]
 }

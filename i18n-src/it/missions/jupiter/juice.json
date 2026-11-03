@@ -32,5 +32,17 @@
       "note": "L'accensione del motore principale inserisce JUICE in orbita attorno a Giove per il tour delle lune ghiacciate.",
       "type": "info"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 1265,
+      "label": "Terra n. 2 — fionda gravitazionale",
+      "description": "Settembre 2026. Fornisce energia per il terzo tratto della crociera verso Giove."
+    },
+    {
+      "met": 2103,
+      "label": "Terra n. 3 — fionda gravitazionale",
+      "description": "Gennaio 2029. Ultima fionda gravitazionale prima della traiettoria diretta verso Giove: aggiunge gli ultimi ~5 km/s necessari per la lunga crociera fino all'arrivo nel 2031."
+    }
   ]
 }

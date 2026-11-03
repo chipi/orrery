@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "stadio superiore Fregat"
+  "vehicle_stage": "stadio superiore Fregat",
+  "flight_events": [
+    {
+      "met": 47.38,
+      "label": "TCM-2",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 110,
+      "label": "TCM-3",
+      "description": "Affinamento a metà crociera."
+    }
+  ]
 }

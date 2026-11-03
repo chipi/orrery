@@ -7,10 +7,62 @@
   "first": "印度首次月球任务；确认月球上广泛存在水",
   "description": "ISRO首个行星际航天器。该轨道器把Moon Impact Probe送上月球表面——印度在另一个天体上的第一件物体——并搭载了来自6个国家的11台仪器。搭载在Chandrayaan-1上的NASA Moon Mineralogy Mapper（M3）仪器做出了改写教科书的发现：水分子广泛分布于月球表面，而不仅仅是被封存在极区的永久阴影撞击坑里。任务在2009年8月突然终结，当时ISRO与航天器失去了联系。",
   "events": [
-    { "met": 0, "label": "发射", "note": "PSLV-XL (C11) 从斯里赫里戈达发射。", "type": "nominal" },
-    { "met": 17, "label": "MOI", "note": "月球轨道插入 2008-11-08", "type": "nominal" },
-    { "met": 24, "label": "MIP 撞月", "note": "月球撞击探测器计划在南极附近硬着陆。", "type": "info" },
-    { "met": 320, "label": "失去联系", "note": "通信中断 2009-08-29；运行312天。", "type": "warning" }
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "PSLV-XL (C11) 从斯里赫里戈达发射。",
+      "type": "nominal"
+    },
+    {
+      "met": 17,
+      "label": "LOI",
+      "note": "月球轨道插入 2008-11-08",
+      "type": "nominal"
+    },
+    {
+      "met": 24,
+      "label": "MIP 撞月",
+      "note": "月球撞击探测器计划在南极附近硬着陆。",
+      "type": "info"
+    },
+    {
+      "met": 320,
+      "label": "失去联系",
+      "note": "通信中断 2009-08-29；运行312天。",
+      "type": "warning"
+    }
   ],
-  "vehicle_stage": "PSLV 第四级 PS4"
+  "vehicle_stage": "PSLV 第四级 PS4",
+  "flight_events": [
+    {
+      "met": 8,
+      "label": "地月转移入射",
+      "description": "一系列近地点调相点火把 Chandrayaan-1 从地球轨道送入地月转移——ISRO 后来在 Mangalyaan 上沿用了同样节省能量的逐步抬升地球轨道策略。"
+    },
+    {
+      "met": 9.8,
+      "label": "TCM-1",
+      "description": "地月转移入射后的清理点火。"
+    },
+    {
+      "met": 11.15,
+      "label": "TCM-2",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 12,
+      "label": "TCM-3",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 12.5,
+      "label": "TCM-4",
+      "description": "接近阶段精修。"
+    },
+    {
+      "met": 13.85,
+      "label": "TCM-5——进入环月轨道前最后一次",
+      "description": "最终接近瞄准。"
+    }
+  ]
 }

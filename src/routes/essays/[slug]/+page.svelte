@@ -121,7 +121,7 @@
   }
   .crumb a {
     color: #7fb0e0;
-    text-decoration: none;
+    text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 8px;
@@ -204,7 +204,7 @@
   .fig .credit {
     display: block;
     margin-top: 3px;
-    color: rgba(255, 255, 255, 0.32);
+    color: rgba(255, 255, 255, 0.55);
     font-size: 11px;
   }
   .body h2 {
@@ -267,6 +267,6 @@
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
 </style>

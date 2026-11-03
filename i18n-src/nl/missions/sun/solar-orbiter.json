@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur-bovenste trap (Atlas V 411)"
+  "vehicle_stage": "Centaur-bovenste trap (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 1750,
+      "label": "Zwaartekrachtassist bij Venus nr. 4",
+      "description": "2025-02. De vierde Venus-assist blijft de heliografische breedte verhogen, richting ~17° (doel van de verlengde missie: ~33°)."
+    }
+  ]
 }

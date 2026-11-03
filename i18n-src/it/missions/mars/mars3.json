@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "stadio superiore Blok-D"
+  "vehicle_stage": "stadio superiore Blok-D",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "Prima correzione di traiettoria."
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "Affinamento della fase di avvicinamento."
+    }
+  ]
 }

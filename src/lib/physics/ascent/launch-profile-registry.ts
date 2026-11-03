@@ -29,80 +29,29 @@ const ATLAS_V_AJ60A: Omit<LaunchBoosters, 'count'> = {
 };
 
 /**
- * Strap-on packs for "model-only" launchers — vehicles that have a bespoke 3D
- * silhouette but no hand-authored flagship JSON, so they otherwise fall through
- * to the boosterless generic profile. Without a `boosters` block the ascent
- * physics never emits a strap-on staging event, so the (now-separable) strap-ons
- * jettison at CORE staging instead of the correct earlier time. Attaching a
- * booster pack fixes the timing; masses/thrust/Isp are approximate published
- * per-booster values (PRD-032: honest, not per-flight-exact). The `count` matches
- * what each 3D builder draws (launcher-models.ts) so telemetry, physics, and mesh
- * agree. Same mechanism as the Atlas V AJ-60A injection above.
+ * The Delta II 7925H's nine GEM-46 strap-ons (6 ground-lit + 3 air-lit), PER booster:
+ * 19,040 kg / 2,035 kg, 608.1 kN ground-lit, 284 s air-lit Isp, ~76 s burn (Delta II —
+ * Wikipedia; Delta II Payload Planners Guide: ground-lit to T+77, air-lit T+79 to T+157).
+ * The two published ground-lit Isp figures disagree (224 vs 277.8 s); 265 s matches the
+ * published burn time.
  */
-const MODEL_ONLY_BOOSTERS: Record<string, LaunchBoosters> = {
-  // 4 liquid (YF-25) strap-ons — UDMH/N2O4, ~2.6 min burn.
-  'long-march-3b': {
-    name: 'L-40 (YF-25)',
-    count: 4,
-    wetKg: 41000,
-    dryKg: 3200,
-    thrustSlKN: 740,
-    thrustVacKN: 814,
-    ispSlS: 261,
-    ispVacS: 289,
-    chamberTempK: 3200,
-  },
-  // 4 kerolox boosters (2× YF-100 each) — the "Fat Five" liquid strap-ons.
-  // Trimmed propellant + a touch more thrust so they burn out clearly before the
-  // (generic) core stage rather than a few seconds shy of it.
-  'long-march-5': {
-    name: 'K3 (2×YF-100)',
-    count: 4,
-    wetKg: 138000,
-    dryKg: 12500,
-    thrustSlKN: 2600,
-    thrustVacKN: 2800,
-    ispSlS: 300,
-    ispVacS: 335,
-    chamberTempK: 3500,
-  },
-  // 6 PSOM-XL solids (PSLV-XL) — ground-lit; the air-lit pair is modelled together.
-  pslv: {
-    name: 'PSOM-XL',
-    count: 6,
-    wetKg: 15200,
-    dryKg: 2400,
-    thrustSlKN: 719,
-    thrustVacKN: 799,
-    ispSlS: 262,
-    ispVacS: 291,
-    chamberTempK: 3000,
-  },
-  // 2 S200 solids — among the largest solids flown; short, very high thrust.
-  lvm3: {
-    name: 'S200',
-    count: 2,
-    wetKg: 236000,
-    dryKg: 31000,
-    thrustSlKN: 5150,
-    thrustVacKN: 5300,
-    ispSlS: 227,
-    ispVacS: 274,
-    chamberTempK: 3300,
-  },
-  // 2 SRB-3 solids (H3-22 config, matching the mesh's default).
-  h3: {
-    name: 'SRB-3',
-    count: 2,
-    wetKg: 75000,
-    dryKg: 9000,
-    thrustSlKN: 2160,
-    thrustVacKN: 2300,
-    ispSlS: 274,
-    ispVacS: 284,
-    chamberTempK: 3200,
-  },
+const DELTA_II_GEM46: LaunchBoosters = {
+  name: 'GEM-46',
+  count: 9,
+  airLitCount: 3,
+  wetKg: 19040,
+  dryKg: 2035,
+  thrustSlKN: 608.1,
+  thrustVacKN: 628.5,
+  ispSlS: 265,
+  ispVacS: 284,
+  chamberTempK: 3300,
 };
+
+/** A Delta II "H" (heavy, GEM-46) variant from its name ("Delta II 7925H-9.5"). */
+export function isDeltaIIHeavy(displayName: string | undefined): boolean {
+  return /\b79\d\dH\b|delta ii .*heavy/i.test(displayName ?? '');
+}
 
 /**
  * Atlas V solid-booster count from a variant name — the MIDDLE digit of the
@@ -139,6 +88,33 @@ export const FLAGSHIP_IDS = new Set<string>([
   'soyuz',
   'voskhod-11a57',
   'mercury-redstone',
+  // Every Artemis flight references it; without a JSON they flew the generic
+  // 1-engine 2-stage stand-in (4,100 kN at liftoff vs SLS's ~39 MN). 2026-11.
+  'sls-block-1',
+  // Sourced profiles for vehicles that only had a model and generic physics. 2026-11.
+  'long-march-3a',
+  'long-march-3b',
+  'long-march-5',
+  'pslv',
+  'lvm3',
+  'h3',
+  'm-v',
+  'ariane-1',
+  'delta-ii',
+  'atlas-centaur',
+  'atlas-agena',
+  'titan-ii-g',
+  'titan-iiie-centaur',
+  'titan-ivb-centaur',
+  'falcon-heavy',
+  'molniya-m',
+  'athena-ii',
+  'delta-iv-heavy',
+  'new-glenn',
+  'sputnik-8k71ps',
+  'soyuz-fg-fregat',
+  'proton-m-briz-m',
+  'ariane-5g',
 ]);
 
 interface FleetRef {
@@ -154,14 +130,18 @@ export function missionLauncherId(fleetRefs: FleetRef[] | undefined): string | u
 /**
  * Free-text vehicle spellings → launcher id, ordered most-specific first so
  * "Atlas LV-3B" doesn't fall to "Atlas V" and "Saturn IB" doesn't fall to
- * "Saturn V". Entries above the divider have a hand-authored flagship JSON
- * (FLAGSHIP_IDS — real physics). Entries below map free-text variants onto a
- * consolidated id that has a BESPOKE 3D MODEL but GENERIC physics (no JSON) —
- * so e.g. every "PSLV-XL (C…)" shows the one PSLV model instead of slugging to
- * a per-mission generic id with no dedicated mesh.
+ * "Saturn V". Each maps the free-text variants onto the one id that keys the
+ * vehicle's model and profile, so e.g. every "PSLV-XL (C…)" flies the one PSLV
+ * instead of slugging to a per-mission generic id. An id with no flagship JSON
+ * (FLAGSHIP_IDS) flies the generic profile.
  */
 const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
+  [['falcon heavy', 'falcon-heavy'], 'falcon-heavy'],
   [['falcon 9', 'falcon-9'], 'falcon-9'],
+  // Agena and Centaur upper stages before the bare Atlas: Mariner 4 flew Atlas-Agena, not
+  // the Mercury-Atlas; Mariners 9/10 and the Pioneers flew Atlas-Centaur.
+  [['agena'], 'atlas-agena'],
+  [['atlas slv-3c', 'atlas slv-3d', 'atlas-centaur', 'atlas centaur'], 'atlas-centaur'],
   [['atlas lv-3b', 'atlas lv', 'mercury-atlas'], 'atlas-lv-3b'],
   [['atlas v', 'atlas-v'], 'atlas-v'],
   [['saturn v', 'saturn-v'], 'saturn-v'],
@@ -169,14 +149,25 @@ const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
   // Require "GLV" so "Titan IIIE" (Voyager/Viking) does NOT fall to the Gemini
   // Titan II GLV — a 2-stage LEO booster, wrong for those interplanetary flights.
   [['titan ii glv', 'titan 2 glv', 'titan-ii-glv'], 'titan-ii-glv'],
+  [['titan ii g', 'titan 23g', 'titan-ii-g'], 'titan-ii-g'],
+  [['titan iiie', 'titan 3e', 'titan-iiie'], 'titan-iiie-centaur'],
+  [['titan ivb', 'titan iv', 'titan-ivb'], 'titan-ivb-centaur'],
+  [['delta iv heavy', 'delta-iv-heavy'], 'delta-iv-heavy'],
+  [['delta ii', 'delta-ii'], 'delta-ii'],
+  [['molniya'], 'molniya-m'],
+  [['athena ii', 'athena-ii'], 'athena-ii'],
+  [['new glenn', 'new-glenn'], 'new-glenn'],
   [['proton'], 'proton-k'],
   [['vostok'], 'vostok-k'],
   [['ariane 5', 'ariane-5'], 'ariane-5'],
   [['h-iia', 'h-2a', 'h2a', 'h iia'], 'h-iia'],
   [['space shuttle', 'shuttle'], 'space-shuttle-stack'],
-  // ── Model-only ids (bespoke mesh, generic physics) — international fleet. ──
+  [['sls block 1', 'space launch system', 'sls-block-1'], 'sls-block-1'],
+  // ── International fleet. ──
   [['long march 2f', 'cz-2f'], 'long-march-2f'],
   [['long march 5', 'cz-5'], 'long-march-5'],
+  // Long March 3A flies with no strap-ons (Chang'e 1); the 3B/3C family with them.
+  [['long march 3a', 'cz-3a'], 'long-march-3a'],
   [['long march 3', 'cz-3'], 'long-march-3b'],
   [['pslv'], 'pslv'],
   [['lvm3', 'gslv mk iii', 'gslv mk3', 'gslv mkiii'], 'lvm3'],
@@ -185,10 +176,25 @@ const FLAGSHIP_ALIASES: [needles: string[], id: string][] = [
   [['ariane 1', 'ariane-1'], 'ariane-1'],
 ];
 
+/**
+ * Variants named in the vehicle string that outrank the mission's family fleet ref: the
+ * fleet ref says "soyuz-fg" or "r-7-vostok", the vehicle string says which rocket flew
+ * (Mars Express on Soyuz-FG with Fregat, Sputnik 1 on the two-stage 8K71PS).
+ */
+const VEHICLE_VARIANTS: [needles: string[], id: string][] = [
+  [['fregat'], 'soyuz-fg-fregat'],
+  [['8k71ps'], 'sputnik-8k71ps'],
+  [['briz-m', 'briz m'], 'proton-m-briz-m'],
+  [['ariane 5g', 'ariane-5g'], 'ariane-5g'],
+];
+
 /** Match a free-text vehicle string ("Atlas V 411") to a flagship id, if any. */
-function matchFlagship(vehicle: string): string | null {
+function matchFlagship(
+  vehicle: string,
+  aliases: [string[], string][] = FLAGSHIP_ALIASES,
+): string | null {
   const v = vehicle.toLowerCase();
-  for (const [needles, id] of FLAGSHIP_ALIASES) {
+  for (const [needles, id] of aliases) {
     if (needles.some((n) => v.includes(n))) return id;
   }
   return null;
@@ -222,6 +228,8 @@ const LAUNCHER_ID_CANON: Record<string, string> = {
   'soyuz-fg': 'soyuz',
   'r-7-vostok': 'vostok-k',
   'proton-m': 'proton-k',
+  'atlas-slv-3d': 'atlas-centaur',
+  'atlas-slv-3c': 'atlas-centaur',
 };
 
 export function resolveLauncher(
@@ -229,7 +237,9 @@ export function resolveLauncher(
   vehicle: string | undefined,
 ): { id: string; name: string } | null {
   const raw =
-    missionLauncherId(fleetRefs) ?? (vehicle ? (matchFlagship(vehicle) ?? slug(vehicle)) : null);
+    (vehicle ? matchFlagship(vehicle, VEHICLE_VARIANTS) : null) ??
+    missionLauncherId(fleetRefs) ??
+    (vehicle ? (matchFlagship(vehicle) ?? slug(vehicle)) : null);
   if (raw == null) return null;
   const id = LAUNCHER_ID_CANON[raw] ?? raw;
   return { id, name: vehicle ?? prettyName(id) };
@@ -345,6 +355,11 @@ export async function loadLaunchProfile(
             profile =
               srbs > 0 ? { ...profile, boosters: { ...ATLAS_V_AJ60A, count: srbs } } : profile;
           }
+          // The Delta II 7925H flew the larger GEM-46 strap-ons (Opportunity, MESSENGER,
+          // Dawn); the flagship JSON is the GEM-40 7925.
+          if (launcherId === 'delta-ii' && isDeltaIIHeavy(displayName)) {
+            profile = { ...profile, boosters: { ...DELTA_II_GEM46 } };
+          }
           return profile;
         }
       }
@@ -352,10 +367,5 @@ export async function loadLaunchProfile(
       // fall through to the generic fallback
     }
   }
-  const generic = buildGenericProfile(launcherId, displayName);
-  // Model-only strap-on vehicles (bespoke mesh, generic physics): attach their
-  // booster pack so the ascent physics emits a strap-on staging event at the
-  // right (earlier) time — otherwise the strap-ons jettison at core staging.
-  const boosters = MODEL_ONLY_BOOSTERS[launcherId];
-  return boosters ? { ...generic, boosters } : generic;
+  return buildGenericProfile(launcherId, displayName);
 }

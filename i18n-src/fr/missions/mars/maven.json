@@ -32,5 +32,32 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "étage supérieur Centaur (Atlas V 401)"
+  "vehicle_stage": "étage supérieur Centaur (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 55,
+      "label": "TCM-2",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 94.6,
+      "label": "TCM-3",
+      "description": "Ajustement à mi-croisière."
+    },
+    {
+      "met": 100,
+      "label": "TCM-4",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 134.2,
+      "label": "TCM-5",
+      "description": "Ajustement de la phase d'approche."
+    },
+    {
+      "met": 200,
+      "label": "TCM-6 — dernier allumage avant l'insertion en orbite martienne",
+      "description": "Resserre la visée d'approche pour l'insertion en orbite martienne."
+    }
+  ]
 }

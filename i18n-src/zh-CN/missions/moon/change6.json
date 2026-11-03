@@ -15,7 +15,7 @@
     },
     {
       "met": 5,
-      "label": "MOI",
+      "label": "LOI",
       "note": "进入环月轨道。",
       "type": "nominal"
     },
@@ -44,5 +44,37 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "长征五号 YZ-1 上面级"
+  "vehicle_stage": "长征五号 YZ-1 上面级",
+  "flight_events": [
+    {
+      "met": 1.04,
+      "label": "MCC-1",
+      "description": "地月转移入射后的首次清理。"
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-2",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-3",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 3,
+      "label": "MCC-4",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5——进入环月轨道前最后一次",
+      "description": "最终接近瞄准。"
+    },
+    {
+      "met": 48.6,
+      "label": "月地转移入射",
+      "description": "2024-06-21。轨道器沿返回轨道离开环月轨道。"
+    }
+  ]
 }

@@ -1,0 +1,61 @@
+{
+  "id": "ariane-1",
+  "name": "Ariane 1",
+  "source_tier": "flagship",
+  "payloadKg": 960,
+  "fairingKg": 800,
+  "fairingJettisonAltM": 110000,
+  "refAreaM2": 11.3,
+  "cd": 0.3,
+  "launchSite": { "lat": 5.236, "lon": -52.775, "name": "ELA-1 · Kourou" },
+  "pitchProgram": [[0, 90], [12, 88], [50, 68], [120, 46], [200, 26], [320, 10], [460, 0]],
+  "stages": [
+    {
+      "name": "L140 (4× Viking)",
+      "wetKg": 160030,
+      "dryKg": 13750,
+      "thrustSlKN": 2403,
+      "thrustVacKN": 2772,
+      "ispSlS": 244,
+      "ispVacS": 281,
+      "engines": 4,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "L33 (Viking 4)",
+      "wetKg": 37130,
+      "dryKg": 3625,
+      "thrustVacKN": 721,
+      "ispVacS": 296,
+      "engines": 1,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "H8 (HM7-A)",
+      "wetKg": 9687,
+      "dryKg": 1457,
+      "thrustVacKN": 61.7,
+      "ispVacS": 443,
+      "engines": 1,
+      "chamberTempK": 3500
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Ariane 1 — Wikipedia (50 m, 207.2 t; Viking 2/4 and HM7-A thrust, Isp, burn times 145 / 132 / 563 s)",
+      "u": "https://en.wikipedia.org/wiki/Ariane_1"
+    },
+    {
+      "l": "Astronautix — Ariane 1 (stage gross and empty masses)",
+      "u": "http://www.astronautix.com/a/ariane1.html"
+    },
+    {
+      "l": "ESA — Launch of Giotto (flight V14, 2 July 1985 11:23 UTC; ~245,000 kgf at liftoff)",
+      "u": "https://sci.esa.int/web/giotto/-/36680-launch-of-giotto"
+    },
+    {
+      "l": "ESA — Giotto fact sheet (960 kg incl. its Mage apogee motor, which did the escape burn from GTO); fairing mass estimated",
+      "u": "https://sci.esa.int/web/giotto/-/47355-fact-sheet"
+    }
+  ]
+}

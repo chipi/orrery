@@ -33,6 +33,9 @@
     T_MINUS_S,
     INJECTION_COAST_S,
     INJECTION_BURN_S,
+    INJECTION_BEAT_S,
+    injectionSepT,
+    payloadSepTFor,
     buildAscentBeats,
     ascentStatus,
     countdownSeconds,
@@ -104,22 +107,35 @@
 
   const summary: AscentSummary = $derived(integrateAscent(profile));
   const duration = $derived(summary.totalDurationS);
-  const schedule = $derived(
-    buildShotSchedule({ events: summary.events, maxQt: summary.maxQ.t, duration }),
-  );
 
-  // Post-SECO injection beat (RFC-034 §3.1): a parking-orbit coast then the kick
-  // stage firing, appended to the ascent before the warp. Absent when the
-  // mission has no injection stage.
+  // Post-SECO injection beat (RFC-034 §3.1): a parking-orbit coast, the kick stage
+  // firing with the spacecraft still on it, then the spacecraft separating — appended
+  // to the ascent before the warp. Absent when the mission has no injection stage.
   const injection = $derived(mission.injectionBurn ?? null);
   const injectionBurnStart = $derived(duration + INJECTION_COAST_S);
-  const injectionEnd = $derived(duration + INJECTION_COAST_S + INJECTION_BURN_S);
-  /** End of the launch phase — SECO, or the injection-burn end when present. */
+  /** The burn's end. */
+  const injectionBurnEnd = $derived(injectionSepT(duration));
+  const injectionEnd = $derived(duration + INJECTION_BEAT_S);
+  /** End of the launch phase — SECO, or the end of the injection beat when present. */
   const ascentEnd = $derived(injection ? injectionEnd : duration);
+  /** When the spacecraft separates, if not at SECO. */
+  const payloadSepT = $derived(payloadSepTFor(duration, injection));
+  const schedule = $derived(
+    buildShotSchedule({
+      events: summary.events,
+      maxQt: summary.maxQ.t,
+      duration,
+      payloadSepT,
+      endT: ascentEnd,
+    }),
+  );
   /** Kick stage actually firing (drives the plume). */
-  const injectionFiring = $derived(!!injection && t >= injectionBurnStart && t < injectionEnd);
-  /** The whole post-SECO injection window (coast + burn) — drives the HUD panel. */
+  const injectionFiring = $derived(!!injection && t >= injectionBurnStart && t < injectionBurnEnd);
+  /** The whole post-SECO injection window (coast, burn, separation) — the HUD stage line. */
   const injectionBeatActive = $derived(!!injection && t >= duration && t < injectionEnd);
+  /** The injection callout: parking coast and burn. Once the burn ends the status line
+   *  carries the separation; the callout's "stage armed" would be stale. */
+  const injectionCalloutActive = $derived(!!injection && t >= duration && t < injectionBurnEnd);
   /** Injection-burn completion (%): 0 through the parking coast, fills 0→100 as
    *  the kick stage fires. NOT stage fuel — the ascent telemetry already shows
    *  the (spent) ascent stages; per-kick-stage propellant masses aren't modelled. */
@@ -133,8 +149,20 @@
     [m.hud_stages(), String(profile.stages.length)],
     [
       m.hud_liftoff_thrust(),
+      // The published figure when the profile carries one (solids are modelled at their
+      // burn average); else core plus every strap-on lit on the pad — an air-lit core and
+      // air-lit strap-ons light later. It once read the core alone (SLS 7,440 kN).
       m.unit_kn_value({
-        value: (profile.stages[0].thrustSlKN ?? profile.stages[0].thrustVacKN).toLocaleString(),
+        value: (
+          profile.liftoffThrustKN ??
+          (profile.stages[0].ignitionS
+            ? 0
+            : (profile.stages[0].thrustSlKN ?? profile.stages[0].thrustVacKN)) +
+            (profile.boosters
+              ? (profile.boosters.count - (profile.boosters.airLitCount ?? 0)) *
+                (profile.boosters.thrustSlKN ?? profile.boosters.thrustVacKN)
+              : 0)
+        ).toLocaleString(),
       }),
     ],
     [m.hud_ideal_dv(), m.mp_flight_unit_kms({ value: summary.idealDvKms.toFixed(2) })],
@@ -144,6 +172,32 @@
   const beats = $derived(buildAscentBeats(summary));
 
   let container: HTMLDivElement;
+
+  // The telemetry console fits the window instead of scrolling: scale it down to the room
+  // there is (its box is capped at 100vh − 210 px). Below TEL_MIN_SCALE it would be too
+  // small to read, so it scrolls instead.
+  const TEL_MIN_SCALE = 0.6;
+  let telBox = $state<HTMLDivElement>();
+  let telInner = $state<HTMLDivElement>();
+  let telScale = $state(1);
+  $effect(() => {
+    const box = telBox;
+    const inner = telInner;
+    if (!box || !inner) return;
+    const fit = () => {
+      const room = window.innerHeight - 210;
+      const need = inner.scrollHeight;
+      telScale = need > 0 ? Math.max(TEL_MIN_SCALE, Math.min(1, room / need)) : 1;
+    };
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(inner);
+    window.addEventListener('resize', fit);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', fit);
+    };
+  });
   let done = $state(false);
   let showLosses = $state(false); // ascent-losses lens layer → AscentLosses panel
 
@@ -214,6 +268,10 @@
       spacecraftId: mission.spacecraftId,
       launcherId: dbg?.get('launcher') || profile.id,
       boosterCount: profile.boosters?.count ?? 0,
+      boosterAirLitCount: profile.boosters?.airLitCount ?? 0,
+      payloadSepT,
+      kickStage: injection?.kickStage === true,
+      injectionBurnEndT: injection ? injectionBurnEnd : undefined,
       groundSite: (() => {
         const g = resolveLaunchGround(launchSite);
         return g ? { ...g, textureUrl: streamedUrl(`${base}${g.textureUrl}`) } : undefined;
@@ -280,7 +338,10 @@
       // Past SECO, sampleAscentAt clamps to the final state — the vehicle coasts
       // in parking orbit through the injection beat; the MET keeps advancing off
       // the real clock `t`, and the kick-stage plume is driven by injectionFiring.
-      const s = t < 0 ? padState(summary, t) : sampleAscentAt(summary.states, t);
+      const sampled = t < 0 ? padState(summary, t) : sampleAscentAt(summary.states, t);
+      // Past the last state the physics holds, but the clock runs on: the scene times the
+      // injection-beat animations (spacecraft separation) off s.t.
+      const s = t > sampled.t ? { ...sampled, t } : sampled;
       sceneObj!.setState(s);
       sceneObj!.setInjectionBurn(injectionFiring);
       if (import.meta.env.DEV && debugMode) applyDebugCamera();
@@ -355,8 +416,10 @@
 
   <!-- Left telemetry console -->
   {#if !warping}
-    <div class="telemetry">
-      <LaunchTelemetry {profile} {summary} {t} state={liveState} />
+    <div class="telemetry" bind:this={telBox} class:tel-scroll={telScale <= TEL_MIN_SCALE}>
+      <div class="tel-fit" bind:this={telInner} style:transform="scale({telScale})">
+        <LaunchTelemetry {profile} {summary} {t} state={liveState} />
+      </div>
     </div>
   {/if}
 
@@ -396,7 +459,7 @@
 
   <!-- Post-SECO injection-burn callout (RFC-034 §3.1): the kick/upper stage
        fires to leave parking orbit onto the transfer. -->
-  {#if injectionBeatActive && injection && !warping}
+  {#if injectionCalloutActive && injection && !warping}
     <div class="injection" class:firing={injectionFiring}>
       <div class="inj-type">
         {hudLabel(injectionBurnLabel(injection.burnType))}<ScienceChip
@@ -531,13 +594,28 @@
   .hud-scrim {
     position: absolute;
     inset: 0;
-    z-index: 2;
+    /* 0, not above: the HUD blocks have no z-index, so they paint over this in DOM order
+       (stage → scrim → HUD). At z-index 2 the scrim covered the text it was meant to back. */
+    z-index: 0;
     pointer-events: none;
-    background: radial-gradient(
-      ellipse 130% 90% at 50% 42%,
-      transparent 46%,
-      rgba(3, 6, 14, 0.62) 100%
-    );
+    /* Side bands behind the telemetry (left) and dossier (right) consoles plus a top band
+       behind the title + clock: the corner vignette alone left the panels on bare daylight sky,
+       where their dim mono labels could not be read. */
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 6, 14, 0.72) 0px,
+        rgba(3, 6, 14, 0.5) 290px,
+        transparent 440px
+      ),
+      linear-gradient(
+        270deg,
+        rgba(3, 6, 14, 0.72) 0px,
+        rgba(3, 6, 14, 0.5) 290px,
+        transparent 440px
+      ),
+      linear-gradient(180deg, rgba(3, 6, 14, 0.55) 0px, transparent 150px),
+      radial-gradient(ellipse 130% 90% at 50% 42%, transparent 46%, rgba(3, 6, 14, 0.62) 100%);
     transition: opacity 0.4s linear;
   }
   .launch.hud-hidden .hud-scrim {
@@ -548,10 +626,17 @@
     top: 116px;
     left: 22px;
     max-height: calc(100vh - 210px);
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+  }
+  .tel-fit {
+    transform-origin: top left;
+  }
+  /* Only when even the smallest readable scale doesn't fit (very short windows). */
+  .telemetry.tel-scroll {
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(127, 223, 255, 0.35) transparent;
-    transition: opacity 0.3s ease;
   }
   .launch.hud-hidden .telemetry {
     opacity: 0;
@@ -593,6 +678,56 @@
   .launch.hud-hidden .injection {
     opacity: 0;
     pointer-events: none;
+  }
+  /* Phones start with the HUD collapsed; instead of nothing, keep a minimal set — mission,
+     clock + phase, speed + altitude — compact and on its own dark backing. */
+  @media (hover: none), (pointer: coarse) {
+    .launch.hud-hidden .header,
+    .launch.hud-hidden .clock,
+    .launch.hud-hidden .readouts {
+      opacity: 1;
+    }
+    .launch.hud-hidden .header,
+    .launch.hud-hidden .clock,
+    .launch.hud-hidden .readouts {
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: rgba(3, 8, 18, 0.62);
+    }
+    .launch.hud-hidden .header {
+      top: 12px;
+      left: 12px;
+    }
+    .launch.hud-hidden .mission {
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+    .launch.hud-hidden .sub {
+      display: none;
+    }
+    .launch.hud-hidden .clock {
+      top: 12px;
+      left: auto;
+      right: 12px;
+      transform: none;
+      align-items: flex-end;
+    }
+    .launch.hud-hidden .met {
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+    .launch.hud-hidden .readouts {
+      bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+      gap: 24px;
+    }
+    /* /fly hides these under its shared control bar (.external); with the panels collapsed
+       on a phone they are the only speed + altitude on screen, so bring them back. */
+    .launch.external.hud-hidden .readouts {
+      display: flex;
+    }
+    .launch.hud-hidden .rv {
+      font-size: 26px;
+    }
   }
   /* Post-SECO injection-burn callout — centered under the clock, amber theme
      matching the /fly TLI/TMI event markers; pulses while the stage fires. */

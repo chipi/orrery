@@ -7,10 +7,62 @@
   "first": "Primera misión lunar de la India; confirmó la presencia generalizada de agua en la Luna",
   "description": "La primera nave interplanetaria de la ISRO. El orbitador entregó el Moon Impact Probe a la superficie — el primer objeto indio en otro mundo — y llevó 11 instrumentos de 6 países. El instrumento Moon Mineralogy Mapper (M3) de la NASA, alojado en Chandrayaan-1, hizo el descubrimiento que reescribió los libros de texto: las moléculas de agua están extendidas por toda la superficie lunar, no solo encerradas en cráteres polares en sombra. La misión terminó abruptamente en agosto de 2009 cuando la ISRO perdió la comunicación con la nave.",
   "events": [
-    { "met": 0, "label": "LANZAMIENTO", "note": "PSLV-XL (C11) desde Sriharikota.", "type": "nominal" },
-    { "met": 17, "label": "ILO", "note": "Inserción en órbita lunar 2008-11-08.", "type": "nominal" },
-    { "met": 24, "label": "IMPACTO MIP", "note": "Moon Impact Probe realizó un impacto controlado cerca del polo sur.", "type": "info" },
-    { "met": 320, "label": "CONTACTO PERDIDO", "note": "Comunicación perdida 2009-08-29; 312 días de operaciones.", "type": "warning" }
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "PSLV-XL (C11) desde Sriharikota.",
+      "type": "nominal"
+    },
+    {
+      "met": 17,
+      "label": "ILO",
+      "note": "Inserción en órbita lunar 2008-11-08.",
+      "type": "nominal"
+    },
+    {
+      "met": 24,
+      "label": "IMPACTO MIP",
+      "note": "Moon Impact Probe realizó un impacto controlado cerca del polo sur.",
+      "type": "info"
+    },
+    {
+      "met": 320,
+      "label": "CONTACTO PERDIDO",
+      "note": "Comunicación perdida 2009-08-29; 312 días de operaciones.",
+      "type": "warning"
+    }
   ],
-  "vehicle_stage": "cuarta etapa PS4 del PSLV"
+  "vehicle_stage": "cuarta etapa PS4 del PSLV",
+  "flight_events": [
+    {
+      "met": 8,
+      "label": "Inyección translunar",
+      "description": "Una serie de encendidos de fase en el perigeo llevó a Chandrayaan-1 de la órbita terrestre a la transferencia lunar: la misma estrategia económica de elevación de la órbita terrestre que la ISRO reutilizaría en Mangalyaan."
+    },
+    {
+      "met": 9.8,
+      "label": "TCM-1",
+      "description": "Encendido de limpieza tras la inyección translunar."
+    },
+    {
+      "met": 11.15,
+      "label": "TCM-2",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 12,
+      "label": "TCM-3",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 12.5,
+      "label": "TCM-4",
+      "description": "Ajuste de la fase de aproximación."
+    },
+    {
+      "met": 13.85,
+      "label": "TCM-5 — última antes de la inserción en órbita lunar",
+      "description": "Puntería final de aproximación."
+    }
+  ]
 }

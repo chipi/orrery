@@ -32,5 +32,12 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "المرحلة العليا Block-L لصاروخ Molniya-M"
+  "vehicle_stage": "المرحلة العليا Block-L لصاروخ Molniya-M",
+  "flight_events": [
+    {
+      "met": 1.5,
+      "label": "تصحيح منتصف المسار",
+      "description": "تعديل للمسار في منتصف الرحلة."
+    }
+  ]
 }

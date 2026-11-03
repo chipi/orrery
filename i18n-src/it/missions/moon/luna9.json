@@ -32,5 +32,12 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "stadio superiore Block-L del Molniya-M"
+  "vehicle_stage": "stadio superiore Block-L del Molniya-M",
+  "flight_events": [
+    {
+      "met": 1.5,
+      "label": "Correzione di traiettoria",
+      "description": "Ritocco della traiettoria a metà crociera."
+    }
+  ]
 }

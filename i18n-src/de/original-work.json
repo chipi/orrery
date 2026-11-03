@@ -1917,5 +1917,90 @@
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
     }
+  },
+  "icons": {
+    "menu": {
+      "title": "Menüschalter",
+      "what": "Hamburger aus drei Balken, der sich zu einem Schließen-X faltet, wenn die Schublade offen ist.",
+      "where": "Navigation (mobil)",
+      "variants": {
+        "closed": "geschlossen",
+        "open": "offen"
+      }
+    },
+    "audio-wave": {
+      "title": "Audiotour-Welle",
+      "what": "Das „〜“-Zeichen, das die geführte Audiotour öffnet; es pulsiert während der Wiedergabe.",
+      "where": "Navigation · Startseiten-Button"
+    },
+    "science-lens": {
+      "title": "Wissenschaftslinse",
+      "what": "Äußerer Ring mit Mittelpunkt (aus) oder Fadenkreuz (an) — schaltet die Linse um.",
+      "where": "Navigation",
+      "variants": {
+        "off": "aus",
+        "on": "an"
+      }
+    },
+    "settings-gear": {
+      "title": "Grafikeinstellungen",
+      "what": "Zahnrad mit acht Speichen für das Qualitäts- und Grafikeinstellungsfeld.",
+      "where": "Navigation"
+    },
+    "fullscreen": {
+      "title": "Vollbild",
+      "what": "Eckklammern nach außen (öffnen) oder innen (schließen) für das Panorama-Vollbild.",
+      "where": "Mond- · Mars-Panoramen",
+      "variants": {
+        "enter": "öffnen",
+        "exit": "schließen"
+      }
+    },
+    "conic": {
+      "title": "Kegelschnitt-Symbole",
+      "what": "Kreis- / Ellipsen- / Parabel- / Hyperbel-Glyphen für die Bahnüberlagerung.",
+      "where": "Bahnlinse in Flug",
+      "variants": {
+        "circle": "Kreis",
+        "ellipse": "Ellipse",
+        "parabola": "Parabel",
+        "hyperbola": "Hyperbel"
+      }
+    },
+    "info-chip": {
+      "title": "Wissenschafts-Chip",
+      "what": "Geometrisches „i“, das jede Abbildung mit ihrer Erklärung in /science verbindet.",
+      "where": "Überall"
+    },
+    "vehicle": {
+      "title": "Trägerrakete",
+      "what": "Rakete mit Nutzlastverkleidung, Landebeinen und Bullauge.",
+      "where": "Missionsfeld"
+    },
+    "spacecraft": {
+      "title": "Raumfahrzeug / Nutzlast",
+      "what": "Zentraler Bus mit Solarpaneelen, Antennenausleger und Ausrichtungsmarke.",
+      "where": "Missionsfeld"
+    },
+    "trajectory-arrow": {
+      "title": "Bahnpfeil",
+      "what": "Bogenförmige Flugbahn mit Pfeilspitze — der Aufruf „fliegen“ / Transfer.",
+      "where": "Missionsfeld · Planen"
+    },
+    "mission-orbit": {
+      "title": "Missionssymbol",
+      "what": "Bahnring mit gebogener Bahn und Markierungspunkt — Links zu Flottenmissionen.",
+      "where": "Flotten-Eintragsfeld"
+    },
+    "share": {
+      "title": "Teilen",
+      "what": "Quadrat mit Pfeil nach oben — teilt die aktuelle Ansicht (System-Teilen / Link kopieren).",
+      "where": "Navigation"
+    },
+    "sensory": {
+      "title": "Sinnesebene",
+      "what": "Kompassnadel, von einer Welle gekreuzt — öffnet die Sinneseinstellungen (Ton / Vibration / Neigung).",
+      "where": "Navigation"
+    }
   }
 }

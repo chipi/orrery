@@ -15,7 +15,7 @@
     },
     {
       "met": 25,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Maanbaan-insertie 1994-02-19.",
       "type": "nominal"
     },
@@ -38,5 +38,32 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "bovenste trap Star-37 van de Titan II"
+  "vehicle_stage": "kicktrap Star-37 van de sonde (Titan II G tot een lage baan om de aarde)",
+  "flight_events": [
+    {
+      "met": 9,
+      "label": "Injectie richting de maan",
+      "description": "1994-02-03, na acht dagen testen in een lage baan om de aarde. De vastebrandstofmotor STAR 37FM bracht Clementine in een fasebaan die twee keer langs de aarde voerde voordat ze de maan bereikte."
+    },
+    {
+      "met": 10,
+      "label": "TCM-1",
+      "description": "Eerste opruimcorrectie na de injectie richting de maan."
+    },
+    {
+      "met": 10.24,
+      "label": "TCM-2",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 12.75,
+      "label": "TCM-3 — laatste voor de intrede in een baan om de maan",
+      "description": "Laatste naderingsrichting voor de intrede in een baan om de maan."
+    },
+    {
+      "met": 25.05,
+      "label": "Intrede in een baan om de maan",
+      "description": "1994-02-19. Ingevangen in een polaire baan van 415 × 2.940 km. Bracht het maanoppervlak 71 dagen lang in meerdere golflengten in kaart — de eerste wereldwijde multispectrale maankaart met hoge resolutie. Gegevens van een bistatisch radarexperiment werden later (omstreden) uitgelegd als aanwijzing voor waterijs bij de zuidpool van de maan — de ontdekking die LRO en alle latere ijszoekmissies in gang zette."
+    }
+  ]
 }

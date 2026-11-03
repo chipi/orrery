@@ -22,6 +22,37 @@ export const ORBIT_TARGET_KMS = 7.8;
  */
 export const INJECTION_COAST_S = 15;
 export const INJECTION_BURN_S = 12;
+/** The spacecraft rides the upper stage through the injection burn and separates after it,
+ *  as on a real flight (Orion off the ICPS, Apollo off the S-IVB, a probe off its Centaur):
+ *  this beat after the burn shows it. */
+export const INJECTION_SEP_S = 8;
+/** The whole post-SECO injection beat: parking coast, burn, spacecraft separation. */
+export const INJECTION_BEAT_S = INJECTION_COAST_S + INJECTION_BURN_S + INJECTION_SEP_S;
+
+/** Mission time (s) the spacecraft leaves the upper stage on a flight with an injection
+ *  burn: the burn's end. `ascentDurationS` is `summary.totalDurationS`. */
+export function injectionSepT(ascentDurationS: number): number {
+  return ascentDurationS + INJECTION_COAST_S + INJECTION_BURN_S;
+}
+
+/**
+ * When the spacecraft leaves the launcher, if not at SECO (undefined = at SECO, or no
+ * injection beat). With a launcher injection it rides the stage through the burn and leaves
+ * at its end; with its own kick stage (Shuttle + IUS) it is deployed midway through the
+ * parking coast and the kick stage fires after; when the stage fires first and then the
+ * kick stage (Delta II + Star 48B), they share the burn and part halfway through it.
+ */
+export function payloadSepTFor(
+  ascentDurationS: number,
+  injection: { kickStage?: boolean; stageFiresFirst?: boolean } | null | undefined,
+): number | undefined {
+  if (!injection) return undefined;
+  const burnStart = ascentDurationS + INJECTION_COAST_S;
+  if (injection.kickStage && injection.stageFiresFirst) return burnStart + INJECTION_BURN_S / 2;
+  return injection.kickStage
+    ? ascentDurationS + INJECTION_COAST_S * 0.5
+    : injectionSepT(ascentDurationS);
+}
 
 /**
  * The status line during the post-SECO injection beat, or null when t is before
@@ -36,7 +67,8 @@ export function injectionPhaseStatus(
 ): string | null {
   if (t < ascentDurationS) return null;
   if (t < ascentDurationS + INJECTION_COAST_S) return 'PARKING ORBIT';
-  return burnLabel;
+  if (t < injectionSepT(ascentDurationS)) return burnLabel;
+  return 'SPACECRAFT SEP';
 }
 
 /** AscentEvent.type → the short HUD label shown on the timeline strip. */
@@ -82,8 +114,17 @@ export function ascentStatus(t: number, beats: AscentBeat[], ignitionT = IGNITIO
   if (t < 0) return 'IGNITION SEQUENCE';
   if (t < 10) return 'LIFTOFF';
   const passed = beats.filter((b) => b.t <= t);
-  return passed.length ? passed[passed.length - 1].label : 'ASCENT';
+  const last = passed[passed.length - 1];
+  if (!last) return 'ASCENT';
+  // An event (Max-Q, a separation, the fairing) is a moment: show it for its beat, then the
+  // powered flight is ASCENT again. A state (MECO, SECO, ORBIT) stays true, so it holds.
+  return STATE_LABELS.has(last.label) || t - last.t <= EVENT_LABEL_HOLD_S ? last.label : 'ASCENT';
 }
+
+/** Seconds an event label stays up after its beat. */
+export const EVENT_LABEL_HOLD_S = 20;
+/** Beat labels that describe a lasting state rather than a moment. */
+const STATE_LABELS = new Set(['MECO', 'SECO', 'ORBIT']);
 
 /** Whole seconds remaining in the countdown, or null once t ≥ 0. */
 export function countdownSeconds(t: number): number | null {

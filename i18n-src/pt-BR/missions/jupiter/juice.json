@@ -31,5 +31,17 @@
       "note": "Queima do motor principal coloca a JUICE em órbita de Júpiter para o tour das luas de gelo.",
       "type": "info"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 1265,
+      "label": "Terra nº 2 — assistência gravitacional",
+      "description": "Setembro de 2026. Acrescenta energia para o terceiro trecho do cruzeiro até Júpiter."
+    },
+    {
+      "met": 2103,
+      "label": "Terra nº 3 — assistência gravitacional",
+      "description": "Janeiro de 2029. Última assistência gravitacional antes da trajetória direta a Júpiter — acrescenta os últimos ~5 km/s necessários para o longo cruzeiro até a chegada em 2031."
+    }
   ]
 }

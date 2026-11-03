@@ -15,7 +15,7 @@
     },
     {
       "met": 25,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Einschwenken in die Mondumlaufbahn 19.02.1994.",
       "type": "nominal"
     },
@@ -38,5 +38,32 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Oberstufe Star-37 der Titan II"
+  "vehicle_stage": "Kick-Stufe Star-37 der Sonde (Titan II G bis in eine niedrige Erdumlaufbahn)",
+  "flight_events": [
+    {
+      "met": 9,
+      "label": "Einschuss Richtung Mond",
+      "description": "1994-02-03, nach acht Tagen Erprobung in einer niedrigen Erdumlaufbahn. Der Feststoffmotor STAR 37FM brachte Clementine auf eine Phasenschleife, die zweimal an der Erde vorbeiführte, bevor sie den Mond erreichte."
+    },
+    {
+      "met": 10,
+      "label": "TCM-1",
+      "description": "Erste Nachkorrektur nach dem Einschuss zum Mond."
+    },
+    {
+      "met": 10.24,
+      "label": "TCM-2",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 12.75,
+      "label": "TCM-3 — letzte vor dem Einschwenken in die Mondumlaufbahn",
+      "description": "Letzte Anflugausrichtung vor dem Einschwenken in die Mondumlaufbahn."
+    },
+    {
+      "met": 25.05,
+      "label": "Einschwenken in die Mondumlaufbahn",
+      "description": "1994-02-19. Einfang in eine polare Bahn von 415 × 2.940 km. Kartierung der Mondoberfläche in mehreren Wellenlängen über 71 Tage — die erste globale hochauflösende multispektrale Mondkarte. Daten eines bistatischen Radarexperiments wurden später (umstritten) als Hinweis auf Wassereis am Mondsüdpol gedeutet — die Entdeckung, die LRO und alle späteren Missionen zur Eissuche auslöste."
+    }
+  ]
 }

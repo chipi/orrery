@@ -52,6 +52,9 @@ export interface LaunchStage {
   engines?: number;
   /** Combustion-chamber flame temperature (K) — adiabatic flame temp of the propellant. */
   chamberTempK?: number;
+  /** Stage 0 only: mission time (s) the core lights, when it is air-lit after liftoff
+   *  (LVM3's L110 at ~T+110 s, the S200s alone lifting it off). Absent = at liftoff. */
+  ignitionS?: number;
 }
 
 /**
@@ -74,6 +77,13 @@ export interface LaunchBoosters {
   ispSlS: number;
   ispVacS?: number;
   chamberTempK?: number;
+  /** The last `airLitCount` of the `count` light in the air: when the ground-lit ones burn
+   *  out (Delta II's 3 of 9 GEMs), or at `airLitIgnitionS` while they still burn (PSLV-XL's
+   *  2 of 6 PSOM-XLs at T+25 s). Each group jettisons at its own burnout. Absent = all
+   *  light at liftoff. */
+  airLitCount?: number;
+  /** Mission time (s) the air-lit group lights; absent = at the ground-lit group's burnout. */
+  airLitIgnitionS?: number;
 }
 
 /** A launch vehicle's ascent profile. See RFC-034 §6 for the shipped JSON schema. */
@@ -84,6 +94,10 @@ export interface LaunchProfile {
   stages: LaunchStage[];
   /** Strap-on boosters that fire in parallel with stage 0, then jettison. */
   boosters?: LaunchBoosters;
+  /** The published liftoff thrust (kN), for the HUD, when the integrated figure differs:
+   *  solid boosters are modelled at their burn-average thrust (so they burn out on time),
+   *  well under their peak at ignition (SLS: 39,100 kN at liftoff, 8.8 million lbf). */
+  liftoffThrustKN?: number;
   /** Payload mass carried all the way to orbit (kg). */
   payloadKg: number;
   /** Fairing mass (kg), jettisoned once out of the atmosphere. */
@@ -154,12 +168,23 @@ export interface AscentState {
   dragN: number;
   /** Commanded thrust direction — flight-path angle from horizontal (rad). */
   pitchRad: number;
+  /** Drawn body attitude from horizontal (rad): `pitchRad` rate-limited (see setDrawnAttitude). */
+  attitudeRad?: number;
   /** Propellant remaining in the active stage (kg); 0 while coasting. */
   propRemainingKg: number;
   /** Strap-on booster propellant remaining (kg); 0 when there are none or they're spent. */
   boosterPropRemainingKg: number;
   /** True while the strap-on boosters are lit (stage-0 parallel-boost phase). */
   boostersActive: boolean;
+  /** How many strap-ons are firing now (the air-lit group lights after the ground-lit). */
+  boostersLit?: number;
+  /** The air-lit strap-on group is firing. */
+  airLitBurning?: boolean;
+  /** The ground-lit strap-on group is firing. */
+  groundLitBurning?: boolean;
+  /** The active stage's engines are firing (false before an air-lit core lights and during
+   *  a coast to apoapsis), so the scene draws its flame only then. */
+  coreLit?: boolean;
   /** Combustion-chamber temperature (K) while firing; 0 when the engine is off. */
   chamberTempK: number;
   /**
@@ -311,30 +336,43 @@ export function stackIdealDv(profile: LaunchProfile): number {
     // No strap-ons: stage 0 is a plain serial stage.
     return dv + tsiolkovskyDv(core.ispVacS, aboveCore + core.wetKg, aboveCore + core.dryKg);
   }
-  // Parallel boost (M4). The core + boosters burn TOGETHER, so the boost phase is
-  // ONE combined burn at the mass-flow-weighted exhaust velocity — NOT the core's
-  // full solo Δv PLUS the boosters' Δv, which double-counted the phase and
-  // inflated the ideal-Δv / payload-margin readout. Then the core burns alone.
-  const b = combinedBoosterStage(profile.boosters);
+  // Parallel boost (M4). The core + boosters burn TOGETHER, so each boost phase is ONE
+  // combined burn at the mass-flow-weighted exhaust velocity — NOT the core's full solo Δv
+  // PLUS the boosters' Δv, which double-counted the phase and inflated the ideal-Δv /
+  // payload-margin readout. Boosters burn in groups (ground-lit, then air-lit), each
+  // jettisoning at its burnout; an air-lit core only burns once lit. Then the core alone.
+  const airLit = Math.min(
+    Math.max(0, profile.boosters.airLitCount ?? 0),
+    profile.boosters.count - 1,
+  );
+  const groups = [
+    combinedBoosterStage({ ...profile.boosters, count: profile.boosters.count - airLit }),
+    ...(airLit > 0 ? [combinedBoosterStage({ ...profile.boosters, count: airLit })] : []),
+  ];
   const Tc = core.thrustVacKN * 1000;
-  const Tb = (b.thrustVacKN ?? 0) * 1000;
   const veC = core.ispVacS * G0;
-  const veB = b.ispVacS * G0;
   const mdotC = veC > 0 ? Tc / veC : 0;
-  const mdotB = veB > 0 ? Tb / veB : 0;
-  const coreProp = stagePropellant(core);
-  const boosterProp = stagePropellant(b);
-  const tBoost = mdotB > 0 ? boosterProp / mdotB : 0; // booster burn time
-  const coreDuringBoost = Math.min(coreProp, mdotC * tBoost); // core prop spent in parallel
-  const m0 = aboveCore + core.wetKg + b.wetKg; // full stack on the pad
-  // Phase A — parallel burn: booster propellant + the core prop consumed during it.
-  const veA = mdotC + mdotB > 0 ? (Tc + Tb) / (mdotC + mdotB) : veC;
-  const burnA = boosterProp + coreDuringBoost;
-  if (burnA > 0 && m0 - burnA > 0) dv += veA * Math.log(m0 / (m0 - burnA));
-  // Booster jettison, then Phase B — the core alone burns its remaining propellant.
-  const m0B = m0 - burnA - b.dryKg;
-  const burnB = coreProp - coreDuringBoost;
-  if (burnB > 0 && m0B - burnB > 0) dv += veC * Math.log(m0B / (m0B - burnB));
+  const ignition = core.ignitionS ?? 0;
+  let coreLeft = stagePropellant(core);
+  let m = aboveCore + core.wetKg + groups.reduce((k, g) => k + g.wetKg, 0); // on the pad
+  let t = 0;
+  for (const g of groups) {
+    const Tb = (g.thrustVacKN ?? 0) * 1000;
+    const veB = g.ispVacS * G0;
+    const mdotB = veB > 0 ? Tb / veB : 0;
+    const prop = stagePropellant(g);
+    const tBurn = mdotB > 0 ? prop / mdotB : 0;
+    const coreOn = Math.max(0, t + tBurn - Math.max(t, ignition));
+    const coreDuring = Math.min(coreLeft, mdotC * coreOn);
+    const share = tBurn > 0 ? coreOn / tBurn : 0; // the core's average share of the phase
+    const ve = mdotB + mdotC * share > 0 ? (Tb + Tc * share) / (mdotB + mdotC * share) : veB;
+    const burn = prop + coreDuring;
+    if (burn > 0 && m - burn > 0) dv += ve * Math.log(m / (m - burn));
+    m -= burn + g.dryKg;
+    coreLeft -= coreDuring;
+    t += tBurn;
+  }
+  if (coreLeft > 0 && m - coreLeft > 0) dv += veC * Math.log(m / (m - coreLeft));
   return dv;
 }
 
@@ -505,10 +543,42 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   let fairingOn = (profile.fairingKg ?? 0) > 0;
   const fairingJettAlt = profile.fairingJettisonAltM ?? KARMAN_LINE_M;
 
-  // Strap-on boosters (Track 3): fire with the core, jettison when spent.
-  const boosterStage = profile.boosters ? combinedBoosterStage(profile.boosters) : null;
-  let boosterProp = boosterStage ? stagePropellant(boosterStage) : 0;
-  let boostersOn = boosterProp > 0;
+  // Strap-on boosters (Track 3): fire with the core, jettison when spent. They fly as up to
+  // two groups — ground-lit, then air-lit — each with its own propellant: the air-lit one
+  // lights at `airLitIgnitionS` (both burning together) or at the ground-lit burnout, and
+  // each jettisons at its own burnout. An unlit group rides along at full mass.
+  const airLit = Math.min(
+    Math.max(0, profile.boosters?.airLitCount ?? 0),
+    Math.max(0, (profile.boosters?.count ?? 0) - 1),
+  );
+  const groundCount = (profile.boosters?.count ?? 0) - airLit;
+  type BoosterGroup = { stage: LaunchStage; prop: number; air: boolean; dropped: boolean };
+  const groups: BoosterGroup[] = profile.boosters
+    ? [
+        {
+          stage: combinedBoosterStage({ ...profile.boosters, count: groundCount }),
+          prop: 0,
+          air: false,
+          dropped: false,
+        },
+        ...(airLit > 0
+          ? [
+              {
+                stage: combinedBoosterStage({ ...profile.boosters, count: airLit }),
+                prop: 0,
+                air: true,
+                dropped: false,
+              },
+            ]
+          : []),
+      ]
+    : [];
+  for (const g of groups) g.prop = stagePropellant(g.stage);
+  const airLitAt = profile.boosters?.airLitIgnitionS;
+  const groupLit = (g: BoosterGroup): boolean =>
+    !g.dropped && g.prop > 0 && (!g.air || (airLitAt != null ? t >= airLitAt : groups[0].dropped));
+  const coreIgnitionS = profile.stages[0].ignitionS ?? 0;
+  let lastCoreLit = coreIgnitionS <= 0;
 
   const massAbove = (i: number): number => {
     let m = 0;
@@ -517,8 +587,10 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   };
   const currentMass = (): number => {
     // Boosters ride only while still attached (during the stage-0 boost phase).
-    const boosterMass =
-      boostersOn && boosterStage ? boosterStage.dryKg + Math.max(0, boosterProp) : 0;
+    const boosterMass = groups.reduce(
+      (k, g) => k + (g.dropped ? 0 : g.stage.dryKg + Math.max(0, g.prop)),
+      0,
+    );
     if (stageIndex < 0)
       return profile.payloadKg + (fairingOn ? (profile.fairingKg ?? 0) : 0) + boosterMass;
     const s = profile.stages[stageIndex];
@@ -604,8 +676,15 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       dragN: q * cd * refArea,
       pitchRad: lastPitch,
       propRemainingKg: stageIndex >= 0 ? Math.max(0, remainingProp) : 0,
-      boosterPropRemainingKg: boostersOn ? Math.max(0, boosterProp) : 0,
-      boostersActive: boostersOn && stageIndex === 0 && boosterProp > 0,
+      boosterPropRemainingKg: groups.reduce((k, g) => k + (g.dropped ? 0 : Math.max(0, g.prop)), 0),
+      boostersActive: stageIndex === 0 && groups.some(groupLit),
+      boostersLit:
+        stageIndex === 0
+          ? groups.reduce((k, g) => k + (groupLit(g) ? (g.air ? airLit : groundCount) : 0), 0)
+          : 0,
+      airLitBurning: stageIndex === 0 && groups.some((g) => g.air && groupLit(g)),
+      groundLitBurning: stageIndex === 0 && groups.some((g) => !g.air && groupLit(g)),
+      coreLit: lastCoreLit,
       chamberTempK:
         stageIndex >= 0 && lastThrust > 0 ? (profile.stages[stageIndex].chamberTempK ?? 3500) : 0,
       // Sutton-Graves form (proportional): stagnation heating rises with v³
@@ -627,8 +706,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   // Liftoff: engine lit at full stage-0 (+ booster) thrust so the t=0 snapshot
   // isn't engine-dark before the loop first updates lastThrust.
   lastThrust =
-    stageThrustN(profile.stages[0], 0) +
-    (boostersOn && boosterStage ? stageThrustN(boosterStage, 0) : 0);
+    (coreIgnitionS <= 0 ? stageThrustN(profile.stages[0], 0) : 0) +
+    groups.reduce((k, g) => k + (groupLit(g) ? stageThrustN(g.stage, 0) : 0), 0);
   pushEvent('liftoff');
   states.push(snapshot());
   let nextSampleT = sampleDt;
@@ -669,11 +748,13 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     }
 
     // Strap-on boosters (fire in parallel with stage 0 along the body axis).
-    const boostThrust =
-      boostersOn && stageIndex === 0 && boosterProp > 0 ? stageThrustN(boosterStage!, alt) : 0;
+    const litGroups = stageIndex === 0 ? groups.filter(groupLit) : [];
+    const boostThrust = litGroups.reduce((k, g) => k + stageThrustN(g.stage, alt), 0);
     // Core thrust IF the engine is lit (propellant remaining on the active stage).
     const coreThrustLit =
-      stageIndex >= 0 && remainingProp > 0 ? stageThrustN(profile.stages[stageIndex], alt) : 0;
+      stageIndex >= 0 && remainingProp > 0 && !(stageIndex === 0 && t < coreIgnitionS)
+        ? stageThrustN(profile.stages[stageIndex], alt)
+        : 0;
 
     // Guidance. Below the handover the aero-safe pitch table drives the gravity
     // turn; above it, adequately-powered stages + all lower stages use the
@@ -783,6 +864,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     const thrust = coreThrust + boostThrust;
     lastPitch = pitch;
     lastThrust = thrust; // HUD reads the real delivered thrust (0 on coast, B2/S3)
+    lastCoreLit = coreThrust > 0;
     const thrustDirX = Math.cos(pitch) * horizX + Math.sin(pitch) * upX;
     const thrustDirY = Math.cos(pitch) * horizY + Math.sin(pitch) * upY;
 
@@ -837,13 +919,21 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     if (coreThrust > 0) {
       remainingProp -= (coreThrust / (stageIspS(profile.stages[stageIndex], alt) * G0)) * dt;
     }
-    if (boostThrust > 0) {
-      boosterProp -= (boostThrust / (stageIspS(boosterStage!, alt) * G0)) * dt;
+    // Each lit group burns its own propellant (shared Isp); a spent group jettisons while
+    // the core fires on.
+    for (const g of litGroups) {
+      g.prop -= (stageThrustN(g.stage, alt) / (stageIspS(g.stage, alt) * G0)) * dt;
     }
-    // Boosters jettison the moment their propellant is spent; the core fires on.
-    if (boostersOn && boosterProp <= 0) {
-      boostersOn = false;
-      pushEvent('staging', boosterStage!.name);
+    for (const g of groups) {
+      if (!g.dropped && g.prop <= 0) {
+        g.dropped = true;
+        pushEvent(
+          'staging',
+          groups.length > 1
+            ? `${g.stage.name} (${g.air ? 'air-lit' : 'ground-lit'})`
+            : g.stage.name,
+        );
+      }
     }
     t += dt;
 
@@ -889,6 +979,16 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       }
     }
 
+    // Orbit already reached on an EARLIER stage (SLS: the core stage alone inserts Orion +
+    // ICPS): the final stage has no insertion left to fly. Hold it dark — its propellant is
+    // for the later injection burn (the scene's injection beat) — instead of letting it burn
+    // to depletion onto an escape path, which nothing else would ever cut off.
+    if (orbitSeen && secoT < 0 && stageIndex === profile.stages.length - 1) {
+      pushEvent('seco', `${profile.stages[stageIndex].name} — held for injection`);
+      stageIndex = -1;
+      secoT = t;
+    }
+
     // Soft-insertion floor (#416): a very-low-TWR final stage whose PEG solve
     // can't close the orbit from the energy state its boost phase delivered
     // still can't circularise. Rather than burn on into a re-entry / crater, cut
@@ -931,6 +1031,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
 
   const final = snapshot();
   states.push(final);
+  setDrawnAttitude(states);
 
   return {
     states,
@@ -948,6 +1049,38 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     siteRotationCreditKms: siteSpeed / 1000,
     totalDurationS: final.t,
   };
+}
+
+/**
+ * The angle the drawn vehicle's body makes with local vertical (rad): the commanded thrust
+ * direction, which is where the engines point. Not the INERTIAL velocity: the pad already
+ * carries Earth's ~0.4 km/s eastward rotation, so that vector is nearly horizontal at liftoff
+ * and drawing the body along it laid the rocket flat right off the pad.
+ */
+export function bodyAngleFromVerticalRad(s: AscentState): number {
+  return Math.min(Math.PI, Math.max(0, Math.PI / 2 - (s.attitudeRad ?? s.pitchRad)));
+}
+
+/** Fastest the drawn body turns (rad/s) — about what a real vehicle's attitude control slews. */
+export const DRAWN_ATTITUDE_RATE_RAD_S = (3 * Math.PI) / 180;
+
+/**
+ * Fill `attitudeRad` on every sampled state: the commanded pitch, rate-limited. The guidance
+ * steps when a stage takes over or PEG re-solves (66° → 104° → 71° at a Falcon 9 staging);
+ * drawn literally the craft snaps. Computed once over the samples, so scrubbing stays exact.
+ */
+function setDrawnAttitude(states: AscentState[]): void {
+  let prev: AscentState | null = null;
+  for (const s of states) {
+    if (!prev || prev.attitudeRad == null) {
+      s.attitudeRad = s.pitchRad;
+    } else {
+      const max = DRAWN_ATTITUDE_RATE_RAD_S * Math.max(0, s.t - prev.t);
+      s.attitudeRad =
+        prev.attitudeRad + Math.max(-max, Math.min(max, s.pitchRad - prev.attitudeRad));
+    }
+    prev = s;
+  }
 }
 
 /**
@@ -988,11 +1121,17 @@ export function sampleAscentAt(states: AscentState[], t: number): AscentState {
     propRemainingKg: lerp(a.propRemainingKg, b.propRemainingKg),
     boosterPropRemainingKg: lerp(a.boosterPropRemainingKg, b.boosterPropRemainingKg),
     boostersActive: f < 0.5 ? a.boostersActive : b.boostersActive,
+    boostersLit: f < 0.5 ? a.boostersLit : b.boostersLit,
+    coreLit: f < 0.5 ? a.coreLit : b.coreLit,
+    airLitBurning: f < 0.5 ? a.airLitBurning : b.airLitBurning,
     chamberTempK: f < 0.5 ? a.chamberTempK : b.chamberTempK,
     aeroHeatFlux: lerp(a.aeroHeatFlux, b.aeroHeatFlux),
     lossGravityKms: lerp(a.lossGravityKms, b.lossGravityKms),
     lossDragKms: lerp(a.lossDragKms, b.lossDragKms),
     lossSteeringKms: lerp(a.lossSteeringKms, b.lossSteeringKms),
+    ...(a.attitudeRad != null && b.attitudeRad != null
+      ? { attitudeRad: lerp(a.attitudeRad, b.attitudeRad) }
+      : {}),
   };
 }
 

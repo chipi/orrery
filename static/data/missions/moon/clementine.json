@@ -36,7 +36,8 @@
   ],
   "flight": {
     "launch": {
-      "vehicle_stage": "Titan II Star-37 upper stage",
+      "vehicle_stage": "Star-37 kick stage carried by the spacecraft (Titan II G to low Earth orbit)",
+      "departure": "spacecraft",
       "mass_at_tli_kg": 1690,
       "source": "NASA NSSDCA Clementine archive; NRL Clementine Mission Report (1994)"
     },
@@ -63,19 +64,19 @@
         "description": "Vandenberg AFB, 1994-01-25. Clementine — joint US Department of Defense / NASA mission. Originally designed to test SDI (Strategic Defense Initiative) sensors against an asteroid, with the Moon as a calibration target. First US lunar mission after Apollo 17 (22 years)."
       },
       {
-        "met_days": 0.5,
+        "met_days": 9,
         "type": "tli_or_tmi",
         "label": "Trans-lunar injection",
-        "description": "Phasing burns lifted Clementine from low Earth orbit to translunar trajectory."
+        "description": "1994-02-03, after an eight-day checkout in low Earth orbit. The STAR 37FM solid motor sent Clementine into a phasing loop that passed Earth twice before reaching the Moon."
       },
       {
-        "met_days": 7,
+        "met_days": 10,
         "type": "tcm",
         "label": "TCM-1",
         "description": "First post-TLI cleanup."
       },
       {
-        "met_days": 7.24,
+        "met_days": 10.24,
         "type": "tcm",
         "label": "TCM-2",
         "description": "Mid-cruise refinement."

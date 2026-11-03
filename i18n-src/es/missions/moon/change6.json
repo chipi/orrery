@@ -7,12 +7,74 @@
   "first": "Primer retorno de muestras de la cara oculta de la Luna",
   "description": "Combina las arquitecturas de Chang'e 4 (comunicaciones con la cara oculta) y Chang'e 5 (retorno de muestras). El satélite retransmisor Queqiao-2 se lanzó primero (marzo de 2024) para apoyar la misión. Chang'e 6 luego recogió 1,935 kg del cráter Apollo en la cara oculta — material con composición muy diferente a cualquier muestra lunar devuelta anteriormente. Los dos hemisferios de la Luna son radicalmente distintos (la cara oculta tiene una corteza más gruesa, menos mares); estas muestras pueden por fin explicar por qué.",
   "events": [
-    { "met": 0, "label": "LANZAMIENTO", "note": "Long March 5 desde Wenchang.", "type": "nominal" },
-    { "met": 5, "label": "ILO", "note": "Inserción en órbita lunar.", "type": "nominal" },
-    { "met": 30, "label": "ATERRIZAJE", "note": "El aterrizador desciende al cráter Apollo (cara oculta) 2024-06-02. Todas las comunicaciones a través del retransmisor Queqiao-2.", "type": "nominal" },
-    { "met": 30.6, "label": "MUESTREO", "note": "1,935 kg recogidos del regolito de la cara oculta.", "type": "info" },
-    { "met": 32, "label": "ASCENSO", "note": "El vehículo de ascenso despega; encuentro con el orbitador.", "type": "nominal" },
-    { "met": 53, "label": "RETORNO A LA TIERRA", "note": "La cápsula aterriza en Mongolia Interior 2024-06-25 con las primeras muestras de la cara oculta jamás recuperadas.", "type": "info" }
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Long March 5 desde Wenchang.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "ILO",
+      "note": "Inserción en órbita lunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "ATERRIZAJE",
+      "note": "El aterrizador desciende al cráter Apollo (cara oculta) 2024-06-02. Todas las comunicaciones a través del retransmisor Queqiao-2.",
+      "type": "nominal"
+    },
+    {
+      "met": 30.6,
+      "label": "MUESTREO",
+      "note": "1,935 kg recogidos del regolito de la cara oculta.",
+      "type": "info"
+    },
+    {
+      "met": 32,
+      "label": "ASCENSO",
+      "note": "El vehículo de ascenso despega; encuentro con el orbitador.",
+      "type": "nominal"
+    },
+    {
+      "met": 53,
+      "label": "RETORNO A LA TIERRA",
+      "note": "La cápsula aterriza en Mongolia Interior 2024-06-25 con las primeras muestras de la cara oculta jamás recuperadas.",
+      "type": "info"
+    }
   ],
-  "vehicle_stage": "etapa superior YZ-1 del Long March 5"
+  "vehicle_stage": "etapa superior YZ-1 del Long March 5",
+  "flight_events": [
+    {
+      "met": 1.04,
+      "label": "MCC-1",
+      "description": "Primera limpieza tras la inyección translunar."
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-2",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-3",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 3,
+      "label": "MCC-4",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5 — última antes de la inserción en órbita lunar",
+      "description": "Puntería final de aproximación."
+    },
+    {
+      "met": 48.6,
+      "label": "Inyección transterrestre",
+      "description": "2024-06-21. El orbitador salió de la órbita lunar en una trayectoria de regreso."
+    }
+  ]
 }

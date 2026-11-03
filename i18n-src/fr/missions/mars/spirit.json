@@ -51,5 +51,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "étage supérieur à poudre Star 48B PAM-D"
+  "vehicle_stage": "étage supérieur à poudre Star 48B PAM-D",
+  "flight_events": [
+    {
+      "met": 80,
+      "label": "TCM-2",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 165,
+      "label": "TCM-3",
+      "description": "Retouche de la phase d'approche vers l'ellipse cible du cratère Gusev."
+    }
+  ]
 }

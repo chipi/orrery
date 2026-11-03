@@ -15,7 +15,7 @@
     },
     {
       "met": 17,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Maanbaan-insertie 2008-11-08.",
       "type": "nominal"
     },
@@ -32,5 +32,37 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "vierde trap PS4 van de PSLV"
+  "vehicle_stage": "vierde trap PS4 van de PSLV",
+  "flight_events": [
+    {
+      "met": 8,
+      "label": "Injectie richting de maan",
+      "description": "Een reeks fasebrandstappen in het perigeum bracht Chandrayaan-1 van een baan om de aarde naar de overdracht naar de maan — dezelfde zuinige strategie van baanverhoging rond de aarde die ISRO later bij Mangalyaan opnieuw zou gebruiken."
+    },
+    {
+      "met": 9.8,
+      "label": "TCM-1",
+      "description": "Opruimbrandstap na de injectie richting de maan."
+    },
+    {
+      "met": 11.15,
+      "label": "TCM-2",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 12,
+      "label": "TCM-3",
+      "description": "Verfijning halverwege de reis."
+    },
+    {
+      "met": 12.5,
+      "label": "TCM-4",
+      "description": "Verfijning in de naderingsfase."
+    },
+    {
+      "met": 13.85,
+      "label": "TCM-5 — laatste voor de intrede in een baan om de maan",
+      "description": "Laatste naderingsrichting."
+    }
+  ]
 }

@@ -13,9 +13,12 @@
 //   node scripts/search-badge-candidates.mjs fleet
 //   node scripts/search-badge-candidates.mjs missions
 //
-// Writes /tmp/badge-candidates.json and prints a compact table.
+// Writes badge-candidates.json into a fresh private temp directory (path printed) and prints a
+// compact table.
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 const WP = 'https://en.wikipedia.org/w/api.php';
 const COMMONS = 'https://commons.wikimedia.org/w/api.php';
@@ -87,10 +90,18 @@ async function commonsInfo(file) {
   if (!ii) return null;
   const meta = ii.extmetadata || {};
   const license = (meta.LicenseShortName?.value || meta.License?.value || '').trim();
-  const artist = (meta.Artist?.value || '')
-    .replace(/<[^>]+>/g, '')
-    .trim()
-    .slice(0, 50);
+  // Commons serves Artist as HTML, sometimes entity-escaped; decode before stripping tags, and keep
+  // the whole name (a 50-char cut wrote "National Aeronautics and Space Administration (NAS" credits).
+  // One decode pass, so "&amp;lt;" becomes the text "&lt;", never a tag. Tags are stripped until
+  // nothing changes (a nested "<<b>script>" survives one pass), then stray angle brackets go too.
+  const ENTITY = { lt: '<', gt: '>', quot: '"', '#39': "'", amp: '&' };
+  let artist = (meta.Artist?.value || '').replace(/&(lt|gt|quot|#39|amp);/g, (_, e) => ENTITY[e]);
+  let previous;
+  do {
+    previous = artist;
+    artist = artist.replace(/<[^>]*>/g, '');
+  } while (artist !== previous);
+  artist = artist.replace(/[<>]/g, '').replace(/\s+/g, ' ').trim();
   return {
     file,
     license: license || '(unknown)',
@@ -171,7 +182,9 @@ async function main() {
     await sleep(THROTTLE_MS);
   }
 
-  writeFileSync('/tmp/badge-candidates.json', JSON.stringify(results, null, 2));
+  const outPath = join(mkdtempSync(join(tmpdir(), 'badge-candidates-')), 'badge-candidates.json');
+  writeFileSync(outPath, JSON.stringify(results, null, 2));
+  console.error(`wrote ${outPath}`);
   const usable = results.filter((r) => r.hit.usable);
   console.error(
     `\n${results.length}/${targets.length} have an infobox insignia; ${usable.length} with a usable (PD/CC) licence.`,

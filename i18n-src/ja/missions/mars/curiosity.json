@@ -51,5 +51,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 上段（Atlas V 541）"
+  "vehicle_stage": "Centaur 上段（Atlas V 541）",
+  "flight_events": [
+    {
+      "met": 76,
+      "label": "TCM-2",
+      "description": "巡航中間の精密化噴射。この時点で Curiosity は地球の重力井戸を抜け、安定した日心軌道を進んでいる。"
+    },
+    {
+      "met": 211,
+      "label": "TCM-4——EDL 前の最後の噴射",
+      "description": "火星大気突入前の最後の大きな軌道微調整。EDL には大気界面で 1 km 未満の照準精度が必要で、TCM-4 がそれを実現する。"
+    }
+  ]
 }

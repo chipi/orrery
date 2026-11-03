@@ -32,5 +32,12 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Molniya-M Block-L ऊपरी चरण"
+  "vehicle_stage": "Molniya-M Block-L ऊपरी चरण",
+  "flight_events": [
+    {
+      "met": 1.5,
+      "label": "मध्य-पथ सुधार",
+      "description": "यात्रा के बीच पथ का सुधार।"
+    }
+  ]
 }

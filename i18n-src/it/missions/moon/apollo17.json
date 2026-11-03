@@ -22,7 +22,7 @@
     },
     {
       "met": 3.4,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Inserimento nell'orbita lunare.",
       "type": "nominal"
     },
@@ -51,5 +51,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (terzo stadio)"
+  "vehicle_stage": "Saturn V S-IVB (terzo stadio)",
+  "flight_events": [
+    {
+      "met": 1.27,
+      "label": "MCC-2",
+      "description": "Prima correzione di traiettoria."
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-3",
+      "description": "Affinamento della fase di avvicinamento prima dell'inserimento in orbita lunare."
+    },
+    {
+      "met": 10.9,
+      "label": "Immissione transterrestre",
+      "description": "1972-12-16. L'accensione dell'SPS riporta a casa l'Apollo 17 dopo 75 ore in orbita lunare e tre giorni sulla superficie."
+    }
+  ]
 }

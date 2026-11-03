@@ -1,0 +1,51 @@
+{
+  "id": "sputnik-8k71ps",
+  "name": "Sputnik (8K71PS)",
+  "source_tier": "flagship",
+  "payloadKg": 84,
+  "liftoffThrustKN": 3890,
+  "fairingKg": 0,
+  "fairingJettisonAltM": 100000,
+  "refAreaM2": 30,
+  "cd": 0.3,
+  "launchSite": { "lat": 45.9203, "lon": 63.3422, "name": "Site 1/5 · Baikonur Cosmodrome" },
+  "pitchProgram": [[0, 90], [13, 88], [55, 66], [130, 42], [220, 22], [300, 8]],
+  "boosters": {
+    "name": "Blok B–D (RD-107)",
+    "count": 4,
+    "wetKg": 43000,
+    "dryKg": 3400,
+    "thrustSlKN": 783,
+    "thrustVacKN": 958,
+    "ispSlS": 250,
+    "ispVacS": 306,
+    "chamberTempK": 3200
+  },
+  "stages": [
+    {
+      "name": "Blok A core (RD-108)",
+      "wetKg": 94000,
+      "dryKg": 7495,
+      "thrustSlKN": 759,
+      "thrustVacKN": 970,
+      "ispSlS": 241,
+      "ispVacS": 308,
+      "engines": 1,
+      "chamberTempK": 3200
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Sputnik (rocket) — Wikipedia (stage masses, Isp, burn times; 267 t and 3,890 kN at liftoff; two stages, no Blok E)",
+      "u": "https://en.wikipedia.org/wiki/Sputnik_(rocket)"
+    },
+    {
+      "l": "Sputnik 1 — Wikipedia (83.6 kg; strap-ons off T+116 s, core cutoff T+295.4 s, separation 19.9 s later; the 7.5 t core reached orbit and decayed 2 Dec 1957)",
+      "u": "https://en.wikipedia.org/wiki/Sputnik_1"
+    },
+    {
+      "l": "Per-strap-on thrust derived from the 3,890 kN liftoff total less the core's sea-level thrust (itself from its vacuum thrust and Isp ratio); the published per-engine figure is ambiguous",
+      "u": "http://www.astronautix.com/s/sputnik8k71ps.html"
+    }
+  ]
+}

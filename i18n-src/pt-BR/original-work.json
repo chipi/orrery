@@ -1917,5 +1917,90 @@
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
     }
+  },
+  "icons": {
+    "menu": {
+      "title": "Botão de menu",
+      "what": "Hambúrguer de três barras que se dobra em um X de fechar quando a gaveta está aberta.",
+      "where": "Navegação (celular)",
+      "variants": {
+        "closed": "fechado",
+        "open": "aberto"
+      }
+    },
+    "audio-wave": {
+      "title": "Onda do tour em áudio",
+      "what": "A marca «〜» que abre o tour guiado em áudio; pulsa enquanto toca.",
+      "where": "Navegação · botão da página inicial"
+    },
+    "science-lens": {
+      "title": "Lente científica",
+      "what": "Anel externo com um ponto central (desligada) ou uma mira (ligada) — liga e desliga a lente.",
+      "where": "Navegação",
+      "variants": {
+        "off": "desligada",
+        "on": "ligada"
+      }
+    },
+    "settings-gear": {
+      "title": "Configurações gráficas",
+      "what": "Engrenagem de oito raios para o painel de qualidade e configurações gráficas.",
+      "where": "Navegação"
+    },
+    "fullscreen": {
+      "title": "Tela cheia",
+      "what": "Cantos para fora (entrar) ou para dentro (sair) para a tela cheia dos panoramas.",
+      "where": "Panoramas da Lua · de Marte",
+      "variants": {
+        "enter": "entrar",
+        "exit": "sair"
+      }
+    },
+    "conic": {
+      "title": "Ícones de cônicas",
+      "what": "Glifos de circunferência / elipse / parábola / hipérbole para a sobreposição de órbitas.",
+      "where": "Lente de órbita de Voar",
+      "variants": {
+        "circle": "circunferência",
+        "ellipse": "elipse",
+        "parabola": "parábola",
+        "hyperbola": "hipérbole"
+      }
+    },
+    "info-chip": {
+      "title": "Selo de ciência",
+      "what": "Glifo «i» geométrico que liga qualquer figura à sua explicação em /science.",
+      "where": "Em todo o app"
+    },
+    "vehicle": {
+      "title": "Lançador",
+      "what": "Foguete com coifa, pernas de pouso e escotilha.",
+      "where": "Painel da missão"
+    },
+    "spacecraft": {
+      "title": "Nave espacial / carga útil",
+      "what": "Plataforma central com painéis solares, mastro de antena e marcador de orientação.",
+      "where": "Painel da missão"
+    },
+    "trajectory-arrow": {
+      "title": "Seta de trajetória",
+      "what": "Trajetória em arco com ponta de seta — o convite a «voar isto» / transferência.",
+      "where": "Painel da missão · Planejar"
+    },
+    "mission-orbit": {
+      "title": "Glifo de missão",
+      "what": "Anel de órbita com uma trajetória em arco e um ponto marcador — links para missões da frota.",
+      "where": "Painel da frota"
+    },
+    "share": {
+      "title": "Compartilhar",
+      "what": "Quadrado com seta para cima — compartilha a vista atual (menu do sistema / copiar link).",
+      "where": "Navegação"
+    },
+    "sensory": {
+      "title": "Camada sensorial",
+      "what": "Agulha de bússola cruzada por uma onda — abre as configurações sensoriais (som / vibração / inclinação).",
+      "where": "Navegação"
+    }
   }
 }

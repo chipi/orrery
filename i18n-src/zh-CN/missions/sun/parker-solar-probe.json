@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "固体第三级 Star 48BV（Delta IV Heavy：芯级 + 2 台助推器）"
+  "vehicle_stage": "固体第三级 Star 48BV（Delta IV Heavy：芯级 + 2 台助推器）",
+  "flight_events": [
+    {
+      "met": 985,
+      "label": "金星引力辅助 第4次",
+      "description": "2021-02-20。第四次金星引力辅助进一步降低近日点，向 9.86 R☉ 的目标推进。"
+    }
+  ]
 }

@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur ऊपरी चरण (Atlas V 411)"
+  "vehicle_stage": "Centaur ऊपरी चरण (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 1750,
+      "label": "शुक्र गुरुत्व सहायता 4",
+      "description": "2025-02। शुक्र की चौथी सहायता सौर-अक्षांश को ~17° की ओर उठाती रहती है (विस्तारित मिशन का लक्ष्य ~33°)।"
+    }
+  ]
 }

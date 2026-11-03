@@ -2,15 +2,23 @@
   "missionId": "opportunity",
   "siteId": "opportunity",
   "body": "mars",
-  "landingSite": { "lat": -1.95, "lon": -5.53 },
-  "entryState": { "altitudeM": 125000, "velocityMs": 5500, "flightPathAngleDeg": 7.5 },
-  "entryMassKg": 540,
-  "entryCdA": 14,
+  "landingSite": {
+    "lat": -1.95,
+    "lon": -5.53
+  },
+  "entryState": {
+    "altitudeM": 125000,
+    "velocityMs": 5700,
+    "flightPathAngleDeg": 11.5
+  },
+  "entryMassKg": 840,
+  "entryCdA": 9.35,
+  "dynamicGamma": true,
   "retroPropellantKg": 25,
   "archetype": "MARS_AIRBAG",
   "params": {
-    "chuteDeployAltM": 9000,
-    "terminalHandoffAltM": 300,
+    "chuteDeployAltM": 7520,
+    "terminalHandoffAltM": 127,
     "parachuteCdA": 60,
     "heatshieldKg": 90,
     "ispS": 200,
@@ -18,6 +26,13 @@
   },
   "source_tier": "flagship",
   "provenance": [
-    { "l": "MER-B Opportunity EDL — JPL Mars Exploration Rover mission overview", "u": "https://mars.nasa.gov/mer/mission/timeline/surfaceops/entry-descent-landing/" }
+    {
+      "l": "MER EDL reconstruction (NASA) — Opportunity entry 5,700 m/s inertial at −11.5°, 840 kg design mass, β 89.8 kg/m²; chute 250.3 s at 7.52 km, RAD firing 336.3 s at 127 m, ~13.8 m/s airbag impact",
+      "u": "https://ntrs.nasa.gov/api/citations/20040095912/downloads/20040095912.pdf"
+    },
+    {
+      "l": "MER-B Opportunity EDL — JPL Mars Exploration Rover mission overview",
+      "u": "https://mars.nasa.gov/mer/mission/timeline/surfaceops/entry-descent-landing/"
+    }
   ]
 }

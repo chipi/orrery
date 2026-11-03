@@ -50,5 +50,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "SLS ICPS (Interim Cryogenic Propulsion Stage, kryogene Übergangsstufe)"
+  "vehicle_stage": "SLS ICPS (Interim Cryogenic Propulsion Stage, kryogene Übergangsstufe)",
+  "flight_events": [
+    {
+      "met": 1.48,
+      "label": "MCC-1",
+      "description": "Erste Kurskorrektur."
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-2",
+      "description": "Feinkorrektur in der Anflugphase."
+    }
+  ]
 }

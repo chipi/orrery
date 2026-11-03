@@ -1917,5 +1917,90 @@
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
     }
+  },
+  "icons": {
+    "menu": {
+      "title": "菜单按钮",
+      "what": "三条横线的汉堡图标，抽屉打开时折叠成关闭的 X。",
+      "where": "导航（移动端）",
+      "variants": {
+        "closed": "关闭",
+        "open": "打开"
+      }
+    },
+    "audio-wave": {
+      "title": "语音导览波形",
+      "what": "打开语音导览的“〜”标记；播放时会脉动。",
+      "where": "导航 · 首页按钮"
+    },
+    "science-lens": {
+      "title": "科学透镜",
+      "what": "外环中心带一个点（关）或十字准星（开）——切换透镜。",
+      "where": "导航",
+      "variants": {
+        "off": "关",
+        "on": "开"
+      }
+    },
+    "settings-gear": {
+      "title": "图形设置",
+      "what": "八辐齿轮，用于画质 / 图形设置面板。",
+      "where": "导航"
+    },
+    "fullscreen": {
+      "title": "全屏",
+      "what": "角括号朝外（进入）或朝内（退出），用于全景图全屏。",
+      "where": "月球 · 火星全景",
+      "variants": {
+        "enter": "进入",
+        "exit": "退出"
+      }
+    },
+    "conic": {
+      "title": "圆锥曲线图标",
+      "what": "用于轨道叠加层的圆 / 椭圆 / 抛物线 / 双曲线图形。",
+      "where": "飞行中的轨道透镜",
+      "variants": {
+        "circle": "圆",
+        "ellipse": "椭圆",
+        "parabola": "抛物线",
+        "hyperbola": "双曲线"
+      }
+    },
+    "info-chip": {
+      "title": "科学信息标",
+      "what": "几何“i”图形，把每张图链接到 /science 中对应的讲解。",
+      "where": "全站"
+    },
+    "vehicle": {
+      "title": "运载火箭",
+      "what": "带整流罩、着陆腿和舷窗的火箭。",
+      "where": "任务面板"
+    },
+    "spacecraft": {
+      "title": "航天器 / 载荷",
+      "what": "带太阳能板、天线杆和姿态标记的中心平台。",
+      "where": "任务面板"
+    },
+    "trajectory-arrow": {
+      "title": "轨迹箭头",
+      "what": "带箭头的弧形飞行轨迹——“飞这条”/转移的行动按钮。",
+      "where": "任务面板 · 规划"
+    },
+    "mission-orbit": {
+      "title": "任务图标",
+      "what": "带弧形路径和标记点的轨道环——指向航天器任务的链接。",
+      "where": "航天器条目面板"
+    },
+    "share": {
+      "title": "分享",
+      "what": "方框加上箭头——分享当前视图（系统分享面板 / 复制链接）。",
+      "where": "导航"
+    },
+    "sensory": {
+      "title": "感官层",
+      "what": "被波形穿过的指南针——打开感官设置（声音 / 振动 / 倾斜）。",
+      "where": "导航"
+    }
   }
 }

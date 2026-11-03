@@ -15,7 +15,7 @@
     },
     {
       "met": 5,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Inserção em órbita lunar.",
       "type": "nominal"
     },
@@ -50,5 +50,37 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "estágio superior YZ-1 do Long March 5"
+  "vehicle_stage": "estágio superior YZ-1 do Long March 5",
+  "flight_events": [
+    {
+      "met": 1.04,
+      "label": "MCC-1",
+      "description": "Primeira limpeza após a injeção translunar."
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-2",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-3",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 3,
+      "label": "MCC-4",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5 — última antes da inserção em órbita lunar",
+      "description": "Mira final de aproximação."
+    },
+    {
+      "met": 19,
+      "label": "Injeção transterrestre",
+      "description": "2020-12-12. O orbitador deixou a órbita lunar numa trajetória de retorno."
+    }
+  ]
 }

@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur D-1T 上段"
+  "vehicle_stage": "Centaur D-1T 上段",
+  "flight_events": [
+    {
+      "met": 69.92,
+      "label": "TCM-2",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 124.64,
+      "label": "TCM-3",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 200,
+      "label": "TCM-4——火星周回軌道投入前の最後",
+      "description": "接近フェーズでの照準の精密化。"
+    }
+  ]
 }

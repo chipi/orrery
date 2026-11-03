@@ -10,6 +10,7 @@
   import * as m from '$lib/paraglide/messages';
   import { localizeHref } from '$lib/paraglide/runtime';
   import type { PageData } from './$types';
+  import { licenseLabel } from '$lib/license-label';
 
   let { data }: { data: PageData } = $props();
 </script>
@@ -55,7 +56,8 @@
                 class="b-credit"
                 href={p.credit.source_url}
                 target="_blank"
-                rel="noopener noreferrer">{p.credit.author} · {p.credit.license_short}</a
+                rel="noopener noreferrer"
+                >{p.credit.author} · {licenseLabel(p.credit.license_short)}</a
               >
             {/if}
           </figcaption>
@@ -84,7 +86,8 @@
                 class="b-credit"
                 href={mi.credit.source_url}
                 target="_blank"
-                rel="noopener noreferrer">{mi.credit.author} · {mi.credit.license_short}</a
+                rel="noopener noreferrer"
+                >{mi.credit.author} · {licenseLabel(mi.credit.license_short)}</a
               >
             {/if}
           </figcaption>
@@ -114,7 +117,8 @@
                   class="b-credit"
                   href={fl.credit.source_url}
                   target="_blank"
-                  rel="noopener noreferrer">{fl.credit.author} · {fl.credit.license_short}</a
+                  rel="noopener noreferrer"
+                  >{fl.credit.author} · {licenseLabel(fl.credit.license_short)}</a
                 >
               {/if}
             </figcaption>

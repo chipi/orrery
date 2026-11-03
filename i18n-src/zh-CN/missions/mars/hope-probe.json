@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "H-IIA 第二级"
+  "vehicle_stage": "H-IIA 第二级",
+  "flight_events": [
+    {
+      "met": 41,
+      "label": "TCM-2",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 71.75,
+      "label": "TCM-3",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 100,
+      "label": "TCM-4",
+      "description": "接近阶段调整。"
+    },
+    {
+      "met": 102.5,
+      "label": "TCM-5——进入火星轨道前最后一次",
+      "description": "收紧进入火星轨道的接近瞄准。"
+    }
+  ]
 }

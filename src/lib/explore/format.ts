@@ -25,8 +25,26 @@ export const fmtScale = (value: number): string =>
   value >= 1000 || value < 0.01
     ? value.toLocaleString(undefined, { maximumSignificantDigits: 3 })
     : String(value);
-// Localize the light-travel unit words emitted by scale-readout (the km/AU/ly/pc
-// symbols stay universal).
+// A distance from scale-readout ({value, unit: 'km' | 'AU' | 'ly' | 'pc'}) in the locale's own
+// unit form (style guide §1a: ru а. е. / св. год / пк, de AE, ar و.ف …).
+export const distanceWithUnit = (value: string, unit: string): string => {
+  switch (unit) {
+    case 'AU':
+      return m.unit_au_value({ value });
+    case 'ly':
+      return m.unit_ly_value({ value });
+    case 'pc':
+      return m.unit_pc_value({ value });
+    case 'km':
+      return m.mp_flight_unit_km({ value });
+    default:
+      return `${value} ${unit}`;
+  }
+};
+// The bare unit, for a toggle chip with no number next to it.
+export const distanceUnitLabel = (unit: string): string => distanceWithUnit('', unit).trim();
+
+// Localize the light-travel unit words emitted by scale-readout.
 export const lightUnitLabel = (unit: string): string => {
   switch (unit) {
     case 'light-seconds':

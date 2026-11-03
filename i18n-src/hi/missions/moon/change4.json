@@ -15,7 +15,7 @@
     },
     {
       "met": 5,
-      "label": "MOI",
+      "label": "LOI",
       "note": "चंद्र कक्षा-प्रवेश।",
       "type": "nominal"
     },
@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Long March 3B तीसरा चरण"
+  "vehicle_stage": "Long March 3B तीसरा चरण",
+  "flight_events": [
+    {
+      "met": 1.19,
+      "label": "MCC-1",
+      "description": "पहला पथ-सुधार।"
+    },
+    {
+      "met": 2.08,
+      "label": "MCC-2",
+      "description": "यात्रा के बीच परिशोधन।"
+    },
+    {
+      "met": 2.97,
+      "label": "MCC-3",
+      "description": "यात्रा के बीच परिशोधन।"
+    },
+    {
+      "met": 4.9,
+      "label": "MCC-4 — चंद्र कक्षा-प्रवेश से पहले अंतिम",
+      "description": "चंद्र कक्षा-प्रवेश से पहले निकट पहुँचने का अंतिम लक्ष्य-निर्धारण।"
+    }
+  ]
 }

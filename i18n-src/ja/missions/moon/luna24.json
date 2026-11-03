@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Blok-D 上段"
+  "vehicle_stage": "Blok-D 上段",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "月遷移軌道投入",
+      "description": "Blok D 上段の噴射で Luna 24 を月遷移軌道に乗せる。"
+    },
+    {
+      "met": 1.5,
+      "label": "中間軌道修正1回目",
+      "description": "最初の軌道の精密化。"
+    },
+    {
+      "met": 4,
+      "label": "中間軌道修正2回目",
+      "description": "接近フェーズの精密化。"
+    }
+  ]
 }

@@ -7,10 +7,57 @@
   "first": "火星が大気をどう失ったかを研究する初の専任ミッション",
   "description": "MAVEN（火星の大気と揮発性物質の進化を調べる探査機）は「火星の大気はどこへ消えたのか」という問いに答える。楕円軌道が上層大気まで降下し、太陽風に剥ぎ取られていくイオンと中性粒子を直接採取する。成果として、火星は毎秒約100 gの大気を宇宙空間へ失っており、数十億年を経れば、かつての気候が失われた理由を説明するのに十分な量だと分かった。また、この探査機は、Curiosity や Perseverance を含む火星表面の探査機との重要な通信中継役も務めている。",
   "events": [
-    { "met": 0, "label": "打ち上げ", "note": "ケープ・カナベラル SLC-41からAtlas V 401。", "type": "nominal" },
-    { "met": 30, "label": "TCM-1", "note": "第一次軌道修正。", "type": "nominal" },
-    { "met": 308, "label": "火星周回軌道投入", "note": "33分間の主エンジン噴射でMAVENを周期35時間の楕円科学軌道に投入。", "type": "nominal" },
-    { "met": 350, "label": "最初の科学観測", "note": "大気サンプリングの「ディープ・ディップ」運用開始 — 近点高度約125 km。", "type": "info" }
+    {
+      "met": 0,
+      "label": "打ち上げ",
+      "note": "ケープ・カナベラル SLC-41からAtlas V 401。",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "第一次軌道修正。",
+      "type": "nominal"
+    },
+    {
+      "met": 308,
+      "label": "火星周回軌道投入",
+      "note": "33分間の主エンジン噴射でMAVENを周期35時間の楕円科学軌道に投入。",
+      "type": "nominal"
+    },
+    {
+      "met": 350,
+      "label": "最初の科学観測",
+      "note": "大気サンプリングの「ディープ・ディップ」運用開始 — 近点高度約125 km。",
+      "type": "info"
+    }
   ],
-  "vehicle_stage": "Centaur 上段（Atlas V 401）"
+  "vehicle_stage": "Centaur 上段（Atlas V 401）",
+  "flight_events": [
+    {
+      "met": 55,
+      "label": "TCM-2",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 94.6,
+      "label": "TCM-3",
+      "description": "巡航中間の調整。"
+    },
+    {
+      "met": 100,
+      "label": "TCM-4",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 134.2,
+      "label": "TCM-5",
+      "description": "接近フェーズの調整。"
+    },
+    {
+      "met": 200,
+      "label": "TCM-6——火星周回軌道投入前の最後の噴射",
+      "description": "火星周回軌道投入に向けて接近照準を詰める。"
+    }
+  ]
 }

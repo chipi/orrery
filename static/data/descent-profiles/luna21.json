@@ -2,15 +2,47 @@
   "missionId": "luna21",
   "siteId": "luna21",
   "body": "moon",
-  "landingSite": { "lat": 25.85, "lon": 30.45 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 1900,
+  "landingSite": {
+    "lat": 25.85,
+    "lon": 30.45
+  },
+  "entryState": {
+    "altitudeM": 16000,
+    "velocityMs": 1690,
+    "flightPathAngleDeg": 3.4
+  },
+  "entryMassKg": 3500,
   "entryCdA": 0,
-  "retroPropellantKg": 280,
+  "retroPropellantKg": 1620,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 3.4,
+    "brakingMaxThrustN": 16000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 16,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.velocityMs",
+    "entryMassKg",
+    "retroPropellantKg",
+    "brakingFpaDeg",
+    "brakingMaxThrustN",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Luna 21 / Lunokhod 2 — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-001A" }
+    {
+      "l": "Luna 21 — braking rocket from 16 km, main thrusters 750 m → 22 m, engine off at 1.5 m; start speed by vis-viva, masses estimated; braking thrust and angle fitted to Luna 16’s ~360 s descent",
+      "u": "https://en.wikipedia.org/wiki/Luna_21"
+    },
+    {
+      "l": "Luna 21 / Lunokhod 2 — NSSDC spacecraft record",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-001A"
+    }
   ]
 }

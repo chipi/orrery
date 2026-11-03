@@ -1917,5 +1917,90 @@
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
     }
+  },
+  "icons": {
+    "menu": {
+      "title": "Bouton de menu",
+      "what": "Hamburger à trois barres qui se replie en croix de fermeture quand le tiroir est ouvert.",
+      "where": "Navigation (mobile)",
+      "variants": {
+        "closed": "fermé",
+        "open": "ouvert"
+      }
+    },
+    "audio-wave": {
+      "title": "Onde de la visite audio",
+      "what": "Le signe « 〜 » qui ouvre la visite audio guidée ; il pulse pendant la lecture.",
+      "where": "Navigation · bouton de l'accueil"
+    },
+    "science-lens": {
+      "title": "Lentille scientifique",
+      "what": "Anneau extérieur avec un point central (désactivée) ou un réticule (activée) — active ou désactive la lentille.",
+      "where": "Navigation",
+      "variants": {
+        "off": "désactivée",
+        "on": "activée"
+      }
+    },
+    "settings-gear": {
+      "title": "Réglages graphiques",
+      "what": "Roue dentée à huit rayons pour le panneau de qualité / réglages graphiques.",
+      "where": "Navigation"
+    },
+    "fullscreen": {
+      "title": "Plein écran",
+      "what": "Coins tournés vers l'extérieur (entrer) ou vers l'intérieur (sortir) pour le plein écran des panoramas.",
+      "where": "Panoramas de la Lune · de Mars",
+      "variants": {
+        "enter": "entrer",
+        "exit": "sortir"
+      }
+    },
+    "conic": {
+      "title": "Icônes des coniques",
+      "what": "Glyphes de cercle / ellipse / parabole / hyperbole pour la superposition d'orbites.",
+      "where": "Lentille d'orbite de Vol",
+      "variants": {
+        "circle": "cercle",
+        "ellipse": "ellipse",
+        "parabola": "parabole",
+        "hyperbola": "hyperbole"
+      }
+    },
+    "info-chip": {
+      "title": "Pastille science",
+      "what": "Glyphe « i » géométrique qui relie chaque figure à son explication dans /science.",
+      "where": "Partout"
+    },
+    "vehicle": {
+      "title": "Lanceur",
+      "what": "Fusée avec coiffe, jambes d'atterrissage et hublot.",
+      "where": "Panneau de mission"
+    },
+    "spacecraft": {
+      "title": "Engin spatial / charge utile",
+      "what": "Plateforme centrale avec panneaux solaires, mât d'antenne et repère d'orientation.",
+      "where": "Panneau de mission"
+    },
+    "trajectory-arrow": {
+      "title": "Flèche de trajectoire",
+      "what": "Trajectoire en arc terminée par une flèche — l'appel à l'action « faire voler » / transfert.",
+      "where": "Panneau de mission · Planifier"
+    },
+    "mission-orbit": {
+      "title": "Glyphe de mission",
+      "what": "Anneau d'orbite avec une trajectoire en arc et un point repère — liens vers les missions de la flotte.",
+      "where": "Panneau d'engin de la flotte"
+    },
+    "share": {
+      "title": "Partager",
+      "what": "Carré et flèche vers le haut — partage la vue actuelle (feuille native / copie du lien).",
+      "where": "Navigation"
+    },
+    "sensory": {
+      "title": "Couche sensorielle",
+      "what": "Aiguille de boussole traversée par une onde — ouvre les réglages sensoriels (son / vibration / inclinaison).",
+      "where": "Navigation"
+    }
   }
 }

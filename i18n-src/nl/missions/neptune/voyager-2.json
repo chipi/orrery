@@ -21,5 +21,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Centaur + TE-364-4 (Star-37E)"
+  "vehicle_stage": "Centaur + TE-364-4 (Star-37E)",
+  "flight_events": [
+    {
+      "met": 688,
+      "label": "Jupiter — zwaartekrachtassist",
+      "description": "Dichtste nadering 721.670 km op 1979-07-09. Ontdekt het gladde waterijsoppervlak van Europa en maakt de eerste gedetailleerde beelden van de lichte en donkere gebieden op Ganymedes; bevestigt de vulkaanwaarnemingen van Voyager 1 op Io. De zwaartekracht van Jupiter buigt het traject naar buiten af, richting Saturnus, dat 26 maanden later wordt bereikt — de eerste van drie planetaire assists van de missie."
+    },
+    {
+      "met": 1466,
+      "label": "Saturnus — zwaartekrachtassist",
+      "description": "Dichtste nadering 101.000 km op 1981-08-26. Levert de meest gedetailleerde beelden van de ringen van Saturnus tot dan toe (spaken, gevlochten F-ring) en toont de grote lijnen van de chaotische rotatie van Hyperion. De geometrie van de ontmoeting moest door de smalle doorgang tussen Uranus en het diepe zuiden van de ecliptica — de enige route waarop beide ijsreuzen bereikbaar bleven."
+    },
+    {
+      "met": 3079,
+      "label": "Uranus — zwaartekrachtassist",
+      "description": "Dichtste nadering 81.500 km op 1986-01-24 — tot nu toe het enige bezoek van een ruimtesonde aan Uranus. Onthult de extreme ashelling van 98°, 10 nieuwe manen en een scheefstaand magnetisch veld. Voyager 2 kruist het ringvlak met 14,5 km/s; de katapult moet het traject daarna ongeveer 50° afbuigen om Neptunus drie jaar later te bereiken."
+    }
+  ]
 }

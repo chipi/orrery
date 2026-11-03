@@ -15,7 +15,7 @@
     },
     {
       "met": 5,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Einschwenken in die Mondumlaufbahn.",
       "type": "nominal"
     },
@@ -32,5 +32,27 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "dritte Stufe der Long March 3B"
+  "vehicle_stage": "dritte Stufe der Long March 3B",
+  "flight_events": [
+    {
+      "met": 1.19,
+      "label": "MCC-1",
+      "description": "Erste Kurskorrektur."
+    },
+    {
+      "met": 2.08,
+      "label": "MCC-2",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 2.97,
+      "label": "MCC-3",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 4.9,
+      "label": "MCC-4 — letzte vor dem Einschwenken in die Mondumlaufbahn",
+      "description": "Letzte Anflugausrichtung vor dem Einschwenken in die Mondumlaufbahn."
+    }
+  ]
 }

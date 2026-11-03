@@ -7,13 +7,60 @@
   "first": "Primer aterrizaje lunar tripulado desde el Apollo 17 (1972)",
   "description": "Desde el cambio de plan de la NASA de febrero de 2026, Artemis IV es la misión que devuelve a personas a la superficie lunar: el primer aterrizaje desde el Apollo 17 en 1972 y el primero cerca del polo sur. El SLS, en su último vuelo con la etapa superior provisional, lanza Orion con cuatro tripulantes hacia la Luna. En órbita lunar se encuentran con un módulo de aterrizaje comercial — la Starship de SpaceX o el Blue Moon de Blue Origin, elegido tras las pruebas de acoplamiento de Artemis III — y dos astronautas descienden a la región polar sur para cerca de una semana de trabajo en superficie, mientras otros dos permanecen a bordo de Orion. El polo sur es el objetivo porque sus cráteres permanentemente sombreados contienen hielo de agua, que futuras misiones podrían convertir en agua potable, oxígeno y propelente. La NASA ha identificado nueve regiones candidatas de aterrizaje. Previsto para principios de 2028; la tripulación aún no ha sido nombrada.",
   "events": [
-    { "met": 0, "label": "LANZAMIENTO SLS", "note": "Orion despega desde KSC LC-39B con tripulación de 4.", "type": "nominal" },
-    { "met": 0.13, "label": "ITL", "note": "Inyección translunar.", "type": "nominal" },
-    { "met": 4, "label": "LLEGADA A NRHO", "note": "Orion llega a una órbita lunar alta y se encuentra con el módulo de aterrizaje que lo espera.", "type": "nominal" },
-    { "met": 5, "label": "DESCENSO", "note": "2 tripulantes se transfieren al módulo de aterrizaje; descenso propulsado al polo sur lunar.", "type": "info" },
-    { "met": 12, "label": "ASCENSO", "note": "El módulo de aterrizaje regresa a la órbita lunar tras cerca de una semana de operaciones en superficie.", "type": "nominal" },
-    { "met": 14, "label": "ITT", "note": "Inyección transterrestre.", "type": "nominal" },
-    { "met": 18, "label": "AMERIZAJE", "note": "Orion ameriza en el océano Pacífico.", "type": "info" }
+    {
+      "met": 0,
+      "label": "LANZAMIENTO SLS",
+      "note": "Orion despega desde KSC LC-39B con tripulación de 4.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "ITL",
+      "note": "Inyección translunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "LLEGADA A NRHO",
+      "note": "Orion llega a una órbita lunar alta y se encuentra con el módulo de aterrizaje que lo espera.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "DESCENSO",
+      "note": "2 tripulantes se transfieren al módulo de aterrizaje; descenso propulsado al polo sur lunar.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "ASCENSO",
+      "note": "El módulo de aterrizaje regresa a la órbita lunar tras cerca de una semana de operaciones en superficie.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "ITT",
+      "note": "Inyección transterrestre.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "AMERIZAJE",
+      "note": "Orion ameriza en el océano Pacífico.",
+      "type": "info"
+    }
   ],
-  "vehicle_stage": "SLS ICPS (etapa de propulsión criogénica provisional)"
+  "vehicle_stage": "SLS ICPS (etapa de propulsión criogénica provisional)",
+  "flight_events": [
+    {
+      "met": 1.48,
+      "label": "MCC-1",
+      "description": "Primera corrección de trayectoria."
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-2",
+      "description": "Ajuste de la fase de aproximación."
+    }
+  ]
 }

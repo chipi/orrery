@@ -21,5 +21,37 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Inertial Upper Stage (IUS, Oberstufe)"
+  "vehicle_stage": "Inertial Upper Stage (IUS, Oberstufe)",
+  "flight_events": [
+    {
+      "met": 115,
+      "label": "Venus — Swing-by",
+      "description": "Größte Annäherung 16.000 km an der Venus am 1990-02-10. Hier beginnt das VEEGA-Profil (Swing-bys an Venus, Erde, Erde): Galileo entzieht der Venus Bahnenergie, um sein Aphel nach außen zu schieben. Die Wärmelast nahe der Venus überstieg die ursprüngliche Auslegung; die Ingenieure brachten Isolierung am Antennenmast an, die die Hochgewinnantenne später geschlossen hielt."
+    },
+    {
+      "met": 416,
+      "label": "Erde Nr. 1 — Swing-by",
+      "description": "Größte Annäherung 960 km am 1990-12-08. Der erste von zwei Erd-Vorbeiflügen; zusammen biegen sie die Bahn genug, um Jupiter zu erreichen. Galileo lieferte auch Spektralbeobachtungen der Erde als Testfall für Methoden zum Nachweis von Leben — den eigenen Planeten so untersuchen, als sähe man ihn aus der Ferne."
+    },
+    {
+      "met": 741,
+      "label": "Gaspra — erste Begegnung mit einem Asteroiden",
+      "description": "Größte Annäherung 1.600 km an den Asteroiden (951) Gaspra am 1991-10-29. Die ersten Nahaufnahmen eines Asteroiden überhaupt. Gaspras unregelmäßige Form, rund 20 km lang, deutete auf ein Kollisionsbruchstück eines größeren Mutterkörpers hin — eine Bestätigung der frühen Kollisionsgeschichte des Sonnensystems."
+    },
+    {
+      "met": 1147,
+      "label": "Erde Nr. 2 — Swing-by",
+      "description": "Größte Annäherung 304 km am 1992-12-08 — der letzte Swing-by, der nötig war, um Jupiter zu erreichen. Die Begegnung diente einem weiteren Versuch, die Hochgewinnantenne zu entfalten (sie öffnete sich nie ganz; die Mission lief ihr ganzes Leben über die Niedriggewinnantenne und brauchte aufwendige Datenkompression als Ausweg)."
+    },
+    {
+      "met": 1410,
+      "label": "Ida und Dactyl — zweite Begegnung mit einem Asteroiden",
+      "description": "Größte Annäherung 2.400 km an den Asteroiden (243) Ida am 1993-08-28. Entdeckung von Idas winzigem Mond Dactyl (1,4 km Durchmesser) — das erste bestätigte Doppelasteroidensystem. Der Nachweis, dass Asteroiden stabile Monde haben können, veränderte die Modelle der Asteroidendynamik."
+    },
+    {
+      "met": 2094,
+      "label": "Abtrennung der Sonde",
+      "description": "Galileos Atmosphärensonde trennte sich fünf Monate vor der Ankunft am Jupiter, am 1995-07-13, auf einer leicht abweichenden ballistischen Bahn, die auf die Atmosphäre des Gasriesen zielte. Sie hatte keinen Antrieb — ihre Ankunftsgeometrie legte allein das Trennmanöver fest."
+    }
+  ]
 }

@@ -5,7 +5,7 @@
   "delta_v": "~6 km/s",
   "type": "LANDER CARGO · PIANIFICATA",
   "first": "Primo volo dell'architettura del lander lunare Blue Moon di Blue Origin",
-  "description": "Il primo lander cargo Blue Moon di Blue Origin, commissionato nell'ambito del programma CLPS (Commercial Lunar Payload Services) della NASA. Un veicolo di discesa a stadio singolo alimentato dal motore criogenico BE-7, progettato per portare fino a circa 3 tonnellate di carico utile sulla superficie lunare. Viene lanciato dal New Glenn di Blue Origin da Cape Canaveral, esegue l'iniezione translunare con il secondo stadio del New Glenn, poi l'inserimento in orbita lunare e la discesa propulsa. Il volo cargo Mark 1 precede il Mark 2, certificato per il trasporto di esseri umani, che la NASA ha commissionato per gli allunaggi con equipaggio di Artemis — ora uno dei due lander candidati per Artemis IV e le missioni successive.",
+  "description": "Il primo lander cargo Blue Moon di Blue Origin, commissionato nell'ambito del programma CLPS (Commercial Lunar Payload Services) della NASA. Un veicolo di discesa a stadio singolo alimentato dal motore criogenico BE-7, progettato per portare fino a circa 3 tonnellate di carico utile sulla superficie lunare. Viene lanciato dal New Glenn di Blue Origin da Cape Canaveral, viene lasciato in orbita terrestre bassa, poi esegue con il proprio BE-7 l'iniezione translunare, l'inserimento in orbita lunare e la discesa propulsa. Il volo cargo Mark 1 precede il Mark 2, certificato per il trasporto di esseri umani, che la NASA ha commissionato per gli allunaggi con equipaggio di Artemis — ora uno dei due lander candidati per Artemis IV e le missioni successive.",
   "events": [
     {
       "met": 0,
@@ -16,7 +16,7 @@
     {
       "met": 0.2,
       "label": "TLI",
-      "note": "Il secondo stadio del New Glenn esegue l'accensione di iniezione translunare.",
+      "note": "Il BE-7 del lander esegue l'accensione di iniezione translunare; il New Glenn lo ha lasciato in orbita terrestre bassa.",
       "type": "nominal"
     },
     {
@@ -38,5 +38,5 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "secondo stadio del New Glenn (accensione TLI)"
+  "vehicle_stage": "secondo stadio del New Glenn (fino all'orbita terrestre bassa)"
 }

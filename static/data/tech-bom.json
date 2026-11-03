@@ -3,7 +3,7 @@
   "specVersion": "1.5",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-11-01T12:31:38.799Z",
+    "timestamp": "2026-11-02T09:08:53.290Z",
     "tools": [
       {
         "vendor": "Orrery",
@@ -14,7 +14,7 @@
     "component": {
       "type": "application",
       "name": "orrery",
-      "version": "0.9.3",
+      "version": "0.9.4",
       "licenses": [
         {
           "license": {

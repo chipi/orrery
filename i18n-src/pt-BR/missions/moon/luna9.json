@@ -32,5 +32,12 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "estágio superior Block-L do Molniya-M"
+  "vehicle_stage": "estágio superior Block-L do Molniya-M",
+  "flight_events": [
+    {
+      "met": 1.5,
+      "label": "Correção de trajetória",
+      "description": "Ajuste de trajetória no meio do cruzeiro."
+    }
+  ]
 }

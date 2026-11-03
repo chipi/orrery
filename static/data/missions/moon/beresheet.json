@@ -52,7 +52,8 @@
     "launch": {
       "vehicle_stage": "Falcon 9 second stage to GTO (rideshare)",
       "mass_at_tli_kg": 585,
-      "source": "SpaceIL mission archive; SpaceX manifest 2019-02-22"
+      "source": "SpaceIL mission archive; SpaceX manifest 2019-02-22",
+      "departure": "spacecraft"
     },
     "cruise": {
       "tcm_count": 2,
@@ -65,8 +66,8 @@
       "source": "SpaceIL flight ops; lunar-orbit capture 2019-04-04",
       "entry_velocity_km_s": 0.15,
       "edl_system": "powered",
-      "edl_duration_s": 19,
-      "touchdown_velocity_ms": 128.17
+      "edl_duration_s": 18,
+      "touchdown_velocity_ms": 152.68
     },
     "totals": {
       "total_dv_km_s": 6,

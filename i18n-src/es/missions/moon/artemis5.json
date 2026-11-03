@@ -50,5 +50,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "etapa superior del SLS (por confirmar)"
+  "vehicle_stage": "etapa superior del SLS (por confirmar)",
+  "flight_events": [
+    {
+      "met": 1.48,
+      "label": "MCC-1",
+      "description": "Primera corrección de trayectoria."
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-2",
+      "description": "Ajuste de la fase de aproximación."
+    }
+  ]
 }

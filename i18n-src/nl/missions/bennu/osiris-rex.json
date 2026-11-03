@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur-bovenste trap (Atlas V 411)"
+  "vehicle_stage": "Centaur-bovenste trap (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "Naderingsmanoeuvre",
+      "description": "Eerste brandstap van de naderingsfase. Remt OSIRIS-REx af tot de heliocentrische snelheid van Bennu, voor het rendez-vous."
+    }
+  ]
 }

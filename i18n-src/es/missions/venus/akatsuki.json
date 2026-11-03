@@ -44,5 +44,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "segunda etapa del H-IIA 202"
+  "vehicle_stage": "segunda etapa del H-IIA 202",
+  "flight_events": [
+    {
+      "met": 120,
+      "label": "TCM-2",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 195,
+      "label": "TCM-3 — última antes de la inserción en órbita de Venus",
+      "description": "Último retoque antes de la llegada."
+    }
+  ]
 }

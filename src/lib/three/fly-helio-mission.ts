@@ -4,6 +4,7 @@ import { SCALE_3D } from '$lib/fly-scene-constants';
 import type { Vec2 } from '$lib/physics/transfer/mission-arc';
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
+import type { OrbitInsertionEngineKind } from '$lib/physics/transfer/orbit-insertion-burns';
 import {
   buildTubeGeometry,
   buildTubeMaterial,
@@ -40,6 +41,15 @@ export interface HelioMissionOverlays {
   readonly scModel: THREE.Group | null;
   /** Swap the spacecraft glyph for the mission's recognisable 3D model (or null). */
   applyMissionSpacecraftModel: (missionId: string) => void;
+  /** Show the orbit-insertion burn (kind null hides it) at the ship, exhausting along
+   *  `dir` (the velocity: a capture burn fires retrograde), sized to the ship's scale. */
+  updateOiPlume: (
+    kind: OrbitInsertionEngineKind | null,
+    at: THREE.Vector3,
+    dir: THREE.Vector3,
+    shipScale: number,
+    time: number,
+  ) => void;
   /** Redraw the LAUNCH/ARRIVAL/RETURN label textures (ret params only for round-trips). */
   refreshSpriteTextures: (
     depLine1: string,
@@ -124,6 +134,74 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
       });
       scene.add(scModel);
     }
+  }
+
+  // ─── Orbit-insertion burn plume ──────────────────────────────────
+  // One group per engine kind; each cone is built to extend along −Y from its nozzle, so
+  // aiming −Y at the exhaust direction points the flame.
+  // Nozzle-wide at the top (y = 0), flaring to r at the far end. Drawn like the ship glyph
+  // (the sprite ignores depth so it reads against the planet), just under the ship.
+  const flame = (r: number, h: number, color: number, opacity: number): THREE.Mesh => {
+    const g = new THREE.CylinderGeometry(r * 0.45, r, h, 20, 1, true);
+    g.translate(0, -h / 2, 0);
+    const mesh = new THREE.Mesh(
+      g,
+      new THREE.MeshBasicMaterial({
+        color,
+        transparent: true,
+        opacity,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        depthTest: false,
+        side: THREE.DoubleSide,
+      }),
+    );
+    mesh.renderOrder = 998;
+    return mesh;
+  };
+  const plumeOf = (r: number, h: number): THREE.Group => {
+    const g = new THREE.Group();
+    g.add(flame(r, h, 0xff8a3c, 0.55), flame(r * 0.45, h * 0.6, 0xfff1d6, 0.9));
+    return g;
+  };
+  const oiPlumes: Record<OrbitInsertionEngineKind, THREE.Group> = {
+    main: plumeOf(0.32, 3.2),
+    // A solid motor: a fatter, brighter, longer flame.
+    solid: plumeOf(0.6, 5.5),
+    // Four attitude thrusters around the body: thin jets.
+    rcs: (() => {
+      const g = new THREE.Group();
+      for (let i = 0; i < 4; i++) {
+        const a = (i / 4) * Math.PI * 2;
+        const jet = plumeOf(0.07, 1.4);
+        jet.position.set(Math.cos(a) * 0.45, 0, Math.sin(a) * 0.45);
+        g.add(jet);
+      }
+      return g;
+    })(),
+  };
+  const oiPlume = new THREE.Group();
+  for (const p of Object.values(oiPlumes)) oiPlume.add(p);
+  oiPlume.visible = false;
+  scene.add(oiPlume);
+  const DOWN = new THREE.Vector3(0, -1, 0);
+  function updateOiPlume(
+    kind: OrbitInsertionEngineKind | null,
+    at: THREE.Vector3,
+    dir: THREE.Vector3,
+    shipScale: number,
+    time: number,
+  ): void {
+    oiPlume.visible = kind != null && dir.lengthSq() > 0;
+    if (!oiPlume.visible || !kind) return;
+    for (const [k, p] of Object.entries(oiPlumes)) p.visible = k === kind;
+    const d = dir.clone().normalize();
+    oiPlume.quaternion.setFromUnitVectors(DOWN, d);
+    const s = shipScale / 1.5;
+    // Nozzle at the ship's leading end (the engine faces the direction of travel).
+    oiPlume.position.copy(at).addScaledVector(d, 0.45 * s);
+    const flicker = 1 + 0.08 * Math.sin(time * 37) + 0.04 * Math.sin(time * 91);
+    oiPlume.scale.set(s, s * flicker, s);
   }
 
   // ─── LAUNCH / ARRIVAL / RETURN anchor rings ──────────────────────
@@ -234,6 +312,7 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
       return scModel;
     },
     applyMissionSpacecraftModel,
+    updateOiPlume,
     refreshSpriteTextures,
   };
 }

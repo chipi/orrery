@@ -17,7 +17,12 @@
 import * as THREE from 'three';
 import { BoldArrow } from './bold-arrow';
 import { SeparationBurst } from './separation-burst';
-import { gravity, type AscentEvent, type AscentState } from '$lib/physics/ascent/ascent-physics';
+import {
+  bodyAngleFromVerticalRad,
+  gravity,
+  type AscentEvent,
+  type AscentState,
+} from '$lib/physics/ascent/ascent-physics';
 import {
   activeShotAt,
   composeShot,
@@ -29,6 +34,7 @@ import {
 } from '$lib/orbital/ascent-cameras';
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 import { buildCapsuleById } from '$lib/three/capsule-models';
+import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
 import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
 import { buildLauncherModel } from '$lib/three/launcher-models';
 import { clusterOffsets } from '$lib/three/launcher-detail';
@@ -66,6 +72,19 @@ export interface AscentSceneOptions {
   /** Strap-on booster count (Atlas V's variable AJ-60A count) — drawn on the
    *  generic body + jettisoned at strap-on burnout. 0 / omitted = none. */
   boosterCount?: number;
+  /** How many of the strap-ons are air-lit (LaunchBoosters.airLitCount): they light when the
+   *  ground-lit ones burn out and separate at their own burnout. */
+  boosterAirLitCount?: number;
+  /** When the spacecraft leaves the upper stage, if not at SECO: on a flight with an
+   *  injection burn it rides the stage through the burn and separates at its end, as on a
+   *  real flight. The scene's clock (s.t) runs past the last physics state for this. */
+  payloadSepT?: number;
+  /** A kick stage carrying the spacecraft fires once the spacecraft has left the launcher
+   *  (payloadSepT): for the whole burn when it is deployed first (Shuttle + IUS), for the
+   *  second part when the last stage fires first (Delta II + Star 48B). */
+  kickStage?: boolean;
+  /** When the injection burn ends: the spent kick motor drops away from the spacecraft. */
+  injectionBurnEndT?: number;
   /** Override the texture longitude offset (deg) for calibration; default −90. */
   lonTextureOffsetDeg?: number;
   /** Spin the globe about the pad-vertical so a green coastline faces downrange. */
@@ -159,11 +178,13 @@ export function buildGenericPayload(): THREE.Group {
  *  its adapter, the way it really rides under the fairing. One shape for every
  *  mission (operator decision 2026-07-29); the real deployed model appears +
  *  unfolds at separation. Normalised like buildPayload so it fits the fairing. */
-function buildStowedPayload(vehLen: number): THREE.Group {
+function buildStowedPayload(vehLen: number, maxRadius?: number): THREE.Group {
   const body = new THREE.MeshStandardMaterial({ color: 0xd7dde3, roughness: 0.5, metalness: 0.4 });
   const gold = new THREE.MeshStandardMaterial({ color: 0xb8912f, roughness: 0.45, metalness: 0.7 });
   const g = new THREE.Group();
-  const w = vehLen * 0.11;
+  // It rode inside the fairing, so it is never wider than the stage it sits on (the drum +
+  // its panels span ~1.24 w; an SLS ICPS is far narrower than vehLen × 0.11).
+  const w = Math.min(vehLen * 0.11, maxRadius ? (maxRadius * 2 * 0.95) / 1.24 : Infinity);
   // Compact drum body (the folded spacecraft) + tucked panels flat against it.
   const drum = new THREE.Mesh(new THREE.CylinderGeometry(w * 0.5, w * 0.5, w * 1.3, 20), body);
   drum.position.y = w * 0.75;
@@ -212,7 +233,21 @@ export function buildPayload(
   const probe = spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null;
   const capsuleId =
     !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId)?.capsuleId : undefined;
-  const model = probe ?? (capsuleId ? buildCapsuleById(capsuleId) : null) ?? buildGenericPayload();
+  // Artemis flights ride Orion (crew module + service module + wings): the cruise model, not
+  // the generic bus every SLS flight showed before.
+  const orion =
+    !probe && !capsuleId && spacecraftId && ORION_MISSIONS.test(spacecraftId)
+      ? buildLanderCruiseCraft('artemis4')
+      : null;
+  const model =
+    probe ?? (capsuleId ? buildCapsuleById(capsuleId) : null) ?? orion ?? buildGenericPayload();
+  // Orion's four array wings (the box meshes) ride folded and open in Earth orbit.
+  if (orion) {
+    for (const c of orion.children) {
+      const geo = (c as THREE.Mesh).geometry;
+      if (geo instanceof THREE.BoxGeometry) c.userData.wing = { x: c.position.x, z: c.position.z };
+    }
+  }
   const box = new THREE.Box3().setFromObject(model);
   const size = new THREE.Vector3();
   box.getSize(size);
@@ -234,6 +269,9 @@ export function buildPayload(
   if (capsuleId) model.position.y += (size.y * k) / 2;
   const holder = new THREE.Group();
   holder.add(model);
+  // Orion flies under the launch-abort tower and panels, not a payload fairing: once they
+  // jettison it rides in the open, so the scene shows it rather than a stowed shroud.
+  if (orion) holder.userData.exposedAfterFairing = true;
   if (capsuleId) {
     holder.userData.isCapsule = true;
     // Soviet/Chinese capsules flew under an aerodynamic nose fairing that
@@ -244,6 +282,23 @@ export function buildPayload(
     if (FAIRED_CAPSULES.has(capsuleId)) holder.userData.fairedCapsule = true;
   }
   return holder;
+}
+
+/** Missions whose payload is Orion. */
+const ORION_MISSIONS = /^artemis\d+$/;
+
+/** Open a payload's tagged array wings (`userData.wing`) by k: 0 folded against the body,
+ *  1 fully out. */
+export function setWingDeploy(holder: THREE.Object3D, k: number): void {
+  const f = Math.min(1, Math.max(0, k));
+  holder.traverse((o) => {
+    const w = o.userData?.wing as { x: number; z: number } | undefined;
+    if (!w) return;
+    o.visible = f > 0.02;
+    o.scale.setScalar(Math.max(0.02, f));
+    o.position.x = w.x * (0.45 + 0.55 * f);
+    o.position.z = w.z * (0.45 + 0.55 * f);
+  });
 }
 
 /** Capsules that ascended under a jettisonable nose fairing (not exposed). */
@@ -439,6 +494,20 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const rBody = vehLen * 0.05; // plume scale reference
   const model = buildLauncherModel(opts.launcherId, vehLen, opts.boosterCount ?? 0);
   const strapOnGroup = model.strapOns;
+  // The strap-on bodies that flame (before any flames are added to the group; a part marked
+  // noFlame — the Atlas booster skirt — rides along unlit) and where they sit.
+  const strapOnBodies: THREE.Object3D[] = strapOnGroup
+    ? strapOnGroup.children.filter((c) => !c.userData.noFlame)
+    : [];
+  const strapOnBase = strapOnBodies.map((b) => b.position.clone());
+  // Air-lit strap-ons, spread evenly round the ring (Delta II: every third GEM).
+  const airLitN = Math.min(
+    Math.max(0, opts.boosterAirLitCount ?? 0),
+    Math.max(0, strapOnBodies.length - 1),
+  );
+  const airStep = airLitN > 0 ? Math.max(1, Math.round(strapOnBodies.length / airLitN)) : 0;
+  const isAirLit = (i: number): boolean =>
+    airLitN > 0 && (i + 1) % airStep === 0 && (i + 1) / airStep <= airLitN;
   const midStageGroup = model.midStage;
   const booster = model.booster;
   const upperStage = model.upperStage;
@@ -455,6 +524,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const _usSize = new THREE.Vector3();
   _usBox.getSize(_usSize);
   const upperStageRadius = Math.max(_usSize.x, _usSize.z) / 2;
+  // Its centre along the body axis — the camera frames the stage + spacecraft between them
+  // while the two coast and burn together after SECO.
+  const upperStageCenterY = _usBox.getCenter(new THREE.Vector3()).y;
 
   // Payload — TWO forms (#2 / operator decision 2026-07-29): a compact STOWED
   // shroud while it rides the exposed stage (fairing gone → SECO), then the real
@@ -469,10 +541,18 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // jettisoned once past the atmosphere. They still separate at SECO like any
   // capsule — they just wear a shroud on the way up.
   const isFairedCapsule = payload.userData.fairedCapsule === true;
+  // Rides in the open once the fairing (Orion: the abort tower + panels) is gone.
+  const isExposedAfterFairing = payload.userData.exposedAfterFairing === true;
+  // A payload carried in a closed bay (the Shuttle): hidden there until it is deployed.
+  const bay = model.payloadBay;
+  const bayDir = bay ? new THREE.Vector3(...bay.deployDir).normalize() : new THREE.Vector3();
   payload.position.y = payloadBaseY;
   payload.visible = false;
   vehicle.add(payload);
-  const stowedPayload = buildStowedPayload(vehLen);
+  // The kick stage's flame (Shuttle + IUS): at the deployed spacecraft's base, firing aft.
+  const kickPlume = new THREE.Group();
+  const kickMotorParts: THREE.Object3D[] = [];
+  const stowedPayload = buildStowedPayload(vehLen, upperStageRadius);
   stowedPayload.position.y = payloadBaseY;
   stowedPayload.visible = false;
   vehicle.add(stowedPayload);
@@ -509,8 +589,11 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const fairingBurst = new SeparationBurst({ scale: vehLen * 0.42, particleColor: 0xeaf1ff });
   fairingBurst.position.y = fairingBaseY;
   vehicle.add(fairingBurst);
-  const payloadBurst = new SeparationBurst({ scale: vehLen * 0.34 });
-  payloadBurst.position.y = payloadBaseY;
+  // Small: a spacecraft leaves its stage on springs and small pyros, and the camera is close
+  // on it — at 0.34 the flash filled the screen, and at 0.14 still most of it.
+  const payloadBurst = new SeparationBurst({ scale: vehLen * 0.1 });
+  if (bay) payloadBurst.position.set(...bay.center);
+  else payloadBurst.position.y = payloadBaseY;
   vehicle.add(payloadBurst);
 
   scene.add(vehicle);
@@ -518,38 +601,105 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Plume (R4): a LAYERED exhaust — hot blue-white throat, a yellow core, a
   // wide orange glow, a long diffuse trail, and Mach-diamond shock beads down
   // the axis. Built along +Y then rotated so it fires −Y; flickered per frame.
-  const plumeCone = (r: number, len: number, color: number, opacity: number): THREE.Mesh =>
-    new THREE.Mesh(
+  const plumeCone = (
+    r: number,
+    len: number,
+    color: number,
+    opacity: number,
+    blending: THREE.Blending = THREE.AdditiveBlending,
+  ): THREE.Mesh => {
+    const m = new THREE.Mesh(
       new THREE.ConeGeometry(r, len, 24, 1, true),
       new THREE.MeshBasicMaterial({
         color,
         transparent: true,
         opacity,
-        blending: THREE.AdditiveBlending,
+        blending,
         depthWrite: false,
       }),
     );
+    // After the launch-ground patch (renderOrder 2): the flame writes no depth, so a patch
+    // drawn later painted over it wherever the ground sat behind it on screen.
+    m.renderOrder = 3;
+    return m;
+  };
+  // The white-hot core just under the bell, blended normally: the additive layers vanish
+  // against a sunlit desert or bright sky (Soyuz and Proton at Baikonur read flameless).
+  // Its wide end sits at the nozzle, where the outer cone's wide end is.
+  const PLUME_CORE_LEN = vehLen * 0.11;
+  const plumeCore = (r: number): THREE.Mesh => {
+    const m = plumeCone(r, PLUME_CORE_LEN, 0xfff1d0, 0.85, THREE.NormalBlending);
+    m.position.y = -(vehLen * 0.13 - PLUME_CORE_LEN / 2);
+    m.renderOrder = 4;
+    return m;
+  };
   // One exhaust per REAL engine nozzle (Falcon 9's 9-Merlin octaweb, Saturn V's
   // 5-F-1 quincunx, …) so multi-engine boosters light ALL bells, not just the
   // axis. Layout mirrors engineCluster's nozzle grid; re-laid-out on stage change
   // (the usually single-engine upper stage collapses to one central bell).
   const engSpec = opts.launcherId ? getLauncherEngines(opts.launcherId) : undefined;
+  // Strap-on rows ('per-booster') come first in a spec (Shuttle, R-7, Atlas V, SLS …) but
+  // are not a core stage: indexing the spec by core stage gave the core the boosters' row —
+  // one centred flame, SLS showing 1 of its 4 RS-25s. Core rows only here; strap-ons get
+  // their own flames below.
+  const coreRows = engSpec?.stages.filter((st) => st.arrangement !== 'per-booster');
+  // Plume slots: 0 booster, 1 upper, 2 the last stage when the model has its own anchor for
+  // it (a three-stage stack whose upper anchor drops with the mid stage).
+  const FINAL_SLOT = model.finalPlumeAnchor ? 2 : 1;
+  // Slot 3: a fourth serial stage that completes the orbit and makes the departure burn
+  // (Proton-M's Briz-M); otherwise the injection fires from FINAL_SLOT.
+  const INJECTION_SLOT = model.injectionPlumeAnchor ? 3 : FINAL_SLOT;
+  const plumeAnchorFor = (slot: number): THREE.Object3D =>
+    slot >= 3 && model.injectionPlumeAnchor
+      ? model.injectionPlumeAnchor
+      : slot >= 2
+        ? (model.finalPlumeAnchor ?? model.upperPlumeAnchor)
+        : slot === 1
+          ? model.upperPlumeAnchor
+          : model.boosterPlumeAnchor;
+  // A plume anchor's nozzle exit (local y the flame starts at) and radius. A stage cylinder:
+  // its base, with the bells hanging ~vehLen × 0.04 below it. Any other anchor (the Shuttle's
+  // SSME cluster group) is measured — its own bells are inside its bounds. Measured in the
+  // anchor's frame, so it holds whatever attitude the vehicle has.
+  const anchorInfo = new Map<THREE.Object3D, { exitY: number; radius: number }>();
+  const anchorOf = (a: THREE.Object3D): { exitY: number; radius: number } => {
+    const hit = anchorInfo.get(a);
+    if (hit) return hit;
+    const cyl = (a as THREE.Mesh).geometry as THREE.CylinderGeometry | undefined;
+    let info: { exitY: number; radius: number };
+    if (cyl?.parameters?.height) {
+      info = {
+        exitY: -cyl.parameters.height / 2 - vehLen * 0.04,
+        radius: cyl.parameters.radiusTop,
+      };
+    } else {
+      a.updateWorldMatrix(true, true);
+      const inv = a.matrixWorld.clone().invert();
+      const box = new THREE.Box3();
+      a.traverse((o) => {
+        const g = (o as THREE.Mesh).geometry;
+        if (!g) return;
+        if (!g.boundingBox) g.computeBoundingBox();
+        box.union(g.boundingBox!.clone().applyMatrix4(inv.clone().multiply(o.matrixWorld)));
+      });
+      info = box.isEmpty()
+        ? { exitY: -vehLen * 0.14, radius: rBody }
+        : { exitY: box.min.y, radius: Math.max(box.max.x - box.min.x, box.max.z - box.min.z) / 2 };
+    }
+    anchorInfo.set(a, info);
+    return info;
+  };
   const stageNozzleLayout = (stageIdx: number): { offsets: [number, number][]; bellR: number } => {
-    const st = engSpec?.stages[stageIdx];
+    const st = coreRows?.[stageIdx];
     const offsets = clusterOffsets(st?.arrangement ?? 'single', st?.mainNozzles ?? 1);
-    const anchor = (
-      stageIdx >= 1 ? model.upperPlumeAnchor : model.boosterPlumeAnchor
-    ) as THREE.Mesh;
-    const geo = anchor.geometry as THREE.CylinderGeometry | undefined;
-    const stageR = geo?.parameters?.radiusTop ?? rBody;
+    const stageR = anchorOf(plumeAnchorFor(stageIdx)).radius;
     const spread = Math.max(1, ...offsets.map(([x, z]) => Math.hypot(x, z)));
     const bellR = Math.min(stageR * 0.34, (stageR * 0.92) / (spread + 1));
     return { offsets, bellR };
   };
   const refBellR = Math.max(stageNozzleLayout(0).bellR, rBody * 0.18);
   const nozzleCount = Math.max(
-    stageNozzleLayout(0).offsets.length,
-    stageNozzleLayout(1).offsets.length,
+    ...Array.from({ length: INJECTION_SLOT + 1 }, (_, i) => stageNozzleLayout(i).offsets.length),
   );
   const plume = new THREE.Group();
   const nozzlePlumes: THREE.Group[] = [];
@@ -557,6 +707,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     const nz = new THREE.Group();
     nz.add(plumeCone(refBellR * 1.35, vehLen * 0.26, 0xff8a3c, 0.15));
     nz.add(plumeCone(refBellR * 0.85, vehLen * 0.2, 0xffcf80, 0.38));
+    nz.add(plumeCore(refBellR * 0.6));
     plume.add(nz);
     nozzlePlumes.push(nz);
   }
@@ -572,6 +723,68 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   layoutPlumes(0);
   plume.rotation.z = Math.PI; // point down (−Y)
   booster.add(plume);
+  // The plume starts at the firing stage's nozzle exit (anchorOf). A fixed offset from the
+  // anchor's centre only fit cores of one height (SLS's long core hid it).
+  const PLUME_HALF = vehLen * 0.13; // the outer cone's half-length at scale 1
+
+  // One flame per strap-on booster at its base, lit while the boosters burn.
+  const strapOnPlumes: THREE.Group[] = [];
+  if (strapOnGroup && engSpec?.stages.some((st) => st.arrangement === 'per-booster')) {
+    model.root.updateMatrixWorld(true);
+    // strapOnBodies is a copy taken before the flames are added to this same group.
+    for (const sb of strapOnBodies) {
+      const box = new THREE.Box3().setFromObject(sb);
+      const base = strapOnGroup.worldToLocal(
+        new THREE.Vector3((box.min.x + box.max.x) / 2, box.min.y, (box.min.z + box.max.z) / 2),
+      );
+      // Sized from the booster itself: a solid's nozzle is about its own width, far wider
+      // than the core's bells (the Shuttle's SRB flames drew as threads beside the SSMEs).
+      const rS = Math.min(box.max.x - box.min.x, box.max.z - box.min.z) / 2;
+      const p = new THREE.Group();
+      p.add(plumeCone(rS * 1.0, vehLen * 0.26, 0xff8a3c, 0.18));
+      p.add(plumeCone(rS * 0.65, vehLen * 0.2, 0xffcf80, 0.42));
+      p.add(plumeCore(rS * 0.5));
+      p.rotation.z = Math.PI;
+      p.position.set(base.x, base.y - PLUME_HALF * 0.85, base.z);
+      p.scale.setScalar(0.85);
+      p.visible = false;
+      strapOnGroup.add(p);
+      strapOnPlumes.push(p);
+    }
+  }
+
+  if (opts.kickStage) {
+    // The kick motor itself, under the spacecraft (a Star 48B on a Delta II, the IUS on the
+    // Shuttle flights, Lunar Prospector's Star 37): body + nozzle, the flame from its exit.
+    const { exitY, radius } = anchorOf(payload);
+    const rm = Math.min(radius * 0.35, vehLen * 0.035);
+    const motorMat = new THREE.MeshStandardMaterial({
+      color: 0x2a2c31,
+      roughness: 0.6,
+      metalness: 0.3,
+    });
+    const motor = new THREE.Mesh(new THREE.CylinderGeometry(rm, rm * 0.9, rm * 1.8, 24), motorMat);
+    motor.position.y = exitY - rm * 0.9;
+    const kickNozzle = new THREE.Mesh(
+      new THREE.CylinderGeometry(rm * 0.3, rm * 0.62, rm * 0.9, 20, 1, true),
+      motorMat,
+    );
+    kickNozzle.position.y = exitY - rm * 1.8 - rm * 0.45;
+    payload.add(motor, kickNozzle);
+    for (const part of [motor, kickNozzle]) {
+      part.userData.baseY = part.position.y;
+      kickMotorParts.push(part);
+    }
+    const nozzleExitY = exitY - rm * 2.7;
+    kickPlume.add(plumeCone(rm * 1.1, vehLen * 0.26, 0xff8a3c, 0.15));
+    kickPlume.add(plumeCone(rm * 0.75, vehLen * 0.2, 0xffcf80, 0.38));
+    kickPlume.add(plumeCore(rm * 0.5));
+    kickPlume.rotation.z = Math.PI;
+    kickPlume.position.y = nozzleExitY - PLUME_HALF * 0.7;
+    kickPlume.scale.setScalar(0.7);
+    kickPlume.visible = false;
+    payload.add(kickPlume);
+  }
 
   // ── Science-Lens force vectors (thrust / weight / drag / velocity),
   //    drawn in world space at the vehicle. Lengths are stylised so the
@@ -634,6 +847,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const K_POS = 0.13; // camera-position ease (smooth dolly / pan)
   const K_TGT = 0.45; // look-at ease — fast, so the subject stays framed
   const K_FOV = 0.13; // fov ease (smooth zoom)
+  // The K_* factors are per 60 Hz frame; the last camera update's time scales them.
+  let lastCamMs: number | null = null;
 
   // Separation event METs (undefined ⇒ that beat never fires; the sep stays at rest).
   const metOf = (type: AscentEvent['type']): number | undefined =>
@@ -642,25 +857,36 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // jettison — both push a 'staging' event, but `meco` fires only at the first
   // real stage burnout, so it's the correct drop time for boosted stacks
   // (Shuttle ET+SRBs at ~510 s, not the SRB sep at ~94 s). Falls back to the
-  // lone 'staging' for un-boosted two-stage vehicles.
-  const stagingT = metOf('meco') ?? metOf('staging');
+  // lone 'staging' for un-boosted two-stage vehicles. A boosted single-stage core (the
+  // stage-and-a-half Atlas) has no MECO: its lone 'staging' is the booster-section drop,
+  // and the core flies on to SECO.
+  const stagingT = metOf('meco') ?? (strapOnGroup ? metOf('seco') : metOf('staging'));
   // Strap-on solids jettison at the FIRST 'staging' (their burnout, ~94 s for
   // Atlas V AJ-60As) — earlier than the core drop at MECO above.
   const strapOnSepT = metOf('staging');
+  const stagingTimes = (opts.events ?? [])
+    .filter((e) => e.type === 'staging')
+    .map((e) => e.t)
+    .sort((a, b) => a - b);
+  // With an air-lit group the strap-ons leave in two waves: the second staging event.
+  const airSepT = airLitN > 0 ? stagingTimes[1] : undefined;
   const fairingT = metOf('fairing_jettison');
   const secoT = metOf('seco');
+  // The spacecraft leaves the stage at SECO, or after the injection burn when it rides it.
+  const sepAfterSeco = opts.payloadSepT != null && (secoT == null || opts.payloadSepT > secoT);
+  const payloadSepT = sepAfterSeco ? opts.payloadSepT : secoT;
+  // Riding the launcher's stage through its injection burn (not deployed before a kick stage).
+  const ridesInjection = sepAfterSeco && !opts.kickStage;
   // Intermediate serial stage (e.g. Saturn V's S-II) drops at the SECOND core
   // staging. Core stagings = the 'staging' events after the strap-on jettison
   // (the first one, only when strap-ons exist); [0] is the booster drop (== MECO),
   // [1] is the mid-stage. Falls back to SECO so a 2-stage vehicle mapped onto a
   // 3-part mesh (e.g. Saturn IB) drops its mid-part with the upper stage instead
   // of leaving it floating.
-  const coreStagingTimes = (opts.events ?? [])
-    .filter((e) => e.type === 'staging')
-    .map((e) => e.t)
-    .sort((a, b) => a - b)
-    .slice(strapOnGroup ? 1 : 0);
+  const coreStagingTimes = stagingTimes.slice(strapOnGroup ? (airLitN > 0 ? 2 : 1) : 0);
   const midStageSepT = coreStagingTimes[1] ?? secoT;
+  // A fourth serial part (Proton-M's third stage under Briz-M) drops at the third core staging.
+  const lastCoreStageSepT = coreStagingTimes[2] ?? secoT;
   const BOOSTER_SEP_S = 5;
   // Fairing clamshell drifts slowly (item 4) so the halves linger in frame while
   // the payload is revealed — a held beat, not a snap-away.
@@ -668,6 +894,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Payload deployment (#2): wings swing out + the bus blooms to full scale over
   // this window after SECO, as the spacecraft springs free of the upper stage.
   const PAYLOAD_DEPLOY_S = 3;
+  // Orion's array wings swing out over this window in Earth orbit.
+  const WING_DEPLOY_S = 6;
 
   const _v = new THREE.Vector3();
   const updateForces = (s: AscentState): void => {
@@ -726,9 +954,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     skyMat.uniforms.uAlt.value = s.altKm;
     launchGround?.setAltitudeFade(s.altKm);
 
-    // Orient along the flight path (velocity angle from vertical).
-    const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
-    const fromVertical = Math.atan2(horiz, Math.max(1e-6, s.velUpKms));
+    // Orient along the commanded thrust direction (see bodyAngleFromVerticalRad).
+    const fromVertical = bodyAngleFromVerticalRad(s);
     vehicle.rotation.z = -fromVertical;
 
     // ── Separations — every offset is a pure function of the mission time vs
@@ -752,10 +979,28 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       midStageGroup.rotation.set(mp * 2.4, 0, mp * 1.2);
       midStageGroup.scale.setScalar(1 - 0.18 * mp);
     }
+    // A fourth serial part (Proton-M's third stage under Briz-M) drops the same way.
+    if (model.lastCoreStage && lastCoreStageSepT != null) {
+      const sp = sepProgress(s.t, lastCoreStageSepT, BOOSTER_SEP_S);
+      model.lastCoreStage.visible = sp < 1;
+      model.lastCoreStage.position.y = -sp * vehLen * 3;
+      model.lastCoreStage.rotation.set(sp * 2.4, 0, sp * 1.2);
+      model.lastCoreStage.scale.setScalar(1 - 0.18 * sp);
+    }
 
     // Strap-on solids: at burnout they fall back + tumble away from the still-
     // climbing core (earlier than the core drop above).
-    if (strapOnGroup) {
+    if (strapOnGroup && airLitN > 0) {
+      // Two groups leave at their own burnouts: each booster falls back and tumbles
+      // outward on its own.
+      strapOnBodies.forEach((body, i) => {
+        const sp = sepProgress(s.t, isAirLit(i) ? airSepT : strapOnSepT, BOOSTER_SEP_S);
+        const b = strapOnBase[i];
+        body.visible = sp < 1;
+        body.position.set(b.x * (1 + sp * 0.8), b.y - sp * vehLen * 2.6, b.z * (1 + sp * 0.8));
+        body.rotation.z = -Math.sign(b.x || 1) * sp * 1.2;
+      });
+    } else if (strapOnGroup) {
       const sp = sepProgress(s.t, strapOnSepT, BOOSTER_SEP_S);
       strapOnGroup.visible = sp < 1;
       strapOnGroup.position.y = -sp * vehLen * 2.6;
@@ -765,7 +1010,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
 
     // Payload separation. Two regimes: crewed capsules ride exposed on top;
     // everything else rides folded under a jettisonable fairing.
-    const pp = sepProgress(s.t, secoT, PAYLOAD_SEP_HOLD_S);
+    const pp = sepProgress(s.t, payloadSepT, PAYLOAD_SEP_HOLD_S);
     stowedPayload.position.y = payloadBaseY;
     if (isFairedCapsule) {
       // Nose-fairing capsule (Vostok/Voskhod/Soyuz/Shenzhou): a shroud covers the
@@ -806,16 +1051,39 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       fairingHalfL.rotation.z = fp * 1.3;
       fairingHalfR.rotation.z = -fp * 1.3;
 
-      // While it rides the exposed stage (fairing gone → SECO) show the compact
-      // STOWED shroud; at SECO it springs free as the real deployed model, wings
+      // While it rides the exposed stage (fairing gone → separation) show the compact
+      // STOWED shroud; at separation it springs free as the real deployed model, wings
       // unfolding over the deploy window.
       const exposed = fairingT != null ? s.t >= fairingT : s.stageIndex < 0;
-      const separated = secoT != null && s.t >= secoT;
-      stowedPayload.visible = exposed && !separated;
-      payload.visible = separated || (secoT == null && exposed);
+      const separated = payloadSepT != null && s.t >= payloadSepT;
       payload.position.y = payloadBaseY + pp * vehLen * 1.1;
-      payload.rotation.y = s.t * 0.12;
-      deployPayload(payload, sepProgress(s.t, secoT, PAYLOAD_DEPLOY_S));
+      if (isExposedAfterFairing) {
+        // Orion: in the open from the abort-tower jettison, wings folded; they open in
+        // Earth orbit (Artemis I: ~T+18 min, before TLI), so midway through the parking
+        // coast when it rides the stage through injection, else as it separates.
+        stowedPayload.visible = false;
+        payload.visible = exposed;
+        payload.rotation.y = 0;
+        const wingT =
+          ridesInjection && secoT != null && payloadSepT != null
+            ? secoT + (payloadSepT - secoT) * 0.35
+            : payloadSepT;
+        setWingDeploy(payload, sepProgress(s.t, wingT, WING_DEPLOY_S));
+      } else {
+        stowedPayload.visible = exposed && !separated && !bay;
+        payload.visible = separated || (payloadSepT == null && exposed && !bay);
+        payload.rotation.y = s.t * 0.12;
+        deployPayload(payload, sepProgress(s.t, payloadSepT, PAYLOAD_DEPLOY_S));
+      }
+      if (bay) {
+        // Out through the open bay doors, not off the nose.
+        const k = pp * vehLen * 0.9;
+        payload.position.set(
+          bay.center[0] + bayDir.x * k,
+          bay.center[1] + bayDir.y * k,
+          bay.center[2] + bayDir.z * k,
+        );
+      }
     }
     if (isCapsulePayload) {
       // A crewed capsule is a direct-insertion flight: it sprang free at SECO,
@@ -833,18 +1101,31 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // Separation bursts — the visible pyro/pusher event at each sep plane.
     boosterBurst.update(sepProgress(s.t, stagingT, BURST_S));
     fairingBurst.update(sepProgress(s.t, fairingT, BURST_S));
-    payloadBurst.update(sepProgress(s.t, secoT, BURST_S));
+    payloadBurst.update(sepProgress(s.t, payloadSepT, BURST_S));
 
     // Plume: only while a stage burns; re-parent to the firing stage,
     // flicker the length, taper in vacuum.
-    const burning = s.stageIndex >= 0;
-    // A capsule has already separated by the injection beat, so its spent stage
-    // must NOT re-light — only satellites ride the kick stage through injection.
-    const injecting = injectionBurning && !isCapsulePayload;
+    // The active stage's engines are firing: not before an air-lit core lights (LVM3's S200s
+    // lift off alone) and not on a coast to apoapsis.
+    const burning = s.stageIndex >= 0 && s.coreLit !== false;
+    // The stage re-lights for injection with the spacecraft still on it. A capsule that
+    // separated at SECO (no ride-through) leaves a spent stage that must not re-light.
+    // The stage fires for injection only while the spacecraft is still on it; a kick stage
+    // fires from the spacecraft once it has left (the whole burn, or its second part).
+    const attachedNow = sepAfterSeco && payloadSepT != null && s.t < payloadSepT;
+    const injecting = injectionBurning && attachedNow;
+    kickPlume.visible = injectionBurning && opts.kickStage === true && !attachedNow;
+    // After the burn the spent kick motor falls away from the spacecraft.
+    const kp = sepProgress(s.t, opts.injectionBurnEndT, PAYLOAD_SEP_HOLD_S);
+    for (const part of kickMotorParts) {
+      part.visible = kp < 1;
+      part.position.y = (part.userData.baseY as number) - kp * vehLen * 0.9;
+    }
+    if (kickPlume.visible) kickPlume.scale.set(0.7, 0.7 * (1 + 0.09 * Math.sin(frame * 0.7)), 0.7);
     plume.visible = burning || injecting;
     if (burning) {
-      const stageForPlume = s.stageIndex >= 1 ? 1 : 0;
-      const firing = stageForPlume >= 1 ? model.upperPlumeAnchor : model.boosterPlumeAnchor;
+      const stageForPlume = Math.min(s.stageIndex, INJECTION_SLOT);
+      const firing = plumeAnchorFor(stageForPlume);
       if (plume.parent !== firing) {
         plume.parent?.remove(plume);
         firing.add(plume);
@@ -857,24 +1138,32 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       // Upper-stage plume is longer + thinner in vacuum; wider in thick air.
       const vac = s.stageIndex >= 1 ? 1.6 : 1;
       plume.scale.set(1, flick * vac, 1);
-      // S1 plume emanates from the octaweb; S2 from its vacuum bell.
-      plume.position.y = -(s.stageIndex >= 1 ? vehLen * 0.14 : vehLen * 0.3);
+      // Start just below the firing stage's nozzles (bells hang ~vehLen × 0.04 under it).
+      plume.position.y = anchorOf(firing).exitY - PLUME_HALF * flick * vac;
     } else if (injecting) {
       // Post-SECO injection: the kick/upper stage re-lights — a long, thin
-      // vacuum plume from the upper bell (the payload is still attached).
-      const firing = model.upperPlumeAnchor;
+      // vacuum plume from the last stage's bell (the payload is still attached).
+      const firing = plumeAnchorFor(INJECTION_SLOT);
       if (plume.parent !== firing) {
         plume.parent?.remove(plume);
         firing.add(plume);
       }
-      if (plumeStage !== 1) {
-        layoutPlumes(1);
-        plumeStage = 1;
+      if (plumeStage !== INJECTION_SLOT) {
+        layoutPlumes(INJECTION_SLOT);
+        plumeStage = INJECTION_SLOT;
       }
       const flick = 1 + 0.09 * Math.sin(frame * 0.7);
       plume.scale.set(0.85, flick * 1.9, 0.85);
-      plume.position.y = -(vehLen * 0.14);
+      plume.position.y = anchorOf(firing).exitY - PLUME_HALF * flick * 1.9;
     }
+    // Strap-on flames: each group only while it burns (ground-lit, air-lit, or both at once).
+    const boostersLit = s.stageIndex === 0 && s.boostersActive === true;
+    strapOnPlumes.forEach((p, i) => {
+      p.visible =
+        boostersLit &&
+        (airLitN === 0 || (isAirLit(i) ? s.airLitBurning === true : s.groundLitBurning === true));
+      if (p.visible) p.scale.set(0.85, 0.85 * (1 + 0.08 * Math.sin(frame * 0.9)), 0.85);
+    });
 
     // Camera: pick the active shot, compose its target pose, then EASE the live
     // camera toward it (position + fov) while snapping the look-at fast — a
@@ -884,15 +1173,28 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       ? activeShotAt(schedule, s.t)
       : { name: 'ascent' as const, progress: 0.5 };
     activeShot = shot.name;
-    // Capsule world position — feeds the separation/orbit shots so the camera
+    // Spacecraft world position — feeds the separation/orbit shots so the camera
     // tracks the spacecraft (not the empty vehicle origin) once the spent stage
-    // recedes. Rotate the payload's body-axis offset by the live vehicle attitude.
-    const capsuleFocus = isCapsulePayload
-      ? {
-          x: s.downrangeKm - payload.position.y * Math.sin(vehicle.rotation.z),
-          y: s.altKm + payload.position.y * Math.cos(vehicle.rotation.z),
-        }
-      : null;
+    // recedes. Any payload that has sprung free, not only capsules: Orion and the
+    // satellites drifted to a corner while the frame held the gap between them and
+    // the stage. Before the separation, while stage and spacecraft coast and burn
+    // together after SECO, frame the pair between them. Rotate the body-axis offset by
+    // the live vehicle attitude.
+    const separated = payloadSepT != null && s.t >= payloadSepT;
+    const stackInOrbit = !separated && secoT != null && s.t >= secoT;
+    const focusAxisY = separated
+      ? payload.position.y
+      : stackInOrbit
+        ? (upperStageCenterY + payload.position.y) / 2
+        : null;
+    const capsuleFocus =
+      focusAxisY != null
+        ? {
+            x: s.downrangeKm - focusAxisY * Math.sin(vehicle.rotation.z),
+            y: s.altKm + focusAxisY * Math.cos(vehicle.rotation.z),
+            z: separated ? payload.position.z : 0,
+          }
+        : null;
     const p = composeShot(
       activeShot,
       s,
@@ -901,19 +1203,42 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       opts.tuning?.[activeShot],
       capsuleFocus,
     );
+    // Ease in the VEHICLE's frame, not the world's. In orbit the stack moves ~7.8 km/s × the
+    // clock speed; easing world positions made the camera trail the 1.2 km craft by kilometres,
+    // by an amount that changed with every frame's length — the craft jerked while the far
+    // background stayed smooth. Relative to the vehicle the lag is only the shot's own motion,
+    // and the per-frame factors are scaled to real frame time.
+    const ax = s.downrangeKm;
+    const ay = s.altKm;
+    const now = performance.now();
+    const frames =
+      lastCamMs == null ? 1 : Math.min(6, Math.max(0, (now - lastCamMs) / (1000 / 60)));
+    lastCamMs = now;
+    const ease = (k: number): number => 1 - Math.pow(1 - k, frames);
+    const kPos = ease(K_POS);
+    const kTgt = ease(K_TGT);
+    const kFov = ease(K_FOV);
     if (!camS) {
-      camS = { px: p.px, py: p.py, pz: p.pz, tx: p.tx, ty: p.ty, tz: p.tz, fov: p.fov };
+      camS = {
+        px: p.px - ax,
+        py: p.py - ay,
+        pz: p.pz,
+        tx: p.tx - ax,
+        ty: p.ty - ay,
+        tz: p.tz,
+        fov: p.fov,
+      };
     } else {
-      camS.px += (p.px - camS.px) * K_POS;
-      camS.py += (p.py - camS.py) * K_POS;
-      camS.pz += (p.pz - camS.pz) * K_POS;
-      camS.tx += (p.tx - camS.tx) * K_TGT;
-      camS.ty += (p.ty - camS.ty) * K_TGT;
-      camS.tz += (p.tz - camS.tz) * K_TGT;
-      camS.fov += (p.fov - camS.fov) * K_FOV;
+      camS.px += (p.px - ax - camS.px) * kPos;
+      camS.py += (p.py - ay - camS.py) * kPos;
+      camS.pz += (p.pz - camS.pz) * kPos;
+      camS.tx += (p.tx - ax - camS.tx) * kTgt;
+      camS.ty += (p.ty - ay - camS.ty) * kTgt;
+      camS.tz += (p.tz - camS.tz) * kTgt;
+      camS.fov += (p.fov - camS.fov) * kFov;
     }
-    camera.position.set(camS.px, camS.py, camS.pz);
-    camera.lookAt(camS.tx, camS.ty, camS.tz);
+    camera.position.set(camS.px + ax, camS.py + ay, camS.pz);
+    camera.lookAt(camS.tx + ax, camS.ty + ay, camS.tz);
     camera.fov = camS.fov;
     camera.updateProjectionMatrix();
 

@@ -63,10 +63,10 @@ export const R_BODY_M: Record<DescentBody, number> = {
 export const SURFACE_DENSITY_KGM3: Record<DescentBody, number> = {
   moon: 0,
   mars: 0.02,
-  venus: 65,
-  titan: 5.3, // dense cold N₂ at the surface (~1.5 bar, 94 K)
+  venus: 65.28, // datum row of the measured profile (descent-atmosphere-tables.ts)
+  titan: 5.345, // Huygens HASI at the surface (~1.47 bar, 93.5 K); profile in descent-atmosphere-tables.ts
   earth: 1.225, // ISA sea-level density (1013 hPa, 15 °C)
-  jupiter: 0.16, // at the 1-bar datum; ρ(h)=ρ₀·exp(−h/H) rises as the probe sinks below
+  jupiter: 0.174, // Galileo ASI at the 1-bar datum; profile in descent-atmosphere-tables.ts
   mercury: 0, // exosphere only — airless for EDL purposes
   comet_67p: 0, // airless
   itokawa: 0,
@@ -79,10 +79,10 @@ export const SURFACE_DENSITY_KGM3: Record<DescentBody, number> = {
 export const ATM_SCALE_HEIGHT_M: Record<DescentBody, number> = {
   moon: 1, // unused (density 0); kept non-zero to avoid /0 in exp
   mars: 11_000,
-  venus: 15_900,
-  titan: 40_000, // thick, cold, deep troposphere
+  venus: 15_900, // unused: Venus, Titan and Jupiter fly the measured profiles (descent-atmosphere-tables.ts)
+  titan: 40_000, // unused (measured profile)
   earth: 8_500, // ISA troposphere single-exponential fit
-  jupiter: 27_000,
+  jupiter: 27_000, // unused (measured profile)
   mercury: 1, // airless (density 0)
   comet_67p: 1, // airless (density 0)
   itokawa: 1,

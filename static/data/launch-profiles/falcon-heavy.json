@@ -1,0 +1,64 @@
+{
+  "id": "falcon-heavy",
+  "name": "Falcon Heavy",
+  "source_tier": "flagship",
+  "payloadKg": 6065,
+  "liftoffThrustKN": 22819,
+  "fairingKg": 1700,
+  "fairingJettisonAltM": 115000,
+  "refAreaM2": 32,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.6082, "lon": -80.6041, "name": "LC-39A · Kennedy Space Center" },
+  "pitchProgram": [[0, 90], [12, 88], [45, 72], [100, 52], [170, 32], [260, 14], [380, 0]],
+  "boosters": {
+    "name": "Side booster (9× Merlin 1D)",
+    "count": 2,
+    "wetKg": 433100,
+    "dryKg": 22200,
+    "thrustSlKN": 7607,
+    "thrustVacKN": 8227,
+    "ispSlS": 282,
+    "ispVacS": 311,
+    "chamberTempK": 3600
+  },
+  "stages": [
+    {
+      "name": "Centre core (9× Merlin 1D, throttled)",
+      "wetKg": 433100,
+      "dryKg": 22200,
+      "thrustSlKN": 6280,
+      "thrustVacKN": 6790,
+      "ispSlS": 282,
+      "ispVacS": 311,
+      "engines": 9,
+      "chamberTempK": 3600
+    },
+    {
+      "name": "Second stage (Merlin Vacuum)",
+      "wetKg": 111500,
+      "dryKg": 4000,
+      "thrustVacKN": 934,
+      "ispVacS": 348,
+      "engines": 1,
+      "chamberTempK": 3600
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Falcon Heavy — Wikipedia (22,819 kN at liftoff; side boosters and centre core as Falcon 9 Block 5 first stages; 5.2 m fairing)",
+      "u": "https://en.wikipedia.org/wiki/Falcon_Heavy"
+    },
+    {
+      "l": "Falcon 9 Full Thrust — Wikipedia (first stage 433.1 t / 22.2 t, 7,607 kN SL, 282/311 s; second stage 111.5 t / 4 t; fairing 1,700 kg)",
+      "u": "https://en.wikipedia.org/wiki/Falcon_9_Full_Thrust"
+    },
+    {
+      "l": "NASA — Europa Clipper launch (Falcon Heavy, LC-39A, 14 Oct 2024; all three cores expended; 6,065 kg); second burn after a ~45 min coast",
+      "u": "https://science.nasa.gov/blogs/europa-clipper/2024/10"
+    },
+    {
+      "l": "The centre core's thrust is the average of its throttle-down, matching MECO ~3 min after liftoff against BECO ~2.5 min",
+      "u": "https://science.nasa.gov/blogs/psyche/2023/10"
+    }
+  ]
+}

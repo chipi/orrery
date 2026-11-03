@@ -1,0 +1,63 @@
+{
+  "id": "h3",
+  "name": "H3-24L",
+  "source_tier": "flagship",
+  "payloadKg": 4480,
+  "fairingKg": 2700,
+  "fairingJettisonAltM": 131000,
+  "refAreaM2": 30,
+  "cd": 0.3,
+  "launchSite": { "lat": 30.4022, "lon": 130.975, "name": "LP2 · Tanegashima" },
+  "pitchProgram": [[0, 90], [10, 89], [40, 76], [100, 54], [180, 34], [280, 16], [400, 4], [480, 0]],
+  "boosters": {
+    "name": "SRB-3",
+    "count": 4,
+    "wetKg": 76200,
+    "dryKg": 9000,
+    "thrustSlKN": 1600,
+    "thrustVacKN": 1750,
+    "ispSlS": 260,
+    "ispVacS": 283.6,
+    "chamberTempK": 3300
+  },
+  "stages": [
+    {
+      "name": "First stage (2× LE-9)",
+      "wetKg": 240000,
+      "dryKg": 15500,
+      "thrustSlKN": 2580,
+      "thrustVacKN": 2942,
+      "ispSlS": 370,
+      "ispVacS": 422,
+      "engines": 2,
+      "chamberTempK": 3500
+    },
+    {
+      "name": "Second stage (LE-5B-3)",
+      "wetKg": 28000,
+      "dryKg": 3400,
+      "thrustVacKN": 137,
+      "ispVacS": 448,
+      "engines": 1,
+      "chamberTempK": 3500
+    }
+  ],
+  "provenance": [
+    {
+      "l": "JAXA — H3/MMX launch plan, Aug 2026 (H3-24L: first stage 240 t / 224.5 t propellant, second stage 28 t / 24.6 t, SRB-3 76.2 t each, L fairing 16.4 m 2.7 t; event table SRB-3 sep 116/118 s, fairing 197 s at 131 km, MECO 292 s; MMX 4,480 kg)",
+      "u": "https://www.jaxa.jp/press/2026/08/files/jaxa20260820-1_01.pdf"
+    },
+    {
+      "l": "JAXA — H3 F9 press kit (LE-9 1,471 kN vacuum, 422 s; LE-5B-3 137 kN, 448 s; SRB-3 2,300 kN max, 283.6 s)",
+      "u": "https://fanfun.jaxa.jp/countdown/h3f9/files/h3f9_presskit_20260730.pdf"
+    },
+    {
+      "l": "ESA — MMX lifts off to Mars's moon Phobos (H3 F10, 20 Oct 2026 JST; the second stage made the Mars-transfer burn)",
+      "u": "https://www.esa.int/ESA_Multimedia/Images/2026/10/MMX_lifts_off_to_Mars_s_moon_Phobos"
+    },
+    {
+      "l": "SRB-3 thrust is the burn average matching the ~110 s burn; LE-9 sea-level thrust/Isp estimated from the vacuum figures (not published)",
+      "u": "https://en.wikipedia.org/wiki/H3_(rocket)"
+    }
+  ]
+}

@@ -2,26 +2,44 @@
   "missionId": "perseverance",
   "siteId": "perseverance",
   "body": "mars",
-  "landingSite": { "lat": 18.44, "lon": 77.45 },
-  "entryState": { "altitudeM": 125000, "velocityMs": 5400, "flightPathAngleDeg": 15 },
+  "landingSite": {
+    "lat": 18.44,
+    "lon": 77.45
+  },
+  "entryState": {
+    "altitudeM": 128220,
+    "velocityMs": 5333.6,
+    "flightPathAngleDeg": 16.18
+  },
   "entryMassKg": 3650,
   "entryCdA": 24,
-  "liftToDragRatio": 0.24,
-  "estimatedFields": ["flightPathAngleDeg", "liftToDragRatio", "entryCdA"],
+  "liftToDragRatio": 0.18,
+  "estimatedFields": [
+    "liftToDragRatio",
+    "entryCdA"
+  ],
   "retroPropellantKg": 450,
   "archetype": "MARS_SKYCRANE",
   "params": {
-    "chuteDeployAltM": 11000,
-    "terminalHandoffAltM": 2100,
+    "chuteDeployAltM": 12600,
+    "terminalHandoffAltM": 2220,
     "finalPhaseAltM": 21,
     "parachuteCdA": 210,
     "heatshieldKg": 440,
     "backshellKg": 680,
     "ispS": 225,
-    "terminalVelocityMs": 0.75
+    "terminalVelocityMs": 0.75,
+    "descentRateGain": 0.1
   },
   "source_tier": "flagship",
   "provenance": [
-    { "l": "NASA Mars 2020 EDL press kit", "u": "https://mars.nasa.gov/mars2020/timeline/landing/entry-descent-landing/" }
+    {
+      "l": "Mars 2020 MEADS reconstruction (NASA) — entry 128.22 km, 5,333.6 m/s at −16.18°; chute 240.6 s at 10.04 km MOLA (12.6 km above the −2.56 km site), backshell separation 357.5 s, touchdown 418.7 s at 0.83 m/s. L/D is the bank-averaged effective value (estimate)",
+      "u": "https://ntrs.nasa.gov/api/citations/20210024320/downloads/MEADSreconstruction.pdf"
+    },
+    {
+      "l": "NASA Mars 2020 EDL press kit",
+      "u": "https://mars.nasa.gov/mars2020/timeline/landing/entry-descent-landing/"
+    }
   ]
 }

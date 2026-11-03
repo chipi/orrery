@@ -32,5 +32,32 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur-Oberstufe (Atlas V 401)"
+  "vehicle_stage": "Centaur-Oberstufe (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 55,
+      "label": "TCM-2",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 94.6,
+      "label": "TCM-3",
+      "description": "Anpassung zur Flugmitte."
+    },
+    {
+      "met": 100,
+      "label": "TCM-4",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 134.2,
+      "label": "TCM-5",
+      "description": "Anpassung in der Anflugphase."
+    },
+    {
+      "met": 200,
+      "label": "TCM-6 — letzte Zündung vor dem Einschwenken in die Marsumlaufbahn",
+      "description": "Schärft die Anflugausrichtung für das Einschwenken in die Marsumlaufbahn."
+    }
+  ]
 }

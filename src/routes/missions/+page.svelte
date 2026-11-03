@@ -34,6 +34,7 @@
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
   import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
+  import { missionDestLabel } from '$lib/destination-label';
 
   // EpochTimelineStrip URL allowlist — same shape as /fleet's epochValid.
   // The strip writes `?epoch=<id>`; this validates round-trips so a junk
@@ -782,7 +783,7 @@
                 <dt class="sr-only">{m.missions_card_year_label()}</dt>
                 <dd class="card-year">{mission.year}</dd>
                 <dt class="sr-only">{m.missions_card_dest_label()}</dt>
-                <dd class="card-dest">{mission.dest}</dd>
+                <dd class="card-dest">{missionDestLabel(mission.dest)}</dd>
               </dl>
               {#if mission.first}
                 <p class="card-first">{mission.first}</p>

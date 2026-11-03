@@ -78,30 +78,83 @@ export interface ArchetypeParams {
   descentRateGain?: number;
   /** Airbag/impact speed (m·s⁻¹) the powered brake eases to before release. */
   airbagReleaseMs?: number;
+  /** Luna 9: altitude (m) the contact probe ejects the capsule; the brake runs to here
+   *  instead of stopping (and free-falling) the moment it reaches `airbagReleaseMs`. */
+  airbagReleaseAltM?: number;
   /** Altitude (m) of surface contact for touch-and-go / comet landing. */
   contactAltM?: number;
   /** Ambient pressure (Pa) at which an atmospheric probe is crushed / lost
    *  (Jupiter — the descent has no solid-surface terminus). */
   crushPressurePa?: number;
+  /** Lunar powered descent from orbit (Apollo PDI, Chang'e, Luna): the braking phase's
+   *  flight-path angle (deg) — near-horizontal, the burn kills orbital speed over ~8 min. */
+  brakingFpaDeg?: number;
+  /** Peak braking deceleration (g): the descent engine's thrust over the vehicle's mass
+   *  (Apollo LM ~0.3 g) — what makes the braking phase last minutes, not seconds. */
+  brakingMaxG?: number;
+  /** The descent engine's maximum thrust (N). When set, every phase brakes at up to this thrust
+   *  over the current mass (deceleration grows as propellant burns off); overrides brakingMaxG. */
+  brakingMaxThrustN?: number;
+  /** Speed (m/s) at which braking ends and the approach pitches up (Apollo "high gate"). */
+  highGateSpeedMs?: number;
+  /** The approach phase's flight-path angle (deg), steeper than braking. */
+  approachFpaDeg?: number;
+  /** Altitude (m) the approach ends and the vertical final descent starts ("low gate"). */
+  lowGateAltM?: number;
+  /** Braking-phase schedule gain (s⁻¹). Small, so the target speed sits well below the
+   *  vehicle's and the engine brakes at its peak the whole phase — the real near-full-thrust
+   *  braking burn; the normal gain on a shallow path would dawdle for many minutes. */
+  brakingRateGain?: number;
 }
 
 type ArchetypeBuilder = (p: ArchetypeParams) => EDLPhase[];
 
-const LUNAR_POWERED: ArchetypeBuilder = (p) => [
-  {
-    kind: 'powered_retro',
-    endTrigger: { type: 'ground', value: 0 },
+/** Lunar powered descent. With `brakingFpaDeg` it flies from orbit like the real landers —
+ *  a braking burn at a shallow angle down to the high-gate speed, an approach, a vertical
+ *  final from low gate; without it, a single vertical terminal burn (the short-form profile). */
+const LUNAR_POWERED: ArchetypeBuilder = (p) => {
+  const common = {
+    kind: 'powered_retro' as const,
     ispS: p.ispS ?? 311,
     terminalVelocityMs: p.terminalVelocityMs ?? 1,
     descentRateGain: p.descentRateGain ?? 0.05,
-    events: ['retro_ignition'],
-  },
-];
+  };
+  if (p.brakingFpaDeg == null) {
+    return [{ ...common, endTrigger: { type: 'ground', value: 0 }, events: ['retro_ignition'] }];
+  }
+  return [
+    {
+      ...common,
+      endTrigger: { type: 'velocity_ms', value: p.highGateSpeedMs ?? 150 },
+      flightPathAngleDeg: p.brakingFpaDeg,
+      maxBrakeG: p.brakingMaxG ?? 0.3,
+      maxThrustN: p.brakingMaxThrustN,
+      descentRateGain: p.brakingRateGain ?? 0.01,
+      events: ['retro_ignition'],
+    },
+    {
+      ...common,
+      endTrigger: { type: 'altitude_m', value: p.lowGateAltM ?? 150 },
+      flightPathAngleDeg: p.approachFpaDeg ?? 16,
+      maxBrakeG: p.brakingMaxG ?? 0.3,
+      maxThrustN: p.brakingMaxThrustN,
+    },
+    {
+      ...common,
+      endTrigger: { type: 'ground', value: 0 },
+      maxBrakeG: p.brakingMaxG ?? 0.3,
+      maxThrustN: p.brakingMaxThrustN,
+    },
+  ];
+};
 
 const LUNA_DIRECT_IMPACT: ArchetypeBuilder = (p) => [
   {
     kind: 'powered_retro',
-    endTrigger: { type: 'velocity_ms', value: p.airbagReleaseMs ?? 15 },
+    endTrigger:
+      p.airbagReleaseAltM !== undefined
+        ? { type: 'altitude_m', value: p.airbagReleaseAltM }
+        : { type: 'velocity_ms', value: p.airbagReleaseMs ?? 15 },
     ispS: p.ispS ?? 287,
     terminalVelocityMs: p.airbagReleaseMs ?? 15,
     descentRateGain: p.descentRateGain ?? 0.4,
@@ -297,9 +350,10 @@ const JUPITER_PROBE: ArchetypeBuilder = (p) => [
   },
   {
     kind: 'aeroshell_descent',
+    // `probe_signal_lost` is emitted by the integrator when the crush pressure trips, not at
+    // phase start (listing it here fired it twice, the first time 40 min early).
     endTrigger: { type: 'pressure_pa', value: p.crushPressurePa ?? 2_200_000 }, // ~22 bar
     cdA: p.terminalCdA ?? 3,
-    events: ['probe_signal_lost'],
   },
 ];
 
@@ -392,6 +446,8 @@ export interface RawDescentProfile {
    *  NOT back these. A test enforces that any Earth profile setting liftToDragRatio/targetDownrangeKm
    *  declares them here, so an invented number can never silently wear real mission-report provenance. */
   estimatedFields?: string[];
+  /** Integrate γ on a ballistic super-circular entry flown at its sourced angle (descent-physics). */
+  dynamicGamma?: boolean;
   retroPropellantKg?: number;
   survivableTouchdownMs?: number;
   archetype: ArchetypeName;
@@ -414,6 +470,7 @@ export function expandDescentProfile(raw: RawDescentProfile): DescentProfile {
     entryCdA: raw.entryCdA,
     liftToDragRatio: raw.liftToDragRatio,
     targetDownrangeKm: raw.targetDownrangeKm,
+    dynamicGamma: raw.dynamicGamma,
     retroPropellantKg: raw.retroPropellantKg,
     phases: build(raw.params ?? {}),
     survivableTouchdownMs: raw.survivableTouchdownMs ?? ARCHETYPE_SURVIVABLE[raw.archetype],

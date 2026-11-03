@@ -25,5 +25,32 @@
       "note": "L'allumage du moteur principal place MESSENGER en orbite autour de Mercure après sept ans de croisière.",
       "type": "nominal"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 760,
+      "label": "Vénus n° 1 — assistance gravitationnelle",
+      "description": "Approche minimale de 3 000 km le 2006-10-24. Survol de vérification des instruments à mi-croisière."
+    },
+    {
+      "met": 998,
+      "label": "Vénus n° 2 — assistance gravitationnelle",
+      "description": "Approche minimale de 338 km le 2007-06-05 — un passage bien plus profond que le n° 1, qui retire une vitesse héliocentrique importante."
+    },
+    {
+      "met": 1474,
+      "label": "Mercure n° 1 — assistance gravitationnelle",
+      "description": "Approche minimale de 200 km le 2008-01-14. Première sonde à visiter Mercure depuis le troisième survol de Mariner 10 en 1975. Elle a renvoyé de nouvelles images de l'hémisphère que Mariner 10 n'avait jamais vu."
+    },
+    {
+      "met": 1858,
+      "label": "Mercure n° 2 — assistance gravitationnelle",
+      "description": "Approche minimale de 200 km le 2008-10-06. Achève la cartographie de l'hémisphère jusque-là non observé — au troisième survol, plus de 95 % de la surface de Mercure était imagée pour la première fois de l'histoire."
+    },
+    {
+      "met": 2214,
+      "label": "Mercure n° 3 — assistance gravitationnelle",
+      "description": "Approche minimale de 228 km le 2009-09-29. Dernier survol avant la mise en orbite — la trajectoire était désormais réglée pour la capture en orbite de Mercure 17 mois plus tard."
+    }
   ]
 }

@@ -63,9 +63,9 @@
       "periapsis_km": 110,
       "inclination_deg": 70,
       "source": "NASA NSSDCA Luna 16 archive; lunar-orbit insertion 1970-09-17",
-      "entry_velocity_km_s": 0.15,
+      "entry_velocity_km_s": 1.692,
       "edl_system": "powered",
-      "edl_duration_s": 100,
+      "edl_duration_s": 362,
       "touchdown_velocity_ms": 1
     },
     "totals": {

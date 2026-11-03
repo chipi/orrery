@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "المرحلة العليا Centaur (Atlas V 411)"
+  "vehicle_stage": "المرحلة العليا Centaur (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "مناورة الاقتراب",
+      "description": "أول إشعال في مرحلة الاقتراب. يبطئ OSIRIS-REx حتى تطابق سرعته الشمسية المركز سرعة بينو من أجل الالتقاء."
+    }
+  ]
 }

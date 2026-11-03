@@ -51,5 +51,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "твердотопливный разгонный блок Star 48B PAM-D"
+  "vehicle_stage": "твердотопливный разгонный блок Star 48B PAM-D",
+  "flight_events": [
+    {
+      "met": 80,
+      "label": "TCM-2",
+      "description": "Уточнение в середине перелёта."
+    },
+    {
+      "met": 165,
+      "label": "TCM-3",
+      "description": "Подстройка на этапе сближения к целевому эллипсу в кратере Гусева."
+    }
+  ]
 }

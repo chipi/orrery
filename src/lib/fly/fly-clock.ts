@@ -14,28 +14,50 @@ import type { DescentSummary } from '$lib/physics/descent/descent-physics';
 
 /** The capture-burn window straddling arrival, days (the orbit-insertion beat). */
 export const OI_WINDOW_DAYS = 5;
+/** The same window on a few-day cislunar flight (lunar orbit insertion), where five days
+ *  would light the burn for half the trip. */
+export const OI_WINDOW_DAYS_CISLUNAR = 1;
 
 /**
  * Orbit-insertion callout window (callers gate on the mission being an orbiter):
- * outside the launch/descent acts, from `OI_WINDOW_DAYS` before arrival to a day after.
+ * outside the launch/descent acts, from `windowDays` before arrival to a day after.
  */
 export function isOrbitInsertionBeatActive(args: {
   showLaunch: boolean;
   showDescent: boolean;
   simDay: number;
   arrDay: number;
+  windowDays?: number;
 }): boolean {
   return (
     !args.showLaunch &&
     !args.showDescent &&
-    args.simDay >= args.arrDay - OI_WINDOW_DAYS &&
+    args.simDay >= args.arrDay - (args.windowDays ?? OI_WINDOW_DAYS) &&
     args.simDay <= args.arrDay + 1
   );
 }
 
-/** Burn firing — the last half of the window into arrival (the retro burn). */
-export function isOrbitInsertionFiring(args: { simDay: number; arrDay: number }): boolean {
-  return args.simDay >= args.arrDay - OI_WINDOW_DAYS / 2 && args.simDay <= args.arrDay + 0.5;
+/** Burn firing — the last half of the window into arrival (the retro burn). The burn
+ *  ends at capture: from arrival on the spacecraft is in orbit, not still burning. */
+export function isOrbitInsertionFiring(args: {
+  simDay: number;
+  arrDay: number;
+  windowDays?: number;
+}): boolean {
+  return (
+    args.simDay >= args.arrDay - (args.windowDays ?? OI_WINDOW_DAYS) / 2 &&
+    args.simDay < args.arrDay
+  );
+}
+
+/** Where the orbit-insertion beat stands: closing in, burning, or captured into orbit. */
+export function orbitInsertionStage(args: {
+  simDay: number;
+  arrDay: number;
+  windowDays?: number;
+}): 'approach' | 'burn' | 'captured' {
+  if (args.simDay >= args.arrDay) return 'captured';
+  return isOrbitInsertionFiring(args) ? 'burn' : 'approach';
 }
 
 /**
@@ -51,15 +73,22 @@ export function coastAscentFraction(earthCoast: boolean, coastDurationDays: numb
 }
 
 /**
- * Raw-scrubber times of the ascent separation beats (staging, fairing, SECO) —
- * already in the launch clock's base. The play-clock eases into slow-mo at each.
+ * Raw-scrubber times of the ascent separation beats (staging, fairing, spacecraft
+ * separation) — already in the launch clock's base. The play-clock eases into slow-mo at
+ * each. The spacecraft separates at SECO, or at `payloadSepT` (the injection burn's end)
+ * when it rides the upper stage through injection.
  */
-export function launchSeparationTimes(summary: AscentSummary | null): number[] {
-  return summary
-    ? summary.events
-        .filter((e) => e.type === 'staging' || e.type === 'fairing_jettison' || e.type === 'seco')
-        .map((e) => e.t)
-    : [];
+export function launchSeparationTimes(
+  summary: AscentSummary | null,
+  payloadSepT?: number,
+): number[] {
+  if (!summary) return [];
+  const times = summary.events
+    .filter((e) => e.type === 'staging' || e.type === 'fairing_jettison')
+    .map((e) => e.t);
+  const seco = summary.events.find((e) => e.type === 'seco')?.t;
+  const sep = payloadSepT ?? seco;
+  return sep != null ? [...times, sep] : times;
 }
 
 const DESCENT_SEP_BEATS = new Set([

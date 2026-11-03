@@ -15,7 +15,7 @@
     },
     {
       "met": 22.2,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Inserimento in orbita lunare (con più accensioni di innalzamento dell'orbita terrestre e lunare).",
       "type": "nominal"
     },
@@ -44,5 +44,42 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "stadio superiore criogenico C25 dell'LVM3"
+  "vehicle_stage": "stadio superiore criogenico C25 dell'LVM3",
+  "flight_events": [
+    {
+      "met": 17.8,
+      "label": "Immissione translunare",
+      "description": "Ultima accensione al perigeo dopo 18 giorni di innalzamento progressivo dell'orbita terrestre: lo stesso trasferimento lunare a basso costo che l'ISRO usa da Chandrayaan-1."
+    },
+    {
+      "met": 23.35,
+      "label": "Riduzione dell'orbita lunare n. 1",
+      "description": "2023-08-06. Prima accensione dopo la cattura lunare: l'orbita scende a 170 × 4.313 km."
+    },
+    {
+      "met": 26.2,
+      "label": "Riduzione dell'orbita lunare n. 2",
+      "description": "2023-08-09. Seconda accensione, che avvicina l'orbita a una quasi circolare."
+    },
+    {
+      "met": 31.2,
+      "label": "Riduzione dell'orbita lunare n. 3",
+      "description": "2023-08-14. Terza accensione di riduzione."
+    },
+    {
+      "met": 33.1,
+      "label": "Riduzione dell'orbita lunare n. 4",
+      "description": "2023-08-16. Ultima accensione di riduzione: un'orbita quasi circolare di 153 × 163 km."
+    },
+    {
+      "met": 35,
+      "label": "Frenata del lander n. 1",
+      "description": "2023-08-18. La prima frenata di Vikram abbassa la sua orbita a 113 × 157 km."
+    },
+    {
+      "met": 36.5,
+      "label": "Frenata del lander n. 2",
+      "description": "La seconda frenata porta Vikram sull'orbita bassa di discesa, pronto per il tentativo di allunaggio."
+    }
+  ]
 }

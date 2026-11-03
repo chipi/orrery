@@ -7,10 +7,57 @@
   "first": "有史以来分辨率最高的月球地图",
   "description": "LRO自2009年起环绕月球运行，平均轨道高度为50 km，窄角相机的成像分辨率为50 cm/像素——高到足以看清仍保存在月壤中的Apollo下降级、月球车辙和宇航员的足迹。它在Lunokhod 1停止工作三十九年之后找到了这辆月球车。它为Artemis确定了200多个候选着陆点。推动当今每一项月球计划的月球南极水冰沉积，是由LRO的仪器量化测定的。这场侦察任务成了现代月球时代的基石。",
   "events": [
-    { "met": 0, "label": "发射", "note": "Atlas V 401 从卡纳维拉尔角 SLC-41发射（作为次要载荷携带 LCROSS 撞击器）。", "type": "nominal" },
-    { "met": 5, "label": "MOI", "note": "月球轨道插入 2009-06-23", "type": "nominal" },
-    { "met": 90, "label": "主任务", "note": "一年探测阶段（NASA项目）开始。", "type": "info" },
-    { "met": 455, "label": "扩展科学任务", "note": "任务延长至NASA SMD下的多年科学阶段。", "type": "info" }
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "Atlas V 401 从卡纳维拉尔角 SLC-41发射（作为次要载荷携带 LCROSS 撞击器）。",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "LOI",
+      "note": "月球轨道插入 2009-06-23",
+      "type": "nominal"
+    },
+    {
+      "met": 90,
+      "label": "主任务",
+      "note": "一年探测阶段（NASA项目）开始。",
+      "type": "info"
+    },
+    {
+      "met": 455,
+      "label": "扩展科学任务",
+      "note": "任务延长至NASA SMD下的多年科学阶段。",
+      "type": "info"
+    }
   ],
-  "vehicle_stage": "Centaur 上面级（Atlas V 401）"
+  "vehicle_stage": "Centaur 上面级（Atlas V 401）",
+  "flight_events": [
+    {
+      "met": 1,
+      "label": "MCC-1",
+      "description": "地月转移入射后的首次中途修正。"
+    },
+    {
+      "met": 1.04,
+      "label": "MCC-2",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-3",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-4",
+      "description": "接近阶段精修。"
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5——进入环月轨道前最后一次",
+      "description": "进入环月轨道前的最终接近瞄准。"
+    }
+  ]
 }

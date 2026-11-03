@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "bovenste trap Blok-D"
+  "vehicle_stage": "bovenste trap Blok-D",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "Eerste koerscorrectie."
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "Verfijning in de naderingsfase."
+    }
+  ]
 }

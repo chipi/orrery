@@ -51,5 +51,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "etapa superior Centaur (Atlas V 541)"
+  "vehicle_stage": "etapa superior Centaur (Atlas V 541)",
+  "flight_events": [
+    {
+      "met": 76,
+      "label": "TCM-2",
+      "description": "Encendido de ajuste a mitad del crucero. Para entonces Curiosity ya ha salido del pozo gravitatorio de la Tierra y sigue una trayectoria heliocéntrica estable."
+    },
+    {
+      "met": 211,
+      "label": "TCM-4 — último encendido antes del EDL",
+      "description": "Último gran retoque de la trayectoria antes de la entrada en Marte. El EDL exige una precisión de puntería inferior a 1 km en la interfaz atmosférica; la TCM-4 la proporciona."
+    }
+  ]
 }

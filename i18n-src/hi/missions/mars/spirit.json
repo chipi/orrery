@@ -51,5 +51,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Star 48B PAM-D ठोस ऊपरी चरण"
+  "vehicle_stage": "Star 48B PAM-D ठोस ऊपरी चरण",
+  "flight_events": [
+    {
+      "met": 80,
+      "label": "TCM-2",
+      "description": "यात्रा के बीच परिशोधन।"
+    },
+    {
+      "met": 165,
+      "label": "TCM-3",
+      "description": "गुसेव क्रेटर के लक्ष्य दीर्घवृत्त की ओर निकट पहुँचने के चरण में सुधार।"
+    }
+  ]
 }

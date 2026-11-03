@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 上面级（Atlas V 411）"
+  "vehicle_stage": "Centaur 上面级（Atlas V 411）",
+  "flight_events": [
+    {
+      "met": 700,
+      "label": "接近机动",
+      "description": "接近阶段的首次点火。使 OSIRIS-REx 减速，与贝努的日心速度相匹配，以实现交会。"
+    }
+  ]
 }

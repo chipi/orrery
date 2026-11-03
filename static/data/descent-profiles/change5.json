@@ -2,15 +2,44 @@
   "missionId": "change5",
   "siteId": "change5",
   "body": "moon",
-  "landingSite": { "lat": 43.1, "lon": -51.8 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 1300,
+  "landingSite": {
+    "lat": 43.1,
+    "lon": -51.8
+  },
+  "entryState": {
+    "altitudeM": 18000,
+    "velocityMs": 1700,
+    "flightPathAngleDeg": 1.4
+  },
+  "entryMassKg": 3735.4,
   "entryCdA": 0,
-  "retroPropellantKg": 185,
+  "retroPropellantKg": 1898,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 1.99,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1.4,
+    "brakingMaxThrustN": 7000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 18,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "brakingFpaDeg",
+    "approachFpaDeg",
+    "brakingMaxThrustN"
+  ],
   "provenance": [
-    { "l": "Chang'e-5 Mission — CNSA / NSSDC record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-087A" }
+    {
+      "l": "Chang'e 5 GNC — descent from 18 km at 1.7 km/s, 3,735.4 kg; braking 640 s, total 830 s; 1,898 kg propellant; touchdown 1.99 m/s",
+      "u": "https://www.sciopen.com/local/article_pdf/10.34133/2021/9823609.pdf"
+    },
+    {
+      "l": "Chang'e-5 Mission — CNSA / NSSDC record",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-087A"
+    }
   ]
 }

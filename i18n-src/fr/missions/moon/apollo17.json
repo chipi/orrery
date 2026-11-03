@@ -51,5 +51,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (troisième étage)"
+  "vehicle_stage": "Saturn V S-IVB (troisième étage)",
+  "flight_events": [
+    {
+      "met": 1.27,
+      "label": "MCC-2",
+      "description": "Première correction de trajectoire."
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-3",
+      "description": "Affinage de la phase d'approche avant l'insertion en orbite lunaire."
+    },
+    {
+      "met": 10.9,
+      "label": "Injection transterrestre",
+      "description": "1972-12-16. L'allumage du SPS renvoie Apollo 17 vers la Terre après 75 heures en orbite lunaire et trois jours à la surface."
+    }
+  ]
 }

@@ -1,0 +1,12 @@
+{
+  "hyg-v41": "/explore 恒星邻域中真实近邻恒星场的位置、视星等和 B−V 色指数。合并了 Hipparcos、Yale Bright Star 和 Gliese 星表。",
+  "d3-celestial-constellations": "现代 IAU 星座连线图，绘制在 /explore 的恒星邻域和每颗命名恒星的寻星图中。恒星位置是我们自己的（来自 HYG）；此来源只提供连线图案。",
+  "gcat": "机构级发射记录，是发射日历的主干来源——历史和当前航天飞行的日期、运载火箭和载荷记录。",
+  "ll2-thespacedevs": "发射日历中即将进行的发射的补充聚合源，在机构直接来源尚未覆盖某次发射时使用。这是叶子来源，不是主干来源（PRD-020）。",
+  "nasa-exoplanet-archive": "已确认系外行星的轨道根数（周期、半长轴、偏心率）、半径、质量和发现信息，用于 /explore 恒星邻域中以 BodyScene 迷你太阳系仪呈现的宿主恒星。",
+  "openngc": "Messier 星表以及 NGC/IC 天体的位置（赤经/赤纬 J2000）、天体类型、星等和常用名，这些天体在 /explore 的已知宇宙中显示为深空展板和带标签的点。十几个著名的星表外天体（车轮星系、第谷超新星遗迹、马头星云、仙后座 A）给出了明确的标准 J2000 位置。",
+  "gravity-eht-galactic-centre": "支撑 /explore 银河系示意图的真实天体测量：太阳到银心的距离（R₀ ≈ 8.18 kpc，GRAVITY Collaboration 2019）和人马座 A* 的质量（≈ 430 万倍太阳质量，GRAVITY Collaboration 2022；由 Event Horizon Telescope 于 2022 年成像）。银河系旋臂的位置是示意性的；这些事实有出处且真实。",
+  "black-hole-parameters": "/explore 测地线引力透镜渲染所引用的参数：M87*（首个成像黑洞，EHT 2019）、人马座 A*（EHT 2022；质量取自 GRAVITY）和天鹅座 X-1（恒星级质量，质量由 Miller-Jones et al. 2021 上调）。卡冈图雅被标注为虚构（Kip Thorne 为《星际穿越》建立的模型）。透镜图像是我们自己的测地线光线追踪——未嵌入任何天文台图像。",
+  "celestrak": "ISS（NORAD 25544）和天宫（48274）的两行轨道根数，每日更新并缓存，驱动物理实验室的卫星过境预测（空间站下次何时从你头顶飞过、多高、从哪个方向来）。",
+  "jpl-iau-constants": "物理实验室计算内核所依据的权威常数：JPL 用于近似行星位置的开普勒根数（Standish）、IAU 引力参数和岁差级数、EGM96 地球引力位常数以及 IUGG 平均半径。实验室的数字是我们自己算的；这些参考值有出处且真实。"
+}

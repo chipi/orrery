@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "المرحلة الثالثة الصلبة Star 48BV (Delta IV Heavy: النواة + معززان)"
+  "vehicle_stage": "المرحلة الثالثة الصلبة Star 48BV (Delta IV Heavy: النواة + معززان)",
+  "flight_events": [
+    {
+      "met": 985,
+      "label": "مساعدة جاذبية الزهرة رقم 4",
+      "description": "2021-02-20. تخفض مساعدة الزهرة الرابعة الحضيض الشمسي أكثر نحو هدف 9.86 R☉."
+    }
+  ]
 }

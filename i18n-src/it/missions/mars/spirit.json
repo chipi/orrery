@@ -51,5 +51,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "stadio superiore a propellente solido Star 48B PAM-D"
+  "vehicle_stage": "stadio superiore a propellente solido Star 48B PAM-D",
+  "flight_events": [
+    {
+      "met": 80,
+      "label": "TCM-2",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 165,
+      "label": "TCM-3",
+      "description": "Ritocco della fase di avvicinamento verso l'ellisse bersaglio del cratere Gusev."
+    }
+  ]
 }

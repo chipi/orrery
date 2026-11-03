@@ -511,7 +511,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
     margin-right: 10px;
   }
   .timeline .t-name {
@@ -521,7 +521,7 @@
     font-size: 15px;
   }
   .timeline .t-name.t-ctx {
-    color: rgba(255, 255, 255, 0.42);
+    color: rgba(255, 255, 255, 0.55);
     font-weight: 400;
   }
   .timeline .t-note {
@@ -608,7 +608,7 @@
     font-size: 10px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
     margin: 14px 16px 0;
   }
   .d-name {
@@ -691,7 +691,7 @@
     font-size: 9px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 3px;
     padding: 2px 6px;
@@ -716,7 +716,7 @@
     font-size: 9px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
     padding: 1px 6px;
@@ -742,7 +742,7 @@
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
   }
   .rel {
     color: #cfe3fb;

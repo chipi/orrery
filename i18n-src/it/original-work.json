@@ -1917,5 +1917,90 @@
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
     }
+  },
+  "icons": {
+    "menu": {
+      "title": "Pulsante del menu",
+      "what": "Hamburger a tre barre che si richiude in una X di chiusura quando il cassetto è aperto.",
+      "where": "Navigazione (mobile)",
+      "variants": {
+        "closed": "chiuso",
+        "open": "aperto"
+      }
+    },
+    "audio-wave": {
+      "title": "Onda del tour audio",
+      "what": "Il segno «〜» che apre il tour audio guidato; pulsa durante la riproduzione.",
+      "where": "Navigazione · pulsante della home"
+    },
+    "science-lens": {
+      "title": "Lente scientifica",
+      "what": "Anello esterno con un punto al centro (spenta) o un reticolo (accesa): attiva o disattiva la lente.",
+      "where": "Navigazione",
+      "variants": {
+        "off": "spenta",
+        "on": "accesa"
+      }
+    },
+    "settings-gear": {
+      "title": "Impostazioni grafiche",
+      "what": "Ingranaggio a otto raggi per il pannello di qualità e impostazioni grafiche.",
+      "where": "Navigazione"
+    },
+    "fullscreen": {
+      "title": "Schermo intero",
+      "what": "Angoli rivolti verso l'esterno (entra) o verso l'interno (esci) per lo schermo intero dei panorami.",
+      "where": "Panorami di Luna · Marte",
+      "variants": {
+        "enter": "entra",
+        "exit": "esci"
+      }
+    },
+    "conic": {
+      "title": "Icone delle coniche",
+      "what": "Glifi di circonferenza / ellisse / parabola / iperbole per la sovrapposizione delle orbite.",
+      "where": "Lente delle orbite di Volo",
+      "variants": {
+        "circle": "circonferenza",
+        "ellipse": "ellisse",
+        "parabola": "parabola",
+        "hyperbola": "iperbole"
+      }
+    },
+    "info-chip": {
+      "title": "Chip scientifico",
+      "what": "Glifo «i» geometrico che collega ogni figura alla sua spiegazione in /science.",
+      "where": "Ovunque"
+    },
+    "vehicle": {
+      "title": "Lanciatore",
+      "what": "Razzo con ogiva, gambe di atterraggio e oblò.",
+      "where": "Pannello della missione"
+    },
+    "spacecraft": {
+      "title": "Veicolo spaziale / carico utile",
+      "what": "Piattaforma centrale con pannelli solari, braccio dell'antenna e indicatore di orientamento.",
+      "where": "Pannello della missione"
+    },
+    "trajectory-arrow": {
+      "title": "Freccia della traiettoria",
+      "what": "Traiettoria ad arco con punta di freccia: l'invito a «far volare» / trasferimento.",
+      "where": "Pannello della missione · Pianifica"
+    },
+    "mission-orbit": {
+      "title": "Glifo della missione",
+      "what": "Anello d'orbita con una traiettoria ad arco e un punto indicatore: link alle missioni della flotta.",
+      "where": "Pannello della flotta"
+    },
+    "share": {
+      "title": "Condividi",
+      "what": "Quadrato con freccia verso l'alto: condivide la vista attuale (menu di sistema / copia link).",
+      "where": "Navigazione"
+    },
+    "sensory": {
+      "title": "Livello sensoriale",
+      "what": "Ago di bussola attraversato da un'onda: apre le impostazioni sensoriali (suono / vibrazione / inclinazione).",
+      "where": "Navigazione"
+    }
   }
 }

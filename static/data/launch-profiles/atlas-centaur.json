@@ -1,0 +1,63 @@
+{
+  "id": "atlas-centaur",
+  "name": "Atlas SLV-3C Centaur",
+  "source_tier": "flagship",
+  "payloadKg": 998,
+  "fairingKg": 1488,
+  "fairingJettisonAltM": 115000,
+  "refAreaM2": 7.3,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.47, "lon": -80.54, "name": "LC-36B · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [15, 88], [50, 70], [110, 48], [180, 28], [260, 12], [380, 0]],
+  "boosters": {
+    "name": "Booster section (MA-5, 2 chambers)",
+    "count": 1,
+    "wetKg": 92848,
+    "dryKg": 2848,
+    "thrustSlKN": 1494,
+    "thrustVacKN": 1696,
+    "ispSlS": 259,
+    "ispVacS": 294,
+    "chamberTempK": 3400
+  },
+  "stages": [
+    {
+      "name": "Atlas sustainer (LR105 + 2 verniers)",
+      "wetKg": 34200,
+      "dryKg": 3200,
+      "thrustSlKN": 258,
+      "thrustVacKN": 386.4,
+      "ispSlS": 220,
+      "ispVacS": 316,
+      "engines": 1,
+      "chamberTempK": 3400
+    },
+    {
+      "name": "Centaur D (2× RL10A-3-3)",
+      "wetKg": 15500,
+      "dryKg": 2147,
+      "thrustVacKN": 133.4,
+      "ispVacS": 444,
+      "engines": 2,
+      "chamberTempK": 3500
+    }
+  ],
+  "provenance": [
+    {
+      "l": "NASA TM X-2278 — Atlas-Centaur AC-19/AC-20 performance (booster section 2,848 kg dry; sustainer 2,719 kg + 481 kg adapter; expendables 121,047 kg; Centaur hardware 1,637 + 510 kg residuals, 13,354 kg propellant, 2× 66.7 kN at 444 s; nose fairing 970 kg + panels 518 kg; BECO ~T+148–152 s, SECO ~T+252 s)",
+      "u": "https://ntrs.nasa.gov/api/citations/19710023020/downloads/19710023020.pdf"
+    },
+    {
+      "l": "NASA press kit 71-75, Mariner Mars 1971 (AC-23: Atlas 128,602 kg, Centaur 17,077 kg, liftoff 147,130 kg; Centaur start T+4:22, 7 min 34 s burn; Mariner 9 998 kg)",
+      "u": "https://ntrs.nasa.gov/api/citations/19710014838/downloads/19710014838.pdf"
+    },
+    {
+      "l": "Encyclopedia Astronautica — Atlas MA-5 / LR105 (Isp, sustainer vacuum thrust)",
+      "u": "http://www.astronautix.com/a/atlasma-5.html"
+    },
+    {
+      "l": "The Atlas tank's propellant split between booster and sustainer engines so each burns out at its reported time (BECO ~148 s, SECO ~250 s)",
+      "u": "https://ser.im-ldi.com/M10/BULLETINS/bul-01.pdf"
+    }
+  ]
+}

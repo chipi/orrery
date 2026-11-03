@@ -32,5 +32,12 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "etapa superior Block-L del Molniya-M"
+  "vehicle_stage": "etapa superior Block-L del Molniya-M",
+  "flight_events": [
+    {
+      "met": 1.5,
+      "label": "Corrección de trayectoria",
+      "description": "Retoque de la trayectoria a mitad del crucero."
+    }
+  ]
 }

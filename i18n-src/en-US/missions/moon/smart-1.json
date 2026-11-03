@@ -1,6 +1,6 @@
 {
   "name": "SMART-1",
-  "vehicle": "Ariane 5 (shared payload)",
+  "vehicle": "Ariane 5G (shared payload)",
   "payload": "367 kg launch mass; 1.2 kW solar-electric Hall-effect ion thruster",
   "delta_v": "~3.9 km/s (cumulative ion-drive over 13 months)",
   "type": "ROBOTIC ORBITER · FLOWN",

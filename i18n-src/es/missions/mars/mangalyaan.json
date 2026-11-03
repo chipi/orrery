@@ -38,5 +38,27 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "cuarta etapa PS4 del PSLV"
+  "vehicle_stage": "cuarta etapa PS4 del PSLV",
+  "flight_events": [
+    {
+      "met": 50,
+      "label": "TCM-1",
+      "description": "Primera corrección de crucero tras la inyección hacia Marte."
+    },
+    {
+      "met": 97.62,
+      "label": "TCM-2",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 150,
+      "label": "TCM-3",
+      "description": "Ajuste a mitad del crucero."
+    },
+    {
+      "met": 250,
+      "label": "TCM-4 — último encendido antes de la inserción en órbita de Marte",
+      "description": "Puntería final de aproximación antes de la inserción en órbita de Marte."
+    }
+  ]
 }

@@ -20,5 +20,27 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Delta II Star-48B (terceiro estágio)"
+  "vehicle_stage": "Delta II Star-48B (terceiro estágio)",
+  "flight_events": [
+    {
+      "met": 508,
+      "label": "Marte — assistência gravitacional",
+      "description": "Máxima aproximação de 549 km em 2009-02-17. A assistência de Marte acrescentou cerca de 2,6 km/s — o bastante para alcançar o asteroide Vesta depois de mais dois anos de espiral com propulsão iônica. Sem ela, a Dawn precisaria do dobro de propelente ou do dobro do tempo de cruzeiro."
+    },
+    {
+      "met": 1388,
+      "label": "Inserção em órbita de Vesta",
+      "description": "Captura em órbita de Vesta em 2011-07-16 por empuxo iônico contínuo — nenhuma queima química de inserção foi necessária, pois o empuxo iônico cuidou da aproximação gradual. A sonda passou 14 meses em órbita de Vesta, mapeou esse protoplaneta diferenciado de 530 km de diâmetro e confirmou que a bacia de impacto Rheasilvia, no polo sul, é a origem dos meteoritos HED que chegam à Terra."
+    },
+    {
+      "met": 1805,
+      "label": "Partida de Vesta — espiral iônica rumo a Ceres",
+      "description": "Partida de Vesta em 2012-09-05. Os motores iônicos abriram a espiral para fora durante 2,5 anos rumo a Ceres — a primeira transferência interplanetária entre dois corpos feita com empuxo baixo e contínuo. A trajetória consumiu cerca de 390 kg de xenônio."
+    },
+    {
+      "met": 2718,
+      "label": "Inserção em órbita de Ceres",
+      "description": "Captura em órbita de Ceres em 2015-03-06 — a primeira nave a orbitar um planeta anão e a primeira a orbitar dois corpos extraterrestres. Em 2018 havia descido em espiral até uma órbita baixa de mapeamento de 35 km. Ficou sem hidrazina para o controle de atitude em 2018-10-31; a nave segue em órbita estável de Ceres, um monumento planetário protegido a longo prazo pelas regras de proteção planetária."
+    }
+  ]
 }

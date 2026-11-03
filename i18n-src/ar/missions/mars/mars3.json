@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "المرحلة العليا Blok-D"
+  "vehicle_stage": "المرحلة العليا Blok-D",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "أول تصحيح للمسار."
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "تحسين في مرحلة الاقتراب."
+    }
+  ]
 }

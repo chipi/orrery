@@ -27,5 +27,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "étage supérieur Centaur"
+  "vehicle_stage": "étage supérieur Centaur",
+  "flight_events": [
+    {
+      "met": 617,
+      "label": "Vénus n° 2 — assistance gravitationnelle",
+      "description": "Deuxième rencontre avec Vénus (1999-06-24), à 600 km d'altitude, après une manœuvre dans l'espace lointain qui a remodelé l'orbite. Ensemble, les deux assistances de Vénus repoussent l'aphélie au-delà de la Terre et préparent la troisième assistance 55 jours plus tard."
+    },
+    {
+      "met": 672,
+      "label": "Terre — assistance gravitationnelle",
+      "description": "1 171 km au-dessus du Pacifique Sud (1999-08-18) — le survol planétaire le plus rapproché de toutes les missions interplanétaires sortantes à ce jour. L'orbite est désormais assez énergétique pour croiser celle de Jupiter, dont l'assistance finale mènera à Saturne."
+    },
+    {
+      "met": 1172,
+      "label": "Jupiter — assistance gravitationnelle",
+      "description": "9,7 millions de km de Jupiter le 2000-12-30, avec une observation conjointe simultanée avec Galileo (en orbite jovienne). La gravité de Jupiter apporte les 2,5 derniers km/s nécessaires pour un transfert de type Hohmann vers Saturne, atteinte 3,6 ans plus tard."
+    }
+  ]
 }

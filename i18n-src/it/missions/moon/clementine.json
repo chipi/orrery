@@ -15,7 +15,7 @@
     },
     {
       "met": 25,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Inserimento nell'orbita lunare 1994-02-19.",
       "type": "nominal"
     },
@@ -38,5 +38,32 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "stadio superiore Star-37 del Titan II"
+  "vehicle_stage": "stadio di spinta Star-37 della sonda (Titan II G fino all'orbita terrestre bassa)",
+  "flight_events": [
+    {
+      "met": 9,
+      "label": "Immissione translunare",
+      "description": "1994-02-03, dopo otto giorni di verifiche in orbita terrestre bassa. Il motore a propellente solido STAR 37FM portò Clementine su un'orbita di fasatura che passò due volte vicino alla Terra prima di raggiungere la Luna."
+    },
+    {
+      "met": 10,
+      "label": "TCM-1",
+      "description": "Prima pulizia dopo l'immissione translunare."
+    },
+    {
+      "met": 10.24,
+      "label": "TCM-2",
+      "description": "Affinamento a metà crociera."
+    },
+    {
+      "met": 12.75,
+      "label": "TCM-3 — ultima prima dell'inserimento in orbita lunare",
+      "description": "Puntamento finale di avvicinamento prima dell'inserimento in orbita lunare."
+    },
+    {
+      "met": 25.05,
+      "label": "Inserimento in orbita lunare",
+      "description": "1994-02-19. Cattura in un'orbita polare di 415 × 2.940 km. Mappò la superficie lunare a più lunghezze d'onda per 71 giorni: la prima mappa lunare multispettrale globale ad alta risoluzione. I dati di un esperimento radar bistatico furono poi interpretati (in modo controverso) come indizio di ghiaccio d'acqua al polo sud lunare: la scoperta che diede il via a LRO e a tutte le successive missioni di ricerca del ghiaccio."
+    }
+  ]
 }

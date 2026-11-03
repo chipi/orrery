@@ -1,0 +1,65 @@
+{
+  "id": "delta-ii",
+  "name": "Delta II 7925",
+  "source_tier": "flagship",
+  "payloadKg": 3030,
+  "loftBoost": true,
+  "fairingKg": 840,
+  "fairingJettisonAltM": 120000,
+  "refAreaM2": 11,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.44667, "lon": -80.56611, "name": "SLC-17 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [10, 88], [40, 72], [100, 50], [180, 30], [270, 12], [380, 0]],
+  "boosters": {
+    "name": "GEM-40",
+    "count": 9,
+    "airLitCount": 3,
+    "wetKg": 13080,
+    "dryKg": 1315,
+    "thrustSlKN": 499.2,
+    "thrustVacKN": 516.2,
+    "ispSlS": 274,
+    "ispVacS": 283.4,
+    "chamberTempK": 3300
+  },
+  "stages": [
+    {
+      "name": "Stage 1 (RS-27A)",
+      "wetKg": 101800,
+      "dryKg": 5680,
+      "thrustSlKN": 890.1,
+      "thrustVacKN": 1054.2,
+      "ispSlS": 255,
+      "ispVacS": 302,
+      "engines": 1,
+      "chamberTempK": 3400
+    },
+    {
+      "name": "Stage 2 (Delta-K, AJ10-118K)",
+      "wetKg": 6954,
+      "dryKg": 950,
+      "thrustVacKN": 43.6,
+      "ispVacS": 319,
+      "engines": 1,
+      "chamberTempK": 3100
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Boeing/ULA — Delta II Payload Planners Guide, Dec 2006 (6 ground-lit + 3 air-lit GEMs; event table: ground-lit burnout T+63, air-lit lit T+66; MECO T+264; second-stage restart; Star 48B third stage)",
+      "u": "https://www.ulalaunch.com/docs/default-source/rockets/deltaiipayloadplannersguide2007.pdf"
+    },
+    {
+      "l": "Delta II — Wikipedia (stage masses, RS-27A and AJ10-118K thrust and Isp; GEM-40 13,080 / 1,315 kg, 499.2 kN, 64 s)",
+      "u": "https://en.wikipedia.org/wiki/Delta_II"
+    },
+    {
+      "l": "NSSDCA — Mars Pathfinder (Delta II 7925; the Star 48 third stage made the trans-Mars burn)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-068A"
+    },
+    {
+      "l": "Payload = spacecraft (Pathfinder 890 kg) + Star 48B kick stage (2,140 kg, Gunter's Space Page); fairing mass estimated",
+      "u": "https://space.skyrocket.de/doc_eng/star-48.htm"
+    }
+  ]
+}

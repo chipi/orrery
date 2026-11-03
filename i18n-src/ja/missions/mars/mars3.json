@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Blok-D 上段"
+  "vehicle_stage": "Blok-D 上段",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "最初の軌道修正。"
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "接近フェーズの精密化。"
+    }
+  ]
 }

@@ -1,0 +1,67 @@
+name: Link check (weekly)
+
+# Outbound links rot without anyone touching the repo: a publisher moves a page, Commons deletes a
+# file. check-external-links.mjs finds them, but only when someone runs it. This runs it weekly
+# and goes red when a link is dead, so a dead link is seen within a week instead of at the next
+# release. Report-only: nothing is committed; the report and the moved-links list are uploaded.
+#
+# Scope: links held in data, overlays, messages and components. The prerendered HTML is not built
+# here (that needs the full build); the release-time run covers it. Hosts that refuse datacenter
+# IPs come out "inconclusive", never "dead" (see the report's own section).
+# Runbook: the orrery-link-health skill.
+
+on:
+  schedule:
+    # Wednesdays 03:30 UTC — outside the TLE (04:00), docker-e2e (05:07) and CodeQL (Mon 06:15)
+    # windows.
+    - cron: '30 3 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: link-check
+  cancel-in-progress: true
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
+
+      - uses: ./.github/actions/setup-node
+
+      # The checker re-probes a URL only after 7 days; carrying the cache keeps a weekly run
+      # cheap for the sites it asks (the newest cache is restored, this run's is saved).
+      - name: Restore the link cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache/external-links.json
+          key: external-links-${{ github.run_id }}
+          restore-keys: external-links-
+
+      - name: Check outbound links
+        run: node scripts/check-external-links.mjs --strict
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo '## Outbound links'
+            sed -n '/^| Result/,/^$/p' docs/provenance/external-link-check.md
+            echo
+            sed -n '/^## Dead/,/^## /p' docs/provenance/external-link-check.md | sed '$d'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload the report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: external-link-check
+          path: |
+            docs/provenance/external-link-check.md
+            .cache/external-links-moved.md
+          if-no-files-found: ignore
+          retention-days: 30

@@ -68,5 +68,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 上面级（Atlas V 401）"
+  "vehicle_stage": "Centaur 上面级（Atlas V 401）",
+  "flight_events": [
+    {
+      "met": 1154,
+      "label": "地球引力辅助 第2次",
+      "description": "2024-12-13（按重新设计的任务剖面）。"
+    }
+  ]
 }

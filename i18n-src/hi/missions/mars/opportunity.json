@@ -51,5 +51,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Star 48B PAM-D ठोस ऊपरी चरण"
+  "vehicle_stage": "Star 48B PAM-D ठोस ऊपरी चरण",
+  "flight_events": [
+    {
+      "met": 70,
+      "label": "TCM-2",
+      "description": "यात्रा के बीच परिशोधन।"
+    },
+    {
+      "met": 160,
+      "label": "TCM-3",
+      "description": "मेरिडियानी प्लैनम के लक्ष्य दीर्घवृत्त की ओर निकट पहुँचने का सुधार।"
+    }
+  ]
 }

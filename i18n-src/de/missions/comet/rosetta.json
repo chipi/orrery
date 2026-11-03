@@ -43,5 +43,17 @@
       "note": "Einschwenken in die Umlaufbahn um den Kometen 67P/Tschurjumow-Gerassimenko. Philae landet am 2014-11-12.",
       "type": "nominal"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 1349,
+      "label": "Erde Nr. 2 — Swing-by",
+      "description": "Größte Annäherung 5.295 km am 2007-11-13. Kurzzeitig für einen erdnahen Asteroiden gehalten (Bezeichnung 2007 VN84), bevor Beobachter erkannten, dass es Rosetta auf dem Weg nach außen war."
+    },
+    {
+      "met": 2058,
+      "label": "Erde Nr. 3 — Swing-by",
+      "description": "Letzter Vorbeiflug an der Erde am 2009-11-13, größte Annäherung 2.481 km. Der Schwung trägt Rosetta bis zum Aphel, das für die Bahn von 67P nötig ist; danach ging die Sonde im tiefen Raum in den Ruhezustand."
+    }
   ]
 }

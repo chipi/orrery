@@ -1,0 +1,75 @@
+{
+  "id": "titan-ivb-centaur",
+  "name": "Titan IVB-Centaur",
+  "source_tier": "flagship",
+  "payloadKg": 5712,
+  "liftoffThrustKN": 15120,
+  "loftBoost": true,
+  "fairingKg": 5000,
+  "fairingJettisonAltM": 120000,
+  "refAreaM2": 30,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.56, "lon": -80.58, "name": "SLC-40 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [12, 88], [45, 74], [100, 54], [180, 34], [300, 16], [440, 0]],
+  "boosters": {
+    "name": "SRMU",
+    "count": 2,
+    "wetKg": 352000,
+    "dryKg": 39000,
+    "thrustSlKN": 5800,
+    "thrustVacKN": 6300,
+    "ispSlS": 262,
+    "ispVacS": 286,
+    "chamberTempK": 3400
+  },
+  "stages": [
+    {
+      "name": "Titan IV stage 1 (2× LR87-AJ-11)",
+      "ignitionS": 125,
+      "wetKg": 143000,
+      "dryKg": 8000,
+      "thrustSlKN": 2100,
+      "thrustVacKN": 2438,
+      "ispSlS": 260,
+      "ispVacS": 302,
+      "engines": 2,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "Titan IV stage 2 (LR91-AJ-11)",
+      "wetKg": 37100,
+      "dryKg": 3500,
+      "thrustVacKN": 467,
+      "ispVacS": 316,
+      "engines": 1,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "Centaur (2× RL10A-3-3A)",
+      "wetKg": 25500,
+      "dryKg": 4400,
+      "thrustVacKN": 147,
+      "ispVacS": 444,
+      "engines": 2,
+      "chamberTempK": 3500
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Titan IV — Wikipedia (SRMU 15.12 MN max for the pair, 286 s, 140 s; LR87 2,438 kN, 302 s, 164 s; LR91 467 kN, 316 s, 223 s; Centaur 147 kN, 444 s, 625 s; 943,050 kg)",
+      "u": "https://en.wikipedia.org/wiki/Titan_IV"
+    },
+    {
+      "l": "ESA — Cassini-Huygens launch information (08:43:00 UTC, SLC-40; separation T+42 m 40 s)",
+      "u": "https://sci.esa.int/web/cassini-huygens/2083-launch-information"
+    },
+    {
+      "l": "NASA Cassini press kit via AmericaSpace (SRMU burn ~2.5 min; fairing ~3.5 min; stage 2 burnout ~9 min; Centaur first burn ~2 min into parking orbit)",
+      "u": "https://www.americaspace.com/2017/10/15/billion-mile-trek-to-saturn-20-years-since-the-launch-of-cassini/"
+    },
+    {
+      "l": "Stage masses derived from thrust × burn time ÷ Isp (SRMU ~313 t propellant each; the stack sums to the published liftoff mass); dry and fairing masses estimated; Cassini 5,712 kg (Wikipedia)",
+      "u": "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens"
+    }
+  ]
+}

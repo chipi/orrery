@@ -35,6 +35,7 @@ import {
   SOUND_SPEED_MS,
   SURFACE_DENSITY_KGM3,
 } from './descent-physics-constants';
+import { ATM_PROFILE, interpAtm } from './descent-atmosphere-tables';
 // Powered-descent throttle law now lives in the kernel SYSTEMS layer (ADR-087).
 import { poweredDescentThrottle } from '../systems/powered-descent';
 
@@ -144,6 +145,10 @@ export interface EDLPhase {
    *  lunar high-gate) ramps down instead of snapping v in one step (which would
    *  read as a spurious 100-g spike). Default 5. Ignored by aerodynamic phases. */
   maxBrakeG?: number;
+  /** The engine's maximum thrust (N) on a guided phase. When set, the braking cap is this
+   *  thrust over the CURRENT mass, so the deceleration grows as propellant burns off — a real
+   *  engine at full throttle, not a fixed-g limit. Overrides `maxBrakeG`. */
+  maxThrustN?: number;
   /** Mass dropped at the START of this phase (kg) — heat-shield / backshell /
    *  chute / spent descent-stage. Lowers the flying mass (drag decel rises,
    *  propellant lasts longer) and keeps the fuel gauge honest, mirroring
@@ -188,6 +193,14 @@ export interface DescentProfile {
    * this app path is a separate solver — reconcile per ADR-088 Phase 0d). Absent = full lift-up.
    */
   targetDownrangeKm?: number;
+  /**
+   * Integrate the flight-path angle (2-DOF) for a non-lifting super-circular entry too. A real
+   * ballistic Mars entry at its true 12–16° flattens as it sheds speed (the curvature term
+   * outweighs gravity at orbital speed), which is what makes its entry-to-chute time ~4 min;
+   * the fixed-γ default rushes it. Set on profiles flown at their sourced entry angle; a
+   * shallow invented angle would skim out, which is why it is not the default.
+   */
+  dynamicGamma?: boolean;
   /** Descent-stage retro propellant (kg) for the fuel gauge. Default ∞ (never gates). */
   retroPropellantKg?: number;
   /** Ordered EDL phases; the last should end on `ground`. */
@@ -268,13 +281,15 @@ export interface DescentSummary {
 
 // ─── Per-body atmosphere + gravity ──────────────────────────────────
 
-/** Air density (kg·m⁻³) at altitude for a body — single-exponential; Moon = 0.
+/** Air density (kg·m⁻³) at altitude for a body — single-exponential, or the measured profile where one exists (Venus, Titan, Jupiter); Moon = 0.
  *  Altitude is NOT clamped at the datum: a surface-bound descent never goes
  *  below h=0 (the ground break stops it), but an atmospheric probe (Jupiter)
  *  sinks below the 1-bar datum into ever-denser gas, so the drag must rise. */
 export function bodyAirDensity(altM: number, body: DescentBody): number {
   const rho0 = SURFACE_DENSITY_KGM3[body];
   if (rho0 <= 0) return 0;
+  const table = ATM_PROFILE[body];
+  if (table) return interpAtm(table, altM, 1);
   return rho0 * Math.exp(-altM / ATM_SCALE_HEIGHT_M[body]);
 }
 
@@ -285,7 +300,7 @@ export function bodyGravity(altM: number, body: DescentBody): number {
 }
 
 /**
- * Ambient atmospheric pressure (Pa) at altitude — isothermal hydrostatic
+ * Ambient atmospheric pressure (Pa) at altitude — the measured profile where one exists, else isothermal hydrostatic
  * P(h) = ρ₀·g·H·exp(−h/H). Unlike `bodyAirDensity`, altitude is NOT clamped at
  * the datum, so pressure keeps rising as an atmospheric probe sinks below it
  * (Jupiter has no solid surface — the `pressure_pa` end-trigger fires here).
@@ -294,6 +309,8 @@ export function bodyGravity(altM: number, body: DescentBody): number {
 export function bodyAmbientPressurePa(altM: number, body: DescentBody): number {
   const rho0 = SURFACE_DENSITY_KGM3[body];
   if (rho0 <= 0) return 0;
+  const table = ATM_PROFILE[body];
+  if (table) return interpAtm(table, altM, 2);
   const gSurf = MU_BODY_M3_S2[body] / (R_BODY_M[body] * R_BODY_M[body]);
   const H = ATM_SCALE_HEIGHT_M[body];
   return rho0 * gSurf * H * Math.exp(-altM / H);
@@ -512,7 +529,8 @@ export function integrateDescent(
     // 2-DOF flight-path angle (#419): a free-aerodynamic phase evolves γ (below);
     // every other phase pins it to the profile/default constant. sinG/cosG are
     // read from the live γ at the start of the step (semi-implicit Euler with h).
-    const dynamicalGamma = (subCircular || hasLift) && gammaIsDynamical(phase);
+    const dynamicalGamma =
+      (subCircular || hasLift || profile.dynamicGamma === true) && gammaIsDynamical(phase);
     if (!dynamicalGamma) gammaRad = gammaDegFor(phase, profile) * DEG2RAD;
     const sinG = Math.sin(gammaRad);
     const cosG = Math.cos(gammaRad);
@@ -539,19 +557,37 @@ export function integrateDescent(
         altitudeM: h,
         speedMs: v,
         gravityMs2: g,
-        maxBrakeMs2: (phase.maxBrakeG ?? 5) * G0,
+        maxBrakeMs2:
+          phase.maxThrustN != null
+            ? phase.maxThrustN / Math.max(1, mass)
+            : (phase.maxBrakeG ?? 5) * G0,
         descentRateGain: phase.descentRateGain ?? 0.06,
         terminalVelocityMs: phase.terminalVelocityMs ?? 0.75,
         dtS: dt,
       });
       v = cmd.nextSpeedMs;
-      const thrustAccel = cmd.thrustAccelMs2; // brake + gravity (retro also holds the vehicle up)
+      // The thrust flies the schedule along the path (the brake, plus the gravity component
+      // along it) and holds the path against gravity across it, less the orbital relief
+      // v²/(R+h): near orbital speed (a lunar braking burn at ~1.7 km/s) the vehicle's own
+      // motion carries most of its weight. Vertical descent (γ = 90°) reduces to brake + g.
+      const cosGamma = Math.cos(gammaRad);
+      const alongAccel = cmd.brakeAccelMs2 + g * sinG;
+      const acrossAccel = Math.max(0, (g - (v * v) / (bodyRadiusM + h)) * cosGamma);
+      const thrustAccel = Math.hypot(alongAccel, acrossAccel);
       const thrustN = propUsed < propTotal ? mass * thrustAccel : 0; // engine out if tanks dry
-      if (thrustN <= 0) v = vPrev; // no propellant → guidance can't hold; fall
+      // No propellant → guidance can't hold: the vehicle falls under gravity and drag (it
+      // used to hold its speed, so an engine-out crash like Schiaparelli's hit far too slow).
+      if (thrustN <= 0) v = Math.max(0, vPrev + (g * sinG - drag / Math.max(1, mass)) * dt);
       curThrustN = thrustN;
-      curDragN = 0;
+      curDragN = thrustN > 0 ? 0 : drag;
       curDecelG = thrustN / (mass * G0);
-      if (thrustN > 0 && phase.ispS) propUsed += (thrustN / (phase.ispS * G0)) * dt;
+      if (thrustN > 0 && phase.ispS) {
+        // Burned propellant leaves the vehicle: it gets lighter as it brakes (the Apollo LM
+        // roughly halved), so the same deceleration costs less thrust as the burn goes on.
+        const dm = (thrustN / (phase.ispS * G0)) * dt;
+        propUsed += dm;
+        mass = Math.max(1, mass - dm);
+      }
     } else {
       // Aerodynamic / ballistic: gravity component adds speed, drag sheds it.
       const dvdt = g * sinG - drag / Math.max(1, mass);
@@ -686,7 +722,10 @@ export function integrateDescent(
   }
 
   // Splice the peak beats in at their recorded instants, then re-sort.
-  events.push({ type: 'peak_heat', t: peakHeat.t, altKm: peakHeat.altKm, velocityMs: 0 });
+  // No air, no heating: an airless body's descent (the Moon, Eros) has no peak-heat beat.
+  if (peakHeat.flux > 0) {
+    events.push({ type: 'peak_heat', t: peakHeat.t, altKm: peakHeat.altKm, velocityMs: 0 });
+  }
   events.push({ type: 'peak_decel', t: peakDecel.t, altKm: peakDecel.altKm, velocityMs: 0 });
   events.sort((a, b) => a.t - b.t);
 

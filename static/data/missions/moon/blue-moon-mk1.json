@@ -40,9 +40,10 @@
   ],
   "flight": {
     "launch": {
-      "vehicle_stage": "New Glenn 2nd stage (TLI burn)",
+      "vehicle_stage": "New Glenn 2nd stage (to low Earth orbit)",
+      "departure": "spacecraft",
       "mass_at_tli_kg": 16000,
-      "source": "Blue Origin Blue Moon technical brief; New Glenn payload-to-TLI capacity per Blue Origin published capability"
+      "source": "Blue Origin Blue Moon technical brief; New Glenn leaves MK1 in low Earth orbit and the lander's BE-7 performs TLI (Gizmodo, 2025-11-17, https://gizmodo.com/bezoss-big-rocket-has-proved-itself-heres-whats-next-for-new-glenn-2000686257)"
     },
     "cruise": {
       "tcm_count": 1,
@@ -75,7 +76,7 @@
         "met_days": 0.2,
         "type": "tli_or_tmi",
         "label": "Trans-lunar injection",
-        "description": "New Glenn upper stage burn sends Blue Moon Mk1 on a 4-day translunar coast."
+        "description": "New Glenn leaves Mk1 in low Earth orbit; after three to four orbits the lander's own BE-7 raises it to an elliptical orbit, then burns for the Moon — a 4-day translunar coast."
       },
       {
         "met_days": 1.5,

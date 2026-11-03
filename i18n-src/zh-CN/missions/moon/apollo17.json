@@ -22,7 +22,7 @@
     },
     {
       "met": 3.4,
-      "label": "MOI",
+      "label": "LOI",
       "note": "进入环月轨道。",
       "type": "nominal"
     },
@@ -51,5 +51,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB（第三级）"
+  "vehicle_stage": "Saturn V S-IVB（第三级）",
+  "flight_events": [
+    {
+      "met": 1.27,
+      "label": "MCC-2",
+      "description": "首次轨道修正。"
+    },
+    {
+      "met": 1.5,
+      "label": "MCC-3",
+      "description": "进入环月轨道前的接近阶段精修。"
+    },
+    {
+      "met": 10.9,
+      "label": "月地转移入射",
+      "description": "1972-12-16。SPS 点火在环月轨道上停留75小时、月面停留3天之后送 Apollo 17 回家。"
+    }
+  ]
 }

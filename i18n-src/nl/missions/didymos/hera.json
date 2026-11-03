@@ -6,5 +6,37 @@
   "type": "ASTEROÏDE-ONDERZOEK · ACTIEF",
   "first": "ESA's vervolgmissie op DART — onderzoek naar de afgebogen Didymos-asteroïde",
   "description": "Hera is de bijdrage van de European Space Agency aan het eerste planetaire verdedigingsexperiment van de mensheid. In 2022 stortte NASA's DART-ruimtevaartuig opzettelijk neer op Dimorphos — de kleine maan van de asteroïde Didymos — en verkortte meetbaar zijn baan. Hera, gelanceerd in oktober 2024 op een Falcon 9, vliegt naar hetzelfde dubbele asteroïdesysteem (met een zwaartekrachtassist langs Mars in 2025 onderweg) om het gedetailleerde post-impactonderzoek uit te voeren dat DART niet kon doen: de grootte van de krater, de massa en interne structuur van Dimorphos, en precies hoeveel momentum de inslag heeft overgedragen. Samen veranderen DART en Hera een eenmalige demonstratie in een herhaalbare, goed gekarakteriseerde afbuigtechniek. Hera draagt twee CubeSats mee, Juventas en Milani, voor radaronderzoek en mineralogie van dichtbij.",
-  "vehicle_stage": "tweede trap van de Falcon 9"
+  "vehicle_stage": "tweede trap van de Falcon 9",
+  "flight_events": [
+    {
+      "met": 0,
+      "label": "Lancering — Falcon 9 Block 5",
+      "description": "Cape Canaveral SLC-40, 2024-10-07. Hera vertrekt op een ontsnappingsbaan uit de aarde naar het dubbelsysteem Didymos."
+    },
+    {
+      "met": 0.01,
+      "label": "Injectie richting de planetoïde",
+      "description": "De bovenste trap van de Falcon 9 zet Hera op een interplanetaire overdracht naar Didymos, via een zwaartekrachtassist bij Mars in 2025."
+    },
+    {
+      "met": 20,
+      "label": "DSM-1",
+      "description": "De eerste manoeuvre in de diepe ruimte verfijnt de interplanetaire overdracht naar de zwaartekrachtassist bij Mars in 2025."
+    },
+    {
+      "met": 150,
+      "label": "Zwaartekrachtassist bij Mars",
+      "description": "Een flyby van Mars in maart 2025 buigt de baan van Hera af naar Didymos en levert er een flyby van de Marsmaan Deimos bij op."
+    },
+    {
+      "met": 300,
+      "label": "DSM-2",
+      "description": "Baancorrectie na de Mars-flyby, gericht op het rendez-vous met Didymos."
+    },
+    {
+      "met": 812,
+      "label": "Rendez-vous met Didymos",
+      "description": "Hera bereikt het dubbelsysteem Didymos en begint met het gedetailleerde onderzoek van Dimorphos en de inslagkrater van DART."
+    }
+  ]
 }

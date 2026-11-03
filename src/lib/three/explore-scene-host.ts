@@ -317,6 +317,8 @@ export interface ExploreSceneHostDeps extends Pick<
   smallBodyPosition: (b: ExploreSmallBody, simT: number) => { x: number; y: number; z: number };
   DAYS_PER_YEAR: number;
   fmtScale: (value: number) => string;
+  /** A distance in the locale's unit form (format.ts distanceWithUnit). */
+  distanceWithUnit: (value: string, unit: string) => string;
   iconic: {
     readonly state: { hoveredId: string | null; panelOpen: boolean };
     openMission: (missionId: string, locale: string) => Promise<void>;
@@ -358,6 +360,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     smallBodyPosition,
     DAYS_PER_YEAR,
     fmtScale,
+    distanceWithUnit,
     iconic,
     sizePathsLegend,
     selectSun,
@@ -1728,7 +1731,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     if (bar) {
       bridge.scaleBarPx = bar.px;
       const desc = describeDistanceAu(bar.au).primary;
-      bridge.scaleBarLabel = `${fmtScale(desc.value)} ${desc.unit}`;
+      bridge.scaleBarLabel = distanceWithUnit(fmtScale(desc.value), desc.unit);
     }
   };
 

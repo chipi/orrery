@@ -32,5 +32,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "segunda etapa del Falcon Heavy"
+  "vehicle_stage": "segunda etapa del Falcon Heavy",
+  "flight_events": [
+    {
+      "met": 1500,
+      "label": "Ajuste de crucero",
+      "description": "Ajuste de la trayectoria a mitad del crucero. El empuje iónico continúa."
+    }
+  ]
 }

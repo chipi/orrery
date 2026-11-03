@@ -33,5 +33,27 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "etapa superior Centaur"
+  "vehicle_stage": "etapa superior Centaur",
+  "flight_events": [
+    {
+      "met": 193,
+      "label": "Venus n.º 1 — asistencia gravitatoria",
+      "description": "Primer sobrevuelo de Venus (1998-04-26, 284 km de altitud). La asistencia gravitatoria eleva el afelio de la nave dentro de la secuencia VVEJGA, que acumula energía."
+    },
+    {
+      "met": 617,
+      "label": "Venus n.º 2 — asistencia gravitatoria",
+      "description": "Segundo sobrevuelo de Venus (1999-06-24, 600 km). Junto con la primera asistencia, prepara el sobrevuelo de la Tierra 55 días después."
+    },
+    {
+      "met": 672,
+      "label": "Tierra — asistencia gravitatoria",
+      "description": "1171 km sobre el Pacífico Sur (1999-08-18). La órbita ya tiene energía suficiente para cruzar la de Júpiter."
+    },
+    {
+      "met": 1172,
+      "label": "Júpiter — asistencia gravitatoria",
+      "description": "9,7 millones de km de Júpiter (2000-12-30). La asistencia final aporta la velocidad que falta para llegar a Saturno."
+    }
+  ]
 }

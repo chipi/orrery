@@ -68,5 +68,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "المرحلة العليا Centaur (Atlas V 401)"
+  "vehicle_stage": "المرحلة العليا Centaur (Atlas V 401)",
+  "flight_events": [
+    {
+      "met": 1154,
+      "label": "مساعدة جاذبية الأرض رقم 2",
+      "description": "2024-12-13 (وفق خطة المهمة المعاد تصميمها)."
+    }
+  ]
 }

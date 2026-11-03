@@ -116,8 +116,11 @@
     cruiseTickPercent,
     descentSeparationTimes,
     isCinematicCutJump,
+    OI_WINDOW_DAYS,
+    OI_WINDOW_DAYS_CISLUNAR,
     isOrbitInsertionBeatActive,
     isOrbitInsertionFiring,
+    orbitInsertionStage,
     jumpToMet as jumpToMetImpl,
     launchSeparationTimes,
     masterScrubFraction,
@@ -181,9 +184,10 @@
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
-  import { T_MINUS_S, INJECTION_COAST_S, INJECTION_BURN_S } from '$lib/orbital/ascent-hud';
+  import { T_MINUS_S, INJECTION_BEAT_S, payloadSepTFor } from '$lib/orbital/ascent-hud';
   import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
   import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
+  import { orbitInsertionBurn } from '$lib/physics/transfer/orbit-insertion-burns';
   import PhasePanel from '$lib/components/PhasePanel.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
@@ -211,6 +215,13 @@
   import defaultScenarioOverlay from '$i18nSrc/en-US/scenarios/orrery-1.json';
   import { dataLoadFailed } from '$lib/data/core';
   import { hasTrajectory } from '$lib/data/interstellar';
+
+  const FLEET_ROLE_LABEL: Record<string, () => string> = {
+    launcher: m.fly_opening_role_launcher,
+    spacecraft: m.fly_opening_role_spacecraft,
+    payload: m.fly_opening_role_payload,
+    'launch-site': m.fly_opening_role_launch_site,
+  };
 
   const DEFAULT_SCENARIO_ID = 'orrery-1';
   // Whitelist of synthesised teaching scenarios (live in
@@ -310,6 +321,7 @@
           mission.flight?.launch?.vehicle_stage,
           mission.flight?.totals?.tli_or_tmi_dv_km_s,
           mission.dest,
+          mission.flight?.launch?.departure,
         )
       : null,
   );
@@ -505,8 +517,8 @@
       : null,
   );
   // Touchdown → hand off to the destination body's SurfaceScene, closing the
-  // flight circle (RFC-034 §9). Moon/Mars have surface routes; Venus has none,
-  // so its touchdown simply rests on the landed frame.
+  // flight circle (RFC-034 §9). Moon, Mars and Venus have surface routes; Titan,
+  // Jupiter and the small bodies have none, so their touchdown rests on the landed frame.
   function handleTouchdown() {
     const b = descentProfile?.body;
     const sid = descentProfile?.siteId;
@@ -1529,11 +1541,11 @@
   let launchSummaryFly = $derived(launchProfile ? integrateAscent(launchProfile) : null);
   // The ascent slice of the unified scrubber spans pad → SECO → (injection beat).
   // When the mission has an injection burn, extend the ascent duration by the
-  // coast + burn window so the seam lands after injection, not at SECO.
+  // coast + burn + spacecraft-separation window so the seam lands after the
+  // spacecraft leaves the stage, not at SECO.
   let launchDurationS = $derived(
     launchSummaryFly
-      ? launchSummaryFly.totalDurationS +
-          (launchInjectionBurn ? INJECTION_COAST_S + INJECTION_BURN_S : 0)
+      ? launchSummaryFly.totalDurationS + (launchInjectionBurn ? INJECTION_BEAT_S : 0)
       : 540,
   );
   // ─── Orbit-insertion beat (RFC-034 §12) — the arrival mirror of the launch
@@ -1545,6 +1557,8 @@
       ? null // landers descend; they don't capture into orbit
       : resolveOrbitInsertion(mission.dest, mission.flight?.arrival?.orbit_insertion_dv_km_s),
   );
+  /** A few-day cislunar flight gets a one-day insertion window, not the cruise's five. */
+  let oiWindowDays = $derived(isMoonMission ? OI_WINDOW_DAYS_CISLUNAR : OI_WINDOW_DAYS);
   let oiBeatActive = $derived(
     !!orbitInsertion &&
       isOrbitInsertionBeatActive({
@@ -1552,12 +1566,20 @@
         showDescent,
         simDay,
         arrDay: arcTimeline.arr_day,
+        windowDays: oiWindowDays,
       }),
   );
   /** Burn firing — the last half of the window into arrival (the retro burn). */
   let oiFiring = $derived(
-    !!orbitInsertion && isOrbitInsertionFiring({ simDay, arrDay: arcTimeline.arr_day }),
+    !!orbitInsertion &&
+      isOrbitInsertionFiring({ simDay, arrDay: arcTimeline.arr_day, windowDays: oiWindowDays }),
   );
+  /** Approach → capture burn → on orbit. */
+  let oiStage = $derived(
+    orbitInsertionStage({ simDay, arrDay: arcTimeline.arr_day, windowDays: oiWindowDays }),
+  );
+  /** The engine that fired the capture burn, when sourced (null: callout only). */
+  let oiBurn = $derived(orbitInsertion ? orbitInsertionBurn(mission.id) : null);
 
   // The descent act (RFC-034 §9): integrate the EDL profile and give it the
   // scrubber TAIL. 0 duration / fraction when the mission doesn't land — the
@@ -1569,7 +1591,14 @@
   // the launch clock's base; descent times are in *trajectory* time, so they're
   // unwarped into raw-scrubber time to align with where the sep actually renders
   // (the descent scene warps its sample clock — descent-timewarp.ts).
-  let launchSepTimes = $derived(launchSeparationTimes(launchSummaryFly));
+  let launchSepTimes = $derived(
+    launchSeparationTimes(
+      launchSummaryFly,
+      launchSummaryFly
+        ? payloadSepTFor(launchSummaryFly.totalDurationS, launchInjectionBurn)
+        : undefined,
+    ),
+  );
   let descentSepTimes = $derived(descentSeparationTimes(descentSummaryFly));
   // Compressive coast-band width (RFC-034 §13): a 1-orbit hop and an 84-day
   // marathon shouldn't own the same slice of the scrubber (see fly-clock).
@@ -2927,6 +2956,12 @@
       get hasPhaseMarkers() {
         return hasPhaseMarkers;
       },
+      get oiBurnRecorded() {
+        return oiBurn != null;
+      },
+      get oiBurningKind() {
+        return oiFiring && oiBurn ? oiBurn.kind : null;
+      },
       get cruiseHoldTriggerSimDay() {
         return cruiseHoldTriggerSimDay;
       },
@@ -3119,7 +3154,13 @@
     <div class="oi-tag">{orbitInsertion.tag}</div>
     <div class="oi-label">{hudLabel(orbitInsertion.label)}</div>
     <div class="oi-status">
-      {oiFiring ? m.hud_capture_burn() : m.hud_approach()}{orbitInsertion.dvKms != null
+      {oiStage === 'burn'
+        ? m.hud_capture_burn()
+        : oiStage === 'captured'
+          ? m.hud_on_orbit()
+          : m.hud_approach()}{oiBurn ? ` · ${oiBurn.engine}` : ''}{oiBurn?.durationS != null
+        ? ` · ${m.earth_period_min({ value: Math.round(oiBurn.durationS / 60) })}`
+        : ''}{orbitInsertion.dvKms != null
         ? ` · Δv ${m.mp_flight_unit_kms({ value: orbitInsertion.dvKms.toFixed(2) })}`
         : ''}<ScienceChip
         tab="mission-phases"
@@ -3187,6 +3228,42 @@
           <strong>recovery</strong>
           {recoveryOutcome.eyebrow}
         </div>{/if}
+    </div>
+  {:else if showDescent && descentProfile && descentSummaryFly}
+    <!-- Planetary descent (RFC-034 §12): the live EDL state against the integrated profile,
+         so a wrong phase, a missed chute or a hard touchdown is read off the panel. -->
+    {@const live =
+      descentSummaryFly.states.findLast((s) => s.t <= descentT) ?? descentSummaryFly.states[0]}
+    {@const beat = descentSummaryFly.events.findLast((e) => e.t <= descentT)}
+    <div class="tier1-debug">
+      <div class="t1-header">
+        DESCENT · {descentProfile.body.toUpperCase()} · {descentProfile.siteId}
+      </div>
+      <div class="t1-row">
+        <strong>entry</strong>
+        {(descentProfile.entryState.altitudeM / 1000).toFixed(0)} km · {(
+          descentProfile.entryState.velocityMs / 1000
+        ).toFixed(2)} km/s · γ {descentProfile.entryState.flightPathAngleDeg}° · {descentProfile.entryMassKg}
+        kg
+      </div>
+      <div class="t1-row">
+        <strong>live</strong>
+        t {descentT.toFixed(0)}/{descentDurationS.toFixed(0)}s · {live?.altKm.toFixed(2)} km · {live?.velocityMs.toFixed(
+          1,
+        )} m/s · {live?.decelG.toFixed(1)}g · {live?.massKg.toFixed(0)} kg
+      </div>
+      <div class="t1-row">
+        <strong>beat</strong>
+        {beat ? `${beat.type} @ ${beat.t.toFixed(0)}s, ${beat.altKm.toFixed(2)} km` : '—'}
+      </div>
+      <div class="t1-row">
+        <strong>outcome</strong>
+        peak {descentSummaryFly.peakDecel.g.toFixed(1)}g @ {descentSummaryFly.peakDecel.altKm.toFixed(
+          0,
+        )} km · TD {descentSummaryFly.touchdownVelocityMs.toFixed(1)} m/s · {descentSummaryFly.touchdownSuccess
+          ? 'SURVIVE'
+          : 'IMPACT'} · downrange {descentSummaryFly.landingDownrangeKm.toFixed(0)} km
+      </div>
     </div>
   {:else if mission.flight?.events && outPts.length > 0}
     {@const flybyEventsForDebug = (mission.flight.events ?? []).filter(
@@ -3345,6 +3422,32 @@
       {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
     </button>
   </div>
+  <!-- Phone mini-HUD: touch screens start with the full HUD collapsed, which left the
+       cruise view with no numbers at all. One strip keeps the essentials; tapping it
+       opens the full MISSION panel. Hidden on desktop by CSS. -->
+  {#if mission && hudHidden && !openingActive && !showLaunch && !showDescent}
+    <button
+      type="button"
+      class="fly-mini-hud"
+      data-testid="fly-mini-hud"
+      onclick={() => setMobilePanel('mission')}
+      aria-label={m.fly_panel_identity()}
+    >
+      <span class="mh-top">
+        <span class="mh-name">{mission.name}</span>
+        <span class="mh-phase phase-{phase}">{phaseLabel}</span>
+      </span>
+      <span class="mh-row">
+        <span>{m.fly_hud_met_value({ day: Math.round(met).toString() })}</span>
+        <span>{m.fly_hud_kms({ value: heliocentricKms.toFixed(2) })}</span>
+        <span
+          >{m.fly_hud_mkm({
+            value: distFromEarthMkm < 1 ? distFromEarthMkm.toFixed(2) : distFromEarthMkm.toFixed(0),
+          })}</span
+        >
+      </span>
+    </button>
+  {/if}
   <!-- Settings — wave 2/3 punch #3. Gear icon top-right; click opens
        the shared QualitySettingsModal (#339) with quality-tier radios.
        Choice persists to localStorage globally and applies on reload. -->
@@ -3583,6 +3686,9 @@
          separated by hairlines, instead of three floating dark blocks.
          The wrapper is always rendered while openingActive; individual
          sections fade in via their opacity vars. -->
+    <!-- Full-screen dim between the HUD (z 30–35) and the card (z 200): without it the
+         briefing text sat directly on the live scene and the HUD panels, and the two mixed. -->
+    <div class="opening-scrim" aria-hidden="true"></div>
     <div class="opening-stack" data-testid="fly-opening-stack">
       {#if openingTitleOpacity > 0}
         <div
@@ -3701,7 +3807,9 @@
                       />
                     {/if}
                     <div class="opening-fleet-meta">
-                      <div class="opening-fleet-role">{asset.role.replace('-', ' ')}</div>
+                      <div class="opening-fleet-role">
+                        {FLEET_ROLE_LABEL[asset.role]?.() ?? asset.role.replace('-', ' ')}
+                      </div>
                       <div class="opening-fleet-name">{asset.name}</div>
                       {#if (asset.role === 'spacecraft' || asset.role === 'launcher') && asset.description}
                         <div class="opening-fleet-bio">{asset.description}</div>
@@ -4360,9 +4468,9 @@
     section="transfer-ellipse"
     available={availableLayers}
     historicalFoundations={[
-      { tab: 'history', section: 'keplers-laws-1609', label: "Kepler's three laws, 1609" },
-      { tab: 'history', section: 'newton-principia-1687', label: 'Newton · Principia, 1687' },
-      { tab: 'transfers', section: 'lambert-problem', label: 'Lambert · arc problem, 1761' },
+      { tab: 'history', section: 'keplers-laws-1609', label: m.fly_foundation_kepler() },
+      { tab: 'history', section: 'newton-principia-1687', label: m.fly_foundation_newton() },
+      { tab: 'transfers', section: 'lambert-problem', label: m.fly_foundation_lambert() },
     ]}
   />
 {/if}
@@ -4864,6 +4972,31 @@
      containing title section + body section. Sections separated by
      hairlines; single shared backdrop reads as a single "mission
      briefing" card instead of stacked dark blocks. */
+  .opening-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 38; /* above the HUD panels (30–35), under the site nav (39–40) */
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(3, 5, 12, 0.84) 0%,
+      rgba(3, 5, 12, 0.74) 55%,
+      rgba(3, 5, 12, 0.62) 100%
+    );
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    animation: opening-scrim-in 0.4s ease-out both;
+  }
+  @keyframes opening-scrim-in {
+    from {
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .opening-scrim {
+      animation: none;
+    }
+  }
   .opening-stack {
     position: fixed;
     top: 50%;
@@ -4882,7 +5015,7 @@
     align-items: center;
     gap: 14px;
     padding: 20px 28px;
-    background: rgba(8, 12, 24, 0.22);
+    background: rgba(8, 12, 24, 0.55);
     border-radius: 14px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -6215,7 +6348,8 @@
   /* New mobile-only chrome (tab accordion + top-left view toggle) — hidden
      on desktop; revealed at ≤767 below. */
   .fly-top-mobile,
-  .fly-mtabs {
+  .fly-mtabs,
+  .fly-mini-hud {
     display: none;
   }
 
@@ -6238,6 +6372,53 @@
       left: 8px;
       gap: 6px;
       z-index: 45;
+    }
+    .fly-mini-hud {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: fixed;
+      top: calc(var(--nav-height) + 8px);
+      left: 74px;
+      right: 8px;
+      z-index: 45;
+      padding: 7px 10px;
+      border: 1px solid rgba(127, 212, 255, 0.25);
+      border-radius: 8px;
+      background: rgba(8, 10, 22, 0.78);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      color: #eaf3ff;
+      font-family: var(--font-mono, 'Space Mono', monospace);
+      text-align: left;
+      cursor: pointer;
+    }
+    .fly-mini-hud .mh-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .fly-mini-hud .mh-name {
+      font-family: var(--font-display, 'Bebas Neue', sans-serif);
+      font-size: 16px;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .fly-mini-hud .mh-phase {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: #7fd4ff;
+      white-space: nowrap;
+    }
+    .fly-mini-hud .mh-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 11px;
+      color: rgba(234, 243, 255, 0.85);
     }
     /* Bottom tab bar — mirrors the MobileDrawerGroup look used on the other
        routes. Sits just above the scrubber. */

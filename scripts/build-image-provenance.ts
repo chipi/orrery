@@ -123,6 +123,8 @@ interface CommonsImageInfo {
   url: string;
   artist: string | null;
   licenseShort: string | null;
+  /** Commons' licence template id (`pd-usgov-nasa`, `pd-old-70`, `cc-by-sa-4.0`…). */
+  licenseTemplate: string | null;
   licenseUrl: string | null;
   usageTerms: string | null;
   imageDescription: string | null;
@@ -183,7 +185,8 @@ async function fetchCommonsImageInfo(filename: string): Promise<CommonsImageInfo
     titles: `File:${filename}`,
     prop: 'imageinfo',
     iiprop: 'url|extmetadata',
-    iiextmetadatafilter: 'Artist|LicenseShortName|LicenseUrl|UsageTerms|ImageDescription|Credit',
+    iiextmetadatafilter:
+      'Artist|LicenseShortName|License|LicenseUrl|UsageTerms|ImageDescription|Credit',
   });
   let info: CommonsImageInfo | null = null;
   try {
@@ -207,6 +210,7 @@ async function fetchCommonsImageInfo(filename: string): Promise<CommonsImageInfo
           url: stripTracking(ii.url),
           artist: plainText(meta.Artist?.value),
           licenseShort: plainText(meta.LicenseShortName?.value),
+          licenseTemplate: plainText(meta.License?.value),
           licenseUrl: plainText(meta.LicenseUrl?.value),
           usageTerms: plainText(meta.UsageTerms?.value),
           imageDescription: plainText(meta.ImageDescription?.value),
@@ -360,6 +364,15 @@ export async function buildWikimediaEntry(opts: {
   let licenseShort = info?.licenseShort
     ? normaliseLicenseShortName(info.licenseShort)
     : opts.fallbackLicense;
+  // Commons shows "Public domain" for every PD template; a US-government work is not an old work
+  // (PD-Old would claim expired copyright). The template says why when it is specific
+  // (pd-usgov-nasa); a generic `pd` file is NASA's when its credit or author is NASA.
+  if (licenseShort === 'PD-Old') {
+    const template = info?.licenseTemplate ?? '';
+    const byNasa = /nasa\.gov|\bNASA\b/.test(`${info?.credit ?? ''} ${info?.artist ?? ''}`);
+    if (/^pd-usgov/i.test(template)) licenseShort = /nasa/i.test(template) ? 'PD-NASA' : 'PD-USGov';
+    else if (byNasa) licenseShort = 'PD-NASA';
+  }
   if (!isAllowedLicense(licenseShort)) {
     // If Commons returned a license id we don't recognise (e.g. "PD",
     // "CC BY-SA"), fall back to the curated fallback rather than failing
@@ -2753,7 +2766,7 @@ function inferLicenseFromCuratedString(raw: string): string {
   return 'PD-Old';
 }
 
-function inferAgencyFromCuratedString(raw: string, fallback: string): string {
+export function inferAgencyFromCuratedString(raw: string, fallback: string): string {
   const s = raw.toLowerCase();
   if (s.includes('nasa')) return 'NASA';
   if (s.includes('esa')) return 'ESA';

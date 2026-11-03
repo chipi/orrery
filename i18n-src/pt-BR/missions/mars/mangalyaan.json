@@ -38,5 +38,27 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "quarto estágio PS4 do PSLV"
+  "vehicle_stage": "quarto estágio PS4 do PSLV",
+  "flight_events": [
+    {
+      "met": 50,
+      "label": "TCM-1",
+      "description": "Primeira correção de cruzeiro após a injeção rumo a Marte."
+    },
+    {
+      "met": 97.62,
+      "label": "TCM-2",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 150,
+      "label": "TCM-3",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 250,
+      "label": "TCM-4 — última queima antes da inserção em órbita de Marte",
+      "description": "Mira final de aproximação antes da inserção em órbita de Marte."
+    }
+  ]
 }

@@ -2,17 +2,36 @@
   "missionId": "rosetta",
   "siteId": "philae",
   "body": "comet_67p",
-  "landingSite": { "lat": 12.0, "lon": 20.0 },
-  "entryState": { "altitudeM": 100, "velocityMs": 0.5, "flightPathAngleDeg": 90 },
+  "landingSite": {
+    "lat": 12,
+    "lon": 20
+  },
+  "entryState": {
+    "altitudeM": 100,
+    "velocityMs": 0.5,
+    "flightPathAngleDeg": 90
+  },
   "entryMassKg": 100,
   "entryCdA": 2,
   "archetype": "COMET_HARPOON",
-  "params": { "contactAltM": 20, "airbagReleaseMs": 0.4 },
+  "params": {
+    "contactAltM": 20,
+    "airbagReleaseMs": 0.4
+  },
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "Rosetta/Philae landing on comet 67P (Agilkia) — ESA",
-      "u": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta"
+      "l": "Philae — separated from Rosetta 08:35 UTC 12 Nov 2014, first touchdown at Agilkia 15:34 UTC SCET after ~7 h; harpoons and hold-down thruster did not fire, it rebounded at 38 cm/s to ~1 km, touched again 17:25 and came to rest at Abydos 17:31 (ESA, Wikipedia). The model flies the last 100 m",
+      "u": "https://en.wikipedia.org/wiki/Philae_(spacecraft)"
+    },
+    {
+      "l": "Rosetta and Philae go for separation — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Rosetta_and_Philae_Go_for_separation"
     }
+  ],
+  "estimatedFields": [
+    "entryState.altitudeM",
+    "entryState.velocityMs",
+    "entryMassKg"
   ]
 }

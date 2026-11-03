@@ -2,20 +2,51 @@
   "missionId": "venera-13",
   "siteId": "venera-13",
   "body": "venus",
-  "landingSite": { "lat": -7.55, "lon": 303.69 },
-  "entryState": { "altitudeM": 130000, "velocityMs": 10700, "flightPathAngleDeg": 65 },
+  "landingSite": {
+    "lat": -7.55,
+    "lon": 303.69
+  },
+  "entryState": {
+    "altitudeM": 130000,
+    "velocityMs": 11200,
+    "flightPathAngleDeg": 19.5
+  },
   "entryMassKg": 1650,
   "entryCdA": 1.6,
   "archetype": "VENUS_AEROSHELL",
+  "dynamicGamma": true,
   "params": {
     "chuteDeployAltM": 62000,
     "terminalHandoffAltM": 47000,
     "parachuteCdA": 24,
-    "terminalCdA": 3.2,
-    "backshellKg": 200
+    "terminalCdA": 3.76,
+    "backshellKg": 890
   },
   "source_tier": "flagship",
   "provenance": [
-    { "l": "Venera 13 mission — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1981-106D" }
+    {
+      "l": "Venera 13 — entry ~11 km/s, parachute ~62 km, released at 47 km, then the aerodynamic-brake disc to the surface; about an hour (~63 min); touchdown 7–8 m/s; lander 760 kg (Wikipedia en/ru). Disc drag fitted to the 63 min, which lands it at 8.2 m/s",
+      "u": "https://en.wikipedia.org/wiki/Venera_13"
+    },
+    {
+      "l": "Dutta et al. 2012, Mission sizing and trade studies for low ballistic coefficient entry systems to Venus, Table 1 — entry angle, speed and peak g of Venera and Vega (simulated from engineering estimates)",
+      "u": "https://ntrs.nasa.gov/api/citations/20120006657/downloads/20120006657.pdf"
+    },
+    {
+      "l": "Венера-13 — ru.wikipedia",
+      "u": "https://ru.wikipedia.org/wiki/Венера-13"
+    },
+    {
+      "l": "Venera 13 mission — NSSDC spacecraft record",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1981-106D"
+    }
+  ],
+  "estimatedFields": [
+    "entryState.altitudeM",
+    "flightPathAngleDeg",
+    "entryMassKg",
+    "backshellKg",
+    "terminalCdA",
+    "entryState.velocityMs"
   ]
 }

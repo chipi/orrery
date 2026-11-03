@@ -44,5 +44,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Inertial Upper Stage (IUS, estágio superior)"
+  "vehicle_stage": "Inertial Upper Stage (IUS, estágio superior)",
+  "flight_events": [
+    {
+      "met": 175,
+      "label": "TCM-2",
+      "description": "Refinamento no meio do cruzeiro."
+    },
+    {
+      "met": 325,
+      "label": "TCM-3",
+      "description": "Retoque da fase de aproximação."
+    }
+  ]
 }

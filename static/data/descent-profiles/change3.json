@@ -2,15 +2,47 @@
   "missionId": "change3",
   "siteId": "change3",
   "body": "moon",
-  "landingSite": { "lat": 44.12, "lon": -19.51 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 1200,
+  "landingSite": {
+    "lat": 44.12,
+    "lon": -19.51
+  },
+  "entryState": {
+    "altitudeM": 15000,
+    "velocityMs": 1692,
+    "flightPathAngleDeg": 1
+  },
+  "entryMassKg": 2400,
   "entryCdA": 0,
-  "retroPropellantKg": 170,
+  "retroPropellantKg": 1250,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1,
+    "brakingMaxThrustN": 7000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 18,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.velocityMs",
+    "entryMassKg",
+    "retroPropellantKg",
+    "brakingFpaDeg",
+    "brakingMaxThrustN",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Chang'e-3 Mission — CNSA / NSSDC record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-070A" }
+    {
+      "l": "Chang'e 3 — powered descent from 15 km, ~720 s; 1,500–7,500 N variable engine; hover at 100 m, engine cut at 4 m; start mass (2.4 t) from an ambiguous paper, propellant estimated",
+      "u": "https://www.atlantis-press.com/article/25759.pdf"
+    },
+    {
+      "l": "Chang'e-3 Mission — CNSA / NSSDC record",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-070A"
+    }
   ]
 }

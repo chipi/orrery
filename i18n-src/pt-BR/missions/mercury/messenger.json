@@ -25,5 +25,32 @@
       "note": "Queima do motor principal coloca MESSENGER em órbita de Mercúrio após sete anos de cruzeiro.",
       "type": "nominal"
     }
+  ],
+  "flight_events": [
+    {
+      "met": 760,
+      "label": "Vênus nº 1 — assistência gravitacional",
+      "description": "Máxima aproximação de 3.000 km em 2006-10-24. Sobrevoo de verificação dos instrumentos no meio do cruzeiro."
+    },
+    {
+      "met": 998,
+      "label": "Vênus nº 2 — assistência gravitacional",
+      "description": "Máxima aproximação de 338 km em 2007-06-05 — uma passagem muito mais profunda que a nº 1, que retira bastante velocidade heliocêntrica."
+    },
+    {
+      "met": 1474,
+      "label": "Mercúrio nº 1 — assistência gravitacional",
+      "description": "Máxima aproximação de 200 km em 2008-01-14. A primeira nave a visitar Mercúrio desde o terceiro sobrevoo da Mariner 10, em 1975. Enviou novas imagens do hemisfério que a Mariner 10 nunca viu."
+    },
+    {
+      "met": 1858,
+      "label": "Mercúrio nº 2 — assistência gravitacional",
+      "description": "Máxima aproximação de 200 km em 2008-10-06. Completou o mapeamento do hemisfério até então não observado — no terceiro sobrevoo, mais de 95% da superfície de Mercúrio tinha imagens pela primeira vez na história."
+    },
+    {
+      "met": 2214,
+      "label": "Mercúrio nº 3 — assistência gravitacional",
+      "description": "Máxima aproximação de 228 km em 2009-09-29. Último sobrevoo antes da órbita — a trajetória já estava ajustada para a captura em órbita de Mercúrio 17 meses depois."
+    }
   ]
 }

@@ -56,13 +56,13 @@
     },
     "arrival": {
       "v_infinity_km_s": 2.59,
-      "entry_velocity_km_s": 5.5,
+      "entry_velocity_km_s": 5.542,
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": null,
       "source": "JPL InSight EDL Reconstruction (2018-11)",
       "edl_system": "parachute_retro",
-      "edl_duration_s": 2184,
+      "edl_duration_s": 390,
       "touchdown_velocity_ms": 2.4
     },
     "totals": {

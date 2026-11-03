@@ -44,5 +44,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "H-IIA 202 第二级"
+  "vehicle_stage": "H-IIA 202 第二级",
+  "flight_events": [
+    {
+      "met": 120,
+      "label": "TCM-2",
+      "description": "巡航中途精修。"
+    },
+    {
+      "met": 195,
+      "label": "TCM-3——进入金星轨道前最后一次",
+      "description": "抵达前的最后一次微调。"
+    }
+  ]
 }

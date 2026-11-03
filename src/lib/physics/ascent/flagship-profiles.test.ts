@@ -70,15 +70,49 @@ const ALL_FLAGSHIPS = [
   'voskhod-11a57',
   'soyuz',
   'long-march-2f',
+  'sls-block-1',
+  'long-march-3a',
+  'long-march-3b',
+  'long-march-5',
+  'pslv',
+  'lvm3',
+  'h3',
+  'm-v',
+  'ariane-1',
+  'delta-ii',
+  'atlas-centaur',
+  'atlas-agena',
+  'titan-ii-g',
+  'titan-iiie-centaur',
+  'titan-ivb-centaur',
+  'falcon-heavy',
+  'molniya-m',
+  'athena-ii',
+  'delta-iv-heavy',
+  'new-glenn',
+  'sputnik-8k71ps',
+  'soyuz-fg-fregat',
+  'proton-m-briz-m',
+  'ariane-5g',
 ];
-// All 14 now reach a genuine orbit (#416).
+// All of them reach a genuine orbit (#416).
 const GENUINE_ORBIT = ALL_FLAGSHIPS;
+
+/** Flights whose core stage really ends on an eccentric coast orbit before the upper stage's
+ *  departure burn, with the apogee band they must land in. */
+const ECCENTRIC_COAST: Record<string, { apoKm: [number, number] }> = {
+  // V158 (Rosetta): the EPC left the EPS and Rosetta on a 200 × 4,000 km coast orbit
+  // (spaceflightnow.com/ariane/v158/040224ascent.html); a light payload on Ariane 5G+.
+  'ariane-5g': { apoKm: [2000, 10000] },
+};
 
 describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {
   const p = load(id);
   it('is a well-formed multi-stage flagship profile', () => {
     expect(p.source_tier).toBe('flagship');
-    expect(p.stages.length).toBeGreaterThanOrEqual(2);
+    // A stage-and-a-half Atlas stages by dropping its booster section: one core stage plus
+    // the jettisoned strap-on group.
+    expect(p.stages.length + (p.boosters ? 1 : 0)).toBeGreaterThanOrEqual(2);
     expect(Array.isArray(p.pitchProgram)).toBe(true);
     expect(p.payloadKg).toBeGreaterThan(0);
     for (const st of p.stages) {
@@ -107,13 +141,20 @@ describe.each(GENUINE_ORBIT)('flagship profile %s — genuine orbit', (id) => {
     // elliptical — real Atlas V parking orbits do too — so the ecc bound is
     // loose; perigee is the load-bearing check.
     expect(o.periKm).toBeGreaterThan(130);
-    expect(o.ecc).toBeLessThan(0.05);
+    const coast = ECCENTRIC_COAST[id];
+    if (coast) {
+      expect(o.apoKm).toBeGreaterThan(coast.apoKm[0]);
+      expect(o.apoKm).toBeLessThan(coast.apoKm[1]);
+    } else {
+      expect(o.ecc).toBeLessThan(0.05);
+    }
   });
 
   it('is still up at ~circular speed after the post-SECO coast', () => {
     expect(s.finalAltKm).toBeGreaterThan(90);
     expect(s.finalSpeedKms).toBeGreaterThan(7.0);
-    expect(s.finalSpeedKms).toBeLessThan(8.5);
+    // At perigee of an eccentric coast orbit the speed is above circular.
+    expect(s.finalSpeedKms).toBeLessThan(ECCENTRIC_COAST[id] ? 9.5 : 8.5);
     const seco = s.events.find((e) => e.type === 'seco');
     expect(seco).toBeDefined();
     expect(seco!.t).toBeGreaterThan(120);

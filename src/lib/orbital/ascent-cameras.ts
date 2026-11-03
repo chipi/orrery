@@ -12,7 +12,11 @@
  * is at (downrangeKm, altKm, 0); the launch site is the origin.
  */
 
-import type { AscentEvent, AscentState } from '$lib/physics/ascent/ascent-physics';
+import {
+  bodyAngleFromVerticalRad,
+  type AscentEvent,
+  type AscentState,
+} from '$lib/physics/ascent/ascent-physics';
 
 export type AscentShotName =
   | 'pad'
@@ -50,6 +54,12 @@ export interface ScheduleInputs {
   maxQt: number;
   /** Total trajectory duration (s). */
   duration: number;
+  /** When the spacecraft separates, if not at SECO: it rides the upper stage through the
+   *  injection burn and leaves at the burn's end. The stack coasts and burns in the orbit
+   *  shot until then. */
+  payloadSepT?: number;
+  /** End of the launch act (s) when it runs past the trajectory (the injection beat). */
+  endT?: number;
 }
 
 const TOWER_CLEAR_END = 12;
@@ -133,8 +143,11 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
 
   const seco = tOf('seco') ?? inp.duration;
   const maxQ = Math.max(TOWER_CLEAR_END + 1, inp.maxQt || inp.duration * 0.2);
-  // Payload separation holds briefly after SECO, then the serene orbit coast.
-  const sepEnd = seco + PAYLOAD_SEP_HOLD_S;
+  // Payload separation holds briefly after it happens (SECO, or the injection burn's end),
+  // then the serene orbit coast.
+  const sepT = inp.payloadSepT != null && inp.payloadSepT > seco ? inp.payloadSepT : seco;
+  const sepEnd = sepT + PAYLOAD_SEP_HOLD_S;
+  const end = Math.max(inp.duration, inp.endT ?? 0);
   const fairing = tOf('fairing_jettison');
 
   // A dedicated camera beat for EVERY separation, not just the first: each
@@ -174,8 +187,10 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
   if (seco > cursor) {
     windows.push({ name: firstGap ? 'onboard_down' : 'chase', tStart: cursor, tEnd: seco });
   }
-  windows.push({ name: 'separation', tStart: seco, tEnd: sepEnd });
-  windows.push({ name: 'orbit', tStart: sepEnd, tEnd: Math.max(sepEnd, inp.duration) });
+  // Riding through injection: the stack in orbit (parking coast + burn) until the sep.
+  if (sepT > seco) windows.push({ name: 'orbit', tStart: seco, tEnd: sepT });
+  windows.push({ name: 'separation', tStart: sepT, tEnd: sepEnd });
+  windows.push({ name: 'orbit', tStart: sepEnd, tEnd: Math.max(sepEnd, end) });
 
   // Drop inverted/empty windows (can happen when beats bunch up on a
   // short or underpowered flight) so the selector never sees a gap.
@@ -260,7 +275,7 @@ export function composeShot(
   vehLen: number,
   p = 0.5,
   tune: ShotTune = NO_TUNE,
-  focus?: { x: number; y: number } | null,
+  focus?: { x: number; y: number; z?: number } | null,
 ): CameraPose {
   const dr = s.downrangeKm;
   const alt = s.altKm;
@@ -270,6 +285,8 @@ export function composeShot(
   // recedes and the shot goes empty. Falls back to the vehicle for satellites.
   const fx = focus?.x ?? dr;
   const fy = focus?.y ?? alt;
+  // Depth: a spacecraft deployed out of a bay (the Shuttle's) leaves the stack's plane.
+  const fz = focus?.z ?? 0;
   const e = ease(p);
   // Subtle handheld wobble — tiny, time-keyed, so a locked frame still breathes.
   const wob = vehLen * 0.04;
@@ -343,15 +360,15 @@ export function composeShot(
       break;
     }
     case 'staging': {
-      // Slow PUSH-IN on the booster separation (hero beat), then a slight pull.
-      // Target the body-DOWN midpoint (where the spent booster drops) so the
-      // separation reads regardless of the stack's attitude.
+      // Slow PUSH-IN on the separation (hero beat), then a slight pull. Target the
+      // separation plane, a little up the body axis from the base, so the spent stage
+      // falling away AND the stage flying on are both in frame whatever the attitude:
+      // aimed at the spent stage's drop point, the live rocket left the frame.
       const io = p < 0.6 ? ease(p / 0.6) : 1 - 0.25 * ease((p - 0.6) / 0.4);
-      const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
-      const fv = Math.atan2(horiz, s.velUpKms);
-      const tx = dr - Math.sin(fv) * vehLen * 0.55;
-      const ty = alt - Math.cos(fv) * vehLen * 0.55;
-      const d = vehLen * (2.7 - 0.8 * io);
+      const fv = bodyAngleFromVerticalRad(s);
+      const tx = dr + Math.sin(fv) * vehLen * 0.15;
+      const ty = alt + Math.cos(fv) * vehLen * 0.15;
+      const d = vehLen * (3.2 - 0.6 * io);
       out = pose(tx - d * 0.5, ty + vehLen * 0.75, d, tx, ty, 0, 38 - 3 * io);
       break;
     }
@@ -359,8 +376,7 @@ export function composeShot(
       // The clamshell fairing splitting off the top of the stack. The nose
       // sits ~1.3 units UP THE BODY axis — target that so the split reads
       // whatever the attitude; tight side framing with a gentle push-in.
-      const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
-      const fv = Math.atan2(horiz, s.velUpKms);
+      const fv = bodyAngleFromVerticalRad(s);
       const tx = dr + Math.sin(fv) * vehLen * 1.15;
       const ty = alt + Math.cos(fv) * vehLen * 1.15;
       const d = vehLen * (2.3 - 0.5 * e);
@@ -396,10 +412,10 @@ export function composeShot(
       out = pose(
         fx + Math.sin(ang) * d,
         fy + d * 0.3,
-        Math.cos(ang) * d,
+        fz + Math.cos(ang) * d,
         fx,
         fy + (focus ? 0 : vehLen * 0.15),
-        0,
+        fz,
         focus ? 42 : 40,
       );
       break;
@@ -414,10 +430,10 @@ export function composeShot(
       out = pose(
         fx + Math.sin(ang) * d,
         fy + d * 0.42,
-        Math.cos(ang) * d,
+        fz + Math.cos(ang) * d,
         fx,
         fy + (focus ? 0 : vehLen * 0.5),
-        0,
+        fz,
         40,
       );
       break;

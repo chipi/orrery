@@ -1,6 +1,6 @@
 {
   "name": "SMART-1",
-  "vehicle": "Ariane 5（合并载荷发射）",
+  "vehicle": "Ariane 5G（合并载荷发射）",
   "payload": "发射质量 367 kg；1.2 kW 太阳能电推进霍尔效应离子推力器",
   "delta_v": "~3.9 km/s（13 个月离子推进累计）",
   "type": "机器人轨道器 · 已飞行",

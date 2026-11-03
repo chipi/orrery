@@ -153,6 +153,190 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('Blok-I (upper)', 'RD-0110', 1, 4, 'quad', { vernierNozzles: 4 }),
     ],
   },
+  'delta-ii': {
+    name: 'Delta II',
+    agency: 'NASA / ULA',
+    confidence: 'high',
+    sources: [
+      'https://www.ulalaunch.com/docs/default-source/rockets/deltaiipayloadplannersguide2007.pdf',
+    ],
+    stages: [
+      S('GEM-40 ×9 (6 ground-lit, 3 air-lit)', 'GEM-40 (solid)', 9, 1, 'per-booster', {
+        boosterCount: 9,
+      }),
+      S('Stage 1', 'RS-27A', 1, 1, 'single', { vernierNozzles: 2 }),
+      S('Stage 2 (Delta-K)', 'AJ10-118K', 1, 1, 'single'),
+      S('Stage 3 (PAM-D)', 'Star 48B (solid)', 1, 1, 'single'),
+    ],
+  },
+  'atlas-centaur': {
+    name: 'Atlas-Centaur (SLV-3C/3D)',
+    agency: 'NASA',
+    confidence: 'high',
+    sources: ['https://ntrs.nasa.gov/api/citations/19710023020/downloads/19710023020.pdf'],
+    stages: [
+      S('Booster section', 'MA-5 booster (2 chambers)', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Sustainer', 'LR105', 1, 1, 'single', { vernierNozzles: 2 }),
+      S('Centaur D', 'RL10A-3-3', 2, 1, 'pair'),
+    ],
+  },
+  'atlas-agena': {
+    name: 'Atlas-Agena D',
+    agency: 'NASA',
+    confidence: 'medium',
+    sources: ['https://ntrs.nasa.gov/api/citations/19690020216/downloads/19690020216.pdf'],
+    stages: [
+      S('Booster section', 'MA-5 booster (2 chambers)', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Sustainer', 'LR105', 1, 1, 'single', { vernierNozzles: 2 }),
+      S('Agena D', 'Bell 8096', 1, 1, 'single'),
+    ],
+  },
+  'titan-ii-g': {
+    name: 'Titan II(23)G',
+    agency: 'USAF',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Titan_II_GLV'],
+    stages: [
+      S('Stage 1', 'LR87-AJ-5 (2 chambers)', 2, 1, 'pair'),
+      S('Stage 2', 'LR91-AJ-5', 1, 1, 'single'),
+    ],
+  },
+  'titan-iiie-centaur': {
+    name: 'Titan IIIE-Centaur',
+    agency: 'NASA / USAF',
+    confidence: 'high',
+    sources: ['https://ntrs.nasa.gov/api/citations/19750004937/downloads/19750004937.pdf'],
+    stages: [
+      S('UA1205 SRM ×2', 'UA1205 (solid)', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Stage 1', 'LR87-AJ-11 (2 chambers)', 2, 1, 'pair'),
+      S('Stage 2', 'LR91-AJ-11', 1, 1, 'single'),
+      S('Centaur D-1T', 'RL10A-3-3', 2, 1, 'pair'),
+    ],
+  },
+  'titan-ivb-centaur': {
+    name: 'Titan IVB-Centaur',
+    agency: 'USAF / NASA',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Titan_IV'],
+    stages: [
+      S('SRMU ×2', 'SRMU (solid)', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Stage 1', 'LR87-AJ-11 (2 chambers)', 2, 1, 'pair'),
+      S('Stage 2', 'LR91-AJ-11', 1, 1, 'single'),
+      S('Centaur', 'RL10A-3-3A', 2, 1, 'pair'),
+    ],
+  },
+  'falcon-heavy': {
+    name: 'Falcon Heavy',
+    agency: 'SpaceX',
+    confidence: 'high',
+    sources: ['https://en.wikipedia.org/wiki/Falcon_Heavy'],
+    stages: [
+      S('Side boosters ×2', 'Merlin 1D', 9, 1, 'per-booster', { boosterCount: 2 }),
+      S('Centre core', 'Merlin 1D', 9, 1, 'octaweb-9'),
+      S('Second stage', 'Merlin 1D Vacuum', 1, 1, 'single'),
+    ],
+  },
+  'molniya-m': {
+    name: 'Molniya-M (8K78M)',
+    agency: 'Soviet Union',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Molniya-M', 'https://en.wikipedia.org/wiki/S1.5400'],
+    stages: [
+      S('Strap-ons ×4 (Blok B–D)', 'RD-107', 4, 4, 'per-booster', {
+        boosterCount: 4,
+        vernierNozzles: 8,
+      }),
+      S('Core (Blok-A)', 'RD-108', 1, 4, 'quad', { vernierNozzles: 4 }),
+      S('Blok-I', 'RD-0110', 1, 4, 'quad', { vernierNozzles: 4 }),
+      S('Blok-L', 'S1.5400', 1, 1, 'single'),
+    ],
+  },
+  'athena-ii': {
+    name: 'Athena II (LMLV-2)',
+    agency: 'Lockheed Martin',
+    confidence: 'medium',
+    sources: [
+      'https://pds.nasa.gov/data/lp-l-6-position-v1.0/lp_0014/DOCUMENT/SCHANDBK.PDF',
+      'https://en.wikipedia.org/wiki/Athena_II',
+    ],
+    stages: [
+      S('Stage 1', 'Castor 120 (solid)', 1, 1, 'single'),
+      S('Stage 2', 'Castor 120 (solid)', 1, 1, 'single'),
+      S('Stage 3', 'Orbus 21D (solid)', 1, 1, 'single'),
+    ],
+  },
+  'delta-iv-heavy': {
+    name: 'Delta IV Heavy',
+    agency: 'ULA',
+    confidence: 'high',
+    sources: [
+      'https://www.ulalaunch.com/docs/default-source/launch-booklets/divh_parkersolarprobe_mob.pdf',
+    ],
+    stages: [
+      S('Port + starboard CBC', 'RS-68A', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Centre CBC', 'RS-68A', 1, 1, 'single'),
+      S('DCSS 5 m', 'RL10B-2', 1, 1, 'single'),
+      S('Third stage', 'Star 48BV (solid)', 1, 1, 'single'),
+    ],
+  },
+  'new-glenn': {
+    name: 'New Glenn',
+    agency: 'Blue Origin',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/New_Glenn'],
+    stages: [S('GS1', 'BE-4', 7, 1, 'cross-5'), S('GS2', 'BE-3U', 2, 1, 'pair')],
+  },
+  'sputnik-8k71ps': {
+    name: 'Sputnik (8K71PS)',
+    agency: 'Soviet Union',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Sputnik_(rocket)'],
+    stages: [
+      S('Strap-ons ×4 (Blok B–D)', 'RD-107', 4, 4, 'per-booster', {
+        boosterCount: 4,
+        vernierNozzles: 8,
+      }),
+      S('Core (Blok-A)', 'RD-108', 1, 4, 'quad', { vernierNozzles: 4 }),
+    ],
+  },
+  'soyuz-fg-fregat': {
+    name: 'Soyuz-FG / Fregat',
+    agency: 'Roscosmos',
+    confidence: 'high',
+    sources: ['https://en.wikipedia.org/wiki/Soyuz-FG', 'https://en.wikipedia.org/wiki/Fregat'],
+    stages: [
+      S('Strap-ons ×4 (Blok B–D)', 'RD-107A', 4, 4, 'per-booster', {
+        boosterCount: 4,
+        vernierNozzles: 8,
+      }),
+      S('Core (Blok-A)', 'RD-108A', 1, 4, 'quad', { vernierNozzles: 4 }),
+      S('Blok-I', 'RD-0110', 1, 4, 'quad', { vernierNozzles: 4 }),
+      S('Fregat', 'S5.92', 1, 1, 'single'),
+    ],
+  },
+  'proton-m-briz-m': {
+    name: 'Proton-M / Briz-M',
+    agency: 'Roscosmos',
+    confidence: 'high',
+    sources: ['https://www.ilslaunch.com/wp-content/uploads/pdf/PMPG%20Section%20A.pdf'],
+    stages: [
+      S('Stage 1', 'RD-276', 6, 1, 'ring-6'),
+      S('Stage 2', 'RD-0210 ×3 + RD-0211', 4, 1, 'quad'),
+      S('Stage 3', 'RD-0213 + RD-0214 vernier', 1, 1, 'single', { vernierNozzles: 4 }),
+      S('Briz-M', 'S5.98M', 1, 1, 'single'),
+    ],
+  },
+  'ariane-5g': {
+    name: 'Ariane 5G+',
+    agency: 'ESA',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Ariane_5'],
+    stages: [
+      S('Solid boosters ×2 (EAP)', 'P238', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('EPC core', 'Vulcain 1', 1, 1, 'single'),
+      S('EPS (upper)', 'Aestus', 1, 1, 'single'),
+    ],
+  },
   'atlas-v': {
     name: 'Atlas V',
     agency: 'ULA / NASA',
@@ -168,10 +352,14 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
     ],
   },
   'proton-k': {
-    name: 'Proton-K',
+    name: 'Proton-K / Blok D',
     agency: 'Roscosmos',
     confidence: 'high',
-    sources: ['https://en.wikipedia.org/wiki/RD-253', 'https://en.wikipedia.org/wiki/RD-0214'],
+    sources: [
+      'https://en.wikipedia.org/wiki/RD-253',
+      'https://en.wikipedia.org/wiki/RD-0214',
+      'https://en.wikipedia.org/wiki/RD-58',
+    ],
     stages: [
       S('Stage 1', 'RD-253', 6, 1, 'ring-6', { note: 'Six around the central oxidiser tank.' }),
       S('Stage 2', 'RD-0210/0211', 4, 1, 'quad'),
@@ -179,6 +367,7 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
         vernierNozzles: 4,
         note: '1 main (RD-0213) + a 4-nozzle vernier (RD-0214) → 5 visible.',
       }),
+      S('Blok D', 'RD-58', 1, 1, 'single'),
     ],
   },
   'titan-ii-glv': {
@@ -197,10 +386,10 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
     confidence: 'high',
     sources: ['https://handwiki.org/wiki/Engineering:Atlas_LV-3B'],
     stages: [
-      S('Booster (jettisoned)', 'LR89-5', 2, 1, 'pair'),
-      S('Sustainer', 'LR105-5', 1, 1, 'single'),
-      S('Verniers', 'LR101', 2, 1, 'pair', {
-        note: 'Small attitude nozzles; 5 visible at liftoff.',
+      S('Booster section (jettisoned)', 'LR89-5', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Sustainer', 'LR105-5', 1, 1, 'single', {
+        vernierNozzles: 2,
+        note: 'Two LR101 verniers beside it; 5 nozzles visible at liftoff.',
       }),
     ],
   },
@@ -246,6 +435,20 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       }),
     ],
   },
+  'sls-block-1': {
+    name: 'SLS Block 1',
+    agency: 'NASA',
+    confidence: 'high',
+    sources: [
+      'https://www.nasa.gov/wp-content/uploads/2022/03/sls-reference-guide-2022-v2-508-0.pdf',
+      'https://en.wikipedia.org/wiki/Space_Launch_System',
+    ],
+    stages: [
+      S('SRB ×2', 'Five-segment RSRMV', 2, 1, 'per-booster', { boosterCount: 2 }),
+      S('Core stage', 'RS-25', 4, 1, 'quad'),
+      S('ICPS', 'RL10B-2', 1, 1, 'single'),
+    ],
+  },
   'long-march-2f': {
     name: 'Long March 2F',
     agency: 'CNSA',
@@ -258,6 +461,17 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
         vernierNozzles: 4,
         note: '1 main + a 4-chamber vernier (YF-23B).',
       }),
+    ],
+  },
+  'long-march-3a': {
+    name: 'Long March 3A',
+    agency: 'CNSA',
+    confidence: 'medium',
+    sources: ['https://en.wikipedia.org/wiki/Long_March_3A'],
+    stages: [
+      S('Stage 1', 'YF-21C (4× YF-20C)', 4, 1, 'quad'),
+      S('Stage 2', 'YF-24E', 1, 1, 'single', { vernierNozzles: 4 }),
+      S('Stage 3', 'YF-75', 2, 1, 'pair'),
     ],
   },
   'long-march-3b': {
@@ -298,6 +512,7 @@ export const LAUNCHER_ENGINES: Record<string, LauncherEngineSpec> = {
       S('PSOM-XL strap-ons ×6', 'PSOM-XL (solid)', 6, 1, 'per-booster', { boosterCount: 6 }),
       S('PS1 (Stage 1)', 'S139 (solid)', 1, 1, 'single'),
       S('PS2 (Stage 2)', 'Vikas', 1, 1, 'single'),
+      S('PS3 (Stage 3)', 'HPS3 (solid)', 1, 1, 'single'),
       S('PS4 (Stage 4)', 'L-2-5', 2, 1, 'pair'),
     ],
   },

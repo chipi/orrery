@@ -48,7 +48,8 @@
       "vehicle_stage": "Star 48B PAM-D solid upper stage",
       "c3_km2_s2": 10.6,
       "mass_at_tli_kg": 670,
-      "source": "NASA Phoenix Press Kit (2007-07); JPL Phoenix Mission Plan"
+      "source": "NASA Phoenix Press Kit (2007-07); JPL Phoenix Mission Plan",
+      "departure": "stage-then-kick"
     },
     "cruise": {
       "tcm_count": 6,
@@ -56,13 +57,13 @@
     },
     "arrival": {
       "v_infinity_km_s": 3.04,
-      "entry_velocity_km_s": 5.59,
+      "entry_velocity_km_s": 5.516,
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": null,
       "source": "JPL Phoenix EDL Reconstruction (2008); direct atmospheric entry",
       "edl_system": "parachute_retro",
-      "edl_duration_s": 2227,
+      "edl_duration_s": 442,
       "touchdown_velocity_ms": 2.4
     },
     "totals": {

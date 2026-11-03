@@ -27,5 +27,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "stadio superiore Centaur"
+  "vehicle_stage": "stadio superiore Centaur",
+  "flight_events": [
+    {
+      "met": 617,
+      "label": "Venere n. 2 — fionda gravitazionale",
+      "description": "Secondo incontro con Venere (1999-06-24), a 600 km di quota, dopo una manovra nello spazio profondo che ha rimodellato l'orbita. Insieme, le due fionde di Venere spingono l'afelio oltre la Terra e preparano la terza fionda 55 giorni dopo."
+    },
+    {
+      "met": 672,
+      "label": "Terra — fionda gravitazionale",
+      "description": "1.171 km sopra il Pacifico meridionale (1999-08-18): il sorvolo planetario più ravvicinato di qualsiasi missione interplanetaria in uscita fino ad allora. L'orbita è ora abbastanza energetica da incrociare quella di Giove, la cui fionda finale porterà a Saturno."
+    },
+    {
+      "met": 1172,
+      "label": "Giove — fionda gravitazionale",
+      "description": "9,7 milioni di km da Giove il 2000-12-30, con un'osservazione congiunta simultanea insieme a Galileo (in orbita gioviana). La gravità di Giove fornisce gli ultimi 2,5 km/s necessari per un trasferimento simile a quello di Hohmann verso Saturno, raggiunto 3,6 anni dopo."
+    }
+  ]
 }

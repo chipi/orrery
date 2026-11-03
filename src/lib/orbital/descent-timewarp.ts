@@ -31,6 +31,16 @@ export function terminalStartTime(
   return s ? s.t : duration * 0.9;
 }
 
+/**
+ * The warp only compresses a long entry. With no ballistic entry (a powered lunar descent)
+ * mapping the first entryFrac onto t=0 froze the play; with an entry shorter than entryFrac of
+ * the descent (Venus, Titan, Jupiter: a minute of entry, then an hour under chutes) it
+ * stretched the entry up to 60×, so the clock sat at E+00:00 for minutes.
+ */
+function warps(duration: number, terminalStartT: number, entryFrac: number): boolean {
+  return duration > 0 && terminalStartT > entryFrac * duration;
+}
+
 /** Scrubber time (raw, linear) → trajectory sample time (warped). */
 export function warpDescentTime(
   rawT: number,
@@ -38,7 +48,7 @@ export function warpDescentTime(
   terminalStartT: number,
   entryFrac = ENTRY_TIMELINE_FRAC,
 ): number {
-  if (duration <= 0) return rawT;
+  if (!warps(duration, terminalStartT, entryFrac)) return rawT;
   const f = Math.max(0, Math.min(1, rawT / duration));
   const tB = terminalStartT;
   if (f <= entryFrac) return (f / entryFrac) * tB;
@@ -52,7 +62,7 @@ export function unwarpDescentTime(
   terminalStartT: number,
   entryFrac = ENTRY_TIMELINE_FRAC,
 ): number {
-  if (duration <= 0) return trajT;
+  if (!warps(duration, terminalStartT, entryFrac)) return trajT;
   const tB = terminalStartT;
   if (trajT <= tB) return (tB > 0 ? trajT / tB : 0) * entryFrac * duration;
   return (entryFrac + ((trajT - tB) / (duration - tB)) * (1 - entryFrac)) * duration;

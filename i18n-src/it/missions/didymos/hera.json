@@ -6,5 +6,37 @@
   "type": "RICOGNIZIONE ASTEROIDALE · ATTIVA",
   "first": "Il seguito di DART firmato ESA — rilievo dell'asteroide Didymos deviato",
   "description": "Hera è il contributo dell'Agenzia Spaziale Europea al primo esperimento di difesa planetaria dell'umanità. Nel 2022 la sonda DART della NASA si è schiantata deliberatamente su Dimorphos — la piccola luna dell'asteroide Didymos — accorciandone in modo misurabile l'orbita. Hera, lanciata nell'ottobre 2024 su un Falcon 9, sta volando verso lo stesso asteroide binario (con una fionda gravitazionale su Marte nel 2025 lungo il tragitto) per condurre la dettagliata indagine post-impatto che DART non poteva fare: le dimensioni del cratere, la massa e la struttura interna di Dimorphos e l'esatta quantità di moto trasferita dall'impatto. Insieme, DART e Hera trasformano una dimostrazione isolata in una tecnica di deviazione ripetibile e ben caratterizzata. Hera trasporta due CubeSats, Juventas e Milani, per il sondaggio radar ravvicinato e la mineralogia.",
-  "vehicle_stage": "secondo stadio del Falcon 9"
+  "vehicle_stage": "secondo stadio del Falcon 9",
+  "flight_events": [
+    {
+      "met": 0,
+      "label": "Lancio — Falcon 9 Block 5",
+      "description": "Cape Canaveral SLC-40, 2024-10-07. Hera parte su una traiettoria di fuga dalla Terra verso il sistema binario di Didymos."
+    },
+    {
+      "met": 0.01,
+      "label": "Immissione verso l'asteroide",
+      "description": "Lo stadio superiore del Falcon 9 mette Hera su un trasferimento interplanetario verso Didymos, con una fionda gravitazionale di Marte nel 2025."
+    },
+    {
+      "met": 20,
+      "label": "DSM-1",
+      "description": "La prima manovra nello spazio profondo affina il trasferimento interplanetario verso la fionda gravitazionale di Marte del 2025."
+    },
+    {
+      "met": 150,
+      "label": "Fionda gravitazionale di Marte",
+      "description": "Un sorvolo di Marte nel marzo 2025 piega la traiettoria di Hera verso Didymos e regala anche un sorvolo di Deimos, luna di Marte."
+    },
+    {
+      "met": 300,
+      "label": "DSM-2",
+      "description": "Correzione di traiettoria dopo il sorvolo di Marte, mirata al rendezvous con Didymos."
+    },
+    {
+      "met": 812,
+      "label": "Rendezvous con Didymos",
+      "description": "Hera arriva al sistema binario di Didymos e inizia lo studio dettagliato di Dimorphos e del cratere d'impatto di DART."
+    }
+  ]
 }

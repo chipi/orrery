@@ -3,6 +3,7 @@
   "name": "Atlas LV-3B (Mercury-Atlas)",
   "source_tier": "flagship",
   "payloadKg": 1355,
+  "liftoffThrustKN": 1640,
   "fairingKg": 0,
   "fairingJettisonAltM": 100000,
   "refAreaM2": 7,
@@ -12,49 +13,26 @@
     "lon": -80.57,
     "name": "LC-14 · Cape Canaveral"
   },
-  "pitchProgram": [
-    [
-      0,
-      90
-    ],
-    [
-      13,
-      88
-    ],
-    [
-      50,
-      64
-    ],
-    [
-      130,
-      40
-    ],
-    [
-      200,
-      20
-    ],
-    [
-      290,
-      6
-    ]
-  ],
+  "pitchProgram": [[0, 90], [13, 88], [50, 64], [130, 40], [200, 20], [290, 6]],
+  "boosters": {
+    "name": "Booster section (2× LR89-5)",
+    "count": 1,
+    "wetKg": 73470,
+    "dryKg": 3170,
+    "thrustSlKN": 1374,
+    "thrustVacKN": 1517,
+    "ispSlS": 263,
+    "ispVacS": 290,
+    "chamberTempK": 3400
+  },
   "stages": [
     {
-      "name": "Booster",
-      "wetKg": 87170,
-      "dryKg": 3170,
-      "thrustSlKN": 1587,
-      "thrustVacKN": 1750,
-      "ispSlS": 250,
-      "ispVacS": 290,
-      "engines": 3,
-      "chamberTempK": 3400
-    },
-    {
-      "name": "Sustainer",
-      "wetKg": 29660,
+      "name": "Atlas sustainer (LR105-5 + 2 verniers)",
+      "wetKg": 43360,
       "dryKg": 2660,
+      "thrustSlKN": 254,
       "thrustVacKN": 363,
+      "ispSlS": 216,
       "ispVacS": 309,
       "engines": 1,
       "chamberTempK": 3400
@@ -66,7 +44,15 @@
       "u": "https://ntrs.nasa.gov/citations/19740074974"
     },
     {
-      "l": "Spaceflight101 / Astronautix — Atlas LV-3B",
+      "l": "Atlas LV-3B — Wikipedia (stage and a half: all engines lit at liftoff, ~1,640 kN; booster engines 1,517 kN; the booster section jettisoned at BECO ~2 min 9 s)",
+      "u": "https://en.wikipedia.org/wiki/Atlas_LV-3B"
+    },
+    {
+      "l": "Rocketdyne MA-2 — two XLR89-5 booster engines, 309,000 lbf; LR105-5 sustainer, 57,000 lbf (sea level)",
+      "u": "https://atlasmissilesilo.com/rocketdyne.htm"
+    },
+    {
+      "l": "Astronautix — Atlas LV-3B (masses). The single balloon tank is split between the booster section (the propellant its engines burn by BECO) and the sustainer, which burns from liftoff to SECO; sea-level Isp from the SL/vacuum thrust ratio",
       "u": "http://www.astronautix.com/a/atlaslv-3b.html"
     }
   ]

@@ -187,6 +187,21 @@ the playwright image and aren't needed for visuals).
 **Gotchas** — Serial by design for determinism; uses `reducedMotion: 'reduce'` to freeze simT.
 **State** — healthy.
 
+## `npm run screenshots:launchers` → `scripts/capture-launcher-lineup.mjs`
+
+**Command** — `npm run screenshots:launchers` (env: `ORIGIN`, default `http://localhost:5197`;
+`CELL` column px; `HEIGHT` sheet px)
+**What** — Captures the true-scale line-up of every launch-vehicle model (`/dev/launchers`),
+each labelled with its real height, into one PNG.
+**When** — After adding or changing a launcher model (`src/lib/three/launcher-models.ts`).
+`/dev/launchers?scale=fit` draws every model the same height for checking stage joints;
+`launcher-models.test.ts` checks them for breaks along the body axis.
+**I/O** — Writes `docs/screenshots/launcher-lineup.png`.
+**Gotchas** — Connects to an ALREADY-RUNNING dev server (`/dev/*` 404s in the production
+build, so `npm run screenshots` can't take it). Heights are rounded public figures kept in the
+page itself.
+**State** — healthy.
+
 ## `scripts/capture-colophon-thumbs.ts`
 
 **Command** — `BASE=http://localhost:5373 npx tsx scripts/capture-colophon-thumbs.ts`

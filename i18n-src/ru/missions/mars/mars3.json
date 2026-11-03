@@ -38,5 +38,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "разгонный блок «Блок Д»"
+  "vehicle_stage": "разгонный блок «Блок Д»",
+  "flight_events": [
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "description": "Первая коррекция траектории."
+    },
+    {
+      "met": 150,
+      "label": "TCM-2",
+      "description": "Уточнение на этапе сближения."
+    }
+  ]
 }

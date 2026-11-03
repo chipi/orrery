@@ -1,6 +1,40 @@
 import * as m from '$lib/paraglide/messages';
 import type { PlanDestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 
+const MISSION_DEST_FILTER: Record<string, () => string> = {
+  ASTEROID: m.lib_filter_dest_asteroid,
+  CERES: m.lib_filter_dest_ceres,
+  COMET: m.lib_filter_dest_comet,
+  EARTH: m.lib_filter_dest_earth,
+  JUPITER: m.lib_filter_dest_jupiter,
+  MARS: m.lib_filter_dest_mars,
+  MOON: m.lib_filter_dest_moon,
+  NEPTUNE: m.lib_filter_dest_neptune,
+  PLUTO: m.lib_filter_dest_pluto,
+  SUN: m.lib_filter_dest_sun,
+};
+const PLAN_DEST_IDS = new Set<string>([
+  'mercury',
+  'venus',
+  'saturn',
+  'uranus',
+  'psyche',
+  'bennu',
+  'itokawa',
+  'didymos',
+  'dimorphos',
+  'eurybates',
+]);
+
+/** A mission's `dest` code (MARS, DIDYMOS …) as the viewer's language writes it, upper-cased. */
+export function missionDestLabel(dest: string): string {
+  const filter = MISSION_DEST_FILTER[dest];
+  if (filter) return filter();
+  const id = dest.toLowerCase();
+  if (PLAN_DEST_IDS.has(id)) return destinationLabel(id as PlanDestinationId).toLocaleUpperCase();
+  return dest;
+}
+
 /** A transfer destination's name in the viewer's language (/plan, /fly). */
 export function destinationLabel(id: PlanDestinationId): string {
   switch (id) {

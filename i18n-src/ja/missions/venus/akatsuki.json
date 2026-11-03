@@ -44,5 +44,17 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "H-IIA 202 第2段"
+  "vehicle_stage": "H-IIA 202 第2段",
+  "flight_events": [
+    {
+      "met": 120,
+      "label": "TCM-2",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 195,
+      "label": "TCM-3——金星周回軌道投入前の最後",
+      "description": "到着前の最後の微調整。"
+    }
+  ]
 }

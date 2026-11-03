@@ -51,5 +51,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "Star 48B PAM-D 固体上段"
+  "vehicle_stage": "Star 48B PAM-D 固体上段",
+  "flight_events": [
+    {
+      "met": 70,
+      "label": "TCM-2",
+      "description": "巡航中間の精密化。"
+    },
+    {
+      "met": 160,
+      "label": "TCM-3",
+      "description": "メリディアニ平原の目標楕円へ向けた接近微調整。"
+    }
+  ]
 }

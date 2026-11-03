@@ -7,11 +7,53 @@
   "first": "首个在另一个星球上运行的遥操控月球车",
   "description": "月球上的第一批车轮——由克里米亚的一间控制室遥控驾驶。Lunokhod 1 是一个重 322 千克的加压舱体，安装在八个独立驱动的车轮上，由一个五人团队实时操控，需克服 2.5 秒的光速延迟。它在 11 个月球日（322 个地球日）内行驶了 10.5 千米，拍摄了 2 万多个场景，工作时间远远超过 90 天的设计寿命。上世纪 70 年代之后它湮没无闻，直到 2010 年 NASA 的 Lunar Reconnaissance Orbiter 在它停下的地方重新发现了它。",
   "events": [
-    { "met": 0, "label": "发射", "note": "来自拜科努尔的质子-K运载火箭与Blok-D上面级。", "type": "nominal" },
-    { "met": 5, "label": "MOI", "note": "月球轨道插入；下降倾角的轨道修正。", "type": "nominal" },
-    { "met": 7, "label": "触地", "note": "1970-11-17 在雨海软着陆。", "type": "nominal" },
-    { "met": 7.005, "label": "巡视器驶下", "note": "Lunokhod 1 沿坡道滚下进入月球表面。", "type": "info" },
-    { "met": 329, "label": "最后一次通信", "note": "最后一次指令通话于 1971-09-14；月球车在寒冷的月夜中保存完好。", "type": "info" }
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "来自拜科努尔的质子-K运载火箭与Blok-D上面级。",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "LOI",
+      "note": "月球轨道插入；下降倾角的轨道修正。",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "触地",
+      "note": "1970-11-17 在雨海软着陆。",
+      "type": "nominal"
+    },
+    {
+      "met": 7.005,
+      "label": "巡视器驶下",
+      "note": "Lunokhod 1 沿坡道滚下进入月球表面。",
+      "type": "info"
+    },
+    {
+      "met": 329,
+      "label": "最后一次通信",
+      "note": "最后一次指令通话于 1971-09-14；月球车在寒冷的月夜中保存完好。",
+      "type": "info"
+    }
   ],
-  "vehicle_stage": "Blok-D 上面级"
+  "vehicle_stage": "Blok-D 上面级",
+  "flight_events": [
+    {
+      "met": 0.1,
+      "label": "地月转移入射",
+      "description": "Blok D 上面级点火，把 Luna 17 送上地月转移轨道。"
+    },
+    {
+      "met": 1.5,
+      "label": "中途修正 第1次",
+      "description": "首次轨道精修。"
+    },
+    {
+      "met": 4,
+      "label": "中途修正 第2次",
+      "description": "接近阶段精修。"
+    }
+  ]
 }

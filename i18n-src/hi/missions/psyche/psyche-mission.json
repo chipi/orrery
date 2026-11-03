@@ -32,5 +32,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Falcon Heavy दूसरा चरण"
+  "vehicle_stage": "Falcon Heavy दूसरा चरण",
+  "flight_events": [
+    {
+      "met": 1500,
+      "label": "यात्रा परिशोधन",
+      "description": "यात्रा के बीच पथ परिशोधन। आयन प्रणोद जारी रहता है।"
+    }
+  ]
 }

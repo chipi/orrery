@@ -118,6 +118,9 @@ export class SeparationBurst extends THREE.Object3D {
       geo,
       new THREE.PointsMaterial({
         color: opts.particleColor ?? 0xdfe8ff,
+        // Round soft flecks: an untextured point is a square, and the close spacecraft
+        // shots drew them as a scatter of big grey tiles.
+        map: flashTexture(),
         size: opts.scale * 0.24,
         sizeAttenuation: true,
         transparent: true,

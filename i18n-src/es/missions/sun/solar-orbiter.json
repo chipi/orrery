@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "etapa superior Centaur (Atlas V 411)"
+  "vehicle_stage": "etapa superior Centaur (Atlas V 411)",
+  "flight_events": [
+    {
+      "met": 1750,
+      "label": "Asistencia gravitatoria de Venus n.º 4",
+      "description": "2025-02. La cuarta asistencia de Venus sigue elevando la latitud heliográfica hacia ~17° (objetivo de la misión extendida: ~33°)."
+    }
+  ]
 }

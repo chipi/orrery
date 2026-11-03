@@ -44,5 +44,22 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "étage supérieur Centaur D-1T"
+  "vehicle_stage": "étage supérieur Centaur D-1T",
+  "flight_events": [
+    {
+      "met": 69.92,
+      "label": "TCM-2",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 124.64,
+      "label": "TCM-3",
+      "description": "Affinage à mi-croisière."
+    },
+    {
+      "met": 200,
+      "label": "TCM-4 — dernière avant l'insertion en orbite martienne",
+      "description": "Affinage de la visée en phase d'approche."
+    }
+  ]
 }

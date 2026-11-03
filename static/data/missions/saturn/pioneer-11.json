@@ -141,7 +141,8 @@
       ]
     },
     "launch": {
-      "vehicle_stage": "TE-364-4 (Star-37E) third stage"
+      "vehicle_stage": "TE-364-4 (Star-37E) third stage",
+      "departure": "stage-then-kick"
     }
   }
 }

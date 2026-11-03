@@ -3,6 +3,7 @@ import {
   airDensity,
   ambientPressure,
   ascentToOrbit,
+  bodyAngleFromVerticalRad,
   circularSpeed,
   combinedBoosterStage,
   commandedPitchRad,
@@ -370,5 +371,113 @@ describe('stackIdealDv — parallel boosters not double-counted (M4)', () => {
       b.wetKg;
     const overcount = coreDv + tsiolkovskyDv(b.ispVacS, fullStack, fullStack - stagePropellant(b));
     expect(boostedDv).toBeLessThan(overcount);
+  });
+});
+
+describe('bodyAngleFromVerticalRad — the drawn rocket attitude', () => {
+  // The pad carries Earth's ~0.4 km/s eastward rotation, so the INERTIAL velocity is almost
+  // horizontal at liftoff; drawing the body along it laid the rocket flat right off the pad.
+  const { states } = integrateAscent(FALCON9);
+  it('stands within 5° of vertical for the first 10 s after liftoff', () => {
+    for (const t of [0, 1, 2, 5, 10]) {
+      const deg = (bodyAngleFromVerticalRad(sampleAscentAt(states, t)) * 180) / Math.PI;
+      expect(deg, `t=${t}s`).toBeLessThan(5);
+    }
+  });
+  it('never snaps: turns at most 3°/s, though the guidance steps at staging and PEG re-solves', () => {
+    const end = states[states.length - 1].t;
+    let prev = bodyAngleFromVerticalRad(sampleAscentAt(states, 0));
+    for (let t = 0.5; t <= end; t += 0.5) {
+      const now = bodyAngleFromVerticalRad(sampleAscentAt(states, t));
+      expect(Math.abs(now - prev) * (180 / Math.PI), `t=${t}s`).toBeLessThanOrEqual(1.5 + 1e-9);
+      prev = now;
+    }
+  });
+});
+
+describe('booster groups and an air-lit core', () => {
+  // A medium core with 6 strap-ons (Delta II-like in shape only).
+  const base: LaunchProfile = {
+    id: 'test-boosted',
+    name: 'Test',
+    payloadKg: 5000,
+    fairingKg: 1000,
+    fairingJettisonAltM: 110000,
+    refAreaM2: 10,
+    cd: 0.3,
+    pitchProgram: [
+      [0, 90],
+      [15, 88],
+      [60, 70],
+      [150, 40],
+      [300, 15],
+      [450, 0],
+    ],
+    boosters: {
+      name: 'GEM',
+      count: 6,
+      wetKg: 13000,
+      dryKg: 1500,
+      thrustSlKN: 500,
+      thrustVacKN: 560,
+      ispSlS: 245,
+      ispVacS: 275,
+    },
+    stages: [
+      {
+        name: 'Core',
+        wetKg: 100000,
+        dryKg: 6000,
+        thrustSlKN: 1000,
+        thrustVacKN: 1100,
+        ispSlS: 265,
+        ispVacS: 300,
+        engines: 1,
+      },
+      { name: 'Upper', wetKg: 7000, dryKg: 900, thrustVacKN: 45, ispVacS: 320, engines: 1 },
+    ],
+  };
+
+  it('lights the air-lit group when the ground-lit one burns out, each jettisoning in turn', () => {
+    const s = integrateAscent({ ...base, boosters: { ...base.boosters!, airLitCount: 2 } });
+    const sep = s.events.filter((e) => e.type === 'staging');
+    // Ground-lit group, then air-lit group, then the core.
+    expect(sep.length).toBeGreaterThanOrEqual(3);
+    expect(sep[0].note).toMatch(/ground-lit/);
+    expect(s.states[1].boostersLit).toBe(4);
+    const afterFirst = s.states.find((x) => x.t > sep[0].t + 2)!;
+    expect(afterFirst.boostersLit).toBe(2);
+    const afterSecond = s.states.find((x) => x.t > sep[1].t + 2)!;
+    expect(afterSecond.boostersActive).toBe(false);
+  });
+
+  it('lights the air-lit group at its own time, burning alongside the ground-lit one', () => {
+    const s = integrateAscent({
+      ...base,
+      boosters: { ...base.boosters!, airLitCount: 2, airLitIgnitionS: 20 },
+    });
+    const both = s.states.find((x) => x.t > 25 && x.t < 30)!;
+    expect(both.groundLitBurning).toBe(true);
+    expect(both.airLitBurning).toBe(true);
+    expect(both.boostersLit).toBe(6);
+    const sep = s.events.filter((e) => e.type === 'staging');
+    // Ground-lit pair-group first, then the air-lit one 20 s later.
+    expect(sep[0].note).toMatch(/ground-lit/);
+    expect(sep[1].note).toMatch(/air-lit/);
+    expect(sep[1].t - sep[0].t).toBeGreaterThan(15);
+    expect(sep[1].t - sep[0].t).toBeLessThan(25);
+  });
+
+  it('keeps an air-lit core dark until its ignition time', () => {
+    const lift = integrateAscent({
+      ...base,
+      stages: [{ ...base.stages[0], ignitionS: 30 }, base.stages[1]],
+    });
+    const before = lift.states.find((x) => x.t > 5 && x.t < 25)!;
+    const after = lift.states.find((x) => x.t > 35)!;
+    expect(before.coreLit).toBe(false);
+    expect(after.coreLit).toBe(true);
+    // Liftoff thrust is the boosters' alone.
+    expect(lift.states[0].thrustN).toBeCloseTo(6 * 500 * 1000, -3);
   });
 });

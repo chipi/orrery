@@ -211,8 +211,8 @@ function buildApolloCruise(): THREE.Group {
   const g = new THREE.Group();
 
   // Command Module — blunt cone, white MLI
+  // Heat shield (the cone's base) on the SM, apex forward — it was flipped apex-first into the SM.
   const cm = new THREE.Mesh(new THREE.ConeGeometry(0.26, 0.38, 20), heroWhite(0xf0f0ea));
-  cm.rotation.x = Math.PI; // point up (apex down toward SM)
   cm.position.y = 1.35;
 
   // Service Module — cylinder, gold
@@ -259,8 +259,8 @@ function buildOrionCruise(): THREE.Group {
   const g = new THREE.Group();
 
   // Crew module — blunt cone
+  // Heat shield (the cone's base) on the ESM, apex forward.
   const cm = new THREE.Mesh(new THREE.ConeGeometry(0.32, 0.4, 20), heroWhite(0xf0f0ea));
-  cm.rotation.x = Math.PI;
   cm.position.y = 0.92;
 
   // European Service Module — cylinder

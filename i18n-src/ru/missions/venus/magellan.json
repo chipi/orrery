@@ -44,5 +44,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "разгонный блок Inertial Upper Stage (IUS)"
+  "vehicle_stage": "разгонный блок Inertial Upper Stage (IUS)",
+  "flight_events": [
+    {
+      "met": 175,
+      "label": "TCM-2",
+      "description": "Уточнение в середине перелёта."
+    },
+    {
+      "met": 325,
+      "label": "TCM-3",
+      "description": "Подстройка на этапе сближения."
+    }
+  ]
 }

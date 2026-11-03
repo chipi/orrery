@@ -35,6 +35,7 @@ import {
   spacecraftPos,
 } from '$lib/physics/transfer/mission-arc';
 import type { Vec2 } from '$lib/physics/transfer/mission-arc';
+import type { OrbitInsertionEngineKind } from '$lib/physics/transfer/orbit-insertion-burns';
 import {
   eciKmToCanvas2dPx,
   helioAuToCanvas2dPx,
@@ -150,6 +151,10 @@ export interface FlyFrameBridge {
   readonly openingActive: boolean;
   readonly hasPhaseMarkers: boolean;
   readonly cruiseHoldTriggerSimDay: number | null;
+  /** The orbit-insertion engine kind while its capture burn fires, else null. */
+  readonly oiBurningKind: OrbitInsertionEngineKind | null;
+  /** The mission has a sourced capture burn (its own plume replaces the generic one). */
+  readonly oiBurnRecorded: boolean;
 }
 
 type FlySceneHostHandle = ReturnType<typeof createFlySceneHost>;
@@ -1386,6 +1391,48 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       }
     }
 
+    // Orbit-insertion capture burn: the engine fires retrograde, so the plume exhausts
+    // along the direction of travel (the trajectory's local tangent). The arrival shot
+    // pulls the ship toward the camera in front of the planet, so the true tangent runs
+    // back into the planet and the flame hides behind it; keep its on-screen direction
+    // and drop the line-of-sight component, so the flame lies beside the ship.
+    {
+      const kind = bridge.isMoonMission ? null : bridge.oiBurningKind;
+      let dir = new THREE.Vector3();
+      if (kind) {
+        const a = spacecraftPos(
+          bridge.simDay - 0.05,
+          bridge.arcTimeline,
+          bridge.outPts,
+          bridge.retPts,
+        );
+        const b = spacecraftPos(
+          bridge.simDay + 0.05,
+          bridge.arcTimeline,
+          bridge.outPts,
+          bridge.retPts,
+        );
+        dir = new THREE.Vector3(
+          b.pos.x - a.pos.x,
+          (b.pos.y ?? 0) - (a.pos.y ?? 0),
+          b.pos.z - a.pos.z,
+        );
+        const view = new THREE.Vector3().subVectors(scSprite.position, camera.position);
+        if (view.lengthSq() > 0 && dir.lengthSq() > 0) {
+          view.normalize();
+          const onScreen = dir.clone().addScaledVector(view, -dir.dot(view));
+          if (onScreen.lengthSq() > 1e-6 * dir.lengthSq()) dir = onScreen;
+        }
+      }
+      helioMission.updateOiPlume(
+        kind,
+        scSprite.position,
+        dir,
+        helioMission.scModel?.scale.x ?? scSprite.scale.x * 0.6,
+        now / 1000,
+      );
+    }
+
     // Phase-based visibility: LAUNCH + ARRIVAL anchor rings both stay
     // visible from pre-launch through the entire flight so the user
     // can always see where the mission started and where it's going;
@@ -1759,8 +1806,12 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // Burn selection + exhaust-direction math extracted to
       // $lib/fly/fly-frame-burn (WS-B/B4) — byte-identical. The plume-mesh
       // application (position / lookAt / scale / opacity) stays here.
+      // A mission with a sourced capture burn shows that engine's plume instead
+      // (updateOiPlume above), so its edl_or_oi event drops out here.
       const activeBurn = findActiveBurn(
-        bridge.mission.flight.events,
+        bridge.oiBurnRecorded
+          ? bridge.mission.flight.events.filter((e) => e.type !== 'edl_or_oi')
+          : bridge.mission.flight.events,
         bridge.simDay - bridge.arcTimeline.dep_day,
       );
       if (activeBurn) {
@@ -1775,8 +1826,14 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         const vx = (sc1.x - sc.pos.x) * SCALE_3D;
         const vz = (sc1.z - sc.pos.z) * SCALE_3D;
         const { exDx, exDz } = burnExhaustDir(cfg.mode, vx, vz, earthMesh.position, scWorld);
-        plumeMesh.position.copy(scWorld);
-        plumeMesh.lookAt(scWorld.x + exDx, scWorld.y, scWorld.z + exDz);
+        // At the glyph, which the flyby / arrival shots pull toward the camera off the
+        // true trajectory point — anchored at scWorld the plume sat beside the planet.
+        const at = scSprite.position;
+        plumeMesh.position.copy(at);
+        // The cone flares along its local −Z and lookAt aims +Z, so aim it AGAINST the
+        // exhaust direction for the flame to stream along it (aiming along it drew every
+        // burn reversed: TCM/TLI exhaust ahead of the ship, capture exhaust trailing).
+        plumeMesh.lookAt(at.x - exDx, at.y, at.z - exDz);
         plumeMesh.scale.setScalar(cfg.scale);
         // Opacity: peak at event time, fade linearly across the
         // per-event window (launch's wider window gives a sustained
@@ -2124,7 +2181,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
           outLine.geometry.dispose();
           outLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(bridge.outPts, desiredRadius);
           (outLine.geometry.userData as { tubeRadius?: number }).tubeRadius = desiredRadius;
-          if (retLine && bridge.retPts.length >= 2) {
+          if (bridge.retPts.length >= 2) {
             retLine.geometry.dispose();
             retLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(
               bridge.retPts,

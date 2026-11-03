@@ -23,22 +23,10 @@ const PROVENANCE = 'static/data/image-provenance.json';
 const IMAGES = 'static/images';
 
 /** Gallery slots with no credit row (no old row to restore). Source them, then delete the line. */
-const KNOWN_MISSING = new Set([
-  '/images/belts/kuiper/02',
-  '/images/belts/kuiper/04',
-  '/images/belts/kuiper/05',
-  '/images/belts/kuiper/06',
-  '/images/satellites/callisto/05',
-  '/images/satellites/charon/04',
-  '/images/satellites/enceladus/05',
-  '/images/satellites/europa/05',
-  '/images/satellites/oberon/04',
-  '/images/satellites/phobos/05',
-  '/images/satellites/titan/05',
-]);
+const KNOWN_MISSING = new Set<string>([]);
 
-/** Placeholder credits in galleries on 2026-11-01 (+1 2026-11-02: MMX 01, its invented Commons credit replaced by an honest placeholder). Ratchet: lower it as they are fixed. */
-const PLACEHOLDER_CEILING = 412;
+/** Placeholder credits in galleries. 411 on 2026-11-01; on 2026-11-02 412 (MMX 01 honest placeholder), 409 (Galileo), 380 (credit-placeholders-find batch 1). Ratchet: lower it as they are fixed. */
+const PLACEHOLDER_CEILING = 380;
 
 interface Row {
   path: string;

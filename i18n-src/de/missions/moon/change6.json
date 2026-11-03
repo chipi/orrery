@@ -15,7 +15,7 @@
     },
     {
       "met": 5,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Einschwenken in die Mondumlaufbahn.",
       "type": "nominal"
     },
@@ -44,5 +44,37 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Oberstufe YZ-1 der Long March 5"
+  "vehicle_stage": "Oberstufe YZ-1 der Long March 5",
+  "flight_events": [
+    {
+      "met": 1.04,
+      "label": "MCC-1",
+      "description": "Erste Nachkorrektur nach dem Einschuss zum Mond."
+    },
+    {
+      "met": 1.78,
+      "label": "MCC-2",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 2.52,
+      "label": "MCC-3",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 3,
+      "label": "MCC-4",
+      "description": "Feinkorrektur zur Flugmitte."
+    },
+    {
+      "met": 3.27,
+      "label": "MCC-5 — letzte vor dem Einschwenken in die Mondumlaufbahn",
+      "description": "Letzte Anflugausrichtung."
+    },
+    {
+      "met": 48.6,
+      "label": "Einschuss Richtung Erde",
+      "description": "2024-06-21. Der Orbiter verließ die Mondumlaufbahn auf einer Rückkehrbahn."
+    }
+  ]
 }

@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "derde vastestoftrap Star 48BV (Delta IV Heavy: kern + 2 boosters)"
+  "vehicle_stage": "derde vastestoftrap Star 48BV (Delta IV Heavy: kern + 2 boosters)",
+  "flight_events": [
+    {
+      "met": 985,
+      "label": "Zwaartekrachtassist bij Venus nr. 4",
+      "description": "2021-02-20. De vierde Venus-assist verkleint het perihelium verder, richting het doel van 9,86 R☉."
+    }
+  ]
 }

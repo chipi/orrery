@@ -51,5 +51,17 @@
       "type": "warning"
     }
   ],
-  "vehicle_stage": "المرحلة العليا الصلبة Star 48B PAM-D"
+  "vehicle_stage": "المرحلة العليا الصلبة Star 48B PAM-D",
+  "flight_events": [
+    {
+      "met": 70,
+      "label": "TCM-2",
+      "description": "تحسين في منتصف الرحلة."
+    },
+    {
+      "met": 160,
+      "label": "TCM-3",
+      "description": "تعديل الاقتراب نحو القطع الناقص المستهدف في سهل ميريدياني."
+    }
+  ]
 }

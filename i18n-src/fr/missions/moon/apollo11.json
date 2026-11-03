@@ -51,5 +51,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Saturn V S-IVB (troisième étage)"
+  "vehicle_stage": "Saturn V S-IVB (troisième étage)",
+  "flight_events": [
+    {
+      "met": 1.4,
+      "label": "MCC-2 — correction de trajectoire",
+      "description": "Retouche de trajectoire à mi-croisière. Le plan de mission prévoyait 4 MCC ; seule la MCC-2 a été nécessaire, car l'injection translunaire avait été assez précise pour que les trois autres soient annulées."
+    },
+    {
+      "met": 5.64,
+      "label": "Injection transterrestre",
+      "description": "1969-07-22. Allumage du moteur SPS pour quitter l'orbite lunaire. Il place Apollo 11 sur une trajectoire de retour libre vers la Terre."
+    }
+  ]
 }

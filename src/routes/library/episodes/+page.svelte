@@ -29,6 +29,7 @@
   import { CURATOR_FULL_TOUR } from '$lib/audio-tour';
   import { fmtTime } from '$lib/audio-format';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
   import { dataLoadFailed } from '$lib/data/core';
 
   let provenance = $state<AudioProvenanceManifest | null>(null);
@@ -37,7 +38,11 @@
   let loaded = $state(false);
 
   $effect(() => {
-    void Promise.all([getAudioProvenanceManifest(), getEpisodeSourcesManifest(), getSourceLogos()])
+    void Promise.all([
+      getAudioProvenanceManifest(),
+      getEpisodeSourcesManifest(),
+      getSourceLogos(getLocale()),
+    ])
       .then(([p, s, l]) => {
         provenance = p;
         sources = s;

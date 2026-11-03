@@ -44,5 +44,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "terzo stadio a propellente solido Star 48BV (Delta IV Heavy: corpo centrale + 2 booster)"
+  "vehicle_stage": "terzo stadio a propellente solido Star 48BV (Delta IV Heavy: corpo centrale + 2 booster)",
+  "flight_events": [
+    {
+      "met": 985,
+      "label": "Fionda gravitazionale di Venere n. 4",
+      "description": "2021-02-20. La quarta fionda di Venere riduce ancora il perielio verso l'obiettivo di 9,86 R☉."
+    }
+  ]
 }

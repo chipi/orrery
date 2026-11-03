@@ -20,5 +20,27 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Delta II Star-48B (derde trap)"
+  "vehicle_stage": "Delta II Star-48B (derde trap)",
+  "flight_events": [
+    {
+      "met": 508,
+      "label": "Mars — zwaartekrachtassist",
+      "description": "Dichtste nadering 549 km op 2009-02-17. De assist van Mars leverde ongeveer 2,6 km/s op — genoeg om na nog twee jaar spiraleren op ionenstuwing de planetoïde Vesta te bereiken. Zonder die assist had Dawn twee keer zoveel stuwstof of twee keer zoveel reistijd nodig gehad."
+    },
+    {
+      "met": 1388,
+      "label": "Intrede in een baan om Vesta",
+      "description": "Ingevangen in een baan om Vesta op 2011-07-16 door voortdurende ionenstuwing — een chemische intredebrandstap was niet nodig, omdat de ionenstuwing de geleidelijke nadering verzorgde. Dawn bracht 14 maanden in een baan om Vesta door, bracht deze gedifferentieerde protoplaneet van 530 km doorsnede in kaart en bevestigde dat het inslagbekken Rheasilvia bij de zuidpool de bron is van de HED-meteorieten die de aarde bereiken."
+    },
+    {
+      "met": 1805,
+      "label": "Vertrek van Vesta — ionenspiraal naar Ceres",
+      "description": "Vertrek van Vesta op 2012-09-05. De ionenmotoren verwijdden de spiraal 2,5 jaar lang naar buiten, richting Ceres — de eerste interplanetaire overdracht tussen twee hemellichamen met voortdurende lage stuwkracht. Het traject verbruikte ongeveer 390 kg xenon."
+    },
+    {
+      "met": 2718,
+      "label": "Intrede in een baan om Ceres",
+      "description": "Ingevangen in een baan om Ceres op 2015-03-06 — de eerste ruimtesonde in een baan om een dwergplaneet en de eerste die om twee buitenaardse hemellichamen draaide. Daalde tegen 2018 in een spiraal af naar een lage karteringsbaan op 35 km hoogte. Op 2018-10-31 raakte de hydrazine voor de standregeling op; de sonde blijft in een stabiele baan om Ceres, een volgens de regels van planetaire bescherming langdurig beschermd planetair monument."
+    }
+  ]
 }

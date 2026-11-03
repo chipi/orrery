@@ -15,7 +15,7 @@
     },
     {
       "met": 22.2,
-      "label": "MOI",
+      "label": "LOI",
       "note": "Maanbaaninsertie (met meerdere ontstekingen voor baanverhoging rond de Aarde en de Maan).",
       "type": "nominal"
     },
@@ -44,5 +44,42 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "cryogene bovenste trap C25 van de LVM3"
+  "vehicle_stage": "cryogene bovenste trap C25 van de LVM3",
+  "flight_events": [
+    {
+      "met": 17.8,
+      "label": "Injectie richting de maan",
+      "description": "Laatste brandstap in het perigeum na 18 dagen geleidelijke verhoging van de baan om de aarde — dezelfde goedkope overdracht naar de maan die ISRO sinds Chandrayaan-1 gebruikt."
+    },
+    {
+      "met": 23.35,
+      "label": "Verlaging van de maanbaan nr. 1",
+      "description": "2023-08-06. Eerste brandstap na de invangst door de maan: de baan zakt naar 170 × 4.313 km."
+    },
+    {
+      "met": 26.2,
+      "label": "Verlaging van de maanbaan nr. 2",
+      "description": "2023-08-09. Tweede brandstap, die de baan dichter bij een vrijwel cirkelvormige brengt."
+    },
+    {
+      "met": 31.2,
+      "label": "Verlaging van de maanbaan nr. 3",
+      "description": "2023-08-14. Derde verlagingsbrandstap."
+    },
+    {
+      "met": 33.1,
+      "label": "Verlaging van de maanbaan nr. 4",
+      "description": "2023-08-16. Laatste verlagingsbrandstap: een vrijwel cirkelvormige baan van 153 × 163 km."
+    },
+    {
+      "met": 35,
+      "label": "Afremming van de lander nr. 1",
+      "description": "2023-08-18. De eerste afremming van Vikram verlaagt zijn baan naar 113 × 157 km."
+    },
+    {
+      "met": 36.5,
+      "label": "Afremming van de lander nr. 2",
+      "description": "De tweede afremming brengt Vikram in de lage afdalingsbaan, klaar voor de landingspoging."
+    }
+  ]
 }

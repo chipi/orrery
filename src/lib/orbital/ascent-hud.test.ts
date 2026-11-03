@@ -2,6 +2,8 @@ import { describe, it, expect } from 'vitest';
 import {
   IGNITION_T_S,
   INJECTION_COAST_S,
+  INJECTION_BURN_S,
+  payloadSepTFor,
   buildAscentBeats,
   ascentStatus,
   countdownSeconds,
@@ -87,8 +89,23 @@ describe('ascentStatus', () => {
     expect(ascentStatus(-1, beats)).toBe('IGNITION SEQUENCE');
     expect(ascentStatus(5, beats)).toBe('LIFTOFF');
     expect(ascentStatus(30, beats)).toBe('ASCENT'); // past liftoff, before Max-Q
-    expect(ascentStatus(120, beats)).toBe('MAX-Q');
+    expect(ascentStatus(70, beats)).toBe('MAX-Q');
     expect(ascentStatus(305, beats)).toBe('SECO');
+  });
+
+  it('lets an event label go after its beat — no "FAIRING" minutes after the fairing fell', () => {
+    const ev: AscentBeat[] = [
+      { label: 'MAX-Q', t: 60 },
+      { label: 'STAGE SEP', t: 130 },
+      { label: 'FAIRING', t: 190 },
+      { label: 'SECO', t: 480 },
+    ];
+    expect(ascentStatus(120, ev)).toBe('ASCENT');
+    expect(ascentStatus(140, ev)).toBe('STAGE SEP');
+    expect(ascentStatus(195, ev)).toBe('FAIRING');
+    expect(ascentStatus(300, ev)).toBe('ASCENT');
+    // States hold: once in orbit / engines off it stays so.
+    expect(ascentStatus(900, ev)).toBe('SECO');
   });
 
   it('honours a custom ignition boundary', () => {
@@ -126,5 +143,23 @@ describe('padState', () => {
     expect(lit.stageIndex).toBe(0);
     expect(lit.thrustN).toBe(summary.states[0].thrustN);
     expect(lit.thrustN).toBeGreaterThan(0);
+  });
+});
+
+describe('payloadSepTFor', () => {
+  const d = 500;
+  it('is undefined with no injection beat (the spacecraft leaves at SECO)', () => {
+    expect(payloadSepTFor(d, null)).toBeUndefined();
+  });
+  it('rides the stage through the whole burn by default', () => {
+    expect(payloadSepTFor(d, {})).toBe(d + INJECTION_COAST_S + INJECTION_BURN_S);
+  });
+  it('deploys mid-coast before a kick-stage-only burn (Shuttle + IUS)', () => {
+    expect(payloadSepTFor(d, { kickStage: true })).toBe(d + INJECTION_COAST_S / 2);
+  });
+  it('parts halfway through the burn when the stage fires first (Delta II + Star 48B)', () => {
+    expect(payloadSepTFor(d, { kickStage: true, stageFiresFirst: true })).toBe(
+      d + INJECTION_COAST_S + INJECTION_BURN_S / 2,
+    );
   });
 });

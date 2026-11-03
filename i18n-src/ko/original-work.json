@@ -1917,5 +1917,90 @@
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
     }
+  },
+  "icons": {
+    "menu": {
+      "title": "메뉴 버튼",
+      "what": "서랍이 열리면 닫기 X로 접히는 세 줄 햄버거 아이콘.",
+      "where": "내비게이션(모바일)",
+      "variants": {
+        "closed": "닫힘",
+        "open": "열림"
+      }
+    },
+    "audio-wave": {
+      "title": "오디오 투어 파형",
+      "what": "안내 오디오 투어를 여는 '〜' 표시. 재생 중에는 맥박처럼 깜박입니다.",
+      "where": "내비게이션 · 홈 버튼"
+    },
+    "science-lens": {
+      "title": "과학 렌즈",
+      "what": "가운데 점(꺼짐) 또는 조준선(켜짐)이 있는 바깥 고리 — 렌즈를 켜고 끕니다.",
+      "where": "내비게이션",
+      "variants": {
+        "off": "꺼짐",
+        "on": "켜짐"
+      }
+    },
+    "settings-gear": {
+      "title": "그래픽 설정",
+      "what": "화질·그래픽 설정 패널을 여는 살이 여덟 개인 톱니바퀴.",
+      "where": "내비게이션"
+    },
+    "fullscreen": {
+      "title": "전체 화면",
+      "what": "바깥(들어가기) 또는 안쪽(나가기)을 향한 모서리 괄호. 파노라마 전체 화면용.",
+      "where": "달 · 화성 파노라마",
+      "variants": {
+        "enter": "들어가기",
+        "exit": "나가기"
+      }
+    },
+    "conic": {
+      "title": "원뿔 곡선 아이콘",
+      "what": "궤도 오버레이용 원 / 타원 / 포물선 / 쌍곡선 기호.",
+      "where": "비행의 궤도 렌즈",
+      "variants": {
+        "circle": "원",
+        "ellipse": "타원",
+        "parabola": "포물선",
+        "hyperbola": "쌍곡선"
+      }
+    },
+    "info-chip": {
+      "title": "과학 칩",
+      "what": "모든 그림을 /science의 설명으로 연결하는 기하학적 “i” 기호.",
+      "where": "전체"
+    },
+    "vehicle": {
+      "title": "발사체",
+      "what": "페어링, 착륙 다리, 둥근 창이 있는 로켓.",
+      "where": "임무 패널"
+    },
+    "spacecraft": {
+      "title": "우주선 / 탑재체",
+      "what": "태양 전지판, 안테나 붐, 자세 표지가 달린 중앙 버스.",
+      "where": "임무 패널"
+    },
+    "trajectory-arrow": {
+      "title": "궤적 화살표",
+      "what": "화살촉이 달린 호 모양의 비행 경로 — '이것 비행하기'/전이 버튼.",
+      "where": "임무 패널 · 계획"
+    },
+    "mission-orbit": {
+      "title": "임무 기호",
+      "what": "호 모양 경로와 표지 점이 있는 궤도 고리 — 함대 임무로 가는 링크.",
+      "where": "함대 항목 패널"
+    },
+    "share": {
+      "title": "공유",
+      "what": "사각형과 위쪽 화살표 — 현재 화면을 공유합니다(시스템 공유 시트 / 링크 복사).",
+      "where": "내비게이션"
+    },
+    "sensory": {
+      "title": "감각 레이어",
+      "what": "파형이 가로지르는 나침반 바늘 — 감각 설정(소리 / 진동 / 기울기)을 엽니다.",
+      "where": "내비게이션"
+    }
   }
 }

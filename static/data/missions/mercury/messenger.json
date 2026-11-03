@@ -64,6 +64,10 @@
     }
   ],
   "flight": {
+    "arrival": {
+      "orbit_insertion_dv_km_s": 0.9,
+      "source": "MESSENGER — Wikipedia (Mercury orbit insertion, ~0.9 km/s)"
+    },
     "events": [
       {
         "met_days": 0,
@@ -200,6 +204,9 @@
           0
         ]
       ]
+    },
+    "launch": {
+      "departure": "stage-then-kick"
     }
   }
 }

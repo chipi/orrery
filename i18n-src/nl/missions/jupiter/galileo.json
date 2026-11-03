@@ -21,5 +21,37 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Inertial Upper Stage (IUS, bovenste trap)"
+  "vehicle_stage": "Inertial Upper Stage (IUS, bovenste trap)",
+  "flight_events": [
+    {
+      "met": 115,
+      "label": "Venus — zwaartekrachtassist",
+      "description": "Dichtste nadering 16.000 km van Venus op 1990-02-10. Hier begint het VEEGA-profiel (zwaartekrachtassists Venus-Aarde-Aarde): Galileo onttrekt baanenergie aan Venus om zijn aphelium naar buiten te schuiven. De warmtebelasting bij Venus overschreed de oorspronkelijke specificatie; ingenieurs brachten isolatie aan op de antennemast, die de antenne met hoge versterking later dicht hield."
+    },
+    {
+      "met": 416,
+      "label": "Aarde nr. 1 — zwaartekrachtassist",
+      "description": "Dichtste nadering 960 km op 1990-12-08. De eerste van twee flyby's van de aarde; samen buigen ze de baan genoeg af om Jupiter te bereiken. Galileo stuurde ook spectrale waarnemingen van de aarde terug als test voor methoden om leven op te sporen — de eigen planeet bekijken alsof je hem van ver ziet."
+    },
+    {
+      "met": 741,
+      "label": "Gaspra — eerste ontmoeting met een planetoïde",
+      "description": "Dichtste nadering 1.600 km van de planetoïde (951) Gaspra op 1991-10-29. De eerste close-ups van een planetoïde die een ruimtesonde ooit maakte. De onregelmatige vorm van Gaspra, ongeveer 20 km lang, wees op een botsingsfragment van een groter moederlichaam — een bevestiging van de vroege botsingsgeschiedenis van het zonnestelsel."
+    },
+    {
+      "met": 1147,
+      "label": "Aarde nr. 2 — zwaartekrachtassist",
+      "description": "Dichtste nadering 304 km op 1992-12-08 — de laatste assist die nodig was om Jupiter te bereiken. De ontmoeting werd gebruikt om het uitklappen van de antenne met hoge versterking nog eens te testen (hij ging nooit helemaal open; de missie werkte haar hele leven via de antenne met lage versterking, met uitgebreide oplossingen voor datacompressie)."
+    },
+    {
+      "met": 1410,
+      "label": "Ida en Dactyl — tweede ontmoeting met een planetoïde",
+      "description": "Dichtste nadering 2.400 km van de planetoïde (243) Ida op 1993-08-28. Ontdekking van Ida's piepkleine maan Dactyl (1,4 km doorsnede) — het eerste bevestigde dubbelplanetoïdenstelsel. Dat planetoïden stabiele manen kunnen hebben, veranderde de modellen van hun dynamica."
+    },
+    {
+      "met": 2094,
+      "label": "Afkoppeling van de sonde",
+      "description": "Galileo's atmosfeersonde koppelde vijf maanden voor aankomst bij Jupiter af, op 1995-07-13, op een iets andere ballistische baan gericht op de atmosfeer van de reuzenplaneet. De sonde had geen voortstuwing — haar aankomstgeometrie werd volledig bepaald door de afkoppelmanoeuvre."
+    }
+  ]
 }

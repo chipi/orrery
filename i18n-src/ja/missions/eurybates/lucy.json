@@ -68,5 +68,12 @@
       "type": "info"
     }
   ],
-  "vehicle_stage": "Centaur 上段（Atlas V 401）"
+  "vehicle_stage": "Centaur 上段（Atlas V 401）",
+  "flight_events": [
+    {
+      "met": 1154,
+      "label": "地球スイングバイ2回目",
+      "description": "2024-12-13（再設計したミッション計画による）。"
+    }
+  ]
 }

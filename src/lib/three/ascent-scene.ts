@@ -319,6 +319,34 @@ export function buildPayload(
     model.position.y += taperH - baseOffset;
     holder.add(taper);
   }
+  // Apollo CSMs fly under the launch escape tower (~10 m, a 0.66 m motor on a truss), jettisoned
+  // early in the ascent with the boost protective cover.
+  if (craft && launcherHeightM && spacecraftId && APOLLO_CSM_MISSIONS.has(spacecraftId)) {
+    const top = new THREE.Box3().setFromObject(holder).max.y;
+    const les = new THREE.Group();
+    const white = new THREE.MeshStandardMaterial({ color: 0xe9e7e1, roughness: 0.5 });
+    const red = new THREE.MeshStandardMaterial({ color: 0x9c2a22, roughness: 0.6 });
+    const m = k; // metres → scene units
+    const truss = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.33 * m, 0.95 * m, 3 * m, 4, 1, true),
+      red,
+    );
+    truss.position.y = 1.5 * m;
+    truss.rotation.y = Math.PI / 4;
+    const motor = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.33 * m, 0.33 * m, 4.7 * m, 20),
+      white,
+    );
+    motor.position.y = 5.35 * m;
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(0.33 * m, 1.6 * m, 20), white);
+    nose.position.y = 8.5 * m;
+    const canard = new THREE.Mesh(new THREE.CylinderGeometry(0.06 * m, 0.06 * m, 0.6 * m, 8), red);
+    canard.position.y = 9.6 * m;
+    les.add(truss, motor, nose, canard);
+    les.position.y = top - 0.4 * m;
+    holder.add(les);
+    holder.userData.les = les;
+  }
   // Orion flies under the launch-abort tower and panels, not a payload fairing: once they
   // jettison it rides in the open, so the scene shows it rather than a stowed shroud.
   if (orion) holder.userData.exposedAfterFairing = true;
@@ -333,6 +361,16 @@ export function buildPayload(
   }
   return holder;
 }
+
+/** Missions whose payload is a full Apollo CSM (with its launch escape tower). */
+const APOLLO_CSM_MISSIONS = new Set([
+  'apollo7',
+  'apollo9',
+  'skylab-2',
+  'skylab-3',
+  'skylab-4',
+  'apollo-soyuz',
+]);
 
 /** Missions whose payload is Orion. */
 const ORION_MISSIONS = /^artemis\d+$/;
@@ -1104,6 +1142,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       // no solar-wing deploy). At SECO it separates from the spent upper stage,
       // which drifts back the other way (below).
       fairingGroup.visible = false;
+      const les = payload.userData.les as THREE.Object3D | undefined;
+      if (les) les.visible = s.t < (fairingT ?? (secoT != null ? secoT * 0.35 : Infinity));
       stowedPayload.visible = false;
       payload.visible = true;
       payload.position.y = payloadBaseY + pp * vehLen * 1.1;

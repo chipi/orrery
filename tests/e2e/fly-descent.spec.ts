@@ -82,4 +82,28 @@ test.describe('descent EDL HUD (desktop)', () => {
     await page.waitForURL(/\/moon\?.*site=beresheet/, { timeout: 65_000 });
     expect(page.url()).toContain('from=descent');
   });
+
+  // One mission per descent archetype beyond the two above: each mounts its EDL act with a
+  // live status and no page error. Covers the stacks the Apollo / Curiosity specs never load.
+  for (const mission of [
+    'luna9', // LUNA_DIRECT_IMPACT
+    'spirit', // MARS_AIRBAG
+    'insight', // MARS_PARACHUTE_RETRO
+    'starship-demo', // MARS_PROPULSIVE
+    'venera-13', // VENUS_AEROSHELL
+    'hayabusa2', // ASTEROID_TOUCH_AND_GO
+    'rosetta', // COMET_HARPOON
+    'huygens', // TITAN_PARACHUTE
+    'galileo', // JUPITER_PROBE
+  ]) {
+    test(`${mission} descent mounts with a live EDL status`, async ({ page }) => {
+      const errors: string[] = [];
+      page.on('pageerror', (e) => errors.push(e.message));
+      await enterDescent(page, mission);
+      await expect(page.locator('[data-testid="descent-mission"]')).not.toBeEmpty();
+      await expect(page.locator('[data-testid="descent-status"]')).not.toBeEmpty();
+      await expect(page.locator('.descent .stage canvas')).toBeAttached();
+      expect(errors).toEqual([]);
+    });
+  }
 });

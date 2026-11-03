@@ -9,7 +9,6 @@ import {
   type TrajectoryOverride,
 } from './fly-mission-apply';
 import { ARC_STEPS } from './fly-moon-arc';
-import { earthPos } from '$lib/physics/transfer/mission-arc';
 import type { Mission } from '$types/mission';
 import type { LocalizedScenario } from '$types/scenario';
 
@@ -400,43 +399,6 @@ describe('computeMissionApply — trajectoryOverride / spline branch', () => {
     expect(r.outPts.length).toBe(500);
     // Grand-tour splines are one-way — return arc is empty.
     expect(r.retPts).toEqual([]);
-  });
-
-  it("a round trip's return_waypoints become the return arc, ending on Earth", () => {
-    const hayabusa2 = makeMission({
-      round_trip: true,
-      dest: 'ASTEROID',
-      id: 'hayabusa2',
-      departure_date: '2014-12-03',
-      transit_days: 1302,
-      flight: {
-        events: [
-          { met_days: 0, type: 'launch', label: 'Launch' },
-          { met_days: 1302, type: 'arrival', label: 'Ryugu rendezvous' },
-          { met_days: 2194, type: 'earth_return', label: 'Earth re-entry' },
-        ],
-      },
-    } as Partial<Mission>);
-    const out = [
-      { date: '2014-12-03', label: 'Launch', x: 1, y: 0, z: 0 },
-      { date: '2018-06-27', label: 'Ryugu rendezvous', x: 1.1, y: 0, z: 0.2 },
-    ];
-    const home = [
-      { date: '2018-06-27', label: 'Ryugu rendezvous', x: 1.1, y: 0, z: 0.2 },
-      { date: '2019-11-13', x: 0.9, y: 0, z: 0.7 },
-      { date: '2020-12-05', label: 'Earth re-entry', x: 0, y: 0, z: 1 },
-    ];
-    const r = computeMissionApply(hayabusa2, DEFAULTS, { waypoints: out, return_waypoints: home });
-    expect(r.retPts.length).toBe(300);
-    const end = r.retPts[r.retPts.length - 1];
-    const earth = earthPos(r.timeline.arr_day);
-    expect(Math.hypot(end.x - earth.x, end.z - earth.z)).toBeLessThan(0.01);
-    // A one-way mission ignores them.
-    const oneWay = computeMissionApply({ ...hayabusa2, round_trip: false }, DEFAULTS, {
-      waypoints: out,
-      return_waypoints: home,
-    });
-    expect(oneWay.retPts).toEqual([]);
   });
 
   it('spline result has finite x/z coordinates (no NaN leak from waypoint remap)', () => {

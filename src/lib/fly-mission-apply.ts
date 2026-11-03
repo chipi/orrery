@@ -275,8 +275,6 @@ export function flyDestinationOf(m: Pick<Mission, 'id' | 'dest'>): DestinationId
  *  etc.) a trajectory that actually passes through each flyby planet. */
 export interface TrajectoryOverride {
   waypoints: TrajectoryWaypoint[];
-  /** A round trip's way home, arrival at the body → Earth return (generated files). */
-  return_waypoints?: TrajectoryWaypoint[];
 }
 
 export function computeMissionApply(
@@ -328,9 +326,8 @@ export function computeMissionApply(
     // raw from /explore for shape — their large y values give the
     // trajectory its 3D climb between the ecliptic-anchored flybys.
     let splineOut: Vec2[] | null = null;
-    let splineRet: Vec2[] = [];
     if (trajectoryOverride && trajectoryOverride.waypoints.length >= 2 && m.departure_date) {
-      const remap = (wp: TrajectoryWaypoint, endsHere = false): TrajectoryWaypoint => {
+      const remap = (wp: TrajectoryWaypoint): TrajectoryWaypoint => {
         const planet = wp.label ? labelToPlanetId(wp.label) : null;
         if (!planet) return wp; // cruise waypoint — use /explore data raw
         const met = parseWaypointDateToMet(wp.date, m.departure_date!);
@@ -353,7 +350,7 @@ export function computeMissionApply(
         const label = wp.label ?? '';
         const isLaunch = /^launch/i.test(label);
         const isFinalArrival = /insertion|orbit insertion|arrival|edl|edl_or_oi/i.test(label);
-        const isIntermediateFlyby = !isLaunch && !isFinalArrival && !endsHere;
+        const isIntermediateFlyby = !isLaunch && !isFinalArrival;
         // Planet visual radii (mirror of DEST_STYLE in fly-helio-scene)
         // — kept here so the math layer doesn't import Three.js.
         const FLYBY_RADIUS_AU: Record<string, number> = {
@@ -407,18 +404,6 @@ export function computeMissionApply(
         };
       };
       const remapped = trajectoryOverride.waypoints.map((wp) => remap(wp));
-      // A round trip's way home (generated files carry it): from arrival at the body to Earth
-      // on the return day — the span spacecraftPos maps the return arc over.
-      const home = trajectoryOverride.return_waypoints;
-      if (isReturnTrip && home && home.length >= 2) {
-        const homeSamples = buildSplineFromTrajectoryWaypoints(
-          home.map((wp, i) => remap(wp, i === home.length - 1)),
-          m.departure_date,
-          300,
-        );
-        if (homeSamples && homeSamples.length >= 2)
-          splineRet = homeSamples.map((p) => ({ x: p.x, y: p.y, z: p.z }));
-      }
       // Drop any post-arrival waypoints (Cassini's Grand Finale at MET
       // 7269 is in the trajectory file but the mission arc proper ends
       // at SOI MET 2451). Without this clamp, the spline spans MET 0
@@ -452,8 +437,7 @@ export function computeMissionApply(
     if (splineOut) {
       outPts = splineOut;
       arcTimed = true;
-      // One-way, or a round trip's generated way home.
-      retPts = splineRet;
+      retPts = []; // spline missions end at their target; no return flights (scope rule 2026-11-02)
     } else {
       ({ outPts, retPts } = buildHelioArcs(timeline, activeDestination, isReturnTrip, vInfKms));
     }

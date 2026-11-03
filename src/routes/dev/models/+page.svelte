@@ -765,7 +765,8 @@
 
   function buildScene(entry: Entry): Omit<Card, 'container'> {
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(entry.flat ? 0x2a3a58 : 0x05060e);
+    // Slate, not black: navy solar cells and dark hulls must separate from the backdrop.
+    scene.background = new THREE.Color(entry.flat ? 0x2a3a58 : 0x161c28);
     const camera = new THREE.PerspectiveCamera(FOV, 1, 0.001, 10000);
     // Every model is now hero PBR, so all cards get the image-based-lighting
     // environment + a strong sun key, with the flat grey ambient dimmed right
@@ -773,13 +774,15 @@
     const key = new THREE.DirectionalLight(0xfff4d0, 2.6);
     key.position.set(3, 2, 3);
     scene.add(key);
-    const fill = new THREE.DirectionalLight(0x6090ff, 0.15);
-    fill.position.set(-2, -1, -2);
+    const fill = new THREE.DirectionalLight(0xc8d8ff, 0.8);
+    fill.position.set(-3, 0.5, 2);
     scene.add(fill);
-    const rim = new THREE.DirectionalLight(0xffffff, 0.5);
+    const rim = new THREE.DirectionalLight(0xffffff, 1.0);
     rim.position.set(-1, 1.5, -3);
     scene.add(rim);
-    scene.add(new THREE.AmbientLight(0x5a5a72, 0.12));
+    // Studio sky/ground light so the shadow side keeps its colour (the /colophon thumbs read
+    // too dark with a near-black ambient).
+    scene.add(new THREE.HemisphereLight(0xe2ebff, 0x3a3228, 0.9));
     if (renderer) installHeroEnvironment(renderer, scene);
 
     let group: THREE.Group | null = null;
@@ -872,6 +875,8 @@
       try {
         renderer = new THREE.WebGLRenderer({ canvas: sharedCanvas, antialias: true, alpha: true });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.1;
         renderer.setSize(window.innerWidth, window.innerHeight, false);
       } catch (err) {
         console.error('[models] WebGL renderer init failed:', err);
@@ -967,7 +972,9 @@
   }
   .card {
     margin: 0;
-    background: rgba(12, 16, 28, 0.6);
+    /* Transparent: the models render on the shared canvas behind the grid, so a card
+       background veils every thumbnail (they captured ~60 % dark). */
+    background: transparent;
     border: 1px solid rgba(94, 234, 212, 0.18);
     border-radius: 6px;
     overflow: hidden;

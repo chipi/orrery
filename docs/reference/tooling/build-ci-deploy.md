@@ -211,6 +211,10 @@ those thumbnails, e.g. `ONLY='^model-lineup-'`, and leaves every other file alon
 models (`/dev/models`: launchers, spacecraft, showcase craft, the cartoon cast) + procedural scene
 overlays and the live `/fleet` line-up strips, encoded via sharp. New thumbs also need their
 320/640 rungs: `node scripts/vision/add-card-rungs.mjs --extend=images/colophon` (add-only).
+Re-captured thumbs keep their OLD 320/640 rungs (add-card-rungs skips listed widths): refresh
+them with `node scripts/vision/refresh-card-rungs.mjs static/images/colophon/model-*.webp`.
+The thumbnails are lit by `/dev/models`' card scenes (studio lights, ACES); the cards must stay
+transparent over the shared canvas — a card background veiled every thumb ~60 % dark until 2026-11-03.
 **When** — When colophon model/scene thumbnails need refreshing.
 **I/O** — Writes `static/images/colophon/`.
 **Gotchas** — Connects to an ALREADY-RUNNING dev server (does not spawn one) — never kill

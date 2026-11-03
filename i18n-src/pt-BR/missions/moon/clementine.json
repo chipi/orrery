@@ -41,17 +41,17 @@
   "vehicle_stage": "estágio de impulso Star-37 da sonda (Titan II G até a órbita terrestre baixa)",
   "flight_events": [
     {
-      "met": 0.5,
+      "met": 9,
       "label": "Injeção translunar",
-      "description": "Queimas de faseamento levaram a Clementine da órbita terrestre baixa a uma trajetória translunar."
+      "description": "1994-02-03, após oito dias de verificação em órbita terrestre baixa. O motor de propelente sólido STAR 37FM colocou a Clementine em uma órbita de faseamento que passou duas vezes pela Terra antes de chegar à Lua."
     },
     {
-      "met": 7,
+      "met": 10,
       "label": "TCM-1",
       "description": "Primeira limpeza após a injeção translunar."
     },
     {
-      "met": 7.24,
+      "met": 10.24,
       "label": "TCM-2",
       "description": "Refinamento no meio do cruzeiro."
     },

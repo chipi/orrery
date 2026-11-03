@@ -41,17 +41,17 @@
   "vehicle_stage": "탐사선에 딸린 Star-37 킥 단 (Titan II G는 지구 저궤도까지)",
   "flight_events": [
     {
-      "met": 0.5,
+      "met": 9,
       "label": "달 전이 궤도 진입",
-      "description": "위상 조정 분사로 Clementine이 지구 저궤도에서 달 전이 궤도로 옮겨 갔다."
+      "description": "1994-02-03, 지구 저궤도에서 8일간 점검을 마친 뒤. 고체 연료 모터 STAR 37FM이 Clementine을 위상 조정 궤도에 올렸고, 탐사선은 달에 도착하기 전 지구 곁을 두 번 지나갔다."
     },
     {
-      "met": 7,
+      "met": 10,
       "label": "TCM-1",
       "description": "달 전이 궤도 진입 후 첫 정리."
     },
     {
-      "met": 7.24,
+      "met": 10.24,
       "label": "TCM-2",
       "description": "순항 중간 정밀 조정."
     },

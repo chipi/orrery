@@ -41,17 +41,17 @@
   "vehicle_stage": "Kick-Stufe Star-37 der Sonde (Titan II G bis in eine niedrige Erdumlaufbahn)",
   "flight_events": [
     {
-      "met": 0.5,
+      "met": 9,
       "label": "Einschuss Richtung Mond",
-      "description": "Phasengesteuerte Zündungen brachten Clementine von einer niedrigen Erdumlaufbahn auf eine Bahn zum Mond."
+      "description": "1994-02-03, nach acht Tagen Erprobung in einer niedrigen Erdumlaufbahn. Der Feststoffmotor STAR 37FM brachte Clementine auf eine Phasenschleife, die zweimal an der Erde vorbeiführte, bevor sie den Mond erreichte."
     },
     {
-      "met": 7,
+      "met": 10,
       "label": "TCM-1",
       "description": "Erste Nachkorrektur nach dem Einschuss zum Mond."
     },
     {
-      "met": 7.24,
+      "met": 10.24,
       "label": "TCM-2",
       "description": "Feinkorrektur zur Flugmitte."
     },

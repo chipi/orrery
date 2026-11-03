@@ -41,17 +41,17 @@
   "vehicle_stage": "探测器自带的 Star-37 踢级（Titan II G 只送到近地轨道）",
   "flight_events": [
     {
-      "met": 0.5,
+      "met": 9,
       "label": "地月转移入射",
-      "description": "调相点火把 Clementine 从近地轨道送上地月转移轨道。"
+      "description": "1994-02-03，在近地轨道完成八天检测后。STAR 37FM 固体发动机将 Clementine 送入调相环路轨道，探测器两次飞掠地球后抵达月球。"
     },
     {
-      "met": 7,
+      "met": 10,
       "label": "TCM-1",
       "description": "地月转移入射后的首次清理。"
     },
     {
-      "met": 7.24,
+      "met": 10.24,
       "label": "TCM-2",
       "description": "巡航中途精修。"
     },

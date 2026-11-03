@@ -41,17 +41,17 @@
   "vehicle_stage": "etapa de impulso Star-37 de la sonda (Titan II G hasta una órbita terrestre baja)",
   "flight_events": [
     {
-      "met": 0.5,
+      "met": 9,
       "label": "Inyección translunar",
-      "description": "Unos encendidos de fase llevaron a Clementine de la órbita terrestre baja a una trayectoria translunar."
+      "description": "1994-02-03, tras ocho días de verificación en órbita terrestre baja. El motor de combustible sólido STAR 37FM llevó a Clementine a un bucle de fase que pasó dos veces junto a la Tierra antes de llegar a la Luna."
     },
     {
-      "met": 7,
+      "met": 10,
       "label": "TCM-1",
       "description": "Primera limpieza tras la inyección translunar."
     },
     {
-      "met": 7.24,
+      "met": 10.24,
       "label": "TCM-2",
       "description": "Ajuste a mitad del crucero."
     },

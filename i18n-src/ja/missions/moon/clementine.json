@@ -41,17 +41,17 @@
   "vehicle_stage": "探査機側の Star-37 キック段（Titan II G は地球低軌道まで）",
   "flight_events": [
     {
-      "met": 0.5,
+      "met": 9,
       "label": "月遷移軌道投入",
-      "description": "位相調整噴射によって Clementine は地球低軌道から月遷移軌道へ移った。"
+      "description": "1994-02-03、低軌道での8日間の点検の後。固体燃料モーター STAR 37FM が Clementine を位相調整ループに投入し、探査機は月に到達する前に2回地球の近くを通過した。"
     },
     {
-      "met": 7,
+      "met": 10,
       "label": "TCM-1",
       "description": "月遷移軌道投入後の最初の後始末。"
     },
     {
-      "met": 7.24,
+      "met": 10.24,
       "label": "TCM-2",
       "description": "巡航中間の精密化。"
     },

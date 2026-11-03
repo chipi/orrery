@@ -2,10 +2,18 @@
   "missionId": "viking1",
   "siteId": "viking1-lander",
   "body": "mars",
-  "landingSite": { "lat": 22.4856, "lon": 312.0228 },
-  "entryState": { "altitudeM": 120000, "velocityMs": 4500, "flightPathAngleDeg": 9 },
-  "entryMassKg": 992,
-  "entryCdA": 14,
+  "landingSite": {
+    "lat": 22.4856,
+    "lon": 312.0228
+  },
+  "entryState": {
+    "altitudeM": 120000,
+    "velocityMs": 4500,
+    "flightPathAngleDeg": 17.6
+  },
+  "entryMassKg": 930,
+  "entryCdA": 14.6,
+  "dynamicGamma": true,
   "retroPropellantKg": 130,
   "archetype": "MARS_PARACHUTE_RETRO",
   "params": {
@@ -18,7 +26,13 @@
     "terminalVelocityMs": 2.4
   },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.altitudeM"
+  ],
   "provenance": [
-    { "l": "Viking Lander EDL — Soffen & Snyder (1976)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C" }
+    {
+      "l": "NSSDCA Viking 1 Lander (Viking Lander EDL — Soffen & Snyder 1976) — entry 4.5 km/s at −17.6° (relative), 930 kg, β 63.7 kg/m²; chute at ~6 km, terminal engines from ~1.5 km, touchdown 2.4 m/s. Entry-interface altitude not found in the sources read",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C"
+    }
   ]
 }

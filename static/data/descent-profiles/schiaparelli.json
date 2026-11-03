@@ -2,23 +2,44 @@
   "missionId": "schiaparelli",
   "siteId": "schiaparelli",
   "body": "mars",
-  "landingSite": { "lat": -2.07, "lon": -6.21 },
-  "entryState": { "altitudeM": 125000, "velocityMs": 5800, "flightPathAngleDeg": 7.5 },
-  "entryMassKg": 600,
-  "entryCdA": 14,
-  "retroPropellantKg": 4,
+  "landingSite": {
+    "lat": -2.07,
+    "lon": -6.21
+  },
+  "entryState": {
+    "altitudeM": 121000,
+    "velocityMs": 5830,
+    "flightPathAngleDeg": 12.4
+  },
+  "entryMassKg": 577,
+  "entryCdA": 7.2,
+  "dynamicGamma": true,
+  "retroPropellantKg": 1,
   "archetype": "MARS_PARACHUTE_RETRO",
   "params": {
-    "chuteDeployAltM": 8000,
-    "terminalHandoffAltM": 1500,
-    "parachuteCdA": 120,
+    "chuteDeployAltM": 12000,
+    "terminalHandoffAltM": 3900,
+    "parachuteCdA": 62,
     "heatshieldKg": 80,
     "backshellKg": 120,
     "ispS": 225,
     "terminalVelocityMs": 2.4
   },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA",
+    "terminalHandoffAltM",
+    "retroPropellantKg"
+  ],
   "provenance": [
-    { "l": "Schiaparelli EDM crash reconstruction — ESA ExoMars 2016", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2016-017B" }
+    {
+      "l": "ESA ExoMars 2016 Schiaparelli Anomaly Inquiry — entry 14:42:22, chute 14:45:23 (~Mach 2), shield off 14:46:03, backshell released early 14:46:49, thrusters 3 s at ~3.7 km, impact 14:47:28 (~150 m/s): an IMU saturation left the attitude ~165° wrong and the radar altitude read negative. 577 kg, 2.4 m shield, 12 m DGB chute",
+      "u": "https://destination-orbite.net/documentations/1567260317467-ESA_ExoMars_2016_Schiaparelli_Anomaly_Inquiry.pdf"
+    },
+    {
+      "l": "Schiaparelli EDM crash reconstruction — ESA ExoMars 2016",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2016-017B"
+    }
   ]
 }

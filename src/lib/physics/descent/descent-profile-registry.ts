@@ -392,6 +392,8 @@ export interface RawDescentProfile {
    *  NOT back these. A test enforces that any Earth profile setting liftToDragRatio/targetDownrangeKm
    *  declares them here, so an invented number can never silently wear real mission-report provenance. */
   estimatedFields?: string[];
+  /** Integrate γ on a ballistic super-circular entry flown at its sourced angle (descent-physics). */
+  dynamicGamma?: boolean;
   retroPropellantKg?: number;
   survivableTouchdownMs?: number;
   archetype: ArchetypeName;
@@ -414,6 +416,7 @@ export function expandDescentProfile(raw: RawDescentProfile): DescentProfile {
     entryCdA: raw.entryCdA,
     liftToDragRatio: raw.liftToDragRatio,
     targetDownrangeKm: raw.targetDownrangeKm,
+    dynamicGamma: raw.dynamicGamma,
     retroPropellantKg: raw.retroPropellantKg,
     phases: build(raw.params ?? {}),
     survivableTouchdownMs: raw.survivableTouchdownMs ?? ARCHETYPE_SURVIVABLE[raw.archetype],

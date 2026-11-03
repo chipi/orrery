@@ -72,10 +72,15 @@ ascent beats do not fire. (Apollo 11 and 17 have them.)
 
 ### 4. Generic stand-ins where the real vehicle differs
 
-- **Descent stacks on the generic lunar fallback:** Luna 16/17/21/24, Chang'e 3–6,
-  Chandrayaan-3, SLIM, Beresheet, Blue Moon MK1, Artemis IV/V.
-- **Generic per-body stacks:** Hayabusa2 (asteroid), Rosetta/Philae (comet), Huygens (Titan).
-- **Missing landed model:** Tianwen-1's Zhurong (the profile and EDL stack exist).
+- **Missing landed model:** Tianwen-1's Zhurong (the profile and EDL stack exist); its descent
+  falls back to the generic Mars lander.
+- **One generic bus for every small-body sampler:** Hayabusa, Hayabusa2, OSIRIS-REx and NEAR
+  Shoemaker all descend as the same "asteroid sampler bus".
+
+**Correction (2026-11-03):** the first version listed the Moon landers (Luna, Chang'e,
+Chandrayaan-3, SLIM, Beresheet, Blue Moon, Artemis) and Huygens / Philae as generic. Wrong: the
+lunar stack wraps each mission's own landed model (`moon-lander-models.ts` has all of them),
+and Huygens and Philae have dedicated builders.
 
 ### 5. Real descents with no profile
 
@@ -108,6 +113,31 @@ open question: Curiosity's entry-to-touchdown is widely quoted as about seven mi
   "Titan/Eros pending" corrected, and the stale comment in `+page.svelte` fixed.
 - The `?debug=1` Page tab has an Earth re-entry block but nothing for planetary EDL.
 - e2e covers the Apollo 11 and Curiosity descents only.
+- **Done 2026-11-03:** the FLY debug tab shows the live planetary descent; the descent e2e mounts
+  one mission per archetype (13 specs).
+
+### 8. Mars descents ran several times too long
+
+Every Mars profile entered at an invented 7.5° with too small a ballistic coefficient, so the
+capsule shed its speed high up and floated down for 20–35 minutes. **Done 2026-11-03** from the
+EDL reconstructions (NASA / ESA papers, cited in each profile), with a `dynamicGamma` flag so a
+ballistic entry flown at its sourced angle flattens as it slows, and an engine-out fix (a lander
+whose tanks ran dry used to hold its speed instead of falling):
+
+| Mission | Sourced entry → touchdown | Was | Now |
+| --- | --- | --- | --- |
+| Pathfinder | 306 s | 1,566 s | 317 s |
+| Spirit / Opportunity | ~352 / ~350 s (predicted) | 1,373 / 1,366 s | 329 / 330 s |
+| Phoenix | 446 s | 2,227 s | 442 s |
+| InSight | 349 s | 2,183 s | 390 s |
+| Curiosity | 431.5 s | 548 s | 436 s |
+| Perseverance | 418.7 s | 516 s | 405 s |
+| Schiaparelli (crash) | 306 s, ~150 m/s | 1,351 s, 43.5 m/s | 319 s, 131 m/s |
+| Viking 1 | — (chute ~6 km, 2.4 m/s) | 744 s | 268 s |
+
+Estimates, declared in each profile's `estimatedFields`: Curiosity's and Perseverance's
+bank-averaged L/D (0.17 / 0.18), InSight's Cd·A, Schiaparelli's entry angle, Viking 1's entry
+altitude. **Not done:** Mars 3 and Tianwen-1 (no sourced EDL timeline found).
 
 ## Not checked yet
 

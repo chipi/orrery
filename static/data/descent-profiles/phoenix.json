@@ -2,23 +2,39 @@
   "missionId": "phoenix",
   "siteId": "phoenix",
   "body": "mars",
-  "landingSite": { "lat": 68.22, "lon": -125.7 },
-  "entryState": { "altitudeM": 125000, "velocityMs": 5590, "flightPathAngleDeg": 7.5 },
-  "entryMassKg": 350,
-  "entryCdA": 14,
+  "landingSite": {
+    "lat": 68.22,
+    "lon": -125.7
+  },
+  "entryState": {
+    "altitudeM": 125000,
+    "velocityMs": 5516,
+    "flightPathAngleDeg": 13.16
+  },
+  "entryMassKg": 572.7,
+  "entryCdA": 8.81,
+  "dynamicGamma": true,
   "retroPropellantKg": 45,
   "archetype": "MARS_PARACHUTE_RETRO",
   "params": {
-    "chuteDeployAltM": 8000,
-    "terminalHandoffAltM": 1500,
+    "chuteDeployAltM": 13430,
+    "terminalHandoffAltM": 960,
     "parachuteCdA": 120,
     "heatshieldKg": 60,
     "backshellKg": 100,
     "ispS": 225,
-    "terminalVelocityMs": 2.4
+    "terminalVelocityMs": 2.4,
+    "descentRateGain": 0.1
   },
   "source_tier": "flagship",
   "provenance": [
-    { "l": "Phoenix Mars Lander EDL — NASA/JPL", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A" }
+    {
+      "l": "Phoenix EDL reconstruction (NASA) — entry 5,516 m/s at −13.16°, 572.7 kg, β 65 kg/m² (Cd·A = m/β); chute 227.7 s at 10.79 km areodetic (13.4 km above the −2.64 km site), lander separation 404.85 s, touchdown 446 s at 2.5 m/s",
+      "u": "https://ntrs.nasa.gov/api/citations/20190026499/downloads/20190026499.pdf"
+    },
+    {
+      "l": "Phoenix Mars Lander EDL — NASA/JPL",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A"
+    }
   ]
 }

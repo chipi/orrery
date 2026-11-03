@@ -188,6 +188,14 @@ export interface DescentProfile {
    * this app path is a separate solver — reconcile per ADR-088 Phase 0d). Absent = full lift-up.
    */
   targetDownrangeKm?: number;
+  /**
+   * Integrate the flight-path angle (2-DOF) for a non-lifting super-circular entry too. A real
+   * ballistic Mars entry at its true 12–16° flattens as it sheds speed (the curvature term
+   * outweighs gravity at orbital speed), which is what makes its entry-to-chute time ~4 min;
+   * the fixed-γ default rushes it. Set on profiles flown at their sourced entry angle; a
+   * shallow invented angle would skim out, which is why it is not the default.
+   */
+  dynamicGamma?: boolean;
   /** Descent-stage retro propellant (kg) for the fuel gauge. Default ∞ (never gates). */
   retroPropellantKg?: number;
   /** Ordered EDL phases; the last should end on `ground`. */
@@ -512,7 +520,8 @@ export function integrateDescent(
     // 2-DOF flight-path angle (#419): a free-aerodynamic phase evolves γ (below);
     // every other phase pins it to the profile/default constant. sinG/cosG are
     // read from the live γ at the start of the step (semi-implicit Euler with h).
-    const dynamicalGamma = (subCircular || hasLift) && gammaIsDynamical(phase);
+    const dynamicalGamma =
+      (subCircular || hasLift || profile.dynamicGamma === true) && gammaIsDynamical(phase);
     if (!dynamicalGamma) gammaRad = gammaDegFor(phase, profile) * DEG2RAD;
     const sinG = Math.sin(gammaRad);
     const cosG = Math.cos(gammaRad);
@@ -547,9 +556,11 @@ export function integrateDescent(
       v = cmd.nextSpeedMs;
       const thrustAccel = cmd.thrustAccelMs2; // brake + gravity (retro also holds the vehicle up)
       const thrustN = propUsed < propTotal ? mass * thrustAccel : 0; // engine out if tanks dry
-      if (thrustN <= 0) v = vPrev; // no propellant → guidance can't hold; fall
+      // No propellant → guidance can't hold: the vehicle falls under gravity and drag (it
+      // used to hold its speed, so an engine-out crash like Schiaparelli's hit far too slow).
+      if (thrustN <= 0) v = Math.max(0, vPrev + (g * sinG - drag / Math.max(1, mass)) * dt);
       curThrustN = thrustN;
-      curDragN = 0;
+      curDragN = thrustN > 0 ? 0 : drag;
       curDecelG = thrustN / (mass * G0);
       if (thrustN > 0 && phase.ispS) propUsed += (thrustN / (phase.ispS * G0)) * dt;
     } else {

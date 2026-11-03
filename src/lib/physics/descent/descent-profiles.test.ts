@@ -199,9 +199,10 @@ describe('apollo8 lunar-return skip flight (shipped profile)', () => {
  * Mars guided-lifting entries (#29 Phase 2 · ADR-089). Curiosity/MSL (the first guided Mars entry,
  * L/D 0.24 sourced), Perseverance, and Tianwen-1 fly a bank-steered LIFTING entry at the real ~15°
  * inertial FPA — 2-DOF, not the old fixed-γ ballistic. They must land soft, stay in the Mars g band,
- * and NOT skip (a steep super-circular entry digs in, it doesn't loft). MSL peak ~12 g flown; the
- * model reads ~6.5–8.5 g flying lift-up (no active bank-modulation to dig deeper — same fixed-bank
- * residual as the Earth capsules, documented).
+ * and NOT skip (a steep super-circular entry digs in, it doesn't loft). MSL peak 12.6 g flown
+ * (reconstruction); since 2026-11-03 Curiosity and Perseverance fly their sourced entry state with
+ * a bank-averaged effective L/D tuned to the reconstructed timeline, reading ~9–10 g (was 6.5–8.5
+ * flying full lift-up). The band below admits the flown value; under 6 g would be a regression.
  */
 describe('Mars guided-lifting entries (2-DOF, no skip)', () => {
   for (const id of ['curiosity', 'perseverance', 'tianwen1']) {
@@ -211,9 +212,9 @@ describe('Mars guided-lifting entries (2-DOF, no skip)', () => {
       const { s } = flight(id);
       expect(s.touchdownSuccess).toBe(true);
       expect(s.events.some((e) => e.type === 'skip_out')).toBe(false); // steep enough not to loft
-      // Tight corridor (not the generic Mars [4,18]): the model reads 6.7–8.5 g for these three;
-      // a regression to the loose band would ship silently. Flown MSL ~12 g (fixed-bank residual).
-      expectInRange(s.peakDecel.g, 6, 9, `${id} Mars guided-lifting peak-g`);
+      // Corridor (not the generic Mars [4,18]): the model reads ~7–10 g for these three; the
+      // flown MSL value is 12.6 g, so the band tops out just above it.
+      expectInRange(s.peakDecel.g, 6, 13, `${id} Mars guided-lifting peak-g`);
     });
   }
 });
@@ -229,9 +230,10 @@ describe('Mars guided-lifting entries (2-DOF, no skip)', () => {
 describe('model-authored entry fields are declared as estimates, sourced ones are not', () => {
   // L/D SOURCED per capsule (see docs/reference/capsule-entry-aerodynamics.md); anything with lift
   // NOT in this set has an estimated L/D that must be declared. Perseverance/Tianwen are MSL-class
-  // estimates (only MSL/Curiosity L/D 0.24 is directly cited); Apollo/Gemini/Soyuz/Dragon/Shenzhou
+  // estimates; Curiosity's is too since 2026-11-03 — it flies a bank-averaged effective L/D tuned to
+  // the reconstructed timeline, not the cited 0.24 trim value. Apollo/Gemini/Soyuz/Dragon/Shenzhou
   // are directly sourced.
-  const ESTIMATED_LD = new Set(['perseverance', 'tianwen1']);
+  const ESTIMATED_LD = new Set(['curiosity', 'perseverance', 'tianwen1']);
   // Cd·A sourced only for the Apollo CM family (BC 313.5, NASA); estimated/tuned for everyone else.
   const SOURCED_CDA = new Set([
     'apollo7',

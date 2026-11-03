@@ -70,6 +70,9 @@ const MARS_SKYCRANE: DescentProfile = {
       endTrigger: { type: 'altitude_m', value: 21 },
       ispS: 225,
       jettisonKg: 630,
+      // Same gain the shipped MSL/Mars 2020 profiles fly: at the default the burn ran the
+      // tanks dry (the integrator used to hold speed on an empty tank, which hid it).
+      descentRateGain: 0.1,
       events: ['backshell_sep', 'retro_ignition'],
     },
     {

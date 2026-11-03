@@ -57,13 +57,13 @@
     },
     "arrival": {
       "v_infinity_km_s": 3.04,
-      "entry_velocity_km_s": 5.59,
+      "entry_velocity_km_s": 5.516,
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": null,
       "source": "JPL Phoenix EDL Reconstruction (2008); direct atmospheric entry",
       "edl_system": "parachute_retro",
-      "edl_duration_s": 2227,
+      "edl_duration_s": 442,
       "touchdown_velocity_ms": 2.4
     },
     "totals": {

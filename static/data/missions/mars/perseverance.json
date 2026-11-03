@@ -68,13 +68,13 @@
     },
     "arrival": {
       "v_infinity_km_s": 2.4,
-      "entry_velocity_km_s": 5.4,
+      "entry_velocity_km_s": 5.334,
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": null,
       "source": "NASA Mars 2020 Press Kit (2021-02); JPL Mars 2020 EDL Telemetry",
       "edl_system": "skycrane",
-      "edl_duration_s": 516,
+      "edl_duration_s": 405,
       "touchdown_velocity_ms": 0.75
     },
     "totals": {

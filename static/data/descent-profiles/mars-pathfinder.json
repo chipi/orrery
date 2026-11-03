@@ -2,15 +2,23 @@
   "missionId": "mars-pathfinder",
   "siteId": "mars-pathfinder",
   "body": "mars",
-  "landingSite": { "lat": 19.0949, "lon": 326.7773 },
-  "entryState": { "altitudeM": 125000, "velocityMs": 7300, "flightPathAngleDeg": 7.0 },
-  "entryMassKg": 360,
-  "entryCdA": 10,
+  "landingSite": {
+    "lat": 19.0949,
+    "lon": 326.7773
+  },
+  "entryState": {
+    "altitudeM": 133000,
+    "velocityMs": 7479,
+    "flightPathAngleDeg": 13.65
+  },
+  "entryMassKg": 585.3,
+  "entryCdA": 9.38,
+  "dynamicGamma": true,
   "retroPropellantKg": 15,
   "archetype": "MARS_AIRBAG",
   "params": {
-    "chuteDeployAltM": 9000,
-    "terminalHandoffAltM": 300,
+    "chuteDeployAltM": 8600,
+    "terminalHandoffAltM": 90,
     "parachuteCdA": 60,
     "heatshieldKg": 60,
     "ispS": 200,
@@ -18,6 +26,13 @@
   },
   "source_tier": "flagship",
   "provenance": [
-    { "l": "Mars Pathfinder EDL — Golombek et al. (1997)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-068A" }
+    {
+      "l": "Mars Pathfinder EDL (AIAA 97-3663) — entry at 133 km, 7,479 m/s relative at −13.65°, 585.3 kg, β 62.4 kg/m²; chute 171 s at 8.6 km, RAD ignition 300 s at ~90 m, first impact 306 s",
+      "u": "https://ntrs.nasa.gov/api/citations/19970026945/downloads/19970026945.pdf"
+    },
+    {
+      "l": "Mars Pathfinder EDL — Golombek et al. (1997)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-068A"
+    }
   ]
 }

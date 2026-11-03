@@ -47,6 +47,7 @@
   import { BODY_LABEL } from '$lib/physics/descent/descent-physics-constants';
   import { onLayerChange } from '$lib/science-layers';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import FlightPlan from '$lib/components/FlightPlan.svelte';
   import { DESCENT_FORCE_LAYER_ENTRIES } from '$lib/orbital/descent-force-layers';
 
   interface DescentDossier {
@@ -369,6 +370,9 @@
         <dd>{v}</dd>
       {/each}
     </dl>
+    <div class="plan">
+      <FlightPlan {beats} t={clockT} clock={formatDescentClock} />
+    </div>
   </div>
 
   <div class="timeline">
@@ -655,6 +659,10 @@
     border: 1px solid rgba(127, 212, 255, 0.4);
     border-radius: 3px;
     padding: 1px 4px;
+  }
+  .dossier .plan {
+    margin: 16px -14px 0 0;
+    text-align: left;
   }
   .dossier dl {
     display: grid;

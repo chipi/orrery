@@ -140,6 +140,10 @@ export interface FlightTimelineEvent {
    *  Backfilled from /explore's labeled trajectory waypoints. Optional so
    *  non-iconic missions stay schema-compatible. */
   label?: string;
+  /** The base record's English label when `label` is a locale's translation (set by
+   *  getMission). Logic that reads a label (flyby body, impact, capture burn, lunar
+   *  phases) matches on `label_en ?? label`; display uses `label`. */
+  label_en?: string;
   /** Optional 1-2 sentence description for the milestone — surfaces in /fly
    *  as the expanded-card treatment when the milestone is "active" (within
    *  ±15 days of the simulation time). Examples: "Venus #1 — first of four

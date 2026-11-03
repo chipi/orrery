@@ -224,10 +224,10 @@ export interface FlyFrameRefs extends Pick<
 
 /** MET (days) of a mission's kinetic-impact event (DART), or null. */
 function impactEventOf(mission: {
-  flight?: { events?: { type: string; met_days?: number; label?: string }[] };
+  flight?: { events?: { type: string; met_days?: number; label?: string; label_en?: string }[] };
 }): number | null {
   const e = mission.flight?.events?.find(
-    (x) => x.type === 'edl_or_oi' && /kinetic impact/i.test(x.label ?? ''),
+    (x) => x.type === 'edl_or_oi' && /kinetic impact/i.test(x.label_en ?? x.label ?? ''),
   );
   return e?.met_days ?? null;
 }
@@ -872,7 +872,9 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     const activeFlybyEvtForHold = bridge.mission.flight?.events?.find(
       (e: { met_days?: number }) => e.met_days === currentFrameFlybyMet,
     );
-    const isEarthHold = (activeFlybyEvtForHold?.label ?? '').toLowerCase().includes('earth');
+    const isEarthHold = (activeFlybyEvtForHold?.label_en ?? activeFlybyEvtForHold?.label ?? '')
+      .toLowerCase()
+      .includes('earth');
     const cineOut = runCinematicFrame(
       cine,
       {

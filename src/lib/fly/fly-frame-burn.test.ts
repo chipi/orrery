@@ -79,6 +79,15 @@ describe('isCaptureBurn', () => {
     expect(isCaptureBurn({ type: 'tcm' as const, label: 'TCM-1' })).toBe(true);
   });
 
+  it('decides on the English base label in a translated locale', () => {
+    const ja = {
+      type: 'edl_or_oi' as const,
+      label: '土星周回軌道投入',
+      label_en: 'Saturn orbit insertion',
+    };
+    expect(isCaptureBurn(ja)).toBe(true);
+  });
+
   it('findActiveBurn skips an EDL event', () => {
     expect(
       findActiveBurn([{ type: 'edl_or_oi', met_days: 254, label: 'Mars EDL' } as never], 253.5),

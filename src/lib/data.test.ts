@@ -311,6 +311,14 @@ describe('getMission', () => {
     );
   });
 
+  it('keeps the base English label beside a translated one (logic matches on it)', async () => {
+    // /fly finds flyby bodies, DART's impact and the Moon phases from event labels; in a
+    // translated locale those failed ("Mars — assistance gravitationnelle" is fine, "火星" not).
+    const fr = await getMission('dawn', 'ceres', 'fr');
+    const frMars = fr?.flight?.events?.find((e) => e.met_days === 508);
+    expect(frMars?.label_en).toBe('Mars — gravity assist');
+  });
+
   it('returns null for unknown mission', async () => {
     const m = await getMission('does-not-exist', 'mars');
     expect(m).toBeNull();

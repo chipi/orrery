@@ -358,7 +358,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
       const activeEvt = flybyEvents.find((e) => e.met_days === activeFlybyMet);
       // A Sun mission's perihelion has no body: the nearest planet would steal the shot.
       const flyby =
-        findFlybyPlanetFromLabel(activeEvt?.label) ??
+        findFlybyPlanetFromLabel(activeEvt?.label_en ?? activeEvt?.label) ??
         (sunTarget ? null : findClosestPlanetToShip(sc.pos, deps.getSimDay()));
       // Debug exposure. Builder lives in $lib/orbital/fly-debug-snapshot
       // so the DEV-vs-prod payload shape is unit-tested. flybyId +

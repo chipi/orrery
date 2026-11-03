@@ -3358,7 +3358,7 @@
     {#if defaultEvent}
       {@const peakMet = defaultEvent.met_days ?? 0}
       {@const planetIdGuess = (() => {
-        const label = (defaultEvent.label ?? '').toLowerCase();
+        const label = (defaultEvent.label_en ?? defaultEvent.label ?? '').toLowerCase();
         const ids: FlybyPlanetId[] = [
           'mercury',
           'venus',

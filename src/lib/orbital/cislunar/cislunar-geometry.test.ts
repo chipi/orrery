@@ -335,3 +335,14 @@ describe('cislunar-geometry — Tier 1 phase generators (ADR-058)', () => {
     });
   });
 });
+
+describe('cislunarEventTimes in a translated locale', () => {
+  it('finds the lunar flyby from the English base label', async () => {
+    const { cislunarEventTimes } = await import('./cislunar-geometry');
+    const times = cislunarEventTimes([
+      { type: 'tli_or_tmi', met_days: 0.1, label: 'TLI' },
+      { type: 'flyby', met_days: 3, label: 'Vorbeiflug am Mond', label_en: 'Lunar flyby' },
+    ]);
+    expect(times?.arrival).toBe(3);
+  });
+});

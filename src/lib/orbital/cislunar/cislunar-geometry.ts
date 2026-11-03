@@ -73,9 +73,12 @@ export interface BuildCislunarOptions {
 
 /** Phase-boundary times from a mission's flight events (for BuildCislunarOptions.events). */
 export function cislunarEventTimes(
-  events: readonly { type: string; met_days?: number; label?: string }[] | undefined,
+  events:
+    readonly { type: string; met_days?: number; label?: string; label_en?: string }[] | undefined,
 ): BuildCislunarOptions['events'] {
-  const first = (pred: (e: { type: string; label?: string }) => boolean): number | undefined =>
+  const first = (
+    pred: (e: { type: string; label?: string; label_en?: string }) => boolean,
+  ): number | undefined =>
     (events ?? [])
       .filter((e) => typeof e.met_days === 'number' && pred(e))
       .map((e) => e.met_days as number)
@@ -86,9 +89,9 @@ export function cislunarEventTimes(
       e.type === 'loi' ||
       e.type === 'descent_start' ||
       e.type === 'edl_or_oi' ||
-      (e.type === 'flyby' && /moon|lunar/i.test(e.label ?? '')) ||
+      (e.type === 'flyby' && /moon|lunar/i.test(e.label_en ?? e.label ?? '')) ||
       // Luna 16/21 file their capture with the last correction ("… + lunar orbit insertion").
-      /lunar orbit insertion/i.test(e.label ?? ''),
+      /lunar orbit insertion/i.test(e.label_en ?? e.label ?? ''),
   );
   const tei = first((e) => e.type === 'tei');
   const earthReturn = first((e) => e.type === 'earth_return');

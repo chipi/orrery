@@ -51,8 +51,10 @@ export interface ActiveBurn {
  *  engine fires; only an orbit insertion or a rendezvous is an engine (capture) burn. Without this
  *  Curiosity's Mars EDL drew a capture plume as a beam into Mars for two days. */
 const CAPTURE_BURN = /orbit insertion|rendezvous/i;
-export function isCaptureBurn(evt: Pick<FlightTimelineEvent, 'type' | 'label'>): boolean {
-  return evt.type !== 'edl_or_oi' || CAPTURE_BURN.test(evt.label ?? '');
+export function isCaptureBurn(
+  evt: Pick<FlightTimelineEvent, 'type' | 'label' | 'label_en'>,
+): boolean {
+  return evt.type !== 'edl_or_oi' || CAPTURE_BURN.test(evt.label_en ?? evt.label ?? '');
 }
 
 export function findActiveBurn(

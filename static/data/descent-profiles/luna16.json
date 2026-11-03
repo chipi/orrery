@@ -2,15 +2,47 @@
   "missionId": "luna16",
   "siteId": "luna16",
   "body": "moon",
-  "landingSite": { "lat": -0.5, "lon": 56.3 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 1880,
+  "landingSite": {
+    "lat": -0.5,
+    "lon": 56.3
+  },
+  "entryState": {
+    "altitudeM": 15100,
+    "velocityMs": 1692,
+    "flightPathAngleDeg": 3.35
+  },
+  "entryMassKg": 3500,
   "entryCdA": 0,
-  "retroPropellantKg": 270,
+  "retroPropellantKg": 1620,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 3.35,
+    "brakingMaxThrustN": 17000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 18,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.velocityMs",
+    "entryMassKg",
+    "retroPropellantKg",
+    "brakingFpaDeg",
+    "brakingMaxThrustN",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Luna 16 — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-072A" }
+    {
+      "l": "Luna 16 — descent burn from 15.1 km (05:12–05:18 UT, ~360 s), 1,880 kg landed, KTDU-417 (~1,920 kgf); start speed by vis-viva, start mass and propellant estimated",
+      "u": "https://en.wikipedia.org/wiki/Luna_16"
+    },
+    {
+      "l": "Luna 16 — NSSDC spacecraft record",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-072A"
+    }
   ]
 }

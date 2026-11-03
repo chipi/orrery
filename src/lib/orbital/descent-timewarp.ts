@@ -38,7 +38,9 @@ export function warpDescentTime(
   terminalStartT: number,
   entryFrac = ENTRY_TIMELINE_FRAC,
 ): number {
-  if (duration <= 0) return rawT;
+  // No ballistic entry (a powered lunar descent starts in its first terminal phase): nothing
+  // to warp — mapping the first entryFrac onto t=0 froze the descent for 45% of the play.
+  if (duration <= 0 || terminalStartT <= 0) return rawT;
   const f = Math.max(0, Math.min(1, rawT / duration));
   const tB = terminalStartT;
   if (f <= entryFrac) return (f / entryFrac) * tB;
@@ -52,7 +54,7 @@ export function unwarpDescentTime(
   terminalStartT: number,
   entryFrac = ENTRY_TIMELINE_FRAC,
 ): number {
-  if (duration <= 0) return trajT;
+  if (duration <= 0 || terminalStartT <= 0) return trajT;
   const tB = terminalStartT;
   if (trajT <= tB) return (tB > 0 ? trajT / tB : 0) * entryFrac * duration;
   return (entryFrac + ((trajT - tB) / (duration - tB)) * (1 - entryFrac)) * duration;

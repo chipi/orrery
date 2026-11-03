@@ -72,10 +72,10 @@
       "inclination_deg": 1.25,
       "orbit_insertion_dv_km_s": 0.89,
       "source": "Apollo 11 Mission Report (NASA MSC-00171, 1969); LOI burn parameters per CSM Trajectory Reconstruction",
-      "entry_velocity_km_s": 0.15,
+      "entry_velocity_km_s": 1.695,
       "edl_system": "powered",
-      "edl_duration_s": 100,
-      "touchdown_velocity_ms": 1
+      "edl_duration_s": 758,
+      "touchdown_velocity_ms": 0.83
     },
     "totals": {
       "total_dv_km_s": 7.2,

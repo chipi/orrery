@@ -2,15 +2,47 @@
   "missionId": "apollo17",
   "siteId": "apollo17",
   "body": "moon",
-  "landingSite": { "lat": 20.19, "lon": 30.77 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 7300,
+  "landingSite": {
+    "lat": 20.19,
+    "lon": 30.77
+  },
+  "entryState": {
+    "altitudeM": 15000,
+    "velocityMs": 1695,
+    "flightPathAngleDeg": 1.45
+  },
+  "entryMassKg": 16627,
   "entryCdA": 0,
-  "retroPropellantKg": 1000,
+  "retroPropellantKg": 8350,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 0.9,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1.45,
+    "brakingMaxThrustN": 36000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 12,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.altitudeM",
+    "entryState.velocityMs",
+    "retroPropellantKg",
+    "brakingMaxThrustN",
+    "brakingFpaDeg",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Apollo 17 Mission Report (NASA JSC-07904)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-096C" }
+    {
+      "l": "Apollo 17 Mission Report — 16,627 kg at PDI, descent 725 s, ~0.9 m/s touchdown; PDI state and propellant estimated",
+      "u": "https://www.ibiblio.org/apollo/Documents/A17_MissionReport.pdf"
+    },
+    {
+      "l": "Apollo 17 Mission Report (NASA JSC-07904)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-096C"
+    }
   ]
 }

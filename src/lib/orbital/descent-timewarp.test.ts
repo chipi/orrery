@@ -67,4 +67,9 @@ describe('degenerate durations', () => {
     expect(warpDescentTime(5, 0, 0)).toBe(5);
     expect(unwarpDescentTime(5, 0, 0)).toBe(5);
   });
+  it('is the identity with no ballistic entry (a powered lunar descent), not frozen at t=0', () => {
+    // terminalStartT = 0 used to map the first 45% of the play onto t = 0.
+    expect(warpDescentTime(200, 757, 0)).toBe(200);
+    expect(unwarpDescentTime(200, 757, 0)).toBe(200);
+  });
 });

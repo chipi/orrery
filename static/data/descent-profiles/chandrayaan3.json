@@ -2,15 +2,46 @@
   "missionId": "chandrayaan3",
   "siteId": "chandrayaan3",
   "body": "moon",
-  "landingSite": { "lat": -69.37, "lon": 32.35 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 1750,
+  "landingSite": {
+    "lat": -69.37,
+    "lon": 32.35
+  },
+  "entryState": {
+    "altitudeM": 30000,
+    "velocityMs": 1683,
+    "flightPathAngleDeg": 1.9
+  },
+  "entryMassKg": 1752,
   "entryCdA": 0,
-  "retroPropellantKg": 250,
+  "retroPropellantKg": 1100,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1.9,
+    "brakingMaxThrustN": 3000,
+    "highGateSpeedMs": 146,
+    "approachFpaDeg": 12,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryMassKg",
+    "retroPropellantKg",
+    "brakingFpaDeg",
+    "approachFpaDeg",
+    "brakingMaxThrustN"
+  ],
   "provenance": [
-    { "l": "Chandrayaan-3 Vikram EDL — ISRO mission report", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2023-098C" }
+    {
+      "l": "Chandrayaan-3 — rough braking from 30 km at 1,683 m/s to 146 m/s, fine braking, hover at 150 m; four 800 N engines; ~19 min total (search summary); lander mass from memory, propellant estimated",
+      "u": "https://en.wikipedia.org/wiki/Chandrayaan-3"
+    },
+    {
+      "l": "Chandrayaan-3 Vikram EDL — ISRO mission report",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2023-098C"
+    }
   ]
 }

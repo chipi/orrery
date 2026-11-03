@@ -64,9 +64,9 @@
       "inclination_deg": 141,
       "orbit_insertion_dv_km_s": 0.75,
       "source": "NASA NSSDCA Luna 17 archive; LOI placed Luna 17 in 85 × 141 km parking orbit before descent",
-      "entry_velocity_km_s": 0.15,
+      "entry_velocity_km_s": 1.69,
       "edl_system": "powered",
-      "edl_duration_s": 100,
+      "edl_duration_s": 355,
       "touchdown_velocity_ms": 1
     },
     "totals": {

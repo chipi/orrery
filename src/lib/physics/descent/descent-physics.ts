@@ -144,6 +144,10 @@ export interface EDLPhase {
    *  lunar high-gate) ramps down instead of snapping v in one step (which would
    *  read as a spurious 100-g spike). Default 5. Ignored by aerodynamic phases. */
   maxBrakeG?: number;
+  /** The engine's maximum thrust (N) on a guided phase. When set, the braking cap is this
+   *  thrust over the CURRENT mass, so the deceleration grows as propellant burns off — a real
+   *  engine at full throttle, not a fixed-g limit. Overrides `maxBrakeG`. */
+  maxThrustN?: number;
   /** Mass dropped at the START of this phase (kg) — heat-shield / backshell /
    *  chute / spent descent-stage. Lowers the flying mass (drag decel rises,
    *  propellant lasts longer) and keeps the fuel gauge honest, mirroring
@@ -548,13 +552,23 @@ export function integrateDescent(
         altitudeM: h,
         speedMs: v,
         gravityMs2: g,
-        maxBrakeMs2: (phase.maxBrakeG ?? 5) * G0,
+        maxBrakeMs2:
+          phase.maxThrustN != null
+            ? phase.maxThrustN / Math.max(1, mass)
+            : (phase.maxBrakeG ?? 5) * G0,
         descentRateGain: phase.descentRateGain ?? 0.06,
         terminalVelocityMs: phase.terminalVelocityMs ?? 0.75,
         dtS: dt,
       });
       v = cmd.nextSpeedMs;
-      const thrustAccel = cmd.thrustAccelMs2; // brake + gravity (retro also holds the vehicle up)
+      // The thrust flies the schedule along the path (the brake, plus the gravity component
+      // along it) and holds the path against gravity across it, less the orbital relief
+      // v²/(R+h): near orbital speed (a lunar braking burn at ~1.7 km/s) the vehicle's own
+      // motion carries most of its weight. Vertical descent (γ = 90°) reduces to brake + g.
+      const cosGamma = Math.cos(gammaRad);
+      const alongAccel = cmd.brakeAccelMs2 + g * sinG;
+      const acrossAccel = Math.max(0, (g - (v * v) / (bodyRadiusM + h)) * cosGamma);
+      const thrustAccel = Math.hypot(alongAccel, acrossAccel);
       const thrustN = propUsed < propTotal ? mass * thrustAccel : 0; // engine out if tanks dry
       // No propellant → guidance can't hold: the vehicle falls under gravity and drag (it
       // used to hold its speed, so an engine-out crash like Schiaparelli's hit far too slow).
@@ -562,7 +576,13 @@ export function integrateDescent(
       curThrustN = thrustN;
       curDragN = thrustN > 0 ? 0 : drag;
       curDecelG = thrustN / (mass * G0);
-      if (thrustN > 0 && phase.ispS) propUsed += (thrustN / (phase.ispS * G0)) * dt;
+      if (thrustN > 0 && phase.ispS) {
+        // Burned propellant leaves the vehicle: it gets lighter as it brakes (the Apollo LM
+        // roughly halved), so the same deceleration costs less thrust as the burn goes on.
+        const dm = (thrustN / (phase.ispS * G0)) * dt;
+        propUsed += dm;
+        mass = Math.max(1, mass - dm);
+      }
     } else {
       // Aerodynamic / ballistic: gravity component adds speed, drag sheds it.
       const dvdt = g * sinG - drag / Math.max(1, mass);
@@ -697,7 +717,10 @@ export function integrateDescent(
   }
 
   // Splice the peak beats in at their recorded instants, then re-sort.
-  events.push({ type: 'peak_heat', t: peakHeat.t, altKm: peakHeat.altKm, velocityMs: 0 });
+  // No air, no heating: an airless body's descent (the Moon, Eros) has no peak-heat beat.
+  if (peakHeat.flux > 0) {
+    events.push({ type: 'peak_heat', t: peakHeat.t, altKm: peakHeat.altKm, velocityMs: 0 });
+  }
   events.push({ type: 'peak_decel', t: peakDecel.t, altKm: peakDecel.altKm, velocityMs: 0 });
   events.sort((a, b) => a.t - b.t);
 

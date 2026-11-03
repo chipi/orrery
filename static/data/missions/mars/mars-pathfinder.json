@@ -64,7 +64,7 @@
       "source": "JPL Mars Pathfinder EDL Reconstruction (1997); direct atmospheric entry",
       "edl_system": "airbag",
       "edl_duration_s": 317,
-      "touchdown_velocity_ms": 17.9
+      "touchdown_velocity_ms": 17.31
     },
     "totals": {
       "total_dv_km_s": 5.2,

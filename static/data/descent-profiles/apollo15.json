@@ -2,15 +2,46 @@
   "missionId": "apollo15",
   "siteId": "apollo15",
   "body": "moon",
-  "landingSite": { "lat": 26.13, "lon": 3.63 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 7300,
+  "landingSite": {
+    "lat": 26.13,
+    "lon": 3.63
+  },
+  "entryState": {
+    "altitudeM": 15000,
+    "velocityMs": 1695,
+    "flightPathAngleDeg": 1.45
+  },
+  "entryMassKg": 16617,
   "entryCdA": 0,
-  "retroPropellantKg": 1000,
+  "retroPropellantKg": 8373,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 2.07,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1.45,
+    "brakingMaxThrustN": 36000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 12,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.altitudeM",
+    "entryState.velocityMs",
+    "brakingMaxThrustN",
+    "brakingFpaDeg",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Apollo 15 Mission Report (NASA MSC-05161)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C" }
+    {
+      "l": "Apollo 15 Mission Report — 16,617 kg at PDI, 8,244 kg landed (propellant = the difference), ignition → footpad contact 740 s, 2.07 m/s touchdown; PDI state estimated",
+      "u": "https://ntrs.nasa.gov/api/citations/19720021182/downloads/19720021182.txt"
+    },
+    {
+      "l": "Apollo 15 Mission Report (NASA MSC-05161)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"
+    }
   ]
 }

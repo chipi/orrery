@@ -83,20 +83,67 @@ export interface ArchetypeParams {
   /** Ambient pressure (Pa) at which an atmospheric probe is crushed / lost
    *  (Jupiter — the descent has no solid-surface terminus). */
   crushPressurePa?: number;
+  /** Lunar powered descent from orbit (Apollo PDI, Chang'e, Luna): the braking phase's
+   *  flight-path angle (deg) — near-horizontal, the burn kills orbital speed over ~8 min. */
+  brakingFpaDeg?: number;
+  /** Peak braking deceleration (g): the descent engine's thrust over the vehicle's mass
+   *  (Apollo LM ~0.3 g) — what makes the braking phase last minutes, not seconds. */
+  brakingMaxG?: number;
+  /** The descent engine's maximum thrust (N). When set, every phase brakes at up to this thrust
+   *  over the current mass (deceleration grows as propellant burns off); overrides brakingMaxG. */
+  brakingMaxThrustN?: number;
+  /** Speed (m/s) at which braking ends and the approach pitches up (Apollo "high gate"). */
+  highGateSpeedMs?: number;
+  /** The approach phase's flight-path angle (deg), steeper than braking. */
+  approachFpaDeg?: number;
+  /** Altitude (m) the approach ends and the vertical final descent starts ("low gate"). */
+  lowGateAltM?: number;
+  /** Braking-phase schedule gain (s⁻¹). Small, so the target speed sits well below the
+   *  vehicle's and the engine brakes at its peak the whole phase — the real near-full-thrust
+   *  braking burn; the normal gain on a shallow path would dawdle for many minutes. */
+  brakingRateGain?: number;
 }
 
 type ArchetypeBuilder = (p: ArchetypeParams) => EDLPhase[];
 
-const LUNAR_POWERED: ArchetypeBuilder = (p) => [
-  {
-    kind: 'powered_retro',
-    endTrigger: { type: 'ground', value: 0 },
+/** Lunar powered descent. With `brakingFpaDeg` it flies from orbit like the real landers —
+ *  a braking burn at a shallow angle down to the high-gate speed, an approach, a vertical
+ *  final from low gate; without it, a single vertical terminal burn (the short-form profile). */
+const LUNAR_POWERED: ArchetypeBuilder = (p) => {
+  const common = {
+    kind: 'powered_retro' as const,
     ispS: p.ispS ?? 311,
     terminalVelocityMs: p.terminalVelocityMs ?? 1,
     descentRateGain: p.descentRateGain ?? 0.05,
-    events: ['retro_ignition'],
-  },
-];
+  };
+  if (p.brakingFpaDeg == null) {
+    return [{ ...common, endTrigger: { type: 'ground', value: 0 }, events: ['retro_ignition'] }];
+  }
+  return [
+    {
+      ...common,
+      endTrigger: { type: 'velocity_ms', value: p.highGateSpeedMs ?? 150 },
+      flightPathAngleDeg: p.brakingFpaDeg,
+      maxBrakeG: p.brakingMaxG ?? 0.3,
+      maxThrustN: p.brakingMaxThrustN,
+      descentRateGain: p.brakingRateGain ?? 0.01,
+      events: ['retro_ignition'],
+    },
+    {
+      ...common,
+      endTrigger: { type: 'altitude_m', value: p.lowGateAltM ?? 150 },
+      flightPathAngleDeg: p.approachFpaDeg ?? 16,
+      maxBrakeG: p.brakingMaxG ?? 0.3,
+      maxThrustN: p.brakingMaxThrustN,
+    },
+    {
+      ...common,
+      endTrigger: { type: 'ground', value: 0 },
+      maxBrakeG: p.brakingMaxG ?? 0.3,
+      maxThrustN: p.brakingMaxThrustN,
+    },
+  ];
+};
 
 const LUNA_DIRECT_IMPACT: ArchetypeBuilder = (p) => [
   {

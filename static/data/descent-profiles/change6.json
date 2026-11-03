@@ -2,15 +2,48 @@
   "missionId": "change6",
   "siteId": "change6",
   "body": "moon",
-  "landingSite": { "lat": -41.6, "lon": -153.9 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 1300,
+  "landingSite": {
+    "lat": -41.6,
+    "lon": -153.9
+  },
+  "entryState": {
+    "altitudeM": 16000,
+    "velocityMs": 1700,
+    "flightPathAngleDeg": 1.15
+  },
+  "entryMassKg": 3735.4,
   "entryCdA": 0,
-  "retroPropellantKg": 185,
+  "retroPropellantKg": 1898,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1.15,
+    "brakingMaxThrustN": 6000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 12,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.altitudeM",
+    "entryState.velocityMs",
+    "entryMassKg",
+    "retroPropellantKg",
+    "brakingFpaDeg",
+    "brakingMaxThrustN",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Chang'e-6 Mission — CNSA / NSSDC record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2024-089A" }
+    {
+      "l": "Chang'e 6 — descent from ~16 km, ~900 s (search summaries); masses as Chang'e 5",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_6"
+    },
+    {
+      "l": "Chang'e-6 Mission — CNSA / NSSDC record",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2024-089A"
+    }
   ]
 }

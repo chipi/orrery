@@ -139,13 +139,46 @@ Estimates, declared in each profile's `estimatedFields`: Curiosity's and Perseve
 bank-averaged L/D (0.17 / 0.18), InSight's Cd·A, Schiaparelli's entry angle, Viking 1's entry
 altitude. **Not done:** Mars 3 and Tianwen-1 (no sourced EDL timeline found).
 
+### 9. Moon powered descents braked at full engine and froze on screen
+
+The lunar profiles were one braking phase at the engine's maximum thrust, the mass never went
+down as propellant burned, the guided thrust ignored the part needed to hold the vehicle up on a
+shallow path, and the descent time warp (built for Mars entry) mapped the first 45 % of a powered
+descent onto t = 0. **Done 2026-11-03:**
+
+- **Physics** (`descent-physics.ts`): propellant mass is burned off each step; guided thrust is
+  `hypot(along, across)` with orbital relief (v²/r); a per-phase `maxThrustN`; an engine-out
+  vehicle falls under gravity; no peak-heating beat on airless bodies.
+- **Archetype** (`descent-profile-registry.ts`): `LUNAR_POWERED` becomes braking (to the high
+  gate speed) → approach (to the low gate) → vertical final, when a profile sets `brakingFpaDeg`.
+- **Time warp** (`descent-timewarp.ts`): identity when there is no ballistic entry.
+- **Scene** (`descent-scene.ts`): on airless bodies the lander pitches from the braking and
+  lift-support components of the thrust.
+
+Braking thrust and angle are fitted (declared in `estimatedFields`) so the total matches the
+source; Apollo 11's fit also hits the high gate (2.2 km at 505 s against 2.3 km at 506 s).
+
+| Mission | Sourced | Was (one phase, full thrust) | Now |
+| --- | --- | --- | --- |
+| Apollo 11 | 755 s | — | 758 s |
+| Apollo 12 / 14 / 15 / 16 / 17 | 718 / 766 / 740 / ~730 / 725 s | — | 717 / 773 / 718 / 742 / 730 s |
+| Luna 16 / 24 | ~360 / ~360 s | 327 / 315 s | 362 / 358 s |
+| Luna 17 / 21 | none found (fitted to Luna 16) | 321 / 321 s | 355 / 355 s |
+| Chang'e 3 / 4 | ~720 s (CE-4 flown as CE-3) | 646 / 646 s | 719 / 719 s |
+| Chang'e 5 / 6 | 830 / ~900 s | — / 842 s | 817 / 899 s |
+| Chandrayaan-3 | ~19 min (~1,140 s) | — | 1,111 s |
+
+Touchdown speeds are the reported ones where a report gives one (Apollo 11 0.83, 12 0.6,
+15 2.07, 16 0.46, 17 0.9, Chang'e 5 1.99 m/s); the rest land at 1.0 m/s. The "Was" column is
+blank where the earlier value was not recorded before the change.
+
 ## Not checked yet
 
 This survey read the code and data. It did NOT check, and the gaps above are not the whole list
 until these are done:
 
-- **Profile numbers vs sources:** no descent profile's entry speed, flight-path angle, masses,
-  chute / retro / skycrane timings or touchdown speed was compared with a published source.
+- **Profile numbers vs sources:** Mars (§8) and the Moon (§9) are done. Venus (Venera, Vega),
+  Titan (Huygens), Jupiter (Galileo probe), the small bodies and the Earth capsules are not.
 - **Browser behaviour:** no descent, flyby or orbit-insertion beat was flown in the browser.
 - **Event timing:** cruise event times (TCMs, flybys, arrival dates) were not checked against
   mission records. One is known wrong: Clementine's TLI sits at MET 0.5 d, the real one was

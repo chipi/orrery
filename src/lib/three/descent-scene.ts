@@ -23,6 +23,7 @@ import {
   type DescentEvent,
   type DescentState,
 } from '$lib/physics/descent/descent-physics';
+import { R_BODY_M } from '$lib/physics/descent/descent-physics-constants';
 import { sepProgress } from '$lib/orbital/ascent-cameras';
 import { buildDescentModel } from '$lib/three/descent-models';
 import type { FlightPhaseScene, ForceKey } from '$lib/three/flight-phase-scene';
@@ -464,10 +465,38 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     }
   };
 
+  // Powered-descent attitude on an airless body: the lander points its engine along its
+  // thrust, which tilts from vertical by the horizontal braking it must do against the
+  // vertical support it needs (gravity less the orbital relief of its horizontal speed). An
+  // Apollo LM brakes almost horizontally from 1.7 km/s and pitches upright only near the
+  // ground. Derived from successive states; held across scrubs (non-sequential time).
+  let tiltRad = 0;
+  let prevT: number | null = null;
+  let prevVh = 0;
+  let prevVd = 0;
+  const airless = body === 'moon' || body === 'eros';
   const setState = (s: DescentState): void => {
     frame++;
     activePhaseKind = s.phaseKind;
     vehicle.position.set(0, s.altKm, 0);
+    const vd = s.velDownMs;
+    const vh = Math.sqrt(Math.max(0, s.velocityMs * s.velocityMs - vd * vd));
+    if (airless && s.phaseKind === 'powered_retro' && s.altM > 0) {
+      const dt = prevT == null ? 0 : s.t - prevT;
+      if (dt > 0 && dt < 5) {
+        const g = bodyGravity(s.altM, body);
+        const aH = Math.max(0, (prevVh - vh) / dt);
+        const aV = Math.max(0.05, g - (vh * vh) / (R_BODY_M[body] + s.altM) + (prevVd - vd) / dt);
+        const target = Math.atan2(aH, aV);
+        tiltRad += (target - tiltRad) * Math.min(1, dt * 0.5);
+      }
+    } else if (s.altM <= 0 || s.phaseKind !== 'powered_retro') {
+      tiltRad = 0;
+    }
+    prevT = s.t;
+    prevVh = vh;
+    prevVd = vd;
+    vehicle.rotation.z = airless ? tiltRad : 0;
 
     // Sky: space-black high → the body's near-surface atmosphere colour low.
     const skyT = Math.min(1, Math.max(0, 1 - s.altKm / sky.fadeKm));

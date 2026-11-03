@@ -73,9 +73,9 @@
       "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.84,
       "source": "ISRO Chandrayaan-3 LOI Report (2023-08)",
-      "entry_velocity_km_s": 0.15,
+      "entry_velocity_km_s": 1.683,
       "edl_system": "powered",
-      "edl_duration_s": 100,
+      "edl_duration_s": 1111,
       "touchdown_velocity_ms": 1
     },
     "totals": {

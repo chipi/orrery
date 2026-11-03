@@ -2,15 +2,47 @@
   "missionId": "luna24",
   "siteId": "luna24",
   "body": "moon",
-  "landingSite": { "lat": 12.25, "lon": 62.2 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 1880,
+  "landingSite": {
+    "lat": 12.25,
+    "lon": 62.2
+  },
+  "entryState": {
+    "altitudeM": 12000,
+    "velocityMs": 1695,
+    "flightPathAngleDeg": 2.35
+  },
+  "entryMassKg": 3500,
   "entryCdA": 0,
-  "retroPropellantKg": 270,
+  "retroPropellantKg": 1620,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 2.35,
+    "brakingMaxThrustN": 15000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 16,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.velocityMs",
+    "entryMassKg",
+    "retroPropellantKg",
+    "brakingFpaDeg",
+    "brakingMaxThrustN",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Luna 24 — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1976-081A" }
+    {
+      "l": "Luna 24 — descent from ~12 km, ~360 s; start speed by vis-viva, masses estimated",
+      "u": "https://en.wikipedia.org/wiki/Luna_24"
+    },
+    {
+      "l": "Luna 24 — NSSDC spacecraft record",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1976-081A"
+    }
   ]
 }

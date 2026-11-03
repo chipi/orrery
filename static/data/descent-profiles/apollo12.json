@@ -2,15 +2,46 @@
   "missionId": "apollo12",
   "siteId": "apollo12",
   "body": "moon",
-  "landingSite": { "lat": -3.01, "lon": -23.42 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 7300,
+  "landingSite": {
+    "lat": -3.01,
+    "lon": -23.42
+  },
+  "entryState": {
+    "altitudeM": 15000,
+    "velocityMs": 1697,
+    "flightPathAngleDeg": 1.55
+  },
+  "entryMassKg": 15295,
   "entryCdA": 0,
-  "retroPropellantKg": 1000,
+  "retroPropellantKg": 8200,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 0.6,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1.55,
+    "brakingMaxThrustN": 36000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 12,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.altitudeM",
+    "retroPropellantKg",
+    "brakingMaxThrustN",
+    "brakingFpaDeg",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Apollo 12 Mission Report (NASA MSC-01855)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C" }
+    {
+      "l": "Apollo 12 Mission Report — PDI at 1,697 m/s (5,566 ft/s), 15,295 kg after DOI, descent 718 s, ~0.6 m/s touchdown; PDI altitude (nominal ~15 km) and propellant are estimates",
+      "u": "https://www.ibiblio.org/apollo/Documents/A12_MissionReport.pdf"
+    },
+    {
+      "l": "Apollo 12 Mission Report (NASA MSC-01855)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C"
+    }
   ]
 }

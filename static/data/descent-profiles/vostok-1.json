@@ -2,14 +2,25 @@
   "missionId": "vostok-1",
   "siteId": "vostok-1",
   "body": "earth",
-  "landingSite": { "lat": 51.27, "lon": 45.99 },
-  "entryState": { "altitudeM": 122000, "velocityMs": 7850, "flightPathAngleDeg": 1.5 },
+  "landingSite": {
+    "lat": 51.27,
+    "lon": 45.99
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7850,
+    "flightPathAngleDeg": 1.5
+  },
   "entryMassKg": 2460,
   "entryCdA": 5,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
-    "terminalHandoffAltM": 4000,
+    "terminalHandoffAltM": 2500,
     "parachuteCdA": 160,
     "terminalCdA": 600
   },
@@ -18,6 +29,10 @@
     {
       "l": "Vostok 1 — NASA / NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1961-012A"
+    },
+    {
+      "l": "Siddiqi, Challenge to Apollo (NASA SP-2000-4408): Vostok descent apparatus main chute at 2,500 m; Gagarin's load estimate ~10 g (calculated ~8 g)",
+      "u": "https://history.nasa.gov/SP-4408pt1.pdf"
     }
   ]
 }

@@ -83,16 +83,18 @@ for (const [mission, list] of byMission) {
   for (const loc of locales) {
     const op = resolve(ROOT, `i18n-src/${loc}/missions/${mission}.json`);
     if (!existsSync(op)) continue;
-    const o = JSON.parse(readFileSync(op, 'utf8'));
+    // Edited in place, not re-serialised: overlays keep their one-line event objects.
+    const text = readFileSync(op, 'utf8');
     let n = 0;
-    for (const fe of [...(o.flight_events ?? []), ...(o.events ?? [])]) {
-      if (typeof fe.met === 'number') {
-        const to = remap(fe.met);
-        if (to !== fe.met) n++;
-        fe.met = to;
-      }
-    }
-    if (n && write) writeFileSync(op, JSON.stringify(o, null, 2) + '\n');
+    const out = text.replace(
+      /("met"\s*:\s*)(-?\d+(?:\.\d+)?)/g,
+      (_all, key: string, num: string) => {
+        const to = remap(Number(num));
+        if (to !== Number(num)) n++;
+        return `${key}${to}`;
+      },
+    );
+    if (n && write) writeFileSync(op, out);
   }
 }
 console.log(failed ? `remap-event-dates: ${failed} problem(s)` : 'remap-event-dates: ok');

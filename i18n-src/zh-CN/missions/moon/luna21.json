@@ -10,8 +10,8 @@
     { "met": 0, "label": "发射", "note": "Proton-K 从拜科努尔发射，1973-01-08。", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Blok-D上面级的月球转移注入。", "type": "nominal" },
     { "met": 4, "label": "TCM", "note": "巡航过程中的中途修正。", "type": "info" },
-    { "met": 4.5, "label": "着陆", "note": "1973年1月15日在Le Monnier陨石坑软着陆。Lunokhod 2在几小时后从坡道上驶下。", "type": "nominal" },
-    { "met": 7, "label": "巡视器运行", "note": "克里米亚5人地面小组开始驾驶操作。总行驶距离：约39公里。", "type": "nominal" }
+    { "met": 7, "label": "着陆", "note": "1973年1月15日在Le Monnier陨石坑软着陆。Lunokhod 2在几小时后从坡道上驶下。", "type": "nominal" },
+    { "met": 8, "label": "巡视器运行", "note": "克里米亚5人地面小组开始驾驶操作。总行驶距离：约39公里。", "type": "nominal" }
   ],
   "vehicle_stage": "Blok-D 上面级"
 }

@@ -86,7 +86,9 @@ export function cislunarEventTimes(
       e.type === 'loi' ||
       e.type === 'descent_start' ||
       e.type === 'edl_or_oi' ||
-      (e.type === 'flyby' && /moon|lunar/i.test(e.label ?? '')),
+      (e.type === 'flyby' && /moon|lunar/i.test(e.label ?? '')) ||
+      // Luna 16/21 file their capture with the last correction ("… + lunar orbit insertion").
+      /lunar orbit insertion/i.test(e.label ?? ''),
   );
   const tei = first((e) => e.type === 'tei');
   const earthReturn = first((e) => e.type === 'earth_return');

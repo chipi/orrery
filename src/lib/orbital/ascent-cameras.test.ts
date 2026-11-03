@@ -99,6 +99,18 @@ describe('composeShot', () => {
     }
   });
 
+  it('holds the tower-clear camera on the ground while the vehicle climbs', () => {
+    const early = summary.states.find((st) => st.t >= 4)!;
+    const late = summary.states.find((st) => st.t >= 18)!;
+    const a = composeShot('tower_clear', early, 1.2, 0.1);
+    const b = composeShot('tower_clear', late, 1.2, 0.9);
+    expect(late.altKm).toBeGreaterThan(early.altKm);
+    // The camera stays put (only the handheld wobble moves it) …
+    expect(Math.hypot(a.px - b.px, a.py - b.py, a.pz - b.pz)).toBeLessThan(0.2);
+    // … and looks up after the rising vehicle.
+    expect(b.ty).toBeGreaterThan(a.ty);
+  });
+
   it('keeps the camera above the ground for the pad shot', () => {
     const p = composeShot('pad', summary.states[0], 1.2);
     expect(p.py).toBeGreaterThan(0);

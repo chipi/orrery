@@ -19,6 +19,7 @@ export const EDL_SYSTEM: Record<ArchetypeName, EDLSystemKind> = {
   LUNA_DIRECT_IMPACT: 'direct_impact',
   MARS_PARACHUTE_RETRO: 'parachute_retro',
   MARS_AIRBAG: 'airbag',
+  MARS_CHUTE_AIRBAG: 'airbag',
   MARS_SKYCRANE: 'skycrane',
   MARS_PROPULSIVE: 'powered',
   VENUS_AEROSHELL: 'aeroshell',

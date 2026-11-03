@@ -54,7 +54,11 @@
       "periapsis_km": 250,
       "inclination_deg": 86.3,
       "orbit_insertion_dv_km_s": 0.81,
-      "source": "ESA Mars Express MOI Report (2003-12)"
+      "source": "ESA Mars Express MOI Report (2003-12)",
+      "entry_velocity_km_s": 5.5,
+      "edl_system": "airbag",
+      "edl_duration_s": 426,
+      "touchdown_velocity_ms": 19.8
     },
     "totals": {
       "total_dv_km_s": 4.5,

@@ -41,6 +41,7 @@ export type ArchetypeName =
   | 'LUNA_DIRECT_IMPACT'
   | 'MARS_PARACHUTE_RETRO'
   | 'MARS_AIRBAG'
+  | 'MARS_CHUTE_AIRBAG'
   | 'MARS_SKYCRANE'
   | 'MARS_PROPULSIVE'
   | 'VENUS_AEROSHELL'
@@ -201,6 +202,26 @@ const MARS_AIRBAG: ArchetypeBuilder = (p) => [
     events: ['retro_ignition'],
   },
   { kind: 'airbag_bounce', endTrigger: { type: 'ground', value: 0 }, events: ['airbag_deploy'] },
+];
+
+/** Beagle 2: no retro rockets. The main chute carries the probe down to the airbag
+ *  inflation height and stays on through the bounces (the inquiry's rebound-into-the-
+ *  canopy risk) — so the airbag phase keeps the chute's drag area. */
+const MARS_CHUTE_AIRBAG: ArchetypeBuilder = (p) => [
+  { kind: 'ballistic_entry', endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 7000 } },
+  {
+    kind: 'parachute',
+    endTrigger: { type: 'altitude_m', value: p.finalPhaseAltM ?? 200 },
+    cdA: p.parachuteCdA ?? 40,
+    jettisonKg: p.heatshieldKg ?? 20,
+    events: ['parachute_deploy', 'heatshield_sep'],
+  },
+  {
+    kind: 'airbag_bounce',
+    endTrigger: { type: 'ground', value: 0 },
+    cdA: p.parachuteCdA ?? 40,
+    events: ['airbag_deploy'],
+  },
 ];
 
 const MARS_SKYCRANE: ArchetypeBuilder = (p) => [
@@ -395,6 +416,7 @@ const ARCHETYPES: Record<ArchetypeName, ArchetypeBuilder> = {
   LUNA_DIRECT_IMPACT,
   MARS_PARACHUTE_RETRO,
   MARS_AIRBAG,
+  MARS_CHUTE_AIRBAG,
   MARS_SKYCRANE,
   MARS_PROPULSIVE,
   VENUS_AEROSHELL,
@@ -411,6 +433,7 @@ const ARCHETYPE_SURVIVABLE: Record<ArchetypeName, number> = {
   LUNA_DIRECT_IMPACT: 30,
   MARS_PARACHUTE_RETRO: 3,
   MARS_AIRBAG: 25,
+  MARS_CHUTE_AIRBAG: 25, // airbags like Pathfinder's, no retro to slow the impact
   MARS_SKYCRANE: 3,
   MARS_PROPULSIVE: 3,
   VENUS_AEROSHELL: 15,
@@ -505,7 +528,7 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'artemis4',
   'artemis5',
   'blue-moon-mk1',
-  // Mars (13)
+  // Mars (14)
   'viking1',
   'mars3',
   'mars-pathfinder',
@@ -515,6 +538,7 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'curiosity',
   'insight',
   'schiaparelli',
+  'mars-express', // Beagle 2, released from Mars Express (siteId beagle2)
   'tianwen1',
   'perseverance',
   'starship-demo',

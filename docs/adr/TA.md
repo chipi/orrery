@@ -68,7 +68,7 @@ The production app ships a set of user-facing routes (the core experience below;
 | Fleet entries | **290** |
 | Science sections | **172** |
 | Programs | **42** |
-| Descent profiles | **76** |
+| Descent profiles | **77** |
 | Launch profiles | **40** |
 | AJV schemas | **82** |
 | Essays | **13** |

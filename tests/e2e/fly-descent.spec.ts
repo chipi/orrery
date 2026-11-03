@@ -88,6 +88,7 @@ test.describe('descent EDL HUD (desktop)', () => {
   for (const mission of [
     'luna9', // LUNA_DIRECT_IMPACT
     'spirit', // MARS_AIRBAG
+    'mars-express', // MARS_CHUTE_AIRBAG (Beagle 2)
     'insight', // MARS_PARACHUTE_RETRO
     'starship-demo', // MARS_PROPULSIVE
     'venera-13', // VENUS_AEROSHELL

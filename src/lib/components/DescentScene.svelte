@@ -170,6 +170,11 @@
   const retroOn = $derived(
     liveState.phaseKind === 'powered_retro' || liveState.phaseKind === 'skycrane',
   );
+  // The RETRO lamp only for a descent that fires engines: Huygens, Galileo's probe, the
+  // Veneras and Beagle 2 had none, and a lamp that never lights reads as a failed burn.
+  const hasRetro = $derived(
+    profile.phases.some((ph) => ph.kind === 'powered_retro' || ph.kind === 'skycrane'),
+  );
   // Earth capsule re-entry indicators (RFC-034 §13): the plasma comms-blackout
   // during the hypersonic entry, and the drogue → main canopy sequence.
   const isEarthReentry = $derived(profile.body === 'earth');
@@ -333,13 +338,15 @@
       <span class="lamp" class:on={mainOut}>{m.hud_main()}</span>
     {:else}
       <span class="lamp" class:on={chuteOut}>{m.hud_chute()}</span>
-      <span class="lamp" class:on={retroOn}
-        >{m.hud_retro()}<ScienceChip
-          tab="mission-phases"
-          section="propulsive-landing"
-          label={m.chip_label_propulsive_landing()}
-        /></span
-      >
+      {#if hasRetro}
+        <span class="lamp" class:on={retroOn}
+          >{m.hud_retro()}<ScienceChip
+            tab="mission-phases"
+            section="propulsive-landing"
+            label={m.chip_label_propulsive_landing()}
+          /></span
+        >
+      {/if}
     {/if}
   </div>
 

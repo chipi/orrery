@@ -138,6 +138,8 @@ function wing(
     w.add(box(len - 0.06, 0.014, 0.04, cx, yc + f * (chord - 0.06), 0, p.frame));
   }
   w.add(cyl(0.03, 0.03, yc - 0.1, yc + 0.1, p.frame, 8));
+  // Solar array: the launch scene keeps it stowed until the craft separates (types.ts).
+  w.userData.solarArray = true;
   g.add(w);
 }
 

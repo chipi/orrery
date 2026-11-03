@@ -176,6 +176,8 @@ function wing(
     }
     box(w, am.line, seg - 0.1, 0.012, 0.056, cx, 0, 0);
   }
+  // Solar array: the launch scene keeps it stowed until the craft separates (types.ts).
+  w.userData.solarArray = true;
   return w;
 }
 

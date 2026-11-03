@@ -13,6 +13,7 @@
  * - `MeshStandardMaterial` only, no textures (procedural detail: panel lines, radiators,
  *   insulation colours, windows, thrusters, docking hardware, antennas, solar arrays).
  * - `refs`: the sources the shape and dimensions were taken from (URL + what it gave).
+ * - solar-array groups carry `userData.solarArray = true`, so a launch can keep them stowed.
  */
 import type * as THREE from 'three';
 

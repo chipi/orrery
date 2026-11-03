@@ -145,6 +145,8 @@ function panelRow(
         0,
       );
   }
+  // Solar array: the launch scene keeps it stowed until the craft separates (types.ts).
+  row.userData.solarArray = true;
   return row;
 }
 

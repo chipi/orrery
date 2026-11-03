@@ -127,12 +127,16 @@ function panel(
   cols: number,
   rows: number,
 ): void {
-  box(g, m.frame, w, h, 0.04, x, y, 0);
-  box(g, m.cell, w - 0.1, h - 0.1, 0.05, x, y, 0.005);
+  const pg = new THREE.Group();
+  // Solar array: the launch scene keeps it stowed until the craft separates (types.ts).
+  pg.userData.solarArray = true;
+  g.add(pg);
+  box(pg, m.frame, w, h, 0.04, x, y, 0);
+  box(pg, m.cell, w - 0.1, h - 0.1, 0.05, x, y, 0.005);
   for (let c = 1; c < cols; c++)
-    box(g, m.line, 0.012, h - 0.1, 0.056, x - w / 2 + 0.05 + ((w - 0.1) * c) / cols, y, 0.005);
+    box(pg, m.line, 0.012, h - 0.1, 0.056, x - w / 2 + 0.05 + ((w - 0.1) * c) / cols, y, 0.005);
   for (let r = 1; r < rows; r++)
-    box(g, m.line, w - 0.1, 0.012, 0.056, x, y - h / 2 + 0.05 + ((h - 0.1) * r) / rows, 0.005);
+    box(pg, m.line, w - 0.1, 0.012, 0.056, x, y - h / 2 + 0.05 + ((h - 0.1) * r) / rows, 0.005);
 }
 
 /** Circular UltraFlex array facing +z with a wedge cut out toward the bus (at angle `notch`). */

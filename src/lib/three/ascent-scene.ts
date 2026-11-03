@@ -643,6 +643,11 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   );
   // Crewed capsules ride exposed on top — no fairing, stowed shroud, or deploy.
   const isCapsulePayload = payload.userData.isCapsule === true;
+  // A showcase craft's solar arrays (tagged by the family builders), stowed until separation.
+  const payloadArrays: THREE.Object3D[] = [];
+  payload.traverse((o) => {
+    if (o.userData.solarArray) payloadArrays.push(o);
+  });
   // …except the Soviet/Chinese capsules, which rode under a nose fairing that
   // jettisoned once past the atmosphere. They still separate at SECO like any
   // capsule — they just wear a shroud on the way up.
@@ -1117,6 +1122,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // Payload separation. Two regimes: crewed capsules ride exposed on top;
     // everything else rides folded under a jettisonable fairing.
     const pp = sepProgress(s.t, payloadSepT, PAYLOAD_SEP_HOLD_S);
+    // A showcase craft's arrays open in orbit, after separation — never on the climb.
+    for (const a of payloadArrays) a.visible = pp > 0;
     stowedPayload.position.y = payloadBaseY;
     if (isFairedCapsule) {
       // Nose-fairing capsule (Vostok/Voskhod/Soyuz/Shenzhou): a shroud covers the

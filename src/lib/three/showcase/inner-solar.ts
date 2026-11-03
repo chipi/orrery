@@ -131,6 +131,8 @@ function panel(
   for (let j = 1; j < ny; j++) {
     box(p, pm.line, w - 0.08, 0.01, 0.056, 0, -h / 2 + 0.04 + ((h - 0.08) * j) / ny, 0);
   }
+  // Solar array: the launch scene keeps it stowed until the craft separates (types.ts).
+  p.userData.solarArray = true;
   return p;
 }
 

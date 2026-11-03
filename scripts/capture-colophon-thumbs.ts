@@ -10,6 +10,8 @@
  * than spawning its own — pass the origin via BASE, default http://localhost:5373.
  * Run a subset with SUBSET=models  (the /dev/models gallery) or SUBSET=scenes
  * (live-route overlays that aren't isolable meshes).
+ * Write only some thumbs with ONLY=<regex> matched against the output basename
+ * (e.g. ONLY='^model-(launcher-(antares|vulcan)|lineup-)' leaves every other file alone).
  *
  *   BASE=http://localhost:5373 npx tsx scripts/capture-colophon-thumbs.ts
  *
@@ -21,7 +23,9 @@ import { chromium, type Page, type Locator, devices } from '@playwright/test';
 import sharp from 'sharp';
 
 const BASE = process.env.BASE ?? 'http://localhost:5373';
-const SUBSET = process.env.SUBSET ?? 'all'; // all | craft | scenes
+const SUBSET = process.env.SUBSET ?? 'all'; // all | models | scenes
+const ONLY = process.env.ONLY ? new RegExp(process.env.ONLY) : null;
+const wanted = (name: string): boolean => !ONLY || ONLY.test(name);
 const OUT_DIR = resolve(import.meta.dirname, '..', 'static', 'images', 'colophon');
 const VIEWPORT = { width: 1280, height: 800 };
 const THUMB = { w: 800, h: 560 };
@@ -62,6 +66,7 @@ async function captureModels(page: Page): Promise<void> {
   for (let i = 0; i < n; i++) {
     const card = cards.nth(i);
     const modelId = (await card.getAttribute('data-model-id')) ?? `card-${i}`;
+    if (!wanted(thumbName(modelId))) continue;
     const canvas = card.locator('.canvas');
     // The render loop skips off-screen cards (scissor), so scroll it into
     // view and wait a couple of frames for the shared canvas to paint it.
@@ -80,7 +85,22 @@ type Scene = {
   /** Locator to screenshot instead of the full viewport (tighter frame). */
   clip?: (page: Page) => Locator;
   settleMs?: number;
+  /** Viewport for this scene (default 1280×800). */
+  viewport?: { width: number; height: number };
 };
+
+// The /fleet line-up: a wide strip drawn in one canvas; scroll it to a run of vehicles and
+// capture the strip itself.
+const lineupAt = (px: number) => async (page: Page) => {
+  await page.waitForSelector('.lineup .scroller', { timeout: 30000 });
+  await page.waitForTimeout(3500);
+  await page.evaluate((x) => {
+    const s = document.querySelector('.lineup .scroller');
+    if (s) s.scrollLeft = x;
+  }, px);
+  await page.waitForTimeout(900);
+};
+const lineupStrip = (page: Page) => page.locator('.lineup');
 
 const selectSurfaceSite = (id: string) => async (page: Page) => {
   await page.evaluate((siteId) => {
@@ -161,6 +181,32 @@ const SCENES: Scene[] = [
   },
   // 3D text-label sprites — billboarded name tags on Earth's satellites.
   { file: 'model-textlabels', path: '/earth', settleMs: 1500 },
+  // /fleet true-scale line-ups (launchers; capsules and spacecraft) and the two scale sets drawn
+  // between the vehicles — the landmarks and the cartoon cast.
+  {
+    file: 'model-lineup-launchers',
+    path: '/fleet?category=launcher&view=lineup',
+    setup: lineupAt(3450),
+    clip: lineupStrip,
+    viewport: { width: 1000, height: 900 },
+    settleMs: 3500,
+  },
+  {
+    file: 'model-lineup-spacecraft',
+    path: '/fleet?category=crewed-spacecraft&view=lineup',
+    setup: lineupAt(11900),
+    clip: lineupStrip,
+    viewport: { width: 1000, height: 900 },
+    settleMs: 3500,
+  },
+  {
+    file: 'model-lineup-landmarks',
+    path: '/fleet?category=launcher&view=lineup',
+    setup: lineupAt(1750),
+    clip: lineupStrip,
+    viewport: { width: 1000, height: 900 },
+    settleMs: 3500,
+  },
   // Surface-map nation legend — flip Moon to 2D for the flat map + agency key.
   {
     file: 'viz-nation-legend',
@@ -174,8 +220,10 @@ const SCENES: Scene[] = [
 
 async function captureScenes(page: Page): Promise<void> {
   for (const s of SCENES) {
+    if (!wanted(s.file)) continue;
     console.log(`▶ ${s.file}  (${s.path})`);
     try {
+      await page.setViewportSize(s.viewport ?? VIEWPORT);
       await page.goto(BASE + s.path, { waitUntil: 'networkidle' });
       await page.addStyleTag({
         content: 'nav[aria-label], footer.site-footer { visibility: hidden !important; }',

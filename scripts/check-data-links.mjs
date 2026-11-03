@@ -25,7 +25,7 @@ const ROOT = process.cwd();
 // parameter selects nothing; add a row only with the code that reads it.
 const ROUTE_PARAMS = {
   '/missions': ['id', 'from'],
-  '/fleet': ['id', 'from'],
+  '/fleet': ['id', 'from', 'category', 'view'],
 };
 
 // Where the ids a parameter selects are listed.

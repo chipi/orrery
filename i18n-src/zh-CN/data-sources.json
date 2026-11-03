@@ -8,5 +8,14 @@
   "gravity-eht-galactic-centre": "支撑 /explore 银河系示意图的真实天体测量：太阳到银心的距离（R₀ ≈ 8.18 kpc，GRAVITY Collaboration 2019）和人马座 A* 的质量（≈ 430 万倍太阳质量，GRAVITY Collaboration 2022；由 Event Horizon Telescope 于 2022 年成像）。银河系旋臂的位置是示意性的；这些事实有出处且真实。",
   "black-hole-parameters": "/explore 测地线引力透镜渲染所引用的参数：M87*（首个成像黑洞，EHT 2019）、人马座 A*（EHT 2022；质量取自 GRAVITY）和天鹅座 X-1（恒星级质量，质量由 Miller-Jones et al. 2021 上调）。卡冈图雅被标注为虚构（Kip Thorne 为《星际穿越》建立的模型）。透镜图像是我们自己的测地线光线追踪——未嵌入任何天文台图像。",
   "celestrak": "ISS（NORAD 25544）和天宫（48274）的两行轨道根数，每日更新并缓存，驱动物理实验室的卫星过境预测（空间站下次何时从你头顶飞过、多高、从哪个方向来）。",
-  "jpl-iau-constants": "物理实验室计算内核所依据的权威常数：JPL 用于近似行星位置的开普勒根数（Standish）、IAU 引力参数和岁差级数、EGM96 地球引力位常数以及 IUGG 平均半径。实验室的数字是我们自己算的；这些参考值有出处且真实。"
+  "jpl-iau-constants": "物理实验室计算内核所依据的权威常数：JPL 用于近似行星位置的开普勒根数（Standish）、IAU 引力参数和岁差级数、EGM96 地球引力位常数以及 IUGG 平均半径。实验室的数字是我们自己算的；这些参考值有出处且真实。",
+  "models-ref-wikipedia": "维基百科文章（英文、俄文和中文），提供了运载火箭和航天器模型的长度、直径和比例，以及在 /fleet 尺寸对比中画在它们旁边的地标、雕像和动物的高度。模型和轮廓均为我们自己绘制，只读取了尺寸。",
+  "models-ref-nssdca": "NASA 空间科学数据协调档案馆（NSSDCA）中关于航天器和运载火箭的页面，提供了为 /fly 和 /fleet 尺寸对比建模的航天器和火箭的质量、长度和直径。",
+  "models-ref-nasa": "NASA 关于任务、飞行器和历史的页面（nasa.gov、history.nasa.gov、science.nasa.gov），提供了为 /fly 和 /fleet 尺寸对比建模的载人舱、货运飞船、航天飞机轨道器和运载火箭的尺寸。",
+  "models-ref-nps": "美国国家公园管理局关于自由女神像的“Statue Statistics”页面：从地面到火炬尖端 92.99 米，包括基座和雕像本身——即 /fleet 运载火箭尺寸对比中立在火箭旁的比例参照物。",
+  "models-ref-esa": "欧洲航天局页面（ATV、阿丽亚娜、罗塞塔等），提供了为 /fly 和 /fleet 尺寸对比建模的欧洲航天器和运载火箭的尺寸。",
+  "models-ref-jaxa": "JAXA 关于 H-IIA、H3、M-V 以及 HTV / HTV-X 转移飞行器的页面，提供了为 /fly 和 /fleet 尺寸对比建模的日本运载火箭和货运飞船的尺寸。",
+  "models-ref-isro": "ISRO 关于运载火箭和“加根扬”的页面（PSLV、GSLV Mk III / LVM3、乘员舱），提供了为 /fly 和 /fleet 尺寸对比建模的印度飞行器的尺寸。",
+  "models-ref-agencies": "航天机构和制造商的官方页面（俄罗斯航天局、SpaceX、联合发射联盟、波音、诺斯罗普·格鲁曼、萤火虫、阿丽亚娜空间、中国载人航天工程办公室和中国航天科技集团、美国太空军），提供了运载火箭和航天器模型的飞行器尺寸。",
+  "models-ref-independent": "独立的航天参考资料和博物馆页面（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、史密森尼国家航空航天博物馆、施派尔技术博物馆等），提供了苏联、航天飞机和暴风雪号时代飞行器的大小。"
 }

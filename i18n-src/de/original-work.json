@@ -1641,6 +1641,256 @@
       "title": "Ikonische Missionsflugbahnen",
       "what": "Voyager-, Pioneer-, New Horizons-, Cassini-, Juno-, Dawn-Flugbahnen.",
       "where": "Erkunden"
+    },
+    "/images/colophon/model-launcher-long-march-3a_webp": {
+      "title": "Long March 3A",
+      "what": "Kern- und Zweitstufe, über einem offenen Gitter heiß getrennt, unter einer kryogenen Oberstufe und einer 3,35-m-Verkleidung, ohne Booster (Chang’e 1).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-long-march-7_webp": {
+      "title": "Long March 7",
+      "what": "Die 3,35-m-Kerosinrakete der CALT für die Tianzhou-Frachter — Kernstufe, Zweitstufe und vier 2,25-m-Booster.",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-delta-ii_webp": {
+      "title": "Delta II",
+      "what": "Türkisfarbene, von Thor abgeleitete Erststufe, umringt von neun weißen Feststoffboostern, unter einer 2,9-m-Verkleidung mit Einschnürung.",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-atlas-centaur_webp": {
+      "title": "Atlas-Centaur",
+      "what": "Atlas mit Stahlballontank und Anderthalbstufen-Prinzip unter der weißen Centaur-Oberstufe und der Nutzlastverkleidung (Mariner 9 und 10, Pioneer 10 und 11).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-atlas-agena_webp": {
+      "title": "Atlas-Agena",
+      "what": "Dieselbe Atlas unter einer schlanken Agena-D-Oberstufe und einer kleinen Verkleidung (Mariner 4).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-titan-ii-g_webp": {
+      "title": "Titan II(23)G",
+      "what": "Zwei Titan-Kernstufen unter einer Nutzlastverkleidung (Clementine).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
+      "title": "Titan IIIE-Centaur",
+      "what": "Titan-Kern mit zwei fünfsegmentigen Feststoffboostern, einem Zwischenstück und der Centaur in ihrer Verkleidung (Viking, Voyager).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
+      "title": "Titan IVB-Centaur",
+      "what": "Titan-Kern mit zwei langen Feststoffbrennkammern unter einer 20-m-Verkleidung, die die Centaur umschließt (Cassini).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-falcon-heavy_webp": {
+      "title": "Falcon Heavy",
+      "what": "Drei Falcon-9-Kerne nebeneinander — Seitenbooster mit Nasenkegeln, Gitterrudern und Landebeinen und ein Mittelkern mit Oberstufe und Verkleidung.",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-athena-ii_webp": {
+      "title": "Athena II",
+      "what": "Reiner Feststoffstapel — zwei Castor-120-Stufen, eine dritte Stufe und eine sich verjüngende Verkleidung (Lunar Prospector).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-delta-iv-heavy_webp": {
+      "title": "Delta IV Heavy",
+      "what": "Drei Common Booster Cores nebeneinander, der mittlere mit der kryogenen Oberstufe und einer 19-m-Verkleidung (Parker Solar Probe).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-new-glenn_webp": {
+      "title": "New Glenn",
+      "what": "Ein einziger 7-m-Stab — eine Erststufe mit sieben Triebwerken, Landebeinen und Strakes unter einer 7-m-Spitzbogenverkleidung (Blue Moon MK1).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-proton-m-briz-m_webp": {
+      "title": "Proton-M / Briz-M",
+      "what": "Zentraler Kern, umringt von sechs äußeren Treibstofftanks, zwei weitere Stufen und eine Briz-M-Oberstufe unter einer 4,35-m-Verkleidung.",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-sls-block-1_webp": {
+      "title": "SLS Block 1",
+      "what": "Orangefarbene Schaumstoff-Kernstufe mit vier RS-25, zwei weiße fünfsegmentige Booster, Stufenadapter und Oberstufe unter Orion und dem Rettungsturm (Artemis).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-molniya-m_webp": {
+      "title": "Molniya-M",
+      "what": "Vierstufige R-7 — die Blok I auf ihrem Gitter, die Fluchtstufe Blok L und die Sonde unter einer Verkleidung aus Zylinder und Kegel (Luna 9, Luna 10).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
+      "title": "Soyuz-FG / Fregat",
+      "what": "Die R-7 und ihre Oberstufe, gekrönt von der gedrungenen Fregat und der Sonde unter einer breiteren Verkleidung (Mars Express).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
+      "title": "Sputnik 8K71PS",
+      "what": "Die zweistufige R-7, die Sputnik 1 startete — keine dritte Stufe, der Satellit sitzt unter der Nasenspitze des Kerns.",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-soyuz-2_webp": {
+      "title": "Soyuz-2",
+      "what": "Die modernisierte, 46,3 m hohe R-7 — vier Booster um den Kern, eine Oberstufe auf offenem Gitter und eine lange Verkleidung.",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-antares_webp": {
+      "title": "Antares 230+",
+      "what": "Northrop Grummans Cygnus-Träger — eine 3,9-m-Kerosin-Erststufe mit zwei RD-181 unter einer Feststoff-Zweitstufe und Verkleidung.",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-ariane-6_webp": {
+      "title": "Ariane 6",
+      "what": "Europas kryogene 5,4-m-Kernstufe und Vinci-Oberstufe unter einer 20-m-Verkleidung, mit vier Feststoffboostern (A64).",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-vulcan_webp": {
+      "title": "Vulcan Centaur",
+      "what": "ULAs 5,4-m-Methan-Erststufe mit zwei BE-4, die Centaur V und eine 5,4-m-Verkleidung, mit GEM-63XL-Feststoffboostern.",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-energia_webp": {
+      "title": "Energia–Buran",
+      "what": "Der 7,75-m-Wasserstoffkern mit vier RD-170-Boostern und dem Orbiter Buran an seiner Flanke.",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-launcher-n1_webp": {
+      "title": "N1",
+      "what": "Die sowjetische Mondrakete — fünf Stufen im Kegel, dreißig Triebwerke in der ersten, unter der L3-Verkleidung und dem Rettungsturm.",
+      "where": "Fliegen · Start/Aufstieg"
+    },
+    "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
+      "title": "Soyuz 7K-OK",
+      "what": "Die Soyuz der ersten Generation mit 7,95 m — Orbital-, Lande- und Servicemodul, 9,8-m-Solarflügel und die Igla-Annäherungsantennen.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-soyuz-ms_webp": {
+      "title": "Soyuz T / TM / TMA / MS (4 Varianten)",
+      "what": "Die 7,48 m lange Soyuz über vier Generationen — Igla-Antennen bei der T, Kurs bei TM und TMA, Kurs-NA und ein Mikrometeoritenschutz bei der MS.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-crew-dragon_webp": {
+      "title": "Crew Dragon",
+      "what": "Der 8,1 m lange Stapel aus Kapsel und Trunk mit Fenstern, SuperDraco-Pods und Solarzellen-Trunk.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-starliner_webp": {
+      "title": "Starliner (CST-100)",
+      "what": "Boeings 5,03 m lange Kapsel mit Servicemodul — das blaue Band und die Triebwerkspods.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-gaganyaan_webp": {
+      "title": "Gaganyaan",
+      "what": "ISROs 5,58 m langes Besatzungsmodul auf seinem Servicemodul, mit ausfahrbaren Solarflügeln.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-orion_webp": {
+      "title": "Orion",
+      "what": "Das 7,9 m lange Artemis-Besatzungsmodul mit dem europäischen Servicemodul und seinen Solarmodulen.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-new-shepard_webp": {
+      "title": "New Shepard",
+      "what": "Das 19,2 m hohe suborbitale Fahrzeug — ein 3,8-m-Booster unter der Besatzungskapsel mit ihren großen Fenstern.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block I / II (2 Varianten)",
+      "what": "Kommando- und Servicemodul mit 10,6 und 11 m — das kegelförmige Kommandomodul auf dem zylindrischen Servicemodul mit seiner Triebwerksdüse.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-shenzhou_webp": {
+      "title": "Shenzhou",
+      "what": "Chinas 9,25 m langes dreiteiliges Raumschiff in der Soyuz-Linie — Orbitalmodul, Rückkehrmodul und Servicemodul mit Solarflügeln.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
+      "title": "Space-Shuttle-Orbiter",
+      "what": "Ein 37,2 m langer Orbiter, einmal für die vier Schwestern gezeichnet — Atlantis, Challenger, Discovery und Endeavour — auf der Landebahn liegend.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-columbia_webp": {
+      "title": "Space Shuttle Columbia",
+      "what": "Der erste Orbiter — der einzige mit schwarzen Kanten und dem Instrumentenbehälter auf der Seitenflosse.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-enterprise_webp": {
+      "title": "Space Shuttle Enterprise",
+      "what": "Der Orbiter für Atmosphärentests — ohne Haupttriebwerke, ohne OMS-Pods, mit simulierten Kacheln.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-buran_webp": {
+      "title": "Buran",
+      "what": "Der sowjetische Orbiter mit 36,4 m — ein 24 m breiter Doppeldeltaflügel, die Haupttriebwerke blieben an der Energia-Kernstufe.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-buran-ok-gli_webp": {
+      "title": "Buran OK-GLI",
+      "what": "Das Atmosphärentestfahrzeug mit Buran-Form und -Masse — vier AL-31-Turbofans am Heck.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-x37b_webp": {
+      "title": "X-37B",
+      "what": "Das 8,92 m lange unbemannte Raumflugzeug der U.S. Space Force mit 4,55 m Spannweite.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-progress-ms_webp": {
+      "title": "Progress 7K-TG / M / MS (3 Varianten)",
+      "what": "Das von der Soyuz abgeleitete Frachtschiff mit 7,23 bis 7,94 m — Servicemodul, Betankungsabschnitt und Frachtmodul, die 7K-TG ohne Solarflügel.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2",
+      "what": "Die fensterlose unbemannte Dragon 2 auf ihrem 8,1 m langen Trunk — das ISS-Frachtschiff.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
+      "title": "Dragon 1",
+      "what": "Die ursprüngliche, 6,1 m lange Fracht-Dragon — eine 3,7-m-Kapsel auf ihrem Trunk mit zwei Solarmodulen.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-cygnus-enhanced_webp": {
+      "title": "Cygnus Standard / Enhanced (2 Varianten)",
+      "what": "Northrop Grummans Stationsfrachter mit 5,14 und 6,39 m — ein Druckfrachtmodul über dem Servicemodul mit runden Solarmodulen.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-htv_webp": {
+      "title": "HTV (Kounotori)",
+      "what": "Japans 9,8 m langer Stationsfrachter — ein Druckmodul und eine offene Palette am Servicemodul.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-htv-x_webp": {
+      "title": "HTV-X",
+      "what": "Japans 8 m langer Nachfolger-Frachter — ein Druckfrachtmodul über dem Servicemodul mit seinen Solarflügeln.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-atv_webp": {
+      "title": "ATV",
+      "what": "Das 10,3 m lange Automated Transfer Vehicle der ESA — ein zylindrischer Frachtträger mit vier X-förmigen Solarflügeln.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-showcase-tianzhou_webp": {
+      "title": "Tianzhou",
+      "what": "Chinas 10,6 m langes Frachtschiff — ein langes Frachtmodul über dem Servicemodul und seinen Solarflügeln.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-lineup-launchers_webp": {
+      "title": "Größenvergleich der Trägerraketen",
+      "what": "Jede Rakete mit Modell, von Starship bis Mercury-Redstone, in ihrer wahren Höhe nebeneinander neben einer 1,75 m großen Person.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-lineup-spacecraft_webp": {
+      "title": "Größenvergleich der Kapseln und Raumfahrzeuge",
+      "what": "Kapseln, Frachter und Orbiter in wahrer Größe — die Orbiter auf der Landebahn liegend, die Kapseln stehend wie auf ihren Raketen.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-lineup-landmarks_webp": {
+      "title": "Wahrzeichen in wahrer Höhe",
+      "what": "Sechzehn Wahrzeichen und Ikonen, von Hand in ihren belegten Höhen gezeichnet — vom Eiffelturm und der Freiheitsstatue bis zu Michelangelos David, einem Londoner Routemaster und einem VW Käfer.",
+      "where": "Flotte · Größenvergleich"
+    },
+    "/images/colophon/model-lineup-cast_webp": {
+      "title": "Comic-Figuren",
+      "what": "Eine flächig kolorierte Besetzung in wahrer Größe — Mann, Frau, Kind, Hund, Katze, Terrakotta-Krieger, Riesenpanda, Braunbär, Giraffe und Elefant — zwischen den Fahrzeugen.",
+      "where": "Flotte · Größenvergleich"
     }
   },
   "capsules": {

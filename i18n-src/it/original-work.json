@@ -1641,6 +1641,256 @@
       "title": "Traiettorie iconiche di missioni",
       "what": "Percorsi di volo Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn.",
       "where": "Esplora"
+    },
+    "/images/colophon/model-launcher-long-march-3a_webp": {
+      "title": "Long March 3A",
+      "what": "Primo e secondo stadio con separazione a caldo su un traliccio aperto, sotto un terzo stadio criogenico e un carenaggio da 3,35 m, senza booster laterali (Chang’e 1).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-long-march-7_webp": {
+      "title": "Long March 7",
+      "what": "Il razzo a cherosene da 3,35 m della CALT per i cargo Tianzhou: un nucleo centrale, un secondo stadio e quattro booster laterali da 2,25 m.",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-delta-ii_webp": {
+      "title": "Delta II",
+      "what": "Primo stadio turchese derivato dal Thor, circondato da nove booster a propellente solido bianchi, sotto un carenaggio da 2,9 m con restringimento.",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-atlas-centaur_webp": {
+      "title": "Atlas-Centaur",
+      "what": "Atlas a serbatoio d’acciaio autoportante e uno stadio e mezzo sotto lo stadio superiore Centaur bianco e il suo carenaggio (Mariner 9 e 10, Pioneer 10 e 11).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-atlas-agena_webp": {
+      "title": "Atlas-Agena",
+      "what": "Lo stesso Atlas sotto uno snello stadio superiore Agena D e un piccolo carenaggio (Mariner 4).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-titan-ii-g_webp": {
+      "title": "Titan II(23)G",
+      "what": "Due stadi del nucleo Titan sotto un carenaggio del carico utile (Clementine).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
+      "title": "Titan IIIE-Centaur",
+      "what": "Nucleo Titan con due booster solidi a cinque segmenti, un interstadio e il Centaur dentro il suo carenaggio (Viking, Voyager).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
+      "title": "Titan IVB-Centaur",
+      "what": "Nucleo Titan con due lunghi motori solidi sotto un carenaggio da 20 m che racchiude il Centaur (Cassini).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-falcon-heavy_webp": {
+      "title": "Falcon Heavy",
+      "what": "Tre nuclei Falcon 9 affiancati: booster laterali con ogive, alette a griglia e gambe, e un nucleo centrale con lo stadio superiore e il carenaggio.",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-athena-ii_webp": {
+      "title": "Athena II",
+      "what": "Pila interamente a propellente solido: due stadi Castor 120, un terzo stadio e un carenaggio rastremato (Lunar Prospector).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-delta-iv-heavy_webp": {
+      "title": "Delta IV Heavy",
+      "what": "Tre nuclei propulsivi comuni affiancati, quello centrale con lo stadio superiore criogenico e un carenaggio da 19 m (Parker Solar Probe).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-new-glenn_webp": {
+      "title": "New Glenn",
+      "what": "Un’unica canna da 7 m: primo stadio a sette motori con gambe e strake, sotto un carenaggio ogivale da 7 m (Blue Moon MK1).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-proton-m-briz-m_webp": {
+      "title": "Proton-M / Briz-M",
+      "what": "Nucleo centrale circondato da sei serbatoi esterni, altri due stadi e uno stadio superiore Briz-M sotto un carenaggio da 4,35 m.",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-sls-block-1_webp": {
+      "title": "SLS Block 1",
+      "what": "Stadio centrale arancione in schiuma con quattro RS-25, due booster bianchi a cinque segmenti, l’adattatore e lo stadio superiore sotto Orion e la sua torre di fuga (Artemis).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-molniya-m_webp": {
+      "title": "Molniya-M",
+      "what": "R-7 a quattro stadi: il Blok I sul suo traliccio, lo stadio di fuga Blok L e la sonda sotto un carenaggio cilindro-conico (Luna 9, Luna 10).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
+      "title": "Soyuz-FG / Fregat",
+      "what": "L’R-7 e il suo stadio superiore sormontati dal tozzo Fregat e dalla sonda sotto un carenaggio più largo (Mars Express).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
+      "title": "Sputnik 8K71PS",
+      "what": "L’R-7 a due stadi che lanciò lo Sputnik 1: nessun terzo stadio, il satellite sotto l’ogiva del nucleo.",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-soyuz-2_webp": {
+      "title": "Soyuz-2",
+      "what": "L’R-7 modernizzato da 46,3 m: quattro booster attorno al nucleo, uno stadio superiore su un traliccio aperto e un lungo carenaggio.",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-antares_webp": {
+      "title": "Antares 230+",
+      "what": "Il lanciatore del Cygnus di Northrop Grumman: primo stadio a cherosene da 3,9 m su due RD-181 sotto un secondo stadio solido e il carenaggio.",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-ariane-6_webp": {
+      "title": "Ariane 6",
+      "what": "Il nucleo criogenico europeo da 5,4 m e lo stadio superiore Vinci sotto un carenaggio da 20 m, con quattro booster solidi (A64).",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-vulcan_webp": {
+      "title": "Vulcan Centaur",
+      "what": "Primo stadio a metano da 5,4 m di ULA su due BE-4, il Centaur V e un carenaggio da 5,4 m, con booster solidi GEM 63XL.",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-energia_webp": {
+      "title": "Energia–Buran",
+      "what": "Il nucleo a idrogeno da 7,75 m con quattro booster RD-170 e l’orbiter Buran sul suo fianco.",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-launcher-n1_webp": {
+      "title": "N1",
+      "what": "Il razzo lunare sovietico: cinque stadi a cono, trenta motori nel primo, sotto il carenaggio L3 e la torre di fuga.",
+      "where": "Vola · lancio/ascesa"
+    },
+    "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
+      "title": "Soyuz 7K-OK",
+      "what": "La Soyuz di prima generazione da 7,95 m: moduli orbitale, di discesa e di servizio, ali solari da 9,8 m e le antenne di rendez-vous Igla.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-soyuz-ms_webp": {
+      "title": "Soyuz T / TM / TMA / MS (4 varianti)",
+      "what": "La Soyuz da 7,48 m in quattro generazioni: antenne Igla sulla T, Kurs su TM e TMA, Kurs-NA e uno scudo antimicrometeoriti sulla MS.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-crew-dragon_webp": {
+      "title": "Crew Dragon",
+      "what": "L’insieme capsula e trunk da 8,1 m con i suoi oblò, i pod SuperDraco e il trunk con celle solari.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-starliner_webp": {
+      "title": "Starliner (CST-100)",
+      "what": "La capsula e il modulo di servizio di Boeing, da 5,03 m: la fascia blu e i pod dei propulsori.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-gaganyaan_webp": {
+      "title": "Gaganyaan",
+      "what": "Il modulo equipaggio da 5,58 m dell’ISRO sul suo modulo di servizio, con ali solari dispiegabili.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-orion_webp": {
+      "title": "Orion",
+      "what": "Il modulo equipaggio di Artemis da 7,9 m con il modulo di servizio europeo e i suoi pannelli solari.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-new-shepard_webp": {
+      "title": "New Shepard",
+      "what": "Il veicolo suborbitale da 19,2 m: un booster da 3,8 m sotto la capsula equipaggio con i suoi grandi oblò.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block I / II (2 varianti)",
+      "what": "Il modulo di comando e servizio da 10,6 e 11 m: il modulo di comando conico sul modulo di servizio cilindrico con il suo ugello.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-shenzhou_webp": {
+      "title": "Shenzhou",
+      "what": "La navicella cinese a tre moduli da 9,25 m, di discendenza Soyuz: modulo orbitale, modulo di rientro e modulo di servizio con le sue ali solari.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
+      "title": "Orbiter dello Space Shuttle",
+      "what": "Un orbiter da 37,2 m disegnato una sola volta per le quattro sorelle — Atlantis, Challenger, Discovery ed Endeavour — disteso sulla pista.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-columbia_webp": {
+      "title": "Space Shuttle Columbia",
+      "what": "Il primo orbiter: l’unico con i bordi neri e il contenitore degli strumenti sulla deriva.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-enterprise_webp": {
+      "title": "Space Shuttle Enterprise",
+      "what": "L’orbiter per i test atmosferici: senza motori principali, senza pod OMS, con piastrelle simulate.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-buran_webp": {
+      "title": "Buran",
+      "what": "L’orbiter sovietico da 36,4 m: un’ala a doppio delta da 24 m, con i motori principali rimasti sul nucleo dell’Energia.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-buran-ok-gli_webp": {
+      "title": "Buran OK-GLI",
+      "what": "Il veicolo per i test atmosferici con la forma e la massa del Buran: quattro turboventole AL-31 in coda.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-x37b_webp": {
+      "title": "X-37B",
+      "what": "L’aereo spaziale senza equipaggio da 8,92 m della U.S. Space Force, con 4,55 m di apertura alare.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-progress-ms_webp": {
+      "title": "Progress 7K-TG / M / MS (3 varianti)",
+      "what": "La nave cargo derivata dalla Soyuz, da 7,23 a 7,94 m: modulo di servizio, sezione di rifornimento e modulo cargo; la 7K-TG senza ali solari.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2",
+      "what": "La Dragon 2 senza equipaggio e senza oblò sul suo trunk da 8,1 m: la nave cargo della ISS.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
+      "title": "Dragon 1",
+      "what": "La Dragon cargo originale da 6,1 m: una capsula da 3,7 m sul suo trunk con due pannelli solari.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-cygnus-enhanced_webp": {
+      "title": "Cygnus Standard / Enhanced (2 varianti)",
+      "what": "Il cargo per stazione di Northrop Grumman, da 5,14 e 6,39 m: un modulo cargo pressurizzato sul modulo di servizio con pannelli solari circolari.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-htv_webp": {
+      "title": "HTV (Kounotori)",
+      "what": "Il cargo per stazione giapponese da 9,8 m: un modulo pressurizzato e un pallet aperto sulla sezione di servizio.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-htv-x_webp": {
+      "title": "HTV-X",
+      "what": "Il cargo successore giapponese da 8 m: un modulo cargo pressurizzato sul modulo di servizio con le sue ali solari.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-atv_webp": {
+      "title": "ATV",
+      "what": "L’Automated Transfer Vehicle dell’ESA da 10,3 m: un cargo cilindrico con quattro ali solari a X.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-showcase-tianzhou_webp": {
+      "title": "Tianzhou",
+      "what": "La nave cargo cinese da 10,6 m: un lungo modulo cargo sul modulo di servizio e le sue ali solari.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-lineup-launchers_webp": {
+      "title": "Confronto dei lanciatori",
+      "what": "Ogni razzo dotato di modello, da Starship a Mercury-Redstone, affiancato alla sua altezza reale accanto a una persona di 1,75 m.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-lineup-spacecraft_webp": {
+      "title": "Confronto di capsule e veicoli spaziali",
+      "what": "Capsule, cargo e orbiter a grandezza reale: gli orbiter distesi sulla pista, le capsule in piedi come sui loro razzi.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-lineup-landmarks_webp": {
+      "title": "Monumenti alla loro altezza reale",
+      "what": "Sedici monumenti e icone disegnati a mano alle altezze documentate, dalla Torre Eiffel e dalla Statua della Libertà al David di Michelangelo, un Routemaster londinese e un Maggiolino Volkswagen.",
+      "where": "Flotta · confronto in scala"
+    },
+    "/images/colophon/model-lineup-cast_webp": {
+      "title": "Personaggi a cartoni animati",
+      "what": "Un cast a colori piatti a grandezza reale — uomo, donna, bambino, cane, gatto, guerriero di terracotta, panda gigante, orso bruno, giraffa ed elefante — tra i veicoli.",
+      "where": "Flotta · confronto in scala"
     }
   },
   "capsules": {

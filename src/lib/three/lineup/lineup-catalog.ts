@@ -20,7 +20,7 @@ import type { ShowcaseModel } from '../showcase/types';
  * Lay an upright winged craft on the runway: nose (+y) to +x, wings (±x) into the screen (±z), its
  * top side up — seen side-on, as it rolls out after landing.
  */
-function runwayBuild(model: ShowcaseModel, top: '+z' | '-z'): () => THREE.Object3D {
+export function runwayBuild(model: ShowcaseModel, top: '+z' | '-z'): () => THREE.Object3D {
   // Rotation matrices (columns = images of x, y, z): y→x, and the top side → +y.
   const m =
     top === '+z'

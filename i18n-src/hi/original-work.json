@@ -1641,6 +1641,256 @@
       "title": "प्रतिष्ठित मिशन प्रक्षेपवक्र",
       "what": "Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn उड़ान पथ।",
       "where": "अन्वेषण"
+    },
+    "/images/colophon/model-launcher-long-march-3a_webp": {
+      "title": "Long March 3A",
+      "what": "खुले ट्रस पर गर्म पृथक्करण वाले कोर और दूसरे चरण के ऊपर क्रायोजेनिक तीसरा चरण और 3.35 मी का फ़ेयरिंग, बिना स्ट्रैप-ऑन के (Chang’e 1)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-long-march-7_webp": {
+      "title": "Long March 7",
+      "what": "CALT का 3.35 मी का केरोसिन रॉकेट, जो Tianzhou मालवाहक यानों को ले जाता है — कोर, दूसरा चरण और चार 2.25 मी के स्ट्रैप-ऑन बूस्टर।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-delta-ii_webp": {
+      "title": "Delta II",
+      "what": "Thor से बना फ़िरोज़ी पहला चरण, जिसे नौ सफ़ेद ठोस बूस्टर घेरे हैं, ऊपर संकरे आधार वाला 2.9 मी का फ़ेयरिंग।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-atlas-centaur_webp": {
+      "title": "Atlas-Centaur",
+      "what": "स्टील के गुब्बारे जैसे टैंक वाला डेढ़-चरण Atlas, ऊपर सफ़ेद Centaur ऊपरी चरण और फ़ेयरिंग (Mariner 9 और 10, Pioneer 10 और 11)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-atlas-agena_webp": {
+      "title": "Atlas-Agena",
+      "what": "वही Atlas, ऊपर पतला Agena D ऊपरी चरण और छोटा आवरण (Mariner 4)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-titan-ii-g_webp": {
+      "title": "Titan II(23)G",
+      "what": "Titan कोर के दो चरण, ऊपर पेलोड फ़ेयरिंग (Clementine)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
+      "title": "Titan IIIE-Centaur",
+      "what": "पाँच-खंड वाले दो ठोस बूस्टर के साथ Titan कोर, अंतरचरण और फ़ेयरिंग के भीतर Centaur (Viking, Voyager)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
+      "title": "Titan IVB-Centaur",
+      "what": "दो लंबे ठोस मोटरों वाला Titan कोर, ऊपर Centaur को ढकने वाला 20 मी का फ़ेयरिंग (Cassini)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-falcon-heavy_webp": {
+      "title": "Falcon Heavy",
+      "what": "तीन Falcon 9 कोर साथ-साथ — किनारे के बूस्टर नोज़ कोन, ग्रिड फ़िन और पैरों के साथ, और बीच का कोर ऊपरी चरण और फ़ेयरिंग लिए हुए।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-athena-ii_webp": {
+      "title": "Athena II",
+      "what": "पूरी तरह ठोस स्टैक — दो Castor 120 चरण, तीसरा चरण और संकरा होता फ़ेयरिंग (Lunar Prospector)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-delta-iv-heavy_webp": {
+      "title": "Delta IV Heavy",
+      "what": "तीन एक-जैसे बूस्टर कोर साथ-साथ, बीच वाला क्रायोजेनिक ऊपरी चरण और 19 मी का फ़ेयरिंग लिए हुए (Parker Solar Probe)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-new-glenn_webp": {
+      "title": "New Glenn",
+      "what": "7 मी का एकल स्तंभ — सात इंजनों, पैरों और पंखों वाला पहला चरण, ऊपर 7 मी का नुकीला फ़ेयरिंग (Blue Moon MK1)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-proton-m-briz-m_webp": {
+      "title": "Proton-M / Briz-M",
+      "what": "केंद्रीय कोर को छह बाहरी ईंधन टैंक घेरे हैं, दो और चरण तथा Briz-M ऊपरी चरण, ऊपर 4.35 मी का फ़ेयरिंग।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-sls-block-1_webp": {
+      "title": "SLS Block 1",
+      "what": "चार RS-25 वाला नारंगी फ़ोम कोर चरण, दो सफ़ेद पाँच-खंड बूस्टर, चरण एडाप्टर और ऊपरी चरण, ऊपर Orion और निकासी टावर (Artemis)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-molniya-m_webp": {
+      "title": "Molniya-M",
+      "what": "चार-चरण R-7 — जाली पर Blok I, पलायन चरण Blok L और बेलन-शंकु आवरण के नीचे यान (Luna 9, Luna 10)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
+      "title": "Soyuz-FG / Fregat",
+      "what": "R-7 और उसका ऊपरी चरण, जिसके ऊपर ठिगना Fregat और अधिक चौड़े आवरण के नीचे यान (Mars Express)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
+      "title": "Sputnik 8K71PS",
+      "what": "Sputnik 1 को प्रक्षेपित करने वाला दो-चरण R-7 — तीसरा चरण नहीं, उपग्रह कोर के नोज़ कोन के नीचे।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-soyuz-2_webp": {
+      "title": "Soyuz-2",
+      "what": "46.3 मी ऊँचा उन्नत R-7 — कोर के चारों ओर चार बूस्टर, खुले ट्रस पर ऊपरी चरण और लंबा फ़ेयरिंग।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-antares_webp": {
+      "title": "Antares 230+",
+      "what": "Northrop Grumman का Cygnus प्रक्षेपक — दो RD-181 वाला 3.9 मी का केरोसिन पहला चरण, ऊपर ठोस दूसरा चरण और फ़ेयरिंग।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-ariane-6_webp": {
+      "title": "Ariane 6",
+      "what": "यूरोप का 5.4 मी क्रायोजेनिक कोर और Vinci ऊपरी चरण, ऊपर 20 मी का फ़ेयरिंग, चार ठोस बूस्टर के साथ (A64)।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-vulcan_webp": {
+      "title": "Vulcan Centaur",
+      "what": "ULA का दो BE-4 वाला 5.4 मी का मीथेन पहला चरण, Centaur V और 5.4 मी का फ़ेयरिंग, GEM 63XL ठोस बूस्टर के साथ।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-energia_webp": {
+      "title": "Energia–Buran",
+      "what": "7.75 मी का हाइड्रोजन कोर, चार RD-170 स्ट्रैप-ऑन और बगल में सवार Buran ऑर्बिटर।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-launcher-n1_webp": {
+      "title": "N1",
+      "what": "सोवियत चंद्र रॉकेट — शंकु में पाँच चरण, पहले चरण में तीस इंजन, ऊपर L3 आवरण और निकासी टावर।",
+      "where": "उड़ान · प्रक्षेपण/आरोहण"
+    },
+    "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
+      "title": "Soyuz 7K-OK",
+      "what": "पहली पीढ़ी का Soyuz, 7.95 मी — कक्षीय, अवरोहण और सेवा मॉड्यूल, 9.8 मी के सौर पंख और Igla मिलन एंटीना।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-soyuz-ms_webp": {
+      "title": "Soyuz T / TM / TMA / MS (4 प्रकार)",
+      "what": "7.48 मी का Soyuz चार पीढ़ियों में — T पर Igla एंटीना, TM और TMA पर Kurs, MS पर Kurs-NA और सूक्ष्म-उल्कापिंड कवच।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-crew-dragon_webp": {
+      "title": "Crew Dragon",
+      "what": "8.1 मी का कैप्सूल-और-ट्रंक संयोजन, खिड़कियों, SuperDraco पॉड और सौर सेल वाले ट्रंक के साथ।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-starliner_webp": {
+      "title": "Starliner (CST-100)",
+      "what": "Boeing का 5.03 मी का कैप्सूल और सेवा मॉड्यूल — नीली पट्टी और थ्रस्टर पॉड।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-gaganyaan_webp": {
+      "title": "Gaganyaan",
+      "what": "ISRO का 5.58 मी का चालक-दल मॉड्यूल, सेवा मॉड्यूल पर, खुलने वाले सौर पंखों के साथ।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-orion_webp": {
+      "title": "Orion",
+      "what": "7.9 मी का Artemis चालक-दल मॉड्यूल, यूरोपीय सेवा मॉड्यूल और उसके सौर पैनलों के साथ।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-new-shepard_webp": {
+      "title": "New Shepard",
+      "what": "19.2 मी ऊँचा उप-कक्षीय यान — 3.8 मी के बूस्टर के ऊपर बड़ी खिड़कियों वाला चालक-दल कैप्सूल।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block I / II (2 प्रकार)",
+      "what": "10.6 और 11 मी का कमान और सेवा मॉड्यूल — बेलनाकार सेवा मॉड्यूल पर शंक्वाकार कमान मॉड्यूल और उसकी इंजन नोज़ल।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-shenzhou_webp": {
+      "title": "Shenzhou",
+      "what": "Soyuz वंश का चीन का 9.25 मी का तीन-मॉड्यूल यान — कक्षीय मॉड्यूल, वापसी मॉड्यूल और सौर पंखों वाला सेवा मॉड्यूल।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
+      "title": "Space Shuttle ऑर्बिटर",
+      "what": "37.2 मी का एक ऑर्बिटर, चारों बहनों — Atlantis, Challenger, Discovery और Endeavour — के लिए एक बार बनाया गया, रनवे पर लेटा हुआ।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-columbia_webp": {
+      "title": "Space Shuttle Columbia",
+      "what": "पहला ऑर्बिटर — काली किनारियों वाला इकलौता, पूँछ के पंख पर उपकरण पॉड के साथ।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-enterprise_webp": {
+      "title": "Space Shuttle Enterprise",
+      "what": "वायुमंडलीय परीक्षण ऑर्बिटर — न मुख्य इंजन, न OMS पॉड, और नकली टाइलें।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-buran_webp": {
+      "title": "Buran",
+      "what": "सोवियत ऑर्बिटर, 36.4 मी — 24 मी फैलाव का दोहरा डेल्टा पंख, मुख्य इंजन Energia कोर पर छोड़े गए।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-buran-ok-gli_webp": {
+      "title": "Buran OK-GLI",
+      "what": "Buran के आकार और द्रव्यमान वाला वायुमंडलीय परीक्षण यान — पूँछ पर चार AL-31 टर्बोफ़ैन।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-x37b_webp": {
+      "title": "X-37B",
+      "what": "अमेरिकी स्पेस फ़ोर्स का 8.92 मी का मानवरहित अंतरिक्ष विमान, 4.55 मी पंख-फैलाव के साथ।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-progress-ms_webp": {
+      "title": "Progress 7K-TG / M / MS (3 प्रकार)",
+      "what": "Soyuz से बना मालवाहक यान, 7.23 से 7.94 मी — सेवा मॉड्यूल, ईंधन-भरण खंड और मालवाहक मॉड्यूल; 7K-TG में सौर पंख नहीं।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2",
+      "what": "बिना खिड़कियों वाला मानवरहित Dragon 2, 8.1 मी के ट्रंक पर — ISS का मालवाहक यान।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
+      "title": "Dragon 1",
+      "what": "मूल 6.1 मी का मालवाहक Dragon — ट्रंक पर 3.7 मी का कैप्सूल, दो सौर पैनलों के साथ।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-cygnus-enhanced_webp": {
+      "title": "Cygnus Standard / Enhanced (2 प्रकार)",
+      "what": "Northrop Grumman का स्टेशन मालवाहक, 5.14 और 6.39 मी — सेवा मॉड्यूल के ऊपर दाबयुक्त मालवाहक मॉड्यूल और गोल सौर पैनल।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-htv_webp": {
+      "title": "HTV (Kounotori)",
+      "what": "जापान का 9.8 मी का स्टेशन मालवाहक — सेवा खंड पर दाबयुक्त मॉड्यूल और खुला पैलेट।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-htv-x_webp": {
+      "title": "HTV-X",
+      "what": "जापान का 8 मी का उत्तराधिकारी मालवाहक — सेवा मॉड्यूल के ऊपर दाबयुक्त मालवाहक मॉड्यूल, सौर पंखों के साथ।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-atv_webp": {
+      "title": "ATV",
+      "what": "ESA का 10.3 मी का स्वचालित स्थानांतरण वाहन — बेलनाकार मालवाहक, चार X-आकार के सौर पंखों के साथ।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-showcase-tianzhou_webp": {
+      "title": "Tianzhou",
+      "what": "चीन का 10.6 मी का मालवाहक यान — सेवा मॉड्यूल और उसके सौर पंखों के ऊपर लंबा मालवाहक मॉड्यूल।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-lineup-launchers_webp": {
+      "title": "प्रक्षेपकों की तुलना",
+      "what": "मॉडल वाला हर रॉकेट, Starship से Mercury-Redstone तक, असली ऊँचाई पर साथ-साथ, 1.75 मी के व्यक्ति के पास।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-lineup-spacecraft_webp": {
+      "title": "कैप्सूल और अंतरिक्ष यानों की तुलना",
+      "what": "कैप्सूल, मालवाहक यान और ऑर्बिटर असली आकार में — ऑर्बिटर रनवे पर लेटे हुए, कैप्सूल अपने रॉकेटों की तरह खड़े।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-lineup-landmarks_webp": {
+      "title": "स्थलों की असली ऊँचाई",
+      "what": "सोलह स्थल और प्रतीक, प्रमाणित ऊँचाइयों पर हाथ से बनाए गए — एफ़िल टावर और स्टैच्यू ऑफ़ लिबर्टी से लेकर माइकलएंजेलो के डेविड, लंदन की Routemaster और Volkswagen Beetle तक।",
+      "where": "बेड़ा · पैमाने पर तुलना"
+    },
+    "/images/colophon/model-lineup-cast_webp": {
+      "title": "कार्टून पात्र",
+      "what": "असली आकार में सपाट रंगों वाले पात्र — पुरुष, स्त्री, बच्चा, कुत्ता, बिल्ली, टेराकोटा योद्धा, विशाल पांडा, भूरा भालू, जिराफ़ और हाथी — यानों के बीच।",
+      "where": "बेड़ा · पैमाने पर तुलना"
     }
   },
   "capsules": {

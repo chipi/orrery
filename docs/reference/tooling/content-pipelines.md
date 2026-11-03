@@ -28,6 +28,7 @@ per section. Day-to-day rules live in [AGENTS.md §"i18n rules"](../../../AGENTS
 | Tech BOM | `npm run build-tech-bom` / `check-tech-bom` | Regenerate / CI-verify license BOM |
 | Site-stories index | `tsx scripts/build-site-stories-index.ts` | After authoring a new site story |
 | Colophon original-work | `node scripts/build-original-work.mjs` | After adding an original diagram |
+| Model references | `tsx scripts/build-model-references.ts` | After a showcase model, fleet link or landmark source changes |
 | Cislunar waypoints | `tsx scripts/cislunar/generate-*-waypoints.ts` | Bake Tier 1.5 trajectory for a mission |
 | Fleet link repair | `tsx scripts/migrate-fleet-linked-*.ts` | When `validate-data` emits the fix-hint |
 
@@ -256,6 +257,19 @@ content for `/colophon` (also consumed by `/science`). Auto-scans the hand-autho
 directories; 3D/canvas/UI/writing categories are curated inline (live-rendered geometry has no
 thumbnail, so those link to the drawing route).
 **When** — After adding an original diagram. **Standing tool** (not archived).
+**State** — healthy.
+
+### `scripts/build-model-references.ts`
+
+**Command** — `tsx scripts/build-model-references.ts`
+**What** — Credits the public pages Orrery's original 3D models took their sizes and shapes from:
+each showcase model's `refs`, the `links` of every fleet entry the /fleet line-ups draw, and the
+landmark and cartoon-cast sources in the header comments of `lineup/scale-figures.ts` and
+`cartoon-figures.ts`. Rewrites the `models-ref-*` entries of `static/data/data-sources.json` (one
+per publisher, with a `references` list) shown in /credits "Data & catalogues"; other entries are
+untouched. Their per-locale descriptions live in `i18n-src/<locale>/data-sources.json`.
+**When** — After adding or changing a showcase model, a fleet link, or a landmark/cast source.
+**Gotchas** — A page from a publisher not listed in the script's `PUBLISHERS` fails the run.
 **State** — healthy.
 
 ### `scripts/cislunar/`

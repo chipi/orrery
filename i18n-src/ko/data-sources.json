@@ -8,5 +8,14 @@
   "gravity-eht-galactic-centre": "/explore 우리은하 모식도를 뒷받침하는 실제 위치 천문 자료: 태양에서 은하 중심까지의 거리(R₀ ≈ 8.18 kpc, GRAVITY Collaboration 2019)와 궁수자리 A*의 질량(태양 질량의 약 430만 배, GRAVITY Collaboration 2022; 2022년 Event Horizon Telescope 촬영). 은하 나선팔의 위치는 모식적이지만, 이 사실들은 출처가 있는 실제 값입니다.",
   "black-hole-parameters": "/explore의 측지선 중력 렌즈 렌더링에 인용한 매개변수: M87*(최초 촬영, EHT 2019), 궁수자리 A*(EHT 2022, 질량은 GRAVITY), 백조자리 X-1(항성 질량, Miller-Jones et al. 2021에서 질량 상향 조정). 가르강튀아는 허구로 표시했습니다(Kip Thorne의 〈인터스텔라〉 모델). 렌즈 이미지는 자체 측지선 광선 추적이며, 관측소 이미지는 넣지 않았습니다.",
   "celestrak": "ISS(NORAD 25544)와 Tiangong(48274)의 2행 궤도 요소. 매일 갱신해 캐시하며, 물리 실험실의 위성 통과 예보(정거장이 다음에 언제, 얼마나 높이, 어느 방향에서 머리 위를 지나는지)에 씁니다.",
-  "jpl-iau-constants": "물리 실험실 계산 핵심이 쓰는 권위 있는 상수: 행성 근사 위치를 위한 JPL 케플러 요소(Standish), IAU 중력 매개변수와 세차 급수, EGM96 지오포텐셜 상수, IUGG 평균 반지름. 실험실의 숫자는 자체 계산이며, 이 기준값들은 출처가 있는 실제 값입니다."
+  "jpl-iau-constants": "물리 실험실 계산 핵심이 쓰는 권위 있는 상수: 행성 근사 위치를 위한 JPL 케플러 요소(Standish), IAU 중력 매개변수와 세차 급수, EGM96 지오포텐셜 상수, IUGG 평균 반지름. 실험실의 숫자는 자체 계산이며, 이 기준값들은 출처가 있는 실제 값입니다.",
+  "models-ref-wikipedia": "영어·러시아어·중국어 위키백과 문서로, 발사체와 우주선 모델의 길이·지름·비례와 /fleet 크기 비교에서 옆에 그린 명소·동상·동물의 높이를 확인한 출처입니다. 모델과 윤곽은 자체 제작이며 치수만 읽었습니다.",
+  "models-ref-nssdca": "NASA 우주과학 데이터 통합 아카이브(NSSDCA)의 우주선·발사체 페이지로, /fly와 /fleet 크기 비교용으로 모델링한 기체와 로켓의 질량·길이·지름을 확인한 출처입니다.",
+  "models-ref-nasa": "NASA의 임무·기체·역사 페이지(nasa.gov, history.nasa.gov, science.nasa.gov)로, /fly와 /fleet 크기 비교용으로 모델링한 유인 캡슐, 화물선, 우주왕복선 궤도선, 발사체의 치수를 확인한 출처입니다.",
+  "models-ref-nps": "국립공원관리청의 자유의 여신상 페이지 «Statue Statistics»로, 지면에서 횃불 끝까지 92.99 m와 받침대·동상 자체의 치수를 확인한 출처입니다. /fleet 발사체 크기 비교에서 로켓 옆에 서 있는 비교 인물상입니다.",
+  "models-ref-esa": "유럽우주국(ESA) 페이지(ATV, 아리안, 로제타 등)로, /fly와 /fleet 크기 비교용으로 모델링한 유럽 기체와 발사체의 치수를 확인한 출처입니다.",
+  "models-ref-jaxa": "JAXA의 H-IIA, H3, M-V 및 보급선 HTV / HTV-X 페이지로, /fly와 /fleet 크기 비교용으로 모델링한 일본 발사체와 화물선의 치수를 확인한 출처입니다.",
+  "models-ref-isro": "ISRO의 발사체와 가간얀 페이지(PSLV, GSLV Mk III / LVM3, 유인 모듈)로, /fly와 /fleet 크기 비교용으로 모델링한 인도 기체의 치수를 확인한 출처입니다.",
+  "models-ref-agencies": "우주 기관과 제작사의 공식 페이지(로스코스모스, 스페이스X, 유나이티드 론치 얼라이언스, 보잉, 노스럽 그러먼, 파이어플라이, 아리안스페이스, 중국유인우주국과 CASC, 미국 우주군)로, 발사체와 우주선 모델의 기체 치수를 확인한 출처입니다.",
+  "models-ref-independent": "독립적인 우주 비행 자료와 박물관 페이지(군터의 우주 페이지, Encyclopedia Astronautica, RussianSpaceWeb, 스미스소니언 국립항공우주박물관, 슈파이어 기술박물관 등)로, 소련·우주왕복선·부란 시대 기체의 크기를 확인한 출처입니다."
 }

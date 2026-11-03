@@ -1641,6 +1641,256 @@
       "title": "Trayectorias de misiones icónicas",
       "what": "Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn — trayectorias de vuelo.",
       "where": "Explorar"
+    },
+    "/images/colophon/model-launcher-long-march-3a_webp": {
+      "title": "Long March 3A",
+      "what": "Primera y segunda etapa con separación en caliente sobre una cercha abierta, bajo una tercera etapa criogénica y una cofia de 3,35 m, sin propulsores laterales (Chang’e 1).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-long-march-7_webp": {
+      "title": "Long March 7",
+      "what": "El cohete de queroseno de 3,35 m de la CALT para los cargueros Tianzhou: un núcleo, una segunda etapa y cuatro propulsores laterales de 2,25 m.",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-delta-ii_webp": {
+      "title": "Delta II",
+      "what": "Primera etapa turquesa derivada del Thor, rodeada de nueve propulsores sólidos blancos, bajo una cofia de 2,9 m con estrechamiento.",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-atlas-centaur_webp": {
+      "title": "Atlas-Centaur",
+      "what": "Atlas de depósito de acero inflado y estadio y medio bajo la etapa superior Centaur blanca y su cofia (Mariner 9 y 10, Pioneer 10 y 11).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-atlas-agena_webp": {
+      "title": "Atlas-Agena",
+      "what": "El mismo Atlas bajo una esbelta etapa superior Agena D y una pequeña cofia (Mariner 4).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-titan-ii-g_webp": {
+      "title": "Titan II(23)G",
+      "what": "Dos etapas del núcleo Titan bajo una cofia de carga útil (Clementine).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
+      "title": "Titan IIIE-Centaur",
+      "what": "Núcleo Titan con dos propulsores sólidos de cinco segmentos, una etapa de unión y el Centaur dentro de su cofia (Viking, Voyager).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
+      "title": "Titan IVB-Centaur",
+      "what": "Núcleo Titan con dos largos motores sólidos bajo una cofia de 20 m que envuelve el Centaur (Cassini).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-falcon-heavy_webp": {
+      "title": "Falcon Heavy",
+      "what": "Tres núcleos Falcon 9 en paralelo: propulsores laterales con ojivas, aletas de rejilla y patas, y un núcleo central con la etapa superior y la cofia.",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-athena-ii_webp": {
+      "title": "Athena II",
+      "what": "Pila totalmente sólida: dos etapas Castor 120, una tercera etapa y una cofia ahusada (Lunar Prospector).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-delta-iv-heavy_webp": {
+      "title": "Delta IV Heavy",
+      "what": "Tres núcleos comunes de propulsión en paralelo; el central lleva la etapa superior criogénica y una cofia de 19 m (Parker Solar Probe).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-new-glenn_webp": {
+      "title": "New Glenn",
+      "what": "Una sola columna de 7 m: primera etapa de siete motores con patas y aletas, bajo una cofia ojival de 7 m (Blue Moon MK1).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-proton-m-briz-m_webp": {
+      "title": "Proton-M / Briz-M",
+      "what": "Núcleo central rodeado de seis depósitos exteriores de combustible, dos etapas más y una etapa superior Briz-M bajo una cofia de 4,35 m.",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-sls-block-1_webp": {
+      "title": "SLS Block 1",
+      "what": "Etapa central naranja de espuma con cuatro RS-25, dos propulsores blancos de cinco segmentos, el adaptador y la etapa superior bajo Orion y su torre de escape (Artemis).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-molniya-m_webp": {
+      "title": "Molniya-M",
+      "what": "R-7 de cuatro etapas: la Blok I sobre su celosía, la etapa de escape Blok L y la sonda bajo una cofia de cilindro y cono (Luna 9, Luna 10).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
+      "title": "Soyuz-FG / Fregat",
+      "what": "El R-7 y su etapa superior coronados por la achaparrada Fregat y la sonda bajo una cofia más ancha (Mars Express).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
+      "title": "Sputnik 8K71PS",
+      "what": "El R-7 de dos etapas que lanzó el Sputnik 1: sin tercera etapa, con el satélite bajo la ojiva del núcleo.",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-soyuz-2_webp": {
+      "title": "Soyuz-2",
+      "what": "El R-7 modernizado de 46,3 m: cuatro propulsores alrededor del núcleo, una etapa superior sobre una cercha abierta y una cofia larga.",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-antares_webp": {
+      "title": "Antares 230+",
+      "what": "El lanzador del Cygnus de Northrop Grumman: primera etapa de queroseno de 3,9 m con dos RD-181 bajo una segunda etapa sólida y su cofia.",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-ariane-6_webp": {
+      "title": "Ariane 6",
+      "what": "Núcleo criogénico europeo de 5,4 m y etapa superior Vinci bajo una cofia de 20 m, con cuatro propulsores sólidos (A64).",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-vulcan_webp": {
+      "title": "Vulcan Centaur",
+      "what": "Primera etapa de metano de 5,4 m de ULA con dos BE-4, el Centaur V y una cofia de 5,4 m, con propulsores sólidos GEM 63XL.",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-energia_webp": {
+      "title": "Energia–Buran",
+      "what": "El núcleo de hidrógeno de 7,75 m con cuatro propulsores RD-170 y el orbitador Buran en su costado.",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-launcher-n1_webp": {
+      "title": "N1",
+      "what": "El cohete lunar soviético: cinco etapas en cono, treinta motores en la primera, bajo la cofia L3 y la torre de escape.",
+      "where": "Vuelo · lanzamiento/ascenso"
+    },
+    "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
+      "title": "Soyuz 7K-OK",
+      "what": "La Soyuz de primera generación, de 7,95 m: módulos orbital, de descenso y de servicio, alas solares de 9,8 m y las antenas de encuentro Igla.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-soyuz-ms_webp": {
+      "title": "Soyuz T / TM / TMA / MS (4 variantes)",
+      "what": "La Soyuz de 7,48 m en cuatro generaciones: antenas Igla en la T, Kurs en la TM y la TMA, Kurs-NA y un escudo antimicrometeoritos en la MS.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-crew-dragon_webp": {
+      "title": "Crew Dragon",
+      "what": "El conjunto de cápsula y trunk de 8,1 m con sus ventanas, los módulos SuperDraco y el trunk con celdas solares.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-starliner_webp": {
+      "title": "Starliner (CST-100)",
+      "what": "La cápsula y el módulo de servicio de Boeing, de 5,03 m: la banda azul y los módulos de propulsores.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-gaganyaan_webp": {
+      "title": "Gaganyaan",
+      "what": "El módulo de tripulación de 5,58 m de la ISRO sobre su módulo de servicio, con alas solares desplegables.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-orion_webp": {
+      "title": "Orion",
+      "what": "El módulo de tripulación de Artemis, de 7,9 m, con el módulo de servicio europeo y sus paneles solares.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-new-shepard_webp": {
+      "title": "New Shepard",
+      "what": "El vehículo suborbital de 19,2 m: un propulsor de 3,8 m bajo la cápsula de tripulación con sus grandes ventanas.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block I / II (2 variantes)",
+      "what": "El módulo de mando y servicio de 10,6 y 11 m: el módulo de mando cónico sobre el módulo de servicio cilíndrico con su tobera.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-shenzhou_webp": {
+      "title": "Shenzhou",
+      "what": "La nave china de tres módulos y 9,25 m de linaje Soyuz: módulo orbital, módulo de reentrada y módulo de servicio con sus alas solares.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
+      "title": "Orbitador del Space Shuttle",
+      "what": "Un orbitador de 37,2 m dibujado una sola vez para las cuatro hermanas —Atlantis, Challenger, Discovery y Endeavour—, tendido en la pista.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-columbia_webp": {
+      "title": "Space Shuttle Columbia",
+      "what": "El primer orbitador: el único con aristas negras y la cápsula de instrumentos en la aleta de cola.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-enterprise_webp": {
+      "title": "Space Shuttle Enterprise",
+      "what": "El orbitador de pruebas atmosféricas: sin motores principales, sin módulos OMS y con losetas simuladas.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-buran_webp": {
+      "title": "Buran",
+      "what": "El orbitador soviético de 36,4 m: un ala en doble delta de 24 m, con los motores principales dejados en el núcleo de la Energia.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-buran-ok-gli_webp": {
+      "title": "Buran OK-GLI",
+      "what": "El vehículo de pruebas atmosféricas con la forma y la masa del Buran: cuatro turbofanes AL-31 en la cola.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-x37b_webp": {
+      "title": "X-37B",
+      "what": "El avión espacial no tripulado de 8,92 m de la Fuerza Espacial de EE. UU., con 4,55 m de envergadura.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-progress-ms_webp": {
+      "title": "Progress 7K-TG / M / MS (3 variantes)",
+      "what": "La nave de carga derivada de la Soyuz, de 7,23 a 7,94 m: módulo de servicio, sección de reabastecimiento y módulo de carga; la 7K-TG sin alas solares.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2",
+      "what": "La Dragon 2 sin tripulación y sin ventanas sobre su trunk de 8,1 m: la nave de carga de la ISS.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
+      "title": "Dragon 1",
+      "what": "La Dragon de carga original, de 6,1 m: una cápsula de 3,7 m sobre su trunk con dos paneles solares.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-cygnus-enhanced_webp": {
+      "title": "Cygnus Standard / Enhanced (2 variantes)",
+      "what": "El carguero de estación de Northrop Grumman, de 5,14 y 6,39 m: un módulo de carga presurizado sobre el módulo de servicio con paneles solares circulares.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-htv_webp": {
+      "title": "HTV (Kounotori)",
+      "what": "El carguero de estación japonés de 9,8 m: un módulo presurizado y una plataforma abierta sobre la sección de servicio.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-htv-x_webp": {
+      "title": "HTV-X",
+      "what": "El carguero sucesor japonés de 8 m: un módulo de carga presurizado sobre el módulo de servicio con sus alas solares.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-atv_webp": {
+      "title": "ATV",
+      "what": "El vehículo de transferencia automatizado de la ESA, de 10,3 m: un carguero cilíndrico con cuatro alas solares en X.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-showcase-tianzhou_webp": {
+      "title": "Tianzhou",
+      "what": "La nave de carga china de 10,6 m: un largo módulo de carga sobre el módulo de servicio y sus alas solares.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-lineup-launchers_webp": {
+      "title": "Comparativa de lanzadores",
+      "what": "Todos los cohetes con modelo, del Starship al Mercury-Redstone, colocados uno junto a otro a su altura real junto a una persona de 1,75 m.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-lineup-spacecraft_webp": {
+      "title": "Comparativa de cápsulas y naves",
+      "what": "Cápsulas, cargueros y orbitadores a tamaño real: los orbitadores tendidos en la pista, las cápsulas de pie como sobre sus cohetes.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-lineup-landmarks_webp": {
+      "title": "Monumentos a su altura real",
+      "what": "Dieciséis monumentos e iconos dibujados a mano con sus alturas documentadas, desde la Torre Eiffel y la Estatua de la Libertad hasta el David de Miguel Ángel, un Routemaster de Londres y un Escarabajo de Volkswagen.",
+      "where": "Flota · comparativa a escala"
+    },
+    "/images/colophon/model-lineup-cast_webp": {
+      "title": "Reparto de dibujos animados",
+      "what": "Un reparto de colores planos a tamaño real —hombre, mujer, niño, perro, gato, guerrero de terracota, panda gigante, oso pardo, jirafa y elefante— entre las naves.",
+      "where": "Flota · comparativa a escala"
     }
   },
   "capsules": {

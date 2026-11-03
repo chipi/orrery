@@ -248,6 +248,8 @@ export interface DataSourceEntry {
   license_url: string;
   license_rationale: string;
   used_on: string[];
+  /** The individual pages credited (model-reference entries: one publisher's pages). */
+  references?: { l: string; u: string }[];
 }
 
 export interface DataSourcesManifest {

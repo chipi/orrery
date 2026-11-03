@@ -344,6 +344,117 @@ const launchers = [
   ['m-v', 'M-V', 'JAXA’s all-solid three-stage launcher (Hayabusa).'],
   ['h3', 'H3', 'JAXA’s new cryogenic core with solid strap-on boosters.'],
   ['ariane-1', 'Ariane 1', 'Europe’s first launcher — a slender three-stage 1979 design (Giotto).'],
+  [
+    'long-march-3a',
+    'Long March 3A',
+    'Core and second stage hot-staged over an open truss under a cryogenic third stage and a 3.35 m fairing, no strap-ons (Chang’e 1).',
+  ],
+  [
+    'long-march-7',
+    'Long March 7',
+    'CALT’s 3.35 m kerosene rocket for the Tianzhou freighters — a core, a second stage and four 2.25 m strap-on boosters.',
+  ],
+  [
+    'delta-ii',
+    'Delta II',
+    'Turquoise Thor-derived first stage ringed by nine white solid boosters, under a boat-tailed 2.9 m fairing.',
+  ],
+  [
+    'atlas-centaur',
+    'Atlas-Centaur',
+    'Steel-balloon Atlas stage-and-a-half under the white Centaur upper stage and nose fairing (Mariner 9 and 10, Pioneer 10 and 11).',
+  ],
+  [
+    'atlas-agena',
+    'Atlas-Agena',
+    'The same Atlas under a slim Agena D upper stage and a small shroud (Mariner 4).',
+  ],
+  ['titan-ii-g', 'Titan II(23)G', 'Two Titan core stages under a payload fairing (Clementine).'],
+  [
+    'titan-iiie-centaur',
+    'Titan IIIE-Centaur',
+    'Titan core with two five-segment solid boosters, an interstage and the Centaur inside its shroud (Viking, Voyager).',
+  ],
+  [
+    'titan-ivb-centaur',
+    'Titan IVB-Centaur',
+    'Titan core with two long solid motors under a 20 m fairing that encloses the Centaur (Cassini).',
+  ],
+  [
+    'falcon-heavy',
+    'Falcon Heavy',
+    'Three Falcon 9 cores side by side — side boosters with nose cones, grid fins and legs, and a centre core carrying the upper stage and fairing.',
+  ],
+  [
+    'athena-ii',
+    'Athena II',
+    'All-solid stack — two Castor 120 stages, a third stage and a tapered fairing (Lunar Prospector).',
+  ],
+  [
+    'delta-iv-heavy',
+    'Delta IV Heavy',
+    'Three common booster cores abreast, the centre one carrying the cryogenic upper stage and a 19 m fairing (Parker Solar Probe).',
+  ],
+  [
+    'new-glenn',
+    'New Glenn',
+    'A single 7 m stick — a seven-engine first stage with legs and strakes under a 7 m ogive fairing (Blue Moon MK1).',
+  ],
+  [
+    'proton-m-briz-m',
+    'Proton-M / Briz-M',
+    'Central core ringed by six outboard fuel tanks, two more stages and a Briz-M upper stage under a 4.35 m fairing.',
+  ],
+  [
+    'sls-block-1',
+    'SLS Block 1',
+    'Orange foam core stage on four RS-25s, two white five-segment boosters, the stage adapter and upper stage under Orion and its abort tower (Artemis).',
+  ],
+  [
+    'molniya-m',
+    'Molniya-M',
+    'Four-stage R-7 — the Blok I on its lattice, the Blok L escape stage and the probe under a cylinder-and-cone shroud (Luna 9, Luna 10).',
+  ],
+  [
+    'soyuz-fg-fregat',
+    'Soyuz-FG / Fregat',
+    'The R-7 and its upper stage topped by the squat Fregat and the probe under a wider shroud (Mars Express).',
+  ],
+  [
+    'sputnik-8k71ps',
+    'Sputnik 8K71PS',
+    'The two-stage R-7 that launched Sputnik 1 — no third stage, the satellite riding under the core’s nose cone.',
+  ],
+  [
+    'soyuz-2',
+    'Soyuz-2',
+    'The modernised 46.3 m R-7 — four boosters round the core, an upper stage on an open truss and a long fairing.',
+  ],
+  [
+    'antares',
+    'Antares 230+',
+    'Northrop Grumman’s Cygnus launcher — a 3.9 m kerosene first stage on two RD-181s under a solid second stage and fairing.',
+  ],
+  [
+    'ariane-6',
+    'Ariane 6',
+    'Europe’s 5.4 m cryogenic core and Vinci upper stage under a 20 m fairing, with four solid boosters (A64).',
+  ],
+  [
+    'vulcan',
+    'Vulcan Centaur',
+    'ULA’s 5.4 m methane first stage on two BE-4s, the Centaur V and a 5.4 m fairing, with GEM 63XL solid boosters.',
+  ],
+  [
+    'energia',
+    'Energia–Buran',
+    'The 7.75 m hydrogen core with four RD-170 strap-ons and the Buran orbiter riding on its flank.',
+  ],
+  [
+    'n1',
+    'N1',
+    'The Soviet Moon rocket — five stages in a cone, thirty engines on the first, under the L3 shroud and escape tower.',
+  ],
 ].map(mk('model-launcher', 'Fly · launch/ascent', '/fly'));
 
 // EDL descent stacks — entry/descent/landing hardware (descent-models.ts),
@@ -578,9 +689,157 @@ const earthCapsules = [
   ],
 ].map(mk('model-capsule', 'Earth-orbit re-entry', '/fly'));
 
+// Showcase spacecraft — the true-size models of the /fleet line-ups (src/lib/three/showcase/*.ts,
+// 34 models; sister variants that look alike share one entry), the line-up scenes themselves and
+// the scale sets drawn between the craft (lineup/scale-figures.ts, lineup/cartoon-figures.ts).
+// Thumbnails: /dev/models cards `showcase-<id>` / `lineup-cast`, and live /fleet scenes.
+const showcaseCrewed = [
+  [
+    'soyuz-7k-ok',
+    'Soyuz 7K-OK',
+    'The first-generation Soyuz at 7.95 m — orbital, descent and service modules, 9.8 m solar wings and the Igla rendezvous antennas.',
+  ],
+  [
+    'soyuz-ms',
+    'Soyuz T / TM / TMA / MS (4 variants)',
+    'The 7.48 m Soyuz across four generations — Igla antennas on the T, Kurs on the TM and TMA, Kurs-NA and a micrometeoroid shield on the MS.',
+  ],
+  [
+    'crew-dragon',
+    'Crew Dragon',
+    'The 8.1 m capsule-and-trunk stack with its windows, SuperDraco pods and solar-cell trunk.',
+  ],
+  [
+    'starliner',
+    'Starliner (CST-100)',
+    'Boeing’s 5.03 m capsule and service module — the blue band and the thruster pods.',
+  ],
+  [
+    'gaganyaan',
+    'Gaganyaan',
+    'ISRO’s 5.58 m crew module on its service module, with deployable solar wings.',
+  ],
+  [
+    'orion',
+    'Orion',
+    'The 7.9 m Artemis crew module and European service module with its solar arrays.',
+  ],
+  [
+    'new-shepard',
+    'New Shepard',
+    'The 19.2 m suborbital vehicle — a 3.8 m booster under the crew capsule with its large windows.',
+  ],
+  [
+    'apollo-csm-block-ii',
+    'Apollo CSM Block I / II (2 variants)',
+    'The command and service module at 10.6 and 11 m — the conical command module on the cylindrical service module and its engine bell.',
+  ],
+  [
+    'shenzhou',
+    'Shenzhou',
+    'China’s 9.25 m three-module craft in the Soyuz lineage — orbital module, re-entry module and service module with its solar wings.',
+  ],
+  [
+    'space-shuttle-orbiter',
+    'Space Shuttle orbiter',
+    'One 37.2 m orbiter drawn once for the four sisters — Atlantis, Challenger, Discovery and Endeavour — lying on the runway.',
+  ],
+  [
+    'columbia',
+    'Space Shuttle Columbia',
+    'The first orbiter — the only one with black chines, and the instrument pod on its tail fin.',
+  ],
+  [
+    'enterprise',
+    'Space Shuttle Enterprise',
+    'The atmospheric test orbiter — no main engines, no OMS pods, simulated tiles.',
+  ],
+  [
+    'buran',
+    'Buran',
+    'The Soviet orbiter at 36.4 m — a 24 m double-delta wing, its main engines left on the Energia core.',
+  ],
+  [
+    'buran-ok-gli',
+    'Buran OK-GLI',
+    'The atmospheric test vehicle with Buran’s shape and mass — four AL-31 turbofans at the tail.',
+  ],
+  ['x37b', 'X-37B', 'The U.S. Space Force’s 8.92 m uncrewed spaceplane with its 4.55 m wingspan.'],
+].map(mk('model-showcase', 'Fleet · line-up', '/fleet?category=crewed-spacecraft&view=lineup'));
+const showcaseCargo = [
+  [
+    'progress-ms',
+    'Progress 7K-TG / M / MS (3 variants)',
+    'The Soyuz-derived cargo ship from 7.23 to 7.94 m — service module, refuelling section and cargo module, the 7K-TG without solar wings.',
+  ],
+  [
+    'cargo-dragon-2',
+    'Cargo Dragon 2',
+    'The windowless uncrewed Dragon 2 on its 8.1 m trunk — the ISS cargo ship.',
+  ],
+  [
+    'cargo-dragon-v1',
+    'Dragon 1',
+    'The original 6.1 m cargo Dragon — a 3.7 m capsule on its trunk with two solar arrays.',
+  ],
+  [
+    'cygnus-enhanced',
+    'Cygnus Standard / Enhanced (2 variants)',
+    'Northrop Grumman’s station freighter at 5.14 and 6.39 m — a pressurised cargo module over the service module with round solar arrays.',
+  ],
+  [
+    'htv',
+    'HTV (Kounotori)',
+    'Japan’s 9.8 m station freighter — a pressurised module and an open pallet on the service section.',
+  ],
+  [
+    'htv-x',
+    'HTV-X',
+    'Japan’s 8 m successor freighter — a pressurised cargo module over the service module with its solar wings.',
+  ],
+  [
+    'atv',
+    'ATV',
+    'ESA’s 10.3 m Automated Transfer Vehicle — a cylindrical cargo carrier with four X-shaped solar wings.',
+  ],
+  [
+    'tianzhou',
+    'Tianzhou',
+    'China’s 10.6 m cargo ship — a long cargo module over the service module and its solar wings.',
+  ],
+].map(mk('model-showcase', 'Fleet · line-up', '/fleet?category=cargo-spacecraft&view=lineup'));
+const lineupLaunchers = [
+  [
+    'launchers',
+    'Launcher line-up',
+    'Every rocket with a model, from Starship to Mercury-Redstone, stood side by side at its real height beside a 1.75 m person.',
+  ],
+  [
+    'landmarks',
+    'Landmarks at true height',
+    'Sixteen landmarks and icons hand-drawn at their sourced heights — from the Eiffel Tower and the Statue of Liberty to Michelangelo’s David, a London Routemaster and a VW Beetle.',
+  ],
+].map(mk('model-lineup', 'Fleet · line-up', '/fleet?category=launcher&view=lineup'));
+const lineupSpacecraft = [
+  [
+    'spacecraft',
+    'Capsule and spacecraft line-up',
+    'Capsules, freighters and orbiters at true size — the orbiters lying on the runway, the capsules standing as on their rockets.',
+  ],
+  [
+    'cast',
+    'Cartoon cast',
+    'A flat-coloured cast at true size — man, woman, child, dog, cat, Terracotta warrior, giant panda, brown bear, giraffe and elephant — standing between the craft.',
+  ],
+].map(mk('model-lineup', 'Fleet · line-up', '/fleet?category=crewed-spacecraft&view=lineup'));
+
 const models3d = [
   ...spacecraft,
   ...launchers,
+  ...showcaseCrewed,
+  ...showcaseCargo,
+  ...lineupLaunchers,
+  ...lineupSpacecraft,
   ...moonModels,
   ...marsModels,
   ...venusModels,

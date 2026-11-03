@@ -1641,6 +1641,256 @@
       "title": "标志性任务轨迹",
       "what": "Voyager、Pioneer、New Horizons、Cassini、Juno、Dawn飞行路径。",
       "where": "探索"
+    },
+    "/images/colophon/model-launcher-long-march-3a_webp": {
+      "title": "长征三号甲",
+      "what": "芯级与二级在开放式桁架上热分离，上方是低温第三级和 3.35 米整流罩，没有捆绑助推器（嫦娥一号）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-long-march-7_webp": {
+      "title": "长征七号",
+      "what": "中国运载火箭技术研究院的 3.35 米煤油火箭，用于发射天舟货运飞船——芯级、二级和四个 2.25 米捆绑助推器。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-delta-ii_webp": {
+      "title": "Delta II",
+      "what": "源自 Thor 的青绿色一级，周围环绕九枚白色固体助推器，上方是带船尾收缩的 2.9 米整流罩。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-atlas-centaur_webp": {
+      "title": "Atlas-Centaur",
+      "what": "钢制气球贮箱的阿特拉斯一级半火箭，上方是白色半人马座上面级和整流罩（水手 9 号和 10 号、先驱者 10 号和 11 号）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-atlas-agena_webp": {
+      "title": "Atlas-Agena",
+      "what": "同一枚阿特拉斯，上方是纤细的阿金纳 D 上面级和小型整流罩（水手 4 号）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-titan-ii-g_webp": {
+      "title": "Titan II(23)G",
+      "what": "两级泰坦芯级，上方是有效载荷整流罩（克莱门汀号）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
+      "title": "Titan IIIE-Centaur",
+      "what": "泰坦芯级带两个五段式固体助推器、级间段，半人马座置于整流罩内（海盗号、旅行者号）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
+      "title": "Titan IVB-Centaur",
+      "what": "泰坦芯级带两个长固体发动机，上方是包住半人马座的 20 米整流罩（卡西尼号）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-falcon-heavy_webp": {
+      "title": "Falcon Heavy",
+      "what": "三个猎鹰 9 号芯级并排——两侧助推器带锥形头罩、栅格舵和着陆腿，中央芯级载着上面级和整流罩。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-athena-ii_webp": {
+      "title": "Athena II",
+      "what": "全固体火箭堆栈——两级 Castor 120、第三级和渐缩整流罩（月球探勘者号）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-delta-iv-heavy_webp": {
+      "title": "Delta IV Heavy",
+      "what": "三个通用助推芯级并排，中央一个载着低温上面级和 19 米整流罩（帕克太阳探测器）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-new-glenn_webp": {
+      "title": "New Glenn",
+      "what": "一根 7 米粗的单柱——装有七台发动机、着陆腿和尾翼的一级，上方是 7 米尖拱形整流罩（蓝月 MK1）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-proton-m-briz-m_webp": {
+      "title": "Proton-M / Briz-M",
+      "what": "中央芯级被六个外置燃料箱环绕，再加两级和一个 Briz-M 上面级，上方是 4.35 米整流罩。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-sls-block-1_webp": {
+      "title": "SLS Block 1",
+      "what": "装有四台 RS-25 的橙色泡沫芯级、两个白色五段式助推器、级间适配器和上面级，上方是猎户座与逃逸塔（阿尔忒弥斯）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-molniya-m_webp": {
+      "title": "Molniya-M",
+      "what": "四级 R-7——桁架上的 Blok I、Blok L 逃逸级和探测器，罩在圆柱加圆锥形整流罩内（月球 9 号、月球 10 号）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
+      "title": "Soyuz-FG / Fregat",
+      "what": "R-7 及其上面级，顶端是矮粗的弗雷加特和探测器，罩在更宽的整流罩内（火星快车）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
+      "title": "Sputnik 8K71PS",
+      "what": "发射人造卫星 1 号的两级 R-7——没有第三级，卫星位于芯级鼻锥之下。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-soyuz-2_webp": {
+      "title": "Soyuz-2",
+      "what": "高 46.3 米的改进型 R-7——芯级周围四个助推器、开放桁架上的上面级和长整流罩。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-antares_webp": {
+      "title": "Antares 230+",
+      "what": "诺斯罗普·格鲁曼的天鹅座运载火箭——3.9 米煤油一级配两台 RD-181，上方是固体二级和整流罩。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-ariane-6_webp": {
+      "title": "Ariane 6",
+      "what": "欧洲 5.4 米低温芯级和芬奇上面级，上方是 20 米整流罩，配四个固体助推器（A64）。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-vulcan_webp": {
+      "title": "Vulcan Centaur",
+      "what": "联合发射联盟的 5.4 米甲烷一级配两台 BE-4，半人马座 V 和 5.4 米整流罩，配 GEM 63XL 固体助推器。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-energia_webp": {
+      "title": "Energia–Buran",
+      "what": "7.75 米氢燃料芯级，四个 RD-170 捆绑助推器，暴风雪号轨道器骑在芯级一侧。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-launcher-n1_webp": {
+      "title": "N1",
+      "what": "苏联登月火箭——五级呈锥形，一级装有三十台发动机，上方是 L3 整流罩和逃逸塔。",
+      "where": "飞行·发射/上升"
+    },
+    "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
+      "title": "Soyuz 7K-OK",
+      "what": "第一代联盟号，长 7.95 米——轨道舱、返回舱和服务舱，9.8 米太阳能电池翼和 Igla 交会天线。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-soyuz-ms_webp": {
+      "title": "Soyuz T / TM / TMA / MS（4 个型号）",
+      "what": "长 7.48 米的联盟号历经四代——T 型用 Igla 天线，TM 和 TMA 型用 Kurs，MS 型用 Kurs-NA 并加装微流星体防护罩。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-crew-dragon_webp": {
+      "title": "Crew Dragon",
+      "what": "长 8.1 米的返回舱加货舱组合，有舷窗、SuperDraco 发动机舱和装有太阳能电池的货舱。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-starliner_webp": {
+      "title": "Starliner (CST-100)",
+      "what": "波音的 5.03 米返回舱加服务舱——蓝色环带和推进器舱。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-gaganyaan_webp": {
+      "title": "Gaganyaan",
+      "what": "印度空间研究组织长 5.58 米的乘员舱，连同服务舱和可展开的太阳能电池翼。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-orion_webp": {
+      "title": "Orion",
+      "what": "长 7.9 米的阿尔忒弥斯乘员舱，配欧洲服务舱及其太阳能电池阵。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-new-shepard_webp": {
+      "title": "New Shepard",
+      "what": "高 19.2 米的亚轨道飞行器——3.8 米助推器上方是带大舷窗的乘员舱。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block I / II（2 个型号）",
+      "what": "长 10.6 米和 11 米的指令服务舱——圆锥形指令舱位于圆柱形服务舱之上，带发动机喷管。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-shenzhou_webp": {
+      "title": "神舟",
+      "what": "中国长 9.25 米的三舱飞船，沿袭联盟号设计——轨道舱、返回舱和带太阳能电池翼的推进舱。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
+      "title": "Space Shuttle轨道器",
+      "what": "一架 37.2 米的轨道器，为四姐妹——亚特兰蒂斯号、挑战者号、发现号和奋进号——只画一次，平躺在跑道上。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-columbia_webp": {
+      "title": "Space Shuttle Columbia",
+      "what": "第一架轨道器——唯一带黑色边缘的一架，垂直尾翼上有仪器舱。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-enterprise_webp": {
+      "title": "Space Shuttle Enterprise",
+      "what": "大气层试验轨道器——没有主发动机，没有轨道机动系统舱，隔热瓦为模拟件。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-buran_webp": {
+      "title": "Buran",
+      "what": "苏联轨道器，长 36.4 米——24 米翼展的双三角翼，主发动机留在能源号芯级上。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-buran-ok-gli_webp": {
+      "title": "Buran OK-GLI",
+      "what": "外形和质量与暴风雪号相同的大气层试验机——尾部四台 AL-31 涡扇发动机。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-x37b_webp": {
+      "title": "X-37B",
+      "what": "美国太空军长 8.92 米的无人太空飞机，翼展 4.55 米。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-progress-ms_webp": {
+      "title": "Progress 7K-TG / M / MS（3 个型号）",
+      "what": "由联盟号衍生的货运飞船，长 7.23 至 7.94 米——服务舱、加注段和货舱；7K-TG 型没有太阳能电池翼。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2",
+      "what": "无人、无舷窗的龙飞船 2 号，连同 8.1 米货舱——国际空间站的货运飞船。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
+      "title": "Dragon 1",
+      "what": "最初的 6.1 米货运龙飞船——3.7 米的返回舱连同货舱和两块太阳能电池板。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-cygnus-enhanced_webp": {
+      "title": "Cygnus Standard / Enhanced（2 个型号）",
+      "what": "诺斯罗普·格鲁曼的空间站货运飞船，长 5.14 米和 6.39 米——服务舱上方是增压货舱，配圆形太阳能电池板。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-htv_webp": {
+      "title": "HTV (Kounotori)",
+      "what": "日本长 9.8 米的空间站货运飞船——服务段上有增压舱和开放式货盘。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-htv-x_webp": {
+      "title": "HTV-X",
+      "what": "日本长 8 米的后继货运飞船——服务舱上方是增压货舱，配太阳能电池翼。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-atv_webp": {
+      "title": "ATV",
+      "what": "欧洲空间局长 10.3 米的自动转移飞行器——圆柱形货运飞船，带四片 X 形太阳能电池翼。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-tianzhou_webp": {
+      "title": "天舟",
+      "what": "中国长 10.6 米的货运飞船——推进舱之上的长货舱及其太阳能电池翼。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-lineup-launchers_webp": {
+      "title": "运载火箭尺寸对比",
+      "what": "每一枚有模型的火箭，从星舰到水星-红石，按真实高度并排站在一位 1.75 米的人旁边。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-lineup-spacecraft_webp": {
+      "title": "返回舱与航天器尺寸对比",
+      "what": "返回舱、货运飞船和轨道器按真实尺寸排列——轨道器平躺在跑道上，返回舱像在火箭上一样直立。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-lineup-landmarks_webp": {
+      "title": "地标真实高度",
+      "what": "十六个地标与标志，按有据可查的高度手工绘制——从埃菲尔铁塔和自由女神像到米开朗基罗的大卫像、伦敦路霸巴士和大众甲壳虫。",
+      "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-lineup-cast_webp": {
+      "title": "卡通角色",
+      "what": "按真实尺寸绘制的平涂色块角色——男人、女人、孩子、狗、猫、兵马俑、大熊猫、棕熊、长颈鹿和大象——站在飞行器之间。",
+      "where": "航天器 · 实际尺寸对比"
     }
   },
   "capsules": {

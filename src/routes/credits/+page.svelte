@@ -176,6 +176,8 @@
         return m.credits_used_route_textures();
       case 'lab':
         return m.credits_used_route_lab();
+      case 'fleet':
+        return m.credits_used_route_fleet();
       default:
         return key;
     }
@@ -627,13 +629,26 @@
       </p>
       <p class="storage-blurb">{m.credits_data_intro()}</p>
       <ul class="data-list">
-        {#each dataSources.entries as d (d.id)}
+        {#each dataSources.entries as d, i (d.id)}
+          {#if d.category === 'model-reference' && dataSources.entries[i - 1]?.category !== 'model-reference'}
+            <li class="data-note">{m.credits_data_models_note()}</li>
+          {/if}
           <li class="data-entry">
             <p class="d-name">
               <a href={d.source_url} target="_blank" rel="noopener noreferrer">{d.name}</a>
-              <span class="d-catalog">{d.catalog}</span>
+              {#if !d.references}<span class="d-catalog">{d.catalog}</span>{/if}
             </p>
             <p class="d-desc">{d.description}</p>
+            {#if d.references}
+              <details class="d-refs">
+                <summary>{m.credits_data_references({ count: d.references.length })}</summary>
+                <ul>
+                  {#each d.references as r (r.u)}
+                    <li><a href={r.u} target="_blank" rel="noopener noreferrer">{r.l}</a></li>
+                  {/each}
+                </ul>
+              </details>
+            {/if}
             <p class="d-row">
               <span class="lbl">{m.credits_license_summary_label()}:</span>
               <a href={d.license_url} target="_blank" rel="noopener noreferrer">{d.license_short}</a
@@ -807,6 +822,40 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     color: rgba(255, 255, 255, 0.5);
+  }
+  .data-note {
+    padding: 4px 2px 0;
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .d-refs {
+    margin: 0 0 8px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+  }
+  .d-refs summary {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .d-refs ul {
+    list-style: none;
+    margin: 6px 0 0;
+    padding: 0;
+    columns: 2 260px;
+    column-gap: 20px;
+  }
+  .d-refs li {
+    break-inside: avoid;
+    padding: 2px 0;
+    line-height: 1.4;
+  }
+  .d-refs a {
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+    overflow-wrap: anywhere;
   }
   .d-desc {
     font-family: 'Crimson Pro', serif;

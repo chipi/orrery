@@ -60,6 +60,9 @@
   import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
   import { buildVenusLanderModel } from '$lib/venus-lander-models';
   import { installHeroEnvironment } from '$lib/three/hero-materials';
+  import type { ShowcaseModel } from '$lib/three/showcase/types';
+  import { runwayBuild } from '$lib/three/lineup/lineup-catalog';
+  import { buildCartoon, type CartoonId } from '$lib/three/lineup/cartoon-figures';
 
   type Entry = {
     /** Stable id → capture filename `model-<family>-<id>` / `craft-<id>`. */
@@ -69,7 +72,44 @@
     build: () => THREE.Group | null;
     /** Tier-B PBR entries: install the IBL environment + ACES tone mapping. */
     hero?: boolean;
+    /** Flat 2-D figures: faced head-on and held still (no turntable). */
+    flat?: boolean;
   };
+
+  // Showcase spacecraft (src/lib/three/showcase/*): every family file's SHOWCASE map, merged.
+  const SHOWCASE_MODULES = import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>(
+    '$lib/three/showcase/*.ts',
+    { eager: true },
+  );
+  const SHOWCASE: Record<string, ShowcaseModel> = {};
+  for (const mod of Object.values(SHOWCASE_MODULES)) Object.assign(SHOWCASE, mod.SHOWCASE ?? {});
+
+  /** The line-up's cartoon cast in one row at true scale, tight enough to read in a card. */
+  function buildCastRow(): THREE.Group {
+    const order: CartoonId[] = [
+      'cat',
+      'dog',
+      'child',
+      'woman',
+      'man',
+      'warrior',
+      'panda',
+      'bear',
+      'elephant',
+      'giraffe',
+    ];
+    const row = new THREE.Group();
+    let x = 0;
+    for (const id of order) {
+      const fig = buildCartoon(id);
+      fig.updateWorldMatrix(true, true);
+      const w = new THREE.Box3().setFromObject(fig).getSize(new THREE.Vector3()).x;
+      fig.position.x = x + w / 2;
+      row.add(fig);
+      x += w + 0.45;
+    }
+    return row;
+  }
 
   // Agency accent colours for the hotspot/pad builders (flag trim only).
   const US = '#0B3D91';
@@ -435,6 +475,144 @@
       family: 'launcher',
       build: () => buildLauncherModel('ariane-1', 1.2).root,
     },
+    {
+      id: 'long-march-3a',
+      label: 'Long March 3A',
+      family: 'launcher',
+      build: () => buildLauncherModel('long-march-3a', 1.2).root,
+    },
+    {
+      id: 'long-march-7',
+      label: 'Long March 7 (Tianzhou)',
+      family: 'launcher',
+      build: () => buildLauncherModel('long-march-7', 1.2, 4).root,
+    },
+    {
+      id: 'delta-ii',
+      label: 'Delta II',
+      family: 'launcher',
+      build: () => buildLauncherModel('delta-ii', 1.2).root,
+    },
+    {
+      id: 'atlas-centaur',
+      label: 'Atlas-Centaur',
+      family: 'launcher',
+      build: () => buildLauncherModel('atlas-centaur', 1.2).root,
+    },
+    {
+      id: 'atlas-agena',
+      label: 'Atlas-Agena',
+      family: 'launcher',
+      build: () => buildLauncherModel('atlas-agena', 1.2).root,
+    },
+    {
+      id: 'titan-ii-g',
+      label: 'Titan II(23)G (Clementine)',
+      family: 'launcher',
+      build: () => buildLauncherModel('titan-ii-g', 1.2).root,
+    },
+    {
+      id: 'titan-iiie-centaur',
+      label: 'Titan IIIE-Centaur',
+      family: 'launcher',
+      build: () => buildLauncherModel('titan-iiie-centaur', 1.2).root,
+    },
+    {
+      id: 'titan-ivb-centaur',
+      label: 'Titan IVB-Centaur',
+      family: 'launcher',
+      build: () => buildLauncherModel('titan-ivb-centaur', 1.2).root,
+    },
+    {
+      id: 'falcon-heavy',
+      label: 'Falcon Heavy',
+      family: 'launcher',
+      build: () => buildLauncherModel('falcon-heavy', 1.2).root,
+    },
+    {
+      id: 'athena-ii',
+      label: 'Athena II',
+      family: 'launcher',
+      build: () => buildLauncherModel('athena-ii', 1.2).root,
+    },
+    {
+      id: 'delta-iv-heavy',
+      label: 'Delta IV Heavy',
+      family: 'launcher',
+      build: () => buildLauncherModel('delta-iv-heavy', 1.2).root,
+    },
+    {
+      id: 'new-glenn',
+      label: 'New Glenn',
+      family: 'launcher',
+      build: () => buildLauncherModel('new-glenn', 1.2).root,
+    },
+    {
+      id: 'proton-m-briz-m',
+      label: 'Proton-M / Briz-M',
+      family: 'launcher',
+      build: () => buildLauncherModel('proton-m-briz-m', 1.2).root,
+    },
+    {
+      id: 'sls-block-1',
+      label: 'SLS Block 1',
+      family: 'launcher',
+      build: () => buildLauncherModel('sls-block-1', 1.2).root,
+    },
+    {
+      id: 'molniya-m',
+      label: 'Molniya-M',
+      family: 'launcher',
+      build: () => buildLauncherModel('molniya-m', 1.2).root,
+    },
+    {
+      id: 'soyuz-fg-fregat',
+      label: 'Soyuz-FG / Fregat',
+      family: 'launcher',
+      build: () => buildLauncherModel('soyuz-fg-fregat', 1.2).root,
+    },
+    {
+      id: 'sputnik-8k71ps',
+      label: 'Sputnik 8K71PS',
+      family: 'launcher',
+      build: () => buildLauncherModel('sputnik-8k71ps', 1.2).root,
+    },
+    {
+      id: 'soyuz-2',
+      label: 'Soyuz-2',
+      family: 'launcher',
+      build: () => buildLauncherModel('soyuz-2', 1.2).root,
+    },
+    {
+      id: 'antares',
+      label: 'Antares 230+',
+      family: 'launcher',
+      build: () => buildLauncherModel('antares', 1.2).root,
+    },
+    {
+      id: 'ariane-6',
+      label: 'Ariane 6 (A64)',
+      family: 'launcher',
+      build: () => buildLauncherModel('ariane-6', 1.2, 4).root,
+    },
+    {
+      id: 'vulcan',
+      label: 'Vulcan Centaur',
+      family: 'launcher',
+      build: () => buildLauncherModel('vulcan', 1.2, 2).root,
+    },
+    {
+      id: 'energia',
+      label: 'Energia–Buran',
+      family: 'launcher',
+      build: () => buildLauncherModel('energia', 1.2).root,
+    },
+    {
+      id: 'n1',
+      label: 'N1',
+      family: 'launcher',
+      build: () => buildLauncherModel('n1', 1.2).root,
+    },
 
     // ── EDL descent stacks — entry/descent/landing hardware (descent-models.ts) ─
     {
@@ -532,6 +710,18 @@
       family: 'cruise',
       build: () => buildLanderCruiseCraft(id),
     })),
+
+    // ── Showcase spacecraft (true-size, /fleet line-ups) + the cartoon cast ─────
+    ...Object.entries(SHOWCASE).map(([id, model]) => ({
+      id,
+      label: id,
+      family: 'showcase',
+      build:
+        model.pose?.kind === 'runway'
+          ? () => runwayBuild(model, model.pose!.top)() as THREE.Group
+          : () => model.build(),
+    })),
+    { id: 'cast', label: 'Cartoon cast', family: 'lineup', flat: true, build: buildCastRow },
   ];
 
   type Card = {
@@ -539,6 +729,7 @@
     scene: THREE.Scene;
     camera: THREE.PerspectiveCamera;
     group: THREE.Group | null;
+    flat?: boolean;
   };
 
   let containers: HTMLDivElement[] = [];
@@ -551,7 +742,7 @@
 
   function buildScene(entry: Entry): Omit<Card, 'container'> {
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x05060e);
+    scene.background = new THREE.Color(entry.flat ? 0x2a3a58 : 0x05060e);
     const camera = new THREE.PerspectiveCamera(FOV, 1, 0.001, 10000);
     // Every model is now hero PBR, so all cards get the image-based-lighting
     // environment + a strong sun key, with the flat grey ambient dimmed right
@@ -582,20 +773,33 @@
       group.updateWorldMatrix(true, true);
       const box = new THREE.Box3().setFromObject(group);
       const sphere = box.getBoundingSphere(new THREE.Sphere());
-      group.position.sub(sphere.center);
-      const r = Math.max(sphere.radius, 0.001);
-      const dist = (r / Math.sin((FOV * Math.PI) / 360)) * 1.25;
-      const dir = new THREE.Vector3(1, 0.55, 1).normalize();
+      const half = Math.tan((FOV * Math.PI) / 360);
+      let dist: number;
+      let dir: THREE.Vector3;
+      if (entry.flat) {
+        // A flat row is fitted by its box (to the thumbnail's 800 x 560), faced head-on.
+        const size = box.getSize(new THREE.Vector3());
+        group.position.sub(box.getCenter(new THREE.Vector3()));
+        dist = Math.max(size.y / 2 / half, size.x / 2 / (half * (800 / 560))) * 1.12;
+        dir = new THREE.Vector3(0, 0, 1);
+        camera.near = 0.01;
+        camera.far = dist * 4;
+      } else {
+        group.position.sub(sphere.center);
+        const r = Math.max(sphere.radius, 0.001);
+        dist = (r / Math.sin((FOV * Math.PI) / 360)) * 1.25;
+        dir = new THREE.Vector3(1, 0.55, 1).normalize();
+        camera.near = Math.max(dist - r * 2, 0.001);
+        camera.far = dist + r * 3;
+      }
       camera.position.copy(dir.multiplyScalar(dist));
-      camera.near = Math.max(dist - r * 2, 0.001);
-      camera.far = dist + r * 3;
       camera.updateProjectionMatrix();
       camera.lookAt(0, 0, 0);
       scene.add(group);
     } else {
       console.warn(`[models] no mesh for ${entry.id}`);
     }
-    return { scene, camera, group };
+    return { scene, camera, group, flat: entry.flat };
   }
 
   function tick(): void {
@@ -625,7 +829,7 @@
       renderer.setScissor(x, y, w, h);
       card.camera.aspect = w / h;
       card.camera.updateProjectionMatrix();
-      if (card.group) card.group.rotation.y = t;
+      if (card.group && !card.flat) card.group.rotation.y = t;
       renderer.render(card.scene, card.camera);
     }
     raf = requestAnimationFrame(tick);
@@ -655,8 +859,8 @@
       for (let i = 0; i < ENTRIES.length; i++) {
         const node = containers[i];
         if (!node) continue;
-        const { scene, camera, group } = buildScene(ENTRIES[i]);
-        cards.push({ container: node, scene, camera, group });
+        const { scene, camera, group, flat } = buildScene(ENTRIES[i]);
+        cards.push({ container: node, scene, camera, group, flat });
       }
       raf = requestAnimationFrame(tick);
     });

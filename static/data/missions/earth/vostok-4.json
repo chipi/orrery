@@ -10,6 +10,7 @@
   "departure_date": "1962-08-12",
   "arrival_date": "1962-08-15",
   "transit_days": 3,
+  "round_trip": true,
   "vehicle": "Vostok-K (8K72K)",
   "payload": "4728 kg launch mass; single cosmonaut",
   "delta_v": "~9.4 km/s (LEO)",

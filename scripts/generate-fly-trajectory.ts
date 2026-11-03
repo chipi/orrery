@@ -28,6 +28,7 @@ mkdirSync(OUT, { recursive: true });
 
 interface MissionFile {
   departure_date: string;
+  round_trip?: boolean;
   transit_days: number;
   flight?: { events?: { type: string; met_days: number; label?: string }[] };
 }
@@ -86,6 +87,13 @@ function perihelionLeg(r1: number, th1: number, t1: number, rp: number, tp: numb
   };
 }
 
+/** When a round trip left its body, where no event records it. Hayabusa2 left Ryugu on
+ *  2019-11-13 (JAXA); Hayabusa began its ion-engine return cruise on 2007-04-25 (JAXA/ISAS). */
+const BODY_DEPARTURE_MET: Record<string, number> = {
+  hayabusa2: 1806,
+  hayabusa1: 1447,
+};
+
 const iso = (dep: string, met: number): string =>
   new Date(Date.parse(`${dep}T00:00:00Z`) + Math.round(met) * 86400000).toISOString().slice(0, 10);
 
@@ -137,71 +145,97 @@ for (const id of process.argv.slice(2)) {
     console.log(`${id}: skipped (${anchors.length} anchors, last at MET ${anchors.at(-1)?.met})`);
     continue;
   }
-  const waypoints: { date: string; label?: string; x: number; y: number; z: number }[] = [];
+  type Waypoint = { date: string; label?: string; x: number; y: number; z: number };
+  type Anchor = (typeof anchors)[number];
   let solved = 0;
   let estimated = 0;
-  for (let i = 0; i < anchors.length; i++) {
-    const a = anchors[i];
-    waypoints.push({
-      date: iso(dep, a.met),
-      label: a.label,
-      x: +a.x.toFixed(4),
-      y: 0,
-      z: +a.z.toFixed(4),
-    });
-    const b = anchors[i + 1];
-    if (!b) break;
-    const dt = b.met - a.met;
-    if (a.stays && a.body === b.body) {
-      // Captured at a body (orbit insertion, then landing): the craft stays with it. Not after
-      // a flyby — Rosetta's Earth passes were years apart.
-      const n = Math.min(40, Math.max(2, Math.round(dt / 15)));
-      for (let j = 1; j < n; j++) {
-        const met = a.met + (dt * j) / n;
-        const p = pos(a.body as DestinationId, met);
-        waypoints.push({ date: iso(dep, met), x: +p.x.toFixed(4), y: 0, z: +p.z.toFixed(4) });
-      }
-      continue;
-    }
-    const r0 = Math.hypot(a.x, a.z);
-    const r1 = Math.hypot(b.x, b.z);
-    const t0 = Math.atan2(a.z, a.x);
-    const base = (((Math.atan2(b.z, b.x) - t0) % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
-    const rAvg = (r0 + r1) / 2;
-    const expected = ((2 * Math.PI) / (365.25 * rAvg ** 1.5)) * dt;
-    const k = Math.max(0, Math.round((expected - base) / (2 * Math.PI)));
-    const dTheta = base + 2 * Math.PI * k;
-    const n = Math.min(40, Math.max(2, Math.round(dt / 15)));
-    // Within one revolution, the real conic between the two encounters (Lambert). Resonant
-    // legs that loop the Sun more than once (MESSENGER's Mercury returns) keep the estimate.
-    const conic = k === 0 ? lambertLeg({ x: a.x, z: a.z }, { x: b.x, z: b.z }, dt) : null;
-    if (conic) {
-      solved += 1;
-      for (let j = 1; j < n; j++) {
-        const p = conic((dt * j) / n);
-        waypoints.push({
-          date: iso(dep, a.met + (dt * j) / n),
-          x: +p.x.toFixed(4),
-          y: 0,
-          z: +p.z.toFixed(4),
-        });
-      }
-      continue;
-    }
-    estimated += 1;
-    for (let j = 1; j < n; j++) {
-      const f = j / n;
-      // A coasting craft dips toward perihelion between two encounters at similar radius.
-      const r =
-        r0 + (r1 - r0) * f - 0.12 * rAvg * Math.sin(Math.PI * f) * Math.min(1, dTheta / Math.PI);
-      const th = t0 + dTheta * f;
-      waypoints.push({
-        date: iso(dep, a.met + dt * f),
-        x: +(r * Math.cos(th)).toFixed(4),
+  /** The path through `list`: each anchor, then the leg to the next — with the body while
+   *  captured, on the coasting conic within one revolution, else the estimate. */
+  const fill = (list: Anchor[], out: Waypoint[]) => {
+    for (let i = 0; i < list.length; i++) {
+      const a = list[i];
+      out.push({
+        date: iso(dep, a.met),
+        ...(a.label ? { label: a.label } : {}),
+        x: +a.x.toFixed(4),
         y: 0,
-        z: +(r * Math.sin(th)).toFixed(4),
+        z: +a.z.toFixed(4),
       });
+      const b = list[i + 1];
+      if (!b) break;
+      const dt = b.met - a.met;
+      const n = Math.min(40, Math.max(2, Math.round(dt / 15)));
+      const push = (met: number, p: { x: number; z: number }) =>
+        out.push({ date: iso(dep, met), x: +p.x.toFixed(4), y: 0, z: +p.z.toFixed(4) });
+      if (a.stays && a.body === b.body) {
+        // Captured at a body (orbit insertion, then landing): the craft stays with it. Not
+        // after a flyby — Rosetta's Earth passes were years apart.
+        for (let j = 1; j < n; j++) {
+          const met = a.met + (dt * j) / n;
+          push(met, pos(a.body as DestinationId, met));
+        }
+        continue;
+      }
+      const r0 = Math.hypot(a.x, a.z);
+      const r1 = Math.hypot(b.x, b.z);
+      const t0 = Math.atan2(a.z, a.x);
+      const base = (((Math.atan2(b.z, b.x) - t0) % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+      const rAvg = (r0 + r1) / 2;
+      const expected = ((2 * Math.PI) / (365.25 * rAvg ** 1.5)) * dt;
+      const k = Math.max(0, Math.round((expected - base) / (2 * Math.PI)));
+      const dTheta = base + 2 * Math.PI * k;
+      // Within one revolution, the real conic between the two encounters (Lambert). Resonant
+      // legs that loop the Sun more than once (MESSENGER's Mercury returns) keep the estimate.
+      const conic = k === 0 ? lambertLeg({ x: a.x, z: a.z }, { x: b.x, z: b.z }, dt) : null;
+      if (conic) {
+        solved += 1;
+        for (let j = 1; j < n; j++) push(a.met + (dt * j) / n, conic((dt * j) / n));
+        continue;
+      }
+      estimated += 1;
+      for (let j = 1; j < n; j++) {
+        const f = j / n;
+        // A coasting craft dips toward perihelion between two encounters at similar radius.
+        const r =
+          r0 + (r1 - r0) * f - 0.12 * rAvg * Math.sin(Math.PI * f) * Math.min(1, dTheta / Math.PI);
+        const th = t0 + dTheta * f;
+        push(a.met + dt * f, { x: r * Math.cos(th), z: r * Math.sin(th) });
+      }
     }
+  };
+  const waypoints: Waypoint[] = [];
+  fill(anchors, waypoints);
+  // Round trips that record their Earth return: the way home, from arrival at the body —
+  // staying with it until departure — to Earth on the return date.
+  let returnWaypoints: Waypoint[] | null = null;
+  const ret = m.round_trip ? events.find((e) => e.type === 'earth_return') : undefined;
+  const arrival = anchors[anchors.length - 1];
+  if (ret && ret.met_days > arrMet && arrival.body !== 'earth') {
+    const leaveEvt = events.find(
+      (e) =>
+        e.met_days > arrMet &&
+        e.met_days < ret.met_days &&
+        labelToPlanetId(e.label ?? '') === arrival.body,
+    );
+    const leave = BODY_DEPARTURE_MET[id] ?? leaveEvt?.met_days;
+    const list: Anchor[] = [{ ...arrival, stays: true }];
+    if (leave)
+      list.push({
+        met: leave,
+        label: '',
+        body: arrival.body,
+        stays: false,
+        ...pos(arrival.body as DestinationId, leave),
+      });
+    list.push({
+      met: ret.met_days,
+      label: ret.label ?? 'Earth return',
+      body: 'earth',
+      stays: false,
+      ...pos('earth' as DestinationId, ret.met_days),
+    });
+    returnWaypoints = [];
+    fill(list, returnWaypoints);
   }
   if (rp) {
     // The window ends at the first perihelion: a real conic down from the last anchor.
@@ -223,8 +257,9 @@ for (const id of process.argv.slice(2)) {
   const file = {
     id,
     ...(rp ? { ends_at_perihelion_au: rp } : {}),
-    _doc: 'Generated by scripts/generate-fly-trajectory.ts from the mission flight events (labelled waypoints are moved onto the body by /fly). Cruise points lie on the coasting conic between encounters (Lambert, in the ecliptic; no deep-space burns), or on an estimate for legs longer than one revolution.',
+    _doc: 'Generated by scripts/generate-fly-trajectory.ts from the mission flight events (labelled waypoints are moved onto the body by /fly). Cruise points lie on the coasting conic between encounters (Lambert, in the ecliptic; no deep-space burns), or on an estimate for legs longer than one revolution. return_waypoints: the way home of a round trip.',
     waypoints,
+    ...(returnWaypoints ? { return_waypoints: returnWaypoints } : {}),
   };
   writeFileSync(resolve(OUT, `${id}.json`), JSON.stringify(file, null, 1) + '\n');
   console.log(

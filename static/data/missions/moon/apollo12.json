@@ -10,6 +10,7 @@
   "departure_date": "1969-11-14",
   "arrival_date": "1969-11-19",
   "transit_days": 4,
+  "round_trip": true,
   "vehicle": "Saturn V (AS-507)",
   "payload": "46782 kg launched (CSM Yankee Clipper (CSM-108) + LM Intrepid (LM-6))",
   "delta_v": "~6 km/s (round trip)",

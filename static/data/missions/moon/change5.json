@@ -10,6 +10,7 @@
   "departure_date": "2020-11-23",
   "arrival_date": "2020-12-01",
   "transit_days": 8,
+  "round_trip": true,
   "vehicle": "Long March 5",
   "payload": "8200 kg launch mass; 1.731 kg sample returned",
   "delta_v": "~5 km/s",

@@ -10,6 +10,7 @@
   "departure_date": "1971-07-26",
   "arrival_date": "1971-07-30",
   "transit_days": 4,
+  "round_trip": true,
   "vehicle": "Saturn V (AS-510)",
   "payload": "48599 kg launched (CSM Endeavour (CSM-112) + LM Falcon (LM-10))",
   "delta_v": "~6 km/s (round trip)",

@@ -10,6 +10,7 @@
   "departure_date": "2021-09-15",
   "arrival_date": "2021-09-18",
   "transit_days": 3,
+  "round_trip": true,
   "vehicle": "Falcon 9 Block 5 (B1062.3) + Crew Dragon C207 (Resilience)",
   "payload": "~12000 kg LEO; 4 crew, no professional astronauts",
   "delta_v": "~9.4 km/s (LEO; 585 km circular)",

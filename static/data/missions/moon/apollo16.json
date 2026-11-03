@@ -10,6 +10,7 @@
   "departure_date": "1972-04-16",
   "arrival_date": "1972-04-19",
   "transit_days": 3,
+  "round_trip": true,
   "vehicle": "Saturn V (AS-511)",
   "payload": "48599 kg launched (CSM Casper (CSM-113) + LM Orion (LM-11))",
   "delta_v": "~6 km/s (round trip)",

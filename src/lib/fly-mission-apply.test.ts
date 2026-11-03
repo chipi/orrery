@@ -9,6 +9,7 @@ import {
   type TrajectoryOverride,
 } from './fly-mission-apply';
 import { ARC_STEPS } from './fly-moon-arc';
+import { earthPos } from '$lib/physics/transfer/mission-arc';
 import type { Mission } from '$types/mission';
 import type { LocalizedScenario } from '$types/scenario';
 
@@ -56,18 +57,42 @@ describe('computeMissionApply', () => {
       expect(r.isReturnTrip).toBe(false);
     });
 
-    it('round-trip missions (CREWED / SAMPLE RETURN): arr_day = dep + 2 × transit', () => {
-      const m = makeMission({ type: 'sample return', transit_days: 100, dest: 'MARS' });
+    it('round-trip missions: arr_day = dep + 2 × transit', () => {
+      const m = makeMission({ round_trip: true, transit_days: 100, dest: 'MARS' });
       const r = computeMissionApply(m, DEFAULTS);
       expect(r.timeline.flyby_day - r.timeline.dep_day).toBe(100);
       expect(r.timeline.arr_day - r.timeline.dep_day).toBe(200);
       expect(r.isReturnTrip).toBe(true);
     });
 
-    it('CREWED missions detected (Apollo-shape)', () => {
-      const m = makeMission({ type: 'crewed lunar landing', dest: 'MOON' });
+    it('round trips are read from the record, not the translated type', () => {
+      // German Apollo 11: "LANDER MIT BESATZUNG" never contained "CREWED".
+      const de = makeMission({
+        round_trip: true,
+        type: 'LANDER MIT BESATZUNG · GEFLOGEN',
+        dest: 'MOON',
+      });
+      expect(computeMissionApply(de, DEFAULTS).isReturnTrip).toBe(true);
+      // "UNCREWED LANDER" contained "CREWED": Luna 9 came back to Earth on /fly.
+      const luna9 = makeMission({ type: 'UNCREWED LANDER · FLOWN', dest: 'MOON' });
+      expect(computeMissionApply(luna9, DEFAULTS).isReturnTrip).toBe(false);
+    });
+
+    it('a heliocentric round trip ends at its own Earth return, not at twice the outbound', () => {
+      const m = makeMission({
+        round_trip: true,
+        dest: 'ASTEROID',
+        transit_days: 1302,
+        flight: {
+          events: [
+            { met_days: 0, type: 'launch', label: 'Launch' },
+            { met_days: 1302, type: 'arrival', label: 'Ryugu rendezvous' },
+            { met_days: 2194, type: 'earth_return', label: 'Earth re-entry' },
+          ],
+        },
+      } as Partial<Mission>);
       const r = computeMissionApply(m, DEFAULTS);
-      expect(r.isReturnTrip).toBe(true);
+      expect(r.timeline.arr_day - r.timeline.dep_day).toBe(2194);
     });
 
     it('falls back to defaults.depFallback when departure_date is unparseable', () => {
@@ -103,14 +128,14 @@ describe('computeMissionApply', () => {
 
   describe('trajectory + arcs', () => {
     it('Moon mission: cislunarTrajectory present, interplanetaryTrajectory null', () => {
-      const m = makeMission({ dest: 'MOON', type: 'crewed lunar landing', transit_days: 4 });
+      const m = makeMission({ dest: 'MOON', round_trip: true, transit_days: 4 });
       const r = computeMissionApply(m, DEFAULTS);
       expect(r.cislunarTrajectory).not.toBeNull();
       expect(r.interplanetaryTrajectory).toBeNull();
     });
 
     it('Moon round-trip: outPts + retPts both ARC_STEPS+1 long', () => {
-      const m = makeMission({ dest: 'MOON', type: 'crewed lunar landing', transit_days: 4 });
+      const m = makeMission({ dest: 'MOON', round_trip: true, transit_days: 4 });
       const r = computeMissionApply(m, DEFAULTS);
       expect(r.outPts.length).toBe(ARC_STEPS + 1);
       expect(r.retPts.length).toBe(ARC_STEPS + 1);
@@ -132,7 +157,7 @@ describe('computeMissionApply', () => {
     });
 
     it('Mars round-trip (sample return): retPts is a returnArc to Earth', () => {
-      const m = makeMission({ dest: 'MARS', type: 'sample return', transit_days: 250 });
+      const m = makeMission({ dest: 'MARS', round_trip: true, transit_days: 250 });
       const r = computeMissionApply(m, DEFAULTS);
       expect(r.outPts.length).toBe(ARC_STEPS + 1);
       expect(r.retPts.length).toBe(ARC_STEPS + 1);
@@ -375,6 +400,43 @@ describe('computeMissionApply — trajectoryOverride / spline branch', () => {
     expect(r.outPts.length).toBe(500);
     // Grand-tour splines are one-way — return arc is empty.
     expect(r.retPts).toEqual([]);
+  });
+
+  it("a round trip's return_waypoints become the return arc, ending on Earth", () => {
+    const hayabusa2 = makeMission({
+      round_trip: true,
+      dest: 'ASTEROID',
+      id: 'hayabusa2',
+      departure_date: '2014-12-03',
+      transit_days: 1302,
+      flight: {
+        events: [
+          { met_days: 0, type: 'launch', label: 'Launch' },
+          { met_days: 1302, type: 'arrival', label: 'Ryugu rendezvous' },
+          { met_days: 2194, type: 'earth_return', label: 'Earth re-entry' },
+        ],
+      },
+    } as Partial<Mission>);
+    const out = [
+      { date: '2014-12-03', label: 'Launch', x: 1, y: 0, z: 0 },
+      { date: '2018-06-27', label: 'Ryugu rendezvous', x: 1.1, y: 0, z: 0.2 },
+    ];
+    const home = [
+      { date: '2018-06-27', label: 'Ryugu rendezvous', x: 1.1, y: 0, z: 0.2 },
+      { date: '2019-11-13', x: 0.9, y: 0, z: 0.7 },
+      { date: '2020-12-05', label: 'Earth re-entry', x: 0, y: 0, z: 1 },
+    ];
+    const r = computeMissionApply(hayabusa2, DEFAULTS, { waypoints: out, return_waypoints: home });
+    expect(r.retPts.length).toBe(300);
+    const end = r.retPts[r.retPts.length - 1];
+    const earth = earthPos(r.timeline.arr_day);
+    expect(Math.hypot(end.x - earth.x, end.z - earth.z)).toBeLessThan(0.01);
+    // A one-way mission ignores them.
+    const oneWay = computeMissionApply({ ...hayabusa2, round_trip: false }, DEFAULTS, {
+      waypoints: out,
+      return_waypoints: home,
+    });
+    expect(oneWay.retPts).toEqual([]);
   });
 
   it('spline result has finite x/z coordinates (no NaN leak from waypoint remap)', () => {

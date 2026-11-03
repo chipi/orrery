@@ -10,6 +10,7 @@
   "departure_date": "2028-11-01",
   "arrival_date": "2028-11-05",
   "transit_days": 4,
+  "round_trip": true,
   "vehicle": "SLS Block 1 (upper stage to be confirmed) + crewed lander (Starship HLS or Blue Moon)",
   "payload": "Orion + 4-person crew; second crewed landing, start of lunar base work",
   "delta_v": "~7 km/s (round trip)",

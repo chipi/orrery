@@ -10,6 +10,7 @@
   "departure_date": "2026-11-01",
   "arrival_date": "2027-08-01",
   "transit_days": 334,
+  "round_trip": true,
   "vehicle": "H3-24L",
   "payload": "~4000 kg (planned)",
   "delta_v": "~5 km/s",

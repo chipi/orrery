@@ -10,6 +10,7 @@
   "departure_date": "1970-04-11",
   "arrival_date": "1970-04-15",
   "transit_days": 4,
+  "round_trip": true,
   "vehicle": "Saturn V (AS-508)",
   "payload": "44069 kg launched (CSM Odyssey + LM Aquarius)",
   "delta_v": "~6 km/s (round trip, aborted landing)",

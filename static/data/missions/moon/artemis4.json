@@ -10,6 +10,7 @@
   "departure_date": "2028-02-01",
   "arrival_date": "2028-02-05",
   "transit_days": 4,
+  "round_trip": true,
   "vehicle": "SLS Block 1 (last flight with the ICPS upper stage) + crewed lander (Starship HLS or Blue Moon, not yet chosen)",
   "payload": "Orion + 4-person crew; 2 crew to the surface for about a week",
   "delta_v": "~7 km/s (round trip)",

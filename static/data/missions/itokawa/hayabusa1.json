@@ -10,6 +10,7 @@
   "departure_date": "2003-05-09",
   "arrival_date": "2005-09-12",
   "transit_days": 857,
+  "round_trip": true,
   "vehicle": "M-V-5",
   "payload": "510 kg (incl. 60 kg of xenon for four μ10 ion thrusters)",
   "delta_v": "~4.0 km/s",

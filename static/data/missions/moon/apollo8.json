@@ -10,6 +10,7 @@
   "departure_date": "1968-12-21",
   "arrival_date": "1968-12-24",
   "transit_days": 3,
+  "round_trip": true,
   "vehicle": "Saturn V (AS-503)",
   "payload": "28833 kg launched (Apollo 8 CSM (CSM-103), no LM)",
   "delta_v": "~6 km/s (round trip)",

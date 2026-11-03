@@ -10,6 +10,7 @@
   "departure_date": "2027-09-01",
   "arrival_date": "2027-09-01",
   "transit_days": 0,
+  "round_trip": true,
   "vehicle": "SLS Block 1 (with a non-propulsive spacer in place of the upper stage)",
   "payload": "Orion + 4-person crew; rendezvous and docking with pathfinder Starship and Blue Moon landers in low Earth orbit",
   "delta_v": "~9.4 km/s (to LEO)",

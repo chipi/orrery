@@ -10,6 +10,7 @@
   "departure_date": "1964-10-12",
   "arrival_date": "1964-10-13",
   "transit_days": 1,
+  "round_trip": true,
   "vehicle": "Voskhod (11A57)",
   "payload": "5320 kg launch mass; three cosmonauts (no spacesuits, no ejection seats)",
   "delta_v": "~9.4 km/s (LEO)",

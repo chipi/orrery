@@ -10,6 +10,7 @@
   "departure_date": "2031-09-15",
   "arrival_date": "2032-04-15",
   "transit_days": 213,
+  "round_trip": true,
   "vehicle": "Starship (Super Heavy + Starship + on-orbit refilling tanker fleet)",
   "payload": "Crew of ~10 + ISRU equipment + return propellant production hardware",
   "delta_v": "~21 km/s (round trip with Mars surface refuelling)",

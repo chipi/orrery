@@ -10,6 +10,7 @@
   "departure_date": "1969-05-18",
   "arrival_date": "1969-05-21",
   "transit_days": 3,
+  "round_trip": true,
   "vehicle": "Saturn V (AS-505)",
   "payload": "42775 kg launched (CSM Charlie Brown (CSM-106) + LM Snoopy (LM-4))",
   "delta_v": "~6 km/s (round trip)",

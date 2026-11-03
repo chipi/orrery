@@ -2296,9 +2296,15 @@
             const tres = await fetch(`${base}/data/${trajPath}`);
             if (myLoadId !== currentLoadId) return;
             if (tres.ok) {
-              const traj = (await tres.json()) as { waypoints?: TrajectoryWaypoint[] };
+              const traj = (await tres.json()) as {
+                waypoints?: TrajectoryWaypoint[];
+                return_waypoints?: TrajectoryWaypoint[];
+              };
               if (traj.waypoints && traj.waypoints.length >= 2) {
-                trajectoryOverride = { waypoints: traj.waypoints };
+                trajectoryOverride = {
+                  waypoints: traj.waypoints,
+                  return_waypoints: traj.return_waypoints,
+                };
               }
             }
           } catch {

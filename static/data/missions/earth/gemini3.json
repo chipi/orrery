@@ -10,6 +10,7 @@
   "departure_date": "1965-03-23",
   "arrival_date": "1965-03-23",
   "transit_days": 0,
+  "round_trip": true,
   "vehicle": "Titan II GLV (GT-3)",
   "payload": "Gemini 3 'Molly Brown'; Gus Grissom & John Young",
   "delta_v": "~7.8 km/s (LEO)",

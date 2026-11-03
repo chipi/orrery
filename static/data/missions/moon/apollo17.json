@@ -10,6 +10,7 @@
   "departure_date": "1972-12-07",
   "arrival_date": "1972-12-11",
   "transit_days": 4,
+  "round_trip": true,
   "vehicle": "Saturn V (AS-512)",
   "payload": "48609 kg launched (CSM America + LM Challenger)",
   "delta_v": "~6 km/s (round trip)",

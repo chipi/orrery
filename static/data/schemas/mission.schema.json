@@ -106,6 +106,10 @@
       "type": "integer",
       "minimum": 0
     },
+    "round_trip": {
+      "type": "boolean",
+      "description": "The mission comes back to Earth (crewed flights, sample returns, the X-37B); /fly draws a return leg. Language-neutral, unlike the translated type."
+    },
     "vehicle": {
       "type": "string",
       "minLength": 1

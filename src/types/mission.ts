@@ -236,6 +236,9 @@ export interface Mission extends MissionIndex {
   agency_full: string;
   departure_date: string;
   arrival_date: string;
+  /** The mission comes back to Earth (crewed flights, sample returns, the X-37B):
+   *  /fly draws a return leg. Language-neutral, unlike the translated `type`. */
+  round_trip?: boolean;
   transit_days: number;
   vehicle: string;
   payload: string;

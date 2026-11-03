@@ -10,6 +10,7 @@
   "departure_date": "1965-03-18",
   "arrival_date": "1965-03-19",
   "transit_days": 1,
+  "round_trip": true,
   "vehicle": "Voskhod (11A57)",
   "payload": "5682 kg launch mass; Voskhod capsule + inflatable Volga airlock",
   "delta_v": "~9.4 km/s (LEO)",

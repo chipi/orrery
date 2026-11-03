@@ -10,6 +10,7 @@
   "departure_date": "1999-11-19",
   "arrival_date": "1999-11-20",
   "transit_days": 1,
+  "round_trip": true,
   "vehicle": "Long March 2F",
   "payload": "7600 kg launch mass; uncrewed Shenzhou prototype with mock-up systems",
   "delta_v": "~9.4 km/s (LEO)",

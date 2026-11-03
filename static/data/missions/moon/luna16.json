@@ -10,6 +10,7 @@
   "departure_date": "1970-09-12",
   "arrival_date": "1970-09-20",
   "transit_days": 8,
+  "round_trip": true,
   "vehicle": "Proton-K / D",
   "payload": "5727 kg launch mass; 1880 kg lander; 0.101 kg lunar regolith returned",
   "delta_v": "~3.5 km/s",

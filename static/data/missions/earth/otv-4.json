@@ -10,6 +10,7 @@
   "departure_date": "2015-05-20",
   "arrival_date": "2017-05-07",
   "transit_days": 718,
+  "round_trip": true,
   "vehicle": "Atlas V 501 (AV-054)",
   "payload": "USA-261 / AFSPC-5; X-37B Orbital Test Vehicle (~5000 kg). Payloads largely classified.",
   "delta_v": "~9.4 km/s (LEO)",

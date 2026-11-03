@@ -2,15 +2,52 @@
   "missionId": "slim",
   "siteId": "slim",
   "body": "moon",
-  "landingSite": { "lat": -13.31, "lon": 25.24 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 200,
+  "landingSite": {
+    "lat": -13.31,
+    "lon": 25.24
+  },
+  "entryState": {
+    "altitudeM": 15000,
+    "velocityMs": 1690,
+    "flightPathAngleDeg": 0.6
+  },
+  "entryMassKg": 450,
   "entryCdA": 0,
-  "retroPropellantKg": 35,
+  "retroPropellantKg": 260,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 300,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 0.6,
+    "brakingMaxThrustN": 1000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 12,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
   "provenance": [
-    { "l": "SLIM Smart Lander for Investigating Moon — JAXA mission overview", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2023-137C" }
+    {
+      "l": "SLIM — powered descent from ~00:00 to 00:20 JST on 20 Jan 2024 (~20 min) on two 500 N-class engines; one lost thrust near 50 m and it landed 55 m from the target, on its nose. Start state and masses are estimates (launch mass 590 vs ~700 kg in sources); the model has no hover, so it lands in ~17 min",
+      "u": "https://news.mynavi.jp/techplus/article/20240120-2866943/"
+    },
+    {
+      "l": "JAXA Moon Sniper missed its mark — AIAA",
+      "u": "https://aiaa.org/2024/01/26/jaxa-s-moon-sniper-missed-its-mark/"
+    },
+    {
+      "l": "Smart Lander for Investigating Moon — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon"
+    }
+  ],
+  "estimatedFields": [
+    "entryState.altitudeM",
+    "entryState.velocityMs",
+    "entryMassKg",
+    "retroPropellantKg",
+    "ispS",
+    "brakingFpaDeg",
+    "approachFpaDeg"
   ]
 }

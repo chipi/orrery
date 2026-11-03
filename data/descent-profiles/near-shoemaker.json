@@ -2,18 +2,40 @@
   "missionId": "near-shoemaker",
   "siteId": "near-shoemaker",
   "body": "eros",
-  "landingSite": { "lat": 35.0, "lon": 280.0 },
-  "entryState": { "altitudeM": 60, "velocityMs": 0.15, "flightPathAngleDeg": 90 },
+  "landingSite": {
+    "lat": 35,
+    "lon": 280
+  },
+  "entryState": {
+    "altitudeM": 5000,
+    "velocityMs": 9,
+    "flightPathAngleDeg": 90
+  },
   "entryMassKg": 480,
   "entryCdA": 4,
   "archetype": "LUNAR_POWERED",
-  "params": { "terminalVelocityMs": 1.7, "descentRateGain": 0.03 },
+  "params": {
+    "terminalVelocityMs": 1.6,
+    "descentRateGain": 0.002
+  },
   "survivableTouchdownMs": 5,
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "NEAR Shoemaker landing on asteroid 433 Eros — NASA/JHU APL",
-      "u": "https://science.nasa.gov/mission/near-shoemaker/"
+      "l": "NEAR Shoemaker — four-hour descent from a 35 km orbit on 12 Feb 2001; the final four burns slowed it from ~20 mph (9 m/s) at ~5 km to touchdown at 20:01:52 UTC at 1.5–1.8 m/s (NASA, APL, Wikipedia). The model flies the last 5 km",
+      "u": "https://nssdc.gsfc.nasa.gov/planetary/news/near_descent_pr_20010131.html"
+    },
+    {
+      "l": "NEAR landing legacy — JHU/APL",
+      "u": "https://www.jhuapl.edu/news/news-releases/210212-NEAR-landing-legacy"
+    },
+    {
+      "l": "NEAR Shoemaker — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/NEAR_Shoemaker"
     }
+  ],
+  "estimatedFields": [
+    "entryMassKg",
+    "descentRateGain"
   ]
 }

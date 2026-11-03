@@ -1,0 +1,64 @@
+{
+  "id": "molniya-m",
+  "name": "Molniya-M",
+  "source_tier": "flagship",
+  "payloadKg": 6824,
+  "loftBoost": true,
+  "fairingKg": 500,
+  "fairingJettisonAltM": 110000,
+  "refAreaM2": 17,
+  "cd": 0.3,
+  "launchSite": { "lat": 45.996, "lon": 63.564, "name": "Site 31 · Baikonur Cosmodrome" },
+  "pitchProgram": [[0, 90], [13, 88], [55, 66], [130, 42], [220, 22], [300, 8]],
+  "boosters": {
+    "name": "Blok B–D (RD-107)",
+    "count": 4,
+    "wetKg": 43400,
+    "dryKg": 3800,
+    "thrustSlKN": 755,
+    "thrustVacKN": 922,
+    "ispSlS": 257,
+    "ispVacS": 314,
+    "chamberTempK": 3200
+  },
+  "stages": [
+    {
+      "name": "Blok A core (RD-108)",
+      "wetKg": 99500,
+      "dryKg": 6550,
+      "thrustSlKN": 677,
+      "thrustVacKN": 834,
+      "ispSlS": 253,
+      "ispVacS": 316,
+      "engines": 1,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "Blok I (RD-0110)",
+      "wetKg": 25200,
+      "dryKg": 2410,
+      "thrustVacKN": 298,
+      "ispVacS": 325,
+      "engines": 1,
+      "chamberTempK": 3100
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Molniya-M — Wikipedia (43.4 m, 305,000 kg; RD-107MM / RD-108MM / RD-0110 / S1.5400 stages)",
+      "u": "https://en.wikipedia.org/wiki/Molniya-M"
+    },
+    {
+      "l": "Soyuz-U — Wikipedia (the shared R-7 Blocks A, B–D and I: masses, thrust, Isp)",
+      "u": "https://en.wikipedia.org/wiki/Soyuz-U"
+    },
+    {
+      "l": "S1.5400 — Wikipedia (Blok L engine: 66.7 kN, 340 s, 207 s): Blok L propellant ~4.1 t from those, its dry mass estimated; it rides as payload with Luna 9 (1,583.7 kg) to the 168 × 219 km parking orbit, then makes the trans-lunar burn",
+      "u": "https://en.wikipedia.org/wiki/S1.5400"
+    },
+    {
+      "l": "Luna 9 — Wikipedia (31 Jan 1966, Baikonur; Blok L raised the apogee to ~500,000 km)",
+      "u": "https://en.wikipedia.org/wiki/Luna_9"
+    }
+  ]
+}

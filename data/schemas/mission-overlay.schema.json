@@ -49,6 +49,20 @@
           "type": { "enum": ["nominal", "info", "warning"] }
         }
       }
+    },
+    "flight_events": {
+      "type": "array",
+      "description": "Translated label / description of the base record's structural `flight.events[]` that no editorial `events[]` entry sits at (matched by MET, 0.05-day tolerance). getMission() merges them; they win over an editorial match. Locales other than en-US only.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["met", "label", "description"],
+        "properties": {
+          "met": { "type": "number", "minimum": 0 },
+          "label": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 }
+        }
+      }
     }
   }
 }

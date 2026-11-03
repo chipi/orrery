@@ -62,9 +62,9 @@
       "periapsis_km": 100,
       "inclination_deg": 90,
       "source": "CNSA mission archive; lunar-orbit insertion 2013-12-06, landing 2013-12-14",
-      "entry_velocity_km_s": 0.15,
+      "entry_velocity_km_s": 1.692,
       "edl_system": "powered",
-      "edl_duration_s": 100,
+      "edl_duration_s": 719,
       "touchdown_velocity_ms": 1
     },
     "totals": {

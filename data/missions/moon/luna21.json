@@ -63,9 +63,9 @@
       "periapsis_km": 90,
       "inclination_deg": 60,
       "source": "NASA NSSDCA Luna 21 archive; lunar-orbit insertion 1973-01-12, landing 1973-01-15",
-      "entry_velocity_km_s": 0.15,
+      "entry_velocity_km_s": 1.69,
       "edl_system": "powered",
-      "edl_duration_s": 100,
+      "edl_duration_s": 355,
       "touchdown_velocity_ms": 1
     },
     "totals": {

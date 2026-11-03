@@ -48,7 +48,8 @@
       "vehicle_stage": "Inertial Upper Stage (IUS)",
       "c3_km2_s2": 11.45,
       "mass_at_tli_kg": 3460,
-      "source": "NASA Magellan Press Kit (1989-04); JPL Magellan Mission Plan"
+      "source": "NASA Magellan Press Kit (1989-04); JPL Magellan Mission Plan",
+      "departure": "kick-stage"
     },
     "cruise": {
       "tcm_count": 4,

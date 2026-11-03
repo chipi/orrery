@@ -2,15 +2,46 @@
   "missionId": "apollo16",
   "siteId": "apollo16",
   "body": "moon",
-  "landingSite": { "lat": -8.97, "lon": 15.5 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 7300,
+  "landingSite": {
+    "lat": -8.97,
+    "lon": 15.5
+  },
+  "entryState": {
+    "altitudeM": 15000,
+    "velocityMs": 1695,
+    "flightPathAngleDeg": 1.45
+  },
+  "entryMassKg": 16609,
   "entryCdA": 0,
-  "retroPropellantKg": 1000,
+  "retroPropellantKg": 8350,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 0.46,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1.45,
+    "brakingMaxThrustN": 36000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 12,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.altitudeM",
+    "entryState.velocityMs",
+    "brakingMaxThrustN",
+    "brakingFpaDeg",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Apollo 16 Mission Report (NASA MSC-07230)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031C" }
+    {
+      "l": "Apollo 16 Mission Report — 16,609 kg at PDI, 8,259 kg landed, descent ~730 s, ~0.46 m/s at engine stop; PDI state estimated",
+      "u": "https://www.ibiblio.org/apollo/Documents/A16_MissionReport.pdf"
+    },
+    {
+      "l": "Apollo 16 Mission Report (NASA MSC-07230)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031C"
+    }
   ]
 }

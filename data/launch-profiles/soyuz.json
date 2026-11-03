@@ -2,15 +2,15 @@
   "id": "soyuz",
   "name": "Soyuz (11A511)",
   "source_tier": "flagship",
-  "payloadKg": 4730,
+  "payloadKg": 6450,
   "fairingKg": 0,
   "fairingJettisonAltM": 100000,
   "refAreaM2": 30,
   "cd": 0.3,
   "launchSite": {
-    "lat": 45.92,
-    "lon": 63.34,
-    "name": "Site 1 · Baikonur Cosmodrome"
+    "lat": 45.9203,
+    "lon": 63.3422,
+    "name": "Site 1/5 · Baikonur Cosmodrome"
   },
   "pitchProgram": [
     [
@@ -39,42 +39,50 @@
     ]
   ],
   "boosters": {
-    "name": "Blok B-D",
+    "name": "Blok B–D (RD-107, 11D511)",
     "count": 4,
-    "wetKg": 43400,
-    "dryKg": 3400,
-    "thrustSlKN": 970,
-    "thrustVacKN": 1000,
-    "ispSlS": 252,
-    "ispVacS": 315,
+    "wetKg": 43000,
+    "dryKg": 3550,
+    "thrustSlKN": 814,
+    "thrustVacKN": 994,
+    "ispSlS": 257,
+    "ispVacS": 314,
     "chamberTempK": 3200
   },
   "stages": [
     {
-      "name": "Core",
-      "wetKg": 94000,
-      "dryKg": 7000,
-      "thrustSlKN": 912,
-      "thrustVacKN": 990,
-      "ispSlS": 248,
+      "name": "Blok A core (RD-108, 11D512)",
+      "wetKg": 100500,
+      "dryKg": 6500,
+      "thrustSlKN": 782,
+      "thrustVacKN": 978,
+      "ispSlS": 252,
       "ispVacS": 315,
       "engines": 1,
       "chamberTempK": 3200
     },
     {
-      "name": "Blok E",
-      "wetKg": 8100,
-      "dryKg": 1400,
-      "thrustVacKN": 300,
-      "ispVacS": 326,
+      "name": "Blok I (RD-0110)",
+      "wetKg": 25400,
+      "dryKg": 2700,
+      "thrustVacKN": 294,
+      "ispVacS": 330,
       "engines": 1,
       "chamberTempK": 3100
     }
   ],
   "provenance": [
     {
-      "l": "RussianSpaceWeb — Soyuz (11A511)",
-      "u": "https://www.russianspaceweb.com/soyuz_lv.html"
+      "l": "Astronautix — Soyuz 11A511 (stage masses, vacuum thrust, Isp, burn times); sea-level thrust derived from the vacuum thrust and Isp ratio",
+      "u": "http://www.astronautix.com/s/soyuz11a511.html"
+    },
+    {
+      "l": "Soyuz (rocket) — Wikipedia (308 t at liftoff)",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_(rocket)"
+    },
+    {
+      "l": "Soyuz 1 — Wikipedia (6,450 kg, 197 × 223 km; Soyuz 11 6,565 kg). Escape tower and shroud mass not found",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_1"
     }
   ]
 }

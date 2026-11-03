@@ -48,7 +48,8 @@
       "vehicle_stage": "Star 48B PAM-D solid upper stage",
       "c3_km2_s2": 8.83,
       "mass_at_tli_kg": 1063,
-      "source": "NASA MER Press Kit (2003-06); JPL MER Mission Plan"
+      "source": "NASA MER Press Kit (2003-06); JPL MER Mission Plan",
+      "departure": "stage-then-kick"
     },
     "cruise": {
       "tcm_count": 4,
@@ -56,14 +57,14 @@
     },
     "arrival": {
       "v_infinity_km_s": 2.65,
-      "entry_velocity_km_s": 5.4,
+      "entry_velocity_km_s": 5.63,
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": null,
       "source": "JPL MER-A EDL Reconstruction (2004); direct atmospheric entry",
       "edl_system": "airbag",
-      "edl_duration_s": 1374,
-      "touchdown_velocity_ms": 15.89
+      "edl_duration_s": 329,
+      "touchdown_velocity_ms": 18.98
     },
     "totals": {
       "total_dv_km_s": 5.5,

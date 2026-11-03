@@ -1,0 +1,52 @@
+{
+  "id": "titan-ii-g",
+  "name": "Titan II(23)G",
+  "source_tier": "flagship",
+  "payloadKg": 1690,
+  "fairingKg": 800,
+  "fairingJettisonAltM": 110000,
+  "refAreaM2": 7.3,
+  "cd": 0.3,
+  "launchSite": { "lat": 34.633, "lon": -120.615, "name": "SLC-4W · Vandenberg" },
+  "pitchProgram": [[0, 90], [12, 89], [45, 68], [95, 46], [150, 28], [210, 14], [280, 4], [340, 0]],
+  "stages": [
+    {
+      "name": "Stage 1 (LR87-AJ-5)",
+      "wetKg": 117866,
+      "dryKg": 6736,
+      "thrustSlKN": 1913,
+      "thrustVacKN": 2194,
+      "ispSlS": 259,
+      "ispVacS": 297,
+      "engines": 2,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "Stage 2 (LR91-AJ-5)",
+      "wetKg": 28939,
+      "dryKg": 2404,
+      "thrustVacKN": 445,
+      "ispVacS": 316,
+      "engines": 1,
+      "chamberTempK": 3200
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Titan II — Wikipedia / Encyclopedia Astronautica (stage gross 117,866 / 28,939 kg, empty 6,736 / 2,404 kg; LR87-AJ-5 1,913 kN SL, 259/297 s; LR91 445 kN, 316 s)",
+      "u": "https://en.wikipedia.org/wiki/Titan_II_GLV"
+    },
+    {
+      "l": "eoPortal — Clementine (Titan II(23)G from SLC-4W, 25 Jan 1994; launch stack incl. the Star 37FM ISAS ~1,690 kg)",
+      "u": "https://www.eoportal.org/satellite-missions/clementine"
+    },
+    {
+      "l": "Jonathan McDowell, JSR 182 (255 × 299 km × 67° parking orbit; Star 37FM burn scheduled for early February)",
+      "u": "https://planet4589.org/space/jsr/back/news.182.txt"
+    },
+    {
+      "l": "Payload fairing assumed from the standard Titan 23G configuration (not confirmed for this flight); its mass estimated",
+      "u": "https://space.skyrocket.de/doc_sdat/isa.htm"
+    }
+  ]
+}

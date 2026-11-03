@@ -64,6 +64,10 @@
     }
   ],
   "flight": {
+    "arrival": {
+      "orbit_insertion_dv_km_s": 0.542,
+      "source": "Juno (spacecraft) — Wikipedia (JOI: 2,102 s, 542 m/s)"
+    },
     "events": [
       {
         "met_days": 0,

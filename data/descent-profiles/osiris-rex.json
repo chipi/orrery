@@ -2,17 +2,33 @@
   "missionId": "osiris-rex",
   "siteId": "osiris-rex",
   "body": "bennu",
-  "landingSite": { "lat": 56.0, "lon": 43.0 },
-  "entryState": { "altitudeM": 40, "velocityMs": 0.1, "flightPathAngleDeg": 90 },
+  "landingSite": {
+    "lat": 56,
+    "lon": 43
+  },
+  "entryState": {
+    "altitudeM": 54,
+    "velocityMs": 0.1,
+    "flightPathAngleDeg": 90
+  },
   "entryMassKg": 1200,
   "entryCdA": 4,
   "archetype": "ASTEROID_TOUCH_AND_GO",
-  "params": { "contactAltM": 1, "terminalVelocityMs": 0.1, "descentRateGain": 0.02 },
+  "params": {
+    "contactAltM": 1,
+    "terminalVelocityMs": 0.1,
+    "descentRateGain": 0.02
+  },
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "OSIRIS-REx sample collection at Bennu (Nightingale) — NASA",
-      "u": "https://science.nasa.gov/mission/osiris-rex/"
+      "l": "OSIRIS-REx TAG — left the ~770 m orbit at 17:50 UTC 20 Oct 2020, Checkpoint burn at 125 m, Matchpoint at 54 m (177 ft), contact at 21:53 UTC for ~6 s with the nitrogen burst, then back-away (collectSPACE). The model flies from Matchpoint; contact speed is an estimate",
+      "u": "https://www.collectspace.com/news/news-102020a-osiris-rex-tag-asteroid-bennu.html"
     }
+  ],
+  "estimatedFields": [
+    "entryMassKg",
+    "entryState.velocityMs",
+    "terminalVelocityMs"
   ]
 }

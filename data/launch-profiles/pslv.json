@@ -1,0 +1,83 @@
+{
+  "id": "pslv",
+  "name": "PSLV-XL",
+  "source_tier": "flagship",
+  "payloadKg": 1337,
+  "fairingKg": 1182,
+  "fairingJettisonAltM": 113000,
+  "refAreaM2": 11,
+  "cd": 0.3,
+  "launchSite": { "lat": 13.7333, "lon": 80.2347, "name": "First Launch Pad · Sriharikota" },
+  "pitchProgram": [[0, 90], [10, 89], [40, 78], [100, 55], [180, 32], [280, 12], [420, 0]],
+  "boosters": {
+    "name": "PSOM-XL",
+    "count": 6,
+    "airLitCount": 2,
+    "airLitIgnitionS": 25,
+    "wetKg": 15100,
+    "dryKg": 2900,
+    "thrustSlKN": 600,
+    "thrustVacKN": 650,
+    "ispSlS": 245,
+    "ispVacS": 262,
+    "chamberTempK": 3000
+  },
+  "stages": [
+    {
+      "name": "PS1 (S139)",
+      "wetKg": 168000,
+      "dryKg": 30000,
+      "thrustSlKN": 3300,
+      "thrustVacKN": 3700,
+      "ispSlS": 237,
+      "ispVacS": 269,
+      "engines": 1,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "PS2 (Vikas)",
+      "wetKg": 47300,
+      "dryKg": 5300,
+      "thrustVacKN": 799,
+      "ispVacS": 293,
+      "engines": 1,
+      "chamberTempK": 3200
+    },
+    {
+      "name": "PS3 (HPS3)",
+      "wetKg": 8700,
+      "dryKg": 1100,
+      "thrustVacKN": 200,
+      "ispVacS": 295,
+      "engines": 1,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "PS4 (2× L-2-5)",
+      "wetKg": 3420,
+      "dryKg": 920,
+      "thrustVacKN": 14.6,
+      "ispVacS": 308,
+      "engines": 2,
+      "chamberTempK": 3000
+    }
+  ],
+  "provenance": [
+    {
+      "l": "ISRO — PSLV-C25 Mars Orbiter Mission brochure (flight events: 4 ground-lit PSOM-XL at liftoff, 2 air-lit at T+25 s, separations at 70 and 92 s, fairing at 113 km; stage propellant loads; 320 t at liftoff)",
+      "u": "https://new1.isro.gov.in/media_isro/pdf/Missions/PSLVC25/publication_PSLVC25.pdf"
+    },
+    {
+      "l": "Polar Satellite Launch Vehicle — Wikipedia (stage Isp, fairing 1,182 kg)",
+      "u": "https://en.wikipedia.org/wiki/Polar_Satellite_Launch_Vehicle"
+    },
+    {
+      "l": "Mars Orbiter Mission — Wikipedia (1,337 kg; left in 264 × 23,904 km, its own engine did TMI)",
+      "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission"
+    },
+    {
+      "l": "Dry masses derived from the 320 t liftoff mass less sourced propellant; solid thrusts are burn averages matching the ISRO burn times",
+      "u": "https://www.isro.gov.in/mission_PSLV_C11.html"
+    }
+  ]
+}

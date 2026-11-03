@@ -2,15 +2,47 @@
   "missionId": "change4",
   "siteId": "change4",
   "body": "moon",
-  "landingSite": { "lat": -45.5, "lon": 177.6 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 1200,
+  "landingSite": {
+    "lat": -45.5,
+    "lon": 177.6
+  },
+  "entryState": {
+    "altitudeM": 15000,
+    "velocityMs": 1692,
+    "flightPathAngleDeg": 1
+  },
+  "entryMassKg": 2400,
   "entryCdA": 0,
-  "retroPropellantKg": 170,
+  "retroPropellantKg": 1250,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1,
+    "brakingMaxThrustN": 7000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 18,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "entryState.velocityMs",
+    "entryMassKg",
+    "retroPropellantKg",
+    "brakingFpaDeg",
+    "brakingMaxThrustN",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Chang'e-4 Mission — CNSA / NSSDC record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-103A" }
+    {
+      "l": "Chang'e 4 — perilune lowered to 15 km; flown as Chang'e 3 (same lander); no CE-4-specific descent timeline found",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_4"
+    },
+    {
+      "l": "Chang'e-4 Mission — CNSA / NSSDC record",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-103A"
+    }
   ]
 }

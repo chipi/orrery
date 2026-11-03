@@ -223,6 +223,11 @@
               "type": "string",
               "minLength": 1
             },
+            "departure": {
+              "type": "string",
+              "enum": ["launcher", "stage-then-kick", "kick-stage", "spacecraft"],
+              "description": "Who leaves Earth orbit. 'launcher' (default): the launcher's last stage fires with the spacecraft on it, then it separates. 'stage-then-kick': the last stage fires first, separates, then a kick stage carrying the spacecraft fires (Delta II's Star 48B, Pioneer's and Voyager's TE-364-4, New Horizons' Star 48B). 'kick-stage': the spacecraft is deployed with its kick stage before any burn, and the kick stage alone fires (Shuttle + IUS, Lunar Prospector's TLI module). 'spacecraft': the launcher only reaches Earth orbit; the spacecraft departs on its own engines days or weeks later (PSLV + Chandrayaan, SLIM)."
+            },
             "c3_km2_s2": {
               "type": "number",
               "minimum": 0,

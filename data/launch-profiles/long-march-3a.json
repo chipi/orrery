@@ -1,0 +1,57 @@
+{
+  "id": "long-march-3a",
+  "name": "Long March 3A",
+  "source_tier": "flagship",
+  "payloadKg": 2350,
+  "fairingKg": 1000,
+  "fairingJettisonAltM": 115000,
+  "refAreaM2": 8.8,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.246, "lon": 102.027, "name": "LC-3 · Xichang" },
+  "pitchProgram": [[0, 90], [12, 88], [50, 66], [120, 44], [200, 24], [320, 8], [460, 0]],
+  "stages": [
+    {
+      "name": "Stage 1",
+      "wetKg": 180800,
+      "dryKg": 9000,
+      "thrustSlKN": 2961.6,
+      "thrustVacKN": 3256,
+      "ispSlS": 261,
+      "ispVacS": 289,
+      "engines": 4,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "Stage 2",
+      "wetKg": 35600,
+      "dryKg": 3000,
+      "thrustVacKN": 789,
+      "ispVacS": 298,
+      "engines": 1,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "Stage 3 (H-18)",
+      "wetKg": 21000,
+      "dryKg": 2800,
+      "thrustVacKN": 167.2,
+      "ispVacS": 438,
+      "engines": 2,
+      "chamberTempK": 3500
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Long March 3A — Wikipedia (52.52 m, 241,000 kg; stage propellant, thrust, Isp, burn times)",
+      "u": "https://en.wikipedia.org/wiki/Long_March_3A"
+    },
+    {
+      "l": "Chang'e 1 — Wikipedia (2,350 kg, Xichang LC-3; left in a 205 × 50,930 km orbit, its own engine did TLI)",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_1"
+    },
+    {
+      "l": "Dry masses derived: published liftoff mass minus sourced propellant, payload and fairing; third stage (H-18) as on the Long March 3B",
+      "u": "https://en.wikipedia.org/wiki/Long_March_3B"
+    }
+  ]
+}

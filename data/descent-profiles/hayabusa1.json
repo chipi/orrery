@@ -2,17 +2,35 @@
   "missionId": "hayabusa1",
   "siteId": "hayabusa1",
   "body": "itokawa",
-  "landingSite": { "lat": -5.0, "lon": 40.0 },
-  "entryState": { "altitudeM": 40, "velocityMs": 0.1, "flightPathAngleDeg": 90 },
+  "landingSite": {
+    "lat": -5,
+    "lon": 40
+  },
+  "entryState": {
+    "altitudeM": 54,
+    "velocityMs": 0.03,
+    "flightPathAngleDeg": 90
+  },
   "entryMassKg": 510,
   "entryCdA": 4,
   "archetype": "ASTEROID_TOUCH_AND_GO",
-  "params": { "contactAltM": 1, "terminalVelocityMs": 0.1, "descentRateGain": 0.02 },
+  "params": {
+    "contactAltM": 1,
+    "terminalVelocityMs": 0.1,
+    "descentRateGain": 0.02
+  },
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "Hayabusa mission — JAXA/ISAS",
-      "u": "https://www.isas.jaxa.jp/en/missions/spacecraft/past/hayabusa.html"
+      "l": "Hayabusa — descent from 1 km from 21:00 JST 19 Nov 2005 at 12 cm/s; target marker released at 54 m at 3 cm/s; free fall from 17 m; touchdown at ~10 cm/s, two soft bounces, ~30 min on the surface; the sampler projectile did not fire (ISAS). The model flies the last 54 m",
+      "u": "https://www.isas.jaxa.jp/e/snews/2005/1124_hayabusa.shtml"
+    },
+    {
+      "l": "Hayabusa status reports, 20 Nov 2005 — SpaceRef",
+      "u": "https://spaceref.com/status-report/hayabusa-status-reports-20-november-2005/"
     }
+  ],
+  "estimatedFields": [
+    "entryMassKg"
   ]
 }

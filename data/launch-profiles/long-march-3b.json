@@ -1,0 +1,72 @@
+{
+  "id": "long-march-3b",
+  "name": "Long March 3B/E",
+  "source_tier": "flagship",
+  "payloadKg": 3780,
+  "fairingKg": 1500,
+  "fairingJettisonAltM": 115000,
+  "refAreaM2": 16,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.246, "lon": 102.027, "name": "LC-2 · Xichang" },
+  "pitchProgram": [[0, 90], [12, 88], [50, 68], [120, 46], [200, 26], [320, 10], [460, 0]],
+  "boosters": {
+    "name": "L-41 strap-on (YF-25)",
+    "count": 4,
+    "wetKg": 44300,
+    "dryKg": 3200,
+    "thrustSlKN": 740.4,
+    "thrustVacKN": 814,
+    "ispSlS": 261,
+    "ispVacS": 289,
+    "chamberTempK": 3300
+  },
+  "stages": [
+    {
+      "name": "Core stage 1",
+      "wetKg": 198800,
+      "dryKg": 12600,
+      "thrustSlKN": 2961.6,
+      "thrustVacKN": 3256,
+      "ispSlS": 261,
+      "ispVacS": 289,
+      "engines": 4,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "Stage 2",
+      "wetKg": 53400,
+      "dryKg": 4000,
+      "thrustVacKN": 789,
+      "ispVacS": 298,
+      "engines": 1,
+      "chamberTempK": 3300
+    },
+    {
+      "name": "Stage 3 (H-18)",
+      "wetKg": 21000,
+      "dryKg": 2800,
+      "thrustVacKN": 167.2,
+      "ispVacS": 438,
+      "engines": 2,
+      "chamberTempK": 3500
+    }
+  ],
+  "provenance": [
+    {
+      "l": "Long March 3B — Wikipedia (3B/E: 56.3 m, 458,970 kg; stage propellant, thrust, Isp, burn times)",
+      "u": "https://en.wikipedia.org/wiki/Long_March_3B"
+    },
+    {
+      "l": "Orbit Codex — Long March 3B/E (liftoff thrust 5,924 kN, stage 3 Isp 440 s)",
+      "u": "https://orbitcodex.com/launch-vehicles/long-march-3b-e"
+    },
+    {
+      "l": "Chang'e 3 — Wikipedia (3,780 kg, Xichang LC-2; third stage parking orbit then translunar burn)",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_3"
+    },
+    {
+      "l": "Dry masses derived: published liftoff mass minus sourced propellant, split to match the Long March 2F core/boosters of the same family",
+      "u": "https://en.wikipedia.org/wiki/Long_March_2F"
+    }
+  ]
+}

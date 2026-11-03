@@ -2,20 +2,50 @@
   "missionId": "vega-1",
   "siteId": "vega-1",
   "body": "venus",
-  "landingSite": { "lat": 8.1, "lon": 175.85 },
-  "entryState": { "altitudeM": 130000, "velocityMs": 10700, "flightPathAngleDeg": 65 },
-  "entryMassKg": 1650,
+  "landingSite": {
+    "lat": 8.1,
+    "lon": 175.85
+  },
+  "entryState": {
+    "altitudeM": 125000,
+    "velocityMs": 10700,
+    "flightPathAngleDeg": 18.23
+  },
+  "entryMassKg": 1500,
   "entryCdA": 1.6,
   "archetype": "VENUS_AEROSHELL",
+  "dynamicGamma": true,
   "params": {
-    "chuteDeployAltM": 62000,
+    "chuteDeployAltM": 64000,
     "terminalHandoffAltM": 47000,
     "parachuteCdA": 24,
-    "terminalCdA": 3.2,
-    "backshellKg": 200
+    "terminalCdA": 2.84,
+    "backshellKg": 750
   },
   "source_tier": "flagship",
   "provenance": [
-    { "l": "Vega 1 Venus probe — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1984-125D" }
+    {
+      "l": "Vega 1 — 1,500 kg descent unit (2.4 m sphere), entry at 125 km and ~11 km/s, first parachute at 64 km; entry to touchdown 02:06:10 → 03:02:54 UT (3404 s). Lander mass after the balloon and shell leave, chute release altitude and disc drag are estimates fitted to the 3404 s",
+      "u": "https://en.wikipedia.org/wiki/Vega_1"
+    },
+    {
+      "l": "Dutta et al. 2012, Mission sizing and trade studies for low ballistic coefficient entry systems to Venus, Table 1 — entry angle, speed and peak g of Venera and Vega (simulated from engineering estimates)",
+      "u": "https://ntrs.nasa.gov/api/citations/20120006657/downloads/20120006657.pdf"
+    },
+    {
+      "l": "Vega 1 host catalog — PDS",
+      "u": "https://pds.nasa.gov/data/pds3/releases/backup/2020/202002.vega/vega1_host.cat"
+    },
+    {
+      "l": "Vega program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vega_program"
+    }
+  ],
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "backshellKg",
+    "terminalHandoffAltM",
+    "terminalCdA",
+    "entryState.velocityMs"
   ]
 }

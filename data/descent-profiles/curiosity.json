@@ -2,17 +2,27 @@
   "missionId": "curiosity",
   "siteId": "curiosity",
   "body": "mars",
-  "landingSite": { "lat": -4.59, "lon": 137.44 },
-  "entryState": { "altitudeM": 125000, "velocityMs": 5845, "flightPathAngleDeg": 15 },
+  "landingSite": {
+    "lat": -4.59,
+    "lon": 137.44
+  },
+  "entryState": {
+    "altitudeM": 125000,
+    "velocityMs": 5845.4,
+    "flightPathAngleDeg": 15.474
+  },
   "entryMassKg": 3300,
   "entryCdA": 24,
-  "liftToDragRatio": 0.24,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],
+  "liftToDragRatio": 0.17,
+  "estimatedFields": [
+    "entryCdA",
+    "liftToDragRatio"
+  ],
   "retroPropellantKg": 450,
   "archetype": "MARS_SKYCRANE",
   "params": {
-    "chuteDeployAltM": 11000,
-    "terminalHandoffAltM": 1800,
+    "chuteDeployAltM": 11900,
+    "terminalHandoffAltM": 1670,
     "finalPhaseAltM": 21,
     "parachuteCdA": 200,
     "heatshieldKg": 380,
@@ -22,6 +32,13 @@
   },
   "source_tier": "flagship",
   "provenance": [
-    { "l": "JPL MSL EDL — Way et al. (2013)", "u": "https://mars.nasa.gov/msl/timeline/surface-operations/entry-descent-landing/" }
+    {
+      "l": "MSL EDL reconstruction (NASA) — entry 5,845.4 m/s at −15.474°; chute 259 s at ~11.9 km above the site, backshell separation 375.9 s at 1.67 km, touchdown 431.5 s at ~0.6 m/s. L/D is the bank-averaged effective value (estimate) that reproduces the timeline; MSL’s trim L/D is ~0.24",
+      "u": "https://ntrs.nasa.gov/api/citations/20130010129/downloads/20130010129.pdf"
+    },
+    {
+      "l": "JPL MSL EDL — Way et al. (2013)",
+      "u": "https://mars.nasa.gov/msl/timeline/surface-operations/entry-descent-landing/"
+    }
   ]
 }

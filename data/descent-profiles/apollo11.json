@@ -2,15 +2,44 @@
   "missionId": "apollo11",
   "siteId": "apollo11",
   "body": "moon",
-  "landingSite": { "lat": 0.67, "lon": 23.47 },
-  "entryState": { "altitudeM": 2500, "velocityMs": 150, "flightPathAngleDeg": 55 },
-  "entryMassKg": 7300,
+  "landingSite": {
+    "lat": 0.67,
+    "lon": 23.47
+  },
+  "entryState": {
+    "altitudeM": 14900,
+    "velocityMs": 1695,
+    "flightPathAngleDeg": 1.45
+  },
+  "entryMassKg": 15150,
   "entryCdA": 0,
   "retroPropellantKg": 8200,
   "archetype": "LUNAR_POWERED",
-  "params": { "ispS": 311, "terminalVelocityMs": 1, "descentRateGain": 0.06 },
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 0.83,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1.45,
+    "brakingMaxThrustN": 36000,
+    "highGateSpeedMs": 150,
+    "approachFpaDeg": 12,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
   "source_tier": "flagship",
+  "estimatedFields": [
+    "brakingMaxThrustN",
+    "brakingFpaDeg",
+    "approachFpaDeg"
+  ],
   "provenance": [
-    { "l": "Apollo 11 Mission Report (NASA SP-238)", "u": "https://www.nasa.gov/history/alsj/a11/a11missionreport.html" }
+    {
+      "l": "Apollo 11 Mission Report + TN D-6846 — PDI at 14.9 km and 1,695 m/s (5,560 ft/s), 15,150 kg after DOI, 7,327 kg landed; PDI 102:33:05 → touchdown 102:45:39.9 (755 s); high gate 8:26 at 7,515 ft; touchdown 0.83 m/s. Descent engine 47 kN max; the braking thrust and the fitted braking angle are model values",
+      "u": "https://www.ibiblio.org/apollo/Documents/A11_MissionReport.pdf"
+    },
+    {
+      "l": "Apollo 11 Mission Report (NASA SP-238)",
+      "u": "https://www.nasa.gov/history/alsj/a11/a11missionreport.html"
+    }
   ]
 }

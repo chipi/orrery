@@ -733,7 +733,8 @@
       ]
     },
     "launch": {
-      "vehicle_stage": "Inertial Upper Stage (IUS)"
+      "vehicle_stage": "Inertial Upper Stage (IUS)",
+      "departure": "kick-stage"
     }
   }
 }

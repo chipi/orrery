@@ -57,10 +57,10 @@
     "arrival": {
       "v_infinity_km_s": 0.86,
       "source": "NASA NSSDCA Luna 9 archive; direct-descent trajectory (no lunar orbit); retrorocket fired ~75 km altitude",
-      "entry_velocity_km_s": 0.14,
+      "entry_velocity_km_s": 2.55,
       "edl_system": "direct_impact",
-      "edl_duration_s": 20,
-      "touchdown_velocity_ms": 18.57
+      "edl_duration_s": 188,
+      "touchdown_velocity_ms": 6.4
     },
     "totals": {
       "total_dv_km_s": 3,

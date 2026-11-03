@@ -1,0 +1,63 @@
+{
+  "id": "atlas-agena",
+  "name": "Atlas LV-3 Agena-D",
+  "source_tier": "flagship",
+  "payloadKg": 261,
+  "fairingKg": 166,
+  "fairingJettisonAltM": 110000,
+  "refAreaM2": 7.3,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.48, "lon": -80.54, "name": "LC-12 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [15, 88], [50, 68], [110, 46], [180, 26], [270, 10], [380, 0]],
+  "boosters": {
+    "name": "Booster section (MA-5, 2 chambers)",
+    "count": 1,
+    "wetKg": 75550,
+    "dryKg": 2848,
+    "thrustSlKN": 1467.9,
+    "thrustVacKN": 1645,
+    "ispSlS": 259,
+    "ispVacS": 294,
+    "chamberTempK": 3400
+  },
+  "stages": [
+    {
+      "name": "Atlas sustainer (LR105 + 2 verniers)",
+      "wetKg": 39700,
+      "dryKg": 2719,
+      "thrustSlKN": 253.6,
+      "thrustVacKN": 386.4,
+      "ispSlS": 220,
+      "ispVacS": 316,
+      "engines": 1,
+      "chamberTempK": 3400
+    },
+    {
+      "name": "Agena D (Bell 8096)",
+      "wetKg": 6821,
+      "dryKg": 700,
+      "thrustVacKN": 71.2,
+      "ispVacS": 293,
+      "engines": 1,
+      "chamberTempK": 3000
+    }
+  ],
+  "provenance": [
+    {
+      "l": "NASA TM X-1826 — Atlas-Agena D for Mariner 5, the 1967 sister flight (BECO T+128.6 s, booster jettison T+131.6 s; shroud 165.8 kg; composite liftoff ~125,600 kg)",
+      "u": "https://ntrs.nasa.gov/api/citations/19690020216/downloads/19690020216.pdf"
+    },
+    {
+      "l": "NASA TM X-2278 — Atlas booster section 2,848 kg and sustainer 2,719 kg dry (AC-20 proxy for the SLV-3)",
+      "u": "https://ntrs.nasa.gov/api/citations/19710023020/downloads/19710023020.pdf"
+    },
+    {
+      "l": "Agena — Wikipedia / Encyclopedia Astronautica (Agena D 6,821 kg gross, Bell 8096 71.2 kN, 293 s; its 673 kg dry mass looks low, so 700 kg is used)",
+      "u": "https://en.wikipedia.org/wiki/Agena_(rocket_stage)"
+    },
+    {
+      "l": "Mariner 4 — NSSDCA (260.8 kg, launched 28 Nov 1964 on Atlas-Agena D; the Agena's second burn sent it to Mars)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1964-077A"
+    }
+  ]
+}

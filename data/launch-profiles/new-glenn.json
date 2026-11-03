@@ -1,0 +1,50 @@
+{
+  "id": "new-glenn",
+  "name": "New Glenn",
+  "source_tier": "flagship",
+  "payloadKg": 21715,
+  "loftBoost": true,
+  "liftoffThrustKN": 17150,
+  "fairingKg": 5000,
+  "fairingJettisonAltM": 115000,
+  "refAreaM2": 38.5,
+  "cd": 0.3,
+  "launchSite": { "lat": 28.4856, "lon": -80.541, "name": "LC-36 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [12, 88], [50, 72], [110, 52], [190, 32], [300, 14], [450, 0]],
+  "stages": [
+    {
+      "name": "GS1 (7× BE-4)",
+      "wetKg": 1210000,
+      "dryKg": 75000,
+      "thrustSlKN": 17150,
+      "thrustVacKN": 19928,
+      "ispSlS": 293,
+      "ispVacS": 340,
+      "engines": 7,
+      "chamberTempK": 3500
+    },
+    {
+      "name": "GS2 (2× BE-3U)",
+      "wetKg": 282400,
+      "dryKg": 20000,
+      "thrustVacKN": 1779,
+      "ispVacS": 445,
+      "engines": 2,
+      "chamberTempK": 3300
+    }
+  ],
+  "provenance": [
+    {
+      "l": "New Glenn — Wikipedia (98 m, 7 m; GS1 7× BE-4, 19,928 kN, 340 s, ~190 s burn; GS2 2× BE-3U, 1,779 kN, 445 s, ~644 s burn; Blue Moon MK1 21,715 kg)",
+      "u": "https://en.wikipedia.org/wiki/New_Glenn"
+    },
+    {
+      "l": "Blue Origin lists the BE-4 at 2,450 kN per engine: 7 × = 17,150 kN at liftoff; GS1 sea-level Isp derived from the SL/vacuum thrust ratio",
+      "u": "https://www.designation-systems.net/dusrm/app3/new-glenn.html"
+    },
+    {
+      "l": "Stage masses are not published: propellant derived from thrust × burn time / (Isp × g0) (GS1 ~1,135 t, GS2 ~262 t); dry masses and fairing mass estimated. Blue Moon MK1 is planned for 2027 and its own BE-7 makes the trans-lunar burn from low Earth orbit",
+      "u": "https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)"
+    }
+  ]
+}

@@ -2,23 +2,49 @@
   "missionId": "galileo",
   "siteId": "galileo-probe",
   "body": "jupiter",
-  "landingSite": { "lat": 6.5, "lon": 4.0 },
-  "entryState": { "altitudeM": 450000, "velocityMs": 47400, "flightPathAngleDeg": 8.4 },
+  "landingSite": {
+    "lat": 6.5,
+    "lon": 4
+  },
+  "entryState": {
+    "altitudeM": 450000,
+    "velocityMs": 47400,
+    "flightPathAngleDeg": 8.4
+  },
   "entryMassKg": 339,
   "entryCdA": 1.3,
   "archetype": "JUPITER_PROBE",
+  "dynamicGamma": true,
   "params": {
-    "chuteDeployAltM": 50000,
-    "terminalHandoffAltM": 30000,
-    "parachuteCdA": 8,
-    "heatshieldKg": 90,
+    "chuteDeployAltM": 23400,
+    "terminalHandoffAltM": 22000,
+    "parachuteCdA": 5.9,
+    "terminalCdA": 5.9,
+    "heatshieldKg": 219,
     "crushPressurePa": 2300000
   },
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "Galileo Probe — NASA NSSDCA spacecraft record",
-      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1989-084E"
+      "l": "Galileo probe ASI (PDS) — entry 450 km at 22:04:43.8 UT at ~47.4 km/s, 0.77 km/s by 50 km, still 0.44 km/s at 23.4 km when descent mode began (+167 s, 0.35 bar: the chute opened there, not at the planned 47 km); measured density and pressure in descent-atmosphere-tables.ts",
+      "u": "https://pds.nasa.gov/data/gp-j-asi-3-entry-v1.0/gp_0001/DATA/ASI/"
+    },
+    {
+      "l": "Galileo Jupiter arrival press kit — 450 km entry, ~8°, up to 230 g",
+      "u": "https://www.jpl.nasa.gov/news/press_kits/gllarpk.pdf"
+    },
+    {
+      "l": "Galileo end-of-mission press kit — 58 min under the parachute to ~23 bar",
+      "u": "https://www.jpl.nasa.gov/news/press_kits/galileo-end.pdf"
+    },
+    {
+      "l": "Galileo Probe — Wikipedia (339 kg, 61.4 min from entry)",
+      "u": "https://en.wikipedia.org/wiki/Galileo_Probe"
     }
+  ],
+  "estimatedFields": [
+    "parachuteCdA",
+    "terminalCdA",
+    "heatshieldKg"
   ]
 }

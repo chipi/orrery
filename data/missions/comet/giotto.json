@@ -86,7 +86,8 @@
       }
     ],
     "launch": {
-      "vehicle_stage": "Ariane 1 third stage"
+      "vehicle_stage": "Ariane 1 third stage",
+      "departure": "spacecraft"
     }
   }
 }

@@ -701,7 +701,8 @@
       ]
     },
     "launch": {
-      "vehicle_stage": "STAR 48B (third stage)"
+      "vehicle_stage": "STAR 48B (third stage)",
+      "departure": "stage-then-kick"
     }
   }
 }

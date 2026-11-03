@@ -26,7 +26,7 @@
       "type": "info"
     },
     {
-      "met": 1000,
+      "met": 937,
       "label": "VGA-2",
       "note": "04.09.2022. Beginn des Inklinationsanstiegs aus der Ekliptik.",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "Centaur-Oberstufe (Atlas V 411)",
   "flight_events": [
     {
-      "met": 1750,
+      "met": 1835,
       "label": "Swing-by an der Venus Nr. 4",
       "description": "2025-02. Der vierte Venus-Swing-by hebt die heliografische Breite weiter auf ~17° an (Ziel der verlängerten Mission: ~33°)."
     }

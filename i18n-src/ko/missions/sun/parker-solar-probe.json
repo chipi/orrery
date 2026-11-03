@@ -32,7 +32,7 @@
       "type": "info"
     },
     {
-      "met": 1830,
+      "met": 1835,
       "label": "VGA-6",
       "note": "여섯 번째 금성 중력 보조 2023-08-21.",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "고체 3단 Star 48BV (Delta IV Heavy: 코어 + 부스터 2기)",
   "flight_events": [
     {
-      "met": 985,
+      "met": 923,
       "label": "금성 중력 보조 4차",
       "description": "2021-02-20. 네 번째 금성 중력 보조가 근일점을 더 낮춰 9.86 R☉ 목표에 다가간다."
     }

@@ -32,7 +32,7 @@
       "type": "nominal"
     },
     {
-      "met": 1133,
+      "met": 1077,
       "label": "SORVOLO MERCURIO #1",
       "note": "Prima delle sei fionde gravitazionali di Mercurio.",
       "type": "nominal"
@@ -46,27 +46,27 @@
   ],
   "flight_events": [
     {
-      "met": 1432,
+      "met": 1342,
       "label": "Mercurio n. 2 — fionda gravitazionale",
       "description": "Massimo avvicinamento di 200 km il 2022-06-23. Il ∆v accumulato dalle fionde gravitazionali supera i 6 km/s a questo passaggio: un lavoro che il motore chimico e i propulsori elettrici non avrebbero potuto fare da soli con il budget di propellente."
     },
     {
-      "met": 1819,
+      "met": 1703,
       "label": "Mercurio n. 3 — fionda gravitazionale",
       "description": "Massimo avvicinamento di 236 km il 2023-06-19. Punto di controllo a metà crociera: la messa in servizio degli strumenti prosegue sui tratti ad alta quota."
     },
     {
-      "met": 2055,
+      "met": 2146,
       "label": "Mercurio n. 4 — fionda gravitazionale",
       "description": "Massimo avvicinamento di 165 km il 2024-09-04. Il sorvolo più ravvicinato finora della serie di BepiColombo; la vicinanza aggiunge un notevole ∆v di frenata."
     },
     {
-      "met": 2294,
+      "met": 2234,
       "label": "Mercurio n. 5 — fionda gravitazionale",
       "description": "Massimo avvicinamento previsto per il 2024-12-01. Penultimo sorvolo di Mercurio: le ultime due fionde riducono l'orbita alla geometria necessaria per la cattura."
     },
     {
-      "met": 2421,
+      "met": 2272,
       "label": "Mercurio n. 6 — fionda gravitazionale",
       "description": "Ultimo sorvolo previsto per il 2025-01-08: il periodo orbitale della sonda è abbastanza vicino a quello di Mercurio da rendere possibile la cattura alla successiva finestra di congiunzione solare."
     }

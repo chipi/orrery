@@ -26,7 +26,7 @@
       "type": "nominal"
     },
     {
-      "met": 1671,
+      "met": 1648,
       "label": "ASTEROID 2867 ŠTEINS",
       "note": "Erste Nahaufnahme eines E-Typ-Asteroiden.",
       "type": "nominal"
@@ -46,12 +46,12 @@
   ],
   "flight_events": [
     {
-      "met": 1349,
+      "met": 1351,
       "label": "Erde Nr. 2 — Swing-by",
       "description": "Größte Annäherung 5.295 km am 2007-11-13. Kurzzeitig für einen erdnahen Asteroiden gehalten (Bezeichnung 2007 VN84), bevor Beobachter erkannten, dass es Rosetta auf dem Weg nach außen war."
     },
     {
-      "met": 2058,
+      "met": 2082,
       "label": "Erde Nr. 3 — Swing-by",
       "description": "Letzter Vorbeiflug an der Erde am 2009-11-13, größte Annäherung 2.481 km. Der Schwung trägt Rosetta bis zum Aphel, das für die Bahn von 67P nötig ist; danach ging die Sonde im tiefen Raum in den Ruhezustand."
     }

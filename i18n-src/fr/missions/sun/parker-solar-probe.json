@@ -32,7 +32,7 @@
       "type": "info"
     },
     {
-      "met": 1830,
+      "met": 1835,
       "label": "VGA-6",
       "note": "Sixième assistance gravitationnelle de Vénus 2023-08-21.",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "troisième étage à poudre Star 48BV (Delta IV Heavy : corps central + 2 propulseurs)",
   "flight_events": [
     {
-      "met": 985,
+      "met": 923,
       "label": "Assistance gravitationnelle de Vénus n° 4",
       "description": "2021-02-20. La quatrième assistance de Vénus resserre encore le périhélie vers l'objectif de 9,86 R☉."
     }

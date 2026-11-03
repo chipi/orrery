@@ -26,7 +26,7 @@
       "type": "info"
     },
     {
-      "met": 1000,
+      "met": 937,
       "label": "VGA-2",
       "note": "2022-09-04. De inclinatie ten opzichte van de ecliptica begint op te lopen.",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "Centaur-bovenste trap (Atlas V 411)",
   "flight_events": [
     {
-      "met": 1750,
+      "met": 1835,
       "label": "Zwaartekrachtassist bij Venus nr. 4",
       "description": "2025-02. De vierde Venus-assist blijft de heliografische breedte verhogen, richting ~17° (doel van de verlengde missie: ~33°)."
     }

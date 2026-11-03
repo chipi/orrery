@@ -32,7 +32,7 @@
       "type": "info"
     },
     {
-      "met": 1830,
+      "met": 1835,
       "label": "VGA-6",
       "note": "第6回金星スイングバイ 2023-08-21。",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "固体第3段 Star 48BV（Delta IV Heavy：コア + ブースター2基）",
   "flight_events": [
     {
-      "met": 985,
+      "met": 923,
       "label": "金星スイングバイ4回目",
       "description": "2021-02-20。4回目の金星スイングバイで近日点をさらに下げ、9.86 R☉ の目標に近づける。"
     }

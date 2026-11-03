@@ -26,7 +26,7 @@
       "type": "info"
     },
     {
-      "met": 1000,
+      "met": 937,
       "label": "VGA-2",
       "note": "2022-09-04. Inizia la salita di inclinazione fuori dall'eclittica.",
       "type": "info"
@@ -47,7 +47,7 @@
   "vehicle_stage": "stadio superiore Centaur (Atlas V 411)",
   "flight_events": [
     {
-      "met": 1750,
+      "met": 1835,
       "label": "Fionda gravitazionale di Venere n. 4",
       "description": "2025-02. La quarta fionda di Venere continua ad alzare la latitudine eliografica verso ~17° (obiettivo della missione estesa: ~33°)."
     }

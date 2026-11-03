@@ -259,6 +259,10 @@
     opacity: 0.6;
     cursor: default;
   }
+  /* A globe control: the panorama's compass sits in this corner. */
+  :global(html[data-surface-panorama]) .locate-me {
+    display: none;
+  }
   .locate-icon {
     color: #4ecdc4;
     font-size: 14px;

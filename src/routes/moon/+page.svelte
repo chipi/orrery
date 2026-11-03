@@ -354,6 +354,11 @@
     opacity: 0.6;
     cursor: default;
   }
+  /* Globe controls: the panorama's compass sits in this corner. */
+  :global(html[data-surface-panorama]) .locate-me,
+  :global(html[data-surface-panorama]) .moon-observer {
+    display: none;
+  }
   .locate-icon {
     color: #4ecdc4;
     font-size: 14px;

@@ -820,6 +820,14 @@
     else root.style.removeProperty('--legend-top');
     return () => root.style.removeProperty('--legend-top');
   });
+  // Also on <html>: the host route hides its globe-only controls (the locate
+  // button) while the panorama owns the screen.
+  $effect(() => {
+    const root = document.documentElement;
+    if (panoramaActive) root.dataset.surfacePanorama = '';
+    else delete root.dataset.surfacePanorama;
+    return () => delete root.dataset.surfacePanorama;
+  });
   // The imagery card sits in the lower-left corner; the INDEX pull tab
   // (left edge, centred) moves up while the card is there so the two never
   // touch.
@@ -2476,12 +2484,14 @@
         // pitch +90 = up, 0 = horizon → camP = π/2 - pitch_rad
         camP = Math.PI / 2 - (urlState.pitchDeg * Math.PI) / 180;
       } else {
-        // Open centred on the panorama's forward direction (yaw 0 =
-        // panorama centre, pitch 0 = horizon) instead of inheriting the
-        // oblique orbital camera angle — otherwise the view lands tilted
-        // and the user has to drag to re-centre (2026-06-28 user
-        // direction: "camera was tilted ... recenter to be screen-centred").
-        camT = 0;
+        // Open level at the horizon instead of inheriting the oblique
+        // orbital camera angle — otherwise the view lands tilted and the
+        // user has to drag to re-centre (2026-06-28 user direction:
+        // "camera was tilted ... recenter to be screen-centred"). Yaw 0
+        // faces texture u = 0.75; a partial panorama names the yaw that
+        // faces its photograph, or the view opens on padding.
+        const entryYaw = site?.panorama_metadata?.entry_yaw_deg ?? 0;
+        camT = (entryYaw * Math.PI) / 180;
         camP = Math.PI / 2;
       }
       updateCam();

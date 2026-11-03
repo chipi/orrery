@@ -308,6 +308,18 @@ co-registration helpers `coreg-*.mjs` / `verify-coreg-geometry.mjs` /
 - **Gotchas** No vision cost, no manifest rewrite — manifest already references the path. Don't `--no-verify` past the gate; run the command it prints.
 - **State** STANDING.
 
+### `panorama-entry-yaw.mjs` — where a partial panorama opens **(STANDING, after any re-pad)**
+
+- **Command** `node scripts/hotspots/panorama-entry-yaw.mjs` (report) / `--write`
+- **What** A panorama opens at yaw 0, which faces texture u = 0.75. Ten Moon panoramas are a
+  photograph padded into one slice of the canvas, so they opened on black sky over grey fill
+  (also at the end of every `/fly` descent, `?from=descent`). The script finds each image's
+  content (lit sky, or textured ground under the Moon's black sky) and writes
+  `panorama_metadata.entry_yaw_deg` = 360·(0.75 − u) into `surface-hotspots.json`; full
+  panoramas get none.
+- **When** After re-padding or replacing any `tier3-pan.jpg`.
+- **State** STANDING.
+
 **One-shot hotspot backfills (KEPT):** `backfill-imagery-provenance.ts` (mints
 route-patch provenance + patches spacecraft fields onto existing Mars entries),
 `reupsert-tier2-provenance.ts` (re-adds tier-2 regional provenance the

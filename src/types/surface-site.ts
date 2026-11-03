@@ -243,6 +243,14 @@ export interface PanoramaMetadata {
    * hidden when absent (no false orientation claim).
    */
   compass_zero_direction?: string;
+  /**
+   * Camera yaw (degrees, same convention as the `?yaw=` deep link) the
+   * panorama opens at. Set only on partial panoramas, whose photograph
+   * fills a slice of the padded canvas: the default yaw 0 faces
+   * u = 0.75, which is padding on those. Measured from the image by
+   * `scripts/hotspots/panorama-entry-yaw.mjs`.
+   */
+  entry_yaw_deg?: number;
 }
 
 /**

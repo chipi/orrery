@@ -547,6 +547,85 @@ const NSSDCA = (id: string, name: string, what: string): ShowcaseRef => ({
   u: `https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=${id}`,
 });
 
+// ── Moon orbiters (/fly craft, no fleet entry) ────────────────────────────────────────────
+// Box buses share buildBoxOrbiter (the operator's rule: share a model where the differences
+// are small). Sizes are approximate published bus dimensions, for shape and proportion only.
+
+/** Clementine (1994): a ~1.9 m octagonal-ish bus with two single-panel wings. */
+export function buildClementine(): THREE.Group {
+  return buildBoxOrbiter({
+    bus: [1.14, 1.88, 1.14],
+    hex: true,
+    arrays: { sides: [1, -1], panels: 1, panelLen: 1.9, panelWid: 1.1, y: 1.1, strut: 0.15 },
+    dish: { d: 0.4, vertex: [0, 1.88, 0.5], elev: 30, mount: [0, 1.7, 0.4] },
+  });
+}
+
+/** SMART-1 (2003): a ~1 m cube with two long two-panel wings. */
+export function buildSmart1(): THREE.Group {
+  return buildBoxOrbiter({
+    bus: [1, 1, 1],
+    arrays: { sides: [1, -1], panels: 3, panelLen: 2.1, panelWid: 0.8, y: 0.5, strut: 0.2 },
+    dish: { d: 0.3, vertex: [0, 1.05, 0.45], elev: 20, mount: [0, 0.9, 0.4] },
+  });
+}
+
+/** Chang'e 1 (2007): DFH-3 bus, gold, two wings, a steerable dish. */
+export function buildChange1(): THREE.Group {
+  return buildBoxOrbiter({
+    bus: [2.0, 2.2, 1.7],
+    gold: true,
+    arrays: { sides: [1, -1], panels: 3, panelLen: 2.3, panelWid: 1.6, y: 1.1, strut: 0.3 },
+    dish: { d: 0.8, vertex: [0, 1.6, 1.3], elev: 15, mount: [0, 1.4, 0.85] },
+  });
+}
+
+/** Chandrayaan-1 (2008): a ~1.5 m gold cube with one wing and a dish on a boom. */
+export function buildChandrayaan1(): THREE.Group {
+  return buildBoxOrbiter({
+    bus: [1.5, 1.5, 1.5],
+    gold: true,
+    arrays: { sides: [1], panels: 1, panelLen: 2.15, panelWid: 1.8, y: 0.75, strut: 0.25 },
+    dish: { d: 0.7, vertex: [-0.8, 1.6, 0.9], elev: 25, mount: [-0.6, 1.4, 0.75] },
+  });
+}
+
+/** Lunar Prospector (1998): a 1.36 m drum covered in cells, three 2.5 m instrument booms. */
+export function buildLunarProspector(): THREE.Group {
+  const g = new THREE.Group();
+  const m = mats();
+  cyl(g, m.cell, 0.68, 0.68, 0, 1.28);
+  for (let i = 0; i < 3; i++) {
+    const a = (i * 2 * Math.PI) / 3;
+    const from = new THREE.Vector3(Math.cos(a) * 0.68, 0.64, Math.sin(a) * 0.68);
+    const to = new THREE.Vector3(Math.cos(a) * 3.18, 0.64, Math.sin(a) * 3.18);
+    strut(g, m.metal, from, to, 0.03);
+    box(g, m.white, 0.18, 0.18, 0.18, to.x, to.y, to.z);
+  }
+  cyl(g, m.metal, 0.05, 0.05, 1.28, 1.88);
+  return g;
+}
+
+/** Luna 10 (1966): the 1.5 m pressurised cylinder with its antenna whips and magnetometer boom. */
+export function buildLuna10(): THREE.Group {
+  const g = new THREE.Group();
+  const m = mats();
+  cyl(g, m.white, 0.38, 0.38, 0, 1.5);
+  cyl(g, m.metal, 0.42, 0.42, 0.96, 1.04);
+  for (let i = 0; i < 4; i++) {
+    const a = (i * Math.PI) / 2;
+    strut(
+      g,
+      m.metal,
+      new THREE.Vector3(Math.cos(a) * 0.38, 1.4, Math.sin(a) * 0.38),
+      new THREE.Vector3(Math.cos(a) * 1.3, 2.2, Math.sin(a) * 1.3),
+      0.012,
+    );
+  }
+  strut(g, m.metal, new THREE.Vector3(0, 1.5, 0), new THREE.Vector3(0, 3.0, 0), 0.02);
+  return g;
+}
+
 export const SHOWCASE: Record<string, ShowcaseModel> = {
   'mars-express': {
     build: () =>

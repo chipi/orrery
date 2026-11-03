@@ -348,7 +348,7 @@ export function buildCislunarReactiveOverlays(
     if (craftModel) {
       craftModel.position.copy(cislunarSpacecraft.position);
       // The camera controller sizes the glyph to a constant on-screen size; the craft follows it.
-      craftModel.scale.setScalar(cislunarSpacecraft.scale.x * 1.6);
+      craftModel.scale.setScalar(cislunarSpacecraft.scale.x * 0.8);
       _craftDir.set(b.x - a.x, b.y - a.y, b.z - a.z);
       if (_craftDir.lengthSq() > 0)
         craftModel.quaternion.setFromUnitVectors(_craftUp, _craftDir.normalize());

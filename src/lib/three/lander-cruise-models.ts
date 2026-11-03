@@ -202,52 +202,53 @@ function buildTianwen1Cruise(): THREE.Group {
 // ── Per-mission cruise builders (Moon batch) ──────────────────────────────
 
 /**
- * Apollo trans-lunar cruise: CSM (Command + Service Module) docked
- * nose-to-nose with the LM (Lunar Module). The CSM is white/gold; the LM
- * is a spidery gold-foil box on four landing legs with an octagonal ascent
- * stage on top.
+ * Apollo trans-lunar cruise, as flown after transposition and docking: SPS bell aft, the
+ * Service Module, the Command Module nose-forward, and the LM docked to the CM's nose by the
+ * top of its ascent stage, so the LM rides inverted, its descent stage and landing legs
+ * pointing away from the CSM.
  */
 function buildApolloCruise(): THREE.Group {
   const g = new THREE.Group();
 
-  // Command Module — blunt cone, white MLI
-  // Heat shield (the cone's base) on the SM, apex forward — it was flipped apex-first into the SM.
-  const cm = new THREE.Mesh(new THREE.ConeGeometry(0.26, 0.38, 20), heroWhite(0xf0f0ea));
-  cm.position.y = 1.35;
-
-  // Service Module — cylinder, gold
-  const sm = new THREE.Mesh(new THREE.CylinderGeometry(0.26, 0.26, 0.78, 20), heroGold());
-  sm.position.y = 0.82;
-
-  // SPS engine bell at aft of SM
-  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.22, 0.32, 16), heroDark());
-  bell.position.y = 0.3;
-
-  // Docking adapter (short white stub between CSM and LM)
-  const adapter = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.22, 0.28, 0.22, 20),
-    heroWhite(0xf0f0ea),
+  const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.2, 0.3, 16), heroDark());
+  bell.position.y = 0.15;
+  // Service Module: polished aluminium (the gold is the LM's foil).
+  const sm = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.26, 0.26, 0.78, 20),
+    heroMetal(0xc9cdd3, 0.35),
   );
-  adapter.position.y = 0.44;
-
-  // LM descent stage — boxy, gold, wider
-  const lmDescent = bus(0.44, 0.28, 0.44, 0xd9b863);
-  lmDescent.position.y = 0.0;
-
-  // LM ascent stage — octagonal boxy top
+  sm.position.y = 0.69;
+  // Command Module: heat shield (the cone's base) on the SM, apex forward.
+  const cm = new THREE.Mesh(new THREE.ConeGeometry(0.26, 0.38, 20), heroWhite(0xf0f0ea));
+  cm.position.y = 1.27;
+  const tunnel = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.08, 12), heroMetal());
+  tunnel.position.y = 1.5;
+  // LM ascent stage (docking port end toward the CM), then the descent stage beyond it.
   const lmAscent = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.28, 8), heroGold());
-  lmAscent.position.y = 0.28;
+  lmAscent.position.y = 1.68;
+  const lmDescent = bus(0.44, 0.28, 0.44, 0xd9b863);
+  lmDescent.position.y = 1.96;
+  g.add(bell, sm, cm, tunnel, lmAscent, lmDescent);
 
-  // Four landing legs splayed out from descent stage
+  // Four landing legs from the descent stage, splayed outward and away from the CSM.
+  const up = new THREE.Vector3(0, 1, 0);
+  const splay = (35 * Math.PI) / 180;
   for (let i = 0; i < 4; i++) {
+    const a = (i * Math.PI) / 2 + Math.PI / 4;
+    const dir = new THREE.Vector3(
+      Math.cos(a) * Math.sin(splay),
+      Math.cos(splay),
+      Math.sin(a) * Math.sin(splay),
+    );
     const leg = boom(0.42, 0.015);
-    leg.rotation.z = Math.PI * 0.35;
-    leg.position.set(Math.cos((i * Math.PI) / 2) * 0.28, -0.18, Math.sin((i * Math.PI) / 2) * 0.28);
-    leg.rotation.y = (i * Math.PI) / 2;
+    leg.quaternion.setFromUnitVectors(up, dir);
+    const base = new THREE.Vector3(Math.cos(a) * 0.22, 1.96, Math.sin(a) * 0.22);
+    leg.position.copy(base.addScaledVector(dir, 0.21));
     g.add(leg);
+    const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.015, 12), heroMetal());
+    pad.position.copy(leg.position).addScaledVector(dir, 0.21);
+    g.add(pad);
   }
-
-  g.add(cm, sm, bell, adapter, lmDescent, lmAscent);
   return g;
 }
 

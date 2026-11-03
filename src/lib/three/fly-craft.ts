@@ -48,13 +48,40 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   mariner9: ['orbiters', 'mariner-9'],
   mariner10: ['orbiters', 'buildMariner10'],
   lro: ['orbiters', 'lro'],
+  clementine: ['orbiters', 'buildClementine'],
+  'smart-1': ['orbiters', 'buildSmart1'],
+  change1: ['orbiters', 'buildChange1'],
+  chandrayaan1: ['orbiters', 'buildChandrayaan1'],
+  'lunar-prospector': ['orbiters', 'buildLunarProspector'],
+  luna10: ['orbiters', 'buildLuna10'],
   sputnik1: ['early-stations', 'buildSputnik1'],
+};
+
+/** Missions whose orbit is spent docked: the craft flies nose-down on the target's port. */
+const DOCKED: Record<string, { target: readonly [string, string]; dockingModuleM?: number }> = {
+  'skylab-2': { target: ['early-stations', 'skylab'] },
+  'skylab-3': { target: ['early-stations', 'skylab'] },
+  'skylab-4': { target: ['early-stations', 'skylab'] },
+  // Apollo–Soyuz: CSM + the 3.15 m Docking Module + Soyuz 19 (a 7K-TM, the 7K-OK outline).
+  'apollo-soyuz': { target: ['soyuz-progress', 'soyuz-7k-ok'], dockingModuleM: 3.15 },
 };
 
 /** Every mission with a showcase craft (for the completeness test). */
 export const FLY_CRAFT_MISSIONS = Object.keys(FLY_CRAFT);
 
 const loaded = new Map<string, { build: () => THREE.Group; diameterM?: number }>();
+const loadedTargets = new Map<string, () => THREE.Group>();
+
+async function loadBuilder(
+  src: readonly [string, string],
+): Promise<{ build: () => THREE.Group; diameterM?: number } | null> {
+  const load = FAMILIES[`./showcase/${src[0]}.ts`];
+  if (!load) return null;
+  const mod = await load();
+  const show = mod.SHOWCASE?.[src[1]];
+  const fn = show?.build ?? (mod[src[1]] as (() => THREE.Group) | undefined);
+  return typeof fn === 'function' ? { build: fn, diameterM: show?.diameterM } : null;
+}
 
 /** The family module path for a mission's craft, if it has one. */
 export function flyCraftSource(missionId: string): readonly [string, string] | null {
@@ -65,14 +92,15 @@ export function flyCraftSource(missionId: string): readonly [string, string] | n
 export async function preloadFlyCraft(missionId: string): Promise<boolean> {
   if (loaded.has(missionId)) return true;
   const src = FLY_CRAFT[missionId];
-  const load = src && FAMILIES[`./showcase/${src[0]}.ts`];
-  if (!src || !load) return false;
-  const mod = await load();
-  const key = src[1];
-  const show = mod.SHOWCASE?.[key];
-  const fn = show?.build ?? (mod[key] as (() => THREE.Group) | undefined);
-  if (typeof fn !== 'function') return false;
-  loaded.set(missionId, { build: fn, diameterM: show?.diameterM });
+  if (!src) return false;
+  const dock = DOCKED[missionId];
+  const [craft, target] = await Promise.all([
+    loadBuilder(src),
+    dock ? loadBuilder(dock.target) : Promise.resolve(null),
+  ]);
+  if (!craft) return false;
+  if (target) loadedTargets.set(missionId, target.build);
+  loaded.set(missionId, craft);
   return true;
 }
 
@@ -97,4 +125,32 @@ export function fitCraft(g: THREE.Group, size: number): THREE.Group {
   g.position.copy(c.multiplyScalar(-k));
   holder.add(g);
   return holder;
+}
+
+/** The mission's craft as it spent its orbit: docked nose-down on its target's axial port
+ *  (Skylab, Soyuz 19 via the Docking Module), else the craft alone. Metres, target base at 0. */
+export function flyCraftInOrbit(missionId: string | undefined): THREE.Group | null {
+  const craft = flyCraft(missionId);
+  const target = missionId ? loadedTargets.get(missionId) : undefined;
+  if (!craft || !target || !missionId) return craft;
+  const stack = new THREE.Group();
+  const station = target();
+  stack.add(station);
+  // Showcase craft stand docking end up, so the target's port is its top.
+  let portY = new THREE.Box3().setFromObject(station).max.y;
+  const dmLen = DOCKED[missionId].dockingModuleM;
+  if (dmLen) {
+    const dm = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.7, 0.7, dmLen, 24),
+      new THREE.MeshStandardMaterial({ color: 0xd9d6cc, roughness: 0.5, metalness: 0.2 }),
+    );
+    dm.position.y = portY + dmLen / 2;
+    stack.add(dm);
+    portY += dmLen;
+  }
+  const h = new THREE.Box3().setFromObject(craft).max.y;
+  craft.rotation.x = Math.PI; // nose down onto the port
+  craft.position.y = portY + h;
+  stack.add(craft);
+  return stack;
 }

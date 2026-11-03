@@ -34,7 +34,7 @@
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
   import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
-  import { missionDestLabel } from '$lib/destination-label';
+  import { missionDestLabel } from '$lib/mission-dest-label';
 
   // EpochTimelineStrip URL allowlist — same shape as /fleet's epochValid.
   // The strip writes `?epoch=<id>`; this validates round-trips so a junk

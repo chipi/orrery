@@ -14,35 +14,47 @@ import type { DescentSummary } from '$lib/physics/descent/descent-physics';
 
 /** The capture-burn window straddling arrival, days (the orbit-insertion beat). */
 export const OI_WINDOW_DAYS = 5;
+/** The same window on a few-day cislunar flight (lunar orbit insertion), where five days
+ *  would light the burn for half the trip. */
+export const OI_WINDOW_DAYS_CISLUNAR = 1;
 
 /**
  * Orbit-insertion callout window (callers gate on the mission being an orbiter):
- * outside the launch/descent acts, from `OI_WINDOW_DAYS` before arrival to a day after.
+ * outside the launch/descent acts, from `windowDays` before arrival to a day after.
  */
 export function isOrbitInsertionBeatActive(args: {
   showLaunch: boolean;
   showDescent: boolean;
   simDay: number;
   arrDay: number;
+  windowDays?: number;
 }): boolean {
   return (
     !args.showLaunch &&
     !args.showDescent &&
-    args.simDay >= args.arrDay - OI_WINDOW_DAYS &&
+    args.simDay >= args.arrDay - (args.windowDays ?? OI_WINDOW_DAYS) &&
     args.simDay <= args.arrDay + 1
   );
 }
 
 /** Burn firing — the last half of the window into arrival (the retro burn). The burn
  *  ends at capture: from arrival on the spacecraft is in orbit, not still burning. */
-export function isOrbitInsertionFiring(args: { simDay: number; arrDay: number }): boolean {
-  return args.simDay >= args.arrDay - OI_WINDOW_DAYS / 2 && args.simDay < args.arrDay;
+export function isOrbitInsertionFiring(args: {
+  simDay: number;
+  arrDay: number;
+  windowDays?: number;
+}): boolean {
+  return (
+    args.simDay >= args.arrDay - (args.windowDays ?? OI_WINDOW_DAYS) / 2 &&
+    args.simDay < args.arrDay
+  );
 }
 
 /** Where the orbit-insertion beat stands: closing in, burning, or captured into orbit. */
 export function orbitInsertionStage(args: {
   simDay: number;
   arrDay: number;
+  windowDays?: number;
 }): 'approach' | 'burn' | 'captured' {
   if (args.simDay >= args.arrDay) return 'captured';
   return isOrbitInsertionFiring(args) ? 'burn' : 'approach';

@@ -116,6 +116,8 @@
     cruiseTickPercent,
     descentSeparationTimes,
     isCinematicCutJump,
+    OI_WINDOW_DAYS,
+    OI_WINDOW_DAYS_CISLUNAR,
     isOrbitInsertionBeatActive,
     isOrbitInsertionFiring,
     orbitInsertionStage,
@@ -1555,6 +1557,8 @@
       ? null // landers descend; they don't capture into orbit
       : resolveOrbitInsertion(mission.dest, mission.flight?.arrival?.orbit_insertion_dv_km_s),
   );
+  /** A few-day cislunar flight gets a one-day insertion window, not the cruise's five. */
+  let oiWindowDays = $derived(isMoonMission ? OI_WINDOW_DAYS_CISLUNAR : OI_WINDOW_DAYS);
   let oiBeatActive = $derived(
     !!orbitInsertion &&
       isOrbitInsertionBeatActive({
@@ -1562,14 +1566,18 @@
         showDescent,
         simDay,
         arrDay: arcTimeline.arr_day,
+        windowDays: oiWindowDays,
       }),
   );
   /** Burn firing — the last half of the window into arrival (the retro burn). */
   let oiFiring = $derived(
-    !!orbitInsertion && isOrbitInsertionFiring({ simDay, arrDay: arcTimeline.arr_day }),
+    !!orbitInsertion &&
+      isOrbitInsertionFiring({ simDay, arrDay: arcTimeline.arr_day, windowDays: oiWindowDays }),
   );
   /** Approach → capture burn → on orbit. */
-  let oiStage = $derived(orbitInsertionStage({ simDay, arrDay: arcTimeline.arr_day }));
+  let oiStage = $derived(
+    orbitInsertionStage({ simDay, arrDay: arcTimeline.arr_day, windowDays: oiWindowDays }),
+  );
   /** The engine that fired the capture burn, when sourced (null: callout only). */
   let oiBurn = $derived(orbitInsertion ? orbitInsertionBurn(mission.id) : null);
 
@@ -2947,6 +2955,9 @@
       },
       get hasPhaseMarkers() {
         return hasPhaseMarkers;
+      },
+      get oiBurnRecorded() {
+        return oiBurn != null;
       },
       get oiBurningKind() {
         return oiFiring && oiBurn ? oiBurn.kind : null;

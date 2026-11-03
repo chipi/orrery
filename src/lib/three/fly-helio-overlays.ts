@@ -309,6 +309,9 @@ export function buildEnginePlume(): EnginePlume {
       `,
     transparent: true,
     depthWrite: false,
+    // Drawn like the ship glyph it sits on (the sprite ignores depth), so a planet
+    // behind the ship in a flyby or arrival shot does not hide the flame.
+    depthTest: false,
     blending: THREE.AdditiveBlending,
     side: THREE.DoubleSide,
   });

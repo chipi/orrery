@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import {
   OI_WINDOW_DAYS,
+  OI_WINDOW_DAYS_CISLUNAR,
   coastAscentFraction,
   cruiseTickPercent,
   descentSeparationTimes,
@@ -38,6 +39,14 @@ describe('orbit-insertion beat', () => {
     expect(at(100 - OI_WINDOW_DAYS / 2)).toBe(true);
     expect(at(99.99)).toBe(true);
     expect(at(100)).toBe(false);
+  });
+  it('a cislunar flight burns over the last half day, not the last half of a five-day window', () => {
+    const w = { arrDay: 100, windowDays: OI_WINDOW_DAYS_CISLUNAR };
+    expect(orbitInsertionStage({ ...w, simDay: 97.5 })).toBe('approach');
+    expect(orbitInsertionStage({ ...w, simDay: 99.6 })).toBe('burn');
+    expect(
+      isOrbitInsertionBeatActive({ ...w, showLaunch: false, showDescent: false, simDay: 98.9 }),
+    ).toBe(false);
   });
   it('stages approach → burn → captured', () => {
     const at = (simDay: number) => orbitInsertionStage({ simDay, arrDay: 100 });

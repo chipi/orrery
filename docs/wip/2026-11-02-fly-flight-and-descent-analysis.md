@@ -41,12 +41,17 @@ back:
 | Luna 16, 24 · Chang'e 5, 6 | return capsule re-entry and landing | lunar landing only |
 | Hayabusa, Hayabusa2, OSIRIS-REx | sample capsule re-entry | target approach only |
 
-### 2. Orbit insertion has no burn
+### 2. Orbit insertion has no real burn
 
 MAVEN, Juno, Cassini (SOI), Mangalyaan, Hope, Akatsuki, LRO, Chandrayaan-1 and the rest insert
-with their own engines. The app shows a callout.
-The launch pass now draws the injection burn from the stage that made it; the arrival side has
-no equivalent: no engine plume, no attitude, no burn duration.
+with their own engines. The app shows a callout and the generic event plume
+(`fly/fly-frame-burn.ts`, one cone for every burn type) — no engine, no duration.
+
+**Correction (2026-11-03):** the first version of this note said no plume was drawn at all.
+That was wrong: the survey missed `fly-frame-burn.ts`. The generic plume also had two bugs,
+both fixed: it was drawn reversed (every burn's flame on the wrong side of the ship) and anchored
+at the true trajectory point rather than at the ship glyph, so in flyby and arrival shots it sat
+beside the planet.
 
 **Done 2026-11-03 (heliocentric orbiters).** `orbit-insertion-burns.ts` records the engine,
 kind and duration of 13 sourced insertion burns. The arrival shot fires a retrograde plume

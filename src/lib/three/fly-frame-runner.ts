@@ -153,6 +153,8 @@ export interface FlyFrameBridge {
   readonly cruiseHoldTriggerSimDay: number | null;
   /** The orbit-insertion engine kind while its capture burn fires, else null. */
   readonly oiBurningKind: OrbitInsertionEngineKind | null;
+  /** The mission has a sourced capture burn (its own plume replaces the generic one). */
+  readonly oiBurnRecorded: boolean;
 }
 
 type FlySceneHostHandle = ReturnType<typeof createFlySceneHost>;
@@ -1804,8 +1806,12 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // Burn selection + exhaust-direction math extracted to
       // $lib/fly/fly-frame-burn (WS-B/B4) — byte-identical. The plume-mesh
       // application (position / lookAt / scale / opacity) stays here.
+      // A mission with a sourced capture burn shows that engine's plume instead
+      // (updateOiPlume above), so its edl_or_oi event drops out here.
       const activeBurn = findActiveBurn(
-        bridge.mission.flight.events,
+        bridge.oiBurnRecorded
+          ? bridge.mission.flight.events.filter((e) => e.type !== 'edl_or_oi')
+          : bridge.mission.flight.events,
         bridge.simDay - bridge.arcTimeline.dep_day,
       );
       if (activeBurn) {
@@ -1820,8 +1826,14 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         const vx = (sc1.x - sc.pos.x) * SCALE_3D;
         const vz = (sc1.z - sc.pos.z) * SCALE_3D;
         const { exDx, exDz } = burnExhaustDir(cfg.mode, vx, vz, earthMesh.position, scWorld);
-        plumeMesh.position.copy(scWorld);
-        plumeMesh.lookAt(scWorld.x + exDx, scWorld.y, scWorld.z + exDz);
+        // At the glyph, which the flyby / arrival shots pull toward the camera off the
+        // true trajectory point — anchored at scWorld the plume sat beside the planet.
+        const at = scSprite.position;
+        plumeMesh.position.copy(at);
+        // The cone flares along its local −Z and lookAt aims +Z, so aim it AGAINST the
+        // exhaust direction for the flame to stream along it (aiming along it drew every
+        // burn reversed: TCM/TLI exhaust ahead of the ship, capture exhaust trailing).
+        plumeMesh.lookAt(at.x - exDx, at.y, at.z - exDz);
         plumeMesh.scale.setScalar(cfg.scale);
         // Opacity: peak at event time, fade linearly across the
         // per-event window (launch's wider window gives a sustained

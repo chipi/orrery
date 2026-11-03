@@ -222,6 +222,18 @@ export interface FlyFrameRefs extends Pick<
   FLYBY_PEAK_DAYS: number;
 }
 
+/** MET (days) of a mission's kinetic-impact event (DART), or null. */
+function impactEventOf(mission: {
+  flight?: { events?: { type: string; met_days?: number; label?: string }[] };
+}): number | null {
+  const e = mission.flight?.events?.find(
+    (x) => x.type === 'edl_or_oi' && /kinetic impact/i.test(x.label ?? ''),
+  );
+  return e?.met_days ?? null;
+}
+/** Scene radius of the impact shot's primary (Didymos's DEST_STYLE size in fly-helio-scene). */
+const IMPACT_PRIMARY_R = 0.4;
+
 export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs) {
   const {
     scene,
@@ -297,6 +309,44 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
   let scLastWorld: THREE.Vector3 | null = null;
   // The destination planet turned for a lander's arrival (its site in daylight); reset after.
   let landerTurned = false;
+  // A kinetic-impact arrival (DART): its moonlet target and the impact flash, shown in the shot.
+  let impactShown = false;
+  let impactMoonletMesh: THREE.Mesh | null = null;
+  const impactMoonlet = (bodyR: number): THREE.Mesh => {
+    if (!impactMoonletMesh) {
+      impactMoonletMesh = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(1, 2),
+        new THREE.MeshStandardMaterial({ color: 0x9a8f80, roughness: 0.95, flatShading: true }),
+      );
+      scene.add(impactMoonletMesh);
+    }
+    // Dimorphos is ~150 m against Didymos's ~780 m: a fifth of the primary.
+    impactMoonletMesh.scale.setScalar(bodyR * 0.2);
+    return impactMoonletMesh;
+  };
+  const impactFlash = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: (() => {
+        const c = document.createElement('canvas');
+        c.width = c.height = 64;
+        const g = c.getContext('2d')!;
+        const grad = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+        grad.addColorStop(0, 'rgba(255,250,235,1)');
+        grad.addColorStop(0.35, 'rgba(255,200,120,0.75)');
+        grad.addColorStop(1, 'rgba(255,140,60,0)');
+        g.fillStyle = grad;
+        g.fillRect(0, 0, 64, 64);
+        return new THREE.CanvasTexture(c);
+      })(),
+      transparent: true,
+      depthWrite: false,
+      depthTest: false,
+      blending: THREE.AdditiveBlending,
+    }),
+  );
+  impactFlash.visible = false;
+  impactFlash.renderOrder = 1000;
+  scene.add(impactFlash);
   // bind:this'd before onMount runs, so it is set by the time the runner is built.
   const c2 = bridge.canvas2d as HTMLCanvasElement;
   const _maybeCtx = c2.getContext('2d');
@@ -1330,6 +1380,8 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // opaque MeshPhongMaterial occludes it.
     const wasTurned = landerTurned;
     landerTurned = false;
+    const wasImpact = impactShown;
+    impactShown = false;
     if (flyCam.lastHelioSubPhase?.startsWith('flyby-')) {
       // Push the ship toward the camera by the flyby body's radius
       // — enough to clear the planet's front face. activeFlybyMet
@@ -1442,7 +1494,48 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       }
     }
 
+    // A kinetic impact (DART into Dimorphos): from a day before to just after the impact, the
+    // moonlet beside its primary, the craft closing on it, then a flash and nothing (loss of
+    // signal). Any shot — the arrival hero and the wide "arrived" frame alike.
+    {
+      const impact = impactEventOf(bridge.mission);
+      const met = bridge.simDay - bridge.arcTimeline.dep_day;
+      if (impact != null && met > impact - 1 && met < impact + 0.6) {
+        const bodyR = IMPACT_PRIMARY_R;
+        const centre = marsMesh.position;
+        const toCam = camera.position.clone().sub(centre).normalize();
+        const right = new THREE.Vector3(0, 1, 0).cross(toCam).normalize();
+        const target = centre
+          .clone()
+          .addScaledVector(right, -bodyR * 1.35)
+          .addScaledVector(toCam, bodyR * 0.5);
+        const moonlet = impactMoonlet(bodyR);
+        moonlet.position.copy(target);
+        moonlet.visible = true;
+        const approach = Math.min(1, Math.max(0, met - (impact - 1)));
+        const standoff = target.clone().addScaledVector(right, -bodyR * 1.3);
+        scSprite.position.copy(standoff).lerp(target, approach);
+        const hit = met >= impact;
+        if (helioMission.scModel) {
+          helioMission.scModel.position.copy(scSprite.position);
+          helioMission.scModel.visible = !hit;
+        }
+        scSprite.visible = false;
+        impactFlash.position.copy(target);
+        const since = met - impact;
+        impactFlash.visible = hit;
+        impactFlash.scale.setScalar(bodyR * (0.8 + since * 8));
+        (impactFlash.material as THREE.SpriteMaterial).opacity = Math.max(0, 1 - since / 0.6);
+        impactShown = true;
+      }
+    }
+
     if (wasTurned && !landerTurned) marsMesh.rotation.y = 0;
+    if (wasImpact && !impactShown) {
+      if (impactMoonletMesh) impactMoonletMesh.visible = false;
+      impactFlash.visible = false;
+      if (helioMission.scModel) helioMission.scModel.visible = true;
+    }
 
     // Orbit-insertion capture burn: the engine fires retrograde, so the plume exhausts
     // along the direction of travel (the trajectory's local tangent). The arrival shot

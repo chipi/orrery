@@ -295,6 +295,8 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
   // Null while the helio frame branch hasn't computed it yet (e.g.
   // during the cislunar phase).
   let scLastWorld: THREE.Vector3 | null = null;
+  // The destination planet turned for a lander's arrival (its site in daylight); reset after.
+  let landerTurned = false;
   // bind:this'd before onMount runs, so it is set by the time the runner is built.
   const c2 = bridge.canvas2d as HTMLCanvasElement;
   const _maybeCtx = c2.getContext('2d');
@@ -1326,6 +1328,8 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // waypoint anchor, the camera-elevation angle could still put
     // the model behind the planet's z-range and the planet's
     // opaque MeshPhongMaterial occludes it.
+    const wasTurned = landerTurned;
+    landerTurned = false;
     if (flyCam.lastHelioSubPhase?.startsWith('flyby-')) {
       // Push the ship toward the camera by the flyby body's radius
       // — enough to clear the planet's front face. activeFlybyMet
@@ -1358,6 +1362,42 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         if (fromCentre.length() < bodyR * 1.3) {
           const toCam = camera.position.clone().sub(flyCam.camTarget).normalize();
           scSprite.position.copy(flyCam.camTarget).addScaledVector(toCam, bodyR * 1.3);
+        }
+        // A lander's arrival frames its landing site, not the planet's centre (operator,
+        // 2026-11-03): the ship sits above the site and the camera looks down on it from that
+        // side. The /fly planets are unrotated spheres with an equirectangular map, so the site
+        // is at u = (lon + 180) / 360 on three's SphereGeometry.
+        const dp = bridge.descentProfile;
+        if (dp && dp.body === flybyDbg?.flybyId) {
+          const lat = (dp.landingSite.lat * Math.PI) / 180;
+          const phi = ((dp.landingSite.lon + 180) / 360) * 2 * Math.PI;
+          const siteDir = new THREE.Vector3(
+            -Math.cos(phi) * Math.cos(lat),
+            Math.sin(lat),
+            Math.sin(phi) * Math.cos(lat),
+          );
+          // The planet itself (the camera target eases toward it and is not its centre mid-shot).
+          const centre = marsMesh.position;
+          // /fly does not spin its planets, so a site can face the night side (Gale was black).
+          // Landings were made in daylight: turn the planet so the site sits in mid-afternoon,
+          // 45° past local noon.
+          const az = (v: THREE.Vector3): number => Math.atan2(-v.z, v.x);
+          const sunDir = centre.clone().multiplyScalar(-1);
+          const turn = az(sunDir) + Math.PI / 4 - az(siteDir);
+          marsMesh.rotation.y = turn;
+          siteDir.applyAxisAngle(new THREE.Vector3(0, 1, 0), turn);
+          landerTurned = true;
+          scSprite.position.copy(centre).addScaledVector(siteDir, bodyR * 1.25);
+          const camDist = camera.position.distanceTo(centre);
+          const side = new THREE.Vector3(0, 1, 0).cross(siteDir);
+          if (side.lengthSq() < 1e-6) side.set(1, 0, 0);
+          const view = siteDir
+            .clone()
+            .addScaledVector(side.normalize(), 0.25)
+            .add(new THREE.Vector3(0, 0.18, 0))
+            .normalize();
+          camera.position.copy(centre).addScaledVector(view, camDist);
+          camera.lookAt(centre.clone().addScaledVector(siteDir, bodyR * 0.7));
         }
         if (helioMission.scModel) helioMission.scModel.position.copy(scSprite.position);
       }
@@ -1401,6 +1441,8 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         helioMission.scModel.rotation.set(0, 0, 0);
       }
     }
+
+    if (wasTurned && !landerTurned) marsMesh.rotation.y = 0;
 
     // Orbit-insertion capture burn: the engine fires retrograde, so the plume exhausts
     // along the direction of travel (the trajectory's local tangent). The arrival shot

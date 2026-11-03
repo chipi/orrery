@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "全景说明",
   "panorama_caption_dismiss_aria": "关闭说明",
   "panorama_caption_reopen_aria": "显示全景说明",
+  "panorama_caption_fallback": "{name}所在地的景象。",
+  "panorama_credit_fallback": "{agency} · 表面图像",
   "panorama_compass_aria_generic": "指南针 — 相对于全景起点的方向",
   "panorama_compass_aria_template": "指南针 — 相对于{direction}面向{cardinal}",
   "panorama_compass_title_generic": "全景朝向",

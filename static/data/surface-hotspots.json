@@ -402,7 +402,13 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna16/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna16/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 28928,
-      "hotspot_tier2_ground_m": 1500
+      "hotspot_tier2_ground_m": 1500,
+      "panorama_metadata": {
+        "date": "2010",
+        "instrument": "LRO Narrow Angle Camera",
+        "caption": "Luna 16 sent back no panorama of its landing site. This is LRO's view of the lander from orbit, taken in 2010.",
+        "credit_team": "NASA / GSFC / Arizona State University"
+      }
     },
     "luna17": {
       "hotspot_tier_max": 3,
@@ -434,7 +440,12 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna24/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna24/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 17152,
-      "hotspot_tier2_ground_m": 1500
+      "hotspot_tier2_ground_m": 1500,
+      "panorama_metadata": {
+        "instrument": "LRO Narrow Angle Camera",
+        "caption": "Luna 24 sent back no panorama of its landing site. This is LRO's view of the lander from orbit.",
+        "credit_team": "NASA / GSFC / Arizona State University"
+      }
     },
     "mars3": {
       "hotspot_tier_max": 2,
@@ -606,7 +617,12 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/beresheet/tier3-pan.jpg",
       "hotspot_tier2_regional_source": "/images/hotspots/moon/beresheet/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 27392,
-      "hotspot_tier2_ground_m": 1000
+      "hotspot_tier2_ground_m": 1000,
+      "panorama_metadata": {
+        "date": "2019-04-11",
+        "caption": "Beresheet crashed while landing, so no view from the surface exists. This is its last image, taken about 22 km above Mare Serenitatis before contact was lost.",
+        "credit_team": "SpaceIL · Israel Aerospace Industries"
+      }
     },
     "schiaparelli": {
       "hotspot_tier_max": 2,

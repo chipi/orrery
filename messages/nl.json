@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "Panorama-onderschrift",
   "panorama_caption_dismiss_aria": "Onderschrift sluiten",
   "panorama_caption_reopen_aria": "Panorama-onderschrift tonen",
+  "panorama_caption_fallback": "Beeld bij {name}.",
+  "panorama_credit_fallback": "{agency} · oppervlaktebeelden",
   "panorama_compass_aria_generic": "Kompas — oriëntatie ten opzichte van het panorama-startpunt",
   "panorama_compass_aria_template": "Kompas — kijkt naar {cardinal} ten opzichte van {direction}",
   "panorama_compass_title_generic": "Panorama-oriëntatie",

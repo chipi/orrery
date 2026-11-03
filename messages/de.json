@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "Panorama-Beschriftung",
   "panorama_caption_dismiss_aria": "Beschriftung schließen",
   "panorama_caption_reopen_aria": "Panorama-Beschriftung anzeigen",
+  "panorama_caption_fallback": "Ansicht bei {name}.",
+  "panorama_credit_fallback": "{agency} · Oberflächenaufnahmen",
   "panorama_compass_aria_generic": "Kompass — Ausrichtung relativ zum Panorama-Start",
   "panorama_compass_aria_template": "Kompass — Blick nach {cardinal} relativ zu {direction}",
   "panorama_compass_title_generic": "Panorama-Ausrichtung",

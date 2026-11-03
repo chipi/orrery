@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "Подпись панорамы",
   "panorama_caption_dismiss_aria": "Закрыть подпись",
   "panorama_caption_reopen_aria": "Показать подпись панорамы",
+  "panorama_caption_fallback": "Вид на месте: {name}.",
+  "panorama_credit_fallback": "{agency} · снимки поверхности",
   "panorama_compass_aria_generic": "Компас — ориентация относительно начала панорамы",
   "panorama_compass_aria_template": "Компас — направление на {cardinal} относительно {direction}",
   "panorama_compass_title_generic": "Ориентация панорамы",

@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "パノラマの説明",
   "panorama_caption_dismiss_aria": "説明を閉じる",
   "panorama_caption_reopen_aria": "パノラマの説明を表示",
+  "panorama_caption_fallback": "{name}の地点からの眺め。",
+  "panorama_credit_fallback": "{agency}・表面画像",
   "panorama_compass_aria_generic": "コンパス — パノラマ起点を基準とした向き",
   "panorama_compass_aria_template": "コンパス — {direction} に対して {cardinal} を向いています",
   "panorama_compass_title_generic": "パノラマの向き",

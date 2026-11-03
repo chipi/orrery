@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "وصف البانوراما",
   "panorama_caption_dismiss_aria": "إغلاق الوصف",
   "panorama_caption_reopen_aria": "إظهار وصف البانوراما",
+  "panorama_caption_fallback": "المنظر في موقع {name}.",
+  "panorama_credit_fallback": "{agency} · صور السطح",
   "panorama_compass_aria_generic": "البوصلة — التوجه بالنسبة لنقطة بداية البانوراما",
   "panorama_compass_aria_template": "البوصلة — تواجه {cardinal} بالنسبة إلى {direction}",
   "panorama_compass_title_generic": "توجه البانوراما",

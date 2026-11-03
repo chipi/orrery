@@ -123,7 +123,7 @@ test.describe('Mars Tier 3 panorama HUD — site without metadata', () => {
     const caption = page.getByTestId('panorama-caption-overlay');
     await expect(caption).toBeVisible({ timeout: 5_000 });
     // Fallback caption is the site-name-based string.
-    await expect(caption).toContainText(/Surface panorama at/i);
+    await expect(caption).toContainText(/View at Phoenix/i);
     // SOL header is empty when metadata is missing, so no SOL string.
     await expect(caption).not.toContainText(/^SOL \d/);
   });

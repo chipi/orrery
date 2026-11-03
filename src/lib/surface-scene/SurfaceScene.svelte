@@ -4900,7 +4900,7 @@ sample      ${debugInfo.projectedPxSample}`}
       metadata={activePanoramaMetadata}
       agency={selected.agency}
       agencyColor={colorFor(selected)}
-      fallbackCaption={`Surface panorama at ${selected.name ?? selected.id}.`}
+      fallbackCaption={m.panorama_caption_fallback({ name: selected.name ?? selected.id })}
     />
   {/if}
 

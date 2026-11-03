@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "파노라마 캡션",
   "panorama_caption_dismiss_aria": "캡션 닫기",
   "panorama_caption_reopen_aria": "파노라마 캡션 표시",
+  "panorama_caption_fallback": "{name} 지점의 모습.",
+  "panorama_credit_fallback": "{agency} · 표면 영상",
   "panorama_compass_aria_generic": "나침반 — 파노라마 시작점 기준 방향",
   "panorama_compass_aria_template": "나침반 — {direction} 기준 {cardinal} 방향",
   "panorama_compass_title_generic": "파노라마 방향",

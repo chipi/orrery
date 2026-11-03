@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "पैनोरमा कैप्शन",
   "panorama_caption_dismiss_aria": "कैप्शन बंद करें",
   "panorama_caption_reopen_aria": "पैनोरमा कैप्शन दिखाएँ",
+  "panorama_caption_fallback": "{name} स्थल का दृश्य।",
+  "panorama_credit_fallback": "{agency} · सतह के चित्र",
   "panorama_compass_aria_generic": "दिग्दर्शक — पैनोरमा के आरम्भ बिंदु के सापेक्ष दिशा",
   "panorama_compass_aria_template": "दिग्दर्शक — {direction} के सापेक्ष {cardinal} की ओर मुख",
   "panorama_compass_title_generic": "पैनोरमा का अभिविन्यास",

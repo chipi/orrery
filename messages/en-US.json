@@ -1623,6 +1623,8 @@
   "panorama_caption_aria_label": "Panorama caption",
   "panorama_caption_dismiss_aria": "Dismiss caption",
   "panorama_caption_reopen_aria": "Show panorama caption",
+  "panorama_caption_fallback": "View at {name}.",
+  "panorama_credit_fallback": "{agency} · surface imagery",
   "panorama_compass_aria_generic": "Compass — orientation relative to panorama start",
   "panorama_compass_aria_template": "Compass — facing {cardinal} relative to {direction}",
   "panorama_compass_title_generic": "Panorama orientation",

@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "Pie del panorama",
   "panorama_caption_dismiss_aria": "Cerrar pie",
   "panorama_caption_reopen_aria": "Mostrar pie del panorama",
+  "panorama_caption_fallback": "Vista en {name}.",
+  "panorama_credit_fallback": "{agency} · imágenes de superficie",
   "panorama_compass_aria_generic": "Brújula — orientación respecto al inicio del panorama",
   "panorama_compass_aria_template": "Brújula — mirando al {cardinal} respecto a {direction}",
   "panorama_compass_title_generic": "Orientación del panorama",

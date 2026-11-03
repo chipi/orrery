@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "Didascalia del panorama",
   "panorama_caption_dismiss_aria": "Chiudi didascalia",
   "panorama_caption_reopen_aria": "Mostra didascalia del panorama",
+  "panorama_caption_fallback": "Veduta presso {name}.",
+  "panorama_credit_fallback": "{agency} · immagini di superficie",
   "panorama_compass_aria_generic": "Bussola — orientamento rispetto all'inizio del panorama",
   "panorama_compass_aria_template": "Bussola — rivolta a {cardinal} rispetto a {direction}",
   "panorama_compass_title_generic": "Orientamento del panorama",

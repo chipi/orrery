@@ -920,6 +920,8 @@
   "panorama_caption_aria_label": "Опис панораме",
   "panorama_caption_dismiss_aria": "Затвори опис",
   "panorama_caption_reopen_aria": "Прикажи опис панораме",
+  "panorama_caption_fallback": "Поглед на месту: {name}.",
+  "panorama_credit_fallback": "{agency} · снимци површине",
   "panorama_compass_aria_generic": "Компас — оријентација у односу на почетак панораме",
   "panorama_compass_aria_template": "Компас — окренут ка {cardinal} у односу на {direction}",
   "panorama_compass_title_generic": "Оријентација панораме",

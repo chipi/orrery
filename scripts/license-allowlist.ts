@@ -98,6 +98,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'Facts-only',
+    display: 'Factual measurements only (no content reproduced)',
+    url: 'https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction',
+    rationale:
+      'Only facts — dimensions, counts, shapes and proportions — were read from the credited pages; facts are not eligible for copyright and no text, photograph or drawing was copied. Used for the model-reference credits of agency, manufacturer and reference-site pages.',
+    requires_attribution: false,
+    share_alike: false,
+  },
+  {
     short: 'PD-self',
     display: 'Public domain (released by author)',
     url: 'https://creativecommons.org/publicdomain/mark/1.0/',

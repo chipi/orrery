@@ -149,7 +149,7 @@
     {
       "id": "models-ref-wikipedia",
       "name": "3D model references — Wikipedia",
-      "catalog": "125 pages — sizes and proportions for the 3D models",
+      "catalog": "136 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Wikipedia articles (English, Russian and Chinese) that gave the lengths, diameters and proportions of the launcher and spacecraft models and the heights of the landmarks, statues and animals drawn beside them in the /fleet line-ups. The models and outlines are our own; only measurements were read.",
       "source_url": "https://www.wikipedia.org/",
@@ -609,6 +609,50 @@
           "u": "https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)"
         },
         {
+          "l": "Wikipedia (fallback source), Emirates Mars Mission — 2.37 m wide x 2.90 m long body (length_m = 2.90 m), 1.85 m high-gain dish (the article also says 1.5 m), two solar panels",
+          "u": "https://en.wikipedia.org/wiki/Emirates_Mars_Mission"
+        },
+        {
+          "l": "Wikipedia (fallback source), Lunar Reconnaissance Orbiter — launch configuration 390 x 270 x 260 cm (length_m = the 3.9 m side, stood upright)",
+          "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter"
+        },
+        {
+          "l": "Wikipedia (fallback source), Mars Express — main body 1.5 x 1.8 x 1.4 m (length_m = the 1.8 m side, stood upright), ~12 m tip-to-tip arrays, 1.6 m high-gain dish",
+          "u": "https://en.wikipedia.org/wiki/Mars_Express"
+        },
+        {
+          "l": "Wikipedia (fallback source), Mars Orbiter Mission — 1.5 m cube bus (length_m = cube edge, no dish counted), single 2.2 m reflector high-gain, I-1K bus",
+          "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission"
+        },
+        {
+          "l": "Wikipedia (fallback source), MAVEN — 2 m high-gain dish (dish diameter only; not on the NASA pages)",
+          "u": "https://en.wikipedia.org/wiki/MAVEN"
+        },
+        {
+          "l": "Wikipedia (fallback) — Akatsuki: 1.45 x 1.04 x 1.44 m box, two arrays of about 1.4 m^2 each (1.45 m used as height)",
+          "u": "https://en.wikipedia.org/wiki/Akatsuki_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia (fallback) — component table (EP-107 data): 82.4 ft (25.1 m) without CSM, MDA 17.3 ft x 10.5 ft, AM 17.6 ft, ATM 14.7 ft, 55.8 ft width with one wing, 36.3 ft height with ATM",
+          "u": "https://en.wikipedia.org/wiki/Skylab"
+        },
+        {
+          "l": "Wikipedia (fallback) — Magellan: 10-sided bus, 6.4 m tall x 4.6 m diameter, 3.7 m high-gain antenna, Star 48B motor",
+          "u": "https://en.wikipedia.org/wiki/Magellan_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia (fallback): 3.1 m high-gain antenna, 8.5 m magnetometer boom",
+          "u": "https://en.wikipedia.org/wiki/Europa_Clipper"
+        },
+        {
+          "l": "Wikipedia (fallback): array diameter 7.3 m",
+          "u": "https://en.wikipedia.org/wiki/Lucy_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia (fallback): DART 1.8 x 1.9 x 2.6 m, ROSA 8.5 x 2.4 m each; NEXT-C ion engine, DRACO camera",
+          "u": "https://en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test"
+        },
+        {
           "l": "Wikipedia Dragon 2 infobox — dimensions",
           "u": "https://en.wikipedia.org/wiki/Dragon_2"
         },
@@ -665,7 +709,7 @@
     {
       "id": "models-ref-nssdca",
       "name": "3D model references — NASA NSSDCA",
-      "catalog": "16 pages — sizes and proportions for the 3D models",
+      "catalog": "22 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "NASA Space Science Data Coordinated Archive (NSSDCA) spacecraft and launch-vehicle pages that gave the masses, lengths and diameters of the craft and rockets modelled for /fly and the /fleet line-ups.",
       "source_url": "https://nssdc.gsfc.nasa.gov/",
@@ -689,8 +733,32 @@
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1962-003A"
         },
         {
+          "l": "NASA NSSDCA — MESSENGER: bus 1.27 x 1.42 x 1.85 m, sunshade about 2.5 m tall x 2 m wide (2.5 m used as height), arrays about 6 m tip to tip, 3.6 m magnetometer boom",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2004-030A"
+        },
+        {
+          "l": "NASA NSSDCA — Parker Solar Probe: 3 m bus, 1 m diameter, TPS end 2.3 m diameter, 11.43 cm thick; arrays 1.12 x 0.69 m; 0.6 m high-gain antenna",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-065A"
+        },
+        {
           "l": "NASA NSSDCA Gemini 3 spacecraft description — dimensions",
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1965-024A"
+        },
+        {
+          "l": "NASA NSSDCA, LRO — single 10.7 m2 solar array",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2009-031A"
+        },
+        {
+          "l": "NASA NSSDCA, Mariner 4 — octagon 127 cm across the diagonal, 45.7 cm high; 4 panels 176 x 90 cm, 688 cm tip-to-tip with vanes; 116.8 cm high-gain; 223.5 cm mast; overall height 289 cm (length_m)",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1964-077A"
+        },
+        {
+          "l": "NASA NSSDCA, Mariner 9 — octagon 138.4 cm across the diagonal, 45.7 cm deep; 4 panels 215 x 90 cm, 6.89 m per pair; 1.44 m low-gain mast; overall height 2.28 m (length_m)",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-051A"
+        },
+        {
+          "l": "NASA NSSDCA, MAVEN — cubic 2.3 x 2.3 m, 2 m high bus; 1.3 m central propellant tank",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-063A"
         },
         {
           "l": "NSSDCA — Apollo 11 CSM: 11.0 m long, CM 3.65 m high",
@@ -745,7 +813,7 @@
     {
       "id": "models-ref-nasa",
       "name": "3D model references — NASA",
-      "catalog": "36 pages — sizes and proportions for the 3D models",
+      "catalog": "43 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "NASA mission, vehicle and history pages (nasa.gov, history.nasa.gov, science.nasa.gov) that gave the dimensions of the crewed capsules, cargo craft, Shuttle orbiters and launchers modelled for /fly and the /fleet line-ups.",
       "source_url": "https://www.nasa.gov/",
@@ -833,12 +901,36 @@
           "u": "https://www.nasa.gov/commercial-crew-program-press-kit/"
         },
         {
+          "l": "NASA DART mission page",
+          "u": "https://science.nasa.gov/mission/dart/"
+        },
+        {
+          "l": "NASA EP-107 Skylab: A Guidebook (NTRS) — OWS 6.7 m x 14.6 m, wing 9 m / 27 m tip to tip, ATM rack 3.3 x 3.6 m, canister 2.1 x 3 m, 110 m2 per array system, four-blade windmill, MDA axial port at the forward end",
+          "u": "https://ntrs.nasa.gov/citations/19730025070"
+        },
+        {
+          "l": "NASA Europa Clipper mission overview: about 5 m tall, arrays span 30.5 m, 5 m is the height used",
+          "u": "https://science.nasa.gov/mission/europa-clipper/mission-overview/"
+        },
+        {
+          "l": "NASA Lucy spacecraft: 16 m tip to tip with arrays deployed (the model stands on that axis), UltraFlex arrays ~7 m diameter each, 2 m high-gain antenna",
+          "u": "https://science.nasa.gov/mission/lucy/spacecraft/"
+        },
+        {
           "l": "NASA MSFC Mercury-Redstone Launch Vehicle: Height 59 feet (83 w/spacecraft), Diameter 5.9 feet — dimensions",
           "u": "https://www.nasa.gov/centers-and-facilities/marshall/mercury-redstone-launch-vehicle/"
         },
         {
           "l": "NASA Orion by the numbers (7.9 m overall)",
           "u": "https://www.nasa.gov/wp-content/uploads/2026/01/orion-by-the-numbers-2026b.pdf"
+        },
+        {
+          "l": "NASA Psyche spacecraft: 25 x 7.3 m with arrays deployed (7.3 m is the height used), bus 4.9 m tall incl. 2 m booms, 2.2 x 2.4 m",
+          "u": "https://science.nasa.gov/mission/psyche/spacecraft/"
+        },
+        {
+          "l": "NASA Science, MAVEN key facts — length 11.4 m (array tip to tip), width 2.29 m, height 3.47 m (length_m here is the 3.47 m height, bus on its base, dish up)",
+          "u": "https://science.nasa.gov/mission/maven/"
         },
         {
           "l": "NASA SLS reference page — dimensions",
@@ -851,6 +943,10 @@
         {
           "l": "NASA, About the Russian Progress Spacecraft — length 7.4 m, diameter 2.7 m",
           "u": "https://www.nasa.gov/wp-json/wp/v2/migration/167910?_fields=content"
+        },
+        {
+          "l": "NASA, The Skylab Parasol (NTRS) — 6.7 x 7.3 m canopy, sun-facing side, 8 in above the OWS skin",
+          "u": "https://ntrs.nasa.gov/citations/19760012092"
         },
         {
           "l": "Orion Spacecraft — NASA",
@@ -925,7 +1021,7 @@
     {
       "id": "models-ref-esa",
       "name": "3D model references — ESA",
-      "catalog": "8 pages — sizes and proportions for the 3D models",
+      "catalog": "9 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "European Space Agency pages (ATV, Ariane, Rosetta and others) that gave the dimensions of the European craft and launchers modelled for /fly and the /fleet line-ups.",
       "source_url": "https://www.esa.int/",
@@ -963,6 +1059,10 @@
         {
           "l": "ESA — Ariane history",
           "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane"
+        },
+        {
+          "l": "ESA — Solar Orbiter factsheet: body 2.5 x 3.1 x 2.7 m (3.1 m used as height), six 2.1 x 1.2 m panels, 18 m span, 4.4 m instrument boom",
+          "u": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_factsheet"
         },
         {
           "l": "ESA Ariane 5 media kit - ECA launch vehicle — dimensions",
@@ -1061,8 +1161,8 @@
       "category": "model-reference",
       "description": "Official pages of space agencies and manufacturers (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, the China Manned Space Agency and CASC, the U.S. Space Force) that gave vehicle dimensions for the launcher and spacecraft models.",
       "source_url": "https://www.roscosmos.ru/",
-      "license_short": "PD-trivial",
-      "license_url": "https://en.wikipedia.org/wiki/Threshold_of_originality",
+      "license_short": "Facts-only",
+      "license_url": "https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction",
       "license_rationale": "Only individual measurements (lengths, diameters, heights, stage and engine counts) were read from these pages; facts are not eligible for copyright, and no text, photograph or drawing was copied.",
       "used_on": [
         "fleet"
@@ -1177,8 +1277,8 @@
       "category": "model-reference",
       "description": "Independent spaceflight references and museum pages (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, the Smithsonian National Air and Space Museum, the Technik Museum Speyer and others) that gave the sizes of the Soviet, Shuttle and Buran-era vehicles.",
       "source_url": "https://space.skyrocket.de/",
-      "license_short": "PD-trivial",
-      "license_url": "https://en.wikipedia.org/wiki/Threshold_of_originality",
+      "license_short": "Facts-only",
+      "license_url": "https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction",
       "license_rationale": "Only individual measurements (lengths, diameters, heights, stage and engine counts) were read from these pages; facts are not eligible for copyright, and no text, photograph or drawing was copied.",
       "used_on": [
         "fleet"

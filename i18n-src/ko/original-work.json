@@ -1891,6 +1891,106 @@
       "title": "만화 등장인물",
       "what": "실제 크기로 그린 단색 인물들 — 남자, 여자, 어린이, 개, 고양이, 병마용, 자이언트 판다, 불곰, 기린, 코끼리 — 를 기체 사이에 배치.",
       "where": "함대 · 실제 크기 비교"
+    },
+    "/images/colophon/model-showcase-parker-solar-probe_webp": {
+      "title": "Parker Solar Probe",
+      "what": "길이 3 m의 태양 근접 탐사선 — 가느다란 본체 위에 지름 2.3 m의 탄소 복합재 열 차폐막, 냉각식 소형 태양 전지판 2장.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-solar-orbiter_webp": {
+      "title": "Solar Orbiter",
+      "what": "ESA의 길이 3.1 m 태양 관측선 — 태양 쪽의 열 차폐막, 폭 18 m의 태양 전지판 6장, 길이 4.4 m의 관측 장비 붐.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-messenger_webp": {
+      "title": "MESSENGER",
+      "what": "높이 2.5 m의 세라믹 천 햇빛가리개 뒤에 숨은 수성 궤도선. 태양 전지판 2장과 길이 3.6 m의 자력계 붐.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-magellan_webp": {
+      "title": "Magellan",
+      "what": "길이 6.4 m의 금성 레이더 지도 제작선 — 10각형 본체, Star 48B 모터, 지름 3.7 m의 고이득 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-akatsuki_webp": {
+      "title": "Akatsuki",
+      "what": "JAXA의 높이 1.45 m 상자형 금성 궤도선. 태양 전지판 2장과 평판형 위상배열 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-dart_webp": {
+      "title": "DART",
+      "what": "길이 2.6 m의 소행성 충돌선 — 8.5 m 태양 전지판 2장, NEXT-C 이온 엔진, DRACO 카메라.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-lucy_webp": {
+      "title": "Lucy",
+      "what": "트로이 소행성 탐사선, 끝에서 끝까지 16 m — 지름 약 7 m의 원형 태양 전지판 2장과 지름 2 m의 고이득 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-psyche-spacecraft_webp": {
+      "title": "Psyche",
+      "what": "금속 소행성 궤도선 — 높이 7.3 m, 펼친 태양 전지판 25 m, 길이 2 m의 관측 장비 붐.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-europa-clipper_webp": {
+      "title": "Europa Clipper",
+      "what": "높이 5 m의 목성 위성 궤도선. 30.5 m 태양 전지판, 지름 3.1 m의 고이득 안테나, 길이 8.5 m의 자력계 붐.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-mars-express_webp": {
+      "title": "Mars Express",
+      "what": "ESA의 높이 1.8 m 상자형 본체. 길이 2.5 m의 태양 전지 날개 2장(끝에서 끝까지 약 12 m)과 지름 1.6 m의 고이득 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-maven_webp": {
+      "title": "MAVEN",
+      "what": "NASA의 높이 3.47 m 화성 대기 궤도선 — 2.3 m 정육면체 본체, 끝에 자력계를 단 갈매기 날개형 태양 전지판 2장, 지름 2 m의 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-mangalyaan_webp": {
+      "title": "Mangalyaan",
+      "what": "ISRO의 화성 궤도선 임무(Mars Orbiter Mission) — 금색으로 감싼 1.5 m 정육면체, 3단 태양 전지판, 지름 2.2 m의 반사경.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-hope_webp": {
+      "title": "Hope",
+      "what": "UAE의 Emirates Mars Mission 궤도선 — 길이 2.9 m의 육각형 본체, 태양 전지 날개 2장, 지름 1.85 m의 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-mariner-9_webp": {
+      "title": "Mariner 4·9·10 (3개 형식)",
+      "what": "NASA의 팔각형 Mariner 계열 — Mariner 4와 9는 끝에 날개편이 달린 태양 전지판 4장, Mariner 10은 전지판 2장과 햇빛가리개, 길이 5.8 m의 자력계 붐.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter",
+      "what": "NASA의 높이 3.9 m 달 지도 제작선 — 상자형 본체, 10.7 m²의 태양 전지판 1장, 방향 조절 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-showcase-skylab_webp": {
+      "title": "Skylab",
+      "what": "미국 최초의 우주 정거장 — 궤도 작업실, 에어록과 도킹 어댑터, 전지판 풍차를 단 태양 망원경 거치대, 햇빛가리개.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-probe-clementine_webp": {
+      "title": "Clementine, SMART-1, Chang’e 1, Chandrayaan-1 (4개 형식)",
+      "what": "상자형 본체 하나를 네 가지 크기로 — Clementine의 1.9 m 본체, SMART-1의 1 m 정육면체, Chang’e 1, 금색으로 감싼 Chandrayaan-1 — 각각 고유의 태양 전지 날개와 안테나.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-probe-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "태양 전지 셀로 덮인 지름 1.36 m의 드럼과 길이 2.5 m의 관측 장비 붐 3개.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-probe-luna-10_webp": {
+      "title": "Luna 10",
+      "what": "소련의 길이 1.5 m 가압 원통 — 안테나 채찍 4개와 붐 1개. 달 궤도를 돈 최초의 우주선.",
+      "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-probe-sputnik-1_webp": {
+      "title": "Sputnik 1",
+      "what": "반구 이음매와 볼트 36개, 뒤로 젖혀진 길이 2.4 m와 2.9 m의 채찍 안테나 4개를 갖춘 지름 58 cm의 매끈한 구.",
+      "where": "비행 + 탐험"
     }
   },
   "capsules": {

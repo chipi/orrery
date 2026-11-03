@@ -63,6 +63,16 @@
   import type { ShowcaseModel } from '$lib/three/showcase/types';
   import { runwayBuild } from '$lib/three/lineup/lineup-catalog';
   import { buildCartoon, type CartoonId } from '$lib/three/lineup/cartoon-figures';
+  import {
+    buildMariner10,
+    buildClementine,
+    buildSmart1,
+    buildChange1,
+    buildChandrayaan1,
+    buildLunarProspector,
+    buildLuna10,
+  } from '$lib/three/showcase/orbiters';
+  import { buildSputnik1 } from '$lib/three/showcase/early-stations';
 
   type Entry = {
     /** Stable id → capture filename `model-<family>-<id>` / `craft-<id>`. */
@@ -721,6 +731,19 @@
           ? () => runwayBuild(model, model.pose!.top)() as THREE.Group
           : () => model.build(),
     })),
+    // Plain builders with no fleet entry of their own (the /fly craft of early Moon and planetary probes)
+    ...(
+      [
+        ['mariner-10', 'Mariner 10', buildMariner10],
+        ['clementine', 'Clementine', buildClementine],
+        ['smart-1', 'SMART-1', buildSmart1],
+        ['change-1', "Chang'e 1", buildChange1],
+        ['chandrayaan-1', 'Chandrayaan-1', buildChandrayaan1],
+        ['lunar-prospector', 'Lunar Prospector', buildLunarProspector],
+        ['luna-10', 'Luna 10', buildLuna10],
+        ['sputnik-1', 'Sputnik 1', buildSputnik1],
+      ] as [string, string, () => THREE.Group][]
+    ).map(([id, label, build]) => ({ id, label, family: 'probe', build })),
     { id: 'cast', label: 'Cartoon cast', family: 'lineup', flat: true, build: buildCastRow },
   ];
 

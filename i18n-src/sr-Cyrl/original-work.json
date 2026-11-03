@@ -1891,6 +1891,106 @@
       "title": "Цртани ликови",
       "what": "Равно обојена постава у стварној величини — мушкарац, жена, дете, пас, мачка, ратник од теракоте, џиновска панда, мрки медвед, жирафа и слон — између летелица.",
       "where": "Флота · поређење у размери"
+    },
+    "/images/colophon/model-showcase-parker-solar-probe_webp": {
+      "title": "Parker Solar Probe",
+      "what": "Летелица дужине 3 m која пролеће уз сâмо Сунце — топлотни штит од угљеничног композита пречника 2,3 m изнад витког тела и два мала хлађена соларна панела.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-solar-orbiter_webp": {
+      "title": "Solar Orbiter",
+      "what": "ESA-ин осматрач Сунца дужине 3,1 m — топлотни штит на страни окренутој Сунцу, шест соларних панела распона 18 m и носач инструмената од 4,4 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-messenger_webp": {
+      "title": "MESSENGER",
+      "what": "Орбитер Меркура иза сунцобрана од керамичке тканине висине 2,5 m, са два соларна панела и носачем магнетометра од 3,6 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-magellan_webp": {
+      "title": "Magellan",
+      "what": "Радарски картограф Венере дужине 6,4 m — десетострано тело, мотор Star 48B и антена великог појачања пречника 3,7 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-akatsuki_webp": {
+      "title": "Akatsuki",
+      "what": "JAXA-ин орбитер Венере у облику кутије од 1,45 m са два соларна панела и равном фазном антеном.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-dart_webp": {
+      "title": "DART",
+      "what": "Летелица за ударање у астероид дужине 2,6 m са два соларна панела од по 8,5 m, јонским мотором NEXT-C и камером DRACO.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-lucy_webp": {
+      "title": "Lucy",
+      "what": "Истраживач тројанских астероида, 16 m од врха до врха — два кружна соларна панела пречника око 7 m и антена великог појачања пречника 2 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-psyche-spacecraft_webp": {
+      "title": "Psyche",
+      "what": "Орбитер металног астероида — летелица висине 7,3 m са 25 m развијених соларних панела и носачима инструмената од по 2 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-europa-clipper_webp": {
+      "title": "Europa Clipper",
+      "what": "Орбитер Јупитерових месеца висине 5 m са соларним панелима распона 30,5 m, антеном великог појачања пречника 3,1 m и носачем магнетометра од 8,5 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-mars-express_webp": {
+      "title": "Mars Express",
+      "what": "ESA-ино тело у облику кутије од 1,8 m са два соларна крила од по 2,5 m (око 12 m од врха до врха) и антеном великог појачања пречника 1,6 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-maven_webp": {
+      "title": "MAVEN",
+      "what": "NASA-ин орбитер за атмосферу Марса висине 3,47 m — коцкасто тело од 2,3 m, два соларна панела у облику галебових крила са магнетометрима на врховима и антена пречника 2 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-mangalyaan_webp": {
+      "title": "Mangalyaan",
+      "what": "ISRO-ова мисија Mars Orbiter Mission — коцка од 1,5 m омотана златном фолијом са троделним соларним панелом и рефлектором пречника 2,2 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-hope_webp": {
+      "title": "Hope",
+      "what": "Орбитер мисије Emirates Mars Mission Уједињених Арапских Емирата — шестоугаоно тело висине 2,9 m са два соларна крила и антеном пречника 1,85 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-mariner-9_webp": {
+      "title": "Mariner 4, 9 и 10 (3 варијанте)",
+      "what": "NASA-ина осмоугаона породица Mariner — четири соларна панела са лопатицама на врховима код Mariner 4 и 9; два панела, сунцобран и носач магнетометра од 5,8 m код Mariner 10.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter",
+      "what": "NASA-ин картограф Месеца висине 3,9 m — тело у облику кутије са једним соларним панелом од 10,7 m² и покретном антеном.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-showcase-skylab_webp": {
+      "title": "Skylab",
+      "what": "Прва америчка свемирска станица — орбитална радионица, ваздушна комора и адаптер за спајање, носач соларног телескопа са „ветрењачом” од панела и сунцобран.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-probe-clementine_webp": {
+      "title": "Clementine, SMART-1, Chang’e 1 и Chandrayaan-1 (4 варијанте)",
+      "what": "Једно тело у облику кутије у четири величине — тело летелице Clementine од 1,9 m, коцка SMART-1 од 1 m, Chang’e 1 и Chandrayaan-1 омотана златном фолијом — свака са својим соларним крилима и антеном.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-probe-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "Бубањ од 1,36 m прекривен соларним ћелијама, са три носача инструмената од по 2,5 m.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-probe-luna-10_webp": {
+      "title": "Luna 10",
+      "what": "Совјетски херметичан цилиндар дужине 1,5 m са четири антене-бича и једним носачем — прва летелица у орбити око Месеца.",
+      "where": "Лети + истражуј"
+    },
+    "/images/colophon/model-probe-sputnik-1_webp": {
+      "title": "Sputnik 1",
+      "what": "Углачана сфера од 58 cm са спојем између полулопти, 36 завртања и четири уназад закошене антене-бича од 2,4 и 2,9 m.",
+      "where": "Лети + истражуј"
     }
   },
   "capsules": {

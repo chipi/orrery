@@ -2636,6 +2636,146 @@
       "thumb": "/images/colophon/model-lineup-cast.webp"
     },
     {
+      "title": "Parker Solar Probe",
+      "what": "The 3 m Sun-grazer — a 2.3 m carbon-composite heat shield over a slim bus, with two small cooled solar arrays.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-parker-solar-probe.webp"
+    },
+    {
+      "title": "Solar Orbiter",
+      "what": "ESA’s 3.1 m Sun-watcher — a heat shield on the Sun side, six solar panels spanning 18 m and a 4.4 m instrument boom.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-solar-orbiter.webp"
+    },
+    {
+      "title": "MESSENGER",
+      "what": "The Mercury orbiter behind its 2.5 m ceramic-cloth sunshade, with two solar arrays and a 3.6 m magnetometer boom.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-messenger.webp"
+    },
+    {
+      "title": "Magellan",
+      "what": "The Venus radar mapper at 6.4 m — a ten-sided bus, the Star 48B motor and a 3.7 m high-gain dish.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-magellan.webp"
+    },
+    {
+      "title": "Akatsuki",
+      "what": "JAXA’s 1.45 m box-shaped Venus orbiter with two solar arrays and a flat phased-array antenna.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-akatsuki.webp"
+    },
+    {
+      "title": "DART",
+      "what": "The 2.6 m asteroid-impact spacecraft with two 8.5 m solar arrays, the NEXT-C ion engine and the DRACO camera.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-dart.webp"
+    },
+    {
+      "title": "Lucy",
+      "what": "The Trojan-asteroid explorer, 16 m tip to tip — two circular solar arrays about 7 m across and a 2 m high-gain dish.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-lucy.webp"
+    },
+    {
+      "title": "Psyche",
+      "what": "The metal-asteroid orbiter — a 7.3 m craft with 25 m of deployed solar arrays and 2 m instrument booms.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-psyche-spacecraft.webp"
+    },
+    {
+      "title": "Europa Clipper",
+      "what": "The 5 m Jupiter-moon orbiter with 30.5 m solar arrays, a 3.1 m high-gain antenna and an 8.5 m magnetometer boom.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-europa-clipper.webp"
+    },
+    {
+      "title": "Mars Express",
+      "what": "ESA’s 1.8 m box bus with two 2.5 m solar wings (about 12 m tip to tip) and a 1.6 m high-gain dish.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-mars-express.webp"
+    },
+    {
+      "title": "MAVEN",
+      "what": "NASA’s 3.47 m Mars-atmosphere orbiter — a 2.3 m cubic bus, two gull-winged arrays with magnetometers at their tips and a 2 m dish.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-maven.webp"
+    },
+    {
+      "title": "Mangalyaan",
+      "what": "ISRO’s Mars Orbiter Mission — a 1.5 m gold-wrapped cube with a three-panel array and a 2.2 m reflector.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-mangalyaan.webp"
+    },
+    {
+      "title": "Hope",
+      "what": "The UAE’s Emirates Mars Mission orbiter — a 2.9 m hexagonal bus with two solar wings and a 1.85 m dish.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-hope.webp"
+    },
+    {
+      "title": "Mariner 4, 9 and 10 (3 variants)",
+      "what": "NASA’s octagonal Mariner family — four solar panels with tip vanes on Mariner 4 and 9; two panels, a sunshade and a 5.8 m magnetometer boom on Mariner 10.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-mariner-9.webp"
+    },
+    {
+      "title": "Lunar Reconnaissance Orbiter",
+      "what": "NASA’s 3.9 m Moon mapper — a box bus with a single 10.7 m² solar array and a steerable dish.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-lro.webp"
+    },
+    {
+      "title": "Skylab",
+      "what": "America’s first space station — the Orbital Workshop, airlock and docking adapter, the solar-telescope mount with its windmill of panels, and the sunshade.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-showcase-skylab.webp"
+    },
+    {
+      "title": "Clementine, SMART-1, Chang’e 1 and Chandrayaan-1 (4 variants)",
+      "what": "One box-bus builder in four sizes — Clementine’s 1.9 m bus, the 1 m SMART-1 cube, Chang’e 1 and a gold-wrapped Chandrayaan-1 — each with its own solar wings and dish.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-probe-clementine.webp"
+    },
+    {
+      "title": "Lunar Prospector",
+      "what": "The 1.36 m drum covered in solar cells, with three 2.5 m instrument booms.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-probe-lunar-prospector.webp"
+    },
+    {
+      "title": "Luna 10",
+      "what": "The Soviet 1.5 m pressurised cylinder with four antenna whips and a boom — the first craft to orbit the Moon.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-probe-luna-10.webp"
+    },
+    {
+      "title": "Sputnik 1",
+      "what": "The polished 58 cm sphere with its hemisphere seam, 36 bolts and four swept-back whip antennas of 2.4 and 2.9 m.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-probe-sputnik-1.webp"
+    },
+    {
       "title": "Apollo Lunar Module",
       "what": "Descent + ascent stage, gold MLI foil, and RCS quads.",
       "where": "Moon landing sites",
@@ -3342,7 +3482,7 @@
     "lab_illustrations": 25,
     "diagrams_science": 114,
     "posters": 27,
-    "models3d": 159,
+    "models3d": 179,
     "capsules": 8,
     "canvas2d": 6,
     "ui": 4,

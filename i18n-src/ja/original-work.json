@@ -1891,6 +1891,106 @@
       "title": "カートゥーンの登場人物",
       "what": "実寸で描いたベタ塗りの登場人物 — 男性、女性、子ども、犬、猫、兵馬俑、ジャイアントパンダ、ヒグマ、キリン、ゾウ — を機体の間に配置。",
       "where": "フリート · 実寸比較"
+    },
+    "/images/colophon/model-showcase-parker-solar-probe_webp": {
+      "title": "Parker Solar Probe",
+      "what": "全長3 mの太陽接近探査機 — 細身のバスの上に直径2.3 mの炭素複合材の熱シールド、冷却式の小型太陽電池パドル2枚。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-solar-orbiter_webp": {
+      "title": "Solar Orbiter",
+      "what": "ESAの全長3.1 mの太陽観測機 — 太陽側の熱シールド、全幅18 mの太陽電池パネル6枚、長さ4.4 mの観測機器ブーム。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-messenger_webp": {
+      "title": "MESSENGER",
+      "what": "高さ2.5 mのセラミック布製サンシェードの陰に入る水星周回機。太陽電池パドル2枚と長さ3.6 mの磁力計ブーム付き。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-magellan_webp": {
+      "title": "Magellan",
+      "what": "全長6.4 mの金星レーダー地図作成機 — 10角形のバス、Star 48Bモーター、直径3.7 mの高利得アンテナ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-akatsuki_webp": {
+      "title": "あかつき",
+      "what": "JAXAの高さ1.45 mの箱形金星周回機。太陽電池パドル2枚と平面型フェーズドアレイアンテナ付き。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-dart_webp": {
+      "title": "DART",
+      "what": "全長2.6 mの小惑星衝突機 — 8.5 mの太陽電池パドル2枚、NEXT-Cイオンエンジン、DRACOカメラ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-lucy_webp": {
+      "title": "Lucy",
+      "what": "トロヤ群小惑星探査機。両端で16 m — 直径約7 mの円形太陽電池パドル2枚と直径2 mの高利得アンテナ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-psyche-spacecraft_webp": {
+      "title": "Psyche",
+      "what": "金属小惑星の周回機 — 全高7.3 m、展開時25 mの太陽電池パドルと長さ2 mの観測機器ブーム。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-europa-clipper_webp": {
+      "title": "Europa Clipper",
+      "what": "木星の衛星を巡る全高5 mの周回機。30.5 mの太陽電池パドル、直径3.1 mの高利得アンテナ、長さ8.5 mの磁力計ブーム付き。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-mars-express_webp": {
+      "title": "Mars Express",
+      "what": "ESAの高さ1.8 mの箱形バス。長さ2.5 mの太陽電池翼2枚（両端で約12 m）と直径1.6 mの高利得アンテナ付き。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-maven_webp": {
+      "title": "MAVEN",
+      "what": "NASAの全高3.47 mの火星大気周回機 — 2.3 mの立方体バス、先端に磁力計を備えたガルウィング形の太陽電池パドル2枚、直径2 mのアンテナ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-mangalyaan_webp": {
+      "title": "Mangalyaan",
+      "what": "ISROのMars Orbiter Mission（火星周回機）— 金色に包まれた1.5 mの立方体、3枚構成の太陽電池パドルと直径2.2 mの反射鏡。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-hope_webp": {
+      "title": "Hope",
+      "what": "UAEのEmirates Mars Mission周回機 — 全長2.9 mの六角形バス、太陽電池翼2枚と直径1.85 mのアンテナ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-mariner-9_webp": {
+      "title": "Mariner 4・9・10（3型）",
+      "what": "NASAの八角形Marinerシリーズ — Mariner 4と9は先端に羽根を持つ太陽電池パネル4枚、Mariner 10はパネル2枚とサンシェード、長さ5.8 mの磁力計ブーム。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter",
+      "what": "NASAの全高3.9 mの月地図作成機 — 箱形バスと10.7 m²の太陽電池パドル1枚、可動式アンテナ。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-showcase-skylab_webp": {
+      "title": "Skylab",
+      "what": "アメリカ初の宇宙ステーション — 軌道ワークショップ、エアロックとドッキングアダプター、パネルの風車を備えた太陽望遠鏡マウント、サンシェード。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-probe-clementine_webp": {
+      "title": "Clementine・SMART-1・Chang’e 1・Chandrayaan-1（4型）",
+      "what": "箱形バスのひとつの作り方を4つの大きさで — Clementineの1.9 mバス、SMART-1の1 m立方体、Chang’e 1、金色に包まれたChandrayaan-1。それぞれ固有の太陽電池翼とアンテナ付き。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-probe-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "太陽電池セルで覆われた直径1.36 mのドラムと、長さ2.5 mの観測機器ブーム3本。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-probe-luna-10_webp": {
+      "title": "Luna 10",
+      "what": "ソ連の全長1.5 mの与圧円筒 — アンテナ4本とブーム1本付き。月を周回した最初の探査機。",
+      "where": "飛行・探査"
+    },
+    "/images/colophon/model-probe-sputnik-1_webp": {
+      "title": "Sputnik 1",
+      "what": "磨き上げた直径58 cmの球体。半球の継ぎ目、36本のボルト、後方へ傾いた長さ2.4 mと2.9 mのホイップアンテナ4本。",
+      "where": "飛行・探査"
     }
   },
   "capsules": {

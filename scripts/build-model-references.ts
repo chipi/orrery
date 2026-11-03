@@ -18,6 +18,10 @@
  */
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { SHOWCASE as CAPSULES } from '../src/lib/three/showcase/capsules-commercial';
+import { SHOWCASE as EARLY_STATIONS } from '../src/lib/three/showcase/early-stations';
+import { SHOWCASE as INNER_SOLAR } from '../src/lib/three/showcase/inner-solar';
+import { SHOWCASE as ORBITERS } from '../src/lib/three/showcase/orbiters';
+import { SHOWCASE as SMALL_BODY } from '../src/lib/three/showcase/small-body';
 import { SHOWCASE as SOYUZ } from '../src/lib/three/showcase/soyuz-progress';
 import { SHOWCASE as FREIGHTERS } from '../src/lib/three/showcase/station-freighters';
 import { SHOWCASE as WINGED } from '../src/lib/three/showcase/winged';
@@ -125,8 +129,8 @@ const PUBLISHERS: Publisher[] = [
       /^(www\.roscosmos\.ru|www\.spacex\.com|www\.ulalaunch\.com|www\.spaceforce\.mil|www\.boeing\.com|www\.northropgrumman\.com|fireflyspace\.com|www\.arianespace\.com|en\.cmse\.gov\.cn|www\.spacechina\.com)$/,
     home: 'https://www.roscosmos.ru/',
     what: 'Official pages of space agencies and manufacturers (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, the China Manned Space Agency and CASC, the U.S. Space Force) that gave vehicle dimensions for the launcher and spacecraft models.',
-    license_short: 'PD-trivial',
-    license_url: 'https://en.wikipedia.org/wiki/Threshold_of_originality',
+    license_short: 'Facts-only',
+    license_url: 'https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction',
     license_rationale: FACTS_ONLY,
   },
   {
@@ -136,8 +140,8 @@ const PUBLISHERS: Publisher[] = [
       /^(space\.skyrocket\.de|www\.astronautix\.com|www\.russianspaceweb\.com|www\.buran-energia\.com|spaceflightnow\.com|www\.kennedyspacecenter\.com|www\.technik-museum\.de|airandspace\.si\.edu|californiasciencecenter\.org|intrepidmuseum\.org)$/,
     home: 'https://space.skyrocket.de/',
     what: 'Independent spaceflight references and museum pages (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, the Smithsonian National Air and Space Museum, the Technik Museum Speyer and others) that gave the sizes of the Soviet, Shuttle and Buran-era vehicles.',
-    license_short: 'PD-trivial',
-    license_url: 'https://en.wikipedia.org/wiki/Threshold_of_originality',
+    license_short: 'Facts-only',
+    license_url: 'https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction',
     license_rationale: FACTS_ONLY,
   },
 ];
@@ -174,7 +178,16 @@ const add = (r: Ref): void => {
 };
 
 // 1. Showcase models' own refs.
-for (const map of [CAPSULES, SOYUZ, FREIGHTERS, WINGED]) {
+for (const map of [
+  CAPSULES,
+  SOYUZ,
+  FREIGHTERS,
+  WINGED,
+  INNER_SOLAR,
+  SMALL_BODY,
+  ORBITERS,
+  EARLY_STATIONS,
+]) {
   for (const m of Object.values(map)) m.refs.forEach(add);
 }
 

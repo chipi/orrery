@@ -833,6 +833,114 @@ const lineupSpacecraft = [
   ],
 ].map(mk('model-lineup', 'Fleet · line-up', '/fleet?category=crewed-spacecraft&view=lineup'));
 
+// Showcase spacecraft that fly on /fly: the inner-solar, small-body and Mars/Moon orbiters, Skylab,
+// and the plain builders (no fleet entry) of the early probes — src/lib/three/showcase/{inner-solar,
+// small-body,orbiters,early-stations}.ts. Thumbnails: /dev/models cards `showcase-<id>` / `probe-<id>`.
+const flyProbes = [
+  [
+    'parker-solar-probe',
+    'Parker Solar Probe',
+    'The 3 m Sun-grazer — a 2.3 m carbon-composite heat shield over a slim bus, with two small cooled solar arrays.',
+  ],
+  [
+    'solar-orbiter',
+    'Solar Orbiter',
+    'ESA’s 3.1 m Sun-watcher — a heat shield on the Sun side, six solar panels spanning 18 m and a 4.4 m instrument boom.',
+  ],
+  [
+    'messenger',
+    'MESSENGER',
+    'The Mercury orbiter behind its 2.5 m ceramic-cloth sunshade, with two solar arrays and a 3.6 m magnetometer boom.',
+  ],
+  [
+    'magellan',
+    'Magellan',
+    'The Venus radar mapper at 6.4 m — a ten-sided bus, the Star 48B motor and a 3.7 m high-gain dish.',
+  ],
+  [
+    'akatsuki',
+    'Akatsuki',
+    'JAXA’s 1.45 m box-shaped Venus orbiter with two solar arrays and a flat phased-array antenna.',
+  ],
+  [
+    'dart',
+    'DART',
+    'The 2.6 m asteroid-impact spacecraft with two 8.5 m solar arrays, the NEXT-C ion engine and the DRACO camera.',
+  ],
+  [
+    'lucy',
+    'Lucy',
+    'The Trojan-asteroid explorer, 16 m tip to tip — two circular solar arrays about 7 m across and a 2 m high-gain dish.',
+  ],
+  [
+    'psyche-spacecraft',
+    'Psyche',
+    'The metal-asteroid orbiter — a 7.3 m craft with 25 m of deployed solar arrays and 2 m instrument booms.',
+  ],
+  [
+    'europa-clipper',
+    'Europa Clipper',
+    'The 5 m Jupiter-moon orbiter with 30.5 m solar arrays, a 3.1 m high-gain antenna and an 8.5 m magnetometer boom.',
+  ],
+  [
+    'mars-express',
+    'Mars Express',
+    'ESA’s 1.8 m box bus with two 2.5 m solar wings (about 12 m tip to tip) and a 1.6 m high-gain dish.',
+  ],
+  [
+    'maven',
+    'MAVEN',
+    'NASA’s 3.47 m Mars-atmosphere orbiter — a 2.3 m cubic bus, two gull-winged arrays with magnetometers at their tips and a 2 m dish.',
+  ],
+  [
+    'mangalyaan',
+    'Mangalyaan',
+    'ISRO’s Mars Orbiter Mission — a 1.5 m gold-wrapped cube with a three-panel array and a 2.2 m reflector.',
+  ],
+  [
+    'hope',
+    'Hope',
+    'The UAE’s Emirates Mars Mission orbiter — a 2.9 m hexagonal bus with two solar wings and a 1.85 m dish.',
+  ],
+  [
+    'mariner-9',
+    'Mariner 4, 9 and 10 (3 variants)',
+    'NASA’s octagonal Mariner family — four solar panels with tip vanes on Mariner 4 and 9; two panels, a sunshade and a 5.8 m magnetometer boom on Mariner 10.',
+  ],
+  [
+    'lro',
+    'Lunar Reconnaissance Orbiter',
+    'NASA’s 3.9 m Moon mapper — a box bus with a single 10.7 m² solar array and a steerable dish.',
+  ],
+  [
+    'skylab',
+    'Skylab',
+    'America’s first space station — the Orbital Workshop, airlock and docking adapter, the solar-telescope mount with its windmill of panels, and the sunshade.',
+  ],
+].map(mk('model-showcase', 'Fly + Explore', '/fly'));
+const flyEarlyProbes = [
+  [
+    'clementine',
+    'Clementine, SMART-1, Chang’e 1 and Chandrayaan-1 (4 variants)',
+    'One box-bus builder in four sizes — Clementine’s 1.9 m bus, the 1 m SMART-1 cube, Chang’e 1 and a gold-wrapped Chandrayaan-1 — each with its own solar wings and dish.',
+  ],
+  [
+    'lunar-prospector',
+    'Lunar Prospector',
+    'The 1.36 m drum covered in solar cells, with three 2.5 m instrument booms.',
+  ],
+  [
+    'luna-10',
+    'Luna 10',
+    'The Soviet 1.5 m pressurised cylinder with four antenna whips and a boom — the first craft to orbit the Moon.',
+  ],
+  [
+    'sputnik-1',
+    'Sputnik 1',
+    'The polished 58 cm sphere with its hemisphere seam, 36 bolts and four swept-back whip antennas of 2.4 and 2.9 m.',
+  ],
+].map(mk('model-probe', 'Fly + Explore', '/fly'));
+
 const models3d = [
   ...spacecraft,
   ...launchers,
@@ -840,6 +948,8 @@ const models3d = [
   ...showcaseCargo,
   ...lineupLaunchers,
   ...lineupSpacecraft,
+  ...flyProbes,
+  ...flyEarlyProbes,
   ...moonModels,
   ...marsModels,
   ...venusModels,

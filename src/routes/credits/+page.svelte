@@ -651,7 +651,8 @@
             {/if}
             <p class="d-row">
               <span class="lbl">{m.credits_license_summary_label()}:</span>
-              <a href={d.license_url} target="_blank" rel="noopener noreferrer">{d.license_short}</a
+              <a href={d.license_url} target="_blank" rel="noopener noreferrer"
+                >{licenseLabel(d.license_short)}</a
               >
               <span class="sep">·</span>
               <span class="lbl">{m.credits_used_on()}:</span>

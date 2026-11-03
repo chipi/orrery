@@ -1891,6 +1891,106 @@
       "title": "卡通角色",
       "what": "按真实尺寸绘制的平涂色块角色——男人、女人、孩子、狗、猫、兵马俑、大熊猫、棕熊、长颈鹿和大象——站在飞行器之间。",
       "where": "航天器 · 实际尺寸对比"
+    },
+    "/images/colophon/model-showcase-parker-solar-probe_webp": {
+      "title": "Parker Solar Probe",
+      "what": "长 3 米的近日探测器——细长舱体上方是直径 2.3 米的碳复合材料热防护罩，另有两块小型冷却式太阳能电池翼。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-solar-orbiter_webp": {
+      "title": "Solar Orbiter",
+      "what": "ESA 长 3.1 米的太阳观测器——向阳面是热防护罩，六块太阳能电池板翼展 18 米，另有 4.4 米长的仪器吊杆。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-messenger_webp": {
+      "title": "MESSENGER",
+      "what": "水星轨道器躲在 2.5 米高的陶瓷布遮阳罩后，带两块太阳能电池翼和 3.6 米长的磁强计吊杆。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-magellan_webp": {
+      "title": "Magellan",
+      "what": "长 6.4 米的金星雷达测绘器——十边形舱体、Star 48B 发动机和直径 3.7 米的高增益天线。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-akatsuki_webp": {
+      "title": "Akatsuki",
+      "what": "JAXA 高 1.45 米的箱形金星轨道器，带两块太阳能电池翼和平板相控阵天线。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-dart_webp": {
+      "title": "DART",
+      "what": "长 2.6 米的小行星撞击探测器——两块 8.5 米长的太阳能电池翼、NEXT-C 离子发动机和 DRACO 相机。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-lucy_webp": {
+      "title": "Lucy",
+      "what": "木星特洛伊小行星探测器，两端相距 16 米——两块直径约 7 米的圆形太阳能电池翼和直径 2 米的高增益天线。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-psyche-spacecraft_webp": {
+      "title": "Psyche",
+      "what": "金属小行星轨道器——高 7.3 米，展开后太阳能电池翼共 25 米，另有 2 米长的仪器吊杆。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-europa-clipper_webp": {
+      "title": "Europa Clipper",
+      "what": "高 5 米的木卫轨道器，带 30.5 米的太阳能电池翼、直径 3.1 米的高增益天线和 8.5 米长的磁强计吊杆。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-mars-express_webp": {
+      "title": "Mars Express",
+      "what": "ESA 高 1.8 米的箱形舱体，两侧各一块 2.5 米长的太阳能电池翼（两端相距约 12 米），另有直径 1.6 米的高增益天线。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-maven_webp": {
+      "title": "MAVEN",
+      "what": "NASA 高 3.47 米的火星大气轨道器——2.3 米的立方体舱体、两块翼尖带磁强计的海鸥翼式太阳能电池翼和直径 2 米的天线。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-mangalyaan_webp": {
+      "title": "Mangalyaan",
+      "what": "ISRO 的火星轨道器任务——裹着金色包覆层的 1.5 米立方体，带三节式太阳能电池翼和直径 2.2 米的反射面。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-hope_webp": {
+      "title": "Hope",
+      "what": "阿联酋 Emirates Mars Mission 轨道器——长 2.9 米的六边形舱体，带两块太阳能电池翼和直径 1.85 米的天线。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-mariner-9_webp": {
+      "title": "Mariner 4、9 和 10（3 个型号）",
+      "what": "NASA 的八角形 Mariner 系列——Mariner 4 和 9 有四块带翼尖导流片的太阳能电池板；Mariner 10 有两块板、遮阳罩和 5.8 米长的磁强计吊杆。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-lro_webp": {
+      "title": "月球勘测轨道器",
+      "what": "NASA 高 3.9 米的月球测绘器——箱形舱体、一块 10.7 平方米的太阳能电池翼和可转向天线。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-showcase-skylab_webp": {
+      "title": "Skylab",
+      "what": "美国第一座空间站——轨道工作舱、气闸舱与对接适配器、带风车状电池板的太阳望远镜支架以及遮阳罩。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-probe-clementine_webp": {
+      "title": "Clementine、SMART-1、嫦娥一号和 Chandrayaan-1（4 个型号）",
+      "what": "同一套箱形舱体建模，做成四种尺寸——Clementine 1.9 米的舱体、SMART-1 的 1 米立方体、嫦娥一号和裹金色包覆层的 Chandrayaan-1——各有自己的太阳能电池翼和天线。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-probe-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "覆满太阳能电池片的直径 1.36 米圆筒，带三根 2.5 米长的仪器吊杆。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-probe-luna-10_webp": {
+      "title": "Luna 10",
+      "what": "苏联长 1.5 米的加压圆筒，带四根鞭状天线和一根吊杆——第一个绕月飞行的探测器。",
+      "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-probe-sputnik-1_webp": {
+      "title": "Sputnik 1",
+      "what": "抛光的直径 58 厘米圆球，带半球接缝、36 颗螺栓和四根向后倾斜、长 2.4 米与 2.9 米的鞭状天线。",
+      "where": "飞行 + 探索"
     }
   },
   "capsules": {

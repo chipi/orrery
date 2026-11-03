@@ -3524,6 +3524,7 @@
   "fleet_operating_sites": "مواقع التشغيل",
   "surface_altitude": "الارتفاع {value}",
   "surface_layer_regional": "العرض الإقليمي",
+  "surface_tier_scale_note": "عند هذا التكبير تُرسم مقاطع الصور أكبر من حجمها الحقيقي لتتمكن من رؤيتها. كبّر أكثر لعرض السطح المستوي بمقياسه الحقيقي.",
   "surface_layer_detail": "العرض التفصيلي",
   "surface_res_crop": "~{res} (قص {crop}² · ~{km})",
   "surface_res_window": "~{res} (نافذة {window})",

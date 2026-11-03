@@ -55,13 +55,13 @@
     "nation": "USSR",
     "year": 1970,
     "landing_date": "1970-09-20",
-    "lat": -0.5,
-    "lon": 56.3,
+    "lat": -0.5137,
+    "lon": 56.3638,
     "region_bounds": {
-      "lat_min": -0.52,
-      "lat_max": -0.48,
-      "lon_min": 56.28,
-      "lon_max": 56.32
+      "lat_min": -0.5337,
+      "lat_max": -0.4937,
+      "lon_min": 56.3438,
+      "lon_max": 56.3838
     },
     "region_kind": "landing_ellipse",
     "crewed": false,
@@ -91,8 +91,8 @@
     "nation": "USSR",
     "year": 1970,
     "landing_date": "1970-11-17",
-    "lat": 38.28,
-    "lon": -35,
+    "lat": 38.2376,
+    "lon": -35.0016,
     "region_bounds": {
       "lat_min": 38.2,
       "lat_max": 38.36,
@@ -139,13 +139,13 @@
     "nation": "USSR",
     "year": 1973,
     "landing_date": "1973-01-15",
-    "lat": 25.85,
-    "lon": 30.45,
+    "lat": 25.9994,
+    "lon": 30.4076,
     "region_bounds": {
-      "lat_min": 25.78,
-      "lat_max": 25.92,
-      "lon_min": 30.3,
-      "lon_max": 30.6
+      "lat_min": 25.9294,
+      "lat_max": 26.0694,
+      "lon_min": 30.2576,
+      "lon_max": 30.5576
     },
     "region_kind": "traverse_bbox",
     "crewed": false,
@@ -175,13 +175,13 @@
     "nation": "USSR",
     "year": 1976,
     "landing_date": "1976-08-18",
-    "lat": 12.25,
-    "lon": 62.2,
+    "lat": 12.7142,
+    "lon": 62.2129,
     "region_bounds": {
-      "lat_min": 12.23,
-      "lat_max": 12.27,
-      "lon_min": 62.18,
-      "lon_max": 62.22
+      "lat_min": 12.6942,
+      "lat_max": 12.7342,
+      "lon_min": 62.1929,
+      "lon_max": 62.2329
     },
     "region_kind": "landing_ellipse",
     "crewed": false,
@@ -563,8 +563,8 @@
     "nation": "China",
     "year": 2019,
     "landing_date": "2019-01-03",
-    "lat": -45.5,
-    "lon": 177.6,
+    "lat": -45.4561,
+    "lon": 177.5885,
     "region_bounds": {
       "lat_min": -45.55,
       "lat_max": -45.42,
@@ -619,13 +619,13 @@
     "nation": "China",
     "year": 2020,
     "landing_date": "2020-12-01",
-    "lat": 43.1,
-    "lon": -51.8,
+    "lat": 43.0576,
+    "lon": -51.9161,
     "region_bounds": {
-      "lat_min": 43.08,
-      "lat_max": 43.12,
-      "lon_min": -51.84,
-      "lon_max": -51.76
+      "lat_min": 43.0376,
+      "lat_max": 43.0776,
+      "lon_min": -51.9561,
+      "lon_max": -51.8761
     },
     "region_kind": "landing_ellipse",
     "crewed": false,
@@ -667,13 +667,13 @@
     "nation": "China",
     "year": 2024,
     "landing_date": "2024-06-02",
-    "lat": -41.6,
-    "lon": -153.9,
+    "lat": -41.6385,
+    "lon": -153.9852,
     "region_bounds": {
-      "lat_min": -41.65,
-      "lat_max": -41.55,
-      "lon_min": -153.95,
-      "lon_max": -153.85
+      "lat_min": -41.6885,
+      "lat_max": -41.5885,
+      "lon_min": -154.0352,
+      "lon_max": -153.9352
     },
     "region_kind": "landing_ellipse",
     "crewed": false,
@@ -719,8 +719,8 @@
     "nation": "India",
     "year": 2023,
     "landing_date": "2023-08-23",
-    "lat": -69.37,
-    "lon": 32.35,
+    "lat": -69.3741,
+    "lon": 32.32,
     "region_bounds": {
       "lat_min": -69.4,
       "lat_max": -69.34,
@@ -776,8 +776,8 @@
     "nation": "Japan",
     "year": 2024,
     "landing_date": "2024-01-19",
-    "lat": -13.31,
-    "lon": 25.24,
+    "lat": -13.316,
+    "lon": 25.251,
     "region_bounds": {
       "lat_min": -13.33,
       "lat_max": -13.29,

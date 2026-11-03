@@ -3524,6 +3524,7 @@
   "fleet_operating_sites": "運用地点",
   "surface_altitude": "高度 {value}",
   "surface_layer_regional": "広域ビュー",
+  "surface_tier_scale_note": "このズームでは、見やすいように画像パッチを実際より大きく描いています。さらにズームすると実寸の平面ビューになります。",
   "surface_layer_detail": "詳細ビュー",
   "surface_res_crop": "~{res}（{crop}² 切り出し · 約 {km}）",
   "surface_res_window": "~{res}（{window} の範囲）",

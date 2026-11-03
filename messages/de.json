@@ -3524,6 +3524,7 @@
   "fleet_operating_sites": "Einsatzorte",
   "surface_altitude": "Höhe {value}",
   "surface_layer_regional": "Regionalansicht",
+  "surface_tier_scale_note": "In dieser Zoomstufe werden die Bildausschnitte größer als in Wirklichkeit gezeichnet, damit sie sichtbar sind. Weiter hineinzoomen für die flache Ansicht im echten Maßstab.",
   "surface_layer_detail": "Detailansicht",
   "surface_res_crop": "~{res} ({crop}²-Ausschnitt · ~{km})",
   "surface_res_window": "~{res} ({window}-Fenster)",

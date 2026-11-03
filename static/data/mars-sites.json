@@ -676,13 +676,13 @@
     "agency": "ESA",
     "nation": "Europe",
     "year": 2028,
-    "lat": 18.2,
-    "lon": -35.05,
+    "lat": 18.275,
+    "lon": -24.632,
     "region_bounds": {
-      "lat_min": 17.5,
-      "lat_max": 18.9,
-      "lon_min": -35.7,
-      "lon_max": -34.4
+      "lat_min": 17.575,
+      "lat_max": 18.975,
+      "lon_min": -25.282,
+      "lon_max": -23.982
     },
     "region_kind": "roi_quad",
     "crewed": false,

@@ -3524,6 +3524,7 @@
   "fleet_operating_sites": "운용 지점",
   "surface_altitude": "고도 {value}",
   "surface_layer_regional": "광역 보기",
+  "surface_tier_scale_note": "이 확대 수준에서는 잘 보이도록 이미지 패치를 실제보다 크게 그립니다. 더 확대하면 실제 축척의 평면 보기로 전환됩니다.",
   "surface_layer_detail": "상세 보기",
   "surface_res_crop": "~{res} ({crop}² 자르기 · ~{km})",
   "surface_res_window": "~{res} ({window} 범위)",

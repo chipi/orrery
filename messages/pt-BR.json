@@ -3524,6 +3524,7 @@
   "fleet_operating_sites": "Locais de operação",
   "surface_altitude": "altitude {value}",
   "surface_layer_regional": "Vista regional",
+  "surface_tier_scale_note": "Neste zoom, os recortes de imagem são desenhados maiores que o tamanho real para que você possa vê-los. Aproxime mais para a vista plana em escala real.",
   "surface_layer_detail": "Vista detalhada",
   "surface_res_crop": "~{res} (recorte de {crop}² · ~{km})",
   "surface_res_window": "~{res} (janela de {window})",

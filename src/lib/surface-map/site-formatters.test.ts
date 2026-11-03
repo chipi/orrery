@@ -13,7 +13,7 @@ describe('missionContextFor', () => {
   });
 
   it('returns just the landing date when mission_type is missing', () => {
-    expect(missionContextFor({ landing_date: '1969-07-20' })).toBe('landed 1969-07-20');
+    expect(missionContextFor({ landing_date: '1969-07-20' })).toBe('Landed 1969-07-20');
   });
 
   it('joins both fields with ·', () => {
@@ -22,6 +22,6 @@ describe('missionContextFor', () => {
         mission_type: 'Mars Science Laboratory rover',
         landing_date: '2012-08-06',
       }),
-    ).toBe('Mars Science Laboratory rover · landed 2012-08-06');
+    ).toBe('Mars Science Laboratory rover · Landed 2012-08-06');
   });
 });

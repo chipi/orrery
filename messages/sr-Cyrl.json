@@ -3524,6 +3524,7 @@
   "fleet_operating_sites": "Места рада",
   "surface_altitude": "висина {value}",
   "surface_layer_regional": "Регионални приказ",
+  "surface_tier_scale_note": "При овом увећању исечци снимака нацртани су већи него што стварно јесу, да би се видели. Увећајте још за раван приказ у правој размери.",
   "surface_layer_detail": "Детаљни приказ",
   "surface_res_crop": "~{res} (исечак {crop}² · ~{km})",
   "surface_res_window": "~{res} (прозор {window})",

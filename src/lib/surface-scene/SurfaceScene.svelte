@@ -3902,7 +3902,10 @@
               bestH = { siteId: selectedH.siteId };
             }
           }
-          if (!bestH) {
+          // With a site selected the card names that site or nothing, never
+          // another promoted hotspot (a selected site without imagery used to
+          // borrow a far-away lander's card).
+          if (!bestH && !selected) {
             let bestTier = 0;
             for (const h of hotspots) {
               if (h.currentTier > bestTier) {
@@ -3959,7 +3962,7 @@
                 } else if (config.planet === 'mars') {
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
-                    sourceTitle: 'MRO CTX context mosaic',
+                    sourceTitle: 'Murray Lab Global CTX Mosaic',
                     sourceAuthor: 'NASA / JPL / MSSS / Murray Lab',
                     resolutionText: m.surface_res_crop({
                       res: m.unit_mpx_value({ value: '5' }),
@@ -3980,7 +3983,7 @@
                   // window-cropped via USGS Astrogeology ARD.
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
-                    sourceTitle: 'Kaguya (SELENE) TC regional context',
+                    sourceTitle: 'Kaguya (SELENE) TC',
                     sourceAuthor: 'JAXA / SELENE (Kaguya) Terrain Camera',
                     resolutionText: m.surface_res_crop({
                       res: m.unit_mpx_value({ value: '6' }),
@@ -3995,7 +3998,7 @@
                   // cropped at a wider 3072² window (~15 km).
                   layers.push({
                     layerLabel: m.surface_layer_regional(),
-                    sourceTitle: 'LROC NAC ROI regional mosaic',
+                    sourceTitle: 'LROC NAC ROI',
                     sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
                     resolutionText: m.surface_res_crop({
                       res: m.unit_mpx_value({ value: '5' }),
@@ -4024,7 +4027,7 @@
                   if ((site.hotspot_tier2_ground_m ?? 512) >= 2560) {
                     layers.push({
                       layerLabel: m.surface_layer_detail(),
-                      sourceTitle: 'Copernicus Sentinel-2 L2A (coarse fallback)',
+                      sourceTitle: 'Copernicus Sentinel-2 L2A',
                       sourceAuthor: 'Contains modified Copernicus Sentinel data',
                       resolutionText: m.surface_res_window_nosub({
                         res: m.unit_mpx_value({ value: '10' }),
@@ -4036,7 +4039,7 @@
                   } else if (GSI_DETAIL_EARTH_PADS.has(site.id)) {
                     layers.push({
                       layerLabel: m.surface_layer_detail(),
-                      sourceTitle: 'GSI seamlessphoto aerial',
+                      sourceTitle: 'GSI seamlessphoto',
                       sourceAuthor: 'Geospatial Information Authority of Japan',
                       resolutionText: m.surface_res_window({
                         res: m.unit_mpx_value({ value: '0.5' }),
@@ -4048,7 +4051,7 @@
                   } else {
                     layers.push({
                       layerLabel: m.surface_layer_detail(),
-                      sourceTitle: 'USGS NAIP aerial',
+                      sourceTitle: 'USGS NAIP',
                       sourceAuthor: 'USDA / USGS National Agriculture Imagery Program',
                       resolutionText: m.surface_res_window({
                         res: m.unit_mpx_value({ value: '0.5' }),
@@ -4062,7 +4065,7 @@
                 } else if (config.planet === 'mars') {
                   layers.push({
                     layerLabel: m.surface_layer_detail(),
-                    sourceTitle: 'HiRISE detail patch',
+                    sourceTitle: 'MRO HiRISE',
                     sourceAuthor: 'NASA / JPL / UArizona / HiRISE team',
                     // We serve 2048² JPEG crops of HiRISE products, which
                     // works out to ~7 m/px on a typical landing-region
@@ -4100,7 +4103,7 @@
                   });
                 }
               }
-              tierContext = buildTierContext({ site, agencyChip, layers });
+              tierContext = layers.length ? buildTierContext({ site, agencyChip, layers }) : null;
             }
           } else if (tierContext !== null) {
             tierContext = null;
@@ -4835,10 +4838,7 @@ sample      ${debugInfo.projectedPxSample}`}
        agency chip in a smaller surface card that ALSO collides with
        the OrbitRuler's lower-left footprint. -->
   {#if tierCardShown && tierContext}
-    <TierContextCard
-      {tierContext}
-      scaleNote="Tier-2 rectangles on the sphere are stylized — true ground extent is sub-pixel at this zoom. Zoom further in to enter the flat-patch view (true scale)."
-    />
+    <TierContextCard {tierContext} scaleNote={m.surface_tier_scale_note()} />
   {/if}
 
   <!-- Hover tooltip — small floating card beside the cursor.

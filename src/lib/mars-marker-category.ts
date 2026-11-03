@@ -18,6 +18,9 @@ export function categoriseMarsMarker(
   missionType: string | undefined,
   agency: string | undefined,
 ): MarsMarkerCategory {
+  // `missionType` may already be a category (a site's language-neutral `marker`).
+  if (missionType === 'rover' || missionType === 'lander' || missionType === 'soviet-petal')
+    return missionType;
   if (agency === 'ROSCOSMOS') return 'soviet-petal';
   const t = (missionType ?? '').toLowerCase();
   if (t.includes('rover')) return 'rover';

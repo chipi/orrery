@@ -41,4 +41,9 @@ describe('categoriseMoonMarker', () => {
     expect(categoriseMoonMarker('crewed lander · flown')).toBe('crewed');
     expect(categoriseMoonMarker('Sample Return · Flown')).toBe('sample-return');
   });
+
+  it('passes a category straight through (a site marker)', () => {
+    for (const c of ['crewed', 'sample-return', 'rover', 'orbiter', 'lander'] as const)
+      expect(categoriseMoonMarker(c)).toBe(c);
+  });
 });

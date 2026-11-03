@@ -1,6 +1,7 @@
 [
   {
     "id": "luna9",
+    "marker": "lander",
     "kind": "surface",
     "agency": "ROSCOSMOS",
     "nation": "USSR",
@@ -48,6 +49,7 @@
   },
   {
     "id": "luna16",
+    "marker": "sample-return",
     "kind": "surface",
     "agency": "ROSCOSMOS",
     "nation": "USSR",
@@ -83,6 +85,7 @@
   },
   {
     "id": "luna17",
+    "marker": "rover",
     "kind": "surface",
     "agency": "ROSCOSMOS",
     "nation": "USSR",
@@ -130,6 +133,7 @@
   },
   {
     "id": "luna21",
+    "marker": "rover",
     "kind": "surface",
     "agency": "ROSCOSMOS",
     "nation": "USSR",
@@ -165,6 +169,7 @@
   },
   {
     "id": "luna24",
+    "marker": "sample-return",
     "kind": "surface",
     "agency": "ROSCOSMOS",
     "nation": "USSR",
@@ -211,6 +216,7 @@
   },
   {
     "id": "apollo11",
+    "marker": "crewed",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -258,6 +264,7 @@
   },
   {
     "id": "apollo12",
+    "marker": "crewed",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -300,6 +307,7 @@
   },
   {
     "id": "apollo14",
+    "marker": "crewed",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -342,6 +350,7 @@
   },
   {
     "id": "apollo15",
+    "marker": "crewed",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -393,6 +402,7 @@
   },
   {
     "id": "apollo16",
+    "marker": "crewed",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -439,6 +449,7 @@
   },
   {
     "id": "apollo17",
+    "marker": "crewed",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -490,6 +501,7 @@
   },
   {
     "id": "change3",
+    "marker": "rover",
     "kind": "surface",
     "agency": "CNSA",
     "nation": "China",
@@ -540,6 +552,7 @@
   },
   {
     "id": "change4",
+    "marker": "rover",
     "videos": [
       {
         "id": "vid-5fd25a75da64"
@@ -600,6 +613,7 @@
   },
   {
     "id": "change5",
+    "marker": "sample-return",
     "kind": "surface",
     "agency": "CNSA",
     "nation": "China",
@@ -647,6 +661,7 @@
   },
   {
     "id": "change6",
+    "marker": "sample-return",
     "kind": "surface",
     "agency": "CNSA",
     "nation": "China",
@@ -698,6 +713,7 @@
   },
   {
     "id": "chandrayaan3",
+    "marker": "rover",
     "kind": "surface",
     "agency": "ISRO",
     "nation": "India",
@@ -754,6 +770,7 @@
   },
   {
     "id": "slim",
+    "marker": "lander",
     "kind": "surface",
     "agency": "JAXA",
     "nation": "Japan",
@@ -800,6 +817,7 @@
   },
   {
     "id": "artemis4",
+    "marker": "crewed",
     "kind": "surface",
     "agency": "NASA",
     "nation": "USA",
@@ -850,6 +868,7 @@
   },
   {
     "id": "luna10",
+    "marker": "orbiter",
     "kind": "orbiter",
     "agency": "ROSCOSMOS",
     "nation": "USSR",
@@ -883,6 +902,7 @@
   },
   {
     "id": "clementine",
+    "marker": "orbiter",
     "kind": "orbiter",
     "agency": "NASA",
     "nation": "USA",
@@ -910,6 +930,7 @@
   },
   {
     "id": "lunar-prospector",
+    "marker": "orbiter",
     "kind": "orbiter",
     "agency": "NASA",
     "nation": "USA",
@@ -943,6 +964,7 @@
   },
   {
     "id": "smart-1",
+    "marker": "orbiter",
     "kind": "orbiter",
     "agency": "ESA",
     "nation": "Europe",
@@ -976,6 +998,7 @@
   },
   {
     "id": "change1",
+    "marker": "orbiter",
     "kind": "orbiter",
     "agency": "CNSA",
     "nation": "China",
@@ -1009,6 +1032,7 @@
   },
   {
     "id": "chandrayaan1",
+    "marker": "orbiter",
     "kind": "orbiter",
     "agency": "ISRO",
     "nation": "India",
@@ -1043,6 +1067,7 @@
   },
   {
     "id": "lro",
+    "marker": "orbiter",
     "kind": "orbiter",
     "agency": "NASA",
     "nation": "USA",
@@ -1077,6 +1102,7 @@
   },
   {
     "id": "change2",
+    "marker": "orbiter",
     "kind": "orbiter",
     "agency": "CNSA",
     "nation": "China",
@@ -1110,6 +1136,7 @@
   },
   {
     "id": "beresheet",
+    "marker": "lander",
     "kind": "surface",
     "agency": "SpaceIL",
     "nation": "Israel",

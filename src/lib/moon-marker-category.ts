@@ -21,8 +21,18 @@
  */
 export type MoonMarkerCategory = 'crewed' | 'sample-return' | 'rover' | 'orbiter' | 'lander';
 
+const MOON_CATEGORIES: readonly string[] = [
+  'crewed',
+  'sample-return',
+  'rover',
+  'orbiter',
+  'lander',
+];
+
+/** `missionType` may already be a category (a site's language-neutral `marker`). */
 export function categoriseMoonMarker(missionType: string | undefined): MoonMarkerCategory {
   if (!missionType) return 'lander';
+  if (MOON_CATEGORIES.includes(missionType)) return missionType as MoonMarkerCategory;
   const t = missionType.toUpperCase();
   // Word-boundary check on CREWED so "UNCREWED" doesn't false-match.
   if (/\bCREWED\b/.test(t)) return 'crewed';

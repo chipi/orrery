@@ -116,6 +116,8 @@ export interface SurfaceSite {
   /** Editorial overlay fields merged at fetch time */
   name?: string;
   mission_type?: string;
+  /** Marker category, language-neutral (see moon-/mars-marker-category). */
+  marker?: string;
   site_name?: string;
   crew?: string[];
   left?: string;

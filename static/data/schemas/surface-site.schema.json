@@ -27,6 +27,11 @@
     ],
     "properties": {
       "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "marker": {
+        "type": "string",
+        "enum": ["crewed", "sample-return", "rover", "orbiter", "lander", "soviet-petal"],
+        "description": "Marker category (index filter + generic 3D silhouette), language-neutral. The translated mission_type once decided it, so German or Japanese readers saw Apollo 11 as a plain lander."
+      },
       "videos": {
         "type": "array",
         "description": "PRD-031 / RFC-033: linked (never hosted) video clips owned by this landing site. Each {id} resolves in static/data/video-provenance.json.",

@@ -8,10 +8,53 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
-## [0.9.4] — in progress
+## [0.9.4] — 2026-11-03
 
-Work in progress on branch `tech-debt/0.9.4`. The date replaces "in progress" when the release
-is cut.
+A `/fly` realism release: every launch flies its real rocket and staging, orbiters fire the
+engine that captured them, and every non-Earth descent flies its sourced timeline. Plus
+translation, accessibility and image-credit fixes found by browser scans.
+
+### Fixed
+
+- **Launches fly the real vehicle.** Each mission departs Earth the way it really did: the
+  launcher is one connected stack, stage-and-a-half Atlases and air-lit cores and strap-ons stage
+  as they really did, the spacecraft rides its stage through the injection burn, and
+  stage-then-kick departures burn, separate and fire the kick stage. New models, engines and
+  sourced profiles for Long March 3A / 3B/E / 5, PSLV-XL, LVM3, H3, M-V, Ariane 1, Ariane 5G+,
+  Delta II (7925 and 7925H), Delta IV Heavy, Atlas-Centaur, Atlas-Agena, Titan II G, Titan
+  IIIE-Centaur, Titan IVB-Centaur, Falcon Heavy, New Glenn, Molniya-M, Athena II, the R-7 family
+  (Vostok-K, Voskhod, Soyuz, Sputnik 8K71PS), Proton-M / Briz-M, Proton-K / Blok D and SLS Block 1.
+  The rocket stands up at liftoff without attitude snaps or camera jitter, one flame per engine,
+  and the camera follows the separated spacecraft after cutoff.
+- **Descents fly their sourced timelines.** Mars entries ran 20–35 minutes; they now take the
+  reconstructed 5–7. Moon landers brake, pitch over and burn off propellant through braking,
+  approach and a vertical final (Apollo 11 758 s vs 755 real). Venus, Titan and Jupiter use the
+  atmospheres their probes measured (Pioneer Venus, Huygens, Galileo), so Venera 13, the Vegas,
+  Huygens and the Galileo probe land or lose signal when they really did. Mars 3 soft-lands, as it
+  did; Luna 9, SLIM, Tianwen-1 and the small-body landings start from sourced points. The descent
+  clock no longer stalls at E+00:00 on lunar and Venus descents.
+- **Lander arrival facts are derived from the descent profiles**, with a test that keeps them in
+  step.
+- **Lunar orbit insertion is LOI**, not MOI, on 12 Moon missions in every locale; Clementine's
+  trans-lunar injection is on day 9, after its checkout in Earth orbit, not day 0.5.
+- **Translations.** English left on `/fly`, `/explore`, `/earth`, `/mars`, `/moon` and the
+  top-level pages, found by a browser scan of every locale, is translated by hand; `/fly` flight
+  events and orbit band names in 13 locales; distance units follow each locale; program texts
+  fixed in 7 locales; plural counts on `/credits`.
+- **Accessibility.** The axe gate covers dynamic routes; contrast and link fixes on five of them
+  and on the mission type line.
+- **Image credits.** Every gallery image has a credit row; 29 placeholder credits replaced by their
+  real sources; insignia and photo authors no longer cut at 50 characters or carrying HTML; NASA
+  works are no longer marked public-domain-old.
+- **Offline download** carries image alt text for every locale.
+
+### Added
+
+- **Orbit insertion** fires the engine that captured the spacecraft, with its sourced burn
+  (engine, minutes, Δv), and burn plumes point the right way.
+- **`?debug=1` on `/fly`** shows the live planetary descent (altitude, speed, g, beat, outcome).
+- **Checks:** a weekly outbound link check, the route budget counts CSS and dynamic imports, a
+  GlitchTip 30-day baseline report, and an e2e that mounts every descent archetype.
 
 ## [0.9.3] — 2026-11-02
 

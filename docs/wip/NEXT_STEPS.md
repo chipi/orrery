@@ -39,6 +39,10 @@ order inside it; ask before choosing one.
    where translation guidance lives; the style guide (`docs/guides/i18n-style-guide.md`) is the
    authority. Tools: `scripts/i18n-tools/README.md`.
 
+**0.9.5 starts from [`2026-11-03-0.9.5-fly-handover.md`](2026-11-03-0.9.5-fly-handover.md)** — the
+`/fly` flight-and-descent work left after 0.9.4 (Earth capsules, Moon cruise events, models,
+missing descents), separate from the tech-debt list above.
+
 The three items found on 2026-11-01 (stale offline-manifest version, `/fly` trajectory 404s, no
 alert when docker-e2e skips its image publish) shipped fixed in 0.9.3.
 

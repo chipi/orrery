@@ -211,15 +211,16 @@ This survey read the code and data. It did NOT check, and the gaps above are not
 until these are done:
 
 - **Profile numbers vs sources:** Mars (§8), the Moon (§9), Venus, Titan, Jupiter and the
-  small bodies (§10) are done. The 31 Earth capsules are not.
-- **Browser behaviour:** no descent, flyby or orbit-insertion beat was flown in the browser.
+  small bodies (§10) are done. The 32 Earth capsules are not (the 0.9.5 handover,
+  `2026-11-03-0.9.5-fly-handover.md`, carries them).
+- **Browser behaviour:** one descent per archetype mounts in `fly-descent.spec.ts`, and Apollo 11,
+  Venera 13, Huygens and Galileo were flown in the browser; flyby beats were not.
 - **Event timing:** cruise event times (TCMs, flybys, arrival dates) were not checked against
-  mission records. One is known wrong: Clementine's TLI sits at MET 0.5 d, the real one was
-  ~9 days.
+  mission records. Clementine's TLI moved from day 0.5 to day 9 (2026-11-03); its TCM days are
+  still unsourced.
 - **Model accuracy:** shape, scale and sequence (aeroshell, chute count, airbag bounce, skycrane
   cable length) of the existing dedicated stacks, against photos and mission reports.
-- **Arrival fields vs profiles:** the 37 lander missions' `flight.arrival` fields were not
-  compared with their profiles (item 6).
+- **Arrival fields vs profiles:** done — derived from the profiles, with a drift test (item 6).
 - **Earth capsule fidelity:** the 31 capsule re-entries (apo/peri, landing points, recovery
   ships) are flagged approximate in `docs/wip/2026-07-19-tier1-earth-orbit-reentry.md`; not
   re-checked.

@@ -513,8 +513,8 @@
       : null,
   );
   // Touchdown → hand off to the destination body's SurfaceScene, closing the
-  // flight circle (RFC-034 §9). Moon/Mars have surface routes; Venus has none,
-  // so its touchdown simply rests on the landed frame.
+  // flight circle (RFC-034 §9). Moon, Mars and Venus have surface routes; Titan,
+  // Jupiter and the small bodies have none, so their touchdown rests on the landed frame.
   function handleTouchdown() {
     const b = descentProfile?.body;
     const sid = descentProfile?.siteId;

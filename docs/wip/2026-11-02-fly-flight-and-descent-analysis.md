@@ -87,6 +87,9 @@ open question: Curiosity's entry-to-touchdown is widely quoted as about seven mi
 - `docs/rfc/RFC-034.md` still says Cassini/Huygens and NEAR are not shipped (both are).
 - TA.md says Venus hands off to /venus; RFC-034 §12 says there is no Venus surface handoff.
   One of them is wrong.
+- **Done 2026-11-03:** the code hands Venus off to `/venus` (`handleTouchdown`), so RFC-034
+  was stale; dated update notes added to RFC-034 §12 and the Phase-2 list, TA.md's
+  "Titan/Eros pending" corrected, and the stale comment in `+page.svelte` fixed.
 - The `?debug=1` Page tab has an Earth re-entry block but nothing for planetary EDL.
 - e2e covers the Apollo 11 and Curiosity descents only.
 

@@ -89593,6 +89593,384 @@
    "nasa_id": null,
    "fetched_at": "2026-10-22T21:15:54.055Z",
    "instrument": "NAIP"
+  },
+  {
+   "id": "d71d2c4708f1d268",
+   "path": "/images/small-bodies/ryugu/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Asteroid Ryugu (ann19006a).jpg",
+   "author": "JAXA, University of Tokyo &amp; collaborators",
+   "agency": "JAXA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Asteroid_Ryugu_(ann19006a).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Asteroid_Ryugu_%28ann19006a%29.jpg",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 136296625,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:20.920Z"
+  },
+  {
+   "id": "5eaf6e821c69e369",
+   "path": "/images/small-bodies/ryugu/01.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:Asteroid Ryugu (ann19006a).jpg",
+   "author": "JAXA, University of Tokyo &amp; collaborators",
+   "agency": "JAXA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Asteroid_Ryugu_(ann19006a).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Asteroid_Ryugu_%28ann19006a%29.jpg",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "centre-crop-1x1"
+   ],
+   "revid": null,
+   "pageid": 136296625,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:20.920Z"
+  },
+  {
+   "id": "322f23627a97c656",
+   "path": "/images/small-bodies/ryugu/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Images of asteroid Ryugu from the wide angle Optical Navigation Cameras (ONC-W1 and ONC-W2) via Hayabusa2.jpg",
+   "author": "JAXA, Chiba Institute of Technology, University of Tokyo, Kochi University, Rikkyo University, Nagoya University, Meiji University, University of Aizu, AIST",
+   "agency": "JAXA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Images_of_asteroid_Ryugu_from_the_wide_angle_Optical_Navigation_Cameras_(ONC-W1_and_ONC-W2)_via_Hayabusa2.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Images_of_asteroid_Ryugu_from_the_wide_angle_Optical_Navigation_Cameras_%28ONC-W1_and_ONC-W2%29_via_Hayabusa2.jpg",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 99388321,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:22.149Z"
+  },
+  {
+   "id": "c129ee51c574fbcd",
+   "path": "/images/small-bodies/ryugu/02.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:Images of asteroid Ryugu from the wide angle Optical Navigation Cameras (ONC-W1 and ONC-W2) via Hayabusa2.jpg",
+   "author": "JAXA, Chiba Institute of Technology, University of Tokyo, Kochi University, Rikkyo University, Nagoya University, Meiji University, University of Aizu, AIST",
+   "agency": "JAXA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Images_of_asteroid_Ryugu_from_the_wide_angle_Optical_Navigation_Cameras_(ONC-W1_and_ONC-W2)_via_Hayabusa2.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Images_of_asteroid_Ryugu_from_the_wide_angle_Optical_Navigation_Cameras_%28ONC-W1_and_ONC-W2%29_via_Hayabusa2.jpg",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "centre-crop-1x1"
+   ],
+   "revid": null,
+   "pageid": 99388321,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:22.150Z"
+  },
+  {
+   "id": "5c3ba55613877dad",
+   "path": "/images/small-bodies/eros/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Eros - PIA02923.jpg",
+   "author": "NASA/JPL/JHUAPL",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Eros_-_PIA02923.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Eros_-_PIA02923.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 5287461,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:23.380Z"
+  },
+  {
+   "id": "fdb4b0098199c551",
+   "path": "/images/small-bodies/eros/01.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:Eros - PIA02923.jpg",
+   "author": "NASA/JPL/JHUAPL",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Eros_-_PIA02923.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Eros_-_PIA02923.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "centre-crop-1x1"
+   ],
+   "revid": null,
+   "pageid": 5287461,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:23.380Z"
+  },
+  {
+   "id": "370ca973d9d78183",
+   "path": "/images/small-bodies/eros/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:The South Saddle NEAR Shoemaker Eros.jpg",
+   "author": "NEAR Shoemaker",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:The_South_Saddle_NEAR_Shoemaker_Eros.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/The_South_Saddle_NEAR_Shoemaker_Eros.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 43132682,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:24.642Z"
+  },
+  {
+   "id": "cfa9c49d68ee3a46",
+   "path": "/images/small-bodies/eros/02.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:The South Saddle NEAR Shoemaker Eros.jpg",
+   "author": "NEAR Shoemaker",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:The_South_Saddle_NEAR_Shoemaker_Eros.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/The_South_Saddle_NEAR_Shoemaker_Eros.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "centre-crop-1x1"
+   ],
+   "revid": null,
+   "pageid": 43132682,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:24.642Z"
+  },
+  {
+   "id": "f6a382127bff8343",
+   "path": "/images/small-bodies/itokawa/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Asteroid (25143) Itokawa seen in close-up (eso1405b).jpg",
+   "author": "JAXA",
+   "agency": "JAXA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Asteroid_(25143)_Itokawa_seen_in_close-up_(eso1405b).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Asteroid_%2825143%29_Itokawa_seen_in_close-up_%28eso1405b%29.jpg",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 170826252,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:25.883Z"
+  },
+  {
+   "id": "631eafad31a1c6f8",
+   "path": "/images/small-bodies/itokawa/01.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:Asteroid (25143) Itokawa seen in close-up (eso1405b).jpg",
+   "author": "JAXA",
+   "agency": "JAXA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Asteroid_(25143)_Itokawa_seen_in_close-up_(eso1405b).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Asteroid_%2825143%29_Itokawa_seen_in_close-up_%28eso1405b%29.jpg",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "centre-crop-1x1"
+   ],
+   "revid": null,
+   "pageid": 170826252,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:25.883Z"
+  },
+  {
+   "id": "4d008830c8883ab7",
+   "path": "/images/small-bodies/itokawa/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Asteroid (25143) Itokawa seen in close-up (eso1405c).jpg",
+   "author": "JAXA",
+   "agency": "JAXA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Asteroid_(25143)_Itokawa_seen_in_close-up_(eso1405c).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Asteroid_%2825143%29_Itokawa_seen_in_close-up_%28eso1405c%29.jpg",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 170826264,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:27.125Z"
+  },
+  {
+   "id": "4fb302dd8ddb8019",
+   "path": "/images/small-bodies/itokawa/02.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:Asteroid (25143) Itokawa seen in close-up (eso1405c).jpg",
+   "author": "JAXA",
+   "agency": "JAXA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Asteroid_(25143)_Itokawa_seen_in_close-up_(eso1405c).jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Asteroid_%2825143%29_Itokawa_seen_in_close-up_%28eso1405c%29.jpg",
+   "license_short": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "license_rationale": "Creative Commons Attribution 4.0",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "centre-crop-1x1"
+   ],
+   "revid": null,
+   "pageid": 170826264,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:27.125Z"
+  },
+  {
+   "id": "c1fe402542f4d61d",
+   "path": "/images/small-bodies/bennu/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:BennuAsteroid.jpg",
+   "author": "NASA/Goddard/University of Arizona",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:BennuAsteroid.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/BennuAsteroid.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 74979917,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:28.375Z"
+  },
+  {
+   "id": "d541b1bdc874a03a",
+   "path": "/images/small-bodies/bennu/01.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:BennuAsteroid.jpg",
+   "author": "NASA/Goddard/University of Arizona",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:BennuAsteroid.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/BennuAsteroid.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "centre-crop-1x1"
+   ],
+   "revid": null,
+   "pageid": 74979917,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:28.375Z"
+  },
+  {
+   "id": "fdcba9a48196aa07",
+   "path": "/images/small-bodies/bennu/02.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Bennu mosaic OSIRIS-REx.jpg",
+   "author": "NASA/Goddard/University of Arizona",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Bennu_mosaic_OSIRIS-REx.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Bennu_mosaic_OSIRIS-REx.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 120230273,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:29.615Z"
+  },
+  {
+   "id": "94e170e5d871f6c8",
+   "path": "/images/small-bodies/bennu/02.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:Bennu mosaic OSIRIS-REx.jpg",
+   "author": "NASA/Goddard/University of Arizona",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Bennu_mosaic_OSIRIS-REx.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Bennu_mosaic_OSIRIS-REx.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "centre-crop-1x1"
+   ],
+   "revid": null,
+   "pageid": 120230273,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:29.615Z"
+  },
+  {
+   "id": "f7cc3780cf3b04fd",
+   "path": "/images/small-bodies/vesta/01.webp",
+   "source_type": "wikimedia-commons",
+   "title": "File:Vesta Full-Frame.jpg",
+   "author": "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Vesta_Full-Frame.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Vesta_Full-Frame.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "reencoded-webp"
+   ],
+   "revid": null,
+   "pageid": 15970492,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:30.863Z"
+  },
+  {
+   "id": "6cc7f62573911979",
+   "path": "/images/small-bodies/vesta/01.1x1.jpg",
+   "source_type": "wikimedia-commons",
+   "title": "File:Vesta Full-Frame.jpg",
+   "author": "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA",
+   "agency": "NASA",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Vesta_Full-Frame.jpg",
+   "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Vesta_Full-Frame.jpg",
+   "license_short": "PD-NASA",
+   "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+   "license_rationale": "Public domain",
+   "modifications": [
+    "downloaded-via-special-filepath",
+    "centre-crop-1x1"
+   ],
+   "revid": null,
+   "pageid": 15970492,
+   "nasa_id": null,
+   "fetched_at": "2026-11-03T20:17:30.863Z"
   }
  ]
 }

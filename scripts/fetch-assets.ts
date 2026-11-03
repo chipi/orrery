@@ -2510,6 +2510,39 @@ export const SMALL_BODY_QUERIES: GalleryQuery[] = [
     wikimediaFallback: 'Comet 67P on 19 September 2014 NavCam mosaic.jpg',
     wikimediaGallery: ['Philae_touchdown.jpg'],
   },
+  // Visited asteroids (0.9.5): mission imagery, public domain (NASA) or CC BY 4.0 (JAXA).
+  {
+    id: 'ryugu',
+    query: 'hayabusa2 asteroid ryugu',
+    commonsHeroFirst: 'Asteroid Ryugu (ann19006a).jpg',
+    wikimediaGallery: [
+      'Images of asteroid Ryugu from the wide angle Optical Navigation Cameras (ONC-W1 and ONC-W2) via Hayabusa2.jpg',
+    ],
+  },
+  {
+    id: 'eros',
+    query: 'near shoemaker asteroid eros',
+    commonsHeroFirst: 'Eros - PIA02923.jpg',
+    wikimediaGallery: ['The South Saddle NEAR Shoemaker Eros.jpg'],
+  },
+  {
+    id: 'itokawa',
+    query: 'hayabusa asteroid itokawa',
+    commonsHeroFirst: 'Asteroid (25143) Itokawa seen in close-up (eso1405b).jpg',
+    wikimediaGallery: ['Asteroid (25143) Itokawa seen in close-up (eso1405c).jpg'],
+  },
+  {
+    id: 'bennu',
+    query: 'osiris-rex asteroid bennu mosaic',
+    commonsHeroFirst: 'BennuAsteroid.jpg',
+    wikimediaGallery: ['Bennu mosaic OSIRIS-REx.jpg'],
+  },
+  {
+    id: 'vesta',
+    query: 'dawn spacecraft asteroid vesta',
+    commonsHeroFirst: 'Vesta Full-Frame.jpg',
+    wikimediaGallery: ['Vesta full mosaic.jpg'],
+  },
   {
     id: 'oumuamua',
     query: 'oumuamua interstellar object hubble',
@@ -2645,6 +2678,13 @@ async function fetchPanelGallery(
     }
   }
 
+  // Staged fetches leave the counts alone, as the mission galleries do: the images are in
+  // _staging until promoted (/dev/staging updates the counts), and a filtered run (--only)
+  // would otherwise rewrite the manifest with just its own entries.
+  if (STAGE_FETCH) {
+    console.log(`  (staged: ${label} counts unchanged — promote in /dev/staging)`);
+    return totalPhotos;
+  }
   // Write manifest. Singleton shape → `{count: N}`; count-map → sorted `{id: count}`.
   if (manifestShape === 'singleton') {
     const id = queries[0]?.id ?? 'sun';
@@ -4091,9 +4131,12 @@ async function main() {
 
   if (process.argv.includes('--small-bodies-only')) {
     console.log('Small-body galleries only — skipping fonts/textures/missions/etc.\n');
+    // --only=ryugu,eros: just those bodies (the rest are already on disk).
+    const only = process.argv.find((a) => a.startsWith('--only='))?.slice('--only='.length);
+    const ids = only ? new Set(only.split(',')) : null;
     await fetchPanelGallery(
       'small-bodies',
-      SMALL_BODY_QUERIES,
+      ids ? SMALL_BODY_QUERIES.filter((q) => ids.has(q.id)) : SMALL_BODY_QUERIES,
       'static/images/small-bodies',
       'static/data/small-body-galleries.json',
       'count-map',

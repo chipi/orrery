@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { categoriseMarsMarker, type MarsMarkerCategory } from './mars-marker-category';
+import { buildTianwenZhurongHotspot } from './hotspot-models/tianwen-zhurong';
 
 /**
  * Per-mission 3D model builders for surface markers on /mars. Mirrors
@@ -521,6 +522,8 @@ const BUILDERS: Record<string, (color: string) => THREE.Group> = {
   // ESA / UK ghosts.
   beagle2: buildBeagle2,
   schiaparelli: buildSchiaparelli,
+  // Tianwen-1's lander with Zhurong on top (the /mars hotspot model).
+  zhurong: buildTianwenZhurongHotspot,
 };
 
 const CATEGORY_FALLBACKS: Record<MarsMarkerCategory, (color: string) => THREE.Group> = {

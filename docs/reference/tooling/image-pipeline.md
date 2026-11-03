@@ -106,6 +106,17 @@ disk paths + the validate-data lockstep is in
 
 ---
 
+### Adding a few gallery images (the 2026-11-03 small-body pass)
+
+With `masters/` not smudged, never full-rebuild. Per entity:
+`npx tsx scripts/fetch-assets.ts --small-bodies-only --only=<ids>` (staged; leaves the counts) →
+review → promote via `/dev/staging` (or its API) → `node scripts/hotspots/regenerate-tier3-variants.mjs
+static/images/<rel>/NN.jpg` (centred `.1x1`, no vision cost) → move each `NN.jpg` to
+`masters/<rel>/` (LFS) → `node scripts/vision/build-display-ladder.mjs --only <rel>` (merges; then
+re-indent `image-ladder.json` to the committed 2-space form) → provenance rows surgically through
+`buildWikimediaEntry` (exported by `build-image-provenance.ts`) → `npm run build-cards -- <ids>`
+→ `npm run validate-data`. Unwanted fetches stay in `_staging/` (git-ignored); nothing is pruned.
+
 ## Display ladder (WebP) — RFC-030 / ADR-080
 
 Served display images are WebP, derived from the git-LFS `masters/` store — smudge first: `git lfs pull -I 'masters/**'`. Never hand-place a display `.jpg` under `static/images/`; a source `.jpg` goes to `masters/<rel>/`, the served tree gets `.webp`. Full detail: [`scripts/vision/README.md`](../../../scripts/vision/README.md).

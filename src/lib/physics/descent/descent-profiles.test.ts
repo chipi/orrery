@@ -73,9 +73,9 @@ const PEAK_G_BAND: Record<string, [number, number]> = {
   // Voskhod) read ~7.6–7.7 g — matching flown ~7.8 g. LIFTING capsules read ~4.2–5.6 g (flown guided
   // 3.3–4 g) — the ~1–1.5 g residual is a fixed-bank vs active-bank-modulation gap, NOT the γ-floor
   // (measured irrelevant at LEO energy) and NOT closed by the naive decel-hold controller (measured:
-  // overshoots). Suborbital Mercury-Redstone (freedom-7/liberty-bell-7, 18°/2.3 km/s) read ~8.7 g vs
-  // flown ~11 g — an unclosed gap (their 18° + drag are model estimates). Band [3, 9.5] brackets all.
-  earth: [3, 9.5],
+  // overshoots). Suborbital Mercury-Redstone (freedom-7/liberty-bell-7) fly their sourced 11.0 /
+  // 11.1 g since the 2026-11-03 fit (scripts/fit-earth-capsule.ts). Band [3, 11.5] brackets all.
+  earth: [3, 11.5],
   // Phase 2 (RFC-034 §12): micro-g asteroids barely decelerate; the Galileo
   // Jupiter probe hits the fiercest entry of any probe (~200–260 g published).
   itokawa: [0, 2],

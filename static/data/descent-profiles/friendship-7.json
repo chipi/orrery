@@ -9,16 +9,22 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 7800,
-    "flightPathAngleDeg": 1.5
+    "flightPathAngleDeg": 1.46
   },
   "entryMassKg": 1350,
   "entryCdA": 3,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 6400,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 90,
-    "terminalCdA": 300
+    "chuteDeployAltM": 9100,
+    "terminalHandoffAltM": 3050,
+    "parachuteCdA": 3.9,
+    "terminalCdA": 294
   },
   "source_tier": "flagship",
   "provenance": [
@@ -29,6 +35,10 @@
     {
       "l": "Mercury-Atlas 6 (Friendship 7) — NASA",
       "u": "https://www.nasa.gov/mission/mercury-atlas-6-friendship-7/"
+    },
+    {
+      "l": "MA-6 report (TM-10605): 7.7 g, drogue at ~30,000 ft 04:49:17, main 04:50:11 (planned 10,000 ft), landing 04:55:23",
+      "u": "https://ntrs.nasa.gov/api/citations/19930074071/downloads/19930074071.pdf"
     }
   ]
 }

@@ -9,22 +9,32 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 2300,
-    "flightPathAngleDeg": 18
+    "flightPathAngleDeg": 34.18
   },
   "entryMassKg": 1350,
   "entryCdA": 3,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 5000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 90,
-    "terminalCdA": 338
+    "chuteDeployAltM": 6400,
+    "terminalHandoffAltM": 3050,
+    "parachuteCdA": 5.3,
+    "terminalCdA": 280
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "freedom-7 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "MR-3 flight description: 11.0 g at T+8:20, drogue 21,000 ft at T+9:38, main 10,000 ft at T+10:15, splashdown T+15:22 at ~30 ft/s",
+      "u": "https://ntrs.nasa.gov/api/citations/19720065957/downloads/19720065957.pdf"
     }
   ]
 }

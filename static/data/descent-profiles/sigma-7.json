@@ -9,22 +9,32 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 7820,
-    "flightPathAngleDeg": 1.5
+    "flightPathAngleDeg": 1.38
   },
   "entryMassKg": 1350,
   "entryCdA": 3,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
-    "chuteDeployAltM": 7000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 90,
-    "terminalCdA": 338
+    "chuteDeployAltM": 12000,
+    "terminalHandoffAltM": 3230,
+    "parachuteCdA": 5.1,
+    "terminalCdA": 239
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "sigma-7 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "MA-8 report: 7.6 g, drogue 39,400 ft 09:06:50, main 10,600 ft 09:08:12, landing 09:13:11",
+      "u": "https://ntrs.nasa.gov/api/citations/19630002114/downloads/19630002114.pdf"
     }
   ]
 }

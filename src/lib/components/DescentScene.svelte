@@ -143,12 +143,7 @@
           ],
         ] as [string, string][])
       : []),
-    // Earth re-entry shows the nominal ~14 min entry→splashdown, not the 1-DOF
-    // model's inflated path time (RFC-034 §13).
-    [
-      m.hud_descent(),
-      m.unit_s_value({ value: Math.round(profile.body === 'earth' ? 840 : duration) }),
-    ],
+    [m.hud_descent(), m.unit_s_value({ value: Math.round(duration) })],
   ]);
 
   let container: HTMLDivElement;
@@ -197,16 +192,10 @@
   const unwarpDescentTime = (trajT: number): number =>
     unwarpTime(trajT, duration, terminalStartT, ENTRY_TIMELINE_FRAC);
 
-  // The 1-DOF shallow-corridor model yields an unphysically long path (~100 min);
-  // a real capsule entry-interface → splashdown is ~14 min. For Earth we display a
-  // clock scaled to that nominal so the E+ readout is realistic (the underlying
-  // physics — peak-g, sequence, outcome — is unchanged). RFC-034 §13.
-  const NOMINAL_EARTH_REENTRY_S = 840;
-  const clockT = $derived(
-    isEarthReentry && duration > 0
-      ? warpDescentTime(t) * (NOMINAL_EARTH_REENTRY_S / duration)
-      : warpDescentTime(t),
-  );
+  // The E+ clock is real seconds since the entry interface. (Earth re-entries used to be
+  // scaled to a fixed 840 s because the model's path ran ~100 min; the profiles now fly their
+  // sourced timelines — 8 min for Freedom 7, 31 min for Apollo 8's skip — so no scaling.)
+  const clockT = $derived(warpDescentTime(t));
 
   // Begin the touchdown flash. The real handoff (onComplete) fires when it ends.
   const complete = () => {

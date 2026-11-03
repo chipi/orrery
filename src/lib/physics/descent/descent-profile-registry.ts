@@ -418,7 +418,7 @@ const ARCHETYPE_SURVIVABLE: Record<ArchetypeName, number> = {
   COMET_HARPOON: 5, // Philae touched at ~1 m/s and survived the bounces
   TITAN_PARACHUTE: 8, // Huygens hit ~4.5 m/s
   JUPITER_PROBE: 60, // no touchdown — high limit so the crush isn't flagged a crash
-  EARTH_CAPSULE_REENTRY: 10, // splash/ground at ~7 m/s; a fouled main busts this → crash
+  EARTH_CAPSULE_REENTRY: 12, // splash/ground at ~8–11 m/s (Aurora 7's sourced timeline: 10.4); a fouled main (Soyuz 1, ~40) busts this → crash
 };
 
 // ─── Thin JSON shape + expansion ────────────────────────────────────

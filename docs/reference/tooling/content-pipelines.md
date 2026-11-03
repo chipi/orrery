@@ -303,3 +303,22 @@ as standing repair tools — don't move them to `_archive/`.
 *See also: [README.md](README.md) (tooling index) · [data-validation.md](data-validation.md) ·
 [image-pipeline.md](image-pipeline.md) · [ADR-051](../../adr/ADR-051.md) ·
 [ADR-069](../../adr/ADR-069.md) · [TA.md §pipelines](../../adr/TA.md#pipelines).*
+
+## Descent profiles — measure and fit (`scripts/descent-report.ts`, `descent-trace.ts`, `fit-earth-capsule.ts`)
+
+**Command** —
+- `npx tsx scripts/descent-report.ts [--body earth] [ids…] [--json]` — what the model flies per
+  profile: duration from entry interface, peak g, every beat's time and altitude, touchdown speed.
+- `npx tsx scripts/descent-trace.ts <id> [stepS]` — one profile's trajectory every N s, with the
+  peak g of each phase (tells an entry pulse from a chute-opening spike).
+- `npx tsx scripts/fit-earth-capsule.ts <targets.json> [--write] [--only a,b]` — fit an
+  `EARTH_CAPSULE_REENTRY` profile to a sourced timeline: sourced values (chute altitudes, entry
+  state) are set; only estimates are searched — entry angle vs peak g (or guidance downrange vs
+  entry→drogue time), drogue Cd·A vs drogue→main, main Cd·A vs main→touchdown (or vs the
+  touchdown speed, with the main altitude fitted to the interval when it is not sourced) — and
+  each searched field is added to `estimatedFields`. Targets carry `provenance` entries that are
+  merged into the profile.
+**When** — Checking or refitting a descent against mission reports (the 0.9.4/0.9.5 method:
+research JSON with sources → fit estimates → `npx tsx scripts/backfill-descent-arrival.ts` →
+`npx vitest run src/lib/physics/descent`).
+**State** — healthy (2026-11-03).

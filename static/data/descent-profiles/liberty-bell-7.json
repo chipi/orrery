@@ -9,22 +9,33 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 2300,
-    "flightPathAngleDeg": 18
+    "flightPathAngleDeg": 34.85
   },
   "entryMassKg": 1350,
   "entryCdA": 3,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA",
+    "terminalHandoffAltM"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 5000,
-    "terminalHandoffAltM": 3000,
-    "parachuteCdA": 90,
-    "terminalCdA": 338
+    "terminalHandoffAltM": 3553,
+    "parachuteCdA": 24.7,
+    "terminalCdA": 225
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "liberty-bell-7 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "MR-4 report: 11.1 g, drogue T+9:41, main T+10:13, splashdown T+15:37 at 30-32 ft/s",
+      "u": "https://ntrs.nasa.gov/api/citations/19640056774/downloads/19640056774.pdf"
     }
   ]
 }

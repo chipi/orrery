@@ -74,7 +74,7 @@
         "description": "Sriharikota, India, 2013-11-05. Mangalyaan (Mars Orbiter Mission, MOM) — ISRO's first interplanetary mission, launched on a Polar Satellite Launch Vehicle that lacked the energy for a direct Mars transfer. Solution: launch into Earth orbit and use 6 successive perigee burns to raise apogee until a final TMI burn could be done from a highly-elliptical Earth orbit."
       },
       {
-        "met_days": 30,
+        "met_days": 25.43,
         "type": "tli_or_tmi",
         "label": "Trans-Mars injection — final perigee burn",
         "description": "2013-12-01. The 6th perigee burn — a 23-minute manoeuvre at 600 km altitude — finally sent Mangalyaan onto a heliocentric Mars-transfer trajectory after 25 days of Earth-orbit raising. Total mission cost was just $74M, the lowest-cost interplanetary mission in history."
@@ -167,10 +167,10 @@
           0.715237
         ],
         [
-          24.0549,
-          0.360981,
+          25.43,
+          0.34377,
           0,
-          0.711608
+          0.709668
         ],
         [
           27.4913,
@@ -179,7 +179,7 @@
           0.706759
         ],
         [
-          30,
+          30.9278,
           0.287268,
           0,
           0.702704
@@ -216,9 +216,9 @@
         ],
         [
           50,
-          0.075455,
+          0.083602,
           0,
-          0.649742
+          0.652477
         ],
         [
           54.9827,
@@ -294,9 +294,9 @@
         ],
         [
           97.62,
-          -0.262942,
+          -0.267227,
           0,
-          0.445439
+          0.441272
         ],
         [
           99.6561,
@@ -390,9 +390,9 @@
         ],
         [
           150,
-          -0.458273,
+          -0.456405,
           0,
-          0.153603
+          0.158406
         ],
         [
           154.6388,
@@ -564,9 +564,9 @@
         ],
         [
           250,
-          -0.372446,
+          -0.376057,
           0,
-          -0.634638
+          -0.628159
         ],
         [
           254.2948,
@@ -618,81 +618,81 @@
         ],
         [
           281.7862,
-          -0.095306,
+          -0.095307,
           0,
           -0.974694
         ],
         [
           285.2226,
-          -0.051294,
+          -0.051295,
           0,
           -1.012479
         ],
         [
           288.659,
-          -0.004752,
+          -0.004753,
           0,
           -1.050121
         ],
         [
           292.0954,
-          0.046769,
+          0.046768,
           0,
           -1.087116
         ],
         [
           295.5318,
-          0.101303,
+          0.101302,
           0,
           -1.123453
         ],
         [
           298.9683,
-          0.158717,
+          0.158716,
           0,
           -1.159112
         ],
         [
           302.4047,
-          0.221345,
+          0.221344,
           0,
           -1.193091
         ],
         [
           305.8411,
-          0.28752,
+          0.287519,
           0,
           -1.225483
         ],
         [
           309.2775,
-          0.356769,
+          0.356768,
           0,
           -1.256378
         ],
         [
           312.7139,
-          0.431073,
+          0.431072,
           0,
           -1.284221
         ],
         [
           316.1503,
-          0.509131,
+          0.50913,
           0,
           -1.309021
         ],
         [
           319.5868,
-          0.590095,
+          0.590094,
           0,
           -1.331173
         ],
         [
           324.005,
-          0.699594,
+          0.701343,
           0,
-          -1.353553
+          -1.352644
         ],
         [
           326.4596,

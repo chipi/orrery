@@ -2310,6 +2310,13 @@
       // shares its browser with another agent that would otherwise race
       // pause/click events. Whatever the scene composes here is also what
       // the user sees, minus the input animations.
+      // Launch-phase seek for automated checks: ascent MET in seconds (negative = countdown),
+      // paused there, so a check can look at staging beats without racing the clock.
+      window.__flyLaunchT = (t: number) => {
+        if (!Number.isFinite(t)) return;
+        launchT = t;
+        isPlaying = false;
+      };
       window.__flySetSimDay = (met: number) => {
         if (!Number.isFinite(met) || met < 0) return;
         simDay = mission.timeline.dep_day + met;

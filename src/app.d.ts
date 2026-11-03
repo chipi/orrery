@@ -75,6 +75,7 @@ declare global {
     __flyMissionId?: () => string | null;
     __flyJumpToMet?: (met: number) => void;
     __flySetSimDay?: (met: number) => void;
+    __flyLaunchT?: (t: number) => void;
     __flyMontage?: (on: boolean) => void;
     __flyCislunarDebug?: () => unknown;
     __flyReentryDebug?: () => unknown;

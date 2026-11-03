@@ -999,6 +999,16 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // A fourth serial part (Proton-M's third stage under Briz-M) drops at the third core staging.
   const lastCoreStageSepT = coreStagingTimes[2] ?? secoT;
   const BOOSTER_SEP_S = 5;
+  // A stage dropped near orbital speed (SLS's core at T+8 min, any drop past ~4 min) leaves on
+  // springs at ~1 m/s: it slides back slowly (0.6 lengths in 60 s) and stays in frame. The 5 s / 3-length drift
+  // above made Artemis II's core vanish between two frames.
+  const VACUUM_SEP_AFTER_S = 240;
+  const VACUUM_SEP_S = 60;
+  /** Progress, and drift length in vehicle lengths, of a serial stage dropped at `sepT`. */
+  const stageDrop = (t: number, sepT: number | null | undefined): [number, number] =>
+    sepT != null && sepT > VACUUM_SEP_AFTER_S
+      ? [sepProgress(t, sepT, VACUUM_SEP_S), 0.6]
+      : [sepProgress(t, sepT ?? undefined, BOOSTER_SEP_S), 3];
   // Fairing clamshell drifts slowly (item 4) so the halves linger in frame while
   // the payload is revealed — a held beat, not a snap-away.
   const FAIRING_SEP_S = 6.5;
@@ -1072,9 +1082,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // ── Separations — every offset is a pure function of the mission time vs
     //    the event METs, so scrubbing the timeline back and forth is exact.
     // Booster: drifts back down the body axis, tumbles, recedes away.
-    const bp = sepProgress(s.t, stagingT, BOOSTER_SEP_S);
+    const [bp, bLen] = stageDrop(s.t, stagingT);
     booster.visible = bp < 1;
-    booster.position.y = -bp * vehLen * 3;
+    booster.position.y = -bp * vehLen * bLen;
     booster.rotation.set(bp * 2.4, 0, bp * 1.2);
     // Only a gentle shrink (item 4) — the drift-away already recedes it via
     // perspective; keep it big enough to read as a distinct spent stage.
@@ -1084,17 +1094,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     // core staging — after the booster is gone and its own burn is spent, before
     // the final upper stage. Same drift as the booster, from a higher sep plane.
     if (midStageGroup) {
-      const mp = sepProgress(s.t, midStageSepT, BOOSTER_SEP_S);
+      const [mp, mLen] = stageDrop(s.t, midStageSepT);
       midStageGroup.visible = mp < 1;
-      midStageGroup.position.y = -mp * vehLen * 3;
+      midStageGroup.position.y = -mp * vehLen * mLen;
       midStageGroup.rotation.set(mp * 2.4, 0, mp * 1.2);
       midStageGroup.scale.setScalar(1 - 0.18 * mp);
     }
     // A fourth serial part (Proton-M's third stage under Briz-M) drops the same way.
     if (model.lastCoreStage && lastCoreStageSepT != null) {
-      const sp = sepProgress(s.t, lastCoreStageSepT, BOOSTER_SEP_S);
+      const [sp, sLen] = stageDrop(s.t, lastCoreStageSepT);
       model.lastCoreStage.visible = sp < 1;
-      model.lastCoreStage.position.y = -sp * vehLen * 3;
+      model.lastCoreStage.position.y = -sp * vehLen * sLen;
       model.lastCoreStage.rotation.set(sp * 2.4, 0, sp * 1.2);
       model.lastCoreStage.scale.setScalar(1 - 0.18 * sp);
     }

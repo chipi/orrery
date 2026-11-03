@@ -52,6 +52,7 @@ export const FLY_TRAJECTORY_IDS = [
   'hayabusa1',
   'europa-clipper',
   'psyche-mission',
+  'mariner10',
 ] as const;
 const FLY_TRAJECTORY_ID_SET: ReadonlySet<string> = new Set(FLY_TRAJECTORY_IDS);
 const FLY_TRAJECTORY_ALIAS: Record<string, string> = { huygens: 'cassini' };

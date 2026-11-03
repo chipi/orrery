@@ -118,6 +118,7 @@
     isCinematicCutJump,
     isOrbitInsertionBeatActive,
     isOrbitInsertionFiring,
+    orbitInsertionStage,
     jumpToMet as jumpToMetImpl,
     launchSeparationTimes,
     masterScrubFraction,
@@ -184,6 +185,7 @@
   import { T_MINUS_S, INJECTION_BEAT_S, payloadSepTFor } from '$lib/orbital/ascent-hud';
   import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
   import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
+  import { orbitInsertionBurn } from '$lib/physics/transfer/orbit-insertion-burns';
   import PhasePanel from '$lib/components/PhasePanel.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
@@ -1566,6 +1568,10 @@
   let oiFiring = $derived(
     !!orbitInsertion && isOrbitInsertionFiring({ simDay, arrDay: arcTimeline.arr_day }),
   );
+  /** Approach → capture burn → on orbit. */
+  let oiStage = $derived(orbitInsertionStage({ simDay, arrDay: arcTimeline.arr_day }));
+  /** The engine that fired the capture burn, when sourced (null: callout only). */
+  let oiBurn = $derived(orbitInsertion ? orbitInsertionBurn(mission.id) : null);
 
   // The descent act (RFC-034 §9): integrate the EDL profile and give it the
   // scrubber TAIL. 0 duration / fraction when the mission doesn't land — the
@@ -2942,6 +2948,9 @@
       get hasPhaseMarkers() {
         return hasPhaseMarkers;
       },
+      get oiBurningKind() {
+        return oiFiring && oiBurn ? oiBurn.kind : null;
+      },
       get cruiseHoldTriggerSimDay() {
         return cruiseHoldTriggerSimDay;
       },
@@ -3134,7 +3143,13 @@
     <div class="oi-tag">{orbitInsertion.tag}</div>
     <div class="oi-label">{hudLabel(orbitInsertion.label)}</div>
     <div class="oi-status">
-      {oiFiring ? m.hud_capture_burn() : m.hud_approach()}{orbitInsertion.dvKms != null
+      {oiStage === 'burn'
+        ? m.hud_capture_burn()
+        : oiStage === 'captured'
+          ? m.hud_on_orbit()
+          : m.hud_approach()}{oiBurn ? ` · ${oiBurn.engine}` : ''}{oiBurn?.durationS != null
+        ? ` · ${m.earth_period_min({ value: Math.round(oiBurn.durationS / 60) })}`
+        : ''}{orbitInsertion.dvKms != null
         ? ` · Δv ${m.mp_flight_unit_kms({ value: orbitInsertion.dvKms.toFixed(2) })}`
         : ''}<ScienceChip
         tab="mission-phases"

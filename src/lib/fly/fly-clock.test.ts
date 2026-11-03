@@ -7,6 +7,7 @@ import {
   isCinematicCutJump,
   isOrbitInsertionBeatActive,
   isOrbitInsertionFiring,
+  orbitInsertionStage,
   jumpToMet,
   launchSeparationTimes,
   masterScrubFraction,
@@ -31,12 +32,19 @@ describe('orbit-insertion beat', () => {
     expect(isOrbitInsertionBeatActive({ ...base, showLaunch: true, simDay: 100 })).toBe(false);
     expect(isOrbitInsertionBeatActive({ ...base, showDescent: true, simDay: 100 })).toBe(false);
   });
-  it('fires over the last half window into arrival, until half a day after', () => {
+  it('fires over the last half window into arrival and stops at capture', () => {
     const at = (simDay: number) => isOrbitInsertionFiring({ simDay, arrDay: 100 });
     expect(at(100 - OI_WINDOW_DAYS / 2 - 0.01)).toBe(false);
     expect(at(100 - OI_WINDOW_DAYS / 2)).toBe(true);
-    expect(at(100.5)).toBe(true);
-    expect(at(100.51)).toBe(false);
+    expect(at(99.99)).toBe(true);
+    expect(at(100)).toBe(false);
+  });
+  it('stages approach → burn → captured', () => {
+    const at = (simDay: number) => orbitInsertionStage({ simDay, arrDay: 100 });
+    expect(at(96)).toBe('approach');
+    expect(at(99)).toBe('burn');
+    expect(at(100)).toBe('captured');
+    expect(at(100.8)).toBe('captured');
   });
 });
 

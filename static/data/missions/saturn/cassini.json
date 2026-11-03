@@ -65,6 +65,10 @@
     }
   ],
   "flight": {
+    "arrival": {
+      "orbit_insertion_dv_km_s": 0.626,
+      "source": "JPL — Cassini at Saturn’s doorstep (96-min SOI burn, 626 m/s)"
+    },
     "events": [
       {
         "met_days": 0,

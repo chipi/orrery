@@ -48,6 +48,17 @@ with their own engines. The app shows a callout.
 The launch pass now draws the injection burn from the stage that made it; the arrival side has
 no equivalent: no engine plume, no attitude, no burn duration.
 
+**Done 2026-11-03 (heliocentric orbiters).** `orbit-insertion-burns.ts` records the engine,
+kind and duration of 13 sourced insertion burns. The arrival shot fires a retrograde plume
+from the ship — main engine, the Star 48B solid motor (Magellan) or Akatsuki's four RCS jets —
+and the callout reads APPROACH → CAPTURE BURN · engine · minutes · Δv → ON ORBIT (the burn
+had stayed lit after capture). Cassini, Juno and MESSENGER got their sourced Δv, without which
+they had no insertion beat at all. **Not done:** the three lunar orbiters (LRO,
+Chandrayaan-1, Clementine) play in the cislunar scene, which has no plume yet; Clementine's
+burn duration is unsourced; the planned arrivals (BepiColombo, Europa Clipper, JUICE, MMX) have
+no published burn and keep the callout only. Sources sit beside each entry in
+`orbit-insertion-burns.ts`; figures from search summaries only are marked there.
+
 ### 3. Cruise beats are missing on many Moon flights
 
 Apollo 8, 10, 12, 14, 15, 16, Chang'e 1, Luna 10, Lunar Prospector and SMART-1 carry no

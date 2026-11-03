@@ -33,9 +33,19 @@ export function isOrbitInsertionBeatActive(args: {
   );
 }
 
-/** Burn firing — the last half of the window into arrival (the retro burn). */
+/** Burn firing — the last half of the window into arrival (the retro burn). The burn
+ *  ends at capture: from arrival on the spacecraft is in orbit, not still burning. */
 export function isOrbitInsertionFiring(args: { simDay: number; arrDay: number }): boolean {
-  return args.simDay >= args.arrDay - OI_WINDOW_DAYS / 2 && args.simDay <= args.arrDay + 0.5;
+  return args.simDay >= args.arrDay - OI_WINDOW_DAYS / 2 && args.simDay < args.arrDay;
+}
+
+/** Where the orbit-insertion beat stands: closing in, burning, or captured into orbit. */
+export function orbitInsertionStage(args: {
+  simDay: number;
+  arrDay: number;
+}): 'approach' | 'burn' | 'captured' {
+  if (args.simDay >= args.arrDay) return 'captured';
+  return isOrbitInsertionFiring(args) ? 'burn' : 'approach';
 }
 
 /**

@@ -35,6 +35,7 @@ import {
   spacecraftPos,
 } from '$lib/physics/transfer/mission-arc';
 import type { Vec2 } from '$lib/physics/transfer/mission-arc';
+import type { OrbitInsertionEngineKind } from '$lib/physics/transfer/orbit-insertion-burns';
 import {
   eciKmToCanvas2dPx,
   helioAuToCanvas2dPx,
@@ -150,6 +151,8 @@ export interface FlyFrameBridge {
   readonly openingActive: boolean;
   readonly hasPhaseMarkers: boolean;
   readonly cruiseHoldTriggerSimDay: number | null;
+  /** The orbit-insertion engine kind while its capture burn fires, else null. */
+  readonly oiBurningKind: OrbitInsertionEngineKind | null;
 }
 
 type FlySceneHostHandle = ReturnType<typeof createFlySceneHost>;
@@ -1384,6 +1387,48 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         // along the trajectory without the cinema-specific tilt.
         helioMission.scModel.rotation.set(0, 0, 0);
       }
+    }
+
+    // Orbit-insertion capture burn: the engine fires retrograde, so the plume exhausts
+    // along the direction of travel (the trajectory's local tangent). The arrival shot
+    // pulls the ship toward the camera in front of the planet, so the true tangent runs
+    // back into the planet and the flame hides behind it; keep its on-screen direction
+    // and drop the line-of-sight component, so the flame lies beside the ship.
+    {
+      const kind = bridge.isMoonMission ? null : bridge.oiBurningKind;
+      let dir = new THREE.Vector3();
+      if (kind) {
+        const a = spacecraftPos(
+          bridge.simDay - 0.05,
+          bridge.arcTimeline,
+          bridge.outPts,
+          bridge.retPts,
+        );
+        const b = spacecraftPos(
+          bridge.simDay + 0.05,
+          bridge.arcTimeline,
+          bridge.outPts,
+          bridge.retPts,
+        );
+        dir = new THREE.Vector3(
+          b.pos.x - a.pos.x,
+          (b.pos.y ?? 0) - (a.pos.y ?? 0),
+          b.pos.z - a.pos.z,
+        );
+        const view = new THREE.Vector3().subVectors(scSprite.position, camera.position);
+        if (view.lengthSq() > 0 && dir.lengthSq() > 0) {
+          view.normalize();
+          const onScreen = dir.clone().addScaledVector(view, -dir.dot(view));
+          if (onScreen.lengthSq() > 1e-6 * dir.lengthSq()) dir = onScreen;
+        }
+      }
+      helioMission.updateOiPlume(
+        kind,
+        scSprite.position,
+        dir,
+        helioMission.scModel?.scale.x ?? scSprite.scale.x * 0.6,
+        now / 1000,
+      );
     }
 
     // Phase-based visibility: LAUNCH + ARRIVAL anchor rings both stay

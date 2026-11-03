@@ -76,6 +76,12 @@ The 37 lander missions carry `flight.arrival.edl_system / edl_duration_s /
 touchdown_velocity_ms / entry_velocity_km_s` while the registry says the profile is the single
 source of truth. Nothing checks that the two agree.
 
+**Done 2026-11-03:** `descent-arrival.test.ts` now fails on any drift. It found 11 missions out of
+step — 8 by a rounding second, and three real ones: Curiosity 351 → 548 s, Perseverance
+351 → 516 s, Tianwen-1 645 → 487 s, all re-derived. The profiles' durations themselves are the
+open question: Curiosity's entry-to-touchdown is widely quoted as about seven minutes, so its
+548 s goes on the profile-verification list (item 2 of the order below).
+
 ### 7. Docs and debugging
 
 - `docs/rfc/RFC-034.md` still says Cassini/Huygens and NEAR are not shipped (both are).

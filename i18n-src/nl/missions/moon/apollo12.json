@@ -15,19 +15,19 @@
       "type": "warning"
     },
     {
-      "met": 0.12,
+      "met": 0.116,
       "label": "TLI",
       "note": "Trans-lunaire injectie — herstel van blikseminslagen geverifieerd; missie GO voor de Maan.",
       "type": "nominal"
     },
     {
-      "met": 3.39,
+      "met": 3.476,
       "label": "LOI",
       "note": "Maanbaaninsertie. SPS ∆v ~0,89 km/s.",
       "type": "nominal"
     },
     {
-      "met": 5.43,
+      "met": 4.607,
       "label": "LANDING",
       "note": "Intrepid landt op Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — binnen 163 m van Surveyor 3 (de meest precieze maanlanding tot nu toe).",
       "type": "nominal"
@@ -39,7 +39,7 @@
       "type": "info"
     },
     {
-      "met": 6.74,
+      "met": 5.919,
       "label": "OPSTIJGING",
       "note": "Intrepid stijgt op na 31 u 31 m op het oppervlak. 34 kg aan monsters teruggebracht.",
       "type": "nominal"
@@ -51,16 +51,33 @@
       "type": "info"
     },
     {
-      "met": 7.92,
+      "met": 7.186,
       "label": "TEI",
       "note": "Trans-aarde injectie. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 10.18,
+      "met": 10.192,
       "label": "NEERKOMEN",
       "note": "CM maakte een waterlanding in de zuidelijke Stille Oceaan 1969-11-24 20:58 UTC. Berging door USS Hornet.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.287,
+      "label": "MCC-2 — koerscorrectie",
+      "description": "Brandstap van de SPS bij GET 30:52:44 (1969-11-15 23:14 UTC), 61,8 ft/s (18,8 m/s), die Apollo 12 van de vrije-terugkeerbaan op de hybride baan zonder vrije terugkeer bracht, nodig voor de precisielanding."
+    },
+    {
+      "met": 7.852,
+      "label": "Koerscorrectie op de terugweg 1",
+      "description": "Kleine correctie bij GET 188:27:16 (1969-11-22 12:49 UTC); een tweede volgt bij GET 241:22:00."
+    },
+    {
+      "met": 10.057,
+      "label": "Koerscorrectie op de terugweg 2",
+      "description": "Laatste bijstelling van de terugkeercorridor bij GET 241:22:00 (1969-11-24 17:44 UTC), ongeveer 3 uur voor het loskoppelen van de commandomodule."
     }
   ]
 }

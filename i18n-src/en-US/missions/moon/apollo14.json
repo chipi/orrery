@@ -15,7 +15,7 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.103,
       "label": "TLI",
       "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
       "type": "nominal"
@@ -27,13 +27,13 @@
       "type": "warning"
     },
     {
-      "met": 3.82,
+      "met": 3.414,
       "label": "LOI",
       "note": "Lunar orbit insertion. SPS ∆v ~0.88 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.6,
+      "met": 4.511,
       "label": "TOUCHDOWN",
       "note": "Antares lands at Fra Mauro Highlands 1971-02-05 09:18 UTC — within 53 m of target despite an abort-program glitch in the LM computer that the team patched in real-time.",
       "type": "nominal"
@@ -51,19 +51,19 @@
       "type": "info"
     },
     {
-      "met": 5.6,
+      "met": 5.907,
       "label": "ASCENT",
       "note": "Antares lifts off after 33 h 31 m on surface. 42 kg of samples returned.",
       "type": "nominal"
     },
     {
-      "met": 6.4,
+      "met": 6.192,
       "label": "TEI",
       "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 9,
+      "met": 9.001,
       "label": "SPLASHDOWN",
       "note": "CM splashed down in South Pacific 1971-02-09 21:05 UTC. Recovery by USS New Orleans. Last Apollo quarantine.",
       "type": "nominal"

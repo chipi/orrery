@@ -15,19 +15,19 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.118,
       "label": "TLI",
       "note": "Injection trans-lunaire.",
       "type": "nominal"
     },
     {
-      "met": 3.25,
+      "met": 3.272,
       "label": "LOI",
       "note": "Insertion en orbite lunaire. SPS ∆v ≈ 0,91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.363,
       "label": "TOUCHER",
       "note": "Falcon se pose à Hadley-Apennine 1971-07-30 22:16 UTC — premier atterrissage sur un site de hautes terres, hors des mers lunaires.",
       "type": "nominal"
@@ -51,13 +51,13 @@
       "type": "info"
     },
     {
-      "met": 6.25,
+      "met": 7.151,
       "label": "ASCENSION",
       "note": "Falcon décolle après 66 h 55 m à la surface. 77 kg d'échantillons + première ascension télévisée à partir de la caméra montée sur le LRV (opérée à distance par Houston).",
       "type": "nominal"
     },
     {
-      "met": 8.2,
+      "met": 9.326,
       "label": "TEI",
       "note": "Injection trans-Terre. SPS ∆v ≈ 1,0 km/s.",
       "type": "nominal"
@@ -69,10 +69,27 @@
       "type": "info"
     },
     {
-      "met": 12.31,
+      "met": 12.3,
       "label": "AMARISSAGE",
       "note": "Le module de commande amerrit dans le Pacifique Nord, 1971-08-07 20:46 UTC. Un des trois parachutes principaux ne s'est pas entièrement déployé ; amerrissage brutal mais sans danger. Récupération par l'USS Okinawa.",
       "type": "warning"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.195,
+      "label": "Correction de trajectoire",
+      "description": "Allumage du SPS à GET 28:40:22 (1971-07-27 18:14 UTC), 0,8 s et 5,3 ft/s (1,6 m/s), servant aussi d'essai du moteur SPS."
+    },
+    {
+      "met": 3.063,
+      "label": "Correction de trajectoire",
+      "description": "Allumage du SPS à GET 73:31:15 (1971-07-29 15:05 UTC), 0,9 s et 5,4 ft/s (1,6 m/s), dernière correction translunaire avant l'insertion en orbite lunaire."
+    },
+    {
+      "met": 12.164,
+      "label": "Correction de trajectoire sur le trajet de retour",
+      "description": "Correction RCS de 22,3 secondes à GET 291:56:50 (1971-08-07 17:30 UTC), 5,6 ft/s, trois heures avant la rentrée."
     }
   ]
 }

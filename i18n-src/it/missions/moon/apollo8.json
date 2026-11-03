@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.118,
       "label": "TLI",
       "note": "Accensione per l'iniezione translunare — primo equipaggio a sfuggire alla gravità terrestre. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
-      "met": 2.79,
+      "met": 2.881,
       "label": "LOI",
       "note": "Inserimento in orbita lunare dietro la Luna, fuori contatto radio. Accensione dell'SPS di ~0,91 km/s. I primi esseri umani in orbita attorno a un altro corpo celeste.",
       "type": "nominal"
@@ -39,16 +39,33 @@
       "type": "info"
     },
     {
-      "met": 3.96,
+      "met": 3.722,
       "label": "TEI",
       "note": "Iniezione trans-terrestre dietro la Luna (1968-12-25 06:10 UTC). SPS ∆v ~1,07 km/s.",
       "type": "nominal"
     },
     {
-      "met": 6.13,
+      "met": 6.125,
       "label": "AMMARAGGIO",
       "note": "Il CM ammarò nel Pacifico settentrionale il 1968-12-27. Recupero da parte della USS Yorktown.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 0.458,
+      "label": "Correzione di traiettoria",
+      "description": "Accensione dell'SPS a GET 10:59:59 (1968-12-21 23:50 UTC), 24,8 ft/s (7,6 m/s), che abbassò il pericinzio previsto da 459 a 66,3 nmi."
+    },
+    {
+      "met": 2.542,
+      "label": "Correzione di traiettoria",
+      "description": "Ritocco con l'RCS a GET 60:59:56 (1968-12-24 01:50 UTC), 1,4 ft/s (0,4 m/s), che affinò le condizioni di inserimento in orbita lunare."
+    },
+    {
+      "met": 4.333,
+      "label": "Correzione di traiettoria sulla via del ritorno",
+      "description": "L'unica correzione sulla via del ritorno (il rapporto la chiama la terza), 4,8 ft/s (1,5 m/s) a GET 103:59:54, 1968-12-25 20:50 UTC."
     }
   ]
 }

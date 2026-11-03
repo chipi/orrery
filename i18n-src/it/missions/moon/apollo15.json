@@ -15,19 +15,19 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.118,
       "label": "TLI",
       "note": "Iniezione translunar.",
       "type": "nominal"
     },
     {
-      "met": 3.25,
+      "met": 3.272,
       "label": "LOI",
       "note": "Inserimento in orbita lunare. SPS ∆v ≈0,91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.363,
       "label": "ALLUNAGGIO",
       "note": "Falcon atterra a Hadley-Apennine, 1971-07-30 22:16 UTC — primo allunaggio in un sito di altopiano, fuori dai mari lunari.",
       "type": "nominal"
@@ -51,13 +51,13 @@
       "type": "info"
     },
     {
-      "met": 6.25,
+      "met": 7.151,
       "label": "ASCESA",
       "note": "Falcon decolla dopo 66 h 55 m sulla superficie. 77 kg di campioni + prima ascesa trasmessa dalla telecamera montata sull'LRV (azionata da remoto da Houston).",
       "type": "nominal"
     },
     {
-      "met": 8.2,
+      "met": 9.326,
       "label": "TEI",
       "note": "Iniezione trans-Terra. SPS ∆v ≈1,0 km/s.",
       "type": "nominal"
@@ -69,10 +69,27 @@
       "type": "info"
     },
     {
-      "met": 12.31,
+      "met": 12.3,
       "label": "AMMARAGGIO",
       "note": "CM ammarato nell'Oceano Pacifico settentrionale 1971-08-07 20:46 UTC. Uno dei tre paracadute principali non si è dispiegato completamente; ammaraggio duro ma sicuro. Recupero da parte della USS Okinawa.",
       "type": "warning"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.195,
+      "label": "Correzione di traiettoria",
+      "description": "Accensione dell'SPS a GET 28:40:22 (1971-07-27 18:14 UTC), 0,8 s e 5,3 ft/s (1,6 m/s), che servì anche da prova del motore SPS."
+    },
+    {
+      "met": 3.063,
+      "label": "Correzione di traiettoria",
+      "description": "Accensione dell'SPS a GET 73:31:15 (1971-07-29 15:05 UTC), 0,9 s e 5,4 ft/s (1,6 m/s), l'ultima correzione translunare prima dell'inserimento in orbita lunare."
+    },
+    {
+      "met": 12.164,
+      "label": "Correzione di traiettoria sulla via del ritorno",
+      "description": "Correzione di 22,3 secondi con l'RCS a GET 291:56:50 (1971-08-07 17:30 UTC), 5,6 ft/s, tre ore prima del rientro."
     }
   ]
 }

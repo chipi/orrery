@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.13,
+      "met": 6.965,
       "label": "TLI",
       "note": "Iniezione trans-lunare tramite orbita terrestre di parcheggio + orbite di fasatura.",
       "type": "nominal"
     },
     {
-      "met": 14.2,
+      "met": 11.715,
       "label": "LOI",
       "note": "Inserimento in orbita lunare 2007-11-07 — primo veicolo spaziale cinese alla Luna.",
       "type": "nominal"
@@ -38,5 +38,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "terzo stadio del Long March 3A (H-18)"
+  "vehicle_stage": "terzo stadio del Long March 3A (H-18)",
+  "flight_events": [
+    {
+      "met": 12.719,
+      "label": "LOI-2 — orbita lunare abbassata",
+      "description": "2007-11-06 03:21 UT. Una seconda accensione di frenata di 14 minuti (fino alle 03:35 UT) abbassa l'orbita a 3,5 ore, 213 x 1.700 km."
+    },
+    {
+      "met": 13.596,
+      "label": "LOI-3 — raggiunta l'orbita scientifica lunare di 200 km",
+      "description": "2007-11-07 00:24 UT. Un'ultima accensione di 10 minuti (fino alle 00:34 UT) rallenta la sonda a 1,59 km/s e la immette nell'orbita scientifica circolare di 200 km, di 127 minuti, ad alta inclinazione."
+    }
+  ]
 }

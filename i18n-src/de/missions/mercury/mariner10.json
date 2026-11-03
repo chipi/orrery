@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 94,
+      "met": 94.469,
       "label": "VENUS-VORBEIFLUG",
       "note": "Geringste Annäherung 5768 km 1974-02-05; erste bewusst geplante Swing-by-Bahn in der Raumfahrtgeschichte.",
       "type": "nominal"
     },
     {
-      "met": 146,
+      "met": 146.626,
       "label": "MERKUR 1",
       "note": "Geringste Annäherung 703 km 1974-03-29; erste Bilder des Merkur.",
       "type": "nominal"
@@ -44,5 +44,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "Centaur-D-1A-Oberstufe"
+  "vehicle_stage": "Centaur-D-1A-Oberstufe",
+  "flight_events": [
+    {
+      "met": 10.808,
+      "label": "TCM-1",
+      "description": "13. November 1973 (PST), Sequenz abgeschlossen 5:08 p.m. PST = 01:08 UTC am 14. November. Eine 19,9 Sekunden lange Zündung von etwa 7,8 m/s (geplant) richtet die Sonde auf den Venus-Swing-by-Punkt aus."
+    },
+    {
+      "met": 79.562,
+      "label": "TCM-2",
+      "description": "1974-01-21 19:14 UTC. Das Rollmanöver begann um 11:50 a.m. PDT; 24 min später zündet das Triebwerk 3,8 s lang, etwa 1,3 m/s, und verfeinert den Venus-Vorbeiflug und die spätere Ankunft am Merkur."
+    },
+    {
+      "met": 133.256,
+      "label": "TCM-3 — Sonnenlinien-Manöver",
+      "description": "1974-03-16 11:54 UTC. Eine 51 Sekunden lange Zündung von 17,8 m/s direkt von der Sonne weg verlegt den ersten Merkur-Vorbeiflug auf die Nachtseite des Planeten und bereitet eine Rückkehr nach sechs Monaten vor."
+    }
+  ]
 }

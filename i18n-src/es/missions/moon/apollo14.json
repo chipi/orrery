@@ -15,7 +15,7 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.103,
       "label": "TLI",
       "note": "Inyección translunar. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
@@ -27,13 +27,13 @@
       "type": "warning"
     },
     {
-      "met": 3.82,
+      "met": 3.414,
       "label": "LOI",
       "note": "Inserción en órbita lunar. SPS ∆v ~0,88 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.6,
+      "met": 4.511,
       "label": "CONTACTO CON EL SUELO",
       "note": "Antares aterriza en las Tierras Altas de Fra Mauro el 1971-02-05 a las 09:18 UTC — a menos de 53 m del objetivo a pesar de un fallo en el programa de abortaje del ordenador del LM que el equipo parcheó en tiempo real.",
       "type": "nominal"
@@ -51,22 +51,39 @@
       "type": "info"
     },
     {
-      "met": 5.6,
+      "met": 5.907,
       "label": "ASCENSO",
       "note": "Antares despega después de 33 h 31 m en la superficie. Se devolvieron 42 kg de muestras.",
       "type": "nominal"
     },
     {
-      "met": 6.4,
+      "met": 6.192,
       "label": "TEI",
       "note": "Inyección transtelúrica. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 9,
+      "met": 9.001,
       "label": "AMERIZAJE",
       "note": "CM ameriza en el Pacífico Sur el 1971-02-09 a las 21:05 UTC. Recuperado por USS New Orleans. Última cuarentena del Apollo.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.275,
+      "label": "MCC-2 — corrección de trayectoria",
+      "description": "Encendido del SPS a GET 30:36:08 (1971-02-02 03:39 UTC), 10,1 segundos, que llevó la nave a la trayectoria híbrida dirigida a Fra Mauro."
+    },
+    {
+      "met": 3.207,
+      "label": "MCC-4 — corrección de trayectoria",
+      "description": "Un encendido de impulso mínimo de 0,65 segundos a GET 76:58:12 (1971-02-04 02:01 UTC), unas 5 h antes de la inserción en órbita lunar."
+    },
+    {
+      "met": 6.899,
+      "label": "MCC-5 — corrección de trayectoria en el trayecto de regreso",
+      "description": "Una corrección de 3,0 segundos a GET 165:34:57 (1971-02-07 18:37 UTC) ajusta la trayectoria de reentrada; MCC-5 es la designación del AFJ (día 7, parte 1)."
     }
   ]
 }

@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.13,
+      "met": 6.965,
       "label": "TLI",
       "note": "Trans-maaninjektie via parkeerstand + faseringsbanen rond de aarde.",
       "type": "nominal"
     },
     {
-      "met": 14.2,
+      "met": 11.715,
       "label": "LOI",
       "note": "Inbrenging in maanbaan op 2007-11-07 — eerste Chinees ruimtevaartuig bij de maan.",
       "type": "nominal"
@@ -38,5 +38,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "derde trap van de Long March 3A (H-18)"
+  "vehicle_stage": "derde trap van de Long March 3A (H-18)",
+  "flight_events": [
+    {
+      "met": 12.719,
+      "label": "LOI-2 — maanbaan verlaagd",
+      "description": "2007-11-06 03:21 UT. Een tweede remmende brandstap van 14 minuten (tot 03:35 UT) verlaagt de baan tot 3,5 uur, 213 x 1.700 km."
+    },
+    {
+      "met": 13.596,
+      "label": "LOI-3 — wetenschappelijke maanbaan van 200 km bereikt",
+      "description": "2007-11-07 00:24 UT. Een laatste brandstap van 10 minuten (tot 00:34 UT) remt de sonde af tot 1,59 km/s en brengt hem in de cirkelvormige wetenschappelijke baan van 200 km, 127 minuten, met grote inclinatie."
+    }
+  ]
 }

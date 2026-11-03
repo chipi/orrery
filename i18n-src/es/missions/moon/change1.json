@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.13,
+      "met": 6.965,
       "label": "TLI",
       "note": "Inyección translunar mediante órbita de estacionamiento terrestre + órbitas de fase.",
       "type": "nominal"
     },
     {
-      "met": 14.2,
+      "met": 11.715,
       "label": "LOI",
       "note": "Inserción en órbita lunar el 2007-11-07 — primera nave espacial china en la Luna.",
       "type": "nominal"
@@ -38,5 +38,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "tercera etapa del Long March 3A (H-18)"
+  "vehicle_stage": "tercera etapa del Long March 3A (H-18)",
+  "flight_events": [
+    {
+      "met": 12.719,
+      "label": "LOI-2 — órbita lunar reducida",
+      "description": "2007-11-06 03:21 UT. Un segundo encendido de frenado de 14 minutos (hasta las 03:35 UT) reduce la órbita a 3,5 horas, 213 x 1700 km."
+    },
+    {
+      "met": 13.596,
+      "label": "LOI-3 — alcanzada la órbita científica lunar de 200 km",
+      "description": "2007-11-07 00:24 UT. Un último encendido de 10 minutos (hasta las 00:34 UT) frena la sonda hasta 1,59 km/s y la sitúa en la órbita científica circular de 200 km, de 127 minutos y alta inclinación."
+    }
+  ]
 }

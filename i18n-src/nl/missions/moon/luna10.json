@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.331,
       "label": "MAANORBITINZWEVING",
       "note": "Maanbaaninsertie 1966-04-03 — eerste kunstmatige satelliet van elk hemellichaam anders dan de Aarde.",
       "type": "nominal"
@@ -38,5 +38,12 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "bovenste trap Block-L van de Molniya-M"
+  "vehicle_stage": "bovenste trap Block-L van de Molniya-M",
+  "flight_events": [
+    {
+      "met": 1.05,
+      "label": "Koerscorrectie",
+      "description": "Een enkele koerscorrectie op 1 april 1966 verfijnt de nadering van de maan, ongeveer een dag na de lancering."
+    }
+  ]
 }

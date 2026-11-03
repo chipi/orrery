@@ -15,13 +15,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.118,
       "label": "TLI",
       "note": "Allumage d'injection translunaire — première évasion habitée de la gravité terrestre. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
-      "met": 2.79,
+      "met": 2.881,
       "label": "LOI",
       "note": "Insertion en orbite lunaire derrière la Lune, hors contact radio. Allumage SPS ~0,91 km/s. Premiers humains à orbiter autour d'un autre corps céleste.",
       "type": "nominal"
@@ -39,16 +39,33 @@
       "type": "info"
     },
     {
-      "met": 3.96,
+      "met": 3.722,
       "label": "TEI",
       "note": "Injection Trans-Terre derrière la Lune (1968-12-25 06:10 UTC). SPS ∆v ~1,07 km/s.",
       "type": "nominal"
     },
     {
-      "met": 6.13,
+      "met": 6.125,
       "label": "AMERRISSAGE",
       "note": "CM amerri dans le Pacifique Nord le 1968-12-27. Récupération par l'USS Yorktown.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 0.458,
+      "label": "Correction de trajectoire",
+      "description": "Allumage du SPS à GET 10:59:59 (1968-12-21 23:50 UTC), 24,8 ft/s (7,6 m/s), abaissant le périlune prévu de 459 à 66,3 nmi."
+    },
+    {
+      "met": 2.542,
+      "label": "Correction de trajectoire",
+      "description": "Retouche RCS à GET 60:59:56 (1968-12-24 01:50 UTC), 1,4 ft/s (0,4 m/s), affinant les conditions d'insertion en orbite lunaire."
+    },
+    {
+      "met": 4.333,
+      "label": "Correction de trajectoire sur le trajet de retour",
+      "description": "La seule correction du trajet de retour (le rapport la nomme la troisième), 4,8 ft/s (1,5 m/s) à GET 103:59:54, 1968-12-25 20:50 UTC."
     }
   ]
 }

@@ -20,7 +20,7 @@
       "type": "nominal"
     },
     {
-      "met": 3,
+      "met": 3.331,
       "label": "LOI",
       "note": "Insertion en orbite lunaire 1966-04-03 — premier satellite artificiel de tout corps autre que la Terre.",
       "type": "nominal"
@@ -38,5 +38,12 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "étage supérieur Block-L de Molniya-M"
+  "vehicle_stage": "étage supérieur Block-L de Molniya-M",
+  "flight_events": [
+    {
+      "met": 1.05,
+      "label": "Correction de trajectoire",
+      "description": "Une unique correction de trajectoire le 1er avril 1966 affine l'approche de la Lune, environ un jour après le lancement."
+    }
+  ]
 }

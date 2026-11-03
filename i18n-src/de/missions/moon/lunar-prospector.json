@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.07,
+      "met": 0.039,
       "label": "TLI",
       "note": "Mond-Transferbahn-Injektion.",
       "type": "nominal"
     },
     {
-      "met": 4.1,
+      "met": 4.386,
       "label": "LOI",
       "note": "Mond-Bahneinschuss am 1998-01-11 — initiale 100 × 100 km polare Bahn.",
       "type": "nominal"
@@ -38,5 +38,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "translunares Injektionsmodul (Star-37) der Sonde"
+  "vehicle_stage": "translunares Injektionsmodul (Star-37) der Sonde",
+  "flight_events": [
+    {
+      "met": 0.394,
+      "label": "TCM-1",
+      "description": "1998-01-07 11:55 GMT, etwa 8,5 Stunden nach der TLI. Eine Korrektur von 50,2 m/s, aufgeteilt in axiale und tangentiale Triebwerkszündungen, um 12:27 GMT abgeschlossen."
+    },
+    {
+      "met": 1.248,
+      "label": "TCM-2",
+      "description": "1998-01-08 08:25 GMT. Eine Feinkorrektur von 7,4 m/s verfeinert die Ankunft am Mond; die geplante dritte Korrektur war nicht nötig."
+    }
+  ]
 }

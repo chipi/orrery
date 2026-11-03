@@ -15,7 +15,7 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.103,
       "label": "TLI",
       "note": "Trans-lunar injection. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
@@ -27,13 +27,13 @@
       "type": "warning"
     },
     {
-      "met": 3.82,
+      "met": 3.414,
       "label": "LOI",
       "note": "Maanbaaninsertie. SPS ∆v ~0,88 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.6,
+      "met": 4.511,
       "label": "NEERKOMST",
       "note": "Antares landet op Fra Mauro Highlands 1971-02-05 09:18 UTC — binnen 53 m van het doelwit ondanks een abort-programmafout in de LM-computer die het team in real-time patched.",
       "type": "nominal"
@@ -51,22 +51,39 @@
       "type": "info"
     },
     {
-      "met": 5.6,
+      "met": 5.907,
       "label": "OPSTIJGING",
       "note": "Antares stijgt op na 33 u 31 m op het oppervlak. 42 kg monsters teruggebracht.",
       "type": "nominal"
     },
     {
-      "met": 6.4,
+      "met": 6.192,
       "label": "TEI",
       "note": "Trans-Earth injection. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 9,
+      "met": 9.001,
       "label": "WATERLANDING",
       "note": "CM splash-down in Zuid-Stille Oceaan 1971-02-09 21:05 UTC. Bergingsoperatie door USS New Orleans. Laatste Apollo-quarantaine.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.275,
+      "label": "MCC-2 — koerscorrectie",
+      "description": "Brandstap van de SPS bij GET 30:36:08 (1971-02-02 03:39 UTC), 10,1 seconden, die het ruimtevaartuig op de hybride baan richting Fra Mauro bracht."
+    },
+    {
+      "met": 3.207,
+      "label": "MCC-4 — koerscorrectie",
+      "description": "Een brandstap met minimale impuls van 0,65 seconde bij GET 76:58:12 (1971-02-04 02:01 UTC), ongeveer 5 uur voor de intrede in de maanbaan."
+    },
+    {
+      "met": 6.899,
+      "label": "MCC-5 — koerscorrectie op de terugweg",
+      "description": "Een correctie van 3,0 seconden bij GET 165:34:57 (1971-02-07 18:37 UTC) stelt het terugkeertraject bij; MCC-5 is de aanduiding in de AFJ (dag 7, deel 1)."
     }
   ]
 }

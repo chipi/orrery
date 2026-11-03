@@ -14,13 +14,13 @@
       "type": "nominal"
     },
     {
-      "met": 0.07,
+      "met": 0.039,
       "label": "TLI",
       "note": "Trans-lunar injectie.",
       "type": "nominal"
     },
     {
-      "met": 4.1,
+      "met": 4.386,
       "label": "LOI",
       "note": "Maanbaaninsertie 1998-01-11 — initiële 100 × 100 km polaire baan.",
       "type": "nominal"
@@ -38,5 +38,17 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "translunaire injectiemodule (Star-37) van de sonde"
+  "vehicle_stage": "translunaire injectiemodule (Star-37) van de sonde",
+  "flight_events": [
+    {
+      "met": 0.394,
+      "label": "TCM-1",
+      "description": "1998-01-07 11:55 GMT, ongeveer 8,5 uur na de TLI. Een correctie van 50,2 m/s, verdeeld over brandstappen van axiale en tangentiale stuwraketten, afgerond om 12:27 GMT."
+    },
+    {
+      "met": 1.248,
+      "label": "TCM-2",
+      "description": "1998-01-08 08:25 GMT. Een bijstelling van 7,4 m/s verfijnt de aankomst bij de maan; de geplande derde correctie was niet nodig."
+    }
+  ]
 }

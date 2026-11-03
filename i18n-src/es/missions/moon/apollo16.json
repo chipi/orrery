@@ -15,25 +15,25 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.107,
       "label": "TLI",
       "note": "Inyección translunar.",
       "type": "nominal"
     },
     {
-      "met": 3.3,
+      "met": 3.103,
       "label": "LOI",
       "note": "Inserción en órbita lunar. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.174,
       "label": "ANOMALÍA DEL SPS",
       "note": "Anterior al descenso: una oscilación de cardán SPS de reserva obligó a una revisión de ingeniería en tiempo real de 6 horas sobre aterrizaje versus aborto. El aterrizaje fue finalmente aprobado.",
       "type": "warning"
     },
     {
-      "met": 5.04,
+      "met": 4.354,
       "label": "CONTACTO CON EL SUELO",
       "note": "Orion desciende en Tierras Altas de Descartes 1972-04-21 02:23 UTC — primer aterrizaje en las tierras altas (no en mare).",
       "type": "nominal"
@@ -57,22 +57,39 @@
       "type": "info"
     },
     {
-      "met": 7.81,
+      "met": 7.314,
       "label": "ASCENSO",
       "note": "Orion despega después de 71 h 02 m en la superficie. Se devolvieron 95,7 kg de muestras — la carga más pesada de Apollo hasta esa fecha.",
       "type": "nominal"
     },
     {
-      "met": 8.5,
+      "met": 8.348,
       "label": "TEI",
       "note": "Inyección de retorno a la Tierra. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 11.07,
+      "met": 11.077,
       "label": "AMERIZAJE",
       "note": "CM amerizó en el Pacífico Central 1972-04-27 19:45 UTC. Recuperación por el USS Ticonderoga.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.277,
+      "label": "Corrección de trayectoria",
+      "description": "Encendido del SPS a GET 30:39:01 (1972-04-18 00:33 UTC), 2,0 s y 12,5 ft/s (3,8 m/s), la única corrección translunar."
+    },
+    {
+      "met": 8.941,
+      "label": "Corrección de trayectoria en el trayecto de regreso",
+      "description": "Corrección de 8,0 segundos con el RCS a GET 214:35:03 (1972-04-25 16:29 UTC), 3,4 ft/s; un segundo ajuste de 3,2 segundos sigue a GET 262:37:21."
+    },
+    {
+      "met": 10.943,
+      "label": "Corrección de trayectoria en el trayecto de regreso",
+      "description": "Último ajuste del corredor de reentrada a GET 262:37:21 (1972-04-27 16:31 UTC), 1,4 ft/s."
     }
   ]
 }

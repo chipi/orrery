@@ -15,25 +15,25 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.107,
       "label": "TLI",
       "note": "Trans-lunar injection.",
       "type": "nominal"
     },
     {
-      "met": 3.3,
+      "met": 3.103,
       "label": "LOI",
       "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.174,
       "label": "SPS ANOMALY",
       "note": "Pre-descent: a backup SPS gimbal oscillation forced a 6-hour landing-vs-abort engineering review in real time. Landing ultimately approved.",
       "type": "warning"
     },
     {
-      "met": 5.04,
+      "met": 4.354,
       "label": "TOUCHDOWN",
       "note": "Orion lands at Descartes Highlands 1972-04-21 02:23 UTC — first highland (non-mare) landing.",
       "type": "nominal"
@@ -57,19 +57,19 @@
       "type": "info"
     },
     {
-      "met": 7.81,
+      "met": 7.314,
       "label": "ASCENT",
       "note": "Orion lifts off after 71 h 02 m on surface. 95.7 kg samples returned — heaviest Apollo haul to that date.",
       "type": "nominal"
     },
     {
-      "met": 8.5,
+      "met": 8.348,
       "label": "TEI",
       "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 11.07,
+      "met": 11.077,
       "label": "SPLASHDOWN",
       "note": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC. Recovery by USS Ticonderoga.",
       "type": "nominal"

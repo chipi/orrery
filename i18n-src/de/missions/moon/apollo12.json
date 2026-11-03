@@ -15,19 +15,19 @@
       "type": "warning"
     },
     {
-      "met": 0.12,
+      "met": 0.116,
       "label": "TLI",
       "note": "Trans-Lunar-Injection — Wiederherstellung nach Blitzschlägen bestätigt; Mission GO für den Mond.",
       "type": "nominal"
     },
     {
-      "met": 3.39,
+      "met": 3.476,
       "label": "LOI",
       "note": "Einschwenken in die Mondumlaufbahn. SPS ∆v ~0,89 km/s.",
       "type": "nominal"
     },
     {
-      "met": 5.43,
+      "met": 4.607,
       "label": "LANDUNG",
       "note": "Intrepid landet in Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — innerhalb von 163 m von Surveyor 3 (die präziseste Mondlandung bisher).",
       "type": "nominal"
@@ -39,7 +39,7 @@
       "type": "info"
     },
     {
-      "met": 6.74,
+      "met": 5.919,
       "label": "AUFSTIEG",
       "note": "Intrepid hebt ab nach 31 h 31 min auf der Oberfläche. 34 kg Proben zurückgebracht.",
       "type": "nominal"
@@ -51,16 +51,33 @@
       "type": "info"
     },
     {
-      "met": 7.92,
+      "met": 7.186,
       "label": "TEI",
       "note": "Trans-Earth-Injection. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 10.18,
+      "met": 10.192,
       "label": "WASSERUNG",
       "note": "CM wasserte am 24. November 1969 um 20:58 UTC im Südpazifik. Bergung durch die USS Hornet.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.287,
+      "label": "MCC-2 — Kurskorrektur",
+      "description": "SPS-Zündung bei GET 30:52:44 (1969-11-15 23:14 UTC), 61,8 ft/s (18,8 m/s); sie führte Apollo 12 von der Free-Return-Bahn auf die hybride Nicht-Free-Return-Bahn, die für die Präzisionslandung nötig war."
+    },
+    {
+      "met": 7.852,
+      "label": "Kurskorrektur auf dem Rückflug 1",
+      "description": "Kleine Korrektur bei GET 188:27:16 (1969-11-22 12:49 UTC); eine zweite folgt bei GET 241:22:00."
+    },
+    {
+      "met": 10.057,
+      "label": "Kurskorrektur auf dem Rückflug 2",
+      "description": "Letzte Feinkorrektur des Eintrittskorridors bei GET 241:22:00 (1969-11-24 17:44 UTC), etwa 3 h vor der Trennung des Kommandomoduls."
     }
   ]
 }

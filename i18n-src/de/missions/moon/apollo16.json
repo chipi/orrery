@@ -15,25 +15,25 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.107,
       "label": "TLI",
       "note": "Translunare Injektion.",
       "type": "nominal"
     },
     {
-      "met": 3.3,
+      "met": 3.103,
       "label": "LOI",
       "note": "Einschwenken in die Mondumlaufbahn. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.174,
       "label": "SPS-ANOMALIE",
       "note": "Vor dem Abstieg: eine Sicherheitsmaßnahme bei SPS-Kardanaufhängungsschwingungen erzwang eine 6-Stunden-Bewertung in Echtzeit zwischen Landung und Abbruch. Die Landung wurde letztlich genehmigt.",
       "type": "warning"
     },
     {
-      "met": 5.04,
+      "met": 4.354,
       "label": "AUFSETZEN",
       "note": "Orion landet am 21.04.1972 02:23 UTC im Descartes-Hochland — erste Landung im Hochland (kein Maria).",
       "type": "nominal"
@@ -57,22 +57,39 @@
       "type": "info"
     },
     {
-      "met": 7.81,
+      "met": 7.314,
       "label": "AUFSTIEG",
       "note": "Orion hebt nach 71 h 02 m auf der Oberfläche ab. 95,7 kg Proben zurückgebracht – schwerste Apollo-Fracht bis zu diesem Zeitpunkt.",
       "type": "nominal"
     },
     {
-      "met": 8.5,
+      "met": 8.348,
       "label": "TEI",
       "note": "Einschuss auf die Rückkehrbahn zur Erde. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
-      "met": 11.07,
+      "met": 11.077,
       "label": "WASSERUNG",
       "note": "Kapsellandung im Zentralpazifik am 27.04.1972 19:45 UTC. Bergung durch USS Ticonderoga.",
       "type": "nominal"
+    }
+  ],
+  "flight_events": [
+    {
+      "met": 1.277,
+      "label": "Kurskorrektur",
+      "description": "SPS-Zündung bei GET 30:39:01 (1972-04-18 00:33 UTC), 2,0 s und 12,5 ft/s (3,8 m/s), die einzige translunare Korrektur."
+    },
+    {
+      "met": 8.941,
+      "label": "Kurskorrektur auf dem Rückflug zur Erde",
+      "description": "8,0 Sekunden lange RCS-Korrektur bei GET 214:35:03 (1972-04-25 16:29 UTC), 3,4 ft/s; eine zweite, 3,2 Sekunden lange Feinkorrektur folgt bei GET 262:37:21."
+    },
+    {
+      "met": 10.943,
+      "label": "Kurskorrektur auf dem Rückflug zur Erde",
+      "description": "Letzte Feinkorrektur des Eintrittskorridors bei GET 262:37:21 (1972-04-27 16:31 UTC), 1,4 ft/s."
     }
   ]
 }

@@ -15,19 +15,19 @@
       "type": "nominal"
     },
     {
-      "met": 0.12,
+      "met": 0.118,
       "label": "TLI",
       "note": "Trans-lunar injection.",
       "type": "nominal"
     },
     {
-      "met": 3.25,
+      "met": 3.272,
       "label": "LOI",
       "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
       "type": "nominal"
     },
     {
-      "met": 4.79,
+      "met": 4.363,
       "label": "TOUCHDOWN",
       "note": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
       "type": "nominal"
@@ -51,13 +51,13 @@
       "type": "info"
     },
     {
-      "met": 6.25,
+      "met": 7.151,
       "label": "ASCENT",
       "note": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
       "type": "nominal"
     },
     {
-      "met": 8.2,
+      "met": 9.326,
       "label": "TEI",
       "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
       "type": "nominal"
@@ -69,7 +69,7 @@
       "type": "info"
     },
     {
-      "met": 12.31,
+      "met": 12.3,
       "label": "SPLASHDOWN",
       "note": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
       "type": "warning"

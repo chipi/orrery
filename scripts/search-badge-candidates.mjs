@@ -13,9 +13,12 @@
 //   node scripts/search-badge-candidates.mjs fleet
 //   node scripts/search-badge-candidates.mjs missions
 //
-// Writes /tmp/badge-candidates.json and prints a compact table.
+// Writes badge-candidates.json into a fresh private temp directory (path printed) and prints a
+// compact table.
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 const WP = 'https://en.wikipedia.org/w/api.php';
 const COMMONS = 'https://commons.wikimedia.org/w/api.php';
@@ -95,7 +98,9 @@ async function commonsInfo(file) {
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&amp;/g, '&')
-    .replace(/<[^>]+>/g, '')
+    .replace(/<[^>]*>/g, '')
+    // A nested fragment ("<<b>script>") survives one tag strip; no credit needs angle brackets.
+    .replace(/[<>]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
   return {
@@ -178,7 +183,9 @@ async function main() {
     await sleep(THROTTLE_MS);
   }
 
-  writeFileSync('/tmp/badge-candidates.json', JSON.stringify(results, null, 2));
+  const outPath = join(mkdtempSync(join(tmpdir(), 'badge-candidates-')), 'badge-candidates.json');
+  writeFileSync(outPath, JSON.stringify(results, null, 2));
+  console.error(`wrote ${outPath}`);
   const usable = results.filter((r) => r.hit.usable);
   console.error(
     `\n${results.length}/${targets.length} have an infobox insignia; ${usable.length} with a usable (PD/CC) licence.`,

@@ -2181,7 +2181,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
           outLine.geometry.dispose();
           outLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(bridge.outPts, desiredRadius);
           (outLine.geometry.userData as { tubeRadius?: number }).tubeRadius = desiredRadius;
-          if (retLine && bridge.retPts.length >= 2) {
+          if (bridge.retPts.length >= 2) {
             retLine.geometry.dispose();
             retLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(
               bridge.retPts,

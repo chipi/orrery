@@ -18,7 +18,6 @@
   } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
-  import FleetLineup from '$lib/components/FleetLineup.svelte';
   import { LINEUP_LIVE, lineupKindFor, type LineupKind } from '$lib/three/lineup/lineup-kind';
   import { handleGridKeydown } from '$lib/grid-keyboard-nav';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
@@ -633,16 +632,19 @@
 
     {#if lineupView && lineupKind}
       {#key lineupKind + localeFromPage(page)}
-        <FleetLineup
-          kind={lineupKind}
-          {entries}
-          locale={localeFromPage(page)}
-          focusId={lineupFocus}
-          onOpen={(id) => {
-            const e = entries.find((x) => x.id === id);
-            if (e) openEntry(e);
-          }}
-        />
+        <!-- Loaded only when a line-up opens: its landmark/cast lists and labels stay off the grid. -->
+        {#await import('$lib/components/FleetLineup.svelte') then { default: FleetLineup }}
+          <FleetLineup
+            kind={lineupKind}
+            {entries}
+            locale={localeFromPage(page)}
+            focusId={lineupFocus}
+            onOpen={(id) => {
+              const e = entries.find((x) => x.id === id);
+              if (e) openEntry(e);
+            }}
+          />
+        {/await}
       {/key}
     {:else if filtered.length === 0}
       <p class="status">{m.fleet_empty()}</p>

@@ -94,6 +94,10 @@ export interface LoadedMission {
    *  — distinct from the parsed `dv_total` number for cases where the
    *  string carries units / annotations the canonical number drops. */
   delta_v_label?: string;
+  /** True when outPts is a spline sampled evenly in mission time (a trajectory file): the
+   *  ship's motion along it is a real speed. False for the transfer ellipse, sampled evenly
+   *  in angle, whose speed comes from vis-viva. */
+  arcTimed?: boolean;
   /** Transit days from the raw mission index — used by #86 opening
    *  to surface "TRANSIT · 6.7 years" without recomputing. */
   transit_days?: number;
@@ -236,10 +240,30 @@ function buildMissionMeta(
   };
 }
 
+/** The body /fly ends at for missions whose dest has none: the comets and asteroids (without
+ *  it the generic COMET / ASTEROID dest fell back to Mars, and Giotto, Rosetta, Hayabusa2 and
+ *  NEAR flew to Mars) and Ulysses, whose /fly window ends at its Jupiter flyby before the
+ *  polar passes. */
+const FLY_TARGET: Record<string, DestinationId> = {
+  giotto: 'halley',
+  rosetta: '67p',
+  hayabusa2: 'ryugu',
+  'near-shoemaker': 'eros',
+  ulysses: 'jupiter',
+};
+
+/** The heliocentric body /fly flies a mission to, or null when /fly has no body for it
+ *  (Parker and Solar Orbiter end at a perihelion): the scene then keeps Mars as
+ *  a stand-in, and the HUD must not report a distance to it. */
+export function flyDestinationOf(m: Pick<Mission, 'id' | 'dest'>): DestinationId | null {
+  return missionDestToHeliocentricDestinationId(m.dest) ?? FLY_TARGET[m.id] ?? null;
+}
+
 /**
  * The full transition. Pass in the Mission + default fallbacks; get
  * back every value the component needs to write to $state.
  */
+
 /** Optional shape passed alongside the Mission when /fly has loaded
  *  the matching /static/data/trajectories/<id>.json. When supplied,
  *  computeMissionApply uses a Catmull-Rom spline through the labeled
@@ -261,13 +285,13 @@ export function computeMissionApply(
   // since there is no heliocentric trajectory to draw — Apollo 7 + 9 ride
   // this branch with /fly's cislunar parametric fallback.
   const isMoonMission = m.dest === 'MOON' || m.dest === 'EARTH';
-  const activeDestination =
-    missionDestToHeliocentricDestinationId(m.dest) ?? ('mars' as DestinationId);
+  const activeDestination = flyDestinationOf(m) ?? ('mars' as DestinationId);
 
   let cislunarTrajectory: CislunarTrajectory | null = null;
   let interplanetaryTrajectory: InterplanetaryTrajectory | null = null;
   let outPts: Vec2[];
   let retPts: Vec2[];
+  let arcTimed = false;
 
   if (isMoonMission) {
     cislunarTrajectory = buildCislunarTrajectory(m.flight?.cislunar_profile, {
@@ -354,6 +378,8 @@ export function computeMissionApply(
           orus: 0.4 / 80,
           patroclus: 0.55 / 80,
           menoetius: 0.5 / 80,
+          ryugu: 0.35 / 80,
+          eros: 0.45 / 80,
         };
         // The +y offset lifts the trajectory above the planet's pole
         // so the line and the ship glyph at the flyby moment skim
@@ -406,6 +432,7 @@ export function computeMissionApply(
     }
     if (splineOut) {
       outPts = splineOut;
+      arcTimed = true;
       retPts = []; // grand-tour spline missions are one-way (Cassini → Saturn, Voyagers → outward)
     } else {
       ({ outPts, retPts } = buildHelioArcs(timeline, activeDestination, isReturnTrip, vInfKms));
@@ -422,7 +449,7 @@ export function computeMissionApply(
     retPts,
     cislunarTrajectory,
     interplanetaryTrajectory,
-    missionMeta: buildMissionMeta(m, timeline, defaults),
+    missionMeta: { ...buildMissionMeta(m, timeline, defaults), arcTimed },
     // Moon missions are 4-12 days vs Mars's 200+. Default 0.4 ×
     // gives a typical lunar phase ~1.5–2 s of playback so the
     // camera auto-zoom has time to read. Mars + outer-system stick
@@ -479,10 +506,13 @@ export function labelToPlanetId(label: string): DestinationId | null {
     'orus',
     'patroclus',
     'menoetius',
+    'ryugu',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return p;
   }
+  // Whole word: "aerosol" or "zeros" must not resolve to Eros.
+  if (/\beros\b/.test(lower)) return 'eros' as DestinationId;
   // Churyumov synonym → 67P
   if (lower.includes('churyumov')) return '67p' as DestinationId;
   if (lower.includes('earth') || lower.includes('launch')) return 'earth' as DestinationId;

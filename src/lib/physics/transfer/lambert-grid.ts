@@ -17,6 +17,7 @@
 
 import { solveLambert } from './lambert';
 import { eccentricAnomaly } from '../ephemeris/kepler';
+import { inclinedOrbitXY, type InclinedOrbit } from './inclined-orbit';
 import {
   DESTINATIONS,
   EARTH_A0,
@@ -133,9 +134,18 @@ function destinationHelioXY(
     meanMotionRadPerDay: number;
     e?: number;
     varpi?: number;
+    orbit?: InclinedOrbit;
   },
 ): [number, number] {
   const e = destination.e ?? 0;
+  if (destination.orbit)
+    return inclinedOrbitXY(
+      day,
+      destination.a,
+      e,
+      destination.meanMotionRadPerDay,
+      destination.orbit,
+    );
   const L = destination.a0 + destination.meanMotionRadPerDay * day;
   if (e === 0) return [destination.a * Math.cos(L), destination.a * Math.sin(L)];
   const varpi = destination.varpi ?? 0;

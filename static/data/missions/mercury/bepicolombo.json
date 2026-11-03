@@ -121,7 +121,7 @@
         "description": "Final flyby planned for 2025-01-08 — the spacecraft's orbital period matches Mercury's well enough that orbital capture is feasible at the next solar conjunction window."
       },
       {
-        "met_days": 2968,
+        "met_days": 2954,
         "type": "edl_or_oi",
         "label": "Mercury orbit insertion + spacecraft separation",
         "description": "Planned 2026-11. The Mercury Transfer Module separates and the two orbiters (ESA MPO + JAXA Mio) split into their respective science orbits. MPO maps the surface geology + interior structure; Mio characterises Mercury's tenuous magnetosphere. First two-orbiter Mercury mission ever flown."

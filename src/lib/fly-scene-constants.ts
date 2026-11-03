@@ -58,6 +58,8 @@ export const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon', string> = 
   orus: '#5a4030',
   patroclus: '#4a3a30',
   menoetius: '#4a3a30',
+  ryugu: '#5a524a',
+  eros: '#b08a62',
   moon: '#cfcfcf',
 };
 

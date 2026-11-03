@@ -4,6 +4,7 @@ import {
   computeScenarioApply,
   computePlanApply,
   FLYBY_OFFSET_FRACTION,
+  flyDestinationOf,
   type MissionApplyDefaults,
   type TrajectoryOverride,
 } from './fly-mission-apply';
@@ -507,5 +508,17 @@ describe('computeMissionApply — labelToPlanetId coverage via waypoint labels',
       },
     );
     expect(r.outPts.length).toBe(500);
+  });
+});
+
+describe('flyDestinationOf', () => {
+  it('is the dest body, the comet or Jupiter for Ulysses, and null where /fly has no body', () => {
+    expect(flyDestinationOf({ id: 'cassini', dest: 'SATURN' })).toBe('saturn');
+    expect(flyDestinationOf({ id: 'giotto', dest: 'COMET' })).toBe('halley');
+    expect(flyDestinationOf({ id: 'rosetta', dest: 'COMET' })).toBe('67p');
+    expect(flyDestinationOf({ id: 'ulysses', dest: 'SUN' })).toBe('jupiter');
+    expect(flyDestinationOf({ id: 'parker-solar-probe', dest: 'SUN' })).toBeNull();
+    expect(flyDestinationOf({ id: 'hayabusa2', dest: 'ASTEROID' })).toBe('ryugu');
+    expect(flyDestinationOf({ id: 'near-shoemaker', dest: 'ASTEROID' })).toBe('eros');
   });
 });

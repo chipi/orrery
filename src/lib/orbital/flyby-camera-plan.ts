@@ -52,7 +52,9 @@ export type PlanetId =
   | 'leucus'
   | 'orus'
   | 'patroclus'
-  | 'menoetius';
+  | 'menoetius'
+  | 'ryugu'
+  | 'eros';
 
 /**
  * Per-planet camera tuning. Adjust here to change the iconic
@@ -263,6 +265,21 @@ export const PLANET_COMPOSITION: Record<PlanetId, PlanetComposition> = {
   // close to the body at the impact moment; Lucy Trojans are
   // multi-km/s flybys, lead 2.
   itokawa: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 3,
+    targetBias: 0,
+  },
+  // Hayabusa2 at Ryugu and NEAR at Eros were station-keeping rendezvous, like Itokawa.
+  ryugu: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 3,
+    targetBias: 0,
+  },
+  eros: {
     camRMultiplier: 6,
     sideAngleRad: ICONIC_SIDE,
     pitchRad: ICONIC_PITCH,

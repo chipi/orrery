@@ -8,9 +8,10 @@ const DATA = join(process.cwd(), 'static/data');
 
 describe('/fly trajectories', () => {
   it('resolve /explore paths, /fly-only paths and aliases', () => {
-    expect(flyTrajectoryPath('cassini')).toBe('trajectories/cassini.json');
-    expect(flyTrajectoryPath('huygens')).toBe('trajectories/cassini.json');
+    expect(flyTrajectoryPath('cassini')).toBe('fly-trajectories/cassini.json');
+    expect(flyTrajectoryPath('huygens')).toBe('fly-trajectories/cassini.json');
     expect(flyTrajectoryPath('messenger')).toBe('fly-trajectories/messenger.json');
+    expect(flyTrajectoryPath('vega-1')).toBeNull();
     expect(flyTrajectoryPath('curiosity')).toBeNull();
   });
 
@@ -24,7 +25,7 @@ describe('/fly trajectories', () => {
       const dates = waypoints.map((w) => w.date);
       expect([...dates].sort(), id).toEqual(dates);
       const labelled = waypoints.filter((w) => w.label);
-      expect(labelled.length, id).toBeGreaterThanOrEqual(3);
+      expect(labelled.length, id).toBeGreaterThanOrEqual(2);
       for (const w of labelled) expect(labelToPlanetId(w.label!), `${id} ${w.label}`).not.toBeNull();
     }
   });

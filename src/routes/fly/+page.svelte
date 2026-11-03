@@ -43,6 +43,7 @@
     type LoadedMission,
     type MissionApplyDefaults,
     type TrajectoryOverride,
+    flyDestinationOf,
   } from '$lib/fly-mission-apply';
   import {
     CINEMATIC_TIMINGS,
@@ -1311,8 +1312,32 @@
   // FROM EARTH + signal delay. FROM MARS is hidden in Moon-mode.
   const MOON_FAKE_TO_REAL_AU = 384_400 / AU_TO_KM / (MOON_VISUAL_DISTANCE / SCALE_3D);
   let scR = $derived(isMoonMission ? R_EARTH_AU : Math.hypot(scState.pos.x, scState.pos.z));
+  // The body the HUD measures to: the mission's own target (a /plan selection is its
+  // activeDestination). Null for Moon mode and for missions /fly has no body for (Sun
+  // missions ending at a perihelion), whose scene keeps Mars only as a stand-in.
+  let hudTarget = $derived(
+    isMoonMission
+      ? null
+      : mission.dest
+        ? flyDestinationOf({ id: mission.id ?? '', dest: mission.dest })
+        : activeDestination,
+  );
+  // Vis-viva on the Hohmann ellipse from Earth to the target's orbit (an Earth–Mars ellipse
+  // for every mission put Cassini on Mars's orbit). No target: the Earth–Mars stand-in.
+  let transferA = $derived.by(() => {
+    if (!hudTarget) return (R_EARTH_AU + R_MARS_AU) / 2;
+    const t = destinationPos(arcTimeline.arr_day, hudTarget);
+    return (R_EARTH_AU + Math.hypot(t.x, t.z)) / 2;
+  });
+  // A timed spline: the ship's own motion over a day, centred on now.
+  let arcSpeedKms = $derived.by(() => {
+    if (!mission.arcTimed || scState.phase !== 'outbound') return null;
+    const a = spacecraftPos(simDay - 0.5, arcTimeline, outPts, retPts).pos;
+    const b = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
+    return (Math.hypot(b.x - a.x, b.z - a.z) * AU_TO_KM) / 86400;
+  });
   let heliocentricKms = $derived(
-    flyHeliocentricSpeed(scR, isMoonMission ? R_EARTH_AU : (R_EARTH_AU + R_MARS_AU) / 2),
+    arcSpeedKms ?? flyHeliocentricSpeed(scR, isMoonMission ? R_EARTH_AU : transferA),
   );
 
   let earthNow = $derived(earthPos(simDay));
@@ -1328,7 +1353,10 @@
   // render-state hook stays parseable.
   let distFromMarsAu = $derived(distanceBetween(scState.pos, marsNow));
   let distFromEarthMkm = $derived(auToMkm(distFromEarthAu));
-  let distFromMarsMkm = $derived(auToMkm(distFromMarsAu));
+  let distFromTargetAu = $derived(
+    hudTarget ? distanceBetween(scState.pos, destinationPos(simDay, hudTarget)) : null,
+  );
+  let distFromTargetMkm = $derived(distFromTargetAu === null ? null : auToMkm(distFromTargetAu));
   let signalDelayMin = $derived(flySignalDelayMin(distFromEarthAu));
 
   // ─── Render-state hash (Layer 2 of /fly validation strategy) ─────
@@ -3351,8 +3379,10 @@
           'orus',
           'patroclus',
           'menoetius',
+          'ryugu',
         ];
         for (const p of ids) if (label.includes(p)) return p;
+        if (/\beros\b/.test(label)) return 'eros' as FlybyPlanetId;
         return 'venus' as FlybyPlanetId;
       })()}
       {@const planetPosForDebug =
@@ -4023,10 +4053,15 @@
           >
         </span>
       </div>
-      {#if !isMoonMission}
+      {#if distFromTargetMkm !== null}
         <div class="hud-row">
-          <span class="hud-key">{m.fly_hud_dist_mars()}</span>
-          <span class="hud-val">{m.fly_hud_mkm({ value: distFromMarsMkm.toFixed(0) })}</span>
+          <span class="hud-key">{m.hud_from_target()}</span>
+          <span class="hud-val"
+            >{m.fly_hud_mkm({
+              value:
+                distFromTargetMkm < 1 ? distFromTargetMkm.toFixed(2) : distFromTargetMkm.toFixed(0),
+            })}</span
+          >
         </div>
       {/if}
     </aside>
@@ -4159,7 +4194,7 @@
          'hover' layer gated. Sits as the bottom-most left-rail panel
          under hud-systems so it shares the column with identity /
          navigation / flight-params / systems. -->
-    <SpacecraftInfoCard {heliocentricKms} {distFromEarthAu} {distFromMarsAu} metDays={met} />
+    <SpacecraftInfoCard {heliocentricKms} {distFromEarthAu} {distFromTargetAu} metDays={met} />
   </div>
 
   <!-- Timeline scrubber (bottom-left) -->

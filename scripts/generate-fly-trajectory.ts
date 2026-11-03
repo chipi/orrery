@@ -52,24 +52,44 @@ for (const id of process.argv.slice(2)) {
   const depDay = dateToSimDay(dep) as number;
   const events: { type: string; met_days: number; label?: string }[] = m.flight?.events ?? [];
   const arrMet = m.transit_days as number;
-  const anchors: { met: number; label: string; x: number; z: number }[] = [];
+  const anchors: {
+    met: number;
+    label: string;
+    body: string;
+    stays: boolean;
+    x: number;
+    z: number;
+  }[] = [];
   const pos = (body: DestinationId, met: number) =>
     body === ('earth' as DestinationId)
       ? earthPos(depDay + met)
       : destinationPos(depDay + met, body);
-  anchors.push({ met: 0, label: 'Launch', ...pos('earth' as DestinationId, 0) });
+  anchors.push({
+    met: 0,
+    label: 'Launch',
+    body: 'earth',
+    stays: false,
+    ...pos('earth' as DestinationId, 0),
+  });
   for (const e of events) {
     if (e.met_days <= 0 || e.met_days > arrMet + 1) continue;
     if (e.type !== 'flyby' && e.type !== 'edl_or_oi' && e.type !== 'arrival') continue;
     const body = labelToPlanetId(e.label ?? '');
     if (!body) continue;
     if (anchors.some((a) => Math.abs(a.met - e.met_days) < 1)) continue;
-    anchors.push({ met: e.met_days, label: e.label ?? body, ...pos(body, e.met_days) });
+    anchors.push({
+      met: e.met_days,
+      label: e.label ?? body,
+      body,
+      stays: e.type !== 'flyby',
+      ...pos(body, e.met_days),
+    });
   }
   anchors.sort((a, b) => a.met - b.met);
-  // Only worth it when the path ends at the arrival body (else the spline would stop short of
-  // it: NEAR's Eros is not a /fly body) and passes at least one flyby on the way.
-  if (anchors.length < 3 || anchors[anchors.length - 1].met < arrMet - 2) {
+  // Only when the path ends at the arrival body (else the spline would stop short of it:
+  // NEAR's Eros is not a /fly body). Launch + arrival alone is fine for a target the transfer
+  // ellipse can't reach (Giotto's Halley, e = 0.97).
+  if (anchors.length < 2 || anchors[anchors.length - 1].met < arrMet - 2) {
     console.log(`${id}: skipped (${anchors.length} anchors, last at MET ${anchors.at(-1)?.met})`);
     continue;
   }
@@ -86,6 +106,17 @@ for (const id of process.argv.slice(2)) {
     const b = anchors[i + 1];
     if (!b) break;
     const dt = b.met - a.met;
+    if (a.stays && a.body === b.body) {
+      // Captured at a body (orbit insertion, then landing): the craft stays with it. Not after
+      // a flyby — Rosetta's Earth passes were years apart.
+      const n = Math.min(40, Math.max(2, Math.round(dt / 15)));
+      for (let j = 1; j < n; j++) {
+        const met = a.met + (dt * j) / n;
+        const p = pos(a.body as DestinationId, met);
+        waypoints.push({ date: iso(dep, met), x: +p.x.toFixed(4), y: 0, z: +p.z.toFixed(4) });
+      }
+      continue;
+    }
     const r0 = Math.hypot(a.x, a.z);
     const r1 = Math.hypot(b.x, b.z);
     const t0 = Math.atan2(a.z, a.x);

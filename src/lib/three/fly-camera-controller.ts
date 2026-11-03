@@ -411,6 +411,8 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
           'orus',
           'patroclus',
           'menoetius',
+          'ryugu',
+          'eros',
         ]);
         if (
           flyby.id !== 'earth' &&

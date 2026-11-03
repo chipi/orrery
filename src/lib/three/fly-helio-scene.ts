@@ -244,6 +244,8 @@ export const DEST_STYLE: Record<string, DestinationStyle> = {
   orus: { size: 0.4, color: 0x5a4030 },
   patroclus: { size: 0.55, color: 0x4a3a30 },
   menoetius: { size: 0.5, color: 0x4a3a30 },
+  ryugu: { size: 0.35, color: 0x5a524a },
+  eros: { size: 0.45, color: 0xb08a62 },
 };
 
 /** Earth radius in /fly heliocentric units (tuned smaller than

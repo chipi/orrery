@@ -26,6 +26,15 @@
       "l": "Progress M-01M — NASA NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2008-060A",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia Progress (spacecraft) comparison table — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Progress_(spacecraft)",
+      "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 7.23,
+    "diameter_m": 2.72
+  }
 }

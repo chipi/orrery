@@ -21,10 +21,19 @@
       "l": "Apollo 204 Accident Review Board report (NASA)",
       "u": "https://history.nasa.gov/Apollo204/",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia Apollo CSM — dimensions (SM 4.52 m, 3.91 m; Block I without docking probe)",
+      "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
+      "t": "deep"
     }
   ],
   "linked_missions": [
     "apollo-1"
   ],
-  "linked_sites": []
+  "linked_sites": [],
+  "specs": {
+    "length_m": 10.6,
+    "diameter_m": 3.91
+  }
 }

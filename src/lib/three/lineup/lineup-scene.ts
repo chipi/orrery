@@ -9,7 +9,6 @@
  * stage animate.
  */
 import * as THREE from 'three';
-import { buildScaleFigure } from './scale-figures';
 
 export interface LineupItem {
   id: string;
@@ -23,6 +22,8 @@ export interface LineupItem {
   fitWidth?: boolean;
   /** A landmark cut-out (Statue of Liberty, Eiffel Tower …): set back, not pickable. */
   landmark?: boolean;
+  /** Other fleet entries this one craft stands for (identical models, e.g. sister orbiters). */
+  members?: string[];
   /** Taller than the frame is allowed to grow for: drawn running out of the top. */
   capped?: boolean;
 }
@@ -36,13 +37,17 @@ export interface LineupSlot {
   part?: 'capsule';
   landmark?: boolean;
   capped?: boolean;
+  members?: string[];
 }
 
 export interface LineupOptions {
   /** Minimum gap between craft, metres. */
   gapM: number;
-  /** Put a person at the foot of every n-th craft (1 = every craft). */
-  personEvery: number;
+  /**
+   * The cast member (person, animal …) that stands in the gap after item i, in metres, base on the
+   * ground; null for none. The gap widens to fit it.
+   */
+  cast?: (i: number) => THREE.Object3D | null;
   /** Empty sky above the tallest object, as a fraction of its height. */
   headroom?: number;
 }
@@ -135,13 +140,18 @@ export function createLineupStage(
       part: it.part,
       landmark: it.landmark,
       capped: it.capped,
+      members: it.members,
     });
-    if (i % Math.max(1, opts.personEvery) === 0 || it.landmark) {
-      const person = buildScaleFigure('person');
-      person.position.set(cx + w / 2 + 0.6, 0, w);
-      scene.add(person);
-    }
     x = cx + w / 2;
+    const figure = opts.cast?.(i);
+    if (figure) {
+      const fb = new THREE.Box3().setFromObject(figure);
+      const fw = fb.max.x - fb.min.x;
+      const margin = Math.max(0.6, fw * 0.25);
+      figure.position.set(x + margin + fw / 2 - (fb.min.x + fb.max.x) / 2, -fb.min.y, w);
+      scene.add(figure);
+      x += fw + margin;
+    }
     if (!it.capped) topM = Math.max(topM, size.h);
   });
   const rowLengthM = x;

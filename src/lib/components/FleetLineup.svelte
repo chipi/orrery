@@ -34,15 +34,88 @@
   let hoverId = $state<string | null>(null);
   let failed = $state(false);
 
-  type LandmarkId = 'liberty' | 'eiffel' | 'conquerors' | 'pagoda' | 'bus';
-  const LAUNCHER_LANDMARKS: LandmarkId[] = ['liberty', 'conquerors', 'pagoda'];
+  type LandmarkId =
+    | 'liberty'
+    | 'eiffel'
+    | 'conquerors'
+    | 'pagoda'
+    | 'motherland'
+    | 'ushiku'
+    | 'leshan'
+    | 'torii'
+    | 'tsarbell'
+    | 'routemaster'
+    | 'pisa'
+    | 'brandenburg'
+    | 'columbus'
+    | 'david'
+    | 'osborne'
+    | 'beetle';
+  // Landmarks from around the world, at their own heights among the craft (USA, Russia, China,
+  // Japan, France, UK, Italy, Germany, Spain).
+  const LANDMARKS: Record<'launchers' | 'spacecraft', LandmarkId[]> = {
+    launchers: [
+      'liberty',
+      'conquerors',
+      'pagoda',
+      'motherland',
+      'ushiku',
+      'leshan',
+      'pisa',
+      'brandenburg',
+      'columbus',
+    ],
+    spacecraft: ['torii', 'tsarbell', 'routemaster', 'david', 'osborne', 'beetle'],
+  };
   const LANDMARK_NAME: Record<LandmarkId, () => string> = {
     liberty: m.fleet_lineup_landmark_liberty,
     eiffel: m.fleet_lineup_landmark_eiffel,
     conquerors: m.fleet_lineup_landmark_conquerors,
     pagoda: m.fleet_lineup_landmark_pagoda,
-    bus: m.fleet_lineup_landmark_bus,
+    motherland: m.fleet_lineup_landmark_motherland,
+    ushiku: m.fleet_lineup_landmark_ushiku,
+    leshan: m.fleet_lineup_landmark_leshan,
+    torii: m.fleet_lineup_landmark_torii,
+    tsarbell: m.fleet_lineup_landmark_tsarbell,
+    routemaster: m.fleet_lineup_landmark_routemaster,
+    pisa: m.fleet_lineup_landmark_pisa,
+    brandenburg: m.fleet_lineup_landmark_brandenburg,
+    columbus: m.fleet_lineup_landmark_columbus,
+    david: m.fleet_lineup_landmark_david,
+    osborne: m.fleet_lineup_landmark_osborne,
+    beetle: m.fleet_lineup_landmark_beetle,
   };
+  // The cartoon cast, one in each gap: people of every kind, children and pets, and animals that
+  // read at rocket scale (a giraffe, an elephant).
+  const CAST = {
+    launchers: [
+      'man',
+      'giraffe',
+      'woman',
+      'child',
+      'elephant',
+      'man',
+      'warrior',
+      'woman',
+      'bear',
+      'child',
+    ],
+    spacecraft: [
+      'man',
+      'woman',
+      'child',
+      'dog',
+      'warrior',
+      'panda',
+      'woman',
+      'cat',
+      'man',
+      'bear',
+      'giraffe',
+      'child',
+      'elephant',
+    ],
+  } as const;
   const nameOf = (id: string) =>
     id.startsWith('landmark:')
       ? LANDMARK_NAME[id.slice(9) as LandmarkId]()
@@ -56,7 +129,9 @@
 
   const rowStartM = $derived(slots.length ? slots[0].xM - slots[0].widthM / 2 : 0);
   const trackW = $derived(stage ? (stage.rowLengthM - rowStartM) * pxPerM + PAD + viewW * 0.15 : 0);
-  const tickStep = $derived(kind === 'launchers' ? 10 : 1);
+  const tickStep = $derived(
+    !stage ? 10 : stage.topM > 60 ? 10 : stage.topM > 20 ? 5 : stage.topM > 8 ? 2 : 1,
+  );
   const ticks = $derived(
     stage
       ? Array.from({ length: Math.floor(stage.topM / tickStep) + 1 }, (_, i) => i * tickStep)
@@ -77,10 +152,12 @@
           { buildLineupCatalog, LINEUP_CATEGORIES },
           { createLineupStage },
           { buildScaleFigure, SCALE_FIGURE_HEIGHT_M },
+          { buildCartoon, CARTOON_HEIGHT_M },
         ] = await Promise.all([
           import('$lib/three/lineup/lineup-catalog'),
           import('$lib/three/lineup/lineup-scene'),
           import('$lib/three/lineup/scale-figures'),
+          import('$lib/three/lineup/cartoon-figures'),
         ]);
         const cats = LINEUP_CATEGORIES[kind];
         const records = await Promise.all(
@@ -95,21 +172,27 @@
         );
         missing = catalog.missing;
         const topM = Math.max(...catalog.items.map((i) => i.heightM), 1);
-        // Landmarks from around the world stand among the craft at their own heights; the row
-        // closes with the Eiffel Tower (taller than the frame: it runs out of the top) or a bus.
+        // The launcher row closes with the Eiffel Tower, taller than the frame: it runs out of
+        // the top.
         const landmark = (id: LandmarkId, capped = false) => ({
           id: `landmark:${id}`,
-          build: () => buildScaleFigure(id),
-          heightM: SCALE_FIGURE_HEIGHT_M[id],
+          build: () =>
+            id === 'routemaster' || id === 'beetle' ? buildCartoon(id) : buildScaleFigure(id),
+          heightM:
+            id === 'routemaster' || id === 'beetle'
+              ? CARTOON_HEIGHT_M[id]
+              : SCALE_FIGURE_HEIGHT_M[id],
           landmark: true,
           capped,
         });
-        const among = kind === 'launchers' ? LAUNCHER_LANDMARKS.map((id) => landmark(id)) : [];
-        const row = [...catalog.items, ...among].sort((a, b) => b.heightM - a.heightM);
-        row.push(kind === 'launchers' ? landmark('eiffel', true) : landmark('bus'));
+        const row = [...catalog.items, ...LANDMARKS[kind].map((id) => landmark(id))].sort(
+          (a, b) => b.heightM - a.heightM,
+        );
+        if (kind === 'launchers') row.push(landmark('eiffel', true));
+        const cast = CAST[kind];
         const s = createLineupStage(canvas, row, {
-          gapM: topM * (kind === 'launchers' ? 0.24 : 0.5),
-          personEvery: kind === 'launchers' ? 3 : 1,
+          gapM: kind === 'launchers' ? topM * 0.24 : 3,
+          cast: (i) => buildCartoon(cast[i % cast.length], i, i % 2 === 1),
         });
         stage = s;
         slots = s.layout;
@@ -217,6 +300,7 @@
           >
             <span class="name">{nameOf(s.id)}</span>
             {#if s.part}<span class="part">{m.fleet_lineup_part_capsule()}</span>{/if}
+            {#if s.members}<span class="part">{s.members.map(nameOf).join(' · ')}</span>{/if}
             <span class="h">{fmtM(s.heightM)}</span>
           </button>
         {/if}

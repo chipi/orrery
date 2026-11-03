@@ -54,6 +54,13 @@
     'new-glenn': 98,
     'proton-m-briz-m': 58.2,
     'ariane-5g': 47.5,
+    antares: 42.5,
+    'ariane-6': 63,
+    energia: 58.765,
+    'long-march-7': 53.1,
+    n1: 105.3,
+    'soyuz-2': 46.3,
+    vulcan: 61.6,
   };
 
   let canvas: HTMLCanvasElement;

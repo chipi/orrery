@@ -11,12 +11,8 @@ export const LINEUP_CATEGORIES: Record<LineupKind, FleetCategory[]> = {
   spacecraft: ['crewed-spacecraft', 'cargo-spacecraft'],
 };
 
-/**
- * Line-ups shown on /fleet. The capsule and spacecraft line-up waits until the station visitors
- * (Soyuz MS, Progress, Dragon, Cygnus, HTV-X, Starliner, Shenzhou, Tianzhou) have showcase models;
- * their station stand-ins are too plain at true scale next to the capsules (operator, 2026-11-03).
- */
-export const LINEUP_LIVE: readonly LineupKind[] = ['launchers'];
+/** Line-ups shown on /fleet (a kind can be held back here while its models are not ready). */
+export const LINEUP_LIVE: readonly LineupKind[] = ['launchers', 'spacecraft'];
 
 export function lineupKindFor(category: FleetCategory | 'ALL'): LineupKind | null {
   if (category === 'launcher') return 'launchers';

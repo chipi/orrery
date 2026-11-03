@@ -27,5 +27,9 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1987-044A",
       "t": "deep"
     }
-  ]
+  ],
+  "specs": {
+    "height_m": 58.765,
+    "diameter_m": 7.75
+  }
 }

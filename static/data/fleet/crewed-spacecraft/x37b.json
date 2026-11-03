@@ -71,5 +71,10 @@
       "mission_id": "otv-7",
       "flight_designation": "X-37B OTV-7 (USA-358, USSF-52) (2023-12-29) · 434d · Falcon Heavy · Vandenberg SFB"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 8.92,
+    "wingspan_m": 4.55,
+    "height_m": 2.9
+  }
 }

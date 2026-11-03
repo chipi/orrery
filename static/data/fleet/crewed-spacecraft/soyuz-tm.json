@@ -26,6 +26,11 @@
       "l": "Soyuz TM-1 — NASA NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1986-035A",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia Soyuz (spacecraft) comparison table — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)",
+      "t": "deep"
     }
   ],
   "flights": [
@@ -53,5 +58,9 @@
       "mission_id": "soyuz-tm-31",
       "flight_designation": "Soyuz TM-31 (2000-10-31) · Shepherd + Krikalev + Gidzenko — Expedition 1 — first crew to ISS"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 7.48,
+    "diameter_m": 2.72
+  }
 }

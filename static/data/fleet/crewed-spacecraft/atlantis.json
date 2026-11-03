@@ -31,6 +31,11 @@
       "l": "Atlantis at Kennedy Space Center",
       "u": "https://www.kennedyspacecenter.com/explore-attractions/space-shuttle-atlantis/",
       "t": "core"
+    },
+    {
+      "l": "Wikipedia — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
+      "t": "deep"
     }
   ],
   "linked_iss_modules": [
@@ -64,5 +69,10 @@
       "mission_id": "sts-135",
       "flight_designation": "STS-135 (2011-07-08) · final Shuttle flight ever; delivered Raffaello MPLM to ISS; closed the 30-year Shuttle programme"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 37.237,
+    "wingspan_m": 23.79,
+    "payload_bay_diameter_m": 4.6
+  }
 }

@@ -14,6 +14,60 @@ import { buildTiangongVisitor } from '$lib/tiangong-proxy-model';
 import { buildMoonLanderModel } from '$lib/moon-lander-models';
 import { LAUNCHER_ID_CANON } from '$lib/physics/ascent/launch-profile-registry';
 import type { LineupItem } from './lineup-scene';
+import type { ShowcaseModel } from '../showcase/types';
+
+/**
+ * Lay an upright winged craft on the runway: nose (+y) to +x, wings (±x) into the screen (±z), its
+ * top side up — seen side-on, as it rolls out after landing.
+ */
+function runwayBuild(model: ShowcaseModel, top: '+z' | '-z'): () => THREE.Object3D {
+  // Rotation matrices (columns = images of x, y, z): y→x, and the top side → +y.
+  const m =
+    top === '+z'
+      ? new THREE.Matrix4().set(0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1)
+      : new THREE.Matrix4().set(0, 1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 1);
+  return () => {
+    const craft = model.build();
+    craft.quaternion.setFromRotationMatrix(m);
+    const outer = new THREE.Group();
+    outer.add(craft);
+    return outer;
+  };
+}
+
+/** Every showcase family file's SHOWCASE map (src/lib/three/showcase/*.ts), merged by fleet id. */
+const SHOWCASE: Record<string, ShowcaseModel> = Object.assign(
+  {},
+  ...Object.values(
+    import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>('../showcase/*.ts', {
+      eager: true,
+    }),
+  ).map((mod) => mod.SHOWCASE ?? {}),
+);
+
+/**
+ * A showcase craft stood for the line-up: turned to its narrowest silhouette (solar wings nearly
+ * edge-on, so a 17 m span does not spread the row), then a little further so the wings still read.
+ */
+function showcaseBuild(model: ShowcaseModel): () => THREE.Object3D {
+  if (model.pose?.kind === 'runway') return runwayBuild(model, model.pose.top);
+  return () => {
+    const wrap = new THREE.Group();
+    wrap.add(model.build());
+    let best = 0;
+    let bestW = Infinity;
+    for (let i = 0; i < 12; i++) {
+      wrap.rotation.y = (i * Math.PI) / 12;
+      wrap.updateMatrixWorld(true);
+      const box = new THREE.Box3().setFromObject(wrap);
+      if (box.max.x - box.min.x < bestW) [best, bestW] = [wrap.rotation.y, box.max.x - box.min.x];
+    }
+    wrap.rotation.y = best + 0.35;
+    const outer = new THREE.Group();
+    outer.add(wrap);
+    return outer;
+  };
+}
 
 export { LINEUP_CATEGORIES, type LineupKind };
 
@@ -27,6 +81,15 @@ export function launcherModelFor(fleetId: string): string | null {
   const id = LINEUP_LAUNCHER_ALIAS[fleetId] ?? LAUNCHER_ID_CANON[fleetId] ?? fleetId;
   return LAUNCHER_MODEL_IDS.includes(id) ? id : null;
 }
+
+/**
+ * Fleet entries drawn by one identical model: the line-up shows the craft once and names the
+ * sisters under it (the five orbiters built to one design, which Columbia and Enterprise are not).
+ */
+const LINEUP_GROUPS: Record<string, string[]> = {
+  'space-shuttle-orbiter': ['atlantis', 'challenger', 'discovery', 'endeavour'],
+};
+const GROUPED = new Set(Object.values(LINEUP_GROUPS).flat());
 
 export interface LineupEntry {
   id: string;
@@ -110,7 +173,8 @@ export const LINEUP_SPACECRAFT_IDS = Object.keys(SPACECRAFT_MODELS);
 
 function sizeOf(kind: LineupKind, e: LineupEntry): number | null {
   const s = e.specs ?? {};
-  const v = kind === 'launchers' ? s.height_m : s[SPACECRAFT_MODELS[e.id]?.size ?? 'length_m'];
+  const key = SHOWCASE[e.id] ? 'length_m' : (SPACECRAFT_MODELS[e.id]?.size ?? 'length_m');
+  const v = kind === 'launchers' ? s.height_m : (s[key] ?? s.height_m);
   return typeof v === 'number' && v > 0 ? v : null;
 }
 
@@ -125,7 +189,7 @@ export function buildLineupCatalog(kind: LineupKind, entries: LineupEntry[]): Li
   const items: LineupItem[] = [];
   const missing: LineupCatalog['missing'] = [];
   for (const e of entries) {
-    if (!LINEUP_CATEGORIES[kind].includes(e.category)) continue;
+    if (!LINEUP_CATEGORIES[kind].includes(e.category) || GROUPED.has(e.id)) continue;
     const build = modelBuilder(kind, e.id);
     const size = sizeOf(kind, e);
     if (!build) missing.push({ id: e.id, reason: 'no-model' });
@@ -136,7 +200,9 @@ export function buildLineupCatalog(kind: LineupKind, entries: LineupEntry[]): Li
         build,
         heightM: size,
         part: SPACECRAFT_MODELS[e.id]?.part,
-        fitWidth: SPACECRAFT_MODELS[e.id]?.fitWidth,
+        members: LINEUP_GROUPS[e.id],
+        // A runway craft's sourced size is its length, now lying along x.
+        fitWidth: SHOWCASE[e.id]?.pose ? true : SPACECRAFT_MODELS[e.id]?.fitWidth,
       });
   }
   items.sort((a, b) => b.heightM - a.heightM);
@@ -148,5 +214,7 @@ function modelBuilder(kind: LineupKind, fleetId: string): (() => THREE.Object3D)
     const modelId = launcherModelFor(fleetId);
     return modelId ? () => buildLauncherModel(modelId, 1, 0).root : null;
   }
+  const showcase = SHOWCASE[fleetId];
+  if (showcase) return showcaseBuild(showcase);
   return SPACECRAFT_MODELS[fleetId]?.build ?? null;
 }

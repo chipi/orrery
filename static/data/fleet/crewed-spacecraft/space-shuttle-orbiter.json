@@ -165,5 +165,10 @@
         }
       ]
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 37.237,
+    "wingspan_m": 23.79,
+    "payload_bay_diameter_m": 4.6
+  }
 }

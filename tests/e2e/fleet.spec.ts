@@ -175,11 +175,22 @@ test.describe('/fleet', () => {
     // Tallest first, with its sourced height.
     await expect(labels.first()).toContainText('Starship');
     await expect(labels.first()).toContainText('123.1 m');
-    // The capsule line-up waits for its showcase models.
-    await expect(page.getByRole('button', { name: /Capsules/ })).toHaveCount(0);
     await lineup.locator('.label', { hasText: 'Saturn V' }).click();
     await expect(page.locator('aside.panel')).toBeVisible({ timeout: 10_000 });
     expect(page.url()).toContain('id=saturn-v');
+    expect(errors).toEqual([]);
+  });
+
+  test('capsule and spacecraft line-up draws every crewed and cargo craft', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/fleet?category=launcher&view=lineup');
+    await page.getByRole('button', { name: /Capsules/ }).click();
+    await expect(page).toHaveURL(/category=crewed-spacecraft/);
+    const labels = page.locator('section.lineup .label');
+    await expect(labels.first()).toBeVisible({ timeout: 15_000 });
+    expect(await labels.count()).toBeGreaterThanOrEqual(35);
+    await expect(page.locator('section.lineup')).toContainText('Crew Dragon');
+    await expect(page.locator('section.lineup .missing')).toHaveCount(0);
     expect(errors).toEqual([]);
   });
 

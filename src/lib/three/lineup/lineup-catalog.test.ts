@@ -6,6 +6,7 @@ import * as THREE from 'three';
 import { buildLineupCatalog, launcherModelFor, type LineupEntry } from './lineup-catalog';
 import { normalise } from './lineup-scene';
 import { buildLauncherModel } from '../launcher-models';
+import type { ShowcaseModel } from '../showcase/types';
 
 const FLEET = join(process.cwd(), 'static/data/fleet');
 const load = (cat: string): LineupEntry[] =>
@@ -68,5 +69,53 @@ describe('true-scale normalisation', () => {
     const r = normalise(g, 2.3, true);
     expect(r.w).toBeCloseTo(2.3, 6);
     expect(r.h).toBeGreaterThan(2.3);
+  });
+});
+
+describe('capsule and spacecraft line-up catalog', () => {
+  const spacecraft = [...load('crewed-spacecraft'), ...load('cargo-spacecraft')];
+  const { items, missing } = buildLineupCatalog('spacecraft', spacecraft);
+
+  it('draws every crewed and cargo craft (the sister orbiters as one)', () => {
+    expect(missing).toEqual([]);
+    // atlantis, challenger, discovery and endeavour are drawn as the one space-shuttle-orbiter.
+    expect(items.length).toBe(spacecraft.length - 4);
+    expect(items.find((i) => i.id === 'space-shuttle-orbiter')?.members).toEqual([
+      'atlantis',
+      'challenger',
+      'discovery',
+      'endeavour',
+    ]);
+  });
+});
+
+describe('showcase models', () => {
+  const mods = import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>('../showcase/*.ts', {
+    eager: true,
+  });
+  const all = Object.assign({}, ...Object.values(mods).map((m) => m.SHOWCASE ?? {})) as Record<
+    string,
+    ShowcaseModel
+  >;
+  const fleet = new Map(
+    [...load('crewed-spacecraft'), ...load('cargo-spacecraft')].map((e) => [e.id, e]),
+  );
+
+  it('are keyed by fleet ids', () => {
+    for (const id of Object.keys(all)) expect(fleet.has(id), id).toBe(true);
+  });
+
+  it('draw at the fleet entry’s sourced length, base on the ground', () => {
+    for (const [id, m] of Object.entries(all)) {
+      const g = m.build();
+      const box = new THREE.Box3().setFromObject(g);
+      const spec = fleet.get(id)?.specs?.length_m;
+      expect(typeof spec, id).toBe('number');
+      expect(
+        Math.abs(box.max.y - box.min.y - (spec as number)) / (spec as number),
+        id,
+      ).toBeLessThan(0.01);
+      expect(Math.abs(box.min.y), id).toBeLessThan(0.05);
+    }
   });
 });

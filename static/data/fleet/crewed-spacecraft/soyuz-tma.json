@@ -26,6 +26,11 @@
       "l": "Soyuz TMA-1 — NASA NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2002-050A",
       "t": "deep"
+    },
+    {
+      "l": "Wikipedia Soyuz (spacecraft) comparison table — dimensions",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)",
+      "t": "deep"
     }
   ],
   "flights": [
@@ -53,5 +58,9 @@
       "mission_id": "soyuz-tma-22",
       "flight_designation": "Soyuz TMA-22 (2011-11-14) · Burbank + Shkaplerov + Ivanishin — last classic Soyuz TMA; first crew after the 2011 Progress-44 loss"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 7.48,
+    "diameter_m": 2.72
+  }
 }

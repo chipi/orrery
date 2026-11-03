@@ -334,3 +334,27 @@ in that frame. Ends `audit-cislunar: N mission(s) flagged`.
 **When** — After regenerating waypoints (`npx tsx scripts/cislunar/generate-hybrid-waypoints.ts
 <mission.json>`, which now times the phases from the flight's events) or editing Moon events.
 **State** — healthy (2026-11-03: 0 flagged, was 22).
+
+## /fly flight paths — generate (`scripts/generate-fly-trajectory.ts`, `scripts/lib/conic-leg.ts`)
+
+**Command** — `npx tsx scripts/generate-fly-trajectory.ts <id>…` → `static/data/fly-trajectories/<id>.json`,
+then add the id to `FLY_TRAJECTORY_IDS` (`src/lib/data/interstellar.ts`; `fly-trajectories.test.ts`
+checks every listed file).
+**What** — A heliocentric path for `/fly` built from the mission's own `flight.events`: a labelled
+waypoint at launch, at each flyby / arrival of a body `/fly` knows (`labelToPlanetId`), and
+between them:
+- with the body, after an orbit insertion or arrival at the same body (NEAR at Eros, Dawn at Ceres);
+- on the coasting conic between the two encounters in the flown time when it is under one
+  revolution — Lambert's problem by p-iteration, ellipse or escape hyperbola, checked by
+  propagation (`conic-leg.ts`, `conic-leg.test.ts`);
+- else (resonant multi-revolution legs, ion-propulsion cruises) the coasting estimate.
+
+Sun missions end at their first perihelion (`SUN_PERIHELION_AU`, sourced): a real Kepler fall from
+the last anchor, marked `ends_at_perihelion_au`. The script prints per mission how many legs are
+conics and how many estimates. `/fly` moves labelled waypoints onto the body's position at that
+date; the `/explore` files in `static/data/trajectories/` are a stylised layout (cruise points
+near longitude 0°) and `/fly` no longer flies them.
+**When** — A flyby mission's events change, a body is added (a new `DestinationId`), or `/fly`
+shows the craft away from a body at its event.
+**State** — healthy (2026-11-03: 25 missions; no return legs — operator scope rule 2026-11-02).
+

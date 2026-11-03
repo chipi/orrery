@@ -87,6 +87,22 @@ The generator multiplies the transit window by 2 to cover both outbound + return
 
 Example: MMX (JAXA Mars/Phobos sample return, 2026) is planned as sample-return; when its event timeline is backfilled with `earth_return`, set `interplanetary_profile.return.type = "tei_helio_direct"` so /fly renders both legs.
 
+### Which missions come back (`round_trip`)
+
+Whether a mission returns to Earth is the base record's `round_trip: true` (61 missions: the
+crewed flights, the sample returns, the X-37B), never the translated `type` — that string once
+decided it, so German or Japanese readers got one-way Apollos and "UNCREWED LANDER" counted as
+crewed. A heliocentric round trip's timeline ends at its own `earth_return` event when it has one.
+
+### Flyby missions on /fly (`static/data/fly-trajectories/`)
+
+`/fly` flies flyby and small-body missions on generated paths through their encounter bodies —
+see [content-pipelines § /fly flight paths](../reference/tooling/content-pipelines.md). Direct
+transfers (Vega, Venera 13, Pioneer 10) fly their transfer ellipse. The body a mission flies to
+is `flyDestinationOf` (`src/lib/fly-mission-apply.ts`): the dest's body, or for COMET / ASTEROID /
+SUN missions the comet, asteroid or Jupiter (Ulysses); Parker and Solar Orbiter end at the Sun
+(`missionMeta.sunTarget`).
+
 ### Outer-system missions (Galileo, Voyager 2, New Horizons, Dawn)
 
 Outer-system missions use the same `interplanetary_profile` schema as Mars. Differences worth knowing:

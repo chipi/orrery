@@ -350,6 +350,9 @@ function buildVenusDescentLander(): THREE.Group {
   return g;
 }
 
+// Earth re-entries with no LEO coast entry (lunar returns) name their capsule here.
+const LUNAR_RETURN_CAPSULE: Record<string, string> = { apollo8: 'apollo-cm' };
+
 /** Resolve the terminal landed craft for a mission (the reused surface model). */
 function resolveLander(siteId: string, body: DescentBody): THREE.Group {
   if (body === 'moon') return buildMoonLanderModel(siteId, 'lander', '#c9ccd2');
@@ -362,7 +365,8 @@ function resolveLander(siteId: string, body: DescentBody): THREE.Group {
   // Tier-1: the earth descent profile's siteId is the mission id — look up its
   // capsule family from the coast registry (falls back to Mercury).
   if (body === 'earth') {
-    const capsuleId = getEarthOrbitCoast(siteId)?.capsuleId ?? 'mercury';
+    const capsuleId =
+      getEarthOrbitCoast(siteId)?.capsuleId ?? LUNAR_RETURN_CAPSULE[siteId] ?? 'mercury';
     const cap = buildCapsuleById(capsuleId);
     cap.userData.capsuleId = capsuleId; // read by buildEarthCapsuleStack for chute count
     return cap;

@@ -30,6 +30,11 @@ describe('buildDescentModel', () => {
     expect(m.lander.children.length).toBeGreaterThan(0);
   });
 
+  it('Apollo 8 re-enters in the Apollo CM, not the Mercury fallback', () => {
+    const m = buildDescentModel('apollo8', 'earth', 1);
+    expect(m.lander.userData.capsuleId).toBe('apollo-cm');
+  });
+
   it('exposes the dedicated stack ids', () => {
     expect(KNOWN_DESCENT_STACK_IDS).toContain('curiosity');
     expect(KNOWN_DESCENT_STACK_IDS).toContain('viking1-lander');

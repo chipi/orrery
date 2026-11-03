@@ -2,17 +2,34 @@
   "missionId": "hayabusa2",
   "siteId": "hayabusa2",
   "body": "ryugu",
-  "landingSite": { "lat": 0.0, "lon": 320.0 },
-  "entryState": { "altitudeM": 40, "velocityMs": 0.1, "flightPathAngleDeg": 90 },
+  "landingSite": {
+    "lat": 0,
+    "lon": 320
+  },
+  "entryState": {
+    "altitudeM": 45,
+    "velocityMs": 0.034,
+    "flightPathAngleDeg": 90
+  },
   "entryMassKg": 590,
   "entryCdA": 4,
   "archetype": "ASTEROID_TOUCH_AND_GO",
-  "params": { "contactAltM": 1, "terminalVelocityMs": 0.1, "descentRateGain": 0.02 },
+  "params": {
+    "contactAltM": 1,
+    "terminalVelocityMs": 0.034,
+    "descentRateGain": 0.001
+  },
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "Hayabusa2 sample collection at Ryugu — JAXA",
-      "u": "https://www.hayabusa2.jaxa.jp/en/"
+      "l": "Hayabusa2 — first touchdown on Ryugu 22:29 UTC 21 Feb 2019: descent from 20 km, the final sequence from the 45 m checkpoint took 22 min (58 planned), tantalum bullet at ~300 m/s, 1 m from the centre of a 6 m site (Planetary Society). The model flies the last 45 m; speeds are estimates",
+      "u": "https://www.planetary.org/articles/hayabusa2-touchdown-recap"
     }
+  ],
+  "estimatedFields": [
+    "entryMassKg",
+    "entryState.velocityMs",
+    "terminalVelocityMs",
+    "descentRateGain"
   ]
 }

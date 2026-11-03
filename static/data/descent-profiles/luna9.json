@@ -2,16 +2,41 @@
   "missionId": "luna9",
   "siteId": "luna9",
   "body": "moon",
-  "landingSite": { "lat": 7.08, "lon": -64.37 },
-  "entryState": { "altitudeM": 2000, "velocityMs": 140, "flightPathAngleDeg": 55 },
-  "entryMassKg": 100,
+  "landingSite": {
+    "lat": 7.08,
+    "lon": -64.37
+  },
+  "entryState": {
+    "altitudeM": 75000,
+    "velocityMs": 2550,
+    "flightPathAngleDeg": 89
+  },
+  "entryMassKg": 1538,
   "entryCdA": 0,
-  "retroPropellantKg": 30,
+  "retroPropellantKg": 1000,
   "survivableTouchdownMs": 30,
   "archetype": "LUNA_DIRECT_IMPACT",
-  "params": { "ispS": 287, "airbagReleaseMs": 15, "descentRateGain": 0.4 },
+  "params": {
+    "ispS": 287,
+    "airbagReleaseMs": 5,
+    "descentRateGain": 0.035,
+    "airbagReleaseAltM": 5
+  },
   "source_tier": "flagship",
   "provenance": [
-    { "l": "Luna 9 — NSSDC spacecraft record", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A" }
+    {
+      "l": "Luna 9 — radar altimeter at 75 km fires the retro on a direct approach (no lunar orbit), main engine cut at 250 m, contact probe ejects the 99 kg capsule at ~5 m, which lands at 22 km/h (6.1 m/s; the article also says 54 km/h); 1,538 kg spacecraft. Arrival speed by vis-viva, propellant and the near-vertical angle are estimates",
+      "u": "https://en.wikipedia.org/wiki/Luna_9"
+    },
+    {
+      "l": "Luna 9 — NSSDC spacecraft record",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A"
+    }
+  ],
+  "estimatedFields": [
+    "entryState.velocityMs",
+    "flightPathAngleDeg",
+    "retroPropellantKg",
+    "descentRateGain"
   ]
 }

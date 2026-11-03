@@ -2,16 +2,28 @@
   "missionId": "tianwen1",
   "siteId": "zhurong",
   "body": "mars",
-  "landingSite": { "lat": 25.066, "lon": 109.925 },
-  "entryState": { "altitudeM": 125000, "velocityMs": 4800, "flightPathAngleDeg": 15 },
+  "landingSite": {
+    "lat": 25.066,
+    "lon": 109.925
+  },
+  "entryState": {
+    "altitudeM": 125000,
+    "velocityMs": 4800,
+    "flightPathAngleDeg": 14.5
+  },
   "entryMassKg": 1300,
   "entryCdA": 14,
   "liftToDragRatio": 0.24,
-  "estimatedFields": ["flightPathAngleDeg", "liftToDragRatio", "entryCdA"],
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "liftToDragRatio",
+    "entryCdA",
+    "chuteDeployAltM"
+  ],
   "retroPropellantKg": 200,
   "archetype": "MARS_PARACHUTE_RETRO",
   "params": {
-    "chuteDeployAltM": 8000,
+    "chuteDeployAltM": 15000,
     "terminalHandoffAltM": 1500,
     "parachuteCdA": 120,
     "heatshieldKg": 100,
@@ -21,6 +33,13 @@
   },
   "source_tier": "flagship",
   "provenance": [
-    { "l": "Tianwen-1 / Zhurong EDL — CNSA mission report", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-049A" }
+    {
+      "l": "Tianwen-1 / Zhurong EDL — entry at 125 km and 4.8 km/s, ~460 m/s at parachute deploy, about nine minutes to touchdown (Spaceflight Now); entry angle and chute altitude fitted to the nine minutes (the model deploys at ~430 m/s)",
+      "u": "https://spaceflightnow.com/2021/05/15/china-lands-its-first-probe-on-mars/"
+    },
+    {
+      "l": "Tianwen-1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tianwen-1"
+    }
   ]
 }

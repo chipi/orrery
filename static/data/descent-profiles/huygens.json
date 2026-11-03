@@ -2,23 +2,51 @@
   "missionId": "huygens",
   "siteId": "huygens",
   "body": "titan",
-  "landingSite": { "lat": -10.3, "lon": 192.3 },
-  "entryState": { "altitudeM": 800000, "velocityMs": 6000, "flightPathAngleDeg": 65 },
+  "landingSite": {
+    "lat": -10.3,
+    "lon": 192.3
+  },
+  "entryState": {
+    "altitudeM": 1270000,
+    "velocityMs": 6000,
+    "flightPathAngleDeg": 65
+  },
   "entryMassKg": 320,
-  "entryCdA": 2.5,
+  "entryCdA": 8.6,
   "archetype": "TITAN_PARACHUTE",
+  "dynamicGamma": true,
   "params": {
-    "chuteDeployAltM": 120000,
-    "terminalHandoffAltM": 80000,
-    "parachuteCdA": 8,
-    "terminalCdA": 2,
+    "chuteDeployAltM": 157000,
+    "terminalHandoffAltM": 111000,
+    "parachuteCdA": 27,
+    "terminalCdA": 5.35,
     "heatshieldKg": 80
   },
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "Huygens probe descent to Titan — ESA/NASA",
-      "u": "https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens"
+      "l": "Huygens HASI — entry interface 1,270 km at ~09:05:50 UTC, pilot chute fired at 157 km at 09:10:20.8 (T0), main chute +2.5 s, front shield +30 s, drogue at ~T0+830–900 s near 111 km; touchdown T0 + 2 h 27 min 50 s = 11:38:11 UTC at ~4.5 m/s; 318 kg, 2.7 m shield. Measured density and pressure in descent-atmosphere-tables.ts",
+      "u": "https://archives.esac.esa.int/psa/ftp//CASSINI-HUYGENS/HASI/HP-SSA-HASI-2-3-4-MISSION-V1.0/DATA/PROFILES/"
+    },
+    {
+      "l": "Striepe et al., Huygens probe entry and descent trajectory reconstruction (AAS 07-226)",
+      "u": "https://ntrs.nasa.gov/api/citations/20070010747/downloads/20070010747.pdf"
+    },
+    {
+      "l": "Titan surface landing — ESA",
+      "u": "https://sci.esa.int/web/cassini-huygens/-/36280-titan-surface-landing"
+    },
+    {
+      "l": "Huygens (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Huygens_(spacecraft)"
     }
+  ],
+  "estimatedFields": [
+    "entryState.velocityMs",
+    "flightPathAngleDeg",
+    "entryCdA",
+    "parachuteCdA",
+    "terminalCdA",
+    "heatshieldKg"
   ]
 }

@@ -80,10 +80,10 @@
       }
     ],
     "arrival": {
-      "entry_velocity_km_s": 10.7,
+      "entry_velocity_km_s": 10.8,
       "edl_system": "aeroshell",
-      "edl_duration_s": 2985,
-      "touchdown_velocity_ms": 11.12
+      "edl_duration_s": 3289,
+      "touchdown_velocity_ms": 8.82
     }
   }
 }

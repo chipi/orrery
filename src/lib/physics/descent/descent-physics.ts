@@ -35,6 +35,7 @@ import {
   SOUND_SPEED_MS,
   SURFACE_DENSITY_KGM3,
 } from './descent-physics-constants';
+import { ATM_PROFILE, interpAtm } from './descent-atmosphere-tables';
 // Powered-descent throttle law now lives in the kernel SYSTEMS layer (ADR-087).
 import { poweredDescentThrottle } from '../systems/powered-descent';
 
@@ -280,13 +281,15 @@ export interface DescentSummary {
 
 // ─── Per-body atmosphere + gravity ──────────────────────────────────
 
-/** Air density (kg·m⁻³) at altitude for a body — single-exponential; Moon = 0.
+/** Air density (kg·m⁻³) at altitude for a body — single-exponential, or the measured profile where one exists (Venus, Titan, Jupiter); Moon = 0.
  *  Altitude is NOT clamped at the datum: a surface-bound descent never goes
  *  below h=0 (the ground break stops it), but an atmospheric probe (Jupiter)
  *  sinks below the 1-bar datum into ever-denser gas, so the drag must rise. */
 export function bodyAirDensity(altM: number, body: DescentBody): number {
   const rho0 = SURFACE_DENSITY_KGM3[body];
   if (rho0 <= 0) return 0;
+  const table = ATM_PROFILE[body];
+  if (table) return interpAtm(table, altM, 1);
   return rho0 * Math.exp(-altM / ATM_SCALE_HEIGHT_M[body]);
 }
 
@@ -297,7 +300,7 @@ export function bodyGravity(altM: number, body: DescentBody): number {
 }
 
 /**
- * Ambient atmospheric pressure (Pa) at altitude — isothermal hydrostatic
+ * Ambient atmospheric pressure (Pa) at altitude — the measured profile where one exists, else isothermal hydrostatic
  * P(h) = ρ₀·g·H·exp(−h/H). Unlike `bodyAirDensity`, altitude is NOT clamped at
  * the datum, so pressure keeps rising as an atmospheric probe sinks below it
  * (Jupiter has no solid surface — the `pressure_pa` end-trigger fires here).
@@ -306,6 +309,8 @@ export function bodyGravity(altM: number, body: DescentBody): number {
 export function bodyAmbientPressurePa(altM: number, body: DescentBody): number {
   const rho0 = SURFACE_DENSITY_KGM3[body];
   if (rho0 <= 0) return 0;
+  const table = ATM_PROFILE[body];
+  if (table) return interpAtm(table, altM, 2);
   const gSurf = MU_BODY_M3_S2[body] / (R_BODY_M[body] * R_BODY_M[body]);
   const H = ATM_SCALE_HEIGHT_M[body];
   return rho0 * gSurf * H * Math.exp(-altM / H);

@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import {
   bodyAirDensity,
+  bodyAmbientPressurePa,
   bodyGravity,
   dynamicPressure,
   integrateDescent,
@@ -187,6 +188,21 @@ describe('per-body atmosphere + gravity', () => {
   it('surface density matches the constants', () => {
     expectCloseTo(bodyAirDensity(0, 'mars'), SURFACE_DENSITY_KGM3.mars, 1e-6, 'ρ₀ Mars');
     expectCloseTo(bodyAirDensity(0, 'venus'), SURFACE_DENSITY_KGM3.venus, 1e-6, 'ρ₀ Venus');
+  });
+
+  it('Venus, Titan and Jupiter fly the probes’ measured profiles', () => {
+    // Pioneer Venus Sounder: 92 bar at the surface, 0.43 kg/m³ at 60 km (the exponential gave 1.5).
+    expectCloseTo(bodyAmbientPressurePa(0, 'venus'), 9_216_000, 1, 'p Venus surface');
+    expectCloseTo(bodyAirDensity(60_000, 'venus'), 0.4291, 1e-6, 'ρ Venus 60 km');
+    // Huygens HASI: 0.0227 kg/m³ at 100 km.
+    expectCloseTo(bodyAirDensity(100_003, 'titan'), 0.022699, 1e-9, 'ρ Titan 100 km');
+    // Galileo ASI: 22.05 bar at −130.7 km (the exponential reached it at −82 km).
+    expectCloseTo(bodyAmbientPressurePa(-130_740, 'jupiter'), 2_205_000, 1, 'p Jupiter −130.7 km');
+    // Between rows: log-linear, so the midpoint is the geometric mean.
+    expectCloseTo(bodyAirDensity(55_000, 'venus'), 0.8671, 1e-6, 'ρ Venus 55 km (a row)');
+    const mid = bodyAirDensity(45_000, 'jupiter');
+    expect(mid).toBeLessThan(0.03359);
+    expect(mid).toBeGreaterThan(0.01881);
   });
 
   it('Mars density falls by 1/e over one scale height (11 km)', () => {

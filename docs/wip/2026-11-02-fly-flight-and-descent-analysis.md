@@ -172,13 +172,46 @@ Touchdown speeds are the reported ones where a report gives one (Apollo 11 0.83,
 15 2.07, 16 0.46, 17 0.9, Chang'e 5 1.99 m/s); the rest land at 1.0 m/s. The "Was" column is
 blank where the earlier value was not recorded before the change.
 
+### 10. The other Moon, Mars, Venus and small-body profiles
+
+**Done 2026-11-03**, against the same research notes (sources cited in each profile):
+
+| Mission | Sourced | Was | Now | Note |
+| --- | --- | --- | --- | --- |
+| Venera 13 | ~63 min, 7–8 m/s, 138–167 g | 2,985 s, 11.1 m/s, 166 g at 112 km | 3,776 s, 7.4 m/s, 145 g at 71 km | 760 kg lander (was 1,450); entry 19.5°, was 65° |
+| Vega 1 / 2 | 3,404 / 3,286 s; 130 / 139 g | copies of Venera 13 | 3,407 / 3,289 s; 126 / 134 g | entry 18.2° / 19.1° |
+| Huygens | chute at 157 km ~270 s after entry; touchdown 9,140 s, ~4.5 m/s | 11,967 s, 7.5 m/s | chute 277 s, drogue T0+842 s, 9,153 s, 4.6 m/s | 2.7 m shield: `entryCdA` 8.6, was 2.5 |
+| Galileo probe | ~230 g; chute at 23 km (+167 s); loss at 22 bar after 61.4 min | 1,878 s, crush at −82 km | 246 g at 96 km, chute 141 s, loss 3,691 s at −133 km | |
+| Mars 3 | soft landing, 5.7 km/s, 1,210 kg | crash at 66 m/s, 2,155 s | 2.4 m/s, 336 s | the test listed it as a crash; the site's text says soft |
+| Tianwen-1 | ~9 min, ~460 m/s at chute | 487 s | 538 s, ~430 m/s at chute | |
+| Luna 9 | retro from 75 km, capsule out at 5 m, 6.1 m/s | 2 km start, 18.6 m/s | 188 s, 6.4 m/s | new `airbagReleaseAltM` |
+| SLIM | ~20 min, 2 × 500 N | generic 100 s | 1,016 s | no hover in the model |
+| Hayabusa2 | 45 m → contact in 22 min | 400 s from 40 m | 1,322 s | |
+| Hayabusa / OSIRIS-REx / NEAR / Philae | — | — | last 54 m / 54 m / 5 km / 100 m | final leg only; hours-long approaches not flown |
+
+Also fixed: Galileo's `probe_signal_lost` beat fired twice, the first at the start of the last
+phase (~40 min early). Beresheet keeps its numbers (no descent timeline found; it ends at the
+reported ~139 m/s). Blue Moon Mk1 and the Artemis landers have not flown and stay generic.
+
+**Atmospheres:** Venus, Titan and Jupiter used one isothermal exponential. It was far too
+dense high up, so the probes decelerated too early (Venus peak g at 112 km two seconds after
+entry; Huygens at its chute at 748 s, plan 240 s; Galileo at 485 s, plan 115 s), and on
+Jupiter it reached 23 bar at −82 km instead of ~−130 km. They now fly the probes' measured
+profiles (`descent-atmosphere-tables.ts`: Pioneer Venus Sounder, Huygens HASI, Galileo ASI
+from PDS / ESA PSA), and ballistic probes on these bodies fly `dynamicGamma` so they pitch
+over as they slow. The descent time warp (built to compress Mars's long entry) now only
+applies when the entry is the long part: on these profiles it stretched a 28 s entry up to
+60× and left the clock at E+00:00 for minutes. The Galileo ASI velocity column (0.44 km/s still at 23.4 km) puts the
+real chute opening near 23 km, not the planned 47 km. The Venus entry angles and peak g are
+Dutta et al. 2012's simulated values, not flight data.
+
 ## Not checked yet
 
 This survey read the code and data. It did NOT check, and the gaps above are not the whole list
 until these are done:
 
-- **Profile numbers vs sources:** Mars (§8) and the Moon (§9) are done. Venus (Venera, Vega),
-  Titan (Huygens), Jupiter (Galileo probe), the small bodies and the Earth capsules are not.
+- **Profile numbers vs sources:** Mars (§8), the Moon (§9), Venus, Titan, Jupiter and the
+  small bodies (§10) are done. The 31 Earth capsules are not.
 - **Browser behaviour:** no descent, flyby or orbit-insertion beat was flown in the browser.
 - **Event timing:** cruise event times (TCMs, flybys, arrival dates) were not checked against
   mission records. One is known wrong: Clementine's TLI sits at MET 0.5 d, the real one was

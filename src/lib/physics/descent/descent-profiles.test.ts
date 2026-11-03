@@ -52,8 +52,8 @@ function flight(id: string): { profile: DescentProfile; s: DescentSummary } {
   return f;
 }
 
-/** The three missions whose EDL is an honest failure (impact, not touchdown). */
-const CRASHES = new Set(['beresheet', 'schiaparelli', 'mars3', 'soyuz-1']);
+/** The missions whose EDL is an honest failure (impact, not touchdown). Mars 3 soft-landed. */
+const CRASHES = new Set(['beresheet', 'schiaparelli', 'soyuz-1']);
 
 /**
  * Peak-decel band (Earth-g) per body — a TIGHT regression guard calibrated to

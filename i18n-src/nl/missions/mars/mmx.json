@@ -1,39 +1,39 @@
 {
   "name": "MMX",
   "vehicle": "H3-24L",
-  "payload": "~4000 kg (gepland)",
+  "payload": "4480 kg",
   "delta_v": "~5 km/s",
-  "type": "PHOBOS-MONSTERTERUGKEER · GEPLAND",
+  "type": "PHOBOS-MONSTERTERUGKEER · ACTIEF",
   "first": "Eerste monsterterugkeer van een Mars-maan",
-  "description": "Martian Moons eXploration is JAXA's plan om op Phobos te landen, ~10 g regoliet te scheppen en mee terug te brengen. De monsters kunnen een lang besproken vraag beantwoorden: zijn Phobos en Deimos gevangen planetoïden of fragmenten van een oude inslag op Mars zelf? De missie omvat ook een Duits-Franse rover voor Phobos-oppervlaktemobiliteit — een geheel ander operationeel model dan wat de Hayabusa-missies bij Itokawa of Ryugu deden. Lancering was gepland voor 2024 maar verschoof naar 2026 vanwege vertragingen in JAXA's H3-draagraket.",
+  "description": "Martian Moons eXploration is JAXA's plan om op Phobos te landen, ~10 g regoliet te scheppen en mee terug te brengen. De monsters kunnen een lang besproken vraag beantwoorden: zijn Phobos en Deimos gevangen planetoïden of fragmenten van een oude inslag op Mars zelf? De missie omvat ook een Duits-Franse rover voor Phobos-oppervlaktemobiliteit — een geheel ander operationeel model dan wat de Hayabusa-missies bij Itokawa of Ryugu deden. Door vertragingen van JAXA's H3-raket schoof de lancering van 2024 naar 2026; MMX vertrok op 19 oktober 2026 en moet in augustus 2027 in een baan om Mars komen.",
   "events": [
     {
       "met": 0,
       "label": "LANCERING",
-      "note": "H3-24L vanuit Tanegashima — JAXA's nieuwe zware draagraket.",
+      "note": "H3-vlucht 10 vanaf Tanegashima, 19 oktober 2026 — de eerste H3 die een sonde naar een andere planeet stuurde.",
       "type": "nominal"
     },
     {
-      "met": 334,
-      "label": "MARS-BAAN INSERTIE",
+      "met": 286,
+      "label": "MARSBAANINSERTIE",
       "note": "Invangen in een baan om Mars; in de maanden daarna overgang naar een quasi-baan om Phobos.",
       "type": "nominal"
     },
     {
-      "met": 600,
-      "label": "ROVER INZET",
+      "met": 986,
+      "label": "ROVERINZET",
       "note": "DLR/CNES-rover (~25 kg) op het oppervlak van Phobos afgezet voor in-situonderzoek.",
       "type": "info"
     },
     {
-      "met": 1100,
+      "met": 1351,
       "label": "PHOBOS-MONSTER",
       "note": "MMX landt op Phobos; ~10 g regoliet verzameld.",
       "type": "info"
     },
     {
-      "met": 1500,
-      "label": "AARDE-TERUGKEER",
+      "met": 1716,
+      "label": "TERUGKEER NAAR DE AARDE",
       "note": "Monsterterugkeercapsule arriveert bij de Aarde ~2031.",
       "type": "info"
     }
@@ -56,7 +56,7 @@
       "description": "Verfijning halverwege de reis."
     },
     {
-      "met": 320,
+      "met": 275,
       "label": "TCM-4 — laatste voor de intrede in een baan om Mars",
       "description": "Laatste naderingsrichting."
     }

@@ -116,7 +116,7 @@ const HELIO_SNAPSHOTS: HelioSnapshot[] = [
   },
   { slug: 'mars3', dest: 'mars', firstMet: 0, lastMetMin: 197, lastMetMax: 197.5, count: 100 },
   { slug: 'maven', dest: 'mars', firstMet: 0, lastMetMin: 323, lastMetMax: 323.5, count: 100 },
-  { slug: 'mmx', dest: 'mars', firstMet: 0, lastMetMin: 350, lastMetMax: 351, count: 100 },
+  { slug: 'mmx', dest: 'mars', firstMet: 0, lastMetMin: 300, lastMetMax: 301, count: 100 },
   {
     slug: 'perseverance',
     dest: 'mars',

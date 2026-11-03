@@ -1,39 +1,39 @@
 {
   "name": "MMX",
   "vehicle": "H3-24L",
-  "payload": "~4000 kg (previsto)",
+  "payload": "4480 kg",
   "delta_v": "~5 km/s",
-  "type": "RESTITUZIONE CAMPIONE PHOBOS · PIANIFICATA",
+  "type": "RESTITUZIONE CAMPIONE FOBOS · ATTIVA",
   "first": "Primo campione ritornato da una luna marziana",
-  "description": "Martian Moons eXploration è il piano della JAXA per atterrare su Phobos, raccogliere circa 10 g di regolite e riportarla sulla Terra. I campioni potrebbero risolvere una questione dibattuta da tempo: Phobos e Deimos sono asteroidi catturati o frammenti di un antico impatto sullo stesso Marte? La missione include anche un rover franco-tedesco per la mobilità sulla superficie di Phobos — un modello operativo del tutto diverso da qualsiasi cosa le missioni Hayabusa abbiano fatto su Itokawa o Ryugu. Il lancio era previsto per il 2024, ma è slittato al 2026 a causa dei ritardi del lanciatore H3 della JAXA.",
+  "description": "Martian Moons eXploration è il piano della JAXA per atterrare su Fobos, raccogliere circa 10 g di regolite e riportarla sulla Terra. I campioni potrebbero risolvere una questione dibattuta da tempo: Fobos e Deimos sono asteroidi catturati o frammenti di un antico impatto sullo stesso Marte? La missione include anche un rover franco-tedesco per la mobilità sulla superficie di Fobos — un modello operativo del tutto diverso da qualsiasi cosa le missioni Hayabusa abbiano fatto su Itokawa o Ryugu. I ritardi del lanciatore H3 della JAXA hanno fatto slittare il lancio dal 2024 al 2026; MMX è partita il 19 ottobre 2026 e l'ingresso in orbita attorno a Marte è previsto per agosto 2027.",
   "events": [
     {
       "met": 0,
       "label": "LANCIO",
-      "note": "H3-24L da Tanegashima — il nuovo lanciatore pesante di JAXA.",
+      "note": "Volo 10 dell'H3 da Tanegashima, 19 ottobre 2026 — il primo H3 a inviare una sonda verso un altro pianeta.",
       "type": "nominal"
     },
     {
-      "met": 334,
+      "met": 286,
       "label": "INSERIMENTO NELL'ORBITA DI MARTE",
-      "note": "Cattura nell'orbita di Marte; trasferimento sulla quasi-orbita di Phobos nei mesi successivi.",
+      "note": "Cattura nell'orbita di Marte; trasferimento sulla quasi-orbita di Fobos nei mesi successivi.",
       "type": "nominal"
     },
     {
-      "met": 600,
+      "met": 986,
       "label": "DISPIEGAMENTO DEL ROVER",
-      "note": "Rover DLR/CNES (~25 kg) rilasciato sulla superficie di Phobos per studi in situ.",
+      "note": "Rover DLR/CNES (~25 kg) rilasciato sulla superficie di Fobos per studi in situ.",
       "type": "info"
     },
     {
-      "met": 1100,
-      "label": "CAMPIONE DI FOBO",
-      "note": "MMX atterra su Phobos; ~10 g di regolite raccolti.",
+      "met": 1351,
+      "label": "CAMPIONE DI FOBOS",
+      "note": "MMX atterra su Fobos; ~10 g di regolite raccolti.",
       "type": "info"
     },
     {
-      "met": 1500,
-      "label": "RITORNO DELLA TERRA",
+      "met": 1716,
+      "label": "RITORNO SULLA TERRA",
       "note": "La capsula di rientro con i campioni arriva sulla Terra intorno al 2031.",
       "type": "info"
     }
@@ -56,7 +56,7 @@
       "description": "Affinamento a metà crociera."
     },
     {
-      "met": 320,
+      "met": 275,
       "label": "TCM-4 — ultima prima dell'inserimento in orbita marziana",
       "description": "Puntamento finale di avvicinamento."
     }

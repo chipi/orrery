@@ -1,39 +1,39 @@
 {
   "name": "MMX",
   "vehicle": "H3-24L",
-  "payload": "~4000 kg (planejado)",
+  "payload": "4480 kg",
   "delta_v": "~5 km/s",
-  "type": "RETORNO DA AMOSTRA DE FOBOS · PLANEJADA",
+  "type": "RETORNO DA AMOSTRA DE FOBOS · ATIVA",
   "first": "Primeira amostra retornada de uma lua marciana",
-  "description": "Martian Moons eXploration é o plano de JAXA para pousar em Fobos, coletar cerca de 10 g de regolito e trazê-lo para casa. As amostras podem resolver uma questão há muito debatida: Fobos e Deimos são asteróides capturados ou fragmentos de um impacto antigo no próprio Marte? A missão também inclui um rover germano-francês para mobilidade de superfície em Fobos – um modelo de operações totalmente diferente de tudo o que as missões Hayabusa fizeram em Itokawa ou Ryugu. O lançamento foi planejado para 2024, mas caiu para 2026 devido a atrasos no veículo de lançamento H3 do JAXA.",
+  "description": "Martian Moons eXploration é o plano de JAXA para pousar em Fobos, coletar cerca de 10 g de regolito e trazê-lo para casa. As amostras podem resolver uma questão há muito debatida: Fobos e Deimos são asteróides capturados ou fragmentos de um impacto antigo no próprio Marte? A missão também inclui um rover germano-francês para mobilidade de superfície em Fobos – um modelo de operações totalmente diferente de tudo o que as missões Hayabusa fizeram em Itokawa ou Ryugu. Os atrasos do foguete H3 da JAXA empurraram o lançamento de 2024 para 2026; a MMX decolou em 19 de outubro de 2026 e deve entrar em órbita de Marte em agosto de 2027.",
   "events": [
     {
       "met": 0,
-      "label": "LANÇAR",
-      "note": "H3-24L de Tanegashima — o novo levantador de peso do JAXA.",
+      "label": "LANÇAMENTO",
+      "note": "Voo 10 do H3 a partir de Tanegashima, 19 de outubro de 2026 — o primeiro H3 a enviar uma sonda a outro planeta.",
       "type": "nominal"
     },
     {
-      "met": 334,
+      "met": 286,
       "label": "INSERÇÃO EM ÓRBITA DE MARTE",
       "note": "Capturar na órbita de Marte; transferência para a quase órbita de Fobos nos meses seguintes.",
       "type": "nominal"
     },
     {
-      "met": 600,
-      "label": "LANÇAMENTO DO ROVER",
+      "met": 986,
+      "label": "LIBERAÇÃO DO ROVER",
       "note": "Rover DLR/CNES (~25 kg) liberado na superfície de Fobos para estudos in situ.",
       "type": "info"
     },
     {
-      "met": 1100,
+      "met": 1351,
       "label": "AMOSTRA DE FOBOS",
       "note": "MMX pousa em Fobos; ~10 g de regolito coletados.",
       "type": "info"
     },
     {
-      "met": 1500,
-      "label": "RETORNO DA TERRA",
+      "met": 1716,
+      "label": "RETORNO À TERRA",
       "note": "Cápsula de reentrada de amostra chega à Terra em ~2031.",
       "type": "info"
     }
@@ -56,7 +56,7 @@
       "description": "Refinamento no meio do cruzeiro."
     },
     {
-      "met": 320,
+      "met": 275,
       "label": "TCM-4 — última antes da inserção em órbita de Marte",
       "description": "Mira final de aproximação."
     }

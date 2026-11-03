@@ -1,17 +1,42 @@
 {
   "name": "MMX",
   "vehicle": "H3-24L",
-  "payload": "~4000 kg (planned)",
+  "payload": "4480 kg",
   "delta_v": "~5 km/s",
-  "type": "PHOBOS SAMPLE RETURN · PLANNED",
+  "type": "PHOBOS SAMPLE RETURN · ACTIVE",
   "first": "First sample return from a Martian moon",
-  "description": "Martian Moons eXploration is JAXA's plan to land on Phobos, scoop ~10 g of regolith, and bring it home. The samples may settle a long-debated question: are Phobos and Deimos captured asteroids, or fragments from an ancient impact on Mars itself? The mission also includes a German-French rover for Phobos surface mobility — a wholly different operations model from anything the Hayabusa missions did at Itokawa or Ryugu. Launch was planned for 2024 but slipped to 2026 due to delays in JAXA's H3 launch vehicle.",
+  "description": "Martian Moons eXploration is JAXA's plan to land on Phobos, scoop ~10 g of regolith, and bring it home. The samples may settle a long-debated question: are Phobos and Deimos captured asteroids, or fragments from an ancient impact on Mars itself? The mission also includes a German-French rover for Phobos surface mobility — a wholly different operations model from anything the Hayabusa missions did at Itokawa or Ryugu. Launch slipped from 2024 to 2026 with the delays of JAXA's H3 rocket; MMX lifted off on 19 October 2026 and is due to enter Mars orbit in August 2027.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "H3-24L from Tanegashima — JAXA's new heavy lifter.", "type": "nominal" },
-    { "met": 334, "label": "MARS ORBIT INSERTION", "note": "Capture into Mars orbit; transfer to Phobos quasi-orbit over following months.", "type": "nominal" },
-    { "met": 600, "label": "ROVER DEPLOY", "note": "DLR/CNES rover (~25 kg) released onto Phobos surface for in-situ studies.", "type": "info" },
-    { "met": 1100, "label": "PHOBOS SAMPLE", "note": "MMX touches down on Phobos; ~10 g of regolith collected.", "type": "info" },
-    { "met": 1500, "label": "EARTH RETURN", "note": "Sample re-entry capsule arrives at Earth ~2031.", "type": "info" }
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "H3 flight 10 from Tanegashima, 19 October 2026 — the first H3 to send a spacecraft to another planet.",
+      "type": "nominal"
+    },
+    {
+      "met": 286,
+      "label": "MARS ORBIT INSERTION",
+      "note": "Capture into Mars orbit; transfer to Phobos quasi-orbit over following months.",
+      "type": "nominal"
+    },
+    {
+      "met": 986,
+      "label": "ROVER DEPLOY",
+      "note": "DLR/CNES rover (~25 kg) released onto Phobos surface for in-situ studies.",
+      "type": "info"
+    },
+    {
+      "met": 1351,
+      "label": "PHOBOS SAMPLE",
+      "note": "MMX touches down on Phobos; ~10 g of regolith collected.",
+      "type": "info"
+    },
+    {
+      "met": 1716,
+      "label": "EARTH RETURN",
+      "note": "Sample re-entry capsule arrives at Earth ~2031.",
+      "type": "info"
+    }
   ],
   "vehicle_stage": "H3-24L second stage"
 }

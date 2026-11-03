@@ -1837,7 +1837,10 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // marsSoI is also gated on activeDestination === 'mars' so it
     // doesn't render at the wrong scale for outer-planet missions.
     marsSoI.visible =
-      helioReactive.soiLayerOn && !bridge.isMoonMission && bridge.activeDestination === 'mars';
+      helioReactive.soiLayerOn &&
+      !bridge.isMoonMission &&
+      bridge.activeDestination === 'mars' &&
+      !bridge.mission.sunTarget;
     moonSoI.visible = helioReactive.soiLayerOn && bridge.isMoonMission;
     if (earthSoI.visible) earthSoI.position.copy(earthWorld);
     if (marsSoI.visible) marsSoI.position.copy(marsWorld);

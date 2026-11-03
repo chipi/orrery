@@ -511,6 +511,21 @@ describe('computeMissionApply — labelToPlanetId coverage via waypoint labels',
   });
 });
 
+describe('computeMissionApply — Sun-target missions', () => {
+  it('flags a mission /fly has no body for, and only that one', () => {
+    const sun = computeMissionApply(
+      makeMission({ id: 'parker-solar-probe', dest: 'SUN' }),
+      DEFAULTS,
+    );
+    expect(sun.missionMeta.sunTarget).toBe(true);
+    expect(sun.activeDestination).toBe('mars'); // the scene's stand-in, never framed
+    const ulysses = computeMissionApply(makeMission({ id: 'ulysses', dest: 'SUN' }), DEFAULTS);
+    expect(ulysses.missionMeta.sunTarget).toBe(false);
+    expect(ulysses.activeDestination).toBe('jupiter');
+    expect(computeMissionApply(makeMission(), DEFAULTS).missionMeta.sunTarget).toBe(false);
+  });
+});
+
 describe('flyDestinationOf', () => {
   it('is the dest body, the comet or Jupiter for Ulysses, and null where /fly has no body', () => {
     expect(flyDestinationOf({ id: 'cassini', dest: 'SATURN' })).toBe('saturn');

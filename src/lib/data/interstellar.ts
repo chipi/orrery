@@ -69,6 +69,8 @@ export const FLY_TRAJECTORY_IDS = [
   'voyager-2',
   'hayabusa2',
   'near-shoemaker',
+  'parker-solar-probe',
+  'solar-orbiter',
 ] as const;
 const FLY_TRAJECTORY_ID_SET: ReadonlySet<string> = new Set(FLY_TRAJECTORY_IDS);
 /** Missions that fly another's path (Huygens rode Cassini). */

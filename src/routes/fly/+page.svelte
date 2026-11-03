@@ -1209,7 +1209,11 @@
     const arrLabelData = mission.arr_label || '—';
     const isRoundTrip = retPts.length > 0;
     if (!flyUpdaters) return;
-    const arrColor = moonMode ? DESTINATION_LABEL_COLORS.moon : DESTINATION_LABEL_COLORS[dest];
+    const arrColor = moonMode
+      ? DESTINATION_LABEL_COLORS.moon
+      : mission.sunTarget
+        ? DESTINATION_LABEL_COLORS.sun
+        : DESTINATION_LABEL_COLORS[dest];
     // For round-trips the ARRIVAL ring sits at the destination's
     // flyby/arrival position while a separate RETURN ring sits at
     // Earth-on-return-day. Override the per-mission arr_label data
@@ -1401,7 +1405,7 @@
   $effect(() => {
     if (mission?.id && arcProgress >= 0.999 && completedForId !== mission.id) {
       completedForId = mission.id;
-      trackMissionComplete(mission.id, activeDestination);
+      trackMissionComplete(mission.id, mission.sunTarget ? 'sun' : activeDestination);
     }
   });
 

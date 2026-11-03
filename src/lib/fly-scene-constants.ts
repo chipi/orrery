@@ -12,6 +12,8 @@ import { DESTINATIONS, type DestinationId } from '$lib/physics/transfer/lambert-
  * MOON_VISUAL_DISTANCE = 100u (see $lib/fly-physics-constants).
  */
 export const SCALE_3D = 80;
+/** Radius of the /fly Sun mesh, scene units. */
+export const SUN_SCENE_RADIUS = 8;
 
 /**
  * ADR-028: direct-Hohmann caveat for the giants + Pluto on
@@ -31,7 +33,7 @@ export const GRAVITY_ASSIST_CAVEAT_DESTINATIONS: DestinationId[] = [
  * Per-destination accent for the ARRIVAL sprite. Earth blue (#4b9cd3)
  * is reserved for LAUNCH so the two sprites always read as a pair.
  */
-export const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon', string> = {
+export const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon' | 'sun', string> = {
   mercury: '#b8b8b8',
   venus: '#e8d175',
   mars: '#c1440e',
@@ -61,6 +63,7 @@ export const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon', string> = 
   ryugu: '#5a524a',
   eros: '#b08a62',
   moon: '#cfcfcf',
+  sun: '#ffb347',
 };
 
 /**

@@ -19,13 +19,20 @@ describe('/fly trajectories', () => {
     for (const id of FLY_TRAJECTORY_IDS) {
       const path = join(DATA, flyTrajectoryPath(id)!);
       expect(existsSync(path), id).toBe(true);
-      const { waypoints } = JSON.parse(readFileSync(path, 'utf8')) as {
-        waypoints: { date: string; label?: string }[];
+      const { waypoints, ends_at_perihelion_au } = JSON.parse(readFileSync(path, 'utf8')) as {
+        waypoints: { date: string; label?: string; x: number; z: number }[];
+        ends_at_perihelion_au?: number;
       };
       const dates = waypoints.map((w) => w.date);
       expect([...dates].sort(), id).toEqual(dates);
       const labelled = waypoints.filter((w) => w.label);
-      expect(labelled.length, id).toBeGreaterThanOrEqual(2);
+      if (ends_at_perihelion_au) {
+        // Sun missions end at their first perihelion, not at a body.
+        const end = waypoints[waypoints.length - 1];
+        expect(Math.hypot(end.x, end.z), id).toBeCloseTo(ends_at_perihelion_au, 2);
+      } else {
+        expect(labelled.length, id).toBeGreaterThanOrEqual(2);
+      }
       for (const w of labelled) expect(labelToPlanetId(w.label!), `${id} ${w.label}`).not.toBeNull();
     }
   });

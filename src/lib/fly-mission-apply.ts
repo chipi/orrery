@@ -98,6 +98,9 @@ export interface LoadedMission {
    *  ship's motion along it is a real speed. False for the transfer ellipse, sampled evenly
    *  in angle, whose speed comes from vis-viva. */
   arcTimed?: boolean;
+  /** The /fly window ends at a perihelion, not at a body (Parker, Solar Orbiter): the camera
+   *  frames the craft by the Sun, and activeDestination's Mars is only a stand-in. */
+  sunTarget?: boolean;
   /** Transit days from the raw mission index — used by #86 opening
    *  to surface "TRANSIT · 6.7 years" without recomputing. */
   transit_days?: number;
@@ -449,7 +452,11 @@ export function computeMissionApply(
     retPts,
     cislunarTrajectory,
     interplanetaryTrajectory,
-    missionMeta: { ...buildMissionMeta(m, timeline, defaults), arcTimed },
+    missionMeta: {
+      ...buildMissionMeta(m, timeline, defaults),
+      arcTimed,
+      sunTarget: !isMoonMission && flyDestinationOf(m) === null,
+    },
     // Moon missions are 4-12 days vs Mars's 200+. Default 0.4 ×
     // gives a typical lunar phase ~1.5–2 s of playback so the
     // camera auto-zoom has time to read. Mars + outer-system stick

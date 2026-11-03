@@ -18,7 +18,7 @@ import {
   R_MARS_AU,
   type DestinationId,
 } from '$lib/physics/transfer/lambert-grid.constants';
-import { SCALE_3D } from '$lib/fly-scene-constants';
+import { SCALE_3D, SUN_SCENE_RADIUS } from '$lib/fly-scene-constants';
 
 /**
  * Static heliocentric-scene builder. Extracted from
@@ -480,7 +480,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // detail (granules, sunspots) without needing to be re-lit by an
   // external light. The additive halo stays unchanged.
   const sunCore = new THREE.Mesh(
-    new THREE.SphereGeometry(8, 64, 64),
+    new THREE.SphereGeometry(SUN_SCENE_RADIUS, 64, 64),
     new THREE.MeshBasicMaterial({
       map: sunTex,
       color: 0xffffff,

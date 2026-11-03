@@ -322,3 +322,15 @@ as standing repair tools — don't move them to `_archive/`.
 research JSON with sources → fit estimates → `npx tsx scripts/backfill-descent-arrival.ts` →
 `npx vitest run src/lib/physics/descent`).
 **State** — healthy (2026-11-03).
+
+## Cislunar waypoints — audit (`scripts/audit-cislunar.ts`)
+
+**Command** — `npx tsx scripts/audit-cislunar.ts [id…]`
+**What** — For every Moon mission with `cislunar_profile.waypoints_km`: where the craft is at each
+lunar event (LOI, descent, ascent, TEI within 30,000 km of the Moon; splashdown within 30,000 km of
+Earth) and whether the waypoints run on past splashdown back to the Moon. Waypoints are authored
+for a departure at sim-day 0 (the renderer turns them to the real date), so the audit checks them
+in that frame. Ends `audit-cislunar: N mission(s) flagged`.
+**When** — After regenerating waypoints (`npx tsx scripts/cislunar/generate-hybrid-waypoints.ts
+<mission.json>`, which now times the phases from the flight's events) or editing Moon events.
+**State** — healthy (2026-11-03: 0 flagged, was 22).

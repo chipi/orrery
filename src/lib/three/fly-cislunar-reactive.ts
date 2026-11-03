@@ -1,4 +1,7 @@
 import * as THREE from 'three';
+import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
+import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
+import { fitCraft, flyCraft, flyCraftSource, preloadFlyCraft } from '$lib/three/fly-craft';
 import { buildTubeFromPoints } from '$lib/three/glow-line';
 import { onLayerChange } from '$lib/science-layers';
 import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
@@ -66,6 +69,8 @@ export interface CislunarReactiveOverlays {
   rebuildCislunarLines: (traj: CislunarTrajectory | null) => void;
   updateCislunarLineProgress: (traj: CislunarTrajectory | null, met_days: number) => void;
   updateCislunarSpacecraft: (traj: CislunarTrajectory | null, met_days: number) => void;
+  /** Swap the red glyph for the mission's 3D craft (Apollo CSM + LM, Orion, Luna …) when one exists. */
+  setCislunarSpacecraftModel: (missionId: string) => void;
   rebuildCislunarAnnotations: (
     traj: CislunarTrajectory | null,
     profile: CislunarProfile | undefined,
@@ -128,6 +133,43 @@ export function buildCislunarReactiveOverlays(
 
   const { sprite: cislunarSpacecraft } = buildCislunarSpacecraftSprite();
   scene.add(cislunarSpacecraft);
+
+  // The mission's 3D craft rides the glyph's position at the glyph's on-screen size, nose along
+  // the trajectory. Missions without one keep the glyph.
+  let craftModel: THREE.Group | null = null;
+  let craftMissionId = '';
+  function setCislunarSpacecraftModel(missionId: string): void {
+    craftMissionId = missionId;
+    if (craftModel) {
+      scene.remove(craftModel);
+      (craftModel.userData.dispose as (() => void) | undefined)?.();
+      craftModel = null;
+    }
+    const shown = flyCraft(missionId);
+    const built =
+      buildLanderCruiseCraft(missionId) ??
+      buildInterplanetarySpacecraft(missionId) ??
+      (shown ? fitCraft(shown, 2) : null);
+    if (!built && flyCraftSource(missionId)) {
+      void preloadFlyCraft(missionId).then((ok) => {
+        if (ok && craftMissionId === missionId) setCislunarSpacecraftModel(missionId);
+      });
+    }
+    if (!built) {
+      cislunarSpacecraft.material.opacity = 1;
+      return;
+    }
+    const holder = new THREE.Group();
+    holder.add(built);
+    holder.renderOrder = 999;
+    holder.visible = cislunarSpacecraft.visible;
+    scene.add(holder);
+    craftModel = holder;
+    // The glyph stays (it carries the position and visibility logic) but is not drawn.
+    cislunarSpacecraft.material.opacity = 0;
+  }
+  const _craftUp = new THREE.Vector3(0, 1, 0);
+  const _craftDir = new THREE.Vector3();
 
   const cislunarAnnotations: THREE.Sprite[] = [];
   function clearCislunarAnnotations(): void {
@@ -218,6 +260,7 @@ export function buildCislunarReactiveOverlays(
 
   function rebuildCislunarLines(traj: CislunarTrajectory | null): void {
     for (const line of cislunarPhaseLines.values()) line.visible = false;
+    if (craftModel) craftModel.visible = traj != null;
     if (!traj) {
       cislunarSpacecraft.visible = false;
       moon.visible = false;
@@ -302,6 +345,14 @@ export function buildCislunarReactiveOverlays(
       (a.y + (b.y - a.y) * frac + offsetY) * scaleCislunar,
       (a.z + (b.z - a.z) * frac + offsetZ) * scaleCislunar,
     );
+    if (craftModel) {
+      craftModel.position.copy(cislunarSpacecraft.position);
+      // The camera controller sizes the glyph to a constant on-screen size; the craft follows it.
+      craftModel.scale.setScalar(cislunarSpacecraft.scale.x * 1.6);
+      _craftDir.set(b.x - a.x, b.y - a.y, b.z - a.z);
+      if (_craftDir.lengthSq() > 0)
+        craftModel.quaternion.setFromUnitVectors(_craftUp, _craftDir.normalize());
+    }
   }
 
   return {
@@ -312,6 +363,7 @@ export function buildCislunarReactiveOverlays(
     rebuildCislunarLines,
     updateCislunarLineProgress,
     updateCislunarSpacecraft,
+    setCislunarSpacecraftModel,
     rebuildCislunarAnnotations,
     clearCislunarAnnotations,
     dispose() {

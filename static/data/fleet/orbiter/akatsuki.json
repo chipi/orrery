@@ -30,5 +30,10 @@
   ],
   "linked_missions": [
     "akatsuki"
-  ]
+  ],
+  "specs": {
+    "length_m": 1.45,
+    "width_m": 1.04,
+    "diameter_m": 1.04
+  }
 }

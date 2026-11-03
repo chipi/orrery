@@ -98,7 +98,10 @@ describe('showcase models', () => {
     ShowcaseModel
   >;
   const fleet = new Map(
-    [...load('crewed-spacecraft'), ...load('cargo-spacecraft')].map((e) => [e.id, e]),
+    readdirSync(FLEET, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .flatMap((d) => load(d.name))
+      .map((e) => [e.id, e]),
   );
 
   it('are keyed by fleet ids', () => {

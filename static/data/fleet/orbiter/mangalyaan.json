@@ -31,5 +31,9 @@
       "type": "mars",
       "site_id": "mangalyaan"
     }
-  ]
+  ],
+  "specs": {
+    "length_m": 1.5,
+    "diameter_m": 1.5
+  }
 }

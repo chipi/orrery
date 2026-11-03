@@ -11,7 +11,13 @@
   "epoch": "commercial-era",
   "best_known_for": "First mission to the Jupiter Trojans; encounters 11 asteroids (6 Trojans + 2 main-belt + satellites) in one 12-year trajectory",
   "credit": "Added with /fly mission JSON (#341 batch 5). 1003 kg of hydrazine — more propellant than dry mass — to feed an 8-encounter trajectory.",
+  "specs": { "length_m": 16, "diameter_m": 1.7 },
   "links": [
+    {
+      "l": "The Lucy Spacecraft — NASA (16 m tip to tip, arrays deployed)",
+      "u": "https://science.nasa.gov/mission/lucy/spacecraft/",
+      "t": "core"
+    },
     {
       "l": "Lucy (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Lucy_(spacecraft)",

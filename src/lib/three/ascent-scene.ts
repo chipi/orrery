@@ -35,6 +35,7 @@ import {
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 import { buildCapsuleById } from '$lib/three/capsule-models';
 import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
+import { flyCraft } from '$lib/three/fly-craft';
 import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
 import { buildLauncherModel } from '$lib/three/launcher-models';
 import { clusterOffsets } from '$lib/three/launcher-detail';
@@ -67,6 +68,9 @@ export interface AscentSceneOptions {
   events?: AscentEvent[];
   /** Mission id → the payload's dedicated spacecraft model (else a generic bus). */
   spacecraftId?: string;
+  /** The launcher's real height (fleet specs.height_m): a showcase craft is drawn to true
+   *  scale against it. */
+  launcherHeightM?: number;
   /** Launcher id → the rocket's dedicated procedural model (else a generic body). */
   launcherId?: string;
   /** Strap-on booster count (Atlas V's variable AJ-60A count) — drawn on the
@@ -229,18 +233,32 @@ export function buildPayload(
   spacecraftId: string | undefined,
   vehLen: number,
   bodyRadius?: number,
+  launcherHeightM?: number,
+  stageTopRadius?: number,
 ): THREE.Group {
   const probe = spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null;
+  // The /fleet showcase craft (preloaded by /fly) — the full CSM, Soyuz, Dragon, X-37B or probe.
+  const craft = probe ? null : flyCraft(spacecraftId);
   const capsuleId =
     !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId)?.capsuleId : undefined;
   // Artemis flights ride Orion (crew module + service module + wings): the cruise model, not
   // the generic bus every SLS flight showed before.
   const orion =
-    !probe && !capsuleId && spacecraftId && ORION_MISSIONS.test(spacecraftId)
+    !probe && !craft && !capsuleId && spacecraftId && ORION_MISSIONS.test(spacecraftId)
       ? buildLanderCruiseCraft('artemis4')
       : null;
+  // Landers and Moon craft ride their cruise model (else they showed the generic bus).
+  const cruise =
+    !probe && !craft && !capsuleId && !orion && spacecraftId
+      ? buildLanderCruiseCraft(spacecraftId)
+      : null;
   const model =
-    probe ?? (capsuleId ? buildCapsuleById(capsuleId) : null) ?? orion ?? buildGenericPayload();
+    probe ??
+    craft ??
+    (capsuleId ? buildCapsuleById(capsuleId) : null) ??
+    orion ??
+    cruise ??
+    buildGenericPayload();
   // Orion's four array wings (the box meshes) ride folded and open in Earth orbit.
   if (orion) {
     for (const c of orion.children) {
@@ -256,10 +274,15 @@ export function buildPayload(
   // adapter — never WIDER). Scale a capsule by its WIDTH against the body radius,
   // not its largest dimension, so it can never end up fatter than the rocket
   // (the Gemini-wider-than-Titan bug). Satellites still normalise to the fairing.
+  // A showcase craft gives its body diameter (its arrays and wings would read as width).
+  const capsuleWidth =
+    (craft?.userData.bodyDiameterM as number | undefined) ?? Math.max(size.x, size.z);
   const k =
-    capsuleId && bodyRadius && bodyRadius > 0
-      ? (bodyRadius * 2 * 0.92) / (Math.max(size.x, size.z) || 1)
-      : (vehLen * 0.19) / (Math.max(size.x, size.y, size.z) || 1);
+    craft && launcherHeightM && launcherHeightM > 0
+      ? vehLen / launcherHeightM // metres → scene units: true scale against the rocket
+      : capsuleId && bodyRadius && bodyRadius > 0
+        ? (bodyRadius * 2 * 0.92) / (capsuleWidth || 1)
+        : (vehLen * 0.19) / (Math.max(size.x, size.y, size.z) || 1);
   const center = new THREE.Vector3();
   box.getCenter(center);
   model.scale.setScalar(k);
@@ -269,6 +292,33 @@ export function buildPayload(
   if (capsuleId) model.position.y += (size.y * k) / 2;
   const holder = new THREE.Group();
   holder.add(model);
+  // A true-scale craft narrower than its stage rides on a tapered adapter (Saturn's SLA,
+  // ~3 × the radius step tall), not perched on the flat stage top.
+  const craftR = ((craft?.userData.bodyDiameterM as number | undefined) ?? 0) * k * 0.5;
+  const topR = stageTopRadius ?? bodyRadius ?? 0;
+  if (craft && capsuleId && launcherHeightM && craftR > 0 && craftR < topR * 0.9) {
+    const taperH = (topR - craftR) * 6;
+    const taper = new THREE.Mesh(
+      new THREE.CylinderGeometry(craftR, topR, taperH, 32, 1, false),
+      new THREE.MeshStandardMaterial({ color: 0xe8e6df, roughness: 0.55, metalness: 0.15 }),
+    );
+    taper.position.y = taperH / 2;
+    // Seat the full-width body (the SM, not its engine bell) on the taper top: the adapter
+    // encloses whatever hangs below it, as the SLA did.
+    const diaM = craft.userData.bodyDiameterM as number;
+    let bodyBaseM = Infinity;
+    craft.updateMatrixWorld(true);
+    const rootInv = craft.matrixWorld.clone().invert();
+    craft.traverse((o) => {
+      if (!(o as THREE.Mesh).isMesh) return;
+      const b = new THREE.Box3().setFromObject(o).applyMatrix4(rootInv);
+      if (Math.max(b.max.x - b.min.x, b.max.z - b.min.z) >= diaM * 0.85)
+        bodyBaseM = Math.min(bodyBaseM, b.min.y);
+    });
+    const baseOffset = Number.isFinite(bodyBaseM) ? bodyBaseM * k : 0;
+    model.position.y += taperH - baseOffset;
+    holder.add(taper);
+  }
   // Orion flies under the launch-abort tower and panels, not a payload fairing: once they
   // jettison it rides in the open, so the scene shows it rather than a stowed shroud.
   if (orion) holder.userData.exposedAfterFairing = true;
@@ -527,6 +577,18 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Its centre along the body axis — the camera frames the stage + spacecraft between them
   // while the two coast and burn together after SECO.
   const upperStageCenterY = _usBox.getCenter(new THREE.Vector3()).y;
+  // The radius of the stage's topmost part (the S-IVB, not the flared interstage below it).
+  let stageTopRadius = upperStageRadius;
+  let stageTopY = -Infinity;
+  upperStage.updateMatrixWorld(true);
+  upperStage.traverse((o) => {
+    if (!(o as THREE.Mesh).isMesh) return;
+    const b = new THREE.Box3().setFromObject(o);
+    if (b.max.y > stageTopY + 1e-6) {
+      stageTopY = b.max.y;
+      stageTopRadius = Math.max(b.max.x - b.min.x, b.max.z - b.min.z) / 2;
+    }
+  });
 
   // Payload — TWO forms (#2 / operator decision 2026-07-29): a compact STOWED
   // shroud while it rides the exposed stage (fairing gone → SECO), then the real
@@ -534,7 +596,13 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // wings unfolding at separation. Real payloads ride folded under the fairing
   // and deploy AFTER sep — showing the deployed model bolted to the rocket read
   // wrong.
-  const payload = buildPayload(opts.spacecraftId, vehLen, upperStageRadius);
+  const payload = buildPayload(
+    opts.spacecraftId,
+    vehLen,
+    upperStageRadius,
+    opts.launcherHeightM,
+    stageTopRadius,
+  );
   // Crewed capsules ride exposed on top — no fairing, stowed shroud, or deploy.
   const isCapsulePayload = payload.userData.isCapsule === true;
   // …except the Soviet/Chinese capsules, which rode under a nose fairing that

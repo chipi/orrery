@@ -162,6 +162,7 @@
   import DescentScene from '$lib/components/DescentScene.svelte';
   import CoastScene from '$lib/components/CoastScene.svelte';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
+  import { preloadFlyCraft } from '$lib/three/fly-craft';
   import { LOOP_CAP as LEO_LOOP_CAP } from '$lib/three/fly-leo-coast-scene';
   import {
     loadLaunchProfile,
@@ -300,6 +301,14 @@
     );
   }
   let launchProfile = $state<LaunchProfile | null>(null);
+  // The launcher's real height (fleet specs), so a showcase craft rides it at true scale.
+  let launcherHeightM = $state<number | undefined>(undefined);
+  async function loadLauncherHeight(): Promise<void> {
+    const ref = mission.fleet_refs?.find((r) => r.role === 'launcher');
+    const entry = ref ? await getFleet(ref.id, 'launcher').catch(() => null) : null;
+    const h = entry?.specs?.height_m;
+    launcherHeightM = typeof h === 'number' ? h : undefined;
+  }
   // Master-clock state for the unified pad→arrival scrubber (RFC-034 §4/§11).
   // `launchT` is the ascent MET (s) the /fly rAF loop advances during the launch
   // phase and binds into LaunchScene (which renders but no longer self-advances);
@@ -331,6 +340,7 @@
     site: launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
     destination: mission.arr_label ?? '',
     spacecraftId: mission.id,
+    launcherHeightM,
     injectionBurn: launchInjectionBurn,
   });
   function startLaunch() {
@@ -338,8 +348,14 @@
     if (!launcher) return;
     // Load the profile first, THEN swap the opening for the launch overlay — no
     // flash of the cruise scene during the fetch.
-    void loadLaunchProfile(launcher.id, fetch, base, launcher.name)
-      .then((p) => {
+    // The showcase craft (CSM, Soyuz, Dragon, probes) loads with the profile, so the ascent
+    // and coast scenes can build it synchronously.
+    void Promise.all([
+      loadLaunchProfile(launcher.id, fetch, base, launcher.name),
+      preloadFlyCraft(mission.id ?? ''),
+      loadLauncherHeight(),
+    ])
+      .then(([p]) => {
         if (!p) return;
         launchProfile = p;
         dispatchPhase({ type: 'startLaunch' });
@@ -2624,7 +2640,10 @@
         updateMagnetosphereForBody: helioHandles.updateMagnetosphereForBody,
         setMoonsVisible: helioHandles.setMoonsVisible,
         updateMoonsForParent: helioHandles.updateMoonsForParent,
-        setSpacecraftModel: helioMission.applyMissionSpacecraftModel,
+        setSpacecraftModel: (id: string) => {
+          helioMission.applyMissionSpacecraftModel(id);
+          cisReactive.setCislunarSpacecraftModel(id);
+        },
         refreshLabelSprites: helioMission.refreshSpriteTextures,
       },
       cislunar: {

@@ -62,6 +62,7 @@
     destination: string;
     /** Mission id → the payload's dedicated spacecraft model (else a generic bus). */
     spacecraftId?: string;
+    launcherHeightM?: number;
     /** The post-SECO injection burn (RFC-034 §3.1); null when the mission has no
      *  kick/upper injection stage — the beat is then absent. */
     injectionBurn?: InjectionBurnParams | null;
@@ -266,6 +267,7 @@
       tuning,
       events: summary.events,
       spacecraftId: mission.spacecraftId,
+      launcherHeightM: mission.launcherHeightM,
       launcherId: dbg?.get('launcher') || profile.id,
       boosterCount: profile.boosters?.count ?? 0,
       boosterAirLitCount: profile.boosters?.airLitCount ?? 0,

@@ -4,6 +4,7 @@ import { SCALE_3D } from '$lib/fly-scene-constants';
 import type { Vec2 } from '$lib/physics/transfer/mission-arc';
 import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
+import { fitCraft, flyCraft, flyCraftSource, preloadFlyCraft } from '$lib/three/fly-craft';
 import type { OrbitInsertionEngineKind } from '$lib/physics/transfer/orbit-insertion-burns';
 import {
   buildTubeGeometry,
@@ -87,13 +88,25 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
   scene.add(retLine);
 
   let scModel: THREE.Group | null = null;
+  let currentModelId = '';
   function applyMissionSpacecraftModel(missionId: string): void {
+    currentModelId = missionId;
     if (scModel) {
       scene.remove(scModel);
       (scModel.userData.dispose as (() => void) | undefined)?.();
       scModel = null;
     }
-    scModel = buildInterplanetarySpacecraft(missionId) ?? buildLanderCruiseCraft(missionId);
+    const craft = flyCraft(missionId);
+    scModel =
+      buildInterplanetarySpacecraft(missionId) ??
+      buildLanderCruiseCraft(missionId) ??
+      (craft ? fitCraft(craft, 2) : null);
+    // A showcase craft loads lazily: draw it once its family chunk is in.
+    if (!scModel && flyCraftSource(missionId)) {
+      void preloadFlyCraft(missionId).then((ok) => {
+        if (ok && currentModelId === missionId) applyMissionSpacecraftModel(missionId);
+      });
+    }
     if (scModel) {
       scModel.scale.setScalar(1.5);
       scModel.renderOrder = 999;

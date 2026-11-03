@@ -30,5 +30,9 @@
   ],
   "linked_missions": [
     "mariner4"
-  ]
+  ],
+  "specs": {
+    "length_m": 2.89,
+    "diameter_m": 1.27
+  }
 }

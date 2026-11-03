@@ -323,6 +323,20 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
   // hard-failed GH e2e run 26514846316). The deep-link is a real product
   // feature (bookmarkable planet URLs, mirrors /mars?site=) — the tests
   // exercise it in the same path users get from a shared link.
+  // Asteroids and Kuiper-belt objects fell through to "INTERSTELLAR VISITOR".
+  for (const [id, kind] of [
+    ['ryugu', 'ASTEROID'],
+    ['arrokoth', 'KUIPER BELT OBJECT'],
+    ['oumuamua', 'INTERSTELLAR VISITOR'],
+  ] as const) {
+    test(`small-body panel names ${id} as ${kind}`, async ({ page }) => {
+      await page.goto(`/explore?id=${id}`);
+      const panel = page.locator('aside.panel');
+      await expect(panel).toBeVisible({ timeout: 10_000 });
+      await expect(panel.locator('.kind').first()).toHaveText(kind);
+    });
+  }
+
   test('Earth panel exposes GALLERY tab with thumbnails', async ({ page }) => {
     await page.goto('/explore?id=earth');
     const panel = page.locator('aside.panel');

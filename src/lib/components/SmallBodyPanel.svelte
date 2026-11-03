@@ -162,7 +162,11 @@
         ? m.sbp_kind_dwarf()
         : body.type === 'comet'
           ? m.sbp_kind_comet()
-          : m.sbp_kind_interstellar(),
+          : body.type === 'asteroid'
+            ? m.card_kind_asteroid()
+            : body.type === 'kbo'
+              ? m.card_kind_kbo()
+              : m.sbp_kind_interstellar(),
   );
 </script>
 

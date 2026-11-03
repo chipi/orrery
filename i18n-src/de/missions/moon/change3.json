@@ -6,6 +6,13 @@
   "type": "UNBEMANNTER LANDER + ROVER · GEFLOGEN",
   "first": "Erste chinesische Weichlandung auf dem Mond; setzte Yutu aus, Chinas ersten Mondrover",
   "description": "Chang'e 3 war die dritte Sonde im Chang'e-Programm der CNSA und die erste erfolgreiche Weichlandung auf dem Mond seit der sowjetischen Luna 24 im Jahr 1976 – eine 37-jährige Lücke. Die Long March 3B startete im Dezember 2013 auf direkter Mondtrajektorie mit einer einzigen Mittelkurskorrektur vor dem Einschwenken in die Mondumlaufbahn. Die Sonde landete am 14. Dezember in Mare Imbrium und setzte den Mondrover Yutu (Jade Rabbit) aus, der 31 Monate lang betrieben wurde, obwohl ein Mobilitätsschaden sein Fahren am Mondtag 2 beendete. Der Lander von Chang'e 3 setzte die Bildaufnahmen Jahre lang danach fort.",
+  "flight_events": [
+    {
+      "met": 14,
+      "label": "Oberflächeneinsatz des Rovers Yutu",
+      "description": "Yutu („Jadehase“) rollte am 15. Dezember 2013 von der Rampe des Landers und fuhr rund 114 m, bis ein Mechanikschaden am 42. Tag seine Fahrten beendete. Der Lander betrieb noch jahrelang Wissenschaft auf der Oberfläche; Yutu sendete weiter von der Stelle, an der er stehen blieb."
+    }
+  ],
   "events": [
     { "met": 0, "label": "START", "note": "Long March 3B von Xichang, 2013-12-01.", "type": "nominal" },
     { "met": 0.01, "label": "TLI", "note": "Direkte Erd-Mond-Übergangsinjektion auf der Oberstufe der LM-3B.", "type": "nominal" },

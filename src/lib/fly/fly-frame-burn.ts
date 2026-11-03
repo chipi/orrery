@@ -47,6 +47,14 @@ export interface ActiveBurn {
  * `windowDays` override or `defaultWindowDays`. Returns the nearest in-window burn,
  * or null. Byte-identical to the inline selection.
  */
+/** `edl_or_oi` also marks atmospheric entries, landings, impacts and perihelion passes, where no
+ *  engine fires; only an orbit insertion or a rendezvous is an engine (capture) burn. Without this
+ *  Curiosity's Mars EDL drew a capture plume as a beam into Mars for two days. */
+const CAPTURE_BURN = /orbit insertion|rendezvous/i;
+export function isCaptureBurn(evt: Pick<FlightTimelineEvent, 'type' | 'label'>): boolean {
+  return evt.type !== 'edl_or_oi' || CAPTURE_BURN.test(evt.label ?? '');
+}
+
 export function findActiveBurn(
   events: readonly FlightTimelineEvent[],
   simMet: number,
@@ -56,6 +64,7 @@ export function findActiveBurn(
   let activeBurn: ActiveBurn | null = null;
   for (const evt of events) {
     if (!(evt.type in table) || evt.met_days == null) continue;
+    if (evt.type === 'edl_or_oi' && !isCaptureBurn(evt)) continue;
     const daysFromEvent = Math.abs(simMet - evt.met_days);
     const win = table[evt.type].windowDays ?? defaultWindowDays;
     if (daysFromEvent > win) continue;

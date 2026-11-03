@@ -1351,6 +1351,14 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       if (dist > 0.01 && !montageNonHero) {
         camToShip.multiplyScalar((bodyR * overrideCamR) / dist);
         scSprite.position.add(camToShip);
+        // An arrival's trajectory ends at the planet's centre (the camera target here), so the
+        // push above can leave the ship inside the body, hidden: Curiosity was never seen at Mars.
+        // Keep it in front of the face, 1.3 radii from the centre toward the camera.
+        const fromCentre = scSprite.position.clone().sub(flyCam.camTarget);
+        if (fromCentre.length() < bodyR * 1.3) {
+          const toCam = camera.position.clone().sub(flyCam.camTarget).normalize();
+          scSprite.position.copy(flyCam.camTarget).addScaledVector(toCam, bodyR * 1.3);
+        }
         if (helioMission.scModel) helioMission.scModel.position.copy(scSprite.position);
       }
       // Scale the ship to read as a foreground hero without
@@ -1365,7 +1373,10 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         toCameraR: 1.4,
       };
       scSprite.scale.set(overrides.spriteScale, overrides.spriteScale, 1);
-      if (helioMission.scModel) helioMission.scModel.scale.setScalar(overrides.modelScale);
+      // A foreground accent, never a rival to the planet: at most 0.22 of the body's radius
+      // (Curiosity's cruise stack drew half the size of Mars once it was no longer hidden).
+      if (helioMission.scModel)
+        helioMission.scModel.scale.setScalar(Math.min(overrides.modelScale, bodyR * 0.22));
       // Boom orientation: rotate the 3D model so its iconic-front
       // axis faces (roughly) the camera and the long magnetometer
       // boom angles AWAY from the planet's limb. Each builder model

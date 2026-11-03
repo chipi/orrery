@@ -1524,6 +1524,24 @@
   // on-canvas chip with an HUD line; the pulsing diamond on the path
   // is the graphic correlation. Null when no milestone is active.
   let activeMilestone = $derived(milestoneScreens.find((m) => m.state === 'active') ?? null);
+  // Milestone labels that land on each other (Curiosity's cruise-stage separation and EDL sit
+  // 7 minutes apart, the same spot on the arc) stack one line down instead of overprinting.
+  const MILESTONE_LINE_PX = 13;
+  let milestoneLabelDy = $derived.by(() => {
+    const placed: { x: number; y: number }[] = [];
+    return milestoneScreens.map((m) => {
+      if (!m.screen.onScreen) return 0;
+      let y = m.screen.y + 12;
+      while (
+        placed.some(
+          (p) => Math.abs(p.x - m.screen.x) < 140 && Math.abs(p.y - y) < MILESTONE_LINE_PX,
+        )
+      )
+        y += MILESTONE_LINE_PX;
+      placed.push({ x: m.screen.x, y });
+      return y - m.screen.y;
+    });
+  });
 
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
@@ -3613,7 +3631,7 @@
             class:active={m.state === 'active'}
             class:past={m.state === 'past'}
             class:future={m.state === 'future'}
-            style="left: {m.screen.x}px; top: {m.screen.y + 12}px;"
+            style="left: {m.screen.x}px; top: {m.screen.y + (milestoneLabelDy[idx] ?? 12)}px;"
             aria-hidden="true">{m.label}</span
           >
         {/if}

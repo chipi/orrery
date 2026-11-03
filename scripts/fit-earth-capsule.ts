@@ -33,6 +33,12 @@ interface Target {
   peakG?: number;
   entryToDrogueS?: number;
   entry?: { altitudeM?: number; velocityMs?: number; flightPathAngleDeg?: number };
+  /** The entry was guided (G&N range control): fit a target downrange even if the profile had
+   *  none (Apollo 8's lunar return flew open-loop lift-up, skipping out for 20 minutes). */
+  guided?: boolean;
+  /** Archetype params set directly, as declared estimates (e.g. a sister flight's fitted chute
+   *  areas where this flight has altitudes but no intervals). */
+  params?: Record<string, number>;
   provenance?: { l: string; u: string }[];
 }
 
@@ -91,15 +97,36 @@ for (const [id, t] of Object.entries(targets)) {
   if (t.drogueAltKm != null) raw.params.chuteDeployAltM = Math.round(t.drogueAltKm * 1000);
   if (t.mainAltKm != null) raw.params.terminalHandoffAltM = Math.round(t.mainAltKm * 1000);
 
+  for (const [k, v] of Object.entries(t.params ?? {})) {
+    (raw.params as Record<string, number>)[k] = v;
+    estimate(raw, k);
+  }
+
   // 1. Entry.
+  if (t.guided && raw.targetDownrangeKm == null) raw.targetDownrangeKm = 2000;
   const guided = raw.targetDownrangeKm != null;
+  // The guidance only lands inside its footprint: find the longest reachable downrange (the
+  // search below must not leave it, and a sourced entry state can move it).
+  const reachable = (x: number): boolean =>
+    run({ ...raw, targetDownrangeKm: x }).guidance?.targetReachable === true;
+  // The footprint is a band [min, max]: scan it.
+  let minReach = 300;
+  let maxReach = 6000;
+  if (guided) {
+    const ok: number[] = [];
+    for (let x = 300; x <= 6000; x += 50) if (reachable(x)) ok.push(x);
+    if (ok.length) {
+      minReach = ok[0] + 25;
+      maxReach = ok[ok.length - 1] - 25;
+    }
+  }
   if (guided && t.entryToDrogueS != null) {
     raw.targetDownrangeKm = Math.round(
       bisect(
         (x) => evT(run({ ...raw, targetDownrangeKm: x }), 'parachute_deploy') ?? 0,
         t.entryToDrogueS,
-        300,
-        4000,
+        minReach,
+        maxReach,
         24,
       ),
     );
@@ -114,6 +141,11 @@ for (const [id, t] of Object.entries(targets)) {
     );
     raw.entryState.flightPathAngleDeg = +fpa.toFixed(2);
     estimate(raw, 'flightPathAngleDeg');
+  }
+  // A target outside the footprint (the entry state moved it) comes back to its edge.
+  if (guided && raw.targetDownrangeKm != null && !reachable(raw.targetDownrangeKm)) {
+    raw.targetDownrangeKm = Math.min(maxReach, Math.max(minReach, raw.targetDownrangeKm));
+    estimate(raw, 'targetDownrangeKm');
   }
 
   // When the main-chute altitude is NOT sourced but the touchdown speed and main → touchdown

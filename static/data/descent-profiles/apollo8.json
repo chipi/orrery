@@ -2,8 +2,15 @@
   "missionId": "apollo8",
   "siteId": "apollo8",
   "body": "earth",
-  "landingSite": { "lat": 8.13, "lon": -165.02 },
-  "entryState": { "altitudeM": 122000, "velocityMs": 11040, "flightPathAngleDeg": 6.48 },
+  "landingSite": {
+    "lat": 8.13,
+    "lon": -165.02
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 11039,
+    "flightPathAngleDeg": 6.5
+  },
   "entryMassKg": 5560,
   "entryCdA": 17.7,
   "liftToDragRatio": 0.3,
@@ -11,14 +18,22 @@
   "params": {
     "chuteDeployAltM": 7300,
     "terminalHandoffAltM": 3000,
-    "parachuteCdA": 367,
-    "terminalCdA": 1392
+    "parachuteCdA": 24.2,
+    "terminalCdA": 1154
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "Apollo 8 Mission Report (NASA MSC-PA-R-69-1) — entry interface 36,221 ft/s (11.04 km/s), −6.48° FPA; entry aero L/D 0.3 + BC 313.5 (Apollo CM)",
       "u": "https://www.nasa.gov/history/afj/ap08fj/"
+    },
+    {
+      "l": "Apollo 8 Mission Report (MSC-PA-R-69-1): entry 146:46:12.8 at 36,217 ft/s, -6.50°; 6.84 g; drogue 146:54:47.8, main 146:55:38.9, landing 147:00:42",
+      "u": "https://ntrs.nasa.gov/api/citations/19700033031/downloads/19700033031.pdf"
     }
+  ],
+  "estimatedFields": [
+    "parachuteCdA",
+    "terminalCdA"
   ]
 }

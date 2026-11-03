@@ -8,25 +8,34 @@
   },
   "entryState": {
     "altitudeM": 122000,
-    "velocityMs": 7820,
-    "flightPathAngleDeg": 1.5
+    "velocityMs": 7893,
+    "flightPathAngleDeg": 1.76
   },
   "entryMassKg": 5560,
   "entryCdA": 17.7,
   "liftToDragRatio": 0.3,
-  "targetDownrangeKm": 3000,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "targetDownrangeKm": 2974,
+  "estimatedFields": [
+    "targetDownrangeKm",
+    "parachuteCdA",
+    "terminalCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
     "terminalHandoffAltM": 3000,
-    "parachuteCdA": 371,
-    "terminalCdA": 1392
+    "parachuteCdA": 28,
+    "terminalCdA": 1087
   },
   "source_tier": "flagship",
   "provenance": [
     {
       "l": "apollo9 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "Apollo 9 Mission Report (MSC-PA-R-69-2): entry 240:44:10.2 at 25,895 ft/s, -1.76°; 3.35 g; drogue 240:55:07.8, main 240:55:59.0, landing 241:00:54",
+      "u": "https://archive.org/details/apollo-9-mission-report"
     }
   ]
 }

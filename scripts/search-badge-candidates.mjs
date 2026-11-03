@@ -92,14 +92,12 @@ async function commonsInfo(file) {
   const license = (meta.LicenseShortName?.value || meta.License?.value || '').trim();
   // Commons serves Artist as HTML, sometimes entity-escaped; decode before stripping tags, and keep
   // the whole name (a 50-char cut wrote "National Aeronautics and Space Administration (NAS" credits).
+  // One decode pass, so "&amp;lt;" becomes the text "&lt;", never a tag. A nested fragment
+  // ("<<b>script>") survives one tag strip, so leftover angle brackets go too; no credit needs them.
+  const ENTITY = { lt: '<', gt: '>', quot: '"', '#39': "'", amp: '&' };
   const artist = (meta.Artist?.value || '')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&amp;/g, '&')
+    .replace(/&(lt|gt|quot|#39|amp);/g, (_, e) => ENTITY[e])
     .replace(/<[^>]*>/g, '')
-    // A nested fragment ("<<b>script>") survives one tag strip; no credit needs angle brackets.
     .replace(/[<>]/g, '')
     .replace(/\s+/g, ' ')
     .trim();

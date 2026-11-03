@@ -9,7 +9,7 @@
  * stage animate.
  */
 import * as THREE from 'three';
-import { buildScaleFigure, type ScaleFigureId } from './scale-figures';
+import { buildScaleFigure } from './scale-figures';
 
 export interface LineupItem {
   id: string;
@@ -21,6 +21,10 @@ export interface LineupItem {
   part?: 'capsule';
   /** Fit the model's width instead of its height to `heightM` (a sphere sized by its diameter). */
   fitWidth?: boolean;
+  /** A landmark cut-out (Statue of Liberty, Eiffel Tower …): set back, not pickable. */
+  landmark?: boolean;
+  /** Taller than the frame is allowed to grow for: drawn running out of the top. */
+  capped?: boolean;
 }
 
 export interface LineupSlot {
@@ -30,11 +34,11 @@ export interface LineupSlot {
   heightM: number;
   widthM: number;
   part?: 'capsule';
+  landmark?: boolean;
+  capped?: boolean;
 }
 
 export interface LineupOptions {
-  /** Landmark at the end of the row. */
-  landmark: ScaleFigureId;
   /** Minimum gap between craft, metres. */
   gapM: number;
   /** Put a person at the foot of every n-th craft (1 = every craft). */
@@ -117,28 +121,30 @@ export function createLineupStage(
     const gap = Math.max(opts.gapM, w * 0.6);
     const cx = x + (i === 0 ? 0 : gap) + w / 2;
     obj.position.x += cx;
-    obj.userData.lineupId = it.id;
     scene.add(obj);
-    crafts.set(it.id, obj);
-    layout.push({ id: it.id, xM: cx, heightM: it.heightM, widthM: w, part: it.part });
-    if (i % Math.max(1, opts.personEvery) === 0) {
+    if (it.landmark) obj.position.z = -2;
+    else {
+      obj.userData.lineupId = it.id;
+      crafts.set(it.id, obj);
+    }
+    layout.push({
+      id: it.id,
+      xM: cx,
+      heightM: it.heightM,
+      widthM: w,
+      part: it.part,
+      landmark: it.landmark,
+      capped: it.capped,
+    });
+    if (i % Math.max(1, opts.personEvery) === 0 || it.landmark) {
       const person = buildScaleFigure('person');
       person.position.set(cx + w / 2 + 0.6, 0, w);
       scene.add(person);
     }
     x = cx + w / 2;
-    topM = Math.max(topM, size.h);
+    if (!it.capped) topM = Math.max(topM, size.h);
   });
-
-  // The landmark closes the row, with a person beside it.
-  const landmark = buildScaleFigure(opts.landmark);
-  const lmBox = new THREE.Box3().setFromObject(landmark);
-  const lmW = lmBox.max.x - lmBox.min.x;
-  const lmX = x + Math.max(opts.gapM * 1.5, lmW * 0.4) + lmW / 2;
-  landmark.position.set(lmX, 0, -2);
-  scene.add(landmark);
-  topM = Math.max(topM, lmBox.max.y);
-  const rowLengthM = lmX + lmW / 2;
+  const rowLengthM = x;
   const left = layout[0] ? layout[0].xM - layout[0].widthM / 2 : 0;
 
   // Ground: a band under the row, a hair below y = 0 so contact reads as contact.
@@ -234,7 +240,7 @@ export function createLineupStage(
       const xM = scrollM + xPx / pxPerM();
       const yM = frameTop - yPx / pxPerM();
       const slot = layout.find(
-        (s) => Math.abs(s.xM - xM) <= Math.max(s.widthM / 2, 2) && yM <= s.heightM,
+        (s) => !s.landmark && Math.abs(s.xM - xM) <= Math.max(s.widthM / 2, 2) && yM <= s.heightM,
       );
       return slot?.id ?? null;
     },

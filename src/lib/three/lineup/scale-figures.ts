@@ -9,16 +9,161 @@
  *   waist 10.67 m
  *   (National Park Service, "Statue Statistics", https://www.nps.gov/stli/learn/historyculture/statue-statistics.htm).
  * - bus: 12 m × 3 m, the common rigid city-bus length and height.
+ * - Eiffel Tower: 330 m to the antenna tip, 300 m architectural, top platform 276 m, base 125 m
+ *   square (https://en.wikipedia.org/wiki/Eiffel_Tower); the first and second platform heights
+ *   (57 m, 116 m) and the arch are drawn from the elevation, not from a stated figure.
+ * - Monument to the Conquerors of Space, Moscow: 107 m titanium obelisk, a rocket rising on its
+ *   exhaust plume, museum in the base (https://en.wikipedia.org/wiki/Monument_to_the_Conquerors_of_Space);
+ *   the curve and the base width follow photographs.
+ * - Giant Wild Goose Pagoda, Xi'an: 64.1 m with its base; base 4.2 m high and 48.8 m wide, the
+ *   lowest storey 25 m a side, seven storeys tapering
+ *   (https://en.wikipedia.org/wiki/Giant_Wild_Goose_Pagoda).
  */
 import * as THREE from 'three';
 
-export type ScaleFigureId = 'person' | 'liberty' | 'bus';
+export type ScaleFigureId = 'person' | 'liberty' | 'bus' | 'eiffel' | 'conquerors' | 'pagoda';
 
 export const SCALE_FIGURE_HEIGHT_M: Record<ScaleFigureId, number> = {
   person: 1.75,
-  liberty: 93,
+  liberty: 92.99,
   bus: 3,
+  eiffel: 330,
+  conquerors: 107,
+  pagoda: 64.1,
 };
+
+const poly = (pts: [number, number][]): THREE.Shape => {
+  const s = new THREE.Shape();
+  s.moveTo(pts[0][0], pts[0][1]);
+  for (const [x, y] of pts.slice(1)) s.lineTo(x, y);
+  s.closePath();
+  return s;
+};
+
+/** Eiffel Tower elevation: four flared legs joined by the arch, two platforms, the spire, antenna. */
+function eiffelOutline(): THREE.Shape[] {
+  const half = 62.5;
+  // Lower section to the first platform (57 m): the outline runs up the inside of the legs
+  // along the great arch, so the arch is part of the silhouette, not a cut-out.
+  const lower = new THREE.Shape();
+  lower.moveTo(-half, 0);
+  lower.lineTo(-38, 0);
+  lower.quadraticCurveTo(-30, 36, 0, 39);
+  lower.quadraticCurveTo(30, 36, 38, 0);
+  lower.lineTo(half, 0);
+  lower.lineTo(36, 54);
+  lower.lineTo(37, 57);
+  lower.lineTo(-37, 57);
+  lower.lineTo(-36, 54);
+  lower.closePath();
+  const middle = poly([
+    [-31, 57],
+    [31, 57],
+    [20, 113],
+    [21, 116],
+    [-21, 116],
+    [-20, 113],
+  ]);
+  const upper = poly([
+    [-15, 116],
+    [15, 116],
+    [6.5, 200],
+    [3.6, 266],
+    [5, 270],
+    [5, 276],
+    [3, 280],
+    [1.6, 300],
+    [-1.6, 300],
+    [-3, 280],
+    [-5, 276],
+    [-5, 270],
+    [-3.6, 266],
+    [-6.5, 200],
+  ]);
+  const antenna = poly([
+    [-0.7, 300],
+    [0.7, 300],
+    [0.25, 330],
+    [-0.25, 330],
+  ]);
+  return [lower, middle, upper, antenna];
+}
+
+/** Monument to the Conquerors of Space: a sloped base, the curving titanium plume, the rocket. */
+function conquerorsOutline(): THREE.Shape[] {
+  const base = poly([
+    [-34, 0],
+    [34, 0],
+    [26, 9],
+    [-26, 9],
+  ]);
+  // The plume rises from the base in a slow curve to the right, narrowing to the rocket's tail.
+  const plume = new THREE.Shape();
+  plume.moveTo(-18, 9);
+  plume.quadraticCurveTo(-4, 40, 9, 82);
+  plume.lineTo(11.5, 88);
+  plume.lineTo(13.2, 88);
+  plume.quadraticCurveTo(10, 50, 2, 9);
+  plume.closePath();
+  // The rocket rides the top of the plume, nose up and to the right.
+  const rocket = poly([
+    [10.2, 86],
+    [14.6, 86.6],
+    [16.4, 94],
+    [17.6, 100],
+    [17.4, 104],
+    [16.2, 107],
+    [15.0, 104],
+    [13.0, 99],
+    [11.2, 92],
+  ]);
+  return [base, plume, rocket];
+}
+
+/** Giant Wild Goose Pagoda: the base platform, seven storeys stepping in, the finial. */
+function pagodaOutline(): THREE.Shape[] {
+  const shapes = [
+    poly([
+      [-24.4, 0],
+      [24.4, 0],
+      [24.4, 4.2],
+      [-24.4, 4.2],
+    ]),
+  ];
+  const storeys = 7;
+  const top = 60.4;
+  let y = 4.2;
+  for (let i = 0; i < storeys; i++) {
+    const h = (top - 4.2) / storeys;
+    const w0 = 12.5 - i * 1.25;
+    const w1 = w0 - 0.5;
+    // Body of the storey, then a thin eave that juts out a little.
+    shapes.push(
+      poly([
+        [-w0, y],
+        [w0, y],
+        [w1, y + h - 0.9],
+        [-w1, y + h - 0.9],
+      ]),
+      poly([
+        [-(w1 + 0.9), y + h - 0.9],
+        [w1 + 0.9, y + h - 0.9],
+        [w1 + 0.4, y + h],
+        [-(w1 + 0.4), y + h],
+      ]),
+    );
+    y += h;
+  }
+  shapes.push(
+    poly([
+      [-1.4, top],
+      [1.4, top],
+      [0.35, 64.1],
+      [-0.35, 64.1],
+    ]),
+  );
+  return shapes;
+}
 
 /** Outline points (x, y) in metres, base centred on x = 0, y = 0 at the ground. */
 function personOutline(): THREE.Shape {
@@ -152,12 +297,18 @@ function busOutline(): THREE.Shape {
  * the figure reads as a cut-out, not a model.
  */
 export function buildScaleFigure(id: ScaleFigureId, color = 0x6f809b): THREE.Group {
-  const shapes =
+  const shapes: THREE.Shape[] =
     id === 'person'
       ? [personOutline(), personHead()]
       : id === 'liberty'
         ? libertyOutline()
-        : [busOutline()];
+        : id === 'eiffel'
+          ? eiffelOutline()
+          : id === 'conquerors'
+            ? conquerorsOutline()
+            : id === 'pagoda'
+              ? pagodaOutline()
+              : [busOutline()];
   const g = new THREE.Group();
   const mat = new THREE.MeshBasicMaterial({
     color,

@@ -34,7 +34,19 @@
   let hoverId = $state<string | null>(null);
   let failed = $state(false);
 
-  const nameOf = (id: string) => entries.find((e) => e.id === id)?.name ?? id;
+  type LandmarkId = 'liberty' | 'eiffel' | 'conquerors' | 'pagoda' | 'bus';
+  const LAUNCHER_LANDMARKS: LandmarkId[] = ['liberty', 'conquerors', 'pagoda'];
+  const LANDMARK_NAME: Record<LandmarkId, () => string> = {
+    liberty: m.fleet_lineup_landmark_liberty,
+    eiffel: m.fleet_lineup_landmark_eiffel,
+    conquerors: m.fleet_lineup_landmark_conquerors,
+    pagoda: m.fleet_lineup_landmark_pagoda,
+    bus: m.fleet_lineup_landmark_bus,
+  };
+  const nameOf = (id: string) =>
+    id.startsWith('landmark:')
+      ? LANDMARK_NAME[id.slice(9) as LandmarkId]()
+      : (entries.find((e) => e.id === id)?.name ?? id);
   const fmtM = (v: number) =>
     m.unit_m_value({
       value: new Intl.NumberFormat(locale, { maximumFractionDigits: v < 10 ? 2 : 1 }).format(v),
@@ -61,11 +73,15 @@
     let ro: ResizeObserver | null = null;
     (async () => {
       try {
-        const [{ buildLineupCatalog, LINEUP_CATEGORIES }, { createLineupStage }] =
-          await Promise.all([
-            import('$lib/three/lineup/lineup-catalog'),
-            import('$lib/three/lineup/lineup-scene'),
-          ]);
+        const [
+          { buildLineupCatalog, LINEUP_CATEGORIES },
+          { createLineupStage },
+          { buildScaleFigure, SCALE_FIGURE_HEIGHT_M },
+        ] = await Promise.all([
+          import('$lib/three/lineup/lineup-catalog'),
+          import('$lib/three/lineup/lineup-scene'),
+          import('$lib/three/lineup/scale-figures'),
+        ]);
         const cats = LINEUP_CATEGORIES[kind];
         const records = await Promise.all(
           entries
@@ -79,9 +95,20 @@
         );
         missing = catalog.missing;
         const topM = Math.max(...catalog.items.map((i) => i.heightM), 1);
-        const s = createLineupStage(canvas, catalog.items, {
-          landmark: kind === 'launchers' ? 'liberty' : 'bus',
-          gapM: topM * (kind === 'launchers' ? 0.16 : 0.5),
+        // Landmarks from around the world stand among the craft at their own heights; the row
+        // closes with the Eiffel Tower (taller than the frame: it runs out of the top) or a bus.
+        const landmark = (id: LandmarkId, capped = false) => ({
+          id: `landmark:${id}`,
+          build: () => buildScaleFigure(id),
+          heightM: SCALE_FIGURE_HEIGHT_M[id],
+          landmark: true,
+          capped,
+        });
+        const among = kind === 'launchers' ? LAUNCHER_LANDMARKS.map((id) => landmark(id)) : [];
+        const row = [...catalog.items, ...among].sort((a, b) => b.heightM - a.heightM);
+        row.push(kind === 'launchers' ? landmark('eiffel', true) : landmark('bus'));
+        const s = createLineupStage(canvas, row, {
+          gapM: topM * (kind === 'launchers' ? 0.24 : 0.5),
           personEvery: kind === 'launchers' ? 3 : 1,
         });
         stage = s;
@@ -170,19 +197,29 @@
         aria-hidden="true"
       ></canvas>
       {#each slots as s (s.id)}
-        <button
-          type="button"
-          class="label"
-          class:active={hoverId === s.id || focusId === s.id}
-          style="left:{xPx(s.xM)}px; top:{groundPx + 6}px"
-          onclick={() => onOpen(s.id)}
-          onfocus={() => stage?.setHover(s.id)}
-          onblur={leave}
-        >
-          <span class="name">{nameOf(s.id)}</span>
-          {#if s.part}<span class="part">{m.fleet_lineup_part_capsule()}</span>{/if}
-          <span class="h">{fmtM(s.heightM)}</span>
-        </button>
+        {#if s.landmark}
+          <span class="label landmark" style="left:{xPx(s.xM)}px; top:{groundPx + 6}px">
+            <span class="name">{nameOf(s.id)}</span>
+            <span class="h">{fmtM(s.heightM)}</span>
+          </span>
+          {#if s.capped}
+            <span class="capped" style="left:{xPx(s.xM)}px">↑ {fmtM(s.heightM)}</span>
+          {/if}
+        {:else}
+          <button
+            type="button"
+            class="label"
+            class:active={hoverId === s.id || focusId === s.id}
+            style="left:{xPx(s.xM)}px; top:{groundPx + 6}px"
+            onclick={() => onOpen(s.id)}
+            onfocus={() => stage?.setHover(s.id)}
+            onblur={leave}
+          >
+            <span class="name">{nameOf(s.id)}</span>
+            {#if s.part}<span class="part">{m.fleet_lineup_part_capsule()}</span>{/if}
+            <span class="h">{fmtM(s.heightM)}</span>
+          </button>
+        {/if}
       {/each}
     </div>
   </div>
@@ -245,7 +282,7 @@
     align-items: center;
     gap: 1px;
     width: max-content;
-    max-width: 140px;
+    max-width: 124px;
     padding: 2px 6px;
     border: 0;
     border-radius: 6px;
@@ -256,6 +293,21 @@
     line-height: 1.15;
     text-align: center;
     cursor: pointer;
+  }
+  .label.landmark {
+    cursor: default;
+    opacity: 0.7;
+    font-style: italic;
+  }
+  .capped {
+    position: absolute;
+    top: 6px;
+    transform: translateX(-50%);
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: rgba(14, 18, 26, 0.7);
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
   }
   .label .part {
     font-size: 0.66rem;

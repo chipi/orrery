@@ -347,8 +347,13 @@ export function buildCislunarReactiveOverlays(
     );
     if (craftModel) {
       craftModel.position.copy(cislunarSpacecraft.position);
-      // The camera controller sizes the glyph to a constant on-screen size; the craft follows it.
-      craftModel.scale.setScalar(cislunarSpacecraft.scale.x * 0.8);
+      // The camera controller sizes the glyph to a constant on-screen size; the craft follows it,
+      // but close to the Moon it stays an accent: at most ~half the Moon's radius long (Apollo's
+      // stack read as big as the Moon at TEI).
+      if (!moon.geometry.boundingSphere) moon.geometry.computeBoundingSphere();
+      const moonR = moon.geometry.boundingSphere?.radius ?? 1;
+      const cap = moonR * moon.scale.x * 0.25;
+      craftModel.scale.setScalar(Math.min(cislunarSpacecraft.scale.x * 0.8, cap));
       _craftDir.set(b.x - a.x, b.y - a.y, b.z - a.z);
       if (_craftDir.lengthSq() > 0)
         craftModel.quaternion.setFromUnitVectors(_craftUp, _craftDir.normalize());

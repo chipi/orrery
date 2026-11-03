@@ -65,6 +65,32 @@ export interface BuildCislunarOptions {
   dep_day_sim: number;
   transit_days: number;
   is_return_trip: boolean;
+  /** The flight's own event times (MET days), when it has them: the phase boundaries follow
+   *  these instead of fixed fractions of `transit_days` (Apollo 11 reached the Moon at day 4 with
+   *  its LOI event at 3.13). `arrival` = LOI, descent start or landing (or the swing-by). */
+  events?: { tli?: number; arrival?: number; tei?: number; earthReturn?: number };
+}
+
+/** Phase-boundary times from a mission's flight events (for BuildCislunarOptions.events). */
+export function cislunarEventTimes(
+  events: readonly { type: string; met_days?: number; label?: string }[] | undefined,
+): BuildCislunarOptions['events'] {
+  const first = (pred: (e: { type: string; label?: string }) => boolean): number | undefined =>
+    (events ?? [])
+      .filter((e) => typeof e.met_days === 'number' && pred(e))
+      .map((e) => e.met_days as number)
+      .sort((a, b) => a - b)[0];
+  const tli = first((e) => e.type === 'tli_or_tmi');
+  const arrival = first(
+    (e) =>
+      e.type === 'loi' ||
+      e.type === 'descent_start' ||
+      e.type === 'edl_or_oi' ||
+      (e.type === 'flyby' && /moon|lunar/i.test(e.label ?? '')),
+  );
+  const tei = first((e) => e.type === 'tei');
+  const earthReturn = first((e) => e.type === 'earth_return');
+  return { tli, arrival, tei, earthReturn };
 }
 
 // ─── Moon ephemeris (Tier 1 approximation) ─────────────────────
@@ -499,8 +525,18 @@ export function buildCislunarTrajectory(
     return buildFromWaypoints(profile.waypoints_km, dep_day_sim, transit_days);
   }
 
+  // Event times win over the fractions of transit_days, where the flight has them (and they
+  // are in order: TLI < arrival < TEI < splashdown).
+  const ev = opts.events ?? {};
+  const okArrival = ev.arrival != null && ev.arrival > (ev.tli ?? 0) ? ev.arrival : undefined;
+  const arrivalMET = okArrival ?? transit_days;
+  const okTli = ev.tli != null && ev.tli > 0 && ev.tli < arrivalMET ? ev.tli : undefined;
+  const okTei = ev.tei != null && ev.tei > arrivalMET ? ev.tei : undefined;
+  const okReturn =
+    ev.earthReturn != null && ev.earthReturn > (okTei ?? arrivalMET) ? ev.earthReturn : undefined;
+
   const phases: CislunarPhase[] = [];
-  const flyby_day = dep_day_sim + transit_days;
+  const flyby_day = dep_day_sim + arrivalMET;
   const moonAtFlyby = moonEciPos(flyby_day);
 
   const parkingAlt = profile?.parking_orbit?.altitude_km ?? 185;
@@ -542,7 +578,7 @@ export function buildCislunarTrajectory(
     // Bumped 0.04 → 0.10 of transit_days so the parking phase plays for
     // enough real-time at default simSpeed for the Earth close-up zoom
     // transition to read. Still a small fraction of total mission time.
-    const parkingEndMET = transit_days * 0.1;
+    const parkingEndMET = okTli ?? transit_days * 0.1;
     phases.push({
       type: 'parking',
       start_met_days: 0,
@@ -560,11 +596,11 @@ export function buildCislunarTrajectory(
   // arrivals — the lunar phase takes over at periselene-time, not at
   // arr_day. For arrival types we don't add a lunar phase for, the
   // tli_coast continues to its original end.
-  const flybyMET = Math.min(transit_days * 0.5, Math.max(0.5, transit_days - 0.5));
+  const flybyMET = okArrival ?? Math.min(transit_days * 0.5, Math.max(0.5, transit_days - 0.5));
   const flybyDuration = Math.min(1.0, transit_days * 0.2);
   const tliCoastPts = translunarCoast(lastPoint, moonAtFlyby, periselene, 192);
   const tliEndMET =
-    arrivalType === 'flyby' ? Math.max(metCursor, flybyMET - flybyDuration / 2) : transit_days;
+    arrivalType === 'flyby' ? Math.max(metCursor, flybyMET - flybyDuration / 2) : arrivalMET;
   phases.push({
     type: 'tli_coast',
     start_met_days: metCursor,
@@ -640,7 +676,13 @@ export function buildCislunarTrajectory(
     // operations (orbit, surface stay, etc.), so this is closer to
     // physical truth, and it gives the auto-zoom enough on-screen time
     // to read.
-    const lunarPhaseMET = is_return_trip ? transit_days * 0.4 : transit_days * 0.15;
+    const descentBudget = arrivalType === 'orbit_and_land' ? transit_days * 0.02 : 0;
+    const lunarPhaseMET =
+      okTei != null
+        ? Math.max(0.05, okTei - metCursor - descentBudget)
+        : is_return_trip
+          ? transit_days * 0.4
+          : transit_days * 0.15;
     if (translunarType === 'spiral') {
       const spiralLunarPts = spiralLunar(moonAtFlyby, lastPoint, lunarAlt, 3, 96);
       phases.push({
@@ -722,7 +764,7 @@ export function buildCislunarTrajectory(
   if (is_return_trip && returnType !== 'none') {
     const reentry = buildReentryPoint(lastPoint);
     const teiPts = transEarthCoast(lastPoint, reentry, 192);
-    const teiEndMET = transit_days * 2;
+    const teiEndMET = okReturn ?? transit_days * 2;
     phases.push({
       type: 'tei_coast',
       start_met_days: metCursor,
@@ -737,7 +779,7 @@ export function buildCislunarTrajectory(
     phases.push({
       type: 'tei_coast',
       start_met_days: metCursor,
-      end_met_days: transit_days * 2,
+      end_met_days: okReturn ?? transit_days * 2,
       points: teiPts,
     });
   }
@@ -762,6 +804,31 @@ function buildFromWaypoints(
   dep_day_sim: number,
   transit_days: number,
 ): CislunarTrajectory {
+  // The waypoints are generated with the departure at sim-day 0 (generate-hybrid-waypoints.ts)
+  // and the Moon model is a circular orbit, so the flight on its real departure day is the same
+  // flight turned by the Moon's phase then. Unturned, the craft flew to where the Moon was not
+  // (Apollo 11: 92° away) and no landing was ever recognised.
+  const phase = (2 * Math.PI * dep_day_sim) / T_MOON_DAYS;
+  const cosP = Math.cos(phase);
+  const sinP = Math.sin(phase);
+  // Climbing or falling faster than 25 km/s between two samples cannot be flown (Earth escape
+  // is 11): older generator output clamped its last samples back to the Moon after splashdown.
+  // Cut the list there. Radial speed, not distance: a lunar stay is held at the arrival-day
+  // Moon and the trip home starts where the Moon has moved to — a big sideways jump in the
+  // data that the renderer's hold (pinned to the live Moon) makes continuous on screen.
+  let end = waypoints.length;
+  for (let i = 1; i < waypoints.length; i++) {
+    const [ta, ax, ay, az] = waypoints[i - 1];
+    const [tb, bx, by, bz] = waypoints[i];
+    const dtS = Math.max(1, (tb - ta) * 86400);
+    if (Math.abs(Math.hypot(bx, by, bz) - Math.hypot(ax, ay, az)) / dtS > 25) {
+      end = i;
+      break;
+    }
+  }
+  waypoints = waypoints
+    .slice(0, end)
+    .map(([t, x, y, z]) => [t, x * cosP - z * sinP, y, x * sinP + z * cosP]);
   const points: Vec3Km[] = waypoints.map(([, x, y, z]) => ({ x, y, z }));
 
   // First pass — per-waypoint distance to Moon (just for
@@ -795,7 +862,12 @@ function buildFromWaypoints(
   // surface stay, AND TEI — earlier "pick the longest" approach
   // missed the LOI hero for Apollo 17 because surface-stay was
   // longer than LOI.
+  // A lunar orbit sampled every ~2 h moves ±~2,000 km between samples (Apollo 11's stay), so a
+  // 10 km tolerance missed it and the craft stayed put while the Moon moved on. Near the Moon
+  // (> 300,000 km from Earth) consecutive samples within 5,000 km count as the same hold;
+  // elsewhere the old 10 km rule stands.
   const IDENTICAL_TOL_KM = 10;
+  const LUNAR_HOLD_TOL_KM = 5000;
   const MIN_RUN = 3;
   interface HoldRun {
     start: number;
@@ -806,10 +878,11 @@ function buildFromWaypoints(
   for (let i = 1; i < waypoints.length; i++) {
     const [, x, y, z] = waypoints[i];
     const [, px, py, pz] = waypoints[i - 1];
-    const same =
-      Math.abs(x - px) < IDENTICAL_TOL_KM &&
-      Math.abs(y - py) < IDENTICAL_TOL_KM &&
-      Math.abs(z - pz) < IDENTICAL_TOL_KM;
+    const tol =
+      Math.hypot(x, y, z) > 300000 && Math.hypot(px, py, pz) > 300000
+        ? LUNAR_HOLD_TOL_KM
+        : IDENTICAL_TOL_KM;
+    const same = Math.abs(x - px) < tol && Math.abs(y - py) < tol && Math.abs(z - pz) < tol;
     if (!same) {
       if (i - curStart >= MIN_RUN) holds.push({ start: curStart, end: i - 1 });
       curStart = i;
@@ -843,11 +916,22 @@ function buildFromWaypoints(
       const { start: lo, end: hi } = holds[h];
       // lunar_flyby / descent are MOON_LOCAL_PHASE_TYPES — caller
       // hard-codes moonRefPos = moonEciPos(flyby_day = dep + transit_days).
-      // Store points = moonAtFlyby so sample collapses to live_moon
-      // → spacecraft pinned to live Moon centre for the entire hold.
+      // Points = moonAtFlyby + the waypoint's offset from the hold's centre, so the sample rides
+      // the live Moon AND keeps the lunar orbit the generator drew (110 km up for Apollo). Pinned
+      // to the centre, the craft sat inside the Moon for the whole stay, never seen.
+      const centre = { x: 0, y: 0, z: 0 };
+      for (let i = lo; i <= hi; i++) {
+        centre.x += points[i].x / (hi - lo + 1);
+        centre.y += points[i].y / (hi - lo + 1);
+        centre.z += points[i].z / (hi - lo + 1);
+      }
       const lunarLocalPoints: Vec3Km[] = [];
       for (let i = lo; i <= hi; i++) {
-        lunarLocalPoints.push({ x: moonAtFlyby.x, y: moonAtFlyby.y, z: moonAtFlyby.z });
+        lunarLocalPoints.push({
+          x: moonAtFlyby.x + points[i].x - centre.x,
+          y: moonAtFlyby.y + points[i].y - centre.y,
+          z: moonAtFlyby.z + points[i].z - centre.z,
+        });
       }
       phases.push({
         type: lunarPhaseType,

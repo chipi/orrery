@@ -239,7 +239,48 @@ describe('cislunar-geometry — Tier 1 phase generators (ADR-058)', () => {
       const traj = buildCislunarTrajectory(profile, { ...baseOpts, is_return_trip: true });
       expect(traj.phases.length).toBe(1);
       expect(traj.phases[0].points.length).toBe(wp.length);
-      expect(traj.phases[0].points[0]).toEqual({ x: wp[0][1], y: wp[0][2], z: wp[0][3] });
+      // Turned by the Moon's phase at departure (waypoints are authored for sim-day 0).
+      const ph = (2 * Math.PI * baseOpts.dep_day_sim) / T_MOON_DAYS;
+      const p0 = traj.phases[0].points[0];
+      expect(p0.x).toBeCloseTo(wp[0][1] * Math.cos(ph), 6);
+      expect(p0.z).toBeCloseTo(wp[0][1] * Math.sin(ph), 6);
+    });
+
+    it('waypoints authored for sim-day 0 meet the Moon on the real departure day', () => {
+      // The generator parks the craft at the flyby-day Moon (sim-day 0 frame) for the whole stay;
+      // on the real departure day that point must be where the live Moon is.
+      const wp: Array<[number, number, number, number]> = [];
+      for (let i = 0; i <= 6; i++) {
+        const m = moonEciPos(4);
+        wp.push(i < 3 ? [i, R_EARTH_KM + 185 + i * 100000, 0, 0] : [i, m.x, m.y, m.z]);
+      }
+      const dep = 9137.5;
+      const traj = buildCislunarTrajectory(
+        { source_tier: 'tier_1_5_hybrid', waypoints_km: wp },
+        { ...baseOpts, dep_day_sim: dep, transit_days: 4 },
+      );
+      const live = moonEciPos(dep + 4);
+      const lunar = traj.phases.find((p) => p.type === 'lunar_flyby' || p.type === 'descent');
+      expect(lunar).toBeDefined();
+      const p = lunar!.points[0];
+      expect(Math.hypot(p.x - live.x, p.z - live.z)).toBeLessThan(1000);
+    });
+
+    it('cuts a tail that jumps back to the Moon after splashdown', () => {
+      const wp: Array<[number, number, number, number]> = [
+        [0, R_EARTH_KM + 185, 0, 0],
+        [2, 200000, 0, 50000],
+        [4, A_MOON_KM, 0, 0],
+        [6, 200000, 0, -50000],
+        [8, R_EARTH_KM + 120, 0, 0],
+        [8.1, A_MOON_KM, 0, 0],
+      ];
+      const traj = buildCislunarTrajectory(
+        { source_tier: 'tier_1_5_hybrid', waypoints_km: wp },
+        { ...baseOpts, dep_day_sim: 0 },
+      );
+      const last = traj.phases.at(-1)!;
+      expect(last.end_met_days).toBe(8);
     });
   });
 

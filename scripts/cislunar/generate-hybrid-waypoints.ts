@@ -42,6 +42,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import {
   buildCislunarTrajectory,
+  cislunarEventTimes,
   type CislunarProfile,
   type CislunarPhase,
   type Vec3Km,
@@ -80,8 +81,11 @@ if (typeof transitDays !== 'number' || transitDays <= 0) {
 // Round-trip mission window = 2 × transit_days. The cislunar primitives
 // allocate the return half across teiCoast + reentry; for one-way
 // missions (impactors, flybys) we cap at 1 × transit_days.
+// A free return (Apollo 13, Artemis II) has return.type 'none' (no TEI burn) but still comes
+// home: a splashdown event makes it a round trip.
 const isReturnTrip =
-  flight.cislunar_profile.return?.type !== 'none' && !!flight.cislunar_profile.return?.type;
+  (flight.cislunar_profile.return?.type !== 'none' && !!flight.cislunar_profile.return?.type) ||
+  (flight.events ?? []).some((e) => e.type === 'earth_return');
 const transitWindow = transitDays * (isReturnTrip ? 2 : 1);
 // Some published timelines extend beyond transit_days × multiplier
 // (e.g. Apollo 17 surface stay; Apollo 13 free-return swingby with
@@ -93,14 +97,23 @@ const latestEventMet = (flight.events ?? [])
   .map((e) => e.met_days)
   .filter((v): v is number => typeof v === 'number')
   .reduce((max, v) => (v > max ? v : max), 0);
-const missionEndMet = Math.max(transitWindow, latestEventMet * 1.05);
+// A flight that splashes down ends there: sampling past it clamped the last samples back to
+// the Moon (a 'teleport' tail on Apollo 11/13, Artemis II/IV/V, Chang'e 5).
+const splashdown = (flight.events ?? []).find((e) => e.type === 'earth_return')?.met_days;
+const missionEndMet = splashdown ?? Math.max(transitWindow, latestEventMet * 1.05);
 
 // Build the Tier 1 trajectory via the same code path the renderer uses.
-const trajectory = buildCislunarTrajectory(flight.cislunar_profile, {
-  dep_day_sim: 0,
-  transit_days: transitDays,
-  is_return_trip: isReturnTrip,
-});
+// Phase boundaries from the flight's own events (TLI, LOI/landing, TEI, splashdown).
+// From the parametric profile, never from waypoints already on file (re-running resampled them).
+const trajectory = buildCislunarTrajectory(
+  { ...flight.cislunar_profile, waypoints_km: undefined },
+  {
+    dep_day_sim: 0,
+    transit_days: transitDays,
+    is_return_trip: isReturnTrip,
+    events: cislunarEventTimes(flight.events),
+  },
+);
 
 // Flatten phases into a single (met, point) timeline. Each phase's
 // points span its [start_met_days, end_met_days] linearly.

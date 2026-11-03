@@ -7,7 +7,9 @@
  * commit time instead of as a visual change weeks later.
  *
  * Each mission's expected values were taken from the generator output
- * on Step 6c (Moon) / Step 6d (Mars) / Step 6h (outer-system). To
+ * on Step 6c (Moon) / Step 6d (Mars) / Step 6h (outer-system). Moon round trips end at their
+ * splashdown event since the 0.9.5 regeneration (the generator sampled past it before, and the
+ * last samples clamped back to the Moon). To
  * intentionally update one: regenerate via the hybrid script + adjust
  * the expectation here with a brief justification in the commit.
  *
@@ -45,11 +47,11 @@ interface HelioSnapshot {
 }
 
 const MOON_SNAPSHOTS: CislunarSnapshot[] = [
-  { slug: 'apollo11', dest: 'moon', firstMet: 0, lastMetMin: 8.4, lastMetMax: 8.7, count: 100 },
-  { slug: 'apollo13', dest: 'moon', firstMet: 0, lastMetMin: 6.1, lastMetMax: 6.3, count: 100 },
-  { slug: 'apollo17', dest: 'moon', firstMet: 0, lastMetMin: 13.1, lastMetMax: 13.3, count: 100 },
-  { slug: 'artemis2', dest: 'moon', firstMet: 0, lastMetMin: 9.4, lastMetMax: 9.6, count: 100 },
-  { slug: 'artemis4', dest: 'moon', firstMet: 0, lastMetMin: 18.8, lastMetMax: 19.0, count: 100 },
+  { slug: 'apollo11', dest: 'moon', firstMet: 0, lastMetMin: 8.03, lastMetMax: 8.23, count: 100 },
+  { slug: 'apollo13', dest: 'moon', firstMet: 0, lastMetMin: 5.85, lastMetMax: 6.05, count: 100 },
+  { slug: 'apollo17', dest: 'moon', firstMet: 0, lastMetMin: 12.5, lastMetMax: 12.7, count: 100 },
+  { slug: 'artemis2', dest: 'moon', firstMet: 0, lastMetMin: 8.96, lastMetMax: 9.16, count: 100 },
+  { slug: 'artemis4', dest: 'moon', firstMet: 0, lastMetMin: 17.9, lastMetMax: 18.1, count: 100 },
   { slug: 'beresheet', dest: 'moon', firstMet: 0, lastMetMin: 50.3, lastMetMax: 50.5, count: 100 },
   {
     slug: 'blue-moon-mk1',
@@ -77,14 +79,14 @@ const MOON_SNAPSHOTS: CislunarSnapshot[] = [
   },
   { slug: 'change3', dest: 'moon', firstMet: 0, lastMetMin: 13.5, lastMetMax: 13.7, count: 100 },
   { slug: 'change4', dest: 'moon', firstMet: 0, lastMetMin: 28.2, lastMetMax: 28.5, count: 100 },
-  { slug: 'change5', dest: 'moon', firstMet: 0, lastMetMin: 24, lastMetMax: 24.3, count: 100 },
-  { slug: 'change6', dest: 'moon', firstMet: 0, lastMetMin: 59.9, lastMetMax: 60.1, count: 100 },
+  { slug: 'change5', dest: 'moon', firstMet: 0, lastMetMin: 22.9, lastMetMax: 23.1, count: 100 },
+  { slug: 'change6', dest: 'moon', firstMet: 0, lastMetMin: 52.9, lastMetMax: 53.1, count: 100 },
   { slug: 'clementine', dest: 'moon', firstMet: 0, lastMetMin: 26.2, lastMetMax: 26.4, count: 100 },
   { slug: 'lro', dest: 'moon', firstMet: 0, lastMetMin: 5.2, lastMetMax: 5.3, count: 100 },
   { slug: 'luna16', dest: 'moon', firstMet: 0, lastMetMin: 15.9, lastMetMax: 16.1, count: 100 },
   { slug: 'luna17', dest: 'moon', firstMet: 0, lastMetMin: 7.3, lastMetMax: 7.4, count: 100 },
   { slug: 'luna21', dest: 'moon', firstMet: 0, lastMetMin: 7.3, lastMetMax: 7.4, count: 100 },
-  { slug: 'luna24', dest: 'moon', firstMet: 0, lastMetMin: 17.9, lastMetMax: 18.1, count: 100 },
+  { slug: 'luna24', dest: 'moon', firstMet: 0, lastMetMin: 12.9, lastMetMax: 13.1, count: 100 },
   { slug: 'luna9', dest: 'moon', firstMet: 0, lastMetMin: 3.1, lastMetMax: 3.2, count: 100 },
   { slug: 'slim', dest: 'moon', firstMet: 0, lastMetMin: 141.7, lastMetMax: 141.8, count: 100 },
 ];

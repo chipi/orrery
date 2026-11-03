@@ -3203,6 +3203,42 @@
           {recoveryOutcome.eyebrow}
         </div>{/if}
     </div>
+  {:else if showDescent && descentProfile && descentSummaryFly}
+    <!-- Planetary descent (RFC-034 §12): the live EDL state against the integrated profile,
+         so a wrong phase, a missed chute or a hard touchdown is read off the panel. -->
+    {@const live =
+      descentSummaryFly.states.findLast((s) => s.t <= descentT) ?? descentSummaryFly.states[0]}
+    {@const beat = descentSummaryFly.events.findLast((e) => e.t <= descentT)}
+    <div class="tier1-debug">
+      <div class="t1-header">
+        DESCENT · {descentProfile.body.toUpperCase()} · {descentProfile.siteId}
+      </div>
+      <div class="t1-row">
+        <strong>entry</strong>
+        {(descentProfile.entryState.altitudeM / 1000).toFixed(0)} km · {(
+          descentProfile.entryState.velocityMs / 1000
+        ).toFixed(2)} km/s · γ {descentProfile.entryState.flightPathAngleDeg}° · {descentProfile.entryMassKg}
+        kg
+      </div>
+      <div class="t1-row">
+        <strong>live</strong>
+        t {descentT.toFixed(0)}/{descentDurationS.toFixed(0)}s · {live?.altKm.toFixed(2)} km · {live?.velocityMs.toFixed(
+          1,
+        )} m/s · {live?.decelG.toFixed(1)}g · {live?.massKg.toFixed(0)} kg
+      </div>
+      <div class="t1-row">
+        <strong>beat</strong>
+        {beat ? `${beat.type} @ ${beat.t.toFixed(0)}s, ${beat.altKm.toFixed(2)} km` : '—'}
+      </div>
+      <div class="t1-row">
+        <strong>outcome</strong>
+        peak {descentSummaryFly.peakDecel.g.toFixed(1)}g @ {descentSummaryFly.peakDecel.altKm.toFixed(
+          0,
+        )} km · TD {descentSummaryFly.touchdownVelocityMs.toFixed(1)} m/s · {descentSummaryFly.touchdownSuccess
+          ? 'SURVIVE'
+          : 'IMPACT'} · downrange {descentSummaryFly.landingDownrangeKm.toFixed(0)} km
+      </div>
+    </div>
   {:else if mission.flight?.events && outPts.length > 0}
     {@const flybyEventsForDebug = (mission.flight.events ?? []).filter(
       (e) => (e.type === 'flyby' || e.type === 'edl_or_oi') && e.met_days != null,

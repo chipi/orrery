@@ -215,7 +215,7 @@
   import defaultScenarioBase from '$data/scenarios/orrery-1.json';
   import defaultScenarioOverlay from '$i18nSrc/en-US/scenarios/orrery-1.json';
   import { dataLoadFailed } from '$lib/data/core';
-  import { hasTrajectory } from '$lib/data/interstellar';
+  import { flyTrajectoryPath } from '$lib/data/interstellar';
 
   const FLEET_ROLE_LABEL: Record<string, () => string> = {
     launcher: m.fly_opening_role_launcher,
@@ -2256,11 +2256,12 @@
         // through the waypoints instead of the single Keplerian
         // ellipse — the trajectory then actually passes through each
         // flyby planet at the event MET. Fetched only for missions in
-        // TRAJECTORY_IDS; the rest use the fallback without a request.
+        // TRAJECTORY_IDS or the /fly-only FLY_TRAJECTORY_IDS; the rest use the fallback.
         let trajectoryOverride: TrajectoryOverride | undefined;
-        if (hasTrajectory(id)) {
+        const trajPath = flyTrajectoryPath(id);
+        if (trajPath) {
           try {
-            const tres = await fetch(`${base}/data/trajectories/${id}.json`);
+            const tres = await fetch(`${base}/data/${trajPath}`);
             if (myLoadId !== currentLoadId) return;
             if (tres.ok) {
               const traj = (await tres.json()) as { waypoints?: TrajectoryWaypoint[] };

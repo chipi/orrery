@@ -435,7 +435,7 @@ export function computeMissionApply(
 /** Parse a /explore waypoint label like "Venus #1 — gravity assist"
  *  or "Saturn orbit insertion" to a /fly DestinationId. Returns null
  *  when no planet name appears (e.g. unlabeled cruise waypoints). */
-function labelToPlanetId(label: string): DestinationId | null {
+export function labelToPlanetId(label: string): DestinationId | null {
   const lower = label.toLowerCase();
   const planets: DestinationId[] = [
     'mercury',

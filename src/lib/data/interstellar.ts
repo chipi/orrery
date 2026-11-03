@@ -41,6 +41,30 @@ export const TRAJECTORY_IDS = [
 const TRAJECTORY_ID_SET: ReadonlySet<string> = new Set(TRAJECTORY_IDS);
 export const hasTrajectory = (id: string): boolean => TRAJECTORY_ID_SET.has(id);
 
+/** /fly-only trajectories for flyby missions /explore does not draw, generated from the
+ *  mission's events (scripts/generate-fly-trajectory.ts → static/data/fly-trajectories/), and
+ *  missions that fly another's path (Huygens rode Cassini). */
+export const FLY_TRAJECTORY_IDS = [
+  'messenger',
+  'osiris-rex',
+  'hera',
+  'lucy',
+  'hayabusa1',
+  'europa-clipper',
+  'psyche-mission',
+] as const;
+const FLY_TRAJECTORY_ID_SET: ReadonlySet<string> = new Set(FLY_TRAJECTORY_IDS);
+const FLY_TRAJECTORY_ALIAS: Record<string, string> = { huygens: 'cassini' };
+
+/** The data path of the trajectory /fly flies for a mission, or null (the ellipse fallback). */
+export function flyTrajectoryPath(id: string): string | null {
+  const alias = FLY_TRAJECTORY_ALIAS[id];
+  if (alias) return `trajectories/${alias}.json`;
+  if (TRAJECTORY_ID_SET.has(id)) return `trajectories/${id}.json`;
+  if (FLY_TRAJECTORY_ID_SET.has(id)) return `fly-trajectories/${id}.json`;
+  return null;
+}
+
 /** A trajectory with its locale overlay applied (display text only; see
  *  localizeTrajectory). Null when the trajectory is missing. */
 export async function getTrajectory(

@@ -89,6 +89,8 @@ periápside, Operation Paperclip), which a term check finds across the whole loc
   ar de pt-BR; **ja and ko shared two literal errors** ("standing water" as water standing
   upright, "logistically" as "physically") — a common source; ja also put the Pioneers through
   the radiation belt instead of the asteroid belt; hi "logically" for logistically. All fixed.
+- **Essays** (seed 1618, 8 per locale in ja, ko, pt-BR, hi — the weakest so far): 32 read, 0
+  errors; tools: no changed number, no dropped sentence. Stop rule met — no new error class.
 - **Not a pattern:** it "SSI" (288 uses, the site's form), pt-BR "EEI" (294); de / es / nl
   "Periapsis" is the native technical term there.
 

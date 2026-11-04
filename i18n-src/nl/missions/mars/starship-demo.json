@@ -3,9 +3,9 @@
   "vehicle": "Starship (Super Heavy + Starship-bovenste trap, niet hergebruikt)",
   "payload": "~100000 kg (doel met architectuur voor bijtanken in een baan)",
   "delta_v": "~13 km/s",
-  "type": "ONBEMANDE MARS-DEMO · GEPLAND",
+  "type": "ONBEMANDE MARS-DEMO · GEANNULEERD",
   "first": "Eerste volledig herbruikbare lanceersysteem dat een Mars-landing probeert",
-  "description": "Een onbemande demonstratie van de Starship Mars-architectuur: lancering op Super Heavy, hervullen in LEO vanuit een tankvariant, dan trans-Mars-injectie van een volledig getankte Starship en aangedreven afdaling naar het Marsoppervlak. SpaceX's vermelde doel is een lanceervenster van 2026-2027; engineering-realiteit (Starship werkt nog aan orbitale vluchtbetrouwbaarheid en hervullen in baan is nog niet gedemonstreerd) maakt 2028 of later waarschijnlijker. Als het slaagt, keert het de Mars-ladingeconomie om — van duizenden kg naar honderd ton per landing.",
+  "description": "Een onbemande demonstratie van de Starship Mars-architectuur: lancering op Super Heavy, hervullen in LEO vanuit een tankvariant, dan trans-Mars-injectie van een volledig getankte Starship en aangedreven afdaling naar het Marsoppervlak. SpaceX mikte op het lanceervenster eind 2026. In februari 2026 gaf Elon Musk de Maan voorrang en zei hij dat het werk aan Mars over ongeveer vijf tot zeven jaar zou beginnen; het doel van eind 2026 is daarmee losgelaten en er is geen nieuwe datum. Een Mars-Starship zou per landing zo'n honderd ton neerzetten, tegen enkele duizenden kilo's voor de landers van nu.",
   "events": [
     {
       "met": 0,

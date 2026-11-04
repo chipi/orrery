@@ -6,7 +6,7 @@
   "dest": "MARS",
   "color": "#005288",
   "year": 2026,
-  "status": "PLANNED",
+  "status": "CANCELLED",
   "departure_date": "2026-12-01",
   "arrival_date": "2027-09-01",
   "transit_days": 274,
@@ -14,7 +14,7 @@
   "payload": "~100000 kg (target with on-orbit refilling architecture)",
   "delta_v": "~13 km/s",
   "data_quality": "partial",
-  "credit": "© SpaceX — Mars architecture target. Specific demo manifest, mass, and trajectory subject to ongoing iteration. Date is the late-2026 Mars window NET; will likely slip into 2028-2029 based on Starship development pace.",
+  "credit": "© SpaceX — Mars architecture target for the late-2026 window. Dropped: on 2026-02-08 Elon Musk said SpaceX would focus on the Moon and start on Mars in about five to seven years (CNN, ABC News). Dates are the original late-2026 target.",
   "links": [
     {
       "l": "Starship — SpaceX",
@@ -24,6 +24,11 @@
     {
       "l": "SpaceX Mars program — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/SpaceX_Mars_program",
+      "t": "core"
+    },
+    {
+      "l": "Musk clips his Mars settlement ambition, aims for the moon instead — CNN (2026-02-09)",
+      "u": "https://www.cnn.com/2026/02/08/science/elon-musk-spacex-priorities-moon-intl-hnk",
       "t": "core"
     }
   ],

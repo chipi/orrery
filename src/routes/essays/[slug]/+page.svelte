@@ -18,6 +18,21 @@
   let { data }: { data: PageData } = $props();
   let essay = $derived(data.essay);
 
+  // Section openers: a running number per heading, and an accent per movement so the
+  // five movements of the series read apart (light enough for AA on the page background).
+  const MOVEMENT_ACCENT: Record<string, string> = {
+    'into-the-dark': '#7fb0e0',
+    'the-machines': '#e0a96d',
+    'the-destinations': '#e08a72',
+    'arrival-and-the-body': '#8fd1a6',
+    'the-far-horizon': '#b49ce6',
+  };
+  let accent = $derived(MOVEMENT_ACCENT[essay.movement] ?? '#7fb0e0');
+  let sectionNo = $derived.by(() => {
+    let n = 0;
+    return essay.body.map((b) => (b.type === 'heading' ? String(++n).padStart(2, '0') : ''));
+  });
+
   // Resolve an essay image ref to a URL. `missions/<id>/NN` and `fleet/<id>/NN`
   // reuse the existing vetted galleries; `essays/<slug>/NN` are the essay's own
   // sourced photos and the Wired-style diagram panels (static/images/essays/).
@@ -56,10 +71,10 @@
     </figure>
   {/if}
 
-  <div class="body">
+  <div class="body" style:--accent={accent}>
     {#each essay.body as block, i (i)}
       {#if block.type === 'heading'}
-        <h2>{block.text}</h2>
+        <h2><span class="sec-no" aria-hidden="true">{sectionNo[i]}</span>{block.text}</h2>
       {:else if block.type === 'prose'}
         <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: author-controlled overlay prose (no user input); essayInlineHtml escapes then applies link/em/strong -->
         <p>{@html essayInlineHtml(block.md)}</p>
@@ -207,13 +222,32 @@
     color: rgba(255, 255, 255, 0.55);
     font-size: 11px;
   }
+  /* A section opens like a chapter: its number, the title in the display face, a short
+     rule in the movement's accent. */
   .body h2 {
+    font-family: var(--font-display, 'Bebas Neue', sans-serif);
+    font-size: clamp(26px, 5vw, 32px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+    color: #fff;
+    margin: 56px 0 20px;
+  }
+  .body h2::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    margin-top: 12px;
+    background: var(--accent);
+  }
+  .sec-no {
+    display: block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #7fb0e0;
-    margin: 40px 0 18px;
+    color: var(--accent);
+    margin-bottom: 6px;
   }
   .body :global(a) {
     color: #cfe3fb;

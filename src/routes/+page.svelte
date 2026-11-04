@@ -245,8 +245,7 @@
       class="hero-illustration"
       data-audio-stage="hero-illustration"
       {...responsive(`${assetOrigin}/images/app-landing-hero.webp`, IMAGE_SIZES.column)}
-      alt=""
-      aria-label={m.landing_hero_aria()}
+      alt={m.landing_hero_aria()}
     />
 
     <h1 class="wordmark">ORRERY</h1>

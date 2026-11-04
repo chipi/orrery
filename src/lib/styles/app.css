@@ -263,7 +263,7 @@ html.ar-active
     transform 0.2s ease;
 }
 .ar-layer-btn.off {
-  color: var(--color-text-dim, rgba(255, 255, 255, 0.35));
+  color: var(--color-text-dim, rgba(255, 255, 255, 0.55));
 }
 .ar-layer-btn.off::before {
   background: transparent;

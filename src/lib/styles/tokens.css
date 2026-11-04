@@ -18,7 +18,9 @@
 
   /* Text */
   --color-text: #ffffff;
-  --color-text-dim: rgba(255, 255, 255, 0.35);
+  /* 0.55, not 0.35: 0.35 on the #04040c page is ~3.1:1, under WCAG AA (4.5:1) for text;
+     0.55 matches the nav's inactive links (~6:1). */
+  --color-text-dim: rgba(255, 255, 255, 0.55);
   --color-text-faint: rgba(255, 255, 255, 0.15);
 
   /* Surfaces */

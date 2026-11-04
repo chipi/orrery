@@ -25,6 +25,7 @@
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import {
     type RemoteData,
     loading,
@@ -927,6 +928,7 @@
 </script>
 
 <svelte:head><title>{m.plan_page_title()}</title></svelte:head>
+<VisuallyHiddenH1 title={m.plan_page_title()} />
 
 <div class="plan">
   <div class="plot-area">

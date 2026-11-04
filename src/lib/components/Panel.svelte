@@ -1,5 +1,6 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
+  import { prefersReducedMotion } from '$lib/reduced-motion';
   import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import { page } from '$app/state';
@@ -139,8 +140,8 @@
     ontouchstart={onTouchStart}
     ontouchmove={onTouchMove}
     ontouchend={onTouchEnd}
-    in:fly={{ y: 14, x: 14, duration: 220 }}
-    out:fly={{ y: 14, x: 14, duration: 160 }}
+    in:fly={{ y: 14, x: 14, duration: prefersReducedMotion() ? 0 : 220 }}
+    out:fly={{ y: 14, x: 14, duration: prefersReducedMotion() ? 0 : 160 }}
   >
     <!-- Empty dock zone (PRD-016 §S8 follow-up). The compact Curator
          Tour overlay anchors at top: var(--nav-height), right: 0 with

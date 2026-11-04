@@ -19,6 +19,12 @@ describe('renderKatex', () => {
     expect(html).not.toContain('katex-display');
   });
 
+  it('carries MathML for screen readers and hides the visual copy from them', () => {
+    const html = renderKatex('E = mc^2');
+    expect(html).toContain('<math');
+    expect(html).toContain('class="katex-html" aria-hidden="true"');
+  });
+
   it('throws on malformed LaTeX (build fails fast)', () => {
     expect(() => renderKatex('\\unknownmacro{x}')).toThrow();
   });

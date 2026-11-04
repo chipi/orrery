@@ -17,6 +17,7 @@
   import { EPOCH_BANDS, epochForYear } from '$lib/epoch-bands';
   import type { FleetEpoch } from '$types/fleet';
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
+  import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import * as m from '$lib/paraglide/messages';
   import { missionStatusLabel } from '$lib/status-label';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
@@ -392,6 +393,7 @@
 </script>
 
 <svelte:head><title>{m.missions_page_title()}</title></svelte:head>
+<VisuallyHiddenH1 title={m.missions_page_title()} />
 
 <LaunchesBanner />
 

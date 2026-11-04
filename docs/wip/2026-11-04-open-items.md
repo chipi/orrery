@@ -188,7 +188,14 @@ only if the site renders them inconsistently).
   «Cintura de asteroides» ×4 and the pre-2009 «asteróide(s)» ×6 (the site writes asteroide
   317×). Four new forms in the guard.
 - **Planned glossary chunks done: 20 → 55 terms**, each with definitions in 14 locales and
-  0 unreviewed misses. Next in step 3: term links from article text to `/science/glossary`.
+  0 unreviewed misses.
+- **Term links done** (2026-11-04, PRD-038 §5): /science articles link each term's first
+  mention to its entry, at most 2 per paragraph, a quiet dotted link (operator's choices).
+  ~480–580 links per locale. Checked: unit + rule tests (mutation-checked), e2e en/de/ar on
+  desktop and mobile (8 passed), screenshots en / ar / hi-375. Not yet: essays, missions and
+  fleet text (PRD-038 §5 "not linked yet"); the full build's route budget and the a11y gate
+  run at preflight.
+- **Step 3 is complete.** Next: step 4.
 
 **Step 4 — known issues in sections (user-visible):**
 

@@ -8,6 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { enRegex, isText, prose, senseSkipped } from './i18n-tools/term-match.mjs';
+import { localeLinks, plainText } from './glossary-links.mjs';
 
 export const LOCALES = [
   'en-US',
@@ -144,12 +145,29 @@ export function build({ write = true } = {}) {
     list.sort((a, b) => collator.compare(sortForm(loc, a.name), sortForm(loc, b.name)));
     files[loc] = { terms: list };
   }
+  // Term links in /science articles (PRD-038 §5): <locale>.links.json beside the page data.
+  const links = {};
+  for (const loc of LOCALES) {
+    links[loc] = localeLinks(terms, loc);
+    for (const [page, fields] of Object.entries(links[loc]))
+      for (const [field, list] of Object.entries(fields)) {
+        const [key, i] = field.split('.');
+        const para = readJson(`i18n-src/${loc}/science/${page}.json`)?.[key]?.[Number(i)] ?? '';
+        for (const [id, at, text] of list)
+          if (!files[loc].terms.some((x) => x.id === id))
+            problems.push(`${loc}: link to unknown term ${id} on ${page}`);
+          else if (!plainText(para).startsWith(text, at))
+            problems.push(`${loc}: "${text}" not at ${at} in ${page} ${field}`);
+      }
+  }
   if (write) {
     fs.mkdirSync(OUT, { recursive: true });
     for (const [loc, data] of Object.entries(files))
       fs.writeFileSync(`${OUT}/${loc}.json`, JSON.stringify(data) + '\n');
+    for (const [loc, data] of Object.entries(links))
+      fs.writeFileSync(`${OUT}/${loc}.links.json`, JSON.stringify(data) + '\n');
   }
-  return { files, problems };
+  return { files, links, problems };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
